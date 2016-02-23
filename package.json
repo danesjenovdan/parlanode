@@ -1,0 +1,30 @@
+{
+  "name": "parlameter-front",
+  "version": "0.0.1",
+  "description": "Parlameter frontend server for serving embeds and the page  with cms for managing them",
+  "main": "run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciZ/parlameter-front.git"
+  },
+  "author": "FranciZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranciZ/parlameter-front/issues"
+  },
+  "homepage": "https://github.com/FranciZ/parlameter-front#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "body-parser": "^1.15.0",
+    "chalk": "^1.1.1",
+    "cors": "^2.7.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.4",
+    "request": "^2.69.0",
+    "serve-static": "^1.10.2"
+  }
+}
