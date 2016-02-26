@@ -1,27 +1,36 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
+/* line 4, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_font.scss */
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
+/* line 9, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_font.scss */
 h1 {
   font-weight: 500; }
 
+/* line 13, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_font.scss */
 .thin {
   font-weight: 100; }
 
+/* line 55, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_helper.scss */
 body {
   background-color: #f0f0f0; }
 
+/* line 58, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_helper.scss */
 .container {
   max-width: 473px; }
 
 @media (min-width: 992px) {
+  /* line 63, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_helper.scss */
   .container {
     max-width: 970px; } }
+
+/* line 68, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_helper.scss */
 a:focus, button:focus {
   outline: none; }
 
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-container {
   margin-top: 20px;
   /* overriding bootstrap's padding */
@@ -41,6 +50,7 @@ a:focus, button:focus {
   -o-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
 
+/* line 15, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-header, .card-footer {
   width: 100%;
   height: 80px;
@@ -48,6 +58,7 @@ a:focus, button:focus {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+/* line 22, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-header .card-header-border, .card-footer .card-header-border {
   height: 40px;
   width: 3px;
@@ -55,27 +66,33 @@ a:focus, button:focus {
   margin-right: 13px;
   float: left; }
 
+/* line 29, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-header h1, .card-footer h1 {
   margin: 0;
   font-size: 24px !important;
   line-height: 40px; }
 
+/* line 34, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-content {
   width: 100%;
   padding: 0;
   margin: 0 0 10px 0; }
 
+/* line 39, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .col-md-6 > .card-container .card-content {
   height: 480px; }
 
+/* line 42, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .col-md-6 > .card-container .card-content.half {
   height: 220px; }
 
+/* line 45, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-placeholder {
   background-color: #f0f0f0;
   width: 100%;
   height: 300px; }
 
+/* line 50, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-footer {
   height: 62px;
   padding-top: 14px;
@@ -86,6 +103,7 @@ a:focus, button:focus {
   background-repeat: no-repeat;
   background-size: 100%; }
 
+/* line 61, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-circle-button {
   width: 30px;
   height: 30px;
@@ -107,15 +125,18 @@ a:focus, button:focus {
   color: #ffffff;
   cursor: pointer; }
 
+/* line 77, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-info {
   font-weight: 100; }
 
+/* line 80, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-embed {
   background-image: url("http://cdn.parlameter.si/v1/icons/embed.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70% 70%; }
 
+/* line 86, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_card.scss */
 .card-share {
   background-image: url("http://cdn.parlameter.si/v1/icons/share.svg");
   background-repeat: no-repeat;
@@ -123,25 +144,30 @@ a:focus, button:focus {
   background-size: 50% 50%; }
 
 /*  */
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
 header.header {
   padding-top: 10px;
   background: url(../img/top.png) top center no-repeat;
-    /*    .navbar {
+  /*    .navbar {
         border: none;
         margin-bottom: 20px;
         min-height: 50px;
         position: relative;
     }
 */ }
+  /* line 4, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .logo {
     background: url(../img/logo.png) center no-repeat;
     width: 150px;
     height: 80px; }
+  /* line 9, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .navbar-collapse.collapse {
     margin-top: 20px; }
+  /* line 12, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .navbar-default {
     background-color: transparent;
     padding-top: 10px; }
+  /* line 16, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .navbar {
     border-radius: 0;
     border-bottom: 1px solid #dbdbdb;
@@ -150,23 +176,29 @@ header.header {
     border-right: none;
     padding-bottom: 10px;
     margin-bottom: 10px; }
+  /* line 25, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .navbar-nav > li > a {
     margin: 0 30px;
     font-size: 18px; }
+  /* line 36, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .navbar-form .form-group {
     display: none; }
+  /* line 39, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   header.header .search {
     border: none;
     border-radius: 0; }
 
+/* line 44, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
 html {
   position: relative;
   min-height: 100%; }
 
+/* line 48, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
 body {
   /* Margin bottom by footer height */
   margin-bottom: 120px; }
 
+/* line 52, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
 footer.footer {
   position: absolute;
   bottom: 0;
@@ -174,42 +206,53 @@ footer.footer {
   /* Set the fixed height of the footer here */
   height: 120px;
   background: url(../img/bottom.png) bottom center no-repeat; }
+  /* line 59, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_headerfooter.scss */
   footer.footer .cnt {
     border-top: 1px solid #dbdbdb;
     padding-top: 10px;
     margin-top: 10px; }
 
+/* line 3, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
 #votingCardHorizontal {
   color: #505050;
   margin-right: 4px;
   overflow: hidden; }
+  /* line 8, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal #scrollbar-voting-card-horizontal {
     position: relative; }
+  /* line 12, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .slider {
     width: 818px;
     float: left;
     overflow: hidden;
     padding: 0 4px; }
+    /* line 19, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCardHorizontal .slider .slider-content {
       width: 5000px;
       position: relative; }
+    /* line 24, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCardHorizontal .slider div.member {
       margin: 0 16px; }
+  /* line 29, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .navigate-left, #votingCardHorizontal .navigate-right {
     width: 50px;
     font-size: 26px;
     margin: 75px 0 0 0;
     cursor: pointer; }
+  /* line 36, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .navigate-left {
     float: left; }
+  /* line 40, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .navigate-right {
     float: right; }
+  /* line 44, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal div.member {
     padding: 10px 0 0 0;
     position: relative;
     width: 130px;
     text-align: center;
     float: left; }
+    /* line 51, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCardHorizontal div.member .image {
       width: 75px;
       height: 75px;
@@ -219,46 +262,61 @@ footer.footer {
       background-position: center center;
       background-size: 150px;
       margin: 0 auto; }
+    /* line 62, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCardHorizontal div.member p {
       font-size: 18px;
       font-weight: 300;
       margin: 15px 0 0 0; }
+    /* line 68, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCardHorizontal div.member span {
       font-size: 36px;
       font-weight: 400; }
 
 @media (max-width: 991px) {
+  /* line 81, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal #scrollbar-voting-card-horizontal {
     position: relative; }
+  /* line 85, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .slider {
     width: 318px;
     padding: 0 1px; }
+    /* line 89, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCardHorizontal .slider div.member {
       margin: 0 14px; } }
+
 @media (max-width: 500px) {
+  /* line 102, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .slider {
     width: 100%;
     padding: 0;
     float: none;
     overflow: auto;
     padding-bottom: 20px; }
+  /* line 110, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCardHorizontal .navigate-left, #votingCardHorizontal .navigate-right {
     display: none; } }
+
+/* line 118, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
 .clearfix {
   clear: both; }
 
+/* line 122, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
 #votingCard {
   color: #505050; }
+  /* line 125, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCard #scrollbar-voting-card {
     position: relative;
     width: 100%;
     height: 100%; }
+  /* line 131, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCard .no-border {
     border-bottom: 0 !important; }
+  /* line 135, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCard div.member {
     border-bottom: 1px solid #f0f0f0;
     padding: 10px 0;
     position: relative; }
+    /* line 140, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCard div.member .image {
       width: 75px;
       height: 75px;
@@ -268,12 +326,14 @@ footer.footer {
       background-position: center center;
       background-size: 150px;
       float: left; }
+    /* line 151, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCard div.member p {
       margin: 12px 0 0 40px;
       width: 210px;
       float: left;
       font-size: 18px;
       font-weight: 300; }
+    /* line 159, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     #votingCard div.member span {
       float: right;
       font-size: 36px;
@@ -281,29 +341,38 @@ footer.footer {
       margin: 13px 0 0 0; }
 
 @media (max-width: 500px) {
+  /* line 173, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCard #scrollbar-voting-card {
     position: relative;
     width: 100%;
     height: 100%; }
+  /* line 181, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCard div.member p {
     width: 100px; }
+  /* line 185, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   #votingCard div.member span {
     font-size: 30px;
     margin: 14px 0 0 0; } }
+
+/* line 194, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
 .recent-activity {
   color: #505050; }
+  /* line 197, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   .recent-activity #scrollbar-recent-activity {
     position: relative;
     width: 100%;
     height: 100%; }
+  /* line 203, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
   .recent-activity section {
     clear: both; }
+    /* line 206, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     .recent-activity section span.date {
       width: 50px;
       font-size: 16px;
       font-weight: 400;
       float: left;
       margin: 20px 0 0 0; }
+    /* line 214, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
     .recent-activity section ul {
       margin: 0 20px 0 0;
       list-style-type: none;
@@ -311,13 +380,17 @@ footer.footer {
       border-top: 1px solid #f0f0f0;
       padding: 0px 15px 0 0;
       width: calc(100% - 70px); }
+      /* line 222, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
       .recent-activity section ul li:first-child {
         margin: 20px 0 30px 0; }
+      /* line 226, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
       .recent-activity section ul li:last-child {
         margin: 30px 0 20px 0; }
+      /* line 230, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
       .recent-activity section ul li {
         margin: 30px 0 30px 0;
         position: relative; }
+        /* line 234, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
         .recent-activity section ul li span {
           margin: 0;
           width: 50px;
@@ -326,64 +399,79 @@ footer.footer {
           position: absolute;
           top: 2px;
           font-size: 25px; }
+        /* line 244, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
         .recent-activity section ul li p {
           display: inline-block;
           font-size: 16px;
           font-weight: 300;
           margin: 0 0 0 65px; }
+          /* line 251, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customjaka.scss */
           .recent-activity section ul li p a {
             font-weight: 400; }
 
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .col50 {
   /*width: 50px;*/
   width: 11.6%;
   float: left; }
 
+/* line 6, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .col150 {
   /*width: 150px;*/
   width: 34.9%;
   float: left; }
 
+/* line 11, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .col100 {
   /*width: 100px;*/
   width: 23.2%;
   float: left; }
 
+/* line 16, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .col180 {
   /*width: 170px;*/
   width: 41.8%;
   float: left; }
 
+/* line 21, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .col280 {
   /*width: 280px;*/
   width: 65.1%;
   float: left; }
 
+/* line 26, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .col300 {
   /*width: 300px;*/
   width: 69.7%;
   float: left; }
 
+/* line 31, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .nopadding {
   padding: 0; }
 
+/* line 34, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .bgwhite {
   background: #ffffff; }
 
+/* line 37, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .me_poslanec {
   padding-bottom: 30px; }
 
+/* line 40, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .me_poslanec .poslanec_title {
   font-size: 18px;
   font-weight: 500; }
 
+/* line 44, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .other_poslanec {
   padding-bottom: 30px; }
 
+/* line 47, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .other_poslanec .poslanec_title {
   font-size: 18px;
   font-weight: 300; }
 
+/* line 51, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress {
   border: none;
   box-shadow: none;
@@ -391,85 +479,108 @@ footer.footer {
   border-radius: 0;
   margin-bottom: 0; }
 
+/* line 58, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress-bar {
   border: none;
   box-shadow: none;
   border-radius: 0; }
 
+/* line 63, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.hugebar {
   height: 40px; }
 
+/* line 66, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.hugebar .red {
   background: #ff5e41; }
 
+/* line 69, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .funblue {
   background: #009cdd; }
 
+/* line 72, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .me_poslanec .progress_number {
   font-size: 30px;
   line-height: 30px; }
 
+/* line 77, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .other_poslanec .progress_number {
   font-size: 20px;
   line-height: 20px; }
 
+/* line 82, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .avgminimg {
   float: left;
   position: relative;
   left: -5px; }
 
+/* line 88, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .other_poslanec .img-circle {
   width: 35px; }
 
+/* line 91, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.avgminmin {
   height: 30px; }
 
+/* line 94, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .avgminmin .progress-bar {
   margin-top: 6px;
   height: 20px; }
 
+/* line 98, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .avgminmin .progress_number {
   padding-top: 5px; }
 
+/* line 101, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress_number {
   display: inline-block;
   padding-left: 10px; }
 
+/* line 105, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .nav-tabs {
   border-bottom: none;
   padding-bottom: 40px; }
 
+/* line 109, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .nav-tabs > li {
   margin-right: 10px; }
 
+/* line 112, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .nav > li > a {
   padding: 10px 0 2px 0; }
 
+/* line 115, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .nav > li > a:hover {
   background: none; }
 
+/* line 118, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .nav-tabs > li > a {
   border-radius: 0;
   border: none;
   color: #505050; }
 
+/* line 123, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .nav-tabs > li.active > a {
   font-weight: 500;
   border-bottom: 2px solid #009cdd;
   color: #505050; }
 
+/* line 128, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .tab-content .poslanec_title {
   font-size: 16px; }
 
+/* line 131, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .tab-content .me_poslanec {
   padding-bottom: 40px; }
 
+/* line 134, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .tab-content .other_poslanec {
   padding-bottom: 40px; }
 
+/* line 138, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .bordertop {
   border-top: 1px solid #f0f0f0; }
 
+/* line 141, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .key {
   display: inline-block;
   font-size: 16px;
@@ -477,29 +588,36 @@ footer.footer {
   color: #505050;
   width: 88%; }
 
+/* line 148, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec a {
   color: #197197; }
 
+/* line 153, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .noborder {
   border: none; }
 
+/* line 156, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .getListFriendlyBodies {
   font-size: 16px; }
 
+/* line 159, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .getListFriendlyBodies .tab-pane {
   padding: 10px 0;
   text-align: center; }
 
+/* line 163, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .getListFriendlyBodies .nav-tabs {
   border: none;
   text-align: center; }
 
+/* line 167, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .getListFriendlyBodies .nav-tabs li {
   display: inline-block;
   float: none;
   margin: 0;
   text-align: center; }
 
+/* line 173, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .getListFriendlyBodies .nav-tabs li a {
   border: medium none;
   border-radius: 0;
@@ -508,80 +626,101 @@ footer.footer {
   font-size: 40px;
   line-height: 20px; }
 
+/* line 181, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .poslanec .getListFriendlyBodies .nav-tabs li.active a {
   color: #ff5e41; }
 
+/* line 184, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .me_poslanec_mini {
   padding-bottom: 20px; }
 
+/* line 187, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .me_poslanec_mini .poslanec_title {
   font-size: 18px;
   font-weight: 100; }
 
+/* line 191, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .me_poslanec_mini .progress_number {
   font-size: 16px;
   font-weight: 400; }
 
+/* line 195, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.hugebar2 {
   height: 30px; }
 
+/* line 199, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .red,
 .indicator.red {
   background: #ff5e41; }
 
+/* line 203, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .sadblue-light,
 .indicator.sadblue-light {
   background: #8cb8cb; }
 
+/* line 207, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .ignoreblue,
 .indicator.ignoreblue {
   background: #003B54; }
 
+/* line 211, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .funblue,
 .indicator.funblue {
   background: #009cdd; }
 
+/* line 215, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .noblue,
 .indicator.noblue {
   background: #99E1FF; }
 
+/* line 219, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .fontblue,
 .indicator.fontblue {
   background: #00628c; }
 
+/* line 223, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_customprimoz.scss */
 .progress.smallbar .funblue-light,
 .indicator.funblue-light {
   background: #d9e7ed; }
 
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .me_poslanec {
   padding-bottom: 30px; }
 
+/* line 5, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .me_poslanec .poslanec_title {
   font-size: 18px;
   font-weight: 500; }
 
+/* line 10, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .me_poslanec .progress_number {
   font-size: 30px;
   line-height: 30px; }
 
+/* line 15, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .me_poslanec_mini {
   padding-bottom: 20px; }
 
+/* line 18, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .me_poslanec_mini .poslanec_title {
   font-size: 18px;
   font-weight: 100; }
 
+/* line 22, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .me_poslanec_mini .progress_number {
   font-size: 16px;
   font-weight: 400; }
 
+/* line 30, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .other_poslanec {
   padding-bottom: 30px; }
 
+/* line 34, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .other_poslanec .poslanec_title {
   font-size: 18px;
   font-weight: 300; }
 
+/* line 39, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress {
   border: none;
   box-shadow: none;
@@ -589,88 +728,112 @@ footer.footer {
   border-radius: 0;
   margin-bottom: 0; }
 
+/* line 47, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress-bar {
   border: none;
   box-shadow: none;
   border-radius: 0; }
 
+/* line 53, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress.hugebar2 {
   height: 30px; }
 
+/* line 56, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress.hugebar {
   height: 38px; }
 
+/* line 60, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress.hugebar .red {
   background: #ff5e41; }
 
+/* line 63, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress.smallbar .funblue {
   background: #009cdd; }
 
+/* line 67, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress.smallbar .red {
   background: #ff5e41; }
 
+/* line 71, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress_number {
   display: inline-block;
   padding-left: 10px; }
 
+/* line 79, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .other_poslanec .progress_number {
   font-size: 20px;
   line-height: 20px; }
 
+/* line 86, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .avgminimg {
   float: left;
   position: relative;
   left: -5px; }
 
+/* line 94, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .other_poslanec .img-circle {
   width: 35px; }
 
+/* line 98, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .progress.avgminmin {
   height: 30px; }
 
+/* line 102, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .avgminmin .progress-bar {
   margin-top: 6px;
   height: 20px; }
 
+/* line 107, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .avgminmin .progress_number {
   padding-top: 5px; }
 
+/* line 112, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .nav-tabs {
   border-bottom: none;
   padding-bottom: 40px; }
 
+/* line 116, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .nav-tabs > li {
   margin-right: 10px; }
 
+/* line 119, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .nav > li > a {
   padding: 10px 0 2px 0; }
 
+/* line 122, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .nav > li > a:hover {
   background: none; }
 
+/* line 125, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .nav-tabs > li > a {
   border-radius: 0;
   border: none;
   color: #505050; }
 
+/* line 130, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .nav-tabs > li.active > a {
   font-weight: 500;
   border-bottom: 2px solid #009cdd;
   color: #505050; }
 
+/* line 135, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .tab-content .poslanec_title {
   font-size: 16px; }
 
+/* line 139, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .tab-content .me_poslanec {
   padding-bottom: 40px; }
 
+/* line 142, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .poslanec .tab-content .other_poslanec {
   padding-bottom: 40px; }
 
+/* line 147, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_progressbars.scss */
 .hugebar .cptin {
   font-size: 18px;
   line-height: 38px; }
 
+/* line 2, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session-container {
   height: 100%;
   left: 0;
@@ -681,29 +844,36 @@ footer.footer {
   padding: 0 20px;
   position: relative;
   top: 0; }
+  /* line 12, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-container .header {
     margin-bottom: 20px; }
+  /* line 15, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-container h1 {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 22px;
     font-weight: 300; }
+  /* line 21, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-container h2 {
     margin-top: 20px;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 300; }
+  /* line 28, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-container font,
   .session-container font.date {
     font-weight: 300; }
 
+/* line 32, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_types {
   margin: 0 auto 20px auto;
   width: 560px;
   text-align: center;
   padding: 0; }
+  /* line 37, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_types ul {
     padding: 0; }
+    /* line 39, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_types ul li {
       display: table;
       overflow: hidden;
@@ -711,6 +881,7 @@ footer.footer {
       text-align: center;
       list-style: none;
       margin-right: 10px; }
+      /* line 46, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
       .session_types ul li a {
         display: table-cell;
         vertical-align: middle;
@@ -721,24 +892,29 @@ footer.footer {
         border: 1px solid #dbdbdb;
         padding: 5px 20px;
         text-transform: uppercase; }
+      /* line 58, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
       .session_types ul li a.active,
       .session_types ul li a:hover {
         color: #ffffff;
         background: #009cdd;
         text-decoration: none; }
+  /* line 65, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_types h2 {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase; }
+  /* line 70, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_types .form-control {
     border-radius: 0;
     border-right: medium none;
     font-size: 20px;
     height: 50px; }
+  /* line 76, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_types button.btn {
     border-radius: 0;
     height: 50px; }
 
+/* line 81, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_type {
   background: #009cdd none repeat scroll 0 0;
   color: #ffffff;
@@ -752,6 +928,7 @@ footer.footer {
   overflow: hidden;
   float: left;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
+  /* line 94, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_type span {
     display: table-cell;
     vertical-align: middle;
@@ -759,20 +936,25 @@ footer.footer {
     margin-bottom: 0;
     margin-top: 0;
     padding: 30px; }
+    /* line 101, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_type span font {
       color: #505050; }
+  /* line 105, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_type a span {
     color: #ffffff; }
 
+/* line 109, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_type.col-sm-3:nth-child(4n) {
   margin-right: 0; }
 
+/* line 113, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_type:hover,
 .session_type.active {
   position: relative;
   background: #009cdd;
   cursor: pointer; }
 
+/* line 119, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_type:hover:after,
 .session_type.active:after {
   top: 100%;
@@ -788,34 +970,45 @@ footer.footer {
   border-width: 10px;
   margin-left: -10px; }
 
+/* line 134, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session-container .paneltab {
   padding-top: 15px;
   padding-bottom: 15px; }
+  /* line 138, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-container .paneltab .member {
     border-bottom: 1px solid #f0f0f0;
     padding: 10px 0;
     position: relative; }
+    /* line 144, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session-container .paneltab .member h3 {
       font-size: 18px;
       font-weight: 300;
       margin: 12px 0 0 0; }
+    /* line 149, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session-container .paneltab .member h4 {
       font-size: 14px;
       font-weight: 300; }
+  /* line 155, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-container .paneltab .session_other_members img {
     width: 15.67%;
     float: left;
     margin-right: 1%; }
+
+/* line 162, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session-container .paneltab.border-right {
   border-right: 1px solid #f0f0f0; }
 
+/* line 167, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .sessionsGetSessionByDate .tab-pane {
   padding: 10px 0; }
+  /* line 169, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .sessionsGetSessionByDate .tab-pane ul {
     padding-left: 0; }
+    /* line 171, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .sessionsGetSessionByDate .tab-pane ul li {
       list-style: none;
       margin-bottom: 15px; }
+      /* line 174, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
       .sessionsGetSessionByDate .tab-pane ul li p {
         display: inline-block;
         font-size: 16px;
@@ -823,17 +1016,22 @@ footer.footer {
         border-bottom: 1px solid #f0f0f0;
         margin-bottom: 10px;
         padding: 0 20px 10px 20px; }
+  /* line 184, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .sessionsGetSessionByDate .tab-pane .date {
     font-size: 16px;
     font-weight: 400; }
+
+/* line 189, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .sessionsGetSessionByDate .nav-tabs {
   border: medium none;
   text-align: center; }
+  /* line 192, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .sessionsGetSessionByDate .nav-tabs li {
     display: inline-block;
     float: none;
     margin: 0;
     text-align: center; }
+    /* line 197, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .sessionsGetSessionByDate .nav-tabs li a {
       border: medium none;
       border-radius: 0;
@@ -842,22 +1040,27 @@ footer.footer {
       line-height: 20px;
       padding: 0;
       margin: 0; }
+  /* line 208, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .sessionsGetSessionByDate .nav-tabs li.active a {
     color: #ff5e41; }
 
+/* line 214, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session-logo {
   background: #ff5e41;
   color: #ffffff;
   text-align: center;
   width: 75px;
   height: 75px; }
+  /* line 220, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session-logo b {
     display: inline-block;
     line-height: 75px;
     font-size: 24px; }
 
+/* line 227, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript_menu ul {
   padding: 0; }
+  /* line 229, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_transcript_menu ul li {
     display: table;
     overflow: hidden;
@@ -865,6 +1068,7 @@ footer.footer {
     text-align: center;
     list-style: none;
     margin-right: 10px; }
+    /* line 236, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_transcript_menu ul li a {
       display: table-cell;
       vertical-align: middle;
@@ -873,34 +1077,48 @@ footer.footer {
       border: 1px solid #dbdbdb;
       padding: 0 20px;
       text-transform: uppercase; }
+    /* line 247, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_transcript_menu ul li a.active,
     .session_transcript_menu ul li a:hover {
       color: #ffffff;
       background: #009cdd;
       text-decoration: none; }
 
+/* line 256, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel {
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px; }
+
+/* line 263, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-group .panel {
   border-radius: 4px;
   margin-bottom: 0; }
+
+/* line 267, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-default {
   border-color: #ddd; }
+
+/* line 270, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-default > .panel-heading {
   background-color: #ffffff;
   border-color: #ddd;
   color: #333; }
+
+/* line 275, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-group .panel-heading {
   border-bottom: 0 none; }
+
+/* line 278, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-heading {
   border-bottom: 1px solid transparent;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   padding: 10px 15px; }
+
+/* line 284, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-title {
   color: inherit;
   font-size: 20px;
@@ -908,26 +1126,33 @@ footer.footer {
   font-weight: 300;
   margin-bottom: 0;
   margin-top: 0; }
+  /* line 291, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_transcript .panel-title img {
     width: 50px;
     float: left;
     margin-right: 1%; }
+  /* line 296, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_transcript .panel-title a .status {
     background: url(../img/arrup.png) top center no-repeat;
     width: 40px;
     height: 40px;
     display: inline-block;
     float: right; }
+  /* line 303, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_transcript .panel-title a.collapsed .status {
     background: url(../img/arrdown.png) top center no-repeat;
     width: 40px;
     height: 40px; }
+
+/* line 309, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse.collapsed .status {
   text-align: center;
   background: rgba(240, 240, 240, 0.4);
   cursor: pointer;
   margin-top: -60px;
   padding: 15px 0; }
+
+/* line 316, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse .status {
   margin-top: 0px;
   cursor: pointer;
@@ -938,19 +1163,27 @@ footer.footer {
   padding: 15px 0;
   z-index: 10;
   position: relative; }
+
+/* line 327, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse .status a {
   background: url(../img/arrup.png) top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block;
   text-decoration: none; }
+
+/* line 334, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse .status a:hover {
   text-decoration: none; }
+
+/* line 337, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse.collapsed .status a {
   background: url(../img/arrdown.png) top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block; }
+
+/* line 343, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse.collapsed .status .fadeover {
   height: 20px;
   margin-top: -20px;
@@ -958,46 +1191,64 @@ footer.footer {
   width: 98.7%;
   display: block;
   background: rgba(240, 240, 240, 0.4); }
+
+/* line 351, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse .status .fadeover {
   display: none; }
+
+/* line 354, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-collapse.collapsed .alltrans {
   height: 100px;
   overflow: hidden; }
+
+/* line 359, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top: none; }
+
+/* line 362, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_transcript .panel-body {
   padding-left: 150px;
   padding-right: 150px;
   font-weight: 300;
   font-size: 18px; }
 
+/* line 369, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_voting {
   padding: 20px;
   font-size: 18px;
   font-weight: 300; }
+  /* line 373, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .single_voting {
     background: #f0f0f0;
     margin-bottom: 20px; }
+  /* line 377, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .session_title {
     margin: 15px 0; }
+  /* line 380, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .border-left {
     border-left: 2px solid #dbdbdb; }
+  /* line 383, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .accepted {
     text-align: center;
     line-height: 100px;
     font-size: 24px; }
+  /* line 388, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .accepted.aye {
     color: #009cdd; }
+  /* line 391, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .accepted.ney {
     color: #ff5e41; }
+  /* line 394, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting .session_votes {
     text-align: center;
     font-size: 35px;
     margin: 15px 0; }
+    /* line 398, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_voting .session_votes .type {
       font-size: 18px;
       line-height: 30px;
       text-transform: uppercase; }
+    /* line 403, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_voting .session_votes .indicator {
       width: 30px;
       height: 3px;
@@ -1005,71 +1256,93 @@ footer.footer {
       line-height: 3px;
       font-size: 3px;
       margin: 0 auto; }
+    /* line 411, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_voting .session_votes .indicator.aye {
       background: #00628c; }
+    /* line 414, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_voting .session_votes .indicator.ney {
       background: #009cdd; }
+    /* line 417, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_voting .session_votes .indicator.abstention {
       background: #003B54; }
+    /* line 420, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_voting .session_votes .indicator.not {
       background: #99E1FF; }
+  /* line 424, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting a {
     color: inherit; }
+  /* line 427, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_voting a:hover {
     color: #009cdd; }
 
+/* line 431, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
 .session_report {
   background: #f0f0f0;
   padding: 10px 20px; }
+  /* line 434, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_report .type {
     float: left;
     padding-right: 30px; }
+    /* line 437, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_report .type .indicator {
       display: block;
       float: left;
       line-height: 50px;
       width: 12px; }
+    /* line 443, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_report .type .number {
       display: block;
       float: left;
       font-size: 30px;
       line-height: 25px;
       padding-left: 5px; }
+    /* line 450, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_report .type font {
       font-size: 21px;
       line-height: 18px;
       text-transform: uppercase; }
+    /* line 456, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_report .type .status0,
     .session_report .type .status1 {
       line-height: 50px;
       font-size: 18px;
       color: #505050; }
+      /* line 460, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
       .session_report .type .status0 b,
       .session_report .type .status1 b {
         font-weight: bold;
         text-transform: uppercase; }
 
 @media (max-width: 950px) {
+  /* line 469, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_type span {
     padding: 10px; } }
+
 @media (max-width: 950px) {
+  /* line 475, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_types {
     width: 420px; }
+    /* line 477, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_types li {
       width: 125px; }
-
+  /* line 482, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_transcript .panel-body {
     padding-left: 10px;
     padding-right: 10px;
     font-weight: 300;
     font-size: 18px; } }
+
 @media (max-width: 500px) {
+  /* line 491, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
   .session_types {
     width: 100%; }
+    /* line 493, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_sessions.scss */
     .session_types li {
       width: 100%;
       padding: 0;
       margin: 0; } }
+
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
 .member-container {
   height: 100%;
   left: 0;
@@ -1080,24 +1353,30 @@ footer.footer {
   padding: 0 20px;
   position: relative;
   top: 0; }
+  /* line 11, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .member-container .header {
     margin-bottom: 20px; }
+  /* line 14, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .member-container h1 {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 22px; }
+  /* line 20, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .member-container h2 {
     margin-top: 20px;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 300; }
+  /* line 27, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .member-container font,
   .member-container font.date {
     font-weight: 300;
     font-size: 18px; }
 
+/* line 33, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
 .member-container-menu ul {
   padding: 0; }
+  /* line 35, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .member-container-menu ul li {
     display: table;
     overflow: hidden;
@@ -1105,6 +1384,7 @@ footer.footer {
     text-align: center;
     list-style: none;
     margin-right: 10px; }
+    /* line 42, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
     .member-container-menu ul li a {
       display: table-cell;
       vertical-align: middle;
@@ -1113,23 +1393,28 @@ footer.footer {
       border: 1px solid #dbdbdb;
       padding: 0 20px;
       text-transform: uppercase; }
+    /* line 53, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
     .member-container-menu ul li a.active,
     .member-container-menu ul li a:hover {
       color: #ffffff;
       background: #009cdd;
       text-decoration: none; }
 
+/* line 63, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
 .poslanec {
   padding: 10px 0;
   position: relative; }
+  /* line 69, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .poslanec h3 {
     font-size: 18px;
     font-weight: 300;
     margin: 12px 0 0 0; }
+  /* line 74, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_member.scss */
   .poslanec h4 {
     font-size: 14px;
     font-weight: 300; }
 
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
 .group-container {
   height: 100%;
   left: 0;
@@ -1140,37 +1425,49 @@ footer.footer {
   padding: 0 20px;
   position: relative;
   top: 0; }
+  /* line 11, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
   .group-container .header {
     margin-bottom: 20px; }
+  /* line 14, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
   .group-container h1 {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 22px; }
+  /* line 19, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
   .group-container h2 {
     margin-top: 20px;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 300; }
+  /* line 26, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
   .group-container font,
   .group-container font.date {
     font-weight: 300;
     font-size: 18px; }
+  /* line 31, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
   .group-container .me_group {
     padding-bottom: 30px; }
+    /* line 33, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container .me_group .progress-bar {
       background: #009cdd; }
+    /* line 36, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container .me_group .col150 {
       width: 20%; }
+    /* line 39, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container .me_group .col280 {
       width: 80%; }
+    /* line 42, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container .me_group .group_data_title {
       font-size: 18px;
       font-weight: 500; }
+    /* line 46, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container .me_group .group_data_title a {
       color: inherit; }
 
+/* line 52, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
 .group-container-menu ul {
   padding: 0; }
+  /* line 54, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
   .group-container-menu ul li {
     display: table;
     overflow: hidden;
@@ -1178,6 +1475,7 @@ footer.footer {
     text-align: center;
     list-style: none;
     margin-right: 10px; }
+    /* line 61, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container-menu ul li a {
       display: table-cell;
       vertical-align: middle;
@@ -1186,23 +1484,29 @@ footer.footer {
       border: 1px solid #dbdbdb;
       padding: 0 20px;
       text-transform: uppercase; }
+    /* line 72, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
     .group-container-menu ul li a.active,
     .group-container-menu ul li a:hover {
       color: #ffffff;
       background: #009cdd;
       text-decoration: none; }
 
+/* line 83, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
 .group-container-menu.group_data ul li a {
   background: #197197;
   color: #ffffff; }
+
+/* line 88, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group.scss */
 .group-container-menu.group_data ul li a.active,
 .group-container-menu.group_data ul li a:hover {
   color: #ffffff;
   background: #009cdd;
   text-decoration: none; }
 
+/* line 2, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group_voting.scss */
 .group_voting ul {
   padding: 0; }
+  /* line 4, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group_voting.scss */
   .group_voting ul li {
     width: 10%;
     background: #f0f0f0;
@@ -1211,30 +1515,38 @@ footer.footer {
     float: left;
     padding: 10px 5px 5px 5px;
     text-align: center; }
+    /* line 12, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group_voting.scss */
     .group_voting ul li b {
       font-size: 18px;
       text-align: justify; }
+    /* line 16, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group_voting.scss */
     .group_voting ul li font {
       font-size: 14px;
       text-transform: uppercase; }
 
+/* line 23, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_group_voting.scss */
 .trololo {
   color: #fff; }
 
+/* line 1, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
 .recent-activity {
   color: #505050; }
+  /* line 4, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
   .recent-activity #scrollbar-recent-activity {
     position: relative;
     width: 100%;
     height: 100%; }
+  /* line 10, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
   .recent-activity section {
     clear: both; }
+    /* line 13, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
     .recent-activity section span.date {
       width: 50px;
       font-size: 16px;
       font-weight: 400;
       float: left;
       margin: 20px 0 0 0; }
+    /* line 21, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
     .recent-activity section ul {
       margin: 0 20px 0 0;
       list-style-type: none;
@@ -1242,13 +1554,17 @@ footer.footer {
       border-top: 1px solid #f0f0f0;
       padding: 0px 15px 0 0;
       width: calc(100% - 70px); }
+      /* line 29, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
       .recent-activity section ul li:first-child {
         margin: 20px 0 30px 0; }
+      /* line 33, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
       .recent-activity section ul li:last-child {
         margin: 30px 0 20px 0; }
+      /* line 37, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
       .recent-activity section ul li {
         margin: 30px 0 30px 0;
         position: relative; }
+        /* line 41, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
         .recent-activity section ul li span {
           margin: 0;
           width: 50px;
@@ -1257,14 +1573,17 @@ footer.footer {
           position: absolute;
           top: 2px;
           font-size: 25px; }
+        /* line 51, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
         .recent-activity section ul li p {
           display: inline-block;
           font-size: 16px;
           font-weight: 300;
           margin: 0 0 0 65px; }
+          /* line 58, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_recentactivity.scss */
           .recent-activity section ul li p a {
             font-weight: 400; }
 
+/* line 3, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon {
   width: 30px;
   height: 30px;
@@ -1273,39 +1592,51 @@ footer.footer {
   background-repeat: no-repeat;
   background-position: center; }
 
+/* line 12, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-clanstva {
   background-image: url("http://cdn.parlameter.si/v1/icons/clanstva.svg"); }
 
+/* line 15, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-skupina {
   background-image: url("http://cdn.parlameter.si/v1/icons/skupina.svg"); }
 
+/* line 18, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-delaza {
   background-image: url("http://cdn.parlameter.si/v1/icons/delaza.svg"); }
 
+/* line 21, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-mandat {
   background-image: url("http://cdn.parlameter.si/v1/icons/mandat.svg"); }
 
+/* line 24, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-status {
   background-image: url("http://cdn.parlameter.si/v1/icons/status.svg"); }
 
+/* line 27, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-izobrazba {
   background-image: url("http://cdn.parlameter.si/v1/icons/izobrazba.svg"); }
 
+/* line 30, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-starost {
   background-image: url("http://cdn.parlameter.si/v1/icons/starost.svg"); }
 
+/* line 34, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-za {
   background-image: url("http://cdn.parlameter.si/v1/icons/za.svg"); }
 
+/* line 37, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-ni {
   background-image: url("http://cdn.parlameter.si/v1/icons/ni.svg"); }
 
+/* line 40, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-proti {
   background-image: url("http://cdn.parlameter.si/v1/icons/proti.svg"); }
 
+/* line 43, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-govor {
   background-image: url("http://cdn.parlameter.si/v1/icons/govor.svg"); }
 
+/* line 47, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-facebook {
   width: 22px;
   height: 22px;
@@ -1314,6 +1645,7 @@ footer.footer {
   bottom: -5px;
   background-image: url("http://cdn.parlameter.si/v1/icons/facebook.svg"); }
 
+/* line 55, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-twitter {
   width: 22px;
   height: 22px;
@@ -1322,6 +1654,7 @@ footer.footer {
   bottom: -5px;
   background-image: url("http://cdn.parlameter.si/v1/icons/twitter.svg"); }
 
+/* line 63, C:/wamp/www/dnd_parla5/parlameter/razrezi_together/public/parlassets/scss/_icons.scss */
 .parlaicon-linkedin {
   width: 22px;
   height: 22px;
