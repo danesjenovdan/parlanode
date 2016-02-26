@@ -1,0 +1,95 @@
+.group-container {
+    height: 100%;
+    left: 0;
+    margin-left: -9px;
+    margin-right: -9px;
+    margin-top: 20px;
+    overflow: hidden;
+    padding: 0 20px;
+    position: relative;
+    top: 0;
+    .header {
+        margin-bottom: 20px;
+    }
+    h1 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 22px;
+    }
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    font,
+    font.date {
+        font-weight: 300;
+        font-size: 18px;
+    }
+    group_data {}
+    .me_group {
+        padding-bottom: 30px;
+        .progress-bar {
+            background: $funblue;
+        }
+        .col150 {
+            width: 20%;
+        }
+        .col280 {
+            width: 80%;
+        }
+        .group_data_title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .group_data_title a {
+            color: inherit;
+        }
+    }
+}
+.group-container-menu {
+    ul {
+        padding: 0;
+        li {
+            display: table;
+            overflow: hidden;
+            float: left;
+            text-align: center;
+            list-style: none;
+            margin-right: 10px;
+            a {
+                display: table-cell;
+                vertical-align: middle;
+                line-height: 30px;
+                //                width: 160px;
+                color: $black;
+                border: 1px solid $darkgrey;
+                padding: 0 20px;
+                text-transform: uppercase;
+            }
+            a.active,
+            a:hover {
+                color: $white;
+                background: $funblue;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.group-container-menu.group_data {
+    ul {
+        li {
+            a {
+                background: $sadblue;
+                color: $white;
+            }
+            a.active,
+            a:hover {
+                color: $white;
+                background: $funblue;
+                text-decoration: none;
+            }
+        }
+    }
+}

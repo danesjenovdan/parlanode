@@ -1,0 +1,225 @@
+    .col50 {
+        /*width: 50px;*/
+        width: 11.6%;
+        float: left;
+    }
+    .col150 {
+        /*width: 150px;*/
+        width: 34.9%;
+        float: left;
+    }
+    .col100 {
+        /*width: 100px;*/
+        width: 23.2%;
+        float: left;
+    }
+    .col180 {
+        /*width: 170px;*/
+        width: 41.8%;
+        float: left;
+    }
+    .col280 {
+        /*width: 280px;*/
+        width: 65.1%;
+        float: left;
+    }
+    .col300 {
+        /*width: 300px;*/
+        width: 69.7%;
+        float: left;
+    }
+    .nopadding {
+        padding: 0;
+    }
+    .bgwhite {
+        background: $white;
+    }
+    .me_poslanec {
+        padding-bottom: 30px;
+    }
+    .me_poslanec .poslanec_title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .other_poslanec {
+        padding-bottom: 30px;
+    }
+    .other_poslanec .poslanec_title {
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .progress {
+        border: none;
+        box-shadow: none;
+        background: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    .progress-bar {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .progress.hugebar {
+        height: 40px;
+    }
+    .progress.hugebar .red {
+        background: $red;
+    }
+    .progress.smallbar .funblue {
+        background: $funblue;
+    }
+    .me_poslanec .progress_number {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .other_poslanec .avgmin {}
+    .other_poslanec .progress_number {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .avgminmin {}
+    .avgminimg {
+        float: left;
+        position: relative;
+        left: -5px;
+    }
+    .avgminimg img {}
+    .other_poslanec .img-circle {
+        width: 35px;
+    }
+    .progress.avgminmin {
+        height: 30px;
+    }
+    .avgminmin .progress-bar {
+        margin-top: 6px;
+        height: 20px;
+    }
+    .avgminmin .progress_number {
+        padding-top: 5px;
+    }
+    .progress_number {
+        display: inline-block;
+        padding-left: 10px;
+    }
+    .poslanec .nav-tabs {
+        border-bottom: none;
+        padding-bottom: 40px;
+    }
+    .poslanec .nav-tabs > li {
+        margin-right: 10px;
+    }
+    .poslanec .nav > li > a {
+        padding: 10px 0 2px 0;
+    }
+    .poslanec .nav > li > a:hover {
+        background: none;
+    }
+    .poslanec .nav-tabs > li > a {
+        border-radius: 0;
+        border: none;
+        color: $black;
+    }
+    .poslanec .nav-tabs > li.active > a {
+        font-weight: 500;
+        border-bottom: 2px solid $funblue;
+        color: $black;
+    }
+    .poslanec .tab-content .poslanec_title {
+        font-size: 16px;
+    }
+    .poslanec .tab-content .me_poslanec {
+        padding-bottom: 40px;
+    }
+    .poslanec .tab-content .other_poslanec {
+        padding-bottom: 40px;
+    }
+    .poslanec .row {}
+    .poslanec .bordertop {
+        border-top: 1px solid #f0f0f0;
+    }
+    .poslanec .key {
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 0px;
+        color: #505050;
+        width: 88%;
+    }
+    .poslanec a {
+        color: $sadblue;
+    }
+    .poslanec .glyphicon {}
+    .poslanec .value {}
+    .noborder {
+        border: none;
+    }
+    .poslanec .getListFriendlyBodies {
+        font-size: 16px;
+    }
+    .poslanec .getListFriendlyBodies .tab-pane {
+        padding: 10px 0;
+        text-align: center;
+    }
+    .poslanec .getListFriendlyBodies .nav-tabs {
+        border: none;
+        text-align: center;
+    }
+    .poslanec .getListFriendlyBodies .nav-tabs li {
+        display: inline-block;
+        float: none;
+        margin: 0;
+        text-align: center;
+    }
+    .poslanec .getListFriendlyBodies .nav-tabs li a {
+        border: medium none;
+        border-radius: 0;
+        padding: 5px;
+        color: $funblue;
+        font-size: 40px;
+        line-height: 20px;
+    }
+    .poslanec .getListFriendlyBodies .nav-tabs li.active a {
+        color: $red;
+    }
+    .me_poslanec_mini {
+        padding-bottom: 20px;
+    }
+    .me_poslanec_mini .poslanec_title {
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .me_poslanec_mini .progress_number {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .progress.hugebar2 {
+        height: 30px;
+    }
+    .progress.smallbar .red,
+    .indicator.red {
+        background: $red;
+    }
+    .progress.smallbar .sadblue-light,
+    .indicator.sadblue-light {
+        background: $sadblue-light;
+    }
+    .progress.smallbar .ignoreblue,
+    .indicator.ignoreblue {
+        background: $ignoreblue;
+    }
+    .progress.smallbar .funblue,
+    .indicator.funblue {
+        background: $funblue;
+    }
+    .progress.smallbar .noblue,
+    .indicator.noblue {
+        background: $noblue;
+    }
+    .progress.smallbar .fontblue,
+    .indicator.fontblue {
+        background: $fontblue;
+    }
+    .progress.smallbar .funblue-light,
+    .indicator.funblue-light {
+        background: $funblue-light;
+    }

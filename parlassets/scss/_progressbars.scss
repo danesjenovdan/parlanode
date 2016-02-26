@@ -1,0 +1,151 @@
+.me_poslanec {
+    padding-bottom: 30px;
+}
+
+.me_poslanec .poslanec_title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.me_poslanec .progress_number {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.me_poslanec_mini {
+    padding-bottom: 20px;
+}
+.me_poslanec_mini .poslanec_title{
+    font-size: 18px;
+    font-weight: 100;
+}
+.me_poslanec_mini .progress_number{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
+
+.other_poslanec {
+    padding-bottom: 30px;
+}
+
+.other_poslanec .poslanec_title {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.progress {
+    border: none;
+    box-shadow: none;
+    background: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.progress-bar {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.progress.hugebar2 {
+    height: 30px;
+}
+.progress.hugebar {
+    height: 38px;
+}
+
+.progress.hugebar .red {
+    background: $red;
+}
+.progress.smallbar .funblue {
+    background: $funblue;
+}
+
+.progress.smallbar .red {
+    background: $red;
+}
+
+.progress_number {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+
+.other_poslanec .avgmin {}
+
+.other_poslanec .progress_number {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.avgminmin {}
+
+.avgminimg {
+    float: left;
+    position: relative;
+    left: -5px;
+}
+
+.avgminimg img {}
+
+.other_poslanec .img-circle {
+    width: 35px;
+}
+
+.progress.avgminmin {
+    height: 30px;
+}
+
+.avgminmin .progress-bar {
+    margin-top: 6px;
+    height: 20px;
+}
+
+.avgminmin .progress_number {
+    padding-top: 5px;
+}
+
+
+.poslanec .nav-tabs{
+    border-bottom: none;
+    padding-bottom: 40px;
+}
+.poslanec .nav-tabs > li{
+    margin-right: 10px;
+}
+.poslanec .nav > li > a{
+    padding: 10px 0 2px 0;
+}
+.poslanec .nav > li > a:hover{
+    background: none;
+}
+.poslanec .nav-tabs > li > a{
+    border-radius: 0;
+    border: none;
+    color: $black;
+}
+.poslanec .nav-tabs > li.active > a{
+    font-weight: 500;
+    border-bottom: 2px solid $funblue;
+    color: $black;
+}
+.poslanec .tab-content .poslanec_title{
+    font-size: 16px;
+}
+
+.poslanec .tab-content .me_poslanec{
+    padding-bottom: 40px;
+}
+.poslanec .tab-content .other_poslanec{
+    padding-bottom: 40px;
+}
+
+.hugebar {
+    .cptin {
+        font-size: 18px;
+        line-height: 38px;
+    }
+}

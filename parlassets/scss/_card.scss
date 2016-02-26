@@ -1,0 +1,93 @@
+.card-container {
+    margin-top: 20px;
+    /* overriding bootstrap's padding */
+    margin-left: -9px;
+    margin-right: -9px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    background-color: #ffffff;
+    @include card(1);
+}
+.card-header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.card-header .card-header-border {
+    height: 40px;
+    width: 3px;
+    background-image: url('http://cdn.parlameter.si/v1/img/cardheaderborder.png');
+    margin-right: 13px;
+    float: left;
+}
+.card-header h1 {
+    margin: 0;
+    font-size: 24px!important;
+    line-height: 40px;
+}
+.card-content {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.col-md-6 > .card-container .card-content {
+    height: 480px;
+}
+.col-md-6 > .card-container .card-content.half {
+    height: 220px;
+}
+.card-placeholder {
+    background-color: $grey;
+    width: 100%;
+    height: 300px;
+}
+.card-footer {
+    @extend .card-header;
+    height: 62px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    /* this background thing is a hack, still work TODO */
+    background-image: url('http://cdn.parlameter.si/v1/img/shortline.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.card-circle-button {
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right;
+    margin-left: 8px;
+    @include border-radius(50%);
+    background-color: $sadblue;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+}
+.card-info {
+    font-weight: 100;
+}
+.card-embed {
+    background-image: url('http://cdn.parlameter.si/v1/icons/embed.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 70%;
+}
+.card-share {
+    background-image: url('http://cdn.parlameter.si/v1/icons/share.svg');
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    background-size: 50% 50%;
+}
+
+/*  */

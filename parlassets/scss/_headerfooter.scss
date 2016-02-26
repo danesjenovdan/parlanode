@@ -1,0 +1,64 @@
+header.header {
+    padding-top: 10px;
+    background: url(../img/top.png) top center no-repeat;
+    .logo {
+        background: url(../img/logo.png) center no-repeat;
+        width: 150px;
+        height: 80px;
+    }
+    .navbar-collapse.collapse {
+        margin-top: 20px;
+    }
+    .navbar-default {
+        background-color: transparent;
+        padding-top: 10px;
+    }
+    .navbar {
+        border-radius: 0;
+        border-bottom: 1px solid $darkgrey;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .navbar-nav > li > a {
+        margin: 0 30px;
+        font-size: 18px;
+    }
+    /*    .navbar {
+        border: none;
+        margin-bottom: 20px;
+        min-height: 50px;
+        position: relative;
+    }
+*/
+    .navbar-form .form-group {
+        display: none;
+    }
+    .search {
+        border: none;
+        border-radius: 0;
+    }
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 120px;
+}
+footer.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 120px;
+    background: url(../img/bottom.png) bottom center no-repeat;
+    .cnt {
+        border-top: 1px solid $darkgrey;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+}

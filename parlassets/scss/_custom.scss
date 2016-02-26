@@ -1,0 +1,66 @@
+$border-light : #f0f0f0;
+
+.recent-activity {
+  color: $black;
+
+    #scrollbar {
+    }
+
+    section {
+        clear: both;
+
+        span.date {
+            width: 50px;
+            font-size: 16px;
+            font-weight: 400;
+            float: left;
+            margin: 20px 0 0 0;
+        }
+
+        ul {
+            margin: 0 20px 0 0;
+            list-style-type: none;
+            float: left;
+            border-top: 1px solid $border-light;
+            padding: 0px 15px 0 0;
+            width: calc(100% - 70px);
+
+            li:first-child {
+                margin: 20px 0 30px 0;
+            }
+
+            li:last-child {
+                margin: 30px 0 20px 0;
+            }
+
+            li {
+                margin: 30px 0 30px 0;
+                position: relative;
+
+                span {
+                    margin: 0;
+                    width: 50px;
+                    text-align: center;
+                    display: inline-block;
+                    position: absolute;
+                    top: 2px;
+                    font-size: 25px;
+                }
+
+                p {
+                    display: inline-block;
+
+                    font-size: 16px;
+                    font-weight: 300;
+                    margin: 0 0 0 65px;
+
+                    a {
+                        font-weight: 400;
+                    }
+                }
+
+            }
+        }
+
+      }
+    }

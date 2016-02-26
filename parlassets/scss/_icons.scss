@@ -1,0 +1,70 @@
+$cdn_home: 'http://cdn.parlameter.si/v1/icons/';
+
+.parlaicon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-clanstva {
+    background-image: url($cdn_home + 'clanstva.svg');
+}
+.parlaicon-skupina {
+    background-image: url($cdn_home + 'skupina.svg');
+}
+.parlaicon-delaza {
+    background-image: url($cdn_home + 'delaza.svg');
+}
+.parlaicon-mandat {
+    background-image: url($cdn_home + 'mandat.svg');
+}
+.parlaicon-status {
+    background-image: url($cdn_home + 'status.svg');
+}
+.parlaicon-izobrazba {
+    background-image: url($cdn_home + 'izobrazba.svg');
+}
+.parlaicon-starost {
+    background-image: url($cdn_home + 'starost.svg');
+}
+
+.parlaicon-za {
+    background-image: url($cdn_home + 'za.svg');
+}
+.parlaicon-ni {
+    background-image: url($cdn_home + 'ni.svg');
+}
+.parlaicon-proti {
+    background-image: url($cdn_home + 'proti.svg');
+}
+.parlaicon-govor {
+    background-image: url($cdn_home + 'govor.svg');
+}
+
+.parlaicon-facebook {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    position: relative;
+    bottom: -5px;
+    background-image: url($cdn_home + 'facebook.svg');
+}
+.parlaicon-twitter {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    position: relative;
+    bottom: -5px;
+    background-image: url($cdn_home + 'twitter.svg');
+}
+.parlaicon-linkedin {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    position: relative;
+    bottom: -5px;
+    background-image: url($cdn_home + 'linkedin.svg');
+}
