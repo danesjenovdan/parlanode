@@ -1,0 +1,91 @@
+.well {
+    padding: 35px 0;
+    text-align: center;
+    background: none;
+    border: none;
+    a {
+        text-align: center;
+        color: $white;
+        font-size: 24px;
+        line-height: 58px;
+        margin: 5px;
+        padding: 10px 10px;
+        background: $funblue;
+        .more {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-style: italic;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+}
+.indexsessionpart {
+    .link {
+        border-top: 1px solid $grey;
+        color: $fontblue;
+        margin-top: 10px;
+        padding: 10px 0 20px;
+        text-transform: uppercase;
+    }
+}
+.seja_transkript {
+    .me_poslanec {
+        .poslanec_title {
+            font-weight: 100;
+            line-height: 34px;
+        }
+        .nmbr {
+            float: left;
+            width: 25px;
+            font-size: 34px;
+            line-height: 34px;
+            color: $grey;
+            font-family: megafont;
+        }
+    }
+}
+.iconshowtype {}
+.iconshowtype {
+    padding: 10px
+}
+.poslanci_search {
+    .form-control {
+        border-radius: 0;
+        border-right: medium none;
+        box-shadow: none;
+        font-size: 20px;
+        height: 40px;
+        background: none;
+    }
+    button.btn {
+        border-radius: 0;
+        border-left: medium none;
+        height: 40px;
+        background: none;
+        box-shadow: none;
+    }
+    .member {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 10px 0;
+        .image {
+            background-position: center center;
+            background-size: 150px auto;
+            border-radius: 50px;
+            height: 80px;
+            width: 80px;
+            img {
+                border-radius: 50px;
+                width: 100%;
+            }
+        }
+        p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+}
+.poslanci_search.nav {}
+.poslanci_search.nav {
+    text-transform: uppercase;
+}

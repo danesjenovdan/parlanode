@@ -394,6 +394,7 @@
     .session_votes {
         text-align: center;
         font-size: 35px;
+        line-height: 40px;
         margin: 15px 0;
         .type {
             font-size: 18px;
@@ -461,6 +462,34 @@
                 font-weight: bold;
                 text-transform: uppercase;
             }
+        }
+    }
+}
+.pspris {
+    background: $grey;
+    float: left;
+    width: 11.1%;
+    margin-right: 10px;
+    text-align: center;
+    span {
+        font-size: 34px;
+        font-weight: 400;
+    }
+    font {
+        text-transform: uppercase;
+        color: black;
+        font-size: 22px;
+        line-height: 36px;
+        display: block;
+    }
+    div {
+        height: 5px;
+        font-size: 5px;
+        line-height: 5px;
+        margin-top: 10px;
+        .border {
+            background: red;
+            width: 56%;
         }
     }
 }

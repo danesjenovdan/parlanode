@@ -223,3 +223,17 @@
     .indicator.funblue-light {
         background: $funblue-light;
     }
+    .nmbr {
+        float: left;
+        width: 30px;
+        font-size: 40px;
+        color: grey;
+        font-family: megafont;
+    }
+    .well {
+        text-align: center;
+    }
+    .indexsessionpart {}
+    .indexsessionpart .link {
+        text-transform: uppercase;
+    }
