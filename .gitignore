@@ -5,7 +5,7 @@ cms-dev
 # Logs
 logs
 *.log
-ecosystem.json
+
 
 # Runtime data
 pids
