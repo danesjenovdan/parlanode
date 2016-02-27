@@ -93,3 +93,48 @@
 /*
 
 */
+.card-header-embed {
+
+    height: 115px;
+
+    .headerimage-container {
+        float: left;
+        width: 80px;
+        height: 80px;
+    }
+
+    .headerwords-container {
+        float: left;
+        margin-left: 15px;
+
+        h1 {
+            color: $funblue;
+            font-weight: 200;
+            font-size: 20px !important;
+            line-height: 20px !important;
+        }
+
+        h2 {
+            color: $black;
+            font-size: 18px;
+            font-weight: 200;
+
+            margin-top: 20px;
+            margin-bottom: 0;
+
+            .name {
+                font-weight: 400;
+            }
+        }
+    }
+}
+.card-embed-header-divider {
+    height: 1px;
+
+    background-image: url('//cdn.parlameter.si/v1/img/shortline.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-left: -20px;
+    margin-right: -20px;
+}
