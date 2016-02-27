@@ -8,7 +8,8 @@ var app         = express();
 var chalk       = require('chalk');
 var serveStatic = require('serve-static');
 var bodyParser  = require('body-parser');
-var cors        = require('cors')
+var cors        = require('cors');
+var siteRouter  = require('./site-router');
 
 exports.init = function(){
 
@@ -17,6 +18,11 @@ exports.init = function(){
         .then(function(){
 
             console.log('Server initialised');
+
+        })
+        .catch(function(err){
+
+            console.log(err);
 
         });
 
@@ -35,6 +41,8 @@ function setupExpress(){
 
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended:true}));
+
+        siteRouter(app);
 
         // start listening on port
         app.listen(CFG.port, function () {
