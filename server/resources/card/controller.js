@@ -18,6 +18,8 @@ exports.update = function(req, res){
 
 };
 
+
+
 /**
  * POST rest method
  * @param req
@@ -48,12 +50,24 @@ exports.save = function(req, res){
  */
 exports.delete = function(req, res){
 
+    var id = req.params.id;
 
+    var Card = mongoose.model('Card');
+
+    Card.findByIdAndRemove(id, function(err, doc){
+
+        if(!err) {
+            res.send(doc);
+        }else{
+            console.log(err);
+            res.sendStatus(400);
+        }
+
+    });
 
 };
 
 exports.get = function(req, res){
-
 
     var Card = mongoose.model('Card');
 
@@ -131,6 +145,7 @@ exports.render = function(req, res){
                             res.end();
 
                         } catch (err) {
+                            console.log(err);
                             res.sendStatus(400);
                         }
 
@@ -140,10 +155,12 @@ exports.render = function(req, res){
 
                 });
             }else{
+                console.log(err);
                 res.sendStatus(404);
             }
 
         }else{
+            console.log(err);
             res.sendStatus(400);
         }
 

@@ -7,6 +7,8 @@ var controller = require('./controller');
 
 module.exports = function(app){
 
+    app.delete('/api/card/:id', controller.delete);
+
     app.get('/api/card', controller.get);
 
     app.post('/api/card', controller.save);
