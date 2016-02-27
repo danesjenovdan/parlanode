@@ -5,7 +5,7 @@
 
 module.exports = function(app){
 
-    app.get('/', function(req, res){
+    app.get('/knedl', function(req, res){
 
         res.render('home', {});
 
