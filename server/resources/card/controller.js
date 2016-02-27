@@ -97,7 +97,7 @@ exports.render = function(req, res){
 
     var Card = mongoose.model('Card');
 
-
+    console.log(group);
 
     Card.findOne({ method:method, group:group }, function(err, doc){
 
@@ -117,6 +117,8 @@ exports.render = function(req, res){
                         try {
                             var data = JSON.parse(body);
                             var mDoc = doc.toObject();
+
+                            console.log(body);
 
                             var html = ejs.render(doc.ejs, {data: data});
 
