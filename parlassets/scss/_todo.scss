@@ -11,7 +11,8 @@
 
   .slider {
     // Predefined width because of the slider
-    width: 818px;
+    //width: 818px;
+    width: 787px;
     float: left;
     overflow: hidden;
     padding: 0 4px;
@@ -83,7 +84,8 @@
     }
 
     .slider {
-      width: 318px;
+      //width: 318px;
+      width: 291px;
       padding: 0 1px;
 
       div.member {
@@ -202,6 +204,7 @@
 
   section {
     clear: both;
+    position: relative;
 
     span.date {
       width: 50px;
@@ -596,4 +599,11 @@
 .poslanci_search.nav {}
 .poslanci_search.nav {
   text-transform: uppercase;
+}
+
+
+.scroller {
+  height: 100%;
+  position: relative;
+  width: 100%;
 }

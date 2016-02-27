@@ -1,16 +1,9 @@
 $(function () {
-
-
     $(".session_transcript .status").click(function () {
-
         $(this).parent().toggleClass("collapsed");
-
         return false;
     });
-
 });
-
-
 
 var votingCardHorizontal = {
     sliderLeftClass: '.navigate-left',
@@ -27,22 +20,15 @@ var votingCardHorizontal = {
     slidePerPage: 6,
     isScrollable: false,
 
-
     init: function () {
         this.initSlider();
     },
 
-
-
     initSlider: function () {
         var currentWidth = $(this.slideHolder).innerWidth();
-
         this.setCard($(window).width());
-
         this.initEvents();
     },
-
-
 
     setCard: function (width) {
         var numOfItems = $(this.slideContent).find("div.member").length;
@@ -60,12 +46,12 @@ var votingCardHorizontal = {
                 this.isScrollable = false;
 
                 scrollContainer.scrollLeft = 0;
+
                 Ps.update(scrollContainer);
 
                 Ps.destroy(scrollContainer);
             }
         }
-
 
         // For ful size card
         if (width > 991) {
@@ -76,7 +62,6 @@ var votingCardHorizontal = {
 
             this.numOfSlides = Math.ceil(numOfItems / this.slidePerPage);
         }
-
 
         // For half size card
         if (width < 991 && width > 500) {
@@ -93,7 +78,6 @@ var votingCardHorizontal = {
         });
     },
 
-
     initEvents: function () {
         var _this = this;
 
@@ -104,15 +88,12 @@ var votingCardHorizontal = {
             _this.changeSlide("next");
         });
 
-
         $(window).resize(function () {
             var ww = $(window).width();
 
             _this.setCard(ww);
         });
     },
-
-
 
     changeSlide: function (toPosition) {
         var _this = this;
@@ -131,8 +112,6 @@ var votingCardHorizontal = {
         });
     },
 
-
-
     initalizeScrollbar: function (id, options) {
         var id = (typeof (id) != 'undefined') ? id : 'scrollbar-voting-card-horizontal';
 
@@ -146,8 +125,10 @@ var votingCardHorizontal = {
         var options = (typeof (options) != 'undefined') ? options : defaultOptions;
 
         var container = document.getElementById(id);
-
         Ps.initialize(container, options);
+
+        //$(".scroller").perfectScrollbar(options);
+
     }
 
 
@@ -161,14 +142,9 @@ $(function () {
 var votingCardTpl = {
 
     init: function () {
-
         // TODO: If more than 6 results than fix span class margin-right  - because of the scroller
-
         this.initalizeScrollbar();
-
     },
-
-
 
     initalizeScrollbar: function (id, options) {
         var id = (typeof (id) != 'undefined') ? id : 'scrollbar-votingCard';
@@ -182,12 +158,12 @@ var votingCardTpl = {
 
         var options = (typeof (options) != 'undefined') ? options : defaultOptions;
 
-        var container = document.getElementById(id);
+        //var container = document.getElementById(id);
+        //Ps.initialize(container, options);
 
-        Ps.initialize(container, options);
+        $(".scroller").perfectScrollbar(options);
+
     }
-
-
 }
 
 
@@ -213,20 +189,37 @@ var lastActivity = {
 
         var options = (typeof (options) != 'undefined') ? options : defaultOptions;
 
-        var container = document.getElementById(id);
+        //var container = document.getElementById(id);
+        //Ps.initialize(container, options);
 
-        Ps.initialize(container, options);
+        $(".scroller").perfectScrollbar(options);
+
     }
 
 
 }
 
 
+var ParlaScroll = {
+    init: function () {
+        this.initalizeScrollbar();
+    },
+    initalizeScrollbar: function () {
+        var defaultOptions = {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 100,
+            maxScrollbarLength: 100
+        };
+        $(".scroller").perfectScrollbar(defaultOptions);
+    }
+}
 
 $(function () {
-    votingCardTpl.init();
+    //votingCardTpl.init();
+    ParlaScroll.init();
 });
 
 $(function () {
-    lastActivity.init();
+    //lastActivity.init();
 });

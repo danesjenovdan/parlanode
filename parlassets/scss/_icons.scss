@@ -1,5 +1,3 @@
-$cdn_home: 'http://cdn.parlameter.si/v1/icons/';
-
 .parlaicon {
     width: 30px;
     height: 30px;
@@ -10,38 +8,38 @@ $cdn_home: 'http://cdn.parlameter.si/v1/icons/';
 }
 
 .parlaicon-clanstva {
-    background-image: url($cdn_home + 'clanstva.svg');
+    background-image: url($cdn_home_icon + 'clanstva.svg');
 }
 .parlaicon-skupina {
-    background-image: url($cdn_home + 'skupina.svg');
+    background-image: url($cdn_home_icon + 'skupina.svg');
 }
 .parlaicon-delaza {
-    background-image: url($cdn_home + 'delaza.svg');
+    background-image: url($cdn_home_icon + 'delaza.svg');
 }
 .parlaicon-mandat {
-    background-image: url($cdn_home + 'mandat.svg');
+    background-image: url($cdn_home_icon + 'mandat.svg');
 }
 .parlaicon-status {
-    background-image: url($cdn_home + 'status.svg');
+    background-image: url($cdn_home_icon + 'status.svg');
 }
 .parlaicon-izobrazba {
-    background-image: url($cdn_home + 'izobrazba.svg');
+    background-image: url($cdn_home_icon + 'izobrazba.svg');
 }
 .parlaicon-starost {
-    background-image: url($cdn_home + 'starost.svg');
+    background-image: url($cdn_home_icon + 'starost.svg');
 }
 
 .parlaicon-za {
-    background-image: url($cdn_home + 'za.svg');
+    background-image: url($cdn_home_icon + 'za.svg');
 }
 .parlaicon-ni {
-    background-image: url($cdn_home + 'ni.svg');
+    background-image: url($cdn_home_icon + 'ni.svg');
 }
 .parlaicon-proti {
-    background-image: url($cdn_home + 'proti.svg');
+    background-image: url($cdn_home_icon + 'proti.svg');
 }
 .parlaicon-govor {
-    background-image: url($cdn_home + 'govor.svg');
+    background-image: url($cdn_home_icon + 'govor.svg');
 }
 
 .parlaicon-facebook {
@@ -50,7 +48,7 @@ $cdn_home: 'http://cdn.parlameter.si/v1/icons/';
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home + 'facebook.svg');
+    background-image: url($cdn_home_icon + 'facebook.svg');
 }
 .parlaicon-twitter {
     width: 22px;
@@ -58,7 +56,7 @@ $cdn_home: 'http://cdn.parlameter.si/v1/icons/';
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home + 'twitter.svg');
+    background-image: url($cdn_home_icon + 'twitter.svg');
 }
 .parlaicon-linkedin {
     width: 22px;
@@ -66,5 +64,5 @@ $cdn_home: 'http://cdn.parlameter.si/v1/icons/';
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home + 'linkedin.svg');
+    background-image: url($cdn_home_icon + 'linkedin.svg');
 }

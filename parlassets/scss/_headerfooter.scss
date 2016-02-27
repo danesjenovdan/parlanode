@@ -1,8 +1,8 @@
 header.header {
     padding-top: 10px;
-    background: url(../img/top.png) top center no-repeat;
+    background: url($cdn_home_img + 'top.png') top center no-repeat;
     .logo {
-        background: url(../img/logo.png) center no-repeat;
+        background: url($cdn_home_img + 'logo.png') center no-repeat;
         width: 150px;
         height: 80px;
     }
@@ -55,7 +55,7 @@ footer.footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 120px;
-    background: url(../img/bottom.png) bottom center no-repeat;
+    background: url($cdn_home_img + 'bottom.png') bottom center no-repeat;
     .cnt {
         border-top: 1px solid $darkgrey;
         padding-top: 10px;

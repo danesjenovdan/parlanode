@@ -294,14 +294,14 @@
             margin-right: 1%;
         }
         a .status {
-            background: url(../img/arrup.png) top center no-repeat;
+            background: url($cdn_home_img + 'arrup.png') top center no-repeat;
             width: 40px;
             height: 40px;
             display: inline-block;
             float: right;
         }
         a.collapsed .status {
-            background: url(../img/arrdown.png) top center no-repeat;
+            background: url($cdn_home_img + 'arrdown.png') top center no-repeat;
             width: 40px;
             height: 40px;
         }
@@ -325,7 +325,7 @@
         position: relative;
     }
     .panel-collapse .status a {
-        background: url(../img/arrup.png) top center no-repeat;
+        background: url($cdn_home_img + 'arrup.png') top center no-repeat;
         width: 40px;
         height: 40px;
         display: inline-block;
@@ -335,7 +335,7 @@
         text-decoration: none;
     }
     .panel-collapse.collapsed .status a {
-        background: url(../img/arrdown.png) top center no-repeat;
+        background: url($cdn_home_img + 'arrdown.png') top center no-repeat;
         width: 40px;
         height: 40px;
         display: inline-block;
@@ -526,4 +526,3 @@
         }
     }
 }
-.t {}
