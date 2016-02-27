@@ -17,11 +17,11 @@ body {
   background-color: #f0f0f0; }
 
 .container {
-  max-width: 473px; }
+  max-width: 520px; }
 
 @media (min-width: 992px) {
   .container {
-    max-width: 970px; } }
+    max-width: 1010px; } }
 a:focus, button:focus {
   outline: none; }
 
@@ -128,6 +128,37 @@ a:focus, button:focus {
 /*
 
 */
+.card-header-embed {
+  height: 115px; }
+  .card-header-embed .headerimage-container {
+    float: left;
+    width: 80px;
+    height: 80px; }
+  .card-header-embed .headerwords-container {
+    float: left;
+    margin-left: 15px; }
+    .card-header-embed .headerwords-container h1 {
+      color: #009cdd;
+      font-weight: 200;
+      font-size: 20px !important;
+      line-height: 20px !important; }
+    .card-header-embed .headerwords-container h2 {
+      color: #505050;
+      font-size: 18px;
+      font-weight: 200;
+      margin-top: 20px;
+      margin-bottom: 0; }
+      .card-header-embed .headerwords-container h2 .name {
+        font-weight: 400; }
+
+.card-embed-header-divider {
+  height: 1px;
+  background-image: url("//cdn.parlameter.si/v1/img/shortline.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: -20px;
+  margin-right: -20px; }
+
 header.header {
   padding-top: 10px;
   background: url("https://cdn.parlameter.si/v1/img/top.png") top center no-repeat;
@@ -265,38 +296,6 @@ footer.footer {
 
 .avgminmin .progress_number {
   padding-top: 5px; }
-
-.poslanec .nav-tabs {
-  border-bottom: none;
-  padding-bottom: 40px; }
-
-.poslanec .nav-tabs > li {
-  margin-right: 10px; }
-
-.poslanec .nav > li > a {
-  padding: 10px 0 2px 0; }
-
-.poslanec .nav > li > a:hover {
-  background: none; }
-
-.poslanec .nav-tabs > li > a {
-  border-radius: 0;
-  border: none;
-  color: #505050; }
-
-.poslanec .nav-tabs > li.active > a {
-  font-weight: 500;
-  border-bottom: 2px solid #009cdd;
-  color: #505050; }
-
-.poslanec .tab-content .poslanec_title {
-  font-size: 16px; }
-
-.poslanec .tab-content .me_poslanec {
-  padding-bottom: 40px; }
-
-.poslanec .tab-content .other_poslanec {
-  padding-bottom: 40px; }
 
 .hugebar .cptin {
   font-size: 18px;
@@ -939,6 +938,138 @@ footer.footer {
   bottom: -5px;
   background-image: url("https://cdn.parlameter.si/v1/icons/linkedin.svg"); }
 
+/* perfect-scrollbar v0.6.10 */
+.ps-container {
+  -ms-touch-action: none;
+  touch-action: none;
+  overflow: hidden !important;
+  -ms-overflow-style: none; }
+
+@supports (-ms-overflow-style: none) {
+  .ps-container {
+    overflow: auto !important; } }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps-container {
+    overflow: auto !important; } }
+.ps-container.ps-active-x > .ps-scrollbar-x-rail,
+.ps-container.ps-active-y > .ps-scrollbar-y-rail {
+  display: block;
+  background-color: transparent; }
+
+.ps-container.ps-in-scrolling {
+  pointer-events: none; }
+
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail {
+  background-color: #eee;
+  opacity: 0.9; }
+
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  background-color: #197197; }
+
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail {
+  background-color: #eee;
+  opacity: 0.9; }
+
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: #197197; }
+
+.ps-container > .ps-scrollbar-x-rail {
+  display: none;
+  position: absolute;
+  /* please don't change 'position' */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  -moz-transition: background-color .2s linear, opacity .2s linear;
+  -o-transition: background-color .2s linear, opacity .2s linear;
+  transition: background-color .2s linear, opacity .2s linear;
+  bottom: 3px;
+  /* there must be 'bottom' for ps-scrollbar-x-rail */
+  height: 8px; }
+
+.ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  position: absolute;
+  /* please don't change 'position' */
+  background-color: #197197;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color .2s linear;
+  -moz-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+  bottom: 0;
+  /* there must be 'bottom' for ps-scrollbar-x */
+  height: 8px; }
+
+.ps-container > .ps-scrollbar-y-rail {
+  display: none;
+  position: absolute;
+  /* please don't change 'position' */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  -moz-transition: background-color .2s linear, opacity .2s linear;
+  -o-transition: background-color .2s linear, opacity .2s linear;
+  transition: background-color .2s linear, opacity .2s linear;
+  right: 3px;
+  /* there must be 'right' for ps-scrollbar-y-rail */
+  width: 8px; }
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  position: absolute;
+  /* please don't change 'position' */
+  background-color: #197197;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color .2s linear;
+  -moz-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+  right: 0;
+  /* there must be 'right' for ps-scrollbar-y */
+  width: 8px; }
+
+.ps-container:hover.ps-in-scrolling {
+  pointer-events: none; }
+
+.ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail {
+  background-color: #eee;
+  opacity: 0.9; }
+
+.ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  background-color: #197197; }
+
+.ps-container:hover.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail {
+  background-color: #eee;
+  opacity: 0.9; }
+
+.ps-container:hover.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: #197197; }
+
+.ps-container:hover > .ps-scrollbar-x-rail,
+.ps-container:hover > .ps-scrollbar-y-rail {
+  opacity: 0.6; }
+
+.ps-container:hover > .ps-scrollbar-x-rail:hover {
+  background-color: #eee;
+  opacity: 0.9; }
+
+.ps-container:hover > .ps-scrollbar-x-rail:hover > .ps-scrollbar-x {
+  background-color: #197197; }
+
+.ps-container:hover > .ps-scrollbar-y-rail:hover {
+  background-color: #eee;
+  opacity: 0.9; }
+
+.ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y {
+  background-color: #197197; }
+
 #votingCardHorizontal {
   color: #505050;
   margin-right: 4px;
@@ -1201,23 +1332,27 @@ footer.footer {
   padding-bottom: 40px; }
 
 .poslanec .nav-tabs > li {
-  margin-right: 10px; }
+  width: 25%;
+  text-align: center; }
 
 .poslanec .nav > li > a {
-  padding: 10px 0 2px 0; }
+  padding: 10px 7px;
+  margin: 0 1px 0 0;
+  border: none; }
 
 .poslanec .nav > li > a:hover {
-  background: none; }
+  border: none; }
 
 .poslanec .nav-tabs > li > a {
   border-radius: 0;
   border: none;
-  color: #505050; }
+  color: #505050;
+  background: #f0f0f0; }
 
 .poslanec .nav-tabs > li.active > a {
-  font-weight: 500;
-  border-bottom: 2px solid #009cdd;
-  color: #505050; }
+  color: #ffffff;
+  background: #009cdd;
+  border: none; }
 
 .poslanec .tab-content .poslanec_title {
   font-size: 16px; }
@@ -1401,5 +1536,74 @@ footer.footer {
   height: 100%;
   position: relative;
   width: 100%; }
+
+.searchnastopi .row .border {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+  padding-bottom: 10px; }
+.searchnastopi .row .member {
+  padding: 10px 0; }
+  .searchnastopi .row .member .image {
+    width: 75px;
+    height: 75px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background-position: center center;
+    background-size: 150px;
+    float: left; }
+  .searchnastopi .row .member p {
+    margin: 12px 0 0 40px;
+    float: left;
+    font-size: 18px;
+    font-weight: 300; }
+  .searchnastopi .row .member span {
+    float: right;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 12px 0 0 0; }
+.searchnastopi .row .desc {
+  font-size: 16px;
+  font-weight: 300; }
+
+.getPager .pagination {
+  text-align: center;
+  width: 280px;
+  margin: 0 auto;
+  display: block; }
+  .getPager .pagination li a {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #dbdbdb;
+    color: #505050;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none; }
+    .getPager .pagination li a span {
+      color: #505050; }
+  .getPager .pagination li.active a {
+    background: #009cdd;
+    color: #ffffff; }
+
+.nav-tabs > li.width50p {
+  width: 50%; }
+
+.nav-tabs > li.width33p {
+  width: 33%; }
+
+.izracunana_prisotnost .tab-content .me_poslanec {
+  padding-bottom: 10px; }
+  .izracunana_prisotnost .tab-content .me_poslanec .hugebar {
+    height: 20px; }
+  .izracunana_prisotnost .tab-content .me_poslanec .progress_number {
+    font-size: 25px;
+    line-height: 20px; }
+.izracunana_prisotnost .tab-content .other_poslanec {
+  padding-bottom: 10px; }
+
+.clanstva .tab-content .tab-pane {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
