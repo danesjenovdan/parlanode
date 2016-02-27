@@ -32,14 +32,31 @@ exports.save = function(req, res){
     cardData.uniquePath = cardData.group+'/'+cardData.method;
 
     var Card = mongoose.model('Card');
-    var card = new Card(cardData);
 
-    card.save(function(err){
+    Card.findOne({group:cardData.group, method:cardData.method}, function(err, doc){
 
-        console.log(err);
-        res.send(card);
+        if(!doc) {
+
+            var card = new Card(cardData);
+
+            card.save(function (err) {
+
+                console.log(err);
+                res.send(card);
+
+            });
+
+        }else{
+            //conflict
+
+            console.log('conflict');
+            res.sendStatus(409);
+
+        }
 
     });
+
+
 
 };
 
