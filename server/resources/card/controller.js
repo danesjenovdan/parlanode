@@ -14,10 +14,25 @@ var ejs = require('ejs');
  */
 exports.update = function(req, res){
 
+    var id      = req.params.id;
+    var data    = req.body;
 
+    console.log('Update card');
+
+    var Card = mongoose.model('Card');
+
+    Card.findByIdAndUpdate(id, data, function(err, doc){
+
+        if(!err) {
+            res.send(doc);
+        }else{
+            console.log(err);
+            res.sendStatus(400);
+        }
+
+    });
 
 };
-
 
 
 /**
