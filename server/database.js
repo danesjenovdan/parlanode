@@ -8,7 +8,8 @@ exports.connect = function(cb){
 
     return new Promise(function(resolve, reject){
 
-        mongoose.connect(CFG.db.url+CFG.db.name);
+        mongoose.connect('admin:mypassword@ds047945.mongolab.com:47945/heroku_72h76cfr');
+        //mongoose.connect(CFG.db.url+CFG.db.name);
 
         mongoose.connection.on('error', function(err){
 
