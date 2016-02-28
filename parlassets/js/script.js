@@ -1,10 +1,3 @@
-$(function () {
-    $(".session_transcript .status").click(function () {
-        $(this).parent().toggleClass("collapsed");
-        return false;
-    });
-});
-
 var votingCardHorizontal = {
     sliderLeftClass: '.navigate-left',
     slideRightClass: '.navigate-right',
@@ -134,9 +127,6 @@ var votingCardHorizontal = {
 
 }
 
-$(function () {
-    votingCardHorizontal.init();
-});
 
 
 var votingCardTpl = {
@@ -215,11 +205,19 @@ var ParlaScroll = {
     }
 }
 
-$(function () {
-    //votingCardTpl.init();
-    ParlaScroll.init();
-});
 
 $(function () {
+    ParlaScroll.init();
+
+    votingCardHorizontal.init();
+
+    if($(".session_transcript .status").length > 0) {
+        $(".session_transcript .status").click(function () {
+            $(this).parent().toggleClass("collapsed");
+            return false;
+        });
+    }
+
+    //votingCardTpl.init();
     //lastActivity.init();
 });
