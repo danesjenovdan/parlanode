@@ -223,6 +223,7 @@ var cardInfo =  {
     overlay: "",
     helpertype: "",
     openclose: 0,
+    button: 0,
 
     init: function () {
         this.getCardInfo();
@@ -235,6 +236,8 @@ var cardInfo =  {
         var _this = this;
 
         $(".card-circle-button").click(function () {
+
+            _this.button = $(this);
 
             if(_this.openclose){
                 _this.closeOverlysBox();
@@ -286,6 +289,7 @@ var cardInfo =  {
 
 
         this.openclose = 1;
+        _this.button.addClass("card-circle-closed");
 
     },
     closeOverlysBox: function(){
@@ -296,6 +300,7 @@ var cardInfo =  {
         this.overlay.remove();
 
         this.openclose = 0;
+        _this.button.removeClass("card-circle-closed");
     }
 }
 

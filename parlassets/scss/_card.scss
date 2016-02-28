@@ -143,3 +143,17 @@
     margin: 0 0 10px;
     padding: 0;
 }
+
+.card-circle-button.card-circle-open{
+    background-image:none;
+}
+.card-circle-button.card-circle-open::after{
+
+}
+.card-circle-button.card-circle-close{
+
+}
+.card-circle-button.card-circle-closed{
+    background-image:none;
+    content: "X";
+}

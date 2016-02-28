@@ -163,6 +163,13 @@ a:focus, button:focus {
   margin: 0 0 10px;
   padding: 0; }
 
+.card-circle-button.card-circle-open {
+  background-image: none; }
+
+.card-circle-button.card-circle-closed {
+  background-image: none;
+  content: "X"; }
+
 header.header {
   padding-top: 10px;
   background: url("https://cdn.parlameter.si/v1/img/top.png") top center no-repeat;
