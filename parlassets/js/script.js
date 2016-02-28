@@ -215,9 +215,93 @@ var ParlaScroll = {
     }
 }
 
+var cardInfo =  {
+
+    card: "",
+    cardContent: "",
+    parent: "",
+    overlay: "",
+    helpertype: "",
+    openclose: 0,
+
+    init: function () {
+        this.getCardInfo();
+
+        //this.overlay = $("#cardInfoBox");
+
+    },
+    getCardInfo: function(){
+
+        var _this = this;
+
+        $(".card-circle-button").click(function () {
+
+            if(_this.openclose){
+                _this.closeOverlysBox();
+                return false;
+            }
+
+
+            var base = $(this);
+
+            if(base.hasClass("card-share")){
+                _this.helpertype = "share";
+                _this.overlay = $("#cardShareBox").clone();
+            }
+
+            if(base.hasClass("card-embed")){
+                _this.helpertype = "embed";
+                _this.overlay = $("#cardEmbedBox").clone();
+            }
+
+            if(base.hasClass("card-info")){
+                _this.helpertype = "info";
+                _this.overlay = $("#cardInfoBox").clone();
+            }
+
+            _this.card = base.parents(".card-container");
+
+            _this.displayOverlysBox();
+
+        });
+
+    },
+    displayOverlysBox: function(){
+
+
+
+        this.cardContent = this.card.find(".card-content");
+
+        console.log(this.card);
+
+        this.cardContent.hide();
+
+        this.overlay.height(this.cardContent.height());
+        this.overlay.show();
+
+
+        this.overlay.insertAfter(this.cardContent);
+
+        console.log(this.overlay);
+
+
+        this.openclose = 1;
+
+    },
+    closeOverlysBox: function(){
+
+
+        this.cardContent.show();
+        this.overlay.hide();
+        this.overlay.remove();
+
+        this.openclose = 0;
+    }
+}
 
 $(function () {
     ParlaScroll.init();
+    cardInfo.init();
 
     votingCardHorizontal.init();
 

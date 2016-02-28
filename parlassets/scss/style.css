@@ -159,6 +159,10 @@ a:focus, button:focus {
   margin-left: -20px;
   margin-right: -20px; }
 
+.cardhelper {
+  margin: 0 0 10px;
+  padding: 0; }
+
 header.header {
   padding-top: 10px;
   background: url("https://cdn.parlameter.si/v1/img/top.png") top center no-repeat;
@@ -480,7 +484,10 @@ footer.footer {
   color: #ffffff;
   text-align: center;
   width: 75px;
-  height: 75px; }
+  height: 75px;
+  margin-bottom: 20px;
+  border: 2px solid red;
+  display: inline-block; }
   .session-logo b {
     display: inline-block;
     line-height: 75px;
@@ -706,7 +713,10 @@ footer.footer {
 
 @media (max-width: 950px) {
   .session_type span {
-    padding: 10px; } }
+    padding: 10px; }
+
+  .pspris {
+    width: 22.7%; } }
 @media (max-width: 950px) {
   .session_types {
     width: 420px; }
@@ -749,24 +759,30 @@ footer.footer {
   .member-container font,
   .member-container font.date {
     font-weight: 300;
-    font-size: 18px; }
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 10px; }
 
 .member-container-menu ul {
-  padding: 0; }
+  padding: 0;
+  margin: 0 auto;
+  display: table; }
   .member-container-menu ul li {
     display: table;
     overflow: hidden;
     float: left;
     text-align: center;
     list-style: none;
-    margin-right: 10px; }
+    margin-right: 20px; }
     .member-container-menu ul li a {
-      display: table-cell;
       vertical-align: middle;
+      display: block;
+      font-size: 16px;
+      font-weight: 300;
       line-height: 30px;
+      padding: 10px 40px;
       color: #505050;
       border: 1px solid #dbdbdb;
-      padding: 0 20px;
       text-transform: uppercase; }
     .member-container-menu ul li a.active,
     .member-container-menu ul li a:hover {
@@ -785,6 +801,15 @@ footer.footer {
     font-size: 14px;
     font-weight: 300; }
 
+@media (max-width: 956px) {
+  .member-container-menu ul {
+    padding: 0;
+    margin: 0 auto; }
+    .member-container-menu ul li {
+      margin-right: 2px; }
+      .member-container-menu ul li a {
+        font-size: 14px;
+        padding: 10px 10px; } }
 .group-container {
   height: 100%;
   left: 0;
@@ -809,7 +834,9 @@ footer.footer {
   .group-container font,
   .group-container font.date {
     font-weight: 300;
-    font-size: 18px; }
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 10px; }
   .group-container .me_group {
     padding-bottom: 30px; }
     .group-container .me_group .progress-bar {
@@ -825,21 +852,25 @@ footer.footer {
       color: inherit; }
 
 .group-container-menu ul {
-  padding: 0; }
+  padding: 0;
+  margin: 0 auto;
+  display: table; }
   .group-container-menu ul li {
     display: table;
     overflow: hidden;
     float: left;
     text-align: center;
     list-style: none;
-    margin-right: 10px; }
+    margin-right: 20px; }
     .group-container-menu ul li a {
-      display: table-cell;
       vertical-align: middle;
+      display: block;
+      font-size: 16px;
+      font-weight: 300;
       line-height: 30px;
+      padding: 10px 40px;
       color: #505050;
       border: 1px solid #dbdbdb;
-      padding: 0 20px;
       text-transform: uppercase; }
     .group-container-menu ul li a.active,
     .group-container-menu ul li a:hover {
@@ -856,6 +887,15 @@ footer.footer {
   background: #009cdd;
   text-decoration: none; }
 
+@media (max-width: 956px) {
+  .group-container-menu ul {
+    padding: 0;
+    margin: 0 auto; }
+    .group-container-menu ul li {
+      margin-right: 2px; }
+      .group-container-menu ul li a {
+        font-size: 14px;
+        padding: 10px 10px; } }
 .group_voting ul {
   padding: 0; }
   .group_voting ul li {

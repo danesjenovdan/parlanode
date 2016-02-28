@@ -26,6 +26,8 @@
     font.date {
         font-weight: 300;
         font-size: 18px;
+        display: inline-block;
+        margin-bottom: 10px;
     }
     group_data {}
     .me_group {
@@ -51,21 +53,26 @@
 .group-container-menu {
     ul {
         padding: 0;
+        margin: 0 auto;
+        display: table;
+
         li {
             display: table;
             overflow: hidden;
             float: left;
             text-align: center;
             list-style: none;
-            margin-right: 10px;
+            margin-right: 20px;
             a {
-                display: table-cell;
+
                 vertical-align: middle;
+                display: block;
+                font-size: 16px;
+                font-weight: 300;
                 line-height: 30px;
-                //                width: 160px;
+                padding: 10px 40px;
                 color: $black;
                 border: 1px solid $darkgrey;
-                padding: 0 20px;
                 text-transform: uppercase;
             }
             a.active,
@@ -92,4 +99,23 @@
             }
         }
     }
+}
+
+@media (max-width: 956px) {
+    .group-container-menu {
+        ul {
+            padding: 0;
+            margin: 0 auto;
+
+
+            li {
+                margin-right: 2px;
+                a {
+                    font-size: 14px;
+                    padding: 10px 10px;
+                }
+            }
+        }
+    }
+
 }
