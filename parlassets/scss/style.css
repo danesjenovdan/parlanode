@@ -153,7 +153,7 @@ a:focus, button:focus {
 
 .card-embed-header-divider {
   height: 1px;
-  background-image: url("//cdn.parlameter.si/v1/img/shortline.png");
+  background-image: url("https://cdn.parlameter.si/v1/img/shortline.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: -20px;

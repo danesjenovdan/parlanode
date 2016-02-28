@@ -131,7 +131,7 @@
 .card-embed-header-divider {
     height: 1px;
 
-    background-image: url('//cdn.parlameter.si/v1/img/shortline.png');
+    background-image: url($cdn_home_img + 'shortline.png');
     background-repeat: no-repeat;
     background-size: cover;
 
