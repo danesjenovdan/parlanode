@@ -1,9 +1,12 @@
-$(function () {
-    $(".session_transcript .status").click(function () {
-        $(this).parent().toggleClass("collapsed");
-        return false;
-    });
-});
+function iframeResizePipe()
+{
+    // What's the page height?
+    var height = document.body.scrollHeight;
+    // Going to 'pipe' the data to the parent through the helpframe..
+    var pipe = document.getElementById('helpframe');
+    // Cachebuster a precaution here to stop browser caching interfering
+    pipe.src = 'http://localhost:9001/helper?height='+height+'&cacheb='+Math.random();
+}
 
 var votingCardHorizontal = {
     sliderLeftClass: '.navigate-left',
@@ -134,9 +137,6 @@ var votingCardHorizontal = {
 
 }
 
-$(function () {
-    votingCardHorizontal.init();
-});
 
 
 var votingCardTpl = {
@@ -215,11 +215,108 @@ var ParlaScroll = {
     }
 }
 
-$(function () {
-    //votingCardTpl.init();
-    ParlaScroll.init();
-});
+var cardInfo =  {
+
+    card: "",
+    cardContent: "",
+    parent: "",
+    overlay: "",
+    helpertype: "",
+    openclose: 0,
+    button: 0,
+
+    init: function () {
+        this.getCardInfo();
+
+        //this.overlay = $("#cardInfoBox");
+
+    },
+    getCardInfo: function(){
+
+        var _this = this;
+
+        $(".card-circle-button").click(function () {
+
+            _this.button = $(this);
+
+            if(_this.openclose){
+                _this.closeOverlysBox();
+                return false;
+            }
+
+
+            var base = $(this);
+
+            if(base.hasClass("card-share")){
+                _this.helpertype = "share";
+                _this.overlay = $("#cardShareBox").clone();
+            }
+
+            if(base.hasClass("card-embed")){
+                _this.helpertype = "embed";
+                _this.overlay = $("#cardEmbedBox").clone();
+            }
+
+            if(base.hasClass("card-info")){
+                _this.helpertype = "info";
+                _this.overlay = $("#cardInfoBox").clone();
+            }
+
+            _this.card = base.parents(".card-container");
+
+            _this.displayOverlysBox();
+
+        });
+
+    },
+    displayOverlysBox: function(){
+
+
+
+        this.cardContent = this.card.find(".card-content");
+
+        console.log(this.card);
+
+        this.cardContent.hide();
+
+        this.overlay.height(this.cardContent.height());
+        this.overlay.show();
+
+
+        this.overlay.insertAfter(this.cardContent);
+
+        console.log(this.overlay);
+
+
+        this.openclose = 1;
+        _this.button.addClass("card-circle-closed");
+
+    },
+    closeOverlysBox: function(){
+
+
+        this.cardContent.show();
+        this.overlay.hide();
+        this.overlay.remove();
+
+        this.openclose = 0;
+        _this.button.removeClass("card-circle-closed");
+    }
+}
 
 $(function () {
+    ParlaScroll.init();
+    cardInfo.init();
+
+    votingCardHorizontal.init();
+
+    if($(".session_transcript .status").length > 0) {
+        $(".session_transcript .status").click(function () {
+            $(this).parent().toggleClass("collapsed");
+            return false;
+        });
+    }
+
+    //votingCardTpl.init();
     //lastActivity.init();
 });

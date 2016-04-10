@@ -131,10 +131,29 @@
 .card-embed-header-divider {
     height: 1px;
 
-    background-image: url('//cdn.parlameter.si/v1/img/shortline.png');
+    background-image: url($cdn_home_img + 'shortline.png');
     background-repeat: no-repeat;
     background-size: cover;
 
     margin-left: -20px;
     margin-right: -20px;
+}
+
+.cardhelper{
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.card-circle-button.card-circle-open{
+    background-image:none;
+}
+.card-circle-button.card-circle-open::after{
+
+}
+.card-circle-button.card-circle-close{
+
+}
+.card-circle-button.card-circle-closed{
+    background-image:none;
+    content: "X";
 }
