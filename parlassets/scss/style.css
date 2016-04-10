@@ -1479,12 +1479,14 @@ footer.footer {
       text-decoration: underline;
       font-weight: bold; }
 
-.indexsessionpart .link {
-  border-top: 1px solid #f0f0f0;
-  color: #00628c;
-  margin-top: 10px;
-  padding: 10px 0 20px;
-  text-transform: uppercase; }
+.indexsessionpart {
+  padding: 20px 0 0; }
+  .indexsessionpart .link {
+    border-top: 1px solid #f0f0f0;
+    color: #00628c;
+    margin-top: 0;
+    padding: 20px 0;
+    text-transform: uppercase; }
 
 .seja_transkript .me_poslanec .poslanec_title {
   font-weight: 100;

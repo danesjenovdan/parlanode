@@ -595,11 +595,12 @@
 }
 
 .indexsessionpart {
+  padding: 20px 0 0;
   .link {
     border-top: 1px solid $grey;
     color: $fontblue;
-    margin-top: 10px;
-    padding: 10px 0 20px;
+    margin-top: 0;
+    padding: 20px 0;
     text-transform: uppercase;
   }
 }
