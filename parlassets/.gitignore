@@ -27,10 +27,10 @@ node_modules
 
 *.css.map
 
-style.css
+#style.css
 style.css.map
 
-/scss/style.css
+#/scss/style.css
 /scss/style.css.map
 
 
