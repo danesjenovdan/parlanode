@@ -14,6 +14,7 @@ if (!window.parlaCardInit) {
             }
         }
         if (!flag) {
+            console.log('loading: ' + url);
             var tag = document.createElement('script');
             tag.type = "text/javascript";
 
