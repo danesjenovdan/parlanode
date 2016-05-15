@@ -72,3 +72,33 @@ a:focus, button:focus{
 
 $cdn_home_img: 'https://cdn.parlameter.si/v1/img/';
 $cdn_home_icon: 'https://cdn.parlameter.si/v1/icons/';
+
+
+
+.nopadding {
+  padding: 0 !important;
+}
+
+.nomargin {
+  margin: 0 !important;
+}
+
+.nopadding-left {
+  padding-left: 0 !important;
+}
+
+.nopadding-right {
+  padding-right: 0 !important;
+}
+
+.nomargin-left {
+  margin-left: 0 !important;
+}
+
+.nomargin-right {
+  margin-right: 0 !important;
+}
+
+.paddingtop5px{
+  padding-top: 5px;
+}

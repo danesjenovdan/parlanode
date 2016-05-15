@@ -564,6 +564,13 @@
   font-family: megafont;
 }
 
+.indexsessionpart {
+}
+
+.indexsessionpart .link {
+  text-transform: uppercase;
+}
+
 .well {
   padding: 35px 0;
   text-align: center;
@@ -588,12 +595,11 @@
 }
 
 .indexsessionpart {
-  padding: 20px 0 0;
   .link {
     border-top: 1px solid $grey;
     color: $fontblue;
-    margin-top: 0;
-    padding: 20px 0;
+    margin-top: 10px;
+    padding: 10px 0 20px;
     text-transform: uppercase;
   }
 }
@@ -619,10 +625,96 @@
 }
 
 .iconshowtype {
-  padding: 10px
+  display: inline-block;
+  padding: 6px;
+  color: $black;
+  font-size: 24px;
 }
 
-.poslanci_search {
+.iconshowtype:hover,
+.iconshowtype.active {
+  color: $funblue;
+  text-decoration: none;
+}
+
+#poslanci_search {
+
+  .group-container-menu.group_data {
+    ul {
+      width: 100%;
+      li {
+        margin: 0;
+        width: 10.8%;
+        a {
+          background: $sadblue;
+          color: $white;
+          padding: 10px;
+          text-align: center;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        a.active,
+        a:hover {
+          color: $white;
+          background: $funblue;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .poslanci_search.nav {
+    text-transform: uppercase;
+    padding: 20px 0 0 0;
+    height: 48px;
+    overflow: hidden;
+
+    a {
+      line-height: 28px;
+      color: $black;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+
+      .icon {
+        display: inline-block;
+        width: 14px;
+        line-height: 10px;
+        margin-left: 20px;
+        vertical-align: middle;
+        color: $sadblue;
+
+        a.icon.up {
+          color: $sadblue;
+        }
+        a.icon.down {
+          color: $sadblue;
+        }
+      }
+    }
+
+    a:hover {
+      color: $funblue;
+      text-decoration: none;
+      .icon {
+
+
+          .up {
+            color: $sadblue;
+          }
+          .down {
+            color: $sadblue;
+          }
+          .up.active {
+            color: $funblue;
+          }
+          .down.active {
+            color: $funblue;
+          }
+      }
+    }
+  }
+
   .form-control {
     border-radius: 0;
     border-right: medium none;
@@ -631,12 +723,21 @@
     height: 40px;
     background: none;
   }
-  button.btn {
+
+  .form-control:focus{
+    border:1px solid $darkgrey;
+  }
+  .input-group-btn:hover{
+    border:none;
+    outline:none;
+  }
+  .input-group-btn button.btn {
     border-radius: 0;
     border-left: medium none;
     height: 40px;
     background: none;
     box-shadow: none;
+    color: $funblue;
   }
   .member {
     border-bottom: 1px solid $border-light;
@@ -657,13 +758,6 @@
       font-weight: 300;
     }
   }
-}
-
-.poslanci_search.nav {
-}
-
-.poslanci_search.nav {
-  text-transform: uppercase;
 }
 
 .scroller {
@@ -786,10 +880,11 @@
     }
   }
 }
+
 .clanstva {
   .tab-content {
-.tab-pane{
-  text-align: center;
-}
+    .tab-pane {
+      text-align: center;
+    }
   }
 }
