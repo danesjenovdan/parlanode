@@ -1,0 +1,30 @@
+<svg width="48" height="50" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="52" width="50" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_2">
+    <circle id="svg_3" r="4.917" cy="27.447" cx="24" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+    <path id="svg_4" d="m24,35.723c-5.764,0 -10.436,5.049 -10.436,11.277l20.871001,0c0.000999,-6.229 -4.671001,-11.277 -10.435001,-11.277z" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+   </g>
+   <g id="svg_5">
+    <g id="svg_6">
+     <circle id="svg_7" r="3.219" cy="4.22" cx="7.749" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+     <path id="svg_8" d="m7.748,9.637c-3.771,0 -6.83,3.304 -6.83,7.38l13.662,0c-0.000999,-4.076999 -3.059,-7.38 -6.832,-7.38z" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+    </g>
+    <g id="svg_9">
+     <circle id="svg_10" r="3.219" cy="4.22" cx="40.251" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+     <path id="svg_11" d="m40.251999,9.637c-3.771,0 -6.831001,3.304 -6.831001,7.38l13.661003,0c0,-4.076999 -3.059002,-7.38 -6.830002,-7.38z" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+    </g>
+   </g>
+   <g id="svg_12">
+    <polyline id="svg_13" points="6.805,20.478     6.805,32.588 14.579,32.588   " stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+    <polyline id="svg_14" points="41.194,20.478     41.194,32.588 33.421,32.588   " stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" stroke="#505050" fill="none"/>
+   </g>
+  </g>
+ </g>
+</svg>

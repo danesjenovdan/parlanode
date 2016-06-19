@@ -1,0 +1,31 @@
+<svg width="410" height="360" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="362" width="412" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <rect fill="#505050" id="svg_2" height="128" width="16" y="119" x="166"/>
+  </g>
+  <g id="svg_3">
+   <rect fill="#505050" id="svg_4" height="16" width="128" y="207" x="78"/>
+  </g>
+  <g id="svg_5">
+   <rect fill="#505050" id="svg_6" height="128" width="16" y="119" x="102"/>
+  </g>
+  <g id="svg_7">
+   <rect fill="#505050" id="svg_8" height="16" width="128" y="143" x="78"/>
+  </g>
+  <g id="svg_9">
+   <path fill="#505050" id="svg_10" d="m278,351l-272,0l0,-336l272,0l0,336zm-256,-16l240,0l0,-304l-240,0l0,304z"/>
+  </g>
+  <g id="svg_11">
+   <polygon fill="#505050" id="svg_12" points="342,319 302,319 302,303 326,303 326,63 302,63 302,47 342,47 "/>
+  </g>
+  <g id="svg_13">
+   <polygon fill="#505050" id="svg_14" points="406,287 366,287 366,271 390,271 390,95 366,95 366,79 406,79 "/>
+  </g>
+ </g>
+</svg>

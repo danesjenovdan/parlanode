@@ -1,0 +1,40 @@
+<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="50" width="50" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1">
+   <g stroke="null" id="svg_2">
+    <g stroke="null" id="svg_3">
+     <g stroke="null" id="svg_4">
+      <circle stroke="#505050" id="svg_5" r="5.3" cy="7.8" cx="11" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+      <g stroke="null" id="svg_6">
+       <path stroke="#505050" id="svg_7" d="m11,22.4l-10,0c0,-6.9 5.6,-10.9 5.6,-10.9" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+       <path stroke="#505050" id="svg_8" d="m11,22.4l10,0c0,-6.9 -5.6,-10.9 -5.6,-10.9" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+      </g>
+     </g>
+     <g stroke="null" id="svg_9">
+      <circle stroke="#505050" id="svg_10" r="5.3" cy="7.8" cx="37" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+      <g stroke="null" id="svg_11">
+       <path stroke="#505050" id="svg_12" d="m37,22.4l-10,0c0,-6.9 5.599998,-10.9 5.599998,-10.9" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+       <path stroke="#505050" id="svg_13" d="m37,22.4l10,0c0,-6.9 -5.599998,-10.9 -5.599998,-10.9" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+      </g>
+     </g>
+    </g>
+    <g stroke="null" id="svg_14">
+     <circle stroke="#505050" id="svg_15" r="5.3" cy="30.9" cx="24" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+     <g stroke="null" id="svg_16">
+      <path stroke="#505050" id="svg_17" d="m24,45.5l-10,0c0,-6.900002 5.6,-10.900002 5.6,-10.900002" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+      <path stroke="#505050" id="svg_18" d="m24,45.5l10,0c0,-6.900002 -5.6,-10.900002 -5.6,-10.900002" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+     </g>
+    </g>
+   </g>
+   <path stroke="#505050" id="svg_19" d="m15.5,39.5c-3.9,-2.700001 -6.5,-7.299999 -6.5,-12.4c0,-1.6 0.3,-3.200001 0.8,-4.699999" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+   <path stroke="#505050" id="svg_20" d="m38.200001,22.4c0.5,1.5 0.799999,3.1 0.799999,4.699999c0,5.100002 -2.599998,9.700001 -6.5,12.400002" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+   <path stroke="#505050" id="svg_21" d="m17.5,13.6c2,-0.900001 4.1,-1.5 6.5,-1.5c2.299999,0 4.5,0.5 6.4,1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-width="2" fill="none"/>
+  </g>
+ </g>
+</svg>

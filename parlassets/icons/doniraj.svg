@@ -1,0 +1,13 @@
+<svg width="48" height="50" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="52" width="50" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" d="m35.299999,0.5c-4.4,0 -8.5,2.7 -10.6,6.8c-0.200001,0.3 -0.6,0.4 -0.799999,0c-2.299999,-4.1 -6.299999,-6.8 -10.9,-6.8c-6.9,0 -12.5,6.2 -12.5,13.9c0,7.9 8.6,22.4 23,32.9c0.200001,0.100002 0.299999,0.200001 0.5,0.200001c0.200001,0 0.299999,0 0.5,-0.099998c14,-9.200001 23,-25.9 23,-33.299999c0,-7.500002 -5.5,-13.600002 -12.200001,-13.600002z" fill="#ff5e41"/>
+  <text id="svg_2" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif" font-weight="bold" font-size="5px" fill="#000000" y="63" x="0">Created by Creative Stall</text>
+  <text id="svg_3" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif" font-weight="bold" font-size="5px" fill="#000000" y="68" x="0">from the Noun Project</text>
+ </g>
+</svg>
