@@ -63,9 +63,7 @@ exports.save = function(req, res){
 
         }else{
             //conflict
-
-            console.log('conflict');
-            res.sendStatus(409);
+            res.status(409).send('Card with this group and method already exists');
 
         }
 
@@ -92,7 +90,7 @@ exports.delete = function(req, res){
             res.send(doc);
         }else{
             console.log(err);
-            res.sendStatus(400);
+            res.status(400).send(err);
         }
 
     });
@@ -106,7 +104,7 @@ exports.get = function(req, res){
     Card.find(function(err, docs){
 
         if(err){
-            res.sendStatus(400);
+            res.status(400).send(err);
         }else {
             res.send(docs);
         }
@@ -143,8 +141,6 @@ exports.render = function(req, res){
     }
 
     var Card = mongoose.model('Card');
-
-    console.log(group);
 
     Card.findOne({ method:method, group:group }, function(err, doc){
 
@@ -184,22 +180,22 @@ exports.render = function(req, res){
 
                         } catch (err) {
                             console.log(err);
-                            res.sendStatus(400);
+                            res.status(400).send(err);
                         }
 
                     } else {
-                        res.sendStatus(400);
+                        res.status(400).send(err);
                     }
 
                 });
             }else{
                 console.log(err);
-                res.sendStatus(404);
+                res.status(404).send('Card definition not found by the passed parameters');
             }
 
         }else{
             console.log(err);
-            res.sendStatus(400);
+            res.status(400).send(err);
         }
 
     });
