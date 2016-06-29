@@ -1,0 +1,36 @@
+<section class="content-header">
+
+
+    <h1>Cards</h1>
+    <br/>
+    <div class="btn btn-primary" ng-click="newCardClick()">Add new</div>
+
+</section>
+
+<section class="content">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Data url</th>
+                <th>Created on</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="card in cards">
+                <td>{{card.name}}</td>
+                <td><small>https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</small></td>
+                <td><small>{{card.dataUrl}}</small></td>
+                <td>{{card.dateTimeCreated | date : 'dd/MM/yyyy'}}</td>
+                <td>
+                    <div class="btn btn-danger btn-xs" ng-click="removeClick(card._id)">Delete</div>
+                    <div class="btn btn-primary btn-xs" ng-click="editCard(card)">Edit</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

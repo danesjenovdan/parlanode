@@ -10,16 +10,12 @@ var serveStatic = require('serve-static');
 var bodyParser  = require('body-parser');
 var cors        = require('cors');
 var siteRouter  = require('./site-router');
+var session     = require('express-session');
 
 exports.init = function(){
 
-    setupExpress()
+    return setupExpress()
         .then(setupResources)
-        .then(function(){
-
-            console.log('Server initialised');
-
-        })
         .catch(function(err){
 
             console.log(err);
@@ -39,7 +35,6 @@ function setupExpress(){
         app.use('/cms-dev', serveStatic('cms-dev'));
         app.use('/cms', serveStatic('cms'));
         app.use(cors());
-
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended:true}));
 
@@ -61,4 +56,14 @@ function setupResources(){
 
     require('./resources')(app);
 
+}
+
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
 }

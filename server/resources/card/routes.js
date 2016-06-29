@@ -15,6 +15,8 @@ module.exports = function(app){
 
     app.put('/api/card/:id', controller.update);
 
+    //app.post('/api/render/');
+
     app.get('/:group/:method/:id/*', controller.render);
 
 };

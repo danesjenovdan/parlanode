@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h3 class="modal-title">Edit card</h3>
+</div>
+
+<div class="modal-body">
+
+    <label>Name</label>
+    <input type="text" class="form-control" ng-model="card.name"><br/>
+
+    <label>Group (ps,p,pg)</label>
+    <input type="text" class="form-control" ng-model="card.group"><br/>
+
+    <label>Method (getMPStatic...)</label>
+    <input type="text" class="form-control" ng-model="card.method"><br/>
+
+    <label>Card URL preview: </label><span> https://card.parlameter.si/v1/{{card.group}}/{{card.method}}/:id/:date</span><br/><br/>
+
+    <label>Data url (no / at the end)</label><br/>
+    <input type="text" class="form-control" ng-model="card.dataUrl"><br/>
+
+    <label>Paste compiled EJS</label>
+    <textarea class="form-control" ng-model="card.ejs"></textarea>
+    <hr/>
+    <label>Preview data URL</label>
+    <input type="text" class="form-control" ng-model="card.previewUrl"><br/>
+    <button class="btn btn-primary" type="button" ng-click="preview()" ng-disabled="!card.previewUrl">Preview</button>
+
+</div>
+
+<div class="modal-footer">
+
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-success" type="button" ng-click="confirm()" ng-disabled="isSaving || !isValid()">OK</button>
+</div>
