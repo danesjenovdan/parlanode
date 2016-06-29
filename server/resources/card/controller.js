@@ -127,6 +127,7 @@ exports.render = function(req, res){
     var group   = req.params.group;
     var method  = req.params.method;
     var id      = req.params.id;
+    var customUrl = req.query.customUrl;
 
     var getData = {
         group   : group,
@@ -151,12 +152,19 @@ exports.render = function(req, res){
 
             if(doc) {
 
-                var analizeUrl = doc.dataUrl+'/'+id;
-                if(date){
-                    analizeUrl += '/'+date
+                var dataUrl;
+
+                if(!customUrl){
+                    var analizeUrl = doc.dataUrl+'/'+id;
+                    if(date){
+                        analizeUrl += '/'+date
+                    }
+                    dataUrl = analizeUrl;
+                }else{
+                    dataUrl = customUrl;
                 }
 
-                request(analizeUrl, function (err, _res, body) {
+                request(dataUrl, function (err, _res, body) {
 
                     if (!err) {
 
