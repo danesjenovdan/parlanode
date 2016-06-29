@@ -7,17 +7,28 @@
     <label>Name</label>
     <input type="text" class="form-control" ng-model="card.name"><br/>
 
-    <label>Group (ps,p,pg)</label>
-    <input type="text" class="form-control" ng-model="card.group"><br/>
+    <label><h4>Data source</h4></label><br/>
+    <label>Custom data url <input type="radio" name="data-choice" value="custom" ng-model="card.sourceType"></label><span> | </span>
+    <label>Url template <input type="radio" name="data-choice" value="template" ng-model="card.sourceType" ng-init="card.sourceType?'':card.sourceType='template'"></label>
+    <hr/>
+    <div ng-if="card.sourceType === 'custom'">
+        <label>Enter custom url</label>
+        <input type="text" class="form-control" ng-model="card.customDataUrl">
+    </div>
 
-    <label>Method (getMPStatic...)</label>
-    <input type="text" class="form-control" ng-model="card.method"><br/>
+    <div ng-if="card.sourceType === 'template'">
+        <label>Group (ps,p,pg)</label>
+        <input type="text" class="form-control" ng-model="card.group"><br/>
+        <label>Method (getMPStatic...)</label>
+        <input type="text" class="form-control" ng-model="card.method"><br/>
 
-    <label>Card URL preview: </label><span> https://card.parlameter.si/v1/{{card.group}}/{{card.method}}/:id/:date</span><br/><br/>
+        <label>Card URL preview: </label><span> https://card.parlameter.si/v1/{{card.group}}/{{card.method}}/:id/:date</span><br/><br/>
 
-    <label>Data url (no / at the end)</label><br/>
-    <input type="text" class="form-control" ng-model="card.dataUrl"><br/>
+        <label>Data url (no / at the end)</label><br/>
+        <input type="text" class="form-control" ng-model="card.dataUrl"><br/>
+    </div>
 
+    <hr/>
     <label>Paste compiled EJS</label>
     <textarea class="form-control" ng-model="card.ejs"></textarea>
     <hr/>
@@ -26,6 +37,8 @@
     <button class="btn btn-primary" type="button" ng-click="preview()" ng-disabled="!card.previewUrl">Preview</button>
 
 </div>
+
+
 
 <div class="modal-footer">
 

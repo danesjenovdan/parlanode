@@ -31,7 +31,7 @@ angular.module('parlameterCardCms').controller('CardsCtrl',function($scope, $uib
             animation:true,
             templateUrl: 'partial/card-edit/card-edit.html',
             controller: 'CardEditCtrl',
-            size: 'md',
+            size: 'lg',
             resolve:{
                 card:function(){
                     return card;

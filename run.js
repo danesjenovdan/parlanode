@@ -8,7 +8,7 @@ GLOBAL.CFG = require('./config').production;
 function init(){
 
     database.connect()
-        .then(parlalizeDb.connect)
+        //.then(parlalizeDb.connect)
         .then(server.init)
         .then(function(){
 

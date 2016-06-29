@@ -8,6 +8,8 @@ var schema = mongoose.Schema({
     dateTimeCreated : { type:Date, default:Date.now },
     name : String,
     dataUrl : { type:String, required:true},
+    customDataUrl : String,
+    sourceType: String,
     ejs : String,
     group : { type:String, index:true, required:true },
     method : { type:String, index:true, required:true },
