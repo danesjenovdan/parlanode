@@ -11,7 +11,12 @@
     <label>Custom data url <input type="radio" name="data-choice" value="custom" ng-model="card.sourceType"></label><span> | </span>
     <label>Url template <input type="radio" name="data-choice" value="template" ng-model="card.sourceType" ng-init="card.sourceType?'':card.sourceType='template'"></label>
     <hr/>
-
+    <div ng-if="card.sourceType === 'custom'">
+        <label>Group (ps,p,pg)</label>
+        <input type="text" class="form-control" ng-model="card.group"><br/>
+        <label>Method (getMPStatic...)</label>
+        <input type="text" class="form-control" ng-model="card.method"><br/>
+    </div>
 
     <div ng-if="card.sourceType === 'template'">
         <label>Group (ps,p,pg)</label>
