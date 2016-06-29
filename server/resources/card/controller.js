@@ -172,8 +172,6 @@ exports.render = function(req, res){
                             var data = JSON.parse(body);
                             var mDoc = doc.toObject();
 
-                            console.log(body);
-
                             var html = ejs.render(doc.ejs, {data: data});
 
                             var body = html;

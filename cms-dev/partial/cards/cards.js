@@ -10,7 +10,7 @@ angular.module('parlameterCardCms').controller('CardsCtrl',function($scope, $uib
             animation:true,
             templateUrl: 'partial/card-new/card-new.html',
             controller: 'CardNewCtrl',
-            size: 'md'
+            size: 'lg'
         });
 
     };
