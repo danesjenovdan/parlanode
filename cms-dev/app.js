@@ -51,8 +51,8 @@ angular.module('parlameterCardCms').config(function($stateProvider, $urlRouterPr
     $urlRouterProvider.otherwise('/cards');
 
 })
-    //.constant('NET',{ API_URL:'https://glej.parlameter.si/api' });
-    .constant('NET',{ API_URL:'http://localhost:7004/api' });
+    .constant('NET',{ API_URL:'https://glej.parlameter.si/api' });
+    //.constant('NET',{ API_URL:'http://localhost:7004/api' });
 
 angular.module('parlameterCardCms').run(function($rootScope) {
 
