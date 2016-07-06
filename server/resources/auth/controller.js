@@ -16,18 +16,23 @@ exports.login = (req, res)=>{
     })
         .then((user)=>{
 
-            crypto.pbkdf2(req.body.password, user.password, 1, 32, function (err, derivedkey) {
+            console.log(req.body.password);
+
+            crypto.pbkdf2(req.body.password, 'Ov3TOthrlwCa', 20000, 32, 'sha256', function (err, derivedkey) {
 
                 // error on failure
                 if (err) return callback(err);
 
-                // result otherwise
-                //const result = key.toString() == derivedkey.toString();
-                //console.log(result);
-                res.send(user);
+                const resultHash = derivedkey.toString('base64');
+                const password = user.password.split('$')[user.password.split('$').length-1];
+
+                if(resultHash === password) {
+                    res.send();
+                }else{
+                    res.send('Fail', 401);
+                }
 
             });
-            res.send(users);
 
         });
 
