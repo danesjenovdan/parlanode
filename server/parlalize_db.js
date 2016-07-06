@@ -2,8 +2,8 @@
 
 const Sequelize = require("sequelize");
 
-var sequelize = new Sequelize('parlalize', 'parladaddy', 'razvrat', {
-    host: '192.168.110.31',
+var sequelize = new Sequelize(CFG.postgres.name, CFG.postgres.user, CFG.postgres.password, {
+    host: CFG.postgres.host,
     dialect: 'postgres',
     pool: {
         max: 5,
@@ -11,8 +11,6 @@ var sequelize = new Sequelize('parlalize', 'parladaddy', 'razvrat', {
         idle: 10000
     }
 });
-
-//var sequelize = new Sequelize('postgres://parladaddy:razvrat@192.168.110.31/parlalize');
 
 var db;
 

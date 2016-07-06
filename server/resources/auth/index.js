@@ -3,10 +3,9 @@
  */
 
 module.exports = function(app){
+    return {
 
-    require('./card')(app);
-    require('./auth')(app);
+        routes      : require('./routes')(app)
 
-    return true;
-
+    }
 };

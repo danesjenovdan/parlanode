@@ -11,6 +11,8 @@ var bodyParser  = require('body-parser');
 var cors        = require('cors');
 var siteRouter  = require('./site-router');
 var session     = require('express-session');
+var expressValidator = require('express-validator');
+
 
 exports.init = function(){
 
@@ -37,6 +39,7 @@ function setupExpress(){
         app.use(cors());
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended:true}));
+        app.use(expressValidator());
 
         siteRouter(app);
 
