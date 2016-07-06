@@ -27,7 +27,7 @@
       user : "parladaddy",
       host : "91.236.1.196",
       ref  : "origin/master",
-      repo : "https://muki@github.com/muki/parlanode.git",
+      repo : "git@github.com:muki/parlanode.git",
       path : "/home/parladaddy/parlanode",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production",
       env  : {
