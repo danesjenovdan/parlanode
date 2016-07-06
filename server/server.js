@@ -35,7 +35,7 @@ function setupExpress(){
         // serve static assets on /assets
         app.use('/assets', serveStatic('assets'));
         app.use('/cms-dev', serveStatic('cms-dev'));
-        app.use('/cms', serveStatic('cms'));
+        app.use('/cms', serveStatic('cms-dev/dist'));
         app.use(cors());
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended:true}));
