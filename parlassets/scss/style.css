@@ -25,6 +25,27 @@ body {
 a:focus, button:focus {
   outline: none; }
 
+.nopadding {
+  padding: 0 !important; }
+
+.nomargin {
+  margin: 0 !important; }
+
+.nopadding-left {
+  padding-left: 0 !important; }
+
+.nopadding-right {
+  padding-right: 0 !important; }
+
+.nomargin-left {
+  margin-left: 0 !important; }
+
+.nomargin-right {
+  margin-right: 0 !important; }
+
+.paddingtop5px {
+  padding-top: 5px; }
+
 .card-container {
   margin-top: 20px;
   /* overriding bootstrap's padding */
@@ -235,7 +256,7 @@ footer.footer {
 
 .me_poslanec .progress_number {
   font-size: 30px;
-  line-height: 30px; }
+  line-height: 40px; }
 
 .me_poslanec_mini {
   padding-bottom: 20px; }
@@ -1511,6 +1532,9 @@ footer.footer {
   color: grey;
   font-family: megafont; }
 
+.indexsessionpart .link {
+  text-transform: uppercase; }
+
 .well {
   padding: 35px 0;
   text-align: center;
@@ -1531,14 +1555,12 @@ footer.footer {
       text-decoration: underline;
       font-weight: bold; }
 
-.indexsessionpart {
-  padding: 20px 0 0; }
-  .indexsessionpart .link {
-    border-top: 1px solid #f0f0f0;
-    color: #00628c;
-    margin-top: 0;
-    padding: 20px 0;
-    text-transform: uppercase; }
+.indexsessionpart .link {
+  border-top: 1px solid #f0f0f0;
+  color: #00628c;
+  margin-top: 10px;
+  padding: 10px 0 20px;
+  text-transform: uppercase; }
 
 .seja_transkript .me_poslanec .poslanec_title {
   font-weight: 100;
@@ -1552,39 +1574,100 @@ footer.footer {
   font-family: megafont; }
 
 .iconshowtype {
-  padding: 10px; }
+  display: inline-block;
+  padding: 6px;
+  color: #505050;
+  font-size: 24px; }
 
-.poslanci_search .form-control {
+.iconshowtype:hover,
+.iconshowtype.active {
+  color: #009cdd;
+  text-decoration: none; }
+
+#poslanci_search .group-container-menu.group_data ul {
+  width: 100%; }
+  #poslanci_search .group-container-menu.group_data ul li {
+    margin: 0;
+    width: 10.8%; }
+    #poslanci_search .group-container-menu.group_data ul li a {
+      background: #197197;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px; }
+    #poslanci_search .group-container-menu.group_data ul li a.active,
+    #poslanci_search .group-container-menu.group_data ul li a:hover {
+      color: #ffffff;
+      background: #009cdd;
+      text-decoration: none; }
+#poslanci_search .poslanci_search.nav {
+  text-transform: uppercase;
+  padding: 20px 0 0 0;
+  height: 48px;
+  overflow: hidden; }
+  #poslanci_search .poslanci_search.nav a {
+    line-height: 28px;
+    color: #505050;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer; }
+    #poslanci_search .poslanci_search.nav a .icon {
+      display: inline-block;
+      width: 14px;
+      line-height: 10px;
+      margin-left: 20px;
+      vertical-align: middle;
+      color: #197197; }
+      #poslanci_search .poslanci_search.nav a .icon a.icon.up {
+        color: #197197; }
+      #poslanci_search .poslanci_search.nav a .icon a.icon.down {
+        color: #197197; }
+  #poslanci_search .poslanci_search.nav a:hover {
+    color: #009cdd;
+    text-decoration: none; }
+    #poslanci_search .poslanci_search.nav a:hover .icon .up {
+      color: #197197; }
+    #poslanci_search .poslanci_search.nav a:hover .icon .down {
+      color: #197197; }
+    #poslanci_search .poslanci_search.nav a:hover .icon .up.active {
+      color: #009cdd; }
+    #poslanci_search .poslanci_search.nav a:hover .icon .down.active {
+      color: #009cdd; }
+#poslanci_search .form-control {
   border-radius: 0;
   border-right: medium none;
   box-shadow: none;
   font-size: 20px;
   height: 40px;
   background: none; }
-.poslanci_search button.btn {
+#poslanci_search .form-control:focus {
+  border: 1px solid #dbdbdb; }
+#poslanci_search .input-group-btn:hover {
+  border: none;
+  outline: none; }
+#poslanci_search .input-group-btn button.btn {
   border-radius: 0;
   border-left: medium none;
   height: 40px;
   background: none;
-  box-shadow: none; }
-.poslanci_search .member {
+  box-shadow: none;
+  color: #009cdd; }
+#poslanci_search .member {
   border-bottom: 1px solid #f0f0f0;
   padding: 10px 0; }
-  .poslanci_search .member .image {
+  #poslanci_search .member .image {
     background-position: center center;
     background-size: 150px auto;
     border-radius: 50px;
     height: 80px;
     width: 80px; }
-    .poslanci_search .member .image img {
+    #poslanci_search .member .image img {
       border-radius: 50px;
       width: 100%; }
-  .poslanci_search .member p {
+  #poslanci_search .member p {
     font-size: 18px;
     font-weight: 300; }
-
-.poslanci_search.nav {
-  text-transform: uppercase; }
 
 .scroller {
   height: 100%;
