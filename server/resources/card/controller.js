@@ -125,6 +125,8 @@ exports.render = function(req, res){
     var id      = req.params.id;
     var customUrl = req.query.customUrl;
 
+    console.log('Render');
+
     var getData = {
         group   : group,
         method  : method,
@@ -163,6 +165,7 @@ exports.render = function(req, res){
                     if (!err) {
 
                         try {
+
                             var data = JSON.parse(body);
                             var mDoc = doc.toObject();
 
@@ -175,10 +178,12 @@ exports.render = function(req, res){
                                     'Content-Length': Buffer.byteLength(body),
                                     'Content-Type': 'text/html; charset=utf-8'
                                 });
+                                console.log('Body: ',body);
                                 res.write(body);
                                 res.end();
                             }catch(err){
-                                res.send(err);
+                                console.log('Error: ', err+'error');
+                                res.send(err.toString(), 400);
                             }
 
                         } catch (err) {
