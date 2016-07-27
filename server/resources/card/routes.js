@@ -9,6 +9,8 @@ module.exports = function(app){
 
     app.delete('/api/card/:id', controller.delete);
 
+    app.get('/:group/:method/:id/*', controller.render);
+
     app.get('/api/card', controller.get);
 
     app.post('/api/card', controller.save);
@@ -17,6 +19,6 @@ module.exports = function(app){
 
     //app.post('/api/render/');
 
-    app.get('/:group/:method/:id/*', controller.render);
+
 
 };
