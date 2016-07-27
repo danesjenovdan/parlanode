@@ -166,15 +166,20 @@ exports.render = function(req, res){
                             var data = JSON.parse(body);
                             var mDoc = doc.toObject();
 
-                            var html = ejs.render(doc.ejs, {data: data});
+                            try {
 
-                            var body = html;
-                            res.writeHead(200, {
-                                'Content-Length': Buffer.byteLength(body),
-                                'Content-Type': 'text/html; charset=utf-8'
-                            });
-                            res.write(body);
-                            res.end();
+                                var html = ejs.render(doc.ejs, {data: data});
+
+                                var body = html;
+                                res.writeHead(200, {
+                                    'Content-Length': Buffer.byteLength(body),
+                                    'Content-Type': 'text/html; charset=utf-8'
+                                });
+                                res.write(body);
+                                res.end();
+                            }catch(err){
+                                res.send(err);
+                            }
 
                         } catch (err) {
                             console.log(err);
