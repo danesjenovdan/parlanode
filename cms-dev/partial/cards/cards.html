@@ -22,9 +22,9 @@
         <tbody>
             <tr ng-repeat="card in cards">
                 <td>{{card.name}}</td>
-                <td ng-if="card.group === 'p'"><small><a href="https://glej.parlameter.si/{{card.group}}/{{card.method}}/82/">https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</a></small></td>
-                <td ng-if="card.group === 'pg'"><small><a href="https://glej.parlameter.si/{{card.group}}/{{card.method}}/2/">https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</a></small></td>
-                <td ng-if="card.group === 's'"><small><a href="https://glej.parlameter.si/{{card.group}}/{{card.method}}/3046/">https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</a></small></td>
+                <td ng-if="card.group === 'p'"><small><a target="_blank" href="https://glej.parlameter.si/{{card.group}}/{{card.method}}/82/">https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</a></small></td>
+                <td ng-if="card.group === 'pg'"><small><a target="_blank" href="https://glej.parlameter.si/{{card.group}}/{{card.method}}/2/">https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</a></small></td>
+                <td ng-if="card.group === 's'"><small><a target="_blank" href="https://glej.parlameter.si/{{card.group}}/{{card.method}}/3046/">https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</a></small></td>
 
                 <td><small>{{card.dataUrl}}</small></td>
                 <td>{{card.dateTimeCreated | date : 'dd/MM/yyyy'}}</td>
