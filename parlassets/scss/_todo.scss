@@ -397,11 +397,15 @@
 .poslanec .nav-tabs {
   border-bottom: none;
   padding-bottom: 40px;
+  display: flex;
 }
 
 .poslanec .nav-tabs > li {
-  width: 25%;
+  flex: 1;
   text-align: center;
+  margin-left: 3px;
+
+  &:first-child { margin-left: 0 }
 }
 
 .poslanec .nav > li > a {
