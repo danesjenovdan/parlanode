@@ -1,3 +1,5 @@
+console.log('embed');
+
 if (!window.parlaCardInit) {
 
     window.parlaCardInit = true;
@@ -37,7 +39,7 @@ if (!window.parlaCardInit) {
 
     }
 
-    loadScript("https://code.jquery.com/jquery-1.11.3.js", function() {
+    if (window.jQuery) {
         loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.js', function() {
             loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js', function() {
                 loadScript('https://d3js.org/d3.v3.min.js', function() {
@@ -47,7 +49,19 @@ if (!window.parlaCardInit) {
                 });
             });
         });
-    });
+    } else {
+        loadScript("https://code.jquery.com/jquery-1.11.3.js", function() {
+            loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.js', function() {
+                loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js', function() {
+                    loadScript('https://d3js.org/d3.v3.min.js', function() {
+                        loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
+                            init();
+                        });
+                    });
+                });
+            });
+        });
+    }
 
     function init() {
 
