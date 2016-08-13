@@ -1,5 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext);
-@import url(//fonts.googleapis.com/css?family=Roboto+Slab:700);
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 .funblue {
   background: #009cdd; }
 
@@ -1236,7 +1236,7 @@ footer.footer {
       background-size: 150px;
       float: left; }
     #votingCard div.member p {
-      margin: 12px 0 0 40px;
+      margin: 12px 0 0 30px;
       width: 210px;
       float: left;
       font-size: 18px;
@@ -1277,7 +1277,7 @@ footer.footer {
       list-style-type: none;
       float: left;
       border-top: 1px solid #f0f0f0;
-      padding: 0px 15px 0 0;
+      padding: 0 15px 0 0;
       width: calc(100% - 70px); }
       .recent-activity section ul li:first-child {
         margin: 20px 0 30px 0; }
@@ -1445,7 +1445,7 @@ footer.footer {
 .poslanec .key {
   display: inline-block;
   font-size: 16px;
-  padding: 10px 0px;
+  padding: 10px 0;
   color: #505050;
   width: 88%; }
 
