@@ -1,0 +1,23 @@
+{
+  "name": "parlassets",
+  "version": "1.0.0",
+  "description": "Assets for frontend for Parlameter",
+  "main": "index.js",
+  "scripts": {
+    "sass": "PATH=$(npm bin):$PATH node-sass scss/style.scss scss/style.css",
+    "postinstall": "npm run sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muki/parlassets.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/muki/parlassets/issues"
+  },
+  "homepage": "https://github.com/muki/parlassets#readme",
+  "dependencies": {
+    "node-sass": "^3.8.0"
+  }
+}
