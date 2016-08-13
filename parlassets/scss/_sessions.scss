@@ -372,7 +372,7 @@
 .session_voting {
     padding: 20px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 300;
     .single_voting {
         background: $grey;
         margin-bottom: 20px;
@@ -391,7 +391,7 @@
     .accepted.aye {
         color: $funblue;
     }
-    .accepted.nay {
+    .accepted.ney {
         color: $red;
     }
     .session_votes {
@@ -531,19 +531,5 @@
             padding: 0;
             margin: 0;
         }
-    }
-}
-@media (max-width: 480px) {
-
-    .session_voting .session_votes {
-        font-size: 30px;
-        line-height: 40px;
-        margin: 15px 0;
-    }
-
-    .session_voting .session_votes .type {
-        font-size: 14px;
-        line-height: 30px;
-        text-transform: uppercase;
     }
 }
