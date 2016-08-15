@@ -188,7 +188,7 @@ exports.render = function(req, res){
                     }
 
                     if(date){
-                        analizeUrl += '/'+date
+                        analizeUrl = analizeUrl+'/'+date;
                     }
                     dataUrl = analizeUrl;
                 }else{
