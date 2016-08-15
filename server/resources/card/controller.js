@@ -15,8 +15,6 @@ exports.update = function(req, res){
     var id      = req.params.id;
     var data    = req.body;
 
-    console.log('Update card');
-
     var Card = mongoose.model('Card');
 
     Card.findByIdAndUpdate(id, data, function(err, doc){
@@ -121,8 +119,6 @@ function isDate(string){
     let stringIsDate = false;
     const date = new Date();
 
-    console.log(string);
-
     if(parts.length > 0){
 
         const dayNum = parseInt(parts[0]);
@@ -192,6 +188,8 @@ exports.render = function(req, res){
                 }else{
                     dataUrl = customUrl;
                 }
+
+                console.log('Data url:',dataUrl);
 
                 request(dataUrl, function (err, _res, body) {
 
