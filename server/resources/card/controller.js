@@ -113,12 +113,11 @@ exports.get = function(req, res){
 
 function isDate(string){
 
-    const parts = string.split('.');
-
-    if(typeof parts !== 'string'){
+    if(typeof string !== 'string'){
         return false;
     }
 
+    const parts = string.split('.');
     let stringIsDate = false;
     const date = new Date();
 
