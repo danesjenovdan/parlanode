@@ -24,7 +24,7 @@
    */
   deploy : {
     production : {
-      user : "parladaddy",
+      user : "root",
       host : "91.236.1.196",
       ref  : "origin/master",
       repo : "git@github.com:muki/parlanode.git",
