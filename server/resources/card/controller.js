@@ -113,6 +113,8 @@ exports.get = function(req, res){
 
 };
 
+
+
 /**
  *
  * @param req
@@ -178,16 +180,13 @@ exports.render = function(req, res){
                                     'Content-Length': Buffer.byteLength(body),
                                     'Content-Type': 'text/html; charset=utf-8'
                                 });
-                                console.log('Body: ',body);
                                 res.write(body);
                                 res.end();
                             }catch(err){
-                                console.log('Error: ', err+'error');
                                 res.send(err.toString(), 400);
                             }
 
                         } catch (err) {
-                            console.log(err);
                             res.status(400).send(err);
                         }
 
@@ -207,6 +206,5 @@ exports.render = function(req, res){
         }
 
     });
-
 
 };

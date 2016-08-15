@@ -8,6 +8,8 @@ module.exports = function(app){
 
     app.get('/:group/:method/:id/*', controller.render);
 
+    app.get('/:group/:method/*', controller.render);
+
     app.get('/api/card', authMiddleware, controller.get);
 
     app.post('/api/card', authMiddleware, controller.save);
