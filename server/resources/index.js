@@ -4,8 +4,8 @@
 
 module.exports = function(app){
 
-    require('./card')(app);
     require('./auth')(app);
+    require('./card')(app);
     require('./token')(app);
 
     return true;
