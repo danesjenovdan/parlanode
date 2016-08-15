@@ -5,6 +5,8 @@ const randToken = require('rand-token');
 
 exports.login = (req, res)=>{
 
+    console.log('Try login');
+
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('password', 'Password is not valid').notEmpty().isLength({min:5});
 
