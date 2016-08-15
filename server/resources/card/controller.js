@@ -180,7 +180,13 @@ exports.render = function(req, res){
                 var dataUrl;
 
                 if(!customUrl){
-                    var analizeUrl = doc.dataUrl+'/'+id;
+
+                    var analizeUrl = doc.dataUrl;
+
+                    if(!isDate(id)){
+                        analizeUrl += +'/'+id;
+                    }
+
                     if(date){
                         analizeUrl += '/'+date
                     }
