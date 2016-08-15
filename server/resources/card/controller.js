@@ -111,6 +111,8 @@ exports.get = function(req, res){
 
 function isDate(string){
 
+    console.log('Date: ',string);
+
     if(typeof string !== 'string'){
         return false;
     }
@@ -124,6 +126,8 @@ function isDate(string){
         const dayNum = parseInt(parts[0]);
         const monthNum = parseInt(parts[1]);
         const yearNum = parseInt(parts[2]);
+
+        console.log(dayNum,monthNum,yearNum);
 
         if(dayNum > 0 && dayNum < 33 && monthNum > 0 && monthNum < 13 && yearNum > 1000){
 
