@@ -6,7 +6,7 @@ module.exports = function(app){
 
     app.delete('/api/card/:id', authMiddleware, controller.delete);
 
-    app.get('/:group/:method/:id/*', authMiddleware, controller.render);
+    app.get('/:group/:method/:id/*', controller.render);
 
     app.get('/api/card', authMiddleware, controller.get);
 
