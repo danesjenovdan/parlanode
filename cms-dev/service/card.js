@@ -56,6 +56,8 @@ angular.module('parlameterCardCms').factory('cardService',function($http, NET) {
         },
         getList:function(){
 
+            console.log('Get card list');
+
             var promise = $http.get(NET.API_URL+'/card');
 
             promise.then(function(res){

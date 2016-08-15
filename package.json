@@ -28,6 +28,7 @@
     "mongoose": "^4.4.4",
     "pg": "^6.0.1",
     "pg-hstore": "^2.3.2",
+    "rand-token": "^0.2.1",
     "request": "^2.69.0",
     "sequelize": "^3.23.4",
     "serve-static": "^1.10.2"

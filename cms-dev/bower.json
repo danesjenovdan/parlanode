@@ -23,6 +23,7 @@
     "angular-mocks": "^1.5.0",
     "angular-ui-utils": "^3.0.0",
     "angular-bootstrap": "^1.1.2",
-    "ejs": "^1.0.0"
+    "ejs": "^1.0.0",
+    "nedb": "^1.6.0"
   }
 }

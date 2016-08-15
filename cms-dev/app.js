@@ -1,6 +1,12 @@
 angular.module('parlameterCardCms', ['ui.bootstrap','ui.router','ngAnimate']);
 
-angular.module('parlameterCardCms').config(function($stateProvider, $urlRouterProvider) {
+angular.module('parlameterCardCms').config(function(
+  $stateProvider,
+  $urlRouterProvider,
+  $httpProvider
+) {
+
+    $httpProvider.interceptors.push('requestInterceptor');
 
     $stateProvider.state('app',{
 
@@ -15,6 +21,17 @@ angular.module('parlameterCardCms').config(function($stateProvider, $urlRouterPr
                 templateUrl:'partial/main-header/main-header.html',
                 controller:'MainHeaderCtrl'
             }
+        },
+        resolve:{
+            init:function(nedbService){
+                return nedbService.init();
+            },
+            auth:function(authService){
+
+                return authService.isLoggedIn();
+
+            }
+
         }
 
     });
@@ -24,14 +41,14 @@ angular.module('parlameterCardCms').config(function($stateProvider, $urlRouterPr
         views:{
             'main@':{
                 templateUrl: 'partial/cards/cards.html',
-                controller:'CardsCtrl'
-            }
-        },
-        resolve:{
-            cards:function(cardService){
+                controller:'CardsCtrl',
+                resolve:{
+                    cards:function(cardService){
 
-                return cardService.getList();
+                        return cardService.getList();
 
+                    }
+                }
             }
         }
     });
@@ -42,7 +59,14 @@ angular.module('parlameterCardCms').config(function($stateProvider, $urlRouterPr
         views:{
             'main@':{
                 templateUrl: 'partial/login/login.html',
-                controller:'LoginCtrl'
+                controller:'LoginCtrl',
+                resolve:{
+                    init:function(nedbService){
+
+                        return nedbService.init();
+
+                    }
+                }
             }
         }
 
@@ -51,8 +75,8 @@ angular.module('parlameterCardCms').config(function($stateProvider, $urlRouterPr
     $urlRouterProvider.otherwise('/cards');
 
 })
-    .constant('NET',{ API_URL:'https://glej.parlameter.si/api' });
-    //.constant('NET',{ API_URL:'http://localhost:7004/api' });
+    //.constant('NET',{ API_URL:'https://glej.parlameter.si/api' });
+    .constant('NET',{ API_URL:'http://localhost:3000/api' });
 
 angular.module('parlameterCardCms').run(function($rootScope) {
 
@@ -71,7 +95,6 @@ angular.module('parlameterCardCms').run(function($rootScope) {
         function(event, toState, toParams, fromState, fromParams, options){
 
             $rootScope.toState = toState.name;
-
 
         });
 
