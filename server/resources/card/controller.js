@@ -1,6 +1,4 @@
-/**
- * Created by francizidar on 21/02/16.
- */
+'use strict';
 
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
