@@ -12,6 +12,8 @@
     "browser": true,
     "smarttabs": true,
     "globals": {
+        "Promise":true,
+        "Nedb":true,
         "jQuery": true,
         "angular": true,
         "console": true,

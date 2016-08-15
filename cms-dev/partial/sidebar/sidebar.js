@@ -7,6 +7,6 @@ angular.module('parlameterCardCms').controller('SidebarCtrl',function(
 
     authService.logOut();
 
-  }
+  };
 
 });
