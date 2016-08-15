@@ -113,6 +113,10 @@ exports.get = function(req, res){
 
 function isDate(string){
 
+    if(typeof parts !== 'string'){
+        return false;
+    }
+
     let stringIsDate = false;
     const date = new Date();
 
