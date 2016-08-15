@@ -189,7 +189,9 @@ exports.render = function(req, res){
 
                     if(!isDate(id)){
                         console.log('Is not date: ', analizeUrl);
-                        analizeUrl = analizeUrl+'/'+id;
+                        if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
+                            analizeUrl = analizeUrl + '/' + id;
+                        }
                         console.log('Is not date after: ', analizeUrl);
                     }
 
