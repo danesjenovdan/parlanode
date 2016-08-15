@@ -190,6 +190,7 @@ exports.render = function(req, res){
                 }
 
                 console.log('Data url:',dataUrl);
+                console.log('Doc data url:',doc.dataUrl);
 
                 request(dataUrl, function (err, _res, body) {
 
