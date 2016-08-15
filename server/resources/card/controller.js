@@ -113,6 +113,33 @@ exports.get = function(req, res){
 
 };
 
+function isDate(string){
+
+    let stringIsDate = false;
+    const date = new Date();
+
+    const parts = string.split('.');
+
+    console.log(string);
+
+    if(parts.length > 0){
+
+        const dayNum = parseInt(parts[0]);
+        const monthNum = parseInt(parts[1]);
+        const yearNum = parseInt(parts[2]);
+
+        if(dayNum > 0 && dayNum < 33 && monthNum > 0 && monthNum < 13 && yearNum > 1000){
+
+            stringIsDate = true;
+
+        }
+
+
+    }
+
+    return stringIsDate;
+
+}
 
 
 /**
@@ -127,8 +154,6 @@ exports.render = function(req, res){
     var id      = req.params.id;
     var customUrl = req.query.customUrl;
 
-    console.log('Render');
-
     var getData = {
         group   : group,
         method  : method,
@@ -137,7 +162,12 @@ exports.render = function(req, res){
 
     var date;
 
-    if(req.params['0'].length > 0 && req.params['0'] !== undefined) {
+    console.log(id);
+
+    if(isDate(id)){
+        date = id;
+    }
+    else if(req.params['0'].length > 0 && req.params['0'] !== undefined) {
         date = req.params['0'];
         getData.date = date;
     }
