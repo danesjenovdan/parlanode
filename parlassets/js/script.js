@@ -211,7 +211,10 @@ var ParlaScroll = {
             minScrollbarLength: 100,
             maxScrollbarLength: 100
         };
-        $(".scroller").perfectScrollbar(defaultOptions);
+        $(".scroller").each(function () {
+            $("#"+$(this).attr('id')).perfectScrollbar(defaultOptions);
+        });
+        //$(".scroller").perfectScrollbar(defaultOptions);
     }
 }
 
