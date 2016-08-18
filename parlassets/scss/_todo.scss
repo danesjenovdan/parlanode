@@ -118,6 +118,38 @@
   clear: both;
 }
 
+.member {
+  border-bottom: 1px solid $border-light;
+  padding: 10px 15px 10px 0;
+  position: relative;
+
+  .image {
+    width: 75px;
+    height: 75px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background-position: center center;
+    background-size: 150px;
+    float: left;
+  }
+
+  p {
+    margin: 12px 0 0 30px;
+    //width: 210px;
+    float: left;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  span {
+    float: right;
+    font-size: 36px;
+    font-weight: 400;
+    margin: 13px 0 0 0;
+  }
+}
+
 #votingCard {
   color: $black;
 
@@ -131,39 +163,9 @@
     border-bottom: 0 !important;
   }
 
-  div.member {
-    border-bottom: 1px solid $border-light;
-    padding: 10px 15px 10px 0;
-    position: relative;
-
-    .image {
-      width: 75px;
-      height: 75px;
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      border-radius: 50px;
-      background-position: center center;
-      background-size: 150px;
-      float: left;
-    }
-
-    p {
-      margin: 12px 0 0 30px;
-      //width: 210px;
-      float: left;
-      font-size: 18px;
-      font-weight: 300;
-    }
-
-    span {
-      float: right;
-      font-size: 36px;
-      font-weight: 400;
-      margin: 13px 0 0 0;
-    }
-
+  .member {
+    @extend .member;
   }
-
 }
 
 @media (max-width: 500px) {
@@ -892,5 +894,3 @@
     }
   }
 }
-
-
