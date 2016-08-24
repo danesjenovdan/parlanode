@@ -155,6 +155,12 @@ exports.render = function(req, res){
     var id      = req.params.id;
     var customUrl = req.query.customUrl;
 
+    if(customUrl){
+        if(!customUrl.match('.parlameter.')){
+            return res.send('Invalid customUrl');
+        }
+    }
+
     var getData = {
         group   : group,
         method  : method,
