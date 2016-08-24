@@ -1,9 +1,12 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Promise = require('bluebird');
-var request = require('request');
-var ejs = require('ejs');
+const mongoose  = require('mongoose');
+const Promise   = require('bluebird');
+const request   = require('request');
+const ejs       = require('ejs');
+const fs        = require('fs');
+const isDate    = require('../../utils/date').isDate;
+const cheerio   = require('cheerio');
 
 /**
  * PUT rest method
@@ -109,40 +112,6 @@ exports.get = function(req, res){
 
 };
 
-function isDate(string){
-
-    console.log('Date: ',string);
-
-    if(typeof string !== 'string'){
-        return false;
-    }
-
-    const parts = string.split('.');
-    let stringIsDate = false;
-    const date = new Date();
-
-    if(parts.length > 0){
-
-        const dayNum = parseInt(parts[0]);
-        const monthNum = parseInt(parts[1]);
-        const yearNum = parseInt(parts[2]);
-
-        console.log(dayNum,monthNum,yearNum);
-
-        if(dayNum > 0 && dayNum < 33 && monthNum > 0 && monthNum < 13 && yearNum > 1000){
-
-            stringIsDate = true;
-
-        }
-
-
-    }
-
-    return stringIsDate;
-
-}
-
-
 /**
  *
  * @param req
@@ -154,6 +123,8 @@ exports.render = function(req, res){
     var method  = req.params.method;
     var id      = req.params.id;
     var customUrl = req.query.customUrl;
+    const isPreview = req.query.isPreview;
+    const previewWidth = req.query.width;
 
     if(customUrl){
         if(!customUrl.match('.parlameter.')){
@@ -194,26 +165,18 @@ exports.render = function(req, res){
                     var analizeUrl = doc.dataUrl;
 
                     if(!isDate(id)){
-                        console.log('Is not date: ', analizeUrl);
                         if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
                             analizeUrl = analizeUrl + '/' + id;
                         }
-                        console.log('Is not date after: ', analizeUrl);
                     }
 
                     if(date){
-                        console.log('Analize 1: '+analizeUrl);
                         analizeUrl = analizeUrl+'/'+date;
-                        console.log('Analize 2: '+analizeUrl);
                     }
                     dataUrl = analizeUrl;
                 }else{
                     dataUrl = customUrl;
                 }
-
-                console.log('Data url:',dataUrl);
-                console.log('Doc data url:',doc.dataUrl);
-                console.log('Date:',date);
 
                 request(dataUrl, function (err, _res, body) {
 
@@ -222,39 +185,54 @@ exports.render = function(req, res){
                         try {
 
                             var data = JSON.parse(body);
-                            var mDoc = doc.toObject();
 
                             try {
 
                                 var html = ejs.render(doc.ejs, {data: data});
 
-                                var body = html;
+                                if(isPreview) {
+                                    var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
+                                    var $ = cheerio.load(frameHtmlString);
+
+                                    if(previewWidth){
+                                        $('#card-container').css({
+                                            width:previewWidth+'px',
+                                            margin:'auto'
+                                        });
+                                    }
+
+                                    $('#card-container').html(html);
+
+                                    html = $.html();
+
+                                }
+
                                 res.writeHead(200, {
-                                    'Content-Length': Buffer.byteLength(body),
+                                    'Content-Length': Buffer.byteLength(html),
                                     'Content-Type': 'text/html; charset=utf-8'
                                 });
-                                res.write(body);
+
+                                res.write(html);
                                 res.end();
+
                             }catch(err){
                                 res.send(err.toString(), 400);
                             }
 
                         } catch (err) {
-                            res.status(400).send(err);
+                            res.status(400).send('Data source url not returning json');
                         }
 
                     } else {
-                        res.status(400).send(err);
+                        res.status(400).send('Data source request error');
                     }
 
                 });
             }else{
-                console.log(err);
-                res.status(404).send('Card definition not found by the passed parameters');
+                res.status(404).send('Card not found');
             }
 
         }else{
-            console.log(err);
             res.status(400).send(err);
         }
 
