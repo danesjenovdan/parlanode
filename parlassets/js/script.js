@@ -309,7 +309,7 @@ var cardInfo =  {
 
 $(function () {
     ParlaScroll.init();
-    cardInfo.init();
+    // cardInfo.init();
 
     votingCardHorizontal.init();
 
