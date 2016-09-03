@@ -20,15 +20,15 @@ if (!window.parlaCardInit) {
             var tag = document.createElement('script');
             tag.type = "text/javascript";
 
-            if (script.readyState) { //IE
-                script.onreadystatechange = function() {
-                    if (script.readyState == "loaded" || script.readyState == "complete") {
-                        script.onreadystatechange = null;
+            if (tag.readyState) { //IE
+                tag.onreadystatechange = function() {
+                    if (tag.readyState == "loaded" || tag.readyState == "complete") {
+                        tag.onreadystatechange = null;
                         callback();
                     }
                 };
             } else { //Others
-                script.onload = function() {
+                tag.onload = function() {
                     callback();
                 };
             }
