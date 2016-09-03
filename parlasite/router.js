@@ -11,14 +11,60 @@ const routes = [
   {
     path:'/',
     viewPath:'landing',
-    cards:{
-      poslanec:{
-        url:'https://glej.parlameter.si/p/besedni-zaklad/:poslanecId/'
-      }
-    },
-    resolve:{
+    cards:[
+      {
+        name:'kompas',
+        sourceUrl:'/c/kompas/',
+        resolve: (req, res, route, card)=>{
 
-    }
+          return getMPIdByName(req.params.fullName, 0)
+            .then((mpId)=>{
+
+              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
+      {
+        name:'zadnjaSeja',
+        sourceUrl:'/c/zadnja-seja/',
+        resolve: (req, res, route, card)=>{
+
+          return getMPIdByName(req.params.fullName, 0)
+            .then((mpId)=>{
+
+              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      }
+    ]
   },
   {
     path:'/poslanci',
@@ -212,17 +258,29 @@ function createRoute(app, route){
     if(route.cards) {
 
       resolveCards(req, res, route)
-        .then((views)=>{
-          res.render(route.viewPath, { query:req.query, params:req.params, views });
+        .then((views)=> {
+          res.render(route.viewPath, {query: req.query, params: req.params, views});
         });
 
+    }else{
+
+        res.render(route.viewPath, { query:req.query, params:req.params });
+
     }
+
+
 
   });
 
 }
 
 function resolveCards(req, res, route){
+
+  console.log(route.cards);
+
+  if(!route.cards){
+    return Promise.resolve({});
+  }
 
   return Promise.reduce(route.cards, (aggregator, card) => {
 
