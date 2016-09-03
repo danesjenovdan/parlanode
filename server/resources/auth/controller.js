@@ -21,8 +21,8 @@ exports.login = (req, res)=>{
         }
     })
         .then((user)=>{
-
-            crypto.pbkdf2(req.body.password, 'Ov3TOthrlwCa', 20000, 32, 'sha256', function (err, derivedkey) {
+console.log('User: ', user);
+            crypto.pbkdf2(req.body.password, 'IrhgN1perpLq', 20000, 32, 'sha256', function (err, derivedkey) {
 
                 // error on failure
                 if (err) return callback(err);
