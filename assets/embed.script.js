@@ -69,7 +69,7 @@ if (!window.parlaCardInit) {
 
     function init() {
 
-        var $cards = $('[data-parlameter="card"]');
+        var $cards = $('.parlameter-card');
 
         for (var i = 0; i < $cards.length; i++) {
 
