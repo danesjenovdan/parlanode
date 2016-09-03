@@ -44,7 +44,9 @@ if (!window.parlaCardInit) {
             loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js', function() {
                 loadScript('https://d3js.org/d3.v3.min.js', function() {
                     loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
-                        init();
+                        loadScript('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', function() {
+                            init();
+                        });
                     });
                 });
             });
@@ -55,7 +57,9 @@ if (!window.parlaCardInit) {
                 loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js', function() {
                     loadScript('https://d3js.org/d3.v3.min.js', function() {
                         loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
-                            init();
+                            loadScript('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', function() {
+                                init();
+                            });
                         });
                     });
                 });
