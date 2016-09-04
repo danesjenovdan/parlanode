@@ -26,6 +26,7 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "express-validator": "^2.20.8",
+    "lodash": "^4.15.0",
     "mongoose": "^4.4.4",
     "pg": "^6.0.1",
     "pg-hstore": "^2.3.2",

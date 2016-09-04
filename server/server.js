@@ -41,7 +41,6 @@ function setupExpress(){
         app.use(bodyParser.urlencoded({extended:true}));
         app.use(expressValidator());
 
-
         siteRouter(app);
 
         // start listening on port

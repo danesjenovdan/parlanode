@@ -7,6 +7,7 @@ const ejs       = require('ejs');
 const fs        = require('fs');
 const isDate    = require('../../utils/date').isDate;
 const cheerio   = require('cheerio');
+const _         = require('lodash');
 
 /**
  * PUT rest method
@@ -119,12 +120,14 @@ exports.get = function(req, res){
  */
 exports.render = function(req, res){
 
-    var group   = req.params.group;
-    var method  = req.params.method;
-    var id      = req.params.id;
-    var customUrl = req.query.customUrl;
-    const isPreview = req.query.isPreview;
-    const previewWidth = req.query.width;
+    var group           = req.params.group;
+    var method          = req.params.method;
+    var id              = req.params.id;
+    var customUrl       = req.query.customUrl;
+    const isPreview     = req.query.isPreview;
+    const altHeader     = req.query.altHeader;
+    const previewWidth  = req.query.width;
+    let state         = req.query.state;
 
     if(customUrl){
         if(!customUrl.match('.parlameter.')){
@@ -140,8 +143,6 @@ exports.render = function(req, res){
 
     var date;
 
-    console.log(id);
-
     if(isDate(id)){
         date = id;
     }
@@ -154,87 +155,124 @@ exports.render = function(req, res){
 
     Card.findOne({ method:method, group:group }, function(err, doc){
 
-        if(!err) {
+        if(err){
+            return res.status(400).send(err);
+        }
 
-            if(doc) {
+        if(!doc){
+            return res.status(404).send('Card not found');
+        }
 
-                var dataUrl;
+        var dataUrl;
 
-                if(!customUrl){
+        if(!customUrl){
 
-                    var analizeUrl = doc.dataUrl;
+            var analizeUrl = doc.dataUrl;
 
-                    if(!isDate(id)){
-                        if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
-                            analizeUrl = analizeUrl + '/' + id;
-                        }
-                    }
-
-                    if(date){
-                        analizeUrl = analizeUrl+'/'+date;
-                    }
-                    dataUrl = analizeUrl;
-                }else{
-                    dataUrl = customUrl;
+            if(!isDate(id)){
+                if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
+                    analizeUrl = analizeUrl + '/' + id;
                 }
+            }
 
-                request(dataUrl, function (err, _res, body) {
+            if(date){
+                analizeUrl = analizeUrl+'/'+date;
+            }
+            dataUrl = analizeUrl;
+        }else{
+            dataUrl = customUrl;
+        }
 
-                    if (!err) {
+        request(dataUrl, function (err, _res, body) {
+
+            if (!err) {
+
+                try {
+
+                    var data = JSON.parse(body);
+
+                    try {
+
+                        const cardData = {
+                            data:data
+                        };
 
                         try {
 
-                            var data = JSON.parse(body);
+                            if (state) state = JSON.parse(state);
 
-                            try {
+                            let onlyStrings = true;
 
-                                var html = ejs.render(doc.ejs, {data: data});
-
-                                if(isPreview) {
-                                    var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
-                                    var $ = cheerio.load(frameHtmlString);
-
-                                    if(previewWidth){
-                                        $('#card-container').css({
-                                            width:previewWidth+'px',
-                                            margin:'auto'
-                                        });
-                                    }
-
-                                    $('#card-container').html(html);
-
-                                    html = $.html();
-
+                            _.each(cardData.state, (key, val)=>{
+                                if(typeof key !== 'string' && typeof val !== 'string'){
+                                    onlyStrings = false;
                                 }
+                            });
 
-                                res.writeHead(200, {
-                                    'Content-Length': Buffer.byteLength(html),
-                                    'Content-Type': 'text/html; charset=utf-8'
-                                });
-
-                                res.write(html);
-                                res.end();
-
-                            }catch(err){
-                                res.send(err.toString(), 400);
+                            if(!onlyStrings){
+                                throw new Error(err);
+                            }else{
+                                cardData.state = state;
                             }
 
-                        } catch (err) {
-                            res.status(400).send('Data source url not returning json');
+                        }catch(err){
+                            throw new Error(err);
                         }
 
-                    } else {
-                        res.status(400).send('Data source request error');
+                        var html = ejs.render(doc.ejs, cardData);
+
+                        if(altHeader){
+
+                            var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
+                            var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
+
+                            const $ = cheerio.load(html);
+                            $('.card-header').empty().append(renderedHtmlHeader);
+
+                            html = $.html();
+
+                        }
+
+                        if(isPreview) {
+
+                            var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
+                            var $ = cheerio.load(frameHtmlString);
+
+                            if(previewWidth){
+                                $('#card-container').css({
+                                    width:previewWidth+'px',
+                                    margin:'auto'
+                                });
+                            }
+
+                            $('#card-container').html(html);
+
+                            html = $.html();
+
+                        }
+
+                        res.writeHead(200, {
+                            'Content-Length': Buffer.byteLength(html),
+                            'Content-Type': 'text/html; charset=utf-8'
+                        });
+
+                        res.write(html);
+                        res.end();
+
+                    }catch(err){
+                        res.send(err.toString(), 400);
                     }
 
-                });
-            }else{
-                res.status(404).send('Card not found');
+                } catch (err) {
+                    res.status(400).send({err, msg:'Data source url not returning json'});
+                }
+
+            } else {
+                res.status(400).send({err, msg:'Data source request error'});
             }
 
-        }else{
-            res.status(400).send(err);
-        }
+        });
+
 
     });
 
