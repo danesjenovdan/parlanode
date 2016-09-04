@@ -20,15 +20,15 @@ if (!window.parlaCardInit) {
             var tag = document.createElement('script');
             tag.type = "text/javascript";
 
-            if (script.readyState) { //IE
-                script.onreadystatechange = function() {
-                    if (script.readyState == "loaded" || script.readyState == "complete") {
-                        script.onreadystatechange = null;
+            if (tag.readyState) { //IE
+                tag.onreadystatechange = function() {
+                    if (tag.readyState == "loaded" || tag.readyState == "complete") {
+                        tag.onreadystatechange = null;
                         callback();
                     }
                 };
             } else { //Others
-                script.onload = function() {
+                tag.onload = function() {
                     callback();
                 };
             }
@@ -43,8 +43,10 @@ if (!window.parlaCardInit) {
         loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.js', function() {
             loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js', function() {
                 loadScript('https://d3js.org/d3.v3.min.js', function() {
-                    loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
-                        init();
+                    loadScript('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', function() {
+                        loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
+                            init();
+                        });
                     });
                 });
             });
@@ -54,8 +56,10 @@ if (!window.parlaCardInit) {
             loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.js', function() {
                 loadScript('https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js', function() {
                     loadScript('https://d3js.org/d3.v3.min.js', function() {
-                        loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
-                            init();
+                        loadScript('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', function() {
+                            loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
+                                init();
+                            });
                         });
                     });
                 });
@@ -65,7 +69,7 @@ if (!window.parlaCardInit) {
 
     function init() {
 
-        var $cards = $('[data-parlameter="card"]');
+        var $cards = $('.parlameter-card');
 
         for (var i = 0; i < $cards.length; i++) {
 
