@@ -1,0 +1,106 @@
+<% include /partials/header.ejs %>
+
+<style>
+    .pm-poslanec-nav{
+        width:100%;
+        text-align: center;
+    }
+
+    .pm-poslanec-nav .pm-poslanec-nav-btn{
+
+        line-height:50px;
+        width:120px;
+        margin-left:10px;
+        display: inline-block;
+        text-transform: uppercase;
+        border:1px solid #999;
+        color:#555;
+
+    }
+
+    .pm-poslanec-nav .pm-poslanec-nav-btn-selected{
+        background-color: #009cdd;
+        color: #fff;
+        border: 0px;
+    }
+
+    .page-title{
+
+        text-align: center;
+        font-weight: 300;
+        font-size:24px;
+        margin-bottom:20px;
+
+    }
+
+    .row-container .col-half:nth-child(2){
+
+        margin-left: 44px;
+
+    }
+
+    .col-container {
+        float: left;
+    }
+
+    .col-half {
+
+        width: 47.5%;
+
+    }
+
+    .col-block {
+        width: 100%;
+    }
+
+    .page-title{
+
+        text-align: center;
+        font-weight: 300;
+        font-size:24px;
+        margin-bottom:20px;
+
+    }
+</style>
+
+<h1 class="page-title"><%- mp.name %></h1>
+
+<div class="pm-poslanec-nav">
+    <a href="/poslanci/pregled/<%-slug%>/"><div class="pm-poslanec-nav-btn">Pregled</div></a>
+    <a href="/poslanci/glasovanja/<%-slug%>/"><div class="pm-poslanec-nav-btn">Glasovanja</div></a>
+    <a href="/poslanci/govori/<%-slug%>/"><div class="pm-poslanec-nav-btn pm-poslanec-nav-btn-selected">Govori</div></a>
+</div>
+
+<div class="page-container">
+
+    <div class="row-container">
+        <div class="col-container col-half">
+            <%- views.povezaveDoGovorov %>
+        </div>
+        <div class="col-container col-half">
+            <%- views.steviloIzgovorjenihBesed %>
+        </div>
+    </div>
+
+    <div class="row-container">
+        <div class="col-container col-half">
+            <%- views.povprecnoSteviloGovorovNaSejo %>
+        </div>
+        <div class="col-container col-half">
+            <%- views.steviloIzgovorjenihBesed %>
+        </div>
+    </div>
+
+    <div class="row-container">
+        <div class="col-container col-half">
+            <%- views.besedniZaklad %>
+        </div>
+        <div class="col-container col-half">
+            <%- views.stilneAnalize %>
+        </div>
+    </div>
+
+</div>
+
+<% include /partials/footer.ejs %>
+
