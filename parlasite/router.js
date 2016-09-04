@@ -77,7 +77,7 @@ const routes = [
     viewPath:'poslanci'
   },
   {
-    path :'/p/:fullName/pregled',
+    path :'/p/:fullName',
     extraPaths :['/poslanci/pregled/:fullName/:date'],
     viewPath :'poslanec/pregled',
     cards :[

@@ -36,27 +36,27 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="551" column="6" selection-start-line="551" selection-start-column="6" selection-end-line="551" selection-end-column="6" />
+            <state relative-caret-position="71">
+              <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
               <folding>
-                <element signature="e#316#1609#0" expanded="false" />
+                <element signature="e#473#970#0" expanded="false" />
                 <element signature="e#986#1599#0" expanded="false" />
-                <element signature="e#1812#2416#0" expanded="false" />
-                <element signature="e#2424#3297#0" expanded="false" />
-                <element signature="e#3305#4137#0" expanded="false" />
-                <element signature="e#4145#4982#0" expanded="false" />
-                <element signature="e#4990#5770#0" expanded="false" />
-                <element signature="e#5778#6719#0" expanded="false" />
-                <element signature="e#6727#7612#0" expanded="false" />
-                <element signature="e#7620#8416#0" expanded="false" />
-                <element signature="e#8424#9195#0" expanded="false" />
-                <element signature="e#9354#12460#0" expanded="false" />
-                <element signature="e#9363#10124#0" expanded="false" />
-                <element signature="e#10132#10900#0" expanded="false" />
-                <element signature="e#10908#11676#0" expanded="false" />
-                <element signature="e#11684#12454#0" expanded="false" />
-                <element signature="e#12609#13380#0" expanded="false" />
-                <element signature="e#14183#14982#0" expanded="false" />
+                <element signature="e#1804#2408#0" expanded="false" />
+                <element signature="e#2416#3289#0" expanded="false" />
+                <element signature="e#3297#4129#0" expanded="false" />
+                <element signature="e#4137#4974#0" expanded="false" />
+                <element signature="e#4982#5762#0" expanded="false" />
+                <element signature="e#5770#6711#0" expanded="false" />
+                <element signature="e#6719#7604#0" expanded="false" />
+                <element signature="e#7612#8408#0" expanded="false" />
+                <element signature="e#8416#9187#0" expanded="false" />
+                <element signature="e#9346#12452#0" expanded="false" />
+                <element signature="e#9355#10116#0" expanded="false" />
+                <element signature="e#10124#10892#0" expanded="false" />
+                <element signature="e#10900#11668#0" expanded="false" />
+                <element signature="e#11676#12446#0" expanded="false" />
+                <element signature="e#12601#13372#0" expanded="false" />
+                <element signature="e#14175#14974#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,28 +65,28 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/poslanec/govori/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="77" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/poslanec/glasovanja/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="67">
+              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/poslanec/glasovanja/index.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/poslanec/pregled/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="69" selection-end-column="6" />
+            <state relative-caret-position="199">
+              <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -105,8 +105,8 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/poslanec/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+            <state relative-caret-position="556">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -115,8 +115,8 @@
       <file leaf-file-name="landing.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/landing.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="60">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -173,9 +173,9 @@
         <option value="$PROJECT_DIR$/views/landing.ejs" />
         <option value="$PROJECT_DIR$/views/partials/header.ejs" />
         <option value="$PROJECT_DIR$/router.js" />
-        <option value="$PROJECT_DIR$/views/poslanec/pregled/index.ejs" />
         <option value="$PROJECT_DIR$/views/poslanec/govori/index.ejs" />
         <option value="$PROJECT_DIR$/views/poslanec/glasovanja/index.ejs" />
+        <option value="$PROJECT_DIR$/views/poslanec/pregled/index.ejs" />
       </list>
     </option>
   </component>
@@ -480,12 +480,12 @@
       <option name="presentableId" value="Default" />
       <updated>1472902635242</updated>
       <workItem from="1472902636473" duration="588000" />
-      <workItem from="1472903237052" duration="25056000" />
+      <workItem from="1472903237052" duration="25601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25644000" />
+    <option name="totallyTimeSpent" value="26189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="819" extended-state="0" />
@@ -647,14 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/poslanec/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/footer.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -675,14 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/landing.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -691,53 +675,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/router.js">
+    <entry file="file://$PROJECT_DIR$/views/landing.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="551" column="6" selection-start-line="551" selection-start-column="6" selection-end-line="551" selection-end-column="6" />
-          <folding>
-            <element signature="e#316#1609#0" expanded="false" />
-            <element signature="e#986#1599#0" expanded="false" />
-            <element signature="e#1812#2416#0" expanded="false" />
-            <element signature="e#2424#3297#0" expanded="false" />
-            <element signature="e#3305#4137#0" expanded="false" />
-            <element signature="e#4145#4982#0" expanded="false" />
-            <element signature="e#4990#5770#0" expanded="false" />
-            <element signature="e#5778#6719#0" expanded="false" />
-            <element signature="e#6727#7612#0" expanded="false" />
-            <element signature="e#7620#8416#0" expanded="false" />
-            <element signature="e#8424#9195#0" expanded="false" />
-            <element signature="e#9354#12460#0" expanded="false" />
-            <element signature="e#9363#10124#0" expanded="false" />
-            <element signature="e#10132#10900#0" expanded="false" />
-            <element signature="e#10908#11676#0" expanded="false" />
-            <element signature="e#11684#12454#0" expanded="false" />
-            <element signature="e#12609#13380#0" expanded="false" />
-            <element signature="e#14183#14982#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/poslanec/pregled/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="69" selection-end-column="6" />
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/poslanec/govori/index.ejs">
+    <entry file="file://$PROJECT_DIR$/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="77" selection-end-column="6" />
+        <state relative-caret-position="71">
+          <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding>
+            <element signature="e#473#970#0" expanded="false" />
+            <element signature="e#986#1599#0" expanded="false" />
+            <element signature="e#1804#2408#0" expanded="false" />
+            <element signature="e#2416#3289#0" expanded="false" />
+            <element signature="e#3297#4129#0" expanded="false" />
+            <element signature="e#4137#4974#0" expanded="false" />
+            <element signature="e#4982#5762#0" expanded="false" />
+            <element signature="e#5770#6711#0" expanded="false" />
+            <element signature="e#6719#7604#0" expanded="false" />
+            <element signature="e#7612#8408#0" expanded="false" />
+            <element signature="e#8416#9187#0" expanded="false" />
+            <element signature="e#9346#12452#0" expanded="false" />
+            <element signature="e#9355#10116#0" expanded="false" />
+            <element signature="e#10124#10892#0" expanded="false" />
+            <element signature="e#10900#11668#0" expanded="false" />
+            <element signature="e#11676#12446#0" expanded="false" />
+            <element signature="e#12601#13372#0" expanded="false" />
+            <element signature="e#14175#14974#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/poslanec/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/poslanec/glasovanja/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/poslanec/govori/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/poslanec/pregled/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
           <folding />
         </state>
       </provider>
