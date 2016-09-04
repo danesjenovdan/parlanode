@@ -112,7 +112,7 @@ const routes = [
       },
       {
         name:'povprecnoSteviloGovorovNaSejo',
-        sourceUrl:'/p/povprecno-stevilo-govorov-na-sejo/:id/:date',
+        sourceUrl:'/p/povprecno-stevilo-govorov-na-sejo/:id',
         resolve: (req, res, route, card)=>{
 
           return getMPIdByName(req.params.fullName, req)
@@ -124,7 +124,7 @@ const routes = [
               console.log('povprecnoSteviloGovorovNaSejo: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -145,7 +145,7 @@ const routes = [
       },
       {
         name:'zadnjeAktivnosti',
-        sourceUrl:'/p/zadnje-aktivnosti/:id/:date',
+        sourceUrl:'/p/zadnje-aktivnosti/:id',
         resolve: (req, res, route, card)=>{
 
           return getMPIdByName(req.params.fullName, req)
@@ -157,7 +157,7 @@ const routes = [
               console.log('Zadnje aktivnosti: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -178,7 +178,7 @@ const routes = [
       },
       {
         name:'osnovneInformacije',
-        sourceUrl:'/p/osnovne-informacije/:id/:date',
+        sourceUrl:'/p/osnovne-informacije/:id',
         resolve: (req, res, route, card)=>{
 
           return getMPIdByName(req.params.fullName, req)
@@ -190,38 +190,7 @@ const routes = [
               console.log('osnovneInformacije: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
-        }
-      },
-      {
-        name:'osnovneInformacije',
-        sourceUrl:'/p/osnovne-informacije/:id/:date',
-        resolve: (req, res, route, card)=>{
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData)=>{
-
-              let mpId = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -242,7 +211,7 @@ const routes = [
       },
       {
         name:'razrezGlasovanj',
-        sourceUrl:'/p/razrez-glasovanj/:id/:date',
+        sourceUrl:'/p/razrez-glasovanj/:id',
         resolve: (req, res, route, card)=>{
 
           console.log('razrezGlasovanj: ',req.params.fullName);
@@ -259,7 +228,7 @@ const routes = [
               console.log('razrezGlasovanj: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -280,7 +249,7 @@ const routes = [
       },
       {
         name:'stilneAnalize',
-        sourceUrl:'/p/stilne-analize/:id/:date',
+        sourceUrl:'/p/stilne-analize/:id',
         resolve: (req, res, route, card)=>{
 
           console.log('stilneAnalize: ',req.params.fullName);
@@ -294,7 +263,7 @@ const routes = [
               console.log('stilneAnalize: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -389,7 +358,7 @@ const routes = [
 
       {
         name:'glasovanja',
-        sourceUrl:'/p/glasovanja/:id/:date',
+        sourceUrl:'/p/glasovanja/:id',
         resolve: (req, res, route, card)=>{
 
           return getMPIdByName(req.params.fullName, 0)
@@ -399,7 +368,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -430,7 +399,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -461,7 +430,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -492,7 +461,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -530,7 +499,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -561,7 +530,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -592,7 +561,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -623,7 +592,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
@@ -654,7 +623,7 @@ const routes = [
               let mpSlug = mpData.mpSlug;
 
               var pattern = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({id:mpId, date:'23.12.2014'});
+              const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
               return fetch(cardUrl)
