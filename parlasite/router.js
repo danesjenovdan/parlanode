@@ -77,7 +77,7 @@ const routes = [
     viewPath:'poslanci'
   },
   {
-    path :'/poslanci/pregled/:fullName',
+    path :'/p/:fullName/pregled',
     extraPaths :['/poslanci/pregled/:fullName/:date'],
     viewPath :'poslanec/pregled',
     cards :[
@@ -382,7 +382,7 @@ const routes = [
     ]
   },
   {
-    path :'/poslanci/glasovanja/:fullName',
+    path :'/p/:fullName/glasovanja',
     extraPaths :['/poslanci/glasovanja/:fullName/:date'],
     viewPath :'poslanec/glasovanja',
     cards :[
@@ -514,7 +514,7 @@ const routes = [
     ]
   },
   {
-    path :'/poslanci/govori/:fullName',
+    path :'/p/:fullName/govori',
     extraPaths :['/poslanci/govori/:fullName/:date'],
     viewPath :'poslanec/govori',
     cards :[
