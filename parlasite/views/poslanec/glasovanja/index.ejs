@@ -58,9 +58,15 @@
 <h1 class="page-title"><%- mp.name %></h1>
 
 <div class="pm-poslanec-nav">
-    <a href="/poslanci/pregled/<%-slug%>/"><div class="pm-poslanec-nav-btn">Pregled</div></a>
-    <a href="/poslanci/glasovanja/<%-slug%>/"><div class="pm-poslanec-nav-btn pm-poslanec-nav-btn-selected">Glasovanja</div></a>
-    <a href="/poslanci/govori/<%-slug%>/"><div class="pm-poslanec-nav-btn">Govori</div></a>
+    <a href="/p/<%- slug %>/pregled">
+        <div class="pm-poslanec-nav-btn">Pregled</div>
+    </a>
+    <a href="/p/<%- slug %>/glasovanja">
+        <div class="pm-poslanec-nav-btn pm-poslanec-nav-btn-selected">Glasovanja</div>
+    </a>
+    <a href="/p/<%- slug %>/govori">
+        <div class="pm-poslanec-nav-btn">Govori</div>
+    </a>
 </div>
 
     <div class="page-container">
