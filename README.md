@@ -26,6 +26,9 @@ $ git pull origin master
 ```
 $ pm2 restart run
 ```
+
+##### Work in progress
+
 ```
 $ pm2 deploy ecosystem.json production
 ```
