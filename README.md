@@ -2,7 +2,7 @@
 
 This is the card rendering part of the Parlameter project. The purpose of this project is to store the ejs templates along with information about the data source for each card.
 
-It contains both the API (`/server`) and the client side CMS(`cms-dev`).
+It contains both the API (`server`) and the client side CMS(`cms-dev`).
 
 #### Features
 
