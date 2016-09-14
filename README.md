@@ -4,11 +4,17 @@ This is the card rendering part of the Parlameter project. The purpose of this p
 
 #### Features
 
+##### Server
+
 * Express for server (routing and handling requests)
 * Mongoose for interaction with the MongoDB database
 * Sequelize for interaction with the postgres for authentication
 
-TODO - Automate the process below 
+##### CMS
+
+* AngularJS
+* cg-angular (yeoman generator)
+* AdminLTE just for CSS (for now, will be deprecated)
 
 ## CMS
 
