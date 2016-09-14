@@ -1,5 +1,12 @@
-# parlanode
-parlanode
+# Parlanode
+
+This is the card rendering part of the Parlameter project. The purpose of this project is to store the ejs templates along with information about the data source for each card.
+
+#### Features
+
+* Express for server (routing and handling requests)
+* Mongoose for interaction with the MongoDB database
+* Sequelize for interaction with the postgres for authentication
 
 TODO - Automate the process below 
 
