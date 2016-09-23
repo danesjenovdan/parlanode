@@ -30,9 +30,11 @@
     display: none;
     position: absolute;
     /* please don't change 'position' */
+    /*
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    */
     opacity: 0;
     -webkit-transition: background-color .2s linear, opacity .2s linear;
     -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -45,9 +47,10 @@
       position: absolute;
       /* please don't change 'position' */
       background-color: $sadblue;
-      -webkit-border-radius: 4px;
+      /*-webkit-border-radius: 4px;
       -moz-border-radius: 4px;
       border-radius: 4px;
+      */
       -webkit-transition: background-color .2s linear;
       -moz-transition: background-color .2s linear;
       -o-transition: background-color .2s linear;
@@ -59,9 +62,10 @@
     display: none;
     position: absolute;
     /* please don't change 'position' */
-    -webkit-border-radius: 4px;
+    /*-webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    */
     opacity: 0;
     -webkit-transition: background-color .2s linear, opacity .2s linear;
     -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -69,21 +73,22 @@
     transition: background-color .2s linear, opacity .2s linear;
     right: 3px;
     /* there must be 'right' for ps-scrollbar-y-rail */
-    width: 8px; }
+    width: 4px; }
     .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
       position: absolute;
       /* please don't change 'position' */
       background-color: $sadblue;
-      -webkit-border-radius: 4px;
+      /*-webkit-border-radius: 4px;
       -moz-border-radius: 4px;
       border-radius: 4px;
+      */
       -webkit-transition: background-color .2s linear;
       -moz-transition: background-color .2s linear;
       -o-transition: background-color .2s linear;
       transition: background-color .2s linear;
       right: 0;
       /* there must be 'right' for ps-scrollbar-y */
-      width: 8px; }
+      width: 4px; }
   .ps-container:hover.ps-in-scrolling {
     pointer-events: none; }
     .ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail {
