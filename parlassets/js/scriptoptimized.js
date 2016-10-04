@@ -255,3 +255,15 @@ $(function () {
         });
     }
 });
+
+function DNDrepeatEmbedCall() {
+    ParlaScroll.init();
+    votingCardHorizontal.init();
+
+    if($(".session_transcript .status").length > 0) {
+        $(".session_transcript .status").click(function () {
+            $(this).parent().toggleClass("collapsed");
+            return false;
+        });
+    }
+}
