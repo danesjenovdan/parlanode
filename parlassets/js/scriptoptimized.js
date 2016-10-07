@@ -138,68 +138,6 @@ var votingCardHorizontal = {
 }
 
 
-
-var votingCardTpl = {
-
-    init: function () {
-        // TODO: If more than 6 results than fix span class margin-right  - because of the scroller
-        this.initalizeScrollbar();
-    },
-
-    initalizeScrollbar: function (id, options) {
-        var id = (typeof (id) != 'undefined') ? id : 'scrollbar-votingCard';
-
-        var defaultOptions = {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 100,
-            maxScrollbarLength: 100
-        };
-
-        var options = (typeof (options) != 'undefined') ? options : defaultOptions;
-
-        //var container = document.getElementById(id);
-        //Ps.initialize(container, options);
-
-        $(".scroller").perfectScrollbar(options);
-
-    }
-}
-
-
-var lastActivity = {
-
-    init: function () {
-
-        this.initalizeScrollbar();
-
-    },
-
-
-
-    initalizeScrollbar: function (id, options) {
-        var id = (typeof (id) != 'undefined') ? id : 'scrollbar-recent-activity';
-
-        var defaultOptions = {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 100,
-            maxScrollbarLength: 100
-        };
-
-        var options = (typeof (options) != 'undefined') ? options : defaultOptions;
-
-        //var container = document.getElementById(id);
-        //Ps.initialize(container, options);
-
-        $(".scroller").perfectScrollbar(options);
-
-    }
-
-
-}
-
-
 var ParlaScroll = {
     init: function () {
         this.initalizeScrollbar();
@@ -214,7 +152,6 @@ var ParlaScroll = {
         $(".scroller").each(function () {
             $("#"+$(this).attr('id')).perfectScrollbar(defaultOptions);
         });
-        //$(".scroller").perfectScrollbar(defaultOptions);
     }
 }
 
@@ -309,8 +246,6 @@ var cardInfo =  {
 
 $(function () {
     ParlaScroll.init();
-    // cardInfo.init();
-
     votingCardHorizontal.init();
 
     if($(".session_transcript .status").length > 0) {
@@ -319,11 +254,7 @@ $(function () {
             return false;
         });
     }
-
-    //votingCardTpl.init();
-    //lastActivity.init();
 });
-
 
 function DNDrepeatEmbedCall() {
     ParlaScroll.init();
