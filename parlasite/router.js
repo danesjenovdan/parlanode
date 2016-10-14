@@ -1,3 +1,4 @@
+"use strict";
 const _           = require('lodash');
 const fetch       = require('node-fetch');
 const UrlPattern  = require('url-pattern');
@@ -5,6 +6,7 @@ const Promise     = require('bluebird');
 const config      = require('./config');
 const slug        = require('slug');
 const mpsList     = require('./static/data/mps');
+const opsList     = require('./static/data/ops');
 
 const routes = [
 
@@ -121,8 +123,6 @@ const routes = [
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
-              console.log('povprecnoSteviloGovorovNaSejo: ',mpId);
-
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -153,8 +153,6 @@ const routes = [
 
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
-
-              console.log('Zadnje aktivnosti: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id:mpId});
@@ -187,7 +185,7 @@ const routes = [
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
-              console.log('osnovneInformacije: ',mpId);
+              //console.log('osnovneInformacije: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id:mpId});
@@ -214,7 +212,7 @@ const routes = [
         sourceUrl:'/p/razrez-glasovanj/:id',
         resolve: (req, res, route, card)=>{
 
-          console.log('razrezGlasovanj: ',req.params.fullName);
+          //console.log('razrezGlasovanj: ',req.params.fullName);
 
           return getMPIdByName(req.params.fullName, req)
             .then((mpData)=>{
@@ -223,9 +221,9 @@ const routes = [
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
-              console.log('Mpdata: ',mpData);
+              //console.log('Mpdata: ',mpData);
 
-              console.log('razrezGlasovanj: ',mpId);
+              //console.log('razrezGlasovanj: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id:mpId});
@@ -252,7 +250,7 @@ const routes = [
         sourceUrl:'/p/stilne-analize/:id',
         resolve: (req, res, route, card)=>{
 
-          console.log('stilneAnalize: ',req.params.fullName);
+          //console.log('stilneAnalize: ',req.params.fullName);
 
           return getMPIdByName(req.params.fullName, req)
             .then((mpData)=>{
@@ -260,7 +258,7 @@ const routes = [
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
-              console.log('stilneAnalize: ',mpId);
+              //console.log('stilneAnalize: ',mpId);
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id:mpId});
@@ -297,7 +295,7 @@ const routes = [
               const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
-              console.log(cardUrl);
+              //console.log(cardUrl);
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -330,7 +328,7 @@ const routes = [
               const renderedPath = pattern.stringify({id:mpId});
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
-              console.log(cardUrl);
+              //console.log(cardUrl);
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -356,7 +354,7 @@ const routes = [
     viewPath :'poslanec/glasovanja',
     cards :[
 
-      {
+      /*{
         name:'glasovanja',
         sourceUrl:'/p/glasovanja/:id',
         resolve: (req, res, route, card)=>{
@@ -386,7 +384,7 @@ const routes = [
             });
 
         }
-      },
+      },*/
       {
         name:'razrezGlasovanj',
         sourceUrl:'/p/razrez-glasovanj/:id',
@@ -487,7 +485,7 @@ const routes = [
     extraPaths :['/poslanci/govori/:fullName/:date'],
     viewPath :'poslanec/govori',
     cards :[
-      {
+      /*{
         name:'povezaveDoGovorov',
         sourceUrl:'/p/povezave-do-govorov/:id',
         resolve: (req, res, route, card)=>{
@@ -517,7 +515,7 @@ const routes = [
             });
 
         }
-      },
+      },*/
       {
         name:'steviloIzgovorjenihBesed',
         sourceUrl:'/p/stevilo-izgovorjenih-besed/:id',
@@ -646,7 +644,10 @@ const routes = [
   },
   {
     path:'/poslanske-skupine',
-    viewPath:'poslanske-skupine'
+    viewPath:'poslanske-skupine',
+      cards:[
+
+      ]
   },
   {
     path:'/poslanske-skupine/:imeAnalize',
@@ -657,6 +658,342 @@ const routes = [
       }
     }
   }
+
+  ,
+  {
+    path:'/poslanska-skupina/pregled/:fullName',
+    extraPaths :['/poslanska-skupina/pregled/:fullName/:date'],
+    viewPath:'poslanske-skupine/pregled',
+    cards:[
+        {
+            name:'osnovneInformacije',
+            sourceUrl:'/ps/osnovne-informacije-poslanska-skupina/:id',
+            resolve: (req, res, route, card)=>{
+
+                return getPSIdByName(req.params.fullName, req)
+                    .then((psData)=>{
+                        let psId = psData.psId;
+                        let psSlug = psData.psSlug;
+                        var pattern = new UrlPattern(card.sourceUrl);
+                        const renderedPath = pattern.stringify({id:psId});
+                        const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                        console.log(cardUrl);
+                        return fetch(cardUrl)
+                            .then((res) => {
+                                return res.text();
+                            })
+                            .then((body) => {
+                                return body;
+                            });
+                    });
+
+            }
+        },{
+            name:'claniceInClani',
+            sourceUrl:'/ps/clanice-in-clani-poslanske-skupine/:id',
+            resolve: (req, res, route, card)=>{
+
+                return getPSIdByName(req.params.fullName, req)
+                    .then((psData)=>{
+                        let psId = psData.psId;
+                        let psSlug = psData.psSlug;
+                        var pattern = new UrlPattern(card.sourceUrl);
+                        const renderedPath = pattern.stringify({id:psId});
+                        const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                        console.log(cardUrl);
+                        return fetch(cardUrl)
+                            .then((res) => {
+                                return res.text();
+                            })
+                            .then((body) => {
+                                return body;
+                            });
+                    });
+
+            }
+        },{
+            name:'kompas',
+            sourceUrl:'/c/kompas/:id',
+            resolve: (req, res, route, card)=>{
+
+                return getPSIdByName(req.params.fullName, req)
+                    .then((psData)=>{
+                        let psId = psData.psId;
+                        let psSlug = psData.psSlug;
+                        var pattern = new UrlPattern(card.sourceUrl);
+                        const renderedPath = pattern.stringify({id:psId});
+                        const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                        console.log(cardUrl);
+                        return fetch(cardUrl)
+                            .then((res) => {
+                                return res.text();
+                            })
+                            .then((body) => {
+                                return body;
+                            });
+                    });
+
+            }
+        },{
+            name:'izracunanaPrisotnost',
+            sourceUrl:'/pg/izracunana-prisotnost/:id',
+            resolve: (req, res, route, card)=>{
+
+                return getPSIdByName(req.params.fullName, req)
+                    .then((psData)=>{
+                        let psId = psData.psId;
+                        let psSlug = psData.psSlug;
+                        var pattern = new UrlPattern(card.sourceUrl);
+                        const renderedPath = pattern.stringify({id:psId});
+                        const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                        console.log(cardUrl);
+                        return fetch(cardUrl)
+                            .then((res) => {
+                                return res.text();
+                            })
+                            .then((body) => {
+                                return body;
+                            });
+                    });
+
+            }
+        },
+    ]
+  },{
+    path:'/poslanska-skupina/glasovanja/:fullName',
+    extraPaths :['/poslanska-skupina/glasovanja/:fullName/:date'],
+    viewPath:'poslanske-skupine/glasovanja',
+    cards:[{
+        name:'glasovanja',
+        sourceUrl:'/pg/glasovanja/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    },{
+        name:'razrezGlasovanj',
+        sourceUrl:'/pg/razrez-glasovanj/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    },{
+        name:'najtezjeBiSeJimPridruziji',
+        sourceUrl:'/pg/najlazje-pridruzili/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    },{
+        name:'najlazjeBiSeJimPridruziji',
+        sourceUrl:'/pg/najlazje-pridruzili/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    },{
+        name:'odstopanjaOdPoslanskeSkupine',
+        sourceUrl:'/pg/odstopanje-od-poslanske-skupine/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    }]
+  },{
+    path:'/poslanska-skupina/govori/:fullName',
+    extraPaths :['/poslanska-skupina/govori/:fullName/:date'],
+    viewPath:'poslanske-skupine/govori',
+    cards:[{
+        name:'besedeKiJihDelajoPosebne',
+        sourceUrl:'/ps/tfidf/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    },{
+        name:'vsiGovoriPoslanskeSkupine',
+        sourceUrl:'/ps/vsi-govori-poslanske-skupine/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+    },{
+        name:'besedniZaklad',
+        sourceUrl:'/ps/besedni-zaklad/:id',
+        resolve: (req, res, route, card)=>{
+
+            return getPSIdByName(req.params.fullName, req)
+                .then((psData)=>{
+                    let psId = psData.psId;
+                    let psSlug = psData.psSlug;
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({id:psId});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    console.log(cardUrl);
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                });
+
+        }
+     }
+     //,{
+    //     name:'stilneAnalize',
+    //     sourceUrl:'/pg/stilne-analize/:id',
+    //     resolve: (req, res, route, card)=>{
+    //
+    //         return getPSIdByName(req.params.fullName, req)
+    //             .then((psData)=>{
+    //                 let psId = psData.psId;
+    //                 let psSlug = psData.psSlug;
+    //                 var pattern = new UrlPattern(card.sourceUrl);
+    //                 const renderedPath = pattern.stringify({id:psId});
+    //                 const cardUrl = `${config.CARD_RENDERER_SEARCH_API_ROOT}${renderedPath}`;
+    //                 console.log(cardUrl);
+    //                 return fetch(cardUrl)
+    //                     .then((res) => {
+    //                         return res.text();
+    //                     })
+    //                     .then((body) => {
+    //                         return body;
+    //                     });
+    //             });
+    //
+    //     }
+    // }
+    ]
+  }
+
+,  {
+        path:'/seje',
+        viewPath:'seje'
+    },
+    {
+        path:'/seje/:imeAnalize',
+        viewPath:'seje/seja',
+        cards:{
+            poslanec:{
+                url:''
+            }
+        }
+    }
+
 
 ];
 
@@ -686,10 +1023,23 @@ function createRoute(app, route){
 
       resolveCards(req, res, route)
         .then((views)=> {
-          getMPIdByName(req.params.fullName, req)
-            .then((mpData)=>{
-              res.render(route.viewPath, {query: req.query, params: req.params, mp:mpData.mp, slug:req.slug, views});
-            });
+
+            if(route.viewPath.indexOf("poslansk") > -1){
+                getPSIdByName(req.params.fullName, req)
+                    .then((psData)=>{
+                        res.render(route.viewPath, {query: req.query, params: req.params, ps:psData.ps, slug:req.slug, views});
+                    });
+
+            }else{
+                getMPIdByName(req.params.fullName, req)
+                    .then((mpData)=>{
+                        res.render(route.viewPath, {query: req.query, params: req.params, mp:mpData.mp, slug:req.slug, views});
+                    });
+
+            }
+
+
+
 
         });
 
@@ -704,8 +1054,6 @@ function createRoute(app, route){
 }
 
 function resolveCards(req, res, route){
-
-  console.log(route.cards);
 
   if(!route.cards){
     return Promise.resolve({});
@@ -756,4 +1104,38 @@ function getMPIdByName(name, req){
 
 //    });
 
+}
+
+
+function getPSIdByName(id, req) {
+    let psId;
+    let psSlug;
+    let selectedPs;
+
+    /*return fetch('https://data.parlameter.si/v1/getPSs')
+     .then((res)=> res.json())
+     .then((jsonBody) => {
+
+     let psId;*/
+
+    _.each(opsList, (ps, i)=>{
+        ps.nameSlug = slug(ps.name).toLowerCase();
+
+        if(id === ps.nameSlug){
+        //if(id == ps.id){
+            psId = ps.id;
+            psSlug = ps.nameSlug;
+            req.slug = psSlug;
+            req.psId = psId;
+            req.ps = ps;
+            selectedPs = ps;
+        }
+        //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
+       // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
+
+    });
+
+//    });
+
+    return Promise.resolve({psId, psSlug, ps:selectedPs});
 }
