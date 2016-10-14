@@ -1,32 +1,28 @@
 <% include ../../partials/header.ejs %>
 
-
-<div class="member-container">
-    <div class="row header text-center">
+<div class="group-container">
+    <div class="row header  text-center">
         <div class="col-lg-12">
 
-            <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%- mp.gov_id %>.png"
-                 class="media-object img-circle session-logo"/>
+            <div class="media-object img-circle session-logo">
+                <b><%- ps.acronym %></b>
+            </div>
 
-            <h1><%- mp.name %></h1>
-            <font class="date">
+            <h1><%- ps.name %></h1>
 
-            </font>
-            <br/>
             <font>
-
+                opozicija
             </font>
-
-            <div class="member-container-menu">
+            <div class="group-container-menu">
                 <ul class="clearfix">
                     <li>
-                        <a href="/p/<%- slug %>/pregled">Pregled</a>
+                        <a class="active" href="/poslanska-skupina/pregled/<%- slug %>">Pregled</a>
                     </li>
                     <li>
-                        <a href="/p/<%- slug %>/glasovanja">Glasovanja</a>
+                        <a href="/poslanska-skupina/glasovanja/<%- slug %>">Glasovanja</a>
                     </li>
                     <li>
-                        <a href="/p/<%- slug %>/govori">Govori</a>
+                        <a href="/poslanska-skupina/govori/<%- slug %>">Govori</a>
                     </li>
                 </ul>
             </div>
@@ -35,11 +31,12 @@
     </div>
 </div>
 
+
 <div class="col-md-6 ">
     <%- views.osnovneInformacije %>
 </div>
 <div class="col-md-6 ">
-    <%- views.zadnjeAktivnosti %>
+    <%- views.claniceInClani %>
 </div>
 <div class="col-md-12 ">
     <%- views.kompas %>
@@ -48,7 +45,7 @@
     <%- views.izracunanaPrisotnost %>
 </div>
 <div class="col-md-6 ">
-    <%- views.clanstva %>
+
 </div>
 
 <% include ../../partials/footer.ejs %>

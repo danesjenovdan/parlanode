@@ -1,0 +1,52 @@
+<% include ../../partials/header.ejs %>
+
+
+<div class="group-container">
+    <div class="row header  text-center">
+        <div class="col-lg-12">
+
+            <div class="media-object img-circle session-logo">
+                <b><%- ps.acronym %></b>
+            </div>
+
+            <h1><%- ps.name %></h1>
+
+            <font>
+                opozicija
+            </font>
+            <div class="group-container-menu">
+                <ul class="clearfix">
+                    <li>
+                        <a href="/poslanska-skupina/pregled/<%- slug %>">Pregled</a>
+                    </li>
+                    <li>
+                        <a class="active" href="/poslanska-skupina/glasovanja/<%- slug %>">Glasovanja</a>
+                    </li>
+                    <li>
+                        <a href="/poslanska-skupina/govori/<%- slug %>">Govori</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 ">
+    <%- views.glasovanja %>
+</div>
+<div class="col-md-6 ">
+    <%- views.razrezGlasovanj %>
+</div>
+<div class="col-md-6 ">
+    <%- views.najtezjeBiSeJimPridruziji %>
+</div>
+<div class="col-md-6 ">
+    <%- views.najlazjeBiSeJimPridruziji %>
+</div>
+<div class="col-md-12 ">
+    <%- views.odstopanjaOdPoslanskeSkupine %>
+</div>
+
+<% include ../../partials/footer.ejs %>
+
