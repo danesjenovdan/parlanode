@@ -1,0 +1,64 @@
+<% include ../../partials/header.ejs %>
+
+<div class="row header">
+
+    <div class="col-md-6">
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="media-object img-circle session-logo">
+                    <b>S</b>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h1>
+                    12. redna seja DZ
+                </h1>
+                <font class="date">
+                    12.6.2015
+                </font>
+                <br/>
+                <font>
+                    podatki objavljneni: 13.6.2015
+                </font>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="session_transcript_menu pull-right">
+
+            <ul class="clearfix">
+                <li>
+                    <a href="/seja/glasovanja/<%- params.id %>">
+                        Glasovanja
+                    </a>
+                </li>
+                <li>
+                    <a href="/seja/transkript/<%- params.id %>">
+                        Transkript
+                    </a>
+                </li>
+                <li>
+                    <a href="/seja/prisotnost/<%- params.id %>" class="active">
+                        Prisotnost
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="col-md-12 ">
+    <%- views.prisotnostPoPoslanskihSkupinah %>
+</div>
+<div class="col-md-6 ">
+    <%- views.seznamOdsotnihPoslancev %>
+</div>
+
+<% include ../../partials/footer.ejs %>
