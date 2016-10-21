@@ -465,37 +465,52 @@ const routes = [
         extraPaths: ['/poslanci/govori/:fullName/:date'],
         viewPath: 'poslanec/govori',
         cards: [
-            /*{
-             name:'povezaveDoGovorov',
-             sourceUrl:'/p/povezave-do-govorov/:id',
-             resolve: (req, res, route, card)=>{
 
-             return getMPIdByName(req.params.fullName, 0)
-             .then((mpData)=>{
+            {
+                name: 'besedeKiDelajoPosebno',
+                sourceUrl: '/p/tfidf/:id',
+                resolve: (req, res, route, card)=> {
+                    console.log(req.params.fullName);
+                    return getMPIdByName(req.params.fullName, req)
+                        .then((mpData)=> {
+                            let mpId = mpData.mpId;
 
-             let mpId = mpData.mpId;
-             let mpSlug = mpData.mpSlug;
+                            var pattern = new UrlPattern(card.sourceUrl);
+                            const renderedPath = pattern.stringify({id: mpId});
+                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                            return fetch(cardUrl)
+                                .then((res) => {
+                                    return res.text();
+                                })
+                                .then((body) => {
+                                    return body;
+                                });
+                        });
+                }
 
-             var pattern = new UrlPattern(card.sourceUrl);
-             const renderedPath = pattern.stringify({id:mpId});
-             const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+            },
+            {
+                name: 'povezaveDoGovorov',
+                sourceUrl: '/p/povezave-do-govorov/:id',
+                resolve: (req, res, route, card)=> {
 
-             return fetch(cardUrl)
-             .then((res) => {
+                    return getMPIdByName(req.params.fullName, req)
+                        .then((mpData)=> {
+                            let mpId = mpData.mpId;
 
-             return res.text();
-
-             })
-             .then((body) => {
-
-             return body;
-
-             });
-
-             });
-
-             }
-             },*/
+                            var pattern = new UrlPattern(card.sourceUrl);
+                            const renderedPath = pattern.stringify({id: mpId});
+                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                            return fetch(cardUrl)
+                                .then((res) => {
+                                    return res.text();
+                                })
+                                .then((body) => {
+                                    return body;
+                                });
+                        });
+                }
+            },
             {
                 name: 'steviloIzgovorjenihBesed',
                 sourceUrl: '/p/stevilo-izgovorjenih-besed/:id',
@@ -1116,6 +1131,9 @@ function createRoute(app, route) {
                     } else {
                         getMPIdByName(req.params.fullName, req)
                             .then((mpData)=> {
+
+                                console.log(req);
+
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
@@ -1165,6 +1183,7 @@ function getMPIdByName(name, req) {
         if (name === mp.nameSlug) {
             mpId = mp.id;
             mpSlug = mp.nameSlug;
+
             req.slug = mpSlug;
             req.mpId = mpId;
             req.mp = mp;
