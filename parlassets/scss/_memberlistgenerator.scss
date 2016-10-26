@@ -5,6 +5,8 @@
     padding: 0;
   }
 
+  .parties-districts { display: flex; }
+
   .analyses {
     @extend %list-flex;
     margin: 14px 0;
@@ -14,6 +16,7 @@
       border: 1px solid #c8c8c8;
       box-sizing: border-box;
       color: #525252;
+      cursor: pointer;
       display: flex;
       font-size: 12px;
       height: 61px;
@@ -24,6 +27,7 @@
       &.selected {
         background-color: #009cdd;
         color: #ffffff;
+        cursor: default;
       }
       &:last-child { margin-right: 0; }
     }
@@ -31,18 +35,25 @@
 
   .parties {
     @extend %list-flex;
+    width: 58.33%;
     li {
-      width: 57px;
-      height: 51px;
       border-top: 1px solid #c8c8c8;
       border-left: 1px solid #c8c8c8;
       border-right: 1px solid #c8c8c8;
       border-bottom: 7px solid #857799;
-      text-align: center;
+      cursor: pointer;
+      flex: 1;
       font-size: 13px;
+      font-weight: 300;
+      height: 51px;
       line-height: 32px;
       margin-right: 3px;
-      font-weight: 300;
+      text-align: center;
+      &.selected {
+        background-color: #857799;
+        border-bottom: 1px solid #c8c8c8;
+        color: #ffffff;
+      }
       &:last-child { margin-right: 0; }
     }
   }
@@ -50,16 +61,17 @@
   .districts {
     @extend %list-flex;
     border: 1px solid #c8c8c8;
-    margin-left: 15px;
     height: 51px;
+    margin-left: 15px;
     padding: 12px 14px;
     position: relative;
+    width: 41.67%;
     li {
-      line-height: 24px;
-      color: #ffffff;
       background-color: #197197;
-      padding: 0 6px;
+      color: #ffffff;
       font-weight: 300;
+      line-height: 24px;
+      padding: 0 6px;
       .cross {
         font-size: 20px;
         font-weight: 400;
@@ -67,15 +79,15 @@
       }
     }
     &::after {
-      width: 0;
-      height: 0;
+      border-color: #197197 transparent transparent transparent;
       border-style: solid;
       border-width: 11px 9px 0 9px;
-      border-color: #197197 transparent transparent transparent;
       content: '';
+      height: 0;
       position: absolute;
       right: 19px;
       top: 20px;
+      width: 0;
     }
   }
 }
@@ -105,8 +117,8 @@
         color: #525252;
         cursor: pointer;
         font-size: 14px;
-        text-transform: uppercase;
         font-weight: 500;
+        text-transform: uppercase;
         &.sort::after {
           border-style: solid;
           border-width: 9px 7.5px 0 7.5px;
