@@ -39,8 +39,10 @@ Copy content of ./cms-dev/dist to ./cms
 $ git pull origin master
 ```
 ```
-$ pm2 restart run
+npm start
 ```
+
+Runs `NODE_ENV=production pm2 start run.js --name=parlanode`
 
 ##### Work in progress
 
