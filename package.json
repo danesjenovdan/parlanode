@@ -4,6 +4,7 @@
   "description": "Parlameter frontend server for serving embeds and the page  with cms for managing them",
   "main": "run.js",
   "scripts": {
+    "start":"NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

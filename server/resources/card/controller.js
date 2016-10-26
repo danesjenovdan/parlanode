@@ -127,7 +127,7 @@ exports.render = function(req, res){
     const isPreview     = req.query.isPreview;
     const altHeader     = req.query.altHeader;
     const previewWidth  = req.query.width;
-    let state         = req.query.state;
+    let state           = req.query.state;
 
     if(customUrl){
         if(!customUrl.match('.parlameter.')){
@@ -193,8 +193,11 @@ exports.render = function(req, res){
 
                     try {
 
+                        const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
+
                         const cardData = {
-                            data:data
+                            data    : data,
+                            vocab   : vocab
                         };
 
                         try {

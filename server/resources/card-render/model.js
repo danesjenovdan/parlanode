@@ -12,7 +12,8 @@ var schema = mongoose.Schema({
     group : { type:String, index:true, required:true },
     method : { type:String, index:true, required:true },
     uniquePath: { type:String, required:true, unique:true },
-    card:{type:String, ref:'Card'}
+    card:{type:String, ref:'Card'},
+    cardUrl:String
 
 });
 
