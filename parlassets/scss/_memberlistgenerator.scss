@@ -1,0 +1,142 @@
+.member-list-generator {
+  %list-flex {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .analyses {
+    @extend %list-flex;
+    margin: 14px 0;
+
+    li {
+      align-items: center;
+      border: 1px solid #c8c8c8;
+      box-sizing: border-box;
+      color: #525252;
+      display: flex;
+      font-size: 12px;
+      height: 61px;
+      line-height: 16px;
+      margin-right: 3px;
+      padding: 0 12px;
+      text-transform: uppercase;
+      &.selected {
+        background-color: #009cdd;
+        color: #ffffff;
+      }
+      &:last-child { margin-right: 0; }
+    }
+  }
+
+  .parties {
+    @extend %list-flex;
+    li {
+      width: 57px;
+      height: 51px;
+      border-top: 1px solid #c8c8c8;
+      border-left: 1px solid #c8c8c8;
+      border-right: 1px solid #c8c8c8;
+      border-bottom: 7px solid #857799;
+      text-align: center;
+      font-size: 13px;
+      line-height: 32px;
+      margin-right: 3px;
+      font-weight: 300;
+      &:last-child { margin-right: 0; }
+    }
+  }
+
+  .districts {
+    @extend %list-flex;
+    border: 1px solid #c8c8c8;
+    margin-left: 15px;
+    height: 51px;
+    padding: 12px 14px;
+    position: relative;
+    li {
+      line-height: 24px;
+      color: #ffffff;
+      background-color: #197197;
+      padding: 0 6px;
+      font-weight: 300;
+      .cross {
+        font-size: 20px;
+        font-weight: 400;
+        vertical-align: bottom;
+      }
+    }
+    &::after {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 9px 0 9px;
+      border-color: #197197 transparent transparent transparent;
+      content: '';
+      position: absolute;
+      right: 19px;
+      top: 20px;
+    }
+  }
+}
+
+.card-seznam-poslancev {
+  %flex {
+    align-items: center;
+    display: flex;
+    .column {
+      flex: 1;
+      margin: 0 8px;
+      text-align: center;
+      &.wider { flex: 2; }
+    }
+  }
+
+  .person-list {
+    $image-size: 80px;
+    $image-margin: 18px;
+
+    margin: 0;
+    padding: 0;
+    .headers {
+      @extend %flex;
+      margin-left: $image-size + $image-margin;
+      .column {
+        color: #525252;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        &.sort::after {
+          border-style: solid;
+          border-width: 9px 7.5px 0 7.5px;
+          border-color: #009cdd transparent transparent transparent;
+          content: '';
+          display: inline-block;
+          margin-left: 8px;
+          transform: rotate(180deg);
+        }
+        &.sort.reverse::after { transform: none; }
+      }
+    }
+    .person {
+      @extend %flex;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 8px 0;
+      &:last-child { border: none; }
+      .column {
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        &.portrait {
+          border-radius: 50%;
+          flex: none;
+          height: $image-size;
+          margin: 0 $image-margin 0 0;
+          width: $image-size;
+        }
+        &.name { text-align: left; }
+      }
+    }
+  }
+}
