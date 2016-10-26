@@ -126,6 +126,7 @@ exports.render = function(req, res){
     var customUrl       = req.query.customUrl;
     const isPreview     = req.query.isPreview;
     const altHeader     = req.query.altHeader;
+    const isEmbed       = req.query.embed;
     const previewWidth  = req.query.width;
     let state           = req.query.state;
 
@@ -206,6 +207,8 @@ exports.render = function(req, res){
 
                             let onlyStrings = true;
 
+                            console.log(vocab);
+
                             _.each(cardData.state, (key, val)=>{
                                 if(typeof key !== 'string' && typeof val !== 'string'){
                                     onlyStrings = false;
@@ -239,6 +242,22 @@ exports.render = function(req, res){
                         if(isPreview) {
 
                             var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
+                            var $ = cheerio.load(frameHtmlString);
+
+                            if(previewWidth){
+                                $('#card-container').css({
+                                    width:previewWidth+'px',
+                                    margin:'auto'
+                                });
+                            }
+
+                            $('#card-container').html(html);
+
+                            html = $.html();
+
+                        }else if(isEmbed){
+
+                            var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
                             var $ = cheerio.load(frameHtmlString);
 
                             if(previewWidth){
