@@ -22,7 +22,7 @@
 .card-header .card-header-border {
     height: 40px;
     width: 3px;
-    background-image: url($cdn_home_img + 'cardheaderborder.png');
+    @include gradient('vertical', 'blue');
     margin-right: 13px;
     float: left;
 }
