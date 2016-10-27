@@ -102,3 +102,47 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/icons/';
 .paddingtop5px{
   padding-top: 5px;
 }
+
+
+// GRADIENT
+@mixin gradient($direction: 'vertical', $first_color: 'blue') {
+    @if $direction == 'vertical' {
+        // TOP TO BOTTOM
+        @if $first_color == 'blue' {
+            // BLUE TO RED
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#009cdd+0,ff5e41+100 */
+            background: #009cdd; /* Old browsers */
+            background: -moz-linear-gradient(top,  #009cdd 0%, #ff5e41 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #009cdd 0%,#ff5e41 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #009cdd 0%,#ff5e41 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009cdd', endColorstr='#ff5e41',GradientType=0 ); /* IE6-9 */
+        } @else {
+            // RED TO BLUE
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5e41+0,009cdd+100 */
+            background: #ff5e41; /* Old browsers */
+            background: -moz-linear-gradient(top,  #ff5e41 0%, #009cdd 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #ff5e41 0%,#009cdd 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #ff5e41 0%,#009cdd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5e41', endColorstr='#009cdd',GradientType=0 ); /* IE6-9 */
+        }
+    } @else {
+        // LEFT TO RIGHT
+        @if $first_color == 'blue' {
+            // BLUE TO RED
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#009cdd+0,ff5e41+100 */
+            background: #009cdd; /* Old browsers */
+            background: -moz-linear-gradient(left,  #009cdd 0%, #ff5e41 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left,  #009cdd 0%,#ff5e41 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right,  #009cdd 0%,#ff5e41 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009cdd', endColorstr='#ff5e41',GradientType=1 ); /* IE6-9 */
+        } @else {
+            // RED TO BLUE
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5e41+0,009cdd+100 */
+background: #ff5e41; /* Old browsers */
+background: -moz-linear-gradient(left,  #ff5e41 0%, #009cdd 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #ff5e41 0%,#009cdd 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #ff5e41 0%,#009cdd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5e41', endColorstr='#009cdd',GradientType=1 ); /* IE6-9 */
+        }
+    } 
+}
