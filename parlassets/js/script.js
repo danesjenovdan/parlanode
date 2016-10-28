@@ -24,6 +24,9 @@ var votingCardHorizontal = {
     isScrollable: false,
 
     init: function () {
+        if($(this.cardId).length < 1){
+            return false;
+        }
         this.initSlider();
     },
 
