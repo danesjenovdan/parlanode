@@ -7,6 +7,7 @@ const config = require('./config');
 const slug = require('slug');
 const mpsList = require('./static/data/mps');
 const opsList = require('./static/data/ops');
+const spsList = require('./static/data/sps');
 
 const routes = [
 
@@ -1128,11 +1129,46 @@ function createRoute(app, route) {
                                 });
                             });
 
+                    }else if(route.viewPath.indexOf("seje") > -1){
+
+                        getSessionsByType(req.params, req)
+                            .then((sesData)=> {
+
+                       //         console.log(req);
+                                console.log("------------");
+                                console.log(sesData);
+                                console.log("------------");
+
+                                res.render(route.viewPath, {
+                                    query: req.query,
+                                    params: req.params,
+                                    sesData: sesData,
+                                    slug: req.slug,
+                                    views
+                                });
+                            });
+
+                    }else if(route.viewPath.indexOf("seja") > -1){
+
+                        getSessionIds(req.params, req)
+                            .then((sesData)=> {
+
+                                //console.log(req);
+
+                                res.render(route.viewPath, {
+                                    query: req.query,
+                                    params: req.params,
+                                    s: sesData.s,
+                                    slug: req.slug,
+                                    views
+                                });
+                            });
+
                     } else {
                         getMPIdByName(req.params.fullName, req)
                             .then((mpData)=> {
 
-                                console.log(req);
+//                                console.log(req);
 
                                 res.render(route.viewPath, {
                                     query: req.query,
@@ -1224,4 +1260,69 @@ function getPSIdByName(id, req) {
     });
 //    });
     return Promise.resolve({psId, psSlug, ps: selectedPs});
+}
+
+function getSessionIds(params, req) {
+    let psId;
+    let psSlug;
+    let selectedPs;
+
+    /*return fetch('https://data.parlameter.si/v1/s/getSessionsByClassification')
+     .then((res)=> res.json())
+     .then((jsonBody) => {
+
+     let psId;*/
+
+    //type
+    //id
+
+    _.each(opsList, (s, i)=> {
+
+        s.nameSlug = slug(s.name).toLowerCase();
+
+        if (params.id === s.id) {
+
+            psId = s.id;
+            psSlug = s.nameSlug;
+            req.slug = psSlug;
+            req.psId = psId;
+            req.s = s;
+            selectedPs = s;
+        }
+        //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
+        // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
+
+    });
+//    });
+    return Promise.resolve({psId, psSlug, s: selectedPs});
+}
+
+function getSessionsByType(params, req) {
+
+    let psId;
+    let psSlug;
+    let selectedPs;
+
+    /*return fetch('https://data.parlameter.si/v1/s/getSessionsByClassification')
+     .then((res)=> res.json())
+     .then((jsonBody) => {
+
+     let psId;*/
+
+    let returnData;
+    switch (params.fullName){
+        case 'seje-delovnih-teles':
+            returnData = spsList[0].dt;
+            break;
+        case 'seje-kolegija-predsednika-dz':
+            returnData = spsList[0].kolegij;
+            break;
+        case 'seje-dz':
+            returnData = spsList[0].dz;
+            break;
+    }
+
+//    });
+    return Promise.resolve({psId, psSlug, sesData: returnData});
+
 }

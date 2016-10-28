@@ -2,11 +2,6 @@
 
 
 
-<div class="row">
-    <div class="col-md-12">
-        <h1>seje tip</h1>
-    </div>
-</div>
 <div class="session-container">
     <div class="row">
 
@@ -34,19 +29,21 @@
             <h2>
                 Izberi vrsto seje
             </h2>
+
+
             <ul class="clearfix">
                 <li>
-                    <a href="/seje/tip/seje-dz">
+                    <a href="/seje/tip/seje-dz" class="<%-(params.fullName == 'seje-dz')? 'active':null;%>">
                         Seje DZ
                     </a>
                 </li>
                 <li>
-                    <a href="/seje/tip/seje-delovnih-teles" class="active">
+                    <a href="/seje/tip/seje-delovnih-teles" class="<%-(params.fullName == 'seje-delovnih-teles')? 'active':null;%>">
                         Seje delovnih<br> teles
                     </a>
                 </li>
                 <li>
-                    <a href="/seje/tip/seje-kolegija-predsednika-dz">
+                    <a href="/seje/tip/seje-kolegija-predsednika-dz" class="<%-(params.fullName == 'seje-kolegija-predsednika-dz')? 'active':null;%>">
                         Seje kolegija <br>predsednika DZ
                     </a>
                 </li>
@@ -58,15 +55,25 @@
     </div>
 </div>
 
-
 <div class="row">
-    <a href="/seja/glasovanja/4388" class="session_type col-sm-3 closed">
+    <div class="col-lg-12">
+
+
+<div class="row colToList">
+
+<%
+for (var i = 0; i < sesData.sesData.length; i++){
+%>
+
+    <a href="/seja/glasovanja/<%-sesData.sesData[i].id %>" class="session_type col-sm-3 closed">
                 <span>
-                   Kolegij predsednika državnega zbora
+                   <%-sesData.sesData[i].name %>
                </span>
     </a>
+<% } %>
+</div>
 
-
+    </div>
 </div>
 
 <% include ../../partials/footer.ejs %>

@@ -25,6 +25,55 @@
     <!-- your extra (s)css and js files should be above this line -->
 </head>
 
+<style>
+
+    .session_transcript_menu {
+        margin: 80px auto 0 auto;
+        display: table;
+    }
+
+    @media (max-width: 480px) {
+        .colToList{
+            margin: 0;
+        }
+        .colToList .session_type{
+            width:100%;
+            height: auto;
+        }
+    }
+
+</style>
+
+<script>
+
+    function equalHeight($elementByClass) {
+
+        var h = 0;
+        $($elementByClass).each(function () {
+            if($(this).height() > h){
+                h = $(this).height();
+            }
+        });
+        $($elementByClass).height(h);
+
+    }
+
+    $(function () {
+
+        $(window).resize(function(){
+            equalHeight(".session_type");
+            equalHeight(".session_types ul li");
+        });
+
+        if($(".session_type").length > 0){
+            equalHeight(".session_type");
+            equalHeight(".session_types ul li");
+        }
+
+    })
+
+</script>
+
 <body>
 
 <header class="header">
