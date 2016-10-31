@@ -26,7 +26,7 @@ var votingCardHorizontal = {
     init: function () {
 		if($(this.cardId).length < 1){
 			return false;
-		}		
+		}
         this.initSlider();
     },
 
@@ -86,7 +86,7 @@ var votingCardHorizontal = {
 
     initEvents: function () {
         var _this = this;
-		
+
         $(this.cardId + ' .navigate-left').on('click', function () {
             _this.changeSlide("prev");
         });
