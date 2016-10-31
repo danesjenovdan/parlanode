@@ -56,7 +56,9 @@
     height: 300px;
 }
 .card-footer {
-    @extend .card-header;
+    width: 100%;
+    position: relative;
+
     height: 62px;
     padding-top: 14px;
     padding-bottom: 14px;

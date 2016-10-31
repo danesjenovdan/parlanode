@@ -65,7 +65,7 @@ a:focus, button:focus {
   -o-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
 
-.card-header, .card-footer {
+.card-header {
   width: 100%;
   height: auto;
   position: relative;
@@ -76,7 +76,7 @@ a:focus, button:focus {
   flex-wrap: nowrap;
   align-items: stretch; }
 
-.card-header .card-header-border, .card-footer .card-header-border {
+.card-header .card-header-border {
   display: flex;
   float: none;
   margin-right: 0;
@@ -95,7 +95,7 @@ a:focus, button:focus {
   /* IE6-9 */
   float: none; }
 
-.card-header h1, .card-footer h1 {
+.card-header h1 {
   margin: 0;
   font-size: 24px !important;
   line-height: 40px;
@@ -118,6 +118,8 @@ a:focus, button:focus {
   height: 300px; }
 
 .card-footer {
+  width: 100%;
+  position: relative;
   height: 62px;
   padding-top: 14px;
   padding-bottom: 14px;
