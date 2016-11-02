@@ -879,6 +879,39 @@ footer.footer {
       .member-container-menu ul li a {
         font-size: 14px;
         padding: 10px 10px; } }
+/* added by muki */
+.member, #votingCard .member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 0; }
+  .member .image, #votingCard .member .image {
+    max-width: 75px;
+    max-height: 75px;
+    display: flex;
+    flex-shrink: 0; }
+  .member p, #votingCard .member p {
+    margin: 0;
+    display: flex;
+    flex-shrink: 1;
+    padding-left: 5px;
+    padding-right: 10px;
+    justify-content: flex-start; }
+  .member span, #votingCard .member span {
+    margin: 0;
+    display: flex;
+    flex-grow: 2;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    color: #525252;
+    font-weight: 500; }
+
+.member.lastel, #votingCard .lastel.member {
+  border: none;
+  padding-bottom: 10px; }
+
+/* end of added by muki */
 .member-list-generator .analyses, .member-list-generator .parties, .member-list-generator .districts {
   display: flex;
   list-style: none;
