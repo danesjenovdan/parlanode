@@ -49,9 +49,9 @@
                                 </div>
                             </li>
                             <li v-for="member in processedMemberData" class="person">
-                                <img class="portrait column" :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
-                                <div class="column wider name">{{ member.person.name }}</div>
-                                <div class="column">{{ member.person.party.acronym }}</div>
+                                <a :href="'/p/id/' + member.person.id + ''"><img class="portrait column" :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" /></a>
+                                <div class="column wider name"><a :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a></div>
+                                <div class="column"><a :href="'/ps/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a></div>
                                 <div class="column">{{ member.person.district || 'okraj ni vnešen' }}</div>
                                 <div v-if="currentAnalysis !== 'alphabetical'" class="column">
                                     {{ member.results[currentAnalysis] + (currentAnalysisData.unit === 'percent' ? '%' : '') }}
