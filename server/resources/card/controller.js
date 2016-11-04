@@ -189,7 +189,7 @@ exports.render = function(req, res){
               Card.findById(cardRenderDoc.card)
                 .then((cardDoc)=>{
 
-                    if(cardDoc.lastUpdate !== cardRenderDoc.cardLastUpdate){
+                    if(+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate){
                         compileCard();
                     }else{
                         res.writeHead(200, {
@@ -242,6 +242,7 @@ exports.render = function(req, res){
             cacheData.dataUrl = dataUrl;
             cacheData.card = doc._id;
             cacheData.cardUrl =  req.protocol + '://' + req.get('host') + req.originalUrl;
+            console.log('Last update:', doc.lastUpdate);
             cacheData.cardLastUpdate = doc.lastUpdate;
 
             request(dataUrl, function (err, _res, body) {
@@ -342,7 +343,9 @@ exports.render = function(req, res){
 
                             cardRender.save(function(err){
 
-                                console.log(err);
+                                if(err) {
+                                    console.log(err);
+                                }
 
                             });
 
