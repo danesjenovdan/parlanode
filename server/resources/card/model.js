@@ -12,7 +12,8 @@ var schema = mongoose.Schema({
     ejs : String,
     group : { type:String, index:true, required:true },
     method : { type:String, index:true, required:true },
-    uniquePath: { type:String, required:true, unique:true }
+    uniquePath: { type:String, required:true, unique:true },
+    lastUpdate : { type:Date, default:Date.now }
 
 });
 

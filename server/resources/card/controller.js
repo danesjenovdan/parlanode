@@ -21,6 +21,8 @@ exports.update = function(req, res){
 
     var Card = mongoose.model('Card');
 
+    data.lastUpdate = new Date();
+
     Card.findByIdAndUpdate(id, data, function(err, doc){
 
         if(!err) {
@@ -176,180 +178,192 @@ exports.render = function(req, res){
       .then((cardRenderDoc)=>{
 
           if(!cardRenderDoc){
-              Card.findOne({ method:method, group:group }, function(err, doc){
-
-                  if(err){
-                      return res.status(400).send(err);
-                  }
-
-                  if(!doc){
-                      return res.status(404).send('Card not found');
-                  }
-
-                  var dataUrl;
-
-                  if(!customUrl){
-
-                      var analizeUrl = doc.dataUrl;
-
-                      if(!isDate(id)){
-                          if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
-                              analizeUrl = analizeUrl + '/' + id;
-                          }
-                      }
-
-                      if(date){
-                          analizeUrl = analizeUrl+'/'+date;
-                      }
-                      dataUrl = analizeUrl;
-                  }else{
-                      dataUrl = customUrl;
-                  }
-
-                  cacheData.dataUrl = dataUrl;
-                  cacheData.card = doc._id;
-                  cacheData.cardUrl =  req.protocol + '://' + req.get('host') + req.originalUrl;
-
-                  request(dataUrl, function (err, _res, body) {
-
-                      if (!err) {
-
-                          try {
-
-                              var data = JSON.parse(body);
-
-                              try {
-
-                                  const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
-
-                                  const cardData = {
-                                      data    : data,
-                                      vocab   : vocab
-                                  };
-
-                                  try {
-
-                                      if (state) state = JSON.parse(state);
-
-                                      let onlyStrings = true;
-
-                                      _.each(cardData.state, (key, val)=>{
-                                          if(typeof key !== 'string' && typeof val !== 'string'){
-                                              onlyStrings = false;
-                                          }
-                                      });
-
-                                      if(!onlyStrings){
-                                          throw new Error(err);
-                                      }else{
-                                          cardData.state = state;
-                                      }
-
-                                  }catch(err){
-                                      throw new Error(err);
-                                  }
-
-                                  var html = ejs.render(doc.ejs, cardData);
-
-                                  if(altHeader){
-
-                                      var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
-                                      var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
-
-                                      const $ = cheerio.load(html);
-                                      $('.card-header').empty().append(renderedHtmlHeader);
-
-                                      html = $.html();
-
-                                  }
-
-                                  if(frame) {
-
-                                      var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
-                                      var $ = cheerio.load(frameHtmlString);
-
-                                      if(previewWidth){
-                                          $('#card-container').css({
-                                              width:previewWidth+'px',
-                                              margin:'auto'
-                                          });
-                                      }
-
-                                      $('#card-container').html(html);
-
-                                      html = $.html();
-
-                                  }else if(embed){
-
-                                      var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
-                                      var $ = cheerio.load(frameHtmlString);
-
-                                      if(previewWidth){
-                                          $('#card-container').css({
-                                              width:previewWidth+'px',
-                                              margin:'auto'
-                                          });
-                                      }
-
-                                      $('#card-container').html(html);
-
-                                      html = $.html();
-
-                                  }
-
-                                  res.writeHead(200, {
-                                      'Content-Length': Buffer.byteLength(html),
-                                      'Content-Type': 'text/html; charset=utf-8'
-                                  });
-
-                                  cacheData.html = html;
-
-                                  const cardRender = new CardRender(cacheData);
-
-                                  cardRender.save(function(err){
-
-                                      console.log(err);
-
-                                  });
-
-                                  res.write(html);
-                                  res.end();
-
-                              }catch(err){
-                                  res.send(err.toString(), 400);
-                              }
-
-                          } catch (err) {
-                              res.status(400).send({err, msg:'Data source url not returning json'});
-                          }
-
-                      } else {
-                          res.status(400).send({err, msg:'Data source request error'});
-                      }
-
-                  });
-
-
-              });
+              compileCard();
           }
           else{
 
-              console.log('Prerender');
-
               const html = cardRenderDoc.html;
 
-              res.writeHead(200, {
-                  'Content-Length': Buffer.byteLength(html),
-                  'Content-Type': 'text/html; charset=utf-8'
-              });
+              Card.findById(cardRenderDoc.card)
+                .then((cardDoc)=>{
 
-              res.write(html);
-              res.end();
+                    if(cardDoc.lastUpdate !== cardRenderDoc.cardLastUpdate){
+                        compileCard();
+                    }else{
+                        res.writeHead(200, {
+                            'Content-Length': Buffer.byteLength(html),
+                            'Content-Type': 'text/html; charset=utf-8'
+                        });
+
+                        res.write(html);
+                        res.end();
+                    }
+
+                });
 
           }
 
       });
 
+    function compileCard(){
 
+        Card.findOne({ method:method, group:group }, function(err, doc){
+
+            if(err){
+                return res.status(400).send(err);
+            }
+
+            if(!doc){
+                return res.status(404).send('Card not found');
+            }
+
+            var dataUrl;
+
+            if(!customUrl){
+
+                var analizeUrl = doc.dataUrl;
+
+                if(!isDate(id)){
+                    if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
+                        analizeUrl = analizeUrl + '/' + id;
+                    }
+                }
+
+                if(date){
+                    analizeUrl = analizeUrl+'/'+date;
+                }
+                dataUrl = analizeUrl;
+            }else{
+                dataUrl = customUrl;
+            }
+
+            cacheData.dataUrl = dataUrl;
+            cacheData.card = doc._id;
+            cacheData.cardUrl =  req.protocol + '://' + req.get('host') + req.originalUrl;
+            cacheData.cardLastUpdate = doc.lastUpdate;
+
+            request(dataUrl, function (err, _res, body) {
+
+                if (!err) {
+
+                    try {
+
+                        var data = JSON.parse(body);
+
+                        try {
+
+                            const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
+
+                            const cardData = {
+                                data    : data,
+                                vocab   : vocab
+                            };
+
+                            try {
+
+                                if (state) state = JSON.parse(state);
+
+                                let onlyStrings = true;
+
+                                _.each(cardData.state, (key, val)=>{
+                                    if(typeof key !== 'string' && typeof val !== 'string'){
+                                        onlyStrings = false;
+                                    }
+                                });
+
+                                if(!onlyStrings){
+                                    throw new Error(err);
+                                }else{
+                                    cardData.state = state;
+                                }
+
+                            }catch(err){
+                                throw new Error(err);
+                            }
+
+                            var html = ejs.render(doc.ejs, cardData);
+
+                            if(altHeader){
+
+                                var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
+                                var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
+
+                                const $ = cheerio.load(html);
+                                $('.card-header').empty().append(renderedHtmlHeader);
+
+                                html = $.html();
+
+                            }
+
+                            if(frame) {
+
+                                var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
+                                var $ = cheerio.load(frameHtmlString);
+
+                                if(previewWidth){
+                                    $('#card-container').css({
+                                        width:previewWidth+'px',
+                                        margin:'auto'
+                                    });
+                                }
+
+                                $('#card-container').html(html);
+
+                                html = $.html();
+
+                            }else if(embed){
+
+                                var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
+                                var $ = cheerio.load(frameHtmlString);
+
+                                if(previewWidth){
+                                    $('#card-container').css({
+                                        width:previewWidth+'px',
+                                        margin:'auto'
+                                    });
+                                }
+
+                                $('#card-container').html(html);
+
+                                html = $.html();
+
+                            }
+
+                            res.writeHead(200, {
+                                'Content-Length': Buffer.byteLength(html),
+                                'Content-Type': 'text/html; charset=utf-8'
+                            });
+
+                            cacheData.html = html;
+
+                            const cardRender = new CardRender(cacheData);
+
+                            cardRender.save(function(err){
+
+                                console.log(err);
+
+                            });
+
+                            res.write(html);
+                            res.end();
+
+                        }catch(err){
+                            res.send(err.toString(), 400);
+                        }
+
+                    } catch (err) {
+                        res.status(400).send({err, msg:'Data source url not returning json'});
+                    }
+
+                } else {
+                    res.status(400).send({err, msg:'Data source request error'});
+                }
+
+            });
+
+
+        });
+
+    }
 
 };

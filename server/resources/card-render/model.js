@@ -18,8 +18,8 @@ var schema = mongoose.Schema({
     altHeader       : Boolean,
     customUrl       : String,
     id              : String,
-    date            : String
-
+    date            : String,
+    cardLastUpdate  : Date
 
 });
 
