@@ -135,6 +135,8 @@ exports.render = function(req, res){
     const previewWidth  = req.query.width;
     let state           = req.query.state;
 
+    const forceRender   = req.query.forceRender;
+
     const cacheData = {
         embed       : embed,
         frame       : frame,
@@ -177,7 +179,7 @@ exports.render = function(req, res){
     CardRender.findOne(cacheData)
       .then((cardRenderDoc)=>{
 
-          if(!cardRenderDoc){
+          if(!cardRenderDoc || forceRender){
               compileCard();
           }
           else{
