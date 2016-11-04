@@ -25,7 +25,7 @@
   deploy : {
     production : {
       user : "parladaddy",
-      host : "91.236.1.196",
+      host : "parlameter.si",
       ref  : "origin/master",
       repo : "git@github.com:muki/parlanode.git",
       path : "/home/parladaddy/parlanode",
