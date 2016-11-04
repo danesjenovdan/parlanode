@@ -120,15 +120,28 @@ exports.get = function(req, res){
  */
 exports.render = function(req, res){
 
+    const Card          = mongoose.model('Card');
+    const CardRender    = mongoose.model('CardRender');
+
     var group           = req.params.group;
     var method          = req.params.method;
     var id              = req.params.id;
     var customUrl       = req.query.customUrl;
-    const isPreview     = req.query.isPreview;
+    const frame         = req.query.frame;
     const altHeader     = req.query.altHeader;
-    const isEmbed       = req.query.embed;
+    const embed         = req.query.embed;
     const previewWidth  = req.query.width;
     let state           = req.query.state;
+
+    const cacheData = {
+        embed       : embed,
+        frame       : frame,
+        altHeader   : altHeader,
+        customUrl   : customUrl,
+        id          : id,
+        method      : method,
+        group       : group
+    };
 
     if(customUrl){
         if(!customUrl.match('.parlameter.')){
@@ -146,156 +159,197 @@ exports.render = function(req, res){
 
     if(isDate(id)){
         date = id;
+        cacheData.date = date;
     }
     else if(req.params['0'].length > 0 && req.params['0'] !== undefined) {
         date = req.params['0'];
+        cacheData.date = date;
         getData.date = date;
+    }else{
+        const today = new Date();
+        // ToDo - ta datum more povedat analize api ker jaz ne vem ce bom dobil podatke se od danes ali od vceraj
+        date = today.getDate()+'.'+today.getUTCMonth()+'.'+today.getFullYear();
+        cacheData.date = date;
     }
 
-    var Card = mongoose.model('Card');
+    CardRender.findOne(cacheData)
+      .then((cardRenderDoc)=>{
 
-    Card.findOne({ method:method, group:group }, function(err, doc){
+          if(!cardRenderDoc){
+              Card.findOne({ method:method, group:group }, function(err, doc){
 
-        if(err){
-            return res.status(400).send(err);
-        }
+                  if(err){
+                      return res.status(400).send(err);
+                  }
 
-        if(!doc){
-            return res.status(404).send('Card not found');
-        }
+                  if(!doc){
+                      return res.status(404).send('Card not found');
+                  }
 
-        var dataUrl;
+                  var dataUrl;
 
-        if(!customUrl){
+                  if(!customUrl){
 
-            var analizeUrl = doc.dataUrl;
+                      var analizeUrl = doc.dataUrl;
 
-            if(!isDate(id)){
-                if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
-                    analizeUrl = analizeUrl + '/' + id;
-                }
-            }
+                      if(!isDate(id)){
+                          if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
+                              analizeUrl = analizeUrl + '/' + id;
+                          }
+                      }
 
-            if(date){
-                analizeUrl = analizeUrl+'/'+date;
-            }
-            dataUrl = analizeUrl;
-        }else{
-            dataUrl = customUrl;
-        }
+                      if(date){
+                          analizeUrl = analizeUrl+'/'+date;
+                      }
+                      dataUrl = analizeUrl;
+                  }else{
+                      dataUrl = customUrl;
+                  }
 
-        request(dataUrl, function (err, _res, body) {
+                  cacheData.dataUrl = dataUrl;
+                  cacheData.card = doc._id;
+                  cacheData.cardUrl =  req.protocol + '://' + req.get('host') + req.originalUrl;
 
-            if (!err) {
+                  request(dataUrl, function (err, _res, body) {
 
-                try {
+                      if (!err) {
 
-                    var data = JSON.parse(body);
+                          try {
 
-                    try {
+                              var data = JSON.parse(body);
 
-                        const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
+                              try {
 
-                        const cardData = {
-                            data    : data,
-                            vocab   : vocab
-                        };
+                                  const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
 
-                        try {
+                                  const cardData = {
+                                      data    : data,
+                                      vocab   : vocab
+                                  };
 
-                            if (state) state = JSON.parse(state);
+                                  try {
 
-                            let onlyStrings = true;
+                                      if (state) state = JSON.parse(state);
 
-                            console.log(vocab);
+                                      let onlyStrings = true;
 
-                            _.each(cardData.state, (key, val)=>{
-                                if(typeof key !== 'string' && typeof val !== 'string'){
-                                    onlyStrings = false;
-                                }
-                            });
+                                      _.each(cardData.state, (key, val)=>{
+                                          if(typeof key !== 'string' && typeof val !== 'string'){
+                                              onlyStrings = false;
+                                          }
+                                      });
 
-                            if(!onlyStrings){
-                                throw new Error(err);
-                            }else{
-                                cardData.state = state;
-                            }
+                                      if(!onlyStrings){
+                                          throw new Error(err);
+                                      }else{
+                                          cardData.state = state;
+                                      }
 
-                        }catch(err){
-                            throw new Error(err);
-                        }
+                                  }catch(err){
+                                      throw new Error(err);
+                                  }
 
-                        var html = ejs.render(doc.ejs, cardData);
+                                  var html = ejs.render(doc.ejs, cardData);
 
-                        if(altHeader){
+                                  if(altHeader){
 
-                            var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
-                            var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
+                                      var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
+                                      var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
 
-                            const $ = cheerio.load(html);
-                            $('.card-header').empty().append(renderedHtmlHeader);
+                                      const $ = cheerio.load(html);
+                                      $('.card-header').empty().append(renderedHtmlHeader);
 
-                            html = $.html();
+                                      html = $.html();
 
-                        }
+                                  }
 
-                        if(isPreview) {
+                                  if(frame) {
 
-                            var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
-                            var $ = cheerio.load(frameHtmlString);
+                                      var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
+                                      var $ = cheerio.load(frameHtmlString);
 
-                            if(previewWidth){
-                                $('#card-container').css({
-                                    width:previewWidth+'px',
-                                    margin:'auto'
-                                });
-                            }
+                                      if(previewWidth){
+                                          $('#card-container').css({
+                                              width:previewWidth+'px',
+                                              margin:'auto'
+                                          });
+                                      }
 
-                            $('#card-container').html(html);
+                                      $('#card-container').html(html);
 
-                            html = $.html();
+                                      html = $.html();
 
-                        }else if(isEmbed){
+                                  }else if(embed){
 
-                            var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
-                            var $ = cheerio.load(frameHtmlString);
+                                      var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
+                                      var $ = cheerio.load(frameHtmlString);
 
-                            if(previewWidth){
-                                $('#card-container').css({
-                                    width:previewWidth+'px',
-                                    margin:'auto'
-                                });
-                            }
+                                      if(previewWidth){
+                                          $('#card-container').css({
+                                              width:previewWidth+'px',
+                                              margin:'auto'
+                                          });
+                                      }
 
-                            $('#card-container').html(html);
+                                      $('#card-container').html(html);
 
-                            html = $.html();
+                                      html = $.html();
 
-                        }
+                                  }
 
-                        res.writeHead(200, {
-                            'Content-Length': Buffer.byteLength(html),
-                            'Content-Type': 'text/html; charset=utf-8'
-                        });
+                                  res.writeHead(200, {
+                                      'Content-Length': Buffer.byteLength(html),
+                                      'Content-Type': 'text/html; charset=utf-8'
+                                  });
 
-                        res.write(html);
-                        res.end();
+                                  cacheData.html = html;
 
-                    }catch(err){
-                        res.send(err.toString(), 400);
-                    }
+                                  const cardRender = new CardRender(cacheData);
 
-                } catch (err) {
-                    res.status(400).send({err, msg:'Data source url not returning json'});
-                }
+                                  cardRender.save(function(err){
 
-            } else {
-                res.status(400).send({err, msg:'Data source request error'});
-            }
+                                      console.log(err);
 
-        });
+                                  });
+
+                                  res.write(html);
+                                  res.end();
+
+                              }catch(err){
+                                  res.send(err.toString(), 400);
+                              }
+
+                          } catch (err) {
+                              res.status(400).send({err, msg:'Data source url not returning json'});
+                          }
+
+                      } else {
+                          res.status(400).send({err, msg:'Data source request error'});
+                      }
+
+                  });
 
 
-    });
+              });
+          }
+          else{
+
+              console.log('Prerender');
+
+              const html = cardRenderDoc.html;
+
+              res.writeHead(200, {
+                  'Content-Length': Buffer.byteLength(html),
+                  'Content-Type': 'text/html; charset=utf-8'
+              });
+
+              res.write(html);
+              res.end();
+
+          }
+
+      });
+
+
 
 };

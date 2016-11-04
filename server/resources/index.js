@@ -5,6 +5,7 @@
 module.exports = function(app){
 
     require('./auth')(app);
+    require('./card-render')(app);
     require('./card')(app);
     require('./token')(app);
 

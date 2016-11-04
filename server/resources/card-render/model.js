@@ -5,15 +5,21 @@ var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
 
-    dateTimeCreated : { type:Date, default:Date.now },
-    name : String,
-    dataUrl : { type:String, required:true},
-    html : String,
-    group : { type:String, index:true, required:true },
-    method : { type:String, index:true, required:true },
-    uniquePath: { type:String, required:true, unique:true },
-    card:{type:String, ref:'Card'},
-    cardUrl:String
+    dateTime        : { type:Date, default:Date.now },
+    dataUrl         : { type:String, required:true},
+    html            : String,
+    card            : { type:String, ref:'Card'},
+    cardUrl         : String,
+
+    group           : { type:String, index:true, required:true },
+    method          : { type:String, index:true, required:true },
+    embed           : Boolean,
+    frame           : Boolean,
+    altHeader       : Boolean,
+    customUrl       : String,
+    id              : String,
+    date            : String
+
 
 });
 
