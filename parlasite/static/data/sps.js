@@ -1,6 +1,12 @@
 module.exports =
-    [{
+    [
+        {
             "kolegij": [{
+                "date": "27. 10. 2016",
+                "org": {"acronym": "", "id": 9, "name": "Kolegij predsednika dr\u017eavnega zbora"},
+                "name": "75. redna seja",
+                "id": 5513
+            }, {
                 "date": "14. 10. 2016",
                 "org": {"acronym": "", "id": 9, "name": "Kolegij predsednika dr\u017eavnega zbora"},
                 "name": "74. redna seja",
@@ -371,11 +377,15 @@ module.exports =
                 "name": "1. redna seja",
                 "id": 4536
             }],
-            "dt": [{"acronym": "", "id": 24, "name": "Odbor za obrambo"}, {
+            "dt": [{
                 "acronym": "",
-                "id": 25,
-                "name": "Odbor za pravosodje"
-            }, {"acronym": "", "id": 27, "name": "Odbor za zdravstvo"}, {
+                "id": 23,
+                "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+            }, {"acronym": "", "id": 26, "name": "Odbor za zadeve Evropske unije"}, {
+                "acronym": "",
+                "id": 27,
+                "name": "Odbor za zdravstvo"
+            }, {
                 "acronym": "",
                 "id": 20,
                 "name": "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"
@@ -383,26 +393,26 @@ module.exports =
                 "acronym": "",
                 "id": 22,
                 "name": "Odbor za kulturo"
-            }, {
-                "acronym": "",
-                "id": 23,
-                "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
             }, {"acronym": "", "id": 28, "name": "Odbor za zunanjo politiko"}, {
                 "acronym": "",
                 "id": 29,
                 "name": "Ustavna komisija"
             }, {
                 "acronym": "",
+                "id": 101,
+                "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+            }, {
+                "acronym": "",
                 "id": 106,
                 "name": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic"
-            }, {
+            }, {"acronym": "", "id": 24, "name": "Odbor za obrambo"}, {
+                "acronym": "",
+                "id": 25,
+                "name": "Odbor za pravosodje"
+            }, {"acronym": "", "id": 18, "name": "Odbor za gospodarstvo"}, {
                 "acronym": "",
                 "id": 98,
                 "name": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in odgovornosti za \u017ee drugo sanacijo ban\u010dnega sistema v samostojni Sloveniji"
-            }, {"acronym": "", "id": 26, "name": "Odbor za zadeve Evropske unije"}, {
-                "acronym": "",
-                "id": 101,
-                "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
             }, {"acronym": "", "id": 11, "name": "Komisija za narodni skupnosti"}, {
                 "acronym": "",
                 "id": 10,
@@ -423,11 +433,7 @@ module.exports =
                 "acronym": "",
                 "id": 16,
                 "name": "Odbor za delo, dru\u017eino, socialne zadeve in invalide"
-            }, {"acronym": "", "id": 19, "name": "Odbor za infrastrukturo, okolje in prostor"}, {
-                "acronym": "",
-                "id": 18,
-                "name": "Odbor za gospodarstvo"
-            }],
+            }, {"acronym": "", "id": 19, "name": "Odbor za infrastrukturo, okolje in prostor"}],
             "dz": [{
                 "date": "17. 10. 2016",
                 "org": {"acronym": "DZ", "id": 95, "name": "Dr\u017eavni zbor"},

@@ -81,7 +81,7 @@ const routes = [
     },
     {
         path: '/p/:fullName',
-        extraPaths: ['/poslanci/pregled/:fullName/:date'],
+        extraPaths: ['/poslanci/pregled/:fullName/:date', '/p/id/:id'],
         viewPath: 'poslanec/pregled',
         cards: [
             {
@@ -656,7 +656,7 @@ const routes = [
     ,
     {
         path: '/poslanska-skupina/pregled/:fullName',
-        extraPaths: ['/poslanska-skupina/pregled/:fullName/:date'],
+        extraPaths: ['/poslanska-skupina/pregled/:fullName/:date', '/ps/id/:id'],
         viewPath: 'poslanske-skupine/pregled',
         cards: [
             {
@@ -805,7 +805,7 @@ const routes = [
             }
         }, {
             name: 'najtezjeBiSeJimPridruziji',
-            sourceUrl: '/pg/najlazje-pridruzili/:id',
+            sourceUrl: '/pg/najtezje-pridruzili/:id',
             resolve: (req, res, route, card)=> {
 
                 return getPSIdByName(req.params.fullName, req)
@@ -1134,11 +1134,6 @@ function createRoute(app, route) {
                         getSessionsByType(req.params, req)
                             .then((sesData)=> {
 
-                       //         console.log(req);
-                                console.log("------------");
-                                console.log(sesData);
-                                console.log("------------");
-
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
@@ -1150,15 +1145,14 @@ function createRoute(app, route) {
 
                     }else if(route.viewPath.indexOf("seja") > -1){
 
+
                         getSessionIds(req.params, req)
                             .then((sesData)=> {
-
-                                //console.log(req);
 
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
-                                    s: sesData.s,
+                                    sesData: sesData.s,
                                     slug: req.slug,
                                     views
                                 });
@@ -1167,8 +1161,6 @@ function createRoute(app, route) {
                     } else {
                         getMPIdByName(req.params.fullName, req)
                             .then((mpData)=> {
-
-//                                console.log(req);
 
                                 res.render(route.viewPath, {
                                     query: req.query,
@@ -1216,7 +1208,7 @@ function getMPIdByName(name, req) {
     _.each(mpsList, (mp, i)=> {
         mp.nameSlug = slug(mp.name).toLowerCase();
 
-        if (name === mp.nameSlug) {
+        if ((name === mp.nameSlug) | (req.params.id == mp.id)) {
             mpId = mp.id;
             mpSlug = mp.nameSlug;
 
@@ -1231,7 +1223,7 @@ function getMPIdByName(name, req) {
 }
 
 
-function getPSIdByName(id, req) {
+function getPSIdByName(name, req) {
     let psId;
     let psSlug;
     let selectedPs;
@@ -1245,7 +1237,7 @@ function getPSIdByName(id, req) {
     _.each(opsList, (ps, i)=> {
         ps.nameSlug = slug(ps.name).toLowerCase();
 
-        if (id === ps.nameSlug) {
+        if ((name === ps.nameSlug) | (req.params.id == ps.id)) {
             //if(id == ps.id){
             psId = ps.id;
             psSlug = ps.nameSlug;
@@ -1263,38 +1255,40 @@ function getPSIdByName(id, req) {
 }
 
 function getSessionIds(params, req) {
-    let psId;
-    let psSlug;
-    let selectedPs;
+    let spsId;
+    let spsSlug;
+    let selectedSps;
 
-    /*return fetch('https://data.parlameter.si/v1/s/getSessionsByClassification')
+    /*return fetch('https://analize.parlameter.si/v1/s/getSessionsByClassification')
      .then((res)=> res.json())
      .then((jsonBody) => {
 
      let psId;*/
 
-    //type
-    //id
+    _.each(spsList[0], (sss, iii)=> {
 
-    _.each(opsList, (s, i)=> {
+        _.each(sss, (s, i)=> {
 
-        s.nameSlug = slug(s.name).toLowerCase();
+            s.nameSlug = slug(s.name).toLowerCase();
 
-        if (params.id === s.id) {
+            if ((params.id == s.id) | (params.name == s.nameSlug) ) {
 
-            psId = s.id;
-            psSlug = s.nameSlug;
-            req.slug = psSlug;
-            req.psId = psId;
-            req.s = s;
-            selectedPs = s;
-        }
-        //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
-        // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
+                spsId = s.id;
+                spsSlug = s.nameSlug;
+                req.slug = spsSlug;
+                req.spsId = spsId;
+                req.s = s;
+                selectedSps = s;
+            }
+            //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
+            // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
 
+        });
     });
+
+
 //    });
-    return Promise.resolve({psId, psSlug, s: selectedPs});
+    return Promise.resolve({spsId, spsSlug, s: selectedSps});
 }
 
 function getSessionsByType(params, req) {
@@ -1303,26 +1297,30 @@ function getSessionsByType(params, req) {
     let psSlug;
     let selectedPs;
 
-    /*return fetch('https://data.parlameter.si/v1/s/getSessionsByClassification')
+    /*return fetch('https://analize.parlameter.si/v1/s/getSessionsByClassification')
      .then((res)=> res.json())
      .then((jsonBody) => {
 
      let psId;*/
 
     let returnData;
+    let type;
     switch (params.fullName){
         case 'seje-delovnih-teles':
             returnData = spsList[0].dt;
+            type = 1;
             break;
         case 'seje-kolegija-predsednika-dz':
             returnData = spsList[0].kolegij;
+            type = 2;
             break;
         case 'seje-dz':
             returnData = spsList[0].dz;
+            type = 3;
             break;
     }
 
 //    });
-    return Promise.resolve({psId, psSlug, sesData: returnData});
+    return Promise.resolve({psId, psSlug, sesData: returnData, type:type});
 
 }

@@ -1,11 +1,10 @@
 <% include ../../partials/header.ejs %>
 
-
-
 <div class="row header text-center">
 
     <div class="col-md-12">
 
+<% if(typeof sesData !== "undefined" ){%>
         <div class="row">
             <div class="text-center">
                 <div class="media-object img-circle session-logo">
@@ -14,18 +13,18 @@
             </div>
             <div class="">
                 <h1>
-                    12. redna seja DZ
+                    <%-sesData.name%>
                 </h1>
                 <font class="date">
-                    12.6.2015
+                    <%-sesData.date%>
                 </font>
                 <br/>
                 <font>
-                    podatki objavljneni: 13.6.2015
+                    podatki objavljneni: <%-sesData.date%>
                 </font>
             </div>
         </div>
-
+<% } %>
     </div>
     <div class="col-md-12">
         <div class="session_transcript_menu">
