@@ -252,6 +252,7 @@ exports.render = function(req, res){
                     try {
 
                         var data = JSON.parse(body);
+                        data.cardData = doc;
 
                         try {
 
