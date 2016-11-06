@@ -167,3 +167,50 @@
     background-image:none;
     content: "X";
 }
+
+
+
+
+// ALT HEADER
+.card-header .portrait {
+    border-radius: 50%;
+    flex: none;
+    height: 80px;
+    margin: 0 18px 0 0;
+    width: 80px;
+
+    float: left;
+}
+.header-info-container {
+    vertical-align: baseline;
+    float: left;
+
+    padding-top: 2px;
+
+    h1 {
+        font-size: 16px !important;
+    }
+
+    h1, h2 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        line-height: 18px;
+    }
+
+    h2.partyinfo {
+        font-weight: 300;
+    }
+
+    h2.cardname {
+        font-weight: 300;
+
+        font-size: 18px;
+        line-height: 20px;
+
+        margin-top: 18px;
+
+        color: #009cdd;
+    }
+}
