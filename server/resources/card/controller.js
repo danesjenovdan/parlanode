@@ -209,6 +209,8 @@ exports.render = function(req, res){
 
     function compileCard(){
 
+        console.log('Compile card');
+
         Card.findOne({ method:method, group:group }, function(err, doc){
 
             if(err){
@@ -252,7 +254,6 @@ exports.render = function(req, res){
                     try {
 
                         var data = JSON.parse(body);
-                        data.cardData = doc;
 
                         try {
 
@@ -260,7 +261,8 @@ exports.render = function(req, res){
 
                             const cardData = {
                                 data    : data,
-                                vocab   : vocab
+                                vocab   : vocab,
+                                cardData: doc
                             };
 
                             try {
@@ -285,6 +287,11 @@ exports.render = function(req, res){
                                 throw new Error(err);
                             }
 
+
+                            /**
+                             * Rendering ejs from the stored document (from CMS)
+                             * @type {String}
+                             */
                             var html = ejs.render(doc.ejs, cardData);
 
                             if(altHeader){
