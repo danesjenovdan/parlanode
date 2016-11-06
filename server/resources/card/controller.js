@@ -261,7 +261,13 @@ exports.render = function(req, res){
                                 cardData: doc
                             };
 
-                            cardData.cardData.isEmbedded = embed;
+                            if(embed || frame){
+
+                                cardData.cardData.isEmbedded = true;
+
+                            }
+
+
 
                             try {
 
