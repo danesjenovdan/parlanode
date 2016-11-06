@@ -231,6 +231,6 @@
     .alt-header-border {
         height: 1px;
         width: 100%;
-        background: #000000; // TODO
+        @include gradient('horizontal', 'blue');
     }
 }
