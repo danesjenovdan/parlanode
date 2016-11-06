@@ -211,11 +211,7 @@ exports.render = function(req, res){
 
         console.log('Compile card');
 
-        Card.findOne({ method:method, group:group }, function(err, doc){
-
-            if(err){
-                return res.status(400).send(err);
-            }
+        Card.findOne({ method:method, group:group }).lean().then(function(doc){
 
             if(!doc){
                 return res.status(404).send('Card not found');
@@ -264,6 +260,8 @@ exports.render = function(req, res){
                                 vocab   : vocab,
                                 cardData: doc
                             };
+
+                            cardData.cardData.isEmbedded = embed;
 
                             try {
 
@@ -375,7 +373,12 @@ exports.render = function(req, res){
             });
 
 
-        });
+        })
+          .catch((err)=>{
+
+              res.status(400).send(err);
+
+          });
 
     }
 
