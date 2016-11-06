@@ -176,7 +176,7 @@ exports.render = function(req, res){
         cacheData.date = date;
     }
 
-    CardRender.findOne(cacheData)
+    CardRender.findOne(cacheData).sort({dateTime:-1})
       .then((cardRenderDoc)=>{
 
           if(!cardRenderDoc || forceRender){
