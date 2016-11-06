@@ -55,7 +55,7 @@ a:focus, button:focus {
   position: relative;
   top: 0;
   left: 0;
-  padding: 0 20px;
+  padding: 0;
   overflow: hidden;
   background-color: #ffffff;
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
@@ -81,6 +81,7 @@ a:focus, button:focus {
   float: none;
   margin-right: 0;
   width: 3px;
+  min-width: 3px;
   height: auto;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#009cdd+0,ff5e41+100 */
   background: #009cdd;
@@ -93,7 +94,8 @@ a:focus, button:focus {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009cdd', endColorstr='#ff5e41',GradientType=0 );
   /* IE6-9 */
-  float: none; }
+  float: none;
+  margin-left: 20px; }
 
 .card-header h1 {
   margin: 0;
@@ -103,7 +105,7 @@ a:focus, button:focus {
 
 .card-content {
   width: 100%;
-  padding: 0;
+  padding: 0 20px 0 20px;
   margin: 0 0 10px 0; }
 
 .col-md-6 > .card-container .card-content {
@@ -121,8 +123,7 @@ a:focus, button:focus {
   width: 100%;
   position: relative;
   height: 62px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding: 14px 20px 14px 20px;
   /* this background thing is a hack, still work TODO */
   background-image: url("https://cdn.parlameter.si/v1/img/shortline.png");
   background-position: center top;
@@ -210,34 +211,44 @@ a:focus, button:focus {
   background-image: none;
   content: "X"; }
 
-.card-header .portrait {
-  border-radius: 50%;
-  flex: none;
-  height: 80px;
-  margin: 0 18px 0 0;
-  width: 80px;
-  float: left; }
-
-.header-info-container {
-  vertical-align: baseline;
-  float: left;
-  padding-top: 2px; }
-  .header-info-container h1 {
-    font-size: 16px !important; }
-  .header-info-container h1, .header-info-container h2 {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
-    padding: 0;
-    line-height: 18px; }
-  .header-info-container h2.partyinfo {
-    font-weight: 300; }
-  .header-info-container h2.cardname {
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 20px;
-    margin-top: 18px;
-    color: #009cdd; }
+.alt-header-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+  .alt-header-container .alt-header {
+    width: 100%;
+    padding: 0 20px 20px 20px; }
+    .alt-header-container .alt-header .header-info-container {
+      vertical-align: baseline;
+      float: left;
+      padding-top: 2px; }
+      .alt-header-container .alt-header .header-info-container h1 {
+        font-size: 16px !important; }
+      .alt-header-container .alt-header .header-info-container h1, .alt-header-container .alt-header .header-info-container h2 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        line-height: 18px; }
+      .alt-header-container .alt-header .header-info-container h2.partyinfo {
+        font-weight: 300; }
+      .alt-header-container .alt-header .header-info-container h2.cardname {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 20px;
+        margin-top: 18px;
+        color: #009cdd; }
+  .alt-header-container .portrait {
+    border-radius: 50%;
+    flex: none;
+    height: 80px;
+    margin: 0 18px 0 0;
+    width: 80px;
+    float: left; }
+  .alt-header-container .alt-header-border {
+    height: 1px;
+    width: 100%;
+    background: #000000; }
 
 header.header {
   padding-top: 10px;

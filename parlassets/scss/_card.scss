@@ -7,7 +7,7 @@
     position: relative;
     top: 0;
     left: 0;
-    padding: 0 20px;
+    padding: 0;
     overflow: hidden;
     background-color: #ffffff;
     @include card(1);
@@ -29,9 +29,12 @@
     float: none;
     margin-right: 0;
     width: 3px;
+    min-width: 3px;
     height: auto;
     @include gradient('vertical', 'blue');
     float: none;
+
+    margin-left: 20px;
 }
 .card-header h1 {
     margin: 0;
@@ -41,7 +44,7 @@
 }
 .card-content {
     width: 100%;
-    padding: 0;
+    padding: 0 20px 0 20px;
     margin: 0 0 10px 0;
 }
 .col-md-6 > .card-container .card-content {
@@ -60,8 +63,7 @@
     position: relative;
 
     height: 62px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding: 14px 20px 14px 20px;
     /* this background thing is a hack, still work TODO */
     background-image: url($cdn_home_img + 'shortline.png');
     background-position: center top;
@@ -172,45 +174,63 @@
 
 
 // ALT HEADER
-.card-header .portrait {
-    border-radius: 50%;
-    flex: none;
-    height: 80px;
-    margin: 0 18px 0 0;
-    width: 80px;
+.alt-header-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 
-    float: left;
-}
-.header-info-container {
-    vertical-align: baseline;
-    float: left;
+    .alt-header {
+        width: 100%;
+        padding: 0 20px 20px 20px;
 
-    padding-top: 2px;
+        .header-info-container {
+            vertical-align: baseline;
+            float: left;
 
-    h1 {
-        font-size: 16px !important;
+            padding-top: 2px;
+
+            h1 {
+                font-size: 16px !important;
+            }
+
+            h1, h2 {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0;
+                padding: 0;
+                line-height: 18px;
+            }
+
+            h2.partyinfo {
+                font-weight: 300;
+            }
+
+            h2.cardname {
+                font-weight: 300;
+
+                font-size: 18px;
+                line-height: 20px;
+
+                margin-top: 18px;
+
+                color: #009cdd;
+            }
+        }
     }
 
-    h1, h2 {
-        font-size: 16px;
-        font-weight: 500;
-        margin: 0;
-        padding: 0;
-        line-height: 18px;
+    .portrait {
+        border-radius: 50%;
+        flex: none;
+        height: 80px;
+        margin: 0 18px 0 0;
+        width: 80px;
+
+        float: left;
     }
 
-    h2.partyinfo {
-        font-weight: 300;
-    }
-
-    h2.cardname {
-        font-weight: 300;
-
-        font-size: 18px;
-        line-height: 20px;
-
-        margin-top: 18px;
-
-        color: #009cdd;
+    .alt-header-border {
+        height: 1px;
+        width: 100%;
+        background: #000000; // TODO
     }
 }
