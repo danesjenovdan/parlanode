@@ -987,6 +987,30 @@ const routes = [
     },
 
     {
+        path: '/seja/glasovanje/:id/:motionid',
+        extraPaths: ['/seja/glasovanje/:id/:motionid/:date'],
+        viewPath: 'seja/glasovanje',
+        cards: [
+            {
+                name: 'glasovanjeSeja',
+                sourceUrl: '/s/glasovanje-layered/:motionid',
+                resolve: (req, res, route, card)=> {
+
+                    var pattern = new UrlPattern(card.sourceUrl);
+                    const renderedPath = pattern.stringify({motionid: req.params.motionid});
+                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+                    return fetch(cardUrl)
+                        .then((res) => {
+                            return res.text();
+                        })
+                        .then((body) => {
+                            return body;
+                        });
+                }
+            },
+        ]
+    },
+    {
         path: '/seja/glasovanja/:id',
         extraPaths: ['/seja/glasovanja/:id/:date'],
         viewPath: 'seja/glasovanja',
@@ -1265,8 +1289,11 @@ function getSessionIds(params, req) {
 
      let psId;*/
 
+    let type;
     _.each(spsList[0], (sss, iii)=> {
 
+
+        type = iii;
         _.each(sss, (s, i)=> {
 
             s.nameSlug = slug(s.name).toLowerCase();
@@ -1278,6 +1305,7 @@ function getSessionIds(params, req) {
                 req.slug = spsSlug;
                 req.spsId = spsId;
                 req.s = s;
+                s.type = type;
                 selectedSps = s;
             }
             //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
