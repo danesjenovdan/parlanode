@@ -4,7 +4,7 @@
 
     <div class="col-md-12">
 
-        <% if(typeof sesData !== "undefined" ){%>
+<% if(typeof sesData !== "undefined" ){%>
         <div class="row">
             <div class="text-center">
                 <div class="media-object img-circle session-logo">
@@ -24,22 +24,22 @@
                 </font>
             </div>
         </div>
-        <% } %>
+<% } %>
     </div>
 
-    <% if(sesData.type != 'kolegij'){ %>
+
 
     <div class="col-md-12">
         <div class="session_transcript_menu">
 
             <ul class="clearfix">
                 <li>
-                    <a href="/seja/glasovanja/<%- params.id %>">
+                    <a href="/seja/glasovanja/<%- params.id %>" class="active">
                         Glasovanja
                     </a>
                 </li>
                 <li>
-                    <a href="/seja/transkript/<%- params.id %>" class="active">
+                    <a href="/seja/transkript/<%- params.id %>">
                         Transkript
                     </a>
                 </li>
@@ -54,17 +54,18 @@
         </div>
 
     </div>
-    <% } %>
+
 
 
 </div>
 
 
-<div class="col-md-12 ">
-    <%- views.besedeKiSoZaznamovaleSejo %>
-</div>
-<div class="col-md-12 ">
-    <%- views.transkript %>
-</div>
+
+    <div class="col-md-12 ">
+        <%- views.glasovanjeSeja %>
+    </div>
+
+
+
 
 <% include ../../partials/footer.ejs %>
