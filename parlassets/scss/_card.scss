@@ -183,6 +183,18 @@
         width: 100%;
         padding: 0 20px 20px 20px;
 
+        .session-logo {
+            display: block;
+            float: left;
+            margin-right: 15px;
+
+            border: none;
+
+            b {
+                font-size: 20px;
+            }
+        }
+
         .header-info-container {
             vertical-align: baseline;
             float: left;
@@ -203,6 +215,7 @@
 
             h2.partyinfo {
                 font-weight: 300;
+                font-family: 'Roboto Slab';
             }
 
             h2.cardname {

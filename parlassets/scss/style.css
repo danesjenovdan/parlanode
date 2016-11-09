@@ -218,6 +218,13 @@ a:focus, button:focus {
   .alt-header-container .alt-header {
     width: 100%;
     padding: 0 20px 20px 20px; }
+    .alt-header-container .alt-header .session-logo {
+      display: block;
+      float: left;
+      margin-right: 15px;
+      border: none; }
+      .alt-header-container .alt-header .session-logo b {
+        font-size: 20px; }
     .alt-header-container .alt-header .header-info-container {
       vertical-align: baseline;
       float: left;
@@ -231,7 +238,8 @@ a:focus, button:focus {
         padding: 0;
         line-height: 18px; }
       .alt-header-container .alt-header .header-info-container h2.partyinfo {
-        font-weight: 300; }
+        font-weight: 300;
+        font-family: 'Roboto Slab'; }
       .alt-header-container .alt-header .header-info-container h2.cardname {
         font-weight: 300;
         font-size: 18px;
