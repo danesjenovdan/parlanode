@@ -363,3 +363,63 @@ var progressbarTooltip = {
           });
   }
 }
+
+
+// card flipping
+function makeEmbedSwitch() {
+    // $('.embed-switch-box').on('click', function() {
+    //     $(this).toggleClass('off');
+    // });
+    $('.embed-script textarea').val('<iframe frameborder="0" width="620" height="400" src="' + $('.embed-script textarea').data('url') + razrez_data['person']['id'] + '/?isPreview=true&width=600">')
+    $('.embed-switch-big-box').on('click', function() {
+
+        var thechild = $(this).parent().next().next().children('textarea');
+        var todaysdate = new Date;
+        var today = '' + todaysdate.getDay() + '.' + todaysdate.getMonth() + '.' + todaysdate.getFullYear();
+
+        if ($(this).children('.embed-switch-box').hasClass('off')) {
+            console.log(thechild.data('url')  + razrez_data['person']['id']);
+            // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + razrez_data['person']['id'] + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
+            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + razrez_data['person']['id'] + '/?isPreview=true&width=600">')
+        } else {
+            // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + razrez_data['person']['id'] + '/' + today + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
+            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + razrez_data['person']['id'] + '/' + today + '/?isPreview=true&width=600">')
+            console.log(thechild.data('url')  + razrez_data['person']['id'] + today);
+        }
+
+        $(this).children('.embed-switch-box').toggleClass('off');
+    });
+}
+
+function addCardFlip() {
+
+    $('.back .card-content').height($('.front .card-content').height());
+    $('.back').css({
+        'width': $('.front').width(),
+        // 'top': -$('.front').height()
+    });
+
+    $('.front .card-circle-button').on('click', function() {
+        $('.back-info, .back-share, .back-embed').not('.back-' + $(this).data('back')).addClass('hidden');
+        $('.back-' + $(this).data('back')).removeClass('hidden');
+        $(this).parents('.card-container').toggleClass('flipped');
+    });
+
+    $('.back .card-circle-button').on('click', function() {
+        $(this).parents('.card-container')
+            .toggleClass('flipped');
+
+        var _this = this;
+        window.setTimeout(function() {
+            $('.back-info, .back-share, .back-embed').not('.back-' + $(_this).data('back')).addClass('hidden');
+            $('.back-' + $(_this).data('back')).removeClass('hidden');
+            if (!$(_this).hasClass('card-exit')) {
+                $(_this).parents('.card-container').toggleClass('flipped');
+            }
+        }, 600);
+    });
+
+    $('.share-content').css({
+        'padding-top': ($('.share-content').parent().height() - $('.share-content').height()) / 2
+    });
+}
