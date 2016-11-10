@@ -13,6 +13,8 @@ module.exports = function(app){
 
     app.get('/:group/:method/:id/*', controller.render);
 
+    app.post('/api/card/:cardId/updateEjs', controller.updateEjs);
+
     app.get('/:group/:method/*', controller.render);
 
     app.get('/api/card', authMiddleware, controller.get);

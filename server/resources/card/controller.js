@@ -115,6 +115,31 @@ exports.get = function(req, res){
 
 };
 
+exports.updateEjs = (req, res) => {
+
+    const cardId = req.params.cardId;
+    const ejs = req.body.ejs;
+
+    if(!ejs){
+        return res.status(400).send('Missing ejs');
+    }
+
+    const Card          = mongoose.model('Card');
+
+    Card.findByIdAndUpdate(cardId, {ejs:ejs})
+      .then((doc)=>{
+
+          res.status(200).send('done');
+
+      })
+      .catch((err)=>{
+
+          res.status(400).send(err);
+
+      });
+
+};
+
 /**
  *
  * @param req
@@ -266,8 +291,6 @@ exports.render = function(req, res){
                                 cardData.cardData.isEmbedded = true;
 
                             }
-
-
 
                             try {
 
