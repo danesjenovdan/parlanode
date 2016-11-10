@@ -479,3 +479,5 @@ function activateCopyButton() {
         copyToClipboard($(this).prev()[0]);
     });
 }
+
+activateCopyButton();
