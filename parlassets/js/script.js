@@ -370,7 +370,7 @@ function makeEmbedSwitch() {
     // $('.embed-switch-box').on('click', function() {
     //     $(this).toggleClass('off');
     // });
-    $('.embed-script textarea').val('<iframe frameborder="0" width="620" height="400" src="' + $('.embed-script textarea').data('url') + razrez_data['person']['id'] + '/?isPreview=true&width=600">')
+    $('.embed-script textarea').val('<iframe frameborder="0" width="620" height="400" src="' + $('.embed-script textarea').data('url') + razrez_data['person']['id'] + '/?embed=true&width=600">')
     $('.embed-switch-big-box').on('click', function() {
 
         var thechild = $(this).parent().next().next().children('textarea');
@@ -380,10 +380,10 @@ function makeEmbedSwitch() {
         if ($(this).children('.embed-switch-box').hasClass('off')) {
             console.log(thechild.data('url')  + razrez_data['person']['id']);
             // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + razrez_data['person']['id'] + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
-            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + razrez_data['person']['id'] + '/?isPreview=true&width=600">')
+            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + razrez_data['person']['id'] + '/?embed=true&width=600">')
         } else {
             // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + razrez_data['person']['id'] + '/' + today + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
-            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + razrez_data['person']['id'] + '/' + today + '/?isPreview=true&width=600">')
+            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + razrez_data['person']['id'] + '/' + today + '/?embed=true&width=600">')
             console.log(thechild.data('url')  + razrez_data['person']['id'] + today);
         }
 
@@ -423,3 +423,6 @@ function addCardFlip() {
         'padding-top': ($('.share-content').parent().height() - $('.share-content').height()) / 2
     });
 }
+
+addCardFlip();
+makeEmbedSwitch();
