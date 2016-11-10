@@ -1,14 +1,70 @@
 {
-    "VZDRŽAL": {
-        "m": "VZDRŽAL",
-        "f": "VZDRŽAL"
+    "biti": {
+        "m": "bil",
+        "f": "bila"
     },
-    "GLASOVAL": {
-        "m": "GLASOVAL",
-        "f": "GLASOVALA"
+    "poslanec": {
+        "m": "poslanec",
+        "f": "poslanka"
     },
-    "potrdil": {
-        "m": "potrdil",
-        "f": "potrdila"
+    "glasovati": {
+        "m": "glasoval",
+        "f": "glasovala"
+    },
+    "on": {
+        "m": "ga",
+        "f": "jo"
+    },
+    "prisoten": {
+        "m": "prisotnega",
+        "f": "prisotno"
+    },
+    "poslanca": {
+        "m": "poslančevih",
+        "f": "poslankinih"
+    },
+    "izgovoriti": {
+        "m": "izgovoril",
+        "f": "izgovorila"
+    },
+    "poslanca2": {
+        "m": "poslančeve",
+        "f": "poslankine"
+    },
+    "govoriti": {
+        "m": "govoril",
+        "f": "govorila"
+    },
+    "poslanca3": {
+        "m": "poslančevi",
+        "f": "poslankini"
+    },
+    "poslanec2": {
+        "m": "poslanca",
+        "f": "poslanko"
+    },
+    "vzdrzati": {
+        "m": "vzdržal",
+        "f": "vzdržala"
+    },
+    "prisoten2": {
+        "m": "prisoten",
+        "f": "prisotna"
+    },
+    "poslanca4": {
+        "m": "Poslančeve",
+        "f": "Poslankine"
+    },
+    "poslanec3": {
+        "m": "poslanca",
+        "f": "poslanke"
+    },
+    "aktiven": {
+        "m": "aktiven",
+        "f": "aktivna"
+    },
+    "poslanca5": {
+        "m": "poslančeva",
+        "f": "poslankina"
     }
 }
