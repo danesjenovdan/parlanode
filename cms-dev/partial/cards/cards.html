@@ -13,6 +13,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Card id</th>
                 <th>Url</th>
                 <th>Data url</th>
                 <th>Created on</th>
@@ -22,6 +23,7 @@
         <tbody>
             <tr ng-repeat="card in cards">
                 <td>{{card.name}}</td>
+                <td>{{card._id}}</td>
                 <td><small>https://glej.parlameter.si/{{card.group}}/{{card.method}}/:id/:date</small></td>
 
                 <td><small>{{card.dataUrl}}</small></td>
