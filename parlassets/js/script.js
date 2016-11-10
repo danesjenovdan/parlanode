@@ -371,11 +371,6 @@ function makeEmbedSwitch() {
     //     $(this).toggleClass('off');
     // });
 
-    var thechild = $(this).parent().next().next().children('textarea');
-    var todaysdate = new Date;
-    var today = '' + todaysdate.getDay() + '.' + todaysdate.getMonth() + '.' + todaysdate.getFullYear();
-
-    $('.embed-script textarea').val('<iframe frameborder="0" width="620" height="400" src="' + $('.embed-script textarea').data('url') + thechild.data('id') + '/?embed=true&width=600">')
     $('.embed-switch-big-box').on('click', function() {
 
         var thechild = $(this).parent().next().next().children('textarea');
