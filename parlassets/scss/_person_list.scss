@@ -1,4 +1,3 @@
-
 .person-list {
   $image-size: 80px;
   $image-margin: 18px;
@@ -45,6 +44,29 @@
         }
       }
       &.name { text-align: left; }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  $image-size: 60px;
+  $image-margin: 10px;
+
+  .person-list {
+    .person {
+      .column {
+        font-size: 16px;
+        &.portrait {
+          margin: 0 $image-margin 0 0;
+          img {
+            height: $image-size;
+            width: $image-size;
+          }
+        }
+      }
+    }
+    .headers {
+      margin-left: $image-size + $image-margin;
     }
   }
 }

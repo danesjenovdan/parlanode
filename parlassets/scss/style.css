@@ -1318,6 +1318,17 @@ footer.footer {
       .person-list .person .column.name {
         text-align: left; }
 
+@media (max-width: 767px) {
+  .person-list .person .column {
+    font-size: 16px; }
+    .person-list .person .column.portrait {
+      margin: 0 10px 0 0; }
+      .person-list .person .column.portrait img {
+        height: 60px;
+        width: 60px; }
+  .person-list .headers {
+    margin-left: 70px; } }
+
 .group-container {
   height: 100%;
   left: 0;
