@@ -126,7 +126,7 @@ exports.updateEjs = (req, res) => {
 
     const Card          = mongoose.model('Card');
 
-    Card.findByIdAndUpdate(cardId, {ejs:ejs})
+    Card.findByIdAndUpdate(cardId, {ejs:ejs, lastUpdate:new Date()})
       .then((doc)=>{
 
           res.status(200).send('done');
