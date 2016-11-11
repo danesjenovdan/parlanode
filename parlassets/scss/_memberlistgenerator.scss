@@ -1,5 +1,6 @@
 .member-list-generator {
   %list-flex {
+    box-sizing: border-box;
     display: flex;
     list-style: none;
     padding: 0;
@@ -45,7 +46,8 @@
   .districts {
     @extend %list-flex;
     border: 1px solid #c8c8c8;
-    height: 51px;
+    flex-wrap: wrap;
+    height: 60px;
     margin-left: 15px;
     padding: 12px 14px;
     position: relative;
@@ -55,6 +57,7 @@
       color: #ffffff;
       font-weight: 300;
       line-height: 24px;
+      margin-left: 8px;
       padding: 0 6px;
       .cross {
         font-size: 20px;
@@ -73,16 +76,5 @@
       top: 20px;
       width: 0;
     }
-  }
-}
-
-%flex {
-  align-items: center;
-  display: flex;
-  .column {
-    flex: 1;
-    margin: 0 8px;
-    text-align: center;
-    &.wider { flex: 2; }
   }
 }

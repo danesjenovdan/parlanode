@@ -1152,6 +1152,7 @@ footer.footer {
 
 /* end of added by muki */
 .member-list-generator .analyses, .member-list-generator .parties, .member-list-generator .districts {
+  box-sizing: border-box;
   display: flex;
   list-style: none;
   padding: 0; }
@@ -1190,7 +1191,8 @@ footer.footer {
 
 .member-list-generator .districts {
   border: 1px solid #c8c8c8;
-  height: 51px;
+  flex-wrap: wrap;
+  height: 60px;
   margin-left: 15px;
   padding: 12px 14px;
   position: relative;
@@ -1200,6 +1202,7 @@ footer.footer {
     color: #ffffff;
     font-weight: 300;
     line-height: 24px;
+    margin-left: 8px;
     padding: 0 6px; }
     .member-list-generator .districts li .cross {
       font-size: 20px;
@@ -1215,16 +1218,6 @@ footer.footer {
     right: 19px;
     top: 20px;
     width: 0; }
-
-.person-list .headers, .person-list .person {
-  align-items: center;
-  display: flex; }
-  .person-list .headers .column, .person-list .person .column {
-    flex: 1;
-    margin: 0 8px;
-    text-align: center; }
-    .person-list .headers .column.wider, .person-list .person .column.wider {
-      flex: 2; }
 
 .party-button {
   border-top: 1px solid #c8c8c8;
@@ -1277,6 +1270,16 @@ footer.footer {
     border-bottom-color: #853f36; }
     .party-button.nep.selected {
       background-color: #853f36; }
+
+.person-list .headers, .person-list .person {
+  align-items: center;
+  display: flex; }
+  .person-list .headers .column, .person-list .person .column {
+    flex: 1;
+    margin: 0 8px;
+    text-align: center; }
+    .person-list .headers .column.wider, .person-list .person .column.wider {
+      flex: 2; }
 
 .person-list {
   margin: 0;

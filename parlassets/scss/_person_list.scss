@@ -1,3 +1,14 @@
+%flex {
+  align-items: center;
+  display: flex;
+  .column {
+    flex: 1;
+    margin: 0 8px;
+    text-align: center;
+    &.wider { flex: 2; }
+  }
+}
+
 .person-list {
   $image-size: 80px;
   $image-margin: 18px;
