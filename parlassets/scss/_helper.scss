@@ -70,8 +70,8 @@ a:focus, button:focus{
 }
 
 
-$cdn_home_img: 'https://cdn.parlameter.si/v1/img/';
-$cdn_home_icon: 'https://cdn.parlameter.si/v1/icons/';
+$cdn_home_img: 'https://cdn.parlameter.si/v1/parlassets/img/';
+$cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 
 
 
@@ -144,5 +144,5 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/icons/';
             background: linear-gradient(to right,  #ff5e41 0%,#009cdd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5e41', endColorstr='#009cdd',GradientType=1 ); /* IE6-9 */
         }
-    } 
+    }
 }

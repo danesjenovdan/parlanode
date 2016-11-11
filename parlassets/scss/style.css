@@ -126,7 +126,7 @@ a:focus, button:focus {
   height: 62px;
   padding: 14px 20px 14px 20px;
   /* this background thing is a hack, still work TODO */
-  background-image: url("https://cdn.parlameter.si/v1/img/shortline.png");
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/img/shortline.png");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 100%; }
@@ -156,13 +156,13 @@ a:focus, button:focus {
   font-weight: 100; }
 
 .card-embed {
-  background-image: url("https://cdn.parlameter.si/v1/icons/embed.svg");
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/embed.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70% 70%; }
 
 .card-share {
-  background-image: url("https://cdn.parlameter.si/v1/icons/share.svg");
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/share.svg");
   background-repeat: no-repeat;
   background-position: 6px center;
   background-size: 50% 50%; }
@@ -195,7 +195,7 @@ a:focus, button:focus {
 
 .card-embed-header-divider {
   height: 1px;
-  background-image: url("https://cdn.parlameter.si/v1/img/shortline.png");
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/img/shortline.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: -20px;
@@ -431,7 +431,7 @@ input.form-control, textarea.form-control {
 
 header.header {
   padding-top: 10px;
-  background: url("https://cdn.parlameter.si/v1/img/top.png") top center no-repeat;
+  background: url("https://cdn.parlameter.si/v1/parlassets/img/top.png") top center no-repeat;
   /*    .navbar {
         border: none;
         margin-bottom: 20px;
@@ -440,7 +440,7 @@ header.header {
     }
 */ }
   header.header .logo {
-    background: url("https://cdn.parlameter.si/v1/img/logo.png") center no-repeat;
+    background: url("https://cdn.parlameter.si/v1/parlassets/img/logo.png") center no-repeat;
     width: 150px;
     height: 80px; }
   header.header .navbar-collapse.collapse {
@@ -479,7 +479,7 @@ footer.footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 120px;
-  background: url("https://cdn.parlameter.si/v1/img/bottom.png") bottom center no-repeat; }
+  background: url("https://cdn.parlameter.si/v1/parlassets/img/bottom.png") bottom center no-repeat; }
   footer.footer .cnt {
     border-top: 1px solid #dbdbdb;
     padding-top: 10px;
@@ -836,13 +836,13 @@ footer.footer {
     float: left;
     margin-right: 1%; }
   .session_transcript .panel-title a .status {
-    background: url("https://cdn.parlameter.si/v1/img/arrup.png") top center no-repeat;
+    background: url("https://cdn.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
     width: 40px;
     height: 40px;
     display: inline-block;
     float: right; }
   .session_transcript .panel-title a.collapsed .status {
-    background: url("https://cdn.parlameter.si/v1/img/arrdown.png") top center no-repeat;
+    background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
     width: 40px;
     height: 40px; }
 
@@ -865,7 +865,7 @@ footer.footer {
   position: relative; }
 
 .session_transcript .panel-collapse .status a {
-  background: url("https://cdn.parlameter.si/v1/img/arrup.png") top center no-repeat;
+  background: url("https://cdn.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block;
@@ -875,7 +875,7 @@ footer.footer {
   text-decoration: none; }
 
 .session_transcript .panel-collapse.collapsed .status a {
-  background: url("https://cdn.parlameter.si/v1/img/arrdown.png") top center no-repeat;
+  background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block; }
@@ -1431,37 +1431,37 @@ footer.footer {
   background-position: center; }
 
 .parlaicon-clanstva {
-  background-image: url("https://cdn.parlameter.si/v1/icons/clanstva.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/clanstva.svg"); }
 
 .parlaicon-skupina {
-  background-image: url("https://cdn.parlameter.si/v1/icons/skupina.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/skupina.svg"); }
 
 .parlaicon-delaza {
-  background-image: url("https://cdn.parlameter.si/v1/icons/delaza.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/delaza.svg"); }
 
 .parlaicon-mandat {
-  background-image: url("https://cdn.parlameter.si/v1/icons/mandat.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/mandat.svg"); }
 
 .parlaicon-status {
-  background-image: url("https://cdn.parlameter.si/v1/icons/status.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/status.svg"); }
 
 .parlaicon-izobrazba {
-  background-image: url("https://cdn.parlameter.si/v1/icons/izobrazba.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/izobrazba.svg"); }
 
 .parlaicon-starost {
-  background-image: url("https://cdn.parlameter.si/v1/icons/starost.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/starost.svg"); }
 
 .parlaicon-za {
-  background-image: url("https://cdn.parlameter.si/v1/icons/za.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za.svg"); }
 
 .parlaicon-ni {
-  background-image: url("https://cdn.parlameter.si/v1/icons/ni.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
 
 .parlaicon-proti {
-  background-image: url("https://cdn.parlameter.si/v1/icons/proti.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
 
 .parlaicon-govor {
-  background-image: url("https://cdn.parlameter.si/v1/icons/govor.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/govor.svg"); }
 
 .parlaicon-facebook {
   width: 22px;
@@ -1469,7 +1469,7 @@ footer.footer {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/icons/facebook.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/facebook.svg"); }
 
 .parlaicon-twitter {
   width: 22px;
@@ -1477,7 +1477,7 @@ footer.footer {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/icons/twitter.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/twitter.svg"); }
 
 .parlaicon-linkedin {
   width: 22px;
@@ -1485,7 +1485,7 @@ footer.footer {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/icons/linkedin.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/linkedin.svg"); }
 
 .parlaicon-omrezja {
   width: 22px;
@@ -1493,7 +1493,7 @@ footer.footer {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/icons/omrezja.svg"); }
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/omrezja.svg"); }
 
 /* perfect-scrollbar v0.6.10 */
 .ps-container {
