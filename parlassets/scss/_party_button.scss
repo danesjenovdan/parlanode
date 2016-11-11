@@ -1,0 +1,25 @@
+.party-button {
+  border-top: 1px solid #c8c8c8;
+  border-left: 1px solid #c8c8c8;
+  border-right: 1px solid #c8c8c8;
+  border-bottom: 7px solid;
+  cursor: pointer;
+  flex: 1;
+  font-size: 13px;
+  font-weight: 300;
+  height: 51px;
+  line-height: 32px;
+  text-align: center;
+  &.selected {
+    border-bottom: 1px solid #c8c8c8;
+    color: #ffffff;
+  }
+  @each $party, $color in $party-colors {
+    &.#{$party} {
+      border-bottom-color: $color;
+      &.selected {
+        background-color: $color;
+      }
+    }
+  }
+}

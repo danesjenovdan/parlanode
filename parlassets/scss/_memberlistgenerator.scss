@@ -37,23 +37,7 @@
     @extend %list-flex;
     width: 58.33%;
     li {
-      border-top: 1px solid #c8c8c8;
-      border-left: 1px solid #c8c8c8;
-      border-right: 1px solid #c8c8c8;
-      border-bottom: 7px solid #857799;
-      cursor: pointer;
-      flex: 1;
-      font-size: 13px;
-      font-weight: 300;
-      height: 51px;
-      line-height: 32px;
       margin-right: 3px;
-      text-align: center;
-      &.selected {
-        background-color: #857799;
-        border-bottom: 1px solid #c8c8c8;
-        color: #ffffff;
-      }
       &:last-child { margin-right: 0; }
     }
   }
