@@ -129,7 +129,7 @@ exports.updateEjs = (req, res) => {
     Card.findByIdAndUpdate(cardId, {ejs:ejs})
       .then((doc)=>{
 
-          res.status(200).send('done');
+          res.status(200).send(doc);
 
       })
       .catch((err)=>{
