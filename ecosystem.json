@@ -27,7 +27,7 @@
       user : "parladaddy",
       host : "parlameter.si",
       ref  : "origin/master",
-      repo : "git@github.com:muki/parlanode.git",
+      repo : "git@parlanode:muki/parlanode.git",
       path : "/home/parladaddy/parlanode",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production",
       env  : {
@@ -38,7 +38,7 @@
       user : "root",
       host : "localhost",
       ref  : "origin/master",
-      repo : "git@github.com:muki/parlanode.git",
+      repo : "git@parlanode:muki/parlanode.git",
       path : "/Users/francizidar/projects/parlameter/deploy",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env dev",
       env  : {
