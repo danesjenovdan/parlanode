@@ -50,7 +50,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:muki/parlanode.git",
       path : "/Users/francizidar/projects/parlameter/deploys/parlanode",
-      "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.config.js --env dev",
+      "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.config.js --env production",
       env  : {
         NODE_ENV: "development"
       }
