@@ -38,9 +38,6 @@ $vote-colors: (
 @each $party, $color in $party-colors {
   .#{$party}-background { background: $color; }
 }
-@each $party, $color in $party-colors {
-  .#{$party}-button:hover { background: $color; }
-}
 
 @each $party, $color in $party-colors {
   .#{$party}-fill { fill: $color; }
@@ -48,4 +45,8 @@ $vote-colors: (
 
 @each $party, $color in $party-colors {
   .#{$party}-stroke { stroke: $color; }
+}
+
+@each $party, $color in $party-colors {
+  .#{$party}-hover:hover { background: $color; }
 }

@@ -30,33 +30,6 @@
 .nep-background {
   background: #853f36; }
 
-.smc-button:hover {
-  background: #8fcfee; }
-
-.sds-button:hover {
-  background: #22a2e0; }
-
-.desus-button:hover {
-  background: #5388aa; }
-
-.sd-button:hover {
-  background: #4f6379; }
-
-.zl-button:hover {
-  background: #857799; }
-
-.nsi-button:hover {
-  background: #b7888a; }
-
-.ps_np-button:hover {
-  background: #d9776b; }
-
-.imns-button:hover {
-  background: #ba594c; }
-
-.nep-button:hover {
-  background: #853f36; }
-
 .smc-fill {
   fill: #8fcfee; }
 
@@ -110,6 +83,33 @@
 
 .nep-stroke {
   stroke: #853f36; }
+
+.smc-hover:hover {
+  background: #8fcfee; }
+
+.sds-hover:hover {
+  background: #22a2e0; }
+
+.desus-hover:hover {
+  background: #5388aa; }
+
+.sd-hover:hover {
+  background: #4f6379; }
+
+.zl-hover:hover {
+  background: #857799; }
+
+.nsi-hover:hover {
+  background: #b7888a; }
+
+.ps_np-hover:hover {
+  background: #d9776b; }
+
+.imns-hover:hover {
+  background: #ba594c; }
+
+.nep-hover:hover {
+  background: #853f36; }
 
 body {
   font-family: 'Roboto', sans-serif;
