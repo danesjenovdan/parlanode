@@ -1,10 +1,7 @@
 header.header {
-    padding-top: 10px;
-    background: url($cdn_home_img + 'top.png') top center no-repeat;
     .logo {
-        background: url($cdn_home_img + 'logo.png') center no-repeat;
-        width: 150px;
-        height: 80px;
+        width: 110px;
+        height: 70px;
     }
     .navbar-collapse.collapse {
         margin-top: 20px;
@@ -23,16 +20,28 @@ header.header {
         margin-bottom: 10px;
     }
     .navbar-nav > li > a {
-        margin: 0 30px;
         font-size: 18px;
+        color: $black;
+        padding: 20px 30px;
+        margin: 0;
     }
-    /*    .navbar {
-        border: none;
-        margin-bottom: 20px;
-        min-height: 50px;
-        position: relative;
+
+    .navbar-collapse.collapse {
+        margin-top: 0;
     }
-*/
+
+    .search {
+        margin-top: 10px;
+    }
+
+    .btn-default {
+        background: transparent;
+    }
+    .navbar-form .form-group {
+        display: block;
+    }
+
+
     .navbar-form .form-group {
         display: none;
     }
@@ -40,7 +49,172 @@ header.header {
         border: none;
         border-radius: 0;
     }
+
+
+    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+        color: $black;
+    }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+        color: $black;
+        background: $grey;
+    }
+
+    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+        background: $grey;
+    }
+
+
+    @media (min-width: 768px) {
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+    }
+
+
+    .parlaicon {
+
+    }
+
+    .parlaicon-search {
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        position: relative;
+        bottom: -5px;
+        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search.svg");
+    }
+
+    .header-searchhide {
+        display: none;
+    }
+
+    .header-search {
+
+    }
+
+    .search-input-header {
+        background: none;
+    }
+    .twitter-typeahead .search-input-header,
+    .twitter-typeahead .search-input-header:focus {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: 0;
+        background: none;
+    }
+
+    .search-input-header-prepend,
+    .search-input-header-append{
+        background: none;
+        display: inline-block;
+        height: 34px;
+    }
+
+    .search-input-header-prepend .glyphicon.glyphicon-search,
+    .search-input-header-append .glyphicon.glyphicon-remove {
+        position: relative;
+        top:9px;
+    }
+
+    .header-search-find {
+
+    }
+    .searchiconbuttton{
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+
+
+
+    .header-search .tt-menu {
+        max-height: 300px;
+        overflow-y: auto;
+
+        @include card(1);
+
+    }
+
+    .header-search .tt-dataset {
+        padding: 0;
+        background-color: $white;
+        width: 200px;
+
+    }
+    .header-search .tt-dataset .searchheader {
+        display: block;
+        position: relative;
+        width: 200px;
+        height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+        background-color: #ededed;
+
+        top: 0;
+        left: 0;
+
+        padding-left: 5px;
+        z-index: 10;
+    }
+
+
+    .header-search .searchperson-container {
+        border-bottom: 1px solid #ededed;
+        height: 60px;
+        padding: 10px;
+        line-height: 40px;
+        background-color: $white;
+    }
+
+    .header-search .tt-cursor {
+        background-color: #ededed;
+    }
+
+    .session-ac-search {
+        background: #e8f1f4;
+        padding: 10px 5px;
+        color: $funblue;
+        cursor: pointer;
+    }
+    .session-ac-search .glyphicon-search {
+        color: $funblue;
+        font-size:16px;
+    }
+
 }
+
+
+
+
+
+
+.session_transcript_menu {
+    margin: 80px auto 0 auto;
+    display: table;
+}
+
+@media (max-width: 480px) {
+    .colToList {
+        margin: 0;
+    }
+
+    .colToList .session_type {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
 html {
     position: relative;
     min-height: 100%;
@@ -55,10 +229,55 @@ footer.footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 120px;
-    background: url($cdn_home_img + 'bottom.png') bottom center no-repeat;
     .cnt {
         border-top: 1px solid $darkgrey;
         padding-top: 10px;
         margin-top: 10px;
     }
+}
+
+
+
+
+.stripeeltop {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    @include gradient('horizontal', 'blue');
+}
+
+.stripeeltop:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: #f0f0f0;
+    top: 15px;
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+
+.stripeelbottom {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    background: #f0f0f0;
+    bottom: 0;
+}
+
+.stripeelbottom:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    @include gradient('horizontal', 'blue');
+    top: 15px;
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    transform: rotate(1deg);
 }
