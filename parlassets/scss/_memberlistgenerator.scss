@@ -1,6 +1,5 @@
 .member-list-generator {
   %list-flex {
-    box-sizing: border-box;
     display: flex;
     list-style: none;
     padding: 0;
@@ -38,6 +37,7 @@
     @extend %list-flex;
     width: 58.33%;
     li {
+      box-sizing: border-box;
       margin-right: 3px;
       &:last-child { margin-right: 0; }
     }
@@ -46,8 +46,9 @@
   .districts {
     @extend %list-flex;
     border: 1px solid #c8c8c8;
+    box-sizing: border-box;
     flex-wrap: wrap;
-    height: 60px;
+    height: 51px;
     margin-left: 15px;
     padding: 12px 14px;
     position: relative;

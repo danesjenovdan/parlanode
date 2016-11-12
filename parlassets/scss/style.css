@@ -1152,7 +1152,6 @@ footer.footer {
 
 /* end of added by muki */
 .member-list-generator .analyses, .member-list-generator .parties, .member-list-generator .districts {
-  box-sizing: border-box;
   display: flex;
   list-style: none;
   padding: 0; }
@@ -1185,14 +1184,16 @@ footer.footer {
 .member-list-generator .parties {
   width: 58.33%; }
   .member-list-generator .parties li {
+    box-sizing: border-box;
     margin-right: 3px; }
     .member-list-generator .parties li:last-child {
       margin-right: 0; }
 
 .member-list-generator .districts {
   border: 1px solid #c8c8c8;
+  box-sizing: border-box;
   flex-wrap: wrap;
-  height: 60px;
+  height: 51px;
   margin-left: 15px;
   padding: 12px 14px;
   position: relative;
