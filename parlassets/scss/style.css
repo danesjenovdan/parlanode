@@ -1151,9 +1151,10 @@ footer.footer {
   padding-bottom: 10px; }
 
 /* end of added by muki */
-.member-list-generator .analyses, .member-list-generator .parties, .member-list-generator .districts {
+.member-list-generator .analyses, .member-list-generator .parties {
   display: flex;
   list-style: none;
+  margin: 0;
   padding: 0; }
 
 .member-list-generator .parties-districts {
@@ -1190,35 +1191,12 @@ footer.footer {
       margin-right: 0; }
 
 .member-list-generator .districts {
-  border: 1px solid #c8c8c8;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  height: 51px;
   margin-left: 15px;
-  padding: 12px 14px;
-  position: relative;
   width: 41.67%; }
-  .member-list-generator .districts li {
-    background-color: #197197;
-    color: #ffffff;
-    font-weight: 300;
-    line-height: 24px;
-    margin-left: 8px;
-    padding: 0 6px; }
-    .member-list-generator .districts li .cross {
-      font-size: 20px;
-      font-weight: 400;
-      vertical-align: bottom; }
-  .member-list-generator .districts::after {
-    border-color: #197197 transparent transparent transparent;
-    border-style: solid;
-    border-width: 11px 9px 0 9px;
-    content: '';
-    height: 0;
-    position: absolute;
-    right: 19px;
-    top: 20px;
-    width: 0; }
+
+.member-list-generator .generated-url {
+  font-family: monospace;
+  word-wrap: break-word; }
 
 .party-button {
   border-top: 1px solid #c8c8c8;
@@ -1332,6 +1310,72 @@ footer.footer {
         width: 60px; }
   .person-list .headers {
     margin-left: 70px; } }
+
+.search-dropdown {
+  border: 1px solid #c8c8c8;
+  box-sizing: border-box;
+  position: relative; }
+  .search-dropdown::after {
+    border-color: #197197 transparent transparent transparent;
+    border-style: solid;
+    border-width: 11px 9px 0 9px;
+    content: '';
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 14px;
+    top: 20px;
+    width: 0; }
+  .search-dropdown-input {
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 27px;
+    outline: none;
+    padding: 12px 32px 12px 14px;
+    width: 100%; }
+  .search-dropdown-options {
+    background: #ffffff;
+    border-left: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
+    border-right: 1px solid #c8c8c8;
+    display: none;
+    max-height: 230px;
+    left: -1px;
+    list-style: none;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+    position: absolute;
+    top: 52px;
+    width: 100%;
+    z-index: 1; }
+    .search-dropdown-options.visible {
+      display: block; }
+    .search-dropdown-options li {
+      cursor: pointer;
+      font-size: 12px;
+      height: 23px;
+      line-height: 24px;
+      padding: 0 14px;
+      position: relative;
+      user-select: none; }
+      .search-dropdown-options li:hover {
+        background: #e6e6e6; }
+      .search-dropdown-options li.selected {
+        background-color: #197197;
+        color: #ffffff; }
+        .search-dropdown-options li.selected:hover {
+          background: #12506b; }
+      .search-dropdown-options li:not(:last-of-type):not(.selected)::after {
+        content: '';
+        background: #ebebeb;
+        height: 1px;
+        width: calc(100% - 2*22px);
+        position: absolute;
+        top: 23px;
+        left: 22px; }
 
 .group-container {
   height: 100%;

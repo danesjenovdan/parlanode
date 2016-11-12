@@ -2,6 +2,7 @@
   %list-flex {
     display: flex;
     list-style: none;
+    margin: 0;
     padding: 0;
   }
 
@@ -44,38 +45,12 @@
   }
 
   .districts {
-    @extend %list-flex;
-    border: 1px solid #c8c8c8;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    height: 51px;
     margin-left: 15px;
-    padding: 12px 14px;
-    position: relative;
     width: 41.67%;
-    li {
-      background-color: #197197;
-      color: #ffffff;
-      font-weight: 300;
-      line-height: 24px;
-      margin-left: 8px;
-      padding: 0 6px;
-      .cross {
-        font-size: 20px;
-        font-weight: 400;
-        vertical-align: bottom;
-      }
-    }
-    &::after {
-      border-color: #197197 transparent transparent transparent;
-      border-style: solid;
-      border-width: 11px 9px 0 9px;
-      content: '';
-      height: 0;
-      position: absolute;
-      right: 19px;
-      top: 20px;
-      width: 0;
-    }
+  }
+
+  .generated-url {
+    font-family: monospace;
+    word-wrap: break-word;
   }
 }
