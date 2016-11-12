@@ -57,6 +57,7 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
+
                   return res.text();
 
                 })
