@@ -434,7 +434,8 @@ input.form-control, textarea.form-control {
 
 header.header .logo {
   width: 110px;
-  height: 70px; }
+  height: 70px;
+  padding: 0; }
 
 header.header .navbar-collapse.collapse {
   margin-top: 20px; }
@@ -466,12 +467,6 @@ header.header .search {
 
 header.header .btn-default {
   background: transparent; }
-
-header.header .navbar-form .form-group {
-  display: block; }
-
-header.header .navbar-form .form-group {
-  display: none; }
 
 header.header .search {
   border: none;
