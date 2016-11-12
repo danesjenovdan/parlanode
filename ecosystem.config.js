@@ -34,6 +34,17 @@ module.exports = {
         NODE_ENV: "production"
       }
     },
+    localProduction:{
+      user : "root",
+      host : "localhost",
+      ref  : "origin/master",
+      repo : "git@github.com:muki/parlanode.git",
+      path : "/home/parladaddy/parlanode",
+      "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.config.js --env dev",
+      env  : {
+        NODE_ENV: "production"
+      }
+    },
     dev : {
       user : "root",
       host : "localhost",
