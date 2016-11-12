@@ -28,7 +28,7 @@
       host : "parlameter.si",
       ref  : "origin/master",
       repo : "git@github.com:muki/parlanode.git",
-      path : "/home/parladaddy/parlanode2",
+      path : "/home/parladaddy/parlanode",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production",
       env  : {
         NODE_ENV: "production"
