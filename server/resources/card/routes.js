@@ -17,6 +17,10 @@ module.exports = function(app){
 
     app.get('/:group/:method/*', controller.render);
 
+    app.get('/test', (req, res)=> {
+       res.send({ result:true });
+    });
+
     app.get('/api/card', authMiddleware, controller.get);
 
 };

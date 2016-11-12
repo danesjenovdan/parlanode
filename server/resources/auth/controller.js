@@ -1,11 +1,11 @@
-const models  = require('../../models');
+const models  = require('../../models').models;
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const randToken = require('rand-token');
 
 exports.login = (req, res)=>{
 
-    console.log('Try login');
+    console.log(req.body);
 
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('password', 'Password is not valid').notEmpty().isLength({min:5});
@@ -20,36 +20,43 @@ exports.login = (req, res)=>{
             email:'filip@danesjenovdan.si'
         }
     })
-        .then((user)=>{
-console.log('User: ', user);
-            crypto.pbkdf2(req.body.password, 'IrhgN1perpLq', 20000, 32, 'sha256', function (err, derivedkey) {
+      .then((user)=>{
 
-                // error on failure
-                if (err) return callback(err);
+          crypto.pbkdf2(req.body.password, 'IrhgN1perpLq', 20000, 32, 'sha256', function (err, derivedkey) {
 
-                const resultHash = derivedkey.toString('base64');
-                const password = user.password.split('$')[user.password.split('$').length-1];
+              // error on failure
+              if (err) {
+                  res.send('Fail', 401);
+              }
 
-                if(resultHash === password) {
+              const resultHash = derivedkey.toString('base64');
+              const password = user.password.split('$')[user.password.split('$').length-1];
 
-                    const tokenValue = randToken.generate(100);
-                    const token = new TokenModel({
-                        value       : tokenValue,
-                        userData    : user.dataValues
+              if(resultHash === password) {
+
+                  const tokenValue = randToken.generate(100);
+                  const token = new TokenModel({
+                      value       : tokenValue,
+                      userData    : user.dataValues
+                  });
+
+                  token.save()
+                    .then(()=>{
+                        res.send({status:1, token:{value:tokenValue, doc:token}});
                     });
 
-                    token.save()
-                      .then(()=>{
-                          res.send({status:1, token:{value:tokenValue, doc:token}});
-                      });
+              }else{
+                  res.send('Fail', 401);
+              }
 
-                }else{
-                    res.send('Fail', 401);
-                }
+          });
 
-            });
+      })
+      .catch((err) => {
 
-        });
+          res.status(400).send(err);
+
+      });
 
 };
 

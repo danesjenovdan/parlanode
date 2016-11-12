@@ -26,6 +26,8 @@ exports.init = function(){
 
 };
 
+exports.app = app;
+
 function setupExpress(){
 
     return new Promise(function(resolve, reject) {

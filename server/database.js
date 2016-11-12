@@ -23,7 +23,7 @@ exports.connect = function(cb){
             if(cb){
                 cb();
             }
-            console.log(chalk.green(chalk.magenta('| DATABASE |')+' - done'));
+            console.log(chalk.green(chalk.magenta('| MONGO DATABASE |')+' - connected'));
             resolve();
 
         });

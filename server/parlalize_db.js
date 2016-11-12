@@ -1,10 +1,13 @@
 'use strict';
 
-const Sequelize = require("sequelize");
+const Sequelize         = require("sequelize");
+const postgresModels    = require('./models');
+const chalk             = require('chalk');
 
 var sequelize = new Sequelize(CFG.postgres.name, CFG.postgres.user, CFG.postgres.password, {
     host: CFG.postgres.host,
     dialect: 'postgres',
+    logging: false,
     pool: {
         max: 5,
         min: 0,
@@ -12,25 +15,18 @@ var sequelize = new Sequelize(CFG.postgres.name, CFG.postgres.user, CFG.postgres
     }
 });
 
-var db;
-
 exports.connect = function(){
 
-    console.log('Connect to parlalize');
-
     return sequelize
-        .authenticate()
-        .then(function(err) {
-            console.log('Connection has been established successfully.');
-        })
-        .catch(function (err) {
-            console.log('Unable to connect to the database:', err);
-        });
+      .authenticate()
+      .then(function(err) {
+        console.log(chalk.green(chalk.magenta('| POSTGRES DATABASE |')+' - connected'));
+        postgresModels.init(sequelize);
+      })
+      .catch(function (err) {
+          console.log('Error when connecting');
+      });
 
 };
 
-exports.getDb = function(){
-
-    return db;
-
-};
+exports.sequelize = sequelize;
