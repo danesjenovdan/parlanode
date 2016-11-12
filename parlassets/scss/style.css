@@ -30,31 +30,31 @@
 .nep-background {
   background: #853f36; }
 
-.smc-background:hover {
+.smc-button:hover {
   background: #8fcfee; }
 
-.sds-background:hover {
+.sds-button:hover {
   background: #22a2e0; }
 
-.desus-background:hover {
+.desus-button:hover {
   background: #5388aa; }
 
-.sd-background:hover {
+.sd-button:hover {
   background: #4f6379; }
 
-.zl-background:hover {
+.zl-button:hover {
   background: #857799; }
 
-.nsi-background:hover {
+.nsi-button:hover {
   background: #b7888a; }
 
-.ps_np-background:hover {
+.ps_np-button:hover {
   background: #d9776b; }
 
-.imns-background:hover {
+.imns-button:hover {
   background: #ba594c; }
 
-.nep-background:hover {
+.nep-button:hover {
   background: #853f36; }
 
 .smc-fill {
@@ -683,11 +683,77 @@ footer.footer {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 120px; }
+  height: 210px; }
   footer.footer .cnt {
     border-top: 1px solid #dbdbdb;
     padding-top: 10px;
     margin-top: 10px; }
+  footer.footer .border_top {
+    border-top: 1px solid #dbdbdb;
+    padding-top: 40px;
+    margin-top: 10px; }
+  footer.footer .border_tope {
+    border-top: 1px dashed #dbdbdb;
+    padding-top: 10px;
+    margin-top: 10px; }
+  footer.footer .colorBlack {
+    color: #505050; }
+  footer.footer .parlaicon-twitter-parlameter {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    top: 12px;
+    background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/twitter-parlameter.svg");
+    color: #337ab7;
+    margin: 0 0px 0 30px; }
+  footer.footer .parlaicon-facebook-parlameter {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    top: 12px;
+    background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/facebook-parlameter.svg");
+    color: #337ab7;
+    margin: 0 0px 0 20px; }
+  footer.footer .doniraj {
+    border: 1px solid #505050;
+    background: none;
+    text-transform: uppercase;
+    border-radius: 0; }
+  footer.footer .parlaicon-doniraj {
+    width: 17px;
+    height: 20px;
+    line-height: 22px;
+    padding-left: 20px;
+    position: relative;
+    bottom: -5px;
+    right: -5px;
+    margin-right: 5px;
+    background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/doniraj.svg");
+    color: #337ab7; }
+  footer.footer input.form-control.newslettersubscribe {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #505050;
+    background: none;
+    padding-left: 0; }
+  footer.footer input.form-control.newslettersubscribe:focus {
+    outline: none; }
+  footer.footer .newslettersubscribeButton {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #505050;
+    background: none;
+    padding: 7px 12px 6px 12px;
+    color: #337ab7;
+    padding-right: 0;
+    text-transform: uppercase; }
+  footer.footer .newslettersubscribeButton:hover {
+    background: none;
+    border-bottom: 1px solid #505050;
+    color: #337ab7;
+    padding-right: 0; }
 
 .stripeeltop {
   position: relative;

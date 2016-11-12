@@ -39,7 +39,7 @@ $vote-colors: (
   .#{$party}-background { background: $color; }
 }
 @each $party, $color in $party-colors {
-  .#{$party}-background:hover { background: $color; }
+  .#{$party}-button:hover { background: $color; }
 }
 
 @each $party, $color in $party-colors {
