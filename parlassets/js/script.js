@@ -396,7 +396,6 @@ function addCardFlip() {
     $('.back .card-content').height($('.front .card-content').height());
     $('.back').css({
         'width': $('.front').width(),
-        // 'top': -$('.front').height()
     });
 
     $('.front .card-circle-button').on('click', function() {
@@ -479,5 +478,3 @@ function activateCopyButton() {
         copyToClipboard($(this).prev()[0]);
     });
 }
-
-activateCopyButton();

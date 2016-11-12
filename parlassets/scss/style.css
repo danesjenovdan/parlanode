@@ -30,6 +30,60 @@
 .nep-background {
   background: #853f36; }
 
+.smc-fill {
+  fill: #8fcfee; }
+
+.sds-fill {
+  fill: #22a2e0; }
+
+.desus-fill {
+  fill: #5388aa; }
+
+.sd-fill {
+  fill: #4f6379; }
+
+.zl-fill {
+  fill: #857799; }
+
+.nsi-fill {
+  fill: #b7888a; }
+
+.ps_np-fill {
+  fill: #d9776b; }
+
+.imns-fill {
+  fill: #ba594c; }
+
+.nep-fill {
+  fill: #853f36; }
+
+.smc-stroke {
+  stroke: #8fcfee; }
+
+.sds-stroke {
+  stroke: #22a2e0; }
+
+.desus-stroke {
+  stroke: #5388aa; }
+
+.sd-stroke {
+  stroke: #4f6379; }
+
+.zl-stroke {
+  stroke: #857799; }
+
+.nsi-stroke {
+  stroke: #b7888a; }
+
+.ps_np-stroke {
+  stroke: #d9776b; }
+
+.imns-stroke {
+  stroke: #ba594c; }
+
+.nep-stroke {
+  stroke: #853f36; }
+
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
@@ -49,7 +103,6 @@ body {
 @media (min-width: 992px) {
   .container {
     max-width: 1010px; } }
-
 a:focus, button:focus {
   outline: none; }
 
@@ -463,14 +516,11 @@ header.header .logo {
   width: 110px;
   height: 70px;
   padding: 0; }
-
 header.header .navbar-collapse.collapse {
   margin-top: 20px; }
-
 header.header .navbar-default {
   background-color: transparent;
   padding-top: 10px; }
-
 header.header .navbar {
   border-radius: 0;
   border-bottom: 1px solid #dbdbdb;
@@ -479,36 +529,27 @@ header.header .navbar {
   border-right: none;
   padding-bottom: 10px;
   margin-bottom: 10px; }
-
 header.header .navbar-nav > li > a {
   font-size: 18px;
   color: #505050;
   padding: 20px 30px;
   margin: 0; }
-
 header.header .navbar-collapse.collapse {
   margin-top: 0; }
-
 header.header .search {
   margin-top: 10px; }
-
 header.header .btn-default {
   background: transparent; }
-
 header.header .search {
   border: none;
   border-radius: 0; }
-
 header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-default .navbar-nav > li > a:hover {
   color: #505050; }
-
 header.header .navbar-default .navbar-nav > .active > a, header.header .navbar-default .navbar-nav > .active > a:focus, header.header .navbar-default .navbar-nav > .active > a:hover {
   color: #505050;
   background: #f0f0f0; }
-
 header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-default .navbar-nav > li > a:hover {
   background: #f0f0f0; }
-
 @media (min-width: 768px) {
   header.header .navbar .navbar-nav {
     display: inline-block;
@@ -516,7 +557,6 @@ header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-
     vertical-align: top; }
   header.header .navbar .navbar-collapse {
     text-align: center; } }
-
 header.header .parlaicon-search {
   width: 22px;
   height: 22px;
@@ -524,13 +564,10 @@ header.header .parlaicon-search {
   position: relative;
   bottom: -5px;
   background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search.svg"); }
-
 header.header .header-searchhide {
   display: none; }
-
 header.header .search-input-header {
   background: none; }
-
 header.header .twitter-typeahead .search-input-header,
 header.header .twitter-typeahead .search-input-header:focus {
   -webkit-box-shadow: none;
@@ -538,25 +575,21 @@ header.header .twitter-typeahead .search-input-header:focus {
   box-shadow: none;
   border: 0;
   background: none; }
-
 header.header .search-input-header-prepend,
 header.header .search-input-header-append {
   background: none;
   display: inline-block;
   height: 34px; }
-
 header.header .search-input-header-prepend .glyphicon.glyphicon-search,
 header.header .search-input-header-append .glyphicon.glyphicon-remove {
   position: relative;
   top: 9px; }
-
 header.header .searchiconbuttton {
   width: 30px;
   height: 30px;
   display: inline-block;
   margin-top: 8px;
   cursor: pointer; }
-
 header.header .header-search .tt-menu {
   max-height: 300px;
   overflow-y: auto;
@@ -566,12 +599,10 @@ header.header .header-search .tt-menu {
   -ms-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   -o-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
-
 header.header .header-search .tt-dataset {
   padding: 0;
   background-color: #ffffff;
   width: 200px; }
-
 header.header .header-search .tt-dataset .searchheader {
   display: block;
   position: relative;
@@ -584,23 +615,19 @@ header.header .header-search .tt-dataset .searchheader {
   left: 0;
   padding-left: 5px;
   z-index: 10; }
-
 header.header .header-search .searchperson-container {
   border-bottom: 1px solid #ededed;
   height: 60px;
   padding: 10px;
   line-height: 40px;
   background-color: #ffffff; }
-
 header.header .header-search .tt-cursor {
   background-color: #ededed; }
-
 header.header .session-ac-search {
   background: #e8f1f4;
   padding: 10px 5px;
   color: #009cdd;
   cursor: pointer; }
-
 header.header .session-ac-search .glyphicon-search {
   color: #009cdd;
   font-size: 16px; }
@@ -612,10 +639,10 @@ header.header .session-ac-search .glyphicon-search {
 @media (max-width: 480px) {
   .colToList {
     margin: 0; }
+
   .colToList .session_type {
     width: 100%;
     height: auto; } }
-
 html {
   position: relative;
   min-height: 100%; }
@@ -927,7 +954,6 @@ footer.footer {
     width: 15.67%;
     float: left;
     margin-right: 1%; }
-
 .session-container .paneltab.border-right {
   border-right: 1px solid #f0f0f0; }
 
@@ -948,7 +974,6 @@ footer.footer {
   .sessionsGetSessionByDate .tab-pane .date {
     font-size: 16px;
     font-weight: 400; }
-
 .sessionsGetSessionByDate .nav-tabs {
   border: medium none;
   text-align: center; }
@@ -1011,28 +1036,22 @@ footer.footer {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px; }
-
 .session_transcript .panel-group .panel {
   border-radius: 4px;
   margin-bottom: 0; }
-
 .session_transcript .panel-default {
   border-color: #ddd; }
-
 .session_transcript .panel-default > .panel-heading {
   background-color: #ffffff;
   border-color: #ddd;
   color: #333; }
-
 .session_transcript .panel-group .panel-heading {
   border-bottom: 0 none; }
-
 .session_transcript .panel-heading {
   border-bottom: 1px solid transparent;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   padding: 10px 15px; }
-
 .session_transcript .panel-title {
   color: inherit;
   font-size: 20px;
@@ -1054,14 +1073,12 @@ footer.footer {
     background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
     width: 40px;
     height: 40px; }
-
 .session_transcript .panel-collapse.collapsed .status {
   text-align: center;
   background: rgba(240, 240, 240, 0.4);
   cursor: pointer;
   margin-top: -60px;
   padding: 15px 0; }
-
 .session_transcript .panel-collapse .status {
   margin-top: 0px;
   cursor: pointer;
@@ -1072,23 +1089,19 @@ footer.footer {
   padding: 15px 0;
   z-index: 10;
   position: relative; }
-
 .session_transcript .panel-collapse .status a {
   background: url("https://cdn.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block;
   text-decoration: none; }
-
 .session_transcript .panel-collapse .status a:hover {
   text-decoration: none; }
-
 .session_transcript .panel-collapse.collapsed .status a {
   background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block; }
-
 .session_transcript .panel-collapse.collapsed .status .fadeover {
   height: 20px;
   margin-top: -20px;
@@ -1096,17 +1109,13 @@ footer.footer {
   width: 98.7%;
   display: block;
   background: rgba(240, 240, 240, 0.4); }
-
 .session_transcript .panel-collapse .status .fadeover {
   display: none; }
-
 .session_transcript .panel-collapse.collapsed .alltrans {
   height: 100px;
   overflow: hidden; }
-
 .session_transcript .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top: none; }
-
 .session_transcript .panel-body {
   padding-left: 150px;
   padding-right: 150px;
@@ -1219,20 +1228,20 @@ footer.footer {
 @media (max-width: 950px) {
   .session_type span {
     padding: 10px; }
+
   .pspris {
     width: 22.7%; } }
-
 @media (max-width: 950px) {
   .session_types {
     width: 420px; }
     .session_types li {
       width: 125px; }
+
   .session_transcript .panel-body {
     padding-left: 10px;
     padding-right: 10px;
     font-weight: 300;
     font-size: 18px; } }
-
 @media (max-width: 500px) {
   .session_types {
     width: 100%; }
@@ -1240,17 +1249,16 @@ footer.footer {
       width: 100%;
       padding: 0;
       margin: 0; } }
-
 @media (max-width: 480px) {
   .session_voting .session_votes {
     font-size: 30px;
     line-height: 40px;
     margin: 15px 0; }
+
   .session_voting .session_votes .type {
     font-size: 14px;
     line-height: 30px;
     text-transform: uppercase; } }
-
 .member-container {
   height: 100%;
   left: 0;
@@ -1326,7 +1334,6 @@ footer.footer {
       .member-container-menu ul li a {
         font-size: 14px;
         padding: 10px 10px; } }
-
 /* added by muki */
 .member, #votingCard .member {
   display: flex;
@@ -1365,10 +1372,8 @@ footer.footer {
   list-style: none;
   margin: 0;
   padding: 0; }
-
 .member-list-generator .parties-districts {
   display: flex; }
-
 .member-list-generator .analyses {
   margin: 14px 0; }
   .member-list-generator .analyses li {
@@ -1390,7 +1395,6 @@ footer.footer {
       cursor: default; }
     .member-list-generator .analyses li:last-child {
       margin-right: 0; }
-
 .member-list-generator .parties {
   width: 58.33%; }
   .member-list-generator .parties li {
@@ -1398,11 +1402,9 @@ footer.footer {
     margin-right: 3px; }
     .member-list-generator .parties li:last-child {
       margin-right: 0; }
-
 .member-list-generator .districts {
   margin-left: 15px;
   width: 41.67%; }
-
 .member-list-generator .generated-url {
   font-family: monospace;
   word-wrap: break-word; }
@@ -1519,7 +1521,6 @@ footer.footer {
         width: 60px; }
   .person-list .headers {
     margin-left: 70px; } }
-
 .search-dropdown {
   border: 1px solid #c8c8c8;
   box-sizing: border-box;
@@ -1657,7 +1658,6 @@ footer.footer {
 .group-container-menu.group_data ul li a {
   background: #197197;
   color: #ffffff; }
-
 .group-container-menu.group_data ul li a.active,
 .group-container-menu.group_data ul li a:hover {
   color: #ffffff;
@@ -1673,7 +1673,6 @@ footer.footer {
       .group-container-menu ul li a {
         font-size: 14px;
         padding: 10px 10px; } }
-
 .group_voting ul {
   padding: 0; }
   .group_voting ul li {
@@ -1774,11 +1773,9 @@ footer.footer {
 @supports (-ms-overflow-style: none) {
   .ps-container {
     overflow: auto !important; } }
-
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .ps-container {
     overflow: auto !important; } }
-
 .ps-container.ps-active-x > .ps-scrollbar-x-rail,
 .ps-container.ps-active-y > .ps-scrollbar-y-rail {
   display: block;
@@ -1806,10 +1803,10 @@ footer.footer {
   position: absolute;
   /* please don't change 'position' */
   /*
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  */
   opacity: 0;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -1824,9 +1821,9 @@ footer.footer {
   /* please don't change 'position' */
   background-color: #197197;
   /*-webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      */
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  */
   -webkit-transition: background-color .2s linear;
   -moz-transition: background-color .2s linear;
   -o-transition: background-color .2s linear;
@@ -1840,9 +1837,9 @@ footer.footer {
   position: absolute;
   /* please don't change 'position' */
   /*-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    */
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  */
   opacity: 0;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -1857,9 +1854,9 @@ footer.footer {
   /* please don't change 'position' */
   background-color: #197197;
   /*-webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      */
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  */
   -webkit-transition: background-color .2s linear;
   -moz-transition: background-color .2s linear;
   -o-transition: background-color .2s linear;
@@ -1959,7 +1956,6 @@ footer.footer {
     padding: 0 1px; }
     #votingCardHorizontal .slider div.member {
       margin: 0 14px; } }
-
 @media (max-width: 500px) {
   #votingCardHorizontal .slider {
     width: 100%;
@@ -1969,7 +1965,6 @@ footer.footer {
     padding-bottom: 20px; }
   #votingCardHorizontal .navigate-left, #votingCardHorizontal .navigate-right {
     display: none; } }
-
 .clearfix {
   clear: both; }
 
@@ -2016,7 +2011,6 @@ footer.footer {
   #votingCard div.member span {
     font-size: 30px;
     margin: 14px 0 0 0; } }
-
 .recent-activity {
   color: #505050; }
   .recent-activity #scrollbar-recent-activity {
@@ -2329,7 +2323,6 @@ footer.footer {
 .seja_transkript .me_poslanec .poslanec_title {
   font-weight: 100;
   line-height: 34px; }
-
 .seja_transkript .me_poslanec .nmbr {
   float: left;
   width: 25px;
@@ -2366,7 +2359,6 @@ footer.footer {
       color: #ffffff;
       background: #009cdd;
       text-decoration: none; }
-
 #poslanci_search .poslanci_search.nav {
   text-transform: uppercase;
   padding: 20px 0 0 0;
@@ -2400,7 +2392,6 @@ footer.footer {
       color: #009cdd; }
     #poslanci_search .poslanci_search.nav a:hover .icon .down.active {
       color: #009cdd; }
-
 #poslanci_search .form-control {
   border-radius: 0;
   border-right: medium none;
@@ -2408,14 +2399,11 @@ footer.footer {
   font-size: 20px;
   height: 40px;
   background: none; }
-
 #poslanci_search .form-control:focus {
   border: 1px solid #dbdbdb; }
-
 #poslanci_search .input-group-btn:hover {
   border: none;
   outline: none; }
-
 #poslanci_search .input-group-btn button.btn {
   border-radius: 0;
   border-left: medium none;
@@ -2423,7 +2411,6 @@ footer.footer {
   background: none;
   box-shadow: none;
   color: #009cdd; }
-
 #poslanci_search .member {
   border-bottom: 1px solid #f0f0f0;
   padding: 10px 0; }
@@ -2449,7 +2436,6 @@ footer.footer {
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 10px;
   padding-bottom: 10px; }
-
 .searchnastopi .row .member, .searchnastopi .row #votingCard .member, #votingCard .searchnastopi .row .member {
   padding: 10px 0; }
   .searchnastopi .row .member .image, .searchnastopi .row #votingCard .member .image, #votingCard .searchnastopi .row .member .image {
@@ -2471,7 +2457,6 @@ footer.footer {
     font-size: 16px;
     font-weight: 300;
     margin: 12px 0 0 0; }
-
 .searchnastopi .row .desc {
   font-size: 16px;
   font-weight: 300; }
@@ -2510,7 +2495,6 @@ footer.footer {
   .izracunana_prisotnost .tab-content .me_poslanec .progress_number {
     font-size: 25px;
     line-height: 20px; }
-
 .izracunana_prisotnost .tab-content .other_poslanec {
   padding-bottom: 10px; }
 
@@ -2526,12 +2510,7 @@ footer.footer {
   .pagination li span:focus,
   .pagination li span:hover {
     color: #6d6d6d; }
-  .pagination li.active > a,
-  .pagination li.active > a:focus,
-  .pagination li.active > a:hover,
-  .pagination li.active > span,
-  .pagination li.active > span:focus,
-  .pagination li.active > span:hover {
+  .pagination li.active > a, .pagination li.active > a:focus, .pagination li.active > a:hover, .pagination li.active > span, .pagination li.active > span:focus, .pagination li.active > span:hover {
     background-color: #009cdd; }
   .pagination li a {
     background: #f0f0f0;
@@ -2554,3 +2533,5 @@ footer.footer {
     margin: 0; }
   .pagination li:first-child a {
     transform: scaleX(-1); }
+
+/*# sourceMappingURL=style.css.map */
