@@ -15,7 +15,9 @@
     "express": "^4.14.0",
     "lodash": "^4.15.0",
     "node-fetch": "^1.6.0",
+    "node-horseman": "^3.2.0",
     "slug": "^0.9.1",
+    "supertest": "^2.0.1",
     "url-pattern": "^1.0.1"
   }
 }
