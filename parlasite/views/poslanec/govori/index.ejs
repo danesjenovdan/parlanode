@@ -1,112 +1,58 @@
-<% include /partials/header.ejs %>
+<% include ../../partials/header.ejs %>
 
-<style>
-    .pm-poslanec-nav{
-        width:100%;
-        text-align: center;
-    }
 
-    .pm-poslanec-nav .pm-poslanec-nav-btn{
+<div class="member-container">
+    <div class="row header text-center">
+        <div class="col-lg-12">
 
-        line-height:50px;
-        width:120px;
-        margin-left:10px;
-        display: inline-block;
-        text-transform: uppercase;
-        border:1px solid #999;
-        color:#555;
+            <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%- mp.gov_id %>.png"
+                 class="media-object img-circle session-logo"/>
 
-    }
+            <h1><%- mp.name %></h1>
+            <font class="date">
 
-    .pm-poslanec-nav .pm-poslanec-nav-btn-selected{
-        background-color: #009cdd;
-        color: #fff;
-        border: 0px;
-    }
+            </font>
+            <br/>
+            <font>
 
-    .page-title{
+            </font>
 
-        text-align: center;
-        font-weight: 300;
-        font-size:24px;
-        margin-bottom:20px;
+            <div class="member-container-menu">
+                <ul class="clearfix">
+                    <li>
+                        <a href="/p/<%- slug %>/pregled">Pregled</a>
+                    </li>
+                    <li>
+                        <a href="/p/<%- slug %>/glasovanja">Glasovanja</a>
+                    </li>
+                    <li>
+                        <a href="/p/<%- slug %>/govori" class="active">Govori</a>
+                    </li>
+                </ul>
+            </div>
 
-    }
-
-    .row-container .col-half:nth-child(2){
-
-        margin-left: 44px;
-
-    }
-
-    .col-container {
-        float: left;
-    }
-
-    .col-half {
-
-        width: 47.5%;
-
-    }
-
-    .col-block {
-        width: 100%;
-    }
-
-    .page-title{
-
-        text-align: center;
-        font-weight: 300;
-        font-size:24px;
-        margin-bottom:20px;
-
-    }
-</style>
-
-<h1 class="page-title"><%- mp.name %></h1>
-
-<div class="pm-poslanec-nav">
-    <a href="/p/<%- slug %>">
-        <div class="pm-poslanec-nav-btn">Pregled</div>
-    </a>
-    <a href="/p/<%- slug %>/glasovanja">
-        <div class="pm-poslanec-nav-btn">Glasovanja</div>
-    </a>
-    <a href="/p/<%- slug %>/govori">
-        <div class="pm-poslanec-nav-btn pm-poslanec-nav-btn-selected">Govori</div>
-    </a>
+        </div>
+    </div>
 </div>
 
-<div class="page-container">
-
-    <div class="row-container">
-        <div class="col-container col-half">
-            <%- views.povezaveDoGovorov %>
-        </div>
-        <div class="col-container col-half">
-            <%- views.steviloIzgovorjenihBesed %>
-        </div>
-    </div>
-
-    <div class="row-container">
-        <div class="col-container col-half">
-            <%- views.povprecnoSteviloGovorovNaSejo %>
-        </div>
-        <div class="col-container col-half">
-            <%- views.steviloIzgovorjenihBesed %>
-        </div>
-    </div>
-
-    <div class="row-container">
-        <div class="col-container col-half">
-            <%- views.besedniZaklad %>
-        </div>
-        <div class="col-container col-half">
-            <%- views.stilneAnalize %>
-        </div>
-    </div>
-
+<div class="col-md-6 ">
+    <%- views.besedeKiDelajoPosebno %>
+</div>
+<div class="col-md-6 ">
+    <%- views.povezaveDoGovorov %>
+</div>
+<div class="col-md-6 ">
+    <%- views.steviloIzgovorjenihBesed %>
+</div>
+<div class="col-md-6 ">
+    <%- views.povprecnoSteviloGovorovNaSejo %>
+</div>
+<div class="col-md-6 ">
+    <%- views.besedniZaklad %>
+</div>
+<div class="col-md-6 ">
+    <%- views.stilneAnalize %>
 </div>
 
-<% include /partials/footer.ejs %>
+<% include ../../partials/footer.ejs %>
 

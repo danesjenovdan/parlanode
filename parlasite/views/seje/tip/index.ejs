@@ -1,0 +1,125 @@
+<% include ../../partials/header.ejs %>
+
+
+<div class="session-container">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="session_types">
+                <h2>Išči po vseh sejah trenutnega sklica</h2>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"
+                                                                            aria-hidden="true"></span></button>
+                        </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="session_types ">
+
+            <h2>
+                Izberi vrsto seje
+            </h2>
+
+
+            <ul class="clearfix">
+                <li>
+                    <a href="/seje/tip/seje-dz" class="<%- (params.fullName == 'seje-dz')? 'active':null; %>">
+                        Seje DZ
+                    </a>
+                </li>
+                <li>
+                    <a href="/seje/tip/seje-delovnih-teles"
+                       class="<%- (params.fullName == 'seje-delovnih-teles')? 'active':null; %>">
+                        Seje delovnih<br> teles
+                    </a>
+                </li>
+                <li>
+                    <a href="/seje/tip/seje-kolegija-predsednika-dz"
+                       class="<%- (params.fullName == 'seje-kolegija-predsednika-dz')? 'active':null; %>">
+                        Seje kolegija <br>predsednika DZ
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row colToList">
+            <%
+            for (var i = 0; i < sesData.sesData.length; i++){
+            %>
+            <% if (sesData.type != 2){%>
+            <a href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+            <% }else{%>
+            <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+            <% }%>
+
+
+                <span>
+                   <%- sesData.sesData[i].name %>
+               </span>
+            </a>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .tmpContainer {
+        margin: 0 10px 10px 10px;
+    }
+</style>
+
+<script>
+
+    $(function () {
+        $(".action-t-1").click(function () {
+            $(".tmpContainer").remove();
+
+            var id = $(this).data('id');
+            var self = $(this);
+            var index = self.index();
+            var newPosition = (Math.ceil((index + 1) / 4) * 4) - 1;
+            if (newPosition > $(".colToList .session_type").length) {
+                newPosition = $(".colToList .session_type").length - 1;
+            }
+
+            var jqxhr = $.ajax("https://glej.parlameter.si/pg/getWorkingBodies/" + id + "")
+                    .done(function (data) {
+                        var cont = $('<div class="tmpContainer clearfix" />').html(data);
+                        if ($(window).width() < 768) {
+                            cont.insertAfter(self);
+                        } else {
+                            cont.insertAfter($($(".colToList .session_type")[newPosition]));
+                        }
+                        DNDrepeatEmbedCall();
+                    })
+                    .fail(function () {
+                        var cont = $('<div class="tmpContainer clearfix" />').html("card not ok");
+                        cont.insertAfter($($(".colToList .session_type")[newPosition]));
+                    })
+                    .always(function () {
+
+                    });
+            return false;
+        });
+    });
+
+</script>
+
+<% include ../../partials/footer.ejs %>

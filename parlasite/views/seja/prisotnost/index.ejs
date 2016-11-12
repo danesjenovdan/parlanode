@@ -1,0 +1,83 @@
+<% include ../../partials/header.ejs %>
+<div class="row header text-center">
+
+    <div class="col-md-12">
+
+        <% if(typeof sesData !== "undefined" ){%>
+        <div class="row">
+            <div class="text-center">
+                <div class="media-object img-circle session-logo">
+                    <b>S</b>
+                </div>
+            </div>
+            <div class="">
+                <h1>
+                    <%-sesData.name%>
+                </h1>
+                <font class="date">
+                    <%-sesData.date%>
+                </font>
+                <br/>
+                <font>
+                    podatki objavljneni: <%-sesData.date%>
+                </font>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+    <% if(sesData.type != 'kolegij'){ %>
+
+    <div class="col-md-12">
+        <div class="session_transcript_menu">
+
+            <ul class="clearfix">
+                <li>
+                    <a href="/seja/glasovanja/<%- params.id %>">
+                        Glasovanja
+                    </a>
+                </li>
+                <li>
+                    <a href="/seja/transkript/<%- params.id %>">
+                        Transkript
+                    </a>
+                </li>
+                <li>
+                    <a href="/seja/prisotnost/<%- params.id %>" class="active">
+                        Prisotnost
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </div>
+    <% } %>
+
+
+</div>
+
+
+<% if(sesData.type != 'kolegij'){ %>
+
+<div class="col-md-12 ">
+    <%- views.prisotnostPoPoslanskihSkupinah %>
+</div>
+<div class="col-md-6 ">
+    <%- views.seznamOdsotnihPoslancev %>
+</div>
+
+<% }else{ %>
+
+<div class="col-md-12 ">
+    <%- views.besedeKiSoZaznamovaleSejo %>
+</div>
+<div class="col-md-12 ">
+    <%- views.transkript %>
+</div>
+<% } %>
+
+
+
+<% include ../../partials/footer.ejs %>

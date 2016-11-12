@@ -1,3 +1,4 @@
+"use strict";
 const server  = require('./server');
 const config  = require('./config');
 const router  = require('./router');
