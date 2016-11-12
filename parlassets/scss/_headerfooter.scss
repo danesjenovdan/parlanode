@@ -222,12 +222,98 @@ footer.footer {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 120px;
+    height: 210px;
     .cnt {
         border-top: 1px solid $darkgrey;
         padding-top: 10px;
         margin-top: 10px;
     }
+
+    .border_top{
+        border-top: 1px solid #dbdbdb;
+        padding-top: 40px;
+        margin-top: 10px;
+    }
+
+    .border_tope{
+        border-top: 1px dashed #dbdbdb;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .colorBlack{
+        color: #505050;
+    }
+
+    .parlaicon-twitter-parlameter {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        position: relative;
+        top: 12px;
+        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/twitter-parlameter.svg");
+        color: #337ab7;
+        margin: 0 0px 0 30px;
+    }
+    .parlaicon-facebook-parlameter {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        position: relative;
+        top: 12px;
+        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/facebook-parlameter.svg");
+        color: #337ab7;
+        margin: 0 0px 0 20px;
+    }
+    .doniraj{
+        border: 1px solid #505050;
+        background: none;
+        text-transform: uppercase;
+        border-radius: 0;
+    }
+    .parlaicon-doniraj {
+        width: 17px;
+        height: 20px;
+        line-height: 22px;
+        padding-left: 20px;
+        position: relative;
+        bottom: -5px;
+        right: -5px;
+        margin-right: 5px;
+
+        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/doniraj.svg");
+        color: #337ab7;
+    }
+
+
+    input.form-control.newslettersubscribe{
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #505050;
+        background: none;
+        padding-left: 0;
+    }
+    input.form-control.newslettersubscribe:focus {
+        outline: none;
+    }
+
+    .newslettersubscribeButton{
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #505050;
+        background: none;
+        padding: 7px 12px 6px 12px;
+        color: #337ab7;
+        padding-right: 0;
+        text-transform: uppercase;
+    }
+    .newslettersubscribeButton:hover {
+        background: none;
+        border-bottom: 1px solid #505050;
+        color: #337ab7;
+        padding-right: 0;
+    }
+
 }
 
 
