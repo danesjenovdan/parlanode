@@ -8,6 +8,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.use(express.static('public'));
+
 exports.start = ()=> {
 
   return new Promise((resolve, reject)=>{
