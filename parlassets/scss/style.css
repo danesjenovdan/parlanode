@@ -30,6 +30,33 @@
 .nep-background {
   background: #853f36; }
 
+.smc-background:hover {
+  background: #8fcfee; }
+
+.sds-background:hover {
+  background: #22a2e0; }
+
+.desus-background:hover {
+  background: #5388aa; }
+
+.sd-background:hover {
+  background: #4f6379; }
+
+.zl-background:hover {
+  background: #857799; }
+
+.nsi-background:hover {
+  background: #b7888a; }
+
+.ps_np-background:hover {
+  background: #d9776b; }
+
+.imns-background:hover {
+  background: #ba594c; }
+
+.nep-background:hover {
+  background: #853f36; }
+
 .smc-fill {
   fill: #8fcfee; }
 

@@ -38,6 +38,9 @@ $vote-colors: (
 @each $party, $color in $party-colors {
   .#{$party}-background { background: $color; }
 }
+@each $party, $color in $party-colors {
+  .#{$party}-background:hover { background: $color; }
+}
 
 @each $party, $color in $party-colors {
   .#{$party}-fill { fill: $color; }
