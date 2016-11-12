@@ -26,8 +26,8 @@ module.exports = {
       user : "parladaddy",
       host : "parlameter.si",
       ref  : "origin/master",
-      repo : "git@parlanode:FranciZ/parlanode.git",
-      path : "/home/parladaddy/parlanode",
+      repo : "git@parlasite:FranciZ/parlasite.git",
+      path : "/home/parladaddy/parlasite",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.config.js --env production",
       env  : {
         NODE_ENV: "production"
@@ -37,8 +37,8 @@ module.exports = {
       user : "root",
       host : "localhost",
       ref  : "origin/master",
-      repo : "git@parlanode:muki/parlanode.git",
-      path : "/home/parladaddy/parlanode",
+      repo : "git@parlasite:FranciZ/parlasite.git",
+      path : "/home/parladaddy/parlasite",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.config.js --env production",
       env  : {
         NODE_ENV: "production"
@@ -48,8 +48,8 @@ module.exports = {
       user : "root",
       host : "localhost",
       ref  : "origin/master",
-      repo : "git@github.com:muki/parlanode.git",
-      path : "/Users/francizidar/projects/parlameter/deploys/parlanode",
+      repo : "git@github.com:FranciZ/parlasite.git",
+      path : "/Users/francizidar/projects/parlameter/deploys/parlasite",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.config.js --env dev",
       env  : {
         NODE_ENV: "development"

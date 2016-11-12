@@ -16,4 +16,9 @@ function init(){
 
 }
 
-init();
+if (require.main === module) {
+  init();
+}
+
+exports.app = server.app;
+exports.init = init;
