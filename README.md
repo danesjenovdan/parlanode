@@ -47,7 +47,7 @@ Runs `NODE_ENV=production pm2 start run.js --name=parlanode`
 ##### Work in progress
 
 ```
-$ pm2 deploy ecosystem.json production
+$ pm2 deploy ecosystem.config.js production
 ```
 
 ## Caching
