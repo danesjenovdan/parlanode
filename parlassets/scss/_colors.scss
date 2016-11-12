@@ -34,3 +34,7 @@ $vote-colors: (
   abstain: #003b54,
   not_present: #99e1ff
 );
+
+@each $party, $color in $party-colors {
+  .#{$party}-background { background: $color; }
+}
