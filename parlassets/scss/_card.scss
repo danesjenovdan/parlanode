@@ -45,14 +45,18 @@
 .card-content {
     width: 100%;
     padding: 0 20px 0 20px;
-    margin: 0 0 10px 0;
+    margin: 0 0 0px 0;
 }
-.col-md-6 > .card-container .card-content {
-    height: 480px;
+.col-md-6 > .card-container .card-content,
+.col-md-6 > .card-container .card-content.full,
+.col-md-12 > .card-container .card-content.full {
+    height: 500px;
 }
-.col-md-6 > .card-container .card-content.half {
-    height: 220px;
+.col-md-6 > .card-container .card-content.half,
+.col-md-12 > .card-container .card-content.half {
+    height: 180px;
 }
+
 .card-placeholder {
     background-color: $grey;
     width: 100%;
@@ -62,7 +66,7 @@
     width: 100%;
     position: relative;
 
-    height: 62px;
+    height: 60px;
     padding: 14px 20px 14px 20px;
     /* this background thing is a hack, still work TODO */
     background-image: url($cdn_home_img + 'shortline.png');
