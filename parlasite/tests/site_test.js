@@ -14,7 +14,7 @@ before(function (done) {
 describe('Load poslanci page and navigate to landing', function() {
   it('respond success', function(done) {
 
-    this.timeout(15000);
+    this.timeout(20000);
 
         horseman
           .userAgent('Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0')
