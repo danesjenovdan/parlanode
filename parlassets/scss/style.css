@@ -1806,10 +1806,10 @@ footer.footer {
   position: absolute;
   /* please don't change 'position' */
   /*
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    */
   opacity: 0;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -1824,9 +1824,9 @@ footer.footer {
   /* please don't change 'position' */
   background-color: #197197;
   /*-webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  */
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      */
   -webkit-transition: background-color .2s linear;
   -moz-transition: background-color .2s linear;
   -o-transition: background-color .2s linear;
@@ -1840,9 +1840,9 @@ footer.footer {
   position: absolute;
   /* please don't change 'position' */
   /*-webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  */
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    */
   opacity: 0;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -1857,9 +1857,9 @@ footer.footer {
   /* please don't change 'position' */
   background-color: #197197;
   /*-webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  */
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      */
   -webkit-transition: background-color .2s linear;
   -moz-transition: background-color .2s linear;
   -o-transition: background-color .2s linear;
@@ -2518,7 +2518,7 @@ footer.footer {
   text-align: center; }
 
 .pagination {
-  margin: 13px 0 -4px 0; }
+  margin: 13px 0 8px 0; }
   .pagination-container {
     text-align: center; }
   .pagination li a:focus,
