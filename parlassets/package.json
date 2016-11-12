@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "PATH=$(npm bin):$PATH node-sass scss/style.scss scss/style.css",
+    "sass-dev": "PATH=$(npm bin):$PATH node-sass scss/style.scss scss/style.css -w",
     "postinstall": "npm run sass"
   },
   "repository": {
