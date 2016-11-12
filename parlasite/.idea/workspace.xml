@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+            <state relative-caret-position="250">
+              <caret line="28" column="99" selection-start-line="28" selection-start-column="99" selection-end-line="28" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -68,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="js.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="js.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/js.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1295">
@@ -424,12 +424,12 @@
       <workItem from="1478247325393" duration="598000" />
       <workItem from="1478261023447" duration="157000" />
       <workItem from="1478261461230" duration="15222000" />
-      <workItem from="1478546515382" duration="47782000" />
+      <workItem from="1478546515382" duration="49253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150387000" />
+    <option name="totallyTimeSpent" value="151858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -885,14 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1295">
@@ -901,6 +893,14 @@
             <marker date="1478955420082" expanded="true" signature="2570:2731" ph="..." />
             <marker date="1478955420082" expanded="true" signature="3299:3325" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="28" column="99" selection-start-line="28" selection-start-column="99" selection-end-line="28" selection-end-column="99" />
+          <folding />
         </state>
       </provider>
     </entry>
