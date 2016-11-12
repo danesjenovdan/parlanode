@@ -1,1 +1,220 @@
-<h1>poslanci</h1>
+<% include ../partials/header.ejs %>
+<script src="https://unpkg.com/vue@next/dist/vue.js"></script>
+<div id="member-list-generator-container"></div>
+
+<script type="text/x-template" id="member-list-generator-template">
+    <div class="container member-list-generator">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="analyses">
+                    <li v-for="analysis in analyses"
+                        :class="{ selected: analysis.id === currentAnalysis }"
+                        @click="selectAnalysis(analysis.id)">
+                        <span>{{ analysis.label }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 parties-districts">
+                <ul class="parties">
+                    <li v-for="party in parties"
+                        :class="{ selected: currentParty === party }"
+                        @click="selectParty(party)">
+                        {{ party }}
+                    </li>
+                </ul>
+
+                <ul class="districts">
+                    <li>Ljubljana-Center <span class="cross">×</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-container card-halfling card-seznam-poslancev">
+                    <div class="card-header">
+                        <div class="card-header-border"></div>
+                        <h1>Seznam poslancev</h1>
+                    </div>
+                    <div class="card-content">
+                        <ul class="person-list">
+                            <li class="headers">
+                                <div v-for="column in columns"
+                                     :class="{ column: true, wider: column.wider, sort: currentSort === column.id, reverse: currentSortOrder === 'desc' }"
+                                     @click="selectSort(column.id)">
+                                    {{ column.label }}
+                                </div>
+                            </li>
+                            <li v-for="member in processedMemberData" class="person">
+                                <a :href="'/p/id/' + member.person.id + ''"><img class="portrait column" :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" /></a>
+                                <div class="column wider name"><a :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a></div>
+                                <div class="column"><a :href="'/ps/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a></div>
+                                <div class="column">{{ member.person.district || 'okraj ni vnešen' }}</div>
+                                <div v-if="currentAnalysis !== 'alphabetical'" class="column">
+                                    {{ member.results[currentAnalysis] + (currentAnalysisData.unit === 'percent' ? '%' : '') }}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-circle-button card-share"></div>
+                        <div class="card-circle-button card-embed"></div>
+                        <div class="card-circle-button card-info">i</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Generated url</h2>
+                <p>{{ generatedCardUrl }}</p>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    new Vue({
+        el: '#member-list-generator-container',
+        template: '#member-list-generator-template',
+        data: {
+            memberData: [],
+            currentSort: 'name',
+            currentSortOrder: 'asc',
+            currentAnalysis: 'alphabetical',
+            analyses: [
+                { id: 'alphabetical',         label: 'Abecedni seznam' },
+                { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           unit: 'percent' },
+                { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', unit: 'percent' },
+                { id: 'vocabulary_size',      label: 'Besedni zaklad' },
+                { id: 'spoken_words',         label: 'Št. izgovorjenih besed' },
+                { id: 'speeches_per_session', label: 'Št. govorov na sejo' },
+                { id: 'privzdignjeno',        label: 'Privzdignjeno besedje' },
+                { id: 'preprosto',            label: 'Preprosto besedje' },
+                { id: 'problematicno',        label: 'Problematično besedje' },
+            ],
+            currentParty: null,
+            parties: [ 'SMC', 'SDS', 'DeSUS', 'SD', 'ZL', 'NSI', 'IMNS', 'PS NP' ]
+        },
+        computed: {
+            columns: function() {
+                var columns = [
+                    { id: 'name', label: 'Ime', wider: true },
+                    { id: 'party', label: 'PS' },
+                    { id: 'district', label: 'Okraj' }
+                ]
+
+                if (this.currentAnalysis !== 'alphabetical') {
+                    columns.push({ id: 'analysis', label: this.currentAnalysisData.label })
+                }
+
+                return columns
+            },
+            currentAnalysisData: function() {
+                var that = this,
+                        currentAnalysis
+
+                this.analyses.forEach(function(analysis) {
+                    if (analysis.id === that.currentAnalysis) {
+                        currentAnalysis = analysis
+                    }
+                })
+
+                return currentAnalysis
+            },
+            processedMemberData: function() {
+                var that = this
+                var sortedAndFiltered = this.memberData
+                        .filter(function(member) {
+                            if (that.currentParty === null) {
+                                return true
+                            }
+                            return member.person.party.acronym === that.currentParty
+                        })
+                        .sort(function(memberA, memberB) {
+                            switch (that.currentSort) {
+                                case 'analysis':
+                                    var a = memberA.results[that.currentAnalysis]
+                                    var b = memberB.results[that.currentAnalysis]
+                                    return a < b ? -1 : (a > b ? 1 : 0)
+                                case 'name':
+                                    var a = memberA.person.name
+                                    var b = memberB.person.name
+                                    return a.localeCompare(b)
+                                case 'district':
+                                    // Casting to string just because districts are null in current data
+                                    var a = String(memberA.person.district)
+                                    var b = String(memberB.person.district)
+                                    return a.localeCompare(b)
+                                case 'party':
+                                    var a = memberA.person.party.acronym
+                                    var b = memberB.person.party.acronym
+                                    return a.localeCompare(b)
+                                default:
+                                    break
+                            }
+                        })
+
+                if (this.currentSortOrder === 'desc') {
+                    sortedAndFiltered.reverse()
+                }
+
+                return sortedAndFiltered
+            },
+            generatedCardUrl: function() {
+                var params = {}
+                if (this.currentAnalysis !== 'alphabetical') {
+                    params.analysis = this.currentAnalysis
+                }
+                if (this.currentParty !== null) {
+                    params.party = this.currentParty
+                }
+
+                return 'https://glej.parlameter.si/p/seznam-poslancev/' +
+                        '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembers') +
+                        (Object.keys(params).length > 0 ? '&status=' + encodeURIComponent(JSON.stringify(params)) : '')
+            }
+        },
+        created: function() {
+            var that = this
+            // This should poll the api instead of this static json
+            $.getJSON('https://api.myjson.com/bins/1izww', function(response) {
+                that.memberData = response.data
+            })
+        },
+        methods: {
+            selectAnalysis: function(analysisId) {
+                this.currentAnalysis = analysisId
+
+                if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
+                    this.selectSort('name')
+                }
+            },
+            selectSort: function(sortId) {
+                if (this.currentSort === sortId) {
+                    this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc'
+                }
+                else {
+                    this.currentSort = sortId
+                    this.currentSortOrder = 'asc'
+                }
+            },
+            selectParty: function(partyId) {
+                if (this.currentParty === partyId) {
+                    this.currentParty = null
+                }
+                else {
+                    this.currentParty = partyId
+                }
+            }
+        }
+    })
+</script>
+
+
+
+<% include ../partials/footer.ejs %>
