@@ -7,7 +7,7 @@
 
     // First application
     {
-      name      : "SERVER",
+      name      : "parlanode",
       script    : "run.js",
       env: {
         COMMON_VARIABLE: "true"
