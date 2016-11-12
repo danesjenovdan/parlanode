@@ -1,52 +1,23 @@
 module.exports =
-    [
-        {
-            "id": 1,
-            "name": "PS Stranka modernega centra",
-            "acronym": "SMC",
-            "is_coalition": 1
-        },
-        {
-            "id": 4,
-            "name": "PS Zavezništvo Alenke Bratušek",
-            "acronym": "ZAAB",
-            "is_coalition": -1
-        },
-        {
-            "id": 5,
-            "name": "PS Slovenska Demokratska Stranka",
-            "acronym": "SDS",
-            "is_coalition": -1
-        },
-        {
-            "id": 6,
-            "name": "PS Nova Slovenija",
-            "acronym": "NSI",
-            "is_coalition": -1
-        },
-        {
-            "id": 7,
-            "name": "PS Socialni Demokrati",
-            "acronym": "SD",
-            "is_coalition": 1
-        },
-        {
-            "id": 3,
-            "name": "PS Demokratska Stranka Upokojencev Slovenije",
-            "acronym": "DeSUS",
-            "is_coalition": 1
-        },
-        {
-            "id": 2,
-            "name": "PS italijanske in madžarske narodne skupnosti",
-            "acronym": "IMNS",
-            "is_coalition": null
-        },
-        {
-            "id": 8,
-            "name": "PS Združena Levica",
-            "acronym": "ZL",
-            "is_coalition": -1
-        }
-    ]
+{
+    "1": {"acronym": "SMC", "is_coalition": true, "name": "PS Stranka modernega centra", "id": 1},
+    "2": {
+        "acronym": "IMNS",
+        "is_coalition": false,
+        "name": "PS italijanske in mad\u017earske narodne skupnosti",
+        "id": 2
+    },
+    "3": {
+        "acronym": "DeSUS",
+        "is_coalition": true,
+        "name": "PS Demokratska Stranka Upokojencev Slovenije",
+        "id": 3
+    },
+    "5": {"acronym": "SDS", "is_coalition": false, "name": "PS Slovenska Demokratska Stranka", "id": 5},
+    "6": {"acronym": "NSI", "is_coalition": false, "name": "PS Nova Slovenija", "id": 6},
+    "7": {"acronym": "SD", "is_coalition": true, "name": "PS Socialni Demokrati", "id": 7},
+    "8": {"acronym": "ZL", "is_coalition": false, "name": "PS Zdru\u017eena Levica", "id": 8},
+    "109": {"acronym": "PS NP", "is_coalition": false, "name": "PS nepovezanih poslancev ", "id": 109}
+
+}
 ;
