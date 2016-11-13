@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+.sass-cache/
 
 # Runtime data
 pids
