@@ -1,4 +1,3 @@
-
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -122,13 +121,13 @@ $(function () {
 
         $('.search-input-header').bind('typeahead:select', function(e, value) {
 
-            console.log(value);
+            //console.log(value);
 
             $('.search-input-header').typeahead('close').typeahead('val', '');
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function() {
-            window.location.href = "/?search=" + $(this).data('query');
+            window.location.href = "/seje/isci?q=" + $(this).data('query');
             return false;
         });
     }
@@ -136,5 +135,49 @@ $(function () {
     updateHeaderSearch();
 
 
+
+    function session_search_results() {
+
+        if($("#session_search_results").length < 1){
+            return false;
+        }
+
+        function getQueryParameters(str) {
+            return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+        }
+        function encodeQueryData(data) {
+            let ret = [];
+            for (let d in data)
+                ret.push(encodeURIComponent(d) + '/' + encodeURIComponent(data[d]));
+            return ret.join('&');
+        }
+
+
+        //var queries = ["raba-skozi-cas", "raba-po-strankah", "najveckrat-so-pojem-uporabili", "nastopi-v-katerih-je-bil-iskalni-niz-izrecen"]
+
+        var queryParams = getQueryParameters();
+        var querystring = encodeQueryData(queryParams);
+
+        $("#session_search_results .getmedata").each(function (e, urlid) {
+
+            var urlid = $(this).attr('id');
+
+            $("#"+urlid).html('<div class="nalagalnik">nalagam in čakam na filipa, da naredi loader ... </div>');
+
+            var jqxhr = $.ajax("https://glej.parlameter.si/s/" + urlid + "/?customUrl=https://isci.parlameter.si/"+querystring)
+                .done(function (data) {
+
+                    $("#"+urlid).html(data);
+                    DNDrepeatEmbedCall();
+                })
+                .fail(function () {
+                    $("#"+urlid).html(urlid + " error");
+                })
+                .always(function () {
+                });
+
+        });
+    }
+    session_search_results();
 
 });

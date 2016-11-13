@@ -648,7 +648,7 @@ const routes = [
     }, {
         path: '/poslanska-skupina/pregled/:fullName',
         extraPaths: ['/poslanska-skupina/pregled/:fullName/:date', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
-        viewPath: 'poslanske-skupine/pregled',
+        viewPath: 'poslanska-skupina/pregled',
         cards: [
             {
                 name: 'osnovneInformacije',
@@ -747,7 +747,7 @@ const routes = [
     }, {
         path: '/poslanska-skupina/glasovanja/:fullName',
         extraPaths: ['/poslanska-skupina/glasovanja/:fullName/:date', '/ps/glasovanja/id/:id', '/ps/glasovanja/id/:id/:date'],
-        viewPath: 'poslanske-skupine/glasovanja',
+        viewPath: 'poslanska-skupina/glasovanja',
         cards: [
             {
                 name: 'glasovanja',
@@ -870,7 +870,7 @@ const routes = [
     }, {
         path: '/poslanska-skupina/govori/:fullName',
         extraPaths: ['/poslanska-skupina/govori/:fullName/:date', '/ps/govori/id/:id', '/ps/govori/id/:id/:date'],
-        viewPath: 'poslanske-skupine/govori',
+        viewPath: 'poslanska-skupina/govori',
         cards: [
             {
                 name: 'besedeKiJihDelajoPosebne',
@@ -967,10 +967,17 @@ const routes = [
             //     }
             // }
         ]
-    }, {
+    },
+    {
         path: '/seje',
         viewPath: 'seje'
-    }, {
+    },
+    {
+        path: '/seje/isci/',
+        extraPaths: ['/search/', '/seje/search/', '/isci/' ],
+        viewPath: 'seje/search'
+    },
+    {
         path: '/seje/tip/:fullName',
         extraPaths: ['/seje/tip/:fullName/:date'],
         viewPath: 'seje/tip',
@@ -1110,7 +1117,8 @@ const routes = [
                 url: ''
             }
         }
-    }
+    },
+
 
 
 ];
@@ -1130,9 +1138,22 @@ function createRoute(app, route) {
         if (route.cards) {
             resolveCards(req, res, route)
                 .then((views)=> {
-                    if (route.viewPath.indexOf("poslansk") > -1) {
+                    if (route.viewPath.indexOf("poslanske-skupine") > -1) {
                         getPSIdByName(req.params.fullName, req)
-                            .then((psData)=> {
+                            .then((psData) => {
+                                res.render(route.viewPath, {
+                                    query: req.query,
+                                    params: req.params,
+                                    ps: psData.ps,
+                                    slug: req.slug,
+                                    activeMenu: 'poslanske-skupine',
+                                    views
+                                });
+                            });
+
+                    } else if (route.viewPath.indexOf("poslanska-skupina") > -1) {
+                        getPSIdByName(req.params.fullName, req)
+                            .then((psData) => {
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
@@ -1142,6 +1163,16 @@ function createRoute(app, route) {
                                     views
                                 });
                             });
+
+                    } else if (route.viewPath.indexOf("search") > -1) {
+                        res.render(route.viewPath, {
+                            query: req.query,
+                            params: req.params,
+                            sesData: sesData.s,
+                            slug: req.slug,
+                            activeMenu: 'S',
+                            views
+                        });
 
                     } else if (route.viewPath.indexOf("seje") > -1) {
 
