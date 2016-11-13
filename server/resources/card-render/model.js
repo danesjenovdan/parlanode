@@ -19,7 +19,8 @@ var schema = mongoose.Schema({
     customUrl       : String,
     id              : String,
     date            : String,
-    cardLastUpdate  : Date
+    cardLastUpdate  : Date,
+    state           : String
 
 });
 
