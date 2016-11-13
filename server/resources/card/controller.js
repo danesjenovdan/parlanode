@@ -393,7 +393,7 @@ exports.render = function(req, res){
                         }
 
                     } catch (err) {
-                        res.status(400).send({err, stack:err.stack, msg:'Data source url not returning json'});
+                        res.status(400).send({body, dataUrl, err, stack:err.stack, msg:'Data source url not returning json'});
                     }
 
                 } else {
