@@ -71,6 +71,25 @@ const routes = [
                         });
 
                 }
+            },
+            {
+                name: 'besedniZaklad',
+                sourceUrl: '/c/besedni-zaklad-vsi/',
+                resolve: (req, res, route, card)=> {
+                    return getMPIdByName(req.params.fullName, req)
+                        .then((mpData)=> {
+                            let mpId = mpData.mpId;
+                            let mpSlug = mpData.mpSlug;
+                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+                            return fetch(cardUrl)
+                                .then((res) => {
+                                    return res.text();
+                                })
+                                .then((body) => {
+                                    return body;
+                                });
+                        });
+                }
             }
         ]
     }, {
