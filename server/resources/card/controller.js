@@ -158,7 +158,7 @@ exports.render = function(req, res){
     const altHeader     = req.query.altHeader;
     const embed         = req.query.embed;
     const previewWidth  = req.query.width;
-    let state           = req.query.state;
+    let state           = req.query.state || {};
 
     const forceRender   = req.query.forceRender;
 
