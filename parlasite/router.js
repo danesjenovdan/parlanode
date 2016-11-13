@@ -93,12 +93,12 @@ const routes = [
                             let mpSlug = mpData.mpSlug;
                             let state = encodeURIComponent('{"people": [{"id": ' + mpId + ' }], "parties": []"}');
 
-                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}&state=${state}`;
+                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
 
                             return fetch(cardUrl)
                                 .then((res) => {
 
-                                    return res.text() + cardUrl;
+                                    return res.text();
 
                                 })
                                 .then((body) => {
