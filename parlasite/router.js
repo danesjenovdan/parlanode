@@ -1157,6 +1157,7 @@ function createRoute(app, route) {
         if (route.cards) {
             resolveCards(req, res, route)
                 .then((views)=> {
+
                     if (route.viewPath.indexOf("poslanske-skupine") > -1) {
                         getPSIdByName(req.params.fullName, req)
                             .then((psData) => {
@@ -1209,8 +1210,6 @@ function createRoute(app, route) {
                             });
 
                     } else if (route.viewPath.indexOf("seja") > -1) {
-
-
                         getSessionIds(req.params, req)
                             .then((sesData)=> {
 
@@ -1242,12 +1241,30 @@ function createRoute(app, route) {
 
                 });
         } else {
-            res.render(route.viewPath, {
-                query: req.query,
-                params: req.params,
-                slug: req.slug,
-                activeMenu: route.viewPath,
-            });
+
+            if (route.viewPath.indexOf("seje") > -1) {
+                getSessionsByType(req.params, req)
+                    .then((sesData)=> {
+
+                        res.render(route.viewPath, {
+                            query: req.query,
+                            params: req.params,
+                            sesData: sesData,
+                            slug: req.slug,
+                            activeMenu: 'S',
+                        });
+                    });
+
+            } else {
+
+
+                res.render(route.viewPath, {
+                    query: req.query,
+                    params: req.params,
+                    slug: req.slug,
+                    activeMenu: route.viewPath,
+                });
+            }
         }
     });
 }
@@ -1399,8 +1416,13 @@ function getSessionsByType(params, req) {
                 returnData = spsSingle.dz;
                 type = 3;
                 break;
+            default:
+                returnData = spsSingle.dz;
+                type = 3;
+                break;
         }
     });
+
     return Promise.resolve({psId, psSlug, sesData: returnData, type: type});
     // });
 
