@@ -22,7 +22,6 @@ function getActiveMenu(inp) {
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="https://cdn.parlameter.si/v1/parlassets/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="https://cdn.parlameter.si/v1/parlassets/scss/style.css" rel="stylesheet">
     <link href="https://cdn.parlameter.si/v1/parlassets/css/perfect-scrollbar.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -131,10 +130,9 @@ function getActiveMenu(inp) {
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="<%= getActiveMenu("poslanci,poslanec,P,p") %>"><a href="/poslanci">Poslanci</a></li>
-                    <li class="<%= getActiveMenu("poslanske-skupine,poslanska-skupina,PS") %>"><a
-                                href="/poslanske-skupine">Poslanske skupine</a></li>
-                    <li class="<%= getActiveMenu("seje,seja,S") %>"><a href="/seje">Seje</a></li>
+                    <li class="<%= getActiveMenu("poslanci") %>"><a href="/poslanci">Poslanci</a></li>
+                    <li class="<%= getActiveMenu("poslanske-skupine") %>"><a href="/poslanske-skupine">Poslanske skupine</a></li>
+                    <li class="<%= getActiveMenu("seje,S") %>"><a href="/seje">Seje</a></li>
                 </ul>
                 <form class="navbar-form pull-right" role="search">
                     <div class="form-group">
