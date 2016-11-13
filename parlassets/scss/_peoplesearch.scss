@@ -1,0 +1,94 @@
+.people-search {
+  border-top: 0px solid;
+  border-right: 0px solid;
+  border-left: 0px solid;
+  border-bottom: 2px solid $sadblue;
+
+  width: 220px;
+  height: 35px;
+
+  position: relative;
+}
+.people-search-input {
+  border-width: 0;
+  height: 30px;
+
+  width: 220px;
+  margin-bottom: 5px;
+}
+.people-search-input:focus {
+  outline: none;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
+  // background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+  // background-size: contain;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .svg_1 {
+    fill: $sadblue;
+    stroke: $sadblue;
+  }
+}
+
+// TODO styling of typeahead
+
+.tt-menu {
+    max-height: 300px;
+    width: 220px;
+    overflow-y: auto;
+
+    @include card(1);
+}
+
+.tt-dataset {
+    padding: 0;
+    background-color: #ffffff;
+    width: 100%;
+
+    // max-height: 150px;
+    // overflow-y: auto;
+}
+.tt-dataset .searchheader {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    background-color: #ededed;
+
+    top: 0;
+    left: 0;
+
+    padding-left: 5px;
+    z-index: 10;
+}
+
+.searchperson-container {
+    border-bottom: 1px solid #ededed;
+    height: 60px;
+    padding: 10px;
+    line-height: 40px;
+    background-color: #ffffff;
+}
+
+.avgminimg-party {
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.tt-cursor {
+    background-color: #ededed;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    background-color: #ededed;
+}
