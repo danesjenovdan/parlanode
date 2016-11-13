@@ -146,14 +146,3 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
         }
     }
 }
-
-%flex {
-  align-items: center;
-  display: flex;
-  .column {
-    flex: 1;
-    margin: 0 8px;
-    text-align: center;
-    &.wider { flex: 2; }
-  }
-}

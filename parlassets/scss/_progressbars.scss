@@ -71,7 +71,6 @@
 .progress_number {
     display: inline-block;
     padding-left: 10px;
-    font-weight: 500;
 }
 
 
@@ -162,7 +161,7 @@
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;
-
+    
     color: #ffffff;
 
     transition: opacity 0.25s ease-out;
