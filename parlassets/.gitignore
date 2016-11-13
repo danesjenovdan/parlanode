@@ -28,7 +28,7 @@ node_modules
 
 *.css.map
 
-#/scss/style.css
+/scss/style.css
 /scss/style.css.map
 
 
