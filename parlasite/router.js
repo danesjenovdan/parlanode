@@ -98,7 +98,7 @@ const routes = [
                             return fetch(cardUrl)
                                 .then((res) => {
 
-                                    return res.text();
+                                    return res.text() + cardUrl;
 
                                 })
                                 .then((body) => {
