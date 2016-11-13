@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Components</title>
+  <link rel="stylesheet" href="https://cdn.parlameter.si/v1/parlassets/scss/style.css" data-remove="false" data-concat="false">
+  <script src="https://unpkg.com/vue@2.0.5/dist/vue.min.js"></script>
+  <script src="dist/SearchDropdown.js"></script>
+</head>
+<body>
+  <div id="app">
+    <search-dropdown :items="testItems" placeholder="some placeholder" />
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      components: ['SearchDropdown'],
+      data: {
+        foo: 1,
+        testItems: [
+          { id: 1, label: 'Abecedni seznam', selected: false },
+          { id: 2, label: 'Prisotnost na sejah DZ', selected: false },
+          { id: 3, label: 'Prisotnost na glasovanjih sej DZ', selected: false },
+          { id: 4, label: 'Besedni zaklad', selected: false },
+          { id: 5, label: 'Št. izgovorjenih besed', selected: false },
+          { id: 6, label: 'Št. govorov na sejo', selected: false },
+          { id: 7, label: 'Privzdignjeno besedje', selected: false },
+          { id: 8, label: 'Preprosto besedje', selected: false },
+          { id: 9, label: 'Problematično besedje', selected: false }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
