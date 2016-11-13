@@ -169,7 +169,8 @@ exports.render = function(req, res){
         customUrl   : customUrl,
         id          : id,
         method      : method,
-        group       : group
+        group       : group,
+        state       : state
     };
 
     if(customUrl){
