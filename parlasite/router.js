@@ -1321,10 +1321,14 @@ function getSessionIds(params, req) {
     //     .then((jsonBody) => {
     //          //var spsList = jsonBody;
 
-    _.each(spsList, (sss, iii)=> {
+    //console.log(spsList);
 
-        type = iii;
-        _.each(sss, (s, i)=> {
+    var tmp = spsList[0];
+    for (var key in tmp) {
+        var sejetip = tmp[key];
+        for (var seja in sejetip) {
+
+            var s = sejetip[seja];
 
             s.nameSlug = slug(s.name).toLowerCase();
 
@@ -1338,11 +1342,10 @@ function getSessionIds(params, req) {
                 s.type = type;
                 selectedSps = s;
             }
-            //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
-            // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
 
-        });
-    });
+        }
+
+    }
 
 
     return Promise.resolve({spsId, spsSlug, s: selectedSps});
