@@ -159,6 +159,7 @@ exports.render = function(req, res){
     const embed         = req.query.embed;
     const previewWidth  = req.query.width;
     let state           = req.query.state || '{}';
+    let cacheState      = req.query.state || '{}';
 
     const forceRender   = req.query.forceRender;
 
@@ -170,7 +171,7 @@ exports.render = function(req, res){
         id          : id,
         method      : method,
         group       : group,
-        state       : state
+        state       : cacheState
     };
 
     if(customUrl){
@@ -299,7 +300,7 @@ exports.render = function(req, res){
 
                                 let onlyStrings = true;
 
-                                _.each(state, (key, val)=>{
+                                _.each(cardData.state, (key, val)=>{
                                     if(typeof key !== 'string' && typeof val !== 'string'){
                                         onlyStrings = false;
                                     }
