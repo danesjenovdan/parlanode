@@ -1,6 +1,5 @@
 <% include ../partials/header.ejs %>
 
-
 <% include ../partials/session_search.ejs %>
 
 
@@ -13,7 +12,7 @@
             </h2>
             <ul class="clearfix">
                 <li>
-                    <a href="/seje/tip/seje-dz">
+                    <a href="/seje/tip/seje-dz" class="active">
                         Seje DZ
                     </a>
                 </li>
@@ -35,7 +34,34 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row colToList">
+            <%
+            for (var i = 0; i < sesData.sesData.length; i++){
+            %>
+            <% if (sesData.type != 2){%>
+            <a href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+                <% }else{%>
+                <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+                    <% }%>
 
+
+                    <span>
+                   <%- sesData.sesData[i].name %>
+               </span>
+                </a>
+                <% } %>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .tmpContainer {
+        margin: 0 10px 10px 10px;
+    }
+</style>
 
 
 <% include ../partials/footer.ejs %>
