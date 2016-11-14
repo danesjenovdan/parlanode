@@ -11,11 +11,7 @@ $ignoreblue: #003B54;
 $noblue: #99E1FF;
 $red: #ff5e41;
 $green: #acc501;
-.funblue {
-    background: $funblue;
-}
 $border-light : #f0f0f0;
-
 $party-colors: (
   smc: #8fcfee,
   sds: #22a2e0,
@@ -34,6 +30,10 @@ $vote-colors: (
   abstain: #003b54,
   not_present: #99e1ff
 );
+
+.funblue {
+    background: $funblue;
+}
 
 @each $party, $color in $party-colors {
   .#{$party}-background { background: $color; }
