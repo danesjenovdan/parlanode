@@ -478,3 +478,9 @@ function activateCopyButton() {
         copyToClipboard($(this).prev()[0]);
     });
 }
+
+$.each('.share-url', function(i, e) {
+    $.get('https://parla.me/shortner/generate?url=' + $(e).val(), function(r) {
+        $(e).val(r);
+    });
+});
