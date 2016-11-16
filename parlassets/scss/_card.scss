@@ -145,6 +145,11 @@
         }
     }
 }
+.card-content.half {
+    .card-embed-divider {
+        display: none;
+    }
+}
 .card-embed-header-divider {
     height: 1px;
 
