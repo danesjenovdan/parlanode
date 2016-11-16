@@ -450,3 +450,73 @@ input.form-control, textarea.form-control {
         position: relative;
     }
 }
+
+
+// "back side of the card
+// card rippling animation
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        /*background-color: #197197;*/
+    }
+    50% {
+        transform: scale(100);
+        /*background-color: #197197;*/
+    }
+    100% {
+        transform: scale(1);
+        top: -30px;
+        left: -30px;
+        /*background-color: rgba(255, 255, 255, 0);
+        transform: scale(70);*/
+    }
+}
+
+
+&.card-container, .card-content {
+    overflow: hidden;
+}
+.card-header {
+    z-index: 2;
+}
+.card-footer {
+    z-index: 4;
+}
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+&.card-container::before {
+    content: '';
+    background-color: #009CDD;
+    position: absolute;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 96px;
+    bottom: 16px;
+
+    transition: transform 0.4s ease-out;
+
+    z-index: 3;
+}
+&.card-container.clicked-info::before {
+    right: 96px;
+    bottom: 18px;
+}
+&.card-container.clicked-embed::before {
+    right: 58px;
+    bottom: 18px;
+}
+&.card-container.clicked-share::before {
+    right: 20px;
+    bottom: 18px;
+}
+&.card-container.covered::before {
+    animation: ripple 0.6s forwards;
+}
+&.card-container.revealed::before {
+    background-color: #197197;
+    animation: ripple 0.6s forwards;
+}
