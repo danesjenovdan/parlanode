@@ -47,15 +47,17 @@
     padding: 0 20px 0 20px;
     margin: 0 0 0px 0;
 }
-.col-md-6 > .card-container .card-content,
-.col-md-6 > .card-container .card-content.full,
-.col-md-12 > .card-container .card-content.full {
+// muki made this global (removed col-md-12 > etc.)
+.card-container .card-content,
+.card-container .card-content.full,
+.card-container .card-content.full {
     height: 500px;
 }
-.col-md-6 > .card-container .card-content.half,
-.col-md-12 > .card-container .card-content.half {
+.card-container .card-content.half,
+.card-container .card-content.half {
     height: 180px;
 }
+// end of muki made this global (removed col-md-12 > etc.)
 
 .card-placeholder {
     background-color: $grey;
