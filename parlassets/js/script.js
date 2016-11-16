@@ -479,8 +479,8 @@ function activateCopyButton() {
     });
 }
 
-$.each('.share-url', function(i, e) {
-    $.get('https://parla.me/shortner/generate?url=' + $(e).val(), function(r) {
+$.each($('.share-url'), function(i, e) {
+    $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($(e).val()), function(r) {
         $(e).val(r);
     });
 });
