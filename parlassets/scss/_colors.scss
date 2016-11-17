@@ -51,10 +51,12 @@ $vote-colors: (
   .#{$party}-hover:hover { background: $color; }
 }
 
-.funblue-hover {
+.funblue-light-hover {
   &:hover {
       color: $white;
-      background: $funblue;
+      background: $funblue-light;
       text-decoration: none;
+      padding-left: 1px;
+      padding-right: 1px;
   }
 }
