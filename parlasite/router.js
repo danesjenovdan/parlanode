@@ -299,8 +299,41 @@ const routes = [
                 }
             },
             {
-                name: 'izracunanaPrisotnost',
-                sourceUrl: '/p/izracunana-prisotnost/:id',
+                name: 'izracunanaPrisotnostGlasovanja',
+                sourceUrl: '/p/izracunana-prisotnost-glasovanja/:id',
+                resolve: (req, res, route, card)=> {
+
+                    return getMPIdByName(req.params.fullName, req)
+                        .then((mpData)=> {
+
+                            let mpId = mpData.mpId;
+                            let mpSlug = mpData.mpSlug;
+
+                            var pattern = new UrlPattern(card.sourceUrl);
+                            const renderedPath = pattern.stringify({id: mpId});
+                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+                            //console.log(cardUrl);
+
+                            return fetch(cardUrl)
+                                .then((res) => {
+
+                                    return res.text();
+
+                                })
+                                .then((body) => {
+
+                                    return body;
+
+                                });
+
+                        });
+
+                }
+            },
+            {
+                name: 'izracunanaPrisotnostSeje',
+                sourceUrl: '/p/izracunana-prisotnost-seje/:id',
                 resolve: (req, res, route, card)=> {
 
                     return getMPIdByName(req.params.fullName, req)
