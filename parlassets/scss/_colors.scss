@@ -50,3 +50,11 @@ $vote-colors: (
 @each $party, $color in $party-colors {
   .#{$party}-hover:hover { background: $color; }
 }
+
+.funblue-hover {
+  &:hover {
+      color: $white;
+      background: $funblue;
+      text-decoration: none;
+  }
+}
