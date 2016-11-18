@@ -2,8 +2,13 @@
   $image-size: 80px;
   $image-margin: 18px;
 
+  list-style: none;
   margin: 0;
   padding: 0;
+  .loader {
+    padding: 10px 0;
+    text-align: center;
+  }
   .headers {
     @extend %flex;
     margin-left: $image-size + $image-margin;
