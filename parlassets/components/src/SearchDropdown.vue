@@ -2,6 +2,10 @@
   <div
     class="search-dropdown"
     v-click-outside="function() { toggleDropdown(false) }">
+    <div
+      v-if="selectionExists"
+      class="search-dropdown-clear"
+      @click="clearSelection">×</div>
     <input
       class="search-dropdown-input"
       type="text"
@@ -42,6 +46,11 @@ export default {
             return a.selected && !b.selected ? -1 : 1
           }
         })
+    },
+    selectionExists() {
+      return this.filteredItems.filter(function(item) {
+        return item.selected
+      }).length > 0
     }
   },
   directives: {
@@ -83,6 +92,15 @@ export default {
       }
       this.active = state
     },
+    clearSelection() {
+      var itemsClone = JSON.parse(JSON.stringify(this.items))
+
+      itemsClone.forEach(function(item) {
+        item.selected = false
+      })
+
+      this.items = itemsClone
+    }
   }
 }
 </script>

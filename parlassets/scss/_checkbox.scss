@@ -3,6 +3,7 @@
 
   display: none;
   & + label {
+    cursor: pointer;
     display: inline-block;
     font-size: 12px;
     font-weight: 300;

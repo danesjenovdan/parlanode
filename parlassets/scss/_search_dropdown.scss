@@ -13,7 +13,7 @@ $arrow-height: 11px;
   position: relative;
 
   &::after {
-    border-color: #197197 transparent transparent transparent;
+    border-color: $sadblue transparent transparent transparent;
     border-style: solid;
     border-width: $arrow-height $arrow-width/2 0 $arrow-width/2;
     content: '';
@@ -23,6 +23,21 @@ $arrow-height: 11px;
     right: 14px;
     top: 20px;
     width: 0;
+  }
+  &-clear {
+    $size: 20px;
+
+    color: $sadblue;
+    content: '×';
+    cursor: pointer;
+    font-size: 25px;
+    height: $size;
+    line-height: $size;
+    position: absolute;
+    right: 36px;
+    text-align: center;
+    top: 16px;
+    width: $size;
   }
   &-input {
     background: transparent;
