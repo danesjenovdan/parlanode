@@ -36,7 +36,7 @@
 
   .parties {
     @extend %list-flex;
-    width: 58.33%;
+    flex: 2;
     li {
       box-sizing: border-box;
       margin-right: 3px;
@@ -45,8 +45,15 @@
   }
 
   .districts {
+    flex: 1;
     margin-left: 15px;
-    width: 41.67%;
+  }
+
+  .exclude-checkbox {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    width: 142px;
   }
 
   .generated-url {

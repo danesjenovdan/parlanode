@@ -9,6 +9,7 @@
     line-height: $size;
     padding-left: $size + 10px;
     position: relative;
+    user-select: none;
 
     &:before {
       border: 1px solid $grey-medium;
