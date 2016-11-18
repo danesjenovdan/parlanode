@@ -51,7 +51,7 @@ $arrow-height: 11px;
     position: absolute;
     top: $height + 1px;
     width: calc(100% + 2px);
-    z-index: 1;
+    z-index: 3;
     &.visible { display: block; }
     li {
       cursor: pointer;
