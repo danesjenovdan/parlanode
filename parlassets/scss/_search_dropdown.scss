@@ -1,10 +1,11 @@
-$height: 51px;
-$padding-top-bottom: 12px;
-$padding-left-right: 14px;
-$arrow-width: 18px;
-$arrow-height: 11px;
-
 .search-dropdown {
+  $height: 51px;
+  $padding-top-bottom: 12px;
+  $padding-left-right: 14px;
+  $arrow-width: 18px;
+  $arrow-height: 11px;
+  $clear-button-right: 36px;
+  $clear-button-size: 20px;
   $item-height: 23px;
 
   border: 1px solid #c8c8c8;
@@ -30,13 +31,13 @@ $arrow-height: 11px;
     color: $sadblue;
     cursor: pointer;
     font-size: 25px;
-    height: $size;
-    line-height: $size;
+    height: $clear-button-size;
+    line-height: $clear-button-size;
     position: absolute;
-    right: 36px;
+    right: $clear-button-right;
     text-align: center;
     top: 16px;
-    width: $size;
+    width: $clear-button-size;
   }
   &-input {
     background: transparent;
@@ -45,7 +46,7 @@ $arrow-height: 11px;
     font-size: 16px;
     line-height: $height - 2 * $padding-top-bottom;
     outline: none;
-    padding: $padding-top-bottom $padding-left-right+$arrow-width $padding-top-bottom $padding-left-right;
+    padding: $padding-top-bottom $clear-button-right+$clear-button-size $padding-top-bottom $padding-left-right;
     width: 100%;
   }
   &-options {
