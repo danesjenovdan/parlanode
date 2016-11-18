@@ -3,7 +3,7 @@
     class="search-dropdown"
     v-click-outside="function() { toggleDropdown(false) }">
     <div
-      v-if="selectionExists"
+      v-if="selectedIds.length > 0"
       class="search-dropdown-clear"
       @click="clearSelection">×</div>
     <input
@@ -47,10 +47,10 @@ export default {
           }
         })
     },
-    selectionExists() {
-      return this.filteredItems.filter(function(item) {
-        return item.selected
-      }).length > 0
+    selectedIds() {
+      return this.filteredItems
+        .filter((item) => item.selected)
+        .map((item) => item.id)
     }
   },
   directives: {
@@ -93,13 +93,7 @@ export default {
       this.active = state
     },
     clearSelection() {
-      var itemsClone = JSON.parse(JSON.stringify(this.items))
-
-      itemsClone.forEach(function(item) {
-        item.selected = false
-      })
-
-      this.items = itemsClone
+      this.selectedIds.forEach(this.toggleItem)
     }
   }
 }
