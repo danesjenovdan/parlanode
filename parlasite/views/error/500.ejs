@@ -1,0 +1,33 @@
+<% include ../partials/header.ejs %>
+
+
+<style>
+    .status404 h1 {
+        font-size: 72px;
+        background: -webkit-linear-gradient(#ff5e41, #009cdd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+</style>
+
+<div class="col-lg-12 status404">
+    <div class="session_types">
+
+        <h1>500</h1>
+
+        <h2>Tukaj ni ničesar. Kaj pa iščeš?</h2>
+
+        <form method="get" action="/seje/isci">
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." name="q" value="asd">
+                <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </span>
+            </div>
+        </form>
+    </div>
+
+</div>
+<% include ../partials/footer.ejs %>

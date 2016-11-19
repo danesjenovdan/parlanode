@@ -1169,8 +1169,17 @@ const routes = [
                 url: ''
             }
         }
-    },
-
+    }
+    ,{
+        path: '/pravno-obvestilo',
+        viewPath: 'about/pravno-obvestilo'
+    },{
+        path: '/za-medije',
+        viewPath: 'about/za-medije'
+    },{
+        path: '/o-projektu',
+        viewPath: 'about/o-projektu'
+    }
 
 
 ];
@@ -1182,6 +1191,9 @@ module.exports = (app) => {
             route.path = path;
             createRoute(app, route);
         });
+    });
+    app.get('/*', function(req, res){
+        res.status(404).render('error/404', {title: "Sorry, page not found", activeMenu: ""});
     });
 };
 
@@ -1299,7 +1311,13 @@ function createRoute(app, route) {
                 });
             }
         }
+        /*
+        app.get('*', function(req, res){
+            res.status(404).render('404', {title: "Sorry, page not found", activeMenu: ""});
+        });
+        */
     });
+
 }
 
 function resolveCards(req, res, route) {
