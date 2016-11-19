@@ -2,33 +2,13 @@
 
 
 
-<script src="https://unpkg.com/vue@next/dist/vue.js"></script>
+
+<script src="https://unpkg.com/vue@2.0.5/dist/vue.min.js"></script>
+<script src="https://cdn.parlameter.si/v1/parlassets/js/search-dropdown.js"></script>
 
 
 
-
-<div id="member-list-generator-container"></div>
-
-<script type="text/x-template" id="search-dropdown-template">
-    <div class="districts search-dropdown" v-click-outside="function() { toggleDropdown(false) }">
-        <input
-                class="search-dropdown-input"
-                type="text"
-                v-model="filter"
-                @focus="toggleDropdown(true)"
-                :placeholder="placeholder">
-        <ul class="search-dropdown-options" :class="{ visible: this.active }">
-            <li
-                    v-for="item in filteredItems"
-                    :class="{ 'selected' : item.selected }"
-                    @click.prevent="toggleItem(item)">
-                {{ item.label }}
-            </li>
-        </ul>
-    </div>
-</script>
-
-<script type="text/x-template" id="member-list-generator-template">
+<div id="member-list-generator-container">
     <div class="container member-list-generator">
         <div class="row">
             <div class="col-md-12">
@@ -46,13 +26,18 @@
             <div class="col-md-12 parties-districts">
                 <ul class="parties">
                     <li v-for="party in parties" class="party-button"
-                        :class="[{ selected: currentParty === party }, party.replace(/ /g, '_').toLowerCase()]"
+                        :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase()]"
                         @click="selectParty(party)">
                         {{ party }}
                     </li>
                 </ul>
 
-                <search-dropdown :items="districts" :placeholder="inputPlaceholder" />
+                <search-dropdown class="districts" :items="districts" :placeholder="inputPlaceholder"></search-dropdown>
+
+                <div class="exclude-checkbox">
+                    <input id="predsedujoci" type="checkbox" v-model="excludePresiding" class="checkbox">
+                    <label for="predsedujoci">Skrij predsedujoče</label>
+                </div>
             </div>
         </div>
 
@@ -72,6 +57,7 @@
                                     {{ column.label }}
                                 </div>
                             </li>
+                            <li v-if="memberData.length === 0" class="loader">LOADER GOES HERE</li>
                             <li v-for="member in processedMemberData" class="person">
                                 <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
                                     <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
@@ -83,9 +69,7 @@
                                     <a :href="'/ps/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a>
                                 </div>
                                 <div class="column">{{ member.person.formattedDistrict }}</div>
-                                <div v-if="currentAnalysis !== 'alphabetical'" class="column">
-                                    {{ member.results[currentAnalysis] + (currentAnalysisData.unit === 'percent' ? '%' : '') }}
-                                </div>
+                                <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
                             </li>
                         </ul>
                     </div>
@@ -105,73 +89,11 @@
             </div>
         </div>
     </div>
-</script>
+</div>
 
 <script>
-    // Vue.directive('click-outside', )
-
-    Vue.component('SearchDropdown', {
-        data: function() {
-            return {
-                filter: '',
-                active: false
-            }
-        },
-        computed: {
-            filteredItems: function() {
-                var that = this
-                return this.items
-                        .filter(function(item) {
-                            return item.selected || item.label.toLowerCase().indexOf(that.filter.toLowerCase()) > -1
-                        })
-                        .sort(function(a, b) {
-                            if (Boolean(a.selected) === Boolean(b.selected)) {
-                                return a.label.localeCompare(b.label)
-                            }
-                            else {
-                                return a.selected && !b.selected ? -1 : 1
-                            }
-                        })
-            }
-        },
-        directives: {
-            clickOutside: {
-                bind: function(el, binding) {
-                    const handler = function(e) {
-                        if (!el.contains(e.target) && el !== e.target) {
-                            binding.value(e)
-                        }
-                    }
-                    el.__vueClickOutside__ = handler
-                    document.addEventListener('click', handler)
-                },
-                unbind: function(el) {
-                    document.removeEventListener('click', el.__vueClickOutside__)
-                    el.__vueClickOutside__ = null
-                }
-            }
-        },
-        template: '#search-dropdown-template',
-        props: {
-            items: { type: Array, required: true },
-            placeholder: { type: String, required: true }
-        },
-        methods: {
-            toggleItem: function(item, event) {
-                item.selected = !item.selected
-            },
-            toggleDropdown: function(state, event) {
-                if (state === false) {
-                    this.filter = ''
-                }
-                this.active = state
-            },
-        }
-    })
-
     new Vue({
         el: '#member-list-generator-container',
-        template: '#member-list-generator-template',
         components: ['SearchDropdown'],
         data: {
             memberData: [],
@@ -180,18 +102,19 @@
             currentSortOrder: 'asc',
             currentAnalysis: 'alphabetical',
             analyses: [
-                { id: 'alphabetical',         label: 'Abecedni seznam' },
-                { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           unit: 'percent' },
-                { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', unit: 'percent' },
+                { id: 'alphabetical',         label: 'Abecedni seznam', },
+                { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           round: true, unit: 'percent' },
+                { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', round: true, unit: 'percent' },
                 { id: 'vocabulary_size',      label: 'Besedni zaklad' },
                 { id: 'spoken_words',         label: 'Št. izgovorjenih besed' },
                 { id: 'speeches_per_session', label: 'Št. govorov na sejo' },
-                { id: 'privzdignjeno',        label: 'Privzdignjeno besedje' },
-                { id: 'preprosto',            label: 'Preprosto besedje' },
-                { id: 'problematicno',        label: 'Problematično besedje' },
+                { id: 'privzdignjeno',        label: 'Privzdignjeno besedje',            scientific: true },
+                { id: 'preprosto',            label: 'Preprosto besedje',                round: true },
+                { id: 'problematicno',        label: 'Ekscesno besedje',                 round: true },
             ],
-            currentParty: null,
-            parties: [ 'SMC', 'SDS', 'DeSUS', 'SD', 'ZL', 'NSI', 'PS NP', 'IMNS', 'NeP' ]
+            currentParties: [],
+            parties: [ 'SMC', 'SDS', 'DeSUS', 'SD', 'ZL', 'NSI', 'PS NP', 'IMNS', 'NeP' ],
+            excludePresiding: false
         },
         computed: {
             columns: function() {
@@ -232,18 +155,27 @@
                 var sortedAndFiltered = this.memberData
                         .filter(function(member) {
                             var partyMatch = true,
-                                    districtMatch = true
+                                    districtMatch = true,
+                                    presidingMatch = true
 
-                            if (that.currentParty !== null) {
-                                partyMatch = member.person.party.acronym === that.currentParty
+                            if (that.currentParties.length > 0) {
+                                // Beware! NeP check is currently hacked in here.
+                                var stringToMatch = member.person.party.acronym
+                                if (stringToMatch.indexOf('NeP') > -1) {
+                                    stringToMatch = 'NeP'
+                                }
+                                partyMatch = that.currentParties.indexOf(stringToMatch) > -1
                             }
                             if (that.currentDistricts.length > 0) {
                                 districtMatch = member.person.district.reduce(function(prevMatch, memberDistrict) {
                                     return prevMatch || that.currentDistricts.indexOf(String(memberDistrict)) > -1
                                 }, false)
                             }
+                            if (that.excludePresiding) {
+                                presidingMatch = !member.person.has_function
+                            }
 
-                            return partyMatch && districtMatch
+                            return partyMatch && districtMatch && presidingMatch
                         })
                         .map(function(member) {
                             if (member.person.district.length === 0) {
@@ -294,11 +226,14 @@
                 if (this.currentAnalysis !== 'alphabetical') {
                     params.analysis = this.currentAnalysis
                 }
-                if (this.currentParty !== null) {
-                    params.party = this.currentParty
+                if (this.currentParties.length > 0) {
+                    params.parties = this.currentParties
                 }
                 if (this.currentDistricts.length > 0) {
                     params.districts = this.currentDistricts
+                }
+                if (this.excludePresiding) {
+                    params.excludePresiding = true
                 }
 
                 return 'https://glej.parlameter.si/p/seznam-poslancev/' +
@@ -308,8 +243,7 @@
         },
         created: function() {
             var that = this
-            // This should poll the api instead of this static json
-            $.getJSON('https://api.myjson.com/bins/4f734', function(response) {
+            $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembers/', function(response) {
                 that.districts = response.districts.map(function(district) {
                     var id = Object.keys(district)[0]
                     return {
@@ -339,12 +273,23 @@
                 }
             },
             selectParty: function(partyId) {
-                if (this.currentParty === partyId) {
-                    this.currentParty = null
+                if (this.currentParties.indexOf(partyId) > -1) {
+                    this.currentParties.splice(this.currentParties.indexOf(partyId), 1)
                 }
                 else {
-                    this.currentParty = partyId
+                    this.currentParties.push(partyId)
                 }
+            },
+            getFormattedAnalysisValue: function(member) {
+                var value = member.results[this.currentAnalysis]
+
+                if (value !== 0) {
+                    if (this.currentAnalysisData.round) { value = Math.round(value * 10) / 10 }
+                    if (this.currentAnalysisData.scientific) { value = value.toExponential() }
+                }
+                if (this.currentAnalysisData.unit === 'percent') { value += '%' }
+
+                return value
             }
         }
     })
