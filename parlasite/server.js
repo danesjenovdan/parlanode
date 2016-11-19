@@ -10,6 +10,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.static('public'));
 
+app.use(function(error, req, res, next) {
+  res.status(500);
+  res.render('error/500', {title:'500: Internal Server Error', error: error, activeMenu: ""});
+});
+
 exports.start = ()=> {
 
   return new Promise((resolve, reject)=>{
