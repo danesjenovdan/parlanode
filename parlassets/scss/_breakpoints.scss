@@ -1,0 +1,23 @@
+$mobile-tablet: 480px;
+$tablet-desktop: 1024px;
+
+$breakpoints: (
+  mobile: "(max-width: #{$mobile-tablet})",
+  tablet: "(min-width: #{$mobile-tablet + 1px}) and (max-width: #{$tablet-desktop})",
+  tablet-up: "(min-width: #{$mobile-tablet + 1px})",
+  desktop: "(min-width: #{$tablet-desktop + 1px})"
+);
+
+@mixin respond-to($breakpoint) {
+  $mediaQuery: map-get($breakpoints, $breakpoint);
+  @media #{$mediaQuery} {
+    @content;
+  }
+}
+
+@mixin show-for($breakpoint, $displayType) {
+  display: none;
+  @include respond-to($breakpoint) {
+    display: $displayType;
+  }
+}
