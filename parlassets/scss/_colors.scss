@@ -32,10 +32,10 @@ $vote-colors: (
   not_present: #99e1ff
 );
 
-.funblue {
-    background: $funblue;
-}
-
+// .funblue {
+//   background: $funblue;
+// }
+//
 @each $party, $color in $party-colors {
   .#{$party}-background { background: $color; }
 }
