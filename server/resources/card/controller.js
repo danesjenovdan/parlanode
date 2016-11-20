@@ -285,7 +285,8 @@ exports.render = function(req, res){
                             const cardData = {
                                 data    : data,
                                 vocab   : vocab,
-                                cardData: doc
+                                cardData: doc,
+                                customUrl:customUrl
                             };
 
                             if(embed || frame){
