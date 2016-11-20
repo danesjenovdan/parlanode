@@ -46,12 +46,14 @@ function getActiveMenu(inp) {
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
+                <!--
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                -->
                 <a class="navbar-brand logo" href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282.82 170.08">
                         <defs>
@@ -102,15 +104,8 @@ function getActiveMenu(inp) {
                         </g>
                     </svg>
                 </a>
-            </div>
 
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="<%= getActiveMenu("poslanci") %>"><a href="/poslanci">Poslanci</a></li>
-                    <li class="<%= getActiveMenu("poslanske-skupine") %>"><a href="/poslanske-skupine">Poslanske skupine</a></li>
-                    <li class="<%= getActiveMenu("seje,S") %>"><a href="/seje">Seje</a></li>
-                </ul>
-                <form class="navbar-form pull-right" role="search">
+                <form id="topheadersearch" class="navbar-form pull-right" role="search">
                     <div class="form-group">
 
                         <div class="header-searchhide">
@@ -121,9 +116,9 @@ function getActiveMenu(inp) {
                                 <script>
 
 
-var  mps_data;
-var  ops_data;
-var  sps_data;
+                                    var  mps_data;
+                                    var  ops_data;
+                                    var  sps_data;
 
                                 </script>
 
@@ -131,7 +126,7 @@ var  sps_data;
 
 
                                 <div class="search-input-header-prepend">
-                                <span class="glyphicon glyphicon-search"></span>
+                                    <span class="glyphicon glyphicon-search"></span>
                                 </div><input type="text" class="search-input-header form-control" placeholder="Vpiši iskalni niz"><div class="search-input-header-append">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </div>
@@ -164,6 +159,16 @@ var  sps_data;
                     </div>
 
                 </form>
+
+            </div>
+
+            <div class="collapse-not navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="<%= getActiveMenu("poslanci") %>"><a href="/poslanci">Poslanci</a></li>
+                    <li class="<%= getActiveMenu("poslanske-skupine") %>"><a href="/poslanske-skupine">Poslanske skupine</a></li>
+                    <li class="<%= getActiveMenu("seje,S") %>"><a href="/seje">Seje</a></li>
+                </ul>
+
 
             </div>
         </nav>
