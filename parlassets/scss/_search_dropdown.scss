@@ -13,18 +13,7 @@
   $height: $height;
   position: relative;
 
-  &::after {
-    border-color: $sadblue transparent transparent transparent;
-    border-style: solid;
-    border-width: $arrow-height $arrow-width/2 0 $arrow-width/2;
-    content: '';
-    height: 0;
-    pointer-events: none;
-    position: absolute;
-    right: 14px;
-    top: 20px;
-    width: 0;
-  }
+  @include arrow(18px, 11px, 20px, 14px);
   &-clear {
     $size: 20px;
 
