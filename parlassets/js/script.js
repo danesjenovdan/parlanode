@@ -341,24 +341,24 @@ function DNDrepeatEmbedCall() {
 }
 
 var progressbarTooltip = {
-    init: function() {
+    init: function(classname) {
 
-      var majorparent = $('.avgminimg').parents('.card-container')[0];
+      var $majorparent = $('.' + classname);
 
-      $(majorparent).append('<div class="progressbar-tooltip"></div>');
+      $majorparent.append('<div class="progressbar-tooltip tooltip-' + classname + '"></div>');
 
-      $('.avgminimg')
+      $majorparent.find('.avgminimg')
           .on('mouseover', function(e) {
 
-              $('.progressbar-tooltip')
+              $('.tooltip-' + classname)
                   .css('opacity', 0.9)
                   .html($(this).data('name'))
-                      .css("left", (e.pageX - ($('.progressbar-tooltip').width() / 2) - $(majorparent).offset().left))
-                      .css("top", (e.pageY - 30 - $(majorparent).offset().top));
+                      .css("left", (e.pageX - ($('.tooltip-' + classname).width() / 2) - $majorparent.offset().left))
+                      .css("top", (e.pageY - 30 - $majorparent.offset().top));
 
           })
           .on('mouseout', function(e) {
-            $('.progressbar-tooltip')
+            $('.tooltip-' + classname)
                   .css('opacity', 0);
           });
   }
