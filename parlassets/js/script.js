@@ -344,22 +344,21 @@ var progressbarTooltip = {
     init: function() {
 
       var majorparent = $('.avgminimg').parents('.card-container')[0];
-      var uniquename =  $(majorparent).attr('class').replace(' ', '_');
 
-      $(majorparent).append('<div class="progressbar-tooltip ' + uniquename + '"></div>');
+      $(majorparent).append('<div class="progressbar-tooltip"></div>');
 
       $('.avgminimg')
           .on('mouseover', function(e) {
 
-              $('.progressbar-tooltip .' + uniquename)
+              $('.progressbar-tooltip')
                   .css('opacity', 0.9)
                   .html($(this).data('name'))
-                      .css("left", (e.pageX - ($('.progressbar-tooltip.' + uniquename).width() / 2) - $(majorparent).offset().left))
+                      .css("left", (e.pageX - ($('.progressbar-tooltip').width() / 2) - $(majorparent).offset().left))
                       .css("top", (e.pageY - 30 - $(majorparent).offset().top));
 
           })
           .on('mouseout', function(e) {
-            $('.progressbar-tooltip.' + uniquename)
+            $('.progressbar-tooltip')
                   .css('opacity', 0);
           });
   }
