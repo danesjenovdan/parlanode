@@ -501,7 +501,7 @@ function addCardRippling(element) {
 
             if (!$(this).hasClass('card-exit')) { // show back
 
-                $parentcontainer.height($parentcontainer.height());
+                $parentcontainer.children('.card-content').height($parentcontainer.children('.card-content').height());
 
                 $parentcontainer
                     .children('.card-footer')
@@ -558,8 +558,9 @@ function addCardRippling(element) {
                 window.setTimeout(function() {
                     $parentcontainer
                         .removeClass('revealed')
-                        .removeClass('clicked-' + $this.data('back'))
-                        .attr('style', '');
+                        .removeClass('clicked-' + $this.data('back'));
+                        
+                    $parentcontainer.children('.card-content').attr('style', '');
                     
                     cardRippling = false;
                 }, 1000);
