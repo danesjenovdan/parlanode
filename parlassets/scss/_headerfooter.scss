@@ -44,7 +44,6 @@ header.header {
         border-radius: 0;
     }
 
-
     .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
         color: $funblue;
     }
@@ -70,12 +69,32 @@ header.header {
             text-align: center;
         }
     }
+    @media (min-width: 768px) {
+        header.header .navbar-nav > li{
+            float: left;
+        }
+        header.header .navbar-nav > li > a{
+            padding: 20px 30px 20px 0px;
+        }
+    }
 
-
-    .parlaicon {
+        .parlaicon {
 
     }
 
+    #topheadersearch{
+        border:none;
+        margin: 0;
+    }
+
+    header.header .navbar-nav > li{
+        float: left;
+    }
+    @media (max-width: 992px) {
+        header.header .navbar-nav > li > a{
+            padding: 20px 60px 20px 0px;
+        }
+    }
     .parlaicon-search {
         width: 22px;
         height: 22px;
@@ -315,7 +334,16 @@ footer.footer {
     }
 
 }
+@media (max-width: 992px) {
 
+    body{
+        margin-bottom: 600px;
+    }
+    footer.footer {
+        height: 600px;
+    }
+
+}
 
 
 
