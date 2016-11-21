@@ -396,44 +396,6 @@
   padding-left: 10px;
 }
 
-.poslanec .nav-tabs {
-  border-bottom: none;
-  padding-bottom: 40px;
-  display: flex;
-}
-
-.poslanec .nav-tabs > li {
-  flex: 1;
-  text-align: center;
-  margin-left: 3px;
-
-  &:first-child { margin-left: 0 }
-}
-
-.poslanec .nav > li > a {
-  padding: 10px 7px;
-  margin: 0 1px 0 0;
-  border: none;
-
-}
-
-.poslanec .nav > li > a:hover {
-  border: none;
-}
-
-.poslanec .nav-tabs > li > a {
-  border-radius: 0;
-  border: none;
-  color: $black;
-  background: $grey;
-}
-
-.poslanec .nav-tabs > li.active > a {
-  color: $white;
-  background: $funblue;
-  border: none;
-}
-
 .poslanec .tab-content .poslanec_title {
   font-size: 16px;
   line-height: 18px;
@@ -859,14 +821,6 @@
 
   }
 
-}
-
-.nav-tabs > li.width50p {
-  width: 50%;
-}
-
-.nav-tabs > li.width33p {
-  width: 33%;
 }
 
 .izracunana_prisotnost {
