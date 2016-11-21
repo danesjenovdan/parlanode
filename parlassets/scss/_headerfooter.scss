@@ -270,7 +270,6 @@ footer.footer {
         line-height: 35px;
         position: relative;
         top: 12px;
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/twitter-parlameter.svg");
         color: #337ab7;
         margin: 0 0px 0 30px;
     }
@@ -280,9 +279,13 @@ footer.footer {
         line-height: 35px;
         position: relative;
         top: 12px;
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/facebook-parlameter.svg");
         color: #337ab7;
         margin: 0 0px 0 20px;
+    }
+    .parlaicon-facebook-parlameter .blue,
+    .parlaicon-facebook-parlameter .blue {
+        fill: #337ab7;
+        stroke: #337ab7;
     }
     .doniraj{
         border: 1px solid #505050;
@@ -300,8 +303,11 @@ footer.footer {
         right: -5px;
         margin-right: 5px;
 
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/doniraj.svg");
         color: #337ab7;
+    }
+    .parlaicon-doniraj .red {
+        fill: #ff5e41;
+        stroke: #ff5e41;
     }
 
 
