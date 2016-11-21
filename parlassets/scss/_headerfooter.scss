@@ -249,19 +249,19 @@ footer.footer {
     }
 
     .border_top{
-        border-top: 1px solid #dbdbdb;
+        border-top: 1px solid $darkgrey;
         padding-top: 40px;
         margin-top: 10px;
     }
 
     .border_tope{
-        border-top: 1px dashed #dbdbdb;
+        border-top: 1px dashed $darkgrey;
         padding-top: 10px;
         margin-top: 10px;
     }
 
     .colorBlack{
-        color: #505050;
+        color: $black;
     }
 
     .parlaicon-twitter-parlameter {
@@ -270,7 +270,7 @@ footer.footer {
         line-height: 35px;
         position: relative;
         top: 12px;
-        color: #337ab7;
+        color: $funblue;
         margin: 0 0px 0 30px;
     }
     .parlaicon-facebook-parlameter {
@@ -279,16 +279,16 @@ footer.footer {
         line-height: 35px;
         position: relative;
         top: 12px;
-        color: #337ab7;
+        color: $funblue;
         margin: 0 0px 0 20px;
     }
     .parlaicon-facebook-parlameter .blue,
-    .parlaicon-facebook-parlameter .blue {
-        fill: #337ab7;
-        stroke: #337ab7;
+    .parlaicon-twitter-parlameter .blue {
+        fill: $funblue;
+        stroke: $funblue;
     }
     .doniraj{
-        border: 1px solid #505050;
+        border: 1px solid $black;
         background: none;
         text-transform: uppercase;
         border-radius: 0;
@@ -303,18 +303,18 @@ footer.footer {
         right: -5px;
         margin-right: 5px;
 
-        color: #337ab7;
+        color: $funblue;
     }
     .parlaicon-doniraj .red {
-        fill: #ff5e41;
-        stroke: #ff5e41;
+        fill: $red;
+        stroke: $red;
     }
 
 
     input.form-control.newslettersubscribe{
         border: none;
         border-radius: 0;
-        border-bottom: 1px solid #505050;
+        border-bottom: 1px solid $black;
         background: none;
         padding-left: 0;
     }
@@ -325,7 +325,7 @@ footer.footer {
     .newslettersubscribeButton{
         border: none;
         border-radius: 0;
-        border-bottom: 1px solid #505050;
+        border-bottom: 1px solid $black;
         background: none;
         padding: 7px 12px 6px 12px;
         color: #337ab7;
@@ -334,21 +334,21 @@ footer.footer {
     }
     .newslettersubscribeButton:hover {
         background: none;
-        border-bottom: 1px solid #505050;
+        border-bottom: 1px solid $black;
         color: #337ab7;
         padding-right: 0;
     }
 
 }
 @media (max-width: 992px) {
-
+/*
     body{
         margin-bottom: 600px;
     }
     footer.footer {
         height: 600px;
     }
-
+*/
 }
 
 
@@ -367,7 +367,7 @@ footer.footer {
     left: 0;
     width: 100%;
     height: 200%;
-    background: #f0f0f0;
+    background: $grey;
     top: 15px;
     -webkit-transform: rotate(1deg);
     -moz-transform: rotate(1deg);
@@ -379,8 +379,8 @@ footer.footer {
     height: 30px;
     width: 100%;
     overflow: hidden;
-    background: #f0f0f0;
-    bottom: 0;
+    background: $grey;
+    /*bottom: 0;*/
 }
 
 .stripeelbottom:after {
