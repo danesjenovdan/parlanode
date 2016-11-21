@@ -21,10 +21,12 @@
       padding: 10px 7px;
       &:hover { border: none; }
     }
-    &.active > a {
-      color: $white;
-      background: $funblue;
-      border: none;
+    &.active {
+      & > a, & > a:focus {
+        color: $white;
+        background: $funblue;
+        border: none;
+      }
     }
   }
 }
