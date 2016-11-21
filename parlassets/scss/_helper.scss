@@ -147,6 +147,21 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
     }
 }
 
+@mixin arrow($width, $height, $top, $right) {
+  &::after {
+    border-color: $sadblue transparent transparent transparent;
+    border-style: solid;
+    border-width: $height $width/2 0 $width/2;
+    content: '';
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: $right;
+    top: $top;
+    width: 0;
+  }
+}
+
 %flex {
   align-items: center;
   display: flex;

@@ -10,6 +10,7 @@
 
   .analyses {
     @extend %list-flex;
+    @include show-for(tablet-up, flex);
     margin: 14px 0;
 
     li {
@@ -34,24 +35,51 @@
     }
   }
 
+  .mobile-analyses {
+    @include show-for(mobile, block);
+
+    label {
+      font-size: 11px;
+      width: 100%;
+    }
+    .select {
+      width: 100%;
+      select { width: 100%; }
+    }
+  }
+
   .parties {
     @extend %list-flex;
     flex: 2;
+    @include respond-to(mobile) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
     li {
       box-sizing: border-box;
       margin-right: 3px;
       &:last-child { margin-right: 0; }
+      @include respond-to(mobile) {
+        $width: 20%;
+        flex: none;
+        margin: 3px 0 0 0;
+        width: calc(#{$width} - 1.6px);
+        &:last-child { margin-right: $width; }
+      }
     }
   }
 
   .districts {
+    @include show-for(tablet-up, flex);
+
     flex: 1;
     margin-left: 15px;
   }
 
-  .exclude-checkbox {
+  .exclude-presiding {
+    @include show-for(tablet-up, flex);
+
     align-items: center;
-    display: flex;
     justify-content: flex-end;
     width: 142px;
   }
