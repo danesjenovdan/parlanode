@@ -44,9 +44,13 @@
             for (var i = 0; i < sesData.sesData.length; i++){
             %>
             <% if (sesData.type != 2){%>
-            <a href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+                <% if(sesData.sesData[i].votes){ %>
+                    <a href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+                <% }else{%>
+                    <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+                <% }%>
             <% }else{%>
-            <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
+                <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %>" data-id="<%- sesData.sesData[i].id %>">
             <% }%>
 
 
