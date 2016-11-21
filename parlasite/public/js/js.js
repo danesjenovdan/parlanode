@@ -120,9 +120,11 @@ $(function () {
         });
 
         $('.search-input-header').bind('typeahead:select', function(e, value) {
-
-            //console.log(value);
-
+            if(typeof value.acronym !== 'undefined'){
+                window.location.href = "/ps/id/" + value.id;
+            }else{
+                window.location.href = "/p/id/" + value.id;
+            }
             $('.search-input-header').typeahead('close').typeahead('val', '');
         });
 
