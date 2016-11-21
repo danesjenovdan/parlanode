@@ -44,7 +44,6 @@ header.header {
         border-radius: 0;
     }
 
-
     .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
         color: $funblue;
     }
@@ -70,12 +69,32 @@ header.header {
             text-align: center;
         }
     }
+    @media (min-width: 768px) {
+        header.header .navbar-nav > li{
+            float: left;
+        }
+        header.header .navbar-nav > li > a{
+            padding: 20px 30px 20px 0px;
+        }
+    }
 
-
-    .parlaicon {
+        .parlaicon {
 
     }
 
+    #topheadersearch{
+        border:none;
+        margin: 0;
+    }
+
+    header.header .navbar-nav > li{
+        float: left;
+    }
+    @media (max-width: 992px) {
+        header.header .navbar-nav > li > a{
+            padding: 20px 60px 20px 0px;
+        }
+    }
     .parlaicon-search {
         width: 22px;
         height: 22px;
@@ -251,7 +270,6 @@ footer.footer {
         line-height: 35px;
         position: relative;
         top: 12px;
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/twitter-parlameter.svg");
         color: #337ab7;
         margin: 0 0px 0 30px;
     }
@@ -261,9 +279,13 @@ footer.footer {
         line-height: 35px;
         position: relative;
         top: 12px;
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/facebook-parlameter.svg");
         color: #337ab7;
         margin: 0 0px 0 20px;
+    }
+    .parlaicon-facebook-parlameter .blue,
+    .parlaicon-facebook-parlameter .blue {
+        fill: #337ab7;
+        stroke: #337ab7;
     }
     .doniraj{
         border: 1px solid #505050;
@@ -281,8 +303,11 @@ footer.footer {
         right: -5px;
         margin-right: 5px;
 
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/doniraj.svg");
         color: #337ab7;
+    }
+    .parlaicon-doniraj .red {
+        fill: #ff5e41;
+        stroke: #ff5e41;
     }
 
 
@@ -315,7 +340,16 @@ footer.footer {
     }
 
 }
+@media (max-width: 992px) {
 
+    body{
+        margin-bottom: 600px;
+    }
+    footer.footer {
+        height: 600px;
+    }
+
+}
 
 
 
