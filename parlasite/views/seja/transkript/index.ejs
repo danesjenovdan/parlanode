@@ -64,20 +64,7 @@
     <%- views.besedeKiSoZaznamovaleSejo %>
 </div>
 <div class="col-md-12">
-    <div class="row" id="speeches">
-    </div>
+    <%- views.transkript %>
 </div>
-
-<script>
-    $.getJSON('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/' + <%= sesData.id %>, function(r) {
-        for (i in r.data) {
-            if (i < 20) {
-                $.get('https://glej.parlameter.si/s/speech/' + r.data[i], function(HTML) {
-                    $('#speeches').append('<div class="col-md-12">' + HTML + '</div>');
-                });
-            }
-        }
-    });
-</script>
 
 <% include ../../partials/footer.ejs %>
