@@ -1413,6 +1413,7 @@ function getSessionIds(params, req) {
     var tmp = spsList[0];
     for (var key in tmp) {
         var sejetip = tmp[key];
+        type = key;
         for (var seja in sejetip) {
 
             var s = sejetip[seja];
