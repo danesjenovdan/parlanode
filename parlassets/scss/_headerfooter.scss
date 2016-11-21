@@ -4,6 +4,16 @@ header.header {
         height: 70px;
         padding: 0;
     }
+    .logo .cls-1 {
+        fill: #227497;
+    }
+    .logo .cls-2 {
+        fill: #009cd9;
+    }
+    .logo .cls-3 {
+        fill: #003143;
+    }
+
     .navbar-collapse.collapse {
         margin-top: 20px;
     }
@@ -69,30 +79,45 @@ header.header {
             text-align: center;
         }
     }
-    @media (min-width: 768px) {
-        header.header .navbar-nav > li{
-            float: left;
-        }
-        header.header .navbar-nav > li > a{
-            padding: 20px 30px 20px 0px;
-        }
-    }
-
-        .parlaicon {
-
-    }
 
     #topheadersearch{
         border:none;
         margin: 0;
+        position: absolute;
+        right: 0;
     }
 
-    header.header .navbar-nav > li{
-        float: left;
-    }
+
     @media (max-width: 992px) {
-        header.header .navbar-nav > li > a{
+        .navbar-nav > li > a{
             padding: 20px 60px 20px 0px;
+            font-size: 16px;
+        }
+
+        .navbar-collapse{
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+            display: table;
+            table-layout: auto;
+            float: none;
+            width: 100%;
+            text-align: justify;
+        }
+        .navbar-nav>li {
+            display: inline-block;
+            float: none;
+            text-align: center;
+        }
+
+        .navbar-nav > li:first-child > a {
+            padding-left:0;
+        }
+        .navbar-nav > li:last-child > a {
+            padding-right:0;
         }
     }
     .parlaicon-search {
@@ -106,6 +131,8 @@ header.header {
 
     .header-searchhide {
         display: none;
+        position: relative;
+        top: 17px;
     }
 
     .header-search {
@@ -134,7 +161,7 @@ header.header {
     .search-input-header-prepend .glyphicon.glyphicon-search,
     .search-input-header-append .glyphicon.glyphicon-remove {
         position: relative;
-        top:9px;
+        top:4px;
     }
 
     .header-search-find {
