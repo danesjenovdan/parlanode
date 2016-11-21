@@ -69,7 +69,7 @@
 </div>
 
 <script>
-    $.getJSON('https://https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/' + <%= sesData.id %>, function(r) {
+    $.getJSON('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/' + <%= sesData.id %>, function(r) {
         for (i in r.data) {
             $.get('https://glej.parlameter.si/s/speech/' + r.data[i], function(HTML) {
                 $('#speeches').append('<div class="col-md-12">' + HTML + '</div>');
