@@ -20,7 +20,7 @@ function getActiveMenu(inp) {
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700" rel="stylesheet">
-    <link rel='shortcut icon' type='image/x-icon' href='https://cdn.parlameter.si/v1/parlassets/icons/favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='https://cdn.parlameter.si/v1/parlassets/icons/favicon.ico'/>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.parlameter.si/v1/parlassets/scss/style.css" rel="stylesheet">
@@ -101,54 +101,33 @@ function getActiveMenu(inp) {
 
                         <div class="header-searchhide">
                             <div class="header-search">
-                                <%
- %>
-
-                                <script>
-
-
-                                    var  mps_data;
-                                    var  ops_data;
-                                    var  sps_data;
-
-                                </script>
-
-
-
-
                                 <div class="search-input-header-prepend">
                                     <span class="glyphicon glyphicon-search"></span>
-                                </div><input type="text" class="search-input-header form-control" placeholder="Vpiši iskalni niz"><div class="search-input-header-append">
+                                </div>
+                                <input type="text" class="search-input-header form-control"
+                                       placeholder="Vpiši iskalni niz">
+                                <div class="search-input-header-append">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </div>
-
                             </div>
-
-
                         </div>
-
-
                         <span class="searchiconbuttton">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"
+                                 xmlns="http://www.w3.org/2000/svg" class="search-icon">
 
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"
-                             xmlns="http://www.w3.org/2000/svg" class="search-icon">
-
-                            <g>
-                                <title>background</title>
-                                <rect fill="none" id="canvas_background" height="102" width="102" y="-1" x="-1"/>
-                            </g>
-                            <g>
-                                <title>Layer 1</title>
-                                <path class="svg_1"
-                                      d="m101,93.254997l-31.361,-31.361996c4.902,-6.543003 7.556999,-14.458 7.556999,-22.780003c0,-10.179998 -3.965996,-19.747999 -11.163002,-26.945999c-7.195995,-7.199 -16.763996,-11.162 -26.945995,-11.162c-10.179001,0 -19.748001,3.963 -26.945002,11.162c-14.856,14.856001 -14.856,39.032001 -0.002,53.889999c7.197999,7.198997 16.766999,11.163002 26.945998,11.163002c8.338001,0 16.264,-2.663002 22.815002,-7.581001l31.356003,31.356003l7.742996,-7.740005zm-61.915001,-25.962997c-7.525999,0 -14.603998,-2.931 -19.926998,-8.251999c-5.323001,-5.323002 -8.254001,-12.401001 -8.254001,-19.929001c0,-7.528 2.932,-14.604 8.255,-19.927c5.323,-5.321 12.400999,-8.252 19.926998,-8.252c7.529003,0 14.606003,2.931 19.926003,8.252999c10.987999,10.987001 10.987999,28.866999 0,39.855001c-5.322002,5.320999 -12.396999,8.251999 -19.927002,8.251999z"
-                                      fill="#505050"/>
-                            </g>
-                        </svg>
-                    </span>
-
-
+                                <g>
+                                    <title>background</title>
+                                    <rect fill="none" id="canvas_background" height="102" width="102" y="-1" x="-1"/>
+                                </g>
+                                <g>
+                                    <title>Layer 1</title>
+                                    <path class="svg_1"
+                                          d="m101,93.254997l-31.361,-31.361996c4.902,-6.543003 7.556999,-14.458 7.556999,-22.780003c0,-10.179998 -3.965996,-19.747999 -11.163002,-26.945999c-7.195995,-7.199 -16.763996,-11.162 -26.945995,-11.162c-10.179001,0 -19.748001,3.963 -26.945002,11.162c-14.856,14.856001 -14.856,39.032001 -0.002,53.889999c7.197999,7.198997 16.766999,11.163002 26.945998,11.163002c8.338001,0 16.264,-2.663002 22.815002,-7.581001l31.356003,31.356003l7.742996,-7.740005zm-61.915001,-25.962997c-7.525999,0 -14.603998,-2.931 -19.926998,-8.251999c-5.323001,-5.323002 -8.254001,-12.401001 -8.254001,-19.929001c0,-7.528 2.932,-14.604 8.255,-19.927c5.323,-5.321 12.400999,-8.252 19.926998,-8.252c7.529003,0 14.606003,2.931 19.926003,8.252999c10.987999,10.987001 10.987999,28.866999 0,39.855001c-5.322002,5.320999 -12.396999,8.251999 -19.927002,8.251999z"
+                                          fill="#505050"/>
+                                </g>
+                            </svg>
+                        </span>
                     </div>
-
                 </form>
 
             </div>
@@ -156,7 +135,8 @@ function getActiveMenu(inp) {
             <div class="collapse-not navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="<%= getActiveMenu("poslanci") %>"><a href="/poslanci">Poslanci</a></li>
-                    <li class="<%= getActiveMenu("poslanske-skupine") %>"><a href="/poslanske-skupine">Poslanske skupine</a></li>
+                    <li class="<%= getActiveMenu("poslanske-skupine") %>"><a href="/poslanske-skupine">Poslanske
+                            skupine</a></li>
                     <li class="<%= getActiveMenu("seje,S") %>"><a href="/seje">Seje</a></li>
                 </ul>
 
