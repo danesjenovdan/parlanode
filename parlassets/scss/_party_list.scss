@@ -17,14 +17,10 @@
         width: 136px;
       }
     }
-  }
-}
-
-@media (max-width: 767px) {
-  .party-list {
-    .party {
+    @include respond-to(mobile) {
+      padding: 4px 0;
       .column {
-        font-size: 16px;
+        font-size: 14px;
         &.name { width: 60px; }
       }
     }
