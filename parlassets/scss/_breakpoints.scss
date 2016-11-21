@@ -15,7 +15,7 @@ $breakpoints: (
   }
 }
 
-@mixin show-for($breakpoint, $displayType) {
+@mixin show-for($breakpoint, $displayType: block) {
   display: none;
   @include respond-to($breakpoint) {
     display: $displayType;
