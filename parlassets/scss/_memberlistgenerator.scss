@@ -54,6 +54,7 @@
     @include respond-to(mobile) {
       flex-wrap: wrap;
       justify-content: space-between;
+      margin-top: 7px;
     }
     li {
       box-sizing: border-box;
