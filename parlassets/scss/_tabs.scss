@@ -22,11 +22,12 @@
       &:hover { border: none; }
     }
     &.active {
-      & > a, & > a:focus {
+      & > a, & > a:focus, & > a:hover {
         color: $white;
         background: $funblue;
         border: none;
       }
     }
   }
+  @include respond-to(mobile) { font-size: 11px; }
 }
