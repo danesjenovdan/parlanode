@@ -57,7 +57,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            
+
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f0f0+0,f0f0f0+100&0.6+0,1+14 */
             background: -moz-linear-gradient(top,  rgba(240,240,240,0.6) 0%, rgba(240,240,240,1) 14%, rgba(240,240,240,1) 100%); /* FF3.6-15 */
             background: -webkit-linear-gradient(top,  rgba(240,240,240,0.6) 0%,rgba(240,240,240,1) 14%,rgba(240,240,240,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -106,6 +106,18 @@
                 <div id="card-container"></div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <a href="" class="permalink">Pokaži kartico v kontekstu spletnega mesta parlameter.si &gt;</a>
+            </div>
+        </div>
     </div>
+
+    <script>
+        window.setTimeout(function() {
+            var id = $('.embed-script textarea').data('id');
+            $('.permalink').attr('href', 'https://skoraj.parlameter.si/p/id/' + id);
+        }, 1000);
+    </script>
 </body>
 </html>
