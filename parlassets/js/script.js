@@ -485,14 +485,12 @@ var cardRippling = false;
 function addCardRippling(element) {
 
     $('.card-circle-button').on('click', function(e) {
-        if (!shortened) {
-            $.each($('.share-url'), function(i, e) {
-                var $my_element = $(e); 
-                $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($(e).val()), function(r) {
-                    $my_element.val(r);
-                });
+        if ($(this).parent().data('shortened') != 'true') {
+            var $shareurl = $(this).parent().prev().find('.share-url');
+            $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($shareurl.val()), function(r) {
+                $shareurl.val(r);
             });
-            shortened = true;
+            $(this).parent().data('shortened', 'true');
         }
         if (!cardRippling) {
 
