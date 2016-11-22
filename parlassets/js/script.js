@@ -491,6 +491,7 @@ function addCardRippling(element) {
                     $(e).val(r);
                 });
             });
+            shortened = true;
         }
         if (!cardRippling) {
 
