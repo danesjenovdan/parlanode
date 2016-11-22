@@ -487,8 +487,9 @@ function addCardRippling(element) {
     $('.card-circle-button').on('click', function(e) {
         if (!shortened) {
             $.each($('.share-url'), function(i, e) {
+                var $my_element = $(e); 
                 $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($(e).val()), function(r) {
-                    $(e).val(r);
+                    $my_element.val(r);
                 });
             });
             shortened = true;
