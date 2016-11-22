@@ -165,7 +165,7 @@ $(function () {
 
             var urlid = $(this).attr('id');
 
-            $("#"+urlid).html('<div class="nalagalnik">nalagam in čakam na filipa, da naredi loader ... </div>');
+            $("#"+urlid).html('<div class="nalagalnik"></div>');
 
             var jqxhr = $.ajax("https://glej.parlameter.si/s/" + urlid + "/?customUrl=https://isci.parlameter.si/"+querystring)
                 .done(function (data) {
