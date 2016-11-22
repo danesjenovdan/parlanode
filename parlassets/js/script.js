@@ -479,18 +479,19 @@ function activateCopyButton() {
     });
 }
 
-// shorten share URLs
-$.each($('.share-url'), function(i, e) {
-    $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($(e).val()), function(r) {
-        $(e).val(r);
-    });
-});
-
+var shortened = false;
 // card rippling (flipping)
 var cardRippling = false;
 function addCardRippling(element) {
 
     $('.card-circle-button').on('click', function(e) {
+        if (!shortened) {
+            $.each($('.share-url'), function(i, e) {
+                $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($(e).val()), function(r) {
+                    $(e).val(r);
+                });
+            });
+        }
         if (!cardRippling) {
 
             cardRippling = true;
