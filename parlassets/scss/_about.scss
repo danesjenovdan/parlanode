@@ -1,0 +1,65 @@
+#about.card-container {
+    padding-bottom: 45px;
+}
+
+#about.card-container::before {
+    display: none;
+}
+
+#about .lead-text-container {
+    font-family: "Roboto Slab", sans-serif;
+    color: #fff;
+    font-style: italic;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+#about .lead-text-container span {
+    background-color: #009cdd;
+    padding: 5px 0;
+    line-height: 2;
+    /* fix inline multiline text padding */
+    box-shadow: 10px 0 0 #009cdd, -10px 0 0 #009cdd;
+}
+
+#about .video-container {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+#about .padded-text {
+    font-size: 16px;
+    padding: 25px 15px;
+}
+
+#about .public-col {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#about .public-col p {
+    text-align: center;
+    padding: 0 15px;
+}
+
+#about .gradient-title {
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #009cdd;
+}
+
+@supports ( -webkit-background-clip: text ) {
+    #about .gradient-title {
+        background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);    /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
