@@ -58,3 +58,7 @@ $vote-colors: (
       text-decoration: none;
   }
 }
+
+.inactive{
+  filter:grayscale(100%);
+}
