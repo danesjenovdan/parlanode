@@ -270,7 +270,8 @@
         // if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
         //   this.selectSort('name')
         // }
-        this.selectSort('name');
+        this.currentSort = 'name';
+        this.currentSortOrder = 'asc';
       },
       selectSort: function(sortId) {
         if (this.currentSort === sortId) {
