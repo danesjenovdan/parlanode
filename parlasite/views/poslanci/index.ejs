@@ -267,11 +267,11 @@
       selectAnalysis: function(analysisId) {
         this.currentAnalysis = analysisId
 
-        // if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
-        //   this.selectSort('name')
-        // }
-        this.currentSort = 'name';
-        this.currentSortOrder = 'asc';
+        if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
+          this.selectSort('name')
+        }
+        this.currentSort = analysisId;
+        this.currentSortOrder = 'desc';
       },
       selectSort: function(sortId) {
         if (this.currentSort === sortId) {
