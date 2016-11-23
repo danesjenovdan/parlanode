@@ -267,9 +267,10 @@
       selectAnalysis: function(analysisId) {
         this.currentAnalysis = analysisId
 
-        if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
-          this.selectSort('name')
-        }
+        // if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
+        //   this.selectSort('name')
+        // }
+        this.selectSort('name');
       },
       selectSort: function(sortId) {
         if (this.currentSort === sortId) {
