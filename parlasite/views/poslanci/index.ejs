@@ -74,7 +74,7 @@
                       <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
                     </div>
                     <div class="column">
-                      <% if (result.person.party.acronym.indexOf('NeP') === -1) { %><a class="funblue-light-hover" href="/ps/id/<%= result.person.party.id %>"><%= result.person.party.acronym %></a><% } else { %> <%= result.person.party.acronym %> <% } %>
+                      <% if (member.person.party.acronym.indexOf('NeP') === -1) { %><a class="funblue-light-hover" href="/ps/id/<%= member.person.party.id %>"><%= member.person.party.acronym %></a><% } else { %> <%= member.person.party.acronym %> <% } %>
                     </div>
                     <div class="column district">{{ member.person.formattedDistrict }}</div>
                     <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
