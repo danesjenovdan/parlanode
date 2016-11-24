@@ -30,6 +30,9 @@
         transform: rotate(180deg);
       }
       &.sort.reverse::after { transform: none; }
+      &:first-child {
+        text-align: left;
+      }
     }
   }
   .person {
