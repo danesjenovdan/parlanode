@@ -74,7 +74,7 @@
                       <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
                     </div>
                     <div class="column" v-if="member.partylink">
-                      <a class="funblue-light-hover" href="/ps/id/<%= member.person.party.id %>">{{ member.person.party.acronym }}</a>
+                      <a class="funblue-light-hover" :href="'/p/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a>
                     </div>
                     <div class="column" v-else>
                       {{ member.person.party.acronym }}
