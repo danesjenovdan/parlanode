@@ -65,7 +65,7 @@
                       {{ column.label }}
                     </div>
                   </li>
-                  <li v-if="memberData.length === 0" class="loader">LOADER GOES HERE</li>
+                  <li v-if="memberData.length === 0" class="loader"><div class="nalagalnik"></div></li>
                   <li v-for="member in processedMemberData" class="person">
                     <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
                       <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
