@@ -161,7 +161,7 @@
       inputPlaceholder: function() {
         return this.currentDistricts.length ? 'izbranih okrajev: ' + this.currentDistricts.length : 'izberi okraj'
       },
-      processedMemberData: function() {
+      
         var that = this
         var sortedAndFiltered = this.memberData
           .filter(function(member) {
@@ -191,14 +191,18 @@
           .map(function(member) {
             if (member.person.district.length === 0) {
               member.person.formattedDistrict = 'okraj ni vnešen'
-            }
-            else {
+            } else {
               member.person.formattedDistrict = member.person.district.map(function(memberDistrict) {
                 var matchingDistrict = that.districts.filter(function(district) {
                   return district.id === String(memberDistrict)
                 })[0]
                 return matchingDistrict.label
               }).join(', ')
+            }
+            if (member.person.party.acronym.indexOf('NeP') === -1) {
+              member.partylink = true;
+            } else {
+              member.partylink = false;
             }
 
             return member
