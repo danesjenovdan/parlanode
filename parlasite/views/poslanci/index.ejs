@@ -161,7 +161,7 @@
       inputPlaceholder: function() {
         return this.currentDistricts.length ? 'izbranih okrajev: ' + this.currentDistricts.length : 'izberi okraj'
       },
-      
+      processedMemberData: function() {
         var that = this
         var sortedAndFiltered = this.memberData
           .filter(function(member) {
@@ -312,9 +312,6 @@
     }
   })
   </script>
-</body>
-
-</html>
 
 
 
