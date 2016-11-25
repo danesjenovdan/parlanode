@@ -325,8 +325,15 @@ $(function () {
 
     //votingCardTpl.init();
     //lastActivity.init();
+
+    checkCardEmbed();
 });
 
+function checkCardEmbed() {
+    if (window.location.search && (window.location.search.indexOf("frame=true") > -1 || window.location.search.indexOf("embed=true") > -1)) {
+        $(".card-footer .card-logo").removeClass("hidden");
+    }
+}
 
 function DNDrepeatEmbedCall() {
     ParlaScroll.init();
@@ -450,7 +457,7 @@ function copyToClipboard(elem) {
     var currentFocus = document.activeElement;
     target.focus();
     target.setSelectionRange(0, target.value.length);
-    
+
     // copy the selection
     var succeed;
     try {
@@ -462,7 +469,7 @@ function copyToClipboard(elem) {
     if (currentFocus && typeof currentFocus.focus === "function") {
         currentFocus.focus();
     }
-    
+
     if (isInput) {
         // restore prior selection
         elem.setSelectionRange(origSelectionStart, origSelectionEnd);
@@ -521,20 +528,20 @@ function addCardRippling(element) {
                 $parentcontainer
                     .addClass('covered')
                     .addClass('clicked-' + $this.data('back'));
-                
+
                 window.setTimeout(function() {
                     $parentcontainer.children('.card-content').children().addClass('hidden');
                 }, 200);
-                
+
                 window.setTimeout(function() {
                     $parentcontainer.children('.card-content').children('.card-content-' + $this.data('back')).removeClass('hidden');
                 }, 250);
-                
+
                 window.setTimeout(function() {
                     $parentcontainer
                         .removeClass('covered')
                         .removeClass('clicked-' + $this.data('back'));
-                    
+
                     cardRippling = false;
                 }, 600);
 
@@ -547,22 +554,22 @@ function addCardRippling(element) {
                 $parentcontainer
                     .addClass('revealed')
                     .addClass('clicked-' + $this.data('back'));
-                
+
                 window.setTimeout(function() {
                     $parentcontainer.children('.card-content').children().addClass('hidden');
                 }, 200);
-                
+
                 window.setTimeout(function() {
                     $parentcontainer.children('.card-content').children('.card-content-front').removeClass('hidden');
                 }, 250);
-                
+
                 window.setTimeout(function() {
                     $parentcontainer
                         .removeClass('revealed')
                         .removeClass('clicked-' + $this.data('back'));
-                        
+
                     $parentcontainer.children('.card-content').attr('style', '');
-                    
+
                     cardRippling = false;
                 }, 1000);
             }
