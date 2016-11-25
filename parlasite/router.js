@@ -1398,11 +1398,12 @@ function getPSIdByName(name, req) {
 
     _.each(opsList, (ps, i)=> {
         ps.nameSlug = slug(ps.name).toLowerCase();
+        ps.acronym = slug(ps.acronym).toLowerCase();
 
-        if ((name === ps.nameSlug) | (req.params.id == ps.id)) {
+        if ((name === ps.nameSlug) | (name === ps.acronym) | (req.params.id == ps.id)) {
             //if(id == ps.id){
             psId = ps.id;
-            psSlug = ps.nameSlug;
+            psSlug = ps.acronym;
             req.slug = psSlug;
             req.psId = psId;
             req.ps = ps;
