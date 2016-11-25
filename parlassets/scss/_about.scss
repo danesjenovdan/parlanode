@@ -1,5 +1,6 @@
 #about.card-container {
     padding-bottom: 45px;
+    padding-top: 20px;
 }
 
 #about.card-container::before {
@@ -32,6 +33,7 @@
 #about .padded-text {
     font-size: 16px;
     padding: 25px 15px;
+    line-height: 1.6;
 }
 
 #about .public-col {
@@ -62,4 +64,66 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+}
+
+#about .title-container {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+#about .post-entry {
+    background: #f0f0f0;
+    padding: 20px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#about .post-entry .post-info {
+    flex-grow: 2;
+    color: #505050;
+}
+
+#about .post-entry .post-title {
+    font-size: 18px;
+}
+
+#about .thumbnail .caption-icon,
+#about .post-entry .post-download {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+#about .post-entry .post-download i {
+    vertical-align: middle;
+}
+
+#about .thumbnail {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 0;
+    font-style: italic;
+}
+
+#about .thumbnail .caption {
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    margin-bottom: -4px;
+    color: #505050;
+}
+
+#about .thumbnail .caption-text {
+    flex-grow: 2;
+}
+
+#about .thumbnail .caption-icon i {
+    font-size: 24px;
+    line-height: 20px;
+    vertical-align: bottom;
 }
