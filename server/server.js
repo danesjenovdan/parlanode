@@ -46,14 +46,14 @@ function setupExpress(){
         siteRouter(app);
 
         // start listening on port
-        app.listen(CFG.port, function () {
+        const server = app.listen(CFG.port, function () {
 
             console.log(chalk.green(chalk.magenta('| EXPRESS SERVER |')+' - done / running on:' + CFG.port));
             resolve();
 
         });
 
-        app.timeout = CFG.serverTimeout;
+        server.timeout = CFG.serverTimeout;
 
     });
 
