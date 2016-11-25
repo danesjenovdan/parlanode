@@ -89,11 +89,6 @@ header.header {
 
 
     @media (max-width: 992px) {
-        .navbar-nav > li > a{
-            padding: 20px 60px 20px 0px;
-            font-size: 16px;
-        }
-
         .navbar-collapse{
             margin-left: -15px;
             margin-right: -15px;
@@ -105,19 +100,45 @@ header.header {
             table-layout: auto;
             float: none;
             width: 100%;
-            text-align: justify;
-        }
-        .navbar-nav>li {
-            display: inline-block;
-            float: none;
             text-align: center;
         }
 
+        .navbar-nav > li {
+            padding-left: 0;
+            padding-right: 0;
+            float: none;
+            margin: 0 auto;
+            text-align: center;
+            width: 140px;
+        }
+        .navbar-nav > li > a {
+            padding: 20px 0px 20px 0px;
+            font-size: 16px;
+        }
+
+        .navbar-nav > li:first-child {
+            padding-left: 0;
+            float: left;
+            margin: 0;
+            /*width: 100px;*/
+            width: auto;
+        }
         .navbar-nav > li:first-child > a {
-            padding-left:0;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .navbar-nav > li:last-child {
+            padding-right: 0;
+            float: right;
+            text-align: right;
+            margin: 0;
+            /*width: 100px;*/
+            width: auto;
         }
         .navbar-nav > li:last-child > a {
-            padding-right:0;
+            padding-right: 0;
+            text-align: right;
         }
     }
     .parlaicon-search {
