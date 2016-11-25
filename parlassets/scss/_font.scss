@@ -1,9 +1,22 @@
-@import url(//fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext);
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext);
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext);
 
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+}
+
+.footer {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    .mailto {
+        font-weight: 400;
+    } 
+    .input-group {
+        font-size: 12px;
+        font-weight: 400;
+    }
 }
 
 h1 {
