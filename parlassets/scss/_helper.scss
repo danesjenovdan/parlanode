@@ -178,3 +178,30 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
   width:100%;
   height:100px;
 }
+
+/* Pulse */
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.empty50{
+  height: 50px;
+  display: block;
+}

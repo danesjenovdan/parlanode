@@ -353,11 +353,18 @@ footer.footer {
         position: relative;
         color: $funblue;
         margin: 0 0px 0 20px;
+        text-decoration: none;
     }
     .parlaicon-facebook-parlameter .blue,
     .parlaicon-twitter-parlameter .blue {
         fill: $funblue;
         stroke: $funblue;
+    }
+    .parlaicon-facebook-parlameter:hover .blue,
+    .parlaicon-twitter-parlameter:hover .blue {
+        fill: $sadblue;
+        stroke: $sadblue;
+        text-decoration: none;
     }
     .parlaicon-social-align{
 
@@ -382,6 +389,24 @@ footer.footer {
     .parlaicon-doniraj .red {
         fill: $red;
         stroke: $red;
+    }
+
+    .parlaicon-doniraj {
+        display: inline-block;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+
+    .doniraj:hover .parlaicon-doniraj {
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
     }
 
 
