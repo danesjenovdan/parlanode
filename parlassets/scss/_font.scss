@@ -6,6 +6,17 @@ body {
     font-weight: 400;
 }
 
+h1 {
+    font-weight: 500;
+}
+
+.thin {
+    font-weight: 100;
+}
+
+
+/* global fonts */
+
 .footer {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -19,10 +30,16 @@ body {
     }
 }
 
-h1 {
-    font-weight: 500;
+@media (max-width: 767px) {
+    .footer {
+        font-size: 11px;
+        .mailto {
+            font-size: 11px;
+        } 
+        .input-group {
+            font-size: 9px;
+        }
+    }
 }
 
-.thin {
-    font-weight: 100;
-}
+/* end of global fonts */
