@@ -204,4 +204,15 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 .empty50{
   height: 50px;
   display: block;
+  width: 100%;
+}
+.simplebox,
+.simplebox:active,
+.simplebox:focus,
+.simplebox:hover{
+  outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
