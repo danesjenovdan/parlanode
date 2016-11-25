@@ -65,7 +65,7 @@
                       {{ column.label }}
                     </div>
                   </li>
-                  <li v-if="memberData.length === 0" class="loader">LOADER GOES HERE</li>
+                  <li v-if="memberData.length === 0" class="loader"><div class="nalagalnik" style="height: 300px;"></div></li>
                   <li v-for="member in processedMemberData" class="person">
                     <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
                       <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
@@ -73,8 +73,11 @@
                     <div class="column wider name">
                       <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
                     </div>
-                    <div class="column">
-                      <a class="funblue-light-hover" :href="'/ps/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a>
+                    <div class="column" v-if="member.partylink">
+                      <a class="funblue-light-hover" :href="'/p/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a>
+                    </div>
+                    <div class="column" v-else>
+                      {{ member.person.party.acronym }}
                     </div>
                     <div class="column district">{{ member.person.formattedDistrict }}</div>
                     <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
@@ -188,14 +191,18 @@
           .map(function(member) {
             if (member.person.district.length === 0) {
               member.person.formattedDistrict = 'okraj ni vnešen'
-            }
-            else {
+            } else {
               member.person.formattedDistrict = member.person.district.map(function(memberDistrict) {
                 var matchingDistrict = that.districts.filter(function(district) {
                   return district.id === String(memberDistrict)
                 })[0]
                 return matchingDistrict.label
               }).join(', ')
+            }
+            if (member.person.party.acronym.indexOf('NeP') === -1) {
+              member.partylink = true;
+            } else {
+              member.partylink = false;
             }
 
             return member
@@ -269,6 +276,9 @@
 
         if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
           this.selectSort('name')
+        } else {
+          this.currentSort = 'analysis';
+          this.currentSortOrder = 'desc';
         }
       },
       selectSort: function(sortId) {
@@ -302,9 +312,6 @@
     }
   })
   </script>
-</body>
-
-</html>
 
 
 
