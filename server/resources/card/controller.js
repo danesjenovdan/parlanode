@@ -281,12 +281,14 @@ exports.render = function(req, res){
                         try {
 
                             const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
+                            const urlsData = JSON.parse(fs.readFileSync('assets/urls.json', 'utf-8'));
 
                             const cardData = {
                                 data    : data,
                                 vocab   : vocab,
                                 cardData: doc,
-                                customUrl:customUrl
+                                customUrl:customUrl,
+                                urlsData:urlsData
                             };
 
                             if(embed || frame){
