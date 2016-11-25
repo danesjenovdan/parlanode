@@ -97,7 +97,7 @@ const routes = [
         viewPath: 'poslanci'
     }, {
         path: '/p/:fullName',
-        extraPaths: ['/poslanci/pregled/:fullName/:date', '/p/id/:id', '/p/:fullName/pregled', '/p/id/:id/:date', '/p/:fullName/pregled/:date'],
+        extraPaths: ['/poslanci/pregled/:fullName/:date', '/p/id/:id', '/p/:fullName/pregled', '/p/id/:id/:date', '/p/:fullName/pregled/:date', '/poslanec/:fullName/pregled', '/poslanec/:fullName/pregled/:date'],
         viewPath: 'poslanec/pregled',
         cards: [
             {
@@ -400,7 +400,7 @@ const routes = [
         ]
     }, {
         path: '/p/:fullName/glasovanja',
-        extraPaths: ['/poslanci/glasovanja/:fullName/:date', '/p/:fullName/glasovanja/:date'],
+        extraPaths: ['/poslanci/glasovanja/:fullName/:date', '/p/:fullName/glasovanja/:date', '/poslanec/:fullName/glasovanja', '/poslanec/:fullName/glasovanja/:date'],
         viewPath: 'poslanec/glasovanja',
         cards: [
 
@@ -511,7 +511,7 @@ const routes = [
         ]
     }, {
         path: '/p/:fullName/govori',
-        extraPaths: ['/poslanci/govori/:fullName/:date', '/p/:fullName/govori/:date'],
+        extraPaths: ['/poslanci/govori/:fullName/:date', '/p/:fullName/govori/:date', '/poslanec/:fullName/govori', '/poslanec/:fullName/govori/:date'],
         viewPath: 'poslanec/govori',
         cards: [
 
@@ -699,7 +699,7 @@ const routes = [
         }
     }, {
         path: '/poslanska-skupina/pregled/:fullName',
-        extraPaths: ['/poslanska-skupina/pregled/:fullName/:date', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
+        extraPaths: ['/poslanska-skupina/pregled/:fullName/:date','/poslanska-skupina/:fullName/pregled', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
         viewPath: 'poslanska-skupina/pregled',
         cards: [
             {
@@ -819,7 +819,7 @@ const routes = [
         ]
     }, {
         path: '/poslanska-skupina/glasovanja/:fullName',
-        extraPaths: ['/poslanska-skupina/glasovanja/:fullName/:date', '/ps/glasovanja/id/:id', '/ps/glasovanja/id/:id/:date'],
+        extraPaths: ['/poslanska-skupina/glasovanja/:fullName/:date', '/poslanska-skupina/:fullName/glasovanja', '/ps/glasovanja/id/:id', '/ps/glasovanja/id/:id/:date'],
         viewPath: 'poslanska-skupina/glasovanja',
         cards: [
             {
@@ -942,7 +942,7 @@ const routes = [
             }]
     }, {
         path: '/poslanska-skupina/govori/:fullName',
-        extraPaths: ['/poslanska-skupina/govori/:fullName/:date', '/ps/govori/id/:id', '/ps/govori/id/:id/:date'],
+        extraPaths: ['/poslanska-skupina/govori/:fullName/:date', '/poslanska-skupina/:fullName/govori', '/ps/govori/id/:id', '/ps/govori/id/:id/:date'],
         viewPath: 'poslanska-skupina/govori',
         cards: [
             {
@@ -1083,7 +1083,7 @@ const routes = [
     },
     {
         path: '/seja/glasovanja/:id',
-        extraPaths: ['/seja/glasovanja/:id/:date', '/s/glasovanja/:id', '/s/glasovanja/:id/:date'],
+        extraPaths: ['/seja/glasovanja/:id/:date', '/seja/glasovanja/:id', '/s/glasovanja/:id', '/s/glasovanja/:id/:date'],
         viewPath: 'seja/glasovanja',
         cards: [
             {
@@ -1106,7 +1106,7 @@ const routes = [
     },
     {
         path: '/seja/prisotnost/:id',
-        extraPaths: ['/seja/prisotnost/:id/:date', '/s/prisotnost/:id', '/s/prisotnost/:id/:date'],
+        extraPaths: ['/seja/prisotnost/:id/:date', '/seja/prisotnost/:id', '/s/prisotnost/:id', '/s/prisotnost/:id/:date'],
         viewPath: 'seja/prisotnost',
         cards: [
             {
@@ -1145,7 +1145,7 @@ const routes = [
     },
     {
         path: '/seja/transkript/:id',
-        extraPaths: ['/seja/transkript/:id/:date', '/s/transkript/:id', '/s/transkript/:id/:date'],
+        extraPaths: ['/seja/transkript/:id/:date', '/seja/transkript/:id', '/s/transkript/:id', '/s/transkript/:id/:date'],
         viewPath: 'seja/transkript',
         cards: [
             {
