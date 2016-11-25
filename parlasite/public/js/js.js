@@ -10,6 +10,34 @@ function equalHeight($elementByClass) {
 
 }
 
+
+
+function toggleHeaderSearch(focus) {
+    $(".searchiconbuttton").toggle();
+
+    if(focus) {
+
+        if($(window).width() < 992) {
+            $("#topheadersearch").css({"width": "100%"});
+            $("header.header .twitter-typeahead").css({"width": "90%"});
+        }
+
+
+        $(".header-searchhide").show();
+        $(".search-input-header").focus();
+    }else{
+        $(".header-searchhide").toggle();
+        if($(window).width() < 992) {
+            $("#topheadersearch").css({"width": "auto"});
+            $("header.header .twitter-typeahead").css({"width": "auto"});
+        }
+    }
+
+    if($(window).width() < 992) {
+        $(".header.header .logo").toggle();
+    }
+}
+
 $(function () {
 
     $(window).resize(function(){
@@ -24,22 +52,19 @@ $(function () {
 
 
     $(".searchiconbuttton").click(function () {
-        $(".searchiconbuttton").toggle();
-        $(".header-searchhide").toggle();
-        $(".search-input-header").focus();
+        toggleHeaderSearch(true);
+        return false;
+    });
+
+    $(".search-input-header-append.xclose").click(function () {
+        toggleHeaderSearch(false);
         return false;
     });
 
     $(".search-input-header").blur(function () {
-        $(".searchiconbuttton").toggle();
-        $(".header-searchhide").toggle();
+       // toggleHeaderSearch(false);
         return false;
     });
-
-
-
-
-
 
 
     var mps_search_token = new Bloodhound({
@@ -126,6 +151,7 @@ $(function () {
                 window.location.href = "/p/id/" + value.id;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
+            $(".header-searchhide").css({"width":"100%", "height":"30px"}).show().html('<div class="nalagalnik"></div>');
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function() {

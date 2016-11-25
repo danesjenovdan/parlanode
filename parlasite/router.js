@@ -1500,3 +1500,7 @@ function getSessionsByType(params, req) {
     // });
 
 }
+
+function getAllLinks() {
+
+}
