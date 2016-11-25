@@ -53,6 +53,8 @@ function setupExpress(){
 
         });
 
+        app.timeout(CFG.serverTimeout);
+
     });
 
 }
