@@ -53,7 +53,7 @@ function setupExpress(){
 
         });
 
-        app.timeout(CFG.serverTimeout);
+        app.timeout = CFG.serverTimeout;
 
     });
 
