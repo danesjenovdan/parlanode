@@ -185,7 +185,9 @@ header.header {
         position: relative;
         top:4px;
     }
-
+    .search-input-header-append.xclose{
+        cursor: pointer;
+    }
     .header-search-find {
 
     }
@@ -195,6 +197,29 @@ header.header {
         display: inline-block;
         margin-top: 8px;
         cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+        #topheadersearch{
+            position: relative;
+            padding: 10px 0;
+        }
+        .search-input-header {
+            background: none;
+            width: 98%;
+        }
+        .header-searchhide{
+            top:0;
+        }
+        .navbar-form .form-group{
+            width:100%;
+        }
+        .twitter-typeahead{
+            width:90%;
+        }
+        .navbar-header{
+            width:100%;
+        }
     }
 
 
