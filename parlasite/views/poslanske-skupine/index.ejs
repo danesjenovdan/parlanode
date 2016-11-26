@@ -61,13 +61,6 @@
           </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Generated url</h2>
-          <p class="generated-url">{{ generatedCardUrl }}</p>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -122,7 +115,7 @@
 
         return 'https://glej.parlameter.si/p/seznam-poslancev/' +
           '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
-          (Object.keys(params).length > 0 ? '&status=' + encodeURIComponent(JSON.stringify(params)) : '')
+          (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
       }
     },
     created: function() {
