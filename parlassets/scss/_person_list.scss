@@ -8,6 +8,7 @@
   .loader {
     padding: 10px 0;
     text-align: center;
+    .nalagalnik { height: 300px; }
   }
   .column.district { @include show-for(tablet-up); }
   .headers {
@@ -31,7 +32,7 @@
       }
       &.sort.reverse::after { transform: none; }
       &:first-child {
-        text-align: left; 
+        text-align: left;
       }
     }
   }
