@@ -57,47 +57,93 @@
                   <h1>Seznam poslancev</h1>
               </div>
               <div class="card-content">
-                <ul class="person-list">
-                  <li class="headers">
-                    <div v-for="column in columns"
-                         :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
-                         @click="selectSort(column.id)">
-                      {{ column.label }}
+                <div class="card-content-front">
+                  <ul class="person-list">
+                    <li class="headers">
+                      <div v-for="column in columns"
+                          :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
+                          @click="selectSort(column.id)">
+                        {{ column.label }}
+                      </div>
+                    </li>
+                    <li v-if="memberData.length === 0" class="loader"><div class="nalagalnik" style="height: 300px;"></div></li>
+                    <li v-for="member in processedMemberData" class="person">
+                      <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
+                        <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
+                      </a>
+                      <div class="column wider name">
+                        <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
+                      </div>
+                      <div class="column" v-if="member.partylink">
+                        <a class="funblue-light-hover" :href="'/poslanska-skupina/' + member.person.party.acronym + '/pregled'">{{ member.person.party.acronym }}</a>
+                      </div>
+                      <div class="column" v-else>
+                        {{ member.person.party.acronym }}
+                      </div>
+                      <div class="column district">{{ member.person.formattedDistrict }}</div>
+                      <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
+                    </li>
+                  </ul>
+                </div>
+              <div class="card-content-info hidden">
+                <div class="card-back-content">
+                    <div class="scroller" id="tvojamtka">
+                        <p class="info-text">
+                        </p>
                     </div>
-                  </li>
-                  <li v-if="memberData.length === 0" class="loader"><div class="nalagalnik" style="height: 300px;"></div></li>
-                  <li v-for="member in processedMemberData" class="person">
-                    <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
-                      <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
-                    </a>
-                    <div class="column wider name">
-                      <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
+                </div>
+            </div>
+            <div class="card-content-embed hidden">
+                <div class="card-back-content">
+                    <div class="embed-content">
+                        <div class="embed-divider"></div>
+                        <div class="embed-switch-container">
+                            <div class="embed-label">Podatki naj se vedno osvežujejo</div>
+                            <div class="embed-switch-big-box">
+                                <div class="embed-switch-box">
+                                    <div class="embed-switch">
+                                        <div class="embed-switches">
+                                            <div class="leftswitch">
+                                                DA
+                                            </div>
+                                            <div class="rightswitch">
+                                                NE
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="embed-switch-ball"></div>
+                            </div>
+                        </div>
+                        <div class="embed-divider"></div>
+                        <div class="embed-script">
+                            <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
+                            <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+                        </div>
+                        <div class="embed-divider"></div>
+                        <div class="embed-export">
+                            <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
+                        </div>
                     </div>
-                    <div class="column" v-if="member.partylink">
-                      <a class="funblue-light-hover" :href="'/p/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a>
+                </div>
+            </div>
+            <div class="card-content-share hidden">
+                <div class="card-back-content card-content">
+                    <div class="share-content">
+                        <label for="share-url">Neposredna povezava do kartice</label>
+                        <input type="url" class="form-control share-url" id="share-url" :value="generatedCardUrl + '&frame=true'"/>
+                        <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
                     </div>
-                    <div class="column" v-else>
-                      {{ member.person.party.acronym }}
-                    </div>
-                    <div class="column district">{{ member.person.formattedDistrict }}</div>
-                    <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-footer">
-                  <div class="card-circle-button card-share"></div>
-                  <div class="card-circle-button card-embed"></div>
-                  <div class="card-circle-button card-info">i</div>
-              </div>
-          </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="card-circle-button card-share" data-back="share"></div>
+            <div class="card-circle-button card-embed" data-back="embed"></div>
+            <div class="card-circle-button card-info" data-back="info">i</div>
+        </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Generated url</h2>
-          <p class="generated-url">{{ generatedCardUrl }}</p>
-        </div>
       </div>
     </div>
   </div>
@@ -253,7 +299,7 @@
 
         return 'https://glej.parlameter.si/p/seznam-poslancev/' +
           '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembers') +
-          (Object.keys(params).length > 0 ? '&status=' + encodeURIComponent(JSON.stringify(params)) : '')
+          (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
       }
     },
     created: function() {
