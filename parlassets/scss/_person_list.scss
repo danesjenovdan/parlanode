@@ -10,7 +10,7 @@
     text-align: center;
     .nalagalnik { height: 300px; }
   }
-  .column.district { @include show-for(tablet-up); }
+  .column.district { @include show-for(desktop); }
   .headers {
     @extend %flex;
     margin-left: $image-size + $image-margin;
