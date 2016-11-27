@@ -1,319 +1,363 @@
 <% include ../partials/header.ejs %>
 
-  <div id="member-list-generator-container">
-    <div class="container member-list-generator">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="analyses">
-            <li v-for="analysis in analyses"
-                :class="{ selected: analysis.id === currentAnalysis }"
-                @click="selectAnalysis(analysis.id)">
-              <span>{{ analysis.label }}</span>
-            </li>
-          </ul>
+<div id="member-list-generator-container">
+  <div class="container member-list-generator">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="analyses">
+          <li v-for="analysis in analyses"
+              :class="{ selected: analysis.id === currentAnalysis }"
+              @click="selectAnalysis(analysis.id)">
+            <span>{{ analysis.label }}</span>
+          </li>
+        </ul>
 
-          <div class="mobile-analyses">
-            <label for="analysis">Izberi analizo</label>
-            <div class="select">
-              <select
-                name="analysis"
-                id="analysis"
-                v-model="currentAnalysis">
-                <option
-                  v-for="analysis in analyses"
-                  :value="analysis.id">
-                  {{ analysis.label }}
-                </option>
-              </select>
+        <div class="mobile-analyses">
+          <label for="analysis">Izberi analizo</label>
+          <div class="select">
+            <select
+              name="analysis"
+              id="analysis"
+              v-model="currentAnalysis">
+              <option
+                v-for="analysis in analyses"
+                :value="analysis.id">
+                {{ analysis.label }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 parties-districts">
+        <ul class="parties">
+          <li v-for="party in parties" class="party-button"
+              :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase()]"
+              @click="selectParty(party)">
+            {{ party }}
+          </li>
+        </ul>
+
+        <search-dropdown class="districts" :items="districts" :placeholder="inputPlaceholder"></search-dropdown>
+
+        <div class="exclude-presiding">
+          <input id="predsedujoci" type="checkbox" v-model="excludePresiding" class="checkbox">
+          <label for="predsedujoci">Skrij predsedujoče</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-container card-halfling card-seznam-poslancev">
+          <div class="card-header">
+            <div class="card-header-border"></div>
+            <h1>Seznam poslancev</h1>
+          </div>
+          <div class="card-content">
+            <div class="card-content-front">
+              <ul class="person-list">
+                <li class="headers">
+                  <div v-for="column in columns"
+                      :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
+                      @click="selectSort(column.id)">
+                    {{ column.label }}
+                  </div>
+                </li>
+                <li v-if="memberData.length === 0" class="loader">
+                  <div class="nalagalnik"></div>
+                </li>
+                <li v-for="member in processedMemberData" class="person">
+                  <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
+                    <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
+                  </a>
+                  <div class="column wider name">
+                    <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
+                  </div>
+                  <div class="column" v-if="member.partylink">
+                    <a class="funblue-light-hover" :href="'/poslanska-skupina/' + member.person.party.acronym + '/pregled'">{{ member.person.party.acronym }}</a>
+                  </div>
+                  <div class="column" v-else>
+                    {{ member.person.party.acronym }}
+                  </div>
+                  <div class="column district">{{ member.person.formattedDistrict }}</div>
+                  <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
+                </li>
+              </ul>
+            </div>
+            <div class="card-content-info hidden">
+              <div class="card-back-content">
+                <div class="scroller" id="tvojamtka">
+                  <p class="info-text"></p>
+                </div>
+              </div>
+            </div>
+            <div class="card-content-embed hidden">
+              <div class="card-back-content">
+                <div class="embed-content">
+                  <div class="embed-divider"></div>
+                  <div class="embed-switch-container">
+                    <div class="embed-label">Podatki naj se vedno osvežujejo</div>
+                    <div class="embed-switch-big-box">
+                      <div class="embed-switch-box">
+                        <div class="embed-switch">
+                          <div class="embed-switches">
+                            <div class="leftswitch">DA</div>
+                            <div class="rightswitch">NE</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="embed-switch-ball"></div>
+                    </div>
+                  </div>
+                  <div class="embed-divider"></div>
+                  <div class="embed-script">
+                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
+                    <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+                  </div>
+                  <div class="embed-divider"></div>
+                  <div class="embed-export">
+                    <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-content-share hidden">
+              <div class="card-back-content card-content">
+                <div class="share-content">
+                  <label for="share-url">Neposredna povezava do kartice</label>
+                  <input type="url" class="form-control share-url" id="share-url" :value="generatedCardUrl + '&frame=true'"/>
+                  <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 parties-districts">
-          <ul class="parties">
-            <li v-for="party in parties" class="party-button"
-                :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase()]"
-                @click="selectParty(party)">
-              {{ party }}
-            </li>
-          </ul>
-
-          <search-dropdown class="districts" :items="districts" :placeholder="inputPlaceholder"></search-dropdown>
-
-          <div class="exclude-presiding">
-            <input id="predsedujoci" type="checkbox" v-model="excludePresiding" class="checkbox">
-            <label for="predsedujoci">Skrij predsedujoče</label>
+          <div class="card-footer">
+            <div class="card-circle-button card-share" data-back="share"></div>
+            <div class="card-circle-button card-embed" data-back="embed"></div>
+            <div class="card-circle-button card-info" data-back="info">i</div>
           </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card-container card-halfling card-seznam-poslancev">
-              <div class="card-header">
-                  <div class="card-header-border"></div>
-                  <h1>Seznam poslancev</h1>
-              </div>
-              <div class="card-content">
-                <ul class="person-list">
-                  <li class="headers">
-                    <div v-for="column in columns"
-                         :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
-                         @click="selectSort(column.id)">
-                      {{ column.label }}
-                    </div>
-                  </li>
-                  <li v-if="memberData.length === 0" class="loader"><div class="nalagalnik" style="height: 300px;"></div></li>
-                  <li v-for="member in processedMemberData" class="person">
-                    <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
-                      <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
-                    </a>
-                    <div class="column wider name">
-                      <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
-                    </div>
-                    <div class="column" v-if="member.partylink">
-                      <a class="funblue-light-hover" :href="'/p/id/' + member.person.party.id + ''">{{ member.person.party.acronym }}</a>
-                    </div>
-                    <div class="column" v-else>
-                      {{ member.person.party.acronym }}
-                    </div>
-                    <div class="column district">{{ member.person.formattedDistrict }}</div>
-                    <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-footer">
-                  <div class="card-circle-button card-share"></div>
-                  <div class="card-circle-button card-embed"></div>
-                  <div class="card-circle-button card-info">i</div>
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Generated url</h2>
-          <p class="generated-url">{{ generatedCardUrl }}</p>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-  new Vue({
-    el: '#member-list-generator-container',
-    components: ['SearchDropdown'],
-    data: {
-      memberData: [],
-      districts: [],
-      currentSort: 'name',
-      currentSortOrder: 'asc',
-      currentAnalysis: 'alphabetical',
-      analyses: [
-        { id: 'alphabetical',         label: 'Abecedni seznam', },
-        { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           round: true, unit: 'percent' },
-        { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', round: true, unit: 'percent' },
-        { id: 'vocabulary_size',      label: 'Besedni zaklad' },
-        { id: 'spoken_words',         label: 'Št. izgovorjenih besed' },
-        { id: 'speeches_per_session', label: 'Št. govorov na sejo' },
-        { id: 'privzdignjeno',        label: 'Privzdignjeno besedje',            scientific: true },
-        { id: 'preprosto',            label: 'Preprosto besedje',                round: true },
-        { id: 'problematicno',        label: 'Ekscesno besedje',                 round: true },
-      ],
-      currentParties: [],
-      parties: [ 'SMC', 'SDS', 'DeSUS', 'SD', 'ZL', 'NSI', 'PS NP', 'IMNS', 'NeP' ],
-      excludePresiding: false
-    },
-    computed: {
-      columns: function() {
-        var columns = [
-          { id: 'name', label: 'Ime', additionalClass: 'wider' },
-          { id: 'party', label: 'PS' },
-          { id: 'district', label: 'Okraj', additionalClass: 'district' }
-        ]
+<script>
+new Vue({
+  el: '#member-list-generator-container',
+  components: ['SearchDropdown'],
+  data: {
+    memberData: [],
+    districts: [],
+    currentSort: 'name',
+    currentSortOrder: 'asc',
+    currentAnalysis: 'alphabetical',
+    analyses: [
+      { id: 'alphabetical',         label: 'Abecedni seznam', },
+      { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           round: true, unit: 'percent' },
+      { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', round: true, unit: 'percent' },
+      { id: 'vocabulary_size',      label: 'Besedni zaklad' },
+      { id: 'spoken_words',         label: 'Št. izgovorjenih besed' },
+      { id: 'speeches_per_session', label: 'Št. govorov na sejo' },
+      { id: 'privzdignjeno',        label: 'Privzdignjeno besedje',            scientific: true },
+      { id: 'preprosto',            label: 'Preprosto besedje',                round: true },
+      { id: 'problematicno',        label: 'Ekscesno besedje',                 round: true },
+    ],
+    currentParties: [],
+    parties: [ 'SMC', 'SDS', 'DeSUS', 'SD', 'ZL', 'NSI', 'PS NP', 'IMNS', 'NeP' ],
+    excludePresiding: false
+  },
+  computed: {
+    columns: function() {
+      var columns = [
+        { id: 'name', label: 'Ime', additionalClass: 'wider' },
+        { id: 'party', label: 'PS' },
+        { id: 'district', label: 'Okraj', additionalClass: 'district' }
+      ]
 
-        if (this.currentAnalysis !== 'alphabetical') {
-          columns.push({ id: 'analysis', label: 'Analiza' })
-        }
-
-        return columns
-      },
-      currentAnalysisData: function() {
-        var that = this,
-            currentAnalysis
-
-        this.analyses.forEach(function(analysis) {
-          if (analysis.id === that.currentAnalysis) {
-            currentAnalysis = analysis
-          }
-        })
-
-        return currentAnalysis
-      },
-      currentDistricts: function() {
-        return this.districts
-          .filter(function(district) { return district.selected })
-          .map(function(district) { return district.id })
-      },
-      inputPlaceholder: function() {
-        return this.currentDistricts.length ? 'izbranih okrajev: ' + this.currentDistricts.length : 'izberi okraj'
-      },
-      processedMemberData: function() {
-        var that = this
-        var sortedAndFiltered = this.memberData
-          .filter(function(member) {
-            var partyMatch = true,
-                districtMatch = true,
-                presidingMatch = true
-
-            if (that.currentParties.length > 0) {
-              // Beware! NeP check is currently hacked in here.
-              var stringToMatch = member.person.party.acronym
-              if (stringToMatch.indexOf('NeP') > -1) {
-                stringToMatch = 'NeP'
-              }
-              partyMatch = that.currentParties.indexOf(stringToMatch) > -1
-            }
-            if (that.currentDistricts.length > 0) {
-              districtMatch = member.person.district.reduce(function(prevMatch, memberDistrict) {
-                return prevMatch || that.currentDistricts.indexOf(String(memberDistrict)) > -1
-              }, false)
-            }
-            if (that.excludePresiding) {
-              presidingMatch = !member.person.has_function
-            }
-
-            return partyMatch && districtMatch && presidingMatch
-          })
-          .map(function(member) {
-            if (member.person.district.length === 0) {
-              member.person.formattedDistrict = 'okraj ni vnešen'
-            } else {
-              member.person.formattedDistrict = member.person.district.map(function(memberDistrict) {
-                var matchingDistrict = that.districts.filter(function(district) {
-                  return district.id === String(memberDistrict)
-                })[0]
-                return matchingDistrict.label
-              }).join(', ')
-            }
-            if (member.person.party.acronym.indexOf('NeP') === -1) {
-              member.partylink = true;
-            } else {
-              member.partylink = false;
-            }
-
-            return member
-          })
-          .sort(function(memberA, memberB) {
-            switch (that.currentSort) {
-              case 'analysis':
-                var a = memberA.results[that.currentAnalysis]
-                var b = memberB.results[that.currentAnalysis]
-                return a < b ? -1 : (a > b ? 1 : 0)
-              case 'name':
-                var a = memberA.person.name
-                var b = memberB.person.name
-                return a.localeCompare(b)
-              case 'district':
-                var a = memberA.person.formattedDistrict
-                var b = memberB.person.formattedDistrict
-                return a.localeCompare(b)
-              case 'party':
-                var a = memberA.person.party.acronym
-                var b = memberB.person.party.acronym
-                return a.localeCompare(b)
-              default:
-                break
-            }
-          })
-
-        if (this.currentSortOrder === 'desc') {
-          sortedAndFiltered.reverse()
-        }
-
-        return sortedAndFiltered
-      },
-      generatedCardUrl: function() {
-        var params = {}
-        if (this.currentAnalysis !== 'alphabetical') {
-          params.analysis = this.currentAnalysis
-        }
-        if (this.currentParties.length > 0) {
-          params.parties = this.currentParties
-        }
-        if (this.currentDistricts.length > 0) {
-          params.districts = this.currentDistricts
-        }
-        if (this.excludePresiding) {
-          params.excludePresiding = true
-        }
-
-        return 'https://glej.parlameter.si/p/seznam-poslancev/' +
-          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembers') +
-          (Object.keys(params).length > 0 ? '&status=' + encodeURIComponent(JSON.stringify(params)) : '')
+      if (this.currentAnalysis !== 'alphabetical') {
+        columns.push({ id: 'analysis', label: 'Analiza' })
       }
+
+      return columns
     },
-    created: function() {
-      var that = this
-      $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembers/', function(response) {
-        that.districts = response.districts.map(function(district) {
-          var id = Object.keys(district)[0]
-          return {
-            id: id,
-            label: district[id],
-            selected: false
-          }
-        })
-        that.memberData = response.data
+    currentAnalysisData: function() {
+      var that = this,
+          currentAnalysis
+
+      this.analyses.forEach(function(analysis) {
+        if (analysis.id === that.currentAnalysis) {
+          currentAnalysis = analysis
+        }
       })
+
+      return currentAnalysis
     },
-    methods: {
-      selectAnalysis: function(analysisId) {
-        this.currentAnalysis = analysisId
+    currentDistricts: function() {
+      return this.districts
+        .filter(function(district) { return district.selected })
+        .map(function(district) { return district.id })
+    },
+    inputPlaceholder: function() {
+      return this.currentDistricts.length ? 'izbranih okrajev: ' + this.currentDistricts.length : 'izberi okraj'
+    },
+    processedMemberData: function() {
+      var that = this
+      var sortedAndFiltered = this.memberData
+        .filter(function(member) {
+          var partyMatch = true,
+              districtMatch = true,
+              presidingMatch = true
 
-        if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
-          this.selectSort('name')
-        } else {
-          this.currentSort = 'analysis';
-          this.currentSortOrder = 'desc';
-        }
-      },
-      selectSort: function(sortId) {
-        if (this.currentSort === sortId) {
-          this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc'
-        }
-        else {
-          this.currentSort = sortId
-          this.currentSortOrder = 'asc'
-        }
-      },
-      selectParty: function(partyId) {
-        if (this.currentParties.indexOf(partyId) > -1) {
-          this.currentParties.splice(this.currentParties.indexOf(partyId), 1)
-        }
-        else {
-          this.currentParties.push(partyId)
-        }
-      },
-      getFormattedAnalysisValue: function(member) {
-        var value = member.results[this.currentAnalysis]
+          if (that.currentParties.length > 0) {
+            // Beware! NeP check is currently hacked in here.
+            var stringToMatch = member.person.party.acronym
+            if (stringToMatch.indexOf('NeP') > -1) {
+              stringToMatch = 'NeP'
+            }
+            partyMatch = that.currentParties.indexOf(stringToMatch) > -1
+          }
+          if (that.currentDistricts.length > 0) {
+            districtMatch = member.person.district.reduce(function(prevMatch, memberDistrict) {
+              return prevMatch || that.currentDistricts.indexOf(String(memberDistrict)) > -1
+            }, false)
+          }
+          if (that.excludePresiding) {
+            presidingMatch = !member.person.has_function
+          }
 
-        if (value !== 0) {
-          if (this.currentAnalysisData.round) { value = Math.round(value * 10) / 10 }
-          if (this.currentAnalysisData.scientific) { value = value.toExponential() }
-        }
-        if (this.currentAnalysisData.unit === 'percent') { value += '%' }
+          return partyMatch && districtMatch && presidingMatch
+        })
+        .map(function(member) {
+          if (member.person.district.length === 0) {
+            member.person.formattedDistrict = 'okraj ni vnešen'
+          }
+          else {
+            member.person.formattedDistrict = member.person.district.map(function(memberDistrict) {
+              var matchingDistrict = that.districts.filter(function(district) {
+                return district.id === String(memberDistrict)
+              })[0]
+              return matchingDistrict.label
+            }).join(', ')
+          }
 
-        return value
+          member.partylink = member.person.party.acronym.indexOf('NeP') === -1
+
+          return member
+        })
+        .sort(function(memberA, memberB) {
+          switch (that.currentSort) {
+            case 'analysis':
+              var a = memberA.results[that.currentAnalysis]
+              var b = memberB.results[that.currentAnalysis]
+              return a < b ? -1 : (a > b ? 1 : 0)
+            case 'name':
+              var a = memberA.person.name
+              var b = memberB.person.name
+              return a.localeCompare(b)
+            case 'district':
+              var a = memberA.person.formattedDistrict
+              var b = memberB.person.formattedDistrict
+              return a.localeCompare(b)
+            case 'party':
+              var a = memberA.person.party.acronym
+              var b = memberB.person.party.acronym
+              return a.localeCompare(b)
+            default:
+              break
+          }
+        })
+
+      if (this.currentSortOrder === 'desc') {
+        sortedAndFiltered.reverse()
       }
+
+      return sortedAndFiltered
+    },
+    generatedCardUrl: function() {
+      var params = {}
+      if (this.currentAnalysis !== 'alphabetical') {
+        params.analysis = this.currentAnalysis
+      }
+      if (this.currentParties.length > 0) {
+        params.parties = this.currentParties
+      }
+      if (this.currentDistricts.length > 0) {
+        params.districts = this.currentDistricts
+      }
+      if (this.excludePresiding) {
+        params.excludePresiding = true
+      }
+
+      return 'https://glej.parlameter.si/p/seznam-poslancev/' +
+        '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembers') +
+        (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
     }
-  })
-  </script>
+  },
+  created: function() {
+    var that = this
+    $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembers/', function(response) {
+      that.districts = response.districts.map(function(district) {
+        var id = Object.keys(district)[0]
+        return {
+          id: id,
+          label: district[id],
+          selected: false
+        }
+      })
+      that.memberData = response.data
+    })
+  },
+  methods: {
+    selectAnalysis: function(analysisId) {
+      this.currentAnalysis = analysisId
 
+      if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
+        this.selectSort('name')
+      }
+      else {
+        this.currentSort = 'analysis'
+        this.currentSortOrder = 'desc'
+      }
+    },
+    selectSort: function(sortId) {
+      if (this.currentSort === sortId) {
+        this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc'
+      }
+      else {
+        this.currentSort = sortId
+        this.currentSortOrder = 'asc'
+      }
+    },
+    selectParty: function(partyId) {
+      if (this.currentParties.indexOf(partyId) > -1) {
+        this.currentParties.splice(this.currentParties.indexOf(partyId), 1)
+      }
+      else {
+        this.currentParties.push(partyId)
+      }
+    },
+    getFormattedAnalysisValue: function(member) {
+      var value = member.results[this.currentAnalysis]
 
+      if (value !== 0) {
+        if (this.currentAnalysisData.round) { value = Math.round(value * 10) / 10 }
+        if (this.currentAnalysisData.scientific) { value = value.toExponential() }
+      }
+      if (this.currentAnalysisData.unit === 'percent') { value += '%' }
 
+      return value
+    }
+  }
+})
+
+makeEmbedSwitch()
+activateCopyButton()
+addCardRippling()
+
+</script>
 
 <% include ../partials/footer.ejs %>
