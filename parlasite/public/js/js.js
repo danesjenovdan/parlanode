@@ -97,16 +97,17 @@ $(function () {
 
     function updateHeaderSearch() {
         poeplesearchtypeahead = $('.search-input-header').typeahead({
-
+            'hint': false,
+            'highlight': true
         }, {
             // 'limit': 3,
             'name': 'poslanci',
             'display': 'name',
             'source': mps_search_token,
             'templates': {
-                'empty': '<div class="searchheader">Med poslanci ni zadetkov</div>',
+                'empty': '<div class="searchheader results">POSLANKE IN POSLANCI</div><div class="searchperson-container">Med poslanci ni zadetkov</div>',
                 'suggestion': function(datum) {
-                    return '<div class="searchperson-container"><div class="avgminimg img-circle" style="width: 40px; height: 40px; background-image: url(\'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + datum.gov_id + '.png\'); background-size: cover;"></div>' + datum.name + '</div>'
+                    return '<div class="searchperson-container"><div class="avgminimg img-circle" style="width: 40px; height: 40px; background-image: url(\'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + datum.gov_id + '.png\'); background-size: cover; float: left; left: -5px;"></div>' + datum.name + '</div>'
                 },
                 'header': '<div class="searchheader">POSLANKE IN POSLANCI</div>'
             }
@@ -116,9 +117,9 @@ $(function () {
             'display': 'acronym',
             'source': ops_search_token,
             'templates': {
-                'empty': '<div class="searchheader">Med PS ni zadetkov</div>',
+                'empty': '<div class="searchheader results">POSLANKE IN POSLANCI</div><div class="searchperson-container">Med PS ni zadetkov</div>',
                 'suggestion': function(datum) {
-                    return '<div class="searchperson-container"><div class="avgminimg avgminimg-party img-circle" style="width: 40px; height: 40px;"></div>' + datum.acronym + '</div>'
+                    return '<div class="searchperson-container"><div class="avgminimg avgminimg-party img-circle ' + datum.acronym.replace(/ /g, '_').toLowerCase() + '-background" style="width: 40px; height: 40px; float: left; left: -5px;"></div>' + datum.acronym + '</div>'
                 },
                 'header': '<div class="searchheader results">POSLANSKE SKUPINE</div>'
             }
@@ -140,6 +141,7 @@ $(function () {
         });
 
         $('.search-input-header').bind('typeahead:select', function(e, value) {
+            return false;
             if(typeof value.acronym !== 'undefined'){
                 window.location.href = value.url;
             }else{
