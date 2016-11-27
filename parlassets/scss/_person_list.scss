@@ -53,6 +53,10 @@
         }
       }
       &.name { text-align: left; }
+      &.large-number {
+        font-size: 36px;
+        font-weight: 500;
+      }
     }
   }
   @include respond-to(mobile) {
@@ -61,12 +65,15 @@
 
     .person {
       padding: 6px 0;
-      .column.portrait {
-        margin: 0 $image-margin 0 0;
-        img {
-          height: $image-size;
-          width: $image-size;
+      .column {
+        &.portrait {
+          margin: 0 $image-margin 0 0;
+          img {
+            height: $image-size;
+            width: $image-size;
+          }
         }
+        &.large-number { font-size: 30px; }
       }
     }
 
