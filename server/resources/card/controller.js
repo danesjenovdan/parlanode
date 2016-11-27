@@ -261,7 +261,7 @@ exports.render = function(req, res){
                 }
                 dataUrl = analizeUrl;
             }else{
-                dataUrl = customUrl;
+                dataUrl = encodeURI(customUrl);
             }
 
             cacheData.dataUrl = dataUrl;
