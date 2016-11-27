@@ -13,6 +13,10 @@ $noblue: #99E1FF;
 $red: #ff5e41;
 $green: #acc501;
 $border-light : #f0f0f0;
+
+
+
+
 $party-colors: (
   smc: #8fcfee,
   sds: #22a2e0,
@@ -49,7 +53,7 @@ $vote-colors: (
 }
 
 @each $party, $color in $party-colors {
-  .#{$party}-hover:hover { background: $color; }
+  .#{$party}-hover:hover { background: $color; color: #ffffff; }
 }
 
 .funblue-light-hover {
