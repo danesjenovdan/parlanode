@@ -75,7 +75,11 @@
 }
 
 
-.other_poslanec .avgmin {}
+.other_poslanec .avgmin {
+    .progress_number {
+        padding-left: 20px;
+    }
+}
 
 .other_poslanec .progress_number {
     font-size: 20px;
@@ -153,9 +157,9 @@
 
 
 .avgminimg {
-    float: left;
+    float: right;
     position: relative;
-    left: -12px;
+    left: 15px;
 
     width: 30px;
     height: 30px;
