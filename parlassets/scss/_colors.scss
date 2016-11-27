@@ -54,6 +54,10 @@ $vote-colors: (
 }
 
 @each $party, $color in $party-colors {
+  .#{$party}-border { border: 2px solid $color; }
+}
+
+@each $party, $color in $party-colors {
   .#{$party}-hover:hover { background: $color; color: #ffffff; }
 }
 
