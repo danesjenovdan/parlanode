@@ -54,6 +54,7 @@
       }
       &.name { text-align: left; }
       &.large-number {
+        flex: none;
         font-size: 36px;
         font-weight: 500;
       }
