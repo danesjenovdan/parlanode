@@ -759,7 +759,7 @@ const routes = [
                             let psId = psData.psId;
                             let psSlug = psData.psSlug;
 
-                            let state = encodeURIComponent('{"people": [{"id": []}], "parties": [' + psSlug + ']}');
+                            let state = encodeURIComponent('{"people": [{"id": []}], "parties": ["' + psSlug + '"]}');
 
                             var pattern = new UrlPattern(card.sourceUrl);
                             const renderedPath = pattern.stringify({id: psId});
