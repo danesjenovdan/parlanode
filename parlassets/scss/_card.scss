@@ -48,10 +48,14 @@
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
 .card-container .card-content.full {
-    @include respond-to(desktop) { height: 500px; }
+    $height: 500px;
+    max-height: $height;
+    @include respond-to(desktop) { height: $height }
 }
 .card-container .card-content.half {
-    @include respond-to(desktop) { height: 180px; }
+    $height: 180px;
+    max-height: $height;
+    @include respond-to(desktop) { height: $height; }
 }
 // end of muki made this global (removed col-md-12 > etc.)
 
