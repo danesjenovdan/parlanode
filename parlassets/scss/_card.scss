@@ -11,21 +11,7 @@
     overflow: hidden;
     background-color: #ffffff;
     @include card(1);
-
-    ::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: $funblue-light;
-      border-radius: 0;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: $sadblue;
-      border-radius: 0;
-    }
+    @extend %scroller;
 }
 .card-header {
     width: 100%;
@@ -435,11 +421,6 @@ input.form-control, textarea.form-control {
     top: 3px;
     right: 10px;
     transition: all 0.5s;
-    -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-    -khtml-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-    -ms-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-    -o-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
 }
 
