@@ -1,46 +1,48 @@
 <% include ../partials/header.ejs %>
 
-
-
 <div id="member-list-generator-container">
-    <div class="container member-list-generator">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="analyses">
-            <li v-for="analysis in analyses"
-                :class="{ selected: analysis.id === currentAnalysis }"
-                @click="selectAnalysis(analysis.id)">
-              <span>{{ analysis.label }}</span>
-            </li>
-          </ul>
+  <div class="container member-list-generator">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="analyses">
+          <li v-for="analysis in analyses"
+              :class="{ selected: analysis.id === currentAnalysis }"
+              @click="selectAnalysis(analysis.id)">
+            <span>{{ analysis.label }}</span>
+          </li>
+        </ul>
 
-          <div class="mobile-analyses">
-            <label for="analysis">Izberi analizo</label>
-            <div class="select">
-              <select
-                name="analysis"
-                id="analysis"
-                v-model="currentAnalysis">
-                <option
-                  v-for="analysis in analyses"
-                  :value="analysis.id">
-                  {{ analysis.label }}
-                </option>
-              </select>
-            </div>
+        <div class="mobile-analyses">
+          <label for="analysis">Izberi analizo</label>
+          <div class="select">
+            <select
+              name="analysis"
+              id="analysis"
+              v-model="currentAnalysis">
+              <option
+                v-for="analysis in analyses"
+                :value="analysis.id">
+                {{ analysis.label }}
+              </option>
+            </select>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card-container card-halfling card-seznam-poslanskih-skupin">
-              <div class="card-header">
-                  <div class="card-header-border"></div>
-                  <h1>Seznam poslanskih skupin {{ currentAnalysisData.titleSuffix }}</h1>
-              </div>
-              <div class="card-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-container card-halfling card-seznam-poslanskih-skupin">
+          <div class="card-header">
+            <div class="card-header-border"></div>
+            <h1>Seznam poslanskih skupin {{ currentAnalysisData.titleSuffix }}</h1>
+          </div>
+            <div class="card-content">
+              <div class="card-content-front">
                 <ul class="party-list">
+                  <li v-if="processedPartyData.length === 0" class="loader">
+                    <div class="nalagalnik"></div>
+                  </li>
                   <li v-for="party in processedPartyData" class="party">
                     <div class="column name">
                       <a class="funblue-light-hover" :href="'/ps/id/' + party.party.id">{{ party.party.acronym }}</a>
@@ -50,103 +52,149 @@
                         <div class="progress-bar funblue" role="progressbar" :style="{ width: party.chartWidth }"></div>
                         <div class="progress_number">{{ party.displayValue }}</div>
                       </div>
+                    </div>
                   </li>
                 </ul>
               </div>
-              <div class="card-footer">
-                  <div class="card-circle-button card-share"></div>
-                  <div class="card-circle-button card-embed"></div>
-                  <div class="card-circle-button card-info">i</div>
+              <div class="card-content-info hidden">
+                <div class="card-back-content">
+                  <div class="scroller" id="tvojamtka">
+                    <p class="info-text"></p>
+                  </div>
+                </div>
               </div>
-          </div>
-        </div>
-      </div>
+              <div class="card-content-embed hidden">
+                <div class="card-back-content">
+                  <div class="embed-content">
+                    <div class="embed-divider"></div>
+                    <div class="embed-switch-container">
+                      <div class="embed-label">Podatki naj se vedno osvežujejo</div>
+                      <div class="embed-switch-big-box">
+                        <div class="embed-switch-box">
+                          <div class="embed-switch">
+                            <div class="embed-switches">
+                              <div class="leftswitch">DA</div>
+                              <div class="rightswitch">NE</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="embed-switch-ball"></div>
+                      </div>
+                    </div>
+                    <div class="embed-divider"></div>
+                    <div class="embed-script">
+                      <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/ps/seznam-poslanskih-skupin/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
+                      <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+                    </div>
+                    <div class="embed-divider"></div>
+                    <div class="embed-export">
+                      <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-content-share hidden">
+                  <div class="card-back-content card-content">
+                      <div class="share-content">
+                          <label for="share-url">Neposredna povezava do kartice</label>
+                          <input type="url" class="form-control share-url" id="share-url" :value="generatedCardUrl + '&frame=true'"/>
+                          <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Generated url</h2>
-          <p class="generated-url">{{ generatedCardUrl }}</p>
+            <div class="card-footer">
+              <div class="card-circle-button card-share" data-back="share"></div>
+              <div class="card-circle-button card-embed" data-back="embed"></div>
+              <div class="card-circle-button card-info" data-back="info">i</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-  new Vue({
-    el: '#member-list-generator-container',
-    data: {
-      partyData: [],
-      currentAnalysis: 'seat_count',
-      analyses: [
-        { id: 'seat_count',           label: 'Število sedežev',                  titleSuffix: 'po številu sedežev' },
-        { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           titleSuffix: 'po prisotnosti na sejah DZ',           unit: 'percent' },
-        { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', titleSuffix: 'po prisotnosti na glasovanjih sej DZ', unit: 'percent' },
-        { id: 'vocabulary_size',      label: 'Raznolikost besedišča',            titleSuffix: 'po raznolikosti besedišča' },
-        { id: 'privzdignjeno',        label: 'Privzdignjeno besedje',            titleSuffix: 'po pogostosti rabe privzdignjenega besedja' },
-        { id: 'preprosto',            label: 'Preprosto besedje',                titleSuffix: 'po pogostosti rabe preprostega besedja' },
-        { id: 'problematicno',        label: 'Ekscesno besedje',                 titleSuffix: 'po pogostosti rabe ekscesnega besedja' },
-      ]
-    },
-    computed: {
-      currentAnalysisData: function() {
-        var that = this,
-            currentAnalysis
+<script>
+new Vue({
+  el: '#member-list-generator-container',
+  data: {
+    partyData: [],
+    currentAnalysis: 'seat_count',
+    analyses: [
+      { id: 'seat_count',           label: 'Število sedežev',                  titleSuffix: 'po številu sedežev' },
+      { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           titleSuffix: 'po prisotnosti na sejah DZ',           unit: 'percent' },
+      { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', titleSuffix: 'po prisotnosti na glasovanjih sej DZ', unit: 'percent' },
+      { id: 'vocabulary_size',      label: 'Raznolikost besedišča',            titleSuffix: 'po raznolikosti besedišča' },
+      { id: 'privzdignjeno',        label: 'Privzdignjeno besedje',            titleSuffix: 'po pogostosti rabe privzdignjenega besedja' },
+      { id: 'preprosto',            label: 'Preprosto besedje',                titleSuffix: 'po pogostosti rabe preprostega besedja' },
+      { id: 'problematicno',        label: 'Ekscesno besedje',                 titleSuffix: 'po pogostosti rabe ekscesnega besedja' },
+    ]
+  },
+  computed: {
+    currentAnalysisData: function() {
+      var that = this,
+          currentAnalysis
 
-        this.analyses.forEach(function(analysis) {
-          if (analysis.id === that.currentAnalysis) {
-            currentAnalysis = analysis
-          }
-        })
-
-        return currentAnalysis
-      },
-      processedPartyData: function() {
-        var that = this
-
-        var maxValue = this.partyData.reduce(function(oldValue, nextParty) {
-          return Math.max(oldValue, nextParty.results[that.currentAnalysis])
-        }, 0)
-
-        return this.partyData.map(function(party) {
-          var rawValue = party.results[that.currentAnalysis]
-          party.displayValue = that.round(rawValue, 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')
-          party.chartWidth = rawValue === 0 ? '1px' : rawValue / maxValue * 80 + '%'
-          return party
-        })
-      },
-      generatedCardUrl: function() {
-        var params = {}
-        if (this.currentAnalysis !== 'seat_count') {
-          params.analysis = this.currentAnalysis
+      this.analyses.forEach(function(analysis) {
+        if (analysis.id === that.currentAnalysis) {
+          currentAnalysis = analysis
         }
+      })
 
-        return 'https://glej.parlameter.si/p/seznam-poslancev/' +
-          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
-          (Object.keys(params).length > 0 ? '&status=' + encodeURIComponent(JSON.stringify(params)) : '')
-      }
+      return currentAnalysis
     },
-    created: function() {
+    processedPartyData: function() {
       var that = this
-      $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', function(response) {
-        that.partyData = response.data.sort(function(partyA, partyB) {
-          var a = partyA.results.seat_count
-          var b = partyB.results.seat_count
-          return a < b ? 1 : (a > b ? -1 : 0)
-        })
+
+      var maxValue = this.partyData.reduce(function(oldValue, nextParty) {
+        return Math.max(oldValue, nextParty.results[that.currentAnalysis])
+      }, 0)
+
+      return this.partyData.map(function(party) {
+        var rawValue = party.results[that.currentAnalysis]
+        party.displayValue = that.round(rawValue, 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')
+        party.chartWidth = rawValue === 0 ? '1px' : rawValue / maxValue * 80 + '%'
+        return party
       })
     },
-    methods: {
-      selectAnalysis: function(analysisId) {
-        this.currentAnalysis = analysisId
-      },
-      round: function(value, precision) {
-        var multiplier = Math.pow(10, precision || 0);
-        return Math.round(value * multiplier) / multiplier;
+    generatedCardUrl: function() {
+      var params = {}
+      if (this.currentAnalysis !== 'seat_count') {
+        params.analysis = this.currentAnalysis
       }
+
+      return 'https://glej.parlameter.si/p/seznam-poslancev/' +
+        '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
+        (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
     }
-  })
-  </script>
+  },
+  created: function() {
+    var that = this
+    $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', function(response) {
+      that.partyData = response.data.sort(function(partyA, partyB) {
+        var a = partyA.results.seat_count
+        var b = partyB.results.seat_count
+        return a < b ? 1 : (a > b ? -1 : 0)
+      })
+    })
+  },
+  methods: {
+    selectAnalysis: function(analysisId) {
+      this.currentAnalysis = analysisId
+    },
+    round: function(value, precision) {
+      var multiplier = Math.pow(10, precision || 0)
+      return Math.round(value * multiplier) / multiplier
+    }
+  }
+})
 
+makeEmbedSwitch()
+activateCopyButton()
+addCardRippling()
 
+</script>
 
 <% include ../partials/footer.ejs %>
