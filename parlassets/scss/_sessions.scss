@@ -134,16 +134,13 @@
     .paneltab {
         padding-top: 15px;
         padding-bottom: 15px;
-        h2 {}
+        &.border-right { border-right: 1px solid $grey; }
         .member {
             border-bottom: 1px solid #f0f0f0;
             padding: 10px 0;
             position: relative;
-            .image {}
-            .member_data {}
             h3 {
-                font-size: 18px;
-                font-weight: 300;
+                @extend %list-text;
                 margin: 12px 0 0 0;
             }
             h4 {
@@ -158,9 +155,6 @@
                 margin-right: 1%;
             }
         }
-    }
-    .paneltab.border-right {
-        border-right: 1px solid $grey;
     }
 }
 .sessionsGetSessionByDate {
