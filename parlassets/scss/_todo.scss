@@ -309,19 +309,10 @@
   padding-bottom: 30px;
 }
 
-.me_poslanec .poslanec_title {
-  font-size: 18px;
-  font-weight: 500;
-}
-
 .other_poslanec {
   padding-bottom: 30px;
 }
 
-.other_poslanec .poslanec_title {
-  font-size: 18px;
-  font-weight: 300;
-}
 
 .progress {
   border: none;
@@ -348,6 +339,8 @@
 .progress.smallbar .funblue {
   background: $funblue;
 }
+
+
 
 .other_poslanec .avgmin {
 }
@@ -472,10 +465,6 @@
   padding-bottom: 20px;
 }
 
-.me_poslanec_mini .poslanec_title {
-  font-size: 18px;
-  font-weight: 100;
-}
 
 .me_poslanec_mini .progress_number {
   font-size: 16px;
