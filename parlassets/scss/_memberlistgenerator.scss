@@ -10,7 +10,7 @@
 
   .analyses {
     @extend %list-flex;
-    @include show-for(tablet-up, flex);
+    @include show-for(desktop, flex);
     margin: 14px 0;
 
     li {
@@ -75,14 +75,14 @@
   }
 
   .districts {
-    @include show-for(tablet-up, flex);
+    @include show-for(desktop, flex);
 
     flex: 1;
     margin-left: 15px;
   }
 
   .exclude-presiding {
-    @include show-for(tablet-up, flex);
+    @include show-for(desktop, flex);
 
     align-items: center;
     justify-content: flex-end;
