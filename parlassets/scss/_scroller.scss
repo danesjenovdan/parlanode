@@ -1,0 +1,15 @@
+%scroller {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $funblue-light;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $sadblue;
+    border-radius: 0;
+  }
+}
