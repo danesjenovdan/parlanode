@@ -67,11 +67,20 @@
         font-weight: bold;
         text-transform: uppercase;
     }
-    .form-control {
-        border-radius: 0;
-        border-right: medium none;
-        font-size: 20px;
-        height: 50px;
+    .search {
+        .form-control {
+            border-radius: 0;
+            border-right: medium none;
+            font-size: 20px;
+            height: 50px;
+            border-color: $grey-medium;
+            border-right: none;
+        }
+        .input-group-btn{
+            border-color: $grey-medium;
+            border-left: none;
+            color: $red;
+        }
     }
     button.btn {
         border-radius: 0;
