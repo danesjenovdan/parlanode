@@ -34,7 +34,7 @@
       <div class="col-md-12 parties-districts">
         <ul class="parties">
           <li v-for="party in parties" class="party-button"
-              :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase()]"
+              :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase(), party.replace(/ /g, '_').toLowerCase() + '-hover']"
               @click="selectParty(party)">
             {{ party }}
           </li>
