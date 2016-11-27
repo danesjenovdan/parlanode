@@ -327,7 +327,14 @@ $(function () {
     //lastActivity.init();
 
     checkCardEmbed();
+    autoSelectText();
 });
+
+function autoSelectText() {
+    $(".embed-script textarea, .share-content input.share-url").on("focus", function() {
+        $(this).select();
+    });
+}
 
 function checkCardEmbed() {
     if (window.location.search && (window.location.search.indexOf("frame=true") > -1 || window.location.search.indexOf("embed=true") > -1)) {
@@ -430,7 +437,7 @@ function addCardFlip() {
     });
 }
 
-function copyToClipboard(elem) {
+function copyToClipboard(elem, button) {
     // create hidden text element, if it doesn't already exist
     var targetId = "_hiddenCopyText_";
     var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
@@ -477,12 +484,16 @@ function copyToClipboard(elem) {
         // clear temporary content
         target.textContent = "";
     }
+
+    if (succeed) {
+        button.textContent = "SKOPIRANO!";
+    }
     return succeed;
 }
 
 function activateCopyButton() {
-    $('.btn-copy-embed').on('click', function() {
-        copyToClipboard($(this).prev()[0]);
+    $('.btn-copy-embed, .card-content-share button').on('click', function() {
+        copyToClipboard($(this).prev()[0], this);
     });
 }
 
