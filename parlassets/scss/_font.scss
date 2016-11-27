@@ -17,6 +17,15 @@ h1 {
 
 /* global fonts */
 
+.header {
+    .nav {
+        .navbar-nav {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
 .footer {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
