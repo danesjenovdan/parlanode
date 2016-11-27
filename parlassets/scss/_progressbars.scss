@@ -1,15 +1,15 @@
 .me_poslanec {
-    padding-bottom: 30px;
+    padding-bottom: 25px;
 }
 
 .me_poslanec .poslanec_title {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .me_poslanec .progress_number {
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .me_poslanec_mini {
@@ -25,15 +25,9 @@
 }
 
 
-
-
 .other_poslanec {
-    padding-bottom: 30px;
-}
-
-.other_poslanec .poslanec_title {
-    font-size: 18px;
-    font-weight: 300;
+    padding-bottom: 25px;
+    .poslanec_title { @extend %list-text }
 }
 
 .progress {
@@ -75,38 +69,19 @@
 }
 
 
-.other_poslanec .avgmin {}
+.other_poslanec .avgmin {
+    .progress_number {
+        padding-left: 20px;
+    }
+}
 
 .other_poslanec .progress_number {
     font-size: 20px;
     line-height: 20px;
 }
 
-.avgminmin {}
-
-.avgminimg {
-    float: left;
-    position: relative;
-    left: -5px;
-}
-
-.avgminimg img {}
-
 .other_poslanec .img-circle {
     width: 35px;
-}
-
-.progress.avgminmin {
-    height: 30px;
-}
-
-.avgminmin .progress-bar {
-    margin-top: 6px;
-    height: 20px;
-}
-
-.avgminmin .progress_number {
-    padding-top: 5px;
 }
 
 //
@@ -169,3 +144,57 @@
 
     z-index: 10;
 }
+
+.smallbar {
+    height: 30px;
+}
+
+
+.avgminimg {
+    float: right;
+    position: relative;
+    left: 15px;
+
+    width: 30px;
+    height: 30px;
+
+    background-position: center;
+    background-size: cover;
+
+    border: 2px solid #ffffff;
+}
+<<<<<<< HEAD
+
+// MUKI NEW STUFF FOR SMALL CARDS
+
+.progress_flex {
+    @extend %flex;
+    justify-content: flex-start;
+
+    .column {
+        text-align: left;
+        margin: 0;
+    }
+
+    .progress_title {
+        flex: 2;
+        .poslanec_title {
+            @extend %list-text;
+            line-height: 1.1em;
+        }
+    }
+    .progress_bar {
+        flex: 5;
+
+        .progress.smallbar {
+            @extend %flex;
+            .progress_number {
+                @extend %progress-text;
+            }
+        }
+    }
+}
+
+// END OF MUKI NEW STUFF FOR SMALL CARDS
+=======
+>>>>>>> Add local dependecy on breakpoints to fonts.scss.

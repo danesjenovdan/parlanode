@@ -34,7 +34,7 @@ Above code will be compiled to the following:
 This mixin will help you show/hide elements on different breakpoints.
 ```scss
 .member {
-  @include show-for(tablet, flex);
+  @include show-for(desktop, flex);
 }
 ```
 Above code will be compiled to the following:

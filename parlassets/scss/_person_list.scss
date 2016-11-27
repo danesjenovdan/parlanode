@@ -10,7 +10,7 @@
     text-align: center;
     .nalagalnik { height: 300px; }
   }
-  .column.district { @include show-for(tablet-up); }
+  .column.district { @include show-for(desktop); }
   .headers {
     @extend %flex;
     margin-left: $image-size + $image-margin;
@@ -53,6 +53,11 @@
         }
       }
       &.name { text-align: left; }
+      &.large-number {
+        flex: none;
+        font-size: 36px;
+        font-weight: 500;
+      }
     }
   }
   @include respond-to(mobile) {
@@ -61,12 +66,15 @@
 
     .person {
       padding: 6px 0;
-      .column.portrait {
-        margin: 0 $image-margin 0 0;
-        img {
-          height: $image-size;
-          width: $image-size;
+      .column {
+        &.portrait {
+          margin: 0 $image-margin 0 0;
+          img {
+            height: $image-size;
+            width: $image-size;
+          }
         }
+        &.large-number { font-size: 30px; }
       }
     }
 

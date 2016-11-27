@@ -35,8 +35,11 @@
     h1 {
       margin: 0;
       font-size: 24px;
-      line-height: 40px;
+      line-height: 1.1em;
       padding-left: 13px;
+      padding-right: 13px;
+      padding-top: 6px;
+      padding-bottom: 6px;
       @include respond-to(mobile) { font-size: 18px; }
     }
 }
@@ -47,13 +50,17 @@
 }
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
-.card-container .card-content.full,
 .card-container .card-content.full {
-    height: 500px;
+    $height: 500px;
+    max-height: $height;
+    height: $height;
+    @include respond-to(desktop) { height: $height }
 }
-.card-container .card-content.half,
 .card-container .card-content.half {
-    height: 180px;
+    $height: 180px;
+    max-height: $height;
+    height: $height;
+    @include respond-to(desktop) { height: $height; }
 }
 // end of muki made this global (removed col-md-12 > etc.)
 
@@ -144,11 +151,11 @@
         }
     }
 }
-.card-content.half {
+/*.card-content.half {*/
     .embed-divider {
         display: none;
     }
-}
+/*}*/
 .card-embed-header-divider {
     height: 1px;
 
@@ -480,6 +487,9 @@ input.form-control, textarea.form-control {
 .card-container, .card-content {
     overflow: hidden;
 }
+.card-content.scrollme {
+    overflow-y: auto;
+}
 .card-header {
     z-index: 2;
 }
@@ -489,6 +499,7 @@ input.form-control, textarea.form-control {
 .card-content {
     position: relative;
     z-index: 1;
+    min-height: 180px;
 }
 .card-container::before {
     content: '';
