@@ -4,6 +4,12 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+
+    /* font rendering improvement */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-smooth: always;
 }
 
 h1 {
