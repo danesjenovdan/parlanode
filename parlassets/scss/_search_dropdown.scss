@@ -55,7 +55,7 @@
     padding: 0;
     position: absolute;
     top: $height + 1px;
-    width: 100%;
+    width: calc(100% + 2px);
     z-index: 3;
     &.visible { display: block; }
     li {
