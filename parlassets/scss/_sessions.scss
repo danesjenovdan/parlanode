@@ -76,7 +76,7 @@
             border-color: $grey-medium;
             border-right: none;
         }
-        .input-group-btn{
+        .btn{
             border-color: $grey-medium;
             border-left: none;
             color: $red;
@@ -97,7 +97,6 @@
     width: 24.2%;
     margin-bottom: 20px;
     display: table;
-    overflow: hidden;
     float: left;
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     span {
@@ -218,7 +217,6 @@
     }
 }
 .session-logo {
-    background: $red;
     color: $white;
     text-align: center;
     width: 75px;
