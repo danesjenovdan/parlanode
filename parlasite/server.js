@@ -12,8 +12,10 @@ app.use(express.static('public'));
 
 
 var mpsops = require('./static/data/mpsops');
-
 app.locals.mpsops = mpsops;
+
+var mpsopsurls = require('./static/data/mpsopsurls');
+app.locals.mpsopsurls = mpsopsurls;
 
 
 app.use(function(error, req, res, next) {

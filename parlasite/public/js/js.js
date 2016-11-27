@@ -10,8 +10,6 @@ function equalHeight($elementByClass) {
 
 }
 
-
-
 function toggleHeaderSearch(focus) {
     $(".searchiconbuttton").toggle();
 
@@ -21,7 +19,6 @@ function toggleHeaderSearch(focus) {
             $("#topheadersearch").css({"width": "100%"});
             $("header.header .twitter-typeahead").css({"width": "90%"});
         }
-
 
         $(".header-searchhide").show();
         $(".search-input-header").focus();
@@ -50,7 +47,6 @@ $(function () {
         equalHeight(".session_types ul li");
     }
 
-
     $(".searchiconbuttton").click(function () {
         toggleHeaderSearch(true);
         return false;
@@ -65,7 +61,6 @@ $(function () {
        // toggleHeaderSearch(false);
         return false;
     });
-
 
     var mps_search_token = new Bloodhound({
         'datumTokenizer': Bloodhound.tokenizers.obj.whitespace('name'),
@@ -146,9 +141,9 @@ $(function () {
 
         $('.search-input-header').bind('typeahead:select', function(e, value) {
             if(typeof value.acronym !== 'undefined'){
-                window.location.href = "/ps/id/" + value.id;
+                window.location.href = value.url;
             }else{
-                window.location.href = "/p/id/" + value.id;
+                window.location.href = value.url;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
             $(".header-searchhide").css({"width":"100%", "height":"30px"}).show().html('<div class="nalagalnik"></div>');
@@ -177,10 +172,9 @@ $(function () {
             let ret = [];
             for (let d in data)
                 //ret.push(encodeURIComponent(d) + '/' + encodeURIComponent(data[d]));
-                ret.push((d) + '/' + (data[d]));
+                ret.push((d) + '/' + encodeURIComponent(data[d]));
             return ret.join('&');
         }
-
 
         //var queries = ["raba-skozi-cas", "raba-po-strankah", "najveckrat-so-pojem-uporabili", "nastopi-v-katerih-je-bil-iskalni-niz-izrecen"]
 
@@ -188,12 +182,11 @@ $(function () {
         var querystring = encodeQueryData(queryParams);
 
         $("#session_search_results .getmedata").each(function (e, urlid) {
-
             var urlid = $(this).attr('id');
-
+            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/"+(querystring)));
             $("#"+urlid).html('<div class="nalagalnik"></div>');
 
-            var jqxhr = $.ajax("https://glej.parlameter.si/s/" + urlid + "/?customUrl=https://isci.parlameter.si/"+querystring)
+            var jqxhr = $.ajax(url)
                 .done(function (data) {
 
                     $("#"+urlid).html(data);
@@ -204,7 +197,6 @@ $(function () {
                 })
                 .always(function () {
                 });
-
         });
     }
     session_search_results();
