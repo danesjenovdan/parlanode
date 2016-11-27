@@ -65,11 +65,9 @@
       margin-right: 3px;
       &:last-child { margin-right: 0; }
       @include respond-to(mobile) {
-        $width: 20%;
         flex: none;
         margin: 3px 0 0 0;
-        width: calc(#{$width} - 1.6px);
-        &:last-child { margin-right: $width; }
+        width: calc(25% - 2.25px);
       }
     }
   }
