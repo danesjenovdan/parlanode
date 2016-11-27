@@ -3,7 +3,13 @@
         var parties = [];
         for (person_i in data) {
             if (parties.indexOf(data[person_i].party.acronym) === -1) {
-                parties.push(data[person_i].party);
+
+
+                var tmp = data[person_i].party;
+                tmp.url =  mpsopsurls.base + mpsopsurls.partyLink.base + mpsopsurls.party[data[person_i].party.id].acronym + mpsopsurls.partyLink.pregled;
+
+                parties.push(tmp);
+
             }
         }
         return parties;
@@ -16,7 +22,11 @@
 
     var mps_data = [];
     for (person_i in mpsops) {
-        mps_data.push(mpsops[person_i]);
+        var tmp = mpsops[person_i];
+
+        tmp.url =  mpsopsurls.base + mpsopsurls.personLink.base + mpsopsurls.person[mpsops[person_i].id].slug + mpsopsurls.personLink.pregled;
+        mps_data.push(tmp);
+
     }
 
     var partyObjects = getPartyObjects(mpsops);
