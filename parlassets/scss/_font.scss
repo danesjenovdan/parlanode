@@ -23,7 +23,7 @@ h1 {
     font-size: 14px;
     .mailto {
         font-weight: 400;
-    } 
+    }
     .input-group {
         font-size: 12px;
         font-weight: 400;
@@ -35,11 +35,17 @@ h1 {
         font-size: 11px;
         .mailto {
             font-size: 11px;
-        } 
+        }
         .input-group {
             font-size: 9px;
         }
     }
+}
+
+%list-text {
+  font-size: 18px;
+  font-weight: 300;
+  @include respond-to(mobile) { font-size: 14px; }
 }
 
 /* end of global fonts */

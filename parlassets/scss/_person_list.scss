@@ -42,9 +42,7 @@
     padding: 8px 0;
     &:last-child { border: none; }
     .column {
-      font-family: Roboto, sans-serif;
-      font-size: 18px;
-      font-weight: 300;
+      @extend %list-text;
       &.portrait {
         flex: none;
         margin: 0 $image-margin 0 0;
@@ -63,14 +61,11 @@
 
     .person {
       padding: 6px 0;
-      .column {
-        font-size: 14px;
-        &.portrait {
-          margin: 0 $image-margin 0 0;
-          img {
-            height: $image-size;
-            width: $image-size;
-          }
+      .column.portrait {
+        margin: 0 $image-margin 0 0;
+        img {
+          height: $image-size;
+          width: $image-size;
         }
       }
     }
