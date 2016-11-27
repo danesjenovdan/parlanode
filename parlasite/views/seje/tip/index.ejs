@@ -57,6 +57,8 @@
                 <span>
                    <%- sesData.sesData[i].name %>
                </span>
+
+
             </a>
             <% } %>
         </div>
@@ -68,6 +70,9 @@
     .tmpContainer {
         margin: 0 10px 10px 10px;
     }
+    .tmpContainer .card-container{
+        margin-top: 5px;
+    }
 </style>
 
 <script>
@@ -75,6 +80,9 @@
     $(function () {
         $(".action-t-1").click(function () {
             $(".tmpContainer").remove();
+
+            $(".action-t-1").removeClass("active");
+
 
             var id = $(this).data('id');
             var self = $(this);
@@ -93,6 +101,9 @@
                             cont.insertAfter($($(".colToList .session_type")[newPosition]));
                         }
                         DNDrepeatEmbedCall();
+
+                        self.addClass("active");
+
                     })
                     .fail(function () {
                         var cont = $('<div class="tmpContainer clearfix" />').html("card not ok");
