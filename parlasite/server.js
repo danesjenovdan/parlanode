@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 
+var ops = require('./static/data/ops');
+app.locals.ops = ops;
+
 var mpsops = require('./static/data/mpsops');
 app.locals.mpsops = mpsops;
 
