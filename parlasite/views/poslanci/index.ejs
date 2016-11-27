@@ -70,17 +70,15 @@
                   <div class="nalagalnik"></div>
                 </li>
                 <li v-for="member in processedMemberData" class="person">
-                  <a class="portrait column" :href="'/p/id/' + member.person.id + ''">
+                  <a class="portrait column" :href="getMemberUrl(member.person.id)">
                     <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
                   </a>
                   <div class="column wider name">
-                    <a class="funblue-light-hover" :href="'/p/id/' + member.person.id + ''">{{ member.person.name }}</a>
+                    <a class="funblue-light-hover" :href="getMemberUrl(member.person.id)">{{ member.person.name }}</a>
                   </div>
-                  <div class="column" v-if="member.partylink">
-                    <a class="funblue-light-hover" :href="'/poslanska-skupina/' + member.person.party.acronym + '/pregled'">{{ member.person.party.acronym }}</a>
-                  </div>
-                  <div class="column" v-else>
-                    {{ member.person.party.acronym }}
+                  <div class="column">
+                    <a v-if="member.partylink" class="funblue-light-hover" :href="getPartyUrl(member.person.party)">{{ member.person.party.acronym }}</a>
+                    <template v-else>{{ member.person.party.acronym }}</template>
                   </div>
                   <div class="column district">{{ member.person.formattedDistrict }}</div>
                   <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
@@ -168,7 +166,8 @@ new Vue({
     ],
     currentParties: [],
     parties: ['DeSUS', 'IMNS', 'NSI', 'PS NP', 'SD', 'SDS', 'SMC', 'ZL'],
-    excludePresiding: false
+    excludePresiding: false,
+    slugs: null
   },
   computed: {
     columns: function() {
@@ -294,6 +293,10 @@ new Vue({
   },
   created: function() {
     var that = this
+
+    $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
+      that.slugs = response
+    })
     $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembers/', function(response) {
       that.districts = response.districts.map(function(district) {
         var id = Object.keys(district)[0]
@@ -345,6 +348,16 @@ new Vue({
       if (this.currentAnalysisData.unit === 'percent') { value += '%' }
 
       return value
+    },
+    getMemberUrl: function(memberId) {
+      return this.slugs
+        ? this.slugs.base + this.slugs.personLink.base + this.slugs.person[memberId].slug + this.slugs.personLink.pregled
+        : '/p/id/' + String(memberId)
+    },
+    getPartyUrl: function(party) {
+      return this.slugs
+        ? this.slugs.base + this.slugs.partyLink.base + this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
+        : '/poslanska-skupina/' + party.acronym + '/pregled'
     }
   }
 })
