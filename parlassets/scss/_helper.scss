@@ -1,12 +1,3 @@
-@mixin css3-prefix($property, $value) {
-  -webkit-#{$property}: #{$value};
-   -khtml-#{$property}: #{$value};
-     -moz-#{$property}: #{$value};
-      -ms-#{$property}: #{$value};
-       -o-#{$property}: #{$value};
-          #{$property}: #{$value};
-}
-
 // Computes a top-shadow for a card effect.
 // @param {Number} $depth - depth level
 // @return {List}
@@ -40,16 +31,16 @@
     } @else if $depth > 5 {
         @warn "Invalid $depth `#{$depth}` for mixin `card`.";
     } @else {
-        @include css3-prefix('box-shadow', bottom-shadow($depth) + ', ' + top-shadow($depth));
+        box-shadow: bottom-shadow($depth) + ', ' + top-shadow($depth);
     }
 }
 
 @mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4)) {
-    @include css3-prefix('box-shadow', $x $y $blur $color);
+    box-shadow: $x $y $blur $color;
 }
 
 @mixin border-radius($radius: 5px) {
-    @include css3-prefix('border-radius', $radius);
+    border-radius: $radius;
 }
 
 body {
@@ -69,11 +60,8 @@ a:focus, button:focus{
     outline: none;
 }
 
-
 $cdn_home_img: 'https://cdn.parlameter.si/v1/parlassets/img/';
 $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
-
-
 
 .nopadding {
   padding: 0 !important;
