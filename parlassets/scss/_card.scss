@@ -44,8 +44,6 @@
     width: 100%;
     padding: 0 20px 0 20px;
     margin: 0 0 0px 0;
-
-    overflow-y: auto;
 }
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
@@ -483,6 +481,7 @@ input.form-control, textarea.form-control {
 
 .card-container, .card-content {
     overflow: hidden;
+    overflow-y: auto;
 }
 .card-header {
     z-index: 2;
