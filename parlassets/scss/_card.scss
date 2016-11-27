@@ -481,6 +481,8 @@ input.form-control, textarea.form-control {
 
 .card-container, .card-content {
     overflow: hidden;
+}
+.card-content.scrollme {
     overflow-y: auto;
 }
 .card-header {
