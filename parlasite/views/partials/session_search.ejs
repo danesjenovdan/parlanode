@@ -7,15 +7,44 @@
 
                 <form method="get" action="/seje/isci">
 
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for..." name="q" value="<%=query.q;%>">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </span>
-                </div>
+                    <div class="input-group search">
+                        <input type="text" class="form-control" placeholder="" name="q" value="<%=query.q;%>">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            </span>
+                    </div>
                 </form>
+
+                <% if((typeof query.q !== "undefined") && (query.q.length > 0)){%>
+                <br><br>
+                <h3>Rezultati za iskalni niz "<%=query.q;%>"</h3>
+                <% } %>
+
             </div>
 
         </div>
     </div>
 </div>
+
+<style>
+
+    .action-t-1{
+        overflow: auto;
+    }
+    /*.triangle{*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*border-style: solid;*/
+        /*border-width: 20px 25px 0 25px;*/
+        /*border-color: red transparent transparent transparent;*/
+        /*position: absolute;*/
+        /*bottom: -20px;*/
+        /*left: 102px;*/
+        /*!* margin: 0 auto; *!*/
+        /*display: none;*/
+    /*}*/
+    /*.action-t-1.active .triangle{*/
+        /*display: inline-block;*/
+    /*}*/
+
+</style>
