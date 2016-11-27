@@ -758,9 +758,14 @@ const routes = [
                         .then((psData)=> {
                             let psId = psData.psId;
                             let psSlug = psData.psSlug;
+
+                            let state = encodeURIComponent('{"people": [{"id": []}], "parties": [' + psSlug + ']}');
+
                             var pattern = new UrlPattern(card.sourceUrl);
                             const renderedPath = pattern.stringify({id: psId});
-                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+                            const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
+
                             console.log(cardUrl);
                             return fetch(cardUrl)
                                 .then((res) => {
