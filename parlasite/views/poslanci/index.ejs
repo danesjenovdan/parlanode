@@ -167,7 +167,7 @@ new Vue({
       { id: 'problematicno',        label: 'Ekscesno besedje',                 round: true },
     ],
     currentParties: [],
-    parties: [ 'SMC', 'SDS', 'DeSUS', 'SD', 'ZL', 'NSI', 'PS NP', 'IMNS', 'NeP' ],
+    parties: ['DeSUS', 'IMNS', 'NSI', 'PS NP', 'SD', 'SDS', 'SMC', 'ZL'],
     excludePresiding: false
   },
   computed: {
@@ -213,12 +213,7 @@ new Vue({
               presidingMatch = true
 
           if (that.currentParties.length > 0) {
-            // Beware! NeP check is currently hacked in here.
-            var stringToMatch = member.person.party.acronym
-            if (stringToMatch.indexOf('NeP') > -1) {
-              stringToMatch = 'NeP'
-            }
-            partyMatch = that.currentParties.indexOf(stringToMatch) > -1
+            partyMatch = that.currentParties.indexOf(member.person.party.acronym) > -1
           }
           if (that.currentDistricts.length > 0) {
             districtMatch = member.person.district.reduce(function(prevMatch, memberDistrict) {
