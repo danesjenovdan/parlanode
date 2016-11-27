@@ -14,6 +14,7 @@
   position: relative;
 
   @include arrow(18px, 11px, 20px, 14px);
+  @extend %scroller;
   &-clear {
     $size: 20px;
 
@@ -54,7 +55,7 @@
     padding: 0;
     position: absolute;
     top: $height + 1px;
-    width: calc(100% + 2px);
+    width: 100%;
     z-index: 3;
     &.visible { display: block; }
     li {
@@ -65,11 +66,11 @@
       padding: 0 14px;
       position: relative;
       user-select: none;
-      &:hover { background: darken($normal-background, 10%); }
+      &.focused { background: darken($normal-background, 10%); }
       &.selected {
         background-color: $selected-background;
         color: #ffffff;
-        &:hover { background: darken($selected-background, 10%); }
+        &.focused { background: darken($selected-background, 10%); }
       }
       &:not(:last-of-type):not(.selected)::after {
         $left-right-spacing: 22px;

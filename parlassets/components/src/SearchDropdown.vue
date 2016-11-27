@@ -11,12 +11,18 @@
       type="text"
       v-model="filter"
       @focus="toggleDropdown(true)"
+      @keydown.enter.prevent="toggleItem(filteredItems[focused].id)"
+      @keydown.up.prevent="focus(focused - 1, true)"
+      @keydown.down.prevent="focus(focused + 1, true)"
       :placeholder="placeholder">
-    <ul :class="['search-dropdown-options', { visible: this.active }]">
+    <ul
+      :class="['search-dropdown-options', { visible: this.active }]"
+      @mouseleave="focus(-1)">
       <li
-        v-for="item in filteredItems"
-        :class="{ 'selected' : item.selected }"
-        @click="toggleItem(item.id)">
+        v-for="item, index in filteredItems"
+        :class="{ selected : item.selected, focused : focused === index }"
+        @click="toggleItem(item.id)"
+        @mouseenter="focus(index)">
         {{ item.label }}
       </li>
     </ul>
@@ -24,11 +30,20 @@
 </template>
 
 <script>
+const ITEM_HEIGHT = 23
+const ITEM_COUNT = 10
+
 export default {
   data() {
     return {
       filter: '',
-      active: false
+      active: false,
+      focused: -1
+    }
+  },
+  watch: {
+    filter() {
+      this.focus(this.focused);
     }
   },
   computed: {
@@ -94,6 +109,21 @@ export default {
     },
     clearSelection() {
       this.selectedIds.forEach(this.toggleItem)
+    },
+    focus(index, withKeyboard) {
+      this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1)
+
+      if (!withKeyboard) return
+
+      var optionListEl = this.$el.lastChild,
+      focusedPosition = this.focused * ITEM_HEIGHT;
+
+      if (focusedPosition < optionListEl.scrollTop) {
+        optionListEl.scrollTop -= ITEM_HEIGHT
+      }
+      else if (focusedPosition > optionListEl.scrollTop + (ITEM_COUNT - 1) * ITEM_HEIGHT) {
+        optionListEl.scrollTop += ITEM_HEIGHT
+      }
     }
   }
 }
