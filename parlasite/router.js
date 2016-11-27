@@ -8,6 +8,7 @@ const slug = require('slug');
 const mpsList = require('./static/data/mps');
 const opsList = require('./static/data/ops');
 const spsList = require('./static/data/sps');
+const mpsopsList = require('./static/data/mpsops');
 
 const routes = [
     {
@@ -1377,7 +1378,19 @@ function getMPIdByName(name, req) {
             req.slug = mpSlug;
             req.mpId = mpId;
             req.mp = mp;
+
+
+            _.each(mpsopsList, (mpps, i)=> {
+
+                if(mpId == mpps.id){
+                    mp.party = mpps.party;
+                }
+
+            });
             selectedMp = mp;
+
+
+
         }
     });
     return Promise.resolve({mpId, mpSlug, mp: selectedMp});
