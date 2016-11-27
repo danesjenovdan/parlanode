@@ -6,7 +6,7 @@
         <div class="col-lg-12">
 
             <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%- mp.gov_id %>.png"
-                 class="media-object img-circle session-logo"/>
+                 class="media-object img-circle session-logo <%- mp.acronym %>-background  <%- mp.acronym %>-fill  <%- mp.acronym %>-stroke "/>
 
             <h1><%- mp.name %></h1>
             <font class="date">
@@ -14,7 +14,7 @@
             </font>
             <br/>
             <font>
-
+                <%=(mp.party.is_coalition)?"koalicija":"opozicija"%>
             </font>
 
             <div class="member-container-menu">
