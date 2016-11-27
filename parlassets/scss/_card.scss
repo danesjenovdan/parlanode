@@ -47,13 +47,11 @@
 }
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
-.card-container .card-content.full,
 .card-container .card-content.full {
-    height: 500px;
+    @include respond-to(desktop) { height: 500px; }
 }
-.card-container .card-content.half,
 .card-container .card-content.half {
-    height: 180px;
+    @include respond-to(desktop) { height: 180px; }
 }
 // end of muki made this global (removed col-md-12 > etc.)
 

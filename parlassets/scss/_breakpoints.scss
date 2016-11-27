@@ -1,11 +1,8 @@
-$mobile-tablet: 480px;
-$tablet-desktop: 1024px;
+$breakpoint: 768px;
 
 $breakpoints: (
-  mobile: "(max-width: #{$mobile-tablet})",
-  tablet: "(min-width: #{$mobile-tablet + 1px}) and (max-width: #{$tablet-desktop})",
-  tablet-up: "(min-width: #{$mobile-tablet + 1px})",
-  desktop: "(min-width: #{$tablet-desktop + 1px})"
+  mobile: "(max-width: #{$breakpoint - 1px})",
+  desktop: "(min-width: #{$breakpoint})"
 );
 
 @mixin respond-to($breakpoint) {
