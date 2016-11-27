@@ -25,15 +25,9 @@
 }
 
 
-
-
 .other_poslanec {
     padding-bottom: 25px;
-}
-
-.other_poslanec .poslanec_title {
-    font-size: 18px;
-    font-weight: 300;
+    .poslanec_title { @extend %list-text }
 }
 
 .progress {
@@ -169,6 +163,7 @@
 
     border: 2px solid #ffffff;
 }
+<<<<<<< HEAD
 
 // MUKI NEW STUFF FOR SMALL CARDS
 
@@ -201,3 +196,5 @@
 }
 
 // END OF MUKI NEW STUFF FOR SMALL CARDS
+=======
+>>>>>>> Add local dependecy on breakpoints to fonts.scss.
