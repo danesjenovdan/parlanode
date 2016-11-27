@@ -165,3 +165,34 @@
 
     border: 2px solid #ffffff;
 }
+
+// MUKI NEW STUFF FOR SMALL CARDS
+
+.progress_flex {
+    @extend %flex;
+    justify-content: flex-start;
+
+    .column {
+        text-align: left;
+    }
+
+    .progress_title {
+        flex: 2;
+        .poslanec_title {
+            @extend %list-text;
+            line-height: 1.1em;
+        }
+    }
+    .progress_bar {
+        flex: 5;
+
+        .progress.smallbar {
+            @extend %flex;
+            .progress_number {
+                @extend %progress-text;
+            }
+        }
+    }
+}
+
+// END OF MUKI NEW STUFF FOR SMALL CARDS
