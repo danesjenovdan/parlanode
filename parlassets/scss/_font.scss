@@ -57,4 +57,10 @@ h1 {
   @include respond-to(mobile) { font-size: 14px; }
 }
 
+%progress-text {
+  font-size: 30px;
+  font-weight: 500;
+  @include respond-to(mobile) { font-size: 24px; }
+}
+
 /* end of global fonts */
