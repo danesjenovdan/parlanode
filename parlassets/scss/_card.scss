@@ -496,6 +496,7 @@ input.form-control, textarea.form-control {
 .card-content {
     position: relative;
     z-index: 1;
+    min-height: 180px;
 }
 .card-container::before {
     content: '';
