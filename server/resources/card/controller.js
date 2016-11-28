@@ -262,7 +262,7 @@ exports.render = function(req, res){
                 }
                 dataUrl = analizeUrl;
             }else{
-                dataUrl = customUrl;
+                dataUrl = decodeURI(customUrl);
             }
 
             cacheData.dataUrl = dataUrl;
@@ -282,12 +282,14 @@ exports.render = function(req, res){
                         try {
 
                             const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
+                            const urlsData = JSON.parse(fs.readFileSync('assets/urls.json', 'utf-8'));
 
                             const cardData = {
                                 data    : data,
                                 vocab   : vocab,
                                 cardData: cardDoc,
-                                customUrl:customUrl
+                                customUrl:customUrl,
+                                urlsData:urlsData
                             };
 
                             if(embed || frame){
