@@ -1524,6 +1524,8 @@ function getSessionsByType(params, req) {
 
 }
 
+
+//https://analize.parlameter.si/v1/p/getSlugs/
 function getAllLinks() {
 
 }
