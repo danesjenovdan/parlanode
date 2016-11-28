@@ -1023,7 +1023,7 @@ const routes = [
             }
             ,{
                 name:'stilneAnalize',
-                sourceUrl:'/pg/stilne-analize/:id',
+                sourceUrl:'/ps/stilne-analize/:id',
                 resolve: (req, res, route, card)=>{
             
                     return getPSIdByName(req.params.fullName, req)
