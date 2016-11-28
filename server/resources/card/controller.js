@@ -420,7 +420,7 @@ exports.render = function (req, res) {
                           cardRender.save()
                             .then(()=>{
 
-                              res.write(cacheData.html);
+                              res.write(cardRender.html);
                               res.end();
 
                             });
