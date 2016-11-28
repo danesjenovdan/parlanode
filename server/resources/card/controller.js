@@ -8,6 +8,7 @@ const fs        = require('fs');
 const isDate    = require('../../utils/date').isDate;
 const cheerio   = require('cheerio');
 const _         = require('lodash');
+const webshot   = require('webshot');
 
 /**
  * PUT rest method
@@ -238,9 +239,9 @@ exports.render = function(req, res){
 
         console.log('Compile card');
 
-        Card.findOne({ method:method, group:group }).lean().then(function(doc){
+        Card.findOne({ method:method, group:group }).lean().then(function(cardDoc){
 
-            if(!doc){
+            if(!cardDoc){
                 return res.status(404).send('Card not found');
             }
 
@@ -248,7 +249,7 @@ exports.render = function(req, res){
 
             if(!customUrl){
 
-                var analizeUrl = doc.dataUrl;
+                var analizeUrl = cardDoc.dataUrl;
 
                 if(!isDate(id)){
                     if(id && id !== undefined && typeof id === 'string' && id.length > 0) {
@@ -265,10 +266,10 @@ exports.render = function(req, res){
             }
 
             cacheData.dataUrl = dataUrl;
-            cacheData.card = doc._id;
+            cacheData.card = cardDoc._id;
             cacheData.cardUrl =  req.protocol + '://' + req.get('host') + req.originalUrl;
-            console.log('Last update:', doc.lastUpdate);
-            cacheData.cardLastUpdate = doc.lastUpdate;
+            console.log('Last update:', cardDoc.lastUpdate);
+            cacheData.cardLastUpdate = cardDoc.lastUpdate;
 
             request(dataUrl, function (err, _res, body) {
 
@@ -286,7 +287,7 @@ exports.render = function(req, res){
                             const cardData = {
                                 data    : data,
                                 vocab   : vocab,
-                                cardData: doc,
+                                cardData: cardDoc,
                                 customUrl:customUrl,
                                 urlsData:urlsData
                             };
@@ -321,10 +322,10 @@ exports.render = function(req, res){
 
 
                             /**
-                             * Rendering ejs from the stored document (from CMS)
+                             * Rendering ejs from the stored cardDocument (from CMS)
                              * @type {String}
                              */
-                            var html = ejs.render(doc.ejs, cardData);
+                            var html = ejs.render(cardDoc.ejs, cardData);
 
                             if(altHeader){
 
@@ -380,17 +381,56 @@ exports.render = function(req, res){
                             cacheData.html = html;
 
                             const cardRender = new CardRender(cacheData);
-
                             cardRender.save(function(err){
-
                                 if(err) {
                                     console.log(err);
                                 }
-
                             });
 
-                            res.write(html);
-                            res.end();
+
+                            /**
+                             * RENDER OG IMAGE IF CARD TYPE IS DEFINED
+                             */
+                            if(cardDoc.type) {
+
+                                try {
+
+                                    const ogEjs = fs.readFileSync('views/og/' + cardDoc.type + '.ejs', 'utf-8');
+
+                                    if (ogEjs) {
+
+                                        const ogHtml = ejs.render(ogEjs, cardData);
+
+                                        webshot(ogHtml, CFG.ogCapturePath + '/' + cardDoc._id + '.png', {
+                                            siteType: 'html',
+                                            captureSelector: '#og-container',
+                                            quality: 100
+                                        }, function (err) {
+
+                                            if(err){
+                                                console.log(err);
+                                            }else{
+                                                console.log('og image rendered');
+                                                res.write(html);
+                                                res.end();
+                                            }
+
+                                            // screenshot now saved to hello_world.png
+                                        });
+
+                                    }
+                                }catch(err){
+                                    console.log(err);
+                                }
+
+                            }else{
+                                res.write(html);
+                                res.end();
+                            }
+
+
+
+
 
                         }catch(err){
                             res.send(err.toString(), 400);

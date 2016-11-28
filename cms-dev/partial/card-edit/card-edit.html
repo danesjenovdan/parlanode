@@ -29,6 +29,8 @@
         <label>Data url (no / at the end)</label><br/>
         <input type="text" class="form-control" ng-model="card.dataUrl"><br/>
     </div>
+    <label>Card type</label>
+    <select ng-options="type.value as type.name for type in cardTypes"  ng-model="card.type"></select>
 
     <hr/>
     <label>Paste compiled EJS</label>
