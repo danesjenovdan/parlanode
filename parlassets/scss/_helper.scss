@@ -168,25 +168,9 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 }
 
 /* Pulse */
-@-webkit-keyframes pulse {
-  25% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  75% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
 @keyframes pulse {
-  25% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  75% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
+  25% { transform: scale(1.1); }
+  75% { transform: scale(0.9); }
 }
 
 .empty50{
@@ -199,7 +183,25 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 .simplebox:focus,
 .simplebox:hover{
   outline: none;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
   box-shadow: none !important;
+}
+
+%group-member-header-headings {
+  h1 {
+      font-size: 22px;
+      margin-bottom: 5px;
+      margin-top: 0;
+  }
+  h2 {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      margin-top: 0;
+  }
+  h3 {
+      font-family: Roboto Slab, serif;
+      font-size: 14px;
+      font-weight: 300;
+      margin: 0;
+  }
 }
