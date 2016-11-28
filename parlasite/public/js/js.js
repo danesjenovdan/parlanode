@@ -141,7 +141,7 @@ $(function () {
         });
 
         $('.search-input-header').bind('typeahead:select', function(e, value) {
-            return false;
+
             if(typeof value.acronym !== 'undefined'){
                 window.location.href = value.url;
             }else{
