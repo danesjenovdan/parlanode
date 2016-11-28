@@ -54,13 +54,15 @@
 .card-container .card-content.full {
     $height: 500px;
     max-height: $height;
-    .card-content-front, .card-content-info { max-height: $height }
+    .card-content-front { max-height: $height }
+    .card-content-info { max-height: $height }
     @include respond-to(desktop) { height: $height }
 }
 .card-container .card-content.half {
     $height: 180px;
     max-height: $height;
-    .card-content-front, .card-content-info { max-height: $height }
+    .card-content-front { max-height: $height }
+    .card-content-info { max-height: $height }
     @include respond-to(desktop) { height: $height; }
 }
 // end of muki made this global (removed col-md-12 > etc.)
