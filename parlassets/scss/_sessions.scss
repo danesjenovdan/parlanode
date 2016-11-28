@@ -25,8 +25,17 @@
         font-weight: 300;
     }
     font,
-    font.date {
+    font.date,
+    font.datepublished {
         font-weight: 300;
+    }
+    font.date {
+        font-size: 14px;
+    }
+    font.datepublished {
+        font-size: 14px;
+        display: inline-block;
+        margin-bottom: 40px;
     }
 }
 .session_types {
@@ -219,16 +228,20 @@
 .session-logo {
     color: $white;
     text-align: center;
-    width: 75px;
-    height: 75px;
+    width: 90px;
+    height: 90px;
     margin-bottom: 20px;
     display: inline-block;
     b {
         display: inline-block;
-        line-height: 75px;
+        line-height: 90px;
         font-size: 24px;
     }
 }
+.session-logo.backgroundred {
+    background: $red;
+}
+
 .session_transcript_menu {
     ul {
         padding: 0;

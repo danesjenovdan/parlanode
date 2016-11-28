@@ -25,11 +25,16 @@
     font,
     font.date {
         font-weight: 300;
-        font-size: 18px;
+        font-size: 14px;
         display: inline-block;
-        margin-bottom: 10px;
+        margin-bottom: 70px;
     }
-    group_data {}
+    font.partyiscoa{
+        font-size: 14px;
+        display: inline-block;
+        margin-bottom: 70px;
+    }
+
     .me_group {
         padding-bottom: 30px;
         .progress-bar {
