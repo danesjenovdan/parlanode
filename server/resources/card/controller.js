@@ -415,7 +415,7 @@ exports.render = function (req, res) {
                           const $ = cheerio.load(html);
                           $('head').append('<meta property="og:image" content="'+cardRender.ogImageUrl+'" />');
 
-                          cacheData.html = $.html();
+                          cardRender.html = $.html();
 
                           cardRender.save()
                             .then(()=>{
