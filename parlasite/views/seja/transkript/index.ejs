@@ -1,62 +1,49 @@
 <% include ../../partials/header.ejs %>
 
-<div class="row header text-center">
+<div class="group-container session-container">
+    <div class="row header  text-center">
+        <div class="col-lg-12">
 
-    <div class="col-md-12">
-
-        <% if(typeof sesData !== "undefined" ){%>
-        <div class="row">
-            <div class="text-center">
-                <div class="media-object img-circle session-logo">
-                    <b>S</b>
-                </div>
+            <% if(typeof sesData !== "undefined" ){%>
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>S</b>
             </div>
-            <div class="">
-                <h1>
-                    <%-sesData.name%>
-                </h1>
-                <font class="date">
-                    <%-sesData.date%>
-                </font>
-                <br/>
-                <font>
-                    podatki objavljeni: <%-sesData.date%>
-                </font>
+
+            <h1> <%-sesData.name%></h1>
+
+            <font class="date">
+                <%-sesData.date%>
+            </font>
+            <br/>
+            <font class="datepublished">
+                podatki objavljeni: <%-sesData.date%>
+            </font>
+            <% } %>
+
+            <% if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
+            <div class="group-container-menu">
+                <ul class="clearfix">
+                    <li>
+                        <a href="/seja/glasovanja/<%- params.id %>">
+                            Glasovanja
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/transkript/<%- params.id %>" class="active">
+                            Transkript
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/prisotnost/<%- params.id %>">
+                            Prisotnost
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <% } %>
-    </div>
-
-    <% if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
-
-    <div class="col-md-12">
-        <div class="session_transcript_menu">
-
-            <ul class="clearfix">
-                <li>
-                    <a href="/seja/glasovanja/<%- params.id %>">
-                        Glasovanja
-                    </a>
-                </li>
-                <li>
-                    <a href="/seja/transkript/<%- params.id %>" class="active">
-                        Transkript
-                    </a>
-                </li>
-                <li>
-                    <a href="/seja/prisotnost/<%- params.id %>">
-                        Prisotnost
-                    </a>
-                </li>
-            </ul>
-
+            <% } %>
 
         </div>
-
     </div>
-    <% } %>
-
-
 </div>
 
 
