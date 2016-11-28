@@ -22,11 +22,7 @@ angular.module('parlameterCardCms').controller('CardEditCtrl',function(
 
         $scope.isSaving = true;
 
-        console.log('Confirm');
-
-        console.log($scope.card);
-
-        /*cardService.update($scope.card._id, $scope.card)
+        cardService.update($scope.card._id, $scope.card)
             .then(function(res){
 
                 console.log(res);
@@ -37,7 +33,7 @@ angular.module('parlameterCardCms').controller('CardEditCtrl',function(
             console.log(res);
             $scope.isSaving = false;
 
-        });*/
+        });
 
     };
 

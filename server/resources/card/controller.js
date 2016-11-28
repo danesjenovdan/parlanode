@@ -423,6 +423,7 @@ exports.render = function(req, res){
                                 }
 
                             }else{
+                                console.log('No card type');
                                 res.write(html);
                                 res.end();
                             }
