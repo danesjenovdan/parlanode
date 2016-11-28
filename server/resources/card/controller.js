@@ -265,11 +265,10 @@ exports.render = function(req, res){
                 dataUrl = decodeURI(customUrl);
             }
 
-            cacheData.dataUrl = dataUrl;
-            cacheData.card = cardDoc._id;
-            cacheData.cardUrl =  req.protocol + '://' + req.get('host') + req.originalUrl;
-            console.log('Last update:', cardDoc.lastUpdate);
-            cacheData.cardLastUpdate = cardDoc.lastUpdate;
+            cacheData.dataUrl         = dataUrl;
+            cacheData.card            = cardDoc._id;
+            cacheData.cardUrl         =  req.protocol + '://' + req.get('host') + req.originalUrl;
+            cacheData.cardLastUpdate  = cardDoc.lastUpdate;
 
             request(dataUrl, function (err, _res, body) {
 
@@ -285,11 +284,11 @@ exports.render = function(req, res){
                             const urlsData = JSON.parse(fs.readFileSync('assets/urls.json', 'utf-8'));
 
                             const cardData = {
-                                data    : data,
-                                vocab   : vocab,
-                                cardData: cardDoc,
-                                customUrl:customUrl,
-                                urlsData:urlsData
+                                data      : data,
+                                vocab     : vocab,
+                                cardData  : cardDoc,
+                                customUrl :customUrl,
+                                urlsData  :urlsData
                             };
 
                             if(embed || frame){
@@ -329,8 +328,8 @@ exports.render = function(req, res){
 
                             if(altHeader){
 
-                                var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
-                                var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
+                                var headerHtmlString    = fs.readFileSync('views/alt_header.ejs', 'utf-8');
+                                var renderedHtmlHeader  = ejs.render(headerHtmlString, cardData);
 
                                 const $ = cheerio.load(html);
                                 $('.card-header').empty().append(renderedHtmlHeader);
