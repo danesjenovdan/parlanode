@@ -1407,6 +1407,7 @@ function getPSIdByName(name, req) {
     let psId;
     let psSlug;
     let selectedPs;
+    let realAcronym;
 
     // return fetch('https://data.parlameter.si/v1/getAllPGs/')
     //     .then((res)=> res.json())
@@ -1426,13 +1427,14 @@ function getPSIdByName(name, req) {
             req.psId = psId;
             req.ps = ps;
             selectedPs = ps;
+            realAcronym = ps.realAcronym;
         }
         //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
         // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
 
     });
 
-    return Promise.resolve({psId, psSlug, ps: selectedPs});
+    return Promise.resolve({psId, psSlug, ps: selectedPs, realAcronym});
     // });
 }
 
