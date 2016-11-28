@@ -10,7 +10,6 @@ var schema = mongoose.Schema({
     html            : String,
     card            : { type:String, ref:'Card'},
     cardUrl         : String,
-
     group           : { type:String, index:true, required:true },
     method          : { type:String, index:true, required:true },
     embed           : Boolean,
@@ -20,7 +19,8 @@ var schema = mongoose.Schema({
     id              : String,
     date            : String,
     cardLastUpdate  : Date,
-    state           : String
+    state           : String,
+    ogImageUrl      : String
 
 });
 
