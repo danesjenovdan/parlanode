@@ -123,13 +123,13 @@ new Vue({
     partyData: [],
     currentAnalysis: 'seat_count',
     analyses: [
-      { id: 'seat_count',           label: 'Število sedežev',                  titleSuffix: 'po številu sedežev' },
-      { id: 'presence_sessions',    label: 'Prisotnost na sejah DZ',           titleSuffix: 'po prisotnosti na sejah DZ',           unit: 'percent' },
-      { id: 'presence_votes',       label: 'Prisotnost na glasovanjih sej DZ', titleSuffix: 'po prisotnosti na glasovanjih sej DZ', unit: 'percent' },
-      { id: 'vocabulary_size',      label: 'Raznolikost besedišča',            titleSuffix: 'po raznolikosti besedišča' },
-      { id: 'privzdignjeno',        label: 'Privzdignjeno besedje',            titleSuffix: 'po pogostosti rabe privzdignjenega besedja' },
-      { id: 'preprosto',            label: 'Preprosto besedje',                titleSuffix: 'po pogostosti rabe preprostega besedja' },
-      { id: 'problematicno',        label: 'Ekscesno besedje',                 titleSuffix: 'po pogostosti rabe ekscesnega besedja' },
+      { id: 'seat_count',        label: 'Število sedežev',                  titleSuffix: 'po številu sedežev' },
+      { id: 'presence_sessions', label: 'Prisotnost na sejah DZ',           titleSuffix: 's prisotnostjo na sejah DZ',           unit: 'percent' },
+      { id: 'presence_votes',    label: 'Prisotnost na glasovanjih sej DZ', titleSuffix: 's prisotnostjo na glasovanjih sej DZ', unit: 'percent' },
+      { id: 'vocabulary_size',   label: 'Raznolikost besedišča',            titleSuffix: 'z raznolikostjo besedišča' },
+      { id: 'privzdignjeno',     label: 'Privzdignjeno besedje',            titleSuffix: 's privzdignjenim besedjem' },
+      { id: 'preprosto',         label: 'Preprosto besedje',                titleSuffix: 's preprostim besedjem' },
+      { id: 'problematicno',     label: 'Ekscesno besedje',                 titleSuffix: 'z ekscesnim besedjem' },
     ]
   },
   computed: {
@@ -155,7 +155,7 @@ new Vue({
       return this.partyData.map(function(party) {
         var rawValue = party.results[that.currentAnalysis]
         party.displayValue = that.round(rawValue, 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')
-        party.chartWidth = rawValue === 0 ? '1px' : rawValue / maxValue * 80 + '%'
+        party.chartWidth = rawValue ? rawValue / maxValue * 80 + '%' : '1px'
         return party
       })
     },
@@ -165,7 +165,7 @@ new Vue({
         params.analysis = this.currentAnalysis
       }
 
-      return 'https://glej.parlameter.si/p/seznam-poslancev/' +
+      return 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/' +
         '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
         (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
     }
