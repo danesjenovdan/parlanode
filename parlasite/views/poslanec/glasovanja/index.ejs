@@ -9,11 +9,8 @@
                  class="media-object img-circle session-logo <%- mp.party.acronym.toLowerCase().replace(/ /g, '_') %>-background  <%- mp.party.acronym.toLowerCase().replace(/ /g, '_') %>-fill  <%- mp.party.acronym.toLowerCase().replace(/ /g, '_') %>-border "/>
 
             <h1><%- mp.name %></h1>
-            <font class="party"><%= mp.party.acronym %></font>
-            <br/>
-            <font class="partyiscoa">
-                <%=(mp.party.is_coalition)?"koalicija":"opozicija"%>
-            </font>
+            <h2><%= mp.party.acronym %></h2>
+            <h3><%= mp.party.is_coalition ? "koalicija" : "opozicija" %></h3>
 
             <div class="member-container-menu">
                 <ul class="clearfix">
@@ -47,4 +44,3 @@
 </div>
 
 <% include ../../partials/footer.ejs %>
-
