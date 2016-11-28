@@ -9,10 +9,8 @@
             </div>
 
             <h1><%- ps.name %></h1>
+            <h3><%= ps.is_coalition ? "koalicija" : "opozicija" %></h3>
 
-            <font class="partyiscoa">
-                <%=(ps.is_coalition)?"koalicija":"opozicija"%>
-            </font>
             <div class="group-container-menu">
                 <ul class="clearfix">
                     <li>
