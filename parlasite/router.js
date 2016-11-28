@@ -1021,30 +1021,30 @@ const routes = [
 
                 }
             }
-            //,{
-            //     name:'stilneAnalize',
-            //     sourceUrl:'/pg/stilne-analize/:id',
-            //     resolve: (req, res, route, card)=>{
-            //
-            //         return getPSIdByName(req.params.fullName, req)
-            //             .then((psData)=>{
-            //                 let psId = psData.psId;
-            //                 let psSlug = psData.psSlug;
-            //                 var pattern = new UrlPattern(card.sourceUrl);
-            //                 const renderedPath = pattern.stringify({id:psId});
-            //                 const cardUrl = `${config.CARD_RENDERER_SEARCH_API_ROOT}${renderedPath}`;
-            //                 console.log(cardUrl);
-            //                 return fetch(cardUrl)
-            //                     .then((res) => {
-            //                         return res.text();
-            //                     })
-            //                     .then((body) => {
-            //                         return body;
-            //                     });
-            //             });
-            //
-            //     }
-            // }
+            ,{
+                name:'stilneAnalize',
+                sourceUrl:'/pg/stilne-analize/:id',
+                resolve: (req, res, route, card)=>{
+            
+                    return getPSIdByName(req.params.fullName, req)
+                        .then((psData)=>{
+                            let psId = psData.psId;
+                            let psSlug = psData.psSlug;
+                            var pattern = new UrlPattern(card.sourceUrl);
+                            const renderedPath = pattern.stringify({id:psId});
+                            const cardUrl = `${config.CARD_RENDERER_SEARCH_API_ROOT}${renderedPath}`;
+                            console.log(cardUrl);
+                            return fetch(cardUrl)
+                                .then((res) => {
+                                    return res.text();
+                                })
+                                .then((body) => {
+                                    return body;
+                                });
+                        });
+            
+                }
+            }
         ]
     },
     {
