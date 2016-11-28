@@ -1252,6 +1252,7 @@ function createRoute(app, route) {
                                     ps: psData.ps,
                                     slug: req.slug,
                                     activeMenu: 'PS',
+                                    realAcronym: psData,
                                     views
                                 });
                             });
@@ -1416,18 +1417,19 @@ function getPSIdByName(name, req) {
     //         //   var opsList = jsonBody;
 
     _.each(opsList, (ps, i)=> {
+        var realAcronym2 = ps.acronym;
         ps.nameSlug = slug(ps.name).toLowerCase();
-        ps.acronym = slug(ps.acronym).toLowerCase();
+        ps.acronym_slug = slug(ps.acronym).toLowerCase();
 
-        if ((name === ps.nameSlug) | (name === ps.acronym) | (req.params.id == ps.id)) {
+        if ((name === ps.nameSlug) | (name === ps.acronym_slug) | (req.params.id == ps.id)) {
             //if(id == ps.id){
             psId = ps.id;
-            psSlug = ps.acronym;
+            psSlug = ps.acronym_slug;
             req.slug = psSlug;
             req.psId = psId;
             req.ps = ps;
             selectedPs = ps;
-            realAcronym = ps.realAcronym;
+            realAcronym = realAcronym2;
         }
         //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
         // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
