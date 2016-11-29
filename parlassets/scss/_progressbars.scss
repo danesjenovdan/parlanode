@@ -5,6 +5,7 @@
 .me_poslanec .poslanec_title {
     font-size: 18px;
     font-weight: 300;
+    @include respond-to(mobile) { font-size: 14px; }
 }
 
 .me_poslanec .progress_number {
