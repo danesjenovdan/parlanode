@@ -305,47 +305,8 @@
   background: $white;
 }
 
-
-
-.progress {
-  border: none;
-  box-shadow: none;
-  background: none;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-
-.progress-bar {
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.progress.hugebar {
-  height: 40px;
-}
-
-.progress.hugebar .red {
-  background: $red;
-}
-
-.progress.smallbar .funblue {
-  background: $funblue;
-}
-
-
-.other_poslanec .progress_number {
-  font-size: 20px;
-  line-height: 20px;
-}
-
 .other_poslanec .img-circle {
   width: 30px;
-}
-
-.progress_number {
-  display: inline-block;
-  padding-left: 10px;
 }
 
 .poslanec .tab-content .poslanec_title {
