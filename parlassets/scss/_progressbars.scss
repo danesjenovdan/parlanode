@@ -38,6 +38,14 @@
     background: none;
     border-radius: 0;
     margin-bottom: 0;
+    &.hugebar {
+      height: 30px;
+      .red { background: $red; }
+    }
+    &.smallbar {
+      .funblue { background: $funblue; }
+      .red { background: $red; }
+    }
 }
 
 .progress-bar {
@@ -47,27 +55,11 @@
     background-color: $funblue;
 }
 
-.progress.hugebar {
-    height: 30px;
-}
-
-.progress.hugebar .red {
-    background: $red;
-}
-.progress.smallbar .funblue {
-    background: $funblue;
-}
-
-.progress.smallbar .red {
-    background: $red;
-}
-
 .progress_number {
     display: inline-block;
     padding-left: 10px;
     font-weight: 500;
 }
-
 
 .other_poslanec .avgmin {
     .progress_number {
@@ -84,42 +76,6 @@
     width: 35px;
 }
 
-//
-//.poslanec .nav-tabs{
-//    border-bottom: none;
-//    padding-bottom: 40px;
-//}
-//.poslanec .nav-tabs > li{
-//    margin-right: 10px;
-//}
-//.poslanec .nav > li > a{
-//    padding: 10px 0 2px 0;
-//}
-//.poslanec .nav > li > a:hover{
-//    background: none;
-//}
-//.poslanec .nav-tabs > li > a{
-//    border-radius: 0;
-//    border: none;
-//    color: $black;
-//    background: $grey;
-//}
-//.poslanec .nav-tabs > li.active > a{
-//    font-weight: 500;
-//
-//    color: $white;
-//    background: $funblue;
-//}
-//.poslanec .tab-content .poslanec_title{
-//    font-size: 16px;
-//}
-//
-//.poslanec .tab-content .me_poslanec{
-//    padding-bottom: 40px;
-//}
-//.poslanec .tab-content .other_poslanec{
-//    padding-bottom: 40px;
-//}
 
 .hugebar {
     .cptin {
