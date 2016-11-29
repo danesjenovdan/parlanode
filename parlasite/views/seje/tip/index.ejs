@@ -79,6 +79,9 @@
 <script>
 
     $(function () {
+
+
+
         $(".action-t-1").click(function () {
             $(".tmpContainer").remove();
 
@@ -115,6 +118,12 @@
                     });
             return false;
         });
+
+        if (document.location.hash.length > 0) {
+            var dataid = document.location.hash.split("-");
+            $(".colToList").find("[data-id='" + dataid[1] + "']").trigger("click");
+        }
+
     });
 
 </script>
