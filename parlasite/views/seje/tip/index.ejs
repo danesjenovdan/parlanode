@@ -46,12 +46,12 @@
             %>
             <% if (sesData.type != 2){%>
                 <% if(sesData.sesData[i].votes){ %>
-                    <a href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
+                    <a id="session-<%- sesData.sesData[i].id %>" href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
                 <% }else{%>
-                    <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
+                    <a id="session-<%- sesData.sesData[i].id %>" href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
                 <% }%>
             <% }else{%>
-                <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
+                <a id="session-<%- sesData.sesData[i].id %>" href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
             <% }%>
 
 
