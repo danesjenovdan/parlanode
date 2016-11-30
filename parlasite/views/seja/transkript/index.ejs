@@ -46,12 +46,36 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-12 ">
+        <%- views.besedeKiSoZaznamovaleSejo %>
+    </div>
+</div>
 
-<div class="col-md-12 ">
-    <%- views.besedeKiSoZaznamovaleSejo %>
+<div class="row">
+    <div class="col-md-6">
+        <h3 class="celtranskript">Cel transkript</h3>
+    </div>
+    <div class="col-md-6">
+        <div class="odpri-vse pull-right">Odpri vse govore</div>
+    </div>
 </div>
-<div class="col-md-12">
-    <%- views.transkript %>
+
+<div class="row">
+    <div class="col-md-12">
+        <%- views.transkript %>
+    </div>
 </div>
+
+<script>
+    $('.odpri-vse').on('click', function() {
+        if ($(this).text() === 'Odpri vse govore') {
+            $(this).text('Zapri vse govore');
+        } else {
+            $(this).text('Odpri vse govore');
+        }
+        $('.toggle-arrow').click();
+    });
+</script>
 
 <% include ../../partials/footer.ejs %>
