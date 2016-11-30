@@ -62,10 +62,13 @@
       cursor: pointer;
       font-size: 12px;
       height: $item-height;
-      line-height: $item-height + 1px;
+      line-height: $item-height;
+      overflow: hidden;
       padding: 0 14px;
       position: relative;
+      text-overflow: ellipsis;
       user-select: none;
+      white-space: nowrap;
       &.focused { background: darken($normal-background, 10%); }
       &.selected {
         background-color: $selected-background;
@@ -79,7 +82,7 @@
         height: 1px;
         width: calc(100% - 2*#{$left-right-spacing});
         position: absolute;
-        top: $item-height;
+        top: $item-height - 1;
         left: $left-right-spacing;
       }
     }
