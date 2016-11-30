@@ -233,6 +233,7 @@ header.header {
     .header-search .tt-menu {
         max-height: 300px;
         overflow-y: auto;
+        width: 200px;
 
         @include card(1);
 
