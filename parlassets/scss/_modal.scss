@@ -10,15 +10,16 @@
 
     .modal-content {
         width: calc(100% - 20px);
-        max-height: 100%;
-        overflow: auto;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin: 21px 10px 10px;
         border: none;
         border-radius: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+    }
+
+    &.modal-center {
+        display: flex;
+        > .modal-center-wrapper {
+            margin: auto;
+        }
     }
 }
 
