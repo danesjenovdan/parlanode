@@ -23,12 +23,10 @@ header.header {
     }
     .navbar {
         border-radius: 0;
-        border-bottom: 1px solid $darkgrey;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border: none;
         padding-bottom: 10px;
         margin-bottom: 10px;
+        @include respond-to(desktop) { border-bottom: 1px solid $darkgrey; }
     }
     .navbar-nav > li > a {
         font-size: 18px;
