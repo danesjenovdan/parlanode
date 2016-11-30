@@ -400,17 +400,17 @@ exports.render = function (req, res) {
 
                       const ogHtml = ejs.render(ogEjs, cardData);
 
-                      webshot(ogHtml, CFG.ogCapturePath + '/' + cardRender._id + '.png', {
+                      webshot(ogHtml, CFG.ogCapturePath + '/' + cardRender._id + '.jpeg', {
                         siteType: 'html',
                         captureSelector: '#og-container',
-                        quality: 100
+                        quality: 80
                       }, function (err) {
 
                         if (err) {
                           console.log(err);
                         } else {
 
-                          cardRender.ogImageUrl = CFG.ogRootUrl+cardRender._id + '.png';
+                          cardRender.ogImageUrl = CFG.ogRootUrl+cardRender._id + '.jpeg';
 
                           const $ = cheerio.load(html);
                           $('head').append('<meta property="og:image" content="'+cardRender.ogImageUrl+'" />');
