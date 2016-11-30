@@ -207,3 +207,16 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 }
 
 [v-cloak] { display: none; }
+
+.no-results {
+  font-size: 16px;
+  font-style: italic;
+  $width: 200px;
+  width: $width;
+  text-align: center;
+  $height: 20px;
+  line-height: $height;
+  position: absolute;
+  top: calc(50% - #{$height / 2});
+  left: calc(50% - #{$width / 2});
+}
