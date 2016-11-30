@@ -1,10 +1,17 @@
 .modal-dialog {
-    max-width: 400px;
+    width: 400px;
+    max-width: 100%;
     margin: 0 auto;
     height: 100%;
 
+    &.modal-wide {
+        width: 800px;
+    }
+
     .modal-content {
         width: calc(100% - 20px);
+        max-height: 100%;
+        overflow: auto;
         margin-left: 10px;
         margin-right: 10px;
         border: none;
@@ -17,6 +24,13 @@
 
 .modal-header {
     background: $funblue;
+
+    .modal-title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-left: 15px;
+        color: #fff;
+    }
 
     .modal-logo {
         width: 60px;
@@ -122,6 +136,27 @@
         fill: $red;
         width: 150px;
         display: inline-block;
+    }
+
+    .light-bg {
+        background-color: $funblue-light;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+
+        .row > div {
+            min-width: 160px;
+            float: left;
+        }
+    }
+
+    .flex-wrap {
+        @include respond-to(desktop) {
+            display: flex;
+            flex-wrap: wrap;
+            > div {
+                display: flex;
+            }
+        }
     }
 }
 
