@@ -1480,19 +1480,21 @@ function getSessionIds(params, req, session_type) {
                 req.s = s;
                 s.type = type;
                 selectedSps = s;
+
+                break;
             }
 
+        }
+        if(typeof selectedSps !=='undefined'){
+            break;
         }
 
     }
 
     if(typeof selectedSps === 'undefined'){
         var dt = tmp["dt"];
-
         for (var dtseja in dt) {
-
             for (var seja in dt[dtseja].sessions) {
-
                 var sdt = dt[dtseja].sessions[seja];
 
                 sdt.nameSlug = slug(sdt.name).toLowerCase();
@@ -1505,8 +1507,11 @@ function getSessionIds(params, req, session_type) {
                     req.s = sdt;
                     sdt.type = type;
                     selectedSps = sdt;
+                    break;
                 }
-
+            }
+            if(typeof selectedSps !=='undefined'){
+                break;
             }
         }
     }
