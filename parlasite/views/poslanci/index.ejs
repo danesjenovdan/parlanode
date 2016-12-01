@@ -69,6 +69,7 @@
                 <li v-if="memberData.length === 0" class="loader">
                   <div class="nalagalnik"></div>
                 </li>
+                <div v-if="memberData.length > 0 && processedMemberData.length === 0" class="no-results">Brez poslancev</div>
                 <li v-for="member in processedMemberData" class="person">
                   <a class="portrait column" :href="getMemberUrl(member.person.id)">
                     <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
@@ -438,6 +439,8 @@ new Vue({
     },
     getFormattedAnalysisValue: function(member) {
       var value = member.results[this.currentAnalysis]
+
+      if (value === null) { return 'Ni dovolj podatkov' }
 
       if (value !== 0) {
         if (this.currentAnalysisData.round) { value = Math.round(value * 10) / 10 }
