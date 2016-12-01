@@ -1,5 +1,5 @@
 <% include ../../partials/header.ejs %>
-
+<%if(typeof sesData !== 'undefined'){%>
 
 <div class="session-container">
     <div class="row header  text-center">
@@ -11,13 +11,14 @@
             </div>
 
             <h1> <%-sesData.name%></h1>
+            <h2> <%-sesData.org.name%></h2>
 
             <font class="date">
                 <%-sesData.date%>
             </font>
             <br/>
             <font class="datepublished">
-                podatki objavljeni: <%-sesData.date%>
+                podatki objavljeni: <%-sesData.date%> <%=(sesData.in_review)?'(v pregledu)':null%>
             </font>
             <% } %>
 
@@ -67,4 +68,7 @@
 
 
 
+<%}else{ %>
+<%include ../../error/404partial.ejs %>
+<%}%>
 <% include ../../partials/footer.ejs %>
