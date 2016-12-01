@@ -346,7 +346,8 @@ exports.render = function (req, res) {
               if (frame) {
 
                 var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
-                var $ = cheerio.load(frameHtmlString);
+                var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData); 
+                var $ = cheerio.load(renderedFrameHtmlString);
 
                 if (previewWidth) {
                   $('#card-container').css({
@@ -362,7 +363,8 @@ exports.render = function (req, res) {
               } else if (embed) {
 
                 var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
-                var $ = cheerio.load(frameHtmlString);
+                var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData); 
+                var $ = cheerio.load(renderedFrameHtmlString);
 
                 if (previewWidth) {
                   $('#card-container').css({
