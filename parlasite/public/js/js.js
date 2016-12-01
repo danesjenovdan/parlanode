@@ -204,5 +204,28 @@ $(function () {
     session_search_results();
 
 
+    $(".newslettersubscribeButton").click(function () {
+        var url = '/';
+        var jqxhr = $.ajax({
+            method: "POST",
+            url: url,
+            data: { mail: $(".newslettersubscribe").val() }
+        })
+            .done(function (data) {
+                $(".newslettersubscribemsg").html('').addClass("success").html(data.result);
+
+                alert('not yet');
+
+            })
+            .fail(function () {
+                alert('not yet configured');
+            })
+            .always(function () {
+            });
+
+
+
+
+    });
 
 });
