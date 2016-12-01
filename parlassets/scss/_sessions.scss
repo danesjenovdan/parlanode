@@ -99,6 +99,10 @@
                 margin-right: 0;
             }
 
+            @include respond-to(mobile) {
+                width: 86px;
+            }
+
 
             a {
                 display: table-cell;
