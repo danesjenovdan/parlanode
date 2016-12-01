@@ -40,15 +40,52 @@
         font-family: 'Robot Slab', serif;
     }
 }
+
+// @media (max-width: 950px) {
+//     .session_types {
+//         width: 420px;
+//         li {
+//             width: 125px;
+//         }
+//     }
+//     .session_transcript {
+//         .panel-body {
+//             padding-left: 10px;
+//             padding-right: 10px;
+//             font-weight: 300;
+//             font-size: 18px;
+//         }
+//     }
+// }
+// @media (max-width: 500px) {
+//     .session_types {
+//         width: 100%;
+//         li {
+//             width: 100%;
+//             padding: 0;
+//             margin: 0;
+//         }
+//     }
+// }
+
 .session_types {
     margin: 0 auto 40px auto;
     width: 560px;
     text-align: center;
     padding: 0;
+    @include respond-to(mobile) {
+        width: 100%;
+    }
     ul {
         padding: 0;
         display: table;
         margin: auto;
+
+        @include respond-to(mobile) {
+            font-size: 12px;
+            line-height: 1.1em;
+        }
+
         li {
             display: table;
             overflow: hidden;
@@ -61,6 +98,8 @@
             &:last-of-type {
                 margin-right: 0;
             }
+
+
             a {
                 display: table-cell;
                 vertical-align: middle;
@@ -71,6 +110,10 @@
                 border: 1px solid $darkgrey;
                 padding: 5px 20px;
                 text-transform: uppercase;
+
+                @include respond-to(mobile) {
+                    padding: 0;
+                }
             }
             a.active,
             a:hover {
@@ -540,32 +583,32 @@
     }
 
 }
-@media (max-width: 950px) {
-    .session_types {
-        width: 420px;
-        li {
-            width: 125px;
-        }
-    }
-    .session_transcript {
-        .panel-body {
-            padding-left: 10px;
-            padding-right: 10px;
-            font-weight: 300;
-            font-size: 18px;
-        }
-    }
-}
-@media (max-width: 500px) {
-    .session_types {
-        width: 100%;
-        li {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-    }
-}
+// @media (max-width: 950px) {
+//     .session_types {
+//         width: 420px;
+//         li {
+//             width: 125px;
+//         }
+//     }
+//     .session_transcript {
+//         .panel-body {
+//             padding-left: 10px;
+//             padding-right: 10px;
+//             font-weight: 300;
+//             font-size: 18px;
+//         }
+//     }
+// }
+// @media (max-width: 500px) {
+//     .session_types {
+//         width: 100%;
+//         li {
+//             width: 100%;
+//             padding: 0;
+//             margin: 0;
+//         }
+//     }
+// }
 @media (max-width: 480px) {
 
     .session_voting .session_votes {
