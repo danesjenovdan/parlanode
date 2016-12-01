@@ -57,6 +57,10 @@
 
                 <span>
                    <%- sesData.sesData[i].name %>
+                   <% if (sesData.type != 1) { %>
+                   <br>
+                   <span class="session-date"><%- sesData.sesData[i].date %></span>
+                   <% } %>
                </span>
 
 
