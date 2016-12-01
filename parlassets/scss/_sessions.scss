@@ -57,6 +57,10 @@
             list-style: none;
             margin-right: 10px;
             min-height: 52px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
             a {
                 display: table-cell;
                 vertical-align: middle;
