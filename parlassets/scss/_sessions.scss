@@ -41,7 +41,7 @@
     }
 }
 .session_types {
-    margin: 0 auto 20px auto;
+    margin: 0 auto 40px auto;
     width: 560px;
     text-align: center;
     padding: 0;
@@ -54,6 +54,7 @@
             text-align: center;
             list-style: none;
             margin-right: 10px;
+            min-height: 52px;
             a {
                 display: table-cell;
                 vertical-align: middle;
