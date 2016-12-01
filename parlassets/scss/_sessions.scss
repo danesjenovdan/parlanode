@@ -216,12 +216,21 @@
     .session_type {
         margin-right: 6px;
         margin-bottom: 6px;
+        width: auto;
+        display: block;
+        span {
+            font-size: 14px;
+        }
     }
 }
 @media (max-width: 480px) {
     .session_type {
         margin-right: 0px;
         margin-bottom: 11px;
+        width: auto;
+        span {
+            font-size: 14px;
+        }
     }
 }
 .session_type.col-sm-3.col4break{
