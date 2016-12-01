@@ -1,29 +1,31 @@
-<!-- - - - - - - - - - - MODAL -->
+<!-- - - - - - - - - - - DONATION MODAL -->
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center lead">
-                        Tvoja donacija bo pomagala zagotoviti nadaljnji razvoj in omogočiti dolgoročno delovanje Parlametra.
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
-                    <div class="text-center">
-                        <img src="https://cdn.parlameter.si/v1/parlassets/img/icons/donacija.png" alt="donacija">
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center lead">
+                            Tvoja donacija bo pomagala zagotoviti nadaljnji razvoj in omogočiti dolgoročno delovanje Parlametra.
+                        </div>
+                        <div class="text-center">
+                            <img src="https://cdn.parlameter.si/v1/parlassets/img/icons/donacija.png" alt="donacija">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-6">
-                    <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-amount">OSEBNA<br>DONACIJA</button>
-                </div>
-                <div class="col-xs-6">
-                    <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-email">POSLOVNA<br>DONACIJA</button>
+                <div class="modal-footer">
+                    <div class="col-xs-6">
+                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-amount">OSEBNA<br>DONACIJA</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-email">POSLOVNA<br>DONACIJA</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,37 +33,39 @@
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-email">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center lead">
-                        Najlažje, da se o podrobnostih pogovorimo po e-pošti.
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
-                    <form>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-email">e-pošta</label>
-                            <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
-                            <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-message">sporočilo</label>
-                            <textarea class="form-control" id="donation-message" placeholder="Sporočilo"></textarea>
-                            <span class="glyphicon glyphicon-align-left form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                    </form>
+                    <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <button type="button" class="btn-multiline btn-full-width">POŠLJI</button>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center lead">
+                            Najlažje, da se o podrobnostih pogovorimo po e-pošti.
+                        </div>
+                        <form>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-email">e-pošta</label>
+                                <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-message">sporočilo</label>
+                                <textarea class="form-control" id="donation-message" placeholder="Sporočilo"></textarea>
+                                <span class="glyphicon glyphicon-align-left form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <button type="button" class="btn-multiline btn-full-width">POŠLJI</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,46 +73,48 @@
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-amount">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center lead">
-                        DONACIJA PO IZBIRI
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
+                    <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-                <form class="clearfix">
-                    <div class="form-group col-xs-6" style="padding-right:0;">
-                        <label class="control-label sr-only" for="donation-amount">količina</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control large-text" id="donation-amount" value="10">
-                            <div class="input-group-addon large-text">EUR</div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center lead">
+                            DONACIJA PO IZBIRI
                         </div>
                     </div>
-                    <div class="form-group col-xs-6">
-                        <div class="input-group">
-                            <input class="checkbox" checked="checked" type="checkbox" id="donation-monthly">
-                            <label for="donation-monthly">mesečna donacija</label>
+                    <form class="clearfix">
+                        <div class="form-group col-xs-6" style="padding-right:0;">
+                            <label class="control-label sr-only" for="donation-amount">količina</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control large-text" id="donation-amount" value="10">
+                                <div class="input-group-addon large-text">EUR</div>
+                            </div>
                         </div>
+                        <div class="form-group col-xs-6">
+                            <div class="input-group">
+                                <input class="checkbox" checked="checked" type="checkbox" id="donation-monthly">
+                                <label for="donation-monthly">mesečna donacija</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-4 col-less-padding">
+                        <button type="button" class="btn-payment icon-card btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-card">S KARTICO</button>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-4 col-less-padding">
-                    <button type="button" class="btn-payment icon-card btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-card">S KARTICO</button>
-                </div>
-                <div class="col-xs-4 col-less-padding">
-                    <button type="button" class="btn-payment icon-paypal btn-full-width">S PAYPALOM</button>
-                </div>
-                <div class="col-xs-4 col-less-padding">
-                    <button type="button" class="btn-payment icon-poloznica btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-address">S POLOŽNICO</button>
+                    <div class="col-xs-4 col-less-padding">
+                        <button type="button" class="btn-payment icon-paypal btn-full-width">S PAYPALOM</button>
+                    </div>
+                    <div class="col-xs-4 col-less-padding">
+                        <button type="button" class="btn-payment icon-poloznica btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-address">S POLOŽNICO</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,47 +122,49 @@
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-address">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj-amount" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center lead">
-                        Vnesite vaše podatke in poslali vam bomo položnico.
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
-                    <form>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-email">e-pošta</label>
-                            <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
-                            <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-name">ime</label>
-                            <input type="text" class="form-control" id="donation-name" placeholder="Ime">
-                            <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-surname">priimek</label>
-                            <input type="text" class="form-control" id="donation-surname" placeholder="Priimek">
-                            <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-address">naslov</label>
-                            <input type="text" class="form-control" id="donation-address" placeholder="Naslov">
-                            <span class="glyphicon glyphicon-home form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                    </form>
+                    <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj-amount" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-poloznica">NADALJUJ</button>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center lead">
+                            Vnesite vaše podatke in poslali vam bomo položnico.
+                        </div>
+                        <form>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-email">e-pošta</label>
+                                <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-name">ime</label>
+                                <input type="text" class="form-control" id="donation-name" placeholder="Ime">
+                                <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-surname">priimek</label>
+                                <input type="text" class="form-control" id="donation-surname" placeholder="Priimek">
+                                <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-address">naslov</label>
+                                <input type="text" class="form-control" id="donation-address" placeholder="Naslov">
+                                <span class="glyphicon glyphicon-home form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-poloznica">NADALJUJ</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,54 +172,56 @@
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-card">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj-amount" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center lead">
-                        Vnesite vaše podatke in poslali vam bomo položnico.
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
-                    <form>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-email">e-pošta</label>
-                            <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
-                            <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label sr-only" for="donation-card-number">Številka kartice</label>
-                            <input type="text" class="form-control" id="donation-card-number" placeholder="Številka kartice">
-                            <span class="glyphicon glyphicon-credit-card form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                        <div class="row">
-                            <div class="form-group has-feedback col-xs-6">
-                                <label class="control-label sr-only" for="donation-surname">velja do</label>
-                                <input type="text" class="form-control" id="donation-surname" placeholder="MM/LL">
-                                <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
-                            </div>
-                            <div class="form-group has-feedback col-xs-6">
-                                <label class="control-label sr-only" for="donation-address">CVC</label>
-                                <input type="text" class="form-control" id="donation-address" placeholder="CVC">
-                                <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="https://www.braintreegateway.com/merchants/YOUR_MERCHANT_ID/verified" target="_blank">
-                                <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-light.png" class="img-responsive">
-                            </a>
-                        </div>
-                    </form>
+                    <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj-amount" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija">NADALJUJ</button>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center lead">
+                            Vnesite vaše podatke in poslali vam bomo položnico.
+                        </div>
+                        <form>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-email">e-pošta</label>
+                                <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="donation-card-number">Številka kartice</label>
+                                <input type="text" class="form-control" id="donation-card-number" placeholder="Številka kartice">
+                                <span class="glyphicon glyphicon-credit-card form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                            <div class="row">
+                                <div class="form-group has-feedback col-xs-6">
+                                    <label class="control-label sr-only" for="donation-surname">velja do</label>
+                                    <input type="text" class="form-control" id="donation-surname" placeholder="MM/LL">
+                                    <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
+                                </div>
+                                <div class="form-group has-feedback col-xs-6">
+                                    <label class="control-label sr-only" for="donation-address">CVC</label>
+                                    <input type="text" class="form-control" id="donation-address" placeholder="CVC">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://www.braintreegateway.com/merchants/YOUR_MERCHANT_ID/verified" target="_blank">
+                                    <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-light.png" class="img-responsive">
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija">NADALJUJ</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -219,32 +229,34 @@
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-hvala-poloznica">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center xlarge-text">
-                        Hvala!
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
-                    <div class="text-center lead">
-                        <i class="heart">
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center xlarge-text">
+                            Hvala!
+                        </div>
+                        <div class="text-center lead">
+                            <i class="heart">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"><path class="red" d="M35.3,0.5c-4.4,0-8.5,2.7-10.6,6.8c-0.2,0.3-0.6,0.4-0.8,0C21.6,3.2,17.6,0.5,13,0.5  C6.1,0.5,0.5,6.7,0.5,14.4c0,7.9,8.6,22.4,23,32.9c0.2,0.1,0.3,0.2,0.5,0.2c0.2,0,0.3,0,0.5-0.1c14-9.2,23-25.9,23-33.3  C47.5,6.6,42,0.5,35.3,0.5z"></path></svg>
                         </i>
-                    </div>
-                    <div class="text-center lead">
-                        Položnico smo ti poslali po elektronski pošti.
+                        </div>
+                        <div class="text-center lead">
+                            Položnico smo ti poslali po elektronski pošti.
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal">ZAPRI</button>
+                <div class="modal-footer">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal">ZAPRI</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -252,32 +264,34 @@
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-hvala-donacija">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-logo">
-                    <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-                </div>
-                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="text-center xlarge-text">
-                        Hvala!
+    <div class="modal-dialog modal-center" role="document">
+        <div class="modal-center-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-logo">
+                        <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
                     </div>
-                    <div class="text-center lead">
-                        <i class="heart">
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center xlarge-text">
+                            Hvala!
+                        </div>
+                        <div class="text-center lead">
+                            <i class="heart">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"><path class="red" d="M35.3,0.5c-4.4,0-8.5,2.7-10.6,6.8c-0.2,0.3-0.6,0.4-0.8,0C21.6,3.2,17.6,0.5,13,0.5  C6.1,0.5,0.5,6.7,0.5,14.4c0,7.9,8.6,22.4,23,32.9c0.2,0.1,0.3,0.2,0.5,0.2c0.2,0,0.3,0,0.5-0.1c14-9.2,23-25.9,23-33.3  C47.5,6.6,42,0.5,35.3,0.5z"></path></svg>
                         </i>
-                    </div>
-                    <div class="text-center lead">
-                        Tvoja donacija bo porabljena odgovorno.
+                        </div>
+                        <div class="text-center lead">
+                            Tvoja donacija bo porabljena odgovorno.
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal">ZAPRI</button>
+                <div class="modal-footer">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal">ZAPRI</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -299,4 +313,4 @@
         }
     });
 </script>
-<!-- - - - - - - - - - - /MODAL -->
+<!-- - - - - - - - - - - /DONATION MODAL -->
