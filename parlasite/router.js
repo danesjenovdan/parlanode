@@ -1151,7 +1151,7 @@ const routes = [
     },
     {
         path: '/seja/transkript/:id',
-        extraPaths: ['/seja/transkript/:id/:date', '/seja/transkript/:id', '/s/transkript/:id', '/s/transkript/:id/:date'],
+        extraPaths: ['/seja/transkript/:id/:date', '/seja/transkript/:id', '/s/transkript/:id', '/s/transkript/:id/:date', '/seja/:dt/transkript/:id/:date'],
         viewPath: 'seja/transkript',
         cards: [
             {
@@ -1283,7 +1283,11 @@ function createRoute(app, route) {
                             });
 
                     } else if (route.viewPath.indexOf("seja") > -1) {
-                        getSessionIds(req.params, req)
+                        var session_type = '';
+                        if(route.viewPath.indexOf("/transkript/dt/")){
+                            session_type = 'dt';
+                        }
+                        getSessionIds(req.params, req, session_type)
                             .then((sesData)=> {
 
                                 res.render(route.viewPath, {
@@ -1440,7 +1444,7 @@ function getPSIdByName(name, req) {
     // });
 }
 
-function getSessionIds(params, req) {
+function getSessionIds(params, req, session_type) {
     let spsId;
     let spsSlug;
     let selectedSps;
@@ -1453,6 +1457,9 @@ function getSessionIds(params, req) {
     //          //var spsList = jsonBody;
 
     //console.log(spsList);
+
+
+    //session_type
 
     var tmp = spsList[0];
     for (var key in tmp) {
@@ -1478,6 +1485,32 @@ function getSessionIds(params, req) {
         }
 
     }
+
+    if(typeof selectedSps === 'undefined'){
+        var dt = tmp["dt"];
+
+        for (var dtseja in dt) {
+
+            for (var seja in dt[dtseja].sessions) {
+
+                var sdt = dt[dtseja].sessions[seja];
+
+                sdt.nameSlug = slug(sdt.name).toLowerCase();
+
+                if ((params.id == sdt.id) | (params.name == sdt.nameSlug)) {
+                    spsId = sdt.id;
+                    spsSlug = sdt.nameSlug;
+                    req.slug = spsSlug;
+                    req.spsId = spsId;
+                    req.s = sdt;
+                    sdt.type = type;
+                    selectedSps = sdt;
+                }
+
+            }
+        }
+    }
+
 
 
     return Promise.resolve({spsId, spsSlug, s: selectedSps});
