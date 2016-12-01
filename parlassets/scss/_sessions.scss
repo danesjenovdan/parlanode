@@ -159,6 +159,31 @@
         height: 50px;
     }
 }
+
+// search info button
+.session_types {
+    position: relative;
+    max-width: 95%;
+}
+.searchinfo {
+    position: absolute;
+    top: 54px;
+    right: -25px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #ffffff;
+    color: #00628c;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+// end of search info button
+
 .session_type {
     background: #009cdd none repeat scroll 0 0;
     color: $white;
