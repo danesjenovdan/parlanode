@@ -115,9 +115,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div id="card-container"></div>
-            </div>
+
+            <%
+
+            var bigcards = ['Politični kompas'];
+
+            if (bigcards.indexOf(cardData.name) === -1) { %>
+
+                <div class="col-md-12">
+                    <div id="card-container"></div>
+                </div>
+
+            <% } else { %>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div id="card-container"></div>
+                </div>
+
+            <% } %>
+
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
