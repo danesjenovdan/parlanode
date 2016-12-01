@@ -120,7 +120,9 @@
 
             var bigcards = ['Politični kompas'];
 
-            if (bigcards.indexOf(cardData.name) === -1) {
+            <%- JSON.stringify(cardData); %>
+
+            if (bigcards.indexOf(cardData.name) !== -1) {
             
             %>
 
