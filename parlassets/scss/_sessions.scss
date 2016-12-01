@@ -47,6 +47,8 @@
     padding: 0;
     ul {
         padding: 0;
+        display: table;
+        margin: auto;
         li {
             display: table;
             overflow: hidden;
