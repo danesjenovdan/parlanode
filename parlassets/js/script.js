@@ -164,7 +164,7 @@ var votingCardTpl = {
         //var container = document.getElementById(id);
         //Ps.initialize(container, options);
 
-        $(".scroller").perfectScrollbar(options);
+        // $(".scroller").perfectScrollbar(options);
 
     }
 }
@@ -195,7 +195,7 @@ var lastActivity = {
         //var container = document.getElementById(id);
         //Ps.initialize(container, options);
 
-        $(".scroller").perfectScrollbar(options);
+        // $(".scroller").perfectScrollbar(options);
 
     }
 
@@ -214,9 +214,9 @@ var ParlaScroll = {
             minScrollbarLength: 100,
             maxScrollbarLength: 100
         };
-        $(".scroller").each(function () {
-            $("#"+$(this).attr('id')).perfectScrollbar(defaultOptions);
-        });
+        // $(".scroller").each(function () {
+        //     $("#"+$(this).attr('id')).perfectScrollbar(defaultOptions);
+        // });
         //$(".scroller").perfectScrollbar(defaultOptions);
     }
 }
