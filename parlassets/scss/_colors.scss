@@ -39,6 +39,13 @@ $vote-colors: (
   not_present: #99e1ff
 );
 
+$option-colors: (
+  for: #00628c,
+  against: #009cdd,
+  kvorum: #003b54,
+  not_present: #99e1ff
+);
+
 // .funblue {
 //   background: $funblue;
 // }
@@ -61,6 +68,10 @@ $vote-colors: (
 
 @each $party, $color in $party-colors {
   .#{$party}-hover:hover { background: $color; color: #ffffff; }
+}
+
+@each $option, $color in $option-colors {
+  .#{$option}-fill { fill: $color; }
 }
 
 .funblue-light-hover {
