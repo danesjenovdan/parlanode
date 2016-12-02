@@ -84,6 +84,7 @@
                     <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
+
                     <div class="container-fluid">
                         <div class="text-center lead">
                             DONACIJA PO IZBIRI
@@ -107,10 +108,11 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-xs-4 col-less-padding">
-                        <button type="button" id="modal-doniraj-amount-card" class="btn-payment icon-card btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-card">S KARTICO</button>
+                        <button type="button"  class="btn-payment icon-card btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-card">S KARTICO</button>
                     </div>
                     <div class="col-xs-4 col-less-padding">
-                        <button type="button" id="modal-doniraj-amount-paypal" class="btn-payment icon-paypal btn-full-width">S PAYPALOM</button>
+                        <div id="paypal-container"></div>
+                        <!--<button type="button" id="modal-doniraj-amount-paypal" class="btn-payment icon-paypal btn-full-width">S PAYPALOM</button>-->
                     </div>
                     <div class="col-xs-4 col-less-padding">
                         <button type="button" class="btn-payment icon-poloznica btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-address">S POLOŽNICO</button>
@@ -140,25 +142,28 @@
                         <form class="address-donation">
                             <div class="form-group has-feedback">
                                 <label class="control-label sr-only" for="address-donation-email">e-pošta</label>
-                                <input type="text" class="form-control" id="address-donation-email" placeholder="E-pošta">
+                                <input type="text" class="form-control required" id="address-donation-email" placeholder="E-pošta">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label sr-only" for="address-donation-name">ime</label>
-                                <input type="text" class="form-control" id="address-donation-name" placeholder="Ime">
+                                <input type="text" class="form-control required" id="address-donation-name" placeholder="Ime">
                                 <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label sr-only" for="address-donation-surname">priimek</label>
-                                <input type="text" class="form-control" id="address-donation-surname" placeholder="Priimek">
+                                <input type="text" class="form-control required" id="address-donation-surname" placeholder="Priimek">
                                 <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label sr-only" for="address-donation-address">naslov</label>
-                                <input type="text" class="form-control" id="address-donation-address" placeholder="Naslov">
+                                <input type="text" class="form-control required" id="address-donation-address" placeholder="Naslov">
                                 <span class="glyphicon glyphicon-home form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </form>
+                        <div class="card-error bg-danger" style="display: none;">
+                            Preveri vnešene podatke
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -190,23 +195,23 @@
                         <form>
                             <div class="form-group has-feedback">
                                 <label class="control-label sr-only" for="card-donation-email">e-pošta</label>
-                                <input type="text" class="form-control" id="card-donation-email" placeholder="E-pošta">
+                                <input type="text" class="form-control required" id="card-donation-email" placeholder="E-pošta" required>
                                 <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label sr-only" for="card-donation-card-number">Številka kartice</label>
-                                <input type="text" class="form-control" id="card-donation-card-number" placeholder="Številka kartice">
+                                <input type="text" class="form-control required" id="card-donation-card-number" placeholder="Številka kartice" required>
                                 <span class="glyphicon glyphicon-credit-card form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="row">
                                 <div class="form-group has-feedback col-xs-6">
                                     <label class="control-label sr-only" for="card-donation-surname">velja do</label>
-                                    <input type="text" class="form-control" id="card-donation-surname" placeholder="MM/LL">
+                                    <input type="text" class="form-control required" id="card-donation-surname" placeholder="MM/LL" required>
                                     <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
                                 </div>
                                 <div class="form-group has-feedback col-xs-6">
                                     <label class="control-label sr-only" for="card-donation-address">CVC</label>
-                                    <input type="text" class="form-control" id="card-donation-address" placeholder="CVC">
+                                    <input type="text" class="form-control required" id="card-donation-address" placeholder="CVC" required>
                                     <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -216,11 +221,14 @@
                                 </a>
                             </div>
                         </form>
+                        <div class="card-error bg-danger" style="display: none;">
+                            Preveri CVC / datum veljavnost / številko kartice
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col-xs-6 col-xs-offset-3">
-                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija">NADALJUJ</button>
+                        <button type="button" id="modal-doniraj-amount-card" class="btn-multiline btn-full-width" >NADALJUJ</button>
                     </div>
                 </div>
             </div>
@@ -299,18 +307,6 @@
 </div>
 
 <script>
-    $('.modal [data-dismiss="modal"]').on('click', function() {
-        var target = $(this).data("next-target");
-        if (target) {
-            $(this).closest('.modal').data("next-target", target);
-        }
-    });
-    $('.modal').on('hidden.bs.modal', function (e) {
-        var target = $(this).data("next-target");
-        $(this).data("next-target", "");
-        if (target) {
-            $(target).modal('show');
-        }
-    });
+
 </script>
 <!-- - - - - - - - - - - /DONATION MODAL -->
