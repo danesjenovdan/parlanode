@@ -1,0 +1,118 @@
+<div id="og-container">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext);
+        @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext);
+        #og-container {
+            width: 1200px;
+            height: 630px;
+            background: #5b99d5;
+            position: relative;
+            font-family: Roboto, sans-serif;
+        }
+
+        .left-half,
+        .right-half {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            padding: 75px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .left-half {
+            left: 0;
+        }
+
+        .right-half {
+            right: 0;
+            background: #fff;
+        }
+
+        .personimg {
+            width: 200px;
+            height: 200px;
+            margin: 10px auto 75px;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 50px;
+        }
+
+        .personimg svg {
+            fill: #5b99d5;
+        }
+
+        h1,
+        h2 {
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .partyinfo {
+            font-family: "Roboto Slab", sans-serif;
+            font-weight: 300;
+        }
+
+        .cardname {
+            font-size: 44px;
+            color: #5b99d5;
+            margin-top: 200px;
+        }
+
+        .logo {
+            width: 100%;
+            position: absolute;
+            bottom: 55px;
+            left: 0;
+        }
+
+        .logo img {
+            width: 160px;
+        }
+    </style>
+    <div class="left-half">
+        <div class="personimg">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g><path d="M12,2.319c-5.338,0-9.681,4.343-9.681,9.681S6.662,21.681,12,21.681s9.681-4.343,9.681-9.681S17.338,2.319,12,2.319z    M12,20.713c-4.804,0-8.713-3.909-8.713-8.713S7.196,3.287,12,3.287S20.713,7.196,20.713,12S16.804,20.713,12,20.713z"></path><path d="M16.611,6.733l-6.293,3.388c-0.083,0.045-0.152,0.113-0.197,0.197l-3.388,6.293c-0.101,0.188-0.067,0.421,0.084,0.572   c0.093,0.093,0.217,0.142,0.342,0.142c0.078,0,0.157-0.019,0.229-0.058l6.293-3.388c0.083-0.045,0.152-0.113,0.197-0.197   l3.388-6.293c0.101-0.188,0.067-0.421-0.084-0.572C17.032,6.666,16.799,6.632,16.611,6.733z M8.351,15.649l2.315-4.299l1.984,1.984   L8.351,15.649z M13.334,12.65l-1.984-1.984l4.299-2.315L13.334,12.65z"></path><rect x="11.516" y="3.771" width="0.968" height="1.936"></rect><rect x="11.516" y="18.293" width="0.968" height="1.936"></rect><rect x="18.293" y="11.516" width="1.936" height="0.968"></rect><rect x="3.771" y="11.516" width="1.936" height="0.968"></rect></g></svg>
+        </div>
+        <%
+            var ids = [];
+            if (state && state.people) {
+                ids = state.people.map(function(e) {
+                    return e.id;
+                });
+            }
+
+            var names = data.data.filter(function(e) {
+                return ids.indexOf(e.person.id) > -1;
+            }).map(function(e) {
+                return e.person.name;
+            }).join(", ");
+        %>
+        <h1 class="personinfo"><%= names %></h1>
+        <h2 class="partyinfo"></h2>
+    </div>
+    <div class="right-half">
+        <h2 class="cardname">
+            <%= cardData.name %>
+        </h2>
+        <div class="logo">
+            <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
+        </div>
+    </div>
+</div>

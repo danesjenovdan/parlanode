@@ -146,6 +146,34 @@ exports.updateEjs = (req, res) => {
 
 };
 
+exports.getUrls = (req, res)=>{
+
+  const Card = mongoose.model('Card');
+
+  Card.find({})
+    .then((cardDocs)=>{
+
+      const cards = cardDocs.map((cardDoc)=>{
+
+        return {
+          group:cardDoc.group,
+          method:cardDoc.method,
+          uniquePath:cardDoc.uniquePath
+        }
+
+      });
+
+      res.send(cards);
+
+    })
+    .catch((err)=>{
+
+      res.status(400).send(err);
+
+    });
+
+};
+
 /**
  *
  * @param req
@@ -379,10 +407,7 @@ exports.render = function (req, res) {
 
               }
 
-              res.writeHead(200, {
-                'Content-Length': Buffer.byteLength(html),
-                'Content-Type': 'text/html; charset=utf-8'
-              });
+
 
               cacheData.html = html;
 
@@ -408,8 +433,13 @@ exports.render = function (req, res) {
                         quality: 80
                       }, function (err) {
 
+                        res.writeHead(200, {
+                          'Content-Length': Buffer.byteLength(html),
+                          'Content-Type': 'text/html; charset=utf-8'
+                        });
+
                         if (err) {
-                          console.log(err);
+                          console.log('Err:1 ',err);
                         } else {
 
                           cardRender.ogImageUrl = CFG.ogRootUrl+cardRender._id + '.jpeg';
@@ -422,6 +452,7 @@ exports.render = function (req, res) {
                           cardRender.save()
                             .then(()=>{
 
+                              console.log('Write:2 ',err);
                               res.write(cardRender.html);
                               res.end();
 
@@ -433,7 +464,8 @@ exports.render = function (req, res) {
 
                     }
                   } catch (err) {
-                    console.log(err);
+                    console.log('Err:2 ',err);
+                    res.status(400).send({err:err.stack, data:cardData});
                   }
 
                 } else {
@@ -443,20 +475,25 @@ exports.render = function (req, res) {
                 }
 
                 if (err) {
-                  console.log(err);
+                  console.log('Err:3 ',err);
+                  res.status(400).send(err);
+
                 }
               });
 
 
             } catch (err) {
+              console.log('Err:4 ',err);
               res.send(err.toString(), 400);
             }
 
           } catch (err) {
+            console.log('Err:5 ',err);
             res.status(400).send({body, dataUrl, err, stack: err.stack, msg: 'Data source url not returning json'});
           }
 
         } else {
+          console.log('Err:6 ',err);
           res.status(400).send({err, msg: 'Data source request error'});
         }
 
@@ -465,7 +502,7 @@ exports.render = function (req, res) {
 
     })
       .catch((err)=> {
-
+        console.log('Err:7 ',err);
         res.status(400).send(err);
 
       });
