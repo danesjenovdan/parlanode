@@ -242,6 +242,7 @@
     position: relative;
     background: $funblue;
     cursor: pointer;
+    text-decoration: none;
 }
 .session_type:focus{
     color: $white;
@@ -702,4 +703,5 @@ h2.izberi-vrsto-seje {
 span.session-date {
     display: inline;
     font-size: 16px;
+    color: $black;
 }
