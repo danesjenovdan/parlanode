@@ -251,11 +251,11 @@ $(function () {
     $("#modal-doniraj-email #business-donation-btn").click(function () {
         var btn = $(this);
 
-        var url = '/';
+        var url = 'https://prispevaj.parlameter.si/bussines/';
         var jqxhr = $.ajax({
             method: "POST",
             url: url,
-            data: {mail: $("#business-donation-email").val(), message: $("#business-donation-message").val()}
+            data: {email: $("#business-donation-email").val(), message: $("#business-donation-message").val()}
         })
             .done(function (data) {
                 $(".business-donation").html('').addClass("success").html(data.result);
@@ -283,21 +283,25 @@ $(function () {
 
         var btn = $(this);
 
-        var url = 'https://prispevaj.parlameter.si/addressDonation/';
+        var url = 'https://prispevaj.parlameter.si/donateUPN/';
         var jqxhr = $.ajax({
             method: "POST",
             url: url,
             data: {
-                mail: $("#address-donation-email").val(),
+                email: $("#address-donation-email").val(),
                 name: $("#address-donation-name").val(),
                 surname: $("#address-donation-surname").val(),
-                address: $("#address-donation-address").val()
+                address: $("#address-donation-address").val(),
+                money: $("#donation-amount").val()
             }
         })
             .done(function (data) {
                 $(".address-donation").html('').addClass("success").html(data.result);
                 $(".card-error").hide();
                 btn.hide();
+
+                $("#modal-doniraj-address").modal('hide');
+                $("#modal-doniraj-hvala-donacija").modal('show');
             })
             .fail(function () {
 
@@ -322,18 +326,19 @@ $(function () {
 
                         console.log(response);
 
-                        $.post({
+                        $.ajax({
                             method: "POST",
                             url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
                             data: {
                                 nonce: response['nonce'],
-                                email: "lojze@petrle.si",
+                                email: details.email,
                                 money: $("#donation-amount").val(),
                                 purpose: "Donacija parlameter"
                             }
                         }).done(function (resp) {
                             console.log(resp);
                             if (resp.status == "OK") {
+                                $("#modal-doniraj-card").modal('hide');
                                 $("#modal-doniraj-hvala-donacija").modal('show');
                             }else {
                                 alert(resp.status);
@@ -365,7 +370,7 @@ $(function () {
 
                         console.log(response);
 
-                        $.post({
+                        $.ajax({
                             method: "POST",
                             url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
                             data: {
@@ -457,6 +462,7 @@ $(function () {
 
                                     //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
 
+                                    $("#modal-doniraj-card").modal('hide');
                                     $("#modal-doniraj-hvala-donacija").modal('show');
 
 
@@ -482,6 +488,7 @@ $(function () {
 
                                     //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
 
+                                    $("#modal-doniraj-card").modal('hide');
                                     $("#modal-doniraj-hvala-donacija").modal('show');
 
 
