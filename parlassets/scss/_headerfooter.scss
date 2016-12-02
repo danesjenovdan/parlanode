@@ -469,8 +469,8 @@ footer.footer {
 .stripeeltop:before {
     content: '';
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: -5%;
+    width: 110%;
     height: 200%;
     background: $grey;
     top: 15px;
