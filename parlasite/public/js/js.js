@@ -322,12 +322,12 @@ $(function () {
 
                         console.log(response);
 
-                        $.post({
+                        $.ajax({
                             method: "POST",
                             url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
                             data: {
                                 nonce: response['nonce'],
-                                email: "lojze@petrle.si",
+                                email: details.email,
                                 money: $("#donation-amount").val(),
                                 purpose: "Donacija parlameter"
                             }
@@ -365,7 +365,7 @@ $(function () {
 
                         console.log(response);
 
-                        $.post({
+                        $.ajax({
                             method: "POST",
                             url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
                             data: {
