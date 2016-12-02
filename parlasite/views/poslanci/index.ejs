@@ -69,7 +69,7 @@
                 <li v-if="memberData.length === 0" class="loader">
                   <div class="nalagalnik"></div>
                 </li>
-                <div v-if="memberData.length > 0 && processedMemberData.length === 0" class="no-results">Brez poslancev</div>
+                <div v-if="memberData.length > 0 && processedMemberData.length === 0" class="no-results">Brez rezultatov.</div>
                 <li v-for="member in processedMemberData" class="person">
                   <a class="portrait column" :href="getMemberUrl(member.person.id)">
                     <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
