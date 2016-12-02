@@ -471,7 +471,7 @@ exports.render = function (req, res) {
 
     })
       .catch((err)=> {
-
+        console.log('Err:7 ',err);
         res.status(400).send(err);
 
       });
