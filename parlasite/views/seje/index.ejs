@@ -1,69 +1,38 @@
 <% include ../partials/header.ejs %>
-
 <% include ../partials/session_search.ejs %>
 
 <div class="row">
     <div class="col-lg-12">
-        <div class="session_types ">
-
-            <h2 class="izberi-vrsto-seje">
-                Izberi vrsto seje
-            </h2>
-            <ul class="clearfix">
-                <li>
-                    <a href="/seje/tip/seje-dz" class="active">
-                        Seje DZ
+        <div class="session-types narrow-inner-container">
+            <h2>Izberi vrsto seje</h2>
+            <div class="session-types-list">
+                <% [
+                  { slug: 'seje-dz', label: 'Seje DZ' },
+                  { slug: 'seje-delovnih-teles', label: 'Seje delovnih teles' },
+                  { slug: 'seje-kolegija-predsednika-dz', label: 'Seje kolegija predsednika DZ' }
+                ].forEach(function(link) { %>
+                    <a href="/seje/tip/<%= link.slug %>" class="session-type<%- 'seje-dz' === link.slug ? ' active' : ''; %>">
+                        <span><%- link.label %></span>
                     </a>
-                </li>
-                <li>
-                    <a href="/seje/tip/seje-delovnih-teles">
-                        Seje delovnih<br> teles
-                    </a>
-                </li>
-                <li>
-                    <a href="/seje/tip/seje-kolegija-predsednika-dz">
-                        Seje kolegija <br>predsednika DZ
-                    </a>
-                </li>
-            </ul>
-
-
-
+                <% }) %>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
-        <div class="row colToList">
-            <%
-            var j = 1;
-            for (var i = 0; i < sesData.sesData.length; i++){
-            %>
-            <% if (sesData.type != 2){%>
-            <a href="/seja/glasovanja/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
-                <% }else{%>
-                <a href="/seja/transkript/<%- sesData.sesData[i].id %>" class="session_type col-sm-3 closed action-t-<%- sesData.type %> <%=(j%4==0)?"col4break":null%>" data-id="<%- sesData.sesData[i].id %>">
-                    <% }%>
-
-
-                    <span>
-                   <%- sesData.sesData[i].name %>
-                   <br>
-                   <span class="session-date"><%- sesData.sesData[i].date %></span>
-               </span>
-                </a>
-                <% j++; } %>
+        <div class="row">
+            <div class="session-list">
+                <% sesData.sesData.forEach(function(session) { %>
+                    <a href="/seja/<%- sesData.type != 2 ? 'glasovanja' : 'transkript' %>/<%- session.id %>" class="session closed action-t-<%- sesData.type %>" data-id="<%- session.id %>">
+                        <div class="session-name"><%- session.name %></div>
+                        <div class="session-date"><%- session.date %></div>
+                    </a>
+                <% }) %>
+            </div>
         </div>
     </div>
 </div>
-
-
-<style>
-    .tmpContainer {
-        margin: 0 10px 10px 10px;
-    }
-</style>
-
 
 <% include ../partials/footer.ejs %>
