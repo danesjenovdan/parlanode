@@ -222,10 +222,152 @@ $(function () {
             })
             .always(function () {
             });
+    });
+
+
+    $("#modal-doniraj-email #business-donation-btn").click(function () {
+        var btn = $(this);
+
+        var url = '/';
+        var jqxhr = $.ajax({
+            method: "POST",
+            url: url,
+            data: { mail: $("#business-donation-email").val(), message: $("#business-donation-message").val() }
+        })
+            .done(function (data) {
+                $(".business-donation").html('').addClass("success").html(data.result);
+                btn.hide();
+            })
+            .fail(function () {
+
+            })
+            .always(function () {
+            });
+    });
 
 
 
+    $("#modal-doniraj-address #address-donation-btn").click(function () {
+        var btn = $(this);
+
+        var url = '/';
+        var jqxhr = $.ajax({
+            method: "POST",
+            url: url,
+            data: {
+                mail: $("#address-donation-email").val(),
+                name: $("#address-donation-name").val(),
+                surname: $("#address-donation-surname").val(),
+                address: $("#address-donation-address").val()
+            }
+        })
+            .done(function (data) {
+                $(".address-donation").html('').addClass("success").html(data.result);
+                btn.hide();
+            })
+            .fail(function () {
+
+            })
+            .always(function () {
+            });
+    });
+
+
+
+    $("#modal-doniraj-amount #modal-doniraj-amount-paypal").click(function () {
+
+//PAYPAL
+        braintree.setup("eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI4OTdhZjkwZDhkYWI3OTY5ZTRlYThlZjVhNTE1N2M2MWZkNGQzZTYzYzIzMjA4NGMyZjc5ODM4MzZiN2RjYTlmfGNyZWF0ZWRfYXQ9MjAxNi0xMS0zMFQxODo1NjowNS44MjAwNDYwMDArMDAwMFx1MDAyNm1lcmNoYW50X2lkPXJ3OXFtc2QyODNkdzJneTRcdTAwMjZwdWJsaWNfa2V5PTk2anFndjVkZnN2OTRobnEiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvcnc5cW1zZDI4M2R3Mmd5NC9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbImN2diJdLCJlbnZpcm9ubWVudCI6InNhbmRib3giLCJjbGllbnRBcGlVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvcnc5cW1zZDI4M2R3Mmd5NC9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhbmFseXRpY3MiOnsidXJsIjoiaHR0cHM6Ly9jbGllbnQtYW5hbHl0aWNzLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20vcnc5cW1zZDI4M2R3Mmd5NCJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjp0cnVlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJrdW5zdCBzcCIsImNsaWVudElkIjpudWxsLCJwcml2YWN5VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3BwIiwidXNlckFncmVlbWVudFVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS90b3MiLCJiYXNlVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhc3NldHNVcmwiOiJodHRwczovL2NoZWNrb3V0LnBheXBhbC5jb20iLCJkaXJlY3RCYXNlVXJsIjpudWxsLCJhbGxvd0h0dHAiOnRydWUsImVudmlyb25tZW50Tm9OZXR3b3JrIjp0cnVlLCJlbnZpcm9ubWVudCI6Im9mZmxpbmUiLCJ1bnZldHRlZE1lcmNoYW50IjpmYWxzZSwiYnJhaW50cmVlQ2xpZW50SWQiOiJtYXN0ZXJjbGllbnQzIiwiYmlsbGluZ0FncmVlbWVudHNFbmFibGVkIjp0cnVlLCJtZXJjaGFudEFjY291bnRJZCI6Imt1bnN0c3AiLCJjdXJyZW5jeUlzb0NvZGUiOiJFVVIifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6InJ3OXFtc2QyODNkdzJneTQiLCJ2ZW5tbyI6Im9mZiJ9", "custom", {
+            paypal: {
+                container: "paypal-container",
+            },
+            onPaymentMethodReceived: function (response) {
+                $.post({
+                    method: "POST",
+                    url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
+                    data: {nonce: response['nonce'], email:"lojze@petrle.si", money: $("#donation-amount").val(), purpose: "Donacija parlameter"}
+                }).done(function(resp) {
+                    console.log(resp);
+                    if(resp.status=="OK")
+                        location.reload();
+                    else
+                        alert(resp.status)
+                });
+            }
+        });
 
     });
+
+
+
+    $("#modal-doniraj-amount #modal-doniraj-amount-card").click(function () {
+
+//CARD
+        var client = new braintree.api.Client({
+            // Use the generated client token to instantiate the Braintree client.
+            clientToken: 'eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI3ZTU4YjFjNDk0OTljNDY2ZTE5OTc4ZmQzMWI2NjFmNTE0OTc3YWM5NTljMmNmYTBiNmMzMzAyNGM2Zjk4ZWZjfGNyZWF0ZWRfYXQ9MjAxNi0xMS0zMFQxODo1NjowNC45MzQ3OTA2MzUrMDAwMFx1MDAyNm1lcmNoYW50X2lkPXJ3OXFtc2QyODNkdzJneTRcdTAwMjZwdWJsaWNfa2V5PTk2anFndjVkZnN2OTRobnEiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvcnc5cW1zZDI4M2R3Mmd5NC9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbImN2diJdLCJlbnZpcm9ubWVudCI6InNhbmRib3giLCJjbGllbnRBcGlVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvcnc5cW1zZDI4M2R3Mmd5NC9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhbmFseXRpY3MiOnsidXJsIjoiaHR0cHM6Ly9jbGllbnQtYW5hbHl0aWNzLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20vcnc5cW1zZDI4M2R3Mmd5NCJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjp0cnVlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJrdW5zdCBzcCIsImNsaWVudElkIjpudWxsLCJwcml2YWN5VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3BwIiwidXNlckFncmVlbWVudFVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS90b3MiLCJiYXNlVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhc3NldHNVcmwiOiJodHRwczovL2NoZWNrb3V0LnBheXBhbC5jb20iLCJkaXJlY3RCYXNlVXJsIjpudWxsLCJhbGxvd0h0dHAiOnRydWUsImVudmlyb25tZW50Tm9OZXR3b3JrIjp0cnVlLCJlbnZpcm9ubWVudCI6Im9mZmxpbmUiLCJ1bnZldHRlZE1lcmNoYW50IjpmYWxzZSwiYnJhaW50cmVlQ2xpZW50SWQiOiJtYXN0ZXJjbGllbnQzIiwiYmlsbGluZ0FncmVlbWVudHNFbmFibGVkIjp0cnVlLCJtZXJjaGFudEFjY291bnRJZCI6Imt1bnN0c3AiLCJjdXJyZW5jeUlzb0NvZGUiOiJFVVIifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6InJ3OXFtc2QyODNkdzJneTQiLCJ2ZW5tbyI6Im9mZiJ9'
+        });
+
+        client.verify3DS({
+            amount: $("#donation-amount").val(),
+            creditCard: {
+                // required parameters
+                number: $("#card-donation-card-number").val(),
+                expirationDate: $("#card-donation-surname").val(), // You can use either expirationDate
+
+                // optional parameters
+                cvv: $("#cvv").val(),
+            }
+        }, function (err, response) {
+            console.log(response);
+            console.log(err);
+            if (err)
+            {
+                console.log(err);
+            }
+            else{
+                console.log(response);
+                //Normal
+                if($("#donation-monthly").is(':checked')) {
+                    $.post({
+                     method: "POST",
+                     url: "https://prispevaj.parlameter.si/cardResponse/",
+                     data: {nonce: response['nonce'], email:$("card-donation-email").val(), money: $("#donation-amount").val(), purpose: "Donacija parlameter"}
+                     }).done(function(resp) {
+                     console.log(resp);
+                     if(resp.status=="OK")
+                     location.reload();
+                     else
+                     alert(resp.status)
+                     });
+                }else {
+                    //Recurring
+
+                    $.post({
+                        method: "POST",
+                        url: "https://prispevaj.parlameter.si/responseRecurring/",
+                        data: {
+                            nonce: response['nonce'],
+                            email: $("card-donation-email").val(),
+                            money: $("#donation-amount").val(),
+                            purpose: "Donacija parlameter"
+                        }
+                    }).done(function (resp) {
+                        console.log(resp);
+                        if (resp.status == "OK")
+                            location.reload();
+                        else
+                            alert(resp.status)
+                    });
+                }
+            }
+        });
+
+    });
+
+
+
+
+
 
 });
