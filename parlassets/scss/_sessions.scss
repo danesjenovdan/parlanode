@@ -243,9 +243,11 @@
     background: $funblue;
     cursor: pointer;
     text-decoration: none;
+    color: $black;
 }
 .session_type:focus{
     color: $white;
+    text-decoration: none;
 }
 
 .session_type.active:after {
