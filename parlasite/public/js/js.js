@@ -309,7 +309,7 @@ $(function () {
 
     function getppdata() {
         var token;
-        $("#paypal-container").html();
+        $("#paypal-container").html('');
         var jqxhr = $.ajax("https://prispevaj.parlameter.si/getBrainToken/")
             .done(function (data) {
                 token = data.token;
