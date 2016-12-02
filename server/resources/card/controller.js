@@ -244,8 +244,6 @@ exports.render = function (req, res) {
 
     console.log('Compile card');
 
-    let sent = false;
-
     Card.findOne({method: method, group: group}).lean().then(function (cardDoc) {
 
       if (!cardDoc) {
@@ -276,8 +274,6 @@ exports.render = function (req, res) {
       cacheData.card = cardDoc._id;
       cacheData.cardUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
       cacheData.cardLastUpdate = cardDoc.lastUpdate;
-
-
 
       request(dataUrl, function (err, _res, body) {
 
@@ -391,7 +387,6 @@ exports.render = function (req, res) {
               cacheData.html = html;
 
               const cardRender = new CardRender(cacheData);
-
               cardRender.save(function (err) {
 
                 /**
@@ -439,43 +434,36 @@ exports.render = function (req, res) {
                     }
                   } catch (err) {
                     console.log('Err:2 ',err);
-                    sent = true;
-                    return res.status(400).send(err);
+                    res.status(400).send(err);
                   }
 
                 } else {
                   console.log('No card type');
-                  if(!sent) {
-                    res.write(html);
-                    res.end();
-                  }
+                  res.write(html);
+                  res.end();
                 }
 
                 if (err) {
-                  console.log(err);
-                  if(!sent) {
-                    res.status(400).send(err);
-                  }
+                  console.log('Err:3 ',err);
+                  res.status(400).send(err);
+
                 }
               });
 
 
             } catch (err) {
-              if(!sent) {
-                res.send(err.toString(), 400);
-              }
+              console.log('Err:4 ',err);
+              res.send(err.toString(), 400);
             }
 
           } catch (err) {
-            if(!sent) {
-              res.status(400).send({body, dataUrl, err, stack: err.stack, msg: 'Data source url not returning json'});
-            }
+            console.log('Err:5 ',err);
+            res.status(400).send({body, dataUrl, err, stack: err.stack, msg: 'Data source url not returning json'});
           }
 
         } else {
-          if(!sent) {
-            res.status(400).send({err, msg: 'Data source request error'});
-          }
+          console.log('Err:6 ',err);
+          res.status(400).send({err, msg: 'Data source request error'});
         }
 
       });
@@ -484,9 +472,7 @@ exports.render = function (req, res) {
     })
       .catch((err)=> {
 
-        if(!sent) {
-          res.status(400).send(err);
-        }
+        res.status(400).send(err);
 
       });
 
