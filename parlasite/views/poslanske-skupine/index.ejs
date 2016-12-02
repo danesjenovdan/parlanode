@@ -58,9 +58,7 @@
               </div>
               <div class="card-content-info hidden">
                 <div class="card-back-content">
-                  <p class="info-text">
-                    Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" class="funblue-light-hover">spletnega mesta DZ</a>.
-                  </p>
+                  <p class="info-text" v-html="currentAnalysisData.explanation"></p>
                 </div>
               </div>
               <div class="card-content-embed hidden">
@@ -123,13 +121,73 @@ new Vue({
     partyData: [],
     currentAnalysis: 'seat_count',
     analyses: [
-      { id: 'seat_count',        label: 'Število sedežev',                  titleSuffix: 'po številu sedežev' },
-      { id: 'presence_sessions', label: 'Prisotnost na sejah DZ',           titleSuffix: 's prisotnostjo na sejah DZ',           unit: 'percent' },
-      { id: 'presence_votes',    label: 'Prisotnost na glasovanjih sej DZ', titleSuffix: 's prisotnostjo na glasovanjih sej DZ', unit: 'percent' },
-      { id: 'vocabulary_size',   label: 'Raznolikost besedišča',            titleSuffix: 'z raznolikostjo besedišča' },
-      { id: 'privzdignjeno',     label: 'Privzdignjeno besedje',            titleSuffix: 's privzdignjenim besedjem' },
-      { id: 'preprosto',         label: 'Preprosto besedje',                titleSuffix: 's preprostim besedjem' },
-      { id: 'problematicno',     label: 'Ekscesno besedje',                 titleSuffix: 'z ekscesnim besedjem' },
+      {
+        id: 'seat_count',
+        label: 'Število sedežev',
+        titleSuffix: 'po številu sedežev',
+        explanation: 'Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" class="funblue-light-hover">spletnega mesta DZ</a>.'
+      },
+      {
+        id: 'presence_sessions',
+        label: 'Prisotnost na sejah DZ',
+        titleSuffix: 's prisotnostjo na sejah DZ',
+        explanation: 'Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100).',
+        unit: 'percent'
+      },
+      {
+        id: 'presence_votes',
+        label: 'Prisotnost na glasovanjih sej DZ',
+        titleSuffix: 's prisotnostjo na glasovanjih sej DZ',
+        explanation: 'Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100).',
+        unit: 'percent'
+      },
+      {
+        id: 'vocabulary_size',
+        label: 'Raznolikost besedišča',
+        titleSuffix: 'z raznolikostjo besedišča',
+        explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br>' +
+        '<br>' +
+        'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+      },
+      {
+        id: 'privzdignjeno',
+        label: 'Privzdignjeno besedje',
+        titleSuffix: 's privzdignjenim besedjem',
+        explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
+          'Privzdignjeno besedje<br>' +
+          'Kvalifikatorji iz SSKJ<br>' +
+          'evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>' +
+          'Kvalifikatorji iz SNB<br>' +
+          '/<br>' +
+          '<br>' +
+          'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+      },
+      {
+        id: 'preprosto',
+        label: 'Preprosto besedje',
+        titleSuffix: 's preprostim besedjem',
+        explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
+          'Preprosto besedje<br>' +
+          'Kvalifikatorji iz SSKJ<br>' +
+          'narečno (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>' +
+          'Kvalifikatorji iz SNB<br>' +
+          'pogovorno (pog.)<br>' +
+          '<br>' +
+          'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+      },
+      {
+        id: 'problematicno',
+        label: 'Ekscesno besedje',
+        titleSuffix: 'z ekscesnim besedjem',
+        explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
+          'Ekscesno besedje<br>' +
+          'Kvalifikatorji iz SSKJ <br>' +
+          'vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično (iron.), otroško (otr.) <br>' +
+          'Kvalifikatorji iz SNB<br>' +
+          'slabšalno (slabš.), vulgarno (vulg.)<br>' +
+          '<br>' +
+          'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+      },
     ]
   },
   computed: {
