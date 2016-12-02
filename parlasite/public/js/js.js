@@ -300,8 +300,8 @@ $(function () {
                 $(".card-error").hide();
                 btn.hide();
 
-                $("#modal-doniraj-address").modal('hide');
-                $("#modal-doniraj-hvala-donacija").modal('show');
+                // $("#modal-doniraj-address").modal('hide');
+                // $("#modal-doniraj-hvala-donacija").modal('show');
             })
             .fail(function () {
 
@@ -331,7 +331,7 @@ $(function () {
                             url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
                             data: {
                                 nonce: response['nonce'],
-                                email: details.email,
+                                email: response.details.email,
                                 money: $("#donation-amount").val(),
                                 purpose: "Donacija parlameter"
                             }
