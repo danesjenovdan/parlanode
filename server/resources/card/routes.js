@@ -5,6 +5,8 @@ const authMiddleware    = require('../../middlewares/auth');
 
 module.exports = function(app){
 
+    app.get('/api/cards/getUrls', controller.getUrls);
+
     app.delete('/api/card/:id', authMiddleware, controller.delete);
 
     app.post('/api/card', authMiddleware, controller.save);
@@ -23,6 +25,6 @@ module.exports = function(app){
 
     app.get('/api/card', authMiddleware, controller.get);
 
-    app.get('/api/cards/getUrls', controller.getUrls);
+
 
 };
