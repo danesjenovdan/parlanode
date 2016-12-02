@@ -72,10 +72,20 @@ $(function () {
         // }
     });
 
+    var search_ops_data = ops_data;
+
+    var i = 0;
+    search_ops_data.forEach(function(e) {
+        if (e.acronym.indexOf('NeP') != -1) {
+            search_ops_data.splice(i, 1);
+        }
+        i = i + 1;
+    });
+
     var ops_search_token = new Bloodhound({
         'datumTokenizer': Bloodhound.tokenizers.obj.whitespace('acronym', 'name'),
         'queryTokenizer': Bloodhound.tokenizers.whitespace,
-        'local': ops_data
+        'local': search_ops_data
     });
 
     var sessionsearch_token = new Bloodhound({
