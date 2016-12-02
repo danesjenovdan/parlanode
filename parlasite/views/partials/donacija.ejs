@@ -48,15 +48,15 @@
                         <div class="text-center lead">
                             Najlažje, da se o podrobnostih pogovorimo po e-pošti.
                         </div>
-                        <form>
+                        <form class="business-donation">
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-email">e-pošta</label>
-                                <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
+                                <label class="control-label sr-only" for="business-donation-email">e-pošta</label>
+                                <input type="text" class="form-control" id="business-donation-email" placeholder="E-pošta">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-message">sporočilo</label>
-                                <textarea class="form-control" id="donation-message" placeholder="Sporočilo"></textarea>
+                                <label class="control-label sr-only" for="business-donation-message">sporočilo</label>
+                                <textarea class="form-control" id="business-donation-message" placeholder="Sporočilo"></textarea>
                                 <span class="glyphicon glyphicon-align-left form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </form>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-xs-6 col-xs-offset-3">
-                        <button type="button" class="btn-multiline btn-full-width">POŠLJI</button>
+                        <button type="button" id="business-donation-btn" class="btn-multiline btn-full-width">POŠLJI</button>
                     </div>
                 </div>
             </div>
@@ -107,10 +107,10 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-xs-4 col-less-padding">
-                        <button type="button" class="btn-payment icon-card btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-card">S KARTICO</button>
+                        <button type="button" id="modal-doniraj-amount-card" class="btn-payment icon-card btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-card">S KARTICO</button>
                     </div>
                     <div class="col-xs-4 col-less-padding">
-                        <button type="button" class="btn-payment icon-paypal btn-full-width">S PAYPALOM</button>
+                        <button type="button" id="modal-doniraj-amount-paypal" class="btn-payment icon-paypal btn-full-width">S PAYPALOM</button>
                     </div>
                     <div class="col-xs-4 col-less-padding">
                         <button type="button" class="btn-payment icon-poloznica btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-address">S POLOŽNICO</button>
@@ -137,25 +137,25 @@
                         <div class="text-center lead">
                             Vnesite vaše podatke in poslali vam bomo položnico.
                         </div>
-                        <form>
+                        <form class="address-donation">
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-email">e-pošta</label>
-                                <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
+                                <label class="control-label sr-only" for="address-donation-email">e-pošta</label>
+                                <input type="text" class="form-control" id="address-donation-email" placeholder="E-pošta">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-name">ime</label>
-                                <input type="text" class="form-control" id="donation-name" placeholder="Ime">
+                                <label class="control-label sr-only" for="address-donation-name">ime</label>
+                                <input type="text" class="form-control" id="address-donation-name" placeholder="Ime">
                                 <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-surname">priimek</label>
-                                <input type="text" class="form-control" id="donation-surname" placeholder="Priimek">
+                                <label class="control-label sr-only" for="address-donation-surname">priimek</label>
+                                <input type="text" class="form-control" id="address-donation-surname" placeholder="Priimek">
                                 <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-address">naslov</label>
-                                <input type="text" class="form-control" id="donation-address" placeholder="Naslov">
+                                <label class="control-label sr-only" for="address-donation-address">naslov</label>
+                                <input type="text" class="form-control" id="address-donation-address" placeholder="Naslov">
                                 <span class="glyphicon glyphicon-home form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </form>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-xs-6 col-xs-offset-3">
-                        <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-poloznica">NADALJUJ</button>
+                        <button type="button" id="address-donation-btn" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-hvala-poloznica">NADALJUJ</button>
                     </div>
                 </div>
             </div>
@@ -189,24 +189,24 @@
                         </div>
                         <form>
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-email">e-pošta</label>
-                                <input type="text" class="form-control" id="donation-email" placeholder="E-pošta">
+                                <label class="control-label sr-only" for="card-donation-email">e-pošta</label>
+                                <input type="text" class="form-control" id="card-donation-email" placeholder="E-pošta">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="form-group has-feedback">
-                                <label class="control-label sr-only" for="donation-card-number">Številka kartice</label>
-                                <input type="text" class="form-control" id="donation-card-number" placeholder="Številka kartice">
+                                <label class="control-label sr-only" for="card-donation-card-number">Številka kartice</label>
+                                <input type="text" class="form-control" id="card-donation-card-number" placeholder="Številka kartice">
                                 <span class="glyphicon glyphicon-credit-card form-control-feedback" aria-hidden="true"></span>
                             </div>
                             <div class="row">
                                 <div class="form-group has-feedback col-xs-6">
-                                    <label class="control-label sr-only" for="donation-surname">velja do</label>
-                                    <input type="text" class="form-control" id="donation-surname" placeholder="MM/LL">
+                                    <label class="control-label sr-only" for="card-donation-surname">velja do</label>
+                                    <input type="text" class="form-control" id="card-donation-surname" placeholder="MM/LL">
                                     <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
                                 </div>
                                 <div class="form-group has-feedback col-xs-6">
-                                    <label class="control-label sr-only" for="donation-address">CVC</label>
-                                    <input type="text" class="form-control" id="donation-address" placeholder="CVC">
+                                    <label class="control-label sr-only" for="card-donation-address">CVC</label>
+                                    <input type="text" class="form-control" id="card-donation-address" placeholder="CVC">
                                     <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
