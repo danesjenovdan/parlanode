@@ -379,10 +379,7 @@ exports.render = function (req, res) {
 
               }
 
-              res.writeHead(200, {
-                'Content-Length': Buffer.byteLength(html),
-                'Content-Type': 'text/html; charset=utf-8'
-              });
+
 
               cacheData.html = html;
 
@@ -407,6 +404,11 @@ exports.render = function (req, res) {
                         captureSelector: '#og-container',
                         quality: 80
                       }, function (err) {
+
+                        res.writeHead(200, {
+                          'Content-Length': Buffer.byteLength(html),
+                          'Content-Type': 'text/html; charset=utf-8'
+                        });
 
                         if (err) {
                           console.log('Err:1 ',err);
@@ -435,8 +437,7 @@ exports.render = function (req, res) {
                     }
                   } catch (err) {
                     console.log('Err:2 ',err);
-                    res.end();
-                    //res.status(400).send(err);
+                    res.status(400).send(err);
                   }
 
                 } else {
