@@ -433,7 +433,6 @@ exports.render = function (req, res) {
 
                     }
                   } catch (err) {
-                    res.status(400).send(err);
                     console.log(err);
                   }
 
@@ -444,6 +443,7 @@ exports.render = function (req, res) {
                 }
 
                 if (err) {
+                  res.status(400).send(err);
                   console.log(err);
                 }
               });
