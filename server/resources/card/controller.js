@@ -146,6 +146,34 @@ exports.updateEjs = (req, res) => {
 
 };
 
+exports.getUrls = (req, res)=>{
+
+  const Card = mongoose.model('Card');
+
+  Card.find({})
+    .then((cardDocs)=>{
+
+      const cards = cardDocs.map((cardDoc)=>{
+
+        return {
+          group:cardDoc.group,
+          method:cardDoc.method,
+          uniquePath:cardDoc.uniquePath
+        }
+
+      });
+
+      res.send(cards);
+
+    })
+    .catch((err)=>{
+
+      res.status(400).send(err);
+
+    });
+
+};
+
 /**
  *
  * @param req

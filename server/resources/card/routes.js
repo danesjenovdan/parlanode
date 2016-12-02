@@ -23,4 +23,6 @@ module.exports = function(app){
 
     app.get('/api/card', authMiddleware, controller.get);
 
+    app.get('/api/cards/getUrls', controller.getUrls);
+
 };
