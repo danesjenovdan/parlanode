@@ -394,6 +394,8 @@ exports.render = function (req, res) {
                  */
                 if (cardDoc.type) {
 
+                  try {
+
                     const ogEjs = fs.readFileSync('views/og/' + cardDoc.type + '.ejs', 'utf-8');
 
                     if (ogEjs) {
@@ -430,7 +432,9 @@ exports.render = function (req, res) {
                       });
 
                     }
-
+                  } catch (err) {
+                    throw new Error(err);
+                  }
 
                 } else {
                   console.log('No card type');
