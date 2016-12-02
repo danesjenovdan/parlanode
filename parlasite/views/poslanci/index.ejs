@@ -18,7 +18,8 @@
             <select
               name="analysis"
               id="analysis"
-              v-model="currentAnalysis">
+              v-model="currentAnalysis"
+              @change="selectAnalysis(currentAnalysis)">
               <option
                 v-for="analysis in analyses"
                 :value="analysis.id">
@@ -127,13 +128,13 @@
               <div class="card-back-content card-content">
                 <div class="share-content">
                   <label for="share-url">Neposredna povezava do kartice</label>
-                  <input type="url" class="form-control share-url" id="share-url" :value="generatedCardUrl + '&frame=true'"/>
+                  <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
                   <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card-footer">
+          <div class="card-footer" data-shortened="true">
             <div class="card-circle-button card-share" data-back="share"></div>
             <div class="card-circle-button card-embed" data-back="embed"></div>
             <div class="card-circle-button card-info" data-back="info">i</div>
@@ -243,7 +244,8 @@ new Vue({
     currentParties: [],
     parties: ['DeSUS', 'IMNS', 'NSI', 'PS NP', 'SD', 'SDS', 'SMC', 'ZL'],
     excludePresiding: false,
-    slugs: null
+    slugs: null,
+    shortenedCardUrl: ''
   },
   computed: {
     columns: function() {
@@ -407,6 +409,7 @@ new Vue({
       })
       that.memberData = response.data
     })
+    this.shortenUrl(this.generatedCardUrl)
   },
   methods: {
     selectAnalysis: function(analysisId) {
@@ -459,6 +462,17 @@ new Vue({
       return this.slugs
         ? this.slugs.base + this.slugs.partyLink.base + this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
         : '/poslanska-skupina/' + party.acronym + '/pregled'
+    },
+    shortenUrl: function(url) {
+      var that = this
+      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
+          that.shortenedCardUrl = response
+      });
+    }
+  },
+  watch: {
+    generatedCardUrl: function(newValue) {
+      this.shortenUrl(newValue)
     }
   }
 })
