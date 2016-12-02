@@ -422,6 +422,7 @@ exports.render = function (req, res) {
                           cardRender.save()
                             .then(()=>{
 
+                              console.log('Write:2 ',err);
                               res.write(cardRender.html);
                               res.end();
 
