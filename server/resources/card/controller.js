@@ -409,7 +409,7 @@ exports.render = function (req, res) {
                       }, function (err) {
 
                         if (err) {
-                          console.log(err);
+                          console.log('Err:1 ',err);
                         } else {
 
                           cardRender.ogImageUrl = CFG.ogRootUrl+cardRender._id + '.jpeg';
@@ -433,7 +433,7 @@ exports.render = function (req, res) {
 
                     }
                   } catch (err) {
-                    console.log(err);
+                    console.log('Err:2 ',err);
                   }
 
                 } else {
