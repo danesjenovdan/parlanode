@@ -1,11 +1,9 @@
-// _colors.scss
 .session-container {
     height: 100%;
     left: 0;
     margin-left: -9px;
     margin-right: -9px;
     margin-top: 20px;
-    overflow: hidden;
     padding: 0 20px;
     position: relative;
     top: 0;
@@ -41,230 +39,136 @@
     }
 }
 
-// @media (max-width: 950px) {
-//     .session_types {
-//         width: 420px;
-//         li {
-//             width: 125px;
-//         }
-//     }
-//     .session_transcript {
-//         .panel-body {
-//             padding-left: 10px;
-//             padding-right: 10px;
-//             font-weight: 300;
-//             font-size: 18px;
-//         }
-//     }
-// }
-// @media (max-width: 500px) {
-//     .session_types {
-//         width: 100%;
-//         li {
-//             width: 100%;
-//             padding: 0;
-//             margin: 0;
-//         }
-//     }
-// }
-
-.session_types {
-    margin: 0 auto 40px auto;
-    width: 560px;
-    text-align: center;
+.session-types {
+  .session-types-title {
+    color: #525252;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .session-types-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
     padding: 0;
-    @include respond-to(mobile) {
-        width: 100%;
+    .session-type {
+      align-items: center;
+      border: 1px solid $darkgrey;
+      color: $black;
+      display: flex;
+      justify-content: center;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      width: calc(33.33% - 6.667px);
+      &.active, &:hover {
+        background: $funblue;
+        color: $white;
+      }
+      &:active, &:focus, &:hover { text-decoration: none; }
+      @include respond-to(mobile) {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
     }
-    ul {
-        padding: 0;
-        display: table;
-        margin: auto;
+  }
+}
 
-        @include respond-to(mobile) {
-            font-size: 12px;
-            line-height: 1.1em;
-        }
-
-        li {
-            display: table;
-            overflow: hidden;
-            float: left;
-            text-align: center;
-            list-style: none;
-            margin-right: 10px;
-            min-height: 52px;
-
-            &:last-of-type {
-                margin-right: 0;
-            }
-
-            @include respond-to(mobile) {
-                width: 86px;
-            }
-
-
-            a {
-                display: table-cell;
-                vertical-align: middle;
-                line-height: 18px;
-                height: 50px;
-                width: 160px;
-                color: $black;
-                border: 1px solid $darkgrey;
-                padding: 5px 20px;
-                text-transform: uppercase;
-
-                @include respond-to(mobile) {
-                    padding: 0;
-                }
-            }
-            a.active,
-            a:hover {
-                color: $white;
-                background: $funblue;
-                text-decoration: none;
-            }
-        }
+.narrow-inner-container {
+  h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+  .search {
+    .form-control {
+      border-radius: 0;
+      border-right: medium none;
+      font-size: 20px;
+      height: 50px;
+      border-color: $grey-medium;
+      border-right: none;
     }
-
-    h3.searchresults {
-        font-size: 18px;
-        color: #525252;
-        font-weight: 500;
+    .btn {
+      border-color: $grey-medium;
+      border-left: none;
+      border-radius: 0;
+      color: $red;
+      height: 50px;
     }
-
-    h2 {
-        font-size: 24px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    .search {
-        .form-control {
-            border-radius: 0;
-            border-right: medium none;
-            font-size: 20px;
-            height: 50px;
-            border-color: $grey-medium;
-            border-right: none;
-        }
-        .btn{
-            border-color: $grey-medium;
-            border-left: none;
-            color: $red;
-        }
-    }
-    button.btn {
-        border-radius: 0;
-        height: 50px;
-    }
+  }
+  h3.searchresults {
+    font-size: 18px;
+    color: #525252;
+    font-weight: 500;
+  }
 }
 
 // search info button
-.session_types {
-    position: relative;
-    max-width: 95%;
-}
 .searchinfo {
-    position: absolute;
-    top: 54px;
-    right: -25px;
-
-    width: 20px;
-    height: 20px;
-
     background-color: #ffffff;
+    border-radius: 50%;
     color: #00628c;
+    cursor: pointer;
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
-    
-    border-radius: 50%;
-
-    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: -25px;
+    top: 54px;
+    width: 20px;
 }
 // end of search info button
 
-.session_type {
-    background: #009cdd none repeat scroll 0 0;
+.session-list {
+  display: flex;
+  flex-wrap: wrap;
+  .session {
+    background-color: $funblue;
+    box-shadow: 0 1.5px 4px rgba(#000, 0.24), 0 1.5px 6px rgba(#000, 0.12);
+    box-sizing: border-box;
     color: $white;
-    height: 150px;
-    margin-right: 11px;
-    padding: 0;
-    text-align: center;
-    width: 24%;
-    margin-bottom: 11px;
-    display: table;
-    float: left;
-    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-    span {
-        font-weight: 500;
-        display: table-cell;
-        vertical-align: middle;
-        font-size: 18px;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 30px;
-        font {
-            color: $black;
-        }
-    }
-    a span {
-        color: $white;
-    }
-}
-@media (max-width: 950px) {
-    .session_type {
-        margin-right: 1%;
-        margin-bottom: 6px;
-        /*width: auto;
-        display: block;
-        */
-        span {
-            font-size: 14px;
-        }
-    }
-}
-@media (max-width: 480px) {
-    .session_type {
-        margin-right: 0px;
-        margin-bottom: 11px;
-        width: auto;
-        span {
-            font-size: 14px;
-        }
-    }
-}
-.session_type.col-sm-3.col4break{
-    margin-right: 0;
-}
-.session_type:hover,
-.session_type.active {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+    min-height: 210px;
+    justify-content: center;
+    margin: 0 11px 11px 0;
+    padding: 10px;
     position: relative;
-    background: $funblue;
-    cursor: pointer;
-    text-decoration: none;
-    color: $black;
-}
-.session_type:focus,
-.session_type:active{
-    color: $white;
-    text-decoration: none;
+    text-align: center;
+    width: calc(25% - 8.25px);
+    &:nth-of-type(4n) { margin-right: 0; }
+    &:focus, &:active, &:hover { text-decoration: none; }
+    &.active, &:hover { color: $black; }
+    &.active {
+      cursor: default;
+      &:after {
+        $arrow-size: 22px;
+        background: $funblue;
+        content: '';
+        width: $arrow-size;
+        height: $arrow-size;
+        transform: rotate(45deg);
+        position: absolute;
+        bottom: -$arrow-size / 2;
+        left: calc(50% - #{$arrow-size / 2});
+      }
+    }
+    .session-date { color: $black; }
+    @include respond-to(mobile) {
+      font-size: 14px;
+      min-height: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  .tmpContainer {
+    margin: 0 10px 17px 10px;
+    .card-container { margin-top: 5px; }
+  }
 }
 
-.session_type.active:after {
-    top: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(0, 156, 221, 0);
-    border-top-color: $funblue;
-    border-width: 15px;
-    margin-left: -15px;
-}
 .session-container {
     .paneltab {
         padding-top: 15px;
@@ -627,45 +531,7 @@
         }
     }
 }
-@media (max-width: 950px) {
-    .session_type {
-        span {
-            padding: 10px;
-        }
-    }
-    .pspris {
-        width: 22.7%;
-    }
-
-}
-// @media (max-width: 950px) {
-//     .session_types {
-//         width: 420px;
-//         li {
-//             width: 125px;
-//         }
-//     }
-//     .session_transcript {
-//         .panel-body {
-//             padding-left: 10px;
-//             padding-right: 10px;
-//             font-weight: 300;
-//             font-size: 18px;
-//         }
-//     }
-// }
-// @media (max-width: 500px) {
-//     .session_types {
-//         width: 100%;
-//         li {
-//             width: 100%;
-//             padding: 0;
-//             margin: 0;
-//         }
-//     }
-// }
 @media (max-width: 480px) {
-
     .session_voting .session_votes {
         font-size: 30px;
         line-height: 40px;

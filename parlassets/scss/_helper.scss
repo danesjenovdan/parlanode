@@ -224,3 +224,10 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 input.required.error{
   border:1px solid $red;
 }
+
+.narrow-inner-container {
+  margin: 0 auto 40px auto;
+  max-width: 560px;
+  position: relative;
+  text-align: center;
+}

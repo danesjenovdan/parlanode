@@ -283,27 +283,10 @@ header.header {
 
 }
 
-
-
-
-
-
 .session_transcript_menu {
     margin: 80px auto 0 auto;
     display: table;
 }
-
-@media (max-width: 480px) {
-    .colToList {
-        margin: 0;
-    }
-
-    .colToList .session_type {
-        width: 100%;
-        height: auto;
-    }
-}
-
 
 html {
     position: relative;
