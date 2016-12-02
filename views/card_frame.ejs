@@ -8,10 +8,10 @@
     <!-- build:remove -->
     <!-- these script files are removed on build -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.js"></script>
-    <script src="https://cdn.parlameter.si/v1/parlassets/js/perfect-scrollbar.jquery.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://unpkg.com/vue@2.0.5/dist/vue.min.js"></script>
+    <script src="https://cdn.parlameter.si/v1/parlassets/js/search-dropdown.js"></script>
+    <script src="https://cdn.parlameter.si/v1/parlassets/js/typeahead.bundle.min.js"></script>
     <script src="https://cdn.parlameter.si/v1/parlassets/js/script.js"></script>
     <!-- endbuild -->
 
@@ -115,9 +115,27 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div id="card-container"></div>
-            </div>
+
+            <%
+
+            var bigcards = ['Politični kompas'];
+
+            if (bigcards.indexOf(cardData.name) !== -1) {
+            
+            %>
+
+                <div class="col-md-12">
+                    <div id="card-container"></div>
+                </div>
+
+            <% } else { %>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div id="card-container"></div>
+                </div>
+
+            <% } %>
+
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
