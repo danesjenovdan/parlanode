@@ -36,17 +36,6 @@ function toggleHeaderSearch(focus) {
 }
 
 $(function () {
-
-    $(window).resize(function () {
-        equalHeight(".session_type");
-        equalHeight(".session_types ul li");
-    });
-
-    if ($(".session_type").length > 0) {
-        equalHeight(".session_type");
-        equalHeight(".session_types ul li");
-    }
-
     $(".searchiconbuttton").click(function () {
         toggleHeaderSearch(true);
         return false;
