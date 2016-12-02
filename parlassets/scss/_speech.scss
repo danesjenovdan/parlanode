@@ -124,6 +124,7 @@
     text-align: center;
     user-select: none;
     width: 33px;
+    @include respond-to(mobile) { display: none !important; }
   }
 
   .similar-speech {
