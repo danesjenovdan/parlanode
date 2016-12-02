@@ -245,7 +245,8 @@
     text-decoration: none;
     color: $black;
 }
-.session_type:focus{
+.session_type:focus,
+.session_type:active{
     color: $white;
     text-decoration: none;
 }
