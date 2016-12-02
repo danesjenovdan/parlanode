@@ -437,7 +437,7 @@ exports.render = function (req, res) {
                     }
                   } catch (err) {
                     console.log('Err:2 ',err);
-                    res.status(400).send(err.stack);
+                    res.status(400).send({err:err.stack, data:cardData});
                   }
 
                 } else {
