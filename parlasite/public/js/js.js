@@ -283,7 +283,7 @@ $(function () {
 
         var btn = $(this);
 
-        var url = 'https://prispevaj.parlameter.si/addressDonation/;
+        var url = 'https://prispevaj.parlameter.si/addressDonation/';
         var jqxhr = $.ajax({
             method: "POST",
             url: url,
