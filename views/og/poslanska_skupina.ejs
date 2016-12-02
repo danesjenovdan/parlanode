@@ -15,7 +15,7 @@
             top: 0;
             bottom: 0;
             width: 50%;
-            padding: 75px;
+            padding: 75px 25px;
             box-sizing: border-box;
             text-align: center;
         }
@@ -32,12 +32,12 @@
             margin: 10px auto 75px;
             background-color: #fff;
             border-radius: 50%;
-            display: flex;
         }
         .personimg span {
             font-size: 80px;
             display: block;
-            margin: auto;
+            line-height: 300px;
+            width: 100%;
         }
         h1, h2 {
             color: #fff;
@@ -74,7 +74,7 @@
     <div class="left-half">
         <div class="personimg"><span><%= data.party.acronym %></span></div>
         <h1 class="personinfo"><%= data.party.name %></h1>
-        <h2 class="partyinfo"><% if (data.person.party.is_coalition) { %>koalicija<% } else { %>opozicija<% } %></h2>
+        <h2 class="partyinfo"><% if (data.party.is_coalition) { %>koalicija<% } else { %>opozicija<% } %></h2>
     </div>
     <div class="right-half">
         <h2 class="cardname"><%= cardData.name %></h2>
