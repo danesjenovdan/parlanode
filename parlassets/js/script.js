@@ -503,12 +503,12 @@ var cardRippling = false;
 function addCardRippling(element) {
 
     $('.card-circle-button').on('click', function(e) {
-        if ($(this).parent().data('shortened') != 'true') {
+        if ($(this).parent().data('shortened') !== true) {
             var $shareurl = $(this).parent().prev().find('.share-url');
             $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent($shareurl.val()), function(r) {
                 $shareurl.val(r);
             });
-            $(this).parent().data('shortened', 'true');
+            $(this).parent().data('shortened', true);
         }
         if (!cardRippling) {
 
