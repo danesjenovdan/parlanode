@@ -220,3 +220,7 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
   top: calc(50% - #{$height / 2});
   left: calc(50% - #{$width / 2});
 }
+
+input.required.error{
+  border:1px solid $red;
+}
