@@ -50,7 +50,9 @@
 
 <div class="row">
     <div class="col-md-12 ">
-        <%- views.besedeKiSoZaznamovaleSejo %>
+        <% if (sesData.type != 'kolegij') { %>
+            <%- views.besedeKiSoZaznamovaleSejo %>
+        <%}%>
     </div>
 </div>
 
