@@ -1,56 +1,53 @@
 <%= customUrl %>
-<% if (!('person' in data)) { %>
-    <% if (!('organization' in data)) { %>
-        <% if (!('party' in data)) { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
-                    <b>placeholder header</b>
-                </div>
-                <div class="header-info-container">
-                    <h1>tekst 1</h1>
-                    <h2 class="partyinfo">dummy text</h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
-            </div>
-            <div class="alt-header-border"></div>
-        </div>
-        <% } else { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
-                    <b><%= data.party.acronym %></b>
-                </div>
-                <div class="header-info-container">
-                    <h1><%= data.party.name %></h1>
-                    <h2 class="partyinfo"><%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
-            </div>
-            <div class="alt-header-border"></div>
-        </div>
-    <% } else { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="media-object img-circle session-logo <%- data.organization.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
-                    <b><%= data.organization.acronym %></b>
-                </div>
-                <div class="header-info-container">
-                    <h1><%= data.organization.name %></h1>
-                    <h2 class="partyinfo"><%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
-            </div>
-            <div class="alt-header-border"></div>
-        </div>
-    <% } %>
-<% } else { %>
+<% if ('person' in data) { %>
     <div class="alt-header-container">
         <div class="alt-header">
             <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
             <div class="header-info-container">
                 <h1><%= data.person.name %></h1>
                 <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+<% } else if ('organization' in data) { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo <%- data.organization.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
+                <b><%= data.organization.acronym %></b>
+            </div>
+            <div class="header-info-container">
+                <h1><%= data.organization.name %></h1>
+                <h2 class="partyinfo"><%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+<% } else if  ('party' in data) { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
+                <b><%= data.party.acronym %></b>
+            </div>
+            <div class="header-info-container">
+                <h1><%= data.party.name %></h1>
+                <h2 class="partyinfo"><%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+<% } else { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
+                <b>placeholder header</b>
+            </div>
+            <div class="header-info-container">
+                <h1>tekst 1</h1>
+                <h2 class="partyinfo">dummy text</h2>
                 <h2 class="cardname"><%= cardData.name %></h2>
             </div>
         </div>
