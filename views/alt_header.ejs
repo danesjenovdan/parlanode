@@ -1,4 +1,3 @@
-<%= customUrl %>
 <% if ('person' in data) { %>
     <div class="alt-header-container">
         <div class="alt-header">
@@ -39,7 +38,7 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
-<% } else if ('facet_counts' in data) { %>
+<% } else if ('responseHeader' in data) { %>
     <div class="alt-header-container">
         <div class="alt-header">
             <div class="media-object img-circle session-logo background-smc">
@@ -47,7 +46,7 @@
             </div>
             <div class="header-info-container">
                 <h1>tekst 1</h1>
-                <h2 class="partyinfo">data.responseHeader.q.split(':')[1]</h2>
+                <h2 class="partyinfo">customUrl.split('q/')[1].replace('+', ' ')</h2>
                 <h2 class="cardname"><%= cardData.name %></h2>
             </div>
         </div>
@@ -68,6 +67,6 @@
         <div class="alt-header-border"></div>
         <%- JSON.stringify(data); %>
         <%- JSON.stringify(cardData); %>
-        <%- JSON.stringify(customUrl); %>
+        <%= customUrl %>
     </div>
 <% } %>
