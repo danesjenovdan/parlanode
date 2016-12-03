@@ -2,7 +2,6 @@ module.exports =
 
     [
 
-
         {
             "kolegij": [{
                 "votes": false,
@@ -16,7 +15,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 7524,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "78. redna seja",
@@ -29,7 +28,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5652,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "77. redna seja",
@@ -42,7 +41,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5653,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "76. redna seja",
@@ -55,7 +54,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5654,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "75. redna seja",
@@ -68,7 +67,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5655,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "74. redna seja",
@@ -81,7 +80,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5656,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "73. redna seja",
@@ -94,7 +93,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5657,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "72. redna seja",
@@ -107,7 +106,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5658,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "71. redna seja",
@@ -120,7 +119,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5659,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "70. redna seja",
@@ -133,7 +132,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5660,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "69. redna seja",
@@ -146,7 +145,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5661,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "68. redna seja",
@@ -159,7 +158,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5662,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "67. redna seja",
@@ -172,7 +171,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5663,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "66. redna seja",
@@ -185,7 +184,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5664,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "65. redna seja",
@@ -198,7 +197,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5665,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "64. redna seja",
@@ -211,7 +210,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5666,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "63. redna seja",
@@ -224,7 +223,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5667,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "62. redna seja",
@@ -237,7 +236,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5668,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "61. redna seja",
@@ -250,7 +249,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5669,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "60. redna seja",
@@ -263,7 +262,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5670,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "59. redna seja",
@@ -276,7 +275,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5671,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "58. redna seja",
@@ -289,7 +288,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5672,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "57. redna seja",
@@ -302,7 +301,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5673,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "56. redna seja",
@@ -315,7 +314,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5674,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "55. redna seja",
@@ -328,7 +327,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5675,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "54. redna seja",
@@ -341,7 +340,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5676,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "53. redna seja",
@@ -354,7 +353,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5677,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "52. redna seja",
@@ -367,7 +366,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5678,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "51. redna seja",
@@ -380,7 +379,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5679,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "50. redna seja",
@@ -393,7 +392,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5680,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "49. redna seja",
@@ -406,7 +405,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5681,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "48. redna seja",
@@ -419,7 +418,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5682,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "47. redna seja",
@@ -432,7 +431,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5683,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "46. redna seja",
@@ -445,7 +444,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5684,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "45. redna seja",
@@ -458,7 +457,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5685,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "44. redna seja",
@@ -471,7 +470,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5686,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "43. redna seja",
@@ -484,7 +483,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5687,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "42. redna seja",
@@ -497,7 +496,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5688,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "41. redna seja",
@@ -510,7 +509,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5689,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "40. redna seja",
@@ -523,7 +522,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5690,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "39. redna seja",
@@ -536,7 +535,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5691,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "38. redna seja",
@@ -549,7 +548,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5692,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "37. redna seja",
@@ -562,7 +561,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5693,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "36. redna seja",
@@ -575,7 +574,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5694,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "35. redna seja",
@@ -588,7 +587,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5695,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "34. redna seja",
@@ -601,7 +600,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5696,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "33. redna seja",
@@ -614,7 +613,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5697,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "32. redna seja",
@@ -627,7 +626,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5698,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "31. redna seja",
@@ -640,7 +639,7 @@ module.exports =
                 },
                 "speeches": true,
                 "id": 5699,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": false,
                 "name": "30. redna seja",
@@ -1036,816 +1035,6 @@ module.exports =
                 "acronym": "",
                 "sessions": [{
                     "votes": false,
-                    "name": "5. nujna seja",
-                    "date": "9. 9. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6660,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "4. nujna seja",
-                    "date": "5. 7. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6661,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "19. redna seja",
-                    "date": "9. 6. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6662,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "18. redna seja",
-                    "date": "2. 6. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6663,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "17. redna seja",
-                    "date": "11. 5. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6664,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "3. nujna seja",
-                    "date": "5. 5. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6665,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "2. nujna seja",
-                    "date": "15. 4. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6666,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "16. redna seja",
-                    "date": "17. 3. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6667,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "15. redna seja",
-                    "date": "25. 2. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6668,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "14. redna seja",
-                    "date": "18. 2. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6669,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "13. redna seja",
-                    "date": "11. 2. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6670,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "12. redna seja",
-                    "date": "4. 2. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6671,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "11. redna seja",
-                    "date": "21. 1. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6672,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "10. redna seja",
-                    "date": "10. 12. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6673,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "9. redna seja",
-                    "date": "12. 11. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6686,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "8. redna seja",
-                    "date": "5. 11. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6687,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "7. redna seja",
-                    "date": "8. 10. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6688,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "6. redna seja",
-                    "date": "17. 9. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6689,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "1. nujna seja",
-                    "date": "3. 9. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6690,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "5. redna seja",
-                    "date": "7. 7. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6691,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "4. redna seja",
-                    "date": "18. 6. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6692,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "3. redna seja",
-                    "date": "4. 6. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6693,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "2. redna seja",
-                    "date": "17. 4. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6694,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "1. redna seja",
-                    "date": "25. 3. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 101,
-                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-                    },
-                    "speeches": false,
-                    "id": 6695,
-                    "in_review": false
-                }],
-                "is_coalition": false,
-                "id": 101,
-                "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
-            }, {
-                "acronym": "",
-                "sessions": [],
-                "is_coalition": false,
-                "id": 106,
-                "name": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic"
-            }, {
-                "acronym": "",
-                "sessions": [{
-                    "votes": false,
-                    "name": "39. nujna seja (skupna seja)",
-                    "date": "14. 11. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 7533,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "21. redna seja",
-                    "date": "2. 11. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6248,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "38. nujna seja",
-                    "date": "28. 10. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6249,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "37. nujna seja (skupna seja)",
-                    "date": "17. 10. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6250,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "36. nujna seja",
-                    "date": "6. 10. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6251,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "20. redna seja (skupna seja)",
-                    "date": "6. 9. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6252,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "19. redna seja",
-                    "date": "29. 6. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6254,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "35. nujna seja",
-                    "date": "29. 6. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6253,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "18. redna seja",
-                    "date": "23. 6. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6255,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "17. redna seja",
-                    "date": "31. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6257,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "34. nujna seja",
-                    "date": "31. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6256,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "16. redna seja (skupna seja)",
-                    "date": "27. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6258,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "33. nujna seja",
-                    "date": "25. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6259,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "32. nujna seja (skupna seja)",
-                    "date": "12. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6260,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "31. nujna seja",
-                    "date": "5. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6261,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "15. redna seja",
-                    "date": "3. 5. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6262,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "30. nujna seja (skupna seja)",
-                    "date": "7. 4. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6263,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "29. nujna seja (skupna seja)",
-                    "date": "8. 3. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6264,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "28. nujna seja",
-                    "date": "22. 2. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6265,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "27. nujna seja (skupna seja)",
-                    "date": "19. 2. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6266,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "14. redna seja",
-                    "date": "9. 2. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6267,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "12. redna seja (skupna seja)",
-                    "date": "13. 1. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6269,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "13. redna seja",
-                    "date": "13. 1. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6268,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "11. redna seja",
-                    "date": "11. 12. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6270,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "26. nujna seja (skupna seja)",
-                    "date": "8. 12. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6271,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "25. nujna seja (skupna seja)",
-                    "date": "2. 12. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6272,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "24. nujna seja (skupna seja)",
-                    "date": "16. 11. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6273,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "23. nujna seja (skupna seja)",
-                    "date": "28. 10. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6274,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "22. nujna seja (skupna seja)",
-                    "date": "28. 10. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6275,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "21. nujna seja",
-                    "date": "9. 10. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6276,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "10. redna seja",
-                    "date": "1. 10. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6277,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "20. nujna seja (skupna seja)",
-                    "date": "25. 9. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6278,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "9. redna seja",
-                    "date": "9. 9. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6279,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "19. nujna seja (skupna seja)",
-                    "date": "25. 8. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6280,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "18. nujna seja",
-                    "date": "8. 7. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6281,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "8. redna seja",
-                    "date": "24. 6. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6282,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "17. nujna seja (skupna seja)",
-                    "date": "2. 6. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6283,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "7. redna seja",
-                    "date": "27. 5. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6284,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "16. nujna seja (skupna seja)",
-                    "date": "8. 5. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6285,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "15. nujna seja (skupna seja)",
-                    "date": "7. 5. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6286,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "14. nujna seja (skupna seja)",
-                    "date": "5. 5. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6287,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "13. nujna seja (skupna seja)",
-                    "date": "17. 4. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6288,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "12. nujna seja (skupna seja)",
-                    "date": "8. 4. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6289,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "6. redna seja",
-                    "date": "19. 3. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6290,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "11. nujna seja (skupna seja)",
-                    "date": "18. 2. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6291,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "5. redna seja (skupna seja)",
-                    "date": "12. 2. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6292,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "10. nujna seja",
-                    "date": "11. 2. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6293,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "4. redna seja",
-                    "date": "5. 2. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6294,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "3. redna seja",
-                    "date": "14. 1. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6295,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "2. redna seja (skupna seja)",
-                    "date": "12. 12. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6296,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "8. nujna seja (skupna seja)",
-                    "date": "10. 12. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": false,
-                    "id": 6297,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "1. redna seja (skupna seja)",
-                    "date": "4. 12. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6298,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "9. nujna seja",
-                    "date": "2. 12. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6299,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "6. nujna seja",
-                    "date": "14. 11. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6301,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "5. nujna seja",
-                    "date": "14. 11. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6302,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "7. nujna seja",
-                    "date": "14. 11. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": false,
-                    "id": 6300,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "4. nujna seja",
-                    "date": "6. 11. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": false,
-                    "id": 6303,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "3. nujna seja (skupna seja)",
-                    "date": "4. 11. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6304,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "2. nujna seja",
-                    "date": "15. 9. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6305,
-                    "in_review": false
-                }, {
-                    "votes": false,
-                    "name": "1. nujna seja",
-                    "date": "15. 9. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
-                    "speeches": true,
-                    "id": 6306,
-                    "in_review": false
-                }],
-                "is_coalition": false,
-                "id": 18,
-                "name": "Odbor za gospodarstvo"
-            }, {
-                "acronym": "",
-                "sessions": [{
-                    "votes": false,
                     "name": "26. nujna seja",
                     "date": "10. 11. 2016",
                     "org": {
@@ -1856,7 +1045,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7534,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "22. redna seja",
@@ -1869,7 +1058,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6307,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "25. nujna seja",
@@ -2476,138 +1665,812 @@ module.exports =
                 "acronym": "",
                 "sessions": [{
                     "votes": false,
-                    "name": "7. nujna seja",
-                    "date": "12. 10. 2016",
+                    "name": "5. nujna seja",
+                    "date": "9. 9. 2016",
                     "org": {
                         "acronym": "",
                         "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
                     },
-                    "speeches": true,
-                    "id": 7414,
-                    "in_review": true
+                    "speeches": false,
+                    "id": 6660,
+                    "in_review": false
                 }, {
                     "votes": false,
-                    "name": "2. sre&#269;anje",
-                    "date": "30. 6. 2016",
+                    "name": "4. nujna seja",
+                    "date": "5. 7. 2016",
                     "org": {
                         "acronym": "",
                         "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
                     },
+                    "speeches": false,
+                    "id": 6661,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "19. redna seja",
+                    "date": "9. 6. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6662,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "18. redna seja",
+                    "date": "2. 6. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6663,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "17. redna seja",
+                    "date": "11. 5. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6664,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "3. nujna seja",
+                    "date": "5. 5. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6665,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "2. nujna seja",
+                    "date": "15. 4. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6666,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "16. redna seja",
+                    "date": "17. 3. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6667,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "15. redna seja",
+                    "date": "25. 2. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6668,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "14. redna seja",
+                    "date": "18. 2. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6669,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "13. redna seja",
+                    "date": "11. 2. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6670,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "12. redna seja",
+                    "date": "4. 2. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6671,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "11. redna seja",
+                    "date": "21. 1. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6672,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "10. redna seja",
+                    "date": "10. 12. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6673,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "9. redna seja",
+                    "date": "12. 11. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6686,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "8. redna seja",
+                    "date": "5. 11. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6687,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "7. redna seja",
+                    "date": "8. 10. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6688,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "6. redna seja",
+                    "date": "17. 9. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6689,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "1. nujna seja",
+                    "date": "3. 9. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6690,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "5. redna seja",
+                    "date": "7. 7. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6691,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "4. redna seja",
+                    "date": "18. 6. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6692,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "3. redna seja",
+                    "date": "4. 6. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6693,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "2. redna seja",
+                    "date": "17. 4. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6694,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "1. redna seja",
+                    "date": "25. 3. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 101,
+                        "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+                    },
+                    "speeches": false,
+                    "id": 6695,
+                    "in_review": false
+                }],
+                "is_coalition": false,
+                "id": 101,
+                "name": "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+            }, {
+                "acronym": "",
+                "sessions": [],
+                "is_coalition": false,
+                "id": 106,
+                "name": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic"
+            }, {
+                "acronym": "",
+                "sessions": [{
+                    "votes": false,
+                    "name": "39. nujna seja (skupna seja)",
+                    "date": "14. 11. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
                     "speeches": true,
-                    "id": 7415,
-                    "in_review": true
+                    "id": 7533,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "21. redna seja",
+                    "date": "2. 11. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6248,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "38. nujna seja",
+                    "date": "28. 10. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6249,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "37. nujna seja (skupna seja)",
+                    "date": "17. 10. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6250,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "36. nujna seja",
+                    "date": "6. 10. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6251,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "20. redna seja (skupna seja)",
+                    "date": "6. 9. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6252,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "19. redna seja",
+                    "date": "29. 6. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6254,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "35. nujna seja",
+                    "date": "29. 6. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6253,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "18. redna seja",
+                    "date": "23. 6. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6255,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "17. redna seja",
+                    "date": "31. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6257,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "34. nujna seja",
+                    "date": "31. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6256,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "16. redna seja (skupna seja)",
+                    "date": "27. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6258,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "33. nujna seja",
+                    "date": "25. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6259,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "32. nujna seja (skupna seja)",
+                    "date": "12. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6260,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "31. nujna seja",
+                    "date": "5. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6261,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "15. redna seja",
+                    "date": "3. 5. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6262,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "30. nujna seja (skupna seja)",
+                    "date": "7. 4. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6263,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "29. nujna seja (skupna seja)",
+                    "date": "8. 3. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6264,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "28. nujna seja",
+                    "date": "22. 2. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6265,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "27. nujna seja (skupna seja)",
+                    "date": "19. 2. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6266,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "14. redna seja",
+                    "date": "9. 2. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6267,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "12. redna seja (skupna seja)",
+                    "date": "13. 1. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6269,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "13. redna seja",
+                    "date": "13. 1. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6268,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "11. redna seja",
+                    "date": "11. 12. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6270,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "26. nujna seja (skupna seja)",
+                    "date": "8. 12. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6271,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "25. nujna seja (skupna seja)",
+                    "date": "2. 12. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6272,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "24. nujna seja (skupna seja)",
+                    "date": "16. 11. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6273,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "23. nujna seja (skupna seja)",
+                    "date": "28. 10. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6274,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "22. nujna seja (skupna seja)",
+                    "date": "28. 10. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6275,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "21. nujna seja",
+                    "date": "9. 10. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6276,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "10. redna seja",
+                    "date": "1. 10. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6277,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "20. nujna seja (skupna seja)",
+                    "date": "25. 9. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6278,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "9. redna seja",
+                    "date": "9. 9. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6279,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "19. nujna seja (skupna seja)",
+                    "date": "25. 8. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6280,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "18. nujna seja",
+                    "date": "8. 7. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6281,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "8. redna seja",
+                    "date": "24. 6. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6282,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "17. nujna seja (skupna seja)",
+                    "date": "2. 6. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6283,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "7. redna seja",
+                    "date": "27. 5. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6284,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "16. nujna seja (skupna seja)",
+                    "date": "8. 5. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6285,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "15. nujna seja (skupna seja)",
+                    "date": "7. 5. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6286,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "14. nujna seja (skupna seja)",
+                    "date": "5. 5. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6287,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "13. nujna seja (skupna seja)",
+                    "date": "17. 4. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6288,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "12. nujna seja (skupna seja)",
+                    "date": "8. 4. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6289,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "6. redna seja",
+                    "date": "19. 3. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6290,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "11. nujna seja (skupna seja)",
+                    "date": "18. 2. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6291,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "5. redna seja (skupna seja)",
+                    "date": "12. 2. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6292,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "10. nujna seja",
+                    "date": "11. 2. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6293,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "4. redna seja",
+                    "date": "5. 2. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6294,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "3. redna seja",
+                    "date": "14. 1. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6295,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "2. redna seja (skupna seja)",
+                    "date": "12. 12. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6296,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "8. nujna seja (skupna seja)",
+                    "date": "10. 12. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": false,
+                    "id": 6297,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "1. redna seja (skupna seja)",
-                    "date": "3. 5. 2016",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
-                    "speeches": false,
-                    "id": 7416,
+                    "date": "4. 12. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6298,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "9. nujna seja",
+                    "date": "2. 12. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": true,
+                    "id": 6299,
                     "in_review": false
                 }, {
                     "votes": false,
                     "name": "6. nujna seja",
-                    "date": "7. 10. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
+                    "date": "14. 11. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
                     "speeches": true,
-                    "id": 7417,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "1. sre&#269;anje",
-                    "date": "2. 7. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
-                    "speeches": true,
-                    "id": 7418,
-                    "in_review": true
+                    "id": 6301,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "5. nujna seja",
-                    "date": "10. 2. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
+                    "date": "14. 11. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
                     "speeches": true,
-                    "id": 7419,
-                    "in_review": true
+                    "id": 6302,
+                    "in_review": false
                 }, {
                     "votes": false,
-                    "name": "4. nujna seja (skupna seja)",
-                    "date": "23. 1. 2015",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
-                    "speeches": true,
-                    "id": 7420,
-                    "in_review": true
+                    "name": "7. nujna seja",
+                    "date": "14. 11. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": false,
+                    "id": 6300,
+                    "in_review": false
                 }, {
                     "votes": false,
-                    "name": "3. nujna seja",
-                    "date": "13. 11. 2014",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
+                    "name": "4. nujna seja",
+                    "date": "6. 11. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
+                    "speeches": false,
+                    "id": 6303,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "3. nujna seja (skupna seja)",
+                    "date": "4. 11. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
                     "speeches": true,
-                    "id": 7421,
-                    "in_review": true
+                    "id": 6304,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "2. nujna seja",
-                    "date": "5. 11. 2014",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
+                    "date": "15. 9. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
                     "speeches": true,
-                    "id": 7422,
-                    "in_review": true
+                    "id": 6305,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "1. nujna seja",
-                    "date": "12. 9. 2014",
-                    "org": {
-                        "acronym": "",
-                        "is_coalition": false,
-                        "id": 12,
-                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
-                    },
+                    "date": "15. 9. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 18, "name": "Odbor za gospodarstvo"},
                     "speeches": true,
-                    "id": 7423,
-                    "in_review": true
+                    "id": 6306,
+                    "in_review": false
                 }],
                 "is_coalition": false,
-                "id": 12,
-                "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                "id": 18,
+                "name": "Odbor za gospodarstvo"
             }, {
                 "acronym": "",
                 "sessions": [],
@@ -2631,7 +2494,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 11, "name": "Komisija za narodni skupnosti"},
                     "speeches": true,
                     "id": 7426,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "6. nujna seja",
@@ -3204,6 +3067,142 @@ module.exports =
                 "acronym": "",
                 "sessions": [{
                     "votes": false,
+                    "name": "7. nujna seja",
+                    "date": "12. 10. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7414,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "2. sre&#269;anje",
+                    "date": "30. 6. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7415,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "1. redna seja (skupna seja)",
+                    "date": "3. 5. 2016",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": false,
+                    "id": 7416,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "6. nujna seja",
+                    "date": "7. 10. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7417,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "1. sre&#269;anje",
+                    "date": "2. 7. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7418,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "5. nujna seja",
+                    "date": "10. 2. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7419,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "4. nujna seja (skupna seja)",
+                    "date": "23. 1. 2015",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7420,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "3. nujna seja",
+                    "date": "13. 11. 2014",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7421,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "2. nujna seja",
+                    "date": "5. 11. 2014",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7422,
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "1. nujna seja",
+                    "date": "12. 9. 2014",
+                    "org": {
+                        "acronym": "",
+                        "is_coalition": false,
+                        "id": 12,
+                        "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+                    },
+                    "speeches": true,
+                    "id": 7423,
+                    "in_review": false
+                }],
+                "is_coalition": false,
+                "id": 12,
+                "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+            }, {
+                "acronym": "",
+                "sessions": [{
+                    "votes": false,
                     "name": "3. redna seja",
                     "date": "1. 7. 2016",
                     "org": {"acronym": "", "is_coalition": false, "id": 14, "name": "Komisija za poslovnik"},
@@ -3292,7 +3291,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 5970,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "67. nujna seja",
@@ -3305,7 +3304,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 5971,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "29. redna seja",
@@ -3318,7 +3317,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 5972,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "66. nujna seja",
@@ -3331,7 +3330,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 5973,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "65. nujna seja",
@@ -3344,7 +3343,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 5974,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "28. redna seja",
@@ -3643,7 +3642,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 5997,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "21. redna seja",
@@ -4559,7 +4558,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6175,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "42. nujna seja",
@@ -4572,7 +4571,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6176,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "41. nujna seja",
@@ -4663,7 +4662,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6183,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "38. nujna seja",
@@ -4689,7 +4688,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6185,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "25. redna seja",
@@ -5514,7 +5513,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7538,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "43. nujna seja",
@@ -5527,7 +5526,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6467,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "23. redna seja",
@@ -6391,7 +6390,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7535,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "48. nujna seja",
@@ -6404,7 +6403,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7536,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "47. nujna seja",
@@ -6417,7 +6416,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7537,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "46. nujna seja",
@@ -6430,7 +6429,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6354,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "45. nujna seja",
@@ -6443,7 +6442,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6355,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "44. nujna seja",
@@ -6534,7 +6533,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6362,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "38. nujna seja",
@@ -6638,7 +6637,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6370,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "31. nujna seja (skupna seja)",
@@ -6677,7 +6676,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6373,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "14. redna seja",
@@ -6742,7 +6741,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6378,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "25. nujna seja",
@@ -7325,7 +7324,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 22, "name": "Odbor za kulturo"},
                     "speeches": true,
                     "id": 5632,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "10. nujna seja",
@@ -7496,7 +7495,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7541,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "45. nujna seja",
@@ -7509,7 +7508,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7542,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "44. nujna seja",
@@ -7522,7 +7521,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 7543,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "29. redna seja",
@@ -7535,7 +7534,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6588,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "28. redna seja",
@@ -7548,7 +7547,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6589,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "43. nujna seja",
@@ -7574,7 +7573,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6591,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "42. nujna seja",
@@ -8055,7 +8054,7 @@ module.exports =
                     },
                     "speeches": true,
                     "id": 6628,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "21. nujna seja (skupna seja)",
@@ -8964,7 +8963,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 25, "name": "Odbor za pravosodje"},
                     "speeches": true,
                     "id": 6685,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "25. nujna seja",
@@ -8972,7 +8971,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 25, "name": "Odbor za pravosodje"},
                     "speeches": true,
                     "id": 6416,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "24. nujna seja",
@@ -8980,7 +8979,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 25, "name": "Odbor za pravosodje"},
                     "speeches": true,
                     "id": 6417,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "26. redna seja",
@@ -9044,7 +9043,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 25, "name": "Odbor za pravosodje"},
                     "speeches": true,
                     "id": 6425,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "21. nujna seja",
@@ -9386,7 +9385,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 7525,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "106. redna seja",
@@ -9394,7 +9393,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 7526,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "40. nujna seja (skupna seja)",
@@ -9410,7 +9409,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 7528,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "104. redna seja (skupna seja)",
@@ -9442,7 +9441,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5731,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "102. redna seja (skupna seja)",
@@ -9482,7 +9481,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5736,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "97. redna seja",
@@ -9490,7 +9489,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5737,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "96. redna seja",
@@ -9498,7 +9497,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5738,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "95. redna seja (skupna seja)",
@@ -9506,7 +9505,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5739,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "93. redna seja",
@@ -9514,7 +9513,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5741,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "94. redna seja (skupna seja)",
@@ -9522,7 +9521,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5740,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "36. nujna seja (skupna seja)",
@@ -9530,7 +9529,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5742,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "35. nujna seja",
@@ -9538,7 +9537,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5743,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "92. redna seja (skupna seja)",
@@ -9546,15 +9545,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5744,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "91. redna seja",
-                    "date": "24. 6. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5745,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "90. redna seja (skupna seja)",
@@ -9565,12 +9556,20 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
+                    "name": "91. redna seja",
+                    "date": "24. 6. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5745,
+                    "in_review": false
+                }, {
+                    "votes": false,
                     "name": "89. redna seja",
                     "date": "23. 6. 2016",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5747,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "88. redna seja (skupna seja)",
@@ -9578,7 +9577,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5748,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "34. nujna seja",
@@ -9602,7 +9601,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5751,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "32. nujna seja",
@@ -9610,7 +9609,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5752,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "86. redna seja",
@@ -9618,7 +9617,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5753,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "85. redna seja",
@@ -9626,7 +9625,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5754,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "31. nujna seja (skupna seja)",
@@ -9634,7 +9633,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5755,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "84. redna seja (skupna seja)",
@@ -9642,7 +9641,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5756,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "83. redna seja (skupna seja)",
@@ -9650,7 +9649,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5757,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "30. nujna seja (skupna seja)",
@@ -9658,7 +9657,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5758,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "2. slavnostna seja",
@@ -9666,7 +9665,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5760,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "82. redna seja",
@@ -9674,7 +9673,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5759,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "81. redna seja",
@@ -9682,7 +9681,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5761,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "80. redna seja",
@@ -9690,7 +9689,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5762,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "79. redna seja",
@@ -9698,7 +9697,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5763,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "78. redna seja",
@@ -9706,7 +9705,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5764,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "77. redna seja",
@@ -9714,7 +9713,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5765,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "76. redna seja (skupna seja)",
@@ -9722,7 +9721,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5766,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "75. redna seja",
@@ -9730,7 +9729,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5767,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "29. nujna seja (skupna seja)",
@@ -9738,7 +9737,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5768,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "74. redna seja",
@@ -9746,7 +9745,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5769,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "73. redna seja",
@@ -9754,7 +9753,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5770,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "28. nujna seja (skupna seja)",
@@ -9762,7 +9761,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5771,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "27. nujna seja",
@@ -9770,7 +9769,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5772,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "26. nujna seja (skupna seja)",
@@ -9778,15 +9777,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5773,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "72. redna seja",
-                    "date": "22. 1. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5774,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "25. nujna seja",
@@ -9794,23 +9785,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5775,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
-                    "name": "71. redna seja (skupna seja)",
-                    "date": "15. 1. 2016",
+                    "name": "72. redna seja",
+                    "date": "22. 1. 2016",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
-                    "id": 5776,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "69. redna seja (skupna seja)",
-                    "date": "15. 1. 2016",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5778,
-                    "in_review": true
+                    "id": 5774,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "24. nujna seja",
@@ -9818,7 +9801,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5779,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "69. redna seja (skupna seja)",
+                    "date": "15. 1. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5778,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "70. redna seja",
@@ -9826,7 +9817,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5777,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "71. redna seja (skupna seja)",
+                    "date": "15. 1. 2016",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5776,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "68. redna seja",
@@ -9834,7 +9833,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5780,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "67. redna seja (skupna seja)",
@@ -9842,7 +9841,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5781,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "66. redna seja (skupna seja)",
@@ -9850,7 +9849,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5782,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "65. redna seja",
+                    "date": "10. 12. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5783,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "23. nujna seja",
@@ -9861,20 +9868,12 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
-                    "name": "65. redna seja",
-                    "date": "10. 12. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5783,
-                    "in_review": true
-                }, {
-                    "votes": false,
                     "name": "63. redna seja (skupna seja)",
                     "date": "4. 12. 2015",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5786,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "64. redna seja",
@@ -9882,7 +9881,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5785,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "62. redna seja",
@@ -9890,7 +9889,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5787,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "61. redna seja",
@@ -9898,7 +9897,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5788,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "60. redna seja",
@@ -9914,7 +9913,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5790,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "22. nujna seja (skupna seja)",
@@ -9925,14 +9924,6 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
-                    "name": "57. redna seja",
-                    "date": "6. 11. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5793,
-                    "in_review": true
-                }, {
-                    "votes": false,
                     "name": "58. redna seja (skupna seja)",
                     "date": "6. 11. 2015",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
@@ -9941,12 +9932,20 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
+                    "name": "57. redna seja",
+                    "date": "6. 11. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5793,
+                    "in_review": false
+                }, {
+                    "votes": false,
                     "name": "56. redna seja",
                     "date": "23. 10. 2015",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5794,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "55. redna seja",
@@ -9954,7 +9953,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5795,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "21. nujna seja",
@@ -9962,7 +9961,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5797,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "54. redna seja (skupna seja)",
@@ -9970,7 +9969,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5796,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "53. redna seja",
@@ -9978,7 +9977,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5798,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "20. nujna seja (skupna seja)",
@@ -9986,7 +9985,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5799,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "52. redna seja (skupna seja)",
@@ -9994,7 +9993,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5800,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "19. nujna seja (skupna seja)",
@@ -10010,7 +10009,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5802,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "51. redna seja",
@@ -10018,7 +10017,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5803,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "50. redna seja",
@@ -10026,7 +10025,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5804,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "17. nujna seja (skupna seja)",
@@ -10034,7 +10033,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5805,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "16. nujna seja",
+                    "date": "17. 7. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5807,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "49. redna seja",
@@ -10045,20 +10052,12 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
-                    "name": "16. nujna seja",
-                    "date": "17. 7. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5807,
-                    "in_review": true
-                }, {
-                    "votes": false,
                     "name": "48. redna seja",
                     "date": "10. 7. 2015",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5808,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "15. nujna seja (skupna seja)",
@@ -10066,7 +10065,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5809,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "47. redna seja",
@@ -10074,7 +10073,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5810,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "14. nujna seja",
@@ -10090,15 +10089,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5812,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "45. redna seja",
-                    "date": "12. 6. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5813,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "44. redna seja (skupna seja)",
@@ -10106,7 +10097,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5814,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "45. redna seja",
+                    "date": "12. 6. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5813,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "43. redna seja",
@@ -10114,7 +10113,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5815,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "13. nujna seja (skupna seja)",
@@ -10122,7 +10121,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5816,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "42. redna seja (skupna seja)",
@@ -10138,7 +10137,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5818,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "40. redna seja (skupna seja)",
@@ -10146,7 +10145,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5819,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "39. redna seja",
@@ -10154,15 +10153,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5820,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "38. redna seja",
-                    "date": "15. 5. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5821,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "37. redna seja (skupna seja)",
@@ -10170,7 +10161,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5822,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "38. redna seja",
+                    "date": "15. 5. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5821,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "1. slavnostna seja",
@@ -10178,7 +10177,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5824,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "36. redna seja",
@@ -10186,7 +10185,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5823,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "35. redna seja (skupna seja)",
@@ -10194,7 +10193,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5825,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "34. redna seja (skupna seja)",
@@ -10202,7 +10201,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5826,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "33. redna seja (skupna seja)",
@@ -10210,7 +10209,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5827,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "12. nujna seja",
@@ -10218,7 +10217,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5828,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "11. nujna seja (skupna seja)",
@@ -10226,7 +10225,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5829,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "32. redna seja",
@@ -10234,7 +10233,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5830,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "30. redna seja",
+                    "date": "20. 3. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5832,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "31. redna seja (skupna seja)",
@@ -10245,20 +10252,12 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
-                    "name": "30. redna seja",
-                    "date": "20. 3. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5832,
-                    "in_review": true
-                }, {
-                    "votes": false,
                     "name": "29. redna seja (skupna seja)",
                     "date": "13. 3. 2015",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5833,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "28. redna seja",
@@ -10266,7 +10265,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5834,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "27. redna seja (skupna seja)",
@@ -10274,7 +10273,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5835,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "26. redna seja",
@@ -10282,7 +10281,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5836,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "25. redna seja",
@@ -10290,15 +10289,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5837,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "23. redna seja",
-                    "date": "13. 2. 2015",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5839,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "24. redna seja (skupna seja)",
@@ -10306,7 +10297,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5838,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "23. redna seja",
+                    "date": "13. 2. 2015",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5839,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "22. redna seja (skupna seja)",
@@ -10314,7 +10313,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5840,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "10. nujna seja (skupna seja)",
@@ -10322,7 +10321,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5841,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "21. redna seja",
@@ -10330,7 +10329,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5842,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "20. redna seja",
@@ -10338,7 +10337,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5843,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "19. redna seja (skupna seja)",
@@ -10346,7 +10345,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5844,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "18. redna seja",
@@ -10354,7 +10353,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5845,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "9. nujna seja (skupna seja)",
@@ -10365,20 +10364,20 @@ module.exports =
                     "in_review": false
                 }, {
                     "votes": false,
-                    "name": "16. redna seja (skupna seja)",
-                    "date": "12. 12. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5848,
-                    "in_review": true
-                }, {
-                    "votes": false,
                     "name": "17. redna seja (skupna seja)",
                     "date": "12. 12. 2014",
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5847,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "16. redna seja (skupna seja)",
+                    "date": "12. 12. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5848,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "15. redna seja (skupna seja)",
@@ -10386,7 +10385,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5849,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "14. redna seja",
@@ -10394,15 +10393,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5850,
-                    "in_review": true
-                }, {
-                    "votes": false,
-                    "name": "12. redna seja (skupna seja)",
-                    "date": "28. 11. 2014",
-                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
-                    "speeches": true,
-                    "id": 5852,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "13. redna seja",
@@ -10410,7 +10401,15 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5851,
-                    "in_review": true
+                    "in_review": false
+                }, {
+                    "votes": false,
+                    "name": "12. redna seja (skupna seja)",
+                    "date": "28. 11. 2014",
+                    "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
+                    "speeches": true,
+                    "id": 5852,
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "11. redna seja",
@@ -10418,7 +10417,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5853,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "10. redna seja (skupna seja)",
@@ -10426,7 +10425,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5854,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "8. nujna seja (skupna seja)",
@@ -10434,7 +10433,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5855,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "9. redna seja",
@@ -10442,7 +10441,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5856,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "8. redna seja (skupna seja)",
@@ -10450,7 +10449,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5857,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "7. nujna seja (skupna seja)",
@@ -10458,7 +10457,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5858,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "7. redna seja",
@@ -10466,7 +10465,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5859,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "6. nujna seja (skupna seja)",
@@ -10482,7 +10481,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5861,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "6. redna seja (skupna seja)",
@@ -10490,7 +10489,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5862,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "4. nujna seja",
@@ -10506,7 +10505,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5863,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "4. redna seja",
@@ -10514,7 +10513,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5865,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "3. nujna seja (skupna seja)",
@@ -10522,7 +10521,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5866,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "3. redna seja",
@@ -10530,7 +10529,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5867,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "2. redna seja (skupna seja)",
@@ -10538,7 +10537,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5868,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "1. redna seja",
@@ -10546,7 +10545,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5869,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "2. nujna seja",
@@ -10554,7 +10553,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5870,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "1. nujna seja",
@@ -10562,7 +10561,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 26, "name": "Odbor za zadeve Evropske unije"},
                     "speeches": true,
                     "id": 5871,
-                    "in_review": true
+                    "in_review": false
                 }],
                 "is_coalition": false,
                 "id": 26,
@@ -10918,7 +10917,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 28, "name": "Odbor za zunanjo politiko"},
                     "speeches": true,
                     "id": 7531,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "64. redna seja",
@@ -10926,7 +10925,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 28, "name": "Odbor za zunanjo politiko"},
                     "speeches": true,
                     "id": 7532,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "62. redna seja",
@@ -11622,7 +11621,7 @@ module.exports =
                     "org": {"acronym": "", "is_coalition": false, "id": 28, "name": "Odbor za zunanjo politiko"},
                     "speeches": true,
                     "id": 6153,
-                    "in_review": true
+                    "in_review": false
                 }, {
                     "votes": false,
                     "name": "11. redna seja (skupna seja)",
@@ -11797,21 +11796,21 @@ module.exports =
                 "name": "Odbor za zunanjo politiko"
             }],
             "dz": [{
-                "votes": false,
+                "votes": true,
                 "name": "37. izredna seja",
                 "date": "25. 11. 2016",
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 7523,
-                "in_review": true
+                "in_review": false
             }, {
-                "votes": false,
+                "votes": true,
                 "name": "38. izredna seja",
                 "date": "25. 11. 2016",
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 7522,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "24. redna seja",
@@ -11819,7 +11818,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5572,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "36. izredna seja",
@@ -11827,7 +11826,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5585,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "23. redna seja",
@@ -11835,7 +11834,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5573,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "35. izredna seja",
@@ -11851,7 +11850,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5574,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "21. redna seja",
@@ -11859,7 +11858,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5575,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "34. izredna seja",
@@ -11875,7 +11874,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5576,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "33. izredna seja",
@@ -11963,7 +11962,7 @@ module.exports =
                 "org": {"acronym": "DZ", "is_coalition": false, "id": 95, "name": "Dr\u017eavni zbor"},
                 "speeches": true,
                 "id": 5581,
-                "in_review": true
+                "in_review": false
             }, {
                 "votes": true,
                 "name": "27. izredna seja",
