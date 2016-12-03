@@ -1,5 +1,20 @@
 <% if (!('person' in data)) { %>
     <% if (!('organization' in data)) { %>
+        <% if (!('party') in data)) { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
+                    <b>placeholder header</b>
+                </div>
+                <div class="header-info-container">
+                    <h1>tekst 1</h1>
+                    <h2 class="partyinfo">dummy text</h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
+            </div>
+            <div class="alt-header-border"></div>
+        </div>
+        <% } else { %>
         <div class="alt-header-container">
             <div class="alt-header">
                 <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
