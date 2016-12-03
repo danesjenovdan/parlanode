@@ -1,10 +1,17 @@
-<style>
-    .card-header {
-        padding-bottom: 0;
-    }    
-</style>
 <% if ('person' in data) { %>
-    <% if ('speech_id' in data['results']) { %>
+    <% if (memberships in data) { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
+            <div class="header-info-container">
+                <h1><%= data.person.name %></h1>
+                <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+    <% } else if ('speech_id' in data['results']) { %>
         <div class="card-header card-header-person">
             <div class="portrait" style="background-image: url('https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png')"></div>
             <h1 class="name">
