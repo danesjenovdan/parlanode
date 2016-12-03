@@ -2,7 +2,7 @@
     <% if (!('organization' in data)) { %>
         <div class="alt-header-container">
             <div class="alt-header">
-                <div class="media-object img-circle session-logo">
+                <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
                     <b><%= data.party.acronym %></b>
                 </div>
                 <div class="header-info-container">
@@ -16,7 +16,7 @@
     <% } else { %>
         <div class="alt-header-container">
             <div class="alt-header">
-                <div class="media-object img-circle session-logo">
+                <div class="media-object img-circle session-logo <%- data.organization.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
                     <b><%= data.organization.acronym %></b>
                 </div>
                 <div class="header-info-container">
