@@ -1174,7 +1174,7 @@ const routes = [
         cards: [
             {
                 name: 'besedeKiSoZaznamovaleSejo',
-                sourceUrl: '/s/besede-ki-so-zaznamovale-sejo/:id',
+                sourceUrl: '/s/tfidf/:id',
                 resolve: (req, res, route, card)=> {
                     var pattern = new UrlPattern(card.sourceUrl);
                     const renderedPath = pattern.stringify({id: req.params.id});
