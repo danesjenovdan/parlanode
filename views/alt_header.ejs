@@ -1,4 +1,17 @@
-<% if ('person' in data) { %>
+<% if ('results' in data) { %>
+    <% if ('speech_id' in data['results']) { %>
+        <div class="card-header card-header-person">
+            <div class="portrait" style="background-image: url('https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png')"></div>
+            <h1 class="name">
+                    <% if (data.person.party.acronym) { %>
+                        <a href="<%=urlsData.base%><%=urlsData.personLink.base%><%=urlsData.person[data.person.id].slug%><%=urlsData.personLink.pregled%>" class="funblue-light-hover"><%= data.person.name %></a>
+                    <% } else { %>
+                        <%= data.person.name %>
+                    <% } %>
+                </h1>
+        </div>
+    <% } %>
+<% } else if ('person' in data) { %>
     <div class="alt-header-container">
         <div class="alt-header">
             <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
