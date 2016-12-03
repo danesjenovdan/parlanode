@@ -592,7 +592,7 @@ function addCardRippling(element) {
 }
 
 function makeSpeechesEventful() {
-  $.each($('.card-govori').not('.hidden').not('.eventful'), function(i, e) {
+  $.each($('.card-govor').not('.hidden').not('.eventful'), function(i, e) {
 
     $(e).addClass('eventful');
 
