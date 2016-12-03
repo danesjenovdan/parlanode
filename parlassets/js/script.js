@@ -385,6 +385,7 @@ function makeEmbedSwitch() {
     //     $(this).toggleClass('off');
     // });
 
+    $('.embed-switch-big-box').not('.not').off('click');
     $('.embed-switch-big-box').not('.not').on('click', function() {
 
         var thechild = $(this).parent().next().next().children('textarea');
