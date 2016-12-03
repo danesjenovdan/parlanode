@@ -395,13 +395,15 @@ function makeEmbedSwitch() {
             console.log(thechild.data('url')  + thechild.data('id'));
             // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + thechild.data('id') + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
             thechild.val('<script>(function(d,script){script=d.createElement(\'script\');script.type=\'text/javascript\';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = \'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js\';d.getElementsByTagName(\'head\')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="' + thechild.data('url') + thechild.data('id') + '?embed=true">')
+
+            $(this).children('.embed-switch-box').removeClass('off');
         } else {
             // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + thechild.data('id') + '/' + today + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
             thechild.val('<script>(function(d,script){script=d.createElement(\'script\');script.type=\'text/javascript\';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = \'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js\';d.getElementsByTagName(\'head\')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="' + thechild.data('url') + thechild.data('id') + '/' + today + '?embed=true">')
             console.log(thechild.data('url')  + thechild.data('id') + today);
-        }
 
-        $(this).children('.embed-switch-box').toggleClass('off');
+            $(this).children('.embed-switch-box').addClass('off');
+        }
     });
 }
 
