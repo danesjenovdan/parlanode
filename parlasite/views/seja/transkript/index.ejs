@@ -73,33 +73,55 @@
 function sortID(a,b) {
     return a - b;
 }
-$.get('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/5572', function(r) {
-    var url_base = 'https://glej.parlameter.si/s/speech/'
-    var results = r.results.sort(sortID);
 
-    var i = 0;
-
-    results.forEach(function(e) {
-        if (i < 10) {
-            $('.here-are-the-speeches').append('<div id="s' + String(e) + '" class="col-xs-12"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
-
-            var myid = e;
-            var jqxhr = $.ajax(url_base + String(myid))
-                .done(function (data) {
-
-                    $("#" + String(myid)).html(data);
-                    DNDrepeatEmbedCall();
-                })
-                .fail(function () {
-                    $("#" + String(myid)).html(String(myid));
-                })
-                .always(function () {
-                
-                });
+function checkIfBottom(event) {
+    var $trigger = $('.fetch-trigger');
+    if ($trigger == $trigger) {
+        if($(document).scrollTop() > $trigger.offset().top) {
+            $trigger.removeClass('fetch-trigger');
+            console.log('time to fetch');
+            fetchNextPage(global_start + 1, global_start + 11);
         }
-        i = i + 1;
+    }
+}
+function getSpeech(i, limit, results) {
+    var url_base = 'https://glej.parlameter.si/s/speech/'
+    
+    if (i === limit - 1) {
+        $('.here-are-the-speeches').append('<div id="s' + String(results[i]) + '" class="col-xs-12 fetch-trigger"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
+    } else {
+        $('.here-are-the-speeches').append('<div id="s' + String(results[i]) + '" class="col-xs-12"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
+    }
+
+    var myid = 's' + String(results[i]);
+    console.log(myid);
+    $.ajax(url_base + results[i])
+        .done(function (data) {
+            console.log('done', data, myid);
+            $("#" + myid).html(data);
+        })
+        .fail(function () {
+            $("#" + myid).html(String(myid));
+            console.log('fail');
+        })
+        .always(function () {
+            console.log('always');
+        });
+    
+    global_start = i;
+}
+function fetchNextPage(start, limit) {
+    $.get('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/5572', function(r) {
+        var results = r.results.sort(sortID);
+
+        for (var i = start; i <= limit; i++) {
+            getSpeech(i, limit, results);
+        }
     });
-});
+}
+var global_start = 0;
+fetchNextPage(global_start, 10);
+$(document).on('scroll', checkIfBottom);
 </script>
 
 
