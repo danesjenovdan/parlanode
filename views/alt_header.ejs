@@ -42,7 +42,7 @@
 <% } else { %>
     <div class="alt-header-container">
         <div class="alt-header">
-            <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
+            <div class="media-object img-circle session-logo">
                 <b>placeholder header</b>
             </div>
             <div class="header-info-container">
@@ -52,5 +52,8 @@
             </div>
         </div>
         <div class="alt-header-border"></div>
+        <%- JSON.stringify(data); %>
+        <%- JSON.stringify(cardData); %>
+        <%- JSON.stringify(customUrl); %>
     </div>
 <% } %>
