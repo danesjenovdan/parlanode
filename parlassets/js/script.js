@@ -385,7 +385,7 @@ function makeEmbedSwitch() {
     //     $(this).toggleClass('off');
     // });
 
-    $('.embed-switch-big-box').on('click', function() {
+    $('.embed-switch-big-box').not('.not').on('click', function() {
 
         var thechild = $(this).parent().next().next().children('textarea');
         var todaysdate = new Date;
@@ -394,10 +394,10 @@ function makeEmbedSwitch() {
         if ($(this).children('.embed-switch-box').hasClass('off')) {
             console.log(thechild.data('url')  + thechild.data('id'));
             // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + thechild.data('id') + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
-            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + thechild.data('id') + '/?embed=true&width=600">')
+            thechild.val('<script>(function(d,script){script=d.createElement(\'script\');script.type=\'text/javascript\';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = \'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js\';d.getElementsByTagName(\'head\')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="' + thechild.data('url') + thechild.data('id') + '/?embed=true">')
         } else {
             // thechild.val('<div class="parlameter-card" data-src="' + thechild.data('url')  + thechild.data('id') + '/' + today + '/"></div>\n<script defer src="https://cdn.parlameter.si/v1/lib/js/embed.script.js"></script>');
-            thechild.val('<iframe frameborder="0" width="620" height="400" src="' + thechild.data('url') + thechild.data('id') + '/' + today + '/?embed=true&width=600">')
+            thechild.val('<script>(function(d,script){script=d.createElement(\'script\');script.type=\'text/javascript\';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = \'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js\';d.getElementsByTagName(\'head\')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="' + thechild.data('url') + thechild.data('id') + '/' + today + '/?embed=true">')
             console.log(thechild.data('url')  + thechild.data('id') + today);
         }
 
