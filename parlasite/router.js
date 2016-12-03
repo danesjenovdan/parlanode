@@ -9,11 +9,13 @@ const mpsList = require('./static/data/mps');
 const opsList = require('./static/data/ops');
 const spsList = require('./static/data/sps');
 const mpsopsList = require('./static/data/mpsops');
+const ejs = require('ejs');
 
 const routes = [
     {
         path: '/',
         viewPath: 'landing',
+        pageTitle:'Parlameter',
         cards: [
             {
                 name: 'kompas',
@@ -95,11 +97,13 @@ const routes = [
         ]
     }, {
         path: '/poslanci',
-        viewPath: 'poslanci'
+        viewPath: 'poslanci',
+        pageTitle:'Poslanci',
     }, {
         path: '/p/:fullName',
         extraPaths: ['/poslanci/pregled/:fullName/:date', '/p/id/:id', '/p/:fullName/pregled', '/p/id/:id/:date', '/p/:fullName/pregled/:date', '/poslanec/:fullName/pregled', '/poslanec/:fullName/pregled/:date'],
         viewPath: 'poslanec/pregled',
+        pageTitle:'<%- name %> pregled',
         cards: [
             {
                 name: 'kompas',
@@ -403,6 +407,7 @@ const routes = [
         path: '/p/:fullName/glasovanja',
         extraPaths: ['/poslanci/glasovanja/:fullName/:date', '/p/:fullName/glasovanja/:date', '/poslanec/:fullName/glasovanja', '/poslanec/:fullName/glasovanja/:date'],
         viewPath: 'poslanec/glasovanja',
+        pageTitle:'<%- name %> glasovanja',
         cards: [
 
             {
@@ -514,6 +519,7 @@ const routes = [
         path: '/p/:fullName/govori',
         extraPaths: ['/poslanci/govori/:fullName/:date', '/p/:fullName/govori/:date', '/poslanec/:fullName/govori', '/poslanec/:fullName/govori/:date'],
         viewPath: 'poslanec/govori',
+        pageTitle:'<%- name %> govori',
         cards: [
 
             {
@@ -689,10 +695,12 @@ const routes = [
     }, {
         path: '/poslanske-skupine',
         viewPath: 'poslanske-skupine',
+        pageTitle:'Poslanske skupine',
         cards: []
     }, {
         path: '/poslanske-skupine/:imeAnalize',
         viewPath: 'poslanske-skupine/analiza',
+        pageTitle:'Poslanske skupine - <%- imeAnalize %>',
         cards: {
             poslanec: {
                 url: ''
@@ -702,6 +710,7 @@ const routes = [
         path: '/poslanska-skupina/pregled/:fullName',
         extraPaths: ['/poslanska-skupina/pregled/:fullName/:date','/poslanska-skupina/:fullName/pregled', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
         viewPath: 'poslanska-skupina/pregled',
+        pageTitle:'Poslanska skupina <%- fullName %> pregled',
         cards: [
             {
                 name: 'osnovneInformacije',
@@ -827,6 +836,7 @@ const routes = [
         path: '/poslanska-skupina/glasovanja/:fullName',
         extraPaths: ['/poslanska-skupina/glasovanja/:fullName/:date', '/poslanska-skupina/:fullName/glasovanja', '/ps/glasovanja/id/:id', '/ps/glasovanja/id/:id/:date'],
         viewPath: 'poslanska-skupina/glasovanja',
+        pageTitle:'Poslanska skupina <%- fullName %> glasovanja',
         cards: [
             {
                 name: 'glasovanja',
@@ -950,6 +960,7 @@ const routes = [
         path: '/poslanska-skupina/govori/:fullName',
         extraPaths: ['/poslanska-skupina/govori/:fullName/:date', '/poslanska-skupina/:fullName/govori', '/ps/govori/id/:id', '/ps/govori/id/:id/:date'],
         viewPath: 'poslanska-skupina/govori',
+        pageTitle:'Poslanska skupina <%- fullName %> govori',
         cards: [
             {
                 name: 'besedeKiJihDelajoPosebne',
@@ -1049,17 +1060,20 @@ const routes = [
     },
     {
         path: '/seje',
-        viewPath: 'seje'
+        viewPath: 'seje',
+        pageTitle:'Parlameter - seje',
     },
     {
         path: '/seje/isci/',
         extraPaths: ['/search/', '/seje/search/', '/isci/' ],
-        viewPath: 'seje/search'
+        viewPath: 'seje/search',
+        pageTitle:'Parlameter - seje isci',
     },
     {
         path: '/seje/tip/:fullName',
         extraPaths: ['/seje/tip/:fullName/:date'],
         viewPath: 'seje/tip',
+        pageTitle:'Parlameter - <%- name %>',
         cards: []
     },
 
@@ -1067,6 +1081,7 @@ const routes = [
         path: '/seja/glasovanje/:id/:motionid',
         extraPaths: ['/seja/glasovanje/:id/:motionid/:date', '/s/glasovanje/:id/:motionid', '/s/glasovanje/:id/:motionid/:date'],
         viewPath: 'seja/glasovanje',
+        pageTitle:'Parlameter - seja glasovanje',
         cards: [
             {
                 name: 'glasovanjeSeja',
@@ -1091,6 +1106,7 @@ const routes = [
         path: '/seja/glasovanja/:id',
         extraPaths: ['/seja/glasovanja/:id/:date', '/seja/glasovanja/:id', '/s/glasovanja/:id', '/s/glasovanja/:id/:date'],
         viewPath: 'seja/glasovanja',
+        pageTitle:'Parlameter - seja glasovanje',
         cards: [
             {
                 name: 'glasovanjaSeja',
@@ -1114,6 +1130,7 @@ const routes = [
         path: '/seja/prisotnost/:id',
         extraPaths: ['/seja/prisotnost/:id/:date', '/seja/prisotnost/:id', '/s/prisotnost/:id', '/s/prisotnost/:id/:date'],
         viewPath: 'seja/prisotnost',
+        pageTitle:'Parlameter - seja prisotnost',
         cards: [
             {
                 name: 'prisotnostPoPoslanskihSkupinah',
@@ -1153,6 +1170,7 @@ const routes = [
         path: '/seja/transkript/:id',
         extraPaths: ['/seja/transkript/:id/:date', '/seja/transkript/:id', '/s/transkript/:id', '/s/transkript/:id/:date', '/seja/:dt/transkript/:id/:date'],
         viewPath: 'seja/transkript',
+        pageTitle:'Parlameter - seja transkript',
         cards: [
             {
                 name: 'besedeKiSoZaznamovaleSejo',
@@ -1191,6 +1209,7 @@ const routes = [
     {
         path: '/seje/:imeAnalize',
         viewPath: 'seje/seja',
+        pageTitle:'Parlameter - seja <%- imeAnalize %>',
         cards: {
             poslanec: {
                 url: ''
@@ -1199,13 +1218,16 @@ const routes = [
     }
     ,{
         path: '/pravno-obvestilo',
-        viewPath: 'about/pravno-obvestilo'
+        viewPath: 'about/pravno-obvestilo',
+        pageTitle:'Pravno obvestilo',
     },{
         path: '/za-medije',
-        viewPath: 'about/za-medije'
+        viewPath: 'about/za-medije',
+        pageTitle:'Za medije'
     },{
         path: '/o-projektu',
-        viewPath: 'about/o-projektu'
+        viewPath: 'about/o-projektu',
+        pageTitle:'O projektu',
     }
 
 
@@ -1220,7 +1242,7 @@ module.exports = (app) => {
         });
     });
     app.get('/*', function(req, res){
-        res.status(404).render('error/404', {title: "Sorry, page not found", activeMenu: ""});
+        res.status(404).render('error/404', {pageTitle: "Sorry, page not found", activeMenu: ""});
     });
 };
 
@@ -1233,19 +1255,26 @@ function createRoute(app, route) {
                     if (route.viewPath.indexOf("poslanske-skupine") > -1) {
                         getPSIdByName(req.params.fullName, req)
                             .then((psData) => {
+
+                                const pageTitle = ejs.render(route.pageTitle);
+
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
                                     ps: psData.ps,
                                     slug: req.slug,
                                     activeMenu: 'poslanske-skupine',
-                                    views
+                                    views,
+                                    pageTitle
                                 });
                             });
 
                     } else if (route.viewPath.indexOf("poslanska-skupina") > -1) {
                         getPSIdByName(req.params.fullName, req)
                             .then((psData) => {
+
+                                const pageTitle = ejs.render(route.pageTitle, {fullName:psData.ps.name});
+
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
@@ -1253,18 +1282,23 @@ function createRoute(app, route) {
                                     slug: req.slug,
                                     activeMenu: 'PS',
                                     realAcronym: psData,
-                                    views
+                                    views,
+                                    pageTitle
                                 });
                             });
 
                     } else if (route.viewPath.indexOf("search") > -1) {
+
+                        const pageTitle = ejs.render(route.pageTitle);
+
                         res.render(route.viewPath, {
                             query: req.query,
                             params: req.params,
                             sesData: sesData.s,
                             slug: req.slug,
                             activeMenu: 'S',
-                            views
+                            views,
+                            pageTitle
                         });
 
                     } else if (route.viewPath.indexOf("seje") > -1) {
@@ -1272,13 +1306,16 @@ function createRoute(app, route) {
                         getSessionsByType(req.params, req)
                             .then((sesData)=> {
 
+                                const pageTitle = ejs.render(route.pageTitle, { name:req.params.fullName.split('-').join(' ') });
+
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
                                     sesData: sesData,
                                     slug: req.slug,
                                     activeMenu: 'S',
-                                    views
+                                    views,
+                                    pageTitle
                                 });
                             });
 
@@ -1290,20 +1327,28 @@ function createRoute(app, route) {
                         getSessionIds(req.params, req, session_type)
                             .then((sesData)=> {
 
+                                const pageTitle = ejs.render(route.pageTitle);
+
                                 res.render(route.viewPath, {
                                     query: req.query,
                                     params: req.params,
                                     sesData: sesData.s,
                                     slug: req.slug,
                                     activeMenu: 'S',
-                                    views
+                                    views,
+                                    pageTitle
                                 });
                             });
 
                     } else {
+
                         var activeMenu = (route.viewPath == 'landing') ? route.viewPath : 'P';
                         getMPIdByName(req.params.fullName, req)
                             .then((mpData)=> {
+
+                              // POSLANEC
+
+                                const pageTitle = ejs.render(route.pageTitle, {name:mpData.mp.name});
 
                                 res.render(route.viewPath, {
                                     query: req.query,
@@ -1311,17 +1356,22 @@ function createRoute(app, route) {
                                     mp: mpData.mp,
                                     slug: req.slug,
                                     activeMenu: activeMenu,
+                                    pageTitle:pageTitle,
                                     views
                                 });
+
                             });
                     }
 
                 });
-        } else {
+        }
+        else {
 
             if (route.viewPath.indexOf("seje") > -1) {
                 getSessionsByType(req.params, req)
                     .then((sesData)=> {
+
+                      const pageTitle = ejs.render(route.pageTitle);
 
                         res.render(route.viewPath, {
                             query: req.query,
@@ -1329,25 +1379,23 @@ function createRoute(app, route) {
                             sesData: sesData,
                             slug: req.slug,
                             activeMenu: 'S',
+                            pageTitle
                         });
                     });
 
             } else {
 
+                const pageTitle = ejs.render(route.pageTitle);
 
                 res.render(route.viewPath, {
                     query: req.query,
                     params: req.params,
                     slug: req.slug,
                     activeMenu: route.viewPath,
+                    pageTitle
                 });
             }
         }
-        /*
-        app.get('*', function(req, res){
-            res.status(404).render('404', {title: "Sorry, page not found", activeMenu: ""});
-        });
-        */
     });
 
 }
