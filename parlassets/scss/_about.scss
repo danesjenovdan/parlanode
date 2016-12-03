@@ -26,6 +26,15 @@
     color: #fff;
 }
 
+#about .lead-text-container a.lead-text:hover,
+#about .lead-text-container a.lead-text:active {
+    background-color: #337ab7;
+    /* fix inline multiline text padding */
+    box-shadow: 10px 0 0 #337ab7, -10px 0 0 #337ab7;
+    color: #fff;
+    text-decoration: none;
+}
+
 #about .lead-text a {
     color: #fff;
     font-variant: small-caps;
