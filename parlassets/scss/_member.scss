@@ -65,6 +65,17 @@
     }
 }
 
+@media (max-width: 990px) {
+  .member-container-menu {
+    ul {
+      li {
+        a {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 956px) {
     .member-container-menu {
         ul {
@@ -81,6 +92,18 @@
         }
     }
 
+}
+@media (max-width: 440px) {
+  .member-container-menu {
+    ul {
+      li {
+        a {
+          font-size: 12px;
+          padding: 5px 5px;
+        }
+      }
+    }
+  }
 }
 
 /* added by muki */
