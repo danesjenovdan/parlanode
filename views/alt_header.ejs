@@ -39,6 +39,21 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
+<% } else if ('facet_counts' in data) { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo background-smc">
+                <b>iskanje</b>
+            </div>
+            <div class="header-info-container">
+                <h1>tekst 1</h1>
+                <h2 class="partyinfo">data.responseHeader.q.split(':')[1]</h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+<% } %>
 <% } else { %>
     <div class="alt-header-container">
         <div class="alt-header">
