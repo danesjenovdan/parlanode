@@ -70,6 +70,7 @@
 </div>
 
 <script>
+var session_id = <%= sesData.id %>;
 function sortID(a,b) {
     return a - b;
 }
@@ -80,7 +81,7 @@ function checkIfBottom(event) {
         if($(document).scrollTop() > $trigger.offset().top) {
             $trigger.removeClass('fetch-trigger');
             console.log('time to fetch');
-            fetchNextPage(global_start + 1, global_start + 11);
+            fetchNextPage(global_start + 1, global_start + 11, session_id);
         }
     }
 }
@@ -110,8 +111,8 @@ function getSpeech(i, limit, results) {
     
     global_start = i;
 }
-function fetchNextPage(start, limit) {
-    $.get('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/5572', function(r) {
+function fetchNextPage(start, limit, session_id) {
+    $.get('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/' + session_id, function(r) {
         var results = r.results.sort(sortID);
 
         for (var i = start; i <= limit; i++) {
@@ -120,7 +121,7 @@ function fetchNextPage(start, limit) {
     });
 }
 var global_start = 0;
-fetchNextPage(global_start, 10);
+fetchNextPage(global_start, 10, session_id);
 $(document).on('scroll', checkIfBottom);
 </script>
 
