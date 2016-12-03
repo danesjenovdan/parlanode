@@ -1,4 +1,4 @@
-<% if ('results' in data) { %>
+<% if ('person' in data) { %>
     <% if ('speech_id' in data['results']) { %>
         <div class="card-header card-header-person">
             <div class="portrait" style="background-image: url('https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png')"></div>
@@ -13,8 +13,7 @@
                 <h1 class="name"><a href="https://skoraj.parlameter.si/seja/transkript/<%= data.results.session.id %>" class="funblue-light-hover"><%= data.results.session.name %></a>, <%= data.results.session.date %></h1>
             </div>
         </div>
-    <% } %>
-<% } else if ('person' in data) { %>
+    <% } else { %>
     <div class="alt-header-container">
         <div class="alt-header">
             <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
@@ -26,6 +25,7 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
+    <% } %>
 <% } else if ('organization' in data) { %>
     <div class="alt-header-container">
         <div class="alt-header">
