@@ -1170,22 +1170,22 @@ const routes = [
                         });
                 }
             }
-            ,{
-                name: 'transkript',
-                sourceUrl: '/s/speeches/:id',
-                resolve: (req, res, route, card)=> {
-                    var pattern = new UrlPattern(card.sourceUrl);
-                    const renderedPath = pattern.stringify({id: req.params.id});
-                    const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-                    return fetch(cardUrl)
-                        .then((res) => {
-                            return res.text();
-                        })
-                        .then((body) => {
-                            return body;
-                        });
-                }
-            },
+            // ,{
+            //     name: 'transkript',
+            //     sourceUrl: '/s/speeches/:id',
+            //     resolve: (req, res, route, card)=> {
+            //         var pattern = new UrlPattern(card.sourceUrl);
+            //         const renderedPath = pattern.stringify({id: req.params.id});
+            //         const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+            //         return fetch(cardUrl)
+            //             .then((res) => {
+            //                 return res.text();
+            //             })
+            //             .then((body) => {
+            //                 return body;
+            //             });
+            //     }
+            // },
         ]
     },
     {
