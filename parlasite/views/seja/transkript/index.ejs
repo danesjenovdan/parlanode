@@ -66,10 +66,44 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <%- views.transkript %>
-    </div>
+    <div class="here-are-the-speeches"></div>
 </div>
+
+<script>
+function sortID(a,b) {
+    return a - b;
+}
+$.get('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/5572', function(r) {
+    var url_base = 'https://glej.parlameter.si/s/speech/'
+    var results = r.results.sort(sortID);
+
+    var i = 0;
+
+    results.forEach(function(e) {
+        if (i < 10) {
+            $('.here-are-the-speeches').append('<div id="s' + String(e) + '" class="col-xs-12"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
+
+            var myid = e;
+            var jqxhr = $.ajax(url_base + String(myid))
+                .done(function (data) {
+
+                    $("#" + String(myid)).html(data);
+                    DNDrepeatEmbedCall();
+                })
+                .fail(function () {
+                    $("#" + String(myid)).html(String(myid));
+                })
+                .always(function () {
+                
+                });
+        }
+        i = i + 1;
+    });
+});
+</script>
+
+
+
 
 <script>
     $('.odpri-vse').on('click', function() {
