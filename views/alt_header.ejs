@@ -3,12 +3,15 @@
         <div class="card-header card-header-person">
             <div class="portrait" style="background-image: url('https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png')"></div>
             <h1 class="name">
-                    <% if (data.person.party.acronym) { %>
-                        <a href="<%=urlsData.base%><%=urlsData.personLink.base%><%=urlsData.person[data.person.id].slug%><%=urlsData.personLink.pregled%>" class="funblue-light-hover"><%= data.person.name %></a>
-                    <% } else { %>
-                        <%= data.person.name %>
-                    <% } %>
-                </h1>
+                <% if (data.person.party.acronym) { %>
+                    <a href="<%=urlsData.base%><%=urlsData.personLink.base%><%=urlsData.person[data.person.id].slug%><%=urlsData.personLink.pregled%>" class="funblue-light-hover"><%= data.person.name %></a>
+                <% } else { %>
+                    <%= data.person.name %>
+                <% } %>
+            </h1>
+            <div style="position: absolute; right: 0;">
+                <h1 class="name"><a href="https://skoraj.parlameter.si/seja/transkript/<%= data.results.session.id %>" class="funblue-light-hover"><%= data.results.session.name %></a> <%= data.results.session.date %></h1>
+            </div>
         </div>
     <% } %>
 <% } else if ('person' in data) { %>
