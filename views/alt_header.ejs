@@ -1,6 +1,7 @@
+<%= customUrl %>
 <% if (!('person' in data)) { %>
     <% if (!('organization' in data)) { %>
-        <% if (!('party') in data)) { %>
+        <% if (!('party' in data)) { %>
         <div class="alt-header-container">
             <div class="alt-header">
                 <div class="media-object img-circle session-logo <%- data.party.acronym.replace(/ /g, '_').toLowerCase(); %>-background">
