@@ -1348,7 +1348,11 @@ function createRoute(app, route) {
 
                               // POSLANEC
 
-                                const pageTitle = ejs.render(route.pageTitle, {name:mpData.mp.name});
+                              let pageTitle = 'Parlameter';
+
+                              if(mpData.mp) {
+                                pageTitle = ejs.render(route.pageTitle, {name: mpData.mp.name});
+                              }
 
                                 res.render(route.viewPath, {
                                     query: req.query,
