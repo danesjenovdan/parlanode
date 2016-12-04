@@ -124,12 +124,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -155,12 +155,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -186,12 +186,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -219,12 +219,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -257,12 +257,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -292,12 +292,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -325,12 +325,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -358,12 +358,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -391,12 +391,12 @@ const routes = [
               return fetch(cardUrl)
                 .then((res) => {
 
-                  return res.text();
+                  return Promise.resolve(res.text());
 
                 })
                 .then((body) => {
 
-                  return body;
+                  return Promise.resolve(body);
 
                 });
 
@@ -1453,7 +1453,12 @@ function resolveCards(req, res, route) {
         return aggregator;
 
       });
-  }, {});
+  }, {})
+    .then((aggregator)=>{
+
+      return Promise.resolve(aggregator);
+
+    });
 }
 
 function getMPIdByName(name, req) {
