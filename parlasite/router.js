@@ -1412,7 +1412,7 @@ function createRoute(app, route) {
 
             console.log('Search');
 
-            common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/iskanje-og.jpg';
+            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
 
             if(forceRenderOg){
 
@@ -1620,7 +1620,7 @@ function createRoute(app, route) {
               const hashString = hash(common);
               const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
-              common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+              common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/iskanje-og.jpg';
 
               if(forceRenderOg){
 
