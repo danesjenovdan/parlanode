@@ -10,7 +10,7 @@
                 <div class="header-info-container">
                     <h1><%= data.organization.name %></h1>
                     <h2 class="partyinfo"><%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                    <h2 class="cardname"><% if (cardData.name.indexOf('Glasovanja - ') == -1) { %><%= cardData.name %><%= } else { %>Glasovanja<% } %></h2>
+                    <h2 class="cardname"><% if (cardData.name.indexOf('poslanska skupina') == -1) { %><%= cardData.name %><%= } else { %>Glasovanja<% } %></h2>
                 </div>
             </div>
             <div class="alt-header-border"></div>
