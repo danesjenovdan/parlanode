@@ -769,3 +769,18 @@ function makeSpeechesEventful() {
 
   });
 }
+function measure(c,a,n,v) {
+    if((c=="") || (a=="")  ){
+        return false;
+    }
+    if((v!="") && (n!="")){
+        _paq.push(['trackEvent', c, a, n, v]);
+        return true;
+    }
+    if((n!="")) {
+        _paq.push(['trackEvent', c, a, n]);
+        return true;
+    }
+    _paq.push(['trackEvent', c, a]);
+    return true;
+}
