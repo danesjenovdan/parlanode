@@ -416,7 +416,7 @@ exports.render = function (req, res) {
                 /**
                  * RENDER OG IMAGE IF CARD TYPE IS DEFINED
                  */
-                if (cardDoc.type) {
+                if (cardDoc.type && cardDoc.type !== 'iskanje') {
 
                   try {
 
