@@ -32,6 +32,9 @@
     <label>Card type</label>
     <select ng-options="type.value as type.name for type in cardTypes"  ng-model="card.type"></select>
 
+    <label>Card header type</label>
+    <select ng-options="headerType.value as headerType.name for headerType in cardHeaderTypes"  ng-model="card.headerType"></select>
+
     <hr/>
     <label>Paste compiled EJS</label>
     <textarea class="form-control" ng-model="card.ejs"></textarea>

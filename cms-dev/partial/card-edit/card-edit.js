@@ -17,6 +17,7 @@ angular.module('parlameterCardCms').controller('CardEditCtrl',function(
     };
 
     $scope.cardTypes = cardService.cardTypes;
+    $scope.cardHeaderTypes = cardService.cardHeaderTypes;
 
     $scope.confirm = function(){
 
