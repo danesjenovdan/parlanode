@@ -127,7 +127,7 @@ exports.updateEjs = (req, res) => {
   const Card = mongoose.model('Card');
 
   Card.findByIdAndUpdate(cardId, {ejs: ejs, lastUpdate: new Date()})
-    .then((doc)=> {
+    .then((doc) => {
 
       res.status(200).send({
         '_id': doc._id,
@@ -138,7 +138,7 @@ exports.updateEjs = (req, res) => {
       });
 
     })
-    .catch((err)=> {
+    .catch((err) => {
 
       res.status(400).send(err);
 
@@ -146,19 +146,19 @@ exports.updateEjs = (req, res) => {
 
 };
 
-exports.getUrls = (req, res)=>{
+exports.getUrls = (req, res) => {
 
   const Card = mongoose.model('Card');
 
   Card.find({})
-    .then((cardDocs)=>{
+    .then((cardDocs) => {
 
-      const cards = cardDocs.map((cardDoc)=>{
+      const cards = cardDocs.map((cardDoc) => {
 
         return {
-          group:cardDoc.group,
-          method:cardDoc.method,
-          uniquePath:cardDoc.uniquePath
+          group: cardDoc.group,
+          method: cardDoc.method,
+          uniquePath: cardDoc.uniquePath
         }
 
       });
@@ -166,7 +166,7 @@ exports.getUrls = (req, res)=>{
       res.send(cards);
 
     })
-    .catch((err)=>{
+    .catch((err) => {
 
       res.status(400).send(err);
 
@@ -238,7 +238,7 @@ exports.render = function (req, res) {
   }
 
   CardRender.findOne(cacheData).sort({dateTime: -1})
-    .then((cardRenderDoc)=> {
+    .then((cardRenderDoc) => {
 
       if (!cardRenderDoc || forceRender) {
         compileCard();
@@ -248,7 +248,7 @@ exports.render = function (req, res) {
         const html = cardRenderDoc.html;
 
         Card.findById(cardRenderDoc.card)
-          .then((cardDoc)=> {
+          .then((cardDoc) => {
 
             if (+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate) {
               compileCard();
@@ -336,7 +336,7 @@ exports.render = function (req, res) {
 
                 let onlyStrings = true;
 
-                _.each(cardData.state, (key, val)=> {
+                _.each(cardData.state, (key, val) => {
                   if (typeof key !== 'string' && typeof val !== 'string') {
                     onlyStrings = false;
                   }
@@ -374,7 +374,7 @@ exports.render = function (req, res) {
               if (frame) {
 
                 var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
-                var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData); 
+                var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData);
                 var $ = cheerio.load(renderedFrameHtmlString);
 
                 if (previewWidth) {
@@ -391,7 +391,7 @@ exports.render = function (req, res) {
               } else if (embed) {
 
                 var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
-                var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData); 
+                var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData);
                 var $ = cheerio.load(renderedFrameHtmlString);
 
                 if (previewWidth) {
@@ -406,7 +406,6 @@ exports.render = function (req, res) {
                 html = $.html();
 
               }
-
 
 
               cacheData.html = html;
@@ -433,26 +432,28 @@ exports.render = function (req, res) {
                         quality: 80
                       }, function (err) {
 
-                        res.writeHead(200, {
-                          'Content-Length': Buffer.byteLength(html),
-                          'Content-Type': 'text/html; charset=utf-8'
-                        });
+
 
                         if (err) {
-                          console.log('Err:1 ',err);
+                          console.log('Err:1 ', err);
                         } else {
 
-                          cardRender.ogImageUrl = CFG.ogRootUrl+cardRender._id + '.jpeg';
+                          cardRender.ogImageUrl = CFG.ogRootUrl + cardRender._id + '.jpeg';
 
                           const $ = cheerio.load(html);
-                          $('head').append('<meta property="og:image" content="'+cardRender.ogImageUrl+'" />');
+                          $('head').append('<meta property="og:image" content="' + cardRender.ogImageUrl + '" />');
 
                           cardRender.html = $.html();
 
-                          cardRender.save()
-                            .then(()=>{
+                          res.writeHead(200, {
+                            'Content-Length': Buffer.byteLength(cardRender.html),
+                            'Content-Type': 'text/html; charset=utf-8'
+                          });
 
-                              console.log('Write:2 ',err);
+                          cardRender.save()
+                            .then(() => {
+
+                              console.log('Write:2 ', err);
                               res.write(cardRender.html);
                               res.end();
 
@@ -464,8 +465,8 @@ exports.render = function (req, res) {
 
                     }
                   } catch (err) {
-                    console.log('Err:2 ',err);
-                    res.status(400).send({err:err.stack, data:cardData});
+                    console.log('Err:2 ', err);
+                    res.status(400).send({err: err.stack, data: cardData});
                   }
 
                 } else {
@@ -475,7 +476,7 @@ exports.render = function (req, res) {
                 }
 
                 if (err) {
-                  console.log('Err:3 ',err);
+                  console.log('Err:3 ', err);
                   res.status(400).send(err);
 
                 }
@@ -483,17 +484,17 @@ exports.render = function (req, res) {
 
 
             } catch (err) {
-              console.log('Err:4 ',err);
+              console.log('Err:4 ', err);
               res.send(err.toString(), 400);
             }
 
           } catch (err) {
-            console.log('Err:5 ',err);
+            console.log('Err:5 ', err);
             res.status(400).send({body, dataUrl, err, stack: err.stack, msg: 'Data source url not returning json'});
           }
 
         } else {
-          console.log('Err:6 ',err);
+          console.log('Err:6 ', err);
           res.status(400).send({err, msg: 'Data source request error'});
         }
 
@@ -501,8 +502,8 @@ exports.render = function (req, res) {
 
 
     })
-      .catch((err)=> {
-        console.log('Err:7 ',err);
+      .catch((err) => {
+        console.log('Err:7 ', err);
         res.status(400).send(err);
 
       });
