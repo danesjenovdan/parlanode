@@ -96,21 +96,19 @@
 
 <!-- GLASOVANJA - SEJA -->
 <% } else if (cardData.headerType == 'seje'){ %>
-    <% if ('all' in data) { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="media-object img-circle session-logo backgroundred">
-                    <b>S</b>
-                </div>
-                <div class="header-info-container">
-                    <h1><%= data.name %></h1>
-                    <h2 class="partyinfo"><%= data.created_for %></h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>S</b>
             </div>
-            <div class="alt-header-border"></div>
+            <div class="header-info-container">
+                <h1><%= data.session.name %></h1>
+                <h2 class="partyinfo"><%= data.session.date %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
         </div>
-    <% } %>
+        <div class="alt-header-border"></div>
+    </div>
 <% } else { %>
 
 
