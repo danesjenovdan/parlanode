@@ -17,7 +17,7 @@
       align-items: center;
       border: 1px solid #c8c8c8;
       box-sizing: border-box;
-      color: #525252;
+      color: $white;
       cursor: pointer;
       display: flex;
       font-size: 12px;
@@ -26,6 +26,7 @@
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
+      background-color: #227497;
       &.selected {
         background-color: #009cdd;
         color: #ffffff;
