@@ -14,7 +14,8 @@ var schema = mongoose.Schema({
     method      : { type:String, index:true, required:true },
     uniquePath  : { type:String, required:true, unique:true },
     lastUpdate  : { type:Date, default:Date.now },
-    type        : String
+    type        : String,
+    headerType  : { type:String, default:'poslanec' }
 
 });
 
