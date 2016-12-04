@@ -102,9 +102,8 @@
                 <b>S</b>
             </div>
             <div class="header-info-container">
-                <h1><%= data.session.name %></h1>
-                <h2 class="partyinfo"><%= data.session.date %></h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
+                <script>var data = <%- JSON.stringify(data); %>;</script>
+                
             </div>
         </div>
         <div class="alt-header-border"></div>
