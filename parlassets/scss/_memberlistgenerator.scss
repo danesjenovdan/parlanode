@@ -38,6 +38,17 @@
         color: #ffffff;
       }
     }
+
+    @include respond-to(limbo) {
+      flex-wrap: wrap;
+      margin-bottom: -3px;
+      li {
+        flex: 1;
+        margin-bottomt: 3px;
+        min-width: 19%;
+        &:nth-child(5) { margin-right: 0; }
+      }
+    }
   }
 
   .mobile-analyses {

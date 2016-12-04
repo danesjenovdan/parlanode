@@ -1,6 +1,7 @@
 $breakpoint: 768px;
 
 $breakpoints: (
+  limbo: "(min-width: #{$breakpoint}) and (max-width: #{991px})",
   mobile: "(max-width: #{$breakpoint - 1px})",
   desktop: "(min-width: #{$breakpoint})"
 );
