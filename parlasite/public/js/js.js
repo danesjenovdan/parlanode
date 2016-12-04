@@ -1,22 +1,8 @@
-function measure(c,a,n,v) {
-
-    if((c=="") || (a=="")  ){
-        return false;
-    }
-    if((v!="") && (n!="")){
-        _paq.push(['trackEvent', c, a, n, v]);
-        return true;
-    }
-
-    if((n!="")) {
-        _paq.push(['trackEvent', c, a, n]);
-        return true;
-    }
-
-    _paq.push(['trackEvent', c, a]);
-    return true;
-
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
+
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -252,6 +238,10 @@ $(function () {
 
 
     $(".newslettersubscribeButton").click(function () {
+        $(".newslettersubscribe").removeClass('error');
+        if (validateEmail($(".newslettersubscribe").val())) {
+
+
         var url = 'https://prispevaj.parlameter.si/parlamail/email/';
         var jqxhr = $.ajax({
             method: "POST",
@@ -259,16 +249,21 @@ $(function () {
             data: {email: $(".newslettersubscribe").val()}
         })
             .done(function (data) {
-                $(".newslettersubscribemsg").html('').addClass("success").html(data.result);
 
-                //alert('not yet');
-
+                if(data.result =='ALR_in_DB'){
+                    $(".newslettersubscribemsg").html('').addClass("success").html("Mail je že v bazi.");
+                }else if(data.result =='saved'){
+                    $(".newslettersubscribemsg").html('').addClass("success").html("HVALA!");
+                }
             })
             .fail(function () {
-                alert('not yet configured');
+                //alert('not yet configured');
             })
             .always(function () {
             });
+        } else {
+            $(".newslettersubscribe").addClass('error');
+        }
     });
 
 
@@ -499,7 +494,6 @@ $(function () {
     });
 
     function loadScript(url, callback) {
-
         // check for duplicates
         var list = document.getElementsByTagName('script');
         var i = list.length,
@@ -526,25 +520,19 @@ $(function () {
                     callback();
                 };
             }
-
             tag.src = url;
             document.getElementsByTagName("head")[0].appendChild(tag);
         }
-
     }
 
-    $(".doniraj").click(function () {
-
+    /*$(".doniraj").click(function () {
         loadScript('https://js.braintreegateway.com/js/braintree-2.30.0.min.js', function () {
             loadScript('https://js.braintreegateway.com/web/3.5.0/js/three-d-secure.min.js', function () {
                 loadScript('https://js.braintreegateway.com/web/3.5.0/js/hosted-fields.min.js', function () {
-
                 });
             });
         });
-
-
-    });
+    });*/
 
     $(".measure").click(function () {
 
