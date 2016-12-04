@@ -128,8 +128,20 @@
                 <b>S</b>
             </div>
             <div class="header-info-container">
-                <h1><% if (state['parties']) { for (i in state['parties']) {%><%= state['parties'][i] %>, <% } } %></h1>
-                <h2 class="partyinfo"><% if (state['districts']) { for (i in state['districts']) {%><%= state['districts'][i] %>, <% } } %></h2>
+                <h1><% if (state['parties']) { for (i in state['parties']) {%><%= state['parties'][i] %><% if (i < state['parties'].length - 1) { %>, <% } } } %></h1>
+                <% 
+                    var districts;
+                    if (state['districts']) {
+                        state['districts'].forEach(function(e1) {
+                            data.districts.forEach(function(e2) {
+                                if (e2[parseInt(e1)]) {
+                                    districts.push(e2[parseInt(e1)]);
+                                }
+                            });
+                        });
+                    }
+                %>
+                <h2 class="partyinfo"><% if (state['districts']) { for (i in districts) {%><%= districts[i] %><% if (i < districts.length - 1) { %>, <% } } } %></h2>
                 <h2 class="cardname"><%= cardData.name %></h2>
             </div>
         </div>
