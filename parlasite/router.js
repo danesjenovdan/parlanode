@@ -1412,7 +1412,7 @@ function createRoute(app, route) {
 
             console.log('Search');
 
-            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+            common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/iskanje-og.jpg';
 
             if(forceRenderOg){
 
@@ -1604,7 +1604,7 @@ function createRoute(app, route) {
         getSessionsByType(req.params, req)
           .then((sesData) => {
 
-            if (route.viewPath.indexOf("isci") > -1) {
+            if (route.viewPath.indexOf("search") > -1) {
 
               const pageTitle = ejs.render(route.pageTitle);
 
@@ -1654,6 +1654,8 @@ function createRoute(app, route) {
               const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
               common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+              console.log('Default 1');
 
               if(forceRenderOg){
 
@@ -1727,7 +1729,7 @@ function createRoute(app, route) {
 
           Object.assign(common, dataExtend);
 
-          common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+          common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/parlameter_og.jpg';
 
           res.render(route.viewPath, common);
 
