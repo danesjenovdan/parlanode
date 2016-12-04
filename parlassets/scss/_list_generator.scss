@@ -1,12 +1,15 @@
-.member-list-generator {
-  %list-flex {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+%list-flex {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .parties-districts { display: flex; }
+%list-generator {
+  .card-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   .analyses {
     @extend %list-flex;
@@ -38,17 +41,6 @@
         color: #ffffff;
       }
     }
-
-    @include respond-to(limbo) {
-      flex-wrap: wrap;
-      margin-bottom: 11px;
-      li {
-        flex: 1;
-        margin-bottom: 3px;
-        min-width: 19%;
-        &:nth-child(5) { margin-right: 0; }
-      }
-    }
   }
 
   .mobile-analyses {
@@ -63,6 +55,29 @@
       select { width: 100%; }
     }
   }
+}
+
+.party-list-generator {
+  @extend %list-generator;
+}
+
+.member-list-generator {
+  @extend %list-generator;
+
+  @include respond-to(limbo) {
+    .analyses {
+      flex-wrap: wrap;
+      margin-bottom: 11px;
+      li {
+        flex: 1;
+        margin-bottom: 3px;
+        min-width: 19%;
+        &:nth-child(5) { margin-right: 0; }
+      }
+    }
+  }
+
+  .parties-districts { display: flex; }
 
   .parties {
     @extend %list-flex;
@@ -97,10 +112,5 @@
     align-items: center;
     justify-content: flex-end;
     width: 142px;
-  }
-
-  .generated-url {
-    font-family: monospace;
-    word-wrap: break-word;
   }
 }
