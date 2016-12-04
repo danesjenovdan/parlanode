@@ -505,33 +505,57 @@
         }
     }
 }
-.pspris {
+.presence-list {
+  display: flex;
+  .presence {
     background: $grey;
-    float: left;
-    width: 11.1%;
+    flex: 1;
     margin-right: 10px;
     text-align: center;
-    span {
-        font-size: 34px;
-        font-weight: 400;
+    &:last-child { margin-right: 0; }
+    .percent {
+      color: $black;
+      font-size: 32px;
+      font-weight: 500;
     }
-    font {
-        text-transform: uppercase;
-        color: black;
-        font-size: 22px;
-        line-height: 36px;
-        display: block;
+    .party {
+      text-transform: uppercase;
+      color: black;
+      font-size: 22px;
+      line-height: 36px;
+      display: block;
     }
-    div {
-        height: 5px;
-        font-size: 5px;
-        line-height: 5px;
-        margin-top: 10px;
-        .border {
-            background: red;
-            width: 56%;
-        }
+    .line {
+      height: 5px;
+      font-size: 5px;
+      line-height: 5px;
+      margin-top: 10px;
     }
+  }
+  @include respond-to(up-to-limbo) {
+    flex-wrap: wrap;
+    .presence {
+      flex: none;
+      margin-bottom: 20px;
+      width: calc(33.33% - 6.66px);
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+  @include respond-to(mobile) {
+    .presence {
+      .percent {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 38px;
+      }
+      .party {
+        font-size: 18px;
+        line-height: 34px;
+      }
+    }
+  }
 }
 @media (max-width: 480px) {
     .session_voting .session_votes {
