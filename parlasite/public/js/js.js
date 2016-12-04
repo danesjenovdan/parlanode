@@ -1,3 +1,8 @@
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -233,6 +238,10 @@ $(function () {
 
 
     $(".newslettersubscribeButton").click(function () {
+        $(".newslettersubscribe").removeClass('error');
+        if (validateEmail($(".newslettersubscribe").val())) {
+
+
         var url = 'https://prispevaj.parlameter.si/parlamail/email/';
         var jqxhr = $.ajax({
             method: "POST",
@@ -240,16 +249,21 @@ $(function () {
             data: {email: $(".newslettersubscribe").val()}
         })
             .done(function (data) {
-                $(".newslettersubscribemsg").html('').addClass("success").html(data.result);
 
-                //alert('not yet');
-
+                if(data.result =='ALR_in_DB'){
+                    $(".newslettersubscribemsg").html('').addClass("success").html("Mail je že v bazi.");
+                }else if(data.result =='saved'){
+                    $(".newslettersubscribemsg").html('').addClass("success").html("HVALA!");
+                }
             })
             .fail(function () {
-                alert('not yet configured');
+                //alert('not yet configured');
             })
             .always(function () {
             });
+        } else {
+            $(".newslettersubscribe").addClass('error');
+        }
     });
 
 
