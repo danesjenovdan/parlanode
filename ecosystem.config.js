@@ -9,7 +9,7 @@ module.exports = {
     {
       name      : "parlanode",
       script    : "run.js",
-      instances : '4',
+      instances : '8',
       env: {
         COMMON_VARIABLE: "true"
       },
