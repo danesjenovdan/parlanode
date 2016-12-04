@@ -11,6 +11,7 @@
       font-weight: 300;
       margin: 0;
       text-align: left;
+      &.chart { margin-left: 10px; }
       @include respond-to(mobile) { font-size: 14px; }
     }
   }
@@ -40,7 +41,7 @@
   .labeled-chart {
     padding: 9px 0;
     .column {
-      &.name { flex: 1; }
+      &.name { flex: 2; }
       &.chart {
         flex: 2 0;
         @include respond-to(desktop) { flex: 3 0; }
