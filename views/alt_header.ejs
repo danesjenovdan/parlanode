@@ -153,6 +153,21 @@
       </div>
       <div class="alt-header-border"></div>
   </div>
+<% } else if (cardData.headerType == 'politicni_kompas') { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="icon-circle">
+              <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-kompas.svg" />
+            </div>
+            <div class="header-info-container">
+                <%- JSON.stringify(state); %>
+                <h1><% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %>&nbsp;</h1>
+                <h2 class="partyinfo"><% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>&nbsp;</h2>
+                <h2 class="cardname"><%= cardData.name %>&nbsp;</h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
 <% } else { %>
 
 
