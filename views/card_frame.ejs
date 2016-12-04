@@ -28,7 +28,17 @@
         <meta name="twitter:title" content="Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>">
         <meta property="og:title" content="Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>">
     <% } %>
-    
+    <% if (cardData.type == 'iskanje') { %>
+        <title>Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %></title>
+        <meta name="twitter:title" content="Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>">
+        <meta property="og:title" content="Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>">
+        <!-- TODO IMAGES -->
+    <% } %>
+    <% if (cardData.type == 'glasovanje') { %>
+        <title><%= data.name %></title>
+        <meta name="twitter:title" content="<%= data.name %>">
+        <meta property="og:title" content="<%= data.name %>">
+    <% } %>
 
     <meta name="twitter:creator" content="@danesjenovdan">
     <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
