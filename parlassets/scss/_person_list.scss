@@ -21,7 +21,7 @@
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap;
-      &.sort::after {
+      &.sort::after, &:not(.sort):hover::after {
         border-style: solid;
         border-width: 9px 7.5px 0 7.5px;
         border-color: #009cdd transparent transparent transparent;
