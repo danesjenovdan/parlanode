@@ -1,3 +1,22 @@
+function measure(c,a,n,v) {
+
+    if((c=="") || (a=="")  ){
+        return false;
+    }
+    if((v!="") && (n!="")){
+        _paq.push(['trackEvent', c, a, n, v]);
+        return true;
+    }
+
+    if((n!="")) {
+        _paq.push(['trackEvent', c, a, n]);
+        return true;
+    }
+
+    _paq.push(['trackEvent', c, a]);
+    return true;
+
+}
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -142,18 +161,21 @@ $(function () {
         $('.search-input-header').bind('typeahead:select', function (e, value) {
 
             if (typeof value.acronym !== 'undefined') {
+                measure("search","header","ps",value.name);
                 window.location.href = value.url;
             } else {
+                measure("search","header","p",value.name);
                 window.location.href = value.url;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
-            $(".header-searchhide").css({
-                "width": "100%",
-                "height": "30px"
-            }).show().html('<div class="nalagalnik"></div>');
+            // $(".header-searchhide").css({
+            //     "width": "100%",
+            //     "height": "30px"
+            // }).show().html('<div class="nalagalnik"></div>');
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function () {
+            measure("search","header","s",$(this).data('query'));
             window.location.href = "/seje/isci?q=" + $(this).data('query');
             return false;
         });
@@ -186,10 +208,30 @@ $(function () {
 
         var queryParams = getQueryParameters();
         var querystring = encodeQueryData(queryParams);
+        var querystringVoting = encodeQueryData(queryParams).split('q/')[1];
 
         $("#session_search_results .getmedata").each(function (e, urlid) {
             var urlid = $(this).attr('id');
             var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/" + (querystring)));
+            $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
+
+            var jqxhr = $.ajax(url)
+                .done(function (data) {
+
+                    $("#" + urlid).html(data);
+                    DNDrepeatEmbedCall();
+                })
+                .fail(function () {
+                    $("#" + urlid).html(urlid + " error");
+                })
+                .always(function () {
+                });
+        });
+
+        $("#session_search_results .getmedata-voting").each(function (e, urlid) {
+            var urlid = $(this).attr('id');
+            console.log("https://isci.parlameter.si/v/" + (querystringVoting));
+            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/v/" + (querystringVoting)));
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
             var jqxhr = $.ajax(url)
@@ -210,16 +252,16 @@ $(function () {
 
 
     $(".newslettersubscribeButton").click(function () {
-        var url = '/';
+        var url = 'https://prispevaj.parlameter.si/parlamail/email/';
         var jqxhr = $.ajax({
             method: "POST",
             url: url,
-            data: {mail: $(".newslettersubscribe").val()}
+            data: {email: $(".newslettersubscribe").val()}
         })
             .done(function (data) {
                 $(".newslettersubscribemsg").html('').addClass("success").html(data.result);
 
-                alert('not yet');
+                //alert('not yet');
 
             })
             .fail(function () {
@@ -353,49 +395,6 @@ $(function () {
             .always(function () {
             });
     }
-    /*
-    $("#modal-doniraj-amount #modal-doniraj-amount-paypal").click(function () {
-
-        var token;
-        var jqxhr = $.ajax("https://prispevaj.parlameter.si/getBrainToken/")
-            .done(function (data) {
-            token = data.token;
-            //PAYPAL
-                braintree.setup(token, "custom", {
-                    paypal: {
-                        container: "paypal-container",
-                    },
-                    onPaymentMethodReceived: function (response) {
-
-                        console.log(response);
-
-                        $.ajax({
-                            method: "POST",
-                            url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
-                            data: {
-                                nonce: response['nonce'],
-                                email: "lojze@petrle.si",
-                                money: $("#donation-amount").val(),
-                                purpose: "Donacija parlameter"
-                            }
-                        }).done(function (resp) {
-                            console.log(resp);
-                            if (resp.status == "OK")
-                                location.reload();
-                            else
-                                alert(resp.status)
-                        });
-                    }
-                });
-
-            })
-            .fail(function () {
-                $("#" + urlid).html(urlid + " error");
-            })
-            .always(function () {
-            });
-    });
-    */
 
 
     $("#modal-doniraj-card #modal-doniraj-amount-card").click(function () {
@@ -418,18 +417,14 @@ $(function () {
 
 //CARD
                 var client = new braintree.api.Client({
-                    // Use the generated client token to instantiate the Braintree client.
                     clientToken: token
                 });
 
                 client.verify3DS({
                     amount: $("#donation-amount").val(),
                     creditCard: {
-                        // required parameters
                         number: $("#card-donation-card-number").val(),
-                        expirationDate: $("#card-donation-surname").val(), // You can use either expirationDate
-
-                        // optional parameters
+                        expirationDate: $("#card-donation-surname").val(),
                         cvv: $("#card-donation-address").val(),
                     }
                 }, function (err, response) {
@@ -551,5 +546,16 @@ $(function () {
 
     });
 
+    $(".measure").click(function () {
+
+        var b = $(this);
+        var c = b.data('mc');
+        var a = b.data('ma');
+        var n = b.data('mn');
+        var v = b.data('mv');
+
+        measure(c,a,n,v);
+
+    });
 
 });

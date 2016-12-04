@@ -1,5 +1,12 @@
 <% include ../../partials/header.ejs %>
 
+<% if (!mp.active) { %>
+    <style>
+        body {
+            filter: grayscale(100%);
+        }
+    </style>
+<% } %>
 
 <div class="member-container">
     <div class="row header text-center">
@@ -11,6 +18,9 @@
             <h1><%- mp.name %></h1>
             <h2><%= mp.party.acronym %></h2>
             <h3><%= mp.party.is_coalition ? "koalicija" : "opozicija" %></h3>
+            <% if (!mp.active) { %>
+                <h3>NEAKTIVEN</h3>
+            <% } %>
 
             <div class="member-container-menu">
                 <ul class="clearfix">
