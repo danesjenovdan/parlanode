@@ -27,7 +27,7 @@
   }
   .labeled-chart {
     padding: 5px 0;
-    .column.label {
+    .column.chart-label {
       flex: none;
       width: 136px;
       @include respond-to(mobile) { width: 60px; }
@@ -41,7 +41,7 @@
   .labeled-chart {
     padding: 9px 0;
     .column {
-      &.label { flex: 2; }
+      &.chart-label { flex: 2; }
       &.chart {
         flex: 2 0;
         @include respond-to(desktop) { flex: 3 0; }
