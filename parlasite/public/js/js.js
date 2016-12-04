@@ -147,10 +147,10 @@ $(function () {
                 window.location.href = value.url;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
-            $(".header-searchhide").css({
-                "width": "100%",
-                "height": "30px"
-            }).show().html('<div class="nalagalnik"></div>');
+            // $(".header-searchhide").css({
+            //     "width": "100%",
+            //     "height": "30px"
+            // }).show().html('<div class="nalagalnik"></div>');
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function () {
