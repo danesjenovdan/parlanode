@@ -480,7 +480,6 @@ $(function () {
     });
 
     function loadScript(url, callback) {
-
         // check for duplicates
         var list = document.getElementsByTagName('script');
         var i = list.length,
@@ -507,25 +506,19 @@ $(function () {
                     callback();
                 };
             }
-
             tag.src = url;
             document.getElementsByTagName("head")[0].appendChild(tag);
         }
-
     }
 
-    $(".doniraj").click(function () {
-
+    /*$(".doniraj").click(function () {
         loadScript('https://js.braintreegateway.com/js/braintree-2.30.0.min.js', function () {
             loadScript('https://js.braintreegateway.com/web/3.5.0/js/three-d-secure.min.js', function () {
                 loadScript('https://js.braintreegateway.com/web/3.5.0/js/hosted-fields.min.js', function () {
-
                 });
             });
         });
-
-
-    });
+    });*/
 
     $(".measure").click(function () {
 
@@ -580,19 +573,6 @@ $(function () {
         }
     }
     mcSearch();
-
-    function mcKompas() {
-        if($(".card-kompas").length > 0){
-
-            $(".party-button").click(function () {
-                var b = $(this);
-                var ps = b.text();
-                measure("kompas", "party", ps);
-            });
-
-        }
-
-    }
 
 
 });
