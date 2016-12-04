@@ -9,11 +9,22 @@
         <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="<%= cardData.name %> - <%= data.person.name %>">
-        <meta name="twitter:image" content="https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png">
 
         <meta property="og:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
         <meta property="og:type" content="website">
         <meta property="og:title" content="<%= cardData.name %> - <%= data.person.name %>">
+    <% } %>
+    <% if (cardData.type == 'seje') { %>
+        <title><%= data.session.name %> - <%= data.session.date %></title>
+
+        <meta name="twitter:creator" content="@danesjenovdan">
+        <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="<%= data.session.name %> - <%= data.session.date %>">
+
+        <meta property="og:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="<%= data.session.name %> - <%= data.session.date %>">
     <% } %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- removeme -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- removeme -->
