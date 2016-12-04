@@ -16,13 +16,13 @@
           <label for="analysis">Izberi analizo</label>
           <div class="select">
             <select
-              name="analysis"
-              id="analysis"
-              v-model="currentAnalysis"
-              @change="selectAnalysis(currentAnalysis)">
+                    name="analysis"
+                    id="analysis"
+                    v-model="currentAnalysis"
+                    @change="selectAnalysis(currentAnalysis)">
               <option
-                v-for="analysis in analyses"
-                :value="analysis.id">
+                      v-for="analysis in analyses"
+                      :value="analysis.id">
                 {{ analysis.label }}
               </option>
             </select>
@@ -38,247 +38,262 @@
             <div class="card-header-border"></div>
             <h1>Seznam poslanskih skupin {{ currentAnalysisData.titleSuffix }}</h1>
           </div>
-            <div class="card-content">
-              <div class="card-content-front">
-                <ul class="party-list">
-                  <li v-if="processedPartyData.length === 0" class="loader">
-                    <div class="nalagalnik"></div>
-                  </li>
-                  <li v-for="party in processedPartyData" class="party">
-                    <div class="column name">
-                      <a class="funblue-light-hover" :href="getPartyUrl(party.party)">{{ party.party.acronym }}</a>
+          <div class="card-content">
+            <div class="card-content-front">
+              <ul class="party-list">
+                <li v-if="processedPartyData.length === 0" class="loader">
+                  <div class="nalagalnik"></div>
+                </li>
+                <li v-for="party in processedPartyData" class="party">
+                  <div class="column name">
+                    <a class="funblue-light-hover" :href="getPartyUrl(party.party)">{{ party.party.acronym }}</a>
+                  </div>
+                  <div class="column chart">
+                    <div class="progress hugebar">
+                      <div class="progress-bar funblue" role="progressbar" :style="{ width: party.chartWidth }"></div>
+                      <div class="progress_number">{{ party.displayValue }}</div>
                     </div>
-                    <div class="column chart">
-                      <div class="progress hugebar">
-                        <div class="progress-bar funblue" role="progressbar" :style="{ width: party.chartWidth }"></div>
-                        <div class="progress_number">{{ party.displayValue }}</div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="card-content-info hidden">
+              <div class="card-back-content">
+                <p class="info-text" v-html="currentAnalysisData.explanation"></p>
               </div>
-              <div class="card-content-info hidden">
-                <div class="card-back-content">
-                  <p class="info-text" v-html="currentAnalysisData.explanation"></p>
-                </div>
-              </div>
-              <div class="card-content-embed hidden">
-                <div class="card-back-content">
-                  <div class="embed-content">
-                    <div class="embed-divider"></div>
-                    <div class="embed-switch-container">
-                      <div class="embed-label">Podatki naj se vedno osvežujejo</div>
-                      <div class="embed-switch-big-box">
-                        <div class="embed-switch-box">
-                          <div class="embed-switch">
-                            <div class="embed-switches">
-                              <div class="leftswitch">DA</div>
-                              <div class="rightswitch">NE</div>
-                            </div>
+            </div>
+            <div class="card-content-embed hidden">
+              <div class="card-back-content">
+                <div class="embed-content">
+                  <div class="embed-divider"></div>
+                  <div class="embed-switch-container">
+                    <div class="embed-label">Podatki naj se vedno osvežujejo</div>
+                    <div class="embed-switch-big-box">
+                      <div class="embed-switch-box">
+                        <div class="embed-switch">
+                          <div class="embed-switches">
+                            <div class="leftswitch">DA</div>
+                            <div class="rightswitch">NE</div>
                           </div>
                         </div>
-                        <div class="embed-switch-ball"></div>
                       </div>
+                      <div class="embed-switch-ball"></div>
                     </div>
-                    <div class="embed-divider"></div>
-                    <div class="embed-script">
-                      <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/ps/seznam-poslanskih-skupin/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
-                      <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
-                    </div>
-                    <div class="embed-divider"></div>
-                    <div class="embed-export">
-                      <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
-                    </div>
+                  </div>
+                  <div class="embed-divider"></div>
+                  <div class="embed-script">
+                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/ps/seznam-poslanskih-skupin/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
+                    <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+                  </div>
+                  <div class="embed-divider"></div>
+                  <div class="embed-export">
+                    <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
                   </div>
                 </div>
               </div>
-              <div class="card-content-share hidden">
-                  <div class="card-back-content card-content">
-                      <div class="share-content">
-                          <label for="share-url">Neposredna povezava do kartice</label>
-                          <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
-                          <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
-                      </div>
-                  </div>
+            </div>
+            <div class="card-content-share hidden">
+              <div class="card-back-content card-content">
+                <div class="share-content">
+                  <label for="share-url">Neposredna povezava do kartice</label>
+                  <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
+                  <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="card-footer" data-shortened="true">
-              <div class="card-circle-button card-share" data-back="share"></div>
-              <div class="card-circle-button card-embed" data-back="embed"></div>
-              <div class="card-circle-button card-info" data-back="info">i</div>
-            </div>
+          <div class="card-footer" data-shortened="true">
+            <div class="card-circle-button card-share" data-back="share"></div>
+            <div class="card-circle-button card-embed" data-back="embed"></div>
+            <div class="card-circle-button card-info" data-back="info">i</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
 <script>
-new Vue({
-  el: '#member-list-generator-container',
-  data: {
-    partyData: [],
-    currentAnalysis: 'seat_count',
-    shortenedCardUrl: '',
-    slugs: null,
-    analyses: [
-      {
-        id: 'seat_count',
-        label: 'Število sedežev',
-        titleSuffix: 'po številu sedežev',
-        explanation: 'Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" class="funblue-light-hover">spletnega mesta DZ</a>.'
-      },
-      {
-        id: 'presence_sessions',
-        label: 'Prisotnost na sejah DZ',
-        titleSuffix: 's prisotnostjo na sejah DZ',
-        explanation: 'Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100).',
-        unit: 'percent'
-      },
-      {
-        id: 'presence_votes',
-        label: 'Prisotnost na glasovanjih sej DZ',
-        titleSuffix: 's prisotnostjo na glasovanjih sej DZ',
-        explanation: 'Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100).',
-        unit: 'percent'
-      },
-      {
-        id: 'vocabulary_size',
-        label: 'Raznolikost besedišča',
-        titleSuffix: 'z raznolikostjo besedišča',
-        explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br>' +
-        '<br>' +
-        'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
-      },
-      {
-        id: 'privzdignjeno',
-        label: 'Privzdignjeno besedje',
-        titleSuffix: 's privzdignjenim besedjem',
-        explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
-          'Privzdignjeno besedje<br>' +
-          'Kvalifikatorji iz SSKJ<br>' +
-          'evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>' +
-          'Kvalifikatorji iz SNB<br>' +
-          '/<br>' +
-          '<br>' +
-          'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
-        roundingPrecision: 3
-      },
-      {
-        id: 'preprosto',
-        label: 'Preprosto besedje',
-        titleSuffix: 's preprostim besedjem',
-        explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
-          'Preprosto besedje<br>' +
-          'Kvalifikatorji iz SSKJ<br>' +
-          'narečno (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>' +
-          'Kvalifikatorji iz SNB<br>' +
-          'pogovorno (pog.)<br>' +
-          '<br>' +
-          'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
-        roundingPrecision: 3
-      },
-      {
-        id: 'problematicno',
-        label: 'Ekscesno besedje',
-        titleSuffix: 'z ekscesnim besedjem',
-        explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
-          'Ekscesno besedje<br>' +
-          'Kvalifikatorji iz SSKJ <br>' +
-          'vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično (iron.), otroško (otr.) <br>' +
-          'Kvalifikatorji iz SNB<br>' +
-          'slabšalno (slabš.), vulgarno (vulg.)<br>' +
-          '<br>' +
-          'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
-        roundingPrecision: 3
-      },
-    ]
-  },
-  computed: {
-    currentAnalysisData: function() {
-      var that = this,
-          currentAnalysis
+    function measure(c,a,n,v) {
 
-      this.analyses.forEach(function(analysis) {
-        if (analysis.id === that.currentAnalysis) {
-          currentAnalysis = analysis
+        console.log(c);
+        console.log(a);
+        console.log(n);
+        console.log(v);
+        console.log('-----------');
+    }
+    new Vue({
+        el: '#member-list-generator-container',
+        data: {
+            partyData: [],
+            currentAnalysis: 'seat_count',
+            shortenedCardUrl: '',
+            slugs: null,
+            analyses: [
+                {
+                    id: 'seat_count',
+                    label: 'Število sedežev',
+                    titleSuffix: 'po številu sedežev',
+                    explanation: 'Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" class="funblue-light-hover">spletnega mesta DZ</a>.'
+                },
+                {
+                    id: 'presence_sessions',
+                    label: 'Prisotnost na sejah DZ',
+                    titleSuffix: 's prisotnostjo na sejah DZ',
+                    explanation: 'Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100).',
+                    unit: 'percent'
+                },
+                {
+                    id: 'presence_votes',
+                    label: 'Prisotnost na glasovanjih sej DZ',
+                    titleSuffix: 's prisotnostjo na glasovanjih sej DZ',
+                    explanation: 'Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100).',
+                    unit: 'percent'
+                },
+                {
+                    id: 'vocabulary_size',
+                    label: 'Raznolikost besedišča',
+                    titleSuffix: 'z raznolikostjo besedišča',
+                    explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br>' +
+                    '<br>' +
+                    'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+                },
+                {
+                    id: 'privzdignjeno',
+                    label: 'Privzdignjeno besedje',
+                    titleSuffix: 's privzdignjenim besedjem',
+                    explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
+                    'Privzdignjeno besedje<br>' +
+                    'Kvalifikatorji iz SSKJ<br>' +
+                    'evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>' +
+                    'Kvalifikatorji iz SNB<br>' +
+                    '/<br>' +
+                    '<br>' +
+                    'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+                    roundingPrecision: 3
+                },
+                {
+                    id: 'preprosto',
+                    label: 'Preprosto besedje',
+                    titleSuffix: 's preprostim besedjem',
+                    explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
+                    'Preprosto besedje<br>' +
+                    'Kvalifikatorji iz SSKJ<br>' +
+                    'narečno (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>' +
+                    'Kvalifikatorji iz SNB<br>' +
+                    'pogovorno (pog.)<br>' +
+                    '<br>' +
+                    'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+                    roundingPrecision: 3
+                },
+                {
+                    id: 'problematicno',
+                    label: 'Ekscesno besedje',
+                    titleSuffix: 'z ekscesnim besedjem',
+                    explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
+                    'Ekscesno besedje<br>' +
+                    'Kvalifikatorji iz SSKJ <br>' +
+                    'vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično (iron.), otroško (otr.) <br>' +
+                    'Kvalifikatorji iz SNB<br>' +
+                    'slabšalno (slabš.), vulgarno (vulg.)<br>' +
+                    '<br>' +
+                    'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+                    roundingPrecision: 3
+                },
+            ]
+        },
+        computed: {
+            currentAnalysisData: function() {
+                var that = this,
+                    currentAnalysis
+
+                this.analyses.forEach(function(analysis) {
+                    if (analysis.id === that.currentAnalysis) {
+                        currentAnalysis = analysis
+                    }
+                })
+
+                return currentAnalysis
+            },
+            processedPartyData: function() {
+                var that = this
+
+                var maxValue = this.partyData.reduce(function(oldValue, nextParty) {
+                    return Math.max(oldValue, nextParty.results[that.currentAnalysis])
+                }, 0)
+
+                return this.partyData.map(function(party) {
+                    var rawValue = party.results[that.currentAnalysis]
+                    party.displayValue = (that.round(rawValue, that.currentAnalysisData.roundingPrecision || 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',')
+                    party.chartWidth = rawValue ? rawValue / maxValue * 80 + '%' : '1px'
+                    return party
+                })
+            },
+            generatedCardUrl: function() {
+                var params = {}
+                if (this.currentAnalysis !== 'seat_count') {
+                    params.analysis = this.currentAnalysis
+                }
+
+                return 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/' +
+                    '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
+                    (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
+            }
+        },
+        created: function() {
+            var that = this
+
+            $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
+                that.slugs = response
+            })
+            $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', function(response) {
+                that.partyData = response.data.sort(function(partyA, partyB) {
+                    var a = partyA.results.seat_count
+                    var b = partyB.results.seat_count
+                    return a < b ? 1 : (a > b ? -1 : 0)
+                })
+            })
+        },
+        methods: {
+            selectAnalysis: function(analysisId) {
+                this.currentAnalysis = analysisId;
+                this.measurePiwik(analysisId);
+            },
+            round: function(value, precision) {
+                var multiplier = Math.pow(10, precision || 0)
+                return Math.round(value * multiplier) / multiplier
+            },
+            shortenUrl: function(url) {
+                var that = this
+                $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
+                    that.shortenedCardUrl = response
+                    that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
+                });
+            },
+            getPartyUrl: function(party) {
+                return this.slugs
+                    ? this.slugs.base + this.slugs.partyLink.base + this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
+                    : '/poslanska-skupina/' + party.acronym + '/pregled'
+            }
+            ,
+            measurePiwik: function (analysisId) {
+                if(typeof measure == 'function') {
+                    measure("ps","analysis",analysisId,'');
+                }
+            }
+        },
+        watch: {
+            generatedCardUrl: function(newValue) {
+                this.shortenUrl(newValue)
+            }
         }
-      })
-
-      return currentAnalysis
-    },
-    processedPartyData: function() {
-      var that = this
-
-      var maxValue = this.partyData.reduce(function(oldValue, nextParty) {
-        return Math.max(oldValue, nextParty.results[that.currentAnalysis])
-      }, 0)
-
-      return this.partyData.map(function(party) {
-        var rawValue = party.results[that.currentAnalysis]
-        party.displayValue = (that.round(rawValue, that.currentAnalysisData.roundingPrecision || 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',')
-        party.chartWidth = rawValue ? rawValue / maxValue * 80 + '%' : '1px'
-        return party
-      })
-    },
-    generatedCardUrl: function() {
-      var params = {}
-      if (this.currentAnalysis !== 'seat_count') {
-        params.analysis = this.currentAnalysis
-      }
-
-      return 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/' +
-        '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
-        (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
-    }
-  },
-  created: function() {
-    var that = this
-
-    $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
-      that.slugs = response
     })
-    $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', function(response) {
-      that.partyData = response.data.sort(function(partyA, partyB) {
-        var a = partyA.results.seat_count
-        var b = partyB.results.seat_count
-        return a < b ? 1 : (a > b ? -1 : 0)
-      })
-    })
-  },
-  methods: {
-    selectAnalysis: function(analysisId) {
-      this.currentAnalysis = analysisId
-    },
-    round: function(value, precision) {
-      var multiplier = Math.pow(10, precision || 0)
-      return Math.round(value * multiplier) / multiplier
-    },
-    shortenUrl: function(url) {
-      var that = this
-      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
-          that.shortenedCardUrl = response
-          that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
-      });
-    },
-    getPartyUrl: function(party) {
-      return this.slugs
-        ? this.slugs.base + this.slugs.partyLink.base + this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
-        : '/poslanska-skupina/' + party.acronym + '/pregled'
-    }
-  },
-  watch: {
-    generatedCardUrl: function(newValue) {
-      this.shortenUrl(newValue)
-    }
-  }
-})
 
-makeEmbedSwitch()
-activateCopyButton()
-addCardRippling()
+    makeEmbedSwitch()
+    activateCopyButton()
+    addCardRippling()
 
 </script>
 
