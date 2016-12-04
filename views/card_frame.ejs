@@ -32,7 +32,9 @@
         <title>Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %></title>
         <meta name="twitter:title" content="Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>">
         <meta property="og:title" content="Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>">
-        <!-- TODO IMAGES -->
+
+        <meta property="og:image" content="https://cdn.parlameter.si/v1/parlassets/img/iskanje-og.png">
+        <meta name="twitter:image" content="https://cdn.parlameter.si/v1/parlassets/img/iskanje-og.png">
     <% } %>
     <% if (cardData.type == 'glasovanje') { %>
         <title><%= data.name %></title>
