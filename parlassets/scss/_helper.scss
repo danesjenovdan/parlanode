@@ -47,10 +47,9 @@ body {
     background-color: $grey;
 }
 
-@include respond-to(mobile) {
-  .container {
-    max-width: 500px;
-  }
+.container {
+  max-width: 500px;
+  @include respond-to(desktop) { max-width: 1010px; }
 }
 
 a:focus, button:focus{
