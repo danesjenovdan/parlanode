@@ -218,7 +218,7 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
 }
 
 input.required.error,
-footer.footer input.required.error{
+footer.footer input.form-control.newslettersubscribe.error{
   border:1px solid $red;
 }
 
