@@ -68,6 +68,7 @@
           $size: 80px;
           background: $funblue;
           border-radius: 50%;
+          flex-shrink: 0;
           height: $size;
           margin-right: 18px;
           width: $size;
