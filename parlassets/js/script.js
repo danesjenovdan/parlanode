@@ -562,8 +562,16 @@ function addCardRippling(element) {
             } else {
 
                 $(this).removeClass('card-exit');
-                $('.card-info').text('i');
-                $('.card-embed, .card-share').text('');
+                
+                $parentcontainer
+                    .children('.card-footer')
+                    .children('.card-circle-button')
+                    .text('');
+
+                $parentcontainer
+                    .children('.card-footer')
+                    .children('.card-info')
+                    .text('i');
 
                 $parentcontainer
                     .addClass('revealed')
