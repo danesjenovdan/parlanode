@@ -54,12 +54,13 @@
     .session-type {
       align-items: center;
       border: 1px solid $darkgrey;
-      color: $black;
+      color: $white;
       display: flex;
       justify-content: center;
       padding: 5px 20px;
       text-transform: uppercase;
       width: calc(33.33% - 6.667px);
+      background-color: #227497;
       &.active, &:hover {
         background: $funblue;
         color: $white;
