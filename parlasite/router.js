@@ -1690,7 +1690,10 @@ function createRoute(app, route) {
 
           Object.assign(common, dataExtend);
 
-          const hashString = hash(common);
+          const hashString = hash({
+            viewPath:route.viewPath
+          });
+
           const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
           common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
