@@ -1577,6 +1577,8 @@ function createRoute(app, route) {
 
                   Object.assign(common, dataExtend);
 
+                  common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+
                   res.render(route.viewPath, common);
 
                 }
@@ -1636,6 +1638,8 @@ function createRoute(app, route) {
         };
 
         Object.assign(common, dataExtend);
+
+        common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
 
         res.render(route.viewPath, common);
 
