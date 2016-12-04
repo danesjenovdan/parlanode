@@ -41,10 +41,10 @@
 
     @include respond-to(limbo) {
       flex-wrap: wrap;
-      margin-bottom: -3px;
+      margin-bottom: 11px;
       li {
         flex: 1;
-        margin-bottom: 11px;
+        margin-bottom: 3px;
         min-width: 19%;
         &:nth-child(5) { margin-right: 0; }
       }
