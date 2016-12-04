@@ -30,92 +30,63 @@
             <div class="alt-header-border"></div>
         </div>
     <% } %>
-<% } %>
+<% } else { %>
 
 
 
-<% if ('person' in data) { %>
-    <% if ('memberships' in data) { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
-            <div class="header-info-container">
-                <h1><%= data.person.name %></h1>
-                <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
+    <% if ('person' in data) { %>
+        <% if ('memberships' in data) { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
+                <div class="header-info-container">
+                    <h1><%= data.person.name %></h1>
+                    <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
             </div>
+            <div class="alt-header-border"></div>
         </div>
-        <div class="alt-header-border"></div>
-    </div>
-    <% } else if ('speech_id' in data['results']) { %>
-        <div class="card-header card-header-person">
-            <div class="portrait" style="background-image: url('https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png')"></div>
-            <h1 class="name">
-                <% if (data.person.party.acronym) { %>
-                    <a href="<%=urlsData.base%><%=urlsData.personLink.base%><%=urlsData.person[data.person.id].slug%><%=urlsData.personLink.pregled%>" class="funblue-light-hover"><%= data.person.name %></a>
-                <% } else { %>
-                    <%= data.person.name %>
-                <% } %>
-            </h1>
-            <div style="position: absolute; right: 0;">
-                <h1 class="name"><a href="https://skoraj.parlameter.si/seja/transkript/<%= data.results.session.id %>" class="funblue-light-hover"><%= data.results.session.name %></a>, <%= data.results.session.date %></h1>
+        <% } else if ('speech_id' in data['results']) { %>
+            <div class="card-header card-header-person">
+                <div class="portrait" style="background-image: url('https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png')"></div>
+                <h1 class="name">
+                    <% if (data.person.party.acronym) { %>
+                        <a href="<%=urlsData.base%><%=urlsData.personLink.base%><%=urlsData.person[data.person.id].slug%><%=urlsData.personLink.pregled%>" class="funblue-light-hover"><%= data.person.name %></a>
+                    <% } else { %>
+                        <%= data.person.name %>
+                    <% } %>
+                </h1>
+                <div style="position: absolute; right: 0;">
+                    <h1 class="name"><a href="https://skoraj.parlameter.si/seja/transkript/<%= data.results.session.id %>" class="funblue-light-hover"><%= data.results.session.name %></a>, <%= data.results.session.date %></h1>
+                </div>
             </div>
-        </div>
-    <% } else { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
-            <div class="header-info-container">
-                <h1><%= data.person.name %></h1>
-                <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
+        <% } else { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
+                <div class="header-info-container">
+                    <h1><%= data.person.name %></h1>
+                    <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
             </div>
+            <div class="alt-header-border"></div>
         </div>
-        <div class="alt-header-border"></div>
-    </div>
-    <% } %>
-<% } else if ('info' in data) { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <div class="header-info-container">
-                <h1><%= data.organization.name %></h1>
-                <h2 class="partyinfo">&nbsp;</h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
+        <% } %>
+    <% } else if ('info' in data) { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <div class="header-info-container">
+                    <h1><%= data.organization.name %></h1>
+                    <h2 class="partyinfo">&nbsp;</h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
             </div>
+            <div class="alt-header-border"></div>
         </div>
-        <div class="alt-header-border"></div>
-    </div>
 
-<% } else if ('responseHeader' in data) { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" version="1.1" x="0px" y="0px"><title>Search</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g stroke="#5b99d5" stroke-width="5"><path d="M68.168841,65.2095963 C68.5320756,65.3188984 68.8742859,65.5170521 69.161291,65.8040572 L89.3046941,85.9474603 C90.2317686,86.8745348 90.2317686,88.3776196 89.3046941,89.3046941 C88.3776196,90.2317686 86.8745348,90.2317686 85.9474603,89.3046941 L65.8040572,69.161291 C65.5170521,68.8742859 65.3188984,68.5320756 65.2095963,68.168841 C59.3519251,73.3352861 51.6594793,76.4698389 43.2349195,76.4698389 C24.8797803,76.4698389 10,61.5900586 10,43.2349195 C10,24.8797803 24.8797803,10 43.2349195,10 C61.5900586,10 76.4698389,24.8797803 76.4698389,43.2349195 C76.4698389,51.6594793 73.3352861,59.3519251 68.168841,65.2095963 L68.168841,65.2095963 Z"></path></g></g></svg>
-            </div>
-            <div class="header-info-container">
-                <h1></h1>
-                <h2 class="partyinfo">Iskalni niz: <%- customUrl.split('q/')[1].replace('+', ' ') %></h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
-            </div>
-        </div>
-        <div class="alt-header-border"></div>
-    </div>
-<% } else if ('session' in data) { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <div class="media-object img-circle session-logo sds-background">
-                <b>S</b>
-            </div>
-            <div class="header-info-container">
-                <h1><%= data.session.name %></h1>
-                <h2 class="partyinfo"><%= data.session.date %></h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
-            </div>
-        </div>
-        <div class="alt-header-border"></div>
-    </div>
-<% } else if (data[0]) { %>
-    <% if ('session' in data[0]) { %>
+    <% } else if ('responseHeader' in data) { %>
         <div class="alt-header-container">
             <div class="alt-header">
                 <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
@@ -123,141 +94,177 @@
                 </div>
                 <div class="header-info-container">
                     <h1></h1>
-                    <h2 class="partyinfo">Iskalni niz: <%- customUrl.split('v/')[1].replace('+', ' ') %></h2>
+                    <h2 class="partyinfo">Iskalni niz: <%- customUrl.split('q/')[1].replace('+', ' ') %></h2>
                     <h2 class="cardname"><%= cardData.name %></h2>
                 </div>
             </div>
             <div class="alt-header-border"></div>
         </div>
-
-        <!-- <div class="alt-header-container">
+    <% } else if ('session' in data) { %>
+        <div class="alt-header-container">
             <div class="alt-header">
                 <div class="media-object img-circle session-logo sds-background">
                     <b>S</b>
                 </div>
                 <div class="header-info-container">
-                    <h1><%= data[0].session.name %></h1>
-                    <h2 class="partyinfo"><%= data[0].session.date %></h2>
+                    <h1><%= data.session.name %></h1>
+                    <h2 class="partyinfo"><%= data.session.date %></h2>
                     <h2 class="cardname"><%= cardData.name %></h2>
                 </div>
             </div>
             <div class="alt-header-border"></div>
-        </div> -->
+        </div>
+    <% } else if (data[0]) { %>
+        <% if ('session' in data[0]) { %>
+            <div class="alt-header-container">
+                <div class="alt-header">
+                    <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" version="1.1" x="0px" y="0px"><title>Search</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g stroke="#5b99d5" stroke-width="5"><path d="M68.168841,65.2095963 C68.5320756,65.3188984 68.8742859,65.5170521 69.161291,65.8040572 L89.3046941,85.9474603 C90.2317686,86.8745348 90.2317686,88.3776196 89.3046941,89.3046941 C88.3776196,90.2317686 86.8745348,90.2317686 85.9474603,89.3046941 L65.8040572,69.161291 C65.5170521,68.8742859 65.3188984,68.5320756 65.2095963,68.168841 C59.3519251,73.3352861 51.6594793,76.4698389 43.2349195,76.4698389 C24.8797803,76.4698389 10,61.5900586 10,43.2349195 C10,24.8797803 24.8797803,10 43.2349195,10 C61.5900586,10 76.4698389,24.8797803 76.4698389,43.2349195 C76.4698389,51.6594793 73.3352861,59.3519251 68.168841,65.2095963 L68.168841,65.2095963 Z"></path></g></g></svg>
+                    </div>
+                    <div class="header-info-container">
+                        <h1></h1>
+                        <h2 class="partyinfo">Iskalni niz: <%- customUrl.split('v/')[1].replace('+', ' ') %></h2>
+                        <h2 class="cardname"><%= cardData.name %></h2>
+                    </div>
+                </div>
+                <div class="alt-header-border"></div>
+            </div>
 
-    <% } %>
-<% } else if ('districts' in data) { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 100 100">
-                    <defs>
-                        <path id="d" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
-                        <path id="c" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
-                        <path id="b" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
-                        <path id="a" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
-                    </defs>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#d"></use>
-                    </g>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#c"></use>
-                    </g>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#b"></use>
-                    </g>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#a"></use>
-                    </g>
-                </svg>
-            </div>
-            <div class="header-info-container">
-                <h1><% if (state['parties']) { for (i in state['parties']) {%><%= state['parties'][i] %><% if (i < state['parties'].length - 1) { %>, <% } } } %></h1>
-                <% 
-                    var districts = [];
-                    if (state['districts']) {
-                        state['districts'].forEach(function(e1) {
-                            data.districts.forEach(function(e2) {
-                                if (e2[parseInt(e1)]) {
-                                    districts.push(e2[parseInt(e1)]);
-                                }
-                            });
-                        });
-                    }
-                %>
-                <h2 class="partyinfo"><% if (state['districts']) { for (i in districts) { %><%= districts[i] %><% if (i < districts.length - 1) { %>, <% } } } %></h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
-            </div>
-        </div>
-        <div class="alt-header-border"></div>
-    </div>
-<% } else if ('data' in data) { %>
-    <% if ('person' in data['data'][0]) { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="media-object img-circle session-logo">
-                    <% if (cardData.name.indexOf('besed') === -1) { %>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g><path d="M12,2.319c-5.338,0-9.681,4.343-9.681,9.681S6.662,21.681,12,21.681s9.681-4.343,9.681-9.681S17.338,2.319,12,2.319z    M12,20.713c-4.804,0-8.713-3.909-8.713-8.713S7.196,3.287,12,3.287S20.713,7.196,20.713,12S16.804,20.713,12,20.713z"></path><path d="M16.611,6.733l-6.293,3.388c-0.083,0.045-0.152,0.113-0.197,0.197l-3.388,6.293c-0.101,0.188-0.067,0.421,0.084,0.572   c0.093,0.093,0.217,0.142,0.342,0.142c0.078,0,0.157-0.019,0.229-0.058l6.293-3.388c0.083-0.045,0.152-0.113,0.197-0.197   l3.388-6.293c0.101-0.188,0.067-0.421-0.084-0.572C17.032,6.666,16.799,6.632,16.611,6.733z M8.351,15.649l2.315-4.299l1.984,1.984   L8.351,15.649z M13.334,12.65l-1.984-1.984l4.299-2.315L13.334,12.65z"></path><rect x="11.516" y="3.771" width="0.968" height="1.936"></rect><rect x="11.516" y="18.293" width="0.968" height="1.936"></rect><rect x="18.293" y="11.516" width="1.936" height="0.968"></rect><rect x="3.771" y="11.516" width="1.936" height="0.968"></rect></g></svg>
-                    <% } else { %>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M91.067,75.062H75.774v-52.13c0-6.21-5.053-11.263-11.263-11.263H16.818c-6.211,0-11.264,5.053-11.264,11.263  c0,1.332,1.08,2.412,2.411,2.412H23.26v52.129c0,6.211,5.052,11.264,11.264,11.264h47.691c6.211,0,11.264-5.053,11.264-11.264  C93.479,76.142,92.399,75.062,91.067,75.062z M16.818,16.491h38.458c-0.837,1.194-1.446,2.56-1.769,4.029H10.845  C11.802,18.161,14.119,16.491,16.818,16.491z M40.963,77.473c0,3.552-2.889,6.441-6.439,6.441c-3.553,0-6.441-2.89-6.441-6.441  V25.344h27.577c1.331,0,2.411-1.08,2.411-2.412c0-3.551,2.89-6.44,6.441-6.44c3.551,0,6.441,2.89,6.441,6.44v52.13H43.375  C42.043,75.062,40.963,76.142,40.963,77.473z M82.215,83.914H43.758c0.836-1.195,1.446-2.56,1.769-4.029h42.662  C87.232,82.245,84.915,83.914,82.215,83.914z"></path><path d="M62.206,35.093h-23.74c-1.332,0-2.411,1.079-2.411,2.411c0,1.331,1.079,2.411,2.411,2.411h23.74  c1.331,0,2.411-1.08,2.411-2.411C64.617,36.172,63.537,35.093,62.206,35.093z"></path><path d="M62.206,47.891h-23.74c-1.332,0-2.411,1.079-2.411,2.41c0,1.332,1.079,2.411,2.411,2.411h23.74  c1.331,0,2.411-1.079,2.411-2.411C64.617,48.97,63.537,47.891,62.206,47.891z"></path><path d="M62.206,60.688h-23.74c-1.332,0-2.411,1.08-2.411,2.412c0,1.331,1.079,2.41,2.411,2.41h23.74  c1.331,0,2.411-1.079,2.411-2.41C64.617,61.768,63.537,60.688,62.206,60.688z"></path></svg>
-                    <% } %>
+            <!-- <div class="alt-header-container">
+                <div class="alt-header">
+                    <div class="media-object img-circle session-logo sds-background">
+                        <b>S</b>
+                    </div>
+                    <div class="header-info-container">
+                        <h1><%= data[0].session.name %></h1>
+                        <h2 class="partyinfo"><%= data[0].session.date %></h2>
+                        <h2 class="cardname"><%= cardData.name %></h2>
+                    </div>
                 </div>
-                <div class="header-info-container">
-                    <h1><% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %></h1>
-                    <h2 class="partyinfo"><% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %></h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
-            </div>
-            <div class="alt-header-border"></div>
-        </div>
-    <% } else { %>
+                <div class="alt-header-border"></div>
+            </div> -->
+
+        <% } %>
+    <% } else if ('districts' in data) { %>
         <div class="alt-header-container">
             <div class="alt-header">
                 <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 100 100">
-                    <defs>
-                        <path id="d" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
-                        <path id="c" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
-                        <path id="b" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
-                        <path id="a" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
-                    </defs>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#d"></use>
-                    </g>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#c"></use>
-                    </g>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#b"></use>
-                    </g>
-                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                        <use xlink:href="#a"></use>
-                    </g>
-                </svg>
+                        <defs>
+                            <path id="d" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
+                            <path id="c" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
+                            <path id="b" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
+                            <path id="a" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
+                        </defs>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#d"></use>
+                        </g>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#c"></use>
+                        </g>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#b"></use>
+                        </g>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#a"></use>
+                        </g>
+                    </svg>
                 </div>
                 <div class="header-info-container">
-                    <h1>VII. sklic Državnega zbora</h1>
-                    <h2 class="partyinfo"></h2>
+                    <h1><% if (state['parties']) { for (i in state['parties']) {%><%= state['parties'][i] %><% if (i < state['parties'].length - 1) { %>, <% } } } %></h1>
+                    <% 
+                        var districts = [];
+                        if (state['districts']) {
+                            state['districts'].forEach(function(e1) {
+                                data.districts.forEach(function(e2) {
+                                    if (e2[parseInt(e1)]) {
+                                        districts.push(e2[parseInt(e1)]);
+                                    }
+                                });
+                            });
+                        }
+                    %>
+                    <h2 class="partyinfo"><% if (state['districts']) { for (i in districts) { %><%= districts[i] %><% if (i < districts.length - 1) { %>, <% } } } %></h2>
                     <h2 class="cardname"><%= cardData.name %></h2>
                 </div>
             </div>
             <div class="alt-header-border"></div>
         </div>
-    <% } %>
-<% } else { %>
-    <div class="alt-header-container">
-        <div class="alt-header">
-            <div class="media-object img-circle session-logo">
-                <b>placeholder header</b>
+    <% } else if ('data' in data) { %>
+        <% if ('person' in data['data'][0]) { %>
+            <div class="alt-header-container">
+                <div class="alt-header">
+                    <div class="media-object img-circle session-logo">
+                        <% if (cardData.name.indexOf('besed') === -1) { %>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g><path d="M12,2.319c-5.338,0-9.681,4.343-9.681,9.681S6.662,21.681,12,21.681s9.681-4.343,9.681-9.681S17.338,2.319,12,2.319z    M12,20.713c-4.804,0-8.713-3.909-8.713-8.713S7.196,3.287,12,3.287S20.713,7.196,20.713,12S16.804,20.713,12,20.713z"></path><path d="M16.611,6.733l-6.293,3.388c-0.083,0.045-0.152,0.113-0.197,0.197l-3.388,6.293c-0.101,0.188-0.067,0.421,0.084,0.572   c0.093,0.093,0.217,0.142,0.342,0.142c0.078,0,0.157-0.019,0.229-0.058l6.293-3.388c0.083-0.045,0.152-0.113,0.197-0.197   l3.388-6.293c0.101-0.188,0.067-0.421-0.084-0.572C17.032,6.666,16.799,6.632,16.611,6.733z M8.351,15.649l2.315-4.299l1.984,1.984   L8.351,15.649z M13.334,12.65l-1.984-1.984l4.299-2.315L13.334,12.65z"></path><rect x="11.516" y="3.771" width="0.968" height="1.936"></rect><rect x="11.516" y="18.293" width="0.968" height="1.936"></rect><rect x="18.293" y="11.516" width="1.936" height="0.968"></rect><rect x="3.771" y="11.516" width="1.936" height="0.968"></rect></g></svg>
+                        <% } else { %>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M91.067,75.062H75.774v-52.13c0-6.21-5.053-11.263-11.263-11.263H16.818c-6.211,0-11.264,5.053-11.264,11.263  c0,1.332,1.08,2.412,2.411,2.412H23.26v52.129c0,6.211,5.052,11.264,11.264,11.264h47.691c6.211,0,11.264-5.053,11.264-11.264  C93.479,76.142,92.399,75.062,91.067,75.062z M16.818,16.491h38.458c-0.837,1.194-1.446,2.56-1.769,4.029H10.845  C11.802,18.161,14.119,16.491,16.818,16.491z M40.963,77.473c0,3.552-2.889,6.441-6.439,6.441c-3.553,0-6.441-2.89-6.441-6.441  V25.344h27.577c1.331,0,2.411-1.08,2.411-2.412c0-3.551,2.89-6.44,6.441-6.44c3.551,0,6.441,2.89,6.441,6.44v52.13H43.375  C42.043,75.062,40.963,76.142,40.963,77.473z M82.215,83.914H43.758c0.836-1.195,1.446-2.56,1.769-4.029h42.662  C87.232,82.245,84.915,83.914,82.215,83.914z"></path><path d="M62.206,35.093h-23.74c-1.332,0-2.411,1.079-2.411,2.411c0,1.331,1.079,2.411,2.411,2.411h23.74  c1.331,0,2.411-1.08,2.411-2.411C64.617,36.172,63.537,35.093,62.206,35.093z"></path><path d="M62.206,47.891h-23.74c-1.332,0-2.411,1.079-2.411,2.41c0,1.332,1.079,2.411,2.411,2.411h23.74  c1.331,0,2.411-1.079,2.411-2.411C64.617,48.97,63.537,47.891,62.206,47.891z"></path><path d="M62.206,60.688h-23.74c-1.332,0-2.411,1.08-2.411,2.412c0,1.331,1.079,2.41,2.411,2.41h23.74  c1.331,0,2.411-1.079,2.411-2.41C64.617,61.768,63.537,60.688,62.206,60.688z"></path></svg>
+                        <% } %>
+                    </div>
+                    <div class="header-info-container">
+                        <h1><% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %></h1>
+                        <h2 class="partyinfo"><% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %></h2>
+                        <h2 class="cardname"><%= cardData.name %></h2>
+                    </div>
+                </div>
+                <div class="alt-header-border"></div>
             </div>
-            <div class="header-info-container">
-                <h1>tekst 1</h1>
-                <h2 class="partyinfo">dummy text</h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
+        <% } else { %>
+            <div class="alt-header-container">
+                <div class="alt-header">
+                    <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 100 100">
+                        <defs>
+                            <path id="d" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
+                            <path id="c" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
+                            <path id="b" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
+                            <path id="a" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
+                        </defs>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#d"></use>
+                        </g>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#c"></use>
+                        </g>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#b"></use>
+                        </g>
+                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                            <use xlink:href="#a"></use>
+                        </g>
+                    </svg>
+                    </div>
+                    <div class="header-info-container">
+                        <h1>VII. sklic Državnega zbora</h1>
+                        <h2 class="partyinfo"></h2>
+                        <h2 class="cardname"><%= cardData.name %></h2>
+                    </div>
+                </div>
+                <div class="alt-header-border"></div>
             </div>
+        <% } %>
+    <% } else { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <div class="media-object img-circle session-logo">
+                    <b>placeholder header</b>
+                </div>
+                <div class="header-info-container">
+                    <h1>tekst 1</h1>
+                    <h2 class="partyinfo">dummy text</h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
+            </div>
+            <div class="alt-header-border"></div>
+            <%- JSON.stringify(data); %>
+            <%- JSON.stringify(cardData); %>
+            <%= customUrl %>
         </div>
-        <div class="alt-header-border"></div>
-        <%- JSON.stringify(data); %>
-        <%- JSON.stringify(cardData); %>
-        <%= customUrl %>
-    </div>
+    <% } %>
+
+
+
+
+
+
 <% } %>
