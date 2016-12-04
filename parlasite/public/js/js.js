@@ -558,4 +558,47 @@ $(function () {
 
     });
 
+    $(".card-share").click(function () {
+        var n;
+        var b = $(this).closest('.card-container');
+        if(b.data('id')!=''){
+            n = b.data('id');
+        }else{
+            n = b.find('h1').text();
+        }
+        measure("card","share-share",n,'');
+    });
+    $(".card-embed").click(function () {
+        var n;
+        var b = $(this).closest('.card-container');
+        if(b.data('id')!=''){
+            n = b.data('id');
+        }else{
+            n = b.find('h1').text();
+        }
+        measure("card","share-embed",n,'');
+    });
+    $(".card-info").click(function () {
+        var n;
+        var b = $(this).closest('.card-container');
+        if(b.data('id')!=''){
+            n = b.data('id');
+        }else{
+            n = b.find('h1').text();
+        }
+        measure("card","share-info",n,'');
+    });
+
+    function mcSearch(){
+        if($(".session-search-container").length > 0){
+            var bs = '';
+            bs = $(".session-search-container .search input").val();
+            if(bs!='') {
+                measure("search", "query", bs);
+            }
+        }
+    }
+    mcSearch();
+
+
 });
