@@ -114,12 +114,8 @@
                   </div>
                   <div class="embed-divider"></div>
                   <div class="embed-script">
-                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
+                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true&altHeader=true"></textarea>
                     <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
-                  </div>
-                  <div class="embed-divider"></div>
-                  <div class="embed-export">
-                    <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
                   </div>
                 </div>
               </div>
@@ -465,7 +461,7 @@ new Vue({
     },
     shortenUrl: function(url) {
       var that = this
-      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
+      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true&altHeader=true'), function(response) {
           that.shortenedCardUrl = response
           that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
       });
