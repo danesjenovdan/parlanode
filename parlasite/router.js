@@ -1325,7 +1325,9 @@ function createRoute(app, route) {
                 const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
-                common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
+                console.log('Poslanske skupine');
+
+                common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
 
                 if(forceRenderOg){
 
@@ -1370,6 +1372,8 @@ function createRoute(app, route) {
                 const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
+                console.log('Poslanska skupina');
+
                 common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
 
                 if(forceRenderOg){
@@ -1406,7 +1410,9 @@ function createRoute(app, route) {
             const hashString = hash(common);
             const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
-            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
+            console.log('Search');
+
+            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
 
             if(forceRenderOg){
 
@@ -1431,7 +1437,7 @@ function createRoute(app, route) {
                 const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
 
                 const dataExtend = {
-                  sesData: sesData.s,
+                  sesData: sesData,
                   slug: req.slug,
                   activeMenu: 'S',
                   views,
@@ -1444,8 +1450,12 @@ function createRoute(app, route) {
                   sesData: sesData.s
                 };
 
+                console.log(sesData);
+
                 const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+                console.log('Seje');
 
                 common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
 
@@ -1486,7 +1496,7 @@ function createRoute(app, route) {
 
                 Object.assign(common, dataExtend);
 
-                console.log(sesData);
+                console.log('Seja');
 
                 const hashObject = {
                   spsId: sesData.spsId,
@@ -1525,6 +1535,8 @@ function createRoute(app, route) {
 
                 let pageTitle = 'Parlameter';
 
+                console.log('Landing');
+
                 if (mpData.mp) {
                   pageTitle = ejs.render(route.pageTitle, {name: mpData.mp.name});
 
@@ -1537,8 +1549,6 @@ function createRoute(app, route) {
                   };
 
                   Object.assign(common, dataExtend);
-
-                  console.log(mpData);
 
                   const hashObj = {
                     mpId: mpData.mpId,
@@ -1594,34 +1604,71 @@ function createRoute(app, route) {
         getSessionsByType(req.params, req)
           .then((sesData) => {
 
-            const pageTitle = ejs.render(route.pageTitle);
+            if (route.viewPath.indexOf("isci") > -1) {
 
-            const dataExtend = {
-              sesData: sesData,
-              slug: req.slug,
-              activeMenu: 'S',
-              pageTitle
-            };
+              const pageTitle = ejs.render(route.pageTitle);
 
-            Object.assign(common, dataExtend);
+              const dataExtend = {
+                slug: req.slug,
+                activeMenu: 'S',
+                pageTitle,
+                q:req.query.q
+              };
 
-            const hashString = hash(common);
-            const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+              Object.assign(common, dataExtend);
 
-            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+              const hashString = hash(common);
+              const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
-            if(forceRenderOg){
+              common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
 
-              renderOg('views/og/seznam_sej.ejs', ogPath, common)
-                .then(()=>{
+              if(forceRenderOg){
 
-                  res.render(route.viewPath, common);
+                renderOg('views/og/iskanje.ejs', ogPath, common)
+                  .then(()=>{
 
-                });
+                    res.render(route.viewPath, common);
+
+                  });
+
+              }else{
+
+                res.render(route.viewPath, common);
+
+              }
 
             }else{
 
-              res.render(route.viewPath, common);
+              const pageTitle = ejs.render(route.pageTitle);
+
+              const dataExtend = {
+                sesData: sesData,
+                slug: req.slug,
+                activeMenu: 'S',
+                pageTitle
+              };
+
+              Object.assign(common, dataExtend);
+
+              const hashString = hash(common);
+              const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+              common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+              if(forceRenderOg){
+
+                renderOg('views/og/seznam_sej.ejs', ogPath, common)
+                  .then(()=>{
+
+                    res.render(route.viewPath, common);
+
+                  });
+
+              }else{
+
+                res.render(route.viewPath, common);
+
+              }
 
             }
 
@@ -1636,6 +1683,8 @@ function createRoute(app, route) {
           activeMenu: route.viewPath,
           pageTitle
         };
+
+        console.log('Default');
 
         Object.assign(common, dataExtend);
 
