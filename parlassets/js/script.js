@@ -504,7 +504,7 @@ var shortened = false;
 // card rippling (flipping)
 var cardRippling = false;
 function addCardRippling(element) {
-
+    $('.card-circle-button').off('click');
     $('.card-circle-button').on('click', function(e) {
         if ($(this).parent().data('shortened') !== true) {
             var $shareurl = $(this).parent().prev().find('.share-url');
