@@ -43,7 +43,7 @@
       &.name { flex: 1; }
       &.chart {
         flex: 2 0;
-        @import respond-to(desktop) { flex: 3 0; }
+        @include respond-to(desktop) { flex: 3 0; }
       }
     }
   }
