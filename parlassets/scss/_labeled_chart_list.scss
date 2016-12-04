@@ -1,0 +1,50 @@
+%labeled-chart-list {
+  margin: 0 0 15px 0;
+  padding: 0;
+  list-style: none;
+  .labeled-chart {
+    @extend %flex;
+    line-height: 1.2em;
+    .column {
+      font-family: Roboto, sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      margin: 0;
+      text-align: left;
+      @include respond-to(mobile) { font-size: 14px; }
+    }
+  }
+}
+
+.party-list {
+  @extend %labeled-chart-list;
+
+  .loader {
+    padding: 10px 0;
+    text-align: center;
+    .nalagalnik { height: 300px; }
+  }
+  .labeled-chart {
+    padding: 5px 0;
+    .column.name {
+      flex: none;
+      width: 136px;
+      @include respond-to(mobile) { width: 60px; }
+    }
+    @include respond-to(mobile) { padding: 4px 0; }
+  }
+}
+
+.word-list {
+  @extend %labeled-chart-list;
+  .labeled-chart {
+    padding: 9px 0;
+    .column {
+      &.name { flex: 1; }
+      &.chart {
+        flex: 2 0;
+        @import respond-to(desktop) { flex: 3 0; }
+      }
+    }
+  }
+}
