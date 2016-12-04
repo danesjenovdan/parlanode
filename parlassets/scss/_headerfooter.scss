@@ -293,8 +293,8 @@ html {
     min-height: 100%;
 }
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 210px;
+    /* Margin bottom by footer height + 50px space */
+    margin-bottom: 260px;
 }
 footer.footer {
     position: absolute;
