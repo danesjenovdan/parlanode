@@ -46,14 +46,11 @@
 body {
     background-color: $grey;
 }
-.container {
-    max-width: 520px;
-}
 
-@media (min-width: 992px) {
-    .container {
-        max-width: 1010px;
-    }
+@include respond-to(mobile) {
+  .container {
+    max-width: 500px;
+  }
 }
 
 a:focus, button:focus{
