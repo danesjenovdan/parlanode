@@ -8,6 +8,8 @@
         width: 100%;
         padding: 0 20px 20px 20px;
 
+        display: flex;
+
         .session-logo {
             display: block;
             float: left;
@@ -15,6 +17,11 @@
             margin-bottom: 0;
 
             border: none;
+
+            flex-shrink: 0;
+
+            width: 80px;
+            height: 80px;
 
             b {
                 font-size: 20px;
