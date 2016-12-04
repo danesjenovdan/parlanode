@@ -18,7 +18,9 @@
             <h1><%- mp.name %></h1>
             <h2><%= mp.party.acronym %></h2>
             <h3><%= mp.party.is_coalition ? "koalicija" : "opozicija" %></h3>
-            <h3>NEAKTIVEN</h3>
+            <% if (!mp.active) { %>
+                <h3>NEAKTIVEN</h3>
+            <% } %>
 
             <div class="member-container-menu">
                 <ul class="clearfix">
