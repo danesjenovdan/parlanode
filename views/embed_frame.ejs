@@ -28,7 +28,43 @@
 
 </head>
 <body>
-    <style>#card-container {padding: 10px;} .card-container {margin: 10px;} body {margin-bottom: 0; background: none transparent;}</style>
-<div id="card-container"></div>
+
+    <%
+        var bigcards = [
+            'Politični kompas',
+            'Nastopi, v katerih je bil iskalni niz izrečen',
+            'GOVOR',
+            'Govor',
+            'Delovno telo',
+            'Izpostavljena seja',
+            'Seznam poslancev',
+            'Seznam poslanskih skupin',
+            'Glasovanja - seja',
+            'Besede, ki so zaznamovale sejo',
+            'Prisotnost po poslanskih skupinah',
+            'Raznolikost besedišča poslank in poslancev'
+        ];
+    %>
+
+
+    <style>
+        #card-container {
+            padding: 10px;
+            <% if (bigcards.indexOf(cardData.name) !== -1) { %>
+                max-width: 478px;
+            <% } else { %>
+                max-width: 968px;
+            <% } %>
+        }
+        .card-container {
+            margin: 10px;
+        }
+        body {
+            margin-bottom: 0;
+            background: none transparent;
+        }
+    </style>
+
+    <div id="card-container"></div>
 </body>
 </html>
