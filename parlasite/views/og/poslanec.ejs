@@ -69,12 +69,12 @@
         }
     </style>
     <div class="left-half">
-        <div class="personimg"><img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png"></div>
-        <h1 class="personinfo"><%= pageData.person.name %></h1>
-        <h2 class="partyinfo"><%= pageData.person.party.acronym %> | <% if (pageData.person.party.is_coalition) { %>koalicija<% } else { %>opozicija<% } %></h2>
+        <div class="personimg"><img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= mp.gov_id %>.png"></div>
+        <h1 class="personinfo"><%= mp.name %></h1>
+        <h2 class="partyinfo"><%= mp.party.acronym %> | <% if (mp.party.is_coalition) { %>koalicija<% } else { %>opozicija<% } %></h2>
     </div>
     <div class="right-half">
-        <h2 class="cardname"><%= pageData.name %></h2>
+        <h2 class="cardname">Poslanec</h2>
         <div class="logo">
             <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
         </div>
