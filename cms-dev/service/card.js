@@ -53,6 +53,12 @@ angular.module('parlameterCardCms').factory('cardService',function($http, NET) {
             value:'glasovanje'
           }
         ],
+        cardHeaderTypes: [
+            {
+                name:'Poslanec',
+                value:'poslanec'
+            }
+        ],
         save : function(data){
 
             var promise = $http.post(NET.API_URL+'/card', data);
