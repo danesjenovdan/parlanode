@@ -1,0 +1,85 @@
+<div id="og-container">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext);
+        @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext);
+        #og-container {
+            width: 1200px;
+            height: 630px;
+            background: #5b99d5;
+            position: relative;
+            font-family: Roboto, sans-serif;
+        }
+        .left-half,
+        .right-half {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            padding: 75px 25px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .left-half {
+            left: 0;
+        }
+        .right-half {
+            right: 0;
+            background: #fff;
+        }
+        .personimg {
+            width: 300px;
+            height: 300px;
+            margin: 10px auto 75px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .personimg span {
+            font-size: 80px;
+            display: block;
+            line-height: 300px;
+            width: 100%;
+        }
+        h1, h2 {
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+        }
+        h1 {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 32px;
+        }
+        .partyinfo {
+            font-family: "Roboto Slab", sans-serif;
+            font-weight: 300;
+        }
+        .cardname {
+            font-size: 44px;
+            color: #5b99d5;
+            margin-top: 200px;
+        }
+        .logo {
+            width: 100%;
+            position: absolute;
+            bottom: 55px;
+            left: 0;
+        }
+        .logo img {
+            width: 160px;
+        }
+    </style>
+    <div class="left-half">
+        <div class="personimg"><span><%= pageData.party.acronym %></span></div>
+        <h1 class="personinfo"><%= pageData.party.name %></h1>
+        <h2 class="partyinfo"><% if (pageData.party.is_coalition) { %>koalicija<% } else { %>opozicija<% } %></h2>
+    </div>
+    <div class="right-half">
+        <h2 class="cardname"><%= pageData.name %></h2>
+        <div class="logo">
+            <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
+        </div>
+    </div>
+</div>
