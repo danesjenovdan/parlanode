@@ -1,22 +1,3 @@
-function measure(c,a,n,v) {
-
-    if((c=="") || (a=="")  ){
-        return false;
-    }
-    if((v!="") && (n!="")){
-        _paq.push(['trackEvent', c, a, n, v]);
-        return true;
-    }
-
-    if((n!="")) {
-        _paq.push(['trackEvent', c, a, n]);
-        return true;
-    }
-
-    _paq.push(['trackEvent', c, a]);
-    return true;
-
-}
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -499,7 +480,6 @@ $(function () {
     });
 
     function loadScript(url, callback) {
-
         // check for duplicates
         var list = document.getElementsByTagName('script');
         var i = list.length,
@@ -526,25 +506,19 @@ $(function () {
                     callback();
                 };
             }
-
             tag.src = url;
             document.getElementsByTagName("head")[0].appendChild(tag);
         }
-
     }
 
-    $(".doniraj").click(function () {
-
+    /*$(".doniraj").click(function () {
         loadScript('https://js.braintreegateway.com/js/braintree-2.30.0.min.js', function () {
             loadScript('https://js.braintreegateway.com/web/3.5.0/js/three-d-secure.min.js', function () {
                 loadScript('https://js.braintreegateway.com/web/3.5.0/js/hosted-fields.min.js', function () {
-
                 });
             });
         });
-
-
-    });
+    });*/
 
     $(".measure").click(function () {
 
