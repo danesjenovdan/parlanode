@@ -50,10 +50,11 @@
     <style>
         #card-container {
             padding: 10px;
+            margin: auto;
             <% if (bigcards.indexOf(cardData.name) !== -1) { %>
-                max-width: 478px;
-            <% } else { %>
                 max-width: 968px;
+            <% } else { %>
+                max-width: 478px;
             <% } %>
         }
         .card-container {
