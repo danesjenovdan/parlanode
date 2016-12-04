@@ -118,7 +118,7 @@ const routes = [
 
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
-              let state = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": ' + mpData.name + '}], "parties": []}');
+              let state = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": "' + mpData.mp.name + '"}], "parties": []}');
 
               const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
 
