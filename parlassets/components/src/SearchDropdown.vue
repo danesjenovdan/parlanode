@@ -55,7 +55,7 @@ export default {
         })
         .sort(function(a, b) {
           if (Boolean(a.selected) === Boolean(b.selected)) {
-            return a.label.localeCompare(b.label)
+            return a.label.localeCompare(b.label, 'sl')
           }
           else {
             return a.selected && !b.selected ? -1 : 1
