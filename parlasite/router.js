@@ -1676,21 +1676,59 @@ function createRoute(app, route) {
 
       } else {
 
-        const pageTitle = ejs.render(route.pageTitle);
+        if (route.viewPath.indexOf("poslanci") > -1) {
 
-        const dataExtend = {
-          slug: req.slug,
-          activeMenu: route.viewPath,
-          pageTitle
-        };
+          const pageTitle = ejs.render(route.pageTitle);
 
-        console.log('Default');
+          const dataExtend = {
+            slug: req.slug,
+            activeMenu: route.viewPath,
+            pageTitle
+          };
 
-        Object.assign(common, dataExtend);
+          console.log('Poslanci');
 
-        common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+          Object.assign(common, dataExtend);
 
-        res.render(route.viewPath, common);
+          const hashString = hash(common);
+          const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+          common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+          if(forceRenderOg){
+
+            renderOg('views/og/seznam_poslancev.ejs', ogPath, common)
+              .then(()=>{
+
+                res.render(route.viewPath, common);
+
+              });
+
+          }else{
+
+            res.render(route.viewPath, common);
+
+          }
+
+        }else {
+
+          const pageTitle = ejs.render(route.pageTitle);
+
+          const dataExtend = {
+            slug: req.slug,
+            activeMenu: route.viewPath,
+            pageTitle
+          };
+
+          console.log('Default');
+
+          Object.assign(common, dataExtend);
+
+          common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+
+          res.render(route.viewPath, common);
+
+        }
 
       }
     }
