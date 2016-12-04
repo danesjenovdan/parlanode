@@ -9,6 +9,7 @@ module.exports = {
     {
       name      : "parlasite",
       script    : "run.js",
+      instances : '4',
       env: {
         COMMON_VARIABLE: "true"
       },
