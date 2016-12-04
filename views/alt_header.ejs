@@ -101,8 +101,19 @@
             <div class="icon-circle">
                 <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-list.svg" />
             </div>
+
+            <% var labels = {
+              seat_count: 'Število sedežev',
+              presence_sessions: 'Prisotnost na sejah DZ',
+              presence_votes: 'Prisotnost na glasovanjih sej DZ',
+              vocabulary_size: 'Raznolikost besedišča',
+              privzdignjeno: 'Privzdignjeno besedje',
+              preprosto: 'Preprosto besedje',
+              problematicno: 'Ekscesno besedje',
+            }; %>
+
             <div class="header-info-container">
-                <h1><%= analyses[analysis].label %></h1>
+                <h1><%= labels[state.analysis || 'seat_count'] %></h1>
                 <h2 class="partyinfo">7. sklic parlamenta</h2>
                 <h2 class="cardname"><%= cardData.name %></h2>
             </div>
