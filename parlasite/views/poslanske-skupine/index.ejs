@@ -95,14 +95,14 @@
                   <div class="card-back-content card-content">
                       <div class="share-content">
                           <label for="share-url">Neposredna povezava do kartice</label>
-                          <input type="url" class="form-control share-url" id="share-url" :value="generatedCardUrl + '&frame=true'"/>
+                          <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
                           <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
                       </div>
                   </div>
               </div>
             </div>
 
-            <div class="card-footer">
+            <div class="card-footer" data-shortened="true">
               <div class="card-circle-button card-share" data-back="share"></div>
               <div class="card-circle-button card-embed" data-back="embed"></div>
               <div class="card-circle-button card-info" data-back="info">i</div>
@@ -120,6 +120,7 @@ new Vue({
   data: {
     partyData: [],
     currentAnalysis: 'seat_count',
+    shortenedCardUrl: '',
     analyses: [
       {
         id: 'seat_count',
@@ -161,6 +162,7 @@ new Vue({
           '/<br>' +
           '<br>' +
           'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+        roundingPrecision: 3
       },
       {
         id: 'preprosto',
@@ -174,6 +176,7 @@ new Vue({
           'pogovorno (pog.)<br>' +
           '<br>' +
           'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+        roundingPrecision: 3
       },
       {
         id: 'problematicno',
@@ -187,6 +190,7 @@ new Vue({
           'slabšalno (slabš.), vulgarno (vulg.)<br>' +
           '<br>' +
           'Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).',
+        roundingPrecision: 3
       },
     ]
   },
@@ -212,7 +216,7 @@ new Vue({
 
       return this.partyData.map(function(party) {
         var rawValue = party.results[that.currentAnalysis]
-        party.displayValue = that.round(rawValue, 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')
+        party.displayValue = (that.round(rawValue, that.currentAnalysisData.roundingPrecision || 1) + (that.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',')
         party.chartWidth = rawValue ? rawValue / maxValue * 80 + '%' : '1px'
         return party
       })
@@ -245,6 +249,18 @@ new Vue({
     round: function(value, precision) {
       var multiplier = Math.pow(10, precision || 0)
       return Math.round(value * multiplier) / multiplier
+    },
+    shortenUrl: function(url) {
+      var that = this
+      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
+          that.shortenedCardUrl = response
+          that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
+      });
+    }
+  },
+  watch: {
+    generatedCardUrl: function(newValue) {
+      this.shortenUrl(newValue)
     }
   }
 })
