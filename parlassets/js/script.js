@@ -714,42 +714,49 @@ function makeSpeechesEventful() {
     })
 
     // Fetch similar speeches
-    $.get('https://isci.parlameter.si/mlt/' + speechId, function(response) {
-      var maxScore = response.response.maxScore;
-      var speeches = response.response.docs.slice(0, 5);
-      if (speeches[4]) {
-        var minScore = speeches[4].score;
-      }
+    $.ajax({
+        'url': 'https://isci.parlameter.si/mlt/' + speechId,
+        'type': 'GET',
+        'success': function(response) {
+            var maxScore = response.response.maxScore;
+            var speeches = response.response.docs.slice(0, 5);
+            if (speeches[4]) {
+                var minScore = speeches[4].score;
+            }
 
-      var tabs = [];
-      var tabContents = [];
+            var tabs = [];
+            var tabContents = [];
 
-      speeches.forEach(function(speech, index) {
-        tabs.push($(
-          '<li role="tab"' + (index === 0 ? 'class="active"' : '') + '>\
-            <a class="speech" href="#' + speech.speech_id + '_' + cardId + '" data-toggle="tab">\
-              <div class="portrait" style="background-image: url(\'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + speech.person.gov_id + '.png\')"></div>\
-              <div class="name">' + speech.person.name + '</div>\
-              <div class="date">' + formatDate(speech.date) + '</div>\
-              <div class="rating" style="width: ' + ((speech.score - minScore) / (maxScore - minScore) * 50 + 50) + '%"></div>\
-            </a>\
-          </li>'
-        ));
+            speeches.forEach(function(speech, index) {
+                tabs.push($(
+                '<li role="tab"' + (index === 0 ? 'class="active"' : '') + '>\
+                    <a class="speech" href="#' + speech.speech_id + '_' + cardId + '" data-toggle="tab">\
+                    <div class="portrait" style="background-image: url(\'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + speech.person.gov_id + '.png\')"></div>\
+                    <div class="name">' + speech.person.name + '</div>\
+                    <div class="date">' + formatDate(speech.date) + '</div>\
+                    <div class="rating" style="width: ' + ((speech.score - minScore) / (maxScore - minScore) * 50 + 50) + '%"></div>\
+                    </a>\
+                </li>'
+                ));
 
-        tabContents.push($(
-          '<div role="tabpanel" class="tab-pane' + (index === 0 ? ' active' : '') + '" id="' + speech.speech_id + '_' + cardId + '">\
-            <div class="similar-speech-heading">' +
-              speech.session_name + ', ' + formatDate(speech.date) +
-              '<div class="close-button"></div>\
-            </div>\
-            <div class="similar-speech-text">' + speech.content_t[0] + '</div>\
-            <a class="similar-speech-link" href="#">Pokaži znotraj seje &gt;</a>\
-          </div>'
-        ));
-      });
+                tabContents.push($(
+                '<div role="tabpanel" class="tab-pane' + (index === 0 ? ' active' : '') + '" id="' + speech.speech_id + '_' + cardId + '">\
+                    <div class="similar-speech-heading">' +
+                    speech.session_name + ', ' + formatDate(speech.date) +
+                    '<div class="close-button"></div>\
+                    </div>\
+                    <div class="similar-speech-text">' + speech.content_t[0] + '</div>\
+                    <a class="similar-speech-link" href="#">Pokaži znotraj seje &gt;</a>\
+                </div>'
+                ));
+            });
 
-      similarSpeechWrapperElement.find('.similar-speech-tabs ul').append(tabs);
-      similarSpeechWrapperElement.find('.similar-speech-content').append(tabContents);
+            similarSpeechWrapperElement.find('.similar-speech-tabs ul').append(tabs);
+            similarSpeechWrapperElement.find('.similar-speech-content').append(tabContents);
+        },
+        'error': function(r) {
+            similarSpeechWrapperElement.addClass('hidden');
+        }
     });
 
   });
