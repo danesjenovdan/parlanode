@@ -2,9 +2,8 @@
 <html> <!-- removeme -->
 
 <head> <!-- removeme -->
-    asdasdasdasd
-    <%= cardData.cardType %>
-    <% if (cardData.cardType == 'poslanec') { %>
+    <script>var cardData = <%- JSON.stringify(cardData) %>;</script>
+    <% if (cardData.type == 'poslanec') { %>
         <title><%= cardData.name %> - <%= data.person.name %></title>
 
         <meta name="twitter:creator" content="@danesjenovdan">
