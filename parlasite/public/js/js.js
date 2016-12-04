@@ -1,22 +1,3 @@
-function measure(c,a,n,v) {
-
-    if((c=="") || (a=="")  ){
-        return false;
-    }
-    if((v!="") && (n!="")){
-        _paq.push(['trackEvent', c, a, n, v]);
-        return true;
-    }
-
-    if((n!="")) {
-        _paq.push(['trackEvent', c, a, n]);
-        return true;
-    }
-
-    _paq.push(['trackEvent', c, a]);
-    return true;
-
-}
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -599,6 +580,19 @@ $(function () {
         }
     }
     mcSearch();
+
+    function mcKompas() {
+        if($(".card-kompas").length > 0){
+
+            $(".party-button").click(function () {
+                var b = $(this);
+                var ps = b.text();
+                measure("kompas", "party", ps);
+            });
+
+        }
+
+    }
 
 
 });
