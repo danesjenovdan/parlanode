@@ -1,15 +1,17 @@
 "use strict";
-const _ = require('lodash');
-const fetch = require('node-fetch');
-const UrlPattern = require('url-pattern');
-const Promise = require('bluebird');
-const config = require('./config');
-const slug = require('slug');
-const mpsList = require('./static/data/mps');
-const opsList = require('./static/data/ops');
-const spsList = require('./static/data/sps');
-const mpsopsList = require('./static/data/mpsops');
-const ejs = require('ejs');
+const _           = require('lodash');
+const fetch       = require('node-fetch');
+const UrlPattern  = require('url-pattern');
+const Promise     = require('bluebird');
+const config      = require('./config');
+const slug        = require('slug');
+const mpsList     = require('./static/data/mps');
+const opsList     = require('./static/data/ops');
+const spsList     = require('./static/data/sps');
+const mpsopsList  = require('./static/data/mpsops');
+const ejs         = require('ejs');
+const webshot     = require('webshot');
+const fs          = require('fs');
 
 const routes = [
   {
@@ -1246,6 +1248,39 @@ module.exports = (app) => {
   });
 };
 
+
+
+function renderOg(ejsPath, ogPath, data){
+
+  return new Promise((resolve, reject)=>{
+
+    try {
+
+      const ogEjs = fs.readFileSync(ejsPath, 'utf-8');
+      const ogHtml = ejs.render(ogEjs, data);
+
+      webshot(ogHtml, ogPath, {
+        siteType: 'html',
+        captureSelector: '#og-container',
+        quality: 80
+      }, (err)=>{
+
+        if(err) return reject(err);
+
+        resolve();
+
+      });
+
+    }catch(err){
+
+      reject(err);
+
+    }
+
+  });
+
+}
+
 function createRoute(app, route) {
   app.get(route.path, (req, res) => {
     if (route.cards) {
@@ -1276,8 +1311,6 @@ function createRoute(app, route) {
               .then((psData) => {
 
                 const pageTitle = ejs.render(route.pageTitle, {fullName: psData.ps.name});
-
-                console.log(psData);
 
                 res.render(route.viewPath, {
                   query: req.query,
