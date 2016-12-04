@@ -1,5 +1,6 @@
 <script>var headerType = <%- JSON.stringify(cardData.headerType); %></script>
 
+<!-- POSLANSKA SKUPINA -->
 <% if (cardData.headerType == 'poslanska_skupina') { %>
     <% if ('organization' in data) { %>
         <div class="alt-header-container">
@@ -30,6 +31,8 @@
             <div class="alt-header-border"></div>
         </div>
     <% } %>
+
+<!-- ZADNJA SEJA -->
 <% } else if (cardData.headerType == 'zadnja_seja'){ %>
     <style>
         .smalldate {
@@ -49,6 +52,8 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
+
+<!-- POSAMEZNO GLASOVANJE -->
 <% } else if (cardData.headerType == 'glasovanje'){ %>
     <% if ('all' in data) { %>
         <div class="alt-header-container">
@@ -65,6 +70,8 @@
             <div class="alt-header-border"></div>
         </div>
     <% } %>
+
+<!-- SEZNAM POSLANCEV -->
 <% } else if (cardData.headerType == 'seznam_poslancev') { %>
     <div class="alt-header-container">
         <div class="alt-header">
@@ -86,6 +93,24 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
+
+<!-- GLASOVANJA - SEJA -->
+<% } else if (cardData.headerType == 'glasovanje'){ %>
+    <% if ('all' in data) { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <div class="media-object img-circle session-logo backgroundred">
+                    <b>S</b>
+                </div>
+                <div class="header-info-container">
+                    <h1><%= data.name %></h1>
+                    <h2 class="partyinfo"><%= data.created_for %></h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
+            </div>
+            <div class="alt-header-border"></div>
+        </div>
+    <% } %>
 <% } else { %>
 
 
