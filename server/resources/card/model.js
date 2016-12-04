@@ -19,4 +19,5 @@ var schema = mongoose.Schema({
 
 });
 
+
 mongoose.model('Card', schema);
