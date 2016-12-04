@@ -1,3 +1,22 @@
+function measure(c,a,n,v) {
+
+    if((c=="") || (a=="")  ){
+        return false;
+    }
+    if((v!="") && (n!="")){
+        _paq.push(['trackEvent', c, a, n, v]);
+        return true;
+    }
+
+    if((n!="")) {
+        _paq.push(['trackEvent', c, a, n]);
+        return true;
+    }
+
+    _paq.push(['trackEvent', c, a]);
+    return true;
+
+}
 function equalHeight($elementByClass) {
 
     var h = 0;
@@ -142,8 +161,10 @@ $(function () {
         $('.search-input-header').bind('typeahead:select', function (e, value) {
 
             if (typeof value.acronym !== 'undefined') {
+                measure("search","header","ps",value.name);
                 window.location.href = value.url;
             } else {
+                measure("search","header","p",value.name);
                 window.location.href = value.url;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
@@ -154,6 +175,7 @@ $(function () {
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function () {
+            measure("search","header","s",$(this).data('query'));
             window.location.href = "/seje/isci?q=" + $(this).data('query');
             return false;
         });
@@ -230,16 +252,16 @@ $(function () {
 
 
     $(".newslettersubscribeButton").click(function () {
-        var url = '/';
+        var url = 'https://prispevaj.parlameter.si/parlamail/email/';
         var jqxhr = $.ajax({
             method: "POST",
             url: url,
-            data: {mail: $(".newslettersubscribe").val()}
+            data: {email: $(".newslettersubscribe").val()}
         })
             .done(function (data) {
                 $(".newslettersubscribemsg").html('').addClass("success").html(data.result);
 
-                alert('not yet');
+                //alert('not yet');
 
             })
             .fail(function () {
@@ -373,49 +395,6 @@ $(function () {
             .always(function () {
             });
     }
-    /*
-    $("#modal-doniraj-amount #modal-doniraj-amount-paypal").click(function () {
-
-        var token;
-        var jqxhr = $.ajax("https://prispevaj.parlameter.si/getBrainToken/")
-            .done(function (data) {
-            token = data.token;
-            //PAYPAL
-                braintree.setup(token, "custom", {
-                    paypal: {
-                        container: "paypal-container",
-                    },
-                    onPaymentMethodReceived: function (response) {
-
-                        console.log(response);
-
-                        $.ajax({
-                            method: "POST",
-                            url: "https://prispevaj.parlameter.si/cardPayPalResponse/",
-                            data: {
-                                nonce: response['nonce'],
-                                email: "lojze@petrle.si",
-                                money: $("#donation-amount").val(),
-                                purpose: "Donacija parlameter"
-                            }
-                        }).done(function (resp) {
-                            console.log(resp);
-                            if (resp.status == "OK")
-                                location.reload();
-                            else
-                                alert(resp.status)
-                        });
-                    }
-                });
-
-            })
-            .fail(function () {
-                $("#" + urlid).html(urlid + " error");
-            })
-            .always(function () {
-            });
-    });
-    */
 
 
     $("#modal-doniraj-card #modal-doniraj-amount-card").click(function () {
@@ -438,18 +417,14 @@ $(function () {
 
 //CARD
                 var client = new braintree.api.Client({
-                    // Use the generated client token to instantiate the Braintree client.
                     clientToken: token
                 });
 
                 client.verify3DS({
                     amount: $("#donation-amount").val(),
                     creditCard: {
-                        // required parameters
                         number: $("#card-donation-card-number").val(),
-                        expirationDate: $("#card-donation-surname").val(), // You can use either expirationDate
-
-                        // optional parameters
+                        expirationDate: $("#card-donation-surname").val(),
                         cvv: $("#card-donation-address").val(),
                     }
                 }, function (err, response) {
@@ -571,5 +546,16 @@ $(function () {
 
     });
 
+    $(".measure").click(function () {
+
+        var b = $(this);
+        var c = b.data('mc');
+        var a = b.data('ma');
+        var n = b.data('mn');
+        var v = b.data('mv');
+
+        measure(c,a,n,v);
+
+    });
 
 });
