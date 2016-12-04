@@ -1316,9 +1316,13 @@ function createRoute(app, route) {
                   pageTitle
                 };
 
+                const hashObject = {
+                  ps: psData.ps
+                };
+
                 Object.assign(common, dataExtend);
 
-                const hashString = hash(common);
+                const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
                 common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
@@ -1357,7 +1361,13 @@ function createRoute(app, route) {
 
                 Object.assign(common, dataExtend);
 
-                const hashString = hash(common);
+                const hashObject = {
+                  activeMenu: 'PS',
+                  psId:psData.psId,
+                  psSlug:psData.psSlug
+                };
+
+                const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
                 common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
@@ -1430,7 +1440,11 @@ function createRoute(app, route) {
 
                 Object.assign(common, dataExtend);
 
-                const hashString = hash(common);
+                const hashObject = {
+                  sesData: sesData.s
+                };
+
+                const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
                 common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
@@ -1472,7 +1486,11 @@ function createRoute(app, route) {
 
                 Object.assign(common, dataExtend);
 
-                const hashString = hash(common);
+                const hashObject = {
+                  sesData: sesData.s
+                };
+
+                const hashString = hash(hashObject);
                 const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
                 common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
@@ -1517,11 +1535,11 @@ function createRoute(app, route) {
 
                   Object.assign(common, dataExtend);
 
+                  console.log(mpData);
+
                   const hashObj = {
-                    mp: mpData.mp,
-                    slug: req.slug,
-                    activeMenu: activeMenu,
-                    pageTitle: pageTitle
+                    mpId: mpData.mpId,
+                    nameSlug: mpData.mp.nameSlug
                   };
 
                   const hashString = hash(hashObj);
