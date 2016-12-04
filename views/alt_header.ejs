@@ -30,6 +30,25 @@
             <div class="alt-header-border"></div>
         </div>
     <% } %>
+<% } else if (cardData.headerType == 'zadnja_seja'){ %>
+    <style>
+        .smalldate {
+            display: none;
+        }
+    </style>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>S</b>
+            </div>
+            <div class="header-info-container">
+                <h1><%= data.session.name %></h1>
+                <h2 class="partyinfo"><%= data.session.date %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
 <% } else { %>
 
 
