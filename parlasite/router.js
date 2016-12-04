@@ -1617,7 +1617,11 @@ function createRoute(app, route) {
 
               Object.assign(common, dataExtend);
 
-              const hashString = hash(common);
+              const hashString = hash({
+                slug: req.slug,
+                activeMenu: 'S',
+                pageTitle
+              });
               const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
               common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/iskanje-og.jpg';
