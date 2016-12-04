@@ -64,17 +64,14 @@
             }
         }
 
-        .list-circle {
+        .icon-circle {
           $size: 80px;
           background: $funblue;
           border-radius: 50%;
           height: $size;
           margin-right: 18px;
-          padding: $size / 4;
           width: $size;
-          img {
-            width: 100%;
-          }
+          img { width: 100%; }
         }
     }
 
