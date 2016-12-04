@@ -181,7 +181,7 @@ new Vue({
         id: 'vocabulary_size',
         titleSuffix: ' po raznolikosti besedišča',
         explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375',
-        label: 'Besedni zaklad'
+        label: 'Raznolikost besedišča'
       },
       {
         id: 'spoken_words',
@@ -223,7 +223,8 @@ new Vue({
           'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
           'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
         label: 'Preprosto besedje',
-        round: true
+        round: true,
+        roundingPrecision: 3
       },
       {
         id: 'problematicno',
@@ -238,7 +239,8 @@ new Vue({
           'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
           'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
         label: 'Ekscesno besedje',
-        round: true
+        round: true,
+        roundingPrecision: 3
       },
     ],
     currentParties: [],
@@ -334,15 +336,15 @@ new Vue({
             case 'name':
               var a = memberA.person.name
               var b = memberB.person.name
-              return a.localeCompare(b)
+              return a.localeCompare(b, 'sl')
             case 'district':
               var a = memberA.person.formattedDistrict
               var b = memberB.person.formattedDistrict
-              return a.localeCompare(b)
+              return a.localeCompare(b, 'sl')
             case 'party':
               var a = memberA.person.party.acronym
               var b = memberB.person.party.acronym
-              return a.localeCompare(b)
+              return a.localeCompare(b, 'sl')
             default:
               break
           }
@@ -446,7 +448,7 @@ new Vue({
       if (value === null) { return 'Ni dovolj podatkov' }
 
       if (value !== 0) {
-        if (this.currentAnalysisData.round) { value = Math.round(value * 10) / 10 }
+        if (this.currentAnalysisData.round) { value = String(this.round(value, this.currentAnalysisData.roundingPrecision || 1)).replace('.', ',') }
         if (this.currentAnalysisData.scientific) { value = value.toExponential() }
       }
       if (this.currentAnalysisData.unit === 'percent') { value += '%' }
@@ -469,6 +471,10 @@ new Vue({
           that.shortenedCardUrl = response
           that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
       });
+    },
+    round: function(value, precision) {
+      var multiplier = Math.pow(10, precision || 0)
+      return Math.round(value * multiplier) / multiplier
     }
   },
   watch: {
