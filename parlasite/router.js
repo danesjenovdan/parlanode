@@ -1650,12 +1650,16 @@ function createRoute(app, route) {
 
               Object.assign(common, dataExtend);
 
-              const hashString = hash(common);
+              const hashObject = {
+                viewPath:route.viewPath
+              };
+
+              const hashString = hash(hashObject);
               const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
 
               common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
 
-              console.log('Default 1');
+              console.log('Default 1 session');
 
               if(forceRenderOg){
 
