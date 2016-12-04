@@ -114,8 +114,12 @@
                   </div>
                   <div class="embed-divider"></div>
                   <div class="embed-script">
-                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true&altHeader=true"></textarea>
+                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
                     <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+                  </div>
+                  <div class="embed-divider"></div>
+                  <div class="embed-export">
+                    <div class="embed-label">Izvozi kartico kot sliko <button class="btn-parlameter btn-blue btn-margin-left">PRENESI</button></div>
                   </div>
                 </div>
               </div>
@@ -219,7 +223,8 @@ new Vue({
           'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
           'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
         label: 'Preprosto besedje',
-        round: true
+        round: true,
+        roundingPrecision: 3
       },
       {
         id: 'problematicno',
@@ -234,7 +239,8 @@ new Vue({
           'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
           'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
         label: 'Ekscesno besedje',
-        round: true
+        round: true,
+        roundingPrecision: 3
       },
     ],
     currentParties: [],
@@ -330,15 +336,15 @@ new Vue({
             case 'name':
               var a = memberA.person.name
               var b = memberB.person.name
-              return a.localeCompare(b)
+              return a.localeCompare(b, 'sl')
             case 'district':
               var a = memberA.person.formattedDistrict
               var b = memberB.person.formattedDistrict
-              return a.localeCompare(b)
+              return a.localeCompare(b, 'sl')
             case 'party':
               var a = memberA.person.party.acronym
               var b = memberB.person.party.acronym
-              return a.localeCompare(b)
+              return a.localeCompare(b, 'sl')
             default:
               break
           }
@@ -442,7 +448,7 @@ new Vue({
       if (value === null) { return 'Ni dovolj podatkov' }
 
       if (value !== 0) {
-        if (this.currentAnalysisData.round) { value = Math.round(value * 10) / 10 }
+        if (this.currentAnalysisData.round) { value = String(this.round(value, this.currentAnalysisData.roundingPrecision || 1)).replace('.', ',') }
         if (this.currentAnalysisData.scientific) { value = value.toExponential() }
       }
       if (this.currentAnalysisData.unit === 'percent') { value += '%' }
@@ -461,10 +467,14 @@ new Vue({
     },
     shortenUrl: function(url) {
       var that = this
-      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true&altHeader=true'), function(response) {
+      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
           that.shortenedCardUrl = response
           that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
       });
+    },
+    round: function(value, precision) {
+      var multiplier = Math.pow(10, precision || 0)
+      return Math.round(value * multiplier) / multiplier
     }
   },
   watch: {
