@@ -1,4 +1,4 @@
-headerType: <%= cardData.headerType %>
+<script>var headerType = <%- JSON.stringify(cardData.headerType); %>
 
 <% if ('person' in data) { %>
     <% if ('memberships' in data) { %>
