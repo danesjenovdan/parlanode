@@ -1486,8 +1486,11 @@ function createRoute(app, route) {
 
                 Object.assign(common, dataExtend);
 
+                console.log(sesData);
+
                 const hashObject = {
-                  sesData: sesData.s
+                  spsId: sesData.spsId,
+                  spsSlug: sesData.spsSlug
                 };
 
                 const hashString = hash(hashObject);
