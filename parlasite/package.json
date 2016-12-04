@@ -18,6 +18,7 @@
     "node-horseman": "^3.2.0",
     "slug": "^0.9.1",
     "supertest": "^2.0.1",
-    "url-pattern": "^1.0.1"
+    "url-pattern": "^1.0.1",
+    "webshot": "^0.18.0"
   }
 }
