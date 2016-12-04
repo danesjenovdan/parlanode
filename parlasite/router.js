@@ -1364,9 +1364,10 @@ function createRoute(app, route) {
             getSessionIds(req.params, req, session_type)
               .then((sesData) => {
 
+                const ogEjs = fs.readFileSync(route.viewPath, 'utf-8');
                 const pageTitle = ejs.render(route.pageTitle);
 
-                res.render(route.viewPath, {
+                const html = ejs.render(ogEjs, {
                   query: req.query,
                   params: req.params,
                   sesData: sesData.s,
@@ -1375,6 +1376,9 @@ function createRoute(app, route) {
                   views,
                   pageTitle
                 });
+
+                res.send(html);
+
               });
 
           } else {
