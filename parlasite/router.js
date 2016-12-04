@@ -12,6 +12,7 @@ const mpsopsList  = require('./static/data/mpsops');
 const ejs         = require('ejs');
 const webshot     = require('webshot');
 const fs          = require('fs');
+const hash        = require('object-hash');
 
 const routes = [
   {
@@ -100,12 +101,12 @@ const routes = [
   }, {
     path: '/poslanci',
     viewPath: 'poslanci',
-    pageTitle: 'Poslanci',
+    pageTitle: 'Seznam poslancev',
   }, {
     path: '/p/:fullName',
     extraPaths: ['/poslanci/pregled/:fullName/:date', '/p/id/:id', '/p/:fullName/pregled', '/p/id/:id/:date', '/p/:fullName/pregled/:date', '/poslanec/:fullName/pregled', '/poslanec/:fullName/pregled/:date'],
     viewPath: 'poslanec/pregled',
-    pageTitle: '<%- name %> pregled',
+    pageTitle: 'Pregled - <%- name %>',
     cards: [
       {
         name: 'kompas',
@@ -409,7 +410,7 @@ const routes = [
     path: '/p/:fullName/glasovanja',
     extraPaths: ['/poslanci/glasovanja/:fullName/:date', '/p/:fullName/glasovanja/:date', '/poslanec/:fullName/glasovanja', '/poslanec/:fullName/glasovanja/:date'],
     viewPath: 'poslanec/glasovanja',
-    pageTitle: '<%- name %> glasovanja',
+    pageTitle: 'Glasovanja - <%- name %>',
     cards: [
 
       {
@@ -521,7 +522,7 @@ const routes = [
     path: '/p/:fullName/govori',
     extraPaths: ['/poslanci/govori/:fullName/:date', '/p/:fullName/govori/:date', '/poslanec/:fullName/govori', '/poslanec/:fullName/govori/:date'],
     viewPath: 'poslanec/govori',
-    pageTitle: '<%- name %> govori',
+    pageTitle: 'Govori <%- name %>',
     cards: [
 
       {
@@ -697,7 +698,7 @@ const routes = [
   }, {
     path: '/poslanske-skupine',
     viewPath: 'poslanske-skupine',
-    pageTitle: 'Poslanske skupine',
+    pageTitle: 'Seznam poslanskih skupin',
     cards: []
   }, {
     path: '/poslanske-skupine/:imeAnalize',
@@ -712,7 +713,7 @@ const routes = [
     path: '/poslanska-skupina/pregled/:fullName',
     extraPaths: ['/poslanska-skupina/pregled/:fullName/:date', '/poslanska-skupina/:fullName/pregled', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
     viewPath: 'poslanska-skupina/pregled',
-    pageTitle: 'Poslanska skupina <%- fullName %> pregled',
+    pageTitle: 'Pregled - <%- fullName %>',
     cards: [
       {
         name: 'osnovneInformacije',
@@ -838,7 +839,7 @@ const routes = [
     path: '/poslanska-skupina/glasovanja/:fullName',
     extraPaths: ['/poslanska-skupina/glasovanja/:fullName/:date', '/poslanska-skupina/:fullName/glasovanja', '/ps/glasovanja/id/:id', '/ps/glasovanja/id/:id/:date'],
     viewPath: 'poslanska-skupina/glasovanja',
-    pageTitle: 'Poslanska skupina <%- fullName %> glasovanja',
+    pageTitle: 'Glasovanja - <%- fullName %>',
     cards: [
       {
         name: 'glasovanja',
@@ -962,7 +963,7 @@ const routes = [
     path: '/poslanska-skupina/govori/:fullName',
     extraPaths: ['/poslanska-skupina/govori/:fullName/:date', '/poslanska-skupina/:fullName/govori', '/ps/govori/id/:id', '/ps/govori/id/:id/:date'],
     viewPath: 'poslanska-skupina/govori',
-    pageTitle: 'Poslanska skupina <%- fullName %> govori',
+    pageTitle: 'Govori - <%- fullName %>',
     cards: [
       {
         name: 'besedeKiJihDelajoPosebne',
@@ -1063,19 +1064,19 @@ const routes = [
   {
     path: '/seje',
     viewPath: 'seje',
-    pageTitle: 'Parlameter - seje',
+    pageTitle: 'Seznam sej',
   },
   {
     path: '/seje/isci/',
     extraPaths: ['/search/', '/seje/search/', '/isci/'],
     viewPath: 'seje/search',
-    pageTitle: 'Parlameter - seje isci',
+    pageTitle: 'Išči seje',
   },
   {
     path: '/seje/tip/:fullName',
     extraPaths: ['/seje/tip/:fullName/:date'],
     viewPath: 'seje/tip',
-    pageTitle: 'Parlameter - <%- name %>',
+    pageTitle: 'Seja <%- name %>',
     cards: []
   },
 
@@ -1083,7 +1084,7 @@ const routes = [
     path: '/seja/glasovanje/:id/:motionid',
     extraPaths: ['/seja/glasovanje/:id/:motionid/:date', '/s/glasovanje/:id/:motionid', '/s/glasovanje/:id/:motionid/:date'],
     viewPath: 'seja/glasovanje',
-    pageTitle: 'Parlameter - seja glasovanje',
+    pageTitle: 'Seja - glasovanje',
     cards: [
       {
         name: 'glasovanjeSeja',
@@ -1108,7 +1109,7 @@ const routes = [
     path: '/seja/glasovanja/:id',
     extraPaths: ['/seja/glasovanja/:id/:date', '/seja/glasovanja/:id', '/s/glasovanja/:id', '/s/glasovanja/:id/:date'],
     viewPath: 'seja/glasovanja',
-    pageTitle: 'Parlameter - seja glasovanje',
+    pageTitle: 'Seja - glasovanja',
     cards: [
       {
         name: 'glasovanjaSeja',
@@ -1132,7 +1133,7 @@ const routes = [
     path: '/seja/prisotnost/:id',
     extraPaths: ['/seja/prisotnost/:id/:date', '/seja/prisotnost/:id', '/s/prisotnost/:id', '/s/prisotnost/:id/:date'],
     viewPath: 'seja/prisotnost',
-    pageTitle: 'Parlameter - seja prisotnost',
+    pageTitle: 'Seja - prisotnost',
     cards: [
       {
         name: 'prisotnostPoPoslanskihSkupinah',
@@ -1172,7 +1173,7 @@ const routes = [
     path: '/seja/transkript/:id',
     extraPaths: ['/seja/transkript/:id/:date', '/seja/transkript/:id', '/s/transkript/:id', '/s/transkript/:id/:date', '/seja/:dt/transkript/:id/:date'],
     viewPath: 'seja/transkript',
-    pageTitle: 'Parlameter - seja transkript',
+    pageTitle: 'Seja - transkript',
     cards: [
       {
         name: 'besedeKiSoZaznamovaleSejo',
@@ -1211,7 +1212,7 @@ const routes = [
   {
     path: '/seje/:imeAnalize',
     viewPath: 'seje/seja',
-    pageTitle: 'Parlameter - seja <%- imeAnalize %>',
+    pageTitle: 'Seja - <%- imeAnalize %>',
     cards: {
       poslanec: {
         url: ''
@@ -1249,7 +1250,12 @@ module.exports = (app) => {
 };
 
 
-
+/**
+ * Render og image
+ * @param {String} ejsPath
+ * @param {String} ogPath
+ * @param {Object} data
+ */
 function renderOg(ejsPath, ogPath, data){
 
   return new Promise((resolve, reject)=>{
@@ -1283,11 +1289,18 @@ function renderOg(ejsPath, ogPath, data){
 
 function createRoute(app, route) {
   app.get(route.path, (req, res) => {
+
+    const forceRenderOg = req.query.forceRenderOg;
+
+    const common = {
+      query: req.query,
+      params: req.params,
+      ogImageUrl:config.OG_ROOT_URL
+    };
+
     if (route.cards) {
       resolveCards(req, res, route)
         .then((views) => {
-
-          const renderOg = req.query.renderOg;
 
           if (route.viewPath.indexOf("poslanske-skupine") > -1) {
             getPSIdByName(req.params.fullName, req)
@@ -1295,15 +1308,36 @@ function createRoute(app, route) {
 
                 const pageTitle = ejs.render(route.pageTitle);
 
-                res.render(route.viewPath, {
-                  query: req.query,
-                  params: req.params,
+                const dataExtend = {
                   ps: psData.ps,
                   slug: req.slug,
                   activeMenu: 'poslanske-skupine',
                   views,
                   pageTitle
-                });
+                };
+
+                Object.assign(common, dataExtend);
+
+                const hashString = hash(common);
+                const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+                common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
+
+                if(forceRenderOg){
+
+                  renderOg('views/og/seznam_poslanskih_skupin.ejs', ogPath, common)
+                    .then(()=>{
+
+                      res.render(route.viewPath, common);
+
+                    });
+
+                }else{
+
+                  res.render(route.viewPath, common);
+
+                }
+
               });
 
           } else if (route.viewPath.indexOf("poslanska-skupina") > -1) {
@@ -1312,31 +1346,72 @@ function createRoute(app, route) {
 
                 const pageTitle = ejs.render(route.pageTitle, {fullName: psData.ps.name});
 
-                res.render(route.viewPath, {
-                  query: req.query,
-                  params: req.params,
+                const dataExtend = {
                   ps: psData.ps,
                   slug: req.slug,
                   activeMenu: 'PS',
                   realAcronym: psData,
                   views,
                   pageTitle
-                });
+                };
+
+                Object.assign(common, dataExtend);
+
+                const hashString = hash(common);
+                const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+                common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
+
+                if(forceRenderOg){
+
+                  renderOg('views/og/poslanska_skupina.ejs', ogPath, common)
+                    .then(()=>{
+
+                      res.render(route.viewPath, common);
+
+                    });
+
+                }else{
+
+                  res.render(route.viewPath, common);
+
+                }
+
               });
 
           } else if (route.viewPath.indexOf("search") > -1) {
 
             const pageTitle = ejs.render(route.pageTitle);
 
-            res.render(route.viewPath, {
-              query: req.query,
-              params: req.params,
+            const dataExtend = {
               sesData: sesData.s,
               slug: req.slug,
               activeMenu: 'S',
               views,
               pageTitle
-            });
+            };
+
+            Object.assign(common, dataExtend);
+
+            const hashString = hash(common);
+            const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';;
+
+            if(forceRenderOg){
+
+              renderOg('views/og/iskanje.ejs', ogPath, common)
+                .then(()=>{
+
+                  res.render(route.viewPath, common);
+
+                });
+
+            }else{
+
+              res.render(route.viewPath, common);
+
+            }
 
           } else if (route.viewPath.indexOf("seje") > -1) {
 
@@ -1345,15 +1420,36 @@ function createRoute(app, route) {
 
                 const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
 
-                res.render(route.viewPath, {
-                  query: req.query,
-                  params: req.params,
-                  sesData: sesData,
+                const dataExtend = {
+                  sesData: sesData.s,
                   slug: req.slug,
                   activeMenu: 'S',
                   views,
                   pageTitle
-                });
+                };
+
+                Object.assign(common, dataExtend);
+
+                const hashString = hash(common);
+                const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+                common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+                if(forceRenderOg){
+
+                  renderOg('views/og/seznam_sej.ejs', ogPath, common)
+                    .then(()=>{
+
+                      res.render(route.viewPath, common);
+
+                    });
+
+                }else{
+
+                  res.render(route.viewPath, common);
+
+                }
+
               });
 
           } else if (route.viewPath.indexOf("seja") > -1) {
@@ -1366,15 +1462,36 @@ function createRoute(app, route) {
 
                 const pageTitle = ejs.render(route.pageTitle);
 
-                res.render(route.viewPath, {
-                  query: req.query,
-                  params: req.params,
+                const dataExtend = {
                   sesData: sesData.s,
                   slug: req.slug,
                   activeMenu: 'S',
                   views,
                   pageTitle
-                });
+                };
+
+                Object.assign(common, dataExtend);
+
+                const hashString = hash(common);
+                const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+                common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+                if(forceRenderOg){
+
+                  renderOg('views/og/seja.ejs', ogPath, common)
+                    .then(()=>{
+
+                      res.render(route.viewPath, common);
+
+                    });
+
+                }else{
+
+                  res.render(route.viewPath, common);
+
+                }
+
               });
 
           } else {
@@ -1389,17 +1506,59 @@ function createRoute(app, route) {
 
                 if (mpData.mp) {
                   pageTitle = ejs.render(route.pageTitle, {name: mpData.mp.name});
-                }
 
-                res.render(route.viewPath, {
-                  query: req.query,
-                  params: req.params,
-                  mp: mpData.mp,
-                  slug: req.slug,
-                  activeMenu: activeMenu,
-                  pageTitle: pageTitle,
-                  views
-                });
+                  const dataExtend = {
+                    mp: mpData.mp,
+                    slug: req.slug,
+                    activeMenu: activeMenu,
+                    pageTitle: pageTitle,
+                    views
+                  };
+
+                  Object.assign(common, dataExtend);
+
+                  const hashObj = {
+                    mp: mpData.mp,
+                    slug: req.slug,
+                    activeMenu: activeMenu,
+                    pageTitle: pageTitle
+                  };
+
+                  const hashString = hash(hashObj);
+                  const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+                  common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+                  if(forceRenderOg){
+
+                    renderOg('views/og/poslanec.ejs', ogPath, common)
+                      .then(()=>{
+
+                        res.render(route.viewPath, common);
+
+                      });
+
+                  }else{
+
+                    res.render(route.viewPath, common);
+
+                  }
+
+                }else{
+
+                  const dataExtend = {
+                    mp: mpData.mp,
+                    slug: req.slug,
+                    activeMenu: activeMenu,
+                    pageTitle: pageTitle,
+                    views
+                  };
+
+                  Object.assign(common, dataExtend);
+
+                  res.render(route.viewPath, common);
+
+                }
 
               });
           }
@@ -1414,27 +1573,51 @@ function createRoute(app, route) {
 
             const pageTitle = ejs.render(route.pageTitle);
 
-            res.render(route.viewPath, {
-              query: req.query,
-              params: req.params,
+            const dataExtend = {
               sesData: sesData,
               slug: req.slug,
               activeMenu: 'S',
               pageTitle
-            });
+            };
+
+            Object.assign(common, dataExtend);
+
+            const hashString = hash(common);
+            const ogPath = config.OG_CAPTURE_PATH+hashString+'.jpeg';
+
+            common.ogImageUrl = config.OG_ROOT_URL+hashString+'.jpeg';
+
+            if(forceRenderOg){
+
+              renderOg('views/og/seznam_sej.ejs', ogPath, common)
+                .then(()=>{
+
+                  res.render(route.viewPath, common);
+
+                });
+
+            }else{
+
+              res.render(route.viewPath, common);
+
+            }
+
           });
 
       } else {
 
         const pageTitle = ejs.render(route.pageTitle);
 
-        res.render(route.viewPath, {
-          query: req.query,
-          params: req.params,
+        const dataExtend = {
           slug: req.slug,
           activeMenu: route.viewPath,
           pageTitle
-        });
+        };
+
+        Object.assign(common, dataExtend);
+
+        res.render(route.viewPath, common);
+
       }
     }
   });

@@ -16,6 +16,7 @@
     "lodash": "^4.15.0",
     "node-fetch": "^1.6.0",
     "node-horseman": "^3.2.0",
+    "object-hash": "^1.1.5",
     "slug": "^0.9.1",
     "supertest": "^2.0.1",
     "url-pattern": "^1.0.1",
