@@ -54,50 +54,54 @@ angular.module('parlameterCardCms').factory('cardService',function($http, NET) {
           }
         ],
         cardHeaderTypes: [
-            {
-                name:'Zadnja seja',
-                value:'zadnja_seja'
-            },
-            {
-                name:'Politični kompas',
-                value:'politicni_kompas'
-            },
-            {
-                name:'Raznolikost besedišča',
-                value:'raznolikost_besedisca'
-            },
-            {
-                name:'Seznam poslancev',
-                value:'seznam_poslancev'
-            },
-            {
-                name:'Seznam poslanskih skupin',
-                value:'seznam_poslanskih_skupin'
-            },
-            {
-                name:'Poslanec',
-                value:'poslanec'
-            },
-            {
-                name:'Poslanska skupina',
-                value:'poslanska_skupina'
-            },
-            {
-                name:'Seje',
-                value:'seje'
-            },
-            {
-                name:'Iskanje',
-                value:'iskanje'
-            },
-            {
-                name:'Delovno telo',
-                value:'delovno_telo'
-            },
-            {
-                name:'Glasovanje',
-                value:'glasovanje'
-            }
+          {
+            name:'Zadnja seja',
+            value:'zadnja_seja'
+          },
+          {
+            name:'Politični kompas',
+            value:'politicni_kompas'
+          },
+          {
+            name:'Raznolikost besedišča',
+            value:'raznolikost_besedisca'
+          },
+          {
+            name:'Seznam poslancev',
+            value:'seznam_poslancev'
+          },
+          {
+            name:'Seznam poslanskih skupin',
+            value:'seznam_poslanskih_skupin'
+          },
+          {
+            name:'Poslanec',
+            value:'poslanec'
+          },
+          {
+            name:'Poslanska skupina',
+            value:'poslanska_skupina'
+          },
+          {
+            name:'Seje',
+            value:'seje'
+          },
+          {
+            name:'Iskanje',
+            value:'iskanje'
+          },
+          {
+            name:'Delovno telo',
+            value:'delovno_telo'
+          },
+          {
+            name:'Glasovanje',
+            value:'glasovanje'
+          },
+          {
+            name:'Govor',
+            value:'govor'
+          }
         ],
         save : function(data){
 

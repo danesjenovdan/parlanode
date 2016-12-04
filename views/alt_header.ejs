@@ -10,7 +10,7 @@
                 <div class="header-info-container">
                     <h1><%= data.organization.name %></h1>
                     <h2 class="partyinfo"><%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                    <h2 class="cardname"><% if (cardData.name.indexOf('Glasovanja - ') == -1) { %><%= cardData.name %><%= } else { %>Glasovanja<% } %></h2>
+                    <h2 class="cardname"><% if (cardData.name.indexOf('ovanja') == -1) { %><%= cardData.name %><% } else { %>Glasovanja<% } %></h2>
                 </div>
             </div>
             <div class="alt-header-border"></div>
@@ -30,7 +30,68 @@
             <div class="alt-header-border"></div>
         </div>
     <% } %>
+<% } else if (cardData.headerType == 'zadnja_seja'){ %>
+    <style>
+        .smalldate {
+            display: none;
+        }
+    </style>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>S</b>
+            </div>
+            <div class="header-info-container">
+                <h1><%= data.session.name %></h1>
+                <h2 class="partyinfo"><%= data.session.date %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+<% } else if (cardData.headerType == 'glasovanje'){ %>
+    <% if ('all' in data) { %>
+        <div class="alt-header-container">
+            <div class="alt-header">
+                <div class="media-object img-circle session-logo backgroundred">
+                    <b>S</b>
+                </div>
+                <div class="header-info-container">
+                    <h1><%= data.name %></h1>
+                    <h2 class="partyinfo"><%= data.created_for %></h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                </div>
+            </div>
+            <div class="alt-header-border"></div>
+        </div>
+    <% } %>
+<% } else if (cardData.headerType == 'seznam_poslancev') { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="list-circle">
+                <img src="https://cdn.parlameter.si/v1/parlassets/icons/list-light.svg" />
+            </div>
+            <div class="header-info-container">
+                <h1><%- state.parties ? state.parties.join(', ') : '&nbsp;' %></h1>
+                <% function getDistricts() {
+                  return state.districts.map(function(districtId) {
+                    return data.districts.filter(function(district) {
+                      return Object.keys(district)[0] === districtId;
+                    })[0][districtId];
+                  });
+                }; %>
+                <h2 class="partyinfo"><%- state.districts ? getDistricts().join(', ') : '&nbsp;' %></h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
 <% } else { %>
+
+
+
+
+
 
 
 
@@ -145,51 +206,6 @@
             </div> -->
 
         <% } %>
-    <% } else if ('districts' in data) { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 100 100">
-                        <defs>
-                            <path id="d" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
-                            <path id="c" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
-                            <path id="b" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
-                            <path id="a" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
-                        </defs>
-                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                            <use xlink:href="#d"></use>
-                        </g>
-                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                            <use xlink:href="#c"></use>
-                        </g>
-                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                            <use xlink:href="#b"></use>
-                        </g>
-                        <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                            <use xlink:href="#a"></use>
-                        </g>
-                    </svg>
-                </div>
-                <div class="header-info-container">
-                    <h1><% if (state['parties']) { for (i in state['parties']) {%><%= state['parties'][i] %><% if (i < state['parties'].length - 1) { %>, <% } } } %></h1>
-                    <% 
-                        var districts = [];
-                        if (state['districts']) {
-                            state['districts'].forEach(function(e1) {
-                                data.districts.forEach(function(e2) {
-                                    if (e2[parseInt(e1)]) {
-                                        districts.push(e2[parseInt(e1)]);
-                                    }
-                                });
-                            });
-                        }
-                    %>
-                    <h2 class="partyinfo"><% if (state['districts']) { for (i in districts) { %><%= districts[i] %><% if (i < districts.length - 1) { %>, <% } } } %></h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
-            </div>
-            <div class="alt-header-border"></div>
-        </div>
     <% } else if ('data' in data) { %>
         <% if ('person' in data['data'][0]) { %>
             <div class="alt-header-container">
