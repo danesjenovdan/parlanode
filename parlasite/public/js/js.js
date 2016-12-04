@@ -186,10 +186,30 @@ $(function () {
 
         var queryParams = getQueryParameters();
         var querystring = encodeQueryData(queryParams);
+        var querystringVoting = encodeQueryData(queryParams).split('q/')[1];
 
         $("#session_search_results .getmedata").each(function (e, urlid) {
             var urlid = $(this).attr('id');
             var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/" + (querystring)));
+            $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
+
+            var jqxhr = $.ajax(url)
+                .done(function (data) {
+
+                    $("#" + urlid).html(data);
+                    DNDrepeatEmbedCall();
+                })
+                .fail(function () {
+                    $("#" + urlid).html(urlid + " error");
+                })
+                .always(function () {
+                });
+        });
+
+        $("#session_search_results .getmedata-voting").each(function (e, urlid) {
+            var urlid = $(this).attr('id');
+            console.log("https://isci.parlameter.si/v/" + (querystringVoting));
+            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/v/" + (querystringVoting)));
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
             var jqxhr = $.ajax(url)
