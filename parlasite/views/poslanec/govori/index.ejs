@@ -1,5 +1,12 @@
 <% include ../../partials/header.ejs %>
 
+<% if (!mp.active) { %>
+    <style>
+        body {
+            filter: grayscale(100%);
+        }
+    </style>
+<% } %>
 
 <div class="member-container">
     <div class="row header text-center">
