@@ -98,8 +98,8 @@
     <% } %>
     <% if (cardData.headerType == 'politicni_kompas') { %>
         <title>Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %></title>
-        <meta name="twitter:title" content="<%= data.organization.name %>">
-        <meta property="og:title" content="<%= data.organization.name %>">
+        <meta name="twitter:title" content="Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+        <meta property="og:title" content="Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
     <% } %>
 
 
