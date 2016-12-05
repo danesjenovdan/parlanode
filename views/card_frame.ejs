@@ -21,13 +21,13 @@
     <% } %>
     <% if (cardData.type == 'poslanska_skupina') { %>
         <% if ('organization' in data) { %>
-            <title><% cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
-            <meta name="twitter:title" content="<% cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
-            <meta property="og:title" content="<% cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <title><%= cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
+            <meta name="twitter:title" content="<%= cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <meta property="og:title" content="<%= cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
         <% } else if ('party' in data) { %>
-            <title><% cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
-            <meta name="twitter:title" content="<% cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
-            <meta property="og:title" content="<% cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <title><%= cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
+            <meta name="twitter:title" content="<%= cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <meta property="og:title" content="<%= cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
         <% } %>
     <% } %>
     <% if (cardData.type == 'seje') { %>
