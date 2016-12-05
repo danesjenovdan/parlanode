@@ -101,6 +101,11 @@
         <meta name="twitter:title" content="Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
         <meta property="og:title" content="Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
     <% } %>
+    <% if (cardData.headerType == 'raznolikost_besedisca') { %>
+        <title>Raznolikost besedišča - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %></title>
+        <meta name="twitter:title" content="Raznolikost besedišča - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+        <meta property="og:title" content="Raznolikost besedišča - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+    <% } %>
 
 
     <meta name="twitter:creator" content="@danesjenovdan">
