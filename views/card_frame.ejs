@@ -44,6 +44,11 @@
         <meta name="twitter:title" content="<%= data.name %>">
         <meta property="og:title" content="<%= data.name %>">
     <% } %>
+    <% if (cardData.type == 'govor') { %>
+        <title><%= data.person.name %> - <%= data.results.session.name %></title>
+        <meta name="twitter:title" content="<%= data.person.name %> - <%= data.results.session.name %>">
+        <meta property="og:title" content="<%= data.person.name %> - <%= data.results.session.name %>">
+    <% } %>
 
     <meta name="twitter:creator" content="@danesjenovdan">
     <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
@@ -226,11 +231,11 @@
             <% } %>
 
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <a href="" class="permalink"><span class="funblue-light-hover">Pokaži kartico v kontekstu spletnega mesta parlameter.si &gt;</span></a>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
