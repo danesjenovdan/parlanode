@@ -11,7 +11,10 @@
       font-weight: 300;
       margin: 0;
       text-align: left;
-      &.chart { margin-left: 10px; }
+      &.chart {
+        line-height: 30px;  
+        margin-left: 10px;
+      }
       @include respond-to(mobile) { font-size: 14px; }
     }
   }
