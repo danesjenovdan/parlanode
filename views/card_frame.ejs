@@ -19,9 +19,12 @@
         <% } %>
     <% } %>
     <% if (cardData.type == 'seje') { %>
-        <title><%= data.session.name %> - <%= data.session.date %></title>
-        <meta name="twitter:title" content="<%= data.session.name %> - <%= data.session.date %>">
-        <meta property="og:title" content="<%= data.session.name %> - <%= data.session.date %>">
+        <% if ('person' in data) { %>
+        <% } else { %>
+            <title><%= data.session.name %> - <%= data.session.date %></title>
+            <meta name="twitter:title" content="<%= data.session.name %> - <%= data.session.date %>">
+            <meta property="og:title" content="<%= data.session.name %> - <%= data.session.date %>">
+        <% } %>
     <% } %>
     <% if (cardData.type == 'iskanje') { %>
         <title>Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %></title>
