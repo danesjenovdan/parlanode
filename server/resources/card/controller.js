@@ -253,13 +253,7 @@ exports.render = function (req, res) {
             if (+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate) {
               compileCard();
             } else {
-              res.writeHead(200, {
-                'Content-Length': Buffer.byteLength(html),
-                'Content-Type': 'text/html; charset=utf-8'
-              });
-
-              res.write(html);
-              res.end();
+              res.send(html);
             }
 
           });
@@ -359,12 +353,14 @@ exports.render = function (req, res) {
                */
               var html = ejs.render(cardDoc.ejs, cardData);
 
+              console.log(html);
+
               if (altHeader) {
 
                 var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
                 var renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
 
-                const $ = cheerio.load(html);
+                const $ = cheerio.load(html, { decodeEntities: false });
                 $('.card-header').empty().append(renderedHtmlHeader);
 
                 html = $.html();
@@ -375,7 +371,7 @@ exports.render = function (req, res) {
 
                 var frameHtmlString = fs.readFileSync('views/card_frame.ejs', 'utf-8');
                 var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData);
-                var $ = cheerio.load(renderedFrameHtmlString);
+                var $ = cheerio.load(renderedFrameHtmlString, { decodeEntities: false });
 
                 if (previewWidth) {
                   $('#card-container').css({
@@ -392,7 +388,7 @@ exports.render = function (req, res) {
 
                 var frameHtmlString = fs.readFileSync('views/embed_frame.ejs', 'utf-8');
                 var renderedFrameHtmlString = ejs.render(frameHtmlString, cardData);
-                var $ = cheerio.load(renderedFrameHtmlString);
+                var $ = cheerio.load(renderedFrameHtmlString, { decodeEntities: false });
 
                 if (previewWidth) {
                   $('#card-container').css({
@@ -432,31 +428,22 @@ exports.render = function (req, res) {
                         quality: 80
                       }, function (err) {
 
-
-
                         if (err) {
                           console.log('Err:1 ', err);
                         } else {
 
                           cardRender.ogImageUrl = CFG.ogRootUrl + cardRender._id + '.jpeg';
 
-                          const $ = cheerio.load(html);
+                          const $ = cheerio.load(html, { decodeEntities: false });
                           $('head').append('<meta property="og:image" content="' + cardRender.ogImageUrl + '" />');
                           $('head').append('<meta name="twitter:image" content="' + cardRender.ogImageUrl + '" />');
 
                           cardRender.html = $.html();
 
-                          res.writeHead(200, {
-                            'Content-Length': Buffer.byteLength(cardRender.html),
-                            'Content-Type': 'text/html; charset=utf-8'
-                          });
-
                           cardRender.save()
                             .then(() => {
 
-                              console.log('Write:2 ', err);
-                              res.write(cardRender.html);
-                              res.end();
+                              res.send(cardRender.html);
 
                             });
 
@@ -472,7 +459,7 @@ exports.render = function (req, res) {
 
                 } else {
                   console.log('No card type');
-                  res.write(html);
+                  res.send(cardRender.html);
                   res.end();
                 }
 
