@@ -31,7 +31,11 @@ const routes = [
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -60,7 +64,11 @@ const routes = [
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -86,7 +94,12 @@ const routes = [
             .then((mpData) => {
               let mpId = mpData.mpId;
               let mpSlug = mpData.mpSlug;
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -120,7 +133,11 @@ const routes = [
               let mpSlug = mpData.mpSlug;
               let state = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": "' + mpData.mp.name + '"}], "parties": []}');
 
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
+
+              if(req.query.forceRender){
+                cardUrl += '&forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -151,7 +168,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -182,7 +203,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -215,7 +240,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -253,7 +282,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -288,7 +321,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -319,9 +356,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
-              //console.log(cardUrl);
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -352,9 +391,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
-              //console.log(cardUrl);
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -385,9 +426,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
-              //console.log(cardUrl);
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -423,7 +466,12 @@ const routes = [
               let mpSlug = mpData.mpSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -444,7 +492,12 @@ const routes = [
               let mpSlug = mpData.mpSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -468,7 +521,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -499,7 +556,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -536,7 +597,12 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -559,7 +625,12 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -583,7 +654,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -614,7 +689,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -645,7 +724,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -676,7 +759,11 @@ const routes = [
 
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: mpId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
 
               return fetch(cardUrl)
                 .then((res) => {
@@ -726,8 +813,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -749,8 +840,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -776,9 +871,12 @@ const routes = [
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
 
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
 
-              console.log(cardUrl);
+              if(req.query.forceRender){
+                cardUrl += '&forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -800,8 +898,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -822,8 +924,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -852,8 +958,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -876,8 +986,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -900,8 +1014,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -923,8 +1041,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -946,8 +1068,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -976,8 +1102,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -999,8 +1129,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -1022,8 +1156,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -1046,8 +1184,12 @@ const routes = [
               let psSlug = psData.psSlug;
               var pattern = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({id: psId});
-              const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-              console.log(cardUrl);
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
               return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
@@ -1093,7 +1235,12 @@ const routes = [
 
           var pattern = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({motionid: req.params.motionid});
-          const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
           return fetch(cardUrl)
             .then((res) => {
               return res.text();
@@ -1117,7 +1264,12 @@ const routes = [
         resolve: (req, res, route, card) => {
           var pattern = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({id: req.params.id});
-          const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
           return fetch(cardUrl)
             .then((res) => {
               return res.text();
@@ -1141,7 +1293,12 @@ const routes = [
         resolve: (req, res, route, card) => {
           var pattern = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({id: req.params.id});
-          const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
           return fetch(cardUrl)
             .then((res) => {
               return res.text();
@@ -1157,7 +1314,12 @@ const routes = [
         resolve: (req, res, route, card) => {
           var pattern = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({id: req.params.id});
-          const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
           return fetch(cardUrl)
             .then((res) => {
               return res.text();
@@ -1181,7 +1343,12 @@ const routes = [
         resolve: (req, res, route, card) => {
           var pattern = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({id: req.params.id});
-          const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
           return fetch(cardUrl)
             .then((res) => {
               return res.text();
@@ -1197,7 +1364,7 @@ const routes = [
       //     resolve: (req, res, route, card)=> {
       //         var pattern = new UrlPattern(card.sourceUrl);
       //         const renderedPath = pattern.stringify({id: req.params.id});
-      //         const cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+      //         let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
       //         return fetch(cardUrl)
       //             .then((res) => {
       //                 return res.text();
