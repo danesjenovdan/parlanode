@@ -303,5 +303,13 @@
             $('.permalink').attr('href', 'https://skoraj.parlameter.si/p/id/' + id);
         }, 1000);
     </script>
+
+    <% if (cardData.headerType == 'govor') { %>
+        <script>
+            window.setTimeout(function() {
+                $('.toggle-arrow').click();
+            }, 500);
+        </script>
+    <% } %>
 </body>
 </html>
