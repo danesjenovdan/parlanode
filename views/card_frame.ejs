@@ -82,6 +82,20 @@
         <meta name="twitter:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
         <meta property="og:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
     <% } %>
+    <% if (cardData.headerType == 'seznam_poslancev') { %>
+
+        <% function getDistricts() {
+            return state.districts.map(function(districtId) {
+            return data.districts.filter(function(district) {
+                return Object.keys(district)[0] === districtId;
+            })[0][districtId];
+            });
+        }; %>
+
+        <title>Seznam poslancev - <%- state.parties ? state.parties.join(', ') : '&nbsp;' %> | <%- state.districts ? getDistricts().join(', ') : '&nbsp;' %></title>
+        <meta name="twitter:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
+        <meta property="og:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
+    <% } %>
 
 
     <meta name="twitter:creator" content="@danesjenovdan">
