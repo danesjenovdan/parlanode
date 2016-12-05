@@ -286,22 +286,27 @@ $(function () {
 
     $("#modal-doniraj-email #business-donation-btn").click(function () {
         var btn = $(this);
+        $("#business-donation-email").removeClass('error');
+        if (validateEmail($("#business-donation-email").val())) {
 
-        var url = 'https://prispevaj.parlameter.si/bussines/';
-        var jqxhr = $.ajax({
-            method: "POST",
-            url: url,
-            data: {email: $("#business-donation-email").val(), message: $("#business-donation-message").val()}
-        })
-            .done(function (data) {
-                $(".business-donation").html('').addClass("success").html(data.result);
-                btn.hide();
+            var url = 'https://prispevaj.parlameter.si/bussines/';
+            var jqxhr = $.ajax({
+                method: "POST",
+                url: url,
+                data: {email: $("#business-donation-email").val(), message: $("#business-donation-message").val()}
             })
-            .fail(function () {
+                .done(function (data) {
+                    $(".business-donation").html('').addClass("success").html(data.result);
+                    btn.hide();
+                })
+                .fail(function () {
 
-            })
-            .always(function () {
-            });
+                })
+                .always(function () {
+                });
+        } else {
+            $("#business-donation-email").addClass('error');
+        }
     });
 
 
