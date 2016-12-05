@@ -13,7 +13,7 @@ exports.isDate = (d)=>{
   if(parts.length > 0){
 
     const dayNum = parseInt(parts[0]);
-    const monthNum = parseInt(parts[1])+1;
+    const monthNum = parseInt(parts[1]);
     const yearNum = parseInt(parts[2]);
 
     console.log(dayNum,monthNum,yearNum);

@@ -233,7 +233,7 @@ exports.render = function (req, res) {
   } else {
     const today = new Date();
     // ToDo - ta datum more povedat analize api ker jaz ne vem ce bom dobil podatke se od danes ali od vceraj
-    date = today.getDate() + '.' + today.getUTCMonth() + '.' + today.getFullYear();
+    date = today.getDate() + '.' + (today.getUTCMonth()+1) + '.' + today.getFullYear();
     cacheData.date = date;
   }
 
