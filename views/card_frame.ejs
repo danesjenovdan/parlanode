@@ -54,6 +54,23 @@
         <meta name="twitter:title" content="<%= data.organization.name %>">
         <meta property="og:title" content="<%= data.organization.name %>">
     <% } %>
+    <% if (cardData.headerType == 'seznam_poslanskih_skupin') { %>
+
+        <% var labels = {
+            seat_count: 'Število sedežev',
+            presence_sessions: 'Prisotnost na sejah DZ',
+            presence_votes: 'Prisotnost na glasovanjih sej DZ',
+            vocabulary_size: 'Raznolikost besedišča',
+            privzdignjeno: 'Privzdignjeno besedje',
+            preprosto: 'Preprosto besedje',
+            problematicno: 'Ekscesno besedje',
+        }; %>
+
+        <title><%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %></title>
+        <meta name="twitter:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
+        <meta property="og:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
+    <% } %>
+
 
     <meta name="twitter:creator" content="@danesjenovdan">
     <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
