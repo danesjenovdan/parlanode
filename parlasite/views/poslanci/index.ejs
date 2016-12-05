@@ -203,7 +203,9 @@ new Vue({
           '<br>' +
           'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
           'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
-        label: 'Privzdignjeno besedje'
+        label: 'Privzdignjeno besedje',
+        round: true,
+        roundingPrecision: 3
       },
       {
         id: 'preprosto',
