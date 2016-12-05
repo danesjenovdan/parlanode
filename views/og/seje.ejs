@@ -105,8 +105,8 @@
                 </g>
             </svg>
         </div>
-        <h1 class="personinfo"><%= if ('results' in data) { if ('speech_id' in data.results) { %><%= data.person.name %><% } } %></h1>
-        <h2 class="partyinfo"><%= if ('results' in data) { if ('speech_id' in data.results) { %><%= data.results.session.name %><% } } %></h2>
+        <h1 class="personinfo"><% if ('results' in data) { if ('speech_id' in data.results) { %><%= data.person.name %><% } } %></h1>
+        <h2 class="partyinfo"><% if ('results' in data) { if ('speech_id' in data.results) { %><%= data.results.session.name %><% } } %></h2>
     </div>
     <div class="right-half">
         <h2 class="cardname">
