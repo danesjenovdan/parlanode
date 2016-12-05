@@ -41,11 +41,8 @@
   .labeled-chart {
     padding: 9px 0;
     .column {
-      &.chart-label { flex: 2; }
-      &.chart {
-        flex: 2 0;
-        @include respond-to(desktop) { flex: 3 0; }
-      }
+      &.chart-label { flex: 1; }
+      &.chart { flex: 1 0; }
     }
   }
 }
