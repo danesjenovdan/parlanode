@@ -49,6 +49,11 @@
         <meta name="twitter:title" content="<%= data.person.name %> - <%= data.results.session.name %>">
         <meta property="og:title" content="<%= data.person.name %> - <%= data.results.session.name %>">
     <% } %>
+    <% if (cardData.headerType == 'delovno_telo') { %>
+        <title><%= data.organization.name %></title>
+        <meta name="twitter:title" content="<%= data.organization.name %>">
+        <meta property="og:title" content="<%= data.organization.name %>">
+    <% } %>
 
     <meta name="twitter:creator" content="@danesjenovdan">
     <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
