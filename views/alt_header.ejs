@@ -140,19 +140,21 @@
 
 <!-- ISKANJE -->
 <% } else if (cardData.headerType == 'iskanje'){ %>
-  <div class="alt-header-container">
-      <div class="alt-header">
-          <div class="icon-circle">
-              <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-search.svg" />
-          </div>
-          <div class="header-info-container">
-              <h1>"<%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>"</h1>
-              <h2 class="partyinfo">iskalni niz</h2>
-              <h2 class="cardname"><%= cardData.name %></h2>
-          </div>
-      </div>
-      <div class="alt-header-border"></div>
-  </div>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="icon-circle">
+                <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-search.svg" />
+            </div>
+            <div class="header-info-container">
+                <h1>"<%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %>"</h1>
+                <h2 class="partyinfo">iskalni niz</h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+
+<!-- POLITIČNI KOMPAS -->
 <% } else if (cardData.headerType == 'politicni_kompas') { %>
     <div class="alt-header-container">
         <div class="alt-header">
@@ -167,11 +169,13 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
+
+<!-- RAZNOLIKOST BESEDIŠČA -->
 <% } else if (cardData.headerType == 'raznolikost_besedisca') { %>
     <div class="alt-header-container">
         <div class="alt-header">
             <div class="icon-circle">
-              <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-kompas.svg" />
+              <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-raznolikost.svg" />
             </div>
             <div class="header-info-container">
                 <h1><% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %>&nbsp;</h1>
@@ -181,6 +185,23 @@
         </div>
         <div class="alt-header-border"></div>
     </div>
+
+<!-- DELOVNO TELO -->
+<% } else if (cardData.headerType == 'delovno_telo') { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="icon-circle">
+              <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-telo.svg" />
+            </div>
+            <div class="header-info-container">
+                <h1><%= data.organization.name %></h1>
+                <h2 class="partyinfo">&nbsp;</h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+
 <% } else { %>
 
 
@@ -195,7 +216,15 @@
                 <div class="header-info-container">
                     <h1><%= data.person.name %></h1>
                     <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
+                    <% if (cardData.name = 'Besede, ki ga zaznamujejo') { %>
+                        <% if (data.person.gender = 'f') { %>
+                            <h2 class="cardname">Besede, ki jo zaznamujejo</h2>
+                        <% } else { %>
+                            <h2 class="cardname"><%= cardData.name %></h2>
+                        <% } %>
+                    <% } else { %>
+                        <h2 class="cardname"><%= cardData.name %></h2>
+                    <% } %>
                 </div>
             </div>
             <div class="alt-header-border"></div>
@@ -227,18 +256,6 @@
             <div class="alt-header-border"></div>
         </div>
         <% } %>
-    <% } else if ('info' in data) { %>
-        <div class="alt-header-container">
-            <div class="alt-header">
-                <div class="header-info-container">
-                    <h1><%= data.organization.name %></h1>
-                    <h2 class="partyinfo">&nbsp;</h2>
-                    <h2 class="cardname"><%= cardData.name %></h2>
-                </div>
-            </div>
-            <div class="alt-header-border"></div>
-        </div>
-
     <% } else if ('session' in data) { %>
         <div class="alt-header-container">
             <div class="alt-header">
@@ -278,10 +295,10 @@
                     <div class="media-object img-circle session-logo" style="width: 80px; height: 80px; padding-right: 10px; margin: 0;">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 100 100">
                         <defs>
-                            <path id="d" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
-                            <path id="c" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
-                            <path id="b" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
-                            <path id="a" stroke="#5b99d5" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
+                            <path id="d" stroke="#009cdd" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 30 L 80 30"></path>
+                            <path id="c" stroke="#009cdd" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 50 L 80 50"></path>
+                            <path id="b" stroke="#009cdd" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 30 70 L 80 70"></path>
+                            <path id="a" stroke="#009cdd" stroke-width="6" stroke-linejoin="round" stroke-linecap="square" fill="none" d=" M 19 30 L 21 30 M 19 50 L 21 50 M 19 70 L 21 70"></path>
                         </defs>
                         <g transform="matrix( 1, 0, 0, 1, 0,0) ">
                             <use xlink:href="#d"></use>
@@ -298,7 +315,7 @@
                     </svg>
                     </div>
                     <div class="header-info-container">
-                        <h1>VII. sklic Državnega zbora</h1>
+                        <h1>7. sklic parlamenta</h1>
                         <h2 class="partyinfo"></h2>
                         <h2 class="cardname"><%= cardData.name %></h2>
                     </div>

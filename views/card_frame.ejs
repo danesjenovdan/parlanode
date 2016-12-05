@@ -3,25 +3,40 @@
 
 <head> <!-- removeme -->
     <% if (cardData.type == 'poslanec') { %>
-        <title><%= cardData.name %> - <%= data.person.name %></title>
-        <meta name="twitter:title" content="<%= cardData.name %> - <%= data.person.name %>">
-        <meta property="og:title" content="<%= cardData.name %> - <%= data.person.name %>">
+        <% if (cardData.name = 'Besede, ki ga zaznamujejo') { %>
+            <% if (data.person.gender = 'f') { %>
+                <title>Besede, ki jo zaznamujejo - <%= data.person.name %></title>
+                <meta name="twitter:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
+                <meta property="og:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
+            <% } else { %>
+                <title><%= cardData.name %> - <%= data.person.name %></title>
+                <meta name="twitter:title" content="<%= cardData.name %> - <%= data.person.name %>">
+                <meta property="og:title" content="<%= cardData.name %> - <%= data.person.name %>">
+            <% } %>
+        <% } else { %>
+            <title><%= cardData.name %> - <%= data.person.name %></title>
+            <meta name="twitter:title" content="<%= cardData.name %> - <%= data.person.name %>">
+            <meta property="og:title" content="<%= cardData.name %> - <%= data.person.name %>">
+        <% } %>
     <% } %>
     <% if (cardData.type == 'poslanska_skupina') { %>
         <% if ('organization' in data) { %>
-            <title><% cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
-            <meta name="twitter:title" content="<% cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
-            <meta property="og:title" content="<% cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <title><%= cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
+            <meta name="twitter:title" content="<%= cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <meta property="og:title" content="<%= cardData.name %> - <%= data.organization.acronym %> | <% if (data.organization.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
         <% } else if ('party' in data) { %>
-            <title><% cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
-            <meta name="twitter:title" content="<% cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
-            <meta property="og:title" content="<% cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <title><%= cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></title>
+            <meta name="twitter:title" content="<%= cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
+            <meta property="og:title" content="<%= cardData.name %> - <%= data.party.acronym %> | <% if (data.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %>">
         <% } %>
     <% } %>
     <% if (cardData.type == 'seje') { %>
-        <title><%= data.session.name %> - <%= data.session.date %></title>
-        <meta name="twitter:title" content="<%= data.session.name %> - <%= data.session.date %>">
-        <meta property="og:title" content="<%= data.session.name %> - <%= data.session.date %>">
+        <% if ('person' in data) { %>
+        <% } else { %>
+            <title><%= data.session.name %> - <%= data.session.date %></title>
+            <meta name="twitter:title" content="<%= data.session.name %> - <%= data.session.date %>">
+            <meta property="og:title" content="<%= data.session.name %> - <%= data.session.date %>">
+        <% } %>
     <% } %>
     <% if (cardData.type == 'iskanje') { %>
         <title>Iskalni niz: <%- customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1].replace('+', ' ') %></title>
@@ -41,6 +56,57 @@
         <meta name="twitter:title" content="<%= data.name %>">
         <meta property="og:title" content="<%= data.name %>">
     <% } %>
+    <% if (cardData.headerType == 'govor') { %>
+        <title><%= data.person.name %> - <%= data.results.session.name %></title>
+        <meta name="twitter:title" content="<%= data.person.name %> - <%= data.results.session.name %>">
+        <meta property="og:title" content="<%= data.person.name %> - <%= data.results.session.name %>">
+    <% } %>
+    <% if (cardData.headerType == 'delovno_telo') { %>
+        <title><%= data.organization.name %></title>
+        <meta name="twitter:title" content="<%= data.organization.name %>">
+        <meta property="og:title" content="<%= data.organization.name %>">
+    <% } %>
+    <% if (cardData.headerType == 'seznam_poslanskih_skupin') { %>
+
+        <% var labels = {
+            seat_count: 'Število sedežev',
+            presence_sessions: 'Prisotnost na sejah DZ',
+            presence_votes: 'Prisotnost na glasovanjih sej DZ',
+            vocabulary_size: 'Raznolikost besedišča',
+            privzdignjeno: 'Privzdignjeno besedje',
+            preprosto: 'Preprosto besedje',
+            problematicno: 'Ekscesno besedje',
+        }; %>
+
+        <title><%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %></title>
+        <meta name="twitter:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
+        <meta property="og:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
+    <% } %>
+    <% if (cardData.headerType == 'seznam_poslancev') { %>
+
+        <% function getDistricts() {
+            return state.districts.map(function(districtId) {
+            return data.districts.filter(function(district) {
+                return Object.keys(district)[0] === districtId;
+            })[0][districtId];
+            });
+        }; %>
+
+        <title>Seznam poslancev - <%- state.parties ? state.parties.join(', ') : '&nbsp;' %> | <%- state.districts ? getDistricts().join(', ') : '&nbsp;' %></title>
+        <meta name="twitter:title" content="Seznam poslancev - <%- state.parties ? state.parties.join(', ') : '&nbsp;' %> | <%- state.districts ? getDistricts().join(', ') : '&nbsp;' %>">
+        <meta property="og:title" content="Seznam poslancev - <%- state.parties ? state.parties.join(', ') : '&nbsp;' %> | <%- state.districts ? getDistricts().join(', ') : '&nbsp;' %>">
+    <% } %>
+    <% if (cardData.headerType == 'politicni_kompas') { %>
+        <title>Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %></title>
+        <meta name="twitter:title" content="Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+        <meta property="og:title" content="Parlamentarni kompas - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+    <% } %>
+    <% if (cardData.headerType == 'raznolikost_besedisca') { %>
+        <title>Raznolikost besedišča - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %></title>
+        <meta name="twitter:title" content="Raznolikost besedišča - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+        <meta property="og:title" content="Raznolikost besedišča - <% if (state['parties']) { for (i in state['parties']) { %><%= state['parties'][i].toUpperCase() %><% if (i < state['parties'].length - 1) { %>, <% } } } %> | <% if (state['people']) { for (i in state['people']) { %><%= state['people'][i]['name'] %><% if (i < state['people'].length - 1) { %>, <% } } } %>">
+    <% } %>
+
 
     <meta name="twitter:creator" content="@danesjenovdan">
     <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
@@ -69,6 +135,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.parlameter.si/v1/parlassets/css/perfect-scrollbar.css" data-remove="false" data-concat="false"> <!-- removeme -->
     <link rel="stylesheet" href="https://cdn.parlameter.si/v1/parlassets/scss/style.css" data-remove="false" data-concat="false"> <!-- removeme -->
+
+    <base href="https://skoraj.parlameter.si/" />
+    <base target="_parent" />
+    <base target="_blank" />
 
     <style>
         .logo {
@@ -198,7 +268,9 @@
                 'Prisotnost po poslanskih skupinah',
                 'Raznolikost besedišča poslank in poslancev',
                 'Glasovanja, v katerih se pojavi iskalni niz',
-                'Glasovanje'
+                'Glasovanje',
+                'Raba skozi čas',
+                'Iskalnik'
             ];
 
             if (bigcards.indexOf(cardData.name) !== -1) {
@@ -218,11 +290,11 @@
             <% } %>
 
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <a href="" class="permalink"><span class="funblue-light-hover">Pokaži kartico v kontekstu spletnega mesta parlameter.si &gt;</span></a>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
@@ -231,5 +303,13 @@
             $('.permalink').attr('href', 'https://skoraj.parlameter.si/p/id/' + id);
         }, 1000);
     </script>
+
+    <% if (cardData.headerType == 'govor') { %>
+        <script>
+            window.setTimeout(function() {
+                $('.toggle-arrow').click();
+            }, 500);
+        </script>
+    <% } %>
 </body>
 </html>
