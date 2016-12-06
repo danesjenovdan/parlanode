@@ -202,6 +202,24 @@
         <div class="alt-header-border"></div>
     </div>
 
+<!-- POSLANEC -->
+<% } else if (cardData.headerType == 'poslanec') { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%= data.person.gov_id %>.png" class="portrait column">
+            <div class="header-info-container">
+                <h1><%= data.person.name %></h1>
+                <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
+                <% if (cardData.name == 'Besede, ki ga zaznamujejo' && data.person.gender == 'f') { %>
+                    <h2 class="cardname">Besede, ki jo zaznamujejo</h2>
+                <% } else { %>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                <% } %>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+
 <% } else { %>
 
 
