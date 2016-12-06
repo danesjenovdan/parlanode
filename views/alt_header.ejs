@@ -217,7 +217,7 @@
                     <h1><%= data.person.name %></h1>
                     <h2 class="partyinfo"><%= data.person.party.acronym %> | <% if (data.person.party.is_coalition) { %>koalicija<%} else { %>opozicija<% } %></h2>
                     <% if (cardData.name = 'Besede, ki ga zaznamujejo') { %>
-                        <% if (data.person.gender = 'f') { %>
+                        <% if (data.person.gender == 'f') { %>
                             <h2 class="cardname">Besede, ki jo zaznamujejo</h2>
                         <% } else { %>
                             <h2 class="cardname"><%= cardData.name %></h2>
