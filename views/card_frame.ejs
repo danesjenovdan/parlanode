@@ -3,16 +3,10 @@
 
 <head> <!-- removeme -->
     <% if (cardData.type == 'poslanec') { %>
-        <% if (cardData.name = 'Besede, ki ga zaznamujejo') { %>
-            <% if (data.person.gender = 'f') { %>
-                <title>Besede, ki jo zaznamujejo - <%= data.person.name %></title>
-                <meta name="twitter:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
-                <meta property="og:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
-            <% } else { %>
-                <title><%= cardData.name %> - <%= data.person.name %></title>
-                <meta name="twitter:title" content="<%= cardData.name %> - <%= data.person.name %>">
-                <meta property="og:title" content="<%= cardData.name %> - <%= data.person.name %>">
-            <% } %>
+        <% if (cardData.name == 'Besede, ki ga zaznamujejo' && data.person.gender == 'f') { %>
+            <title>Besede, ki jo zaznamujejo - <%= data.person.name %></title>
+            <meta name="twitter:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
+            <meta property="og:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
         <% } else { %>
             <title><%= cardData.name %> - <%= data.person.name %></title>
             <meta name="twitter:title" content="<%= cardData.name %> - <%= data.person.name %>">
