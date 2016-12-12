@@ -2,31 +2,29 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: {
-    'search-dropdown': './src/SearchDropdown.js'
-  },
+  entry: './components/plugins.js',
   output: {
-    path: path.resolve(__dirname, '../js'),
-    publicPath: '../js/',
-    filename: '[name].js'
+    path: path.resolve(__dirname, './js'),
+    publicPath: '/js/',
+    filename: 'search-dropdown.js'
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           // vue-loader options go here
         }
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
+        loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
@@ -40,7 +38,8 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    publicPath: '/build/',
   },
   devtool: '#eval-source-map'
 }
