@@ -1,3 +1,35 @@
+@import "colors";
+@import "breakpoints";
+
+.tabs {
+  .tabs-headers {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .tabs-header {
+      align-items: center;
+      background: $grey;
+      color: $black;
+      cursor: pointer;
+      display: flex;
+      flex: 1;
+      font-size: 14px;
+      justify-content: center;
+      margin-right: 4px;
+      padding: 10px;
+      text-align: center;
+      &:last-child { margin-right: 0; }
+      &.active {
+        background: $funblue;
+        color: $white;
+        cursor: default;
+      }
+      @include respond-to(mobile) { font-size: 11px; }
+    }
+  }
+}
+
 .nav-tabs {
   border-bottom: none;
   padding-bottom: 40px;

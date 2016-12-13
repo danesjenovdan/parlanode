@@ -2,12 +2,6 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './components/plugins.js',
-  output: {
-    path: path.resolve(__dirname, './js'),
-    publicPath: '/js/',
-    filename: 'search-dropdown.js'
-  },
   module: {
     rules: [
       {
@@ -61,5 +55,20 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
-  ])
+  ]);
+  module.exports.entry = './components/plugins.js';
+  module.exports.output = {
+    path: path.resolve(__dirname, './js'),
+    publicPath: '/js/',
+    filename: 'search-dropdown.js'
+  };
+}
+else {
+  module.exports.entry = './components/main.js';
+  module.exports.output = {
+    path: path.resolve(__dirname, './js'),
+    publicPath: '/js/',
+    filename: 'main.js'
+  };
+
 }
