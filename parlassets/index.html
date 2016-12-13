@@ -4,42 +4,22 @@
   <meta charset="UTF-8">
   <title>Components</title>
   <link rel="stylesheet" href="scss/style.css">
-  <script src="https://unpkg.com/vue@2.1.4/dist/vue.min.js"></script>
-  <script src="build/search-dropdown.js"></script>
+  <style media="screen">
+    body { background: white; }
+  </style>
 </head>
 <body>
   <div id="app">
     <search-dropdown :items="testItems" placeholder="some placeholder"></search-dropdown>
-  </div>
 
-  <script>
-    new Vue({
-      el: '#app',
-      components: ['SearchDropdown'],
-      data: {
-        foo: 1,
-        testItems: [
-          { id: 1, label: 'Abecedni seznam', selected: false },
-          { id: 2, label: 'Prisotnost na sejah DZ', selected: false },
-          { id: 3, label: 'Prisotnost na glasovanjih sej DZ', selected: false },
-          { id: 4, label: 'Besedni zaklad', selected: false },
-          { id: 5, label: 'Št. izgovorjenih besed', selected: false },
-          { id: 6, label: 'Št. govorov na sejo', selected: false },
-          { id: 7, label: 'Privzdignjeno besedje', selected: false },
-          { id: 8, label: 'Preprosto besedje', selected: false },
-          { id: 9, label: 'Problematično besedje', selected: false },
-          { id: 10, label: 'Abecedni seznam', selected: false },
-          { id: 11, label: 'Prisotnost na sejah DZ', selected: false },
-          { id: 12, label: 'Prisotnost na glasovanjih sej DZ', selected: false },
-          { id: 13, label: 'Besedni zaklad', selected: false },
-          { id: 14, label: 'Št. izgovorjenih besed', selected: false },
-          { id: 15, label: 'Št. govorov na sejo', selected: false },
-          { id: 16, label: 'Privzdignjeno besedje', selected: false },
-          { id: 17, label: 'Preprosto besedje', selected: false },
-          { id: 18, label: 'Problematično besedje', selected: false }
-        ]
-      }
-    })
-  </script>
+    <tabs style="margin-top: 50px;" v-cloak>
+      <tab header="Tab one">Tab one content</tab>
+      <tab header="A really really really really long tab name">Tab two content</tab>
+      <tab header="Tab three">
+        <h1>Tab three content</h1>
+      </tab>
+    </tabs>
+  </div>
+  <script src="build/main.js"></script>
 </body>
 </html>
