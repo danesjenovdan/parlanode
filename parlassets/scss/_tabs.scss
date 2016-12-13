@@ -31,7 +31,11 @@
       @include respond-to(mobile) { font-size: 11px; }
     }
   }
-  .tabs-content { overflow-y: auto; }
+  .tabs-content {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+  }
 }
 
 .nav-tabs {
