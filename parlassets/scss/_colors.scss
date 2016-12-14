@@ -11,7 +11,7 @@ $fontblue: #00628c;
 $ignoreblue: #003B54;
 $noblue: #99E1FF;
 $red: #ff5e41;
-$green: #acc501;
+$green: #7ae7bf;
 $border-light : #f0f0f0;
 
 $party-colors: (
@@ -30,17 +30,17 @@ $party-colors: (
 );
 
 $vote-colors: (
-  votes_for: #00628c,
-  against: #009cdd,
-  abstain: #003b54,
-  not_present: #99e1ff
+  votes_for: $fontblue,
+  against: $funblue,
+  abstain: $ignoreblue,
+  not_present: $noblue
 );
 
 $option-colors: (
-  for: #00628c,
-  against: #009cdd,
-  kvorum: #003b54,
-  ni: #99e1ff
+  for: $fontblue,
+  against: $funblue,
+  kvorum: $ignoreblue,
+  ni: $noblue
 );
 
 // .funblue {
