@@ -26,8 +26,8 @@ Working folder for cms is in ```./cms-dev```.
 
 In app.js on lin ```44``` comment the remote api link and uncomment the local one
 
-```
-$ grunt build
+```bash
+grunt build
 ```
 
 Copy content of ./cms-dev/dist to ./cms
@@ -60,4 +60,3 @@ Caching is done for each first request to the card route. At that time cards get
 ```
 
 Each request checks for a corresponding entry in the database according to its full url. If no prerendered card is found it then fetches the data from parlalize and renders the ejs. It then stores the card to `CardRender` collection in mongo with the url as `cardUrl` parameter.
-
