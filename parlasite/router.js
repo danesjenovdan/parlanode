@@ -1412,7 +1412,7 @@ module.exports = (app) => {
     });
   });
   app.get('/*', function (req, res) {
-    res.status(404).render('error/404', {pageTitle: "Sorry, page not found", activeMenu: ""});
+    res.status(404).render('error/404', {pageTitle: "Sorry, page not found", activeMenu: "", ogImageUrl:""});
   });
 };
 
