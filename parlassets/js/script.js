@@ -562,7 +562,7 @@ function addCardRippling(element) {
             } else {
 
                 $(this).removeClass('card-exit');
-                
+
                 $parentcontainer
                     .children('.card-footer')
                     .children('.card-circle-button')
@@ -642,7 +642,6 @@ function makeSpeechesEventful() {
     var toggleElement = cardElement.find('.toggle-arrow');
     var speechId = cardElement.find('.myid').val();
     var cardId = cardElement.data('randomid');
-    
 
     speechTextElement.on('mouseup', function() {
         event.preventDefault();
@@ -685,7 +684,7 @@ function makeSpeechesEventful() {
       console.log(url);
       console.log(selectedText);
 
-      
+
 
       $.get(url, function(result) {
         var newCardUrl = 'https://glej.parlameter.si/s/citat/' + result.id;
@@ -710,8 +709,6 @@ function makeSpeechesEventful() {
 
     // SIMILAR SPEECH TABS
     var similarSpeechWrapperElement = cardElement.find('.similar-speech');
-    var similarSpeechTabSelector = cardElement.find('a.speech');
-    var similarSpeechCloseSelector = cardElement.find('.close-button');
 
     similarSpeechWrapperElement.on('click', 'a.speech', function() {
       contentElement.addClass('similar-expanded');
@@ -720,6 +717,22 @@ function makeSpeechesEventful() {
     similarSpeechWrapperElement.on('click', '.close-button', function() {
       contentElement.removeClass('similar-expanded');
     })
+
+    similarSpeechWrapperElement.on('click', 'a.speech', function(event) {
+      event.preventDefault();
+
+      var parentElement = $(event.currentTarget.parentNode);
+
+      if (parentElement.hasClass('active')) {
+        return;
+      }
+
+      parentElement.addClass('active')
+                   .siblings('.active').removeClass('active');
+
+      similarSpeechWrapperElement.find('.tab-pane.active').removeClass('active');
+      similarSpeechWrapperElement.find(event.currentTarget.getAttribute('href')).addClass('active');
+    });
 
     // Fetch similar speeches
     $.ajax({
@@ -737,8 +750,8 @@ function makeSpeechesEventful() {
 
             speeches.forEach(function(speech, index) {
                 tabs.push($(
-                '<li role="tab"' + (index === 0 ? 'class="active"' : '') + '>\
-                    <a class="speech" href="#' + speech.speech_id + '_' + cardId + '" data-toggle="tab">\
+                '<li ' + (index === 0 ? 'class="active"' : '') + '>\
+                    <a class="speech" href="#' + speech.speech_id + '_' + cardId + '">\
                     <div class="portrait" style="background-image: url(\'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + speech.person.gov_id + '.png\')"></div>\
                     <div class="name">' + speech.person.name + '</div>\
                     <div class="date">' + formatDate(speech.date) + '</div>\
@@ -748,7 +761,7 @@ function makeSpeechesEventful() {
                 ));
 
                 tabContents.push($(
-                '<div role="tabpanel" class="tab-pane' + (index === 0 ? ' active' : '') + '" id="' + speech.speech_id + '_' + cardId + '">\
+                '<div class="tab-pane' + (index === 0 ? ' active' : '') + '" id="' + speech.speech_id + '_' + cardId + '">\
                     <div class="similar-speech-heading">' +
                     speech.session_name + ', ' + formatDate(speech.date) +
                     '<div class="close-button"></div>\
