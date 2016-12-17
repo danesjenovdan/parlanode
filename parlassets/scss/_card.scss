@@ -470,7 +470,7 @@ input.form-control, textarea.form-control {
     background: transparent;
 }
 
-
 .card-content-info {
-    overflow-y: auto;
+  overflow-y: auto;
+  max-height: 100%;
 }
