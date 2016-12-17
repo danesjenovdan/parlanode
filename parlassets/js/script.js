@@ -132,188 +132,10 @@ var votingCardHorizontal = {
 
         var container = document.getElementById(id);
         Ps.initialize(container, options);
-
-        //$(".scroller").perfectScrollbar(options);
-
-    }
-
-
-}
-
-
-
-var votingCardTpl = {
-
-    init: function () {
-        // TODO: If more than 6 results than fix span class margin-right  - because of the scroller
-        this.initalizeScrollbar();
-    },
-
-    initalizeScrollbar: function (id, options) {
-        var id = (typeof (id) != 'undefined') ? id : 'scrollbar-votingCard';
-
-        var defaultOptions = {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 100,
-            maxScrollbarLength: 100
-        };
-
-        var options = (typeof (options) != 'undefined') ? options : defaultOptions;
-
-        //var container = document.getElementById(id);
-        //Ps.initialize(container, options);
-
-        // $(".scroller").perfectScrollbar(options);
-
-    }
-}
-
-
-var lastActivity = {
-
-    init: function () {
-
-        this.initalizeScrollbar();
-
-    },
-
-
-
-    initalizeScrollbar: function (id, options) {
-        var id = (typeof (id) != 'undefined') ? id : 'scrollbar-recent-activity';
-
-        var defaultOptions = {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 100,
-            maxScrollbarLength: 100
-        };
-
-        var options = (typeof (options) != 'undefined') ? options : defaultOptions;
-
-        //var container = document.getElementById(id);
-        //Ps.initialize(container, options);
-
-        // $(".scroller").perfectScrollbar(options);
-
-    }
-
-
-}
-
-
-var ParlaScroll = {
-    init: function () {
-        this.initalizeScrollbar();
-    },
-    initalizeScrollbar: function () {
-        var defaultOptions = {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 100,
-            maxScrollbarLength: 100
-        };
-        // $(".scroller").each(function () {
-        //     $("#"+$(this).attr('id')).perfectScrollbar(defaultOptions);
-        // });
-        //$(".scroller").perfectScrollbar(defaultOptions);
-    }
-}
-
-var cardInfo =  {
-
-    card: "",
-    cardContent: "",
-    parent: "",
-    overlay: "",
-    helpertype: "",
-    openclose: 0,
-    button: 0,
-
-    init: function () {
-        this.getCardInfo();
-
-        //this.overlay = $("#cardInfoBox");
-
-    },
-    getCardInfo: function(){
-
-        var _this = this;
-
-        $(".card-circle-button").click(function () {
-
-            _this.button = $(this);
-
-            if(_this.openclose){
-                _this.closeOverlysBox();
-                return false;
-            }
-
-
-            var base = $(this);
-
-            if(base.hasClass("card-share")){
-                _this.helpertype = "share";
-                _this.overlay = $("#cardShareBox").clone();
-            }
-
-            if(base.hasClass("card-embed")){
-                _this.helpertype = "embed";
-                _this.overlay = $("#cardEmbedBox").clone();
-            }
-
-            if(base.hasClass("card-info")){
-                _this.helpertype = "info";
-                _this.overlay = $("#cardInfoBox").clone();
-            }
-
-            _this.card = base.parents(".card-container");
-
-            _this.displayOverlysBox();
-
-        });
-
-    },
-    displayOverlysBox: function(){
-
-
-
-        this.cardContent = this.card.find(".card-content");
-
-        console.log(this.card);
-
-        this.cardContent.hide();
-
-        this.overlay.height(this.cardContent.height());
-        this.overlay.show();
-
-
-        this.overlay.insertAfter(this.cardContent);
-
-        console.log(this.overlay);
-
-
-        this.openclose = 1;
-        _this.button.addClass("card-circle-closed");
-
-    },
-    closeOverlysBox: function(){
-
-
-        this.cardContent.show();
-        this.overlay.hide();
-        this.overlay.remove();
-
-        this.openclose = 0;
-        _this.button.removeClass("card-circle-closed");
     }
 }
 
 $(function () {
-    ParlaScroll.init();
-    // cardInfo.init();
-
     votingCardHorizontal.init();
 
     if($(".session_transcript .status").length > 0) {
@@ -322,9 +144,6 @@ $(function () {
             return false;
         });
     }
-
-    //votingCardTpl.init();
-    //lastActivity.init();
 
     checkCardEmbed();
     autoSelectText();
@@ -343,7 +162,6 @@ function checkCardEmbed() {
 }
 
 function DNDrepeatEmbedCall() {
-    ParlaScroll.init();
     votingCardHorizontal.init();
 
     if($(".session_transcript .status").length > 0) {
