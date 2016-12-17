@@ -32,15 +32,9 @@ grunt build
 
 Copy content of ./cms-dev/dist to ./cms
 
-#### Deployment
+## Deployment
 
 Every merge to master will trigger the webhook that tests and deploys parlanode to production. Success or error messages will be sent to DJND Slack #parladeploy channel.
-
-##### Work in progress
-
-```
-$ pm2 deploy ecosystem.config.js production
-```
 
 ## Caching
 
