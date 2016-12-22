@@ -32,23 +32,9 @@ grunt build
 
 Copy content of ./cms-dev/dist to ./cms
 
-#### Deploy
+## Deployment
 
-*There is an issue with continuous deployment, at the moment server requires manual pull/fetch and restart from the `parlanode/current` folder*
-```
-$ git pull origin master
-```
-```
-npm start
-```
-
-Runs `NODE_ENV=production pm2 start run.js --name=parlanode`
-
-##### Work in progress
-
-```
-$ pm2 deploy ecosystem.config.js production
-```
+Every merge to master will trigger the webhook that tests and deploys parlanode to production. Success or error messages will be sent to DJND Slack #parladeploy channel.
 
 ## Caching
 
