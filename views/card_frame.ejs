@@ -33,14 +33,14 @@
         <% } %>
     <% } %>
     <% if (cardData.type == 'iskanje') { %>
-        <title>Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %></title>
-        <meta name="twitter:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %>">
-        <meta property="og:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %>">
+        <title>Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ').replace(/"/g, '') %></title>
+        <meta name="twitter:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ').replace(/"/g, '') %>">
+        <meta property="og:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ').replace(/"/g, '') %>">
     <% } %>
     <% if (cardData.type == 'iskanje') { %>
-        <title>Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %></title>
-        <meta name="twitter:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %>">
-        <meta property="og:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %>">
+        <title>Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ').replace(/"/g, '') %></title>
+        <meta name="twitter:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ').replace(/"/g, '') %>">
+        <meta property="og:title" content="Iskalni niz: <%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ').replace(/"/g, '') %>">
 
         <meta property="og:image" content="https://cdn.parlameter.si/v1/parlassets/img/iskanje-og.png">
         <meta name="twitter:image" content="https://cdn.parlameter.si/v1/parlassets/img/iskanje-og.png">
