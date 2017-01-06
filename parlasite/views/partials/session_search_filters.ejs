@@ -145,7 +145,7 @@ function capitalise(string) {
         // allTags: voteData.all_tags.map(function(tag) {
         //   return { id: tag, label: tag, selected: false }
         // }),
-        allTags: [{id: 'tag1', label: 'tag1', selected: false}, {id: 'tag2', label: 'tag2', selected: false}]
+        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}]
       }
     }
   });
@@ -168,7 +168,7 @@ function capitalise(string) {
         // allTags: voteData.all_tags.map(function(tag) {
         //   return { id: tag, label: tag, selected: false }
         // }),
-        allTags: [{id: 'tag1', label: 'tag1', selected: false}, {id: 'tag2', label: 'tag2', selected: false}]
+        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}]
       }
     }
   });
@@ -184,6 +184,9 @@ function capitalise(string) {
         return this.allTags
           .filter(function(tag) { return tag.selected })
           .map(function(tag) { return tag.id });
+      },
+      itemsSelected() {
+        return this.allTags.filter(item => item.selected).length;
       },
     },
     data: function() {
