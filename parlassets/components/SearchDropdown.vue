@@ -18,13 +18,19 @@
     <ul
       :class="['search-dropdown-options', { visible: this.active }]"
       @mouseleave="focus(-1)">
-      <li
-        v-for="item, index in filteredItems"
-        :class="{ selected : item.selected, focused : focused === index }"
-        @click="toggleItem(item.id)"
-        @mouseenter="focus(index)">
-        {{ item.label }}
-      </li>
+      <template v-for="item, index in filteredItems">
+        <li
+          v-if="item.groupLabel"
+          class="group-label">
+          {{ item.groupLabel }}
+        </li>
+        <li
+          :class="{ selected : item.selected, focused : focused === index }"
+          @click="toggleItem(item.id)"
+          @mouseenter="focus(index)">
+          {{ item.label }}
+        </li>
+      </template>
     </ul>
   </div>
 </template>
@@ -47,10 +53,9 @@ export default {
   },
   computed: {
     filteredItems() {
-      const currentFilter = this.filter;
-      return this.items
+      const filterAndSort = items => items
         .filter(item =>
-          item.selected || item.label.toLowerCase().indexOf(currentFilter.toLowerCase()) > -1,
+          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
         )
         .sort((a, b) => {
           if (Boolean(a.selected) === Boolean(b.selected)) {
@@ -58,6 +63,24 @@ export default {
           }
           return a.selected && !b.selected ? -1 : 1;
         });
+
+      if (this.groups) {
+        return this.groups
+          .map((group) => {
+            const itemsFromGroup = filterAndSort(this.items.filter(
+              item => group.items.indexOf(item.id) > -1),
+            );
+
+            itemsFromGroup.forEach((item, index) => {
+              // eslint-disable-next-line no-param-reassign
+              item.groupLabel = index === 0 ? group.label : null;
+            });
+
+            return itemsFromGroup;
+          })
+          .reduce((a, b) => a.concat(b), []);
+      }
+      return filterAndSort(this.items);
     },
     selectedIds() {
       return this.filteredItems
@@ -87,6 +110,7 @@ export default {
   props: {
     items: { type: Array, required: true },
     placeholder: { type: String, required: true },
+    groups: { type: Array, required: false },
   },
   methods: {
     toggleItem(selectedItemId) {
@@ -114,13 +138,16 @@ export default {
 
       if (!withKeyboard) return;
 
+      const additionalOffset = this.filteredItems.slice(0, this.focused + 1)
+        .map(item => (item.groupLabel ? 1 : 0))
+        .reduce((a, b) => a + b, 0);
       const optionListEl = this.$el.lastChild;
-      const focusedPosition = this.focused * ITEM_HEIGHT;
+      const focusedPosition = (this.focused + additionalOffset) * ITEM_HEIGHT;
 
       if (focusedPosition < optionListEl.scrollTop) {
-        optionListEl.scrollTop -= ITEM_HEIGHT;
+        optionListEl.scrollTop = focusedPosition;
       } else if (focusedPosition > optionListEl.scrollTop + ((ITEM_COUNT - 1) * ITEM_HEIGHT)) {
-        optionListEl.scrollTop += ITEM_HEIGHT;
+        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - 1) * ITEM_HEIGHT);
       }
     },
   },

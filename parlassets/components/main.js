@@ -1,3 +1,5 @@
+// This ain't a production file, it's only used for demo/dev purposes along with index.html in root.
+
 import Vue from 'vue';
 
 import SearchDropdown from './SearchDropdown.vue';
@@ -14,6 +16,10 @@ new Vue({
   },
   data: {
     foo: 1,
+    testGroups: [
+      { label: 'lihi', items: [1, 3, 5, 7, 9, 11, 13, 15, 17] },
+      { label: 'sodi', items: [2, 4, 6, 8, 10, 12, 14, 16, 18] },
+    ],
     testItems: [
       { id: 1, label: 'Abecedni seznam', selected: false },
       { id: 2, label: 'Prisotnost na sejah DZ', selected: false },
@@ -34,5 +40,10 @@ new Vue({
       { id: 17, label: 'Preprosto besedje', selected: false },
       { id: 18, label: 'Problematično besedje', selected: false },
     ],
+  },
+  computed: {
+    itemsSelected() {
+      return this.testItems.filter(item => item.selected).length;
+    },
   },
 });

@@ -36,6 +36,9 @@ module.exports = {
     publicPath: '/build/',
   },
   devtool: '#eval-source-map',
+  performance: {
+    hints: false,
+  },
 };
 
 if (process.env.NODE_ENV === 'production') {
@@ -56,11 +59,11 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true,
     }),
   ]);
-  module.exports.entry = './components/plugins.js';
+  module.exports.entry = './components/components.js';
   module.exports.output = {
     path: path.resolve(__dirname, './js'),
     publicPath: '/js/',
-    filename: 'search-dropdown.js',
+    filename: 'components.js',
   };
 } else {
   module.exports.entry = './components/main.js';

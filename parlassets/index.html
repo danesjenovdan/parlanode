@@ -10,7 +10,10 @@
 </head>
 <body>
   <div id="app">
-    <search-dropdown :items="testItems" placeholder="some placeholder"></search-dropdown>
+    <search-dropdown
+      :items="testItems"
+      :placeholder="`selected ${itemsSelected} items`"
+      :groups="testGroups"></search-dropdown>
 
     <tabs style="margin-top: 50px;" v-cloak>
       <tab header="Tab one">Tab one content</tab>
