@@ -41,19 +41,15 @@ if (!window.parlaCardInit) {
 
     if (window.jQuery) {
         loadScript('https://d3js.org/d3.v3.min.js', function() {
-            loadScript('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', function() {
-                loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
-                    init();
-                });
+            loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
+                init();
             });
         });
     } else {
         loadScript("https://code.jquery.com/jquery-1.11.3.js", function() {
             loadScript('https://d3js.org/d3.v3.min.js', function() {
-                loadScript('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', function() {
-                    loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
-                        init();
-                    });
+                loadScript('https://cdn.parlameter.si/v1/parlassets/js/script.js', function() {
+                    init();
                 });
             });
         });
