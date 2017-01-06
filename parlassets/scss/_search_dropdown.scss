@@ -67,7 +67,7 @@
       padding: 0 14px;
       position: relative;
       user-select: none;
-      &.group-label {
+      &.search-dropdown-group-label {
         background: #ededed;
         cursor: default;
         text-transform: uppercase;
@@ -88,7 +88,7 @@
         top: $item-height - 1;
         left: $left-right-spacing;
       }
-      .label {
+      .search-dropdown-label {
         flex: 1;
         margin-right: 4px;
         overflow: hidden;
