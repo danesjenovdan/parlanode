@@ -1,5 +1,5 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   module: {
@@ -9,66 +9,64 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           // vue-loader options go here
-        }
+        },
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
-    ]
+          name: '[name].[ext]?[hash]',
+        },
+      },
+    ],
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue'
-    }
+      vue$: 'vue/dist/vue',
+    },
   },
   devServer: {
     historyApiFallback: true,
     noInfo: true,
     publicPath: '/build/',
   },
-  devtool: '#eval-source-map'
-}
+  devtool: '#eval-source-map',
+};
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
-      }
+        NODE_ENV: '"production"',
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+      minimize: true,
+    }),
   ]);
   module.exports.entry = './components/plugins.js';
   module.exports.output = {
     path: path.resolve(__dirname, './js'),
     publicPath: '/js/',
-    filename: 'search-dropdown.js'
+    filename: 'search-dropdown.js',
   };
-}
-else {
+} else {
   module.exports.entry = './components/main.js';
   module.exports.output = {
     path: path.resolve(__dirname, './js'),
     publicPath: '/js/',
-    filename: 'main.js'
+    filename: 'main.js',
   };
-
 }

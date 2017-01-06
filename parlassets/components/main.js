@@ -1,15 +1,16 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-import SearchDropdown from './SearchDropdown.vue'
-import Tabs from './Tabs.vue'
-import Tab from './Tab.vue'
+import SearchDropdown from './SearchDropdown.vue';
+import Tabs from './Tabs.vue';
+import Tab from './Tab.vue';
 
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
   components: {
     SearchDropdown,
     Tab,
-    Tabs
+    Tabs,
   },
   data: {
     foo: 1,
@@ -31,7 +32,7 @@ new Vue({
       { id: 15, label: 'Št. govorov na sejo', selected: false },
       { id: 16, label: 'Privzdignjeno besedje', selected: false },
       { id: 17, label: 'Preprosto besedje', selected: false },
-      { id: 18, label: 'Problematično besedje', selected: false }
-    ]
-  }
-})
+      { id: 18, label: 'Problematično besedje', selected: false },
+    ],
+  },
+});

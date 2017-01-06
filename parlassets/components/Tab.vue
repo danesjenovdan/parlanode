@@ -10,17 +10,17 @@ export default {
   props: {
     header: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
-  created () {
-    this.$parent.tabs.push(this)
-    this.$parent.headers.push(this.header)
+  created() {
+    this.$parent.tabs.push(this);
+    this.$parent.headers.push(this.header);
   },
   computed: {
     show() {
-      return this.$parent.show === this
+      return this.$parent.show === this;
     },
-  }
-}
+  },
+};
 </script>
