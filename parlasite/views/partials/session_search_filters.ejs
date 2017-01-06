@@ -1,0 +1,198 @@
+
+<div class="session-container session-search-container">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="narrow-inner-container">
+                <h2>Išči po vseh sejah</h2>
+
+                <form method="get" action="/seje/isci">
+
+                    <div class="input-group search">
+                        <input type="text" class="form-control simplebox" placeholder="" name="q" value="<%=query.q;%>">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </span>
+                    </div>
+                </form>
+                <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
+
+            </div>
+
+            <% if((typeof query.q !== "undefined") && (query.q.length > 0)){%>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="searchfilter-container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="searchfilter-container" id="pps">
+                                            <div class="searchfilter-label">Išči po poslancih in/ali poslanskih skupinah</div>
+                                            <div class="searchfilter-input">
+                                                <search-dropdown :items="allTags" :placeholder="inputPlaceholder"></search-dropdown>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="searchfilter-container" id="cas">
+                                            <div class="searchfilter-label">Išči v časovnem obdobju</div>
+                                            <div class="searchfilter-input">
+                                                <search-dropdown :items="allTags" :placeholder="inputPlaceholder"></search-dropdown>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="searchfilter-container" id="seje">
+                                    <div class="searchfilter-label">Išči po sejah</div>
+                                    <div class="searchfilter-checkbox">
+                                        <input id="dz" type="checkbox" class="checkbox">
+                                        <label for="dz">Seje Državnega zbora</label>
+                                    </div>
+                                    <div class="searchfilter-checkbox">
+                                        <input id="kdz" type="checkbox" class="checkbox">
+                                        <label for="kdz">Seje Kolegija predsednika Državnega zbora</label>
+                                    </div>
+                                    <div class="searchfilter-checkbox">
+                                        <input id="predsedujoci" type="checkbox" class="checkbox with-input">
+                                        <label for="predsedujoci">
+                                            <div class="searchfilter-input">
+                                                <search-dropdown :items="allTags" :placeholder="inputPlaceholder"></search-dropdown>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="narrow-inner-container">
+                <br><br>
+                <h3 class="searchresults">Rezultati za iskalni niz "<%=query.q;%>"</h3>
+            </div> -->
+            <% } %>
+
+        </div>
+    </div>
+</div>
+
+<% include ./searchpopup.ejs %>
+
+<style>
+    .searchfilter-container {
+        background-color: #d8e2e6;
+        padding: 15px;
+    }
+    #seje .searchfilter-label {
+        margin-bottom: 9px;
+    }
+    .search-dropdown input {
+        background-color: #f0f0f0;
+    }
+    .searchfilter-label {
+        font-size: 14px;
+        padding-bottom: 4px;
+        font-weight: 300;
+    }
+    .searchfilter-checkbox .checkbox + label {
+        width: 100%;
+        font-size: 16px;
+        line-height: 40px;
+        margin-bottom: 10px;
+        padding-left: 40px;
+    }
+    .searchfilter-checkbox .checkbox + label:before {
+        margin-top: 5px;
+        width: 30px;
+        height: 30px;
+        background-color: #f0f0f0;
+    }
+    .searchfilter-checkbox .checkbox.with-input + label:before {
+        margin-top: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .searchfilter-checkbox .checkbox:checked + label:before {
+        background-position: 7px 9px;
+    }
+</style>
+
+<script>
+function capitalise(string) {
+    return string[0].toUpperCase() + string.substring(1)
+  }
+
+  new Vue({
+    el: '#pps',
+    components: ['SearchDropdown'],
+    computed: {
+      inputPlaceholder: function() {
+        return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
+      },
+      selectedTags: function() {
+        return this.allTags
+          .filter(function(tag) { return tag.selected })
+          .map(function(tag) { return tag.id });
+      },
+    },
+    data: function() {
+      return {
+        // allTags: voteData.all_tags.map(function(tag) {
+        //   return { id: tag, label: tag, selected: false }
+        // }),
+        allTags: [{id: 'tag1', label: 'tag1', selected: false}, {id: 'tag2', label: 'tag2', selected: false}]
+      }
+    }
+  });
+
+  new Vue({
+    el: '#cas',
+    components: ['SearchDropdown'],
+    computed: {
+      inputPlaceholder: function() {
+        return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
+      },
+      selectedTags: function() {
+        return this.allTags
+          .filter(function(tag) { return tag.selected })
+          .map(function(tag) { return tag.id });
+      },
+    },
+    data: function() {
+      return {
+        // allTags: voteData.all_tags.map(function(tag) {
+        //   return { id: tag, label: tag, selected: false }
+        // }),
+        allTags: [{id: 'tag1', label: 'tag1', selected: false}, {id: 'tag2', label: 'tag2', selected: false}]
+      }
+    }
+  });
+
+  new Vue({
+    el: '#seje',
+    components: ['SearchDropdown'],
+    computed: {
+      inputPlaceholder: function() {
+        return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
+      },
+      selectedTags: function() {
+        return this.allTags
+          .filter(function(tag) { return tag.selected })
+          .map(function(tag) { return tag.id });
+      },
+    },
+    data: function() {
+      return {
+        // allTags: voteData.all_tags.map(function(tag) {
+        //   return { id: tag, label: tag, selected: false }
+        // }),
+        allTags: [{id: 'tag1', label: 'tag1', selected: false}, {id: 'tag2', label: 'tag2', selected: false}]
+      }
+    }
+  });
+</script>
