@@ -60,15 +60,13 @@
     &.visible { display: block; }
     li {
       cursor: pointer;
+      display: flex;
       font-size: 12px;
       height: $item-height;
       line-height: $item-height;
-      overflow: hidden;
       padding: 0 14px;
       position: relative;
-      text-overflow: ellipsis;
       user-select: none;
-      white-space: nowrap;
       &.group-label {
         background: #ededed;
         cursor: default;
@@ -89,6 +87,13 @@
         position: absolute;
         top: $item-height - 1;
         left: $left-right-spacing;
+      }
+      .label {
+        flex: 1;
+        margin-right: 4px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
