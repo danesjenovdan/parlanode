@@ -21,8 +21,8 @@ new Vue({
       { label: 'sodi', items: [2, 4, 6, 8, 10, 12, 14, 16, 18] },
     ],
     testItems: [
-      { id: 1, label: 'Abecedni seznam', selected: false, count: 'false' },
-      { id: 2, label: 'Prisotnost na sejah DZ', selected: false },
+      { id: 1, label: 'Abecedni seznam', selected: false, count: '0' },
+      { id: 2, label: 'Prisotnost na sejah DZ', selected: false, count: '123' },
       { id: 3, label: 'Prisotnost na glasovanjih sej DZ', selected: false },
       { id: 4, label: 'Besedni zaklad', selected: false },
       { id: 5, label: 'Št. izgovorjenih besed', selected: false },
