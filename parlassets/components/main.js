@@ -17,11 +17,11 @@ new Vue({
   data: {
     foo: 1,
     testGroups: [
-      { label: 'lihi', items: [1, 3, 5, 7, 9, 11, 13, 15, 17] },
+      { label: 'lihi', items: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] },
       { label: 'sodi', items: [2, 4, 6, 8, 10, 12, 14, 16, 18] },
     ],
     testItems: [
-      { id: 1, label: 'Abecedni seznam', selected: false },
+      { id: 1, label: 'Abecedni seznam', selected: false, count: 'false' },
       { id: 2, label: 'Prisotnost na sejah DZ', selected: false },
       { id: 3, label: 'Prisotnost na glasovanjih sej DZ', selected: false },
       { id: 4, label: 'Besedni zaklad', selected: false },
@@ -39,6 +39,7 @@ new Vue({
       { id: 16, label: 'Privzdignjeno besedje', selected: false },
       { id: 17, label: 'Preprosto besedje', selected: false },
       { id: 18, label: 'Problematično besedje', selected: false },
+      { id: 19, label: 'Banane', selected: false },
     ],
   },
   computed: {

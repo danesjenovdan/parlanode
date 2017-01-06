@@ -28,7 +28,8 @@
           :class="{ selected : item.selected, focused : focused === index }"
           @click="toggleItem(item.id)"
           @mouseenter="focus(index)">
-          {{ item.label }}
+          <div class="label">{{ item.label }}</div>
+          <div v-if="item.count">{{ item.count }}</div>
         </li>
       </template>
     </ul>
