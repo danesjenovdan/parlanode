@@ -21,14 +21,14 @@
       <template v-for="item, index in filteredItems">
         <li
           v-if="item.groupLabel"
-          class="group-label">
+          class="search-dropdown-group-label">
           {{ item.groupLabel }}
         </li>
         <li
           :class="{ selected : item.selected, focused : focused === index }"
           @click="toggleItem(item.id)"
           @mouseenter="focus(index)">
-          <div class="label">{{ item.label }}</div>
+          <div class="search-dropdown-label">{{ item.label }}</div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
       </template>
