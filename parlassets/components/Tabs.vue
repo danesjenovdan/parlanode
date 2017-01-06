@@ -21,22 +21,22 @@ export default {
     tabs: [],
     headers: [],
     active: null,
-    show: null
+    show: null,
   }),
   watch: {
-    active (value) {
-      this.show = this.tabs[value]
-    }
+    active(value) {
+      this.show = this.tabs[value];
+    },
   },
-  mounted () {
-    this.active = 0
+  mounted() {
+    this.active = 0;
   },
   methods: {
-    select (tabIndex) {
+    select(tabIndex) {
       if (this.active !== tabIndex) {
-        this.active = tabIndex
+        this.active = tabIndex;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>

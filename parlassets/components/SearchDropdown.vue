@@ -18,113 +18,138 @@
     <ul
       :class="['search-dropdown-options', { visible: this.active }]"
       @mouseleave="focus(-1)">
-      <li
-        v-for="item, index in filteredItems"
-        :class="{ selected : item.selected, focused : focused === index }"
-        @click="toggleItem(item.id)"
-        @mouseenter="focus(index)">
-        {{ item.label }}
-      </li>
+      <template v-for="item, index in filteredItems">
+        <li
+          v-if="item.groupLabel"
+          class="group-label">
+          {{ item.groupLabel }}
+        </li>
+        <li
+          :class="{ selected : item.selected, focused : focused === index }"
+          @click="toggleItem(item.id)"
+          @mouseenter="focus(index)">
+          {{ item.label }}
+        </li>
+      </template>
     </ul>
   </div>
 </template>
 
 <script>
-const ITEM_HEIGHT = 23
-const ITEM_COUNT = 10
+/* globals document */
+const ITEM_HEIGHT = 23;
+const ITEM_COUNT = 10;
 
 export default {
-  data() {
-    return {
-      filter: '',
-      active: false,
-      focused: -1
-    }
-  },
+  data: () => ({
+    filter: '',
+    active: false,
+    focused: -1,
+  }),
   watch: {
     filter() {
       this.focus(this.focused);
-    }
+    },
   },
   computed: {
     filteredItems() {
-      var currentFilter = this.filter
-      return this.items
-        .filter(function(item) {
-          return item.selected || item.label.toLowerCase().indexOf(currentFilter.toLowerCase()) > -1
-        })
-        .sort(function(a, b) {
+      const filterAndSort = items => items
+        .filter(item =>
+          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
+        )
+        .sort((a, b) => {
           if (Boolean(a.selected) === Boolean(b.selected)) {
-            return a.label.localeCompare(b.label, 'sl')
+            return a.label.localeCompare(b.label, 'sl');
           }
-          else {
-            return a.selected && !b.selected ? -1 : 1
-          }
-        })
+          return a.selected && !b.selected ? -1 : 1;
+        });
+
+      if (this.groups) {
+        return this.groups
+          .map((group) => {
+            const itemsFromGroup = filterAndSort(this.items.filter(
+              item => group.items.indexOf(item.id) > -1),
+            );
+
+            itemsFromGroup.forEach((item, index) => {
+              // eslint-disable-next-line no-param-reassign
+              item.groupLabel = index === 0 ? group.label : null;
+            });
+
+            return itemsFromGroup;
+          })
+          .reduce((a, b) => a.concat(b), []);
+      }
+      return filterAndSort(this.items);
     },
     selectedIds() {
       return this.filteredItems
-        .filter((item) => item.selected)
-        .map((item) => item.id)
-    }
+        .filter(item => item.selected)
+        .map(item => item.id);
+    },
   },
   directives: {
     clickOutside: {
       bind(el, binding) {
-        const handler = function(e) {
+        const handler = (e) => {
           if (!el.contains(e.target) && el !== e.target) {
-            binding.value(e)
+            binding.value(e);
           }
-        }
-        el.__vueClickOutside__ = handler
-        document.addEventListener('click', handler)
+        };
+        // eslint-disable-next-line no-param-reassign
+        el.vueClickOutside = handler;
+        document.addEventListener('click', handler);
       },
       unbind(el) {
-        document.removeEventListener('click', el.__vueClickOutside__)
-        el.__vueClickOutside__ = null
-      }
-    }
+        document.removeEventListener('click', el.vueClickOutside);
+        // eslint-disable-next-line no-param-reassign
+        el.vueClickOutside = null;
+      },
+    },
   },
   props: {
     items: { type: Array, required: true },
-    placeholder: { type: String, required: true }
+    placeholder: { type: String, required: true },
+    groups: { type: Array, required: false },
   },
   methods: {
     toggleItem(selectedItemId) {
-      var clickedIndex = -1
-      this.items.forEach(function(item, index) {
+      let clickedIndex = -1;
+      this.items.forEach((item, index) => {
         if (item.id === selectedItemId) {
-          clickedIndex = index
+          clickedIndex = index;
         }
-      })
-      var itemClone = JSON.parse(JSON.stringify(this.items[clickedIndex]))
-      itemClone.selected = !itemClone.selected
-      this.items.splice(clickedIndex, 1, itemClone)
+      });
+      const itemClone = JSON.parse(JSON.stringify(this.items[clickedIndex]));
+      itemClone.selected = !itemClone.selected;
+      this.items.splice(clickedIndex, 1, itemClone);
     },
     toggleDropdown(state) {
       if (state === false) {
-        this.filter = ''
+        this.filter = '';
       }
-      this.active = state
+      this.active = state;
     },
     clearSelection() {
-      this.selectedIds.forEach(this.toggleItem)
+      this.selectedIds.forEach(this.toggleItem);
     },
     focus(index, withKeyboard) {
-      this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1)
+      this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);
 
-      if (!withKeyboard) return
+      if (!withKeyboard) return;
 
-      var optionListEl = this.$el.lastChild,
-      focusedPosition = this.focused * ITEM_HEIGHT;
+      const additionalOffset = this.filteredItems.slice(0, this.focused + 1)
+        .map(item => (item.groupLabel ? 1 : 0))
+        .reduce((a, b) => a + b, 0);
+      const optionListEl = this.$el.lastChild;
+      const focusedPosition = (this.focused + additionalOffset) * ITEM_HEIGHT;
 
       if (focusedPosition < optionListEl.scrollTop) {
-        optionListEl.scrollTop -= ITEM_HEIGHT
+        optionListEl.scrollTop = focusedPosition;
+      } else if (focusedPosition > optionListEl.scrollTop + ((ITEM_COUNT - 1) * ITEM_HEIGHT)) {
+        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - 1) * ITEM_HEIGHT);
       }
-      else if (focusedPosition > optionListEl.scrollTop + (ITEM_COUNT - 1) * ITEM_HEIGHT) {
-        optionListEl.scrollTop += ITEM_HEIGHT
-      }
-    }
-  }
-}
+    },
+  },
+};
 </script>

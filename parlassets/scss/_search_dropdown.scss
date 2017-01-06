@@ -69,6 +69,11 @@
       text-overflow: ellipsis;
       user-select: none;
       white-space: nowrap;
+      &.group-label {
+        background: #ededed;
+        cursor: default;
+        text-transform: uppercase;
+      }
       &.focused { background: darken($normal-background, 10%); }
       &.selected {
         background-color: $selected-background;
