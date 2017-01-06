@@ -30,7 +30,7 @@
                                         <div class="searchfilter-container" id="pps">
                                             <div class="searchfilter-label">Išči po poslancih in/ali poslanskih skupinah</div>
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="allTags" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="allTags" :groups="allGroups" :placeholder="inputPlaceholder"></search-dropdown>
                                             </div>
                                         </div>
                                     </div>
@@ -123,6 +123,9 @@
 </style>
 
 <script>
+
+// https://isci.parlameter.si/filter/kriza?people=80
+
 function capitalise(string) {
     return string[0].toUpperCase() + string.substring(1)
   }
@@ -140,12 +143,26 @@ function capitalise(string) {
           .map(function(tag) { return tag.id });
       },
     },
+    created: function() {
+        $.get('https://isci.parlameter.si/filter/kriza?people=80', function(response) {
+            console.log('created');
+            console.log(response.facet_counts.facet_fields.speaker_i);
+        });
+    },
     data: function() {
       return {
         // allTags: voteData.all_tags.map(function(tag) {
         //   return { id: tag, label: tag, selected: false }
         // }),
-        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}]
+        podatki: [],
+        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}, {id: 'tag3', label: 'tag3', selected: false, count: 1}],
+        allGroups: [{
+            label: 'g1',
+            items: ['tag1', 'tag2']
+        }, {
+            label: 'g2',
+            items: ['tag3']
+        }]
       }
     }
   });
@@ -198,4 +215,6 @@ function capitalise(string) {
       }
     }
   });
+
+
 </script>

@@ -1215,6 +1215,12 @@ const routes = [
     pageTitle: 'Išči seje',
   },
   {
+    path: '/seje/isci/filter/',
+    extraPaths: ['/search/filter/', '/seje/search/filter/', '/isci/filter/'],
+    viewPath: 'seje/search/filter',
+    pageTitle: 'Išči seje',
+  },
+  {
     path: '/seje/tip/:fullName',
     extraPaths: ['/seje/tip/:fullName/:date'],
     viewPath: 'seje/tip',
