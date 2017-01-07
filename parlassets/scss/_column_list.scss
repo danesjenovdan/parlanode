@@ -10,6 +10,11 @@
     .nalagalnik { height: 300px; }
   }
 
+  .column {
+    &.district,
+    &.optional { @include show-for(desktop); }
+  }
+
   .headers {
     @extend %flex;
 
@@ -100,8 +105,6 @@
   $mobile-image-size: 41px;
 
   @include column-list($image-size, $image-size, 18px, $mobile-image-size, $mobile-image-size, 4px);
-
-  .column.district { @include show-for(desktop); }
 }
 
 .session-list {
