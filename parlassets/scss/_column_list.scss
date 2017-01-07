@@ -1,4 +1,5 @@
 @mixin column-list($image-width, $image-height, $image-margin, $mobile-image-width, $mobile-image-height, $mobile-image-margin) {
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -105,5 +106,4 @@
 
 .session-list {
   @include column-list(72px, 39px, 26px, 37px, 20px, 6px);
-
 }
