@@ -333,7 +333,7 @@ exports.render = function (req, res) {
     return new Promise((resolve, reject) => {
 
       const pageres = new Pageres({delay: 2, filename:cardRenderDoc._id, selector, scale:2, format:'jpg'})
-        .src(`http://localhost:${CFG.port}/card/${cardRenderDoc._id}`, ['480x320'], {crop: true})
+        .src(`https://glej.parlameter.si/card/${cardRenderDoc._id}`, ['480x320'], {crop: true})
         .dest(CFG.cardCapturePath)
         .run()
         .then((captureResponse) => {
