@@ -280,7 +280,7 @@ exports.render = function (req, res) {
             if (+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate) {
               compileCard();
             } else {
-              cardResponse(res, cardRenderDoc, html,{
+              cardResponse(req, res, cardRenderDoc, html,{
                 image:getImage
               });
             }
@@ -291,16 +291,16 @@ exports.render = function (req, res) {
 
     });
 
-  function cardResponse(res, cardRenderDoc, html, _options){
+  function cardResponse(req, res, cardRenderDoc, html, _options){
 
     const options = {};
 
     _.extend(options, _options);
 
-    console.log(options);
+    const forceRender = req.query.forceRenderImage || false;
 
     if(options.image){
-      getCardImage(cardRenderDoc, '.card-')
+      getCardImage(cardRenderDoc, '.card-', forceRender)
         .then(imagePath => respondWithImage(res, imagePath))
         .catch((err) => {
 
@@ -332,12 +332,13 @@ exports.render = function (req, res) {
    * Attach the image to the html and return the html with appended image.
    * @param cardRenderDoc
    * @param selector
+   * @param force
    */
-  function getCardImage(cardRenderDoc, selector){
+  function getCardImage(cardRenderDoc, selector, force){
 
     console.log('getCardImage');
 
-    if(cardRenderDoc.imageLocalPath) return Promise.resolve(cardRenderDoc.imageLocalPath);
+    if(cardRenderDoc.imageLocalPath && !force) return Promise.resolve(cardRenderDoc.imageLocalPath);
 
     return new Promise((resolve, reject) => {
 
@@ -553,7 +554,7 @@ exports.render = function (req, res) {
                           cardRender.save()
                             .then(() => {
 
-                              cardResponse(res, cardRender, cardRender.html,{
+                              cardResponse(req, res, cardRender, cardRender.html,{
                                 image:getImage
                               });
 
@@ -572,7 +573,7 @@ exports.render = function (req, res) {
                 }
                 else {
                   console.log('No card type');
-                  cardResponse(res, cardRender, cardRender.html,{
+                  cardResponse(req, res, cardRender, cardRender.html,{
                     image:getImage
                   });
                   res.end();
