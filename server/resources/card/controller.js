@@ -337,7 +337,7 @@ exports.render = function (req, res) {
 
     console.log('getCardImage');
 
-    if(cardRenderDoc.imageLocalPath) return cardRenderDoc.imageLocalPath;
+    if(cardRenderDoc.imageLocalPath) return Promise.resolve(cardRenderDoc.imageLocalPath);
 
     return new Promise((resolve, reject) => {
 
