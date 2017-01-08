@@ -300,7 +300,7 @@ exports.render = function (req, res) {
     console.log(options);
 
     if(options.image){
-      getCardImage(cardRenderDoc, '.card-container')
+      getCardImage(cardRenderDoc, '.card-container .card-')
         .then(imagePath => respondWithImage(res, imagePath))
         .catch((err) => {
 
