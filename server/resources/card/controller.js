@@ -309,7 +309,7 @@ exports.render = function (req, res) {
             stack:err.stack || 'no stack',
             url:`https://glej.parlameter.si/card/${cardRenderDoc._id}`
           };
-          res.status(400).send(err);
+          res.status(400).send(errMsg);
 
         });
     }else{
