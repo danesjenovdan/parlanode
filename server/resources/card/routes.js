@@ -18,6 +18,8 @@ module.exports = function (app) {
   app.get('/:group/:method/:id/*', controller.render);
   app.get('/:group/:method/*', controller.render);
 
+  app.get('/card/:cardId', controller.getCardById);
+
   app.get('/test', (req, res)=> {
     res.send({ result:true });
   });

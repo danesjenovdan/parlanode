@@ -9,7 +9,7 @@ const isDate = require('../../utils/date').isDate;
 const cheerio = require('cheerio');
 const _ = require('lodash');
 const webshot = require('webshot');
-
+const Pageres = require('pageres');
 /**
  * PUT rest method
  * @param req
@@ -146,6 +146,27 @@ exports.updateEjs = (req, res) => {
 
 };
 
+exports.getCardById = (req,res) => {
+
+  const cardId = req.params.cardId;
+  const CardRender = mongoose.model('CardRender');
+
+  CardRender.findOne({_id:cardId})
+    .then((cardDoc)=>{
+
+      if(!cardDoc) return res.status(404).send();
+
+      res.send(cardDoc.html);
+
+    })
+    .catch((err)=>{
+
+      res.status(400).send(err);
+
+    });
+
+};
+
 exports.getUrls = (req, res) => {
 
   const Card = mongoose.model('Card');
@@ -192,6 +213,7 @@ exports.render = function (req, res) {
   const altHeader = req.query.altHeader;
   const embed = req.query.embed;
   const previewWidth = req.query.width;
+  const getImage = req.query.image;
   let state = req.query.state || '{}';
   let cacheState = req.query.state || '{}';
 
@@ -240,7 +262,11 @@ exports.render = function (req, res) {
   CardRender.findOne(cacheData).sort({dateTime: -1})
     .then((cardRenderDoc) => {
 
-      if (!cardRenderDoc || forceRender) {
+      if (!cardRenderDoc) {
+        console.log('No render found in database');
+        compileCard();
+      }else if(forceRender){
+        console.log('Force rendering card');
         compileCard();
       }
       else {
@@ -250,10 +276,13 @@ exports.render = function (req, res) {
         Card.findById(cardRenderDoc.card)
           .then((cardDoc) => {
 
+            // plus Date changes the string Date into milliseconds so it's possible to compare
             if (+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate) {
               compileCard();
             } else {
-              res.send(html);
+              cardResponse(res, cardRenderDoc, html,{
+                image:getImage
+              });
             }
 
           });
@@ -261,6 +290,79 @@ exports.render = function (req, res) {
       }
 
     });
+
+  function cardResponse(res, cardRenderDoc, html, _options){
+
+    const options = {};
+
+    _.extend(options, _options);
+
+    console.log(options);
+
+    if(options.image){
+      getCardImage(cardRenderDoc, '.card-container')
+        .then(imagePath => respondWithImage(res, imagePath));
+    }else{
+      res.send(html);
+    }
+
+  }
+
+  function respondWithImage(res, imagePath){
+
+    var img = fs.readFileSync(imagePath);
+    res.writeHead(200, {'Content-Type': 'image/jpeg' });
+    res.end(img, 'binary');
+
+  }
+
+  /**
+   * Creates image from html and saves the path to cardRenderDoc if no image generated yet.
+   * If image is already attached to cardRenderDoc grab path.
+   * Attach the image to the html and return the html with appended image.
+   * @param cardRenderDoc
+   * @param selector
+   */
+  function getCardImage(cardRenderDoc, selector){
+
+    console.log('getCardImage');
+
+    if(cardRenderDoc.imageLocalPath) return cardRenderDoc.imageLocalPath;
+
+    return new Promise((resolve, reject) => {
+
+      const pageres = new Pageres({delay: 2, filename:cardRenderDoc._id, selector, scale:2, format:'jpg'})
+        .src(`http://localhost:${CFG.port}/card/${cardRenderDoc._id}`, ['480x320'], {crop: true})
+        .dest(CFG.cardCapturePath)
+        .run()
+        .then((captureResponse) => {
+
+          cardRenderDoc.imageUrl = CFG.cardCaptureRootUrl + '/' + cardRenderDoc._id + '.jpg';
+          cardRenderDoc.imageLocalPath = CFG.cardCapturePath + '/' + cardRenderDoc._id + '.jpg';
+
+          cardRenderDoc.save()
+            .then(() => {
+
+              resolve(cardRenderDoc.imageLocalPath);
+
+            })
+            .catch((err)=>{
+
+              reject(err);
+
+            });
+
+        })
+        .catch((err)=>{
+
+          reject(err);
+
+        });
+
+    });
+
+  }
+
 
   function compileCard() {
 
@@ -353,8 +455,6 @@ exports.render = function (req, res) {
                */
               var html = ejs.render(cardDoc.ejs, cardData);
 
-              console.log(html);
-
               if (altHeader) {
 
                 var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
@@ -443,7 +543,9 @@ exports.render = function (req, res) {
                           cardRender.save()
                             .then(() => {
 
-                              res.send(cardRender.html);
+                              cardResponse(res, cardRender, cardRender.html,{
+                                image:getImage
+                              });
 
                             });
 
@@ -457,9 +559,12 @@ exports.render = function (req, res) {
                     res.status(400).send({err: err.stack, data: cardData});
                   }
 
-                } else {
+                }
+                else {
                   console.log('No card type');
-                  res.send(cardRender.html);
+                  cardResponse(res, cardRender, cardRender.html,{
+                    image:getImage
+                  });
                   res.end();
                 }
 
