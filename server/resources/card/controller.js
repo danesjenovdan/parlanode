@@ -304,7 +304,7 @@ exports.render = function (req, res) {
         .then(imagePath => respondWithImage(res, imagePath))
         .catch((err) => {
 
-          const err = {
+          const errMsg = {
             err,
             stack:err.stack || 'no stack',
             url:`https://glej.parlameter.si/card/${cardRenderDoc._id}`
