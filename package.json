@@ -29,6 +29,7 @@
     "express-validator": "^2.20.8",
     "lodash": "^4.15.0",
     "mongoose": "^4.4.4",
+    "pageres": "4.3.0",
     "pg": "^6.0.1",
     "pg-hstore": "^2.3.2",
     "rand-token": "^0.2.1",
