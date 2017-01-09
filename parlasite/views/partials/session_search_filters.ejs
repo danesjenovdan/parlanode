@@ -395,6 +395,8 @@ function capitalise(string) {
                     return b.count - a.count;
                 });
             
+            console.log(poslanci);
+            
             var ps = response.facet_counts.facet_fields.party_e
                 .filter(function(party) {
                     return party.score > 0;
@@ -415,7 +417,13 @@ function capitalise(string) {
                     return b.count - a.count;
                 });
             
+            console.log(ps);
+
             self.ppspodatki = poslanci.concat(ps);
+
+            console.log(poslanci.concat(ps));
+            console.log(self.ppspodatki);
+
             self.ppsskupine = [
                 {
                     label: 'Poslanke in poslanci',
