@@ -59,14 +59,10 @@ export default {
           item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
         )
         .sort((a, b) => {
-          if (this.alphabetise) {
-            if (Boolean(a.selected) === Boolean(b.selected)) {
-              return a.label.localeCompare(b.label, 'sl');
-            }
-            return a.selected && !b.selected ? -1 : 1;
-          } else {
-            return a.selected && !b.selected ? -1 : 1;
+          if (Boolean(a.selected) === Boolean(b.selected)) {
+            return a.label.localeCompare(b.label, 'sl');
           }
+          return a.selected && !b.selected ? -1 : 1;
         });
 
       if (this.groups) {
