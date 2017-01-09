@@ -76,6 +76,12 @@
         <meta name="twitter:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
         <meta property="og:title" content="<%= cardData.name %> - <%= labels[state.analysis || 'seat_count'] %>">
     <% } %>
+    <% if (cardData.headerType == 'seznam_sej') { %>
+
+        <title><%= cardData.name %></title>
+        <meta name="twitter:title" content="<%= cardData.name %>">
+        <meta property="og:title" content="<%= cardData.name %>">
+    <% } %>
     <% if (cardData.headerType == 'seznam_poslancev') { %>
 
         <% function getDistricts() {
@@ -257,6 +263,7 @@
                 'Izpostavljena seja',
                 'Seznam poslancev',
                 'Seznam poslanskih skupin',
+                'Seznam sej',
                 'Glasovanja - seja',
                 'Besede, ki so zaznamovale sejo',
                 'Prisotnost po poslanskih skupinah',

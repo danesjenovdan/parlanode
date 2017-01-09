@@ -121,6 +121,23 @@
         <div class="alt-header-border"></div>
     </div>
 
+<!-- SEZNAM SEJ -->
+<% } else if (cardData.headerType == 'seznam_sej') { %>
+    <div class="alt-header-container">
+        <div class="alt-header">
+            <div class="icon-circle">
+                <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-list.svg" />
+            </div>
+
+            <div class="header-info-container">
+                <h1>&nbsp;</h1>
+                <h2 class="partyinfo">7. sklic parlamenta</h2>
+                <h2 class="cardname"><%= cardData.name %></h2>
+            </div>
+        </div>
+        <div class="alt-header-border"></div>
+    </div>
+
 <!-- GLASOVANJA - SEJA -->
 <% } else if (cardData.headerType == 'seje'){ %>
     <div class="alt-header-container">
