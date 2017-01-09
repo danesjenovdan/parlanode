@@ -8,15 +8,19 @@
   font-size: 13px;
   font-weight: 300;
   height: 51px;
-  line-height: 32px;
+  line-height: 16px;
+  padding-top: 8px;
   text-align: center;
+
   &.selected {
     border-bottom: 1px solid #c8c8c8;
-    color: #ffffff;
+    color: #fff;
   }
+
   @each $party, $color in $party-colors {
     &.#{$party} {
       border-bottom-color: $color;
+
       &.selected {
         background-color: $color;
       }
