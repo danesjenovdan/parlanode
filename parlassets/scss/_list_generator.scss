@@ -18,34 +18,6 @@
 
     margin: 14px 0;
 
-    .parties-districts,
-    .filters { display: flex; }
-
-    .parties,
-    .button-filters {
-      @extend %list-flex;
-
-      flex: 2;
-
-      @include respond-to(mobile) {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 7px;
-      }
-
-      li {
-        box-sizing: border-box;
-        margin-right: 3px;
-        &:last-child { margin-right: 0; }
-
-        @include respond-to(mobile) {
-          flex: none;
-          margin: 3px 0 0;
-          width: calc(25% - 2.25px);
-        }
-      }
-    }
-
     li {
       align-items: center;
       border: 1px solid $grey-medium;
@@ -87,6 +59,34 @@
     .select {
       width: 100%;
       select { width: 100%; }
+    }
+  }
+
+  .parties-districts,
+  .filters { display: flex; }
+
+  .parties,
+  .button-filters {
+    @extend %list-flex;
+
+    flex: 2;
+
+    @include respond-to(mobile) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 7px;
+    }
+
+    li {
+      box-sizing: border-box;
+      margin-right: 3px;
+      &:last-child { margin-right: 0; }
+
+      @include respond-to(mobile) {
+        flex: none;
+        margin: 3px 0 0;
+        width: calc(25% - 2.25px);
+      }
     }
   }
 
