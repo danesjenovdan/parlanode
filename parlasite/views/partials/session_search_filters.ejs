@@ -30,7 +30,7 @@
                                         <div class="searchfilter-container" id="pps">
                                             <div class="searchfilter-label">Išči po poslancih in/ali poslanskih skupinah</div>
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="allTags" :groups="allGroups" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="podatki" :groups="skupine" :placeholder="inputPlaceholder"></search-dropdown>
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                         <div class="searchfilter-container" id="cas">
                                             <div class="searchfilter-label">Išči v časovnem obdobju</div>
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="allTags" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="podatki" :placeholder="inputPlaceholder"></search-dropdown>
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                         <input id="predsedujoci" type="checkbox" class="checkbox with-input">
                                         <label for="predsedujoci">
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="allTags" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="podatki" :placeholder="inputPlaceholder"></search-dropdown>
                                             </div>
                                         </label>
                                     </div>
@@ -126,8 +126,58 @@
 
 // https://isci.parlameter.si/filter/kriza?people=80
 
+var globalFilters = {
+    'people': [],
+    'parties': [],
+    'time_filter': []
+}
+
 function capitalise(string) {
     return string[0].toUpperCase() + string.substring(1)
+  }
+
+  function formatDate(date) {
+      var month = date.getMonth();
+      var year = date.getFullYear()
+
+      switch(month) {
+        case 0:
+            return 'Januar ' + String(year);
+            break;
+        case 1:
+            return 'Februar ' + String(year);
+            break;
+        case 2:
+            return 'Marec ' + String(year);
+            break;
+        case 3:
+            return 'April ' + String(year);
+            break;
+        case 4:
+            return 'Maj ' + String(year);
+            break;
+        case 5:
+            return 'Junij ' + String(year);
+            break;
+        case 6:
+            return 'Julij ' + String(year);
+            break;
+        case 7:
+            return 'Avgust ' + String(year);
+            break;
+        case 8:
+            return 'September ' + String(year);
+            break;
+        case 9:
+            return 'Oktober ' + String(year);
+            break;
+        case 10:
+            return 'November ' + String(year);
+            break;
+        case 11:
+            return 'December ' + String(year);
+            break;
+      }
   }
 
   new Vue({
@@ -138,31 +188,70 @@ function capitalise(string) {
         return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
       },
       selectedTags: function() {
-        return this.allTags
+        return this.podatki
           .filter(function(tag) { return tag.selected })
           .map(function(tag) { return tag.id });
       },
     },
     created: function() {
-        $.get('https://isci.parlameter.si/filter/kriza?people=80', function(response) {
-            console.log('created');
-            console.log(response.facet_counts.facet_fields.speaker_i);
+        var self = this;
+        $.get('https://isci.parlameter.si/filter/kriza', function(response) {
+            var poslanci = response.facet_counts.facet_fields.speaker_i
+                .filter(function(person) {
+                    return person.score > 0;
+                })
+                .map(function(person) {
+                    var tagperson = {
+                        id: 'p' + String(person.person.id),
+                        label: person.person.name,
+                        count: person.score,
+                        selected: false
+                    }
+                    return tagperson
+                })
+                .sort(function(a, b) {
+                    console.log(a.count);
+                    return a.count - b.count;
+                });
+            
+            var ps = response.facet_counts.facet_fields.party_e
+                .filter(function(party) {
+                    return party.score > 0;
+                })
+                .map(function(party) {
+                    var tagperson = {
+                        id: 'ps' + String(party.party.id),
+                        label: party.party.name,
+                        count: party.score,
+                        selected: false
+                    }
+                    return tagperson
+                })
+                .sort(function(a, b) {
+                    console.log(a.count);
+                    return a.count - b.count;
+                });
+            
+            self.podatki = poslanci.concat(ps);
+            self.skupine = [
+                {
+                    label: 'Poslanke in poslanci',
+                    items: poslanci.map(function (person) {
+                        return person.id;
+                    })
+                }, {
+                    label: 'Poslanske skupine',
+                    items: ps.map(function (party) {
+                        return party.id;
+                    })
+                }
+            ]
         });
     },
     data: function() {
       return {
-        // allTags: voteData.all_tags.map(function(tag) {
-        //   return { id: tag, label: tag, selected: false }
-        // }),
-        podatki: [],
-        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}, {id: 'tag3', label: 'tag3', selected: false, count: 1}],
-        allGroups: [{
-            label: 'g1',
-            items: ['tag1', 'tag2']
-        }, {
-            label: 'g2',
-            items: ['tag3']
-        }]
+        podatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}],
+        skupine: [{label: '', items: 'loading'}]
       }
     }
   });
@@ -175,17 +264,32 @@ function capitalise(string) {
         return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
       },
       selectedTags: function() {
-        return this.allTags
+        return this.podatki
           .filter(function(tag) { return tag.selected })
           .map(function(tag) { return tag.id });
       },
     },
+    created: function() {
+        var self = this;
+        $.get('https://isci.parlameter.si/filter/kriza', function(response) {
+            var temp = [];
+            response.facet_counts.facet_ranges.datetime_dt.counts.forEach(function (e, i) {
+                if (i % 2 === 0 && response.facet_counts.facet_ranges.datetime_dt.counts[i + 1] !== 0) {
+                    temp.push({
+                        id: e,
+                        date: new Date(e),
+                        label: formatDate(new Date(e)),
+                        selected: false,
+                        count: response.facet_counts.facet_ranges.datetime_dt.counts[i + 1]
+                    })
+                }
+            });
+            self.podatki = temp;
+        });
+    },
     data: function() {
       return {
-        // allTags: voteData.all_tags.map(function(tag) {
-        //   return { id: tag, label: tag, selected: false }
-        // }),
-        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}]
+        podatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}]
       }
     }
   });
@@ -195,10 +299,10 @@ function capitalise(string) {
     components: ['SearchDropdown'],
     computed: {
       inputPlaceholder: function() {
-        return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
+        return this.selectedTags.length > 0 ? 'Izbranih delovnih teles: ' + this.selectedTags.length : 'Seje delovnih teles'
       },
       selectedTags: function() {
-        return this.allTags
+        return this.podatki
           .filter(function(tag) { return tag.selected })
           .map(function(tag) { return tag.id });
       },
@@ -206,12 +310,24 @@ function capitalise(string) {
         return this.allTags.filter(item => item.selected).length;
       },
     },
+    created: function() {
+        var self = this;
+        $.get('https://analize.parlameter.si/v1/s/getSessionsByClassification/', function(response) {
+            self.podatki = response.dt.map(function (wb) {
+                return {
+                    id: wb.id,
+                    label: wb.name,
+                    selected: false
+                }
+            });
+        });
+    },
     data: function() {
       return {
         // allTags: voteData.all_tags.map(function(tag) {
         //   return { id: tag, label: tag, selected: false }
         // }),
-        allTags: [{id: 'tag1', label: 'tag1', selected: false, count: 12}, {id: 'tag2', label: 'tag2', selected: false, count: 1}]
+        podatki: [{id: 'loading', label: 'Nalagamo delovna telesa ...', selected: false}]
       }
     }
   });
