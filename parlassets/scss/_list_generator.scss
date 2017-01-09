@@ -13,12 +13,14 @@
 
   .analyses {
     @extend %list-flex;
+
     @include show-for(desktop, flex);
+
     margin: 14px 0;
 
     li {
       align-items: center;
-      border: 1px solid #c8c8c8;
+      border: 1px solid $grey-medium;
       box-sizing: border-box;
       color: $white;
       cursor: pointer;
@@ -30,15 +32,18 @@
       padding: 0 12px;
       text-transform: uppercase;
       background-color: #227497;
+
       &.selected {
-        background-color: #009cdd;
-        color: #ffffff;
+        background-color: $funblue;
+        color: $white;
         cursor: default;
       }
+
       &:last-child { margin-right: 0; }
+
       &:hover {
-        background-color: #009cdd;
-        color: #ffffff;
+        background-color: $funblue;
+        color: $white;
       }
     }
   }
@@ -50,10 +55,55 @@
       font-size: 11px;
       width: 100%;
     }
+
     .select {
       width: 100%;
       select { width: 100%; }
     }
+  }
+
+  .parties-districts,
+  .filters { display: flex; }
+
+  .parties,
+  .button-filters {
+    @extend %list-flex;
+
+    flex: 2;
+
+    @include respond-to(mobile) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 7px;
+    }
+
+    li {
+      box-sizing: border-box;
+      margin-right: 3px;
+      &:last-child { margin-right: 0; }
+
+      @include respond-to(mobile) {
+        flex: none;
+        margin: 3px 0 0;
+      }
+    }
+  }
+
+  .districts,
+  .dropdown-filter {
+    @include show-for(desktop, flex);
+
+    flex: 1;
+    margin-left: 15px;
+  }
+
+  .exclude-presiding,
+  .align-checkbox {
+    @include show-for(desktop, flex);
+
+    align-items: center;
+    justify-content: flex-end;
+    width: 142px;
   }
 }
 
@@ -64,10 +114,18 @@
 .member-list-generator {
   @extend %list-generator;
 
+  .parties li,
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(25% - 2.25px);
+    }
+  }
+
   @include respond-to(limbo) {
     .analyses {
       flex-wrap: wrap;
       margin-bottom: 11px;
+
       li {
         flex: 1;
         margin-bottom: 3px;
@@ -76,41 +134,14 @@
       }
     }
   }
+}
 
-  .parties-districts { display: flex; }
+.session-list-generator {
+  @extend %list-generator;
 
-  .parties {
-    @extend %list-flex;
-    flex: 2;
+  .button-filters li {
     @include respond-to(mobile) {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-top: 7px;
+      width: calc(33.333% - 2px);
     }
-    li {
-      box-sizing: border-box;
-      margin-right: 3px;
-      &:last-child { margin-right: 0; }
-      @include respond-to(mobile) {
-        flex: none;
-        margin: 3px 0 0 0;
-        width: calc(25% - 2.25px);
-      }
-    }
-  }
-
-  .districts {
-    @include show-for(desktop, flex);
-
-    flex: 1;
-    margin-left: 15px;
-  }
-
-  .exclude-presiding {
-    @include show-for(desktop, flex);
-
-    align-items: center;
-    justify-content: flex-end;
-    width: 142px;
   }
 }

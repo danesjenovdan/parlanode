@@ -59,10 +59,13 @@ export default {
           item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
         )
         .sort((a, b) => {
-          if (Boolean(a.selected) === Boolean(b.selected)) {
+          if (Boolean(a.selected) === Boolean(b.selected) && this.alphabetise) {
             return a.label.localeCompare(b.label, 'sl');
           }
-          return a.selected && !b.selected ? -1 : 1;
+
+          if (a.selected && !b.selected) return -1;
+          else if (!a.selected && b.selected) return 1;
+          return 0;
         });
 
       if (this.groups) {
@@ -112,7 +115,7 @@ export default {
     items: { type: Array, required: true },
     placeholder: { type: String, required: true },
     groups: { type: Array, required: false },
-    alphabetise: {type: Boolean, required: false, default: true}
+    alphabetise: { type: Boolean, required: false, default: true },
   },
   methods: {
     toggleItem(selectedItemId) {
