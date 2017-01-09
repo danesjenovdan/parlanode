@@ -22,7 +22,7 @@
             <% if((typeof query.q !== "undefined") && (query.q.length > 0)){%>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="searchfilter-container">
+                    <div class="searchfilter-container searchfilter-master-container">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="row">
@@ -30,7 +30,7 @@
                                         <div class="searchfilter-container" id="pps">
                                             <div class="searchfilter-label">Išči po poslancih in/ali poslanskih skupinah</div>
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="podatki" :groups="skupine" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="ppspodatki" :groups="ppsskupine" :placeholder="ppsinputPlaceholder"></search-dropdown>
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                         <div class="searchfilter-container" id="cas">
                                             <div class="searchfilter-label">Išči v časovnem obdobju</div>
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="podatki" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="caspodatki" :placeholder="casinputPlaceholder"></search-dropdown>
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                         <input id="predsedujoci" type="checkbox" class="checkbox with-input">
                                         <label for="predsedujoci">
                                             <div class="searchfilter-input">
-                                                <search-dropdown :items="podatki" :placeholder="inputPlaceholder"></search-dropdown>
+                                                <search-dropdown :items="dtpodatki" :placeholder="dtinputPlaceholder"></search-dropdown>
                                             </div>
                                         </label>
                                     </div>
@@ -126,12 +126,6 @@
 
 // https://isci.parlameter.si/filter/kriza?people=80
 
-var globalFilters = {
-    'people': [],
-    'parties': [],
-    'time_filter': []
-}
-
 function capitalise(string) {
     return string[0].toUpperCase() + string.substring(1)
   }
@@ -180,22 +174,50 @@ function capitalise(string) {
       }
   }
 
-  new Vue({
-    el: '#pps',
+  var testis = new Vue({
+    el: '.searchfilter-master-container',
     components: ['SearchDropdown'],
     computed: {
-      inputPlaceholder: function() {
-        return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
+      ppsinputPlaceholder: function() {
+        return this.ppsselectedTags.length > 0 ? 'Izbranih filtrov: ' + this.ppsselectedTags.length : 'Izberi filtre'
       },
-      selectedTags: function() {
-        return this.podatki
+      ppsselectedTags: function() {
+        return this.ppspodatki
           .filter(function(tag) { return tag.selected })
           .map(function(tag) { return tag.id });
       },
+      casinputPlaceholder: function() {
+        return this.casselectedTags.length > 0 ? 'Izbranih filtrov: ' + this.casselectedTags.length : 'Izberi filtre'
+      },
+      casselectedTags: function() {
+        return this.caspodatki
+          .filter(function(tag) { return tag.selected })
+          .map(function(tag) { return tag.id });
+      },
+      dtinputPlaceholder: function() {
+        return this.dtselectedTags.length > 0 ? 'Izbranih delovnih teles: ' + this.dtselectedTags.length : 'Izberi delovna telesa'
+      },
+      dtselectedTags: function() {
+        return this.dtpodatki
+          .filter(function(tag) { return tag.selected })
+          .map(function(tag) { return tag.id });
+      },
+      filters: function() {
+        return {
+            people: this.ppsselectedTags.filter(function(tag) {
+                return tag.selected && tag.id.indexOf('ps') === -1;
+            }),
+            parties: this.ppsselectedTags.filter(function(tag) {
+                return tag.selected && tag.id.indexOf('ps') !== -1;
+            }),
+            time_filter: []
+        }
+      }
     },
     created: function() {
         var self = this;
         $.get('https://isci.parlameter.si/filter/kriza', function(response) {
+            // poslanci in poslanske skupine
             var poslanci = response.facet_counts.facet_fields.speaker_i
                 .filter(function(person) {
                     return person.score > 0;
@@ -232,8 +254,8 @@ function capitalise(string) {
                     return a.count - b.count;
                 });
             
-            self.podatki = poslanci.concat(ps);
-            self.skupine = [
+            self.ppspodatki = poslanci.concat(ps);
+            self.ppsskupine = [
                 {
                     label: 'Poslanke in poslanci',
                     items: poslanci.map(function (person) {
@@ -246,36 +268,12 @@ function capitalise(string) {
                     })
                 }
             ]
-        });
-    },
-    data: function() {
-      return {
-        podatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}],
-        skupine: [{label: '', items: 'loading'}]
-      }
-    }
-  });
 
-  new Vue({
-    el: '#cas',
-    components: ['SearchDropdown'],
-    computed: {
-      inputPlaceholder: function() {
-        return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
-      },
-      selectedTags: function() {
-        return this.podatki
-          .filter(function(tag) { return tag.selected })
-          .map(function(tag) { return tag.id });
-      },
-    },
-    created: function() {
-        var self = this;
-        $.get('https://isci.parlameter.si/filter/kriza', function(response) {
-            var temp = [];
+            // cas
+            var castemp = [];
             response.facet_counts.facet_ranges.datetime_dt.counts.forEach(function (e, i) {
                 if (i % 2 === 0 && response.facet_counts.facet_ranges.datetime_dt.counts[i + 1] !== 0) {
-                    temp.push({
+                    castemp.push({
                         id: e,
                         date: new Date(e),
                         label: formatDate(new Date(e)),
@@ -284,53 +282,105 @@ function capitalise(string) {
                     })
                 }
             });
-            self.podatki = temp;
-        });
-    },
-    data: function() {
-      return {
-        podatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}]
-      }
-    }
-  });
+            self.caspodatki = castemp;
 
-  new Vue({
-    el: '#seje',
-    components: ['SearchDropdown'],
-    computed: {
-      inputPlaceholder: function() {
-        return this.selectedTags.length > 0 ? 'Izbranih delovnih teles: ' + this.selectedTags.length : 'Seje delovnih teles'
-      },
-      selectedTags: function() {
-        return this.podatki
-          .filter(function(tag) { return tag.selected })
-          .map(function(tag) { return tag.id });
-      },
-      itemsSelected() {
-        return this.allTags.filter(item => item.selected).length;
-      },
-    },
-    created: function() {
-        var self = this;
-        $.get('https://analize.parlameter.si/v1/s/getSessionsByClassification/', function(response) {
-            self.podatki = response.dt.map(function (wb) {
-                return {
-                    id: wb.id,
-                    label: wb.name,
-                    selected: false
-                }
+            // delovna telesa
+            $.get('https://analize.parlameter.si/v1/s/getSessionsByClassification/', function(response) {
+                self.dtpodatki = response.dt.map(function (wb) {
+                    return {
+                        id: wb.id,
+                        label: wb.name,
+                        selected: false
+                    }
+                });
             });
         });
     },
     data: function() {
       return {
-        // allTags: voteData.all_tags.map(function(tag) {
-        //   return { id: tag, label: tag, selected: false }
-        // }),
-        podatki: [{id: 'loading', label: 'Nalagamo delovna telesa ...', selected: false}]
+        ppspodatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}],
+        ppsskupine: [{label: '', items: 'loading'}],
+        caspodatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}],
+        dtpodatki: [{id: 'loading', label: 'Nalagamo delovna telesa ...', selected: false}]
       }
     }
   });
+
+//   new Vue({
+//     el: '#cas',
+//     components: ['SearchDropdown'],
+//     computed: {
+//       inputPlaceholder: function() {
+//         return this.selectedTags.length > 0 ? 'Izbranih filtrov: ' + this.selectedTags.length : 'Izberi filtre'
+//       },
+//       selectedTags: function() {
+//         return this.podatki
+//           .filter(function(tag) { return tag.selected })
+//           .map(function(tag) { return tag.id });
+//       },
+//     },
+//     created: function() {
+//         var self = this;
+//         $.get('https://isci.parlameter.si/filter/kriza', function(response) {
+//             var temp = [];
+//             response.facet_counts.facet_ranges.datetime_dt.counts.forEach(function (e, i) {
+//                 if (i % 2 === 0 && response.facet_counts.facet_ranges.datetime_dt.counts[i + 1] !== 0) {
+//                     temp.push({
+//                         id: e,
+//                         date: new Date(e),
+//                         label: formatDate(new Date(e)),
+//                         selected: false,
+//                         count: response.facet_counts.facet_ranges.datetime_dt.counts[i + 1]
+//                     })
+//                 }
+//             });
+//             self.podatki = temp;
+//         });
+//     },
+//     data: function() {
+//       return {
+//         podatki: [{id: 'loading', label: 'Nalagamo filtre ...', selected: false}]
+//       }
+//     }
+//   });
+
+//   new Vue({
+//     el: '#seje',
+//     components: ['SearchDropdown'],
+//     computed: {
+//       inputPlaceholder: function() {
+//         return this.selectedTags.length > 0 ? 'Izbranih delovnih teles: ' + this.selectedTags.length : 'Seje delovnih teles'
+//       },
+//       selectedTags: function() {
+//         return this.podatki
+//           .filter(function(tag) { return tag.selected })
+//           .map(function(tag) { return tag.id });
+//       },
+//       itemsSelected() {
+//         return this.allTags.filter(item => item.selected).length;
+//       },
+//     },
+//     created: function() {
+//         var self = this;
+//         $.get('https://analize.parlameter.si/v1/s/getSessionsByClassification/', function(response) {
+//             self.podatki = response.dt.map(function (wb) {
+//                 return {
+//                     id: wb.id,
+//                     label: wb.name,
+//                     selected: false
+//                 }
+//             });
+//         });
+//     },
+//     data: function() {
+//       return {
+//         // allTags: voteData.all_tags.map(function(tag) {
+//         //   return { id: tag, label: tag, selected: false }
+//         // }),
+//         podatki: [{id: 'loading', label: 'Nalagamo delovna telesa ...', selected: false}]
+//       }
+//     }
+//   });
 
 
 </script>
