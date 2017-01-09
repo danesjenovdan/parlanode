@@ -59,7 +59,7 @@ export default {
           item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
         )
         .sort((a, b) => {
-          if (Boolean(a.selected) === Boolean(b.selected) && this.alphabetise) {
+          if (this.alphabetise && (Boolean(a.selected) === Boolean(b.selected))) {
             return a.label.localeCompare(b.label, 'sl');
           }
 
