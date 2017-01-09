@@ -338,6 +338,16 @@ function addCardRippling(element) {
             var $parentcontainer = $(this).parents('.card-container');
             var $this = $(this);
 
+            var $header = $parentcontainer.children('.card-header').children('h1');
+            if (!$header.data('original')) {
+                $header.data('original', $header.text());
+            }
+
+            var cardTitles = {
+                'share': 'Deli',
+                'embed': 'Vdelaj',
+                'info': 'Info'
+            };
 
             if (!$(this).hasClass('card-exit')) { // show back
 
@@ -366,6 +376,8 @@ function addCardRippling(element) {
                 }, 200);
 
                 window.setTimeout(function() {
+                    var newTitle = cardTitles[$this.data('back')];
+                    if (newTitle) $header.text(newTitle);
                     $parentcontainer.children('.card-content').children('.card-content-' + $this.data('back')).removeClass('hidden');
                 }, 250);
 
@@ -400,6 +412,7 @@ function addCardRippling(element) {
                 }, 200);
 
                 window.setTimeout(function() {
+                    $header.text($header.data('original'));
                     $parentcontainer.children('.card-content').children('.card-content-front').removeClass('hidden');
                 }, 250);
 
