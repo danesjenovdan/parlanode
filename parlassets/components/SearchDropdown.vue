@@ -58,6 +58,11 @@ export default {
         .filter(item =>
           item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
         )
+        .map((item, index) => {
+          // eslint-disable-next-line no-param-reassign
+          item.sortIndex = index;
+          return item;
+        })
         .sort((a, b) => {
           if (this.alphabetise && (Boolean(a.selected) === Boolean(b.selected))) {
             return a.label.localeCompare(b.label, 'sl');
@@ -65,7 +70,16 @@ export default {
 
           if (a.selected && !b.selected) return -1;
           else if (!a.selected && b.selected) return 1;
+
+          if (a.sortIndex < b.sortIndex) return -1;
+          else if (a.sortIndex > b.sortIndex) return 1;
+
           return 0;
+        })
+        .map((item) => {
+          // eslint-disable-next-line no-param-reassign
+          delete item.sortIndex;
+          return item;
         });
 
       if (this.groups) {
