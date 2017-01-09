@@ -85,7 +85,6 @@
       @include respond-to(mobile) {
         flex: none;
         margin: 3px 0 0;
-        width: calc(25% - 2.25px);
       }
     }
   }
@@ -115,6 +114,13 @@
 .member-list-generator {
   @extend %list-generator;
 
+  .parties li,
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(25% - 2.25px);
+    }
+  }
+
   @include respond-to(limbo) {
     .analyses {
       flex-wrap: wrap;
@@ -132,4 +138,10 @@
 
 .session-list-generator {
   @extend %list-generator;
+
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(33.333% - 2px);
+    }
+  }
 }
