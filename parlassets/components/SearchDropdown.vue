@@ -112,6 +112,7 @@ export default {
     items: { type: Array, required: true },
     placeholder: { type: String, required: true },
     groups: { type: Array, required: false },
+    alphabetise: {type: Boolean, required: false, default: true}
   },
   methods: {
     toggleItem(selectedItemId) {
