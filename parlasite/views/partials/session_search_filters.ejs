@@ -5,7 +5,7 @@
             <div class="narrow-inner-container">
                 <h2>Išči po vseh sejah</h2>
 
-                <form method="get" action="/seje/isci">
+                <form method="get" action="/seje/isci/filter">
 
                     <div class="input-group search">
                         <input type="text" class="form-control simplebox" placeholder="" name="q" value="<%=query.q;%>">
@@ -66,15 +66,15 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row">
-                            <div class="col-md-12">
-                                <div @click="filterMyResults" class="parlabutton parlabutton-filter">Filtriraj</div>
-                            </div>
-                        </div> -->
                         <div v-show="fetching" class="search-loader">
                             <div class="nalagalnik"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="/seje/isci?q=<%= query.q %>" class="parlabutton parlabutton-filter">Nazaj na enostavno iskanje</a>
                 </div>
             </div>
             <!-- <div class="narrow-inner-container">
@@ -136,15 +136,19 @@
     .parlabutton-filter {
         margin: auto;
         position: relative;
-        width: 120px;
+        width: 250px;
         text-align: center;
         color: #ffffff;
         padding: 10px;
         background-color: #197197;
         cursor: pointer;
+        display: block;
+        margin-top: 20px;
     }
     .parlabutton-filter:hover {
         background-color: #009cdd;
+        color: #ffffff;
+        text-decoration: none;
     }
 
     .checkbox-searchfilter {
