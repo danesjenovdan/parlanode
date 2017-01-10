@@ -447,6 +447,76 @@ const routes = [
             });
 
         }
+      },
+      {
+        name: 'stVprasanj',
+        sourceUrl: '/p/st-poslanskih-vprasanj-in-pobud/:id',
+        resolve: (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              var pattern = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({id: mpId});
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return Promise.resolve(res.text());
+
+                })
+                .then((body) => {
+
+                  return Promise.resolve(body);
+
+                });
+
+            });
+
+        }
+      },
+      {
+        name: 'vprasanja',
+        sourceUrl: '/p/poslanska-vprasanja-in-pobude/:id',
+        resolve: (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              var pattern = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({id: mpId});
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return Promise.resolve(res.text());
+
+                })
+                .then((body) => {
+
+                  return Promise.resolve(body);
+
+                });
+
+            });
+
+        }
       }
     ]
   }, {
@@ -917,6 +987,32 @@ const routes = [
       {
         name: 'izracunanaPrisotnostSeje',
         sourceUrl: '/pg/izracunana-prisotnost-seje/:id',
+        resolve: (req, res, route, card) => {
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId = psData.psId;
+              let psSlug = psData.psSlug;
+              var pattern = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({id: psId});
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+        }
+      },
+      {
+        name: 'stVprasanj',
+        sourceUrl: '/ps/st-poslanskih-vprasanj-in-pobud/:id',
         resolve: (req, res, route, card) => {
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
