@@ -109,6 +109,17 @@
 
 .party-list-generator {
   @extend %list-generator;
+}
+
+.member-list-generator {
+  @extend %list-generator;
+
+  .parties li,
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(25% - 2.25px);
+    }
+  }
 
   @include respond-to(limbo) {
     .analyses {
@@ -123,30 +134,6 @@
       }
     }
   }
-}
-
-.member-list-generator {
-  @extend %list-generator;
-  
-  .parties li,
-  .button-filters li {
-    @include respond-to(mobile) {
-      width: calc(25% - 2.25px);
-    }
-  }
-
-  .analyses {
-    flex-wrap: wrap;
-    margin-bottom: 11px;
-
-    li {
-      flex: 1;
-      margin-bottom: 3px;
-      min-width: 19%;
-      &:nth-child(5) { margin-right: 0; }
-    }
-  }
-
 }
 
 .session-list-generator {
