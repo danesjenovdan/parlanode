@@ -109,18 +109,6 @@
 
 .party-list-generator {
   @extend %list-generator;
-
-  .analyses {
-    flex-wrap: wrap;
-    margin-bottom: 11px;
-
-    li {
-      flex: 1;
-      margin-bottom: 3px;
-      min-width: 19%;
-      &:nth-child(5) { margin-right: 0; }
-    }
-  }
 }
 
 .member-list-generator {
@@ -133,17 +121,19 @@
     }
   }
 
-  .analyses {
-    flex-wrap: wrap;
-    margin-bottom: 11px;
+  // @include respond-to(limbo) {
+    .analyses {
+      flex-wrap: wrap;
+      margin-bottom: 11px;
 
-    li {
-      flex: 1;
-      margin-bottom: 3px;
-      min-width: 19%;
-      &:nth-child(5) { margin-right: 0; }
+      li {
+        flex: 1;
+        margin-bottom: 3px;
+        min-width: 19%;
+        &:nth-child(5) { margin-right: 0; }
+      }
     }
-  }
+  // }
 }
 
 .session-list-generator {
