@@ -126,12 +126,10 @@
 .member-list-generator {
   @extend %list-generator;
 
-  @include respond-to(limbo) {
-    .parties li,
-    .button-filters li {
-      @include respond-to(mobile) {
-        width: calc(25% - 2.25px);
-      }
+  .parties li,
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(25% - 2.25px);
     }
   }
 
@@ -146,7 +144,6 @@
       &:nth-child(5) { margin-right: 0; }
     }
   }
-
 }
 
 .session-list-generator {
