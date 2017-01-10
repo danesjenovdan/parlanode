@@ -57,10 +57,10 @@
                                         <label for="kdz">Seje Kolegija predsednika Državnega zbora</label>
                                     </div>
                                     <div class="searchfilter-checkbox">
-                                        <input id="dt" type="checkbox" @click="handleCheckbox" :checked="dtchecked" class="checkbox with-input">
+                                        <input id="dt" type="checkbox" @click="handleCheckbox" :checked="dtchecked" v-bind:disabled="dtdisabled" class="checkbox with-input">
                                         <label for="dt">&nbsp;</label>
                                         <div class="searchfilter-input checkbox-searchfilter">
-                                            <search-dropdown :items="dtpodatki" :alphabetise="false" @click="handleCheckbox" :placeholder="dtinputPlaceholder"></search-dropdown>
+                                            <search-dropdown :items="dtpodatki" :alphabetise="false" @click="handleCheckbox" v-bind:class="{ disabled: dtdisabled }" :placeholder="dtinputPlaceholder"></search-dropdown>
                                         </div>
                                     </div>
                                 </div>
@@ -174,6 +174,16 @@
         position: absolute;
         top: 50%;
         margin-top: -50px;
+    }
+    .search-dropdown.disabled:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+
+        background: rgba(255, 255, 255, 0.3);
     }
 </style>
 
@@ -322,6 +332,9 @@ function capitalise(string) {
           .map(function(tag) { return tag.id });
       },
       dtinputPlaceholder: function() {
+          if (this.dtdisabled) {
+              return 'Ni delovnih teles'
+          }
           if (this.dtpodatki[0]) {
               if (this.dtpodatki[0].id === 'loading') {
                 return 'Nalagamo delovna telesa ...'
@@ -519,6 +532,7 @@ function capitalise(string) {
         fetching: true,
         dzDisabled: false,
         kolegijDisabled: false,
+        dtdisabled: false,
         dz: false,
         council: false
       }
@@ -592,6 +606,11 @@ function capitalise(string) {
         dtselectedTags(newVal, oldVal) {
             if (JSON.stringify(newVal) !== JSON.stringify(oldVal) && !this.first_load) {
                 this.filterMyResults();
+            }
+        },
+        dtpodatki(newVal) {
+            if (newVal.length === 0) {
+                this.dtdisabled = true;
             }
         }
     }
