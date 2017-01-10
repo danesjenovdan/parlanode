@@ -5,12 +5,6 @@
 * NodeJS
 * pm2 `npm i pm2 -g` (sudo on macOS)
 
-## Start local server
-
-```
-$ node run.js
-```
-
 ## Deploy
 
 ```

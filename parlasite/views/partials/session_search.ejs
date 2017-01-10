@@ -16,64 +16,9 @@
                 </form>
                 <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
 
-                <style>
-                .parlabutton-filter {
-                    margin: auto;
-                    position: relative;
-                    width: 200px;
-                    text-align: center;
-                    color: #ffffff;
-                    padding: 10px;
-                    background-color: #197197;
-                    cursor: pointer;
-                    margin-top: 20px;
-                    display: block;
-                }
-                .parlabutton-filter:hover {
-                    background-color: #009cdd;
-                    text-decoration: none;
-                    color: #ffffff;
-                }
-
-                .tooltip-session-search-container {
-                    max-width: 300px;
-                }
-                </style>
-
-                <script>
-                var progressbarTooltip = {
-                    init: function(classname) {
-
-                    var $majorparent = $('.' + classname);
-
-                    $majorparent.append('<div class="progressbar-tooltip tooltip-' + classname + '"></div>');
-
-                    $majorparent.find('.tooltipme')
-                        .on('mouseover', function(e) {
-
-                            $('.tooltip-' + classname)
-                                .css('opacity', 0.9)
-                                .html($(this).data('tooltiptext'))
-                                    .css("left", (e.pageX - ($('.tooltip-' + classname).width() / 2) - $majorparent.offset().left))
-                                    .css("top", (e.pageY + 40 - $majorparent.offset().top));
-
-                        })
-                        .on('mouseout', function(e) {
-                            $('.tooltip-' + classname)
-                                .css('opacity', 0);
-                        });
-                    }
-                }
-
-                $(document).ready(function() {progressbarTooltip.init('session-search-container');});
-                </script>
-
-                <div class="col-md-12">
-                <a href="/seje/isci/filter?q=<%= query.q %>" class="parlabutton-filter tooltipme" data-tooltiptext="To je eksperimentalna funkcionalnost, trenutno dela zelo počasi. Delamo na optimizaciji, najbolj vztrajni pa jo lahko preizkusite že zdaj.">Napredno iskanje</a>
-                </div>
-
                 <% if((typeof query.q !== "undefined") && (query.q.length > 0)){%>
-                <!-- <h3 class="searchresults">Rezultati za iskalni niz "<%=query.q;%>"</h3> -->
+                <br><br>
+                <h3 class="searchresults">Rezultati za iskalni niz "<%=query.q;%>"</h3>
                 <% } %>
 
             </div>
