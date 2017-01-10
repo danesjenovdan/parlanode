@@ -121,7 +121,7 @@
     }
   }
 
-  // @include respond-to(limbo) {
+  @include respond-to(limbo) {
     .analyses {
       flex-wrap: wrap;
       margin-bottom: 11px;
@@ -133,7 +133,7 @@
         &:nth-child(5) { margin-right: 0; }
       }
     }
-  // }
+  }
 }
 
 .session-list-generator {
