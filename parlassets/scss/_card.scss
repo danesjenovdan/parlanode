@@ -53,7 +53,7 @@
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
 .card-container .card-content.full {
-    $height: 500px;
+    $height: 518px;
     max-height: $height;
     .card-content-front { max-height: $height }
     .card-content-info { max-height: $height }
