@@ -1,341 +1,38 @@
 <% include ../partials/header.ejs %>
+<% include ../partials/session_search.ejs %>
 
-<div id="session-list-generator-container">
-    <div class="session-list-generator">
-      <div class="row">
-        <div class="col-md-12 filters">
-          <ul class="button-filters">
-            <li v-for="filter in filters" class="party-button sds sds-hover"
-                :class="[{ selected: currentFilters.indexOf(filter) > -1 }]"
-                @click="selectFilter(filter)">
-              {{ filter }}
-            </li>
-          </ul>
-
-          <search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>
-
-          <div class="align-checkbox">
-            <input id="onlyLatest" type="checkbox" v-model="onlyLatest" class="checkbox">
-            <label for="onlyLatest">Samo zadnjih 5</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card-container card-halfling card-seznam-sej">
-            <div class="card-header">
-              <div class="card-header-border"></div>
-              <h1>Seznam sej</h1>
-            </div>
-            <div class="card-content">
-              <div class="card-content-front">
-                <ul class="session-list" style="flex-direction: column !important;">
-                  <li class="headers">
-                    <div v-for="column in columns"
-                        :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
-                        @click="selectSort(column.id)">
-                      {{ column.label }}
-                    </div>
-                  </li>
-                  <li v-if="sessions.length === 0" class="loader">
-                    <div class="nalagalnik"></div>
-                  </li>
-                  <div v-if="sessions.length > 0 && processedSessions.length === 0" class="no-results">Brez rezultatov.</div>
-                  <li v-for="session in processedSessions" class="item">
-                    <a class="column image" :href="getSessionUrl(session.id)">
-                      <img :src="'https://cdn.parlameter.si/v1/parlassets/icons/seja-' + session.name.split(' ')[1] + '.svg'" />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="session-types narrow-inner-container">
+            <h2 class="session-types-title">Izberi vrsto seje</h2>
+            <div class="session-types-list">
+                <% [
+                  { slug: 'seje-dz', label: 'Seje DZ' },
+                  { slug: 'seje-delovnih-teles', label: 'Seje delovnih teles' },
+                  { slug: 'seje-kolegija-predsednika-dz', label: 'Seje kolegija predsednika DZ' }
+                ].forEach(function(link) { %>
+                    <a href="/seje/tip/<%= link.slug %>" class="session-type<%- 'seje-dz' === link.slug ? ' active' : ''; %>">
+                        <span><%- link.label %></span>
                     </a>
-                    <div class="column wider name">
-                      <a class="funblue-light-hover" :href="getSessionUrl(session.id)">{{ session.name }}</a>
-                    </div>
-                    <div class="column">{{ formatDate(session.date_ts) }}</div>
-                    <div class="column optional">{{ formatDate(session.updated_at_ts) }}</div>
-                    <div class="column wider optional">
-                      <a v-if="organisationIsWorkingBody(session.org.id)" class="funblue-light-hover" :href="'https://glej.parlameter.si/wb/getWorkingBodies/' + session.org.id + '?frame=true&altHeader=true'">{{ session.org.name }}</a>
-                      <span v-else>{{ session.org.name }}</span>
-                    </div>
-
-                  </li>
-                </ul>
-              </div>
-              <div class="card-content-info hidden">
-                <div class="card-back-content">
-                </div>
-              </div>
-              <div class="card-content-embed hidden">
-                <div class="card-back-content">
-                  <div class="embed-content">
-                    <div class="embed-divider"></div>
-                    <div class="embed-switch-container">
-                      <div class="embed-label">Podatki naj se vedno osvežujejo</div>
-                      <div class="embed-switch-big-box">
-                        <div class="embed-switch-box">
-                          <div class="embed-switch">
-                            <div class="embed-switches">
-                              <div class="leftswitch">DA</div>
-                              <div class="rightswitch">NE</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="embed-switch-ball"></div>
-                      </div>
-                    </div>
-                    <div class="embed-divider"></div>
-                    <div class="embed-script">
-                      <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/s/seznam-sej/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></textarea>
-                      <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-content-share hidden">
-                <div class="card-back-content card-content">
-                  <div class="share-content">
-                    <label for="share-url">Neposredna povezava do kartice</label>
-                    <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
-                    <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
-                  </div>
-                </div>
-              </div>
+                <% }) %>
             </div>
-            <div class="card-footer" data-shortened="true">
-              <div class="card-circle-button card-share" data-back="share"></div>
-              <div class="card-circle-button card-embed" data-back="embed"></div>
-              <div class="card-circle-button card-info" data-back="info">i</div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <script>
-  new Vue({
-    el: '#session-list-generator-container',
-    components: ['SearchDropdown'],
-    data: {
-      sessions: [],
-      workingBodies: [],
-      slugs: null,
-      filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
-      currentSort: 'name',
-      currentSortOrder: 'asc',
-      currentFilters: [],
-      currentWorkingBodies: [],
-      onlyLatest: false,
-      shortenedCardUrl: '',
-    },
-    computed: {
-      columns: () => [
-        { id: 'name', label: 'Ime', additionalClass: 'wider' },
-        { id: 'date', label: 'Začetek' },
-        { id: 'updated', label: 'Sprememba', additionalClass: 'optional' },
-        { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' }
-      ],
-      currentAnalysisData: function() {
-        var that = this,
-            currentAnalysis
-
-        this.analyses.forEach(function(analysis) {
-          if (analysis.id === that.currentAnalysis) {
-            currentAnalysis = analysis
-          }
-        })
-
-        return currentAnalysis
-      },
-      currentWorkingBodies: function() {
-        return this.workingBodies
-          .filter(function(workingBody) { return workingBody.selected })
-          .map(function(workingBody) { return workingBody.id })
-      },
-      currentWorkingBodyNames: function() {
-        return this.workingBodies
-          .filter(function(workingBody) { return workingBody.selected })
-          .map(function(workingBody) { return workingBody.label })
-      },
-      inputPlaceholder: function() {
-        return this.currentWorkingBodies.length ? 'izbranih delovnih teles: ' + this.currentWorkingBodies.length : 'izberi delovno telo'
-      },
-      processedSessions: function() {
-        var that = this
-
-        var sortedAndFiltered = this.sessions
-          .filter(function(session) {
-            if (that.currentFilters.length === 0) {
-              return true
-            }
-
-            if (that.currentFilters.indexOf('Seje DZ') > -1 && session.org.id === 95) {
-              return true
-            }
-            else if (that.currentFilters.indexOf('Seje kolegija predsednika DZ') > -1 && session.org.id === 9) {
-              return true
-            }
-            else if (that.currentFilters.indexOf('Seje delovnih teles') > -1) {
-              if (that.currentWorkingBodies.length === 0) {
-                return that.organisationIsWorkingBody(session.org.id)
-              }
-              else {
-                return that.currentWorkingBodies.indexOf(session.org.id) > -1
-              }
-            }
-
-            return false
-          })
-
-          if (this.onlyLatest) {
-            sortedAndFiltered = sortedAndFiltered.sort(function(b, a) {
-              return a.date_ts < b.date_ts ? -1 : (a.date_ts > b.date_ts ? 1 : 0)
-            }).slice(0, 5)
-          }
-
-          sortedAndFiltered = sortedAndFiltered.sort(function(sessionA, sessionB) {
-            switch (that.currentSort) {
-              case 'name':
-                var a = sessionA.name
-                var b = sessionB.name
-                return a.localeCompare(b, 'sl')
-              case 'date':
-                var a = sessionA.date_ts
-                var b = sessionB.date_ts
-                return a < b ? -1 : (a > b ? 1 : 0)
-              case 'updated':
-                var a = sessionA.updated_at_ts
-                var b = sessionB.updated_at_ts
-                return a < b ? -1 : (a > b ? 1 : 0)
-              case 'workingBody':
-                var a = sessionA.org.name
-                var b = sessionB.org.name
-                return a.localeCompare(b, 'sl')
-              default:
-                break
-            }
-          })
-
-        if (this.currentSortOrder === 'desc') {
-          sortedAndFiltered.reverse()
-        }
-
-        return sortedAndFiltered
-      },
-      generatedCardUrl: function() {
-        var params = {}
-        if (this.currentFilters.length > 0) {
-          params.filters = this.currentFilters
-        }
-        if (this.currentWorkingBodies.length > 0) {
-          params.workingBodies = this.currentWorkingBodies
-        }
-        if (this.onlyLatest) {
-          params.onlyLatest = true
-        }
-
-        return 'https://glej.parlameter.si/s/seznam-sej/' +
-          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/s/getSessionsList') +
-          (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
-      }
-    },
-    created: function() {
-      var that = this
-
-      $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
-        that.slugs = response
-      })
-      $.getJSON('https://analize.parlameter.si/v1/s/getWorkingBodies/', function(response) {
-        that.workingBodies = response.map(function(workingBody) {
-          return {
-            id: workingBody.id,
-            label: workingBody.name,
-            selected: false
-          }
-        })
-      })
-      $.getJSON('https://analize.parlameter.si/v1/s/getSessionsList/', function(response) {
-        that.sessions = response.sessions
-      })
-    },
-    methods: {
-      formatDate: function(isoDate) {
-        var date = new Date(isoDate);
-        return date.getDate() + '. ' + (date.getMonth() + 1) + '. ' + date.getFullYear();
-      },
-      organisationIsWorkingBody: function(organisationId) {
-        return [9, 95].indexOf(organisationId) === -1
-      },
-      selectSort: function(sortId) {
-        if (this.currentSort === sortId) {
-          this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc'
-        }
-        else {
-          this.currentSort = sortId
-          this.currentSortOrder = 'asc'
-        }
-
-        this.measurePiwik('', sortId, this.currentSortOrder);
-      },
-      selectFilter: function(filter) {
-        if (this.currentFilters.indexOf(filter) > -1) {
-          this.currentFilters.splice(this.currentFilters.indexOf(filter), 1)
-        }
-        else {
-          this.currentFilters.push(filter)
-        }
-
-        this.measurePiwik(filter, '', '');
-      },
-      getSessionUrl: function(sessionId) {
-        return this.slugs ? this.slugs.base + this.slugs.sessionLink.glasovanja + sessionId : ''
-      },
-      getWorkingBodyUrl: function(workingBodyId) {
-        return 'https://glej.parlameter.si/wb/getWorkingBodies/' + workingBodyId + '?frame=true&altHeader=true'
-      },
-      shortenUrl: function(url) {
-        var that = this
-        $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), function(response) {
-            that.shortenedCardUrl = response
-            that.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
-        });
-      },
-      measurePiwik: function (filter, sort, order) {
-        if (typeof measure == 'function') {
-          if (sort !== '') {
-            measure('s', 'session-sort', sort + ' ' + order, '');
-          }
-          else if (filter !== '') {
-            measure('s', 'session-filter', filter, '');
-          }
-        }
-      }
-    },
-    watch: {
-      generatedCardUrl: function(newValue) {
-        this.shortenUrl(newValue)
-      },
-      currentFilters: function(newValue, oldValue) {
-        if (newValue.indexOf('Seje delovnih teles') === -1) {
-          this.workingBodies.map(function(wb) {
-            wb.selected = false;
-            return wb;
-          });
-        }
-      },
-      currentWorkingBodies: function(newValue, oldValue) {
-        if (newValue.length !== 0) {
-          if (this.currentFilters.indexOf('Seje delovnih teles') === -1) {
-            this.currentFilters.push('Seje delovnih teles');
-          }
-        }
-      }
-    }
-  })
-
-  makeEmbedSwitch()
-  activateCopyButton()
-  addCardRippling()
-
-  </script>
-
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="session-list">
+                <% sesData.sesData.forEach(function(session) { %>
+                    <a href="/seja/<%- sesData.type != 2 ? 'glasovanja' : 'transkript' %>/<%- session.id %>" class="session closed action-t-<%- sesData.type %>" data-id="<%- session.id %>">
+                        <div class="session-name"><%- session.name %></div>
+                        <div class="session-date"><%- session.date %></div>
+                    </a>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
 
 <% include ../partials/footer.ejs %>
