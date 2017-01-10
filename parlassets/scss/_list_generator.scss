@@ -110,28 +110,28 @@
 .party-list-generator {
   @extend %list-generator;
 
-  @include respond-to(limbo) {
-    .analyses {
-      flex-wrap: wrap;
-      margin-bottom: 11px;
+  .analyses {
+    flex-wrap: wrap;
+    margin-bottom: 11px;
 
-      li {
-        flex: 1;
-        margin-bottom: 3px;
-        min-width: 19%;
-        &:nth-child(5) { margin-right: 0; }
-      }
+    li {
+      flex: 1;
+      margin-bottom: 3px;
+      min-width: 19%;
+      &:nth-child(5) { margin-right: 0; }
     }
   }
 }
 
 .member-list-generator {
   @extend %list-generator;
-  
-  .parties li,
-  .button-filters li {
-    @include respond-to(mobile) {
-      width: calc(25% - 2.25px);
+
+  @include respond-to(limbo) {
+    .parties li,
+    .button-filters li {
+      @include respond-to(mobile) {
+        width: calc(25% - 2.25px);
+      }
     }
   }
 
