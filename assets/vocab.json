@@ -78,5 +78,9 @@
     "izbrani": {
         "m": "izbrani",
         "f": "izbrana"
+    },
+    "izbrani1": {
+        "m": "izbranega",
+        "f": "izbrane"
     }
 }
