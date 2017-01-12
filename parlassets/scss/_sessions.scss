@@ -123,7 +123,6 @@
 .session-list {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row !important; // TODO this is a hack!
   .session {
     background-color: $funblue;
     box-shadow: 0 1.5px 4px rgba(#000, 0.24), 0 1.5px 6px rgba(#000, 0.12);
