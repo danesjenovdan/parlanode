@@ -57,10 +57,10 @@
                                         <label for="kdz">Seje Kolegija predsednika Državnega zbora</label>
                                     </div>
                                     <div class="searchfilter-checkbox">
-                                        <input id="dt" type="checkbox" @click="handleCheckbox" :checked="dtchecked" class="checkbox with-input">
+                                        <input id="dt" type="checkbox" @click="handleCheckbox" v-bind:disabled="dtdisabled" :checked="dtchecked" class="checkbox with-input">
                                         <label for="dt">&nbsp;</label>
                                         <div class="searchfilter-input checkbox-searchfilter">
-                                            <search-dropdown :items="dtpodatki" :alphabetise="false" @click="handleCheckbox" :placeholder="dtinputPlaceholder"></search-dropdown>
+                                            <search-dropdown v-bind:class="{ disabled: dtdisabled }" :items="dtpodatki" :alphabetise="false" @click="handleCheckbox" :placeholder="dtinputPlaceholder"></search-dropdown>
                                         </div>
                                     </div>
                                 </div>
@@ -174,6 +174,18 @@
         position: relative;
         top: 50%;
         margin-top: -50px;
+    }
+
+    .search-dropdown.disabled:before {
+        content: '';
+        position: absolute;
+        display: block;
+
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        background-color: rgba(255, 255, 255, 0.5);
     }
 </style>
 
@@ -322,6 +334,9 @@ function capitalise(string) {
           .map(function(tag) { return tag.id });
       },
       dtinputPlaceholder: function() {
+          if (this.dtdisabled) {
+              return 'Ni delovnih teles.';
+          }
           if (this.dtpodatki[0]) {
               if (this.dtpodatki[0].id === 'loading') {
                 return 'Nalagamo delovna telesa ...'
@@ -504,6 +519,9 @@ function capitalise(string) {
             if (query.council) {
                 self.council = true;
             }
+            if (response.organizations.length === 0) {
+                self.dtdisabled = true;
+            }
 
             window.setTimeout(function() {self.first_load = false;}, 1000);
         });
@@ -519,6 +537,7 @@ function capitalise(string) {
         fetching: true,
         dzDisabled: false,
         kolegijDisabled: false,
+        dtdisabled: false,
         dz: false,
         council: false
       }
