@@ -29,6 +29,10 @@ angular.module('parlameterCardCms').factory('cardService',function($http, NET) {
             value:'seznam_poslanskih_skupin'
           },
           {
+            name:'Seznam sej',
+            value:'seznam_sej'
+          },
+          {
             name:'Poslanec',
             value:'poslanec'
           },
@@ -73,6 +77,10 @@ angular.module('parlameterCardCms').factory('cardService',function($http, NET) {
           {
             name:'Seznam poslanskih skupin',
             value:'seznam_poslanskih_skupin'
+          },
+          {
+            name:'Seznam sej',
+            value:'seznam_sej'
           },
           {
             name:'Poslanec',
