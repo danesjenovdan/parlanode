@@ -111,5 +111,9 @@
   @include column-list(72px, 39px, 26px, 37px, 20px, 6px);
   .item {
     padding: 20px 0;
+
+    .column.image img {
+      height: 30px;
+    }
   }
 }
