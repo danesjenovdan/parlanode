@@ -113,6 +113,11 @@
 
 .party-list-generator {
   @extend %list-generator;
+  li {
+    @include respond-to(limbo) {
+      font-size: 10px;
+    }
+  }
 }
 
 .member-list-generator {
