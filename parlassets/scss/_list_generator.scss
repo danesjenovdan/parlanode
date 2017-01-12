@@ -25,13 +25,17 @@
       color: $white;
       cursor: pointer;
       display: flex;
-      font-size: 12px;
+      font-size: 10px;
       height: 61px;
       line-height: 16px;
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
       background-color: #227497;
+
+      @include respond-to(limbo) {
+        font-size: 12px;
+      }
 
       &.selected {
         background-color: $funblue;
