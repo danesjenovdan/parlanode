@@ -70,5 +70,9 @@
     "postaviti": {
         "m": "postavil",
         "f": "postavila"
+    },
+    "moral": {
+        "m": "moral",
+        "f": "morala"
     }
 }
