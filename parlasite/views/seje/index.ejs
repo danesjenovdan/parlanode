@@ -119,8 +119,8 @@
       workingBodies: [],
       slugs: null,
       filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
-      currentSort: 'name',
-      currentSortOrder: 'asc',
+      currentSort: 'date',
+      currentSortOrder: 'desc',
       currentFilters: [],
       currentWorkingBodies: [],
       onlyLatest: false,
@@ -196,7 +196,7 @@
               case 'name':
                 var a = sessionA.name
                 var b = sessionB.name
-                return a.localeCompare(b, 'sl')
+                return alphanumCase(a, b);
               case 'date':
                 var a = sessionA.date_ts
                 var b = sessionB.date_ts
@@ -286,7 +286,7 @@
         this.measurePiwik(filter, '', '');
       },
       getSessionUrl: function(sessionId) {
-        return this.slugs ? this.slugs.base + this.slugs.sessionLink.glasovanja + sessionId : ''
+        return this.slugs ? this.slugs.base + this.slugs.sessionLink.transkript + sessionId : ''
       },
       getWorkingBodyUrl: function(workingBodyId) {
         return 'https://glej.parlameter.si/wb/getWorkingBodies/' + workingBodyId + '?frame=true&altHeader=true'
