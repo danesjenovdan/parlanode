@@ -157,7 +157,7 @@
 .session-list-generator {
   @extend %list-generator;
 
-
+  margin-top: 14px;
 
   .button-filters li {
     @include respond-to(mobile) {
