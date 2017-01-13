@@ -196,7 +196,7 @@
               case 'name':
                 var a = sessionA.name
                 var b = sessionB.name
-                return a.localeCompare(b, 'sl')
+                return alphanumCase(a, b);
               case 'date':
                 var a = sessionA.date_ts
                 var b = sessionB.date_ts
