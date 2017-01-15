@@ -10,6 +10,8 @@ const cheerio = require('cheerio');
 const _ = require('lodash');
 const webshot = require('webshot');
 const Pageres = require('pageres');
+global.Vue = require('vue');
+const renderer = require('vue-server-renderer').createRenderer()
 /**
  * PUT rest method
  * @param req
@@ -464,8 +466,19 @@ exports.render = function (req, res) {
                * Rendering ejs from the stored cardDocument (from CMS)
                * @type {String}
                */
-              var html = ejs.render(cardDoc.ejs, cardData);
 
+               const testCard = require('../../../cards/card.js')
+               const testCardContents = fs.readFileSync('cards/card.js')
+
+          // var html = ejs.render(cardDoc.ejs, cardData);
+          renderer.renderToString(
+            testCard(cardData),
+            function (error, html) {
+              html = `<script src="https://unpkg.com/vue/dist/vue.js"></script>
+                     ${html}
+                     <script>window.__INITIAL_STATE__ = ${JSON.stringify(cardData)}</script>
+                     <script>${testCardContents}</script>
+                     <script>app.$mount('#app')</script>`
               if (altHeader) {
 
                 var headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
@@ -586,6 +599,7 @@ exports.render = function (req, res) {
                 }
               });
 
+            })
 
             } catch (err) {
               console.log('Err:4 ', err);

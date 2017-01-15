@@ -37,6 +37,8 @@
     "sequelize": "^3.25.0",
     "serve-static": "^1.10.2",
     "supertest": "^2.0.1",
+    "vue": "^2.1.8",
+    "vue-server-renderer": "^2.1.8",
     "webshot": "^0.18.0"
   }
 }
