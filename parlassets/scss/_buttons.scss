@@ -6,6 +6,9 @@
 .rayen:hover {
     background-color: #227497 !important;
 }
+.rayen:focus {
+    text-decoration: none;
+}
 
 .rayen::before {
   content: attr(data-text);
