@@ -91,10 +91,9 @@
       
       &:focus {
           border-color: #fe5e41;
-          
-          .btn {
-              border-color: #fe5e41;
-          }
+      }
+      &:focus ~ .btn {
+          border-color: #fe5e41;
       }
     }
     .btn {
