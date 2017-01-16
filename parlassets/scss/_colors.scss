@@ -72,6 +72,7 @@ $option-colors: (
 }
 
 .funblue-light-hover {
+  transition: background 0.2s;
   &:hover {
       background: #e1f6ff;
       text-decoration: none;

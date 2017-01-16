@@ -88,6 +88,14 @@
       height: 50px;
       border-color: $grey-medium;
       border-right: none;
+      
+      &:focus {
+          border-color: #fe5e41;
+          
+          .btn {
+              border-color: #fe5e41;
+          }
+      }
     }
     .btn {
       border-color: $grey-medium;
