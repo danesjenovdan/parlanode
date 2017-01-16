@@ -1,0 +1,182 @@
+.input-group-hoshi {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 0;
+  max-width: 400px;
+  width: 100%;
+  vertical-align: top;
+}
+
+.input-field-hoshi {
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  width: 60%;
+  border: none;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #aaa;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-appearance: none;
+  /* for box shadows to show on iOS */
+}
+
+.input-field-hoshi:focus {
+  outline: none;
+}
+
+.input-label-hoshi {
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  width: 40%;
+  color: #6a7989;
+  font-weight: bold;
+  font-size: 70.25%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input-label-content-hoshi {
+  position: relative;
+  display: block;
+  padding: 1.6em 0;
+  width: 100%;
+}
+
+.input-group-hoshi {
+  overflow: hidden;
+}
+
+.input-field-hoshi {
+  padding: 0.85em 0.15em;
+  width: 100%;
+  background: transparent;
+  color: #595F6E;
+  border-bottom: none !important;
+  height: 55px;
+}
+
+.input-label-hoshi {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  height: calc(100% - 1em);
+  text-align: left;
+  pointer-events: none;
+}
+
+.input-label-content-hoshi {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.input-label-hoshi::before,
+.input-label-hoshi::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 10px);
+  border-bottom: 1px solid;
+}
+
+.input-label-hoshi::after {
+  margin-top: 2px;
+  border-bottom: 4px solid #009cdd;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input_label-hoshi::after {
+  border-color: hsl(200, 100%, 50%);
+}
+
+.input-field-hoshi:focus+.input-label-hoshi::after,
+.input-filled .input-label-hoshi::after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.input-field-hoshi:focus+.input-label-hoshi .input-label-content-hoshi,
+.input-filled .input-label-content-hoshi {
+  -webkit-animation: anim-1 0.3s forwards;
+  animation: anim-1 0.3s forwards;
+}
+
+@-webkit-keyframes anim-1 {
+  50% {
+    opacity: 0;
+    -webkit-transform: translate3d(1em, 0, 0);
+    transform: translate3d(1em, 0, 0);
+  }
+  51% {
+    opacity: 0;
+    -webkit-transform: translate3d(-1em, -40%, 0);
+    transform: translate3d(-1em, -40%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -40%, 0);
+    transform: translate3d(0, -40%, 0);
+  }
+}
+
+@keyframes anim-1 {
+  50% {
+    opacity: 0;
+    -webkit-transform: translate3d(1em, 0, 0);
+    transform: translate3d(1em, 0, 0);
+  }
+  51% {
+    opacity: 0;
+    -webkit-transform: translate3d(-1em, -40%, 0);
+    transform: translate3d(-1em, -40%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -40%, 0);
+    transform: translate3d(0, -40%, 0);
+  }
+}
+
+.input-group-hoshi button {
+  position: absolute;
+  right: 0;
+  height: 55px;
+  border-bottom: none !important;
+  z-index: 10;
+}
+
+.input-field-hoshi.error {
+  border: none !important;
+}
+
+.input-field-hoshi~label.input-label-error-hoshi {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  transition: all 0.3s;
+}
+
+.input-field-hoshi.error~label.input-label-error-hoshi {
+  color: red;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+}
