@@ -93,6 +93,7 @@
           border-color: #fe5e41;
       }
       &:focus ~ .input-group-btn .btn {
+          transition: all 0.15s;
           border-color: #fe5e41;
       }
     }
