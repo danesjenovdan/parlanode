@@ -134,11 +134,11 @@ $(function () {
             'source': sessionsearch_token,
             'templates': {
                 'empty': function (val) {
-                    return '<div class="session-ac-search" data-query="' + val.query + '"><font><span class="glyphicon glyphicon-search"></span> Išči po transkriptih sej: ' + val.query + '</font></div>';
+                    return '<div class="session-ac-search" data-query="' + val.query + '"><font><span class="glyphicon glyphicon-search"></span> Išči po sejah: ' + val.query + '</font></div>';
                 },
 
                 'suggestion': function (val) {
-                    return '<div class="session-ac-search" data-query="' + val.query + '"><font><span class="glyphicon glyphicon-search"></span> Išči po transkriptih sej: ' + val.query + '</font></div>';
+                    return '<div class="session-ac-search" data-query="' + val.query + '"><font><span class="glyphicon glyphicon-search"></span> Išči po sejah: ' + val.query + '</font></div>';
                 },
                 'header': ''
             }
