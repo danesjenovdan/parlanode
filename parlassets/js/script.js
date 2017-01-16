@@ -676,10 +676,12 @@ function alphanumCase(a, b) {
 
 
 // card header gets shadow on scroll if it has class shadowhunter
-$('.shadowhunter').next().children('.stickinme').on('scroll', function (e) {
-    if ($(e.currentTarget).offset().top > $(e.currentTarget).children('.date-list').offset().top) {
-        $(e.currentTarget).parents('.card-content').prev().addClass('shadow');
-    } else {
-        $(e.currentTarget).parents('.card-content').prev().removeClass('shadow');
-    }
+$(document).ready(function() {
+    $('.shadowhunter').next().children('.stickinme').on('scroll', function (e) {
+        if ($(e.currentTarget).offset().top > $(e.currentTarget).children('.date-list').offset().top) {
+            $(e.currentTarget).parents('.card-content').prev().addClass('shadow');
+        } else {
+            $(e.currentTarget).parents('.card-content').prev().removeClass('shadow');
+        }
+    });
 });
