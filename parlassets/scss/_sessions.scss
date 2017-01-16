@@ -92,7 +92,7 @@
       &:focus {
           border-color: #fe5e41;
       }
-      &:focus ~ .btn {
+      &:focus ~ .input-group-btn .btn {
           border-color: #fe5e41;
       }
     }
