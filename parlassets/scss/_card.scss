@@ -25,6 +25,10 @@
     flex-wrap: nowrap;
     align-items: stretch;
 
+    &.shadow {
+        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    }
+
     .card-header-border {
       @include gradient('vertical', 'blue');
       display: flex;
