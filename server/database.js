@@ -8,8 +8,9 @@ exports.connect = function(cb){
 
     return new Promise(function(resolve, reject){
 
-        mongoose.connect('mongodb://localhost/'+CFG.db.name);
-        //mongoose.connect(CFG.db.url+CFG.db.name);
+        //mongoose.connect('mongodb://localhost/'+CFG.db.name);
+        console.log(`| MONGO | Connecting to ${CFG.db.url+CFG.db.name}`);
+        mongoose.connect(CFG.db.url+CFG.db.name);
 
         mongoose.connection.on('error', function(err){
 
