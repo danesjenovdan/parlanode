@@ -8,6 +8,12 @@
     </style>
 <% } %>
 
+<style>
+.rayen:focus {
+    text-decoration: none;
+}
+</style>
+
 <div class="member-container">
     <div class="row header text-center">
         <div class="col-lg-12">
@@ -25,13 +31,13 @@
             <div class="member-container-menu">
                 <ul class="clearfix">
                     <li>
-                        <a href="/p/<%- slug %>/pregled">Pregled</a>
+                        <a href="/p/<%- slug %>/pregled" class="rayen" data-text="Pregled"><span>Pregled</span></a>
                     </li>
                     <li>
-                        <a href="/p/<%- slug %>/glasovanja" class="active">Glasovanja</a>
+                        <a href="/p/<%- slug %>/glasovanja" class="active rayen" data-text="Glasovanja"><span>Glasovanja</span></a>
                     </li>
                     <li>
-                        <a href="/p/<%- slug %>/govori">Govori</a>
+                        <a href="/p/<%- slug %>/govori" class="rayen" data-text="Govori"><span>Govori</span></a>
                     </li>
                 </ul>
             </div>
