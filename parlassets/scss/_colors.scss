@@ -1,4 +1,4 @@
-$white: #ffffff;
+$white: #fff;
 $grey: #f0f0f0;
 $grey-medium: #c8c8c8;
 $darkgrey: #dbdbdb;
@@ -8,8 +8,8 @@ $sadblue-light: #8cb8cb;
 $funblue: #009cdd;
 $funblue-light: #d9e7ed;
 $fontblue: #00628c;
-$ignoreblue: #003B54;
-$noblue: #99E1FF;
+$ignoreblue: #003b54;
+$noblue: #99e1ff;
 $red: #ff5e41;
 $green: #7ae7bf;
 $border-light : #f0f0f0;
@@ -43,10 +43,6 @@ $option-colors: (
   ni: $noblue
 );
 
-// .funblue {
-//   background: $funblue;
-// }
-//
 @each $party, $color in $party-colors {
   .#{$party}-background { background: $color; }
 }
@@ -64,7 +60,10 @@ $option-colors: (
 }
 
 @each $party, $color in $party-colors {
-  .#{$party}-hover:hover { background: $color; color: #ffffff; }
+  .#{$party}-hover:hover {
+    background: $color;
+    color: $white;
+  }
 }
 
 @each $option, $color in $option-colors {
@@ -73,12 +72,11 @@ $option-colors: (
 
 .funblue-light-hover {
   transition: background 0.2s;
+
   &:hover {
-      background: #e1f6ff;
-      text-decoration: none;
+    background: #e1f6ff;
+    text-decoration: none;
   }
 }
 
-.inactive{
-  filter:grayscale(100%);
-}
+.inactive { filter: grayscale(100%); }
