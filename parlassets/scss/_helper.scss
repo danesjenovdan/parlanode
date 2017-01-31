@@ -202,7 +202,7 @@ $cdn_home_icon: 'https://cdn.parlameter.si/v1/parlassets/icons/';
   }
 }
 
-[v-cloak] { display: none; }
+[v-cloak] { display: none !important; }
 
 .no-results {
   font-size: 16px;
