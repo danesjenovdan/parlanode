@@ -27,8 +27,8 @@
     }
   }
 
-  @each $vote, $color in $vote-colors {
-    &.#{$vote} {
+  @each $option, $color in $option-colors {
+    &.#{$option} {
       border-bottom-color: $color;
 
       &.selected {
