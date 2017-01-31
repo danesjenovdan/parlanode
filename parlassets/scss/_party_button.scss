@@ -26,4 +26,14 @@
       }
     }
   }
+
+  @each $vote, $color in $vote-colors {
+    &.#{$vote} {
+      border-bottom-color: $color;
+
+      &.selected {
+        background-color: $color;
+      }
+    }
+  }
 }
