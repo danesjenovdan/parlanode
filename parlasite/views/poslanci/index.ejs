@@ -83,7 +83,10 @@
                       <template v-else>{{ member.person.party.acronym }}</template>
                     </div>
                     <div class="column district">{{ member.person.formattedDistrict }}</div>
-                    <div v-if="currentAnalysis !== 'alphabetical'" class="column">{{ getFormattedAnalysisValue(member) }}</div>
+                    <template v-if="currentAnalysis !== 'alphabetical'">
+                      <div class="column">{{ getFormattedAnalysisValue(member) }}</div>
+                      <div class="column">{{ getFormattedChangeValue(member) }}</div>
+                    </template>
                   </li>
                 </ul>
               </div>
@@ -261,7 +264,8 @@
         ]
 
         if (this.currentAnalysis !== 'alphabetical') {
-          columns.push({ id: 'analysis', label: 'Analiza' })
+          columns.push({ id: 'analysis', label: 'Analiza' });
+          columns.push({ id: 'change', label: 'Sprememba' });
         }
 
         return columns
@@ -332,9 +336,13 @@
           })
           .sort(function(memberA, memberB) {
             switch (that.currentSort) {
+              case 'change':
+                var a = memberA.results[that.currentAnalysis].diff
+                var b = memberB.results[that.currentAnalysis].diff
+                return a < b ? -1 : (a > b ? 1 : 0)
               case 'analysis':
-                var a = memberA.results[that.currentAnalysis]
-                var b = memberB.results[that.currentAnalysis]
+                var a = memberA.results[that.currentAnalysis].score
+                var b = memberB.results[that.currentAnalysis].score
                 return a < b ? -1 : (a > b ? 1 : 0)
               case 'name':
                 var a = memberA.person.name
@@ -388,7 +396,8 @@
           name: 'abecedi',
           district: 'okrajih',
           party: 'poslanskih skupinah',
-          analysis: 'rezultatu analize ' + this.currentAnalysisData.label
+          analysis: 'rezultatu analize ' + this.currentAnalysisData.label,
+          change: 'aktualni spremembi v rezultatu analize ' + this.currentAnalysisData.label
         }
         var secondLine = 'Seznam je sortiran po ' + sortMap[this.currentSort] + '.'
 
@@ -421,14 +430,14 @@
       selectAnalysis: function(analysisId) {
         this.currentAnalysis = analysisId
 
-        if (this.currentAnalysis === 'alphabetical' && this.currentSort === 'analysis') {
+        if (this.currentAnalysis === 'alphabetical' && ['analysis', 'change'].indexOf(this.currentSort) > -1) {
           this.selectSort('name')
         }
         else {
           this.currentSort = 'analysis'
           this.currentSortOrder = 'desc'
         }
-          this.measurePiwik(analysisId, '', '', '');
+        this.measurePiwik(analysisId, '', '', '');
       },
       selectSort: function(sortId) {
         if (this.currentSort === sortId) {
@@ -438,7 +447,7 @@
           this.currentSort = sortId
           this.currentSortOrder = 'asc'
         }
-          this.measurePiwik('', '', sortId, this.currentSortOrder);
+        this.measurePiwik('', '', sortId, this.currentSortOrder);
       },
       selectParty: function(partyId) {
         if (this.currentParties.indexOf(partyId) > -1) {
@@ -447,10 +456,10 @@
         else {
           this.currentParties.push(partyId)
         }
-          this.measurePiwik('', partyId, '', '');
+        this.measurePiwik('', partyId, '', '');
       },
       getFormattedAnalysisValue: function(member) {
-        var value = member.results[this.currentAnalysis]
+        var value = member.results[this.currentAnalysis].score
 
         if (value === null) { return 'Ni dovolj podatkov' }
 
@@ -461,6 +470,13 @@
         if (this.currentAnalysisData.unit === 'percent') { value += '%' }
 
         return value
+      },
+      getFormattedChangeValue: function(member) {
+        var change = parseInt(member.results[this.currentAnalysis].diff);
+        var number = Math.abs(change);
+        var prefix = change < 0 ? '- ' : (change > 0 ? '+ ' : '');
+
+        return prefix + number;
       },
       getMemberUrl: function(memberId) {
         return this.slugs
@@ -506,6 +522,6 @@
   activateCopyButton()
   addCardRippling()
 
-  </script>
+</script>
 
 <% include ../partials/footer.ejs %>
