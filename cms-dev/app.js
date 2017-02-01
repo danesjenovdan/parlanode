@@ -75,7 +75,7 @@ angular.module('parlameterCardCms').config(function(
     $urlRouterProvider.otherwise('/cards');
 
 })
-    .constant('NET',{ API_URL:'https://glej.parlameter.si/api' });
+    .constant('NET',{ API_URL:'https://parlaglej.muzikasuper.si/api' });
     //.constant('NET',{ API_URL:'http://localhost:3000/api' });
 
 angular.module('parlameterCardCms').run(function($rootScope) {
