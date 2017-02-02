@@ -383,7 +383,7 @@
         }
 
         return 'https://glej.parlameter.si/p/seznam-poslancev/' +
-          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembers') +
+          '?customUrl=' + encodeURIComponent('https://parlalize2.muzikasuper.si/v1/p/getListOfMembersTickers/') +
           (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
       },
       infoText: function() {
@@ -413,7 +413,7 @@
       $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
         that.slugs = response
       })
-      $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembers/', function(response) {
+      $.getJSON('https://parlalize2.muzikasuper.si/v1/p/getListOfMembersTickers/', function(response) {
         that.districts = response.districts.map(function(district) {
           var id = Object.keys(district)[0]
           return {
