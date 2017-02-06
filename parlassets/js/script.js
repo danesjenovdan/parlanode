@@ -685,14 +685,3 @@ $(document).ready(function() {
         }
     });
 });
-if ($('.thing-list').length > 0) {
-    $(document).ready(function() {
-        $('.shadowhunter').next().children('.stickinme').on('scroll', function (e) {
-            if ($(e.currentTarget).offset().top > $(e.currentTarget).children('.thing-list').offset().top) {
-                $(e.currentTarget).parents('.card-content').prev().addClass('shadow');
-            } else {
-                $(e.currentTarget).parents('.card-content').prev().removeClass('shadow');
-            }
-        });
-    });
-}
