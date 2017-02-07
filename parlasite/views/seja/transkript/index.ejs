@@ -26,18 +26,18 @@
             <div class="group-container-menu">
                 <ul class="clearfix">
                     <li>
-                        <a href="/seja/glasovanja/<%- params.id %>" class="rayen" data-text="Glasovanja">
-                            <span>Glasovanja</span>
+                        <a href="/seja/glasovanja/<%- params.id %>">
+                            Glasovanja
                         </a>
                     </li>
                     <li>
-                        <a href="/seja/transkript/<%- params.id %>" class="active rayen" data-text="Transkript">
-                            <span>Transkript</span>
+                        <a href="/seja/transkript/<%- params.id %>" class="active">
+                            Transkript
                         </a>
                     </li>
                     <li>
-                        <a href="/seja/prisotnost/<%- params.id %>" class="rayen" data-text="Prisotnost">
-                            <span>Prisotnost</span>
+                        <a href="/seja/prisotnost/<%- params.id %>">
+                            Prisotnost
                         </a>
                     </li>
                 </ul>
@@ -87,11 +87,13 @@ function checkIfBottom(event) {
 }
 function getSpeech(i, limit, results) {
     var url_base = 'https://glej.parlameter.si/s/speech/'
-
-    if (i === limit - 1) {
-        $('.here-are-the-speeches').append('<div id="ss' + String(results[i]) + '" class="col-xs-12 fetch-trigger"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
-    } else {
-        $('.here-are-the-speeches').append('<div id="ss' + String(results[i]) + '" class="col-xs-12"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
+    
+    if (String(results[i]) !== 'undefined') {
+        if (i === limit - 1) {
+            $('.here-are-the-speeches').append('<div id="ss' + String(results[i]) + '" class="col-xs-12 fetch-trigger"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
+        } else {
+            $('.here-are-the-speeches').append('<div id="ss' + String(results[i]) + '" class="col-xs-12"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
+        }
     }
 
     var myid = 'ss' + String(results[i]);
