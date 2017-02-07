@@ -2,8 +2,11 @@
 <html> <!-- removeme -->
 
 <head> <!-- removeme -->
+    <% var contextUrl = urlsData.base %>
     <% if (cardData.type == 'poslanec') { %>
-        <% if (cardData.name == 'Besede, ki ga zaznamujejo' && data.person.gender == 'f') { %>
+        <% if (cardData.name == 'Besede, ki ga zaznamujejo' && data.person.gender == 'f') {
+            contextUrl = contextUrl + '/poslanec' + urlsData.person[data.person.id] + urlsData.personLink.govori;
+        %>
             <title>Besede, ki jo zaznamujejo - <%= data.person.name %></title>
             <meta name="twitter:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
             <meta property="og:title" content="Besede, ki jo zaznamujejo - <%= data.person.name %>">
@@ -293,7 +296,7 @@
         </div>
         <!-- <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <a href="" class="permalink"><span class="funblue-light-hover">Pokaži kartico v kontekstu spletnega mesta parlameter.si &gt;</span></a>
+                <a href="<%= contextUrl %>" class="permalink"><span class="funblue-light-hover">Pokaži kartico v kontekstu spletnega mesta parlameter.si &gt;</span></a>
             </div>
         </div> -->
     </div>

@@ -26,7 +26,8 @@ exports.login = (req, res)=>{
 
               // error on failure
               if (err) {
-                  res.send('Fail', 401);
+                  console.log(err);
+                  res.send(err, 401);
               }
 
               const resultHash = derivedkey.toString('base64');
@@ -43,10 +44,15 @@ exports.login = (req, res)=>{
                   token.save()
                     .then(()=>{
                         res.send({status:1, token:{value:tokenValue, doc:token}});
+                    })
+                    .catch((err) => {
+                      console.log(err);
+                      res.send(err, 401);
                     });
 
               }else{
-                  res.send('Fail', 401);
+                  console.log('Wrong password');
+                  res.send('Wrong password', 401);
               }
 
           });
