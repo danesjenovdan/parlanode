@@ -24,7 +24,7 @@
 
       &.selected,
       &:hover { background-color: $color; }
-      &.selected:hover { background-color: darken($color, 10%); }
+      // &.selected:hover { background-color: darken($color, 10%); }
     }
   }
 }
