@@ -45,21 +45,10 @@ $option-colors: (
 
 @each $party, $color in $party-colors {
   .#{$party}-background { background: $color; }
-}
-
-@each $party, $color in $party-colors {
   .#{$party}-fill { fill: $color; }
-}
-
-@each $party, $color in $party-colors {
   .#{$party}-stroke { stroke: $color; }
-}
-
-@each $party, $color in $party-colors {
   .#{$party}-border { border: 2px solid $color; }
-}
 
-@each $party, $color in $party-colors {
   .#{$party}-hover:hover {
     background: $color;
     color: $white;

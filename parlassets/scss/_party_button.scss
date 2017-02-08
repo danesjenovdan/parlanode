@@ -17,23 +17,13 @@
     color: #fff;
   }
 
-  @each $party, $color in $party-colors {
-    &.#{$party} {
+  @each $name, $color in map-merge($party-colors, $option-colors) {
+    &.#{$name} {
       border-bottom-color: $color;
 
-      &.selected {
-        background-color: $color;
-      }
-    }
-  }
-
-  @each $option, $color in $option-colors {
-    &.#{$option} {
-      border-bottom-color: $color;
-
-      &.selected {
-        background-color: $color;
-      }
+      &.selected,
+      &:hover { background-color: $color; }
+      &.selected:hover { background-color: darken($color, 10%); }
     }
   }
 }
