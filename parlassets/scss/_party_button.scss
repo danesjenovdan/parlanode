@@ -12,8 +12,9 @@
   padding: 8px 5px 0;
   text-align: center;
 
-  &.selected {
-    border-bottom: 1px solid #c8c8c8;
+  &.selected,
+  &:hover {
+    border-bottom: 1px solid #c8c8c8 !important;
     color: #fff;
   }
 
