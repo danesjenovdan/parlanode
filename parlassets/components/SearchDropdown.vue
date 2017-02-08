@@ -11,10 +11,10 @@
       type="text"
       v-model="filter"
       @focus="toggleDropdown(true)"
-      @keydown.enter.prevent="toggleItem(filteredItems[focused].id)"
+      @keydown.enter.prevent="selectItem(filteredItems[focused].id)"
       @keydown.up.prevent="focus(focused - 1, true)"
       @keydown.down.prevent="focus(focused + 1, true)"
-      :placeholder="placeholder">
+      :placeholder="adjustedPlaceholder">
     <ul
       :class="['search-dropdown-options', { visible: this.active }]"
       @mouseleave="focus(-1)">
@@ -26,7 +26,7 @@
         </li>
         <li
           :class="{ selected : item.selected, focused : focused === index }"
-          @click="toggleItem(item.id)"
+          @click="selectItem(item.id)"
           @mouseenter="focus(index)">
           <div class="search-dropdown-label">{{ item.label }}</div>
           <div v-if="item.count">{{ item.count }}</div>
@@ -64,12 +64,14 @@ export default {
           return item;
         })
         .sort((a, b) => {
-          if (this.alphabetise && (Boolean(a.selected) === Boolean(b.selected))) {
-            return a.label.localeCompare(b.label, 'sl');
-          }
+          if (!this.single) {
+            if (this.alphabetise && (Boolean(a.selected) === Boolean(b.selected))) {
+              return a.label.localeCompare(b.label, 'sl');
+            }
 
-          if (a.selected && !b.selected) return -1;
-          else if (!a.selected && b.selected) return 1;
+            if (a.selected && !b.selected) return -1;
+            else if (!a.selected && b.selected) return 1;
+          }
 
           if (a.sortIndex < b.sortIndex) return -1;
           else if (a.sortIndex > b.sortIndex) return 1;
@@ -105,6 +107,14 @@ export default {
         .filter(item => item.selected)
         .map(item => item.id);
     },
+    adjustedPlaceholder() {
+      if (!this.single) {
+        return this.placeholder;
+      }
+
+      const selectedItem = this.filteredItems.filter(item => item.selected)[0];
+      return selectedItem ? selectedItem.label : this.placeholder;
+    },
   },
   directives: {
     clickOutside: {
@@ -130,12 +140,22 @@ export default {
     placeholder: { type: String, required: true },
     groups: { type: Array, required: false },
     alphabetise: { type: Boolean, required: false, default: true },
+    single: { type: Boolean, required: false },
   },
   methods: {
-    toggleItem(selectedItemId) {
+    selectItem(selectedItemId) {
+      if (this.single) {
+        this.clearSelection();
+        this.toggleItem(selectedItemId);
+        this.toggleDropdown(false);
+      } else {
+        this.toggleItem(selectedItemId);
+      }
+    },
+    toggleItem(itemId) {
       let clickedIndex = -1;
       this.items.forEach((item, index) => {
-        if (item.id === selectedItemId) {
+        if (item.id === itemId) {
           clickedIndex = index;
         }
       });
