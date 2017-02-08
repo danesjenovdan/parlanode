@@ -153,15 +153,8 @@ export default {
       }
     },
     toggleItem(itemId) {
-      let clickedIndex = -1;
-      this.items.forEach((item, index) => {
-        if (item.id === itemId) {
-          clickedIndex = index;
-        }
-      });
-      const itemClone = JSON.parse(JSON.stringify(this.items[clickedIndex]));
-      itemClone.selected = !itemClone.selected;
-      this.items.splice(clickedIndex, 1, itemClone);
+      const clickedItem = this.items.filter(item => item.id === itemId)[0];
+      this.$set(clickedItem, 'selected', !clickedItem.selected);
     },
     toggleDropdown(state) {
       if (state === false) {
