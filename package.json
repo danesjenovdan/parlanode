@@ -4,8 +4,8 @@
   "description": "Parlameter frontend server for serving embeds and the page  with cms for managing them",
   "main": "run.js",
   "scripts": {
-    "dev":"NODE_ENV=development supervisor run",
-    "dev-local":"NODE_ENV=dev_local supervisor run",
+    "dev": "NODE_ENV=development supervisor run",
+    "dev-local": "NODE_ENV=dev_local supervisor run",
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js"
   },
@@ -20,12 +20,18 @@
   },
   "homepage": "https://github.com/FranciZ/parlameter-front#readme",
   "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
     "bluebird": "^3.3.1",
     "body-parser": "^1.15.0",
     "chalk": "^1.1.1",
     "cheerio": "^0.22.0",
     "cors": "^2.7.1",
+    "css-loader": "^0.26.1",
     "ejs": "^2.4.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "express-validator": "^2.20.8",
@@ -40,7 +46,13 @@
     "serve-static": "^1.10.2",
     "supertest": "^2.0.1",
     "vue": "^2.1.8",
+    "vue-loader": "^10.3.0",
     "vue-server-renderer": "^2.1.8",
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^2.2.1",
     "webshot": "^0.18.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base"
   }
 }
