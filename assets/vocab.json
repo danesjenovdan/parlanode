@@ -70,5 +70,17 @@
     "postaviti": {
         "m": "postavil",
         "f": "postavila"
+    },
+    "moral": {
+        "m": "moral",
+        "f": "morala"
+    },
+    "izbrani": {
+        "m": "izbrani",
+        "f": "izbrana"
+    },
+    "izbrani1": {
+        "m": "izbranega",
+        "f": "izbrane"
     }
 }

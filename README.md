@@ -32,6 +32,18 @@ grunt build
 
 Copy content of ./cms-dev/dist to ./cms
 
+## Development
+
+#### Requirements
+
+* supervisor `$ npm i supervisor -g` (will auto restart server on code update)
+
+#### Serving
+
+```
+$ npm run dev
+```
+
 ## Deployment
 
 Every merge to master will trigger the webhook that tests and deploys parlanode to production. Success or error messages will be sent to DJND Slack #parladeploy channel.

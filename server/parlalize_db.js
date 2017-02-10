@@ -24,7 +24,8 @@ exports.connect = function(){
         postgresModels.init(sequelize);
       })
       .catch(function (err) {
-          console.log('Error when connecting');
+          console.log(chalk.red('| POSTGRES | Error when connecting to postgres'));
+          throw new Error();
       });
 
 };
