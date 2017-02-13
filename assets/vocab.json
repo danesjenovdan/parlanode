@@ -82,5 +82,13 @@
     "izbrani1": {
         "m": "izbranega",
         "f": "izbrane"
+    },
+    "morati": {
+        "m": "moral",
+        "f": "morala"
+    },
+    "imeti": {
+        "m": "imel",
+        "f": "imela"
     }
 }
