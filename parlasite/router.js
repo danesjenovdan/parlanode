@@ -908,6 +908,34 @@ const routes = [
     pageTitle: 'Pregled - <%- fullName %>',
     cards: [
       {
+        name: 'prisotnostSkoziCas',
+        sourceUrl: '/ps/prisotnost-skozi-cas/:id',
+        resolve: (req, res, route, card) => {
+
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId = psData.psId;
+              let psSlug = psData.psSlug;
+              var pattern = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({id: psId});
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl, {rejectUnauthorized: false})
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+
+        }
+      },
+      {
         name: 'osnovneInformacije',
         sourceUrl: '/ps/osnovne-informacije-poslanska-skupina/:id',
         resolve: (req, res, route, card) => {
