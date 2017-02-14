@@ -226,6 +226,41 @@ const routes = [
         }
       },
       {
+        name: 'prisotnostSkoziCas',
+        sourceUrl: '/p/prisotnost-skozi-cas/:id',
+        resolve: (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              var pattern = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({id: mpId});
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl, {rejectUnauthorized: false})
+                .then((res) => {
+
+                  return Promise.resolve(res.text());
+
+                })
+                .then((body) => {
+
+                  return Promise.resolve(body);
+
+                });
+
+            });
+
+        }
+      },
+      {
         name: 'osnovneInformacije',
         sourceUrl: '/p/osnovne-informacije/:id',
         resolve: (req, res, route, card) => {
