@@ -468,7 +468,7 @@
         return value
       },
       getFormattedChangeValue: function(member) {
-        var change = String(parseFloat(member.results[this.currentAnalysis].diff).toFixed(this.currentAnalysisData.roundingPrecision)).replace('.', ',');
+        var change = parseFloat(member.results[this.currentAnalysis].diff).toFixed(this.currentAnalysisData.roundingPrecision);
         var number = Math.abs(change);
         var prefix = change < 0 ? '-\xa0' : (change > 0 ? '+\xa0' : '');
 
@@ -492,7 +492,7 @@
         });
       },
       round: function(value, precision) {
-        var multiplier = Math.pow(10, precision || 0);
+        var multiplier = Math.pow(10, precision || 0)
         return Math.round(value * multiplier) / multiplier
       },
       measurePiwik: function (analysisId, partyId, sort, order) {
