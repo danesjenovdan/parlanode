@@ -472,7 +472,7 @@
         var number = Math.abs(change);
         var prefix = change < 0 ? '-\xa0' : (change > 0 ? '+\xa0' : '');
 
-        return prefix + number;
+        return prefix + String(number).replace('.', ',');
       },
       getMemberUrl: function(memberId) {
         return this.slugs
