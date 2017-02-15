@@ -470,7 +470,7 @@
       getFormattedChangeValue: function(member) {
         var change = parseFloat(member.results[this.currentAnalysis].diff).toFixed(this.currentAnalysisData.roundingPrecision);
         var number = Math.abs(change);
-        var prefix = change < 0 ? '- ' : (change > 0 ? '+ ' : '');
+        var prefix = change < 0 ? '-\xa0' : (change > 0 ? '+\xa0' : '');
 
         return prefix + number;
       },
