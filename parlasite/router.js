@@ -7,12 +7,17 @@ const config      = require('./config');
 const slug        = require('slug');
 const mpsList     = require('./static/data/mps');
 const opsList     = require('./static/data/ops');
-const spsList     = require('./static/data/sps');
+const spsList     = require('./services/data-service').sps;
 const mpsopsList  = require('./static/data/mpsops');
 const ejs         = require('ejs');
 const webshot     = require('webshot');
 const fs          = require('fs');
 const hash        = require('object-hash');
+const https       = require('https');
+
+const agent = new https.Agent({
+  rejectUnauthorized: false
+});
 
 const routes = [
   {
@@ -37,7 +42,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -70,7 +75,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -100,7 +105,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -111,11 +116,13 @@ const routes = [
         }
       }
     ]
-  }, {
+  },
+  {
     path: '/poslanci',
     viewPath: 'poslanci',
     pageTitle: 'Seznam poslancev',
-  }, {
+  },
+  {
     path: '/p/:fullName',
     extraPaths: ['/poslanci/pregled/:fullName/:date', '/p/id/:id', '/p/:fullName/pregled', '/p/id/:id/:date', '/p/:fullName/pregled/:date', '/poslanec/:fullName/pregled', '/poslanec/:fullName/pregled/:date'],
     viewPath: 'poslanec/pregled',
@@ -139,7 +146,7 @@ const routes = [
                 cardUrl += '&forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -174,7 +181,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -209,7 +216,42 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
+                .then((res) => {
+
+                  return Promise.resolve(res.text());
+
+                })
+                .then((body) => {
+
+                  return Promise.resolve(body);
+
+                });
+
+            });
+
+        }
+      },
+      {
+        name: 'prisotnostSkoziCas',
+        sourceUrl: '/p/prisotnost-skozi-cas/:id',
+        resolve: (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              var pattern = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({id: mpId});
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if(req.query.forceRender){
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -281,7 +323,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -323,7 +365,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -362,7 +404,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -397,7 +439,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -432,7 +474,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -467,7 +509,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -502,7 +544,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -537,7 +579,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -554,13 +596,13 @@ const routes = [
         }
       }
     ]
-  }, {
+  },
+  {
     path: '/p/:fullName/glasovanja',
     extraPaths: ['/poslanci/glasovanja/:fullName/:date', '/p/:fullName/glasovanja/:date', '/poslanec/:fullName/glasovanja', '/poslanec/:fullName/glasovanja/:date'],
     viewPath: 'poslanec/glasovanja',
     pageTitle: 'Glasovanja - <%- name %>',
     cards: [
-
       {
         name: 'glasovanjaPoslanec',
         sourceUrl: '/p/glasovanja/:id',
@@ -577,7 +619,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -603,7 +645,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -632,7 +674,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -667,7 +709,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -684,13 +726,13 @@ const routes = [
         }
       }
     ]
-  }, {
+  },
+  {
     path: '/p/:fullName/govori',
     extraPaths: ['/poslanci/govori/:fullName/:date', '/p/:fullName/govori/:date', '/poslanec/:fullName/govori', '/poslanec/:fullName/govori/:date'],
     viewPath: 'poslanec/govori',
     pageTitle: 'Govori <%- name %>',
     cards: [
-
       {
         name: 'besedeKiDelajoPosebno',
         sourceUrl: '/p/tfidf/:id',
@@ -708,7 +750,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -736,7 +778,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -765,7 +807,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -800,7 +842,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -835,7 +877,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -870,7 +912,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
 
                   return res.text();
@@ -887,12 +929,14 @@ const routes = [
         }
       }
     ]
-  }, {
+  },
+  {
     path: '/poslanske-skupine',
     viewPath: 'poslanske-skupine',
     pageTitle: 'Seznam poslanskih skupin',
     cards: []
-  }, {
+  },
+  {
     path: '/poslanske-skupine/:imeAnalize',
     viewPath: 'poslanske-skupine/analiza',
     pageTitle: 'Poslanske skupine - <%- imeAnalize %>',
@@ -901,7 +945,8 @@ const routes = [
         url: ''
       }
     }
-  }, {
+  },
+  {
     path: '/poslanska-skupina/pregled/:fullName',
     extraPaths: ['/poslanska-skupina/pregled/:fullName/:date', '/poslanska-skupina/:fullName/pregled', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
     viewPath: 'poslanska-skupina/pregled',
@@ -924,7 +969,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {rejectUnauthorized: false})
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -952,7 +997,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -962,7 +1007,8 @@ const routes = [
             });
 
         }
-      }, {
+      },
+      {
         name: 'claniceInClani',
         sourceUrl: '/ps/clanice-in-clani-poslanske-skupine/:id',
         resolve: (req, res, route, card) => {
@@ -979,7 +1025,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -989,7 +1035,8 @@ const routes = [
             });
 
         }
-      }, {
+      },
+      {
         name: 'kompas',
         sourceUrl: '/c/kompas/:id',
         resolve: (req, res, route, card) => {
@@ -1010,7 +1057,7 @@ const routes = [
                 cardUrl += '&forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1037,7 +1084,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1063,7 +1110,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1089,7 +1136,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1100,7 +1147,8 @@ const routes = [
         }
       }
     ]
-  }, {
+  },
+  {
     path: '/poslanska-skupina/glasovanja/:fullName',
     extraPaths: ['/poslanska-skupina/glasovanja/:fullName/:date', '/poslanska-skupina/:fullName/glasovanja', '/ps/glasovanja/id/:id', '/ps/glasovanja/id/:id/:date'],
     viewPath: 'poslanska-skupina/glasovanja',
@@ -1123,7 +1171,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1151,7 +1199,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1179,7 +1227,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1189,7 +1237,8 @@ const routes = [
             });
 
         }
-      }, {
+      },
+      {
         name: 'najlazjeBiSeJimPridruziji',
         sourceUrl: '/pg/najlazje-pridruzili/:id',
         resolve: (req, res, route, card) => {
@@ -1206,7 +1255,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1216,7 +1265,8 @@ const routes = [
             });
 
         }
-      }, {
+      },
+      {
         name: 'odstopanjaOdPoslanskeSkupine',
         sourceUrl: '/pg/odstopanje-od-poslanske-skupine/:id',
         resolve: (req, res, route, card) => {
@@ -1233,7 +1283,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1243,8 +1293,10 @@ const routes = [
             });
 
         }
-      }]
-  }, {
+      }
+      ]
+  },
+  {
     path: '/poslanska-skupina/govori/:fullName',
     extraPaths: ['/poslanska-skupina/govori/:fullName/:date', '/poslanska-skupina/:fullName/govori', '/ps/govori/id/:id', '/ps/govori/id/:id/:date'],
     viewPath: 'poslanska-skupina/govori',
@@ -1267,7 +1319,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1277,7 +1329,8 @@ const routes = [
             });
 
         }
-      }, {
+      },
+      {
         name: 'vsiGovoriPoslanskeSkupine',
         sourceUrl: '/ps/vsi-govori-poslanske-skupine/:id',
         resolve: (req, res, route, card) => {
@@ -1294,7 +1347,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1304,7 +1357,8 @@ const routes = [
             });
 
         }
-      }, {
+      },
+      {
         name: 'besedniZaklad',
         sourceUrl: '/ps/besedni-zaklad/:id',
         resolve: (req, res, route, card) => {
@@ -1321,7 +1375,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1331,8 +1385,8 @@ const routes = [
             });
 
         }
-      }
-      , {
+      },
+      {
         name: 'stilneAnalize',
         sourceUrl: '/ps/stilne-analize/:id',
         resolve: (req, res, route, card) => {
@@ -1349,7 +1403,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl)
+              return fetch(cardUrl, {agent})
                 .then((res) => {
                   return res.text();
                 })
@@ -1386,7 +1440,6 @@ const routes = [
     pageTitle: 'Seja <%- name %>',
     cards: []
   },
-
   {
     path: '/seja/glasovanje/:id/:motionid',
     extraPaths: ['/seja/glasovanje/:id/:motionid/:date', '/s/glasovanje/:id/:motionid', '/s/glasovanje/:id/:motionid/:date'],
@@ -1406,7 +1459,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl)
+          return fetch(cardUrl, {agent})
             .then((res) => {
               return res.text();
             })
@@ -1435,7 +1488,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl)
+          return fetch(cardUrl, {agent})
             .then((res) => {
               return res.text();
             })
@@ -1464,7 +1517,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl)
+          return fetch(cardUrl, {agent})
             .then((res) => {
               return res.text();
             })
@@ -1485,7 +1538,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl)
+          return fetch(cardUrl, {agent})
             .then((res) => {
               return res.text();
             })
@@ -1514,7 +1567,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl)
+          return fetch(cardUrl, {agent})
             .then((res) => {
               return res.text();
             })
@@ -1530,7 +1583,7 @@ const routes = [
       //         var pattern = new UrlPattern(card.sourceUrl);
       //         const renderedPath = pattern.stringify({id: req.params.id});
       //         let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-      //         return fetch(cardUrl)
+      //         return fetch(cardUrl, {agent})
       //             .then((res) => {
       //                 return res.text();
       //             })
@@ -1550,22 +1603,22 @@ const routes = [
         url: ''
       }
     }
-  }
-  , {
+  },
+  {
     path: '/pravno-obvestilo',
     viewPath: 'about/pravno-obvestilo',
     pageTitle: 'Pravno obvestilo',
-  }, {
+  },
+  {
     path: '/za-medije',
     viewPath: 'about/za-medije',
     pageTitle: 'Za medije'
-  }, {
+  },
+  {
     path: '/o-projektu',
     viewPath: 'about/o-projektu',
     pageTitle: 'O projektu',
   }
-
-
 ];
 
 module.exports = (app) => {
