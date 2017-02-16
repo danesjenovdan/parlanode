@@ -30,12 +30,11 @@ function spsRequest() {
 
   return new Promise(( resolve, reject ) => {
 
-    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', ( err, res, body ) => {
+    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', {rejectUnauthorized: false}, ( err, res, body ) => {
 
       if ( err ) return reject(err);
 
       try {
-        console.log(body);
         fs.writeFileSync(spsFilePath, body);
         resolve(JSON.parse(body));
       }
