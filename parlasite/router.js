@@ -15,10 +15,6 @@ const fs          = require('fs');
 const hash        = require('object-hash');
 const https       = require('https');
 
-const agent = new https.Agent({
-  rejectUnauthorized: false
-});
-
 const routes = [
   {
     path: '/',
@@ -42,7 +38,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -75,7 +71,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -105,7 +101,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -146,7 +142,7 @@ const routes = [
                 cardUrl += '&forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -181,7 +177,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -216,7 +212,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -251,7 +247,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -323,7 +319,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -365,7 +361,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -404,7 +400,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -439,7 +435,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -474,7 +470,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -509,7 +505,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -544,7 +540,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -579,7 +575,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
@@ -619,7 +615,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -645,7 +641,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -674,7 +670,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -709,7 +705,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -750,7 +746,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -778,7 +774,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -807,7 +803,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -842,7 +838,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -877,7 +873,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -912,7 +908,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return res.text();
@@ -969,7 +965,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -997,7 +993,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1025,7 +1021,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1057,7 +1053,7 @@ const routes = [
                 cardUrl += '&forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1084,7 +1080,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1110,7 +1106,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1136,7 +1132,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1171,7 +1167,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1199,7 +1195,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1227,7 +1223,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1255,7 +1251,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1283,7 +1279,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1319,7 +1315,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1347,7 +1343,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1375,7 +1371,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1403,7 +1399,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {agent})
+              return fetch(cardUrl)
                 .then((res) => {
                   return res.text();
                 })
@@ -1459,7 +1455,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl, {agent})
+          return fetch(cardUrl)
             .then((res) => {
               return res.text();
             })
@@ -1488,7 +1484,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl, {agent})
+          return fetch(cardUrl)
             .then((res) => {
               return res.text();
             })
@@ -1517,7 +1513,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl, {agent})
+          return fetch(cardUrl)
             .then((res) => {
               return res.text();
             })
@@ -1538,7 +1534,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl, {agent})
+          return fetch(cardUrl)
             .then((res) => {
               return res.text();
             })
@@ -1567,7 +1563,7 @@ const routes = [
             cardUrl += '?forceRender=true';
           }
 
-          return fetch(cardUrl, {agent})
+          return fetch(cardUrl)
             .then((res) => {
               return res.text();
             })
@@ -1583,7 +1579,7 @@ const routes = [
       //         var pattern = new UrlPattern(card.sourceUrl);
       //         const renderedPath = pattern.stringify({id: req.params.id});
       //         let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-      //         return fetch(cardUrl, {agent})
+      //         return fetch(cardUrl)
       //             .then((res) => {
       //                 return res.text();
       //             })
