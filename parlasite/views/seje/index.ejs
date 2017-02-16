@@ -52,10 +52,15 @@
                     <div class="column">{{ formatDate(session.date_ts) }}</div>
                     <div class="column optional">{{ formatDate(session.updated_at_ts) }}</div>
                     <div class="column wider optional">
-                      <a v-if="organisationIsWorkingBody(session.org.id)" class="funblue-light-hover" :href="'https://glej.parlameter.si/wb/getWorkingBodies/' + session.org.id + '?frame=true&altHeader=true'">{{ session.org.name }}</a>
-                      <span v-else>{{ session.org.name }}</span>
+                      <template v-for="organization, index in session.orgs">
+                        <template v-if="organisationIsWorkingBody(organization.id)">
+                          <a class="funblue-light-hover" :href="'https://glej.parlameter.si/wb/getWorkingBodies/' + organization.id + '?frame=true&altHeader=true'">{{ organization.name }}</a>{{ index < session.orgs.length - 1 ? ', ' : '' }}
+                        </template>
+                        <template v-else>
+                          <span>{{ organization.name }}</span>{{ index < session.orgs.length - 1 ? ', ' : '' }}
+                        </template>
+                      </template>
                     </div>
-
                   </li>
                 </ul>
               </div>
@@ -128,7 +133,6 @@
       currentSort: 'date',
       currentSortOrder: 'desc',
       currentFilters: [],
-      currentWorkingBodies: [],
       onlyLatest: false,
       shortenedCardUrl: '',
     },
@@ -171,24 +175,28 @@
           .filter(function(session) {
             if (that.currentFilters.length === 0) {
               return true
-            }
-
-            if (that.currentFilters.indexOf('Seje DZ') > -1 && session.org.id === 95) {
-              return true
-            }
-            else if (that.currentFilters.indexOf('Seje kolegija predsednika DZ') > -1 && session.org.id === 9) {
-              return true
-            }
-            else if (that.currentFilters.indexOf('Seje delovnih teles') > -1) {
-              if (that.currentWorkingBodies.length === 0) {
-                return that.organisationIsWorkingBody(session.org.id)
+            } else {
+              let match = false
+              if (that.currentFilters.indexOf('Seje DZ') > -1) {
+                match = match || session.orgs.filter(org => org.id === 95).length > 0
               }
-              else {
-                return that.currentWorkingBodies.indexOf(session.org.id) > -1
+              if (that.currentFilters.indexOf('Seje kolegija predsednika DZ') > -1) {
+                match = match || session.orgs.filter(org => org.id === 9).length > 0
               }
+              if (that.currentFilters.indexOf('Seje delovnih teles') > -1) {
+                if (that.currentWorkingBodies.length === 0) {
+                  session.orgs.forEach((org) => {
+                    match = match || that.organisationIsWorkingBody(org.id)
+                  })
+                }
+                else {
+                  session.orgs.forEach((org) => {
+                    match = match || that.currentWorkingBodies.indexOf(org.id) > -1
+                  })
+                }
+              }
+              return match
             }
-
-            return false
           })
 
           if (this.onlyLatest) {
@@ -202,7 +210,7 @@
               case 'name':
                 var a = sessionA.name
                 var b = sessionB.name
-                return alphanumCase(a, b);
+                return alphanumCase(a, b)
               case 'date':
                 var a = sessionA.date_ts
                 var b = sessionB.date_ts
@@ -212,8 +220,8 @@
                 var b = sessionB.updated_at_ts
                 return a < b ? -1 : (a > b ? 1 : 0)
               case 'workingBody':
-                var a = sessionA.org.name
-                var b = sessionB.org.name
+                var a = sessionA.orgs[0].name
+                var b = sessionB.orgs[0].name
                 return a.localeCompare(b, 'sl')
               default:
                 break
@@ -342,6 +350,7 @@
   addCardRippling()
 
   </script>
+
 
 
 <% include ../partials/footer.ejs %>
