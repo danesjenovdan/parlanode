@@ -23,7 +23,10 @@ exports.loadSPS = () => {
       return spsRequest();
 
     })
-    .then(spsData => exports.sps = spsData);
+    .then(spsData => {
+      console.log(spsData);
+      exports.sps = spsData
+    });
 
 };
 
