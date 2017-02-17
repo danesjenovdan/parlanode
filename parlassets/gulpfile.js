@@ -18,7 +18,7 @@ gulp.task('js', function ( cb ) {
 gulp.task('css', function ( cb ) {
   pump([
       gulp.src('scss/style.css'),
-      cleanCSS({ compatibility : 'ie8' }),
+      cleanCSS({ compatibility : 'ie9' }),
       rename('style.min.css'),
       gulp.dest('css')
     ],
