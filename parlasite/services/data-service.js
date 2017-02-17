@@ -17,15 +17,14 @@ exports.loadSPS = () => {
       if ( spsExists ) {
         spsRequest();
         // TODO - legacy array wrap
-        return Promise.resolve([JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8'))]);
+        return Promise.resolve([ JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8')) ]);
       }
 
       return spsRequest();
 
     })
     .then(spsData => {
-      console.log(spsData);
-      exports.sps = spsData
+      exports.sps = spsData;
     });
 
 };
@@ -34,20 +33,22 @@ function spsRequest() {
 
   return new Promise(( resolve, reject ) => {
 
-    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', {rejectUnauthorized: false}, ( err, res, body ) => {
+    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/',
+      { rejectUnauthorized : false },
+      ( err, res, body ) => {
 
-      if ( err ) return reject(err);
+        if ( err ) return reject(err);
 
-      try {
-        fs.writeFileSync(spsFilePath, body);
-        // TODO - legacy array wrap
-        resolve([JSON.parse(body)]);
-      }
-      catch ( err ) {
-        reject(err);
-      }
+        try {
+          fs.writeFileSync(spsFilePath, body);
+          // TODO - legacy array wrap
+          resolve([ JSON.parse(body) ]);
+        }
+        catch ( err ) {
+          reject(err);
+        }
 
-    });
+      });
 
   });
 
