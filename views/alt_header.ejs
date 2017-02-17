@@ -163,9 +163,18 @@
                 <img src="https://cdn.parlameter.si/v1/parlassets/icons/og-search.svg" />
             </div>
             <div class="header-info-container">
-                <h1><%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %></h1>
-                <h2 class="partyinfo">iskalni niz</h2>
-                <h2 class="cardname"><%= cardData.name %></h2>
+                <%
+                    var myCustomUrl = decodeURIComponent(unescape(customUrl));
+                    if (myCustomUrl.indexOf('/filter/') === -1) {
+                %>
+                    <h1><%- decodeURIComponent(unescape(customUrl.split('responseHeader' in data ? 'q/' : 'v/')[1])).replace(/\+/g, ' ') %></h1>
+                    <h2 class="partyinfo">iskalni niz</h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                <% } else { %>
+                    <h1><%- myCustomUrl.split('filter/')[1].split('?')[0].replace(/\+/g, ' ') %></h1>
+                    <h2 class="partyinfo">iskalni niz</h2>
+                    <h2 class="cardname"><%= cardData.name %></h2>
+                <% } %>
             </div>
         </div>
         <div class="alt-header-border"></div>
