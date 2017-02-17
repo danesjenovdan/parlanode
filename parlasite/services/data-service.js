@@ -16,7 +16,8 @@ exports.loadSPS = () => {
 
       if ( spsExists ) {
         spsRequest();
-        return Promise.resolve(JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8')));
+        // TODO - legacy array wrap
+        return Promise.resolve([JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8'))]);
       }
 
       return spsRequest();
@@ -36,7 +37,8 @@ function spsRequest() {
 
       try {
         fs.writeFileSync(spsFilePath, body);
-        resolve(JSON.parse(body));
+        // TODO - legacy array wrap
+        resolve([JSON.parse(body)]);
       }
       catch ( err ) {
         reject(err);
