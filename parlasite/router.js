@@ -15,8 +15,6 @@ const fs          = require('fs');
 const hash        = require('object-hash');
 const https       = require('https');
 
-console.log(spsList);
-
 const routes = [
   {
     path: '/',
