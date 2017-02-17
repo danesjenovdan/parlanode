@@ -5,7 +5,7 @@ const fs      = require('fs');
 
 const spsFilePath = __dirname + '/../data/sps.json';
 
-exports.sps = {};
+exports.sps = [];
 
 exports.loadSPS = () => {
 
@@ -24,7 +24,7 @@ exports.loadSPS = () => {
 
     })
     .then(spsData => {
-      exports.sps = spsData;
+      Object.assign(exports.sps, spsData);
     });
 
 };
