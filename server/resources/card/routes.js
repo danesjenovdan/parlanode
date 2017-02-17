@@ -1,9 +1,9 @@
 'use strict';
 
-const controller = require('./controller');
+const controller     = require('./controller');
 const authMiddleware = require('../../middlewares/auth');
 
-module.exports = function (app) {
+module.exports = function ( app ) {
 
   // API ENDPOINTS
   app.get('/api/cards/getUrls', controller.getUrls);
@@ -20,8 +20,8 @@ module.exports = function (app) {
 
   app.get('/card/:cardId', controller.getCardById);
 
-  app.get('/test', (req, res)=> {
-    res.send({ result:true });
+  app.get('/test', ( req, res ) => {
+    res.send({ result : true });
   });
 
 };
