@@ -1588,6 +1588,9 @@ const routes = [
         name: 'besedeKiSoZaznamovaleSejo',
         sourceUrl: '/s/tfidf/:id',
         resolve: (req, res, route, card) => {
+
+          console.log(spsList);
+
           var pattern = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({id: req.params.id});
           let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
