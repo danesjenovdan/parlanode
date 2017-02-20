@@ -110,39 +110,6 @@ const routes = [
                 });
             });
         }
-      },
-      {
-        name: 'zadnjeSeje',
-        sourceUrl: '/s/zadnjih-5-sej/?customUrl=https%3A%2F%2Fanalize.parlameter.si%2Fv1%2Fs%2FgetSessionsList&state=%7B"onlyLatest"%3Atrue%7D',
-        resolve: (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if(req.query.forceRender){
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl, {rejectUnauthorized: false})
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
-        }
       }
     ]
   },
