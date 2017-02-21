@@ -331,11 +331,8 @@ exports.render = function (req, res) {
       cacheData.card = cardDoc._id;
       cacheData.cardUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
       cacheData.cardLastUpdate = cardDoc.lastUpdate;
-      console.log('pred fetchem')
 
       request(dataUrl, (err, _res, body) => {
-        console.log('fetch je nazaj')
-
         if (!err) {
           try {
             const data = JSON.parse(body);
@@ -453,10 +450,9 @@ exports.render = function (req, res) {
                 const html = ejs.render(cardDoc.ejs, cardData);
                 render(html);
               } else {
-                console.log('zacel rendrat z bundleom')
                 const serverBundle = fs.readFileSync(`cards/${group}/${method}/compiledServerBundle.js`, 'utf-8');
                 const clientBundle = fs.readFileSync(`cards/${group}/${method}/compiledClientBundle.js`, 'utf-8');
-                // const testCardContents = fs.readFileSync('cards/card.js');
+
                 const rendererInstance = renderer.createBundleRenderer(serverBundle);
                 const context = JSON.parse(JSON.stringify(cardData));
                 rendererInstance.renderToString(
@@ -464,13 +460,12 @@ exports.render = function (req, res) {
                   (error, html) => {
                     if (error) throw error;
 
-                    const extendedHtml = `${html}
-                        <style>${context._styles.default.css}</style>
-                        <script>window.__INITIAL_STATE__ = ${JSON.stringify(cardData)}</script>
-                        <script>${clientBundle}</script>`;
-                        // <script>a</script>
-                        // <script>app.$mount('#app')</script>;
-                    render(extendedHtml);
+                    render(`
+                      <style>${context._styles.default.css}</style>
+                      ${html}
+                      <script>window.__INITIAL_STATE__ = ${JSON.stringify(cardData)}</script>
+                      <script>${clientBundle}</script>
+                    `);
                   }
                 );
               }

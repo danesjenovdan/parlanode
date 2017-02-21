@@ -55,11 +55,8 @@
 </template>
 
 <script>
-// import request from 'request'
-import SearchDropdown from 'parlassets/components/SearchDropdown.vue'
-
 export default {
-  components: { SearchDropdown },
+  components: ['SearchDropdown'],
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -112,13 +109,7 @@ export default {
       if (this.textFilter.length > 0) state.text = this.textFilter;
       if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
 
-      return `https://glej.parlameter.si/${this.cardData.group}/${this.cardData.method}/${this.cardData.data.party.id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
-    },
-    allTags() {
-      return this.cardData.data.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
-    },
-    votingDays() {
-      return this.cardData.data.results;
+      return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.partyId}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     }
   },
   data() {
@@ -144,36 +135,16 @@ export default {
       { id: 'kvorum', class: 'kvorum', label: 'VZDRŽANI', selected: false },
       { id: 'ni', class: 'ni', label: 'NISO', selected: false },
     ];
-    // const textFilter = this.cardData.state.text || '';
-    const textFilter = '';
-
-    // const toggleFromState = (stateParameter, itemArray) => {
-    //   if (this.cardData.state[stateParameter]) {
-    //     itemArray.forEach((item) => {
-    //       if (this.cardData.state[stateParameter].indexOf(item.id) > -1) {
-    //         // eslint-disable-next-line no-param-reassign
-    //         item.selected = true;
-    //       }
-    //     });
-    //   }
-    // };
-
-    // toggleFromState('months', allMonths);
-    // toggleFromState('tags', allTags);
-    // toggleFromState('options', allOptions);
 
     return {
-      cardData: {
-        data: {
-          all_tags: [],
-          results: [],
-          party: {},
-          state: {}
-        }
-      },
+      partyId: 0,
+      cardMethod: '',
+      cardGroup: '',
       allOptions,
       allMonths,
-      textFilter,
+      allTags: [],
+      votingDays: [],
+      textFilter: '',
       shortenedCardUrl: '',
     };
   },
@@ -226,23 +197,47 @@ export default {
         .filter(filterDates);
     },
     shortenUrl(url) {
-      // request(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-      //   this.shortenedCardUrl = response;
-      //   this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
-      // });
+      $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
+        this.shortenedCardUrl = response;
+        // this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
+      });
     },
     loadData(cardData) {
-      console.log('LOAD DATA')
-      this.cardData = cardData
-    }
+      const allTags = cardData.data.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
+
+      const toggleFromState = (stateParameter, itemArray) => {
+        if (cardData.state[stateParameter]) {
+          return JSON.parse(JSON.stringify(itemArray)).map((item) => {
+            if (cardData.state[stateParameter].indexOf(item.id) > -1) {
+              return Object.assign(item, { selected: true });
+            }
+            return item;
+          });
+        } else {
+          return itemArray
+        }
+      };
+
+      // toggleFromState('months', this.allMonths);
+      // toggleFromState('tags', allTags);
+      // toggleFromState('options', this.allOptions);
+
+      this.partyId = cardData.data.party.id;
+      this.group = cardData.group;
+      this.method = cardData.method;
+      this.textFilter = cardData.state.text || '';
+      this.votingDays = cardData.data.results;
+      this.allTags = toggleFromState('tags', allTags);
+    },
   },
-  created() {
-      console.log('CREATED')
-    // this.shortenUrl(this.cardUrl);
+  beforeMount() {
+    console.log('BEFORE MOUNT');
+    this.shortenUrl(this.cardUrl);
   },
   watch: {
     cardUrl(newValue) {
-      // this.shortenUrl(newValue);
+      console.log('WATCHER');
+      this.shortenUrl(newValue);
     },
   },
 };
