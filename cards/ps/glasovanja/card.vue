@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container <%= className %>" data-id="<%= cardData.group %>/<%= cardData.method %>">
+  <div id="app" class="card-container <%= className %>" data-id="<%= cardData.group %>/<%= cardData.method %>">
     <div class="card-header">
         <div class="card-header-border"></div>
         <h1>Glasovanja</h1> <!-- this text is the only thing you touch in .card-header -->
@@ -55,10 +55,11 @@
 </template>
 
 <script>
-import request from 'request'
+// import request from 'request'
+import SearchDropdown from 'parlassets/components/SearchDropdown.vue'
 
 export default {
-  components: ['SearchDropdown'],
+  components: { SearchDropdown },
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -119,7 +120,6 @@ export default {
     votingDays() {
       return this.cardData.data.results;
     }
-
   },
   data() {
     const allMonths = [
@@ -226,16 +226,18 @@ export default {
         .filter(filterDates);
     },
     shortenUrl(url) {
-      request(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-        this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
-      });
+      // request(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
+      //   this.shortenedCardUrl = response;
+      //   this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
+      // });
     },
     loadData(cardData) {
+      console.log('LOAD DATA')
       this.cardData = cardData
     }
   },
   created() {
+      console.log('CREATED')
     // this.shortenUrl(this.cardUrl);
   },
   watch: {
@@ -246,8 +248,147 @@ export default {
 };
 </script>
 
-<style>
-body {
-  color: red;
+<style lang="sass">
+@import 'parlassets/scss/breakpoints';
+
+.card-content-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+    min-height: 154px;
+  }
+  $label-height: 26px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .filter-label {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: $label-height;
+  }
+
+  .option-party-buttons {
+    @include show-for(desktop, flex);
+
+    width: 27.5%;
+    padding-top: $label-height;
+
+    .party-button:not(:last-child) {
+      margin-right: 3px;
+    }
+  }
+
+  .text-filter {
+    @include respond-to(desktop) { width: 26%; }
+
+    width: 100%;
+
+    .text-filter-input {
+      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: right 9px center;
+      border: 1px solid #c8c8c8;
+      font-size: 16px;
+      height: 51px;
+      line-height: 27px;
+      outline: none;
+      padding: 12px 42px 12px 14px;
+      width: 100%;
+    }
+  }
+
+  .tag-dropdown {
+    @include respond-to(desktop) { width: 26%; }
+
+    width: 100%;
+  }
+
+  .month-dropdown {
+    @include show-for(desktop);
+
+    width: 17.5%;
+  }
+
+  .search-dropdown-input {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .search-dropdown-options { top: 50px; }
+}
+
+.votes {
+  flex: 1;
+  // list-style: none;
+  overflow-y: auto;
+  margin-top: 18px;
+  position: relative;
+
+  &:empty::after {
+    color: #c8c8c8;
+    content: "Ni rezultatov.";
+    left: calc(50% - 41px);
+    position: absolute;
+    top: calc(50% - 10px);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0 7px;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+
+    .date {
+      height: auto;
+      margin: 0 0 -18px 16px;
+      padding: 16px 0;
+      width: 54px;
+    }
+
+    .icon {
+      @include show-for(desktop);
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 25px;
+      height: 48px;
+      width: 52px;
+
+      &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za.svg"); }
+      &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
+      &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
+      &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan.svg"); }
+    }
+
+    .motion {
+      flex: 1;
+      font-weight: 300;
+      line-height: 20px;
+      padding: 15px 0;
+      a { font-weight: normal; }
+    }
+
+    .outcome {
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 13px;
+      padding: 20px 15px 0;
+      text-align: left;
+      text-transform: uppercase;
+      width: 90px;
+    }
+  }
 }
 </style>

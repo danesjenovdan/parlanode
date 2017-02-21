@@ -7,6 +7,8 @@ const app = new Vue(Card);
 // which will receive the context of the render call
 export default (cardData) => {
   app.loadData(cardData);
-  const promise = new Promise((resolve) => { resolve(app); });
-  return promise;
+
+  return new Promise((resolve) => {
+    resolve(app);
+  });
 };

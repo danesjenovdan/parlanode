@@ -7,13 +7,20 @@ module.exports = {
   externals: Object.keys(packageJson.dependencies),
   target: 'node',
   devtool: false,
+  entry: './cards/ps/glasovanja/serverBundle.js',
+  output: {
+    filename: 'cards/ps/glasovanja/compiledServerBundle.js',
+    libraryTarget: 'commonjs2',
+  },
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          // vue-loader options go here
+          loaders: {
+            sass: 'vue-style-loader!css-loader!sass-loader?includePaths[]=node_modules',
+          },
         },
       },
       {
@@ -38,9 +45,6 @@ module.exports = {
   },
 };
 
-// if (process.env.NODE_ENV === 'production') {
-  // module.exports.devtool = '#source-map';
-  // http://vue-loader.vuejs.org/en/workflow/production.html
 module.exports.plugins = (module.exports.plugins || []).concat([
   new webpack.DefinePlugin({
     'process.env': {
@@ -48,26 +52,12 @@ module.exports.plugins = (module.exports.plugins || []).concat([
       VUE_ENV: '"server"',
     },
   }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //   },
-    // }),
+  // new webpack.optimize.UglifyJsPlugin({
+  //   compress: {
+  //     warnings: false,
+  //   },
+  // }),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
   }),
 ]);
-module.exports.entry = './cards/ps/glasovanja/bundle.js';
-module.exports.output = {
-    // path: path.resolve(__dirname, '/cards'),
-  filename: 'cards/ps/glasovanja/compiledBundle.js',
-  libraryTarget: 'commonjs2',
-};
-// } else {
-//   module.exports.entry = './components/main.js';
-//   module.exports.output = {
-//     path: path.resolve(__dirname, './js'),
-//     publicPath: '/js/',
-//     filename: 'main.js',
-//   };
-// }

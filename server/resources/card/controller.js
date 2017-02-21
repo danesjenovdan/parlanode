@@ -454,19 +454,20 @@ exports.render = function (req, res) {
                 render(html);
               } else {
                 console.log('zacel rendrat z bundleom')
-                const cardBundle = fs.readFileSync(`cards/${group}/${method}/compiledBundle.js`, 'utf-8');
+                const serverBundle = fs.readFileSync(`cards/${group}/${method}/compiledServerBundle.js`, 'utf-8');
+                const clientBundle = fs.readFileSync(`cards/${group}/${method}/compiledClientBundle.js`, 'utf-8');
                 // const testCardContents = fs.readFileSync('cards/card.js');
-                const rendererInstance = renderer.createBundleRenderer(cardBundle);
-
+                const rendererInstance = renderer.createBundleRenderer(serverBundle);
+                const context = JSON.parse(JSON.stringify(cardData));
                 rendererInstance.renderToString(
-                  cardData,
+                  context,
                   (error, html) => {
                     if (error) throw error;
 
-                    const extendedHtml =
-                      `<script src="https://unpkg.com/vue/dist/vue.js"></script>
-                        ${html}
-                        <script>window.__INITIAL_STATE__ = ${JSON.stringify(cardData)}</script>`;
+                    const extendedHtml = `${html}
+                        <style>${context._styles.default.css}</style>
+                        <script>window.__INITIAL_STATE__ = ${JSON.stringify(cardData)}</script>
+                        <script>${clientBundle}</script>`;
                         // <script>a</script>
                         // <script>app.$mount('#app')</script>;
                     render(extendedHtml);
