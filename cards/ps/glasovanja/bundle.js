@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Card from './Card.vue';
+import Card from './card.vue';
 
 const app = new Vue(Card);
 

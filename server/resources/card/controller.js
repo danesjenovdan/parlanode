@@ -297,6 +297,11 @@ exports.render = function (req, res) {
     console.log('Compile card');
 
     Card.findOne({ method, group }).lean().then((cardDoc) => {
+      const localPath = `cards/${group}/${method}/data.json`;
+      if (!cardDoc && fs.existsSync(localPath)) {
+        cardDoc = JSON.parse(fs.readFileSync(localPath));
+      }
+
       if (!cardDoc) {
         res.status(404).send('Card not found');
         return;
@@ -316,7 +321,8 @@ exports.render = function (req, res) {
         if (date) {
           analizeUrl = `${analizeUrl}/${date}`;
         }
-        dataUrl = analizeUrl;
+        // dataUrl = analizeUrl;
+        dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494';
       } else {
         dataUrl = decodeURI(customUrl);
       }
@@ -325,8 +331,11 @@ exports.render = function (req, res) {
       cacheData.card = cardDoc._id;
       cacheData.cardUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
       cacheData.cardLastUpdate = cardDoc.lastUpdate;
+      console.log('pred fetchem')
 
       request(dataUrl, (err, _res, body) => {
+        console.log('fetch je nazaj')
+
         if (!err) {
           try {
             const data = JSON.parse(body);
@@ -440,13 +449,14 @@ exports.render = function (req, res) {
                 });
               };
 
-              if (false) {
+              if (!cardDoc.vue) {
                 const html = ejs.render(cardDoc.ejs, cardData);
                 render(html);
               } else {
-                const testCard = fs.readFileSync('cards/compiledBundle.js', 'utf-8');
+                console.log('zacel rendrat z bundleom')
+                const cardBundle = fs.readFileSync(`cards/${group}/${method}/compiledBundle.js`, 'utf-8');
                 // const testCardContents = fs.readFileSync('cards/card.js');
-                const rendererInstance = renderer.createBundleRenderer(testCard);
+                const rendererInstance = renderer.createBundleRenderer(cardBundle);
 
                 rendererInstance.renderToString(
                   cardData,

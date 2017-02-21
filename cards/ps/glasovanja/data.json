@@ -1,0 +1,6 @@
+{
+  "_id": 1337,
+  "dataUrl": "https://analize.parlameter.si/v1/pg/getTaggedBallots",
+  "type": "poslanska_skupina",
+  "vue": true
+}
