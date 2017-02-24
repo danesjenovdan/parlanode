@@ -113,7 +113,14 @@ export default {
     }
   },
   data() {
-    const allMonths = [
+    const cardData = this.$options.cardData;
+
+    const selectFromState = (items, stateItemIds) => 
+      items.map(item =>
+        Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+      )
+
+    let allMonths = [
       { id: '2017-2', label: 'Februar 2017', month: 2, year: 2017, selected: false },
       { id: '2017-1', label: 'Januar 2017', month: 1, year: 2017, selected: false },
       { id: '2016-12', label: 'December 2016', month: 12, year: 2016, selected: false },
@@ -129,22 +136,33 @@ export default {
       { id: '2016-2', label: 'Februar 2016', month: 2, year: 2016, selected: false },
       { id: '2016-1', label: 'Januar 2016', month: 1, year: 2016, selected: false },
     ];
-    const allOptions = [
+    let allOptions = [
       { id: 'za', class: 'for', label: 'ZA', selected: false },
       { id: 'proti', class: 'against', label: 'PROTI', selected: false },
       { id: 'kvorum', class: 'kvorum', label: 'VZDRŽANI', selected: false },
       { id: 'ni', class: 'ni', label: 'NISO', selected: false },
     ];
+    let allTags = cardData.data.all_tags.map(
+      tag => ({ id: tag, label: tag, selected: false })
+    );
+    let textFilter = ''
+
+    if (cardData.state) {
+      if (cardData.state.text) textFilter = cardData.state.text;
+      if (cardData.state.months) allMonths = selectFromState(allMonths, cardData.state.months);
+      if (cardData.state.options) allOptions = selectFromState(allOptions, cardData.state.options);
+      if (cardData.state.tags) allTags = selectFromState(allTags, cardData.state.tags);
+    }
 
     return {
-      partyId: 0,
-      cardMethod: '',
-      cardGroup: '',
-      allOptions,
+      partyId: cardData.data.party.id,
+      cardMethod: cardData.method,
+      cardGroup: cardData.group,
+      votingDays: cardData.data.results,
       allMonths,
-      allTags: [],
-      votingDays: [],
-      textFilter: '',
+      allOptions,
+      allTags,
+      textFilter,
       shortenedCardUrl: '',
     };
   },
@@ -201,33 +219,6 @@ export default {
         this.shortenedCardUrl = response;
         // this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
       });
-    },
-    loadData(cardData) {
-      const allTags = cardData.data.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
-
-      const toggleFromState = (stateParameter, itemArray) => {
-        if (cardData.state[stateParameter]) {
-          return JSON.parse(JSON.stringify(itemArray)).map((item) => {
-            if (cardData.state[stateParameter].indexOf(item.id) > -1) {
-              return Object.assign(item, { selected: true });
-            }
-            return item;
-          });
-        } else {
-          return itemArray
-        }
-      };
-
-      // toggleFromState('months', this.allMonths);
-      // toggleFromState('tags', allTags);
-      // toggleFromState('options', this.allOptions);
-
-      this.partyId = cardData.data.party.id;
-      this.group = cardData.group;
-      this.method = cardData.method;
-      this.textFilter = cardData.state.text || '';
-      this.votingDays = cardData.data.results;
-      this.allTags = toggleFromState('tags', allTags);
     },
   },
   beforeMount() {
