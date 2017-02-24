@@ -1,0 +1,13 @@
+#empty_state .lead-container {
+  font-family: "Roboto Slab", sans-serif;
+  color: #000;
+  font-style: italic;
+  font-size: 16px;
+  text-align: center;
+  padding: 80px 0;
+  min-height: 300px;
+  width: 100%;
+  @include respond-to(mobile) {
+    font-size: 14px;
+  }
+}
