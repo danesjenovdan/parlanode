@@ -675,7 +675,7 @@ function alphanumCase(a, b) {
 }
 
 
-// card header gets shadow on scroll if it has class shadowhunter
+// card header gets shadow on scroll if it has class shadowhunter TODO refactor date-list
 $(document).ready(function() {
     $('.shadowhunter').next().children('.stickinme').on('scroll', function (e) {
         if ($(e.currentTarget).offset().top > $(e.currentTarget).children('.date-list').offset().top) {

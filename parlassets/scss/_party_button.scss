@@ -12,28 +12,19 @@
   padding: 8px 5px 0;
   text-align: center;
 
-  &.selected {
-    border-bottom: 1px solid #c8c8c8;
+  &.selected,
+  &:hover {
+    border-bottom: 1px solid #c8c8c8 !important;
     color: #fff;
   }
 
-  @each $party, $color in $party-colors {
-    &.#{$party} {
+  @each $name, $color in map-merge($party-colors, $option-colors) {
+    &.#{$name} {
       border-bottom-color: $color;
 
-      &.selected {
-        background-color: $color;
-      }
-    }
-  }
-
-  @each $option, $color in $option-colors {
-    &.#{$option} {
-      border-bottom-color: $color;
-
-      &.selected {
-        background-color: $color;
-      }
+      &.selected,
+      &:hover { background-color: $color; }
+      // &.selected:hover { background-color: darken($color, 10%); }
     }
   }
 }
