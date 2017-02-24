@@ -293,18 +293,26 @@ exports.render = function (req, res) {
     }
   }
 
+  function loadCardFromFile(groupName, methodName) {
+    const localPath = `cards/${groupName}/${methodName}/data.json`;
+    if (!fs.existsSync(localPath)) throw Error();
+    const cardDoc = JSON.parse(fs.readFileSync(localPath));
+    cardDoc.lastUpdate = new Date(cardDoc.lastUpdate);
+    return cardDoc;
+  }
+
   function compileCard() {
     console.log('Compile card');
 
     Card.findOne({ method, group }).lean().then((cardDoc) => {
-      const localPath = `cards/${group}/${method}/data.json`;
-      if (!cardDoc && fs.existsSync(localPath)) {
-        cardDoc = JSON.parse(fs.readFileSync(localPath));
-      }
-
       if (!cardDoc) {
-        res.status(404).send('Card not found');
-        return;
+        try {
+          // Vue based cards are loaded locally
+          cardDoc = loadCardFromFile(group, method);
+        } catch (error) {
+          res.status(404).send('Card not found');
+          return;
+        }
       }
 
       let dataUrl;
@@ -321,8 +329,8 @@ exports.render = function (req, res) {
         if (date) {
           analizeUrl = `${analizeUrl}/${date}`;
         }
-        // dataUrl = analizeUrl;
-        dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494';
+        dataUrl = analizeUrl;
+        // dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494';
       } else {
         dataUrl = decodeURI(customUrl);
       }
@@ -521,18 +529,22 @@ exports.render = function (req, res) {
         compileCard();
       } else {
         const html = cardRenderDoc.html;
+        const compileOrRespond = (cardDoc) => {
+          if (+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate) {
+            compileCard();
+          } else {
+            cardResponse(req, res, cardRenderDoc, html, {
+              image: getImage,
+            });
+          }
+        };
 
         Card.findById(cardRenderDoc.card)
-          .then((cardDoc) => {
-            // plus Date changes the string Date into milliseconds so it's possible to compare
-            if (+cardDoc.lastUpdate !== +cardRenderDoc.cardLastUpdate) {
-              compileCard();
-            } else {
-              cardResponse(req, res, cardRenderDoc, html, {
-                image: getImage,
-              });
-            }
-          });
+          .catch(() => {
+            const cardDoc = loadCardFromFile(cacheData.group, cacheData.method);
+            compileOrRespond(cardDoc);
+          })
+          .then(compileOrRespond);
       }
     });
 };

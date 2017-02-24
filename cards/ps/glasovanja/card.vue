@@ -222,12 +222,10 @@ export default {
     },
   },
   beforeMount() {
-    console.log('BEFORE MOUNT');
     this.shortenUrl(this.cardUrl);
   },
   watch: {
     cardUrl(newValue) {
-      console.log('WATCHER');
       this.shortenUrl(newValue);
     },
   },
