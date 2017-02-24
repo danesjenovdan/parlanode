@@ -1,9 +1,8 @@
 /* globals module */
-// const path = require('path');
 const webpack = require('webpack');
-const packageJson = require('./package.json');
+const path = require('path');
 
-module.exports = {
+module.exports = cardPath => ({
   devtool: false,
   module: {
     rules: [
@@ -26,6 +25,7 @@ module.exports = {
   resolve: {
     alias: {
       vue$: 'vue/dist/vue',
+      card: `${path.resolve(cardPath)}/card.vue`,
     },
   },
   devServer: {
@@ -46,5 +46,5 @@ module.exports = {
       minimize: true,
     }),
   ],
-};
+});
 

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
-import Card from './card.vue';
+// eslint-disable-next-line
+import Card from 'card';
 
 Vue.component('SearchDropdown', SearchDropdown);
 
