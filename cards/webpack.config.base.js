@@ -1,6 +1,7 @@
 /* globals module */
 const webpack = require('webpack');
 const path = require('path');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = cardPath => ({
   devtool: false,
@@ -39,6 +40,7 @@ module.exports = cardPath => ({
     hints: false,
   },
   plugins: [
+    new LodashModuleReplacementPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,

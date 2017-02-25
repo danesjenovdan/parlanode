@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import capitalize from 'helpers/capitalize'
+import _ from 'lodash'
 
 export default {
   components: ['SearchDropdown'],
@@ -204,7 +204,7 @@ export default {
                   : 'Niso glasovali o';
               } else {
                 ballotClone.label = this.type === 'person'
-                  ? `${capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
+                  ? `${_.capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
                   : `Glasovali ${ballot.option.toUpperCase()}`;
               }
 
