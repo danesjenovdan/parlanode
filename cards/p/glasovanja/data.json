@@ -1,0 +1,7 @@
+{
+  "_id": "p_glasovanja",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getTaggedBallots",
+  "type": "poslanec",
+  "vue": true,
+  "lastUpdate": "2017-02-24T20:26:54.523Z"
+}

@@ -329,8 +329,8 @@ exports.render = function (req, res) {
         if (date) {
           analizeUrl = `${analizeUrl}/${date}`;
         }
-        dataUrl = analizeUrl;
-        // dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494';
+        // dataUrl = analizeUrl;
+        dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494';
       } else {
         dataUrl = decodeURI(customUrl);
       }

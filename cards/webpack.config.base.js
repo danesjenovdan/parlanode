@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = cardPath => ({
   devtool: false,
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -26,6 +26,8 @@ module.exports = cardPath => ({
     alias: {
       vue$: 'vue/dist/vue',
       card: `${path.resolve(cardPath)}/card.vue`,
+      components: `${path.resolve(__dirname)}/_components`,
+      helpers: `${path.resolve(__dirname)}/_helpers`,
     },
   },
   devServer: {
@@ -40,6 +42,18 @@ module.exports = cardPath => ({
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+      },
+      output: {
+        comments: false,
       },
     }),
     new webpack.LoaderOptionsPlugin({
