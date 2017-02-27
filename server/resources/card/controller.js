@@ -309,6 +309,8 @@ exports.render = function (req, res) {
         try {
           // Vue based cards are loaded locally
           cardDoc = loadCardFromFile(group, method);
+          cardDoc.vue = true;
+          cardDoc.altHeader = altHeader;
         } catch (error) {
           res.status(404).send('Card not found');
           return;
@@ -329,8 +331,9 @@ exports.render = function (req, res) {
         if (date) {
           analizeUrl = `${analizeUrl}/${date}`;
         }
-        // dataUrl = analizeUrl;
-        dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494';
+        dataUrl = analizeUrl;
+        // dataUrl = 'https://jsonblob.com/api/becddf1d-f6c2-11e6-95c2-95e999eab494'; stranka
+        // dataUrl = 'https://jsonblob.com/api/ff41e267-fd44-11e6-a0ba-a501678366ac'; poslanec
       } else {
         dataUrl = decodeURI(customUrl);
       }
@@ -386,8 +389,8 @@ exports.render = function (req, res) {
                * Rendering ejs from the stored cardDocument (from CMS)
                * @type {String}
                */
-              const render = function (html) {
-                if (altHeader) {
+              const render = function (html, vue) {
+                if (altHeader && !vue) {
                   html = replaceHeader(cardData, html);
                 }
 
@@ -462,7 +465,9 @@ exports.render = function (req, res) {
                 const clientBundle = fs.readFileSync(`cards/${group}/${method}/compiledClientBundle.js`, 'utf-8');
 
                 const rendererInstance = renderer.createBundleRenderer(serverBundle);
-                const context = JSON.parse(JSON.stringify(cardData));
+                const stringifiedCardData = JSON.stringify(cardData);
+
+                const context = JSON.parse(stringifiedCardData);
                 rendererInstance.renderToString(
                   context,
                   (error, html) => {
@@ -471,9 +476,9 @@ exports.render = function (req, res) {
                     render(`
                       <style>${context._styles.default.css}</style>
                       ${html}
-                      <script>window.__INITIAL_STATE__ = ${JSON.stringify(cardData)}</script>
+                      <script>window.__INITIAL_STATE__ = ${stringifiedCardData}</script>
                       <script>${clientBundle}</script>
-                    `);
+                    `, true);
                   }
                 );
               }
@@ -544,7 +549,10 @@ exports.render = function (req, res) {
             const cardDoc = loadCardFromFile(cacheData.group, cacheData.method);
             compileOrRespond(cardDoc);
           })
-          .then(compileOrRespond);
+          .then((cardDoc) => {
+            cardDoc = cardDoc || loadCardFromFile(cacheData.group, cacheData.method);
+            compileOrRespond(cardDoc);
+          });
       }
     });
 };

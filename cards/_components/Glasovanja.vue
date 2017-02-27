@@ -1,64 +1,68 @@
 <template>
-  <div id="app" class="card-container <%= className %>" data-id="<%= cardData.group %>/<%= cardData.method %>">
-    <div class="card-header">
-        <div class="card-header-border"></div>
-        <h1>Glasovanja</h1> <!-- this text is the only thing you touch in .card-header -->
-    </div>
-    <div id="glasovanja-1234" class="card-content full">
-        <div class="card-content-front" v-cloak>
-          <div class="filters">
-            <div class="filter text-filter">
-              <div class="filter-label">Išči po naslovu glasovanja</div>
-              <input class="text-filter-input" type="text" v-model="textFilter">
-            </div>
-            <div class="filter tag-dropdown">
-              <div class="filter-label">Matično delovno telo</div>
-              <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
-            </div>
-            <div class="filter month-dropdown">
-              <div class="filter-label">Časovno obdobje</div>
-              <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
-            </div>
-            <div class="filter option-party-buttons">
-              <div v-for="option in allOptions"
-              :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
-              @click="toggleOption(option.id)">{{ option.label }}</div>
-            </div>
-          </div>
+  <div id="app" class="card-container" :data-id="`${cardGroup}/${cardMethod}`">
+    <card-header :config="headerConfig" />
 
-          <div class="votes stickinme date-list">
-            <template v-for="votingDay in filteredVotingDays">
-              <div class="date">{{ votingDay.date }}</div>
-              <ul>
-                <li v-for="ballot in votingDay.ballots">
-                  <div :class="['icon', ballot.option]"></div>
-                  <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="'<%= urlsData.base %>/seja/glasovanje/' + ballot.session_id + '/' + ballot.vote_id + ''">{{ ballot.motion }}</a></div>
-                  <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
-                </li>
-              </ul>
-            </template>
+    <div class="card-content full">
+      <div class="card-content-front" v-cloak>
+        <div class="filters">
+          <div class="filter text-filter">
+            <div class="filter-label">Išči po naslovu glasovanja</div>
+            <input class="text-filter-input" type="text" v-model="textFilter">
+          </div>
+          <div class="filter tag-dropdown">
+            <div class="filter-label">Matično delovno telo</div>
+            <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+          </div>
+          <div class="filter month-dropdown">
+            <div class="filter-label">Časovno obdobje</div>
+            <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+          </div>
+          <div class="filter option-party-buttons">
+            <div v-for="option in allOptions"
+            :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
+            @click="toggleOption(option.id)">{{ option.label }}</div>
           </div>
         </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-logo hidden">
-            <a href="<%= urlsData.base %>">
-                <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
-            </a>
-        </div>
 
-        <div class="card-circle-button card-share" data-back="share"></div>
-        <div class="card-circle-button card-embed" data-back="embed"></div>
-        <div class="card-circle-button card-info" data-back="info">i</div>
+        <div class="votes stickinme date-list">
+          <template v-for="votingDay in filteredVotingDays">
+            <div class="date">{{ votingDay.date }}</div>
+            <ul>
+              <li v-for="ballot in votingDay.ballots">
+                <div :class="['icon', ballot.option]"></div>
+                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
+                <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
+              </li>
+            </ul>
+          </template>
+        </div>
+      </div>
+
+      <card-info>
+        <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji.</p>
+        <p class="info-text heading">METODOLOGIJA</p>
+        <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
+        <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
+      </card-info>
+
+      <card-embed :url="cardUrl" />
+
+      <card-share :url="shortenedCardUrl" />
     </div>
+    <card-footer :link="cardData.urlsData.base" />
   </div>
 </template>
 
 <script>
 import _ from 'lodash'
+import CardInfo from 'components/Card/Info.vue'
+import CardEmbed from 'components/Card/Embed.vue'
+import CardShare from 'components/Card/Share.vue'
+import CardHeader from 'components/Card/Header.vue'
+import CardFooter from 'components/Card/Footer.vue'
 
 export default {
-  components: ['SearchDropdown'],
+  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -112,6 +116,28 @@ export default {
       if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
 
       return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+    },
+    headerConfig() {
+      let specifics;
+      if (this.type === 'person') {
+        specifics = {
+          heading: this.person.name,
+          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+          circleImage: this.person.gov_id,
+        }
+      } else {
+        specifics = {
+          heading: this.party.name,
+          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+          circleText: this.party.acronym,
+          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
+        }
+      }
+
+      return Object.assign({}, specifics, {
+        alternative: JSON.parse(this.cardData.cardData.altHeader),
+        title: this.cardData.cardData.name
+      })
     }
   },
   data() {
@@ -155,9 +181,9 @@ export default {
     }
 
     return {
-      cardMethod: this.cardData.method,
-      cardGroup: this.cardData.group,
-      vocabulary: this.cardData.vocabulary,
+      cardMethod: this.cardData.cardData.method,
+      cardGroup: this.cardData.cardData.group,
+      vocabulary: this.cardData.vocab,
       votingDays: this.cardData.data.results,
       allMonths,
       allOptions,
@@ -221,7 +247,7 @@ export default {
     shortenUrl(url) {
       $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
         this.shortenedCardUrl = response;
-        // this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
+        this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
       });
     },
   },
@@ -246,6 +272,11 @@ export default {
   beforeMount() {
     this.shortenUrl(this.cardUrl);
   },
+  mounted() {
+    makeEmbedSwitch();
+    activateCopyButton();
+    addCardRippling();
+  }
 };
 </script>
 
