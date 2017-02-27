@@ -1,5 +1,6 @@
 {
   "_id": "ps_glasovanja",
+  "name": "Glasovanja - poslanska skupina",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getTaggedBallots",
   "type": "poslanska_skupina",
   "vue": true,
