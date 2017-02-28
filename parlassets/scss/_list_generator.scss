@@ -164,4 +164,23 @@
       width: calc(33.333% - 2px);
     }
   }
+
+  @include respond-to(mobile) {
+    .filters { flex-wrap: wrap; }
+    .button-filters {
+      flex: 0 1 auto;
+      margin-bottom: 7px;
+      width: 100%;
+    }
+    .dropdown-filter {
+      display: block;
+      flex: 7;
+      margin-left: 0;
+      margin-right: 7px;
+    }
+    .align-checkbox {
+      display: flex;
+      flex: 4;
+    }
+  }
 }
