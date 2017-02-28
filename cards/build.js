@@ -39,7 +39,7 @@ const refreshLastUpdate = (path) => {
   });
 };
 
-const allPaths = dirs('./cards/p').concat(dirs('./cards/ps'));
+const allPaths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s'));
 
 allPaths.forEach(path =>
   Promise.all([

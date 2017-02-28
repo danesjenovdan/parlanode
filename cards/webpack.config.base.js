@@ -29,6 +29,7 @@ module.exports = cardPath => ({
       cardPath: `${path.resolve(cardPath)}`,
       components: `${path.resolve(__dirname)}/_components`,
       helpers: `${path.resolve(__dirname)}/_helpers`,
+      mixins: `${path.resolve(__dirname)}/_mixins`,
     },
   },
   devServer: {
