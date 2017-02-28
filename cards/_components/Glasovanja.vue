@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="card-container" :data-id="`${cardGroup}/${cardMethod}`">
+  <div :id="cardData.cardData._id" class="card-container" :data-id="`${cardGroup}/${cardMethod}`">
     <card-header :config="headerConfig" />
 
     <div class="card-content full">

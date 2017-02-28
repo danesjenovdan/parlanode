@@ -3,7 +3,7 @@
   "name": "Glasovanja - poslanec",
   "dataUrl": "https://analize.parlameter.si/v1/p/getTaggedBallots",
   "type": "poslanec",
-  "lastUpdate": "2017-02-27T23:56:03.426Z",
+  "lastUpdate": "2017-02-28T00:30:44.183Z",
   "method": "glasovanja",
   "group": "p"
 }

@@ -26,7 +26,7 @@ module.exports = cardPath => ({
   resolve: {
     alias: {
       vue$: 'vue/dist/vue',
-      card: `${path.resolve(cardPath)}/card.vue`,
+      cardPath: `${path.resolve(cardPath)}`,
       components: `${path.resolve(__dirname)}/_components`,
       helpers: `${path.resolve(__dirname)}/_helpers`,
     },
