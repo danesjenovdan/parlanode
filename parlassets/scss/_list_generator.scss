@@ -174,13 +174,14 @@
     }
     .dropdown-filter {
       display: block;
-      flex: 7;
+      flex: 1;
       margin-left: 0;
       margin-right: 7px;
     }
     .align-checkbox {
       display: flex;
-      flex: 4;
+      padding-right: 4px;
+      width: 124px;
     }
   }
 }
