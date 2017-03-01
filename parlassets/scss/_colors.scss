@@ -73,6 +73,10 @@ $option-colors: (
 
 // hover colors
 $funblue-hover: rgba(0, 156, 221, 0.7);
+$fontblue-hover: rgba(0, 98, 140, 0.7);
+$ignoreblue-hover: rgba(0, 59, 84, 0.7);
+$noblue-hover: rgba(153, 225, 255, 0.7);
+
 $party-colors-hover: (
   smc: rgba(143, 207, 238, 0.7),
   sds: rgba(34, 162, 224, 0.7),
@@ -86,4 +90,10 @@ $party-colors-hover: (
   nep: rgba(133, 63, 54, 0.7),
   nep_-_zl: rgba(133, 63, 54, 0.7),
   nep_-_ač: rgba(133, 63, 54, 0.7)
+);
+$option-colors-hover: (
+  for: $fontblue-hover,
+  against: $funblue-hover,
+  kvorum: $ignoreblue-hover,
+  ni: $noblue-hover
 );
