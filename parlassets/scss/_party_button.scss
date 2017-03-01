@@ -12,11 +12,14 @@
   padding: 8px 5px 0;
   text-align: center;
 
-  &.selected,
-  &:hover {
+  &.selected {
     border-bottom: 1px solid #c8c8c8 !important;
-    color: #fff;
+    color: #ffffff;
   }
+  &:hover {
+    color: #ffffff;
+  }
+
 
   @each $name, $color in map-merge($party-colors, $option-colors) {
     &.#{$name} {
@@ -29,7 +32,9 @@
 
   @each $name, $color in map-merge($party-colors-hover, $option-colors-hover) {
     &.#{$name} {
-      &:hover { background-color: $color; }
+      &:hover {
+        background-color: $color;
+      }
       // &.selected:hover { background-color: darken($color, 10%); }
     }
   }
