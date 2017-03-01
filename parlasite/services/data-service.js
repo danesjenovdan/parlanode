@@ -34,9 +34,7 @@ function spsRequest() {
 
   return new Promise(( resolve, reject ) => {
 
-    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/',
-      { rejectUnauthorized : false },
-      ( err, res, body ) => {
+    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', ( err, res, body ) => {
 
         if ( err ) return reject(err);
 
