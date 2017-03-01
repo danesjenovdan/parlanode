@@ -69,3 +69,21 @@ $option-colors: (
 }
 
 .inactive { filter: grayscale(100%); }
+
+
+// hover colors
+$funblue-hover: rgba(0, 156, 221, 0.7);
+$party-colors-hover: (
+  smc: rgba(143, 207, 238, 0.7),
+  sds: rgba(34, 162, 224, 0.7),
+  desus: rgba(83, 136, 170, 0.7),
+  sd: rgba(79, 99, 121, 0.7),
+  zl: rgba(133, 119, 153, 0.7),
+  nsi: rgba(183, 136, 138, 0.7),
+  ps_np: rgba(217, 119, 107, 0.7),
+  ps-np: rgba(217, 119, 107, 0.7),
+  imns: rgba(186, 89, 76, 0.7),
+  nep: rgba(133, 63, 54, 0.7),
+  nep_-_zl: rgba(133, 63, 54, 0.7),
+  nep_-_ač: rgba(133, 63, 54, 0.7)
+);
