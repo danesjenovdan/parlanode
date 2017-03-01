@@ -23,6 +23,12 @@
       border-bottom-color: $color;
 
       &.selected,
+      // &.selected:hover { background-color: darken($color, 10%); }
+    }
+  }
+
+  @each $name, $color in map-merge($party-colors-hover, $option-colors-hover) {
+    &.#{$name} {
       &:hover { background-color: $color; }
       // &.selected:hover { background-color: darken($color, 10%); }
     }
