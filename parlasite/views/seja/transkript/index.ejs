@@ -22,7 +22,7 @@
             </font>
             <% } %>
 
-            <% if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
+            <% //if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
             <div class="group-container-menu">
                 <ul class="clearfix">
                     <li>
@@ -42,16 +42,19 @@
                     </li>
                 </ul>
             </div>
-            <% } %>
+            <% //} %>
 
         </div>
     </div>
 </div>
 
+
+<% if(sesData.speeches){ %>
+
 <div class="row">
     <div class="col-md-12 ">
         <% if (sesData.type != 'kolegij') { %>
-            <%- views.besedeKiSoZaznamovaleSejo %>
+        <%- views.besedeKiSoZaznamovaleSejo %>
         <%}%>
     </div>
 </div>
@@ -68,6 +71,12 @@
 <div class="row">
     <div class="here-are-the-speeches"></div>
 </div>
+
+<% }else{ %>
+<%include ../../empty-state/state5.ejs %>
+<% } %>
+
+
 
 <script>
 var session_id = <%= sesData.id %>;

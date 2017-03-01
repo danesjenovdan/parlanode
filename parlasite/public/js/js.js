@@ -705,4 +705,74 @@ $(function () {
     mcSearch();
 
 
+    function sendDataObvestila() {
+
+/*
+        {
+            "email": "tom@tomboy.si",
+            "keywords": [
+                {
+                    "keyword": "ivan",
+                    "reminder": "day",
+                    "mode":"natancno"
+                }
+        ]
+        }
+        */
+
+var keyword = $("#obvestilaData input[name=keyword]").val();
+var email = $("#obvestilaData input[name=email]").val();
+
+//var reminder = $("#obvestilaData input[name=reminder]").val();
+//var mode = $("#obvestilaData input[name=mode]").val();
+var reminder = $("#obvestilaData input[name='reminder[]']:checked").val();
+var mode = $("#obvestilaData input[name='mode[]']:checked").val();
+
+
+var data = {
+    "email": email,
+    "keyword": keyword,
+    "reminder": reminder,
+    "mode": mode
+};
+
+        console.log(data);
+        $.ajax({
+            method: "POST",
+            url: "https://obvestila.parlameter.si/setSettings/",
+            data: data,
+            //dataType: 'j'
+        }).done(function (resp) {
+            console.log(resp);
+            // if (resp.status == "OK") {
+            //
+            //
+            //     //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
+            //
+            //     $("#modal-doniraj-card").modal('hide');
+            //     $("#modal-doniraj-hvala-donacija").modal('show');
+            //
+            //
+            // } else {
+            //     alert(resp.status)
+            // }
+        });
+
+    }
+
+
+    // $("#obvestila button").click(function(event){
+    //
+    //     event.preventDefault();
+    //     //return false;
+    // });
+    $("#obvestilasubmit").click(function(){
+
+        sendDataObvestila();
+        return false;
+    });
+
+
+
+
 });

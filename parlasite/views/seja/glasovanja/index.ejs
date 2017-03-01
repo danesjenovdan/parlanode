@@ -22,7 +22,7 @@
             </font>
             <% } %>
 
-            <% if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
+            <% //if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
             <div class="group-container-menu">
                 <ul class="clearfix">
                     <li>
@@ -42,7 +42,7 @@
                     </li>
                 </ul>
             </div>
-            <% } %>
+            <% //} %>
 
         </div>
     </div>
@@ -50,18 +50,25 @@
 
 <% if(sesData.type != 'kolegij'){ %>
 
+    <% if(sesData.votes){ %>
     <div class="col-md-12 ">
         <%- views.glasovanjaSeja %>
     </div>
-
+    <% }else{ %>
+        <%include ../../empty-state/state1.ejs %>
+    <% } %>
 <% }else{ %>
 
-    <div class="col-md-12 ">
-        <%- views.besedeKiSoZaznamovaleSejo %>
-    </div>
-    <div class="col-md-12 ">
-        <%- views.transkript %>
-    </div>
+    <% if(sesData.votes){ %>
+        <div class="col-md-12 ">
+            <%- views.besedeKiSoZaznamovaleSejo %>
+        </div>
+        <div class="col-md-12 ">
+            <%- views.transkript %>
+        </div>
+    <% }else{ %>
+        <%include ../../empty-state/state2.ejs %>
+    <% } %>
 <% } %>
 
 
