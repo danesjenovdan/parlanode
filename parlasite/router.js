@@ -1650,6 +1650,16 @@ const routes = [
     path: '/o-projektu',
     viewPath: 'about/o-projektu',
     pageTitle: 'O projektu',
+  },
+  {
+    path: '/parlameter-obvestila',
+    viewPath: 'obvestila',
+    pageTitle: 'Parlameter obvestila',
+  },
+  {
+    path: '/parlameter-obvestila/settings',
+    viewPath: 'obvestila/settings',
+    pageTitle: 'Parlameter obvestila - nastavitve',
   }
 ];
 
