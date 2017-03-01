@@ -4,18 +4,23 @@
   "description": "",
   "main": "run.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=development mocha tests/site_test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
+    "cron": "1.2.1",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "lodash": "^4.15.0",
     "node-fetch": "^1.6.0",
+    "node-horseman": "^3.2.0",
+    "object-hash": "^1.1.5",
     "slug": "^0.9.1",
-    "url-pattern": "^1.0.1"
+    "supertest": "^2.0.1",
+    "url-pattern": "^1.0.1",
+    "webshot": "^0.18.0"
   }
 }
