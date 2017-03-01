@@ -43,10 +43,14 @@
                 text-transform: uppercase;
                 background-color: #227497;
             }
-            a.active,
-            a:hover {
+            a.active {
                 color: $white;
                 background: $funblue;
+                text-decoration: none;
+            }
+            a:hover {
+                color: $white;
+                background: $funblue-hover;
                 text-decoration: none;
             }
         }
