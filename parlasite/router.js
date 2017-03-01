@@ -1477,7 +1477,7 @@ const routes = [
     cards: [
       {
         name: 'glasovanjeSeja',
-        sourceUrl: '/s/glasovanje-layered/:motionid',
+        sourceUrl: '/s/glasovanje-layered-2/:motionid',
         resolve: (req, res, route, card) => {
 
           var pattern = new UrlPattern(card.sourceUrl);
