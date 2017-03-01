@@ -315,7 +315,7 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
-              return fetch(cardUrl, {rejectUnauthorized: false})
+              return fetch(cardUrl)
                 .then((res) => {
 
                   return Promise.resolve(res.text());
