@@ -156,7 +156,7 @@ exports.render = function(req, res){
                     analizeUrl += '/'+date
                 }
 
-                request(analizeUrl, function (err, _res, body) {
+                request(analizeUrl, {rejectUnauthorized: false}, function (err, _res, body) {
 
                     if (!err) {
 

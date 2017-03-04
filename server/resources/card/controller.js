@@ -343,7 +343,7 @@ exports.render = function (req, res) {
       cacheData.cardUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
       cacheData.cardLastUpdate = cardDoc.lastUpdate;
 
-      request(dataUrl, (err, _res, body) => {
+      request(dataUrl, {rejectUnauthorized: false}, function (err, _res, body) {
         if (!err) {
           try {
             const data = JSON.parse(body);
