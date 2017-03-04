@@ -1,13 +1,14 @@
 {
   "name": "parlameter-front",
   "version": "0.0.1",
-  "description": "Parlameter frontend server for serving embeds and the page  with cms for managing them",
+  "description": "Parlameter frontend server for serving embeds and the page with cms for managing them",
   "main": "run.js",
   "scripts": {
-    "dev":"NODE_ENV=development supervisor run",
-    "dev-local":"NODE_ENV=dev_local supervisor run",
+    "dev": "NODE_ENV=development supervisor run",
+    "dev-local": "NODE_ENV=dev_local supervisor run",
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
-    "test": "mocha tests/api_test.js"
+    "test": "mocha tests/api_test.js",
+    "build-cards": "NODE_ENV=production node cards/build.js"
   },
   "repository": {
     "type": "git",
@@ -20,25 +21,55 @@
   },
   "homepage": "https://github.com/FranciZ/parlameter-front#readme",
   "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-es2016": "^6.22.0",
     "bluebird": "^3.3.1",
     "body-parser": "^1.15.0",
     "chalk": "^1.1.1",
     "cheerio": "^0.22.0",
     "cors": "^2.7.1",
+    "css-loader": "^0.26.1",
     "ejs": "^2.4.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "express-validator": "^2.20.8",
-    "lodash": "^4.15.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4",
+    "lodash-webpack-plugin": "^0.11.2",
     "mongoose": "^4.4.4",
+    "node-sass": "^4.5.0",
     "pageres": "4.3.0",
+    "parlassets": "git+ssh://git@github.com:muki/parlassets.git",
     "pg": "^6.0.1",
     "pg-hstore": "^2.3.2",
     "rand-token": "^0.2.1",
     "request": "^2.69.0",
+    "sass-loader": "^6.0.2",
     "sequelize": "^3.25.0",
     "serve-static": "^1.10.2",
     "supertest": "^2.0.1",
+    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
+    "vue": "^2.1.8",
+    "vue-loader": "^10.3.0",
+    "vue-server-renderer": "^2.1.8",
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^2.2.1",
     "webshot": "^0.18.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base"
+  },
+  "babel": {
+    "plugins": [
+      "lodash"
+    ],
+    "presets": [
+      "es2016"
+    ]
   }
 }
