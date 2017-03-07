@@ -137,7 +137,7 @@ export default {
       }
 
       return Object.assign({}, specifics, {
-        alternative: JSON.parse(this.cardData.cardData.altHeader),
+        alternative: this.cardData.cardData.altHeader ? JSON.parse(this.cardData.cardData.altHeader) : false,
         title: this.cardData.cardData.name
       })
     }
