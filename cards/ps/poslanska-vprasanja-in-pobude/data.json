@@ -1,0 +1,9 @@
+{
+  "_id": "ps_poslanska_vprasanja_in_pobude",
+  "name": "Poslanska vprašanja in pobude - poslanska skupina",
+  "dataUrl": "https://analize.parlameter.si/v1/pg/getQuestionsOfPG",
+  "type": "poslanska_skupina",
+  "lastUpdate": "2017-03-07T16:49:13.143Z",
+  "method": "poslanska-vprasanja-in-pobude",
+  "group": "ps"
+}
