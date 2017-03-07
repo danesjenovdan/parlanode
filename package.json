@@ -8,7 +8,8 @@
     "dev-local": "NODE_ENV=dev_local supervisor run",
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
-    "build-cards": "NODE_ENV=production node cards/build.js"
+    "build-cards": "NODE_ENV=production node cards/build.js",
+    "cards-dev": "NODE_ENV=production node cards/build-dev.js"
   },
   "repository": {
     "type": "git",
