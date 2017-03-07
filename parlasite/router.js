@@ -1607,6 +1607,30 @@ const routes = [
               return body;
             });
         }
+      },
+      {
+        name: 'govori',
+        sourceUrl: '/s/govori/:id',
+        resolve: (req, res, route, card) => {
+
+          console.log(spsList);
+
+          var pattern = new UrlPattern(card.sourceUrl);
+          const renderedPath = pattern.stringify({id: req.params.id});
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
       }
       // ,{
       //     name: 'transkript',
