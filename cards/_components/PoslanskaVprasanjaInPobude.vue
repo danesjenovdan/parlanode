@@ -378,6 +378,7 @@ export default {
 }
 
 .votes {
+  min-height: 100px;
   flex: 1;
   // list-style: none;
   overflow-y: auto;
@@ -390,6 +391,10 @@ export default {
     left: calc(50% - 41px);
     position: absolute;
     top: calc(50% - 10px);
+  }
+
+  .date {
+    font-weight: 500;
   }
 
   ul {
