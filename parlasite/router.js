@@ -1455,9 +1455,10 @@ const routes = [
         sourceUrl: '/s/seznam-sej/',
         resolve: (req, res, route, card) => {
 
-          var pattern = new UrlPattern(card.sourceUrl);
-          const renderedPath = pattern.stringify({motionid: req.params.motionid});
-          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}&state=%7B"generator"%3Atrue%7D`;
+          //var pattern = new UrlPattern(card.sourceUrl);
+          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
 
           if(req.query.forceRender){
             cardUrl += '?forceRender=true';
@@ -1909,14 +1910,14 @@ function createRoute(app, route) {
             getSessionsByType(req.params, req)
               .then((sesData) => {
 
-                const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
+                // const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
 
                 const dataExtend = {
                   sesData: sesData,
                   slug: req.slug,
                   activeMenu: 'S',
                   views,
-                  pageTitle
+                  'pageTitle': 'Seznam sej'
                 };
 
                 Object.assign(common, dataExtend);
