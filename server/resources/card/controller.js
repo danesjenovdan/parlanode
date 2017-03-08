@@ -71,26 +71,24 @@ exports.update = function (req, res) {
  * @param req
  * @param res
  */
-exports.save = function (req, res) {
+exports.save = function ( req, res ) {
+
   const cardData = req.body;
 
   cardData.uniquePath = `${cardData.group}/${cardData.method}`;
 
   const Card = mongoose.model('Card');
 
-  Card.findOne({ group: cardData.group, method: cardData.method }, (err, doc) => {
-    if (!doc) {
-      const card = new Card(cardData);
+  Card.findOne({ group : cardData.group, method : cardData.method })
+    .then(( doc ) => {
 
-      card.save((error) => {
-        console.log(error);
-        res.send(card);
-      });
-    } else {
-      // conflict
-      res.status(409).send('Card with this group and method already exists');
-    }
-  });
+      if ( !doc ) return res.status(409).send('Card with this group and method already exists');
+      const card = new Card(cardData);
+      return card.save();
+
+    })
+    .then(card => res.send(card))
+    .catch(err => res.status(400).send(err || err.stack));
 };
 
 /**
