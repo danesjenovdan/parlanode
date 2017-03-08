@@ -3,7 +3,7 @@
   "name": "Seznam sej",
   "dataUrl": "https://analize.parlameter.si/v1/s/getSessionsList",
   "type": "seznam_sej",
-  "lastUpdate": "2017-03-08T13:36:16.317Z",
+  "lastUpdate": "2017-03-08T15:00:56.851Z",
   "method": "seznam-sej",
   "group": "s"
 }
