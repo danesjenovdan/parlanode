@@ -157,8 +157,9 @@ export default {
           }
         })
 
-      if (this.currentSortOrder === 'desc') sortedAndFiltered.reverse()
-      if (this.justFive) sortedAndFiltered = sortedAndFiltered.slice(0, 5)
+      if (this.currentSortOrder === 'desc') sortedAndFiltered.reverse();
+      console.log(this.justFive);
+      if (this.justFive) sortedAndFiltered = sortedAndFiltered.slice(0, 5);
 
       return sortedAndFiltered
     },
