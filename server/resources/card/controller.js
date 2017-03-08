@@ -365,6 +365,7 @@ exports.render = function (req, res) {
               }
 
               try {
+                console.log(state);
                 if (state) state = JSON.parse(state);
 
                 let onlyStrings = true;
@@ -545,12 +546,12 @@ exports.render = function (req, res) {
         };
 
         Card.findById(cardRenderDoc.card)
-          .catch(() => {
-            const cardDoc = loadCardFromFile(cacheData.group, cacheData.method);
-            compileOrRespond(cardDoc);
-          })
           .then((cardDoc) => {
             cardDoc = cardDoc || loadCardFromFile(cacheData.group, cacheData.method);
+            compileOrRespond(cardDoc);
+          })
+          .catch(() => {
+            const cardDoc = loadCardFromFile(cacheData.group, cacheData.method);
             compileOrRespond(cardDoc);
           });
       }
