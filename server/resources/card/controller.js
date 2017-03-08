@@ -82,7 +82,7 @@ exports.save = function ( req, res ) {
   Card.findOne({ group : cardData.group, method : cardData.method })
     .then(( doc ) => {
 
-      if ( !doc ) return res.status(409).send('Card with this group and method already exists');
+      if ( doc ) return res.status(409).send('Card with this group and method already exists');
       const card = new Card(cardData);
       return card.save();
 
