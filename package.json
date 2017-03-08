@@ -44,7 +44,7 @@
     "mongoose": "^4.4.4",
     "node-sass": "^4.5.0",
     "pageres": "4.3.0",
-    "parlassets": "git+ssh://git@github.com/muki/parlassets.git",
+    "parlassets": "git+ssh://git@github.com:muki/parlassets.git",
     "pg": "^6.0.1",
     "pg-hstore": "^2.3.2",
     "rand-token": "^0.2.1",
