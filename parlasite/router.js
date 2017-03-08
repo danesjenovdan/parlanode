@@ -1449,6 +1449,31 @@ const routes = [
     path: '/seje',
     viewPath: 'seje',
     pageTitle: 'Seznam sej',
+    cards: [
+      {
+        name: 'seznamSej',
+        sourceUrl: '/s/seznam-sej/',
+        resolve: (req, res, route, card) => {
+
+          //var pattern = new UrlPattern(card.sourceUrl);
+          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
+      },
+    ]
   },
   {
     path: '/seje/isci/',
@@ -1477,7 +1502,7 @@ const routes = [
     cards: [
       {
         name: 'glasovanjeSeja',
-        sourceUrl: '/s/glasovanje-layered/:motionid',
+        sourceUrl: '/s/glasovanje-layered-2/:motionid',
         resolve: (req, res, route, card) => {
 
           var pattern = new UrlPattern(card.sourceUrl);
@@ -1607,6 +1632,30 @@ const routes = [
               return body;
             });
         }
+      },
+      {
+        name: 'govori',
+        sourceUrl: '/s/govori/:id',
+        resolve: (req, res, route, card) => {
+
+          console.log(spsList);
+
+          var pattern = new UrlPattern(card.sourceUrl);
+          const renderedPath = pattern.stringify({id: req.params.id});
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
       }
       // ,{
       //     name: 'transkript',
@@ -1650,6 +1699,16 @@ const routes = [
     path: '/o-projektu',
     viewPath: 'about/o-projektu',
     pageTitle: 'O projektu',
+  },
+  {
+    path: '/parlameter-obvestila',
+    viewPath: 'obvestila',
+    pageTitle: 'Parlameter obvestila',
+  },
+  {
+    path: '/parlameter-obvestila/settings',
+    viewPath: 'obvestila/settings',
+    pageTitle: 'Parlameter obvestila - nastavitve',
   }
 ];
 
@@ -1851,14 +1910,14 @@ function createRoute(app, route) {
             getSessionsByType(req.params, req)
               .then((sesData) => {
 
-                const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
+                // const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
 
                 const dataExtend = {
                   sesData: sesData,
                   slug: req.slug,
                   activeMenu: 'S',
                   views,
-                  pageTitle
+                  'pageTitle': 'Seznam sej'
                 };
 
                 Object.assign(common, dataExtend);

@@ -1,0 +1,70 @@
+<% include ../partials/header.ejs %>
+
+<div id="obvestila" class="col-md-12 ">
+
+
+    <div class="header">
+
+        <div class=""></div>
+
+    </div>
+
+    <form id="obvestilaData">
+    <div class="content">
+
+        <div class="step step1">
+
+            dodaj sprožilec
+
+            <input type="text" name="keyword" />
+
+            <div class="action" data-step="2">
+                dodaj
+            </div>
+        </div>
+        <div class="step step2">
+
+            <h2>izberi način ujemanja</h2>
+
+            <label><input type="radio" name="mode[]" value="natancno">natančno ujemanje</label>
+            <label><input type="radio" name="mode[]" value="obe">obe besedi, ne glede na vrstni red</label>
+            <label><input type="radio" name="mode[]" value="nujna">nujna beseda</label>
+            <label><input type="radio" name="mode[]" value="negativna">negativna beseda</label>
+            <label><input type="radio" name="mode[]" value="siroko">široko ujemanje</label>
+
+            <div class="action" data-step="3">
+                Nadaljuj
+            </div>
+        </div>
+        <div class="step step3">
+
+            <h2>Kako pogosto naj ti pišemo</h2>
+
+            <label><input type="radio" name="reminder[]" value="event">ob dogodku</label>
+            <label><input type="radio" name="reminder[]" value="day">največenkrat na dan</label>
+            <label><input type="radio" name="reminder[]" value="week">največenkrat na teden</label>
+
+            <div class="action" data-step="4">
+                Nadaljuj
+            </div>
+        </div>
+        <div class="step step4">
+
+            <h2>samo še tvoj e-naslov</h2>
+
+            <input type="text" name="email" />
+
+            <div class="action" data-step="5" id="obvestilasubmit">
+                nastavi opomnik
+            </div>
+        </div>
+        <div class="step step5">
+
+            hvala hvala
+        </div>
+    </div>
+    </form>
+
+</div>
+
+<% include ../partials/footer.ejs %>

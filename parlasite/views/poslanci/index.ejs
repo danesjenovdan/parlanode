@@ -43,9 +43,14 @@
 
           <search-dropdown class="districts" :items="districts" :placeholder="inputPlaceholder"></search-dropdown>
 
-          <div class="exclude-presiding">
+          <div class="exclude-presiding checkbox-twolines">
             <input id="predsedujoci" type="checkbox" v-model="excludePresiding" class="checkbox">
-            <label for="predsedujoci">Skrij predsedujoče</label>
+            <label for="predsedujoci">Skrij<br>predsedujoče</label>
+          </div>
+
+          <div class="align-checkbox checkbox-twolines">
+            <input id="samo5" type="checkbox" v-model="onlyLatest" class="checkbox">
+            <label for="samo5">Samo<br>zgornjih 5</label>
           </div>
         </div>
       </div>
@@ -146,6 +151,7 @@
     el: '#member-list-generator-container',
     components: ['SearchDropdown'],
     data: {
+      onlyLatest: false,
       memberData: [],
       districts: [],
       currentSort: 'name',
@@ -160,49 +166,49 @@
         {
           id: 'presence_sessions',
           titleSuffix: ' po prisotnosti na sejah DZ',
-          explanation: 'Preštejemo vse seje in preverimo, če je poslanec glasoval na vsaj enem glasovanju na posamezni seji. Če je glasoval vsaj enkrat, ga štejemo kot prisotnega na posamezni seji. Delimo število sej, ko je bil prisoten, s številom vseh sej in normaliziramo (min 1 - max 100).<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+          explanation: 'Preštejemo vse seje in preverimo, če je poslanec glasoval na vsaj enem glasovanju na posamezni seji. Če je glasoval vsaj enkrat, ga štejemo kot prisotnega na posamezni seji. Delimo število sej, ko je bil prisoten, s številom vseh sej in normaliziramo (min 1 - max 100).',
           label: 'Prisotnost na sejah DZ',
           round: true,
-          unit: 'percent',
-          roundingPrecision: 1,
+          unit: 'percent'
         },
         {
           id: 'presence_votes',
           titleSuffix: ' po prisotnosti na glasovanjih sej DZ',
-          explanation: 'Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100).<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+          explanation: 'Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100).',
           label: 'Prisotnost na glasovanjih sej DZ',
           round: true,
-          unit: 'percent',
-          roundingPrecision: 1,
+          unit: 'percent'
         },
         {
           id: 'vocabulary_size',
           titleSuffix: ' po raznolikosti besedišča',
-          explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+          explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375',
           label: 'Raznolikost besedišča'
         },
         {
           id: 'spoken_words',
           titleSuffix: ' po št. izgovorjenih besed',
-          explanation: 'Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ.<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+          explanation: 'Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ.',
           label: 'Št. izgovorjenih besed'
         },
         {
           id: 'speeches_per_session',
           titleSuffix: ' po št. govorov na sejo',
-          explanation: 'Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim.<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+          explanation: 'Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim.',
           label: 'Št. govorov na sejo'
         },
         {
           id: 'privzdignjeno',
           titleSuffix: ' po pogostosti rabe privzdignjenega besedja',
           explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
-            'Kvalifikatorji iz SSKJ: ' +
+            'Privzdignjeno besedje<br>' +
+            'Kvalifikatorji iz SSKJ<br>' +
             'evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>' +
-            '<br>' +
+            'Kvalifikatorji iz SNB<br>' +
+            '/<br>' +
             '<br>' +
             'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
-            'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+            'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
           label: 'Privzdignjeno besedje',
           round: true,
           roundingPrecision: 3
@@ -211,13 +217,14 @@
           id: 'preprosto',
           titleSuffix: ' po pogostosti rabe preprostega besedja',
           explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
-            'Kvalifikatorji iz SSKJ: ' +
+            'Preprosto besedje<br>' +
+            'Kvalifikatorji iz SSKJ<br>' +
             'narečno (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>' +
             'Kvalifikatorji iz SNB<br>' +
             'pogovorno (pog.)<br>' +
             '<br>' +
             'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
-            'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+            'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
           label: 'Preprosto besedje',
           round: true,
           roundingPrecision: 3
@@ -226,13 +233,14 @@
           id: 'problematicno',
           titleSuffix: ' po pogostosti rabe ekscesnega besedja',
           explanation: 'Z združevanjem kvalifikatorjev <a href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>' +
-            'Kvalifikatorji iz SSKJ: ' +
+            'Ekscesno besedje<br>' +
+            'Kvalifikatorji iz SSKJ <br>' +
             'vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično (iron.), otroško (otr.) <br>' +
-            'Kvalifikatorji iz SNB: ' +
+            'Kvalifikatorji iz SNB<br>' +
             'slabšalno (slabš.), vulgarno (vulg.)<br>' +
             '<br>' +
             'Vrednost v stolpcu analiza označuje delež posameznega tipa besedja v poslančevih govorih glede na povprečje, izračunano za celoten sklic.<br>' +
-            'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+            'Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca se normalizira (min. 1 – max. 100).',
           label: 'Ekscesno besedje',
           round: true,
           roundingPrecision: 3
@@ -241,7 +249,7 @@
           id: 'number_of_questions',
           titleSuffix: ' po št. poslanskih vprašanj in pobud',
           explanation: 'Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.' +
-                            'Podatke pridobivamo s spletnega mesta DZ RS: <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/</a>.<br><br>V stolpcu Sprememba je razlika med vrednostima rezultatov analize v obdobju med zadnjima dvema rednima sejama DZ RS.',
+                            'Podatke pridobivamo s spletnega mesta DZ RS: <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/</a>.',
           label: 'Št. poslanskih vprašanj in pobud',
           round: true,
           roundingPrecision: 0
@@ -363,6 +371,10 @@
           sortedAndFiltered.reverse()
         }
 
+        if (this.onlyLatest) {
+          sortedAndFiltered = sortedAndFiltered.slice(0, 5)
+        }
+
         return sortedAndFiltered
       },
       generatedCardUrl: function() {
@@ -379,9 +391,12 @@
         if (this.excludePresiding) {
           params.excludePresiding = true
         }
+        if (this.onlyLatest) {
+          params.onlyLatest = true
+        }
 
         return 'https://glej.parlameter.si/p/seznam-poslancev/' +
-          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembersTickers/') +
+          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/p/getListOfMembersTickers') +
           (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
       },
       infoText: function() {
@@ -411,7 +426,8 @@
       $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
         that.slugs = response
       })
-      $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembersTickers/', function(response) {
+      $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembersTickers', function(response) {
+      // $.getJSON('https://analize.parlameter.si/v1/p/getListOfMembers/', function(response) {
         that.districts = response.districts.map(function(district) {
           var id = Object.keys(district)[0]
           return {
@@ -470,11 +486,11 @@
         return value
       },
       getFormattedChangeValue: function(member) {
-        var change = parseFloat(member.results[this.currentAnalysis].diff).toFixed(this.currentAnalysisData.roundingPrecision);
+        var change = parseInt(member.results[this.currentAnalysis].diff);
         var number = Math.abs(change);
-        var prefix = change < 0 ? '-\xa0' : (change > 0 ? '+\xa0' : '');
+        var prefix = change < 0 ? '- ' : (change > 0 ? '+ ' : '');
 
-        return prefix + String(number).replace('.', ',');
+        return prefix + number;
       },
       getMemberUrl: function(memberId) {
         return this.slugs
@@ -520,6 +536,16 @@
   activateCopyButton()
   addCardRippling()
 
-</script>
+  </script>
+
+  <style>
+  .checkbox-twolines label {
+    line-height: 14px;
+    max-width: 115px;
+  }
+  .checkbox-twolines label:before {
+    top: 4px;
+  }
+</style>
 
 <% include ../partials/footer.ejs %>

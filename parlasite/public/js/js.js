@@ -198,7 +198,7 @@ $(function () {
 
         $("#session_search_results .getmedata").each(function (e, urlid) {
             var urlid = $(this).attr('id');
-            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/" + (querystring)));
+            var url = ("https://parlaglej.muzikasuper.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/" + (querystring)));
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
             var jqxhr = $.ajax(url)
@@ -217,7 +217,7 @@ $(function () {
         $("#session_search_results .getmedata-voting").each(function (e, urlid) {
             var urlid = $(this).attr('id');
             console.log("https://isci.parlameter.si/v/" + (querystringVoting));
-            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/v/" + (querystringVoting)));
+            var url = ("https://parlaglej.muzikasuper.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/v/" + (querystringVoting)));
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
             var jqxhr = $.ajax(url)
@@ -308,7 +308,7 @@ $(function () {
                     searchurl = searchurl + 'council=' + queryParams.council
                 }
             }
-            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent(searchurl));
+            var url = ("https://parlaglej.muzikasuper.si/s/" + urlid + "/?customUrl=" + encodeURIComponent(searchurl));
             console.log(searchurl);
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
@@ -328,7 +328,7 @@ $(function () {
         $("#session_search_results_filter .getmedata-voting").each(function (e, urlid) {
             var urlid = $(this).attr('id');
             console.log("https://isci.parlameter.si/v/" + (querystringVoting.split('&')[0]));
-            var url = ("https://glej.parlameter.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/v/" + (querystringVoting)));
+            var url = ("https://parlaglej.muzikasuper.si/s/" + urlid + "/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/v/" + (querystringVoting)));
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
             var jqxhr = $.ajax(url)
@@ -703,6 +703,76 @@ $(function () {
         }
     }
     mcSearch();
+
+
+    function sendDataObvestila() {
+
+/*
+        {
+            "email": "tom@tomboy.si",
+            "keywords": [
+                {
+                    "keyword": "ivan",
+                    "reminder": "day",
+                    "mode":"natancno"
+                }
+        ]
+        }
+        */
+
+var keyword = $("#obvestilaData input[name=keyword]").val();
+var email = $("#obvestilaData input[name=email]").val();
+
+//var reminder = $("#obvestilaData input[name=reminder]").val();
+//var mode = $("#obvestilaData input[name=mode]").val();
+var reminder = $("#obvestilaData input[name='reminder[]']:checked").val();
+var mode = $("#obvestilaData input[name='mode[]']:checked").val();
+
+
+var data = {
+    "email": email,
+    "keyword": keyword,
+    "reminder": reminder,
+    "mode": mode
+};
+
+        console.log(data);
+        $.ajax({
+            method: "POST",
+            url: "https://obvestila.parlameter.si/setSettings/",
+            data: data,
+            //dataType: 'j'
+        }).done(function (resp) {
+            console.log(resp);
+            // if (resp.status == "OK") {
+            //
+            //
+            //     //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
+            //
+            //     $("#modal-doniraj-card").modal('hide');
+            //     $("#modal-doniraj-hvala-donacija").modal('show');
+            //
+            //
+            // } else {
+            //     alert(resp.status)
+            // }
+        });
+
+    }
+
+
+    // $("#obvestila button").click(function(event){
+    //
+    //     event.preventDefault();
+    //     //return false;
+    // });
+    $("#obvestilasubmit").click(function(){
+
+        sendDataObvestila();
+        return false;
+    });
+
+
 
 
 });
