@@ -54,7 +54,9 @@
     <div class="col-md-12 ">
         <%- views.glasovanjaSeja %>
     </div>
-    <% }else{ %>
+    <% } else if (sesData.org.name === 'Državni zbor'){ %>
+        <%include ../../empty-state/state1dz.ejs %>
+    <% } else { %>
         <%include ../../empty-state/state1.ejs %>
     <% } %>
 <% }else{ %>
@@ -66,7 +68,9 @@
         <div class="col-md-12 ">
             <%- views.transkript %>
         </div>
-    <% }else{ %>
+    <% } else if (sesData.org.name === 'Državni zbor'){ %>
+        <%include ../../empty-state/state2dz.ejs %>
+    <% } else { %>
         <%include ../../empty-state/state2.ejs %>
     <% } %>
 <% } %>
