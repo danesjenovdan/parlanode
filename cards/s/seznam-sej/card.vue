@@ -14,7 +14,7 @@
           <search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>
 
           <div class="align-checkbox">
-            <input id="justFive" type="checkbox" v-model="justFive" class="checkbox">
+            <input id="justFive" type="checkbox" v-model="justFive" class="checkbox" />
             <label for="justFive">Samo zadnjih 5</label>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default {
         })
 
       if (this.currentSortOrder === 'desc') sortedAndFiltered.reverse();
-      console.log(this.justFive);
+      console.log('justfive', this.justFive);
       if (this.justFive) sortedAndFiltered = sortedAndFiltered.slice(0, 5);
 
       return sortedAndFiltered
