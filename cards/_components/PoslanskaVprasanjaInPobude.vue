@@ -31,7 +31,7 @@
                 <div class="parlaicon parlaicon-vprasanje"></div>
                 <div class="motion">
                   <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/poslanec/${cardData.urlsData.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
-                  {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : 'ministrici ' + question.recipient_text.split('ministrica ')[1]}` }}
+                  {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : question.recipient_text.split(' ')[0] === 'ministrica' ? 'ministrici ' + question.recipient_text.split('ministrica ')[1] : 'Vladi'}` }}
                   <a target="_blank" :href="`${question.url}`">{{ question.title }}</a>
                 </div>
               </li>
@@ -41,10 +41,10 @@
       </div>
 
       <card-info>
-        <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji.</p>
+        <p class="info-text lead">Pregled poslanskih vprašanj na nivoju poslanske skupine.</p>
         <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
-        <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
+        <p class="info-text">Zbrali smo vsa poslanska vprašanja, jih sortirali po poslanskih skupinah in jih ponudili v pregled glede na poslanca/-ko, ki jih je postavil/-a, glede na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi iskanje po naslovu poslanskih vprašanj.</p>
+        <p class="info-text">Nabor poslanskih vprašanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
       </card-info>
 
       <card-embed :url="cardUrl" />
