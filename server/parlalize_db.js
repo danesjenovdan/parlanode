@@ -25,7 +25,7 @@ exports.connect = function(){
       })
       .catch(function (err) {
           console.log(chalk.red('| POSTGRES | Error when connecting to postgres'));
-          throw new Error();
+          throw new Error(err);
       });
 
 };
