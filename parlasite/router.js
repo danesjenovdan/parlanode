@@ -1449,6 +1449,30 @@ const routes = [
     path: '/seje',
     viewPath: 'seje',
     pageTitle: 'Seznam sej',
+    cards: [
+      {
+        name: 'seznamSej',
+        sourceUrl: '/s/seznam-sej/',
+        resolve: (req, res, route, card) => {
+
+          var pattern = new UrlPattern(card.sourceUrl);
+          const renderedPath = pattern.stringify({motionid: req.params.motionid});
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${renderedPath}&state=%7B"generator"%3Atrue%7D`;
+
+          if(req.query.forceRender){
+            cardUrl += '?forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
+      },
+    ]
   },
   {
     path: '/seje/isci/',
