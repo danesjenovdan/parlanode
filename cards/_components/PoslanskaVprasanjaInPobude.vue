@@ -5,33 +5,35 @@
     <div class="card-content full">
       <div class="card-content-front" v-cloak>
         <div class="filters">
-          <div class="filter text-filter">
-            <div class="filter-label">Išči po naslovu glasovanja</div>
-            <input class="text-filter-input" type="text" v-model="textFilter">
+          <div class="filter tag-dropdown">
+            <div class="filter-label">Poslanec/-ka</div>
+            <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown>
           </div>
           <div class="filter tag-dropdown">
-            <div class="filter-label">Matično delovno telo</div>
-            <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+            <div class="filter-label">Naslovljenec/-ka</div>
+            <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown>
           </div>
           <div class="filter month-dropdown">
             <div class="filter-label">Časovno obdobje</div>
             <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
           </div>
-          <div class="filter option-party-buttons">
-            <div v-for="option in allOptions"
-            :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
-            @click="toggleOption(option.id)">{{ option.label }}</div>
+          <div class="filter text-filter">
+            <div class="filter-label">Išči po naslovu vprašanja</div>
+            <input class="text-filter-input" type="text" v-model="textFilter">
           </div>
         </div>
 
         <div class="votes stickinme date-list">
-          <template v-for="votingDay in filteredVotingDays">
-            <div class="date">{{ votingDay.date }}</div>
+          <template v-for="questionDay in filteredQuestionDays">
+            <div class="date">{{ questionDay.date }}</div>
             <ul>
-              <li v-for="ballot in votingDay.ballots">
-                <div :class="['icon', ballot.option]"></div>
-                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
-                <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
+              <li v-for="question in questionDay.questions">
+                <div class="parlaicon parlaicon-vprasanje"></div>
+                <div class="motion">
+                  <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/poslanec/${cardData.urlsData.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
+                  {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : 'ministrici ' + question.recipient_text.split('ministrica ')[1]}` }}
+                  <a target="_blank" :href="`${question.url}`">{{ question.title }}</a>
+                </div>
               </li>
             </ul>
           </template>
@@ -66,56 +68,65 @@ export default {
   components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
   mixins: [ initializeBack ],
   computed: {
-    tagPlaceholder() {
-      return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
+    MPsPlaceholder() {
+      return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';
+    },
+    recipientsPlaceholder() {
+      return this.selectedRecipients.length > 0 ? `Izbranih: ${this.selectedRecipients.length}` : 'Izberi';
     },
     monthPlaceholder() {
       return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
     },
     dropdownItems() {
-      const validTags = [];
+      const validMPs = [];
+      const validRecipients = [];
       const validMonths = [];
 
-      this.getFilteredVotingDays(true).forEach((votingDay) => {
-        const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
+      this.getFilteredQuestionDays(true).forEach((questionDay) => {
+        const [, month, year] = questionDay.date.split(' ').map(string => parseInt(string, 10));
         const monthId = `${year}-${month}`;
         if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
 
-        votingDay.ballots
-          .forEach((ballot) => {
-            ballot.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) validTags.push(tag);
-            });
+        questionDay.questions
+          .forEach((question) => {
+            if (validMPs.indexOf(question.person.id) === -1) validMPs.push(question.person.id);
+            if (validRecipients.indexOf(question.recipient_text) === -1) validRecipients.push(question.recipient_text);
           });
       });
 
       return {
-        tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
+        MPs: this.allMPs.filter(mp => validMPs.indexOf(mp.id) > -1),
+        recipients: this.allRecipients.filter(recipient => validRecipients.indexOf(recipient.id) > -1),// this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
         months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
-    selectedTags() {
-      return this.allTags
+    selectedMPs() {
+      return this.allMPs
+        .filter(tag => tag.selected)
+        .map(tag => tag.id);
+    },
+    selectedRecipients() {
+      return this.allRecipients
         .filter(tag => tag.selected)
         .map(tag => tag.id);
     },
     selectedMonths() {
       return this.allMonths.filter(month => month.selected);
     },
-    selectedOptions() {
-      return this.allOptions.filter(option => option.selected)
-                            .map(option => option.id);
-    },
-    filteredVotingDays() {
-      return this.getFilteredVotingDays();
+    // selectedOptions() {
+    //   return this.allOptions.filter(option => option.selected)
+    //                         .map(option => option.id);
+    // },
+    filteredQuestionDays() {
+      return this.getFilteredQuestionDays();
     },
     cardUrl() {
       const state = {};
 
-      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-      if (this.textFilter.length > 0) state.text = this.textFilter;
-      if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
+      // if (this.selectedTags.length > 0) state.tags = this.selectedTags;
+      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      // if (this.textFilter.length > 0) state.text = this.textFilter;
+      // if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
 
       return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -163,87 +174,96 @@ export default {
       { id: '2016-3', label: 'Marec 2016', month: 3, year: 2016, selected: false },
       { id: '2016-2', label: 'Februar 2016', month: 2, year: 2016, selected: false },
       { id: '2016-1', label: 'Januar 2016', month: 1, year: 2016, selected: false },
+      { id: '2015-12', label: 'December 2015', month: 12, year: 2015, selected: false },
+      { id: '2015-11', label: 'November 2015', month: 11, year: 2015, selected: false },
+      { id: '2015-10', label: 'Oktober 2015', month: 10, year: 2015, selected: false },
+      { id: '2015-9', label: 'September 2015', month: 9, year: 2015, selected: false },
+      { id: '2015-8', label: 'Avgust 2015', month: 8, year: 2015, selected: false },
+      { id: '2015-7', label: 'Julij 2015', month: 7, year: 2015, selected: false },
+      { id: '2015-6', label: 'Junij 2015', month: 6, year: 2015, selected: false },
+      { id: '2015-5', label: 'Maj 2015', month: 5, year: 2015, selected: false },
+      { id: '2015-4', label: 'April 2015', month: 4, year: 2015, selected: false },
+      { id: '2015-3', label: 'Marec 2015', month: 3, year: 2015, selected: false },
+      { id: '2015-2', label: 'Februar 2015', month: 2, year: 2015, selected: false },
+      { id: '2015-1', label: 'Januar 2015', month: 1, year: 2015, selected: false },
     ];
-    let allOptions = [
-      { id: 'za', class: 'for', label: 'ZA', selected: false },
-      { id: 'proti', class: 'against', label: 'PROTI', selected: false },
-      { id: 'kvorum', class: 'kvorum', label: (this.type === 'person' ? 'VZDRŽAN' : 'VZDRŽANI'), selected: false },
-      { id: 'ni', class: 'ni', label: (this.type === 'person' ? 'NI' : 'NISO'), selected: false },
-    ];
-    let allTags = this.cardData.data.all_tags.map(
-      tag => ({ id: tag, label: tag, selected: false })
+    let allMPs = this.cardData.data.all_authors.map(
+      author => ({ id: author.id, label: author.name, selected: false })
+    );
+    let allRecipients = this.cardData.data.all_recipients.map(
+      recipient => ({ id: recipient, label: recipient, selected: false })
     );
     let textFilter = ''
 
-    if (this.cardData.state) {
-      if (this.cardData.state.text) textFilter = this.cardData.state.text;
-      if (this.cardData.state.months) allMonths = selectFromState(allMonths, this.cardData.state.months);
-      if (this.cardData.state.options) allOptions = selectFromState(allOptions, this.cardData.state.options);
-      if (this.cardData.state.tags) allTags = selectFromState(allTags, this.cardData.state.tags);
-    }
+    // if (this.cardData.state) {
+    //   if (this.cardData.state.text) textFilter = this.cardData.state.text;
+    //   if (this.cardData.state.months) allMonths = selectFromState(allMonths, this.cardData.state.months);
+    //   if (this.cardData.state.options) allOptions = selectFromState(allOptions, this.cardData.state.options);
+    //   if (this.cardData.state.tags) allTags = selectFromState(allTags, this.cardData.state.tags);
+    // }
 
     return {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
       vocabulary: this.cardData.vocab,
-      votingDays: this.cardData.data.results,
+      questionDays: this.cardData.data.results,
       allMonths,
-      allOptions,
-      allTags,
+      allMPs,
+      allRecipients,
       textFilter,
       shortenedCardUrl: '',
     };
   },
   methods: {
-    toggleOption(optionId) {
-      const clickedOption = this.allOptions.filter(option => option.id === optionId)[0];
-      clickedOption.selected = !clickedOption.selected;
-    },
-    getFilteredVotingDays(onlyFilterByText = false) {
-      const filterBallots = (ballot) => {
-        const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-          ballot.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+    // toggleOption(optionId) {
+    //   const clickedOption = this.allOptions.filter(option => option.id === optionId)[0];
+    //   clickedOption.selected = !clickedOption.selected;
+    // },
+    getFilteredQuestionDays(onlyFilterByText = false) { //getFilteredVotingDays
+      const filterQuestions = (question) => { //filterBallots
+        const MPMatch = onlyFilterByText || this.selectedMPs.length === 0 ||
+          this.selectedMPs.indexOf(question.person.id) !== -1
+        const recipientMatch = onlyFilterByText || this.selectedRecipients.length === 0 ||
+          this.selectedRecipients.indexOf(question.recipient_text) !== -1
         const textMatch = this.textFilter === '' ||
-          ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const optionMatch = onlyFilterByText || this.selectedOptions.length === 0 ||
-          this.selectedOptions.indexOf(ballot.option) > -1;
+          question.title.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
 
-        return tagMatch && textMatch && optionMatch;
+        return MPMatch && recipientMatch && textMatch;
       };
 
-      const filterDates = (votingDay) => {
+      const filterDates = (questionDay) => {
         if (onlyFilterByText || this.selectedMonths.length === 0) return true;
 
-        const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
+        const [, month, year] = questionDay.date.split(' ').map(string => parseInt(string, 10));
 
         return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       };
 
-      return this.votingDays
-        .map(votingDay => ({
-          date: votingDay.date,
-          ballots: votingDay.ballots
-            .filter(filterBallots)
-            .map((ballot) => {
-              const ballotClone = JSON.parse(JSON.stringify(ballot));
-              if (ballot.option === 'ni') {
-                ballotClone.label = this.type === 'person'
-                  ? `Ni ${this.vocabulary.glasovati[this.person.gender]} o`
-                  : 'Niso glasovali o';
-              } else {
-                ballotClone.label = this.type === 'person'
-                  ? `${_.capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
-                  : `Glasovali ${ballot.option.toUpperCase()}`;
-              }
+      return this.questionDays
+        .map(questionDay => ({
+          date: questionDay.date,
+          questions: questionDay.questions
+            .filter(filterQuestions)
+            // .map((ballot) => {
+            //   const ballotClone = JSON.parse(JSON.stringify(ballot));
+            //   if (ballot.option === 'ni') {
+            //     ballotClone.label = this.type === 'person'
+            //       ? `Ni ${this.vocabulary.glasovati[this.person.gender]} o`
+            //       : 'Niso glasovali o';
+            //   } else {
+            //     ballotClone.label = this.type === 'person'
+            //       ? `${_.capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
+            //       : `Glasovali ${ballot.option.toUpperCase()}`;
+            //   }
 
-              if (ballot.result !== 'none') {
-                ballotClone.outcome = ballot.result === true ? 'Predlog sprejet' : 'Predlog zavrnjen';
-              }
+            //   if (ballot.result !== 'none') {
+            //     ballotClone.outcome = ballot.result === true ? 'Predlog sprejet' : 'Predlog zavrnjen';
+            //   }
 
-              return ballotClone;
-            }),
+            //   return ballotClone;
+            // }),
         }))
-        .filter(votingDay => votingDay.ballots.length > 0)
+        .filter(questionDay => questionDay.questions.length > 0)
         .filter(filterDates);
     },
     shortenUrl(url) {
@@ -313,9 +333,10 @@ export default {
   }
 
   .text-filter {
-    @include respond-to(desktop) { width: 26%; }
+    @include show-for(desktop);
+    // @include respond-to(desktop) { width: 26%; }
 
-    width: 100%;
+    width: 26%; // 100%
 
     .text-filter-input {
       background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
@@ -350,6 +371,10 @@ export default {
   }
 
   .search-dropdown-options { top: 50px; }
+
+  .search-dropdown input {
+    background-color: #ffffff;
+  }
 }
 
 .votes {
@@ -399,6 +424,11 @@ export default {
       &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
       &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
       &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan.svg"); }
+    }
+
+    .parlaicon {
+      height: auto;
+      margin-right: 10px;
     }
 
     .motion {
