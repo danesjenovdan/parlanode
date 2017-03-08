@@ -31,7 +31,7 @@
                 <div class="parlaicon parlaicon-vprasanje"></div>
                 <div class="motion">
                   <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/poslanec/${cardData.urlsData.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
-                  {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : 'ministrici ' + question.recipient_text.split('minister ')[1]}` }}
+                  {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : 'ministrici ' + question.recipient_text.split('ministrica ')[1]}` }}
                   <a target="_blank" :href="`${question.url}`">{{ question.title }}</a>
                 </div>
               </li>
