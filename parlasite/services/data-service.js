@@ -26,6 +26,7 @@ exports.loadSPS = () => {
     .then(spsData => {
       exports.sps.length = 0;
       Object.assign(exports.sps, spsData);
+      return spsData;
     });
 
 };
