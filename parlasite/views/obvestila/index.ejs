@@ -1,5 +1,38 @@
 <% include ../partials/header.ejs %>
 
+<style>
+
+    .step {
+        display: none;
+    }
+
+    .step1 {
+        display: block;
+    }
+
+    #obvestila .naprej {
+        margin: auto;
+        position: relative;
+        width: auto;
+        text-align: center;
+        color: #ffffff;
+        padding: 10px 30px;
+        background-color: #009cdd;
+        cursor: pointer;
+        margin-top: 0px;
+        display: block;
+    }
+
+    #obvestila .searchinfo {
+        top: 15px;
+        right: -30px;
+    }
+    #obvestila .top50{
+        margin-top: 50px;
+    }
+
+</style>
+
 <div id="obvestila" class="col-md-12 ">
 
 
@@ -10,59 +43,138 @@
     </div>
 
     <form id="obvestilaData">
-    <div class="content">
 
-        <div class="step step1">
 
-            dodaj sprožilec
+        <div class="content">
 
-            <input type="text" name="keyword" />
 
-            <div class="action" data-step="2">
-                dodaj
+            <div class="step step1">
+
+                <div class="narrow-inner-container">
+
+                    <h2>dodaj sprožilec</h2>
+
+                    <div class="input-group search">
+
+                        <input type="text" name="keyword" class="form-control simplebox"
+                               style="border-right: 1px solid #c8c8c8;"/>
+
+                        <div class="input-group-btn" style="padding-left: 10px;">
+                            <div class="action btn btn-default naprej" data-step="2">
+                                Dodaj
+                            </div>
+                        </div>
+
+                        <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv=""
+                             data-toggle="modal" data-target="#modal-search-how">i
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            1
+                            Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te obvestimo.
+                        </div>
+                        <div class="col-md-6">
+                            2
+                            Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih teles, ti to
+                            sporočimo po e-pošti.
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="step step2">
+
+                <div class="narrow-inner-container">
+                    <h2>izberi način ujemanja</h2>
+
+                    <ul>
+                        <li>
+                            <label><input type="radio" name="mode[]" value="natancno">natančno ujemanje</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="mode[]" value="obe">obe besedi, ne glede na vrstni red</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="mode[]" value="nujna">nujna beseda</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="mode[]" value="negativna">negativna beseda</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="mode[]" value="siroko">široko ujemanje</label>
+                        </li>
+                    </ul>
+
+                    <div class="action btn btn-default naprej top50" data-step="3">
+                        Nadaljuj
+                    </div>
+                </div>
+            </div>
+            <div class="step step3">
+
+                <div class="narrow-inner-container">
+                    <h2>Kako pogosto naj ti pišemo</h2>
+
+                    <ul>
+                        <li>
+                            <label><input type="radio" name="reminder[]" value="event">ob dogodku</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="reminder[]" value="day">največenkrat na dan</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="reminder[]" value="week">največenkrat na teden</label>
+                        </li>
+                    </ul>
+
+                    <div class="action btn btn-default naprej top50" data-step="4">
+                        Nadaljuj
+                    </div>
+                </div>
+
+            </div>
+            <div class="step step4">
+
+                <div class="narrow-inner-container">
+                    <h2>samo še tvoj e-naslov</h2>
+
+                    <div class="search">
+                    <input type="email" name="email" class="form-control simplebox"
+                           style="border-right: 1px solid #c8c8c8;"
+                    />
+
+
+                    <div class="action btn btn-default naprej top50" data-step="5" id="obvestilasubmit">
+                        nastavi opomnik
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="step step5">
+
+                <div class="narrow-inner-container">
+                    <h2>hvala hvala</h2>
+
+                    <p class="replaceme">
+                        Za iskalni niz "#keyword#" si na naslovu #email# nastavil opomnik. Povezava za potrditev
+                        obestila in povezava za urejanje nastavitev te čakata na majlu.
+                    </p>
+
+                    <div class="action btn btn-default naprej top50" data-step="1">
+                        ponovi ?
+                    </div>
+
+                </div>
+
+
             </div>
         </div>
-        <div class="step step2">
-
-            <h2>izberi način ujemanja</h2>
-
-            <label><input type="radio" name="mode[]" value="natancno">natančno ujemanje</label>
-            <label><input type="radio" name="mode[]" value="obe">obe besedi, ne glede na vrstni red</label>
-            <label><input type="radio" name="mode[]" value="nujna">nujna beseda</label>
-            <label><input type="radio" name="mode[]" value="negativna">negativna beseda</label>
-            <label><input type="radio" name="mode[]" value="siroko">široko ujemanje</label>
-
-            <div class="action" data-step="3">
-                Nadaljuj
-            </div>
-        </div>
-        <div class="step step3">
-
-            <h2>Kako pogosto naj ti pišemo</h2>
-
-            <label><input type="radio" name="reminder[]" value="event">ob dogodku</label>
-            <label><input type="radio" name="reminder[]" value="day">največenkrat na dan</label>
-            <label><input type="radio" name="reminder[]" value="week">največenkrat na teden</label>
-
-            <div class="action" data-step="4">
-                Nadaljuj
-            </div>
-        </div>
-        <div class="step step4">
-
-            <h2>samo še tvoj e-naslov</h2>
-
-            <input type="text" name="email" />
-
-            <div class="action" data-step="5" id="obvestilasubmit">
-                nastavi opomnik
-            </div>
-        </div>
-        <div class="step step5">
-
-            hvala hvala
-        </div>
-    </div>
     </form>
 
 </div>
