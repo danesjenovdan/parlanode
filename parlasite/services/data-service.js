@@ -7,14 +7,14 @@ const spsFilePath = __dirname + '/../data/sps.json';
 
 exports.sps = [];
 
-exports.loadSPS = () => {
+exports.loadSPS = (force) => {
 
   return Promise.resolve()
     .then(() => {
 
       const spsExists = fs.existsSync(spsFilePath);
 
-      if ( spsExists ) {
+      if ( spsExists && !force ) {
         spsRequest();
         // TODO - legacy array wrap
         return Promise.resolve([ JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8')) ]);
