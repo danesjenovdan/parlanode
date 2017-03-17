@@ -736,6 +736,11 @@ var data = {
     "mode": mode
 };
 
+        var text = $(".replaceme").text();
+        text = text.replace('#keyword#', keyword);
+        text = text.replace('#email#', email);
+        $(".replaceme").text(text);
+
         console.log(data);
         $.ajax({
             method: "POST",
@@ -772,6 +777,18 @@ var data = {
         return false;
     });
 
+
+    $("#obvestila .action").click(function () {
+
+        var error = false;
+        var nextStep = $(this).data('step');
+        if(!error){
+            $(".step").hide();
+
+            $(".step"+nextStep).show();
+        }
+
+    });
 
 
 
