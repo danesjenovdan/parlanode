@@ -1213,7 +1213,7 @@ const routes = [
     cards: [
       {
         name: 'glasovanja',
-        sourceUrl: '/pg/glasovanja/:id',
+        sourceUrl: '/ps/glasovanja/:id',
         resolve: (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
