@@ -1757,7 +1757,7 @@ module.exports = ( app ) => {
 
     if(req.query.t !== 'vkSzv8Nu4eDkLBk7kUw4BBhyLjysJm') return res.status(400).send('Missing or wrong token');
 
-    dataService.loadSPS()
+    dataService.loadSPS(true)
       .then(spsData => res.send(spsData))
       .catch(err => res.status(400).send(err || err.stack));
 
