@@ -42,6 +42,7 @@ const ITEM_HEIGHT = 23;
 const ITEM_COUNT = 10;
 
 export default {
+  name: 'SearchDropdown',
   data: () => ({
     filter: '',
     active: false,
