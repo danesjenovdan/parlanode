@@ -44,8 +44,8 @@
   display: flex;
   & > li {
     flex: 1;
-    text-align: center;
     margin-left: 3px;
+    text-align: center;
 
     &:first-child { margin-left: 0 }
     & > a {
