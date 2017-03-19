@@ -8,7 +8,7 @@
     "dev-local": "NODE_ENV=dev_local supervisor run",
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
-    "build-cards": "NODE_ENV=production node cards/build.js",
+    "cards-build": "NODE_ENV=production node cards/build.js",
     "cards-dev": "webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open"
   },
   "repository": {
