@@ -24,9 +24,9 @@ const compileWithWebpack = config =>
     });
   });
 
-// Refreshes lastUpdate param in data.json file on passed path
+// Refreshes lastUpdate param in card.json file on passed path
 const refreshLastUpdate = (path) => {
-  const dataJsonPath = `${path}/data.json`;
+  const dataJsonPath = `${path}/card.json`;
   fs.readFile(dataJsonPath, (err, data) => {
     if (err) throw err;
     const dataObject = JSON.parse(data);

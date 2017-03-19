@@ -1,0 +1,9 @@
+{
+  "_id": "s_seznam_sej",
+  "name": "Seznam sej",
+  "dataUrl": "https://analize.parlameter.si/v1/s/getSessionsList",
+  "type": "seznam_sej",
+  "lastUpdate": "2017-03-19T18:04:55.294Z",
+  "method": "seznam-sej",
+  "group": "s"
+}
