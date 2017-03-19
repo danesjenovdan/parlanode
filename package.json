@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
     "build-cards": "NODE_ENV=production node cards/build.js",
-    "cards-dev": "NODE_ENV=production node cards/build-dev.js"
+    "cards-dev": "webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open"
   },
   "repository": {
     "type": "git",
@@ -54,11 +54,12 @@
     "serve-static": "^1.10.2",
     "supertest": "^2.0.1",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
-    "vue": "^2.2.1",
-    "vue-loader": "^11.1.4",
-    "vue-server-renderer": "^2.2.1",
-    "vue-template-compiler": "^2.2.1",
+    "vue": "2.2.1",
+    "vue-loader": "11.1.4",
+    "vue-server-renderer": "2.2.1",
+    "vue-template-compiler": "2.2.1",
     "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2",
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
