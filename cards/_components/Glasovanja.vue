@@ -55,6 +55,7 @@
 
 <script>
 import _ from 'lodash'
+import { MONTH_NAMES } from 'components/constants'
 import CardInfo from 'components/Card/Info.vue'
 import CardEmbed from 'components/Card/Embed.vue'
 import CardShare from 'components/Card/Share.vue'
@@ -148,22 +149,13 @@ export default {
         Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
       )
 
-    let allMonths = [
-      { id: '2017-2', label: 'Februar 2017', month: 2, year: 2017, selected: false },
-      { id: '2017-1', label: 'Januar 2017', month: 1, year: 2017, selected: false },
-      { id: '2016-12', label: 'December 2016', month: 12, year: 2016, selected: false },
-      { id: '2016-11', label: 'November 2016', month: 11, year: 2016, selected: false },
-      { id: '2016-10', label: 'Oktober 2016', month: 10, year: 2016, selected: false },
-      { id: '2016-9', label: 'September 2016', month: 9, year: 2016, selected: false },
-      { id: '2016-8', label: 'Avgust 2016', month: 8, year: 2016, selected: false },
-      { id: '2016-7', label: 'Julij 2016', month: 7, year: 2016, selected: false },
-      { id: '2016-6', label: 'Junij 2016', month: 6, year: 2016, selected: false },
-      { id: '2016-5', label: 'Maj 2016', month: 5, year: 2016, selected: false },
-      { id: '2016-4', label: 'April 2016', month: 4, year: 2016, selected: false },
-      { id: '2016-3', label: 'Marec 2016', month: 3, year: 2016, selected: false },
-      { id: '2016-2', label: 'Februar 2016', month: 2, year: 2016, selected: false },
-      { id: '2016-1', label: 'Januar 2016', month: 1, year: 2016, selected: false },
-    ];
+    let allMonths = [];
+    [2017, 2016, 2015, 2014, 2013].forEach(year => {
+      for (let month = 1; month <= 12; month++) {
+        allMonths.push({ id: `${year}-${month}`, label: `${MONTH_NAMES[month-1]} ${year}`, month, year, selected: false })
+      }
+    })
+
     let allOptions = [
       { id: 'za', class: 'for', label: 'ZA', selected: false },
       { id: 'proti', class: 'against', label: 'PROTI', selected: false },
