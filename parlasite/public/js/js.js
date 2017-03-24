@@ -40,6 +40,198 @@ function toggleHeaderSearch(focus) {
     }
 }
 
+function getParameterByName(name, url) {
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+(function(){
+    var cache = {};
+
+    this.tmpl = function tmpl(str, data){
+        // Figure out if we're getting a template, or if we need to
+        // load the template - and be sure to cache the result.
+        var fn = !/\W/.test(str) ?
+            cache[str] = cache[str] ||
+                tmpl(document.getElementById(str).innerHTML) :
+
+            // Generate a reusable function that will serve as a template
+            // generator (and which will be cached).
+            new Function("obj",
+                "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+                // Introduce the data as local variables using with(){}
+                "with(obj){p.push('" +
+
+                // Convert the template into pure JavaScript
+                str
+                    .replace(/[\r\t\n]/g, " ")
+                    .split("{%").join("\t")
+                    .replace(/((^|%})[^\t]*)'/g, "$1\r")
+                    .replace(/\t=(.*?)%}/g, "',$1,'")
+                    .split("\t").join("');")
+                    .split("%}").join("p.push('")
+                    .split("\r").join("\\'")
+                + "');}return p.join('');");
+
+        // Provide some basic currying to the user
+        return data ? fn( data ) : fn;
+    };
+})();
+
+
+function sendDataObvestila() {
+
+    var obvestilaData = $("#obvestilaData");
+    var keyword = obvestilaData.find("input[name=keyword]").val();
+    var email = obvestilaData.find("input[name=email]").val();
+    var reminder = obvestilaData.find("input[name='reminder[]']:checked").val();
+    var mode = obvestilaData.find("input[name='match_mode[]']:checked").val();
+
+    var data = {
+        "email": email,
+        "keyword": keyword,
+        "reminder": reminder,
+        "mode": mode
+    };
+
+    var text = $(".replaceme").text();
+    text = text.replace('#keyword#', keyword);
+    text = text.replace('#email#', email);
+    $(".replaceme").text(text);
+
+    console.log(data);
+    $.ajax({
+        method: "POST",
+        url: "https://obvestila.parlameter.si/setSettings/",
+        data: data
+    }).done(function (resp) {
+
+        $("#obvestila .header").addClass("success");
+
+        console.log(resp);
+
+    });
+
+}
+
+function loadDataObvestila() {
+    "use strict";
+    var $uid = getParameterByName("uid");
+    console.log($uid);
+    if ($uid == null) {
+        return false;
+    }
+    var data = {
+        "uid": $uid
+    };
+    var tpl;
+    $.ajax({
+        method: "POST",
+        url: "https://obvestila.parlameter.si/getSettings/",
+        data: data
+    }).done(function (resp) {
+
+        $("#obvestilaEmail").html(resp.mail);
+
+        $(resp.keywords).each(function(e, v){
+
+            console.log(v.id);
+            console.log(v.keyword);
+            console.log(v.match_mode);
+            console.log(v.reminder);
+
+
+
+        });
+
+        $("#obvestiladata").html(tmpl("item_tmpl", resp));
+
+        console.log(resp);
+
+    });
+
+
+}
+
+$("#obvestila").on("click", ".obvestiladelete", function () {
+    var base = $(this);
+    base.parent().hide();
+});
+
+$("#obvestila").on("change", ".reminder", function () {
+    var $id = $(this).parent().data('id');
+    updateDataObvestila($id);
+});
+$("#obvestila").on("change", ".match_mode", function () {
+    var $id = $(this).parent().data('id');
+    console.log($id);
+    //return false;
+    updateDataObvestila($id);
+});
+
+$("#obvestilaSaveaction").click(function () {
+
+    console.log($(".obvestiladatatpl").length);
+    return false;
+
+    var $id;
+    for(var i = 0; i < $(".obvestiladatatpl").length-1; i++)
+    {
+        $id = $(".obvestiladatatpl")[i].data('id')
+        updateDataObvestila($id);
+    }
+
+});
+
+
+
+function updateDataObvestila(id) {
+    var $uid = getParameterByName("uid");
+    console.log($uid);
+    if ($uid == null) {
+        return false;
+    }
+    var obvestilaData = $("#obvestilaData").find(".obvestiladatatpl_"+id);
+    var keyword = $("keyword"+id+"").val();
+    var email = $("#email"+id+"").val();
+    var reminder = $("#reminder" + id).find(":selected").text();
+    var mode = $("#match_mode" + id).find(":selected").text();
+    var deleted = $("#delete"+id+"").is(":checked");
+
+    var text = $(".replaceme").text();
+    text = text.replace('#keyword#', keyword);
+    text = text.replace('#email#', email);
+    $(".replaceme").text(text);
+
+
+    var data = {
+        "id": obvestilaData.data('oid'),
+        "keyword": keyword,
+        "reminder": reminder,
+        "mode": mode,
+        "delete": deleted,
+        "uid": $uid
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "https://obvestila.parlameter.si/updateSettings/",
+        data: data,
+    }).done(function (resp) {
+        console.log(resp);
+
+    });
+
+}
+
 $(function () {
     $(".searchiconbuttton").click(function () {
         toggleHeaderSearch(true);
@@ -80,7 +272,7 @@ $(function () {
     var search_ops_data = ops_data;
 
     var i = 0;
-    search_ops_data.forEach(function(e) {
+    search_ops_data.forEach(function (e) {
         if (e.acronym.indexOf('NeP') != -1) {
             search_ops_data.splice(i, 1);
         }
@@ -147,10 +339,10 @@ $(function () {
         $('.search-input-header').bind('typeahead:select', function (e, value) {
 
             if (typeof value.acronym !== 'undefined') {
-                measure("search","header","ps",value.name);
+                measure("search", "header", "ps", value.name);
                 window.location.href = value.url;
             } else {
-                measure("search","header","p",value.name);
+                measure("search", "header", "p", value.name);
                 window.location.href = value.url;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
@@ -161,7 +353,7 @@ $(function () {
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function () {
-            measure("search","header","s",$(this).data('query'));
+            measure("search", "header", "s", $(this).data('query'));
             window.location.href = "/seje/isci?q=" + $(this).data('query');
             return false;
         });
@@ -353,32 +545,32 @@ $(function () {
         if (validateEmail($(".newslettersubscribe").val())) {
 
 
-        var url = 'https://prispevaj.parlameter.si/parlamail/email/';
-        var jqxhr = $.ajax({
-            method: "POST",
-            url: url,
-            data: {email: $(".newslettersubscribe").val()}
-        })
-            .done(function (data) {
+            var url = 'https://prispevaj.parlameter.si/parlamail/email/';
+            var jqxhr = $.ajax({
+                method: "POST",
+                url: url,
+                data: {email: $(".newslettersubscribe").val()}
+            })
+                .done(function (data) {
 
-                if(data.result =='ALR_in_DB'){
-                    $(".newslettersubscribemsg").html('').addClass("success").html("Mail je že v bazi.");
-                }else if(data.result =='saved'){
-                    $(".newslettersubscribemsg").html('').addClass("success").html("HVALA!");
-                }
-            })
-            .fail(function () {
-                //alert('not yet configured');
-            })
-            .always(function () {
-            });
+                    if (data.result == 'ALR_in_DB') {
+                        $(".newslettersubscribemsg").html('').addClass("success").html("Mail je že v bazi.");
+                    } else if (data.result == 'saved') {
+                        $(".newslettersubscribemsg").html('').addClass("success").html("HVALA!");
+                    }
+                })
+                .fail(function () {
+                    //alert('not yet configured');
+                })
+                .always(function () {
+                });
         } else {
             $(".newslettersubscribe").addClass('error');
         }
     });
 
 
-    $('.modal [data-dismiss="modal"]').on('click', function() {
+    $('.modal [data-dismiss="modal"]').on('click', function () {
         var target = $(this).data("next-target");
         if (target) {
             $(this).closest('.modal').data("next-target", target);
@@ -388,7 +580,7 @@ $(function () {
         var target = $(this).data("next-target");
         $(this).data("next-target", "");
         if (target) {
-            if(target == '#modal-doniraj-amount'){
+            if (target == '#modal-doniraj-amount') {
                 getppdata();
             }
             $(target).modal('show');
@@ -425,11 +617,11 @@ $(function () {
 
         $("#modal-doniraj-address .required").removeClass('error');
         $("#modal-doniraj-address .required").each(function () {
-            if($(this).val() == ''){
+            if ($(this).val() == '') {
                 $(this).addClass("error");
             }
         });
-        if($("#modal-doniraj-address .required.error").length > 0){
+        if ($("#modal-doniraj-address .required.error").length > 0) {
             return false;
         }
 
@@ -492,7 +684,7 @@ $(function () {
                             if (resp.status == "OK") {
                                 $("#modal-doniraj-card").modal('hide');
                                 $("#modal-doniraj-hvala-donacija").modal('show');
-                            }else {
+                            } else {
                                 alert(resp.status);
                             }
                         });
@@ -513,11 +705,11 @@ $(function () {
         $(".card-error").hide();
         $("#modal-doniraj-card .required").removeClass('error');
         $("#modal-doniraj-card .required").each(function () {
-            if($(this).val() == ''){
+            if ($(this).val() == '') {
                 $(this).addClass("error");
             }
         });
-        if($("#modal-doniraj-card .required.error").length > 0){
+        if ($("#modal-doniraj-card .required.error").length > 0) {
             return false;
         }
 
@@ -642,13 +834,13 @@ $(function () {
     }
 
     /*$(".doniraj").click(function () {
-        loadScript('https://js.braintreegateway.com/js/braintree-2.30.0.min.js', function () {
-            loadScript('https://js.braintreegateway.com/web/3.5.0/js/three-d-secure.min.js', function () {
-                loadScript('https://js.braintreegateway.com/web/3.5.0/js/hosted-fields.min.js', function () {
-                });
-            });
-        });
-    });*/
+     loadScript('https://js.braintreegateway.com/js/braintree-2.30.0.min.js', function () {
+     loadScript('https://js.braintreegateway.com/web/3.5.0/js/three-d-secure.min.js', function () {
+     loadScript('https://js.braintreegateway.com/web/3.5.0/js/hosted-fields.min.js', function () {
+     });
+     });
+     });
+     });*/
 
     $(".measure").click(function () {
 
@@ -658,112 +850,54 @@ $(function () {
         var n = b.data('mn');
         var v = b.data('mv');
 
-        measure(c,a,n,v);
+        measure(c, a, n, v);
 
     });
 
     $(".card-share").click(function () {
         var n;
         var b = $(this).closest('.card-container');
-        if(b.data('id')!=''){
+        if (b.data('id') != '') {
             n = b.data('id');
-        }else{
+        } else {
             n = b.find('h1').text();
         }
-        measure("card","share-share",n,'');
+        measure("card", "share-share", n, '');
     });
     $(".card-embed").click(function () {
         var n;
         var b = $(this).closest('.card-container');
-        if(b.data('id')!=''){
+        if (b.data('id') != '') {
             n = b.data('id');
-        }else{
+        } else {
             n = b.find('h1').text();
         }
-        measure("card","share-embed",n,'');
+        measure("card", "share-embed", n, '');
     });
     $(".card-info").click(function () {
         var n;
         var b = $(this).closest('.card-container');
-        if(b.data('id')!=''){
+        if (b.data('id') != '') {
             n = b.data('id');
-        }else{
+        } else {
             n = b.find('h1').text();
         }
-        measure("card","share-info",n,'');
+        measure("card", "share-info", n, '');
     });
 
-    function mcSearch(){
-        if($(".session-search-container").length > 0){
+    function mcSearch() {
+        if ($(".session-search-container").length > 0) {
             var bs = '';
             bs = $(".session-search-container .search input").val();
-            if(bs!='') {
+            if (bs != '') {
                 measure("search", "query", bs);
             }
         }
     }
+
     mcSearch();
 
 
-    function sendDataObvestila() {
-
-/*
-        {
-            "email": "tom@tomboy.si",
-            "keywords": [
-                {
-                    "keyword": "ivan",
-                    "reminder": "day",
-                    "mode":"natancno"
-                }
-        ]
-        }
-        */
-
-var keyword = $("#obvestilaData input[name=keyword]").val();
-var email = $("#obvestilaData input[name=email]").val();
-
-//var reminder = $("#obvestilaData input[name=reminder]").val();
-//var mode = $("#obvestilaData input[name=mode]").val();
-var reminder = $("#obvestilaData input[name='reminder[]']:checked").val();
-var mode = $("#obvestilaData input[name='mode[]']:checked").val();
-
-
-var data = {
-    "email": email,
-    "keyword": keyword,
-    "reminder": reminder,
-    "mode": mode
-};
-
-        var text = $(".replaceme").text();
-        text = text.replace('#keyword#', keyword);
-        text = text.replace('#email#', email);
-        $(".replaceme").text(text);
-
-        console.log(data);
-        $.ajax({
-            method: "POST",
-            url: "https://obvestila.parlameter.si/setSettings/",
-            data: data,
-            //dataType: 'j'
-        }).done(function (resp) {
-            console.log(resp);
-            // if (resp.status == "OK") {
-            //
-            //
-            //     //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
-            //
-            //     $("#modal-doniraj-card").modal('hide');
-            //     $("#modal-doniraj-hvala-donacija").modal('show');
-            //
-            //
-            // } else {
-            //     alert(resp.status)
-            // }
-        });
-
-    }
 
 
     // $("#obvestila button").click(function(event){
@@ -771,7 +905,7 @@ var data = {
     //     event.preventDefault();
     //     //return false;
     // });
-    $("#obvestilasubmit").click(function(){
+    $("#obvestilasubmit").click(function () {
 
         sendDataObvestila();
         return false;
@@ -780,16 +914,28 @@ var data = {
 
     $("#obvestila .action").click(function () {
 
+
         var error = false;
         var nextStep = $(this).data('step');
-        if(!error){
+
+        if(nextStep == 1){
+            $("#obvestila .header").removeClass("success");
+        }
+
+        if (!error) {
             $(".step").hide();
 
-            $(".step"+nextStep).show();
+            if(nextStep == 2){
+                $(".hstep2").addClass("grey");
+                $(".hstep3").addClass("grey");
+                $(".hstep4").addClass("grey");
+            }
+
+            $(".step" + nextStep).show();
+            $(".hstep" + (nextStep-1)).removeClass("grey");
         }
 
     });
-
 
 
 });
