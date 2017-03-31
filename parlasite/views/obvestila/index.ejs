@@ -72,6 +72,9 @@
         float: left;
         padding-top: 2px;
     }
+    #obvestila .header .hstepbox.act{
+        cursor: pointer;
+    }
 
     #obvestila .header .circlebg {
 
@@ -151,7 +154,7 @@
 
     <div class="header clearfix">
 
-        <div class="hstepbox hstep1">
+        <div class="hstepbox hstep1 act" data-step="1">
             <div class="circlebglineleft nobg">&nbsp;</div>
             <div class="circlebg"> 1 </div>
             <div class="circlebglineright">&nbsp;</div>
@@ -159,7 +162,7 @@
             sprožilec
         </div>
 
-        <div class="hstepbox hstep2">
+        <div class="hstepbox hstep2" data-step="2">
             <div class="circlebglineleft">&nbsp;</div>
             <div class="circlebg"> 2 </div>
             <div class="circlebglineright">&nbsp;</div>
@@ -167,7 +170,7 @@
             ujemanje
         </div>
 
-        <div class="hstepbox hstep3">
+        <div class="hstepbox hstep3" data-step="3">
             <div class="circlebglineleft">&nbsp;</div>
             <div class="circlebg"> 3 </div>
             <div class="circlebglineright">&nbsp;</div>
@@ -175,7 +178,7 @@
             pogostost
         </div>
 
-        <div class="hstepbox hstep4">
+        <div class="hstepbox hstep4" data-step="4">
             <div class="circlebglineleft">&nbsp;</div>
             <div class="circlebg"> 4 </div>
             <div class="circlebglineright nobg">&nbsp;</div>
@@ -297,7 +300,7 @@
                     <h2>samo še tvoj e-naslov</h2>
 
                     <div class="search">
-                        <input type="email" name="email" class="form-control simplebox"
+                        <input type="email" name="email" class="form-control simplebox" required
                                style="border-right: 1px solid #c8c8c8;"
                         />
 

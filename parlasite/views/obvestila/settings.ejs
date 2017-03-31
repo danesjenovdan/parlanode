@@ -32,6 +32,54 @@
         margin-top: 50px;
     }
 
+    #obvestila .search-dropdown-input{
+        padding: 6px 19px 6px 8px;
+        font-size: 12px;
+    }
+    #obvestila .search-dropdown::after{
+        right: 4px;
+        top: 11px;
+    }
+
+    #obvestila .parta1{
+        width: 175px;
+        margin-right: 15px;
+        display: inline-block;
+        float: left;
+    }
+    #obvestila .parta1 .search-dropdown-input{
+        width: 172px;
+    }
+    #obvestila .parta2{
+        width: 231px;
+        margin-right: 15px;
+        display: inline-block;
+        float: left;
+    }
+    #obvestila .parta2 .search-dropdown-input{
+        width: 228px;
+    }
+    #obvestila .parta3{
+        width: auto;
+        display: inline-block;
+        float: left;
+        font-size: 12px;
+    }
+    #obvestila .parta4{
+        width: 30px;
+        display: inline-block;
+        float: left;
+        font-size: 12px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    #obvestila .obvestiladatatpl{
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 30px;
+    }
+
 </style>
 
 <div id="obvestila" class="col-md-12 ">
@@ -55,22 +103,23 @@
 
                     <h2>NASTAVITVE ZA <span id="obvestilaEmail"></span></h2>
 
-                    <div id="obvestiladata">
+                    <div id="obvestiladata" class="clearfix">
 
                     </div>
 
 
-                    <div class="action btn btn-default top50">
-                        Zavrzi
-                    </div>
+                    <!--<div class="action btn btn-default top50">-->
+                        <!--Zavrzi-->
+                    <!--</div>-->
 
-                    <div class="action btn btn-default top50 obvestilaSaveaction">
-                        Shrani
-                    </div>
+                    <!--<div class="action btn btn-default top50 obvestilaSaveaction">-->
+                        <!--Shrani-->
+                    <!--</div>-->
 
-                    <p class="replaceme hidden">
-                        Nastavitve so spremenjene.
-                    </p>
+                    <div class="replaceme hidden">
+                        <!--Nastavitve so spremenjene.-->
+
+                    </div>
 
                 </div>
 
@@ -100,33 +149,43 @@
 
 <script type="text/html" id="item_tmpl">
 
-        {% for ( var i = 0; i < keywords.length; i++ ) { %}
-        <div class="obvestiladatatpl obvestiladatatpl_{%=i%}" data-id="{%=i%}" data-oid="{%=keywords[i].id%}">
-<div class="input-group search" data-id="{%=i%}" data-oid="{%=keywords[i].id%}">
-
-    <select name="reminder{%=i%}" class="reminder" id="reminder{%=i%}">
-        <option value="event" {%=(keywords[i].reminder == "event" ?  'selected="selected"' : " ")%}>ob dogodku</option>
-        <option value="day" {%=(keywords[i].reminder == "day" ?  'selected="selected"' : " ")%}>največ enkrat na dan</option>
-        <option value="week" {%=(keywords[i].reminder == "week" ?  'selected="selected"' : " ")%}>največ enkrat na teden</option>
-    </select>
-    <select name="match_mode{%=i%}" class="match_mode" id="match_mode{%=i%}">
-        <option value="natancno" {%=(keywords[i].match_mode == "natancno" ?  'selected="selected"' : " ")%}>natančno ujemanje</option>
-        <option value="obe" {%=(keywords[i].match_mode == "obe" ?  'selected="selected"' : " ")%}>obe besedi, ne glede na vrstni red</option>
-        <option value="nujna" {%=(keywords[i].match_mode == "nujna" ?  'selected="selected"' : " ")%}>nujna beseda</option>
-        <option value="negativna" {%=(keywords[i].match_mode == "negativna" ?  'selected="selected"' : " ")%}>negativna beseda</option>
-        <option value="siroko" {%=(keywords[i].match_mode == "siroko" ?  'selected="selected"' : " ")%}>široko ujemanje</option>
-    </select>
-
-    <div id="obvestilaKeyword_{%=i%}" class="obvestilaKeyword">
-        {%=keywords[i].keyword%}
+{% for ( var i = 0; i < keywords.length; i++ ) { %}
+<div class="obvestiladatatpl obvestiladatatpl_{%=i%} clearfix" data-id="{%=i%}" data-oid="{%=keywords[i].id%}">
+    <div class="search" data-id="{%=i%}" data-oid="{%=keywords[i].id%}">
+        <div class="parta1">
+            <div class="search-dropdown">
+                <select name="reminder{%=i%}" class="search-dropdown-input reminder" id="reminder{%=i%}">
+                    <option value="event" {%=(keywords[i].reminder == "event" ?  'selected="selected"' : " ")%}>ob dogodku</option>
+                    <option value="day" {%=(keywords[i].reminder == "day" ?  'selected="selected"' : " ")%}>največ enkrat na dan</option>
+                    <option value="week" {%=(keywords[i].reminder == "week" ?  'selected="selected"' : " ")%}>največ enkrat na teden</option>
+                </select>
+            </div>
+        </div>
+        <div class="parta2">
+            <div class="search-dropdown">
+                <select name="match_mode{%=i%}" class="search-dropdown-input match_mode" id="match_mode{%=i%}">
+                    <option value="natancno" {%=(keywords[i].match_mode == "natancno" ?  'selected="selected"' : " ")%}>natančno ujemanje</option>
+                    <option value="obe" {%=(keywords[i].match_mode == "obe" ?  'selected="selected"' : " ")%}>obe besedi, ne glede na vrstni red</option>
+                    <option value="nujna" {%=(keywords[i].match_mode == "nujna" ?  'selected="selected"' : " ")%}>nujna beseda</option>
+                    <option value="negativna" {%=(keywords[i].match_mode == "negativna" ?  'selected="selected"' : " ")%}>negativna beseda</option>
+                    <option value="siroko" {%=(keywords[i].match_mode == "siroko" ?  'selected="selected"' : " ")%}>široko ujemanje</option>
+                </select>
+            </div>
+        </div>
+        <div class="parta3">
+            <div id="obvestilaKeyword_{%=i%}" class="obvestilaKeyword">
+                {%=keywords[i].keyword%}
+            </div>
+            <input type="hidden" value="{%=keywords[i].keyword%}" id="keyword{%=i%}" />
+        </div>
+        <div class="parta4">
+            <div class="obvestiladelete">
+                <!--<div class="exclude-presiding checkbox-twolines"><input id="delete{%=i%}" type="checkbox" name="delete{%=i%}" value="1" class="checkbox"> <label for="delete_{%=i%}">X</label></div>-->
+                <div class="exclude-presiding checkbox-twolines"><label id="delete{%=i%}" data-deleted="false" >X</label></div>
+            </div>
+        </div>
     </div>
-
-    <div class="obvestiladelete">
-        <div class="exclude-presiding checkbox-twolines"><input id="delete{%=i%}" type="checkbox" name="delete{%=i%}" value="1" class="checkbox"> <label for="delete_{%=i%}">X</label></div>
-    </div>
-
 </div>
-</div>
-        {% } %}
+{% } %}
 
 </script>

@@ -163,15 +163,25 @@ function loadDataObvestila() {
 
 $("#obvestila").on("click", ".obvestiladelete", function () {
     var base = $(this);
-    base.parent().hide();
+    if(!confirm("Ste prepričani?")) {
+        return false;
+    }
+    base.parents('.obvestiladatatpl').hide();
+
+    base.find("label").data("deleted", "true");
+
+    var $id = $(this).parents('.obvestiladatatpl').data('id');
+    updateDataObvestila($id);
+
+
 });
 
 $("#obvestila").on("change", ".reminder", function () {
-    var $id = $(this).parent().data('id');
+    var $id = $(this).parents('.obvestiladatatpl').data('id');
     updateDataObvestila($id);
 });
 $("#obvestila").on("change", ".match_mode", function () {
-    var $id = $(this).parent().data('id');
+    var $id = $(this).parents('.obvestiladatatpl').data('id');
     console.log($id);
     //return false;
     updateDataObvestila($id);
@@ -200,16 +210,16 @@ function updateDataObvestila(id) {
         return false;
     }
     var obvestilaData = $("#obvestilaData").find(".obvestiladatatpl_"+id);
-    var keyword = $("keyword"+id+"").val();
+    var keyword = $("#keyword"+id+"").val();
     var email = $("#email"+id+"").val();
-    var reminder = $("#reminder" + id).find(":selected").text();
-    var mode = $("#match_mode" + id).find(":selected").text();
-    var deleted = $("#delete"+id+"").is(":checked");
+    var reminder = $("#reminder" + id).find(":selected").attr('value');
+    var mode = $("#match_mode" + id).find(":selected").attr('value');
+    var deleted = $("#delete"+id+"").data("deleted");
 
-    var text = $(".replaceme").text();
-    text = text.replace('#keyword#', keyword);
-    text = text.replace('#email#', email);
-    $(".replaceme").text(text);
+    // var text = $(".replaceme").text();
+    // text = text.replace('#keyword#', keyword);
+    // text = text.replace('#email#', email);
+    // $(".replaceme").text(text);
 
 
     var data = {
@@ -226,7 +236,11 @@ function updateDataObvestila(id) {
         url: "https://obvestila.parlameter.si/updateSettings/",
         data: data,
     }).done(function (resp) {
-        console.log(resp);
+
+        $(".replaceme").show().removeClass('hidden');
+        var newnoti = $("<p />");
+        $(".replaceme").append(newnoti);
+        newnoti.fadeOut(5000).text(resp.msq);
 
     });
 
@@ -911,6 +925,18 @@ $(function () {
         return false;
     });
 
+    $(".hstepbox").click(function () {
+
+        var b = $(this);
+        if(b.hasClass("act")){
+            var nextStep = b.data("step");
+            $(".step").hide();
+            $(".step" + nextStep).show();
+        }else{
+            return false;
+        }
+
+    });
 
     $("#obvestila .action").click(function () {
 
@@ -919,6 +945,9 @@ $(function () {
         var nextStep = $(this).data('step');
 
         if(nextStep == 1){
+            $(".hstep2").removeClass("act");
+            $(".hstep3").removeClass("act");
+            $(".hstep4").removeClass("act");
             $("#obvestila .header").removeClass("success");
         }
 
@@ -933,6 +962,7 @@ $(function () {
 
             $(".step" + nextStep).show();
             $(".hstep" + (nextStep-1)).removeClass("grey");
+            $(".hstep" + (nextStep-1)).addClass("act");
         }
 
     });
