@@ -52,7 +52,7 @@ if (process.env.CARD_NAME === '') {
   const error = chalk.styles.red;
   const path = {
     open: chalk.styles.yellow.open + chalk.styles.italic.open,
-    close: chalk.styles.yellow.close + chalk.styles.italic.close
+    close: chalk.styles.yellow.close + chalk.styles.italic.close,
   };
   console.log(`${error.open}ERROR:${error.close} Specify card path (e.g. ${path.open}s/seznam-sej${path.close}) to build one cards or ${path.open}all${path.close} to build all cards.`);
 } else if (process.env.CARD_NAME.toLowerCase() === 'all') {
