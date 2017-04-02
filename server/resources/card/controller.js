@@ -377,7 +377,6 @@ exports.render = function ( req, res ) {
                 }
 
                 try {
-                  console.log(state);
                   if ( state ) state = JSON.parse(state);
 
                   let onlyStrings = true;
@@ -480,8 +479,8 @@ exports.render = function ( req, res ) {
                   render(html);
                 }
                 else {
-                  const serverBundle = fs.readFileSync(`cards/${group}/${method}/compiledServerBundle.js`, 'utf-8');
-                  const clientBundle = fs.readFileSync(`cards/${group}/${method}/compiledClientBundle.js`, 'utf-8');
+                  const serverBundle = fs.readFileSync(`cards/${group}/${method}/bundles/server.js`, 'utf-8');
+                  const clientBundle = fs.readFileSync(`cards/${group}/${method}/bundles/client.js`, 'utf-8');
 
                   const rendererInstance    = renderer.createBundleRenderer(serverBundle);
                   const stringifiedCardData = JSON.stringify(cardData);

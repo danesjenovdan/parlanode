@@ -2,7 +2,7 @@
 import Card from 'cardPath/card.vue';
 import cardData from 'cardPath/card.json';
 import data from 'cardPath/data.json';
-import state from 'stateJson';
+import state from 'cardPath/state.json';
 import urlsData from '../assets/urls.json';
 import vocab from '../assets/vocab.json';
 

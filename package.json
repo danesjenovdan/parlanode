@@ -8,7 +8,7 @@
     "dev-local": "NODE_ENV=dev_local supervisor run",
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
-    "cards-build": "NODE_ENV=production node cards/build.js",
+    "cards-build": "run(){ CARD_NAME=$1 NODE_ENV=production node cards/build.js; }; run",
     "cards-dev": "run(){ CARD_NAME=$1 webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open; }; run",
     "cards-generate": "run(){ mkdir -p cards/$1 && cp -R cards/_empty/* cards/$1; }; run"
   },

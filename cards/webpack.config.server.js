@@ -8,7 +8,7 @@ module.exports = (cardPath) => {
   return Object.assign(config, {
     entry: './cards/serverBundle.js',
     output: {
-      filename: `${cardPath}/compiledServerBundle.js`,
+      filename: `${cardPath}/bundles/server.js`,
       libraryTarget: 'commonjs2',
     },
     externals: Object.keys(packageJson.dependencies),
