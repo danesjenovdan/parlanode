@@ -13,6 +13,6 @@ Cards are stored in (sub)directories that correspond to their group/method in th
 - **state.json** - sample state object, used for simulation purposes during development (in production, state object is passed as a URL parameter)
 
 ## Commands
-- `npm run cards-build [<path-to-card>|all]` builds client and server bundles for specified card or all cards
-- `npm run cards-dev <path-to-card>` starts dev server for specified card and launches browser
-- `npm run generate-card <path-to-card>` generates a new card in the specified path
+- `yarn run cards-build [<path-to-card>|all]` builds client and server bundles for specified card or all cards
+- `yarn run cards-dev <path-to-card>` starts dev server for specified card and launches browser
+- `yarn run generate-card <path-to-card>` generates a new card in the specified path

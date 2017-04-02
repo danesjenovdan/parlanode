@@ -46,12 +46,12 @@ Copy content of ./cms-dev/dist to ./cms
 
 #### Requirements
 
-* supervisor `$ npm i supervisor -g` (will auto restart server on code update)
+* supervisor `$ yarn global add supervisor` (will auto restart server on code update)
 
 #### Serving
 
 ```
-$ npm run dev
+$ yarn run dev
 ```
 
 ## Deployment
