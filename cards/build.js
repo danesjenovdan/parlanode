@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const fs = require('fs');
 const clientConfig = require('./webpack.config.client');
 const serverConfig = require('./webpack.config.server');
+const chalk = require('chalk');
 
 // Returns all directories on certain path
 const dirs = p =>
@@ -24,9 +25,9 @@ const compileWithWebpack = config =>
     });
   });
 
-// Refreshes lastUpdate param in data.json file on passed path
+// Refreshes lastUpdate param in card.json file on passed path
 const refreshLastUpdate = (path) => {
-  const dataJsonPath = `${path}/data.json`;
+  const dataJsonPath = `${path}/card.json`;
   fs.readFile(dataJsonPath, (err, data) => {
     if (err) throw err;
     const dataObject = JSON.parse(data);
@@ -39,11 +40,25 @@ const refreshLastUpdate = (path) => {
   });
 };
 
-const allPaths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s'));
-
-allPaths.forEach(path =>
+const compileAndRefresh = path =>
   Promise.all([
     compileWithWebpack(clientConfig(path)),
     compileWithWebpack(serverConfig(path)),
-  ]).then(() => refreshLastUpdate(path))
-);
+  ]).then(() => {
+    refreshLastUpdate(path);
+  });
+
+if (process.env.CARD_NAME === '') {
+  const error = chalk.styles.red;
+  const path = {
+    open: chalk.styles.yellow.open + chalk.styles.italic.open,
+    close: chalk.styles.yellow.close + chalk.styles.italic.close,
+  };
+  console.log(`${error.open}ERROR:${error.close} Specify card path (e.g. ${path.open}s/seznam-sej${path.close}) to build one cards or ${path.open}all${path.close} to build all cards.`);
+} else if (process.env.CARD_NAME.toLowerCase() === 'all') {
+  const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s'));
+  paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve());
+} else {
+  compileAndRefresh(`./cards/${process.env.CARD_NAME}`);
+}
+

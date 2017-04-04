@@ -11,7 +11,7 @@ cms
 logs
 *.log
 vps_data.txt
-
+yarn-error.log
 
 # Runtime data
 pids

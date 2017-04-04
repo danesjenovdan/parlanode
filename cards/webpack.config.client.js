@@ -7,7 +7,7 @@ module.exports = (cardPath) => {
   return Object.assign(config, {
     entry: './cards/clientBundle.js',
     output: {
-      filename: `${cardPath}/compiledClientBundle.js`,
+      filename: `${cardPath}/bundles/client.js`,
     },
     plugins: config.plugins.concat([
       new webpack.DefinePlugin({

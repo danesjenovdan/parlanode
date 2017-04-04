@@ -304,7 +304,7 @@ exports.render = function ( req, res ) {
   }
 
   function loadCardFromFile( groupName, methodName ) {
-    const localPath = `cards/${groupName}/${methodName}/data.json`;
+    const localPath = `cards/${groupName}/${methodName}/card.json`;
     if ( !fs.existsSync(localPath) ) throw Error();
     const cardDoc      = JSON.parse(fs.readFileSync(localPath));
     cardDoc.lastUpdate = new Date(cardDoc.lastUpdate);
@@ -377,7 +377,6 @@ exports.render = function ( req, res ) {
                 }
 
                 try {
-                  console.log(state);
                   if ( state ) state = JSON.parse(state);
 
                   let onlyStrings = true;
@@ -480,8 +479,11 @@ exports.render = function ( req, res ) {
                   render(html);
                 }
                 else {
-                  const serverBundle = fs.readFileSync(`cards/${group}/${method}/compiledServerBundle.js`, 'utf-8');
-                  const clientBundle = fs.readFileSync(`cards/${group}/${method}/compiledClientBundle.js`, 'utf-8');
+                  const bundlesPath = `cards/${group}/${method}/bundles/`
+                  const serverBundle = fs.readFileSync(`${bundlesPath}server.js`, 'utf-8');
+                  const clientBundle = fs.readFileSync(`${bundlesPath}client.js`, 'utf-8');
+                  const stylePath = `${bundlesPath}style.css`;
+                  const style = fs.existsSync(stylePath) ? `<style>${fs.readFileSync(stylePath, 'utf-8')}</style>` : '';
 
                   const rendererInstance    = renderer.createBundleRenderer(serverBundle);
                   const stringifiedCardData = JSON.stringify(cardData);
@@ -493,7 +495,7 @@ exports.render = function ( req, res ) {
                       if ( error ) throw error;
 
                       render(`
-                      <style>${context._styles.default.css}</style>
+                      ${style}
                       ${html}
                       <script>window.__INITIAL_STATE__ = ${stringifiedCardData}</script>
                       <script>${clientBundle}</script>

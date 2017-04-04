@@ -1,8 +1,18 @@
 # Parlanode
 
-This is the card rendering part of the Parlameter project. The purpose of this project is to store the ejs templates along with information about the data source for each card.
+This is the card rendering part of the Parlameter project. It includes the API (`server`) and the client side CMS (`cms-dev`). Because of a recent refactoring effort, available cards are divided into two groups, based on the renderer used to render them.
 
-It contains both the API (`server`) and the client side CMS(`cms-dev`).
+## ejs (legacy)
+
+Most cards are developed using [ejs](http://ejs.co/) with the source stored in [a separate repo](//github.com/muki/parlacards). After their development is finished, they are compiled and entered into the parlanode database through the CMS, which stores ejs templates along with relevant metadata (name, data source URL, API URL etc.) for each card.
+
+We are in the process of abandoning this format of cards. We encourage any new development to be done using Vue wich allows for more flexibility.
+
+## Vue (new cards)
+
+Newer cards are implemented using [Vue](//vuejs.org/). Instead of being built outside and entered manually through the CMS, these cards exist entirely in the parlanode repo - their sources are stored in the `cards` folder. They are rendered using [vue-server-renderer](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer)
+
+We intend to eventually port all cards to this format.
 
 #### Features
 
@@ -10,7 +20,7 @@ It contains both the API (`server`) and the client side CMS(`cms-dev`).
 
 * Express for server (routing and handling requests)
 * Mongoose for interaction with the MongoDB database
-* Sequelize for interaction with the postgres for authentication
+* Sequelize for interaction with PostgreSQL database (for authentication)
 
 ##### CMS
 
@@ -24,7 +34,7 @@ Working folder for cms is in ```./cms-dev```.
 
 #### Building CMS
 
-In app.js on lin ```44``` comment the remote api link and uncomment the local one
+In app.js on line ```44``` comment the remote api link and uncomment the local one
 
 ```bash
 grunt build
@@ -36,12 +46,12 @@ Copy content of ./cms-dev/dist to ./cms
 
 #### Requirements
 
-* supervisor `$ npm i supervisor -g` (will auto restart server on code update)
+* supervisor `$ yarn global add supervisor` (will auto restart server on code update)
 
 #### Serving
 
 ```
-$ npm run dev
+$ yarn run dev
 ```
 
 ## Deployment
@@ -57,4 +67,4 @@ Caching is done for each first request to the card route. At that time cards get
 [GET] https://glej.parlameter.si/p/izracunana-prisotnost/9/
 ```
 
-Each request checks for a corresponding entry in the database according to its full url. If no prerendered card is found it then fetches the data from parlalize and renders the ejs. It then stores the card to `CardRender` collection in mongo with the url as `cardUrl` parameter.
+Each request checks for a corresponding entry in the database according to its full url. If no prerendered card is found it then fetches the data from parlalize and renders the card (the specifics of this process differ between ejs and Vue cards). It then stores the rendered card to `CardRender` collection in MongoDB with the url as `cardUrl` parameter.
