@@ -10,36 +10,184 @@
         display: block;
     }
 
+
+    #obvestila .form-control {
+        border-right: 1px solid #c8c8c8;
+        border-radius: 0;
+        border-right: medium none;
+        font-size: 20px;
+        height: 50px;
+        border-color: #c8c8c8;
+        border-right: none;
+    }
+
     #obvestila .naprej {
         margin: auto;
         position: relative;
         width: auto;
         text-align: center;
         color: #ffffff;
-        padding: 10px 30px;
+        padding: 13px 30px;
         background-color: #009cdd;
         cursor: pointer;
         margin-top: 0px;
-        display: block;
+        display: inline-block;
+
+        border-color: #c8c8c8;
+        border-left: none;
+        border-radius: 0;
+        height: 50px;
+        -webkit-transition: border-color 0.15s;
+        transition: border-color 0.15s;
+    }
+    #obvestila ul{
+        list-style: none;
+        margin: 20px 0 0 100px;
+    }
+    #obvestila ul li{
+        text-align: left;
+        margin-bottom: 20px;
     }
 
     #obvestila .searchinfo {
         top: 15px;
         right: -30px;
     }
-    #obvestila .top50{
+
+    #obvestila .top50 {
         margin-top: 50px;
     }
+
+    #obvestila .header {
+        padding-top: 20px;
+        padding-bottom: 70px;
+    }
+
+    #obvestila .header .hstepbox{
+        text-transform: uppercase;
+        color: blue;
+        width: 24.5%;
+        display: inline-block;
+        overflow: hidden;
+        float: left;
+        padding-top: 2px;
+    }
+    #obvestila .header .hstepbox.act{
+        cursor: pointer;
+    }
+
+    #obvestila .header .circlebg {
+
+        box-shadow: 0px 0px 2px blue;
+        color: blue;
+        text-align: center;
+        font-size: 12px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        line-height: 20px;
+        border-radius: 50%;
+        float: left;
+        margin-bottom: 10px;
+
+    }
+    #obvestila .header .circlebglineleft,
+    #obvestila .header .circlebglineright{
+        background: blue;
+        height: 1px;
+        display: inline-block;
+        width: 42.7%;
+        float: left;
+        margin-top: 9px;
+        margin-bottom: 20px;
+    }
+    #obvestila .header .hstepbox .circlebglineleft.nobg,
+    #obvestila .header .hstepbox .circlebglineright.nobg,
+    #obvestila .header .hstepbox.grey .circlebglineright.nobg{
+        background: none;
+    }
+
+    /*#obvestila  .header .greybg{*/
+        /*background: grey;*/
+    /*}*/
+    /*#obvestila  .header .greycolor{*/
+        /*color: grey;*/
+        /*box-shadow: 0px 0px 2px grey;*/
+    /*}*/
+    #obvestila  .header .grey{
+        color: grey;
+    }
+
+    #obvestila .header .hstepbox.grey .circlebglineleft{
+        background: grey;
+    }
+    #obvestila .header .hstepbox.grey .circlebg{
+        color: grey;
+        box-shadow: 0px 0px 2px grey;
+    }
+    #obvestila .header .hstepbox.grey .circlebglineright{
+        background: grey;
+    }
+
+    #obvestila .header.success .hstepbox{
+        color: red;
+    }
+    #obvestila .header.success .circlebglineleft{
+        color: red;
+        background: red;
+    }
+    #obvestila .header.success .circlebg{
+        box-shadow: 0px 0px 2px red;
+        color: red;
+    }
+    #obvestila .header.success .circlebglineright{
+        color: red;
+        background: red;
+    }
+
 
 </style>
 
 <div id="obvestila" class="col-md-12 ">
 
+    <div class="narrow-inner-container">
 
-    <div class="header">
+    <div class="header clearfix">
 
-        <div class=""></div>
+        <div class="hstepbox hstep1 act" data-step="1">
+            <div class="circlebglineleft nobg">&nbsp;</div>
+            <div class="circlebg"> 1 </div>
+            <div class="circlebglineright">&nbsp;</div>
+            <br/>
+            sprožilec
+        </div>
 
+        <div class="hstepbox hstep2" data-step="2">
+            <div class="circlebglineleft">&nbsp;</div>
+            <div class="circlebg"> 2 </div>
+            <div class="circlebglineright">&nbsp;</div>
+            <br/>
+            ujemanje
+        </div>
+
+        <div class="hstepbox hstep3" data-step="3">
+            <div class="circlebglineleft">&nbsp;</div>
+            <div class="circlebg"> 3 </div>
+            <div class="circlebglineright">&nbsp;</div>
+            <br/>
+            pogostost
+        </div>
+
+        <div class="hstepbox hstep4" data-step="4">
+            <div class="circlebglineleft">&nbsp;</div>
+            <div class="circlebg"> 4 </div>
+            <div class="circlebglineright nobg">&nbsp;</div>
+            <br/>
+            email
+        </div>
+
+
+    </div>
     </div>
 
     <form id="obvestilaData">
@@ -54,7 +202,8 @@
 
                     <h2>dodaj sprožilec</h2>
 
-                    <div class="input-group search">
+
+                    <div class="input-group search1">
 
                         <input type="text" name="keyword" class="form-control simplebox"
                                style="border-right: 1px solid #c8c8c8;"/>
@@ -93,21 +242,27 @@
                 <div class="narrow-inner-container">
                     <h2>izberi način ujemanja</h2>
 
+                    <div>
+                    Kateri tip ujemanja je pravi? <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv=""
+                                                       data-toggle="modal" data-target="#modal-search-how">i
+                    </div>
+                    </div>
+
                     <ul>
                         <li>
-                            <label><input type="radio" name="mode[]" value="natancno">natančno ujemanje</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="modenatancno" type="radio" name="match_mode[]" value="natancno" class="checkbox"> <label for="modenatancno">natančno ujemanje</label></div>
                         </li>
                         <li>
-                            <label><input type="radio" name="mode[]" value="obe">obe besedi, ne glede na vrstni red</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="modeobe" type="radio" name="match_mode[]" value="obe" class="checkbox"> <label for="modeobe">obe besedi, ne glede na vrstni red</label></div>
                         </li>
                         <li>
-                            <label><input type="radio" name="mode[]" value="nujna">nujna beseda</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="modenujna" type="radio" name="match_mode[]" value="nujna" class="checkbox"> <label for="modenujna">nujna beseda</label></div>
                         </li>
                         <li>
-                            <label><input type="radio" name="mode[]" value="negativna">negativna beseda</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="modenegativna" type="radio" name="match_mode[]" value="negativna" class="checkbox"> <label for="modenegativna">negativna beseda</label></div>
                         </li>
                         <li>
-                            <label><input type="radio" name="mode[]" value="siroko">široko ujemanje</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="modesiroko" type="radio" name="match_mode[]" value="siroko" class="checkbox"> <label for="modesiroko">široko ujemanje</label></div>
                         </li>
                     </ul>
 
@@ -123,13 +278,13 @@
 
                     <ul>
                         <li>
-                            <label><input type="radio" name="reminder[]" value="event">ob dogodku</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="reminderevent" type="radio" name="reminder[]" value="event" class="checkbox"> <label for="reminderevent">ob dogodku</label></div>
                         </li>
                         <li>
-                            <label><input type="radio" name="reminder[]" value="day">največenkrat na dan</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="reminderday" type="radio" name="reminder[]" value="day" class="checkbox"> <label for="reminderday">največ enkrat na dan</label></div>
                         </li>
                         <li>
-                            <label><input type="radio" name="reminder[]" value="week">največenkrat na teden</label>
+                            <div class="exclude-presiding checkbox-twolines"><input id="reminderweek" type="radio" name="reminder[]" value="week" class="checkbox"> <label for="reminderweek">največ enkrat na teden</label></div>
                         </li>
                     </ul>
 
@@ -145,14 +300,14 @@
                     <h2>samo še tvoj e-naslov</h2>
 
                     <div class="search">
-                    <input type="email" name="email" class="form-control simplebox"
-                           style="border-right: 1px solid #c8c8c8;"
-                    />
+                        <input type="email" name="email" class="form-control simplebox" required
+                               style="border-right: 1px solid #c8c8c8;"
+                        />
 
 
-                    <div class="action btn btn-default naprej top50" data-step="5" id="obvestilasubmit">
-                        nastavi opomnik
-                    </div>
+                        <div class="action btn btn-default naprej top50" data-step="5" id="obvestilasubmit">
+                            nastavi opomnik
+                        </div>
                     </div>
                 </div>
             </div>
@@ -180,3 +335,101 @@
 </div>
 
 <% include ../partials/footer.ejs %>
+
+<script>
+
+
+
+
+    function sendDataObvestilaNew() {
+
+        var obvestilaData = $("#obvestilaData");
+        var keyword = obvestilaData.find("input[name=keyword]").val();
+        var email = obvestilaData.find("input[name=email]").val();
+        var reminder = obvestilaData.find("input[name='reminder[]']:checked").val();
+        var mode = obvestilaData.find("input[name='match_mode[]']:checked").val();
+
+        var data = {
+            "email": email,
+            "keyword": keyword,
+            "reminder": reminder,
+            "mode": mode
+        };
+
+        var text = $(".replaceme").text();
+        text = text.replace('#keyword#', keyword);
+        text = text.replace('#email#', email);
+        $(".replaceme").text(text);
+
+        console.log(data);
+        $.ajax({
+            method: "POST",
+            url: "https://obvestila.parlameter.si/setSettings/",
+            data: data
+        }).done(function (resp) {
+
+            $("#obvestila .header").addClass("success");
+
+            console.log(resp);
+
+        });
+
+    }
+
+
+    $(function () {
+
+        $("#obvestilasubmitNew").click(function () {
+
+            sendDataObvestilaNew();
+            return false;
+        });
+
+        $(".hstepbox").click(function () {
+
+            var b = $(this);
+            if(b.hasClass("act")){
+                var nextStep = b.data("step");
+                $(".step").hide();
+                $(".step" + nextStep).show();
+            }else{
+                return false;
+            }
+
+        });
+
+        $("#obvestila .action").click(function () {
+
+
+            var error = false;
+            var nextStep = $(this).data('step');
+
+            if(nextStep == 1){
+                $(".hstep2").removeClass("act");
+                $(".hstep3").removeClass("act");
+                $(".hstep4").removeClass("act");
+                $("#obvestila .header").removeClass("success");
+            }
+
+            if (!error) {
+                $(".step").hide();
+
+                if(nextStep == 2){
+                    $(".hstep2").addClass("grey");
+                    $(".hstep3").addClass("grey");
+                    $(".hstep4").addClass("grey");
+                }
+
+                $(".step" + nextStep).show();
+                $(".hstep" + (nextStep-1)).removeClass("grey");
+                $(".hstep" + (nextStep-1)).addClass("act");
+            }
+
+        });
+
+    });
+
+
+
+
+</script>
