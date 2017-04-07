@@ -335,3 +335,101 @@
 </div>
 
 <% include ../partials/footer.ejs %>
+
+<script>
+
+
+
+
+    function sendDataObvestilaNew() {
+
+        var obvestilaData = $("#obvestilaData");
+        var keyword = obvestilaData.find("input[name=keyword]").val();
+        var email = obvestilaData.find("input[name=email]").val();
+        var reminder = obvestilaData.find("input[name='reminder[]']:checked").val();
+        var mode = obvestilaData.find("input[name='match_mode[]']:checked").val();
+
+        var data = {
+            "email": email,
+            "keyword": keyword,
+            "reminder": reminder,
+            "mode": mode
+        };
+
+        var text = $(".replaceme").text();
+        text = text.replace('#keyword#', keyword);
+        text = text.replace('#email#', email);
+        $(".replaceme").text(text);
+
+        console.log(data);
+        $.ajax({
+            method: "POST",
+            url: "https://obvestila.parlameter.si/setSettings/",
+            data: data
+        }).done(function (resp) {
+
+            $("#obvestila .header").addClass("success");
+
+            console.log(resp);
+
+        });
+
+    }
+
+
+    $(function () {
+
+        $("#obvestilasubmitNew").click(function () {
+
+            sendDataObvestilaNew();
+            return false;
+        });
+
+        $(".hstepbox").click(function () {
+
+            var b = $(this);
+            if(b.hasClass("act")){
+                var nextStep = b.data("step");
+                $(".step").hide();
+                $(".step" + nextStep).show();
+            }else{
+                return false;
+            }
+
+        });
+
+        $("#obvestila .action").click(function () {
+
+
+            var error = false;
+            var nextStep = $(this).data('step');
+
+            if(nextStep == 1){
+                $(".hstep2").removeClass("act");
+                $(".hstep3").removeClass("act");
+                $(".hstep4").removeClass("act");
+                $("#obvestila .header").removeClass("success");
+            }
+
+            if (!error) {
+                $(".step").hide();
+
+                if(nextStep == 2){
+                    $(".hstep2").addClass("grey");
+                    $(".hstep3").addClass("grey");
+                    $(".hstep4").addClass("grey");
+                }
+
+                $(".step" + nextStep).show();
+                $(".hstep" + (nextStep-1)).removeClass("grey");
+                $(".hstep" + (nextStep-1)).addClass("act");
+            }
+
+        });
+
+    });
+
+
+
+
+</script>
