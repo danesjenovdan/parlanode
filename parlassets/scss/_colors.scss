@@ -59,13 +59,17 @@ $option-colors: (
   .#{$option}-fill { fill: $color; }
 }
 
-.funblue-light-hover {
+@mixin link-hover {
   transition: background 0.2s;
 
   &:hover {
     background: #e1f6ff;
     text-decoration: none;
   }
+}
+
+.funblue-light-hover {
+  @include link-hover;
 }
 
 .inactive { filter: grayscale(100%); }
