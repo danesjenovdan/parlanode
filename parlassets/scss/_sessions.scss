@@ -90,17 +90,17 @@
       border-right: none;
       
       &:focus {
-          border-color: #fe5e41;
+          border-color: #009cd9;
       }
       &:focus ~ .input-group-btn .btn {
-          border-color: #fe5e41;
+          border-color: #009cd9;
       }
     }
     .btn {
       border-color: $grey-medium;
       border-left: none;
       border-radius: 0;
-      color: $red;
+      color: #009cd9;
       height: 50px;
       transition: border-color 0.15s;
     }
