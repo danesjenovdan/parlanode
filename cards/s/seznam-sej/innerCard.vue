@@ -14,11 +14,11 @@
           </li>
           <div v-if="processedSessions.length === 0" class="no-results">Brez rezultatov.</div>
           <li v-for="session in processedSessions" class="item">
-            <a class="column image" :href="getSessionUrl(session.id)">
+            <a class="column image" :href="getSessionUrl(session)">
               <img :src="'https://cdn.parlameter.si/v1/parlassets/icons/seja-' + session.name.split(' ')[1] + '.svg'" />
             </a>
             <div class="column wider name">
-              <a class="funblue-light-hover" :href="getSessionUrl(session.id)">{{ session.name }}</a>
+              <a class="funblue-light-hover" :href="getSessionUrl(session)">{{ session.name }}</a>
             </div>
             <div class="column">{{ formatDate(session.date_ts) }}</div>
             <div class="column optional">{{ formatDate(session.updated_at_ts) }}</div>
@@ -77,8 +77,9 @@ export default {
     shortenedCardUrl: String,
   },
   methods: {
-    getSessionUrl(sessionId) {
-      return this.slugs ? this.slugs.base + this.slugs.sessionLink.transkript + sessionId : ''
+    getSessionUrl(session) {
+      if (!this.slugs) return ''
+      return this.slugs.base + this.slugs.sessionLink[session.votes ? 'glasovanja' : 'transkript'] + session.id
     },
     formatDate(isoDate) {
       var date = new Date(isoDate);
