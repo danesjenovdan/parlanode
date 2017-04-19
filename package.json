@@ -37,6 +37,7 @@
     "ejs": "^2.4.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-html": "^2.0.1",
     "eslint-plugin-import": "^2.2.0",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
@@ -67,7 +68,8 @@
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "plugins": ["html", "import"]
   },
   "babel": {
     "plugins": [

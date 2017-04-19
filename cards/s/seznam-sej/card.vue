@@ -57,8 +57,10 @@
 </template>
 
 <script>
-import { find } from 'lodash'
-import InnerCard from './innerCard.vue'
+/* globals window $ measure */
+
+import { find } from 'lodash';
+import InnerCard from './innerCard.vue';
 
 export default {
   components: { InnerCard },
@@ -80,101 +82,111 @@ export default {
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
-      }
-    }
+      },
+    };
   },
   computed: {
     columns: () => [
       { id: 'name', label: 'Ime', additionalClass: 'wider' },
       { id: 'date', label: 'Začetek' },
       { id: 'updated', label: 'Sprememba', additionalClass: 'optional' },
-      { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' }
+      { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' },
     ],
     currentAnalysisData() {
-      return find(this.analyses, { id: this.currentAnalysis })
+      return find(this.analyses, { id: this.currentAnalysis });
     },
     currentWorkingBodies() {
       return this.workingBodies
         .filter(workingBody => workingBody.selected)
-        .map(workingBody => workingBody.id)
+        .map(workingBody => workingBody.id);
     },
     currentWorkingBodyNames() {
       return this.workingBodies
         .filter(workingBody => workingBody.selected)
-        .map(workingBody => workingBody.label)
+        .map(workingBody => workingBody.label);
     },
     inputPlaceholder() {
-      return this.currentWorkingBodies.length ? `izbranih delovnih teles: ${this.currentWorkingBodies.length}` : 'izberi delovno telo'
+      return this.currentWorkingBodies.length ? `izbranih delovnih teles: ${this.currentWorkingBodies.length}` : 'izberi delovno telo';
     },
     processedSessions() {
-      var sortedAndFiltered = this.sessions
+      let sortedAndFiltered = this.sessions
         .filter((session) => {
-          if (this.currentFilters.length === 0) {
-            return true
-          } else {
-            let match = false
-            if (this.currentFilters.indexOf('Seje DZ') > -1) {
-              match = match || session.orgs.filter(org => org.id === 95).length > 0
-            }
-            if (this.currentFilters.indexOf('Seje kolegija predsednika DZ') > -1) {
-              match = match || session.orgs.filter(org => org.id === 9).length > 0
-            }
-            if (this.currentFilters.indexOf('Seje delovnih teles') > -1) {
-              if (this.currentWorkingBodies.length === 0) {
-                session.orgs.forEach((org) => {
-                  match = match || this.organisationIsWorkingBody(org.id)
-                })
-              }
-              else {
-                session.orgs.forEach((org) => {
-                  match = match || this.currentWorkingBodies.indexOf(org.id) > -1
-                })
-              }
-            }
-            return match
+          if (this.currentFilters.length === 0) return true;
+
+          let match = false;
+          if (this.currentFilters.indexOf('Seje DZ') > -1) {
+            match = match || session.orgs.filter(org => org.id === 95).length > 0;
           }
+          if (this.currentFilters.indexOf('Seje kolegija predsednika DZ') > -1) {
+            match = match || session.orgs.filter(org => org.id === 9).length > 0;
+          }
+          if (this.currentFilters.indexOf('Seje delovnih teles') > -1) {
+            if (this.currentWorkingBodies.length === 0) {
+              session.orgs.forEach((org) => {
+                match = match || this.organisationIsWorkingBody(org.id);
+              });
+            } else {
+              session.orgs.forEach((org) => {
+                match = match || this.currentWorkingBodies.indexOf(org.id) > -1;
+              });
+            }
+          }
+
+          return match;
         })
         .sort((sessionA, sessionB) => {
+          let a;
+          let b;
           switch (this.currentSort) {
             case 'name':
-              var a = sessionA.name
-              var b = sessionB.name
-              return alphanumCase(a, b)
+              a = sessionA.name;
+              b = sessionB.name;
+              return a.toLowerCase().localeCompare(b.toLowerCase());
             case 'date':
-              var a = sessionA.date_ts
-              var b = sessionB.date_ts
-              return a < b ? -1 : (a > b ? 1 : 0)
+              a = sessionA.date_ts;
+              b = sessionB.date_ts;
+              if (a < b) {
+                return -1;
+              } else if (a > b) {
+                return 1;
+              }
+              return 0;
             case 'updated':
-              var a = sessionA.updated_at_ts
-              var b = sessionB.updated_at_ts
-              return a < b ? -1 : (a > b ? 1 : 0)
+              a = sessionA.updated_at_ts;
+              b = sessionB.updated_at_ts;
+              if (a < b) {
+                return -1;
+              } else if (a > b) {
+                return 1;
+              }
+              return 0;
             case 'workingBody':
-              var a = sessionA.orgs[0].name
-              var b = sessionB.orgs[0].name
-              return a.localeCompare(b, 'sl')
+              a = sessionA.orgs[0].name;
+              b = sessionB.orgs[0].name;
+              return a.localeCompare(b, 'sl');
             default:
-              break
+              return 0;
           }
-        })
+        });
 
       if (this.currentSortOrder === 'desc') sortedAndFiltered.reverse();
       if (this.justFive) sortedAndFiltered = sortedAndFiltered.slice(0, 5);
 
-      return sortedAndFiltered
+      return sortedAndFiltered;
     },
     generatedCardUrl() {
-      var params = {}
+      const params = {};
 
-      if (this.currentFilters.length > 0) params.filters = this.currentFilters
-      if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies
-      if (this.justFive) params.justFive = true
+      if (this.currentFilters.length > 0) params.filters = this.currentFilters;
+      if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies;
+      if (this.justFive) params.justFive = true;
 
-      return `https://glej.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`
+      return `https://glej.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
     },
     infoText() {
-      const filterText = `${this.currentFilters.join(', ')}${this.currentWorkingBodies.length > 0 ? ': ' : '' }`;
+      const filterText = `${this.currentFilters.join(', ')}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
       const workingBodiesText = this.currentWorkingBodyNames.join(', ');
-      const filterAndWorkingBodiesText = Boolean(filterText || workingBodiesText) ? ` (${filterText}${workingBodiesText})` : '';
+      const filterAndWorkingBodiesText = filterText || workingBodiesText ? ` (${filterText}${workingBodiesText})` : '';
       const sortTexts = {
         name: 'imenu seje',
         date: 'datumu začetka seje',
@@ -183,18 +195,18 @@ export default {
       };
       const justFiveText = this.justFive ? ', izpis pa omejen samo na zgornjih pet sej' : '';
 
-      return `Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu${filterAndWorkingBodiesText}. Seznam je sortiran po ${sortTexts[this.currentSort]}${justFiveText}.`
-    }
+      return `Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu${filterAndWorkingBodiesText}. Seznam je sortiran po ${sortTexts[this.currentSort]}${justFiveText}.`;
+    },
   },
   created() {
     $.getJSON('https://analize.parlameter.si/v1/s/getWorkingBodies/', (response) => {
-      const existingWorkingBodies = this.$options.cardData.state.workingBodies || []
+      const existingWorkingBodies = this.$options.cardData.state.workingBodies || [];
       this.workingBodies = response.map(workingBody => ({
         id: workingBody.id,
         label: workingBody.name,
-        selected: existingWorkingBodies.indexOf(workingBody.id) > -1
-      }))
-    })
+        selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
+      }));
+    });
   },
   methods: {
     organisationIsWorkingBody(organisationId) {
@@ -202,44 +214,41 @@ export default {
     },
     selectSort(sortId) {
       if (this.currentSort === sortId) {
-        this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc'
-      }
-      else {
-        this.currentSort = sortId
-        this.currentSortOrder = 'asc'
+        this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc';
+      } else {
+        this.currentSort = sortId;
+        this.currentSortOrder = 'asc';
       }
 
       this.measurePiwik('', sortId, this.currentSortOrder);
     },
     selectFilter(filter) {
       if (this.currentFilters.indexOf(filter) > -1) {
-        this.currentFilters.splice(this.currentFilters.indexOf(filter), 1)
-      }
-      else {
-        this.currentFilters.push(filter)
+        this.currentFilters.splice(this.currentFilters.indexOf(filter), 1);
+      } else {
+        this.currentFilters.push(filter);
       }
 
       this.measurePiwik(filter, '', '');
     },
     getWorkingBodyUrl(workingBodyId) {
-      return 'https://glej.parlameter.si/wb/getWorkingBodies/' + workingBodyId + '?frame=true&altHeader=true'
+      return `https://glej.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
     },
     shortenUrl(url) {
-      $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), (response) => {
-        this.shortenedCardUrl = response
-        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ'
+      $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
+        this.shortenedCardUrl = response;
+        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
       });
     },
     measurePiwik(filter, sort, order) {
-      if (typeof measure == 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', sort + ' ' + order, '');
-        }
-        else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
+      if (typeof measure !== 'function') return;
+
+      if (sort !== '') {
+        measure('s', 'session-sort', `${sort} ${order}`, '');
+      } else if (filter !== '') {
+        measure('s', 'session-filter', filter, '');
       }
-    }
+    },
   },
   watch: {
     generatedCardUrl(newValue) {
@@ -248,15 +257,16 @@ export default {
     currentFilters(newValue) {
       if (newValue.indexOf('Seje delovnih teles') === -1) {
         this.workingBodies.forEach((workingBody) => {
+          // eslint-disable-next-line
           workingBody.selected = false;
         });
       }
     },
-    currentWorkingBodies(newValue, oldValue) {
+    currentWorkingBodies(newValue) {
       if (newValue.length !== 0 && this.currentFilters.indexOf('Seje delovnih teles') === -1) {
         this.currentFilters.push('Seje delovnih teles');
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
