@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container card-halfling card-IME_KARTICE">
+  <div class="card-container card-halfling card-glasovanje">
     <card-header :config="headerConfig" />
 
     <div class="card-content">
@@ -23,7 +23,6 @@
 
 <script>
 /* globals window $ measure */
-
 import CardInfo from 'components/Card/Info.vue';
 import CardEmbed from 'components/Card/Embed.vue';
 import CardShare from 'components/Card/Share.vue';
@@ -34,7 +33,7 @@ import initializeBack from 'mixins/initializeBack';
 export default {
   components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
   mixins: [initializeBack],
-  name: 'ImeKartice',
+  name: 'GlasovanjeSeje',
   data() {
     return {
       data: this.$options.cardData.data,
@@ -81,5 +80,5 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 </style>
