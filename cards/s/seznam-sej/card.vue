@@ -209,7 +209,7 @@ export default {
       }));
     });
   },
-  mounted() {
+  beforeMount() {
     this.shortenUrl(this.generatedCardUrl);
   },
   methods: {

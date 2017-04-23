@@ -83,6 +83,9 @@ export default {
       this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
     },
   },
+  beforeMount() {
+    this.shortenUrl(this.generatedCardUrl);
+  },
 };
 </script>
 
