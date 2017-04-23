@@ -56,7 +56,7 @@
 <script>
 /* globals $ */
 
-import _ from 'lodash';
+import { capitalize } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import CardInfo from 'components/Card/Info.vue';
 import CardEmbed from 'components/Card/Embed.vue';
@@ -227,7 +227,7 @@ export default {
                   : 'Niso glasovali o';
               } else {
                 ballotClone.label = this.type === 'person'
-                  ? `${_.capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
+                  ? `${capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
                   : `Glasovali ${ballot.option.toUpperCase()}`;
               }
 

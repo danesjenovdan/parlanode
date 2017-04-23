@@ -5,6 +5,7 @@
     <div class="card-content">
       <div class="card-content-front">
         <sortable-table
+          class="session-list"
           :columns="columns"
           :items="mappedSessions"
           :sort="currentSort"

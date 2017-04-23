@@ -1,5 +1,5 @@
 <template>
-  <ul class="session-list">
+  <ul>
     <li class="headers">
       <template v-for="column in columns">
         <div
