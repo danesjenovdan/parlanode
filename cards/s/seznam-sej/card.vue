@@ -87,7 +87,8 @@ export default {
   },
   computed: {
     columns: () => [
-      { id: 'name', label: 'Ime', additionalClass: 'wider' },
+      { id: 'image', label: '', additionalClass: 'image' },
+      { id: 'name', label: 'Ime', additionalClass: 'wider name' },
       { id: 'date', label: 'Začetek' },
       { id: 'updated', label: 'Sprememba', additionalClass: 'optional' },
       { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' },
@@ -207,6 +208,9 @@ export default {
         selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
       }));
     });
+  },
+  mounted() {
+    this.shortenUrl(this.generatedCardUrl);
   },
   methods: {
     organisationIsWorkingBody(organisationId) {

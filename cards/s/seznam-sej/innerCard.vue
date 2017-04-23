@@ -4,36 +4,13 @@
 
     <div class="card-content">
       <div class="card-content-front">
-        <ul class="session-list">
-          <li class="headers">
-            <div v-for="column in columns"
-                :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
-                @click="selectSort(column.id)">
-              {{ column.label }}
-            </div>
-          </li>
-          <div v-if="processedSessions.length === 0" class="no-results">Brez rezultatov.</div>
-          <li v-for="session in processedSessions" class="item">
-            <a class="column image" :href="getSessionUrl(session)">
-              <img :src="'https://cdn.parlameter.si/v1/parlassets/icons/seja-' + session.name.split(' ')[1] + '.svg'" />
-            </a>
-            <div class="column wider name">
-              <a class="funblue-light-hover" :href="getSessionUrl(session)">{{ session.name }}</a>
-            </div>
-            <div class="column">{{ formatDate(session.date_ts) }}</div>
-            <div class="column optional">{{ formatDate(session.updated_at_ts) }}</div>
-            <div class="column wider optional">
-              <template v-for="organization, index in session.orgs">
-                <template v-if="organisationIsWorkingBody(organization.id)">
-                  <a class="funblue-light-hover" :href="'https://glej.parlameter.si/wb/getWorkingBodies/' + organization.id + '?frame=true&altHeader=true'">{{ organization.name }}</a>{{ index < session.orgs.length - 1 ? ', ' : '' }}
-                </template>
-                <template v-else>
-                  <span>{{ organization.name }}</span>{{ index < session.orgs.length - 1 ? ', ' : '' }}
-                </template>
-              </template>
-            </div>
-          </li>
-        </ul>
+        <sortable-table
+          :columns="columns"
+          :items="mappedSessions"
+          :sort="currentSort"
+          :sort-order="currentSortOrder"
+          :sort-callback="selectSort"
+        />
       </div>
 
       <card-info>
@@ -51,17 +28,25 @@
 </template>
 
 <script>
-import { find } from 'lodash'
-import CardInfo from 'components/Card/Info.vue'
-import CardEmbed from 'components/Card/Embed.vue'
-import CardShare from 'components/Card/Share.vue'
-import CardHeader from 'components/Card/Header.vue'
-import CardFooter from 'components/Card/Footer.vue'
-import initializeBack from 'mixins/initializeBack'
+import CardInfo from 'components/Card/Info.vue';
+import CardEmbed from 'components/Card/Embed.vue';
+import CardShare from 'components/Card/Share.vue';
+import CardHeader from 'components/Card/Header.vue';
+import CardFooter from 'components/Card/Footer.vue';
+import SortableTable from 'components/SortableTable.vue';
+import initializeBack from 'mixins/initializeBack';
+
+const ICONS_ROOT_URL = 'https://cdn.parlameter.si/v1/parlassets/icons/';
+const ORGS_ROOT_URL = 'https://glej.parlameter.si/wb/getWorkingBodies/';
+
+const formatDate = (isoDate) => {
+  const date = new Date(isoDate);
+  return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+};
 
 export default {
-  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
-  mixins: [ initializeBack ],
+  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter, SortableTable },
+  mixins: [initializeBack],
   name: 'SeznamSejKartica',
   props: {
     headerConfig: Object,
@@ -76,15 +61,25 @@ export default {
     generatedCardUrl: String,
     shortenedCardUrl: String,
   },
+  computed: {
+    mappedSessions() {
+      return this.processedSessions.map(session => [
+        { link: this.getSessionUrl(session), image: `${ICONS_ROOT_URL}seja-${session.name.split(' ')[1]}.svg` },
+        { link: this.getSessionUrl(session), text: session.name },
+        formatDate(session.date_ts),
+        formatDate(session.updated_at_ts),
+        { contents: session.orgs.map(org => ({
+          text: org.name,
+          link: this.organisationIsWorkingBody(org.id) ? `${ORGS_ROOT_URL}${org.id}?frame=true&altHeader=true` : null,
+        })) },
+      ]);
+    },
+  },
   methods: {
     getSessionUrl(session) {
-      if (!this.slugs) return ''
-      return this.slugs.base + this.slugs.sessionLink[session.votes ? 'glasovanja' : 'transkript'] + session.id
+      if (!this.slugs) return '';
+      return this.slugs.base + this.slugs.sessionLink[session.votes ? 'glasovanja' : 'transkript'] + session.id;
     },
-    formatDate(isoDate) {
-      var date = new Date(isoDate);
-      return date.getDate() + '. ' + (date.getMonth() + 1) + '. ' + date.getFullYear();
-    },
-  }
-}
+  },
+};
 </script>

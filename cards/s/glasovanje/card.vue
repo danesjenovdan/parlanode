@@ -4,7 +4,13 @@
 
     <div class="card-content">
       <div class="card-content-front">
-
+        <tabs style="margin-top: 50px;" v-cloak>
+          <tab header="Poslanci">Poslanci</tab>
+          <tab header="Poslanske skupine">Poslanske skupine</tab>
+          <tab header="Stran vlade">
+            <h1>Tab three content</h1>
+          </tab>
+        </tabs>
       </div>
 
       <card-info>

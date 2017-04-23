@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = () => {
-  const config = baseConfig(`${path.resolve(__dirname)}/${process.env.CARD_NAME}`)
+  const config = baseConfig(`${path.resolve(__dirname)}/${process.env.CARD_NAME}`);
   config.module.loaders[0].options.loaders.sass = 'vue-style-loader!css-loader!sass-loader?includePaths[]=node_modules';
 
   return Object.assign(config, {
@@ -18,7 +18,7 @@ module.exports = () => {
       }),
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+          NODE_ENV: '"development"',
         },
       }),
     ],
