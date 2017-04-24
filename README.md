@@ -10,7 +10,7 @@ We are in the process of abandoning this format of cards. We encourage any new d
 
 ## Vue (new cards)
 
-Newer cards are implemented using [Vue](//vuejs.org/). Instead of being built outside and entered manually through the CMS, these cards exist entirely in the parlanode repo - their sources are stored in the `cards` folder. They are rendered using [vue-server-renderer](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer)
+Newer cards are implemented using [Vue](//vuejs.org/). Instead of being built outside and entered manually through the CMS, these cards exist entirely in the parlanode repo - their sources (and development instructions) are stored in the `cards` folder. They are rendered using [vue-server-renderer](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer)
 
 We intend to eventually port all cards to this format.
 
@@ -43,6 +43,10 @@ grunt build
 Copy content of ./cms-dev/dist to ./cms
 
 ## Development
+
+#### Word of caution
+
+This chapter concerns the development of the parlanode "backend," meaning the parts of the software that serve cards, take care of their rendering etc. **Not** the development of actual (newer) Vue-cards. Instructions for that can be found in the [README.md file in the `cards` folder](https://github.com/muki/parlanode/tree/master/cards).
 
 #### Requirements
 
