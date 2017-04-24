@@ -1,0 +1,9 @@
+{
+  "_id": "seznam-glasovanj",
+  "name": "Glasovanja - seja",
+  "dataUrl": "https://analize.parlameter.si/v1/s/getMotionOfSession",
+  "type": "Seje",
+  "lastUpdate": "2017-04-24T07:10:53.078Z",
+  "method": "glasovanja-seja",
+  "group": "s"
+}
