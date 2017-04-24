@@ -142,6 +142,7 @@ export default {
     groups: { type: Array, required: false },
     alphabetise: { type: Boolean, required: false, default: true },
     single: { type: Boolean, required: false },
+    selectCallback: { type: Function, required: false },
   },
   methods: {
     selectItem(selectedItemId) {
@@ -151,6 +152,10 @@ export default {
         this.toggleDropdown(false);
       } else {
         this.toggleItem(selectedItemId);
+      }
+
+      if (this.selectCallback) {
+        this.selectCallback(selectedItemId);
       }
     },
     toggleItem(itemId) {
