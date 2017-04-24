@@ -22,6 +22,8 @@
 </template>
 
 <script>
+/* globals window $ measure */
+
 import CardInfo from 'components/Card/Info.vue';
 import CardEmbed from 'components/Card/Embed.vue';
 import CardShare from 'components/Card/Share.vue';
@@ -31,7 +33,7 @@ import initializeBack from 'mixins/initializeBack';
 
 export default {
   components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
-  mixins: [ initializeBack ],
+  mixins: [initializeBack],
   name: 'ImeKartice',
   data() {
     return {
@@ -44,29 +46,28 @@ export default {
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
-      }
-    }
+      },
+    };
   },
   computed: {
     generatedCardUrl() {
       return 'https://glej.parlameter.si/group/method/';
-    }
+    },
   },
   methods: {
     shortenUrl(url) {
-      return new Promise((resolve, reject) => {
-        $.get('https://parla.me/shortner/generate?url=' + window.encodeURIComponent(url + '&frame=true'), (response) => {
+      return new Promise((resolve) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
           resolve(response);
         });
       });
     },
     measurePiwik(filter, sort, order) {
-      if (typeof measure == 'function') {
+      if (typeof measure === 'function') {
         if (sort !== '') {
-          measure('s', 'session-sort', sort + ' ' + order, '');
-        }
-        else if (filter !== '') {
+          measure('s', 'session-sort', `${sort} ${order}`, '');
+        } else if (filter !== '') {
           measure('s', 'session-filter', filter, '');
         }
       }
@@ -74,10 +75,13 @@ export default {
   },
   watch: {
     generatedCardUrl(newUrl) {
-      this.shortenUrl(newUrl).then(newShortenedUrl => this.shortenedCardUrl = newShortenedUrl);
+      this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
     },
-  }
-}
+  },
+  beforeMount() {
+    this.shortenUrl(this.generatedCardUrl);
+  },
+};
 </script>
 
 <style lang="sass">

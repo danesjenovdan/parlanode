@@ -1,0 +1,9 @@
+{
+  "_id": "s_glasovanje",
+  "name": "Glasovanje",
+  "dataUrl": "https://analize.parlameter.si/v1/s/getMotionAnalize/",
+  "type": "glasovanje",
+  "lastUpdate": "2017-04-21T10:13:21.077Z",
+  "method": "glasovanje",
+  "group": "s"
+}

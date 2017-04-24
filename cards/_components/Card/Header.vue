@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import { escape } from 'lodash'
-
 export default {
   name: 'CardHeader',
   props: {
