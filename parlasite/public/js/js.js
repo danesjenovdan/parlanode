@@ -716,7 +716,7 @@ $(function () {
 
     $(".searchForm").submit(function () {
        var tmpVal = $(this).find(".form-control");
-        if(tmpVal.val().length < 1){
+        if(tmpVal.val().length < 1 || tmpVal.val() === '/' || tmpVal.val() === '-'){
            tmpVal.val("parlameter");
        }
     });
