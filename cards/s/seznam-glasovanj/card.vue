@@ -159,8 +159,16 @@
         console.log('state');
         console.log(state);
         if (state.text) textFilter = state.text;
-        if (state.results) allResults = selectFromState(allResults, state.results);
-        if (state.tags) allTags = selectFromState(allTags, state.tags);
+        if (state.tags) allTags.map((tag) => {
+          if (state.tags.indexOf(tag.id) !== -1) {
+            tag.selected = true;
+          }
+        });
+        if (state.results) allResults.map((result) => {
+          if (state.results.indexOf(result.id) !== -1) {
+            result.selected = true;
+          }
+        });
       }
 
       return {
@@ -487,17 +495,6 @@
     .search-dropdown-options { top: 50px; }
   }
 
-  .search-dropdown input {
-    background-color: #ffffff;
-  }
-
-  .search-dropdown-input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-    background-color: #ffffff;
-    line-height: 27px;
-  }
-
   .option-party-buttons {
     .sprejet {
       border-bottom-color: $funblue;
@@ -513,6 +510,24 @@
       &.selected, &:hover {
         background-color: $red;
       }
+    }
+  }
+</style>
+<style lang="sass">
+  .card-glasovanja-seja {
+    .search-dropdown input {
+      background-color: #ffffff;
+    }
+
+    .search-dropdown-input {
+      padding-top: 11px;
+      padding-bottom: 11px;
+      background-color: #ffffff;
+      line-height: 27px;
+    }
+
+    .search-dropdown-options {
+      top: 50px;
     }
   }
 </style>
