@@ -25,10 +25,15 @@
           <div class="documents">
             <template v-if="data.documents.length > 0">
               <div class="dropdown-label">Dokumenti</div>
-              <search-dropdown single :items="mappedDocuments" placeholder="Izberite dokument"></search-dropdown>
+              <search-dropdown
+                single
+                :items="mappedDocuments"
+                placeholder="Izberite dokument"
+                select-callback="openDocument"
+              />
             </template>
             <template v-else>
-
+              <div class="no-results">Ni dokumentov</div>
             </template>
             <!--<% if (data.documents.length > 0) { %>
 
@@ -72,7 +77,7 @@
 
 <script>
 /* globals window $ measure */
-import { sortBy } from 'lodash';
+import { sortBy, find } from 'lodash';
 import { PORTRAIT_ROOT_URL } from 'components/constants';
 import { getPersonLink, getPartyLink } from 'components/links';
 import SortableTable from 'components/SortableTable.vue';
@@ -155,6 +160,10 @@ export default {
 
       this.measurePiwik('', columnId, this.currentSortOrder);
     },
+    openDocument(documentId) {
+      const selectedDocument = find(this.mappedDocuments, { id: documentId });
+      window.open(selectedDocument.url);
+    },
     shortenUrl(url) {
       return new Promise((resolve) => {
         $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
@@ -176,9 +185,6 @@ export default {
   watch: {
     generatedCardUrl(newUrl) {
       this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
-    },
-    mappedDocuments(newDocuments) {
-      console.log(newDocuments);
     }
   },
   beforeMount() {
@@ -256,6 +262,13 @@ export default {
   .documents {
     flex: 2;
     padding-left: 16px;
+    .no-results {
+      align-items: center;
+      display: flex;
+      font-style: italic;
+      height: 100%;
+      justify-content: center;
+    }
     .dropdown-label {
       font-family: Roboto Slab, Times New Roman, serif;
       font-size: 18px;
