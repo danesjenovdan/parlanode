@@ -11,10 +11,12 @@
 <body>
   <div id="app">
     <search-dropdown
+      single
       :items="testItems"
       :placeholder="`selected ${itemsSelected} items`"
       :groups="testGroups"
-      :alphabetise="false"></search-dropdown>
+      :alphabetise="false"
+      :select-callback="testSelection"></search-dropdown>
 
     <tabs style="margin-top: 50px;" v-cloak>
       <tab header="Tab one">Tab one content</tab>

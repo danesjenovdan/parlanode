@@ -47,4 +47,9 @@ new Vue({
       return this.testItems.filter(item => item.selected).length;
     },
   },
+  methods: {
+    testSelection(selectedId) {
+      console.log(selectedId, this.testItems);
+    },
+  },
 });
