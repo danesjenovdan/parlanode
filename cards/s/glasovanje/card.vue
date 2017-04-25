@@ -18,7 +18,7 @@
               </template>
             </div>
             <div class="percentage">
-              <span class="number">{{ Math.floor(data.result.value) }} %</span> {{ translatedOption }}
+              <span class="number">{{ Math.floor(data.result.value) }} %</span> vzdržanih{{ translatedOption }}
             </div>
           </div>
           <div class="name">{{ data.name }}</div>
@@ -29,7 +29,7 @@
                 single
                 :items="mappedDocuments"
                 placeholder="Izberite dokument"
-                select-callback="openDocument"
+                :select-callback="openDocument"
               />
             </template>
             <template v-else>
@@ -140,9 +140,12 @@ export default {
       ]);
     },
     translatedOption() {
+      // TODO: Include all options and ask about translations
       return {
-        for: 'ZA',
-        against: 'PROTI',
+        for: 'za',
+        against: 'proti',
+        absent: 'odsotnih',
+        abstain: 'vzdržanih',
       }[this.data.result.max_opt];
     },
     generatedCardUrl() {
