@@ -122,7 +122,7 @@
       CardFooter
     },
     mixins: [initializeBack],
-    name: 'ImeKartice',
+    name: 'Glasovanja - seja',
     data() {
 
       const selectFromState = (items, stateItemIds) =>
