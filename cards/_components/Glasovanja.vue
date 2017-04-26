@@ -54,18 +54,20 @@
 </template>
 
 <script>
-import _ from 'lodash'
-import { MONTH_NAMES } from 'components/constants'
-import CardInfo from 'components/Card/Info.vue'
-import CardEmbed from 'components/Card/Embed.vue'
-import CardShare from 'components/Card/Share.vue'
-import CardHeader from 'components/Card/Header.vue'
-import CardFooter from 'components/Card/Footer.vue'
-import initializeBack from 'mixins/initializeBack'
+/* globals $ */
+
+import { capitalize } from 'lodash';
+import { MONTH_NAMES } from 'components/constants';
+import CardInfo from 'components/Card/Info.vue';
+import CardEmbed from 'components/Card/Embed.vue';
+import CardShare from 'components/Card/Share.vue';
+import CardHeader from 'components/Card/Header.vue';
+import CardFooter from 'components/Card/Footer.vue';
+import initializeBack from 'mixins/initializeBack';
 
 export default {
   components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
-  mixins: [ initializeBack ],
+  mixins: [initializeBack],
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -127,34 +129,34 @@ export default {
           heading: this.person.name,
           subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
           circleImage: this.person.gov_id,
-        }
+        };
       } else {
         specifics = {
           heading: this.party.name,
           subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
           circleText: this.party.acronym,
           circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        }
+        };
       }
 
       return Object.assign({}, specifics, {
-        alternative: this.cardData.cardData.altHeader ? JSON.parse(this.cardData.cardData.altHeader) : false,
-        title: this.cardData.cardData.name
-      })
-    }
+        alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
+        title: this.cardData.cardData.name,
+      });
+    },
   },
   data() {
     const selectFromState = (items, stateItemIds) =>
       items.map(item =>
-        Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-      )
+        Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
+      );
 
     let allMonths = [];
-    [2017, 2016, 2015, 2014, 2013].forEach(year => {
-      for (let month = 1; month <= 12; month++) {
-        allMonths.push({ id: `${year}-${month}`, label: `${MONTH_NAMES[month-1]} ${year}`, month, year, selected: false })
-      }
-    })
+    [2017, 2016, 2015, 2014, 2013].forEach((year) => {
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((month) => {
+        allMonths.push({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false });
+      });
+    });
 
     let allOptions = [
       { id: 'za', class: 'for', label: 'ZA', selected: false },
@@ -163,15 +165,16 @@ export default {
       { id: 'ni', class: 'ni', label: (this.type === 'person' ? 'NI' : 'NISO'), selected: false },
     ];
     let allTags = this.cardData.data.all_tags.map(
-      tag => ({ id: tag, label: tag, selected: false })
+      tag => ({ id: tag, label: tag, selected: false }),
     );
-    let textFilter = ''
+    let textFilter = '';
 
     if (this.cardData.state) {
-      if (this.cardData.state.text) textFilter = this.cardData.state.text;
-      if (this.cardData.state.months) allMonths = selectFromState(allMonths, this.cardData.state.months);
-      if (this.cardData.state.options) allOptions = selectFromState(allOptions, this.cardData.state.options);
-      if (this.cardData.state.tags) allTags = selectFromState(allTags, this.cardData.state.tags);
+      const state = this.cardData.state;
+      if (state.text) textFilter = state.text;
+      if (state.months)allMonths = selectFromState(allMonths, state.months);
+      if (state.options) allOptions = selectFromState(allOptions, state.options);
+      if (state.tags) allTags = selectFromState(allTags, state.tags);
     }
 
     return {
@@ -224,7 +227,7 @@ export default {
                   : 'Niso glasovali o';
               } else {
                 ballotClone.label = this.type === 'person'
-                  ? `${_.capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
+                  ? `${capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
                   : `Glasovali ${ballot.option.toUpperCase()}`;
               }
 
@@ -253,7 +256,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1
+      validator: value => ['person', 'party'].indexOf(value) > -1,
     },
     person: Object,
     party: Object,
@@ -265,7 +268,7 @@ export default {
   },
   beforeMount() {
     this.shortenUrl(this.cardUrl);
-  }
+  },
 };
 </script>
 
