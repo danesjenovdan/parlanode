@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container card-halfling card-glasovanja-seja">
+  <div class="card-container card-halfling card-glasovanja-seja" :id="$options.cardData.cardData._id">
     <card-header :config="headerConfig" />
 
     <div class="card-content">
