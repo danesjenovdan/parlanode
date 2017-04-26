@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container card-halfling card-glasovanja-seja">
+  <div class="card-container card-halfling card-glasovanja-seja" :id="$options.cardData.cardData._id">
     <card-header :config="headerConfig" />
 
     <div class="card-content">
@@ -122,7 +122,7 @@
       CardFooter
     },
     mixins: [initializeBack],
-    name: 'ImeKartice',
+    name: 'Glasovanja - seja',
     data() {
 
       const selectFromState = (items, stateItemIds) =>
