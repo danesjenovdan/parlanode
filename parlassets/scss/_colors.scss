@@ -36,6 +36,13 @@ $vote-colors: (
   not_present: $noblue
 );
 
+$proper-vote-colors: (
+  for: $fontblue,
+  against: $funblue,
+  abstain: $ignoreblue,
+  not_present: $noblue
+);
+
 $option-colors: (
   for: $fontblue,
   against: $funblue,
