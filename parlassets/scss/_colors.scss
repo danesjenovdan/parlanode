@@ -77,3 +77,10 @@ $option-colors-hover: (
   'kvorum': $ignoreblue-hover,
   'ni': $noblue-hover
 );
+
+$proper-vote-colors-hover: (
+  'for': $fontblue-hover,
+  'against': $funblue-hover,
+  'abstail': $ignoreblue-hover,
+  'not_present': $noblue-hover
+);
