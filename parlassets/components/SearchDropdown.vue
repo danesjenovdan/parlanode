@@ -1,6 +1,6 @@
 <template>
   <div
-    class="search-dropdown"
+    :class="['search-dropdown', { small: small }]"
     v-click-outside="function() { toggleDropdown(false) }">
     <div
       v-if="selectedIds.length > 0"
@@ -137,12 +137,28 @@ export default {
     },
   },
   props: {
-    items: { type: Array, required: true },
-    placeholder: { type: String, required: true },
-    groups: { type: Array, required: false },
-    alphabetise: { type: Boolean, required: false, default: true },
-    single: { type: Boolean, required: false },
-    selectCallback: { type: Function, required: false },
+    alphabetise: {
+      type: Boolean,
+      default: true,
+    },
+    groups: Array,
+    items: {
+      type: Array,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      required: true,
+    },
+    selectCallback: Function,
+    single: {
+      type: Boolean,
+      default: false,
+    },
+    small: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     selectItem(selectedItemId) {

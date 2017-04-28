@@ -7,10 +7,6 @@
   margin-bottom: 9px;
 }
 
-.search-dropdown input {
-  background-color: #f0f0f0;
-}
-
 .searchfilter-label {
   font-size: 14px;
   padding-bottom: 4px;
@@ -92,17 +88,6 @@
   position: relative;
   top: 50%;
   margin-top: -50px;
-}
-
-.search-dropdown.disabled:before {
-  content: '';
-  position: absolute;
-  display: block;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 // search info button
