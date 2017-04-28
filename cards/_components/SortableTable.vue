@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li class="headers">
+    <li v-if="sortCallback !== undefined" class="headers">
       <template v-for="column in columns">
         <div
           v-if="column.label"

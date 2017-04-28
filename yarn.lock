@@ -4057,9 +4057,9 @@ pako@~0.2.0:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
 
-"parlassets@git+ssh://git@github.com:muki/parlassets.git":
+"parlassets@git+ssh://git@parlassets:muki/parlassets.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:muki/parlassets.git#07a0f97c14bf299a628ee6012767727bfde8814b"
+  resolved "git+ssh://git@parlassets:muki/parlassets.git#240819f8452d8d39f81c1fd2d0d75a71aa5db12e"
   dependencies:
     autoprefixer "^6.7.7"
     babel-core "^6.24.0"
