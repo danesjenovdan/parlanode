@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs">
+  <div :class="['tabs', { dark }]">
     <ul class="tabs-headers">
       <li
         v-for="(header, index) in headers"
@@ -36,6 +36,12 @@ export default {
       if (this.active !== tabIndex) {
         this.active = tabIndex;
       }
+    },
+  },
+  props: {
+    dark: {
+      type: Boolean,
+      default: false,
     },
   },
 };
