@@ -18,6 +18,7 @@
         <div class="votes">
           <striped-button
             v-for="vote, index in votes"
+            :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
             :color="vote.id"
             :key="vote.id"
             :selected="party.party.id === expandedParty && vote.id === expandedOption"

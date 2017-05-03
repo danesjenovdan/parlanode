@@ -28,7 +28,7 @@
               />
             </template>
             <template v-else>
-              <div class="no-results">Ni dokumentov</div>
+              <div class="no-documents">Ni dokumentov</div>
             </template>
             <!--<% if (data.documents.length > 0) { %>
 
@@ -125,6 +125,7 @@ export default {
           score: this.$options.cardData.data.gov_side[side].maxOptPerc,
           option: this.$options.cardData.data.gov_side[side].max_opt,
         },
+        outliers: this.$options.cardData.data.gov_side[side].outliers,
       })),
     };
   },
@@ -219,7 +220,7 @@ export default {
     justify-content: center;
     min-width: 204px;
     padding-left: 16px;
-    .no-results {
+    .no-documents {
       align-items: center;
       display: flex;
       font-style: italic;

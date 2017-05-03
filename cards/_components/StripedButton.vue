@@ -43,7 +43,10 @@ export default {
   height: 58px;
   justify-content: center;
   padding: 0 10px;
+  position: relative;
   user-select: none;
+
+  &.lightning-badge:before { top: -16px; }
 
   &.is-selected {
     border-color: transparent;
