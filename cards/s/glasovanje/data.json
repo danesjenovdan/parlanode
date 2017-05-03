@@ -1,7 +1,7 @@
 {
   "gov_side": {
     "coalition": {
-      "absent": 0.0,
+      "abstain": 0.0,
       "for": 46.0,
       "against": 0.0,
       "max_opt": "for",
@@ -9,7 +9,7 @@
       "not_present": 3.0
     },
     "opposition": {
-      "absent": 0.0,
+      "abstain": 0.0,
       "for": 37.0,
       "against": 1.0,
       "max_opt": "for",
@@ -1776,7 +1776,7 @@
     "party": {
       "acronym": "DeSUS",
       "is_coalition": false,
-      "id": 124,
+      "id": 3,
       "name": "Demokratska Stranka Upokojencev Slovenije"
     },
     "votes": {
@@ -1793,7 +1793,7 @@
     "party": {
       "acronym": "SMC",
       "is_coalition": false,
-      "id": 125,
+      "id": 1,
       "name": "Stranka modernega centra"
     },
     "votes": {

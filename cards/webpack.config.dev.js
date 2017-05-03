@@ -11,6 +11,7 @@ module.exports = () => {
     entry: './cards/devBundle.js',
     output: {
       filename: 'bundle.js',
+      publicPath: '/build/',
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({

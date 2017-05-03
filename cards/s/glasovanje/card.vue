@@ -41,32 +41,23 @@
         </div>
         <tabs>
           <tab header="Poslanci">
-            <div class="filters">
-              <search-field
-                v-model="nameFilter"
-                placeholder="Vsi poslanci"
-              />
-              <div class="vote-filters">
-                <striped-button
-                  v-for="vote, index in votes"
-                  :color="vote.id"
-                  :key="vote.id"
-                  :selected="vote.selected"
-                  :small-text="vote.label"
-                  :text="String(data.all[vote.id])"
-                  :click-handler="() => toggleVote(index)"
-                />
-              </div>
-            </div>
-            <sortable-table
-              class="person-list"
-              :columns="columns"
-              :items="mappedMembers"
+            <poslanci
+              :members="data.members"
+              :member-votes="data.all"
+              :result="data.result"
             />
           </tab>
-          <tab header="Poslanske skupine">Poslanske skupine</tab>
+          <tab header="Poslanske skupine">
+            <poslanske-skupine
+              :members="data.members"
+              :parties="data.parties"
+            />
+          </tab>
           <tab header="Stran vlade">
-            <h1>Tab three content</h1>
+            <poslanske-skupine
+              :members="coalitionOpositionMembers"
+              :parties="coalitionOpositionParties"
+            />
           </tab>
         </tabs>
       </div>
@@ -87,16 +78,13 @@
 
 <script>
 /* globals window $ measure */
-import { sortBy, find } from 'lodash';
-import { PORTRAIT_ROOT_URL } from 'components/constants';
-import { getPersonLink, getPartyLink } from 'components/links';
-import SortableTable from 'components/SortableTable.vue';
-import StripedButton from 'components/StripedButton.vue';
-import SearchField from 'components/SearchField.vue';
+import { find, pick } from 'lodash';
 import common from 'mixins/common';
+import Poslanci from './Poslanci.vue';
+import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-  components: { SortableTable, SearchField, StripedButton },
+  components: { Poslanci, PoslanskeSkupine },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
@@ -111,62 +99,37 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
-      columns: [
-        { id: 'portrait', label: '', additionalClass: 'portrait' },
-        { id: 'name', label: 'Ime', additionalClass: 'wider name' },
-        { id: 'party', label: 'PS' },
-        { id: 'votes', label: 'Glasovi', additionalClass: 'optional' },
-      ],
-      votes: [
-        { id: 'for', label: 'za', selected: false },
-        { id: 'against', label: 'proti', selected: false },
-        { id: 'abstain', label: 'vzdržani', selected: false },
-        { id: 'not_present', label: 'niso', selected: false },
-      ],
       mappedDocuments: this.$options.cardData.data.documents.map((document, index) => ({
         id: document.name + index,
         label: document.name.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
         selected: false,
         url: document.url,
       })),
-      nameFilter: '',
+      coalitionOpositionMembers: this.$options.cardData.data.members.map(member => ({
+        person: {
+          id: member.person.id,
+          gov_id: member.person.gov_id,
+          name: member.person.name,
+          party: {
+            id: member.person.party.is_coalition ? 'coalition' : 'opposition'
+          },
+        },
+        option: member.option,
+      })),
+      coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
+        party: {
+          id: side,
+          name: side === 'coalition' ? 'KOALICIJA' : 'OPOZICIJA',
+        },
+        votes: pick(this.$options.cardData.data.gov_side[side], ['abstain', 'for', 'against', 'not_present']),
+        max: {
+          score: this.$options.cardData.data.gov_side[side].maxOptPerc,
+          option: this.$options.cardData.data.gov_side[side].max_opt,
+        },
+      })),
     };
   },
   computed: {
-    mappedMembers() {
-      let members = this.data.members;
-
-      if (this.nameFilter.length > 0) {
-        members = members.filter(member =>
-          member.person.name.toLowerCase().indexOf(this.nameFilter.toLowerCase()) > -1,
-        );
-      }
-
-      if (this.selectedVotes.length > 0) {
-        members = members.filter(member => this.selectedVotes.indexOf(member.option) > -1);
-      }
-
-      return members.map(member => [
-        { image: `${PORTRAIT_ROOT_URL}/${member.person.gov_id}.png`, link: getPersonLink(member) },
-        { text: member.person.name, link: getPersonLink(member) },
-        { text: member.person.party.acronym, link: getPartyLink(member) },
-        { text: member.option },
-      ]);
-    },
-    selectedVotes() {
-      return this.votes
-        .filter(vote => vote.selected)
-        .map(vote => vote.id);
-    },
-    translatedOption() {
-      // TODO: Include all options and ask about translations
-      return {
-        for: 'za',
-        against: 'proti',
-        absent: 'odsotnih',
-        abstain: 'vzdržanih',
-      }[this.data.result.max_opt];
-    },
     generatedCardUrl() {
       return 'https://glej.parlameter.si/group/method/';
     },
@@ -175,12 +138,6 @@ export default {
     openDocument(documentId) {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url);
-    },
-    toggleVote(index) {
-      // const vote = find(this.votes, { id });
-      const newVotes = JSON.parse(JSON.stringify(this.votes));
-      newVotes[index].selected = !newVotes[index].selected;
-      this.votes = newVotes;
     },
     shortenUrl(url) {
       return new Promise((resolve) => {
@@ -203,7 +160,7 @@ export default {
   watch: {
     generatedCardUrl(newUrl) {
       this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
-    }
+    },
   },
   beforeMount() {
     this.shortenUrl(this.generatedCardUrl);
@@ -295,24 +252,4 @@ export default {
 }
 
 .tabs .tab-content { overflow: hidden; }
-
-.filters {
-  align-items: center;
-  display: flex;
-  margin-top: 13px;
-
-  .vote-filters {
-    display: flex;
-    margin: 0 0 0 35px;
-    .striped-button {
-      width: 97px;
-      &:not(:last-child) { margin-right: 6px; }
-    }
-  }
-}
-
-.person-list {
-  max-height: 388px;
-  overflow: auto;
-}
 </style>
