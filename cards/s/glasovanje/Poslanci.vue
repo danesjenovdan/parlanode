@@ -21,25 +21,34 @@
         :option="result.max_opt"
       />
     </div>
-    <sortable-table
-      class="person-list"
-      :columns="columns"
-      :items="mappedMembers"
-    />
+    <ul class="person-list">
+      <li class="item" v-for="member in members">
+        <div class="column portrait">
+          <a :href="getPersonLink(member)">
+            <img :src="getPersonPortrait(member)" />
+          </a>
+        </div>
+        <div class="column wider name">
+          <a :href="getPersonLink(member)">{{ member.person.name }}</a><br>
+          <a :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
+        </div>
+        <div class="column vote">
+          {{ member.option }}
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import StripedButton from 'components/StripedButton.vue';
-import { PORTRAIT_ROOT_URL } from 'components/constants';
-import { getPersonLink, getPersonPortrait, getMemberPartyLink } from 'components/links';
-import SortableTable from 'components/SortableTable.vue';
+import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 import SearchField from 'components/SearchField.vue';
 import Result from './Result.vue';
 
 export default {
   name: 'GlasovanjeSeje_Poslanci',
-  components: { StripedButton, SortableTable, SearchField, Result },
+  components: { StripedButton, SearchField, Result },
   data() {
     return {
       nameFilter: '',
@@ -58,26 +67,6 @@ export default {
     };
   },
   computed: {
-    mappedMembers() {
-      let members = this.members;
-
-      if (this.nameFilter.length > 0) {
-        members = members.filter(member =>
-          member.person.name.toLowerCase().indexOf(this.nameFilter.toLowerCase()) > -1,
-        );
-      }
-
-      if (this.selectedVotes.length > 0) {
-        members = members.filter(member => this.selectedVotes.indexOf(member.option) > -1);
-      }
-
-      return members.map(member => [
-        { image: getPersonPortrait(member), link: getPersonLink(member) },
-        { text: member.person.name, link: getPersonLink(member) },
-        { text: member.person.party.acronym, link: getMemberPartyLink(member) },
-        { text: member.option },
-      ]);
-    },
     selectedVotes() {
       return this.votes
         .filter(vote => vote.selected)
@@ -90,6 +79,9 @@ export default {
     result: Object,
   },
   methods: {
+    getPersonLink,
+    getPersonPortrait,
+    getPersonPartyLink,
     toggleVote(index) {
       // const vote = find(this.votes, { id });
       const newVotes = JSON.parse(JSON.stringify(this.votes));

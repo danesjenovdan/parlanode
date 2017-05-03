@@ -19,4 +19,4 @@ export const getPartyLink = (party) => {
          urlsData.partyLink.pregled;
 };
 
-export const getMemberPartyLink = member => getPartyLink(member.person.party);
+export const getPersonPartyLink = member => getPartyLink(member.person.party);
