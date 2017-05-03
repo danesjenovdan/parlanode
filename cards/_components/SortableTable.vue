@@ -10,7 +10,7 @@
         </div>
       </template>
     </li>
-    <div v-if="items.length === 0" class="no-results">Brez rezultatov.</div>
+    <div v-if="items.length === 0" class="empty-dataset">Brez rezultatov.</div>
     <li v-for="item in items" class="item">
       <div
         v-for="cell, cellIndex in item"
@@ -56,3 +56,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.empty-dataset {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 20px;
+  margin: 70px 0;
+  text-align: center;
+}
+</style>
