@@ -4,8 +4,7 @@
 
     <div class="card-content">
       <div class="card-content-front">
-        <div class="summary">
-          <div v-if="data.result.is_outlier" class="lightning-badge"></div>
+        <div :class="['summary', { 'lightning-badge': data.result.is_outlier }]">
           <div class="result">
             <template v-if="data.result.accepted">
               <i class="accepted glyphicon glyphicon-ok"></i>
@@ -39,7 +38,7 @@
             <% } %>-->
           </div>
         </div>
-        <tabs>
+        <tabs dark>
           <tab header="Poslanci">
             <poslanci
               :members="data.members"
@@ -171,20 +170,6 @@ export default {
 <style lang="sass" scoped>
 @import 'parlassets/scss/colors';
 
-.lightning-badge {
-  background: $darkgrey;
-  border-radius: 50%;
-  height: 31px;
-  left: -6px;
-  position: absolute;
-  top: -7px;
-  width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
-  background-size: 11px 19px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 .summary {
   $section-border: 1px solid $black;
   background: $grey;
@@ -252,4 +237,23 @@ export default {
 }
 
 .tabs .tab-content { overflow: hidden; }
+</style>
+
+<style lang="sass">
+@import 'parlassets/scss/colors';
+
+.lightning-badge::before {
+  background: $darkgrey;
+  border-radius: 50%;
+  content: '';
+  height: 31px;
+  left: -6px;
+  position: absolute;
+  top: -7px;
+  width: 31px;
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
+  background-size: 11px 19px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 </style>
