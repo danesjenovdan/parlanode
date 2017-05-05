@@ -1,7 +1,7 @@
 <template>
   <div class="result">
     <donut-chart
-      class="donut-chart"
+      :class="['donut-chart', `option-${this.option}`]"
       :section-data="chartData"
     />
     <div class="percentage">{{ Math.round(this.score) }} %</div>
@@ -53,9 +53,18 @@ export default {
   justify-content: flex-end;
 
   .donut-chart {
+    background-size: 41px 41px;
+    background-repeat: no-repeat;
+    background-position: center center;
     height: 61px;
     margin-left: 40px;
     width: 61px;
+
+    $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
+    &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
+    &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
+    &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+    &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
   }
 
   .percentage {

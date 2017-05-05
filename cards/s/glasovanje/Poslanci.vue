@@ -23,7 +23,7 @@
       />
     </div>
     <ul class="person-list">
-      <li class="item" v-for="member in members">
+      <li class="item" v-for="member in filteredMembers">
         <div class="column portrait">
           <a :href="getPersonLink(member)">
             <img :src="getPersonPortrait(member)" />
@@ -34,7 +34,7 @@
           <a :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
         </div>
         <div class="column vote">
-          {{ member.option }}
+          <div :class="`option option-${member.option}`">{{ translateOption(member.option, member.person.gender) }}</div>
         </div>
       </li>
     </ul>
@@ -74,6 +74,22 @@ export default {
         .filter(vote => vote.selected)
         .map(vote => vote.id);
     },
+    filteredMembers() {
+      return this.members.filter((member) => {
+        let nameMatch = true;
+        let optionMatch = true;
+
+        if (this.nameFilter.length > 0) {
+          nameMatch = member.person.name.toLowerCase().indexOf(this.nameFilter.toLowerCase()) > -1;
+        }
+
+        if (this.selectedVotes.length > 0) {
+          optionMatch = this.selectedVotes.indexOf(member.option) > -1;
+        }
+
+        return nameMatch && optionMatch;
+      });
+    },
   },
   props: {
     members: Array,
@@ -85,6 +101,26 @@ export default {
     getPersonPortrait,
     getPersonPartyLink,
     mapVotes,
+    translateOption(option, gender) {
+      return {
+        for: {
+          m: 'za',
+          f: 'za',
+        },
+        against: {
+          m: 'proti',
+          f: 'proti',
+        },
+        not_present: {
+          m: 'odsoten',
+          f: 'odsotna',
+        },
+        abstain: {
+          m: 'vzdržan',
+          f: 'vzdržana',
+        },
+      }[option][gender];
+    },
     toggleVote(index) {
       // const vote = find(this.votes, { id });
       const newVotes = JSON.parse(JSON.stringify(this.votes));
@@ -122,4 +158,25 @@ export default {
   max-height: 388px;
   overflow: auto;
 }
+
+  .vote {
+    display: flex;
+    justify-content: flex-end;
+    .option {
+      background-size: 40px 40px;
+      background-repeat: no-repeat;
+      background-position: top center;
+      font-size: 11px;
+      font-weight: 500;
+      padding-top: 40px;
+      text-transform: uppercase;
+      width: 125px;
+
+      $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
+      &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
+      &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
+      &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+      &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
+    }
+  }
 </style>

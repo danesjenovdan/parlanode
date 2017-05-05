@@ -13,7 +13,6 @@
       :transform="`rotate(${sector.R}, ${sector.L}, ${sector.L})`"
       mask="url(#donut-hole)"
     />
-
   </svg>
 </template>
 
