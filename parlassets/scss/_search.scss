@@ -107,3 +107,66 @@
     @include card(1);
 }
 // end of search info button
+
+.landing{
+  .session-search-container{
+    .searchForm{
+      position: relative;
+
+      .search{
+        .input-group-btn {
+          top: -2px;
+        }
+        .btn {
+          font-size: 22px;
+        }
+      }
+      .searchinfo {
+        right: -25px;
+        top: 13px;
+      }
+      .tt-menu {
+        left: 1px;
+        width: 106.8%;
+      }
+      .tt-dataset {
+        text-align: left;
+
+        .searchheader {
+          display: block;
+          position: relative;
+          width: 100%;
+          height: 16px;
+          line-height: 16px;
+          font-size: 12px;
+          background-color: #ededed;
+          top: 0;
+          left: 0;
+          padding-left: 5px;
+          z-index: 10;
+        }
+      }
+      .twitter-typeahead {
+        width: 100%;
+      }
+      .input-group {
+        display: table;
+      }
+
+      .searchperson-container {
+        border-bottom: 1px solid #ededed;
+        height: 60px;
+        padding: 10px;
+        line-height: 40px;
+        background-color: $white;
+      }
+
+      .session-ac-search {
+        background: #e8f1f4;
+        padding: 10px 5px;
+        color: $funblue;
+        cursor: pointer;
+      }
+    }
+  }
+}
