@@ -115,7 +115,7 @@
 
       .search{
         .input-group-btn {
-          top: -2px;
+          
         }
         .btn {
           font-size: 22px;
@@ -148,6 +148,7 @@
       }
       .twitter-typeahead {
         width: 100%;
+        display: inherit!important;
       }
       .input-group {
         display: table;
