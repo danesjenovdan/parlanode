@@ -30,6 +30,7 @@
         <result
           :score="party.max.score"
           :option="party.max.option"
+          :chart-data="mapVotes(party.votes)"
         />
       </div>
       <div
@@ -54,6 +55,7 @@
 <script>
 import { getPartyLink, getPersonLink, getPersonPortrait } from 'components/links';
 import StripedButton from 'components/StripedButton.vue';
+import mapVotes from './mapVotes';
 import Result from './Result.vue';
 
 export default {
@@ -86,6 +88,7 @@ export default {
     getPartyLink,
     getPersonLink,
     getPersonPortrait,
+    mapVotes,
     expandVote(party, option) {
       if (this.expandedParty === party && this.expandedOption === option) {
         this.expandedParty = null;

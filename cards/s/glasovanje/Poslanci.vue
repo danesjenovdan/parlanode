@@ -19,6 +19,7 @@
       <result
         :score="result.value"
         :option="result.max_opt"
+        :chart-data="mapVotes(memberVotes)"
       />
     </div>
     <ul class="person-list">
@@ -44,6 +45,7 @@
 import StripedButton from 'components/StripedButton.vue';
 import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 import SearchField from 'components/SearchField.vue';
+import mapVotes from './mapVotes';
 import Result from './Result.vue';
 
 export default {
@@ -82,6 +84,7 @@ export default {
     getPersonLink,
     getPersonPortrait,
     getPersonPartyLink,
+    mapVotes,
     toggleVote(index) {
       // const vote = find(this.votes, { id });
       const newVotes = JSON.parse(JSON.stringify(this.votes));

@@ -1,14 +1,20 @@
 <template>
   <div class="result">
-    <div class="donut-chart"></div>
+    <donut-chart
+      class="donut-chart"
+      :section-data="chartData"
+    />
     <div class="percentage">{{ Math.round(this.score) }} %</div>
     <div class="text">{{ translatedOption }}</div>
   </div>
 </template>
 
 <script>
+import DonutChart from 'components/DonutChart.vue';
+
 export default {
   name: 'GlasovanjeSeje_Result',
+  components: { DonutChart },
   data() {
     return {
       votes: [
@@ -31,8 +37,9 @@ export default {
     },
   },
   props: {
-    score: Number,
+    chartData: Array,
     option: String,
+    score: Number,
   },
 };
 </script>
@@ -46,11 +53,9 @@ export default {
   justify-content: flex-end;
 
   .donut-chart {
-    border-radius: 50%;
-    border: 9px solid $funblue;
     height: 61px;
-    width: 61px;
     margin-left: 40px;
+    width: 61px;
   }
 
   .percentage {
