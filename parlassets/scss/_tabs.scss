@@ -17,7 +17,7 @@
       cursor: pointer;
       display: flex;
       flex: 1;
-      font-size: 14px;
+      font-size: 11px;
       justify-content: center;
       margin-right: 4px;
       padding: 10px;
@@ -28,7 +28,7 @@
         color: $white;
         cursor: default;
       }
-      @include respond-to(mobile) { font-size: 11px; }
+      @include respond-to(desktop) { font-size: 14px; }
     }
   }
   .tabs-content {
@@ -39,7 +39,6 @@
   &.dark {
     .tabs-headers .tabs-header {
       color: white;
-      font-size: 16px;
       font-weight: 300;
       padding-bottom: 15px;
       padding-top: 16px;
@@ -47,6 +46,7 @@
       background: #227497;
       &.active { background: $funblue; }
       &:hover { background: rgba($funblue, 0.7) }
+      @include respond-to(desktop) { font-size: 16px; }
     }
   }
 }
