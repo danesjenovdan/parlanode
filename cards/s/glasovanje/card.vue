@@ -110,7 +110,7 @@ export default {
           gov_id: member.person.gov_id,
           name: member.person.name,
           party: {
-            id: member.person.party.is_coalition ? 'coalition' : 'opposition'
+            id: member.person.party.is_coalition ? 'coalition' : 'opposition',
           },
         },
         option: member.option,
@@ -170,28 +170,44 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .summary {
   $section-border: 1px solid $black;
   background: $grey;
-  display: flex;
-  margin: 7px 0 24px 0;
+  margin: 7px 0 8px 0;
   min-height: 90px;
   padding: 10px 14px;
   position: relative;
 
+  @include respond-to(desktop) {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
   .result {
     align-items: center;
-    border-right: $section-border;
+    border-bottom: $section-border;
     display: flex;
     flex: 1;
-    padding-right: 22px;
+    justify-content: center;
+    padding: 0 0 10px 0;
+
+    @include respond-to(desktop) {
+      border-bottom: none;
+      border-right: $section-border;
+      padding: 0 22px 0 0;
+    }
+
     .glyphicon {
-      font-size: 29px;
+      font-size: 24px;
       margin-bottom: 4px;
       &.accepted { color: $funblue; }
       &.not-accepted { color: $red; }
+
+      @include respond-to(desktop) { font-size: 29px; }
     }
+
     .text {
       color: #333;
       font-size: 14px;
@@ -203,36 +219,55 @@ export default {
 
   .name {
     align-items: center;
-    border-right: $section-border;
-    display: flex;
-    flex: 4;
+    border-bottom: $section-border;
     font-family: Roboto Slab, Times New Roman, serif;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 300;
-    line-height: 20px;
-    padding: 5px 12px;
+    line-height: 1.45em;
+    padding: 10px 0;
+
+    @include respond-to(desktop) {
+      border-right: $section-border;
+      border-bottom: none;
+      flex: 4;
+      font-size: 14px;
+      padding: 5px 12px;
+    }
   }
 
   .documents {
     display: flex;
-    flex: 2;
     flex-direction: column;
     justify-content: center;
-    min-width: 204px;
-    padding-left: 16px;
+
+    @include respond-to(desktop) {
+      flex: 2;
+      min-width: 204px;
+      padding-left: 16px;
+    }
+
     .no-documents {
       align-items: center;
       display: flex;
       font-style: italic;
       height: 100%;
       justify-content: center;
+      padding-top: 8px;
+      @include respond-to(desktop) { padding-top: 0; }
     }
+
     .dropdown-label {
+      @include show-for(desktop);
       font-family: Roboto Slab, Times New Roman, serif;
       font-size: 14px;
       font-weight: 300;
       line-height: 21px;
       margin-bottom: 5px;
+    }
+
+    .search-dropdown {
+      margin: 10px -2px 3px -2px;
+      @include respond-to(desktop) { margin: 0; }
     }
   }
 }
@@ -240,7 +275,7 @@ export default {
 .tabs .tab-content { overflow: hidden; }
 </style>
 
-<style lang="sass">
+<style lang="scss">
 @import '~parlassets/scss/colors';
 
 .lightning-badge::before {

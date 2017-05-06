@@ -32,19 +32,22 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .striped-button {
   align-items: center;
+  background: $white;
   border: 1px solid $grey-medium;
   border-top-width: 9px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 58px;
+  height: 54px;
   justify-content: center;
   padding: 0 10px;
   position: relative;
   user-select: none;
+  @include respond-to(desktop) { height: 58px; }
 
   &.lightning-badge:before { top: -16px; }
 
@@ -54,13 +57,15 @@ export default {
   }
 
   .small-text {
-    font-size: 13px;
+    font-size: 10px;
     line-height: 1em;
     text-transform: uppercase;
+    @include respond-to(desktop) { font-size: 13px; }
   }
   .text {
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1em;
+    @include respond-to(desktop) { font-size: 30px; }
   }
 
   @each $vote, $color in $proper-vote-colors {

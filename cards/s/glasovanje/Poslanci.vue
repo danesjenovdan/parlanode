@@ -133,25 +133,36 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .filters {
-  align-items: center;
-  display: flex;
   margin-top: 13px;
 
+  @include respond-to(desktop) {
+    align-items: center;
+    display: flex;
+  }
+
   .search-field {
-    flex: 1;
-    width: auto;
+    width: 100%;
+    @include respond-to(desktop) {
+      flex: 1;
+      width: auto;
+    }
   }
 
   .vote-filters {
     display: flex;
-    margin: 0 0 0 35px;
+    margin: 8px 0;
+    @include respond-to(desktop) { margin: 0 0 0 35px; }
     .striped-button {
-      width: 97px;
+      flex: 1;
+      @include respond-to(desktop) { width: 97px; }
       &:not(:last-child) { margin-right: 6px; }
     }
   }
+
+  .result { @include show-for('above-limbo', flex); }
 }
 
 .person-list {
@@ -170,7 +181,8 @@ export default {
       font-weight: 500;
       padding-top: 40px;
       text-transform: uppercase;
-      width: 125px;
+      width: 58px;
+      @include respond-to(desktop) { width: 125px; }
 
       $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
       &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }

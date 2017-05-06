@@ -46,6 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .result {
   align-items: center;
@@ -53,6 +54,7 @@ export default {
   justify-content: flex-end;
 
   .donut-chart {
+    @include show-for(desktop);
     background-size: 41px 41px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -68,15 +70,19 @@ export default {
   }
 
   .percentage {
-    font-size: 30px;
-    margin-left: 18px;
+    font-size: 24px;
     white-space: nowrap;
+    @include respond-to(desktop) {
+      margin-left: 18px;
+      font-size: 30px;
+    }
   }
 
   .text {
-    font-size: 16px;
+    font-size: 13px;
     text-transform: uppercase;
     margin-left: 12px;
+    @include respond-to(desktop) { font-size: 16px; }
   }
 }
 </style>

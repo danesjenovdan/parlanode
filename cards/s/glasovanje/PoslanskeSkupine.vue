@@ -15,6 +15,11 @@
             {{ party.party.name }}
           </template>
         </div>
+        <result
+          :score="party.max.score"
+          :option="party.max.option"
+          :chart-data="mapVotes(party.votes)"
+        />
         <div class="votes">
           <striped-button
             v-for="vote, index in votes"
@@ -27,11 +32,6 @@
             :click-handler="() => expandVote(party.party.id, vote.id)"
           />
         </div>
-        <result
-          :score="party.max.score"
-          :option="party.max.option"
-          :chart-data="mapVotes(party.votes)"
-        />
       </div>
       <div
         v-if="party.party.id === expandedParty"
@@ -104,6 +104,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .parties {
   margin-top: 13px;
@@ -114,29 +115,55 @@ export default {
   .party {
     background: $grey;
     margin-bottom: 12px;
-    padding: 0 18px;
+    padding: 10px 18px 14px;
+    @include respond-to(desktop) {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
 
     .description {
       align-items: center;
       display: flex;
-      height: 79px;
-
+      flex-wrap: wrap;
+      @include respond-to(desktop) {
+        flex-wrap: nowrap;
+        height: 79px;
+      }
     }
 
       .name {
         flex: 1;
-        font-size: 16px;
+        font-size: 14px;
+        min-width: 78px;
+        @include respond-to(desktop) {
+          font-size: 16px;
+          order: 1;
+        }
       }
 
       .votes {
         display: flex;
-        width: 400px;
+        width: 100%;
+
+        @include respond-to(desktop) {
+          order: 2;
+          width: 400px;
+        }
+
         .striped-button {
           flex: 1;
           &:not(:last-child) { margin-right: 6px; }
         }
       }
 
-      .result { flex: 2; }
+      .result {
+        flex: 2;
+        @include respond-to(desktop) { order: 3; }
+      }
+
+      .members {
+        padding-top: 14px;
+        @include respond-to(desktop) { padding-top: 0; }
+      }
 </style>

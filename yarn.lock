@@ -4059,7 +4059,7 @@ pako@~0.2.0:
 
 "parlassets@git+ssh://git@parlassets:muki/parlassets.git":
   version "1.0.0"
-  resolved "git+ssh://git@parlassets:muki/parlassets.git#240819f8452d8d39f81c1fd2d0d75a71aa5db12e"
+  resolved "git+ssh://git@parlassets:muki/parlassets.git#a71eab55e2a7568f6954643f78b1fe45329837c2"
   dependencies:
     autoprefixer "^6.7.7"
     babel-core "^6.24.0"
