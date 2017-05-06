@@ -297,8 +297,8 @@ export default {
 };
 </script>
 
-<style lang="sass">
-@import 'parlassets/scss/breakpoints';
+<style lang="scss">
+@import '~parlassets/scss/breakpoints';
 
 .card-content-front {
   display: flex;

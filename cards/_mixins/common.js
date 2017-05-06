@@ -11,7 +11,7 @@ export default {
     CardEmbed,
     CardShare,
     CardHeader,
-    CardFooter
+    CardFooter,
   },
   mixins: [
     initializeBack,

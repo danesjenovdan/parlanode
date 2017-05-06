@@ -7,7 +7,7 @@
         <div class="filters">
           <div class="filter text-filter">
             <div class="filter-label">Išči po naslovu glasovanja</div>
-            <input class="text-filter-input" type="text" v-model="textFilter">
+            <search-field v-model="textFilter" />
           </div>
           <div class="filter tag-dropdown">
             <div class="filter-label">Matično delovno telo</div>
@@ -58,16 +58,12 @@
 
 import { capitalize } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
-import CardInfo from 'components/Card/Info.vue';
-import CardEmbed from 'components/Card/Embed.vue';
-import CardShare from 'components/Card/Share.vue';
-import CardHeader from 'components/Card/Header.vue';
-import CardFooter from 'components/Card/Footer.vue';
-import initializeBack from 'mixins/initializeBack';
+import SearchField from 'components/SearchField.vue';
+import common from 'mixins/common';
 
 export default {
-  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
-  mixins: [initializeBack],
+  components: { SearchField },
+  mixins: [common],
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -272,8 +268,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-@import 'parlassets/scss/breakpoints';
+<style lang="scss" scoped>
+@import '~parlassets/scss/breakpoints';
 
 .card-content-front {
   display: flex;

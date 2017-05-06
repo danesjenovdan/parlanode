@@ -13,8 +13,8 @@ module.exports = cardPath => ({
         loader: 'vue-loader',
         options: {
           loaders: {
-            sass: ExtractTextPlugin.extract({
-              use: 'css-loader!sass-loader?includePaths[]=node_modules',
+            scss: ExtractTextPlugin.extract({
+              use: 'css-loader!sass-loader',
               fallback: 'vue-style-loader',
             }),
           },
