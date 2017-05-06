@@ -8,9 +8,15 @@ const COLORS = {
 };
 
 export default (votes) => {
-  const voteSum = reduce(votes, ((sum, vote) => sum + vote), 0);
-  return map(votes, (voteCount, voteId) => ({
-    percentage: voteCount / voteSum,
-    color: COLORS[voteId],
-  })).filter(vote => vote.percentage !== 0);
+  const voteSum = Object.keys(votes).reduce((sum, vote) => sum + votes[vote], 0);
+  const mappedVotes = [];
+
+  for (let key in votes) {
+    mappedVotes.push({
+      percentage: votes[key] / voteSum,
+      color: COLORS[key],
+    });
+  }
+
+  return mappedVotes;
 };
