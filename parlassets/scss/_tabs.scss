@@ -41,13 +41,17 @@
       color: white;
       font-size: 13px;
       font-weight: 300;
-      padding-bottom: 15px;
-      padding-top: 16px;
+      padding-bottom: 7px;
+      padding-top: 8px;
       text-transform: uppercase;
       background: #227497;
       &.active { background: $funblue; }
       &:hover { background: rgba($funblue, 0.7) }
-      @include respond-to(desktop) { font-size: 16px; }
+      @include respond-to(desktop) {
+        font-size: 16px;
+        padding-bottom: 15px;
+        padding-top: 16px;
+      }
     }
   }
 }
