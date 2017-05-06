@@ -18,8 +18,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-@import 'parlassets/scss/colors.scss';
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
 
 .search-field {
   background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');

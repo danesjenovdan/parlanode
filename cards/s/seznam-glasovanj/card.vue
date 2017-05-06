@@ -273,9 +273,9 @@
   };
 </script>
 
-<style lang="sass" scoped>
-  @import 'parlassets/scss/breakpoints';
-  @import 'parlassets/scss/colors';
+<style lang="scss" scoped>
+  @import '~parlassets/scss/breakpoints';
+  @import '~parlassets/scss/colors';
 
   .lightning-badge {
     background: $darkgrey;
@@ -513,7 +513,7 @@
     }
   }
 </style>
-<style lang="sass">
+<style lang="scss">
   .card-glasovanja-seja {
     .search-dropdown input {
       background-color: #ffffff;

@@ -168,8 +168,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-@import 'parlassets/scss/colors';
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
 
 .summary {
   $section-border: 1px solid $black;
@@ -241,7 +241,7 @@ export default {
 </style>
 
 <style lang="sass">
-@import 'parlassets/scss/colors';
+@import '~parlassets/scss/colors';
 
 .lightning-badge::before {
   background: $darkgrey;

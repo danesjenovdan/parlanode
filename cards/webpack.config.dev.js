@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.config.base');
 
 module.exports = () => {
   const config = baseConfig(`${path.resolve(__dirname)}/${process.env.CARD_NAME}`);
-  config.module.loaders[0].options.loaders.sass = 'vue-style-loader!css-loader!sass-loader?includePaths[]=node_modules';
+  config.module.loaders[0].options.loaders.scss = 'vue-style-loader!css-loader!sass-loader';
 
   return Object.assign(config, {
     entry: './cards/devBundle.js',

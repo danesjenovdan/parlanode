@@ -131,8 +131,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-@import 'parlassets/scss/colors';
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
 
 .filters {
   align-items: center;

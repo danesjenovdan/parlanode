@@ -44,8 +44,8 @@ export default {
 };
 </script>
 
-<style lang="sass">
-@import 'parlassets/scss/colors';
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
 
 .result {
   align-items: center;

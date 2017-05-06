@@ -30,8 +30,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-@import 'parlassets/scss/colors.scss';
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
 
 .striped-button {
   align-items: center;

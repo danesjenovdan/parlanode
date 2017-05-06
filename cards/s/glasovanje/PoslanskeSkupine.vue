@@ -102,8 +102,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-@import 'parlassets/scss/colors';
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
 
 .parties {
   margin-top: 13px;
