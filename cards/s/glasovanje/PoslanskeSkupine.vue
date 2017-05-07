@@ -44,7 +44,8 @@
               <a :href="getPersonLink(member)"><img :src="getPersonPortrait(member)"></a>
             </div>
             <div class="column name">
-              <a :href="getPersonLink(member)">{{ member.person.name }}</a>
+              <a class="funblue-light-hover" :href="getPersonLink(member)">{{ member.person.name }}</a><br>
+              <a class="funblue-light-hover" :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
             </div>
           </li>
         </ul>
@@ -54,7 +55,7 @@
 </template>
 
 <script>
-import { getPartyLink, getPersonLink, getPersonPortrait } from 'components/links';
+import { getPartyLink, getPersonLink, getPersonPartyLink, getPersonPortrait } from 'components/links';
 import StripedButton from 'components/StripedButton.vue';
 import mapVotes from './mapVotes';
 import Result from './Result.vue';
@@ -88,6 +89,7 @@ export default {
   methods: {
     getPartyLink,
     getPersonLink,
+    getPersonPartyLink,
     getPersonPortrait,
     mapVotes,
     expandVote(party, option) {
