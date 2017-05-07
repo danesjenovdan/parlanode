@@ -189,7 +189,7 @@ export default {
       $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
       &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
       &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
-      &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+      &.option-not_present { background-image: url(#{$icon-path}/ni_v2.svg) }
       &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
     }
   }
