@@ -30,8 +30,8 @@
           </a>
         </div>
         <div class="column wider name">
-          <a :href="getPersonLink(member)">{{ member.person.name }}</a><br>
-          <a :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
+          <a class="funblue-light-hover" :href="getPersonLink(member)">{{ member.person.name }}</a><br>
+          <a class="funblue-light-hover" :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
         </div>
         <div class="column vote">
           <div :class="`option option-${member.option}`">{{ translateOption(member.option, member.person.gender) }}</div>
