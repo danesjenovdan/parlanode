@@ -45,7 +45,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "jquery": "^3.1.1",
     "lodash": "^4.17.4",
-    "lodash-webpack-plugin": "^0.11.2",
+    "lodash-webpack-plugin": "^0.11.3",
     "mongoose": "^4.4.4",
     "node-sass": "^4.5.2",
     "pageres": "4.3.0",
@@ -84,7 +84,6 @@
       "lodash"
     ],
     "presets": [
-      "es2016",
       "es2015"
     ]
   }

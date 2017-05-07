@@ -1,5 +1,3 @@
-import { map, reduce } from 'lodash';
-
 const COLORS = {
   for: '#00628c',
   against: '#009cdd',
@@ -8,15 +6,11 @@ const COLORS = {
 };
 
 export default (votes) => {
-  const voteSum = Object.keys(votes).reduce((sum, vote) => sum + votes[vote], 0);
-  const mappedVotes = [];
+  const voteKeys = Object.keys(votes);
+  const voteSum = voteKeys.reduce((sum, vote) => sum + votes[vote], 0);
 
-  for (let key in votes) {
-    mappedVotes.push({
-      percentage: votes[key] / voteSum,
-      color: COLORS[key],
-    });
-  }
-
-  return mappedVotes;
+  return voteKeys.map(key => ({
+    percentage: votes[key] / voteSum,
+    color: COLORS[key],
+  }));
 };
