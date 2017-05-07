@@ -30,6 +30,7 @@
             :small-text="vote.label"
             :text="String(party.votes[vote.id])"
             :click-handler="() => expandVote(party.party.id, vote.id)"
+            :disabled="party.votes[vote.id] === 0"
           />
         </div>
       </div>

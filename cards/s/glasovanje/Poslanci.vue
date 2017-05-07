@@ -14,6 +14,7 @@
           :small-text="vote.label"
           :text="String(memberVotes[vote.id])"
           :click-handler="() => toggleVote(index)"
+          :disabled="memberVotes[vote.id] === 0"
         />
       </div>
       <result
