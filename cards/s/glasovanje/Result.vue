@@ -52,6 +52,7 @@ export default {
   align-items: center;
   display: flex;
   justify-content: flex-end;
+  @include respond-to(desktop) { justify-content: flex-start; }
 
   .donut-chart {
     @include show-for(desktop);

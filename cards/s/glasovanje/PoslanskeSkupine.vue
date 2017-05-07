@@ -126,6 +126,7 @@ export default {
       align-items: center;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       @include respond-to(desktop) {
         flex-wrap: nowrap;
         height: 79px;
@@ -133,9 +134,8 @@ export default {
     }
 
       .name {
-        flex: 1;
         font-size: 14px;
-        min-width: 78px;
+        min-width: 94px;
         @include respond-to(desktop) {
           font-size: 16px;
           order: 1;
@@ -150,6 +150,7 @@ export default {
           order: 2;
           width: 400px;
         }
+        @include respond-to(limbo) { width: 300px; }
 
         .striped-button {
           flex: 1;
@@ -158,8 +159,11 @@ export default {
       }
 
       .result {
-        flex: 2;
-        @include respond-to(desktop) { order: 3; }
+        flex: 1;
+        @include respond-to(desktop) {
+          max-width: 300px;
+          order: 3;
+        }
       }
 
       .members {
