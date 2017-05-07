@@ -59,8 +59,8 @@ export default {
 
   &.lightning-badge:before { top: -16px; }
 
-  &.is-selected {
-    border-color: transparent;
+  &.is-selected, &:hover:not(.is-disabled) {
+    border-color: transparent !important;
     color: $white;
   }
 
@@ -85,6 +85,9 @@ export default {
       border-top-color: $color;
       &.is-selected { background: $color; }
     }
+  }
+  @each $vote, $color in $proper-vote-colors-hover {
+    &.#{$vote}:hover:not(.is-disabled) { background: $color; }
   }
 }
 </style>

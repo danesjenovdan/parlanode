@@ -43,7 +43,7 @@
           </tab>
           <tab header="Stran vlade">
             <poslanske-skupine
-              :members="coalitionOpositionMembers"
+              :members="data.members"
               :parties="coalitionOpositionParties"
             />
           </tab>
@@ -92,17 +92,6 @@ export default {
         label: document.name.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
         selected: false,
         url: document.url,
-      })),
-      coalitionOpositionMembers: this.$options.cardData.data.members.map(member => ({
-        person: {
-          id: member.person.id,
-          gov_id: member.person.gov_id,
-          name: member.person.name,
-          party: {
-            id: member.person.party.is_coalition ? 'coalition' : 'opposition',
-          },
-        },
-        option: member.option,
       })),
       coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
         party: {

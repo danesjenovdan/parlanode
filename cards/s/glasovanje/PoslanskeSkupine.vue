@@ -77,9 +77,14 @@ export default {
   },
   computed: {
     expandedMembers() {
-      return this.members.filter(member =>
-        member.person.party.id === this.expandedParty && member.option === this.expandedOption,
-      );
+      return this.members.filter((member) => {
+        if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
+          return member.person.party.is_coalition === (this.expandedParty === 'coalition') &&
+                 member.option === this.expandedOption;
+        }
+        return member.person.party.id === this.expandedParty &&
+               member.option === this.expandedOption;
+      });
     },
   },
   props: {
