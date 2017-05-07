@@ -22,6 +22,7 @@
       margin-right: 4px;
       padding: 10px;
       text-align: center;
+      user-select: none;
       &:last-child { margin-right: 0; }
       &.active {
         background: $funblue;
