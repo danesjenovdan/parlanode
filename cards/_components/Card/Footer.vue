@@ -16,7 +16,7 @@
 export default {
   name: 'CardFooter',
   props: {
-    link: String
+    link: String,
   },
-}
+};
 </script>

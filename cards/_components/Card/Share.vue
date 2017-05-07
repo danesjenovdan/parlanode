@@ -15,7 +15,7 @@
 export default {
   name: 'CardShare',
   props: {
-    url: String
+    url: String,
   },
-}
+};
 </script>
