@@ -166,8 +166,9 @@ export default {
 }
 
 .person-list {
-  max-height: 388px;
+  height: 231px;
   overflow: auto;
+  @include respond-to(desktop) { height: 291px; }
 }
 
   .vote {

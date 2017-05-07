@@ -107,9 +107,9 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 .parties {
+  height: 352px;
   margin-top: 13px;
   overflow: auto;
-  max-height: 352px;
 }
 
   .party {
