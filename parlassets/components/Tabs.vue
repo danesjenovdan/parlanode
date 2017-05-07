@@ -35,6 +35,7 @@ export default {
     select(tabIndex) {
       if (this.active !== tabIndex) {
         this.active = tabIndex;
+        if (this.switchCallback) this.switchCallback(tabIndex);
       }
     },
   },
@@ -43,6 +44,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    switchCallback: Function,
   },
 };
 </script>
