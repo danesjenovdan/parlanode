@@ -218,7 +218,6 @@ export default {
   }
 
   .name {
-    align-items: center;
     border-bottom: $section-border;
     font-family: Roboto Slab, Times New Roman, serif;
     font-size: 11px;
@@ -227,8 +226,10 @@ export default {
     padding: 10px 0;
 
     @include respond-to(desktop) {
+      align-items: center;
       border-right: $section-border;
       border-bottom: none;
+      display: flex;
       flex: 4;
       font-size: 14px;
       padding: 5px 12px;
