@@ -27,7 +27,7 @@
             />
           </div>
         </div>
-        <tabs dark>
+        <tabs dark :switch-callback="focusTab">
           <tab header="Poslanci">
             <poslanci
               :members="data.members"
@@ -37,12 +37,14 @@
           </tab>
           <tab header="Poslanske skupine">
             <poslanske-skupine
+              ref="parties"
               :members="data.members"
               :parties="data.parties"
             />
           </tab>
           <tab header="Stran vlade">
             <poslanske-skupine
+              ref="sides"
               :members="data.members"
               :parties="coalitionOpositionParties"
             />
@@ -113,6 +115,16 @@ export default {
     },
   },
   methods: {
+    focusTab(tabNumber) {
+      if (tabNumber !== 1) {
+        this.$refs.parties.expandedParty = null;
+        this.$refs.parties.expandedOption = null;
+      }
+      if (tabNumber !== 2) {
+        this.$refs.sides.expandedParty = null;
+        this.$refs.sides.expandedOption = null;
+      }
+    },
     openDocument(documentId) {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url);
