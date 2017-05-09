@@ -319,6 +319,14 @@
     font-weight: 400;
     padding: 12px 0 0 12px;
 
+    &:empty::after {
+      color: #c8c8c8;
+      content: "Ni rezultatov.";
+      left: calc(50% - 41px);
+      position: absolute;
+      top: calc(50% - 10px);
+    }
+
     .session_votes .progress.smallbar {
       height: 15px;
     }
