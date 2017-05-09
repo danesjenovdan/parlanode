@@ -31,8 +31,8 @@
 export default {
   name: 'CardHeader',
   props: {
-    config: Object
-  }
-}
+    config: Object,
+  },
+};
 </script>
 

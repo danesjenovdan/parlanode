@@ -22,7 +22,7 @@
         <div id="votingCard" class="date-list">
           <div class="session_voting">
             <div v-for="vote in filteredVotes" class="clearfix single_voting">
-              <div v-if="vote.results.is_outlier" class="lightning-badge"></div>
+              <div v-if="vote.results.is_outlier" class="fire-badge"></div>
               <a :href="vote.url">
                 <div class=" col-md-1 ">
                   <div :class="vote.accepted">
@@ -93,6 +93,8 @@
         <p class="info-text heading">METODOLOGIJA</p>
         <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
         <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="http://www.dz-rs.si">DZ RS</a>.</p>
+        <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622</a>.</p>
+        <p class="info-text">Vsa glasovanja pretvorimo v štiridimenziolne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
       </card-info>
 
       <card-embed :url="generatedCardUrl" />
@@ -198,7 +200,7 @@
         if (this.textFilter.length > 0) state.text = this.textFilter;
         if (this.selectedResults.length > 0) state.results = this.selectedResults;
 
-        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       filteredVotes() {
         return this.getFilteredVotes();
@@ -248,6 +250,7 @@
           $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
             response) => {
             this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+            this.shortenedCardUrl = response;
             resolve(response);
           });
         });
@@ -268,6 +271,7 @@
       },
     },
     beforeMount() {
+      console.log(this.generatedCardUrl);
       this.shortenUrl(this.generatedCardUrl);
     },
   };
@@ -290,6 +294,21 @@
     background-position: center center;
     background-repeat: no-repeat;
   }
+
+  .fire-badge::before {
+  background: $darkgrey;
+  border-radius: 50%;
+  content: '';
+  height: 31px;
+  left: -6px;
+  position: absolute;
+  top: -7px;
+  width: 31px;
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
+  background-size: 40px 40px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
   .card-header h1,
   .card-footer h1 {
@@ -318,6 +337,14 @@
   .session_voting {
     font-weight: 400;
     padding: 12px 0 0 12px;
+
+    &:empty::after {
+      color: #c8c8c8;
+      content: "Ni rezultatov.";
+      left: calc(50% - 41px);
+      position: absolute;
+      top: calc(50% - 10px);
+    }
 
     .session_votes .progress.smallbar {
       height: 15px;
@@ -456,6 +483,8 @@
 
     .option-party-buttons {
       @include show-for(desktop, flex);
+      @include show-for(mobile, flex);
+      @include respond-to(mobile) { width: 100%; }
 
       width: 27.5%;
       padding-top: $label-height;
@@ -466,8 +495,8 @@
     }
 
     .text-filter {
-      @include show-for(desktop);
       @include respond-to(desktop) { width: 26%; }
+      @include respond-to(mobile) { width: 100%; }
 
       width: 26%; // 100%
 

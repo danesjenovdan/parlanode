@@ -16,29 +16,18 @@
             </template>
           </div>
           <div class="name">{{ data.name }}</div>
-          <div class="documents">
-            <template v-if="data.documents.length > 0">
-              <div class="dropdown-label">Dokumenti</div>
-              <search-dropdown
-                single
-                small
-                :items="mappedDocuments"
-                placeholder="Izberi dokument"
-                :select-callback="openDocument"
-              />
-            </template>
-            <template v-else>
-              <div class="no-documents">Ni dokumentov</div>
-            </template>
-            <!--<% if (data.documents.length > 0) { %>
-
-            <div class="prikazi" @click="takeMeToTheDocument">Prikaži</div>
-            <% } else { %>
-            <div class="nodocuments">Ni dokumentov</div>
-            <% } %>-->
+          <div v-if="data.documents.length > 0" class="documents">
+            <div class="dropdown-label">Dokumenti</div>
+            <search-dropdown
+              single
+              small
+              :items="mappedDocuments"
+              placeholder="Izberi dokument"
+              :select-callback="openDocument"
+            />
           </div>
         </div>
-        <tabs dark>
+        <tabs dark :switch-callback="focusTab">
           <tab header="Poslanci">
             <poslanci
               :members="data.members"
@@ -48,13 +37,15 @@
           </tab>
           <tab header="Poslanske skupine">
             <poslanske-skupine
+              ref="parties"
               :members="data.members"
               :parties="data.parties"
             />
           </tab>
           <tab header="Stran vlade">
             <poslanske-skupine
-              :members="coalitionOpositionMembers"
+              ref="sides"
+              :members="data.members"
               :parties="coalitionOpositionParties"
             />
           </tab>
@@ -104,17 +95,6 @@ export default {
         selected: false,
         url: document.url,
       })),
-      coalitionOpositionMembers: this.$options.cardData.data.members.map(member => ({
-        person: {
-          id: member.person.id,
-          gov_id: member.person.gov_id,
-          name: member.person.name,
-          party: {
-            id: member.person.party.is_coalition ? 'coalition' : 'opposition',
-          },
-        },
-        option: member.option,
-      })),
       coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
         party: {
           id: side,
@@ -135,6 +115,16 @@ export default {
     },
   },
   methods: {
+    focusTab(tabNumber) {
+      if (tabNumber !== 1) {
+        this.$refs.parties.expandedParty = null;
+        this.$refs.parties.expandedOption = null;
+      }
+      if (tabNumber !== 2) {
+        this.$refs.sides.expandedParty = null;
+        this.$refs.sides.expandedOption = null;
+      }
+    },
     openDocument(documentId) {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url);
@@ -189,7 +179,6 @@ export default {
     align-items: center;
     border-bottom: $section-border;
     display: flex;
-    flex: 1;
     justify-content: center;
     padding: 0 0 10px 0;
 
@@ -218,42 +207,35 @@ export default {
   }
 
   .name {
-    align-items: center;
-    border-bottom: $section-border;
     font-family: Roboto Slab, Times New Roman, serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;
-    padding: 10px 0;
+    padding: 10px 0 4px 0;
 
     @include respond-to(desktop) {
-      border-right: $section-border;
-      border-bottom: none;
+      align-items: center;
+      display: flex;
       flex: 4;
       font-size: 14px;
-      padding: 5px 12px;
+      padding: 5px 0 5px 12px;
     }
   }
 
   .documents {
+    border-top: $section-border;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 6px 0 0 0;
 
     @include respond-to(desktop) {
+      border-left: $section-border;
+      border-top: none;
       flex: 2;
+      margin: 0 0 0 12px;
       min-width: 204px;
       padding-left: 16px;
-    }
-
-    .no-documents {
-      align-items: center;
-      display: flex;
-      font-style: italic;
-      height: 100%;
-      justify-content: center;
-      padding-top: 8px;
-      @include respond-to(desktop) { padding-top: 0; }
     }
 
     .dropdown-label {

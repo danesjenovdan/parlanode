@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: 'CardInfo'
-}
+  name: 'CardInfo',
+};
 </script>

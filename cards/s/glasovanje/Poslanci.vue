@@ -14,6 +14,7 @@
           :small-text="vote.label"
           :text="String(memberVotes[vote.id])"
           :click-handler="() => toggleVote(index)"
+          :disabled="memberVotes[vote.id] === 0"
         />
       </div>
       <result
@@ -30,8 +31,8 @@
           </a>
         </div>
         <div class="column wider name">
-          <a :href="getPersonLink(member)">{{ member.person.name }}</a><br>
-          <a :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
+          <a class="funblue-light-hover" :href="getPersonLink(member)">{{ member.person.name }}</a><br>
+          <a class="funblue-light-hover" :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
         </div>
         <div class="column vote">
           <div :class="`option option-${member.option}`">{{ translateOption(member.option, member.person.gender) }}</div>
@@ -166,8 +167,9 @@ export default {
 }
 
 .person-list {
-  max-height: 388px;
+  height: 231px;
   overflow: auto;
+  @include respond-to(desktop) { height: 291px; }
 }
 
   .vote {
@@ -187,7 +189,7 @@ export default {
       $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
       &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
       &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
-      &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+      &.option-not_present { background-image: url(#{$icon-path}/ni_v2.svg) }
       &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
     }
   }

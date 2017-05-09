@@ -30,6 +30,7 @@
             :small-text="vote.label"
             :text="String(party.votes[vote.id])"
             :click-handler="() => expandVote(party.party.id, vote.id)"
+            :disabled="party.votes[vote.id] === 0"
           />
         </div>
       </div>
@@ -43,7 +44,8 @@
               <a :href="getPersonLink(member)"><img :src="getPersonPortrait(member)"></a>
             </div>
             <div class="column name">
-              <a :href="getPersonLink(member)">{{ member.person.name }}</a>
+              <a class="funblue-light-hover" :href="getPersonLink(member)">{{ member.person.name }}</a><br>
+              <a class="funblue-light-hover" :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
             </div>
           </li>
         </ul>
@@ -53,7 +55,7 @@
 </template>
 
 <script>
-import { getPartyLink, getPersonLink, getPersonPortrait } from 'components/links';
+import { getPartyLink, getPersonLink, getPersonPartyLink, getPersonPortrait } from 'components/links';
 import StripedButton from 'components/StripedButton.vue';
 import mapVotes from './mapVotes';
 import Result from './Result.vue';
@@ -75,9 +77,14 @@ export default {
   },
   computed: {
     expandedMembers() {
-      return this.members.filter(member =>
-        member.person.party.id === this.expandedParty && member.option === this.expandedOption,
-      );
+      return this.members.filter((member) => {
+        if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
+          return member.person.party.is_coalition === (this.expandedParty === 'coalition') &&
+                 member.option === this.expandedOption;
+        }
+        return member.person.party.id === this.expandedParty &&
+               member.option === this.expandedOption;
+      });
     },
   },
   props: {
@@ -87,6 +94,7 @@ export default {
   methods: {
     getPartyLink,
     getPersonLink,
+    getPersonPartyLink,
     getPersonPortrait,
     mapVotes,
     expandVote(party, option) {
@@ -107,9 +115,9 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 .parties {
+  height: 352px;
   margin-top: 13px;
   overflow: auto;
-  max-height: 352px;
 }
 
   .party {
@@ -126,6 +134,7 @@ export default {
       align-items: center;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       @include respond-to(desktop) {
         flex-wrap: nowrap;
         height: 79px;
@@ -133,9 +142,8 @@ export default {
     }
 
       .name {
-        flex: 1;
         font-size: 14px;
-        min-width: 78px;
+        min-width: 94px;
         @include respond-to(desktop) {
           font-size: 16px;
           order: 1;
@@ -150,6 +158,7 @@ export default {
           order: 2;
           width: 400px;
         }
+        @include respond-to(limbo) { width: 300px; }
 
         .striped-button {
           flex: 1;
@@ -158,12 +167,16 @@ export default {
       }
 
       .result {
-        flex: 2;
-        @include respond-to(desktop) { order: 3; }
+        flex: 1;
+        @include respond-to(desktop) {
+          max-width: 300px;
+          order: 3;
+        }
       }
 
       .members {
         padding-top: 14px;
         @include respond-to(desktop) { padding-top: 0; }
+        .person-list .item { border-color: #dddddd; }
       }
 </style>
