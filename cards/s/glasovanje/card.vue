@@ -100,10 +100,10 @@ export default {
           id: side,
           name: side === 'coalition' ? 'KOALICIJA' : 'OPOZICIJA',
         },
-        votes: pick(this.$options.cardData.data.gov_side[side], ['abstain', 'for', 'against', 'not_present']),
+        votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'not_present']),
         max: {
-          score: this.$options.cardData.data.gov_side[side].maxOptPerc,
-          option: this.$options.cardData.data.gov_side[side].max_opt,
+          maxOptPerc: this.$options.cardData.data.gov_side[side].max.maxOptPerc,
+          max_opt: this.$options.cardData.data.gov_side[side].max.max_opt,
         },
         outliers: this.$options.cardData.data.gov_side[side].outliers,
       })),

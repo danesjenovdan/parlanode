@@ -16,8 +16,8 @@
           </template>
         </div>
         <result
-          :score="party.max.score"
-          :option="party.max.option"
+          :score="party.max.maxOptPerc"
+          :option="party.max.max_opt"
           :chart-data="mapVotes(party.votes)"
         />
         <div class="votes">
