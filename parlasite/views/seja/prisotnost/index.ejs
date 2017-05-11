@@ -52,29 +52,24 @@
 
 <% if(sesData.type != 'kolegij'){ %>
 
-<% if(sesData.votes){ %>
-<div class="col-md-12 ">
-    <%- views.prisotnostPoPoslanskihSkupinah %>
-</div>
-<% }else{ %>
-    <%include ../../empty-state/state3.ejs %>
-<% } %>
+    <% if(sesData.votes){ %>
+        <div class="col-md-12 ">
+            <%- views.prisotnostPoPoslanskihSkupinah %>
+        </div>
+    <% }else{ %>
+        <%include ../../empty-state/state3.ejs %>
+    <% } %>
 
 
 <% }else{ %>
 
-<% if(sesData.votes){ %>
-<div class="col-md-12 ">
-    <%- views.besedeKiSoZaznamovaleSejo %>
-</div>
-<div class="col-md-12 ">
-    <%- views.transkript %>
-</div>
-<% }else{ %>
-<%include ../../empty-state/state4.ejs %>
-<% } %>
-
-
+    <% if(sesData.votes){ %>
+        <div class="col-md-12 ">
+            <%- views.prisotnostPoPoslanskihSkupinah %>
+        </div>
+    <% }else{ %>
+        <%include ../../empty-state/state2.ejs %>
+    <% } %>
 <% } %>
 
 

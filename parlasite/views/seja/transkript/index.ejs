@@ -59,17 +59,7 @@
     </div>
 </div>
 
-<!-- <div class="row">
-    <div class="col-md-6">
-        <h3 class="celtranskript">Cel transkript</h3>
-    </div>
-    <div class="col-md-6">
-        <div class="odpri-vse pull-right">Odpri vse govore</div>
-    </div>
-</div> -->
-
 <div class="row">
-    <!-- <div class="here-are-the-speeches"></div> -->
     <div class="col-md-12">
         <%- views.govori %>
     </div>
@@ -78,81 +68,6 @@
 <% }else{ %>
 <%include ../../empty-state/state5.ejs %>
 <% } %>
-
-
-
-<script>
-var session_id = <%= sesData.id %>;
-function sortID(a,b) {
-    return a - b;
-}
-
-function checkIfBottom(event) {
-    var $trigger = $('.fetch-trigger');
-    if ($trigger == $trigger) {
-        if($(document).scrollTop() > $trigger.offset().top) {
-            $trigger.removeClass('fetch-trigger');
-            console.log('time to fetch');
-            fetchNextPage(global_start + 1, global_start + 11, session_id);
-        }
-    }
-}
-function getSpeech(i, limit, results) {
-    var url_base = 'https://glej.parlameter.si/s/speech/'
-    
-    if (String(results[i]) !== 'undefined') {
-        if (i === limit - 1) {
-            $('.here-are-the-speeches').append('<div id="ss' + String(results[i]) + '" class="col-xs-12 fetch-trigger"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
-        } else {
-            $('.here-are-the-speeches').append('<div id="ss' + String(results[i]) + '" class="col-xs-12"><div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo govor ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div></div>');
-        }
-    }
-
-    var myid = 'ss' + String(results[i]);
-    console.log(myid);
-    $.ajax(url_base + results[i])
-        .done(function (data) {
-            console.log('done', data, myid);
-            $("#" + myid).html(data);
-        })
-        .fail(function () {
-            $("#" + myid).html(String(myid));
-            console.log('fail');
-        })
-        .always(function () {
-            console.log('always');
-        });
-    
-    global_start = i;
-}
-function fetchNextPage(start, limit, session_id) {
-    $.get('https://analize.parlameter.si/v1/s/getSpeechesIDsOfSession/' + session_id, function(r) {
-        var results = r.results.sort(sortID);
-
-        for (var i = start; i <= limit; i++) {
-            getSpeech(i, limit, results);
-        }
-    });
-}
-var global_start = 0;
-fetchNextPage(global_start, 10, session_id);
-$(document).on('scroll', checkIfBottom);
-</script>
-
-
-
-
-<script>
-    $('.odpri-vse').on('click', function() {
-        if ($(this).text() === 'Odpri vse govore') {
-            $(this).text('Zapri vse govore');
-        } else {
-            $(this).text('Odpri vse govore');
-        }
-        $('.toggle-arrow').click();
-    });
-</script>
-
 
 <%}else{ %>
     <%include ../../error/404partial.ejs %>
