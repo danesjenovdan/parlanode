@@ -1531,7 +1531,7 @@ const routes = [
     cards      : [
       {
         name      : 'glasovanjeSeja',
-        sourceUrl : '/s/glasovanje-layered-2/:motionid',
+        sourceUrl : '/s/glasovanje/:motionid',
         resolve   : ( req, res, route, card ) => {
 
           var pattern        = new UrlPattern(card.sourceUrl);
@@ -1561,7 +1561,7 @@ const routes = [
     cards      : [
       {
         name      : 'glasovanjaSeja',
-        sourceUrl : '/s/glasovanja-seja/:id',
+        sourceUrl : '/s/seznam-glasovanj/:id',
         resolve   : ( req, res, route, card ) => {
           var pattern        = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({ id : req.params.id });
