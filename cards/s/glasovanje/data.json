@@ -57,7 +57,7 @@
     "is_outlier": true,
     "accepted": true,
     "value": 65.33333333333333,
-    "max_opt": "for"
+    "max_opt": "not_present"
   },
   "members": [{
     "person": {
