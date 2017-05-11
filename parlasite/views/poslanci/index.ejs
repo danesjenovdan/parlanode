@@ -1,152 +1,152 @@
 <% include ../partials/header.ejs %>
 
 <div id="member-list-generator-container" v-cloak>
-    <div class="member-list-generator">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="analyses">
-            <li v-for="analysis in analyses"
-                :class="{ selected: analysis.id === currentAnalysis }"
-                @click="selectAnalysis(analysis.id)">
-              <span>{{ analysis.label }}</span>
-            </li>
-          </ul>
+  <div class="member-list-generator">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="analyses">
+          <li v-for="analysis in analyses"
+              :class="{ selected: analysis.id === currentAnalysis }"
+              @click="selectAnalysis(analysis.id)">
+            <span>{{ analysis.label }}</span>
+          </li>
+        </ul>
 
-          <div class="mobile-analyses">
-            <label for="analysis">Izberi analizo</label>
-            <div class="select">
-              <select
-                name="analysis"
-                id="analysis"
-                v-model="currentAnalysis"
-                @change="selectAnalysis(currentAnalysis)">
-                <option
-                  v-for="analysis in analyses"
-                  :value="analysis.id">
-                  {{ analysis.label }}
-                </option>
-              </select>
-            </div>
+        <div class="mobile-analyses">
+          <label for="analysis">Izberi analizo</label>
+          <div class="select">
+            <select
+              name="analysis"
+              id="analysis"
+              v-model="currentAnalysis"
+              @change="selectAnalysis(currentAnalysis)">
+              <option
+                v-for="analysis in analyses"
+                :value="analysis.id">
+                {{ analysis.label }}
+              </option>
+            </select>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12 parties-districts">
-          <ul class="parties">
-            <li v-for="party in parties" class="party-button"
-                :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase(), party.replace(/ /g, '_').toLowerCase() + '-hover']"
-                @click="selectParty(party)">
-              {{ party }}
-            </li>
-          </ul>
+    <div class="row">
+      <div class="col-md-12 parties-districts">
+        <ul class="parties">
+          <li v-for="party in parties" class="party-button"
+              :class="[{ selected: currentParties.indexOf(party) > -1 }, party.replace(/ /g, '_').toLowerCase(), party.replace(/ /g, '_').toLowerCase() + '-hover']"
+              @click="selectParty(party)">
+            {{ party }}
+          </li>
+        </ul>
 
-          <search-dropdown class="districts" :items="districts" :placeholder="inputPlaceholder"></search-dropdown>
+        <search-dropdown class="districts" :items="districts" :placeholder="inputPlaceholder"></search-dropdown>
 
-          <div class="exclude-presiding checkbox-twolines">
-            <input id="predsedujoci" type="checkbox" v-model="excludePresiding" class="checkbox">
-            <label for="predsedujoci">Skrij<br>predsedujoče</label>
-          </div>
+        <div class="exclude-presiding">
+          <input id="predsedujoci" type="checkbox" v-model="excludePresiding" class="checkbox checkbox-twolines">
+          <label for="predsedujoci">Skrij<br>predsedujoče</label>
+        </div>
 
-          <div class="align-checkbox checkbox-twolines">
-            <input id="samo5" type="checkbox" v-model="onlyLatest" class="checkbox">
-            <label for="samo5">Samo<br>zgornjih 5</label>
-          </div>
+        <div class="align-checkbox">
+          <input id="samo5" type="checkbox" v-model="onlyLatest" class="checkbox checkbox-twolines">
+          <label for="samo5">Samo<br>zgornjih 5</label>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card-container card-halfling card-seznam-poslancev">
-            <div class="card-header">
-              <div class="card-header-border"></div>
-              <h1>Seznam poslancev{{ currentAnalysisData.titleSuffix }}</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-container card-halfling card-seznam-poslancev">
+          <div class="card-header">
+            <div class="card-header-border"></div>
+            <h1>Seznam poslancev{{ currentAnalysisData.titleSuffix }}</h1>
+          </div>
+          <div class="card-content">
+            <div class="card-content-front">
+              <ul class="person-list">
+                <li class="headers">
+                  <div v-for="column in columns"
+                      :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
+                      @click="selectSort(column.id)">
+                    {{ column.label }}
+                  </div>
+                </li>
+                <li v-if="memberData.length === 0" class="loader">
+                  <div class="nalagalnik"></div>
+                </li>
+                <div v-if="memberData.length > 0 && processedMemberData.length === 0" class="no-results">Brez rezultatov.</div>
+                <li v-for="member in processedMemberData" class="person">
+                  <a class="portrait column" :href="getMemberUrl(member.person.id)">
+                    <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
+                  </a>
+                  <div class="column wider name">
+                    <a class="funblue-light-hover" :href="getMemberUrl(member.person.id)">{{ member.person.name }}</a>
+                  </div>
+                  <div class="column">
+                    <a v-if="member.partylink" class="funblue-light-hover" :href="getPartyUrl(member.person.party)">{{ member.person.party.acronym }}</a>
+                    <template v-else>{{ member.person.party.acronym }}</template>
+                  </div>
+                  <div class="column district">{{ member.person.formattedDistrict }}</div>
+                  <template v-if="currentAnalysis !== 'alphabetical'">
+                    <div class="column">{{ getFormattedAnalysisValue(member) }}</div>
+                    <div class="column">{{ getFormattedChangeValue(member) }}</div>
+                  </template>
+                </li>
+              </ul>
             </div>
-            <div class="card-content">
-              <div class="card-content-front">
-                <ul class="person-list">
-                  <li class="headers">
-                    <div v-for="column in columns"
-                        :class="['column', column.additionalClass, { sort: currentSort === column.id }, { reverse: currentSortOrder === 'desc' }]"
-                        @click="selectSort(column.id)">
-                      {{ column.label }}
-                    </div>
-                  </li>
-                  <li v-if="memberData.length === 0" class="loader">
-                    <div class="nalagalnik"></div>
-                  </li>
-                  <div v-if="memberData.length > 0 && processedMemberData.length === 0" class="no-results">Brez rezultatov.</div>
-                  <li v-for="member in processedMemberData" class="person">
-                    <a class="portrait column" :href="getMemberUrl(member.person.id)">
-                      <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.person.gov_id + '.png'" />
-                    </a>
-                    <div class="column wider name">
-                      <a class="funblue-light-hover" :href="getMemberUrl(member.person.id)">{{ member.person.name }}</a>
-                    </div>
-                    <div class="column">
-                      <a v-if="member.partylink" class="funblue-light-hover" :href="getPartyUrl(member.person.party)">{{ member.person.party.acronym }}</a>
-                      <template v-else>{{ member.person.party.acronym }}</template>
-                    </div>
-                    <div class="column district">{{ member.person.formattedDistrict }}</div>
-                    <template v-if="currentAnalysis !== 'alphabetical'">
-                      <div class="column">{{ getFormattedAnalysisValue(member) }}</div>
-                      <div class="column">{{ getFormattedChangeValue(member) }}</div>
-                    </template>
-                  </li>
-                </ul>
+            <div class="card-content-info hidden">
+              <div class="card-back-content" v-html="infoText">
               </div>
-              <div class="card-content-info hidden">
-                <div class="card-back-content" v-html="infoText">
-                </div>
-              </div>
-              <div class="card-content-embed hidden">
-                <div class="card-back-content">
-                  <div class="embed-content">
-                    <div class="embed-divider"></div>
-                    <div class="embed-switch-container">
-                      <div class="embed-label">Podatki naj se vedno osvežujejo</div>
-                      <div class="embed-switch-big-box">
-                        <div class="embed-switch-box">
-                          <div class="embed-switch">
-                            <div class="embed-switches">
-                              <div class="leftswitch">DA</div>
-                              <div class="rightswitch">NE</div>
-                            </div>
+            </div>
+            <div class="card-content-embed hidden">
+              <div class="card-back-content">
+                <div class="embed-content">
+                  <div class="embed-divider"></div>
+                  <div class="embed-switch-container">
+                    <div class="embed-label">Podatki naj se vedno osvežujejo</div>
+                    <div class="embed-switch-big-box">
+                      <div class="embed-switch-box">
+                        <div class="embed-switch">
+                          <div class="embed-switches">
+                            <div class="leftswitch">DA</div>
+                            <div class="rightswitch">NE</div>
                           </div>
                         </div>
-                        <div class="embed-switch-ball"></div>
                       </div>
-                    </div>
-                    <div class="embed-divider"></div>
-                    <div class="embed-script">
-                      <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></iframe></textarea>
-                      <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+                      <div class="embed-switch-ball"></div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="card-content-share hidden">
-                <div class="card-back-content card-content">
-                  <div class="share-content">
-                    <label for="share-url">Neposredna povezava do kartice</label>
-                    <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
-                    <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
+                  <div class="embed-divider"></div>
+                  <div class="embed-script">
+                    <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/p/seznam-poslancev/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></iframe></textarea>
+                    <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card-footer" data-shortened="true">
-              <div class="card-circle-button card-share" data-back="share"></div>
-              <div class="card-circle-button card-embed" data-back="embed"></div>
-              <div class="card-circle-button card-info" data-back="info">i</div>
+            <div class="card-content-share hidden">
+              <div class="card-back-content card-content">
+                <div class="share-content">
+                  <label for="share-url">Neposredna povezava do kartice</label>
+                  <input type="url" class="form-control share-url" id="share-url" :value="shortenedCardUrl"/>
+                  <button class="btn-parlameter btn-full-width btn-blue">KOPIRAJ</button>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="card-footer" data-shortened="true">
+            <div class="card-circle-button card-share" data-back="share"></div>
+            <div class="card-circle-button card-embed" data-back="embed"></div>
+            <div class="card-circle-button card-info" data-back="info">i</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
+<script>
   new Vue({
     el: '#member-list-generator-container',
     components: ['SearchDropdown'],
@@ -180,10 +180,13 @@
           unit: 'percent'
         },
         {
-          id: 'vocabulary_size',
-          titleSuffix: ' po raznolikosti besedišča',
-          explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375',
-          label: 'Raznolikost besedišča'
+          id: 'number_of_questions',
+          titleSuffix: ' po št. poslanskih vprašanj in pobud',
+          explanation: 'Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.' +
+                            'Podatke pridobivamo s spletnega mesta DZ RS: <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/</a>.',
+          label: 'Št. poslanskih vprašanj in pobud',
+          round: true,
+          roundingPrecision: 0
         },
         {
           id: 'spoken_words',
@@ -196,6 +199,12 @@
           titleSuffix: ' po št. govorov na sejo',
           explanation: 'Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim.',
           label: 'Št. govorov na sejo'
+        },
+        {
+          id: 'vocabulary_size',
+          titleSuffix: ' po raznolikosti besedišča',
+          explanation: 'Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375',
+          label: 'Raznolikost besedišča'
         },
         {
           id: 'privzdignjeno',
@@ -244,15 +253,6 @@
           label: 'Ekscesno besedje',
           round: true,
           roundingPrecision: 3
-        },
-        {
-          id: 'number_of_questions',
-          titleSuffix: ' po št. poslanskih vprašanj in pobud',
-          explanation: 'Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.' +
-                            'Podatke pridobivamo s spletnega mesta DZ RS: <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/</a>.',
-          label: 'Št. poslanskih vprašanj in pobud',
-          round: true,
-          roundingPrecision: 0
         },
       ],
       currentParties: [],
@@ -536,16 +536,6 @@
   activateCopyButton()
   addCardRippling()
 
-  </script>
-
-  <style>
-  .checkbox-twolines label {
-    line-height: 14px;
-    max-width: 115px;
-  }
-  .checkbox-twolines label:before {
-    top: 4px;
-  }
-</style>
+</script>
 
 <% include ../partials/footer.ejs %>
