@@ -57,7 +57,7 @@ export default {
   user-select: none;
   @include respond-to(desktop) { height: 58px; }
 
-  &.lightning-badge:before { top: -16px; }
+  // &.lightning-badge:before { top: -16px; }
 
   &.is-selected, &:hover:not(.is-disabled) {
     border-color: transparent !important;

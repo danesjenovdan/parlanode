@@ -4,7 +4,7 @@
 
     <div class="card-content">
       <div class="card-content-front">
-        <div :class="['summary', { 'lightning-badge': data.result.is_outlier }]">
+        <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
           <div class="result">
             <template v-if="data.result.accepted">
               <i class="accepted glyphicon glyphicon-ok"></i>
@@ -267,10 +267,24 @@ export default {
   height: 31px;
   left: -6px;
   position: absolute;
-  top: -7px;
+  bottom: -6px;
   width: 31px;
   background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
   background-size: 11px 19px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fire-badge::before {
+  background: $darkgrey;
+  border-radius: 50%;
+  content: '';
+  height: 31px;
+  left: -6px;
+  position: absolute;
+  top: -7px;
+  width: 31px;
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
+  background-size: 40px 40px;
   background-position: center center;
   background-repeat: no-repeat;
 }

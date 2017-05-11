@@ -54,7 +54,7 @@
     "in_review": true
   },
   "result": {
-    "is_outlier": false,
+    "is_outlier": true,
     "accepted": true,
     "value": 65.33333333333333,
     "max_opt": "for"

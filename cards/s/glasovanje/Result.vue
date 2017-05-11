@@ -33,6 +33,7 @@ export default {
         against: 'proti',
         absent: 'odsotnih',
         abstain: 'vzdržanih',
+        cant_compute: 'ni večinskega glasu',
       }[this.option];
     },
   },
