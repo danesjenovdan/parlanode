@@ -4,7 +4,7 @@
 
     <div class="card-content">
       <div class="card-content-front">
-        <div :class="['summary', { 'lightning-badge': data.result.is_outlier }]">
+        <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
           <div class="result">
             <template v-if="data.result.accepted">
               <i class="accepted glyphicon glyphicon-ok"></i>
@@ -100,10 +100,10 @@ export default {
           id: side,
           name: side === 'coalition' ? 'KOALICIJA' : 'OPOZICIJA',
         },
-        votes: pick(this.$options.cardData.data.gov_side[side], ['abstain', 'for', 'against', 'not_present']),
+        votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'not_present']),
         max: {
-          score: this.$options.cardData.data.gov_side[side].maxOptPerc,
-          option: this.$options.cardData.data.gov_side[side].max_opt,
+          maxOptPerc: this.$options.cardData.data.gov_side[side].max.maxOptPerc,
+          max_opt: this.$options.cardData.data.gov_side[side].max.max_opt,
         },
         outliers: this.$options.cardData.data.gov_side[side].outliers,
       })),
@@ -267,10 +267,24 @@ export default {
   height: 31px;
   left: -6px;
   position: absolute;
-  top: -7px;
+  bottom: -6px;
   width: 31px;
   background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
   background-size: 11px 19px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fire-badge::before {
+  background: $darkgrey;
+  border-radius: 50%;
+  content: '';
+  height: 31px;
+  left: -6px;
+  position: absolute;
+  top: -7px;
+  width: 31px;
+  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
+  background-size: 40px 40px;
   background-position: center center;
   background-repeat: no-repeat;
 }

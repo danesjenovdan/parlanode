@@ -484,7 +484,7 @@
     .option-party-buttons {
       @include show-for(desktop, flex);
       @include show-for(mobile, flex);
-      @include respond-to(mobile) { width: 100%; }
+      @include respond-to(mobile) { width: 100%; padding-top: 0; }
 
       width: 27.5%;
       padding-top: $label-height;
