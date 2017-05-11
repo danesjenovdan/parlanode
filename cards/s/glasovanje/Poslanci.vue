@@ -47,7 +47,7 @@ import StripedButton from 'components/StripedButton.vue';
 import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 import SearchField from 'components/SearchField.vue';
 import mapVotes from './mapVotes';
-import Result from './Result.vue';
+import Result from './ResultShit.vue';
 
 export default {
   name: 'GlasovanjeSeje_Poslanci',
@@ -149,7 +149,7 @@ export default {
     @include respond-to(desktop) {
       flex: 1;
       width: auto;
-      max-width: 200px;
+      // max-width: 200px;
     }
   }
 
