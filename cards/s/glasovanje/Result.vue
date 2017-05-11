@@ -31,7 +31,7 @@ export default {
       return {
         for: 'za',
         against: 'proti',
-        absent: 'odsotnih',
+        not_present: 'odsotnih',
         abstain: 'vzdržanih',
         cant_compute: 'ni večinskega glasu',
       }[this.option];
