@@ -149,6 +149,7 @@ export default {
     @include respond-to(desktop) {
       flex: 1;
       width: auto;
+      max-width: 200px;
     }
   }
 
