@@ -62,9 +62,9 @@ export default {
     background-size: 41px 41px;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 61px;
+    height: 58px;
     margin-left: 40px;
-    width: 61px;
+    width: 58px;
 
     $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
     &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
@@ -91,17 +91,9 @@ export default {
 }
 
 // MUKI HACK
+.text {
+  text-align: center;
+  line-height: 16px;
+}
 
-// .members {
-//   .percentage {
-//     position: relative;
-//     bottom: -8px;
-//   }
-  .text {
-//     position: relative;
-//     top: -17px;
-//     left: -58px;
-    text-align: center;
-  }
-// }
 </style>
