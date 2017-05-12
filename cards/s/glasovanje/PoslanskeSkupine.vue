@@ -29,7 +29,7 @@
             :selected="party.party.id === expandedParty && vote.id === expandedOption"
             :small-text="vote.label"
             :text="String(party.votes[vote.id])"
-            :click-handler="($event) => expandVote(party.party.id, vote.id, $event)"
+            :click-handler="() => expandVote(party.party.id, vote.id)"
             :disabled="party.votes[vote.id] === 0"
           />
         </div>
@@ -97,7 +97,7 @@ export default {
     getPersonPartyLink,
     getPersonPortrait,
     mapVotes,
-    expandVote(party, option, event) {
+    expandVote(party, option) {
       if (this.expandedParty === party && this.expandedOption === option) {
         this.expandedParty = null;
         this.expandedOption = null;
@@ -147,9 +147,8 @@ export default {
         font-size: 14px;
         min-width: 94px;
         @include respond-to(desktop) {
-          font-size: 18px;
+          font-size: 16px;
           order: 1;
-          font-weight: 300;
         }
       }
 
