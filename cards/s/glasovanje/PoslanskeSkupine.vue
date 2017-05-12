@@ -105,7 +105,7 @@ export default {
         this.expandedParty = party;
         this.expandedOption = option;
         const thing = event.currentTarget;
-        $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - 296);
+        $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - $(thing).parents('.parties').offset().top - 10);
       }
     },
   },
