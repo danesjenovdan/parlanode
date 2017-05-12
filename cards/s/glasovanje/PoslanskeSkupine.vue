@@ -106,14 +106,7 @@ export default {
         this.expandedOption = option;
         const thing = event.currentTarget;
         $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - 296);
-        console.log($(event.currentTarget).parents('.parties').scrollTop());
-        console.log($(event.currentTarget).offset().top);
       }
-
-      console.log($(event.currentTarget).parents('.parties').scrollTop());
-      console.log($(event.currentTarget).offset().top);
-      // $(event.currentTarget).parents('.parties').scrollTop($(event.currentTarget).offset().top - 296);
-      console.log(event.currentTarget);
     },
   },
 };
