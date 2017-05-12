@@ -111,5 +111,31 @@
             }
         }
     }
+}
 
+@media (max-width: 400px) {
+    .group-container-menu {
+        ul {
+           li {
+                a {
+                    font-size: 12px;
+                    padding: 10px 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .group-container-menu {
+        ul {
+           li {
+               width: 100%;
+                a {
+                    font-size: 14px;
+                    padding: 10px 10px;
+                }
+            }
+        }
+    }
 }
