@@ -56,13 +56,13 @@
         <p class="info-text lead">Pregled rezultatov glasovanja.</p>
         <p class="info-text heading">METODOLOGIJA</p>
         <p class="info-text">Rezultat posameznega glasovanja ima tri različne izpise: na nivoju poslancev, na nivoju poslanskih skupin ter glede na stran vlade.</p>
-        <p class="info-text">
+        <div class="info-text">
           <ul>
             <li>Prvi zavihek omogoča pregled glasov poslancev, filtriranje glede na vrednost glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem glasovanju. "60% ZA" npr. pomeni, da je ZA glasovalo 60 od 90 poslancev.</li>
             <li>Drugi zavihek prikaže glasove poslanskih skupin. Na koncu vsake vrstice je izpisan večinski glas poslanske skupine, gumbi z vrednostmi glasovnic pa odpirajo sezname poslancev, ki so oddali tak glas. S strelo opozarjamo na razkole v poslanskih skupinah - izrišemo jo nad tistimi glasovi, ki niso enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.</li>
             <li>Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo opozarjamo na nepričakovane glasove - pri koaliciji označujemo odstopanje od večinskega glasu, pri opoziciji pa na glas, ki je enak koalicijskemu.</li>
           </ul>
-        </p>
+        </div>
         <p class="info-text heading">KONTROVERZNA GLASOVANJA</p>
         <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis.</a></p>
         <p class="info-text">Vsa glasovanja pretvorimo v štiridimenziolne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
