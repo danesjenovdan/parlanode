@@ -147,8 +147,9 @@ export default {
         font-size: 14px;
         min-width: 94px;
         @include respond-to(desktop) {
-          font-size: 16px;
+          font-size: 18px;
           order: 1;
+          font-weight: 300;
         }
       }
 
