@@ -58,7 +58,7 @@
         <p class="info-text"></p>
       </card-info>
 
-      <card-embed :url="generatedCardUrl" />
+      <card-embed :url="cardUrl" />
 
       <card-share :url="shortenedCardUrl" />
     </div>
@@ -79,6 +79,7 @@ export default {
   name: 'GlasovanjeSeje',
   data() {
     return {
+      cardUrl: `https://glej.parlameter.si/s/glasovanje/${this.$options.cardData.data.id}?altHeader=true`,
       data: this.$options.cardData.data,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
@@ -109,11 +110,6 @@ export default {
       })),
     };
   },
-  computed: {
-    generatedCardUrl() {
-      return 'https://glej.parlameter.si/group/method/';
-    },
-  },
   methods: {
     focusTab(tabNumber) {
       if (tabNumber !== 1) {
@@ -129,14 +125,6 @@ export default {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url);
     },
-    shortenUrl(url) {
-      return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-          resolve(response);
-        });
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -147,13 +135,10 @@ export default {
       }
     },
   },
-  watch: {
-    generatedCardUrl(newUrl) {
-      this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
-    },
-  },
   beforeMount() {
-    this.shortenUrl(this.generatedCardUrl);
+    $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.cardUrl}&frame=true`)}`, (response) => {
+      this.shortenedCardUrl = response;
+    });
   },
 };
 </script>
