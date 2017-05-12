@@ -53,7 +53,7 @@
       </div>
 
       <card-info>
-        <p class="info-text lead">Pregled rezultatov glasovanja.</p>
+        <p class="info-text lead"></p>
         <p class="info-text heading">METODOLOGIJA</p>
         <p class="info-text">Rezultat posameznega glasovanja ima tri različne izpise: na nivoju poslancev, na nivoju poslanskih skupin ter glede na stran vlade.</p>
         <div class="info-text">
@@ -68,7 +68,7 @@
         <p class="info-text">Vsa glasovanja pretvorimo v štiridimenziolne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
       </card-info>
 
-      <card-embed :url="cardUrl" />
+      <card-embed :url="generatedCardUrl" />
 
       <card-share :url="shortenedCardUrl" />
     </div>
@@ -89,7 +89,6 @@ export default {
   name: 'GlasovanjeSeje',
   data() {
     return {
-      cardUrl: `https://glej.parlameter.si/s/glasovanje/${this.$options.cardData.data.id}?altHeader=true`,
       data: this.$options.cardData.data,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
@@ -120,14 +119,13 @@ export default {
       })),
     };
   },
+  computed: {
+    generatedCardUrl() {
+      return 'https://glej.parlameter.si/group/method/';
+    },
+  },
   methods: {
     focusTab(tabNumber) {
-      const personlist = document.getElementsByClassName('person-list');
-      personlist[0].scrollTop = 0;
-
-      const parties = document.getElementsByClassName('parties');
-      parties[0].scrollTop = 0;
-
       if (tabNumber !== 1) {
         this.$refs.parties.expandedParty = null;
         this.$refs.parties.expandedOption = null;
@@ -141,6 +139,14 @@ export default {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url);
     },
+    shortenUrl(url) {
+      return new Promise((resolve) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
+          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+          resolve(response);
+        });
+      });
+    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -151,10 +157,13 @@ export default {
       }
     },
   },
+  watch: {
+    generatedCardUrl(newUrl) {
+      this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
+    },
+  },
   beforeMount() {
-    $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.cardUrl}&frame=true`)}`, (response) => {
-      this.shortenedCardUrl = response;
-    });
+    this.shortenUrl(this.generatedCardUrl);
   },
 };
 </script>
