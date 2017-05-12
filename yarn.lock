@@ -3286,9 +3286,9 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
-lodash-webpack-plugin@^0.11.3:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/lodash-webpack-plugin/-/lodash-webpack-plugin-0.11.3.tgz#17465b879c138cca14327efb5a82b1aa8304e08d"
+lodash-webpack-plugin@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/lodash-webpack-plugin/-/lodash-webpack-plugin-0.11.2.tgz#fdb945b1ae94617172da172f20b60264cfbac635"
   dependencies:
     lodash "^4.17.4"
 
