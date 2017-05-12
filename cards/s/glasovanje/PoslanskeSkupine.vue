@@ -104,6 +104,8 @@ export default {
       } else {
         this.expandedParty = party;
         this.expandedOption = option;
+        const thing = event.currentTarget;
+        $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - 296);
       }
     },
   },
