@@ -60,9 +60,9 @@ export default {
     background-size: 41px 41px;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 58px;
+    height: 61px;
     margin-left: 40px;
-    width: 58px;
+    width: 61px;
 
     $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
     &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }

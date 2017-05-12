@@ -124,14 +124,9 @@ export default {
     },
     toggleVote(index) {
       // const vote = find(this.votes, { id });
-      this.votes.forEach((e) => {
-        console.log(e);
-        if (this.votes.indexOf(e) === index) {
-          e.selected = !e.selected;
-        } else {
-          e.selected = false;
-        }
-      });
+      const newVotes = JSON.parse(JSON.stringify(this.votes));
+      newVotes[index].selected = !newVotes[index].selected;
+      this.votes = newVotes;
     },
   },
 };
@@ -199,8 +194,4 @@ export default {
       &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
     }
   }
-// MUKI HACK
-.search-field {
-  align-self: flex-start;
-}
 </style>
