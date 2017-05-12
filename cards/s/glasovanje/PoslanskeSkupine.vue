@@ -29,7 +29,7 @@
             :selected="party.party.id === expandedParty && vote.id === expandedOption"
             :small-text="vote.label"
             :text="String(party.votes[vote.id])"
-            :click-handler="() => expandVote(party.party.id, vote.id)"
+            :click-handler="($event) => expandVote(party.party.id, vote.id, $event)"
             :disabled="party.votes[vote.id] === 0"
           />
         </div>
@@ -97,14 +97,23 @@ export default {
     getPersonPartyLink,
     getPersonPortrait,
     mapVotes,
-    expandVote(party, option) {
+    expandVote(party, option, event) {
       if (this.expandedParty === party && this.expandedOption === option) {
         this.expandedParty = null;
         this.expandedOption = null;
       } else {
         this.expandedParty = party;
         this.expandedOption = option;
+        const thing = event.currentTarget;
+        $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - 296);
+        console.log($(event.currentTarget).parents('.parties').scrollTop());
+        console.log($(event.currentTarget).offset().top);
       }
+
+      console.log($(event.currentTarget).parents('.parties').scrollTop());
+      console.log($(event.currentTarget).offset().top);
+      // $(event.currentTarget).parents('.parties').scrollTop($(event.currentTarget).offset().top - 296);
+      console.log(event.currentTarget);
     },
   },
 };
@@ -145,8 +154,9 @@ export default {
         font-size: 14px;
         min-width: 94px;
         @include respond-to(desktop) {
-          font-size: 16px;
+          font-size: 18px;
           order: 1;
+          font-weight: 300;
         }
       }
 
