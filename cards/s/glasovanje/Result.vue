@@ -1,10 +1,10 @@
 <template>
   <div class="result">
     <donut-chart
-      :class="['donut-chart', `option-${this.option}`]"
+      :class="['donut-chart', `option-${option}`]"
       :section-data="chartData"
     />
-    <div class="percentage">{{ Math.round(this.score) }} %</div>
+    <div v-if="option !== 'cant_compute'" class="percentage">{{ Math.round(score) }} %</div>
     <div class="text">{{ translatedOption }}</div>
   </div>
 </template>
@@ -61,7 +61,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     height: 58px;
-    margin-left: 40px;
+    margin: 0 8px 0 40px;
     width: 58px;
 
     $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
@@ -75,7 +75,7 @@ export default {
     font-size: 24px;
     white-space: nowrap;
     @include respond-to(desktop) {
-      margin-left: 18px;
+      margin-left: 10px;
       font-size: 30px;
     }
   }
@@ -84,6 +84,7 @@ export default {
     font-size: 13px;
     text-transform: uppercase;
     margin-left: 12px;
+    max-width: 140px;
     @include respond-to(desktop) { font-size: 16px; }
   }
 }
