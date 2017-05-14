@@ -82,10 +82,14 @@ export default {
 
   .text {
     font-size: 13px;
-    text-transform: uppercase;
+    line-height: 34px;
     margin-left: 12px;
     max-width: 140px;
-    @include respond-to(desktop) { font-size: 16px; }
+    text-transform: uppercase;
+    @include respond-to(desktop) {
+      font-size: 16px;
+      line-height: 23px;
+    }
   }
 }
 </style>
