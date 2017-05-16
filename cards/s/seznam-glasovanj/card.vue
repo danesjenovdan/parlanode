@@ -23,6 +23,8 @@
           <div class="session_voting">
             <div v-for="vote in filteredVotes" class="clearfix single_voting">
               <div v-if="vote.results.is_outlier" class="fire-badge"></div>
+              <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
+              <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
               <a :href="vote.url">
                 <div class=" col-md-1 ">
                   <div :class="vote.accepted">
@@ -285,9 +287,9 @@
     background: $darkgrey;
     border-radius: 50%;
     height: 31px;
-    left: -12px;
+    left: 30px;
     position: absolute;
-    top: -10px;
+    top: -7px;
     width: 31px;
     background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
     background-size: 11px 19px;
