@@ -1,6 +1,8 @@
 $breakpoint: 768px;
 
 $breakpoints: (
+  small-mobile: "(max-width: #{479px})",
+  before-limbo: "(min-width: #{480px}) and (max-width: #{$breakpoint - 1px})",
   up-to-limbo: "(max-width: #{991px})",
   above-limbo: "(min-width: #{992px})",
   limbo: "(min-width: #{$breakpoint}) and (max-width: #{991px})",
