@@ -160,7 +160,7 @@ export default {
   .vote-filters {
     display: flex;
     margin: 8px 0;
-    @include respond-to(desktop) { margin: 0 0 0 35px; }
+    @include respond-to(desktop) { margin: 0 0 0 30px; }
     .striped-button {
       flex: 1;
       @include respond-to(desktop) { width: 97px; }
@@ -168,7 +168,9 @@ export default {
     }
   }
 
-  .result { @include show-for('above-limbo', flex); }
+  .result {
+    @include show-for('above-limbo', flex);
+  }
 }
 
 .person-list {

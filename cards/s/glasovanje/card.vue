@@ -121,7 +121,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return 'https://glej.parlameter.si/group/method/';
+      return 'https://glej.parlameter.si/s/glasovanje/' + this.data.id + '?state={}';
     },
   },
   methods: {
