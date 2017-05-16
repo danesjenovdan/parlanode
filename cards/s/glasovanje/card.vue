@@ -144,8 +144,10 @@ export default {
     },
     shortenUrl(url) {
       return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
+          response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+          this.shortenedCardUrl = response;
           resolve(response);
         });
       });
