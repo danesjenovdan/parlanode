@@ -1,12 +1,12 @@
 <template>
   <div class="result">
     <donut-chart
-      :class="['donut-chart', `option-${this.option}`]"
+      :class="['donut-chart', `option-${option}`]"
       :section-data="chartData"
     />
     <div>
       <div class="text">{{ translatedOption }}</div>
-      <div class="percentage">{{ Math.round(this.score) }} %</div>
+      <div v-if="option !== 'cant_compute'" class="percentage">{{ Math.round(score) }} %</div>
     </div>
   </div>
 </template>

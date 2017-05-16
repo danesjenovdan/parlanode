@@ -67,7 +67,11 @@
             'Prisotnost skozi čas',
             'Glasovanja - poslanec',
             'Glasovanja - poslanska skupina',
-            'Poslanska vprašanja in pobude']
+            'Poslanska vprašanja in pobude'];
+        var highcards = [
+            'Parlamentarni kompas',
+            'Glasovanje'
+        ];
     %>
 
 
@@ -89,7 +93,11 @@
             background: none transparent;
         }
         .card-content{
-            max-height: 518px;
+            <% if (highcards.indexOf(cardData.name) !== -1) { %>
+                max-height: 518px;
+            <% } else { %>
+                
+            <% } %>
             overflow-y: auto;
         }
     </style>

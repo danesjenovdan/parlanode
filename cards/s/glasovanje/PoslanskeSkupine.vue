@@ -119,7 +119,7 @@ export default {
 .parties {
   height: 352px;
   margin-top: 13px;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
   .party {
