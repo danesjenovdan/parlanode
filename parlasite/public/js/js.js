@@ -26,7 +26,7 @@ function toggleHeaderSearch(focus) {
         }
 
         $(".header-searchhide").show();
-        $(".search-input-header").focus();
+        $("#topheadersearch .search-input-header").focus();
     } else {
         $(".header-searchhide").toggle();
         if ($(window).width() < 992) {
