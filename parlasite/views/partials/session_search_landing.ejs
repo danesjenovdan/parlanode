@@ -1,85 +1,54 @@
 <style>
-
-    .session-search-container .tt-menu{
-        left: 1px;
-        /*width: 106.4%;*/
-        width: 106.8%;
-    }
-    .session-search-container .tt-dataset{
-        text-align: left;
-    }
-    .session-search-container .twitter-typeahead{
-        width:100%;
-    }
-    .session-search-container .input-group{
-        display: flex;
-    }
-
-    .session-search-container .tt-dataset .searchheader {
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 16px;
-        line-height: 16px;
-        font-size: 12px;
-        background-color: #ededed;
-        top: 0;
-        left: 0;
-        padding-left: 5px;
-        z-index: 10;
-    }
-    .session-search-container .searchperson-container {
-        border-bottom: 1px solid #ededed;
-        height: 60px;
-        padding: 10px;
-        line-height: 40px;
-        background-color: #fff;
-    }
-    .session-search-container .session-ac-search {
-        background: #e8f1f4;
-        padding: 10px 5px;
-        color: #009cdd;
-        cursor: pointer;
-    }
-    .session-search-container .narrow-inner-container .search .btn{
+    .landing .session-search-container .searchForm .search .btn {
         font-size: 22px;
+        padding: 0 8px;
+        line-height: 48px;
+        margin: 0;
+
     }
+
+
 
 </style>
-<div class="session-container session-search-container">
-    <div class="row">
+<div class="landing">
+    <div class="session-container session-search-container">
+        <div class="row">
 
-        <div class="col-lg-12">
-            <div class="narrow-inner-container">
-                <h2>Išči </h2>
-                <div id="about">
-                    <p class="public-col">
-                        poslance, poslanske skupine, glasovanja ali vsebino transkriptov
-                    </p>
+            <div class="col-lg-12">
+                <div class="narrow-inner-container">
+                    <h2>Išči </h2>
+                    <div id="about">
+                        <p class="public-col">
+                            poslance, poslanske skupine, glasovanja ali vsebino transkriptov
+                        </p>
+                    </div>
+
+                    <form method="get" action="/seje/isci" class="searchForm">
+
+                        <div class="input-group search">
+                            <input type="text" class="form-control search-input-header simplebox" placeholder=""
+                                   name="q" value="<%= query.q; %>">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"
+                                                                                aria-hidden="true"></span></button>
+                        </span>
+                        </div>
+
+                        <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv=""
+                             data-toggle="modal" data-target="#modal-search-how">i
+                        </div>
+
+                    </form>
+
+                    <% if((typeof query.q !== "undefined") && (query.q.length > 0)){ %>
+                    <br><br>
+                    <h3 class="searchresults">Rezultati za iskalni niz "<%= query.q; %>"</h3>
+                    <% } %>
+
                 </div>
 
-                <form method="get" action="/seje/isci" class="searchForm">
-
-                    <div class="input-group search">
-                        <input type="text" class="form-control search-input-header simplebox" placeholder="" name="q" value="<%=query.q;%>">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </span>
-                    </div>
-                </form>
-                <!--
-                <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
-                -->
-
-                <% if((typeof query.q !== "undefined") && (query.q.length > 0)){%>
-                <br><br>
-                <h3 class="searchresults">Rezultati za iskalni niz "<%=query.q;%>"</h3>
-                <% } %>
-
             </div>
-
         </div>
     </div>
+    <% include ./searchpopup.ejs %>
 </div>
-
-<% include ./searchpopup.ejs %>
