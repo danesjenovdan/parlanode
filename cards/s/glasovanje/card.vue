@@ -60,7 +60,7 @@
           <ul>
             <li>Prvi zavihek omogoča pregled glasov poslancev, filtriranje glede na vrednost glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem glasovanju. "60% ZA" npr. pomeni, da je ZA glasovalo 60 od 90 poslancev.</li>
             <li>Drugi zavihek prikaže glasove poslanskih skupin. Na koncu vsake vrstice je izpisan večinski glas poslanske skupine, gumbi z vrednostmi glasovnic pa odpirajo sezname poslancev, ki so oddali tak glas. S strelo opozarjamo na razkole v poslanskih skupinah - izrišemo jo nad tistimi glasovi, ki niso enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.</li>
-            <li>Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo opozarjamo na nepričakovane glasove - pri koaliciji označujemo odstopanje od večinskega glasu, pri opoziciji pa na glas, ki je enak koalicijskemu.</li>
+            <li>Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo opozarjamo na nepričakovane glasove - označujemo odstopanje od večinskega glasu koalicije.</li>
           </ul>
         </div>
         <p class="info-text heading">KONTROVERZNA GLASOVANJA</p>
