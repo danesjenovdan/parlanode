@@ -175,6 +175,8 @@
         });
       }
 
+      console.log(this.$options.cardData.data.session.name);
+
       return {
         data: this.$options.cardData.data,
         slugs: this.$options.cardData.urlsData,
@@ -184,7 +186,7 @@
           heading: '&nbsp;',
           subheading: '7. sklic parlamenta',
           alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: this.$options.cardData.cardData.name,
+          title: this.$options.cardData.data.session.name,
         },
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,
