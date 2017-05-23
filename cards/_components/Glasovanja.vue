@@ -168,7 +168,7 @@ export default {
     if (this.cardData.state) {
       const state = this.cardData.state;
       if (state.text) textFilter = state.text;
-      if (state.months) allMonths = selectFromState(allMonths, state.months);
+      if (state.months)allMonths = selectFromState(allMonths, state.months);
       if (state.options) allOptions = selectFromState(allOptions, state.options);
       if (state.tags) allTags = selectFromState(allTags, state.tags);
     }

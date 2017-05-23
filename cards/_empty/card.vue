@@ -23,18 +23,23 @@
 
 <script>
 /* globals window $ measure */
-import common from 'mixins/common';
+
+import CardInfo from 'components/Card/Info.vue';
+import CardEmbed from 'components/Card/Embed.vue';
+import CardShare from 'components/Card/Share.vue';
+import CardHeader from 'components/Card/Header.vue';
+import CardFooter from 'components/Card/Footer.vue';
+import initializeBack from 'mixins/initializeBack';
 
 export default {
-  components: { },
-  mixins: [common],
+  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
+  mixins: [initializeBack],
   name: 'ImeKartice',
   data() {
     return {
       data: this.$options.cardData.data,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
-      url: 'https://glej.parlameter.si/group/method/',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -44,10 +49,15 @@ export default {
       },
     };
   },
+  computed: {
+    generatedCardUrl() {
+      return 'https://glej.parlameter.si/group/method/';
+    },
+  },
   methods: {
-    shortenUrl() {
+    shortenUrl(url) {
       return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
           resolve(response);
         });
@@ -63,8 +73,13 @@ export default {
       }
     },
   },
-  mounted() {
-    this.shortenUrl();
+  watch: {
+    generatedCardUrl(newUrl) {
+      this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
+    },
+  },
+  beforeMount() {
+    this.shortenUrl(this.generatedCardUrl);
   },
 };
 </script>

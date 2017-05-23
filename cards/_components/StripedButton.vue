@@ -11,7 +11,10 @@ export default {
   props: {
     selected: Boolean,
     smallText: String,
-    text: String,
+    text: {
+      type: String,
+      required: true,
+    },
     clickHandler: Function,
     color: String,
     disabled: Boolean,
@@ -22,7 +25,7 @@ export default {
         'striped-button',
         { 'is-disabled': this.disabled },
         { 'is-selected': this.selected },
-        this.color,
+        { [this.color]: ['for', 'against', 'abstain', 'not_present'].indexOf(this.color) > -1 },
       ];
     },
   },
@@ -85,32 +88,6 @@ export default {
   }
   @each $vote, $color in $proper-vote-colors-hover {
     &.#{$vote}:hover:not(.is-disabled) { background: $color; }
-  }
-
-  @each $party, $color in $party-colors {
-    &.#{$party} {
-      border-top-color: $color;
-      &.is-selected { background: $color; }
-    }
-  }
-  @each $party, $color in $party-colors-hover {
-    &.#{$party}:hover:not(.is-disabled) { background: $color; }
-  }
-
-  &.dz {
-    border-top-color: #fe5e41;
-    &.is-selected { background: #fe5e41; }
-    &:hover:not(.is-disabled) { background: lighten(#fe5e41, 10%); }
-  }
-  &.koal {
-    border-top-color: #00628c;
-    &.is-selected { background: #00628c; }
-    &:hover:not(.is-disabled) { background: lighten(#00628c, 10%); }
-  }
-  &.opoz {
-    border-top-color: #a9a9a9;
-    &.is-selected { background: #a9a9a9; }
-    &:hover:not(.is-disabled) { background: lighten(#a9a9a9, 10%); }
   }
 }
 </style>
