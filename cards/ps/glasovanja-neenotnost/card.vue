@@ -80,7 +80,7 @@
 
 <script>
 /* globals window $ measure */
-import { groupBy, map, sortBy, zipObject } from 'lodash';
+import { groupBy, map, sortBy, zipObject, filter } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -114,11 +114,12 @@ export default {
         )
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
-      groups: map(this.$options.cardData.data.results, (group, acronym) => ({
-        acronym,
-        color: acronym.toLowerCase().replace(/ /g, '_'),
-        name: group.organization.name,
-      })).filter(group => group.acronym !== 'DZ'),
+      groups: filter(this.$options.cardData.data.results, group => group.organization !== 'dz')
+        .map(group => ({
+          acronym: group.organization.acronym,
+          color: group.organization.acronym.toLowerCase().replace(/ /g, '_'),
+          name: group.organization.acronym,
+        })),
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -244,6 +245,11 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+
+  .striped-button {
+    flex: 1;
+    &:not(:first-child) { margin-left: 5px; }
+  }
 }
 
 .filters {
