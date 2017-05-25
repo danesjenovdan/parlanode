@@ -45,8 +45,10 @@ module.exports = cardPath => ({
     hints: false,
   },
   plugins: [
-    new LodashModuleReplacementPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
+    new LodashModuleReplacementPlugin({
+      shorthands: true
+    }),
+    new webpack.optimize.UglifyJsPlugin({ // disable this whole plugin to get better debugging output
       compress: {
         warnings: false,
         screw_ie8: true,
