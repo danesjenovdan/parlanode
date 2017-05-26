@@ -219,7 +219,7 @@ export default {
       return this.getFilteredVotes();
     },
     queryUrl() {
-      const base = 'http://127.0.0.1:8000/v1/s/getComparedVotes/'
+      const base = 'https://analize.parlameter.si/v1/s/getComparedVotes/'
       return base + '?people_same=' + this.selectedSamePeople.map(person => person.id).toString() + '&parties_same=' + this.sameParties.map(party => party.id).toString() + '&people_different=' + this.selectedDifferentPeople.map(person => person.id).toString() + '&parties_different=' + this.differentParties.map(party => party.id).toString();
     },
     votes() {
