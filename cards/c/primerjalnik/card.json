@@ -1,0 +1,9 @@
+{
+  "_id": "random_id",
+  "name": "Primerjalnik glasovanj",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers/",
+  "type": "primerjalnik",
+  "lastUpdate": "2017-05-26T09:54:15.752Z",
+  "method": "primerjalnik",
+  "group": "c"
+}
