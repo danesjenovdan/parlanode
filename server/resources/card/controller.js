@@ -471,7 +471,13 @@ exports.render = function ( req, res ) {
                       console.log('Err:3 ', err3);
                       res.status(400).send(err3);
                     }
-                  });
+                  })
+                    .catch((err) => {
+
+                      console.log('Err:4 ', err);
+                      res.status(400).send(err);
+
+                    });
                 };
 
                 if ( !cardDoc.vue ) {
