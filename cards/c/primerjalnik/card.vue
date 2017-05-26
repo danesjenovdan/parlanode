@@ -8,7 +8,7 @@
           Zanima me, na katerih glasovanjih so <span class="primerjalnik-for"><span v-for="party in sameParties">{{ party.acronym }} </span><span v-for="person in selectedSamePeople">{{ person.name }} </span><span class="plus" @click="openModalSame"></span></span> glasovali enako, <span class="primerjalnik-against"><span v-for="party in differentParties">{{ party.acronym }} </span><span v-for="person in selectedDifferentPeople">{{ person.name }} </span><span class="plus" @click="openModalDifferent"></span></span> pa drugače od njih.
         </div>
 
-        <div>Število filtriranih glasovanj {{ votes.length }}</div>
+        <div>{{ votes.length }} filtriranih glasovanj predstavlja {{ total === 0 ? 0 : round(votes.length / total * 100, 2)  }}% vseh glasovanj.</div>
 
         <div>{{ queryUrl }}</div>
         
@@ -194,6 +194,7 @@ export default {
       differentPeople: [],
       // data: this.$options.cardData.data,
       data: [],
+      total: 0,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
       headerConfig: {
@@ -298,6 +299,9 @@ export default {
     });
   },
   methods: {
+    round(value, decimals) {
+      return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    },
     togglePartySame(party) {
       party.isDifferent = false;
       party.isSame = !party.isSame;
@@ -324,6 +328,7 @@ export default {
             console.log('results loaded');
             console.log(data);
             self.data = data.results;
+            self.total = data.total;
 
             $('.modal').modal('hide');
           },
@@ -342,6 +347,7 @@ export default {
             console.log('results loaded');
             console.log(data);
             self.data = data.results;
+            self.total = data.total;
 
             $('.modal').modal('hide');
           },
