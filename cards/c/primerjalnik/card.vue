@@ -192,7 +192,8 @@ export default {
       parties: [],
       samePeople: [],
       differentPeople: [],
-      data: this.$options.cardData.data,
+      // data: this.$options.cardData.data,
+      data: [],
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
       headerConfig: {
@@ -322,7 +323,7 @@ export default {
           success: function(data) {
             console.log('results loaded');
             console.log(data);
-            self.data = data;
+            self.data = data.results;
 
             $('.modal').modal('hide');
           },
@@ -340,7 +341,7 @@ export default {
           success: function(data) {
             console.log('results loaded');
             console.log(data);
-            self.data = data;
+            self.data = data.results;
 
             $('.modal').modal('hide');
           },
