@@ -12,6 +12,7 @@ logs
 *.log
 vps_data.txt
 yarn-error.log
+site
 
 # Runtime data
 pids
