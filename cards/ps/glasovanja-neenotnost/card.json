@@ -1,9 +1,9 @@
 {
   "_id": "ps_glasovanja_neenotnost",
   "name": "Seznam glasovanj glede na (ne)enotnost",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getIntraDisunion/",
-  "type": "poslanska_skupina",
-  "lastUpdate": "2017-05-25T08:53:58.549Z",
+  "dataUrl": "https://data.parlameter.si/v1/getAllPGsExt/",
+  "type": "glasovanja",
+  "lastUpdate": "2017-06-01T07:40:35.638Z",
   "method": "glasovanja-neenotnost",
   "group": "ps"
 }
