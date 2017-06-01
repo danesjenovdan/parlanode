@@ -6,12 +6,6 @@
       <div class="card-content-front">
         <div class="groups">
           <striped-button
-            color="dz"
-            :selected="selectedGroup === 'DZ'"
-            small-text="Vsi"
-            :click-handler="() => selectGroup('DZ')"
-          />
-          <striped-button
             v-for="group in groups"
             :color="group.color"
             :key="group.acronym"
@@ -40,7 +34,7 @@
           </div>
         </div>
 
-        <div class="results">
+        <div :class="['results', {'is-loading': loading }]">
           <template v-for="day in filteredVotingDays">
             <date-row v-if="selectedSort === 'date'" :date="day.date" />
             <div v-for="ballot in day.ballots" class="ballot">
@@ -80,7 +74,7 @@
 
 <script>
 /* globals window $ measure */
-import { groupBy, map, sortBy, zipObject, filter } from 'lodash';
+import { groupBy, map, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -92,8 +86,26 @@ export default {
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {
+    const fixedGroups = [{
+      id: null,
+      color: 'dz',
+      acronym: 'DZ',
+      name: 'Vsi',
+    }, {
+      id: 143,
+      color: 'opoz',
+      acronym: 'opoz',
+      name: 'Opozicija',
+    }, {
+      id: 144,
+      color: 'koal',
+      acronym: 'koal',
+      name: 'Koalicija',
+    }];
+
     return {
-      data: this.$options.cardData.data,
+      data: [],
+      loading: true,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
       selectedSort: 'date',
@@ -103,9 +115,7 @@ export default {
       ],
       textFilter: '',
       url: 'https://glej.parlameter.si/group/method/',
-      allTags: this.$options.cardData.data.all_tags.map(
-        tag => ({ id: tag, label: tag, selected: false }),
-      ),
+      allTags: [],
       allMonths: [2017, 2016, 2015, 2014, 2013]
         .map(year =>
           [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month =>
@@ -114,12 +124,16 @@ export default {
         )
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
-      groups: filter(this.$options.cardData.data.results, group => group.organization !== 'dz')
-        .map(group => ({
-          acronym: group.organization.acronym,
-          color: group.organization.acronym.toLowerCase().replace(/ /g, '_'),
-          name: group.organization.acronym,
-        })),
+      groups: fixedGroups,
+      // .concat(map(this.$options.cardData.data, (group, id) => {
+      //   console.log(group)
+      //   return {
+      //     id,
+      //     acronym: group.acronym,
+      //     color: group.acronym.toLowerCase().replace(/ /g, '_'),
+      //     name: group.acronym,
+      //   };
+      // })).filter(group => group.acronym !== 'PS NP'),
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -172,6 +186,8 @@ export default {
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
+      if (this.data.length === 0) return [];
+
       const filterBallots = (ballot) => {
         const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
           ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
@@ -189,10 +205,7 @@ export default {
         return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       };
 
-      const votes = sortBy(
-        this.data.results[this.selectedGroup].votes,
-        this.selectedSort,
-      ).reverse();
+      const votes = sortBy(this.data, this.selectedSort).reverse();
       const getDateFromVote = vote => (vote.date ? vote.date.split('T')[0] : null);
 
       let currentVotingDays;
@@ -207,11 +220,11 @@ export default {
         date,
         ballots: ballots.filter(filterBallots),
       }))
-      .filter(votingDay => votingDay.ballots.length > 0)
+      .filter(votingDay => (votingDay.ballots.length > 0))
       .filter(filterDates);
     },
-    selectGroup(groupName) {
-      this.selectedGroup = this.selectedGroup !== groupName ? groupName : 'DZ';
+    selectGroup(acronym) {
+      this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
     },
     selectSort(sortId) {
       this.selectedSort = sortId;
@@ -220,6 +233,26 @@ export default {
       $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
         this.shortenedCardUrl = response;
       });
+    },
+    fetchVotesForGroup(acronym = 'DZ') {
+      this.loading = true;
+      if (acronym === 'DZ') {
+        $.get('https://analize.parlameter.si/v1/pg/getIntraDisunionDZ/', (response) => {
+          this.data = response.results.DZ.votes;
+          if (this.allTags.length === 0) {
+            this.allTags = response.all_tags.map(
+              tag => ({ id: tag, label: tag, selected: false }),
+            );
+          }
+          this.loading = false;
+        });
+      } else {
+        const groupId = find(this.groups, { acronym }).id;
+        $.get(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
+          this.data = response[acronym].votes;
+          this.loading = false;
+        });
+      }
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
@@ -231,8 +264,14 @@ export default {
       }
     },
   },
+  watch: {
+    selectedGroup(newValue) {
+      this.fetchVotesForGroup(newValue);
+    },
+  },
   mounted() {
     this.shortenUrl();
+    this.fetchVotesForGroup();
   },
 };
 </script>
@@ -323,6 +362,19 @@ export default {
 .results {
   height: 350px;
   overflow-y: auto;
+
+  &.is-loading {
+    overflow-y: hidden;
+    position: relative;
+    &::before {
+      background: $white url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
 }
 
   .date-row {
