@@ -140,7 +140,7 @@ export default {
     },
     openDocument(documentId) {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
-      window.open(selectedDocument.url);
+      window.open(selectedDocument.url, '_blank');
     },
     shortenUrl(url) {
       return new Promise((resolve) => {
