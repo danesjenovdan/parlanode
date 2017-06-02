@@ -1,7 +1,7 @@
 const request   = require('supertest');
 const server    = require('../run');
 const mongoose  = require('mongoose');
-const postgres  = require('../server/parlalize_db');
+// const postgres  = require('../server/parlalize_db');
 
 before(function (done) {
   server.init()
@@ -28,22 +28,6 @@ describe('Test Mongoose', function() {
     }else{
       done('connection not found');
     }
-
-  });
-});
-
-describe('Test Postgres', function() {
-  it('connection open', function(done) {
-
-    postgres.sequelize.authenticate().then(function(errors) {
-
-      if(errors){
-        done(new Error(errors));
-      } else{
-        done();
-      }
-
-    });
 
   });
 });
