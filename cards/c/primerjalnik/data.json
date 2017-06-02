@@ -2,1892 +2,157 @@
     "total": 2151,
     "results": [{
         "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
+            "name": "30. redna seja",
+            "date_ts": "2017-05-22T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "14. 11. 2016",
+            "date": "22. 5. 2017",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5572,
+            "id": 9580,
             "in_review": true
         },
         "results": {
-            "abstain": 2,
-            "against": 49,
-            "motion_id": 4554,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti dr. Anje Kopa\u010d Mrak na poslansko vpra\u0161anje Violete Tomi\u0107 v zvezi s simboli sodelavcev okupatorja pri prekopu \u017ertev iz Barbarinega rova.)",
-            "is_outlier": false,
-            "not_present": 27,
-            "votes_for": 12,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 3,
-            "against": 48,
-            "motion_id": 4667,
-            "text": "Spremembe Prora\u010duna Republike Slovenije za leto 2017 - Amandma: 2611 Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti (200401) 11.11.2016 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 10,
-            "votes_for": 29,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 3,
-            "against": 51,
-            "motion_id": 4768,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za izobra\u017eevanje, znanost in \u0161port dr. Maje Makovec Bren\u010di\u010d na poslansko vpra\u0161anje Anje Bah \u017dibert v zvezi z zagotavljanjem pogojev za izvajanje vzgojno-izobra\u017eevalnega procesa v osnovnih \u0161olah.)",
-            "is_outlier": false,
-            "not_present": 12,
-            "votes_for": 24,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 3,
-            "against": 51,
-            "motion_id": 4769,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za infrastrukturo dr. Petra Ga\u0161per\u0161i\u010da na poslansko vpra\u0161anje Mihe Kordi\u0161a v zvezi z obcestnim ogla\u0161evanjem.)",
-            "is_outlier": false,
-            "not_present": 12,
-            "votes_for": 24,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 2,
-            "against": 51,
-            "motion_id": 4771,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za zdravje Milojke Kolar Celarc na poslansko vpra\u0161anje mag. Andreja \u0160irclja v zvezi s poslovanjem javnih zdravstvenih zavodov.)",
+            "abstain": 6,
+            "against": 32,
+            "motion_id": 7215,
+            "text": "Zakon o spremembi Zakona o socialnem varstvu - Glasovanje o zakonu v celoti",
+            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
             "not_present": 13,
-            "votes_for": 24,
-            "result": null
+            "votes_for": 39,
+            "result": true
         }
     }, {
         "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
+            "name": "30. redna seja",
+            "date_ts": "2017-05-22T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "17. 10. 2016",
+            "date": "22. 5. 2017",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5573,
+            "id": 9580,
             "in_review": true
-        },
-        "results": {
-            "abstain": 5,
-            "against": 47,
-            "motion_id": 4773,
-            "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje dr. Bojana Dobov\u0161ka v zvezi s pismom o nameri s podjetjem Uber.)",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 19,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 4,
-            "against": 48,
-            "motion_id": 4774,
-            "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje Ive Dimic v zvezi z zastaranjem odmevnih primerov in klju\u010dnimi ukrepi v pravosodju.)",
-            "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 24,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 17,
-            "against": 48,
-            "motion_id": 4775,
-            "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje dr. Mateja T. Vatovca v zvezi s sprejemanjem trgovinsko-investicijskega sporazuma CETA med Evropsko unijo in Kanado).",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 7,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "21. redna seja",
-            "date_ts": "2016-07-11T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "11. 7. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5575,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 22,
-            "against": 4,
-            "motion_id": 4884,
-            "text": "Zakon o pogrebni in pokopali\u0161ki dejavnosti - Uskladitveni amandma -NOVO: K 6., 11., 12., 19., 25.c., 56., 58., 59., 60., 63., 64. \u010dlenu 14.7.2016 [vlada]",
-            "is_outlier": true,
-            "not_present": 19,
-            "votes_for": 45,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "20. redna seja",
-            "date_ts": "2016-06-13T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 6. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5576,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 17,
-            "motion_id": 5012,
-            "text": "Zakon o ratifikaciji Sporazuma o enotnem sodi\u0161\u010du za patente - Eviden\u010dni sklep - umik to\u010dke z dnevnega reda",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 52,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "18. redna seja",
-            "date_ts": "2016-04-18T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "18. 4. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5578,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 5,
-            "against": 16,
-            "motion_id": 5079,
-            "text": "Predlog za sprejem avtenti\u010dne razlage 63. \u010dlena Zakona o dav\u010dnem postopku (Uradni list RS, \u0161t. 13/11 \u2013 uradno pre\u010di\u0161\u010deno besedilo, 32/12, 94/12, 101/13 \u2013 ZDavNepr, 111/13, 25/14 \u2013 ZFU, 40/14 \u2013 ZIN-B, 90/14 in 91/15) - Eviden\u010dni sklep o nesprejetju predloga 21.4.2016",
-            "is_outlier": false,
-            "not_present": 22,
-            "votes_for": 47,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "17. redna seja",
-            "date_ts": "2016-03-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 3. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5579,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 43,
-            "motion_id": 5131,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti dr. Anje Kopa\u010d Mrak na poslansko vpra\u0161anje Ive Dimic v zvezi s postopki pridobivanja enotnega dovoljenja za prebivanje in delo.)",
-            "is_outlier": false,
-            "not_present": 27,
-            "votes_for": 19,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 45,
-            "motion_id": 6843,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 42. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 26,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 57,
-            "motion_id": 6844,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 41. \u010dlenu 7.2.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 20,
-            "votes_for": 10,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 65,
-            "motion_id": 6846,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 35. \u010dlenu 7.2.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 5,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 5,
-            "against": 12,
-            "motion_id": 6848,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 55,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "14. redna seja",
-            "date_ts": "2015-12-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 12. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5582,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 44,
-            "motion_id": 5298,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za finance dr. Du\u0161ana Mramorja na poslansko vpra\u0161anje Luke Mesca v zvezi s privatizacijo Adrie Airways Tehnika.)",
-            "is_outlier": true,
-            "not_present": 37,
-            "votes_for": 6,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 5,
-            "against": 8,
-            "motion_id": 5335,
-            "text": "Zakon o zavarovalni\u0161tvu - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 58,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 43,
-            "motion_id": 5336,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za pravosodje mag. Gorana Klemen\u010di\u010da na poslansko vpra\u0161anje Jo\u017eefa Horvata v zvezi s pristojnostmi upni\u0161kega odbora v insolven\u010dnih postopkih.)",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 29,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
         },
         "results": {
             "abstain": 6,
-            "against": 45,
-            "motion_id": 5338,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za delo, dru\u017eino, socialne zadeve in enakem mo\u017enosti dr. Anje Kopa\u010d Mrak na poslansko vpra\u0161anje Marijana Pojbi\u010da v zvezi z brezposelnostjo.)",
+            "against": 32,
+            "motion_id": 7215,
+            "text": "Zakon o spremembi Zakona o socialnem varstvu - Glasovanje o zakonu v celoti",
+            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 20,
-            "result": false
+            "not_present": 13,
+            "votes_for": 39,
+            "result": true
         }
     }, {
         "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
+            "name": "30. redna seja",
+            "date_ts": "2017-05-22T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "16. 11. 2015",
+            "date": "22. 5. 2017",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5583,
-            "in_review": false
+            "id": 9580,
+            "in_review": true
         },
         "results": {
-            "abstain": 1,
-            "against": 52,
-            "motion_id": 5339,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za finance dr. Du\u0161ana Mramorja na poslansko vpra\u0161anje Anje Bah \u017dibert glede celotnih stro\u0161kov vezanih na migracijsko problematiko.)",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 19,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 46,
-            "motion_id": 5340,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za okolje in prostor Irene Majcen na poslansko vpra\u0161anje dr. Mateja T. Vatovca v zvezi z vplivi \u0160kedenjske \u017eelezarne v Trstu.)",
-            "is_outlier": false,
-            "not_present": 17,
-            "votes_for": 26,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 8,
-            "against": 44,
-            "motion_id": 5341,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za finance dr. Du\u0161ana Mramorja ter ministra za javno upravo Borisa Koprivnikarja na poslansko vpra\u0161anje Toma\u017ea Lisca  v zvezi z vi\u0161ino povpre\u010dnine za ob\u010dine za leto 2016.)",
-            "is_outlier": false,
-            "not_present": 17,
-            "votes_for": 21,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 6,
-            "against": 44,
-            "motion_id": 5343,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za okolje in prostor Irene Majcen ter ministra za gospodarski razvoj in tehnologijo Zdravka Po\u010dival\u0161ka na poslansko vpra\u0161anje Jo\u017eefa Horvata v zvezi z visokimi koncesninami za geotermalno vodo.)",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 21,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 48,
-            "motion_id": 5344,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi z ukrepi Ministrstva za notranje zadeve za zavarovanje dr\u017eavne meje z Republiko Hrva\u0161ko.)",
-            "is_outlier": false,
-            "not_present": 22,
-            "votes_for": 19,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 4,
-            "against": 58,
-            "motion_id": 5345,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za okolje in prostor Irene Majcen na poslansko vpra\u0161anje Violete Tomi\u0107 v zvezi z dolo\u010ditvijo \u0161tevila volkov za odstrel v obdobju od 1. oktobra 2015 do 30. septembra 2016.)",
-            "is_outlier": false,
-            "not_present": 22,
-            "votes_for": 6,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 51,
-            "motion_id": 5348,
-            "text": "Predlog sklepa (razprava o odgovoru  predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje Jo\u017eeta Tanka v zvezi z ukrepi pri re\u0161evanju begunsko-migrantske krize.)",
-            "is_outlier": false,
-            "not_present": 17,
-            "votes_for": 21,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 46,
-            "motion_id": 5349,
-            "text": "Predlog sklepa (razprava o odgovoru  predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje mag. Alenke Bratu\u0161ek v zvezi z ukrepi Vlade Republike Slovenije.)",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 28,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 10,
+            "abstain": 9,
             "against": 20,
-            "motion_id": 5353,
-            "text": "Zakon o gospodarjenju z gozdovi v lasti Republike Slovenije - Eviden\u010dni sklep o primernosti predloga zakona 24.11.2015",
+            "motion_id": 7202,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o omejevanju porabe alkohola - Glasovanje o zakonu v celoti",
+            "tags": ["Odbor za zdravstvo"],
             "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 45,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 5,
-            "motion_id": 5354,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o knji\u017eni\u010darstvu - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 13,
-            "votes_for": 71,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 6,
-            "motion_id": 5355,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o prevozih v cestnem prometu - Sklep o pripravi uradnega pre\u010di\u0161\u010denega besedila zakona",
-            "is_outlier": false,
-            "not_present": 13,
-            "votes_for": 71,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 6,
-            "motion_id": 5356,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o prevozih v cestnem prometu - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 67,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 5,
-            "against": 15,
-            "motion_id": 5358,
-            "text": "Zaklju\u010dni ra\u010dun Prora\u010duna Republike Slovenije za leto 2014 - Glasovanje o aktu v celoti",
-            "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 56,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 21,
-            "against": 44,
-            "motion_id": 5361,
-            "text": "Resolucija o nacionalnem stanovanjskem programu 2015 - 2025 - Amandma: K 4. poglavju 10.11.2015 [ZL - Poslanska skupina Zdru\u017eena levica] (pod to\u010dko 3)",
-            "is_outlier": true,
-            "not_present": 14,
-            "votes_for": 11,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 21,
-            "against": 44,
-            "motion_id": 5363,
-            "text": "Resolucija o nacionalnem stanovanjskem programu 2015 - 2025 - Amandma: K 4. poglavju 10.11.2015 [ZL - Poslanska skupina Zdru\u017eena levica] (pod to\u010dko 2)",
-            "is_outlier": true,
-            "not_present": 14,
-            "votes_for": 11,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 8,
-            "against": 4,
-            "motion_id": 5367,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o romski skupnosti v Republiki Sloveniji - Eviden\u010dni sklep MDT 24.11.2015",
-            "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 64,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 7,
-            "against": 69,
-            "motion_id": 5490,
-            "text": "Prora\u010dun Republike Slovenije za leto 2016 - Amandma: 4230 Okrajno sodi\u0161\u010de v Ljubljani/090701 11.11.2015 [NP - Poslanska skupina nepovezanih poslancev]",
-            "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 0,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "30. redna seja",
-            "date_ts": "2017-05-22T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "22. 5. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9580,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 5,
-            "against": 40,
-            "motion_id": 7193,
-            "text": "Zakon o \u0161portu - Amandma: K 62. \u010dlenu 16.5.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 27,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "25. redna seja",
-            "date_ts": "2016-12-12T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "12. 12. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 7654,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 4,
-            "against": 18,
-            "motion_id": 6711,
-            "text": "Zakon o lekarni\u0161ki dejavnosti - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 24,
-            "votes_for": 44,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "25. redna seja",
-            "date_ts": "2016-12-12T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "12. 12. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 7654,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 1,
-            "against": 39,
-            "motion_id": 6725,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za finance mag. Mateje Vrani\u010dar Erman na poslansko vpra\u0161anje Jo\u017eefa Horvata v zvezi s \u0161tevilom naznanitev kaznivih ravnanj s strani \u010dlanov upravnega odbora DUTB.)",
-            "is_outlier": false,
-            "not_present": 31,
-            "votes_for": 19,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "11. redna seja",
-            "date_ts": "2015-09-21T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "21. 9. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6674,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 44,
-            "motion_id": 5791,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za kmetijstvo, gozdarstvo in prehrano mag. Dejana \u017didana na poslansko vpra\u0161anje Zvonka Laha v zvezi z Zakonom o dr\u017eavnem podjetju  za upravljanje z gozdovi v dr\u017eavni lasti.)",
-            "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 28,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "7. redna seja",
-            "date_ts": "2015-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6678,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 47,
-            "motion_id": 6032,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za pravosodje mag. Gorana Klemen\u010di\u010da na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi s postopki Ministrstva za pravosodje in drugih dr\u017eavnih organov po objavi poro\u010dila Komisije za prepre\u010devanje korupcije, vezanega na koruptivno ravnanje generalnega dr\u017eavnega to\u017eilca.",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 23,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "30. redna seja",
-            "date_ts": "2017-05-22T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "22. 5. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9580,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 21,
-            "against": 14,
-            "motion_id": 7205,
-            "text": "Zakon o \u0161portu - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 15,
+            "not_present": 21,
             "votes_for": 40,
             "result": true
         }
     }, {
         "session": {
-            "name": "3. redna seja",
-            "date_ts": "2014-12-15T01:00:00",
+            "name": "22. redna seja",
+            "date_ts": "2016-09-19T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "15. 12. 2014",
+            "date": "19. 9. 2016",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 6682,
+            "id": 5574,
             "in_review": false
         },
         "results": {
-            "abstain": 1,
-            "against": 42,
-            "motion_id": 6268,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2014 in 2015 - Amandma: K 5. \u010dlenu 16.12.2014 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 29,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "2. redna seja",
-            "date_ts": "2014-11-17T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 11. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6683,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 7,
-            "against": 48,
-            "motion_id": 6287,
-            "text": "Devetnajsto redno poro\u010dilo o delu Varuha \u010dlovekovih pravic Republike Slovenije za leto 2013 - Amandma: K PREDLOGU PRIPORO\u010cILA 11.11.2014 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 20,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "2. redna seja",
-            "date_ts": "2014-11-17T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 11. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6683,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 7,
-            "against": 42,
-            "motion_id": 6289,
-            "text": "Devetnajsto redno poro\u010dilo o delu Varuha \u010dlovekovih pravic Republike Slovenije za leto 2013 - Amandma: K PREDLOGU PRIPORO\u010cILA 11.11.2014 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 23,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "2. redna seja",
-            "date_ts": "2014-11-17T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 11. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6683,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 44,
-            "motion_id": 6291,
-            "text": "Devetnajsto redno poro\u010dilo o delu Varuha \u010dlovekovih pravic Republike Slovenije za leto 2013 - Amandma: K PREDLOGU PRIPORO\u010cILA 11.11.2014 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 20,
-            "votes_for": 24,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "2. redna seja",
-            "date_ts": "2014-11-17T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 11. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6683,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 50,
-            "motion_id": 6298,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti dr. Anje Kopa\u010d Mrak na poslansko vpra\u0161anje Matja\u017ea Han\u017eka v zvezi s statusom zagovornika na\u010dela enakosti.",
-            "is_outlier": false,
-            "not_present": 23,
-            "votes_for": 15,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "23. izredna seja",
-            "date_ts": "2015-11-04T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "4. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5598,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 11,
-            "motion_id": 6540,
-            "text": "Odlok o razpisu zakonodajnega referenduma o Zakonu o spremembah in dopolnitvah Zakona o zakonski zvezi in dru\u017einskih razmerjih - Glasovanje",
-            "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 60,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "18. izredna seja",
-            "date_ts": "2015-09-16T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 9. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5603,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 0,
-            "motion_id": 6557,
-            "text": "Dnevni red v celoti",
-            "is_outlier": true,
-            "not_present": 29,
-            "votes_for": 61,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "15. izredna seja",
-            "date_ts": "2015-06-05T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "5. 6. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5606,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 2,
-            "motion_id": 6568,
-            "text": "Predlog priporo\u010dila v zvezi z izvajanjem slu\u017ebe nujne medicinske pomo\u010di v Republiki Sloveniji - Glasovanje",
-            "is_outlier": true,
-            "not_present": 33,
-            "votes_for": 52,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "7. izredna seja",
-            "date_ts": "2014-12-04T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "4. 12. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5614,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 14,
-            "motion_id": 6599,
-            "text": "Predlog kandidata za ministra za gospodarski razvoj in tehnologijo - Glasovanje o listi kandidatov za ministre",
-            "is_outlier": false,
-            "not_present": 23,
-            "votes_for": 53,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "4. izredna seja",
-            "date_ts": "2014-09-30T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "30. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5617,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 21,
-            "motion_id": 6611,
-            "text": "Sklep o imenovanju \u010dlanice Programskega sveta RTV Slovenija - na podlagi \u0161este alineje \u0161estega odstavek 17. \u010dlena Zakona o RTV Slovenija - Glasovanje",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 48,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "4. izredna seja",
-            "date_ts": "2014-09-30T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "30. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5617,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 15,
-            "motion_id": 6612,
-            "text": "Sklep o imenovanju \u010dlana Programskega sveta RTV Slovenija - na podlagi sedme alineje \u0161estega odstavak 17. \u010dlena Zakona o RTV Slovenija - Glasovanje",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 53,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "4. izredna seja",
-            "date_ts": "2014-09-30T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "30. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5617,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 21,
-            "motion_id": 6619,
-            "text": "Predlog sklepa (Umik 3f. to\u010dke iz dnevnega reda 4. izredne seje)",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 49,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "3. izredna seja",
-            "date_ts": "2014-09-10T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "10. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5618,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 5,
-            "against": 0,
-            "motion_id": 6625,
-            "text": "Sklep o imenovanju predsednika in podpredsednice Ustavne komisije - Glasovanje o Predlogu sklepa o imenovanju predsednika in podpredsenice Ustavne komisije",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 66,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "2. izredna seja",
-            "date_ts": "2014-08-28T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "28. 8. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5619,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 53,
-            "motion_id": 6630,
-            "text": "Sklep o izvolitvi predsednika, podpredsednika in \u010dlanov Komisije za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb - Glasovanje",
+            "abstain": 8,
+            "against": 17,
+            "motion_id": 4842,
+            "text": "Zakon o pogrebni in pokopali\u0161ki dejavnosti - Ponovno odlo\u010danje",
+            "tags": ["Odbor za gospodarstvo"],
             "is_outlier": false,
             "not_present": 9,
-            "votes_for": 27,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 21,
-            "motion_id": 6871,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 53,
+            "votes_for": 56,
             "result": true
         }
     }, {
         "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
+            "name": "22. redna seja",
+            "date_ts": "2016-09-19T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "16. 11. 2015",
+            "date": "19. 9. 2016",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5583,
+            "id": 5574,
             "in_review": false
         },
         "results": {
-            "abstain": 1,
-            "against": 49,
-            "motion_id": 5346,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi  s pripravami Republike Slovenije na morebiten naslednji val migrantov na mejah Republike Slovenije.)",
+            "abstain": 3,
+            "against": 23,
+            "motion_id": 4825,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o motornih vozilih - Glasovanje o zakonu v celoti",
+            "tags": ["Odbor za infrastrukturo, okolje in prostor"],
             "is_outlier": false,
-            "not_present": 20,
-            "votes_for": 20,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 7,
-            "against": 1,
-            "motion_id": 6771,
-            "text": "Zakon o ratifikaciji Spremenjenega sporazuma o ustanovitvi Generalne komisije za ribi\u0161tvo v Sredozemlju - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 11,
-            "votes_for": 71,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 13,
-            "motion_id": 6772,
-            "text": "Priporo\u010dilo v zvezi s popla\u010dilom nadomestila rimskokatoli\u0161ki cerkvi iz naslova dolgotrajnosti denacionalizacijskih postopkov in ostalih njihovih terjatev - Eviden\u010dni sklep MDT 25.1.2017",
-            "is_outlier": false,
-            "not_present": 11,
-            "votes_for": 65,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 6,
-            "against": 38,
-            "motion_id": 6773,
-            "text": "Zakon o dopolnitvi Zakona o ban\u010dni\u0161tvu - Eviden\u010dni sklep o primernosti predloga zakona 25.1.2017",
-            "is_outlier": false,
-            "not_present": 13,
-            "votes_for": 33,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 27,
-            "against": 1,
-            "motion_id": 6774,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nematerializiranih vrednostnih papirjih - Glasovanje o zakonu v celoti",
-            "is_outlier": true,
-            "not_present": 10,
-            "votes_for": 52,
+            "not_present": 32,
+            "votes_for": 32,
             "result": true
         }
     }, {
@@ -1915,9 +180,258 @@
             "against": 38,
             "motion_id": 6775,
             "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
+            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
             "is_outlier": false,
             "not_present": 14,
             "votes_for": 37,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "26. redna seja",
+            "date_ts": "2017-01-23T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "23. 1. 2017",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 8940,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 1,
+            "against": 38,
+            "motion_id": 6775,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
+            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+            "is_outlier": false,
+            "not_present": 14,
+            "votes_for": 37,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "20. redna seja",
+            "date_ts": "2016-06-13T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "13. 6. 2016",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5576,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 1,
+            "against": 38,
+            "motion_id": 4966,
+            "text": "Interpelacija o delu in odgovornosti ministrice za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti, dr. Anje Kopa\u010d Mrak - Glasovanje o interpelaciji - MiDDSZEM Anja Kopa\u010d Mrak",
+            "tags": ["Interpelacija"],
+            "is_outlier": false,
+            "not_present": 8,
+            "votes_for": 43,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "6. redna seja",
+            "date_ts": "2015-03-25T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "25. 3. 2015",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 6679,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 3,
+            "against": 42,
+            "motion_id": 6084,
+            "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 126. \u010dlenu 18.3.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+            "tags": ["Odbor za finance in monetarno politiko"],
+            "is_outlier": false,
+            "not_present": 25,
+            "votes_for": 20,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "24. redna seja",
+            "date_ts": "2016-11-14T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "14. 11. 2016",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5572,
+            "in_review": true
+        },
+        "results": {
+            "abstain": 5,
+            "against": 41,
+            "motion_id": 4566,
+            "text": "Proceduralni predlog (pridobitev magnetograma seje Mandatno volilne komisije - nesprejet)",
+            "tags": ["Proceduralna glasovanja"],
+            "is_outlier": false,
+            "not_present": 16,
+            "votes_for": 28,
+            "result": null
+        }
+    }, {
+        "session": {
+            "name": "24. redna seja",
+            "date_ts": "2016-11-14T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "14. 11. 2016",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5572,
+            "in_review": true
+        },
+        "results": {
+            "abstain": 6,
+            "against": 36,
+            "motion_id": 4565,
+            "text": "Predlog za imenovanje na sodni\u0161ko mesto vrhovnega sodnika na Vrhovnem sodi\u0161\u010du Republike Slovenije - Glasovanje",
+            "tags": ["Proceduralna glasovanja"],
+            "is_outlier": false,
+            "not_present": 16,
+            "votes_for": 32,
+            "result": null
+        }
+    }, {
+        "session": {
+            "name": "3. redna seja",
+            "date_ts": "2014-12-15T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "15. 12. 2014",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 6682,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 32,
+            "against": 0,
+            "motion_id": 6266,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2014 in 2015 - Amandma: K 5. \u010dlenu 16.12.2014 [ZaAB - Poslanska skupina Zavezni\u0161tvo Alenke Bratu\u0161ek]",
+            "tags": ["Odbor za finance in monetarno politiko"],
+            "is_outlier": true,
+            "not_present": 14,
+            "votes_for": 44,
+            "result": true
+        }
+    }, {
+        "session": {
+            "name": "3. redna seja",
+            "date_ts": "2014-12-15T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "15. 12. 2014",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 6682,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 6,
+            "against": 46,
+            "motion_id": 6218,
+            "text": "Zakon o spremembi in dopolnitvi Zakona o delovnih razmerjih - Eviden\u010dni sklep o primernosti predloga zakona 19.12.2014",
+            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+            "is_outlier": false,
+            "not_present": 7,
+            "votes_for": 31,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "3. redna seja",
+            "date_ts": "2014-12-15T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "15. 12. 2014",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 6682,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 6,
+            "against": 46,
+            "motion_id": 6218,
+            "text": "Zakon o spremembi in dopolnitvi Zakona o delovnih razmerjih - Eviden\u010dni sklep o primernosti predloga zakona 19.12.2014",
+            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+            "is_outlier": false,
+            "not_present": 7,
+            "votes_for": 31,
             "result": false
         }
     }, {
@@ -1941,1007 +455,514 @@
             "in_review": false
         },
         "results": {
-            "abstain": 3,
-            "against": 48,
-            "motion_id": 6150,
-            "text": "Predlog sklepa razprava o odgovoru predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje Jo\u017eeta Tanka v zvezi z integriteto javnih funkcionarjev.",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 24,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 8,
-            "against": 23,
-            "motion_id": 6785,
-            "text": "Zaklju\u010dni ra\u010dun Prora\u010duna Republike Slovenije za leto 2015 - Glasovanje",
-            "is_outlier": false,
-            "not_present": 12,
-            "votes_for": 47,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 20,
-            "motion_id": 6816,
-            "text": "Zakon o dopolnitvah Zakona o sodi\u0161\u010dih - Eviden\u010dni sklep MDT 26.1.2017",
-            "is_outlier": false,
-            "not_present": 28,
-            "votes_for": 40,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 4,
-            "motion_id": 6818,
-            "text": "(Glasovanje o tem, da Zakonodajno-pravna slu\u017eba pripravi uradna pre\u010di\u0161\u010dena besedila Zakona o tujcih, Zakona o mednarodni za\u0161\u010diti in Zakona o za\u010dasni za\u0161\u010diti razseljenih oseb)",
-            "is_outlier": false,
-            "not_present": 26,
-            "votes_for": 57,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 25,
-            "motion_id": 6820,
-            "text": "Zakon o spremembi in dopolnitvah Zakona o tujcih - Amandma: K 1. \u010dlenu 25.1.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 46,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "28. redna seja",
-            "date_ts": "2017-03-20T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 3. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9379,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 4,
-            "against": 4,
-            "motion_id": 6964,
-            "text": "Uradno pre\u010di\u0161\u010deno besedilo",
-            "is_outlier": false,
-            "not_present": 24,
-            "votes_for": 58,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "29. redna seja",
-            "date_ts": "2017-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9427,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 3,
-            "against": 65,
-            "motion_id": 6986,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o volitvah v dr\u017eavni zbor - Amandma: K 8. \u010dlenu 14.4.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 7,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "29. redna seja",
-            "date_ts": "2017-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9427,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 4,
-            "against": 43,
-            "motion_id": 7092,
-            "text": "Proceduralni predlog - prestavitev to\u010dk dnevnega reda - Jo\u017ee Tanko",
-            "is_outlier": false,
-            "not_present": 24,
-            "votes_for": 19,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
             "abstain": 5,
-            "against": 47,
-            "motion_id": 4770,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za gospodarski razvoj in tehnologijo Zdravka Po\u010dival\u0161ka na poslansko vpra\u0161anje Jo\u017eefa Horvata v zvezi z zagotavljanjem sredstev za izvajanje Zakona o razvojni podpori Pomurski regiji v obdobju 2010 - 2015.)",
+            "against": 28,
+            "motion_id": 6164,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o zakonski zvezi in dru\u017einskih razmerjih - Glasovanje o zakonu v celoti",
+            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 11,
-            "votes_for": 27,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "29. redna seja",
-            "date_ts": "2017-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9427,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 10,
-            "against": 52,
-            "motion_id": 7069,
-            "text": "Zakon o vajeni\u0161tvu - Amandma: K 12. \u010dlenu 14.4.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 22,
-            "votes_for": 6,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "29. redna seja",
-            "date_ts": "2017-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9427,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 7,
-            "against": 54,
-            "motion_id": 7067,
-            "text": "Zakon o vajeni\u0161tvu - Amandma: K 16. \u010dlenu 14.4.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 24,
-            "votes_for": 5,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "29. redna seja",
-            "date_ts": "2017-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9427,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 11,
-            "against": 49,
-            "motion_id": 7059,
-            "text": "Zakon o vajeni\u0161tvu - Amandma: K 42. \u010dlenu 14.4.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 23,
-            "votes_for": 7,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "4. izredna seja",
-            "date_ts": "2014-09-30T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "30. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5617,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 18,
-            "against": 0,
-            "motion_id": 6613,
-            "text": "Sklep o imenovanju \u010dlanice Dr\u017eavne revizijske komisije - Glasovanje",
-            "is_outlier": true,
-            "not_present": 21,
+            "not_present": 6,
             "votes_for": 51,
             "result": true
         }
     }, {
         "session": {
-            "name": "20. redna seja",
-            "date_ts": "2016-06-13T02:00:00",
+            "name": "10. redna seja",
+            "date_ts": "2015-07-09T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "13. 6. 2016",
+            "date": "9. 7. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5576,
+            "id": 6675,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 2,
+            "against": 41,
+            "motion_id": 5892,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 2. \u010dlenu 3.7.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
+            "tags": ["Odbor za gospodarstvo"],
+            "is_outlier": true,
+            "not_present": 3,
+            "votes_for": 44,
+            "result": true
+        }
+    }, {
+        "session": {
+            "name": "11. redna seja",
+            "date_ts": "2015-09-21T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "21. 9. 2015",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 6674,
             "in_review": false
         },
         "results": {
             "abstain": 5,
-            "against": 29,
-            "motion_id": 4990,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o spodbujanju skladnega regionalnega razvoja - Amandma: K 7. \u010dlenu 7.6.2016 [IMNS - Poslanska skupina italijanske in mad\u017earske narodne skupnosti]",
+            "against": 30,
+            "motion_id": 5794,
+            "text": "Razprava o odgovoru ministra za infrastrukturo na poslansko vpra\u0161anje Janka Vebra glede izgradnje drugega \u017eelezni\u0161kega tira med Koprom in Diva\u010do - Eviden\u010dni sklep",
+            "tags": ["Poslanska vpra\u0161anja"],
             "is_outlier": false,
-            "not_present": 25,
-            "votes_for": 31,
+            "not_present": 18,
+            "votes_for": 37,
             "result": true
         }
     }, {
         "session": {
-            "name": "7. izredna seja",
-            "date_ts": "2014-12-04T01:00:00",
+            "name": "11. redna seja",
+            "date_ts": "2015-09-21T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "4. 12. 2014",
+            "date": "21. 9. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5614,
+            "id": 6674,
             "in_review": false
         },
         "results": {
-            "abstain": 16,
-            "against": 4,
-            "motion_id": 6594,
-            "text": "Zakon o spremembi Zakona o spremembah in dopolnitvah Zakona o tujcih - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 55,
+            "abstain": 9,
+            "against": 13,
+            "motion_id": 5790,
+            "text": "Razprava o odgovoru ministra za kmetijstvo, gozdarstvo in prehrano na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi z na\u010drtovanimi in porabljenimi sredstvi reprezentance - Eviden\u010dni sklep",
+            "tags": ["Poslanska vpra\u0161anja"],
+            "is_outlier": true,
+            "not_present": 41,
+            "votes_for": 27,
             "result": true
         }
     }, {
         "session": {
-            "name": "4. izredna seja",
-            "date_ts": "2014-09-30T02:00:00",
+            "name": "11. redna seja",
+            "date_ts": "2015-09-21T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "30. 9. 2014",
+            "date": "21. 9. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5617,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 3,
-            "against": 21,
-            "motion_id": 6610,
-            "text": "Sklep o imenovanju \u010dlana Nadzornega sveta Radiotelevizije Slovenija - Glasovanje",
-            "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 50,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "9. izredna seja",
-            "date_ts": "2015-02-19T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 2. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5612,
+            "id": 6674,
             "in_review": false
         },
         "results": {
             "abstain": 1,
-            "against": 45,
-            "motion_id": 5727,
-            "text": "Rebalans prora\u010duna Republike Slovenije za leto 2015 - Amandma: 2611 Ministrstvo za delo, dru\u017eino in socialne zadeve in enake mo\u017enosti  (200202) 16.2.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
+            "against": 35,
+            "motion_id": 5789,
+            "text": "Predlog sklepa (razprava o odgovoru ministra za gospodarski razvoj in tehnologijo Zdravka Po\u010dival\u0161ka na poslansko vpra\u0161anje Marijana Pojbi\u010da v zvezi s prodajo dr\u017eavnega premo\u017eenja)",
+            "tags": ["Poslanska vpra\u0161anja"],
             "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 28,
+            "not_present": 30,
+            "votes_for": 24,
             "result": false
         }
     }, {
         "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
+            "name": "9. redna seja",
+            "date_ts": "2015-06-15T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "16. 11. 2015",
+            "date": "15. 6. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5583,
+            "id": 6676,
             "in_review": false
         },
         "results": {
-            "abstain": 4,
-            "against": 42,
-            "motion_id": 5342,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za infrastrukturo dr. Petra Ga\u0161per\u0161i\u010da na poslansko vpra\u0161anje Zvonka Laha v zvezi s 3. razvojno osjo.)",
+            "abstain": 2,
+            "against": 63,
+            "motion_id": 5985,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o trgovini - Amandma: K 7. \u010dlenu 9.6.2015 [SD - Poslanska skupina Socialnih demokratov]",
+            "tags": ["Odbor za gospodarstvo"],
             "is_outlier": false,
-            "not_present": 17,
-            "votes_for": 27,
+            "not_present": 10,
+            "votes_for": 15,
             "result": false
         }
     }, {
         "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
+            "name": "9. redna seja",
+            "date_ts": "2015-06-15T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "16. 11. 2015",
+            "date": "15. 6. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5583,
+            "id": 6676,
             "in_review": false
         },
         "results": {
-            "abstain": 17,
-            "against": 43,
-            "motion_id": 5365,
-            "text": "Resolucija o nacionalnem stanovanjskem programu 2015 - 2025 - Amandma: K 4. poglavju 10.11.2015 [ZL - Poslanska skupina Zdru\u017eena levica] (pod to\u010dko 1)",
+            "abstain": 18,
+            "against": 23,
+            "motion_id": 5951,
+            "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okro\u017ene sodnice na Okro\u017enem sodi\u0161\u010du v Slovenj Gradcu - Glasovanje",
+            "tags": ["Mandatno-volilna komisija"],
             "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 16,
-            "result": false
+            "not_present": 19,
+            "votes_for": 30,
+            "result": true
         }
     }, {
         "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
+            "name": "9. redna seja",
+            "date_ts": "2015-06-15T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "16. 11. 2015",
+            "date": "15. 6. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5583,
+            "id": 6676,
             "in_review": false
         },
         "results": {
-            "abstain": 5,
-            "against": 47,
-            "motion_id": 5337,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za kmetijstvo, gozdarstvo in prehrano mag. Dejana \u017didana na poslansko vpra\u0161anje Franca Breznika v zvezi s ceno najema kmetijskih zemlji\u0161\u010d.)",
+            "abstain": 13,
+            "against": 22,
+            "motion_id": 5950,
+            "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okrajnega sodnika na Okrajnem sodi\u0161\u010du v Kranju - Glasovanje",
+            "tags": ["Mandatno-volilna komisija"],
             "is_outlier": false,
             "not_present": 18,
+            "votes_for": 37,
+            "result": true
+        }
+    }, {
+        "session": {
+            "name": "10. redna seja",
+            "date_ts": "2015-07-09T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "9. 7. 2015",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 6675,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 13,
+            "against": 28,
+            "motion_id": 5927,
+            "text": "Predlog za imenovanje \u010dlanov Nadzornega sveta Slovenske tiskovne agencije - Glasovanje o Predlogu sklepa o imenovanju \u010dlana Nadzornega sveta Slovenske tiskovne agencije - Lidija Pavlov\u010di\u010d",
+            "tags": ["Mandatno-volilna komisija"],
+            "is_outlier": false,
+            "not_present": 3,
+            "votes_for": 46,
+            "result": true
+        }
+    }, {
+        "session": {
+            "name": "25. redna seja",
+            "date_ts": "2016-12-12T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "12. 12. 2016",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 7654,
+            "in_review": true
+        },
+        "results": {
+            "abstain": 6,
+            "against": 40,
+            "motion_id": 6701,
+            "text": "Zakon o spremembah Zakona za uravnote\u017eenje javnih financ - Eviden\u010dni sklep o primernosti predloga zakona",
+            "tags": ["Odbor za finance in monetarno politiko"],
+            "is_outlier": false,
+            "not_present": 18,
+            "votes_for": 26,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "25. redna seja",
+            "date_ts": "2016-12-12T01:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "12. 12. 2016",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 7654,
+            "in_review": true
+        },
+        "results": {
+            "abstain": 6,
+            "against": 33,
+            "motion_id": 6683,
+            "text": "Zakon o lekarni\u0161ki dejavnosti - Amandma: K 26. \u010dlenu 6.12.2016 [ZL - Poslanska skupina Zdru\u017eena levica]",
+            "tags": ["Odbor za zdravstvo"],
+            "is_outlier": false,
+            "not_present": 11,
+            "votes_for": 40,
+            "result": true
+        }
+    }, {
+        "session": {
+            "name": "12. redna seja",
+            "date_ts": "2015-10-19T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "19. 10. 2015",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5584,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 7,
+            "against": 40,
+            "motion_id": 5685,
+            "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
+            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+            "is_outlier": false,
+            "not_present": 31,
+            "votes_for": 12,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "12. redna seja",
+            "date_ts": "2015-10-19T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "19. 10. 2015",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5584,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 7,
+            "against": 40,
+            "motion_id": 5685,
+            "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
+            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+            "is_outlier": false,
+            "not_present": 31,
+            "votes_for": 12,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "12. redna seja",
+            "date_ts": "2015-10-19T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "19. 10. 2015",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5584,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 1,
+            "against": 38,
+            "motion_id": 5683,
+            "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
+            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+            "is_outlier": false,
+            "not_present": 31,
             "votes_for": 20,
             "result": false
         }
     }, {
         "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
+            "name": "12. redna seja",
+            "date_ts": "2015-10-19T02:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "16. 11. 2015",
+            "date": "19. 10. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 64,
-            "motion_id": 5347,
-            "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje Luke Mesca v zvezi s postavitvijo \u017ei\u010dnate ograje na meji s Hrva\u0161ko.)",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 8,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 15,
-            "against": 39,
-            "motion_id": 5351,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o udele\u017ebi delavcev pri dobi\u010dku - Eviden\u010dni sklep o primernosti predloga zakona 24.11.2015",
-            "is_outlier": false,
-            "not_present": 20,
-            "votes_for": 16,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 0,
-            "motion_id": 5357,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o minimalni pla\u010di - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 74,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
+            "id": 5584,
             "in_review": false
         },
         "results": {
             "abstain": 10,
-            "against": 10,
-            "motion_id": 6770,
-            "text": "Soglasje k imenovanju generalnega direktorja Zavoda za zdravstveno zavarovanje Slovenije - Glasovanje",
-            "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 54,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "2. redna seja",
-            "date_ts": "2014-11-17T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 11. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6683,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 53,
-            "motion_id": 6295,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za infrastrukturo dr. Petra Ga\u0161per\u0161i\u010da na poslansko vpra\u0161anje Danijela Krivca v zvezi z izvajanjem Zakona o ukrepih za odpravo posledic \u017eleda med 30. januarjem in 10. februarjem 2014).",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 18,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "18. redna seja",
-            "date_ts": "2016-04-18T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "18. 4. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5578,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
             "against": 38,
-            "motion_id": 5110,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o varstvu kulturne dedi\u0161\u010dine - Amandma: K 2. \u010dlenu 11.2.2016 [IMNS - Poslanska skupina italijanske in mad\u017earske narodne skupnosti]",
+            "motion_id": 5627,
+            "text": "Priporo\u010dilo v zvezi s problematiko delovanja Dru\u017ebe za upravljanje terjatev bank, d. d., v povezavi z dru\u017ebami in podjetji, katerih ban\u010dne terjatve so bile prenesene na Dru\u017ebo za upravljanje terjatev bank, d. d. - Glasovanje",
+            "tags": ["Komisija za nadzor javnih financ"],
             "is_outlier": false,
-            "not_present": 26,
-            "votes_for": 26,
+            "not_present": 21,
+            "votes_for": 21,
             "result": false
         }
     }, {
         "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
+            "name": "5. redna seja",
+            "date_ts": "2015-03-02T01:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "23. 1. 2017",
+            "date": "2. 3. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 8940,
+            "id": 6680,
             "in_review": false
         },
         "results": {
-            "abstain": 6,
-            "against": 18,
-            "motion_id": 6819,
-            "text": "Zakon o spremembi in dopolnitvah Zakona o tujcih - Glasovanje o zakonu v celoti",
+            "abstain": 4,
+            "against": 53,
+            "motion_id": 6120,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o praznikih in dela prostih dnevih v Republiki Sloveniji - Amandma: K 1. \u010dlenu 24.2.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
+            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 19,
+            "not_present": 15,
+            "votes_for": 18,
+            "result": false
+        }
+    }, {
+        "session": {
+            "name": "29. redna seja",
+            "date_ts": "2017-04-20T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "20. 4. 2017",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 9427,
+            "in_review": true
+        },
+        "results": {
+            "abstain": 9,
+            "against": 10,
+            "motion_id": 7064,
+            "text": "Zakon o vajeni\u0161tvu - Amandma: K 28. \u010dlenu 13.4.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
+            "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
+            "is_outlier": false,
+            "not_present": 24,
             "votes_for": 47,
             "result": true
         }
     }, {
         "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 6,
-            "against": 45,
-            "motion_id": 6845,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 35. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 21,
-            "votes_for": 18,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 14,
-            "against": 49,
-            "motion_id": 6842,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 43. \u010dlenu 7.2.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "is_outlier": false,
-            "not_present": 20,
-            "votes_for": 7,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 48,
-            "motion_id": 6850,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 6. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 23,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 42,
-            "motion_id": 6849,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 9. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 22,
-            "votes_for": 26,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 46,
-            "motion_id": 6847,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 14. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 24,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "3. izredna seja",
-            "date_ts": "2014-09-10T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "10. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5618,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 0,
-            "against": 48,
-            "motion_id": 6624,
-            "text": "Sklep o izvolitvi predsednika, podpredsednika in \u010dlanov Komisije za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb - Glasovanje o Predlogu sklepa o izvolitvi predsednika, podpredsednika in \u010dlanov Komisije za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 24,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 4,
-            "against": 4,
-            "motion_id": 6766,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Glasovanje o zakonu v celoti",
-            "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 67,
-            "result": true
-        }
-    }, {
-        "session": {
             "name": "13. redna seja",
             "date_ts": "2015-11-16T01:00:00",
             "orgs": [{
@@ -2961,494 +982,108 @@
             "in_review": false
         },
         "results": {
-            "abstain": 3,
-            "against": 6,
-            "motion_id": 5359,
-            "text": "Resolucija o nacionalnem stanovanjskem programu 2015 - 2025 - Glasovanje o aktu v celoti",
-            "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 67,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 14,
-            "against": 1,
-            "motion_id": 5368,
-            "text": "Sklep o soglasju k Programu dela in finan\u010dnem na\u010drtu Agencije za energijo za leto 2016 - Glasovanje",
-            "is_outlier": false,
-            "not_present": 21,
-            "votes_for": 54,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 1,
-            "against": 18,
-            "motion_id": 6815,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o dr\u017eavnem to\u017eilstvu - Eviden\u010dni sklep MDT 26.1.2017",
-            "is_outlier": false,
-            "not_present": 28,
-            "votes_for": 43,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "4. izredna seja",
-            "date_ts": "2014-09-30T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "30. 9. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5617,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 20,
-            "against": 1,
-            "motion_id": 6609,
-            "text": "Sklep o razre\u0161itvi in imenovanju predsednice Odbora za pravosodje, podpredsednika Odbora za izobra\u017eevanje, znanost, \u0161port in mladino in  podpredsednice Odbora za kulturo ter imenovanju podpredsednice Odbora za zunanjo politiko in predsednika in podpredsednice Odbora za delo, dru\u017eino, socialne zadeve in invalide - Sklep",
+            "abstain": 7,
+            "against": 53,
+            "motion_id": 5409,
+            "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 67. \u010dlenu 9.11.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
+            "tags": ["Odbor za finance in monetarno politiko"],
             "is_outlier": false,
             "not_present": 15,
-            "votes_for": 54,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "20. redna seja",
-            "date_ts": "2016-06-13T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 6. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5576,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 20,
-            "motion_id": 5002,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o ban\u010dni\u0161tvu - Eviden\u010dni sklep o primernosti predloga zakona 14.6.2016",
-            "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 50,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 2,
-            "motion_id": 6813,
-            "text": "Zakon o oblikovanju cen naftnih derivatov - Eviden\u010dni sklep MDT 26.1.2017",
-            "is_outlier": false,
-            "not_present": 29,
-            "votes_for": 57,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 3,
-            "against": 49,
-            "motion_id": 4605,
-            "text": "Prora\u010dun Republike Slovenije za leto 2018 - Amandma: 2611 Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti (200401) 9.11.2016 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": true,
-            "not_present": 38,
-            "votes_for": 0,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 3,
-            "against": 49,
-            "motion_id": 4620,
-            "text": "Prora\u010dun Republike Slovenije za leto 2018 - Amandma: 2130 Ministrstvo za gospodarski razvoj in tehnologijo  (140502) 9.11.2016 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-            "is_outlier": true,
-            "not_present": 38,
-            "votes_for": 0,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "16. redna seja",
-            "date_ts": "2016-02-29T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "29. 2. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5580,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 41,
-            "against": 0,
-            "motion_id": 5174,
-            "text": "Ravzeljavitev Proceduralnega predloga na podlagi petega odstavka 67. \u010dlena Poslovnika Dr\u017eavnega zbora (vsak govornik razpravlja le enkrat) - prva nesklep\u010dnost",
-            "is_outlier": true,
-            "not_present": 49,
-            "votes_for": 0,
+            "votes_for": 15,
             "result": false
         }
     }, {
         "session": {
-            "name": "16. redna seja",
-            "date_ts": "2016-02-29T01:00:00",
+            "name": "14. redna seja",
+            "date_ts": "2015-12-14T01:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "29. 2. 2016",
+            "date": "14. 12. 2015",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5580,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 2,
-            "against": 35,
-            "motion_id": 5191,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za finance dr. Du\u0161ana Mramorja na poslansko vpra\u0161anje \u017dana Mahni\u010da v zvezi z na\u010drtnim iz\u010drpavanjem in uni\u010devanjem podjetij, ki jih upravlja Dru\u017eba za upravljanje terjatev bank \u2013 primer podjetja Alpina \u017diri.)",
-            "is_outlier": true,
-            "not_present": 36,
-            "votes_for": 17,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 6,
-            "against": 48,
-            "motion_id": 4560,
-            "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade dr. Mira Cerarja na poslansko vpra\u0161anje mag. Branka Grimsa v zvezi s parlamentarnim nadzorom obve\u0161\u010devalnih in varnostnih slu\u017eb.)",
-            "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 17,
-            "result": false
-        }
-    }, {
-        "session": {
-            "name": "23. redna seja",
-            "date_ts": "2016-10-17T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "17. 10. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5573,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 2,
-            "against": 52,
-            "motion_id": 4772,
-            "text": "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje mag. Branka Grimsa v zvezi s \u0161tevilom prosilcev za mednarodno za\u0161\u010dito in za\u010detkom veljavnosti omejevalnih ukrepov.)",
-            "is_outlier": false,
-            "not_present": 13,
-            "votes_for": 23,
-            "result": null
-        }
-    }, {
-        "session": {
-            "name": "15. izredna seja",
-            "date_ts": "2015-06-05T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "5. 6. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5606,
+            "id": 5582,
             "in_review": false
         },
         "results": {
             "abstain": 0,
-            "against": 1,
-            "motion_id": 6570,
-            "text": "Dnevni red v celoti",
-            "is_outlier": true,
-            "not_present": 30,
-            "votes_for": 59,
+            "against": 34,
+            "motion_id": 5292,
+            "text": "Priporo\u010dilo v zvezi s problematiko svetovalnih pogodb v Novi Ljubljanski banki, d. d. - Glasovanje o aktu v celoti",
+            "tags": ["Komisija za nadzor javnih financ"],
+            "is_outlier": false,
+            "not_present": 19,
+            "votes_for": 37,
             "result": true
         }
     }, {
         "session": {
-            "name": "15. izredna seja",
-            "date_ts": "2015-06-05T02:00:00",
+            "name": "27. redna seja",
+            "date_ts": "2017-02-13T01:00:00",
             "orgs": [{
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             }],
-            "date": "5. 6. 2015",
+            "date": "13. 2. 2017",
             "org": {
                 "acronym": "DZ",
                 "is_coalition": false,
                 "id": 95,
                 "name": "Dr\u017eavni zbor"
             },
-            "id": 5606,
+            "id": 9158,
             "in_review": false
         },
         "results": {
-            "abstain": 1,
-            "against": 40,
-            "motion_id": 6569,
-            "text": "Predlog priporo\u010dila v zvezi z izvajanjem slu\u017ebe nujne medicinske pomo\u010di v Republiki Sloveniji - Amandma: 2. to\u010dka 5.6.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "is_outlier": true,
-            "not_present": 33,
-            "votes_for": 16,
+            "abstain": 3,
+            "against": 23,
+            "motion_id": 6875,
+            "text": "Priporo\u010dilo za vzpostavitev u\u010dinkovitega pravnega varstva v primeru zavr\u017eenja kazenske ovadbe - Eviden\u010dni sklep 17.2.2017",
+            "tags": ["Odbor za pravosodje"],
+            "is_outlier": false,
+            "not_present": 17,
+            "votes_for": 47,
+            "result": true
+        }
+    }, {
+        "session": {
+            "name": "19. redna seja",
+            "date_ts": "2016-05-16T02:00:00",
+            "orgs": [{
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            }],
+            "date": "16. 5. 2016",
+            "org": {
+                "acronym": "DZ",
+                "is_coalition": false,
+                "id": 95,
+                "name": "Dr\u017eavni zbor"
+            },
+            "id": 5577,
+            "in_review": false
+        },
+        "results": {
+            "abstain": 2,
+            "against": 34,
+            "motion_id": 5050,
+            "text": "Zakon o spremembah in dopolnitvah Zakona o pravilih cestnega prometa - Eviden\u010dni sklep o primernosti predloga zakona 17.5.2016",
+            "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+            "is_outlier": false,
+            "not_present": 19,
+            "votes_for": 35,
             "result": false
-        }
-    }, {
-        "session": {
-            "name": "1. izredna seja",
-            "date_ts": "2014-08-25T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "25. 8. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5620,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 19,
-            "against": 0,
-            "motion_id": 6637,
-            "text": "Odlok o ustanovitvi in nalogah delovnih teles Dr\u017eavnega zbora - Glasovanje",
-            "is_outlier": true,
-            "not_present": 5,
-            "votes_for": 66,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "1. izredna seja",
-            "date_ts": "2014-08-25T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "25. 8. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5620,
-            "in_review": false
-        },
-        "results": {
-            "abstain": 20,
-            "against": 0,
-            "motion_id": 6636,
-            "text": "Sklep o imenovanju generalne sekretarke Dr\u017eavnega zbora - Glasovanje",
-            "is_outlier": true,
-            "not_present": 5,
-            "votes_for": 65,
-            "result": true
-        }
-    }, {
-        "session": {
-            "name": "41. izredna seja",
-            "date_ts": "2016-12-22T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "22. 12. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8889,
-            "in_review": true
-        },
-        "results": {
-            "abstain": 11,
-            "against": 1,
-            "motion_id": 6758,
-            "text": "Zakon o ukrepih na podro\u010dju pla\u010d in drugih stro\u0161kov dela za leto 2017 in drugih ukrepih v javnem sektorju - Glasovanje o zakonu v celoti",
-            "is_outlier": true,
-            "not_present": 30,
-            "votes_for": 48,
-            "result": true
         }
     }]
 }
