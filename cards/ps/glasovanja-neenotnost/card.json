@@ -3,7 +3,7 @@
   "name": "Seznam glasovanj glede na (ne)enotnost",
   "dataUrl": "https://data.parlameter.si/v1/getAllPGsExt/",
   "type": "glasovanja",
-  "lastUpdate": "2017-06-01T07:40:35.638Z",
+  "lastUpdate": "2017-06-02T12:28:08.719Z",
   "method": "glasovanja-neenotnost",
   "group": "ps"
 }

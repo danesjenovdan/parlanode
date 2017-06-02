@@ -87,7 +87,7 @@ export default {
   name: 'GlasovanjaNeenotnost',
   data() {
     const fixedGroups = [{
-      id: null,
+      id: 95,
       color: 'dz',
       acronym: 'DZ',
       name: 'Vsi',
@@ -104,7 +104,7 @@ export default {
     }];
 
     return {
-      data: [],
+      voteData: [],
       loading: true,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
@@ -186,7 +186,7 @@ export default {
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
-      if (this.data.length === 0) return [];
+      if (this.voteData.length === 0) return [];
 
       const filterBallots = (ballot) => {
         const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
@@ -205,7 +205,7 @@ export default {
         return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       };
 
-      const votes = sortBy(this.data, this.selectedSort).reverse();
+      const votes = sortBy(this.voteData, this.selectedSort).reverse();
       const getDateFromVote = vote => (vote.date ? vote.date.split('T')[0] : null);
 
       let currentVotingDays;
@@ -236,23 +236,16 @@ export default {
     },
     fetchVotesForGroup(acronym = 'DZ') {
       this.loading = true;
-      if (acronym === 'DZ') {
-        $.get('https://analize.parlameter.si/v1/pg/getIntraDisunionDZ/', (response) => {
-          this.data = response.results.DZ.votes;
-          if (this.allTags.length === 0) {
-            this.allTags = response.all_tags.map(
-              tag => ({ id: tag, label: tag, selected: false }),
-            );
-          }
-          this.loading = false;
-        });
-      } else {
-        const groupId = find(this.groups, { acronym }).id;
-        $.get(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
-          this.data = response[acronym].votes;
-          this.loading = false;
-        });
-      }
+      const groupId = find(this.groups, { acronym }).id;
+      $.get(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
+        if (this.allTags.length === 0) {
+          this.allTags = response.all_tags.map(
+            tag => ({ id: tag, label: tag, selected: false }),
+          );
+        }
+        this.voteData = response[acronym].votes;
+        this.loading = false;
+      });
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
@@ -269,7 +262,7 @@ export default {
       this.fetchVotesForGroup(newValue);
     },
   },
-  mounted() {
+  beforeMount() {
     this.shortenUrl();
     this.fetchVotesForGroup();
   },
