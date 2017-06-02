@@ -74,7 +74,7 @@
 
 <script>
 /* globals window $ measure */
-import { groupBy, map, sortBy, zipObject, find } from 'lodash';
+import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -86,7 +86,7 @@ export default {
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {
-    const fixedGroups = [{
+    const groups = [{
       id: 95,
       color: 'dz',
       acronym: 'DZ',
@@ -102,6 +102,18 @@ export default {
       acronym: 'koal',
       name: 'Koalicija',
     }];
+
+    Object.keys(this.$options.cardData.data).forEach((groupName) => {
+      const groupValue = this.$options.cardData.data[groupName];
+      if (groupValue.acronym !== 'PS NP') {
+        groups.push({
+          id: groupName,
+          acronym: groupValue.acronym,
+          color: groupValue.acronym.toLowerCase().replace(/ /g, '_'),
+          name: groupValue.acronym,
+        });
+      }
+    });
 
     return {
       voteData: [],
@@ -124,16 +136,7 @@ export default {
         )
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
-      groups: fixedGroups,
-      // .concat(map(this.$options.cardData.data, (group, id) => {
-      //   console.log(group)
-      //   return {
-      //     id,
-      //     acronym: group.acronym,
-      //     color: group.acronym.toLowerCase().replace(/ /g, '_'),
-      //     name: group.acronym,
-      //   };
-      // })).filter(group => group.acronym !== 'PS NP'),
+      groups,
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -186,7 +189,7 @@ export default {
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
-      if (this.voteData.length === 0) return [];
+      if (!this.voteData || this.voteData.length === 0) return [];
 
       const filterBallots = (ballot) => {
         const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
@@ -216,12 +219,17 @@ export default {
         currentVotingDays = zipObject(votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`), votes.map(vote => [vote]));
       }
 
-      return map(currentVotingDays, (ballots, date) => ({
-        date,
-        ballots: ballots.filter(filterBallots),
-      }))
-      .filter(votingDay => (votingDay.ballots.length > 0))
-      .filter(filterDates);
+      const mappedVotingDays = [];
+      Object.keys(currentVotingDays).forEach((key) => {
+        mappedVotingDays.push({
+          date: key,
+          ballots: currentVotingDays[key].filter(filterBallots),
+        });
+      });
+
+      return mappedVotingDays
+        .filter(votingDay => (votingDay.ballots.length > 0))
+        .filter(filterDates);
     },
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
@@ -243,7 +251,7 @@ export default {
             tag => ({ id: tag, label: tag, selected: false }),
           );
         }
-        this.voteData = response[acronym].votes;
+        this.voteData = response[acronym];
         this.loading = false;
       });
     },
