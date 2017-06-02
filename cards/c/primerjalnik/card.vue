@@ -92,7 +92,7 @@
             </div>            
           </tab>
           <tab header="Dinamika skozi čas">
-            
+            <time-chart :data="data"></time-chart>
           </tab>
           <tab header="Dinamika glede na MDT">
             
@@ -198,6 +198,7 @@
   import CardFooter from 'components/Card/Footer.vue';
   import initializeBack from 'mixins/initializeBack';
   import common from 'mixins/common';
+  import TimeChart from 'components/TimeChart.vue';
 
   export default {
     components: {
@@ -205,7 +206,8 @@
       CardEmbed,
       CardShare,
       CardHeader,
-      CardFooter
+      CardFooter,
+      TimeChart
     },
     mixins: [initializeBack],
     name: 'ImeKartice',
@@ -214,8 +216,8 @@
         parties: [],
         samePeople: [],
         differentPeople: [],
-        // data: this.$options.cardData.data,
-        data: [],
+        data: this.$options.cardData.data.results,
+        // data: [],
         total: 0,
         slugs: this.$options.cardData.urlsData,
         shortenedCardUrl: '',
