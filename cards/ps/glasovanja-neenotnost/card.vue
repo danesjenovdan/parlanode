@@ -37,7 +37,7 @@
         <div :class="['results', {'is-loading': loading }]">
           <template v-for="day in filteredVotingDays">
             <date-row v-if="selectedSort === 'date'" :date="day.date" />
-            <div v-for="ballot in day.ballots" class="ballot">
+            <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
               <div class="disunion">
                 <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
                 <div class="text">neenotnost</div>
@@ -53,7 +53,7 @@
                   <div class="text">zavrnjen</div>
                 </template>
               </div>
-            </div>
+            </a>
           </template>
         </div>
       </div>
@@ -218,6 +218,8 @@ export default {
       } else {
         currentVotingDays = zipObject(votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`), votes.map(vote => [vote]));
       }
+
+      console.log(currentVotingDays);
 
       const mappedVotingDays = [];
       Object.keys(currentVotingDays).forEach((key) => {
