@@ -92,10 +92,10 @@
             </div>            
           </tab>
           <tab header="Dinamika skozi čas">
-            
+            <time-chart :data="data"></time-chart>
           </tab>
           <tab header="Dinamika glede na MDT">
-            
+            <bar-chart :data="data"></bar-chart>
           </tab>
         </tabs>
 
@@ -199,13 +199,18 @@
   import initializeBack from 'mixins/initializeBack';
   import common from 'mixins/common';
 
+  import TimeChart from 'components/TimeChart.vue';
+  import BarChart from 'components/BarChart.vue';
+
   export default {
     components: {
       CardInfo,
       CardEmbed,
       CardShare,
       CardHeader,
-      CardFooter
+      CardFooter,
+      TimeChart,
+      BarChart
     },
     mixins: [initializeBack],
     name: 'ImeKartice',
@@ -214,8 +219,8 @@
         parties: [],
         samePeople: [],
         differentPeople: [],
-        // data: this.$options.cardData.data,
-        data: [],
+        data: this.$options.cardData.data.results,
+        // data: [],
         total: 0,
         slugs: this.$options.cardData.urlsData,
         shortenedCardUrl: '',
