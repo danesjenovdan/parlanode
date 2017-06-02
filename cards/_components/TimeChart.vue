@@ -13,6 +13,7 @@ export default {
   },
   methods: {
     renderChart: function() {
+      $('.timechart svg').remove();
       // global stuff for the chart
       const margin = {
         top: 50,
@@ -264,6 +265,11 @@ export default {
         .attr('text-anchor', 'middle')
         .attr('y', -18);
     },
+  },
+  watch: {
+    data: function() {
+      this.renderChart();
+    }
   }
 };
 </script>
