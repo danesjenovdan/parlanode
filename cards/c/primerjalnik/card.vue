@@ -11,6 +11,17 @@
             <span
               v-for="person in selectedDifferentPeople">{{ person.name }} </span><span class="plus" @click="openModalDifferent"></span></span> pa drugače od njih.
         </div>
+        <div class="special-container">
+          <div class="searchfilter-checkbox">
+              <input id="rev" type="checkbox" class="checkbox" @click="handleCheckbox" v-bind:checked="special">
+              <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button @click="loadResults" class="loadme">Naloadaj</button>
+          </div>
+        </div>
 
         <div>{{ votes.length }} filtriranih glasovanj predstavlja {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
           vseh glasovanj.</div>
@@ -136,11 +147,6 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-12">
-                    <button @click="loadResults">Naloadaj</button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -171,11 +177,6 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-12">
-                    <button @click="loadResults">Naloadaj</button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -220,6 +221,7 @@
         samePeople: [],
         differentPeople: [],
         // data: this.$options.cardData.data.results,
+        special: false,
         data: [],
         total: 0,
         slugs: this.$options.cardData.urlsData,
@@ -249,9 +251,15 @@
       },
       queryUrl() {
         const base = 'https://analize.parlameter.si/v1/s/getComparedVotes/'
-        return base + '?people_same=' + this.selectedSamePeople.map(person => person.id).toString() + '&parties_same=' +
+        if (this.special) {
+          return base + '?people_same=' + this.selectedSamePeople.map(person => person.id).toString() + '&parties_same=' +
+          this.sameParties.map(party => party.id).toString() + '&people_different=' + this.selectedDifferentPeople.map(
+            person => person.id).toString() + '&parties_different=' + this.differentParties.map(party => party.id).toString() + '&special=true';
+        } else {
+          return base + '?people_same=' + this.selectedSamePeople.map(person => person.id).toString() + '&parties_same=' +
           this.sameParties.map(party => party.id).toString() + '&people_different=' + this.selectedDifferentPeople.map(
             person => person.id).toString() + '&parties_different=' + this.differentParties.map(party => party.id).toString();
+        }
       },
       votes() {
         return this.data.map(function (e) {
@@ -329,6 +337,9 @@
       });
     },
     methods: {
+      handleCheckbox: function(event) {
+          this.special = !this.special;
+      },
       focusTab(tabNumber) {
         // if (tabNumber !== 1) {
         //   this.$refs.parties.expandedParty = null;
@@ -481,6 +492,14 @@
     &.on {
       background: $funblue;
     }
+  }
+  .loadme {
+    background: $funblue;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    display: block;
+    position: relative;
   }
 </style>
 <style lang="scss">
