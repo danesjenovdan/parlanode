@@ -3,12 +3,10 @@ global.CFG = require('./config');
 var server      = require('./server/server');
 var database    = require('./server/database');
 var chalk       = require('chalk');
-const postgres  = require('./server/parlalize_db');
 
 function init(){
 
     return database.connect()
-        .then((postgres.connect))
         .then(server.init)
         .then(function(){
 
