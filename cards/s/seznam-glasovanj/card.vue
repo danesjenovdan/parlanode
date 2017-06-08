@@ -37,7 +37,7 @@
                   <div class="col-md-6 ">
                     <div class="session_title ">
                       <p>
-                        {{ vote.results.text }}
+                        {{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}
                       </p>
                     </div>
                   </div>

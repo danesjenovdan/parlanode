@@ -37,7 +37,7 @@
         <div :class="['results', {'is-loading': loading }]">
           <template v-for="day in filteredVotingDays">
             <date-row v-if="selectedSort === 'date'" :date="day.date" />
-            <div v-for="ballot in day.ballots" class="ballot">
+            <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
               <div class="disunion">
                 <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
                 <div class="text">neenotnost</div>
@@ -53,7 +53,7 @@
                   <div class="text">zavrnjen</div>
                 </template>
               </div>
-            </div>
+            </a>
           </template>
         </div>
       </div>
@@ -74,7 +74,7 @@
 
 <script>
 /* globals window $ measure */
-import { groupBy, map, sortBy, zipObject, find } from 'lodash';
+import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -86,8 +86,8 @@ export default {
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {
-    const fixedGroups = [{
-      id: null,
+    const groups = [{
+      id: 95,
       color: 'dz',
       acronym: 'DZ',
       name: 'Vsi',
@@ -103,8 +103,20 @@ export default {
       name: 'Koalicija',
     }];
 
+    Object.keys(this.$options.cardData.data).forEach((groupName) => {
+      const groupValue = this.$options.cardData.data[groupName];
+      if (groupValue.acronym !== 'PS NP') {
+        groups.push({
+          id: groupName,
+          acronym: groupValue.acronym,
+          color: groupValue.acronym.toLowerCase().replace(/ /g, '_'),
+          name: groupValue.acronym,
+        });
+      }
+    });
+
     return {
-      data: [],
+      voteData: [],
       loading: true,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
@@ -124,16 +136,7 @@ export default {
         )
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
-      groups: fixedGroups,
-      // .concat(map(this.$options.cardData.data, (group, id) => {
-      //   console.log(group)
-      //   return {
-      //     id,
-      //     acronym: group.acronym,
-      //     color: group.acronym.toLowerCase().replace(/ /g, '_'),
-      //     name: group.acronym,
-      //   };
-      // })).filter(group => group.acronym !== 'PS NP'),
+      groups,
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -186,7 +189,7 @@ export default {
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
-      if (this.data.length === 0) return [];
+      if (!this.voteData || this.voteData.length === 0) return [];
 
       const filterBallots = (ballot) => {
         const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
@@ -205,7 +208,7 @@ export default {
         return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       };
 
-      const votes = sortBy(this.data, this.selectedSort).reverse();
+      const votes = sortBy(this.voteData, this.selectedSort).reverse();
       const getDateFromVote = vote => (vote.date ? vote.date.split('T')[0] : null);
 
       let currentVotingDays;
@@ -216,12 +219,19 @@ export default {
         currentVotingDays = zipObject(votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`), votes.map(vote => [vote]));
       }
 
-      return map(currentVotingDays, (ballots, date) => ({
-        date,
-        ballots: ballots.filter(filterBallots),
-      }))
-      .filter(votingDay => (votingDay.ballots.length > 0))
-      .filter(filterDates);
+      console.log(currentVotingDays);
+
+      const mappedVotingDays = [];
+      Object.keys(currentVotingDays).forEach((key) => {
+        mappedVotingDays.push({
+          date: key,
+          ballots: currentVotingDays[key].filter(filterBallots),
+        });
+      });
+
+      return mappedVotingDays
+        .filter(votingDay => (votingDay.ballots.length > 0))
+        .filter(filterDates);
     },
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
@@ -236,23 +246,16 @@ export default {
     },
     fetchVotesForGroup(acronym = 'DZ') {
       this.loading = true;
-      if (acronym === 'DZ') {
-        $.get('https://analize.parlameter.si/v1/pg/getIntraDisunionDZ/', (response) => {
-          this.data = response.results.DZ.votes;
-          if (this.allTags.length === 0) {
-            this.allTags = response.all_tags.map(
-              tag => ({ id: tag, label: tag, selected: false }),
-            );
-          }
-          this.loading = false;
-        });
-      } else {
-        const groupId = find(this.groups, { acronym }).id;
-        $.get(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
-          this.data = response[acronym].votes;
-          this.loading = false;
-        });
-      }
+      const groupId = find(this.groups, { acronym }).id;
+      $.get(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
+        if (this.allTags.length === 0) {
+          this.allTags = response.all_tags.map(
+            tag => ({ id: tag, label: tag, selected: false }),
+          );
+        }
+        this.voteData = response[acronym];
+        this.loading = false;
+      });
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
@@ -269,7 +272,7 @@ export default {
       this.fetchVotesForGroup(newValue);
     },
   },
-  mounted() {
+  beforeMount() {
     this.shortenUrl();
     this.fetchVotesForGroup();
   },

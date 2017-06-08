@@ -6,8 +6,8 @@
         </div>
         <div class="column chart">
             <div class="progress hugebar">
-                <div class="progress-bar funblue" role="progressbar" :style="{ width: row.percentage + '%'}"></div>
-                <div class="progress_number">{{ row.occurences }}</div>
+                <div class="progress-bar funblue" role="progressbar" :style="{ width: row.widthPercentage + '%'}"></div>
+                <div class="progress_number">{{ row.occurences + ' | ' + row.percentage }} %</div>
             </div>
         </div>
       </li>
@@ -33,6 +33,7 @@ export default {
         return {
           name: tag,
           occurences: occurences,
+          widthPercentage: 0,
           percentage: 0
         }
       });
@@ -46,8 +47,11 @@ export default {
 
       return almost.map((row) => {
         console.log(row);
-        row.percentage = row.occurences / mymax * 80;
+        row.widthPercentage = row.occurences / mymax * 80;
+        row.percentage = (row.occurences / this.data.length * 100).toFixed(2);
         return row;
+      }).sort((a, b) => {
+        return b.occurences - a.occurences;
       });
     }
   },
