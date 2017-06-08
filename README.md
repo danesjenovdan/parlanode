@@ -20,7 +20,6 @@ We intend to eventually port all cards to this format.
 
 * Express for server (routing and handling requests)
 * Mongoose for interaction with the MongoDB database
-* Sequelize for interaction with PostgreSQL database (for authentication)
 
 ##### CMS
 
