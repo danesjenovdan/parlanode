@@ -41,17 +41,18 @@ export default {
 
       // const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%SZ').parse;
       const bisectDate = d3.bisector((d) => d.date).left;
-      const parseDate = d3.time.format('%d. %m. %Y').parse;
+      const parseDate = d3.time.format('%d.%m.%Y').parse;
 
       const data = this.data.reduce((acc, d) => {
-        if (acc.indexOf(d.session.date) === -1) {
-          acc.push(d.session.date);
+        if (acc.indexOf(d.results.date) === -1) {
+          console.log(d.results.date);
+          acc.push(d.results.date);
         }
         return acc;
       }, []).map((date) => {
         return {
           date: parseDate(date),
-          occurences: this.data.filter(d => d.session.date === date).length
+          occurences: this.data.filter(d => d.results.date === date).length
         }
       }).sort((a, b) => {
         console.log(a.date < b.date);
