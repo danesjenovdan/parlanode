@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
     "cards-build": "run(){ CARD_NAME=$1 NODE_ENV=production node cards/build.js; }; run",
-    "cards-dev": "run(){ CARD_NAME=$1 webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open; }; run",
+    "cards-dev": "run(){ CARD_NAME=$1 webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open --inline; }; run",
     "cards-generate": "run(){ mkdir -p cards/$1 && cp -R cards/_empty/* cards/$1; }; run"
   },
   "repository": {
