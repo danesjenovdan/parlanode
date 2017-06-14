@@ -1,35 +1,35 @@
+const mongoose = require('mongoose');
+const chalk    = require('chalk');
+const Promise  = require('bluebird');
 
+/**
+ * Connects to MongoDB
+ * @param cb
+ */
+exports.connect = function (cb) {
 
-var mongoose    = require('mongoose');
-var chalk       = require('chalk');
-var Promise     = require('bluebird');
+  return new Promise(function (resolve, reject) {
 
-exports.connect = function(cb){
+    console.log(chalk.magenta(`| MONGO DATABASE |`) + ` -` + chalk.green(` Connecting to ${CFG.db.url + CFG.db.name}`));
+    mongoose.connect(CFG.db.url + CFG.db.name);
 
-    return new Promise(function(resolve, reject){
+    mongoose.connection.on('error', function (err) {
 
-        //mongoose.connect('mongodb://localhost/'+CFG.db.name);
-        console.log(`| MONGO | Connecting to ${CFG.db.url+CFG.db.name}`);
-        mongoose.connect(CFG.db.url+CFG.db.name);
-
-        mongoose.connection.on('error', function(err){
-
-            reject(err);
-            console.log(chalk.red(err));
-
-        });
-
-        mongoose.connection.once('open', function(){
-
-            if(cb){
-                cb();
-            }
-            console.log(chalk.green(chalk.magenta('| MONGO DATABASE |')+' - connected'));
-            resolve();
-
-        });
+      reject(err);
+      console.log(chalk.red(err));
 
     });
 
+    mongoose.connection.once('open', function () {
+
+      if (cb) {
+        cb();
+      }
+      console.log(chalk.green(chalk.magenta('| MONGO DATABASE |') + ' - connected'));
+      resolve();
+
+    });
+
+  });
 
 };

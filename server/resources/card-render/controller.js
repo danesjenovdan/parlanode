@@ -1,36 +1,32 @@
-/**
- * Created by francizidar on 21/02/16.
- */
-
-var mongoose = require('mongoose');
-var Promise = require('bluebird');
-var request = require('request');
-var ejs = require('ejs');
+const mongoose = require('mongoose');
+const Promise  = require('bluebird');
+const request  = require('request');
+const ejs      = require('ejs');
 
 /**
  * PUT rest method
  * @param req
  * @param res
  */
-exports.update = function(req, res){
+exports.update = function (req, res) {
 
-    var id      = req.params.id;
-    var data    = req.body;
+  const id   = req.params.id;
+  const data = req.body;
 
-    console.log('Update card');
+  console.log('Update card');
 
-    var Card = mongoose.model('Card');
+  const Card = mongoose.model('Card');
 
-    Card.findByIdAndUpdate(id, data, function(err, doc){
+  Card.findByIdAndUpdate(id, data, (err, doc) => {
 
-        if(!err) {
-            res.send(doc);
-        }else{
-            console.log(err);
-            res.sendStatus(400);
-        }
+    if (!err) {
+      res.send(doc);
+    } else {
+      console.log(err);
+      res.sendStatus(400);
+    }
 
-    });
+  });
 
 };
 
@@ -40,37 +36,36 @@ exports.update = function(req, res){
  * @param req
  * @param res
  */
-exports.save = function(req, res){
+exports.save = function (req, res) {
 
-    var cardData = req.body;
+  var cardData = req.body;
 
-    cardData.uniquePath = cardData.group+'/'+cardData.method;
+  cardData.uniquePath = cardData.group + '/' + cardData.method;
 
-    var Card = mongoose.model('Card');
+  var Card = mongoose.model('Card');
 
-    Card.findOne({group:cardData.group, method:cardData.method}, function(err, doc){
+  Card.findOne({ group : cardData.group, method : cardData.method }, function (err, doc) {
 
-        if(!doc) {
+    if (!doc) {
 
-            var card = new Card(cardData);
+      var card = new Card(cardData);
 
-            card.save(function (err) {
+      card.save(function (err) {
 
-                console.log(err);
-                res.send(card);
+        console.log(err);
+        res.send(card);
 
-            });
+      });
 
-        }else{
-            //conflict
+    } else {
+      //conflict
 
-            console.log('conflict');
-            res.sendStatus(409);
+      console.log('conflict');
+      res.sendStatus(409);
 
-        }
+    }
 
-    });
-
+  });
 
 
 };
@@ -80,39 +75,38 @@ exports.save = function(req, res){
  * @param req
  * @param res
  */
-exports.delete = function(req, res){
+exports.delete = function (req, res) {
 
-    var id = req.params.id;
+  var id = req.params.id;
 
-    var Card = mongoose.model('Card');
+  var Card = mongoose.model('Card');
 
-    Card.findByIdAndRemove(id, function(err, doc){
+  Card.findByIdAndRemove(id, function (err, doc) {
 
-        if(!err) {
-            res.send(doc);
-        }else{
-            console.log(err);
-            res.sendStatus(400);
-        }
+    if (!err) {
+      res.send(doc);
+    } else {
+      console.log(err);
+      res.sendStatus(400);
+    }
 
-    });
+  });
 
 };
 
-exports.get = function(req, res){
+exports.get = function (req, res) {
 
-    var Card = mongoose.model('Card');
+  var Card = mongoose.model('Card');
 
-    Card.find(function(err, docs){
+  Card.find(function (err, docs) {
 
-        if(err){
-            res.sendStatus(400);
-        }else {
-            res.send(docs);
-        }
+    if (err) {
+      res.sendStatus(400);
+    } else {
+      res.send(docs);
+    }
 
-    });
-
+  });
 
 
 };
@@ -122,81 +116,81 @@ exports.get = function(req, res){
  * @param req
  * @param res
  */
-exports.render = function(req, res){
+exports.render = function (req, res) {
 
-    var group   = req.params.group;
-    var method  = req.params.method;
-    var id      = req.params.id;
+  var group  = req.params.group;
+  var method = req.params.method;
+  var id     = req.params.id;
 
-    var getData = {
-        group   : group,
-        method  : method,
-        id      : id
-    };
+  var getData = {
+    group  : group,
+    method : method,
+    id     : id
+  };
 
-    var date;
+  var date;
 
-    if(req.params['0'].length > 0 && req.params['0'] !== undefined) {
-        date = req.params['0'];
-        getData.date = date;
-    }
+  if (req.params['0'].length > 0 && req.params['0'] !== undefined) {
+    date         = req.params['0'];
+    getData.date = date;
+  }
 
-    var Card = mongoose.model('Card');
+  var Card = mongoose.model('Card');
 
-    console.log(group);
+  console.log(group);
 
-    Card.findOne({ method:method, group:group }, function(err, doc){
+  Card.findOne({ method : method, group : group }, function (err, doc) {
 
-        if(!err) {
+    if (!err) {
 
-            if(doc) {
+      if (doc) {
 
-                var analizeUrl = doc.dataUrl+'/'+id;
-                if(date){
-                    analizeUrl += '/'+date
-                }
-
-                request(analizeUrl, {rejectUnauthorized: false}, function (err, _res, body) {
-
-                    if (!err) {
-
-                        try {
-                            var data = JSON.parse(body);
-                            var mDoc = doc.toObject();
-
-                            console.log(body);
-
-                            var html = ejs.render(doc.ejs, {data: data});
-
-                            var body = html;
-                            res.writeHead(200, {
-                                'Content-Length': Buffer.byteLength(body),
-                                'Content-Type': 'text/html; charset=utf-8'
-                            });
-                            res.write(body);
-                            res.end();
-
-                        } catch (err) {
-                            console.log(err);
-                            res.sendStatus(400);
-                        }
-
-                    } else {
-                        res.sendStatus(400);
-                    }
-
-                });
-            }else{
-                console.log(err);
-                res.sendStatus(404);
-            }
-
-        }else{
-            console.log(err);
-            res.sendStatus(400);
+        var analizeUrl = doc.dataUrl + '/' + id;
+        if (date) {
+          analizeUrl += '/' + date
         }
 
-    });
+        request(analizeUrl, { rejectUnauthorized : false }, function (err, _res, body) {
+
+          if (!err) {
+
+            try {
+              var data = JSON.parse(body);
+              var mDoc = doc.toObject();
+
+              console.log(body);
+
+              var html = ejs.render(doc.ejs, { data : data });
+
+              var body = html;
+              res.writeHead(200, {
+                'Content-Length' : Buffer.byteLength(body),
+                'Content-Type'   : 'text/html; charset=utf-8'
+              });
+              res.write(body);
+              res.end();
+
+            } catch (err) {
+              console.log(err);
+              res.sendStatus(400);
+            }
+
+          } else {
+            res.sendStatus(400);
+          }
+
+        });
+      } else {
+        console.log(err);
+        res.sendStatus(404);
+      }
+
+    } else {
+      console.log(err);
+      res.sendStatus(400);
+    }
+
+  });
 
 
 };

@@ -1,41 +1,34 @@
-/**
- * Set CFG as global variable ( sorry )
- */
-global.CFG = require('./config');
-
-const server   = require('./server/server');
-const database = require('./server/database');
-const chalk    = require('chalk');
+const server   = require('../server/server');
+const database = require('../server/database');
 const mongoose = require('mongoose');
 const inquirer = require('inquirer');
 const bcrypt   = require('bcryptjs');
+global.CFG     = require('../config');
 
-/**
- * Init app
- * @returns {Promise.<T>|Promise|*}
- */
-function init() {
+database.connect()
+  .then(() => server.init(false))
+  .then(() => {
 
-  return database.connect()
-    .then(server.init)
-    .then(initializeDeployment)
-    .then(() => {
+    return initializeDeployment();
 
-      console.log(chalk.green('All is well!'));
+  })
+  .then(() => {
 
-    })
-    .catch((err) => {
-      console.log(chalk.red('Error'));
-      console.log(err);
-    });
+    console.log('Done!');
+    process.exit()
 
-}
+  })
+  .catch((err) => {
+
+    console.log(err);
+
+  });
 
 function initializeDeployment() {
 
   const Config = mongoose.model('Config');
 
-  return Config.findOne({})
+  return Config.findOne({}).remove().then(() => Config.findOne({})
     .then((configDoc) => {
 
       if (configDoc && configDoc.password) return Promise.resolve();
@@ -72,16 +65,6 @@ function initializeDeployment() {
           console.log(err);
         });
 
-    });
+    }));
 
 }
-
-/**
- * Run if main
- */
-if (require.main === module) {
-  init();
-}
-
-exports.app  = server.app;
-exports.init = init;

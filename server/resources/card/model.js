@@ -1,9 +1,6 @@
-/**
- * Created by francizidar on 21/02/16.
- */
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var schema = mongoose.Schema({
+const schema = mongoose.Schema({
 
     dateTimeCreated : { type:Date, default:Date.now },
     name        : String,

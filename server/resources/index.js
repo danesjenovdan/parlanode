@@ -1,14 +1,20 @@
-/**
- * Created by francizidar on 21/02/16.
- */
+const _ = require('lodash');
 
-module.exports = function(app){
+const models = require('require-all')({
+  dirname     : __dirname,
+  filter      : /(model)\.js$/,
+  excludeDirs : /^\.(git|svn)$/,
+  recursive   : true
+});
 
-    require('./auth')(app);
-    require('./card-render')(app);
-    require('./card')(app);
-    require('./token')(app);
+const routers = require('require-all')({
+  dirname     : __dirname,
+  filter      : /(routes)\.js$/,
+  excludeDirs : /^\.(git|svn)$/,
+  recursive   : true
+});
 
-    return true;
+// Set Mongoose Promise to BlueBird
+require('mongoose').Promise = require('bluebird');
 
-};
+module.exports = app => _.each(routers, resource => _.each(resource, router => router(app)));
