@@ -7,9 +7,9 @@ const cors             = require('cors');
 const session          = require('express-session');
 const expressValidator = require('express-validator');
 
-exports.init = function () {
+exports.init = function (runServer) {
 
-  return setupExpress()
+  return setupExpress(runServer)
     .then(setupResources)
     .catch(function (err) {
 
@@ -21,7 +21,7 @@ exports.init = function () {
 
 exports.app = app;
 
-function setupExpress() {
+function setupExpress(runServer) {
 
   return new Promise(function (resolve, reject) {
 
@@ -37,14 +37,17 @@ function setupExpress() {
     app.use(expressValidator());
 
     // start listening on port
-    const server = app.listen(CFG.port, function () {
+    if (runServer) {
+      const server = app.listen(CFG.port, function () {
 
-      console.log(chalk.green(chalk.magenta('| EXPRESS SERVER |') + ' - running on: http://localhost:' + CFG.port));
+        console.log(chalk.green(chalk.magenta('| EXPRESS SERVER |') + ' - running on: http://localhost:' + CFG.port));
+        resolve();
+
+      });
+      server.timeout = CFG.serverTimeout;
+    }else{
       resolve();
-
-    });
-
-    server.timeout = CFG.serverTimeout;
+    }
 
   });
 

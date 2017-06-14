@@ -35,7 +35,7 @@ function initializeDeployment() {
 
   const Config = mongoose.model('Config');
 
-  return Config.findOne({}).remove().then(() => Config.findOne({})
+  return Config.findOne({})
     .then((configDoc) => {
 
       if (configDoc && configDoc.password) return Promise.resolve();
@@ -72,7 +72,7 @@ function initializeDeployment() {
           console.log(err);
         });
 
-    }));
+    });
 
 }
 

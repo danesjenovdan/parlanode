@@ -6,7 +6,7 @@ const bcrypt   = require('bcryptjs');
 global.CFG     = require('../config');
 
 database.connect()
-  .then(server.init)
+  .then(() => server.init(false))
   .then(() => {
 
     return initializeDeployment();
