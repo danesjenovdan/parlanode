@@ -7,6 +7,11 @@ const spsFilePath = __dirname + '/../data/sps.json';
 
 exports.sps = [];
 
+/**
+ * Request SPS data from parlalize and save the result to disk as cache
+ * @param force
+ * @returns {Promise.<TResult>}
+ */
 exports.loadSPS = (force) => {
 
   return Promise.resolve()
@@ -14,10 +19,10 @@ exports.loadSPS = (force) => {
 
       const spsExists = fs.existsSync(spsFilePath);
 
-      if ( spsExists && !force ) {
+      if (spsExists && !force) {
         spsRequest();
         // TODO - legacy array wrap
-        return Promise.resolve([ JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8')) ]);
+        return Promise.resolve([JSON.parse(fs.readFileSync(spsFilePath, 'UTF-8'))]);
       }
 
       return spsRequest();
@@ -31,24 +36,27 @@ exports.loadSPS = (force) => {
 
 };
 
+/**
+ * Get sps
+ */
 function spsRequest() {
 
-  return new Promise(( resolve, reject ) => {
+  return new Promise((resolve, reject) => {
 
-    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', ( err, res, body ) => {
+    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', (err, res, body) => {
 
-        if ( err ) return reject(err);
+      if (err) return reject(err);
 
-        try {
-          fs.writeFileSync(spsFilePath, body);
-          // TODO - legacy array wrap
-          resolve([ JSON.parse(body) ]);
-        }
-        catch ( err ) {
-          reject(err);
-        }
+      try {
+        fs.writeFileSync(spsFilePath, body);
+        // TODO - legacy array wrap
+        resolve([JSON.parse(body)]);
+      }
+      catch (err) {
+        reject(err);
+      }
 
-      });
+    });
 
   });
 
