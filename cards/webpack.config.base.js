@@ -29,7 +29,7 @@ module.exports = cardPath => ({
   },
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue',
+      vue$: 'vue/dist/vue.esm.js',
       cardPath: `${path.resolve(cardPath)}`,
       components: `${path.resolve(__dirname)}/_components`,
       helpers: `${path.resolve(__dirname)}/_helpers`,
@@ -46,9 +46,10 @@ module.exports = cardPath => ({
   },
   plugins: [
     new LodashModuleReplacementPlugin({
-      shorthands: true
+      shorthands: true,
     }),
-    new webpack.optimize.UglifyJsPlugin({ // disable this whole plugin to get better debugging output
+    // disable this whole plugin to get better debugging output
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
         screw_ie8: true,

@@ -10,13 +10,11 @@ module.exports = () => {
   return Object.assign(config, {
     entry: './cards/devBundle.js',
     output: {
-      filename: 'bundle.js',
+      path: path.resolve(__dirname, './build'),
       publicPath: '/build/',
+      filename: 'bundle.js',
     },
     plugins: [
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-      }),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"development"',
