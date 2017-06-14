@@ -27,7 +27,6 @@ exports.login = (req, res) => {
     }).then((match) => {
 
       if (!match) {
-
         res.status(401).send('Wrong email or password');
       }
 

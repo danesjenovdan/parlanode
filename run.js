@@ -17,7 +17,7 @@ const bcrypt   = require('bcryptjs');
 function init() {
 
   return database.connect()
-    .then(server.init)
+    .then(() => server.init(true))
     .then(initializeDeployment)
     .then(() => {
 
