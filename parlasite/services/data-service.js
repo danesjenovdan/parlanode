@@ -7,6 +7,11 @@ const spsFilePath = __dirname + '/../data/sps.json';
 
 exports.sps = [];
 
+/**
+ * Request SPS data from parlalize and save the result to disk as cache
+ * @param force
+ * @returns {Promise.<TResult>}
+ */
 exports.loadSPS = (force) => {
 
   return Promise.resolve()
@@ -31,6 +36,9 @@ exports.loadSPS = (force) => {
 
 };
 
+/**
+ * Get sps
+ */
 function spsRequest() {
 
   return new Promise(( resolve, reject ) => {

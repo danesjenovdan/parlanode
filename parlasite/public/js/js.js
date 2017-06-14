@@ -3,18 +3,6 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-function equalHeight($elementByClass) {
-
-    var h = 0;
-    $($elementByClass).each(function () {
-        if ($(this).height() > h) {
-            h = $(this).height();
-        }
-    });
-    $($elementByClass).height(h);
-
-}
-
 function toggleHeaderSearch(focus) {
     $(".searchiconbuttton").toggle();
 
@@ -60,21 +48,6 @@ $(function () {
         'datumTokenizer': Bloodhound.tokenizers.obj.whitespace('name'),
         'queryTokenizer': Bloodhound.tokenizers.whitespace,
         'local': mps_data
-        // remote: {
-        //     url: "/search/autocomplete/",
-        //     replace: function(url, query) {
-        //         return url + "?q=" + query;
-        //     },
-        //     filter: function(stocks) {
-        //         return $.map(stocks, function(data) {
-        //             return {
-        //                 tokens: data.tokens,
-        //                 symbol: data.symbol,
-        //                 name: data.name
-        //             }
-        //         });
-        //     }
-        // }
     });
 
     var search_ops_data = ops_data;
@@ -154,10 +127,7 @@ $(function () {
                 window.location.href = value.url;
             }
             $('.search-input-header').typeahead('close').typeahead('val', '');
-            // $(".header-searchhide").css({
-            //     "width": "100%",
-            //     "height": "30px"
-            // }).show().html('<div class="nalagalnik"></div>');
+
         });
 
         $(".tt-dataset.tt-dataset-seje").on("click", "div", function () {
@@ -189,8 +159,6 @@ $(function () {
                 ret.push((d) + '/' + encodeURIComponent(data[d]));
             return ret.join('&');
         }
-
-        //var queries = ["raba-skozi-cas", "raba-po-strankah", "najveckrat-so-pojem-uporabili", "nastopi-v-katerih-je-bil-iskalni-niz-izrecen"]
 
         var queryParams = getQueryParameters();
         var querystring = encodeQueryData(queryParams);
@@ -257,8 +225,6 @@ $(function () {
                 ret.push((d) + '/' + encodeURIComponent(data[d]));
             return ret.join('&');
         }
-
-        //var queries = ["raba-skozi-cas", "raba-po-strankah", "najveckrat-so-pojem-uporabili", "nastopi-v-katerih-je-bil-iskalni-niz-izrecen"]
 
         var queryParams = getQueryParameters();
         console.log(queryParams);
@@ -451,9 +417,6 @@ $(function () {
                 $(".address-donation").html('').addClass("success").html(data.result);
                 $(".card-error").hide();
                 btn.hide();
-
-                // $("#modal-doniraj-address").modal('hide');
-                // $("#modal-doniraj-hvala-donacija").modal('show');
             })
             .fail(function () {
 
@@ -475,8 +438,6 @@ $(function () {
                         container: "paypal-container",
                     },
                     onPaymentMethodReceived: function (response) {
-
-                        console.log(response);
 
                         $.ajax({
                             method: "POST",
@@ -526,7 +487,6 @@ $(function () {
             .done(function (data) {
                 token = data.token;
 
-//CARD
                 var client = new braintree.api.Client({
                     clientToken: token
                 });
@@ -542,12 +502,9 @@ $(function () {
 
                     if (err) {
                         $(".card-error").show();
-                        console.log(err);
                     }
                     else {
                         $(".card-error").hide();
-                        console.log(response);
-                        console.log(response['nonce']);
 
                         //Normal
                         if ($("#donation-monthly").is(':checked')) {
@@ -564,19 +521,14 @@ $(function () {
                                 console.log(resp);
                                 if (resp.status == "OK") {
 
-
-                                    //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
-
                                     $("#modal-doniraj-card").modal('hide');
                                     $("#modal-doniraj-hvala-donacija").modal('show');
-
 
                                 } else {
                                     alert(resp.status)
                                 }
                             });
                         } else {
-                            //Recurring
 
                             $.ajax({
                                 method: "POST",
@@ -590,8 +542,6 @@ $(function () {
                             }).done(function (resp) {
                                 console.log(resp);
                                 if (resp.status == "OK") {
-
-                                    //data-dismiss="modal" data-next-target="#modal-doniraj-hvala-donacija"
 
                                     $("#modal-doniraj-card").modal('hide');
                                     $("#modal-doniraj-hvala-donacija").modal('show');
@@ -608,47 +558,6 @@ $(function () {
             });
 
     });
-
-    function loadScript(url, callback) {
-        // check for duplicates
-        var list = document.getElementsByTagName('script');
-        var i = list.length,
-            flag = false;
-        while (i--) {
-            if (list[i].src == url) {
-                flag = true;
-            }
-        }
-        if (!flag) {
-            console.log('loading: ' + url);
-            var tag = document.createElement('script');
-            tag.type = "text/javascript";
-
-            if (tag.readyState) { //IE
-                tag.onreadystatechange = function () {
-                    if (tag.readyState == "loaded" || tag.readyState == "complete") {
-                        tag.onreadystatechange = null;
-                        callback();
-                    }
-                };
-            } else { //Others
-                tag.onload = function () {
-                    callback();
-                };
-            }
-            tag.src = url;
-            document.getElementsByTagName("head")[0].appendChild(tag);
-        }
-    }
-
-    /*$(".doniraj").click(function () {
-     loadScript('https://js.braintreegateway.com/js/braintree-2.30.0.min.js', function () {
-     loadScript('https://js.braintreegateway.com/web/3.5.0/js/three-d-secure.min.js', function () {
-     loadScript('https://js.braintreegateway.com/web/3.5.0/js/hosted-fields.min.js', function () {
-     });
-     });
-     });
-     });*/
 
     $(".measure").click(function () {
 
@@ -704,15 +613,6 @@ $(function () {
     }
 
     mcSearch();
-
-
-
-
-    // $("#obvestila button").click(function(event){
-    //
-    //     event.preventDefault();
-    //     //return false;
-    // });
 
     $(".searchForm").submit(function () {
        var tmpVal = $(this).find(".form-control");
