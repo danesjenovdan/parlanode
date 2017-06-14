@@ -105,7 +105,7 @@ export default {
 
     Object.keys(this.$options.cardData.data).forEach((groupName) => {
       const groupValue = this.$options.cardData.data[groupName];
-      if (groupValue.acronym !== 'PS NP') {
+      if (!groupValue.disbanded) {
         groups.push({
           id: groupName,
           acronym: groupValue.acronym,
