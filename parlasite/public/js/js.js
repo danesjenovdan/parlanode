@@ -40,7 +40,6 @@ $(function () {
     });
 
     $(".search-input-header").blur(function () {
-        // toggleHeaderSearch(false);
         return false;
     });
 
@@ -77,7 +76,6 @@ $(function () {
             'hint': false,
             'highlight': true
         }, {
-            // 'limit': 3,
             'name': 'poslanci',
             'display': 'name',
             'source': mps_search_token,
@@ -89,7 +87,6 @@ $(function () {
                 'header': '<div class="searchheader">POSLANKE IN POSLANCI</div>'
             }
         }, {
-            // 'limit': 3,
             'name': 'skupine',
             'display': 'acronym',
             'source': ops_search_token,
@@ -101,7 +98,6 @@ $(function () {
                 'header': '<div class="searchheader results">POSLANSKE SKUPINE</div>'
             }
         }, {
-            // 'limit': 3,
             'name': 'seje',
             'display': 'acronym',
             'source': sessionsearch_token,
@@ -155,7 +151,6 @@ $(function () {
         function encodeQueryData(data) {
             var ret = [];
             for (var d in data)
-                //ret.push(encodeURIComponent(d) + '/' + encodeURIComponent(data[d]));
                 ret.push((d) + '/' + encodeURIComponent(data[d]));
             return ret.join('&');
         }
@@ -221,7 +216,6 @@ $(function () {
         function encodeQueryData(data) {
             var ret = [];
             for (var d in data)
-                //ret.push(encodeURIComponent(d) + '/' + encodeURIComponent(data[d]));
                 ret.push((d) + '/' + encodeURIComponent(data[d]));
             return ret.join('&');
         }
@@ -432,7 +426,7 @@ $(function () {
         var jqxhr = $.ajax("https://prispevaj.parlameter.si/getBrainToken/")
             .done(function (data) {
                 token = data.token;
-                //PAYPAL
+
                 braintree.setup(token, "custom", {
                     paypal: {
                         container: "paypal-container",
