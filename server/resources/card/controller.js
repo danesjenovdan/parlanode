@@ -134,32 +134,6 @@ exports.get = ( req, res ) => {
   });
 };
 
-exports.updateEjs = ( req, res ) => {
-  const cardId    = req.params.cardId;
-  const ejsString = req.body.ejs;
-
-  if ( !ejsString ) {
-    res.status(400).send('Missing ejs');
-    return;
-  }
-
-  const Card = mongoose.model('Card');
-
-  Card.findByIdAndUpdate(cardId, { ejs : ejsString, lastUpdate : new Date() })
-    .then(( doc ) => {
-      res.status(200).send({
-        _id     : doc._id,
-        name    : doc.name,
-        group   : doc.group,
-        method  : doc.method,
-        dataUrl : doc.dataUrl,
-      });
-    })
-    .catch(( err ) => {
-      res.status(400).send(err);
-    });
-};
-
 exports.getCardById = ( req, res ) => {
   const cardId     = req.params.cardId;
   const CardRender = mongoose.model('CardRender');
