@@ -41,8 +41,8 @@
     </style>
     <div class="alt-header-container">
         <div class="alt-header">
-            <div class="media-object img-circle session-logo backgroundred">
-                <b>S</b>
+            <div class="media-object img-circle session-logo">
+                <img src="https://cdn.parlameter.si/v1/parlassets/icons/seja-<%= data.session.name.split(' ')[1] %>.svg" alt="<%-data.session.name%>">
             </div>
             <div class="header-info-container">
                 <h1><%= data.session.name %></h1>
@@ -58,8 +58,8 @@
     <% if ('all' in data) { %>
         <div class="alt-header-container">
             <div class="alt-header">
-                <div class="media-object img-circle session-logo backgroundred">
-                    <b>S</b>
+                <div class="media-object img-circle session-logo">
+                    <img src="https://cdn.parlameter.si/v1/parlassets/icons/seja-<%= data.name.split(' ')[1] %>.svg" alt="<%-data.name%>">
                 </div>
                 <div class="header-info-container">
                     <h1><%= data.name %></h1>
@@ -142,8 +142,8 @@
 <% } else if (cardData.headerType == 'seje'){ %>
     <div class="alt-header-container">
         <div class="alt-header">
-            <div class="media-object img-circle session-logo backgroundred">
-                <b>S</b>
+            <div class="media-object img-circle session-logo">
+                <img src="https://cdn.parlameter.si/v1/parlassets/icons/seja-<%= data.session.name.split(' ')[1] %>.svg" alt="<%-data.session.name%>">
             </div>
             <div class="header-info-container">
                 <script>var data = <%- JSON.stringify(data); %>;</script>
