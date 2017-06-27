@@ -74,6 +74,7 @@
 
 <script>
 /* globals window $ measure */
+import moment from 'moment';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
@@ -86,16 +87,11 @@ export default {
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {
-    const groups = [{
+    let groups = [{
       id: 95,
       color: 'dz',
       acronym: 'DZ',
       name: 'Vsi',
-    }, {
-      id: 143,
-      color: 'opoz',
-      acronym: 'opoz',
-      name: 'Opozicija',
     }, {
       id: 144,
       color: 'koal',
@@ -103,10 +99,11 @@ export default {
       name: 'Koalicija',
     }];
 
+    let namedGroups = [];
     Object.keys(this.$options.cardData.data).forEach((groupName) => {
       const groupValue = this.$options.cardData.data[groupName];
       if (!groupValue.disbanded) {
-        groups.push({
+        namedGroups.push({
           id: groupName,
           acronym: groupValue.acronym,
           color: groupValue.acronym.toLowerCase().replace(/ /g, '_'),
@@ -115,15 +112,18 @@ export default {
       }
     });
 
+    namedGroups = sortBy(namedGroups, 'name');
+    groups = groups.concat(namedGroups);
+
     return {
       voteData: [],
       loading: true,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
-      selectedSort: 'date',
+      selectedSort: 'maximum',
       sortOptions: [
-        { label: 'Datumu', id: 'date' },
         { label: 'Neenotnosti', id: 'maximum' },
+        { label: 'Datumu', id: 'date' },
       ],
       textFilter: '',
       url: 'https://glej.parlameter.si/group/method/',
@@ -137,13 +137,6 @@ export default {
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
       groups,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
     };
   },
   computed: {
@@ -186,6 +179,19 @@ export default {
     filteredVotingDays() {
       return this.getFilteredVotingDays();
     },
+    headerConfig() {
+      return {
+        circleIcon: 'og-list',
+        heading: '&nbsp;',
+        subheading: '7. sklic parlamenta',
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.dynamicTitle,
+      };
+    },
+    dynamicTitle() {
+      return this.$options.cardData.cardData.name +
+        (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+    },
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
@@ -209,7 +215,8 @@ export default {
       };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
-      const getDateFromVote = vote => (vote.date ? vote.date.split('T')[0] : null);
+      const getDateFromVote = vote =>
+        (vote.date ? moment(vote.date).format('D. M. YYYY') : null);
 
       let currentVotingDays;
 
@@ -218,8 +225,6 @@ export default {
       } else {
         currentVotingDays = zipObject(votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`), votes.map(vote => [vote]));
       }
-
-      console.log(currentVotingDays);
 
       const mappedVotingDays = [];
       Object.keys(currentVotingDays).forEach((key) => {
@@ -387,10 +392,13 @@ export default {
   .ballot {
     $section-border: 1px solid $black;
     background: $grey;
+    color: $black;
     margin: 7px 0 8px 0;
     min-height: 90px;
     padding: 10px 14px;
     position: relative;
+
+    &:hover, &:active, &:focus { text-decoration: none; }
 
     @include respond-to(desktop) {
       display: flex;
@@ -401,8 +409,11 @@ export default {
     }
 
     .disunion {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding-right: 16px;
+      text-align: center;
       .percentage {
         font-size: 24px;
         @include respond-to(desktop) {

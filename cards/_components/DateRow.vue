@@ -16,7 +16,7 @@ export default {
 
 .date-row {
   background-color: $grey;
+  font-weight: bold;
   padding: 10px;
-  font-weight: 500;
 }
 </style>
