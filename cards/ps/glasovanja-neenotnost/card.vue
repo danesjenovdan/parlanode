@@ -74,7 +74,7 @@
 
 <script>
 /* globals window $ measure */
-import moment from 'moment';
+import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
@@ -216,7 +216,7 @@ export default {
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
       const getDateFromVote = vote =>
-        (vote.date ? moment(vote.date).format('D. M. YYYY') : null);
+        (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
 
       let currentVotingDays;
 
@@ -290,12 +290,18 @@ export default {
 
 .groups {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 16px;
 
   .striped-button {
-    flex: 1;
-    &:not(:first-child) { margin-left: 5px; }
+    width: calc(33.33% - 3.33px);
+    margin-bottom: 5px;
+    @include respond-to(desktop) {
+      flex: 1;
+      margin-bottom: 0;
+      &:not(:first-child) { margin-left: 5px; }
+    }
   }
 }
 
@@ -393,6 +399,7 @@ export default {
     $section-border: 1px solid $black;
     background: $grey;
     color: $black;
+    display: block;
     margin: 7px 0 8px 0;
     min-height: 90px;
     padding: 10px 14px;
@@ -410,10 +417,13 @@ export default {
 
     .disunion {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      padding-right: 16px;
       text-align: center;
+
+      @include respond-to(desktop) {
+        flex-direction: column;
+        padding-right: 16px;
+      }
       .percentage {
         font-size: 24px;
         @include respond-to(desktop) {
@@ -424,24 +434,28 @@ export default {
       .text {
         font-size: 13px;
         line-height: 34px;
+        margin-left: 10px;
         text-transform: uppercase;
         @include respond-to(desktop) {
           font-size: 16px;
           line-height: 23px;
+          margin-left: 0;
         }
       }
     }
 
     .name {
       border-bottom: $section-border;
+      border-top: $section-border;
       font-family: Roboto Slab, Times New Roman, serif;
       font-size: 11px;
       font-weight: 300;
       line-height: 1.45em;
-      padding: 10px 0 4px 0;
+      padding: 10px 0;
 
       @include respond-to(desktop) {
         border-bottom: none;
+        border-top: none;
         border-left: $section-border;
         align-items: center;
         display: flex;
@@ -453,14 +467,13 @@ export default {
 
     .result {
       align-items: center;
-      border-bottom: $section-border;
       display: flex;
-      justify-content: left;
+      justify-content: center;
       padding: 10px 0 0 0;
 
       @include respond-to(desktop) {
-        border-bottom: none;
         border-left: $section-border;
+        justify-content: left;
         padding: 0 0 0 16px;
         width: 136px;
       }
