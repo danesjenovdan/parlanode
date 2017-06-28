@@ -30,10 +30,11 @@ export default {
   },
   computed: {
     rows() {
+      const rows = JSON.parse(JSON.stringify(this.data));
       const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value), 0);
       const mytotal = this.data.reduce((acc, row) => acc + row.value, 0);
 
-      return this.data.map(row => ({
+      return rows.map(row => ({
         name: row.label,
         value: row.value,
         widthPercentage: (row.value / mymax) * 80,

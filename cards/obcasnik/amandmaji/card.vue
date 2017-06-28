@@ -34,11 +34,11 @@
 <script>
 /* globals window $ measure */
 import common from 'mixins/common';
-import TrueBarChart from 'components/TrueBarChart.vue';
+import BarChart from 'components/BarChart.vue';
 
 export default {
   components: {
-    TrueBarChart
+    BarChart
   },
   mixins: [common],
   name: 'ImeKartice',

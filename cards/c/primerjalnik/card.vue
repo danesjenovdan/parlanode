@@ -20,7 +20,7 @@
                 class="tag">
                 {{ person.name }}
               </span>
-              <span class="plus" @click="openModalSame">+</span>
+              <span class="plus" @click="toggleModal('same', true)">+</span>
             </span>
             glasovali enako,
             <span class="primerjalnik-against">
@@ -36,7 +36,7 @@
                 class="tag">
                 {{ person.name }}
               </span>
-              <span class="plus" @click="openModalDifferent">+</span>
+              <span class="plus" @click="toggleModal('different', true)">+</span>
             </span>
             pa drugače od njih.
             <span class="load" @click="loadResults">Naloži</span>
@@ -132,7 +132,7 @@
           </tab>
           <tab header="Dinamika glede na MDT" class="tab-three">
             <div v-if="filteredVotes.length === 0" class="empty"></div>
-            <true-bar-chart v-else :data="barChartData"></true-bar-chart>
+            <bar-chart v-else :data="barChartData"></bar-chart>
           </tab>
         </tabs>
 
@@ -150,10 +150,10 @@
     </div>
     <card-footer :link="slugs.base"></card-footer>
 
-    <div class="card-modal" id="primerjalnik-modal-same">
+    <div v-show="sameModalVisible" class="card-modal">
       <div class="card-modal-header">
         Vklopi cele poslanske skupine ali dodaj posamezne poslance.
-        <div class="closeme" @click="closeModalSame"></div>
+        <div class="closeme" @click="toggleModal('same', false)"></div>
       </div>
       <div class="card-modal-content">
         <p>
@@ -174,8 +174,8 @@
       </div>
     </div>
 
-    <div class="card-modal" id="primerjalnik-modal-different">
-      <div class="card-modal-header">Vklopi cele poslanske skupine ali dodaj posamezne poslance.<div class="closeme" @click="closeModalDifferent"></div></div>
+    <div v-show="differentModalVisible" class="card-modal">
+      <div class="card-modal-header">Vklopi cele poslanske skupine ali dodaj posamezne poslance.<div class="closeme" @click="toggleModal('different', false)"></div></div>
       <div class="card-modal-content">
         <p>
           <span
@@ -202,12 +202,12 @@
 
   import common from 'mixins/common';
   import TimeChart from 'components/TimeChart.vue';
-  import TrueBarChart from 'components/TrueBarChart.vue';
+  import BarChart from 'components/BarChart.vue';
 
   export default {
     components: {
       TimeChart,
-      TrueBarChart,
+      BarChart,
     },
     mixins: [common],
     name: 'ImeKartice',
@@ -222,6 +222,8 @@
         total: 0,
         slugs: this.$options.cardData.urlsData,
         shortenedCardUrl: '',
+        sameModalVisible: false,
+        differentModalVisible: false,
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -360,17 +362,8 @@
         party.isDifferent = !party.isDifferent;
         party.isSame = false;
       },
-      openModalSame() {
-        $('#primerjalnik-modal-same').addClass('open');
-      },
-      openModalDifferent() {
-        $('#primerjalnik-modal-different').addClass('open');
-      },
-      closeModalSame() {
-        $('#primerjalnik-modal-same').removeClass('open');
-      },
-      closeModalDifferent() {
-        $('#primerjalnik-modal-different').removeClass('open');
+      toggleModal(modalType, newState) {
+        this[`${modalType}ModalVisible`] = newState;
       },
       loadResults() {
         if (this.selectedSamePeople.length + this.sameParties.length > 1 ||
@@ -387,8 +380,6 @@
               console.log(data);
               this.data = data.results;
               this.total = data.total;
-
-              $('.modal').modal('hide');
               this.loading = false;
             },
             error(error) {
@@ -611,10 +602,8 @@
     background-repeat: no-repeat;
   }
 
-
   // CARD MODAL
   .card-modal {
-    display: none;
     position: absolute;
     width: 280px;
     left: 50%;
@@ -624,10 +613,6 @@
     background-color: #F0F5F8;
 
     @include card(2);
-
-    &.open {
-      display: block;
-    }
 
     .card-modal-header {
       width: 100%;
