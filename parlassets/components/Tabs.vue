@@ -28,8 +28,8 @@ export default {
       this.show = this.tabs[value];
     },
   },
-  mounted() {
-    this.active = 0;
+  created() {
+    this.active = this.startTab || 0;
   },
   methods: {
     select(tabIndex) {
@@ -45,6 +45,7 @@ export default {
       default: false,
     },
     switchCallback: Function,
+    startTab: Integer,
   },
 };
 </script>
