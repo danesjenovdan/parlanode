@@ -162,15 +162,15 @@ export default {
               .attr('r', 7);
           }
 
-          if (i > 2 && i < data.length - 3.5) {
+          if (i > 5 && i < data.length - 6.5) {
             focus.attr('transform', `translate(${  x(d.date)  },${  y(d.occurences)  })`);
-          } else if (i < 3) {
-            focus.attr('transform', `translate(${  x(data[2].date)  },${  y(d.occurences)  })`);
+          } else if (i < 6) {
+            focus.attr('transform', `translate(${  x(data[6].date)  },${  y(d.occurences)  })`);
           } else {
             focus.attr('transform', `translate(${  x(data[data.length - 4].date)  },${  y(d.occurences)  })`);
           }
 
-          focus.select('text').text(`${SI.timeFormat('%B %Y')(d.date)} | ${d.occurences}`);
+          focus.select('text').text(`${SI.timeFormat('%d. %B %Y')(d.date)} | ${d.occurences}`);
         }
       }
 

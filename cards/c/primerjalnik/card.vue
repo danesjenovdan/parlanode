@@ -5,108 +5,102 @@
     <div class="card-content">
       <div class="card-content-front">
         <div class="primerjalnik">
-          Zanima me, na katerih glasovanjih so <span class="primerjalnik-for"><span v-for="party in sameParties">{{ party.acronym }} </span>
-          <span
-            v-for="person in selectedSamePeople">{{ person.name }} </span><span class="plus" @click="openModalSame"></span></span> glasovali enako, <span class="primerjalnik-against"><span v-for="party in differentParties">{{ party.acronym }} </span>
-            <span
-              v-for="person in selectedDifferentPeople">{{ person.name }} </span><span class="plus" @click="openModalDifferent"></span></span> pa drugače od njih.
-        </div>
-        <div class="special-container">
-          <div class="searchfilter-checkbox">
-              <input id="rev" type="checkbox" class="checkbox" @click="handleCheckbox" v-bind:checked="special">
-              <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+          <p>Zanima me, na katerih glasovanjih so <span class="primerjalnik-for"><span v-for="party in sameParties" class="tag" @click="togglePartySame(party)">{{ party.acronym }}</span> <span
+            v-for="person in selectedSamePeople" class="tag">{{ person.name }}</span><span class="plus" @click="openModalSame">+</span></span> glasovali enako,
+            <span class="primerjalnik-against"><span v-for="party in differentParties" class="tag">{{ party.acronym }}</span><span v-for="person in selectedDifferentPeople" class="tag">{{ person.name }}</span><span class="plus" @click="openModalDifferent">+</span></span> pa drugače od njih. <span class="load" @click="loadResults">Naloži</span></p>
+          <div class="row primerjalnik-extras">
+            <div class="col-md-4">
+              <div class="searchfilter-checkbox">
+                  <input id="rev" type="checkbox" class="checkbox" @click="handleCheckbox" v-bind:checked="special">
+                  <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <button @click="loadResults" class="loadme">Naloadaj</button>
-          </div>
-        </div>
-
-        <div>{{ votes.length }} filtriranih glasovanj predstavlja {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
-          vseh glasovanj.</div>
-
-        <div>{{ queryUrl }}</div>
 
         <tabs dark :switch-callback="focusTab">
           <tab header="Seznam glasovanj">
-            <div class="seznam-glasovanj-container">
-              <div id="votingCard" class="date-list">
-                <div class="session_voting">
-                  <div v-for="vote in filteredVotes" class="clearfix single_voting">
-                    <div v-if="vote.results.is_outlier" class="fire-badge"></div>
-                    <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
-                    <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
-                    <a :href="vote.url">
-                      <div class=" col-md-1 ">
-                        <div :class="vote.accepted">
+            <div class="empty" v-if="filteredVotes.length === 0"></div>
+            <div v-else id="votingCard" class="date-list">
+              <div class="session_voting">
+                <div v-for="vote in filteredVotes" class="clearfix single_voting">
+                  <div v-if="vote.results.is_outlier" class="fire-badge"></div>
+                  <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
+                  <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
+                  <a :href="vote.url">
+                    <div class=" col-md-1 ">
+                      <div :class="vote.accepted">
+                        <p>
+                          <i :class="vote.accepted_glyph"></i>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-11 border-left ">
+                      <div class="col-md-6 ">
+                        <div class="session_title ">
                           <p>
-                            <i :class="vote.accepted_glyph"></i>
+                            {{ vote.results.text }}
                           </p>
                         </div>
                       </div>
-                      <div class="col-md-11 border-left ">
-                        <div class="col-md-6 ">
-                          <div class="session_title ">
-                            <p>
-                              {{ vote.results.text }}
-                            </p>
+                      <div class="col-md-6 ">
+                        <div class="session_votes ">
+                          <div class="progress smallbar ">
+                            <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                              <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
+                            </div>
+                            <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
+                              <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
+                            </div>
+                            <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
+                              <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
+                            </div>
+                            <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
+                              <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
+                            </div>
+                          </div>
+                          <div class="row ">
+                            <div class="col-xs-3 ">
+                              {{ vote.results.votes_for }}
+                              <div class="type ">Za</div>
+                              <div class="indicator aye ">&nbsp;</div>
+                            </div>
+                            <div class="col-xs-3 ">
+                              {{ vote.results.against }}
+                              <div class="type ">Proti</div>
+                              <div class="indicator ney ">&nbsp;</div>
+                            </div>
+                            <div class="col-xs-3 ">
+                              {{ vote.results.abstain }}
+                              <div class="type ">Vzdržan</div>
+                              <div class="indicator abstention ">&nbsp;</div>
+                            </div>
+                            <div class="col-xs-3 ">
+                              {{ vote.results.not_present }}
+                              <div class="type ">Niso</div>
+                              <div class="indicator not ">&nbsp;</div>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-md-6 ">
-                          <div class="session_votes ">
-                            <div class="progress smallbar ">
-                              <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                                <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
-                              </div>
-                              <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                                <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
-                              </div>
-                              <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                                <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
-                              </div>
-                              <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                                <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
-                              </div>
-                            </div>
-                            <div class="row ">
-                              <div class="col-xs-3 ">
-                                {{ vote.results.votes_for }}
-                                <div class="type ">Za</div>
-                                <div class="indicator aye ">&nbsp;</div>
-                              </div>
-                              <div class="col-xs-3 ">
-                                {{ vote.results.against }}
-                                <div class="type ">Proti</div>
-                                <div class="indicator ney ">&nbsp;</div>
-                              </div>
-                              <div class="col-xs-3 ">
-                                {{ vote.results.abstain }}
-                                <div class="type ">Vzdržan</div>
-                                <div class="indicator abstention ">&nbsp;</div>
-                              </div>
-                              <div class="col-xs-3 ">
-                                {{ vote.results.not_present }}
-                                <div class="type ">Niso</div>
-                                <div class="indicator not ">&nbsp;</div>
-                              </div>
-                            </div>
-                          </div>
 
-                        </div>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                 </div>
-
               </div>
-            </div>            
+
+            </div>
           </tab>
           <tab header="Dinamika skozi čas">
-            <time-chart :data="data"></time-chart>
+            <div class="empty" v-if="filteredVotes.length === 0"></div>
+            <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
           </tab>
           <tab header="Dinamika glede na MDT">
-            <bar-chart :data="data"></bar-chart>
+            <div class="empty" v-if="filteredVotes.length === 0"></div>
+            <bar-chart v-if="filteredVotes.length !== 0" :data="data"></bar-chart>
           </tab>
         </tabs>
 
@@ -124,63 +118,23 @@
     </div>
     <card-footer :link="slugs.base" />
 
-    <div class="modal fade" tabindex="1" role="dialog" id="modal-primerjalnik-same">
-      <div class="modal-dialog modal-wide modal-center" role="document">
-        <div class="modal-center-wrapper">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Vklopi cele poslanske skupine ali poišči posamezne poslance.</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <span v-for="party in parties" :class="['primerjalnik-ps-switch', {'on': party.isSame}]" @click="togglePartySame(party)"
-                      :data-id="party.id" :data-acronym="party.acronym">{{ party.acronym }}</span>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <search-dropdown :items="samePeople" :placeholder="samePeoplePlaceholder"></search-dropdown>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="card-modal" id="primerjalnik-modal-same">
+      <div class="card-modal-header">Vklopi cele poslanske skupine ali dodaj posamezne poslance.<div class="closeme" @click="closeModalSame"></div></div>
+      <div class="card-modal-content">
+        <p>
+          <span v-for="party in parties" :class="['primerjalnik-ps-switch', {'on': party.isSame}]" @click="togglePartySame(party)" :data-id="party.id" :data-acronym="party.acronym">{{ party.acronym }}</span> 
+        </p>
+        <search-dropdown :items="samePeople" :placeholder="samePeoplePlaceholder"></search-dropdown>
       </div>
     </div>
 
-    <div class="modal fade" tabindex="1" role="dialog" id="modal-primerjalnik-different">
-      <div class="modal-dialog modal-wide modal-center" role="document">
-        <div class="modal-center-wrapper">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Vklopi cele poslanske skupine ali poišči posamezne poslance.</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <span v-for="party in parties" :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]" @click="togglePartyDifferent(party)"
-                      :data-id="party.id" :data-acronym="party.acronym">{{ party.acronym }}</span>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <search-dropdown :items="differentPeople" :placeholder="differentPeoplePlaceholder"></search-dropdown>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="card-modal" id="primerjalnik-modal-different">
+      <div class="card-modal-header">Vklopi cele poslanske skupine ali dodaj posamezne poslance.<div class="closeme" @click="closeModalDifferent"></div></div>
+      <div class="card-modal-content">
+        <p>
+          <span v-for="party in parties" :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]" @click="togglePartyDifferent(party)" :data-id="party.id" :data-acronym="party.acronym">{{ party.acronym }}</span> 
+        </p>
+        <search-dropdown :items="differentPeople" :placeholder="differentPeoplePlaceholder"></search-dropdown>
       </div>
     </div>
 
@@ -342,14 +296,6 @@
           this.special = !this.special;
       },
       focusTab(tabNumber) {
-        // if (tabNumber !== 1) {
-        //   this.$refs.parties.expandedParty = null;
-        //   this.$refs.parties.expandedOption = null;
-        // }
-        // if (tabNumber !== 2) {
-        //   this.$refs.sides.expandedParty = null;
-        //   this.$refs.sides.expandedOption = null;
-        // }
       },
       round(value, decimals) {
         return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
@@ -363,10 +309,16 @@
         party.isSame = false;
       },
       openModalSame() {
-        $('#modal-primerjalnik-same').modal('show');
+        $('#primerjalnik-modal-same').addClass('open');
       },
       openModalDifferent() {
-        $('#modal-primerjalnik-different').modal('show');
+        $('#primerjalnik-modal-different').addClass('open');
+      },
+      closeModalSame() {
+        $('#primerjalnik-modal-same').removeClass('open');
+      },
+      closeModalDifferent() {
+        $('#primerjalnik-modal-different').removeClass('open');
       },
       loadResults() {
         if ((this.selectedSamePeople.length + this.sameParties.length) > 1) {
@@ -466,21 +418,95 @@
 <style lang="scss" scoped>
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
+  @import '~parlassets/scss/helper';
 
   .primerjalnik {
 
     text-align: center;
     background-color: $funblue-light;
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 10px;
 
     .primerjalnik-for,
     .primerjalnik-against {
       .plus {
         background-color: #ffffff;
+        padding: 0.2px 7px;
+        font-size: 21px;
+        line-height: 12px;
+        cursor: pointer;
+        color: $funblue;
+        position: relative;
+        top: 3px;
+
+        font-family: 'Roboto', sans-serif;
+
+        margin-left: 5px;
+      }
+
+      .tag {
+        background-color: $funblue;
+        color: #ffffff;
+        padding: 5px;
+        font-size: 12px;
+        cursor: pointer;
+
+        margin-left: 5px;
+
+        font-family: 'Roboto', sans-serif;
+
+        &::after {
+          content: '×';
+          margin-left: 3px;
+          font-size: 20px;
+          line-height: 20px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+
+    .load {
+      color: $sadblue;
+      cursor: pointer;
+      &:hover {
+        background-color: #ffffff;
+      }
+
+      &::after {
+        content: '';
         display: inline-block;
+        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/nalozi.svg');
         width: 20px;
         height: 20px;
-        cursor: pointer;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .primerjalnik-extras {
+      margin-top: 40px;
+    }
+
+    .searchfilter-checkbox {
+      height: 40px;
+      label {
+        text-align: left;
+        margin-bottom: 0;
+      }
+    }
+
+    .summary {
+      margin-bottom: 0;
+      line-height: 40px;
+      text-align: right;
+
+      @include respond-to(mobile) {
+        text-align: left;
+        margin-top: 10px;
       }
     }
   }
@@ -488,10 +514,30 @@
   .primerjalnik-ps-switch {
     background: #ffffff;
     cursor: pointer;
-    padding: 0 10px 0 10px;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px;
+    color: $funblue;
+
+    &::after {
+      content: '×';
+      margin-left: 8px;
+      font-size: 20px;
+      line-height: 20px;
+      position: relative;
+      top: 2px;
+      transform: rotate(45deg);
+      display: inline-block;
+      transition: transform 0.2s ease-out;
+    }
 
     &.on {
       background: $funblue;
+      color: #ffffff;
+
+      &::after {
+        transform: rotate(0deg);
+      }
     }
   }
   .loadme {
@@ -502,9 +548,67 @@
     display: block;
     position: relative;
   }
+
+  .empty {
+    // background-color: #ff0000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/icons/primerjalnik-empty.png');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+  // CARD MODAL
+  .card-modal {
+    display: none;
+    position: absolute;
+    width: 280px;
+    left: 50%;
+    margin-left: -120px;
+    top: 100px;
+    z-index: 100;
+    background-color: #F0F5F8;
+
+    @include card(2);
+
+    &.open {
+      display: block;
+    }
+
+    .card-modal-header {
+      width: 100%;
+      background-color: $funblue;
+      color: #ffffff;
+      font-family: 'Roboto Slab', serif;
+      padding: 10px 50px 10px 10px;
+
+      .closeme {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: -1px;
+        font-size: 40px;
+        cursor: pointer;
+        
+        &::before {
+          content: '×';
+        }
+      }
+    }
+
+    .card-modal-content {
+      padding: 10px;
+    }
+  }
 </style>
+
 <style lang="scss">
-  .modal-backdrop.fade.in {
-    display: none !important;
+  .tabs-content {
+    height: 410px;
   }
 </style>
