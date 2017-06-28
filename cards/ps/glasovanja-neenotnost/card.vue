@@ -74,6 +74,7 @@
 
 <script>
 /* globals window $ measure */
+import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
@@ -86,16 +87,11 @@ export default {
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {
-    const groups = [{
+    let groups = [{
       id: 95,
       color: 'dz',
       acronym: 'DZ',
       name: 'Vsi',
-    }, {
-      id: 143,
-      color: 'opoz',
-      acronym: 'opoz',
-      name: 'Opozicija',
     }, {
       id: 144,
       color: 'koal',
@@ -103,10 +99,11 @@ export default {
       name: 'Koalicija',
     }];
 
+    let namedGroups = [];
     Object.keys(this.$options.cardData.data).forEach((groupName) => {
       const groupValue = this.$options.cardData.data[groupName];
       if (!groupValue.disbanded) {
-        groups.push({
+        namedGroups.push({
           id: groupName,
           acronym: groupValue.acronym,
           color: groupValue.acronym.toLowerCase().replace(/ /g, '_'),
@@ -115,15 +112,18 @@ export default {
       }
     });
 
+    namedGroups = sortBy(namedGroups, 'name');
+    groups = groups.concat(namedGroups);
+
     return {
       voteData: [],
       loading: true,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
-      selectedSort: 'date',
+      selectedSort: 'maximum',
       sortOptions: [
-        { label: 'Datumu', id: 'date' },
         { label: 'Neenotnosti', id: 'maximum' },
+        { label: 'Datumu', id: 'date' },
       ],
       textFilter: '',
       url: 'https://glej.parlameter.si/group/method/',
@@ -137,13 +137,6 @@ export default {
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
       groups,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
     };
   },
   computed: {
@@ -186,6 +179,19 @@ export default {
     filteredVotingDays() {
       return this.getFilteredVotingDays();
     },
+    headerConfig() {
+      return {
+        circleIcon: 'og-list',
+        heading: '&nbsp;',
+        subheading: '7. sklic parlamenta',
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.dynamicTitle,
+      };
+    },
+    dynamicTitle() {
+      return this.$options.cardData.cardData.name +
+        (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+    },
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
@@ -209,7 +215,8 @@ export default {
       };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
-      const getDateFromVote = vote => (vote.date ? vote.date.split('T')[0] : null);
+      const getDateFromVote = vote =>
+        (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
 
       let currentVotingDays;
 
@@ -218,8 +225,6 @@ export default {
       } else {
         currentVotingDays = zipObject(votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`), votes.map(vote => [vote]));
       }
-
-      console.log(currentVotingDays);
 
       const mappedVotingDays = [];
       Object.keys(currentVotingDays).forEach((key) => {
@@ -285,12 +290,18 @@ export default {
 
 .groups {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 16px;
 
   .striped-button {
-    flex: 1;
-    &:not(:first-child) { margin-left: 5px; }
+    width: calc(33.33% - 3.33px);
+    margin-bottom: 5px;
+    @include respond-to(desktop) {
+      flex: 1;
+      margin-bottom: 0;
+      &:not(:first-child) { margin-left: 5px; }
+    }
   }
 }
 
@@ -387,10 +398,14 @@ export default {
   .ballot {
     $section-border: 1px solid $black;
     background: $grey;
+    color: $black;
+    display: block;
     margin: 7px 0 8px 0;
     min-height: 90px;
     padding: 10px 14px;
     position: relative;
+
+    &:hover, &:active, &:focus { text-decoration: none; }
 
     @include respond-to(desktop) {
       display: flex;
@@ -401,8 +416,14 @@ export default {
     }
 
     .disunion {
+      display: flex;
+      justify-content: center;
       text-align: center;
-      padding-right: 16px;
+
+      @include respond-to(desktop) {
+        flex-direction: column;
+        padding-right: 16px;
+      }
       .percentage {
         font-size: 24px;
         @include respond-to(desktop) {
@@ -413,24 +434,28 @@ export default {
       .text {
         font-size: 13px;
         line-height: 34px;
+        margin-left: 10px;
         text-transform: uppercase;
         @include respond-to(desktop) {
           font-size: 16px;
           line-height: 23px;
+          margin-left: 0;
         }
       }
     }
 
     .name {
       border-bottom: $section-border;
+      border-top: $section-border;
       font-family: Roboto Slab, Times New Roman, serif;
       font-size: 11px;
       font-weight: 300;
       line-height: 1.45em;
-      padding: 10px 0 4px 0;
+      padding: 10px 0;
 
       @include respond-to(desktop) {
         border-bottom: none;
+        border-top: none;
         border-left: $section-border;
         align-items: center;
         display: flex;
@@ -442,14 +467,13 @@ export default {
 
     .result {
       align-items: center;
-      border-bottom: $section-border;
       display: flex;
-      justify-content: left;
+      justify-content: center;
       padding: 10px 0 0 0;
 
       @include respond-to(desktop) {
-        border-bottom: none;
         border-left: $section-border;
+        justify-content: left;
         padding: 0 0 0 16px;
         width: 136px;
       }
