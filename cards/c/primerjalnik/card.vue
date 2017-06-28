@@ -74,12 +74,10 @@
                         </p>
                       </div>
                     </div>
-                    <div class="col-md-11 border-left ">
-                      <div class="col-md-6 ">
+                    <div class="col-md-11 border-left">
+                      <div class="col-md-6">
                         <div class="session_title ">
-                          <p>
-                            {{ vote.results.text }}
-                          </p>
+                          <p>{{ vote.results.text }}</p>
                         </div>
                       </div>
                       <div class="col-md-6 ">
@@ -121,22 +119,20 @@
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
-
             </div>
           </tab>
           <tab header="Dinamika skozi čas">
             <div class="empty" v-if="filteredVotes.length === 0"></div>
             <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
           </tab>
-          <tab header="Dinamika glede na MDT">
-            <div class="empty" v-if="filteredVotes.length === 0"></div>
-            <bar-chart v-if="filteredVotes.length !== 0" :data="data"></bar-chart>
+          <tab header="Dinamika glede na MDT" class="tab-three">
+            <div v-if="filteredVotes.length === 0" class="empty"></div>
+            <true-bar-chart v-else :data="barChartData"></true-bar-chart>
           </tab>
         </tabs>
 
@@ -206,12 +202,12 @@
 
   import common from 'mixins/common';
   import TimeChart from 'components/TimeChart.vue';
-  import BarChart from 'components/BarChart.vue';
+  import TrueBarChart from 'components/TrueBarChart.vue';
 
   export default {
     components: {
       TimeChart,
-      BarChart,
+      TrueBarChart,
     },
     mixins: [common],
     name: 'ImeKartice',
@@ -288,6 +284,19 @@
       },
       selectedDifferentPeople() {
         return this.differentPeople.filter(person => person.selected);
+      },
+      barChartData() {
+        const tags = this.data.reduce((acc, d) => {
+          if (acc.indexOf(d.results.tags[0]) === -1) {
+            acc.push(d.results.tags[0]);
+          }
+          return acc;
+        }, []);
+
+        return tags.map(tag => ({
+          label: tag,
+          value: this.data.filter(d => d.results.tags[0] === tag).length,
+        }));
       },
     },
     mounted() {
@@ -645,10 +654,7 @@
       padding: 10px;
     }
   }
-</style>
 
-<style lang="scss">
-  .tabs-content {
-    height: 410px;
-  }
+  .tabs { height: 410px; }
+  .tab-three { padding-top: 16px; }
 </style>
