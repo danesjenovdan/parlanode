@@ -6,8 +6,8 @@
         </div>
         <div class="column chart">
             <div class="progress hugebar">
-                <div class="progress-bar funblue" role="progressbar" :style="{ width: row.widthPercentage + '%'}"></div>
-                <div class="progress_number">{{ row.occurences[0] + ' | ' + row.percentage }} %</div>
+                <div v-for="property in row.properties" class="progress-bar funblue" role="progressbar" :style="{ width: property.widthPercentage + '%'}"></div>
+                <!--<div class="progress_number">{{ property.occurences + ' | ' + property.percentage }} %</div>-->
             </div>
         </div>
       </li>
@@ -28,7 +28,13 @@ export default {
           name: row.party.acronym,
           widthPercentage: 0,
           percentage: 0,
-          occurences: this.properties.map(property => row.results[property])
+          properties: this.properties.map((property) => {
+            return {
+              occurences: row.results[property],
+              percentage: 0,
+              widthPercentage: 0
+            };
+          })
         };
 
         return tempobj;
