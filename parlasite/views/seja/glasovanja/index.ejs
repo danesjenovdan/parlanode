@@ -6,15 +6,15 @@
         <div class="col-lg-12">
 
             <% if(typeof sesData !== "undefined" ){%>
-            <div class="media-object img-circle session-logo backgroundred">
-                <b>S</b>
+            <div class="media-object img-circle session-logo">
+                <img src="https://cdn.parlameter.si/v1/parlassets/icons/seja-<%= sesData.name.split(' ')[1] %>.svg" alt="<%-sesData.name%>">
             </div>
 
             <h1> <%-sesData.name%></h1>
             <h2> <%-sesData.org.name%></h2>
 
             <font class="date">
-                <%-sesData.date%>
+                <%-sesData.updated_at%>
             </font>
             <br/>
             <font class="datepublished">
