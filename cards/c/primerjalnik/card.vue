@@ -3,7 +3,7 @@
     <card-header :config="headerConfig"></card-header>
 
     <div class="card-content">
-      <div class="card-content-front">
+      <div :class="['card-content-front', {'is-loading': loading}]">
         <div class="primerjalnik">
           <p>Zanima me, na katerih glasovanjih so
             <span class="primerjalnik-for">
@@ -217,6 +217,7 @@
     name: 'ImeKartice',
     data() {
       return {
+        loading: false,
         parties: [],
         samePeople: [],
         differentPeople: [],
@@ -363,44 +364,28 @@
         $('#primerjalnik-modal-different').removeClass('open');
       },
       loadResults() {
-        if ((this.selectedSamePeople.length + this.sameParties.length) > 1) {
+        if (this.selectedSamePeople.length + this.sameParties.length > 1 ||
+           (this.selectedSamePeople.length + this.sameParties.length === 1 &&
+           this.selectedDifferentPeople.length + this.differentParties.length > 0)) {
+          this.loading = true;
           console.log('loading results');
           console.log(this.queryUrl);
-          const self = this;
           $.ajax({
-            url: self.queryUrl,
+            url: this.queryUrl,
             method: 'GET',
-            success: function (data) {
+            success: (data) => {
               console.log('results loaded');
               console.log(data);
-              self.data = data.results;
-              self.total = data.total;
+              this.data = data.results;
+              this.total = data.total;
 
               $('.modal').modal('hide');
-            },
-            error: function (error) {
-              alert(JSON.stringify(error));
-            }
-          });
-        } else if ((this.selectedSamePeople.length + this.sameParties.length) === 1 && (this.selectedDifferentPeople.length +
-            this.differentParties.length) > 0) {
-          console.log('loading results');
-          console.log(this.queryUrl);
-          const self = this;
-          $.ajax({
-            url: self.queryUrl,
-            method: 'GET',
-            success(data) {
-              console.log('results loaded');
-              console.log(data);
-              self.data = data.results;
-              self.total = data.total;
-
-              $('.modal').modal('hide');
+              this.loading = false;
             },
             error(error) {
               window.alert(JSON.stringify(error));
-            }
+              this.loading = false;
+            },
           });
         } else {
           window.alert('nimaš izbranih dovolj pogojev za primerjavo');
@@ -461,6 +446,19 @@
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
   @import '~parlassets/scss/helper';
+
+  .card-content-front.is-loading {
+    overflow-y: hidden;
+    position: relative;
+    &::before {
+      background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
 
   .primerjalnik {
 
