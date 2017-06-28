@@ -44,8 +44,13 @@
           <div class="row primerjalnik-extras">
             <div class="col-md-4">
               <div class="searchfilter-checkbox">
-                  <input id="rev" type="checkbox" class="checkbox" @click="handleCheckbox" v-bind:checked="special">
-                  <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+                <input
+                  id="rev"
+                  type="checkbox"
+                  class="checkbox"
+                  @click="toggleSpecial"
+                  :checked="special">
+                <label for="rev">Ignoriraj "odsotne" glasovnice</label>
               </div>
             </div>
             <div class="col-md-8">
@@ -210,14 +215,14 @@
       BarChart,
     },
     mixins: [common],
-    name: 'ImeKartice',
+    name: 'PrimerjalnikGlasovanj',
     data() {
       return {
         loading: false,
         parties: [],
         samePeople: [],
         differentPeople: [],
-        special: false,
+        special: !!this.$options.cardData.state.special,
         data: [],
         total: 0,
         slugs: this.$options.cardData.urlsData,
@@ -240,9 +245,6 @@
       differentPeoplePlaceholder() {
         return this.selectedDifferentPeople.length > 0 ? `Izbranih: ${this.selectedDifferentPeople.length}` :
           'Izberi poslance';
-      },
-      generatedCardUrl() {
-        return 'https://glej.parlameter.si/group/method/';
       },
       filteredVotes() {
         return this.getFilteredVotes();
@@ -300,20 +302,41 @@
           value: this.data.filter(d => d.results.tags[0] === tag).length,
         }));
       },
+      generatedCardUrl() {
+        const state = {};
+
+        if (this.special) { state.special = this.special; }
+        if (this.selectedSamePeople.length > 0) {
+          state.samePeople = this.selectedSamePeople.map(p => p.id);
+        }
+        if (this.selectedDifferentPeople.length > 0) {
+          state.differentPeople = this.selectedDifferentPeople.map(p => p.id);
+        }
+        if (this.sameParties.length > 0) {
+          state.sameParties = this.sameParties.map(p => p.id);
+        }
+        if (this.differentParties.length > 0) {
+          state.differentParties = this.differentParties.map(p => p.id);
+        }
+
+        return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      },
     },
     mounted() {
       const self = this;
       $.ajax({
         url: 'https://data.parlameter.si/v1/getAllPGs/',
         method: 'GET',
-        success(data) {
+        success: (data) => {
+          const sameParties = this.$options.cardData.state.sameParties || [];
+          const differentParties = this.$options.cardData.state.differentParties || [];
           self.parties = Object.keys(data).map(partyId => ({
             id: data[partyId].id,
             acronym: data[partyId].acronym,
             is_coalition: data[partyId].is_coalition,
             name: data[partyId].name,
-            isSame: false,
-            isDifferent: false,
+            isSame: sameParties.indexOf(data[partyId].id) > -1,
+            isDifferent: differentParties.indexOf(data[partyId].id) > -1,
           }));
         },
         error(error) {
@@ -323,10 +346,12 @@
       $.ajax({
         url: 'https://data.parlameter.si/v1/getMPs/',
         method: 'GET',
-        success(data) {
+        success: (data) => {
+          const samePeople = this.$options.cardData.state.samePeople || [];
+          const differentPeople = this.$options.cardData.state.differentPeople || [];
           const sameData = JSON.parse(JSON.stringify(data));
           self.samePeople = sameData.map((person) => {
-            person.selected = false;
+            person.selected = samePeople.indexOf(person.id) > -1;
             person.label = person.name;
 
             return person;
@@ -334,7 +359,7 @@
 
           const differentData = JSON.parse(JSON.stringify(data));
           self.differentPeople = differentData.map((person) => {
-            person.selected = false;
+            person.selected = differentPeople.indexOf(person.id) > -1;
             person.label = person.name;
 
             return person;
@@ -346,10 +371,8 @@
       });
     },
     methods: {
-      handleCheckbox() {
+      toggleSpecial() {
         this.special = !this.special;
-      },
-      focusTab(tabNumber) {
       },
       round(value, decimals) {
         return Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
@@ -370,14 +393,10 @@
            (this.selectedSamePeople.length + this.sameParties.length === 1 &&
            this.selectedDifferentPeople.length + this.differentParties.length > 0)) {
           this.loading = true;
-          console.log('loading results');
-          console.log(this.queryUrl);
           $.ajax({
             url: this.queryUrl,
             method: 'GET',
             success: (data) => {
-              console.log('results loaded');
-              console.log(data);
               this.data = data.results;
               this.total = data.total;
               this.loading = false;
@@ -396,11 +415,10 @@
       },
       shortenUrl(url) {
         return new Promise((resolve) => {
-          $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
-            response) => {
-            this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-            resolve(response);
-          });
+          $.get(
+            `https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`,
+            response => resolve(response),
+          );
         });
       },
       measurePiwik(filter, sort, order) {
@@ -415,7 +433,10 @@
     },
     watch: {
       generatedCardUrl(newUrl) {
-        this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
+        this.shortenUrl(newUrl).then((newShortenedUrl) => {
+          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+          this.shortenedCardUrl = newShortenedUrl;
+        });
       },
       selectedSamePeople(newSelectedSamePeople) {
         newSelectedSamePeople.forEach((person) => {
