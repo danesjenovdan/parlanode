@@ -17,7 +17,8 @@
               <span
                 v-for="person in selectedSamePeople"
                 :key="person.id"
-                class="tag">
+                class="tag"
+                @click="removePerson(person)">
                 {{ person.name }}
               </span>
               <span class="plus" @click="toggleModal('same', true)">+</span>
@@ -27,13 +28,15 @@
               <span
                 v-for="party in differentParties"
                 :key="party.id"
-                class="tag">
+                class="tag"
+                @click="togglePartyDifferent(party)">
                 {{ party.acronym }}
               </span>
               <span
                 v-for="person in selectedDifferentPeople"
                 :key="person.id"
-                class="tag">
+                class="tag"
+                @click="removePerson(person)">
                 {{ person.name }}
               </span>
               <span class="plus" @click="toggleModal('different', true)">+</span>
@@ -218,7 +221,7 @@
     name: 'PrimerjalnikGlasovanj',
     data() {
       return {
-        loading: false,
+        loading: true,
         parties: [],
         samePeople: [],
         differentPeople: [],
@@ -324,7 +327,7 @@
     },
     mounted() {
       const self = this;
-      $.ajax({
+      const PGPromise = $.ajax({
         url: 'https://data.parlameter.si/v1/getAllPGs/',
         method: 'GET',
         success: (data) => {
@@ -343,7 +346,7 @@
           window.alert(JSON.stringify(error));
         },
       });
-      $.ajax({
+      const peoplePromise = $.ajax({
         url: 'https://data.parlameter.si/v1/getMPs/',
         method: 'GET',
         success: (data) => {
@@ -364,11 +367,17 @@
 
             return person;
           });
+
+          this.loadResults();
         },
         error(error) {
           window.alert(JSON.stringify(error));
         },
       });
+
+      Promise.all([PGPromise, peoplePromise]).then(() => {
+        this.loadResults();
+      })
     },
     methods: {
       toggleSpecial() {
@@ -385,30 +394,27 @@
         party.isDifferent = !party.isDifferent;
         party.isSame = false;
       },
+      removePerson(person) {
+        person.selected = false;
+      },
       toggleModal(modalType, newState) {
         this[`${modalType}ModalVisible`] = newState;
       },
       loadResults() {
-        if (this.selectedSamePeople.length + this.sameParties.length > 1 ||
-           (this.selectedSamePeople.length + this.sameParties.length === 1 &&
-           this.selectedDifferentPeople.length + this.differentParties.length > 0)) {
-          this.loading = true;
-          $.ajax({
-            url: this.queryUrl,
-            method: 'GET',
-            success: (data) => {
-              this.data = data.results;
-              this.total = data.total;
-              this.loading = false;
-            },
-            error(error) {
-              window.alert(JSON.stringify(error));
-              this.loading = false;
-            },
-          });
-        } else {
-          window.alert('nimaš izbranih dovolj pogojev za primerjavo');
-        }
+        this.loading = true;
+        $.ajax({
+          url: this.queryUrl,
+          method: 'GET',
+          success: (data) => {
+            this.data = data.results;
+            this.total = data.total;
+            this.loading = false;
+          },
+          error(error) {
+            window.alert(JSON.stringify(error));
+            this.loading = false;
+          },
+        });
       },
       getFilteredVotes() {
         return this.votes;
@@ -429,6 +435,9 @@
             measure('s', 'session-filter', filter, '');
           }
         }
+      },
+      focusTab() {
+        return false;
       },
     },
     watch: {
@@ -660,7 +669,148 @@
       padding: 10px;
     }
   }
+  // END CARD MODAL
 
-  .tabs { height: 410px; }
+  .tab-content { height: 410px; }
   .tab-three { padding-top: 16px; }
+
+  // VOTINGCARD
+  #votingCard {
+  }
+
+  #votingCard div.member span {
+    color: #525252;
+    font-weight: 500;
+  }
+
+  #votingCard .member:last-child {
+    border: none;
+  }
+
+  #votingCard .member.lastel {
+    border: none;
+    padding-bottom: 10px;
+  }
+
+  .session_voting {
+    font-weight: 400;
+    padding: 12px 0 0 0;
+
+    &:empty::after {
+      color: #c8c8c8;
+      content: "Ni rezultatov.";
+      left: calc(50% - 41px);
+      position: absolute;
+      top: calc(50% - 10px);
+    }
+
+    .session_votes .progress.smallbar {
+      height: 15px;
+    }
+
+    .session_votes {
+      font-size: 30px;
+      line-height: 40px;
+      margin: 15px 0 10px 0;
+
+      .type {
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+
+  .accepted.nay {
+    color: #ff5e41;
+  }
+
+  .accepted.aye {}
+
+  .session_voting .accepted {
+    line-height: normal;
+    height: 95px;
+  }
+
+  .session_voting .accepted p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    margin: 0;
+    line-height: 30px;
+    margin-top: 6px;
+  }
+
+  .session_voting .session_title {
+    height: 95px;
+    margin: 0;
+    @include respond-to(mobile) {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .session_voting .session_title p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-family: Roboto Slab;
+    margin-top: 6px;
+  }
+
+
+  @media (max-width: 991px) {
+    .session_voting .session_title {
+      height: 93px;
+    }
+    .session_voting .accepted {
+      height: 60px;
+    }
+
+    .border-left {
+      border-left: none;
+      border-top: 2px solid #dbdbdb;
+    }
+    .single_voting:hover {
+      .border-left {
+        border-top-color: #cadde6;
+      }
+    }
+
+    .single_voting {
+      padding-bottom: 15px;
+    }
+  }
+
+  .single_voting {
+    position: relative;
+  }
+
+  .session_voting .session_title p {
+    font-size: 14px;
+  }
+
+
+  .session_voting .single_voting {
+    margin-bottom: 15px;
+  }
+
+  .single_voting:hover {
+    background-color: #e1f6ff;
+
+    .border-left {
+      border-left-color: #cadde6;
+    }
+  }
+
+  .seja_anchor:hover {
+    color: #525252;
+  }
+  // END VOTINGCARD
 </style>
