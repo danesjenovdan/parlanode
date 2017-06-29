@@ -20,26 +20,26 @@ describe('Test API route', function() {
   });
 });
 
-describe('Test Mongoose', function() {
-  it('connection open', function(done) {
+// describe('Test Mongoose', function() {
+//   it('connection open', function(done) {
 
-    if(mongoose.connection.readyState){
-      done();
-    }else{
-      done('connection not found');
-    }
+//     if(mongoose.connection.readyState){
+//       done();
+//     }else{
+//       done('connection not found');
+//     }
 
-  });
-});
+//   });
+// });
 
-describe('Test login', function() {
+// describe('Test login', function() {
 
-  it('logs in', function(done) {
-    request(server.app)
-      .post('/api/login')
-      .send({ email:'email@email.com', password:'fakepass' })
-      .set('Accept', 'application/json')
-      .expect(401, done);
-  });
+//   it('logs in', function(done) {
+//     request(server.app)
+//       .post('/api/login')
+//       .send({ email:'email@email.com', password:'fakepass' })
+//       .set('Accept', 'application/json')
+//       .expect(401, done);
+//   });
 
-});
+// });

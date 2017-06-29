@@ -1,1 +1,6 @@
-{}
+{
+  "special": true,
+  "sameParties": [3, 6],
+  "differentParties": [7],
+  "differentPeople": [82]
+}

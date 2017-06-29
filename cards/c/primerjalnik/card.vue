@@ -1,112 +1,143 @@
 <template>
   <div class="card-container card-halfling card-IME_KARTICE" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+    <card-header :config="headerConfig"></card-header>
 
     <div class="card-content">
-      <div class="card-content-front">
+      <div :class="['card-content-front', {'is-loading': loading}]">
         <div class="primerjalnik">
-          Zanima me, na katerih glasovanjih so <span class="primerjalnik-for"><span v-for="party in sameParties">{{ party.acronym }} </span>
-          <span
-            v-for="person in selectedSamePeople">{{ person.name }} </span><span class="plus" @click="openModalSame"></span></span> glasovali enako, <span class="primerjalnik-against"><span v-for="party in differentParties">{{ party.acronym }} </span>
-            <span
-              v-for="person in selectedDifferentPeople">{{ person.name }} </span><span class="plus" @click="openModalDifferent"></span></span> pa drugače od njih.
-        </div>
-        <div class="special-container">
-          <div class="searchfilter-checkbox">
-              <input id="rev" type="checkbox" class="checkbox" @click="handleCheckbox" v-bind:checked="special">
-              <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+          <p>Zanima me, na katerih glasovanjih so
+            <span class="primerjalnik-for">
+              <span
+                v-for="party in sameParties"
+                :key="party.id"
+                class="tag"
+                @click="togglePartySame(party)">
+                {{ party.acronym }}
+              </span>
+              <span
+                v-for="person in selectedSamePeople"
+                :key="person.id"
+                class="tag">
+                {{ person.name }}
+              </span>
+              <span class="plus" @click="toggleModal('same', true)">+</span>
+            </span>
+            glasovali enako,
+            <span class="primerjalnik-against">
+              <span
+                v-for="party in differentParties"
+                :key="party.id"
+                class="tag">
+                {{ party.acronym }}
+              </span>
+              <span
+                v-for="person in selectedDifferentPeople"
+                :key="person.id"
+                class="tag">
+                {{ person.name }}
+              </span>
+              <span class="plus" @click="toggleModal('different', true)">+</span>
+            </span>
+            pa drugače od njih.
+            <span class="load" @click="loadResults">Naloži</span>
+          </p>
+          <div class="row primerjalnik-extras">
+            <div class="col-md-4">
+              <div class="searchfilter-checkbox">
+                <input
+                  id="rev"
+                  type="checkbox"
+                  class="checkbox"
+                  @click="toggleSpecial"
+                  :checked="special">
+                <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <button @click="loadResults" class="loadme">Naloadaj</button>
-          </div>
-        </div>
-
-        <div>{{ votes.length }} filtriranih glasovanj predstavlja {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
-          vseh glasovanj.</div>
-
-        <div>{{ queryUrl }}</div>
 
         <tabs dark :switch-callback="focusTab">
           <tab header="Seznam glasovanj">
-            <div class="seznam-glasovanj-container">
-              <div id="votingCard" class="date-list">
-                <div class="session_voting">
-                  <div v-for="vote in filteredVotes" class="clearfix single_voting">
-                    <div v-if="vote.results.is_outlier" class="fire-badge"></div>
-                    <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
-                    <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
-                    <a :href="vote.url">
-                      <div class=" col-md-1 ">
-                        <div :class="vote.accepted">
-                          <p>
-                            <i :class="vote.accepted_glyph"></i>
-                          </p>
+            <div class="empty" v-if="filteredVotes.length === 0"></div>
+            <div v-else id="votingCard" class="date-list">
+              <div class="session_voting">
+                <div
+                  v-for="vote in filteredVotes"
+                  :key="vote.session.id"
+                  class="clearfix single_voting">
+                  <div v-if="vote.results.is_outlier" class="fire-badge"></div>
+                  <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
+                  <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
+                  <a :href="vote.url">
+                    <div class=" col-md-1 ">
+                      <div :class="vote.accepted">
+                        <p>
+                          <i :class="vote.accepted_glyph"></i>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-11 border-left">
+                      <div class="col-md-6">
+                        <div class="session_title ">
+                          <p>{{ vote.results.text }}</p>
                         </div>
                       </div>
-                      <div class="col-md-11 border-left ">
-                        <div class="col-md-6 ">
-                          <div class="session_title ">
-                            <p>
-                              {{ vote.results.text }}
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6 ">
-                          <div class="session_votes ">
-                            <div class="progress smallbar ">
-                              <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                                <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
-                              </div>
-                              <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                                <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
-                              </div>
-                              <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                                <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
-                              </div>
-                              <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                                <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
-                              </div>
+                      <div class="col-md-6 ">
+                        <div class="session_votes ">
+                          <div class="progress smallbar ">
+                            <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                              <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
                             </div>
-                            <div class="row ">
-                              <div class="col-xs-3 ">
-                                {{ vote.results.votes_for }}
-                                <div class="type ">Za</div>
-                                <div class="indicator aye ">&nbsp;</div>
-                              </div>
-                              <div class="col-xs-3 ">
-                                {{ vote.results.against }}
-                                <div class="type ">Proti</div>
-                                <div class="indicator ney ">&nbsp;</div>
-                              </div>
-                              <div class="col-xs-3 ">
-                                {{ vote.results.abstain }}
-                                <div class="type ">Vzdržan</div>
-                                <div class="indicator abstention ">&nbsp;</div>
-                              </div>
-                              <div class="col-xs-3 ">
-                                {{ vote.results.not_present }}
-                                <div class="type ">Niso</div>
-                                <div class="indicator not ">&nbsp;</div>
-                              </div>
+                            <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
+                              <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
+                            </div>
+                            <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
+                              <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
+                            </div>
+                            <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
+                              <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
                             </div>
                           </div>
-
+                          <div class="row ">
+                            <div class="col-xs-3 ">
+                              {{ vote.results.votes_for }}
+                              <div class="type ">Za</div>
+                              <div class="indicator aye ">&nbsp;</div>
+                            </div>
+                            <div class="col-xs-3 ">
+                              {{ vote.results.against }}
+                              <div class="type ">Proti</div>
+                              <div class="indicator ney ">&nbsp;</div>
+                            </div>
+                            <div class="col-xs-3 ">
+                              {{ vote.results.abstain }}
+                              <div class="type ">Vzdržan</div>
+                              <div class="indicator abstention ">&nbsp;</div>
+                            </div>
+                            <div class="col-xs-3 ">
+                              {{ vote.results.not_present }}
+                              <div class="type ">Niso</div>
+                              <div class="indicator not ">&nbsp;</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                 </div>
-
               </div>
-            </div>            
+            </div>
           </tab>
           <tab header="Dinamika skozi čas">
-            <time-chart :data="data"></time-chart>
+            <div class="empty" v-if="filteredVotes.length === 0"></div>
+            <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
           </tab>
-          <tab header="Dinamika glede na MDT">
-            <bar-chart :data="data"></bar-chart>
+          <tab header="Dinamika glede na MDT" class="tab-three">
+            <div v-if="filteredVotes.length === 0" class="empty"></div>
+            <bar-chart v-else :data="barChartData"></bar-chart>
           </tab>
         </tabs>
 
@@ -118,114 +149,86 @@
         <p class="info-text"></p>
       </card-info>
 
-      <card-embed :url="generatedCardUrl" />
+      <card-embed :url="generatedCardUrl"></card-embed>
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="shortenedCardUrl"></card-share>
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer :link="slugs.base"></card-footer>
 
-    <div class="modal fade" tabindex="1" role="dialog" id="modal-primerjalnik-same">
-      <div class="modal-dialog modal-wide modal-center" role="document">
-        <div class="modal-center-wrapper">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Vklopi cele poslanske skupine ali poišči posamezne poslance.</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <span v-for="party in parties" :class="['primerjalnik-ps-switch', {'on': party.isSame}]" @click="togglePartySame(party)"
-                      :data-id="party.id" :data-acronym="party.acronym">{{ party.acronym }}</span>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <search-dropdown :items="samePeople" :placeholder="samePeoplePlaceholder"></search-dropdown>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+    <div v-show="sameModalVisible" class="card-modal">
+      <div class="card-modal-header">
+        Vklopi cele poslanske skupine ali dodaj posamezne poslance.
+        <div class="closeme" @click="toggleModal('same', false)"></div>
+      </div>
+      <div class="card-modal-content">
+        <p>
+          <span
+            v-for="party in parties"
+            :key="party.id"
+            :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
+            @click="togglePartySame(party)"
+            :data-id="party.id"
+            :data-acronym="party.acronym">
+            {{ party.acronym }}
+          </span>
+        </p>
+        <search-dropdown
+          :items="samePeople"
+          :placeholder="samePeoplePlaceholder">
+        </search-dropdown>
       </div>
     </div>
 
-    <div class="modal fade" tabindex="1" role="dialog" id="modal-primerjalnik-different">
-      <div class="modal-dialog modal-wide modal-center" role="document">
-        <div class="modal-center-wrapper">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Vklopi cele poslanske skupine ali poišči posamezne poslance.</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <span v-for="party in parties" :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]" @click="togglePartyDifferent(party)"
-                      :data-id="party.id" :data-acronym="party.acronym">{{ party.acronym }}</span>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <search-dropdown :items="differentPeople" :placeholder="differentPeoplePlaceholder"></search-dropdown>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+    <div v-show="differentModalVisible" class="card-modal">
+      <div class="card-modal-header">Vklopi cele poslanske skupine ali dodaj posamezne poslance.<div class="closeme" @click="toggleModal('different', false)"></div></div>
+      <div class="card-modal-content">
+        <p>
+          <span
+            v-for="party in parties"
+            :key="party.id"
+            :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
+            @click="togglePartyDifferent(party)"
+            :data-id="party.id"
+            :data-acronym="party.acronym">
+            {{ party.acronym }}
+          </span>
+        </p>
+        <search-dropdown
+          :items="differentPeople"
+          :placeholder="differentPeoplePlaceholder"
+        ></search-dropdown>
       </div>
     </div>
-
   </div>
-
-
 </template>
 
 <script>
   /* globals window $ measure */
 
-  import CardInfo from 'components/Card/Info.vue';
-  import CardEmbed from 'components/Card/Embed.vue';
-  import CardShare from 'components/Card/Share.vue';
-  import CardHeader from 'components/Card/Header.vue';
-  import CardFooter from 'components/Card/Footer.vue';
-  import initializeBack from 'mixins/initializeBack';
   import common from 'mixins/common';
-
   import TimeChart from 'components/TimeChart.vue';
   import BarChart from 'components/BarChart.vue';
 
   export default {
     components: {
-      CardInfo,
-      CardEmbed,
-      CardShare,
-      CardHeader,
-      CardFooter,
       TimeChart,
-      BarChart
+      BarChart,
     },
-    mixins: [initializeBack],
-    name: 'ImeKartice',
+    mixins: [common],
+    name: 'PrimerjalnikGlasovanj',
     data() {
       return {
+        loading: false,
         parties: [],
         samePeople: [],
         differentPeople: [],
-        // data: this.$options.cardData.data.results,
-        special: false,
+        special: !!this.$options.cardData.state.special,
         data: [],
         total: 0,
         slugs: this.$options.cardData.urlsData,
         shortenedCardUrl: '',
+        sameModalVisible: false,
+        differentModalVisible: false,
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -242,9 +245,6 @@
       differentPeoplePlaceholder() {
         return this.selectedDifferentPeople.length > 0 ? `Izbranih: ${this.selectedDifferentPeople.length}` :
           'Izberi poslance';
-      },
-      generatedCardUrl() {
-        return 'https://glej.parlameter.si/group/method/';
       },
       filteredVotes() {
         return this.getFilteredVotes();
@@ -264,16 +264,17 @@
       },
       votes() {
         return this.data.map(function (e) {
-          var allInVotes = e.results.votes_for + e.results.against + e.results.abstain + e.results.not_present;
-          e.url = 'https://parlameter.si/seja/glasovanje/' + e.session.id + '/' + e.results.motion_id;
-          e.accepted = 'accepted ' + ((e.results.result === true) ? 'aye' : 'nay');
-          e.accepted_glyph = 'glyphicon ' + ((e.results.result === true) ? 'glyphicon-ok' : 'glyphicon-remove');
-          e.percent_votes_for = Math.floor(e.results.votes_for / allInVotes * 100);
-          e.percent_against = Math.floor(e.results.against / allInVotes * 100);
-          e.percent_abstain = Math.floor(e.results.abstain / allInVotes * 100);
-          e.percent_not_present = Math.floor(e.results.not_present / allInVotes * 100);
-
-          return e;
+          const v = JSON.parse(JSON.stringify(e));
+          const allInVotes = v.results.votes_for + v.results.against +
+            v.results.abstain + v.results.not_present;
+          v.url = `https://parlameter.si/seja/glasovanje/${e.session.id}/${e.results.motion_id$}`;
+          v.accepted = `accepted ${e.results.result === true ? 'aye' : 'nay'}`;
+          v.accepted_glyph = `glyphicon glyphicon-${e.results.result === true ? 'ok' : 'remove'}`;
+          v.percent_votes_for = Math.floor((v.results.votes_for / allInVotes) * 100);
+          v.percent_against = Math.floor((v.results.against / allInVotes) * 100);
+          v.percent_abstain = Math.floor((v.results.abstain / allInVotes) * 100);
+          v.percent_not_present = Math.floor((v.results.not_present / allInVotes) * 100);
+          return v;
         });
       },
       sameParties() {
@@ -288,37 +289,69 @@
       selectedDifferentPeople() {
         return this.differentPeople.filter(person => person.selected);
       },
+      barChartData() {
+        const tags = this.data.reduce((acc, d) => {
+          if (acc.indexOf(d.results.tags[0]) === -1) {
+            acc.push(d.results.tags[0]);
+          }
+          return acc;
+        }, []);
+
+        return tags.map(tag => ({
+          label: tag,
+          value: this.data.filter(d => d.results.tags[0] === tag).length,
+        }));
+      },
+      generatedCardUrl() {
+        const state = {};
+
+        if (this.special) { state.special = this.special; }
+        if (this.selectedSamePeople.length > 0) {
+          state.samePeople = this.selectedSamePeople.map(p => p.id);
+        }
+        if (this.selectedDifferentPeople.length > 0) {
+          state.differentPeople = this.selectedDifferentPeople.map(p => p.id);
+        }
+        if (this.sameParties.length > 0) {
+          state.sameParties = this.sameParties.map(p => p.id);
+        }
+        if (this.differentParties.length > 0) {
+          state.differentParties = this.differentParties.map(p => p.id);
+        }
+
+        return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      },
     },
-    mounted: function () {
+    mounted() {
       const self = this;
       $.ajax({
         url: 'https://data.parlameter.si/v1/getAllPGs/',
         method: 'GET',
-        success: function (data) {
-          let parties = [];
-          for (var party_id in data) {
-            parties.push({
-              id: data[party_id].id,
-              acronym: data[party_id].acronym,
-              is_coalition: data[party_id].is_coalition,
-              name: data[party_id].name,
-              isSame: false,
-              isDifferent: false,
-            });
-          }
-          self.parties = parties;
+        success: (data) => {
+          const sameParties = this.$options.cardData.state.sameParties || [];
+          const differentParties = this.$options.cardData.state.differentParties || [];
+          self.parties = Object.keys(data).map(partyId => ({
+            id: data[partyId].id,
+            acronym: data[partyId].acronym,
+            is_coalition: data[partyId].is_coalition,
+            name: data[partyId].name,
+            isSame: sameParties.indexOf(data[partyId].id) > -1,
+            isDifferent: differentParties.indexOf(data[partyId].id) > -1,
+          }));
         },
-        error: function (error) {
-          alert(JSON.stringify(error));
-        }
+        error(error) {
+          window.alert(JSON.stringify(error));
+        },
       });
       $.ajax({
         url: 'https://data.parlameter.si/v1/getMPs/',
         method: 'GET',
-        success: function (data) {
+        success: (data) => {
+          const samePeople = this.$options.cardData.state.samePeople || [];
+          const differentPeople = this.$options.cardData.state.differentPeople || [];
           const sameData = JSON.parse(JSON.stringify(data));
           self.samePeople = sameData.map((person) => {
-            person.selected = false;
+            person.selected = samePeople.indexOf(person.id) > -1;
             person.label = person.name;
 
             return person;
@@ -326,33 +359,23 @@
 
           const differentData = JSON.parse(JSON.stringify(data));
           self.differentPeople = differentData.map((person) => {
-            person.selected = false;
+            person.selected = differentPeople.indexOf(person.id) > -1;
             person.label = person.name;
 
             return person;
           });
         },
-        error: function (error) {
-          alert(JSON.stringify(error));
-        }
+        error(error) {
+          window.alert(JSON.stringify(error));
+        },
       });
     },
     methods: {
-      handleCheckbox: function(event) {
-          this.special = !this.special;
-      },
-      focusTab(tabNumber) {
-        // if (tabNumber !== 1) {
-        //   this.$refs.parties.expandedParty = null;
-        //   this.$refs.parties.expandedOption = null;
-        // }
-        // if (tabNumber !== 2) {
-        //   this.$refs.sides.expandedParty = null;
-        //   this.$refs.sides.expandedOption = null;
-        // }
+      toggleSpecial() {
+        this.special = !this.special;
       },
       round(value, decimals) {
-        return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+        return Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
       },
       togglePartySame(party) {
         party.isDifferent = false;
@@ -362,54 +385,29 @@
         party.isDifferent = !party.isDifferent;
         party.isSame = false;
       },
-      openModalSame() {
-        $('#modal-primerjalnik-same').modal('show');
-      },
-      openModalDifferent() {
-        $('#modal-primerjalnik-different').modal('show');
+      toggleModal(modalType, newState) {
+        this[`${modalType}ModalVisible`] = newState;
       },
       loadResults() {
-        if ((this.selectedSamePeople.length + this.sameParties.length) > 1) {
-          console.log('loading results');
-          console.log(this.queryUrl);
-          const self = this;
+        if (this.selectedSamePeople.length + this.sameParties.length > 1 ||
+           (this.selectedSamePeople.length + this.sameParties.length === 1 &&
+           this.selectedDifferentPeople.length + this.differentParties.length > 0)) {
+          this.loading = true;
           $.ajax({
-            url: self.queryUrl,
+            url: this.queryUrl,
             method: 'GET',
-            success: function (data) {
-              console.log('results loaded');
-              console.log(data);
-              self.data = data.results;
-              self.total = data.total;
-
-              $('.modal').modal('hide');
+            success: (data) => {
+              this.data = data.results;
+              this.total = data.total;
+              this.loading = false;
             },
-            error: function (error) {
-              alert(JSON.stringify(error));
-            }
-          });
-        } else if ((this.selectedSamePeople.length + this.sameParties.length) === 1 && (this.selectedDifferentPeople.length +
-            this.differentParties.length) > 0) {
-          console.log('loading results');
-          console.log(this.queryUrl);
-          const self = this;
-          $.ajax({
-            url: self.queryUrl,
-            method: 'GET',
-            success: function (data) {
-              console.log('results loaded');
-              console.log(data);
-              self.data = data.results;
-              self.total = data.total;
-
-              $('.modal').modal('hide');
+            error(error) {
+              window.alert(JSON.stringify(error));
+              this.loading = false;
             },
-            error: function (error) {
-              alert(JSON.stringify(error));
-            }
           });
         } else {
-          alert('nimaš izbranih dovolj pogojev za primerjavo');
+          window.alert('nimaš izbranih dovolj pogojev za primerjavo');
         }
       },
       getFilteredVotes() {
@@ -417,11 +415,10 @@
       },
       shortenUrl(url) {
         return new Promise((resolve) => {
-          $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
-            response) => {
-            this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-            resolve(response);
-          });
+          $.get(
+            `https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`,
+            response => resolve(response),
+          );
         });
       },
       measurePiwik(filter, sort, order) {
@@ -436,7 +433,10 @@
     },
     watch: {
       generatedCardUrl(newUrl) {
-        this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
+        this.shortenUrl(newUrl).then((newShortenedUrl) => {
+          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+          this.shortenedCardUrl = newShortenedUrl;
+        });
       },
       selectedSamePeople(newSelectedSamePeople) {
         newSelectedSamePeople.forEach((person) => {
@@ -455,7 +455,7 @@
             p.selected = false;
           });
         });
-      }
+      },
     },
     beforeMount() {
       this.shortenUrl(this.generatedCardUrl);
@@ -466,21 +466,108 @@
 <style lang="scss" scoped>
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
+  @import '~parlassets/scss/helper';
+
+  .card-content-front.is-loading {
+    overflow-y: hidden;
+    position: relative;
+    &::before {
+      background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
 
   .primerjalnik {
 
     text-align: center;
     background-color: $funblue-light;
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 10px;
 
     .primerjalnik-for,
     .primerjalnik-against {
       .plus {
         background-color: #ffffff;
+        padding: 0.2px 7px;
+        font-size: 21px;
+        line-height: 12px;
+        cursor: pointer;
+        color: $funblue;
+        position: relative;
+        top: 3px;
+
+        font-family: 'Roboto', sans-serif;
+
+        margin-left: 5px;
+      }
+
+      .tag {
+        background-color: $funblue;
+        color: #ffffff;
+        padding: 5px;
+        font-size: 12px;
+        cursor: pointer;
+
+        margin-left: 5px;
+
+        font-family: 'Roboto', sans-serif;
+
+        &::after {
+          content: '×';
+          margin-left: 3px;
+          font-size: 20px;
+          line-height: 20px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+
+    .load {
+      color: $sadblue;
+      cursor: pointer;
+      &:hover {
+        background-color: #ffffff;
+      }
+
+      &::after {
+        content: '';
         display: inline-block;
+        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/nalozi.svg');
         width: 20px;
         height: 20px;
-        cursor: pointer;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .primerjalnik-extras {
+      margin-top: 40px;
+    }
+
+    .searchfilter-checkbox {
+      height: 40px;
+      label {
+        text-align: left;
+        margin-bottom: 0;
+      }
+    }
+
+    .summary {
+      margin-bottom: 0;
+      line-height: 40px;
+      text-align: right;
+
+      @include respond-to(mobile) {
+        text-align: left;
+        margin-top: 10px;
       }
     }
   }
@@ -488,10 +575,30 @@
   .primerjalnik-ps-switch {
     background: #ffffff;
     cursor: pointer;
-    padding: 0 10px 0 10px;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px;
+    color: $funblue;
+
+    &::after {
+      content: '×';
+      margin-left: 8px;
+      font-size: 20px;
+      line-height: 20px;
+      position: relative;
+      top: 2px;
+      transform: rotate(45deg);
+      display: inline-block;
+      transition: transform 0.2s ease-out;
+    }
 
     &.on {
       background: $funblue;
+      color: #ffffff;
+
+      &::after {
+        transform: rotate(0deg);
+      }
     }
   }
   .loadme {
@@ -502,9 +609,58 @@
     display: block;
     position: relative;
   }
-</style>
-<style lang="scss">
-  .modal-backdrop.fade.in {
-    display: none !important;
+
+  .empty {
+    // background-color: #ff0000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/icons/primerjalnik-empty.png');
+    background-position: center;
+    background-repeat: no-repeat;
   }
+
+  // CARD MODAL
+  .card-modal {
+    position: absolute;
+    width: 280px;
+    left: 50%;
+    margin-left: -120px;
+    top: 100px;
+    z-index: 100;
+    background-color: #F0F5F8;
+
+    @include card(2);
+
+    .card-modal-header {
+      width: 100%;
+      background-color: $funblue;
+      color: #ffffff;
+      font-family: 'Roboto Slab', serif;
+      padding: 10px 50px 10px 10px;
+
+      .closeme {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: -1px;
+        font-size: 40px;
+        cursor: pointer;
+
+        &::before {
+          content: '×';
+        }
+      }
+    }
+
+    .card-modal-content {
+      padding: 10px;
+    }
+  }
+
+  .tabs { height: 410px; }
+  .tab-three { padding-top: 16px; }
 </style>
