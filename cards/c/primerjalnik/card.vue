@@ -209,7 +209,7 @@
           :items="differentPeople"
           :placeholder="differentPeoplePlaceholder"
         ></search-dropdown>
-        <div class="card-modal-button" @click="toggleModal('same', false)">POTRDI</div>
+        <div class="card-modal-button" @click="toggleModal('different', false)">POTRDI</div>
       </div>
     </div>
   </div>
@@ -243,7 +243,7 @@
         sameModalVisible: false,
         differentModalVisible: false,
         headerConfig: {
-          circleIcon: 'og-list',
+          circleIcon: 'primerjalnik',
           heading: '&nbsp;',
           subheading: '7. sklic parlamenta',
           alternative: this.$options.cardData.cardData.altHeader === 'true',
@@ -528,9 +528,11 @@
       }
 
       .tag {
+        display: inline-block;
+        white-space: nowrap;
         background-color: $funblue;
         color: #ffffff;
-        padding: 5px;
+        padding: 0px 7px;
         font-size: 14px;
         cursor: pointer;
 
@@ -550,6 +552,8 @@
     }
 
     .load {
+      display: inline-block;
+      white-space: nowrap;
       color: $sadblue;
       cursor: pointer;
       font-weight: 600;
@@ -565,6 +569,7 @@
         height: 20px;
         position: relative;
         top: 3px;
+        margin-left: 5px;
       }
     }
 

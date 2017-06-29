@@ -80,7 +80,6 @@
         ];
     %>
 
-
     <style>
         #card-container {
             padding: 10px;
@@ -99,7 +98,7 @@
             background: none transparent;
         }
         .card-content{
-            <% if (highcards.indexOf(cardData.name) !== -1) { %>
+            <% if (highcards.indexOf(cardData.name) === -1) { %>
                 max-height: 518px;
             <% } else { %>
 
