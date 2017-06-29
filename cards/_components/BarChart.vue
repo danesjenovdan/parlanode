@@ -47,9 +47,16 @@ export default {
 
 <style lang="scss">
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .party-list .labeled-chart .column.chart-label {
   width: auto;
   width: 200px;
+  font-size: 14px;
+}
+.progress_number {
+  @include respond-to(mobile) {
+    display: none;
+  }
 }
 </style>
