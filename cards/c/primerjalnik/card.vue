@@ -150,13 +150,14 @@
         <p class="info-text lead"></p>
         <p class="info-text heading">METODOLOGIJA</p>
         <p class="info-text">Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.</p>
-        <p class="info-text">Rezultate prikazujemo na tri načine
+        <p class="info-text">Rezultate prikazujemo na tri načine:</p>
+        <div class="info-text">
           <ul>
             <li>kot seznam vseh glasovanj,</li>
             <li>kot črtni grafikon ki predstavlja število glasovanj na dan,</li>
             <li>kot histogram s seštevki glasovanj glede na matično delovno telo.</li>
           </ul>
-        </p>
+        </div>
       </card-info>
 
       <card-embed :url="generatedCardUrl"></card-embed>
