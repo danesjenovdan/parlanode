@@ -85,7 +85,7 @@
                     <div class="col-md-11 border-left">
                       <div class="col-md-6">
                         <div class="session_title ">
-                          <p>{{ vote.results.text }}</p>
+                          <p>{{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}</p>
                         </div>
                       </div>
                       <div class="col-md-6 ">
@@ -187,6 +187,7 @@
           :items="samePeople"
           :placeholder="samePeoplePlaceholder">
         </search-dropdown>
+        <div class="card-modal-button" @click="toggleModal('same', false)">POTRDI</div>
       </div>
     </div>
 
@@ -208,6 +209,7 @@
           :items="differentPeople"
           :placeholder="differentPeoplePlaceholder"
         ></search-dropdown>
+        <div class="card-modal-button" @click="toggleModal('same', false)">POTRDI</div>
       </div>
     </div>
   </div>
@@ -278,7 +280,7 @@
           const v = JSON.parse(JSON.stringify(e));
           const allInVotes = v.results.votes_for + v.results.against +
             v.results.abstain + v.results.not_present;
-          v.url = `https://parlameter.si/seja/glasovanje/${e.session.id}/${e.results.motion_id$}`;
+          v.url = `https://parlameter.si/seja/glasovanje/${e.session.id}/${e.results.motion_id}`;
           v.accepted = `accepted ${e.results.result === true ? 'aye' : 'nay'}`;
           v.accepted_glyph = `glyphicon glyphicon-${e.results.result === true ? 'ok' : 'remove'}`;
           v.percent_votes_for = Math.floor((v.results.votes_for / allInVotes) * 100);
@@ -501,10 +503,10 @@
   .primerjalnik {
 
     text-align: center;
-    background-color: $funblue-light;
+    background-color: #f0f5f8;
     padding: 30px 30px 10px 30px;
     font-family: 'Roboto Slab', serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 30px;
     margin-bottom: 10px;
 
@@ -529,7 +531,7 @@
         background-color: $funblue;
         color: #ffffff;
         padding: 5px;
-        font-size: 12px;
+        font-size: 14px;
         cursor: pointer;
 
         margin-left: 5px;
@@ -550,6 +552,7 @@
     .load {
       color: $sadblue;
       cursor: pointer;
+      font-weight: 600;
       &:hover {
         background-color: #ffffff;
       }
@@ -586,6 +589,9 @@
       margin-bottom: 0;
       line-height: 40px;
       text-align: right;
+
+      font-size: 11px;
+      color: #555555;
 
       @include respond-to(mobile) {
         text-align: left;
@@ -645,6 +651,14 @@
     background-repeat: no-repeat;
   }
 
+  .searchfilter-checkbox .checkbox + label:before {
+    background-color: #f0f5f8;
+  }
+  .searchfilter-checkbox .checkbox + label {
+    font-size: 11px;
+    color: #555555;
+  }
+
   // CARD MODAL
   .card-modal {
     position: absolute;
@@ -656,6 +670,21 @@
     background-color: #F0F5F8;
 
     @include card(2);
+
+    .card-modal-button {
+      width: 100%;
+      line-height: 40px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: $funblue;
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
 
     .card-modal-header {
       width: 100%;

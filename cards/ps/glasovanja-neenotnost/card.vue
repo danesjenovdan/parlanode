@@ -116,6 +116,8 @@ export default {
     namedGroups = sortBy(namedGroups, 'name');
     groups = groups.concat(namedGroups);
 
+    
+
     return {
       voteData: [],
       loading: true,
@@ -138,6 +140,7 @@ export default {
         .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
       groups,
+      cardData: this.$options.cardData,
     };
   },
   computed: {
@@ -196,19 +199,10 @@ export default {
     generatedCardUrl() {
       const state = {};
 
-      // if (this.special) { state.special = this.special; }
-      // if (this.selectedSamePeople.length > 0) {
-      //   state.samePeople = this.selectedSamePeople.map(p => p.id);
-      // }
-      // if (this.selectedDifferentPeople.length > 0) {
-      //   state.differentPeople = this.selectedDifferentPeople.map(p => p.id);
-      // }
-      // if (this.sameParties.length > 0) {
-      //   state.sameParties = this.sameParties.map(p => p.id);
-      // }
-      // if (this.differentParties.length > 0) {
-      //   state.differentParties = this.differentParties.map(p => p.id);
-      // }
+      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
+      if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      if (this.textFilter.length > 0) state.text = this.textFilter;
+      if (this.selectedSort.length > 0) state.sort = this.selectedSort;
 
       return `https://glej.parlameter.si/ps/glasovanja-neenotnost/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -279,6 +273,20 @@ export default {
           );
         }
         this.voteData = response[acronym];
+
+        const selectFromState = (items, stateItemIds) =>
+          items.map(item =>
+            Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
+          );
+
+        if (this.cardData.state) {
+          const state = this.cardData.state;
+          if (state.text) this.textFilter = state.text;
+          if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
+          if (state.sort) this.selectedSort = state.sort;
+          if (state.tags) this.allTags = selectFromState(this.allTags, state.tags);
+        }
+
         this.loading = false;
       });
     },
