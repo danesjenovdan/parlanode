@@ -45,7 +45,7 @@ export default {
       default: false,
     },
     switchCallback: Function,
-    startTab: Integer,
+    startTab: Number,
   },
 };
 </script>
