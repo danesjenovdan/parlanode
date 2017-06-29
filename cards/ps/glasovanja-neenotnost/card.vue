@@ -154,8 +154,9 @@ export default {
       const validTags = [];
       const validMonths = [];
 
-      this.getFilteredVotingDays(true).forEach((votingDay) => {
-        const [year, month] = votingDay.date.split('-').map(string => parseInt(string, 10));
+      this.getFilteredVotingDays().forEach((votingDay) => {
+        const year = votingDay.date.split(' ')[2].split('-')[0];
+        const month = votingDay.date.split(' ')[1].split('.')[0];
         const monthId = `${year}-${month}`;
         if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
 
@@ -185,7 +186,7 @@ export default {
     },
     headerConfig() {
       return {
-        circleIcon: 'og-list',
+        circleIcon: 'seznam-glasovanj',
         heading: '&nbsp;',
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
@@ -223,14 +224,18 @@ export default {
       const filterDates = (votingDay) => {
         if (onlyFilterByText || this.selectedMonths.length === 0) return true;
 
-        const [year, month] = votingDay.date.split('-').map(string => parseInt(string, 10));
+        const year = parseInt(votingDay.date.split(' ')[2].split('-')[0], 10);
+        const month = parseInt(votingDay.date.split(' ')[1].split('.')[0], 10);
+
+        console.log(this.selectedMonths);
 
         return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
-      const getDateFromVote = vote =>
-        (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
+      const getDateFromVote = vote => {
+        return (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
+      }
 
       let currentVotingDays;
 
@@ -259,9 +264,10 @@ export default {
       this.selectedSort = sortId;
     },
     shortenUrl() {
-      $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
+      const mypromise = $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
         this.shortenedCardUrl = response;
       });
+      return mypromise;
     },
     fetchVotesForGroup(acronym = 'DZ') {
       this.loading = true;
