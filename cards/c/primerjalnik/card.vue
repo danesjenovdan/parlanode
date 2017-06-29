@@ -149,7 +149,14 @@
       <card-info>
         <p class="info-text lead"></p>
         <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
+        <p class="info-text">Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.</p>
+        <p class="info-text">Rezultate prikazujemo na tri načine
+          <ul>
+            <li>kot seznam vseh glasovanj,</li>
+            <li>kot črtni grafikon ki predstavlja število glasovanj na dan,</li>
+            <li>kot histogram s seštevki glasovanj glede na matično delovno telo.</li>
+          </ul>
+        </p>
       </card-info>
 
       <card-embed :url="generatedCardUrl"></card-embed>
@@ -563,6 +570,11 @@
 
     .searchfilter-checkbox {
       height: 40px;
+      
+      @include respond-to(mobile) {
+        height: auto;
+      }
+
       label {
         text-align: left;
         margin-bottom: 0;

@@ -61,10 +61,11 @@
       <card-info>
         <p class="info-text lead"></p>
         <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
+        <p class="info-text">Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.</p>
+        <p class="info-text">Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu. </p>
       </card-info>
 
-      <card-embed :url="url" />
+      <card-embed :url="generatedCardUrl" />
 
       <card-share :url="shortenedCardUrl" />
     </div>
@@ -192,6 +193,25 @@ export default {
       return this.$options.cardData.cardData.name +
         (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
     },
+    generatedCardUrl() {
+      const state = {};
+
+      // if (this.special) { state.special = this.special; }
+      // if (this.selectedSamePeople.length > 0) {
+      //   state.samePeople = this.selectedSamePeople.map(p => p.id);
+      // }
+      // if (this.selectedDifferentPeople.length > 0) {
+      //   state.differentPeople = this.selectedDifferentPeople.map(p => p.id);
+      // }
+      // if (this.sameParties.length > 0) {
+      //   state.sameParties = this.sameParties.map(p => p.id);
+      // }
+      // if (this.differentParties.length > 0) {
+      //   state.differentParties = this.differentParties.map(p => p.id);
+      // }
+
+      return `https://glej.parlameter.si/ps/glasovanja-neenotnost/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+    },
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
@@ -245,7 +265,7 @@ export default {
       this.selectedSort = sortId;
     },
     shortenUrl() {
-      $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
+      $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
         this.shortenedCardUrl = response;
       });
     },
@@ -276,9 +296,15 @@ export default {
     selectedGroup(newValue) {
       this.fetchVotesForGroup(newValue);
     },
+    generatedCardUrl(newUrl) {
+      this.shortenUrl(newUrl).then((newShortenedUrl) => {
+        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+        this.shortenedCardUrl = newShortenedUrl;
+      });
+    },
   },
   beforeMount() {
-    this.shortenUrl();
+    this.shortenUrl(this.generatedCardUrl);
     this.fetchVotesForGroup();
   },
 };
