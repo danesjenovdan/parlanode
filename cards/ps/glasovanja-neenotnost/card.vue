@@ -204,6 +204,7 @@ export default {
       if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
       if (this.textFilter.length > 0) state.text = this.textFilter;
       if (this.selectedSort.length > 0) state.sort = this.selectedSort;
+      if (this.selectedGroup.length > 0) state.selectedGroup = this.selectedGroup;
 
       return `https://glej.parlameter.si/ps/glasovanja-neenotnost/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -291,6 +292,7 @@ export default {
           if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
           if (state.sort) this.selectedSort = state.sort;
           if (state.tags) this.allTags = selectFromState(this.allTags, state.tags);
+          if (state.selectedGroup) this.selectedGroup = state.selectedGroup;
         }
 
         this.loading = false;
