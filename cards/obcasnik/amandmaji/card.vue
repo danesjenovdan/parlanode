@@ -6,13 +6,13 @@
       <div class="card-content-front">
         <tabs dark :switch-callback="focusTab">
           <tab header="Št. članov PS">
-            <true-bar-chart :data="data" :property="'seat_count'"></true-bar-chart>
+            <bar-chart :data="seatCountData"></bar-chart>
           </tab>
           <tab header="Št. vloženih amandmajev">
-            <true-bar-chart :data="data" :property="'amandmaji'"></true-bar-chart>
+            <bar-chart :data="amandmajiData"></bar-chart>
           </tab>
           <tab header="Št. vloženih amandmajev na poslanca">
-            <true-bar-chart :data="data" :property="'amandmaji_na_poslanca'"></true-bar-chart>
+            <bar-chart :data="amandmajiNaPoslancaData"></bar-chart>
           </tab>
         </tabs>
       </div>
@@ -57,6 +57,32 @@ export default {
       },
       generatedCardUrl: 'https://glej.parlameter.si/group/method/',
     };
+  },
+  computed: {
+    seatCountData() {
+      return this.data.map((row) => {
+        return {
+          'label': row.party.acronym,
+          'value': row.results.seat_count,
+        }
+      });
+    },
+    amandmajiData() {
+      return this.data.map((row) => {
+        return {
+          'label': row.party.acronym,
+          'value': row.results.amandmaji,
+        }
+      });
+    },
+    amandmajiNaPoslancaData() {
+      return this.data.map((row) => {
+        return {
+          'label': row.party.acronym,
+          'value': row.results.amandmaji_na_poslanca,
+        }
+      });
+    },
   },
   methods: {
     shortenUrl() {

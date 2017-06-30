@@ -2,8 +2,8 @@
   "_id": "random_id",
   "name": "Seznam poslancev po številu mandatov",
   "dataUrl": "https://analize.parlameter.si/v1/",
-  "type": "tip_alt_headerja",
-  "lastUpdate": "2017-03-19T18:04:55.294Z",
+  "type": "mandati",
+  "lastUpdate": "2017-06-30T16:28:21.922Z",
   "method": "ime_metode",
   "group": "[p|s|ps]"
 }
