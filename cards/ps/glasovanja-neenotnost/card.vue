@@ -320,7 +320,9 @@ export default {
     },
   },
   beforeMount() {
-    this.shortenUrl(this.generatedCardUrl);
+    this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
+      this.shortenedCardUrl = newShortenedUrl;
+    });
     this.fetchVotesForGroup();
   },
 };
