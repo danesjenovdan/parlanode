@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <tabs dark :switch-callback="focusTab">
+        <tabs dark :switch-callback="focusTab" :start-tab="selectedTab">
           <tab header="Seznam glasovanj">
             <div class="empty" v-if="filteredVotes.length === 0"></div>
             <div v-else id="votingCard" class="date-list">
@@ -242,6 +242,7 @@
         shortenedCardUrl: '',
         sameModalVisible: false,
         differentModalVisible: false,
+        selectedTab: this.$options.cardData.state.selectedTab || 0,
         headerConfig: {
           circleIcon: 'primerjalnik',
           heading: '&nbsp;',
@@ -331,6 +332,10 @@
         if (this.differentParties.length > 0) {
           state.differentParties = this.differentParties.map(p => p.id);
         }
+        if (this.selectedTab > 0) {
+          state.selectedTab = this.selectedTab;
+        }
+        
 
         return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
@@ -446,8 +451,8 @@
           }
         }
       },
-      focusTab() {
-        return false;
+      focusTab(tabindex) {
+        this.selectedTab = tabindex;
       },
     },
     watch: {
@@ -477,7 +482,9 @@
       },
     },
     beforeMount() {
-      this.shortenUrl(this.generatedCardUrl);
+      this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
+        this.shortenedCardUrl = newShortenedUrl;
+      });
     },
   };
 </script>
@@ -652,6 +659,7 @@
     left: 0;
 
     background-image: url('https://cdn.parlameter.si/v1/parlassets/img/icons/primerjalnik-empty.png');
+    background-size: 220px 220px;
     background-position: center;
     background-repeat: no-repeat;
   }
