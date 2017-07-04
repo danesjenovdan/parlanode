@@ -62,10 +62,10 @@ export default {
         { id: 'votes', label: 'Glasovi', additionalClass: 'optional' },
       ],
       votes: [
-        { id: 'for', label: 'za', selected: false },
-        { id: 'against', label: 'proti', selected: false },
-        { id: 'abstain', label: 'vzdržani', selected: false },
-        { id: 'not_present', label: 'niso', selected: false },
+        { id: 'for', label: 'za', selected: this.getSelectedOption('za') },
+        { id: 'against', label: 'proti', selected: this.getSelectedOption('proti') },
+        { id: 'abstain', label: 'vzdržani', selected: this.getSelectedOption('vzdržani') },
+        { id: 'not_present', label: 'niso', selected: this.getSelectedOption('niso') },
       ],
     };
   },
@@ -113,6 +113,13 @@ export default {
     }
   },
   methods: {
+    getSelectedOption(option) {
+      if (this.state.selectedOption) {
+        return this.state.selectedOption === option;
+      } else {
+        return false;
+      }
+    },
     getPersonLink,
     getPersonPortrait,
     getPersonPartyLink,
