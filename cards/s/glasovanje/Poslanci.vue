@@ -105,6 +105,12 @@ export default {
     members: Array,
     memberVotes: Object,
     result: Object,
+    state: Object,
+  },
+  mounted() {
+    if (this.state.nameFilter) {
+      this.nameFilter = this.state.nameFilter;
+    }
   },
   methods: {
     getPersonLink,
