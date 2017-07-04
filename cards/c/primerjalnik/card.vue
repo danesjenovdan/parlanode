@@ -358,7 +358,7 @@
           }));
         },
         error(error) {
-          window.alert(JSON.stringify(error));
+          console.log(error);
         },
       });
       const peoplePromise = $.ajax({
