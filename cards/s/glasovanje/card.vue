@@ -27,7 +27,7 @@
             />
           </div>
         </div>
-        <tabs dark :switch-callback="focusTab">
+        <tabs dark :switch-callback="focusTab" :start-tab="selectedTab">
           <tab header="Poslanci">
             <poslanci
               :members="data.members"
@@ -96,6 +96,7 @@ export default {
       data: this.$options.cardData.data,
       state: this.$options.cardData.state,
       slugs: this.$options.cardData.urlsData,
+      selectedTab: this.$options.cardData.state.selectedTab || 0,
       shortenedCardUrl: '',
       headerConfig: {
         circleIcon: 'og-list',
