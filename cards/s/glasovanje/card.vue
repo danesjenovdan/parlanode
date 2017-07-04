@@ -33,6 +33,7 @@
               :members="data.members"
               :member-votes="data.all"
               :result="data.result"
+              :state="state"
             />
           </tab>
           <tab header="Poslanske skupine">
@@ -93,6 +94,7 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data,
+      state: this.$options.cardData.state,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
       headerConfig: {
@@ -124,6 +126,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
+
       return 'https://glej.parlameter.si/s/glasovanje/' + this.data.id + '?state={}';
     },
   },
