@@ -81,7 +81,16 @@ export default {
         let optionMatch = true;
 
         if (this.nameFilter.length > 0) {
-          nameMatch = member.person.name.toLowerCase().indexOf(this.nameFilter.toLowerCase()) > -1;
+          const namesToMatch = this.nameFilter.split('|');
+          nameMatch = namesToMatch.reduce((result, nameToMatch) => {
+            if (!result) {
+              console.log(nameToMatch);
+              console.log(member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1);
+              return member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1;
+            } else {
+              return result;
+            }
+          }, false);
         }
 
         if (this.selectedVotes.length > 0) {
