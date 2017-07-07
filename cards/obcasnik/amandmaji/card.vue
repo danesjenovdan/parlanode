@@ -20,7 +20,11 @@
       <card-info>
         <p class="info-text lead"></p>
         <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
+        <p class="info-text">Glasovanja o amandmajih objavljena na spletnem mestu <a href="http://www.dz-rs.si">DZ RS</a> imajo ime zapisano po vnaprej določeni strukturi:</p>
+        <div class="info-text">
+          <pre>&lt;ime zakona&gt; - Amandma: &lt;K X. členu&gt; &lt;datum&gt; [&lt;kratica poslanske skupine&gt; - &lt;ime poslanske skupine&gt;]</pre>
+        </div>
+        <p class="info-text">Število amandmajev, ki jih vložila posamezna poslanska skupina dobimo tako, da preštejemo vsa glasovanja, v imenu katerih se pojavi beseda amandma. Med preštetimi glasovanji poiščemo tista, katerih ime vsebije kratico poslanske skupine. Ta amandma prištejemo k tej poslanski skupini.</p>
       </card-info>
 
       <card-embed :url="generatedCardUrl" />
@@ -47,7 +51,7 @@ export default {
       data: this.$options.cardData.data.data,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
-      url: 'https://glej.parlameter.si/group/method/',
+      url: 'https://glej.parlameter.si/obcasnik/amandmaji/?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -55,7 +59,7 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
-      generatedCardUrl: 'https://glej.parlameter.si/group/method/',
+      generatedCardUrl: 'https://glej.parlameter.si/obcasnik/amandmaji/?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json',
     };
   },
   computed: {
@@ -107,7 +111,10 @@ export default {
     },
   },
   mounted() {
-    this.shortenUrl();
+    this.shortenUrl().then((newShortenedUrl) => {
+      this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+      this.shortenedCardUrl = newShortenedUrl;
+    });
   },
 };
 </script>

@@ -24,7 +24,7 @@
       <card-info>
         <p class="info-text lead"></p>
         <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
+        <p class="info-text">Kartica predstavlja seznam desetih poslank in poslancev trenutnega sklica DZ, ki imajo največ mandatov. Število mandatov smo prešteli "na roke" z brskanjem po spletnem mestu <a href="http://www.dz-rs.si/">DZ RS</a>.</p>
       </card-info>
 
       <card-embed :url="generatedCardUrl" />
@@ -57,7 +57,7 @@
         }),
         slugs: this.$options.cardData.urlsData,
         shortenedCardUrl: '',
-        url: 'https://glej.parlameter.si/group/method/',
+        url: 'https://glej.parlameter.si/obcasnik/mandati/?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json',
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -65,6 +65,7 @@
           alternative: this.$options.cardData.cardData.altHeader === 'true',
           title: this.$options.cardData.cardData.name,
         },
+        generatedCardUrl: 'https://glej.parlameter.si/obcasnik/mandati/?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json',
       };
     },
     methods: {
@@ -88,7 +89,10 @@
       },
     },
     mounted() {
-      this.shortenUrl();
+      this.shortenUrl().then((newShortenedUrl) => {
+        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+        this.shortenedCardUrl = newShortenedUrl;
+      });
     },
   };
 </script>
