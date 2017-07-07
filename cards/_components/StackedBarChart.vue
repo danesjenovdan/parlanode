@@ -1,60 +1,71 @@
 <template>
-  <ul class="party-list">
-      <li v-for="row in rows" class="labeled-chart">
-        <div class="column chart-label">
+    <div class="session_voting">
+      <div class="row" v-for="row in rows">
+        <div class="col-xs-12" style="background-color: #f0f0f0; margin-bottom: 10px; padding: 10px;">
           {{ row.name }}
-        </div>
-        <div class="column chart">
-            <div class="progress hugebar">
-                <div v-for="property in row.properties" class="progress-bar funblue" role="progressbar" :style="{ width: property.widthPercentage + '%'}"></div>
-                <!--<div class="progress_number">{{ property.occurences + ' | ' + property.percentage }} %</div>-->
+          <span
+          :class="['pull-right', 'legenda', reverseColorClasses[k + reverseColorClasses.length - row.stack.length]]"
+          v-for="chunk, k in row.reverseStack">
+            <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label}}:</span> {{ chunk.value}}
+          </span>
+          <div class="session_votes">
+            <div class="progress smallbar" :style="{width: String(row.percentage) + '%'}">
+              <div
+              v-for="chunk, i in row.stack"
+              :class="['progress-bar', colorClasses[i]]" 
+              :style="{ width: String(chunk.percentage) + '%'}">
+                <span class="sr-only">{{ chunk.percentage }}%</span>
+              </div>
             </div>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
+    <!--</ul>-->
 </template>
 
 <script>
 export default {
-  name: 'DateRow',
+  name: 'StackedBarChart',
   props: {
     data: Array,
-    properties: Array,
+  },
+  data() {
+    return {
+      colorClasses: ['funblue', 'fontblue', 'noblue', 'ignoreblue'],
+      reverseColorClasses: ['ignoreblue', 'noblue', 'fontblue', 'funblue'],
+    };
   },
   computed: {
-    rows: function() {
-      const almost = this.data.map(row => {
-        const tempobj = {
-          name: row.party.acronym,
-          widthPercentage: 0,
-          percentage: 0,
-          properties: this.properties.map((property) => {
+    rows() {
+      const mymax = Math.max.apply(Math, this.data.map((row) => {
+        return row.stack.reduce((acc, chunk) => acc + chunk.value, 0);
+      }));
+      return this.data.map(row => {
+        return {
+          name: row.name,
+          stack: row.stack.map((chunk) => {
             return {
-              occurences: row.results[property],
-              percentage: 0,
-              widthPercentage: 0
-            };
-          })
-        };
-
-        return tempobj;
-      });
-
-      const mymax = almost.map(row => row.occurences[0]).reduce((acc, row) => {
-        return Math.max(acc, row);
-      }, 0);
-      const mytotal = almost.map(row => row.occurences[0]).reduce((acc, row) => {
-        return acc + row;
-      }, 0);
-
-      return almost.map((row) => {
-        row.widthPercentage = row.occurences[0] / mymax * 80;
-        row.percentage = (row.occurences[0] / mytotal * 100).toFixed(2);
-        return row;
-      }).sort((a, b) => {
-        return b.occurences[0] - a.occurences[0];
-      });
-    }
+              label: chunk.label,
+              value: chunk.value,
+              percentage: 100 * chunk.value / row.stack.reduce((acc, chunk) => {
+                return acc + chunk.value;
+              }, 0),
+            }
+          }),
+          reverseStack: row.stack.map((chunk) => {
+            return {
+              label: chunk.label,
+              value: chunk.value,
+              percentage: 100 * chunk.value / row.stack.reduce((acc, chunk) => {
+                return acc + chunk.value;
+              }, 0),
+            }
+          }).reverse(),
+          percentage: 100 * row.stack.reduce((acc, chunk) => acc + chunk.value, 0) / mymax,
+        }
+      });      
+    },
   },
   watch: {
     data: function() {
@@ -66,9 +77,182 @@ export default {
 
 <style lang="scss">
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
+
+  .legenda {
+    font-size: 14px;
+    margin-right: 10px;
+
+    &:first-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .legenda.funblue {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: $funblue;
+    }
+  }
+  .legenda.fontblue {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: $fontblue;
+    }
+  }
 
   .party-list .labeled-chart .column.chart-label {
     width: auto;
     width: 200px;
+  }
+
+  #votingCard {
+    height: 500px;
+    overflow-y: auto;
+  }
+
+  #votingCard div.member span {
+    color: #525252;
+    font-weight: 500;
+  }
+
+  #votingCard .member:last-child {
+    border: none;
+  }
+
+  #votingCard .member.lastel {
+    border: none;
+    padding-bottom: 10px;
+  }
+
+  .session_voting {
+    font-weight: 400;
+    padding: 12px 15px 15px 12px;
+
+    &:empty::after {
+      color: #c8c8c8;
+      content: "Ni rezultatov.";
+      left: calc(50% - 41px);
+      position: absolute;
+      top: calc(50% - 10px);
+    }
+
+    .session_votes .progress.smallbar {
+      height: 25px;
+    }
+
+    .session_votes {
+      font-size: 30px;
+      line-height: 40px;
+      margin: 0;
+
+      .type {
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+
+  .accepted.nay {
+    color: #ff5e41;
+  }
+
+  .accepted.aye {}
+
+  .session_voting .accepted {
+    line-height: normal;
+    height: 95px;
+  }
+
+  .session_voting .accepted p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    margin: 0;
+    line-height: 30px;
+    margin-top: 6px;
+  }
+
+  .session_voting .session_title {
+    height: 95px;
+    margin: 0;
+    @include respond-to(mobile) {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .session_voting .session_title p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-family: Roboto Slab;
+    margin-top: 6px;
+  }
+
+
+  @media (max-width: 991px) {
+    .session_voting .session_title {
+      height: 93px;
+    }
+    .session_voting .accepted {
+      height: 60px;
+    }
+
+    .border-left {
+      border-left: none;
+      border-top: 2px solid #dbdbdb;
+    }
+    .single_voting:hover {
+      .border-left {
+        border-top-color: #cadde6;
+      }
+    }
+
+    .single_voting {
+      padding-bottom: 15px;
+    }
+  }
+
+  .single_voting {
+    position: relative;
+  }
+
+  .session_voting .session_title p {
+    font-size: 14px;
+  }
+
+
+  .session_voting .single_voting {
+    margin-bottom: 15px;
+  }
+
+  .single_voting:hover {
+    background-color: #e1f6ff;
+
+    .border-left {
+      border-left-color: #cadde6;
+    }
+  }
+
+  .seja_anchor:hover {
+    color: #525252;
+  }
+
+  .card-content-front {
+    overflow-y: auto;
   }
 </style>

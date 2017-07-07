@@ -1,9 +1,9 @@
 {
   "_id": "random_id",
   "name": "Uspešnost vloženih amandmajev",
-  "dataUrl": "https://cdn.parlameter.si/v1/data/amandmaji.json",
-  "type": "seje",
-  "lastUpdate": "2017-06-27T12:59:48.394Z",
-  "method": "ime_metode",
+  "dataUrl": "https://data.parlameter.si/v1/getAmendments/",
+  "type": "amandmaji",
+  "lastUpdate": "2017-07-07T09:27:07.102Z",
+  "method": "uspesnost-amandmajev",
   "group": "obcasnik"
 }

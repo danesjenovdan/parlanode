@@ -4,7 +4,7 @@
 
     <div class="card-content">
       <div class="card-content-front">
-        <stacked-bar-chart :data="data" :properties="['seat_count']"></stacked-bar-chart>
+        <stacked-bar-chart :data="rows"></stacked-bar-chart>
       </div>
 
       <card-info>
@@ -33,8 +33,38 @@ export default {
   mixins: [common],
   name: 'ImeKartice',
   data() {
+    const data = this.$options.cardData.data
+    const parties =  ['SDS', 'SMC', 'ZL', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
+
+    const rows = parties.map((acronym) => {
+      const successful = data
+        .filter(e => e.acronym === acronym)
+        .filter(e => e.result)
+        .length;
+      
+      const unsuccessful = data
+        .filter(e => e.acronym === acronym)
+        .filter(e => !e.result)
+        .length;
+      
+      return {
+        name: data.filter(e => e.acronym === acronym)[0].orgData.acronym,
+        acronym: data.filter(e => e.acronym === acronym)[0].orgData.acronym,
+        stack: [
+          {
+            label: 'uspešnih',
+            value: successful
+          },
+          {
+            label: 'neuspešnih',
+            value: unsuccessful
+          }
+        ],
+      }
+    });
+
     return {
-      data: this.$options.cardData.data.data,
+      data,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
       url: 'https://glej.parlameter.si/group/method/',
@@ -45,13 +75,14 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
-      generatedCardUrl: 'https://glej.parlameter.si/group/method/',
+      rows,
+      generatedCardUrl: 'https://glej.parlameter.si/obcasnik/uspesnost-amandmajev/?state={}',
     };
   },
   methods: {
     shortenUrl() {
       return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
           resolve(response);
         });
@@ -71,7 +102,10 @@ export default {
     },
   },
   mounted() {
-    this.shortenUrl();
+    this.shortenUrl().then((newShortenedUrl) => {
+      this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
+      this.shortenedCardUrl = newShortenedUrl;
+    });
   },
 };
 </script>
