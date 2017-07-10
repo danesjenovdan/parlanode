@@ -57,7 +57,7 @@
 /* globals $ */
 
 import { capitalize } from 'lodash';
-import { MONTH_NAMES } from 'components/constants';
+import generateMonths from 'helpers/generateMonths';
 import SearchField from 'components/SearchField.vue';
 import common from 'mixins/common';
 
@@ -147,12 +147,7 @@ export default {
         Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
       );
 
-    let allMonths = [];
-    [2017, 2016, 2015, 2014, 2013].forEach((year) => {
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((month) => {
-        allMonths.push({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false });
-      });
-    });
+    let allMonths = generateMonths();
 
     let allOptions = [
       { id: 'za', class: 'for', label: 'ZA', selected: false },
