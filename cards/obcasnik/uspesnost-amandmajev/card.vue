@@ -34,7 +34,7 @@ export default {
   name: 'ImeKartice',
   data() {
     const data = this.$options.cardData.data
-    const parties =  ['SDS', 'SMC', 'ZL', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
+    const parties =  ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
 
     const rows = parties.map((acronym) => {
       const successful = data

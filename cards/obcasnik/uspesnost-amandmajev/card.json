@@ -3,7 +3,7 @@
   "name": "Uspešnost vloženih amandmajev",
   "dataUrl": "https://data.parlameter.si/v1/getAmendments/",
   "type": "amandmaji",
-  "lastUpdate": "2017-07-07T09:27:07.102Z",
+  "lastUpdate": "2017-07-10T09:50:38.148Z",
   "method": "uspesnost-amandmajev",
   "group": "obcasnik"
 }
