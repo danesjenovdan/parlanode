@@ -726,7 +726,11 @@
   }
   // END CARD MODAL
 
-  .tab-content { height: 410px; }
+  .tab-content {
+    height: 410px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .tab-three { padding-top: 16px; }
 
   // VOTINGCARD
