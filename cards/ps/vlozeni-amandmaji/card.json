@@ -3,7 +3,7 @@
   "name": "Vloženi amandmaji",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getAmendmentsOfPG/",
   "type": "seje",
-  "lastUpdate": "2017-07-10T19:59:54.392Z",
+  "lastUpdate": "2017-07-11T14:11:28.299Z",
   "method": "vlozeni-amandmaji",
   "group": "ps"
 }
