@@ -1,0 +1,4428 @@
+{
+  "party": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "24.05.2017",
+  "created_for": "24.05.2017",
+  "results": [{
+    "date": "24. 5. 2017",
+    "votes": [{
+      "session": {
+        "name": "30. redna seja",
+        "date_ts": "2017-05-22T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "22. 5. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9580,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 1,
+        "against": 4,
+        "motion_id": 7180,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o podpornem okolju za podjetni\u0161tvo - Amandma: K 6. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 9,
+        "votes_for": 76,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "30. redna seja",
+        "date_ts": "2017-05-22T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "22. 5. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9580,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 1,
+        "against": 4,
+        "motion_id": 7181,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o podpornem okolju za podjetni\u0161tvo - Amandma: K 2. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 9,
+        "votes_for": 76,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "30. redna seja",
+        "date_ts": "2017-05-22T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "22. 5. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9580,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 27,
+        "against": 1,
+        "motion_id": 7191,
+        "has_outliers": true,
+        "text": "Zakon o \u0161portu - Amandma: K 88. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
+        "is_outlier": true,
+        "not_present": 11,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "30. redna seja",
+        "date_ts": "2017-05-22T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "22. 5. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9580,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 27,
+        "against": 0,
+        "motion_id": 7192,
+        "has_outliers": true,
+        "text": "Zakon o \u0161portu - Amandma: K 85. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
+        "is_outlier": true,
+        "not_present": 11,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "30. redna seja",
+        "date_ts": "2017-05-22T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "22. 5. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9580,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 23,
+        "against": 5,
+        "motion_id": 7198,
+        "has_outliers": true,
+        "text": "Zakon o \u0161portu - Amandma: K 34. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
+        "is_outlier": true,
+        "not_present": 12,
+        "votes_for": 50,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "25. 4. 2017",
+    "votes": [{
+      "session": {
+        "name": "29. redna seja",
+        "date_ts": "2017-04-20T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9427,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 16,
+        "against": 0,
+        "motion_id": 7116,
+        "has_outliers": false,
+        "text": "Zakon o vajeni\u0161tvu - Amandma: K 28. \u010dlenu 25.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 56,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "21. 4. 2017",
+    "votes": [{
+      "session": {
+        "name": "29. redna seja",
+        "date_ts": "2017-04-20T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9427,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 15,
+        "against": 0,
+        "motion_id": 7045,
+        "has_outliers": true,
+        "text": "Zakon o dr\u017eavnem odvetni\u0161tvu - Amandma: K 94. \u010dlenu 13.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za pravosodje"],
+        "is_outlier": false,
+        "not_present": 23,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "29. redna seja",
+        "date_ts": "2017-04-20T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9427,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 14,
+        "against": 2,
+        "motion_id": 7049,
+        "has_outliers": false,
+        "text": "Zakon o Sodnem svetu - Amandma: K 26. \u010dlenu 13.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za pravosodje"],
+        "is_outlier": false,
+        "not_present": 22,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "29. redna seja",
+        "date_ts": "2017-04-20T02:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9427,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 10,
+        "against": 7,
+        "motion_id": 7062,
+        "has_outliers": false,
+        "text": "Zakon o vajeni\u0161tvu - Amandma: K 35. \u010dlenu 14.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
+        "is_outlier": false,
+        "not_present": 23,
+        "votes_for": 50,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "15. 2. 2017",
+    "votes": [{
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 15,
+        "against": 1,
+        "motion_id": 6887,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o pravdnem postopku - Amandma: K 112. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za pravosodje"],
+        "is_outlier": false,
+        "not_present": 14,
+        "votes_for": 60,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 6,
+        "motion_id": 6892,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finan\u010dnih instrumentov - Amandma: K 58. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 15,
+        "votes_for": 49,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 5,
+        "motion_id": 6893,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finan\u010dnih instrumentov - Amandma: K 51. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 49,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 5,
+        "motion_id": 6894,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finan\u010dnih instrumentov - Amandma: K 25. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 48,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "14. 2. 2017",
+    "votes": [{
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "against": 12,
+        "motion_id": 6848,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 55,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 13,
+        "against": 5,
+        "motion_id": 6857,
+        "has_outliers": false,
+        "text": "Zakon o \u010dezmejnem izvajanju storitev - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": false,
+        "not_present": 16,
+        "votes_for": 56,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "8. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 2. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "against": 0,
+        "motion_id": 6864,
+        "has_outliers": false,
+        "text": "Zakon o osebni asistenci - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 72,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "23. 1. 2017",
+    "votes": [{
+      "session": {
+        "name": "26. redna seja",
+        "date_ts": "2017-01-23T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "23. 1. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 8940,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 1,
+        "motion_id": 6780,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": true,
+        "not_present": 21,
+        "votes_for": 47,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "13. 12. 2016",
+    "votes": [{
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 24,
+        "against": 0,
+        "motion_id": 6736,
+        "has_outliers": false,
+        "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 27. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 12,
+        "votes_for": 54,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 24,
+        "against": 0,
+        "motion_id": 6737,
+        "has_outliers": false,
+        "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 24. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 12,
+        "votes_for": 54,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 24,
+        "against": 0,
+        "motion_id": 6738,
+        "has_outliers": false,
+        "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 8. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 12,
+        "votes_for": 54,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 23,
+        "against": 0,
+        "motion_id": 6739,
+        "has_outliers": false,
+        "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 3. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 12,
+        "votes_for": 55,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 7,
+        "against": 30,
+        "motion_id": 6669,
+        "has_outliers": true,
+        "text": "Zakon o voznikih - Amandma: K 80. \u010dlenu 6.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": false,
+        "not_present": 12,
+        "votes_for": 41,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 5,
+        "against": 20,
+        "motion_id": 6670,
+        "has_outliers": true,
+        "text": "Zakon o voznikih - Amandma: K 30. \u010dlenu 6.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": false,
+        "not_present": 12,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "7. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "12. 12. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 30,
+        "against": 1,
+        "motion_id": 6684,
+        "has_outliers": true,
+        "text": "Zakon o lekarni\u0161ki dejavnosti - Amandma: K 4. \u010dlenu 6.12.2016 [SMC - Poslanska skupina Stranke modernega centra; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za zdravstvo"],
+        "is_outlier": true,
+        "not_present": 10,
+        "votes_for": 49,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "22. 11. 2016",
+    "votes": [{
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 27,
+        "against": 0,
+        "motion_id": 6800,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 22. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": true,
+        "not_present": 13,
+        "votes_for": 50,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 25,
+        "against": 1,
+        "motion_id": 6801,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 21. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": true,
+        "not_present": 13,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 12,
+        "against": 17,
+        "motion_id": 6802,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 18. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": false,
+        "not_present": 14,
+        "votes_for": 47,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 25,
+        "against": 0,
+        "motion_id": 6803,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 14. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": true,
+        "not_present": 14,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 6,
+        "against": 24,
+        "motion_id": 6805,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 4. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": false,
+        "not_present": 13,
+        "votes_for": 47,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 30,
+        "against": 0,
+        "motion_id": 6807,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 2. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": true,
+        "not_present": 14,
+        "votes_for": 46,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 6809,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 1. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": true,
+        "not_present": 14,
+        "votes_for": 55,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "17. 11. 2016",
+    "votes": [{
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 17,
+        "against": 0,
+        "motion_id": 4572,
+        "has_outliers": false,
+        "text": "Zakon o centralnem kreditnem registru - Amandma: K 15. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 11,
+        "votes_for": 62,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 10,
+        "against": 0,
+        "motion_id": 4574,
+        "has_outliers": false,
+        "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 72. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 12,
+        "votes_for": 68,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 9,
+        "against": 1,
+        "motion_id": 4575,
+        "has_outliers": false,
+        "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 67. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 14,
+        "votes_for": 66,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 8,
+        "against": 1,
+        "motion_id": 4579,
+        "has_outliers": true,
+        "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 31. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 11,
+        "votes_for": 70,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "4. 7. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 11. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 11,
+        "against": 0,
+        "motion_id": 4581,
+        "has_outliers": true,
+        "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 29. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 11,
+        "votes_for": 68,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "20. 10. 2016",
+    "votes": [{
+      "session": {
+        "name": "23. redna seja",
+        "date_ts": "2016-10-17T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "17. 10. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5573,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 14,
+        "against": 0,
+        "motion_id": 4755,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o uresni\u010devanju javnega interesa za kulturo - Amandma: K 15. \u010dlenu 11.10.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": true,
+        "not_present": 27,
+        "votes_for": 49,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "22. 9. 2016",
+    "votes": [{
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 17,
+        "against": 0,
+        "motion_id": 4814,
+        "has_outliers": false,
+        "text": "Zakon o dimnikarskih storitvah - Amandma: K 36. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 25,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 17,
+        "against": 0,
+        "motion_id": 4815,
+        "has_outliers": false,
+        "text": "Zakon o dimnikarskih storitvah - Amandma: K 33. \u010dlenu 15.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 25,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 17,
+        "against": 0,
+        "motion_id": 4816,
+        "has_outliers": false,
+        "text": "Zakon o dimnikarskih storitvah - Amandma: K 15. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 25,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 0,
+        "motion_id": 4817,
+        "has_outliers": false,
+        "text": "Zakon o dimnikarskih storitvah - Amandma: K 7. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 26,
+        "votes_for": 46,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "21. 9. 2016",
+    "votes": [{
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 19,
+        "against": 0,
+        "motion_id": 4834,
+        "has_outliers": false,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 81. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": true,
+        "not_present": 19,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 11,
+        "against": 10,
+        "motion_id": 4836,
+        "has_outliers": false,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 77. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 0,
+        "motion_id": 4837,
+        "has_outliers": false,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 46. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": false,
+        "not_present": 20,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 0,
+        "motion_id": 4839,
+        "has_outliers": false,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 35. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": true,
+        "not_present": 21,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "22. redna seja",
+        "date_ts": "2016-09-19T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 9. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5574,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 14,
+        "against": 2,
+        "motion_id": 4840,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 14. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": false,
+        "not_present": 24,
+        "votes_for": 50,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "15. 7. 2016",
+    "votes": [{
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 4847,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 85. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 18,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4848,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 83. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4849,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 80. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4850,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 79. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 1,
+        "motion_id": 4852,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 77 a. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 23,
+        "against": 0,
+        "motion_id": 4853,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 77. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4854,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 76. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 17,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4855,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 75 b. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 0,
+        "motion_id": 4856,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 70. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 15,
+        "votes_for": 57,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4857,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 52. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4858,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 50. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4860,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 46. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 17,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4862,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 45. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4863,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 44. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4864,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 43. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4865,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 35. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 4867,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 33. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 19,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 1,
+        "motion_id": 4868,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 30. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 22,
+        "votes_for": 46,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4869,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 27. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 23,
+        "against": 0,
+        "motion_id": 4870,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 26. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4871,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 25. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4872,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 21. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4873,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 19. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4875,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 14. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4876,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 10. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 4877,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 9. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 4878,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 6. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 2,
+        "motion_id": 4879,
+        "has_outliers": true,
+        "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 3. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 52,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "13. 7. 2016",
+    "votes": [{
+      "session": {
+        "name": "21. redna seja",
+        "date_ts": "2016-07-11T02:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "11. 7. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5575,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "against": 25,
+        "motion_id": 4910,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o Slovenskem dr\u017eavnem holdingu - Amandma: K 4. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 19,
+        "votes_for": 46,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "14. 6. 2016",
+    "votes": [{
+      "session": {
+        "name": "20. redna seja",
+        "date_ts": "2016-06-13T02:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 6. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5576,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 0,
+        "motion_id": 5000,
+        "has_outliers": true,
+        "text": "Zakon o tro\u0161arinah - Amandma: K 92. \u010dlenu 7.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 18,
+        "votes_for": 50,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "20. redna seja",
+        "date_ts": "2016-06-13T02:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 6. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5576,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 5004,
+        "has_outliers": true,
+        "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 268. a. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 19,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "20. redna seja",
+        "date_ts": "2016-06-13T02:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 6. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5576,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 1,
+        "motion_id": 7264,
+        "has_outliers": true,
+        "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 268. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 19,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "20. redna seja",
+        "date_ts": "2016-06-13T02:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 6. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5576,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 5009,
+        "has_outliers": true,
+        "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 233. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 19,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "20. redna seja",
+        "date_ts": "2016-06-13T02:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "13. 6. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5576,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 21,
+        "against": 0,
+        "motion_id": 5010,
+        "has_outliers": true,
+        "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 215. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 20,
+        "votes_for": 49,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "19. 5. 2016",
+    "votes": [{
+      "session": {
+        "name": "19. redna seja",
+        "date_ts": "2016-05-16T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 5. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5577,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 2,
+        "motion_id": 5030,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o socialnem varstvu - Amandma: K 9. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": false,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "18. 5. 2016",
+    "votes": [{
+      "session": {
+        "name": "19. redna seja",
+        "date_ts": "2016-05-16T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 5. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5577,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 23,
+        "against": 0,
+        "motion_id": 5053,
+        "has_outliers": false,
+        "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 47. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "19. redna seja",
+        "date_ts": "2016-05-16T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 5. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5577,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 23,
+        "against": 0,
+        "motion_id": 5054,
+        "has_outliers": false,
+        "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 46. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 51,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "19. redna seja",
+        "date_ts": "2016-05-16T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 5. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5577,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 23,
+        "against": 0,
+        "motion_id": 5055,
+        "has_outliers": false,
+        "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 19. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 52,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "19. redna seja",
+        "date_ts": "2016-05-16T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 5. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5577,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 0,
+        "motion_id": 5056,
+        "has_outliers": false,
+        "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 3. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": true,
+        "not_present": 22,
+        "votes_for": 50,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "21. 4. 2016",
+    "votes": [{
+      "session": {
+        "name": "18. redna seja",
+        "date_ts": "2016-04-18T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "18. 4. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5578,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 22,
+        "against": 1,
+        "motion_id": 5082,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o prekr\u0161kih - Amandma: K 8. \u010dlenu 12.4.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za pravosodje"],
+        "is_outlier": true,
+        "not_present": 20,
+        "votes_for": 47,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "19. 4. 2016",
+    "votes": [{
+      "session": {
+        "name": "18. redna seja",
+        "date_ts": "2016-04-18T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "18. 4. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5578,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 2,
+        "against": 1,
+        "motion_id": 5108,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Pomorskega zakonika - Amandma: K 50. \u010dlenu 12.4.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": false,
+        "not_present": 21,
+        "votes_for": 66,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "29. 3. 2016",
+    "votes": [{
+      "session": {
+        "name": "17. redna seja",
+        "date_ts": "2016-03-23T01:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "23. 3. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5579,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 3,
+        "against": 0,
+        "motion_id": 5144,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o finan\u010dnem poslovanju, postopkih zaradi insolventnosti in prisilnem prenehanju - Amandma: K 32. \u010dlenu 22.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 16,
+        "votes_for": 71,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "17. redna seja",
+        "date_ts": "2016-03-23T01:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "23. 3. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5579,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "against": 0,
+        "motion_id": 5147,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o finan\u010dnem poslovanju, postopkih zaradi insolventnosti in prisilnem prenehanju - Amandma: K 1. \u010dlenu 22.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 16,
+        "votes_for": 74,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "17. redna seja",
+        "date_ts": "2016-03-23T01:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "23. 3. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5579,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 0,
+        "motion_id": 5154,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o kmetijskih zemlji\u0161\u010dih - Amandma: K 15. \u010dlenu 17.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": false,
+        "not_present": 12,
+        "votes_for": 60,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "5. 3. 2016",
+    "votes": [{
+      "session": {
+        "name": "16. redna seja",
+        "date_ts": "2016-02-29T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "29. 2. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5580,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "against": 0,
+        "motion_id": 5164,
+        "has_outliers": false,
+        "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 125. \u010dlenu 4.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": true,
+        "not_present": 39,
+        "votes_for": 46,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "16. redna seja",
+        "date_ts": "2016-02-29T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "29. 2. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5580,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 2,
+        "against": 45,
+        "motion_id": 5165,
+        "has_outliers": false,
+        "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 70. \u010dlenu 4.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": true,
+        "not_present": 40,
+        "votes_for": 3,
+        "result": false
+      }
+    }, {
+      "session": {
+        "name": "16. redna seja",
+        "date_ts": "2016-02-29T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "29. 2. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5580,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 2,
+        "against": 4,
+        "motion_id": 5167,
+        "has_outliers": true,
+        "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 51. \u010dlenu 4.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": true,
+        "not_present": 39,
+        "votes_for": 45,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "1. 3. 2016",
+    "votes": [{
+      "session": {
+        "name": "16. redna seja",
+        "date_ts": "2016-02-29T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "29. 2. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5580,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "against": 17,
+        "motion_id": 5209,
+        "has_outliers": true,
+        "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 125. \u010dlenu 23.2.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": false,
+        "not_present": 15,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "16. redna seja",
+        "date_ts": "2016-02-29T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "29. 2. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5580,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "against": 15,
+        "motion_id": 5213,
+        "has_outliers": true,
+        "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 84. \u010dlenu 29.2.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": false,
+        "not_present": 14,
+        "votes_for": 57,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "23. 2. 2016",
+    "votes": [{
+      "session": {
+        "name": "28. izredna seja",
+        "date_ts": "2016-02-22T01:00:00",
+        "updated_at": "2. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "22. 2. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5593,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 7,
+        "against": 18,
+        "motion_id": 6530,
+        "has_outliers": false,
+        "text": "Priporo\u010dilo v zvezi z na\u010drti Vlade za re\u0161evanje migrantske krize - Amandma: K 1. to\u010dki 22.2.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb"],
+        "is_outlier": false,
+        "not_present": 16,
+        "votes_for": 49,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "28. 1. 2016",
+    "votes": [{
+      "session": {
+        "name": "15. redna seja",
+        "date_ts": "2016-01-25T01:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 1. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5581,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 7,
+        "against": 10,
+        "motion_id": 5247,
+        "has_outliers": true,
+        "text": "Zakon o gospodarjenju z gozdovi v lasti Republike Slovenije - Amandma: K 45. \u010dlenu 19.1.2016 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": false,
+        "not_present": 24,
+        "votes_for": 49,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "15. redna seja",
+        "date_ts": "2016-01-25T01:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 1. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5581,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "against": 18,
+        "motion_id": 5252,
+        "has_outliers": true,
+        "text": "Zakon o gospodarjenju z gozdovi v lasti Republike Slovenije - Amandma: K 15. \u010dlenu 19.1.2016 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+        "is_outlier": false,
+        "not_present": 24,
+        "votes_for": 44,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "26. 1. 2016",
+    "votes": [{
+      "session": {
+        "name": "15. redna seja",
+        "date_ts": "2016-01-25T01:00:00",
+        "updated_at": "16. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 1. 2016",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5581,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 14,
+        "against": 1,
+        "motion_id": 5275,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o medijih - Amandma: K 3. \u010dlenu 19.1.2016 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za kulturo"],
+        "is_outlier": false,
+        "not_present": 17,
+        "votes_for": 58,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "18. 12. 2015",
+    "votes": [{
+      "session": {
+        "name": "14. redna seja",
+        "date_ts": "2015-12-14T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 12. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5582,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "against": 0,
+        "motion_id": 5296,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o ukrepih Republike Slovenije za krepitev stabilnosti bank - Amandma: K 8. \u010dlenu 8.12.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 28,
+        "votes_for": 57,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "15. 12. 2015",
+    "votes": [{
+      "session": {
+        "name": "14. redna seja",
+        "date_ts": "2015-12-14T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "14. 12. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5582,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 6,
+        "against": 0,
+        "motion_id": 5321,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 26. \u010dlenu 11.12.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": true,
+        "not_present": 34,
+        "votes_for": 50,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "19. 11. 2015",
+    "votes": [{
+      "session": {
+        "name": "13. redna seja",
+        "date_ts": "2015-11-16T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 11. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5583,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "against": 24,
+        "motion_id": 5381,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o ukrepih Republike Slovenije za krepitev stabilnosti bank - Amandma: K 8. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 15,
+        "votes_for": 47,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "13. redna seja",
+        "date_ts": "2015-11-16T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 11. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5583,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 25,
+        "against": 6,
+        "motion_id": 5398,
+        "has_outliers": false,
+        "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 617. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 18,
+        "votes_for": 41,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "13. redna seja",
+        "date_ts": "2015-11-16T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 11. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5583,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 24,
+        "against": 6,
+        "motion_id": 5400,
+        "has_outliers": false,
+        "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 616. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 17,
+        "votes_for": 43,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "13. redna seja",
+        "date_ts": "2015-11-16T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 11. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5583,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 29,
+        "against": 1,
+        "motion_id": 5402,
+        "has_outliers": true,
+        "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 611. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 16,
+        "votes_for": 44,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "18. 11. 2015",
+    "votes": [{
+      "session": {
+        "name": "13. redna seja",
+        "date_ts": "2015-11-16T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "16. 11. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5583,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 26,
+        "against": 3,
+        "motion_id": 5422,
+        "has_outliers": true,
+        "text": "Zakon o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2016 in 2017 - Amandma: K 73. \u010dlenu 18.11.2015 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 9,
+        "votes_for": 52,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "21. 10. 2015",
+    "votes": [{
+      "session": {
+        "name": "12. redna seja",
+        "date_ts": "2015-10-19T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 10. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5584,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 7,
+        "against": 3,
+        "motion_id": 5651,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o \u017eelezni\u0161kem prometu - Amandma: K 21. \u010dlenu 13.10.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": false,
+        "not_present": 28,
+        "votes_for": 52,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "23. 9. 2015",
+    "votes": [{
+      "session": {
+        "name": "11. redna seja",
+        "date_ts": "2015-09-21T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "21. 9. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6674,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 9,
+        "against": 0,
+        "motion_id": 5811,
+        "has_outliers": false,
+        "text": "Zakon o nematerializiranih vrednostnih papirjih - Amandma: K 48. \u010dlenu 15.9.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 10,
+        "votes_for": 71,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "15. 7. 2015",
+    "votes": [{
+      "session": {
+        "name": "10. redna seja",
+        "date_ts": "2015-07-09T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "9. 7. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6675,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 5849,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o vodah - Amandma: K 14. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 5,
+        "votes_for": 65,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "10. redna seja",
+        "date_ts": "2015-07-09T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "9. 7. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6675,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 6,
+        "motion_id": 5850,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o vodah - Amandma: K 13. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 6,
+        "votes_for": 58,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "13. 7. 2015",
+    "votes": [{
+      "session": {
+        "name": "10. redna seja",
+        "date_ts": "2015-07-09T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "9. 7. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6675,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 8,
+        "against": 17,
+        "motion_id": 5864,
+        "has_outliers": true,
+        "text": "Zakon o dav\u010dnem potrjevanju ra\u010dunov - Amandma: K 23. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 7,
+        "votes_for": 58,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "10. redna seja",
+        "date_ts": "2015-07-09T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "9. 7. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6675,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 10,
+        "against": 17,
+        "motion_id": 5865,
+        "has_outliers": true,
+        "text": "Zakon o dav\u010dnem potrjevanju ra\u010dunov - Amandma: K 19. \u010dlenu 2.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": false,
+        "not_present": 5,
+        "votes_for": 58,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "11. 7. 2015",
+    "votes": [{
+      "session": {
+        "name": "10. redna seja",
+        "date_ts": "2015-07-09T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "9. 7. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6675,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 6,
+        "against": 4,
+        "motion_id": 5887,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 104. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 4,
+        "votes_for": 76,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "10. redna seja",
+        "date_ts": "2015-07-09T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "9. 7. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6675,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 23,
+        "against": 1,
+        "motion_id": 5896,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 2. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+        "tags": ["Odbor za gospodarstvo"],
+        "is_outlier": true,
+        "not_present": 4,
+        "votes_for": 62,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "21. 4. 2015",
+    "votes": [{
+      "session": {
+        "name": "7. redna seja",
+        "date_ts": "2015-04-20T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6678,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 28,
+        "against": 0,
+        "motion_id": 6048,
+        "has_outliers": false,
+        "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 160. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 14,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "7. redna seja",
+        "date_ts": "2015-04-20T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6678,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 27,
+        "against": 0,
+        "motion_id": 6049,
+        "has_outliers": false,
+        "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 156. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 15,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "7. redna seja",
+        "date_ts": "2015-04-20T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6678,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 28,
+        "against": 0,
+        "motion_id": 6050,
+        "has_outliers": false,
+        "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 37. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 14,
+        "votes_for": 48,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "7. redna seja",
+        "date_ts": "2015-04-20T02:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "20. 4. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6678,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 28,
+        "against": 0,
+        "motion_id": 6051,
+        "has_outliers": false,
+        "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 6. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 14,
+        "votes_for": 48,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "27. 3. 2015",
+    "votes": [{
+      "session": {
+        "name": "6. redna seja",
+        "date_ts": "2015-03-25T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6679,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 18,
+        "against": 2,
+        "motion_id": 6083,
+        "has_outliers": false,
+        "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 324. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 26,
+        "votes_for": 44,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "6. redna seja",
+        "date_ts": "2015-03-25T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6679,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 16,
+        "against": 1,
+        "motion_id": 6086,
+        "has_outliers": false,
+        "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 4. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za finance in monetarno politiko"],
+        "is_outlier": true,
+        "not_present": 27,
+        "votes_for": 46,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "25. 3. 2015",
+    "votes": [{
+      "session": {
+        "name": "6. redna seja",
+        "date_ts": "2015-03-25T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6679,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 6093,
+        "has_outliers": false,
+        "text": "Zakon o cestninjenju - Amandma: K 46. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 17,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "6. redna seja",
+        "date_ts": "2015-03-25T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6679,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 20,
+        "against": 0,
+        "motion_id": 6094,
+        "has_outliers": false,
+        "text": "Zakon o cestninjenju - Amandma: K 41. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": true,
+        "not_present": 17,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "6. redna seja",
+        "date_ts": "2015-03-25T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "25. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6679,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "against": 16,
+        "motion_id": 6095,
+        "has_outliers": false,
+        "text": "Zakon o cestninjenju - Amandma: K 13. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
+        "tags": ["Odbor za infrastrukturo, okolje in prostor"],
+        "is_outlier": false,
+        "not_present": 17,
+        "votes_for": 53,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "4. 3. 2015",
+    "votes": [{
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2015-03-02T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "2. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6680,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 8,
+        "against": 13,
+        "motion_id": 6134,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o sodi\u0161\u010dih - Amandma: K 2. \u010dlenu 24.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Odbor za pravosodje"],
+        "is_outlier": false,
+        "not_present": 24,
+        "votes_for": 45,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "3. 3. 2015",
+    "votes": [{
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2015-03-02T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "2. 3. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6680,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "against": 0,
+        "motion_id": 6158,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o eksplozivih in pirotehni\u010dnih izdelkih - Amandma: K 28. \u010dlenu 24.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
+        "is_outlier": false,
+        "not_present": 9,
+        "votes_for": 76,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "20. 2. 2015",
+    "votes": [{
+      "session": {
+        "name": "9. izredna seja",
+        "date_ts": "2015-02-19T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 2. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5612,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "against": 4,
+        "motion_id": 5757,
+        "has_outliers": true,
+        "text": "Rebalans prora\u010duna Republike Slovenije za leto 2015 - Amandma: 1540 Urad Vlade RS za narodnosti (180402) 6.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Komisija za narodni skupnosti"],
+        "is_outlier": true,
+        "not_present": 8,
+        "votes_for": 77,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "9. izredna seja",
+        "date_ts": "2015-02-19T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "19. 2. 2015",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 5612,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 31,
+        "against": 0,
+        "motion_id": 5766,
+        "has_outliers": false,
+        "text": "Zakon o interventnih ukrepih za uravnote\u017eenje javnih financ ob\u010din - Amandma: K 31. \u010dlenu 20.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Komisija za nadzor javnih financ"],
+        "is_outlier": true,
+        "not_present": 7,
+        "votes_for": 52,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "17. 12. 2014",
+    "votes": [{
+      "session": {
+        "name": "3. redna seja",
+        "date_ts": "2014-12-15T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "15. 12. 2014",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6682,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "against": 18,
+        "motion_id": 6235,
+        "has_outliers": false,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o mati\u010dni evidenci zavarovancev in u\u017eivalcev pravic iz obveznega pokojninskega in invalidskega zavarovanja - Amandma: K 8. \u010dlenu 12.12.2014 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 53,
+        "result": true
+      }
+    }]
+  }, {
+    "date": "16. 12. 2014",
+    "votes": [{
+      "session": {
+        "name": "3. redna seja",
+        "date_ts": "2014-12-15T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "15. 12. 2014",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6682,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 3,
+        "against": 16,
+        "motion_id": 6257,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o zaposlitveni rehabilitaciji in zaposlovanju invalidov - Amandma: K 7. \u010dlenu 16.12.2014 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": false,
+        "not_present": 18,
+        "votes_for": 53,
+        "result": true
+      }
+    }, {
+      "session": {
+        "name": "3. redna seja",
+        "date_ts": "2014-12-15T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "orgs": [{
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        }],
+        "date": "15. 12. 2014",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor"
+        },
+        "id": 6682,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "against": 16,
+        "motion_id": 6259,
+        "has_outliers": true,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o zaposlitveni rehabilitaciji in zaposlovanju invalidov - Amandma: K 2. \u010dlenu 12.12.2014 [SMC - Poslanska skupina Stranke Mira Cerarja]",
+        "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+        "is_outlier": false,
+        "not_present": 16,
+        "votes_for": 54,
+        "result": true
+      }
+    }]
+  }],
+  "all_tags": ["Komisija za nadzor javnih financ", "Kolegij predsednika Dr\u017eavnega zbora", "Komisija za narodni skupnosti", "Komisija za odnose s Slovenci v zamejstvu in po svetu", "Komisija za poslovnik", "Mandatno-volilna komisija", "Odbor za delo, dru\u017eino, socialne zadeve in invalide", "Odbor za finance in monetarno politiko", "Odbor za gospodarstvo", "Odbor za infrastrukturo, okolje in prostor", "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino", "Odbor za kmetijstvo, gozdarstvo in prehrano", "Odbor za kulturo", "Odbor za notranje zadeve, javno upravo in lokalno samoupravo", "Odbor za obrambo", "Odbor za pravosodje", "Odbor za zadeve Evropske unije", "Odbor za zdravstvo", "Odbor za zunanjo politiko", "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in", "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji", "Ustavna komisija", "Proceduralna glasovanja", "Zunanja imenovanja", "Poslanska vpra\u0161anja", "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb", "Preiskovalne komisije", "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti", "Interpelacija", " Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investicij"]
+}

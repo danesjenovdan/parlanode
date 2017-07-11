@@ -386,7 +386,7 @@
           this.loadResults();
         },
         error(error) {
-          window.alert(JSON.stringify(error));
+          console.log(error);
         },
       });
 
@@ -426,7 +426,7 @@
             this.loading = false;
           },
           error(error) {
-            window.alert(JSON.stringify(error));
+            console.log(error);
             this.loading = false;
           },
         });

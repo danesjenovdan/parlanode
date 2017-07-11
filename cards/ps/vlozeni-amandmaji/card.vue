@@ -5,11 +5,6 @@
     <div class="card-content">
       <div class="card-content-front">
         <div class="filters">
-          <div class="filter option-party-buttons">
-            <div v-for="result in allResults"
-            :class="['party-button', result.class, { selected: selectedResults.indexOf(result.id) > -1 }]"
-            @click="toggleResult(result.id)">{{ result.label }}</div>
-          </div>
           <div class="filter text-filter">
             <div class="filter-label">Išči po naslovu glasovanja</div>
             <input class="text-filter-input" type="text" v-model="textFilter">
@@ -18,13 +13,19 @@
             <div class="filter-label">Matično delovno telo</div>
             <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
           </div>
+          <div class="filter month-dropdown">
+            <div class="filter-label">Časovno obdobje</div>
+            <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+          </div>
+          <div class="filter only-passed">
+            <input id="only-passed" type="checkbox" v-model="onlyPassed" class="checkbox" />
+            <label for="only-passed">Samo sprejeti</label>
+          </div>
         </div>
         <div id="votingCard" class="date-list">
-          <div class="session_voting">
-            <div v-for="vote in filteredVotes" class="clearfix single_voting">
-              <div v-if="vote.results.is_outlier" class="fire-badge"></div>
-              <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
-              <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
+          <div class="session_voting" v-for="votingDay in filteredVotingDays">
+            <div class="date">{{ votingDay.date }}</div>
+            <div v-for="vote in votingDay.results" class="clearfix single_voting">
               <a :href="vote.url">
                 <div class=" col-md-1 ">
                   <div :class="vote.accepted">
@@ -33,60 +34,58 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-md-11 border-left ">
-                  <div class="col-md-6 ">
-                    <div class="session_title ">
+                <div class="col-md-11 border-left">
+                  <div class="col-md-6">
+                    <div class="session_title">
                       <p>
-                        {{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}
+                        {{ vote.text.split(' ').length > 19 ? vote.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.text }}
                       </p>
                     </div>
                   </div>
-                  <div class="col-md-6 ">
-                    <div class="session_votes ">
-                      <div class="progress smallbar ">
-                        <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                          <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
+                  <div class="col-md-6">
+                    <div class="session_votes">
+                      <div class="progress smallbar">
+                        <div class="progress-bar fontblue" :style="{ width: `${vote.percent_votes_for}%` }">
+                          <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                         </div>
-                        <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                          <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
+                        <div class="progress-bar funblue" :style="{ width: `${vote.percent_against}%` }">
+                          <span class="sr-only">{{ vote.percent_against }}% votes for</span>
                         </div>
-                        <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                          <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
+                        <div class="progress-bar ignoreblue" :style="{ width: `${vote.percent_abstain}%` }">
+                          <span class="sr-only">{{ vote.percent_abstain }}% votes for</span>
                         </div>
-                        <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                          <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
+                        <div class="progress-bar noblue" :style="{ width: `${vote.percent_not_present}%` }">
+                          <span class="sr-only">{{ vote.percent_not_present }}% votes for</span>
                         </div>
                       </div>
                       <div class="row ">
                         <div class="col-xs-3 ">
-                          {{ vote.results.votes_for }}
+                          {{ vote.votes_for }}
                           <div class="type ">Za</div>
                           <div class="indicator aye ">&nbsp;</div>
                         </div>
                         <div class="col-xs-3 ">
-                          {{ vote.results.against }}
+                          {{ vote.against }}
                           <div class="type ">Proti</div>
                           <div class="indicator ney ">&nbsp;</div>
                         </div>
                         <div class="col-xs-3 ">
-                          {{ vote.results.abstain }}
+                          {{ vote.abstain }}
                           <div class="type ">Vzdržan</div>
                           <div class="indicator abstention ">&nbsp;</div>
                         </div>
                         <div class="col-xs-3 ">
-                          {{ vote.results.not_present }}
+                          {{ vote.not_present }}
                           <div class="type ">Niso</div>
                           <div class="indicator not ">&nbsp;</div>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </a>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -109,61 +108,45 @@
 
 <script>
   /* globals window $ measure */
-
+  import { format as formatDate } from 'date-fns';
+  import voteMapper from 'helpers/voteMapper';
+  import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
+
+  const formattedDateToMonthId = (date) => {
+    const [day, month, year] = date.split('. ');
+    return formatDate(new Date(year, month - 1, day), 'YYYY-M');
+  };
 
   export default {
     mixins: [common],
-    name: 'Glasovanja - seja',
+    name: 'VlozeniAmandmaji',
     data() {
-
       const selectFromState = (items, stateItemIds) =>
         items.map(item =>
           Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
         );
 
-      let votes = this.$options.cardData.data.results.map(function (e) {
-        var allInVotes = e.results.votes_for + e.results.against + e.results.abstain + e.results.not_present;
-        e.url = 'https://parlameter.si/seja/glasovanje/' + e.session.id + '/' + e.results.motion_id;
-        e.accepted = 'accepted ' + ((e.results.result === true) ? 'aye' : 'nay');
-        e.accepted_glyph = 'glyphicon ' + ((e.results.result === true) ? 'glyphicon-ok' : 'glyphicon-remove');
-        e.percent_votes_for = Math.floor(e.results.votes_for / allInVotes * 100);
-        e.percent_against = Math.floor(e.results.against / allInVotes * 100);
-        e.percent_abstain = Math.floor(e.results.abstain / allInVotes * 100);
-        e.percent_not_present = Math.floor(e.results.not_present / allInVotes * 100);
+      const votingDays = this.$options.cardData.data.results.map(votingDay => ({
+        date: votingDay.date,
+        results: votingDay.votes.map(voteMapper),
+      }));
 
-        return e;
-      });
-
-      let allResults = [
-        { id: true, class: 'sprejet', label: 'SPREJET', selected: false },
-        { id: false, class: 'zavrnjen', label: 'ZAVRNJEN', selected: false },
-      ];
-
-      let allTags = this.$options.cardData.data.tags.map(
+      const allTags = this.$options.cardData.data.all_tags.map(
         tag => ({ id: tag, label: tag, selected: false }),
       );
 
-      let textFilter = '';
+      const textFilter = '';
 
-      if (this.$options.cardData.state) {
-        const state = this.$options.cardData.state;
-        console.log('state');
-        console.log(state);
-        if (state.text) textFilter = state.text;
-        if (state.tags) allTags.map((tag) => {
-          if (state.tags.indexOf(tag.id) !== -1) {
-            tag.selected = true;
-          }
-        });
-        if (state.results) allResults.map((result) => {
-          if (state.results.indexOf(result.id) !== -1) {
-            result.selected = true;
-          }
-        });
-      }
-
-      console.log(this.$options.cardData.data.session.name);
+      // if (this.$options.cardData.state) {
+      //   const state = this.$options.cardData.state;
+      //   if (state.text) textFilter = state.text;
+      //   if (state.tags) allTags.map((tag) => {
+      //     if (state.tags.indexOf(tag.id) !== -1) {
+      //       tag.selected = true;
+      //     }
+      //   });
+      // }
 
       return {
         data: this.$options.cardData.data,
@@ -174,14 +157,15 @@
           heading: '&nbsp;',
           subheading: '7. sklic parlamenta',
           alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: this.$options.cardData.data.session.name,
+          title: 'Vloženi amandmaji',
         },
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,
         textFilter,
-        votes,
+        votingDays,
         allTags,
-        allResults,
+        allMonths: generateMonths(),
+        onlyPassed: false,
       };
     },
     computed: {
@@ -190,52 +174,69 @@
 
         if (this.selectedTags.length > 0) state.tags = this.selectedTags;
         if (this.textFilter.length > 0) state.text = this.textFilter;
-        if (this.selectedResults.length > 0) state.results = this.selectedResults;
 
-        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
-      filteredVotes() {
-        return this.getFilteredVotes();
+      filteredVotingDays() {
+        return this.getFilteredVotingDays();
       },
       tagPlaceholder() {
         return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
       },
+      monthPlaceholder() {
+        return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+      },
       dropdownItems() {
         const validTags = [];
+        const validMonths = [];
 
-        this.votes.forEach((vote) => {
-          vote.results.tags.forEach((tag) => {
-            if (validTags.indexOf(tag) === -1) validTags.push(tag);
+        this.getFilteredVotingDays(true).forEach((votingDay) => {
+          const monthId = formattedDateToMonthId(votingDay.date);
+          if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+          votingDay.results.forEach((vote) => {
+            vote.tags.forEach((tag) => {
+              if (validTags.indexOf(tag) === -1) validTags.push(tag);
+            });
           });
         });
+
         return {
           tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        }
+          months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
+        };
       },
       selectedTags() {
         return this.allTags
           .filter(tag => tag.selected)
           .map(tag => tag.id);
       },
-      selectedResults() {
-        return this.allResults.filter(result => result.selected)
-          .map(result => result.id);
+      selectedMonths() {
+        return this.allMonths
+          .filter(month => month.selected)
+          .map(month => month.id);
       },
     },
     methods: {
-      toggleResult(resultId) {
-        const clickedResult = this.allResults.filter(result => result.id === resultId)[0];
-        clickedResult.selected = !clickedResult.selected;
-      },
-      getFilteredVotes() {
+      getFilteredVotingDays(onlyFilterByText = false) {
         const filterVotes = (vote) => {
-          const textMatch = this.textFilter === '' || vote.results.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-          const tagMatch = this.selectedTags.length === 0 || vote.results.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-          const resultMatch = this.selectedResults.length === 0 || this.selectedResults.indexOf(vote.results.result) > -1;
+          const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+          const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
+            vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+          const passedMatch = onlyFilterByText || !this.onlyPassed || vote.result;
+          return textMatch && tagMatch && passedMatch;
+        };
 
-          return textMatch && tagMatch && resultMatch;
-        }
-        return this.votes.filter(filterVotes);
+        return this.votingDays
+          .map(votingDay => ({
+            date: votingDay.date,
+            results: votingDay.results.filter(filterVotes),
+          }))
+          .filter((votingDay) => {
+            if (votingDay.results.length === 0) return false;
+            const monthId = formattedDateToMonthId(votingDay.date);
+            return onlyFilterByText || this.selectedMonths.length === 0 ||
+              this.selectedMonths.indexOf(monthId) > -1;
+          });
       },
       shortenUrl(url) {
         return new Promise((resolve) => {
@@ -263,7 +264,6 @@
       },
     },
     beforeMount() {
-      console.log(this.generatedCardUrl);
       this.shortenUrl(this.generatedCardUrl);
     },
   };
@@ -272,35 +272,6 @@
 <style lang="scss" scoped>
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
-
-  .lightning-badge {
-    background: $darkgrey;
-    border-radius: 50%;
-    height: 31px;
-    left: 30px;
-    position: absolute;
-    top: -7px;
-    width: 31px;
-    background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
-    background-size: 11px 19px;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .fire-badge::before {
-  background: $darkgrey;
-  border-radius: 50%;
-  content: '';
-  height: 31px;
-  left: -6px;
-  position: absolute;
-  top: -7px;
-  width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
-  background-size: 40px 40px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
   .card-header h1,
   .card-footer h1 {
@@ -328,7 +299,7 @@
 
   .session_voting {
     font-weight: 400;
-    padding: 12px 0 0 12px;
+    padding: 0;
 
     &:empty::after {
       color: #c8c8c8;
@@ -362,41 +333,43 @@
 
   .accepted.aye {}
 
-  .session_voting .accepted {
-    line-height: normal;
-    height: 95px;
-  }
+  .session_voting {
+    .accepted {
+      line-height: normal;
+      height: 95px;
+      p {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
 
-  .session_voting .accepted p {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-
-    margin: 0;
-    line-height: 30px;
-    margin-top: 6px;
-  }
-
-  .session_voting .session_title {
-    height: 95px;
-    margin: 0;
-    @include respond-to(mobile) {
-      margin-top: 15px;
-      margin-bottom: 10px;
+        margin: 0;
+        line-height: 30px;
+        margin-top: 6px;
+      }
+    }
+    .session_title {
+      height: 95px;
+      margin: 0;
+      @include respond-to(mobile) {
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+      p {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        font-family: Roboto Slab;
+        margin-top: 6px;
+      }
     }
   }
 
-  .session_voting .session_title p {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-family: Roboto Slab;
-    margin-top: 6px;
-  }
+
+
 
 
   @media (max-width: 991px) {
@@ -411,36 +384,31 @@
       border-left: none;
       border-top: 2px solid #dbdbdb;
     }
-    .single_voting:hover {
-      .border-left {
-        border-top-color: #cadde6;
-      }
-    }
 
     .single_voting {
       padding-bottom: 15px;
+      &:hover {
+        .border-left {
+          border-top-color: #cadde6;
+        }
+      }
     }
   }
 
   .single_voting {
     position: relative;
+    &:hover {
+      background-color: #e1f6ff;
+      .border-left { border-left-color: #cadde6; }
+    }
   }
 
   .session_voting .session_title p {
     font-size: 14px;
   }
 
-
   .session_voting .single_voting {
-    margin-bottom: 15px;
-  }
-
-  .single_voting:hover {
-    background-color: #e1f6ff;
-
-    .border-left {
-      border-left-color: #cadde6;
-    }
+    margin-top: 15px;
   }
 
   .seja_anchor:hover {
@@ -453,8 +421,7 @@
 
   // filters
   .filters {
-    padding-left: 12px;
-    padding-bottom: 6px;
+    padding-bottom: 12px;
     @include respond-to(mobile) {
       flex-wrap: wrap;
       min-height: 154px;
@@ -464,7 +431,9 @@
     display: flex;
 
     .filter {
-      padding-right: 10px;
+      @include respond-to(desktop) {
+        &:not(:last-child) { padding-right: 10px; }
+      }
     }
 
     .filter-label {
@@ -487,10 +456,9 @@
     }
 
     .text-filter {
-      @include respond-to(desktop) { width: 26%; }
-      @include respond-to(mobile) { width: 100%; }
+      @include respond-to(desktop) { flex: 1; }
 
-      width: 26%; // 100%
+      width: 100%;
 
       .text-filter-input {
         background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
@@ -508,9 +476,18 @@
     }
 
     .tag-dropdown {
-      @include respond-to(desktop) { width: 26%; }
-
+      @include respond-to(desktop) { flex: 1; }
       width: 100%;
+    }
+
+    .month-dropdown {
+      @include respond-to(desktop) { flex: 1; }
+      width: 100%;
+    }
+
+    .only-passed {
+      @include show-for(desktop);
+      padding-top: 41px;
     }
 
     .search-dropdown-options { top: 50px; }
