@@ -37,7 +37,7 @@
                   <div class="col-md-6 ">
                     <div class="session_title ">
                       <p>
-                        {{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}
+                        {{ vote.results.text.split(' ').length > 14 ? vote.results.text.split(' ').splice(0, 14).join(' ') + ' ...' : vote.results.text }}
                       </p>
                     </div>
                   </div>
@@ -351,6 +351,10 @@
         font-size: 14px;
         line-height: 20px;
         text-transform: uppercase;
+
+        @include respond-to(mobile) {
+          font-size: 10px;
+        }
       }
     }
 
