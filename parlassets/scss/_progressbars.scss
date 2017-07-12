@@ -118,6 +118,10 @@
     background-size: cover;
 
     border: 2px solid #ffffff;
+
+    &[data-name="PS Levica"], &.levica-background {
+        font-size: 8px;
+    }
 }
 
 // MUKI NEW STUFF FOR SMALL CARDS
