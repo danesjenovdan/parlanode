@@ -23,6 +23,72 @@ const routes = [
     pageTitle : 'Parlameter',
     cards     : [
       {
+        name      : 'primerjalnik',
+        sourceUrl : '/c/primerjalnik/',
+        resolve   : (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId   = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
+      {
+        name      : 'neenotnost',
+        sourceUrl : '/ps/glasovanja-neenotnost/',
+        resolve   : (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId   = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
+      {
         name      : 'kompas',
         sourceUrl : '/c/kompas/',
         resolve   : (req, res, route, card) => {
