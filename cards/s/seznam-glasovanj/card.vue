@@ -37,23 +37,23 @@
                   <div class="col-md-6 ">
                     <div class="session_title ">
                       <p>
-                        {{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}
+                        {{ vote.results.text.split(' ').length > 14 ? vote.results.text.split(' ').splice(0, 14).join(' ') + ' ...' : vote.results.text }}
                       </p>
                     </div>
                   </div>
                   <div class="col-md-6 ">
                     <div class="session_votes ">
                       <div class="progress smallbar ">
-                        <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                        <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
                           <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
                         </div>
-                        <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
+                        <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_against + '%' }">
                           <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
                         </div>
-                        <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
+                        <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
                           <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
                         </div>
-                        <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
+                        <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
                           <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
                         </div>
                       </div>
@@ -61,22 +61,22 @@
                         <div class="col-xs-3 ">
                           {{ vote.results.votes_for }}
                           <div class="type ">Za</div>
-                          <div class="indicator aye ">&nbsp;</div>
+                          <div class="indicator ney ">&nbsp;</div>
                         </div>
                         <div class="col-xs-3 ">
                           {{ vote.results.against }}
                           <div class="type ">Proti</div>
-                          <div class="indicator ney ">&nbsp;</div>
+                          <div class="indicator aye ">&nbsp;</div>
                         </div>
                         <div class="col-xs-3 ">
                           {{ vote.results.abstain }}
                           <div class="type ">Vzdržan</div>
-                          <div class="indicator abstention ">&nbsp;</div>
+                          <div class="indicator not ">&nbsp;</div>
                         </div>
                         <div class="col-xs-3 ">
                           {{ vote.results.not_present }}
                           <div class="type ">Niso</div>
-                          <div class="indicator not ">&nbsp;</div>
+                          <div class="indicator abstention ">&nbsp;</div>
                         </div>
                       </div>
                     </div>
@@ -351,6 +351,10 @@
         font-size: 14px;
         line-height: 20px;
         text-transform: uppercase;
+
+        @include respond-to(mobile) {
+          font-size: 10px;
+        }
       }
     }
 
