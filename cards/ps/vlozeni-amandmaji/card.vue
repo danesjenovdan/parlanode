@@ -17,9 +17,9 @@
             <div class="filter-label">Časovno obdobje</div>
             <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
           </div>
-          <div class="filter only-passed">
-            <input id="only-passed" type="checkbox" v-model="onlyPassed" class="checkbox" />
-            <label for="only-passed">Samo sprejeti</label>
+          <div class="filter text-filter">
+            <div class="filter-label">Prikaži</div>
+            <toggle v-model="onlyPassed" :options="onlyPassedOptions" />
           </div>
         </div>
         <div id="votingCard" class="date-list">
@@ -112,6 +112,7 @@
   import voteMapper from 'helpers/voteMapper';
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
+  import Toggle from 'components/Toggle.vue';
 
   const formattedDateToMonthId = (date) => {
     const [day, month, year] = date.split('. ');
@@ -119,6 +120,7 @@
   };
 
   export default {
+    components: { Toggle },
     mixins: [common],
     name: 'VlozeniAmandmaji',
     data() {
@@ -165,7 +167,8 @@
         votingDays,
         allTags,
         allMonths: generateMonths(),
-        onlyPassed: false,
+        onlyPassed: 'all',
+        onlyPassedOptions: { all: 'Vse', passed: 'Sprejete' },
       };
     },
     computed: {
@@ -222,7 +225,7 @@
           const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
           const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
             vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-          const passedMatch = onlyFilterByText || !this.onlyPassed || vote.result;
+          const passedMatch = onlyFilterByText || this.onlyPassed === 'all' || vote.result;
           return textMatch && tagMatch && passedMatch;
         };
 
