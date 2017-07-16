@@ -110,6 +110,7 @@
   /* globals window $ measure */
   import { format as formatDate } from 'date-fns';
   import voteMapper from 'helpers/voteMapper';
+  import stateLoader from 'helpers/stateLoader';
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
   import Toggle from 'components/Toggle.vue';
@@ -124,10 +125,7 @@
     mixins: [common],
     name: 'VlozeniAmandmaji',
     data() {
-      const selectFromState = (items, stateItemIds) =>
-        items.map(item =>
-          Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
-        );
+      const loadFromState = stateLoader(this.$options.cardData.state);
 
       const votingDays = this.$options.cardData.data.results.map(votingDay => ({
         date: votingDay.date,
@@ -138,17 +136,7 @@
         tag => ({ id: tag, label: tag, selected: false }),
       );
 
-      const textFilter = '';
-
-      // if (this.$options.cardData.state) {
-      //   const state = this.$options.cardData.state;
-      //   if (state.text) textFilter = state.text;
-      //   if (state.tags) allTags.map((tag) => {
-      //     if (state.tags.indexOf(tag.id) !== -1) {
-      //       tag.selected = true;
-      //     }
-      //   });
-      // }
+      const allMonths = generateMonths();
 
       return {
         data: this.$options.cardData.data,
@@ -163,11 +151,11 @@
         },
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,
-        textFilter,
+        textFilter: loadFromState('text') || '',
         votingDays,
-        allTags,
-        allMonths: generateMonths(),
-        onlyPassed: 'all',
+        allTags: loadFromState('tags', allTags) || allTags,
+        allMonths: loadFromState('months', allMonths) || allMonths,
+        onlyPassed: loadFromState('onlyPassed') ? 'passed' : 'all',
         onlyPassedOptions: { all: 'Vse', passed: 'Sprejete' },
       };
     },
@@ -176,6 +164,8 @@
         const state = {};
 
         if (this.selectedTags.length > 0) state.tags = this.selectedTags;
+        if (this.selectedMonths.length > 0) state.months = this.selectedMonths;
+        if (this.onlyPassed === 'passed') state.onlyPassed = true;
         if (this.textFilter.length > 0) state.text = this.textFilter;
 
         return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
