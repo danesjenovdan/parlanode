@@ -1,0 +1,35 @@
+[{
+  "id": "seat_count",
+  "label": "Število sedežev",
+  "titleSuffix": "po številu sedežev",
+  "explanation": "Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s <a href=\"http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine\" class=\"funblue-light-hover\">spletnega mesta DZ</a>."
+}, {
+  "id": "presence_votes",
+  "label": "Prisotnost na glasovanjih sej DZ",
+  "titleSuffix": "s prisotnostjo na glasovanjih sej DZ",
+  "explanation": "Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100).",
+  "unit": "percent"
+}, {
+  "id": "intra_disunion",
+  "label": "Neenotnost glasovanj",
+  "titleSuffix": "z neenotnostjo glasovanj",
+  "explanation": "!!TEKST MANJKA!!",
+  "unit": "percent"
+}, {
+  "id": "number_of_amendments",
+  "label": "Število vloženih amandmajev",
+  "titleSuffix": "s številom vloženih amandmajev",
+  "explanation": "!!TEKST MANJKA!!"
+}, {
+  "id": "number_of_questions",
+  "titleSuffix": " po št. poslanskih vprašanj in pobud",
+  "explanation": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ.Podatke pridobivamo s spletnega mesta DZ RS: <a href=\"https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/\">https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/</a>.",
+  "label": "Št. poslanskih vprašanj in pobud",
+  "round": true,
+  "roundingPrecision": 0
+}, {
+  "id": "vocabulary_size",
+  "label": "Raznolikost besedišča",
+  "titleSuffix": "z raznolikostjo besedišča",
+  "explanation": "Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved \"Danes je nov dan in danes je dan za Parlameter\" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
+}]

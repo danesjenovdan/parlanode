@@ -1,0 +1,139 @@
+{
+  "data": [{
+    "party": {
+      "acronym": "SMC",
+      "is_coalition": true,
+      "name": "PS Stranka modernega centra",
+      "id": 1
+    },
+    "results": {
+      "privzdignjeno": 0.055465651048477935,
+      "vocabulary_size": 124.0,
+      "number_of_questions": 248.0,
+      "seat_count": 35,
+      "presence_votes": 92.7622879298048,
+      "presence_sessions": 94.1362788389246,
+      "problematicno": 0.01409816852772803,
+      "preprosto": 0.061039753160307866
+    }
+  }, {
+    "party": {
+      "acronym": "SDS",
+      "is_coalition": false,
+      "name": "PS Slovenska Demokratska Stranka",
+      "id": 5
+    },
+    "results": {
+      "privzdignjeno": 0.04106208331786034,
+      "vocabulary_size": 102.0,
+      "number_of_questions": 2769.0,
+      "seat_count": 19,
+      "presence_votes": 66.068466397106,
+      "presence_sessions": 83.4158368895211,
+      "problematicno": 0.01582043604458103,
+      "preprosto": 0.06005854467272461
+    }
+  }, {
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije",
+      "id": 3
+    },
+    "results": {
+      "privzdignjeno": 0.11774129845219254,
+      "vocabulary_size": 126.0,
+      "number_of_questions": 120.0,
+      "seat_count": 11,
+      "presence_votes": 88.4301175700678,
+      "presence_sessions": 94.1613316261204,
+      "problematicno": 0.03600796232003048,
+      "preprosto": 0.14625485569575708
+    }
+  }, {
+    "party": {
+      "acronym": "SD",
+      "is_coalition": true,
+      "name": "PS Socialni Demokrati",
+      "id": 7
+    },
+    "results": {
+      "privzdignjeno": 0.11489519477220245,
+      "vocabulary_size": 125.0,
+      "number_of_questions": 159.0,
+      "seat_count": 6,
+      "presence_votes": 87.1277326116162,
+      "presence_sessions": 90.6145313677061,
+      "problematicno": 0.03194953607315688,
+      "preprosto": 0.12539864696681088
+    }
+  }, {
+    "party": {
+      "acronym": "NSI",
+      "is_coalition": false,
+      "name": "PS Nova Slovenija",
+      "id": 6
+    },
+    "results": {
+      "privzdignjeno": 0.09300856518783383,
+      "vocabulary_size": 122.0,
+      "number_of_questions": 278.0,
+      "seat_count": 6,
+      "presence_votes": 66.7593021460553,
+      "presence_sessions": 85.5555555555555,
+      "problematicno": 0.02936898259144798,
+      "preprosto": 0.12645125272103677
+    }
+  }, {
+    "party": {
+      "acronym": "Levica",
+      "is_coalition": false,
+      "name": "PS Levica",
+      "id": 8
+    },
+    "results": {
+      "privzdignjeno": 0.10688668819409212,
+      "vocabulary_size": 117.0,
+      "number_of_questions": 531.0,
+      "seat_count": 5,
+      "presence_votes": 66.6821059132314,
+      "presence_sessions": 80.8888888888889,
+      "problematicno": 0.039053541047179265,
+      "preprosto": 0.1494215397402997
+    }
+  }, {
+    "party": {
+      "acronym": "PS NP",
+      "is_coalition": false,
+      "name": "PS nepovezanih poslancev ",
+      "id": 109
+    },
+    "results": {
+      "privzdignjeno": 0.23519830984664467,
+      "vocabulary_size": 104.0,
+      "number_of_questions": 124.0,
+      "seat_count": 4,
+      "presence_votes": 61.7762853172765,
+      "presence_sessions": 82.6666666666667,
+      "problematicno": 0.08006720551803538,
+      "preprosto": 0.28066606227414975
+    }
+  }, {
+    "party": {
+      "acronym": "IMNS",
+      "is_coalition": false,
+      "name": "PS italijanske in mad\u017earske narodne skupnosti",
+      "id": 2
+    },
+    "results": {
+      "privzdignjeno": 0.4560700680451448,
+      "vocabulary_size": 102.0,
+      "number_of_questions": 27.0,
+      "seat_count": 2,
+      "presence_votes": 79.8286243631311,
+      "presence_sessions": 78.6666666666667,
+      "problematicno": 0.10991231475909181,
+      "preprosto": 0.47794791242129137
+    }
+  }]
+}
