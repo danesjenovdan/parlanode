@@ -1,21 +1,26 @@
 <template>
   <div class="toggle">
     <div
-      v-for="option in options"
-      :class="['option', { 'is-selected' : option.id === selected }]"
-      @click="clickHandler(option.id)">
-      {{ option.label }}
+      v-for="(optionLabel, optionValue) in options"
+      :key="optionValue"
+      :class="['option', { 'is-selected' : optionValue === value }]"
+      @click="handleClick(optionValue)">
+      {{ optionLabel }}
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DateRow',
+  name: 'Toggle',
   props: {
-    clickHandler: Function,
-    options: Array,
-    selected: String,
+    options: Object,
+    value: [String, Number, Boolean],
+  },
+  methods: {
+    handleClick(newValue) {
+      this.$emit('input', newValue);
+    },
   },
 };
 </script>

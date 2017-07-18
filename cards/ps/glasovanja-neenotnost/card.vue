@@ -30,7 +30,7 @@
           </div>
           <div class="filter text-filter">
             <div class="filter-label">Razvrsti po</div>
-            <toggle :selected="selectedSort" :options="sortOptions" :click-handler="selectSort" />
+            <toggle v-model="selectedSort" :options="sortOptions" />
           </div>
         </div>
 
@@ -116,18 +116,13 @@ export default {
     namedGroups = sortBy(namedGroups, 'name');
     groups = groups.concat(namedGroups);
 
-    
-
     return {
       voteData: [],
       loading: true,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
       selectedSort: 'maximum',
-      sortOptions: [
-        { label: 'Neenotnosti', id: 'maximum' },
-        { label: 'Datumu', id: 'date' },
-      ],
+      sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
       textFilter: '',
       url: 'https://glej.parlameter.si/group/method/',
       allTags: [],
@@ -260,9 +255,6 @@ export default {
     },
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
-    },
-    selectSort(sortId) {
-      this.selectedSort = sortId;
     },
     shortenUrl() {
       const mypromise = $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
