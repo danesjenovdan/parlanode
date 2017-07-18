@@ -73,7 +73,7 @@
                   class="clearfix single_voting">
                   <div v-if="vote.results.is_outlier" class="fire-badge"></div>
                   <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
-                  <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
+                  <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
                   <a :href="vote.url">
                     <div class=" col-md-1 ">
                       <div :class="vote.accepted">
@@ -753,7 +753,7 @@
 
   .session_voting {
     font-weight: 400;
-    padding: 12px 0 0 0;
+    padding: 12px 10px 10px 10px;
 
     &:empty::after {
       color: #c8c8c8;
