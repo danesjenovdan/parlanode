@@ -24,7 +24,7 @@
             <div v-for="vote in filteredVotes" class="clearfix single_voting">
               <div v-if="vote.results.is_outlier" class="fire-badge"></div>
               <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
-              <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="left: -7px;"></div>
+              <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
               <a :href="vote.url">
                 <div class=" col-md-1 ">
                   <div :class="vote.accepted">
@@ -272,35 +272,6 @@
 <style lang="scss" scoped>
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
-
-  .lightning-badge {
-    background: $darkgrey;
-    border-radius: 50%;
-    height: 31px;
-    left: 30px;
-    position: absolute;
-    top: -7px;
-    width: 31px;
-    background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
-    background-size: 11px 19px;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .fire-badge::before {
-  background: $darkgrey;
-  border-radius: 50%;
-  content: '';
-  height: 31px;
-  left: -6px;
-  position: absolute;
-  top: -7px;
-  width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
-  background-size: 40px 40px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
   .card-header h1,
   .card-footer h1 {
