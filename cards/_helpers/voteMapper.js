@@ -14,6 +14,8 @@ export default (vote) => {
   newVote.percent_against = Math.floor((vote.results.against / allInVotes) * 100);
   newVote.percent_abstain = Math.floor((vote.results.abstain / allInVotes) * 100);
   newVote.percent_not_present = Math.floor((vote.results.not_present / allInVotes) * 100);
+  newVote.is_outlier = vote.results.is_outlier || false;
+  newVote.has_outliers = vote.results.has_outliers || false;
 
   return newVote;
 };
