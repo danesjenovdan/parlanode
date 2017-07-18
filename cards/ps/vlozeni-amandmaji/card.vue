@@ -27,6 +27,9 @@
             <div class="date">{{ votingDay.date }}</div>
             <div v-for="vote in votingDay.results" class="clearfix single_voting">
               <a :href="vote.url">
+                <div v-if="vote.is_outlier" class="fire-badge"></div>
+                <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+                <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="left: -37px; position: absolute;"></div>
                 <div class=" col-md-1 ">
                   <div :class="vote.accepted">
                     <p>
@@ -327,6 +330,7 @@
   .accepted.aye {}
 
   .session_voting {
+    padding-left: 10px;
     .accepted {
       line-height: normal;
       height: 95px;
