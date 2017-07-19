@@ -7,9 +7,11 @@
       "id": 1
     },
     "results": {
+      "intra_disunion": 0.5806322376823962,
+      "number_of_amendments": 135,
       "privzdignjeno": 0.055465651048477935,
       "vocabulary_size": 124.0,
-      "number_of_questions": 248.0,
+      "number_of_questions": 254.0,
       "seat_count": 35,
       "presence_votes": 92.7622879298048,
       "presence_sessions": 94.1362788389246,
@@ -24,9 +26,11 @@
       "id": 5
     },
     "results": {
+      "intra_disunion": 2.1998883741166715,
+      "number_of_amendments": 280,
       "privzdignjeno": 0.04106208331786034,
       "vocabulary_size": 102.0,
-      "number_of_questions": 2769.0,
+      "number_of_questions": 2817.0,
       "seat_count": 19,
       "presence_votes": 66.068466397106,
       "presence_sessions": 83.4158368895211,
@@ -41,9 +45,11 @@
       "id": 3
     },
     "results": {
+      "intra_disunion": 2.8729723341782916,
+      "number_of_amendments": 9,
       "privzdignjeno": 0.11774129845219254,
       "vocabulary_size": 126.0,
-      "number_of_questions": 120.0,
+      "number_of_questions": 123.0,
       "seat_count": 11,
       "presence_votes": 88.4301175700678,
       "presence_sessions": 94.1613316261204,
@@ -58,9 +64,11 @@
       "id": 7
     },
     "results": {
+      "intra_disunion": 3.859649122808573,
+      "number_of_amendments": 12,
       "privzdignjeno": 0.11489519477220245,
       "vocabulary_size": 125.0,
-      "number_of_questions": 159.0,
+      "number_of_questions": 165.0,
       "seat_count": 6,
       "presence_votes": 87.1277326116162,
       "presence_sessions": 90.6145313677061,
@@ -75,9 +83,11 @@
       "id": 6
     },
     "results": {
+      "intra_disunion": 0.6336963097397006,
+      "number_of_amendments": 75,
       "privzdignjeno": 0.09300856518783383,
       "vocabulary_size": 122.0,
-      "number_of_questions": 278.0,
+      "number_of_questions": 283.0,
       "seat_count": 6,
       "presence_votes": 66.7593021460553,
       "presence_sessions": 85.5555555555555,
@@ -92,9 +102,11 @@
       "id": 8
     },
     "results": {
+      "intra_disunion": 4.294464609800185,
+      "number_of_amendments": 181,
       "privzdignjeno": 0.10688668819409212,
       "vocabulary_size": 117.0,
-      "number_of_questions": 531.0,
+      "number_of_questions": 516.0,
       "seat_count": 5,
       "presence_votes": 66.6821059132314,
       "presence_sessions": 80.8888888888889,
@@ -109,9 +121,11 @@
       "id": 109
     },
     "results": {
+      "intra_disunion": 7.036448880821039,
+      "number_of_amendments": 5,
       "privzdignjeno": 0.23519830984664467,
       "vocabulary_size": 104.0,
-      "number_of_questions": 124.0,
+      "number_of_questions": 126.0,
       "seat_count": 4,
       "presence_votes": 61.7762853172765,
       "presence_sessions": 82.6666666666667,
@@ -126,9 +140,11 @@
       "id": 2
     },
     "results": {
+      "intra_disunion": 7.599818511796733,
+      "number_of_amendments": 5,
       "privzdignjeno": 0.4560700680451448,
       "vocabulary_size": 102.0,
-      "number_of_questions": 27.0,
+      "number_of_questions": 28.0,
       "seat_count": 2,
       "presence_votes": 79.8286243631311,
       "presence_sessions": 78.6666666666667,
