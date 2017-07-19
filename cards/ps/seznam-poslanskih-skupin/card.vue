@@ -56,8 +56,8 @@ export default {
       data: this.$options.cardData.data.data,
       slugs: this.$options.cardData.urlsData,
       shortenedCardUrl: '',
-      url: 'https://glej.parlameter.si/group/method/',
-      currentAnalysis: 'seat_count',
+      url: 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/?state=%7B%7D',
+      currentAnalysis: this.$options.cardData.state.analysis || 'seat_count',
       analyses,
     };
   },
@@ -111,9 +111,9 @@ export default {
         ? this.slugs.base + this.slugs.partyLink.base + this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
         : `/poslanska-skupina/${party.acronym}/pregled`;
     },
-    shortenUrl() {
+    shortenUrl(url) {
       return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
           resolve(response);
         });
@@ -130,8 +130,17 @@ export default {
     },
   },
   mounted() {
-    this.shortenUrl();
+    this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
+      this.shortenedCardUrl = newShortenedUrl;
+    });
   },
+  watch: {
+    generatedCardUrl: function(url) {
+      this.shortenUrl(url).then((newShortenedUrl) => {
+        this.shortenedCardUrl = newShortenedUrl;
+      });
+    }
+  }
 };
 </script>
 
