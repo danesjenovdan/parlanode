@@ -4,11 +4,14 @@
       <div class="row">
         <div class="col-md-12 filters">
           <ul class="button-filters">
-            <li v-for="filter in filters" class="party-button sds sds-hover"
-                :class="[{ selected: currentFilters.indexOf(filter) > -1 }]"
-                @click="selectFilter(filter)">
-              {{ filter }}
-            </li>
+            <striped-button
+              v-for="(filter, index) in filters"
+              color="sds"
+              :key="index"
+              :selected="filter === currentFilter"
+              :small-text="filter"
+              :click-handler="() => selectFilter(filter)"
+            />
           </ul>
 
           <search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>
@@ -60,10 +63,11 @@
 /* globals window $ measure */
 
 import { find } from 'lodash';
+import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
 
 export default {
-  components: { InnerCard },
+  components: { InnerCard, StripedButton },
   name: 'SeznamSej',
   data() {
     return {
@@ -73,7 +77,7 @@ export default {
       filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilters: this.$options.cardData.state.filters || [],
+      currentFilter: this.$options.cardData.state.filter || 'Seje DZ',
       justFive: this.$options.cardData.state.justFive || false,
       shortenedCardUrl: '',
       headerConfig: {
@@ -112,16 +116,12 @@ export default {
     processedSessions() {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
-          if (this.currentFilters.length === 0) return true;
-
-          let match = false;
-          if (this.currentFilters.indexOf('Seje DZ') > -1) {
-            match = match || session.orgs.filter(org => org.id === 95).length > 0;
-          }
-          if (this.currentFilters.indexOf('Seje kolegija predsednika DZ') > -1) {
-            match = match || session.orgs.filter(org => org.id === 9).length > 0;
-          }
-          if (this.currentFilters.indexOf('Seje delovnih teles') > -1) {
+          if (this.currentFilter === 'Seje DZ') {
+            return session.orgs.filter(org => org.id === 95).length > 0;
+          } else if (this.currentFilter === 'Seje kolegija predsednika DZ') {
+            return session.orgs.filter(org => org.id === 9).length > 0;
+          } else if (this.currentFilter === 'Seje delovnih teles') {
+            let match = false;
             if (this.currentWorkingBodies.length === 0) {
               session.orgs.forEach((org) => {
                 match = match || this.organisationIsWorkingBody(org.id);
@@ -131,9 +131,9 @@ export default {
                 match = match || this.currentWorkingBodies.indexOf(org.id) > -1;
               });
             }
+            return match;
           }
-
-          return match;
+          return false;
         })
         .sort((sessionA, sessionB) => {
           let a;
@@ -176,16 +176,15 @@ export default {
       return sortedAndFiltered;
     },
     generatedCardUrl() {
-      const params = {};
+      const params = { filters: this.currentFilter };
 
-      if (this.currentFilters.length > 0) params.filters = this.currentFilters;
       if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies;
       if (this.justFive) params.justFive = true;
 
       return `https://glej.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
     },
     infoText() {
-      const filterText = `${this.currentFilters.join(', ')}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
+      const filterText = `${this.currentFilter}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
       const workingBodiesText = this.currentWorkingBodyNames.join(', ');
       const filterAndWorkingBodiesText = filterText || workingBodiesText ? ` (${filterText}${workingBodiesText})` : '';
       const sortTexts = {
@@ -227,12 +226,7 @@ export default {
       this.measurePiwik('', sortId, this.currentSortOrder);
     },
     selectFilter(filter) {
-      if (this.currentFilters.indexOf(filter) > -1) {
-        this.currentFilters.splice(this.currentFilters.indexOf(filter), 1);
-      } else {
-        this.currentFilters.push(filter);
-      }
-
+      this.currentFilter = filter;
       this.measurePiwik(filter, '', '');
     },
     getWorkingBodyUrl(workingBodyId) {
@@ -258,8 +252,8 @@ export default {
     generatedCardUrl(newValue) {
       this.shortenUrl(newValue);
     },
-    currentFilters(newValue) {
-      if (newValue.indexOf('Seje delovnih teles') === -1) {
+    currentFilter(newValue) {
+      if (newValue !== 'Seje delovnih teles') {
         this.workingBodies.forEach((workingBody) => {
           // eslint-disable-next-line
           workingBody.selected = false;
@@ -267,10 +261,17 @@ export default {
       }
     },
     currentWorkingBodies(newValue) {
-      if (newValue.length !== 0 && this.currentFilters.indexOf('Seje delovnih teles') === -1) {
-        this.currentFilters.push('Seje delovnih teles');
+      if (newValue.length !== 0 && this.currentFilter !== 'Seje delovnih teles') {
+        this.currentFilter = 'Seje delovnih teles';
       }
     },
   },
 };
 </script>
+
+<style>
+.striped-button {
+  margin-right: 5px;
+  flex: 1;
+}
+</style>

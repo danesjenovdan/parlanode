@@ -51,6 +51,7 @@ export default {
   justify-content: center;
   padding: 0 10px;
   position: relative;
+  text-align: center;
   user-select: none;
   @include respond-to(desktop) { height: 58px; }
 

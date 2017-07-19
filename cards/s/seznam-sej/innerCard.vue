@@ -78,8 +78,8 @@ export default {
   },
   methods: {
     getSessionUrl(session) {
-      if (!this.slugs) return '';
-      return this.slugs.base + this.slugs.sessionLink[session.votes ? 'glasovanja' : 'transkript'] + session.id;
+      if (!this.slugs || session.link_to === 'nothing') return '';
+      return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
     },
   },
 };
