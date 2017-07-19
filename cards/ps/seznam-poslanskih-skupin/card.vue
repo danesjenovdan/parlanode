@@ -34,12 +34,12 @@
 
       <div class="row">
         <div class="col-md-12">
-          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, shortenedCardUrl }" />
+          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, shortenedCardUrl, currentAnalysisData }" />
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, shortenedCardUrl }" />
+  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, shortenedCardUrl, currentAnalysisData }" />
 </template>
 
 <script>
@@ -58,7 +58,7 @@ export default {
       shortenedCardUrl: '',
       url: 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/?state=%7B%7D',
       currentAnalysis: this.$options.cardData.state.analysis || 'seat_count',
-      analyses,
+      analyses
     };
   },
   computed: {
