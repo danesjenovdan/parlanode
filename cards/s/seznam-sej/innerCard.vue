@@ -29,13 +29,8 @@
 </template>
 
 <script>
-import CardInfo from 'components/Card/Info.vue';
-import CardEmbed from 'components/Card/Embed.vue';
-import CardShare from 'components/Card/Share.vue';
-import CardHeader from 'components/Card/Header.vue';
-import CardFooter from 'components/Card/Footer.vue';
 import SortableTable from 'components/SortableTable.vue';
-import initializeBack from 'mixins/initializeBack';
+import common from 'mixins/common';
 
 const ICONS_ROOT_URL = 'https://cdn.parlameter.si/v1/parlassets/icons/';
 const ORGS_ROOT_URL = 'https://glej.parlameter.si/wb/getWorkingBodies/';
@@ -46,8 +41,8 @@ const formatDate = (isoDate) => {
 };
 
 export default {
-  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter, SortableTable },
-  mixins: [initializeBack],
+  components: { SortableTable },
+  mixins: [common],
   name: 'SeznamSejKartica',
   props: {
     headerConfig: Object,
