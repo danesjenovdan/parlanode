@@ -1030,7 +1030,32 @@ const routes = [
     path      : '/poslanske-skupine',
     viewPath  : 'poslanske-skupine',
     pageTitle : 'Seznam poslanskih skupin',
-    cards     : []
+    cards     : [
+      {
+        name      : 'seznamPoslanskihSkupin',
+        sourceUrl : '/ps/seznam-poslanskih-skupin/',
+        resolve   : (req, res, route, card) => {
+
+          //var pattern = new UrlPattern(card.sourceUrl);
+          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
+          console.log(cardUrl);
+
+          if (req.query.forceRender) {
+            cardUrl += '&forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
+      },
+    ]
   },
   {
     path      : '/poslanske-skupine/:imeAnalize',
@@ -1556,7 +1581,7 @@ const routes = [
           let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
 
           if (req.query.forceRender) {
-            cardUrl += '?forceRender=true';
+            cardUrl += '&forceRender=true';
           }
 
           return fetch(cardUrl)
