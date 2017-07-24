@@ -15,6 +15,11 @@ export default {
     clickHandler: Function,
     color: String,
     disabled: Boolean,
+    stripePosition: {
+      type: String,
+      default: 'top',
+      validator: value => ['top', 'bottom'].indexOf(value) > -1,
+    },
   },
   computed: {
     className() {
@@ -23,6 +28,7 @@ export default {
         { 'is-disabled': this.disabled },
         { 'is-selected': this.selected },
         this.color,
+        `has-stripe-on-${this.stripePosition}`,
       ];
     },
   },
@@ -43,7 +49,6 @@ export default {
   align-items: center;
   background: $white;
   border: 1px solid $grey-medium;
-  border-top-width: 9px;
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -56,6 +61,9 @@ export default {
   @include respond-to(desktop) { height: 58px; }
 
   // &.lightning-badge:before { top: -16px; }
+
+  &.has-stripe-on-top { border-top-width: 9px; }
+  &.has-stripe-on-bottom { border-bottom-width: 9px; }
 
   &.is-selected, &:hover:not(.is-disabled) {
     border-color: transparent !important;
@@ -80,38 +88,35 @@ export default {
 
   @each $vote, $color in $proper-vote-colors {
     &.#{$vote} {
-      border-top-color: $color;
+      &.has-stripe-on-top { border-top-color: $color; }
+      &.has-stripe-on-bottom { border-bottom-color: $color; }
       &.is-selected { background: $color; }
+      &:hover:not(.is-disabled) { background: map-get($proper-vote-colors-hover, $vote); }
     }
-  }
-  @each $vote, $color in $proper-vote-colors-hover {
-    &.#{$vote}:hover:not(.is-disabled) { background: $color; }
   }
 
   @each $party, $color in $party-colors {
     &.#{$party} {
-      border-top-color: $color;
+      &.has-stripe-on-top { border-top-color: $color; }
+      &.has-stripe-on-bottom { border-bottom-color: $color; }
       &.is-selected { background: $color; }
+      &:hover:not(.is-disabled) { background: map-get($party-colors-hover, $party); }
     }
   }
-  @each $party, $color in $party-colors-hover {
-    &.#{$party}:hover:not(.is-disabled) { background: $color; }
-  }
 
-  &.dz {
-    border-top-color: #fe5e41;
-    &.is-selected { background: #fe5e41; }
-    &:hover:not(.is-disabled) { background: lighten(#fe5e41, 10%); }
-  }
-  &.koal {
-    border-top-color: #00628c;
-    &.is-selected { background: #00628c; }
-    &:hover:not(.is-disabled) { background: lighten(#00628c, 10%); }
-  }
-  &.opoz {
-    border-top-color: #a9a9a9;
-    &.is-selected { background: #a9a9a9; }
-    &:hover:not(.is-disabled) { background: lighten(#a9a9a9, 10%); }
+  $special-groups: (
+    dz: #fe5e41,
+    koal: #00628c,
+    opoz: #a9a9a9
+  );
+
+  @each $group, $color in $special-groups {
+    &.#{$group} {
+      &.has-stripe-on-top { border-top-color: $color; }
+      &.has-stripe-on-bottom { border-bottom-color: $color; }
+      &.is-selected { background: $color; }
+      &:hover:not(.is-disabled) { background: lighten($color, 10%); }
+    }
   }
 }
 </style>
