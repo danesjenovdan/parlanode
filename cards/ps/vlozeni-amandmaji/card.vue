@@ -7,7 +7,7 @@
         <div class="filters">
           <div class="filter text-filter">
             <div class="filter-label">Išči po naslovu glasovanja</div>
-            <input class="text-filter-input" type="text" v-model="textFilter">
+            <search-field v-model="textFilter"/>
           </div>
           <div class="filter tag-dropdown">
             <div class="filter-label">Matično delovno telo</div>
@@ -17,20 +17,33 @@
             <div class="filter-label">Časovno obdobje</div>
             <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
           </div>
-          <div class="filter text-filter">
+          <div class="filter button-filter">
             <div class="filter-label">Prikaži</div>
-            <toggle v-model="onlyPassed" :options="onlyPassedOptions" />
+            <div class="filter-content">
+              <striped-button
+                v-for="voteType in voteTypes"
+                :color="voteType.color"
+                :key="voteType.id"
+                :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
+                :small-text="voteType.label"
+                :click-handler="() => toggleVoteType(voteType.id)"
+              />
+            </div>
           </div>
         </div>
         <div id="votingCard" class="date-list">
-          <div class="session_voting" v-for="votingDay in filteredVotingDays">
+          <div class="session_voting"
+               v-for="votingDay in filteredVotingDays"
+               :key="votingDay.date">
             <div class="date">{{ votingDay.date }}</div>
-            <div v-for="vote in votingDay.results" class="clearfix single_voting">
+            <div class="clearfix single_voting"
+                 v-for="(vote, index) in votingDay.results"
+                 :key="index">
               <a :href="vote.url">
                 <div v-if="vote.is_outlier" class="fire-badge"></div>
                 <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
                 <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="left: -37px; position: absolute;"></div>
-                <div class=" col-md-1 ">
+                <div class="col-md-1">
                   <div :class="vote.accepted">
                     <p>
                       <i :class="vote.accepted_glyph"></i>
@@ -112,11 +125,14 @@
 <script>
   /* globals window $ measure */
   import { format as formatDate } from 'date-fns';
+  import { find } from 'lodash';
+
   import voteMapper from 'helpers/voteMapper';
   import stateLoader from 'helpers/stateLoader';
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
-  import Toggle from 'components/Toggle.vue';
+  import SearchField from 'components/SearchField.vue';
+  import StripedButton from 'components/StripedButton.vue';
 
   const formattedDateToMonthId = (date) => {
     const [day, month, year] = date.split('. ');
@@ -124,11 +140,16 @@
   };
 
   export default {
-    components: { Toggle },
+    components: { SearchField, StripedButton },
     mixins: [common],
     name: 'VlozeniAmandmaji',
     data() {
       const loadFromState = stateLoader(this.$options.cardData.state);
+
+      const voteTypes = [
+        { id: true, color: 'for', label: 'sprejeti', selected: false },
+        { id: false, color: 'against', label: 'zavrnjeni', selected: false },
+      ];
 
       const votingDays = this.$options.cardData.data.results.map(votingDay => ({
         date: votingDay.date,
@@ -158,8 +179,7 @@
         votingDays,
         allTags: loadFromState('tags', allTags) || allTags,
         allMonths: loadFromState('months', allMonths) || allMonths,
-        onlyPassed: loadFromState('onlyPassed') ? 'passed' : 'all',
-        onlyPassedOptions: { all: 'Vse', passed: 'Sprejete' },
+        voteTypes: loadFromState('voteTypes', voteTypes) || voteTypes,
       };
     },
     computed: {
@@ -168,7 +188,7 @@
 
         if (this.selectedTags.length > 0) state.tags = this.selectedTags;
         if (this.selectedMonths.length > 0) state.months = this.selectedMonths;
-        if (this.onlyPassed === 'passed') state.onlyPassed = true;
+        if (this.selectedVoteTypes.length > 0) state.voteTypes = this.selectedVoteTypes;
         if (this.textFilter.length > 0) state.text = this.textFilter;
 
         return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
@@ -211,6 +231,11 @@
           .filter(month => month.selected)
           .map(month => month.id);
       },
+      selectedVoteTypes() {
+        return this.voteTypes
+          .filter(voteType => voteType.selected)
+          .map(voteType => voteType.id);
+      },
     },
     methods: {
       getFilteredVotingDays(onlyFilterByText = false) {
@@ -218,8 +243,9 @@
           const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
           const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
             vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-          const passedMatch = onlyFilterByText || this.onlyPassed === 'all' || vote.result;
-          return textMatch && tagMatch && passedMatch;
+          const voteTypeMatch = onlyFilterByText || this.selectedVoteTypes.length === 0 ||
+            this.selectedVoteTypes.indexOf(vote.result) > -1;
+          return textMatch && tagMatch && voteTypeMatch;
         };
 
         return this.votingDays
@@ -233,6 +259,10 @@
             return onlyFilterByText || this.selectedMonths.length === 0 ||
               this.selectedMonths.indexOf(monthId) > -1;
           });
+      },
+      toggleVoteType(voteTypeId) {
+        const clickedResult = find(this.voteTypes, { id: voteTypeId });
+        clickedResult.selected = !clickedResult.selected;
       },
       shortenUrl(url) {
         return new Promise((resolve) => {
@@ -322,12 +352,6 @@
     }
 
   }
-
-  .accepted.nay {
-    color: #ff5e41;
-  }
-
-  .accepted.aye {}
 
   .session_voting {
     padding-left: 10px;
@@ -429,8 +453,10 @@
 
     .filter {
       @include respond-to(desktop) {
+        flex: 1;
         &:not(:last-child) { padding-right: 10px; }
       }
+      width: 100%;
     }
 
     .filter-label {
@@ -452,39 +478,17 @@
       }
     }
 
-    .text-filter {
-      @include respond-to(desktop) { flex: 1; }
-
-      width: 100%;
-
-      .text-filter-input {
-        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: right 9px center;
-        border: 1px solid #c8c8c8;
-        font-size: 16px;
-        height: 51px;
-        line-height: 27px;
-        outline: none;
-        padding: 12px 42px 12px 14px;
-        width: 100%;
-      }
-    }
-
-    .tag-dropdown {
-      @include respond-to(desktop) { flex: 1; }
-      width: 100%;
-    }
-
-    .month-dropdown {
-      @include respond-to(desktop) { flex: 1; }
-      width: 100%;
-    }
-
-    .only-passed {
+    .button-filter {
       @include show-for(desktop);
-      padding-top: 41px;
+
+      .filter-content {
+        display: flex;
+        .striped-button {
+          flex: 1;
+          height: 51px;
+          &:not(:last-child) { margin-right: 5px; }
+        }
+      }
     }
 
     .search-dropdown-options { top: 50px; }
@@ -510,19 +514,12 @@
 </style>
 <style lang="scss">
   .card-glasovanja-seja {
-    .search-dropdown input {
-      background-color: #ffffff;
-    }
-
     .search-dropdown-input {
       padding-top: 11px;
       padding-bottom: 11px;
       background-color: #ffffff;
-      line-height: 27px;
     }
 
-    .search-dropdown-options {
-      top: 50px;
-    }
+    .search-dropdown-options { top: 50px; }
   }
 </style>
