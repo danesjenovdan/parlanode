@@ -88,3 +88,8 @@ $proper-vote-colors-hover: (
   'abstain': $ignoreblue-hover,
   'not_present': $noblue-hover
 );
+
+$binary-vote-colors: (
+  'for': $funblue,
+  'against': $red
+);
