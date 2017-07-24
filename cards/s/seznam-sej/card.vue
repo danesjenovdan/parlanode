@@ -269,9 +269,11 @@ export default {
 };
 </script>
 
-<style>
-.striped-button {
-  margin-right: 5px;
-  flex: 1;
+<style lang="scss" scoped>
+.button-filters {
+  .striped-button {
+    flex: 1;
+    &:not(:last-child) { margin-right: 5px; }
+  }
 }
 </style>

@@ -6,9 +6,14 @@
       <div class="card-content-front">
         <div class="filters">
           <div class="filter option-party-buttons">
-            <div v-for="result in allResults"
-            :class="['party-button', result.class, { selected: selectedResults.indexOf(result.id) > -1 }]"
-            @click="toggleResult(result.id)">{{ result.label }}</div>
+            <striped-button
+              v-for="result in allResults"
+              :color="result.color"
+              :key="result.id"
+              :selected="selectedResults.indexOf(result.id) > -1"
+              :small-text="result.label"
+              :click-handler="() => toggleResult(result.id)"
+            />
           </div>
           <div class="filter text-filter">
             <div class="filter-label">Išči po naslovu glasovanja</div>
@@ -111,9 +116,11 @@
   /* globals window $ measure */
 
   import common from 'mixins/common';
+  import StripedButton from 'components/StripedButton.vue';
 
   export default {
     mixins: [common],
+    components: { StripedButton },
     name: 'Glasovanja - seja',
     data() {
 
@@ -136,8 +143,8 @@
       });
 
       let allResults = [
-        { id: true, class: 'sprejet', label: 'SPREJET', selected: false },
-        { id: false, class: 'zavrnjen', label: 'ZAVRNJEN', selected: false },
+        { id: true, color: 'binary-for', label: 'sprejet', selected: false },
+        { id: false, color: 'binary-against', label: 'zavrnjen', selected: false },
       ];
 
       let allTags = this.$options.cardData.data.tags.map(
@@ -456,8 +463,10 @@
       width: 27.5%;
       padding-top: $label-height;
 
-      .party-button:not(:last-child) {
-        margin-right: 3px;
+      .striped-button {
+        flex: 1;
+        height: 51px;
+        &:not(:last-child) { margin-right: 3px; }
       }
     }
 
@@ -490,40 +499,6 @@
 
     .search-dropdown-options { top: 50px; }
   }
-
-  .option-party-buttons {
-    .sprejet {
-      border-bottom-color: $funblue;
-
-      &.selected, &:hover {
-        background-color: $funblue;
-      }
-    }
-
-    .zavrnjen {
-      border-bottom-color: $red;
-
-      &.selected, &:hover {
-        background-color: $red;
-      }
-    }
-  }
 </style>
 <style lang="scss">
-  .card-glasovanja-seja {
-    .search-dropdown input {
-      background-color: #ffffff;
-    }
-
-    .search-dropdown-input {
-      padding-top: 11px;
-      padding-bottom: 11px;
-      background-color: #ffffff;
-      line-height: 27px;
-    }
-
-    .search-dropdown-options {
-      top: 50px;
-    }
-  }
 </style>

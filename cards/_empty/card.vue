@@ -45,9 +45,9 @@ export default {
     };
   },
   methods: {
-    shortenUrl() {
+    shortenUrl(url) {
       return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
+        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
           resolve(response);
         });
@@ -64,8 +64,17 @@ export default {
     },
   },
   mounted() {
-    this.shortenUrl();
+    this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
+      this.shortenedCardUrl = newShortenedUrl;
+    });
   },
+  watch: {
+    generatedCardUrl: function(url) {
+      this.shortenUrl(url).then((newShortenedUrl) => {
+        this.shortenedCardUrl = newShortenedUrl;
+      });
+    }
+  }
 };
 </script>
 
