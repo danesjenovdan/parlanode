@@ -147,8 +147,8 @@
       const loadFromState = stateLoader(this.$options.cardData.state);
 
       const voteTypes = [
-        { id: true, color: 'for', label: 'sprejeti', selected: false },
-        { id: false, color: 'against', label: 'zavrnjeni', selected: false },
+        { id: true, color: 'binary-for', label: 'sprejeti', selected: false },
+        { id: false, color: 'binary-against', label: 'zavrnjeni', selected: false },
       ];
 
       const votingDays = this.$options.cardData.data.results.map(votingDay => ({

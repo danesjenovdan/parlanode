@@ -143,8 +143,8 @@
       });
 
       let allResults = [
-        { id: true, color: 'for', label: 'sprejet', selected: false },
-        { id: false, color: 'against', label: 'zavrnjen', selected: false },
+        { id: true, color: 'binary-for', label: 'sprejet', selected: false },
+        { id: false, color: 'binary-against', label: 'zavrnjen', selected: false },
       ];
 
       let allTags = this.$options.cardData.data.tags.map(

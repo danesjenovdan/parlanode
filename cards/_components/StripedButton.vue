@@ -110,8 +110,9 @@ export default {
     opoz: #a9a9a9
   );
 
-  @each $group, $color in $special-groups {
-    &.#{$group} {
+
+  @each $name, $color in map-merge($special-groups, $binary-vote-colors) {
+    &.#{$name} {
       &.has-stripe-on-top { border-top-color: $color; }
       &.has-stripe-on-bottom { border-bottom-color: $color; }
       &.is-selected { background: $color; }

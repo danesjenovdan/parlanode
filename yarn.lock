@@ -4274,7 +4274,7 @@ pako@~0.2.0:
 
 parlassets@danesjenovdan/parlassets:
   version "1.0.0"
-  resolved "https://codeload.github.com/danesjenovdan/parlassets/tar.gz/07150e539e8c01beeaee96806fc2222910e26b74"
+  resolved "https://codeload.github.com/danesjenovdan/parlassets/tar.gz/99887b64fe35407d140c388e3582ed7ef406725b"
   dependencies:
     autoprefixer "^7.1.1"
     babel-core "^6.24.1"
