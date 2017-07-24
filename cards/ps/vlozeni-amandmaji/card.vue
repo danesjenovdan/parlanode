@@ -217,8 +217,12 @@
         });
 
         return {
-          tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-          months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
+          tags: this.allTags.filter(
+            tag => validTags.indexOf(tag.id) > -1 || tag.selected,
+          ),
+          months: this.allMonths.filter(
+            month => validMonths.indexOf(month.id) > -1 || month.selected,
+          ),
         };
       },
       selectedTags() {
