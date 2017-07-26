@@ -13,13 +13,13 @@
   "id": "intra_disunion",
   "label": "Neenotnost glasovanj",
   "titleSuffix": "z neenotnostjo glasovanj",
-  "explanation": "!!TEKST MANJKA!!",
+  "explanation": "Za vsako glasovanje za vsako poslansko skupino preštejemo, koliko poslancev je oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo do 100 in dobimo stopnjo neenotnosti oz. odstotek poslank in poslancev, ki se z večinskim glasom niso strinjali.",
   "unit": "percent"
 }, {
   "id": "number_of_amendments",
   "label": "Število vloženih amandmajev",
   "titleSuffix": "s številom vloženih amandmajev",
-  "explanation": "!!TEKST MANJKA!!"
+  "explanation": "<p class=\"info-text\">Glasovanja o amandmajih objavljena na spletnem mestu <a href=\"http://www.dz-rs.si/\">DZ RS</a> imajo ime zapisano po vnaprej določeni strukturi:</p><div class=\"info-text\"><pre>&#123;ime zakona&#125; - Amandma: &#123;K X. členu&#125; &#123;datum&#125; [&#123;kratica poslanske skupine&#125; - &#123;ime poslanske skupine&#125;]</pre></div><p class=\"info-text\">Število amandmajev, ki jih vložila posamezna poslanska skupina dobimo tako, da preštejemo vsa glasovanja, v imenu katerih se pojavi beseda amandma. Med preštetimi glasovanji poiščemo tista, katerih ime vsebije kratico poslanske skupine. Ta amandma prištejemo k tej poslanski skupini.</p>"
 }, {
   "id": "number_of_questions",
   "titleSuffix": " po št. poslanskih vprašanj in pobud",
