@@ -56,7 +56,7 @@ if (process.env.CARD_NAME === '') {
   };
   console.log(`${error.open}ERROR:${error.close} Specify card path (e.g. ${path.open}s/seznam-sej${path.close}) to build one cards or ${path.open}all${path.close} to build all cards.`);
 } else if (process.env.CARD_NAME.toLowerCase() === 'all') {
-  const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s'));
+  const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s').concat(dirs('./cards/c')));
   paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve());
 } else {
   compileAndRefresh(`./cards/${process.env.CARD_NAME}`);
