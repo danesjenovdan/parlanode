@@ -1,6 +1,6 @@
 <template>
   <div :class="className" @click="handleClick">
-    <div v-if="smallText" class="small-text">{{ smallText }}</div>
+    <div v-if="smallText" :class="['small-text', {uppercase: isUppercase}]">{{ smallText }}</div>
     <div v-if="text" class="text">{{ text }}</div>
   </div>
 </template>
@@ -11,6 +11,10 @@ export default {
   props: {
     selected: Boolean,
     smallText: String,
+    isUppercase: {
+      type: Boolean,
+      default: true,
+    },
     text: String,
     clickHandler: Function,
     color: String,
@@ -77,8 +81,11 @@ export default {
   .small-text {
     font-size: 10px;
     line-height: 1em;
-    text-transform: uppercase;
     @include respond-to(desktop) { font-size: 13px; }
+
+    &.uppercase {
+      text-transform: uppercase;
+    }
   }
   .text {
     font-size: 24px;
