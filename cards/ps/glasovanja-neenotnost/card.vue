@@ -12,6 +12,7 @@
             :selected="group.acronym === selectedGroup"
             :small-text="group.name"
             :click-handler="() => selectGroup(group.acronym)"
+            :is-uppercase="false"
           />
         </div>
 
