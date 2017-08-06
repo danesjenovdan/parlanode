@@ -76,7 +76,7 @@
 
       <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -95,7 +95,6 @@ export default {
     return {
       data: this.$options.cardData.data,
       state: this.$options.cardData.state,
-      slugs: this.$options.cardData.urlsData,
       selectedTab: this.$options.cardData.state.selectedTab || 0,
       headerConfig: {
         circleIcon: 'og-list',

@@ -164,7 +164,7 @@
 
       <card-share :url="generatedCardUrl"></card-share>
     </div>
-    <card-footer :link="slugs.base"></card-footer>
+    <card-footer />
 
     <div v-show="sameModalVisible" class="card-modal">
       <div class="card-modal-header">
@@ -238,7 +238,6 @@
         special: !!this.$options.cardData.state.special,
         data: [],
         total: 0,
-        slugs: this.$options.cardData.urlsData,
         sameModalVisible: false,
         differentModalVisible: false,
         selectedTab: this.$options.cardData.state.selectedTab || 0,

@@ -31,7 +31,7 @@
 
       <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -55,7 +55,6 @@
         data: this.$options.cardData.data.filter(person => person.mandates > 3).sort((a, b) => {
           return b.mandates - a.mandates;
         }),
-        slugs: this.$options.cardData.urlsData,
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',

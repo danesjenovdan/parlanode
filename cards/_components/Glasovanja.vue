@@ -30,7 +30,7 @@
             <ul>
               <li v-for="ballot in votingDay.ballots">
                 <div :class="['icon', ballot.option]"></div>
-                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
+                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
                 <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
               </li>
             </ul>
@@ -49,7 +49,7 @@
 
       <card-share :url="cardUrl" />
     </div>
-    <card-footer :link="cardData.urlsData.base" />
+    <card-footer />
   </div>
 </template>
 

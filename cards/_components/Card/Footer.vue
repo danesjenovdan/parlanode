@@ -1,7 +1,7 @@
 <template>
   <div class="card-footer">
     <div class="card-logo hidden">
-      <a :href="link">
+      <a :href="slugs.base">
         <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
       </a>
     </div>
@@ -13,10 +13,12 @@
 </template>
 
 <script>
+import slugs from '../../../assets/urls.json';
+
 export default {
   name: 'CardFooter',
-  props: {
-    link: String,
+  data() {
+    return { slugs };
   },
 };
 </script>

@@ -31,7 +31,6 @@
             :current-sort="currentSort"
             :current-sort-order="currentSortOrder"
             :select-sort="selectSort"
-            :slugs="slugs"
             :processed-sessions="processedSessions"
             :organisation-is-working-body="organisationIsWorkingBody"
             :info-text="infoText"
@@ -49,7 +48,6 @@
     :current-sort="currentSort"
     :current-sort-order="currentSortOrder"
     :select-sort="selectSort"
-    :slugs="slugs"
     :processed-sessions="processedSessions"
     :organisation-is-working-body="organisationIsWorkingBody"
     :info-text="infoText"
@@ -71,7 +69,6 @@ export default {
     return {
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      slugs: this.$options.cardData.urlsData,
       filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
       currentSort: 'date',
       currentSortOrder: 'desc',

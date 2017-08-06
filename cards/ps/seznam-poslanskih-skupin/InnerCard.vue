@@ -32,7 +32,7 @@
 
       <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -47,7 +47,6 @@ export default {
     getPartyUrl: Function,
     headerConfig: Object,
     generatedCardUrl: String,
-    slugs: Object,
     currentAnalysisData: Object,
   },
 };

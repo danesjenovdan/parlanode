@@ -70,7 +70,7 @@
 
       <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -120,7 +120,6 @@ export default {
     return {
       voteData: [],
       loading: true,
-      slugs: this.$options.cardData.urlsData,
       selectedSort: 'maximum',
       sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
       textFilter: '',

@@ -118,7 +118,7 @@
 
       <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -164,7 +164,6 @@
 
       return {
         data: this.$options.cardData.data,
-        slugs: this.$options.cardData.urlsData,
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',

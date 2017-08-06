@@ -24,7 +24,7 @@
 
       <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -50,7 +50,6 @@ export default {
     currentSort: String,
     currentSortOrder: String,
     selectSort: Function,
-    slugs: Object,
     processedSessions: Array,
     organisationIsWorkingBody: Function,
     infoText: String,

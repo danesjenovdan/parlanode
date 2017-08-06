@@ -30,7 +30,7 @@
               <li v-for="question in questionDay.questions">
                 <div class="parlaicon parlaicon-vprasanje"></div>
                 <div class="motion">
-                  <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/poslanec/${cardData.urlsData.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
+                  <a class="funblue-light-hover" :href="`${slugs.base}/poslanec/${slugs.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
                   {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : question.recipient_text.split(' ')[0] === 'ministrica' ? 'ministrici ' + question.recipient_text.split('ministrica ')[1] : 'Vladi'}` }}
                   <a target="_blank" class="funblue-light-hover" :href="`${question.url}`">{{ question.title }}</a>
                 </div>
@@ -51,7 +51,7 @@
 
       <card-share :url="cardUrl" />
     </div>
-    <card-footer :link="cardData.urlsData.base" />
+    <card-footer />
   </div>
 </template>
 

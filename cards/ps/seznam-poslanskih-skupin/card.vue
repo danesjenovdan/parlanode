@@ -11,12 +11,12 @@
 
       <div class="row">
         <div class="col-md-12">
-          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, currentAnalysisData }" />
+          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, currentAnalysisData }" />
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, currentAnalysisData }" />
+  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, currentAnalysisData }" />
 </template>
 
 <script>
@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data.data,
-      slugs: this.$options.cardData.urlsData,
       currentAnalysis: this.$options.cardData.state.analysis || 'seat_count',
       analyses,
     };
