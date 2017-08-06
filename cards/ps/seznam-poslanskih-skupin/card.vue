@@ -3,32 +3,9 @@
     <div class="party-list-generator">
       <div class="row">
         <div class="col-md-12">
-          <ul class="analyses">
-            <li v-for="(analysis, index) in analyses"
-                :key="index"
-                :class="{ selected: analysis.id === currentAnalysis }"
-                @click="selectAnalysis(analysis.id)">
-              <span>{{ analysis.label }}</span>
-            </li>
-          </ul>
-
-          <div class="mobile-analyses">
-            <label for="analysis">Izberi analizo</label>
-            <div class="select">
-              <select
-                name="analysis"
-                id="analysis"
-                v-model="currentAnalysis"
-                @change="selectAnalysis(currentAnalysis)">
-                <option
-                  v-for="(analysis, index) in analyses"
-                  :key="index"
-                  :value="analysis.id">
-                  {{ analysis.label }}
-                </option>
-              </select>
-            </div>
-          </div>
+          <blue-button-list
+            :items="analyses"
+            v-model="currentAnalysis" />
         </div>
       </div>
 
@@ -45,12 +22,13 @@
 <script>
 /* globals window $ measure */
 import { find } from 'lodash';
+import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
 
 export default {
   name: 'SeznamPoslanskihSkupin',
-  components: { InnerCard },
+  components: { BlueButtonList, InnerCard },
   data() {
     return {
       data: this.$options.cardData.data.data,
@@ -99,10 +77,6 @@ export default {
     },
   },
   methods: {
-    selectAnalysis(analysisId) {
-      this.currentAnalysis = analysisId;
-      this.measurePiwik(analysisId);
-    },
     round(value, precision) {
       const multiplier = 10 ** (precision || 0);
       return Math.round(value * multiplier) / multiplier;
