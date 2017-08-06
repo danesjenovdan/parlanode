@@ -22,7 +22,7 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
     <card-footer :link="slugs.base" />
   </div>
@@ -55,7 +55,6 @@ export default {
     organisationIsWorkingBody: Function,
     infoText: String,
     generatedCardUrl: String,
-    shortenedCardUrl: String,
   },
   computed: {
     mappedSessions() {

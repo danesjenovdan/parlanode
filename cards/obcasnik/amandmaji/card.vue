@@ -29,7 +29,7 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
     <card-footer :link="slugs.base" />
   </div>
@@ -50,8 +50,6 @@ export default {
     return {
       data: this.$options.cardData.data.data,
       slugs: this.$options.cardData.urlsData,
-      shortenedCardUrl: '',
-      url: 'https://glej.parlameter.si/obcasnik/amandmaji/?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -89,14 +87,6 @@ export default {
     },
   },
   methods: {
-    shortenUrl() {
-      return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
-          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-          resolve(response);
-        });
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -109,12 +99,6 @@ export default {
     focusTab() {
       return true;
     },
-  },
-  mounted() {
-    this.shortenUrl().then((newShortenedUrl) => {
-      this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-      this.shortenedCardUrl = newShortenedUrl;
-    });
   },
 };
 </script>

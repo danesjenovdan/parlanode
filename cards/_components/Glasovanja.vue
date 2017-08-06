@@ -47,7 +47,7 @@
 
       <card-embed :url="cardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="cardUrl" />
     </div>
     <card-footer :link="cardData.urlsData.base" />
   </div>
@@ -177,7 +177,6 @@ export default {
       allOptions,
       allTags,
       textFilter,
-      shortenedCardUrl: '',
     };
   },
   methods: {
@@ -232,12 +231,6 @@ export default {
         .filter(votingDay => votingDay.ballots.length > 0)
         .filter(filterDates);
     },
-    shortenUrl(url) {
-      $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-        this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
-      });
-    },
   },
   props: {
     cardData: {
@@ -251,14 +244,6 @@ export default {
     },
     person: Object,
     party: Object,
-  },
-  watch: {
-    cardUrl(newValue) {
-      this.shortenUrl(newValue);
-    },
-  },
-  beforeMount() {
-    this.shortenUrl(this.cardUrl);
   },
 };
 </script>

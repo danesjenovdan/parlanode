@@ -15,7 +15,7 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
     <card-footer :link="slugs.base" />
   </div>
@@ -41,12 +41,12 @@ export default {
         .filter(e => e.acronym === acronym)
         .filter(e => e.result)
         .length;
-      
+
       const unsuccessful = data
         .filter(e => e.acronym === acronym)
         .filter(e => !e.result)
         .length;
-      
+
       return {
         name: data.filter(e => e.acronym === acronym)[0].orgData.acronym,
         acronym: data.filter(e => e.acronym === acronym)[0].orgData.acronym,
@@ -66,8 +66,6 @@ export default {
     return {
       data,
       slugs: this.$options.cardData.urlsData,
-      shortenedCardUrl: '',
-      url: 'https://glej.parlameter.si/group/method/',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -80,14 +78,6 @@ export default {
     };
   },
   methods: {
-    shortenUrl() {
-      return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
-          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-          resolve(response);
-        });
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -100,12 +90,6 @@ export default {
     focusTab() {
       return true;
     },
-  },
-  mounted() {
-    this.shortenUrl().then((newShortenedUrl) => {
-      this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-      this.shortenedCardUrl = newShortenedUrl;
-    });
   },
 };
 </script>

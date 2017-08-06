@@ -36,7 +36,6 @@
             :organisation-is-working-body="organisationIsWorkingBody"
             :info-text="infoText"
             :generated-card-url="generatedCardUrl"
-            :shortened-card-url="shortenedCardUrl"
           />
         </div>
       </div>
@@ -55,7 +54,6 @@
     :organisation-is-working-body="organisationIsWorkingBody"
     :info-text="infoText"
     :generated-card-url="generatedCardUrl"
-    :shortened-card-url="shortenedCardUrl"
   />
 </template>
 
@@ -79,7 +77,6 @@ export default {
       currentSortOrder: 'desc',
       currentFilter: this.$options.cardData.state.filter || 'Seje DZ',
       justFive: this.$options.cardData.state.justFive || false,
-      shortenedCardUrl: '',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -208,9 +205,6 @@ export default {
       }));
     });
   },
-  beforeMount() {
-    this.shortenUrl(this.generatedCardUrl);
-  },
   methods: {
     organisationIsWorkingBody(organisationId) {
       return [9, 95].indexOf(organisationId) === -1;
@@ -232,12 +226,6 @@ export default {
     getWorkingBodyUrl(workingBodyId) {
       return `https://glej.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
     },
-    shortenUrl(url) {
-      $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure !== 'function') return;
 
@@ -249,9 +237,6 @@ export default {
     },
   },
   watch: {
-    generatedCardUrl(newValue) {
-      this.shortenUrl(newValue);
-    },
     currentFilter(newValue) {
       if (newValue !== 'Seje delovnih teles') {
         this.workingBodies.forEach((workingBody) => {

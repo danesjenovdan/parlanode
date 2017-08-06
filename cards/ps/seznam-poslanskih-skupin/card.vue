@@ -11,17 +11,18 @@
 
       <div class="row">
         <div class="col-md-12">
-          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, shortenedCardUrl, currentAnalysisData }" />
+          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, currentAnalysisData }" />
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, shortenedCardUrl, currentAnalysisData }" />
+  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, slugs, currentAnalysisData }" />
 </template>
 
 <script>
-/* globals window $ measure */
+/* globals measure */
 import { find } from 'lodash';
+import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
@@ -29,12 +30,11 @@ import InnerCard from './InnerCard.vue';
 export default {
   name: 'SeznamPoslanskihSkupin',
   components: { BlueButtonList, InnerCard },
+  mixins: [urlFunctionalities],
   data() {
     return {
       data: this.$options.cardData.data.data,
       slugs: this.$options.cardData.urlsData,
-      shortenedCardUrl: '',
-      url: 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/?state=%7B%7D',
       currentAnalysis: this.$options.cardData.state.analysis || 'seat_count',
       analyses,
     };
@@ -65,15 +65,12 @@ export default {
         return newParty;
       });
     },
-    generatedCardUrl() {
+    urlParameters() {
       const params = {};
       if (this.currentAnalysis !== 'seat_count') {
         params.analysis = this.currentAnalysis;
       }
-
-      return `https://glej.parlameter.si/ps/seznam-poslanskih-skupin/
-        ?customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs')}
-        ${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
+      return params;
     },
   },
   methods: {
@@ -87,14 +84,6 @@ export default {
           this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
         : `/poslanska-skupina/${party.acronym}/pregled`;
     },
-    shortenUrl(url) {
-      return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-          resolve(response);
-        });
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -103,18 +92,6 @@ export default {
           measure('s', 'session-filter', filter, '');
         }
       }
-    },
-  },
-  mounted() {
-    this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
-      this.shortenedCardUrl = newShortenedUrl;
-    });
-  },
-  watch: {
-    generatedCardUrl(url) {
-      this.shortenUrl(url).then((newShortenedUrl) => {
-        this.shortenedCardUrl = newShortenedUrl;
-      });
     },
   },
 };

@@ -4,6 +4,7 @@ import CardShare from 'components/Card/Share.vue';
 import CardHeader from 'components/Card/Header.vue';
 import CardFooter from 'components/Card/Footer.vue';
 import initializeBack from 'mixins/initializeBack';
+import url from 'mixins/url';
 
 export default {
   components: {
@@ -15,5 +16,6 @@ export default {
   },
   mixins: [
     initializeBack,
+    url,
   ],
 };

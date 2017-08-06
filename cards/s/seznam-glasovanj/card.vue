@@ -106,7 +106,7 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
     <card-footer :link="slugs.base" />
   </div>
@@ -175,7 +175,6 @@
       return {
         data: this.$options.cardData.data,
         slugs: this.$options.cardData.urlsData,
-        shortenedCardUrl: '',
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -244,16 +243,6 @@
         }
         return this.votes.filter(filterVotes);
       },
-      shortenUrl(url) {
-        return new Promise((resolve) => {
-          $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
-            response) => {
-            this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-            this.shortenedCardUrl = response;
-            resolve(response);
-          });
-        });
-      },
       measurePiwik(filter, sort, order) {
         if (typeof measure === 'function') {
           if (sort !== '') {
@@ -263,15 +252,6 @@
           }
         }
       },
-    },
-    watch: {
-      generatedCardUrl(newUrl) {
-        this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
-      },
-    },
-    beforeMount() {
-      console.log(this.generatedCardUrl);
-      this.shortenUrl(this.generatedCardUrl);
     },
   };
 </script>

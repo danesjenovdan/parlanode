@@ -30,7 +30,7 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
     <card-footer :link="slugs.base" />
   </div>
@@ -40,7 +40,6 @@
 import common from 'mixins/common';
 
 export default {
-  components: { },
   mixins: [common],
   name: 'SeznamPoslanskihSkupinInnerCard',
   props: {
@@ -48,12 +47,8 @@ export default {
     getPartyUrl: Function,
     headerConfig: Object,
     generatedCardUrl: String,
-    shortenedCardUrl: String,
     slugs: Object,
     currentAnalysisData: Object,
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
