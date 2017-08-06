@@ -58,7 +58,7 @@ export default {
       shortenedCardUrl: '',
       url: 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/?state=%7B%7D',
       currentAnalysis: this.$options.cardData.state.analysis || 'seat_count',
-      analyses
+      analyses,
     };
   },
   computed: {
@@ -80,10 +80,11 @@ export default {
       0);
 
       return this.data.map((party) => {
-        const rawValue = party.results[this.currentAnalysis]
-        party.displayValue = (this.round(rawValue, this.currentAnalysisData.roundingPrecision || 1) + (this.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',')
-        party.chartWidth = rawValue ? rawValue / maxValue * 80 + '%' : '1px'
-        return party;
+        const rawValue = party.results[this.currentAnalysis];
+        const newParty = JSON.parse(JSON.stringify(party));
+        newParty.displayValue = (this.round(rawValue, this.currentAnalysisData.roundingPrecision || 1) + (this.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',');
+        newParty.chartWidth = rawValue ? `${(rawValue / maxValue) * 80}%` : '1px';
+        return newParty;
       });
     },
     generatedCardUrl() {
@@ -92,10 +93,10 @@ export default {
         params.analysis = this.currentAnalysis;
       }
 
-      return 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/' +
-        '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
-        (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
-    }
+      return `https://glej.parlameter.si/ps/seznam-poslanskih-skupin/
+        ?customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs')}
+        ${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
+    },
   },
   methods: {
     selectAnalysis(analysisId) {
@@ -103,12 +104,13 @@ export default {
       this.measurePiwik(analysisId);
     },
     round(value, precision) {
-      const multiplier = Math.pow(10, (precision || 0));
+      const multiplier = 10 ** (precision || 0);
       return Math.round(value * multiplier) / multiplier;
     },
     getPartyUrl(party) {
       return this.slugs
-        ? this.slugs.base + this.slugs.partyLink.base + this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
+        ? this.slugs.base + this.slugs.partyLink.base +
+          this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
         : `/poslanska-skupina/${party.acronym}/pregled`;
     },
     shortenUrl(url) {
@@ -135,14 +137,11 @@ export default {
     });
   },
   watch: {
-    generatedCardUrl: function(url) {
+    generatedCardUrl(url) {
       this.shortenUrl(url).then((newShortenedUrl) => {
         this.shortenedCardUrl = newShortenedUrl;
       });
-    }
-  }
+    },
+  },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
