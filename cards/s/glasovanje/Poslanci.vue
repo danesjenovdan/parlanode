@@ -7,13 +7,13 @@
       />
       <div class="vote-filters">
         <striped-button
-          v-for="vote, index in votes"
+          v-for="vote in votes"
+          @click.native="toggleVote(vote.id)"
           :color="vote.id"
           :key="vote.id"
           :selected="vote.selected"
           :small-text="vote.label"
           :text="String(memberVotes[vote.id])"
-          :click-handler="() => toggleVote(index)"
           :disabled="memberVotes[vote.id] === 0"
         />
       </div>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { find } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 import SearchField from 'components/SearchField.vue';
@@ -144,15 +145,17 @@ export default {
         },
       }[option][gender];
     },
-    toggleVote(index) {
-      // const vote = find(this.votes, { id });
-      this.votes.forEach((e) => {
-        if (this.votes.indexOf(e) === index) {
-          e.selected = !e.selected;
-        } else {
-          e.selected = false;
-        }
-      });
+    toggleVote(id) {
+      const clickedVote = find(this.votes, { id });
+      if (this.memberVotes[id] !== 0) {
+        this.votes.forEach((vote) => {
+          if (vote === clickedVote) {
+            vote.selected = !vote.selected;
+          } else {
+            vote.selected = false;
+          }
+        });
+      }
     },
   },
 };

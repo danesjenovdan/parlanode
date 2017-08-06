@@ -22,14 +22,14 @@
         />
         <div class="votes">
           <striped-button
-            v-for="vote, index in votes"
+            v-for="vote in votes"
+            @click.native="expandVote(party.party.id, vote.id)"
             :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
             :color="vote.id"
             :key="vote.id"
             :selected="party.party.id === expandedParty && vote.id === expandedOption"
             :small-text="vote.label"
             :text="String(party.votes[vote.id])"
-            :click-handler="() => expandVote(party.party.id, vote.id)"
             :disabled="party.votes[vote.id] === 0"
           />
         </div>
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import { find } from 'lodash';
 import { getPartyLink, getPersonLink, getPersonPartyLink, getPersonPortrait } from 'components/links';
 import StripedButton from 'components/StripedButton.vue';
 import mapVotes from './mapVotes';
@@ -98,6 +99,10 @@ export default {
     getPersonPortrait,
     mapVotes,
     expandVote(party, option) {
+      if (find(this.parties, ['party.id', party]).votes[option] === 0) {
+        return;
+      }
+
       if (this.expandedParty === party && this.expandedOption === option) {
         this.expandedParty = null;
         this.expandedOption = null;

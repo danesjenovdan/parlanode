@@ -8,11 +8,11 @@
           <div class="filter option-party-buttons">
             <striped-button
               v-for="result in allResults"
+              @click.native="toggleResult(result.id)"
               :color="result.color"
               :key="result.id"
               :selected="selectedResults.indexOf(result.id) > -1"
               :small-text="result.label"
-              :click-handler="() => toggleResult(result.id)"
             />
           </div>
           <div class="filter text-filter">

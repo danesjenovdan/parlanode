@@ -6,11 +6,11 @@
           <ul class="button-filters">
             <striped-button
               v-for="(filter, index) in filters"
+              @click.native="selectFilter(filter)"
               color="sds"
               :key="index"
               :selected="filter === currentFilter"
               :small-text="filter"
-              :click-handler="() => selectFilter(filter)"
             />
           </ul>
 

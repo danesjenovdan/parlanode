@@ -22,11 +22,11 @@
             <div class="filter-content">
               <striped-button
                 v-for="voteType in voteTypes"
+                @click.native="toggleVoteType(voteType.id)"
                 :color="voteType.color"
                 :key="voteType.id"
                 :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
                 :small-text="voteType.label"
-                :click-handler="() => toggleVoteType(voteType.id)"
               />
             </div>
           </div>

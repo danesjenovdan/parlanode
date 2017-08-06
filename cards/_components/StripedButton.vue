@@ -1,5 +1,5 @@
 <template>
-  <div :class="className" @click="handleClick">
+  <div :class="className">
     <div v-if="smallText" :class="['small-text', {uppercase: isUppercase}]">{{ smallText }}</div>
     <div v-if="text" class="text">{{ text }}</div>
   </div>
@@ -16,7 +16,6 @@ export default {
       default: true,
     },
     text: String,
-    clickHandler: Function,
     color: String,
     disabled: Boolean,
     stripePosition: {
@@ -34,12 +33,6 @@ export default {
         this.color,
         `has-stripe-on-${this.stripePosition}`,
       ];
-    },
-  },
-  methods: {
-    handleClick(e) {
-      if (this.disabled) return;
-      this.clickHandler(e);
     },
   },
 };

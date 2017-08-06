@@ -7,11 +7,11 @@
         <div class="groups">
           <striped-button
             v-for="group in groups"
+            @click.native="selectGroup(group.acronym)"
             :color="group.color"
             :key="group.acronym"
             :selected="group.acronym === selectedGroup"
             :small-text="group.name"
-            :click-handler="() => selectGroup(group.acronym)"
             :is-uppercase="false"
           />
         </div>
