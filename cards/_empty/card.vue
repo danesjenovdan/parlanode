@@ -69,12 +69,12 @@ export default {
     });
   },
   watch: {
-    generatedCardUrl: function(url) {
+    generatedCardUrl(url) {
       this.shortenUrl(url).then((newShortenedUrl) => {
         this.shortenedCardUrl = newShortenedUrl;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
