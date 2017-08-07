@@ -1,6 +1,6 @@
 <template>
   <div :class="className">
-    <div v-if="smallText" :class="['small-text', {uppercase: isUppercase}]">{{ smallText }}</div>
+    <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">{{ smallText }}</div>
     <div v-if="text" class="text">{{ text }}</div>
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
     line-height: 1em;
     @include respond-to(desktop) { font-size: 13px; }
 
-    &.uppercase {
+    &.is-uppercase {
       text-transform: uppercase;
     }
   }

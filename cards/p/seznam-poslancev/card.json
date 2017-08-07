@@ -1,0 +1,9 @@
+{
+  "_id": "p_seznam_poslancev",
+  "name": "Seznam poslancev",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers",
+  "type": "seznam_poslancev",
+  "lastUpdate": "2017-03-19T18:04:55.294Z",
+  "method": "seznam-poslancev",
+  "group": "p"
+}
