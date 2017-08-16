@@ -74,14 +74,14 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
 <script>
-/* globals window $ measure */
+/* globals window measure */
 import { find, pick } from 'lodash';
 import common from 'mixins/common';
 import Poslanci from './Poslanci.vue';
@@ -95,9 +95,7 @@ export default {
     return {
       data: this.$options.cardData.data,
       state: this.$options.cardData.state,
-      slugs: this.$options.cardData.urlsData,
       selectedTab: this.$options.cardData.state.selectedTab || 0,
-      shortenedCardUrl: '',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -146,16 +144,6 @@ export default {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url, '_blank');
     },
-    shortenUrl(url) {
-      return new Promise((resolve) => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
-          response) => {
-          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-          this.shortenedCardUrl = response;
-          resolve(response);
-        });
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -165,14 +153,6 @@ export default {
         }
       }
     },
-  },
-  watch: {
-    generatedCardUrl(newUrl) {
-      this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
-    },
-  },
-  beforeMount() {
-    this.shortenUrl(this.generatedCardUrl);
   },
 };
 </script>

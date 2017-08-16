@@ -30,7 +30,7 @@
             <ul>
               <li v-for="ballot in votingDay.ballots">
                 <div :class="['icon', ballot.option]"></div>
-                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
+                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
                 <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
               </li>
             </ul>
@@ -47,9 +47,9 @@
 
       <card-embed :url="cardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="cardUrl" />
     </div>
-    <card-footer :link="cardData.urlsData.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -177,7 +177,6 @@ export default {
       allOptions,
       allTags,
       textFilter,
-      shortenedCardUrl: '',
     };
   },
   methods: {
@@ -232,12 +231,6 @@ export default {
         .filter(votingDay => votingDay.ballots.length > 0)
         .filter(filterDates);
     },
-    shortenUrl(url) {
-      $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-        this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
-      });
-    },
   },
   props: {
     cardData: {
@@ -251,14 +244,6 @@ export default {
     },
     person: Object,
     party: Object,
-  },
-  watch: {
-    cardUrl(newValue) {
-      this.shortenUrl(newValue);
-    },
-  },
-  beforeMount() {
-    this.shortenUrl(this.cardUrl);
   },
 };
 </script>

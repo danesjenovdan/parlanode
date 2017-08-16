@@ -30,7 +30,7 @@
               <li v-for="question in questionDay.questions">
                 <div class="parlaicon parlaicon-vprasanje"></div>
                 <div class="motion">
-                  <a class="funblue-light-hover" :href="`${cardData.urlsData.base}/poslanec/${cardData.urlsData.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
+                  <a class="funblue-light-hover" :href="`${slugs.base}/poslanec/${slugs.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
                   {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : question.recipient_text.split(' ')[0] === 'ministrica' ? 'ministrici ' + question.recipient_text.split('ministrica ')[1] : 'Vladi'}` }}
                   <a target="_blank" class="funblue-light-hover" :href="`${question.url}`">{{ question.title }}</a>
                 </div>
@@ -49,9 +49,9 @@
 
       <card-embed :url="cardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="cardUrl" />
     </div>
-    <card-footer :link="cardData.urlsData.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -211,7 +211,6 @@ export default {
       allMPs,
       allRecipients,
       textFilter,
-      shortenedCardUrl: '',
     };
   },
   methods: {
@@ -266,12 +265,6 @@ export default {
         .filter(questionDay => questionDay.questions.length > 0)
         .filter(filterDates);
     },
-    shortenUrl(url) {
-      $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-        this.$el.querySelector('.card-content-share button, .btn-copy-embed').textContent = 'KOPIRAJ';
-      });
-    },
   },
   props: {
     cardData: {
@@ -286,14 +279,6 @@ export default {
     person: Object,
     party: Object,
   },
-  watch: {
-    cardUrl(newValue) {
-      this.shortenUrl(newValue);
-    },
-  },
-  beforeMount() {
-    this.shortenUrl(this.cardUrl);
-  }
 };
 </script>
 

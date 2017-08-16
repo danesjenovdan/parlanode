@@ -162,9 +162,9 @@
 
       <card-embed :url="generatedCardUrl"></card-embed>
 
-      <card-share :url="shortenedCardUrl"></card-share>
+      <card-share :url="generatedCardUrl"></card-share>
     </div>
-    <card-footer :link="slugs.base"></card-footer>
+    <card-footer />
 
     <div v-show="sameModalVisible" class="card-modal">
       <div class="card-modal-header">
@@ -238,8 +238,6 @@
         special: !!this.$options.cardData.state.special,
         data: [],
         total: 0,
-        slugs: this.$options.cardData.urlsData,
-        shortenedCardUrl: '',
         sameModalVisible: false,
         differentModalVisible: false,
         selectedTab: this.$options.cardData.state.selectedTab || 0,
@@ -335,7 +333,7 @@
         if (this.selectedTab > 0) {
           state.selectedTab = this.selectedTab;
         }
-        
+
 
         return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
@@ -434,14 +432,6 @@
       getFilteredVotes() {
         return this.votes;
       },
-      shortenUrl(url) {
-        return new Promise((resolve) => {
-          $.get(
-            `https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`,
-            response => resolve(response),
-          );
-        });
-      },
       measurePiwik(filter, sort, order) {
         if (typeof measure === 'function') {
           if (sort !== '') {
@@ -456,12 +446,6 @@
       },
     },
     watch: {
-      generatedCardUrl(newUrl) {
-        this.shortenUrl(newUrl).then((newShortenedUrl) => {
-          this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-          this.shortenedCardUrl = newShortenedUrl;
-        });
-      },
       selectedSamePeople(newSelectedSamePeople) {
         newSelectedSamePeople.forEach((person) => {
           this.selectedDifferentPeople.filter((p) => {
@@ -480,11 +464,6 @@
           });
         });
       },
-    },
-    beforeMount() {
-      this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
-        this.shortenedCardUrl = newShortenedUrl;
-      });
     },
   };
 </script>
@@ -586,7 +565,7 @@
 
     .searchfilter-checkbox {
       height: 40px;
-      
+
       @include respond-to(mobile) {
         height: auto;
       }

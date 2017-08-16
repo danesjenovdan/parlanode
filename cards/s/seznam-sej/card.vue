@@ -6,11 +6,11 @@
           <ul class="button-filters">
             <striped-button
               v-for="(filter, index) in filters"
+              @click.native="selectFilter(filter)"
               color="sds"
               :key="index"
               :selected="filter === currentFilter"
               :small-text="filter"
-              :click-handler="() => selectFilter(filter)"
             />
           </ul>
 
@@ -31,12 +31,10 @@
             :current-sort="currentSort"
             :current-sort-order="currentSortOrder"
             :select-sort="selectSort"
-            :slugs="slugs"
             :processed-sessions="processedSessions"
             :organisation-is-working-body="organisationIsWorkingBody"
             :info-text="infoText"
             :generated-card-url="generatedCardUrl"
-            :shortened-card-url="shortenedCardUrl"
           />
         </div>
       </div>
@@ -50,12 +48,10 @@
     :current-sort="currentSort"
     :current-sort-order="currentSortOrder"
     :select-sort="selectSort"
-    :slugs="slugs"
     :processed-sessions="processedSessions"
     :organisation-is-working-body="organisationIsWorkingBody"
     :info-text="infoText"
     :generated-card-url="generatedCardUrl"
-    :shortened-card-url="shortenedCardUrl"
   />
 </template>
 
@@ -73,13 +69,11 @@ export default {
     return {
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      slugs: this.$options.cardData.urlsData,
       filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
       currentSort: 'date',
       currentSortOrder: 'desc',
       currentFilter: this.$options.cardData.state.filter || 'Seje DZ',
       justFive: this.$options.cardData.state.justFive || false,
-      shortenedCardUrl: '',
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -208,9 +202,6 @@ export default {
       }));
     });
   },
-  beforeMount() {
-    this.shortenUrl(this.generatedCardUrl);
-  },
   methods: {
     organisationIsWorkingBody(organisationId) {
       return [9, 95].indexOf(organisationId) === -1;
@@ -232,12 +223,6 @@ export default {
     getWorkingBodyUrl(workingBodyId) {
       return `https://glej.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
     },
-    shortenUrl(url) {
-      $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-      });
-    },
     measurePiwik(filter, sort, order) {
       if (typeof measure !== 'function') return;
 
@@ -249,9 +234,6 @@ export default {
     },
   },
   watch: {
-    generatedCardUrl(newValue) {
-      this.shortenUrl(newValue);
-    },
     currentFilter(newValue) {
       if (newValue !== 'Seje delovnih teles') {
         this.workingBodies.forEach((workingBody) => {
@@ -273,6 +255,7 @@ export default {
 .button-filters {
   .striped-button {
     flex: 1;
+    background-color: #f0f0f0;
     &:not(:last-child) { margin-right: 5px; }
   }
 }

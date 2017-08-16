@@ -7,11 +7,11 @@
         <div class="groups">
           <striped-button
             v-for="group in groups"
+            @click.native="selectGroup(group.acronym)"
             :color="group.color"
             :key="group.acronym"
             :selected="group.acronym === selectedGroup"
             :small-text="group.name"
-            :click-handler="() => selectGroup(group.acronym)"
             :is-uppercase="false"
           />
         </div>
@@ -68,9 +68,9 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -120,12 +120,9 @@ export default {
     return {
       voteData: [],
       loading: true,
-      slugs: this.$options.cardData.urlsData,
-      shortenedCardUrl: '',
       selectedSort: 'maximum',
       sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
       textFilter: '',
-      url: 'https://glej.parlameter.si/group/method/',
       allTags: [],
       allMonths: [2017, 2016, 2015, 2014, 2013]
         .map(year =>
@@ -202,7 +199,7 @@ export default {
       if (this.selectedSort.length > 0) state.sort = this.selectedSort;
       if (this.selectedGroup.length > 0) state.selectedGroup = this.selectedGroup;
 
-      return `https://glej.parlameter.si/ps/glasovanja-neenotnost/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   methods: {
@@ -257,12 +254,6 @@ export default {
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
     },
-    shortenUrl() {
-      const mypromise = $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.generatedCardUrl}&frame=true`)}`, (response) => {
-        this.shortenedCardUrl = response;
-      });
-      return mypromise;
-    },
     fetchVotesForGroup(acronym = 'DZ') {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
@@ -305,17 +296,8 @@ export default {
     selectedGroup(newValue) {
       this.fetchVotesForGroup(newValue);
     },
-    generatedCardUrl(newUrl) {
-      this.shortenUrl(newUrl).then((newShortenedUrl) => {
-        this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-        this.shortenedCardUrl = newShortenedUrl;
-      });
-    },
   },
   beforeMount() {
-    this.shortenUrl(this.generatedCardUrl).then((newShortenedUrl) => {
-      this.shortenedCardUrl = newShortenedUrl;
-    });
     this.fetchVotesForGroup();
   },
 };

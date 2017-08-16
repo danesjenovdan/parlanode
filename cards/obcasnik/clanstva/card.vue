@@ -19,9 +19,9 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
@@ -38,9 +38,6 @@
     data() {
       return {
         data: this.$options.cardData.data,
-        slugs: this.$options.cardData.urlsData,
-        shortenedCardUrl: '',
-        url: 'https://glej.parlameter.si/group/method/',
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -51,15 +48,6 @@
       };
     },
     methods: {
-      shortenUrl() {
-        return new Promise((resolve) => {
-          $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (
-            response) => {
-            this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-            resolve(response);
-          });
-        });
-      },
       measurePiwik(filter, sort, order) {
         if (typeof measure === 'function') {
           if (sort !== '') {
@@ -136,12 +124,11 @@
           .call(adjacencyMatrix.xAxis);
         d3.select("#adjacencyG")
           .call(adjacencyMatrix.yAxis);
-        
-        
+
+
       }
     },
     mounted() {
-      this.shortenUrl();
       d3.layout.adjacencyMatrix = adjacencyMatrix;
 
       const adjacencyData = this.data;

@@ -22,11 +22,11 @@
             <div class="filter-content">
               <striped-button
                 v-for="voteType in voteTypes"
+                @click.native="toggleVoteType(voteType.id)"
                 :color="voteType.color"
                 :key="voteType.id"
                 :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
                 :small-text="voteType.label"
-                :click-handler="() => toggleVoteType(voteType.id)"
               />
             </div>
           </div>
@@ -116,14 +116,14 @@
 
       <card-embed :url="generatedCardUrl" />
 
-      <card-share :url="shortenedCardUrl" />
+      <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer :link="slugs.base" />
+    <card-footer />
   </div>
 </template>
 
 <script>
-  /* globals window $ measure */
+  /* globals measure */
   import { format as formatDate } from 'date-fns';
   import { find } from 'lodash';
 
@@ -164,8 +164,6 @@
 
       return {
         data: this.$options.cardData.data,
-        slugs: this.$options.cardData.urlsData,
-        shortenedCardUrl: '',
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -268,16 +266,6 @@
         const clickedResult = find(this.voteTypes, { id: voteTypeId });
         clickedResult.selected = !clickedResult.selected;
       },
-      shortenUrl(url) {
-        return new Promise((resolve) => {
-          $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${url}&frame=true`)}`, (
-            response) => {
-            this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
-            this.shortenedCardUrl = response;
-            resolve(response);
-          });
-        });
-      },
       measurePiwik(filter, sort, order) {
         if (typeof measure === 'function') {
           if (sort !== '') {
@@ -287,14 +275,6 @@
           }
         }
       },
-    },
-    watch: {
-      generatedCardUrl(newUrl) {
-        this.shortenUrl(newUrl).then(newShortenedUrl => (this.shortenedCardUrl = newShortenedUrl));
-      },
-    },
-    beforeMount() {
-      this.shortenUrl(this.generatedCardUrl);
     },
   };
 </script>
