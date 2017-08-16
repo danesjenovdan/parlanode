@@ -255,6 +255,7 @@ export default {
 .button-filters {
   .striped-button {
     flex: 1;
+    background-color: #f0f0f0;
     &:not(:last-child) { margin-right: 5px; }
   }
 }
