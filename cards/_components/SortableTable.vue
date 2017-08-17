@@ -25,7 +25,7 @@
           </template>
         </template>
         <template v-else-if="cell.barchart">
-          <div class="bar" :style="{width: cell.width + '%'}"></div>
+          <div class="bar" :style="{width: cell.width + '%'}"><div class="value">{{ cell.value }}</div></div>
         </template>
         <template v-else-if="cell.ticker">
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
@@ -85,5 +85,13 @@ export default {
   width: 100%;
   background-color: $funblue;
   height: 18px;
+}
+.value {
+  font-size: 16px;
+  line-height: 18px;
+  background-color: #ffffff;
+  width: auto;
+  float: left;
+  padding-right: 20px;
 }
 </style>
