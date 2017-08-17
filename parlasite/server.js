@@ -3,9 +3,16 @@ const app     = express();
 const config  = require('./config');
 const bodyParser = require('body-parser');
 
+const expressLogging = require('express-logging');
+const logger = require('logops');
+
 app.set('view engine', 'ejs');
 
-app.use(() => console.log('incoming request'));
+// app.use((req) => console.log(req));
+app.use(expressLogging(logger));
+// app.use(() => console.log('ping1'));
+// app.use((error, req, res) => console.log(error, req, res));
+// app.use(() => console.log('ping'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -30,7 +37,7 @@ app.use(function(error, req, res, next) {
 
 exports.start = ()=> {
 
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
 
     app.listen(config.PORT, () => {
 
