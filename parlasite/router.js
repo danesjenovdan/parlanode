@@ -26,6 +26,8 @@ const routes = [
         sourceUrl : '/c/primerjalnik/',
         resolve   : (req, res, route, card) => {
 
+          console.log('loading primerjalnik');
+
           return getMPIdByName(req.params.fullName, req)
             .then(() => {
 
@@ -35,8 +37,12 @@ const routes = [
                 cardUrl += '?forceRender=true';
               }
 
+              console.log('about to fetch primerjalnik card');
+
               return fetch(cardUrl)
                 .then((res) => {
+
+                  console.log('card primerjalnik fetched');
 
                   return res.text();
 
@@ -56,10 +62,14 @@ const routes = [
         sourceUrl : '/ps/glasovanja-neenotnost/',
         resolve   : (req, res, route, card) => {
 
+          console.log('loading neenotnost');
+
           return getMPIdByName(req.params.fullName, req)
             .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              console.log('about to fetch neenotnost card');
 
               if (req.query.forceRender) {
                 cardUrl += '?forceRender=true';
@@ -67,6 +77,8 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+
+                  console.log('neenotnost fetched');
 
                   return res.text();
 
@@ -86,6 +98,8 @@ const routes = [
         sourceUrl : '/c/kompas/',
         resolve   : (req, res, route, card) => {
 
+          console.log('loading kompas');
+
           return getMPIdByName(req.params.fullName, req)
             .then(() => {
 
@@ -97,6 +111,8 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+
+                  console.log('kompas fetched');
 
                   return res.text();
 
@@ -116,6 +132,8 @@ const routes = [
         sourceUrl : '/c/zadnja-seja/',
         resolve   : (req, res, route, card) => {
 
+          console.log('loading zadnja seja');
+
           return getMPIdByName(req.params.fullName, req)
             .then(() => {
 
@@ -127,6 +145,8 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+
+                  console.log('zadnja seja fetched');
 
                   return res.text();
 
@@ -145,6 +165,9 @@ const routes = [
         name      : 'besedniZaklad',
         sourceUrl : '/c/besedni-zaklad-vsi/',
         resolve   : (req, res, route, card) => {
+
+          console.log('loading besedni zaklad');
+
           return getMPIdByName(req.params.fullName, req)
             .then(() => {
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
@@ -155,42 +178,13 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+                  console.log('besedni zaklad fetched');
                   return res.text();
                 })
                 .then((body) => {
                   return body;
                 });
             });
-        }
-      },
-      {
-        name      : 'zadnjeSeje',
-        sourceUrl : '/s/zadnjih-5-sej/?customUrl=https%3A%2F%2Fanalize.parlameter.si%2Fv1%2Fs%2FgetSessionsList&state=%7B"onlyLatest"%3Atrue%7D',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then(() => {
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl, { rejectUnauthorized : false })
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
         }
       }
     ]
@@ -1853,6 +1847,8 @@ function renderOg(ejsPath, ogPath, data) {
 function createRoute(app, route) {
   app.get(route.path, (req, res) => {
 
+    console.log('route got');
+
     const forceRenderOg = req.query.forceRenderOg;
 
     const common = {
@@ -1862,8 +1858,11 @@ function createRoute(app, route) {
     };
 
     if (route.cards) {
+      console.log('route has cards');
       resolveCards(req, res, route)
         .then((views) => {
+
+          console.log('cards are resolved');
 
           if (route.viewPath.indexOf("poslanske-skupine") > -1) {
             getPSIdByName(req.params.fullName, req)
