@@ -14,7 +14,7 @@
     <li v-for="item in items" class="item">
       <div
         v-for="cell, cellIndex in item"
-        :class="['column', ...columns[cellIndex].additionalClass]"
+        :class="['column', ...columns[cellIndex].additionalClass, cell.value <= 0 ? 'red' : '']"
       >
         <template v-if="cell.contents">
           <template v-for="content, contentIndex in cell.contents">
@@ -23,6 +23,12 @@
             </template>
             <template v-else>{{ content.text }}</template>{{ contentIndex < cell.contents.length - 1 ? ', ' : '' }}
           </template>
+        </template>
+        <template v-else-if="cell.barchart">
+          <div class="bar" :style="{width: cell.width + '%'}"></div>
+        </template>
+        <template v-else-if="cell.ticker">
+          {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
         <template v-else>
           <template v-if="typeof cell === 'string'">{{ cell }}</template>
@@ -57,12 +63,27 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '~parlassets/scss/colors';
+
 .empty-dataset {
   font-size: 16px;
   font-style: italic;
   line-height: 20px;
   margin: 70px 0;
   text-align: center;
+}
+.session-list .item .column.ticker {
+  color: $funblue;
+  line-height: 18px;
+
+  &.red {
+    color: $red;
+  }
+}
+.bar {
+  width: 100%;
+  background-color: $funblue;
+  height: 18px;
 }
 </style>
