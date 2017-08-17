@@ -24,12 +24,14 @@
               stripe-position="bottom"
             />
           </div>
-          <search-field class="filter" v-model="textFilter" />
+          <search-field class="filter text-filter" v-model="textFilter" />
           <search-dropdown
+            class="filter district-filter"
             :items="districts"
             :placeholder="districtPlaceholder"
           />
           <search-dropdown
+            class="filter gender-filter"
             :items="genders"
             :placeholder="genderPlaceholder"
           />
@@ -166,8 +168,10 @@ export default {
 .filters {
   display: flex;
   .filter {
+    margin-left: 3px;
     flex: 1;
   }
+  .text-filter {}
   .parties {
     display: flex;
     .party {

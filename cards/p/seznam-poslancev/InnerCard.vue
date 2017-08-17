@@ -30,7 +30,7 @@
 
 <script>
 import common from 'mixins/common';
-import SortableTable from 'components/SortableTable';
+import SortableTable from 'components/SortableTable.vue';
 
 export default {
   components: { SortableTable },
