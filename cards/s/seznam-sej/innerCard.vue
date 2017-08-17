@@ -31,14 +31,8 @@
 <script>
 import SortableTable from 'components/SortableTable.vue';
 import common from 'mixins/common';
-
-const ICONS_ROOT_URL = 'https://cdn.parlameter.si/v1/parlassets/icons/';
-const ORGS_ROOT_URL = 'https://glej.parlameter.si/wb/getWorkingBodies/';
-
-const formatDate = (isoDate) => {
-  const date = new Date(isoDate);
-  return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
-};
+import formatDate from 'helpers/dateFormatter';
+import { ICONS_ROOT_URL, ORGS_ROOT_URL } from 'components/constants';
 
 export default {
   components: { SortableTable },
