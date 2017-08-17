@@ -41,12 +41,12 @@
 
       <div class="row">
         <div class="col-md-12">
-          <inner-card v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData }" />
+          <inner-card v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, columns, processedMembers }" />
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData }" />
+  <inner-card v-else v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, columns, processedMembers }" />
 </template>
 
 <script>
@@ -77,7 +77,7 @@ export default {
     ];
 
     return {
-      data: this.$options.cardData.data,
+      memberData: this.$options.cardData.data.data,
       currentAnalysis: this.$options.cardData.state.analysis || 'demographics',
       analyses,
       parties: [],
@@ -85,6 +85,15 @@ export default {
       textFilter: '',
       districts,
       genders,
+      columns: [
+        { id: 'image', label: '', additionalClass: 'portrait' },
+        { id: 'name', label: 'Ime', additionalClass: 'wider name' },
+        { id: 'age', label: 'Starost' },
+        { id: 'education', label: 'Stopnja izobrazbe', additionalClass: 'optional' },
+        { id: 'terms', label: 'Število mandatov', additionalClass: 'optional' },
+        { id: 'party', label: 'PS', additionalClass: 'optional' },
+        { id: 'district', label: 'Okraj', additionalClass: 'optional' },
+      ],
     };
   },
   computed: {
@@ -129,6 +138,82 @@ export default {
       }
       return parameters;
     },
+    processedMembers() {
+      const sortedAndFiltered = this.memberData
+        .filter((member) => {
+          let partyMatch = true;
+          let districtMatch = true;
+          let genderMatch = true;
+          let textMatch = true;
+
+          if (this.textFilter.length > 0) {
+            textMatch = member.person.name.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+          }
+          if (this.selectedParties.length > 0) {
+            partyMatch = this.selectedParties.indexOf(member.person.party.acronym) > -1;
+          }
+          if (this.selectedDistricts.length > 0) {
+            districtMatch = member.person.district.reduce((prevMatch, memberDistrict) => {
+              return prevMatch || this.selectedDistricts.indexOf(String(memberDistrict)) > -1
+            }, false);
+          }
+          if (this.selectedGenders.length > 0) {
+            genderMatch = this.selectedGenders.indexOf(member.person.gender) > -1;
+          }
+
+          return textMatch && partyMatch && districtMatch && genderMatch;
+        })
+        .map((member) => {
+          const newMember = JSON.parse(JSON.stringify(member));
+          if (newMember.person.district.length === 0) {
+            newMember.formattedDistrict = 'okraj ni vnešen';
+          } else {
+            newMember.formattedDistrict = newMember.person.district.map(memberDistrict =>
+              this.districts.filter(district =>
+                district.id === String(memberDistrict),
+              )[0].label,
+            ).join(', ');
+          }
+
+          newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
+          newMember.age = Math.floor(Math.random() * 50) + 18;
+          newMember.education = 'VII';
+          newMember.terms = Math.ceil(Math.random() * 3);
+          return newMember;
+        });
+        // .sort(function(memberA, memberB) {
+        //   switch (that.currentSort) {
+        //     case 'change':
+        //       var a = memberA.results[that.currentAnalysis].diff
+        //       var b = memberB.results[that.currentAnalysis].diff
+        //       return a < b ? -1 : (a > b ? 1 : 0)
+        //     case 'analysis':
+        //       var a = memberA.results[that.currentAnalysis].score
+        //       var b = memberB.results[that.currentAnalysis].score
+        //       return a < b ? -1 : (a > b ? 1 : 0)
+        //     case 'name':
+        //       var a = memberA.person.name
+        //       var b = memberB.person.name
+        //       return a.localeCompare(b, 'sl')
+        //     case 'district':
+        //       var a = memberA.person.formattedDistrict
+        //       var b = memberB.person.formattedDistrict
+        //       return a.localeCompare(b, 'sl')
+        //     case 'party':
+        //       var a = memberA.person.party.acronym
+        //       var b = memberB.person.party.acronym
+        //       return a.localeCompare(b, 'sl')
+        //     default:
+        //       break
+        //   }
+        // })
+
+      // if (this.currentSortOrder === 'desc') {
+      //   sortedAndFiltered.reverse()
+      // }
+
+      return sortedAndFiltered;
+    },
   },
   methods: {
     measurePiwik(filter, sort, order) {
@@ -171,7 +256,11 @@ export default {
     margin-left: 3px;
     flex: 1;
   }
-  .text-filter {}
+  .text-filter {
+    &.search-field {
+      height: 58px;
+    }
+  }
   .parties {
     display: flex;
     .party {
@@ -179,5 +268,12 @@ export default {
       &:not(:last-child) { margin-right: 3px; }
     }
   }
+}
+
+</style>
+
+<style>
+.person-list .headers .column {
+  white-space: normal;
 }
 </style>

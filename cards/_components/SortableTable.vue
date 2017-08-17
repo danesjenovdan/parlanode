@@ -16,7 +16,7 @@
         v-for="cell, cellIndex in item"
         :class="['column', ...columns[cellIndex].additionalClass, cell.value <= 0 ? 'red' : '']"
       >
-        <template v-if="cell.contents">
+        <template v-if="typeof cell === 'object' && cell.contents">
           <template v-for="content, contentIndex in cell.contents">
             <template v-if="content.link">
               <a :href="content.link">{{ content.text }}</a>
@@ -31,7 +31,7 @@
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
         <template v-else>
-          <template v-if="typeof cell === 'string'">{{ cell }}</template>
+          <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
           <template v-else>
             <template v-if="cell.link">
               <a :href="cell.link">
