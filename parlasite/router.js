@@ -13,7 +13,6 @@ const ejs         = require('ejs');
 const webshot     = require('webshot');
 const fs          = require('fs');
 const hash        = require('object-hash');
-const https       = require('https');
 const dataService = require('./services/data-service');
 
 const routes = [
@@ -28,10 +27,7 @@ const routes = [
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -61,10 +57,7 @@ const routes = [
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -94,10 +87,7 @@ const routes = [
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -127,10 +117,7 @@ const routes = [
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -159,9 +146,7 @@ const routes = [
         sourceUrl : '/c/besedni-zaklad-vsi/',
         resolve   : (req, res, route, card) => {
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-              let mpId    = mpData.mpId;
-              let mpSlug  = mpData.mpSlug;
+            .then(() => {
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
               if (req.query.forceRender) {
@@ -184,10 +169,7 @@ const routes = [
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -233,7 +215,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
               let state  = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": "' + mpData.mp.name + '"}], "parties": []}');
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
@@ -267,7 +248,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -302,7 +282,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -337,7 +316,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -372,7 +350,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -407,7 +384,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               //console.log('osnovneInformacije: ',mpId);
 
@@ -447,7 +423,6 @@ const routes = [
 
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               //console.log('Mpdata: ',mpData);
 
@@ -488,7 +463,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               //console.log('stilneAnalize: ',mpId);
 
@@ -525,7 +499,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -560,7 +533,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -595,7 +567,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -630,7 +601,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -665,7 +635,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -706,7 +675,6 @@ const routes = [
           return getMPIdByName(req.params.fullName, req)
             .then((mpData) => {
               let mpId           = mpData.mpId;
-              let mpSlug         = mpData.mpSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -732,7 +700,6 @@ const routes = [
           return getMPIdByName(req.params.fullName, req)
             .then((mpData) => {
               let mpId           = mpData.mpId;
-              let mpSlug         = mpData.mpSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -760,7 +727,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -795,7 +761,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -893,7 +858,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -928,7 +892,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -963,7 +926,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -998,7 +960,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -1081,7 +1042,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1109,7 +1069,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1137,7 +1096,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1164,13 +1122,9 @@ const routes = [
 
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
-              let psId   = psData.psId;
               let psSlug = psData.psSlug;
 
               let state = encodeURIComponent('{"people": [], "parties": ["' + psSlug + '"]}');
-
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : psId });
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
 
@@ -1196,7 +1150,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1222,7 +1175,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1248,7 +1200,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1275,7 +1227,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1311,7 +1263,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1339,7 +1291,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1367,7 +1319,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1395,7 +1347,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1423,7 +1375,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1459,7 +1411,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1487,7 +1439,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1515,7 +1467,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1543,7 +1495,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1833,9 +1785,9 @@ const routes = [
 ];
 
 module.exports = (app) => {
-  _.each(routes, (route, i) => {
+  _.each(routes, (route) => {
     createRoute(app, route);
-    _.each(route.extraPaths, (path, i) => {
+    _.each(route.extraPaths, (path) => {
       route.path = path;
       createRoute(app, route);
     });
@@ -2014,7 +1966,7 @@ function createRoute(app, route) {
             const pageTitle = ejs.render(route.pageTitle);
 
             const dataExtend = {
-              sesData    : sesData.s,
+              // sesData    : sesData.s,
               slug       : req.slug,
               activeMenu : 'S',
               views,
@@ -2410,7 +2362,7 @@ function getMPIdByName(name, req) {
   //     .then((jsonBody) => {
   //            var mpsList = jsonBody;
 
-  _.each(mpsList, (mp, i) => {
+  _.each(mpsList, (mp) => {
     mp.nameSlug = slug(mp.name).toLowerCase();
 
     if ((name === mp.nameSlug) | (req.params.id == mp.id)) {
@@ -2422,7 +2374,7 @@ function getMPIdByName(name, req) {
       req.mp   = mp;
 
 
-      _.each(mpsopsList, (mpps, i) => {
+      _.each(mpsopsList, (mpps) => {
 
         if (mpId == mpps.id) {
           mp.party = mpps.party;
@@ -2451,7 +2403,7 @@ function getPSIdByName(name, req) {
   //
   //         //   var opsList = jsonBody;
 
-  _.each(opsList, (ps, i) => {
+  _.each(opsList, (ps) => {
     var realAcronym2 = ps.acronym;
     ps.nameSlug      = slug(ps.name).toLowerCase();
     ps.acronym_slug  = slug(ps.acronym).toLowerCase();
@@ -2475,7 +2427,7 @@ function getPSIdByName(name, req) {
   // });
 }
 
-function getSessionIds(params, req, session_type) {
+function getSessionIds(params, req) {
   let spsId;
   let spsSlug;
   let selectedSps;
@@ -2552,11 +2504,10 @@ function getSessionIds(params, req, session_type) {
   // });
 }
 
-function getSessionsByType(params, req) {
+function getSessionsByType(params) {
 
   let psId;
   let psSlug;
-  let selectedPs;
   let returnData;
   let type;
 
@@ -2566,7 +2517,7 @@ function getSessionsByType(params, req) {
   //     .then((jsonBody) => {
   //         //var spsList = jsonBody;
 
-  _.each(spsList, (spsSingle, iii) => {
+  _.each(spsList, (spsSingle) => {
     switch (params.fullName) {
       case 'seje-delovnih-teles':
         returnData = spsSingle.dt;
