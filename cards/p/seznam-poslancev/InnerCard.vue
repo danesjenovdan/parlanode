@@ -33,35 +33,72 @@ import common from 'mixins/common';
 import SortableTable from 'components/SortableTable.vue';
 import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 
+const arabicToRoman = arabic => ({
+  1: 'III',
+  2: 'II',
+  3: 'III',
+  4: 'IV',
+  5: 'V',
+  6: 'VI',
+  7: 'VII',
+  8: 'VIII',
+}[arabic]);
+
 export default {
   components: { SortableTable },
   mixins: [common],
   name: 'SeznamPoslancevInnerCard',
   computed: {
     mappedMembers() {
+      if (this.demographics) {
+        return this.processedMembers.map(member => [
+          { link: getPersonLink(member), image: getPersonPortrait(member) },
+          { link: getPersonLink(member), text: member.person.name },
+          member.age,
+          arabicToRoman(member.education),
+          member.terms,
+          { link: member.partylink ? getPersonPartyLink(member) : '', text: member.person.party.acronym },
+          member.formattedDistrict,
+        ]);
+      }
       return this.processedMembers.map(member => [
         { link: getPersonLink(member), image: getPersonPortrait(member) },
         { link: getPersonLink(member), text: member.person.name },
-        member.age,
-        member.education,
-        member.terms,
-        { link: member.partylink ? getPersonPartyLink(member) : '', text: member.person.party.acronym },
-        member.formattedDistrict,
-        // { barchart: true, value: 122, width: 23 }
+        { barchart: true, value: member.analysisValue, width: member.analysisPercentage },
+        member.analysisDiff,
       ]);
+    },
+    columns() {
+      if (this.demographics) {
+        return [
+          { id: 'image', label: '', additionalClass: 'portrait' },
+          { id: 'name', label: 'Ime', additionalClass: 'wider name' },
+          { id: 'age', label: 'Starost' },
+          { id: 'education', label: 'Stopnja izobrazbe', additionalClass: 'optional' },
+          { id: 'terms', label: 'Število mandatov', additionalClass: 'optional' },
+          { id: 'party', label: 'PS', additionalClass: 'optional' },
+          { id: 'district', label: 'Okraj', additionalClass: 'optional' },
+        ];
+      }
+      return [
+        { id: 'image', label: '', additionalClass: 'portrait' },
+        { id: 'name', label: 'Ime', additionalClass: 'name' },
+        { id: 'analysis', label: 'Analiza', additionalClass: 'wider' },
+        { id: 'change', label: 'Sprememba' },
+      ];
     },
   },
   props: {
+    demographics: Boolean,
     headerConfig: Object,
     generatedCardUrl: String,
-    columns: Array,
     currentSort: String,
     currentSortOrder: String,
     processedMembers: Array,
   },
   methods: {
     selectSort(sort) {
-      console.log(sort);
+      this.$emit('sort', sort);
     },
   },
 };
