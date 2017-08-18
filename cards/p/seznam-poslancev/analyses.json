@@ -31,5 +31,11 @@
     "titleSuffix": " po št. izgovorjenih besed",
     "explanation": "Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ.",
     "label": "Št. izgovorjenih besed"
+  },
+  {
+    "id": "mismatch_of_pg",
+    "titleSuffix": " po neujemanju s poslansko skupino",
+    "explanation": "Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ.",
+    "label": "Neujemanje s poslansko skupino"
   }
 ]

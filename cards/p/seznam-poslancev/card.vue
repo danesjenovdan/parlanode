@@ -30,11 +30,19 @@
             :items="districts"
             :placeholder="districtPlaceholder"
           />
-          <search-dropdown
-            class="filter gender-filter"
-            :items="genders"
-            :placeholder="genderPlaceholder"
-          />
+          <div class="genders filter">
+            <striped-icon-button
+              class="gender"
+              v-for="gender in genders"
+              :color="'funblue'"
+              :key="gender.id"
+              :selected="selectedGenders.indexOf(gender.id) > -1"
+              :icon="gender.id"
+              :stripe-position="'top'"
+              @click.native="selectGender(gender.id)">
+            </striped-icon-button>
+          </div>
+          
         </div>
       </div>
 
@@ -66,11 +74,12 @@ import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import SearchField from 'components/SearchField.vue';
 import StripedButton from 'components/StripedButton.vue';
+import StripedIconButton from 'components/StripedIconButton.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
 
 export default {
-  components: { BlueButtonList, InnerCard, SearchField, StripedButton },
+  components: { BlueButtonList, InnerCard, SearchField, StripedButton, StripedIconButton },
   mixins: [urlFunctionalities],
   name: 'SeznamPoslancev',
   data() {
@@ -99,6 +108,7 @@ export default {
       textFilter: '',
       districts,
       genders,
+      selectedGenders: [],
     };
   },
   computed: {
@@ -110,12 +120,6 @@ export default {
         return `Izbranih: ${this.selectedDistricts.length}`;
       }
       return 'Izberi okraj';
-    },
-    genderPlaceholder() {
-      if (this.selectedGenders.length > 0) {
-        return `Izbranih: ${this.selectedGenders.length}`;
-      }
-      return 'Izberi spol';
     },
     headerConfig() {
       return {
@@ -131,11 +135,11 @@ export default {
         .filter(district => district.selected)
         .map(district => district.id);
     },
-    selectedGenders() {
-      return this.genders
-        .filter(gender => gender.selected)
-        .map(gender => gender.id);
-    },
+    // selectedGenders() {
+    //   return this.genders
+    //     .filter(gender => gender.selected)
+    //     .map(gender => gender.id);
+    // },
     urlParameters() {
       const parameters = {};
       if (this.currentAnalysis !== 'demographics') {
@@ -147,7 +151,7 @@ export default {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
         analysisMax = this.memberData.reduce((biggest, member) =>
-          Math.max(biggest, member.results[this.currentAnalysis].score),
+          Math.max(biggest, (member.results[this.currentAnalysis].score || 0)),
           0,
         );
       }
@@ -190,12 +194,12 @@ export default {
           }
 
           newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
-          newMember.age = Math.floor(Math.random() * 50) + 18;
-          newMember.education = Math.ceil(Math.random() * 5) + 3;
+          newMember.age = newMember.results.age.score; //Math.floor(Math.random() * 50) + 18;
+          newMember.education = newMember.results.education.score; //Math.ceil(Math.random() * 5) + 3;
           newMember.terms = Math.ceil(Math.random() * 3);
           if (this.currentAnalysis !== 'demographics') {
-            newMember.analysisValue = Math.round(newMember.results[this.currentAnalysis].score * 10) / 10;
-            newMember.analysisPercentage = newMember.results[this.currentAnalysis].score / analysisMax * 100;
+            newMember.analysisValue = Math.round((newMember.results[this.currentAnalysis].score || 0) * 10) / 10;
+            newMember.analysisPercentage = (newMember.results[this.currentAnalysis].score || 0) / analysisMax * 100;
             const diff = Math.round(newMember.results[this.currentAnalysis].diff * 10) / 10;
             newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
@@ -210,8 +214,8 @@ export default {
               b = memberB.results[this.currentAnalysis].diff;
               return a < b ? -1 : (a > b ? 1 : 0);
             case 'analysis':
-              a = memberA.results[this.currentAnalysis].score;
-              b = memberB.results[this.currentAnalysis].score;
+              a = (memberA.results[this.currentAnalysis].score || 0);
+              b = (memberB.results[this.currentAnalysis].score || 0);
               return a < b ? -1 : (a > b ? 1 : 0);
             case 'name':
               a = memberA.person.name;
@@ -255,6 +259,17 @@ export default {
         this.selectedParties.splice(position, 1);
       } else {
         this.selectedParties.push(id);
+      }
+    },
+    selectGender(id) {
+      console.log('ping');
+      console.log(id);
+      const position = this.selectedGenders.indexOf(id);
+      console.log(position);
+      if (position > -1) {
+        this.selectedGenders.splice(position, 1);
+      } else {
+        this.selectedGenders.push(id);
       }
     },
     sortBy(sort) {
@@ -303,9 +318,20 @@ export default {
   }
   .parties {
     display: flex;
+    flex: 3;
     .party {
       flex: 1;
       &:not(:last-child) { margin-right: 3px; }
+    }
+  }
+  .genders {
+    display: flex;
+    flex: 0;
+    .gender {
+      width: 40px;
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
     }
   }
 }

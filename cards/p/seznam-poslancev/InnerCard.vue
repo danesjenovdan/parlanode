@@ -34,7 +34,7 @@ import SortableTable from 'components/SortableTable.vue';
 import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 
 const arabicToRoman = arabic => ({
-  1: 'III',
+  1: 'I',
   2: 'II',
   3: 'III',
   4: 'IV',
