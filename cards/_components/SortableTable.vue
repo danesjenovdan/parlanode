@@ -14,7 +14,7 @@
     <li v-for="item in items" class="item">
       <div
         v-for="cell, cellIndex in item"
-        :class="['column', ...columns[cellIndex].additionalClass, cell.value <= 0 ? 'red' : '']"
+        :class="['column', ...columns[cellIndex].additionalClass, cell && cell.value <= 0 ? 'red' : '']"
       >
         <template v-if="typeof cell === 'object' && cell.contents">
           <template v-for="content, contentIndex in cell.contents">
@@ -24,16 +24,16 @@
             <template v-else>{{ content.text }}</template>{{ contentIndex < cell.contents.length - 1 ? ', ' : '' }}
           </template>
         </template>
-        <template v-else-if="cell.barchart">
+        <template v-else-if="cell && cell.barchart">
           <div class="bar" :style="{width: cell.width + '%'}"><div class="value">{{ cell.value }}</div></div>
         </template>
-        <template v-else-if="cell.ticker">
+        <template v-else-if="cell && cell.ticker">
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
         <template v-else>
           <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
           <template v-else>
-            <template v-if="cell.link">
+            <template v-if="cell && cell.link">
               <a :href="cell.link">
                 <img v-if="cell.image" :src="cell.image">
                 <template v-else>{{ cell.text }}</template>

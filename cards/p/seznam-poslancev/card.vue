@@ -42,7 +42,7 @@
               @click.native="selectGender(gender.id)">
             </striped-icon-button>
           </div>
-          
+
         </div>
       </div>
 
@@ -195,7 +195,7 @@ export default {
 
           newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
           newMember.age = newMember.results.age.score; //Math.floor(Math.random() * 50) + 18;
-          newMember.education = newMember.results.education.score; //Math.ceil(Math.random() * 5) + 3;
+          newMember.education = parseInt(newMember.results.education.score); //Math.ceil(Math.random() * 5) + 3;
           newMember.terms = Math.ceil(Math.random() * 3);
           if (this.currentAnalysis !== 'demographics') {
             newMember.analysisValue = Math.round((newMember.results[this.currentAnalysis].score || 0) * 10) / 10;
