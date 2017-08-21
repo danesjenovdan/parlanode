@@ -15,9 +15,10 @@
       </div>
 
       <card-info>
-        <p class="info-text lead"></p>
+        <div v-html="infoText"></div>
+        <!-- <p class="info-text lead">Seznam poslancev glede na rezultate analize {{currentAnalysisData.titleSuffix}}</p>
         <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
+        <p class="info-text" v-html="currentAnalysisData.explanation"></p> -->
       </card-info>
 
       <card-embed :url="generatedCardUrl" />
@@ -95,6 +96,8 @@ export default {
     currentSort: String,
     currentSortOrder: String,
     processedMembers: Array,
+    currentAnalysisData: Object,
+    infoText: String,
   },
   methods: {
     selectSort(sort) {

@@ -50,7 +50,7 @@
       <div class="row">
         <div class="col-md-12">
           <inner-card
-            v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder }"
+            v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
             :demographics="currentAnalysis === 'demographics'"
             @sort="sortBy"
           />
@@ -59,7 +59,7 @@
     </div>
   </div>
   <inner-card v-else
-    v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder }"
+    v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
     :demographics="currentAnalysis === 'demographics'"
     @sort="sortBy"
   />
@@ -112,6 +112,33 @@ export default {
     };
   },
   computed: {
+    selectedDistrictNames: function() {
+      return this.districts
+        .filter(function(district) { return district.selected })
+        .map(function(district) { return district.label })
+    },
+    infoText() {
+      var parties = this.selectedParties.length ? 'poslanska skupina: ' + this.selectedParties.join(', ') : 'vse poslanske skupine'
+      var districts = this.selectedDistrictNames.length ? 'volilni okraj: ' + this.selectedDistrictNames.join(', ') : 'vsi volilni okraji'
+      var firstLine = 'Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu (' + parties + '; ' + districts + ').'
+
+      var sortMap = {
+        name: 'abecedi',
+        district: 'okrajih',
+        party: 'poslanskih skupinah',
+        analysis: 'rezultatu analize ' + this.currentAnalysisData.label,
+        change: 'aktualni spremembi v rezultatu analize ' + this.currentAnalysisData.label,
+        age: 'starosti',
+        education: 'stopnji izobrazbe',
+        terms: 'številu mandatov',
+      }
+      var secondLine = 'Seznam je sortiran po ' + sortMap[this.currentSort] + '.'
+
+      var thirdLine = this.currentAnalysisData.explanation
+
+      // return firstLine + '<br><br>' + secondLine + (thirdLine ? '<br><br>' + thirdLine : '')
+      return '<p class="info-text lead">' + firstLine + ' ' + secondLine + '</p>' + (thirdLine ? '<p class="info-text heading">METODOLOGIJA</p><p class="info-text">' + thirdLine + '</p>' : '');
+    },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
@@ -279,13 +306,16 @@ export default {
         this.currentSortOrder = 'asc';
         this.currentSort = sort;
       }
-    },
+    }
   },
   watch: {
     currentAnalysis(newValue, oldValue) {
-      if (newValue === 'demographics' || oldValue === 'demographics') {
+      if (newValue === 'demographics') {
         this.currentSort = 'name';
         this.currentSortOrder = 'asc';
+      } else {
+        this.currentSort = 'analysis';
+        this.currentSortOrder = 'desc';
       }
     },
   },

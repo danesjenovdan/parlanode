@@ -90,7 +90,7 @@ export default {
   font-size: 16px;
   line-height: 18px;
   background-color: #ffffff;
-  width: auto;
+  width: 74px;
   float: left;
   padding-right: 20px;
 }
