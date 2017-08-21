@@ -320,16 +320,16 @@ export default {
     },
   },
   created() {
-    $.get('https://analize.parlameter.si/v1/pg/getListOfPGs/')
-      .then((response) => {
-        this.parties = response.data.map(party => ({
+    const that = this;
+    $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', (response) => {
+        that.parties = response.data.map(party => ({
           acronym: party.party.acronym,
           color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
         }));
-      })
-      .fail(() => {
-        throw new Error('Could not fetch parties.');
       });
+      // .fail(() => {
+      //   throw new Error('Could not fetch parties.');
+      // });
   },
 };
 </script>

@@ -24,7 +24,7 @@ export default {
   methods: {
     shortenUrl() {
       return new Promise(() => {
-        $.get(`https://parla.me/shortner/generate?url=${window.encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
+        $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
           this.$el.querySelector('.card-content-share button').textContent = 'KOPIRAJ';
           this.shortenedUrl = response;
         });
@@ -36,7 +36,7 @@ export default {
       this.shortenUrl();
     },
   },
-  created() {
+  mounted() {
     this.shortenUrl();
   },
 };
