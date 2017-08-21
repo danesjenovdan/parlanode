@@ -13,6 +13,12 @@ global.$ = {
       callback(JSON.parse(body));
     });
   },
+  get(url, callback) {
+    request(url, (error, response, body) => {
+      if (error) throw error;
+      callback(body);
+    });
+  },
 };
 Vue.component('SearchDropdown', SearchDropdown);
 Vue.component('Tabs', Tabs);

@@ -352,6 +352,7 @@ exports.render = function ( req, res ) {
 
                 try {
                   if ( state ) state = JSON.parse(state);
+                  console.log(state);
 
                   let onlyStrings = true;
 
