@@ -8,7 +8,7 @@
           <striped-button
             v-for="group in groups"
             @click.native="selectGroup(group.acronym)"
-            :color="group.color"
+            :color="group.color.toLowercase()"
             :key="group.acronym"
             :selected="group.acronym === selectedGroup"
             :small-text="group.name"

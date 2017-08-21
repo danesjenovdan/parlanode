@@ -64,6 +64,7 @@ export default {
     box-sizing: border-box;
     color: $white;
     display: flex;
+    flex: 1;
     font-size: 10px;
     height: 61px;
     line-height: 16px;
@@ -104,7 +105,5 @@ export default {
       select { width: 100%; }
     }
   }
-
-
 }
 </style>

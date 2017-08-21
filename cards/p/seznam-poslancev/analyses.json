@@ -1,0 +1,41 @@
+[
+  {
+    "id": "demographics",
+    "titleSuffix": "",
+    "label": "Demografija"
+  },
+  {
+    "id": "presence_votes",
+    "titleSuffix": " po prisotnosti na glasovanjih sej DZ",
+    "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100).",
+    "label": "Prisotnost na glasovanjih sej DZ",
+    "round": true,
+    "unit": "percent"
+  },
+  {
+    "id": "number_of_questions",
+    "titleSuffix": " po št. poslanskih vprašanj in pobud",
+    "explanation": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo. Podatke pridobivamo s spletnega mesta DZ RS: <a href='https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/'>https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/</a>.",
+    "label": "Št. poslanskih vprašanj in pobud",
+    "round": true,
+    "roundingPrecision": 0
+  },
+  {
+    "id": "speeches_per_session",
+    "titleSuffix": " po št. govorov na sejo",
+    "explanation": "Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim.",
+    "label": "Št. govorov na sejo"
+  },
+  {
+    "id": "spoken_words",
+    "titleSuffix": " po št. izgovorjenih besed",
+    "explanation": "Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ.",
+    "label": "Št. izgovorjenih besed"
+  },
+  {
+    "id": "mismatch_of_pg",
+    "titleSuffix": " po neujemanju s poslansko skupino",
+    "explanation": "Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ.",
+    "label": "Neujemanje s poslansko skupino"
+  }
+]
