@@ -1,68 +1,70 @@
 <template>
-  <div v-if="$options.cardData.state.generator" :id="$options.cardData.cardData._id">
-    <div class="party-list-generator">
-      <div class="row">
-        <div class="col-md-12">
-          <blue-button-list
-            :items="analyses"
-            v-model="currentAnalysis" />
+  <div :id="$options.cardData.cardData._id">
+    <div v-if="$options.cardData.state.generator">
+      <div class="party-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="analyses"
+              v-model="currentAnalysis" />
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-12 filters">
-          <div class="parties filter">
-            <striped-button
-              class="party"
-              v-for="party in parties"
-              @click.native="selectParty(party.acronym)"
-              :color="party.color"
-              :key="party.acronym"
-              :selected="selectedParties.indexOf(party.acronym) > -1"
-              :small-text="party.acronym"
-              :is-uppercase="false"
-              stripe-position="bottom"
+        <div class="row">
+          <div class="col-md-12 filters">
+            <div class="parties filter">
+              <striped-button
+                class="party"
+                v-for="party in parties"
+                @click.native="selectParty(party.acronym)"
+                :color="party.color"
+                :key="party.acronym"
+                :selected="selectedParties.indexOf(party.acronym) > -1"
+                :small-text="party.acronym"
+                :is-uppercase="false"
+                stripe-position="bottom"
+              />
+            </div>
+            <search-field class="filter text-filter" v-model="textFilter" />
+            <search-dropdown
+              class="filter district-filter"
+              :items="districts"
+              :placeholder="districtPlaceholder"
+            />
+            <div class="genders filter">
+              <striped-icon-button
+                class="gender"
+                v-for="gender in genders"
+                :color="'funblue'"
+                :key="gender.id"
+                :selected="selectedGenders.indexOf(gender.id) > -1"
+                :icon="gender.id"
+                :stripe-position="'top'"
+                @click.native="selectGender(gender.id)">
+              </striped-icon-button>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <inner-card
+              v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
+              :demographics="currentAnalysis === 'demographics'"
+              @sort="sortBy"
             />
           </div>
-          <search-field class="filter text-filter" v-model="textFilter" />
-          <search-dropdown
-            class="filter district-filter"
-            :items="districts"
-            :placeholder="districtPlaceholder"
-          />
-          <div class="genders filter">
-            <striped-icon-button
-              class="gender"
-              v-for="gender in genders"
-              :color="'funblue'"
-              :key="gender.id"
-              :selected="selectedGenders.indexOf(gender.id) > -1"
-              :icon="gender.id"
-              :stripe-position="'top'"
-              @click.native="selectGender(gender.id)">
-            </striped-icon-button>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-md-12">
-          <inner-card
-            v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
-            :demographics="currentAnalysis === 'demographics'"
-            @sort="sortBy"
-          />
         </div>
       </div>
     </div>
+    <inner-card v-else
+      v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
+      :demographics="currentAnalysis === 'demographics'"
+      @sort="sortBy"
+    />
   </div>
-  <inner-card v-else
-    v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
-    :demographics="currentAnalysis === 'demographics'"
-    @sort="sortBy"
-  />
 </template>
 
 <script>
