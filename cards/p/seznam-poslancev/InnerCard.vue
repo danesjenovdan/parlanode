@@ -84,7 +84,7 @@ export default {
       return [
         { id: 'image', label: '', additionalClass: 'portrait' },
         { id: 'name', label: 'Ime', additionalClass: 'name' },
-        { id: 'analysis', label: 'Analiza', additionalClass: 'wider' },
+        { id: 'analysis', label: 'Analiza', additionalClass: 'wider barchartcontainer' },
         { id: 'change', label: 'Sprememba' },
       ];
     },

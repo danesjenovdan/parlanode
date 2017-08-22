@@ -84,17 +84,32 @@ export default {
     color: $red;
   }
 }
-.bar {
-  width: 100%;
-  background-color: $funblue;
-  height: 18px;
+.barchartcontainer  {
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  display: flex;
 }
+
 .value {
   font-size: 16px;
   line-height: 18px;
   background-color: #ffffff;
+  // padding-right: 20px;
+  display: flex;
+  flex: 0 0 74px;
   width: 74px;
-  float: left;
-  padding-right: 20px;
+}
+.barcontainer {
+  display: flex;
+  flex: 1 1 0%;
+}
+.bar {
+  width: 100%;
+  background-color: $funblue;
+  height: 18px;
+  display: flex;
+  flex-wrap: nowrap;
 }
 </style>
