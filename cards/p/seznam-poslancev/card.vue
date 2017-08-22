@@ -104,8 +104,8 @@ export default {
     return {
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
-      currentSort: (loadFromState('analysis') !== 'demographics' ? 'analysis' : 'name'),
-      currentSortOrder: (loadFromState('analysis') !== 'demographics' ? 'desc' : 'asc') || 'asc',
+      currentSort: (loadFromState('analysis') ? (loadFromState('analysis') !== 'demographics' ? 'analysis' : 'name') : 'name'),
+      currentSortOrder: (loadFromState('analysis') ? (loadFromState('analysis') !== 'demographics' ? 'desc' : 'asc') : 'asc'),
       analyses,
       parties: [],
       selectedParties: [],
@@ -181,10 +181,9 @@ export default {
     processedMembers() {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
-        analysisMax = this.memberData.reduce((biggest, member) =>
-          Math.max(biggest, (member.results[this.currentAnalysis].score || 0)),
-          0,
-        );
+        analysisMax = this.memberData.reduce((biggest, member) => {
+          return Math.max(biggest, (member.results[this.currentAnalysis].score || 0));
+        }, 0);
       }
 
       const sortedAndFiltered = this.memberData
@@ -226,7 +225,7 @@ export default {
 
           newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
           newMember.age = newMember.results.age.score; //Math.floor(Math.random() * 50) + 18;
-          newMember.education = parseInt(newMember.results.education.score); //Math.ceil(Math.random() * 5) + 3;
+          newMember.education = parseInt(newMember.results.education.score || 0); //Math.ceil(Math.random() * 5) + 3;
           newMember.terms = Math.ceil(Math.random() * 3);
           if (this.currentAnalysis !== 'demographics') {
             newMember.analysisValue = Math.round((newMember.results[this.currentAnalysis].score || 0) * 10) / 10;
