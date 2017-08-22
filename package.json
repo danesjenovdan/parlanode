@@ -5,7 +5,7 @@
   "main": "run.js",
   "scripts": {
     "dev": "NODE_ENV=dev_local node_modules/.bin/supervisor run",
-    "start": "NODE_ENV=production pm2 start run.js --name=parlanode",
+    "start": "NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
     "cards-build": "run(){ CARD_NAME=$1 NODE_ENV=production node cards/build.js; }; run",
     "cards-dev": "run(){ CARD_NAME=$1 webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open --inline; }; run",
@@ -46,6 +46,7 @@
     "express-session": "^1.15.3",
     "express-validator": "^3.2.0",
     "extract-text-webpack-plugin": "^2.1.2",
+    "full-icu": "^1.2.0",
     "inquirer": "3.1.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
