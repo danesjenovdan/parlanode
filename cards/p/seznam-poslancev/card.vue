@@ -99,11 +99,13 @@ export default {
       { id: 'f', label: 'ženski', selected: false },
     ];
 
+    console.log(loadFromState('analysis') !== 'demographics' ? 'desc' : 'asc');
+
     return {
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
-      currentSort: 'name',
-      currentSortOrder: 'asc',
+      currentSort: (loadFromState('analysis') !== 'demographics' ? 'analysis' : 'name'),
+      currentSortOrder: (loadFromState('analysis') !== 'demographics' ? 'desc' : 'asc') || 'asc',
       analyses,
       parties: [],
       selectedParties: [],

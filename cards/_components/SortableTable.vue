@@ -25,7 +25,10 @@
           </template>
         </template>
         <template v-else-if="cell && cell.barchart">
-          <div class="bar" :style="{width: cell.width + '%'}"><div class="value">{{ cell.value }}</div></div>
+          <div class="value">{{ cell.value }}</div>
+          <div class="barcontainer">
+            <div class="bar" :style="{width: cell.width + '%'}"></div>
+          </div>
         </template>
         <template v-else-if="cell && cell.ticker">
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
