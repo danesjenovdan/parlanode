@@ -1,4 +1,3 @@
 {
-  "generator": true,
-  "analysis": "mismatch_of_pg"
+  "generator": true
 }
