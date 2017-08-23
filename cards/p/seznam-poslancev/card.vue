@@ -226,7 +226,7 @@ export default {
           newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
           newMember.age = newMember.results.age.score; //Math.floor(Math.random() * 50) + 18;
           newMember.education = parseInt(newMember.results.education.score || 0); //Math.ceil(Math.random() * 5) + 3;
-          newMember.terms = Math.ceil(Math.random() * 3);
+          newMember.terms = newMember.results.mandates.score || 1;//Math.ceil(Math.random() * 3);
           if (this.currentAnalysis !== 'demographics') {
             newMember.analysisValue = Math.round((newMember.results[this.currentAnalysis].score || 0) * 10) / 10;
             newMember.analysisPercentage = (newMember.results[this.currentAnalysis].score || 0) / analysisMax * 100;
