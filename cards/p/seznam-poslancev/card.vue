@@ -338,6 +338,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blue-button-list-item {
+  font-size: 12px;
+}
 .filters {
   display: flex;
   .filter {
