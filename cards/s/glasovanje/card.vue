@@ -41,6 +41,9 @@
               ref="parties"
               :members="data.members"
               :parties="data.parties"
+              :state="state"
+              :selectedParty="state.selectedParty || null"
+              :selectedOption="state.selectedOption || null"
             />
           </tab>
           <tab header="Stran vlade">
@@ -48,6 +51,9 @@
               ref="sides"
               :members="data.members"
               :parties="coalitionOpositionParties"
+              :state="state"
+              :selectedParty="state.selectedParty || null"
+              :selectedOption="state.selectedOption || null"
             />
           </tab>
         </tabs>
@@ -139,11 +145,20 @@ export default {
         this.$refs.sides.expandedParty = null;
         this.$refs.sides.expandedOption = null;
       }
+      if (this.state.selectedTab === 1) {
+        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
+        this.$refs.sides.expandedOption = this.state.selectedOption || null;
+      }
+      if (this.state.selectedTab === 2) {
+        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
+        this.$refs.sides.expandedOption = this.state.selectedOption || null;
+      }
     },
     openDocument(documentId) {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url, '_blank');
     },
+    
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -154,6 +169,17 @@ export default {
       }
     },
   },
+
+  mounted() {
+    this.$on('selectedoption', (newSelectedOption) => {
+      this.state.selectedOption = newSelectedOption;
+    });
+    this.$on('selectedparty', (newSelectedParty) => {
+      this.state.selectedParty = newSelectedParty;
+    });
+
+    this.$emit('selectedoption', 'fuck');
+  }
 };
 </script>
 

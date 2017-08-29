@@ -91,6 +91,17 @@ export default {
   props: {
     members: Array,
     parties: Array,
+    state: Object,
+    selectedParty: {
+      type: [String, Number],
+      default: null,
+    },
+    selectedOption: {
+      type: String,
+      default: null,
+    },
+  },
+  watch: {
   },
   methods: {
     getPartyLink,
@@ -112,7 +123,15 @@ export default {
         const thing = event.currentTarget;
         $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - $(thing).parents('.parties').offset().top - 10);
       }
+
+      this.$parent.$parent.$parent.$emit('selectedparty', this.expandedParty);
+      this.$parent.$parent.$parent.$emit('selectedoption', this.expandedOption);
     },
+  },
+
+  mounted() {
+    this.expandedParty = this.selectedParty;
+    this.expandedOption = this.selectedOption;
   },
 };
 </script>
