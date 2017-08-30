@@ -7,15 +7,15 @@
         <div class="filters">
           <div class="filter tag-dropdown">
             <div class="filter-label">Poslanec/-ka</div>
-            <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown>
+             <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown> 
           </div>
           <div class="filter tag-dropdown">
             <div class="filter-label">Naslovljenec/-ka</div>
-            <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown>
+             <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown> 
           </div>
           <div class="filter month-dropdown">
             <div class="filter-label">Časovno obdobje</div>
-            <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+             <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown> 
           </div>
           <div class="filter text-filter">
             <div class="filter-label">Išči po naslovu vprašanja</div>
@@ -64,8 +64,12 @@ import CardHeader from 'components/Card/Header.vue'
 import CardFooter from 'components/Card/Footer.vue'
 import initializeBack from 'mixins/initializeBack'
 
+import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
+
+import slugs from '../../assets/urls.json';
+
 export default {
-  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter },
+  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter, SearchDropdown },
   mixins: [ initializeBack ],
   computed: {
     MPsPlaceholder() {
@@ -123,10 +127,10 @@ export default {
     cardUrl() {
       const state = {};
 
-      // if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-      // if (this.textFilter.length > 0) state.text = this.textFilter;
-      // if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
+      if (this.selectedRecipients.length > 0) state.recipients = this.selectedRecipients;
+      if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      if (this.textFilter.length > 0) state.text = this.textFilter;
+      if (this.selectedMPs.length > 0) state.mps = this.selectedMPs;
 
       return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -195,12 +199,12 @@ export default {
     );
     let textFilter = ''
 
-    // if (this.cardData.state) {
-    //   if (this.cardData.state.text) textFilter = this.cardData.state.text;
-    //   if (this.cardData.state.months) allMonths = selectFromState(allMonths, this.cardData.state.months);
-    //   if (this.cardData.state.options) allOptions = selectFromState(allOptions, this.cardData.state.options);
-    //   if (this.cardData.state.tags) allTags = selectFromState(allTags, this.cardData.state.tags);
-    // }
+    if (this.cardData.state) {
+      if (this.cardData.state.text) textFilter = this.cardData.state.text;
+      if (this.cardData.state.months) allMonths = selectFromState(allMonths, this.cardData.state.months);
+      if (this.cardData.state.recipients) allRecipients = selectFromState(allRecipients, this.cardData.state.recipients);
+      if (this.cardData.state.mps) allMPs = selectFromState(allMPs, this.cardData.state.mps);
+    }
 
     return {
       cardMethod: this.cardData.cardData.method,
@@ -211,6 +215,7 @@ export default {
       allMPs,
       allRecipients,
       textFilter,
+      slugs,
     };
   },
   methods: {
