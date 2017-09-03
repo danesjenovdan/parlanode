@@ -1,9 +1,8 @@
-/* globals makeEmbedSwitch activateCopyButton addCardRippling */
+/* globals makeEmbedSwitch activateCopyButton */
 
 export default {
   mounted() {
     makeEmbedSwitch();
     activateCopyButton();
-    addCardRippling();
   },
 };

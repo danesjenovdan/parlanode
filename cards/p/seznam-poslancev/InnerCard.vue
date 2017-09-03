@@ -1,9 +1,17 @@
 <template>
-  <div class="card-container card-halfling card-seznam-poslancev">
-    <card-header :config="headerConfig" />
+  <div :class="['card-container', 'card-halfling', 'card-seznam-poslancev', transitionClass]">
+    <card-header :config="headerConfig" :current-back="currentBack" />
 
     <div class="card-content">
-      <div class="card-content-front">
+      <card-info v-if="currentBack === 'info'">
+        <div v-html="infoText"></div>
+      </card-info>
+
+      <card-embed v-else-if="currentBack === 'embed'" :url="generatedCardUrl" />
+
+      <card-share v-else-if="currentBack === 'share'" :url="generatedCardUrl" />
+
+      <div v-else class="card-content-front">
         <sortable-table
           class="person-list"
           :columns="columns"
@@ -13,19 +21,8 @@
           :sort-callback="selectSort"
         />
       </div>
-
-      <card-info>
-        <div v-html="infoText"></div>
-        <!-- <p class="info-text lead">Seznam poslancev glede na rezultate analize {{currentAnalysisData.titleSuffix}}</p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text" v-html="currentAnalysisData.explanation"></p> -->
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer />
+    <card-footer @toggleBack="toggleBack" />
   </div>
 </template>
 
