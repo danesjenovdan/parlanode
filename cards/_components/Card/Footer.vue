@@ -6,19 +6,47 @@
       </a>
     </div>
 
-    <div class="card-circle-button card-share" data-back="share"></div>
-    <div class="card-circle-button card-embed" data-back="embed"></div>
-    <div class="card-circle-button card-info" data-back="info">i</div>
+    <div
+      v-for="button in buttons"
+      :key="button"
+      :class="[
+        'card-circle-button',
+        `card-${button}`,
+        { 'card-exit': currentBack === button }
+      ]"
+      @click="toggleBack(button)">
+    </div>
   </div>
 </template>
 
 <script>
 import slugs from '../../../assets/urls.json';
+import { RIPPLE_DURATION } from 'components/constants';
 
 export default {
   name: 'CardFooter',
   data() {
-    return { slugs };
+    return {
+      clicksDisabled: false,
+      currentBack: null,
+      slugs,
+      buttons: ['share', 'embed', 'info'],
+    };
+  },
+  methods: {
+    toggleBack(name) {
+      if (!this.clicksDisabled) {
+        this.$emit('toggleBack', name);
+        this.currentBack = this.currentBack === name ? null : name;
+        this.clicksDisabled = true;
+        window.setTimeout(() => { this.clicksDisabled = false; }, RIPPLE_DURATION);
+      }
+    },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.card-info:not(.card-exit)::before { content: 'i'; }
+.card-exit::before { content: '×'; }
+</style>
