@@ -20,7 +20,6 @@
 </template>
 
 <script>
-/* globals measure */
 import { find } from 'lodash';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';

@@ -26,7 +26,6 @@
 </template>
 
 <script>
-  /* globals window $ measure */
   import common from 'mixins/common';
   import adjacencyMatrix from 'helpers/adjacencyMatrix';
   // import 'helpers/adjacencyMatrix';

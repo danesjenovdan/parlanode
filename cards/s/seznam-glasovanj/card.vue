@@ -113,8 +113,6 @@
 </template>
 
 <script>
-  /* globals window $ measure */
-
   import common from 'mixins/common';
   import StripedButton from 'components/StripedButton.vue';
 

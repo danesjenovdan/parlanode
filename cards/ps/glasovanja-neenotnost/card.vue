@@ -75,7 +75,6 @@
 </template>
 
 <script>
-/* globals window $ measure */
 import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';

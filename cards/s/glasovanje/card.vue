@@ -87,7 +87,6 @@
 </template>
 
 <script>
-/* globals window measure */
 import { find, pick } from 'lodash';
 import common from 'mixins/common';
 import Poslanci from './Poslanci.vue';
@@ -158,7 +157,7 @@ export default {
       const selectedDocument = find(this.mappedDocuments, { id: documentId });
       window.open(selectedDocument.url, '_blank');
     },
-    
+
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {

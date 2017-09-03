@@ -54,8 +54,6 @@
 </template>
 
 <script>
-/* globals $ */
-
 import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import SearchField from 'components/SearchField.vue';

@@ -1,5 +1,5 @@
 <template>
-  <div class="card-content-share hidden">
+  <div class="card-content-share">
     <div class="card-back-content">
       <div class="share-content">
         <label for="share-url">Neposredna povezava do kartice</label>
@@ -11,8 +11,6 @@
 </template>
 
 <script>
-/* globals $ */
-
 export default {
   name: 'CardShare',
   data: () => ({

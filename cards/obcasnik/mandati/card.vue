@@ -36,7 +36,6 @@
 </template>
 
 <script>
-  /* globals window $ measure */
   import common from 'mixins/common';
 
   export default {

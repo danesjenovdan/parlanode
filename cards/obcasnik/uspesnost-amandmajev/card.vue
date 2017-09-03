@@ -22,7 +22,6 @@
 </template>
 
 <script>
-/* globals window $ measure */
 import common from 'mixins/common';
 import StackedBarChart from 'components/StackedBarChart.vue';
 

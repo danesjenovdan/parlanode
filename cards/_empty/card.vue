@@ -22,7 +22,6 @@
 </template>
 
 <script>
-/* globals measure */
 import common from 'mixins/common';
 
 export default {

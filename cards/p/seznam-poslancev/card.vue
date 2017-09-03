@@ -68,7 +68,6 @@
 </template>
 
 <script>
-/* globals measure $ */
 import { find } from 'lodash';
 
 import stateLoader from 'helpers/stateLoader';

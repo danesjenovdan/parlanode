@@ -123,7 +123,6 @@
 </template>
 
 <script>
-  /* globals measure */
   import { format as formatDate } from 'date-fns';
   import { find } from 'lodash';
 

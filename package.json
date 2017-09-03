@@ -72,6 +72,13 @@
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "globals": {
+      "measure": false,
+      "$": false
+    },
     "extends": "airbnb-base",
     "plugins": [
       "html",
