@@ -26,7 +26,65 @@
         class="card-content-front"
         v-cloak
       >
-        bla
+        <div class="me_poslanec clearfix progress_flex">
+          <div class="column progress_title">
+            <span class="poslanec_title">
+              {{ person.name }}
+            </span>
+          </div>
+          <div class="column progress_bar">
+            <div class="progress smallbar ">
+              <div class="progress-bar red" role="progressbar" :aria-valuenow="results.sessions.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.score / 100) * 73}%`}">
+                <span class="sr-only">{{ results.sessions.score }}%</span>
+              </div>
+              <div class="progress_number">
+                {{ Math.round(results.sessions.score) }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="other_poslanec clearfix progress_flex">
+          <div class="column progress_title">
+            <span class="poslanec_title">
+              Povprečje
+            </span>
+          </div>
+          <div class="column progress_bar">
+            <div class="progress smallbar avgmin">
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.average" aria-valuemin="0" aria-valuemax="100" :style="{width: `${(results.sessions.average / 100) * 73}%`}">
+                <span class="sr-only">{{ results.sessions.average }}%</span>
+              </div>
+              <div class="progress_number">
+                {{ Math.round(results.sessions.average) }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="other_poslanec clearfix progress_flex">
+          <div class="column progress_title">
+            <span class="poslanec_title">
+              Največ
+            </span>
+          </div>
+          <div class="column progress_bar">
+            <div class="progress smallbar avgmin">
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.max.score / 100) * 73}%` }">
+                <span class="sr-only">{{ results.sessions.max.score }}%</span>
+                <a
+                  v-for="mp in results.sessions.max.mps"
+                  :href="`${slugs.base}${slugs.personLink.base}${slugs.person[mp.id].slug}${slugs.personLink.pregled}`"
+                  class="avgminimg img-circle"
+                  :style="{ 'background-image': `url('https://cdn.parlameter.si/v1/parlassets/img/people/square/${mp.gov_id}.png')` }"
+                ></a>
+              </div>
+              <div class="progress_number">
+                {{ Math.round(results.sessions.max.score) }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -36,6 +94,7 @@
 
 <script>
 import common from 'mixins/common';
+import slugs from '../../assets/urls.json';
 
 export default {
   name: 'ScoreAvgMax',
@@ -54,7 +113,11 @@ export default {
     },
     infoText: {
       type: String,
-      default: '',
+      default: '<p class="info-text">Info tekst manjka. Če to vidiš, prosim sporoči programerjem, naj ga dodajo.</p>',
+    },
+    results: {
+      type: Object,
+      required: true,
     },
     person: Object,
     party: Object,
@@ -62,7 +125,6 @@ export default {
   },
 
   data() {
-
     return {
       vocabulary: this.cardData.vocab,
     };
