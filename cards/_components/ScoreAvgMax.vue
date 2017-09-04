@@ -7,10 +7,6 @@
     <card-header :config="headerConfig" :current-back="currentBack" />
 
     <div class="card-content">
-      <div class="card-content-front" v-cloak>
-        bla
-      </div>
-
       <card-info v-if="currentBack === 'info'">
         <div v-html="infoText"></div>
       </card-info>
@@ -24,6 +20,14 @@
         v-else-if="currentBack === 'share'"
         :url="generatedCardUrl"
       ></card-share>
+
+      <div
+        v-else
+        class="card-content-front"
+        v-cloak
+      >
+        bla
+      </div>
     </div>
     
     <card-footer @toggleBack="toggleBack"></card-footer>
