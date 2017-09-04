@@ -1,0 +1,113 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [35],
+    "name": "Nada Brinov\u0161ek",
+    "gov_id": "P244",
+    "gender": "f",
+    "party": {
+      "acronym": "SDS",
+      "is_coalition": false,
+      "id": 5,
+      "name": "PS Slovenska Demokratska Stranka"
+    },
+    "type": "mp",
+    "id": 12,
+    "has_function": false
+  },
+  "created_at": "18.08.2017",
+  "created_for": "14.07.2017",
+  "results": {
+    "votes": {
+      "max": {
+        "score": 98.5480943738657,
+        "mps": [{
+          "is_active": false,
+          "district": [8],
+          "name": "Ur\u0161ka Ban",
+          "gov_id": "P240",
+          "gender": "f",
+          "party": {
+            "acronym": "SMC",
+            "is_coalition": true,
+            "id": 1,
+            "name": "PS Stranka modernega centra"
+          },
+          "type": "mp",
+          "id": 3,
+          "has_function": false
+        }]
+      },
+      "average": 80.7588456120451,
+      "score": 60.2994555353902
+    },
+    "sessions": {
+      "max": {
+        "score": 100.0,
+        "mps": [{
+          "is_active": false,
+          "district": [66],
+          "name": "Julijana Bizjak Mlakar",
+          "gov_id": "P158",
+          "gender": "f",
+          "party": {
+            "acronym": "DeSUS",
+            "is_coalition": true,
+            "id": 3,
+            "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          },
+          "type": "mp",
+          "id": 5,
+          "has_function": false
+        }, {
+          "is_active": false,
+          "district": [48],
+          "name": "Jasna Murgel",
+          "gov_id": "P274",
+          "gender": "f",
+          "party": {
+            "acronym": "SMC",
+            "is_coalition": true,
+            "id": 1,
+            "name": "PS Stranka modernega centra"
+          },
+          "type": "mp",
+          "id": 60,
+          "has_function": false
+        }, {
+          "is_active": false,
+          "district": [85],
+          "name": "Teja Ljubi\u010d",
+          "gov_id": "P304",
+          "gender": "f",
+          "party": {
+            "acronym": "SMC",
+            "is_coalition": true,
+            "id": 1,
+            "name": "PS Stranka modernega centra"
+          },
+          "type": "mp",
+          "id": 2933,
+          "has_function": false
+        }, {
+          "is_active": false,
+          "district": [84],
+          "name": "Vlasta Po\u010dkaj",
+          "gov_id": "P303",
+          "gender": "f",
+          "party": {
+            "acronym": "SMC",
+            "is_coalition": true,
+            "id": 1,
+            "name": "PS Stranka modernega centra"
+          },
+          "type": "mp",
+          "id": 2934,
+          "has_function": false
+        }]
+      },
+      "average": 89.2150402451867,
+      "score": 89.6103896103896
+    }
+  }
+}
