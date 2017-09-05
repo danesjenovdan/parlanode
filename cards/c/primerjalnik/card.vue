@@ -1,170 +1,163 @@
 <template>
-  <div class="card-container card-halfling card-IME_KARTICE" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig"></card-header>
+  <card-wrapper
+    class="card-halfling card-primerjalnik"
+    :content-class="{'is-loading': loading}"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div :class="['card-content-front', {'is-loading': loading}]">
-        <div class="primerjalnik">
-          <p>Zanima me, na katerih glasovanjih so
-            <span class="primerjalnik-for">
-              <span
-                v-for="party in sameParties"
-                :key="party.id"
-                class="tag"
-                @click="togglePartySame(party)">
-                {{ party.acronym }}
-              </span>
-              <span
-                v-for="person in selectedSamePeople"
-                :key="person.id"
-                class="tag"
-                @click="removePerson(person)">
-                {{ person.name }}
-              </span>
-              <span class="plus" @click="toggleModal('same', true)">+</span>
-            </span>
-            glasovali enako,
-            <span class="primerjalnik-against">
-              <span
-                v-for="party in differentParties"
-                :key="party.id"
-                class="tag"
-                @click="togglePartyDifferent(party)">
-                {{ party.acronym }}
-              </span>
-              <span
-                v-for="person in selectedDifferentPeople"
-                :key="person.id"
-                class="tag"
-                @click="removePerson(person)">
-                {{ person.name }}
-              </span>
-              <span class="plus" @click="toggleModal('different', true)">+</span>
-            </span>
-            pa drugače od njih.
-            <span class="load" @click="loadResults">Naloži</span>
-          </p>
-          <div class="row primerjalnik-extras">
-            <div class="col-md-4">
-              <div class="searchfilter-checkbox">
-                <input
-                  id="rev"
-                  type="checkbox"
-                  class="checkbox"
-                  @click="toggleSpecial"
-                  :checked="special">
-                <label for="rev">Ignoriraj "odsotne" glasovnice</label>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
+    <div slot="info">
+      <p class="info-text lead"></p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.</p>
+      <p class="info-text">Rezultate prikazujemo na tri načine:</p>
+      <div class="info-text">
+        <ul>
+          <li>kot seznam vseh glasovanj,</li>
+          <li>kot črtni grafikon ki predstavlja število glasovanj na dan,</li>
+          <li>kot histogram s seštevki glasovanj glede na matično delovno telo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="primerjalnik">
+      <p>Zanima me, na katerih glasovanjih so
+        <span class="primerjalnik-for">
+          <span
+            v-for="party in sameParties"
+            :key="party.id"
+            class="tag"
+            @click="togglePartySame(party)">
+            {{ party.acronym }}
+          </span>
+          <span
+            v-for="person in selectedSamePeople"
+            :key="person.id"
+            class="tag"
+            @click="removePerson(person)">
+            {{ person.name }}
+          </span>
+          <span class="plus" @click="toggleModal('same', true)">+</span>
+        </span>
+        glasovali enako,
+        <span class="primerjalnik-against">
+          <span
+            v-for="party in differentParties"
+            :key="party.id"
+            class="tag"
+            @click="togglePartyDifferent(party)">
+            {{ party.acronym }}
+          </span>
+          <span
+            v-for="person in selectedDifferentPeople"
+            :key="person.id"
+            class="tag"
+            @click="removePerson(person)">
+            {{ person.name }}
+          </span>
+          <span class="plus" @click="toggleModal('different', true)">+</span>
+        </span>
+        pa drugače od njih.
+        <span class="load" @click="loadResults">Naloži</span>
+      </p>
+      <div class="row primerjalnik-extras">
+        <div class="col-md-4">
+          <div class="searchfilter-checkbox">
+            <input
+              id="rev"
+              type="checkbox"
+              class="checkbox"
+              @click="toggleSpecial"
+              :checked="special">
+            <label for="rev">Ignoriraj "odsotne" glasovnice</label>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
+        </div>
+      </div>
+    </div>
+
+    <tabs dark :switch-callback="focusTab" :start-tab="selectedTab">
+      <tab header="Seznam glasovanj">
+        <div class="empty" v-if="filteredVotes.length === 0"></div>
+        <div v-else id="votingCard" class="date-list">
+          <div class="session_voting">
+            <div
+              v-for="vote in filteredVotes"
+              :key="vote.session.id"
+              class="clearfix single_voting">
+              <div v-if="vote.results.is_outlier" class="fire-badge"></div>
+              <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
+              <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
+              <a :href="vote.url">
+                <div class=" col-md-1 ">
+                  <div :class="vote.accepted">
+                    <p>
+                      <i :class="vote.accepted_glyph"></i>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-11 border-left">
+                  <div class="col-md-6">
+                    <div class="session_title ">
+                      <p>{{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 ">
+                    <div class="session_votes ">
+                      <div class="progress smallbar ">
+                        <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                          <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
+                        </div>
+                        <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
+                          <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
+                        </div>
+                        <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
+                          <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
+                        </div>
+                        <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
+                          <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
+                        </div>
+                      </div>
+                      <div class="row ">
+                        <div class="col-xs-3 ">
+                          {{ vote.results.votes_for }}
+                          <div class="type ">Za</div>
+                          <div class="indicator aye ">&nbsp;</div>
+                        </div>
+                        <div class="col-xs-3 ">
+                          {{ vote.results.against }}
+                          <div class="type ">Proti</div>
+                          <div class="indicator ney ">&nbsp;</div>
+                        </div>
+                        <div class="col-xs-3 ">
+                          {{ vote.results.abstain }}
+                          <div class="type ">Vzdržan</div>
+                          <div class="indicator abstention ">&nbsp;</div>
+                        </div>
+                        <div class="col-xs-3 ">
+                          {{ vote.results.not_present }}
+                          <div class="type ">Niso</div>
+                          <div class="indicator not ">&nbsp;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
-
-        <tabs dark :switch-callback="focusTab" :start-tab="selectedTab">
-          <tab header="Seznam glasovanj">
-            <div class="empty" v-if="filteredVotes.length === 0"></div>
-            <div v-else id="votingCard" class="date-list">
-              <div class="session_voting">
-                <div
-                  v-for="vote in filteredVotes"
-                  :key="vote.session.id"
-                  class="clearfix single_voting">
-                  <div v-if="vote.results.is_outlier" class="fire-badge"></div>
-                  <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
-                  <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
-                  <a :href="vote.url">
-                    <div class=" col-md-1 ">
-                      <div :class="vote.accepted">
-                        <p>
-                          <i :class="vote.accepted_glyph"></i>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-md-11 border-left">
-                      <div class="col-md-6">
-                        <div class="session_title ">
-                          <p>{{ vote.results.text.split(' ').length > 19 ? vote.results.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.results.text }}</p>
-                        </div>
-                      </div>
-                      <div class="col-md-6 ">
-                        <div class="session_votes ">
-                          <div class="progress smallbar ">
-                            <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                              <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
-                            </div>
-                            <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                              <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
-                            </div>
-                            <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                              <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
-                            </div>
-                            <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                              <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
-                            </div>
-                          </div>
-                          <div class="row ">
-                            <div class="col-xs-3 ">
-                              {{ vote.results.votes_for }}
-                              <div class="type ">Za</div>
-                              <div class="indicator aye ">&nbsp;</div>
-                            </div>
-                            <div class="col-xs-3 ">
-                              {{ vote.results.against }}
-                              <div class="type ">Proti</div>
-                              <div class="indicator ney ">&nbsp;</div>
-                            </div>
-                            <div class="col-xs-3 ">
-                              {{ vote.results.abstain }}
-                              <div class="type ">Vzdržan</div>
-                              <div class="indicator abstention ">&nbsp;</div>
-                            </div>
-                            <div class="col-xs-3 ">
-                              {{ vote.results.not_present }}
-                              <div class="type ">Niso</div>
-                              <div class="indicator not ">&nbsp;</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </tab>
-          <tab header="Dinamika skozi čas">
-            <div class="empty" v-if="filteredVotes.length === 0"></div>
-            <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
-          </tab>
-          <tab header="Dinamika glede na MDT" class="tab-three">
-            <div v-if="filteredVotes.length === 0" class="empty"></div>
-            <bar-chart v-else :data="barChartData"></bar-chart>
-          </tab>
-        </tabs>
-
-      </div>
-
-      <card-info>
-        <p class="info-text lead"></p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.</p>
-        <p class="info-text">Rezultate prikazujemo na tri načine:</p>
-        <div class="info-text">
-          <ul>
-            <li>kot seznam vseh glasovanj,</li>
-            <li>kot črtni grafikon ki predstavlja število glasovanj na dan,</li>
-            <li>kot histogram s seštevki glasovanj glede na matično delovno telo.</li>
-          </ul>
-        </div>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl"></card-embed>
-
-      <card-share :url="generatedCardUrl"></card-share>
-    </div>
-    <card-footer />
+      </tab>
+      <tab header="Dinamika skozi čas">
+        <div class="empty" v-if="filteredVotes.length === 0"></div>
+        <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
+      </tab>
+      <tab header="Dinamika glede na MDT" class="tab-three">
+        <div v-if="filteredVotes.length === 0" class="empty"></div>
+        <bar-chart v-else :data="barChartData"></bar-chart>
+      </tab>
+    </tabs>
 
     <div v-show="sameModalVisible" class="card-modal">
       <div class="card-modal-header">
@@ -212,7 +205,7 @@
         <div class="card-modal-button" @click="toggleModal('different', false)">POTRDI</div>
       </div>
     </div>
-  </div>
+  </card-wrapper>
 </template>
 
 <script>
@@ -470,19 +463,6 @@
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
   @import '~parlassets/scss/helper';
-
-  .card-content-front.is-loading {
-    overflow-y: hidden;
-    position: relative;
-    &::before {
-      background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
-      content: '';
-      height: 100%;
-      position: absolute;
-      width: 100%;
-      z-index: 1;
-    }
-  }
 
   .primerjalnik {
 

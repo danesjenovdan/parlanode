@@ -1,75 +1,65 @@
 <template>
-  <div :id="cardData.cardData._id" class="card-container" :data-id="`${cardGroup}/${cardMethod}`">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    :id="cardData.cardData._id"
+    :data-id="`${cardGroup}/${cardMethod}`"
+    content-class="full"
+    v-bind="{ cardUrl, headerConfig }">
 
-    <div class="card-content full">
-      <div class="card-content-front" v-cloak>
-        <div class="filters">
-          <div class="filter tag-dropdown">
-            <div class="filter-label">Poslanec/-ka</div>
-             <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown> 
-          </div>
-          <div class="filter tag-dropdown">
-            <div class="filter-label">Naslovljenec/-ka</div>
-             <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown> 
-          </div>
-          <div class="filter month-dropdown">
-            <div class="filter-label">Časovno obdobje</div>
-             <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown> 
-          </div>
-          <div class="filter text-filter">
-            <div class="filter-label">Išči po naslovu vprašanja</div>
-            <input class="text-filter-input" type="text" v-model="textFilter">
-          </div>
-        </div>
-
-        <div class="votes stickinme date-list">
-          <template v-for="questionDay in filteredQuestionDays">
-            <div class="date">{{ questionDay.date }}</div>
-            <ul>
-              <li v-for="question in questionDay.questions">
-                <div class="parlaicon parlaicon-vprasanje"></div>
-                <div class="motion">
-                  <a class="funblue-light-hover" :href="`${slugs.base}/poslanec/${slugs.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
-                  {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : question.recipient_text.split(' ')[0] === 'ministrica' ? 'ministrici ' + question.recipient_text.split('ministrica ')[1] : 'Vladi'}` }}
-                  <a target="_blank" class="funblue-light-hover" :href="`${question.url}`">{{ question.title }}</a>
-                </div>
-              </li>
-            </ul>
-          </template>
-        </div>
-      </div>
-
-      <card-info>
+    <div slot="info">
         <p class="info-text lead">Pregled poslanskih vprašanj na nivoju poslanske skupine.</p>
         <p class="info-text heading">METODOLOGIJA</p>
         <p class="info-text">Zbrali smo vsa poslanska vprašanja, jih sortirali po poslanskih skupinah in jih ponudili v pregled glede na poslanca/-ko, ki jih je postavil/-a, glede na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi iskanje po naslovu poslanskih vprašanj.</p>
         <p class="info-text">Nabor poslanskih vprašanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
-      </card-info>
-
-      <card-embed :url="cardUrl" />
-
-      <card-share :url="cardUrl" />
     </div>
-    <card-footer />
-  </div>
+
+    <div class="filters">
+      <div class="filter tag-dropdown">
+        <div class="filter-label">Poslanec/-ka</div>
+          <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown>
+      </div>
+      <div class="filter tag-dropdown">
+        <div class="filter-label">Naslovljenec/-ka</div>
+          <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown>
+      </div>
+      <div class="filter month-dropdown">
+        <div class="filter-label">Časovno obdobje</div>
+          <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+      </div>
+      <div class="filter text-filter">
+        <div class="filter-label">Išči po naslovu vprašanja</div>
+        <input class="text-filter-input" type="text" v-model="textFilter">
+      </div>
+    </div>
+
+    <div class="votes stickinme date-list">
+      <template v-for="questionDay in filteredQuestionDays">
+        <div class="date">{{ questionDay.date }}</div>
+        <ul>
+          <li v-for="question in questionDay.questions">
+            <div class="parlaicon parlaicon-vprasanje"></div>
+            <div class="motion">
+              <a class="funblue-light-hover" :href="`${slugs.base}/poslanec/${slugs.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
+              {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : question.recipient_text.split(' ')[0] === 'ministrica' ? 'ministrici ' + question.recipient_text.split('ministrica ')[1] : 'Vladi'}` }}
+              <a target="_blank" class="funblue-light-hover" :href="`${question.url}`">{{ question.title }}</a>
+            </div>
+          </li>
+        </ul>
+      </template>
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
 import { capitalize } from 'lodash'
-import CardInfo from 'components/Card/Info.vue'
-import CardEmbed from 'components/Card/Embed.vue'
-import CardShare from 'components/Card/Share.vue'
-import CardHeader from 'components/Card/Header.vue'
-import CardFooter from 'components/Card/Footer.vue'
 import initializeBack from 'mixins/initializeBack'
 
+import CardWrapper from 'components/Card/Wrapper.vue';
 import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
 
 import slugs from '../../assets/urls.json';
 
 export default {
-  components: { CardInfo, CardEmbed, CardShare, CardHeader, CardFooter, SearchDropdown },
+  components: { CardWrapper, SearchDropdown },
   mixins: [ initializeBack ],
   computed: {
     MPsPlaceholder() {

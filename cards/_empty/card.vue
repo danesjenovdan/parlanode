@@ -1,24 +1,18 @@
 <template>
-  <div class="card-container card-halfling card-IME_KARTICE" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-IME_KARTICE"
+    :id="$options.cardData.cardData._id"
+    :card-url="url"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-
-      </div>
-
-      <card-info>
-        <p class="info-text lead"></p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
+    <div slot="info">
+      <p class="info-text lead"></p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text"></p>
     </div>
-    <card-footer />
-  </div>
+
+    <!-- Card content goes here -->
+  </card-wrapper>
 </template>
 
 <script>

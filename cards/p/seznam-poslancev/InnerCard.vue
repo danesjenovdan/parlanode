@@ -1,29 +1,20 @@
 <template>
-  <div :class="['card-container', 'card-halfling', 'card-seznam-poslancev', transitionClass]">
-    <card-header :config="headerConfig" :current-back="currentBack" />
+  <card-wrapper
+    class="card-halfling card-seznam-poslancev"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <card-info v-if="currentBack === 'info'">
-        <div v-html="infoText"></div>
-      </card-info>
+    <div slot="info" v-html="infoText"></div>
 
-      <card-embed v-else-if="currentBack === 'embed'" :url="generatedCardUrl" />
-
-      <card-share v-else-if="currentBack === 'share'" :url="generatedCardUrl" />
-
-      <div v-else class="card-content-front">
-        <sortable-table
-          class="person-list"
-          :columns="columns"
-          :items="mappedMembers"
-          :sort="currentSort"
-          :sort-order="currentSortOrder"
-          :sort-callback="selectSort"
-        />
-      </div>
-    </div>
-    <card-footer @toggleBack="toggleBack" />
-  </div>
+    <sortable-table
+      class="person-list"
+      :columns="columns"
+      :items="mappedMembers"
+      :sort="currentSort"
+      :sort-order="currentSortOrder"
+      :sort-callback="selectSort"
+    />
+  </card-wrapper>
 </template>
 
 <script>

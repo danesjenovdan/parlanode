@@ -1,56 +1,50 @@
 <template>
-  <div :id="cardData.cardData._id" class="card-container" :data-id="`${cardGroup}/${cardMethod}`">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    :id="cardData.cardData._id"
+    :data-id="`${cardGroup}/${cardMethod}`"
+    content-class="full"
+    v-bind="{ cardUrl, headerConfig }">
 
-    <div class="card-content full">
-      <div class="card-content-front" v-cloak>
-        <div class="filters">
-          <div class="filter text-filter">
-            <div class="filter-label">Išči po naslovu glasovanja</div>
-            <search-field v-model="textFilter" />
-          </div>
-          <div class="filter tag-dropdown">
-            <div class="filter-label">Matično delovno telo</div>
-            <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
-          </div>
-          <div class="filter month-dropdown">
-            <div class="filter-label">Časovno obdobje</div>
-            <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
-          </div>
-          <div class="filter option-party-buttons">
-            <div v-for="option in allOptions"
-            :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
-            @click="toggleOption(option.id)">{{ option.label }}</div>
-          </div>
-        </div>
-
-        <div class="votes stickinme date-list">
-          <template v-for="votingDay in filteredVotingDays">
-            <div class="date">{{ votingDay.date }}</div>
-            <ul>
-              <li v-for="ballot in votingDay.ballots">
-                <div :class="['icon', ballot.option]"></div>
-                <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
-                <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
-              </li>
-            </ul>
-          </template>
-        </div>
-      </div>
-
-      <card-info>
-        <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji.</p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
-        <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
-      </card-info>
-
-      <card-embed :url="cardUrl" />
-
-      <card-share :url="cardUrl" />
+    <div slot="info">
+      <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji.</p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
+      <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
-    <card-footer />
-  </div>
+
+    <div class="filters">
+      <div class="filter text-filter">
+        <div class="filter-label">Išči po naslovu glasovanja</div>
+        <search-field v-model="textFilter" />
+      </div>
+      <div class="filter tag-dropdown">
+        <div class="filter-label">Matično delovno telo</div>
+        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+      </div>
+      <div class="filter month-dropdown">
+        <div class="filter-label">Časovno obdobje</div>
+        <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+      </div>
+      <div class="filter option-party-buttons">
+        <div v-for="option in allOptions"
+        :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
+        @click="toggleOption(option.id)">{{ option.label }}</div>
+      </div>
+    </div>
+
+    <div class="votes stickinme date-list">
+      <template v-for="votingDay in filteredVotingDays">
+        <div class="date">{{ votingDay.date }}</div>
+        <ul>
+          <li v-for="ballot in votingDay.ballots">
+            <div :class="['icon', ballot.option]"></div>
+            <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
+            <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
+          </li>
+        </ul>
+      </template>
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
