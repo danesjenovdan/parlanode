@@ -72,8 +72,12 @@ export default {
       }
     },
   },
-
-}
+  watch: {
+    currentBack(newBack) {
+      this.$emit('backChange', newBack);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
