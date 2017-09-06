@@ -1,5 +1,5 @@
 <template>
-  <div class="card-content-embed hidden">
+  <div class="card-content-embed">
     <div class="card-back-content">
       <div class="embed-content">
         <div class="embed-divider"></div>

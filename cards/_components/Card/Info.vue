@@ -1,5 +1,5 @@
 <template>
-  <div class="card-content-info hidden">
+  <div class="card-content-info">
     <div class="card-back-content">
       <slot />
     </div>

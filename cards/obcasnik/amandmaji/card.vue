@@ -1,38 +1,32 @@
 <template>
-  <div class="card-container card-halfling card-IME_KARTICE" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-obcasnik-amandmaji"
+    :id="$options.cardData.cardData._id"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-        <tabs dark :switch-callback="focusTab">
-          <tab header="Št. članov PS">
-            <bar-chart :data="seatCountData"></bar-chart>
-          </tab>
-          <tab header="Št. vloženih amandmajev">
-            <bar-chart :data="amandmajiData"></bar-chart>
-          </tab>
-          <tab header="Št. vloženih amandmajev na poslanca">
-            <bar-chart :data="amandmajiNaPoslancaData"></bar-chart>
-          </tab>
-        </tabs>
+    <div slot="info">
+      <p class="info-text lead"></p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Glasovanja o amandmajih objavljena na spletnem mestu <a href="http://www.dz-rs.si">DZ RS</a> imajo ime zapisano po vnaprej določeni strukturi:</p>
+      <div class="info-text">
+        <pre>&#123;ime zakona&#125; - Amandma: &#123;K X. členu&#125; &#123;datum&#125; [&#123;kratica poslanske skupine&#125; - &#123;ime poslanske skupine&#125;]</pre>
       </div>
-
-      <card-info>
-        <p class="info-text lead"></p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Glasovanja o amandmajih objavljena na spletnem mestu <a href="http://www.dz-rs.si">DZ RS</a> imajo ime zapisano po vnaprej določeni strukturi:</p>
-        <div class="info-text">
-          <pre>&#123;ime zakona&#125; - Amandma: &#123;K X. členu&#125; &#123;datum&#125; [&#123;kratica poslanske skupine&#125; - &#123;ime poslanske skupine&#125;]</pre>
-        </div>
-        <p class="info-text">Število amandmajev, ki jih vložila posamezna poslanska skupina dobimo tako, da preštejemo vsa glasovanja, v imenu katerih se pojavi beseda amandma. Med preštetimi glasovanji poiščemo tista, katerih ime vsebije kratico poslanske skupine. Ta amandma prištejemo k tej poslanski skupini.</p>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
+      <p class="info-text">Število amandmajev, ki jih vložila posamezna poslanska skupina dobimo tako, da preštejemo vsa glasovanja, v imenu katerih se pojavi beseda amandma. Med preštetimi glasovanji poiščemo tista, katerih ime vsebije kratico poslanske skupine. Ta amandma prištejemo k tej poslanski skupini.</p>
     </div>
-    <card-footer />
-  </div>
+
+    <tabs dark :switch-callback="focusTab">
+      <tab header="Št. članov PS">
+        <bar-chart :data="seatCountData"></bar-chart>
+      </tab>
+      <tab header="Št. vloženih amandmajev">
+        <bar-chart :data="amandmajiData"></bar-chart>
+      </tab>
+      <tab header="Št. vloženih amandmajev na poslanca">
+        <bar-chart :data="amandmajiNaPoslancaData"></bar-chart>
+      </tab>
+    </tabs>
+  </card-wrapper>
 </template>
 
 <script>
@@ -44,7 +38,7 @@ export default {
     BarChart
   },
   mixins: [common],
-  name: 'ImeKartice',
+  name: 'ObcasnikAmandmaji',
   data() {
     return {
       data: this.$options.cardData.data.data,

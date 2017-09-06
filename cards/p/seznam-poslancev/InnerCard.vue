@@ -1,32 +1,20 @@
 <template>
-  <div class="card-container card-halfling card-seznam-poslancev">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-seznam-poslancev"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-        <sortable-table
-          class="person-list"
-          :columns="columns"
-          :items="mappedMembers"
-          :sort="currentSort"
-          :sort-order="currentSortOrder"
-          :sort-callback="selectSort"
-        />
-      </div>
+    <div slot="info" v-html="infoText"></div>
 
-      <card-info>
-        <div v-html="infoText"></div>
-        <!-- <p class="info-text lead">Seznam poslancev glede na rezultate analize {{currentAnalysisData.titleSuffix}}</p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text" v-html="currentAnalysisData.explanation"></p> -->
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
-    </div>
-    <card-footer />
-  </div>
+    <sortable-table
+      class="person-list"
+      :columns="columns"
+      :items="mappedMembers"
+      :sort="currentSort"
+      :sort-order="currentSortOrder"
+      :sort-callback="selectSort"
+    />
+  </card-wrapper>
 </template>
 
 <script>
