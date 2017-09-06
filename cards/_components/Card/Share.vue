@@ -4,7 +4,7 @@
       <div class="share-content">
         <label for="share-url">Neposredna povezava do kartice</label>
         <input type="url" class="form-control share-url" id="share-url" :value="shortenedUrl" ref="urlInput" />
-        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink" ref="copyButton">KOPIRAJ</button>
+        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink" ref="copyButton">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
       </div>
     </div>
   </div>
@@ -16,6 +16,7 @@ export default {
 
   data: () => ({
     shortenedUrl: '',
+    copied: false,
   }),
 
   props: {
@@ -26,8 +27,8 @@ export default {
     shortenUrl() {
       return new Promise(() => {
         $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
-          this.$refs.copyButton.textContent = 'KOPIRAJ';
           this.shortenedUrl = response;
+          this.copied = false;
           this.$nextTick(() => {
             this.$refs.urlInput.select();
           });
@@ -49,9 +50,7 @@ export default {
       }
 
       // change text
-      if (succeed) {
-        this.$refs.copyButton.textContent = "SKOPIRANO!";
-      }
+      this.copied =  succeed;
     },
   },
 
