@@ -20,7 +20,7 @@
         <div class="embed-divider"></div>
         <div class="embed-script">
           <textarea class="form-control" data-id="" :data-url="url" v-html="embedCode" ref="embedInput"></textarea>
-          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode" ref="copyButton">KOPIRAJ</button>
+          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode" ref="copyButton">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
         </div>
       </div>
     </div>
@@ -51,6 +51,7 @@ export default {
   data() {
     return {
       refresh: true,
+      copied: false,
     };
   },
 
@@ -61,14 +62,14 @@ export default {
 
     copyEmbedCode() {
       this.$refs.embedInput.select();
-      let succeed = false;
+      let succeeded = false;
       try {
-          succeed = document.execCommand("copy");
+          succeeded = document.execCommand("copy");
       } catch (e) {
           return e;
       }
       this.$refs.embedInput.blur();
-      this.$refs.copyButton.textContent = 'SKOPIRANO!'
+      this.copied = succeeded;
     },
   },
 };
