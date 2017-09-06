@@ -51,7 +51,6 @@
 
 <script>
 import { capitalize } from 'lodash'
-import initializeBack from 'mixins/initializeBack'
 
 import CardWrapper from 'components/Card/Wrapper.vue';
 import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
@@ -60,7 +59,6 @@ import slugs from '../../assets/urls.json';
 
 export default {
   components: { CardWrapper, SearchDropdown },
-  mixins: [ initializeBack ],
   computed: {
     MPsPlaceholder() {
       return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';
