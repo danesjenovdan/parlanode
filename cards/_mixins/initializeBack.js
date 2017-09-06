@@ -1,7 +1,6 @@
-/* globals makeEmbedSwitch activateCopyButton */
+/* globals activateCopyButton */
 
 export default {
   mounted() {
-    activateCopyButton();
   },
 };
