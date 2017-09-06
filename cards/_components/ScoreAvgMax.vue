@@ -1,95 +1,78 @@
 <template>
-  <div
+  <card-wrapper
     :id="cardData.cardData._id"
-    :class="['card-container', 'card-halfling', 'card-seznam-poslancev', transitionClass]"
+    class="card-halfling"
     :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
   >
-    <card-header :config="headerConfig" :current-back="currentBack" />
+    <div slot="info" v-html="infoText"></div>
 
-    <div class="card-content">
-      <card-info v-if="currentBack === 'info'">
-        <div v-html="infoText"></div>
-      </card-info>
-
-      <card-embed
-        v-else-if="currentBack === 'embed'"
-        :url="generatedCardUrl"
-      ></card-embed>
-
-      <card-share
-        v-else-if="currentBack === 'share'"
-        :url="generatedCardUrl"
-      ></card-share>
-
-      <div
-        v-else
-        class="card-content-front"
-        v-cloak
-      >
-        <div class="me_poslanec clearfix progress_flex">
-          <div class="column progress_title">
-            <span class="poslanec_title">
-              {{ person.name }}
-            </span>
-          </div>
-          <div class="column progress_bar">
-            <div class="progress smallbar ">
-              <div class="progress-bar red" role="progressbar" :aria-valuenow="results.sessions.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.score / 100) * 73}%`}">
-                <span class="sr-only">{{ results.sessions.score }}%</span>
-              </div>
-              <div class="progress_number">
-                {{ Math.round(results.sessions.score) }}
-              </div>
+    <div
+      class="card-content-front"
+      v-cloak
+    >
+      <div class="me_poslanec clearfix progress_flex">
+        <div class="column progress_title">
+          <span class="poslanec_title">
+            {{ person.name }}
+          </span>
+        </div>
+        <div class="column progress_bar">
+          <div class="progress smallbar ">
+            <div class="progress-bar red" role="progressbar" :aria-valuenow="results.sessions.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.score / 100) * 73}%`}">
+              <span class="sr-only">{{ results.sessions.score }}%</span>
+            </div>
+            <div class="progress_number">
+              {{ Math.round(results.sessions.score) }}
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="other_poslanec clearfix progress_flex">
-          <div class="column progress_title">
-            <span class="poslanec_title">
-              Povprečje
-            </span>
-          </div>
-          <div class="column progress_bar">
-            <div class="progress smallbar avgmin">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.average" aria-valuemin="0" aria-valuemax="100" :style="{width: `${(results.sessions.average / 100) * 73}%`}">
-                <span class="sr-only">{{ results.sessions.average }}%</span>
-              </div>
-              <div class="progress_number">
-                {{ Math.round(results.sessions.average) }}
-              </div>
+      <div class="other_poslanec clearfix progress_flex">
+        <div class="column progress_title">
+          <span class="poslanec_title">
+            Povprečje
+          </span>
+        </div>
+        <div class="column progress_bar">
+          <div class="progress smallbar avgmin">
+            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.average" aria-valuemin="0" aria-valuemax="100" :style="{width: `${(results.sessions.average / 100) * 73}%`}">
+              <span class="sr-only">{{ results.sessions.average }}%</span>
+            </div>
+            <div class="progress_number">
+              {{ Math.round(results.sessions.average) }}
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="other_poslanec clearfix progress_flex">
-          <div class="column progress_title">
-            <span class="poslanec_title">
-              Največ
-            </span>
-          </div>
-          <div class="column progress_bar">
-            <div class="progress smallbar avgmin">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.max.score / 100) * 73}%` }">
-                <span class="sr-only">{{ results.sessions.max.score }}%</span>
-                <a
-                  v-for="mp in results.sessions.max.mps"
-                  :href="`${slugs.base}${slugs.personLink.base}${slugs.person[mp.id].slug}${slugs.personLink.pregled}`"
-                  class="avgminimg img-circle"
-                  :style="{ 'background-image': `url('https://cdn.parlameter.si/v1/parlassets/img/people/square/${mp.gov_id}.png')` }"
-                ></a>
-              </div>
-              <div class="progress_number">
-                {{ Math.round(results.sessions.max.score) }}
-              </div>
+      <div class="other_poslanec clearfix progress_flex">
+        <div class="column progress_title">
+          <span class="poslanec_title">
+            Največ
+          </span>
+        </div>
+        <div class="column progress_bar">
+          <div class="progress smallbar avgmin">
+            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.max.score / 100) * 73}%` }">
+              <span class="sr-only">{{ results.sessions.max.score }}%</span>
+              <a
+                v-for="mp in results.sessions.max.mps"
+                :href="`${slugs.base}${slugs.personLink.base}${slugs.person[mp.id].slug}${slugs.personLink.pregled}`"
+                class="avgminimg img-circle"
+                :style="{ 'background-image': `url('https://cdn.parlameter.si/v1/parlassets/img/people/square/${mp.gov_id}.png')` }"
+              ></a>
+            </div>
+            <div class="progress_number">
+              {{ Math.round(results.sessions.max.score) }}
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    <card-footer @toggleBack="toggleBack"></card-footer>
-  </div>
+  </card-wrapper>
 </template>
 
 <script>
