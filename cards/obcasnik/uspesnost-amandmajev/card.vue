@@ -1,24 +1,18 @@
 <template>
-  <div class="card-container card-halfling card-IME_KARTICE" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-obcasnik-uspesnost-amandmajev"
+    :id="$options.cardData.cardData._id"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-        <stacked-bar-chart :data="rows"></stacked-bar-chart>
-      </div>
-
-      <card-info>
-        <p class="info-text lead"></p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text"></p>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
+    <div slot="info">
+      <p class="info-text lead"></p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text"></p>
     </div>
-    <card-footer />
-  </div>
+
+    <stacked-bar-chart :data="rows"></stacked-bar-chart>
+  </card-wrapper>
 </template>
 
 <script>
@@ -30,7 +24,7 @@ export default {
     StackedBarChart
   },
   mixins: [common],
-  name: 'ImeKartice',
+  name: 'ObcasnikUspesnostAmandmajev',
   data() {
     const data = this.$options.cardData.data
     const parties =  ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
