@@ -19,8 +19,8 @@
         </div>
         <div class="embed-divider"></div>
         <div class="embed-script">
-          <textarea class="form-control" data-id="" :data-url="url" v-html="embedCode"></textarea>
-          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
+          <textarea class="form-control" data-id="" :data-url="url" v-html="embedCode" ref="embedInput"></textarea>
+          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode" ref="copyButton">KOPIRAJ</button>
         </div>
       </div>
     </div>
@@ -57,6 +57,18 @@ export default {
   methods: {
     toggleEmbedSwitch() {
       this.refresh = !this.refresh;
+    },
+
+    copyEmbedCode() {
+      this.$refs.embedInput.select();
+      let succeed = false;
+      try {
+          succeed = document.execCommand("copy");
+      } catch (e) {
+          return e;
+      }
+      this.$refs.embedInput.blur();
+      this.$refs.copyButton.textContent = 'SKOPIRANO!'
     },
   },
 };
