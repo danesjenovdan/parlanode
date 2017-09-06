@@ -2,7 +2,7 @@
   <card-wrapper
     class="card-halfling card-prisotnost-chart"
     :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
-    :card-url="generatedCardUrl"
+    :card-url="generatedrl"
     :header-config="headerConfig"
     @backChange="handleBackChange">
 
