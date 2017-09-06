@@ -20,7 +20,7 @@
 <script>
 import common from 'mixins/common';
 import SortableTable from 'components/SortableTable.vue';
-import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
+import { getMemberLink, getMemberPortrait, getMemberPartyLink } from 'components/links';
 
 const arabicToRoman = arabic => ({
   0: '',
@@ -42,18 +42,18 @@ export default {
     mappedMembers() {
       if (this.demographics) {
         return this.processedMembers.map(member => [
-          { link: getPersonLink(member), image: getPersonPortrait(member) },
-          { link: getPersonLink(member), text: member.person.name },
+          { link: getMemberLink(member), image: getMemberPortrait(member) },
+          { link: getMemberLink(member), text: member.person.name },
           member.age,
           arabicToRoman(member.education),
           member.terms,
-          { link: member.partylink ? getPersonPartyLink(member) : '', text: member.person.party.acronym },
+          { link: member.partylink ? getMemberPartyLink(member) : '', text: member.person.party.acronym },
           member.formattedDistrict,
         ]);
       }
       return this.processedMembers.map(member => [
-        { link: getPersonLink(member), image: getPersonPortrait(member) },
-        { link: getPersonLink(member), text: member.person.name },
+        { link: getMemberLink(member), image: getMemberPortrait(member) },
+        { link: getMemberLink(member), text: member.person.name },
         { barchart: true, value: member.analysisValue, width: member.analysisPercentage },
         member.analysisDiff,
       ]);

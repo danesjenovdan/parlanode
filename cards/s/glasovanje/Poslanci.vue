@@ -26,13 +26,13 @@
     <ul class="person-list">
       <li class="item" v-for="member in filteredMembers">
         <div class="column portrait">
-          <a :href="getPersonLink(member)">
-            <img :src="getPersonPortrait(member)" />
+          <a :href="getMemberLink(member)">
+            <img :src="getMemberPortrait(member)" />
           </a>
         </div>
         <div class="column wider name">
-          <a class="funblue-light-hover" :href="getPersonLink(member)">{{ member.person.name }}</a><br>
-          <a class="funblue-light-hover" :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
+          <a class="funblue-light-hover" :href="getMemberLink(member)">{{ member.person.name }}</a><br>
+          <a class="funblue-light-hover" :href="getMemberPartyLink(member)">{{ member.person.party.acronym }}</a>
         </div>
         <div class="column vote">
           <div :class="`option option-${member.option}`">{{ translateOption(member.option, member.person.gender) }}</div>
@@ -45,7 +45,7 @@
 <script>
 import { find } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
-import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
+import { getMemberLink, getMemberPortrait, getMemberPartyLink } from 'components/links';
 import SearchField from 'components/SearchField.vue';
 import mapVotes from './mapVotes';
 import Result from './ResultShit.vue';
@@ -121,9 +121,9 @@ export default {
         return false;
       }
     },
-    getPersonLink,
-    getPersonPortrait,
-    getPersonPartyLink,
+    getMemberLink,
+    getMemberPortrait,
+    getMemberPartyLink,
     mapVotes,
     translateOption(option, gender) {
       return {

@@ -41,11 +41,11 @@
         <ul class="person-list">
           <li v-for="member in expandedMembers" class="item">
             <div class="column portrait">
-              <a :href="getPersonLink(member)"><img :src="getPersonPortrait(member)"></a>
+              <a :href="getMemberLink(member)"><img :src="getMemberPortrait(member)"></a>
             </div>
             <div class="column name">
-              <a class="funblue-light-hover" :href="getPersonLink(member)">{{ member.person.name }}</a><br>
-              <a class="funblue-light-hover" :href="getPersonPartyLink(member)">{{ member.person.party.acronym }}</a>
+              <a class="funblue-light-hover" :href="getMemberLink(member)">{{ member.person.name }}</a><br>
+              <a class="funblue-light-hover" :href="getMemberPartyLink(member)">{{ member.person.party.acronym }}</a>
             </div>
           </li>
         </ul>
@@ -56,7 +56,7 @@
 
 <script>
 import { find } from 'lodash';
-import { getPartyLink, getPersonLink, getPersonPartyLink, getPersonPortrait } from 'components/links';
+import { getPartyLink, getMemberLink, getMemberPartyLink, getMemberPortrait } from 'components/links';
 import StripedButton from 'components/StripedButton.vue';
 import mapVotes from './mapVotes';
 import Result from './Result.vue';
@@ -105,9 +105,9 @@ export default {
   },
   methods: {
     getPartyLink,
-    getPersonLink,
-    getPersonPartyLink,
-    getPersonPortrait,
+    getMemberLink,
+    getMemberPartyLink,
+    getMemberPortrait,
     mapVotes,
     expandVote(party, option) {
       if (find(this.parties, ['party.id', party]).votes[option] === 0) {
