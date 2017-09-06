@@ -1,6 +1,5 @@
 import CardWrapper from 'components/Card/Wrapper.vue';
 
-import initializeBack from 'mixins/initializeBack';
 import url from 'mixins/url';
 import slugs from '../../assets/urls.json';
 import { RIPPLE_DURATION } from 'components/constants';
@@ -15,7 +14,6 @@ export default {
     CardWrapper,
   },
   mixins: [
-    initializeBack,
     url,
   ],
   methods: {
