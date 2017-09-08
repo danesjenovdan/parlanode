@@ -4,7 +4,7 @@
       <div class="share-content">
         <label for="share-url">Neposredna povezava do kartice</label>
         <input type="url" class="form-control share-url" id="share-url" :value="shortenedUrl" ref="urlInput" />
-        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink" ref="copyButton">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
+        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
       </div>
     </div>
   </div>
