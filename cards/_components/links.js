@@ -23,3 +23,4 @@ export const getPersonPartyLink = person => getPartyLink(person.party);
 
 export const getMemberLink = member => getPersonLink(member.person);
 export const getMemberPortrait = member => getPersonPortrait(member.person);
+export const getMemberPartyLink = member => getPersonPartyLink(member.person);
