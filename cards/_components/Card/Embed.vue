@@ -20,7 +20,7 @@
         <div class="embed-divider"></div>
         <div class="embed-script">
           <textarea class="form-control" data-id="" :data-url="url" v-html="embedCode" ref="embedInput"></textarea>
-          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode" ref="copyButton">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
+          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
         </div>
       </div>
     </div>
