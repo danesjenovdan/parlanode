@@ -58,12 +58,10 @@
           <div class="progress smallbar avgmin">
             <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.max.score / 100) * 73}%` }">
               <span class="sr-only">{{ results.sessions.max.score }}%</span>
-              <a
+              <person-pin
                 v-for="mp in results.sessions.max.mps"
-                :href="`${slugs.base}${slugs.personLink.base}${slugs.person[mp.id].slug}${slugs.personLink.pregled}`"
-                class="avgminimg img-circle"
-                :style="{ 'background-image': `url('https://cdn.parlameter.si/v1/parlassets/img/people/square/${mp.gov_id}.png')` }"
-              ></a>
+                :person="mp"
+                :key="mp.gov_id"></person-pin>
             </div>
             <div class="progress_number">
               {{ Math.round(results.sessions.max.score) }}
@@ -78,11 +76,16 @@
 <script>
 import common from 'mixins/common';
 import slugs from '../../assets/urls.json';
+import PersonPin from 'components/PersonPin.vue';
 
 export default {
   name: 'ScoreAvgMax',
   
   mixins: [common],
+
+  components: {
+    PersonPin,
+  },
   
   props: {
     cardData: {
@@ -148,5 +151,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.progress {
+  overflow: visible; /* this overrides bootstrap which we should get rid of anyway */
+}
 </style>
