@@ -35,7 +35,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.$options.cardData);
+    console.log(this.$options.cardData.data.person);
   },
 }
 </script>
