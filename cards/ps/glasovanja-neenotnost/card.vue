@@ -1,81 +1,74 @@
 <template>
-  <div class="card-container card-halfling card-glasovanja-neenotnost" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-glasovanja-neenotnost"
+    :id="$options.cardData.cardData._id"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-        <div class="groups">
-          <striped-button
-            v-for="group in groups"
-            @click.native="selectGroup(group.acronym)"
-            :color="group.color.toLowercase()"
-            :key="group.acronym"
-            :selected="group.acronym === selectedGroup"
-            :small-text="group.name"
-            :is-uppercase="false"
-          />
-        </div>
-
-        <div class="filters">
-          <div class="filter text-filter">
-            <div class="filter-label">Išči po naslovu glasovanja</div>
-            <input class="text-filter-input" type="text" v-model="textFilter">
-          </div>
-          <div class="filter tag-dropdown">
-            <div class="filter-label">Matično delovno telo</div>
-            <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
-          </div>
-          <div class="filter month-dropdown">
-            <div class="filter-label">Časovno obdobje</div>
-            <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
-          </div>
-          <div class="filter text-filter">
-            <div class="filter-label">Razvrsti po</div>
-            <toggle v-model="selectedSort" :options="sortOptions" />
-          </div>
-        </div>
-
-        <div :class="['results', {'is-loading': loading }]">
-          <template v-for="day in filteredVotingDays">
-            <date-row v-if="selectedSort === 'date'" :date="day.date" />
-            <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
-              <div class="disunion">
-                <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
-                <div class="text">neenotnost</div>
-              </div>
-              <div class="name">{{ ballot.text }}</div>
-              <div class="result">
-                <template v-if="ballot.result">
-                  <i class="accepted glyphicon glyphicon-ok"></i>
-                  <div class="text">sprejet</div>
-                </template>
-                <template v-else>
-                  <i class="not-accepted glyphicon glyphicon-remove"></i>
-                  <div class="text">zavrnjen</div>
-                </template>
-              </div>
-            </a>
-          </template>
-        </div>
-      </div>
-
-      <card-info>
-        <p class="info-text lead"></p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.</p>
-        <p class="info-text">Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu. </p>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
+    <div slot="info">
+      <p class="info-text lead"></p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.</p>
+      <p class="info-text">Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu. </p>
     </div>
-    <card-footer />
-  </div>
+
+    <div class="groups">
+      <striped-button
+        v-for="group in groups"
+        @click.native="selectGroup(group.acronym)"
+        :color="group.color.toLowerCase()"
+        :key="group.acronym"
+        :selected="group.acronym === selectedGroup"
+        :small-text="group.name"
+        :is-uppercase="false"
+      />
+    </div>
+
+    <div class="filters">
+      <div class="filter text-filter">
+        <div class="filter-label">Išči po naslovu glasovanja</div>
+        <input class="text-filter-input" type="text" v-model="textFilter">
+      </div>
+      <div class="filter tag-dropdown">
+        <div class="filter-label">Matično delovno telo</div>
+        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+      </div>
+      <div class="filter month-dropdown">
+        <div class="filter-label">Časovno obdobje</div>
+        <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+      </div>
+      <div class="filter text-filter">
+        <div class="filter-label">Razvrsti po</div>
+        <toggle v-model="selectedSort" :options="sortOptions" />
+      </div>
+    </div>
+
+    <div :class="['results', {'is-loading': loading }]">
+      <template v-for="day in filteredVotingDays">
+        <date-row v-if="selectedSort === 'date'" :date="day.date" />
+        <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
+          <div class="disunion">
+            <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
+            <div class="text">neenotnost</div>
+          </div>
+          <div class="name">{{ ballot.text }}</div>
+          <div class="result">
+            <template v-if="ballot.result">
+              <i class="accepted glyphicon glyphicon-ok"></i>
+              <div class="text">sprejet</div>
+            </template>
+            <template v-else>
+              <i class="not-accepted glyphicon glyphicon-remove"></i>
+              <div class="text">zavrnjen</div>
+            </template>
+          </div>
+        </a>
+      </template>
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
-/* globals window $ measure */
 import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';

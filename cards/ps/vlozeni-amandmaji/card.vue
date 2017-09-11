@@ -1,129 +1,121 @@
 <template>
-  <div class="card-container card-halfling card-glasovanja-seja" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-vlozeni-amandmaji"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-        <div class="filters">
-          <div class="filter text-filter">
-            <div class="filter-label">Išči po naslovu glasovanja</div>
-            <search-field v-model="textFilter"/>
-          </div>
-          <div class="filter tag-dropdown">
-            <div class="filter-label">Matično delovno telo</div>
-            <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
-          </div>
-          <div class="filter month-dropdown">
-            <div class="filter-label">Časovno obdobje</div>
-            <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
-          </div>
-          <div class="filter button-filter">
-            <div class="filter-label">Prikaži</div>
-            <div class="filter-content">
-              <striped-button
-                v-for="voteType in voteTypes"
-                @click.native="toggleVoteType(voteType.id)"
-                :color="voteType.color"
-                :key="voteType.id"
-                :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
-                :small-text="voteType.label"
-              />
-            </div>
-          </div>
-        </div>
-        <div id="votingCard" class="date-list">
-          <div class="session_voting"
-               v-for="votingDay in filteredVotingDays"
-               :key="votingDay.date">
-            <div class="date">{{ votingDay.date }}</div>
-            <div class="clearfix single_voting"
-                 v-for="(vote, index) in votingDay.results"
-                 :key="index">
-              <a :href="vote.url">
-                <div v-if="vote.is_outlier" class="fire-badge"></div>
-                <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-                <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="left: -37px; position: absolute;"></div>
-                <div class="col-md-1">
-                  <div :class="vote.accepted">
-                    <p>
-                      <i :class="vote.accepted_glyph"></i>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-11 border-left">
-                  <div class="col-md-6">
-                    <div class="session_title">
-                      <p>
-                        {{ vote.text.split(' ').length > 19 ? vote.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.text }}
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="session_votes">
-                      <div class="progress smallbar">
-                        <div class="progress-bar fontblue" :style="{ width: `${vote.percent_votes_for}%` }">
-                          <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
-                        </div>
-                        <div class="progress-bar funblue" :style="{ width: `${vote.percent_against}%` }">
-                          <span class="sr-only">{{ vote.percent_against }}% votes for</span>
-                        </div>
-                        <div class="progress-bar ignoreblue" :style="{ width: `${vote.percent_abstain}%` }">
-                          <span class="sr-only">{{ vote.percent_abstain }}% votes for</span>
-                        </div>
-                        <div class="progress-bar noblue" :style="{ width: `${vote.percent_not_present}%` }">
-                          <span class="sr-only">{{ vote.percent_not_present }}% votes for</span>
-                        </div>
-                      </div>
-                      <div class="row ">
-                        <div class="col-xs-3 ">
-                          {{ vote.votes_for }}
-                          <div class="type ">Za</div>
-                          <div class="indicator aye ">&nbsp;</div>
-                        </div>
-                        <div class="col-xs-3 ">
-                          {{ vote.against }}
-                          <div class="type ">Proti</div>
-                          <div class="indicator ney ">&nbsp;</div>
-                        </div>
-                        <div class="col-xs-3 ">
-                          {{ vote.abstain }}
-                          <div class="type ">Vzdržan</div>
-                          <div class="indicator abstention ">&nbsp;</div>
-                        </div>
-                        <div class="col-xs-3 ">
-                          {{ vote.not_present }}
-                          <div class="type ">Niso</div>
-                          <div class="indicator not ">&nbsp;</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+    <div slot="info">
+      <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji</p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
+      <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="http://www.dz-rs.si">DZ RS</a>.</p>
+      <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622</a>.</p>
+      <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
+    </div>
+
+    <div class="filters">
+      <div class="filter text-filter">
+        <div class="filter-label">Išči po naslovu glasovanja</div>
+        <search-field v-model="textFilter"/>
+      </div>
+      <div class="filter tag-dropdown">
+        <div class="filter-label">Matično delovno telo</div>
+        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+      </div>
+      <div class="filter month-dropdown">
+        <div class="filter-label">Časovno obdobje</div>
+        <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+      </div>
+      <div class="filter button-filter">
+        <div class="filter-label">Prikaži</div>
+        <div class="filter-content">
+          <striped-button
+            v-for="voteType in voteTypes"
+            @click.native="toggleVoteType(voteType.id)"
+            :color="voteType.color"
+            :key="voteType.id"
+            :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
+            :small-text="voteType.label"
+          />
         </div>
       </div>
-
-      <card-info>
-        <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji</p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
-        <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="http://www.dz-rs.si">DZ RS</a>.</p>
-        <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622</a>.</p>
-        <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
     </div>
-    <card-footer />
-  </div>
+    <div id="votingCard" class="date-list">
+      <div class="session_voting"
+            v-for="votingDay in filteredVotingDays"
+            :key="votingDay.date">
+        <div class="date">{{ votingDay.date }}</div>
+        <div class="clearfix single_voting"
+              v-for="(vote, index) in votingDay.results"
+              :key="index">
+          <a :href="vote.url">
+            <div v-if="vote.is_outlier" class="fire-badge"></div>
+            <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+            <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="left: -37px; position: absolute;"></div>
+            <div class="col-md-1">
+              <div :class="vote.accepted">
+                <p>
+                  <i :class="vote.accepted_glyph"></i>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-11 border-left">
+              <div class="col-md-6">
+                <div class="session_title">
+                  <p>
+                    {{ vote.text.split(' ').length > 19 ? vote.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.text }}
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="session_votes">
+                  <div class="progress smallbar">
+                    <div class="progress-bar fontblue" :style="{ width: `${vote.percent_votes_for}%` }">
+                      <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
+                    </div>
+                    <div class="progress-bar funblue" :style="{ width: `${vote.percent_against}%` }">
+                      <span class="sr-only">{{ vote.percent_against }}% votes for</span>
+                    </div>
+                    <div class="progress-bar ignoreblue" :style="{ width: `${vote.percent_abstain}%` }">
+                      <span class="sr-only">{{ vote.percent_abstain }}% votes for</span>
+                    </div>
+                    <div class="progress-bar noblue" :style="{ width: `${vote.percent_not_present}%` }">
+                      <span class="sr-only">{{ vote.percent_not_present }}% votes for</span>
+                    </div>
+                  </div>
+                  <div class="row ">
+                    <div class="col-xs-3 ">
+                      {{ vote.votes_for }}
+                      <div class="type ">Za</div>
+                      <div class="indicator aye ">&nbsp;</div>
+                    </div>
+                    <div class="col-xs-3 ">
+                      {{ vote.against }}
+                      <div class="type ">Proti</div>
+                      <div class="indicator ney ">&nbsp;</div>
+                    </div>
+                    <div class="col-xs-3 ">
+                      {{ vote.abstain }}
+                      <div class="type ">Vzdržan</div>
+                      <div class="indicator abstention ">&nbsp;</div>
+                    </div>
+                    <div class="col-xs-3 ">
+                      {{ vote.not_present }}
+                      <div class="type ">Niso</div>
+                      <div class="indicator not ">&nbsp;</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
-  /* globals measure */
   import { format as formatDate } from 'date-fns';
   import { find } from 'lodash';
 

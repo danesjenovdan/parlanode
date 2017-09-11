@@ -56,8 +56,6 @@
 </template>
 
 <script>
-/* globals window $ measure */
-
 import { find } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';

@@ -1,42 +1,35 @@
 <template>
-  <div class="card-container card-halfling card-IME_KARTICE" :id="$options.cardData.cardData._id">
-    <card-header :config="headerConfig" />
+  <card-wrapper
+    class="card-halfling card-obcasnik-mandati"
+    :id="$options.cardData.cardData._id"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig">
 
-    <div class="card-content">
-      <div class="card-content-front">
-        <ul class="person-list">
-          <li class="person" v-for="member in data">
-            <a :href="slugs.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="portrait column">
-                    <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.gov_id + '.png'" />
-                </a>
-            <div class="column name">
-              <a :href="slugs.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="funblue-light-hover">{{ member.name }}</a><br>
-              <a v-if="member.acronym.indexOf('NeP') === -1" :href="slugs.base + slugs.partyLink.base + slugs.party[member.party_id].acronym + slugs.partyLink.pregled" class="funblue-light-hover">{{ member.acronym }}</a>
-              <span v-if="member.acronym.indexOf('NeP') !== -1">{{ member.acronym }}</span>
-            </div>
-            <div class="column large-number">
-              {{ member.mandates }}
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <card-info>
-        <p class="info-text lead"></p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Kartica predstavlja seznam desetih poslank in poslancev trenutnega sklica DZ, ki imajo največ mandatov. Število mandatov smo prešteli "na roke" z brskanjem po spletnem mestu <a href="http://www.dz-rs.si/">DZ RS</a>.</p>
-      </card-info>
-
-      <card-embed :url="generatedCardUrl" />
-
-      <card-share :url="generatedCardUrl" />
+    <div slot="info">
+      <p class="info-text lead"></p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Kartica predstavlja seznam desetih poslank in poslancev trenutnega sklica DZ, ki imajo največ mandatov. Število mandatov smo prešteli "na roke" z brskanjem po spletnem mestu <a href="http://www.dz-rs.si/">DZ RS</a>.</p>
     </div>
-    <card-footer />
-  </div>
+
+    <ul class="person-list">
+      <li class="person" v-for="member in data">
+        <a :href="slugs.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="portrait column">
+                <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.gov_id + '.png'" />
+            </a>
+        <div class="column name">
+          <a :href="slugs.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="funblue-light-hover">{{ member.name }}</a><br>
+          <a v-if="member.acronym.indexOf('NeP') === -1" :href="slugs.base + slugs.partyLink.base + slugs.party[member.party_id].acronym + slugs.partyLink.pregled" class="funblue-light-hover">{{ member.acronym }}</a>
+          <span v-if="member.acronym.indexOf('NeP') !== -1">{{ member.acronym }}</span>
+        </div>
+        <div class="column large-number">
+          {{ member.mandates }}
+        </div>
+      </li>
+    </ul>
+  </card-wrapper>
 </template>
 
 <script>
-  /* globals window $ measure */
   import common from 'mixins/common';
 
   export default {

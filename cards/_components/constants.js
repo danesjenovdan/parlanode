@@ -2,3 +2,4 @@ export const MONTH_NAMES = ['Januar', 'Februar', 'Marec', 'April', 'Maj', 'Junij
 export const PORTRAIT_ROOT_URL = 'https://cdn.parlameter.si/v1/parlassets/img/people/square/';
 export const ICONS_ROOT_URL = 'https://cdn.parlameter.si/v1/parlassets/icons/';
 export const ORGS_ROOT_URL = 'https://glej.parlameter.si/wb/getWorkingBodies/';
+export const RIPPLE_DURATION = 600;

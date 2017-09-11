@@ -1,27 +1,30 @@
 <template>
   <card-wrapper
-    class="card-halfling card-IME_KARTICE"
+    class="card-clani-poslanske-skupine"
+    content-class="full"
     :id="$options.cardData.cardData._id"
     :card-url="url"
     :header-config="headerConfig">
-
     <div slot="info">
-      <p class="info-text lead"></p>
+      <p class="info-text lead">Seznam vseh članov poslanske skupine.</p>
       <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text"></p>
+      <p class="info-text">
+        Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino, črpamo s <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" class="funblue-light-hover">spletnega mesta DZ</a>. Prikazani so samo trenutno aktivni poslanci.
+      </p>
     </div>
 
-    <!-- Card content goes here -->
+    <person-list class="person-list" :people="data.results" />
   </card-wrapper>
 </template>
 
 <script>
 import common from 'mixins/common';
+import PersonList from 'components/PersonList.vue';
 
 export default {
-  components: { },
+  components: { PersonList },
   mixins: [common],
-  name: 'ImeKartice',
+  name: 'ClaniPoslanskeSkupine',
   data() {
     return {
       data: this.$options.cardData.data,
@@ -34,19 +37,12 @@ export default {
       },
     };
   },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
 };
 </script>
 
 <style lang="scss" scoped>
+.person-list {
+  max-height: 100%;
+  overflow-y: auto;
+}
 </style>
