@@ -337,11 +337,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/breakpoints';
+
 .blue-button-list-item {
   font-size: 12px;
 }
 .filters {
   display: flex;
+
   .filter {
     margin-left: 3px;
     flex: 1;
@@ -366,6 +369,28 @@ export default {
       width: 40px;
       &:not(:last-child) {
         margin-right: 3px;
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+
+    .parties {
+      flex: 1 1 100%;
+
+      .party {
+        margin-bottom: 10px;
+      }
+    }
+
+    .district-filter  {
+      display: none;
+    }
+
+    .genders {
+      .gender {
+        height: 100%;
       }
     }
   }
