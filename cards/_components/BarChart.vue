@@ -24,7 +24,7 @@
               </div>
               <div
                 v-if="showNumbers"
-                class="progress-number">
+                class="progress_number">
                 {{ row.value + ' | ' + row.percentage }} %
               </div>
           </div>
@@ -50,9 +50,10 @@ export default {
       const mytotal = this.data.reduce((acc, row) => acc + row.value, 0);
 
       return rows.map(row => ({
+        link: row.link,
         name: row.label,
         value: row.value,
-        widthPercentage: (row.value / mymax) * 80,
+        widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
         percentage: ((row.value / mytotal) * 100).toFixed(2),
       })).sort((a, b) => b.value - a.value);
     },
@@ -69,7 +70,7 @@ export default {
 
   .labeled-chart .column.chart { flex: 4; }
 }
-.progress-number {
+.progress_number {
   @include respond-to(mobile) { display: none; }
 }
 </style>

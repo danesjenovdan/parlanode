@@ -12,16 +12,17 @@
       <p class="info-text">Korpus predstavljajo vsi govori, dokument pa vsi {{ vocabulary.poslanca3[gender] }} govori.</p>
     </div>
 
-    <word-list :items="data.results" />
+    <bar-chart :data="chartRows" />
   </card-wrapper>
 </template>
 
 <script>
+import { getSearchTermLink } from 'components/links';
 import common from 'mixins/common';
-import WordList from 'components/WordList.vue';
+import BarChart from 'components/BarChart.vue';
 
 export default {
-  components: { WordList },
+  components: { BarChart },
   mixins: [common],
   name: 'ImeKartice',
   data() {
@@ -38,6 +39,15 @@ export default {
       },
       gender,
     };
+  },
+  computed: {
+    chartRows() {
+      return this.data.results.map(item => ({
+        label: item.term,
+        value: Math.round(item.scores['tf-idf'] * 5000),
+        link: getSearchTermLink(item.term),
+      }));
+    },
   },
   methods: {
     measurePiwik(filter, sort, order) {
