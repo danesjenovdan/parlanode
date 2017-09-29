@@ -163,7 +163,6 @@ export default {
     return {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
-      vocabulary: this.cardData.vocab,
       votingDays: this.cardData.data.results,
       allMonths,
       allOptions,
