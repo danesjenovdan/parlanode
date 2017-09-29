@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import PoslanskaVprasanjaInPobude from 'components/PoslanskaVprasanjaInPobude.vue'
+import PoslanskaVprasanjaInPobude from 'components/PoslanskaVprasanjaInPobude.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanskeSkupine',
-  components: { PoslanskaVprasanjaInPobude }
-}
+  components: { PoslanskaVprasanjaInPobude },
+};
 </script>

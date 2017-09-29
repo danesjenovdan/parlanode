@@ -97,7 +97,7 @@ import { getPersonLink, getPersonPortrait } from 'components/links';
 export default {
   components: { },
   mixins: [common],
-  name: 'ImeKartice',
+  name: 'OsnovneInformacijePoslanskeSkupine',
   data() {
     return {
       data: this.$options.cardData.data,
