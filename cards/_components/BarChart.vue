@@ -1,11 +1,20 @@
 <template>
-  <ul class="party-list">
+  <ul class="word-list">
     <li
       v-for="(row, index) in rows"
       :key="index"
       class="labeled-chart">
       <div class="column chart-label">
-        {{ row.name }}
+        <div class="label-container">
+          <template v-if="row.link">
+            <a :href="row.link" class="funblue-light-hover">
+              {{ row.name }}
+            </a>
+          </template>
+          <template v-else>
+            {{ row.name }}
+          </template>
+        </div>
       </div>
       <div class="column chart">
           <div class="progress hugebar">
@@ -13,7 +22,9 @@
                 class="progress-bar funblue"
                 :style="{ width: row.widthPercentage + '%'}">
               </div>
-              <div class="progress_number">
+              <div
+                v-if="showNumbers"
+                class="progress_number">
                 {{ row.value + ' | ' + row.percentage }} %
               </div>
           </div>
@@ -27,17 +38,22 @@ export default {
   name: 'BarChart',
   props: {
     data: Array,
+    showNumbers: Boolean,
+    alreadyCalculated: Boolean,
   },
   computed: {
     rows() {
+      if (this.alreadyCalculated) return this.data;
+
       const rows = JSON.parse(JSON.stringify(this.data));
       const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value), 0);
       const mytotal = this.data.reduce((acc, row) => acc + row.value, 0);
 
       return rows.map(row => ({
+        link: row.link,
         name: row.label,
         value: row.value,
-        widthPercentage: (row.value / mymax) * 80,
+        widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
         percentage: ((row.value / mytotal) * 100).toFixed(2),
       })).sort((a, b) => b.value - a.value);
     },
@@ -45,18 +61,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import '~parlassets/scss/colors';
+<style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
 
-.party-list .labeled-chart .column.chart-label {
-  width: auto;
-  width: 200px;
-  font-size: 14px;
+.word-list {
+  max-height: 480px;
+  overflow: hidden;
+
+  .labeled-chart .column.chart { flex: 4; }
 }
 .progress_number {
-  @include respond-to(mobile) {
-    display: none;
-  }
+  @include respond-to(mobile) { display: none; }
 }
 </style>

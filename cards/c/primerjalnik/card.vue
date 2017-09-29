@@ -155,7 +155,7 @@
       </tab>
       <tab header="Dinamika glede na MDT" class="tab-three">
         <div v-if="filteredVotes.length === 0" class="empty"></div>
-        <bar-chart v-else :data="barChartData"></bar-chart>
+        <bar-chart v-else :data="barChartData" show-numbers></bar-chart>
       </tab>
     </tabs>
 

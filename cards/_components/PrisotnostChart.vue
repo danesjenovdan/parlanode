@@ -44,12 +44,6 @@ export default {
     generatedCardUrl: String,
   },
 
-  data() {
-    return {
-      vocabulary: this.cardData.vocab,
-    };
-  },
-
   computed: {
     headerConfig() {
       let specifics;

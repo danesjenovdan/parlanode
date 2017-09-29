@@ -158,7 +158,6 @@ export default {
     return {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
-      vocabulary: this.cardData.vocab,
       questionDays: this.cardData.data.results,
       allMonths,
       allMPs,
