@@ -17,13 +17,13 @@
 
     <tabs dark :switch-callback="focusTab">
       <tab header="Št. članov PS">
-        <bar-chart :data="seatCountData"></bar-chart>
+        <bar-chart :data="seatCountData" show-numbers></bar-chart>
       </tab>
       <tab header="Št. vloženih amandmajev">
-        <bar-chart :data="amandmajiData"></bar-chart>
+        <bar-chart :data="amandmajiData" show-numbers></bar-chart>
       </tab>
       <tab header="Št. vloženih amandmajev na poslanca">
-        <bar-chart :data="amandmajiNaPoslancaData"></bar-chart>
+        <bar-chart :data="amandmajiNaPoslancaData" show-numbers></bar-chart>
       </tab>
     </tabs>
   </card-wrapper>
