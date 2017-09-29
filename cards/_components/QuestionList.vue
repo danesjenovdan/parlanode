@@ -1,5 +1,5 @@
 <template>
-  <div class="votes stickinme date-list">
+  <div class="questions date-list">
     <div
       v-for="day in questionDays"
       :key="day.date">
@@ -65,10 +65,9 @@ export default {
 <style lang="scss">
 @import '~parlassets/scss/breakpoints';
 
-.votes {
+.questions {
   min-height: 100px;
   flex: 1;
-  // list-style: none;
   overflow-y: auto;
   margin-top: 18px;
   max-height: 100%;
