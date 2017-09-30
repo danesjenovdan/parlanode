@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-glasovanja-seja"
+    :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 

@@ -1,0 +1,189 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [66],
+    "name": "Julijana Bizjak Mlakar",
+    "gov_id": "P158",
+    "gender": "f",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 5,
+    "has_function": false
+  },
+  "created_at": "20.02.2017",
+  "created_for": "20.02.2017",
+  "results": [{
+    "term": "Vipol\u017e",
+    "scores": {
+      "tf": 12,
+      "df": 15,
+      "tf-idf": 0.8
+    }
+  }, {
+    "term": "SNG",
+    "scores": {
+      "tf": 18,
+      "df": 34,
+      "tf-idf": 0.5294117647058824
+    }
+  }, {
+    "term": "KSEVT",
+    "scores": {
+      "tf": 20,
+      "df": 40,
+      "tf-idf": 0.5
+    }
+  }, {
+    "term": "rudarski",
+    "scores": {
+      "tf": 19,
+      "df": 46,
+      "tf-idf": 0.41304347826086957
+    }
+  }, {
+    "term": "dedi\u0161\u010dina",
+    "scores": {
+      "tf": 310,
+      "df": 844,
+      "tf-idf": 0.36729857819905215
+    }
+  }, {
+    "term": "grad",
+    "scores": {
+      "tf": 92,
+      "df": 260,
+      "tf-idf": 0.35384615384615387
+    }
+  }, {
+    "term": "arheolo\u0161ki",
+    "scores": {
+      "tf": 13,
+      "df": 38,
+      "tf-idf": 0.34210526315789475
+    }
+  }, {
+    "term": "glasba",
+    "scores": {
+      "tf": 90,
+      "df": 266,
+      "tf-idf": 0.3383458646616541
+    }
+  }, {
+    "term": "Idrija",
+    "scores": {
+      "tf": 23,
+      "df": 83,
+      "tf-idf": 0.27710843373493976
+    }
+  }, {
+    "term": "kulturen",
+    "scores": {
+      "tf": 536,
+      "df": 2046,
+      "tf-idf": 0.2619745845552297
+    }
+  }, {
+    "term": "knji\u017eni\u010den",
+    "scores": {
+      "tf": 21,
+      "df": 82,
+      "tf-idf": 0.25609756097560976
+    }
+  }, {
+    "term": "primopredaja",
+    "scores": {
+      "tf": 11,
+      "df": 43,
+      "tf-idf": 0.2558139534883721
+    }
+  }, {
+    "term": "avdiovizualen",
+    "scores": {
+      "tf": 53,
+      "df": 215,
+      "tf-idf": 0.24651162790697675
+    }
+  }, {
+    "term": "samozaposlen",
+    "scores": {
+      "tf": 67,
+      "df": 276,
+      "tf-idf": 0.2427536231884058
+    }
+  }, {
+    "term": "spomenik",
+    "scores": {
+      "tf": 89,
+      "df": 373,
+      "tf-idf": 0.2386058981233244
+    }
+  }, {
+    "term": "galerija",
+    "scores": {
+      "tf": 15,
+      "df": 68,
+      "tf-idf": 0.22058823529411764
+    }
+  }, {
+    "term": "kultura",
+    "scores": {
+      "tf": 723,
+      "df": 3294,
+      "tf-idf": 0.21948998178506376
+    }
+  }, {
+    "term": "filmski",
+    "scores": {
+      "tf": 35,
+      "df": 160,
+      "tf-idf": 0.21875
+    }
+  }, {
+    "term": "knji\u017enica",
+    "scores": {
+      "tf": 47,
+      "df": 235,
+      "tf-idf": 0.2
+    }
+  }, {
+    "term": "premo\u017een",
+    "scores": {
+      "tf": 24,
+      "df": 129,
+      "tf-idf": 0.18604651162790697
+    }
+  }, {
+    "term": "zamrznitev",
+    "scores": {
+      "tf": 15,
+      "df": 83,
+      "tf-idf": 0.18072289156626506
+    }
+  }, {
+    "term": "umetnosten",
+    "scores": {
+      "tf": 17,
+      "df": 98,
+      "tf-idf": 0.17346938775510204
+    }
+  }, {
+    "term": "Sne\u017enik",
+    "scores": {
+      "tf": 11,
+      "df": 64,
+      "tf-idf": 0.171875
+    }
+  }, {
+    "term": "producent",
+    "scores": {
+      "tf": 20,
+      "df": 119,
+      "tf-idf": 0.16806722689075632
+    }
+  }]
+}

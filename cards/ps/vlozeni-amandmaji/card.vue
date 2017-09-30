@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-vlozeni-amandmaji"
+    :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
@@ -138,19 +138,19 @@
     data() {
       const loadFromState = stateLoader(this.$options.cardData.state);
 
-      const voteTypes = [
-        { id: true, color: 'binary-for', label: 'sprejeti', selected: false },
-        { id: false, color: 'binary-against', label: 'zavrnjeni', selected: false },
-      ];
+      const voteTypes = [{
+        id: true, color: 'binary-for', label: 'sprejeti', selected: false,
+      }, {
+        id: false, color: 'binary-against', label: 'zavrnjeni', selected: false,
+      }];
 
       const votingDays = this.$options.cardData.data.results.map(votingDay => ({
         date: votingDay.date,
         results: votingDay.votes.map(voteMapper),
       }));
 
-      const allTags = this.$options.cardData.data.all_tags.map(
-        tag => ({ id: tag, label: tag, selected: false }),
-      );
+      const allTags = this.$options.cardData.data.all_tags
+        .map(tag => ({ id: tag, label: tag, selected: false }));
 
       const allMonths = generateMonths();
 
@@ -207,12 +207,10 @@
         });
 
         return {
-          tags: this.allTags.filter(
-            tag => validTags.indexOf(tag.id) > -1 || tag.selected,
-          ),
-          months: this.allMonths.filter(
-            month => validMonths.indexOf(month.id) > -1 || month.selected,
-          ),
+          tags: this.allTags
+            .filter(tag => validTags.indexOf(tag.id) > -1 || tag.selected),
+          months: this.allMonths
+            .filter(month => validMonths.indexOf(month.id) > -1 || month.selected),
         };
       },
       selectedTags() {

@@ -1,0 +1,9 @@
+{
+  "_id": "osnovne_informacije_poslanska_skupina",
+  "name": "Osnovne informacije",
+  "dataUrl": "https://analize.parlameter.si/v1/pg/getBasicInfOfPG",
+  "type": "poslanska_skupina",
+  "lastUpdate": "2017-03-19T18:04:55.294Z",
+  "method": "osnovne-informacije-poslanska-skupina",
+  "group": "ps"
+}

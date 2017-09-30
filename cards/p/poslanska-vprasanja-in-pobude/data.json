@@ -1,0 +1,620 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [66],
+    "name": "Julijana Bizjak Mlakar",
+    "gov_id": "P158",
+    "gender": "f",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 5,
+    "has_function": false
+  },
+  "created_at": "7. 7. 2017",
+  "created_for": "7. 7. 2017",
+  "results": [{
+    "date": "7. 7. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica brez resorja pristojna za razvoj strate\u0161ke projekte in kohezijo, ministrica za okolje in prostor",
+      "title": "v zvezi s povrnitvijo sredstev ob\u010dinam za kohezijske projekte",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051a2c45903d6050d6358dcbf662203574e1bc651c71fc3fb8b99e489e",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Irena Majcen",
+        "district": null,
+        "ministry": {
+          "acronym": "MOP",
+          "id": 137,
+          "is_coalition": true,
+          "name": "Ministrstvo za okolje in prostor"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1358,
+        "gov_id": "G1358",
+        "has_function": false
+      }, {
+        "name": "Alenka Smerkolj",
+        "district": null,
+        "ministry": {
+          "acronym": "SVRK",
+          "id": 141,
+          "is_coalition": true,
+          "name": "Slu\u017eba vlade za razvoj in evropsko kohezijsko politiko"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1308,
+        "gov_id": "G1308",
+        "has_function": false
+      }],
+      "id": 10651,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "16. 6. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za okolje in prostor, ministrica brez resorja pristojna za razvoj strate\u0161ke projekte in kohezijo",
+      "title": "v zvezi z vra\u010dilom sredstev ob\u010dinam",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0052816bde18fc4cf4d91b9dc5a32d2a95e5b107c88ec6a4e56ae141e9d",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Irena Majcen",
+        "district": null,
+        "ministry": {
+          "acronym": "MOP",
+          "id": 137,
+          "is_coalition": true,
+          "name": "Ministrstvo za okolje in prostor"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1358,
+        "gov_id": "G1358",
+        "has_function": false
+      }, {
+        "name": "Alenka Smerkolj",
+        "district": null,
+        "ministry": {
+          "acronym": "SVRK",
+          "id": 141,
+          "is_coalition": true,
+          "name": "Slu\u017eba vlade za razvoj in evropsko kohezijsko politiko"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1308,
+        "gov_id": "G1308",
+        "has_function": false
+      }],
+      "id": 10570,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za delo dru\u017eino socialne zadeve in enake mo\u017enosti",
+      "title": "v zvezi z vse bolj nepravi\u010dnim pokojninskim sistemom",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b558897d92a2a833fbe5772eb922e3c64476f250b0b9680b1e921629",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Anja Kopa\u010d Mrak",
+        "district": null,
+        "ministry": {
+          "acronym": "MDDSZ",
+          "id": 127,
+          "is_coalition": true,
+          "name": "Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1307,
+        "gov_id": "G1307",
+        "has_function": false
+      }],
+      "id": 10559,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "15. 6. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za delo dru\u017eino socialne zadeve in enake mo\u017enosti",
+      "title": "v zvezi z neupo\u0161tevanjem vpla\u010dil prispevkov za dokup zavarovalne dobe",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005325f20af115e74d004bc4259b99d5d62380a0465e7db40814ad47e3c",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Anja Kopa\u010d Mrak",
+        "district": null,
+        "ministry": {
+          "acronym": "MDDSZ",
+          "id": 127,
+          "is_coalition": true,
+          "name": "Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1307,
+        "gov_id": "G1307",
+        "has_function": false
+      }],
+      "id": 10535,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "19. 5. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za delo dru\u017eino socialne zadeve in enake mo\u017enosti",
+      "title": "glede zneska 292,56 evra, ki naj bi po mnenju resornega ministrstva zado\u0161\u010dal za pre\u017eivetje ene osebe",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e11378e0d36f0a0c65e0210a890039610c278deb605095f74481e50b",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Anja Kopa\u010d Mrak",
+        "district": null,
+        "ministry": {
+          "acronym": "MDDSZ",
+          "id": 127,
+          "is_coalition": true,
+          "name": "Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1307,
+        "gov_id": "G1307",
+        "has_function": false
+      }],
+      "id": 10455,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "19. 4. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi  z zagotovitvijo dostopa do zdravljenja vsem dr\u017eavljanom Slovenije ter potrebno ambulantno obravnavo tudi tetraplegikov, ki potrebujejo dihalni aparat",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b5b04a7633c985d06a9bda313ba17aceadd24394bdac2a65b21d4e26",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10322,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi z razlogi za vztrajanja pri praksi, po kateri smejo zdravniki, zaposleni v javnih zdravstvenih ustanovah, in koncesionarji delati tudi v zasebni zdravstveni dejavnosti",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b9fa7c4ee9dc2c2c40f006f61702352f430ee6e439e39cf34c7ffea9",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10321,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "12. 4. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi z obra\u010dunavanjem zdravstvenih storitev javnih zavodov",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00545193e6ca3e353e8fa3ff8a363094a7b6590d8900901e6e7e4e9a702",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10288,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za delo dru\u017eino socialne zadeve in enake mo\u017enosti",
+      "title": "v zvezi z razpisi prostih delovnih mest za zdravnike",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054967441cd705fef2e80a32cf47884f40e81df416284dfaa363bd186b",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Anja Kopa\u010d Mrak",
+        "district": null,
+        "ministry": {
+          "acronym": "MDDSZ",
+          "id": 127,
+          "is_coalition": true,
+          "name": "Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1307,
+        "gov_id": "G1307",
+        "has_function": false
+      }],
+      "id": 10289,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi z direktivo EU, ki zapoveduje zdravnikom le 48 ur dela tedensko",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005564996a16945986aa339c897446fc49f2654b23a6b9baabc99f0b49d",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10287,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "31. 3. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi s podpisanimi sporazumi s katerim izmed sindikatov",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005c00f9de6fef203d9e1158b5d22c6f631bc02d6dc1f2252323a266ac0",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10252,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "22. 3. 2017",
+    "questions": [{
+      "recipient_orgs": [{
+        "acronym": "Vlada",
+        "is_coalition": true,
+        "id": 126,
+        "name": "Vlada"
+      }],
+      "recipient_text": "Vlada",
+      "title": "v zvezi z gradnjo drugega tira med Diva\u010do in Koprom",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a93a56750bce43b42bd111082f74b0a925b9ee7fe74f75a849e48689",
+      "session_name": "Unknown",
+      "recipient_persons": [],
+      "id": 10209,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [{
+        "acronym": "Vlada",
+        "is_coalition": true,
+        "id": 126,
+        "name": "Vlada"
+      }],
+      "recipient_text": "Vlada",
+      "title": "v zvezi z receptom za pre\u017eivetje meseca z minimalnim zneskom 292,56 evra, ki naj bi zado\u0161\u010dal za pre\u017eivetje ene osebe",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005adcf4d45728790817eb2e4818468dca126b1bca04bb758b8ef1382fa",
+      "session_name": "Unknown",
+      "recipient_persons": [],
+      "id": 10210,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "17. 3. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi z ukinitvijo \u00bbdvo\u017eivkarskega\u00ab sistema zdravnikov ter finan\u010dno-kadrovsko okrepitvijo javnih zdravstvenih domov in bolni\u0161nic",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b6bf5134665d89897c8a2869095867fb8a0f8b3db1aff7ee4caa9b2a",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10169,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za delo dru\u017eino socialne zadeve in enake mo\u017enosti",
+      "title": "v zvezi z odpravo rev\u0161\u010dine med starej\u0161imi",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b478eb6a23417abe7dfee3c4ae9cdc00a7ed57fddd59f11b0379beb4",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Anja Kopa\u010d Mrak",
+        "district": null,
+        "ministry": {
+          "acronym": "MDDSZ",
+          "id": 127,
+          "is_coalition": true,
+          "name": "Ministrstvo za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1307,
+        "gov_id": "G1307",
+        "has_function": false
+      }],
+      "id": 10170,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "10. 2. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi s predlogom novele zakona o zdravstveni dejavnosti",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051e636502a164ff8aaf2ba85a03d9f9ac19b50278e2a88d18d65eb2bd",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 10015,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "6. 2. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi s podpisanim sporazumom s sindikatom Praktikum",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00570ea0cf7104eec926eadc8a7512764362e2104ee34ef24a56399546f",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 9962,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "20. 1. 2017",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi z razmejitvijo javne od zasebne zdravstvene dejavnosti",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005efe923889145b4e298d43db557dd3f3021c3ae5a2a6ad3205c77a70e",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 9889,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "15. 11. 2016",
+    "questions": [{
+      "recipient_orgs": [{
+        "acronym": "Vlada",
+        "is_coalition": true,
+        "id": 126,
+        "name": "Vlada"
+      }],
+      "recipient_text": "Vlada",
+      "title": "v zvezi z ukrepi Vlade na podro\u010dju odprave rev\u0161\u010dine med starej\u0161imi",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005612552533785a97f684b1f804bc71e201e6dfc99cc09a9d358bcf719",
+      "session_name": "Unknown",
+      "recipient_persons": [],
+      "id": 9789,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "11. 11. 2016",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "predsednik Vlade",
+      "title": "v zvezi z dosedanjimi in prihodnjimi ukrepi Vlade, ki bodo pripomogli k odpravi rev\u0161\u010dine med starej\u0161imi in upokojenimi",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cc11b436270f71aaf9cf7b99ab3cdd63a83527dadaed7483633bb4fd",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Miro Cerar",
+        "district": [103],
+        "ministry": {
+          "acronym": "Vlada",
+          "id": 126,
+          "is_coalition": true,
+          "name": "Vlada"
+        },
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "ministry",
+        "id": 13,
+        "gov_id": "G13",
+        "has_function": false
+      }],
+      "id": 9774,
+      "session_id": "Unknown"
+    }]
+  }, {
+    "date": "16. 9. 2016",
+    "questions": [{
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za izobra\u017eevanje znanost in \u0161port",
+      "title": "v zvezi z ukrepi Ministrstva za izobra\u017eevanje, znanost in \u0161port za ohranjanje slovenskega jezika med Slovenci v zamejstvu",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0052418209e8a086e47bdb2a2a656d938c5d59893ab95fb0c04fca41a3c",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Maja Makovec Bren\u010di\u010d",
+        "district": null,
+        "ministry": {
+          "acronym": "MIZS",
+          "id": 131,
+          "is_coalition": true,
+          "name": "Ministrstvo za izobra\u017eevanje, znanost in \u0161port"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1341,
+        "gov_id": "G1341",
+        "has_function": false
+      }],
+      "id": 9619,
+      "session_id": "Unknown"
+    }, {
+      "recipient_orgs": [],
+      "recipient_text": "ministrica za zdravje",
+      "title": "v zvezi s stanjem na podro\u010dju urologije in s kr\u010denjem pravic iz obveznega zdravstvenega zavarovanja",
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00527947c479003cb6c2ca2ef83ee41ea1f1d412e59e3cb882c9eb9fc15",
+      "session_name": "Unknown",
+      "recipient_persons": [{
+        "name": "Milojka Kolar Celarc",
+        "district": null,
+        "ministry": {
+          "acronym": "MZ",
+          "id": 139,
+          "is_coalition": true,
+          "name": "Ministrstvo za zdravje"
+        },
+        "gender": "f",
+        "is_active": false,
+        "party": null,
+        "type": "ministry",
+        "id": 1306,
+        "gov_id": "G1306",
+        "has_function": false
+      }],
+      "id": 9618,
+      "session_id": "Unknown"
+    }]
+  }]
+}

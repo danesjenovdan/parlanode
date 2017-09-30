@@ -1,0 +1,9 @@
+{
+  "_id": "p_clanstva",
+  "name": "Članstva",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getMembershipsOfMember",
+  "type": "poslanec",
+  "lastUpdate": "2017-09-30T15:12:58.755Z",
+  "method": "clanstva",
+  "group": "p"
+}

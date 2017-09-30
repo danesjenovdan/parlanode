@@ -1,0 +1,121 @@
+{
+  "memberships": {
+    "skupina_prijateljstva": [{
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP001",
+      "org_type": "skupina prijateljstva",
+      "org_id": 37,
+      "name": "Skupina prijateljstva z Argentino"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP008",
+      "org_type": "skupina prijateljstva",
+      "org_id": 44,
+      "name": "Skupina prijateljstva z Bosno in Hercegovino"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP010",
+      "org_type": "skupina prijateljstva",
+      "org_id": 46,
+      "name": "Skupina prijateljstva s \u010ce\u0161ko"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP017",
+      "org_type": "skupina prijateljstva",
+      "org_id": 53,
+      "name": "Skupina prijateljstva s Hrva\u0161ko"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP019",
+      "org_type": "skupina prijateljstva",
+      "org_id": 55,
+      "name": "Skupina prijateljstva z Italijo"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP023",
+      "org_type": "skupina prijateljstva",
+      "org_id": 59,
+      "name": "Skupina prijateljstva s Kanado"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP028",
+      "org_type": "skupina prijateljstva",
+      "org_id": 63,
+      "name": "Skupina prijateljstva z Mad\u017earsko"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP029",
+      "org_type": "skupina prijateljstva",
+      "org_id": 64,
+      "name": "Skupina prijateljstva z Makedonijo"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP032",
+      "org_type": "skupina prijateljstva",
+      "org_id": 67,
+      "name": "Skupina prijateljstva z Nem\u010dijo"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP038",
+      "org_type": "skupina prijateljstva",
+      "org_id": 73,
+      "name": "Skupina prijateljstva s Srbijo"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP045",
+      "org_type": "skupina prijateljstva",
+      "org_id": 80,
+      "name": "Skupina prijateljstva z Zdru\u017eenimi dr\u017eavami Amerike"
+    }, {
+      "url": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP066",
+      "org_type": "skupina prijateljstva",
+      "org_id": 119,
+      "name": "Skupina prijateljstva z Novo Zelandijo"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP004",
+      "org_type": "skupina prijateljstva",
+      "org_id": 40,
+      "name": "Skupina prijateljstva z Avstrijo"
+    }, {
+      "url": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/SkupinaPrijateljstva?idSP=SP044",
+      "org_type": "skupina prijateljstva",
+      "org_id": 79,
+      "name": "Skupina prijateljstva z Veliko Britanijo"
+    }],
+    "odbor": [{
+      "url": null,
+      "org_type": "odbor",
+      "org_id": 28,
+      "name": "Odbor za zunanjo politiko"
+    }, {
+      "url": null,
+      "org_type": "odbor",
+      "org_id": 16,
+      "name": "Odbor za delo, dru\u017eino, socialne zadeve in invalide"
+    }],
+    "poslanska_skupina": [{
+      "url": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskaSkupina?idPS=PS015",
+      "org_type": "poslanska skupina",
+      "org_id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    }],
+    "komisija": [{
+      "url": null,
+      "org_type": "komisija",
+      "org_id": 10,
+      "name": "Komisija za nadzor javnih financ"
+    }, {
+      "url": null,
+      "org_type": "komisija",
+      "org_id": 106,
+      "name": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic"
+    }]
+  },
+  "person": {
+    "is_active": false,
+    "district": [66],
+    "name": "Julijana Bizjak Mlakar",
+    "gov_id": "P158",
+    "gender": "f",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 5,
+    "has_function": false
+  },
+  "created_at": "28.09.2017",
+  "created_for": "26.09.2017"
+}

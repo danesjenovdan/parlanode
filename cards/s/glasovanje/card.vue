@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-glasovanje"
+    :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
@@ -46,16 +46,16 @@
         />
       </div>
     </div>
-    <tabs dark :switch-callback="focusTab" :start-tab="selectedTab">
-      <tab header="Poslanci">
+    <p-tabs @switch="focusTab" :start-tab="selectedTab">
+      <p-tab label="Poslanci">
         <poslanci
           :members="data.members"
           :member-votes="data.all"
           :result="data.result"
           :state="state"
         />
-      </tab>
-      <tab header="Poslanske skupine">
+      </p-tab>
+      <p-tab label="Poslanske skupine">
         <poslanske-skupine
           ref="parties"
           :members="data.members"
@@ -64,8 +64,8 @@
           :selectedParty="state.selectedParty || null"
           :selectedOption="state.selectedOption || null"
         />
-      </tab>
-      <tab header="Stran vlade">
+      </p-tab>
+      <p-tab label="Stran vlade">
         <poslanske-skupine
           ref="sides"
           :members="data.members"
@@ -74,19 +74,21 @@
           :selectedParty="state.selectedParty || null"
           :selectedOption="state.selectedOption || null"
         />
-      </tab>
-    </tabs>
+      </p-tab>
+    </p-tabs>
   </card-wrapper>
 </template>
 
 <script>
 import { find, pick } from 'lodash';
 import common from 'mixins/common';
+import PTab from 'components/Tab.vue';
+import PTabs from 'components/Tabs.vue';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-  components: { Poslanci, PoslanskeSkupine },
+  components: { Poslanci, PoslanskeSkupine, PTab, PTabs },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
