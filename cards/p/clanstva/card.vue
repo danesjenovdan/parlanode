@@ -42,21 +42,15 @@
 <script>
 import { reduce } from 'lodash';
 import common from 'mixins/common';
+import { member } from 'mixins/altHeaders';
 
 export default {
   components: { },
-  mixins: [common],
+  mixins: [common, member],
   name: 'Clanstva',
   data() {
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
     };
   },
   computed: {
