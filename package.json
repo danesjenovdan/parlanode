@@ -4,7 +4,7 @@
   "description": "Parlameter frontend server for serving embeds and the page with cms for managing them",
   "main": "run.js",
   "scripts": {
-    "dev": "NODE_ENV=dev_local NODE_ICU_DATA=node_modules/full-icu node_modules/.bin/supervisor run",
+    "dev": "NODE_ENV=develop NODE_ICU_DATA=node_modules/full-icu node_modules/.bin/supervisor run",
     "start": "NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
     "test": "mocha tests/api_test.js",
     "cards-build": "run(){ CARD_NAME=$1 NODE_ENV=production node cards/build.js; }; run",
