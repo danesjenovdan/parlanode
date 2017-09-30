@@ -26,10 +26,7 @@ exports.connect = function ( cb ) {
     });
 
     mongoose.connection.on('error', function ( err ) {
-
       reject(err);
-      console.log(chalk.red(err));
-
     });
 
     mongoose.connection.once('open', function () {
