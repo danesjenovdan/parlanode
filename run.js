@@ -24,9 +24,8 @@ function init() {
       console.log(chalk.green('All is well!'));
 
     })
-    .catch((err) => {
-      console.log(chalk.red('Error'));
-      console.log(err);
+    .catch(( err ) => {
+      console.error(chalk.red('Error: ', err));
     });
 
 }
@@ -36,9 +35,9 @@ function initializeDeployment() {
   const Config = mongoose.model('Config');
 
   return Config.findOne({})
-    .then((configDoc) => {
+    .then(( configDoc ) => {
 
-      if (configDoc && configDoc.password) return Promise.resolve();
+      if ( configDoc && configDoc.password ) return Promise.resolve();
 
       return inquirer.prompt([{
         type    : 'email',
@@ -48,7 +47,7 @@ function initializeDeployment() {
         type    : 'text',
         message : 'Enter a password',
         name    : 'password'
-      }]).then((response) => {
+      }]).then(( response ) => {
 
           return bcrypt.genSalt(10)
             .then(salt => bcrypt.hash(response.password, salt))
@@ -58,7 +57,7 @@ function initializeDeployment() {
             }));
 
         })
-        .then((userData) => {
+        .then(( userData ) => {
 
           const config = new Config({
             password : userData.hash,
@@ -68,7 +67,7 @@ function initializeDeployment() {
           return config.save();
 
         })
-        .catch((err) => {
+        .catch(( err ) => {
           console.log(err);
         });
 
@@ -79,7 +78,7 @@ function initializeDeployment() {
 /**
  * Run if main
  */
-if (require.main === module) {
+if ( require.main === module ) {
   init();
 }
 
