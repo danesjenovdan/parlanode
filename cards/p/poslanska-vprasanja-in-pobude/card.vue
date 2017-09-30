@@ -2,7 +2,7 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     content-class="full"
-    :cardUrl="url"
+    :card-url="url"
     :header-config="headerConfig">
 
     <div slot="info">

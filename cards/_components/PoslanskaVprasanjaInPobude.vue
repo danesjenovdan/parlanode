@@ -1,9 +1,9 @@
 <template>
   <card-wrapper
-    :id="cardData.cardData._id"
-    :data-id="`${cardGroup}/${cardMethod}`"
+    :id="$options.cardData.cardData._id"
     content-class="full"
-    v-bind="{ cardUrl, headerConfig }">
+    :card-url="cardUrl"
+    :header-config="headerConfig">
 
     <div slot="info">
         <p class="info-text lead">Pregled poslanskih vprašanj na nivoju poslanske skupine.</p>

@@ -1,8 +1,7 @@
 <template>
   <card-wrapper
-    class="card-halfling card-osnovne-informacije-poslanska-skupina"
-    content-class="full"
     :id="$options.cardData.cardData._id"
+    content-class="full"
     :card-url="url"
     :header-config="headerConfig">
 

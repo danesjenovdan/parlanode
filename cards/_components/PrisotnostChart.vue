@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-prisotnost-chart"
-    :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
+    :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     @backChange="handleBackChange">

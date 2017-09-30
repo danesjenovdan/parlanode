@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    class="card-halfling card-IME_KARTICE"
     :id="$options.cardData.cardData._id"
     :card-url="url"
     :header-config="headerConfig">

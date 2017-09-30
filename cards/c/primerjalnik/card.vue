@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-primerjalnik"
+    :id="$options.cardData.cardData._id"
     :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
