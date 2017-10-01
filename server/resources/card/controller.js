@@ -346,10 +346,6 @@ exports.render = function ( req, res ) {
                   urlsData,
                 };
 
-                if ( embed || frame ) {
-                  cardData.cardData.isEmbedded = true;
-                }
-
                 try {
                   if ( state ) state = JSON.parse(state);
                   console.log(state);
@@ -383,7 +379,7 @@ exports.render = function ( req, res ) {
                     html = replaceHeader(cardData, html);
                   }
 
-                  if ( frame || embed ) {
+                  if ( (frame || embed) && !vue ) {
                     const templateName = frame ? 'card_frame' : 'embed_frame';
                     html               = addFrame(templateName, previewWidth, cardData, html);
                   }
@@ -463,24 +459,20 @@ exports.render = function ( req, res ) {
                   const bundlesPath = `cards/${group}/${method}/bundles/`
                   const serverBundle = fs.readFileSync(`${bundlesPath}server.js`, 'utf-8');
                   const clientBundle = fs.readFileSync(`${bundlesPath}client.js`, 'utf-8');
-                  const stylePath = `${bundlesPath}style.css`;
-                  const style = fs.existsSync(stylePath) ? `<style>${fs.readFileSync(stylePath, 'utf-8')}</style>` : '';
-
-                  const rendererInstance    = renderer.createBundleRenderer(serverBundle);
+                  const templateName = frame ? 'frame' : 'default';
+                  const rendererInstance = renderer.createBundleRenderer(serverBundle, {
+                    template: require('fs').readFileSync(`cards/template_${templateName}.html`, 'utf-8'),
+                    runInNewContext: false,
+                  });
                   const stringifiedCardData = JSON.stringify(cardData);
 
                   const context = JSON.parse(stringifiedCardData);
+                  context.clientBundle = clientBundle;
                   rendererInstance.renderToString(
                     context,
                     ( error, html ) => {
                       if ( error ) throw error;
-
-                      render(`
-                      ${style}
-                      ${html}
-                      <script>window.__INITIAL_STATE__ = ${stringifiedCardData}</script>
-                      <script>${clientBundle}</script>
-                    `, true);
+                      render(html, true);
                     }
                   );
                 }

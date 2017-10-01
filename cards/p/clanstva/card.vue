@@ -91,6 +91,11 @@ export default {
       }
     },
   },
+  created() {
+    const context = this.$options.cardData;
+    context.template.pageTitle =
+      `${context.cardData.name} - ${context.data.person.name}`;
+  },
 };
 </script>
 

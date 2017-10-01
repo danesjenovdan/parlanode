@@ -17,4 +17,12 @@ export default {
   mixins: [
     url,
   ],
+  created() {
+    this.$root.$options.cardData.template = {
+      pageTitle: 'TITLE MISSING!',
+      frameContainerClass: this.$root.$options.cardData.cardData.big
+        ? 'col-md-12'
+        : 'col-md-6 col-md-offset-3',
+    };
+  },
 };
