@@ -18,8 +18,10 @@ const compileWithWebpack = config =>
     webpack(config, (err, stats) => {
       if (err) { reject(err); }
       console.log(stats.toString({
-        chunks: false, // Makes the build much quieter
         colors: true,
+        hash: false,
+        modules: false,
+        version: false,
       }));
       resolve();
     });
