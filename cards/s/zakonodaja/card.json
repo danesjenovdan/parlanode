@@ -1,0 +1,9 @@
+{
+  "_id": "zakonodaja",
+  "name": "Obravnavani zakoni",
+  "dataUrl": "https://analize.parlameter.si/v1/s/getLegislation/",
+  "type": "seja",
+  "lastUpdate": "2017-03-19T18:04:55.294Z",
+  "method": "zakonodaja",
+  "group": "s"
+}
