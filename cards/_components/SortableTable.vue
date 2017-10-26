@@ -33,6 +33,9 @@
         <template v-else-if="cell && cell.ticker">
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
+        <template v-if="cell.html">
+          <div v-html="cell.html"></div>
+        </template>
         <template v-else>
           <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
           <template v-else>
