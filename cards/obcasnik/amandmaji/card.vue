@@ -14,27 +14,31 @@
       <p class="info-text">Število amandmajev, ki jih vložila posamezna poslanska skupina dobimo tako, da preštejemo vsa glasovanja, v imenu katerih se pojavi beseda amandma. Med preštetimi glasovanji poiščemo tista, katerih ime vsebije kratico poslanske skupine. Ta amandma prištejemo k tej poslanski skupini.</p>
     </div>
 
-    <tabs dark :switch-callback="focusTab">
-      <tab header="Št. članov PS">
+    <p-tabs @switch="focusTab">
+      <p-tab label="Št. članov PS">
         <bar-chart :data="seatCountData" show-numbers></bar-chart>
-      </tab>
-      <tab header="Št. vloženih amandmajev">
+      </p-tab>
+      <p-tab label="Št. vloženih amandmajev">
         <bar-chart :data="amandmajiData" show-numbers></bar-chart>
-      </tab>
-      <tab header="Št. vloženih amandmajev na poslanca">
+      </p-tab>
+      <p-tab label="Št. vloženih amandmajev na poslanca">
         <bar-chart :data="amandmajiNaPoslancaData" show-numbers></bar-chart>
-      </tab>
-    </tabs>
+      </p-tab>
+    </p-tabs>
   </card-wrapper>
 </template>
 
 <script>
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';
+import PTab from 'components/Tab.vue';
+import PTabs from 'components/Tabs.vue';
 
 export default {
   components: {
-    BarChart
+    BarChart,
+    PTab,
+    PTabs,
   },
   mixins: [common],
   name: 'ObcasnikAmandmaji',

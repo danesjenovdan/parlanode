@@ -1,4 +1,5 @@
 /* eslint-disable */
+import Vue from 'vue';
 import Card from 'cardPath/card.vue';
 import cardData from 'cardPath/card.json';
 import data from 'cardPath/data.json';
