@@ -18,12 +18,14 @@
 <script>
 export default {
   name: 'Tabs',
-  data: () => ({
-    tabs: [],
-    headers: [],
-    active: null,
-    show: null,
-  }),
+  data() {
+    return {
+      tabs: [],
+      headers: [],
+      active: null,
+      show: null,
+    };
+  },
   watch: {
     active(value) {
       this.show = this.tabs[value];
