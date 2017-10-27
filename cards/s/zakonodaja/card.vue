@@ -2,7 +2,7 @@
   <card-wrapper
     class="card-halfling card-IME_KARTICE"
     :id="$options.cardData.cardData._id"
-    :card-url="url"
+    :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
     <div slot="info">
@@ -57,6 +57,7 @@ export default {
       { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'wider optional text-left padme' },
       { id: 'state', label: 'Status', additionalClass: 'state text-left' },
     ],
+
     laws() {
       return this.data.results.map((e) => {
         let resultHTML;
@@ -82,6 +83,7 @@ export default {
         };
       });
     },
+
     sortedLaws() {
       let sorted = this.laws;
 
@@ -113,6 +115,10 @@ export default {
 
       return this.currentSortOrder === 'asc' ? sorted : sorted.reverse();
     },
+
+    generatedCardUrl() {
+      return `${this.url}${this.data.session.id}?p=np`;
+    }
   },
 
   methods: {
@@ -147,6 +153,10 @@ export default {
         }
       }
     },
+  },
+
+  mounted() {
+    console.log(this.$options.cardData);
   },
 };
 </script>
