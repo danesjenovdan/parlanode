@@ -10,11 +10,12 @@
       <p class="info-text">Podatki o članstvih pridobljeni s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
-    <tabs>
-      <tab
+    <p-tabs>
+      <p-tab
         v-for="(tabContents, tabName) in tabs"
         :key="tabName"
-        :header="tabName">
+        :label="tabName"
+        variant="light">
         <ul class="membership-list">
           <template v-if="tabContents.length">
             <li
@@ -33,8 +34,8 @@
           </template>
           <div v-else class="no-results"><i>Brez članstev.</i></div>
         </ul>
-      </tab>
-    </tabs>
+      </p-tab>
+    </p-tabs>
   </card-wrapper>
 </template>
 
@@ -42,9 +43,11 @@
 import { reduce } from 'lodash';
 import common from 'mixins/common';
 import { member } from 'mixins/altHeaders';
+import PTab from 'components/Tab.vue';
+import PTabs from 'components/Tabs.vue';
 
 export default {
-  components: { },
+  components: { PTab, PTabs },
   mixins: [common, member],
   name: 'Clanstva',
   data() {
@@ -92,7 +95,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabs {
+.p-tabs {
   flex: 1;
   height: 180px;
 }
