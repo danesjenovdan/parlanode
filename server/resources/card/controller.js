@@ -438,9 +438,14 @@ exports.render = (req, res) => {
                 const bundlesPath = `cards/${group}/${method}/bundles/`;
                 const serverBundle = fs.readFileSync(`${bundlesPath}server.js`, 'utf-8');
                 const clientBundle = fs.readFileSync(`${bundlesPath}client.js`, 'utf-8');
-                const templateName = frame ? 'frame' : 'default';
+                let vueTemplateName = 'default';
+                if (frame) {
+                  vueTemplateName = 'frame';
+                } else if (embed) {
+                  vueTemplateName = 'embed';
+                }
                 const rendererInstance = renderer.createBundleRenderer(serverBundle, {
-                  template: fs.readFileSync(`cards/template_${templateName}.html`, 'utf-8'),
+                  template: fs.readFileSync(`cards/template_${vueTemplateName}.html`, 'utf-8'),
                   runInNewContext: false,
                 });
                 const stringifiedCardData = JSON.stringify(cardData);
