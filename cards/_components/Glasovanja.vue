@@ -12,6 +12,13 @@
       <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
+    <div v-show="true" class="card-content__empty">
+      <div class="card-content__empty-inner">
+        <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
+        <p>Podatki trenutno niso na voljo.</p>
+      </div>
+    </div>
+
     <div class="filters">
       <div class="filter text-filter">
         <div class="filter-label">Išči po naslovu glasovanja</div>
