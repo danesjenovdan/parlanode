@@ -3,6 +3,7 @@
     <card-header :config="headerConfig" :current-back="currentBack" />
 
     <div :class="['card-content', contentClass]">
+
       <card-info v-if="currentBack === 'info'">
         <slot name="info" />
       </card-info>
@@ -12,7 +13,14 @@
       <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
       <div v-else class="card-content-front" :class="contentFrontClass" v-cloak>
-        <slot />
+        <div v-if="true" class="card-content__empty">
+          <div class="card-content__empty-inner">
+            <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
+            <p>Podatki trenutno niso na voljo.</p>
+          </div>
+        </div>
+
+        <slot v-else />
       </div>
     </div>
     <card-footer @toggleBack="toggleBack" />
