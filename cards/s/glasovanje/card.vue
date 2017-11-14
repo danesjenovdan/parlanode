@@ -163,7 +163,10 @@ export default {
       }
     },
   },
-
+  created() {
+    this.$options.cardData.template.contextUrl =
+      `${this.slugs.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
+  },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {
       this.state.selectedOption = newSelectedOption;

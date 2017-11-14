@@ -42,13 +42,14 @@
 <script>
 import { reduce } from 'lodash';
 import common from 'mixins/common';
+import { memberOverview } from 'mixins/contextUrls';
 import { member } from 'mixins/altHeaders';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 
 export default {
   components: { PTab, PTabs },
-  mixins: [common, member],
+  mixins: [common, member, memberOverview],
   name: 'Clanstva',
   data() {
     return {

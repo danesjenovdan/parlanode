@@ -241,6 +241,10 @@
         }
       },
     },
+    created() {
+      this.$options.cardData.template.contextUrl =
+        `${this.slugs.base}/seja/glasovanja/${this.data.session.id}`;
+    },
   };
 </script>
 

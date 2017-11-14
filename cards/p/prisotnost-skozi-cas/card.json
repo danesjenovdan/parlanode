@@ -3,7 +3,8 @@
   "name": "Prisotnost na glasovanjih skozi čas",
   "dataUrl": "https://analize.parlameter.si/v1/p/getPresenceThroughTime",
   "type": "poslanec",
-  "lastUpdate": "2017-04-02T20:51:47.576Z",
+  "lastUpdate": "2017-11-14T21:53:18.185Z",
   "method": "prisotnost-skozi-cas",
-  "group": "p"
+  "group": "p",
+  "big": true
 }

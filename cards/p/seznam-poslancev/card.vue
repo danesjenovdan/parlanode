@@ -26,7 +26,7 @@
               />
             </div>
             <search-field class="filter text-filter" v-model="textFilter" />
-            <search-dropdown
+            <p-search-dropdown
               class="filter district-filter"
               :items="districts"
               :placeholder="districtPlaceholder"
@@ -73,6 +73,7 @@ import { find } from 'lodash';
 import stateLoader from 'helpers/stateLoader';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
 import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
@@ -83,6 +84,7 @@ export default {
   components: {
     BlueButtonList,
     InnerCard,
+    PSearchDropdown,
     SearchField,
     StripedButton,
     StripedIconButton,

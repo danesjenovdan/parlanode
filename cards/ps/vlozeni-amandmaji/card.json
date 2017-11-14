@@ -3,7 +3,7 @@
   "name": "Vloženi amandmaji",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getAmendmentsOfPG",
   "type": "poslanska_skupina",
-  "lastUpdate": "2017-11-12T18:55:48.833Z",
+  "lastUpdate": "2017-11-14T22:19:55.513Z",
   "method": "vlozeni-amandmaji",
   "group": "ps",
   "big": true,

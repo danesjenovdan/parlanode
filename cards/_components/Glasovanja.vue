@@ -19,11 +19,11 @@
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
       <div class="filter month-dropdown">
         <div class="filter-label">Časovno obdobje</div>
-        <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter option-party-buttons">
         <div v-for="option in allOptions"
@@ -51,10 +51,12 @@
 import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import SearchField from 'components/SearchField.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import common from 'mixins/common';
+import { memberVotes, partyVotes } from 'mixins/contextUrls';
 
 export default {
-  components: { SearchField },
+  components: { PSearchDropdown, SearchField },
   mixins: [common],
   computed: {
     tagPlaceholder() {
@@ -235,6 +237,9 @@ export default {
     },
     person: Object,
     party: Object,
+  },
+  created() {
+    (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
   },
 };
 </script>

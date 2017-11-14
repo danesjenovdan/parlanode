@@ -18,11 +18,12 @@
 
 <script>
 import common from 'mixins/common';
+import { partyOverview } from 'mixins/contextUrls';
 import PersonList from 'components/PersonList.vue';
 
 export default {
   components: { PersonList },
-  mixins: [common],
+  mixins: [common, partyOverview],
   name: 'ClaniPoslanskeSkupine',
   data() {
     return {

@@ -18,12 +18,13 @@
 <script>
 import { getSearchTermLink } from 'components/links';
 import common from 'mixins/common';
+import { memberSpeeches } from 'mixins/contextUrls';
 import BarChart from 'components/BarChart.vue';
 
 export default {
   components: { BarChart },
-  mixins: [common],
-  name: 'ImeKartice',
+  mixins: [common, memberSpeeches],
+  name: 'PoslanecTFIDF',
   data() {
     const { gender } = this.$options.cardData.data.person;
 

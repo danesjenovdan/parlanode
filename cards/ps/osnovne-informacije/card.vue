@@ -91,11 +91,12 @@
 
 <script>
 import common from 'mixins/common';
+import { partyOverview } from 'mixins/contextUrls';
 import { getPersonLink, getPersonPortrait } from 'components/links';
 
 export default {
   components: { },
-  mixins: [common],
+  mixins: [common, partyOverview],
   name: 'OsnovneInformacijePoslanskeSkupine',
   data() {
     return {

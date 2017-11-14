@@ -62,5 +62,8 @@ export default {
       return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
     },
   },
+  created() {
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/seje`;
+  },
 };
 </script>

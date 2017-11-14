@@ -3,7 +3,8 @@
   "name": "Glasovanja - poslanska skupina",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getTaggedBallots",
   "type": "poslanska_skupina",
-  "lastUpdate": "2017-04-02T20:51:48.937Z",
+  "lastUpdate": "2017-11-14T22:04:08.923Z",
   "method": "glasovanja",
-  "group": "ps"
+  "group": "ps",
+  "big": true
 }

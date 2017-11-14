@@ -17,11 +17,12 @@
 
 <script>
 import common from 'mixins/common';
+import { memberOverview } from 'mixins/contextUrls';
 import QuestionList from 'components/QuestionList.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanca',
-  mixins: [common],
+  mixins: [common, memberOverview],
   components: { QuestionList },
   data() {
     return {
