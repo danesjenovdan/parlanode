@@ -14,7 +14,11 @@
             />
           </ul>
 
-          <search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>
+          <p-search-dropdown
+            class="dropdown-filter"
+            :items="workingBodies"
+            :placeholder="inputPlaceholder"
+          />
 
           <div class="align-checkbox">
             <input id="justFive" type="checkbox" v-model="justFive" class="checkbox" />
@@ -56,12 +60,13 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find, get } from 'lodash';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
 
 export default {
-  components: { InnerCard, StripedButton },
+  components: { InnerCard, PSearchDropdown, StripedButton },
   name: 'SeznamSej',
   data() {
     return {
@@ -192,7 +197,7 @@ export default {
   },
   created() {
     $.getJSON('https://analize.parlameter.si/v1/s/getWorkingBodies/', (response) => {
-      const existingWorkingBodies = this.$options.cardData.state.workingBodies || [];
+      const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
       this.workingBodies = response.map(workingBody => ({
         id: workingBody.id,
         label: workingBody.name,
