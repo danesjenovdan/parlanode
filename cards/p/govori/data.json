@@ -1,18 +1,2353 @@
 {
-  "person": {
-    "is_active": false,
-    "district": [66],
-    "name": "Julijana Bizjak Mlakar",
-    "gov_id": "P158",
-    "gender": "f",
-    "party": {
-      "acronym": "DeSUS",
-      "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+  "organizations": [],
+  "highlighting": [
+    {
+      "start_time": "2014-08-28T02:00:00",
+      "session_id": 5619,
+      "person": {
+        "name": "Franc Trček ",
+        "district": [
+          49
+        ],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "Levica",
+          "id": 8,
+          "is_coalition": false,
+          "name": "PS Levica"
+        },
+        "type": "mp",
+        "id": 82,
+        "gov_id": "P290",
+        "has_function": false
+      },
+      "content_t": "<em>Govori</em> se o teh 6 tisoč in še nekaj gospoda poslanca Janeza Ivana Janše. Meni se to zdi slab rezultat. Če bi jaz imel toliko prostora v medijih, nek kolega je v Mariboru rekel v predvolilnem času: \"Čuj, Franjo, jaz si še paštete ne upam odpreti, da ne bo Janša skočil ven.\" In če bi jaz imel tak moralni kapital začetka neodvisnosti Slovenije, pa ljudje božji, jaz bi do peznije imel kadarkoli med 30 in 35 % glasov. Zakaj Janez Janša, ne vem, ne bom solil pameti SDS. nekateri vidni člani so malo začeli soliti, jaz vsak dan nadziram vaš spletni portal – pa seveda tudi vseh drugih strank – in vem, da po volitvah so dali izjavo, naslednji dan sta morala neka vidna bivša ministra takoj demantirati svojo izjavo. Problem Janeza Janše tukaj kot poslanca, gospod Logar pravi vizavi gospodu Janiju, sporen je bil le en član komisije. Kolega Logar, dandanes je isto. Jaz sem že v medijih povedal, imamo tretjo vejo oblasti, ki naj, prosim, prosim prevzame to vlogo, odloči o mandatu gospoda Janeza Janše. Ker drugače, veste, jaz sem šel na novi šiht sem mislim, madonca, to bo malo manj dolgočasno kot tam, kjer se zdaj Igor Lukšič sonči, ampak ni. To postaja tako predvidljivo dolgočasno. Ne vem, zbolel bom še od tega. In če bi bil Janez Janša mož beseda. Janez Janša je nekoč izjavil, da če bo pravnomočno obsojen, da bo odstopil. Gospod Janez Janša, pozivam vas, da ste mož beseda, da odslužite svojo kazen. Če so bile storjene napake, boste to \"debelo naplatili\", kot se pravi v jeziku moje <em>mame</em>, in to je to.</em>",
+      "date": "2014-08-28",
+      "speech_id": 524337,
+      "order": 280
+    }
+  ],
+  "responseHeader": {
+    "status": 0,
+    "QTime": 12,
+    "params": {
+      "fq": "speaker_i:(82) AND datetime_dt:([2014-08-01T00:00:00.000Z TO 2014-09-01T00:00:00.000Z])",
+      "rows": "50",
+      "facet.field": [
+        "speaker_i",
+        "party_i",
+        "org_i"
+      ],
+      "facet.range.gap": "+1MONTHS",
+      "wt": "json",
+      "hl.snippets": "1",
+      "facet.range.end": "2014-09-01T00:00:00.000Z",
+      "hl.regex.pattern": "\\w[^\\.!\\?]{400,600}[\\.!\\?]",
+      "facet": "true",
+      "q": "content_t:mama AND tip_t:govor",
+      "start": "0",
+      "facet.range": "datetime_dt",
+      "hl": "true",
+      "hl.fragsize": "5000",
+      "hl.mergeContiguous": "false",
+      "hl.fl": "content_t",
+      "hl.fragmenter": "regex",
+      "facet.range.start": "2014-08-01T00:00:00.000Z"
+    }
+  },
+  "facet_counts": {
+    "facet_ranges": {
+      "datetime_dt": {
+        "start": "2014-08-01T00:00:00Z",
+        "counts": [
+          "2014-08-01T00:00:00Z",
+          1
+        ],
+        "end": "2014-09-01T00:00:00Z",
+        "gap": "+1MONTHS"
+      }
     },
-    "type": "mp",
-    "id": 5,
-    "has_function": false
-  }
+    "facet_fields": {
+      "speaker_i": [
+        {
+          "person": {
+            "name": "Franc Trček ",
+            "district": [
+              49
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "Levica",
+              "id": 8,
+              "is_coalition": false,
+              "name": "PS Levica"
+            },
+            "type": "mp",
+            "id": 82,
+            "gov_id": "P290",
+            "has_function": false
+          },
+          "score": 1
+        },
+        {
+          "person": {
+            "name": "Anja Bah Žibert",
+            "district": [
+              7
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 2,
+            "gov_id": "P239",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Urška Ban",
+            "district": [
+              8
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 3,
+            "gov_id": "P240",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Roberto Battelli",
+            "district": [
+              90
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "IMNS",
+              "id": 2,
+              "is_coalition": false,
+              "name": "PS italijanske in madžarske narodne skupnosti"
+            },
+            "type": "mp",
+            "id": 4,
+            "gov_id": "P005",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Julijana Bizjak Mlakar",
+            "district": [
+              66
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 5,
+            "gov_id": "P158",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Srečko Blažič",
+            "district": null,
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 6,
+            "gov_id": "P241",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Mirjam Bon Klanjšček",
+            "district": [
+              87
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "PS NP",
+              "id": 109,
+              "is_coalition": false,
+              "name": "PS nepovezanih poslancev "
+            },
+            "type": "mp",
+            "id": 7,
+            "gov_id": "P235",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Tilen Božič",
+            "district": [
+              81
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 8,
+            "gov_id": "P242",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Alenka Bratušek",
+            "district": [
+              62
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "PS NP",
+              "id": 109,
+              "is_coalition": false,
+              "name": "PS nepovezanih poslancev "
+            },
+            "type": "mp",
+            "id": 9,
+            "gov_id": "P166",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Franc Breznik",
+            "district": [
+              24
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 10,
+            "gov_id": "P167",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Milan Brglez",
+            "district": [
+              76
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 11,
+            "gov_id": "P243",
+            "has_function": true
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Nada Brinovšek",
+            "district": [
+              35
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 12,
+            "gov_id": "P244",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Miro Cerar",
+            "district": [
+              103
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 13,
+            "gov_id": "G13",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Tanja Cink",
+            "district": [
+              101
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 14,
+            "gov_id": "P246",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Andrej Čuš",
+            "district": [
+              28
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "NeP - AČ",
+              "id": 108,
+              "is_coalition": false,
+              "name": "Nepovezani poslanec Andrej Čuš"
+            },
+            "type": "mp",
+            "id": 15,
+            "gov_id": "P225",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Erika Dekleva",
+            "district": [
+              86
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 16,
+            "gov_id": "P247",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Iva Dimic",
+            "district": [
+              92
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "NSI",
+              "id": 6,
+              "is_coalition": false,
+              "name": "PS Nova Slovenija"
+            },
+            "type": "mp",
+            "id": 17,
+            "gov_id": "P169",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Bojan Dobovšek",
+            "district": [
+              77
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "PS NP",
+              "id": 109,
+              "is_coalition": false,
+              "name": "PS nepovezanih poslancev "
+            },
+            "type": "mp",
+            "id": 18,
+            "gov_id": "P248",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marjan Dolinšek",
+            "district": [
+              16
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 19,
+            "gov_id": "P249",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Karl Viktor Erjavec",
+            "district": [
+              34
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 20,
+            "gov_id": "G20",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marko Ferluga",
+            "district": [
+              83
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 21,
+            "gov_id": "P250",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Tomaž Gantar",
+            "district": [
+              80
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 22,
+            "gov_id": "P251",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jelka Godec",
+            "district": [
+              30
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 23,
+            "gov_id": "P252",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "László Göncz",
+            "district": [
+              91
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "IMNS",
+              "id": 2,
+              "is_coalition": false,
+              "name": "PS italijanske in madžarske narodne skupnosti"
+            },
+            "type": "mp",
+            "id": 24,
+            "gov_id": "P117",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Vinko Gorenak",
+            "district": [
+              42
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 25,
+            "gov_id": "P116",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Branko Grims",
+            "district": [
+              60
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 26,
+            "gov_id": "P016",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Irena Grošelj Košnik",
+            "district": [
+              15
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 27,
+            "gov_id": "P253",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Margareta Guček Zakošek",
+            "district": [
+              32
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 28,
+            "gov_id": "P254",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Primož Hainz",
+            "district": [
+              93
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 29,
+            "gov_id": "P255",
+            "has_function": true
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Matjaž Han",
+            "district": [
+              13
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 30,
+            "gov_id": "P018",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Matjaž Hanžek",
+            "district": [
+              76
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "NeP - MH",
+              "id": 145,
+              "is_coalition": false,
+              "name": "Nepovezani poslanec Matjaž Hanžek"
+            },
+            "type": "mp",
+            "id": 31,
+            "gov_id": "P256",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jožef Horvat",
+            "district": [
+              17
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "NSI",
+              "id": 6,
+              "is_coalition": false,
+              "name": "PS Nova Slovenija"
+            },
+            "type": "mp",
+            "id": 32,
+            "gov_id": "P020",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Mitja Horvat",
+            "district": [
+              96
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 33,
+            "gov_id": "P257",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Ivan Hršak",
+            "district": [
+              14
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 34,
+            "gov_id": "P176",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Eva Irgl",
+            "district": [
+              89
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 35,
+            "gov_id": "P023",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Janez Janša",
+            "district": [
+              71
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 36,
+            "gov_id": "P025",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Franc Jurša",
+            "district": [
+              19
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 37,
+            "gov_id": "P122",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Andreja Katič",
+            "district": [
+              37
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 38,
+            "gov_id": "P258",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Aleksander Kavčič",
+            "district": [
+              19
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 39,
+            "gov_id": "P259",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Anita Koleša",
+            "district": [
+              30
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 40,
+            "gov_id": "P260",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Benedikt Kopmajer",
+            "district": [
+              40
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 41,
+            "gov_id": "P261",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Miha Kordiš",
+            "district": [
+              64
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "Levica",
+              "id": 8,
+              "is_coalition": false,
+              "name": "PS Levica"
+            },
+            "type": "mp",
+            "id": 42,
+            "gov_id": "P262",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Ksenija Korenjak Kramar",
+            "district": [
+              51
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 43,
+            "gov_id": "P263",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Irena Kotnik",
+            "district": [
+              58
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 44,
+            "gov_id": "P264",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marjana Kotnik Poropat",
+            "district": [
+              45
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 45,
+            "gov_id": "P186",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Lilijana Kozlovič",
+            "district": [
+              83
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 46,
+            "gov_id": "P265",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Danijel Krivec",
+            "district": [
+              55
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 47,
+            "gov_id": "P040",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Simona Kustec Lipicer",
+            "district": [
+              102
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 48,
+            "gov_id": "P266",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Zvonko Lah",
+            "district": [
+              9
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "NSI",
+              "id": 6,
+              "is_coalition": false,
+              "name": "PS Nova Slovenija"
+            },
+            "type": "mp",
+            "id": 49,
+            "gov_id": "P129",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Franc Laj",
+            "district": [
+              17
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "PS NP",
+              "id": 109,
+              "is_coalition": false,
+              "name": "PS nepovezanih poslancev "
+            },
+            "type": "mp",
+            "id": 50,
+            "gov_id": "P267",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Suzana Lep Šimenko",
+            "district": [
+              26
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 51,
+            "gov_id": "P268",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marinka Levičar",
+            "district": [
+              69
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 52,
+            "gov_id": "P269",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Tomaž Lisec",
+            "district": [
+              12
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 53,
+            "gov_id": "P187",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Anže Logar",
+            "district": [
+              94
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 54,
+            "gov_id": "P238",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Žan Mahnič",
+            "district": [
+              65
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 55,
+            "gov_id": "P270",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Klavdija Markež",
+            "district": [
+              26
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 56,
+            "gov_id": "P271",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Dragan Matić",
+            "district": [
+              74
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 57,
+            "gov_id": "P272",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Luka Mesec",
+            "district": [
+              15
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "Levica",
+              "id": 8,
+              "is_coalition": false,
+              "name": "PS Levica"
+            },
+            "type": "mp",
+            "id": 58,
+            "gov_id": "P273",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jani Möderndorfer",
+            "district": [
+              76
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 59,
+            "gov_id": "P191",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jasna Murgel",
+            "district": [
+              48
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 60,
+            "gov_id": "P274",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Bojana Muršič",
+            "district": [
+              45
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 61,
+            "gov_id": "P275",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Matjaž Nemec",
+            "district": [
+              88
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 62,
+            "gov_id": "P276",
+            "has_function": true
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Ljudmila Novak",
+            "district": [
+              70
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "NSI",
+              "id": 6,
+              "is_coalition": false,
+              "name": "PS Nova Slovenija"
+            },
+            "type": "mp",
+            "id": 63,
+            "gov_id": "P193",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Bojan Podkrajšek",
+            "district": [
+              44
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 64,
+            "gov_id": "P277",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marko Pogačnik",
+            "district": [
+              64
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 65,
+            "gov_id": "P196",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marijan Pojbič",
+            "district": [
+              25
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 66,
+            "gov_id": "P098",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Andreja Potočnik",
+            "district": [
+              63
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 67,
+            "gov_id": "P278",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Ivan Prelog",
+            "district": [
+              52
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 68,
+            "gov_id": "P279",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Uroš Prikl",
+            "district": [
+              46
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 69,
+            "gov_id": "P280",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Branislav Rajić",
+            "district": [
+              46
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 70,
+            "gov_id": "P281",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Danilo Anton Ranc",
+            "district": [
+              39
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 71,
+            "gov_id": "P282",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Kamal Izidor Shaker",
+            "district": [
+              78
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 72,
+            "gov_id": "P283",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Janja Sluga",
+            "district": [
+              31
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 73,
+            "gov_id": "P284",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Vojka Šergan",
+            "district": [
+              14
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 74,
+            "gov_id": "P285",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Andrej Šircelj",
+            "district": [
+              92
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 75,
+            "gov_id": "P201",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Ivan Škodnik",
+            "district": [
+              40
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 76,
+            "gov_id": "P286",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Maruša Škopac",
+            "district": [
+              57
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 77,
+            "gov_id": "P287",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jože Tanko",
+            "district": [
+              70
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 78,
+            "gov_id": "P077",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Matej Tašner Vatovec",
+            "district": [
+              83
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "Levica",
+              "id": 8,
+              "is_coalition": false,
+              "name": "PS Levica"
+            },
+            "type": "mp",
+            "id": 79,
+            "gov_id": "P288",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Violeta Tomić",
+            "district": [
+              103
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "Levica",
+              "id": 8,
+              "is_coalition": false,
+              "name": "PS Levica"
+            },
+            "type": "mp",
+            "id": 80,
+            "gov_id": "P289",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Matej Tonin",
+            "district": [
+              66
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "NSI",
+              "id": 6,
+              "is_coalition": false,
+              "name": "PS Nova Slovenija"
+            },
+            "type": "mp",
+            "id": 81,
+            "gov_id": "P204",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Janko Veber",
+            "district": [
+              69
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 83,
+            "gov_id": "P081",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Vesna Vervega",
+            "district": [
+              25
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 84,
+            "gov_id": "P291",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Peter Vilfan",
+            "district": [
+              101
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 85,
+            "gov_id": "P207",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jernej Vrtovec",
+            "district": [
+              89
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "NSI",
+              "id": 6,
+              "is_coalition": false,
+              "name": "PS Nova Slovenija"
+            },
+            "type": "mp",
+            "id": 86,
+            "gov_id": "P292",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Simon Zajc",
+            "district": [
+              100
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 87,
+            "gov_id": "P293",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Igor Zorčič",
+            "district": [
+              10
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 88,
+            "gov_id": "P294",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Branko Zorman",
+            "district": [
+              62
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 89,
+            "gov_id": "P295",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Dejan Židan",
+            "district": null,
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 90,
+            "gov_id": "G90",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Ljubo Žnidar",
+            "district": [
+              34
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SDS",
+              "id": 5,
+              "is_coalition": false,
+              "name": "PS Slovenska Demokratska Stranka"
+            },
+            "type": "mp",
+            "id": 91,
+            "gov_id": "P212",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Dušan Verbič",
+            "district": [
+              99
+            ],
+            "gender": "m",
+            "is_active": false,
+            "party": {
+              "acronym": "SMC",
+              "id": 1,
+              "is_coalition": true,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 92,
+            "gov_id": "P296",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Franc Križanič",
+            "district": [
+              68
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 93,
+            "gov_id": "P128",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Jana Jenko",
+            "district": [
+              63
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 94,
+            "gov_id": "P180",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marija Bačič",
+            "district": [
+              22
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "SD",
+              "id": 7,
+              "is_coalition": true,
+              "name": "PS Socialni Demokrati"
+            },
+            "type": "mp",
+            "id": 95,
+            "gov_id": "P298",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Marija Antonija Kovačič",
+            "district": [
+              37
+            ],
+            "gender": "f",
+            "is_active": false,
+            "party": {
+              "acronym": "DeSUS",
+              "id": 3,
+              "is_coalition": true,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 96,
+            "gov_id": "P297",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Stanislava Setnikar Cankar",
+            "district": null,
+            "gender": null,
+            "is_active": null,
+            "party": {
+              "acronym": null,
+              "id": null,
+              "is_coalition": null,
+              "name": null
+            },
+            "type": "visitor",
+            "id": 1300,
+            "gov_id": null,
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Vesna Györkös Žnidar",
+            "district": null,
+            "gender": null,
+            "is_active": null,
+            "party": {
+              "acronym": null,
+              "id": null,
+              "is_coalition": null,
+              "name": null
+            },
+            "type": "visitor",
+            "id": 1302,
+            "gov_id": "G1302",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Goran Klemenčič",
+            "district": null,
+            "gender": null,
+            "is_active": null,
+            "party": {
+              "acronym": null,
+              "id": null,
+              "is_coalition": null,
+              "name": null
+            },
+            "type": "visitor",
+            "id": 1303,
+            "gov_id": "G1303",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Boris Koprivnikar",
+            "district": null,
+            "gender": null,
+            "is_active": null,
+            "party": {
+              "acronym": null,
+              "id": null,
+              "is_coalition": null,
+              "name": null
+            },
+            "type": "visitor",
+            "id": 1304,
+            "gov_id": "G1304",
+            "has_function": false
+          },
+          "score": 0
+        },
+        {
+          "person": {
+            "name": "Peter Gašperšič",
+            "district": null,
+            "gender": null,
+            "is_active": null,
+            "party": {
+              "acronym": null,
+              "id": null,
+              "is_coalition": null,
+              "name": null
+            },
+            "type": "visitor",
+            "id": 1305,
+            "gov_id": "G1305",
+            "has_function": false
+          },
+          "score": 0
+        }
+      ],
+      "org_i": [
+        "95",
+        1,
+        "9",
+        0,
+        "10",
+        0,
+        "11",
+        0,
+        "12",
+        0,
+        "13",
+        0,
+        "14",
+        0,
+        "15",
+        0,
+        "16",
+        0,
+        "17",
+        0,
+        "18",
+        0,
+        "19",
+        0,
+        "20",
+        0,
+        "21",
+        0,
+        "22",
+        0,
+        "23",
+        0,
+        "24",
+        0,
+        "25",
+        0,
+        "26",
+        0,
+        "27",
+        0,
+        "28",
+        0,
+        "29",
+        0,
+        "98",
+        0,
+        "101",
+        0,
+        "105",
+        0,
+        "106",
+        0
+      ],
+      "party_e": [
+        {
+          "party": {
+            "acronym": "Levica",
+            "id": 8,
+            "is_coalition": false,
+            "name": "PS Levica"
+          },
+          "score": 1
+        },
+        {
+          "party": {
+            "acronym": "SMC",
+            "id": 1,
+            "is_coalition": true,
+            "name": "PS Stranka modernega centra"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "IMNS",
+            "id": 2,
+            "is_coalition": false,
+            "name": "PS italijanske in madžarske narodne skupnosti"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "DeSUS",
+            "id": 3,
+            "is_coalition": true,
+            "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "ZAAB",
+            "id": 4,
+            "is_coalition": false,
+            "name": "PS Zavezništvo Alenke Bratušek"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "SDS",
+            "id": 5,
+            "is_coalition": false,
+            "name": "PS Slovenska Demokratska Stranka"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "NSI",
+            "id": 6,
+            "is_coalition": false,
+            "name": "PS Nova Slovenija"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "SD",
+            "id": 7,
+            "is_coalition": true,
+            "name": "PS Socialni Demokrati"
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "PS NP",
+            "id": 97,
+            "is_coalition": false,
+            "name": "PS nepovezanih poslancev "
+          },
+          "score": 0
+        },
+        {
+          "party": {
+            "acronym": "PS NP",
+            "id": 109,
+            "is_coalition": false,
+            "name": "PS nepovezanih poslancev "
+          },
+          "score": 0
+        }
+      ],
+      "party_i": [
+        "8",
+        1,
+        "1",
+        0,
+        "2",
+        0,
+        "3",
+        0,
+        "4",
+        0,
+        "5",
+        0,
+        "6",
+        0,
+        "7",
+        0,
+        "97",
+        0,
+        "109",
+        0
+      ]
+    }
+  },
+  "has_council_score": false,
+  "response": {
+    "start": 0,
+    "numFound": 1,
+    "docs": [
+      {
+        "tip_t": [
+          "govor"
+        ],
+        "session_i": 5619,
+        "party_i": 8,
+        "datetime_dt": "2014-08-28T02:00:00Z",
+        "speaker_i": 82,
+        "content_t": [
+          "Pozdravljeni. Hvala za besedo.\nKer imam kar nekaj časa, bom tudi malo retorike izkoristil. Strinjam se z gospodom Tankom glede teh proceduralnih zadev in neka taka močna ekipa bi nam lahko v bodoče podajala proceduralno precej bolj utemeljene predloge. Definitivno se strinjam gospodom Toninom, kolegom Toninom, se opravičujem, kregan sem bil po prvi seji, da osebnih imen naj nebi uporabljal, ampak mi bomo sodelavci tu, upam, štiri leta, se opravičujem, Matej. Vem tudi, da me nadzirajo, seveda vem – in v komunikacijah, pogosto, in po telefonu in po svetovnem spletu –, jih pozdravim. Neki ljudje to morajo početi po dolžnosti. Upam, da to profesionalno počnejo. \nCel ta zaplet in vsa ta zgodba. SDS zelo izpostavlja številke, jaz sem človek, ki je prišel iz številk, tu se bomo imeli zelo radi štiri leta, upam. Govori se o teh 6 tisoč in še nekaj gospoda poslanca Janeza Ivana Janše. Meni se to zdi slab rezultat. Če bi jaz imel toliko prostora v medijih, nek kolega je v Mariboru rekel v predvolilnem času: \"Čuj, Franjo, jaz si še paštete ne upam odpreti, da ne bo Janša skočil ven.\" In če bi jaz imel tak moralni kapital začetka neodvisnosti Slovenije, pa ljudje božji, jaz bi do peznije imel kadarkoli med 30 in 35 % glasov. Zakaj Janez Janša, ne vem, ne bom solil pameti SDS. nekateri vidni člani so malo začeli soliti, jaz vsak dan nadziram vaš spletni portal – pa seveda tudi vseh drugih strank – in vem, da po volitvah so dali izjavo, naslednji dan sta morala neka vidna bivša ministra takoj demantirati svojo izjavo. Problem Janeza Janše tukaj kot poslanca, gospod Logar pravi vizavi gospodu Janiju, sporen je bil le en član komisije. Kolega Logar, dandanes je isto. Jaz sem že v medijih povedal, imamo tretjo vejo oblasti, ki naj, prosim, prosim prevzame to vlogo, odloči o mandatu gospoda Janeza Janše. Ker drugače, veste, jaz sem šel na novi šiht sem mislim, madonca, to bo malo manj dolgočasno kot tam, kjer se zdaj Igor Lukšič sonči, ampak ni. To postaja tako predvidljivo dolgočasno. Ne vem, zbolel bom še od tega. In če bi bil Janez Janša mož beseda. Janez Janša je nekoč izjavil, da če bo pravnomočno obsojen, da bo odstopil. Gospod Janez Janša, pozivam vas, da ste mož beseda, da odslužite svojo kazen. Če so bile storjene napake, boste to \"debelo naplatili\", kot se pravi v jeziku moje mame, in to je to. Navsezadnje za vami stoji koliko, dobili ste 21 % glasov, 50,6 in še nekaj, 10 % volivcev. Če prištejemo vsaj starejše mladoletnike od 14 let naprej, vas podpira, recimo, ducat slovenskega telesa, ki so politična bitja. Nehajmo se z…, dajmo resno začeti delati, to so nam tudi povedali volivci in z neudeležbo in z razrezom volilnih glasov. \nTo, da ste predlagali gospoda Janšo, je bil vaš manever, pričakovan, znotraj vaših taktik in strategij, in zdaj bomo mi tukaj – kaj – kot bi rekel starosta slovenskega parlamentarizma, \"afne guncali\". Jaz mislim, da jih bomo hitro \"odguncali\", da bomo ustanovili komisijo, ker seveda potrebujemo nadzor tistih, ki nadzirajo. Hvala."
+        ],
+        "_version_": 1558596179476873200,
+        "id": "g524337",
+        "org_i": 95
+      }
+    ]
+  },
+  "has_dz_score": true
 }

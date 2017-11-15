@@ -2,7 +2,7 @@
   <govori
     :card-data="$options.cardData"
     type="party"
-    :person="$options.cardData.data.party"
+    :party="$options.cardData.data.party"
   ></govori>
 </template>
 

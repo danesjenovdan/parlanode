@@ -29,27 +29,25 @@
 
 <script>
     import SearchField from 'components/SearchField.vue';
+    import SearchDropdown from 'components/SearchDropdown.vue';
+
+    import generateMonths from 'helpers/generateMonths';
+
     import common from 'mixins/common';
 
     export default {
-        components: { SearchField },
+        components: { SearchField, SearchDropdown },
         mixins: [common],
         name: 'GovoriPoslanca',
         data() {
             let textFilter = '';
+            let allMonths = generateMonths();
 
             return {
                 cardMethod: this.cardData.cardData.method,
                 cardGroup: this.cardData.cardData.group,
                 textFilter,
-                
-                headerConfig: {
-                    circleIcon: 'og-list',
-                    heading: '&nbsp;',
-                    subheading: '7. sklic parlamenta',
-                    alternative: this.cardData.altHeader === 'true',
-                    title: this.cardData.cardData.name,
-                },
+                allMonths
             };
         },
         computed: {
@@ -65,9 +63,32 @@
                 return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
             },
             dropdownItems() {
+
                 return {
-                    months: ['2017-11', '2017-10']
+                    months: this.allMonths
                 };
+            },
+            headerConfig() {
+                let specifics;
+                if (this.type === 'person') {
+                    specifics = {
+                        heading: this.person.name,
+                        subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+                        circleImage: this.person.gov_id,
+                    };
+                } else {
+                    specifics = {
+                        heading: this.party.name,
+                        subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+                        circleText: this.party.acronym,
+                        circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
+                    };
+                }
+
+                return Object.assign({}, specifics, {
+                    alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
+                    title: this.cardData.cardData.name,
+                });
             }
         },
         methods: {
