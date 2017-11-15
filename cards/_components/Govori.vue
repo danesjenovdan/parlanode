@@ -1,9 +1,9 @@
 <template>
     <card-wrapper
-        :id="cardData.cardData._id"
-        :data-id="`${cardGroup}/${cardMethod}`"
-        content-class="full"
-        v-bind="{ cardUrl, headerConfig }">
+            :id="cardData.cardData._id"
+            :data-id="`${cardGroup}/${cardMethod}`"
+            content-class="full"
+            v-bind="{ cardUrl, headerConfig }">
 
         <div slot="info">
             <p class="info-text lead"></p>
@@ -20,11 +20,16 @@
                 <div class="filter-label">Časovno obdobje</div>
                 <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
             </div>
+
+            <div class="filter month-dropdown">
+                <div class="filter-label">Vrsta seje</div>
+                <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+            </div>
         </div>
 
 
         <div class="speaks date-list" v-for="speakingDay in filteredSpeakingDays">
-            <div class="date">7.7.2017, 9. redna seja, Komisija poslovnik</div>
+            <div class="date">{{ speakingDay.date }}, 9. redna seja, Komisija poslovnik</div>
 
             <ul class="speaks-list">
                 <li class="speak">
@@ -32,7 +37,7 @@
                         <img :src="getPersonPortrait(speakingDay.person)" />
                     </a>
 
-                    <div class="column name">
+                    <div class="name">
                         <a :href="getPersonLink(speakingDay.person)" class="funblue-light-hover">{{ speakingDay.person.name }}</a><br>
                     </div>
 
@@ -60,7 +65,6 @@
     export default {
         components: { SearchField, SearchDropdown },
         mixins: [common],
-        name: 'GovoriPoslanca',
         data() {
             let textFilter = '';
             let allMonths = generateMonths();
@@ -208,10 +212,9 @@
 
     .filters {
         .filter {
-            flex: 1;
-
             @include respond-to(desktop) {
                 margin-right: 10px;
+                flex: 1;
             }
 
             @include respond-to(mobile) {
@@ -268,6 +271,8 @@
 
                 .portrait {
                     margin-left: 7px;
+                    float: left;
+                    flex: none;
 
                     img {
                         height: 40px;
@@ -280,8 +285,8 @@
                     text-align: left;
                     font-size: 18px;
                     font-weight: 300;
-                    margin: 0 20px 0 15px;
-                    width: 16%;
+                    margin: 0 5px 0 15px;
+                    flex: 1;
 
                     a {
                         text-decoration: none;
@@ -289,6 +294,8 @@
                 }
 
                 .motion {
+                    flex: 4;
+
                     p {
                         margin: 0;
                         font-size: 14px;
