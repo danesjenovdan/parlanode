@@ -33,7 +33,7 @@
 
             <ul class="speaks-list">
                 <li class="speak">
-                    <a :href="getPersonLink(person)" class="portrait">
+                    <a :href="getPersonLink(speakingDay.person)" class="portrait">
                         <img :src="getPersonPortrait(speakingDay.person)" />
                     </a>
 
@@ -123,6 +123,7 @@
         methods: {
             getFilteredSpeakingDays(onlyFilterByText = false) {
 
+                console.log(this.speakingDays)
 
                 return this.speakingDays;
 
@@ -211,6 +212,10 @@
     }
 
     .filters {
+        display: flex;
+        justify-content: space-between;
+        $label-height: 26px;
+
         .filter {
             @include respond-to(desktop) {
                 margin-right: 10px;
@@ -230,10 +235,6 @@
             flex-wrap: wrap;
             min-height: 154px;
         }
-        $label-height: 26px;
-
-        display: flex;
-        justify-content: space-between;
 
         .filter-label {
             font-size: 14px;
@@ -263,7 +264,7 @@
             padding: 0;
 
             .speak {
-                border-bottom: 1px solid #f0f0f0;
+                border-bottom: 1px solid $grey;
                 padding: 15px 0;
                 list-style: none;
                 display: flex;
