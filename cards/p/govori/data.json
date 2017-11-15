@@ -1,0 +1,18 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [66],
+    "name": "Julijana Bizjak Mlakar",
+    "gov_id": "P158",
+    "gender": "f",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 5,
+    "has_function": false
+  }
+}
