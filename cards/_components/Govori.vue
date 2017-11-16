@@ -13,7 +13,7 @@
 
         <div class="filters">
             <div class="filter text-filter">
-                <div class="filter-label">Išči po naslovu glasovanja</div>
+                <div class="filter-label">Išči po vsebini govorov</div>
                 <search-field v-model="textFilter" />
             </div>
             <div class="filter month-dropdown">
@@ -29,20 +29,20 @@
 
 
         <div class="speaks date-list" v-for="speakingDay in filteredSpeakingDays">
-            <div class="date">{{ speakingDay.session.date }}, {{ speakingDay.session.name }}, <span v-for="(org, indexOrg) in speakingDay.session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay.session.orgs.length - 1)">,</span></span></div>
+            <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
 
             <ul class="speaks-list">
-                <li class="speak">
-                    <a :href="getPersonLink(speakingDay.person)" class="portrait">
-                        <img :src="getPersonPortrait(speakingDay.person)" />
+                <li class="speak" v-for="speak in speakingDay">
+                    <a :href="getPersonLink(speak.person)" class="portrait">
+                        <img :src="getPersonPortrait(speak.person)" />
                     </a>
 
                     <div class="name">
-                        <a :href="getPersonLink(speakingDay.person)" class="funblue-light-hover">{{ speakingDay.person.name }}</a><br>
+                        <a :href="getPersonLink(speak.person)" class="funblue-light-hover">{{ speak.person.name }}</a><br>
                     </div>
 
                     <div class="motion">
-                        <p v-html="speakingDay.content_t"></p>
+                        <p v-html="speak.content_t"></p>
                     </div>
                 </li>
             </ul>
@@ -134,23 +134,23 @@
                 return this.getFilteredSpeakingDays();
             },
             headerConfig() {
-                let specifics;
-                if (this.type === 'person') {
-                    specifics = {
-                        heading: 'header',//this.person.name,
-                        // subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-                        // circleImage: this.person.gov_id,
-                    };
-                } else {
-                    specifics = {
-                        heading: this.party.name,
-                        subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-                        circleText: this.party.acronym,
-                        circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-                    };
-                }
+                // let specifics;
+                // if (this.type === 'person') {
+                //     specifics = {
+                //         heading: 'header',//this.person.name,
+                //         // subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+                //         // circleImage: this.person.gov_id,
+                //     };
+                // } else {
+                //     specifics = {
+                //         heading: this.party.name,
+                //         subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+                //         circleText: this.party.acronym,
+                //         circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
+                //     };
+                // }
 
-                return Object.assign({}, specifics, {
+                return Object.assign({}, {
                     alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
                     title: this.cardData.cardData.name,
                 });
@@ -167,20 +167,29 @@
                         dateMatch = this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
                     }
 
-                    return textMatch && dateMatch;
+                    var sessionMatch = true;
+                    if (! onlyFilterByText && this.selectedSessions.length > 0) {
+                        let orgIds = speaking.session.orgs.map(x => x.id)
+                        let selectedOrgIds = this.selectedSessions.map(x => x.id)
+
+                        sessionMatch = false;
+                        for (let index in orgIds) {
+                            if (selectedOrgIds.includes(orgIds[index])) {
+                                sessionMatch = true;
+                            }
+                        }
+                    }
+
+                    return textMatch && dateMatch && sessionMatch;
                 };
 
-                let speakings = this.speakingDays.filter(filterSpeakings);
-
-                const groupedSpeakings = speakings.reduce(function (r, a) {
-                    r[a.date] = r[a.date] || [];
-                    r[a.date].push(a);
-                    return r;
-                }, Object.create(null));
-
-
-
-                return this.speakingDays.filter(filterSpeakings);
+                return this.speakingDays
+                    .filter(filterSpeakings)
+                    .reduce(function (r, a) {
+                        r[a.session_id] = r[a.session_id] || [];
+                        r[a.session_id].push(a);
+                        return r;
+                    }, Object.create(null));
 
                 const filterBallots = (ballot) => {
                     const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
