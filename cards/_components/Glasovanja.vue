@@ -34,12 +34,31 @@
 
     <div class="votes stickinme date-list">
       <template v-for="votingDay in filteredVotingDays">
-        <div class="date">{{ votingDay.date }}</div>
+        <date-row :date="votingDay.date" />
         <ul>
-          <li v-for="ballot in votingDay.ballots">
-            <div :class="['icon', ballot.option]"></div>
-            <div class="motion">{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></div>
-            <div class="outcome">{{ ballot.outcome || 'Ni podatkov' }}</div>
+          <li v-for="ballot in votingDay.ballots" class="ballot">
+
+            <div class="votes__icon">
+              <div :class="['icon', ballot.option]">
+              </div>
+              <div class="text"> {{ ballot.option }} </div>
+            </div>
+
+            <div class="votes__motion">
+              <p>{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></p>
+            </div>
+
+            <div class="votes__result">
+              <template v-if="ballot.result">
+                <i class="accepted glyphicon glyphicon-ok"></i>
+                <div class="text">sprejet</div>
+              </template>
+              <template v-else>
+                <i class="not-accepted glyphicon glyphicon-remove"></i>
+                <div class="text">zavrnjen</div>
+              </template>
+            </div>
+
           </li>
         </ul>
       </template>
@@ -52,12 +71,14 @@ import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import SearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
+import DateRow from 'components/DateRow.vue';
+
 import common from 'mixins/common';
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
 export default {
-  components: { PSearchDropdown, SearchField },
+  components: { PSearchDropdown, SearchField, DateRow },
   mixins: [common],
   computed: {
     tagPlaceholder() {
@@ -166,6 +187,7 @@ export default {
     return {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
+      vocabulary: this.cardData.vocab,
       votingDays: this.cardData.data.results,
       allMonths,
       allOptions,
@@ -243,151 +265,235 @@ export default {
     (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
     (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
 
-},
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
+  @import '~parlassets/scss/breakpoints';
+  @import '~parlassets/scss/colors';
 
-.card-content-front {
-  display: flex;
-  flex-direction: column;
-}
 
-.filters {
-  @include respond-to(mobile) {
-    flex-wrap: wrap;
-    min-height: 154px;
-  }
-  $label-height: 26px;
-
-  display: flex;
-  justify-content: space-between;
-
-  .filter-label {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: $label-height;
-  }
-
-  .option-party-buttons {
-    @include show-for(desktop, flex);
-
-    width: 27.5%;
-    padding-top: $label-height;
-
-    .party-button:not(:last-child) {
-      margin-right: 3px;
-    }
-  }
-
-  .text-filter {
-    @include respond-to(desktop) { width: 26%; }
-
-    width: 100%;
-
-    .text-filter-input {
-      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
-      background-size: 24px 24px;
-      background-repeat: no-repeat;
-      background-position: right 9px center;
-      border: 1px solid #c8c8c8;
-      font-size: 16px;
-      height: 51px;
-      line-height: 27px;
-      outline: none;
-      padding: 12px 42px 12px 14px;
-      width: 100%;
-    }
-  }
-
-  .tag-dropdown {
-    @include respond-to(desktop) { width: 26%; }
-
-    width: 100%;
-  }
-
-  .month-dropdown {
-    @include show-for(desktop);
-
-    width: 17.5%;
-  }
-
-  .search-dropdown-input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  .search-dropdown-options { top: 50px; }
-}
-
-.votes {
-  flex: 1;
-  // list-style: none;
-  overflow-y: auto;
-  margin-top: 18px;
-  position: relative;
-
-  &:empty::after {
-    color: #c8c8c8;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
-
-  ul {
-    list-style: none;
-    margin: 0 0 7px;
-    padding: 0;
-  }
-
-  li {
+  .card-content-front {
     display: flex;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 18px;
+    flex-direction: column;
+  }
 
-    .date {
-      height: auto;
-      margin: 0 0 -18px 16px;
-      padding: 16px 0;
-      width: 54px;
+  .filters {
+    @include respond-to(mobile) {
+      flex-wrap: wrap;
+      min-height: 154px;
+    }
+    $label-height: 26px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .filter-label {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: $label-height;
     }
 
-    .icon {
+    .option-party-buttons {
+      @include show-for(desktop, flex);
+
+      width: 27.5%;
+      padding-top: $label-height;
+
+      .party-button:not(:last-child) {
+        margin-right: 3px;
+      }
+    }
+
+    .text-filter {
+      @include respond-to(desktop) { width: 26%; }
+
+      width: 100%;
+
+      .text-filter-input {
+        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: right 9px center;
+        border: 1px solid #c8c8c8;
+        font-size: 16px;
+        height: 51px;
+        line-height: 27px;
+        outline: none;
+        padding: 12px 42px 12px 14px;
+        width: 100%;
+      }
+    }
+
+    .tag-dropdown {
+      width: 100%;
+      @include respond-to(desktop) { width: 26%; }
+    }
+
+    .month-dropdown {
       @include show-for(desktop);
 
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 25px;
-      height: 48px;
-      width: 52px;
-
-      &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za.svg"); }
-      &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
-      &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
-      &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan.svg"); }
+      width: 17.5%;
     }
 
-    .motion {
+    .search-dropdown-input {
+      padding-top: 11px;
+      padding-bottom: 11px;
+    }
+
+    .search-dropdown-options { top: 50px; }
+  }
+
+  .votes {
+    flex: 1;
+    // list-style: none;
+    overflow-y: auto;
+    margin-top: 18px;
+    position: relative;
+
+    &:empty::after {
+      color: #c8c8c8;
+      content: "Ni rezultatov.";
+      left: calc(50% - 41px);
+      position: absolute;
+      top: calc(50% - 10px);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 0 7px;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+
+      .date {
+        height: auto;
+        margin: 0 0 -18px 16px;
+        padding: 16px 0;
+        width: 54px;
+      }
+    }
+  }
+
+  //Marcel
+  .filters {
+    .filter {
+      @include respond-to(desktop) {
+        margin-right: 10px;
+      }
+
+      @include respond-to(mobile) {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .votes {
+    height: 450px;
+
+    li {
+      background-color: $grey;
+      margin: 10px 0;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    &__motion {
       flex: 1;
       font-weight: 300;
       line-height: 20px;
       padding: 15px 0;
-      a { font-weight: normal; }
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-left: 2px solid $black;
+      border-right: 2px solid $black;
+      min-height: 68px;
+
+      a {
+        font-weight: normal;
+      }
+
+      p {
+        margin: 0 15px  0 20px;
+      }
     }
 
-    .outcome {
-      font-size: 11px;
-      font-weight: 400;
-      line-height: 13px;
-      padding: 20px 15px 0;
-      text-align: left;
-      text-transform: uppercase;
-      width: 90px;
+    &__icon {
+      display: flex;
+      justify-content: center;
+      color: black;
+      flex-direction: column;
+
+      .icon {
+        @include show-for(desktop);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 29px;
+        padding: 5px 55px;
+        padding-top: 30px;
+        text-transform: uppercase;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        margin-top: 10px;
+
+        &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_za_v2.svg"); }
+        &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_proti_v2.svg"); }
+        &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
+        &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_vzdrzan_v2.svg"); }
+      }
     }
+
+    .text {
+      text-align: center;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+
+    &__result {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 0 0;
+
+      @include respond-to(desktop) {
+        justify-content: left;
+        padding: 0 0 0 16px;
+        width: 156px;
+      }
+
+      .glyphicon {
+        font-size: 24px;
+        margin-bottom: 4px;
+        &.accepted { color: $funblue; }
+        &.not-accepted { color: $red; }
+
+        @include respond-to(desktop) { font-size: 29px; }
+      }
+
+      .text {
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 12px;
+      }
+    }
+
   }
-}
 </style>
