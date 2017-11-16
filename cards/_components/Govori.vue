@@ -23,13 +23,13 @@
 
             <div class="filter month-dropdown">
                 <div class="filter-label">Vrsta seje</div>
-                <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+                <search-dropdown :items="dropdownItems.sessions" :placeholder="sessionPlaceholder" :alphabetise="true"></search-dropdown>
             </div>
         </div>
 
 
         <div class="speaks date-list" v-for="speakingDay in filteredSpeakingDays">
-            <div class="date">{{ speakingDay.date }}, 9. redna seja, Komisija poslovnik</div>
+            <div class="date">{{ speakingDay.session.date }}, {{ speakingDay.session.name }}, <span v-for="(org, indexOrg) in speakingDay.session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay.session.orgs.length - 1)">,</span></span></div>
 
             <ul class="speaks-list">
                 <li class="speak">
@@ -59,8 +59,9 @@
     import generateMonths from 'helpers/generateMonths';
 
     import common from 'mixins/common';
+    // import axios from 'axios';
 
-
+    // console.log(axios)
 
     export default {
         components: { SearchField, SearchDropdown },
@@ -69,29 +70,64 @@
             let textFilter = '';
             let allMonths = generateMonths();
 
+            const arrayColumn = (arr, n) => arr.map(x => x[n]);
+
+            let highlightingSession = arrayColumn( this.cardData.data.highlighting, 'session');
+            let highlightingOrgs = [].concat.apply([], arrayColumn( highlightingSession, 'orgs'));
+            let allSessions = highlightingOrgs.map(
+                org => ({ id: org.id, label: org.name, selected: false})
+            );
+            allSessions = allSessions.map(JSON.stringify).reverse().filter(function (e, i, a) {
+                return a.indexOf(e, i+1) === -1;
+            }).reverse().map(JSON.parse)
+
+            if (this.cardData.state) {
+                const state = this.cardData.state;
+                if (state.text) textFilter = state.text;
+                if (state.months) allMonths = selectFromState(allMonths, state.months);
+                if (state.sessions) allSessions = selectFromState(allSessions, state.sessions);
+            }
+
             return {
                 cardMethod: this.cardData.cardData.method,
                 cardGroup: this.cardData.cardData.group,
                 speakingDays: this.cardData.data.highlighting,
                 textFilter,
-                allMonths
+                allMonths,
+                allSessions
             };
+        },
+        mounted () {
+            // axios.get('https://isci.parlameter.si/filter/zakon/2?people=82').then(response => {
+            //     console.log(response)
+            // });
         },
         computed: {
             cardUrl() {
                 const state = {};
-                // change me
+
+                if (this.selectedSessions.length > 0) state.sessions = this.selectedSessions.map(session => session.id);
+                if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+                if (this.textFilter.length > 0) state.text = this.textFilter;
+
                 return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
             },
+            selectedSessions() {
+                return this.allSessions.filter(session => session.selected);
+            },
             selectedMonths() {
-                return '2017-10';
+                return this.allMonths.filter(month => month.selected);
+            },
+            sessionPlaceholder() {
+                return this.selectedSessions.length > 0 ? `Izbranih: ${this.selectedSessions.length}` : 'Izberi';
             },
             monthPlaceholder() {
                 return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
             },
             dropdownItems() {
                 return {
-                    months: this.allMonths
+                    months: this.allMonths,
+                    sessions: this.allSessions
                 };
             },
             filteredSpeakingDays() {
@@ -101,9 +137,9 @@
                 let specifics;
                 if (this.type === 'person') {
                     specifics = {
-                        heading: this.person.name,
-                        subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-                        circleImage: this.person.gov_id,
+                        heading: 'header',//this.person.name,
+                        // subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+                        // circleImage: this.person.gov_id,
                     };
                 } else {
                     specifics = {
@@ -122,10 +158,29 @@
         },
         methods: {
             getFilteredSpeakingDays(onlyFilterByText = false) {
+                const filterSpeakings = (speaking) => {
+                    const textMatch = this.textFilter === '' || speaking.content_t.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
 
-                console.log(this.speakingDays)
+                    var dateMatch = true;
+                    if (! onlyFilterByText && this.selectedMonths.length > 0) {
+                        const [year , month, ] = speaking.date.split('-').map(string => parseInt(string, 10));
+                        dateMatch = this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
+                    }
 
-                return this.speakingDays;
+                    return textMatch && dateMatch;
+                };
+
+                let speakings = this.speakingDays.filter(filterSpeakings);
+
+                const groupedSpeakings = speakings.reduce(function (r, a) {
+                    r[a.date] = r[a.date] || [];
+                    r[a.date].push(a);
+                    return r;
+                }, Object.create(null));
+
+
+
+                return this.speakingDays.filter(filterSpeakings);
 
                 const filterBallots = (ballot) => {
                     const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
@@ -206,10 +261,11 @@
     @import '~parlassets/scss/colors';
 
     //@todo remove me
-    .card-container, .card-content {
+    .card-container .card-content.full .card-content-front {
         /* overflow: hidden; */
         overflow-y: scroll !important;
     }
+
 
     .filters {
         display: flex;
