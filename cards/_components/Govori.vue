@@ -1,9 +1,9 @@
 <template>
     <card-wrapper
-            :id="cardData.cardData._id"
-            :data-id="`${cardGroup}/${cardMethod}`"
-            content-class="full"
-            v-bind="{ cardUrl, headerConfig }">
+        :id="cardData.cardData._id"
+        :data-id="`${cardGroup}/${cardMethod}`"
+        content-class="full"
+        v-bind="{ cardUrl, headerConfig }">
 
         <div slot="info">
             <p class="info-text lead"></p>
@@ -27,25 +27,31 @@
             </div>
         </div>
 
+        <div class="speaks">
+            <div class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                <div v-for="(speakingDay, key, index) in filteredSpeakingDays">
+                    <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
+                    <ul class="speaks__list">
+                        <li class="speaks__list--speak" v-for="speak in speakingDay">
+                            <a :href="getPersonLink(speak.person)" class="portrait">
+                                <img :src="getPersonPortrait(speak.person)" />
+                            </a>
 
-        <div class="speaks date-list" v-for="speakingDay in filteredSpeakingDays">
-            <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
+                            <div class="name">
+                                <a :href="getPersonLink(speak.person)" class="funblue-light-hover">{{ speak.person.name }}</a><br>
+                            </div>
 
-            <ul class="speaks-list">
-                <li class="speak" v-for="speak in speakingDay">
-                    <a :href="getPersonLink(speak.person)" class="portrait">
-                        <img :src="getPersonPortrait(speak.person)" />
-                    </a>
+                            <div class="motion">
+                                <p v-html="speak.content_t"></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div v-if="isLoading" class="nalagalnik__wrapper">
+                <div class="nalagalnik"></div>
+            </div>
 
-                    <div class="name">
-                        <a :href="getPersonLink(speak.person)" class="funblue-light-hover">{{ speak.person.name }}</a><br>
-                    </div>
-
-                    <div class="motion">
-                        <p v-html="speak.content_t"></p>
-                    </div>
-                </li>
-            </ul>
         </div>
 
     </card-wrapper>
@@ -57,16 +63,20 @@
     import { getPersonPortrait, getPersonLink } from 'components/links';
 
     import generateMonths from 'helpers/generateMonths';
-
     import common from 'mixins/common';
-    // import axios from 'axios';
 
-    // console.log(axios)
+    import axios from 'axios';
+    import infiniteScroll from 'vue-infinite-scroll'
+
 
     export default {
+        directives: { infiniteScroll },
         components: { SearchField, SearchDropdown },
         mixins: [common],
         data() {
+            let currentPage = 1;
+            let isLoading = false;
+
             let textFilter = '';
             let allMonths = generateMonths();
 
@@ -81,11 +91,13 @@
                 return a.indexOf(e, i+1) === -1;
             }).reverse().map(JSON.parse)
 
+
+            var state = { }
             if (this.cardData.state) {
-                const state = this.cardData.state;
-                if (state.text) textFilter = state.text;
-                if (state.months) allMonths = selectFromState(allMonths, state.months);
-                if (state.sessions) allSessions = selectFromState(allSessions, state.sessions);
+                state = this.cardData.state;
+                // if (state.text) textFilter = state.text;
+                // if (state.months) allMonths = selectFromState(allMonths, state.months);
+                // if (state.sessions) allSessions = selectFromState(allSessions, state.sessions);
             }
 
             return {
@@ -94,13 +106,11 @@
                 speakingDays: this.cardData.data.highlighting,
                 textFilter,
                 allMonths,
-                allSessions
+                allSessions,
+                currentPage,
+                isLoading,
+                state
             };
-        },
-        mounted () {
-            // axios.get('https://isci.parlameter.si/filter/zakon/2?people=82').then(response => {
-            //     console.log(response)
-            // });
         },
         computed: {
             cardUrl() {
@@ -134,21 +144,6 @@
                 return this.getFilteredSpeakingDays();
             },
             headerConfig() {
-                // let specifics;
-                // if (this.type === 'person') {
-                //     specifics = {
-                //         heading: 'header',//this.person.name,
-                //         // subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-                //         // circleImage: this.person.gov_id,
-                //     };
-                // } else {
-                //     specifics = {
-                //         heading: this.party.name,
-                //         subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-                //         circleText: this.party.acronym,
-                //         circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-                //     };
-                // }
 
                 return Object.assign({}, {
                     alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
@@ -157,6 +152,22 @@
             }
         },
         methods: {
+            loadMore () {
+                this.isLoading = true;
+
+                axios.get('https://isci.parlameter.si/filter/'+ encodeURIComponent('zakon') +'/'+ this.currentPage, {
+                    params: this.state
+                }).then(response => {
+                    this.speakingDays = this.speakingDays.concat(response.data.highlighting)
+                    this.currentPage++
+
+                    this.isLoading = false;
+                    if (response.data.response.start >= response.data.response.numFound) {
+                        // end infinite scroll
+                    }
+                });
+            },
+
             getFilteredSpeakingDays(onlyFilterByText = false) {
                 const filterSpeakings = (speaking) => {
                     const textMatch = this.textFilter === '' || speaking.content_t.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
@@ -183,6 +194,12 @@
                     return textMatch && dateMatch && sessionMatch;
                 };
 
+                console.log(this.speakingDays.filter(filterSpeakings).reduce(function (r, a) {
+                    r[a.session_id] = r[a.session_id] || [];
+                    r[a.session_id].push(a);
+                    return r;
+                }, Object.create(null)))
+
                 return this.speakingDays
                     .filter(filterSpeakings)
                     .reduce(function (r, a) {
@@ -191,24 +208,6 @@
                         return r;
                     }, Object.create(null));
 
-                const filterBallots = (ballot) => {
-                    const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-                        ballot.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-                    const textMatch = this.textFilter === '' ||
-                        ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-                    const optionMatch = onlyFilterByText || this.selectedOptions.length === 0 ||
-                        this.selectedOptions.indexOf(ballot.option) > -1;
-
-                    return tagMatch && textMatch && optionMatch;
-                };
-
-                const filterDates = (votingDay) => {
-                    if (onlyFilterByText || this.selectedMonths.length === 0) return true;
-
-                    const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
-
-                    return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-                };
 
                 return this.votingDays
                     .map(votingDay => ({
@@ -275,6 +274,10 @@
         overflow-y: scroll !important;
     }
 
+    .search-field {
+        height: 53px !important;
+    }
+
 
     .filters {
         display: flex;
@@ -319,21 +322,38 @@
         }
     }
 
+
     .speaks {
         flex: 1;
-        overflow-y: auto;
         margin-top: 18px;
         position: relative;
+        padding-bottom: 20px;
 
-        .speaks-list {
-            padding: 0;
+        &__wrapper {
+            height: 450px;
+            overflow-y: auto;
 
-            .speak {
+            .date {
+                background-color: $grey;
+                font-weight: bold;
+                padding: 10px;
+            }
+        }
+
+        &__list {
+            padding: 0 0 10px;
+            margin: 0;
+
+            &--speak {
                 border-bottom: 1px solid $grey;
                 padding: 15px 0;
                 list-style: none;
                 display: flex;
                 align-items: center;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
 
                 .portrait {
                     margin-left: 7px;
@@ -369,6 +389,20 @@
                         margin-right: 20px;
                     }
                 }
+            }
+        }
+
+        .nalagalnik__wrapper {
+            background: rgba(255,255,255,.75);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            .nalagalnik {
+                position: absolute;
+                top: calc(50% - 50px);
             }
         }
     }

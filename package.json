@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/FranciZ/parlameter-front#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-lodash": "^3.3.2",
@@ -68,6 +69,7 @@
     "vue-template-compiler": "2.5.8",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
+    "vue-infinite-scroll": "^2.0.2",
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
