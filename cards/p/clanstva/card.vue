@@ -42,14 +42,15 @@
 <script>
 import { reduce } from 'lodash';
 import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
-import { member } from 'mixins/altHeaders';
+import { memberOverview as memberOverviewUrl } from 'mixins/contextUrls';
+import { member as memberAltHeader } from 'mixins/altHeaders';
+import { memberTitle } from 'mixins/titles';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 
 export default {
   components: { PTab, PTabs },
-  mixins: [common, member, memberOverview],
+  mixins: [common, memberAltHeader, memberOverviewUrl, memberTitle],
   name: 'Clanstva',
   data() {
     return {
@@ -91,11 +92,6 @@ export default {
         }
       }
     },
-  },
-  created() {
-    const context = this.$options.cardData;
-    context.template.pageTitle =
-      `${context.cardData.name} - ${context.data.person.name}`;
   },
 };
 </script>

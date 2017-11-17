@@ -14,12 +14,13 @@
 <script>
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
+import { memberTitle } from 'mixins/titles';
 import slugs from '../../assets/urls.json';
 
 export default {
   name: 'ScoreAvgMax',
 
-  mixins: [common, memberOverview],
+  mixins: [common, memberOverview, memberTitle],
 
   props: {
     cardData: {

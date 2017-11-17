@@ -40,6 +40,7 @@ import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
+import { partyTitle } from 'mixins/titles';
 
 import CardWrapper from 'components/Card/Wrapper.vue';
 import PSearchDropdown from 'parlassets/components/SearchDropdown.vue';
@@ -47,7 +48,7 @@ import QuestionList from 'components/QuestionList.vue';
 
 export default {
   components: { CardWrapper, PSearchDropdown, QuestionList },
-  mixins: [common, partyOverview],
+  mixins: [common, partyOverview, partyTitle],
   computed: {
     MPsPlaceholder() {
       return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';

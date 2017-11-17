@@ -292,6 +292,11 @@ export default {
   beforeMount() {
     this.fetchVotesForGroup();
   },
+  created() {
+    const context = this.$options.cardData;
+    context.template.pageTitle = context.cardData.name +
+      (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+  }
 };
 </script>
 

@@ -60,5 +60,11 @@ export default {
       }
     },
   },
+  created() {
+    const context = this.$root.$options.cardData;
+    const pronoun = context.data.person.gender === 'f' ? 'jo' : 'ga';
+    context.template.pageTitle =
+      `Besede, ki ${pronoun} zaznamujejo - ${context.data.person.name}`;
+  }
 };
 </script>

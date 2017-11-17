@@ -54,6 +54,7 @@ import SearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import common from 'mixins/common';
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
+import { memberTitle, partyTitle } from 'mixins/titles';
 
 export default {
   components: { PSearchDropdown, SearchField },
@@ -240,7 +241,9 @@ export default {
   },
   created() {
     (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
-  },
+    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+
+},
 };
 </script>
 

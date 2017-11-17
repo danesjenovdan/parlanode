@@ -3,7 +3,7 @@
   "name": "Poslanska vprašanja in pobude",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getQuestionsOfPG",
   "type": "poslanska_skupina",
-  "lastUpdate": "2017-11-14T22:15:24.220Z",
+  "lastUpdate": "2017-11-17T23:02:47.179Z",
   "method": "poslanska-vprasanja-in-pobude",
   "group": "ps",
   "big": true

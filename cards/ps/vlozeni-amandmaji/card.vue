@@ -123,6 +123,7 @@
   import stateLoader from 'helpers/stateLoader';
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
+  import { partyTitle } from 'mixins/titles';
   import SearchField from 'components/SearchField.vue';
   import StripedButton from 'components/StripedButton.vue';
 
@@ -133,7 +134,7 @@
 
   export default {
     components: { SearchField, StripedButton },
-    mixins: [common],
+    mixins: [common, partyTitle],
     name: 'VlozeniAmandmaji',
     data() {
       const loadFromState = stateLoader(this.$options.cardData.state);
