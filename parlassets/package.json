@@ -31,7 +31,6 @@
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-import": "^2.3.0",
     "file-loader": "^0.11.1",
     "node-sass": "^4.5.3",
