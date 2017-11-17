@@ -4,7 +4,7 @@ import { PORTRAIT_ROOT_URL, SEARCH_ROOT_URL } from './constants.js';
 export const getPersonLink = person =>
   urlsData.base +
   urlsData.personLink.base +
-  urlsData.person[person.id].slug +
+    (typeof urlsData.person[person.id] !== 'undefined' ? urlsData.person[person.id].slug : '') +
   urlsData.personLink.pregled;
 
 export const getPersonPortrait = person =>
