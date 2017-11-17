@@ -92,14 +92,6 @@
             }).reverse().map(JSON.parse)
 
 
-            var state = { }
-            if (this.cardData.state) {
-                state = this.cardData.state;
-                // if (state.text) textFilter = state.text;
-                // if (state.months) allMonths = selectFromState(allMonths, state.months);
-                // if (state.sessions) allSessions = selectFromState(allSessions, state.sessions);
-            }
-
             return {
                 cardMethod: this.cardData.cardData.method,
                 cardGroup: this.cardData.cardData.group,
@@ -108,8 +100,7 @@
                 allMonths,
                 allSessions,
                 currentPage,
-                isLoading,
-                state
+                isLoading
             };
         },
         computed: {
@@ -155,8 +146,8 @@
             loadMore () {
                 this.isLoading = true;
 
-                axios.get('https://isci.parlameter.si/filter/'+ encodeURIComponent('zakon') +'/'+ this.currentPage, {
-                    params: this.state
+                axios.get('https://isci.parlameter.si/filter/'+ encodeURIComponent(this.cardData.state.text) +'/'+ this.currentPage, {
+                    params: this.cardData.state
                 }).then(response => {
                     this.speakingDays = this.speakingDays.concat(response.data.highlighting)
                     this.currentPage++
@@ -164,6 +155,7 @@
                     this.isLoading = false;
                     if (response.data.response.start >= response.data.response.numFound) {
                         // end infinite scroll
+                        console.log('end scroll')
                     }
                 });
             },
@@ -194,12 +186,6 @@
                     return textMatch && dateMatch && sessionMatch;
                 };
 
-                console.log(this.speakingDays.filter(filterSpeakings).reduce(function (r, a) {
-                    r[a.session_id] = r[a.session_id] || [];
-                    r[a.session_id].push(a);
-                    return r;
-                }, Object.create(null)))
-
                 return this.speakingDays
                     .filter(filterSpeakings)
                     .reduce(function (r, a) {
@@ -207,34 +193,6 @@
                         r[a.session_id].push(a);
                         return r;
                     }, Object.create(null));
-
-
-                return this.votingDays
-                    .map(votingDay => ({
-                        date: votingDay.date,
-                        ballots: votingDay.ballots
-                            .filter(filterBallots)
-                            .map((ballot) => {
-                                const ballotClone = JSON.parse(JSON.stringify(ballot));
-                                if (ballot.option === 'ni') {
-                                    ballotClone.label = this.type === 'person'
-                                        ? `Ni ${this.vocabulary.glasovati[this.person.gender]} o`
-                                        : 'Niso glasovali o';
-                                } else {
-                                    ballotClone.label = this.type === 'person'
-                                        ? `${capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
-                                        : `Glasovali ${ballot.option.toUpperCase()}`;
-                                }
-
-                                if (ballot.result !== 'none') {
-                                    ballotClone.outcome = ballot.result === true ? 'Predlog sprejet' : 'Predlog zavrnjen';
-                                }
-
-                                return ballotClone;
-                            }),
-                    }))
-                    .filter(votingDay => votingDay.ballots.length > 0)
-                    .filter(filterDates);
             },
             measurePiwik(filter, sort, order) {
                 if (typeof measure === 'function') {
@@ -269,10 +227,6 @@
     @import '~parlassets/scss/colors';
 
     //@todo remove me
-    .card-container .card-content.full .card-content-front {
-        /* overflow: hidden; */
-        overflow-y: scroll !important;
-    }
 
     .search-field {
         height: 53px !important;
