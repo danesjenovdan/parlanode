@@ -2,7 +2,6 @@
   <govori
     :card-data="$options.cardData"
     type="person"
-    :person="$options.cardData.data.person"
   ></govori>
 </template>
 
