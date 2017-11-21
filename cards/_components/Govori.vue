@@ -14,7 +14,7 @@
         <div class="filters">
             <div class="filter text-filter">
                 <div class="filter-label">Išči po vsebini govorov</div>
-                <search-field v-model="textFilter" />
+                <search-field v-model="textFilter" :debounce="500" v-on:keyup="searchSpeakings()" />
             </div>
             <div class="filter month-dropdown">
                 <div class="filter-label">Časovno obdobje</div>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="speaks">
-            <div class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+            <div class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="20">
                 <div v-for="(speakingDay, key, index) in filteredSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
@@ -48,8 +48,11 @@
                     </ul>
                 </div>
             </div>
-            <div v-if="isLoading" class="nalagalnik__wrapper">
+            <div v-if="card.isLoading" class="nalagalnik__wrapper">
                 <div class="nalagalnik"></div>
+            </div>
+            <div v-if="speakingDays.length===0">
+                tukaj pride empty state komponenta
             </div>
 
         </div>
@@ -68,15 +71,11 @@
     import axios from 'axios';
     import infiniteScroll from 'vue-infinite-scroll'
 
-
     export default {
         directives: { infiniteScroll },
         components: { SearchField, SearchDropdown },
         mixins: [common],
         data() {
-            let currentPage = 1;
-            let isLoading = false;
-
             let textFilter = '';
             let allMonths = generateMonths();
 
@@ -93,25 +92,39 @@
 
 
             return {
+                card: {
+                    currentPage: 1,
+                    isLoading: false,
+                    lockLoading: true
+                },
                 cardMethod: this.cardData.cardData.method,
                 cardGroup: this.cardData.cardData.group,
                 speakingDays: this.cardData.data.highlighting,
                 textFilter,
                 allMonths,
-                allSessions,
-                currentPage,
-                isLoading
+                allSessions
             };
         },
         computed: {
             cardUrl() {
-                const state = {};
+                const state = {}
 
-                if (this.selectedSessions.length > 0) state.sessions = this.selectedSessions.map(session => session.id);
-                if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-                if (this.textFilter.length > 0) state.text = this.textFilter;
+                if (this.type === 'person') {
+                    state.people = this.cardData.state.people
+                } else if (this.type === 'party') {
+                    state.parties = this.cardData.state.parties
+                }
+                // if (this.selectedSessions.length > 0) statesessions = this.selectedSessions.map(session => session.id);
+                if (this.selectedMonths.length > 0) state.time_filter = this.selectedMonths.map(month => month.id);
 
-                return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+                var encodedQueryData = '';
+                if (Object.keys(state).length !== 0) {
+                    encodedQueryData = this.encodeQueryData(state);
+                }
+
+                return `https://isci.parlameter.si/filter/${this.textFilter}/${this.card.currentPage}${encodedQueryData}`;
+
+                // return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
             },
             selectedSessions() {
                 return this.allSessions.filter(session => session.selected);
@@ -132,6 +145,8 @@
                 };
             },
             filteredSpeakingDays() {
+
+
                 return this.getFilteredSpeakingDays();
             },
             headerConfig() {
@@ -143,24 +158,38 @@
             }
         },
         methods: {
+            searchSpeakings () {
+                console.log('call api')
+                // if (this.textFilter.length > 0) {
+                //     console.log(this.cardUrl)
+                //
+                //     this.card.isLoading = true;
+                //     axios.get(this.cardUrl).then( response => {
+                //         this.speakingDays = response.data.highlighting;
+                //         this.card.isLoading = false;
+                //     })
+                // }
+            },
             loadMore () {
-                this.isLoading = true;
+                if (! this.card.lockLoading) return false;
 
-                axios.get('https://isci.parlameter.si/filter/'+ encodeURIComponent(this.cardData.state.text) +'/'+ this.currentPage, {
-                    params: this.cardData.state
-                }).then(response => {
-                    this.speakingDays = this.speakingDays.concat(response.data.highlighting)
-                    this.currentPage++
 
-                    this.isLoading = false;
+                this.card.isLoading = true;
+
+                axios.get(this.cardUrl).then(response => {
+                    this.speakingDays = this.speakingDays.concat( )
+                    this.card.currentPage++
+
+                    this.card.isLoading = false;
                     if (response.data.response.start >= response.data.response.numFound) {
                         // end infinite scroll
                         console.log('end scroll')
+                        this.card.lockLoading = true;
                     }
                 });
             },
 
-            getFilteredSpeakingDays(onlyFilterByText = false) {
+            getFilteredSpeakingDays (onlyFilterByText = false) {
                 const filterSpeakings = (speaking) => {
                     const textMatch = this.textFilter === '' || speaking.content_t.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
 
@@ -183,7 +212,8 @@
                         }
                     }
 
-                    return textMatch && dateMatch && sessionMatch;
+                    return true;
+                    // return textMatch && dateMatch && sessionMatch;
                 };
 
                 return this.speakingDays

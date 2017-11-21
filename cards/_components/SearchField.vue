@@ -14,6 +14,10 @@ export default {
   props: {
     value: String,
     placeholder: String,
+    debounce: {
+      type: Number,
+      default: 0
+    }
   },
 };
 </script>
