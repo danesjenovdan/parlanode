@@ -11,7 +11,7 @@
             <p class="info-text"></p>
         </div>
 
-        <div class="filters filters--shadow">
+        <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
             <div class="filter text-filter">
                 <div class="filter-label">Išči po vsebini govorov</div>
                 <search-field v-model="textFilter" @input="searchSpeakings()" />
@@ -40,7 +40,7 @@
         </div>
 
         <div class="speaks">
-            <div class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+            <div id="speaks" class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                 <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
@@ -54,8 +54,7 @@
                             </div>
 
                             <div class="motion">
-                                <!--@todo url manjka-->
-                                <a href="#" class="funblue-light-hover" v-html="speak.content_t"></a>
+                                <a :href="getSessionSpeechLink(speak)" class="funblue-light-hover" v-html="speak.content_t"></a>
                             </div>
                         </li>
                     </ul>
@@ -75,7 +74,7 @@
 <script>
     import SearchField from 'components/SearchField.vue';
     import SearchDropdown from 'components/SearchDropdown.vue';
-    import { getPersonPortrait, getPersonLink } from 'components/links';
+    import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from 'components/links';
 
     import generateMonths from 'helpers/generateMonths';
     import common from 'mixins/common';
@@ -108,7 +107,8 @@
                 card: {
                     currentPage: 0,
                     isLoading: false,
-                    lockLoading: false
+                    lockLoading: false,
+                    shouldShadow: false
                 },
                 cardMethod: this.cardData.cardData.method,
                 cardGroup: this.cardData.cardData.group,
@@ -117,6 +117,9 @@
                 allMonths,
                 allSessions
             };
+        },
+        mounted () {
+            document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
         },
         computed: {
             cardUrl() {
@@ -224,6 +227,16 @@
 
                 });
             },
+            checkScrollPosition() {
+                if (! this.card.lockLoading ) {
+                    this.card.lockLoading = true;
+                    setTimeout(() => {
+                        this.card.shouldShadow = document.getElementById('speaks').scrollTop > 0;
+                        this.card.lockLoading = false;
+
+                    }, 200)
+                }
+            },
             measurePiwik(filter, sort, order) {
                 if (typeof measure === 'function') {
                     if (sort !== '') {
@@ -234,7 +247,8 @@
                 }
             },
             getPersonPortrait,
-            getPersonLink
+            getPersonLink,
+            getSessionSpeechLink
         },
         props: {
             cardData: {
