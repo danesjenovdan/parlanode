@@ -1,5 +1,5 @@
 import urlsData from '../../assets/urls.json';
-import { PORTRAIT_ROOT_URL } from './constants.js';
+import { PORTRAIT_ROOT_URL, SEARCH_ROOT_URL } from './constants.js';
 
 export const getPersonLink = person =>
   urlsData.base +
@@ -26,3 +26,4 @@ export const getMemberPortrait = member => getPersonPortrait(member.person);
 export const getMemberPartyLink = member => getPersonPartyLink(member.person);
 
 export const getSessionSpeechLink = session =>  urlsData.base + urlsData.sessionLink.transkript + session.session_id + '#' + session.speech_id;
+export const getSearchTermLink = term =>  SEARCH_ROOT_URL + encodeURIComponent(`"${term}"`);

@@ -17,7 +17,6 @@
     </div>
     <card-footer @toggleBack="toggleBack" />
   </div>
-
 </template>
 
 <script>

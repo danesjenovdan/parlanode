@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    class="card-halfling card-seznam-poslanskih-skupin"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
