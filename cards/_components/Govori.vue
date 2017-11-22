@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="motion">
-                                <a :href="getSessionSpeechLink(speak)" class="funblue-light-hover" v-html="speak.content_t"></a>
+                                <a :href="getSessionSpeechLink(speak)" class="funblue-light-hover" v-html="speak.content_t.substr(0, 180) + '...'"></a>
                             </div>
                         </li>
                     </ul>
@@ -279,6 +279,10 @@
     .card-scroll {
         padding: 0;
 
+        .search-field {
+            background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
+        }
+
         .filters {
             padding: 0 20px 20px;
             display: flex;
@@ -381,6 +385,7 @@
                     text-align: left;
                     font-size: 18px;
                     font-weight: 300;
+                    padding-right: 10p;
                     margin: 0 5px 0 15px;
                     flex: 1;
 
