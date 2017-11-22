@@ -7,7 +7,6 @@ export default {
   },
   methods: {
       encodeQueryData (data) {
-          console.log(data,'asd', Object.keys(data))
           return '?' + Object.keys(data)
               .reduce((a, k) => {
                   a.push(k + '=' + encodeURIComponent(data[k]));

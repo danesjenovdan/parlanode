@@ -13,11 +13,7 @@ export default {
   name: 'SearchField',
   props: {
     value: String,
-    placeholder: String,
-    debounce: {
-      type: Number,
-      default: 0
-    }
+    placeholder: String
   },
 };
 </script>
