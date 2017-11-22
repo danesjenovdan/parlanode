@@ -151,6 +151,7 @@
                 required: true,
             },
             selectCallback: Function,
+            clearCallback: Function,
             single: {
                 type: Boolean,
                 default: false,
@@ -169,7 +170,6 @@
                 } else {
                     this.toggleItem(selectedItemId);
                 }
-
                 if (this.selectCallback) {
                     this.selectCallback(selectedItemId);
                 }
@@ -186,6 +186,9 @@
             },
             clearSelection() {
                 this.selectedIds.forEach(this.toggleItem);
+                if (this.clearCallback) {
+                    this.clearCallback(0);
+                }
             },
             focus(index, withKeyboard) {
                 this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);

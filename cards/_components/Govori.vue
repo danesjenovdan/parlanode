@@ -2,7 +2,7 @@
     <card-wrapper
         :id="cardData.cardData._id"
         :data-id="`${cardGroup}/${cardMethod}`"
-        content-class="full"
+        content-class="full card-scroll"
         v-bind="{ cardUrl, headerConfig }">
 
         <div slot="info">
@@ -11,25 +11,37 @@
             <p class="info-text"></p>
         </div>
 
-        <div class="filters">
+        <div class="filters filters--shadow">
             <div class="filter text-filter">
                 <div class="filter-label">Išči po vsebini govorov</div>
-                <search-field v-model="textFilter" :debounce="500" v-on:keyup="searchSpeakings()" />
+                <search-field v-model="textFilter" @input="searchSpeakings()" />
             </div>
             <div class="filter month-dropdown">
                 <div class="filter-label">Časovno obdobje</div>
-                <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+                <search-dropdown
+                    :items="dropdownItems.months"
+                    :placeholder="monthPlaceholder"
+                    :alphabetise="false"
+                    :select-callback="searchSpeakings"
+                    :clear-callback="searchSpeakings">
+                </search-dropdown>
             </div>
 
             <div class="filter month-dropdown">
                 <div class="filter-label">Vrsta seje</div>
-                <search-dropdown :items="dropdownItems.sessions" :placeholder="sessionPlaceholder" :alphabetise="true"></search-dropdown>
+                <search-dropdown
+                    :items="dropdownItems.sessions"
+                    :placeholder="sessionPlaceholder"
+                    :alphabetise="true"
+                    :select-callback="searchSpeakings"
+                    :clear-callback="searchSpeakings">
+                </search-dropdown>
             </div>
         </div>
 
         <div class="speaks">
-            <div class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="20">
-                <div v-for="(speakingDay, key, index) in filteredSpeakingDays">
+            <div class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
                         <li class="speaks__list--speak" v-for="speak in speakingDay">
@@ -42,21 +54,21 @@
                             </div>
 
                             <div class="motion">
-                                <p v-html="speak.content_t"></p>
+                                <!--@todo url manjka-->
+                                <a href="#" class="funblue-light-hover" v-html="speak.content_t"></a>
                             </div>
                         </li>
                     </ul>
+                </div>
+                <div v-if="speakingDays.length===0">
+                    tukaj pride empty state komponenta
                 </div>
             </div>
             <div v-if="card.isLoading" class="nalagalnik__wrapper">
                 <div class="nalagalnik"></div>
             </div>
-            <div v-if="speakingDays.length===0">
-                tukaj pride empty state komponenta
-            </div>
 
         </div>
-
     </card-wrapper>
 </template>
 
@@ -86,6 +98,7 @@
             let allSessions = highlightingOrgs.map(
                 org => ({ id: org.id, label: org.name, selected: false})
             );
+
             allSessions = allSessions.map(JSON.stringify).reverse().filter(function (e, i, a) {
                 return a.indexOf(e, i+1) === -1;
             }).reverse().map(JSON.parse)
@@ -93,9 +106,9 @@
 
             return {
                 card: {
-                    currentPage: 1,
+                    currentPage: 0,
                     isLoading: false,
-                    lockLoading: true
+                    lockLoading: false
                 },
                 cardMethod: this.cardData.cardData.method,
                 cardGroup: this.cardData.cardData.group,
@@ -114,17 +127,28 @@
                 } else if (this.type === 'party') {
                     state.parties = this.cardData.state.parties
                 }
-                // if (this.selectedSessions.length > 0) statesessions = this.selectedSessions.map(session => session.id);
-                if (this.selectedMonths.length > 0) state.time_filter = this.selectedMonths.map(month => month.id);
+
+                if (this.selectedMonths.length > 0) {
+                    // since dates in month dropdown are generated as m-y we need to prepare them as 1.m.y
+                    state.time_filter = this.selectedMonths.map(m => {
+                        const [year, month] = m.id.split('-');
+                        return [1, month, year].join('.');
+                    });
+                }
+
+                if (this.selectedSessions.length > 0) {
+                    state.orgs = this.selectedSessions.map(s => s.id);
+                }
+
 
                 var encodedQueryData = '';
                 if (Object.keys(state).length !== 0) {
                     encodedQueryData = this.encodeQueryData(state);
                 }
 
-                return `https://isci.parlameter.si/filter/${this.textFilter}/${this.card.currentPage}${encodedQueryData}`;
+                let textFilter = this.textFilter.length ? this.textFilter : this.cardData.state.text;
 
-                // return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+                return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
             },
             selectedSessions() {
                 return this.allSessions.filter(session => session.selected);
@@ -144,10 +168,13 @@
                     sessions: this.allSessions
                 };
             },
-            filteredSpeakingDays() {
-
-
-                return this.getFilteredSpeakingDays();
+            groupSpeakingDays() {
+                return this.speakingDays
+                    .reduce(function (r, a) {
+                        r[a.session_id] = r[a.session_id] || [];
+                        r[a.session_id].push(a);
+                        return r;
+                    }, Object.create(null));
             },
             headerConfig() {
 
@@ -158,71 +185,44 @@
             }
         },
         methods: {
-            searchSpeakings () {
-                console.log('call api')
-                // if (this.textFilter.length > 0) {
-                //     console.log(this.cardUrl)
-                //
-                //     this.card.isLoading = true;
-                //     axios.get(this.cardUrl).then( response => {
-                //         this.speakingDays = response.data.highlighting;
-                //         this.card.isLoading = false;
-                //     })
-                // }
+            searchSpeakings (waitTime = 750) {
+                if (this.card.lockLoading) return false;
+
+                if (! Number.isInteger(waitTime)) {
+                    waitTime = 0;
+                }
+
+                this.card.lockLoading = true;
+                setTimeout(() => {
+                    if (! this.card.isLoading) {
+                        this.card.isLoading = true;
+                        axios.get(this.cardUrl).then( response => {
+                            this.speakingDays = response.data.highlighting;
+                            this.speakingDays = response.data.highlighting;
+                            this.card.isLoading = false;
+                        })
+                    }
+                    this.card.lockLoading = false;
+                }, waitTime);
+
             },
             loadMore () {
-                if (! this.card.lockLoading) return false;
-
-
+                if (this.card.lockLoading || this.card.isLoading) return false;
                 this.card.isLoading = true;
 
                 axios.get(this.cardUrl).then(response => {
-                    this.speakingDays = this.speakingDays.concat( )
+                    this.speakingDays = this.speakingDays.concat(response.data.highlighting)
                     this.card.currentPage++
 
                     this.card.isLoading = false;
+
+                    // end infinite scrolling
                     if (response.data.response.start >= response.data.response.numFound) {
-                        // end infinite scroll
-                        console.log('end scroll')
-                        this.card.lockLoading = true;
+                        // @todo decide what to show when no more data
+                        // this.card.lockLoading = true;
                     }
+
                 });
-            },
-
-            getFilteredSpeakingDays (onlyFilterByText = false) {
-                const filterSpeakings = (speaking) => {
-                    const textMatch = this.textFilter === '' || speaking.content_t.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-
-                    var dateMatch = true;
-                    if (! onlyFilterByText && this.selectedMonths.length > 0) {
-                        const [year , month, ] = speaking.date.split('-').map(string => parseInt(string, 10));
-                        dateMatch = this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-                    }
-
-                    var sessionMatch = true;
-                    if (! onlyFilterByText && this.selectedSessions.length > 0) {
-                        let orgIds = speaking.session.orgs.map(x => x.id)
-                        let selectedOrgIds = this.selectedSessions.map(x => x.id)
-
-                        sessionMatch = false;
-                        for (let index in orgIds) {
-                            if (selectedOrgIds.includes(orgIds[index])) {
-                                sessionMatch = true;
-                            }
-                        }
-                    }
-
-                    return true;
-                    // return textMatch && dateMatch && sessionMatch;
-                };
-
-                return this.speakingDays
-                    .filter(filterSpeakings)
-                    .reduce(function (r, a) {
-                        r[a.session_id] = r[a.session_id] || [];
-                        r[a.session_id].push(a);
-                        return r;
-                    }, Object.create(null));
             },
             measurePiwik(filter, sort, order) {
                 if (typeof measure === 'function') {
@@ -262,60 +262,72 @@
         height: 53px !important;
     }
 
+    .card-scroll {
+        padding: 0;
 
-    .filters {
-        display: flex;
-        justify-content: space-between;
-        $label-height: 26px;
+        .filters {
+            padding: 0 20px 20px;
+            display: flex;
+            position: relative;
+            z-index: 9;
+            justify-content: space-between;
+            $label-height: 26px;
 
-        .filter {
-            @include respond-to(desktop) {
-                margin-right: 10px;
-                flex: 1;
+            &--shadow {
+                box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+            }
+
+            .filter {
+                @include respond-to(desktop) {
+                    margin-right: 10px;
+                    flex: 1;
+                }
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
 
             @include respond-to(mobile) {
-                width: 100%;
+                flex-wrap: wrap;
+                min-height: 154px;
             }
 
-            &:last-child {
-                margin-right: 0;
+            .filter-label {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: $label-height;
+            }
+
+            .option-party-buttons {
+                @include show-for(desktop, flex);
+
+                width: 27.5%;
+                padding-top: $label-height;
+
+                .party-button:not(:last-child) {
+                    margin-right: 3px;
+                }
             }
         }
 
-        @include respond-to(mobile) {
-            flex-wrap: wrap;
-            min-height: 154px;
-        }
-
-        .filter-label {
-            font-size: 14px;
-            font-weight: 300;
-            line-height: $label-height;
-        }
-
-        .option-party-buttons {
-            @include show-for(desktop, flex);
-
-            width: 27.5%;
-            padding-top: $label-height;
-
-            .party-button:not(:last-child) {
-                margin-right: 3px;
-            }
-        }
     }
+
 
 
     .speaks {
         flex: 1;
-        margin-top: 18px;
         position: relative;
         padding-bottom: 20px;
 
         &__wrapper {
-            height: 450px;
+            height: 420px;
             overflow-y: auto;
+            overflow-x: hidden;
 
             .date {
                 background-color: $grey;
@@ -366,11 +378,14 @@
                 .motion {
                     flex: 4;
 
-                    p {
+                    a {
+                        color: $black;
                         margin: 0;
                         font-size: 14px;
+                        line-height: 20px;
                         font-weight: 300;
                         margin-right: 20px;
+                        padding-right: 5px;
                     }
                 }
             }
@@ -390,4 +405,5 @@
             }
         }
     }
+
 </style>

@@ -16,7 +16,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .card-content {
-        overflow-y: scroll !important;
-    }
+
 </style>
