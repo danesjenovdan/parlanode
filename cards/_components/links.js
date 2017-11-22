@@ -24,3 +24,5 @@ export const getPersonPartyLink = person => getPartyLink(person.party);
 export const getMemberLink = member => getPersonLink(member.person);
 export const getMemberPortrait = member => getPersonPortrait(member.person);
 export const getMemberPartyLink = member => getPersonPartyLink(member.person);
+
+export const getSessionSpeechLink = session =>  urlsData.base + urlsData.sessionLink.transkript + session.session_id + '#' + session.speech_id;
