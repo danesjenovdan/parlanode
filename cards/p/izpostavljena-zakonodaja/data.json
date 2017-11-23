@@ -1,0 +1,38 @@
+{
+  "created_at": "23.11.2017",
+  "created_for": "23.11.2017",
+  "under_consideration": [
+    {
+      "date": "27.10.2017",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o tujcih",
+      "icon": "tujec.svg",
+      "epa": "2102-VII"
+    },
+    {
+      "date": "02.11.2017",
+      "text": "Zakon za urejanje položaja študentov",
+      "icon": "student.svg",
+      "epa": "2020-VII"
+    }
+  ],
+  "accepted": [
+    {
+      "date": "06.10.2017",
+      "text": "Zakon o kolektivnih tožbah",
+      "icon": "kolektiv.svg",
+      "epa": "2052-VII"
+    },
+    {
+      "date": "02.11.2017",
+      "text": "Zakon o urejanju prostora",
+      "icon": null,
+      "epa": "2001-VII"
+    },
+    {
+      "date": "02.11.2017",
+      "text": "Zakon o arhitekturni in inženirski dejavnosti",
+      "icon": "arhitekt.svg",
+      "epa": "1983-VII"
+    }
+  ]
+}
