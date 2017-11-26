@@ -1,9 +1,9 @@
 {
   "_id": "p_tfidf",
-  "name": "besede-ki-jo-ga-zaznamujejo",
+  "name": "Besede, ki jo/ga zaznamujejo",
   "dataUrl": "https://analize.parlameter.si/v1/p/getTFIDF",
   "type": "poslanec",
-  "lastUpdate": "2017-03-19T18:04:55.294Z",
+  "lastUpdate": "2017-11-17T23:01:47.519Z",
   "method": "tfidf",
   "group": "p"
 }

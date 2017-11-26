@@ -176,10 +176,10 @@
             {{ party.acronym }}
           </span>
         </p>
-        <search-dropdown
+        <p-search-dropdown
           :items="samePeople"
           :placeholder="samePeoplePlaceholder">
-        </search-dropdown>
+        </p-search-dropdown>
         <div class="card-modal-button" @click="toggleModal('same', false)">POTRDI</div>
       </div>
     </div>
@@ -198,10 +198,10 @@
             {{ party.acronym }}
           </span>
         </p>
-        <search-dropdown
+        <p-search-dropdown
           :items="differentPeople"
           :placeholder="differentPeoplePlaceholder"
-        ></search-dropdown>
+        ></p-search-dropdown>
         <div class="card-modal-button" @click="toggleModal('different', false)">POTRDI</div>
       </div>
     </div>
@@ -210,6 +210,7 @@
 
 <script>
   import common from 'mixins/common';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
   import PTab from 'components/Tab.vue';
   import PTabs from 'components/Tabs.vue';
   import TimeChart from 'components/TimeChart.vue';
@@ -219,6 +220,7 @@
     components: {
       BarChart,
       TimeChart,
+      PSearchDropdown,
       PTab,
       PTabs,
     },

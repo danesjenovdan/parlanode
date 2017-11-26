@@ -22,8 +22,13 @@ Vue.component('SearchDropdown', SearchDropdown);
 
 // the default export should be a function
 // which will receive the context of the render call
-export default (cardData) => {
-  const app = new Vue(Object.assign({}, Card, { cardData }));
+export default (context) => {
+  const app = new Vue(Object.assign({}, Card, { cardData: context }));
+
+  context.state = {
+    data: context.data,
+    cardData: context.cardData,
+  };
 
   return new Promise(resolve => resolve(app));
 };
