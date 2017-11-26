@@ -35,6 +35,16 @@
         </template>
       </div>
       <div class="name">{{ data.name }}</div>
+      <div v-if="data.documents.length > 0" class="documents">
+        <div class="dropdown-label">Dokumenti</div>
+        <p-search-dropdown
+          single
+          small
+          :items="mappedDocuments"
+          placeholder="Izberi dokument"
+          :select-callback="openDocument"
+        />
+      </div>
     </div>
     <p-tabs @switch="focusTab" :start-tab="selectedTab">
       <p-tab label="Izvleček" variant="light">
@@ -79,6 +89,7 @@
 <script>
 import { pick } from 'lodash';
 import common from 'mixins/common';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from './Excerpt.vue';
@@ -86,13 +97,15 @@ import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-  components: {
-    Excerpt,
-    Poslanci,
-    PoslanskeSkupine,
-    PTab,
-    PTabs,
-  },
+// puščam not develop verzijo, tukaj je verzija glasovanje-update za lažji debugging, če bo potreben
+  // components: {
+    // Excerpt,
+    // Poslanci,
+    // PoslanskeSkupine,
+    // PTab,
+    // PTabs,
+  // },
+  components: { Poslanci, PoslanskeSkupine, PSearchDropdown, PTab, PTabs },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
@@ -154,6 +167,11 @@ export default {
         }
       }
     },
+  },
+// glasovanje-update je bilo prazno, created() je iz developa
+  created() {
+    this.$options.cardData.template.contextUrl =
+      `${this.slugs.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
   },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {
@@ -257,7 +275,7 @@ export default {
       margin-bottom: 5px;
     }
 
-    .search-dropdown {
+    .p- {
       margin: 10px -2px 3px -2px;
       @include respond-to(desktop) { margin: 0; }
     }

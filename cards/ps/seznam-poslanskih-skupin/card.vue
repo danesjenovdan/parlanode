@@ -1,5 +1,7 @@
 <template>
-  <div v-if="$options.cardData.state.generator" :id="$options.cardData.cardData._id">
+  <div
+    v-if="$options.cardData.state && $options.cardData.state.generator"
+    :id="$options.cardData.cardData._id">
     <div class="party-list-generator">
       <div class="row">
         <div class="col-md-12">
@@ -20,7 +22,7 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find, get } from 'lodash';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
@@ -33,7 +35,7 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data.data,
-      currentAnalysis: this.$options.cardData.state.analysis || 'seat_count',
+      currentAnalysis: get(this.$options.cardData, 'state.analysis') || 'seat_count',
       analyses,
     };
   },

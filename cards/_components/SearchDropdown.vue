@@ -18,13 +18,16 @@
     <ul
       :class="['search-dropdown-options', { visible: this.active }]"
       @mouseleave="focus(-1)">
-      <template v-for="item, index in filteredItems">
+      <template v-for="(item, index) in filteredItems">
         <li
+          :key="`${item.id}1`"
           v-if="item.groupLabel"
           class="search-dropdown-group-label">
           {{ item.groupLabel }}
         </li>
+        <!-- glasovanje-update je bilo brez :key, ki je bil v developu zgoraj je bil :key v developu, zaenkrat puščam oba-->
         <li
+          :key="`${item.id}2`"
           :class="{ selected : item.selected, focused : focused === index }"
           @click="selectItem(item.id)"
           @mouseenter="focus(index)">
