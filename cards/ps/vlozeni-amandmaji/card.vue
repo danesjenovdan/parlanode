@@ -20,11 +20,11 @@
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
       </div>
       <div class="filter month-dropdown">
         <div class="filter-label">Časovno obdobje</div>
-        <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></p-search-dropdown>
       </div>
       <div class="filter button-filter">
         <div class="filter-label">Prikaži</div>
@@ -124,6 +124,7 @@
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
   import { partyTitle } from 'mixins/titles';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
   import SearchField from 'components/SearchField.vue';
   import StripedButton from 'components/StripedButton.vue';
 
@@ -133,7 +134,7 @@
   };
 
   export default {
-    components: { SearchField, StripedButton },
+    components: { PSearchDropdown, SearchField, StripedButton },
     mixins: [common, partyTitle],
     name: 'VlozeniAmandmaji',
     data() {

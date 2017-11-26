@@ -30,7 +30,7 @@
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
     </div>
     <div id="votingCard" class="date-list">
@@ -105,11 +105,12 @@
 
 <script>
   import common from 'mixins/common';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
   import StripedButton from 'components/StripedButton.vue';
 
   export default {
     mixins: [common],
-    components: { StripedButton },
+    components: { PSearchDropdown, StripedButton },
     name: 'GlasovanjaSeja',
     data() {
 

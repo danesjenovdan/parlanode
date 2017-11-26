@@ -37,7 +37,7 @@
       <div class="name">{{ data.name }}</div>
       <div v-if="data.documents.length > 0" class="documents">
         <div class="dropdown-label">Dokumenti</div>
-        <search-dropdown
+        <p-search-dropdown
           single
           small
           :items="mappedDocuments"
@@ -82,13 +82,14 @@
 <script>
 import { find, pick } from 'lodash';
 import common from 'mixins/common';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-  components: { Poslanci, PoslanskeSkupine, PTab, PTabs },
+  components: { Poslanci, PoslanskeSkupine, PSearchDropdown, PTab, PTabs },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
@@ -269,7 +270,7 @@ export default {
       margin-bottom: 5px;
     }
 
-    .search-dropdown {
+    .p- {
       margin: 10px -2px 3px -2px;
       @include respond-to(desktop) { margin: 0; }
     }
