@@ -1,5 +1,5 @@
 <template>
-  <div class="row legislation-list">
+  <div v-if="$options.cardData.state && $options.cardData.state.generator" class="row legislation-list">
     <div class="col-md-12 filters">
       <div class="button-filters">
         <striped-button
@@ -21,66 +21,44 @@
       <inner-card
         :header-config="headerConfig"
         :columns="columns"
+        :items="processedData"
         :current-sort="currentSort"
         :current-sort-order="currentSortOrder"
+        :select-sort="selectSort"
         :info-text="infoText"
         :generated-card-url="generatedCardUrl"
       />
     </div>
   </div>
+  <inner-card
+    v-else
+    :header-config="headerConfig"
+    :columns="columns"
+    :items="processedData"
+    :current-sort="currentSort"
+    :current-sort-order="currentSortOrder"
+    :select-sort="selectSort"
+    :info-text="infoText"
+    :generated-card-url="generatedCardUrl"
+  />
 
-
-  <!--<card-wrapper-->
-    <!--class="card-halfling card-IME_KARTICE"-->
-    <!--:id="$options.cardData.cardData._id"-->
-    <!--:card-url="url"-->
-    <!--:header-config="headerConfig">-->
-
-
-
-    <!--<div slot="info">-->
-      <!--<p class="info-text lead"></p>-->
-      <!--<p class="info-text heading">METODOLOGIJA</p>-->
-      <!--<p class="info-text"></p>-->
-    <!--</div>-->
-
-    <!--<div class="row">-->
-      <!--<div class="col-md-12 filters">-->
-        <!--<ul class="button-filters">-->
-          <!--<striped-button-->
-                  <!--v-for="(filter, index) in filters"-->
-                  <!--@click.native="selectFilter(filter)"-->
-                  <!--color="sds"-->
-                  <!--:key="index"-->
-                  <!--:selected="filter === currentFilter"-->
-                  <!--:small-text="filter"-->
-          <!--/>-->
-
-          <!--<search-field v-model="textFilter"></search-field>-->
-
-          <!--<search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>-->
-        <!--</ul>-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash; Card content goes here &ndash;&gt;-->
-  <!--</card-wrapper>-->
 </template>
 
 <script>
 import common from 'mixins/common';
 import StripedButton from 'components/StripedButton.vue';
 import SearchField from 'components/SearchField.vue';
+import SearchDropdown from 'components/SearchDropdown.vue';
 
 import InnerCard from './innerCard.vue';
 
 export default {
-  components: { StripedButton, SearchField, InnerCard },
+  components: { StripedButton, SearchField, InnerCard, SearchDropdown },
   mixins: [common],
   name: 'SeznamZakonov',
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.cardData.data.results,
       filters: ['Zakoni', 'Akti'],
       currentFilter: this.$options.cardData.state.filter || 'Zakoni',
       currentSort: 'date',
@@ -100,20 +78,38 @@ export default {
           return this.workingBodies.length ? `izbranih: ${this.workingBodies.length}` : 'izberi';
       },
       columns: () => [
-          { id: 'image', label: '', additionalClass: 'image' },
           { id: 'name', label: 'Ime', additionalClass: 'wider name' },
-          { id: 'date', label: 'Začetek' },
-          { id: 'updated', label: 'Sprememba', additionalClass: 'optional' },
-          { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' },
+          { id: 'date', label: 'Sprememba' },
+          { id: 'updated', label: 'Matično delovno telo', additionalClass: 'optional' },
+          { id: 'workingBody', label: 'Status', additionalClass: 'wider optional' },
       ],
       infoText: () => {
           return "Info";
       },
       generatedCardUrl() {
           return 'f';
+      },
+      processedData () {
+          const filterLegislation = (legislation) => {
+              const textMatch = this.textFilter === '' || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+
+              return textMatch;
+          }
+          
+          return this.data.filter(filterLegislation);
       }
   },
   methods: {
+    selectSort(sortId) {
+        if (this.currentSort === sortId) {
+            this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+            this.currentSort = sortId;
+            this.currentSortOrder = 'asc';
+        }
+
+        this.measurePiwik('', sortId, this.currentSortOrder);
+    },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
