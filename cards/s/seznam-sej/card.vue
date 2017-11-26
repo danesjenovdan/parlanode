@@ -1,5 +1,7 @@
 <template>
-  <div v-if="$options.cardData.state.generator" :id="$options.cardData.cardData._id">
+  <div
+    v-if="$options.cardData.state && $options.cardData.state.generator"
+    :id="$options.cardData.cardData._id">
     <div class="session-list-generator">
       <div class="row">
         <div class="col-md-12 filters">
@@ -75,8 +77,8 @@ export default {
       filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: this.$options.cardData.state.filter || 'Seje DZ',
-      justFive: this.$options.cardData.state.justFive || false,
+      currentFilter: get(this.$options.cardData, 'state.filter') || 'Seje DZ',
+      justFive: get(this.$options.cardData, 'state.justFive') || false,
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
