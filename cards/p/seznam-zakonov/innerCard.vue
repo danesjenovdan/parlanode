@@ -13,7 +13,7 @@
     <sortable-table
       class="session-list"
       :columns="columns"
-      :items="[]"
+      :items="mappedItems"
       :sort="currentSort"
       :sort-order="currentSortOrder"
       :sort-callback="selectSort"
@@ -34,12 +34,22 @@ export default {
   props: {
     headerConfig: Object,
     columns: Array,
+    items: Array,
     currentSort: String,
     currentSortOrder: String,
+    selectSort: Function,
     infoText: String,
     generatedCardUrl: String,
   },
   computed: {
+      mappedItems () {
+          return this.items.map(legislation => [
+              { link: '#', text: legislation.text },
+              { text: 'bla' },
+              { text: legislation.mdt },
+              { text: legislation.result },
+          ])
+      }
   },
   methods: {
     getSessionUrl(session) {
