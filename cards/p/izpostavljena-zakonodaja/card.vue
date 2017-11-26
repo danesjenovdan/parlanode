@@ -14,13 +14,15 @@
         <tabs :start-tab="selectedTab" :css-class="'iz-tabs'">
             <tab label="Pregled">
                 <div class="legislation">
-                    <div class="single-legislation" v-for="legislation in data.accepted">
-                        <div class="icon">
-                            <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
-                        </div>
+                    <div class="col-xs-12 col-sm-6 legislation-wrapper" v-for="legislation in data.accepted">
+                        <div class="single-legislation">
+                            <div class="icon">
+                                <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
+                            </div>
 
-                        <div class="text">
-                            {{ legislation.text}}
+                            <div class="text">
+                                {{ legislation.text}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,13 +30,15 @@
             </tab>
             <tab label="Glasovanja">
                 <div class="legislation">
-                    <div class="single-legislation" v-for="legislation in data.under_consideration">
-                        <div class="icon">
-                            <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
-                        </div>
+                    <div class="col-sm-6 legislation-wrapper" v-for="legislation in data.under_consideration">
+                        <div class="single-legislation">
+                            <div class="icon">
+                                <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
+                            </div>
 
-                        <div class="text">
-                            {{ legislation.text}}
+                            <div class="text">
+                                {{ legislation.text}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,20 +93,20 @@
 
 <style lang="scss" scoped>
 
+    @import '~parlassets/scss/breakpoints';
+    @import '~parlassets/scss/colors';
+
     .navigation-tabs {
         ul {
             padding: 0;
-            display: flex;
-            flex-wrap: wrap;
 
             li {
                 overflow: hidden;
                 text-align: center;
                 list-style: none;
                 float: left;
-                flex-grow: 1;
                 margin-right: 10px;
-                width: calc(100% * (1 / 2) - 10px);
+
 
                 &:last-child {
                     margin-right: 0;
@@ -133,49 +137,70 @@
     }
 
     .legislation {
-        display: flex;
-        flex-wrap: wrap;
-        margin: -10px 0 0 -10px;
-        margin-bottom: 24px;
+        margin-top: 16px;
 
-        .single-legislation {
-            background: #f0f0f0;
-            color: #505050;
-            display: flex;
-            align-items: center;
-            height: 125px;
-            flex-grow: 1;
-            width: calc(100% * (1 / 2) - 10px);
-            margin: 10px 0 0 10px;
-            padding: 13px 12px 11px;
 
-            .text {
-                line-height: 18px;
-                font-weight: 300;
-                font-size: 14px;
+        .legislation-wrapper {
+            margin-bottom: 15px;
+
+            @include respond-to(mobile) {
+                padding: 0;
             }
 
-            .circle {
-                height: 101px;
-                width: 102px;
-                background-color: #fff;
-                padding: 27px 15px 24px 27px;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-image: url('/cards/c/izpostavljena-zakonodaja');
+            &:nth-child(odd)
+            {
+                @include respond-to(desktop) {
+                    padding: 0;
+                }
             }
 
-            .icon {
-                margin-right: 32px;
+            &:nth-child(even)
+            {
+                @include respond-to(desktop) {
+                    padding-right: 0;
+                }
+            }
+
+
+            .single-legislation {
+                background: $grey;
+                color: $black;
+                display: flex;
+                align-items: center;
+                height: 125px;
+                padding: 13px 12px 11px;
+
+                .text {
+                    line-height: 18px;
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+
+                .circle {
+                    height: 101px;
+                    width: 102px;
+                    background-color: $white;
+                    padding: 27px 15px 24px 27px;
+                }
+
+                .icon {
+                    margin-right: 32px;
+                }
             }
         }
     }
 
     .all-legislation {
-        margin-bottom: 24px;
-        font-size: 14px;
-        font-weight: 400;
-        color: #227497;
+        margin: 4px 0 15px;
+
+        a {
+            padding: 3px;
+            padding-left: 32px;
+            background: url(https://cdn.parlameter.si/v1/parlassets/icons/zakonodaja-modra.svg) no-repeat top left;
+            font-size: 14px;
+            font-weight: 400;
+            color: #227497;
+        }
     }
 
 </style>
