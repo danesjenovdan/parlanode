@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$root.$options.cardData.cardData._id"
     content-class="full"
     :card-url="cardUrl"
     :header-config="headerConfig">
@@ -15,15 +15,15 @@
     <div class="filters">
       <div class="filter tag-dropdown">
         <div class="filter-label">Poslanec/-ka</div>
-          <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown>
+          <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Naslovljenec/-ka</div>
-          <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown>
+          <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
       </div>
       <div class="filter month-dropdown">
         <div class="filter-label">Časovno obdobje</div>
-          <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+          <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter text-filter">
         <div class="filter-label">Išči po naslovu vprašanja</div>
@@ -38,15 +38,17 @@
 <script>
 import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
+import common from 'mixins/common';
+import { partyOverview } from 'mixins/contextUrls';
+import { partyTitle } from 'mixins/titles';
 
 import CardWrapper from 'components/Card/Wrapper.vue';
-import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
+import PSearchDropdown from 'parlassets/components/SearchDropdown.vue';
 import QuestionList from 'components/QuestionList.vue';
 
-import slugs from '../../assets/urls.json';
-
 export default {
-  components: { CardWrapper, SearchDropdown, QuestionList },
+  components: { CardWrapper, PSearchDropdown, QuestionList },
+  mixins: [common, partyOverview, partyTitle],
   computed: {
     MPsPlaceholder() {
       return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';
@@ -163,7 +165,6 @@ export default {
       allMPs,
       allRecipients,
       textFilter,
-      slugs,
     };
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
@@ -61,6 +61,9 @@ export default {
       if (!this.slugs || session.link_to === 'nothing') return '';
       return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
     },
+  },
+  created() {
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/seje`;
   },
 };
 </script>
