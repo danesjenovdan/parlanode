@@ -1,5 +1,7 @@
 <template>
-  <div v-if="$options.cardData.state.generator" :id="$options.cardData.cardData._id">
+  <div
+    v-if="$options.cardData.state && $options.cardData.state.generator"
+    :id="$options.cardData.cardData._id">
     <div class="session-list-generator">
       <div class="row">
         <div class="col-md-12 filters">
@@ -14,7 +16,11 @@
             />
           </ul>
 
-          <search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>
+          <p-search-dropdown
+            class="dropdown-filter"
+            :items="workingBodies"
+            :placeholder="inputPlaceholder"
+          />
 
           <div class="align-checkbox">
             <input id="justFive" type="checkbox" v-model="justFive" class="checkbox" />
@@ -56,12 +62,13 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find, get } from 'lodash';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
 
 export default {
-  components: { InnerCard, StripedButton },
+  components: { InnerCard, PSearchDropdown, StripedButton },
   name: 'SeznamSej',
   data() {
     return {
@@ -70,8 +77,8 @@ export default {
       filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: this.$options.cardData.state.filter || 'Seje DZ',
-      justFive: this.$options.cardData.state.justFive || false,
+      currentFilter: get(this.$options.cardData, 'state.filter') || 'Seje DZ',
+      justFive: get(this.$options.cardData, 'state.justFive') || false,
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -192,7 +199,7 @@ export default {
   },
   created() {
     $.getJSON('https://analize.parlameter.si/v1/s/getWorkingBodies/', (response) => {
-      const existingWorkingBodies = this.$options.cardData.state.workingBodies || [];
+      const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
       this.workingBodies = response.map(workingBody => ({
         id: workingBody.id,
         label: workingBody.name,

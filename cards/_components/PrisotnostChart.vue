@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     @backChange="handleBackChange">
@@ -13,12 +13,14 @@
 
 <script>
 import common from 'mixins/common';
+import { memberOverview } from 'mixins/contextUrls';
+import { memberTitle } from 'mixins/titles';
 import slugs from '../../assets/urls.json';
 
 export default {
   name: 'ScoreAvgMax',
 
-  mixins: [common],
+  mixins: [common, memberOverview, memberTitle],
 
   props: {
     cardData: {

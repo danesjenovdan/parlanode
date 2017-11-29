@@ -37,7 +37,7 @@
       <div class="name">{{ data.name }}</div>
       <div v-if="data.documents.length > 0" class="documents">
         <div class="dropdown-label">Dokumenti</div>
-        <search-dropdown
+        <p-search-dropdown
           single
           small
           :items="mappedDocuments"
@@ -47,6 +47,13 @@
       </div>
     </div>
     <p-tabs @switch="focusTab" :start-tab="selectedTab">
+      <p-tab label="Izvleček" variant="light">
+        <excerpt
+          :content="data.excerpt"
+          :main-law="data.main_law"
+          :documents="data.documents"
+        />
+      </p-tab>
       <p-tab label="Poslanci">
         <poslanci
           :members="data.members"
@@ -80,15 +87,25 @@
 </template>
 
 <script>
-import { find, pick } from 'lodash';
+import { pick } from 'lodash';
 import common from 'mixins/common';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
+import Excerpt from './Excerpt.vue';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-  components: { Poslanci, PoslanskeSkupine, PTab, PTabs },
+// puščam not develop verzijo, tukaj je verzija glasovanje-update za lažji debugging, če bo potreben
+  // components: {
+    // Excerpt,
+    // Poslanci,
+    // PoslanskeSkupine,
+    // PTab,
+    // PTabs,
+  // },
+  components: { Poslanci, PoslanskeSkupine, PSearchDropdown, PTab, PTabs },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
@@ -103,12 +120,6 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
-      mappedDocuments: this.$options.cardData.data.documents.map((document, index) => ({
-        id: document.name + index,
-        label: document.name.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
-        selected: false,
-        url: document.url,
-      })),
       coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
         party: {
           id: side,
@@ -125,8 +136,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-
-      return 'https://glej.parlameter.si/s/glasovanje/' + this.data.id + '?state={}';
+      return `https://glej.parlameter.si/s/glasovanje/${this.data.id}?state={}`;
     },
   },
   methods: {
@@ -148,11 +158,6 @@ export default {
         this.$refs.sides.expandedOption = this.state.selectedOption || null;
       }
     },
-    openDocument(documentId) {
-      const selectedDocument = find(this.mappedDocuments, { id: documentId });
-      window.open(selectedDocument.url, '_blank');
-    },
-
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
         if (sort !== '') {
@@ -163,7 +168,11 @@ export default {
       }
     },
   },
-
+// glasovanje-update je bilo prazno, created() je iz developa
+  created() {
+    this.$options.cardData.template.contextUrl =
+      `${this.slugs.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
+  },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {
       this.state.selectedOption = newSelectedOption;
@@ -173,7 +182,7 @@ export default {
     });
 
     this.$emit('selectedoption', 'fuck');
-  }
+  },
 };
 </script>
 
@@ -266,7 +275,7 @@ export default {
       margin-bottom: 5px;
     }
 
-    .search-dropdown {
+    .p- {
       margin: 10px -2px 3px -2px;
       @include respond-to(desktop) { margin: 0; }
     }

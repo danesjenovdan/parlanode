@@ -31,8 +31,5 @@ export default {
       urlParameters: {},
     };
   },
-  mounted() {
-    console.log(this.$options.cardData);
-  },
 };
 </script>
