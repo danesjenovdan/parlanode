@@ -1,0 +1,172 @@
+<% include ../partials/header.ejs %>
+
+<div id="orodja-container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1" id="about">
+      <div class="lead-text-container">
+        <a href="#" class="lead-text">Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4 tool" v-for="tool in tools">
+      <div class="tool-content" :class="tool.icon">
+        <a class="tool__overlay-link" :href="tool.link">{{ tool.title }}</a>
+        <div class="img-circle circle"></div>
+        <h3 class="tool-title">{{ tool.title }}</h3>
+
+        <p class="tool-desc" v-html="tool.text"></p>
+        <a class="tool-arrow" href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  new Vue({
+      el: '#orodja-container',
+      data: {
+          tools: [
+              {
+                  icon  : 'obvestila',
+                  title : 'Parlameter obvestila',
+                  link  : '/orodja/parlameter-obvestila',
+                  text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              },
+              {
+                  icon  : 'primerjalnik',
+                  title : 'Primerjalnik glasovanj',
+                  link  : '/orodja/primerjalnik-glasovanj',
+                  text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              },
+              {
+                  icon  : 'raziskovalec',
+                  title : 'Raziskovalec neenotnosti',
+                  link  : '/orodja/raziskovalec-neenotnosti',
+                  text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              },
+              {
+                  icon  : 'kompas',
+                  title : 'Parlamentarni kompas',
+                  link  : '/orodja/parlamentarni-kompas',
+                  text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              },
+              {
+                  icon  : 'parlatube',
+                  title : 'Parlatube',
+                  link  : '/orodja/parlatube',
+                  text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              },
+          ]
+      }
+  })
+</script>
+
+<style>
+  .tool {
+    text-align: center;
+    min-width: 290px;
+      overflow: hidden;
+      margin-bottom: 55px;
+
+  }
+
+  .tool__overlay-link {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-indent: -9999px;
+  }
+
+  .tool-content {
+    border: 1px solid #c8c8c8;
+    padding: 22px 18px 45px 27px;
+    width: 100%;
+    float: left;
+    position: relative;
+
+  }
+
+  .tool-content:hover {
+    background-color: #dddbdb;
+    transition: all linear 0.3s;
+  }
+
+  .tool-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.96px;
+    margin-bottom: 20px;
+  }
+
+  .tool-desc {
+    line-height: 24px;
+    font-weight: 300;
+    max-width: 238px;
+    margin: 0 auto;
+    padding-bottom: 17px;
+  }
+
+  .tool-arrow {
+      width: 36px;
+      height: 29px;
+      background: url(https://cdn.parlameter.si/v1/parlassets/icons/arrow_right_blue.svg) no-repeat;
+      background-size: contain;
+      display: block;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      transition: right ease-out 0.3s;
+  }
+
+  .tool:hover .tool-arrow {
+      right: 50%;
+      margin-right: -18px;
+  }
+
+  .circle {
+    height: 101px;
+    width: 102px;
+    background-color: #fff;
+    padding: 27px 15px 24px 27px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto;
+  }
+
+  .obvestila .circle {
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/obvestila.svg');
+    background-size: 85%;
+  }
+
+  .primerjalnik .circle {
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/primerjalnik.svg');
+    background-size: 65%;
+  }
+
+  .raziskovalec .circle {
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/neenotnost.svg');
+    background-size: 45%;
+  }
+
+  .kompas .circle {
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/og-kompas.svg');
+    background-size: 60%;
+  }
+
+  .parlatube .circle {
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/og-kompas.svg');
+    background-size: 60%;
+  }
+
+
+</style>
+
+
+
+<% include ../partials/footer.ejs %>

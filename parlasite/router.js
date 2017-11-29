@@ -16,6 +16,24 @@ const hash        = require('object-hash');
 const https       = require('https');
 const dataService = require('./services/data-service');
 
+
+function resolve_card(req, card, state = {}) {
+  var pattern        = new UrlPattern(card.sourceUrl);
+  const renderedPath = pattern.stringify(state);
+  let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+  if (req.query.forceRender) {
+    cardUrl += '?forceRender=true';
+  }
+
+  return fetch(cardUrl).then((res) => {
+    return res.text();
+  })
+  .then((body) => {
+    return body;
+  });
+}
+
 const routes = [
   {
     path      : '/',
@@ -146,6 +164,31 @@ const routes = [
         }
       }
     ]
+  },
+  {
+      path      : '/orodja',
+      viewPath  : 'orodja',
+      pageTitle : 'Orodja'
+  },
+  {
+    path        : '/orodja/primerjalnik-glasovanj',
+    viewPath    : 'orodja/primerjalnik-glasovanj',
+    pageTitle   : 'Primerjalnik Glasovanj',
+    cards       : [{
+      name: 'primerjalnikGlasovanj',
+      sourceUrl: '/c/primerjalnik/',
+      resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
+    }]
+  },
+  {
+    path        : '/orodja/raziskovalec-neenotnosti',
+    viewPath    : 'orodja/raziskovalec-neenotnosti',
+    pageTitle   : 'Raziskovalec Neenotnosti',
+    cards       : [{
+      name: 'raziskovalecNeenotnosti',
+      sourceUrl: '/ps/glasovanja-neenotnost/',
+      resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
+    }]
   },
   {
     path      : '/poslanci',
