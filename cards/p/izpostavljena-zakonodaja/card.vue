@@ -11,40 +11,41 @@
             <p class="info-text"></p>
         </div>
 
-        <tabs :start-tab="selectedTab" :css-class="'iz-tabs'">
-            <tab label="Pregled">
-                <div class="legislation">
-                    <div class="col-xs-12 col-sm-6 legislation-wrapper" v-for="legislation in data.accepted">
-                        <div class="single-legislation">
-                            <div class="icon">
-                                <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
-                            </div>
+        <div class="p-tabs-2col">
+            <tabs :start-tab="selectedTab">
+                <tab label="Pregled">
+                    <div class="legislation row">
+                        <div class="col-xs-12 col-sm-6 legislation-wrapper" v-for="legislation in data.accepted">
+                            <div class="single-legislation">
+                                <div class="icon">
+                                    <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
+                                </div>
 
-                            <div class="text">
-                                {{ legislation.text}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </tab>
-            <tab label="Glasovanja">
-                <div class="legislation">
-                    <div class="col-sm-6 legislation-wrapper" v-for="legislation in data.under_consideration">
-                        <div class="single-legislation">
-                            <div class="icon">
-                                <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
-                            </div>
-
-                            <div class="text">
-                                {{ legislation.text}}
+                                <div class="text">
+                                    {{ legislation.text}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </tab>
-        </tabs>
 
+                </tab>
+                <tab label="Glasovanja">
+                    <div class="legislation row">
+                        <div class="col-sm-6 legislation-wrapper" v-for="legislation in data.under_consideration">
+                            <div class="single-legislation">
+                                <div class="icon">
+                                    <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
+                                </div>
+
+                                <div class="text">
+                                    {{ legislation.text}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+            </tabs>
+        </div>
         <div class="all-legislation">
             <a href="#">VSA ZAKONODAJA</a>
         </div>
@@ -53,42 +54,42 @@
 </template>
 
 <script>
-    import common from 'mixins/common';
+  import common from 'mixins/common';
 
-    import Tab from 'components/Tab.vue';
-    import Tabs from 'components/Tabs.vue';
+  import Tab from 'components/Tab.vue';
+  import Tabs from 'components/Tabs.vue';
 
-    export default {
-        components: {Tab, Tabs},
-        mixins: [common],
-        name: 'IzpostavljenaZakonodaja',
-        data() {
+  export default {
+    components: {Tab, Tabs},
+    mixins: [common],
+    name: 'IzpostavljenaZakonodaja',
+    data() {
 
-            console.log(this.$options.cardData.data)
-            return {
-                data: this.$options.cardData.data,
-                state: this.$options.cardData.state,
-                selectedTab: this.$options.cardData.state.selectedTab || 0,
-                headerConfig: {
-                    circleIcon: 'og-list',
-                    heading: '&nbsp;',
-                    alternative: this.$options.cardData.cardData.altHeader === 'true',
-                    title: this.$options.cardData.cardData.name,
-                },
-            };
+      console.log(this.$options.cardData.data)
+      return {
+        data: this.$options.cardData.data,
+        state: this.$options.cardData.state,
+        selectedTab: this.$options.cardData.state.selectedTab || 0,
+        headerConfig: {
+          circleIcon: 'og-list',
+          heading: '&nbsp;',
+          alternative: this.$options.cardData.cardData.altHeader === 'true',
+          title: this.$options.cardData.cardData.name,
         },
-        methods: {
-            measurePiwik(filter, sort, order) {
-                if (typeof measure === 'function') {
-                    if (sort !== '') {
-                        measure('s', 'session-sort', `${sort} ${order}`, '');
-                    } else if (filter !== '') {
-                        measure('s', 'session-filter', filter, '');
-                    }
-                }
-            },
-        },
-    };
+      };
+    },
+    methods: {
+      measurePiwik(filter, sort, order) {
+        if (typeof measure === 'function') {
+          if (sort !== '') {
+            measure('s', 'session-sort', `${sort} ${order}`, '');
+          } else if (filter !== '') {
+            measure('s', 'session-filter', filter, '');
+          }
+        }
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -96,68 +97,23 @@
     @import '~parlassets/scss/breakpoints';
     @import '~parlassets/scss/colors';
 
-    .navigation-tabs {
-        ul {
-            padding: 0;
-
-            li {
-                overflow: hidden;
-                text-align: center;
-                list-style: none;
-                float: left;
-                margin-right: 10px;
-
-
-                &:last-child {
-                    margin-right: 0;
-                }
-
-                a {
-                    vertical-align: middle;
-                    display: block;
-                    font-size: 16px;
-                    font-weight: 300;
-                    line-height: 30px;
-                    padding: 10px 40px;
-                    color: #fff;
-                    border: 1px solid #dbdbdb;
-                    text-transform: uppercase;
-                    background-color: #227497;
-                    text-decoration: none;
-
-                    &.active,
-                    &:hover {
-                        color: #fff;
-                        background: #009cdd;
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-    }
 
     .legislation {
         margin-top: 16px;
-
+        overflow: hidden;
 
         .legislation-wrapper {
             margin-bottom: 15px;
 
-            @include respond-to(mobile) {
-                padding: 0;
-            }
-
-            &:nth-child(odd)
-            {
+            &:nth-child(odd)  {
                 @include respond-to(desktop) {
-                    padding: 0;
+                    padding-right: 7px;
                 }
             }
 
-            &:nth-child(even)
-            {
+            &:nth-child(even) {
                 @include respond-to(desktop) {
-                    padding-right: 0;
+                    padding-left: 7px;
                 }
             }
 
