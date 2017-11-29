@@ -14,7 +14,7 @@
 
         <search-field v-model="textFilter"></search-field>
 
-        <search-dropdown class="dropdown-filter" :items="workingBodies" :placeholder="inputPlaceholder"></search-dropdown>
+        <search-dropdown class="dropdown-filter" :items="allworkingBodies" :placeholder="inputPlaceholder"></search-dropdown>
     </div>
 
     <div class="col-md-12">
@@ -57,6 +57,16 @@ export default {
   mixins: [common],
   name: 'SeznamZakonov',
   data() {
+
+      let allworkingBodies = this.$options.cardData.data.results.map(x => x.mdt).filter((x) => x.length);
+      allworkingBodies = allworkingBodies.map(
+          wb => ({ id: wb, label: wb, selected: false})
+      );
+      allworkingBodies = allworkingBodies.map(JSON.stringify).reverse().filter(function (e, i, a) {
+          return a.indexOf(e, i+1) === -1;
+      }).reverse().map(JSON.parse)
+
+
     return {
       data: this.$options.cardData.data.results,
       filters: ['Zakoni', 'Akti'],
@@ -71,6 +81,7 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
+      allworkingBodies,
     };
   },
   computed: {
@@ -78,10 +89,10 @@ export default {
           return this.workingBodies.length ? `izbranih: ${this.workingBodies.length}` : 'izberi';
       },
       columns: () => [
-          { id: 'name', label: 'Ime', additionalClass: 'wider name' },
+          { id: 'name', label: 'Ime', additionalClass: '' },
           { id: 'date', label: 'Sprememba' },
-          { id: 'updated', label: 'Matično delovno telo', additionalClass: 'optional' },
-          { id: 'workingBody', label: 'Status', additionalClass: 'wider optional' },
+          { id: 'updated', label: 'Matično delovno telo', additionalClass: '' },
+          { id: 'workingBody', label: 'Status', additionalClass: '' },
       ],
       infoText: () => {
           return "Info";
@@ -95,7 +106,7 @@ export default {
 
               return textMatch;
           }
-          
+
           return this.data.filter(filterLegislation);
       }
   },
@@ -108,7 +119,11 @@ export default {
             this.currentSortOrder = 'asc';
         }
 
-        this.measurePiwik('', sortId, this.currentSortOrder);
+        // this.measurePiwik('', sortId, this.currentSortOrder);
+    },
+    selectFilter(filter) {
+        this.currentFilter = filter;
+        // this.measurePiwik(filter, '', '');
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {

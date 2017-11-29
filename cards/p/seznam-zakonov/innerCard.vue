@@ -46,8 +46,8 @@ export default {
           return this.items.map(legislation => [
               { link: '#', text: legislation.text },
               { text: 'bla' },
-              { text: legislation.mdt },
-              { text: legislation.result },
+              { link: '#', text: legislation.mdt },
+              { html: '<b>' + legislation.result + '</b>' },
           ])
       }
   },
