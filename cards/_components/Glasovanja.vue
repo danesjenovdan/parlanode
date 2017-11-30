@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
-    content-class="full"
+    content-class="full card-scroll"
     :card-url="cardUrl"
     :header-config="headerConfig">
 
@@ -12,10 +12,10 @@
       <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
-    <div class="filters">
+    <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
       <div class="filter text-filter">
         <div class="filter-label">Išči po naslovu glasovanja</div>
-        <search-field v-model="textFilter" />
+        <p-search-field v-model="textFilter" />
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
@@ -32,35 +32,29 @@
       </div>
     </div>
 
-    <div class="votes stickinme date-list">
+    <div id="card-votes" class="votes stickinme date-list">
       <template v-for="votingDay in filteredVotingDays">
-        <date-row :date="votingDay.date" />
-        <ul>
-          <li v-for="ballot in votingDay.ballots" class="ballot">
-
-            <div class="votes__icon">
-              <div :class="['icon', ballot.option]">
+        <div class="date">{{ votingDay.date }}</div>
+        <div>
+          <div v-for="ballot in votingDay.ballots">
+            <a class="ballot" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
+              <div class="disunion">
+                <div :class="['icon', ballot.option]">
+                </div>
+                <div class="text"> {{ ballot.option }} </div>
               </div>
-              <div class="text"> {{ ballot.option }} </div>
-            </div>
 
-            <div class="votes__motion">
-              <p>{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></p>
-            </div>
+              <div class="name">
+                <p>{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></p>
 
-            <div class="votes__result">
-              <template v-if="ballot.result">
-                <i class="accepted glyphicon glyphicon-ok"></i>
-                <div class="text">sprejet</div>
-              </template>
-              <template v-else>
-                <i class="not-accepted glyphicon glyphicon-remove"></i>
-                <div class="text">zavrnjen</div>
-              </template>
-            </div>
-
-          </li>
-        </ul>
+              </div>
+              <div class="outcome">
+                <i :class="[{'glyphicon glyphicon-ok':ballot.result === true}, {'glyphicon glyphicon-remove':ballot.result === false}]"></i>
+                <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </template>
     </div>
   </card-wrapper>
@@ -69,17 +63,19 @@
 <script>
 import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
-import SearchField from 'components/SearchField.vue';
+import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import DateRow from 'components/DateRow.vue';
 
 import common from 'mixins/common';
+import scroll from 'mixins/scroll';
+
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
 export default {
-  components: { PSearchDropdown, SearchField, DateRow },
-  mixins: [common],
+  components: { PSearchDropdown, PSearchField, DateRow },
+  mixins: [common, scroll],
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -118,8 +114,7 @@ export default {
       return this.allMonths.filter(month => month.selected);
     },
     selectedOptions() {
-      return this.allOptions.filter(option => option.selected)
-                            .map(option => option.id);
+      return this.allOptions.filter(option => option.selected).map(option => option.id);
     },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
@@ -187,13 +182,16 @@ export default {
     return {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
-      vocabulary: this.cardData.vocab,
       votingDays: this.cardData.data.results,
       allMonths,
       allOptions,
       allTags,
       textFilter,
     };
+  },
+  mounted() {
+    this.card.shadowElement = 'card-votes';
+    document.getElementById(this.card.shadowElement).addEventListener('scroll', this.checkScrollPosition);
   },
   methods: {
     toggleOption(optionId) {
@@ -238,7 +236,7 @@ export default {
               }
 
               if (ballot.result !== 'none') {
-                ballotClone.outcome = ballot.result === true ? 'Predlog sprejet' : 'Predlog zavrnjen';
+                ballotClone.outcome = ballot.result === true ? 'Sprejet' : 'Zavrnjen';
               }
 
               return ballotClone;
@@ -327,8 +325,9 @@ export default {
     }
 
     .tag-dropdown {
-      width: 100%;
       @include respond-to(desktop) { width: 26%; }
+
+      width: 100%;
     }
 
     .month-dropdown {
@@ -349,7 +348,6 @@ export default {
     flex: 1;
     // list-style: none;
     overflow-y: auto;
-    margin-top: 18px;
     position: relative;
 
     &:empty::after {
@@ -378,6 +376,39 @@ export default {
         padding: 16px 0;
         width: 54px;
       }
+
+      /*.icon {
+        @include show-for(desktop);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        height: 48px;
+        width: 52px;
+
+        &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za.svg"); }
+        &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
+        &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
+        &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan.svg"); }
+      }*/
+
+      /*.motion {
+        flex: 1;
+        font-weight: 300;
+        line-height: 20px;
+        padding: 15px 0;
+        a { font-weight: normal; }
+      }*/
+
+      /* .outcome {
+         font-size: 11px;
+         font-weight: 400;
+         line-height: 13px;
+         padding: 20px 15px 0;
+         text-align: left;
+         text-transform: uppercase;
+         width: 90px;
+       }*/
     }
   }
 
@@ -399,101 +430,157 @@ export default {
   }
 
   .votes {
-    height: 450px;
+    height: 420px;
+    overflow-y: auto;
 
-    li {
-      background-color: $grey;
-      margin: 10px 0;
-      padding: 10px 0;
-      font-size: 14px;
-    }
+    .icon {
+      @include show-for(desktop);
 
-    &__motion {
-      flex: 1;
-      font-weight: 300;
-      line-height: 20px;
-      padding: 15px 0;
-      height: 100%;
+      @include respond-to(mobile) {
+        margin: 0 auto;
+      }
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 29px;
+      padding: 5px 55px;
+      padding-top: 30px;
+      text-transform: uppercase;
+      font-size: 12px;
       display: flex;
       align-items: center;
-      border-left: 2px solid $black;
-      border-right: 2px solid $black;
-      min-height: 68px;
+      height: 42px;
+      margin-top: 5px;
 
-      a {
-        font-weight: normal;
-      }
-
-      p {
-        margin: 0 15px  0 20px;
-      }
-    }
-
-    &__icon {
-      display: flex;
-      justify-content: center;
-      color: black;
-      flex-direction: column;
-
-      .icon {
-        @include show-for(desktop);
-
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 29px;
-        padding: 5px 55px;
-        padding-top: 30px;
-        text-transform: uppercase;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        height: 40px;
-        margin-top: 10px;
-
-        &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_za_v2.svg"); }
-        &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_proti_v2.svg"); }
-        &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
-        &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_vzdrzan_v2.svg"); }
-      }
+      &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_za_v2.svg"); }
+      &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_proti_v2.svg"); }
+      &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
+      &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_vzdrzan_v2.svg"); }
     }
 
     .text {
       text-align: center;
       font-size: 11px;
       text-transform: uppercase;
+      font-weight: 500;
+
+      @include respond-to(desktop) {
+        line-height: 12px;
+      }
+    }
+  }
+
+  .ballot {
+    @include respond-to(desktop) {
+      display: flex;
+      margin: 10px 0;
     }
 
+    text-decoration: none;
 
-    &__result {
+    &:hover {
+      text-decoration: none;
+    }
+
+    background: #f0f0f0;
+    color: #505050;
+    display: block;
+    margin: 7px 0 8px;
+    min-height: 90px;
+    padding: 10px 14px;
+    position: relative;
+
+    .disunion {
+      @include respond-to(mobile) {
+        padding-bottom: 10px;
+      }
+
+      @include respond-to(desktop) {
+        padding-right: 16px;
+      }
+
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .name {
+      @include respond-to(desktop) {
+        border-bottom: none;
+        border-top: none;
+        border-left: 1px solid #505050;
+        align-items: center;
+        display: flex;
+        flex: 4;
+        font-size: 14px;
+        padding: 5px 20px;
+      }
+
+      border-bottom: 1px solid #505050;
+      border-top: 1px solid #505050;
+      font-family: Roboto Slab,Times New Roman,serif;
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 1.45em;
+      padding: 10px 0;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .outcome {
+      @include respond-to(desktop) {
+        border-left: 1px solid #505050;
+        justify-content: left;
+        padding: 0 0 0 16px;
+        width: 136px;
+        margin-right: 16px;
+      }
+
       align-items: center;
       display: flex;
       justify-content: center;
-      padding: 10px 0 0 0;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 13px;
+      text-align: left;
+      text-transform: uppercase;
+      padding: 10px 0 0;
 
-      @include respond-to(desktop) {
-        justify-content: left;
-        padding: 0 0 0 16px;
-        width: 156px;
-      }
-
-      .glyphicon {
-        font-size: 24px;
-        margin-bottom: 4px;
-        &.accepted { color: $funblue; }
-        &.not-accepted { color: $red; }
-
-        @include respond-to(desktop) { font-size: 29px; }
-      }
+      @include respond-to(mobile) { margin: 0 15px; }
 
       .text {
         color: #333;
         font-size: 14px;
-        font-weight: bold;
+        font-weight: 700;
         text-transform: uppercase;
-        margin-left: 12px;
+        margin-left: 6px;
+        margin-top: 2px;
+      }
+
+      i {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 28px;
+        width: 29px;
+        font-size: 25px;
+        margin-right: 10px;
+        line-height: 34px;
+
+        &.glyphicon {
+          font-size: 29px;
+
+          &.glyphicon-ok {
+            color: $funblue;
+          }
+
+          &.glyphicon-remove {
+            color: $red;
+          }
+        }
       }
     }
-
   }
 </style>
