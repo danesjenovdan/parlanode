@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-glasovanja-seja"
+    :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
@@ -30,7 +30,7 @@
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
     </div>
     <div id="votingCard" class="date-list">
@@ -105,11 +105,12 @@
 
 <script>
   import common from 'mixins/common';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
   import StripedButton from 'components/StripedButton.vue';
 
   export default {
     mixins: [common],
-    components: { StripedButton },
+    components: { PSearchDropdown, StripedButton },
     name: 'GlasovanjaSeja',
     data() {
 
@@ -240,6 +241,10 @@
           }
         }
       },
+    },
+    created() {
+      this.$options.cardData.template.contextUrl =
+        `${this.slugs.base}/seja/glasovanja/${this.data.session.id}`;
     },
   };
 </script>

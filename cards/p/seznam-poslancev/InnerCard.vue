@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-seznam-poslancev"
+    :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
@@ -92,6 +92,9 @@ export default {
     selectSort(sort) {
       this.$emit('sort', sort);
     },
+  },
+  created() {
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanci`;
   },
 };
 </script>

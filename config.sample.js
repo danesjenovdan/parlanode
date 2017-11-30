@@ -64,7 +64,6 @@ const test = {
   cardCapturePath: './card_captures', // where cards are stored
 };
 
-
 if (!process.env.NODE_ENV) throw new Error('NODE_ENV environment variable missing. Use either "development" or "production"');
 
 let cfg = process.env.NODE_ENV === 'development' ? dev : production;

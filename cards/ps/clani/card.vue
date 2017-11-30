@@ -1,8 +1,7 @@
 <template>
   <card-wrapper
-    class="card-clani-poslanske-skupine"
-    content-class="full"
     :id="$options.cardData.cardData._id"
+    content-class="full"
     :card-url="url"
     :header-config="headerConfig">
     <div slot="info">
@@ -19,11 +18,13 @@
 
 <script>
 import common from 'mixins/common';
+import { partyOverview } from 'mixins/contextUrls';
+import { partyTitle } from 'mixins/titles';
 import PersonList from 'components/PersonList.vue';
 
 export default {
   components: { PersonList },
-  mixins: [common],
+  mixins: [common, partyOverview, partyTitle],
   name: 'ClaniPoslanskeSkupine',
   data() {
     return {

@@ -13,7 +13,7 @@ export default {
   name: 'SearchField',
   props: {
     value: String,
-    placeholder: String,
+    placeholder: String
   },
 };
 </script>

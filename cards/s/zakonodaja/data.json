@@ -1,0 +1,215 @@
+{
+  "created_at": "16.10.2017",
+  "created_for": "14.11.2016",
+  "session": {
+    "name": "24. redna seja",
+    "orgs": [{
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    }],
+    "date": "14. 11. 2016",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    },
+    "date_ts": "2016-11-14T01:00:00",
+    "updated_at": "19. 7. 2017",
+    "in_review": true,
+    "id": 5572
+  },
+  "results": [{
+    "text": "Vmesno poro\u010dilo o opravljeni parlamentarni preiskavi v zvezi s Factor banko, d.d., Probanko, d.d. in Banko Slovenije",
+    "result": null,
+    "mdt": null,
+    "id": 171
+  }, {
+    "text": "Interpelacija o delu Vlade Republike Slovenije",
+    "result": null,
+    "mdt": null,
+    "id": 170
+  }, {
+    "text": "Predlog za razpis posvetovalnega referenduma o Celovitem gospodarskem in trgovinskem sporazumu med Kanado na eni strani ter Evropsko unijo in njenimi dr\u017eavami \u010dlanicami na drugi strani (CETA)",
+    "result": null,
+    "mdt": null,
+    "id": 169
+  }, {
+    "text": "Predlog sklepa o soglasju k Programu dela in finan\u010dnemu na\u010drtu Agencije za energijo za leto 2017",
+    "result": null,
+    "mdt": null,
+    "id": 168
+  }, {
+    "text": "Predlog sklepa o prenehanju veljavnosti Sklepa o soglasju k odtujitvi nalo\u017eb Republike Slovenije, Kapitalske dru\u017ebe pokojninskega in invalidskega zavarovanja, d.d., Slovenske od\u0161kodninske dru\u017ebe, d.d., Modre zavarovalnice, d.d., D.S.U, dru\u017ebe za upravljanje in svetovanje, d.o.o., in Posebne dru\u017ebe za podjetni\u0161ko svetovanje, d. d. (Uradni list RS, \u0161t. 52/13)",
+    "result": null,
+    "mdt": null,
+    "id": 167
+  }, {
+    "text": "Predlog priporo\u010dila za odpravo zastaranja kazenskih postopkov in prepre\u010devanje morebitnih zlorab",
+    "result": null,
+    "mdt": null,
+    "id": 166
+  }, {
+    "text": "Predlog resolucije o nacionalnem programu razvoja prometa v Republiki Sloveniji za obdobje do leta 2030 (ReNPRP30)",
+    "result": null,
+    "mdt": null,
+    "id": 165
+  }, {
+    "text": "Predlog resolucije o nacionalnem programu varstva pred naravnimi in drugimi nesre\u010dami v letih od 2016 do 2022 (ReNPVNDN16&#8211;22)",
+    "result": null,
+    "mdt": null,
+    "id": 164
+  }, {
+    "text": "Predlog zaklju\u010dnega ra\u010duna Prora\u010duna Republike Slovenije za leto 2015 (RZ2015)",
+    "result": null,
+    "mdt": null,
+    "id": 163
+  }, {
+    "text": "Predlog za sprejem avtenti\u010dne razlage \u010detrtega odstavka 48. \u010dlena Zakona o nematerializiranih vrednostnih papirjih (ORZNVP48)",
+    "result": null,
+    "mdt": null,
+    "id": 162
+  }, {
+    "text": "Predlog zakona o ratifikaciji Sporazuma o pridru\u017eitvi med  Evropsko unijo in njenimi dr\u017eavami \u010dlanicami na eni strani ter Srednjo Ameriko na drugi strani (MSPEUCA)",
+    "result": null,
+    "mdt": null,
+    "id": 161
+  }, {
+    "text": "Predlog zakona o ratifikaciji Pari\u0161kega sporazuma (MPS)",
+    "result": null,
+    "mdt": null,
+    "id": 160
+  }, {
+    "text": "Predlog zakona o ratifikaciji Protokola o spremembah Konvencije med Vlado Republike Slovenije in Vlado Republike Indije o izogibanju dvojnega obdav\u010devanja in prepre\u010devanju dav\u010dnih utaj v zvezi z davki od dohodka, ki je bila podpisana v Ljubljani 13. januarja 2003 (BINIDO-A)",
+    "result": null,
+    "mdt": null,
+    "id": 159
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah Zakona o investicijskih skladih in dru\u017ebah za upravljanje (ZISDU-3B), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 158
+  }, {
+    "text": "Predlog zakona o opravljanju pla\u010dilnih storitev za prora\u010dunske uporabnike (ZOPSPU-1), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 157
+  }, {
+    "text": "Predlog zakona o centralnem kreditnem registru (ZCKR), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 156
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah Zakona o zakonski zvezi in dru\u017einskih razmerjih (ZZZDR-D), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 155
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah Zakona o organiziranosti in delu v policiji (ZODPol-C), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 154
+  }, {
+    "text": "Predlog zakona o potro\u0161ni\u0161kih kreditih (ZPotK-2), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 153
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah Zakona o visokem \u0161olstvu (ZViS-K), druga obravnava",
+    "result": null,
+    "mdt": null,
+    "id": 152
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah Zakona o Slovenskem dr\u017eavnem holdingu (ZSDH-1A), skraj\u0161ani postopek",
+    "result": null,
+    "mdt": null,
+    "id": 151
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah dolo\u010denih zakonov s podro\u010dja zdravstvene dejavnosti (ZdZPZD), nujni postopek",
+    "result": null,
+    "mdt": null,
+    "id": 150
+  }, {
+    "text": "Predlog zakona o spremembah in dopolnitvah Zakona o gozdovih (ZG-H), nujni postopek",
+    "result": null,
+    "mdt": null,
+    "id": 149
+  }, {
+    "text": "Predlog zakona o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2017 in 2018 (ZIPRS1718), nujni postopek",
+    "result": null,
+    "mdt": null,
+    "id": 148
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Komisijo za prepre\u010devanje korupcije za leto 2018 (OdRSPKPK18)",
+    "result": null,
+    "mdt": null,
+    "id": 147
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Dr\u017eavni svet Republike Slovenije za leto 2018 (OdRSPDS18)",
+    "result": null,
+    "mdt": null,
+    "id": 146
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Dr\u017eavni zbor Republike Slovenije za leto 2018 (OdRSPDZ18)",
+    "result": null,
+    "mdt": null,
+    "id": 145
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Ra\u010dunsko sodi\u0161\u010de Republike Slovenije za leto 2018 (OdRSPRacS18)",
+    "result": null,
+    "mdt": null,
+    "id": 144
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Ustavno sodi\u0161\u010de Republike Slovenije za leto 2018 (OdRSPUS18)",
+    "result": null,
+    "mdt": null,
+    "id": 143
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Ustavno sodi\u0161\u010de Republike Slovenije za leto 2017 (OdRSPUS17-1)",
+    "result": null,
+    "mdt": null,
+    "id": 142
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za Dr\u017eavno volilno komisijo za leto 2017 (OdRSPDVK17)",
+    "result": null,
+    "mdt": null,
+    "id": 141
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za organe dr\u017eavne uprave, pravosodne organe, javne zavode, javne gospodarske zavode, javne agencije in javne sklade za leto 2018 (OdRSPODU18)",
+    "result": null,
+    "mdt": null,
+    "id": 140
+  }, {
+    "text": "Predlog odloka o na\u010drtu ravnanja s stvarnim premo\u017eenjem dr\u017eave za organe dr\u017eavne uprave, pravosodne organe, javne zavode, javne gospodarske zavode, javne agencije in javne sklade za leto 2017 (OdRSPODU17-1)",
+    "result": null,
+    "mdt": null,
+    "id": 139
+  }, {
+    "text": "Predlog odloka o spremembah Odloka o okviru za pripravo prora\u010dunov sektorja dr\u017eava za obdobje od 2017 do 2019 (OdPSD17&#8211;19-A)",
+    "result": null,
+    "mdt": null,
+    "id": 138
+  }, {
+    "text": "Predlog zakona o ukrepih na podro\u010dju pla\u010d in drugih stro\u0161kov dela za leto 2017 in drugih ukrepih v javnem sektorju (ZUPPJS17), nujni postopek",
+    "result": null,
+    "mdt": null,
+    "id": 137
+  }, {
+    "text": "Dopolnjen predlog prora\u010duna Republike Slovenije za leto 2018 (DP2018)",
+    "result": null,
+    "mdt": null,
+    "id": 136
+  }, {
+    "text": "Predlog sprememb prora\u010duna Republike Slovenije za leto 2017 (DP2017-A)",
+    "result": null,
+    "mdt": null,
+    "id": 135
+  }, {
+    "text": "Predlog ustavnega zakona o dopolnitvi III. poglavja Ustave Republike Slovenije (UZ70)",
+    "result": null,
+    "mdt": null,
+    "id": 134
+  }]
+}

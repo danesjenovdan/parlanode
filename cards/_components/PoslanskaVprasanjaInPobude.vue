@@ -1,9 +1,9 @@
 <template>
   <card-wrapper
-    :id="cardData.cardData._id"
-    :data-id="`${cardGroup}/${cardMethod}`"
+    :id="$root.$options.cardData.cardData._id"
     content-class="full"
-    v-bind="{ cardUrl, headerConfig }">
+    :card-url="cardUrl"
+    :header-config="headerConfig">
 
     <div slot="info">
         <p class="info-text lead">Pregled poslanskih vprašanj na nivoju poslanske skupine.</p>
@@ -15,15 +15,15 @@
     <div class="filters">
       <div class="filter tag-dropdown">
         <div class="filter-label">Poslanec/-ka</div>
-          <search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder"></search-dropdown>
+          <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Naslovljenec/-ka</div>
-          <search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder"></search-dropdown>
+          <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
       </div>
       <div class="filter month-dropdown">
         <div class="filter-label">Časovno obdobje</div>
-          <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+          <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter text-filter">
         <div class="filter-label">Išči po naslovu vprašanja</div>
@@ -31,34 +31,24 @@
       </div>
     </div>
 
-    <div class="votes stickinme date-list">
-      <template v-for="questionDay in filteredQuestionDays">
-        <div class="date">{{ questionDay.date }}</div>
-        <ul>
-          <li v-for="question in questionDay.questions">
-            <div class="parlaicon parlaicon-vprasanje"></div>
-            <div class="motion">
-              <a class="funblue-light-hover" :href="`${slugs.base}/poslanec/${slugs.person[question.person.id].slug}/pregled`">{{ question.person.name }}</a>
-              {{ `${question.recipient_text.split(' ')[0] === 'minister' ? 'ministru ' + question.recipient_text.split('minister ')[1] : question.recipient_text.split(' ')[0] === 'ministrica' ? 'ministrici ' + question.recipient_text.split('ministrica ')[1] : 'Vladi'}` }}
-              <a target="_blank" class="funblue-light-hover" :href="`${question.url}`">{{ question.title }}</a>
-            </div>
-          </li>
-        </ul>
-      </template>
-    </div>
+    <question-list :questionDays="filteredQuestionDays" showAuthor />
   </card-wrapper>
 </template>
 
 <script>
-import { capitalize } from 'lodash'
+import { capitalize } from 'lodash';
+import generateMonths from 'helpers/generateMonths';
+import common from 'mixins/common';
+import { partyOverview } from 'mixins/contextUrls';
+import { partyTitle } from 'mixins/titles';
 
 import CardWrapper from 'components/Card/Wrapper.vue';
-import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
-
-import slugs from '../../assets/urls.json';
+import PSearchDropdown from 'parlassets/components/SearchDropdown.vue';
+import QuestionList from 'components/QuestionList.vue';
 
 export default {
-  components: { CardWrapper, SearchDropdown },
+  components: { CardWrapper, PSearchDropdown, QuestionList },
+  mixins: [common, partyOverview, partyTitle],
   computed: {
     MPsPlaceholder() {
       return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';
@@ -151,34 +141,7 @@ export default {
         Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
       )
 
-    let allMonths = [
-      { id: '2017-2', label: 'Februar 2017', month: 2, year: 2017, selected: false },
-      { id: '2017-1', label: 'Januar 2017', month: 1, year: 2017, selected: false },
-      { id: '2016-12', label: 'December 2016', month: 12, year: 2016, selected: false },
-      { id: '2016-11', label: 'November 2016', month: 11, year: 2016, selected: false },
-      { id: '2016-10', label: 'Oktober 2016', month: 10, year: 2016, selected: false },
-      { id: '2016-9', label: 'September 2016', month: 9, year: 2016, selected: false },
-      { id: '2016-8', label: 'Avgust 2016', month: 8, year: 2016, selected: false },
-      { id: '2016-7', label: 'Julij 2016', month: 7, year: 2016, selected: false },
-      { id: '2016-6', label: 'Junij 2016', month: 6, year: 2016, selected: false },
-      { id: '2016-5', label: 'Maj 2016', month: 5, year: 2016, selected: false },
-      { id: '2016-4', label: 'April 2016', month: 4, year: 2016, selected: false },
-      { id: '2016-3', label: 'Marec 2016', month: 3, year: 2016, selected: false },
-      { id: '2016-2', label: 'Februar 2016', month: 2, year: 2016, selected: false },
-      { id: '2016-1', label: 'Januar 2016', month: 1, year: 2016, selected: false },
-      { id: '2015-12', label: 'December 2015', month: 12, year: 2015, selected: false },
-      { id: '2015-11', label: 'November 2015', month: 11, year: 2015, selected: false },
-      { id: '2015-10', label: 'Oktober 2015', month: 10, year: 2015, selected: false },
-      { id: '2015-9', label: 'September 2015', month: 9, year: 2015, selected: false },
-      { id: '2015-8', label: 'Avgust 2015', month: 8, year: 2015, selected: false },
-      { id: '2015-7', label: 'Julij 2015', month: 7, year: 2015, selected: false },
-      { id: '2015-6', label: 'Junij 2015', month: 6, year: 2015, selected: false },
-      { id: '2015-5', label: 'Maj 2015', month: 5, year: 2015, selected: false },
-      { id: '2015-4', label: 'April 2015', month: 4, year: 2015, selected: false },
-      { id: '2015-3', label: 'Marec 2015', month: 3, year: 2015, selected: false },
-      { id: '2015-2', label: 'Februar 2015', month: 2, year: 2015, selected: false },
-      { id: '2015-1', label: 'Januar 2015', month: 1, year: 2015, selected: false },
-    ];
+    let allMonths = generateMonths();
     let allMPs = this.cardData.data.all_authors.map(
       author => ({ id: author.id, label: author.name, selected: false })
     );
@@ -197,13 +160,11 @@ export default {
     return {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
-      vocabulary: this.cardData.vocab,
       questionDays: this.cardData.data.results,
       allMonths,
       allMPs,
       allRecipients,
       textFilter,
-      slugs,
     };
   },
   methods: {

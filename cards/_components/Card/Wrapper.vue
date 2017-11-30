@@ -17,7 +17,6 @@
     </div>
     <card-footer @toggleBack="toggleBack" />
   </div>
-
 </template>
 
 <script>
@@ -95,4 +94,7 @@ export default {
     z-index: 1;
   }
 }
+
+// why is this not working in child card?
+.card-scroll { padding: 0; }
 </style>

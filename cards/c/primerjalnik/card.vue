@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-primerjalnik"
+    :id="$options.cardData.cardData._id"
     :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
@@ -77,8 +77,8 @@
       </div>
     </div>
 
-    <tabs dark :switch-callback="focusTab" :start-tab="selectedTab">
-      <tab header="Seznam glasovanj">
+    <p-tabs @switch="focusTab" :start-tab="selectedTab">
+      <p-tab label="Seznam glasovanj">
         <div class="empty" v-if="filteredVotes.length === 0"></div>
         <div v-else id="votingCard" class="date-list">
           <div class="session_voting">
@@ -148,16 +148,16 @@
             </div>
           </div>
         </div>
-      </tab>
-      <tab header="Dinamika skozi čas">
+      </p-tab>
+      <p-tab label="Dinamika skozi čas">
         <div class="empty" v-if="filteredVotes.length === 0"></div>
         <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
-      </tab>
-      <tab header="Dinamika glede na MDT" class="tab-three">
+      </p-tab>
+      <p-tab label="Dinamika glede na MDT" class="tab-three">
         <div v-if="filteredVotes.length === 0" class="empty"></div>
-        <bar-chart v-else :data="barChartData"></bar-chart>
-      </tab>
-    </tabs>
+        <bar-chart v-else :data="barChartData" show-numbers></bar-chart>
+      </p-tab>
+    </p-tabs>
 
     <div v-show="sameModalVisible" class="card-modal">
       <div class="card-modal-header">
@@ -176,10 +176,10 @@
             {{ party.acronym }}
           </span>
         </p>
-        <search-dropdown
+        <p-search-dropdown
           :items="samePeople"
           :placeholder="samePeoplePlaceholder">
-        </search-dropdown>
+        </p-search-dropdown>
         <div class="card-modal-button" @click="toggleModal('same', false)">POTRDI</div>
       </div>
     </div>
@@ -198,10 +198,10 @@
             {{ party.acronym }}
           </span>
         </p>
-        <search-dropdown
+        <p-search-dropdown
           :items="differentPeople"
           :placeholder="differentPeoplePlaceholder"
-        ></search-dropdown>
+        ></p-search-dropdown>
         <div class="card-modal-button" @click="toggleModal('different', false)">POTRDI</div>
       </div>
     </div>
@@ -210,13 +210,19 @@
 
 <script>
   import common from 'mixins/common';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
+  import PTab from 'components/Tab.vue';
+  import PTabs from 'components/Tabs.vue';
   import TimeChart from 'components/TimeChart.vue';
   import BarChart from 'components/BarChart.vue';
 
   export default {
     components: {
-      TimeChart,
       BarChart,
+      TimeChart,
+      PSearchDropdown,
+      PTab,
+      PTabs,
     },
     mixins: [common],
     name: 'PrimerjalnikGlasovanj',

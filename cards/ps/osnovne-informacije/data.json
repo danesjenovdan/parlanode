@@ -1,0 +1,49 @@
+{
+  "allVoters": 54008,
+  "created_for": "13.02.2017",
+  "headOfPG": {
+    "is_active": false,
+    "district": [70],
+    "name": "Jo\u017ee Tanko",
+    "gov_id": "P077",
+    "gender": "m",
+    "party": {
+      "acronym": "SDS",
+      "is_coalition": false,
+      "id": 5,
+      "name": "PS Slovenska Demokratska Stranka"
+    },
+    "type": "mp",
+    "id": 78,
+    "has_function": false
+  },
+  "social": {
+    "twitter": "https://twitter.com/strankasds",
+    "facebook": "https://www.facebook.com/slovenska.demokratska.stranka/",
+    "email": "bozo.predalic@dz-rs.si"
+  },
+  "numberOfSeats": 19,
+  "party": {
+    "acronym": "SDS",
+    "is_coalition": false,
+    "id": 5,
+    "name": "PS Slovenska Demokratska Stranka"
+  },
+  "created_at": "28.02.2017",
+  "viceOfPG": [{
+    "is_active": false,
+    "district": [42],
+    "name": "Vinko Gorenak",
+    "gov_id": "P116",
+    "gender": "m",
+    "party": {
+      "acronym": "SDS",
+      "is_coalition": false,
+      "id": 5,
+      "name": "PS Slovenska Demokratska Stranka"
+    },
+    "type": "mp",
+    "id": 25,
+    "has_function": false
+  }]
+}

@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
-    class="card-halfling card-seznam-poslanskih-skupin"
-    :id="$options.cardData.cardData._id"
+    :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
@@ -42,6 +41,9 @@ export default {
     headerConfig: Object,
     generatedCardUrl: String,
     currentAnalysisData: Object,
+  },
+  created() {
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanske-skupine`;
   },
 };
 </script>

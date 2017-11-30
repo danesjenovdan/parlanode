@@ -2,7 +2,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = cardPath => ({
   devtool: false,
@@ -11,14 +10,6 @@ module.exports = cardPath => ({
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: ExtractTextPlugin.extract({
-              use: 'css-loader!sass-loader',
-              fallback: 'vue-style-loader',
-            }),
-          },
-        },
       },
       {
         test: /\.js$/,
@@ -47,6 +38,7 @@ module.exports = cardPath => ({
   plugins: [
     new LodashModuleReplacementPlugin({
       shorthands: true,
+      collections: true,
     }),
     // disable this whole plugin to get better debugging output
     new webpack.optimize.UglifyJsPlugin({
@@ -68,9 +60,6 @@ module.exports = cardPath => ({
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-    }),
-    new ExtractTextPlugin({
-      filename: `${cardPath}/bundles/style.css`,
     }),
   ],
 });

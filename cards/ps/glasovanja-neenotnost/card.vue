@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    class="card-halfling card-glasovanja-neenotnost"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig">
@@ -31,11 +30,11 @@
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
       </div>
       <div class="filter month-dropdown">
         <div class="filter-label">Časovno obdobje</div>
-        <search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></search-dropdown>
+        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></p-search-dropdown>
       </div>
       <div class="filter text-filter">
         <div class="filter-label">Razvrsti po</div>
@@ -73,12 +72,13 @@ import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
 import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import Toggle from 'components/Toggle.vue';
 import common from 'mixins/common';
 
 export default {
-  components: { DateRow, StripedButton, Toggle },
+  components: { DateRow, PSearchDropdown, StripedButton, Toggle },
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {
@@ -293,6 +293,11 @@ export default {
   beforeMount() {
     this.fetchVotesForGroup();
   },
+  created() {
+    const context = this.$options.cardData;
+    context.template.pageTitle = context.cardData.name +
+      (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+  }
 };
 </script>
 
