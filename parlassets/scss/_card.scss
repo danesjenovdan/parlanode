@@ -54,6 +54,35 @@
     padding: 0 20px 0 20px;
     margin: 0 0 0px 0;
 }
+
+.card-scroll {
+    padding: 0;
+
+    .filters {
+        padding: 0 20px 20px;
+        display: flex;
+        position: relative;
+        z-index: 9;
+        justify-content: space-between;
+        $label-height: 26px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        &--shadow {
+            box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
 .card-container .card-content.full {
