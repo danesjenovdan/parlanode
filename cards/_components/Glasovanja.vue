@@ -430,6 +430,7 @@ export default {
   }
 
   .votes {
+    margin: 0 20px;
     height: 420px;
     overflow-y: auto;
 
