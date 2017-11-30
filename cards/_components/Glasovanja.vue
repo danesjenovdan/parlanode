@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div id="card-votes" class="votes stickinme date-list">
+    <div id="card-votes" class="votes stickinme date-list card-scroll__wrapper">
       <template v-for="votingDay in filteredVotingDays">
         <div class="date">{{ votingDay.date }}</div>
         <div>
@@ -284,15 +284,6 @@ export default {
     }
     $label-height: 26px;
 
-    display: flex;
-    justify-content: space-between;
-
-    .filter-label {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: $label-height;
-    }
-
     .option-party-buttons {
       @include show-for(desktop, flex);
 
@@ -376,43 +367,9 @@ export default {
         padding: 16px 0;
         width: 54px;
       }
-
-      /*.icon {
-        @include show-for(desktop);
-
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 25px;
-        height: 48px;
-        width: 52px;
-
-        &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za.svg"); }
-        &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
-        &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
-        &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan.svg"); }
-      }*/
-
-      /*.motion {
-        flex: 1;
-        font-weight: 300;
-        line-height: 20px;
-        padding: 15px 0;
-        a { font-weight: normal; }
-      }*/
-
-      /* .outcome {
-         font-size: 11px;
-         font-weight: 400;
-         line-height: 13px;
-         padding: 20px 15px 0;
-         text-align: left;
-         text-transform: uppercase;
-         width: 90px;
-       }*/
     }
   }
 
-  //Marcel
   .filters {
     .filter {
       @include respond-to(desktop) {
@@ -430,10 +387,6 @@ export default {
   }
 
   .votes {
-    margin: 0 20px;
-    height: 420px;
-    overflow-y: auto;
-
     .icon {
       @include show-for(desktop);
 
