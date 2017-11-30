@@ -326,13 +326,6 @@ export default {
 
       width: 17.5%;
     }
-
-    .search-dropdown-input {
-      padding-top: 11px;
-      padding-bottom: 11px;
-    }
-
-    .search-dropdown-options { top: 50px; }
   }
 
   .votes {
