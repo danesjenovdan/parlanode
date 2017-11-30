@@ -306,7 +306,7 @@
                 @include show-for(desktop, flex);
 
                 width: 27.5%;
-                padding-top: $label-height;
+                padding-top: 26px;
 
                 .party-button:not(:last-child) {
                     margin-right: 3px;
