@@ -4,7 +4,7 @@ import { PORTRAIT_ROOT_URL, SEARCH_ROOT_URL } from './constants.js';
 export const getPersonLink = person =>
   urlsData.base +
   urlsData.personLink.base +
-  urlsData.person[person.id].slug +
+    (typeof urlsData.person[person.id] !== 'undefined' ? urlsData.person[person.id].slug : '') +
   urlsData.personLink.pregled;
 
 export const getPersonPortrait = person =>
@@ -25,5 +25,5 @@ export const getMemberLink = member => getPersonLink(member.person);
 export const getMemberPortrait = member => getPersonPortrait(member.person);
 export const getMemberPartyLink = member => getPersonPartyLink(member.person);
 
-export const getSearchTermLink = term =>
-  SEARCH_ROOT_URL + encodeURIComponent(`"${term}"`);
+export const getSessionSpeechLink = session =>  urlsData.base + urlsData.sessionLink.transkript + session.session_id + '#' + session.speech_id;
+export const getSearchTermLink = term =>  SEARCH_ROOT_URL + encodeURIComponent(`"${term}"`);

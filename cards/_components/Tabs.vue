@@ -102,10 +102,27 @@ export default {
       }
     }
   }
+
   .p-tabs-content {
     flex: 1;
     overflow-y: auto;
     position: relative;
+
+    .tab-content {
+      overflow-x: hidden;
+    }
+  }
+}
+
+.p-tabs-2col .p-tabs {
+  .p-tabs-headers {
+    .p-tabs-header {
+      margin: 0;
+      &:last-child {
+        margin-left: 15px;
+      }
+
+    }
   }
 }
 </style>
