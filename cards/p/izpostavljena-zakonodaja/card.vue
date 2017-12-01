@@ -47,7 +47,7 @@
             </tabs>
         </div>
         <div class="all-legislation">
-            <a href="#">VSA ZAKONODAJA</a>
+            <a :href="slugs.legislationLink">VSA ZAKONODAJA</a>
         </div>
 
     </card-wrapper>
