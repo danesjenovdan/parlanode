@@ -18,9 +18,12 @@ const dataService = require('./services/data-service');
 
 
 function resolve_card(req, card, state = {}) {
-  var pattern        = new UrlPattern(card.sourceUrl);
-  const renderedPath = pattern.stringify(state);
-  let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+  let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+  if (Object.keys(state).length !== 0) {
+    let pattern        = new UrlPattern(card.sourceUrl);
+    const renderedPath = pattern.stringify(state);
+    cardUrl            = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+  }
 
   if (req.query.forceRender) {
     cardUrl += '?forceRender=true';
@@ -40,6 +43,20 @@ const routes = [
     viewPath  : 'landing',
     pageTitle : 'Parlameter',
     cards     : [
+      {
+        name      : 'izpostavljenaZakonodaja',
+        sourceUrl : '/p/izpostavljena-zakonodaja/',
+        resolve   : (req, res, route, card) => {
+          return getMPIdByName(req.params.fullName, req).then((mpData) => {
+
+            let mpId   = mpData.mpId;
+            let mpSlug = mpData.mpSlug;
+
+            return resolve_card(req, card);
+
+          });
+        },
+      },
       {
         name      : 'kompas',
         sourceUrl : '/c/kompas/',
