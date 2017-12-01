@@ -40,7 +40,7 @@
         </div>
 
         <div class="speaks">
-            <div id="speaks" class="speaks__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+            <div id="speaks" class="card-scroll__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                 <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
@@ -270,8 +270,6 @@
     @import '~parlassets/scss/breakpoints';
     @import '~parlassets/scss/colors';
 
-    //@todo remove me
-
     .search-field {
         height: 53px !important;
     }
@@ -284,17 +282,6 @@
         }
 
         .filters {
-            padding: 0 20px 20px;
-            display: flex;
-            position: relative;
-            z-index: 9;
-            justify-content: space-between;
-            $label-height: 26px;
-
-            &--shadow {
-                box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-            }
-
             .filter {
                 @include respond-to(desktop) {
                     margin-right: 10px;
@@ -315,17 +302,11 @@
                 min-height: 154px;
             }
 
-            .filter-label {
-                font-size: 14px;
-                font-weight: 300;
-                line-height: $label-height;
-            }
-
             .option-party-buttons {
                 @include show-for(desktop, flex);
 
                 width: 27.5%;
-                padding-top: $label-height;
+                padding-top: 26px;
 
                 .party-button:not(:last-child) {
                     margin-right: 3px;
@@ -335,24 +316,10 @@
 
     }
 
-
-
     .speaks {
         flex: 1;
         position: relative;
         padding-bottom: 20px;
-
-        &__wrapper {
-            height: 420px;
-            overflow-y: auto;
-            overflow-x: hidden;
-
-            .date {
-                background-color: $grey;
-                font-weight: bold;
-                padding: 10px;
-            }
-        }
 
         &__list {
             padding: 0 0 10px;
