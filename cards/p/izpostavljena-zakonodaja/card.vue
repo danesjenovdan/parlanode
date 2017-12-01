@@ -16,8 +16,8 @@
         </div>
 
         <div class="p-tabs-2col">
-            <tabs :start-tab="selectedTab">
-                <tab label="Pregled">
+            <p-tabs :start-tab="selectedTab">
+                <p-tab label="Pregled">
                     <div class="legislation row">
                         <div class="col-xs-12 col-sm-6 legislation-wrapper" v-for="legislation in data.accepted">
                             <div class="single-legislation">
@@ -32,8 +32,8 @@
                         </div>
                     </div>
 
-                </tab>
-                <tab label="Glasovanja">
+                </p-tab>
+                <p-tab label="Glasovanja">
                     <div class="legislation row">
                         <div class="col-sm-6 legislation-wrapper" v-for="legislation in data.under_consideration">
                             <div class="single-legislation">
@@ -47,8 +47,8 @@
                             </div>
                         </div>
                     </div>
-                </tab>
-            </tabs>
+                </p-tab>
+            </p-tabs>
         </div>
         <div class="all-legislation">
             <a :href="slugs.legislationLink">VSA ZAKONODAJA</a>
@@ -60,11 +60,11 @@
 <script>
   import common from 'mixins/common';
 
-  import Tab from 'components/Tab.vue';
-  import Tabs from 'components/Tabs.vue';
+  import PTab from 'components/Tab.vue';
+  import PTabs from 'components/Tabs.vue';
 
   export default {
-    components: {Tab, Tabs},
+    components: {PTab, PTabs},
     mixins: [common],
     name: 'IzpostavljenaZakonodaja',
     data() {
