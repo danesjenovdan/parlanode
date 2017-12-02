@@ -489,3 +489,157 @@ footer.footer {
     -moz-transform: rotate(1deg);
     transform: rotate(1deg);
 }
+
+
+@include respond-to(mobile){
+    .navbar-nav > li {
+        width: 100% !important;
+        text-align: left !important;
+        border-bottom: 1px solid #c8c8c8;
+
+        &:first-child {
+            border-top: 1px solid #c8c8c8;
+        }
+
+        &:last-child a {
+            text-align: left !important;
+        }
+    }
+
+    header.header {
+
+        .navbar-collapse {
+            position: absolute;
+            z-index: 99;
+            background: #f0f0f0;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            display: none;
+        }
+
+        .navbar {
+            border-bottom: 0 !important;
+        }
+
+        .navbar-header {
+            margin-bottom: 13px !important;
+            overflow-x: hidden;
+        }
+
+        .searchForm {
+            display: none !important;
+        }
+
+        .mobile-menu {
+            &__bg {
+                background-color: $grey;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                border-radius: 50%;
+                transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+                z-index: 9;
+                cursor: default;
+            }
+
+            &__hambuger {
+                height: 25px;
+                width: 28px;
+                background-size: contain;
+                display: block;
+                float: right;
+                position: relative;
+                z-index: 99;
+
+                &-line {
+                    background-color: #333;
+                    height: 3px;
+                    width: 28px;
+                    position: absolute;
+                    left: 0;
+                    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                    &--1 {
+                        top: 0;
+                    }
+
+                    &--2 {
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 23px;
+                    }
+
+                    &--3 {
+                        bottom: 1px;
+                    }
+                }
+            }
+
+            &__button {
+                height: 70px;
+                line-height: 70px;
+                display: flex;
+                align-items: center;
+                float: right;
+                cursor: pointer;
+            }
+
+            &--opened {
+
+                .navbar-collapse,
+                .logo {
+                    position: absolute;
+                    z-index: 99;
+                }
+
+                .mobile-menu__bg {
+                    transform: scale(60);
+                }
+
+                .mobile-menu__hambuger-line--1 {
+                    transform: translateY(12px) translateY(-50%) rotate(-135deg);
+                }
+
+                .mobile-menu__hambuger-line--2 {
+                    opacity: 0;
+                }
+
+                .mobile-menu__hambuger-line--3 {
+                    transform: translateY(-12px) translateY(50%) rotate(135deg);
+                }
+            }
+        }
+    }
+
+    .search-field {
+        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg");
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: right 9px center;
+        border: 1px solid $grey-medium;
+        font-size: 16px;
+        height: 40px;
+        line-height: 27px;
+        outline: none;
+        padding: 12px 42px 12px 14px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .search {
+        display: block;
+    }
+
+}
+
+@include respond-to(desktop) {
+    .search-field {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: block !important;
+    }
+}
