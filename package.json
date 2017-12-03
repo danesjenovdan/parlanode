@@ -16,7 +16,7 @@
     "url": "git+https://github.com/FranciZ/parlameter-front.git"
   },
   "author": "FranciZ",
-  "license": "DJND",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/FranciZ/parlameter-front/issues"
   },
@@ -47,7 +47,6 @@
     "express-validator": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "full-icu": "^1.2.0",
-    "inquirer": "3.1.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "lodash-webpack-plugin": "^0.11.4",
@@ -64,12 +63,12 @@
     "supervisor": "0.12.0",
     "uglify-js": "3.2.0",
     "vue": "2.5.8",
+    "vue-infinite-scroll": "^2.0.2",
     "vue-loader": "13.5.0",
     "vue-server-renderer": "2.5.8",
     "vue-template-compiler": "2.5.8",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
-    "vue-infinite-scroll": "^2.0.2",
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
@@ -99,5 +98,9 @@
     "presets": [
       "env"
     ]
+  },
+  "devDependencies": {
+    "handlebars": "^4.0.11",
+    "inquirer": "^4.0.1"
   }
 }
