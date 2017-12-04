@@ -61,6 +61,12 @@ if (process.env.CARD_NAME === '') {
   const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s').concat(dirs('./cards/c')));
   paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve());
 } else {
-  compileAndRefresh(`./cards/${process.env.CARD_NAME}`);
+  let cardName = process.env.CARD_NAME;
+
+  if (cardName.indexOf('cards/') === 0) {
+    cardName = cardName.replace('cards/', '');
+  }
+
+  compileAndRefresh(`./cards/${cardName}`);
 }
 
