@@ -1,11 +1,11 @@
 {
-  "_id": "random_id",
-  "name": "Ime kartice",
-  "dataUrl": "https://analize.parlameter.si/v1/",
-  "type": "tip_alt_headerja",
-  "lastUpdate": "2017-03-19T18:04:55.294Z",
-  "method": "ime_metode",
-  "group": "[p|s|ps]",
-  "big": false,
-  "high": false
+  "_id": "{{ _id }}",
+  "name": "{{ name }}",
+  "type": "{{ type }}",
+  "dataUrl": "{{ dataUrl }}",
+  "lastUpdate": "{{ lastUpdate }}",
+  "method": "{{ method }}",
+  "group": "{{ group }}",
+  "big": {{ big }},
+  "high": {{ high }}
 }

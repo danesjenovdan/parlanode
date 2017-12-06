@@ -20,7 +20,7 @@ import common from 'mixins/common';
 export default {
   components: { },
   mixins: [common],
-  name: 'ImeKartice',
+  name: '{{ componentName }}',
   data() {
     return {
       data: this.$options.cardData.data,
