@@ -7,9 +7,7 @@ const chalk = require('chalk');
 // Returns all directories on certain path
 const dirs = p =>
   fs.readdirSync(p)
-    .filter(f =>
-      fs.statSync(`${p}/${f}`).isDirectory()
-    )
+    .filter(f => fs.statSync(`${p}/${f}`).isDirectory())
     .map(f => `${p}/${f}`);
 
 // Runs webpack compilation with passed configuration
@@ -37,7 +35,7 @@ const refreshLastUpdate = (path) => {
     fs.writeFile(
       dataJsonPath,
       JSON.stringify(dataObject, null, 2),
-      (error) => { if (error) throw Error(error); }
+      (error) => { if (error) throw Error(error); },
     );
   });
 };
