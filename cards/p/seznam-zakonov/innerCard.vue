@@ -12,7 +12,7 @@
 
     <div class="row">
     <sortable-table
-      class="session-list"
+      class="legislation-list"
       :columns="columns"
       :items="mappedItems"
       :sort="currentSort"
@@ -47,9 +47,9 @@ export default {
       mappedItems () {
           return this.items.map(legislation => [
               { link: this.slugs.legislationLink + legislation.epa, text: legislation.text },
-              { text: 'bla' },
-              { link: `${ORGS_ROOT_URL}?frame=true&altHeader=true`, text: legislation.mdt },
-              { html: '<b>' + legislation.result + '</b>' },
+              { text: legislation.updated_at },
+              { link: `${ORGS_ROOT_URL}/${legislation.mdt.id}?frame=true&altHeader=true`, text: legislation.mdt.name },
+              { html: '<div class="outcome"><i class="glyphicon glyphicon-ok"></i><div class="text">Sprejet</div></div>' },
           ])
       }
   },
@@ -62,8 +62,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-  .card-seznam-zakonov .session-list {
-    .headers { margin-left: 0; }
+<style lang="scss">
+
+  .legislation-list {
+
+    .column {
+      text-align: left;
+      margin: 0 16px;
+    }
   }
 </style>

@@ -15,33 +15,18 @@
 
         <div class="filter text-filter">
           <div class="filter-label">Išči po naslovu ali povzetku</div>
-          <search-field v-model="textFilter"></search-field>
+          <p-search-field v-model="textFilter"></p-search-field>
         </div>
 
         <div class="filter tag-dropdown">
           <div class="filter-label">Matično delovno telo</div>
-          <search-dropdown class="dropdown-filter" :items="allworkingBodies" :placeholder="inputPlaceholder"></search-dropdown>
+          <p-search-dropdown class="dropdown-filter" :items="allworkingBodies" :placeholder="inputPlaceholder"></p-search-dropdown>
         </div>
-
 
       </div>
 
       <div class="col-md-12">
         <inner-card
-                :header-config="headerConfig"
-                :columns="columns"
-                :items="processedData"
-                :current-sort="currentSort"
-                :current-sort-order="currentSortOrder"
-                :select-sort="selectSort"
-                :info-text="infoText"
-                :generated-card-url="generatedCardUrl"
-        />
-      </div>
-    </div>
-  </div>
-  <inner-card
-          v-else
           :header-config="headerConfig"
           :columns="columns"
           :items="processedData"
@@ -50,6 +35,20 @@
           :select-sort="selectSort"
           :info-text="infoText"
           :generated-card-url="generatedCardUrl"
+        />
+      </div>
+    </div>
+  </div>
+  <inner-card
+    v-else
+    :header-config="headerConfig"
+    :columns="columns"
+    :items="processedData"
+    :current-sort="currentSort"
+    :current-sort-order="currentSortOrder"
+    :select-sort="selectSort"
+    :info-text="infoText"
+    :generated-card-url="generatedCardUrl"
   />
 
 </template>
@@ -57,20 +56,20 @@
 <script>
   import common from 'mixins/common';
   import StripedButton from 'components/StripedButton.vue';
-  import SearchField from 'components/SearchField.vue';
-  import SearchDropdown from 'components/SearchDropdown.vue';
+  import PSearchField from 'components/SearchField.vue';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
 
   import InnerCard from './innerCard.vue';
 
   export default {
-    components: { StripedButton, SearchField, InnerCard, SearchDropdown },
+    components: { StripedButton, PSearchField, InnerCard, PSearchDropdown },
     mixins: [common],
     name: 'SeznamZakonov',
     data() {
 
       let allworkingBodies = this.$options.cardData.data.results.map(x => x.mdt).filter((x) => x.length);
       allworkingBodies = allworkingBodies.map(
-        wb => ({ id: wb, label: wb, selected: false})
+        wb => ({ id: wb.id, label: wb.name, selected: false})
       );
       allworkingBodies = allworkingBodies.map(JSON.stringify).reverse().filter(function (e, i, a) {
         return a.indexOf(e, i+1) === -1;
@@ -114,7 +113,9 @@
         const filterLegislation = (legislation) => {
           const textMatch = this.textFilter === '' || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
 
-          return textMatch;
+          const typeMatch = this.currentFilter === '' | legislation.classification === (this.currentFilter === 'Zakoni' ? 'zakon' : 'akt');
+
+          return textMatch && typeMatch;
         }
 
         return this.data.filter(filterLegislation);
