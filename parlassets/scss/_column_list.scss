@@ -74,6 +74,45 @@
         font-size: 36px;
         font-weight: 500;
       }
+
+      .outcome {
+        justify-content: left;
+        margin-right: 16px;
+        align-items: center;
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 13px;
+        text-align: left;
+
+        .text {
+          color: #333;
+          font-size: 18px;
+          font-weight: 300;
+          margin-left: 16px;
+        }
+
+        i {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 28px;
+          width: 29px;
+          font-size: 25px;
+          line-height: 34px;
+
+          &.glyphicon {
+            font-size: 29px;
+          }
+
+          &.glyphicon-ok {
+            color: $funblue;
+          }
+
+          &.glyphicon-remove {
+            color: $red;
+          }
+        }
+      }
     }
   }
 
@@ -114,6 +153,31 @@
 
     .column.image img {
       height: 30px;
+    }
+  }
+}
+
+
+.legislation-list {
+  @include column-list(0, 0, 0, 0, 0, 0);
+
+  .item {
+    padding: 20px 0;
+  }
+  .legislation-list {
+    padding: 0 15px;
+  }
+
+  .column {
+    text-align: left !important;
+    margin: 0 60px 0 0 !important;
+
+    &:first-child {
+      flex: 3;
+    }
+
+    &:last-child {
+      padding-right: 0;
     }
   }
 }
