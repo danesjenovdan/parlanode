@@ -55,7 +55,7 @@ export default {
               "name": "Zavrnjen"
             },
             "v obravnavi": {
-              "icon": "glyphicon-remove",
+              "icon": "v-obravnavi",
               "name": "V obravnavi"
             }
 
