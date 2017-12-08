@@ -58,13 +58,16 @@ export default {
               "icon": "v-obravnavi",
               "name": "V obravnavi"
             }
+          };
 
-          }
           return this.items.map(legislation => {
-            let outcomeHtml = '';
-            if (legislation.result) {
-              outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[legislation.result].icon}"></i><div class="text">${mapResultIcon[legislation.result].name}</div></div>`;
+            let mapKey = legislation.result;
+            if (mapKey === null && legislation.status === "v obravnavi") {
+              mapKey = legislation.status;
             }
+
+            const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+
             return [
               {link: this.slugs.legislationLink + legislation.epa, text: legislation.text},
               {text: legislation.updated_at},
@@ -87,9 +90,27 @@ export default {
 
   .legislation-list {
 
-    /*.column {*/
-      /*text-align: left;*/
-      /*margin: 0 16px;*/
-    /*}*/
+    .outcome {
+      margin-right: 0;
+
+      i {
+        &.glyphicon-ok {
+          width: 34px !important;
+          height: 28px;
+        }
+
+        &.glyphicon-remove {
+          width: 28px;
+          height: 27px;
+        }
+
+        &.v-obravnavi {
+          width: 38px !important;
+          height: 38px;
+          background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
+          background-size: contain !important;
+        }
+      }
+    }
   }
 </style>
