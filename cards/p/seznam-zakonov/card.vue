@@ -18,9 +18,13 @@
           <p-search-field v-model="textFilter"></p-search-field>
         </div>
 
-        <div class="filter tag-dropdown">
+        <div class="filter month-dropdown">
           <div class="filter-label">Matično delovno telo</div>
-          <p-search-dropdown class="dropdown-filter" :items="allworkingBodies" :placeholder="inputPlaceholder"></p-search-dropdown>
+          <p-search-dropdown
+            :items="allworkingBodies"
+            :placeholder="inputPlaceholder"
+            :alphabetise="false">
+          </p-search-dropdown>
         </div>
 
       </div>
@@ -67,20 +71,22 @@
     name: 'SeznamZakonov',
     data() {
 
-      let allworkingBodies = this.$options.cardData.data.results.map(x => x.mdt).filter((x) => x.length);
+      // get all working bodies from result data
+      let allworkingBodies = this.$options.cardData.data.results.map(x => x.mdt).filter((x) => { return x.id > 0; });
+      // prepare for dropdown ui component
       allworkingBodies = allworkingBodies.map(
         wb => ({ id: wb.id, label: wb.name, selected: false})
       );
+      // remove duplicates
       allworkingBodies = allworkingBodies.map(JSON.stringify).reverse().filter(function (e, i, a) {
         return a.indexOf(e, i+1) === -1;
       }).reverse().map(JSON.parse)
-
 
       return {
         data: this.$options.cardData.data.results,
         filters: ['Zakoni', 'Akti'],
         currentFilter: this.$options.cardData.state.filter || 'Zakoni',
-        currentSort: 'date',
+        currentSort: 'name',
         currentSortOrder: 'desc',
         textFilter: '',
         workingBodies: [],
@@ -95,7 +101,10 @@
     },
     computed: {
       inputPlaceholder() {
-        return this.workingBodies.length ? `izbranih: ${this.workingBodies.length}` : 'izberi';
+        return this.selectedWorkingBodies.length ? `izbranih: ${this.selectedWorkingBodies.length}` : 'izberi';
+      },
+      selectedWorkingBodies() {
+        return this.allworkingBodies.filter(wb => wb.selected).map(wb => wb.id);
       },
       columns: () => [
         { id: 'name', label: 'Ime', additionalClass: '' },
@@ -112,10 +121,10 @@
       processedData () {
         const filterLegislation = (legislation) => {
           const textMatch = this.textFilter === '' || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-
           const typeMatch = this.currentFilter === '' | legislation.classification === (this.currentFilter === 'Zakoni' ? 'zakon' : 'akt');
+          const wbMatch = this.selectedWorkingBodies.length === 0 || this.selectedWorkingBodies.includes(legislation.mdt.id);
 
-          return textMatch && typeMatch;
+          return textMatch && typeMatch && wbMatch;
         }
 
         return this.data.filter(filterLegislation);
@@ -149,15 +158,19 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
 
   .legislation-list {
     .dropdown-filter.search-dropdown { height: 51px; }
 
-    .headers{
-      margin: 0 !important;
+    .item .column{
+      font-size: 16px;
+
+      @include respond-to(desktop) {
+        font-size:18px;
+      }
     }
 
     .filters {
@@ -180,12 +193,24 @@
         font-size: 14px;
         font-weight: 300;
         line-height: $label-height;
+
       }
 
-      .tag-dropdown {
-        @include respond-to(desktop) { width: 26%; }
-
+      .month-dropdown {
+        margin-left: 10px;
         width: 100%;
+
+        @include respond-to(desktop) {
+          width: 26%;
+        }
+
+        .search-dropdown {
+
+        }
+
+        .filter-label {
+          margin-left: 10px;
+        }
       }
 
       .text-filter {

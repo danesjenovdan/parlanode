@@ -45,12 +45,33 @@ export default {
   },
   computed: {
       mappedItems () {
-          return this.items.map(legislation => [
-              { link: this.slugs.legislationLink + legislation.epa, text: legislation.text },
-              { text: legislation.updated_at },
-              { link: `${ORGS_ROOT_URL}/${legislation.mdt.id}?frame=true&altHeader=true`, text: legislation.mdt.name },
-              { html: '<div class="outcome"><i class="glyphicon glyphicon-ok"></i><div class="text">Sprejet</div></div>' },
-          ])
+          const mapResultIcon = {
+            "sprejet": {
+              "icon": "glyphicon-ok",
+              "name": "Sprejet"
+            },
+            "zavrnjen": {
+              "icon": "glyphicon-remove",
+              "name": "Zavrnjen"
+            },
+            "v obravnavi": {
+              "icon": "glyphicon-remove",
+              "name": "V obravnavi"
+            }
+
+          }
+          return this.items.map(legislation => {
+            let outcomeHtml = '';
+            if (legislation.result) {
+              outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[legislation.result].icon}"></i><div class="text">${mapResultIcon[legislation.result].name}</div></div>`;
+            }
+            return [
+              {link: this.slugs.legislationLink + legislation.epa, text: legislation.text},
+              {text: legislation.updated_at},
+              {link: `${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true`, text: legislation.mdt.name},
+              {html: outcomeHtml},
+            ];
+          })
       }
   },
   methods: {
@@ -66,9 +87,9 @@ export default {
 
   .legislation-list {
 
-    .column {
-      text-align: left;
-      margin: 0 16px;
-    }
+    /*.column {*/
+      /*text-align: left;*/
+      /*margin: 0 16px;*/
+    /*}*/
   }
 </style>
