@@ -3,7 +3,7 @@
   "name": "Seznam zakonov",
   "dataUrl": "https://analize.parlameter.si/v1/",
   "type": "tip_alt_headerja",
-  "lastUpdate": "2017-03-19T18:04:55.294Z",
-  "method": "seznam_zakonov",
+  "lastUpdate": "2017-12-08T15:12:47.902Z",
+  "method": "seznam-zakonov",
   "group": "p"
 }

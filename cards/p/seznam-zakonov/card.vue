@@ -83,6 +83,7 @@
       }).reverse().map(JSON.parse)
 
       return {
+        id: this.$options.cardData.data.session.id,
         data: this.$options.cardData.data.results,
         filters: ['Zakoni', 'Akti'],
         currentFilter: this.$options.cardData.state.filter || 'Zakoni',
@@ -116,7 +117,16 @@
         return "Info";
       },
       generatedCardUrl() {
-        return 'f';
+        const state = {};
+
+        state.type = this.currentFilter;
+
+        if (this.textFilter.length > 0) state.text = this.textFilter;
+
+        // @todo probably needs a good fix
+        if (this.selectedWorkingBodies.length) state.wb = this.selectedWorkingBodies.map(wb => wb.id);
+
+        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/${this.id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       processedData () {
         const filterLegislation = (legislation) => {
