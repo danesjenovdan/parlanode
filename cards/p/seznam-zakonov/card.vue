@@ -207,10 +207,10 @@
       }
 
       .month-dropdown {
-        margin-left: 10px;
         width: 100%;
 
         @include respond-to(desktop) {
+          margin-left: 10px;
           width: 26%;
         }
 
