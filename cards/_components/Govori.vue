@@ -44,19 +44,9 @@
                 <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
-                        <li class="speaks__list--speak" v-for="speak in speakingDay">
-                            <a :href="getPersonLink(speak.person)" class="portrait">
-                                <img :src="getPersonPortrait(speak.person)" />
-                            </a>
 
-                            <div class="name">
-                                <a :href="getPersonLink(speak.person)" class="funblue-light-hover">{{ speak.person.name }}</a><br>
-                            </div>
+                        <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
 
-                            <div class="motion">
-                                <a :href="getSessionSpeechLink(speak)" class="funblue-light-hover" v-html="speak.content_t.substr(0, 180) + '...'"></a>
-                            </div>
-                        </li>
                     </ul>
                 </div>
                 <div v-if="speakingDays.length===0">
@@ -72,9 +62,9 @@
 </template>
 
 <script>
+    import Govor from 'components/Govor.vue';
     import SearchField from 'components/SearchField.vue';
     import SearchDropdown from 'components/SearchDropdown.vue';
-    import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from 'components/links';
 
     import generateMonths from 'helpers/generateMonths';
     import common from 'mixins/common';
@@ -84,7 +74,7 @@
 
     export default {
         directives: { infiniteScroll },
-        components: { SearchField, SearchDropdown },
+        components: { SearchField, SearchDropdown, Govor },
         mixins: [common],
         data() {
             let textFilter = '';
@@ -245,10 +235,7 @@
                         measure('s', 'session-filter', filter, '');
                     }
                 }
-            },
-            getPersonPortrait,
-            getPersonLink,
-            getSessionSpeechLink
+            }
         },
         props: {
             cardData: {
@@ -269,10 +256,6 @@
 <style lang="scss" scoped>
     @import '~parlassets/scss/breakpoints';
     @import '~parlassets/scss/colors';
-
-    .search-field {
-        height: 53px !important;
-    }
 
     .card-scroll {
         padding: 0;
@@ -325,56 +308,6 @@
             padding: 0 0 10px;
             margin: 0;
 
-            &--speak {
-                border-bottom: 1px solid $grey;
-                padding: 15px 0;
-                list-style: none;
-                display: flex;
-                align-items: center;
-
-                &:last-child {
-                    border-bottom: 0;
-                }
-
-                .portrait {
-                    margin-left: 7px;
-                    float: left;
-                    flex: none;
-
-                    img {
-                        height: 40px;
-                        width: 40px;
-                        border-radius: 50%;
-                    }
-                }
-
-                .name {
-                    text-align: left;
-                    font-size: 18px;
-                    font-weight: 300;
-                    padding-right: 10p;
-                    margin: 0 5px 0 15px;
-                    flex: 1;
-
-                    a {
-                        text-decoration: none;
-                    }
-                }
-
-                .motion {
-                    flex: 4;
-
-                    a {
-                        color: $black;
-                        margin: 0;
-                        font-size: 14px;
-                        line-height: 20px;
-                        font-weight: 300;
-                        margin-right: 20px;
-                        padding-right: 5px;
-                    }
-                }
-            }
         }
 
         .nalagalnik__wrapper {
