@@ -15,8 +15,6 @@
             </p>
         </div>
 
-        {{ data }}
-
         <div class="p-tabs-2col legislation">
             <p-tabs :start-tab="selectedTab">
                 <p-tab label="Pregled">
@@ -75,8 +73,8 @@
       console.log(this.$options.cardData.data)
       return {
         data: this.$options.cardData.data,
-        state: this.$options.cardData.state,
-        selectedTab: this.$options.cardData.state.selectedTab || 0,
+        state: this.$options.cardData.state || {},
+        selectedTab: 0,
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -96,6 +94,11 @@
         }
       },
     },
+    created() {
+      if (this.state.selectedTab) {
+        this.selectedTab = this.state.selectedTab;
+      }
+    }
   };
 </script>
 
