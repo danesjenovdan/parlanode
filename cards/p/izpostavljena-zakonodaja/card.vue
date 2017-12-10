@@ -15,6 +15,8 @@
             </p>
         </div>
 
+        {{ data }}
+
         <div class="p-tabs-2col legislation">
             <p-tabs :start-tab="selectedTab">
                 <p-tab label="Pregled">

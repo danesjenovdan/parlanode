@@ -5,6 +5,7 @@
 </template>
 
 <script>
+console.log('tab beginning');
 export default {
   name: 'Tab',
   props: {
@@ -18,11 +19,13 @@ export default {
     },
   },
   created() {
+    console.log('tab created');
     this.$parent.tabs.push(this);
     this.$parent.headers.push({
       label: this.label,
       variant: this.variant,
     });
+    console.log(`pushed ${this.label} ${this.variant}`);
   },
   computed: {
     show() {
