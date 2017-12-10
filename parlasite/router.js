@@ -22,8 +22,11 @@ function resolve_card(req, card, state = {}) {
   if (Object.keys(state).length !== 0) {
     let pattern        = new UrlPattern(card.sourceUrl);
     const renderedPath = pattern.stringify(state);
+    console.log(renderedPath);
     cardUrl            = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
   }
+
+  console.log(cardUrl);
 
   if (req.query.forceRender) {
     cardUrl += '?forceRender=true';
@@ -47,14 +50,7 @@ const routes = [
         name      : 'izpostavljenaZakonodaja',
         sourceUrl : '/p/izpostavljena-zakonodaja/',
         resolve   : (req, res, route, card) => {
-          return getMPIdByName(req.params.fullName, req).then((mpData) => {
-
-            let mpId   = mpData.mpId;
-            let mpSlug = mpData.mpSlug;
-
-            return resolve_card(req, card);
-
-          });
+          return resolve_card(req, card);
         },
       },
       {
