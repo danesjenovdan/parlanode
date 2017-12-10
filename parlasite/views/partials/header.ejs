@@ -119,6 +119,15 @@ function getActiveMenu(inp) {
                     </svg>
                 </a>
 
+                <div class="mobile-menu__button">
+                    <span class="mobile-menu__bg"></span>
+                    <a href="#" class="mobile-menu__hambuger">
+                        <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--1"></span>
+                        <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--2"></span>
+                        <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--3"></span>
+                    </a>
+                </div>
+
                 <form id="topheadersearch" class="navbar-form pull-right searchForm" role="search" action="/seje/isci/">
                     <div class="form-group">
 
@@ -164,7 +173,9 @@ function getActiveMenu(inp) {
                     <li class="<%= getActiveMenu("orodja") %>"><a href="/orodja">Orodja</a></li>
                 </ul>
 
-
+                <form action="/seje/isci" class="search">
+                    <input name="q" class="search-field" placeholder="Išči">
+                </form>
             </div>
         </nav>
 
