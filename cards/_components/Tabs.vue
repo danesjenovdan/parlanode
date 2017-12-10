@@ -16,8 +16,6 @@
 </template>
 
 <script>
-console.log('tabs beginning');
-
 export default {
   name: 'Tabs',
   data() {
@@ -34,7 +32,6 @@ export default {
     },
   },
   created() {
-    console.log('tabs created');
     this.active = this.startTab || 0;
   },
   methods: {
