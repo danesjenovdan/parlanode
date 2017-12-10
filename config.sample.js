@@ -1,79 +1,23 @@
 /* global console */
 
-const dev = {
+/* global console */
+
+const sample = {
   port: 3000,
   serverTimeout: 600000,
   db: {
     name: 'parla-db',
     url: 'mongodb://localhost/',
+    user: `${process.env.MONGO_USERNAME}`, // or username in plaintext
+    password: `${process.env.MONGO_PASSWORD}`, // or password in plaintext
   },
   urls: {
-    analize: 'http://localhost:8000', // DATA URL BASE
+    analize: 'https://analize.parlameter.si/', // DATA URL BASE
   },
   apiPrefix: '/api',
   ogCapturePath: './og',
-  ogRootUrl: 'https://cdn.whatever.com/og_cards/', // root url for OG images
+  ogRootUrl: 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
   cardCapturePath: './card_captures', // where cards are stored
 };
 
-const production = {
-  port: 3000,
-  serverTimeout: 600000,
-  db: {
-    name: 'parla-db',
-    url: 'mongodb://localhost/',
-  },
-  urls: {
-    analize: 'http://localhost:8000', // DATA URL BASE
-  },
-  apiPrefix: '/api',
-  ogCapturePath: './og',
-  ogRootUrl: 'https://cdn.whatever.com/og_cards/', // root url for OG images
-  cardCapturePath: './card_captures', // where cards are stored
-};
-
-const stage = {
-  port: 3000,
-  serverTimeout: 600000,
-  db: {
-    name: 'parla-db',
-    url: 'mongodb://localhost/',
-  },
-  urls: {
-    analize: 'http://localhost:8000', // DATA URL BASE
-  },
-  apiPrefix: '/api',
-  ogCapturePath: './og',
-  ogRootUrl: 'https://cdn.whatever.com/og_cards/', // root url for OG images
-  cardCapturePath: './card_captures', // where cards are stored
-};
-
-const test = {
-  port: 3000,
-  serverTimeout: 600000,
-  db: {
-    name: 'parla-db',
-    url: 'mongodb://localhost/',
-  },
-  urls: {
-    analize: 'http://localhost:8000', // DATA URL BASE
-  },
-  apiPrefix: '/api',
-  ogCapturePath: './og',
-  ogRootUrl: 'https://cdn.whatever.com/og_cards/', // root url for OG images
-  cardCapturePath: './card_captures', // where cards are stored
-};
-
-if (!process.env.NODE_ENV) throw new Error('NODE_ENV environment variable missing. Use either "development" or "production"');
-
-let cfg = process.env.NODE_ENV === 'development' ? dev : production;
-
-cfg = process.env.NODE_ENV === 'stage' ? stage : cfg;
-
-console.log(`CFG: ${JSON.stringify(cfg)}`);
-
-if (process.env.NODE_ENV === 'test') {
-  cfg = test;
-}
-
-module.exports = cfg;
+module.exports = sample;
