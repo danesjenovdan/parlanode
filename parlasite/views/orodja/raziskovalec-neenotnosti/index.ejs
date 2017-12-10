@@ -1,0 +1,61 @@
+<% include ../../partials/header.ejs %>
+
+
+<div id="orodja-raziskovalec-container" class="row">
+    <div class="party-list-generator col-md-12">
+        <ul class="analyses">
+            <li v-for="tool in tools"
+                :class="{ selected: tool.id === currentTool }">
+                <a :href="tool.link">{{ tool.label }}</a>
+            </li>
+        </ul>
+
+        <div class="mobile-analyses">
+            <label for="tool">Izberi orodje</label>
+            <div class="select">
+                <select
+                        name="tools"
+                        id="tools"
+                        v-model="currentTool"
+                        @change="selectTool(currentTool)">
+                    <option
+                            v-for="tool in tools"
+                            :value="tool.id">
+                        {{ tool.label }}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <%- views.raziskovalecNeenotnosti %>
+    </div>
+</div>
+</template>
+
+<script>
+  new Vue({
+    el: '#orodja-raziskovalec-container',
+    data: {
+      tools: [
+        { id: 'obvestila', label: 'Parlameter obvestila', link: '/orodja/parlameter-obvestila' },
+        { id: 'primerjalnik', label: 'Primerjalnik glasovanj', link: '/orodja/primerjalnik-glasovanj' },
+        { id: 'raziskovalec', label: 'Raziskovalec neenotnosti', link: '/orodja/raziskovalec-neenotnosti' },
+        { id: 'kompas', label: 'Parlamentarni kompas', link: '/orodja/parlamentarni-kompas' },
+        { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
+      ],
+      currentTool: ''
+    },
+    methods: {
+      selectTool: function (toolId) {
+        this.currentTool = toolId
+      },
+    }
+  });
+
+  makeEmbedSwitch()
+  activateCopyButton()
+  addCardRippling()
+</script>
+
+<% include ../../partials/footer.ejs %>
