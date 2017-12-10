@@ -1,0 +1,560 @@
+{
+  "created_at": "14.11.2017",
+  "created_for": "14.11.2016",
+  "session": {
+    "name": "24. redna seja",
+    "orgs": [
+      {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 95,
+        "name": "Državni zbor"
+      }
+    ],
+    "date": "14. 11. 2016",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Državni zbor"
+    },
+    "date_ts": "2016-11-14T01:00:00",
+    "updated_at": "19. 7. 2017",
+    "in_review": true,
+    "id": 5572
+  },
+  "results": [
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Sprejet zakon",
+      "mdt_text": "Odbor za gospodarstvo",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o potrošniških kreditih",
+      "id": 111839,
+      "mdt": {
+        "id": 18,
+        "name": "Odbor za gospodarstvo"
+      },
+      "epa": "1363-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Sprejet zakon",
+      "mdt_text": "",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Sklep o imenovanju predsednika in članov Državne volilne komisije ter njihovih namestnikov",
+      "id": 111500,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "1592-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "zavrnjen",
+      "classification": "zakon",
+      "text": "Zakon o centralnem kreditnem registru",
+      "id": 111485,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1447-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Sprejet zakon",
+      "mdt_text": "Odbor za zunanjo politiko",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o ratifikaciji Pariškega sporazuma",
+      "id": 111474,
+      "mdt": {
+        "id": 28,
+        "name": "Odbor za zunanjo politiko"
+      },
+      "epa": "1558-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog proračuna-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Proračun Republike Slovenije za leto 2018",
+      "id": 111632,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1484-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Ustava-OBRAVNAVA",
+      "mdt_text": "Ustavna komisija",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Predlog ustavnega zakona o dopolnitvi III. poglavja Ustave Republike Slovenije",
+      "id": 111947,
+      "mdt": {
+        "id": 29,
+        "name": "Ustavna komisija"
+      },
+      "epa": "463-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o izvrševanju proračunov Republike Slovenije za leti 2017 in 2018",
+      "id": 114691,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1487-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o visokem šolstvu",
+      "id": 111976,
+      "mdt": {
+        "id": 20,
+        "name": "Odbor za izobraževanje, znanost, šport in mladino"
+      },
+      "epa": "1288-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog proračuna-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Spremembe Proračuna Republike Slovenije za leto 2017",
+      "id": 111540,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1483-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za organe državne uprave, pravosodne organe, javne zavode, javne gospodarske zavode, javne agencije in javne sklade za leto 2017",
+      "id": 111568,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1482-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Sprejet zakon",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Komisijo za preprečevanje korupcije za leto 2018",
+      "id": 111553,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1496-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Državni svet Republike Slovenije za leto 2018",
+      "id": 111609,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1495-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Ustavno sodišče Republike Slovenije za leto 2017",
+      "id": 111582,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1491-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Sprejet zakon",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Ustavno sodišče Republike Slovenije za leto 2018",
+      "id": 111527,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1492-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Računsko sodišče Republike Slovenije za leto 2018",
+      "id": 111536,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1493-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o spremembah Odloka o okviru za pripravo proračunov sektorja država za obdobje od 2017 do 2019",
+      "id": 111514,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1485-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o opravljanju plačilnih storitev za proračunske uporabnike",
+      "id": 111521,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1448-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih",
+      "id": 111458,
+      "mdt": {
+        "id": 21,
+        "name": "Odbor za kmetijstvo, gozdarstvo in prehrano"
+      },
+      "epa": "1534-VII"
+    },
+    {
+      "status": "v obravnavi",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": null,
+      "classification": "akt",
+      "text": "Sklep o prenehanju veljavnosti Sklepa o soglasju k odtujitvi naložb Republike Slovenije, Kapitalske družbe pokojninskega in invalidskega zavarovanja, d.d., Slovenske odškodninske družbe, d.d., Modre zavarovalnice, d.d., D.S.U, družbe za upravljanje in svetovanje, d.o.o., in Posebne družbe za podjetniško svetovanje, d. d. (Uradni list RS, št. 52/13)",
+      "id": 111560,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1453-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Komisija za nadzor javnih financ",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Zaključni račun Proračuna Republike Slovenije za leto 2015",
+      "id": 111468,
+      "mdt": {
+        "id": 10,
+        "name": "Komisija za nadzor javnih financ"
+      },
+      "epa": "1505-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o organiziranosti in delu v policiji",
+      "id": 111547,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1437-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za obrambo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Resolucija o nacionalnem programu varstva pred naravnimi in drugimi nesrečami v letih od 2016 do 2022",
+      "id": 111463,
+      "mdt": {
+        "id": 24,
+        "name": "Odbor za obrambo"
+      },
+      "epa": "1462-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Sklep o soglasju k Programu dela in finančnem načrtu Agencije za energijo za leto 2017",
+      "id": 111478,
+      "mdt": {
+        "id": 19,
+        "name": "Odbor za infrastrukturo, okolje in prostor"
+      },
+      "epa": "1465-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Resolucija o nacionalnem programu razvoja prometa v Republiki Sloveniji za obdobje do leta 2030",
+      "id": 111618,
+      "mdt": {
+        "id": 19,
+        "name": "Odbor za infrastrukturo, okolje in prostor"
+      },
+      "epa": "1504-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Avtentična razlaga-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "v obravnavi",
+      "classification": "akt",
+      "text": "Predlog za sprejem avtentične razlage četrtega odstavka 48. člena Zakona o nematerializiranih vrednostnih papirjih",
+      "id": 111587,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1517-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za organe državne uprave, pravosodne organe, javne zavode, javne gospodarske zavode, javne agencije in javne sklade za leto 2018",
+      "id": 111495,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1486-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Državno volilno komisijo za leto 2017",
+      "id": 111490,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1490-VII"
+    },
+    {
+      "status": "v obravnavi",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": null,
+      "classification": "zakon",
+      "text": "Zakon o ukrepih na področju plač in drugih stroškov dela za leto 2017 in drugih ukrepih v javnem sektorju",
+      "id": 111557,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1489-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za finance in monetarno politiko",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o investicijskih skladih in družbah za upravljanje",
+      "id": 111509,
+      "mdt": {
+        "id": 17,
+        "name": "Odbor za finance in monetarno politiko"
+      },
+      "epa": "1449-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Poročilo-OBRAVNAVA",
+      "mdt_text": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem bančnem sistemu ter ugotavljanju vzrokov in odgovornosti za že drugo sanacijo bančnega sistema v samostojni Sloveniji",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Vmesno poročilo o opravljeni parlamentarni preiskavi v zvezi s Factor banko, d.d., Probanko, d.d. in Banko Slovenije",
+      "id": 111613,
+      "mdt": {
+        "id": 98,
+        "name": "Preiskovalna komisija o ugotavljanju zlorab v slovenskem bančnem sistemu ter ugotavljanju vzrokov in odgovornosti za že drugo sanacijo bančnega sistema v samostojni Sloveniji"
+      },
+      "epa": "1572-VII"
+    },
+    {
+      "status": "v obravnavi",
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "result": null,
+      "classification": "zakon",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o zakonski zvezi in družinskih razmerjih",
+      "id": 111452,
+      "mdt": {
+        "id": 16,
+        "name": "Odbor za delo, družino, socialne zadeve in invalide"
+      },
+      "epa": "1439-VII"
+    },
+    {
+      "status": "v obravnavi",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za zunanjo politiko",
+      "result": null,
+      "classification": "akt",
+      "text": "Predlog za razpis posvetovalnega referenduma o trgovinsko-investicijskih sporazumih CETA in TTIP",
+      "id": 111448,
+      "mdt": {
+        "id": 28,
+        "name": "Odbor za zunanjo politiko"
+      },
+      "epa": "1481-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Zadeve MVK-OBRAVNAVA",
+      "mdt_text": "",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Sklep o spremembah Sklepa o sestavi in imenovanju predsednika, podpredsednika, članov in namestnikov članov Preiskovalne komisije o ugotavljanju zlorab v slovenskem bančnem sistemu ter ugotavljanju vzrokov in odgovornosti za že drugo sanacijo bančnega sistema v samostojni Sloveniji",
+      "id": 111563,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "1593-VII"
+    },
+    {
+      "status": "v obravnavi",
+      "type_of_law": "Zadeve MVK-OBRAVNAVA",
+      "mdt_text": "Mandatno-volilna komisija",
+      "result": null,
+      "classification": "akt",
+      "text": "Predlog za imenovanje na sodniško mesto vrhovnega sodnika na Vrhovnem sodišču Republike Slovenije",
+      "id": 111503,
+      "mdt": {
+        "id": 15,
+        "name": "Mandatno-volilna komisija"
+      },
+      "epa": "1461-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Sprejet zakon",
+      "mdt_text": "Odbor za zunanjo politiko",
+      "result": "sprejet",
+      "classification": "zakon",
+      "text": "Zakon o ratifikaciji Sporazuma o pridružitvi med Evropsko unijo in njenimi državami članicami na eni strani ter Srednjo Ameriko na drugi strani",
+      "id": 111605,
+      "mdt": {
+        "id": 28,
+        "name": "Odbor za zunanjo politiko"
+      },
+      "epa": "1559-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "result": "sprejet",
+      "classification": "akt",
+      "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Državni zbor Republike Slovenije za leto 2018",
+      "id": 111592,
+      "mdt": {
+        "id": 23,
+        "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      "epa": "1494-VII"
+    },
+    {
+      "status": "v obravnavi",
+      "type_of_law": "Drugi akti-MAPA",
+      "mdt_text": "",
+      "result": null,
+      "classification": "akt",
+      "text": "Interpelacija o delu Vlade Republike Slovenije",
+      "id": 111577,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "1488-VII"
+    },
+    {
+      "status": "konec obravnave",
+      "type_of_law": "Predlog zakona-MAPA",
+      "mdt_text": "Odbor za zunanjo politiko",
+      "result": "sprejet",
+      "classification": null,
+      "text": "Zakon o ratifikaciji Protokola o spremembah Konvencije med Vlado Republike Slovenije in Vlado Republike Indije o izogibanju dvojnega obdavčevanja in preprečevanju davčnih utaj v zvezi z davki od dohodka, ki je bila podpisana v Ljubljani 13. januarja 2003",
+      "id": 82674,
+      "mdt": {
+        "id": 28,
+        "name": "Odbor za zunanjo politiko"
+      },
+      "epa": "1532-V"
+    }
+  ]
+}
