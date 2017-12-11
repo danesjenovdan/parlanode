@@ -3,7 +3,7 @@
   "name": "Seznam glasovanj po ",
   "dataUrl": "https://data.parlameter.si/v1/getAllPGsExt/",
   "type": "neenotnost",
-  "lastUpdate": "2017-11-17T23:02:16.700Z",
+  "lastUpdate": "2017-12-11T11:08:39.952Z",
   "method": "glasovanja-neenotnost",
   "group": "ps",
   "big": "true"

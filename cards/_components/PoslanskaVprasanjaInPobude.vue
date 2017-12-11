@@ -150,11 +150,11 @@ export default {
     );
     let textFilter = ''
 
-    if (this.cardData.state) {
-      if (this.cardData.state.text) textFilter = this.cardData.state.text;
-      if (this.cardData.state.months) allMonths = selectFromState(allMonths, this.cardData.state.months);
-      if (this.cardData.state.recipients) allRecipients = selectFromState(allRecipients, this.cardData.state.recipients);
-      if (this.cardData.state.mps) allMPs = selectFromState(allMPs, this.cardData.state.mps);
+    if (this.cardData.parlaState) {
+      if (this.cardData.parlaState.text) textFilter = this.cardData.parlaState.text;
+      if (this.cardData.parlaState.months) allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
+      if (this.cardData.parlaState.recipients) allRecipients = selectFromState(allRecipients, this.cardData.parlaState.recipients);
+      if (this.cardData.parlaState.mps) allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
     }
 
     return {
