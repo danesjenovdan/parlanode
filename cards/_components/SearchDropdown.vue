@@ -16,7 +16,7 @@
       @keydown.down.prevent="focus(focused + 1, true)"
       :placeholder="adjustedPlaceholder">
     <ul
-      :class="['search-dropdown-options', { visible: this.active }]"
+      :class="['search-dropdown-options', { visible: this.active, up: this.up }]"
       @mouseleave="focus(-1)">
       <template v-for="(item, index) in filteredItems">
         <li
@@ -162,6 +162,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    up: {
+      type: Boolean,
+      default: false,
+    }
   },
   methods: {
     selectItem(selectedItemId) {
@@ -210,3 +214,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import '~parlassets/scss/colors';
+
+.up {
+  margin-top: -269px;
+  border-bottom: none;
+  border-top: 1px solid $grey-medium;
+}
+</style>

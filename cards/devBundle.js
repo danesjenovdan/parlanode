@@ -3,12 +3,12 @@ import Vue from 'vue';
 import Card from 'cardPath/card.vue';
 import cardData from 'cardPath/card.json';
 import data from 'cardPath/data.json';
-import state from 'cardPath/state.json';
+import parlaState from 'cardPath/state.json';
 
 const fakeCardData = {
   cardData: {
     data,
-    state,
+    parlaState,
     cardData: {
       altHeader: false,
       ...cardData,
