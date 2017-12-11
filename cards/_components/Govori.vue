@@ -80,7 +80,8 @@
     import common from 'mixins/common';
 
     import axios from 'axios';
-    import infiniteScroll from 'vue-infinite-scroll'
+
+    import infiniteScroll from 'directives/infiniteScroll';
 
     export default {
         directives: { infiniteScroll },
@@ -231,7 +232,9 @@
                 if (! this.card.lockLoading ) {
                     this.card.lockLoading = true;
                     setTimeout(() => {
-                        this.card.shouldShadow = document.getElementById('speaks').scrollTop > 0;
+                        if (document) {
+                            this.card.shouldShadow = document.getElementById('speaks').scrollTop > 0;
+                        }
                         this.card.lockLoading = false;
 
                     }, 200)

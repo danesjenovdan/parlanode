@@ -3,7 +3,7 @@
   "name": "Zakonodaja",
   "dataUrl": "http://analize.knedl.si/v1/s/getAllLegislation",
   "type": "empty",
-  "lastUpdate": "2017-12-10T17:05:26.768Z",
+  "lastUpdate": "2017-12-10T17:36:50.966Z",
   "method": "zakonodaja",
   "group": "c",
   "big": true,

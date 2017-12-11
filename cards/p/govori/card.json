@@ -2,8 +2,8 @@
   "_id": "p_govori",
   "name": "Govori",
   "dataUrl": "https://analize.parlameter.si/v1/p/getMPStatic",
-  "type": "poslanec",
-  "lastUpdate": "2017-12-08T12:44:15.296Z",
+  "type": "empty",
+  "lastUpdate": "2017-12-10T20:48:40.641Z",
   "method": "govori",
   "group": "p"
 }
