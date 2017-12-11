@@ -72,39 +72,6 @@ const routes = [
         },
       },
       {
-        name      : 'kompas',
-        sourceUrl : '/c/kompas/',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
-        }
-      },
-      {
         name      : 'zadnjaSeja',
         sourceUrl : '/c/zadnja-seja/',
         resolve   : (req, res, route, card) => {
