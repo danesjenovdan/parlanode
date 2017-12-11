@@ -232,12 +232,12 @@
         parties: [],
         samePeople: [],
         differentPeople: [],
-        special: !!this.$options.cardData.state.special,
+        special: !!this.$options.cardData.parlaState.special,
         data: [],
         total: 0,
         sameModalVisible: false,
         differentModalVisible: false,
-        selectedTab: this.$options.cardData.state.selectedTab || 0,
+        selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
         headerConfig: {
           circleIcon: 'primerjalnik',
           heading: '&nbsp;',
@@ -341,8 +341,8 @@
         url: 'https://data.parlameter.si/v1/getAllPGs/',
         method: 'GET',
         success: (data) => {
-          const sameParties = this.$options.cardData.state.sameParties || [];
-          const differentParties = this.$options.cardData.state.differentParties || [];
+          const sameParties = this.$options.cardData.parlaState.sameParties || [];
+          const differentParties = this.$options.cardData.parlaState.differentParties || [];
           self.parties = Object.keys(data).map(partyId => ({
             id: data[partyId].id,
             acronym: data[partyId].acronym,
@@ -360,8 +360,8 @@
         url: 'https://data.parlameter.si/v1/getMPs/',
         method: 'GET',
         success: (data) => {
-          const samePeople = this.$options.cardData.state.samePeople || [];
-          const differentPeople = this.$options.cardData.state.differentPeople || [];
+          const samePeople = this.$options.cardData.parlaState.samePeople || [];
+          const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
           const sameData = JSON.parse(JSON.stringify(data));
           self.samePeople = sameData.map((person) => {
             person.selected = samePeople.indexOf(person.id) > -1;

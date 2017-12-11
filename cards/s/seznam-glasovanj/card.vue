@@ -143,8 +143,8 @@
 
       let textFilter = '';
 
-      if (this.$options.cardData.state) {
-        const state = this.$options.cardData.state;
+      if (this.$options.cardData.parlaState) {
+        const state = this.$options.cardData.parlaState;
         console.log('state');
         console.log(state);
         if (state.text) textFilter = state.text;

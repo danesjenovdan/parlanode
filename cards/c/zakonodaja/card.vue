@@ -1,59 +1,46 @@
 <template>
-  <div v-if="$options.cardData.state && $options.cardData.state.generator" class="row legislation-list">
-    <div class="session-list-generator">
-      <div class="col-md-12 filters">
-        <ul class="button-filters">
-          <striped-button
-                  v-for="(filter, index) in filters"
-                  @click.native="selectFilter(filter)"
-                  color="sds"
-                  :key="index"
-                  :selected="filter === currentFilter"
-                  :small-text="filter"
-          />
-        </ul>
+  <div id="zakonodaja">
+    <div v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator" class="row legislation-list">
+      <div class="session-list-generator">
+        <div class="col-md-12 filters">
+          <ul class="button-filters">
+            <striped-button
+                    v-for="(filter, index) in filters"
+                    @click.native="selectFilter(filter)"
+                    color="sds"
+                    :key="index"
+                    :selected="filter === currentFilter"
+                    :small-text="filter"
+            />
+          </ul>
 
-        <div class="filter text-filter">
-          <div class="filter-label">Išči po naslovu ali povzetku</div>
-          <p-search-field v-model="textFilter"></p-search-field>
+          <div class="filter text-filter">
+            <div class="filter-label">Išči po naslovu ali povzetku</div>
+            <p-search-field v-model="textFilter"></p-search-field>
+          </div>
+
+          <div class="filter month-dropdown">
+            <div class="filter-label">Matično delovno telo</div>
+            <p-search-dropdown
+              :items="allworkingBodies"
+              :placeholder="inputPlaceholder"
+              :alphabetise="false">
+            </p-search-dropdown>
+          </div>
         </div>
-
-        <div class="filter month-dropdown">
-          <div class="filter-label">Matično delovno telo</div>
-          <p-search-dropdown
-            :items="allworkingBodies"
-            :placeholder="inputPlaceholder"
-            :alphabetise="false">
-          </p-search-dropdown>
-        </div>
-
-      </div>
-
-      <div class="col-md-12">
-        <inner-card
-          :header-config="headerConfig"
-          :columns="columns"
-          :items="processedData"
-          :current-sort="currentSort"
-          :current-sort-order="currentSortOrder"
-          :select-sort="selectSort"
-          :info-text="infoText"
-          :generated-card-url="generatedCardUrl"
-        />
       </div>
     </div>
+    <inner-card
+      :header-config="headerConfig"
+      :columns="columns"
+      :items="processedData"
+      :current-sort="currentSort"
+      :current-sort-order="currentSortOrder"
+      :select-sort="selectSort"
+      :info-text="infoText"
+      :generated-card-url="generatedCardUrl"
+    />
   </div>
-  <inner-card
-    v-else
-    :header-config="headerConfig"
-    :columns="columns"
-    :items="processedData"
-    :current-sort="currentSort"
-    :current-sort-order="currentSortOrder"
-    :select-sort="selectSort"
-    :info-text="infoText"
-    :generated-card-url="generatedCardUrl"
-  />
 
 </template>
 
@@ -68,7 +55,7 @@
   export default {
     components: { StripedButton, PSearchField, InnerCard, PSearchDropdown },
     mixins: [common],
-    name: 'SeznamZakonov',
+    name: 'Zakonodaja',
     data() {
 
       // get all working bodies from result data
@@ -83,10 +70,10 @@
       }).reverse().map(JSON.parse)
 
       return {
-        id: this.$options.cardData.data.session.id,
+        // id: this.$options.cardData.data.session.id,
         data: this.$options.cardData.data.results,
         filters: ['Zakoni', 'Akti'],
-        currentFilter: this.$options.cardData.state.filter || 'Zakoni',
+        currentFilter: this.$options.cardData.parlaState.filter || 'Zakoni',
         currentSort: 'name',
         currentSortOrder: 'desc',
         textFilter: '',
@@ -126,7 +113,7 @@
         // @todo probably needs a good fix
         if (this.selectedWorkingBodies.length) state.wb = this.selectedWorkingBodies.map(wb => wb.id);
 
-        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/${this.id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       processedData () {
         const filterLegislation = (legislation) => {
@@ -139,6 +126,10 @@
 
         return this.data.filter(filterLegislation);
       }
+    },
+    mounted() {
+      console.log('ping');
+      console.log(this.$options.cardData.parlaState);
     },
     methods: {
       selectSort(sortId) {

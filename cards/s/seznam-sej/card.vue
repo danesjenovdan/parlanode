@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="$options.cardData.state && $options.cardData.state.generator"
+    v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
     :id="$options.cardData.cardData._id">
     <div class="session-list-generator">
       <div class="row">
