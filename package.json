@@ -63,7 +63,6 @@
     "supervisor": "0.12.0",
     "uglify-js": "3.2.0",
     "vue": "2.5.8",
-    "vue-infinite-scroll": "^2.0.2",
     "vue-loader": "13.5.0",
     "vue-server-renderer": "2.5.8",
     "vue-template-compiler": "2.5.8",
