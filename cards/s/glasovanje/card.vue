@@ -46,7 +46,7 @@
         />
       </div> -->
     </div>
-    <div class="izvlecek-switch" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
+    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
       :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
       :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
