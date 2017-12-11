@@ -449,8 +449,13 @@ exports.render = (req, res) => {
                 const stringifiedCardData = JSON.stringify(cardData);
 
                 const context = JSON.parse(stringifiedCardData);
-                
+
                 context.clientBundle = clientBundle;
+
+                console.log('server-side context');
+                console.log(context.state);
+
+                context.parlaState = context.state;
 
                 rendererInstance.renderToString(
                   context,

@@ -1,6 +1,6 @@
 <template>
   <div id="zakonodaja">
-    <div v-if="$options.cardData.state && $options.cardData.state.generator" class="row legislation-list">
+    <div v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator" class="row legislation-list">
       <div class="session-list-generator">
         <div class="col-md-12 filters">
           <ul class="button-filters">
@@ -73,7 +73,7 @@
         // id: this.$options.cardData.data.session.id,
         data: this.$options.cardData.data.results,
         filters: ['Zakoni', 'Akti'],
-        currentFilter: this.$options.cardData.state.filter || 'Zakoni',
+        currentFilter: this.$options.cardData.parlaState.filter || 'Zakoni',
         currentSort: 'name',
         currentSortOrder: 'desc',
         textFilter: '',
@@ -129,7 +129,7 @@
     },
     mounted() {
       console.log('ping');
-      console.log(this.$options.cardData.state);
+      console.log(this.$options.cardData.parlaState);
     },
     methods: {
       selectSort(sortId) {
