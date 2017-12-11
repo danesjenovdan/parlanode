@@ -335,8 +335,6 @@ exports.render = (req, res) => {
 
               try {
                 if (state) state = JSON.parse(state);
-                console.log(state);
-
                 let onlyStrings = true;
 
                 _.each(cardData.state, (key, val) => {
@@ -451,7 +449,14 @@ exports.render = (req, res) => {
                 const stringifiedCardData = JSON.stringify(cardData);
 
                 const context = JSON.parse(stringifiedCardData);
+
                 context.clientBundle = clientBundle;
+
+                console.log('server-side context');
+                console.log(context.state);
+
+                context.parlaState = context.state;
+
                 rendererInstance.renderToString(
                   context,
                   (error, html) => {
