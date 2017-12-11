@@ -23,12 +23,21 @@ Vue.component('SearchDropdown', SearchDropdown);
 // the default export should be a function
 // which will receive the context of the render call
 export default (context) => {
-  const app = new Vue(Object.assign({}, Card, { cardData: context }));
+  console.log('logging what came in');
+  console.log(context);
 
+  const cardState = JSON.parse(JSON.stringify(context.state));
+
+  // THIS NEEDS A REWORK BECAUSE BRAINFUCK
   context.state = {
     data: context.data,
     cardData: context.cardData,
+    state: cardState,
   };
 
+  console.log('logging what goes out');
+  console.log(context);
+
+  const app = new Vue(Object.assign({}, Card, { cardData: context }));
   return new Promise(resolve => resolve(app));
 };
