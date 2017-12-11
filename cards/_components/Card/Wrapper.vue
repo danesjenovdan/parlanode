@@ -13,7 +13,7 @@
       <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
       <div v-else class="card-content-front" :class="contentFrontClass" v-cloak>
-        <div v-if="true" class="card-content__empty">
+        <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
           <div class="card-content__empty-inner">
             <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
             <p>Podatki trenutno niso na voljo.</p>
@@ -92,48 +92,48 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 .card-content{
-  &__empty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  // &__empty {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
 
-    width: 100%;
-    height: 60vh;
-  }
+  //   width: 100%;
+  //   height: 60vh;
+  // }
 
-  &__empty-inner {
-    background: $grey;
-    width: 216px;
-    height: 216px;
-    border-radius: 50%;
-    padding: 40px;
+  // &__empty-inner {
+  //   background: $grey;
+  //   width: 216px;
+  //   height: 216px;
+  //   border-radius: 50%;
+  //   padding: 40px;
 
-    @include respond-to(mobile) {
-      width: 196px;
-      height: 196px;
-    }
+  //   @include respond-to(mobile) {
+  //     width: 196px;
+  //     height: 196px;
+  //   }
 
-    img {
-      margin: 0 auto 5px;
-      display: block;
+  //   img {
+  //     margin: 0 auto 5px;
+  //     display: block;
 
-      @include respond-to(mobile) {
-        max-width: 60px;
-      }
-    }
+  //     @include respond-to(mobile) {
+  //       max-width: 60px;
+  //     }
+  //   }
 
-    p {
-      font-family: "Roboto Slab", sans-serif;
-      color: #333;
-      font-style: italic;
-      font-size: 16px;
-      text-align: center;
+  //   p {
+  //     font-family: "Roboto Slab", sans-serif;
+  //     color: #333;
+  //     font-style: italic;
+  //     font-size: 16px;
+  //     text-align: center;
 
-      @include respond-to(mobile) {
-        font-size: 14px;
-      }
-    }
-  }
+  //     @include respond-to(mobile) {
+  //       font-size: 14px;
+  //     }
+  //   }
+  // }
 
   &.is-loading {
     overflow-y: hidden;

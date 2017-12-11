@@ -35,7 +35,7 @@
         </template>
       </div>
       <div class="name">{{ data.name }}</div>
-      <div v-if="data.documents.length > 0" class="documents">
+      <!-- <div v-if="data.documents.length > 0" class="documents">
         <div class="dropdown-label">Dokumenti</div>
         <p-search-dropdown
           single
@@ -44,13 +44,51 @@
           placeholder="Izberi dokument"
           :select-callback="openDocument"
         />
-      </div>
+      </div> -->
     </div>
-    <p-tabs @switch="focusTab" :start-tab="selectedTab">
-      <p-tab label="Izvleček" variant="light">
+    <div class="izvlecek-switch" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
+    <excerpt
+      :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
+      :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
+      :documents="data.documents"
+      class="visible-xs"
+      v-if="showMobileExcerpt"
+    />
+    <p-tabs @switch="focusTab" :start-tab="selectedTab" class="visible-xs">
+      <p-tab label="Poslanci">
+        <poslanci
+          :members="data.members"
+          :member-votes="data.all"
+          :result="data.result"
+          :state="state"
+        />
+      </p-tab>
+      <p-tab label="Poslanske skupine">
+        <poslanske-skupine
+          ref="parties"
+          :members="data.members"
+          :parties="data.parties"
+          :state="state"
+          :selectedParty="state.selectedParty || null"
+          :selectedOption="state.selectedOption || null"
+        />
+      </p-tab>
+      <p-tab label="Stran vlade">
+        <poslanske-skupine
+          ref="sides"
+          :members="data.members"
+          :parties="coalitionOpositionParties"
+          :state="state"
+          :selectedParty="state.selectedParty || null"
+          :selectedOption="state.selectedOption || null"
+        />
+      </p-tab>
+    </p-tabs>
+    <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
+      <p-tab label="Izvleček" variant="light" v-if="data.abstractVisible">
         <excerpt
-          :content="data.excerpt"
-          :main-law="data.main_law"
+          :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
+          :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
           :documents="data.documents"
         />
       </p-tab>
@@ -105,11 +143,13 @@ export default {
     // PTab,
     // PTabs,
   // },
-  components: { Poslanci, PoslanskeSkupine, PSearchDropdown, PTab, PTabs },
+  components: { Poslanci, PoslanskeSkupine, PSearchDropdown, PTab, PTabs, Excerpt },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
+    console.log(this.$options.cardData);
     return {
+      showMobileExcerpt: false,
       data: this.$options.cardData.data,
       state: this.$options.cardData.parlaState,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
@@ -181,7 +221,7 @@ export default {
       this.state.selectedParty = newSelectedParty;
     });
 
-    this.$emit('selectedoption', 'fuck');
+    // this.$emit('selectedoption', 'for');
   },
 };
 </script>
@@ -315,5 +355,16 @@ export default {
   background-size: 40px 40px;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.izvlecek-switch {
+  width: 100%;
+  height: 40px;
+  line-height: 20px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  background: $grey-medium;
+  margin-bottom: 10px;
 }
 </style>

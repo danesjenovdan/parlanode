@@ -16,6 +16,7 @@
           :items="mappedDocuments"
           placeholder="Dokumenti"
           :select-callback="openDocument"
+          :up="true"
         />
       </div>
     </div>
