@@ -111,8 +111,8 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data,
-      state: this.$options.cardData.state,
-      selectedTab: this.$options.cardData.state.selectedTab || 0,
+      state: this.$options.cardData.parlaState,
+      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',

@@ -4,7 +4,7 @@ module.exports = {
   db              : {
     name     : 'parla-db',
     url      : 'mongodb://localhost/',
-    username : `${process.env.MONGO_USERNAME}`,
+    user : `${process.env.MONGO_USERNAME}`,
     password : `${process.env.MONGO_PASSWORD}`,
   },
   urls            : {

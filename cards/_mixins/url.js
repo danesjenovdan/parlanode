@@ -6,13 +6,13 @@ export default {
     }
   },
   methods: {
-      encodeQueryData (data) {
-          return '?' + Object.keys(data)
-              .reduce((a, k) => {
-                  a.push(k + '=' + encodeURIComponent(data[k]));
-                  return a;
-              },[])
-              .join('&')
-      }
+    encodeQueryData (data) {
+      return '?' + Object.keys(data)
+        .reduce((a, k) => {
+          a.push(k + '=' + encodeURIComponent(data[k]));
+          return a;
+        },[])
+        .join('&')
+    }
   }
 };

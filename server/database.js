@@ -15,6 +15,7 @@ exports.connect = function ( cb ) {
     console.log(chalk.magenta(`| MONGO DATABASE |`) + ` -` + chalk.green(` Connecting to ${CFG.db.url + CFG.db.name}`));
 
     // handle missing mongo username and password
+    console.log(config);
     if ( _.isNil(config.db.user) || config.db.user === 'undefined' || _.isNil(!config.db.password) || config.db.password === 'undefined' ) {
       return reject('Missing mongo username or password. Add MONGO_USERNAME and MONGO_PASSWORD environment variables.');
     }

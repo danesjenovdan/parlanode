@@ -1,0 +1,9 @@
+{
+  "_id": "p_prisotnost-na-sejah-dz",
+  "name": "Prisotnost na sejah DZ",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getPresence",
+  "type": "poslanec",
+  "lastUpdate": "2017-12-11T11:30:10.049Z",
+  "method": "izracunana-prisotnost-seje",
+  "group": "p"
+}
