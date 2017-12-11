@@ -149,13 +149,13 @@ export default {
         this.$refs.sides.expandedParty = null;
         this.$refs.sides.expandedOption = null;
       }
-      if (this.parlaState.selectedTab === 1) {
-        this.$refs.sides.expandedParty = this.parlaState.selectedGroup || null;
-        this.$refs.sides.expandedOption = this.parlaState.selectedOption || null;
+      if (this.state.selectedTab === 1) {
+        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
+        this.$refs.sides.expandedOption = this.state.selectedOption || null;
       }
-      if (this.parlaState.selectedTab === 2) {
-        this.$refs.sides.expandedParty = this.parlaState.selectedGroup || null;
-        this.$refs.sides.expandedOption = this.parlaState.selectedOption || null;
+      if (this.state.selectedTab === 2) {
+        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
+        this.$refs.sides.expandedOption = this.state.selectedOption || null;
       }
     },
     measurePiwik(filter, sort, order) {
@@ -175,10 +175,10 @@ export default {
   },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {
-      this.parlaState.selectedOption = newSelectedOption;
+      this.state.selectedOption = newSelectedOption;
     });
     this.$on('selectedparty', (newSelectedParty) => {
-      this.parlaState.selectedParty = newSelectedParty;
+      this.state.selectedParty = newSelectedParty;
     });
 
     this.$emit('selectedoption', 'fuck');
