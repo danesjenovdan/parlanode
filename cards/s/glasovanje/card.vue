@@ -111,8 +111,8 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data,
-      state: this.$options.cardData.state,
-      selectedTab: this.$options.cardData.state.selectedTab || 0,
+      state: this.$options.cardData.parlaState,
+      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -149,13 +149,13 @@ export default {
         this.$refs.sides.expandedParty = null;
         this.$refs.sides.expandedOption = null;
       }
-      if (this.state.selectedTab === 1) {
-        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
-        this.$refs.sides.expandedOption = this.state.selectedOption || null;
+      if (this.parlaState.selectedTab === 1) {
+        this.$refs.sides.expandedParty = this.parlaState.selectedGroup || null;
+        this.$refs.sides.expandedOption = this.parlaState.selectedOption || null;
       }
-      if (this.state.selectedTab === 2) {
-        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
-        this.$refs.sides.expandedOption = this.state.selectedOption || null;
+      if (this.parlaState.selectedTab === 2) {
+        this.$refs.sides.expandedParty = this.parlaState.selectedGroup || null;
+        this.$refs.sides.expandedOption = this.parlaState.selectedOption || null;
       }
     },
     measurePiwik(filter, sort, order) {
@@ -175,10 +175,10 @@ export default {
   },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {
-      this.state.selectedOption = newSelectedOption;
+      this.parlaState.selectedOption = newSelectedOption;
     });
     this.$on('selectedparty', (newSelectedParty) => {
-      this.state.selectedParty = newSelectedParty;
+      this.parlaState.selectedParty = newSelectedParty;
     });
 
     this.$emit('selectedoption', 'fuck');

@@ -171,8 +171,8 @@ export default {
     );
     let textFilter = '';
 
-    if (this.cardData.state) {
-      const state = this.cardData.state;
+    if (this.cardData.parlaState) {
+      const state = this.cardData.parlaState;
       if (state.text) textFilter = state.text;
       if (state.months) allMonths = selectFromState(allMonths, state.months);
       if (state.options) allOptions = selectFromState(allOptions, state.options);

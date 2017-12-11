@@ -12,7 +12,7 @@ const CARD_TYPES = {
   p: 'poslanec',
   ps: 'poslanska_skupina',
   s: 'seja',
-  c: 'MISSING',
+  c: 'empty',
 };
 
 inquirer.prompt([

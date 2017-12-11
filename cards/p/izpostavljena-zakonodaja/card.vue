@@ -73,7 +73,7 @@
       console.log(this.$options.cardData.data)
       return {
         data: this.$options.cardData.data,
-        state: this.$options.cardData.state || {},
+        state: this.$options.cardData.parlaState || {},
         selectedTab: 0,
         headerConfig: {
           circleIcon: 'og-list',
@@ -95,8 +95,8 @@
       },
     },
     created() {
-      if (this.state.selectedTab) {
-        this.selectedTab = this.state.selectedTab;
+      if (this.parlaState.selectedTab) {
+        this.selectedTab = this.parlaState.selectedTab;
       }
     }
   };

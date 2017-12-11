@@ -126,9 +126,9 @@
                 const state = {}
 
                 if (this.type === 'person') {
-                    state.people = this.cardData.state.people
+                    state.people = this.cardData.parlaState.people
                 } else if (this.type === 'party') {
-                    state.parties = this.cardData.state.parties
+                    state.parties = this.cardData.parlaState.parties
                 }
 
                 if (this.selectedMonths.length > 0) {
@@ -149,7 +149,7 @@
                     encodedQueryData = this.encodeQueryData(state);
                 }
 
-                let textFilter = this.textFilter.length ? this.textFilter : this.cardData.state.text;
+                let textFilter = this.textFilter.length ? this.textFilter : this.cardData.parlaState.text;
 
                 return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
             },

@@ -263,8 +263,8 @@ export default {
             Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
           );
 
-        if (this.cardData.state) {
-          const state = this.cardData.state;
+        if (this.cardData.parlaState) {
+          const state = this.cardData.parlaState;
           if (state.text) this.textFilter = state.text;
           if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
           if (state.sort) this.selectedSort = state.sort;
