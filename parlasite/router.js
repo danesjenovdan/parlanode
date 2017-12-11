@@ -40,6 +40,24 @@ function resolve_card(req, card, state = {}) {
   });
 }
 
+function resolve_card_with_custom_url(url, req, card, state = {}) {
+  let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?customUrl=${encodeURIComponent(url)}`;
+  console.log(cardUrl, 'prvic');
+  if (Object.keys(state).length !== 0) {
+    const stateString = encodeURIComponent(JSON.stringify(state));
+    cardUrl = `${cardUrl}&state=${stateString}`;
+  }
+
+  console.log(cardUrl);
+
+  return fetch(cardUrl).then((res) => {
+    return res.text();
+  })
+  .then((body) => {
+    return body;
+  });
+}
+
 const routes = [
   {
     path      : '/',
@@ -177,6 +195,16 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path        : '/zakonodaja',
+    viewPath    : 'zakonodaja',
+    pageTitle   : 'Zakonodaja',
+    cards       : [{
+      name: 'zakonodaja',
+      sourceUrl: '/c/zakonodaja/',
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
+    }]
   },
   {
       path      : '/orodja',
