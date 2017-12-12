@@ -453,7 +453,7 @@ input.form-control, textarea.form-control {
 
         width: 100%;
         height: auto !important;
-        padding-top: 10vh !important;
+        padding-top: 10vh;
 
         @include respond-to(mobile) {
             padding-top: 30px;
