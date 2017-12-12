@@ -14,7 +14,7 @@
     <p-tabs :start-tab="0">
       <p-tab label="Izvleček" variant="light">
         <excerpt
-          :content="data.note.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
+          :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
           :main-law="{ epa: '', name: '' }"
           :documents="documents"
         />
