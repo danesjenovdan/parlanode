@@ -2,7 +2,7 @@
   <div class="excerpt">
     <div class="rich-text" v-html="content" />
     <div class="no-abstract" v-if="content.length === 0">
-      <p>Za to glasovanje žal nimamo izvlečka.</p>
+      <p>Za ta zakon žal nimamo izvlečka.</p>
     </div>
     <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
     <div class="metadata">
