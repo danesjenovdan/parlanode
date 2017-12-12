@@ -1,0 +1,49 @@
+<% include ../../partials/header.ejs %>
+
+<div class="session-container">
+    <div class="row header  text-center">
+        <div class="col-lg-12">
+
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>Z</b>
+            </div>
+            
+            <h1 style="max-width: 400px; position: relative; margin: auto;"><%= lawData.text %></h1>
+            <h2><%= lawData.result %></h2>
+           
+            <br>
+            <font class="date">
+                    <%= lawData.created_at %>
+            </font>
+            <br/>
+            <!-- <font class="datepublished">
+                podatki objavljeni:
+            </font> -->
+
+            <!-- <div class="group-container-menu">
+                <ul class="clearfix">
+                    <li>
+                        <a href="/seja/glasovanja/<%- params.id %>">
+                            Glasovanja
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/transkript/<%- params.id %>">
+                            Transkript
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/prisotnost/<%- params.id %>">
+                            Prisotnost
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+
+<%- views.zakon %>
+
+<% include ../../partials/footer.ejs %>
