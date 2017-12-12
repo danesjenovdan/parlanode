@@ -44,9 +44,7 @@
                 <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
-
                         <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
-
                     </ul>
                 </div>
                 <div v-if="speakingDays.length===0">
@@ -62,9 +60,9 @@
 </template>
 
 <script>
-    import Govor from 'components/Govor.vue';
-    import SearchField from 'components/SearchField.vue';
-    import SearchDropdown from 'components/SearchDropdown.vue';
+import Govor from 'components/Govor.vue';
+import SearchField from 'components/SearchField.vue';
+import SearchDropdown from 'components/SearchDropdown.vue';
 
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
@@ -79,7 +77,8 @@
     },
     components: {
       SearchField,
-      SearchDropdown
+      SearchDropdown,
+      Govor
     },
     mixins: [common],
     data() {
@@ -102,7 +101,6 @@
         return a.indexOf(e, i + 1) === -1;
       }).reverse().map(JSON.parse)
 
-
       return {
         card: {
           currentPage: 0,
@@ -119,15 +117,20 @@
       };
     },
     mounted() {
-      document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
+      // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
     },
     computed: {
       cardUrl() {
         const state = {}
         if (this.type === 'person') {
-            state.people = this.cardData.parlaState.people
+            state.people = typeof this.cardData.parlaState !== 'undefined'
+              ?  this.cardData.parlaState.people
+              :  this.cardData.state.people;
+
         } else if (this.type === 'party') {
-            state.parties = this.cardData.parlaState.parties
+            state.parties = typeof this.cardData.parlaState !== 'undefined'
+              ?  this.cardData.parlaState.parties
+              :  this.cardData.state.parties;
         }
 
         if (this.selectedMonths.length > 0) {
@@ -148,7 +151,11 @@
           encodedQueryData = this.encodeQueryData(state);
         }
 
-        let textFilter = this.textFilter.length ? this.textFilter : this.cardData.parlaState.text;
+        let textFilter = this.textFilter.length ? this.textFilter : (
+          typeof this.cardData.parlaState !== 'undefined'
+            ?  this.cardData.parlaState.text
+            :  this.cardData.state.text
+        );
 
         return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
       },
