@@ -1,7 +1,10 @@
 <template>
   <div class="excerpt">
     <div class="rich-text" v-html="content" />
-      <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
+    <div class="no-abstract" v-if="content.length === 0">
+      <p>Za to glasovanje žal nimamo izvlečka.</p>
+    </div>
+    <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
     <div class="metadata">
       <div class="main-law-label" v-if="mainLaw.epa !== ''">
         Matični zakon:
@@ -116,11 +119,43 @@ hr {
 </style>
 
 <style lang="scss">
+@import '~parlassets/scss/colors';
+
 .excerpt .rich-text {
   ul {
     padding-left: 14px;
     margin-bottom: 1em;
     li { margin-bottom: 1em; }
+  }
+}
+
+.no-abstract {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  font-size: 16px;
+  color: $grey-dark;
+  width: 100%;
+  font-style: italic;
+  padding-bottom: 40px;
+
+  p {
+    max-width: 150px;
+    margin: auto;
+    margin-top: 18px;
+  }
+
+  &::before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    display: block;
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/missing-excerpt.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }
 </style>
