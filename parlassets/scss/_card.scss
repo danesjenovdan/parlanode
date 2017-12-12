@@ -452,8 +452,8 @@ input.form-control, textarea.form-control {
         align-items: center;
 
         width: 100%;
-        height: auto;
-        padding-top: 10vh;
+        height: auto !important;
+        padding-top: 10vh !important;
 
         @include respond-to(mobile) {
             padding-top: 30px;
