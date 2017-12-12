@@ -12,6 +12,12 @@
       <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
+    <div v-show="true" class="card-content__empty">
+      <div class="card-content__empty-inner">
+        <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
+        <p>Podatki trenutno niso na voljo.</p>
+      </div>
+    </div>
     <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
       <div class="filter text-filter">
         <div class="filter-label">Išči po naslovu glasovanja</div>
@@ -171,8 +177,8 @@ export default {
     );
     let textFilter = '';
 
-    if (this.cardData.state) {
-      const state = this.cardData.state;
+    if (this.cardData.parlaState) {
+      const state = this.cardData.parlaState;
       if (state.text) textFilter = state.text;
       if (state.months) allMonths = selectFromState(allMonths, state.months);
       if (state.options) allOptions = selectFromState(allOptions, state.options);

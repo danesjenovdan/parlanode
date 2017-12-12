@@ -3,7 +3,7 @@
   "name": "Seznam poslanskih skupin",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getListOfPGs",
   "type": "seznam_poslanskih_skupin",
-  "lastUpdate": "2017-11-26T10:22:42.277Z",
+  "lastUpdate": "2017-12-11T11:30:27.471Z",
   "method": "seznam-poslanskih-skupin",
   "group": "ps",
   "big": true

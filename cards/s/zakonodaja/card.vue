@@ -168,7 +168,7 @@ export default {
 .headers {
   margin-left: 0 !important;
 
-  .state {
+  .parlaState {
     @include respond-to(mobile) {
       text-align: center !important;
     }
@@ -179,7 +179,7 @@ export default {
 }
 
 .item {
-  .state {
+  .parlaState {
     white-space: nowrap;
 
     .glyphicon {
