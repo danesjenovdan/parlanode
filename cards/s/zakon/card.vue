@@ -11,7 +11,7 @@
     </div>
 
     <!-- Card content goes here -->
-    <p-tabs :start-tab="1">
+    <p-tabs :start-tab="0">
       <p-tab label="Izvleček" variant="light">
         <excerpt
           :content="data.note.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
