@@ -41,6 +41,7 @@ function resolve_card(req, card, state = {}) {
 }
 
 function resolve_card_with_custom_url(url, req, card, state = {}) {
+  console.log(`resolving card with url ${url}`);
   let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?customUrl=${encodeURIComponent(url)}`;
   console.log(cardUrl, 'prvic');
   if (Object.keys(state).length !== 0) {
@@ -171,6 +172,16 @@ const routes = [
       name: 'zakonodaja',
       sourceUrl: '/c/zakonodaja/',
       resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
+    }]
+  },
+  {
+    path        : '/zakonodaja/:epa',
+    viewPath    : 'zakonodaja/zakon',
+    pageTitle   : 'Zakonodaja',
+    cards       : [{
+      name: 'zakon',
+      sourceUrl: '/s/zakon/',
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
     }]
   },
   {
@@ -2106,8 +2117,43 @@ function createRoute(app, route) {
 
               });
 
-          }
-          else {
+          } else if (route.viewPath.indexOf('zakonodaja') !== -1) {
+            if (route.viewPath.indexOf('/zakon') !== -1) {
+
+              getLawDataByEPA(req.params.epa).then((lawData) => {
+                console.log(lawData);
+                
+                const dataExtend = {
+                  slug: req.slug,
+                  activeMenu: 'zakonodaja',
+                  pageTitle: lawData.text,
+                  lawData,
+                  views,
+                };
+    
+                Object.assign(common, dataExtend);
+                
+                common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+    
+                res.render(route.viewPath, common);
+              });
+            } else {
+
+              const dataExtend = {
+                slug: req.slug,
+                activeMenu: 'zakonodaja',
+                pageTitle: 'ZAKON!!!!!',
+                views,
+              };
+
+              Object.assign(common, dataExtend);
+              
+              common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+
+              res.render(route.viewPath, common);
+            }
+
+          } else {
 
             var activeMenu = (route.viewPath == 'landing') ? route.viewPath : 'P';
             getMPIdByName(req.params.fullName, req)
@@ -2396,6 +2442,11 @@ function getMPIdByName(name, req) {
   });
   return Promise.resolve({ mpId, mpSlug, mp : selectedMp });
   // });
+}
+
+function getLawDataByEPA(epa, req) {
+  return fetch(`https://analize.parlameter.si/v1/s/getLegislation/${epa}`)
+    .then((res) => res.json());
 }
 
 
