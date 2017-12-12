@@ -96,9 +96,9 @@
       },
       columns: () => [
         { id: 'name', label: 'Ime', additionalClass: '' },
-        { id: 'date', label: 'Sprememba' },
-        { id: 'updated', label: 'Matično delovno telo', additionalClass: '' },
-        { id: 'workingBody', label: 'Status', additionalClass: '' },
+        { id: 'updated', label: 'Sprememba' },
+        { id: 'workingBody', label: 'Matično delovno telo', additionalClass: '' },
+        { id: 'result', label: 'Status', additionalClass: '' },
       ],
       infoText: () => {
         return "Info";
