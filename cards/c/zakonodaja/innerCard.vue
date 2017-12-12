@@ -60,11 +60,10 @@ export default {
 
           return this.items.map(legislation => {
             let mapKey = legislation.result;
-            if (mapKey === null && legislation.status === "v obravnavi") {
-              mapKey = legislation.status;
-            } else {
+            if (!mapKey) {
               mapKey = 'v obravnavi';
             }
+            console.log(mapKey);
 
             const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 

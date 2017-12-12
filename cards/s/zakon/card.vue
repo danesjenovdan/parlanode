@@ -14,7 +14,7 @@
     <p-tabs :start-tab="0">
       <p-tab label="Izvleček" variant="light">
         <excerpt
-          :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
+          :content="content"
           :main-law="{ epa: '', name: '' }"
           :documents="documents"
         />
@@ -59,6 +59,14 @@ export default {
         title: this.$options.cardData.data.text, // this.$options.cardData.cardData.name,
       },
     };
+  },
+  computed: {
+    content() {  
+      if (this.data.abstract) {
+        return this.data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '');
+      }
+      return '';
+    },
   },
   methods: {
     measurePiwik(filter, sort, order) {
