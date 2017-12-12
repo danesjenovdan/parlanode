@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     content() {  
-      if (this.data.abstract === this.data.abstract) {
+      if (this.data.abstract) {
         return this.data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '');
       }
       return '';
