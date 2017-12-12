@@ -48,7 +48,7 @@
                     </ul>
                 </div>
                 <div v-if="speakingDays.length===0">
-                    tukaj pride empty state komponenta
+                    <card-empty></card-empty>
                 </div>
             </div>
             <div v-if="card.isLoading" class="nalagalnik__wrapper">
@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import CardEmpty from 'components/Card/Empty.vue';
 import Govor from 'components/Govor.vue';
 import SearchField from 'components/SearchField.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
@@ -78,7 +79,8 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     components: {
       SearchField,
       SearchDropdown,
-      Govor
+      Govor,
+      CardEmpty
     },
     mixins: [common],
     data() {
@@ -142,9 +144,8 @@ import SearchDropdown from 'components/SearchDropdown.vue';
         }
 
         if (this.selectedSessions.length > 0) {
-          state.orgs = this.selectedSessions.map(s => s.id);
+          state.wb = this.selectedSessions.map(s => s.id);
         }
-
 
         var encodedQueryData = '';
         if (Object.keys(state).length !== 0) {
@@ -195,7 +196,6 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     },
     methods: {
       searchSpeakings(waitTime = 750) {
-        if (this.card.lockLoading) return false;
 
         if (!Number.isInteger(waitTime)) {
           waitTime = 0;
@@ -204,6 +204,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
         this.card.lockLoading = true;
         setTimeout(() => {
           if (!this.card.isLoading) {
+            this.card.currentPage = 0;
             this.card.isLoading = true;
             axios.get(this.cardUrl).then(response => {
               this.speakingDays = response.data.highlighting;
@@ -218,17 +219,17 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       loadMore() {
         if (this.card.lockLoading || this.card.isLoading) return false;
         this.card.isLoading = true;
+        this.card.currentPage++
 
         axios.get(this.cardUrl).then(response => {
           this.speakingDays = this.speakingDays.concat(response.data.highlighting)
-          this.card.currentPage++
 
             this.card.isLoading = false;
 
           // end infinite scrolling
           if (response.data.response.start >= response.data.response.numFound) {
             // @todo decide what to show when no more data
-            // this.card.lockLoading = true;
+            this.card.lockLoading = true;
           }
 
         });
