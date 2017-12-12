@@ -95,8 +95,8 @@
       },
     },
     created() {
-      if (this.parlaState.selectedTab) {
-        this.selectedTab = this.parlaState.selectedTab;
+      if (this.state.selectedTab) {
+        this.selectedTab = this.state.selectedTab;
       }
     }
   };

@@ -1,9 +1,9 @@
 <template>
   <div class="excerpt">
     <div class="rich-text" v-html="content" />
-    <hr>
+      <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
     <div class="metadata">
-      <div class="main-law-label">
+      <div class="main-law-label" v-if="mainLaw.epa !== ''">
         Matični zakon:
       </div>
       <div class="main-law-name">
@@ -16,6 +16,7 @@
           :items="mappedDocuments"
           placeholder="Dokumenti"
           :select-callback="openDocument"
+          :up="true"
         />
       </div>
     </div>

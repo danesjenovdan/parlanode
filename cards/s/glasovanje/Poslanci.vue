@@ -109,14 +109,14 @@ export default {
     state: Object,
   },
   mounted() {
-    if (this.parlaState.nameFilter) {
-      this.nameFilter = this.parlaState.nameFilter;
+    if (this.state.nameFilter) {
+      this.nameFilter = this.state.nameFilter;
     }
   },
   methods: {
     getSelectedOption(option) {
-      if (this.parlaState.selectedOption) {
-        return this.parlaState.selectedOption === option;
+      if (this.state.selectedOption) {
+        return this.state.selectedOption === option;
       } else {
         return false;
       }
