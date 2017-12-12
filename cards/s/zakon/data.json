@@ -1,0 +1,201 @@
+{
+  "status": "konec obravnave",
+  "created_for": "18.09.2017",
+  "classification": "zakon",
+  "tags": ["Komisija za nadzor javnih financ", "Kolegij predsednika Dr\u017eavnega zbora", "Komisija za narodni skupnosti", "Komisija za odnose s Slovenci v zamejstvu in po svetu", "Komisija za poslovnik", "Mandatno-volilna komisija", "Odbor za delo, dru\u017eino, socialne zadeve in invalide", "Odbor za finance in monetarno politiko", "Odbor za gospodarstvo", "Odbor za infrastrukturo, okolje in prostor", "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino", "Odbor za kmetijstvo, gozdarstvo in prehrano", "Odbor za kulturo", "Odbor za notranje zadeve, javno upravo in lokalno samoupravo", "Odbor za obrambo", "Odbor za pravosodje", "Odbor za zadeve Evropske unije", "Odbor za zdravstvo", "Odbor za zunanjo politiko", "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in", "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji", "Ustavna komisija", "Proceduralna glasovanja", "Zunanja imenovanja", "Poslanska vpra\u0161anja", "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb", "Preiskovalne komisije", "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti", "Interpelacija", " Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investicij"],
+  "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah",
+  "abstract": "",
+  "session": {
+    "name": "33. redna seja",
+    "orgs": [{
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    }],
+    "date": "18. 9. 2017",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    },
+    "date_ts": "2017-09-18T02:00:00",
+    "updated_at": "28. 10. 2017",
+    "in_review": false,
+    "id": 9743
+  },
+  "result": "sprejet",
+  "votes": [{
+    "abstain": 3,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Eviden\u010dni sklep o primernosti predloga zakona 20.6.2017",
+    "is_outlier": false,
+    "votes_for": 55,
+    "result": true,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 19,
+    "motion_id": 7293,
+    "has_outliers": true,
+    "not_present": 13
+  }, {
+    "abstain": 23,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Amandma: K 6. \u010dlenu 20.9.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+    "is_outlier": true,
+    "votes_for": 53,
+    "result": true,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 0,
+    "motion_id": 7535,
+    "has_outliers": true,
+    "not_present": 14
+  }, {
+    "abstain": 6,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Glasovanje o zakonu v celoti",
+    "is_outlier": false,
+    "votes_for": 50,
+    "result": true,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 19,
+    "motion_id": 7534,
+    "has_outliers": true,
+    "not_present": 15
+  }, {
+    "abstain": 21,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Amandma: K 6. \u010dlenu 12.9.2017 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+    "is_outlier": true,
+    "votes_for": 52,
+    "result": true,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 0,
+    "motion_id": 7433,
+    "has_outliers": false,
+    "not_present": 17
+  }, {
+    "abstain": 5,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Amandma: K 7. 12.9.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+    "is_outlier": false,
+    "votes_for": 20,
+    "result": false,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 48,
+    "motion_id": 7432,
+    "has_outliers": true,
+    "not_present": 17
+  }, {
+    "abstain": 6,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Amandma: K 15. \u010dlenu 12.9.2017 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+    "is_outlier": false,
+    "votes_for": 55,
+    "result": true,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 11,
+    "motion_id": 7431,
+    "has_outliers": false,
+    "not_present": 18
+  }, {
+    "abstain": 4,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Amandma: K 27.  12.9.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+    "is_outlier": false,
+    "votes_for": 21,
+    "result": false,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 48,
+    "motion_id": 7430,
+    "has_outliers": true,
+    "not_present": 17
+  }, {
+    "abstain": 3,
+    "tags": ["Odbor za zdravstvo"],
+    "text": "Zakon o spremembah in dopolnitvah Zakona o pacientovih pravicah - Eviden\u010dni sklep da se tretja obravnava opravi na isti seji 19.9.2017",
+    "is_outlier": false,
+    "votes_for": 55,
+    "result": true,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a9c3112341ff8b8b86b8c55cdef37f01c94b6807f6216afcd5d1ac67",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005863b1c55f17eef605d97268833ee143a3dff624abf863cd27087522b",
+      "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o pacientovih pravicah"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057b325bfa49ded90cc643820fb238083753e4b91d6e310b2411fc4947",
+      "name": "Zahteva za splo\u0161no razpravo"
+    }],
+    "against": 15,
+    "motion_id": 7429,
+    "has_outliers": true,
+    "not_present": 17
+  }],
+  "created_at": "06.10.2017",
+  "abstractVisible": false,
+  "epa": "1984-VII"
+}

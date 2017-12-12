@@ -60,17 +60,16 @@ export default {
 
           return this.items.map(legislation => {
             let mapKey = legislation.result;
-            if (mapKey === null && legislation.status === "v obravnavi") {
-              mapKey = legislation.status;
-            } else {
+            if (!mapKey) {
               mapKey = 'v obravnavi';
             }
+            console.log(mapKey);
 
             const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
             return [
               {link: this.slugs.legislationLink + legislation.epa, text: legislation.text},
-              {text: legislation.updated_at},
+              {text: legislation.date},
               {link: `${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true`, text: legislation.mdt.name},
               {html: outcomeHtml},
             ];
