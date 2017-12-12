@@ -69,7 +69,7 @@ export default {
 
             return [
               {link: this.slugs.legislationLink + legislation.epa, text: legislation.text},
-              {text: legislation.updated_at},
+              {text: legislation.date},
               {link: `${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true`, text: legislation.mdt.name},
               {html: outcomeHtml},
             ];
