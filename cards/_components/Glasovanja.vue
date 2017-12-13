@@ -12,7 +12,7 @@
       <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
-    <div v-show="true" class="card-content__empty">
+    <div v-show="false" class="card-content__empty"> <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
         <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
         <p>Podatki trenutno niso na voljo.</p>
@@ -51,7 +51,7 @@
               </div>
 
               <div class="name">
-                <p>{{ ballot.label }} <a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></p>
+                <p><a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></p>
 
               </div>
               <div class="outcome">
