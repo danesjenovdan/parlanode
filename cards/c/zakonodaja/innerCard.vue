@@ -77,12 +77,12 @@ export default {
           })
       }
   },
-  methods: {
-    getSessionUrl(session) {
-      if (!this.slugs || session.link_to === 'nothing') return '';
-      return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
-    },
-  },
+  // methods: {
+  //   getSessionUrl(session) {
+  //     if (!this.slugs || session.link_to === 'nothing') return '';
+  //     return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
+  //   },
+  // },
 };
 </script>
 
