@@ -8,7 +8,8 @@
                 <b>Z</b>
             </div>
             
-            <h1 style="max-width: 400px; position: relative; margin: auto;"><%= lawData.text %></h1>
+            <% var lawtitle = lawData.text.length > 100 ? lawData.text.slice(0, 100) + '...' : lawData.text %>
+            <h1 style="max-width: 400px; position: relative; margin: auto;"><%= lawtitle %></h1>
             <br />
             <font class="date">
                 <%= lawData.created_at %>
