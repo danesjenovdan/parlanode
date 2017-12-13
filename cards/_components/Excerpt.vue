@@ -145,6 +145,7 @@ hr {
     max-width: 150px;
     margin: auto;
     margin-top: 18px;
+    font-size: 13px;
   }
 
   &::before {

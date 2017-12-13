@@ -93,8 +93,11 @@ export default {
   .card-content {
     height: 518px;
   }
+  .filters {
+    margin-top: 10px;
+  }
   #votingCard {
-    max-height: 382px;
+    max-height: 372px;
   }
 }
 </style>
