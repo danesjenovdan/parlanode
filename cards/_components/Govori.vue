@@ -44,23 +44,11 @@
                 <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
-                        <li class="speaks__list--speak" v-for="speak in speakingDay">
-                            <a :href="getPersonLink(speak.person)" class="portrait">
-                                <img :src="getPersonPortrait(speak.person)" />
-                            </a>
-
-                            <div class="name">
-                                <a :href="getPersonLink(speak.person)" class="funblue-light-hover">{{ speak.person.name }}</a><br>
-                            </div>
-
-                            <div class="motion">
-                                <a :href="getSessionSpeechLink(speak)" class="funblue-light-hover" v-html="speak.content_t.substr(0, 180) + '...'"></a>
-                            </div>
-                        </li>
+                        <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
                     </ul>
                 </div>
                 <div v-if="speakingDays.length===0">
-                    tukaj pride empty state komponenta
+                    <card-empty></card-empty>
                 </div>
             </div>
             <div v-if="card.isLoading" class="nalagalnik__wrapper">
@@ -72,13 +60,10 @@
 </template>
 
 <script>
-  import SearchField from 'components/SearchField.vue';
-  import SearchDropdown from 'components/SearchDropdown.vue';
-  import {
-    getPersonPortrait,
-    getPersonLink,
-    getSessionSpeechLink
-  } from 'components/links';
+import CardEmpty from 'components/Card/Empty.vue';
+import Govor from 'components/Govor.vue';
+import SearchField from 'components/SearchField.vue';
+import SearchDropdown from 'components/SearchDropdown.vue';
 
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
@@ -93,7 +78,9 @@
     },
     components: {
       SearchField,
-      SearchDropdown
+      SearchDropdown,
+      Govor,
+      CardEmpty
     },
     mixins: [common],
     data() {
@@ -116,7 +103,6 @@
         return a.indexOf(e, i + 1) === -1;
       }).reverse().map(JSON.parse)
 
-
       return {
         card: {
           currentPage: 0,
@@ -133,17 +119,17 @@
       };
     },
     mounted() {
-      document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
+      // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
     },
     computed: {
       cardUrl() {
         const state = {}
+        if (this.type === 'person') {
+            state.people = this.cardData.data.filters.people;
 
-                if (this.type === 'person') {
-                    state.people = this.cardData.parlaState.people
-                } else if (this.type === 'party') {
-                    state.parties = this.cardData.parlaState.parties
-                }
+        } else if (this.type === 'party') {
+            state.parties = this.data.filters.parties;
+        }
 
         if (this.selectedMonths.length > 0) {
           // since dates in month dropdown are generated as m-y we need to prepare them as 1.m.y
@@ -154,18 +140,21 @@
         }
 
         if (this.selectedSessions.length > 0) {
-          state.orgs = this.selectedSessions.map(s => s.id);
+          state.wb = this.selectedSessions.map(s => s.id);
         }
-
 
         var encodedQueryData = '';
         if (Object.keys(state).length !== 0) {
           encodedQueryData = this.encodeQueryData(state);
         }
 
-                let textFilter = this.textFilter.length ? this.textFilter : this.cardData.parlaState.text;
+        let textFilter = this.textFilter.length ? this.textFilter : (
+          typeof this.cardData.parlaState !== 'undefined'
+            ?  this.cardData.parlaState.text
+            :  this.cardData.state.text
+        );
 
-        return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
+        return `https://isci.parlameter.si/filter/${textFilter || ''}/${this.card.currentPage}${encodedQueryData}`;
       },
       selectedSessions() {
         return this.allSessions.filter(session => session.selected);
@@ -203,7 +192,6 @@
     },
     methods: {
       searchSpeakings(waitTime = 750) {
-        if (this.card.lockLoading) return false;
 
         if (!Number.isInteger(waitTime)) {
           waitTime = 0;
@@ -212,6 +200,7 @@
         this.card.lockLoading = true;
         setTimeout(() => {
           if (!this.card.isLoading) {
+            this.card.currentPage = 0;
             this.card.isLoading = true;
             axios.get(this.cardUrl).then(response => {
               this.speakingDays = response.data.highlighting;
@@ -226,17 +215,17 @@
       loadMore() {
         if (this.card.lockLoading || this.card.isLoading) return false;
         this.card.isLoading = true;
+        this.card.currentPage++
 
         axios.get(this.cardUrl).then(response => {
           this.speakingDays = this.speakingDays.concat(response.data.highlighting)
-          this.card.currentPage++
 
             this.card.isLoading = false;
 
           // end infinite scrolling
           if (response.data.response.start >= response.data.response.numFound) {
             // @todo decide what to show when no more data
-            // this.card.lockLoading = true;
+            this.card.lockLoading = true;
           }
 
         });
@@ -250,141 +239,105 @@
             }
             this.card.lockLoading = false;
 
-          }, 200)
+                    }, 200)
+                }
+            },
+            measurePiwik(filter, sort, order) {
+                if (typeof measure === 'function') {
+                    if (sort !== '') {
+                        measure('s', 'session-sort', `${sort} ${order}`, '');
+                    } else if (filter !== '') {
+                        measure('s', 'session-filter', filter, '');
+                    }
+                }
+            }
+        },
+        props: {
+            cardData: {
+                type: Object,
+                required: true,
+            },
+            type: {
+                type: String,
+                required: true,
+                validator: value => ['person', 'party'].indexOf(value) > -1,
+            },
+            person: Object,
+            party: Object,
         }
-      },
-      measurePiwik(filter, sort, order) {
-        if (typeof measure === 'function') {
-          if (sort !== '') {
-            measure('s', 'session-sort', `${sort} ${order}`, '');
-          } else if (filter !== '') {
-            measure('s', 'session-filter', filter, '');
-          }
-        }
-      },
-      getPersonPortrait,
-      getPersonLink,
-      getSessionSpeechLink
-    },
-    props: {
-      cardData: {
-        type: Object,
-        required: true,
-      },
-      type: {
-        type: String,
-        required: true,
-        validator: value => ['person', 'party'].indexOf(value) > -1,
-      },
-      person: Object,
-      party: Object,
-    }
-  };
+    };
 </script>
 
 <style lang="scss" scoped>
-  @import '~parlassets/scss/breakpoints';
-  @import '~parlassets/scss/colors';
-  .search-field {
-    height: 53px !important;
-  }
+    @import '~parlassets/scss/breakpoints';
+    @import '~parlassets/scss/colors';
 
-  .card-scroll {
-    padding: 0;
-    .search-field {
-      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
-    }
-    .filters {
-      .filter {
-        @include respond-to(desktop) {
-          margin-right: 10px;
-          flex: 1;
-        }
-        @include respond-to(mobile) {
-          width: 100%;
-        }
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-      @include respond-to(mobile) {
-        flex-wrap: wrap;
-        min-height: 154px;
-      }
-      .option-party-buttons {
-        @include show-for(desktop,
-        flex);
-        width: 27.5%;
-        padding-top: 26px;
-        .party-button:not(:last-child) {
-          margin-right: 3px;
-        }
-      }
-    }
-  }
+    .card-scroll {
+        padding: 0;
 
-  .speaks {
-    flex: 1;
-    position: relative;
-    padding-bottom: 20px;
-    &__list {
-      padding: 0 0 10px;
-      margin: 0;
-      &--speak {
-        border-bottom: 1px solid $grey;
-        padding: 15px 0;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        &:last-child {
-          border-bottom: 0;
+        .search-field {
+            background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
         }
-        .portrait {
-          margin-left: 7px;
-          float: left;
-          flex: none;
-          img {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-          }
+
+        .filters {
+            .filter {
+                @include respond-to(desktop) {
+                    margin-right: 10px;
+                    flex: 1;
+                }
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            @include respond-to(mobile) {
+                flex-wrap: wrap;
+                min-height: 154px;
+            }
+
+            .option-party-buttons {
+                @include show-for(desktop, flex);
+
+                width: 27.5%;
+                padding-top: 26px;
+
+                .party-button:not(:last-child) {
+                    margin-right: 3px;
+                }
+            }
         }
-        .name {
-          text-align: left;
-          font-size: 18px;
-          font-weight: 300;
-          padding-right: 10p;
-          margin: 0 5px 0 15px;
-          flex: 1;
-          a {
-            text-decoration: none;
-          }
-        }
-        .motion {
-          flex: 4;
-          a {
-            color: $black;
+
+    }
+
+    .speaks {
+        flex: 1;
+        position: relative;
+        padding-bottom: 20px;
+
+        &__list {
+            padding: 0 0 10px;
             margin: 0;
-            font-size: 14px;
-            line-height: 20px;
-            font-weight: 300;
-            margin-right: 20px;
-            padding-right: 5px;
-          }
+
         }
-      }
+
+        .nalagalnik__wrapper {
+            background: rgba(255,255,255,.75);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            .nalagalnik {
+                position: absolute;
+                top: calc(50% - 50px);
+            }
+        }
     }
-    .nalagalnik__wrapper {
-      background: rgba(255, 255, 255, .75);
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      .nalagalnik {
-        position: absolute;
-        top: calc(50% - 50px);
-      }
-    }
-  }
+
 </style>

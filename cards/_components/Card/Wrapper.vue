@@ -92,48 +92,9 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 .card-content{
-  // &__empty {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-
-  //   width: 100%;
-  //   height: 60vh;
-  // }
-
-  // &__empty-inner {
-  //   background: $grey;
-  //   width: 216px;
-  //   height: 216px;
-  //   border-radius: 50%;
-  //   padding: 40px;
-
-  //   @include respond-to(mobile) {
-  //     width: 196px;
-  //     height: 196px;
-  //   }
-
-  //   img {
-  //     margin: 0 auto 5px;
-  //     display: block;
-
-  //     @include respond-to(mobile) {
-  //       max-width: 60px;
-  //     }
-  //   }
-
-  //   p {
-  //     font-family: "Roboto Slab", sans-serif;
-  //     color: #333;
-  //     font-style: italic;
-  //     font-size: 16px;
-  //     text-align: center;
-
-  //     @include respond-to(mobile) {
-  //       font-size: 14px;
-  //     }
-  //   }
-  // }
+  &__empty {
+    height: 40vh;
+  }
 
   &.is-loading {
     overflow-y: hidden;
