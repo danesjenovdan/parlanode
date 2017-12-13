@@ -154,6 +154,7 @@ export default {
       required: true,
     },
     selectCallback: Function,
+    clearCallback: Function,
     single: {
       type: Boolean,
       default: false,
@@ -193,6 +194,10 @@ export default {
     },
     clearSelection() {
       this.selectedIds.forEach(this.toggleItem);
+
+      if (this.clearCallback) {
+        this.clearCallback();
+      }
     },
     focus(index, withKeyboard) {
       this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);

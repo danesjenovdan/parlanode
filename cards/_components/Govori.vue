@@ -128,7 +128,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
             state.people = this.cardData.data.filters.people;
 
         } else if (this.type === 'party') {
-            state.parties = this.data.filters.parties;
+            state.parties = this.cardData.data.filters.parties[0];
         }
 
         if (this.selectedMonths.length > 0) {
@@ -148,13 +148,9 @@ import SearchDropdown from 'components/SearchDropdown.vue';
           encodedQueryData = this.encodeQueryData(state);
         }
 
-        let textFilter = this.textFilter.length ? this.textFilter : (
-          typeof this.cardData.parlaState !== 'undefined'
-            ?  this.cardData.parlaState.text
-            :  this.cardData.state.text
-        );
+        let textFilter = this.textFilter.length ? this.textFilter : '*';
 
-        return `https://isci.parlameter.si/filter/${(textFilter + '/') || ''}${this.card.currentPage}${encodedQueryData}`;
+        return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
       },
       selectedSessions() {
         return this.allSessions.filter(session => session.selected);

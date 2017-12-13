@@ -3,7 +3,9 @@
   "name": "Govori",
   "dataUrl": "https://analize.parlameter.si/v1/",
   "type": "poslanska_skupina",
-  "lastUpdate": "2017-12-13T09:06:54.546Z",
+  "lastUpdate": "2017-12-13T14:38:34.516Z",
   "method": "govori",
-  "group": "ps"
+  "group": "ps",
+  "big": true,
+  "high": false
 }
