@@ -854,8 +854,8 @@ const routes = [
 
       },
       {
-        name      : 'povezaveDoGovorov',
-        sourceUrl : '/p/povezave-do-govorov/:id',
+        name      : 'govori',
+        sourceUrl : '/p/govori/:id',
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
@@ -864,10 +864,10 @@ const routes = [
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?people=' + mpId)}`;
 
               if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
+                cardUrl += '&forceRender=true';
               }
 
               return fetch(cardUrl)
@@ -1451,8 +1451,8 @@ const routes = [
         }
       },
       {
-        name      : 'vsiGovoriPoslanskeSkupine',
-        sourceUrl : '/ps/vsi-govori-poslanske-skupine/:id',
+        name      : 'govori',
+        sourceUrl : '/ps/govori/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
@@ -1461,7 +1461,7 @@ const routes = [
               let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?parties=' + psId)}`;
 
               if (req.query.forceRender) {
                 cardUrl += '?forceRender=true';
@@ -1475,7 +1475,6 @@ const routes = [
                   return body;
                 });
             });
-
         }
       },
       {
