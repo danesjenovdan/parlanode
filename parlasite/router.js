@@ -930,6 +930,35 @@ const routes = [
         }
 
       },
+      // remove below
+      {
+        name      : 'povezaveDoGovorov',
+        sourceUrl : '/p/povezave-do-govorov/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+              let mpId = mpData.mpId;
+
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : mpId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+        }
+      },
+      // remove above
       {
         name      : 'govori',
         sourceUrl : '/p/govori/:id',
@@ -1539,6 +1568,36 @@ const routes = [
 
         }
       },
+      // remove below
+      {
+        name      : 'vsiGovoriPoslanskeSkupine',
+        sourceUrl : '/ps/vsi-govori-poslanske-skupine/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId           = psData.psId;
+              
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : psId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+
+        }
+      },
+      // remove above
       {
         name      : 'govori',
         sourceUrl : '/ps/govori/:id',
