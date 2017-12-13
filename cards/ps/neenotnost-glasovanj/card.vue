@@ -2,7 +2,7 @@
   <score-avg-max
     :card-data="$options.cardData"
     :type="$options.cardData.cardData.type"
-    :person="$options.cardData.data.person"
+    :party="$options.cardData.data.organization"
     :results="getResults"
     :info-text="infoText"
     v-bind="{ generatedCardUrl }"></score-avg-max>
@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     getResults() {
-      return { sessions: this.$options.cardData.data.results }
+      return { sessions: this.$options.cardData.data.result }
     }
   },
   methods: {
