@@ -515,13 +515,13 @@ footer.footer {
     header.header {
 
         .navbar-collapse {
-            //position: absolute;
+            position: absolute;
             z-index: 99;
             background: #f0f0f0;
             width: 100%;
             margin: 0 auto;
             padding: 0;
-            //display: none;
+            display: none;
         }
 
         .navbar {
