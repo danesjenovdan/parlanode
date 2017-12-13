@@ -590,6 +590,7 @@ footer.footer {
                 align-items: center;
                 float: right;
                 cursor: pointer;
+                overflow:hidden;
             }
 
             &--opened {
