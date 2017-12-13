@@ -1,0 +1,11 @@
+{
+  "_id": "p-neujemanje-s-poslansko-skupino",
+  "name": "Neujemanje s poslansko skupino",
+  "type": "poslanec",
+  "dataUrl": "http://analize.knedl.si/v1/p/getMismatchWithPG",
+  "lastUpdate": "2017-12-13T18:06:22.088Z",
+  "method": "neujemanje-s-poslansko-skupino",
+  "group": "p",
+  "big": false,
+  "high": false
+}
