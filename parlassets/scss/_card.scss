@@ -91,7 +91,8 @@
     background-repeat: no-repeat;
     background-size: 100%;
 }
-.card-circle-button {
+.card-circle-button,
+.card-circle-button-vue {
     width: 30px;
     height: 30px;
     display: block;
@@ -185,16 +186,20 @@
     padding: 0;
 }
 
-.card-circle-button.card-circle-open{
+.card-circle-button.card-circle-open,
+.card-circle-button-vue.card-circle-open {
     background-image:none;
 }
-.card-circle-button.card-circle-open::after{
+.card-circle-button.card-circle-open::after,
+.card-circle-button-vue.card-circle-open:after {
 
 }
-.card-circle-button.card-circle-close{
+.card-circle-button.card-circle-close,
+.card-circle-button-vue.card-circle-close {
 
 }
-.card-circle-button.card-circle-closed{
+.card-circle-button.card-circle-closed,
+.card-circle-button-vue.card-circle-closed {
     background-image:none;
     content: "X";
 }
