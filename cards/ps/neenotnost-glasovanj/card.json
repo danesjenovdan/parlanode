@@ -1,0 +1,11 @@
+{
+  "_id": "ps-neenotnost-glasovanj",
+  "name": "Neenotnost glasovanj",
+  "type": "poslanska_skupina",
+  "dataUrl": "http://analize.knedl.si/v1/pg/getDisunionOrg",
+  "lastUpdate": "2017-12-13T19:49:19.690Z",
+  "method": "neenotnost-glasovanj",
+  "group": "ps",
+  "big": false,
+  "high": false
+}
