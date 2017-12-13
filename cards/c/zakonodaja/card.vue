@@ -5,12 +5,12 @@
         <div class="col-md-12 filters">
           <ul class="button-filters">
             <striped-button
-                    v-for="(filter, index) in filters"
-                    @click.native="selectFilter(filter)"
-                    color="sds"
-                    :key="index"
-                    :selected="filter === currentFilter"
-                    :small-text="filter"
+              v-for="(filter, index) in filters"
+              @click.native="selectFilter(filter)"
+              color="sds"
+              :key="index"
+              :selected="filter === currentFilter"
+              :small-text="filter"
             />
           </ul>
 
@@ -53,7 +53,12 @@
   import InnerCard from './innerCard.vue';
 
   export default {
-    components: { StripedButton, PSearchField, InnerCard, PSearchDropdown },
+    components: {
+      StripedButton,
+      PSearchField,
+      InnerCard,
+      PSearchDropdown,
+    },
     mixins: [common],
     name: 'Zakonodaja',
     data() {
@@ -105,19 +110,20 @@
       },
       generatedCardUrl() {
         const state = {};
-
         state.type = this.currentFilter;
 
         if (this.textFilter.length > 0) state.text = this.textFilter;
-
         // @todo probably needs a good fix
-        if (this.selectedWorkingBodies.length) state.wb = this.selectedWorkingBodies.map(wb => wb.id);
+        if (this.selectedWorkingBodies.length) state.wb = this.selectedWorkingBodies;
+
+        console.log(this.selectedWorkingBodies, state, 'd')
+
 
         return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       processedData () {
         const filterLegislation = (legislation) => {
-          const textMatch = this.textFilter === '' || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+          const textMatch = this.textFilter === '' || legislation.text === null || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
           const typeMatch = this.currentFilter === '' | legislation.classification === (this.currentFilter === 'Zakoni' ? 'zakon' : 'akt');
           const wbMatch = this.selectedWorkingBodies.length === 0 || this.selectedWorkingBodies.includes(legislation.mdt.id);
 
@@ -126,10 +132,6 @@
 
         return this.data.filter(filterLegislation);
       }
-    },
-    mounted() {
-      console.log('ping');
-      console.log(this.$options.cardData.parlaState);
     },
     methods: {
       selectSort(sortId) {
@@ -163,18 +165,57 @@
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
 
+
   .legislation-list {
+    padding: 0;
+    margin-left: -9px;
+    margin-right: -9px;
+
+    a {
+      color: #009cda;
+    }
+
     .dropdown-filter.search-dropdown { height: 51px; }
 
-    .item .column{
+    .item .column {
+      &:first-child {
+        font-family: "Roboto Slab", sans-serif;
+      }
+    }
+
+    .column{
       font-size: 16px;
 
       @include respond-to(desktop) {
         font-size:18px;
       }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        @include respond-to(mobile) {
+          display:none;
+        }
+      }
+
+      &:nth-child(3) {
+        font-size:14px;
+      }
+
+
+      &:last-child {
+        .outcome .text {
+          min-width: 92px;
+
+          @include respond-to(mobile) {
+            min-width: 75px;
+          }
+        }
+      }
     }
 
+
     .filters {
+      padding: 0;
       .dropdown-filter {
         @include respond-to(desktop) { margin-left: 10px; }
 
