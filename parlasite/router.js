@@ -67,7 +67,7 @@ const routes = [
     cards     : [
       {
         name      : 'izpostavljenaZakonodaja',
-        sourceUrl : '/p/izpostavljena-zakonodaja/',
+        sourceUrl : '/c/izpostavljena-zakonodaja/',
         resolve   : (req, res, route, card) => {
           return resolve_card(req, card);
         },
