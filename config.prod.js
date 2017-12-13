@@ -1,17 +1,17 @@
 module.exports = {
-  port            : 3000,
+  port            : 7004,
   serverTimeout   : 600000,
   db              : {
-    name     : 'parla-db',
-    url      : 'mongodb://localhost/',
-    user : `${process.env.MONGO_USERNAME}`,
-    password : `${process.env.MONGO_PASSWORD}`,
+    name: 'parla-db',
+    url: 'mongodb://localhost/',
+    user: `${process.env.MONGO_USERNAME}`,
+    password: `${process.env.MONGO_PASSWORD}`,
   },
   urls            : {
-    analize : 'http://localhost:8000', // DATA URL BASE
+    analize : 'https://analize.parlameter.si', // DATA URL BASE
   },
   apiPrefix       : '/api',
   ogCapturePath   : './og',
-  ogRootUrl       : 'https://cdn.whatever.com/og_cards/', // root url for OG images
-  cardCapturePath : './card_captures', // where cards are stored
+  ogRootUrl       : 'https://cdn.parlametre.si/v1/parlassets/og_cards/', // root url for OG images
+  cardCapturePath : '/home/parladaddy/parlacdn/v1/parlassets/card_captures', // where cards are stored
 };
