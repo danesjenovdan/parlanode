@@ -4,7 +4,7 @@ const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = cardPath => ({
-  devtool: false,
+  devtool: 'sourcemap',
   module: {
     loaders: [
       {

@@ -45,14 +45,12 @@
           <div v-for="ballot in votingDay.ballots">
             <a class="ballot" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
               <div class="disunion">
-                <div :class="['icon', ballot.option]">
-                </div>
+                <div :class="['icon', ballot.option]"></div>
                 <div class="text"> {{ ballot.option }} </div>
               </div>
 
               <div class="name">
-                <p><a class="funblue-light-hover" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">{{ ballot.motion }}</a></p>
-
+                <p>{{ ballot.motion }}</p>
               </div>
               <div class="outcome">
                 <i :class="[{'glyphicon glyphicon-ok':ballot.result === true}, {'glyphicon glyphicon-remove':ballot.result === false}]"></i>
