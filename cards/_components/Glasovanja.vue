@@ -404,7 +404,6 @@ export default {
       display: flex;
       align-items: center;
       height: 42px;
-      margin-top: 5px;
 
       &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_za_v2.svg"); }
       &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_proti_v2.svg"); }
@@ -452,6 +451,8 @@ export default {
       @include respond-to(desktop) {
         padding-right: 16px;
       }
+
+      display: flex;
 
       flex-direction: column;
       justify-content: center;
