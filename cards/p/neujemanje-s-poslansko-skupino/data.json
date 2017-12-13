@@ -1,0 +1,49 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [
+      76
+    ],
+    "name": "Milan Brglez",
+    "gov_id": "P243",
+    "gender": "m",
+    "party": {
+      "acronym": "SMC",
+      "is_coalition": true,
+      "id": 1,
+      "name": "PS Stranka modernega centra"
+    },
+    "type": "mp",
+    "id": 11,
+    "has_function": true
+  },
+  "created_at": "09.12.2017",
+  "created_for": "09.12.2017",
+  "result": {
+    "max": {
+      "score": 11.662817551963,
+      "mps": [
+        {
+          "is_active": false,
+          "district": [
+            77
+          ],
+          "name": "Bojan Dobovšek",
+          "gov_id": "P248",
+          "gender": "m",
+          "party": {
+            "acronym": "PS NP",
+            "is_coalition": false,
+            "id": 109,
+            "name": "PS nepovezanih poslancev "
+          },
+          "type": "mp",
+          "id": 18,
+          "has_function": false
+        }
+      ]
+    },
+    "average": 1.76031041822366,
+    "score": 0.863842040312619
+  }
+}
