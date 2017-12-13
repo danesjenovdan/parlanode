@@ -2,13 +2,19 @@
     <div class="card-content__empty">
         <div class="card-content__empty-inner">
             <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
-            <p>Podatki trenutno niso na voljo.</p>
+            <p>{{ text }}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-      name: 'CardEmpty'
+      name: 'CardEmpty',
+      props: {
+        text: {
+          type: String,
+          default: 'Podatki trenutno niso na voljo.'
+        }
+      }
     };
 </script>
