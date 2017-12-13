@@ -9,13 +9,34 @@
             </div>
             
             <h1 style="max-width: 400px; position: relative; margin: auto;"><%= lawData.text %></h1>
-            <h2><%= lawData.result %></h2>
-           
-            <br>
+            <br />
             <font class="date">
-                    <%= lawData.created_at %>
+                <%= lawData.created_at %>
             </font>
-            <br/>
+            <%
+                if (lawData.result == 'sprejet') {
+                    icon = 'glyphicon-ok';
+                    color = '#009cdd';
+                } else if (lawData.result === 'zavrnjen') {
+                    icon = 'glyphicon-remove';
+                    color = '#ff5e41';
+                } else {
+                    icon = 'v-obravnavi';
+                    color = '#333333';
+                }
+            %>
+            <style>
+                .v-obravnavi {
+                    width: 25px!important;
+                    height: 25px;
+                    background: url(https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg);
+                    background-size: contain!important;
+                    margin-bottom: -6px;
+                    position: relative;
+                    display: inline-block;
+                }
+            </style>
+            <h2><i class="glyphicon <%= icon %>" style="color: <%= color %>;"></i> <%= lawData.result %></h2>
             <!-- <font class="datepublished">
                 podatki objavljeni:
             </font> -->
