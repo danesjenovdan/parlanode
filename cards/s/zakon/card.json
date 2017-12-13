@@ -3,7 +3,7 @@
   "name": "Zakon",
   "type": "empty",
   "dataUrl": "https://analize.parlameter.si/v1/s/getLegislation/",
-  "lastUpdate": "2017-12-13T11:35:21.849Z",
+  "lastUpdate": "2017-12-13T11:45:50.625Z",
   "method": "zakon",
   "group": "s",
   "big": true,

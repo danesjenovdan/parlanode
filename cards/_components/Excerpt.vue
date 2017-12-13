@@ -75,7 +75,7 @@ export default {
 @import "~parlassets/scss/colors";
 
 .excerpt {
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Roboto Slab", serif;
   font-weight: 300;
   line-height: 1.5em;
