@@ -4,23 +4,25 @@
     <div class="no-abstract" v-if="content.length === 0">
       <p>Za ta zakon žal nimamo izvlečka.</p>
     </div>
-    <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
-    <div class="metadata">
-      <div class="main-law-label" v-if="mainLaw.epa !== ''">
-        Matični zakon:
-      </div>
-      <div class="main-law-name">
-        <a :href="mainLaw.link">{{ mainLaw.name }}</a>
-      </div>
-      <div v-if="documents.length > 0" class="documents">
-        <p-search-dropdown
-          single
-          small
-          :items="mappedDocuments"
-          placeholder="Dokumenti"
-          :select-callback="openDocument"
-          :up="true"
-        />
+    <div class="metacontainer">
+      <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
+      <div class="metadata">
+        <div class="main-law-label" v-if="mainLaw.epa !== ''">
+          Matični zakon:
+        </div>
+        <div class="main-law-name">
+          <a :href="mainLaw.link">{{ mainLaw.name }}</a>
+        </div>
+        <div v-if="documents.length > 0" class="documents">
+          <p-search-dropdown
+            single
+            small
+            :items="mappedDocuments"
+            placeholder="Dokumenti"
+            :select-callback="openDocument"
+            :up="true"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -73,13 +75,14 @@ export default {
 @import "~parlassets/scss/colors";
 
 .excerpt {
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Roboto Slab", serif;
   font-weight: 300;
   line-height: 1.5em;
   margin: 12px 0;
   padding: 12px 24px;
   background: $grey;
+  height: 442px;
 }
 
 hr {
@@ -142,6 +145,7 @@ hr {
     max-width: 150px;
     margin: auto;
     margin-top: 18px;
+    font-size: 13px;
   }
 
   &::before {
@@ -150,12 +154,18 @@ hr {
     height: 70px;
     position: relative;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 100px;
     display: block;
     background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/missing-excerpt.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
   }
+}
+
+.metacontainer {
+  position: absolute;
+  width: calc(100% - 48px);
+  bottom: 30px;
 }
 </style>

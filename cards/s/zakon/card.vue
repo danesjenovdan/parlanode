@@ -15,7 +15,7 @@
       <p-tab label="Izvleček" variant="light">
         <excerpt
           :content="content"
-          :main-law="{ epa: '', name: '' }"
+          :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
           :documents="documents"
         />
       </p-tab>
@@ -86,4 +86,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+</style>
+
+<style lang="scss">
+#s-zakon {
+  .card-content {
+    height: 518px;
+  }
+  .filters {
+    margin-top: 10px;
+  }
+  #votingCard {
+    max-height: 372px;
+  }
+}
 </style>
