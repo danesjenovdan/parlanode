@@ -138,7 +138,7 @@
     mixins: [common, partyTitle],
     name: 'VlozeniAmandmaji',
     data() {
-      const loadFromState = stateLoader(this.$options.cardData.state);
+      const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
       const voteTypes = [{
         id: true, color: 'binary-for', label: 'sprejeti', selected: false,

@@ -2,7 +2,8 @@
   <div :class="['card-container', transitionClass]">
     <card-header :config="headerConfig" :current-back="currentBack" />
 
-    <div :class="['card-content', contentClass]">
+    <div :class="['card-content', contentClass]" :style="{ height: contentHeight }">
+
       <card-info v-if="currentBack === 'info'">
         <slot name="info" />
       </card-info>
@@ -12,7 +13,14 @@
       <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
       <div v-else class="card-content-front" :class="contentFrontClass" v-cloak>
-        <slot />
+        <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
+          <div class="card-content__empty-inner">
+            <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
+            <p>Podatki trenutno niso na voljo.</p>
+          </div>
+        </div>
+
+        <slot v-else />
       </div>
     </div>
     <card-footer @toggleBack="toggleBack" />
@@ -40,6 +48,7 @@ export default {
     return {
       currentBack: null,
       transitionClass: null,
+      previousHeight: null,
     };
   },
   props: {
@@ -47,6 +56,10 @@ export default {
     contentFrontClass: [String, Object],
     cardUrl: String,
     headerConfig: Object,
+    contentHeight: {
+      type: String,
+      default: 'auto',
+    },
   },
   methods: {
     toggleBack(newBack) {
@@ -56,6 +69,7 @@ export default {
         this.transitionClass = ['covered', `clicked-${newBack}`];
 
         window.setTimeout(() => {
+          this.previousHeight = contentElement.offsetHeight;
           contentElement.style.height = `${contentElement.offsetHeight}px`;
           this.currentBack = newBack;
         }, RIPPLE_DURATION / 2);
@@ -65,7 +79,7 @@ export default {
 
         window.setTimeout(() => {
           this.currentBack = null;
-          contentElement.style.height = null;
+          contentElement.style.height = this.previousHeight;
         }, RIPPLE_DURATION / 2);
         window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
       }
@@ -81,17 +95,24 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
-.card-content.is-loading {
-  overflow-y: hidden;
-  position: relative;
-  &::before {
-    background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
-    content: '';
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
+.card-content{
+  &__empty {
+    height: 40vh;
+  }
+
+  &.is-loading {
+    overflow-y: hidden;
+    position: relative;
+    &::before {
+      background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
   }
 }
 

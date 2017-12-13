@@ -1,23 +1,24 @@
 <template>
-  <score-avg-max
+  <prisotnost-chart
     :card-data="$options.cardData"
-    :type="$options.cardData.cardData.type"
+    type="poslanec"
     :person="$options.cardData.data.person"
     :results="$options.cardData.data.results"
     :info-text="infoText"
-    v-bind="{ generatedCardUrl }"></score-avg-max>
+    v-bind="{ generatedCardUrl }"
+  />
 </template>
 
 <script>
 import urlFunctionalities from 'mixins/urlFunctionalities';
-import ScoreAvgMax from 'components/PrisotnostChart.vue';
+import PrisotnostChart from 'components/PrisotnostChart.vue';
 
 import vocabulary from '../../../assets/vocab.json';
 
 export default {
   name: 'PrisotnostNaSejahDz',
   components: {
-    ScoreAvgMax,
+    PrisotnostChart,
   },
   mixins: [
     urlFunctionalities,

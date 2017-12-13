@@ -7,9 +7,7 @@ const chalk = require('chalk');
 // Returns all directories on certain path
 const dirs = p =>
   fs.readdirSync(p)
-    .filter(f =>
-      fs.statSync(`${p}/${f}`).isDirectory()
-    )
+    .filter(f => fs.statSync(`${p}/${f}`).isDirectory())
     .map(f => `${p}/${f}`);
 
 // Runs webpack compilation with passed configuration
@@ -37,7 +35,7 @@ const refreshLastUpdate = (path) => {
     fs.writeFile(
       dataJsonPath,
       JSON.stringify(dataObject, null, 2),
-      (error) => { if (error) throw Error(error); }
+      (error) => { if (error) throw Error(error); },
     );
   });
 };
@@ -61,6 +59,12 @@ if (process.env.CARD_NAME === '') {
   const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s').concat(dirs('./cards/c')));
   paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve());
 } else {
-  compileAndRefresh(`./cards/${process.env.CARD_NAME}`);
+  let cardName = process.env.CARD_NAME;
+
+  if (cardName.indexOf('cards/') === 0) {
+    cardName = cardName.replace('cards/', '');
+  }
+
+  compileAndRefresh(`./cards/${cardName}`);
 }
 

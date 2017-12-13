@@ -2,8 +2,10 @@
   "_id": "ps_govori",
   "name": "Govori",
   "dataUrl": "https://analize.parlameter.si/v1/",
-  "type": "poslanska_skupina",
-  "lastUpdate": "2017-11-30T22:50:51.779Z",
+  "type": "empty",
+  "lastUpdate": "2017-12-13T16:38:56.315Z",
   "method": "govori",
-  "group": "ps"
+  "group": "ps",
+  "big": true,
+  "high": false
 }

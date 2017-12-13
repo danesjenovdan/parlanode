@@ -15,4 +15,4 @@ Cards are stored in (sub)directories that correspond to their group/method in th
 ## Commands
 - `yarn run cards-build [<path-to-card>|all]` builds client and server bundles for specified card or all cards
 - `yarn run cards-dev <path-to-card>` starts dev server for specified card and launches browser
-- `yarn run cards-generate <path-to-card>` generates a new card in the specified path
+- `yarn run cards-generate` starts card generation wizard

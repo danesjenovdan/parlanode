@@ -175,7 +175,6 @@ export default {
       const xAxis = d3.svg.axis()
         .scale(x)
         .orient('bottom')
-        // .tickValues(x.domain().filter(function(d, i) { return !(i % 5); }))
         .tickFormat(SI.timeFormat('%b %y'));
 
       const yAxis = d3.svg.axis()
@@ -339,41 +338,6 @@ export default {
           const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
           const circle = x0 - d0.date > d1.date - x0 ? d3.selectAll('.dot circle')[0][i] : d3.selectAll('.dot circle')[0][i - 1];
-
-          // if (d3.select(circle).classed('hovered')) {
-
-          // } else {
-          //   d3.select('.dot circle.hovered')
-          //     .classed('hovered', false)
-          //     .transition()
-          //     .duration(200)
-          //     .attr('r', 4);
-
-          //   d3.select(circle)
-          //     .classed('hovered', true)
-          //     .transition()
-          //     .duration(200)
-          //     .ease('linear')
-          //     .attr('r', 7);
-          // }
-
-          // if (i > 2 && i < data.length - 3.5) {
-          //   focus.attr('transform', 'translate(' + x(d.date) + ',' + y(d.occurences) + ')');
-          // } else if (i < 3) {
-          //   focus.attr('transform', 'translate(' + x(data[2].date) + ',' + y(d.occurences) + ')');
-          // } else {
-          //   focus.attr('transform', 'translate(' + x(data[data.length - 4].date) + ',' + y(d.occurences) + ')');
-          // }
-
-          // focus.select('text').text(`${SI.timeFormat('%B %Y')(d.date)  } | ${  d.occurences}`);
-          // time_query['time_filter'] = d3.select.cirle.datum();
-
-          // search url generation
-          // var thedate = d3.select(circle).datum().date;
-          // var filterdate = '1.' + String(thedate.getMonth() + 1) + '.' + String(thedate.getFullYear());
-          // console.log(filterdate);
-          // time_query['time_filter'] = filterdate;
-          // document.location.href = generateSearchUrl(time_query);
         }
       }
 
@@ -463,14 +427,10 @@ export default {
 }
 
 .focus rect {
-    /*position: absolute;
-    text-align: center;*/
     border: 0px;
-    /*pointer-events: none;*/
     background-color: #525252;
     border-radius: 3px;
     padding: 2px 10px;
-    // opacity: 0.7;
 
     color: #ffffff;
 }

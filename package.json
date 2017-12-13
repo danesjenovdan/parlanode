@@ -9,14 +9,14 @@
     "test": "mocha tests/api_test.js",
     "cards-build": "run(){ CARD_NAME=$1 NODE_ENV=production node cards/build.js; }; run",
     "cards-dev": "run(){ CARD_NAME=$1 webpack-dev-server --config cards/webpack.config.dev.js --content-base cards --hot --progress --open --inline; }; run",
-    "cards-generate": "run(){ mkdir -p cards/$1 && cp -R cards/_empty/* cards/$1; }; run"
+    "cards-generate": "node cards/generate.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FranciZ/parlameter-front.git"
   },
   "author": "FranciZ",
-  "license": "DJND",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/FranciZ/parlameter-front/issues"
   },
@@ -47,7 +47,6 @@
     "express-validator": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "full-icu": "^1.2.0",
-    "inquirer": "3.1.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "lodash-webpack-plugin": "^0.11.4",
@@ -69,7 +68,6 @@
     "vue-template-compiler": "2.5.8",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
-    "vue-infinite-scroll": "^2.0.2",
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
@@ -99,5 +97,9 @@
     "presets": [
       "env"
     ]
+  },
+  "devDependencies": {
+    "handlebars": "^4.0.11",
+    "inquirer": "^4.0.1"
   }
 }

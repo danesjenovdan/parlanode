@@ -115,4 +115,33 @@ export default {
   display: flex;
   flex-wrap: nowrap;
 }
+
+.card-seznam-zakonov .session-list {
+  .item {
+    padding: 0;
+  }
+  .headers {
+    margin-left: 0;
+    .column {
+      text-align: left;
+      padding: 0 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .item {
+    .column {
+      text-align: left;
+      padding: 15px;
+      font-size: 16px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
 </style>
