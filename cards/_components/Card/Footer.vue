@@ -10,7 +10,7 @@
       v-for="button in buttons"
       :key="button"
       :class="[
-        'card-circle-button',
+        'card-circle-button-vue',
         `card-${button}`,
         { 'card-exit': currentBack === button }
       ]"
