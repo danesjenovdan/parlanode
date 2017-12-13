@@ -2,7 +2,7 @@
   <div :class="['card-container', transitionClass]">
     <card-header :config="headerConfig" :current-back="currentBack" />
 
-    <div :class="['card-content', contentClass]">
+    <div :class="['card-content', contentClass]" :style="{ height: contentHeight }">
 
       <card-info v-if="currentBack === 'info'">
         <slot name="info" />
@@ -47,7 +47,8 @@ export default {
   data() {
     return {
       currentBack: null,
-      transitionClass: null
+      transitionClass: null,
+      previousHeight: null,
     };
   },
   props: {
@@ -55,6 +56,10 @@ export default {
     contentFrontClass: [String, Object],
     cardUrl: String,
     headerConfig: Object,
+    contentHeight: {
+      type: String,
+      default: 'auto',
+    },
   },
   methods: {
     toggleBack(newBack) {
@@ -64,6 +69,7 @@ export default {
         this.transitionClass = ['covered', `clicked-${newBack}`];
 
         window.setTimeout(() => {
+          this.previousHeight = contentElement.offsetHeight;
           contentElement.style.height = `${contentElement.offsetHeight}px`;
           this.currentBack = newBack;
         }, RIPPLE_DURATION / 2);
@@ -73,7 +79,7 @@ export default {
 
         window.setTimeout(() => {
           this.currentBack = null;
-          contentElement.style.height = null;
+          contentElement.style.height = this.previousHeight;
         }, RIPPLE_DURATION / 2);
         window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
       }
