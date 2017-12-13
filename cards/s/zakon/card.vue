@@ -48,6 +48,9 @@ export default {
       console.log(prev, cur);
       return prev;
     }, []);
+    const title = this.$options.cardData.parlaState.fullName
+      ? this.$options.cardData.data.text.slice(0, 100) + '...'
+      : 'Zakon';
     return {
       data: this.$options.cardData.data,
       documents,
@@ -56,7 +59,7 @@ export default {
         heading: '&nbsp;',
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.data.text, // this.$options.cardData.cardData.name,
+        title,
       },
     };
   },

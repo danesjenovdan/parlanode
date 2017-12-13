@@ -154,7 +154,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
             :  this.cardData.state.text
         );
 
-        return `https://isci.parlameter.si/filter/${textFilter || ''}/${this.card.currentPage}${encodedQueryData}`;
+        return `https://isci.parlameter.si/filter/${(textFilter + '/') || ''}${this.card.currentPage}${encodedQueryData}`;
       },
       selectedSessions() {
         return this.allSessions.filter(session => session.selected);
