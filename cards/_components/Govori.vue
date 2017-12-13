@@ -125,14 +125,10 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       cardUrl() {
         const state = {}
         if (this.type === 'person') {
-            state.people = typeof this.cardData.parlaState !== 'undefined'
-              ?  this.cardData.parlaState.people
-              :  this.cardData.state.people;
+            state.people = this.cardData.data.filters.people;
 
         } else if (this.type === 'party') {
-            state.parties = typeof this.cardData.parlaState !== 'undefined'
-              ?  this.cardData.parlaState.parties
-              :  this.cardData.state.parties;
+            state.parties = this.data.filters.parties;
         }
 
         if (this.selectedMonths.length > 0) {
@@ -158,7 +154,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
             :  this.cardData.state.text
         );
 
-        return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
+        return `https://isci.parlameter.si/filter/${textFilter || ''}/${this.card.currentPage}${encodedQueryData}`;
       },
       selectedSessions() {
         return this.allSessions.filter(session => session.selected);
