@@ -13,18 +13,42 @@ const ejs         = require('ejs');
 const webshot     = require('webshot');
 const fs          = require('fs');
 const hash        = require('object-hash');
-const https       = require('https');
 const dataService = require('./services/data-service');
 
 
 function resolve_card(req, card, state = {}) {
-  var pattern        = new UrlPattern(card.sourceUrl);
-  const renderedPath = pattern.stringify(state);
-  let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+  let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+  if (Object.keys(state).length !== 0) {
+    let pattern        = new UrlPattern(card.sourceUrl);
+    const renderedPath = pattern.stringify(state);
+    console.log(renderedPath);
+    cardUrl            = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+  }
+
+  console.log(cardUrl);
 
   if (req.query.forceRender) {
     cardUrl += '?forceRender=true';
   }
+
+  return fetch(cardUrl).then((res) => {
+    return res.text();
+  })
+  .then((body) => {
+    return body;
+  });
+}
+
+function resolve_card_with_custom_url(url, req, card, state = {}) {
+  console.log(`resolving card with url ${url}`);
+  let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?customUrl=${encodeURIComponent(url)}`;
+  console.log(cardUrl, 'prvic');
+  if (Object.keys(state).length !== 0) {
+    const stateString = encodeURIComponent(JSON.stringify(state));
+    cardUrl = `${cardUrl}&state=${stateString}`;
+  }
+
+  console.log(cardUrl);
 
   return fetch(cardUrl).then((res) => {
     return res.text();
@@ -41,15 +65,86 @@ const routes = [
     pageTitle : 'Parlameter',
     cards     : [
       {
+        name      : 'primerjalnik',
+        sourceUrl : '/c/primerjalnik/',
+        resolve   : (req, res, route, card) => {
+
+          console.log('loading primerjalnik');
+
+          return getMPIdByName(req.params.fullName, req)
+            .then(() => {
+
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              console.log('about to fetch primerjalnik card');
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  console.log('card primerjalnik fetched');
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
+      {
+        name      : 'neenotnost',
+        sourceUrl : '/ps/glasovanja-neenotnost/',
+        resolve   : (req, res, route, card) => {
+
+          console.log('loading neenotnost');
+
+          return getMPIdByName(req.params.fullName, req)
+            .then(() => {
+
+              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+              console.log('about to fetch neenotnost card');
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  console.log('neenotnost fetched');
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
+      {
         name      : 'kompas',
         sourceUrl : '/c/kompas/',
         resolve   : (req, res, route, card) => {
 
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
+          console.log('loading kompas');
 
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+          return getMPIdByName(req.params.fullName, req)
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -59,6 +154,8 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+
+                  console.log('kompas fetched');
 
                   return res.text();
 
@@ -78,11 +175,10 @@ const routes = [
         sourceUrl : '/c/zadnja-seja/',
         resolve   : (req, res, route, card) => {
 
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
+          console.log('loading zadnja seja');
 
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
+          return getMPIdByName(req.params.fullName, req)
+            .then(() => {
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -92,6 +188,8 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+
+                  console.log('zadnja seja fetched');
 
                   return res.text();
 
@@ -110,10 +208,11 @@ const routes = [
         name      : 'besedniZaklad',
         sourceUrl : '/c/besedni-zaklad-vsi/',
         resolve   : (req, res, route, card) => {
+
+          console.log('loading besedni zaklad');
+
           return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-              let mpId    = mpData.mpId;
-              let mpSlug  = mpData.mpSlug;
+            .then(() => {
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
               if (req.query.forceRender) {
@@ -122,48 +221,36 @@ const routes = [
 
               return fetch(cardUrl)
                 .then((res) => {
+                  console.log('besedni zaklad fetched');
                   return res.text();
                 })
                 .then((body) => {
                   return body;
                 });
             });
-        }
-      },
-      {
-        name      : 'zadnjeSeje',
-        sourceUrl : '/s/zadnjih-5-sej/?customUrl=https%3A%2F%2Fanalize.parlameter.si%2Fv1%2Fs%2FgetSessionsList&state=%7B"onlyLatest"%3Atrue%7D',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl, { rejectUnauthorized : false })
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
         }
       }
     ]
+  },
+  {
+    path        : '/zakonodaja',
+    viewPath    : 'zakonodaja',
+    pageTitle   : 'Zakonodaja',
+    cards       : [{
+      name: 'zakonodaja',
+      sourceUrl: '/c/zakonodaja/',
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
+    }]
+  },
+  {
+    path        : '/zakonodaja/:epa',
+    viewPath    : 'zakonodaja/zakon',
+    pageTitle   : 'Zakonodaja',
+    cards       : [{
+      name: 'zakon',
+      sourceUrl: '/s/zakon/',
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
+    }]
   },
   {
       path      : '/orodja',
@@ -194,6 +281,32 @@ const routes = [
     path      : '/poslanci',
     viewPath  : 'poslanci',
     pageTitle : 'Seznam poslancev',
+    cards     : [
+      {
+        name      : 'seznamPoslancev',
+        sourceUrl : '/p/seznam-poslancev/',
+        resolve   : (req, res, route, card) => {
+
+          //var pattern = new UrlPattern(card.sourceUrl);
+          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
+          console.log(cardUrl);
+
+          if (req.query.forceRender) {
+            cardUrl += '&forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
+      },
+    ],
   },
   {
     path       : '/p/:fullName',
@@ -210,7 +323,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
               let state  = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": "' + mpData.mp.name + '"}], "parties": []}');
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
@@ -244,7 +356,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -279,7 +390,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -314,7 +424,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -349,7 +458,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -384,7 +492,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               //console.log('osnovneInformacije: ',mpId);
 
@@ -424,7 +531,6 @@ const routes = [
 
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               //console.log('Mpdata: ',mpData);
 
@@ -465,7 +571,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               //console.log('stilneAnalize: ',mpId);
 
@@ -502,7 +607,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -537,7 +641,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -572,7 +675,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -607,7 +709,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -642,7 +743,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -683,7 +783,6 @@ const routes = [
           return getMPIdByName(req.params.fullName, req)
             .then((mpData) => {
               let mpId           = mpData.mpId;
-              let mpSlug         = mpData.mpSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -709,7 +808,6 @@ const routes = [
           return getMPIdByName(req.params.fullName, req)
             .then((mpData) => {
               let mpId           = mpData.mpId;
-              let mpSlug         = mpData.mpSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -737,7 +835,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -772,7 +869,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -834,6 +930,7 @@ const routes = [
         }
 
       },
+      // remove below
       {
         name      : 'povezaveDoGovorov',
         sourceUrl : '/p/povezave-do-govorov/:id',
@@ -861,6 +958,34 @@ const routes = [
             });
         }
       },
+      // remove above
+      {
+        name      : 'govori',
+        sourceUrl : '/p/govori/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+              let mpId = mpData.mpId;
+
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : mpId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?people=' + mpId)}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '&forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+        }
+      },
       {
         name      : 'steviloIzgovorjenihBesed',
         sourceUrl : '/p/stevilo-izgovorjenih-besed/:id',
@@ -870,7 +995,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -905,7 +1029,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -940,7 +1063,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -975,7 +1097,6 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -1007,7 +1128,32 @@ const routes = [
     path      : '/poslanske-skupine',
     viewPath  : 'poslanske-skupine',
     pageTitle : 'Seznam poslanskih skupin',
-    cards     : []
+    cards     : [
+      {
+        name      : 'seznamPoslanskihSkupin',
+        sourceUrl : '/ps/seznam-poslanskih-skupin/',
+        resolve   : (req, res, route, card) => {
+
+          //var pattern = new UrlPattern(card.sourceUrl);
+          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
+          console.log(cardUrl);
+
+          if (req.query.forceRender) {
+            cardUrl += '&forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
+      },
+    ]
   },
   {
     path      : '/poslanske-skupine/:imeAnalize',
@@ -1033,7 +1179,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1061,7 +1206,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1089,7 +1233,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1116,13 +1259,9 @@ const routes = [
 
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
-              let psId   = psData.psId;
               let psSlug = psData.psSlug;
 
               let state = encodeURIComponent('{"people": [], "parties": ["' + psSlug + '"]}');
-
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : psId });
 
               let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
 
@@ -1148,7 +1287,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1174,7 +1312,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1200,7 +1337,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1227,7 +1364,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1263,7 +1400,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1291,7 +1428,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1319,7 +1456,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1347,7 +1484,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1375,7 +1512,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1411,7 +1548,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1431,6 +1568,7 @@ const routes = [
 
         }
       },
+      // remove below
       {
         name      : 'vsiGovoriPoslanskeSkupine',
         sourceUrl : '/ps/vsi-govori-poslanske-skupine/:id',
@@ -1439,7 +1577,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1457,6 +1595,34 @@ const routes = [
                 });
             });
 
+        }
+      },
+      // remove above
+      {
+        name      : 'govori',
+        sourceUrl : '/ps/govori/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId           = psData.psId;
+              
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : psId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?parties=' + psId)}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
         }
       },
       {
@@ -1467,7 +1633,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1495,7 +1661,7 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
+              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1533,7 +1699,7 @@ const routes = [
           let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
 
           if (req.query.forceRender) {
-            cardUrl += '?forceRender=true';
+            cardUrl += '&forceRender=true';
           }
 
           return fetch(cardUrl)
@@ -1785,9 +1951,9 @@ const routes = [
 ];
 
 module.exports = (app) => {
-  _.each(routes, (route, i) => {
+  _.each(routes, (route) => {
     createRoute(app, route);
-    _.each(route.extraPaths, (path, i) => {
+    _.each(route.extraPaths, (path) => {
       route.path = path;
       createRoute(app, route);
     });
@@ -1853,6 +2019,8 @@ function renderOg(ejsPath, ogPath, data) {
 function createRoute(app, route) {
   app.get(route.path, (req, res) => {
 
+    console.log('route got');
+
     const forceRenderOg = req.query.forceRenderOg;
 
     const common = {
@@ -1862,8 +2030,11 @@ function createRoute(app, route) {
     };
 
     if (route.cards) {
+      console.log('route has cards');
       resolveCards(req, res, route)
         .then((views) => {
+
+          console.log('cards are resolved');
 
           if (route.viewPath.indexOf("poslanske-skupine") > -1) {
             getPSIdByName(req.params.fullName, req)
@@ -1966,7 +2137,7 @@ function createRoute(app, route) {
             const pageTitle = ejs.render(route.pageTitle);
 
             const dataExtend = {
-              sesData    : sesData.s,
+              // sesData    : sesData.s,
               slug       : req.slug,
               activeMenu : 'S',
               views,
@@ -2098,8 +2269,43 @@ function createRoute(app, route) {
 
               });
 
-          }
-          else {
+          } else if (route.viewPath.indexOf('zakonodaja') !== -1) {
+            if (route.viewPath.indexOf('/zakon') !== -1) {
+
+              getLawDataByEPA(req.params.epa).then((lawData) => {
+                console.log(lawData);
+                
+                const dataExtend = {
+                  slug: req.slug,
+                  activeMenu: 'zakonodaja',
+                  pageTitle: lawData.text,
+                  lawData,
+                  views,
+                };
+    
+                Object.assign(common, dataExtend);
+                
+                common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+    
+                res.render(route.viewPath, common);
+              });
+            } else {
+
+              const dataExtend = {
+                slug: req.slug,
+                activeMenu: 'zakonodaja',
+                pageTitle: 'ZAKON!!!!!',
+                views,
+              };
+
+              Object.assign(common, dataExtend);
+              
+              common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
+
+              res.render(route.viewPath, common);
+            }
+
+          } else {
 
             var activeMenu = (route.viewPath == 'landing') ? route.viewPath : 'P';
             getMPIdByName(req.params.fullName, req)
@@ -2362,7 +2568,7 @@ function getMPIdByName(name, req) {
   //     .then((jsonBody) => {
   //            var mpsList = jsonBody;
 
-  _.each(mpsList, (mp, i) => {
+  _.each(mpsList, (mp) => {
     mp.nameSlug = slug(mp.name).toLowerCase();
 
     if ((name === mp.nameSlug) | (req.params.id == mp.id)) {
@@ -2374,7 +2580,7 @@ function getMPIdByName(name, req) {
       req.mp   = mp;
 
 
-      _.each(mpsopsList, (mpps, i) => {
+      _.each(mpsopsList, (mpps) => {
 
         if (mpId == mpps.id) {
           mp.party = mpps.party;
@@ -2390,6 +2596,11 @@ function getMPIdByName(name, req) {
   // });
 }
 
+function getLawDataByEPA(epa, req) {
+  return fetch(`https://analize.parlameter.si/v1/s/getLegislation/${epa}`)
+    .then((res) => res.json());
+}
+
 
 function getPSIdByName(name, req) {
   let psId;
@@ -2403,7 +2614,7 @@ function getPSIdByName(name, req) {
   //
   //         //   var opsList = jsonBody;
 
-  _.each(opsList, (ps, i) => {
+  _.each(opsList, (ps) => {
     var realAcronym2 = ps.acronym;
     ps.nameSlug      = slug(ps.name).toLowerCase();
     ps.acronym_slug  = slug(ps.acronym).toLowerCase();
@@ -2427,7 +2638,7 @@ function getPSIdByName(name, req) {
   // });
 }
 
-function getSessionIds(params, req, session_type) {
+function getSessionIds(params, req) {
   let spsId;
   let spsSlug;
   let selectedSps;
@@ -2504,11 +2715,10 @@ function getSessionIds(params, req, session_type) {
   // });
 }
 
-function getSessionsByType(params, req) {
+function getSessionsByType(params) {
 
   let psId;
   let psSlug;
-  let selectedPs;
   let returnData;
   let type;
 
@@ -2518,7 +2728,7 @@ function getSessionsByType(params, req) {
   //     .then((jsonBody) => {
   //         //var spsList = jsonBody;
 
-  _.each(spsList, (spsSingle, iii) => {
+  _.each(spsList, (spsSingle) => {
     switch (params.fullName) {
       case 'seje-delovnih-teles':
         returnData = spsSingle.dt;

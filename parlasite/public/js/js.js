@@ -609,10 +609,34 @@ $(function () {
     mcSearch();
 
     $(".searchForm").submit(function () {
-       var tmpVal = $(this).find(".form-control");
-        if(tmpVal.val().length < 1 || tmpVal.val() === '/' || tmpVal.val() === '-'){
-           tmpVal.val("parlameter");
-       }
+        var tmpVal = $(this).find(".form-control");
+
+        var forbidden = ['/', '-', ' ', '&', '?', '*', '=', '!', '"', "'"];
+        if(tmpVal.val().length < 1 || (forbidden.indexOf(tmpVal.val()) > 0) ){
+            tmpVal.val("parlameter");
+        }
+    });
+
+    // mobile menu
+    $('.mobile-menu__hambuger').on('click', function(e) {
+        e.preventDefault()
+
+        $(this).removeClass('mobile-menu__hambuger--closed');
+        $('header.header .navbar').toggleClass('mobile-menu--opened');
+
+        if($("header.header .navbar-default").hasClass('mobile-menu--opened')) {
+          $("header.header .navbar-collapse").fadeIn()
+          $('body').css('overflow', 'hidden');
+        } else {
+          $("header.header .navbar-collapse").fadeOut('fast')
+          $('body').css('overflow', 'visible');
+        }
+    })
+
+    $('header.header .navbar-collapse .search-field').on('keyup', function(e) {
+      if (e.keyCode == 13) {
+          $(this).parents('form').submit();
+      }
     });
 
 });

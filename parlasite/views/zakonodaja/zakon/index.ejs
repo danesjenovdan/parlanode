@@ -1,0 +1,71 @@
+<% include ../../partials/header.ejs %>
+
+<div class="session-container">
+    <div class="row header  text-center">
+        <div class="col-lg-12">
+
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>Z</b>
+            </div>
+            
+            <% var lawtitle = lawData.text.length > 100 ? lawData.text.slice(0, 100) + '...' : lawData.text %>
+            <h1 style="max-width: 400px; position: relative; margin: auto;"><%= lawtitle %></h1>
+            <br />
+            <font class="date">
+                <%= lawData.created_at %>
+            </font>
+            <%
+                if (lawData.result == 'sprejet') {
+                    icon = 'glyphicon-ok';
+                    color = '#009cdd';
+                } else if (lawData.result === 'zavrnjen') {
+                    icon = 'glyphicon-remove';
+                    color = '#ff5e41';
+                } else {
+                    icon = 'v-obravnavi';
+                    color = '#333333';
+                }
+            %>
+            <style>
+                .v-obravnavi {
+                    width: 25px!important;
+                    height: 25px;
+                    background: url(https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg);
+                    background-size: contain!important;
+                    margin-bottom: -6px;
+                    position: relative;
+                    display: inline-block;
+                }
+            </style>
+            <h2><i class="glyphicon <%= icon %>" style="color: <%= color %>;"></i> <%= lawData.result %></h2>
+            <!-- <font class="datepublished">
+                podatki objavljeni:
+            </font> -->
+
+            <!-- <div class="group-container-menu">
+                <ul class="clearfix">
+                    <li>
+                        <a href="/seja/glasovanja/<%- params.id %>">
+                            Glasovanja
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/transkript/<%- params.id %>">
+                            Transkript
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/prisotnost/<%- params.id %>">
+                            Prisotnost
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+
+<%- views.zakon %>
+
+<% include ../../partials/footer.ejs %>
