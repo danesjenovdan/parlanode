@@ -3,7 +3,7 @@
   "name": "Seznam poslancev",
   "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers",
   "type": "seznam_poslancev",
-  "lastUpdate": "2017-12-13T16:20:15.772Z",
+  "lastUpdate": "2017-12-13T16:38:44.299Z",
   "method": "seznam-poslancev",
   "group": "p"
 }

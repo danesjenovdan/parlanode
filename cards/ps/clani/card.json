@@ -3,7 +3,7 @@
   "name": "Članice in člani poslanske skupine",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getMPsOfPG",
   "type": "poslanska_skupina",
-  "lastUpdate": "2017-12-13T16:20:20.670Z",
+  "lastUpdate": "2017-12-13T16:38:48.194Z",
   "method": "clanice-in-clani-poslanske-skupine",
   "group": "ps"
 }
