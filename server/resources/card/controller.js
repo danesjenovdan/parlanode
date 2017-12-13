@@ -270,6 +270,7 @@ exports.render = (req, res) => {
 
   function loadCardFromFile(groupName, methodName) {
     const localPath = `cards/${groupName}/${methodName}/card.json`;
+    console.log(localPath);
     if (!fs.existsSync(localPath)) throw Error();
     const cardDoc = JSON.parse(fs.readFileSync(localPath));
     cardDoc.lastUpdate = new Date(cardDoc.lastUpdate);

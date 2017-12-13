@@ -3,7 +3,7 @@
   "name": "Izpostavljena zakonodaja",
   "dataUrl": "http://analize.knedl.si/v1/s/getExposedLegislation",
   "type": "empty",
-  "lastUpdate": "2017-12-13T16:14:35.670Z",
+  "lastUpdate": "2017-12-13T16:21:00.906Z",
   "method": "izpostavljena-zakonodaja",
   "group": "c",
   "big": true,
