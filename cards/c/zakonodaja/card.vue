@@ -15,7 +15,7 @@
           </ul>
 
           <div class="filter text-filter">
-            <div class="filter-label">Išči po naslovu ali povzetku</div>
+            <div class="filter-label">Išči po naslovu</div>
             <p-search-field v-model="textFilter"></p-search-field>
           </div>
 
@@ -49,7 +49,7 @@
   import StripedButton from 'components/StripedButton.vue';
   import PSearchField from 'components/SearchField.vue';
   import PSearchDropdown from 'components/SearchDropdown.vue';
-
+  import dateParser from 'helpers/dateParser';
   import InnerCard from './innerCard.vue';
 
   export default {
@@ -79,7 +79,7 @@
         data: this.$options.cardData.data.results,
         filters: ['Zakoni', 'Akti'],
         currentFilter: this.$options.cardData.parlaState.filter || 'Zakoni',
-        currentSort: 'name',
+        currentSort: 'updated',
         currentSortOrder: 'desc',
         textFilter: '',
         workingBodies: [],
@@ -116,9 +116,6 @@
         // @todo probably needs a good fix
         if (this.selectedWorkingBodies.length) state.wb = this.selectedWorkingBodies;
 
-        console.log(this.selectedWorkingBodies, state, 'd')
-
-
         return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       processedData () {
@@ -129,8 +126,46 @@
 
           return textMatch && typeMatch && wbMatch;
         }
+        console.log(this.currentSort)
 
-        return this.data.filter(filterLegislation);
+        const sortedAndFilteredLegislation = this.data.filter(filterLegislation).sort((A, B) => {
+          let a,b;
+
+          switch (this.currentSort) {
+            case 'name':
+              a = A.text;
+              b = B.text;
+              return a.toLowerCase().localeCompare(b.toLowerCase());
+              break;
+            case 'updated':
+              a = dateParser(A.date).getTime();
+              b = dateParser(B.date).getTime()
+              if (a < b) {
+                return -1;
+              } else if (a > b) {
+                return 1;
+              }
+              return 0;
+              break;
+            case 'workingBody':
+              a = A.mdt_text;
+              b = B.mdt_text;
+              return a.localeCompare(b, 'sl');
+              break;
+            case 'result':
+              a = A.result || 'v obravnavi';
+              b = B.result || 'v obravnavi';
+              return a.toLowerCase().localeCompare(b.toLowerCase());
+              break;
+            default:
+              return 0;
+              break;
+          };
+        });
+
+        if (this.currentSortOrder === 'desc') sortedAndFilteredLegislation.reverse();
+
+        return sortedAndFilteredLegislation;
       }
     },
     methods: {
