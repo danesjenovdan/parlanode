@@ -2,7 +2,7 @@ module.exports = {
   port            : 7004,
   serverTimeout   : 600000,
   db              : {
-    name: 'parla-db',
+    name: 'parladb',
     url: 'mongodb://localhost/',
     user: `${process.env.MONGO_USERNAME}`,
     password: `${process.env.MONGO_PASSWORD}`,
