@@ -3,7 +3,7 @@
   "name": "Osnovne informacije - poslanska skupina",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getBasicInfOfPG",
   "type": "poslanska_skupina",
-  "lastUpdate": "2017-12-13T16:38:58.593Z",
+  "lastUpdate": "2017-12-14T10:25:43.759Z",
   "method": "osnovne-informacije-poslanska-skupina",
   "group": "ps"
 }
