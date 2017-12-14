@@ -46,14 +46,15 @@
         />
       </div> -->
     </div>
-    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
+    <!-- TODO please return excerpt -->
+    <!-- <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
       :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
       :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
       :documents="data.documents"
       class="visible-xs"
       v-if="showMobileExcerpt"
-    />
+    /> -->
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="visible-xs">
       <p-tab label="Poslanci">
         <poslanci
@@ -85,13 +86,13 @@
       </p-tab>
     </p-tabs>
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
-      <p-tab label="Izvleček" variant="light" v-if="data.abstractVisible">
+      <!-- <p-tab label="Izvleček" variant="light" v-if="data.abstractVisible">
         <excerpt
           :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
           :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
           :documents="data.documents"
         />
-      </p-tab>
+      </p-tab> -->
       <p-tab label="Poslanci">
         <poslanci
           :members="data.members"
