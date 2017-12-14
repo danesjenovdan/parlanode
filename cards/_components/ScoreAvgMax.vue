@@ -57,7 +57,7 @@
             <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.max.score / 100) * 73}%` }">
               <span class="sr-only">{{ results.sessions.max.score }}%</span>
               <person-pin
-                v-if="type==='person'"
+                v-if="type==='poslanec'"
                 v-for="mp in results.sessions.max.mps"
                 :person="mp"
                 :key="mp.gov_id"></person-pin>
