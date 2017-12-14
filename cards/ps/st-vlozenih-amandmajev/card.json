@@ -1,0 +1,11 @@
+{
+  "_id": "ps-st-vlozenih-amandmajev",
+  "name": "Št. vloženih amandmajev",
+  "type": "poslanska_skupina",
+  "dataUrl": " http://analize.parlameter.si/v1/pg/getNumberOfAmendmetsOfPG",
+  "lastUpdate": "2017-12-14T10:25:49.575Z",
+  "method": "st-vlozenih-amandmajev",
+  "group": "ps",
+  "big": false,
+  "high": false
+}

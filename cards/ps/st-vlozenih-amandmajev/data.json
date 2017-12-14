@@ -1,0 +1,25 @@
+{
+  "organization": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "13.12.2017",
+  "created_for": "16.10.2017",
+  "result": {
+    "max": {
+      "score": 290,
+      "pgs": [
+        {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        }
+      ]
+    },
+    "average": 100.625,
+    "score": 182
+  }
+}
