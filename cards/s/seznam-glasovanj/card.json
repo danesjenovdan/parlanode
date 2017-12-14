@@ -3,7 +3,7 @@
   "name": "Glasovanja - seja",
   "dataUrl": "https://analize.parlameter.si/v1/s/getMotionOfSession",
   "type": "seje",
-  "lastUpdate": "2017-12-13T16:39:12.519Z",
+  "lastUpdate": "2017-12-14T10:25:57.537Z",
   "method": "seznam-glasovanj",
   "group": "s",
   "big": true,

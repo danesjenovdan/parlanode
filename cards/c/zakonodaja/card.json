@@ -1,9 +1,9 @@
 {
   "_id": "zakonodaja",
   "name": "Zakonodaja",
-  "dataUrl": "http://analize.knedl.si/v1/s/getAllLegislation",
+  "dataUrl": "http://analize.parlameter.si/v1/s/getAllLegislation",
   "type": "empty",
-  "lastUpdate": "2017-12-13T16:39:27.322Z",
+  "lastUpdate": "2017-12-14T10:26:09.551Z",
   "method": "zakonodaja",
   "group": "c",
   "big": true,
