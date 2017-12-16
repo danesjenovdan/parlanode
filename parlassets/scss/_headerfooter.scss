@@ -459,6 +459,10 @@ footer.footer {
     width: 100%;
     overflow: hidden;
     @include gradient('horizontal', 'blue');
+
+    @include respond-to(mobile) {
+        height: 20px;
+    }
 }
 
 .stripeeltop:before {
