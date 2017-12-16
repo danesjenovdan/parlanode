@@ -10,7 +10,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-lg-4 tool" v-for="tool in tools">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool" v-for="tool in tools">
       <div class="tool-content" :class="tool.icon">
         <a class="tool__overlay-link" :href="tool.link">{{ tool.title }}</a>
         <div class="img-circle circle"></div>
@@ -67,8 +67,8 @@
   .tool {
     text-align: center;
     min-width: 290px;
-      overflow: hidden;
-      margin-bottom: 55px;
+    overflow: hidden;
+    margin-bottom: 30px;
 
   }
 
