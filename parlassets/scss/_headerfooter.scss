@@ -87,11 +87,16 @@ header.header {
         margin: 0;
         position: absolute;
         right: 0;
+        padding: 0;
     }
 
     @media (min-width: 992px) {
         .navbar .navbar-nav {
             margin-left: -110px;
+        }
+
+        #topheadersearch .twitter-typeahead {
+            min-width: 200px;
         }
     }
 
@@ -163,6 +168,8 @@ header.header {
         display: none;
         position: relative;
         top: 17px;
+        z-index: 9;
+        background: $grey;
     }
 
     .header-search {
@@ -641,7 +648,7 @@ footer.footer {
     }
 
 
-    .search {
+    header.header .search {
         display: block;
     }
 
