@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1" id="about">
       <div class="lead-text-container">
-        <a href="#" class="lead-text">Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!</a>
+        <span class="lead-text">Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!</span>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-lg-4 tool" v-for="tool in tools">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool" v-for="tool in tools">
       <div class="tool-content" :class="tool.icon">
         <a class="tool__overlay-link" :href="tool.link">{{ tool.title }}</a>
         <div class="img-circle circle"></div>
@@ -65,11 +65,16 @@
 
 <style>
   .tool {
-    text-align: center;
-    min-width: 290px;
+      text-align: center;
+      min-width: 290px;
       overflow: hidden;
-      margin-bottom: 55px;
+      margin-bottom: 30px;
+  }
 
+  @media only screen and (max-width : 767px) {
+      .tool {
+          margin-bottom: 15px;
+      }
   }
 
   .tool__overlay-link {
@@ -102,6 +107,7 @@
     line-height: 26px;
     letter-spacing: 0.96px;
     margin-bottom: 20px;
+    font-family: "Roboto Slab", sans-serif;
   }
 
   .tool-desc {
@@ -141,27 +147,27 @@
 
   .obvestila .circle {
     background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/obvestila.svg');
-    background-size: 85%;
+      background-size: 60px 50px;
   }
 
   .primerjalnik .circle {
     background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/primerjalnik.svg');
-    background-size: 65%;
+      background-size: 58px 48px;
   }
 
   .raziskovalec .circle {
     background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/neenotnost.svg');
-    background-size: 45%;
+      background-size: 44px 44px;
   }
 
   .kompas .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/og-kompas.svg');
-    background-size: 60%;
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/kompas.svg');
+    background-size: 50px 50px;
   }
 
   .parlatube .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/og-kompas.svg');
-    background-size: 60%;
+    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/parlatube.svg');
+      background-size: 39px 25px;
   }
 
 
