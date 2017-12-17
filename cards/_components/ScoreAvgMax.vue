@@ -18,7 +18,7 @@
         </div>
         <div class="column progress_bar">
           <div class="progress smallbar ">
-            <div class="progress-bar red" role="progressbar" :aria-valuenow="results.sessions.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.score / 100) * 73}%`}">
+            <div class="progress-bar red" role="progressbar" :aria-valuenow="results.sessions.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
               <span class="sr-only">{{ results.sessions.score }}%</span>
             </div>
             <div class="progress_number">
@@ -36,7 +36,7 @@
         </div>
         <div class="column progress_bar">
           <div class="progress smallbar avgmin">
-            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.average" aria-valuemin="0" aria-valuemax="100" :style="{width: `${(results.sessions.average / 100) * 73}%`}">
+            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
               <span class="sr-only">{{ results.sessions.average }}%</span>
             </div>
             <div class="progress_number">
@@ -54,7 +54,7 @@
         </div>
         <div class="column progress_bar">
           <div class="progress smallbar avgmin">
-            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="{ width: `${(results.sessions.max.score / 100) * 73}%` }">
+            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
               <span class="sr-only">{{ results.sessions.max.score }}%</span>
               <person-pin
                 v-if="type==='poslanec'"
@@ -122,7 +122,14 @@ export default {
       vocabulary: this.cardData.vocab,
     };
   },
-
+  methods: {
+    getBarStyle(key) {
+      if (key === 'max') {
+        return { width: `100%`};
+      }
+      return { width: `${(this.results.sessions[key] / this.results.sessions.max.score) * 100}%`};
+    }
+  },
   computed: {
     getName() {
       return this.type === 'poslanec'
