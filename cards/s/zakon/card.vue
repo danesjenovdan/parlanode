@@ -5,9 +5,9 @@
     :header-config="headerConfig">
 
     <div slot="info">
-      <p class="info-text lead"></p>
+      <p class="info-text lead">Povzetek <span v-if="data.classification==='zakon'">zakona</span><span v-else>akta</span> in rezultati vseh z njim povezanih glasovanj.</p>
       <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text"></p>
+      <p class="info-text">Iz <a class="funblue-light-hover" href="https://www.dz-rs.si">www.dz-rs.si</a> naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.</p>
     </div>
 
     <!-- Card content goes here -->
