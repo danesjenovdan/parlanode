@@ -113,7 +113,7 @@
         const link = this.currentFilter === 'Zakoni'
           ? 'https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiZakonov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwN3I30wwkpiAJKG-AAjgb6BbmhigDW2mUM/dz/d5/L2dBISEvZ0FBIS9nQSEh'
           : 'https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiAktov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwNLMz0wwkpiAJKG-AAjgb6BbmhigAUeAnK/dz/d5/L2dBISEvZ0FBIS9nQSEh/';
-        html += `<p class="info-text text">Podatke o sejah pridobivamo iz spletnega mesta <a href="${link}">DZ RS</a>.</p>`;
+        html += `<p class="info-text text">Podatke o sejah pridobivamo iz spletnega mesta <a class="funblue-light-hover" href="${link}">DZ RS</a>.</p>`;
 
         return html;
       },
