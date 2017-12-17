@@ -40,16 +40,14 @@
         </div>
 
         <div class="speaks">
-            <div id="speaks" class="card-scroll__wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+            <div id="speaks" :class="{ 'card-scroll__wrapper': true, 'card-scroll__wrapper--empty': speakingDays.length === 0 }" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                 <div v-for="(speakingDay, key, index) in groupSpeakingDays">
                     <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
                     <ul class="speaks__list">
                         <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
                     </ul>
                 </div>
-                <div v-if="speakingDays.length===0">
-                    <card-empty></card-empty>
-                </div>
+                <div v-if="speakingDays.length===0" class="empty-dataset">Brez rezultatov.</div>
             </div>
             <div v-if="card.isLoading" class="nalagalnik__wrapper">
                 <div class="nalagalnik"></div>
@@ -60,7 +58,6 @@
 </template>
 
 <script>
-import CardEmpty from 'components/Card/Empty.vue';
 import Govor from 'components/Govor.vue';
 import SearchField from 'components/SearchField.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
@@ -74,13 +71,12 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
   export default {
     directives: {
-      infiniteScroll
+      infiniteScroll,
     },
     components: {
       SearchField,
       SearchDropdown,
-      Govor,
-      CardEmpty
+      Govor
     },
     mixins: [common],
     data() {
@@ -268,6 +264,10 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     @import '~parlassets/scss/breakpoints';
     @import '~parlassets/scss/colors';
 
+    .card-scroll__wrapper--empty {
+        height: auto;
+    }
+
     .card-scroll {
         padding: 0;
 
@@ -308,6 +308,16 @@ import SearchDropdown from 'components/SearchDropdown.vue';
             }
         }
 
+    }
+
+    .empty-dataset {
+        font-size: 16px;
+        font-style: italic;
+        line-height: 20px;
+        margin: 70px 0;
+        text-align: center;
+        color: $grey-medium;
+        font-style: normal;
     }
 
     .speaks {
