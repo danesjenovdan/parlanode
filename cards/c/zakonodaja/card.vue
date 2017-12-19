@@ -100,9 +100,10 @@
         return this.allworkingBodies.filter(wb => wb.selected).map(wb => wb.id);
       },
       columns: () => [
-        { id: 'name', label: 'Ime', additionalClass: '' },
+        { id: 'name', label: 'Ime', additionalClass: 'small-text' },
         { id: 'updated', label: 'Sprememba' },
-        { id: 'workingBody', label: 'Matično delovno telo', additionalClass: '' },
+        { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'small-text' },
+        { id: 'epa', label: 'EPA', additionalClass: 'narrow' },
         { id: 'result', label: 'Status', additionalClass: '' },
       ],
       infoText () {
@@ -164,6 +165,11 @@
               a = A.result || 'v obravnavi';
               b = B.result || 'v obravnavi';
               return a.toLowerCase().localeCompare(b.toLowerCase());
+              break;
+            case 'epa':
+              a = parseInt(A.epa || '0-VII');
+              b = parseInt(B.epa || '0-VII');
+              return a - b;
               break;
             default:
               return 0;
@@ -228,18 +234,20 @@
       font-size: 16px;
 
       @include respond-to(desktop) {
-        font-size:18px;
+        font-size: 18px;
       }
 
       &:nth-child(2),
-      &:nth-child(3) {
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) .text {
         @include respond-to(mobile) {
           display:none;
         }
       }
 
-      &:nth-child(3) {
-        font-size:14px;
+      &.small-text {
+        font-size: 14px;
       }
 
 
