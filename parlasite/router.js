@@ -1604,6 +1604,36 @@ const routes = [
     ]
   },
   {
+    path       : '/seja/zakonodaja/:id',
+    extraPaths : ['/seja/zakonodaja/:id/:date', '/seja/zakonodaja/:id', '/s/zakonodaja/:id', '/s/zakonodaja/:id/:date'],
+    viewPath   : 'seja/zakonodaja',
+    pageTitle  : 'Seja - zakonodaja',
+    cards      : [
+      {
+        name      : 'zakonodajaSeja',
+        sourceUrl : '/c/zakonodaja/:id',
+        resolve: (req, res, route, card) => resolve_card_with_custom_url(`http://analize.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
+        // resolve   : (req, res, route, card) => {
+        //   var pattern        = new UrlPattern(card.sourceUrl);
+        //   const renderedPath = pattern.stringify({ id : req.params.id });
+        //   let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+        //   if (req.query.forceRender) {
+        //     cardUrl += '?forceRender=true';
+        //   }
+
+        //   return fetch(cardUrl)
+        //     .then((res) => {
+        //       return res.text();
+        //     })
+        //     .then((body) => {
+        //       return body;
+        //     });
+        // }
+      },
+    ]
+  },
+  {
     path       : '/seja/prisotnost/:id',
     extraPaths : ['/seja/prisotnost/:id/:date', '/seja/prisotnost/:id', '/s/prisotnost/:id', '/s/prisotnost/:id/:date'],
     viewPath   : 'seja/prisotnost',
