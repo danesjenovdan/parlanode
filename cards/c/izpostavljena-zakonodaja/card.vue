@@ -49,7 +49,7 @@
                 </p-tab>
             </p-tabs>
             <div class="legislation__all">
-                <a :href="`https://parlameter.si/${slugs.legislationLink}`">VSA ZAKONODAJA</a>
+                <a :href="`https://parlameter.si${slugs.legislationLink}`">VSA ZAKONODAJA</a>
             </div>
         </div>
 
