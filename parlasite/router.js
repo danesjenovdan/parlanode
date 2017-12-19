@@ -1575,10 +1575,10 @@ const routes = [
     ]
   },
   {
-    path       : '/seja/glasovanja/:id',
-    extraPaths : ['/seja/glasovanja/:id/:date', '/seja/glasovanja/:id', '/s/glasovanja/:id', '/s/glasovanja/:id/:date'],
-    viewPath   : 'seja/glasovanja',
-    pageTitle  : 'Seja - glasovanja',
+    path       : '/seja/druga-glasovanja/:id',
+    extraPaths : ['/seja/druga-glasovanja/:id/:date', '/seja/druga-glasovanja/:id', '/s/druga-glasovanja/:id', '/s/druga-glasovanja/:id/:date'],
+    viewPath   : 'seja/druga-glasovanja',
+    pageTitle  : 'Seja - druga-glasovanja',
     cards      : [
       {
         name      : 'glasovanjaSeja',
@@ -1586,10 +1586,10 @@ const routes = [
         resolve   : (req, res, route, card) => {
           var pattern        = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({ id : req.params.id });
-          let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?state=${JSON.stringify({ onlyOther: true })}`;
 
           if (req.query.forceRender) {
-            cardUrl += '?forceRender=true';
+            cardUrl += '&forceRender=true';
           }
 
           return fetch(cardUrl)
