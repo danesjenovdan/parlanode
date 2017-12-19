@@ -17,8 +17,14 @@ export default {
   mixins: [ urlFunctionalities ],
   name: 'NeujemanjeSPoslanskoSkupino',
   data() {
+
+    let infoText = `<p class="info-text lead">Odstopanje poslanca od večinskega glasu lastne poslanske skupine v primerjavi s povprečno in največjo vrednostjo.</p>`;
+    infoText += `<p class="info-text heading">METODOLOGIJA</p>`;
+    infoText += `<p class="info-text text">Za vsa glasovanja preračunamo večinski glas za vsako poslansko skupino. Večinski glas je opcija, za katero se je odločilo največ poslancev.
+Za vsakega poslanca najdemo trenutno poslansko skupino in izračunamo odstotek ujemanja glasov v obdobju članstva. Pri vseh izračunih ignoriramo glasovnice "ni prisoten".</p>`;
+
     return {
-      infoText: '',
+      infoText,
       urlParameters: {},
     };
   },

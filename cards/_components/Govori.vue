@@ -6,9 +6,9 @@
     v-bind="{ cardUrl, headerConfig }">
 
     <div slot="info">
-      <p class="info-text lead"></p>
+        <p class="info-text lead">Izpis povezav do vseh <span v-if="this.type==='person'">poslančevih govorov</span><span v-else>govorov poslancev poslanske skupine</span> v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.</p>
       <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text"></p>
+        <p class="info-text">Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno obdobje, vrsta seje).</p>
     </div>
 
     <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
@@ -119,12 +119,13 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     },
     computed: {
       cardUrl() {
+
         const state = {}
         if (this.type === 'person') {
-            state.people = this.cardData.data.filters.people;
+            state.people = this.cardData.parlaState.person;
 
         } else if (this.type === 'party') {
-            state.parties = this.cardData.data.filters.parties[0];
+            state.parties = this.cardData.parlaState.parties;
         }
 
         if (this.selectedMonths.length > 0) {
