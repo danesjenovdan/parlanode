@@ -17,6 +17,7 @@
           :content="content"
           :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
           :documents="documents"
+          :show-parent="false"
         />
       </p-tab>
       <p-tab label="Glasovanja">
