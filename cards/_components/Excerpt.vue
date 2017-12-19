@@ -1,7 +1,7 @@
 <template>
   <div class="excerpt">
     <div class="rich-text" v-html="content" />
-    <div class="no-abstract" v-if="content.length === 0">
+    <div class="no-abstract" v-if="!content || (content.length === 0)">
       <p>Za ta zakon žal nimamo izvlečka.</p>
     </div>
     <div class="metacontainer">

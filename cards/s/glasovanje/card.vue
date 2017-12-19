@@ -85,11 +85,12 @@
       </p-tab>
     </p-tabs>
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
-      <p-tab label="Izvleček" variant="light" v-if="data.abstractVisible">
+      <p-tab label="Izvleček" variant="light">
         <excerpt
-          :content="data.abstract"
+          :content="data.abstract || ''"
           :main-law="{ epa: data.legislation.epa, name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
           :documents="data.documents"
+          :show-parent="true"
         />
       </p-tab>
       <p-tab label="Poslanci">
