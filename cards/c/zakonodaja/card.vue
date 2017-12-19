@@ -105,8 +105,17 @@
         { id: 'workingBody', label: 'Matično delovno telo', additionalClass: '' },
         { id: 'result', label: 'Status', additionalClass: '' },
       ],
-      infoText: () => {
-        return "Info";
+      infoText () {
+        const tabText = true === 'Zakoni' ? 'zakonov' : 'aktov';
+        let html = `<p class="info-text lead">Seznam vseh ${tabText}, o katerih so v tem sklicu glasovali na sejah Državnega zbora in ustrezajo uporabniškemu vnosu (naslov, matično delovno telo).</p>`;
+        html += '<p class="info-text heading">METODOLOGIJA</p>';
+
+        const link = this.currentFilter === 'Zakoni'
+          ? 'https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiZakonov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwN3I30wwkpiAJKG-AAjgb6BbmhigDW2mUM/dz/d5/L2dBISEvZ0FBIS9nQSEh'
+          : 'https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiAktov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwNLMz0wwkpiAJKG-AAjgb6BbmhigAUeAnK/dz/d5/L2dBISEvZ0FBIS9nQSEh/';
+        html += `<p class="info-text text">Podatke o sejah pridobivamo iz spletnega mesta <a class="funblue-light-hover" href="${link}">DZ RS</a>.</p>`;
+
+        return html;
       },
       generatedCardUrl() {
         const state = {};
@@ -126,7 +135,6 @@
 
           return textMatch && typeMatch && wbMatch;
         }
-        console.log(this.currentSort)
 
         const sortedAndFilteredLegislation = this.data.filter(filterLegislation).sort((A, B) => {
           let a,b;
@@ -203,8 +211,6 @@
 
   .legislation-list {
     padding: 0;
-    margin-left: -9px;
-    margin-right: -9px;
 
     a {
       color: #009cda;
