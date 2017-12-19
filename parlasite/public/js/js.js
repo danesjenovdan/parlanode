@@ -11,6 +11,16 @@ function toggleHeaderSearch(focus) {
         if ($(window).width() < 992) {
             $("#topheadersearch").css({"width": "100%"});
             $("header.header .twitter-typeahead").css({"width": "90%"});
+        } else {
+            $("#topheadersearch, #topheadersearch .form-group").css({"width": "100%"});
+            $("header.header .twitter-typeahead").css({"width": "calc(100% - 50px)"});
+            $('.header-searchhide').css({'width': '100%'});
+            $('.header-search').css({
+                'height': '100px',
+                'margin-top': '-40px',
+                'padding-top': '35px'
+            });
+            $('.tt-input, .tt-menu, .tt-dataset').css({'width': '100%'});
         }
 
         $(".header-searchhide").show();
