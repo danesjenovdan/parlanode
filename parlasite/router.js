@@ -247,40 +247,6 @@ const routes = [
     pageTitle  : 'Pregled - <%- name %>',
     cards      : [
       {
-        name      : 'kompas',
-        sourceUrl : '/c/kompas/',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-              let state  = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": "' + mpData.mp.name + '"}], "parties": []}');
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '&forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return Promise.resolve(res.text());
-
-                })
-                .then((body) => {
-
-                  return Promise.resolve(body);
-
-                });
-
-            });
-
-        }
-      },
-      {
         name      : 'povprecnoSteviloGovorovNaSejo',
         sourceUrl : '/p/povprecno-stevilo-govorov-na-sejo/:id',
         resolve   : (req, res, route, card) => {
@@ -1141,38 +1107,6 @@ const routes = [
 
               if (req.query.forceRender) {
                 cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-                  return res.text();
-                })
-                .then((body) => {
-                  return body;
-                });
-            });
-
-        }
-      },
-      {
-        name      : 'kompas',
-        sourceUrl : '/c/kompas/:id',
-        resolve   : (req, res, route, card) => {
-
-          return getPSIdByName(req.params.fullName, req)
-            .then((psData) => {
-              let psId   = psData.psId;
-              let psSlug = psData.psSlug;
-
-              let state = encodeURIComponent('{"people": [], "parties": ["' + psSlug + '"]}');
-
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : psId });
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '&forceRender=true';
               }
 
               return fetch(cardUrl)
