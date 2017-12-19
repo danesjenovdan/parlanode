@@ -5,13 +5,13 @@
       <p>Za ta zakon žal nimamo izvlečka.</p>
     </div>
     <div class="metacontainer">
-      <hr v-if="(mainLaw.epa !== '') || (documents.length !== 0)">
+      <hr v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)">
       <div class="metadata">
-        <div class="main-law-label" v-if="mainLaw.epa !== ''">
+        <div class="main-law-label" v-if="(mainLaw.epa !== '') && showParent">
           Matični zakon:
         </div>
         <div class="main-law-name">
-          <a :href="mainLaw.link">{{ mainLaw.name }}</a>
+          <a :href="mainLaw.link" v-if="(mainLaw.epa !== '') && showParent">{{ mainLaw.name }}</a>
         </div>
         <div v-if="documents.length > 0" class="documents">
           <p-search-dropdown
@@ -50,6 +50,10 @@ export default {
       type: Array,
       required: false,
     },
+    showParent: {
+      type: Boolean,
+      default: true,
+    }
   },
   computed: {
     mappedDocuments() {
