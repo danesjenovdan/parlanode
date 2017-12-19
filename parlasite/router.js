@@ -1946,7 +1946,7 @@ function createRoute(app, route) {
             const dataExtend = {
               sesData    : sesData.s,
               slug       : req.slug,
-              activeMenu : 'S',
+              activeMenu : 'search',
               views,
               pageTitle
             };
@@ -2199,7 +2199,7 @@ function createRoute(app, route) {
 
               const dataExtend = {
                 slug       : req.slug,
-                activeMenu : 'S',
+                activeMenu : 'search',
                 pageTitle,
                 q          : req.query.q
               };
@@ -2208,7 +2208,7 @@ function createRoute(app, route) {
 
               const hashString = hash({
                 slug       : req.slug,
-                activeMenu : 'S',
+                activeMenu : 'search',
                 pageTitle
               });
               const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
