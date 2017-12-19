@@ -3,7 +3,7 @@
   "name": "Zakonodaja",
   "dataUrl": "http://analize.parlameter.si/v1/s/getAllLegislation",
   "type": "empty",
-  "lastUpdate": "2017-12-14T10:26:09.551Z",
+  "lastUpdate": "2017-12-19T13:19:21.602Z",
   "method": "zakonodaja",
   "group": "c",
   "big": true,

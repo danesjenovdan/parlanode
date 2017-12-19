@@ -68,6 +68,7 @@ export default {
               {html: `<a href="${this.slugs.legislationLink}${legislation.epa}" class="funblue-light-hover">${legislation.text}</a>`},
               {text: legislation.date},
               {html: `<a href="${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true" class="funblue-light-hover">${legislation.mdt.name}</a>`},
+              {text: legislation.epa},
               {html: outcomeHtml},
             ];
           })
@@ -92,6 +93,14 @@ export default {
   }
 
   .legislation-list {
+
+    .column:last-child {
+      margin-left: 8px;
+    }
+
+    .narrow {
+      flex: 0.5 !important;
+    }
 
     .outcome {
       margin-right: 0;
