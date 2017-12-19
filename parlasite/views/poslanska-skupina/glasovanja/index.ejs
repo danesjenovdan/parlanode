@@ -39,8 +39,14 @@
     <%- views.najtezjeBiSeJimPridruziji %>
 </div>
 <% if( ps.id != 2){ %>
-<div class="col-md-6 ">
-    <%- views.odstopanjaOdPoslanskeSkupine %>
-</div>
+    <div class="col-md-6 ">
+        <%- views.odstopanjaOdPoslanskeSkupine %>
+    </div>
 <% } %>
+<div class="col-md-6">
+    <%- views.neenotnostGlasovanj %>
+</div>
+<div class="col-md-6">
+    <%- views.steviloVlozenihAmandmajev %>
+</div>
 <% include ../../partials/footer.ejs %>

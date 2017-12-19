@@ -424,48 +424,6 @@ const routes = [
         }
       },
       {
-        name      : 'razrezGlasovanj',
-        sourceUrl : '/p/razrez-glasovanj/:id',
-        resolve   : (req, res, route, card) => {
-
-          //console.log('razrezGlasovanj: ',req.params.fullName);
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              //console.log('Mpdata: ',mpData);
-
-              //console.log('razrezGlasovanj: ',mpId);
-
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return Promise.resolve(res.text());
-
-                })
-                .then((body) => {
-
-                  return Promise.resolve(body);
-
-                });
-
-            });
-
-        }
-      },
-      {
         name      : 'stilneAnalize',
         sourceUrl : '/p/stilne-analize/:id',
         resolve   : (req, res, route, card) => {
@@ -714,32 +672,6 @@ const routes = [
         }
       },
       {
-        name      : 'razrezGlasovanj',
-        sourceUrl : '/p/razrez-glasovanj/:id',
-        resolve   : (req, res, route, card) => {
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-              let mpId           = mpData.mpId;
-              let mpSlug         = mpData.mpSlug;
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-                  return res.text();
-                })
-                .then((body) => {
-                  return body;
-                });
-            });
-        }
-      },
-      {
         name      : 'najveckratEnako',
         sourceUrl : '/p/najveckrat-enako/:id',
         resolve   : (req, res, route, card) => {
@@ -808,7 +740,44 @@ const routes = [
             });
 
         }
-      }
+      },
+      {
+        name      : 'neujemanjeSPs',
+        sourceUrl : '/p/neujemanje-s-poslansko-skupino/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId   = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
+
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : mpId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              console.log(cardUrl);
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
     ]
   },
   {
@@ -1263,8 +1232,36 @@ const routes = [
         }
       },
       {
-        name      : 'razrezGlasovanj',
-        sourceUrl : '/pg/razrez-glasovanj/:id',
+        name      : 'neenotnostGlasovanj',
+        sourceUrl : '/ps/neenotnost-glasovanj/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId           = psData.psId;
+              let psSlug         = psData.psSlug;
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : psId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+
+        }
+      },
+      {
+        name      : 'steviloVlozenihAmandmajev',
+        sourceUrl : '/ps/st-vlozenih-amandmajev/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
