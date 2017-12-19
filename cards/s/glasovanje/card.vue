@@ -48,8 +48,8 @@
     </div>
     <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
-      :content="data.abstract"
-      :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
+      :content="data.abstract || ''"
+      :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
       :documents="data.documents"
       class="visible-xs"
       v-if="showMobileExcerpt"
@@ -88,7 +88,7 @@
       <p-tab label="Izvleček" variant="light">
         <excerpt
           :content="data.abstract || ''"
-          :main-law="{ epa: data.legislation.epa, name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
+          :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
           :documents="data.documents"
           :show-parent="true"
         />
