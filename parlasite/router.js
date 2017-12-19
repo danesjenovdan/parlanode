@@ -2131,7 +2131,7 @@ function createRoute(app, route) {
               const dataExtend = {
                 slug: req.slug,
                 activeMenu: 'zakonodaja',
-                pageTitle: 'ZAKON!!!!!',
+                pageTitle: 'Zakonodaja',
                 views,
               };
 
