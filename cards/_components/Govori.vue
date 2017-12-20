@@ -310,87 +310,74 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 <style lang="scss" scoped>
     @import '~parlassets/scss/breakpoints';
     @import '~parlassets/scss/colors';
-
     .card-scroll__wrapper--empty {
-        height: auto;
+      height: auto;
     }
 
     .card-scroll {
-        padding: 0;
-
-        .search-field {
-            background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
+      padding: 0;
+      .search-field {
+        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
+      }
+      .filters {
+        .filter {
+          @include respond-to(desktop) {
+            margin-right: 10px;
+            flex: 1;
+          }
+          @include respond-to(mobile) {
+            width: 100%;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
         }
-
-        .filters {
-            .filter {
-                @include respond-to(desktop) {
-                    margin-right: 10px;
-                    flex: 1;
-                }
-
-                @include respond-to(mobile) {
-                    width: 100%;
-                }
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-
-            @include respond-to(mobile) {
-                flex-wrap: wrap;
-                min-height: 154px;
-            }
-
-            .option-party-buttons {
-                @include show-for(desktop, flex);
-
-                width: 27.5%;
-                padding-top: 26px;
-
-                .party-button:not(:last-child) {
-                    margin-right: 3px;
-                }
-            }
+        @include respond-to(mobile) {
+          flex-wrap: wrap;
+          min-height: 154px;
         }
-
+        .option-party-buttons {
+          @include show-for(desktop,
+          flex);
+          width: 27.5%;
+          padding-top: 26px;
+          .party-button:not(:last-child) {
+            margin-right: 3px;
+          }
+        }
+      }
     }
 
     .empty-dataset {
-        font-size: 16px;
-        font-style: italic;
-        line-height: 20px;
-        margin: 70px 0;
-        text-align: center;
-        color: $grey-medium;
-        font-style: normal;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 20px;
+      margin: 70px 0;
+      text-align: center;
+      color: $grey-medium;
+      font-style: normal;
     }
 
     .speaks {
-        flex: 1;
-        position: relative;
-        padding-bottom: 20px;
-
-        &__list {
-            padding: 0 0 10px;
-            margin: 0;
-
+      flex: 1;
+      position: relative;
+      padding-bottom: 20px;
+      &__list {
+        padding: 0 0 10px;
+        margin: 0;
+      }
+      .nalagalnik__wrapper {
+        background: rgba(255, 255, 255, .75);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        .nalagalnik {
+          position: absolute;
+          top: calc(50% - 50px);
         }
-
-        .nalagalnik__wrapper {
-            background: rgba(255,255,255,.75);
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-
-            .nalagalnik {
-                position: absolute;
-                top: calc(50% - 50px);
-            }
-        }
+      }
     }
 
 </style>
