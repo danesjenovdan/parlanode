@@ -202,12 +202,52 @@ const routes = [
   {
     path        : '/orodja/raziskovalec-neenotnosti',
     viewPath    : 'orodja/raziskovalec-neenotnosti',
-    pageTitle   : 'Raziskovalec Neenotnosti',
-    cards       : [{
-      name: 'raziskovalecNeenotnosti',
-      sourceUrl: '/ps/glasovanja-neenotnost/',
-      resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
-    }]
+    pageTitle   : 'Raziskovalec neenotnosti',
+    cards       : [
+      {
+        name: 'raziskovalecNeenotnosti',
+        sourceUrl: '/ps/glasovanja-neenotnost/',
+        resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
+      },
+    ]
+  },
+  {
+    path: '/orodja/parlamentarni-kompas',
+    viewPath: 'orodja/parlamentarni-kompas',
+    pageTitle: 'Parlamentarni kompas',
+    cards: [
+      {
+        name      : 'kompas',
+        sourceUrl : '/c/kompas/',
+        resolve   : (req, res, route, card) => {
+
+          console.log('loading kompas');
+
+          
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+          if (req.query.forceRender) {
+            cardUrl += '?forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+
+              console.log('kompas fetched');
+
+              return res.text();
+
+            })
+            .then((body) => {
+
+              return body;
+
+            });
+
+        }
+      },
+    ],
   },
   {
     path      : '/poslanci',
@@ -1236,6 +1276,8 @@ const routes = [
         sourceUrl : '/ps/neenotnost-glasovanj/:id',
         resolve   : (req, res, route, card) => {
 
+          console.log('something else');
+
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
@@ -2139,6 +2181,39 @@ function createRoute(app, route) {
               res.render(route.viewPath, common);
             }
 
+          } else if (route.viewPath.indexOf('orodja') > -1) {
+            console.log('orodja');
+            const pageTitle = route.pageTitle;
+            
+            const dataExtend = {
+              slug: req.slug,
+              activeMenu: 'orodja',
+              pageTitle: route.pageTitle,
+              views: views,
+            };
+
+            Object.assign(common, dataExtend);
+
+            // OG IMAGE STUFF
+            //
+            const hashObj = {
+              nameSlug : route.pageTitle
+            };
+
+            const hashString = hash(hashObj);
+            const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
+
+            common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
+
+            // if (forceRenderOg) {
+            //   renderOg('views/og/poslanec.ejs', ogPath, common)
+            //     .then(() => {
+            //       res.render(route.viewPath, common);
+            //     });
+            // }
+            // else {
+              res.render(route.viewPath, common);
+            // }
           } else {
 
             var activeMenu = (route.viewPath == 'landing') ? route.viewPath : 'P';

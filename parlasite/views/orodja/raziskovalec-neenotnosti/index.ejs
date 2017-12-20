@@ -27,22 +27,23 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-md-12">
         <%- views.raziskovalecNeenotnosti %>
     </div>
 </div>
-</template>
 
 <script>
   new Vue({
     el: '#orodja-raziskovalec-container',
     data: {
       tools: [
-        { id: 'obvestila', label: 'Parlameter obvestila', link: '/orodja/parlameter-obvestila' },
+        { id: 'obvestila', label: 'Parlameter obvestila', link: 'https://obvestila.parlameter.si/' },
         { id: 'primerjalnik', label: 'Primerjalnik glasovanj', link: '/orodja/primerjalnik-glasovanj' },
         { id: 'raziskovalec', label: 'Raziskovalec neenotnosti', link: '/orodja/raziskovalec-neenotnosti' },
         { id: 'kompas', label: 'Parlamentarni kompas', link: '/orodja/parlamentarni-kompas' },
-        { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
+        // { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
       ],
       currentTool: ''
     },
@@ -52,10 +53,11 @@
       },
     }
   });
-
-  makeEmbedSwitch()
-  activateCopyButton()
-  addCardRippling()
 </script>
+
+<style>
+    .party-list-generator li { font-size: 13px !important;}
+    .party-list-generator li a { color: #fff; text-decoration: none;}
+</style>
 
 <% include ../../partials/footer.ejs %>
