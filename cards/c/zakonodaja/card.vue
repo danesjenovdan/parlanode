@@ -240,10 +240,6 @@
     .column{
       font-size: 16px;
 
-      @include respond-to(desktop) {
-        font-size: 18px;
-      }
-
       &:nth-child(2),
       &:nth-child(3),
       &:nth-child(4),
@@ -251,6 +247,18 @@
         @include respond-to(mobile) {
           display:none;
         }
+      }
+
+      &:nth-child(3) {
+        @include respond-to(desktop) {
+          padding-left: 40px;
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) .text {
+        font-size: 16px !important;
       }
 
       &.small-text {
