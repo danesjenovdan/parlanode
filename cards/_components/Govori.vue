@@ -37,6 +37,18 @@
               :clear-callback="searchSpeakings">
             </search-dropdown>
           </div>
+
+          <div class="filter month-dropdown" v-if="type === 'party'">
+            <div class="filter-label">Poslanci</div>
+            <search-dropdown
+              :items="allPeople"
+              :placeholder="peoplePlaceholder"
+              :alphabetise="true"
+              :select-callback="searchSpeakings"
+              :clear-callback="searchSpeakings"
+            >
+            </search-dropdown>
+          </div>
         </div>
 
         <div class="speaks">
@@ -80,8 +92,10 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     },
     mixins: [common],
     data() {
+      console.log(this.party);
       let textFilter = '';
       let allMonths = generateMonths();
+      let allPeople = [];
 
       const arrayColumn = (arr, n) => arr.map(x => x[n]);
 
@@ -111,8 +125,28 @@ import SearchDropdown from 'components/SearchDropdown.vue';
         speakingDays: this.cardData.data.highlighting,
         textFilter,
         allMonths,
-        allSessions
+        allSessions,
+        allPeople,
       };
+    },
+    created() {
+      if (this.type === 'party') {
+        axios.get(`https://analize.parlameter.si/v1/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then(response => {
+          this.allPeople = response.data.results.map((person) => {
+            const newPerson = {
+              id: person.id,
+              name: person.name,
+              label: person.name,
+              selected: false,
+            };
+
+            return newPerson;
+          });
+
+          // console.log(allPeople);
+          // console.log(allMonths);
+        });
+      }
     },
     mounted() {
       // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
@@ -140,6 +174,10 @@ import SearchDropdown from 'components/SearchDropdown.vue';
           state.wb = this.selectedSessions.map(s => s.id);
         }
 
+        if (this.selectedPeople.length > 0) {
+          state.people = this.selectedPeople.map(person => person.id);
+        }
+
         var encodedQueryData = '';
         if (Object.keys(state).length !== 0) {
           encodedQueryData = this.encodeQueryData(state);
@@ -155,16 +193,24 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       selectedMonths() {
         return this.allMonths.filter(month => month.selected);
       },
+      selectedPeople() {
+        return this.allPeople.filter(person => person.selected);
+      },
+
       sessionPlaceholder() {
         return this.selectedSessions.length > 0 ? `Izbranih: ${this.selectedSessions.length}` : 'Izberi';
       },
       monthPlaceholder() {
         return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
       },
+      peoplePlaceholder() {
+        return this.selectedPeople.length > 0 ? `Izbranih: ${this.selectedPeople.length}` : 'Izberi';
+      },
+
       dropdownItems() {
         return {
           months: this.allMonths,
-          sessions: this.allSessions
+          sessions: this.allSessions,
         };
       },
       groupSpeakingDays() {
@@ -199,7 +245,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
               this.speakingDays = response.data.highlighting;
               this.speakingDays = response.data.highlighting;
               this.card.isLoading = false;
-            })
+            });
           }
           this.card.lockLoading = false;
         }, waitTime);
