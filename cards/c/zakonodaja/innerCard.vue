@@ -66,9 +66,9 @@ export default {
 
             return [
               {html: `<a href="${this.slugs.legislationLink}${legislation.epa}" class="funblue-light-hover">${legislation.text}</a>`},
-              {text: legislation.date},
-              {html: `<a href="${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true" class="funblue-light-hover">${legislation.mdt.name}</a>`},
               {text: legislation.epa},
+              {text: legislation.date},
+              // {html: `<a href="${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true" class="funblue-light-hover">${legislation.mdt.name}</a>`},
               {html: outcomeHtml},
             ];
           })
