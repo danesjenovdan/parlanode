@@ -132,7 +132,20 @@ hr {
   ul {
     padding-left: 14px;
     margin-bottom: 1em;
-    li { margin-bottom: 1em; }
+    li {
+      margin-bottom: 1em;
+      list-style-type: none;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/puscica-izvlecki.svg');
+        background-size: contain;
+        margin-right: 5px;
+      }
+    }
   }
 }
 
