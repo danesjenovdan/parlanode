@@ -27,6 +27,11 @@
               :alphabetise="false">
             </p-search-dropdown>
           </div>
+
+          <div class="filter only-abstracts">
+            <input id="only-abstracts" type="checkbox" v-model="onlyAbstracts" class="checkbox" />
+            <label for="only-abstracts">Samo s povzetki</label>
+          </div>
         </div>
       </div>
     </div>
@@ -90,6 +95,7 @@
           title: this.$options.cardData.cardData.name,
         },
         allworkingBodies,
+        onlyAbstracts: false,
       };
     },
     computed: {
@@ -101,9 +107,9 @@
       },
       columns: () => [
         { id: 'name', label: 'Ime', additionalClass: 'small-text' },
-        { id: 'updated', label: 'Sprememba' },
-        { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'small-text' },
         { id: 'epa', label: 'EPA', additionalClass: 'narrow' },
+        { id: 'updated', label: 'Sprememba' },
+        // { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'small-text' },
         { id: 'result', label: 'Status', additionalClass: '' },
       ],
       infoText () {
@@ -133,8 +139,9 @@
           const textMatch = this.textFilter === '' || legislation.text === null || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
           const typeMatch = this.currentFilter === '' | legislation.classification === (this.currentFilter === 'Zakoni' ? 'zakon' : 'akt');
           const wbMatch = this.selectedWorkingBodies.length === 0 || this.selectedWorkingBodies.includes(legislation.mdt.id);
+          const onlyAbstractsMatch = !this.onlyAbstracts || legislation.abstractVisible;
 
-          return textMatch && typeMatch && wbMatch;
+          return textMatch && typeMatch && wbMatch && onlyAbstractsMatch;
         }
 
         const sortedAndFilteredLegislation = this.data.filter(filterLegislation).sort((A, B) => {
@@ -346,6 +353,17 @@
           &:first-child {
             @include respond-to(desktop) { margin-right: 10px; }
           }
+        }
+      }
+
+      .only-abstracts {
+        padding-top: 40px;
+        padding-left: 10px;
+
+        @include respond-to(mobile) {
+          padding-top: 10px;
+          padding-left: 0;
+          margin-bottom: -5px;
         }
       }
 
