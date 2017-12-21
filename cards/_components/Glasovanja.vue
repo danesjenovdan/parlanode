@@ -23,13 +23,13 @@
         <div class="filter-label">Išči po naslovu glasovanja</div>
         <p-search-field v-model="textFilter" />
       </div>
+      <div class="filter type-dropdown">
+        <div class="filter-label">Tipi glasovanja</div>
+        <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
+      </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
-      </div>
-      <div class="filter month-dropdown">
-        <div class="filter-label">Časovno obdobje</div>
-        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter option-party-buttons">
         <div v-for="option in allOptions"
@@ -84,17 +84,19 @@ export default {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
     },
-    monthPlaceholder() {
-      return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+    // monthPlaceholder() {
+    //   return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+    // },
+    classificationPlaceholder() {
+      return this.selectedClassifications.length > 0 ? `Izbranih: ${this.selectedClassifications.length}` : 'Izberi';
     },
     dropdownItems() {
       const validTags = [];
-      const validMonths = [];
 
       this.getFilteredVotingDays(true).forEach((votingDay) => {
-        const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
-        const monthId = `${year}-${month}`;
-        if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+        // const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
+        // const monthId = `${year}-${month}`;
+        // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
 
         votingDay.ballots
           .forEach((ballot) => {
@@ -106,7 +108,8 @@ export default {
 
       return {
         tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
+        classifications: this.allClassifications
+        // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
     selectedTags() {
@@ -114,9 +117,14 @@ export default {
         .filter(tag => tag.selected)
         .map(tag => tag.id);
     },
-    selectedMonths() {
-      return this.allMonths.filter(month => month.selected);
+    selectedClassifications() {
+      return this.allClassifications
+        .filter(classification => classification.selected)
+        .map(classification => classification.id);
     },
+    // selectedMonths() {
+    //   return this.allMonths.filter(month => month.selected);
+    // },
     selectedOptions() {
       return this.allOptions.filter(option => option.selected).map(option => option.id);
     },
@@ -127,7 +135,8 @@ export default {
       const state = {};
 
       if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      if (this.selectedClassifications.length > 0) state.classifications = this.selectedClassifications;
       if (this.textFilter.length > 0) state.text = this.textFilter;
       if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
 
@@ -160,9 +169,9 @@ export default {
     const selectFromState = (items, stateItemIds) =>
       items.map(item =>
         Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
-      );
+    );
 
-    let allMonths = generateMonths();
+    // let allMonths = generateMonths();
 
     let allOptions = [
       { id: 'za', class: 'for', label: 'ZA', selected: false },
@@ -170,15 +179,23 @@ export default {
       { id: 'kvorum', class: 'kvorum', label: (this.type === 'person' ? 'VZDRŽAN' : 'VZDRŽANI'), selected: false },
       { id: 'ni', class: 'ni', label: (this.type === 'person' ? 'NI' : 'NISO'), selected: false },
     ];
+
     let allTags = this.cardData.data.all_tags.map(
       tag => ({ id: tag, label: tag, selected: false }),
     );
+
+    let allClassifications = [];
+    for (var classificationKey in this.cardData.data.classifications) {
+      allClassifications.push({ id: classificationKey, label: this.cardData.data.classifications[classificationKey], selected: false });
+    }
+
     let textFilter = '';
 
     if (this.cardData.parlaState) {
       const state = this.cardData.parlaState;
       if (state.text) textFilter = state.text;
-      if (state.months) allMonths = selectFromState(allMonths, state.months);
+
+      if (state.classifications) allClassifications = selectFromState(allClassifications, state.classifications);
       if (state.options) allOptions = selectFromState(allOptions, state.options);
       if (state.tags) allTags = selectFromState(allTags, state.tags);
     }
@@ -187,7 +204,8 @@ export default {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
       votingDays: this.cardData.data.results,
-      allMonths,
+      // allMonths,
+      allClassifications,
       allOptions,
       allTags,
       textFilter,
@@ -195,7 +213,9 @@ export default {
   },
   mounted() {
     this.card.shadowElement = 'card-votes';
-    document.getElementById(this.card.shadowElement).addEventListener('scroll', this.checkScrollPosition);
+    if (document) {
+      document.getElementById(this.card.shadowElement).addEventListener('scroll', this.checkScrollPosition);
+    }
   },
   methods: {
     toggleOption(optionId) {
@@ -210,17 +230,22 @@ export default {
           ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
         const optionMatch = onlyFilterByText || this.selectedOptions.length === 0 ||
           this.selectedOptions.indexOf(ballot.option) > -1;
+        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0 ||
+          this.selectedClassifications.indexOf(ballot.classification) > -1;
 
-        return tagMatch && textMatch && optionMatch;
+        return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 
-      const filterDates = (votingDay) => {
-        if (onlyFilterByText || this.selectedMonths.length === 0) return true;
+      console.log(this.selectedClassifications)
 
-        const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
-
-        return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-      };
+      // const filterDates = (votingDay) => {
+      //   // if (onlyFilterByText || this.selectedMonths.length === 0) return true;
+      //   if (onlyFilterByText || this.selectedMonths.length === 0) return true;
+      //
+      //   const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
+      //
+      //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
+      // };
 
       return this.votingDays
         .map(votingDay => ({
@@ -246,8 +271,8 @@ export default {
               return ballotClone;
             }),
         }))
-        .filter(votingDay => votingDay.ballots.length > 0)
-        .filter(filterDates);
+        .filter(votingDay => votingDay.ballots.length > 0);
+        // .filter(filterDates);
     },
   },
   props: {
