@@ -17,7 +17,7 @@
                 <p-tab label="Trenutno v obravnavi">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.accepted">
-                            <a :href="slugs.legislationLink + legislation.epa"></a>
+                            <a class="legislation__wrapper--link" :href="slugs.legislationLink + legislation.epa"></a>
                             <div class="legislation__single">
                                 <div class="icon">
                                     <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
@@ -34,7 +34,7 @@
                 <p-tab label="Nedavno sprejeto">
                     <div class="legislation row">
                         <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration">
-                            <a :href="slugs.legislationLink + legislation.epa"></a>
+                            <a class="legislation__wrapper--link" :href="slugs.legislationLink + legislation.epa"></a>
                             <div class="legislation__single">
                                 <div class="icon">
                                     <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
@@ -131,7 +131,7 @@
                 height: 101px;
                 width: 102px;
                 background-color: $white;
-                padding: 27px 15px 24px 27px;
+                padding: 20px;
             }
 
             .icon {
@@ -141,6 +141,7 @@
 
         &__wrapper {
             margin-bottom: 15px;
+            position: relative;
 
             &:nth-child(odd)  {
                 @include respond-to(desktop) {
@@ -152,6 +153,15 @@
                 @include respond-to(desktop) {
                     padding-left: 7px;
                 }
+            }
+
+            &--link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
             }
         }
 
