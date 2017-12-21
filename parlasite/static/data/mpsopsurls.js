@@ -1047,6 +1047,11 @@ module.exports =
          "acronym":"nep-mh",
          "realAcronym":"NeP - MH",
          "slug":"nepovezani-poslanec-matjaz-hanzek"
+      },
+      "147":{
+         "acronym":"nep-jv",
+         "realAcronym":"NeP - MH",
+         "slug":"nepovezani-poslanec-janko-veber"
       }
    }
 };

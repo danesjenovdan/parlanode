@@ -18,6 +18,5 @@ module.exports =
     "7": {"acronym": "SD", "is_coalition": true, "name": "PS Socialni Demokrati", "id": 7},
     "8": {"acronym": "Levica", "is_coalition": false, "name": "PS Levica", "id": 8},
     "109": {"acronym": "PS NP", "is_coalition": false, "name": "PS nepovezanih poslancev ", "id": 109}
-
 }
 ;
