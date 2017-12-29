@@ -31,22 +31,29 @@
         <div class="filter-label">Matično delovno telo</div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
-      <div class="filter option-party-buttons">
+      <div v-if="this.type==='person'" class="filter option-party-buttons">
         <div v-for="option in allOptions"
         :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
         @click="toggleOption(option.id)">{{ option.label }}</div>
+      </div>
+      <div v-if="this.type==='party'" class="filter text-filter">
+        <div class="filter-label">Razvrsti po</div>
+        <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
 
     <div id="card-votes" class="votes stickinme date-list card-scroll__wrapper">
       <template v-for="votingDay in filteredVotingDays">
-        <div class="date">{{ votingDay.date }}</div>
+        <div v-if="type === 'person' || selectedSort === 'date'" class="date">{{ votingDay.date }}</div>
         <div>
           <div v-for="ballot in votingDay.ballots">
             <a class="ballot" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
               <div class="disunion">
                 <div :class="['icon', ballot.option]"></div>
-                <div class="text"> {{ ballot.option }} </div>
+                <div class="text">
+                  <span>{{ ballot.disunion | toPercent }}</span>
+                  {{ ballot.option }}
+                </div>
               </div>
 
               <div class="name">
@@ -70,6 +77,7 @@ import generateMonths from 'helpers/generateMonths';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import DateRow from 'components/DateRow.vue';
+import Toggle from 'components/Toggle.vue';
 
 import common from 'mixins/common';
 import scroll from 'mixins/scroll';
@@ -78,7 +86,7 @@ import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
 export default {
-  components: { PSearchDropdown, PSearchField, DateRow },
+  components: { PSearchDropdown, PSearchField, DateRow, Toggle },
   mixins: [common, scroll],
   computed: {
     tagPlaceholder() {
@@ -97,7 +105,6 @@ export default {
         // const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
         // const monthId = `${year}-${month}`;
         // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
-
         votingDay.ballots
           .forEach((ballot) => {
             ballot.tags.forEach((tag) => {
@@ -204,11 +211,14 @@ export default {
       cardMethod: this.cardData.cardData.method,
       cardGroup: this.cardData.cardData.group,
       votingDays: this.cardData.data.results,
+      selectedSort: 'date',
+      sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
       // allMonths,
       allClassifications,
       allOptions,
       allTags,
       textFilter,
+
     };
   },
   mounted() {
@@ -236,7 +246,6 @@ export default {
         return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 
-      console.log(this.selectedClassifications)
 
       // const filterDates = (votingDay) => {
       //   // if (onlyFilterByText || this.selectedMonths.length === 0) return true;
@@ -247,7 +256,7 @@ export default {
       //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       // };
 
-      return this.votingDays
+      let votingDays = this.votingDays
         .map(votingDay => ({
           date: votingDay.date,
           ballots: votingDay.ballots
@@ -273,7 +282,32 @@ export default {
         }))
         .filter(votingDay => votingDay.ballots.length > 0);
         // .filter(filterDates);
+
+      if (this.type === 'party' && this.selectedSort === 'maximum') {
+        const sortyByDisunion = arr => {
+          let bag = [];
+          let i = 0
+          while (i < arr.length) {
+            bag = bag.concat(arr[i].ballots);
+            i++;
+          }
+          return bag.sort((a, b) => {
+            return parseInt(b.disunion) - parseInt(a.disunion);
+          });
+        }
+
+        return [{
+          ballots: sortyByDisunion(votingDays)
+        }];
+      }
+
+      return votingDays;
     },
+  },
+  filters: {
+    toPercent(val) {
+      return parseInt(val) + ' %';
+    }
   },
   props: {
     cardData: {
@@ -300,6 +334,10 @@ export default {
   @import '~parlassets/scss/breakpoints';
   @import '~parlassets/scss/colors';
 
+  .toggle {
+    height: 51px !important;
+    line-height: 51px !important;
+  }
 
   .card-content-front {
     display: flex;
@@ -405,6 +443,11 @@ export default {
       &:last-child {
         margin-right: 0;
       }
+    }
+
+    .filter-label {
+      overflow: hidden;
+      height: 26px;
     }
   }
 
