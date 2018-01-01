@@ -1853,6 +1853,11 @@ module.exports = (app) => {
 
   });
 
+  // redirect from glasovanja to druga-glasovanja
+  app.get('/seja/glasovanja/:sessionId', (req, res) => {
+    res.redirect('/seja/druga-glasovanja/' + req.params.sessionId);
+  });
+
   app.get('/*', function (req, res) {
     res.status(404).render('error/404', { pageTitle : "Sorry, page not found", activeMenu : "", ogImageUrl : "" });
   });
