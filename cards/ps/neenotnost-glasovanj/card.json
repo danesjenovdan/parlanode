@@ -3,7 +3,7 @@
   "name": "Neenotnost glasovanj",
   "type": "poslanska_skupina",
   "dataUrl": "http://analize.parlameter.si/v1/pg/getDisunionOrg",
-  "lastUpdate": "2017-12-19T15:57:59.755Z",
+  "lastUpdate": "2017-12-29T10:11:38.804Z",
   "method": "neenotnost-glasovanj",
   "group": "ps",
   "big": false,
