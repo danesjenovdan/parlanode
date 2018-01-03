@@ -3,7 +3,7 @@
   "name": "Glasovanje",
   "dataUrl": "https://analize.parlameter.si/v1/s/getMotionAnalize",
   "type": "glasovanje",
-  "lastUpdate": "2017-12-29T10:11:50.635Z",
+  "lastUpdate": "2018-01-03T08:30:14.576Z",
   "method": "glasovanje",
   "group": "s",
   "high": true,

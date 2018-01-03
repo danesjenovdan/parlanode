@@ -201,7 +201,7 @@ export default {
 .person-list {
   height: 231px;
   overflow: auto;
-  @include respond-to(desktop) { height: 291px; }
+  @include respond-to(desktop) { height: 394.5px; }
 }
 
   .vote {
