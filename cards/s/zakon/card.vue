@@ -11,6 +11,29 @@
     </div>
 
     <!-- Card content goes here -->
+    <div class="result-container">
+      <div class="result">
+        <template v-if="data.result === 'sprejet'">
+          <i class="accepted glyphicon glyphicon-ok"></i>
+          <div class="text">sprejet</div>
+        </template>
+        <template v-else-if="data.result === 'zavrnjen'">
+          <i class="not-accepted glyphicon glyphicon-remove"></i>
+          <div class="text">zavrnjen</div>
+        </template>
+        <template v-else>
+          <i class="glyphicon v-obravnavi"></i>
+          <div class="text">v obravnavi</div>
+        </template>
+      </div>
+      <div class="law-title">{{ $options.cardData.data.text }}</div>
+      <result
+        v-if="finalVoteExists"
+        :score="finalVoteResult.value / numberOfVotes * 100"
+        :option="finalVoteResult.key"
+        :chart-data="finalVoteData"
+      ></result>
+    </div>
     <p-tabs :start-tab="0">
       <p-tab label="Izvleček" variant="light">
         <excerpt
@@ -36,9 +59,11 @@ import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import Result from 'components/Result.vue';
+import mapVotes from 'helpers/mapVotes';
 
 export default {
-  components: { PTab, PTabs, Excerpt, SeznamGlasovanj },
+  components: { PTab, PTabs, Excerpt, SeznamGlasovanj, Result },
   mixins: [common],
   name: 'Zakon',
   data() {
@@ -52,6 +77,41 @@ export default {
     const title = this.$options.cardData.parlaState.fullName
       ? this.$options.cardData.data.text.slice(0, 100) + '...'
       : 'Zakon';
+
+    // did we have "glasovanje o zakonu v celoti"    
+    const finalVoteExists = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1).length > 0;
+    
+    let finalVoteData;
+    let finalVoteResult;
+    let numberOfVotes;
+    if (finalVoteExists) {
+      const filteredVote = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1)[0];
+      const vote = {
+        for: filteredVote.votes_for,
+        against: filteredVote.against,
+        abstain: filteredVote.abstain,
+        not_present: filteredVote.not_present,
+      };
+      finalVoteData = mapVotes(vote);
+
+      finalVoteResult = Object.keys(vote).reduce((max, current) => {
+        if (max.value < vote[current]) {
+          return {
+            key: current,
+            value: vote[current],
+          };
+        }
+        return max;
+      }, {
+        key: '',
+        value: 0
+      });
+
+      numberOfVotes = Object.keys(vote).reduce((total, current) => {
+        return total + vote[current];
+      }, 0);
+    }
+
     return {
       data: this.$options.cardData.data,
       documents,
@@ -62,6 +122,10 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title,
       },
+      finalVoteExists,
+      finalVoteData,
+      finalVoteResult,
+      numberOfVotes,
     };
   },
   computed: {
@@ -90,6 +154,16 @@ export default {
 </style>
 
 <style lang="scss">
+@import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
+
+#seznam-glasovanj {
+  .filters {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
 #s-zakon {
   .card-content {
     height: 518px;
@@ -99,6 +173,84 @@ export default {
   }
   #votingCard {
     max-height: 372px;
+  }
+
+  .result-container {
+    $section-border: 1px solid $black;
+    background: $grey;
+    margin: 7px 0 8px 0;
+    min-height: 90px;
+    padding: 10px 14px;
+    position: relative;
+
+    @include respond-to(desktop) {
+      display: flex;
+      margin-bottom: 24px;
+    }
+
+    .v-obravnavi {
+      width: 38px !important;
+      height: 38px;
+      background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
+      background-size: contain !important;
+    }
+
+    .result {
+      align-items: center;
+      // border-bottom: $section-border;
+      display: flex;
+      justify-content: center;
+      padding: 0 0 10px 0;
+
+      @include respond-to(desktop) {
+        border-bottom: none;
+        border-right: $section-border;
+        padding: 0 22px 0 0;
+      }
+
+      .glyphicon {
+        font-size: 24px;
+        margin-bottom: 4px;
+        &.accepted { color: $funblue; }
+        &.not-accepted { color: $red; }
+
+        @include respond-to(desktop) { font-size: 29px; }
+      }
+
+      .text {
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 12px;
+      }
+    }
+
+    .law-title {
+      padding-left: 14px;
+      padding-right: 14px;
+
+      display: flex;
+      align-items: center;
+
+      @include respond-to(mobile) {
+        padding: 14px 0px 14px 0px;
+        border-top: $section-border;
+        border-bottom: $section-border;
+      }
+    }
+
+    .result-chart {
+      margin-top: 10px;
+      justify-content: center;
+      @include respond-to(desktop) {
+        margin-top: 0;
+        border-left: $section-border;
+      }
+      svg {
+        margin-left: 14px;
+      }
+    }
   }
 }
 </style>

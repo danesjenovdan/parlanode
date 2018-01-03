@@ -84,7 +84,7 @@ export default {
   font-weight: 300;
   line-height: 1.5em;
   margin: 12px 0;
-  padding: 12px 24px;
+  padding: 12px;
   background: $grey;
   height: 442px;
 }
@@ -129,12 +129,16 @@ hr {
 @import '~parlassets/scss/colors';
 
 .excerpt .rich-text {
+  height: 349px;
+  overflow-x: hidden;
+  overflow-y: auto;
   ul {
     padding-left: 14px;
     margin-bottom: 1em;
     li {
       margin-bottom: 1em;
       list-style-type: none;
+      padding-left: 20px;
 
       &::before {
         content: '';
@@ -144,6 +148,7 @@ hr {
         background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/puscica-izvlecki.svg');
         background-size: contain;
         margin-right: 5px;
+        margin-left: -18px;
       }
     }
   }
@@ -182,7 +187,11 @@ hr {
 
 .metacontainer {
   position: absolute;
-  width: calc(100% - 48px);
+  width: calc(100% - 24px);
   bottom: 30px;
+}
+
+.search-dropdown-input {
+  background-color: #ffffff;
 }
 </style>
