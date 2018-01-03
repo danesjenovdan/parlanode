@@ -249,10 +249,13 @@ export default {
     flex-wrap: wrap;
     min-height: 154px;
   }
+  
   $label-height: 26px;
 
   display: flex;
   justify-content: space-between;
+
+  min-height: 68px;
 
   .filter-label {
     font-size: 14px;
