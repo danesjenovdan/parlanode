@@ -9,68 +9,68 @@
     <div slot="info">
         <p class="info-text lead">Izpis povezav do vseh <span v-if="this.type==='person'">poslančevih govorov</span><span v-else>govorov poslancev poslanske skupine</span> v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.</p>
       <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (<span v-if="this.type='party'">poslanci, </span>časovno obdobje, vrsta seje).</p>
+        <p class="info-text">Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (<span v-if="this.type==='party'">poslanci, </span>časovno obdobje, vrsta seje).</p>
     </div>
 
     <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
       <div class="filter text-filter">
         <div class="filter-label">Išči po vsebini govorov</div>
-          <search-field v-model="textFilter" @input="searchSpeakings()" />
-        </div>
+        <search-field v-model="textFilter" @input="searchSpeakings()" />
+      </div>
         
-        <!-- ONLY FOR PARTIES, DISPLAY MPs -->
-        <div class="filter month-dropdown" v-if="type === 'party'">
-          <div class="filter-label">Poslanci</div>
-          <search-dropdown
-            :items="allPeople"
-            :placeholder="peoplePlaceholder"
-            :alphabetise="true"
-            :select-callback="searchSpeakings"
-            :clear-callback="searchSpeakings"
-          >
-          </search-dropdown>
-        </div>
-        <!-- ONLY FOR PARTIES, DISPLAY MPs -->
+      <!-- ONLY FOR PARTIES, DISPLAY MPs -->
+      <div class="filter month-dropdown" v-if="type === 'party'">
+        <div class="filter-label">Poslanci</div>
+        <search-dropdown
+          :items="allPeople"
+          :placeholder="peoplePlaceholder"
+          :alphabetise="true"
+          :select-callback="searchSpeakings"
+          :clear-callback="searchSpeakings"
+        >
+        </search-dropdown>
+      </div>
+      <!-- ONLY FOR PARTIES, DISPLAY MPs -->
 
-        <div class="filter month-dropdown">
-          <div class="filter-label">Časovno obdobje</div>
-            <search-dropdown
-              :items="dropdownItems.months"
-              :placeholder="monthPlaceholder"
-              :alphabetise="false"
-              :select-callback="searchSpeakings"
-              :clear-callback="searchSpeakings">
-            </search-dropdown>
-          </div>
+      <div class="filter month-dropdown">
+        <div class="filter-label">Časovno obdobje</div>
+        <search-dropdown
+          :items="dropdownMonths"
+          :placeholder="monthPlaceholder"
+          :alphabetise="false"
+          :select-callback="searchSpeakings"
+          :clear-callback="searchSpeakings">
+        </search-dropdown>
+      </div>
 
-          <div class="filter month-dropdown">
-            <div class="filter-label">Vrsta seje</div>
-            <search-dropdown
-              :items="dropdownItems.sessions"
-              :placeholder="sessionPlaceholder"
-              :alphabetise="true"
-              :select-callback="searchSpeakings"
-              :clear-callback="searchSpeakings">
-            </search-dropdown>
-          </div>
-        </div>
+      <div class="filter month-dropdown">
+        <div class="filter-label">Vrsta seje</div>
+        <search-dropdown
+          :items="dropdownSessions"
+          :placeholder="sessionPlaceholder"
+          :alphabetise="true"
+          :select-callback="searchSpeakings"
+          :clear-callback="searchSpeakings">
+        </search-dropdown>
+      </div>
+    </div>
 
-        <div class="speaks">
-            <div id="speaks" :class="{ 'card-scroll__wrapper': true, 'card-scroll__wrapper--empty': speakingDays.length === 0 }" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
-                <div v-for="(speakingDay, key, index) in groupSpeakingDays">
-                    <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
-                    <ul class="speaks__list">
-                        <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
-                    </ul>
-                </div>
-                <div v-if="speakingDays.length===0" class="empty-dataset">Brez rezultatov.</div>
+    <div class="speaks">
+        <div id="speaks" :class="{ 'card-scroll__wrapper': true, 'card-scroll__wrapper--empty': speakingDays.length === 0 }" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+            <div v-for="(speakingDay, key, index) in groupSpeakingDays">
+                <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
+                <ul class="speaks__list">
+                    <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
+                </ul>
             </div>
-            <div v-if="card.isLoading" class="nalagalnik__wrapper">
-                <div class="nalagalnik"></div>
-            </div>
-
+            <div v-if="speakingDays.length===0" class="empty-dataset">Brez rezultatov.</div>
         </div>
-    </card-wrapper>
+        <div v-if="card.isLoading" class="nalagalnik__wrapper">
+            <div class="nalagalnik"></div>
+        </div>
+
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
@@ -105,17 +105,25 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
       let highlightingSession = arrayColumn(this.cardData.data.highlighting, 'session');
       let highlightingOrgs = [].concat.apply([], arrayColumn(highlightingSession, 'orgs'));
-      let allSessions = highlightingOrgs.map(
-        org => ({
-          id: org.id,
-          label: org.name,
-          selected: false
-        })
-      );
+      // let allSessions = highlightingOrgs.map(
+      //   org => ({
+      //     id: org.id,
+      //     label: org.name,
+      //     selected: false
+      //   })
+      // );
 
-      allSessions = allSessions.map(JSON.stringify).reverse().filter(function(e, i, a) {
-        return a.indexOf(e, i + 1) === -1;
-      }).reverse().map(JSON.parse)
+      // allSessions = allSessions.map(JSON.stringify).reverse().filter(function(e, i, a) {
+      //   return a.indexOf(e, i + 1) === -1;
+      // }).reverse().map(JSON.parse)
+
+      const allSessions = this.cardData.data.organizations.map((org) => {
+        return {
+          label: org.name,
+          id: org.id,
+          selected: false,
+        };
+      });
 
       return {
         card: {
@@ -249,6 +257,14 @@ import SearchDropdown from 'components/SearchDropdown.vue';
           sessions: this.allSessions,
         };
       },
+
+      dropdownMonths() {
+        return this.allMonths;
+      },
+      dropdownSessions() {
+        return this.allSessions;
+      },
+
       groupSpeakingDays() {
         return this.speakingDays
           .reduce(function(r, a) {
