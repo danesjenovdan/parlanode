@@ -3,12 +3,13 @@
     :id="cardData.cardData._id"
     :data-id="`${cardGroup}/${cardMethod}`"
     content-class="full card-scroll"
-    v-bind="{ cardUrl, headerConfig }">
+    v-bind="{ headerConfig }"
+    :card-url="shareUrl">
 
     <div slot="info">
         <p class="info-text lead">Izpis povezav do vseh <span v-if="this.type==='person'">poslančevih govorov</span><span v-else>govorov poslancev poslanske skupine</span> v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.</p>
       <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno obdobje, vrsta seje).</p>
+        <p class="info-text">Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (<span v-if="this.type='party'">poslanci, </span>časovno obdobje, vrsta seje).</p>
     </div>
 
     <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
@@ -16,6 +17,21 @@
         <div class="filter-label">Išči po vsebini govorov</div>
           <search-field v-model="textFilter" @input="searchSpeakings()" />
         </div>
+        
+        <!-- ONLY FOR PARTIES, DISPLAY MPs -->
+        <div class="filter month-dropdown" v-if="type === 'party'">
+          <div class="filter-label">Poslanci</div>
+          <search-dropdown
+            :items="allPeople"
+            :placeholder="peoplePlaceholder"
+            :alphabetise="true"
+            :select-callback="searchSpeakings"
+            :clear-callback="searchSpeakings"
+          >
+          </search-dropdown>
+        </div>
+        <!-- ONLY FOR PARTIES, DISPLAY MPs -->
+
         <div class="filter month-dropdown">
           <div class="filter-label">Časovno obdobje</div>
             <search-dropdown
@@ -35,18 +51,6 @@
               :alphabetise="true"
               :select-callback="searchSpeakings"
               :clear-callback="searchSpeakings">
-            </search-dropdown>
-          </div>
-
-          <div class="filter month-dropdown" v-if="type === 'party'">
-            <div class="filter-label">Poslanci</div>
-            <search-dropdown
-              :items="allPeople"
-              :placeholder="peoplePlaceholder"
-              :alphabetise="true"
-              :select-callback="searchSpeakings"
-              :clear-callback="searchSpeakings"
-            >
             </search-dropdown>
           </div>
         </div>
@@ -152,6 +156,38 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
     },
     computed: {
+      shareUrl() {
+        const state = {}
+        if (this.type === 'person') {
+            state.people = this.cardData.parlaState.person;
+
+        } else if (this.type === 'party') {
+            state.parties = this.cardData.parlaState.parties;
+        }
+
+        if (this.selectedMonths.length > 0) {
+          // since dates in month dropdown are generated as m-y we need to prepare them as 1.m.y
+          state.time_filter = this.selectedMonths.map(m => {
+            const [year, month] = m.id.split('-');
+            return [1, month, year].join('.');
+          });
+        }
+
+        if (this.selectedSessions.length > 0) {
+          state.wb = this.selectedSessions.map(s => s.id);
+        }
+
+        if (this.selectedPeople.length > 0) {
+          state.people = this.selectedPeople.map(person => person.id);
+        }
+
+        state.textFilter = this.textFilter.length ? this.textFilter : '*';
+
+        if (this.type === 'person') {
+          return `https://glej.parlameter.si/p/govori/${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`
+        }
+        return `https://glej.parlameter.si/ps/govori/${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`
+      },
       cardUrl() {
 
         const state = {}
@@ -178,7 +214,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
           state.people = this.selectedPeople.map(person => person.id);
         }
 
-        var encodedQueryData = '';
+        let encodedQueryData = '';
         if (Object.keys(state).length !== 0) {
           encodedQueryData = this.encodeQueryData(state);
         }

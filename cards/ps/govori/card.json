@@ -3,7 +3,7 @@
   "name": "Govori",
   "dataUrl": "https://analize.parlameter.si/v1/",
   "type": "empty",
-  "lastUpdate": "2017-12-20T11:33:30.930Z",
+  "lastUpdate": "2018-01-03T09:07:33.795Z",
   "method": "govori",
   "group": "ps",
   "big": true,
