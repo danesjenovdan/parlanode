@@ -1234,7 +1234,35 @@ const routes = [
             });
 
         }
-      }
+      },
+      {
+        name      : 'steviloVlozenihAmandmajev',
+        sourceUrl : '/ps/st-vlozenih-amandmajev/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId           = psData.psId;
+              let psSlug         = psData.psSlug;
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : psId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+
+        }
+      },
     ]
   },
   {
@@ -1277,34 +1305,6 @@ const routes = [
         resolve   : (req, res, route, card) => {
 
           console.log('something else');
-
-          return getPSIdByName(req.params.fullName, req)
-            .then((psData) => {
-              let psId           = psData.psId;
-              let psSlug         = psData.psSlug;
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : psId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-                  return res.text();
-                })
-                .then((body) => {
-                  return body;
-                });
-            });
-
-        }
-      },
-      {
-        name      : 'steviloVlozenihAmandmajev',
-        sourceUrl : '/ps/st-vlozenih-amandmajev/:id',
-        resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
