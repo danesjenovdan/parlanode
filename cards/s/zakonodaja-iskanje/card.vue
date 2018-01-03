@@ -1,9 +1,10 @@
 <template>
   <card-wrapper
-          class="card-halfling card-seznam-zakonov"
-          :card-url="generatedCardUrl"
-          :header-config="headerConfig">
-
+    :id="$options.cardData.cardData._id"
+    class="card-halfling card-seznam-zakonov"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+  >
     <div slot="info" v-html="infoText"></div>
 
     <sortable-table
@@ -15,7 +16,6 @@
             :sort-callback="selectSort"
     />
   </card-wrapper>
-  </div>
 
 </template>
 
