@@ -1,9 +1,21 @@
-<svg fill="#D9776B" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve"><style type="text/css">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
 	.st0{fill:none;stroke:#D9776B;stroke-width:2;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#D9776B;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#D9776B;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#D9776B;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:2,2.5;}
-	.st4{fill:none;stroke:#D9776B;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:2;}
-	.st5{fill:none;stroke:#D9776B;stroke-width:2;stroke-linejoin:bevel;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#D9776B;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:2,2;}
-</style><g><path class="st0" d="M16,13.2V5H9v8.2c0,2.2-1.3,4.3-3.5,5.4l0,0C3.3,19.7,2,21.8,2,24v23h21V24c0-2.2-1.3-4.3-3.5-5.4l0,0   C17.3,17.5,16,15.5,16,13.2z"></path><g><g><path class="st0" d="M36.8,36L36.8,36c-5.4,0-9.6-4.6-9.2-10l1.2-14h16L46,26C46.4,31.4,42.2,36,36.8,36z"></path><line class="st0" x1="36.8" y1="36" x2="36.8" y2="47"></line><line class="st0" x1="30.8" y1="47" x2="42.8" y2="47"></line></g><polyline class="st0" points="28.2,19 32.5,21 36.8,19 41.1,21 45.4,19   "></polyline></g><rect x="6" y="1" class="st0" width="13" height="4"></rect></g></svg>
+</style>
+<g>
+	<path class="st0" d="M18.7,16.5v-5.7h-4.9v5.7c0,1.5-0.9,3-2.4,3.8l0,0C9.9,21,9,22.4,9,24v16h14.6V24c0-1.5-0.9-3-2.4-3.8l0,0
+		C19.6,19.5,18.7,18.1,18.7,16.5z"/>
+	<g>
+		<g>
+			<path class="st0" d="M33.2,32.3L33.2,32.3c-3.8,0-6.7-3.2-6.4-6.9l0.8-9.7h11.1l0.8,9.7C39.8,29.1,36.9,32.3,33.2,32.3z"/>
+			<line class="st0" x1="33.2" y1="32.3" x2="33.2" y2="40"/>
+			<line class="st0" x1="29" y1="40" x2="37.3" y2="40"/>
+		</g>
+		<polyline class="st0" points="27.2,20.5 30.2,21.9 33.2,20.5 36.2,21.9 39.1,20.5 		"/>
+	</g>
+	<rect x="11.8" y="8" class="st0" width="9" height="2.8"/>
+</g>
+</svg>
