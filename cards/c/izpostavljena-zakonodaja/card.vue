@@ -16,7 +16,7 @@
             <p-tabs :start-tab="selectedTab">
                 <p-tab label="Trenutno v obravnavi">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.accepted">
+                        <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration">
                             <a class="legislation__wrapper--link" :href="slugs.legislationLink + legislation.epa"></a>
                             <div class="legislation__single">
                                 <div class="icon">
@@ -33,7 +33,7 @@
                 </p-tab>
                 <p-tab label="Nedavno sprejeto">
                     <div class="legislation row">
-                        <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration">
+                        <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.accepted">
                             <a class="legislation__wrapper--link" :href="slugs.legislationLink + legislation.epa"></a>
                             <div class="legislation__single">
                                 <div class="icon">
