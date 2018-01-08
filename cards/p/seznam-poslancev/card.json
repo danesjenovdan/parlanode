@@ -5,5 +5,7 @@
   "type": "seznam_poslancev",
   "lastUpdate": "2018-01-08T09:45:55.868Z",
   "method": "seznam-poslancev",
-  "group": "p"
+  "group": "p",
+  "big": true,
+  "high": false
 }

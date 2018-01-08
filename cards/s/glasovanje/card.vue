@@ -46,15 +46,15 @@
         />
       </div> -->
     </div>
-    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
+    <!-- TODO please return excerpt -->
+    <!-- <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
       :content="data.abstract || ''"
       :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
       :documents="data.documents"
       class="visible-xs"
       v-if="showMobileExcerpt"
-      :show-parent="true"
-    />
+    /> -->
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="visible-xs">
       <p-tab label="Poslanci">
         <poslanci
@@ -93,7 +93,7 @@
           :documents="data.documents"
           :show-parent="true"
         />
-      </p-tab>
+      </p-tab> -->
       <p-tab label="Poslanci">
         <poslanci
           :members="data.members"

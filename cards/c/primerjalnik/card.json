@@ -5,5 +5,7 @@
   "type": "primerjalnik",
   "lastUpdate": "2018-01-08T09:46:32.777Z",
   "method": "primerjalnik",
-  "group": "c"
+  "group": "c",
+  "big": true,
+  "high": true
 }
