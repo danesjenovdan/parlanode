@@ -14,6 +14,14 @@ export const partyVotes = {
   },
 };
 
+export const partySpeeches = {
+  created() {
+    const party = this.$root.$options.cardData.data.party || this.$root.$options.cardData.data.organization;
+    this.$root.$options.cardData.template.contextUrl =
+      `${this.slugs.base}/poslanska-skupina/${this.slugs.party[party.id].slug}${this.slugs.partyLink.govori}`;
+  },
+};
+
 export const memberOverview = {
   created() {
     this.$root.$options.cardData.template.contextUrl =

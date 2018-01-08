@@ -1,0 +1,102 @@
+{
+  "party": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "17.12.2017",
+  "created_for": "17.12.2017",
+  "results": [{
+    "term": "ZDoh",
+    "scores": {
+      "tf": 21,
+      "df": 7,
+      "tf-idf": 3.0
+    }
+  }, {
+    "term": "porotnica",
+    "scores": {
+      "tf": 29,
+      "df": 22,
+      "tf-idf": 1.3181818181818181
+    }
+  }, {
+    "term": "podprogram",
+    "scores": {
+      "tf": 603,
+      "df": 496,
+      "tf-idf": 1.215725806451613
+    }
+  }, {
+    "term": "glasovati",
+    "scores": {
+      "tf": 14634,
+      "df": 12350,
+      "tf-idf": 1.1849392712550608
+    }
+  }, {
+    "term": "navzo\u010d",
+    "scores": {
+      "tf": 2584,
+      "df": 2312,
+      "tf-idf": 1.1176470588235294
+    }
+  }, {
+    "term": "HE",
+    "scores": {
+      "tf": 55,
+      "df": 50,
+      "tf-idf": 1.1
+    }
+  }, {
+    "term": "KSEVT",
+    "scores": {
+      "tf": 48,
+      "df": 44,
+      "tf-idf": 1.0909090909090908
+    }
+  }, {
+    "term": "ustavno&shy;revizijski",
+    "scores": {
+      "tf": 29,
+      "df": 29,
+      "tf-idf": 1.0
+    }
+  }, {
+    "term": "glasovnica",
+    "scores": {
+      "tf": 151,
+      "df": 171,
+      "tf-idf": 0.8830409356725146
+    }
+  }, {
+    "term": "amandma",
+    "scores": {
+      "tf": 7083,
+      "df": 8050,
+      "tf-idf": 0.8798757763975156
+    }
+  }, {
+    "term": "zakon",
+    "scores": {
+      "tf": 34542,
+      "df": 42151,
+      "tf-idf": 0.8194823373110959
+    }
+  }, {
+    "term": "predlog",
+    "scores": {
+      "tf": 29800,
+      "df": 36630,
+      "tf-idf": 0.8135408135408135
+    }
+  }, {
+    "term": "Kum",
+    "scores": {
+      "tf": 13,
+      "df": 16,
+      "tf-idf": 0.8125
+    }
+  }]
+}
