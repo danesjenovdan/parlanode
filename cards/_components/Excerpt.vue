@@ -159,7 +159,7 @@ hr {
       flex: 1;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 80%;
+      background-size: 65%;
       width: 100px;
       height: 100px;
       background-color: $white;
@@ -176,6 +176,9 @@ hr {
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 40px;
+
+    display: flex;
+    align-items: center;
 
     &.show-parent {
       max-height: 349px;
