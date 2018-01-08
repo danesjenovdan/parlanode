@@ -99,6 +99,7 @@ export default {
   padding: 40px;
   background: $grey;
   height: 442px;
+  position: relative;
 }
 
 hr {
