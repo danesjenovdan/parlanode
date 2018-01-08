@@ -48,9 +48,7 @@ export default {
   },
   methods: {
     decodeHTML(html) {
-      const txt = document.createElement('textarea');
-      txt.innerHTML = html;
-      return txt.value;
+      return html.replace('&shy;', '\u00AD');
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
