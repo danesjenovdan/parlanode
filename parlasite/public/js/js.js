@@ -209,7 +209,7 @@ $(function () {
         $("#session_search_results .getmedata-legislation").each(function (e, urlid) { // TODO !!!!!! move from localhost
             var urlid = $(this).attr('id');
             console.log("https://isci.parlameter.si/l/" + (querystringVoting));
-            var url = ("http://glej.parlameter.si/s/zakonodaja-iskanje/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/l/" + (querystringVoting)));
+            var url = ("http://knedl.si:3000/s/zakonodaja-iskanje/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/l/" + (querystringVoting)));
             console.log(url);
             $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
 
