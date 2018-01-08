@@ -17,6 +17,7 @@
       :placeholder="adjustedPlaceholder">
     <ul
       :class="['search-dropdown-options', { visible: this.active, up: this.up }]"
+      :style="{'margin-top': upMargin}"
       @mouseleave="focus(-1)">
       <template v-for="(item, index) in filteredItems">
         <li
@@ -50,10 +51,18 @@ export default {
     filter: '',
     active: false,
     focused: -1,
+    upMargin: 0,
   }),
   watch: {
     filter() {
       this.focus(this.focused);
+    },
+    active() {
+      this.$nextTick(() => {
+        if (this.up) {
+          this.upMargin = `-${this.$el.querySelector('.search-dropdown-options').getBoundingClientRect().height + 39}px`;
+        }
+      });
     },
   },
   computed: {
@@ -224,7 +233,6 @@ export default {
 @import '~parlassets/scss/colors';
 
 .up {
-  margin-top: -269px;
   border-bottom: none;
   border-top: 1px solid $grey-medium;
 }
