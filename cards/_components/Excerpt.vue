@@ -71,7 +71,7 @@ export default {
     mappedDocuments() {
       return this.documents.map((document, index) => ({
         id: document.name + index,
-        label: document.namePa.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
+        label: document.name.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
         selected: false,
         url: document.url,
       }));
@@ -132,7 +132,7 @@ hr {
     margin-top: 12px;
     @include respond-to(desktop) {
       margin-left: 12px;
-      width: 160px;
+      min-width: 160px;
     }
   }
 }
@@ -272,5 +272,11 @@ hr {
 
 .search-dropdown-input {
   background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }
+
+.search-dropdown-label {
+  font-family: 'Roboto', sans-serif;
+}
+
 </style>

@@ -3,8 +3,8 @@
   "created_for": "11.12.2017",
   "classification": "zakon",
   "tags": ["Komisija za nadzor javnih financ", "Kolegij predsednika Dr\u017eavnega zbora", "Komisija za narodni skupnosti", "Komisija za odnose s Slovenci v zamejstvu in po svetu", "Komisija za poslovnik", "Mandatno-volilna komisija", "Odbor za delo, dru\u017eino, socialne zadeve in invalide", "Odbor za finance in monetarno politiko", "Odbor za gospodarstvo", "Odbor za infrastrukturo, okolje in prostor", "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino", "Odbor za kmetijstvo, gozdarstvo in prehrano", "Odbor za kulturo", "Odbor za notranje zadeve, javno upravo in lokalno samoupravo", "Odbor za obrambo", "Odbor za pravosodje", "Odbor za zadeve Evropske unije", "Odbor za zdravstvo", "Odbor za zunanjo politiko", "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in", "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji", "Ustavna komisija", "Proceduralna glasovanja", "Zunanja imenovanja", "Poslanska vpra\u0161anja", "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb", "Preiskovalne komisije", "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti", "Interpelacija", " Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investicij"],
-  "text": "Zakon o motornih vozilih",
-  "abstract": "<p>Zakon nadome&scaron;\u010da veljavni Zakona o motornih vozilih. Bistvene spremembe se nana&scaron;ajo na:</p>\r\n<ul>\r\n<li>prenos relevantnih direktiv EU v nacionalni pravni red,</li>\r\n<li>dolo\u010ditev kazenskih dolo\u010db za proizvajalce, ki dajejo na trg nehomologirana vozila ali njihove dele,</li>\r\n<li>mo\u017enost pridobitve potrdila o skladnosti vozila brez izvedbe postopka registracije (za vozila, ki jih sicer ni potrebno registrirati - na primer delovni stroji),</li>\r\n<li>dolo\u010ditev obveznosti lastnika vozila, da se odzove na odpoklic vozila zaradi odprave resne napake (prepoved registracije oziroma podalj&scaron;anja veljavnosti prometnega dovoljenja),</li>\r\n<li>dolo\u010ditev obveznosti tujca, da v 30 dneh po tem, ko se preseli v Slovenijo, registrira svoje vozilo,</li>\r\n<li>ukinitev posebnih tablic za starodobna vozila,</li>\r\n<li>uvedbo videonadzora preizku&scaron;evalnih stez na tehni\u010dnih pregledih,</li>\r\n<li>dopolnitev nalog in&scaron;pektorjev.</li>\r\n</ul>",
+  "text": "Zakon o spremembi Zakona o interventnem ukrepu na podro\u010dju trga dela",
+  "abstract": "\r\n<p>S spremembo zakona se mo\u017enost uveljavljanja za\u010dasne spodbude za zaposlovanje starej&scaron;ih brezposelnih oseb v obliki oprostitve pla\u010dila prispevkov delodajalca, podalj&scaron;uje do konca leta 2019.</p>",
   "session": {
     "name": "36. redna seja",
     "orgs": [{
@@ -26,46 +26,61 @@
     "id": 9922
   },
   "result": "sprejet",
-  "icon": "motorna-vozila.svg",
+  "icon": "",
   "votes": [{
-    "abstain": 5,
-    "tags": ["Odbor za infrastrukturo, okolje in prostor"],
-    "text": "Zakon o motornih vozilih - Glasovanje o zakonu v celoti",
+    "abstain": 1,
+    "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+    "text": "Zakon o spremembi Zakona o interventnem ukrepu na podro\u010dju trga dela - Glasovanje o zakonu v celoti",
     "is_outlier": false,
-    "votes_for": 48,
+    "votes_for": 72,
     "result": true,
-    "documents": [],
-    "against": 14,
-    "motion_id": 7989,
+    "documents": [{
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cf8ceb4a732f7cf173663c497fd74de927cda668f3564913915fd3f3",
+      "name": "Besedilo Predloga zakona o spremembi Zakona o interventnem ukrepu na podro\u010dju trga dela"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00564013fabe2b92a8d6a29c695ebdbe4b8a9c5a7ef8b489372615be02d",
+      "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e533768fef002f938988c6bc5f29989ad4199d2792e95737ac0d9fd7",
+      "name": "Obvestilo o dodelitvi"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059eabaaa329e18f477703156c09295f7f6104cd592aa8c7dc87f98c20",
+      "name": "Mnenje"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d4c546bd5667c8e89051863111525f6c9a7216d83d9e01dcc5716891",
+      "name": "Poro\u010dilo"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00501c6e669ad1fcd1c88f8ac83d96218d117d7a7380be82c19ce23e53b",
+      "name": "Mnenje Komisije Dr\u017eavnega sveta za socialno varstvo, delo, zdravstvo in invalide k Predlogu zakona o spremembah in dopolnitvah Zakona o interventnem ukrepu na podro\u010dju trga dela"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a558c034d39080a74886e22951e80791519664936a5fb713223360fb",
+      "name": "Predlog za uvrstitev to\u010dk na dnevni red 36. seje Dr\u017eavnega zbora"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00595d24f28da1df9f979d33fd18cebf7259ebb34767ebceb8140ebb4f7",
+      "name": "Pripombe na Predlog zakona o spremembi Zakona o interventnem ukrepu na podro\u010dju trga dela"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ac1ed14fcdef2f3ee110cf4673e800b12d32c136676df6fd3ea53c0d",
+      "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b304f8566264288b196d3a143d905e20492966bfa2b6a5e0407401c5",
+      "name": "Dopis Dr\u017eavnemu svetu"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005facb3414bd1cd821ffadcfd2493e1be15f06c6f8f211b984e9175ab0",
+      "name": "Besedilo zakona poslano Uradnemu listu"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054b9978143986e60682f8c8efa6cf8e0ab83ab46035898394978598f6",
+      "name": "Dopis predsedniku Republike Slovenije"
+    }, {
+      "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056e1882d09bff50371563a71fe1b2be32e6385edcc9c1c4810ba3520b",
+      "name": "Dopis Uradnemu listu"
+    }],
+    "against": 0,
+    "motion_id": 8000,
     "has_outliers": false,
-    "not_present": 23
-  }, {
-    "abstain": 5,
-    "tags": ["Odbor za infrastrukturo, okolje in prostor"],
-    "text": "Zakon o motornih vozilih - Amandma: K 87. \u010dlenu 5.12.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-    "is_outlier": false,
-    "votes_for": 16,
-    "result": false,
-    "documents": [],
-    "against": 46,
-    "motion_id": 7990,
-    "has_outliers": false,
-    "not_present": 23
-  }, {
-    "abstain": 4,
-    "tags": ["Odbor za infrastrukturo, okolje in prostor"],
-    "text": "Zakon o motornih vozilih - Amandma: K 30. \u010dlenu 5.12.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-    "is_outlier": false,
-    "votes_for": 21,
-    "result": false,
-    "documents": [],
-    "against": 42,
-    "motion_id": 7991,
-    "has_outliers": true,
-    "not_present": 23
+    "not_present": 17
   }],
-  "extra_abstract": "<p>Zakon nadome&scaron;\u010da veljavni Zakona o motornih vozilih. Bistvene spremembe se nana&scaron;ajo na:</p>\r\n<ul>\r\n<li>prenos relevantnih direktiv EU v nacionalni pravni red,</li>\r\n<li>dolo\u010ditev kazenskih dolo\u010db za proizvajalce, ki dajejo na trg nehomologirana vozila ali njihove dele,</li>\r\n<li>mo\u017enost pridobitve potrdila o skladnosti vozila brez izvedbe postopka registracije (za vozila, ki jih sicer ni potrebno registrirati - na primer delovni stroji),</li>\r\n<li>dolo\u010ditev obveznosti lastnika vozila, da se odzove na odpoklic vozila zaradi odprave resne napake (prepoved registracije oziroma podalj&scaron;anja veljavnosti prometnega dovoljenja),</li>\r\n<li>dolo\u010ditev obveznosti tujca, da v 30 dneh po tem, ko se preseli v Slovenijo, registrira svoje vozilo,</li>\r\n<li>ukinitev posebnih tablic za starodobna vozila,</li>\r\n<li>uvedbo videonadzora preizku&scaron;evalnih stez na tehni\u010dnih pregledih,</li>\r\n<li>dopolnitev nalog in&scaron;pektorjev.</li>\r\n</ul>",
+  "extra_abstract": null,
   "created_at": "16.12.2017",
   "abstractVisible": true,
-  "epa": "2221-VII"
+  "epa": "2233-VII"
 }
