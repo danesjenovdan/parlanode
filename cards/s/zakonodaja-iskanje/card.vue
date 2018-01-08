@@ -49,7 +49,8 @@
     computed: {
       columns: () => [
         { id: 'name', label: 'Ime', additionalClass: 'small-text' },
-        { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'small-text' },
+        // { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'small-text' },
+        { id: 'epa', label: 'EPA', additionalClass: 'small-text'},
         { id: 'result', label: 'Status', additionalClass: '' },
       ],
       infoText () {
@@ -90,7 +91,7 @@
           const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
           return [
             {html: `<a href="${this.slugs.legislationLink}${legislation.id}" class="funblue-light-hover">${legislation.text_t[0]}</a>`},
-            {text: typeof legislation.mdt !== 'undefined' ? legislation.mdt.join(', ') : ''},
+            {text: typeof legislation.id !== 'undefined' ? legislation.id : ''},
             {html: outcomeHtml},
           ];
         })
@@ -105,10 +106,10 @@
               b = B.text_t[0];
               return a.toLowerCase().localeCompare(b.toLowerCase());
               break;
-            case 'workingBody':
-              a = typeof A.mdt !== 'undefined' ? A.mdt.join(', ') : '';
-              b = typeof B.mdt !== 'undefined' ? B.mdt.join(', ') : '';
-              return a.localeCompare(b, 'sl');
+            case 'epa':
+              a = typeof A.id !== 'undefined' ? A.id : '';
+              b = typeof B.id !== 'undefined' ? B.id : '';
+              return parseInt(a) - parseInt(b);
               break;
             case 'result':
               a = A.result || 'v obravnavi';
