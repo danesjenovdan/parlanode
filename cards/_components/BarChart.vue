@@ -69,6 +69,16 @@ export default {
   overflow: hidden;
 
   .labeled-chart .column.chart { flex: 4; }
+  .chart-label {
+    .label-container {
+      a {
+        font-size: 16px;
+        @include respond-to(mobile) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 .progress_number {
   @include respond-to(mobile) { display: none; }
