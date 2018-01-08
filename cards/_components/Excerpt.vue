@@ -1,11 +1,19 @@
 <template>
   <div class="excerpt">
-    <div class="rich-text" v-html="content" v-if="content || (content.length !== 0)" />
+    <div class="icon-container" :class="{'show-parent': showParent}"
+      v-if="icon"
+    >
+      <div class="icon" :style="{'background-image': `url('https://cdn.parlameter.si/v1/parlassets/icons/legislation/${icon}')`}"></div>
+    </div>
+    <div class="rich-text" v-if="content || (content.length !== 0)" :class="{'show-parent': showParent}">
+      <div class="text-container" v-html="content">
+      </div>
+    </div>
     <div class="no-abstract" v-else>
       <p>Za ta zakon žal nimamo izvlečka.</p>
     </div>
-    <div class="metacontainer">
-      <hr v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)">
+    <div class="metacontainer" v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)">
+      <hr>
       <div class="metadata">
         <div class="main-law-label" v-if="(mainLaw.epa !== '') && showParent">
           Matični zakon:
@@ -53,13 +61,17 @@ export default {
     showParent: {
       type: Boolean,
       default: true,
-    }
+    },
+    icon: {
+      type: String,
+      required: false,
+    },
   },
   computed: {
     mappedDocuments() {
       return this.documents.map((document, index) => ({
         id: document.name + index,
-        label: document.name.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
+        label: document.namePa.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
         selected: false,
         url: document.url,
       }));
@@ -84,7 +96,7 @@ export default {
   font-weight: 300;
   line-height: 1.5em;
   margin: 12px 0;
-  padding: 12px;
+  padding: 40px;
   background: $grey;
   height: 442px;
 }
@@ -127,28 +139,90 @@ hr {
 
 <style lang="scss">
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
-.excerpt .rich-text {
-  height: 349px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  ul {
-    padding-left: 14px;
-    margin-bottom: 1em;
-    li {
+.excerpt {
+  display: flex;
+  flex-wrap: no-wrap;
+
+  .icon-container {
+    display: flex;
+    @include respond-to(mobile) {
+      display: none;
+    }
+    &.show-parent {
+      max-height: 349px;
+    }
+    .icon {
+      display: block;
+      flex: 1;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      width: 100px;
+      height: 100px;
+      background-color: $white;
+      border-radius: 50%;
+      align-self: center;
+
+    }
+    // padding-left: 20px;
+    // padding-right: 20px;
+  }
+  
+  .rich-text {
+    min-height: 349px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 40px;
+
+    &.show-parent {
+      max-height: 349px;
+      @include respond-to(mobile) {
+        padding: 0;
+        min-height: 320px;
+      }
+    }
+
+    @include respond-to(mobile) {
+      padding: 0;
+      height: 320px;
+    }
+
+    p {
+      flex: 2;
+      font-size: 18px;
+      border-bottom: 1px solid $black;
+      margin-bottom: 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+
+    ul {
+      padding-left: 0;
       margin-bottom: 1em;
-      list-style-type: none;
-      padding-left: 20px;
+      font-size: 14px;
+      li {
+        list-style-type: none;
+        padding-left: 20px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid $black;
 
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/puscica-izvlecki.svg');
-        background-size: contain;
-        margin-right: 5px;
-        margin-left: -18px;
+        &:last-child {
+          border-bottom: none !important;
+        }
+
+        // &::before {
+        //   content: '';
+        //   display: inline-block;
+        //   width: 10px;
+        //   height: 10px;
+        //   background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/puscica-izvlecki.svg');
+        //   background-size: contain;
+        //   margin-right: 5px;
+        //   margin-left: -18px;
+        // }
       }
     }
   }
@@ -187,8 +261,9 @@ hr {
 
 .metacontainer {
   position: absolute;
-  width: calc(100% - 24px);
+  width: calc(100% - 80px);
   bottom: 30px;
+  background: $grey;
 }
 
 .search-dropdown-input {

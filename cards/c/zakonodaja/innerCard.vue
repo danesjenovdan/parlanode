@@ -127,6 +127,7 @@ export default {
           height: 38px;
           background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
           background-size: contain !important;
+          background-repeat: no-repeat;
         }
       }
     }
