@@ -82,7 +82,7 @@ export default {
       return this.slugs
         ? this.slugs.base + this.slugs.partyLink.base +
           this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
-        : `/poslanska-skupina/${party.acronym}/pregled`;
+        : `/poslanska-skupina/${party.acronym.toLowerCase()}/pregled`;
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
