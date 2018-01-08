@@ -1,0 +1,11 @@
+{
+  "_id": "ps_tfidf",
+  "name": "Besede, ki jo/ga zaznamujejo",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getTFIDF",
+  "type": "poslanska_skupina",
+  "lastUpdate": "2018-01-08T21:34:03.550Z",
+  "method": "tfidf",
+  "group": "ps",
+  "high": false,
+  "big": false
+}
