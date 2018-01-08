@@ -50,7 +50,8 @@
       "is_outlier": false,
       "not_present": 23,
       "votes_for": 64,
-      "result": true
+      "result": true,
+      "epa": "1234-VII"
     }
   }, {
     "session": {

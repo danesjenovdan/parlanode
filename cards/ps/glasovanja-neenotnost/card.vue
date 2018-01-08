@@ -28,13 +28,13 @@
         <div class="filter-label">Išči po naslovu glasovanja</div>
         <input class="text-filter-input" type="text" v-model="textFilter">
       </div>
+      <div class="filter type-dropdown">
+        <div class="filter-label">Tipi glasovanja</div>
+        <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
+      </div>
       <div class="filter tag-dropdown">
         <div class="filter-label">Matično delovno telo</div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
-      </div>
-      <div class="filter month-dropdown">
-        <div class="filter-label">Časovno obdobje</div>
-        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></p-search-dropdown>
       </div>
       <div class="filter text-filter">
         <div class="filter-label">Razvrsti po</div>
@@ -107,6 +107,8 @@ export default {
       }
     });
 
+    let allClassifications = [];
+
     namedGroups = sortBy(namedGroups, 'name');
     groups = groups.concat(namedGroups);
 
@@ -117,34 +119,38 @@ export default {
       sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
       textFilter: '',
       allTags: [],
-      allMonths: [2017, 2016, 2015, 2014, 2013]
-        .map(year =>
-          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month =>
-            ({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false }),
-          ),
-        )
-        .reduce((sum, element) => sum.concat(element), []),
+      // allMonths: [2017, 2016, 2015, 2014, 2013]
+      //   .map(year =>
+      //     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month =>
+      //       ({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false }),
+      //     ),
+      //   )
+      //   .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
       groups,
+      allClassifications,
       cardData: this.$options.cardData,
     };
   },
   computed: {
+    classificationPlaceholder() {
+      return this.selectedClassifications.length > 0 ? `Izbranih: ${this.selectedClassifications.length}` : 'Izberi';
+    },
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
     },
-    monthPlaceholder() {
-      return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
-    },
+    // monthPlaceholder() {
+    //   return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+    // },
     dropdownItems() {
       const validTags = [];
-      const validMonths = [];
+      // const validMonths = [];
 
       this.getFilteredVotingDays().forEach((votingDay) => {
-        const year = votingDay.date.split(' ')[2].split('-')[0];
-        const month = votingDay.date.split(' ')[1].split('.')[0];
-        const monthId = `${year}-${month}`;
-        if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+        // const year = votingDay.date.split(' ')[2].split('-')[0];
+        // const month = votingDay.date.split(' ')[1].split('.')[0];
+        // const monthId = `${year}-${month}`;
+        // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
 
         votingDay.ballots
           .forEach((ballot) => {
@@ -156,7 +162,8 @@ export default {
 
       return {
         tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
+        classifications: this.allClassifications
+        // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
     selectedTags() {
@@ -164,9 +171,14 @@ export default {
         .filter(tag => tag.selected)
         .map(tag => tag.id);
     },
-    selectedMonths() {
-      return this.allMonths.filter(month => month.selected);
+    selectedClassifications() {
+      return this.allClassifications
+        .filter(classification => classification.selected)
+        .map(classification => classification.id);
     },
+    // selectedMonths() {
+    //   return this.allMonths.filter(month => month.selected);
+    // },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
     },
@@ -187,7 +199,8 @@ export default {
       const state = {};
 
       if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
+      if (this.selectedClassifications.length > 0) state.classifications = this.selectedClassifications;
       if (this.textFilter.length > 0) state.text = this.textFilter;
       if (this.selectedSort.length > 0) state.sort = this.selectedSort;
       if (this.selectedGroup.length > 0) state.selectedGroup = this.selectedGroup;
@@ -204,20 +217,22 @@ export default {
           ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
         const textMatch = this.textFilter === '' ||
           ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0 ||
+          this.selectedClassifications.indexOf(ballot.classification) > -1;
 
-        return tagMatch && textMatch;
+        return tagMatch && textMatch && classificationMatch;
       };
 
-      const filterDates = (votingDay) => {
-        if (onlyFilterByText || this.selectedMonths.length === 0) return true;
-
-        const year = parseInt(votingDay.date.split(' ')[2].split('-')[0], 10);
-        const month = parseInt(votingDay.date.split(' ')[1].split('.')[0], 10);
-
-        console.log(this.selectedMonths);
-
-        return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-      };
+      // const filterDates = (votingDay) => {
+      //   if (onlyFilterByText || this.selectedMonths.length === 0) return true;
+      //
+      //   const year = parseInt(votingDay.date.split(' ')[2].split('-')[0], 10);
+      //   const month = parseInt(votingDay.date.split(' ')[1].split('.')[0], 10);
+      //
+      //   console.log(this.selectedMonths);
+      //
+      //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
+      // };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
       const getDateFromVote = vote => {
@@ -242,7 +257,7 @@ export default {
 
       return mappedVotingDays
         .filter(votingDay => (votingDay.ballots.length > 0))
-        .filter(filterDates);
+        // .filter(filterDates);
     },
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
@@ -256,7 +271,16 @@ export default {
             tag => ({ id: tag, label: tag, selected: false }),
           );
         }
+
+
+
         this.voteData = response[acronym];
+
+        this.allClassifications = [];
+        console.log(response.classifications)
+        for (var classificationKey in response.classifications) {
+          this.allClassifications.push({ id: classificationKey, label: response.classifications[classificationKey], selected: false });
+        }
 
         const selectFromState = (items, stateItemIds) =>
           items.map(item =>
@@ -266,7 +290,8 @@ export default {
         if (this.cardData.parlaState) {
           const state = this.cardData.parlaState;
           if (state.text) this.textFilter = state.text;
-          if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
+          // if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
+          if (state.classifications) allClassifications = selectFromState(allClassifications, state.classifications)
           if (state.sort) this.selectedSort = state.sort;
           if (state.tags) this.allTags = selectFromState(this.allTags, state.tags);
           if (state.selectedGroup) this.selectedGroup = state.selectedGroup;
@@ -362,7 +387,7 @@ export default {
       background-position: right 9px center;
       border: 1px solid #c8c8c8;
       font-size: 16px;
-      height: 51px;
+      height: 53px;
       line-height: 27px;
       outline: none;
       padding: 12px 42px 12px 14px;
@@ -376,7 +401,7 @@ export default {
     width: 100%;
   }
 
-  .month-dropdown {
+  .type-dropdown {
     @include show-for(desktop);
 
     width: 17.5%;

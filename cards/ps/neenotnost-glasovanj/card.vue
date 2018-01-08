@@ -17,7 +17,11 @@ export default {
   mixins: [ urlFunctionalities ],
   name: 'NeenotnostGlasovanj',
   data() {
-    const infoText = '';
+    let infoText = `<p class="info-text lead">
+Neenotnost izbrane poslanske skupine na glasovanjih sej Državnega zbora v primerjavi s povprečno in najvišjo stopnjo neenotnosti med vsemi poslanskimi skupinami.</p>`;
+    infoText += `<p class="info-text heading">METODOLOGIJA</p>`;
+    infoText += `<p class="info-text text">Za vsako glasovanje za poslansko skupino preštejemo, koliko poslancev je oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo do 100 in dobimo stopnjo neenotnosti oz. odstotek poslank in poslancev, ki se z večinskim glasom niso strinjali.</p>`;
+
     return {
       infoText,
       urlParameters: {},

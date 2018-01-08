@@ -27,6 +27,11 @@
               :alphabetise="false">
             </p-search-dropdown>
           </div>
+
+          <div class="filter only-abstracts">
+            <input id="only-abstracts" type="checkbox" v-model="onlyAbstracts" class="checkbox" />
+            <label for="only-abstracts">Samo s povzetki</label>
+          </div>
         </div>
       </div>
     </div>
@@ -90,6 +95,7 @@
           title: this.$options.cardData.cardData.name,
         },
         allworkingBodies,
+        onlyAbstracts: false,
       };
     },
     computed: {
@@ -100,13 +106,23 @@
         return this.allworkingBodies.filter(wb => wb.selected).map(wb => wb.id);
       },
       columns: () => [
-        { id: 'name', label: 'Ime', additionalClass: '' },
+        { id: 'name', label: 'Ime', additionalClass: 'small-text' },
+        { id: 'epa', label: 'EPA', additionalClass: 'narrow' },
         { id: 'updated', label: 'Sprememba' },
-        { id: 'workingBody', label: 'Matično delovno telo', additionalClass: '' },
+        // { id: 'workingBody', label: 'Matično delovno telo', additionalClass: 'small-text' },
         { id: 'result', label: 'Status', additionalClass: '' },
       ],
-      infoText: () => {
-        return "Info";
+      infoText () {
+        const tabText = true === 'Zakoni' ? 'zakonov' : 'aktov';
+        let html = `<p class="info-text lead">Seznam vseh ${tabText}, o katerih so v tem sklicu glasovali na sejah Državnega zbora in ustrezajo uporabniškemu vnosu (naslov, matično delovno telo).</p>`;
+        html += '<p class="info-text heading">METODOLOGIJA</p>';
+
+        const link = this.currentFilter === 'Zakoni'
+          ? 'https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiZakonov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwN3I30wwkpiAJKG-AAjgb6BbmhigDW2mUM/dz/d5/L2dBISEvZ0FBIS9nQSEh'
+          : 'https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiAktov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwNLMz0wwkpiAJKG-AAjgb6BbmhigAUeAnK/dz/d5/L2dBISEvZ0FBIS9nQSEh/';
+        html += `<p class="info-text text">Podatke o sejah pridobivamo iz spletnega mesta <a class="funblue-light-hover" href="${link}">DZ RS</a>.</p>`;
+
+        return html;
       },
       generatedCardUrl() {
         const state = {};
@@ -123,10 +139,10 @@
           const textMatch = this.textFilter === '' || legislation.text === null || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
           const typeMatch = this.currentFilter === '' | legislation.classification === (this.currentFilter === 'Zakoni' ? 'zakon' : 'akt');
           const wbMatch = this.selectedWorkingBodies.length === 0 || this.selectedWorkingBodies.includes(legislation.mdt.id);
+          const onlyAbstractsMatch = !this.onlyAbstracts || legislation.abstractVisible;
 
-          return textMatch && typeMatch && wbMatch;
+          return textMatch && typeMatch && wbMatch && onlyAbstractsMatch;
         }
-        console.log(this.currentSort)
 
         const sortedAndFilteredLegislation = this.data.filter(filterLegislation).sort((A, B) => {
           let a,b;
@@ -156,6 +172,11 @@
               a = A.result || 'v obravnavi';
               b = B.result || 'v obravnavi';
               return a.toLowerCase().localeCompare(b.toLowerCase());
+              break;
+            case 'epa':
+              a = parseInt(A.epa || '0-VII');
+              b = parseInt(B.epa || '0-VII');
+              return a - b;
               break;
             default:
               return 0;
@@ -203,8 +224,6 @@
 
   .legislation-list {
     padding: 0;
-    margin-left: -9px;
-    margin-right: -9px;
 
     a {
       color: #009cda;
@@ -221,19 +240,29 @@
     .column{
       font-size: 16px;
 
-      @include respond-to(desktop) {
-        font-size:18px;
-      }
-
       &:nth-child(2),
-      &:nth-child(3) {
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) .text {
         @include respond-to(mobile) {
           display:none;
         }
       }
 
       &:nth-child(3) {
-        font-size:14px;
+        @include respond-to(desktop) {
+          padding-left: 40px;
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) .text {
+        font-size: 16px !important;
+      }
+
+      &.small-text {
+        font-size: 14px;
       }
 
 
@@ -332,6 +361,17 @@
           &:first-child {
             @include respond-to(desktop) { margin-right: 10px; }
           }
+        }
+      }
+
+      .only-abstracts {
+        padding-top: 40px;
+        padding-left: 10px;
+
+        @include respond-to(mobile) {
+          padding-top: 10px;
+          padding-left: 0;
+          margin-bottom: -5px;
         }
       }
 

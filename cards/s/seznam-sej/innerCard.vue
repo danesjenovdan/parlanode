@@ -59,7 +59,7 @@ export default {
   methods: {
     getSessionUrl(session) {
       if (!this.slugs || session.link_to === 'nothing') return '';
-      return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
+      return this.slugs.base + '/seja/zakonodaja/' + session.id;
     },
   },
   created() {

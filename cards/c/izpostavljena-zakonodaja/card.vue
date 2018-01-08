@@ -7,21 +7,17 @@
             contentHeight="518px">
 
         <div slot="info">
-            <p class="info-text lead">
-                Pregled osnovnih informacij poslanske skupine.
-            </p>
+            <p class="info-text lead">Iz nabora vseh zakonov, obravnavanih v tem sklicu, izberemo šest takšnih, ki so še v obravnavi in šest takšnih, ki so bili nedavno sprejeti.</p>
             <p class="info-text heading">METODOLOGIJA</p>
-            <p class="info-text">
-                Vsebine za to kartico smo pridobili s spletnega mesta DZ RS (poslanska skupina, starost, članstva v delovnih telesih) in s spletnega mesta DVK (število prejetih glasov). Za ostale vsebine smo se obrnili na PR službe poslanskih skupin. Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam.
-            </p>
+            <p class="info-text">Izpostavljene zakone kot edino stvar na Parlametru določamo uredniško in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi.</p>
         </div>
 
         <div class="p-tabs-2col legislation">
             <p-tabs :start-tab="selectedTab">
                 <p-tab label="Trenutno v obravnavi">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.accepted">
-                            <a :href="slugs.legislationLink + legislation.epa"></a>
+                        <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration">
+                            <a class="legislation__wrapper--link" :href="slugs.legislationLink + legislation.epa"></a>
                             <div class="legislation__single">
                                 <div class="icon">
                                     <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
@@ -37,8 +33,8 @@
                 </p-tab>
                 <p-tab label="Nedavno sprejeto">
                     <div class="legislation row">
-                        <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration">
-                            <a :href="slugs.legislationLink + legislation.epa"></a>
+                        <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.accepted">
+                            <a class="legislation__wrapper--link" :href="slugs.legislationLink + legislation.epa"></a>
                             <div class="legislation__single">
                                 <div class="icon">
                                     <div class="img-circle circle"><img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" /></div>
@@ -53,7 +49,7 @@
                 </p-tab>
             </p-tabs>
             <div class="legislation__all">
-                <a :href="`https://parlameter.si/${slugs.legislationLink}`">VSA ZAKONODAJA</a>
+                <a :href="`https://parlameter.si${slugs.legislationLink}`">VSA ZAKONODAJA</a>
             </div>
         </div>
 
@@ -135,7 +131,7 @@
                 height: 101px;
                 width: 102px;
                 background-color: $white;
-                padding: 27px 15px 24px 27px;
+                padding: 20px;
             }
 
             .icon {
@@ -145,6 +141,7 @@
 
         &__wrapper {
             margin-bottom: 15px;
+            position: relative;
 
             &:nth-child(odd)  {
                 @include respond-to(desktop) {
@@ -156,6 +153,15 @@
                 @include respond-to(desktop) {
                     padding-left: 7px;
                 }
+            }
+
+            &--link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
             }
         }
 

@@ -128,9 +128,18 @@
         e.percent_against = Math.floor(e.results.against / allInVotes * 100);
         e.percent_abstain = Math.floor(e.results.abstain / allInVotes * 100);
         e.percent_not_present = Math.floor(e.results.not_present / allInVotes * 100);
+        e.epa = e.results.epa;
 
         return e;
       });
+
+      let newVotes = votes;
+
+      if (this.$options.cardData.parlaState) {
+        if (this.$options.cardData.parlaState.onlyOther) {
+          newVotes = votes.filter(vote => !vote.epa);
+        }
+      }
 
       let allResults = [
         { id: true, color: 'binary-for', label: 'sprejet', selected: false },
@@ -174,7 +183,7 @@
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,
         textFilter,
-        votes,
+        votes: newVotes,
         allTags,
         allResults,
       };
@@ -456,7 +465,7 @@
         background-position: right 9px center;
         border: 1px solid #c8c8c8;
         font-size: 16px;
-        height: 51px;
+        height: 53px;
         line-height: 27px;
         outline: none;
         padding: 12px 42px 12px 14px;

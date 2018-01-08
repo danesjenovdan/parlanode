@@ -18,9 +18,9 @@
       </div>
       <p class="info-text heading">OZNAČEVANJE S STRELO</p>
       <p class="info-text">S strelo opozarjamo na razkole v poslanskih skupinah oziroma v koaliciji - izrišemo jo nad tistimi glasovanji,  ki vsebujejo glasove, ki niso enaki večinskemu glasu poslanske skupine / koalicije, pri čemer so odsotni glasovi izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.</p>
-      <p class="info-text heading">OZNAČEVANJE S PLAMENOM</p>
+      <!-- <p class="info-text heading">OZNAČEVANJE S PLAMENOM</p>
       <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis.</a></p>
-      <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
+      <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p> -->
     </div>
 
     <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
@@ -49,8 +49,8 @@
     <!-- TODO please return excerpt -->
     <!-- <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
-      :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
-      :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
+      :content="data.abstract || ''"
+      :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
       :documents="data.documents"
       class="visible-xs"
       v-if="showMobileExcerpt"
@@ -86,11 +86,12 @@
       </p-tab>
     </p-tabs>
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
-      <!-- <p-tab label="Izvleček" variant="light" v-if="data.abstractVisible">
+      <p-tab label="Povzetek" variant="light">
         <excerpt
-          :content="data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '')"
-          :main-law="{ epa: data.legislation.epa, name: data.legislation.text }"
+          :content="data.abstract || ''"
+          :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
           :documents="data.documents"
+          :show-parent="true"
         />
       </p-tab> -->
       <p-tab label="Poslanci">

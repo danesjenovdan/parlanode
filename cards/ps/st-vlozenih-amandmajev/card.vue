@@ -18,7 +18,10 @@
     mixins: [ urlFunctionalities ],
     name: 'StVlozenihAmandmajev',
     data() {
-      const infoText = '';
+      let infoText = '<p class="info-text lead">Št. amandmajev, ki jih je vložila ta poslanska skupina v primerjavi s povprečno in najvišjo vrednostjo med vsemi poslanskimi skupinami.</p>';
+      infoText += '<p class="info-text heading">METODOLOGIJA</p>';
+      infoText += '<p class="info-text text"><p class="info-text">Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" class="funblue-light-hover">spletnega mesta DZ</a>.</p></p>';
+
       return {
         infoText,
         urlParameters: {},

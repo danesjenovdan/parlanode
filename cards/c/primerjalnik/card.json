@@ -3,7 +3,7 @@
   "name": "Primerjalnik glasovanj",
   "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers/",
   "type": "primerjalnik",
-  "lastUpdate": "2018-01-03T15:20:13.456Z",
+  "lastUpdate": "2018-01-08T09:46:32.777Z",
   "method": "primerjalnik",
   "group": "c",
   "big": true,
