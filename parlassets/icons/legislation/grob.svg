@@ -1,7 +1,16 @@
-<svg fill="#4F6379" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 55 55" style="enable-background:new 0 0 55 55;" xml:space="preserve"><style type="text/css">
-	.st0{fill:none;stroke:#4F6379;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#4F6379;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#4F6379;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#4F6379;stroke-width:2;stroke-miterlimit:10;}
-	.st4{fill:none;}
-</style><g><path class="st3" d="M46.5,45.3479996h-38l1.9060726-3.2049561c0.9024343-1.517395,2.5373821-2.4472885,4.3028488-2.4472885   h25.5821552c1.7654686,0,3.4004173,0.9298935,4.3028526,2.4472885L46.5,45.3479996z"></path><path class="st3" d="M49.5009232,50.4744492H5.4990773c-0.5517755,0-0.9990773-0.4473-0.9990773-0.9990768V46.713131   c0-0.7539406,0.6111903-1.3651314,1.3651323-1.3651314h43.2697372c0.7539406,0,1.3651314,0.6111908,1.3651314,1.3651314v2.7622414   C50.5,50.0271492,50.0526962,50.4744492,49.5009232,50.4744492z"></path><path class="st3" d="M40.3042946,39.695755h-26V6.4147429c0-1.0433726,0.8458214-1.8891935,1.8891935-1.8891935h22.221611   c1.0433731,0,1.8891945,0.8458209,1.8891945,1.8891935V39.695755z"></path><line class="st3" x1="25.1354122" y1="21.1333714" x2="25.1354122" y2="34.8039093"></line><line class="st3" x1="22.1778431" y1="24.7340336" x2="28.0929813" y2="24.7340336"></line></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 55 55" style="enable-background:new 0 0 55 55;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#4F6379;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M42.6,42.4H12.6l1.5-2.5c0.7-1.2,2-1.9,3.4-1.9h20.1c1.4,0,2.7,0.7,3.4,1.9L42.6,42.4z"/>
+	<path class="st0" d="M44.9,46.5H10.3c-0.4,0-0.8-0.4-0.8-0.8v-2.2c0-0.6,0.5-1.1,1.1-1.1h34.1c0.6,0,1.1,0.5,1.1,1.1v2.2
+		C45.7,46.1,45.4,46.5,44.9,46.5z"/>
+	<path class="st0" d="M37.7,38H17.2V11.8c0-0.8,0.7-1.5,1.5-1.5h17.5c0.8,0,1.5,0.7,1.5,1.5V38z"/>
+	<line class="st0" x1="25.7" y1="23.4" x2="25.7" y2="34.1"/>
+	<line class="st0" x1="23.4" y1="26.2" x2="28.1" y2="26.2"/>
+</g>
+</svg>
