@@ -35,12 +35,13 @@
       ></result>
     </div>
     <p-tabs :start-tab="0">
-      <p-tab label="Izvleček" variant="light">
+      <p-tab label="Povzetek" variant="light">
         <excerpt
           :content="content"
           :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
           :documents="documents"
-          :show-parent="false"
+          :show-parent="true"
+          :icon="data.icon"
         />
       </p-tab>
       <p-tab label="Glasovanja">
@@ -48,6 +49,15 @@
           :data="data"
         >
         </seznam-glasovanj>
+      </p-tab>
+      <p-tab label="Drugi postopki" variant="dark" v-if="data.extra_abstract">
+        <excerpt
+          :content="data.extra_abstract || ''"
+          :main-law="{}"
+          :documents="[]"
+          :show-parent="false"
+          :icon="''"
+        />
       </p-tab>
     </p-tabs>
   </card-wrapper>
@@ -183,6 +193,8 @@ export default {
     padding: 10px 14px;
     position: relative;
 
+    justify-content: space-between;
+
     @include respond-to(desktop) {
       display: flex;
       margin-bottom: 24px;
@@ -193,6 +205,7 @@ export default {
       height: 38px;
       background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
       background-size: contain !important;
+      background-repeat: no-repeat;
     }
 
     .result {
@@ -232,11 +245,19 @@ export default {
 
       display: flex;
       align-items: center;
+      justify-content: flex-start;
+
+      font-family: 'Roboto Slab';
+
+      width: 100%;
 
       @include respond-to(mobile) {
         padding: 14px 0px 14px 0px;
         border-top: $section-border;
         border-bottom: $section-border;
+        width: auto;
+        text-align: center;
+        justify-content: center;
       }
     }
 
