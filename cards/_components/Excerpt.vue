@@ -172,13 +172,12 @@ hr {
   }
   
   .rich-text {
-    min-height: 349px;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 40px;
 
     display: flex;
-    align-items: center;
+    margin: auto;
 
     &.show-parent {
       max-height: 349px;
@@ -266,7 +265,7 @@ hr {
 .metacontainer {
   position: absolute;
   width: calc(100% - 80px);
-  bottom: 30px;
+  bottom: 10px;
   background: $grey;
 }
 
