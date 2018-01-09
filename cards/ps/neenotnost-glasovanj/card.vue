@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import urlFunctionalities from 'mixins/urlFunctionalities';
+// import urlFunctionalities from 'mixins/urlFunctionalities';
 import ScoreAvgMax from 'components/ScoreAvgMax.vue';
 
 export default {
   components: { ScoreAvgMax },
-  mixins: [ urlFunctionalities ],
+  // mixins: [ urlFunctionalities ],
   name: 'NeenotnostGlasovanj',
   data() {
     let infoText = `<p class="info-text lead">
@@ -30,6 +30,9 @@ Neenotnost izbrane poslanske skupine na glasovanjih sej Državnega zbora v prime
   computed: {
     getResults() {
       return { sessions: this.$options.cardData.data.result }
+    },
+    generatedCardUrl() {
+      return `https://glej.parlameter.si/ps/neenotnost-glasovanj/${this.$options.cardData.data.organization.id}?state={}`
     }
   },
   methods: {

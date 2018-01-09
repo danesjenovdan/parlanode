@@ -9,12 +9,12 @@
 </template>
 
 <script>
-  import urlFunctionalities from 'mixins/urlFunctionalities';
+  // import urlFunctionalities from 'mixins/urlFunctionalities';
   import ScoreAvgMax from 'components/ScoreAvgMax.vue';
 
 export default {
   components: { ScoreAvgMax },
-  mixins: [ urlFunctionalities ],
+  // mixins: [ urlFunctionalities ],
   name: 'NeujemanjeSPoslanskoSkupino',
   data() {
 
@@ -31,6 +31,9 @@ Za vsakega poslanca najdemo trenutno poslansko skupino in izračunamo odstotek u
   computed: {
     getResults() {
       return { sessions: this.$options.cardData.data.result };
+    },
+    generatedCardUrl() {
+      return `https://glej.parlameter.si/p/neujemanje-s-poslansko-skupino/${this.$options.cardData.data.person.id}?state={}`
     }
   },
   methods: {
