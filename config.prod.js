@@ -11,7 +11,7 @@ module.exports = {
     analize : 'https://analize.parlameter.si', // DATA URL BASE
   },
   apiPrefix       : '/api',
-  ogCapturePath   : './og',
-  ogRootUrl       : 'https://cdn.parlametre.si/v1/parlassets/og_cards/', // root url for OG images
+  ogCapturePath   : '/home/parladaddy/parlacdn/v1/parlassets/og_cards',
+  ogRootUrl       : 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
   cardCapturePath : '/home/parladaddy/parlacdn/v1/parlassets/card_captures', // where cards are stored
 };
