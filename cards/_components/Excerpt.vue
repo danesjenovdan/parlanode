@@ -5,7 +5,7 @@
     >
       <div class="icon" :style="{'background-image': `url('https://cdn.parlameter.si/v1/parlassets/icons/legislation/${icon}')`}"></div>
     </div>
-    <div class="rich-text" v-if="content || (content.length !== 0)" :class="{'show-parent': showParent}">
+    <div class="rich-text" v-if="content || (content.length !== 0)" :class="{'show-parent': showParent, 'show-documents': documents.length > 0}">
       <div class="text-container" v-html="content">
       </div>
     </div>
@@ -179,7 +179,8 @@ hr {
     display: flex;
     margin: auto;
 
-    &.show-parent {
+    &.show-parent,
+    &.show-documents {
       max-height: 349px;
       @include respond-to(mobile) {
         padding: 0;
