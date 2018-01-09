@@ -2190,12 +2190,22 @@ function createRoute(app, route) {
             console.log('orodja');
             const pageTitle = route.pageTitle;
             
-            const dataExtend = {
-              slug: req.slug,
-              activeMenu: 'orodja',
-              pageTitle: route.pageTitle,
-              views: views,
-            };
+            let dataExtend;
+            if (route.viewPath.indexOf('orodja/') > -1) {
+              dataExtend = {
+                slug: req.slug,
+                activeMenu: '',
+                pageTitle: route.pageTitle,
+                views: views,
+              };
+            } else {
+              dataExtend = {
+                slug: req.slug,
+                activeMenu: 'orodja',
+                pageTitle: route.pageTitle,
+                views: views,
+              };
+            }
 
             Object.assign(common, dataExtend);
 
@@ -2237,7 +2247,7 @@ function createRoute(app, route) {
                   const dataExtend = {
                     mp         : mpData.mp,
                     slug       : req.slug,
-                    activeMenu : activeMenu,
+                    activeMenu : route.viewPath,
                     pageTitle  : pageTitle,
                     views
                   };
@@ -2276,7 +2286,7 @@ function createRoute(app, route) {
                   const dataExtend = {
                     mp         : mpData.mp,
                     slug       : req.slug,
-                    activeMenu : activeMenu,
+                    activeMenu : route.viewPath,
                     pageTitle  : pageTitle,
                     views
                   };
@@ -2389,6 +2399,7 @@ function createRoute(app, route) {
         if (route.viewPath.indexOf("poslanci") > -1) {
 
           const pageTitle = ejs.render(route.pageTitle);
+          console.log(route.viewPath);
 
           const dataExtend = {
             slug       : req.slug,
