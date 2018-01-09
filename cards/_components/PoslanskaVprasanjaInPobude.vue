@@ -17,7 +17,7 @@
         <div class="filter-label">Poslanec/-ka</div>
           <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
       </div>
-      <div class="filter tag-dropdown">
+      <div class="filter tag-dropdown naslovljenec">
         <div class="filter-label">Naslovljenec/-ka</div>
           <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
       </div>
@@ -245,10 +245,6 @@ export default {
 }
 
 .filters {
-  @include respond-to(mobile) {
-    flex-wrap: wrap;
-    min-height: 154px;
-  }
   
   $label-height: 26px;
 
@@ -296,9 +292,17 @@ export default {
   }
 
   .tag-dropdown {
-    @include respond-to(desktop) { width: 26%; }
+    @include respond-to(desktop) {
+      width: 26%;
+    }
 
     width: 100%;
+
+    &.naslovljenec {
+      @include respond-to(mobile) {
+        margin-left: 10px;
+      }
+    }
   }
 
   .month-dropdown {
