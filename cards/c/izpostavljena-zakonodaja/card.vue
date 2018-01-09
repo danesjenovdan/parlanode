@@ -2,7 +2,7 @@
     <card-wrapper
             class="card-halfling card-featured-legislation"
             :id="$options.cardData.cardData._id"
-            :card-url="url"
+            :card-url="generatedCardUrl"
             :header-config="headerConfig"
             contentHeight="518px">
 
@@ -71,7 +71,7 @@
       return {
         data: this.$options.cardData.data,
         state: this.$options.cardData.parlaState || {},
-        selectedTab: 0,
+        selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',
@@ -95,7 +95,12 @@
       if (this.state.selectedTab) {
         this.selectedTab = this.state.selectedTab;
       }
-    }
+    },
+    computed: {
+      generatedCardUrl() {
+        return `https://glej.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/s/getExposedLegislation/')}&state=${encodeURIComponent(JSON.stringify({selectedTab: this.selectedTab}))}`;
+      },
+    },
   };
 </script>
 
