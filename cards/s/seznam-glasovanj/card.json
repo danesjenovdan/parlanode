@@ -1,9 +1,9 @@
 {
   "_id": "s_seznam_glasovanj",
-  "name": "Glasovanja - seja",
+  "name": "Druga glasovanja",
   "dataUrl": "https://analize.parlameter.si/v1/s/getMotionOfSession",
   "type": "seje",
-  "lastUpdate": "2018-01-08T09:46:23.021Z",
+  "lastUpdate": "2018-01-09T09:38:12.005Z",
   "method": "seznam-glasovanj",
   "group": "s",
   "big": true,
