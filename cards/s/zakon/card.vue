@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    :card-url="url"
+    :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
     <div slot="info">
@@ -34,13 +34,13 @@
         :chart-data="finalVoteData"
       ></result>
     </div>
-    <p-tabs :start-tab="0">
+    <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
       <p-tab label="Povzetek" variant="light">
         <excerpt
           :content="content"
           :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
           :documents="documents"
-          :show-parent="true"
+          :show-parent="false"
           :icon="data.icon"
         />
       </p-tab>
@@ -122,6 +122,11 @@ export default {
       }, 0);
     }
 
+    let startTab = 0;
+    if (this.$options.cardData.parlaState.selectedTab) {
+      startTab = this.$options.cardData.parlaState.selectedTab;
+    }
+
     return {
       data: this.$options.cardData.data,
       documents,
@@ -136,6 +141,7 @@ export default {
       finalVoteData,
       finalVoteResult,
       numberOfVotes,
+      startTab,
     };
   },
   computed: {
@@ -144,6 +150,9 @@ export default {
         return this.data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '');
       }
       return '';
+    },
+    generatedCardUrl() {
+      return `https://glej.parlameter.si/s/zakon/?customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/s/getLegislation/' + this.data.epa)}&state=${encodeURIComponent(JSON.stringify({startTab: this.startTab}))}`;
     },
   },
   methods: {
