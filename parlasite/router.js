@@ -2247,7 +2247,7 @@ function createRoute(app, route) {
                   const dataExtend = {
                     mp         : mpData.mp,
                     slug       : req.slug,
-                    activeMenu : activeMenu,
+                    activeMenu : route.viewPath,
                     pageTitle  : pageTitle,
                     views
                   };
@@ -2286,7 +2286,7 @@ function createRoute(app, route) {
                   const dataExtend = {
                     mp         : mpData.mp,
                     slug       : req.slug,
-                    activeMenu : activeMenu,
+                    activeMenu : route.viewPath,
                     pageTitle  : pageTitle,
                     views
                   };
@@ -2399,6 +2399,7 @@ function createRoute(app, route) {
         if (route.viewPath.indexOf("poslanci") > -1) {
 
           const pageTitle = ejs.render(route.pageTitle);
+          console.log(route.viewPath);
 
           const dataExtend = {
             slug       : req.slug,
