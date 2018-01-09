@@ -151,7 +151,8 @@ hr {
     @include respond-to(mobile) {
       display: none;
     }
-    &.show-parent {
+    &.show-parent,
+    &.show-documents {
       max-height: 349px;
     }
     .icon {
@@ -175,6 +176,8 @@ hr {
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 40px;
+
+    max-height: 360px;
 
     display: flex;
     margin: auto;
