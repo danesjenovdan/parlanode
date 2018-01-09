@@ -68,6 +68,10 @@ export default {
   max-height: 480px;
   overflow: hidden;
 
+  .labeled-chart {
+    margin-bottom: 4px;
+  }
+
   .labeled-chart .column.chart { flex: 4; }
   .chart-label {
     .label-container {
@@ -82,5 +86,8 @@ export default {
 }
 .progress_number {
   @include respond-to(mobile) { display: none; }
+}
+.progress.hugebar {
+  height: 27px;
 }
 </style>
