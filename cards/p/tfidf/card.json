@@ -3,7 +3,7 @@
   "name": "Besede, ki jo/ga zaznamujejo",
   "dataUrl": "https://analize.parlameter.si/v1/p/getTFIDF",
   "type": "poslanec",
-  "lastUpdate": "2018-01-08T09:45:58.231Z",
+  "lastUpdate": "2018-01-09T14:17:01.165Z",
   "method": "tfidf",
   "group": "p"
 }
