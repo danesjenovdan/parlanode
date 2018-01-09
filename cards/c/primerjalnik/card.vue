@@ -60,7 +60,7 @@
         <span class="load" @click="loadResults">Naloži</span>
       </p>
       <div class="row primerjalnik-extras">
-        <div class="col-md-4">
+        <div class="col-xs-7 nopadding">
           <div class="searchfilter-checkbox">
             <input
               id="rev"
@@ -71,8 +71,8 @@
             <label for="rev">Ignoriraj "odsotne" glasovnice</label>
           </div>
         </div>
-        <div class="col-md-8">
-          <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
+        <div class="col-xs-5 nopadding">
+          <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <br class="visible-xs"><strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
         </div>
       </div>
     </div>
@@ -557,6 +557,11 @@
       label {
         text-align: left;
         margin-bottom: 0;
+
+        @include respond-to(small-mobile) {
+          line-height: 1.4em;
+          padding-top: 5px;
+        }
       }
     }
 
@@ -570,7 +575,9 @@
 
       @include respond-to(mobile) {
         text-align: left;
-        margin-top: 10px;
+        margin-top: 0;
+        line-height: 1.4em;
+        padding-left: 10px;
       }
     }
   }
@@ -835,4 +842,9 @@
     color: #525252;
   }
   // END VOTINGCARD
+
+  .nopadding {
+    padding-left: 0;
+    padding-right: 0;
+  }
 </style>
