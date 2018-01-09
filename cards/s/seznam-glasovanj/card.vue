@@ -178,7 +178,7 @@
           heading: '&nbsp;',
           subheading: '7. sklic parlamenta',
           alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: this.$options.cardData.data.session.name,
+          title: `Druga glasovanja - ${this.$options.cardData.data.session.name}`,
         },
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,

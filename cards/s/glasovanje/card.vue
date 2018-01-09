@@ -178,7 +178,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `https://glej.parlameter.si/s/glasovanje/${this.data.id}?state={}`;
+      return `https://glej.parlameter.si/s/glasovanje/${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
     },
   },
   methods: {
@@ -199,6 +199,7 @@ export default {
         this.$refs.sides.expandedParty = this.state.selectedGroup || null;
         this.$refs.sides.expandedOption = this.state.selectedOption || null;
       }
+      this.state.selectedTab = tabNumber;
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {

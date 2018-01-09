@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="no-abstract" v-else>
-      <p>Za ta zakon žal nimamo izvlečka.</p>
+      <p>Za ta zakon žal nimamo povzetka.</p>
     </div>
     <div class="metacontainer" v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)">
       <hr>
