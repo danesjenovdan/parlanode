@@ -136,40 +136,30 @@ const routes = [
 
         }
       },
-      {
-        name      : 'kompas',
-        sourceUrl : '/c/kompas/',
-        resolve   : (req, res, route, card) => {
+      // {
+      //   name      : 'besedniZaklad',
+      //   sourceUrl : '/c/besedni-zaklad-vsi/',
+      //   resolve   : (req, res, route, card) => {
+      //     return getMPIdByName(req.params.fullName, req)
+      //       .then((mpData) => {
+      //         let mpId    = mpData.mpId;
+      //         let mpSlug  = mpData.mpSlug;
+      //         let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
-          console.log('loading kompas');
+      //         if (req.query.forceRender) {
+      //           cardUrl += '?forceRender=true';
+      //         }
 
-          return getMPIdByName(req.params.fullName, req)
-            .then(() => {
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  console.log('kompas fetched');
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
-        }
-      },
+      //         return fetch(cardUrl)
+      //           .then((res) => {
+      //             return res.text();
+      //           })
+      //           .then((body) => {
+      //             return body;
+      //           });
+      //       });
+      //   }
+      // },
       {
         name      : 'zadnjaSeja',
         sourceUrl : '/c/zadnja-seja/',
@@ -270,12 +260,52 @@ const routes = [
   {
     path        : '/orodja/raziskovalec-neenotnosti',
     viewPath    : 'orodja/raziskovalec-neenotnosti',
-    pageTitle   : 'Raziskovalec Neenotnosti',
-    cards       : [{
-      name: 'raziskovalecNeenotnosti',
-      sourceUrl: '/ps/glasovanja-neenotnost/',
-      resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
-    }]
+    pageTitle   : 'Raziskovalec neenotnosti',
+    cards       : [
+      {
+        name: 'raziskovalecNeenotnosti',
+        sourceUrl: '/ps/glasovanja-neenotnost/',
+        resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
+      },
+    ]
+  },
+  {
+    path: '/orodja/parlamentarni-kompas',
+    viewPath: 'orodja/parlamentarni-kompas',
+    pageTitle: 'Parlamentarni kompas',
+    cards: [
+      {
+        name      : 'kompas',
+        sourceUrl : '/c/kompas/',
+        resolve   : (req, res, route, card) => {
+
+          console.log('loading kompas');
+
+          
+
+          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
+
+          if (req.query.forceRender) {
+            cardUrl += '?forceRender=true';
+          }
+
+          return fetch(cardUrl)
+            .then((res) => {
+
+              console.log('kompas fetched');
+
+              return res.text();
+
+            })
+            .then((body) => {
+
+              return body;
+
+            });
+
+        }
+      },
+    ],
   },
   {
     path      : '/poslanci',
@@ -314,39 +344,6 @@ const routes = [
     viewPath   : 'poslanec/pregled',
     pageTitle  : 'Pregled - <%- name %>',
     cards      : [
-      {
-        name      : 'kompas',
-        sourceUrl : '/c/kompas/',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let state  = encodeURIComponent('{"people": [{"id": ' + mpId + ', "name": "' + mpData.mp.name + '"}], "parties": []}');
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '&forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return Promise.resolve(res.text());
-
-                })
-                .then((body) => {
-
-                  return Promise.resolve(body);
-
-                });
-
-            });
-
-        }
-      },
       {
         name      : 'povprecnoSteviloGovorovNaSejo',
         sourceUrl : '/p/povprecno-stevilo-govorov-na-sejo/:id',
@@ -494,47 +491,6 @@ const routes = [
               let mpId   = mpData.mpId;
 
               //console.log('osnovneInformacije: ',mpId);
-
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return Promise.resolve(res.text());
-
-                })
-                .then((body) => {
-
-                  return Promise.resolve(body);
-
-                });
-
-            });
-
-        }
-      },
-      {
-        name      : 'razrezGlasovanj',
-        sourceUrl : '/p/razrez-glasovanj/:id',
-        resolve   : (req, res, route, card) => {
-
-          //console.log('razrezGlasovanj: ',req.params.fullName);
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-
-              let mpId   = mpData.mpId;
-
-              //console.log('Mpdata: ',mpData);
-
-              //console.log('razrezGlasovanj: ',mpId);
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -802,31 +758,6 @@ const routes = [
         }
       },
       {
-        name      : 'razrezGlasovanj',
-        sourceUrl : '/p/razrez-glasovanj/:id',
-        resolve   : (req, res, route, card) => {
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-              let mpId           = mpData.mpId;
-              var pattern        = new UrlPattern(card.sourceUrl);
-              const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-                  return res.text();
-                })
-                .then((body) => {
-                  return body;
-                });
-            });
-        }
-      },
-      {
         name      : 'najveckratEnako',
         sourceUrl : '/p/najveckrat-enako/:id',
         resolve   : (req, res, route, card) => {
@@ -835,6 +766,7 @@ const routes = [
             .then((mpData) => {
 
               let mpId   = mpData.mpId;
+              let mpSlug = mpData.mpSlug;
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
@@ -893,7 +825,43 @@ const routes = [
             });
 
         }
-      }
+      },
+      {
+        name      : 'neujemanjeSPs',
+        sourceUrl : '/p/neujemanje-s-poslansko-skupino/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getMPIdByName(req.params.fullName, req)
+            .then((mpData) => {
+
+              let mpId   = mpData.mpId;
+
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : mpId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              console.log(cardUrl);
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+
+                  return res.text();
+
+                })
+                .then((body) => {
+
+                  return body;
+
+                });
+
+            });
+
+        }
+      },
     ]
   },
   {
@@ -970,7 +938,7 @@ const routes = [
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?people=' + mpId)}`;
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?people=' + mpId)}&state=${JSON.stringify({person: mpId})}`;
 
               if (req.query.forceRender) {
                 cardUrl += '&forceRender=true';
@@ -1253,40 +1221,13 @@ const routes = [
         }
       },
       {
-        name      : 'kompas',
-        sourceUrl : '/c/kompas/:id',
-        resolve   : (req, res, route, card) => {
-
-          return getPSIdByName(req.params.fullName, req)
-            .then((psData) => {
-              let psSlug = psData.psSlug;
-
-              let state = encodeURIComponent('{"people": [], "parties": ["' + psSlug + '"]}');
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=${state}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '&forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-                  return res.text();
-                })
-                .then((body) => {
-                  return body;
-                });
-            });
-
-        }
-      },
-      {
         name      : 'izracunanaPrisotnostGlasovanja',
         sourceUrl : '/ps/izracunana-prisotnost-glasovanja/:id',
         resolve   : (req, res, route, card) => {
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
+              let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1337,7 +1278,6 @@ const routes = [
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
               let psId           = psData.psId;
-              
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
@@ -1383,7 +1323,35 @@ const routes = [
             });
 
         }
-      }
+      },
+      {
+        name      : 'steviloVlozenihAmandmajev',
+        sourceUrl : '/ps/st-vlozenih-amandmajev/:id',
+        resolve   : (req, res, route, card) => {
+
+          return getPSIdByName(req.params.fullName, req)
+            .then((psData) => {
+              let psId           = psData.psId;
+              
+              var pattern        = new UrlPattern(card.sourceUrl);
+              const renderedPath = pattern.stringify({ id : psId });
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+              if (req.query.forceRender) {
+                cardUrl += '?forceRender=true';
+              }
+
+              return fetch(cardUrl)
+                .then((res) => {
+                  return res.text();
+                })
+                .then((body) => {
+                  return body;
+                });
+            });
+
+        }
+      },
     ]
   },
   {
@@ -1421,9 +1389,11 @@ const routes = [
         }
       },
       {
-        name      : 'razrezGlasovanj',
-        sourceUrl : '/pg/razrez-glasovanj/:id',
+        name      : 'neenotnostGlasovanj',
+        sourceUrl : '/ps/neenotnost-glasovanj/:id',
         resolve   : (req, res, route, card) => {
+
+          console.log('something else');
 
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
@@ -1609,10 +1579,10 @@ const routes = [
               
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?parties=' + psId)}`;
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?parties=' + psId)}&state=${JSON.stringify({parties: psId})}`;
 
               if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
+                cardUrl += '&forceRender=true';
               }
 
               return fetch(cardUrl)
@@ -1763,10 +1733,10 @@ const routes = [
     ]
   },
   {
-    path       : '/seja/glasovanja/:id',
-    extraPaths : ['/seja/glasovanja/:id/:date', '/seja/glasovanja/:id', '/s/glasovanja/:id', '/s/glasovanja/:id/:date'],
-    viewPath   : 'seja/glasovanja',
-    pageTitle  : 'Seja - glasovanja',
+    path       : '/seja/druga-glasovanja/:id',
+    extraPaths : ['/seja/druga-glasovanja/:id/:date', '/seja/druga-glasovanja/:id', '/s/druga-glasovanja/:id', '/s/druga-glasovanja/:id/:date'],
+    viewPath   : 'seja/druga-glasovanja',
+    pageTitle  : 'Seja - druga-glasovanja',
     cards      : [
       {
         name      : 'glasovanjaSeja',
@@ -1774,10 +1744,10 @@ const routes = [
         resolve   : (req, res, route, card) => {
           var pattern        = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({ id : req.params.id });
-          let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+          let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?state=${JSON.stringify({ onlyOther: true })}`;
 
           if (req.query.forceRender) {
-            cardUrl += '?forceRender=true';
+            cardUrl += '&forceRender=true';
           }
 
           return fetch(cardUrl)
@@ -1788,6 +1758,36 @@ const routes = [
               return body;
             });
         }
+      },
+    ]
+  },
+  {
+    path       : '/seja/zakonodaja/:id',
+    extraPaths : ['/seja/zakonodaja/:id/:date', '/seja/zakonodaja/:id', '/s/zakonodaja/:id', '/s/zakonodaja/:id/:date'],
+    viewPath   : 'seja/zakonodaja',
+    pageTitle  : 'Seja - zakonodaja',
+    cards      : [
+      {
+        name      : 'zakonodajaSeja',
+        sourceUrl : '/c/zakonodaja/:id',
+        resolve: (req, res, route, card) => resolve_card_with_custom_url(`http://analize.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
+        // resolve   : (req, res, route, card) => {
+        //   var pattern        = new UrlPattern(card.sourceUrl);
+        //   const renderedPath = pattern.stringify({ id : req.params.id });
+        //   let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+
+        //   if (req.query.forceRender) {
+        //     cardUrl += '?forceRender=true';
+        //   }
+
+        //   return fetch(cardUrl)
+        //     .then((res) => {
+        //       return res.text();
+        //     })
+        //     .then((body) => {
+        //       return body;
+        //     });
+        // }
       },
     ]
   },
@@ -1972,6 +1972,11 @@ module.exports = (app) => {
 
   });
 
+  // redirect from glasovanja to druga-glasovanja
+  app.get('/seja/glasovanja/:sessionId', (req, res) => {
+    res.redirect('/seja/druga-glasovanja/' + req.params.sessionId);
+  });
+
   app.get('/*', function (req, res) {
     res.status(404).render('error/404', { pageTitle : "Sorry, page not found", activeMenu : "", ogImageUrl : "" });
   });
@@ -2139,7 +2144,7 @@ function createRoute(app, route) {
             const dataExtend = {
               // sesData    : sesData.s,
               slug       : req.slug,
-              activeMenu : 'S',
+              activeMenu : 'search',
               views,
               pageTitle
             };
@@ -2294,7 +2299,7 @@ function createRoute(app, route) {
               const dataExtend = {
                 slug: req.slug,
                 activeMenu: 'zakonodaja',
-                pageTitle: 'ZAKON!!!!!',
+                pageTitle: 'Zakonodaja',
                 views,
               };
 
@@ -2305,6 +2310,39 @@ function createRoute(app, route) {
               res.render(route.viewPath, common);
             }
 
+          } else if (route.viewPath.indexOf('orodja') > -1) {
+            console.log('orodja');
+            const pageTitle = route.pageTitle;
+            
+            const dataExtend = {
+              slug: req.slug,
+              activeMenu: 'orodja',
+              pageTitle: route.pageTitle,
+              views: views,
+            };
+
+            Object.assign(common, dataExtend);
+
+            // OG IMAGE STUFF
+            //
+            const hashObj = {
+              nameSlug : route.pageTitle
+            };
+
+            const hashString = hash(hashObj);
+            const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
+
+            common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
+
+            // if (forceRenderOg) {
+            //   renderOg('views/og/poslanec.ejs', ogPath, common)
+            //     .then(() => {
+            //       res.render(route.viewPath, common);
+            //     });
+            // }
+            // else {
+              res.render(route.viewPath, common);
+            // }
           } else {
 
             var activeMenu = (route.viewPath == 'landing') ? route.viewPath : 'P';
@@ -2392,7 +2430,7 @@ function createRoute(app, route) {
 
               const dataExtend = {
                 slug       : req.slug,
-                activeMenu : 'S',
+                activeMenu : 'search',
                 pageTitle,
                 q          : req.query.q
               };
@@ -2401,7 +2439,7 @@ function createRoute(app, route) {
 
               const hashString = hash({
                 slug       : req.slug,
-                activeMenu : 'S',
+                activeMenu : 'search',
                 pageTitle
               });
               const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';

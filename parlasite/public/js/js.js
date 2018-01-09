@@ -11,6 +11,16 @@ function toggleHeaderSearch(focus) {
         if ($(window).width() < 992) {
             $("#topheadersearch").css({"width": "100%"});
             $("header.header .twitter-typeahead").css({"width": "90%"});
+        } else {
+            $("#topheadersearch, #topheadersearch .form-group").css({"width": "100%"});
+            $("header.header .twitter-typeahead").css({"width": "calc(100% - 50px)"});
+            $('.header-searchhide').css({'width': '100%'});
+            $('.header-search').css({
+                'height': '100px',
+                'margin-top': '-40px',
+                'padding-top': '35px'
+            });
+            $('.tt-input, .tt-menu, .tt-dataset').css({'width': '100%'});
         }
 
         $(".header-searchhide").show();
@@ -168,7 +178,7 @@ $(function () {
                 .done(function (data) {
 
                     $("#" + urlid).html(data);
-                    DNDrepeatEmbedCall();
+                    // DNDrepeatEmbedCall();
                 })
                 .fail(function () {
                     $("#" + urlid).html(urlid + " error");
@@ -187,7 +197,27 @@ $(function () {
                 .done(function (data) {
 
                     $("#" + urlid).html(data);
-                    DNDrepeatEmbedCall();
+                    // DNDrepeatEmbedCall();
+                })
+                .fail(function () {
+                    $("#" + urlid).html(urlid + " error");
+                })
+                .always(function () {
+                });
+        });
+
+        $("#session_search_results .getmedata-legislation").each(function (e, urlid) { // TODO !!!!!! move from localhost
+            var urlid = $(this).attr('id');
+            console.log("https://isci.parlameter.si/l/" + (querystringVoting));
+            var url = ("https://glej.parlameter.si/s/zakonodaja-iskanje/?customUrl=" + encodeURIComponent("https://isci.parlameter.si/l/" + (querystringVoting)));
+            console.log(url);
+            $("#" + urlid).html('<div class="card-container card-halfling"><div class="card-header"><div class="card-header-border"></div><h1>Nalagamo kartico ...</h1></div><div class="card-content half"><div class="card-content-front"><div class="nalagalnik"></div></div></div><div class="card-footer"><div class="card-logo hidden"><a href="https://skoraj.parlameter.si/"><img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo"></a></div><div class="card-circle-button card-share" data-back="share"></div><div class="card-circle-button card-embed" data-back="embed"></div><div class="card-circle-button card-info" data-back="info">i</div></div></div>');
+
+            var jqxhr = $.ajax(url)
+                .done(function (data) {
+
+                    $("#" + urlid).html(data);
+                    // DNDrepeatEmbedCall();
                 })
                 .fail(function () {
                     $("#" + urlid).html(urlid + " error");
@@ -276,7 +306,7 @@ $(function () {
                 .done(function (data) {
 
                     $("#" + urlid).html(data);
-                    DNDrepeatEmbedCall();
+                    // DNDrepeatEmbedCall();
                 })
                 .fail(function () {
                     $("#" + urlid).html(urlid + " error");
@@ -295,7 +325,7 @@ $(function () {
                 .done(function (data) {
 
                     $("#" + urlid).html(data);
-                    DNDrepeatEmbedCall();
+                    // DNDrepeatEmbedCall();
                 })
                 .fail(function () {
                     $("#" + urlid).html(urlid + " error");

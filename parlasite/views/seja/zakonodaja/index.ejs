@@ -6,39 +6,38 @@
         <div class="col-lg-12">
 
             <% if(typeof sesData !== "undefined" ){%>
-            <div class="media-object img-circle session-logo">
-                <img src="https://cdn.parlameter.si/v1/parlassets/icons/seja-<%= sesData.name.split(' ')[1] %>.svg" alt="<%-sesData.name%>">
+            <div class="media-object img-circle session-logo backgroundred">
+                <b>S</b>
             </div>
 
             <h1> <%-sesData.name%></h1>
             <h2> <%-sesData.org.name%></h2>
 
             <font class="date">
-                Začetek seje: <%-sesData.date%> <%=(sesData.in_review)?'(v pregledu)':null%>
+                <%-sesData.date%>
             </font>
             <br/>
             <font class="datepublished">
-                Podatki osveženi: <%-sesData.updated_at%>
+                podatki objavljeni: <%-sesData.date%> <%=(sesData.in_review)?'(v pregledu)':null%>
             </font>
-
             <% } %>
 
             <% //if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
             <div class="group-container-menu">
                 <ul class="clearfix">
                     <li>
-                        <a href="/seja/glasovanja/<%- params.id %>" class="active">
-                            Glasovanja
+                        <a href="/seja/zakonodaja/<%- params.id %>" class="active">
+                            Zakonodaja
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seja/druga-glasovanja/<%- params.id %>">
+                            Druga glasovanja
                         </a>
                     </li>
                     <li>
                         <a href="/seja/transkript/<%- params.id %>">
                             Transkript
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/seja/prisotnost/<%- params.id %>">
-                            Prisotnost
                         </a>
                     </li>
                 </ul>
@@ -52,7 +51,7 @@
 <% if(sesData.type != 'kolegij') { %>
     <% if (sesData.votes) { %>
         <div class="col-md-12 ">
-            <%- views.glasovanjaSeja %>
+            <%- views.zakonodajaSeja %>
         </div>
     <% } else if (sesData.org.name === 'Državni zbor') { %>
         <%include ../../empty-state/state1dz.ejs %>

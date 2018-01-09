@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/seja/druga-glasovanja/<%- params.id %>">
+                        <a href="/seja/druga-glasovanja/<%- params.id %>" class="active">
                             Druga glasovanja
                         </a>
                     </li>
@@ -49,15 +49,30 @@
     </div>
 </div>
 
-
-<% if(sesData.votes){ %>
-<div class="col-md-12 ">
-    <%- views.glasovanjeSeja %>
-</div>
-<% }else{ %>
-<%include ../../empty-state/state2.ejs %>
+<% if(sesData.type != 'kolegij') { %>
+    <% if (sesData.votes) { %>
+        <div class="col-md-12 ">
+            <%- views.glasovanjaSeja %>
+        </div>
+    <% } else if (sesData.org.name === 'Državni zbor') { %>
+        <%include ../../empty-state/state1dz.ejs %>
+    <% } else { %>
+        <%include ../../empty-state/state1.ejs %>
+    <% } %>
+<% } else { %>
+    <% if(sesData.votes){ %>
+        <div class="col-md-12 ">
+            <%- views.besedeKiSoZaznamovaleSejo %>
+        </div>
+        <div class="col-md-12 ">
+            <%- views.transkript %>
+        </div>
+    <% } else if (sesData.org.name === 'Državni zbor') { %>
+        <%include ../../empty-state/state2dz.ejs %>
+    <% } else { %>
+        <%include ../../empty-state/state2.ejs %>
+    <% } %>
 <% } %>
-
 
 
 
