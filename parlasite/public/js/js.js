@@ -639,10 +639,12 @@ $(function () {
     mcSearch();
 
     $(".searchForm").submit(function () {
-       var tmpVal = $(this).find(".form-control");
-        if(tmpVal.val().length < 1 || tmpVal.val() === '/' || tmpVal.val() === '-'){
-           tmpVal.val("parlameter");
-       }
+        var tmpVal = $(this).find(".form-control");
+
+        var forbidden = ['/', '-', ' ', '&', '?', '*', '=', '!', '"', "'"];
+        if(tmpVal.val().length < 1 || (forbidden.indexOf(tmpVal.val()) > 0) ){
+            tmpVal.val("parlameter");
+        }
     });
 
     // mobile menu
