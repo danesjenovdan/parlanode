@@ -21,6 +21,10 @@
         }
         .left-half {
             left: 0;
+            background-image: url('https://cdn.parlameter.si/v1/parlassets/img/og-back.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .right-half {
             right: 0;
@@ -51,7 +55,9 @@
         }
         .partyinfo {
             font-family: "Roboto Slab", sans-serif;
-            font-weight: 300;
+            /* font-weight: 400; */
+            font-size: 60px;
+            margin-top: 170px;
         }
         .cardname {
             font-size: 44px;
@@ -61,21 +67,21 @@
         .logo {
             width: 100%;
             position: absolute;
-            bottom: 55px;
-            left: 0;
+            left: 20px;
+            top: 50%;
+            margin-top: -100px;
         }
         .logo img {
-            width: 160px;
+            width: 300px;
         }
     </style>
     <div class="left-half">
         <!-- <div class="personimg"></div> -->
-        <h1 class="personinfo">This OG image is empty</h1>
-        <h2 class="partyinfo">Please create one or use an already existing one.</h2>
+        <!-- <h1 class="personinfo"><%= cardData.name %></h1> -->
+        <h2 class="partyinfo"><%= cardData.name %></h2>
     </div>
     <div class="right-half">
-            <h2 class="cardname">Default OG image</h2>
-        <div class="logo">
+        <div class="logo" style="">
             <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
         </div>
     </div>
