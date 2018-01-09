@@ -2061,7 +2061,7 @@ function createRoute(app, route) {
                 const dataExtend = {
                   sesData     : sesData,
                   slug        : req.slug,
-                  activeMenu  : 'S',
+                  activeMenu  : route.viewPath,
                   views,
                   'pageTitle' : 'Seznam sej'
                 };
@@ -2113,7 +2113,7 @@ function createRoute(app, route) {
                 const dataExtend = {
                   sesData    : sesData.s,
                   slug       : req.slug,
-                  activeMenu : 'S',
+                  activeMenu : route.viewPath,
                   views,
                   pageTitle
                 };
@@ -2158,7 +2158,7 @@ function createRoute(app, route) {
                 
                 const dataExtend = {
                   slug: req.slug,
-                  activeMenu: 'zakonodaja',
+                  activeMenu: route.viewPath,
                   pageTitle: lawData.text,
                   lawData,
                   views,
@@ -2356,7 +2356,7 @@ function createRoute(app, route) {
               const dataExtend = {
                 sesData    : sesData,
                 slug       : req.slug,
-                activeMenu : 'S',
+                activeMenu : route.viewPath,
                 pageTitle
               };
 
