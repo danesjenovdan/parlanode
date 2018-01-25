@@ -113,7 +113,7 @@ export default {
     console.log(this);
     let votes = this.data.votes.map((e) => {
       var allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
-      e.url = 'https://parlameter.si/seja/glasovanje/' + this.data.session.id + '/' + e.motion_id;
+      e.url = 'https://parlameter.si/seja/glasovanje/' + (e.session_id || this.data.session.id) + '/' + e.motion_id;
       e.accepted = 'accepted ' + ((e.result === true) ? 'aye' : 'nay');
       e.accepted_glyph = 'glyphicon ' + ((e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove');
       e.percent_votes_for = Math.floor(e.votes_for / allInVotes * 100);
