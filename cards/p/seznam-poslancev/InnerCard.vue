@@ -98,3 +98,18 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  @import '~parlassets/scss/breakpoints';
+
+  .person-list .headers .column {
+    white-space: normal;
+  }
+  
+  .person-list .headers .barchartcontainer,
+  .person-list .item .barchartcontainer {
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
+</style>
