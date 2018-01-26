@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data.data,
-      currentAnalysis: get(this.$options.cardData, 'parlaState.analysis') || 'seat_count',
+      currentAnalysis: this.$options.cardData.parlaState.analysis || 'seat_count',
       analyses,
     };
   },
