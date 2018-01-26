@@ -15,7 +15,7 @@ export default {
         setTimeout(() => {
           this.card.shouldShadow = document.getElementById(this.card.shadowElement).scrollTop > 0;
           this.card.lockLoading = false;
-        }, 100);
+        }, 50);
       }
     }
   }
