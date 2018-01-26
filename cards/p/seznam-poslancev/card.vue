@@ -420,9 +420,3 @@ export default {
   }
 }
 </style>
-
-<style>
-.person-list .headers .column {
-  white-space: normal;
-}
-</style>
