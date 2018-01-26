@@ -20,7 +20,6 @@
                         @click="selectSort(columns[2].id)">Status</div>
             </div>
             <div id="card-search" class="card-scroll__wrapper">
-
                 <sortable-table
                         class=""
                         :columns="columns"
@@ -79,7 +78,9 @@
       generatedCardUrl() {
         const state = {text: this.keyword};
 
-        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent('https://isci.parlameter.si/l/')}`;
+        const searchUrl = `https://isci.parlameter.si/l/${this.$options.cardData.data.responseHeader.params.q.split('content_t')[1].split(')')[0]}`;
+
+        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
       },
       mappedItems() {
         const mapResultIcon = {
@@ -174,7 +175,7 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import '~parlassets/scss/breakpoints';
     @import '~parlassets/scss/colors';
 
@@ -193,12 +194,16 @@
 
         .headers {
             padding: 0 20px 10px;
+            margin-left: -20px;
+            margin-right: -20px;
         }
 
         .card-scroll__wrapper {
             .headers {
                 /*display: none;*/
             }
+            margin: 0;
+            margin-top: 5px;
         }
 
         .item .column {
