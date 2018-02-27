@@ -6,7 +6,9 @@ const dataService = require('./services/data-service');
 
 function init(){
 
-  return preload()
+  return preloadSPS()
+    .then(preloadMPS())
+    .then(preloadOPS())
     .then(server.start)
     .then(router)
     .then(() => {
@@ -18,11 +20,25 @@ function init(){
 
 }
 
-function preload(){
+function preloadSPS(){
 
-  console.log('Preloading data');
+  console.log('Preloading SPS data');
 
   return dataService.loadSPS();
+
+}
+function preloadMPS(){
+
+  console.log('Preloading MPS data');
+
+  return dataService.loadMPS();
+
+}
+function preloadOPS(){
+
+  console.log('Preloading OPS data');
+
+  return dataService.loadOPS();
 
 }
 
