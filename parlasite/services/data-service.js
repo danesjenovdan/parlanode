@@ -6,10 +6,12 @@ const fs      = require('fs');
 const spsFilePath = __dirname + '/../data/sps.json';
 const mpsFilePath = __dirname + '/../data/mps.json';
 const opsFilePath = __dirname + '/../data/ops.json';
+const mpsopsurlsFilePath = __dirname + '/../data/mpsopsurls.json';
 
 exports.sps = [];
 exports.mps = [];
-exports.ops = [];
+exports.ops = {};
+exports.mpsopsurls = {};
 
 /**
  * Request SPS data from parlalize and save the result to disk as cache
@@ -173,10 +175,64 @@ function opsRequest() {
 }
 
 /**
+ * Request MPSOPSURLS data from parlalize and save the result to disk as cache
+ * @param force
+ * @returns {Promise.<TResult>}
+ */
+exports.loadMPSOPSURLS = (force) => {
+
+  return Promise.resolve()
+    .then(() => {
+
+      const mpsopsurlsExists = fs.existsSync(mpsopsurlsFilePath);
+
+      if (mpsopsurlsExists && !force) {
+        mpsopsurlsRequest();
+        return Promise.resolve(JSON.parse(fs.readFileSync(mpsopsurlsFilePath, 'UTF-8')));
+      }
+
+      return mpsopsurlsRequest();
+
+    })
+    .then(mpsopsurlsData => {
+      exports.mpsopsurls.length = 0;
+      Object.assign(exports.mpsopsurls, mpsopsurlsData);
+      return mpsopsurlsData;
+    });
+
+};
+
+/**
+ * Get mpsopsurls
+ */
+function mpsopsurlsRequest() {
+
+  return new Promise((resolve, reject) => {
+
+    request('https://analize.parlameter.si/v1/p/getSlugs/', (err, res, body) => {
+
+      if (err) return reject(err);
+
+      try {
+        fs.writeFileSync(mpsopsurlsFilePath, body);
+        resolve(JSON.parse(body));
+      }
+      catch (err) {
+        reject(err);
+      }
+
+    });
+
+  });
+
+}
+
+/**
  * Cronjob refetching data every midnight
  */
 new CronJob('00 4 * * *', () => {
   spsRequest();
   mpsRequest();
   opsRequest();
+  mpsopsurlsRequest();
 }, null, true);

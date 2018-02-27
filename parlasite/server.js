@@ -11,13 +11,13 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 
-var ops = require('./static/data/ops');
+var ops = require('./services/data-service').ops;
 app.locals.ops = ops;
 
 var mpsops = require('./static/data/mpsops');
 app.locals.mpsops = mpsops;
 
-var mpsopsurls = require('./static/data/mpsopsurls');
+var mpsopsurls = require('./services/data-service').mpsopsurls;
 app.locals.mpsopsurls = mpsopsurls;
 
 

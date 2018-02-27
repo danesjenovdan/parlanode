@@ -9,6 +9,7 @@ function init(){
   return preloadSPS()
     .then(preloadMPS())
     .then(preloadOPS())
+    .then(preloadMPSOPSURLS())
     .then(server.start)
     .then(router)
     .then(() => {
@@ -21,25 +22,20 @@ function init(){
 }
 
 function preloadSPS(){
-
   console.log('Preloading SPS data');
-
   return dataService.loadSPS();
-
 }
 function preloadMPS(){
-
   console.log('Preloading MPS data');
-
   return dataService.loadMPS();
-
 }
 function preloadOPS(){
-
   console.log('Preloading OPS data');
-
   return dataService.loadOPS();
-
+}
+function preloadMPSOPSURLS(){
+  console.log('Preloading MPSOPSURLS data');
+  return dataService.loadMPSOPSURLS();
 }
 
 if (require.main === module) {
