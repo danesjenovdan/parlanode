@@ -80,8 +80,7 @@ exports.loadMPS = (force) => {
 
       if (mpsExists && !force) {
         mpsRequest();
-        // TODO - legacy array wrap
-        return Promise.resolve([JSON.parse(fs.readFileSync(mpsFilePath, 'UTF-8'))]);
+        return Promise.resolve(JSON.parse(fs.readFileSync(mpsFilePath, 'UTF-8')));
       }
 
       return mpsRequest();
@@ -108,8 +107,7 @@ function mpsRequest() {
 
       try {
         fs.writeFileSync(mpsFilePath, body);
-        // TODO - legacy array wrap
-        resolve([JSON.parse(body)]);
+        resolve(JSON.parse(body));
       }
       catch (err) {
         reject(err);
@@ -135,8 +133,7 @@ exports.loadOPS = (force) => {
 
       if (opsExists && !force) {
         opsRequest();
-        // TODO - legacy array wrap
-        return Promise.resolve([JSON.parse(fs.readFileSync(opsFilePath, 'UTF-8'))]);
+        return Promise.resolve(JSON.parse(fs.readFileSync(opsFilePath, 'UTF-8')));
       }
 
       return opsRequest();
@@ -163,8 +160,7 @@ function opsRequest() {
 
       try {
         fs.writeFileSync(opsFilePath, body);
-        // TODO - legacy array wrap
-        resolve([JSON.parse(body)]);
+        resolve(JSON.parse(body));
       }
       catch (err) {
         reject(err);
