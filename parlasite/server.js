@@ -14,7 +14,7 @@ app.use(express.static('public'));
 var ops = require('./services/data-service').ops;
 app.locals.ops = ops;
 
-var mpsops = require('./static/data/mpsops');
+var mpsops = require('./services/data-service').mpsops;
 app.locals.mpsops = mpsops;
 
 var mpsopsurls = require('./services/data-service').mpsopsurls;

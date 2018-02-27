@@ -7,11 +7,13 @@ const spsFilePath = __dirname + '/../data/sps.json';
 const mpsFilePath = __dirname + '/../data/mps.json';
 const opsFilePath = __dirname + '/../data/ops.json';
 const mpsopsurlsFilePath = __dirname + '/../data/mpsopsurls.json';
+const mpsopsFilePath = __dirname + '/../data/mpsops.json';
 
 exports.sps = [];
 exports.mps = [];
 exports.ops = {};
 exports.mpsopsurls = {};
+exports.mpsops = [];
 
 /**
  * Request SPS data from parlalize and save the result to disk as cache
@@ -162,6 +164,59 @@ function opsRequest() {
 
       try {
         fs.writeFileSync(opsFilePath, body);
+        resolve(JSON.parse(body));
+      }
+      catch (err) {
+        reject(err);
+      }
+
+    });
+
+  });
+
+}
+
+/**
+ * Request MPSOPS data from parlalize and save the result to disk as cache
+ * @param force
+ * @returns {Promise.<TResult>}
+ */
+exports.loadMPSOPS = (force) => {
+
+  return Promise.resolve()
+    .then(() => {
+
+      const mpsopsExists = fs.existsSync(mpsopsFilePath);
+
+      if (mpsopsExists && !force) {
+        mpsopsRequest();
+        return Promise.resolve(JSON.parse(fs.readFileSync(mpsopsFilePath, 'UTF-8')));
+      }
+
+      return mpsopsRequest();
+
+    })
+    .then(mpsopsData => {
+      exports.mpsops.length = 0;
+      Object.assign(exports.mpsops, mpsopsData);
+      return mpsopsData;
+    });
+
+};
+
+/**
+ * Get mpsops
+ */
+function mpsopsRequest() {
+
+  return new Promise((resolve, reject) => {
+
+    request('https://analize.parlameter.si/v1/p/getAllActiveMembers/', (err, res, body) => {
+
+      if (err) return reject(err);
+
+      try {
+        fs.writeFileSync(mpsopsFilePath, body);
         resolve(JSON.parse(body));
       }
       catch (err) {
