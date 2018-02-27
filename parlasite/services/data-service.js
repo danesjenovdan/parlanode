@@ -157,7 +157,7 @@ function opsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://analize.parlameter.si/v1/getAllPGs/', (err, res, body) => {
+    request('https://data.parlameter.si/v1/getAllPGs/', (err, res, body) => {
 
       if (err) return reject(err);
 
