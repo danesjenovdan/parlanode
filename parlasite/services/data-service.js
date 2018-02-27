@@ -102,7 +102,7 @@ function mpsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://analize.parlameter.si/v1/getMPs/', (err, res, body) => {
+    request('https://data.parlameter.si/v1/getMPs/', (err, res, body) => {
 
       if (err) return reject(err);
 
