@@ -289,5 +289,6 @@ new CronJob('00 4 * * *', () => {
   spsRequest();
   mpsRequest();
   opsRequest();
+  mpsopsRequest();
   mpsopsurlsRequest();
 }, null, true);
