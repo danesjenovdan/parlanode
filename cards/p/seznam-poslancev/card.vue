@@ -110,7 +110,7 @@ export default {
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
       currentSort: loadFromState('sort') || 'name',
-      currentSortOrder: loadFromState('sortOrder') || 'desc',
+      currentSortOrder: loadFromState('sortOrder') || 'asc',
       analyses,
       parties: [],
       selectedParties: loadFromState('parties') || [],

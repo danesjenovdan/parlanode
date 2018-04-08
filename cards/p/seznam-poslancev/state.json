@@ -1,1 +1,7 @@
-{}
+{ 
+  "analysis": "presence_votes", 
+  "sort": "analysis", 
+  "sortOrder": "desc", 
+  "parties": ["Levica"], 
+  "generator": true 
+}
