@@ -2,14 +2,18 @@
 const webpack = require('webpack');
 const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = cardPath => ({
-  devtool: 'sourcemap',
+  devtool: false,
   module: {
     loaders: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          extractCSS: true,
+        },
       },
       {
         test: /\.js$/,
@@ -61,6 +65,9 @@ module.exports = cardPath => ({
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
+    }),
+    new ExtractTextPlugin({
+      filename: `${cardPath}/bundles/style.css`,
     }),
   ],
 });
