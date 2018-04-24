@@ -12,7 +12,7 @@ Download/clone the git repository and run `npm install`.
 
 ## Start local (development) server
 
-Run `node run.js` from the repository's root directory. It will serve the website on `localhost:3060`. No hot reloading module is supplied, you need to refresh the website manually to see the results. If you change any of the "backend" files (like router.js) you need to also restart the development server.
+Run `node run.js` from the repository's root directory. It will serve the website on `localhost:3066`. No hot reloading module is supplied, you need to refresh the website manually to see the results. If you change any of the "backend" files (like router.js) you need to also restart the development server.
 
 ## Deploy
 
