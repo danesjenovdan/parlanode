@@ -75,6 +75,8 @@ export default {
   .labeled-chart .column.chart { flex: 4; }
   .chart-label {
     .label-container {
+      margin-top: -5px;
+      margin-bottom: -5px;
       a {
         font-size: 16px;
         @include respond-to(mobile) {
