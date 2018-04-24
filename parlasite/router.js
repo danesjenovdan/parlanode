@@ -2533,34 +2533,30 @@ function getPSIdByName(name, req) {
   let selectedPs;
   let realAcronym;
 
-  // return fetch('https://data.parlameter.si/v1/getAllPGs/')
-  //     .then((res)=> res.json())
-  //     .then((jsonBody) => {
-  //
-  //         //   var opsList = jsonBody;
+  console.log(name);
 
-  _.each(opsList, (ps, i) => {
-    var realAcronym2 = ps.acronym;
-    ps.nameSlug      = slug(ps.name).toLowerCase();
-    ps.acronym_slug  = slug(ps.acronym).toLowerCase();
+  Object.keys(opsList).forEach(function (key, index) {
+    if (parseInt(key, 10)) {
+      console.log(key);
+      const ps = opsList[key];
+      var realAcronym2 = ps.acronym;
+      ps.nameSlug      = slug(ps.name).toLowerCase();
+      ps.acronym_slug  = slug(ps.acronym).toLowerCase();
 
-    if ((name === ps.nameSlug) | (name === ps.acronym_slug) | (req.params.id == ps.id)) {
-      //if(id == ps.id){
-      psId        = ps.id;
-      psSlug      = ps.acronym_slug;
-      req.slug    = psSlug;
-      req.psId    = psId;
-      req.ps      = ps;
-      selectedPs  = ps;
-      realAcronym = realAcronym2;
+      if ((name === ps.nameSlug) | (name === ps.acronym_slug) | (req.params.id == ps.id)) {
+        //if(id == ps.id){
+        psId        = ps.id;
+        psSlug      = ps.acronym_slug;
+        req.slug    = psSlug;
+        req.psId    = psId;
+        req.ps      = ps;
+        selectedPs  = ps;
+        realAcronym = realAcronym2;
+      }
     }
-    //console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'/'+ps.id+'">'+ps.name+'</a><br>');
-    // console.log('<a href="/poslanska-skupina/'+ps.nameSlug+'">'+ps.name+'</a><br>');
-
   });
 
   return Promise.resolve({ psId, psSlug, ps : selectedPs, realAcronym });
-  // });
 }
 
 function getSessionIds(params, req, session_type) {
