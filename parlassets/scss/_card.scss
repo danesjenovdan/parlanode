@@ -82,11 +82,17 @@
 
     height: 60px;
     padding: 14px 20px 14px 20px;
-    /* this background thing is a hack, still work TODO */
-    background-image: url($cdn_home_img + 'shortline.png');
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 100%;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        @include gradient('horizontal', 'red');
+    }
 }
 .card-circle-button,
 .card-circle-button-vue {
