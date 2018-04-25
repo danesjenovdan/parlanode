@@ -3,7 +3,7 @@
   "name": "Izpostavljena zakonodaja",
   "dataUrl": "http://analize.parlameter.si/v1/s/getExposedLegislation",
   "type": "empty",
-  "lastUpdate": "2018-04-25T13:48:52.319Z",
+  "lastUpdate": "2018-01-09T10:37:43.775Z",
   "method": "izpostavljena-zakonodaja",
   "group": "c",
   "big": true,
