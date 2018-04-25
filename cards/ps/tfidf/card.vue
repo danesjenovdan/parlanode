@@ -2,7 +2,7 @@
   <card-wrapper
     contentHeight="518px"
     :id="$options.cardData.cardData._id"
-    :card-url="url"
+    :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
     <div slot="info">
@@ -34,7 +34,7 @@ export default {
         heading: '&nbsp;',
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: `Besede, ki jih zaznamujejo`,
+        title: 'Besede, ki jih zaznamujejo',
       },
     };
   },
@@ -45,6 +45,9 @@ export default {
         value: Math.round(item.scores['tf-idf'] * 5000),
         link: getSearchTermLink(item.term),
       }));
+    },
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.party.id}?altHeader=true`;
     },
   },
   methods: {
@@ -65,6 +68,6 @@ export default {
     const context = this.$root.$options.cardData;
     context.template.pageTitle =
       `Besede, ki jih zaznamujejo - ${context.data.party.name}`;
-  }
+  },
 };
 </script>

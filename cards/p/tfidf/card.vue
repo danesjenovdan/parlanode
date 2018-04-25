@@ -2,7 +2,7 @@
   <card-wrapper
     contentHeight="518px"
     :id="$options.cardData.cardData._id"
-    :card-url="url"
+    :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
     <div slot="info">
@@ -48,6 +48,9 @@ export default {
         value: Math.round(item.scores['tf-idf'] * 5000),
         link: getSearchTermLink(item.term),
       }));
+    },
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
     },
   },
   methods: {
