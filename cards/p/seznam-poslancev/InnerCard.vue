@@ -96,6 +96,9 @@ export default {
   created() {
     this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanci`;
   },
+  mounted() {
+    this.$emit('sort', 'name');
+  }
 };
 </script>
 
