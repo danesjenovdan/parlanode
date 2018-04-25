@@ -1,5 +1,6 @@
 <template>
   <card-wrapper
+    contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="url"
     :header-config="headerConfig">
