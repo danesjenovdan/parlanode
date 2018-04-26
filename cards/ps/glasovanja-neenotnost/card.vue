@@ -5,7 +5,12 @@
     :header-config="headerConfig">
 
     <div slot="info">
-      <p class="info-text lead"></p>
+      <p class="info-text lead">
+        Seznam vseh glasovanj DZ,
+        {{ textFilter ? `ki ustrezajo uporabniškemu vnosu "${textFilter}", ` : '' }}
+        {{ this.selectedTags.length ? `za izbrana matična delovna telesa: "${selectedTags.join(', ')}", ` : '' }}
+        razvrščenih po {{ selectedSort === 'maximum' ? 'neenotnosti' : 'datumu' }}.
+      </p>
       <p class="info-text heading">METODOLOGIJA</p>
       <p class="info-text">Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.</p>
       <p class="info-text">Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu. </p>
@@ -44,7 +49,7 @@
 
     <div :class="['results', {'is-loading': loading }]">
       <template v-for="day in filteredVotingDays">
-        <date-row v-if="selectedSort === 'date'" :date="day.date" />
+        <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
         <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
           <div class="disunion">
             <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
@@ -70,7 +75,6 @@
 <script>
 import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
-import { MONTH_NAMES } from 'components/constants';
 import DateRow from 'components/DateRow.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -107,7 +111,7 @@ export default {
       }
     });
 
-    let allClassifications = [];
+    const allClassifications = [];
 
     namedGroups = sortBy(namedGroups, 'name');
     groups = groups.concat(namedGroups);
@@ -162,7 +166,7 @@ export default {
 
       return {
         tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        classifications: this.allClassifications
+        classifications: this.allClassifications,
         // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
@@ -235,9 +239,7 @@ export default {
       // };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
-      const getDateFromVote = vote => {
-        return (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
-      }
+      const getDateFromVote = vote => (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
 
       let currentVotingDays;
 
@@ -256,8 +258,8 @@ export default {
       });
 
       return mappedVotingDays
-        .filter(votingDay => (votingDay.ballots.length > 0))
-        // .filter(filterDates);
+        .filter(votingDay => (votingDay.ballots.length > 0));
+      // .filter(filterDates);
     },
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
@@ -267,12 +269,8 @@ export default {
       const groupId = find(this.groups, { acronym }).id;
       $.getJSON(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
         if (this.allTags.length === 0) {
-          this.allTags = response.all_tags.map(
-            tag => ({ id: tag, label: tag, selected: false }),
-          );
+          this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
         }
-
-
 
         this.voteData = response[acronym];
 
@@ -282,16 +280,14 @@ export default {
           this.allClassifications.push({ id: classificationKey, label: response.classifications[classificationKey], selected: false });
         }
 
-        const selectFromState = (items, stateItemIds) =>
-          items.map(item =>
-            Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
-          );
+        const selectFromState = (items, stateItemIds) => items
+          .map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
 
         if (this.cardData.parlaState) {
           const state = this.cardData.parlaState;
           if (state.text) this.textFilter = state.text;
           // if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
-          if (state.classifications) allClassifications = selectFromState(allClassifications, state.classifications)
+          if (state.classifications) this.allClassifications = selectFromState(this.allClassifications, state.classifications);
           if (state.sort) this.selectedSort = state.sort;
           if (state.tags) this.allTags = selectFromState(this.allTags, state.tags);
           if (state.selectedGroup) this.selectedGroup = state.selectedGroup;
@@ -322,7 +318,7 @@ export default {
     const context = this.$options.cardData;
     context.template.pageTitle = context.cardData.name +
       (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
-  }
+  },
 };
 </script>
 
