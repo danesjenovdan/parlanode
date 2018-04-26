@@ -22,7 +22,7 @@
     </div>
     <div id="votingCard" class="date-list">
       <div class="session_voting">
-        <div v-for="vote in filteredVotes" class="clearfix single_voting">
+        <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
           <div v-if="vote.is_outlier" class="fire-badge"></div>
           <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
           <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
@@ -110,16 +110,15 @@ export default {
   },
 
   data() {
-    console.log(this);
-    let votes = this.data.votes.map((e) => {
-      var allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
-      e.url = 'https://parlameter.si/seja/glasovanje/' + (e.session_id || this.data.session.id) + '/' + e.motion_id;
-      e.accepted = 'accepted ' + ((e.result === true) ? 'aye' : 'nay');
-      e.accepted_glyph = 'glyphicon ' + ((e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove');
-      e.percent_votes_for = Math.floor(e.votes_for / allInVotes * 100);
-      e.percent_against = Math.floor(e.against / allInVotes * 100);
-      e.percent_abstain = Math.floor(e.abstain / allInVotes * 100);
-      e.percent_not_present = Math.floor(e.not_present / allInVotes * 100);
+    const votes = this.data.votes.map((e) => {
+      const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
+      e.url = `https://parlameter.si/seja/glasovanje/${(e.session_id || this.data.session.id)}/${e.motion_id}`;
+      e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
+      e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
+      e.percent_votes_for = Math.floor((e.votes_for / allInVotes) * 100);
+      e.percent_against = Math.floor((e.against / allInVotes) * 100);
+      e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
+      e.percent_not_present = Math.floor((e.not_present / allInVotes) * 100);
 
       if (this.data.text && e.text.indexOf(this.data.text) === 0) {
         e.short_text = e.text.slice(this.data.text.length).replace(/^[\s-]*/, '');
@@ -128,16 +127,16 @@ export default {
       return e;
     });
 
-    let allResults = [
+    votes.sort((a, b) => a.start_time < b.start_time);
+
+    const allResults = [
       { id: true, color: 'binary-for', label: 'sprejet', selected: false },
       { id: false, color: 'binary-against', label: 'zavrnjen', selected: false },
     ];
 
-    let allTags = this.data.tags.map(
-      tag => ({ id: tag, label: tag, selected: false }),
-    );
+    const allTags = this.data.tags.map(tag => ({ id: tag, label: tag, selected: false }));
 
-    let textFilter = '';
+    const textFilter = '';
 
     return {
       textFilter,

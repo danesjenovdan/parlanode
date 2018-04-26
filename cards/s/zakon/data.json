@@ -1,36 +1,807 @@
 {
-  "status": "v obravnavi",
-  "created_for": "25.01.2018",
+  "status": "konec obravnave",
+  "created_for": "12.02.2018",
   "classification": "zakon",
-  "tags": ["Komisija za nadzor javnih financ", "Kolegij predsednika Dr\u017eavnega zbora", "Komisija za narodni skupnosti", "Komisija za odnose s Slovenci v zamejstvu in po svetu", "Komisija za poslovnik", "Mandatno-volilna komisija", "Odbor za delo, dru\u017eino, socialne zadeve in invalide", "Odbor za finance in monetarno politiko", "Odbor za gospodarstvo", "Odbor za infrastrukturo, okolje in prostor", "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino", "Odbor za kmetijstvo, gozdarstvo in prehrano", "Odbor za kulturo", "Odbor za notranje zadeve, javno upravo in lokalno samoupravo", "Odbor za obrambo", "Odbor za pravosodje", "Odbor za zadeve Evropske unije", "Odbor za zdravstvo", "Odbor za zunanjo politiko", "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in", "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji", "Ustavna komisija", "Proceduralna glasovanja", "Zunanja imenovanja", "Poslanska vpra\u0161anja", "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb", "Preiskovalne komisije", "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti", "Interpelacija", " Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investicij", "Ustavna obto\u017eba"],
-  "text": "Zakon o ratifikaciji Sporazuma o politi\u010dnem dialogu in sodelovanju med Evropsko unijo in njenimi dr\u017eavami \u010dlanicami na eni strani ter Republiko Kubo na drugi strani",
-  "abstract": "\r\n<p >Z zakonom se ratificira sporazum, ki med drugim:</p>\r\n<ul>\r\n<li>\r\n<div >dolo\u010da splo&scaron;na na\u010dela in cilje sodelovanja,</div>\r\n</li>\r\n<li>\r\n<div >opredeljuje politi\u010dne odnose (\u010dlovekove pravice, razoro\u017eevanje in ne&scaron;irjenje oro\u017eja za mno\u017ei\u010dno uni\u010devanje, boj proti terorizmu, boj proti trgovini z ljudmi, boj proti proizvodnji prepovedanih drog, trajnostni razvoj),</div>\r\n</li>\r\n<li>\r\n<div >opredeljuje sodelovanje in dialog o sektorski politiki (demokracija, pravosodje, varnost dr\u017eavljanov, dru\u017ebeni razvoj, okolje, podnebne spremembe, gospodarski razvoj),</div>\r\n</li>\r\n<li>\r\n<div >opredeljuje podro\u010dje trgovine in trgovinskega sodelovanja (pravila, ugodnosti, preglednost, olaj&scaron;evanje tehni\u010dnih ovir, trgovinska za&scaron;\u010dita, carina, intelektualna lastnina, nalo\u017ebe).</div>\r\n</li>\r\n</ul>",
+  "tags": [
+    "Komisija za nadzor javnih financ",
+    "Kolegij predsednika Dr\u017eavnega zbora",
+    "Komisija za narodni skupnosti",
+    "Komisija za odnose s Slovenci v zamejstvu in po svetu",
+    "Komisija za poslovnik",
+    "Mandatno-volilna komisija",
+    "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
+    "Odbor za finance in monetarno politiko",
+    "Odbor za gospodarstvo",
+    "Odbor za infrastrukturo, okolje in prostor",
+    "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino",
+    "Odbor za kmetijstvo, gozdarstvo in prehrano",
+    "Odbor za kulturo",
+    "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+    "Odbor za obrambo",
+    "Odbor za pravosodje",
+    "Odbor za zadeve Evropske unije",
+    "Odbor za zdravstvo",
+    "Odbor za zunanjo politiko",
+    "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in",
+    "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji",
+    "Ustavna komisija",
+    "Proceduralna glasovanja",
+    "Zunanja imenovanja",
+    "Poslanska vpra\u0161anja",
+    "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb",
+    "Preiskovalne komisije",
+    "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti",
+    "Interpelacija",
+    " Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investicij",
+    "Ustavna obto\u017eba",
+    "person",
+    "notr",
+    "okolj"
+  ],
+  "text":
+    "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov",
+  "abstract":
+    "<p>Z zakonom se dolo\u010da dodatne ukrepe za odpravo posledic &scaron;kode zaradi prenamno\u017eitve populacij podlubnikov. Z zakonom se med drugim:</p>\r\n<ul>\r\n<li>\r\n<div>opredeljuje stanje prenamno\u017eitve podlubnikov,</div>\r\n</li>\r\n<li>\r\n<div>dolo\u010da ukrepe za odpravo posledic (izjema pri odreditvi sanitarne se\u010dnje, skraj&scaron;anje rokov, izjeme pri pridobivanju soglasij, povra\u010dilo stro&scaron;kov, odstopanja glede prispevkov za pokojninsko zavarovanje),</div>\r\n</li>\r\n<li>\r\n<div>opredeljuje upravi\u010dence do ukrepov.&nbsp;</div>\r\n</li>\r\n</ul>",
   "session": {
-    "name": "",
-    "date_ts": "",
-    "date": "",
-    "orgs": "",
-    "id": "",
-    "in_review": ""
+    "name": "38. redna seja",
+    "orgs": [
+      {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 95,
+        "name": "Dr\u017eavni zbor"
+      }
+    ],
+    "date": "12. 2. 2018",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    },
+    "date_ts": "2018-02-12T01:00:00",
+    "updated_at": "20. 2. 2018",
+    "in_review": false,
+    "id": 9994
   },
-  "result": null,
-  "icon": "",
-  "votes": [{
-    "abstain": 8,
-    "tags": ["Odbor za zunanjo politiko"],
-    "text": "Zakon o ratifikaciji Sporazuma o politi\u010dnem dialogu in sodelovanju med Evropsko unijo in njenimi dr\u017eavami \u010dlanicami na eni strani ter Republiko Kubo na drugi strani - Glasovanje o zakonu v celoti",
-    "is_outlier": false,
-    "votes_for": 54,
-    "session_id": 9976,
-    "documents": [],
-    "against": 6,
-    "motion_id": 9108,
-    "has_outliers": true,
-    "not_present": 22,
-    "result": true
-  }],
+  "result": "sprejet",
+  "icon": "rastlina.svg",
+  "votes": [
+    {
+      "abstain": 6,
+      "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+      "text":
+        "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov - Amandma: K 1. \u010dlenu 6.2.2018 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+      "start_time": "2018-02-15T16:49:42",
+      "is_outlier": false,
+      "votes_for": 61,
+      "session_id": 9994,
+      "documents": [
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059538578651cff966785a6c55f3046d3acca7cee3213589b6cf5f42d8",
+          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00536b9137ad765715a988c7700a4e8676ba3acb98e97efb64ca11225b1",
+          "name":
+            "Besedilo Predloga zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005553061f43e76af15986bda7cbf951dc26809ba1f5604216ea4241b69",
+          "name": "Obvestilo o dodelitvi"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e87c4198886d06a53ceb3287c88569babdd37d87859648b40c6f252f",
+          "name": "Mnenje"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005858bfe30e82b2f54a8e5e08792e8279b22bb6e5302a68f6f247f09a3",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00520fb06a6b86abe6b5b75a6f13acf8cf41f1c0f2aa49d12dd8cb3cc07",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0050c0e5fc8be42f804187229dfea59df7d560cf95234fafa5b307b5134",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00539f0926611b03a1055db4254ccea49e81646fcf329dec33955c7780d",
+          "name":
+            "Mnenje Komisije Dr\u017eavnega sveta za kmetijstvo, gozdarstvo in prehrano k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590b6af4e81edc25adabca05f8cbd5ec4682a3a1e21f5ff0a4b44b2ff",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00596c7a866a29cb3ed3b0935eb3b3ee8c0dbbbab717543185a461f9709",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e8662a01dfd17acaf0361a7c833039a6c41c1a30c0a796bb5c4f37a5",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f43ebc2e1a5d642d1920b7c2ab9c7c6eb9d88d45bca84a1bb200c00",
+          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00568703b26e2b55e8289a20a2a41b811a7da985b3bc6d6d41f4204835a",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056202a6ab2081871a0a5212cd2366651e3307aaf388c543a4efea9354",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f836879cc6212b5ee3cdb15be63903e0f5a778ce3cdda756fa163200",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d9c2b8595f48283e7efc0b32425e5da3df9886b6f78cdb04e1e2a3c1",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00534188bb13119cf542146d538905730bd38b9349f1f62f07968cc48fd",
+          "name":
+            "Amandma Poslanskih skupin SMC, DeSUS in SD k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051930a04a6bba3ba86b4fb74ae49f38da9d80eed43d3c27b47656ac20",
+          "name": "Pregled sprejetih amandmajev in \u010dlenov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005824d8584c29c40cad21c3fdd93e55d11827f9e84756c454e34d7ce6e",
+          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00583a399781cf8034a3f1adf72cad7acd6714aef5c46ee8572af8ece39",
+          "name": "Dopis Dr\u017eavnemu svetu"
+        }
+      ],
+      "against": 0,
+      "motion_id": 9385,
+      "has_outliers": false,
+      "not_present": 23,
+      "result": true
+    },
+    {
+      "abstain": 7,
+      "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+      "text":
+        "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov - Amandma: K 4. \u010dlenu 6.2.2018 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+      "start_time": "2018-02-15T16:50:10",
+      "is_outlier": false,
+      "votes_for": 17,
+      "session_id": 9994,
+      "documents": [
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059538578651cff966785a6c55f3046d3acca7cee3213589b6cf5f42d8",
+          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00536b9137ad765715a988c7700a4e8676ba3acb98e97efb64ca11225b1",
+          "name":
+            "Besedilo Predloga zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005553061f43e76af15986bda7cbf951dc26809ba1f5604216ea4241b69",
+          "name": "Obvestilo o dodelitvi"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e87c4198886d06a53ceb3287c88569babdd37d87859648b40c6f252f",
+          "name": "Mnenje"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005858bfe30e82b2f54a8e5e08792e8279b22bb6e5302a68f6f247f09a3",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00520fb06a6b86abe6b5b75a6f13acf8cf41f1c0f2aa49d12dd8cb3cc07",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0050c0e5fc8be42f804187229dfea59df7d560cf95234fafa5b307b5134",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00539f0926611b03a1055db4254ccea49e81646fcf329dec33955c7780d",
+          "name":
+            "Mnenje Komisije Dr\u017eavnega sveta za kmetijstvo, gozdarstvo in prehrano k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590b6af4e81edc25adabca05f8cbd5ec4682a3a1e21f5ff0a4b44b2ff",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00596c7a866a29cb3ed3b0935eb3b3ee8c0dbbbab717543185a461f9709",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e8662a01dfd17acaf0361a7c833039a6c41c1a30c0a796bb5c4f37a5",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f43ebc2e1a5d642d1920b7c2ab9c7c6eb9d88d45bca84a1bb200c00",
+          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00568703b26e2b55e8289a20a2a41b811a7da985b3bc6d6d41f4204835a",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056202a6ab2081871a0a5212cd2366651e3307aaf388c543a4efea9354",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f836879cc6212b5ee3cdb15be63903e0f5a778ce3cdda756fa163200",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d9c2b8595f48283e7efc0b32425e5da3df9886b6f78cdb04e1e2a3c1",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00534188bb13119cf542146d538905730bd38b9349f1f62f07968cc48fd",
+          "name":
+            "Amandma Poslanskih skupin SMC, DeSUS in SD k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051930a04a6bba3ba86b4fb74ae49f38da9d80eed43d3c27b47656ac20",
+          "name": "Pregled sprejetih amandmajev in \u010dlenov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005824d8584c29c40cad21c3fdd93e55d11827f9e84756c454e34d7ce6e",
+          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00583a399781cf8034a3f1adf72cad7acd6714aef5c46ee8572af8ece39",
+          "name": "Dopis Dr\u017eavnemu svetu"
+        }
+      ],
+      "against": 45,
+      "motion_id": 9384,
+      "has_outliers": true,
+      "not_present": 21,
+      "result": false
+    },
+    {
+      "abstain": 7,
+      "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+      "text":
+        "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov - Amandma: K 13. \u010dlenu 6.2.2018 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+      "start_time": "2018-02-15T16:50:38",
+      "is_outlier": false,
+      "votes_for": 16,
+      "session_id": 9994,
+      "documents": [
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059538578651cff966785a6c55f3046d3acca7cee3213589b6cf5f42d8",
+          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00536b9137ad765715a988c7700a4e8676ba3acb98e97efb64ca11225b1",
+          "name":
+            "Besedilo Predloga zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005553061f43e76af15986bda7cbf951dc26809ba1f5604216ea4241b69",
+          "name": "Obvestilo o dodelitvi"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e87c4198886d06a53ceb3287c88569babdd37d87859648b40c6f252f",
+          "name": "Mnenje"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005858bfe30e82b2f54a8e5e08792e8279b22bb6e5302a68f6f247f09a3",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00520fb06a6b86abe6b5b75a6f13acf8cf41f1c0f2aa49d12dd8cb3cc07",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0050c0e5fc8be42f804187229dfea59df7d560cf95234fafa5b307b5134",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00539f0926611b03a1055db4254ccea49e81646fcf329dec33955c7780d",
+          "name":
+            "Mnenje Komisije Dr\u017eavnega sveta za kmetijstvo, gozdarstvo in prehrano k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590b6af4e81edc25adabca05f8cbd5ec4682a3a1e21f5ff0a4b44b2ff",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00596c7a866a29cb3ed3b0935eb3b3ee8c0dbbbab717543185a461f9709",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e8662a01dfd17acaf0361a7c833039a6c41c1a30c0a796bb5c4f37a5",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f43ebc2e1a5d642d1920b7c2ab9c7c6eb9d88d45bca84a1bb200c00",
+          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00568703b26e2b55e8289a20a2a41b811a7da985b3bc6d6d41f4204835a",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056202a6ab2081871a0a5212cd2366651e3307aaf388c543a4efea9354",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f836879cc6212b5ee3cdb15be63903e0f5a778ce3cdda756fa163200",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d9c2b8595f48283e7efc0b32425e5da3df9886b6f78cdb04e1e2a3c1",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00534188bb13119cf542146d538905730bd38b9349f1f62f07968cc48fd",
+          "name":
+            "Amandma Poslanskih skupin SMC, DeSUS in SD k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051930a04a6bba3ba86b4fb74ae49f38da9d80eed43d3c27b47656ac20",
+          "name": "Pregled sprejetih amandmajev in \u010dlenov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005824d8584c29c40cad21c3fdd93e55d11827f9e84756c454e34d7ce6e",
+          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00583a399781cf8034a3f1adf72cad7acd6714aef5c46ee8572af8ece39",
+          "name": "Dopis Dr\u017eavnemu svetu"
+        }
+      ],
+      "against": 46,
+      "motion_id": 9383,
+      "has_outliers": false,
+      "not_present": 21,
+      "result": false
+    },
+    {
+      "abstain": 6,
+      "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+      "text":
+        "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov - Eviden\u010dni sklep da se tretja obravnava opravi na isti seji 15.2.2018",
+      "start_time": "2018-02-15T16:51:31",
+      "is_outlier": false,
+      "votes_for": 53,
+      "session_id": 9994,
+      "documents": [
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059538578651cff966785a6c55f3046d3acca7cee3213589b6cf5f42d8",
+          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00536b9137ad765715a988c7700a4e8676ba3acb98e97efb64ca11225b1",
+          "name":
+            "Besedilo Predloga zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005553061f43e76af15986bda7cbf951dc26809ba1f5604216ea4241b69",
+          "name": "Obvestilo o dodelitvi"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e87c4198886d06a53ceb3287c88569babdd37d87859648b40c6f252f",
+          "name": "Mnenje"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005858bfe30e82b2f54a8e5e08792e8279b22bb6e5302a68f6f247f09a3",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00520fb06a6b86abe6b5b75a6f13acf8cf41f1c0f2aa49d12dd8cb3cc07",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0050c0e5fc8be42f804187229dfea59df7d560cf95234fafa5b307b5134",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00539f0926611b03a1055db4254ccea49e81646fcf329dec33955c7780d",
+          "name":
+            "Mnenje Komisije Dr\u017eavnega sveta za kmetijstvo, gozdarstvo in prehrano k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590b6af4e81edc25adabca05f8cbd5ec4682a3a1e21f5ff0a4b44b2ff",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00596c7a866a29cb3ed3b0935eb3b3ee8c0dbbbab717543185a461f9709",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e8662a01dfd17acaf0361a7c833039a6c41c1a30c0a796bb5c4f37a5",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f43ebc2e1a5d642d1920b7c2ab9c7c6eb9d88d45bca84a1bb200c00",
+          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00568703b26e2b55e8289a20a2a41b811a7da985b3bc6d6d41f4204835a",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056202a6ab2081871a0a5212cd2366651e3307aaf388c543a4efea9354",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f836879cc6212b5ee3cdb15be63903e0f5a778ce3cdda756fa163200",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d9c2b8595f48283e7efc0b32425e5da3df9886b6f78cdb04e1e2a3c1",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00534188bb13119cf542146d538905730bd38b9349f1f62f07968cc48fd",
+          "name":
+            "Amandma Poslanskih skupin SMC, DeSUS in SD k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051930a04a6bba3ba86b4fb74ae49f38da9d80eed43d3c27b47656ac20",
+          "name": "Pregled sprejetih amandmajev in \u010dlenov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005824d8584c29c40cad21c3fdd93e55d11827f9e84756c454e34d7ce6e",
+          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00583a399781cf8034a3f1adf72cad7acd6714aef5c46ee8572af8ece39",
+          "name": "Dopis Dr\u017eavnemu svetu"
+        }
+      ],
+      "against": 9,
+      "motion_id": 9403,
+      "has_outliers": true,
+      "not_present": 22,
+      "result": true
+    },
+    {
+      "abstain": 6,
+      "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+      "text":
+        "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov - Amandma: K 1. \u010dlenu 15.2.2018 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+      "start_time": "2018-02-20T18:03:41",
+      "is_outlier": false,
+      "votes_for": 56,
+      "session_id": 9994,
+      "documents": [
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059538578651cff966785a6c55f3046d3acca7cee3213589b6cf5f42d8",
+          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00536b9137ad765715a988c7700a4e8676ba3acb98e97efb64ca11225b1",
+          "name":
+            "Besedilo Predloga zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005553061f43e76af15986bda7cbf951dc26809ba1f5604216ea4241b69",
+          "name": "Obvestilo o dodelitvi"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e87c4198886d06a53ceb3287c88569babdd37d87859648b40c6f252f",
+          "name": "Mnenje"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005858bfe30e82b2f54a8e5e08792e8279b22bb6e5302a68f6f247f09a3",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00520fb06a6b86abe6b5b75a6f13acf8cf41f1c0f2aa49d12dd8cb3cc07",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0050c0e5fc8be42f804187229dfea59df7d560cf95234fafa5b307b5134",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00539f0926611b03a1055db4254ccea49e81646fcf329dec33955c7780d",
+          "name":
+            "Mnenje Komisije Dr\u017eavnega sveta za kmetijstvo, gozdarstvo in prehrano k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590b6af4e81edc25adabca05f8cbd5ec4682a3a1e21f5ff0a4b44b2ff",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00596c7a866a29cb3ed3b0935eb3b3ee8c0dbbbab717543185a461f9709",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e8662a01dfd17acaf0361a7c833039a6c41c1a30c0a796bb5c4f37a5",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f43ebc2e1a5d642d1920b7c2ab9c7c6eb9d88d45bca84a1bb200c00",
+          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00568703b26e2b55e8289a20a2a41b811a7da985b3bc6d6d41f4204835a",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056202a6ab2081871a0a5212cd2366651e3307aaf388c543a4efea9354",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f836879cc6212b5ee3cdb15be63903e0f5a778ce3cdda756fa163200",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d9c2b8595f48283e7efc0b32425e5da3df9886b6f78cdb04e1e2a3c1",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00534188bb13119cf542146d538905730bd38b9349f1f62f07968cc48fd",
+          "name":
+            "Amandma Poslanskih skupin SMC, DeSUS in SD k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051930a04a6bba3ba86b4fb74ae49f38da9d80eed43d3c27b47656ac20",
+          "name": "Pregled sprejetih amandmajev in \u010dlenov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005824d8584c29c40cad21c3fdd93e55d11827f9e84756c454e34d7ce6e",
+          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00583a399781cf8034a3f1adf72cad7acd6714aef5c46ee8572af8ece39",
+          "name": "Dopis Dr\u017eavnemu svetu"
+        }
+      ],
+      "against": 1,
+      "motion_id": 9496,
+      "has_outliers": false,
+      "not_present": 27,
+      "result": true
+    },
+    {
+      "abstain": 0,
+      "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
+      "text":
+        "Zakon o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov - Glasovanje o zakonu v celoti",
+      "start_time": "2018-02-20T18:04:21",
+      "is_outlier": false,
+      "votes_for": 63,
+      "session_id": 9994,
+      "documents": [
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0059538578651cff966785a6c55f3046d3acca7cee3213589b6cf5f42d8",
+          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00536b9137ad765715a988c7700a4e8676ba3acb98e97efb64ca11225b1",
+          "name":
+            "Besedilo Predloga zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005553061f43e76af15986bda7cbf951dc26809ba1f5604216ea4241b69",
+          "name": "Obvestilo o dodelitvi"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e87c4198886d06a53ceb3287c88569babdd37d87859648b40c6f252f",
+          "name": "Mnenje"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005858bfe30e82b2f54a8e5e08792e8279b22bb6e5302a68f6f247f09a3",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00520fb06a6b86abe6b5b75a6f13acf8cf41f1c0f2aa49d12dd8cb3cc07",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0050c0e5fc8be42f804187229dfea59df7d560cf95234fafa5b307b5134",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00539f0926611b03a1055db4254ccea49e81646fcf329dec33955c7780d",
+          "name":
+            "Mnenje Komisije Dr\u017eavnega sveta za kmetijstvo, gozdarstvo in prehrano k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590b6af4e81edc25adabca05f8cbd5ec4682a3a1e21f5ff0a4b44b2ff",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00596c7a866a29cb3ed3b0935eb3b3ee8c0dbbbab717543185a461f9709",
+          "name":
+            "Odgovor na Mnenje Zakonodajno pravne slu\u017ebe k Predlogu zakona o dodatnih ukrepih za odpravo posledic zaradi prenamno\u017eitve populacije podlubnikov "
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e8662a01dfd17acaf0361a7c833039a6c41c1a30c0a796bb5c4f37a5",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f43ebc2e1a5d642d1920b7c2ab9c7c6eb9d88d45bca84a1bb200c00",
+          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00568703b26e2b55e8289a20a2a41b811a7da985b3bc6d6d41f4204835a",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056202a6ab2081871a0a5212cd2366651e3307aaf388c543a4efea9354",
+          "name": "Vlo\u017eitveni dokument"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f836879cc6212b5ee3cdb15be63903e0f5a778ce3cdda756fa163200",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005d9c2b8595f48283e7efc0b32425e5da3df9886b6f78cdb04e1e2a3c1",
+          "name": "Pregled amandmajev"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00534188bb13119cf542146d538905730bd38b9349f1f62f07968cc48fd",
+          "name":
+            "Amandma Poslanskih skupin SMC, DeSUS in SD k Predlogu zakona o dodatnih ukrepih za odpravo posledic \u0161kode zaradi prenamno\u017eitve populacije podlubnikov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051930a04a6bba3ba86b4fb74ae49f38da9d80eed43d3c27b47656ac20",
+          "name": "Pregled sprejetih amandmajev in \u010dlenov"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005824d8584c29c40cad21c3fdd93e55d11827f9e84756c454e34d7ce6e",
+          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
+        },
+        {
+          "url":
+            "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00583a399781cf8034a3f1adf72cad7acd6714aef5c46ee8572af8ece39",
+          "name": "Dopis Dr\u017eavnemu svetu"
+        }
+      ],
+      "against": 0,
+      "motion_id": 9495,
+      "has_outliers": false,
+      "not_present": 27,
+      "result": true
+    }
+  ],
   "extra_abstract": "",
-  "created_at": "25.01.2018",
+  "created_at": "21.02.2018",
   "abstractVisible": true,
-  "epa": "2438-VII"
+  "epa": "2468-VII"
 }
