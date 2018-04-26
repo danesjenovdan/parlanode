@@ -57,12 +57,11 @@
 
 <script>
 import { capitalize } from 'lodash';
-import generateMonths from 'helpers/generateMonths';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import DateRow from 'components/DateRow.vue';
 import Toggle from 'components/Toggle.vue';
-import Ballot from 'components/Ballot.vue'
+import Ballot from 'components/Ballot.vue';
 
 import common from 'mixins/common';
 import scroll from 'mixins/scroll';
@@ -100,7 +99,7 @@ export default {
 
       return {
         tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        classifications: this.allClassifications
+        classifications: this.allClassifications,
         // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
@@ -159,9 +158,7 @@ export default {
   },
   data() {
     const selectFromState = (items, stateItemIds) =>
-      items.map(item =>
-        Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
-    );
+      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
 
     // let allMonths = generateMonths();
 
@@ -172,9 +169,8 @@ export default {
       { id: 'ni', class: 'ni', label: (this.type === 'person' ? 'NI' : 'NISO'), selected: false },
     ];
 
-    let allTags = this.cardData.data.all_tags.map(
-      tag => ({ id: tag, label: tag, selected: false }),
-    );
+    let allTags = this.cardData.data.all_tags
+      .map(tag => ({ id: tag, label: tag, selected: false }));
 
     let allClassifications = [];
     for (var classificationKey in this.cardData.data.classifications) {
@@ -231,7 +227,6 @@ export default {
         return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 
-
       // const filterDates = (votingDay) => {
       //   // if (onlyFilterByText || this.selectedMonths.length === 0) return true;
       //   if (onlyFilterByText || this.selectedMonths.length === 0) return true;
@@ -241,7 +236,7 @@ export default {
       //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
       // };
 
-      let votingDays = this.votingDays
+      const votingDays = this.votingDays
         .map(votingDay => ({
           date: votingDay.date,
           ballots: votingDay.ballots
@@ -269,20 +264,20 @@ export default {
         // .filter(filterDates);
 
       if (this.type === 'party' && this.selectedSort === 'maximum') {
-        const sortyByDisunion = arr => {
+        const sortyByDisunion = (arr) => {
           let bag = [];
-          let i = 0
+          let i = 0;
           while (i < arr.length) {
             bag = bag.concat(arr[i].ballots);
             i++;
           }
           return bag.sort((a, b) => {
-            return parseInt(b.disunion) - parseInt(a.disunion);
+            return parseInt(b.disunion, 10) - parseInt(a.disunion, 10);
           });
-        }
+        };
 
         return [{
-          ballots: sortyByDisunion(votingDays)
+          ballots: sortyByDisunion(votingDays),
         }];
       }
 
@@ -291,8 +286,8 @@ export default {
   },
   filters: {
     toPercent(val) {
-      return parseInt(val) + ' %';
-    }
+      return parseInt(val, 10) + ' %';
+    },
   },
   props: {
     cardData: {
@@ -310,7 +305,6 @@ export default {
   created() {
     (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
     (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
-
   },
 };
 </script>

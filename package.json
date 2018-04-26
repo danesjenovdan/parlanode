@@ -90,7 +90,8 @@
       "import/no-extraneous-dependencies": "off",
       "import/no-unresolved": "off",
       "import/extensions": "off",
-      "object-curly-newline": ["error", { "multiline": true, "consistent": true }]
+      "object-curly-newline": ["error", { "multiline": true, "consistent": true }],
+      "no-param-reassign": "off"
     }
   },
   "babel": {
