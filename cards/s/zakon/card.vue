@@ -88,9 +88,9 @@ export default {
       ? this.$options.cardData.data.text.slice(0, 100) + '...'
       : 'Zakon';
 
-    // did we have "glasovanje o zakonu v celoti"    
+    // did we have "glasovanje o zakonu v celoti"
     const finalVoteExists = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1).length > 0;
-    
+
     let finalVoteData;
     let finalVoteResult;
     let numberOfVotes;
@@ -145,7 +145,7 @@ export default {
     };
   },
   computed: {
-    content() {  
+    content() {
       if (this.data.abstract) {
         return this.data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '');
       }

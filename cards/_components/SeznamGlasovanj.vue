@@ -38,7 +38,7 @@
               <div class="col-md-6 ">
                 <div class="session_title ">
                   <p>
-                    {{ vote.text.split(' ').length > 14 ? vote.text.split(' ').splice(0, 14).join(' ') + ' ...' : vote.text }}
+                    {{ getVoteText(vote) }}
                   </p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default {
     data: {
       required: true,
       type: Object,
-    }
+    },
   },
 
   data() {
@@ -120,6 +120,10 @@ export default {
       e.percent_against = Math.floor(e.against / allInVotes * 100);
       e.percent_abstain = Math.floor(e.abstain / allInVotes * 100);
       e.percent_not_present = Math.floor(e.not_present / allInVotes * 100);
+
+      if (this.data.text && e.text.indexOf(this.data.text) === 0) {
+        e.short_text = e.text.slice(this.data.text.length).replace(/^[\s-]*/, '');
+      }
 
       return e;
     });
@@ -160,7 +164,7 @@ export default {
       });
       return {
         tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-      }
+      };
     },
     selectedTags() {
       return this.allTags
@@ -185,8 +189,15 @@ export default {
         const resultMatch = this.selectedResults.length === 0 || this.selectedResults.indexOf(vote.result) > -1;
 
         return textMatch && tagMatch && resultMatch;
-      }
+      };
       return this.votes.filter(filterVotes);
+    },
+    getVoteText(vote) {
+      const text = vote.short_text || vote.text;
+      if (text.split(' ').length > 14) {
+        return `${text.split(' ').splice(0, 14).join(' ')} ...`;
+      }
+      return text;
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
@@ -198,7 +209,7 @@ export default {
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

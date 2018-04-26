@@ -178,7 +178,7 @@
           heading: '&nbsp;',
           subheading: '7. sklic parlamenta',
           alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: `Druga glasovanja - ${this.$options.cardData.data.session.name}`,
+          title: 'Druga glasovanja',
         },
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,
@@ -214,7 +214,7 @@
         });
         return {
           tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        }
+        };
       },
       selectedTags() {
         return this.allTags
@@ -254,6 +254,8 @@
     created() {
       this.$options.cardData.template.contextUrl =
         `${this.slugs.base}/seja/glasovanja/${this.data.session.id}`;
+      this.$options.cardData.template.pageTitle =
+        `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
     },
   };
 </script>

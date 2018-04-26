@@ -11,6 +11,7 @@ module.exports = () => {
   }
 
   const config = baseConfig(`${path.resolve(__dirname)}/${cardName}`);
+  config.module.loaders[0].options.extractCSS = false;
 
   return Object.assign(config, {
     entry: './cards/devBundle.js',

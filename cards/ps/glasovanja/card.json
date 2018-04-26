@@ -1,9 +1,9 @@
 {
   "_id": "ps_glasovanja",
-  "name": "Glasovanja - poslanska skupina",
+  "name": "Glasovanja",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getTaggedBallots",
   "type": "poslanska_skupina",
-  "lastUpdate": "2018-01-08T09:46:02.382Z",
+  "lastUpdate": "2018-04-25T16:33:19.607Z",
   "method": "glasovanja",
   "group": "ps",
   "big": true
