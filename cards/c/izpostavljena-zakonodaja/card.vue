@@ -7,9 +7,9 @@
     contentHeight="518px"
   >
     <div slot="info">
-        <p class="info-text lead">Iz nabora vseh zakonov, obravnavanih v tem sklicu, izberemo šest takšnih, ki so še v obravnavi in šest takšnih, ki so bili nedavno sprejeti.</p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Izpostavljene zakone kot edino stvar na Parlametru določamo uredniško in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi.</p>
+      <p class="info-text lead">Kažemo šest zakonov, ki so še v parlamentarni obravnavi, in šest nedavno sprejetih.</p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">Izpostavljene zakone določamo uredniško, in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi. To je edina stvar na Parlametru, ki je ne kurira računalnik, ampak človek.</p>
     </div>
     <div class="p-tabs-2col legislation">
       <p-tabs :start-tab="selectedTab">
