@@ -35,7 +35,7 @@
     </div>
     <div id="votingCard" class="date-list">
       <div class="session_voting">
-        <div v-for="vote in filteredVotes" class="clearfix single_voting">
+        <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.results.motion_id">
           <div v-if="vote.results.is_outlier" class="fire-badge"></div>
           <div v-if="vote.results.has_outliers && vote.results.is_outlier" class="lightning-badge"></div>
           <div v-if="vote.results.has_outliers && !vote.results.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
@@ -113,21 +113,15 @@
     components: { PSearchDropdown, StripedButton },
     name: 'GlasovanjaSeja',
     data() {
-
-      const selectFromState = (items, stateItemIds) =>
-        items.map(item =>
-          Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }),
-        );
-
-      let votes = this.$options.cardData.data.results.map(function (e) {
-        var allInVotes = e.results.votes_for + e.results.against + e.results.abstain + e.results.not_present;
-        e.url = 'https://parlameter.si/seja/glasovanje/' + e.session.id + '/' + e.results.motion_id;
-        e.accepted = 'accepted ' + ((e.results.result === true) ? 'aye' : 'nay');
-        e.accepted_glyph = 'glyphicon ' + ((e.results.result === true) ? 'glyphicon-ok' : 'glyphicon-remove');
-        e.percent_votes_for = Math.floor(e.results.votes_for / allInVotes * 100);
-        e.percent_against = Math.floor(e.results.against / allInVotes * 100);
-        e.percent_abstain = Math.floor(e.results.abstain / allInVotes * 100);
-        e.percent_not_present = Math.floor(e.results.not_present / allInVotes * 100);
+      const votes = this.$options.cardData.data.results.map((e) => {
+        const allInVotes = e.results.votes_for + e.results.against + e.results.abstain + e.results.not_present;
+        e.url = `https://parlameter.si/seja/glasovanje/${e.session.id}/${e.results.motion_id}`;
+        e.accepted = `accepted ${(e.results.result === true) ? 'aye' : 'nay'}`;
+        e.accepted_glyph = `glyphicon ${(e.results.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
+        e.percent_votes_for = Math.floor((e.results.votes_for / allInVotes) * 100);
+        e.percent_against = Math.floor((e.results.against / allInVotes) * 100);
+        e.percent_abstain = Math.floor((e.results.abstain / allInVotes) * 100);
+        e.percent_not_present = Math.floor((e.results.not_present / allInVotes) * 100);
         e.epa = e.results.epa;
 
         return e;
@@ -141,32 +135,35 @@
         }
       }
 
-      let allResults = [
+      const allResults = [
         { id: true, color: 'binary-for', label: 'sprejet', selected: false },
         { id: false, color: 'binary-against', label: 'zavrnjen', selected: false },
       ];
 
-      let allTags = this.$options.cardData.data.tags.map(
-        tag => ({ id: tag, label: tag, selected: false }),
-      );
+      const allTags =
+        this.$options.cardData.data.tags.map(tag => ({ id: tag, label: tag, selected: false }));
 
       let textFilter = '';
 
       if (this.$options.cardData.parlaState) {
         const state = this.$options.cardData.parlaState;
-        console.log('state');
-        console.log(state);
-        if (state.text) textFilter = state.text;
-        if (state.tags) allTags.map((tag) => {
-          if (state.tags.indexOf(tag.id) !== -1) {
-            tag.selected = true;
-          }
-        });
-        if (state.results) allResults.map((result) => {
-          if (state.results.indexOf(result.id) !== -1) {
-            result.selected = true;
-          }
-        });
+        if (state.text) {
+          textFilter = state.text;
+        }
+        if (state.tags) {
+          allTags.forEach((tag) => {
+            if (state.tags.indexOf(tag.id) !== -1) {
+              tag.selected = true;
+            }
+          });
+        }
+        if (state.results) {
+          allResults.forEach((result) => {
+            if (state.results.indexOf(result.id) !== -1) {
+              result.selected = true;
+            }
+          });
+        }
       }
 
       console.log(this.$options.cardData.data.session.name);
@@ -178,7 +175,7 @@
           heading: '&nbsp;',
           subheading: '7. sklic parlamenta',
           alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: `Druga glasovanja - ${this.$options.cardData.data.session.name}`,
+          title: 'Druga glasovanja',
         },
         cardMethod: this.$options.cardData.cardData.method,
         cardGroup: this.$options.cardData.cardData.group,
@@ -214,7 +211,7 @@
         });
         return {
           tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        }
+        };
       },
       selectedTags() {
         return this.allTags
@@ -238,7 +235,7 @@
           const resultMatch = this.selectedResults.length === 0 || this.selectedResults.indexOf(vote.results.result) > -1;
 
           return textMatch && tagMatch && resultMatch;
-        }
+        };
         return this.votes.filter(filterVotes);
       },
       measurePiwik(filter, sort, order) {
@@ -254,6 +251,8 @@
     created() {
       this.$options.cardData.template.contextUrl =
         `${this.slugs.base}/seja/glasovanja/${this.data.session.id}`;
+      this.$options.cardData.template.pageTitle =
+        `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
     },
   };
 </script>

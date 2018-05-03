@@ -1,9 +1,9 @@
 {
   "_id": "p_prisotnost-skozi-cas",
-  "name": "Prisotnost na glasovanjih skozi čas",
+  "name": "Prisotnost na glasovanjih sej DZ skozi čas",
   "dataUrl": "https://analize.parlameter.si/v1/p/getPresenceThroughTime",
   "type": "poslanec",
-  "lastUpdate": "2018-01-08T09:45:52.942Z",
+  "lastUpdate": "2018-04-26T13:09:28.370Z",
   "method": "prisotnost-skozi-cas",
   "group": "p",
   "big": true

@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    :card-url="url"
+    :card-url="generatedCardUrl"
     :header-config="headerConfig">
 
     <div slot="info">
@@ -80,6 +80,9 @@ export default {
         'Stalne delegacije': [],
         'Skupine prijateljstva': [],
       });
+    },
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
     },
   },
   methods: {

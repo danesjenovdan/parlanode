@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import Glasovanja from 'components/Glasovanja.vue'
+import Glasovanja from 'components/Glasovanja.vue';
 
 export default {
   name: 'GlasovanjaPoslanskeSkupine',
-  components: { Glasovanja }
-}
+  components: { Glasovanja },
+};
 </script>

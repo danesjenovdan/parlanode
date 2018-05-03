@@ -443,6 +443,9 @@ exports.render = (req, res) => {
                 } else if (embed) {
                   vueTemplateName = 'embed';
                 }
+                const stylePath = `${bundlesPath}style.css`;
+                const style = fs.existsSync(stylePath) ? `<style>${fs.readFileSync(stylePath, 'utf-8')}</style>` : '';
+
                 const rendererInstance = renderer.createBundleRenderer(serverBundle, {
                   template: fs.readFileSync(`cards/template_${vueTemplateName}.html`, 'utf-8'),
                   runInNewContext: false,
@@ -462,6 +465,9 @@ exports.render = (req, res) => {
                   context,
                   (error, html) => {
                     if (error) throw error;
+                    if (style) {
+                      html = html.replace('<!--extra-style-->', style);
+                    }
                     render(html, true);
                   },
                 );
