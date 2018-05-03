@@ -17,7 +17,6 @@
     "transkript": "/seja/transkript/",
     "glasovanja": "/seja/glasovanja/"
   },
-  "legislationLink": "/zakonodaja/",
   "person": {
     "2": {
       "slug": "anja-bah-zibert"
@@ -366,7 +365,7 @@
     "8": {
       "acronym": "levica",
       "realAcronym": "Levica",
-      "slug": "ps-zdruzena-levica"
+      "slug": "ps-levica"
     },
     "9": {
       "acronym": "",
@@ -561,382 +560,624 @@
     "47": {
       "acronym": "",
       "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-crno-goro"
-    },
-    "48": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-dansko"
-    },
-    "49": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-estonijo"
-    },
-    "50": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-finsko"
-    },
-    "51": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-francijo"
-    },
-    "52": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-grcijo"
-    },
-    "53": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-hrvasko"
-    },
-    "54": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-indijo"
-    },
-    "55": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-italijo"
-    },
-    "56": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-irsko"
-    },
-    "57": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-izraelom"
-    },
-    "58": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-japonsko"
-    },
-    "59": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-kanado"
-    },
-    "60": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-kitajsko"
-    },
-    "61": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-kubo"
-    },
-    "62": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-litvo"
-    },
-    "63": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-madzarsko"
-    },
-    "64": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-makedonijo"
-    },
-    "65": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-malto"
-    },
-    "66": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-mehiko"
-    },
-    "67": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-nemcijo"
-    },
-    "68": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-nizozemsko"
-    },
-    "69": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-norvesko"
-    },
-    "70": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-romunijo"
-    },
-    "71": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-rusijo"
-    },
-    "72": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-slovasko"
-    },
-    "73": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-srbijo"
-    },
-    "74": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-spanijo"
-    },
-    "75": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-svedsko"
-    },
-    "76": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-svico"
-    },
-    "77": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-turcijo"
-    },
-    "78": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-ukrajino"
-    },
-    "79": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-veliko-britanijo"
-    },
-    "80": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-zdruzenimi-drzavami-amerike"
-    },
-    "81": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-iranom"
-    },
-    "82": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-ciprom"
-    },
-    "83": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-poljsko"
-    },
-    "84": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-marokom"
-    },
-    "85": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-islandijo"
-    },
-    "86": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-liechtensteinom"
-    },
-    "87": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-portugalsko"
-    },
-    "88": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-luksemburgom"
-    },
-    "89": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-egiptom"
-    },
-    "90": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-kosovom"
-    },
-    "91": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-latvijo"
-    },
-    "92": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-gruzijo"
-    },
-    "93": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-juzno-korejo"
-    },
-    "94": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-kuvajtom"
-    },
-    "95": {
-      "acronym": "dz",
-      "realAcronym": "DZ",
-      "slug": "drzavni-zbor"
-    },
-    "96": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "ostali"
-    },
-    "97": {
-      "acronym": "ps-np",
-      "realAcronym": "PS NP",
-      "slug": "ps-nepovezanih-poslancev"
-    },
-    "98": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "preiskovalna-komisija-o-ugotavljanju-zlorab-v-slovenskem-bancnem-sistemu-ter-ugotavljanju-vzrokov-in-odgovornosti-za-ze-drugo-sanacijo-bancnega-sistema-v-samostojni-sloveniji"
-    },
-    "100": {
-      "acronym": "nep-bd",
-      "realAcronym": "NeP - BD",
-      "slug": "nepovezani-poslanec-bojan-dobovsek"
-    },
-    "101": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "preiskovalna-komisija-za-ugotavljanje-politicne-odgovornosti-nosilcev-javnih-funkcij-pri-investiciji-v-blok-6-termoelektrarne-sostanj"
-    },
-    "102": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-savdsko-arabijo"
-    },
-    "103": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-turkmenistanom"
-    },
-    "104": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-venezuelo"
-    },
-    "105": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb"
-    },
-    "106": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "preiskovalna-komisija-o-ugotavljanju-zlorab-v-slovenskem-zdravstvenem-sistemu-na-podrocju-prodaje-in-nakupa-zilnih-opornic"
-    },
-    "107": {
-      "acronym": "nep-mbk",
-      "realAcronym": "NeP - MBK",
-      "slug": "nepovezana-poslanka-mirjam-bon-klanjscek"
-    },
-    "108": {
-      "acronym": "nep-ac",
-      "realAcronym": "NeP - A\u010c",
-      "slug": "nepovezani-poslanec-andrej-cus"
-    },
-    "109": {
-      "acronym": "ps-np",
-      "realAcronym": "PS NP",
-      "slug": "ps-nepovezanih-poslancev"
-    },
-    "110": {
-      "acronym": "nep-ab",
-      "realAcronym": "NeP - AB",
-      "slug": "nepovezana-poslanka-alenka-bratusek"
-    },
-    "111": {
-      "acronym": "nep-zl",
-      "realAcronym": "NeP - ZL",
-      "slug": "nepovezani-poslanec-zvonko-lah"
-    },
-    "112": {
-      "acronym": "nep-jm",
-      "realAcronym": "NeP - JM",
-      "slug": "nepovezani-poslanec-jani-moderndorfer"
-    },
-    "113": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-alzirijo"
-    },
-    "114": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-moldavijo"
-    },
-    "115": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-armenijo"
-    },
-    "116": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-belorusijo"
-    },
-    "117": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-cilom"
-    },
-    "118": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-kazahstanom"
-    },
-    "119": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-novo-zelandijo"
-    },
-    "120": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-palestino"
-    },
-    "121": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-senegalom"
-    },
-    "122": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-s-tunizijo"
-    },
-    "123": {
-      "acronym": "",
-      "realAcronym": "",
-      "slug": "skupina-prijateljstva-z-zdruzenimi-arabskimi-emirati"
-    }
-  }
-}
+      "
+      slug ": "
+      skupina - prijateljstva - s - crno - goro "}, "
+      48 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - dansko "}, "
+      49 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - estonijo "}, "
+      50 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - finsko "}, "
+      51 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - francijo "}, "
+      52 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - grcijo "}, "
+      53 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - hrvasko "}, "
+      54 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - indijo "}, "
+      55 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - italijo "}, "
+      56 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - irsko "}, "
+      57 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - izraelom "}, "
+      58 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - japonsko "}, "
+      59 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - kanado "}, "
+      60 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - kitajsko "}, "
+      61 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - kubo "}, "
+      62 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - litvo "}, "
+      63 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - madzarsko "}, "
+      64 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - makedonijo "}, "
+      65 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - malto "}, "
+      66 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - mehiko "}, "
+      67 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - nemcijo "}, "
+      68 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - nizozemsko "}, "
+      69 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - norvesko "}, "
+      70 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - romunijo "}, "
+      71 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - rusijo "}, "
+      72 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - slovasko "}, "
+      73 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - srbijo "}, "
+      74 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - spanijo "}, "
+      75 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - svedsko "}, "
+      76 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - svico "}, "
+      77 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - turcijo "}, "
+      78 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - ukrajino "}, "
+      79 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - veliko - britanijo "}, "
+      80 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - zdruzenimi - drzavami - amerike "}, "
+      81 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - iranom "}, "
+      82 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - ciprom "}, "
+      83 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - poljsko "}, "
+      84 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - marokom "}, "
+      85 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - islandijo "}, "
+      86 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - liechtensteinom "}, "
+      87 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - portugalsko "}, "
+      88 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - luksemburgom "}, "
+      89 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - egiptom "}, "
+      90 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - kosovom "}, "
+      91 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - latvijo "}, "
+      92 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - gruzijo "}, "
+      93 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - z - juzno - korejo "}, "
+      94 ": {"
+      acronym ": "
+      ", "
+      realAcronym ": "
+      ", "
+      slug ": "
+      skupina - prijateljstva - s - kuvajtom "}, "
+      95 ":  {
+        "acronym": "dz",
+        "realAcronym": "DZ",
+        "slug": "drzavni-zbor"
+      },
+      "96": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "ostali"
+      },
+      "97": {
+        "acronym": "ps-np",
+        "realAcronym": "PS NP",
+        "slug": "ps-nepovezanih-poslancev"
+      },
+      "98": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "preiskovalna-komisija-o-ugotavljanju-zlorab-v-slovenskem-bancnem-sistemu-ter-ugotavljanju-vzrokov-in-odgovornosti-za-ze-drugo-sanacijo-bancnega-sistema-v-samostojni-sloveniji"
+      },
+      "100": {
+        "acronym": "nep-bd",
+        "realAcronym": "NeP - BD",
+        "slug": "nepovezani-poslanec-bojan-dobovsek"
+      },
+      "101": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "preiskovalna-komisija-za-ugotavljanje-politicne-odgovornosti-nosilcev-javnih-funkcij-pri-investiciji-v-blok-6-termoelektrarne-sostanj"
+      },
+      "102": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-savdsko-arabijo"
+      },
+      "103": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-turkmenistanom"
+      },
+      "104": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-venezuelo"
+      },
+      "105": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb"
+      },
+      "106": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "preiskovalna-komisija-o-ugotavljanju-zlorab-v-slovenskem-zdravstvenem-sistemu-na-podrocju-prodaje-in-nakupa-zilnih-opornic"
+      },
+      "107": {
+        "acronym": "nep-mbk",
+        "realAcronym": "NeP - MBK",
+        "slug": "nepovezana-poslanka-mirjam-bon-klanjscek"
+      },
+      "108": {
+        "acronym": "nep-ac",
+        "realAcronym": "NeP - A\u010c",
+        "slug": "nepovezani-poslanec-andrej-cus"
+      },
+      "109": {
+        "acronym": "ps-np",
+        "realAcronym": "PS NP",
+        "slug": "ps-nepovezanih-poslancev"
+      },
+      "110": {
+        "acronym": "nep-ab",
+        "realAcronym": "NeP - AB",
+        "slug": "nepovezana-poslanka-alenka-bratusek"
+      },
+      "111": {
+        "acronym": "nep-zl",
+        "realAcronym": "NeP - ZL",
+        "slug": "nepovezani-poslanec-zvonko-lah"
+      },
+      "112": {
+        "acronym": "nep-jm",
+        "realAcronym": "NeP - JM",
+        "slug": "nepovezani-poslanec-jani-moderndorfer"
+      },
+      "113": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-alzirijo"
+      },
+      "114": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-moldavijo"
+      },
+      "115": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-armenijo"
+      },
+      "116": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-belorusijo"
+      },
+      "117": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-cilom"
+      },
+      "118": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-kazahstanom"
+      },
+      "119": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-novo-zelandijo"
+      },
+      "120": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-palestino"
+      },
+      "121": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-senegalom"
+      },
+      "122": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-s-tunizijo"
+      },
+      "123": {
+        "acronym": "",
+        "realAcronym": "",
+        "slug": "skupina-prijateljstva-z-zdruzenimi-arabskimi-emirati"
+      },
+      "124": {
+        "acronym": "desus",
+        "realAcronym": "DeSUS",
+        "slug": "demokratska-stranka-upokojencev-slovenije"
+      },
+      "125": {
+        "acronym": "smc",
+        "realAcronym": "SMC",
+        "slug": "stranka-modernega-centra"
+      },
+      "126": {
+        "acronym": "vlada",
+        "realAcronym": "Vlada",
+        "slug": "vlada"
+      },
+      "127": {
+        "acronym": "mddsz",
+        "realAcronym": "MDDSZ",
+        "slug": "ministrstvo-za-delo-druzino-socialne-zadeve-in-enake-moznosti"
+      },
+      "128": {
+        "acronym": "mf",
+        "realAcronym": "MF",
+        "slug": "ministrstvo-za-finance"
+      },
+      "129": {
+        "acronym": "mgrt",
+        "realAcronym": "MGRT",
+        "slug": "ministrstvo-za-gospodarski-razvoj-in-tehnologijo"
+      },
+      "130": {
+        "acronym": "mzip",
+        "realAcronym": "MZIP",
+        "slug": "ministrstvo-za-infrastrukturo"
+      },
+      "131": {
+        "acronym": "mizs",
+        "realAcronym": "MIZS",
+        "slug": "ministrstvo-za-izobrazevanje-znanost-in-sport"
+      },
+      "132": {
+        "acronym": "mju",
+        "realAcronym": "MJU",
+        "slug": "ministrstvo-za-javno-upravo"
+      },
+      "133": {
+        "acronym": "mk",
+        "realAcronym": "MK",
+        "slug": "ministrstvo-za-kulturo"
+      },
+      "134": {
+        "acronym": "mkgp",
+        "realAcronym": "MKGP",
+        "slug": "ministrstvo-za-kmetijstvo-gozdarstvo-in-prehrano"
+      },
+      "135": {
+        "acronym": "mnz",
+        "realAcronym": "MNZ",
+        "slug": "ministrstvo-za-notranje-zadeve"
+      },
+      "136": {
+        "acronym": "mo",
+        "realAcronym": "MO",
+        "slug": "
+        ministrstvo - za - obrambo "}, "
+        137 ": {"
+        acronym ": "
+        mop ", "
+        realAcronym ": "
+        MOP ", "
+        slug ": "
+        ministrstvo - za - okolje - in -prostor "}, "
+        138 ": {"
+        acronym ": "
+        mp ", "
+        realAcronym ": "
+        MP ", "
+        slug ": "
+        ministrstvo - za - pravosodje "}, "
+        139 ": {"
+        acronym ": "
+        mz ", "
+        realAcronym ": "
+        MZ ", "
+        slug ": "
+        ministrstvo - za - zdravje "}, "
+        140 ": {"
+        acronym ": "
+        mzz ", "
+        realAcronym ": "
+        MZZ ", "
+        slug ": "
+        ministrstvo - za - zunanje - zadeve "}, "
+        141 ": {"
+        acronym ": "
+        svrk ", "
+        realAcronym ": "
+        SVRK ", "
+        slug ": "
+        sluzba - vlade - za - razvoj - in -evropsko - kohezijsko - politiko "}, "
+        142 ": {"
+        acronym ": "
+        uszs ", "
+        realAcronym ": "
+        USZS ", "
+        slug ": "
+        urad - vlade - za - slovence - v - zamejstvu - in -po - svetu "}, "
+        143 ": {"
+        acronym ": "
+        opoz ", "
+        realAcronym ": "
+        opoz ", "
+        slug ": "
+        opozicija "}, "
+        144 ": {"
+        acronym ": "
+        koal ", "
+        realAcronym ": "
+        koal ", "
+        slug ": "
+        koalicija "}, "
+        145 ": {"
+        acronym ": "
+        nep - mh ", "
+        realAcronym ": "
+        NeP - MH ", "
+        slug ": "
+        nepovezani - poslanec - matjaz - hanzek "}, "
+        146 ": {"
+        acronym ": "
+        ", "
+        realAcronym ": "
+        ", "
+        slug ": "
+        preiskovalna - komisija - o - ugotavljanju - domnevnega - pranja - denarja - in -financiranja - terorizma - jedrske - proliferacije - ter - financiranja - aktivnosti - tujih - obvescevalno - varnostnih - sluzb - v - tujini - v - novi - ljubljanski - banki - d - d "}, "
+        147 ": {"
+        acronym ": "
+        nep - jv ", "
+        realAcronym ": "
+        NeP - JV ", "
+        slug ": "
+        nepovezani - poslanec - janko - veber "}, "
+        148 ": {"
+        acronym ": "
+        nep - zl ", "
+        realAcronym ": "
+        NeP - ZL ", "
+        slug ": "
+        nepovezani - poslanec - zvonko - lah "}}}
