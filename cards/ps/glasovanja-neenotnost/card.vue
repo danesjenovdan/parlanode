@@ -147,25 +147,25 @@ export default {
     //   return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
     // },
     dropdownItems() {
-      const validTags = [];
-      // const validMonths = [];
+      // const validTags = [];
+      // // const validMonths = [];
 
-      this.getFilteredVotingDays().forEach((votingDay) => {
-        // const year = votingDay.date.split(' ')[2].split('-')[0];
-        // const month = votingDay.date.split(' ')[1].split('.')[0];
-        // const monthId = `${year}-${month}`;
-        // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+      // this.getFilteredVotingDays().forEach((votingDay) => {
+      //   // const year = votingDay.date.split(' ')[2].split('-')[0];
+      //   // const month = votingDay.date.split(' ')[1].split('.')[0];
+      //   // const monthId = `${year}-${month}`;
+      //   // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
 
-        votingDay.ballots
-          .forEach((ballot) => {
-            ballot.tag.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) validTags.push(tag);
-            });
-          });
-      });
+      //   votingDay.ballots
+      //     .forEach((ballot) => {
+      //       ballot.tag.forEach((tag) => {
+      //         if (validTags.indexOf(tag) === -1) validTags.push(tag);
+      //       });
+      //     });
+      // });
 
       return {
-        tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
+        tags: this.allTags,
         classifications: this.allClassifications,
         // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
