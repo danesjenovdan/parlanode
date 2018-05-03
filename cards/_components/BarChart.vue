@@ -1,10 +1,7 @@
 <template>
-  <ul class="word-list">
-    <li
-      v-for="(row, index) in rows"
-      :key="index"
-      class="labeled-chart">
-      <div class="column chart-label">
+  <div class="word-list">
+    <div class="column-label">
+      <div v-for="(row, index) in rows" :key="index" class="column chart-label">
         <div class="label-container">
           <template v-if="row.link">
             <a :href="row.link" class="funblue-light-hover">
@@ -16,7 +13,9 @@
           </template>
         </div>
       </div>
-      <div class="column chart">
+    </div>
+    <div class="column-bar">
+      <div v-for="(row, index) in rows" :key="index" class="column chart">
           <div class="progress hugebar">
               <div
                 class="progress-bar funblue"
@@ -29,8 +28,8 @@
               </div>
           </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -67,13 +66,26 @@ export default {
 .word-list {
   max-height: 480px;
   overflow: hidden;
+  display: flex;
 
-  .labeled-chart {
-    margin-bottom: 4px;
+  .column-label {
+    flex: 1;
+    margin-right: 15px;
   }
 
-  .labeled-chart .column.chart { flex: 4; }
+  .column-bar {
+    flex: 4;
+  }
+
+  .column {
+    height: 27px;
+    margin-bottom: 22px;
+  }
+
   .chart-label {
+    display: flex;
+    align-items: center;
+
     .label-container {
       margin-top: -5px;
       margin-bottom: -5px;
