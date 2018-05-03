@@ -17,7 +17,6 @@
     "transkript": "/seja/transkript/",
     "glasovanja": "/seja/glasovanja/"
   },
-  "legislationLink": "/zakonodaja/",
   "person": {
     "2": {
       "slug": "anja-bah-zibert"
@@ -324,6 +323,9 @@
     },
     "2934": {
       "slug": "vlasta-pockaj"
+    },
+    "3986": {
+      "slug": "balazic-dejan"
     }
   },
   "base": "https://parlameter.si",
@@ -366,7 +368,7 @@
     "8": {
       "acronym": "levica",
       "realAcronym": "Levica",
-      "slug": "ps-zdruzena-levica"
+      "slug": "ps-levica"
     },
     "9": {
       "acronym": "",
@@ -937,6 +939,131 @@
       "acronym": "",
       "realAcronym": "",
       "slug": "skupina-prijateljstva-z-zdruzenimi-arabskimi-emirati"
+    },
+    "124": {
+      "acronym": "desus",
+      "realAcronym": "DeSUS",
+      "slug": "demokratska-stranka-upokojencev-slovenije"
+    },
+    "125": {
+      "acronym": "smc",
+      "realAcronym": "SMC",
+      "slug": "stranka-modernega-centra"
+    },
+    "126": {
+      "acronym": "vlada",
+      "realAcronym": "Vlada",
+      "slug": "vlada"
+    },
+    "127": {
+      "acronym": "mddsz",
+      "realAcronym": "MDDSZ",
+      "slug": "ministrstvo-za-delo-druzino-socialne-zadeve-in-enake-moznosti"
+    },
+    "128": {
+      "acronym": "mf",
+      "realAcronym": "MF",
+      "slug": "ministrstvo-za-finance"
+    },
+    "129": {
+      "acronym": "mgrt",
+      "realAcronym": "MGRT",
+      "slug": "ministrstvo-za-gospodarski-razvoj-in-tehnologijo"
+    },
+    "130": {
+      "acronym": "mzip",
+      "realAcronym": "MZIP",
+      "slug": "ministrstvo-za-infrastrukturo"
+    },
+    "131": {
+      "acronym": "mizs",
+      "realAcronym": "MIZS",
+      "slug": "ministrstvo-za-izobrazevanje-znanost-in-sport"
+    },
+    "132": {
+      "acronym": "mju",
+      "realAcronym": "MJU",
+      "slug": "ministrstvo-za-javno-upravo"
+    },
+    "133": {
+      "acronym": "mk",
+      "realAcronym": "MK",
+      "slug": "ministrstvo-za-kulturo"
+    },
+    "134": {
+      "acronym": "mkgp",
+      "realAcronym": "MKGP",
+      "slug": "ministrstvo-za-kmetijstvo-gozdarstvo-in-prehrano"
+    },
+    "135": {
+      "acronym": "mnz",
+      "realAcronym": "MNZ",
+      "slug": "ministrstvo-za-notranje-zadeve"
+    },
+    "136": {
+      "acronym": "mo",
+      "realAcronym": "MO",
+      "slug": "ministrstvo-za-obrambo"
+    },
+    "137": {
+      "acronym": "mop",
+      "realAcronym": "MOP",
+      "slug": "ministrstvo-za-okolje-in-prostor"
+    },
+    "138": {
+      "acronym": "mp",
+      "realAcronym": "MP",
+      "slug": "ministrstvo-za-pravosodje"
+    },
+    "139": {
+      "acronym": "mz",
+      "realAcronym": "MZ",
+      "slug": "ministrstvo-za-zdravje"
+    },
+    "140": {
+      "acronym": "mzz",
+      "realAcronym": "MZZ",
+      "slug": "ministrstvo-za-zunanje-zadeve"
+    },
+    "141": {
+      "acronym": "svrk",
+      "realAcronym": "SVRK",
+      "slug": "sluzba-vlade-za-razvoj-in-evropsko-kohezijsko-politiko"
+    },
+    "142": {
+      "acronym": "uszs",
+      "realAcronym": "USZS",
+      "slug": "urad-vlade-za-slovence-v-zamejstvu-in-po-svetu"
+    },
+    "143": {
+      "acronym": "opoz",
+      "realAcronym": "opoz",
+      "slug": "opozicija"
+    },
+    "144": {
+      "acronym": "koal",
+      "realAcronym": "koal",
+      "slug": "koalicija"
+    },
+    "145": {
+      "acronym": "nep-mh",
+      "realAcronym": "NeP - MH",
+      "slug": "nepovezani-poslanec-matjaz-hanzek"
+    },
+    "146": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "preiskovalna-komisija-o-ugotavljanju-domnevnega-pranja-denarja-in-financiranja-terorizma-jedrske-proliferacije-ter-financiranja-aktivnosti-tujih-obvescevalno-varnostnih-sluzb-v-tujini-v-novi-ljubljanski-banki-d-d"
+    },
+    "147": {
+      "acronym": "nep-jv",
+      "realAcronym": "NeP - JV",
+      "slug": "nepovezani-poslanec-janko-veber"
+    },
+    "148": {
+      "acronym": "nep-zl",
+      "realAcronym": "NeP - ZL",
+      "slug": "nepovezani-poslanec-zvonko-lah"
     }
   }
 }
