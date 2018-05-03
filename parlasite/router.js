@@ -223,7 +223,7 @@ const routes = [
 
           console.log('loading kompas');
 
-          
+
 
           let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
 
@@ -1733,7 +1733,7 @@ const routes = [
         sourceUrl : '/s/tfidf/:id',
         resolve   : (req, res, route, card) => {
 
-          console.log(spsList);
+          //console.log(spsList);
 
           var pattern        = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({ id : req.params.id });
@@ -1757,7 +1757,7 @@ const routes = [
         sourceUrl : '/s/govori/:id',
         resolve   : (req, res, route, card) => {
 
-          console.log(spsList);
+          //console.log(spsList);
 
           var pattern        = new UrlPattern(card.sourceUrl);
           const renderedPath = pattern.stringify({ id : req.params.id });
@@ -2155,7 +2155,7 @@ function createRoute(app, route) {
 
               getLawDataByEPA(req.params.epa).then((lawData) => {
                 console.log(lawData);
-                
+
                 const dataExtend = {
                   slug: req.slug,
                   activeMenu: route.viewPath,
@@ -2163,11 +2163,11 @@ function createRoute(app, route) {
                   lawData,
                   views,
                 };
-    
+
                 Object.assign(common, dataExtend);
-                
+
                 common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
-    
+
                 res.render(route.viewPath, common);
               });
             } else {
@@ -2180,7 +2180,7 @@ function createRoute(app, route) {
               };
 
               Object.assign(common, dataExtend);
-              
+
               common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
 
               res.render(route.viewPath, common);
@@ -2189,7 +2189,7 @@ function createRoute(app, route) {
           } else if (route.viewPath.indexOf('orodja') > -1) {
             console.log('orodja');
             const pageTitle = route.pageTitle;
-            
+
             let dataExtend;
             if (route.viewPath.indexOf('orodja/') > -1) {
               dataExtend = {
@@ -2571,7 +2571,7 @@ function getSessionIds(params, req, session_type) {
   //     .then((jsonBody) => {
   //          //var spsList = jsonBody;
 
-  //console.log(spsList);
+  // console.log(JSON.stringify(spsList[0]));
 
 
   //session_type
@@ -2608,6 +2608,7 @@ function getSessionIds(params, req, session_type) {
 
   if (typeof selectedSps === 'undefined') {
     var dt = tmp["dt"];
+    type   = 'dt';
     for (var dtseja in dt) {
       for (var seja in dt[dtseja].sessions) {
         var sdt = dt[dtseja].sessions[seja];
