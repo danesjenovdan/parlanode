@@ -15,8 +15,8 @@
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
-import slugs from '../../assets/urls.json';
 
+/* globals d3 */
 export default {
   name: 'ScoreAvgMax',
 
@@ -111,7 +111,6 @@ export default {
       });
 
       const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%S').parse;
-      const bisectDate = d3.bisector(d => d.date).left;
 
       // preparing data for d3 consumption
       const manipulatedData = data.map((d) => {
@@ -185,20 +184,9 @@ export default {
         .innerTickSize(-(width))
         .outerTickSize(0);
 
-      const line = d3.svg.line()
-        .x(d => x(d.x))
-        .y(d => y(d.y));
-
       // create stack
       const stack = d3.layout.stack()
         .values(d => d.values);
-      const area = d3.svg.area()
-        .interpolate('step')
-        .x(d => x(d.x))
-        .y0(d => y(d.y0))
-        .y1(d => y(d.y0 + d.y));
-      const colors = ['blue', 'red', 'green'];
-      const color = d3.scale.ordinal().range(colors);
 
       const presencething = svg.selectAll('.presencething')
         .data(stack(layers))
@@ -206,23 +194,19 @@ export default {
         .append('g')
         .attr('class', d => `presencething-${d.name}`);
 
+      let focus;
+
       presencething.selectAll('rect')
-        .data(d => {
-          return d.values;
-        })
+        .data(d => d.values)
         .enter()
         .append('rect')
-        .attr('x', d => {
-          return x(d.x);
-        })
-        .attr('y', d => {
-          return y(d.y + d.y0);
-        })
+        .attr('x', d => x(d.x))
+        .attr('y', d => y(d.y + d.y0))
         .attr('data-time', d => d.x)
         .attr('height', d => y(d.y0) - y(d.y + d.y0))
         .attr('width', x.rangeBand())
         .on('mouseover', (d) => {
-          const bars = svg.selectAll('rect[data-time="' + d.x + '"]').classed('hovered', true);
+          const bars = svg.selectAll(`rect[data-time="${d.x}"]`).classed('hovered', true);
           if (x(d.x) < 14) {
             focus.attr('transform', `translate(${x(d.x) + 110},${y(80)})`)
               .style('display', null)
@@ -230,14 +214,14 @@ export default {
               .remove();
           } else if (x(d.x) > 748) {
             focus.attr('transform', `translate(${x(d.x) - 70},${y(80)})`)
-            .style('display', null)
-            .selectAll('text')
-            .remove();
+              .style('display', null)
+              .selectAll('text')
+              .remove();
           } else {
             focus.attr('transform', `translate(${x(d.x) + 110},${y(80)})`)
-            .style('display', null)
-            .selectAll('text')
-            .remove();
+              .style('display', null)
+              .selectAll('text')
+              .remove();
           }
 
           focus.append('text')
@@ -257,7 +241,7 @@ export default {
               .attr('x', -70)
               .attr('y', tooltiptop);
 
-            tooltiptop = tooltiptop + 18;
+            tooltiptop += 18;
           }
           if (Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001) > 0) {
             focus.append('text')
@@ -267,7 +251,7 @@ export default {
               .attr('x', -70)
               .attr('y', tooltiptop);
 
-              tooltiptop = tooltiptop + 18;
+            tooltiptop += 18;
           }
           if (Math.round(d3.select(bars[0][2]).datum().y) > 0) {
             focus.append('text')
@@ -277,69 +261,11 @@ export default {
               .attr('x', -70)
               .attr('y', tooltiptop);
           }
-
-          // focus
-          //   .append('text')
-          //   .text(`${SI.timeFormat('%B %Y')(d.x)} | ${d.y.toFixed(2)}`)
-          //   .style('fill', '#ffffff')
-          //   .attr('text-anchor', 'middle')
-          //   .attr('y', -18);
         })
-        .on('mouseleave', d => {
-          const bars = svg.selectAll('rect[data-time="' + d.x + '"]').classed('hovered', false);
+        .on('mouseleave', (d) => {
+          svg.selectAll(`rect[data-time="${d.x}"]`).classed('hovered', false);
           focus.style('display', 'none');
         });
-
-      function mousemove() {
-        const x0 = x.invert(d3.mouse(this)[0] - prisotnostMargin.left);
-        const i = bisectDate(data, x0, 1);
-        const d0 = data[i - 1];
-        const d1 = data[i];
-        if (i < data.length) {
-          const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-
-          const circle = x0 - d0.date > d1.date - x0 ? d3.selectAll('.dot circle')[0][i] : d3.selectAll('.dot circle')[0][i - 1];
-
-          if (d3.select(circle).classed('hovered')) {
-
-          } else {
-            d3.select('.dot circle.hovered')
-              .classed('hovered', false)
-              .transition()
-              .duration(200)
-              .attr('r', 4);
-
-            d3.select(circle)
-              .classed('hovered', true)
-              .transition()
-              .duration(200)
-              .ease('linear')
-              .attr('r', 7);
-          }
-
-          if (i > 2 && i < data.length - 3.5) {
-            focus.attr('transform', `translate(${x(d.date)},${y(d.presence)})`);
-          } else if (i < 3) {
-            focus.attr('transform', `translate(${x(data[2].date)},${y(d.presence)})`);
-          } else {
-            focus.attr('transform', `translate(${x(data[data.length - 4].date)},${y(d.presence)})`);
-          }
-
-          focus.select('text').text(`${SI.timeFormat('%B %Y')(d.date)} | ${d.presence.toFixed(2)}`);
-        }
-      }
-
-      function mouseclick() {
-        const x0 = x.invert(d3.mouse(this)[0] - prisotnostMargin.left);
-        const i = bisectDate(data, x0, 1);
-        const d0 = data[i - 1];
-        const d1 = data[i];
-        if (i < data.length) {
-          const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-
-          const circle = x0 - d0.date > d1.date - x0 ? d3.selectAll('.dot circle')[0][i] : d3.selectAll('.dot circle')[0][i - 1];
-        }
-      }
 
       svg.append('g')
         .attr('class', 'x axis')
@@ -348,10 +274,10 @@ export default {
 
       svg.append('g')
         .attr('class', 'y axis')
-        .attr('transform', `translate(0,0)`)
+        .attr('transform', 'translate(0,0)')
         .call(yAxis);
 
-      let focus = svg.append('g')
+      focus = svg.append('g')
         .attr('class', 'focus')
         .style('display', 'none');
 
@@ -369,16 +295,12 @@ export default {
         .attr('y', -9)
         .attr('x', -70)
         .style('fill', '#ffffff');
-
-
     },
   },
-
   mounted() {
-    console.log(this.cardData);
     this.renderChart();
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -403,7 +325,7 @@ export default {
     overflow-x: auto;
 }
 .prisotnostchart {
-    min-width: 928px;
+    min-width: 900px;
     padding-bottom: 10px;
 }
 .prisotnost-chart .domain {
