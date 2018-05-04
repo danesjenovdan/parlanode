@@ -12,7 +12,8 @@
       <p class="info-text">Korpus predstavljajo vsi govori, dokument pa vsi govori poslank in poslancev v poslanski skupini.</p>
     </div>
 
-    <bar-chart :data="chartRows" />
+    <bar-chart v-if="chartRows.length" :data="chartRows" />
+    <div v-else class="empty-dataset">Brez govorov.</div>
   </card-wrapper>
 </template>
 
@@ -71,3 +72,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.empty-dataset {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 70px 0;
+  text-align: center;
+  font-style: italic;
+}
+</style>

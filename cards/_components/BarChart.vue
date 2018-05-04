@@ -79,7 +79,8 @@ export default {
 
   .column {
     height: 27px;
-    margin-bottom: 22px;
+    margin-top: 10px;
+    margin-bottom: 21px;
   }
 
   .chart-label {
@@ -98,6 +99,7 @@ export default {
     }
   }
 }
+
 .progress_number {
   @include respond-to(mobile) { display: none; }
 }
