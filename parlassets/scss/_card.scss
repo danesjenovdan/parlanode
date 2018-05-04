@@ -603,6 +603,9 @@ input.form-control, textarea.form-control {
         height: 420px;
         overflow-y: auto;
         overflow-x: hidden;
+        @include respond-to(mobile) {
+            height: 267px;
+        }
 
         .date {
             background-color: $grey;
