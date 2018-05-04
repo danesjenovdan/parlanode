@@ -96,9 +96,6 @@ export default {
   created() {
     this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanci`;
   },
-  mounted() {
-    this.$emit('sort', 'name');
-  }
 };
 </script>
 
@@ -108,7 +105,7 @@ export default {
   .person-list .headers .column {
     white-space: normal;
   }
-  
+
   .person-list .headers .barchartcontainer,
   .person-list .item .barchartcontainer {
     @include respond-to(mobile) {
