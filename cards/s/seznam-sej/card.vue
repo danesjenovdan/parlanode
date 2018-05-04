@@ -150,7 +150,8 @@ export default {
               } else if (a > b) {
                 return 1;
               }
-              return 0;
+              // never return 0, chrome and firefox sort differently and that can break SSR
+              return sessionA.id - sessionB.id;
             case 'updated':
               a = sessionA.updated_at_ts;
               b = sessionB.updated_at_ts;
@@ -159,13 +160,15 @@ export default {
               } else if (a > b) {
                 return 1;
               }
-              return 0;
+              // never return 0, chrome and firefox sort differently and that can break SSR
+              return sessionA.id - sessionB.id;
             case 'workingBody':
               a = sessionA.orgs[0].name;
               b = sessionB.orgs[0].name;
               return a.localeCompare(b, 'sl');
             default:
-              return 0;
+              // never return 0, chrome and firefox sort differently and that can break SSR
+              return sessionA.id - sessionB.id;
           }
         });
 
