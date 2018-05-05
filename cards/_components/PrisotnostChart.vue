@@ -325,7 +325,7 @@ export default {
     overflow-x: auto;
 }
 .prisotnostchart {
-    min-width: 900px;
+    min-width: 870px;
     padding-bottom: 10px;
 }
 .prisotnost-chart .domain {
