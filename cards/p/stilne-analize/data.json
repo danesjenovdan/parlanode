@@ -1,0 +1,25 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "03.05.2018",
+  "created_for": "03.05.2018",
+  "results": {
+    "problematicno": 0.8704829682133608,
+    "preprosto": 1.7779267915476635,
+    "privzdignjeno": 1.4541586004253366
+  }
+}
