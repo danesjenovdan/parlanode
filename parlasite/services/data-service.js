@@ -3,7 +3,7 @@ const request = require('request');
 const CronJob = require('cron').CronJob;
 const fs      = require('fs');
 
-const dataDir = __dirname + '../data';
+const dataDir = __dirname + '/../data';
 if (!fs.existsSync(dataDir)){
   fs.mkdirSync(dataDir);
 }
