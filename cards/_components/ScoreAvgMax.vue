@@ -30,10 +30,10 @@
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar red" role="progressbar" :aria-valuenow="results.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
-                <span class="sr-only">{{ results.score }}%</span>
+              <div class="progress-bar red" role="progressbar" :aria-valuenow="getScore" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
+                <span class="sr-only">{{ getScore }}%</span>
                 <div class="progress_number">
-                  {{ Math.round(results.score) }}
+                  {{ Math.round(getScore) }}
                 </div>
               </div>
             </div>
@@ -50,10 +50,14 @@
           </div>
           <div class="other_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.max.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
-                <span class="sr-only">{{ results.max.score }}%</span>
-                <person-pin v-if="type==='poslanec'" v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
-                <party-pin v-if="type==='poslanska_skupina'" v-for="pg in results.max.pgs" :party="pg" :key="pg.id" />
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="getMaxValue" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
+                <span class="sr-only">{{ getMaxValue }}%</span>
+                <template v-if="type === 'poslanec'">
+                  <person-pin v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
+                </template>
+                <template v-else>
+                  <party-pin v-for="pg in results.maxPG" :party="pg" :key="pg.id" />
+                </template>
               </div>
             </div>
           </div>
@@ -67,7 +71,7 @@
           </div>
           <div class="other_poslanec">
             <div class="progress_number">
-              {{ Math.round(results.max.score) }}
+              {{ Math.round(getMaxValue) }}
             </div>
           </div>
         </div>
@@ -107,11 +111,13 @@ export default {
   },
   methods: {
     getBarStyle(key) {
-      const mult = 100; // make room for numbers
       if (key === 'max') {
-        return { width: `${1 * mult}%` };
+        return { width: '100%' };
       }
-      return { width: `${(this.results[key] / this.results.max.score) * mult}%` };
+      if (key === 'score') {
+        return { width: `${(this.getScore / this.getMaxValue) * 100}%` };
+      }
+      return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
     },
   },
   computed: {
@@ -147,6 +153,12 @@ export default {
         return `${this.url}${this.person.id}?altHeader=true`;
       }
       return `${this.url}${this.party.id}?altHeader=true`;
+    },
+    getScore() {
+      return this.results.score != null ? this.results.score : this.results.organization_value;
+    },
+    getMaxValue() {
+      return this.results.max ? this.results.max.score : this.results.maximum;
     },
   },
 };

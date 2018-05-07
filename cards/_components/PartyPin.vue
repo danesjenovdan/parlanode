@@ -14,33 +14,30 @@
 </template>
 
 <script>
-import { getPartyLink} from 'components/links';
+import { getPartyLink } from 'components/links';
 
 export default {
-    name: 'PartyPin',
-    props: {
-        party: {
-            type: Object,
-            required: true
-        }
+  name: 'PartyPin',
+  props: {
+    party: {
+      type: Object,
+      required: true,
     },
-    data() {
-        return {
-            tooltipVisible: false,
-        };
+  },
+  data() {
+    return {
+      tooltipVisible: false,
+    };
+  },
+  computed: {
+    partyLink() {
+      return getPartyLink(this.party);
     },
-    computed: {
-        partyLink() {
-            return getPartyLink(this.party);
-        },
-        partyPortraitUrl() {
-            return getPartyPortrait(this.party);
-        },
-        partyCssClass() {
-          return this.party.acronym.toLowerCase().replace(' ', '_') + '-background';
-        }
-    }
-}
+    partyCssClass() {
+      return `${this.party.acronym.toLowerCase().replace(/ /g, '_')}-background`;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
