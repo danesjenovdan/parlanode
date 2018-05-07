@@ -504,7 +504,7 @@ const routes = [
       },
       {
         name      : 'izracunanaPrisotnostGlasovanja',
-        sourceUrl : '/p/izracunana-prisotnost-glasovanja/:id',
+        sourceUrl : '/p/prisotnost-na-glasovanjih-sej-dz/:id',
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
@@ -539,7 +539,7 @@ const routes = [
       },
       {
         name      : 'izracunanaPrisotnostSeje',
-        sourceUrl : '/p/izracunana-prisotnost-seje/:id',
+        sourceUrl : '/p/prisotnost-na-sejah-dz/:id',
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
