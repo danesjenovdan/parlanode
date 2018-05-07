@@ -1131,7 +1131,7 @@ const routes = [
       },
       {
         name      : 'izracunanaPrisotnostGlasovanja',
-        sourceUrl : '/ps/izracunana-prisotnost-glasovanja/:id',
+        sourceUrl : '/ps/prisotnost-na-glasovanjih-sej-dz/:id',
         resolve   : (req, res, route, card) => {
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
@@ -1157,7 +1157,7 @@ const routes = [
       },
       {
         name      : 'izracunanaPrisotnostSeje',
-        sourceUrl : '/pg/izracunana-prisotnost-seje/:id',
+        sourceUrl : '/ps/prisotnost-na-sejah-dz/:id',
         resolve   : (req, res, route, card) => {
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
