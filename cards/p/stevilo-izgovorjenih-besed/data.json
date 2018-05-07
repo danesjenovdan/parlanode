@@ -1,0 +1,45 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "03.05.2018",
+  "created_for": "03.05.2018",
+  "results": {
+    "max": {
+      "score": 953973,
+      "mps": [
+        {
+          "is_active": false,
+          "district": [17],
+          "name": "Jo\u017eef Horvat",
+          "gov_id": "P020",
+          "gender": "m",
+          "party": {
+            "acronym": "NSI",
+            "is_coalition": false,
+            "id": 6,
+            "name": "PS Nova Slovenija"
+          },
+          "type": "mp",
+          "id": 32,
+          "has_function": false
+        }
+      ]
+    },
+    "average": 953973,
+    "score": 70095
+  }
+}

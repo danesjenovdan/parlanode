@@ -1,0 +1,11 @@
+{
+  "_id": "p_st-poslanskih-vprasanj-in-pobud",
+  "name": "Št. poslanskih vprašanj in pobud",
+  "type": "poslanec",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getNumberOfQuestions",
+  "lastUpdate": "2018-05-07T12:22:12.258Z",
+  "method": "st-poslanskih-vprasanj-in-pobud",
+  "group": "p",
+  "big": false,
+  "high": false
+}

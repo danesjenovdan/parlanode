@@ -1,0 +1,88 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "03.05.2018",
+  "created_for": "03.05.2018",
+  "results": {
+    "votes": {
+      "max": {
+        "score": 100.0,
+        "mps": [
+          {
+            "is_active": false,
+            "district": [95],
+            "name": "Bala\u017ei\u010d Dejan",
+            "gov_id": "P305",
+            "gender": "m",
+            "party": {
+              "acronym": "SMC",
+              "is_coalition": true,
+              "id": 1,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 3986,
+            "has_function": false
+          }
+        ]
+      },
+      "average": 79.6869646599807,
+      "score": 89.5527369826435
+    },
+    "sessions": {
+      "max": {
+        "score": 100.0,
+        "mps": [
+          {
+            "is_active": false,
+            "district": [66],
+            "name": "Julijana Bizjak Mlakar",
+            "gov_id": "P158",
+            "gender": "f",
+            "party": {
+              "acronym": "DeSUS",
+              "is_coalition": true,
+              "id": 3,
+              "name": "PS Demokratska Stranka Upokojencev Slovenije"
+            },
+            "type": "mp",
+            "id": 5,
+            "has_function": false
+          },
+          {
+            "is_active": false,
+            "district": [95],
+            "name": "Bala\u017ei\u010d Dejan",
+            "gov_id": "P305",
+            "gender": "m",
+            "party": {
+              "acronym": "SMC",
+              "is_coalition": true,
+              "id": 1,
+              "name": "PS Stranka modernega centra"
+            },
+            "type": "mp",
+            "id": 3986,
+            "has_function": false
+          }
+        ]
+      },
+      "average": 88.3222302128143,
+      "score": 93.0
+    }
+  }
+}
