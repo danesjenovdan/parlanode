@@ -22,11 +22,11 @@ function resolve_card(req, card, state = {}) {
   if (Object.keys(state).length !== 0) {
     let pattern        = new UrlPattern(card.sourceUrl);
     const renderedPath = pattern.stringify(state);
-    console.log(renderedPath);
+    // console.log(renderedPath);
     cardUrl            = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
   }
 
-  console.log(cardUrl);
+  // console.log(cardUrl);
 
   if (req.query.forceRender) {
     cardUrl += '?forceRender=true';
@@ -41,15 +41,15 @@ function resolve_card(req, card, state = {}) {
 }
 
 function resolve_card_with_custom_url(url, req, card, state = {}) {
-  console.log(`resolving card with url ${url}`);
+  // console.log(`resolving card with url ${url}`);
   let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?customUrl=${encodeURIComponent(url)}`;
-  console.log(cardUrl, 'prvic');
+  // console.log(cardUrl, 'prvic');
   if (Object.keys(state).length !== 0) {
     const stateString = encodeURIComponent(JSON.stringify(state));
     cardUrl = `${cardUrl}&state=${stateString}`;
   }
 
-  console.log(cardUrl);
+  // console.log(cardUrl);
 
   return fetch(cardUrl).then((res) => {
     return res.text();
@@ -221,7 +221,7 @@ const routes = [
         sourceUrl : '/c/kompas/',
         resolve   : (req, res, route, card) => {
 
-          console.log('loading kompas');
+          // console.log('loading kompas');
 
 
 
@@ -234,7 +234,7 @@ const routes = [
           return fetch(cardUrl)
             .then((res) => {
 
-              console.log('kompas fetched');
+              // console.log('kompas fetched');
 
               return res.text();
 
@@ -263,7 +263,7 @@ const routes = [
           //const renderedPath = pattern.stringify({motionid: req.params.motionid});
 
           let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
-          console.log(cardUrl);
+          // console.log(cardUrl);
 
           if (req.query.forceRender) {
             cardUrl += '&forceRender=true';
@@ -796,7 +796,7 @@ const routes = [
               const renderedPath = pattern.stringify({ id : mpId });
               let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
 
-              console.log(cardUrl);
+              // console.log(cardUrl);
 
               if (req.query.forceRender) {
                 cardUrl += '?forceRender=true';
@@ -830,7 +830,7 @@ const routes = [
         name      : 'besedeKiDelajoPosebno',
         sourceUrl : '/p/tfidf/:id',
         resolve   : (req, res, route, card) => {
-          console.log(req.params.fullName);
+          // console.log(req.params.fullName);
           return getMPIdByName(req.params.fullName, req)
             .then((mpData) => {
               let mpId = mpData.mpId;
@@ -1304,7 +1304,7 @@ const routes = [
         sourceUrl : '/ps/neenotnost-glasovanj/:id',
         resolve   : (req, res, route, card) => {
 
-          console.log('something else');
+          // console.log('something else');
 
           return getPSIdByName(req.params.fullName, req)
             .then((psData) => {
@@ -1940,7 +1940,7 @@ function createRoute(app, route) {
                 const hashString = hash(hashObject);
                 const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
 
-                console.log('Poslanske skupine');
+                // console.log('Poslanske skupine');
 
                 common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
 
@@ -1989,7 +1989,7 @@ function createRoute(app, route) {
                 const hashString = hash(hashObject);
                 const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
 
-                console.log('Poslanska skupina');
+                // console.log('Poslanska skupina');
 
                 common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
                 ;
@@ -2030,7 +2030,7 @@ function createRoute(app, route) {
             const hashString = hash(common);
             const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
 
-            console.log('Search');
+            // console.log('Search');
 
             common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
 
@@ -2072,12 +2072,12 @@ function createRoute(app, route) {
                   sesData : sesData.s
                 };
 
-                console.log(sesData);
+                // console.log(sesData);
 
                 const hashString = hash(hashObject);
                 const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
 
-                console.log('Seje');
+                // console.log('Seje');
 
                 common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
 
@@ -2120,7 +2120,7 @@ function createRoute(app, route) {
 
                 Object.assign(common, dataExtend);
 
-                console.log('Seja');
+                // console.log('Seja');
 
                 const hashObject = {
                   spsId   : sesData.spsId,
@@ -2154,7 +2154,7 @@ function createRoute(app, route) {
             if (route.viewPath.indexOf('/zakon') !== -1) {
 
               getLawDataByEPA(req.params.epa).then((lawData) => {
-                console.log(lawData);
+                // console.log(lawData);
 
                 const dataExtend = {
                   slug: req.slug,
@@ -2187,7 +2187,7 @@ function createRoute(app, route) {
             }
 
           } else if (route.viewPath.indexOf('orodja') > -1) {
-            console.log('orodja');
+            // console.log('orodja');
             const pageTitle = route.pageTitle;
 
             let dataExtend;
@@ -2239,7 +2239,7 @@ function createRoute(app, route) {
 
                 let pageTitle = 'Parlameter';
 
-                console.log('Landing');
+                // console.log('Landing');
 
                 if (mpData.mp) {
                   pageTitle = ejs.render(route.pageTitle, { name : mpData.mp.name });
@@ -2371,7 +2371,7 @@ function createRoute(app, route) {
 
               common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
 
-              console.log('Default 1 session');
+              // console.log('Default 1 session');
 
               if (forceRenderOg) {
 
@@ -2399,7 +2399,7 @@ function createRoute(app, route) {
         if (route.viewPath.indexOf("poslanci") > -1) {
 
           const pageTitle = ejs.render(route.pageTitle);
-          console.log(route.viewPath);
+          // console.log(route.viewPath);
 
           const dataExtend = {
             slug       : req.slug,
@@ -2407,7 +2407,7 @@ function createRoute(app, route) {
             pageTitle
           };
 
-          console.log('Poslanci');
+          // console.log('Poslanci');
 
           Object.assign(common, dataExtend);
 
@@ -2446,7 +2446,7 @@ function createRoute(app, route) {
             pageTitle
           };
 
-          console.log('Default');
+          // console.log('Default');
 
           Object.assign(common, dataExtend);
 
@@ -2469,6 +2469,10 @@ function resolveCards(req, res, route) {
   return Promise.reduce(route.cards, (aggregator, card) => {
       return card.resolve(req, res, route, card)
         .then((body) => {
+
+          if (aggregator[card.name]) {
+            console.error(`Duplicate card definition (${card.name}) in route (${route.path})`);
+          }
 
           aggregator[card.name] = body;
           return aggregator;
@@ -2533,11 +2537,11 @@ function getPSIdByName(name, req) {
   let selectedPs;
   let realAcronym;
 
-  console.log(name);
+  // console.log(name);
 
   Object.keys(opsList).forEach(function (key, index) {
     if (parseInt(key, 10)) {
-      console.log(key);
+      // console.log(key);
       const ps = opsList[key];
       var realAcronym2 = ps.acronym;
       ps.nameSlug      = slug(ps.name).toLowerCase();
