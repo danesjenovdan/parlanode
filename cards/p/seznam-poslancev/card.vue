@@ -110,7 +110,7 @@ export default {
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
       currentSort: loadFromState('sort') || 'name',
-      currentSortOrder: loadFromState('sortOrder') || 'desc',
+      currentSortOrder: loadFromState('sortOrder') || 'asc',
       analyses,
       parties: [],
       selectedParties: loadFromState('parties') || [],
@@ -252,8 +252,9 @@ export default {
           }
 
           newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
-          newMember.age = newMember.results.age.score;
-          newMember.education = parseInt(newMember.results.education.score || 0, 10);
+          newMember.age = (newMember.results.age && newMember.results.age.score) || '';
+          const education = newMember.results.education && newMember.results.education.score;
+          newMember.education = parseInt(education || 0, 10);
           newMember.terms = newMember.results.mandates.score || 1;
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results[this.currentAnalysis].score || 0;
@@ -279,15 +280,15 @@ export default {
             case 'name':
               a = memberA.person.name;
               b = memberB.person.name;
-              return a.localeCompare(b, 'sl');
+              return a.localeCompare(b);
             case 'district':
               a = memberA.formattedDistrict;
               b = memberB.formattedDistrict;
-              return a.localeCompare(b, 'sl');
+              return a.localeCompare(b);
             case 'party':
               a = memberA.person.party.acronym;
               b = memberB.person.party.acronym;
-              return a.localeCompare(b, 'sl');
+              return a.localeCompare(b);
             default:
               a = memberA[this.currentSort];
               b = memberB[this.currentSort];

@@ -1,0 +1,45 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "01.02.2018",
+  "created_for": "31.01.2018",
+  "results": {
+    "max": {
+      "score": 60.0,
+      "mps": [
+        {
+          "is_active": false,
+          "district": [76],
+          "name": "Milan Brglez",
+          "gov_id": "P243",
+          "gender": "m",
+          "party": {
+            "acronym": "SMC",
+            "is_coalition": true,
+            "id": 1,
+            "name": "PS Stranka modernega centra"
+          },
+          "type": "mp",
+          "id": 11,
+          "has_function": true
+        }
+      ]
+    },
+    "average": 6.0,
+    "score": 5.0
+  }
+}

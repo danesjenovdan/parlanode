@@ -34,8 +34,8 @@ module.exports = cardPath => ({
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true,
     publicPath: '/build/',
+    stats: 'minimal',
   },
   performance: {
     hints: false,
