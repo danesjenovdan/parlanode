@@ -4,12 +4,11 @@
     class="card-halfling"
     :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-    <div slot="info" v-html="infoText"></div>
+    :header-config="headerConfig"
+  >
+    <slot name="info" slot="info"></slot>
 
-    <div
-      class="card-content-front"
-      v-cloak>
+    <div class="card-content-front" v-cloak>
       <div class="me_poslanec clearfix progress_flex">
         <div class="column progress_title">
           <span class="poslanec_title">
@@ -18,11 +17,11 @@
         </div>
         <div class="column progress_bar">
           <div class="progress smallbar ">
-            <div class="progress-bar red" role="progressbar" :aria-valuenow="results.sessions.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
-              <span class="sr-only">{{ results.sessions.score }}%</span>
+            <div class="progress-bar red" role="progressbar" :aria-valuenow="results.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
+              <span class="sr-only">{{ results.score }}%</span>
             </div>
             <div class="progress_number">
-              {{ Math.round(results.sessions.score) }}
+              {{ Math.round(results.score) }}
             </div>
           </div>
         </div>
@@ -36,11 +35,11 @@
         </div>
         <div class="column progress_bar">
           <div class="progress smallbar avgmin">
-            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
-              <span class="sr-only">{{ results.sessions.average }}%</span>
+            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
+              <span class="sr-only">{{ results.average }}%</span>
             </div>
             <div class="progress_number">
-              {{ Math.round(results.sessions.average) }}
+              {{ Math.round(results.average) }}
             </div>
           </div>
         </div>
@@ -54,22 +53,23 @@
         </div>
         <div class="column progress_bar">
           <div class="progress smallbar avgmin">
-            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.sessions.max.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
-              <span class="sr-only">{{ results.sessions.max.score }}%</span>
+            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.max.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
+              <span class="sr-only">{{ results.max.score }}%</span>
+
               <person-pin
                 v-if="type==='poslanec'"
-                v-for="mp in results.sessions.max.mps"
+                v-for="mp in results.max.mps"
                 :person="mp"
                 :key="mp.gov_id"></person-pin>
 
               <party-pin
                 v-if="type==='poslanska_skupina'"
-                v-for="pg in results.sessions.max.pgs"
+                v-for="pg in results.max.pgs"
                 :party="pg"
-                :key="pg.id">asf</party-pin>
+                :key="pg.id"></party-pin>
             </div>
             <div class="progress_number">
-              {{ Math.round(results.sessions.max.score) }}
+              {{ Math.round(results.max.score) }}
             </div>
           </div>
         </div>
@@ -80,20 +80,16 @@
 
 <script>
 import common from 'mixins/common';
-import slugs from '../../assets/urls.json';
 import PersonPin from 'components/PersonPin.vue';
-import PartyPin from  'components/PartyPin.vue';
+import PartyPin from 'components/PartyPin.vue';
 
 export default {
   name: 'ScoreAvgMax',
-  
   mixins: [common],
-
   components: {
     PersonPin,
-    PartyPin
+    PartyPin,
   },
-  
   props: {
     cardData: {
       type: Object,
@@ -104,31 +100,21 @@ export default {
       required: true,
       validator: value => ['poslanec', 'poslanska_skupina'].indexOf(value) > -1,
     },
-    infoText: {
-      type: String,
-      default: '<p class="info-text">Info tekst manjka. Če to vidiš, prosim sporoči programerjem, naj ga dodajo.</p>',
-    },
     results: {
       type: Object,
       required: true,
     },
     person: Object,
     party: Object,
-    generatedCardUrl: String,
-  },
-
-  data() {
-    return {
-      vocabulary: this.cardData.vocab,
-    };
   },
   methods: {
     getBarStyle(key) {
+      const mult = 83; // make room for numbers
       if (key === 'max') {
-        return { width: `100%`};
+        return { width: `${1 * mult}%` };
       }
-      return { width: `${(this.results.sessions[key] / this.results.sessions.max.score) * 100}%`};
-    }
+      return { width: `${(this.results[key] / this.results.max.score) * mult}%` };
+    },
   },
   computed: {
     getName() {
@@ -145,24 +131,27 @@ export default {
           circleImage: this.person.gov_id,
         };
       } else {
-        // specifics = {
-        //   heading: this.party.name,
-        //   subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-        //   circleText: this.party.acronym,
-        //   circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        // };
+        specifics = {
+          heading: this.party.name,
+          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+          circleText: this.party.acronym,
+          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
+        };
       }
-
-      return Object.assign({}, specifics, {
-        alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
-        title: this.cardData.cardData.name,
-      });
+      specifics.alternative = JSON.parse(this.cardData.cardData.altHeader || 'false');
+      specifics.title = this.cardData.cardData.name;
+      return specifics;
     },
-
     cardGroup: () => this.cardData.cardData.group,
     cardMethod: () => this.cardData.cardData.method,
-  }
-}
+    generatedCardUrl() {
+      if (this.type === 'poslanec') {
+        return `${this.url}${this.person.id}?altHeader=true`;
+      }
+      return `${this.url}${this.party.id}?altHeader=true`;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
