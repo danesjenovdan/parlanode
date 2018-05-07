@@ -15,7 +15,7 @@
         v-for="(tabContents, tabName) in tabs"
         :key="tabName"
         :label="tabName"
-        variant="light">
+        variant="dark">
         <ul class="membership-list">
           <template v-if="tabContents.length">
             <li
