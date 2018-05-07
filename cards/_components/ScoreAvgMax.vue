@@ -56,7 +56,7 @@
                   <person-pin v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
                 </template>
                 <template v-else>
-                  <party-pin v-for="pg in results.maxPG" :party="pg" :key="pg.id" />
+                  <party-pin v-for="pg in getMaxPGs" :party="pg" :key="pg.id" />
                 </template>
               </div>
             </div>
@@ -159,6 +159,12 @@ export default {
     },
     getMaxValue() {
       return this.results.max ? this.results.max.score : this.results.maximum;
+    },
+    getMaxPGs() {
+      if (this.results.max) {
+        return this.results.max.pgs ? this.results.max.pgs : this.results.max.parties;
+      }
+      return this.results.maxPG;
     },
   },
 };
