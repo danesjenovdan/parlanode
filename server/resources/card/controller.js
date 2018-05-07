@@ -270,7 +270,7 @@ exports.render = (req, res) => {
 
   function loadCardFromFile(groupName, methodName) {
     const localPath = `cards/${groupName}/${methodName}/card.json`;
-    console.log(localPath);
+    console.log('Load:   ', localPath);
     if (!fs.existsSync(localPath)) throw Error();
     const cardDoc = JSON.parse(fs.readFileSync(localPath));
     cardDoc.lastUpdate = new Date(cardDoc.lastUpdate);
@@ -278,7 +278,7 @@ exports.render = (req, res) => {
   }
 
   function compileCard() {
-    console.log('Compile card');
+    console.log('Compile:', `${group}/${method}`);
 
     Card.findOne({ method, group }).lean().then((cardDoc) => {
       if (!cardDoc) {
@@ -288,6 +288,7 @@ exports.render = (req, res) => {
           cardDoc.vue = true;
           cardDoc.altHeader = altHeader;
         } catch (error) {
+          console.error('Missing:', `${group}/${method}`);
           res.status(404).send('Card not found');
           return;
         }
@@ -520,6 +521,8 @@ exports.render = (req, res) => {
     cacheData.date = date;
   }
 
+  console.log('---');
+  console.log('Render: ', `${group}/${method}`);
   CardRender.findOne(cacheData).sort({ dateTime: -1 })
     .then((cardRenderDoc) => {
       if (!cardRenderDoc) {
