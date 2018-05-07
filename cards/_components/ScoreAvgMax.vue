@@ -9,65 +9,63 @@
     <slot name="info" slot="info"></slot>
 
     <div class="card-content-front" v-cloak>
-      <div class="me_poslanec clearfix progress_flex">
-        <div class="column progress_title">
-          <span class="poslanec_title">
-            {{ getName }}
-          </span>
-        </div>
-        <div class="column progress_bar">
-          <div class="progress smallbar ">
-            <div class="progress-bar red" role="progressbar" :aria-valuenow="results.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
-              <span class="sr-only">{{ results.score }}%</span>
+      <div class="progress_flex">
+        <div class="column-title progress_title">
+          <div class="me_poslanec">
+            <div class="poslanec_title">
+              {{ getName }}
             </div>
-            <div class="progress_number">
-              {{ Math.round(results.score) }}
+          </div>
+          <div class="other_poslanec">
+            <div class="poslanec_title">
+              Povprečje
+            </div>
+          </div>
+          <div class="other_poslanec">
+            <div class="poslanec_title">
+              Največ
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="other_poslanec clearfix progress_flex">
-        <div class="column progress_title">
-          <span class="poslanec_title">
-            Povprečje
-          </span>
-        </div>
-        <div class="column progress_bar">
-          <div class="progress smallbar avgmin">
-            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
-              <span class="sr-only">{{ results.average }}%</span>
+        <div class="column-bar progress_bar">
+          <div class="me_poslanec">
+            <div class="progress smallbar">
+              <div class="progress-bar red" role="progressbar" :aria-valuenow="results.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
+                <span class="sr-only">{{ results.score }}%</span>
+                <div class="progress_number">
+                  {{ Math.round(results.score) }}
+                </div>
+              </div>
             </div>
-            <div class="progress_number">
-              {{ Math.round(results.average) }}
+          </div>
+          <div class="other_poslanec">
+            <div class="progress smallbar">
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
+                <span class="sr-only">{{ results.average }}%</span>
+                <div class="progress_number">
+                  {{ Math.round(results.average) }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="other_poslanec">
+            <div class="progress smallbar">
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.max.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
+                <span class="sr-only">{{ results.max.score }}%</span>
+                <person-pin v-if="type==='poslanec'" v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
+                <party-pin v-if="type==='poslanska_skupina'" v-for="pg in results.max.pgs" :party="pg" :key="pg.id" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="other_poslanec clearfix progress_flex">
-        <div class="column progress_title">
-          <span class="poslanec_title">
-            Največ
-          </span>
-        </div>
-        <div class="column progress_bar">
-          <div class="progress smallbar avgmin">
-            <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.max.score" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
-              <span class="sr-only">{{ results.max.score }}%</span>
-
-              <person-pin
-                v-if="type==='poslanec'"
-                v-for="mp in results.max.mps"
-                :person="mp"
-                :key="mp.gov_id"></person-pin>
-
-              <party-pin
-                v-if="type==='poslanska_skupina'"
-                v-for="pg in results.max.pgs"
-                :party="pg"
-                :key="pg.id"></party-pin>
-            </div>
+        <div class="column-number">
+          <div class="me_poslanec">
+            <div class="progress_number invisible">&nbsp;</div>
+          </div>
+          <div class="other_poslanec">
+            <div class="progress_number invisible">&nbsp;</div>
+          </div>
+          <div class="other_poslanec">
             <div class="progress_number">
               {{ Math.round(results.max.score) }}
             </div>
@@ -109,7 +107,7 @@ export default {
   },
   methods: {
     getBarStyle(key) {
-      const mult = 83; // make room for numbers
+      const mult = 100; // make room for numbers
       if (key === 'max') {
         return { width: `${1 * mult}%` };
       }
@@ -157,5 +155,35 @@ export default {
 <style lang="scss" scoped>
 .progress {
   overflow: visible; /* this overrides bootstrap which we should get rid of anyway */
+}
+.column-title .poslanec_title {
+  line-height: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+.column-title .me_poslanec {
+  display: flex;
+  align-items: center;
+  height: 54px;
+}
+.column-number .progress_number {
+  padding-left: 20px;
+  line-height: 30px;
+}
+.me_poslanec,
+.other_poslanec {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.column-bar .progress-bar {
+  position: relative;
+}
+.column-bar .progress_number {
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  color: #333;
+  line-height: 30px;
 }
 </style>
