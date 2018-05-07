@@ -3,6 +3,11 @@ const request = require('request');
 const CronJob = require('cron').CronJob;
 const fs      = require('fs');
 
+const dataDir = __dirname + '/../data';
+if (!fs.existsSync(dataDir)){
+  fs.mkdirSync(dataDir);
+}
+
 const spsFilePath = __dirname + '/../data/sps.json';
 const mpsFilePath = __dirname + '/../data/mps.json';
 const opsFilePath = __dirname + '/../data/ops.json';
@@ -56,9 +61,11 @@ function spsRequest() {
       if (err) return reject(err);
 
       try {
+        // parse before writing to file so you don't write a bad file to disk if it can't be parsed
+        const parsedBody = JSON.parse(body);
         fs.writeFileSync(spsFilePath, body);
         // TODO - legacy array wrap
-        resolve([JSON.parse(body)]);
+        resolve([parsedBody]);
       }
       catch (err) {
         reject(err);
@@ -110,8 +117,10 @@ function mpsRequest() {
       if (err) return reject(err);
 
       try {
+        // parse before writing to file so you don't write a bad file to disk if it can't be parsed
+        const parsedBody = JSON.parse(body);
         fs.writeFileSync(mpsFilePath, body);
-        resolve(JSON.parse(body));
+        resolve(parsedBody);
       }
       catch (err) {
         reject(err);
@@ -163,8 +172,10 @@ function opsRequest() {
       if (err) return reject(err);
 
       try {
+        // parse before writing to file so you don't write a bad file to disk if it can't be parsed
+        const parsedBody = JSON.parse(body);
         fs.writeFileSync(opsFilePath, body);
-        resolve(JSON.parse(body));
+        resolve(parsedBody);
       }
       catch (err) {
         reject(err);
@@ -216,8 +227,10 @@ function mpsopsRequest() {
       if (err) return reject(err);
 
       try {
+        // parse before writing to file so you don't write a bad file to disk if it can't be parsed
+        const parsedBody = JSON.parse(body);
         fs.writeFileSync(mpsopsFilePath, body);
-        resolve(JSON.parse(body));
+        resolve(parsedBody);
       }
       catch (err) {
         reject(err);
@@ -269,8 +282,10 @@ function mpsopsurlsRequest() {
       if (err) return reject(err);
 
       try {
+        // parse before writing to file so you don't write a bad file to disk if it can't be parsed
+        const parsedBody = JSON.parse(body);
         fs.writeFileSync(mpsopsurlsFilePath, body);
-        resolve(JSON.parse(body));
+        resolve(parsedBody);
       }
       catch (err) {
         reject(err);
