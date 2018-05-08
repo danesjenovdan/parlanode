@@ -1,0 +1,45 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "03.05.2018",
+  "created_for": "03.05.2018",
+  "results": {
+    "max": {
+      "score": 158.381308811577,
+      "mps": [
+        {
+          "is_active": false,
+          "district": [20],
+          "name": "Du\u0161an Radi\u010d",
+          "gov_id": "P300",
+          "gender": "m",
+          "party": {
+            "acronym": "SMC",
+            "is_coalition": true,
+            "id": 1,
+            "name": "PS Stranka modernega centra"
+          },
+          "type": "mp",
+          "id": 1357,
+          "has_function": false
+        }
+      ]
+    },
+    "average": 113.654485192647,
+    "score": 133.0
+  }
+}
