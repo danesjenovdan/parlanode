@@ -19,6 +19,9 @@
 </template>
 
 <script>
+import common from 'mixins/common';
+import { memberOverview } from 'mixins/contextUrls';
+import { memberTitle } from 'mixins/titles';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import PrisotnostChart from 'components/PrisotnostChart.vue';
 import vocabulary from '../../../assets/vocab.json';
@@ -29,7 +32,10 @@ export default {
     PrisotnostChart,
   },
   mixins: [
+    common,
     urlFunctionalities,
+    memberOverview,
+    memberTitle,
   ],
   data() {
     return {
