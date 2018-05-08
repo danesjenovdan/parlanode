@@ -12,7 +12,7 @@
 
       <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
-      <div v-else class="card-content-front" :class="contentFrontClass" v-cloak>
+      <div v-else class="card-content-front" :class="contentFrontClass" :style="{ 'overflow-y': contentFrontScroll }" v-cloak>
         <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
           <div class="card-content__empty-inner">
             <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
@@ -60,6 +60,7 @@ export default {
       type: String,
       default: 'auto',
     },
+    contentFrontScroll: String,
   },
   methods: {
     toggleBack(newBack) {
