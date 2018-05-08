@@ -1,0 +1,107 @@
+{
+  "organization": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "07.05.2018",
+  "created_for": "07.05.2018",
+  "results": [
+    {
+      "person": {
+        "is_active": false,
+        "district": [50, 49],
+        "name": "Bojan Krajnc",
+        "gov_id": "P299",
+        "gender": "m",
+        "party": {
+          "acronym": "NeP - BK",
+          "is_coalition": false,
+          "id": 149,
+          "name": "Nepovezani poslanec Bojan Krajnc"
+        },
+        "type": "mp",
+        "id": 1354,
+        "has_function": false
+      },
+      "ratio": 20.4110735318079
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [46],
+        "name": "Uro\u0161 Prikl",
+        "gov_id": "P280",
+        "gender": "m",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 69,
+        "has_function": false
+      },
+      "ratio": 21.1685738521779
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [14],
+        "name": "Ivan Hr\u0161ak",
+        "gov_id": "P176",
+        "gender": "m",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 34,
+        "has_function": false
+      },
+      "ratio": 23.2265011525858
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [19],
+        "name": "Franc Jur\u0161a",
+        "gov_id": "P122",
+        "gender": "m",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 37,
+        "has_function": false
+      },
+      "ratio": 23.3047851141364
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [40],
+        "name": "Benedikt Kopmajer",
+        "gov_id": "P261",
+        "gender": "m",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 41,
+        "has_function": false
+      },
+      "ratio": 23.7034454958354
+    }
+  ]
+}

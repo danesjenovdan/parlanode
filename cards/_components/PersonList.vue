@@ -14,22 +14,23 @@
         </a>
         <template v-if="showPartyLink">
           <br />
-          <a :href="getPersonPartyLink(person)" class="funblue-light-hover">
+          <a v-if="getPersonPartyLink(person)" :href="getPersonPartyLink(person)" class="funblue-light-hover">
             {{ person.party.acronym }}
           </a>
+          <span v-else>
+            {{ person.party.acronym }}
+          </span>
         </template>
       </div>
       <div v-if="person.score" class="column large-number">
-        {{ person.score }}
+        {{ person.score.toFixed(2).replace('.', ',') }}
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-import { getPersonPartyLink,
-         getPersonLink,
-         getPersonPortrait } from 'components/links';
+import { getPersonPartyLink, getPersonLink, getPersonPortrait } from 'components/links';
 
 export default {
   props: {
