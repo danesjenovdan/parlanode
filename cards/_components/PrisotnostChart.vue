@@ -3,10 +3,9 @@
     :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
-    @backChange="handleBackChange">
-
-    <div slot="info" v-html="infoText"></div>
-
+    @backChange="handleBackChange"
+  >
+    <slot name="info" slot="info"></slot>
     <div class="prisotnost-chart"></div>
   </card-wrapper>
 </template>
@@ -31,10 +30,6 @@ export default {
       type: String,
       required: true,
       validator: value => ['poslanec', 'party'].indexOf(value) > -1,
-    },
-    infoText: {
-      type: String,
-      default: '<p class="info-text">Info tekst manjka. Če to vidiš, prosim sporoči programerjem, naj ga dodajo.</p>',
     },
     results: {
       type: Array,
