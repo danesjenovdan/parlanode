@@ -1387,7 +1387,7 @@ const routes = [
       },
       {
         name      : 'odstopanjaOdPoslanskeSkupine',
-        sourceUrl : '/pg/odstopanje-od-poslanske-skupine/:id',
+        sourceUrl : '/ps/neujemanje-s-poslansko-skupino/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
