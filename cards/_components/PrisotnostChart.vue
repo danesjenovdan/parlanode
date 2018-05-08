@@ -11,16 +11,14 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
-import { memberTitle } from 'mixins/titles';
+import CardWrapper from 'components/Card/Wrapper.vue';
 
 /* globals d3 */
 export default {
-  name: 'ScoreAvgMax',
-
-  mixins: [common, memberOverview, memberTitle],
-
+  name: 'PrisotnostChart',
+  components: {
+    CardWrapper,
+  },
   props: {
     cardData: {
       type: Object,
@@ -29,7 +27,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['poslanec', 'party'].indexOf(value) > -1,
+      validator: value => ['poslanec', 'poslanska_skupina'].indexOf(value) > -1,
     },
     results: {
       type: Array,
@@ -39,7 +37,6 @@ export default {
     party: Object,
     generatedCardUrl: String,
   },
-
   computed: {
     headerConfig() {
       let specifics;
@@ -63,12 +60,9 @@ export default {
         title: this.cardData.cardData.name,
       });
     },
-
     cardGroup: () => this.cardData.cardData.group,
-
     cardMethod: () => this.cardData.cardData.method,
   },
-
   methods: {
     handleBackChange(newBack) {
       if (newBack === null) {
@@ -108,33 +102,25 @@ export default {
       const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%S').parse;
 
       // preparing data for d3 consumption
-      const manipulatedData = data.map((d) => {
-        return {
-          date: parseDate(d.date_ts),
-          presence: +d.presence,
-          notMember: +d.not_member,
-        };
-      });
+      const manipulatedData = data.map(d => ({
+        date: parseDate(d.date_ts),
+        presence: +d.presence,
+        notMember: +d.not_member || 0,
+      }));
 
       // preparing data for d3 stack consumption
-      const presentData = data.map((d) => {
-        return {
-          x: parseDate(d.date_ts),
-          y: +d.presence,
-        };
-      });
-      const notMemberData = data.map((d) => {
-        return {
-          x: parseDate(d.date_ts),
-          y: +d.not_member,
-        };
-      });
-      const notPresentData = data.map((d) => {
-        return {
-          x: parseDate(d.date_ts),
-          y: 100 - d.not_member - d.presence,
-        };
-      });
+      const presentData = data.map(d => ({
+        x: parseDate(d.date_ts),
+        y: +d.presence || 0,
+      }));
+      const notMemberData = data.map(d => ({
+        x: parseDate(d.date_ts),
+        y: +d.not_member || 0,
+      }));
+      const notPresentData = data.map(d => ({
+        x: parseDate(d.date_ts),
+        y: 100 - (d.not_member || 0) - d.presence,
+      }));
       const layers = [{
         name: 'present',
         values: presentData,
@@ -229,8 +215,14 @@ export default {
           let tooltiptop = 10;
 
           if (Math.round(d3.select(bars[0][0]).datum().y) > 0) {
+            let prisoten;
+            if (this.type === 'poslanec') {
+              prisoten = this.person.gender === 'm' ? 'Prisoten' : 'Prisotna';
+            } else {
+              prisoten = 'Prisotni';
+            }
             focus.append('text')
-              .text(`${this.person.gender === 'm' ? 'Prisoten' : 'Prisotna'} | ${Math.round(d3.select(bars[0][0]).datum().y)} %`)
+              .text(`${prisoten} | ${Math.round(d3.select(bars[0][0]).datum().y)} %`)
               .style('fill', '#ffffff')
               .attr('text-anchor', 'start')
               .attr('x', -70)
@@ -239,8 +231,14 @@ export default {
             tooltiptop += 18;
           }
           if (Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001) > 0) {
+            let odsoten;
+            if (this.type === 'poslanec') {
+              odsoten = this.person.gender === 'm' ? 'Odsoten' : 'Odsotna';
+            } else {
+              odsoten = 'Odsotni';
+            }
             focus.append('text')
-              .text(`${this.person.gender === 'm' ? 'Odsoten' : 'Odsotna'} | ${Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001)} %`) // odštevamo zaradi case-a 20.5 + 79.5
+              .text(`${odsoten} | ${Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001)} %`) // odštevamo zaradi case-a 20.5 + 79.5
               .style('fill', '#ffffff')
               .attr('text-anchor', 'start')
               .attr('x', -70)
