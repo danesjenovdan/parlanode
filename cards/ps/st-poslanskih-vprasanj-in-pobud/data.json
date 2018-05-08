@@ -1,16 +1,16 @@
 {
-  "organization": {
+  "party": {
     "acronym": "SMC",
     "is_coalition": true,
     "id": 1,
     "name": "PS Stranka modernega centra"
   },
-  "created_at": "13.12.2017",
-  "created_for": "16.10.2017",
-  "result": {
+  "created_at": "07.11.2017",
+  "created_for": "07.11.2017",
+  "results": {
     "max": {
-      "score": 290,
-      "pgs": [
+      "score": 2980.0,
+      "parties": [
         {
           "acronym": "SDS",
           "is_coalition": false,
@@ -19,7 +19,7 @@
         }
       ]
     },
-    "average": 100.625,
-    "score": 182
+    "average": 617.25,
+    "score": 271.0
   }
 }

@@ -3,15 +3,15 @@
     :card-data="$options.cardData"
     :type="$options.cardData.cardData.type"
     :party="$options.cardData.data.organization"
-    :results="$options.cardData.data.result"
+    :results="$options.cardData.data.sessions"
   >
     <div slot="info">
       <p class="info-text lead">
-        Št. amandmajev, ki jih je vložila ta poslanska skupina v primerjavi s povprečno in najvišjo vrednostjo med vsemi poslanskimi skupinami.
+        Prisotnost poslanske skupine na sejah DZ v primerjavi s povprečno in največjo vrednostjo.
       </p>
       <p class="info-text heading">METODOLOGIJA</p>
       <p class="info-text">
-        Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s spletnega mesta <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" target="_blank" class="funblue-light-hover">DZ RS</a>.
+        Za vsako sejo in vsako poslansko skupino preverimo, koliko članic in članov je na seji govorilo in/ali glasovalo vsaj enkrat. Ko vse seje seštejemo, seštevek delimo s številom sej pomnoženim s številom poslank in poslancev v poslanski skupini. Na koncu normaliziramo (min 1 - max 100).
       </p>
     </div>
   </score-avg-max>
@@ -22,7 +22,7 @@ import common from 'mixins/common';
 import ScoreAvgMax from 'components/ScoreAvgMax.vue';
 
 export default {
-  name: 'StVlozenihAmandmajev',
+  name: 'PrisotnostNaSejahDz',
   components: {
     ScoreAvgMax,
   },

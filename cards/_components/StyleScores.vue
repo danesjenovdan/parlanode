@@ -13,65 +13,49 @@
         <div class="column-title progress_title">
           <div class="me_poslanec">
             <div class="poslanec_title">
-              {{ getName }}
+              Privzdignjeno besedje
             </div>
           </div>
-          <div class="other_poslanec">
+          <div class="me_poslanec">
             <div class="poslanec_title">
-              Povprečje
+              Preprosto besedje
             </div>
           </div>
-          <div class="other_poslanec">
+          <div class="me_poslanec">
             <div class="poslanec_title">
-              Največ
+              Ekscesno besedje
             </div>
           </div>
         </div>
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar red" role="progressbar" :aria-valuenow="getScore" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
-                <span class="sr-only">{{ getScore }}%</span>
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.privzdignjeno" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('privzdignjeno')">
+                <span class="sr-only">{{ results.privzdignjeno.toFixed(2) }}%</span>
                 <div class="progress_number">
-                  {{ Math.round(getScore) }}
+                  {{ results.privzdignjeno.toFixed(2).replace('.', ',') }}
                 </div>
               </div>
             </div>
           </div>
-          <div class="other_poslanec">
-            <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
-                <span class="sr-only">{{ results.average }}%</span>
-                <div class="progress_number">
-                  {{ Math.round(results.average) }}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="other_poslanec">
-            <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="getMaxValue" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
-                <span class="sr-only">{{ getMaxValue }}%</span>
-                <template v-if="type === 'poslanec'">
-                  <person-pin v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
-                </template>
-                <template v-else>
-                  <party-pin v-for="pg in getMaxPGs" :party="pg" :key="pg.id" />
-                </template>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column-number">
           <div class="me_poslanec">
-            <div class="progress_number invisible">&nbsp;</div>
+            <div class="progress smallbar">
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.preprosto" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('preprosto')">
+                <span class="sr-only">{{ results.preprosto.toFixed(2) }}%</span>
+                <div class="progress_number">
+                  {{ results.preprosto.toFixed(2).replace('.', ',') }}
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="other_poslanec">
-            <div class="progress_number invisible">&nbsp;</div>
-          </div>
-          <div class="other_poslanec">
-            <div class="progress_number">
-              {{ Math.round(getMaxValue) }}
+          <div class="me_poslanec">
+            <div class="progress smallbar">
+              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.problematicno" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('problematicno')">
+                <span class="sr-only">{{ results.problematicno.toFixed(2) }}%</span>
+                <div class="progress_number">
+                  {{ results.problematicno.toFixed(2).replace('.', ',') }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -111,21 +95,10 @@ export default {
   },
   methods: {
     getBarStyle(key) {
-      if (key === 'max') {
-        return { width: '100%' };
-      }
-      if (key === 'score') {
-        return { width: `${(this.getScore / this.getMaxValue) * 100}%` };
-      }
-      return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
+      return { width: `${(this.results[key] / this.maxValue) * 70}%` };
     },
   },
   computed: {
-    getName() {
-      return this.type === 'poslanec'
-        ? this.person.name
-        : this.party.acronym;
-    },
     headerConfig() {
       let specifics;
       if (this.type === 'poslanec') {
@@ -154,17 +127,12 @@ export default {
       }
       return `${this.url}${this.party.id}?altHeader=true`;
     },
-    getScore() {
-      return this.results.score != null ? this.results.score : this.results.organization_value;
-    },
-    getMaxValue() {
-      return this.results.max ? this.results.max.score : this.results.maximum;
-    },
-    getMaxPGs() {
-      if (this.results.max) {
-        return this.results.max.pgs ? this.results.max.pgs : this.results.max.parties;
-      }
-      return this.results.maxPG;
+    maxValue() {
+      return Math.max(
+        this.results.privzdignjeno,
+        this.results.preprosto,
+        this.results.problematicno,
+      );
     },
   },
 };
@@ -185,12 +153,7 @@ export default {
   align-items: center;
   height: 54px;
 }
-.column-number .progress_number {
-  padding-left: 20px;
-  line-height: 30px;
-}
-.me_poslanec,
-.other_poslanec {
+.me_poslanec {
   padding-top: 12px;
   padding-bottom: 12px;
 }

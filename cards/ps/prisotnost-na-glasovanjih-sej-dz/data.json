@@ -1,0 +1,36 @@
+{
+  "organization": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "07.05.2018",
+  "created_for": "07.05.2018",
+  "votes": {
+    "maxPG": [
+      {
+        "acronym": "NeP - BK",
+        "is_coalition": false,
+        "id": 149,
+        "name": "Nepovezani poslanec Bojan Krajnc"
+      }
+    ],
+    "organization_value": 91.5079427504062,
+    "average": 73.2501176435038,
+    "maximum": 94.6651949963208
+  },
+  "sessions": {
+    "maxPG": [
+      {
+        "acronym": "NeP - BK",
+        "is_coalition": false,
+        "id": 149,
+        "name": "Nepovezani poslanec Bojan Krajnc"
+      }
+    ],
+    "organization_value": 93.3380342604375,
+    "average": 84.8983055890671,
+    "maximum": 97.7272727272727
+  }
+}
