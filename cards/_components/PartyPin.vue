@@ -57,14 +57,16 @@ export default {
         color: #fff;
     }
 
-    &[data-name="PS Levica"], &.levica-background { // TODO fix levica
+    &[data-name="PS Levica"],
+    .levica-background, // TODO fix levica
+    .desus-background {
         font-size: 8px;
     }
 
     .partypin-tooltip {
         position: absolute;
-        top: -30px;
-        left: -25px;
+        bottom: 35px;
+        right: -50px;
 
         text-align: center;
         border: 0px;
@@ -80,7 +82,7 @@ export default {
 
         z-index: 10;
 
-        min-width: 100px;
+        min-width: 170px;
 
         &.visible {
             opacity: 1;
