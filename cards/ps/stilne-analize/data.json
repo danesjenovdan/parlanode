@@ -1,0 +1,15 @@
+{
+  "party": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "07.11.2017",
+  "created_for": "07.11.2017",
+  "results": {
+    "problematicno": 0.005710882218965907,
+    "preprosto": 0.031095449167479982,
+    "privzdignjeno": 0.031196328264556095
+  }
+}

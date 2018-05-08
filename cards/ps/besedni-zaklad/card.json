@@ -1,0 +1,11 @@
+{
+  "_id": "ps_besedni-zaklad",
+  "name": "Raznolikost besedišča",
+  "type": "poslanska_skupina",
+  "dataUrl": "https://analize.parlameter.si/v1/pg/getVocabularySize",
+  "lastUpdate": "2018-05-08T12:03:46.792Z",
+  "method": "besedni-zaklad",
+  "group": "ps",
+  "big": false,
+  "high": false
+}

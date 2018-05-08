@@ -1,0 +1,25 @@
+{
+  "party": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "03.12.2016",
+  "created_for": "29.11.2016",
+  "results": {
+    "max": {
+      "score": 126.618018829453,
+      "parties": [
+        {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        }
+      ]
+    },
+    "average": 113.55785257075,
+    "score": 124.0
+  }
+}
