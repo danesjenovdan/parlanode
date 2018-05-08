@@ -1331,7 +1331,7 @@ const routes = [
       },
       {
         name      : 'najtezjeBiSeJimPridruziji',
-        sourceUrl : '/pg/najtezje-pridruzili/:id',
+        sourceUrl : '/ps/najtezje-pridruzili/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
@@ -1359,7 +1359,7 @@ const routes = [
       },
       {
         name      : 'najlazjeBiSeJimPridruziji',
-        sourceUrl : '/pg/najlazje-pridruzili/:id',
+        sourceUrl : '/ps/najlazje-pridruzili/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
