@@ -1,0 +1,107 @@
+{
+  "organization": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "07.05.2018",
+  "created_for": "07.05.2018",
+  "results": [
+    {
+      "person": {
+        "is_active": false,
+        "district": [64],
+        "name": "Marko Poga\u010dnik",
+        "gov_id": "P196",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 65,
+        "has_function": false
+      },
+      "ratio": 74.5240311342522
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [70],
+        "name": "Jo\u017ee Tanko",
+        "gov_id": "P077",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 78,
+        "has_function": false
+      },
+      "ratio": 74.3427794413792
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [92],
+        "name": "Andrej \u0160ircelj",
+        "gov_id": "P201",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 75,
+        "has_function": false
+      },
+      "ratio": 72.5519148365776
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [34],
+        "name": "Ljubo \u017dnidar",
+        "gov_id": "P212",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 91,
+        "has_function": false
+      },
+      "ratio": 72.3488868342742
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [55],
+        "name": "Danijel Krivec",
+        "gov_id": "P040",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 47,
+        "has_function": false
+      },
+      "ratio": 72.3068359249773
+    }
+  ]
+}
