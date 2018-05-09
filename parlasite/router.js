@@ -1075,7 +1075,7 @@ const routes = [
       },
       {
         name      : 'osnovneInformacije',
-        sourceUrl : '/ps/osnovne-informacije-poslanska-skupina/:id',
+        sourceUrl : '/ps/osnovne-informacije/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
