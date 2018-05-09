@@ -129,6 +129,7 @@ export default {
       font-weight: 300;
       line-height: 20px;
       padding: 15px 0;
+      margin-right: 10px;
       a { font-weight: normal; }
     }
 
