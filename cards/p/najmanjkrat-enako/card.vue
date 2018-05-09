@@ -7,14 +7,16 @@
   >
     <div slot="info">
       <p class="info-text lead">
-        Seznam 5 poslancev, ki največkrat glasujejo enako kot "glas poslanske skupine". Razvrščeni so glede na vrednosti od najmanjše proti največji. Manjša kot je vrednost, večje je ujemanje glasovanj.
+        Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot {{vocabulary.izbrani[data.person.gender]}} {{vocabulary.poslanec[data.person.gender]}}. Poslanci so razvrščeni glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.
       </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Izračunamo evklidsko razdaljo med rezultati glasovanj poslanske skupine in rezultati vseh ostalih poslancev (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).
+      <p class="info-text heading">
+        METODOLOGIJA
       </p>
       <p class="info-text">
-        Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.
+        Izračunamo <a href="https://en.wikipedia.org/wiki/Euclidean_distance">evklidsko razdaljo</a> med rezultati {{vocabulary.poslanca[data.person.gender]}} glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).
+      </p>
+      <p class="info-text">
+        Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.
       </p>
       <div class="info-text">
         Številčne vrednosti glasov
@@ -31,43 +33,40 @@
 
 <script>
 import common from 'mixins/common';
-import { partyOverview } from 'mixins/contextUrls';
-import { partyTitle } from 'mixins/titles';
+import { memberOverview } from 'mixins/contextUrls';
+import { memberTitle } from 'mixins/titles';
 import PersonList from 'components/PersonList.vue';
 
 export default {
   components: {
     PersonList,
-    partyOverview,
-    partyTitle,
+    memberOverview,
+    memberTitle,
   },
   mixins: [common],
-  name: 'NajveckratGlasujejoEnako',
+  name: 'NajmanjkratGlasujejoEnako',
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;
       person.score = `${o.ratio.toFixed(2).replace('.', ',')}`;
       return person;
     });
-    const party = this.$options.cardData.data.organization;
+    const { person } = this.$options.cardData.data;
     return {
       data: this.$options.cardData.data,
-      party,
       people,
       headerConfig: {
-        circleIcon: 'og-list',
-        heading: party.name,
-        subheading: `${party.acronym} | ${party.is_coalition ? 'koalicija' : 'opozicija'}`,
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
-        circleText: party.acronym,
-        circleClass: `${party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
+        heading: person.name,
+        subheading: `${person.party.acronym} | ${person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+        circleImage: person.gov_id,
       },
     };
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.data.organization.id}?altHeader=true`;
+      return `${this.url}${this.data.person.id}?altHeader=true`;
     },
   },
 };

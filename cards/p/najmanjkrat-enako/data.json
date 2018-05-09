@@ -1,0 +1,117 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "03.05.2018",
+  "created_for": "03.05.2018",
+  "results": [
+    {
+      "person": {
+        "is_active": false,
+        "district": [64],
+        "name": "Marko Poga\u010dnik",
+        "gov_id": "P196",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 65,
+        "has_function": false
+      },
+      "ratio": 75.1465235390168
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [70],
+        "name": "Jo\u017ee Tanko",
+        "gov_id": "P077",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 78,
+        "has_function": false
+      },
+      "ratio": 74.9199572877614
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [92],
+        "name": "Andrej \u0160ircelj",
+        "gov_id": "P201",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 75,
+        "has_function": false
+      },
+      "ratio": 73.3212111192934
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [55],
+        "name": "Danijel Krivec",
+        "gov_id": "P040",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 47,
+        "has_function": false
+      },
+      "ratio": 73.143694191639
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [34],
+        "name": "Ljubo \u017dnidar",
+        "gov_id": "P212",
+        "gender": "m",
+        "party": {
+          "acronym": "SDS",
+          "is_coalition": false,
+          "id": 5,
+          "name": "PS Slovenska Demokratska Stranka"
+        },
+        "type": "mp",
+        "id": 91,
+        "has_function": false
+      },
+      "ratio": 73.0821455623739
+    }
+  ]
+}

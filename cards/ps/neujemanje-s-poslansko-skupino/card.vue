@@ -1,31 +1,24 @@
 <template>
   <card-wrapper
     contentHeight="518px"
+    contentFrontScroll="auto"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
   >
     <div slot="info">
       <p class="info-text lead">
-        Seznam 5 poslancev, ki največkrat glasujejo enako kot "glas poslanske skupine". Razvrščeni so glede na vrednosti od najmanjše proti največji. Manjša kot je vrednost, večje je ujemanje glasovanj.
+        Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše je ujemanje.
       </p>
       <p class="info-text heading">METODOLOGIJA</p>
       <p class="info-text">
-        Izračunamo evklidsko razdaljo med rezultati glasovanj poslanske skupine in rezultati vseh ostalih poslancev (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).
+        Za vsako glasovanje izračunamo "glas poslanske skupine", ki ji posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja proti najmanjšemu.
       </p>
       <p class="info-text">
-        Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.
+        Vse glasovnice z vrednostjo "NI" ignoriramo, kar ima za posledico to, da če je večinski glas poslanske skupine "NI" (večina poslank in poslancev se glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima poslanska skupina več "večinskih glasov" (dve opciji imata enako največje število glasov znotraj poslanske skupine) upoštevamo obe opciji pri primerjavi z individualnimi poslanci ni poslankami.
       </p>
-      <div class="info-text">
-        Številčne vrednosti glasov
-        <ul class="info-text">
-          <li>-1: proti</li>
-          <li>0: vzdržan/-a ali ni prisoten/-na</li>
-          <li>1: za</li>
-        </ul>
-      </div>
     </div>
-    <person-list :people="people" :show-party-link="true" />
+    <person-list :people="people" />
   </card-wrapper>
 </template>
 
@@ -42,11 +35,11 @@ export default {
     partyTitle,
   },
   mixins: [common],
-  name: 'NajveckratGlasujejoEnako',
+  name: 'NeujemanjeSPoslanskoSkupino',
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;
-      person.score = `${o.ratio.toFixed(2).replace('.', ',')}`;
+      person.score = `${o.ratio.toFixed(2).replace('.', ',')} %`;
       return person;
     });
     const party = this.$options.cardData.data.organization;

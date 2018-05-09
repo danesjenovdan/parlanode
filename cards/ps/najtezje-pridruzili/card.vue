@@ -46,7 +46,7 @@ export default {
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;
-      person.score = o.ratio;
+      person.score = `${o.ratio.toFixed(2).replace('.', ',')}`;
       return person;
     });
     const party = this.$options.cardData.data.organization;

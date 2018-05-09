@@ -1,0 +1,658 @@
+{
+  "organization": {
+    "acronym": "SMC",
+    "is_coalition": true,
+    "id": 1,
+    "name": "PS Stranka modernega centra"
+  },
+  "created_at": "08.05.2018",
+  "created_for": "08.05.2018",
+  "results": [
+    {
+      "person": {
+        "name": "Branko Zorman",
+        "district": [62],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 89,
+        "gov_id": "P295",
+        "has_function": false
+      },
+      "ratio": 2.94545454545454
+    },
+    {
+      "person": {
+        "name": "Jani M\u00f6derndorfer",
+        "district": [76],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 59,
+        "gov_id": "P191",
+        "has_function": false
+      },
+      "ratio": 2.22772277227723
+    },
+    {
+      "person": {
+        "name": "Ivan Prelog",
+        "district": [52],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 68,
+        "gov_id": "P279",
+        "has_function": false
+      },
+      "ratio": 2.17779364512674
+    },
+    {
+      "person": {
+        "name": "Marjan Dolin\u0161ek",
+        "district": [16],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 19,
+        "gov_id": "P249",
+        "has_function": false
+      },
+      "ratio": 1.95541650371528
+    },
+    {
+      "person": {
+        "name": "Marko Ferluga",
+        "district": [83],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 21,
+        "gov_id": "P250",
+        "has_function": false
+      },
+      "ratio": 1.61538461538461
+    },
+    {
+      "person": {
+        "name": "Kamal Izidor Shaker",
+        "district": [78],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 72,
+        "gov_id": "P283",
+        "has_function": false
+      },
+      "ratio": 1.55122655122655
+    },
+    {
+      "person": {
+        "name": "Du\u0161an Verbi\u010d",
+        "district": [99],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 92,
+        "gov_id": "P296",
+        "has_function": false
+      },
+      "ratio": 1.41542816702052
+    },
+    {
+      "person": {
+        "name": "Mitja Horvat",
+        "district": [96],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 33,
+        "gov_id": "P257",
+        "has_function": false
+      },
+      "ratio": 1.38642019196588
+    },
+    {
+      "person": {
+        "name": "Sa\u0161a Tabakovi\u0107",
+        "district": [37],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 1355,
+        "gov_id": "P302",
+        "has_function": false
+      },
+      "ratio": 1.17696511139134
+    },
+    {
+      "person": {
+        "name": "Danilo Anton Ranc",
+        "district": [39],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 71,
+        "gov_id": "P282",
+        "has_function": false
+      },
+      "ratio": 0.993150684931507
+    },
+    {
+      "person": {
+        "name": "Milan Brglez",
+        "district": [76],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 11,
+        "gov_id": "P243",
+        "has_function": true
+      },
+      "ratio": 0.917431192660544
+    },
+    {
+      "person": {
+        "name": "Igor Zor\u010di\u010d",
+        "district": [10],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 88,
+        "gov_id": "P294",
+        "has_function": false
+      },
+      "ratio": 0.8109104312569
+    },
+    {
+      "person": {
+        "name": "Ksenija Korenjak Kramar",
+        "district": [51],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 43,
+        "gov_id": "P263",
+        "has_function": false
+      },
+      "ratio": 0.78382838283828
+    },
+    {
+      "person": {
+        "name": "Erika Dekleva",
+        "district": [86],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 16,
+        "gov_id": "P247",
+        "has_function": false
+      },
+      "ratio": 0.77669902912622
+    },
+    {
+      "person": {
+        "name": "Irena Kotnik",
+        "district": [58],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 44,
+        "gov_id": "P264",
+        "has_function": false
+      },
+      "ratio": 0.714017286734318
+    },
+    {
+      "person": {
+        "name": "Ivan \u0160kodnik",
+        "district": [40],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 76,
+        "gov_id": "P286",
+        "has_function": false
+      },
+      "ratio": 0.664568030779989
+    },
+    {
+      "person": {
+        "name": "Maru\u0161a \u0160kopac",
+        "district": [57],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 77,
+        "gov_id": "P287",
+        "has_function": false
+      },
+      "ratio": 0.636942675159233
+    },
+    {
+      "person": {
+        "name": "Ur\u0161ka Ban",
+        "district": [8],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 3,
+        "gov_id": "P240",
+        "has_function": false
+      },
+      "ratio": 0.621546961325976
+    },
+    {
+      "person": {
+        "name": "Dragan Mati\u0107",
+        "district": [74],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 57,
+        "gov_id": "P272",
+        "has_function": false
+      },
+      "ratio": 0.608882521489974
+    },
+    {
+      "person": {
+        "name": "Irena Gro\u0161elj Ko\u0161nik",
+        "district": [15],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 27,
+        "gov_id": "P253",
+        "has_function": false
+      },
+      "ratio": 0.602651667336289
+    },
+    {
+      "person": {
+        "name": "Simon Zajc",
+        "district": [100],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 87,
+        "gov_id": "P293",
+        "has_function": false
+      },
+      "ratio": 0.580997949419
+    },
+    {
+      "person": {
+        "name": "Andreja Poto\u010dnik",
+        "district": [63],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 67,
+        "gov_id": "P278",
+        "has_function": false
+      },
+      "ratio": 0.55289347585699
+    },
+    {
+      "person": {
+        "name": "Jasna Murgel",
+        "district": [48],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 60,
+        "gov_id": "P274",
+        "has_function": false
+      },
+      "ratio": 0.540958268933551
+    },
+    {
+      "person": {
+        "name": "Vojka \u0160ergan",
+        "district": [14],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 74,
+        "gov_id": "P285",
+        "has_function": false
+      },
+      "ratio": 0.515463917525778
+    },
+    {
+      "person": {
+        "name": "Janja Sluga",
+        "district": [31],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 73,
+        "gov_id": "P284",
+        "has_function": false
+      },
+      "ratio": 0.492237788716395
+    },
+    {
+      "person": {
+        "name": "Anita Kole\u0161a",
+        "district": [30],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 40,
+        "gov_id": "P260",
+        "has_function": false
+      },
+      "ratio": 0.486618004866173
+    },
+    {
+      "person": {
+        "name": "Simona Kustec Lipicer",
+        "district": [102],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 48,
+        "gov_id": "P266",
+        "has_function": false
+      },
+      "ratio": 0.425682866264637
+    },
+    {
+      "person": {
+        "name": "Du\u0161an Radi\u010d",
+        "district": [20],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 1357,
+        "gov_id": "P300",
+        "has_function": false
+      },
+      "ratio": 0.395480225988692
+    },
+    {
+      "person": {
+        "name": "Aleksander Kav\u010di\u010d",
+        "district": [19],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 39,
+        "gov_id": "P259",
+        "has_function": false
+      },
+      "ratio": 0.382490437739051
+    },
+    {
+      "person": {
+        "name": "Teja Ljubi\u010d",
+        "district": [85],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 2933,
+        "gov_id": "P304",
+        "has_function": false
+      },
+      "ratio": 0.377928949357525
+    },
+    {
+      "person": {
+        "name": "Vlasta Po\u010dkaj",
+        "district": [84],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 2934,
+        "gov_id": "P303",
+        "has_function": false
+      },
+      "ratio": 0.299625468164805
+    },
+    {
+      "person": {
+        "name": "Branislav Raji\u0107",
+        "district": [46],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 70,
+        "gov_id": "P281",
+        "has_function": false
+      },
+      "ratio": 0.244584206848359
+    },
+    {
+      "person": {
+        "name": "Vesna Vervega",
+        "district": [25],
+        "gender": "f",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 84,
+        "gov_id": "P291",
+        "has_function": false
+      },
+      "ratio": 0.143061516452065
+    },
+    {
+      "person": {
+        "name": "Bala\u017ei\u010d Dejan",
+        "district": [95],
+        "gender": "m",
+        "is_active": false,
+        "party": {
+          "acronym": "SMC",
+          "id": 1,
+          "is_coalition": true,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 3986,
+        "gov_id": "P305",
+        "has_function": false
+      },
+      "ratio": 0.0
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "03.05.2018",
+  "created_for": "03.05.2018",
+  "results": [
+    {
+      "person": {
+        "is_active": false,
+        "district": [37],
+        "name": "Marija Antonija Kova\u010di\u010d",
+        "gov_id": "P297",
+        "gender": "f",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 96,
+        "has_function": false
+      },
+      "ratio": 25.2784493195291
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [19],
+        "name": "Franc Jur\u0161a",
+        "gov_id": "P122",
+        "gender": "m",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 37,
+        "has_function": false
+      },
+      "ratio": 25.4558441227157
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [46],
+        "name": "Uro\u0161 Prikl",
+        "gov_id": "P280",
+        "gender": "m",
+        "party": {
+          "acronym": "DeSUS",
+          "is_coalition": true,
+          "id": 3,
+          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+        },
+        "type": "mp",
+        "id": 69,
+        "has_function": false
+      },
+      "ratio": 26.0
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [40],
+        "name": "Ivan \u0160kodnik",
+        "gov_id": "P286",
+        "gender": "m",
+        "party": {
+          "acronym": "SMC",
+          "is_coalition": true,
+          "id": 1,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 76,
+        "has_function": false
+      },
+      "ratio": 26.0768096208106
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [46],
+        "name": "Branislav Raji\u0107",
+        "gov_id": "P281",
+        "gender": "m",
+        "party": {
+          "acronym": "SMC",
+          "is_coalition": true,
+          "id": 1,
+          "name": "PS Stranka modernega centra"
+        },
+        "type": "mp",
+        "id": 70,
+        "has_function": false
+      },
+      "ratio": 26.0768096208106
+    }
+  ]
+}

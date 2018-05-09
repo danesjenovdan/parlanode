@@ -23,7 +23,7 @@
         </template>
       </div>
       <div v-if="person.score" class="column large-number">
-        {{ person.score.toFixed(2).replace('.', ',') }}
+        {{ person.score }}
       </div>
     </li>
   </ul>
