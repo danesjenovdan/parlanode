@@ -1,0 +1,2046 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "7. 5. 2018",
+  "created_for": "7. 5. 2018",
+  "results": [
+    {
+      "date": "7. 5. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10165,
+          "result": true,
+          "vote_name":
+            "Poro\u010dilo o delu Komisije za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb v letu 2017 (TAJNO) - Glasovanje o predlogu sklepa",
+          "vote_id": 9967,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10165,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9968,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "26. 4. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10161,
+          "result": true,
+          "vote_name":
+            "Kon\u010dno poro\u010dilo Preiskovalne komisije o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in odgovornosti za \u017ee drugo sanacijo ban\u010dnega sistema v samostojni Sloveniji - Glasovanje o predlogu sklepa",
+          "vote_id": 9939,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10161,
+          "result": true,
+          "vote_name":
+            "Kon\u010dno poro\u010dilo Preiskovalne komisije o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in odgovornosti za \u017ee drugo sanacijo ban\u010dnega sistema v samostojni Sloveniji - Glasovanje o amandmaju dr. An\u017eeta Logarja k predlogu sklepa",
+          "vote_id": 9940,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10161,
+          "result": true,
+          "vote_name":
+            "Kon\u010dno poro\u010dilo Preiskovalne komisije o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in odgovornosti za \u017ee drugo sanacijo ban\u010dnega sistema v samostojni Sloveniji - Glasovanje o Bistvenih ugotovitvah",
+          "vote_id": 9941,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10161,
+          "result": true,
+          "vote_name":
+            "Sklep o pravici prevzema mandata poslanke Dr\u017eavnega zbora - Glasovanje",
+          "vote_id": 9942,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10161,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9943,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10161,
+          "result": true,
+          "vote_name": "\u0160iritev dnevnega reda",
+          "vote_id": 9944,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "24. 4. 2018",
+      "events": [
+        {
+          "option": "proti",
+          "session_id": 10159,
+          "result": false,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9933,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "19. 4. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Kandidatna lista za izvolitev treh \u010dlanov Sodnega sveta - Glasovanje o sestavi komisije za tajno glasovanje",
+          "vote_id": 9903,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Predlog za razre\u0161itev s funkcije guvernerja Banke Slovenije - Glasovanje o aktu v celoti",
+          "vote_id": 9922,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Predloga za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ki mesti okrajnih sodnic na Okrajnem sodi\u0161\u010du v Kranju - Glasovanje - mag. Vesna Ravnik Koprivec",
+          "vote_id": 9923,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Predloga za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ki mesti okrajnih sodnic na Okrajnem sodi\u0161\u010du v Kranju - Glasovanje - mag. Tina Omejc",
+          "vote_id": 9924,
+          "type": "ballot"
+        },
+        {
+          "option": "proti",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o igrah na sre\u010do - Ponovno odlo\u010danje",
+          "vote_id": 9907,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o socialno varstvenih prejemkih - Glasovanje o zakonu v celoti",
+          "vote_id": 9908,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o dopolnitvi Zakona o zaposlovanju, samozaposlovanju in delu tujcev - Glasovanje o zakonu v celoti",
+          "vote_id": 9909,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o \u0161tipendiranju - Glasovanje o zakonu v celoti",
+          "vote_id": 9910,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o osebni asistenci - Glasovanje o zakonu v celoti",
+          "vote_id": 9911,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o dopolnitvah Zakona o ohranjanju narave - Glasovanje o zakonu v celoti",
+          "vote_id": 9912,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o prenehanju veljavnosti Zakona o razglasitvi za\u0161\u010ditne ekolo\u0161ke cone in epikontinentalnem pasu Republike Slovenije - Glasovanje o zakonu v celoti",
+          "vote_id": 9913,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah Zakona o ustanovitvi ob\u010din ter o dolo\u010ditvi njihovih obmo\u010dij - Glasovanje o zakonu v celoti",
+          "vote_id": 9914,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o dopolnitvah Zakona o Slovenskem filmskem centru, javni agenciji Republike Slovenije - Glasovanje o zakonu v celoti",
+          "vote_id": 9915,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o zbirkah podatkov s podro\u010dja zdravstvenega varstva - Glasovanje o zakonu v celoti",
+          "vote_id": 9916,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o zbirkah podatkov s podro\u010dja zdravstvenega varstva - Amandma: K 2. \u010dlenu 16.4.2018 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+          "vote_id": 9917,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o zbirkah podatkov s podro\u010dja zdravstvenega varstva - Amandma: K 1. \u010dlenu 16.4.2018 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
+          "vote_id": 9918,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o varstvu potro\u0161nikov - Glasovanje o zakonu v celoti",
+          "vote_id": 9919,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah Zakona o priznanju Republike Slovenije za poslovno odli\u010dnost - Glasovanje o zakonu v celoti",
+          "vote_id": 9920,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o divjadi in lovstvu - Glasovanje o zakonu v celoti",
+          "vote_id": 9921,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "18. 4. 2018",
+      "events": [
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1380083,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1380157,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1380095,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1380169,
+          "type": "speech"
+        }
+      ]
+    },
+    {
+      "date": "17. 4. 2018",
+      "events": [
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o informacijski varnosti - Glasovanje o zakonu v celoti",
+          "vote_id": 9684,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o dostopnosti spleti\u0161\u010d in mobilnih aplikacij - Glasovanje o zakonu v celoti",
+          "vote_id": 9685,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o dostopnosti spleti\u0161\u010d in mobilnih aplikacij - Eviden\u010dni sklep da se tretja obravnava opravi na isti seji 17.4.2018",
+          "vote_id": 9686,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o dostopnosti spleti\u0161\u010d in mobilnih aplikacij - Amandma: K 3. \u010dlenu 13.4.2018 [SMC - Poslanska skupina Stranke modernega centra]",
+          "vote_id": 9687,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Glasovanje o zakonu v celoti",
+          "vote_id": 9688,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": false,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Amandma: K 6. \u010dlenu 13.4.2018 [Levica - Poslanska skupina Levica]",
+          "vote_id": 9689,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": false,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Amandma: K 5. \u010dlenu 13.4.2018 [Levica - Poslanska skupina Levica]",
+          "vote_id": 9690,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o socialnem vklju\u010devanju invalidov - Glasovanje o zakonu v celoti",
+          "vote_id": 9691,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o \u017eelezni\u0161kem prometu - Glasovanje o zakonu v celoti",
+          "vote_id": 9692,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o varnosti v \u017eelezni\u0161kem prometu - Glasovanje o zakonu v celoti",
+          "vote_id": 9693,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o konzularni za\u0161\u010diti - Glasovanje o zakonu v celoti",
+          "vote_id": 9694,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o mednarodnem razvojnem sodelovanju in humanitarni pomo\u010di Republike Slovenije - Glasovanje o zakonu v celoti",
+          "vote_id": 9695,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o prekinitvi postopkov proti dru\u017ebenikom izbrisanih dru\u017eb - Glasovanje o zakonu v celoti",
+          "vote_id": 9696,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o izvajanju Uredbe (EU) o dokumentih s klju\u010dnimi informacijami o paketnih nalo\u017ebenih produktih za male vlagatelje in zavarovalnih nalo\u017ebenih produktih - Glasovanje o zakonu v celoti",
+          "vote_id": 9697,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10151,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o za\u0161\u010diti pri\u010d - Glasovanje o zakonu v celoti",
+          "vote_id": 9683,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "16. 4. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10151,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9668,
+          "type": "ballot"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1380326,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1379615,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1379525,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1379459,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "60. izredna seja",
+            "date_ts": "2018-04-16T02:00:00",
+            "updated_at": "20. 4. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "16. 4. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10151,
+            "in_review": false
+          },
+          "speech_id": 1379433,
+          "type": "speech"
+        }
+      ]
+    },
+    {
+      "date": "11. 4. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10137,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9657,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "10. 4. 2018",
+      "events": [
+        {
+          "option": "ni",
+          "session_id": 10128,
+          "result": true,
+          "vote_name":
+            "Kon\u010dno poro\u010dilo o investiciji v blok TE\u0160 6 - Glasovanje o predlogu sklepa",
+          "vote_id": 9658,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10128,
+          "result": true,
+          "vote_name":
+            "Kon\u010dno poro\u010dilo o investiciji v blok TE\u0160 6 - Amandma: K sklepu 10.4.2018 [\u0160kopac Maru\u0161a]",
+          "vote_id": 9659,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10128,
+          "result": true,
+          "vote_name":
+            "Kon\u010dno poro\u010dilo o investiciji v blok TE\u0160 6 - Glasovanje o Bistvenih ugotovitvah",
+          "vote_id": 9660,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10128,
+          "result": true,
+          "vote_name":
+            "Zaklju\u010dno poro\u010dilo o opravljeni parlamentarni preiskavi na podro\u010dju ugotavljanja zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic - Glasovanje o predlogu sklepa",
+          "vote_id": 9661,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10128,
+          "result": true,
+          "vote_name":
+            "Zaklju\u010dno poro\u010dilo o opravljeni parlamentarni preiskavi na podro\u010dju ugotavljanja zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic - Amandma: k Predlogu sklepa za sejo DZ 10.4.2018 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+          "vote_id": 9662,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10128,
+          "result": true,
+          "vote_name":
+            "Zaklju\u010dno poro\u010dilo o opravljeni parlamentarni preiskavi na podro\u010dju ugotavljanja zlorab v slovenskem zdravstvenem sistemu na podro\u010dju prodaje in nakupa \u017eilnih opornic - Glasovanje o Bistvenih ugotovitvah",
+          "vote_id": 9663,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10128,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9664,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "27. 3. 2018",
+      "events": [
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Sklep o imenovanju \u010dlana Nadzornega sveta RTV Slovenija - Glasovanje o aktu v celoti",
+          "vote_id": 9647,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okrajnega sodnika na Okrajnem sodi\u0161\u010du na Jesenicah - Glasovanje",
+          "vote_id": 9648,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto vi\u0161je sodnice na Upravnem sodi\u0161\u010du Republike Slovenije - Glasovanje",
+          "vote_id": 9649,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o delovanju spletnih platform sodelovalnega gospodarstva - Eviden\u010dni sklep o primernosti predloga zakona 27.3.2018",
+          "vote_id": 9650,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o dopolnitvah Zakona o gasilstvu - Eviden\u010dni sklep o primernosti predloga zakona 27.3.2018",
+          "vote_id": 9651,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o zagotavljanju sredstev za nekatere nujne programe Republike Slovenije v kulturi - Eviden\u010dni sklep o primernosti predloga zakona 27.3.2018",
+          "vote_id": 9652,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Resolucija o nacionalnem programu du\u0161evnega zdravja 2018\u20132028 - Glasovanje o aktu v celoti",
+          "vote_id": 9653,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Resolucija o nacionalnem programu varnosti in zdravja pri delu - Glasovanje o aktu v celoti",
+          "vote_id": 9654,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o povra\u010dilu premo\u017eenjske \u0161kode iz druge svetovne vojne - Eviden\u010dni sklep o primernosti predloga zakona 27.3.2018",
+          "vote_id": 9655,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": false,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o mednarodni za\u0161\u010diti - Eviden\u010dni sklep o primernosti predloga zakona 27.3.2018",
+          "vote_id": 9646,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10096,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9559,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "22. 3. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": false,
+          "vote_name":
+            "Zakon o na\u010dinu izgradnje infrastrukture in pogojih koncesije za izkori\u0161\u010danje energetskega potenciala srednje Save - Eviden\u010dni sklep o primernosti predloga zakona 22.3.2018",
+          "vote_id": 9546,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": false,
+          "vote_name":
+            "Zakon o re\u0161evanju stanovanjske problematike mladih - Eviden\u010dni sklep o primernosti predloga zakona 22.3.2018",
+          "vote_id": 9547,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Predlog za sprejem avtenti\u010dne razlage 631. \u010dlena Obligacijskega zakonika (OZ, Uradni list RS, \u0161t. 97/07 \u2013 uradno pre\u010di\u0161\u010deno besedilo in 64/16 \u2013 odl. US) - Glasovanje o besedilu avtenti\u010dne razlage v celoti",
+          "vote_id": 9548,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Predlog za sprejem avtenti\u010dne razlage 631. \u010dlena Obligacijskega zakonika (OZ, Uradni list RS, \u0161t. 97/07 \u2013 uradno pre\u010di\u0161\u010deno besedilo in 64/16 \u2013 odl. US) - Eviden\u010dni sklep o sprejetju predloga za sprejem avtenti\u010dne razlage",
+          "vote_id": 9549,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o sodnih izvedencih, sodnih cenilcih in sodnih tolma\u010dih - Glasovanje o zakonu v celoti",
+          "vote_id": 9550,
+          "type": "ballot"
+        },
+        {
+          "option": "ni",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o prekinitvi postopkov proti dru\u017ebenikom izbrisanih dru\u017eb - Eviden\u010dni sklep o primernosti predloga zakona 22.3.2018",
+          "vote_id": 9551,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o sodelovanju v kazenskih zadevah z dr\u017eavami \u010dlanicami Evropske unije - Glasovanje o zakonu v celoti",
+          "vote_id": 9552,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o nagradah Republike Slovenije na podro\u010dju \u0161olstva - Glasovanje o zakonu v celoti",
+          "vote_id": 9553,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o veterinarstvu - Glasovanje o zakonu v celoti",
+          "vote_id": 9554,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o veterinarskih merilih skladnosti - Glasovanje o zakonu v celoti",
+          "vote_id": 9555,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o semenskem materialu kmetijskih rastlin - Glasovanje o zakonu v celoti",
+          "vote_id": 9556,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": true,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o kmetijstvu - Glasovanje o zakonu v celoti",
+          "vote_id": 9557,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10082,
+          "result": false,
+          "vote_name":
+            "Zakon o spremembah in dopolnitvah Zakona o kmetijstvu - Amandma: K 5. \u010dlenu 13.3.2018 [Levica - Poslanska skupina Levica]",
+          "vote_id": 9558,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "21. 3. 2018",
+      "events": [
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375798,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375790,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375788,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375786,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375784,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375782,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375780,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375942,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375928,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376098,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376088,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376082,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376068,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376066,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376064,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376062,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376060,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376058,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376056,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376054,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376052,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1376050,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375794,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375796,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375916,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375914,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375912,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375910,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375948,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375926,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375924,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375922,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375920,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375918,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375812,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375792,
+          "type": "speech"
+        }
+      ]
+    },
+    {
+      "date": "20. 3. 2018",
+      "events": [
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375012,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375343,
+          "type": "speech"
+        },
+        {
+          "session": {
+            "name": "39. redna seja",
+            "date_ts": "2018-03-19T01:00:00",
+            "updated_at": "28. 3. 2018",
+            "orgs": [
+              {
+                "acronym": "DZ",
+                "id": 95,
+                "is_coalition": false,
+                "name": "Dr\u017eavni zbor"
+              }
+            ],
+            "date": "19. 3. 2018",
+            "org": {
+              "acronym": "DZ",
+              "id": 95,
+              "is_coalition": false,
+              "name": "Dr\u017eavni zbor"
+            },
+            "id": 10082,
+            "in_review": false
+          },
+          "speech_id": 1375173,
+          "type": "speech"
+        }
+      ]
+    },
+    {
+      "date": "19. 3. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10066,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9507,
+          "type": "ballot"
+        },
+        {
+          "option": "za",
+          "session_id": 10066,
+          "result": true,
+          "vote_name":
+            "\u0160iritev dnevnega reda s 1.A to\u010dko (Obvestilo dr. Miroslava Cerarja o odstopu s funkcije predsednika Vlade Republike Slovinije)",
+          "vote_id": 9508,
+          "type": "ballot"
+        }
+      ]
+    },
+    {
+      "date": "16. 3. 2018",
+      "events": [
+        {
+          "option": "za",
+          "session_id": 10066,
+          "result": true,
+          "vote_name": "Dnevni red v celoti",
+          "vote_id": 9509,
+          "type": "ballot"
+        }
+      ]
+    }
+  ]
+}

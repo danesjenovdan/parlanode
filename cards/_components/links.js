@@ -25,5 +25,6 @@ export const getMemberLink = member => getPersonLink(member.person);
 export const getMemberPortrait = member => getPersonPortrait(member.person);
 export const getMemberPartyLink = member => getPersonPartyLink(member.person);
 
-export const getSessionSpeechLink = session =>  urlsData.base + urlsData.sessionLink.transkript + session.session_id + '#' + session.speech_id;
-export const getSearchTermLink = term =>  SEARCH_ROOT_URL + encodeURIComponent(`"${term}"`);
+export const getSessionSpeechLink = session => `${urlsData.base}${urlsData.sessionLink.transkript}${session.session_id || session.session.id}#${session.speech_id}`;
+export const getSessionVoteLink = session => `${urlsData.base}${urlsData.sessionLink.glasovanje}${session.session_id}/${session.vote_id}`;
+export const getSearchTermLink = term => SEARCH_ROOT_URL + encodeURIComponent(`"${term}"`);
