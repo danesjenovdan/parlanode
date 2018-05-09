@@ -38,10 +38,8 @@ import PersonList from 'components/PersonList.vue';
 export default {
   components: {
     PersonList,
-    partyOverview,
-    partyTitle,
   },
-  mixins: [common],
+  mixins: [common, partyOverview, partyTitle],
   name: 'NajmanjkratGlasujejoEnako',
   data() {
     const people = this.$options.cardData.data.results.map((o) => {

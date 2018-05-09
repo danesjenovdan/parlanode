@@ -1,0 +1,11 @@
+{
+  "_id": "ps_clani",
+  "name": "Članice in člani poslanske skupine",
+  "type": "poslanska_skupina",
+  "dataUrl": "https://analize.parlameter.si/v1/pg/getMPsOfPG",
+  "lastUpdate": "2018-05-09T10:18:10.997Z",
+  "method": "clanice-in-clani",
+  "group": "ps",
+  "big": false,
+  "high": false
+}

@@ -1,10 +1,11 @@
 {
-  "_id": "p_poslanska_vprasanja_in_pobude",
+  "_id": "p_poslanska-vprasanja-in-pobude",
   "name": "Poslanska vprašanja in pobude",
   "dataUrl": "https://analize.parlameter.si/v1/p/getQuestions",
   "type": "poslanec",
-  "lastUpdate": "2018-01-08T09:45:49.580Z",
+  "lastUpdate": "2018-05-09T10:52:58.007Z",
   "method": "poslanska-vprasanja-in-pobude",
   "group": "p",
-  "big": "true"
+  "big": false,
+  "high": false
 }

@@ -1,16 +1,19 @@
 <template>
   <card-wrapper
+    contentHeight="518px"
     :id="$options.cardData.cardData._id"
-    content-class="full"
-    :card-url="url"
-    :header-config="headerConfig">
-
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Pregled osnovnih informacij poslanske skupine.</p>
+      <p class="info-text lead">
+        Izpis vseh poslanskih vprašanj in pobud, ki ji je {{vocabulary.poslanec[data.person.gender]}} {{vocabulary.postaviti[data.person.gender]}} v tem sklicu DZ RS.
+      </p>
       <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Vsebine za to kartico smo pridobili s spletnega mesta DZ RS (poslanska skupina, starost, članstva v delovnih telesih) in s spletnega mesta DVK (število prejetih glasov). Za ostale vsebine smo se obrnili na PR službe poslanskih skupin. Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam.</p>
+      <p class="info-text">
+        Podatke pridobivamo s spletnega mesta <a class="funblue-light-hover" target="_blank" href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">DZ RS</a>.
+      </p>
     </div>
-
     <question-list :questionDays="data.results" />
   </card-wrapper>
 </template>
@@ -26,16 +29,28 @@ export default {
   mixins: [common, memberOverview, memberTitle],
   components: { QuestionList },
   data() {
+    const { person } = this.$options.cardData.data;
     return {
       data: this.$options.cardData.data,
       headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
+        heading: person.name,
+        subheading: `${person.party.acronym} | ${person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+        circleImage: person.gov_id,
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
     };
   },
+  computed: {
+    generatedCardUrl() {
+      return `${this.url}${this.data.person.id}?altHeader=true`;
+    },
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.questions {
+  margin-top: 0;
+}
+</style>
