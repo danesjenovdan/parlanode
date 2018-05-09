@@ -1103,7 +1103,7 @@ const routes = [
       },
       {
         name      : 'claniceInClani',
-        sourceUrl : '/ps/clanice-in-clani-poslanske-skupine/:id',
+        sourceUrl : '/ps/clanice-in-clani/:id',
         resolve   : (req, res, route, card) => {
 
           return getPSIdByName(req.params.fullName, req)
