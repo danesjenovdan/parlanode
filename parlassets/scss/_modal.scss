@@ -193,4 +193,15 @@
             background-image: url("../img/icons/poloznica.png");
         }
     }
+
+    .btn-donation-container {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        input {
+            border-color: $funblue;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
 }
