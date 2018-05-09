@@ -1,0 +1,105 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [14],
+    "name": "Ivan Hr\u0161ak",
+    "gov_id": "P176",
+    "gender": "m",
+    "party": {
+      "acronym": "DeSUS",
+      "is_coalition": true,
+      "id": 3,
+      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+    },
+    "type": "mp",
+    "id": 34,
+    "has_function": false
+  },
+  "created_at": "07.05.2018",
+  "created_for": "07.05.2018",
+  "results": {
+    "voters": 797,
+    "acronym": "DeSUS",
+    "mandates": 2,
+    "party_id": 3,
+    "groups": [
+      { "group_id": 11, "group_name": "Komisija za narodni skupnosti" },
+      { "group_id": 71, "group_name": "Skupina prijateljstva z Rusijo" },
+      {
+        "group_id": 63,
+        "group_name": "Skupina prijateljstva z Mad\u017earsko"
+      },
+      { "group_id": 59, "group_name": "Skupina prijateljstva s Kanado" },
+      {
+        "group_id": 146,
+        "group_name":
+          "Preiskovalna komisija o ugotavljanju domnevnega pranja denarja in financiranja terorizma, jedrske proliferacije ter financiranja aktivnosti tujih obve\u0161\u010devalno-varnostnih slu\u017eb v tujini v Novi Ljubljanski banki d.d."
+      },
+      { "group_id": 73, "group_name": "Skupina prijateljstva s Srbijo" },
+      { "group_id": 72, "group_name": "Skupina prijateljstva s Slova\u0161ko" },
+      { "group_id": 67, "group_name": "Skupina prijateljstva z Nem\u010dijo" },
+      { "group_id": 64, "group_name": "Skupina prijateljstva z Makedonijo" },
+      { "group_id": 53, "group_name": "Skupina prijateljstva s Hrva\u0161ko" },
+      {
+        "group_id": 47,
+        "group_name": "Skupina prijateljstva s \u010crno goro"
+      },
+      {
+        "group_id": 46,
+        "group_name": "Skupina prijateljstva s \u010ce\u0161ko"
+      },
+      {
+        "group_id": 44,
+        "group_name": "Skupina prijateljstva z Bosno in Hercegovino"
+      },
+      { "group_id": 40, "group_name": "Skupina prijateljstva z Avstrijo" },
+      {
+        "group_id": 101,
+        "group_name":
+          "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji v blok 6 Termoelektrarne \u0160o\u0161tanj"
+      },
+      {
+        "group_id": 19,
+        "group_name": "Odbor za infrastrukturo, okolje in prostor"
+      },
+      { "group_id": 15, "group_name": "Mandatno-volilna komisija" },
+      {
+        "group_id": 12,
+        "group_name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+      }
+    ],
+    "education": "diplomant vi\u0161je\u0161olskega programa",
+    "working_bodies_functions": [
+      {
+        "role": "president",
+        "wb": {
+          "acronym": "",
+          "is_coalition": false,
+          "id": 12,
+          "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu"
+        }
+      },
+      {
+        "role": "vice_president",
+        "wb": {
+          "acronym": "",
+          "is_coalition": false,
+          "id": 15,
+          "name": "Mandatno-volilna komisija"
+        }
+      }
+    ],
+    "previous_occupation": "poslanec",
+    "name": "Ivan Hr\u0161ak",
+    "district": ["Hrastnik"],
+    "age": 60,
+    "social": [
+      {
+        "twitter": "https://twitter.com/IvanHrsak",
+        "facebook": "https://www.facebook.com/hrsakivan",
+        "linkedin": null
+      }
+    ],
+    "party": "PS Demokratska Stranka Upokojencev Slovenije"
+  }
+}

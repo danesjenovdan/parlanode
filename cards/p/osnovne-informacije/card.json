@@ -1,0 +1,11 @@
+{
+  "_id": "p_osnovne-informacije",
+  "name": "Osnovne informacije",
+  "dataUrl": "https://analize.parlameter.si/v1/p/getMPStatic",
+  "type": "poslanec",
+  "lastUpdate": "2018-05-09T14:05:43.897Z",
+  "method": "osnovne-informacije",
+  "group": "p",
+  "big": false,
+  "high": false
+}
