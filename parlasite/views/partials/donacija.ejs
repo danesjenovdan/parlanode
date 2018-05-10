@@ -29,6 +29,19 @@
                     <div class="col-xs-6">
                         <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-email">POSLOVNA<br>DONACIJA</button>
                     </div>
+                    <div class="col-xs-12">
+                        <div class="btn-multiline btn-full-width text-center btn-donation-container">
+                            BITCOIN DONACIJA
+                            <br>
+                            <input value="1PjBM4wZmtCvvf5sQUXRCY23xZf4ep7kyp" class="form-control" readonly="readonly" autocorrect="off" spellcheck="false" />
+                        </div>
+                        <script>
+                            $('.btn-donation-container input').on('focus', function() {
+                                this.select();
+                                document.execCommand('copy');
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
