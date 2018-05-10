@@ -1,0 +1,11 @@
+{
+  "_id": "s_tfidf",
+  "name": "Besede, ki so zaznamovale sejo",
+  "type": "seja",
+  "dataUrl": "https://analize.parlameter.si/v1/s/getTFIDF",
+  "lastUpdate": "2018-05-10T12:51:32.022Z",
+  "method": "tfidf",
+  "group": "s",
+  "big": true,
+  "high": false
+}

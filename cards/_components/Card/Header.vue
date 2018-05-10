@@ -3,8 +3,9 @@
     <template v-if="config.alternative">
       <div class="alt-header-container">
         <div class="alt-header">
-          <div v-if="config.circleText" class="media-object img-circle session-logo" :class="config.circleClass">
-            <b>{{ config.circleText }}</b>
+          <div v-if="config.circleText || config.mediaImage" class="media-object img-circle session-logo" :class="config.circleClass">
+            <b v-if="config.circleText">{{ config.circleText }}</b>
+            <img v-else :src="`https://cdn.parlameter.si/v1/parlassets/icons/${config.mediaImage}.svg`" />
           </div>
           <img v-else-if="config.circleImage" :src="`https://cdn.parlameter.si/v1/parlassets/img/people/square/${config.circleImage}.png`" class="portrait column" />
           <div v-else-if="config.circleIcon" class="icon-circle">
