@@ -96,6 +96,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
 .columns {
   display: flex;
 
@@ -106,5 +108,13 @@ export default {
       margin-right: 20px;
     }
   }
+}
+
+.empty-dataset {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 70px 0;
+  text-align: center;
+  color: $grey-medium;
 }
 </style>
