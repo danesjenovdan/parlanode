@@ -1,0 +1,128 @@
+{
+  "created_at": "18.04.2018",
+  "created_for": "18.04.2018",
+  "session": {
+    "name": "60. izredna seja",
+    "orgs": [
+      {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 95,
+        "name": "Dr\u017eavni zbor"
+      }
+    ],
+    "date": "16. 4. 2018",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    },
+    "date_ts": "2018-04-16T02:00:00",
+    "updated_at": "20. 4. 2018",
+    "in_review": false,
+    "id": 10151
+  },
+  "results": [
+    {
+      "term": "spleti\u0161\u010de",
+      "scores": { "tf": 43, "df": 63, "tf-idf": 0.6825396825396826 }
+    },
+    {
+      "term": "participatoren",
+      "scores": { "tf": 13, "df": 45, "tf-idf": 0.28888888888888886 }
+    },
+    {
+      "term": "konzularen",
+      "scores": { "tf": 42, "df": 232, "tf-idf": 0.1810344827586207 }
+    },
+    {
+      "term": "\u017eelezni\u0161ki",
+      "scores": { "tf": 101, "df": 1775, "tf-idf": 0.056901408450704224 }
+    },
+    {
+      "term": "kibernetski",
+      "scores": { "tf": 20, "df": 388, "tf-idf": 0.05154639175257732 }
+    },
+    {
+      "term": "ob\u010danka",
+      "scores": { "tf": 17, "df": 351, "tf-idf": 0.04843304843304843 }
+    },
+    {
+      "term": "aplikacija",
+      "scores": { "tf": 33, "df": 721, "tf-idf": 0.04576976421636616 }
+    },
+    {
+      "term": "potni\u0161ki",
+      "scores": { "tf": 16, "df": 550, "tf-idf": 0.02909090909090909 }
+    },
+    {
+      "term": "nalo\u017eben",
+      "scores": { "tf": 13, "df": 463, "tf-idf": 0.028077753779697623 }
+    },
+    {
+      "term": "samouprava",
+      "scores": { "tf": 68, "df": 2596, "tf-idf": 0.026194144838212634 }
+    },
+    {
+      "term": "prevoznik",
+      "scores": { "tf": 14, "df": 669, "tf-idf": 0.02092675635276532 }
+    },
+    {
+      "term": "motnja",
+      "scores": { "tf": 13, "df": 622, "tf-idf": 0.02090032154340836 }
+    },
+    {
+      "term": "ob\u010dina",
+      "scores": { "tf": 178, "df": 8939, "tf-idf": 0.01991274191744043 }
+    },
+    {
+      "term": "predstavni\u0161tvo",
+      "scores": { "tf": 15, "df": 790, "tf-idf": 0.0189873417721519 }
+    },
+    {
+      "term": "Prekmurje",
+      "scores": { "tf": 11, "df": 586, "tf-idf": 0.01877133105802048 }
+    },
+    {
+      "term": "promet",
+      "scores": { "tf": 80, "df": 4515, "tf-idf": 0.017718715393133997 }
+    },
+    {
+      "term": "informacijski",
+      "scores": { "tf": 57, "df": 3248, "tf-idf": 0.017549261083743842 }
+    },
+    {
+      "term": "dopolnjen",
+      "scores": { "tf": 19, "df": 1224, "tf-idf": 0.015522875816993464 }
+    },
+    {
+      "term": "digitalen",
+      "scores": { "tf": 18, "df": 1177, "tf-idf": 0.015293118096856415 }
+    },
+    {
+      "term": "zavezanec",
+      "scores": { "tf": 28, "df": 1971, "tf-idf": 0.014205986808726534 }
+    },
+    {
+      "term": "humanitaren",
+      "scores": { "tf": 24, "df": 1694, "tf-idf": 0.014167650531286895 }
+    },
+    {
+      "term": "produkt",
+      "scores": { "tf": 21, "df": 1512, "tf-idf": 0.013888888888888888 }
+    },
+    {
+      "term": "razvojen",
+      "scores": { "tf": 73, "df": 5353, "tf-idf": 0.013637212777881562 }
+    },
+    {
+      "term": "komunikacijski",
+      "scores": { "tf": 12, "df": 900, "tf-idf": 0.013333333333333334 }
+    },
+    {
+      "term": "zakon",
+      "scores": { "tf": 664, "df": 53067, "tf-idf": 0.012512484218063957 }
+    }
+  ]
+}
