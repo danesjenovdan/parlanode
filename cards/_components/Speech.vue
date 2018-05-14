@@ -16,6 +16,10 @@
           <span class="name">{{speech.person.name}}</span>
         </template>
       </div>
+      <div v-if="showSession" class="session">
+        <a :href="getSessionTranscriptLink(speech.results.session)" class="funblue-light-hover">{{speech.results.session.name}}</a><br>
+        <span class="date">{{speech.results.session.date}}</span>
+      </div>
     </div>
     <div class="everything">
       <div class="speech-text">
@@ -25,13 +29,18 @@
     </div>
     <div class="links">
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
-      <a :href="`https://glej.parlameter.si/s/govor/${speech.results.speech_id}?frame=true`" class="share"></a>
+      <a :href="`https://glej.parlameter.si/s/govor/${speech.results.speech_id}?frame=true`" v-if="!showSession" class="share"></a>
     </div>
   </div>
 </template>
 
 <script>
-import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from 'components/links';
+import {
+  getPersonPortrait,
+  getPersonLink,
+  getSessionSpeechLink,
+  getSessionTranscriptLink,
+} from 'components/links';
 
 /*
   // QUOTE-FULL SPEECH TOGGLING
@@ -48,12 +57,17 @@ export default {
       type: Object,
       required: true,
     },
+    showSession: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       getPersonPortrait,
       getPersonLink,
       getSessionSpeechLink,
+      getSessionTranscriptLink,
     };
   },
   methods: {
@@ -138,6 +152,21 @@ $medium-gray: #d0d0d0;
     .name {
       font-size: 16px;
       font-weight: 300;
+    }
+  }
+
+  .session {
+    font-size: 14px;
+    line-height: 22px;
+    padding: 21px 0 0 8px;
+
+    @include respond-to(desktop) {
+      padding: 7px 0 0 $portrait-size + $portrait-margin;
+      width: 100%;
+    }
+
+    .date {
+      font-family: Roboto Slab;
     }
   }
 }

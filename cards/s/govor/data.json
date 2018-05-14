@@ -1,0 +1,51 @@
+{
+  "person": {
+    "is_active": false,
+    "district": [76],
+    "name": "Milan Brglez",
+    "gov_id": "P243",
+    "gender": "m",
+    "party": {
+      "acronym": "SMC",
+      "is_coalition": true,
+      "id": 1,
+      "name": "PS Stranka modernega centra"
+    },
+    "type": "mp",
+    "id": 11,
+    "has_function": true
+  },
+  "created_at": "19.04.2018",
+  "created_for": "16.04.2018",
+  "results": {
+    "quote_id": null,
+    "content":
+      "Spo\u0161tovane kolegice poslanke in kolegi poslanci, gospe in gospodje!\nPri\u010denjamo 60. izredno sejo Dr\u017eavnega zbora, ki sem jo sklical na podlagi prvega odstavka 58. \u010dlena in drugega odstavka 60. \u010dlena Poslovnika Dr\u017eavnega zbora. \nObve\u0161\u010den sem, da se dana\u0161nje seje ne morejo udele\u017eiti naslednje poslanke in poslanci: mag. Tanja Cink, dr. Jasna Murgel, gospa Irena Gro\u0161elj Ko\u0161nik, gospod Danilo Anton Ranc, dr. Simona Kustec Lipicer od 13. do 20. ure, gospod Marjan Dolin\u0161ek, gospod Roberto Battelli, dr. L\u00e1szl\u00f3 G\u00f6ncz, dr. Vinko Gorenak, gospod Franc Laj, gospod Franc Jur\u0161a do 12. ure, gospod Franc Breznik, gospod Ivan Prelog do 13. ure, dr. Matej Ta\u0161ner Vatovec do 11. ure, Miha Kordi\u0161, od 16. ure pa bom odsoten tudi sam. \nNa sejo sem vabil predstavnika Dr\u017eavnega sveta k 24. to\u010dki dnevnega reda, predstavnika Urada predsednika Republike Slovenije in predstavnika Sodnega sveta k 25. to\u010dki dnevnega reda ter predstavnike Vlade k vsem to\u010dkam dnevnega reda. Vse prisotne lepo pozdravljam.\nPrehajamo na dolo\u010ditev dnevnega reda 60. izredne seje Dr\u017eavnega zbora. Predlog dnevnega reda ste prejeli v sredo, 11. aprila 2018 s sklicem seje. O predlogu dnevnega reda bomo odlo\u010dali v skladu s prvim odstavkom 64. \u010dlena Poslovnika Dr\u017eavnega zbora. Predlogov za \u0161iritev dnevnega reda seje nisem prejel. Zboru predlagam, da za dana\u0161njo sejo dolo\u010di dnevni red, kot ste ga prejeli s sklicem. \nPrehajamo na odlo\u010danje. Poslanke in poslance prosim, da preverite delovanje glasovalnih naprav. \nGlasujemo. Navzo\u010dih je 58 poslank in poslancev, za je glasovalo 54, proti nih\u010de. \n(Za je glasovalo 54.) (Proti nih\u010de.)\nUgotavljam, da je dnevni red 60. izredne seje zbora dolo\u010den.\n (nadaljevanje) Prehajamo na 20. TO\u010cKO DNEVNEGA REDA, TO JE NA DRUGO OBRAVNAVO PREDLOGA ZAKONA O VARNOSTI V \u017dELEZNI\u0160KEM PROMETU, V OKVIRU REDNEGA POSTOPKA. Predlog zakona je v obravnavo zboru predlo\u017eila Vlada. \nZa dopolnilno obrazlo\u017eitev predloga zakona dajem besedo predstavniku Vlade, dr\u017eavnemu sekretarju na Ministrstvu za infrastrukturo, mag. Klemnu Potisku.",
+    "session": {
+      "name": "60. izredna seja",
+      "orgs": [
+        {
+          "acronym": "DZ",
+          "is_coalition": false,
+          "id": 95,
+          "name": "Dr\u017eavni zbor"
+        }
+      ],
+      "date": "16. 4. 2018",
+      "org": {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 95,
+        "name": "Dr\u017eavni zbor"
+      },
+      "date_ts": "2018-04-16T02:00:00",
+      "updated_at": "20. 4. 2018",
+      "in_review": false,
+      "id": 10151
+    },
+    "quoted_text": null,
+    "speech_id": 1380317,
+    "end_idx": null,
+    "start_idx": null
+  }
+}
