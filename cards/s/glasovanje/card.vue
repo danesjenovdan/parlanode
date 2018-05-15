@@ -76,7 +76,7 @@
       </p-tab>
     </p-tabs>
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
-      <p-tab label="Povzetek" variant="light">
+      <p-tab label="Povzetek" variant="dark">
         <excerpt
           :content="data.abstract || ''"
           :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
