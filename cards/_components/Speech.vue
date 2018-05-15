@@ -1,5 +1,5 @@
 <template>
-  <div class="speech-holder" :id="speech.results.speech_id">
+  <div :class="['speech-holder', {'just-quote': showQuote}]" :id="speech.results.speech_id">
     <input type="hidden" class="mywords" :value="getSpeechContent(speech)" />
     <div class="person-session">
       <div class="person">
@@ -27,6 +27,15 @@
         <div class="quote-button">“</div>
       </div>
     </div>
+    <div v-if="speech.results.quoted_text" class="quote">
+      <div class="speech-text">
+        {{quotePaddingBefore}}
+        <span class="quote-text">{{speech.results.quoted_text}}</span>
+        {{quotePaddingAfter}}
+      </div>
+      <a href="#" class="full-text-link" @click="showFullSpeech">Cel govor</a>
+      <div class="quote-button">“</div>
+    </div>
     <div class="links">
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
       <a :href="`https://glej.parlameter.si/s/govor/${speech.results.speech_id}?frame=true`" v-if="!showSession" class="share"></a>
@@ -42,13 +51,7 @@ import {
   getSessionTranscriptLink,
 } from 'components/links';
 
-/*
-  // QUOTE-FULL SPEECH TOGGLING
-  cardElement.on('click', '.full-text-link', (event) => {
-    event.preventDefault();
-    cardElement.removeClass('just-quote');
-  });
-*/
+const PADDING_LENGTH = 30;
 
 export default {
   name: 'Speech',
@@ -68,11 +71,31 @@ export default {
       getPersonLink,
       getSessionSpeechLink,
       getSessionTranscriptLink,
+      hideQuote: false,
     };
+  },
+  computed: {
+    showQuote() {
+      return this.speech.results.quoted_text && !this.hideQuote;
+    },
+    quotePaddingBefore() {
+      const splitQuote = this.speech.results.content.replace(/\n+/g, ' ').trim().split(this.speech.results.quoted_text);
+      const paddingBefore = splitQuote[0].slice(-PADDING_LENGTH);
+      return paddingBefore ? `...${paddingBefore}` : '';
+    },
+    quotePaddingAfter() {
+      const splitQuote = this.speech.results.content.replace(/\n+/g, ' ').trim().split(this.speech.results.quoted_text);
+      const paddingAfter = splitQuote[1].slice(0, PADDING_LENGTH);
+      return paddingAfter ? `${paddingAfter}...` : '';
+    },
   },
   methods: {
     getSpeechContent(speech) {
       return speech.results.content.replace(/\n+/g, ' ').trim();
+    },
+    showFullSpeech(event) {
+      event.preventDefault();
+      this.hideQuote = true;
     },
   },
 };
@@ -277,7 +300,10 @@ $medium-gray: #d0d0d0;
 
     .speech-text {
       color: #cacaca;
-      span { color: #000000; }
+
+      .quote-text {
+        color: #000000;
+      }
     }
 
     .full-text-link {
