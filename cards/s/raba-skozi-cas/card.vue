@@ -1,0 +1,73 @@
+<template>
+  <card-wrapper
+    :id="$options.cardData.cardData._id"
+    class="card-scroll card-seznam-zakonov"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+  >
+    <div slot="info">
+      <p class="info-text lead">
+        Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.
+      </p>
+      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text">
+        Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu.
+      </p>
+    </div>
+
+    <p-tabs>
+      <p-tab label="Cel mandat">
+        <time-line-chart :data="timeChartData" />
+      </p-tab>
+      <p-tab label="Zadnje leto">
+        <time-bar-chart :data="timeChartData" />
+      </p-tab>
+    </p-tabs>
+  </card-wrapper>
+</template>
+
+<script>
+import common from 'mixins/common';
+import { searchTitle } from 'mixins/titles';
+import PTabs from 'components/Tabs.vue';
+import PTab from 'components/Tab.vue';
+import TimeLineChart from 'components/TimeLineChart.vue';
+import TimeBarChart from 'components/TimeBarChart.vue';
+
+export default {
+  components: {
+    PTabs,
+    PTab,
+    TimeLineChart,
+    TimeBarChart,
+  },
+  mixins: [
+    common,
+    searchTitle,
+  ],
+  name: 'RabaSkoziCas',
+  data() {
+    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
+    return {
+      data: this.$options.cardData.data,
+      headerConfig: {
+        circleIcon: 'og-search',
+        heading: keywords,
+        subheading: 'iskalni niz',
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.$options.cardData.cardData.name,
+      },
+      keywords,
+    };
+  },
+  computed: {
+    timeChartData() {
+      return this.data.facet_counts.facet_ranges.datetime_dt;
+    },
+    generatedCardUrl() {
+      const customUrl = encodeURIComponent(`https://isci.parlameter.si/q/${this.keywords}`);
+      return `${this.url}?customUrl=${customUrl}&altHeader=true`;
+    },
+  },
+};
+</script>

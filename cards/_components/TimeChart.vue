@@ -7,7 +7,7 @@ import getD3Locale from 'i18n/d3locales';
 
 /* global d3 */
 export default {
-  name: 'DateRow',
+  name: 'TimeChart',
   props: {
     data: Array,
   },
@@ -78,8 +78,8 @@ export default {
         .range([height, 0]);
 
       // x.domain(data.map(function(d) { return d.date; }));
-      x.domain(d3.extent(data, (d) => d.date));
-      y.domain([0, d3.max(data, (d) => d.occurences)]);
+      x.domain(d3.extent(data, d => d.date));
+      y.domain([0, d3.max(data, d => d.occurences)]);
       // y.domain(d3.extent(data, function(d) {
       //     return d.close;
       // }));
@@ -96,17 +96,12 @@ export default {
 
       svg.append('g')
         .attr('class', 'x axis bigdata')
-        .attr('transform', `translate(0,${  height  })`)
+        .attr('transform', `translate(0,${height})`)
         .call(xAxis);
 
       const line = d3.svg.line()
-        .x((d) =>
-          // console.log('date' + x(d.date));
-          x(d.date))
-        .y((d) =>
-          // console.log(d);
-          // console.log(y(d.occurences));
-          y(d.occurences));
+        .x(d => x(d.date))
+        .y(d => y(d.occurences));
 
       // data.forEach(function(d) {
       //     console.log(d);
@@ -133,7 +128,7 @@ export default {
           const circle = x0 - d0.date > d1.date - x0 ? d3.selectAll('.dot circle')[0][i] : d3.selectAll('.dot circle')[0][i - 1];
 
           if (d3.select(circle).classed('hovered')) {
-
+            //
           } else {
             d3.select('.dot circle.hovered')
               .classed('hovered', false)
