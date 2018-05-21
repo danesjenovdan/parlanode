@@ -79,7 +79,7 @@
 
     <p-tabs @switch="focusTab" :start-tab="selectedTab">
       <p-tab label="Seznam glasovanj">
-        <div class="empty" v-if="filteredVotes.length === 0"></div>
+        <empty-circle v-if="filteredVotes.length === 0" :text="emptyText" />
         <div v-else id="votingCard" class="date-list">
           <div class="session_voting">
             <div
@@ -150,11 +150,11 @@
         </div>
       </p-tab>
       <p-tab label="Dinamika skozi čas">
-        <div class="empty" v-if="filteredVotes.length === 0"></div>
+        <empty-circle v-if="filteredVotes.length === 0" :text="emptyText" />
         <time-chart v-if="filteredVotes.length !== 0" :data="data"></time-chart>
       </p-tab>
       <p-tab label="Dinamika glede na MDT" class="tab-three">
-        <div v-if="filteredVotes.length === 0" class="empty"></div>
+        <empty-circle v-if="filteredVotes.length === 0" :text="emptyText" />
         <bar-chart v-else :data="barChartData" show-numbers></bar-chart>
       </p-tab>
     </p-tabs>
@@ -238,6 +238,7 @@
         sameModalVisible: false,
         differentModalVisible: false,
         selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+        emptyText: 'Za prikaz glasovanj dodaj vsaj dva akterja.',
         headerConfig: {
           circleIcon: 'primerjalnik',
           heading: '&nbsp;',
@@ -618,20 +619,6 @@
     margin: auto;
     display: block;
     position: relative;
-  }
-
-  .empty {
-    // background-color: #ff0000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/icons/primerjalnik-empty.png');
-    background-size: 220px 220px;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 
   .searchfilter-checkbox .checkbox + label:before {
