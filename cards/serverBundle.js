@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import request from 'request';
 import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
-// eslint-disable-next-line
 import Card from 'cardPath/card.vue';
 
 global.$ = {

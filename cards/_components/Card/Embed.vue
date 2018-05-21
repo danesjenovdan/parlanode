@@ -4,13 +4,13 @@
       <div class="embed-content">
         <div class="embed-divider"></div>
         <div class="embed-switch-container">
-          <div class="embed-label">{{ $t('embed.always-refresh') }}</div>
+          <div class="embed-label" v-t="'embed.always-refresh'"></div>
           <div class="embed-switch-big-box" @click="toggleEmbedSwitch">
             <div :class="['embed-switch-box', { off: !this.refresh }]">
               <div class="embed-switch">
                 <div class="embed-switches">
-                  <div class="leftswitch">{{ $t('yes') }}</div>
-                  <div class="rightswitch">{{ $t('no') }}</div>
+                  <div class="leftswitch" v-t="'yes'"></div>
+                  <div class="rightswitch" v-t="'no'"></div>
                 </div>
               </div>
             </div>
@@ -20,7 +20,10 @@
         <div class="embed-divider"></div>
         <div class="embed-script">
           <textarea class="form-control" data-id="" :data-url="url" v-html="embedCode" ref="embedInput"></textarea>
-          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode">{{ copied ? $t('copied') : $t('copy') }}</button>
+          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode">
+            <span v-if="copied" v-t="'copied'"></span>
+            <span v-else v-t="'copy'"></span>
+          </button>
         </div>
       </div>
     </div>

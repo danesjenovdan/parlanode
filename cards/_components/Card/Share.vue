@@ -2,9 +2,12 @@
   <div class="card-content-share">
     <div class="card-back-content">
       <div class="share-content">
-        <label for="share-url">{{ $t('share.direct-link') }}</label>
+        <label for="share-url" v-t="'share.direct-link'"></label>
         <input type="url" class="form-control share-url" id="share-url" :value="shortenedUrl" ref="urlInput" />
-        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">{{ copied ? $t('copied') : $t('copy') }}</button>
+        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">
+          <span v-if="copied" v-t="'copied'"></span>
+          <span v-else v-t="'copy'"></span>
+        </button>
       </div>
     </div>
   </div>

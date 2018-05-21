@@ -3,8 +3,8 @@
     :id="$options.cardData.cardData._id"
     :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
       <p class="info-text lead"></p>
       <p class="info-text heading">METODOLOGIJA</p>

@@ -67,6 +67,7 @@
     "uglify-js": "3.2.0",
     "vue": "^2.5.16",
     "vue-i18n": "^7.7.0",
+    "vue-i18n-extensions": "^0.1.0",
     "vue-loader": "13.5.0",
     "vue-server-renderer": "^2.5.16",
     "vue-template-compiler": "^2.5.16",

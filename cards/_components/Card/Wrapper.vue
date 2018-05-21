@@ -16,7 +16,7 @@
         <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
           <div class="card-content__empty-inner">
             <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
-            <p>{{ $t('data-currently-unavailable') }}</p>
+            <p v-t="'data-currently-unavailable'"></p>
           </div>
         </div>
 
