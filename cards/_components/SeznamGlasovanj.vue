@@ -1,6 +1,6 @@
 <template>
   <div id="seznam-glasovanj">
-    <div class="filters">
+    <div class="filters" v-if="showFilters">
       <div class="filter option-party-buttons">
         <striped-button
           v-for="result in allResults"
@@ -106,6 +106,10 @@ export default {
     data: {
       required: true,
       type: Object,
+    },
+    showFilters: {
+      type: Boolean,
+      default: true,
     },
   },
 
