@@ -1,18 +1,40 @@
 {
   "sl": {
-    "METODOLOGIJA": "METODOLOGIJA"
+    "yes": "DA",
+    "no": "NE",
+    "copy": "KOPIRAJ",
+    "copied": "SKOPIRANO!",
+    "data-currently-unavailable": "Podatki trenutno niso na voljo.",
+    "info": {
+      "title": "Info",
+      "methodology": "METODOLOGIJA"
+    },
+    "share": {
+      "title": "Deli",
+      "direct-link": "Neposredna povezava do kartice"
+    },
+    "embed": {
+      "title": "Vdelaj",
+      "always-refresh": "Podatki naj se vedno osvežujejo"
+    }
   },
   "en": {
-    "METODOLOGIJA": "METHODOLOGY",
-    "Deli": "Share",
-    "Vdelaj": "Embed",
-    "Info": "Info",
-    "DA": "YES",
-    "NE": "NO",
-    "KOPIRAJ": "COPY",
-    "SKOPIRANO!": "COPIED!",
-    "Podatki trenutno niso na voljo.": "Data is currently unavailable.",
-    "Podatki naj se vedno osvežujejo": "Always show latest data",
-    "Neposredna povezava do kartice": "Direct link for this card"
+    "yes": "YES",
+    "no": "NO",
+    "copy": "COPY",
+    "copied": "COPIED!",
+    "data-currently-unavailable": "Data is currently unavailable.",
+    "info": {
+      "title": "Info",
+      "methodology": "METHODOLOGY"
+    },
+    "share": {
+      "title": "Share",
+      "direct-link": "Direct link for this card"
+    },
+    "embed": {
+      "title": "Embed",
+      "always-refresh": "Always show latest data"
+    }
   }
 }

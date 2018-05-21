@@ -11,7 +11,7 @@ import i18nCard from 'i18n/card.json';
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: 'sl',
   messages: _.merge({}, i18nDefault, i18nCard),
 });
 

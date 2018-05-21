@@ -41,9 +41,9 @@ export default {
         return this.config.title;
       }
       const CARD_TITLES = {
-        share: this.$t('Deli'),
-        embed: this.$t('Vdelaj'),
-        info: this.$t('Info'),
+        share: this.$t('share.title'),
+        embed: this.$t('embed.title'),
+        info: this.$t('info.title'),
       };
       return CARD_TITLES[this.currentBack];
     },

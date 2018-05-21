@@ -7,11 +7,11 @@
   >
     <div slot="info">
       <p class="info-text lead">
-        {{ $t('infotext.lead') }}
+        {{ $t('info.lead') }}
       </p>
-      <p class="info-text heading">{{ $t('METODOLOGIJA') }}</p>
+      <p class="info-text heading">{{ $t('info.methodology') }}</p>
       <p class="info-text">
-        {{ $t('infotext.text') }}
+        {{ $t('info.text') }}
       </p>
     </div>
 
@@ -30,8 +30,8 @@
                 <h3>
                   <a :href="getPersonLink(person)" class="funblue-light-hover">{{ person.name }}</a>
                 </h3>
-                <h4 v-if="index === 0">{{$t("Vodja poslanske skupine")}}</h4>
-                <h4 v-else>{{ person.gender === 'f' ? $t('Namestnica') : $t('Namestnik') }}</h4>
+                <h4 v-if="index === 0">{{ $t('party-leader') }}</h4>
+                <h4 v-else>{{ person.gender === 'f' ? $t('deputy-leader-f') : $t('deputy-leader-m') }}</h4>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            {{ $t('Število poslanskih sedežev:') }} <strong>{{data.numberOfSeats}}</strong>
+            {{ $t('number-of-seats') }} <strong>{{data.numberOfSeats}}</strong>
           </span>
         </div>
       </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            {{ $t('Kontakt:') }} <a class="funblue-light-hover" :href="`mailto:${data.social.email}`">{{ data.social.email }}</a>
+            {{ $t('contact') }} <a class="funblue-light-hover" :href="`mailto:${data.social.email}`">{{ data.social.email }}</a>
           </span>
         </div>
       </div>
@@ -66,7 +66,7 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            {{ $t('Družbena omrežja:') }}
+            {{ $t('social-media') }}
             <a v-if="data.social.facebook" :href="data.social.facebook" class="socialicon-container" target="_blank">
               <div class="parlaicon parlaicon-facebook">
                 <svg viewBox="0 0 59 100" width="59" height="100" xmlns="http://www.w3.org/2000/svg"><g><rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/></g><g><path d="m53.515999,0.67l0,14.732l-8.761002,0q-4.799,0 -6.473,2.008999t-1.674,6.027l0,10.547001l16.350002,0l-2.176003,16.517998l-14.173996,0l0,42.355003l-17.076002,0l0,-42.355003l-14.23,0l0,-16.517998l14.23,0l0,-12.165001q0,-10.378999 5.803999,-16.099001t15.458,-5.719999q8.203003,0 12.723,0.67l-0.000999,-0.001z"/></g></svg>
@@ -80,7 +80,7 @@
             </a>
 
             <i v-if="!data.social.facebook && !data.social.twitter">
-              <b>{{ $t('ni družbenih omrežij.') }}</b>
+              <b>{{ $t('no-social-media') }}</b>
             </i>
           </span>
         </div>

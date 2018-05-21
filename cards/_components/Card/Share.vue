@@ -2,9 +2,9 @@
   <div class="card-content-share">
     <div class="card-back-content">
       <div class="share-content">
-        <label for="share-url">{{ $t('Neposredna povezava do kartice') }}</label>
+        <label for="share-url">{{ $t('share.direct-link') }}</label>
         <input type="url" class="form-control share-url" id="share-url" :value="shortenedUrl" ref="urlInput" />
-        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">{{ copied ? $t('SKOPIRANO!') : $t('KOPIRAJ') }}</button>
+        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">{{ copied ? $t('copied') : $t('copy') }}</button>
       </div>
     </div>
   </div>
