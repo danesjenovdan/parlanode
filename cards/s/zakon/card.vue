@@ -35,7 +35,7 @@
       ></result>
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab label="Povzetek" variant="light">
+      <p-tab label="Povzetek" variant="dark">
         <excerpt
           :content="content"
           :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
