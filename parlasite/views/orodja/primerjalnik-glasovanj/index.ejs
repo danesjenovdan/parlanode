@@ -44,11 +44,15 @@
         { id: 'kompas', label: 'Parlamentarni kompas', link: '/orodja/parlamentarni-kompas' },
         // { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
       ],
-      currentTool: ''
+      currentTool: 'primerjalnik'
     },
     methods: {
       selectTool: function (toolId) {
-        this.currentTool = toolId
+        this.currentTool = toolId;
+        const tool = this.tools.find(t => t.id === toolId);
+        if (tool) {
+            window.location.href = tool.link;
+        }
       },
     }
   });
