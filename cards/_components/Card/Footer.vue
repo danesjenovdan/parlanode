@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import slugs from '../../../assets/urls.json';
 import { RIPPLE_DURATION } from 'components/constants';
+import slugs from '../../../assets/urls.json';
 
 export default {
   name: 'CardFooter',

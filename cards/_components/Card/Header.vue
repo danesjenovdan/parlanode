@@ -29,12 +29,6 @@
 </template>
 
 <script>
-const CARD_TITLES = {
-  share: 'Deli',
-  embed: 'Vdelaj',
-  info: 'Info',
-};
-
 export default {
   name: 'CardHeader',
   props: {
@@ -46,6 +40,11 @@ export default {
       if (this.currentBack === null) {
         return this.config.title;
       }
+      const CARD_TITLES = {
+        share: this.$t('Deli'),
+        embed: this.$t('Vdelaj'),
+        info: this.$t('Info'),
+      };
       return CARD_TITLES[this.currentBack];
     },
   },

@@ -3,6 +3,16 @@
     "METODOLOGIJA": "METODOLOGIJA"
   },
   "en": {
-    "METODOLOGIJA": "METHODOLOGY"
+    "METODOLOGIJA": "METHODOLOGY",
+    "Deli": "Share",
+    "Vdelaj": "Embed",
+    "Info": "Info",
+    "DA": "YES",
+    "NE": "NO",
+    "KOPIRAJ": "COPY",
+    "SKOPIRANO!": "COPIED!",
+    "Podatki trenutno niso na voljo.": "Data is currently unavailable.",
+    "Podatki naj se vedno osvežujejo": "Always show latest data",
+    "Neposredna povezava do kartice": "Direct link for this card"
   }
 }

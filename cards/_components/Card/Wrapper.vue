@@ -16,7 +16,7 @@
         <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
           <div class="card-content__empty-inner">
             <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
-            <p>Podatki trenutno niso na voljo.</p>
+            <p>{{ $t('Podatki trenutno niso na voljo.') }}</p>
           </div>
         </div>
 

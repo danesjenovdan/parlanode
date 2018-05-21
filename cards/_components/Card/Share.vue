@@ -2,9 +2,9 @@
   <div class="card-content-share">
     <div class="card-back-content">
       <div class="share-content">
-        <label for="share-url">Neposredna povezava do kartice</label>
+        <label for="share-url">{{ $t('Neposredna povezava do kartice') }}</label>
         <input type="url" class="form-control share-url" id="share-url" :value="shortenedUrl" ref="urlInput" />
-        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">{{ copied ? 'SKOPIRANO!' : 'KOPIRAJ' }}</button>
+        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">{{ copied ? $t('SKOPIRANO!') : $t('KOPIRAJ') }}</button>
       </div>
     </div>
   </div>
@@ -44,13 +44,13 @@ export default {
       this.$refs.urlInput.setSelectionRange(0, this.$refs.urlInput.value.length);
       let succeed = false;
       try {
-          succeed = document.execCommand("copy");
+        succeed = document.execCommand('copy');
       } catch (e) {
-          return e;
+        return e;
       }
 
       // change text
-      this.copied =  succeed;
+      this.copied = succeed;
     },
   },
 
