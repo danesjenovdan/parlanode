@@ -159,58 +159,60 @@
       </p-tab>
     </p-tabs>
 
-    <div v-show="sameModalVisible" class="card-modal">
-      <div class="card-modal-header">
-        Vklopi cele poslanske skupine ali dodaj posamezne poslance.
-        <div class="closeme" @click="toggleModal('same', false)"></div>
-      </div>
-      <div class="card-modal-content">
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
-            @click="togglePartySame(party)"
-            :data-id="party.id"
-            :data-acronym="party.acronym">
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
-          :items="samePeople"
-          :placeholder="samePeoplePlaceholder">
-        </p-search-dropdown>
-        <div class="card-modal-button" @click="toggleModal('same', false)">POTRDI</div>
-      </div>
-    </div>
+    <modal
+      v-show="sameModalVisible"
+      header="Vklopi cele poslanske skupine ali dodaj posamezne poslance."
+      button="Potrdi"
+      @ok="toggleModal('same', false)"
+      @close="toggleModal('same', false)"
+    >
+      <p>
+        <span
+          v-for="party in parties"
+          :key="party.id"
+          :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
+          @click="togglePartySame(party)"
+          :data-id="party.id"
+          :data-acronym="party.acronym">
+          {{ party.acronym }}
+        </span>
+      </p>
+      <p-search-dropdown
+        :items="samePeople"
+        :placeholder="samePeoplePlaceholder"
+      />
+    </modal>
 
-    <div v-show="differentModalVisible" class="card-modal">
-      <div class="card-modal-header">Vklopi cele poslanske skupine ali dodaj posamezne poslance.<div class="closeme" @click="toggleModal('different', false)"></div></div>
-      <div class="card-modal-content">
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
-            @click="togglePartyDifferent(party)"
-            :data-id="party.id"
-            :data-acronym="party.acronym">
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
-          :items="differentPeople"
-          :placeholder="differentPeoplePlaceholder"
-        ></p-search-dropdown>
-        <div class="card-modal-button" @click="toggleModal('different', false)">POTRDI</div>
-      </div>
-    </div>
+    <modal
+      v-show="differentModalVisible"
+      header="Vklopi cele poslanske skupine ali dodaj posamezne poslance."
+      button="Potrdi"
+      @ok="toggleModal('different', false)"
+      @close="toggleModal('different', false)"
+    >
+      <p>
+        <span
+          v-for="party in parties"
+          :key="party.id"
+          :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
+          @click="togglePartyDifferent(party)"
+          :data-id="party.id"
+          :data-acronym="party.acronym">
+          {{ party.acronym }}
+        </span>
+      </p>
+      <p-search-dropdown
+        :items="differentPeople"
+        :placeholder="differentPeoplePlaceholder"
+      />
+    </modal>
   </card-wrapper>
 </template>
 
 <script>
   import common from 'mixins/common';
   import PSearchDropdown from 'components/SearchDropdown.vue';
+  import Modal from 'components/Modal.vue';
   import PTab from 'components/Tab.vue';
   import PTabs from 'components/Tabs.vue';
   import TimeChart from 'components/TimeChart.vue';
@@ -221,6 +223,7 @@
       BarChart,
       TimeChart,
       PSearchDropdown,
+      Modal,
       PTab,
       PTabs,
     },
@@ -628,60 +631,6 @@
     font-size: 11px;
     color: #555555;
   }
-
-  // CARD MODAL
-  .card-modal {
-    position: absolute;
-    width: 280px;
-    left: 50%;
-    margin-left: -120px;
-    top: 100px;
-    z-index: 100;
-    background-color: #F0F5F8;
-
-    @include card(2);
-
-    .card-modal-button {
-      width: 100%;
-      line-height: 40px;
-      font-size: 16px;
-      color: #ffffff;
-      background-color: $funblue;
-      text-align: center;
-      margin-top: 10px;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-
-    .card-modal-header {
-      width: 100%;
-      background-color: $funblue;
-      color: #ffffff;
-      font-family: 'Roboto Slab', serif;
-      padding: 10px 50px 10px 10px;
-
-      .closeme {
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: -1px;
-        font-size: 40px;
-        cursor: pointer;
-
-        &::before {
-          content: '×';
-        }
-      }
-    }
-
-    .card-modal-content {
-      padding: 10px;
-    }
-  }
-  // END CARD MODAL
 
   .tab-content {
     height: 410px;
