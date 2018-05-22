@@ -73,6 +73,7 @@
 import axios from 'axios';
 import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links';
 
+import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
@@ -101,6 +102,8 @@ export default {
   mixins: [common],
   name: 'SkupineBesed',
   data() {
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+
     return {
       data: this.$options.cardData.data,
       emptyText: 'Za prikaz rezultatov dodaj vsaj dve besedi.',
@@ -117,10 +120,24 @@ export default {
         people: [],
         parties: [],
       },
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      words: ['druga svetovna vojna', 'partizan'],
+      selectedTab: loadFromState('selectedTab') || 0,
+      words: loadFromState('words') || [],
       loading: false,
     };
+  },
+  computed: {
+    urlParameters() {
+      const parameters = {};
+
+      if (this.words.length > 0) {
+        parameters.words = this.words;
+      }
+      if (this.selectedTab !== 0) {
+        parameters.selectedTab = this.selectedTab;
+      }
+
+      return parameters;
+    },
   },
   methods: {
     measurePiwik(filter, sort, order) {
@@ -188,6 +205,11 @@ export default {
     },
     getPersonLink,
     getPersonPortrait,
+  },
+  created() {
+    if (this.words) {
+      this.loadResults();
+    }
   },
 };
 </script>
