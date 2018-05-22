@@ -5,10 +5,12 @@
         <div class="label-container">
           <template v-if="row.link">
             <a :href="row.link" class="funblue-light-hover">
+              <img v-if="row.portrait" class="portrait" :src="row.portrait" />
               {{ row.name }}
             </a>
           </template>
           <template v-else>
+            <img v-if="row.portrait" class="portrait" :src="row.portrait" />
             {{ row.name }}
           </template>
         </div>
@@ -52,6 +54,7 @@ export default {
         link: row.link,
         name: row.label,
         value: row.value,
+        portrait: row.portrait,
         widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
         percentage: ((row.value / mytotal) * 100).toFixed(2),
       })).sort((a, b) => b.value - a.value);
@@ -95,6 +98,14 @@ export default {
         @include respond-to(mobile) {
           font-size: 14px;
         }
+      }
+
+      .portrait {
+        border-radius: 50%;
+        height: 40px;
+        margin-right: 10px;
+        width: 40px;
+        @include show-for('above-limbo', inline);
       }
     }
   }
