@@ -13,12 +13,12 @@
 
       <div class="row">
         <div class="col-md-12">
-          <inner-card v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, currentAnalysisData }" />
+          <inner-card v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }" />
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else v-bind="{ processedPartyData, getPartyUrl, headerConfig, generatedCardUrl, currentAnalysisData }" />
+  <inner-card v-else v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }" />
 </template>
 
 <script>
@@ -77,12 +77,6 @@ export default {
     round(value, precision) {
       const multiplier = 10 ** (precision || 0);
       return Math.round(value * multiplier) / multiplier;
-    },
-    getPartyUrl(party) {
-      return this.slugs
-        ? this.slugs.base + this.slugs.partyLink.base +
-          this.slugs.party[party.id].acronym + this.slugs.partyLink.pregled
-        : `/poslanska-skupina/${party.acronym.toLowerCase()}/pregled`;
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure === 'function') {
