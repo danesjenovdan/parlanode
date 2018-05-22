@@ -19,45 +19,48 @@
       </div>
     </div>
 
-    <div class="primerjalnik">
+    <text-frame class="primerjalnik">
       <p>Zanima me, na katerih glasovanjih so
         <span class="primerjalnik-for">
-          <span
+          <tag
             v-for="party in sameParties"
             :key="party.id"
             class="tag"
-            @click="togglePartySame(party)">
-            {{ party.acronym }}
-          </span>
-          <span
+            :text="party.acronym"
+            @click="togglePartySame(party)"
+          />
+          <tag
             v-for="person in selectedSamePeople"
             :key="person.id"
             class="tag"
-            @click="removePerson(person)">
-            {{ person.name }}
-          </span>
-          <span class="plus" @click="toggleModal('same', true)">+</span>
+            :text="person.name"
+            @click="removePerson(person)"
+          />
+          <plus @click="toggleModal('same', true)" />
         </span>
         glasovali enako,
         <span class="primerjalnik-against">
-          <span
+          <tag
             v-for="party in differentParties"
             :key="party.id"
             class="tag"
-            @click="togglePartyDifferent(party)">
-            {{ party.acronym }}
-          </span>
-          <span
+            :text="party.acronym"
+            @click="togglePartyDifferent(party)"
+          />
+          <tag
             v-for="person in selectedDifferentPeople"
             :key="person.id"
             class="tag"
-            @click="removePerson(person)">
-            {{ person.name }}
-          </span>
-          <span class="plus" @click="toggleModal('different', true)">+</span>
+            :text="person.name"
+            @click="removePerson(person)"
+          />
+          <plus @click="toggleModal('different', true)" />
         </span>
         pa drugače od njih.
-        <span class="load" @click="loadResults">Naloži</span>
+        <load-link
+          text="Naloži"
+          @click="loadResults"
+        />
       </p>
       <div class="row primerjalnik-extras">
         <div class="col-xs-7 nopadding">
@@ -75,7 +78,7 @@
           <p class="summary"><strong>{{ votes.length }}</strong> filtriranih glasovanj predstavlja <br class="visible-xs"><strong>{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong> vseh glasovanj.</p>
         </div>
       </div>
-    </div>
+    </text-frame>
 
     <p-tabs @switch="focusTab" :start-tab="selectedTab">
       <p-tab label="Seznam glasovanj">
@@ -211,21 +214,31 @@
 
 <script>
   import common from 'mixins/common';
-  import PSearchDropdown from 'components/SearchDropdown.vue';
+  import BarChart from 'components/BarChart.vue';
+  import EmptyCircle from 'components/EmptyCircle.vue';
+  import LoadLink from 'components/LoadLink.vue';
   import Modal from 'components/Modal.vue';
+  import Plus from 'components/Plus.vue';
+  import PSearchDropdown from 'components/SearchDropdown.vue';
   import PTab from 'components/Tab.vue';
   import PTabs from 'components/Tabs.vue';
+  import Tag from 'components/Tag.vue';
+  import TextFrame from 'components/TextFrame.vue';
   import TimeChart from 'components/TimeChart.vue';
-  import BarChart from 'components/BarChart.vue';
 
   export default {
     components: {
       BarChart,
-      TimeChart,
+      EmptyCircle,
       PSearchDropdown,
+      LoadLink,
       Modal,
+      Plus,
       PTab,
       PTabs,
+      Tag,
+      TextFrame,
+      TimeChart,
     },
     mixins: [common],
     name: 'PrimerjalnikGlasovanj',
@@ -475,80 +488,8 @@
   @import '~parlassets/scss/helper';
 
   .primerjalnik {
-
-    text-align: center;
-    background-color: #f0f5f8;
-    padding: 30px 30px 10px 30px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    line-height: 30px;
-    margin-bottom: 10px;
-
-    .primerjalnik-for,
-    .primerjalnik-against {
-      .plus {
-        background-color: #ffffff;
-        padding: 0.2px 7px;
-        font-size: 21px;
-        line-height: 12px;
-        cursor: pointer;
-        color: $funblue;
-        position: relative;
-        top: 3px;
-
-        font-family: 'Roboto', sans-serif;
-
-        margin-left: 5px;
-      }
-
-      .tag {
-        display: inline-block;
-        white-space: nowrap;
-        background-color: $funblue;
-        color: #ffffff;
-        padding: 0px 7px;
-        font-size: 14px;
-        cursor: pointer;
-
-        margin-left: 5px;
-
-        font-family: 'Roboto', sans-serif;
-
-        &::after {
-          content: '×';
-          margin-left: 3px;
-          font-size: 20px;
-          line-height: 20px;
-          position: relative;
-          top: 2px;
-        }
-      }
-    }
-
-    .load {
-      display: inline-block;
-      white-space: nowrap;
-      color: $sadblue;
-      cursor: pointer;
-      font-weight: 600;
-      &:hover {
-        background-color: #ffffff;
-      }
-
-      &::after {
-        content: '';
-        display: inline-block;
-        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/nalozi.svg');
-        width: 20px;
-        height: 20px;
-        position: relative;
-        top: 3px;
-        margin-left: 5px;
-      }
-    }
-
     .primerjalnik-extras {
-      margin-top: 40px;
+      margin: 40px 0 -20px;
     }
 
     .searchfilter-checkbox {
