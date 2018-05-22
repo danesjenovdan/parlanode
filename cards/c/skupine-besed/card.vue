@@ -29,14 +29,30 @@
     <p-tabs :start-tab="selectedTab">
       <p-tab label="Poslanci">
         <div class="results">
-          <bar-chart v-if="results.people.length" :data="results.people" show-numbers />
-          <empty-circle v-else :text="emptyText" />
+          <bar-chart
+            v-if="results.people.length"
+            :data="results.people"
+            show-numbers
+            flexible-labels
+          />
+          <empty-circle
+            v-else
+            :text="emptyText"
+          />
         </div>
       </p-tab>
       <p-tab label="Poslanske skupine">
         <div class="results">
-          <bar-chart v-if="results.parties.length" :data="results.parties" show-numbers />
-          <empty-circle v-else :text="emptyText" />
+          <bar-chart
+            v-if="results.parties.length"
+            :data="results.parties"
+            show-numbers
+            flexible-labels
+          />
+          <empty-circle
+            v-else
+            :text="emptyText"
+          />
         </div>
       </p-tab>
     </p-tabs>

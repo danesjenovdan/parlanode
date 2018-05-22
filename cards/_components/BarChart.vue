@@ -1,6 +1,6 @@
 <template>
   <div class="word-list">
-    <div class="column-label">
+    <div :class="['column-label', { 'flexible': flexibleLabels }]">
       <div v-for="(row, index) in rows" :key="index" class="column chart-label">
         <div class="label-container">
           <template v-if="row.link">
@@ -41,6 +41,7 @@ export default {
     data: Array,
     showNumbers: Boolean,
     alreadyCalculated: Boolean,
+    flexibleLabels: Boolean,
   },
   computed: {
     rows() {
@@ -72,8 +73,8 @@ export default {
   display: flex;
 
   .column-label {
-    flex: 1;
     margin-right: 15px;
+    &:not(.flexible) { flex: 1; }
   }
 
   .column-bar {
