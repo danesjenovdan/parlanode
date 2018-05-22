@@ -1,7 +1,19 @@
 import Vue from 'vue';
+import VueI18n from 'vue-i18n';
 import request from 'request';
+import { merge } from 'lodash';
 import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
 import Card from 'cardPath/card.vue';
+
+import i18nDefault from 'i18n/defaults.json';
+import i18nCard from 'i18n/card.json';
+
+Vue.use(VueI18n);
+
+const i18n = new VueI18n({
+  locale: process.env.CARD_LANG,
+  messages: merge({}, i18nDefault, i18nCard),
+});
 
 global.$ = {
   getJSON(url, callback) {
@@ -37,6 +49,6 @@ export default (context) => {
   // console.log('logging what goes out');
   // console.log(context);
 
-  const app = new Vue(Object.assign({}, Card, { cardData: context }));
+  const app = new Vue(Object.assign({}, Card, { cardData: context, i18n }));
   return new Promise(resolve => resolve(app));
 };

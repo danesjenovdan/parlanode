@@ -1,1 +1,27 @@
-{}
+{
+  "sl": {
+    "info": {
+      "text": [
+        "Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.",
+        "Rezultate prikazujemo na tri načine:"
+      ],
+      "list": [
+        "kot seznam vseh glasovanj,",
+        "kot črtni grafikon ki predstavlja število glasovanj na dan,",
+        "kot histogram s seštevki glasovanj glede na matično delovno telo."
+      ]
+    },
+    "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih.",
+    "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
+    "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
+    "tabs": {
+      "vote-list": "Seznam glasovanj",
+      "time-chart": "Dinamika skozi čas",
+      "bar-chart": "Dinamika glede na MDT"
+    },
+    "select-parties-people": "Vklopi cele poslanske skupine ali dodaj posamezne poslance.",
+    "select-mps": "Izberi poslance",
+    "selected-mps": "Izbranih: {num}",
+    "empty-state-text": "Za prikaz glasovanj dodaj vsaj dva akterja."
+  }
+}

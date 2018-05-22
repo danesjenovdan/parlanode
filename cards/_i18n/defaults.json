@@ -4,6 +4,8 @@
     "no": "NE",
     "copy": "KOPIRAJ",
     "copied": "SKOPIRANO!",
+    "load": "Naloži",
+    "confirm": "Potrdi",
     "data-currently-unavailable": "Podatki trenutno niso na voljo.",
     "info": {
       "title": "Info",
@@ -16,25 +18,18 @@
     "embed": {
       "title": "Vdelaj",
       "always-refresh": "Podatki naj se vedno osvežujejo"
-    }
-  },
-  "en": {
-    "yes": "YES",
-    "no": "NO",
-    "copy": "COPY",
-    "copied": "COPIED!",
-    "data-currently-unavailable": "Data is currently unavailable.",
-    "info": {
-      "title": "Info",
-      "methodology": "METHODOLOGY"
     },
-    "share": {
-      "title": "Share",
-      "direct-link": "Direct link for this card"
-    },
-    "embed": {
-      "title": "Embed",
-      "always-refresh": "Always show latest data"
+    "seznam-glasovanj": {
+      "title-search": "Išči po naslovu glasovanja",
+      "working-body": "Matično delovno telo",
+      "vote-for": "Za",
+      "vote-against": "Proti",
+      "vote-abstained": "Vzdržan",
+      "vote-not": "Niso",
+      "select-placeholder": "Izberi",
+      "selected-placeholder": "Izbranih: {num}",
+      "vote-passed": "Sprejet",
+      "vote-not-passed": "Zavrnjen"
     }
   }
 }

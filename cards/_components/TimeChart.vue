@@ -3,6 +3,9 @@
 </template>
 
 <script>
+import getD3Locale from 'i18n/d3locales';
+
+/* global d3 */
 export default {
   name: 'DateRow',
   props: {
@@ -12,7 +15,7 @@ export default {
     this.renderChart();
   },
   methods: {
-    renderChart: function() {
+    renderChart() {
       $('.timechart svg').remove();
       // global stuff for the chart
       const margin = {
@@ -24,48 +27,32 @@ export default {
       const width = 960 - margin.left - margin.right;
       const height = 400 - margin.top - margin.bottom;
 
-      const SI = d3.locale({
-        decimal: ',',
-        thousands: ' ',
-        grouping: [3],
-        currency: ['EUR', ''],
-        dateTime: '%d. %m. %Y %H:%M',
-        date: '%d. %m. %Y',
-        time: '%H:%M:%S',
-        periods: ['AM', 'PM'],
-        days: ['nedelja', 'ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota'],
-        shortDays: ['ned', 'pon', 'tor', 'sre', 'čet', 'pet', 'sob'],
-        months: ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'],
-        shortMonths: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'avg', 'sep', 'okt', 'nov', 'dec'],
-      });
+      const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
 
       // const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%SZ').parse;
-      const bisectDate = d3.bisector((d) => d.date).left;
+      const bisectDate = d3.bisector(d => d.date).left;
       const parseDate = d3.time.format('%d.%m.%Y').parse;
 
       const data = this.data.reduce((acc, d) => {
         if (acc.indexOf(d.results.date) === -1) {
-          console.log(d.results.date);
+          // console.log(d.results.date);
           acc.push(d.results.date);
         }
         return acc;
-      }, []).map((date) => {
-        return {
+      }, [])
+        .map(date => ({
           date: parseDate(date),
-          occurences: this.data.filter(d => d.results.date === date).length
-        }
-      }).sort((a, b) => {
-        console.log(a.date < b.date);
-        return a.date - b.date;
-      });
+          occurences: this.data.filter(d => d.results.date === date).length,
+        }))
+        .sort((a, b) => a.date - b.date);
 
       const svg = d3.select('.timechart').append('svg')
         .attr('class', 'smalldata')
         .attr('viewBox', '0 0 960 400')
         .attr('preserveAspectRatio', 'xMidYMid meet')
         .append('g')
-        .attr('transform', `translate(${  margin.left  },${  margin.top  })`);
-      
+        .attr('transform', `translate(${margin.left},${margin.top})`);
+
 
       // svg.selectAll('.smallbarcontainer').remove();
       // svg.selectAll('.axis').remove();
@@ -101,7 +88,7 @@ export default {
         .scale(x)
         .orient('bottom')
         // .tickValues(x.domain().filter(function(d, i) { return !(i % 5); }))
-        .tickFormat(SI.timeFormat('%b %y'));
+        .tickFormat(locale.timeFormat('%b %y'));
 
       const yAxis = d3.svg.axis()
         .scale(y)
@@ -129,7 +116,7 @@ export default {
       //     d.close = +d.close;
       // });
 
-      console.log(line);
+      // console.log(line);
       svg.append('path')
         .datum(data)
         .attr('class', 'line')
@@ -170,7 +157,7 @@ export default {
             focus.attr('transform', `translate(${  x(data[data.length - 4].date)  },${  y(d.occurences)  })`);
           }
 
-          focus.select('text').text(`${SI.timeFormat('%d. %B %Y')(d.date)} | ${d.occurences}`);
+          focus.select('text').text(`${locale.timeFormat('%x')(d.date)} | ${d.occurences}`);
         }
       }
 
@@ -209,7 +196,7 @@ export default {
           //   focus.attr('transform', 'translate(' + x(data[data.length - 4].date) + ',' + y(d.occurences) + ')');
           // }
 
-          // focus.select('text').text(`${SI.timeFormat('%B %Y')(d.date)  } | ${  d.occurences}`);
+          // focus.select('text').text(`${locale.timeFormat('%B %Y')(d.date)  } | ${  d.occurences}`);
           // time_query['time_filter'] = d3.select.cirle.datum();
           var thedate = d3.select(circle).datum().date;
           var filterdate = '1.' + String(thedate.getMonth() + 1) + '.' + String(thedate.getFullYear());
@@ -226,28 +213,8 @@ export default {
         .attr('class', 'dot')
         .append('circle')
         .attr('r', 4)
-        .attr('cx', (d, i) => {
-          console.log(d.date);
-          return x(d.date);
-        })
-        .attr('cy', (d, i) => y(d.occurences))
-        .on('mouseover', (d) => { // setup tooltip
-          tooltipdiv.transition()
-            .duration(200)
-            .style('opacity', 0.9);
-
-          // console.log($(this).parents('#kompas-scatter')));
-          tooltipdiv.html(d.occurences)
-            .style('left', (`${d3.event.pageX - (tooltipdiv.node().getBoundingClientRect().width / 2) - $('.timechart').offset().left + 10}px`))
-            .style('top', `${d3.event.pageY - $('.timechart').offset().top - 30}px`);
-
-          // console.log('ping');
-        })
-        .on('mouseout', (d) => {
-          tooltipdiv.transition()
-            .duration(200)
-            .style('opacity', 0);
-        });
+        .attr('cx', d => x(d.date))
+        .attr('cy', d => y(d.occurences));
 
       let focus = svg.append('g')
         .attr('class', 'focus')
@@ -268,10 +235,10 @@ export default {
     },
   },
   watch: {
-    data: function() {
+    data() {
       this.renderChart();
-    }
-  }
+    },
+  },
 };
 </script>
 
