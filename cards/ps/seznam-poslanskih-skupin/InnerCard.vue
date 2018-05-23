@@ -16,7 +16,7 @@
       </li>
       <li v-for="(party, index) in processedPartyData" class="labeled-chart" :key="index">
         <div class="column chart-label">
-          <a class="funblue-light-hover" :href="getPartyUrl(party.party)">{{ party.party.acronym }}</a>
+          <a class="funblue-light-hover" :href="getPartyLink(party.party)">{{ party.party.acronym }}</a>
         </div>
         <div class="column chart">
           <div class="progress hugebar">
@@ -31,19 +31,22 @@
 
 <script>
 import common from 'mixins/common';
+import { getPartyLink } from 'components/links';
 
 export default {
   mixins: [common],
   name: 'SeznamPoslanskihSkupinInnerCard',
   props: {
     processedPartyData: Array,
-    getPartyUrl: Function,
     headerConfig: Object,
     generatedCardUrl: String,
     currentAnalysisData: Object,
   },
   created() {
     this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanske-skupine`;
+  },
+  methods: {
+    getPartyLink,
   },
 };
 </script>
