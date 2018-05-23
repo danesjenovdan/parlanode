@@ -80,7 +80,7 @@
     position: absolute;
     top: $height + 1px;
     width: calc(100% + 2px);
-    z-index: 3;
+    z-index: 11;
     &.visible { display: block; }
     li {
       cursor: pointer;
