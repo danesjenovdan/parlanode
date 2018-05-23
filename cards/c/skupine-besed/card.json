@@ -3,7 +3,7 @@
   "name": "Skupine besed",
   "type": "empty",
   "dataUrl": "https://analize.parlameter.si/v1/",
-  "lastUpdate": "Mon May 21 2018 06:28:24 GMT+0200 (CEST)",
+  "lastUpdate": "2018-05-23T06:50:33.589Z",
   "method": "skupine-besed",
   "group": "c",
   "big": true,
