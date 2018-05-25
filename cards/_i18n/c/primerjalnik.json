@@ -11,7 +11,7 @@
         "kot histogram s seštevki glasovanj glede na matično delovno telo."
       ]
     },
-    "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih.",
+    "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih. {load}",
     "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
     "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
     "tabs": {

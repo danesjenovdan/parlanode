@@ -15,7 +15,11 @@ module.exports = (cardPath) => {
   const config = baseConfig(cardPath);
 
   // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
-  const cardDir = path.resolve(cardPath).split('/').slice(-2).join('/');
+  const cardDir = path.resolve(cardPath)
+    .replace(/\\/g, '/')
+    .split('/')
+    .slice(-2)
+    .join('/');
   // eslint-disable-next-line global-require, import/no-dynamic-require
   const i18nDefault = require(path.resolve(__dirname, '_i18n', 'defaults.json'));
   // eslint-disable-next-line global-require, import/no-dynamic-require

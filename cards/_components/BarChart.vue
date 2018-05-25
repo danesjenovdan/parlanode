@@ -1,14 +1,16 @@
 <template>
   <div class="word-list">
-    <div class="column-label">
+    <div :class="['column-label', { 'flexible': flexibleLabels }]">
       <div v-for="(row, index) in rows" :key="index" class="column chart-label">
         <div class="label-container">
           <template v-if="row.link">
+            <img v-if="row.portrait" class="portrait" :src="row.portrait" />
             <a :href="row.link" class="funblue-light-hover">
               {{ row.name }}
             </a>
           </template>
           <template v-else>
+            <img v-if="row.portrait" class="portrait" :src="row.portrait" />
             {{ row.name }}
           </template>
         </div>
@@ -21,10 +23,11 @@
                 class="progress-bar funblue"
                 :style="{ width: row.widthPercentage + '%'}">
               </div>
-              <div
-                v-if="showNumbers"
-                class="progress_number">
+              <div v-if="showNumbers && showPercentage" class="progress_number">
                 {{ row.value + ' | ' + row.percentage }} %
+              </div>
+              <div v-else-if="showNumbers" class="progress_number">
+                {{ row.value }}
               </div>
           </div>
       </div>
@@ -38,7 +41,12 @@ export default {
   props: {
     data: Array,
     showNumbers: Boolean,
+    showPercentage: {
+      type: Boolean,
+      default: true,
+    },
     alreadyCalculated: Boolean,
+    flexibleLabels: Boolean,
   },
   computed: {
     rows() {
@@ -52,6 +60,7 @@ export default {
         link: row.link,
         name: row.label,
         value: row.value,
+        portrait: row.portrait,
         widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
         percentage: ((row.value / mytotal) * 100).toFixed(2),
       })).sort((a, b) => b.value - a.value);
@@ -69,8 +78,8 @@ export default {
   display: flex;
 
   .column-label {
-    flex: 1;
     margin-right: 15px;
+    &:not(.flexible) { flex: 1; }
   }
 
   .column-bar {
@@ -92,9 +101,18 @@ export default {
       margin-bottom: -5px;
       a {
         font-size: 16px;
+        font-weight: 300;
         @include respond-to(mobile) {
           font-size: 14px;
         }
+      }
+
+      .portrait {
+        border-radius: 50%;
+        height: 40px;
+        margin-right: 10px;
+        width: 40px;
+        @include show-for('above-limbo', inline);
       }
     }
   }
@@ -102,6 +120,7 @@ export default {
 
 .progress_number {
   @include respond-to(mobile) { display: none; }
+  line-height: 27px;
 }
 .progress.hugebar {
   height: 27px;

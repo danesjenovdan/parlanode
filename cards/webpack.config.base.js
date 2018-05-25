@@ -6,7 +6,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (cardPath) => {
   // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
-  const cardDir = path.resolve(cardPath).split('/').slice(-2).join('/');
+  const cardDir = path.resolve(cardPath)
+    .replace(/\\/g, '/')
+    .split('/')
+    .slice(-2)
+    .join('/');
   return {
     devtool: false,
     module: {

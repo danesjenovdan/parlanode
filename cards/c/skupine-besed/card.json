@@ -1,0 +1,11 @@
+{
+  "_id": "c_skupine-besed",
+  "name": "Skupine besed",
+  "type": "empty",
+  "dataUrl": "https://data.parlameter.si/v1/getNumberOfSpeeches/",
+  "lastUpdate": "2018-05-25T19:14:23.071Z",
+  "method": "skupine-besed",
+  "group": "c",
+  "big": true,
+  "high": false
+}

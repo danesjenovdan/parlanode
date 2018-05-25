@@ -1,9 +1,9 @@
 {
-  "_id": "random_id",
+  "_id": "c_primerjalnik",
   "name": "Primerjalnik glasovanj",
   "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers/",
   "type": "primerjalnik",
-  "lastUpdate": "2018-05-22T15:03:14.072Z",
+  "lastUpdate": "2018-05-25T11:53:53.418Z",
   "method": "primerjalnik",
   "group": "c",
   "big": true,
