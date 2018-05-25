@@ -1,7 +1,7 @@
 <% include ../../partials/header.ejs %>
 
 
-<div id="orodja-raziskovalec-container" class="row">
+<div id="orodja-skupine-besed-container" class="row">
     <div class="party-list-generator col-md-12">
         <ul class="analyses">
             <li v-for="tool in tools"
@@ -30,13 +30,13 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <%- views.raziskovalecNeenotnosti %>
+        <%- views.skupineBesed %>
     </div>
 </div>
 
 <script>
   new Vue({
-    el: '#orodja-raziskovalec-container',
+    el: '#orodja-skupine-besed-container',
     data: {
       tools: [
         { id: 'obvestila', label: 'Parlameter obvestila', link: 'https://obvestila.parlameter.si/' },
@@ -46,7 +46,7 @@
         // { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
         { id: 'skupine-besed', label: 'Skupine besed', link: '/orodja/skupine-besed' },
       ],
-      currentTool: 'raziskovalec'
+      currentTool: 'skupine-besed'
     },
     methods: {
       selectTool: function (toolId) {
