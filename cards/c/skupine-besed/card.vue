@@ -2,48 +2,57 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :content-class="{'is-loading': loading}"
-    :card-url="url"
-    :header-config="headerConfig">
-
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead"></p>
+      <p class="info-text lead">
+        Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.
+      </p>
       <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text"></p>
+      <p class="info-text">
+        Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z vlomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov.
+      </p>
     </div>
 
     <text-frame>
-      Pokaži mi, kdo največ omenja naslednjo skupino besed:
-      <tag
-        v-for="(word, index) in words"
-        :key="index + word"
-        :text="word"
-        @click="removeWord(word)"
-      />
-      <plus @click="toggleModal(true)" />
-      <load-link
-        text="Naloži"
-        @click="loadResults(true)"
-      />
+      <p>Pokaži mi, kdo največ omenja naslednjo skupino besed:
+        <tag
+          v-for="(word, index) in words"
+          :key="index + word"
+          :text="word"
+          @click="removeWord(word)"
+        />
+        <plus @click="toggleModal(true)" />
+        <load-link
+          text="Naloži"
+          @click="loadResults(true)"
+        />
+      </p>
+      <div class="row extras">
+        <div class="col-xs-12">
+          <div class="searchfilter-checkbox">
+            <input
+              id="rev"
+              type="checkbox"
+              class="checkbox"
+              @click="changeShowRelative"
+              :checked="showRelative">
+            <label for="rev">Prikaži relativno metriko</label>
+          </div>
+        </div>
+      </div>
     </text-frame>
 
-    <p-tabs :start-tab="selectedTab">
-      <p-tab label="Poslanci">
+    <p-tabs @switch="focusTab" :start-tab="selectedTab">
+      <p-tab label="Govorci">
         <div class="results">
-          <sortable-table
+          <bar-chart
             v-if="results.people.length"
-            class="person-list"
-            :columns="columns"
-            :items="mappedMembers"
-            :sort="currentSort"
-            :sort-order="currentSortOrder"
-            :sort-callback="selectSort"
-          />
-          <!-- <bar-chart
-            v-if="results.people.length"
-            :data="results.people"
+            :data="showRelative ? resultsRelative.people : results.people"
             show-numbers
             flexible-labels
-          /> -->
+          />
           <empty-circle
             v-else
             :text="emptyText"
@@ -52,21 +61,12 @@
       </p-tab>
       <p-tab label="Poslanske skupine">
         <div class="results">
-          <sortable-table
-            v-if="results.people.length"
-            class="person-list"
-            :columns="columns"
-            :items="mappedParties"
-            :sort="currentSort"
-            :sort-order="currentSortOrder"
-            :sort-callback="selectSort"
-          />
-          <!-- <bar-chart
+          <bar-chart
             v-if="results.parties.length"
-            :data="results.parties"
+            :data="showRelative ? resultsRelative.parties: results.parties"
             show-numbers
             flexible-labels
-          /> -->
+          />
           <empty-circle
             v-else
             :text="emptyText"
@@ -134,16 +134,20 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
+      showRelative: loadFromState('showRelative') || false,
       modalShown: false,
       modalInputText: '',
       results: {
         people: [],
         parties: [],
       },
+      resultsRelative: {
+        people: [],
+        parties: [],
+      },
       selectedTab: loadFromState('selectedTab') || 0,
       words: loadFromState('words') || [],
       loading: false,
-      sums: {},
       normalize: true,
 
       currentSort: 'metric',
@@ -152,7 +156,7 @@ export default {
         {
           id: 'image',
           label: '',
-          additionalClass: 'portrait'
+          additionalClass: 'portrait',
         }, {
           id: 'name',
           label: 'Ime',
@@ -164,7 +168,7 @@ export default {
         }, {
           id: 'metric',
           label: 'Relativno št. govorov',
-          additionalClass:  '',
+          additionalClass: '',
         },
       ],
     };
@@ -183,12 +187,13 @@ export default {
               return a[3] - b[3];
             }
             return b[3] - a[3];
+          default:
+            return b[3] - a[3];
         }
       });
     },
     mappedParties() {
       return this.results.parties.sort((a, b) => {
-        console.log(this.currentSort, this.currentSortOrder);
         switch (this.currentSort) {
           case 'absolute':
             if (this.currentSortOrder === 'asc') {
@@ -200,31 +205,34 @@ export default {
               return a[3] - b[3];
             }
             return b[3] - a[3];
+          default:
+            return b[3] - a[3];
         }
       });
     },
     urlParameters() {
-      const parameters = {};
-
+      const state = {};
       if (this.words.length > 0) {
-        parameters.words = this.words;
+        state.words = this.words;
       }
       if (this.selectedTab !== 0) {
-        parameters.selectedTab = this.selectedTab;
+        state.selectedTab = this.selectedTab;
       }
-
-      return parameters;
+      if (this.showRelative) {
+        state.showRelative = this.showRelative;
+      }
+      return state;
+    },
+    generatedCardUrl() {
+      return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
     },
   },
   methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
+    focusTab(tab) {
+      this.selectedTab = tab;
+    },
+    changeShowRelative() {
+      this.showRelative = !this.showRelative;
     },
     toggleModal(newState, addWords = false) {
       if (addWords) {
@@ -238,7 +246,7 @@ export default {
     },
     selectSort(sort) {
       if (this.currentSort === sort) {
-        if  (this.currentSortOrder === 'asc') {
+        if (this.currentSortOrder === 'asc') {
           this.currentSortOrder = 'desc';
         } else {
           this.currentSortOrder = 'asc';
@@ -249,17 +257,25 @@ export default {
     },
     addWord(word) {
       const position = this.words.indexOf(word);
-      if (position === -1) this.words.push(word);
+      if (position === -1) {
+        this.words.push(word);
+      }
     },
     removeWord(word) {
       const position = this.words.indexOf(word);
-      if (position > -1) this.words.splice(position, 1);
+      if (position > -1) {
+        this.words.splice(position, 1);
+      }
     },
     loadResults(user) {
       if (this.words.length < 2 || this.loading) {
-        if (user) alert('Dodaj vsaj dve besedi.');
-        return
-      };
+        if (user) {
+          // eslint-disable-next-line no-alert
+          alert('Dodaj vsaj dve besedi.');
+        }
+        return;
+      }
+
       this.loading = true;
 
       const query = this.words
@@ -267,40 +283,56 @@ export default {
         .map(encodeURIComponent)
         .join('+');
 
-      axios.get(`https://isci.parlameter.si/q/${query}`).then((response) => {
-        const scoreHigherThanZero = i => i.score > 0;
+      axios.get(`https://isci.parlameter.si/q/${query}`)
+        .then((response) => {
+          const scoreHigherThanZero = i => i.score > 0;
 
-        const parties = response.data.facet_counts.facet_fields.party_e
-          .filter(scoreHigherThanZero)
-          .filter(party => party.party.acronym !== 'unknown')
-          .map(party => ([
-            { text: '' },
-            { link: this.getPartyLink(party.party), text: party.party.acronym === 'unknown' ? 'Zunanji govorci' : party.party.acronym,},
-            party.score,
-            (party.score / (this.sums.all_speeches / this.sums.orgs[party.party.id])).toFixed(4) || 0,
-            // label: party.party.acronym === 'unknown' ? 'Zunanji govorci' : party.party.acronym,
-            // value: party.score,
-            // link: this.getPartyLink(party.party),
-          ]));
+          const parties = response.data.facet_counts.facet_fields.party_e
+            .filter(scoreHigherThanZero)
+            .filter(party => party.party.acronym !== 'unknown')
+            .map(party => ({
+              label: party.party.acronym,
+              // eslint-disable-next-line max-len
+              value: Number((party.score / (this.data.all_speeches / this.data.orgs[party.party.id])).toFixed(4) || 0),
+              link: this.getPartyLink(party.party),
+            }));
 
-        const people = response.data.facet_counts.facet_fields.speaker_i
-          .filter(scoreHigherThanZero)
-          .map(person => [
-            { link: this.getPersonLink(person), image: this.getPersonPortrait(person.person) },
-            { link: this.getPersonLink(person), text: person.person.name},
-            person.score,
-            (person.score / (this.sums.all_speeches / this.sums.people[person.person.id])).toFixed(4),
+          const people = response.data.facet_counts.facet_fields.speaker_i
+            .filter(scoreHigherThanZero)
+            .map(person => ({
+              label: person.person.name,
+              // eslint-disable-next-line max-len
+              value: Number((person.score / (this.data.all_speeches / this.data.people[person.person.id])).toFixed(4)),
+              link: this.getPersonLink(person.person),
+              portrait: this.getPersonPortrait(person.person),
+            }));
 
-            // label: person.person.name,
-            // value: (person.score / (this.sums.all_speeches / this.sums.people[person.person.id])).toFixed(4),
-            // link: this.getPersonLink(person.person),
-            // portrait: this.getPersonPortrait(person.person),
-          ]);
+          this.resultsRelative = { parties, people };
 
-        this.results = { parties, people };
+          const parties2 = response.data.facet_counts.facet_fields.party_e
+            .filter(scoreHigherThanZero)
+            .filter(party => party.party.acronym !== 'unknown')
+            .map(party => ({
+              label: party.party.acronym,
+              // eslint-disable-next-line max-len
+              value: party.score,
+              link: this.getPartyLink(party.party),
+            }));
 
-        this.loading = false;
-      });
+          const people2 = response.data.facet_counts.facet_fields.speaker_i
+            .filter(scoreHigherThanZero)
+            .map(person => ({
+              label: person.person.name,
+              // eslint-disable-next-line max-len
+              value: person.score,
+              link: this.getPersonLink(person.person),
+              portrait: this.getPersonPortrait(person.person),
+            }));
+
+          this.results = { parties: parties2, people: people2 };
+
+          this.loading = false;
+        });
     },
     getPartyLink(party) {
       return party.id === -1 ? '' : getPartyLink(party);
@@ -308,21 +340,52 @@ export default {
     getPersonLink,
     getPersonPortrait,
   },
-  created() {
-    if (this.words) {
+  mounted() {
+    if (this.words.length) {
       this.loadResults();
     }
-    $.get('https://data.parlameter.si/v1/getNumberOfSpeeches', (data) => {
-      this.sums = JSON.parse(JSON.stringify(data));
-    });
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/breakpoints';
+
 .results {
   height: 400px;
   padding-top: 12px;
   overflow-y: auto;
+}
+
+.extras {
+  margin: 40px 0 -20px;
+}
+
+.searchfilter-checkbox {
+  height: 40px;
+  float: right;
+
+  @include respond-to(mobile) {
+    height: auto;
+  }
+
+  label {
+    text-align: left;
+    margin-bottom: 0;
+
+    @include respond-to(small-mobile) {
+      line-height: 1.4em;
+      padding-top: 5px;
+    }
+  }
+
+  .checkbox + label:before {
+    background-color: #f0f5f8;
+  }
+
+  .checkbox + label {
+    font-size: 11px;
+    color: #555555;
+  }
 }
 </style>
