@@ -96,7 +96,6 @@ import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';
-import SortableTable from 'components/SortableTable.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
 import LoadLink from 'components/LoadLink.vue';
 import Modal from 'components/Modal.vue';
@@ -110,7 +109,6 @@ import TextFrame from 'components/TextFrame.vue';
 export default {
   components: {
     BarChart,
-    SortableTable,
     EmptyCircle,
     LoadLink,
     Modal,
@@ -150,68 +148,9 @@ export default {
       selectedTab: loadFromState('selectedTab') || 0,
       words: loadFromState('words') || [],
       loading: false,
-      normalize: true,
-
-      currentSort: 'metric',
-      currentSortOrder: 'desc',
-      columns: [
-        {
-          id: 'image',
-          label: '',
-          additionalClass: 'portrait',
-        }, {
-          id: 'name',
-          label: 'Ime',
-          additionalClass: 'wider name',
-        }, {
-          id: 'absolute',
-          label: 'Št. vseh govorov',
-          additionalClass: '',
-        }, {
-          id: 'metric',
-          label: 'Relativno št. govorov',
-          additionalClass: '',
-        },
-      ],
     };
   },
   computed: {
-    mappedMembers() {
-      return this.results.people.sort((a, b) => {
-        switch (this.currentSort) {
-          case 'absolute':
-            if (this.currentSortOrder === 'asc') {
-              return a[2] - b[2];
-            }
-            return b[2] - a[2];
-          case 'metric':
-            if (this.currentSortOrder === 'asc') {
-              return a[3] - b[3];
-            }
-            return b[3] - a[3];
-          default:
-            return b[3] - a[3];
-        }
-      });
-    },
-    mappedParties() {
-      return this.results.parties.sort((a, b) => {
-        switch (this.currentSort) {
-          case 'absolute':
-            if (this.currentSortOrder === 'asc') {
-              return a[2] - b[2];
-            }
-            return b[2] - a[2];
-          case 'metric':
-            if (this.currentSortOrder === 'asc') {
-              return a[3] - b[3];
-            }
-            return b[3] - a[3];
-          default:
-            return b[3] - a[3];
-        }
-      });
-    },
     urlParameters() {
       const state = {};
       if (this.words.length > 0) {
@@ -226,7 +165,6 @@ export default {
       return state;
     },
     generatedCardUrl() {
-      console.log(`${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`);
       return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
     },
   },
@@ -246,17 +184,6 @@ export default {
       }
       this.modalInputText = '';
       this.modalShown = newState;
-    },
-    selectSort(sort) {
-      if (this.currentSort === sort) {
-        if (this.currentSortOrder === 'asc') {
-          this.currentSortOrder = 'desc';
-        } else {
-          this.currentSortOrder = 'asc';
-        }
-      } else {
-        this.currentSort = sort;
-      }
     },
     addWord(word) {
       const position = this.words.indexOf(word);
