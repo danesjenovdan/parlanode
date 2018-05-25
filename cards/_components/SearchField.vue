@@ -5,6 +5,7 @@
     :placeholder="placeholder"
     type="text"
     :value="value"
+    @keyup.enter="$emit('enter', $event.target.value)"
   />
 </template>
 
@@ -13,7 +14,7 @@ export default {
   name: 'SearchField',
   props: {
     value: String,
-    placeholder: String
+    placeholder: String,
   },
 };
 </script>
