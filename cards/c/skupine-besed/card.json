@@ -1,9 +1,9 @@
 {
-  "_id": "c-skupine-besed",
+  "_id": "c_skupine-besed",
   "name": "Skupine besed",
   "type": "empty",
-  "dataUrl": "https://analize.parlameter.si/v1/",
-  "lastUpdate": "2018-05-25T11:36:44.440Z",
+  "dataUrl": "https://analize.parlameter.si/v1",
+  "lastUpdate": "2018-05-25T12:26:52.503Z",
   "method": "skupine-besed",
   "group": "c",
   "big": true,
