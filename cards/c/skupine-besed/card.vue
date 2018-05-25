@@ -312,15 +312,8 @@ export default {
     if (this.words) {
       this.loadResults();
     }
-    const sumsPromise = $.ajax({
-      url: 'https://data.parlameter.si/v1/getNumberOfSpeeches',
-      method: 'GET',
-      success: (data) => {
-        this.sums = JSON.parse(JSON.stringify(data));
-      },
-      error(error) {
-        console.log(erro);
-      },
+    $.get('https://data.parlameter.si/v1/getNumberOfSpeeches', (data) => {
+      this.sums = JSON.parse(JSON.stringify(data));
     });
   },
 };
