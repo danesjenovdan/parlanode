@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .text-frame {
   text-align: center;
   background-color: #f0f5f8;

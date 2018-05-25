@@ -5,7 +5,7 @@
   >{{ data.attrs.text }}</span>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~parlassets/scss/colors';
 
 .load {

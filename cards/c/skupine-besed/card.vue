@@ -22,19 +22,28 @@
       <plus @click="toggleModal(true)" />
       <load-link
         text="Naloži"
-        @click="loadResults"
+        @click="loadResults(true)"
       />
     </text-frame>
 
     <p-tabs :start-tab="selectedTab">
       <p-tab label="Poslanci">
         <div class="results">
-          <bar-chart
+          <sortable-table
+            v-if="results.people.length"
+            class="person-list"
+            :columns="columns"
+            :items="mappedMembers"
+            :sort="currentSort"
+            :sort-order="currentSortOrder"
+            :sort-callback="selectSort"
+          />
+          <!-- <bar-chart
             v-if="results.people.length"
             :data="results.people"
             show-numbers
             flexible-labels
-          />
+          /> -->
           <empty-circle
             v-else
             :text="emptyText"
@@ -43,12 +52,21 @@
       </p-tab>
       <p-tab label="Poslanske skupine">
         <div class="results">
-          <bar-chart
+          <sortable-table
+            v-if="results.people.length"
+            class="person-list"
+            :columns="columns"
+            :items="mappedParties"
+            :sort="currentSort"
+            :sort-order="currentSortOrder"
+            :sort-callback="selectSort"
+          />
+          <!-- <bar-chart
             v-if="results.parties.length"
             :data="results.parties"
             show-numbers
             flexible-labels
-          />
+          /> -->
           <empty-circle
             v-else
             :text="emptyText"
@@ -64,7 +82,7 @@
       @close="toggleModal(false)"
       @ok="toggleModal(false, true)"
     >
-      <search-field v-model="modalInputText" />
+      <search-field v-model="modalInputText" @enter="toggleModal(false, true)"/>
     </modal>
   </card-wrapper>
 </template>
@@ -76,6 +94,7 @@ import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';
+import SortableTable from 'components/SortableTable.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
 import LoadLink from 'components/LoadLink.vue';
 import Modal from 'components/Modal.vue';
@@ -89,6 +108,7 @@ import TextFrame from 'components/TextFrame.vue';
 export default {
   components: {
     BarChart,
+    SortableTable,
     EmptyCircle,
     LoadLink,
     Modal,
@@ -123,9 +143,66 @@ export default {
       selectedTab: loadFromState('selectedTab') || 0,
       words: loadFromState('words') || [],
       loading: false,
+      sums: {},
+      normalize: true,
+
+      currentSort: 'metric',
+      currentSortOrder: 'desc',
+      columns: [
+        {
+          id: 'image',
+          label: '',
+          additionalClass: 'portrait'
+        }, {
+          id: 'name',
+          label: 'Ime',
+          additionalClass: 'wider name',
+        }, {
+          id: 'absolute',
+          label: 'Št. vseh govorov',
+          additionalClass: '',
+        }, {
+          id: 'metric',
+          label: 'Relativno št. govorov',
+          additionalClass:  '',
+        },
+      ],
     };
   },
   computed: {
+    mappedMembers() {
+      return this.results.people.sort((a, b) => {
+        switch (this.currentSort) {
+          case 'absolute':
+            if (this.currentSortOrder === 'asc') {
+              return a[2] - b[2];
+            }
+            return b[2] - a[2];
+          case 'metric':
+            if (this.currentSortOrder === 'asc') {
+              return a[3] - b[3];
+            }
+            return b[3] - a[3];
+        }
+      });
+    },
+    mappedParties() {
+      return this.results.parties.sort((a, b) => {
+        console.log(this.currentSort, this.currentSortOrder);
+        switch (this.currentSort) {
+          case 'absolute':
+            if (this.currentSortOrder === 'asc') {
+              return a[2] - b[2];
+            }
+            return b[2] - a[2];
+          case 'metric':
+            if (this.currentSortOrder === 'asc') {
+              return a[3] - b[3];
+            }
+            return b[3] - a[3];
+        }
+      });
+    },
     urlParameters() {
       const parameters = {};
 
@@ -159,6 +236,17 @@ export default {
       this.modalInputText = '';
       this.modalShown = newState;
     },
+    selectSort(sort) {
+      if (this.currentSort === sort) {
+        if  (this.currentSortOrder === 'asc') {
+          this.currentSortOrder = 'desc';
+        } else {
+          this.currentSortOrder = 'asc';
+        }
+      } else {
+        this.currentSort = sort;
+      }
+    },
     addWord(word) {
       const position = this.words.indexOf(word);
       if (position === -1) this.words.push(word);
@@ -167,8 +255,11 @@ export default {
       const position = this.words.indexOf(word);
       if (position > -1) this.words.splice(position, 1);
     },
-    loadResults() {
-      if (this.words.length < 2 || this.loading) return;
+    loadResults(user) {
+      if (this.words.length < 2 || this.loading) {
+        if (user) alert('Dodaj vsaj dve besedi.');
+        return
+      };
       this.loading = true;
 
       const query = this.words
@@ -181,22 +272,33 @@ export default {
 
         const parties = response.data.facet_counts.facet_fields.party_e
           .filter(scoreHigherThanZero)
-          .map(party => ({
-            label: party.party.acronym === 'unknown' ? 'Zunanji govorci' : party.party.acronym,
-            value: party.score,
-            link: this.getPartyLink(party.party),
-          }));
+          .filter(party => party.party.acronym !== 'unknown')
+          .map(party => ([
+            { text: '' },
+            { link: this.getPartyLink(party.party), text: party.party.acronym === 'unknown' ? 'Zunanji govorci' : party.party.acronym,},
+            party.score,
+            (party.score / (this.sums.all_speeches / this.sums.orgs[party.party.id])).toFixed(4) || 0,
+            // label: party.party.acronym === 'unknown' ? 'Zunanji govorci' : party.party.acronym,
+            // value: party.score,
+            // link: this.getPartyLink(party.party),
+          ]));
 
         const people = response.data.facet_counts.facet_fields.speaker_i
           .filter(scoreHigherThanZero)
-          .map(person => ({
-            label: person.person.name,
-            value: person.score,
-            link: this.getPersonLink(person.person),
-            portrait: this.getPersonPortrait(person.person),
-          }));
+          .map(person => [
+            { link: this.getPersonLink(person), image: this.getPersonPortrait(person.person) },
+            { link: this.getPersonLink(person), text: person.person.name},
+            person.score,
+            (person.score / (this.sums.all_speeches / this.sums.people[person.person.id])).toFixed(4),
+
+            // label: person.person.name,
+            // value: (person.score / (this.sums.all_speeches / this.sums.people[person.person.id])).toFixed(4),
+            // link: this.getPersonLink(person.person),
+            // portrait: this.getPersonPortrait(person.person),
+          ]);
 
         this.results = { parties, people };
+
         this.loading = false;
       });
     },
@@ -210,6 +312,16 @@ export default {
     if (this.words) {
       this.loadResults();
     }
+    const sumsPromise = $.ajax({
+      url: 'https://data.parlameter.si/v1/getNumberOfSpeeches',
+      method: 'GET',
+      success: (data) => {
+        this.sums = JSON.parse(JSON.stringify(data));
+      },
+      error(error) {
+        console.log(erro);
+      },
+    });
   },
 };
 </script>
