@@ -11,7 +11,7 @@
       </p>
       <p class="info-text heading">METODOLOGIJA</p>
       <p class="info-text">
-        Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z vlomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov.
+        Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov.
       </p>
     </div>
 
@@ -51,6 +51,7 @@
             v-if="results.people.length"
             :data="showRelative ? resultsRelative.people : results.people"
             show-numbers
+            :show-percentage="!showRelative"
             flexible-labels
           />
           <empty-circle
@@ -65,6 +66,7 @@
             v-if="results.parties.length"
             :data="showRelative ? resultsRelative.parties: results.parties"
             show-numbers
+            :show-percentage="!showRelative"
             flexible-labels
           />
           <empty-circle
@@ -224,6 +226,7 @@ export default {
       return state;
     },
     generatedCardUrl() {
+      console.log(`${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`);
       return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
     },
   },
@@ -363,20 +366,18 @@ export default {
 
 .searchfilter-checkbox {
   height: 40px;
-  float: right;
+  text-align: center;
 
   @include respond-to(mobile) {
     height: auto;
+    margin-left: -70px;
+    margin-right: -70px;
   }
 
   label {
     text-align: left;
     margin-bottom: 0;
-
-    @include respond-to(small-mobile) {
-      line-height: 1.4em;
-      padding-top: 5px;
-    }
+    width: auto;
   }
 
   .checkbox + label:before {
@@ -386,6 +387,7 @@ export default {
   .checkbox + label {
     font-size: 11px;
     color: #555555;
+    white-space: nowrap;
   }
 }
 </style>
