@@ -250,6 +250,18 @@ const routes = [
     ],
   },
   {
+    path        : '/orodja/skupine-besed',
+    viewPath    : 'orodja/skupine-besed',
+    pageTitle   : 'Skupine besed',
+    cards       : [
+      {
+        name: 'skupineBesed',
+        sourceUrl: '/c/skupine-besed/',
+        resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
+      },
+    ]
+  },
+  {
     path      : '/poslanci',
     viewPath  : 'poslanci',
     pageTitle : 'Seznam poslancev',
