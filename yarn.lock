@@ -6721,6 +6721,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vm2@^3.5.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.6.0.tgz#a6e6370c57e6edd77decfb7b1ad64fc87dbf2d4e"
+
 vue-eslint-parser@^2.0.1-beta.1:
   version "2.0.1-beta.2"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.1-beta.2.tgz#82e5130ac18ae4b0c894a7c831b55ec92478fa2f"
@@ -6734,6 +6738,16 @@ vue-eslint-parser@^2.0.1-beta.1:
 vue-hot-reload-api@^2.1.0, vue-hot-reload-api@^2.2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.4.tgz#683bd1d026c0d3b3c937d5875679e9a87ec6cd8f"
+
+vue-i18n-extensions@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n-extensions/-/vue-i18n-extensions-0.1.0.tgz#58a65bc5c80abf000ca41735ef0cf4ccb480e013"
+  dependencies:
+    vm2 "^3.5.0"
+
+vue-i18n@^7.7.0:
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-7.7.0.tgz#f317581e0ebc43c128662501cfabd6ecd5e7fceb"
 
 vue-loader@12.2.1:
   version "12.2.1"

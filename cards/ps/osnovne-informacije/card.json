@@ -3,7 +3,7 @@
   "name": "Osnovne informacije",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getBasicInfOfPG",
   "type": "poslanska_skupina",
-  "lastUpdate": "2018-05-09T13:00:59.738Z",
+  "lastUpdate": "2018-05-21T16:42:04.270Z",
   "method": "osnovne-informacije",
   "group": "ps",
   "big": false,
