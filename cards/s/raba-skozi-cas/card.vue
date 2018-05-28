@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    class="card-scroll card-seznam-zakonov"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
   >

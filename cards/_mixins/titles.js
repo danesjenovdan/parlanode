@@ -20,7 +20,7 @@ export const partyTitle = {
 export const searchTitle = {
   created() {
     const context = this.$root.$options.cardData;
-    const keywords = context.data.responseHeader.params.q.split('content_t:')[1];
+    const keywords = context.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
     context.template.pageTitle = `Iskalni niz: ${keywords}`;
   },
 };
