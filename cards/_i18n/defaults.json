@@ -2,8 +2,8 @@
   "sl": {
     "yes": "DA",
     "no": "NE",
-    "copy": "KOPIRAJ",
-    "copied": "SKOPIRANO!",
+    "copy": "Kopiraj",
+    "copied": "Skopirano!",
     "load": "Naloži",
     "confirm": "Potrdi",
     "data-currently-unavailable": "Podatki trenutno niso na voljo.",
@@ -30,6 +30,26 @@
       "selected-placeholder": "Izbranih: {num}",
       "vote-passed": "Sprejet",
       "vote-not-passed": "Zavrnjen"
+    }
+  },
+  "hr": {
+    "yes": "DA",
+    "no": "NE",
+    "copy": "Kopija",
+    "copied": "Kopiran!",
+    "load": "Traži",
+    "confirm": "Potvrdi",
+    "info": {
+      "title": "Info",
+      "methodology": "METODOLOGIJA"
+    },
+    "share": {
+      "title": "Dijelovi",
+      "direct-link": "Izravno povezivanje s karticom"
+    },
+    "embed": {
+      "title": "Preuzimanje",
+      "always-refresh": "Podatke uvijek treba iznova učitati"
     }
   }
 }
