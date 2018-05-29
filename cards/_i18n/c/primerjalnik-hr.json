@@ -11,7 +11,7 @@
         "Kao histogram s ukupnim brojem glasova u odnosu na matično radno tijelo"
       ]
     },
-    "comparator-text": "Zanima me, na kojem su glasanju {same} glasali jednako kao {different} ili drugačije od njih. {load}",
+    "comparator-text": "Zanima me, na kojem su glasanju {same} glasali jednako, a {different} drugačije od njih. {load}",
     "ignore-absent": "Isključi odsutne glasače",
     "comparator-vote-percent": "{num} filtriranih glasanja predstavlja {percent} svih glasanja",
     "tabs": {
@@ -20,8 +20,8 @@
       "bar-chart": "Dinamika prema MRT"
     },
     "select-parties-people": "Uključi sve stranačke zastupnike ili odaberi pojedine zastupnike stranke.",
-    "select-mps": "Odaberi zastupnike",
-    "selected-mps": "Odabranih: {num}",
+    "select-mps": "Izaberi članove",
+    "selected-mps": "Odabrano: {num}",
     "empty-state-text": "Za prikaz glasanja dodaj najmanje dva aktera."
   }
 }
