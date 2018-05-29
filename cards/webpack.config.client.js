@@ -13,6 +13,7 @@ module.exports = (cardPath) => {
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+          CARD_LANG: JSON.stringify(process.env.CARD_LANG || 'sl'),
         },
       }),
     ]),

@@ -1,0 +1,65 @@
+{
+  "sl": {
+    "yes": "DA",
+    "no": "NE",
+    "copy": "Kopiraj",
+    "copied": "Skopirano!",
+    "load": "Naloži",
+    "confirm": "Potrdi",
+    "data-currently-unavailable": "Podatki trenutno niso na voljo.",
+    "info": {
+      "title": "Info",
+      "methodology": "METODOLOGIJA"
+    },
+    "share": {
+      "title": "Deli",
+      "direct-link": "Neposredna povezava do kartice"
+    },
+    "embed": {
+      "title": "Vdelaj",
+      "always-refresh": "Podatki naj se vedno osvežujejo"
+    },
+    "seznam-glasovanj": {
+      "title-search": "Išči po naslovu glasovanja",
+      "working-body": "Matično delovno telo",
+      "vote-for": "Za",
+      "vote-against": "Proti",
+      "vote-abstained": "Vzdržan",
+      "vote-not": "Niso",
+      "select-placeholder": "Izberi",
+      "selected-placeholder": "Izbranih: {num}",
+      "vote-passed": "Sprejet",
+      "vote-not-passed": "Zavrnjen"
+    }
+  },
+  "hr": {
+    "yes": "DA",
+    "no": "NE",
+    "copy": "Kopija",
+    "copied": "Kopiran!",
+    "load": "Traži",
+    "confirm": "Potvrdi",
+    "info": {
+      "title": "Info",
+      "methodology": "METODOLOGIJA"
+    },
+    "share": {
+      "title": "Dijelovi",
+      "direct-link": "Izravno povezivanje s karticom"
+    },
+    "embed": {
+      "title": "Preuzimanje",
+      "always-refresh": "Podatke uvijek treba iznova učitati"
+    },
+    "seznam-glasovanj": {
+      "vote-for": "Za",
+      "vote-against": "Protiv",
+      "vote-abstained": "Suzdržan",
+      "vote-not": "Nije",
+      "select-placeholder": "Odaberi",
+      "selected-placeholder": "Odabranih: {num}",
+      "vote-passed": "Prošao",
+      "vote-not-passed": "Odbijen"
+    }
+  }
+}

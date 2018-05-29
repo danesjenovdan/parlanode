@@ -1,0 +1,27 @@
+{
+  "hr": {
+    "info": {
+      "text": [
+        "Kartica će prikazati sve glasove koji odgovaraju odabranim uvjetima. Usporedba glasanja po parlamentarnim strankama koristi izračunatu većinu glasova koja se dobiva zbrajanjem za koju je opciju glasao najveći broj zastupnika stranke.",
+        "Rezultate prikazujemo na tri načina:"
+      ],
+      "list": [
+        "Kao popis svih glasova",
+        "Kao linijski grafikon koji prikazuje broj glasova dnevno",
+        "Kao histogram s ukupnim brojem glasova u odnosu na matično radno tijelo"
+      ]
+    },
+    "comparator-text": "Zanima me, na kojem su glasanju {same} glasali jednako kao {different} ili drugačije od njih. {load}",
+    "ignore-absent": "Isključi odsutne glasače",
+    "comparator-vote-percent": "{num} filtriranih glasanja predstavlja {percent} svih glasanja",
+    "tabs": {
+      "vote-list": "Popis glasanja",
+      "time-chart": "Dinamika kroz vrijeme",
+      "bar-chart": "Dinamika prema MRT"
+    },
+    "select-parties-people": "Uključi sve stranačke zastupnike ili odaberi pojedine zastupnike stranke.",
+    "select-mps": "Odaberi zastupnike",
+    "selected-mps": "Odabranih: {num}",
+    "empty-state-text": "Za prikaz glasanja dodaj najmanje dva aktera."
+  }
+}
