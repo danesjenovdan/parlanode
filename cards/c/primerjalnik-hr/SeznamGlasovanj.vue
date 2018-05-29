@@ -1,89 +1,64 @@
 <template>
   <div id="seznam-glasovanj">
-    <div class="filters" v-if="showFilters">
-      <div class="filter option-party-buttons">
-        <striped-button
-          v-for="result in allResults"
-          @click.native="toggleResult(result.id)"
-          :color="result.color"
-          :key="result.id"
-          :selected="selectedResults.indexOf(result.id) > -1"
-          :small-text="result.label"
-        />
-      </div>
-      <div class="filter text-filter">
-        <div class="filter-label" v-t="'seznam-glasovanj.title-search'"></div>
-        <input class="text-filter-input" type="text" v-model="textFilter">
-      </div>
-      <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'seznam-glasovanj.working-body'"></div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
-      </div>
-    </div>
     <div id="votingCard" class="date-list">
       <div class="session_voting">
         <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
-          <div v-if="vote.is_outlier" class="fire-badge"></div>
-          <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-          <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
-          <a :href="vote.url">
-            <div class="col-md-1">
-              <div :class="vote.accepted">
+          <div class="col-md-1">
+            <div :class="vote.accepted">
+              <p>
+                <i :class="vote.accepted_glyph"></i>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-11 border-left">
+            <div class="col-md-6">
+              <div class="session_title">
                 <p>
-                  <i :class="vote.accepted_glyph"></i>
+                  {{ getVoteText(vote) }}
                 </p>
               </div>
             </div>
-            <div class="col-md-11 border-left">
-              <div class="col-md-6">
-                <div class="session_title">
-                  <p>
-                    {{ getVoteText(vote) }}
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="session_votes">
-                  <div class="progress smallbar">
-                    <div class="progress-bar funblue" v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                      <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
-                    </div>
-                    <div class="progress-bar fontblue" v-bind:style="{ width: vote.percent_against + '%' }">
-                      <span class="sr-only">{{ vote.percent_against }}% votes against</span>
-                    </div>
-                    <div class="progress-bar noblue" v-bind:style="{ width: vote.percent_abstain + '%' }">
-                      <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
-                    </div>
-                    <div class="progress-bar ignoreblue" v-bind:style="{ width: vote.percent_not_present + '%' }">
-                      <span class="sr-only">{{ vote.percent_not_present }}% votes not present</span>
-                    </div>
+            <div class="col-md-6">
+              <div class="session_votes">
+                <div class="progress smallbar">
+                  <div class="progress-bar funblue" v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                    <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-3">
-                      {{ vote.votes_for }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
-                      <div class="indicator ney">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-3">
-                      {{ vote.against }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
-                      <div class="indicator aye">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-3">
-                      {{ vote.abstain }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
-                      <div class="indicator not">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-3">
-                      {{ vote.not_present }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
-                      <div class="indicator abstention">&nbsp;</div>
-                    </div>
+                  <div class="progress-bar fontblue" v-bind:style="{ width: vote.percent_against + '%' }">
+                    <span class="sr-only">{{ vote.percent_against }}% votes against</span>
+                  </div>
+                  <div class="progress-bar noblue" v-bind:style="{ width: vote.percent_abstain + '%' }">
+                    <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
+                  </div>
+                  <div class="progress-bar ignoreblue" v-bind:style="{ width: vote.percent_not_present + '%' }">
+                    <span class="sr-only">{{ vote.percent_not_present }}% votes not present</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3">
+                    {{ vote.votes_for }}
+                    <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
+                    <div class="indicator ney">&nbsp;</div>
+                  </div>
+                  <div class="col-xs-3">
+                    {{ vote.against }}
+                    <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
+                    <div class="indicator aye">&nbsp;</div>
+                  </div>
+                  <div class="col-xs-3">
+                    {{ vote.abstain }}
+                    <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
+                    <div class="indicator not">&nbsp;</div>
+                  </div>
+                  <div class="col-xs-3">
+                    {{ vote.not_present }}
+                    <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
+                    <div class="indicator abstention">&nbsp;</div>
                   </div>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>

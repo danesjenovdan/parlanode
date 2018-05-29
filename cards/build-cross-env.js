@@ -3,7 +3,15 @@ const path = require('path');
 const chalk = require('chalk');
 const { spawn } = require('child_process');
 
-let [cardPath, cmd] = process.argv.slice(2);
+let [cardPath, cmd, lang] = process.argv.slice(2);
+
+if (cmd && cmd.length === 2) {
+  [cmd, lang] = [lang, cmd];
+}
+
+if (!lang) {
+  lang = 'sl';
+}
 
 if (!cmd) {
   cmd = 'dev';
@@ -21,7 +29,7 @@ cardPath = path.normalize(cardPath)
   .replace(/\/$/, '');
 
 // eslint-disable-next-line no-console
-console.log(chalk.green(cmd), chalk.yellow(cardPath));
+console.log(chalk.green(cmd), `(${lang})`, chalk.yellow(cardPath));
 
 if (!fs.existsSync(path.join(__dirname, cardPath, 'card.json'))) {
   // eslint-disable-next-line no-console
@@ -33,6 +41,7 @@ if (cmd === 'build') {
   const cpEnv = Object.create(process.env);
   cpEnv.NODE_ENV = 'production';
   cpEnv.CARD_NAME = cardPath;
+  cpEnv.CARD_LANG = lang;
 
   const cpArgs = ['cards/build.js'];
 
@@ -54,6 +63,7 @@ if (cmd === 'build') {
 if (cmd === 'dev') {
   const cpEnv = Object.create(process.env);
   cpEnv.CARD_NAME = cardPath;
+  cpEnv.CARD_LANG = lang;
 
   const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--content-base', 'cards', '--hot', '--progress', '--open', '--inline'];
 

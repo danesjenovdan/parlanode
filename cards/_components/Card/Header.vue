@@ -22,32 +22,21 @@
     </template>
     <template v-else>
       <div class="card-header-border"></div>
-      <h1>{{ title }}</h1>
+      <h1 v-if="currentBack === 'info'" v-t="'info.title'"></h1>
+      <h1 v-else-if="currentBack === 'embed'" v-t="'embed.title'"></h1>
+      <h1 v-else-if="currentBack === 'share'" v-t="'share.title'"></h1>
+      <h1 v-else v-text="config.title"></h1>
     </template>
   </div>
 
 </template>
 
 <script>
-const CARD_TITLES = {
-  share: 'Deli',
-  embed: 'Vdelaj',
-  info: 'Info',
-};
-
 export default {
   name: 'CardHeader',
   props: {
     config: Object,
     currentBack: String,
-  },
-  computed: {
-    title() {
-      if (this.currentBack === null) {
-        return this.config.title;
-      }
-      return CARD_TITLES[this.currentBack];
-    },
   },
 };
 </script>

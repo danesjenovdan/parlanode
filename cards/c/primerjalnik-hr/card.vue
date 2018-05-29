@@ -91,10 +91,6 @@
         <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
         <time-chart v-else :data="data"></time-chart>
       </p-tab>
-      <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
-        <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
-        <bar-chart v-else :data="barChartData" show-numbers></bar-chart>
-      </p-tab>
     </p-tabs>
 
     <modal
@@ -162,7 +158,7 @@ import PTabs from 'components/Tabs.vue';
 import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
 import TimeChart from 'components/TimeChart.vue';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import SeznamGlasovanj from './SeznamGlasovanj.vue';
 
 export default {
   components: {
@@ -214,7 +210,7 @@ export default {
         : this.$t('select-mps');
     },
     queryUrl() {
-      const base = 'https://analize.parlameter.si/v1/s/getComparedVotes/';
+      const base = 'http://51.15.135.53/analize/v1/s/getComparedVotes/';
       const samePeopleIds = this.selectedSamePeople.map(person => person.id).toString();
       const samePartyIds = this.sameParties.map(party => party.id).toString();
       const diffPeopleIds = this.selectedDifferentPeople.map(person => person.id).toString();
@@ -280,13 +276,13 @@ export default {
       if (this.selectedTab > 0) {
         state.selectedTab = this.selectedTab;
       }
-      return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   mounted() {
     const self = this;
     const PGPromise = $.ajax({
-      url: 'https://data.parlameter.si/v1/getAllPGs/',
+      url: 'http://51.15.135.53/data/v1/getAllPGs/',
       method: 'GET',
       success: (data) => {
         const sameParties = this.$options.cardData.parlaState.sameParties || [];
@@ -305,7 +301,7 @@ export default {
       },
     });
     const peoplePromise = $.ajax({
-      url: 'https://data.parlameter.si/v1/getMPs/',
+      url: 'http://51.15.135.53/data/v1/getMPs/',
       method: 'GET',
       success: (data) => {
         const samePeople = this.$options.cardData.parlaState.samePeople || [];
