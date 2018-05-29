@@ -223,7 +223,7 @@ export default {
             .map(party => ({
               label: party.party.acronym,
               // eslint-disable-next-line max-len
-              value: Number((party.score / (this.data.all_speeches / this.data.orgs[party.party.id])).toFixed(4) || 0),
+              value: Number((party.score / (this.data.orgs[party.party.id] / this.data.all_speeches)).toFixed(4) || 0),
               link: this.getPartyLink(party.party),
             }));
 
@@ -232,7 +232,7 @@ export default {
             .map(person => ({
               label: person.person.name,
               // eslint-disable-next-line max-len
-              value: Number((person.score / (this.data.all_speeches / this.data.people[person.person.id])).toFixed(4)),
+              value: Number((person.score / (this.data.people[person.person.id] / this.data.all_speeches)).toFixed(4)),
               link: this.getPersonLink(person.person),
               portrait: this.getPersonPortrait(person.person),
             }));
