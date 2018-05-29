@@ -55,10 +55,10 @@
       "vote-for": "Za",
       "vote-against": "Protiv",
       "vote-abstained": "Suzdržan",
-      "vote-not": "Nije",
-      "select-placeholder": "Odaberi",
+      "vote-not": "Nisu",
+      "select-placeholder": "Izaberi",
       "selected-placeholder": "Odabranih: {num}",
-      "vote-passed": "Prošao",
+      "vote-passed": "Donesen",
       "vote-not-passed": "Odbijen"
     }
   }
