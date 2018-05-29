@@ -158,7 +158,7 @@ import PTabs from 'components/Tabs.vue';
 import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
 import TimeChart from 'components/TimeChart.vue';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import SeznamGlasovanj from './SeznamGlasovanj.vue';
 
 export default {
   components: {

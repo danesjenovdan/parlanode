@@ -20,8 +20,8 @@
       "bar-chart": "Dinamika prema MRT"
     },
     "select-parties-people": "Uključi sve stranačke zastupnike ili odaberi pojedine zastupnike stranke.",
-    "select-mps": "Izberi poslance",
-    "selected-mps": "Izbranih: {num}",
+    "select-mps": "Odaberi zastupnike",
+    "selected-mps": "Odabranih: {num}",
     "empty-state-text": "Za prikaz glasanja dodaj najmanje dva aktera."
   }
 }

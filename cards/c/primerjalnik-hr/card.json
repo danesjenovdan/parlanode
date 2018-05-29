@@ -3,7 +3,7 @@
   "name": "Usporedba glasanja",
   "dataUrl": "http://51.15.135.53/analize/v1/p/getListOfMembersTickers/",
   "type": "primerjalnik",
-  "lastUpdate": "2018-05-25T11:53:53.418Z",
+  "lastUpdate": "2018-05-29T08:17:13.454Z",
   "method": "primerjalnik-hr",
   "group": "c",
   "big": true,

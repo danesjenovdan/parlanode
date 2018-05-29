@@ -50,6 +50,16 @@
     "embed": {
       "title": "Preuzimanje",
       "always-refresh": "Podatke uvijek treba iznova učitati"
+    },
+    "seznam-glasovanj": {
+      "vote-for": "Za",
+      "vote-against": "Protiv",
+      "vote-abstained": "Suzdržan",
+      "vote-not": "Nije",
+      "select-placeholder": "Odaberi",
+      "selected-placeholder": "Odabranih: {num}",
+      "vote-passed": "Prošao",
+      "vote-not-passed": "Odbijen"
     }
   }
 }
