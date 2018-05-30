@@ -1,0 +1,11 @@
+{
+  "_id": "s_raba-po-strankah",
+  "name": "Raba po poslanskih skupinah",
+  "dataUrl": "https://isci.parlameter.si/q",
+  "type": "empty",
+  "lastUpdate": "2018-05-30T12:38:45.387Z",
+  "method": "raba-po-strankah",
+  "group": "s",
+  "big": false,
+  "high": false
+}
