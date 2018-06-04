@@ -280,15 +280,15 @@ export default {
             case 'name':
               a = memberA.person.name;
               b = memberB.person.name;
-              return a.localeCompare(b);
+              return a.localeCompare(b, 'sl');
             case 'district':
               a = memberA.formattedDistrict;
               b = memberB.formattedDistrict;
-              return a.localeCompare(b);
+              return a.localeCompare(b, 'sl');
             case 'party':
               a = memberA.person.party.acronym;
               b = memberB.person.party.acronym;
-              return a.localeCompare(b);
+              return a.localeCompare(b, 'sl');
             default:
               a = memberA[this.currentSort];
               b = memberB[this.currentSort];
