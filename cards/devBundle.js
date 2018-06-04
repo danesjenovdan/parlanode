@@ -20,7 +20,7 @@ const fakeCardData = {
     data,
     parlaState,
     cardData: {
-      altHeader: false,
+      altHeader: window.location.href.indexOf('altHeader=true') !== -1 ? 'true' : false,
       ...cardData,
     },
   },
