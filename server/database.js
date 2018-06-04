@@ -15,8 +15,17 @@ exports.connect = function ( cb ) {
     console.log(chalk.magenta(`| MONGO DATABASE |`) + ` -` + chalk.green(` Connecting to ${CFG.db.url + CFG.db.name}`));
 
     // handle missing mongo username and password
-    console.log(config);
-    if ( _.isNil(config.db.user) || config.db.user === 'undefined' || _.isNil(!config.db.password) || config.db.password === 'undefined' ) {
+    if (process.platform === 'win32') {
+      // you can't create env vars as empty strings on windows so if its not defined
+      // just assume it's an empty string and don't warn
+      if (!config.db.user || config.db.user === 'undefined') {
+        config.db.user = '';
+      }
+      if (!config.db.password || config.db.password === 'undefined') {
+        config.db.password = '';
+      }
+    } else if ( _.isNil(config.db.user) || config.db.user === 'undefined' || _.isNil(!config.db.password) || config.db.password === 'undefined' ) {
+      console.log(config);
       return reject('Missing mongo username or password. Add MONGO_USERNAME and MONGO_PASSWORD environment variables.');
     }
 
