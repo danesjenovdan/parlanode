@@ -131,7 +131,6 @@ export default {
       });
     }
 
-
     const allTags = this.processTags();
 
     const textFilter = this.filters && this.filters.text ? this.filters.text : '';
