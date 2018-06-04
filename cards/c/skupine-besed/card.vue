@@ -15,77 +15,83 @@
       </p>
     </div>
 
-    <text-frame>
-      <p>Pokaži mi, kdo največ omenja naslednjo skupino besed:
-        <tag
-          v-for="(word, index) in words"
-          :key="index + word"
-          :text="word"
-          @click="removeWord(word)"
-        />
-        <plus @click="toggleModal(true)" />
-        <load-link
-          text="Naloži"
-          @click="loadResults(true)"
-        />
-      </p>
-      <div class="row extras">
-        <div class="col-xs-12">
-          <div class="searchfilter-checkbox">
-            <input
-              id="rev"
-              type="checkbox"
-              class="checkbox"
-              @click="changeShowRelative"
-              :checked="showRelative">
-            <label for="rev">Prikaži relativno metriko</label>
+    <div id="skupine-besed">
+      <text-frame>
+        <p>Pokaži mi, kdo največ omenja naslednjo skupino besed:
+          <tag
+            v-for="(word, index) in words"
+            :key="index + word"
+            :text="word"
+            @click="removeWord(word)"
+          />
+          <plus @click="toggleModal(true)" />
+          <load-link
+            text="Naloži"
+            @click="loadResults(true)"
+          />
+        </p>
+        <div class="row extras">
+          <div class="col-xs-12">
+            <div class="searchfilter-checkbox">
+              <input
+                id="rev"
+                type="checkbox"
+                class="checkbox"
+                @click="changeShowRelative"
+                :checked="showRelative">
+              <label for="rev">Prikaži relativno metriko</label>
+            </div>
           </div>
         </div>
-      </div>
-    </text-frame>
+      </text-frame>
 
-    <p-tabs @switch="focusTab" :start-tab="selectedTab">
-      <p-tab label="Govorci">
-        <div class="results">
-          <bar-chart
-            v-if="results.people.length"
-            :data="showRelative ? resultsRelative.people : results.people"
-            show-numbers
-            :show-percentage="!showRelative"
-            flexible-labels
-          />
-          <empty-circle
-            v-else
-            :text="emptyText"
-          />
-        </div>
-      </p-tab>
-      <p-tab label="Poslanske skupine">
-        <div class="results">
-          <bar-chart
-            v-if="results.parties.length"
-            :data="showRelative ? resultsRelative.parties: results.parties"
-            show-numbers
-            :show-percentage="!showRelative"
-            flexible-labels
-          />
-          <empty-circle
-            v-else
-            :text="emptyText"
-          />
-        </div>
-      </p-tab>
-    </p-tabs>
+      <p-tabs @switch="focusTab" :start-tab="selectedTab">
+        <p-tab label="Govorci">
+          <scroll-shadow ref="shadow">
+            <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
+              <bar-chart
+                v-if="results.people.length"
+                :data="showRelative ? resultsRelative.people : results.people"
+                show-numbers
+                :show-percentage="!showRelative"
+                flexible-labels
+              />
+              <empty-circle
+                v-else
+                :text="emptyText"
+              />
+            </div>
+          </scroll-shadow>
+        </p-tab>
+        <p-tab label="Poslanske skupine">
+          <scroll-shadow ref="shadowPS">
+            <div class="results" @scroll="$refs.shadowPS.check($event.currentTarget)">
+              <bar-chart
+                v-if="results.parties.length"
+                :data="showRelative ? resultsRelative.parties: results.parties"
+                show-numbers
+                :show-percentage="!showRelative"
+                flexible-labels
+              />
+              <empty-circle
+                v-else
+                :text="emptyText"
+              />
+            </div>
+          </scroll-shadow>
+        </p-tab>
+      </p-tabs>
 
-    <modal
-      v-if="modalShown"
-      header="Vnesi posamezno besedo ali več besed, ločenih z vejico."
-      button="Potrdi"
-      @close="toggleModal(false)"
-      @ok="toggleModal(false, true)"
-    >
-      <search-field v-model="modalInputText" @enter="toggleModal(false, true)"/>
-    </modal>
+      <modal
+        v-if="modalShown"
+        header="Vnesi posamezno besedo ali več besed, ločenih z vejico."
+        button="Potrdi"
+        @close="toggleModal(false)"
+        @ok="toggleModal(false, true)"
+      >
+        <search-field v-model="modalInputText" @enter="toggleModal(false, true)"/>
+      </modal>
+    </div>
   </card-wrapper>
 </template>
 
@@ -105,6 +111,7 @@ import PTabs from 'components/Tabs.vue';
 import SearchField from 'components/SearchField.vue';
 import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
+import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
   components: {
@@ -118,6 +125,7 @@ export default {
     SearchField,
     Tag,
     TextFrame,
+    ScrollShadow,
   },
   mixins: [common],
   name: 'SkupineBesed',
@@ -315,6 +323,18 @@ export default {
     font-size: 11px;
     color: #555555;
     white-space: nowrap;
+  }
+}
+
+#skupine-besed {
+  /deep/ .p-tabs .p-tabs-content,
+  /deep/ .p-tabs .p-tabs-content .tab-content {
+    overflow-y: visible;
+    overflow-x: visible;
+  }
+
+  .results {
+    margin-top: 6px;
   }
 }
 </style>
