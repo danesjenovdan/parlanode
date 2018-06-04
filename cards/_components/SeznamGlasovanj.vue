@@ -17,7 +17,7 @@
       </div>
       <div class="filter tag-dropdown">
         <div class="filter-label" v-t="'seznam-glasovanj.working-body'"></div>
-        <search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></search-dropdown>
+        <search-dropdown :items="allTags" :placeholder="tagPlaceholder"></search-dropdown>
       </div>
     </div>
     <div id="votingCard" class="date-list">
@@ -91,6 +91,7 @@
 </template>
 
 <script>
+import { uniq, flatMap, intersection } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
 
@@ -107,6 +108,10 @@ export default {
       required: true,
       type: Object,
     },
+    filters: {
+      type: Object,
+      default: {},
+    },
     showFilters: {
       type: Boolean,
       default: true,
@@ -120,10 +125,15 @@ export default {
       { id: true, color: 'binary-for', label: this.$t('seznam-glasovanj.vote-passed'), selected: false },
       { id: false, color: 'binary-against', label: this.$t('seznam-glasovanj.vote-not-passed'), selected: false },
     ];
+    if (this.filters.results) {
+      allResults.forEach((r) => {
+        r.selected = this.filters.results.indexOf(r.id) !== -1;
+      });
+    }
 
     const allTags = this.processTags();
 
-    const textFilter = '';
+    const textFilter = this.filters && this.filters.text ? this.filters.text : '';
 
     return {
       textFilter,
@@ -158,18 +168,6 @@ export default {
         ? this.$t('seznam-glasovanj.selected-placeholder', { num: this.selectedTags.length })
         : this.$t('seznam-glasovanj.select-placeholder');
     },
-    dropdownItems() {
-      const validTags = [];
-
-      this.votes.forEach((vote) => {
-        vote.tags.forEach((tag) => {
-          if (validTags.indexOf(tag) === -1) validTags.push(tag);
-        });
-      });
-      return {
-        tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-      };
-    },
     selectedTags() {
       return this.allTags
         .filter(tag => tag.selected)
@@ -180,7 +178,6 @@ export default {
         .map(result => result.id);
     },
   },
-
   methods: {
     processVotes() {
       const votes = this.data.votes.map((e) => {
@@ -217,14 +214,23 @@ export default {
       }
       return text;
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
+    emitFiltersChanged() {
+      this.$emit('filters-changed', {
+        text: this.textFilter,
+        tags: this.selectedTags,
+        results: this.selectedResults,
+      });
+    },
+  },
+  watch: {
+    textFilter() {
+      this.emitFiltersChanged();
+    },
+    selectedTags() {
+      this.emitFiltersChanged();
+    },
+    selectedResults() {
+      this.emitFiltersChanged();
     },
   },
 };
