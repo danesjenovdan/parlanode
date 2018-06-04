@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    contentHeight="518px"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
   >
@@ -16,7 +15,9 @@
     </div>
 
     <div v-if="data.response.numFound === 0" class="no-results">Brez zadetkov.</div>
-    <pie-chart v-else :data="pieData" />
+    <div v-else id="pie-chart">
+      <pie-chart :data="pieData" />
+    </div>
   </card-wrapper>
 </template>
 
@@ -62,3 +63,16 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import '~parlassets/scss/breakpoints';
+
+#pie-chart {
+  height: 518px;
+
+  @include respond-to(mobile) {
+    height: auto;
+    max-height: 518px;
+  }
+}
+</style>

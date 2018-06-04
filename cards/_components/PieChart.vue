@@ -208,5 +208,12 @@ export default {
 <style lang="scss">
 .partychart2 {
   height: 100%;
+
+  svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 100%;
+  }
 }
 </style>

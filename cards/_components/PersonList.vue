@@ -57,8 +57,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/breakpoints';
+
 #person-list {
   overflow-y: auto;
   height: 518px;
+
+  @include respond-to(mobile) {
+    height: auto;
+    max-height: 518px;
+  }
 }
 </style>
