@@ -1,7 +1,5 @@
 <template>
   <card-wrapper
-    contentHeight="518px"
-    contentFrontScroll="auto"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"

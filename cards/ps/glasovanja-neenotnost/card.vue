@@ -47,28 +47,36 @@
       </div>
     </div>
 
-    <div :class="['results', {'is-loading': loading }]">
-      <template v-for="day in filteredVotingDays">
-        <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
-        <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
-          <div class="disunion">
-            <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
-            <div class="text">neenotnost</div>
-          </div>
-          <div class="name">{{ ballot.text }}</div>
-          <div class="result">
-            <template v-if="ballot.result">
-              <i class="accepted glyphicon glyphicon-ok"></i>
-              <div class="text">sprejet</div>
-            </template>
-            <template v-else>
-              <i class="not-accepted glyphicon glyphicon-remove"></i>
-              <div class="text">zavrnjen</div>
-            </template>
-          </div>
-        </a>
-      </template>
-    </div>
+    <scroll-shadow ref="shadow">
+      <div :class="['results', {'is-loading': loading }]" @scroll="$refs.shadow.check($event.currentTarget)">
+        <template v-for="day in filteredVotingDays">
+          <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
+          <a
+            v-for="ballot in day.ballots"
+            :key="ballot.id_parladata"
+            target="_blank"
+            class="ballot"
+            :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
+          >
+            <div class="disunion">
+              <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
+              <div class="text">neenotnost</div>
+            </div>
+            <div class="name">{{ ballot.text }}</div>
+            <div class="result">
+              <template v-if="ballot.result">
+                <i class="accepted glyphicon glyphicon-ok"></i>
+                <div class="text">sprejet</div>
+              </template>
+              <template v-else>
+                <i class="not-accepted glyphicon glyphicon-remove"></i>
+                <div class="text">zavrnjen</div>
+              </template>
+            </div>
+          </a>
+        </template>
+      </div>
+    </scroll-shadow>
   </card-wrapper>
 </template>
 
@@ -80,9 +88,16 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import Toggle from 'components/Toggle.vue';
 import common from 'mixins/common';
+import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
-  components: { DateRow, PSearchDropdown, StripedButton, Toggle },
+  components: {
+    DateRow,
+    PSearchDropdown,
+    StripedButton,
+    Toggle,
+    ScrollShadow,
+  },
   mixins: [common],
   name: 'GlasovanjaNeenotnost',
   data() {

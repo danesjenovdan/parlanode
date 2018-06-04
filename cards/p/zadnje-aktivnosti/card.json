@@ -3,7 +3,7 @@
   "name": "Zadnje aktivnosti",
   "dataUrl": "https://analize.parlameter.si/v1/p/getLastActivity",
   "type": "poslanec",
-  "lastUpdate": "2018-05-09T12:33:20.925Z",
+  "lastUpdate": "2018-05-23T18:57:58.197Z",
   "method": "zadnje-aktivnosti",
   "group": "p",
   "big": false,

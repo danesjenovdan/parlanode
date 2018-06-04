@@ -3,7 +3,7 @@
   "name": "Zadnja seja",
   "type": "seje",
   "dataUrl": "https://analize.parlameter.si/v1/s/getLastSessionLanding",
-  "lastUpdate": "2018-05-10T15:56:42.149Z",
+  "lastUpdate": "2018-05-25T10:50:37.530Z",
   "method": "zadnja-seja",
   "group": "c",
   "big": true,

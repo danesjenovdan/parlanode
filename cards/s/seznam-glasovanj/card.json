@@ -3,7 +3,7 @@
   "name": "Druga glasovanja",
   "dataUrl": "https://analize.parlameter.si/v1/s/getMotionOfSession",
   "type": "seje",
-  "lastUpdate": "2018-06-04T13:18:06.650Z",
+  "lastUpdate": "2018-05-25T10:51:14.044Z",
   "method": "seznam-glasovanj",
   "group": "s",
   "big": true,
