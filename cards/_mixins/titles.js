@@ -16,4 +16,3 @@ export const partyTitle = {
       `${context.cardData.name} - ${partyObject.acronym} | ${side}`;
   },
 };
-
