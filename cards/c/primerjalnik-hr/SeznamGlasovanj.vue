@@ -1,59 +1,61 @@
 <template>
   <div id="seznam-glasovanj">
-    <div id="votingCard" class="date-list">
-      <div class="session_voting">
-        <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
-          <div class="col-md-1">
-            <div :class="vote.accepted">
-              <p>
-                <i :class="vote.accepted_glyph"></i>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-11 border-left">
-            <div class="col-md-6">
-              <div class="session_title">
+    <scroll-shadow ref="shadow">
+      <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
+        <div class="session_voting">
+          <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
+            <div class="col-md-1">
+              <div :class="vote.accepted">
                 <p>
-                  {{ getVoteText(vote) }}
+                  <i :class="vote.accepted_glyph"></i>
                 </p>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="session_votes">
-                <div class="progress smallbar">
-                  <div class="progress-bar funblue" v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                    <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
-                  </div>
-                  <div class="progress-bar fontblue" v-bind:style="{ width: vote.percent_against + '%' }">
-                    <span class="sr-only">{{ vote.percent_against }}% votes against</span>
-                  </div>
-                  <div class="progress-bar noblue" v-bind:style="{ width: vote.percent_abstain + '%' }">
-                    <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
-                  </div>
-                  <div class="progress-bar ignoreblue" v-bind:style="{ width: vote.percent_not_present + '%' }">
-                    <span class="sr-only">{{ vote.percent_not_present }}% votes not present</span>
-                  </div>
+            <div class="col-md-11 border-left">
+              <div class="col-md-6">
+                <div class="session_title">
+                  <p>
+                    {{ getVoteText(vote) }}
+                  </p>
                 </div>
-                <div class="row">
-                  <div class="col-xs-3">
-                    {{ vote.votes_for }}
-                    <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
-                    <div class="indicator ney">&nbsp;</div>
+              </div>
+              <div class="col-md-6">
+                <div class="session_votes">
+                  <div class="progress smallbar">
+                    <div class="progress-bar funblue" v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                      <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
+                    </div>
+                    <div class="progress-bar fontblue" v-bind:style="{ width: vote.percent_against + '%' }">
+                      <span class="sr-only">{{ vote.percent_against }}% votes against</span>
+                    </div>
+                    <div class="progress-bar noblue" v-bind:style="{ width: vote.percent_abstain + '%' }">
+                      <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
+                    </div>
+                    <div class="progress-bar ignoreblue" v-bind:style="{ width: vote.percent_not_present + '%' }">
+                      <span class="sr-only">{{ vote.percent_not_present }}% votes not present</span>
+                    </div>
                   </div>
-                  <div class="col-xs-3">
-                    {{ vote.against }}
-                    <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
-                    <div class="indicator aye">&nbsp;</div>
-                  </div>
-                  <div class="col-xs-3">
-                    {{ vote.abstain }}
-                    <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
-                    <div class="indicator not">&nbsp;</div>
-                  </div>
-                  <div class="col-xs-3">
-                    {{ vote.not_present }}
-                    <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
-                    <div class="indicator abstention">&nbsp;</div>
+                  <div class="row">
+                    <div class="col-xs-3">
+                      {{ vote.votes_for }}
+                      <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
+                      <div class="indicator ney">&nbsp;</div>
+                    </div>
+                    <div class="col-xs-3">
+                      {{ vote.against }}
+                      <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
+                      <div class="indicator aye">&nbsp;</div>
+                    </div>
+                    <div class="col-xs-3">
+                      {{ vote.abstain }}
+                      <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
+                      <div class="indicator not">&nbsp;</div>
+                    </div>
+                    <div class="col-xs-3">
+                      {{ vote.not_present }}
+                      <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
+                      <div class="indicator abstention">&nbsp;</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -61,13 +63,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </scroll-shadow>
   </div>
 </template>
 
 <script>
 import StripedButton from 'components/StripedButton.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
+import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
   name: 'SeznamGlasovanj',
@@ -75,6 +78,7 @@ export default {
   components: {
     StripedButton,
     SearchDropdown,
+    ScrollShadow,
   },
 
   props: {

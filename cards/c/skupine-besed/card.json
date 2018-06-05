@@ -3,9 +3,9 @@
   "name": "Skupine besed",
   "type": "empty",
   "dataUrl": "https://data.parlameter.si/v1/getNumberOfSpeeches/",
-  "lastUpdate": "2018-05-29T14:04:42.204Z",
+  "lastUpdate": "2018-06-04T16:18:15.376Z",
   "method": "skupine-besed",
   "group": "c",
   "big": true,
-  "high": false
+  "high": true
 }
