@@ -44,6 +44,7 @@ export default {
     box-shadow: inset 0px 11.5px 4px -10px rgba(0, 0, 0, 0.24), inset 0px 11.5px 6px -10px rgba(0, 0, 0, 0.24);
     pointer-events: none;
     opacity: 0;
+    z-index: 3;
   }
 }
 
