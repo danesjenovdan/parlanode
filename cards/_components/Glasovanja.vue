@@ -1,10 +1,10 @@
 <template>
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
-    content-class="full card-scroll"
+    content-class="full"
     :card-url="cardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
       <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji.</p>
       <p class="info-text heading">METODOLOGIJA</p>
@@ -18,7 +18,7 @@
         <p>Podatki trenutno niso na voljo.</p>
       </div>
     </div>
-    <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
+    <div class="filters">
       <div class="filter text-filter">
         <div class="filter-label">Išči po naslovu glasovanja</div>
         <p-search-field v-model="textFilter" />
@@ -31,27 +31,36 @@
         <div class="filter-label">Matično delovno telo</div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
-      <div v-if="this.type==='person'" class="filter option-party-buttons">
-        <div v-for="option in allOptions"
-        :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
-        @click="toggleOption(option.id)">{{ option.label }}</div>
+      <div v-if="this.type === 'person'" class="filter option-party-buttons">
+        <div
+          v-for="option in allOptions"
+          :key="option.id"
+          :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
+          @click="toggleOption(option.id)"
+        >
+          {{ option.label }}
+        </div>
       </div>
-      <div v-if="this.type==='party'" class="filter text-filter">
+      <div v-if="this.type === 'party'" class="filter text-filter">
         <div class="filter-label">Razvrsti po</div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
 
-    <div id="card-votes" class="votes stickinme date-list card-scroll__wrapper">
-      <template v-for="votingDay in filteredVotingDays">
-        <div v-if="type === 'person' || selectedSort === 'date'" class="date">{{ votingDay.date }}</div>
-        <div>
-          <div v-for="ballot in votingDay.ballots">
-            <ballot :ballot="ballot" type="person"></ballot>
+    <scroll-shadow ref="shadow">
+      <div id="card-votes" class="votes stickinme date-list" @scroll="$refs.shadow.check($event.currentTarget)">
+        <template v-for="votingDay in filteredVotingDays">
+          <div v-if="type === 'person' || selectedSort === 'date'" class="date" :key="`${votingDay.date}-1`">
+            {{ votingDay.date }}
           </div>
-        </div>
-      </template>
-    </div>
+          <div :key="`${votingDay.date}-2`">
+            <div v-for="ballot in votingDay.ballots" :key="ballot.vote_id">
+              <ballot :ballot="ballot" type="person"></ballot>
+            </div>
+          </div>
+        </template>
+      </div>
+    </scroll-shadow>
   </card-wrapper>
 </template>
 
@@ -59,19 +68,24 @@
 import { capitalize } from 'lodash';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
-import DateRow from 'components/DateRow.vue';
 import Toggle from 'components/Toggle.vue';
 import Ballot from 'components/Ballot.vue';
+import ScrollShadow from 'components/ScrollShadow.vue';
 
 import common from 'mixins/common';
-import scroll from 'mixins/scroll';
 
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
 export default {
-  components: { PSearchDropdown, PSearchField, DateRow, Toggle, Ballot },
-  mixins: [common, scroll],
+  components: {
+    PSearchDropdown,
+    PSearchField,
+    Toggle,
+    Ballot,
+    ScrollShadow,
+  },
+  mixins: [common],
   computed: {
     tagPlaceholder() {
       return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
@@ -202,12 +216,6 @@ export default {
 
     };
   },
-  mounted() {
-    this.card.shadowElement = 'card-votes';
-    if (document) {
-      document.getElementById(this.card.shadowElement).addEventListener('scroll', this.checkScrollPosition);
-    }
-  },
   methods: {
     toggleOption(optionId) {
       const clickedOption = this.allOptions.filter(option => option.id === optionId)[0];
@@ -253,7 +261,7 @@ export default {
                   : `Glasovali ${ballot.option.toUpperCase()}`;
               }
 
-              if (ballot.result !== 'none') {
+              if (ballot.result !== 'none' && ballot.result != null) {
                 ballotClone.outcome = ballot.result === true ? 'Sprejet' : 'Zavrnjen';
               }
 
@@ -310,124 +318,131 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '~parlassets/scss/breakpoints';
-  @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/colors';
 
-  .toggle {
-    height: 51px !important;
-    line-height: 51px !important;
+#card-votes {
+  height: 429px;
+  overflow-y: auto;
+}
+
+.toggle {
+  height: 51px !important;
+  line-height: 51px !important;
+}
+
+.card-content-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  padding-bottom: 12px;
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+    min-height: 154px;
   }
+  $label-height: 26px;
 
-  .card-content-front {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
 
-  .filters {
-    @include respond-to(mobile) {
-      flex-wrap: wrap;
-      min-height: 154px;
-    }
-    $label-height: 26px;
+  .option-party-buttons {
+    @include show-for(desktop, flex);
 
-    .option-party-buttons {
-      @include show-for(desktop, flex);
+    width: 27.5%;
+    padding-top: $label-height;
 
-      width: 27.5%;
-      padding-top: $label-height;
-
-      .party-button:not(:last-child) {
-        margin-right: 3px;
-      }
-    }
-
-    .text-filter {
-      @include respond-to(desktop) { width: 26%; }
-
-      width: 100%;
-
-      .text-filter-input {
-        background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: right 9px center;
-        border: 1px solid #c8c8c8;
-        font-size: 16px;
-        height: 51px;
-        line-height: 27px;
-        outline: none;
-        padding: 12px 42px 12px 14px;
-        width: 100%;
-      }
-    }
-
-    .tag-dropdown {
-      @include respond-to(desktop) { width: 26%; }
-
-      width: 100%;
-    }
-
-    .month-dropdown {
-      @include show-for(desktop);
-
-      width: 17.5%;
+    .party-button:not(:last-child) {
+      margin-right: 3px;
     }
   }
 
-  .votes {
-    flex: 1;
-    // list-style: none;
-    overflow-y: auto;
-    position: relative;
+  .text-filter {
+    @include respond-to(desktop) { width: 26%; }
 
-    &:empty::after {
-      color: #c8c8c8;
-      content: "Ni rezultatov.";
-      left: calc(50% - 41px);
-      position: absolute;
-      top: calc(50% - 10px);
-    }
+    width: 100%;
 
-    ul {
-      list-style: none;
-      margin: 0 0 7px;
-      padding: 0;
-    }
-
-    li {
-      display: flex;
-      font-weight: 500;
+    .text-filter-input {
+      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: right 9px center;
+      border: 1px solid #c8c8c8;
       font-size: 16px;
-      line-height: 18px;
-
-      .date {
-        height: auto;
-        margin: 0 0 -18px 16px;
-        padding: 16px 0;
-        width: 54px;
-      }
+      height: 51px;
+      line-height: 27px;
+      outline: none;
+      padding: 12px 42px 12px 14px;
+      width: 100%;
     }
   }
 
-  .filters {
-    .filter {
-      @include respond-to(desktop) {
-        margin-right: 10px;
-      }
+  .tag-dropdown {
+    @include respond-to(desktop) { width: 26%; }
 
-      @include respond-to(mobile) {
-        width: 100%;
-      }
+    width: 100%;
+  }
 
-      &:last-child {
-        margin-right: 0;
-      }
+  .month-dropdown {
+    @include show-for(desktop);
+
+    width: 17.5%;
+  }
+}
+
+.votes {
+  flex: 1;
+  // list-style: none;
+  overflow-y: auto;
+  position: relative;
+
+  &:empty::after {
+    color: #c8c8c8;
+    content: "Ni rezultatov.";
+    left: calc(50% - 41px);
+    position: absolute;
+    top: calc(50% - 10px);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0 7px;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+
+    .date {
+      height: auto;
+      margin: 0 0 -18px 16px;
+      padding: 16px 0;
+      width: 54px;
+    }
+  }
+}
+
+.filters {
+  .filter {
+    @include respond-to(desktop) {
+      margin-right: 10px;
     }
 
-    .filter-label {
-      overflow: hidden;
-      height: 26px;
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 
+  .filter-label {
+    overflow: hidden;
+    height: 26px;
+  }
+}
 </style>

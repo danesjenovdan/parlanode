@@ -6,7 +6,10 @@ import cardData from 'cardPath/card.json';
 import data from 'cardPath/data.json';
 import parlaState from 'cardPath/state.json';
 import i18nDefault from 'i18n/defaults.json';
-import i18nCard from 'i18n/card.json';
+let i18nCard = {}
+try {
+  i18nCard = require('i18n/card.json');
+} catch(e) {}
 
 Vue.use(VueI18n);
 

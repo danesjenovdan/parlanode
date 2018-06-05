@@ -23,7 +23,10 @@ module.exports = (cardPath) => {
   // eslint-disable-next-line global-require, import/no-dynamic-require
   const i18nDefault = require(path.resolve(__dirname, '_i18n', 'defaults.json'));
   // eslint-disable-next-line global-require, import/no-dynamic-require
-  const i18nCard = require(path.resolve(__dirname, '_i18n', `${cardDir}.json`));
+  let i18nCard = {}
+  try {
+    i18nCard = require(path.resolve(__dirname, '_i18n', `${cardDir}.json`));
+  } catch(e) {}
   const i18n = new VueI18n({
     locale: process.env.CARD_LANG || 'sl',
     messages: _.merge({}, i18nDefault, i18nCard),
