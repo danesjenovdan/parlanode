@@ -1,9 +1,9 @@
 {
-  "_id": "zakonodaja-iskanje",
+  "_id": "s_zakonodaja-iskanje",
   "name": "Zakoni, ki vsebujejo iskalni niz",
   "dataUrl": "https://isci.parlameter.si/l",
   "type": "empty",
-  "lastUpdate": "2018-01-26T08:53:11.077Z",
+  "lastUpdate": "2018-05-28T14:25:07.551Z",
   "method": "zakonodaja-iskanje",
   "group": "s",
   "big": true,

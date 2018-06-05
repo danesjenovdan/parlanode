@@ -1,0 +1,11 @@
+{
+  "_id": "s_nastopi-v-katerih-je-bil-iskalni-niz-izrecen",
+  "name": "Nastopi, v katerih je bil iskalni niz izrečen",
+  "dataUrl": "https://isci.parlameter.si/q",
+  "type": "empty",
+  "lastUpdate": "2018-05-30T13:47:26.031Z",
+  "method": "nastopi-v-katerih-je-bil-iskalni-niz-izrecen",
+  "group": "s",
+  "big": true,
+  "high": false
+}

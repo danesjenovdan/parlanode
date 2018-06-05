@@ -11,8 +11,9 @@ export const getPersonPortrait = person =>
   `${PORTRAIT_ROOT_URL}${person.gov_id}.png`;
 
 export const getPartyLink = (party) => {
-  if (party.acronym.indexOf('NeP') > -1) return '';
-
+  if (!party.acronym || party.acronym.indexOf('NeP') > -1) {
+    return '';
+  }
   return urlsData.base +
          urlsData.partyLink.base +
          urlsData.party[party.id].acronym +

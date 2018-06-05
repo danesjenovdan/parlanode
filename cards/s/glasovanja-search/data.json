@@ -1,0 +1,1078 @@
+{
+  "search_query": "policija",
+  "data": [
+    {
+      "created_for": "2015-09-21",
+      "session": {
+        "name": "11. redna seja",
+        "date_ts": "2015-09-21T02:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "21. 9. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 6674,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Resolucija o dolgoro\u010dnem razvojnem programu policije do leta 2025 - Glasovanje",
+        "motion_id": 5773,
+        "against": 0,
+        "votes_for": 72,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 18,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Glasovanje o zakonu v celoti",
+        "motion_id": 6871,
+        "against": 21,
+        "votes_for": 53,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 16,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2015-11-04",
+      "session": {
+        "name": "23. izredna seja",
+        "date_ts": "2015-11-04T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "4. 11. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5598,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Zakon o spremembi Zakona o organiziranosti in delu v policiji - Glasovanje o zakonu v celoti",
+        "motion_id": 6541,
+        "against": 0,
+        "votes_for": 79,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 11,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-12-11",
+      "session": {
+        "name": "36. redna seja",
+        "date_ts": "2017-12-11T01:00:00",
+        "updated_at": "21. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "11. 12. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9922,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "text":
+          "Zakon o dopolnitvah Zakona o organiziranosti in delu v policiji - Glasovanje o zakonu v celoti",
+        "motion_id": 7939,
+        "against": 3,
+        "votes_for": 60,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 22,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2015-11-16",
+      "session": {
+        "name": "13. redna seja",
+        "date_ts": "2015-11-16T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "16. 11. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5583,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "text":
+          "Prora\u010dun Republike Slovenije za leto 2016 - Amandma: 1714 Policija (080201) 11.11.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 5568,
+        "against": 51,
+        "votes_for": 25,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 10,
+        "result": null
+      }
+    },
+    {
+      "created_for": "2016-12-12",
+      "session": {
+        "name": "25. redna seja",
+        "date_ts": "2016-12-12T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "12. 12. 2016",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 7654,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 4,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Eviden\u010dni sklep o primernosti predloga zakona",
+        "motion_id": 6703,
+        "against": 15,
+        "votes_for": 53,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 18,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2016-11-14",
+      "session": {
+        "name": "24. redna seja",
+        "date_ts": "2016-11-14T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "14. 11. 2016",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5572,
+        "in_review": true
+      },
+      "results": {
+        "abstain": 4,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o organiziranosti in delu v policiji - Glasovanje o zakonu v celoti",
+        "motion_id": 6793,
+        "against": 0,
+        "votes_for": 75,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 11,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Eviden\u010dni sklep da se tretja obravnava opravi na isti seji 14.2.2017",
+        "motion_id": 6841,
+        "against": 17,
+        "votes_for": 54,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 18,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 14,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 43. \u010dlenu 7.2.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
+        "motion_id": 6842,
+        "against": 49,
+        "votes_for": 7,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 20,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 42. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 6843,
+        "against": 45,
+        "votes_for": 26,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 19,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 3,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 41. \u010dlenu 7.2.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
+        "motion_id": 6844,
+        "against": 57,
+        "votes_for": 10,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 20,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 6,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 35. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 6845,
+        "against": 45,
+        "votes_for": 18,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 21,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 35. \u010dlenu 7.2.2017 [ZL - Poslanska skupina Zdru\u017eena levica]",
+        "motion_id": 6846,
+        "against": 65,
+        "votes_for": 5,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 19,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 14. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 6847,
+        "against": 46,
+        "votes_for": 24,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 19,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 5,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
+        "motion_id": 6848,
+        "against": 12,
+        "votes_for": 55,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 18,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 9. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 6849,
+        "against": 42,
+        "votes_for": 26,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 22,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-02-13",
+      "session": {
+        "name": "27. redna seja",
+        "date_ts": "2017-02-13T01:00:00",
+        "updated_at": "19. 7. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "13. 2. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9158,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 6. \u010dlenu 7.2.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 6850,
+        "against": 48,
+        "votes_for": 23,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 18,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2015-02-19",
+      "session": {
+        "name": "9. izredna seja",
+        "date_ts": "2015-02-19T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "19. 2. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5612,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 2,
+        "text":
+          "Rebalans prora\u010duna Republike Slovenije za leto 2015 - Amandma: 1714 Policija (080202) 16.2.2015 [ZaAB - Poslanska skupina Zavezni\u0161tvo Alenke Bratu\u0161ek]",
+        "motion_id": 5754,
+        "against": 47,
+        "votes_for": 28,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 13,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2015-02-19",
+      "session": {
+        "name": "9. izredna seja",
+        "date_ts": "2015-02-19T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "19. 2. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5612,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Rebalans prora\u010duna Republike Slovenije za leto 2015 - Amandma: 1714 Policija (080201) 16.2.2015 [ZaAB - Poslanska skupina Zavezni\u0161tvo Alenke Bratu\u0161ek]",
+        "motion_id": 5755,
+        "against": 48,
+        "votes_for": 28,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 13,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2015-02-19",
+      "session": {
+        "name": "9. izredna seja",
+        "date_ts": "2015-02-19T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "19. 2. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5612,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Rebalans prora\u010duna Republike Slovenije za leto 2015 - Amandma: 1714 Policija (080201) 16.2.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 5756,
+        "against": 50,
+        "votes_for": 28,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 11,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2014-11-17",
+      "session": {
+        "name": "2. redna seja",
+        "date_ts": "2014-11-17T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "17. 11. 2014",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 6683,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje Anje Bah \u017dibert v zvezi z var\u010devalnimi ukrepi v policiji).",
+        "motion_id": 6302,
+        "against": 52,
+        "votes_for": 17,
+        "is_outlier": false,
+        "has_outliers": false,
+        "not_present": 20,
+        "result": null
+      }
+    },
+    {
+      "created_for": "2015-11-04",
+      "session": {
+        "name": "23. izredna seja",
+        "date_ts": "2015-11-04T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "4. 11. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5598,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Zakon o spremembi Zakona o organiziranosti in delu v policiji - Amandma: K 1. \u010dlenu 4.11.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 6542,
+        "against": 43,
+        "votes_for": 36,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 11,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2015-11-04",
+      "session": {
+        "name": "23. izredna seja",
+        "date_ts": "2015-11-04T01:00:00",
+        "updated_at": "14. 6. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "4. 11. 2015",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 5598,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "text":
+          "Zakon o spremembi Zakona o organiziranosti in delu v policiji - Amandma: K 1. \u010dlenu 4.11.2015 [NP - Poslanska skupina nepovezanih poslancev]",
+        "motion_id": 6543,
+        "against": 43,
+        "votes_for": 35,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 11,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-12-11",
+      "session": {
+        "name": "36. redna seja",
+        "date_ts": "2017-12-11T01:00:00",
+        "updated_at": "21. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "11. 12. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9922,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 6,
+        "text":
+          "Zakon o dopolnitvah Zakona o organiziranosti in delu v policiji - Amandma: K 3.a. \u010dlenu 7.12.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 7940,
+        "against": 10,
+        "votes_for": 55,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 19,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-12-11",
+      "session": {
+        "name": "36. redna seja",
+        "date_ts": "2017-12-11T01:00:00",
+        "updated_at": "21. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "11. 12. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9922,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "text":
+          "Zakon o dopolnitvah Zakona o organiziranosti in delu v policiji - Amandma: K 3. \u010dlenu 6.12.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 7941,
+        "against": 2,
+        "votes_for": 61,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 23,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-12-11",
+      "session": {
+        "name": "36. redna seja",
+        "date_ts": "2017-12-11T01:00:00",
+        "updated_at": "21. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "11. 12. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9922,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "text":
+          "Zakon o dopolnitvah Zakona o organiziranosti in delu v policiji - Amandma: K 2. \u010dlenu 7.12.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 7942,
+        "against": 3,
+        "votes_for": 60,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 23,
+        "result": true
+      }
+    },
+    {
+      "created_for": "2017-07-10",
+      "session": {
+        "name": "32. redna seja",
+        "date_ts": "2017-07-10T02:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "10. 7. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9682,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 6,
+        "text":
+          "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi s postopki policije, povezanimi s pranjem denarja v vi\u0161ini milijarde dolarjev v letih 2009 \u2013 2010 in kasneje.)",
+        "motion_id": 7351,
+        "against": 48,
+        "votes_for": 25,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 11,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2017-07-10",
+      "session": {
+        "name": "32. redna seja",
+        "date_ts": "2017-07-10T02:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "10. 7. 2017",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 9682,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 4,
+        "text":
+          "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje \u017dana Mahni\u010da v zvezi z ukrepanjem policije na javnem zborovanju dne 29. 6. 2017 na Kongresnem trgu v Ljubljani.)",
+        "motion_id": 7363,
+        "against": 52,
+        "votes_for": 23,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 11,
+        "result": false
+      }
+    },
+    {
+      "created_for": "2014-11-17",
+      "session": {
+        "name": "2. redna seja",
+        "date_ts": "2014-11-17T01:00:00",
+        "updated_at": "17. 12. 2017",
+        "org": {
+          "acronym": "DZ",
+          "id": 95,
+          "name": "Dr\u017eavni zbor",
+          "is_coalition": false
+        },
+        "date": "17. 11. 2014",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "id": 95,
+            "name": "Dr\u017eavni zbor",
+            "is_coalition": false
+          }
+        ],
+        "id": 6683,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 0,
+        "text":
+          "Predlog sklepa (razprava o odgovoru ministrice za notranje zadeve mag. Vesne Gy\u00f6rk\u00f6s \u017dnidar na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi s spo\u0161tovanjem dolo\u010dil II. poglavja Zakona o organiziranosti in delu v policiji).",
+        "motion_id": 6299,
+        "against": 54,
+        "votes_for": 18,
+        "is_outlier": false,
+        "has_outliers": true,
+        "not_present": 17,
+        "result": null
+      }
+    }
+  ]
+}
