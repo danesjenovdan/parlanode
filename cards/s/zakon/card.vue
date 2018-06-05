@@ -169,9 +169,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
-
 <style lang="scss">
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/breakpoints';
@@ -192,6 +189,17 @@ export default {
   }
   #votingCard {
     max-height: 372px;
+  }
+  .p-tabs .p-tabs-content,
+  .p-tabs .p-tabs-content .tab-content {
+    overflow-y: visible;
+    overflow-x: visible;
+
+    .scroll-shadow-top::after {
+      left: -20px;
+      right: -20px;
+      width: auto;
+    }
   }
 
   .result-container {

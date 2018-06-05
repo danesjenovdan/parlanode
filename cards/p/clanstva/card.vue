@@ -10,32 +10,18 @@
       <p class="info-text">Podatki o članstvih pridobljeni s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
-    <p-tabs>
-      <p-tab
-        v-for="(tabContents, tabName) in tabs"
-        :key="tabName"
-        :label="tabName"
-        variant="dark">
-        <ul class="membership-list">
-          <template v-if="tabContents.length">
-            <li
-              class="key"
-              v-for="membershipItem in tabContents"
-              :key="membershipItem.name">
-              <template v-if="tabName === 'Delovna telesa'">
-                <template v-if="membershipItem.name === 'Kolegij predsednika državnega zbora'">
-                  {{ membershipItem.name }}
-                </template>
-                <a v-else class="funblue-light-hover" target="_blank" :href="`https://glej.parlameter.si/wb/getWorkingBodies/${membershipItem.org_id}?frame=true&altHeader=true`">{{ membershipItem.name }}</a>
-              </template>
-              <a v-else-if="membershipItem.url != null" class="funblue-light-hover" target="_blank" :href="membershipItem.url">{{ membershipItem.name }}</a>
-              <template v-else>{{ membershipItem.name }}</template>
-            </li>
-          </template>
-          <div v-else class="no-results"><i>Brez članstev.</i></div>
-        </ul>
-      </p-tab>
-    </p-tabs>
+    <div class="memberships">
+      <p-tabs>
+        <p-tab
+          v-for="(tabContents, tabName) in tabs"
+          :key="tabName"
+          :label="tabName"
+          variant="dark"
+        >
+          <membership-list :name="tabName" :contents="tabContents" />
+        </p-tab>
+      </p-tabs>
+    </div>
   </card-wrapper>
 </template>
 
@@ -47,9 +33,14 @@ import { member as memberAltHeader } from 'mixins/altHeaders';
 import { memberTitle } from 'mixins/titles';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
+import MembershipList from 'components/MembershipList.vue';
 
 export default {
-  components: { PTab, PTabs },
+  components: {
+    PTab,
+    PTabs,
+    MembershipList,
+  },
   mixins: [common, memberAltHeader, memberOverviewUrl, memberTitle],
   name: 'Clanstva',
   data() {
@@ -85,36 +76,16 @@ export default {
       return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
     },
   },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-.p-tabs {
-  flex: 1;
-  height: 180px;
+.tab-content {
+  overflow-y: hidden;
 }
-
-.membership-list {
-  margin: 13px 0;
-  padding: 0;
-  list-style: none;
-
-  .key {
-    line-height: 1.3em;
-    padding: 4px 0;
-    text-align: left;
-    width: 100%;
-  }
+.memberships /deep/ .p-tabs .p-tabs-content,
+.memberships /deep/ .p-tabs .p-tabs-content .tab-content {
+  overflow-y: visible;
+  overflow-x: visible;
 }
 </style>

@@ -48,9 +48,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.questions {
-  margin-top: 0;
-}
-</style>

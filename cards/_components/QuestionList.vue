@@ -1,50 +1,56 @@
 <template>
-  <div class="questions date-list">
-    <div v-for="day in questionDays" :key="day.date">
-      <div class="date">{{ day.date }}</div>
-      <ul>
-        <template v-if="day.questions">
-          <li v-for="question in day.questions" :key="question.id">
-            <div class="parlaicon parlaicon-vprasanje"></div>
-            <div class="motion">
-              <a v-if="showAuthor" class="funblue-light-hover" :href="getPersonLink(question.person)">
-                {{ question.person.name }}
-              </a>
-              {{ getRecipient(question) }}
-              <a target="_blank" class="funblue-light-hover" :href="question.url">
-                {{ question.title }}
-              </a>
-            </div>
-          </li>
-        </template>
-        <template v-else-if="day.events">
-          <li v-for="(event, i) in day.events" :key="`${day.date}-${i}`">
-            <div :class="['parlaicon', getEventIcon(event)]"></div>
-            <div class="motion">
-              <template v-if="event.type === 'ballot'">
-                {{ getEventOptionText(event) }}
-                <a class="funblue-light-hover" :href="getSessionVoteLink(event)">{{ event.vote_name }}</a>
-              </template>
-              <template v-else-if="event.type === 'speech'">
-                <a class="funblue-light-hover" :href="getSessionSpeechLink(event)">{{ getEventOptionText(event) }}</a> na {{ event.session.name }} {{ event.session.org.name }}
-              </template>
-              <template v-else>
-                {{ getEventOptionText(event) }} <a class="funblue-light-hover" :href="event.content_url" target="_blank">{{ event.title }}</a>
-              </template>
-            </div>
-          </li>
-        </template>
-      </ul>
+  <scroll-shadow ref="shadow">
+    <div class="questions date-list" @scroll="$refs.shadow.check($event.currentTarget)">
+      <div v-for="day in questionDays" :key="day.date">
+        <div class="date">{{ day.date }}</div>
+        <ul>
+          <template v-if="day.questions">
+            <li v-for="question in day.questions" :key="question.id">
+              <div class="parlaicon parlaicon-vprasanje"></div>
+              <div class="motion">
+                <a v-if="showAuthor" class="funblue-light-hover" :href="getPersonLink(question.person)">
+                  {{ question.person.name }}
+                </a>
+                {{ getRecipient(question) }}
+                <a target="_blank" class="funblue-light-hover" :href="question.url">
+                  {{ question.title }}
+                </a>
+              </div>
+            </li>
+          </template>
+          <template v-else-if="day.events">
+            <li v-for="(event, i) in day.events" :key="`${day.date}-${i}`">
+              <div :class="['parlaicon', getEventIcon(event)]"></div>
+              <div class="motion">
+                <template v-if="event.type === 'ballot'">
+                  {{ getEventOptionText(event) }}
+                  <a class="funblue-light-hover" :href="getSessionVoteLink(event)">{{ event.vote_name }}</a>
+                </template>
+                <template v-else-if="event.type === 'speech'">
+                  <a class="funblue-light-hover" :href="getSessionSpeechLink(event)">{{ getEventOptionText(event) }}</a> na {{ event.session.name }} {{ event.session.org.name }}
+                </template>
+                <template v-else>
+                  {{ getEventOptionText(event) }} <a class="funblue-light-hover" :href="event.content_url" target="_blank">{{ event.title }}</a>
+                </template>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </div>
     </div>
-  </div>
+  </scroll-shadow>
 </template>
 
 <script>
 import { getPersonLink, getSessionVoteLink, getSessionSpeechLink } from 'components/links';
 import { includes } from 'lodash';
+import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
   name: 'QuestionList',
+  components: {
+    ScrollShadow,
+  },
   props: {
     questionDays: {
       type: Array,
@@ -121,16 +127,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
 
 .questions {
   min-height: 100px;
   flex: 1;
   overflow-y: auto;
-  margin-top: 18px;
   max-height: 100%;
   position: relative;
+  height: 518px;
 
   &:empty::after {
     color: #c8c8c8;

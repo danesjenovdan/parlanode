@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
@@ -48,9 +47,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.questions {
-  margin-top: 0;
-}
-</style>

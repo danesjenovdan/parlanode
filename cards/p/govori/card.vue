@@ -2,19 +2,16 @@
   <govori
     :card-data="$options.cardData"
     type="person"
-  ></govori>
+  />
 </template>
 
 <script>
-import Govori from 'components/Govori.vue'
-
+import Govori from 'components/Govori.vue';
 
 export default {
-  components: { Govori },
   name: 'GovoriPoslanca',
+  components: {
+    Govori,
+  },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

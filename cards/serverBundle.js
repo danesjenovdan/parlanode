@@ -6,7 +6,10 @@ import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
 import Card from 'cardPath/card.vue';
 
 import i18nDefault from 'i18n/defaults.json';
-import i18nCard from 'i18n/card.json';
+let i18nCard = {}
+try {
+  i18nCard = require('i18n/card.json');
+} catch(e) {}
 
 Vue.use(VueI18n);
 
