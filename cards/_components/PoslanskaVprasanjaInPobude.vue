@@ -30,8 +30,9 @@
         <input class="text-filter-input" type="text" v-model="textFilter">
       </div>
     </div>
-
-    <question-list :questionDays="filteredQuestionDays" showAuthor />
+    <div id="vprasanja">
+      <question-list :questionDays="filteredQuestionDays" showAuthor />
+    </div>
   </card-wrapper>
 </template>
 
@@ -236,7 +237,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
 
 .card-content-front {
@@ -245,13 +246,13 @@ export default {
 }
 
 .filters {
-  
+
   $label-height: 26px;
 
   display: flex;
   justify-content: space-between;
 
-  min-height: 68px;
+  min-height: 83px;
 
   .filter-label {
     font-size: 14px;
@@ -400,5 +401,9 @@ export default {
       width: 90px;
     }
   }
+}
+
+#vprasanja /deep/ .questions {
+  height: 435px;
 }
 </style>
