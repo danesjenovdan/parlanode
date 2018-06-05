@@ -1,16 +1,40 @@
 /* globals module */
 const webpack = require('webpack');
+const fs = require('fs');
 const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+function ensureDirs(filePath) {
+  const dirname = path.dirname(filePath);
+  if (fs.existsSync(dirname)) {
+    return true;
+  }
+  ensureDirs(dirname);
+  fs.mkdirSync(dirname);
+}
+
+function createEmptyJsonFile(filePath) {
+  if (!fs.existsSync(filePath)) {
+    ensureDirs(filePath);
+    fs.writeFileSync(filePath, '{}', 'utf8');
+  }
+}
+
 module.exports = (cardPath) => {
+  const cardLang = process.env.CARD_LANG || 'sl';
   // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
   const cardDir = path.resolve(cardPath)
     .replace(/\\/g, '/')
     .split('/')
     .slice(-2)
     .join('/');
+
+  const i18nDefaultPath = path.resolve(__dirname, '_i18n', cardLang, 'defaults.json');
+  createEmptyJsonFile(i18nDefaultPath);
+  const i18nCardPath = path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`);
+  createEmptyJsonFile(i18nCardPath);
+
   return {
     devtool: false,
     module: {
@@ -37,8 +61,8 @@ module.exports = (cardPath) => {
         helpers: `${path.resolve(__dirname)}/_helpers`,
         mixins: `${path.resolve(__dirname)}/_mixins`,
         directives: `${path.resolve(__dirname)}/_directives`,
-        'i18n/card.json$': path.resolve(__dirname, '_i18n', `${cardDir}.json`),
-        i18n: path.resolve(__dirname, '_i18n'),
+        'i18n/card.json$': i18nCardPath,
+        'i18n/defaults.json$': i18nDefaultPath,
       },
     },
     devServer: {
@@ -81,4 +105,3 @@ module.exports = (cardPath) => {
     ],
   };
 };
-

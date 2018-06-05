@@ -14,6 +14,7 @@ Vue.use(VueI18n);
 module.exports = (cardPath) => {
   const config = baseConfig(cardPath);
 
+  const cardLang = process.env.CARD_LANG || 'sl';
   // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
   const cardDir = path.resolve(cardPath)
     .replace(/\\/g, '/')
@@ -21,11 +22,11 @@ module.exports = (cardPath) => {
     .slice(-2)
     .join('/');
   // eslint-disable-next-line global-require, import/no-dynamic-require
-  const i18nDefault = require(path.resolve(__dirname, '_i18n', 'defaults.json'));
+  const i18nDefault = require(path.resolve(__dirname, '_i18n', cardLang, 'defaults.json'));
   // eslint-disable-next-line global-require, import/no-dynamic-require
   let i18nCard = {}
   try {
-    i18nCard = require(path.resolve(__dirname, '_i18n', `${cardDir}.json`));
+    i18nCard = require(path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`));
   } catch(e) {}
   const i18n = new VueI18n({
     locale: process.env.CARD_LANG || 'sl',
@@ -46,7 +47,7 @@ module.exports = (cardPath) => {
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
           VUE_ENV: '"server"',
-          CARD_LANG: JSON.stringify(process.env.CARD_LANG || 'sl'),
+          CARD_LANG: JSON.stringify(cardLang),
         },
       }),
     ]),

@@ -1,0 +1,32 @@
+{
+  "hr": {
+    "yes": "DA",
+    "no": "NE",
+    "copy": "Kopija",
+    "copied": "Kopiran!",
+    "load": "Traži",
+    "confirm": "Potvrdi",
+    "info": {
+      "title": "Info",
+      "methodology": "METODOLOGIJA"
+    },
+    "share": {
+      "title": "Dijelovi",
+      "direct-link": "Izravno povezivanje s karticom"
+    },
+    "embed": {
+      "title": "Preuzimanje",
+      "always-refresh": "Podatke uvijek treba iznova učitati"
+    },
+    "seznam-glasovanj": {
+      "vote-for": "Za",
+      "vote-against": "Protiv",
+      "vote-abstained": "Suzdržan",
+      "vote-not": "Nisu",
+      "select-placeholder": "Izaberi",
+      "selected-placeholder": "Odabranih: {num}",
+      "vote-passed": "Donesen",
+      "vote-not-passed": "Odbijen"
+    }
+  }
+}
