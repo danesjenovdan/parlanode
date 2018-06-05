@@ -7,13 +7,13 @@
     contentHeight="518px"
   >
     <div slot="info">
-      <p class="info-text lead">Kažemo šest zakonov, ki so še v parlamentarni obravnavi, in šest nedavno sprejetih.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Izpostavljene zakone določamo uredniško, in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi. To je edina stvar na Parlametru, ki je ne kurira računalnik, ampak človek.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
     <div class="p-tabs-2col legislation">
       <p-tabs :start-tab="selectedTab">
-        <p-tab label="Trenutno v obravnavi">
+        <p-tab :label="$t('under-consideration')">
           <div class="row">
             <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration" :key="legislation.epa">
               <a class="legislation__single" :href="slugs.legislationLink + legislation.epa">
@@ -23,13 +23,13 @@
                   </div>
                 </div>
                 <div class="text">
-                  {{ legislation.text}}
+                  {{ legislation.text }}
                 </div>
               </a>
             </div>
           </div>
         </p-tab>
-        <p-tab label="Nedavno sprejeto">
+        <p-tab :label="$t('recently-passed')">
           <div class="legislation row">
             <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.accepted" :key="legislation.epa">
               <a class="legislation__single" :href="slugs.legislationLink + legislation.epa">
@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <div class="text">
-                  {{ legislation.text}}
+                  {{ legislation.text }}
                 </div>
               </a>
             </div>
@@ -47,7 +47,7 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a :href="`https://parlameter.si${slugs.legislationLink}`">VSA ZAKONODAJA</a>
+        <a :href="`${slugs.legislationLink}`" v-t="'all-legislation'"></a>
       </div>
     </div>
   </card-wrapper>
@@ -185,6 +185,7 @@ export default {
       font-size: 14px;
       font-weight: 400;
       color: #227497;
+      text-transform: uppercase;
     }
   }
 }
