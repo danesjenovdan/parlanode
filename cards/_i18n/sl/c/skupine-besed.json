@@ -1,0 +1,14 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.",
+      "text": "Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov."
+    },
+    "speakers": "Govorci",
+    "parties": "Poslanske skupine",
+    "input-words": "Vnesi posamezno besedo ali več besed, ločenih z vejico.",
+    "empty-text": "Za prikaz rezultatov dodaj vsaj dve besedi.",
+    "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
+    "show-relative": "Prikaži relativno metriko"
+  }
+}

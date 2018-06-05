@@ -5,28 +5,21 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu <a class="funblue-light-hover" target="_blank" href="http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje">DZ RS</a>.
-      </p>
-      <div class="info-text heading">
-        BESEDE KI SO ZAZNAMOVALE SEJO
-      </div>
-      <p class="info-text">
-        Analizo izvajamo po statistiki tf-idf.
-        Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
-      </p>
-      <p class="info-text heading">
-        PRISOTNOST POSLANSKIH SKUPIN NA SEJI
-      </p>
-      <p class="info-text">
-        Poslanske skupine razvrstimo glede na odstotek, na koliko glasovanjih izbrane seje so bili prisotni njihovi poslanci in poslanke.
-      </p>
-      <p class="info-text heading">
-        GLASOVANJA
-      </p>
-      <p class="info-text">
-        Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.
-      </p>
+      <i18n path="info.lead" tag="p" class="info-text lead">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          href="http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+          v-t="'info.link'"
+        />
+      </i18n>
+      <div class="info-text heading" v-t="'info.words-heading'"></div>
+      <p class="info-text" v-t="'info.words-text'"></p>
+      <p class="info-text heading" v-t="'info.presence-headinig'"></p>
+      <p class="info-text" v-t="'info.presence-text'"></p>
+      <p class="info-text heading" v-t="'info.votes-heading'"></p>
+      <p class="info-text" v-t="'info.votes-text'"></p>
     </div>
 
     <div class="smalldate">{{data.session.date}}</div>
@@ -34,7 +27,7 @@
     <div class="link">
       <a class="funblue-light-hover" :href="getSessionTranscriptLink(data.session)">
         <span class="glyphicon glyphicon-comment"></span>
-        Besede, ki so zaznamovale sejo
+        <span v-t="'info.words-heading'"></span>
       </a>
     </div>
     <div v-if="chartRows.length" class="columns">
@@ -45,7 +38,7 @@
     <div class="link">
       <a class="funblue-light-hover">
         <span class="glyphicon glyphicon-comment"></span>
-        Prisotnost
+        <span v-t="'info.presence-heading'"></span>
       </a>
     </div>
     <prisotnost-po-poslanskih-skupinah :data="data.presence" />
@@ -53,7 +46,7 @@
     <div class="link">
       <a class="funblue-light-hover" :href="getSessionVotesLink(data.session)">
         <span class="glyphicon glyphicon-comment"></span>
-        Glasovanja
+        <span v-t="'info.votes-heading'"></span>
       </a>
     </div>
     <div class="votes">

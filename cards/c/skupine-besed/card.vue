@@ -6,30 +6,30 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
     <div id="skupine-besed">
       <text-frame>
-        <p>Pokaži mi, kdo največ omenja naslednjo skupino besed:
-          <tag
-            v-for="(word, index) in words"
-            :key="index + word"
-            :text="word"
-            @click="removeWord(word)"
-          />
-          <plus @click="toggleModal(true)" />
-          <load-link
-            text="Naloži"
-            @click="loadResults(true)"
-          />
-        </p>
+        <i18n path="wordgroups-text" tag="p">
+          <span place="words">
+            <tag
+              v-for="(word, index) in words"
+              :key="index + word"
+              :text="word"
+              @click="removeWord(word)"
+            />
+            <plus @click="toggleModal(true)" />
+          </span>
+          <span place="load">
+            <load-link
+              :text="$t('load')"
+              @click="loadResults(true)"
+            />
+          </span>
+        </i18n>
         <div class="row extras">
           <div class="col-xs-12">
             <div class="searchfilter-checkbox">
@@ -39,14 +39,14 @@
                 class="checkbox"
                 @click="changeShowRelative"
                 :checked="showRelative">
-              <label for="rev">Prikaži relativno metriko</label>
+              <label for="rev" v-t="'show-relative'"></label>
             </div>
           </div>
         </div>
       </text-frame>
 
       <p-tabs @switch="focusTab" :start-tab="selectedTab">
-        <p-tab label="Govorci">
+        <p-tab :label="$t('speakers')">
           <scroll-shadow ref="shadow">
             <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
               <bar-chart
@@ -63,7 +63,7 @@
             </div>
           </scroll-shadow>
         </p-tab>
-        <p-tab label="Poslanske skupine">
+        <p-tab :label="$t('parties')">
           <scroll-shadow ref="shadowPS">
             <div class="results" @scroll="$refs.shadowPS.check($event.currentTarget)">
               <bar-chart
@@ -84,8 +84,8 @@
 
       <modal
         v-if="modalShown"
-        header="Vnesi posamezno besedo ali več besed, ločenih z vejico."
-        button="Potrdi"
+        :header="$t('input-words')"
+        :button="$t('confirm')"
         @close="toggleModal(false)"
         @ok="toggleModal(false, true)"
       >
@@ -134,7 +134,7 @@ export default {
 
     return {
       data: this.$options.cardData.data,
-      emptyText: 'Za prikaz rezultatov dodaj vsaj dve besedi.',
+      emptyText: this.$t('empty-text'),
       headerConfig: {
         circleIcon: 'og-list',
         heading: '&nbsp;',
@@ -209,7 +209,7 @@ export default {
       if (this.words.length < 2 || this.loading) {
         if (user) {
           // eslint-disable-next-line no-alert
-          alert('Dodaj vsaj dve besedi.');
+          alert(this.$t('empty-text'));
         }
         return;
       }

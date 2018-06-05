@@ -50,34 +50,34 @@
                         <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
                       </div>
                       <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                        <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
+                        <span class="sr-only ">{{ vote.percent_against }}% votes against</span>
                       </div>
                       <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                        <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
+                        <span class="sr-only ">{{ vote.percent_abstain }}% votes abstained</span>
                       </div>
                       <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                        <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
+                        <span class="sr-only ">{{ vote.percent_not_present }}% not present</span>
                       </div>
                     </div>
                     <div class="row ">
                       <div class="col-xs-3 ">
                         {{ vote.votes_for }}
-                        <div class="type ">Za</div>
+                        <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
                         <div class="indicator ney ">&nbsp;</div>
                       </div>
                       <div class="col-xs-3 ">
                         {{ vote.against }}
-                        <div class="type ">Proti</div>
+                        <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
                         <div class="indicator aye ">&nbsp;</div>
                       </div>
                       <div class="col-xs-3 ">
                         {{ vote.abstain }}
-                        <div class="type ">Vzdržan</div>
+                        <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
                         <div class="indicator not ">&nbsp;</div>
                       </div>
                       <div class="col-xs-3 ">
                         {{ vote.not_present }}
-                        <div class="type ">Niso</div>
+                        <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
                         <div class="indicator abstention ">&nbsp;</div>
                       </div>
                     </div>

@@ -24,10 +24,10 @@
                 :style="{ width: row.widthPercentage + '%'}">
               </div>
               <div v-if="showNumbers && showPercentage" class="progress_number">
-                {{ row.value + ' | ' + row.percentage }} %
+                {{ row.value.toString().replace('.', ',') + ' | ' + row.percentage }} %
               </div>
               <div v-else-if="showNumbers" class="progress_number">
-                {{ row.value }}
+                {{ row.value.toString().replace('.', ',') }}
               </div>
           </div>
       </div>
@@ -62,7 +62,7 @@ export default {
         value: row.value,
         portrait: row.portrait,
         widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
-        percentage: ((row.value / mytotal) * 100).toFixed(2),
+        percentage: ((row.value / mytotal) * 100).toFixed(2).replace('.', ','),
       })).sort((a, b) => b.value - a.value);
     },
   },
