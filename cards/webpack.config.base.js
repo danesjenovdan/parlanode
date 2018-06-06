@@ -8,7 +8,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 function ensureDirs(filePath) {
   const dirname = path.dirname(filePath);
   if (fs.existsSync(dirname)) {
-    return true;
+    return;
   }
   ensureDirs(dirname);
   fs.mkdirSync(dirname);
@@ -17,7 +17,7 @@ function ensureDirs(filePath) {
 function createEmptyJsonFile(filePath) {
   if (!fs.existsSync(filePath)) {
     ensureDirs(filePath);
-    fs.writeFileSync(filePath, '{}', 'utf8');
+    fs.writeFileSync(filePath, '{ "sl": { "info": { "lead": "", "text": "" } } }', 'utf8');
   }
 }
 

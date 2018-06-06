@@ -1,0 +1,15 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Pregled vseh glasovanj, ki so se zgodila na seji.",
+      "text": [
+        "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
+        "Nabor glasovanj pridobimo s spletnega mesta {link}."
+      ],
+      "link": {
+        "text": "DZ RS",
+        "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      }
+    }
+  }
+}

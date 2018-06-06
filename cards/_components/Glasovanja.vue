@@ -6,29 +6,37 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
-      <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text[0]'"></p>
+      <i18n path="info.text[1]" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
 
     <div v-show="false" class="card-content__empty"> <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
         <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
-        <p>Podatki trenutno niso na voljo.</p>
+        <p v-t="'data-currently-unavailable'"></p>
       </div>
     </div>
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label">Išči po naslovu glasovanja</div>
+        <div class="filter-label" v-t="'title-search'"></div>
         <p-search-field v-model="textFilter" />
       </div>
       <div class="filter type-dropdown">
-        <div class="filter-label">Tipi glasovanja</div>
+        <div class="filter-label" v-t="'vote-types'"></div>
         <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label">Matično delovno telo</div>
+        <div class="filter-label" v-t="'working-body'"></div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
       <div v-if="this.type === 'person'" class="filter option-party-buttons">
@@ -42,7 +50,7 @@
         </div>
       </div>
       <div v-if="this.type === 'party'" class="filter text-filter">
-        <div class="filter-label">Razvrsti po</div>
+        <div class="filter-label" v-t="'sort-by'"></div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
@@ -73,6 +81,7 @@ import Ballot from 'components/Ballot.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 import common from 'mixins/common';
+import { memberHeader, partyHeader } from 'mixins/altHeaders';
 
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
@@ -88,21 +97,19 @@ export default {
   mixins: [common],
   computed: {
     tagPlaceholder() {
-      return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
+      return this.selectedTags.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
     },
-    // monthPlaceholder() {
-    //   return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
-    // },
     classificationPlaceholder() {
-      return this.selectedClassifications.length > 0 ? `Izbranih: ${this.selectedClassifications.length}` : 'Izberi';
+      return this.selectedClassifications.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
+        : this.$t('select-placeholder');
     },
     dropdownItems() {
       const validTags = [];
 
       this.getFilteredVotingDays(true).forEach((votingDay) => {
-        // const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
-        // const monthId = `${year}-${month}`;
-        // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
         votingDay.ballots
           .forEach((ballot) => {
             ballot.tags.forEach((tag) => {
@@ -114,7 +121,6 @@ export default {
       return {
         tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
         classifications: this.allClassifications,
-        // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
     selectedTags() {
@@ -127,9 +133,6 @@ export default {
         .filter(classification => classification.selected)
         .map(classification => classification.id);
     },
-    // selectedMonths() {
-    //   return this.allMonths.filter(month => month.selected);
-    // },
     selectedOptions() {
       return this.allOptions.filter(option => option.selected).map(option => option.id);
     },
@@ -139,57 +142,65 @@ export default {
     cardUrl() {
       const state = {};
 
-      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-      if (this.selectedClassifications.length > 0) state.classifications = this.selectedClassifications;
-      if (this.textFilter.length > 0) state.text = this.textFilter;
-      if (this.selectedOptions.length > 0) state.options = this.selectedOptions;
-
-      return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
-    },
-    headerConfig() {
-      let specifics;
-      if (this.type === 'person') {
-        specifics = {
-          heading: this.person.name,
-          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleImage: this.person.gov_id,
-        };
-      } else {
-        specifics = {
-          heading: this.party.name,
-          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleText: this.party.acronym,
-          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        };
+      if (this.selectedTags.length > 0) {
+        state.tags = this.selectedTags;
+      }
+      if (this.selectedClassifications.length > 0) {
+        state.classifications = this.selectedClassifications;
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
+      if (this.selectedOptions.length > 0) {
+        state.options = this.selectedOptions;
       }
 
-      return Object.assign({}, specifics, {
-        alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
-        title: this.cardData.cardData.name,
-      });
+      return `${this.url}${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+    },
+    headerConfig() {
+      if (this.type === 'person') {
+        return memberHeader.computed.headerConfig.call(this);
+      }
+      return partyHeader.computed.headerConfig.call(this);
     },
   },
   data() {
     const selectFromState = (items, stateItemIds) =>
       items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
 
-    // let allMonths = generateMonths();
-
-    let allOptions = [
-      { id: 'za', class: 'for', label: 'ZA', selected: false },
-      { id: 'proti', class: 'against', label: 'PROTI', selected: false },
-      { id: 'kvorum', class: 'kvorum', label: (this.type === 'person' ? 'VZDRŽAN' : 'VZDRŽANI'), selected: false },
-      { id: 'ni', class: 'ni', label: (this.type === 'person' ? 'NI' : 'NISO'), selected: false },
-    ];
+    let allOptions = [{
+      id: 'za',
+      class: 'for',
+      label: this.$t('vote-for'),
+      selected: false,
+    }, {
+      id: 'proti',
+      class: 'against',
+      label: this.$t('vote-against'),
+      selected: false,
+    }, {
+      id: 'kvorum',
+      class: 'kvorum',
+      label: (this.type === 'person' ? this.$t('vote-abstained') : this.$t('vote-abstained-plural')),
+      selected: false,
+    }, {
+      id: 'ni',
+      class: 'ni',
+      label: (this.type === 'person' ? this.$t('vote-not') : this.$t('vote-not-plural')),
+      selected: false,
+    }];
 
     let allTags = this.cardData.data.all_tags
       .map(tag => ({ id: tag, label: tag, selected: false }));
 
     let allClassifications = [];
-    for (var classificationKey in this.cardData.data.classifications) {
-      allClassifications.push({ id: classificationKey, label: this.cardData.data.classifications[classificationKey], selected: false });
-    }
+    Object.keys(this.cardData.data.classifications).forEach((classificationKey) => {
+      allClassifications.push({
+        id: classificationKey,
+        label: this.cardData.data.classifications[classificationKey],
+        selected: false,
+      });
+    });
 
     let textFilter = '';
 
@@ -197,9 +208,15 @@ export default {
       const state = this.cardData.parlaState;
       if (state.text) textFilter = state.text;
 
-      if (state.classifications) allClassifications = selectFromState(allClassifications, state.classifications);
-      if (state.options) allOptions = selectFromState(allOptions, state.options);
-      if (state.tags) allTags = selectFromState(allTags, state.tags);
+      if (state.classifications) {
+        allClassifications = selectFromState(allClassifications, state.classifications);
+      }
+      if (state.options) {
+        allOptions = selectFromState(allOptions, state.options);
+      }
+      if (state.tags) {
+        allTags = selectFromState(allTags, state.tags);
+      }
     }
 
     return {
@@ -207,13 +224,11 @@ export default {
       cardGroup: this.cardData.cardData.group,
       votingDays: this.cardData.data.results,
       selectedSort: 'date',
-      sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
-      // allMonths,
+      sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
       allClassifications,
       allOptions,
       allTags,
       textFilter,
-
     };
   },
   methods: {
@@ -235,15 +250,6 @@ export default {
         return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 
-      // const filterDates = (votingDay) => {
-      //   // if (onlyFilterByText || this.selectedMonths.length === 0) return true;
-      //   if (onlyFilterByText || this.selectedMonths.length === 0) return true;
-      //
-      //   const [, month, year] = votingDay.date.split(' ').map(string => parseInt(string, 10));
-      //
-      //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-      // };
-
       const votingDays = this.votingDays
         .map(votingDay => ({
           date: votingDay.date,
@@ -262,14 +268,13 @@ export default {
               }
 
               if (ballot.result !== 'none' && ballot.result != null) {
-                ballotClone.outcome = ballot.result === true ? 'Sprejet' : 'Zavrnjen';
+                ballotClone.outcome = ballot.result === true ? this.$t('vote-passed') : this.$t('vote-not-passed');
               }
 
               return ballotClone;
             }),
         }))
         .filter(votingDay => votingDay.ballots.length > 0);
-        // .filter(filterDates);
 
       if (this.type === 'party' && this.selectedSort === 'maximum') {
         const sortyByDisunion = (arr) => {
@@ -277,11 +282,9 @@ export default {
           let i = 0;
           while (i < arr.length) {
             bag = bag.concat(arr[i].ballots);
-            i++;
+            i += 1;
           }
-          return bag.sort((a, b) => {
-            return parseInt(b.disunion, 10) - parseInt(a.disunion, 10);
-          });
+          return bag.sort((a, b) => parseInt(b.disunion, 10) - parseInt(a.disunion, 10));
         };
 
         return [{
@@ -294,7 +297,7 @@ export default {
   },
   filters: {
     toPercent(val) {
-      return parseInt(val, 10) + ' %';
+      return `${parseInt(val, 10)} %`;
     },
   },
   props: {

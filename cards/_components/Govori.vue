@@ -7,24 +7,22 @@
     :card-url="shareUrl"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Izpis povezav do vseh <span v-if="this.type==='person'">poslančevih govorov</span><span v-else>govorov poslancev poslanske skupine</span> v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (<span v-if="this.type==='party'">poslanci, </span>časovno obdobje, vrsta seje).
-      </p>
+      <!-- "lead": "Izpis povezav do vseh govorov poslancev poslanske skupine v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.",
+      "text": "Naložimo povezave do vseh govorov poslancev izbrane poslanske skupine, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (poslanci, časovno obdobje, vrsta seje)." -->
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label">Išči po vsebini govorov</div>
+        <div class="filter-label" v-t="'contents-search'"></div>
         <search-field v-model="textFilter" @input="searchSpeakings()" />
       </div>
 
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div class="filter month-dropdown" v-if="type === 'party'">
-        <div class="filter-label">Poslanci</div>
+        <div class="filter-label" v-t="'mps'"></div>
         <search-dropdown
           :items="allPeople"
           :placeholder="peoplePlaceholder"
@@ -36,7 +34,7 @@
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
 
       <div class="filter month-dropdown">
-        <div class="filter-label">Časovno obdobje</div>
+        <div class="filter-label" v-t="'time-period'"></div>
         <search-dropdown
           :items="dropdownMonths"
           :placeholder="monthPlaceholder"
@@ -47,7 +45,7 @@
       </div>
 
       <div class="filter month-dropdown">
-        <div class="filter-label">Vrsta seje</div>
+        <div class="filter-label" v-t="'session-type'"></div>
         <search-dropdown
           :items="dropdownSessions"
           :placeholder="sessionPlaceholder"
@@ -67,7 +65,7 @@
               <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
             </ul>
           </div>
-          <div v-if="speakingDays.length===0" class="empty-dataset">Brez rezultatov.</div>
+          <div v-if="speakingDays.length===0" class="empty-dataset" v-t="'no-results'"></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -85,6 +83,7 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
+import { memberHeader } from 'mixins/altHeaders';
 
 import axios from 'axios';
 
@@ -100,7 +99,10 @@ export default {
     Govor,
     ScrollShadow,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    memberHeader,
+  ],
   data() {
     // console.log(this.party);
     const textFilter = '';
@@ -196,9 +198,9 @@ export default {
       state.textFilter = this.textFilter.length ? this.textFilter : '*';
 
       if (this.type === 'person') {
-        return `https://glej.parlameter.si/p/govori/${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
+        return `${this.url}${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
       }
-      return `https://glej.parlameter.si/ps/govori/${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
+      return `${this.url}${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
     },
     cardUrl() {
       const state = {};
@@ -244,13 +246,19 @@ export default {
       return this.allPeople.filter(person => person.selected);
     },
     sessionPlaceholder() {
-      return this.selectedSessions.length > 0 ? `Izbranih: ${this.selectedSessions.length}` : 'Izberi';
+      return this.selectedSessions.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedSessions.length })
+        : this.$t('select-placeholder');
     },
     monthPlaceholder() {
-      return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+      return this.selectedMonths.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
+        : this.$t('select-placeholder');
     },
     peoplePlaceholder() {
-      return this.selectedPeople.length > 0 ? `Izbranih: ${this.selectedPeople.length}` : 'Izberi';
+      return this.selectedPeople.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedPeople.length })
+        : this.$t('select-placeholder');
     },
     dropdownItems() {
       return {
@@ -271,12 +279,6 @@ export default {
           r[a.session_id].push(a);
           return r;
         }, Object.create(null));
-    },
-    headerConfig() {
-      return Object.assign({}, {
-        alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
-        title: this.cardData.cardData.name,
-      });
     },
   },
   methods: {
@@ -325,15 +327,6 @@ export default {
           }
           this.card.lockLoading = false;
         }, 200);
-      }
-    },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
       }
     },
   },

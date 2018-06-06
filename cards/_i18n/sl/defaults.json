@@ -9,6 +9,7 @@
     "data-currently-unavailable": "Podatki trenutno niso na voljo.",
     "title-search": "Išči po naslovu",
     "working-body": "Matično delovno telo",
+    "vote-types": "Tipi glasovanja",
     "select-placeholder": "Izberi",
     "selected-placeholder": "Izbranih: {num}",
     "name": "Ime",
@@ -22,6 +23,19 @@
     "maximum": "Največ",
     "coalition": "koalicija",
     "opposition": "opozicija",
+    "vote-for": "Za",
+    "vote-against": "Proti",
+    "vote-abstained": "Vzdržan",
+    "vote-abstained-plural": "Vzdržani",
+    "vote-not": "Ni",
+    "vote-not-plural": "Niso",
+    "sort-by": "Razvrsti po",
+    "sort-by--inequality": "Neenotnosti",
+    "sort-by--date": "Datumu",
+    "mps": "Poslanci",
+    "time-period": "Časovno obdobje",
+    "session-type": "Vrsta seje",
+    "no-results": "Brez rezultatov.",
     "info": {
       "title": "Info",
       "methodology": "METODOLOGIJA"
@@ -33,12 +47,6 @@
     "embed": {
       "title": "Vdelaj",
       "always-refresh": "Podatki naj se vedno osvežujejo"
-    },
-    "seznam-glasovanj": {
-      "vote-for": "Za",
-      "vote-against": "Proti",
-      "vote-abstained": "Vzdržan",
-      "vote-not": "Niso"
     },
     "membership-list": {
       "no-memberships": "Brez članstev."

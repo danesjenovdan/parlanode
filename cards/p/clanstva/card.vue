@@ -37,7 +37,7 @@
 import { reduce } from 'lodash';
 import common from 'mixins/common';
 import { memberOverview as memberOverviewUrl } from 'mixins/contextUrls';
-import { member as memberAltHeader } from 'mixins/altHeaders';
+import { memberHeader as memberAltHeader } from 'mixins/altHeaders';
 import { memberTitle } from 'mixins/titles';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';

@@ -62,22 +62,22 @@
                     <div class="row ">
                       <div class="col-xs-3 ">
                         {{ vote.votes_for }}
-                        <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
+                        <div class="type" v-t="'vote-for'"></div>
                         <div class="indicator ney ">&nbsp;</div>
                       </div>
                       <div class="col-xs-3 ">
                         {{ vote.against }}
-                        <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
+                        <div class="type" v-t="'vote-against'"></div>
                         <div class="indicator aye ">&nbsp;</div>
                       </div>
                       <div class="col-xs-3 ">
                         {{ vote.abstain }}
-                        <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
+                        <div class="type" v-t="'vote-abstained'"></div>
                         <div class="indicator not ">&nbsp;</div>
                       </div>
                       <div class="col-xs-3 ">
                         {{ vote.not_present }}
-                        <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
+                        <div class="type" v-t="'vote-not'"></div>
                         <div class="indicator abstention ">&nbsp;</div>
                       </div>
                     </div>
