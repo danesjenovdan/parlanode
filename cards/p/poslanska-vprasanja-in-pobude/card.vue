@@ -5,13 +5,17 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Izpis vseh poslanskih vprašanj in pobud, ki ji je {{vocabulary.poslanec[data.person.gender]}} {{vocabulary.postaviti[data.person.gender]}} v tem sklicu DZ RS.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Podatke pridobivamo s spletnega mesta <a class="funblue-light-hover" target="_blank" href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">DZ RS</a>.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
     <question-list :questionDays="data.results" />
   </card-wrapper>
@@ -21,23 +25,23 @@
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
+import { memberHeader } from 'mixins/altHeaders';
 import QuestionList from 'components/QuestionList.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanca',
-  mixins: [common, memberOverview, memberTitle],
-  components: { QuestionList },
+  mixins: [
+    common,
+    memberOverview,
+    memberTitle,
+    memberHeader,
+  ],
+  components: {
+    QuestionList,
+  },
   data() {
-    const { person } = this.$options.cardData.data;
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        heading: person.name,
-        subheading: `${person.party.acronym} | ${person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-        circleImage: person.gov_id,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
     };
   },
   computed: {

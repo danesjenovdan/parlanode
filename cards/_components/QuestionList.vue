@@ -46,6 +46,7 @@ import { getPersonLink, getSessionVoteLink, getSessionSpeechLink } from 'compone
 import { includes } from 'lodash';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
+// TODO: i18n
 export default {
   name: 'QuestionList',
   components: {
