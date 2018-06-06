@@ -6,13 +6,9 @@
     :results="$options.cardData.data.results.votes"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Prisotnosti {{vocabulary.poslanec3[gender]}} na glasovanjih DZ v primerjavi s povprečjem in največjo vrednostjo.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Preštejemo vse oddane glasovnice {{vocabulary.poslanec3[gender]}} in število delimo s številom vseh glasovanj, na katerih bi {{vocabulary.moral[gender]}} {{vocabulary.poslanec[gender]}} glasovati. Rezultat izpišemo skupaj s povprečno in največjo vrednostjo.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
   </score-avg-max>
 </template>
@@ -27,10 +23,5 @@ export default {
     ScoreAvgMax,
   },
   mixins: [common],
-  data() {
-    return {
-      gender: this.$options.cardData.gender,
-    };
-  },
 };
 </script>
