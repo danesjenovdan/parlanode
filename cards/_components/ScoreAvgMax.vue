@@ -78,6 +78,7 @@
 
 <script>
 import common from 'mixins/common';
+import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import PersonPin from 'components/PersonPin.vue';
 import PartyPin from 'components/PartyPin.vue';
 
@@ -123,24 +124,10 @@ export default {
         : this.party.acronym;
     },
     headerConfig() {
-      let specifics;
       if (this.type === 'poslanec') {
-        specifics = {
-          heading: this.person.name,
-          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? this.$t('coalition') : this.$t('opposition')}`,
-          circleImage: this.person.gov_id,
-        };
-      } else {
-        specifics = {
-          heading: this.party.name,
-          subheading: `${this.party.acronym} | ${this.party.is_coalition ? this.$t('coalition') : this.$t('opposition')}`,
-          circleText: this.party.acronym,
-          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        };
+        return memberHeader.computed.headerConfig.call(this);
       }
-      specifics.alternative = JSON.parse(this.cardData.cardData.altHeader || 'false');
-      specifics.title = this.cardData.cardData.name;
-      return specifics;
+      return partyHeader.computed.headerConfig.call(this);
     },
     cardGroup: () => this.cardData.cardData.group,
     cardMethod: () => this.cardData.cardData.method,
