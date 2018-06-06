@@ -1,8 +1,9 @@
 export const member = {
   computed: {
     headerConfig() {
-      const coalitionText = this.data.person.party.is_coalition ?
-        'koalicija' : 'opozicija';
+      const coalitionText = this.data.person.party.is_coalition
+        ? this.$t('coalition')
+        : this.$t('opposition');
 
       return {
         circleImage: this.data.person.gov_id,
@@ -14,3 +15,5 @@ export const member = {
     },
   },
 };
+
+export const tmp = 0;

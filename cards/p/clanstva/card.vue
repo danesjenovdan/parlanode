@@ -5,9 +5,17 @@
     :header-config="headerConfig">
 
     <div slot="info">
-      <p class="info-text lead">Izpis vseh članstev {{ vocabulary.poslanec3[data.person.gender] }} v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Podatki o članstvih pridobljeni s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
 
     <div class="memberships">
@@ -50,6 +58,7 @@ export default {
   },
   computed: {
     tabs() {
+      // TODO: i18n, this is so specific for slo parliament check later
       const membershipTabMap = {
         odbor: 'Delovna telesa',
         kolegij: 'Delovna telesa',

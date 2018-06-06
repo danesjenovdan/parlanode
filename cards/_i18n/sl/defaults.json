@@ -39,6 +39,9 @@
       "vote-against": "Proti",
       "vote-abstained": "Vzdržan",
       "vote-not": "Niso"
+    },
+    "membership-list": {
+      "no-memberships": "Brez članstev."
     }
   }
 }

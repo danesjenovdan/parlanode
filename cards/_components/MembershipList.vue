@@ -17,7 +17,7 @@
             <template v-else>{{ membershipItem.name }}</template>
           </li>
         </template>
-        <div v-else class="no-results"><i>Brez članstev.</i></div>
+        <div v-else class="no-results"><i v-t="'membership-list.no-memberships'"></i></div>
       </ul>
     </div>
   </scroll-shadow>
