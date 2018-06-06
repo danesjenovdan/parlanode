@@ -25,10 +25,5 @@ export default {
     ScoreAvgMax,
   },
   mixins: [common],
-  data() {
-    return {
-      gender: this.$options.cardData.data.person.gender,
-    };
-  },
 };
 </script>
