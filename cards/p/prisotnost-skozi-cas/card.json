@@ -3,7 +3,7 @@
   "name": "Prisotnost na glasovanjih sej DZ skozi čas",
   "dataUrl": "https://analize.parlameter.si/v1/p/getPresenceThroughTime",
   "type": "poslanec",
-  "lastUpdate": "2018-05-08T12:59:55.476Z",
+  "lastUpdate": "2018-06-06T17:06:26.505Z",
   "method": "prisotnost-skozi-cas",
   "group": "p",
   "big": true

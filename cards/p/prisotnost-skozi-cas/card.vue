@@ -7,13 +7,9 @@
     v-bind="{ generatedCardUrl }"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Prisotnost {{vocabulary.poslanec3[gender]}} na glasovanjih DZ skozi čas.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Vsak mesec preštejemo vse oddane glasovnice {{vocabulary.poslanec3[gender]}} in število delimo s številom vseh glasovanj, na katerih bi {{vocabulary.morati[gender]}} {{vocabulary.poslanec[gender]}} ta mesec glasovati. Če {{vocabulary.poslanec[gender]}} v izbranem mesecu mandata ni {{vocabulary.imeti[gender]}}, prikažemo, na kolikšnem odstotku glasovanj ni {{vocabulary.imeti[gender]}} pravice glasovati.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
   </prisotnost-chart>
 </template>
@@ -24,7 +20,6 @@ import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import PrisotnostChart from 'components/PrisotnostChart.vue';
-import vocabulary from '../../../assets/vocab.json';
 
 export default {
   name: 'PrisotnostSkoziCas',
@@ -39,8 +34,6 @@ export default {
   ],
   data() {
     return {
-      gender: this.$options.cardData.data.person.gender,
-      vocabulary,
       urlParameters: {},
     };
   },

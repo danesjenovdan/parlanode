@@ -12,6 +12,8 @@
 
 <script>
 import CardWrapper from 'components/Card/Wrapper.vue';
+import { memberHeader, partyHeader } from 'mixins/altHeaders';
+import getD3Locale from 'i18n/d3locales';
 
 /* globals d3 */
 export default {
@@ -39,26 +41,10 @@ export default {
   },
   computed: {
     headerConfig() {
-      let specifics;
       if (this.type === 'poslanec') {
-        specifics = {
-          heading: this.person.name,
-          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleImage: this.person.gov_id,
-        };
-      } else {
-        specifics = {
-          heading: this.party.name,
-          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleText: this.party.acronym,
-          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        };
+        return memberHeader.computed.headerConfig.call(this);
       }
-
-      return Object.assign({}, specifics, {
-        alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
-        title: this.cardData.cardData.name,
-      });
+      return partyHeader.computed.headerConfig.call(this);
     },
     cardGroup: () => this.cardData.cardData.group,
     cardMethod: () => this.cardData.cardData.method,
@@ -84,20 +70,7 @@ export default {
       const width = 960 - prisotnostMargin.left - prisotnostMargin.right;
       const height = 400 - prisotnostMargin.top - prisotnostMargin.bottom;
 
-      const SI = d3.locale({
-        decimal: ',',
-        thousands: ' ',
-        grouping: [3],
-        currency: ['EUR', ''],
-        dateTime: '%d. %m. %Y %H:%M',
-        date: '%d. %m. %Y',
-        time: '%H:%M:%S',
-        periods: ['AM', 'PM'],
-        days: ['nedelja', 'ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota'],
-        shortDays: ['ned', 'pon', 'tor', 'sre', 'čet', 'pet', 'sob'],
-        months: ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'],
-        shortMonths: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'avg', 'sep', 'okt', 'nov', 'dec'],
-      });
+      const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
 
       const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%S').parse;
 
@@ -139,10 +112,10 @@ export default {
         .append('g')
         .attr('transform', `translate(${prisotnostMargin.left},${prisotnostMargin.top})`);
 
-      this.renderBarChart(width, height, SI, svg, layers, manipulatedData);
+      this.renderBarChart(width, height, locale, svg, layers, manipulatedData);
     },
 
-    renderBarChart(width, height, SI, svg, layers, data) {
+    renderBarChart(width, height, locale, svg, layers, data) {
       const x = d3.scale.ordinal().rangeRoundBands([0, width]);
 
       const y = d3.scale.linear()
@@ -155,7 +128,7 @@ export default {
       const xAxis = d3.svg.axis()
         .scale(x)
         .orient('bottom')
-        .tickFormat(SI.timeFormat('%b %y'));
+        .tickFormat(locale.timeFormat('%b %y'));
 
       const yAxis = d3.svg.axis()
         .scale(y)
@@ -206,7 +179,7 @@ export default {
           }
 
           focus.append('text')
-            .text(SI.timeFormat('%B %Y')(d3.select(bars[0][0]).datum().x))
+            .text(locale.timeFormat('%B %Y')(d3.select(bars[0][0]).datum().x))
             .style('fill', '#ffffff')
             .attr('text-anchor', 'start')
             .attr('x', -70)
@@ -217,9 +190,9 @@ export default {
           if (Math.round(d3.select(bars[0][0]).datum().y) > 0) {
             let prisoten;
             if (this.type === 'poslanec') {
-              prisoten = this.person.gender === 'm' ? 'Prisoten' : 'Prisotna';
+              prisoten = this.$t(`present--${this.person.gender}`);
             } else {
-              prisoten = 'Prisotni';
+              prisoten = this.$t('present--plural');
             }
             focus.append('text')
               .text(`${prisoten} | ${Math.round(d3.select(bars[0][0]).datum().y)} %`)
@@ -233,9 +206,9 @@ export default {
           if (Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001) > 0) {
             let odsoten;
             if (this.type === 'poslanec') {
-              odsoten = this.person.gender === 'm' ? 'Odsoten' : 'Odsotna';
+              odsoten = this.$t(`not-present--${this.person.gender}`);
             } else {
-              odsoten = 'Odsotni';
+              odsoten = this.$t('not-present--plural');
             }
             focus.append('text')
               .text(`${odsoten} | ${Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001)} %`) // odštevamo zaradi case-a 20.5 + 79.5

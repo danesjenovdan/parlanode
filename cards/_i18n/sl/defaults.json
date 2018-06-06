@@ -37,6 +37,12 @@
     "time-period": "Časovno obdobje",
     "session-type": "Vrsta seje",
     "no-results": "Brez rezultatov.",
+    "present--f": "Prisotna",
+    "present--m": "Prisoten",
+    "present--plural": "Prisotni",
+    "not-present--f": "Odsotna",
+    "not-present--m": "Odsoten",
+    "not-present--plural": "Odsotni",
     "info": {
       "title": "Info",
       "methodology": "METODOLOGIJA"
