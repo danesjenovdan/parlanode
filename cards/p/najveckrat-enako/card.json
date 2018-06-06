@@ -3,7 +3,7 @@
   "name": "Največkrat glasujejo enako",
   "type": "poslanec",
   "dataUrl": "https://analize.parlameter.si/v1/p/getMostEqualVoters",
-  "lastUpdate": "2018-05-08T15:40:26.188Z",
+  "lastUpdate": "2018-06-06T15:36:29.441Z",
   "method": "najveckrat-enako",
   "group": "p",
   "big": false,

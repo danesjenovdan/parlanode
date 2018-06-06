@@ -1,0 +1,21 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Seznam 5 poslancev, ki največkrat glasujejo enako kot izbrani/-a poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od najmanjše proti največji. Manjša kot je vrednost, večje je ujemanje glasovanj.",
+      "text": [
+        "Izračunamo {link} med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
+        "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.",
+        "Številčne vrednosti glasov"
+      ],
+      "link": {
+        "text": "evklidsko razdaljo",
+        "link": "https://en.wikipedia.org/wiki/Euclidean_distance"
+      },
+      "list": [
+        "-1: proti",
+        "0: vzdržan/-a ali ni prisoten/-na",
+        "1: za"
+      ]
+    }
+  }
+}
