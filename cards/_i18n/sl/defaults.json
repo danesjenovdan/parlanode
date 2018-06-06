@@ -7,6 +7,17 @@
     "load": "Naloži",
     "confirm": "Potrdi",
     "data-currently-unavailable": "Podatki trenutno niso na voljo.",
+    "title-search": "Išči po naslovu",
+    "working-body": "Matično delovno telo",
+    "select-placeholder": "Izberi",
+    "selected-placeholder": "Izbranih: {num}",
+    "name": "Ime",
+    "epa": "EPA",
+    "change": "Sprememba",
+    "status": "Status",
+    "vote-passed": "Sprejet",
+    "vote-not-passed": "Zavrnjen",
+    "vote-under-consideration": "V obravnavi",
     "info": {
       "title": "Info",
       "methodology": "METODOLOGIJA"
@@ -20,16 +31,10 @@
       "always-refresh": "Podatki naj se vedno osvežujejo"
     },
     "seznam-glasovanj": {
-      "title-search": "Išči po naslovu glasovanja",
-      "working-body": "Matično delovno telo",
       "vote-for": "Za",
       "vote-against": "Proti",
       "vote-abstained": "Vzdržan",
-      "vote-not": "Niso",
-      "select-placeholder": "Izberi",
-      "selected-placeholder": "Izbranih: {num}",
-      "vote-passed": "Sprejet",
-      "vote-not-passed": "Zavrnjen"
+      "vote-not": "Niso"
     }
   }
 }

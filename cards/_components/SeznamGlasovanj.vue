@@ -12,11 +12,11 @@
         />
       </div>
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'seznam-glasovanj.title-search'"></div>
+        <div class="filter-label" v-t="'title-search'"></div>
         <input class="text-filter-input" type="text" v-model="textFilter">
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'seznam-glasovanj.working-body'"></div>
+        <div class="filter-label" v-t="'working-body'"></div>
         <search-dropdown :items="allTags" :placeholder="tagPlaceholder"></search-dropdown>
       </div>
     </div>
@@ -123,8 +123,8 @@ export default {
     const votes = this.processVotes();
 
     const allResults = [
-      { id: true, color: 'binary-for', label: this.$t('seznam-glasovanj.vote-passed'), selected: false },
-      { id: false, color: 'binary-against', label: this.$t('seznam-glasovanj.vote-not-passed'), selected: false },
+      { id: true, color: 'binary-for', label: this.$t('vote-passed'), selected: false },
+      { id: false, color: 'binary-against', label: this.$t('vote-not-passed'), selected: false },
     ];
     if (this.filters.results) {
       allResults.forEach((r) => {
@@ -164,8 +164,8 @@ export default {
     },
     tagPlaceholder() {
       return this.selectedTags.length > 0
-        ? this.$t('seznam-glasovanj.selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('seznam-glasovanj.select-placeholder');
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
     },
     selectedTags() {
       return this.allTags

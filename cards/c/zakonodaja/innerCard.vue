@@ -2,9 +2,20 @@
   <card-wrapper
     class="card-halfling card-seznam-zakonov"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
-    <div slot="info" v-html="infoText"></div>
+    :header-config="headerConfig"
+  >
+    <div slot="info">
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text">
+        <span v-t="'info.text'"></span>
+        <template v-for="infoLink in $t('info.links')">
+          {{ ' ' }}
+          <a :key="infoLink.text" :href="infoLink.link" v-t="infoLink.text"></a>
+          {{ ' ' }}
+        </template>
+      </p>
+    </div>
 
     <sortable-table
       class="legislation-list"
@@ -20,8 +31,6 @@
 <script>
 import SortableTable from 'components/SortableTable.vue';
 import common from 'mixins/common';
-import formatDate from 'helpers/dateFormatter';
-import { ICONS_ROOT_URL, ORGS_ROOT_URL } from 'components/constants';
 
 export default {
   components: {
@@ -36,100 +45,92 @@ export default {
     currentSort: String,
     currentSortOrder: String,
     selectSort: Function,
-    infoText: String,
     generatedCardUrl: String,
   },
   computed: {
-      mappedItems () {
-          const mapResultIcon = {
-            "sprejet": {
-              "icon": "glyphicon-ok",
-              "name": "Sprejet"
-            },
-            "zavrnjen": {
-              "icon": "glyphicon-remove",
-              "name": "Zavrnjen"
-            },
-            "v obravnavi": {
-              "icon": "v-obravnavi",
-              "name": "V obravnavi"
-            }
-          };
+    mappedItems() {
+      const mapResultIcon = {
+        sprejet: {
+          icon: 'glyphicon-ok',
+          name: this.$t('vote-passed'),
+        },
+        zavrnjen: {
+          icon: 'glyphicon-remove',
+          name: this.$t('vote-not-passed'),
+        },
+        vObravnavi: {
+          icon: 'v-obravnavi',
+          name: this.$t('vote-under-consideration'),
+        },
+      };
 
-          return this.items.map(legislation => {
-            let mapKey = legislation.result;
-            if (!mapKey) {
-              mapKey = 'v obravnavi';
-            }
+      return this.items.map((legislation) => {
+        let mapKey = legislation.result;
+        if (!mapKey) {
+          mapKey = 'vObravnavi';
+        }
 
-            const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+        const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
-            return [
-              {html: `<a href="${this.slugs.legislationLink}${legislation.epa}" class="funblue-light-hover">${legislation.text}</a>`},
-              {text: legislation.epa},
-              {text: legislation.date},
-              // {html: `<a href="${ORGS_ROOT_URL}${legislation.mdt.id}?frame=true&altHeader=true" class="funblue-light-hover">${legislation.mdt.name}</a>`},
-              {html: outcomeHtml},
-            ];
-          })
-      }
+        return [
+          { html: `<a href="${this.slugs.legislationLink}${legislation.epa}" class="funblue-light-hover">${legislation.text}</a>` },
+          { text: legislation.epa },
+          { text: legislation.date },
+          { html: outcomeHtml },
+        ];
+      });
+    },
   },
-  // methods: {
-  //   getSessionUrl(session) {
-  //     if (!this.slugs || session.link_to === 'nothing') return '';
-  //     return this.slugs.base + this.slugs.sessionLink[session.link_to === 'votes' ? 'glasovanja' : 'transkript'] + session.id;
-  //   },
-  // },
 };
 </script>
 
 <style lang="scss">
-  @import '~parlassets/scss/colors';
-  @import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
-  .empty-dataset {
-    color: $grey-medium;
-    font-style: normal !important;
+.empty-dataset {
+  color: $grey-medium;
+  font-style: normal !important;
+}
+
+.legislation-list {
+
+  .column:last-child {
+    margin-left: 8px;
   }
 
-  .legislation-list {
+  .narrow {
+    flex: 0.5 !important;
+  }
 
-    .column:last-child {
-      margin-left: 8px;
+  .outcome {
+    margin-right: 0;
+
+    .text {
+      @include respond-to(mobile) {
+        font-size:14px !important;
+      }
     }
 
-    .narrow {
-      flex: 0.5 !important;
-    }
-
-    .outcome {
-      margin-right: 0;
-
-      .text {
-        @include respond-to(mobile) {
-          font-size:14px !important;
-        }
+    i {
+      &.glyphicon-ok {
+        width: 34px !important;
+        height: 28px;
       }
 
-      i {
-        &.glyphicon-ok {
-          width: 34px !important;
-          height: 28px;
-        }
+      &.glyphicon-remove {
+        width: 28px;
+        height: 27px;
+      }
 
-        &.glyphicon-remove {
-          width: 28px;
-          height: 27px;
-        }
-
-        &.v-obravnavi {
-          width: 38px !important;
-          height: 38px;
-          background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
-          background-size: contain !important;
-          background-repeat: no-repeat;
-        }
+      &.v-obravnavi {
+        width: 38px !important;
+        height: 38px;
+        background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
+        background-size: contain !important;
+        background-repeat: no-repeat;
       }
     }
   }
+}
 </style>

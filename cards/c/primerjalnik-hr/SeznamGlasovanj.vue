@@ -96,8 +96,8 @@ export default {
     const votes = this.processVotes();
 
     const allResults = [
-      { id: true, color: 'binary-for', label: this.$t('seznam-glasovanj.vote-passed'), selected: false },
-      { id: false, color: 'binary-against', label: this.$t('seznam-glasovanj.vote-not-passed'), selected: false },
+      { id: true, color: 'binary-for', label: this.$t('vote-passed'), selected: false },
+      { id: false, color: 'binary-against', label: this.$t('vote-not-passed'), selected: false },
     ];
 
     const allTags = this.processTags();

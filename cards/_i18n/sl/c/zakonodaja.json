@@ -1,0 +1,21 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Seznam vseh zakonov in aktov, o katerih so v tem sklicu glasovali na sejah Državnega zbora in ustrezajo uporabniškemu vnosu (naslov, matično delovno telo).",
+      "text": "Podatke o sejah pridobivamo iz spletnega mesta DZ RS.",
+      "links": [
+        {
+          "text": "Zakoni",
+          "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiZakonov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwN3I30wwkpiAJKG-AAjgb6BbmhigDW2mUM/dz/d5/L2dBISEvZ0FBIS9nQSEh"
+        },
+        {
+          "text": "Akti",
+          "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiAktov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwNLMz0wwkpiAJKG-AAjgb6BbmhigAUeAnK/dz/d5/L2dBISEvZ0FBIS9nQSEh"
+        }
+      ]
+    },
+    "only-abstracts": "Samo s povzetki",
+    "laws": "Zakoni",
+    "acts": "Akti"
+  }
+}
