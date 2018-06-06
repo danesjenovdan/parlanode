@@ -3,7 +3,7 @@
   "name": "Povprečno število govorov na sejo",
   "type": "poslanec",
   "dataUrl": "https://analize.parlameter.si/v1/p/getAverageNumberOfSpeechesPerSession",
-  "lastUpdate": "2018-05-07T12:17:07.378Z",
+  "lastUpdate": "2018-06-06T16:41:40.980Z",
   "method": "povprecno-stevilo-govorov-na-sejo",
   "group": "p",
   "big": false,
