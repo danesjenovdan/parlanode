@@ -3,7 +3,7 @@
   "name": "Raznolikost besedišča",
   "type": "poslanec",
   "dataUrl": "https://analize.parlameter.si/v1/p/getVocabularySize",
-  "lastUpdate": "2018-05-07T17:54:52.317Z",
+  "lastUpdate": "2018-06-06T12:42:19.230Z",
   "method": "besedni-zaklad",
   "group": "p",
   "big": false,

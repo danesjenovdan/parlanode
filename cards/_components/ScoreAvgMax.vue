@@ -17,14 +17,10 @@
             </div>
           </div>
           <div class="other_poslanec">
-            <div class="poslanec_title">
-              Povprečje
-            </div>
+            <div class="poslanec_title" v-t="'average'"></div>
           </div>
           <div class="other_poslanec">
-            <div class="poslanec_title">
-              Največ
-            </div>
+            <div class="poslanec_title" v-t="'maximum'"></div>
           </div>
         </div>
         <div class="column-bar progress_bar">
@@ -131,13 +127,13 @@ export default {
       if (this.type === 'poslanec') {
         specifics = {
           heading: this.person.name,
-          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? this.$t('coalition') : this.$t('opposition')}`,
           circleImage: this.person.gov_id,
         };
       } else {
         specifics = {
           heading: this.party.name,
-          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
+          subheading: `${this.party.acronym} | ${this.party.is_coalition ? this.$t('coalition') : this.$t('opposition')}`,
           circleText: this.party.acronym,
           circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
         };

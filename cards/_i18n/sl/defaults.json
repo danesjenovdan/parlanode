@@ -18,6 +18,10 @@
     "vote-passed": "Sprejet",
     "vote-not-passed": "Zavrnjen",
     "vote-under-consideration": "V obravnavi",
+    "average": "Povprečje",
+    "maximum": "Največ",
+    "coalition": "koalicija",
+    "opposition": "opozicija",
     "info": {
       "title": "Info",
       "methodology": "METODOLOGIJA"
