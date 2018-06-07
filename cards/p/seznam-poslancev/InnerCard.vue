@@ -2,9 +2,9 @@
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
-    <div slot="info" v-html="infoText"></div>
+    :header-config="headerConfig"
+  >
+    <slot name="info" slot="info"></slot>
 
     <sortable-table
       class="person-list"
@@ -62,19 +62,19 @@ export default {
       if (this.demographics) {
         return [
           { id: 'image', label: '', additionalClass: 'portrait' },
-          { id: 'name', label: 'Ime', additionalClass: 'wider name' },
-          { id: 'age', label: 'Starost' },
-          { id: 'education', label: 'Stopnja izobrazbe', additionalClass: 'optional' },
-          { id: 'terms', label: 'Število mandatov', additionalClass: 'optional' },
-          { id: 'party', label: 'PS', additionalClass: 'optional' },
-          { id: 'district', label: 'Okraj', additionalClass: 'optional' },
+          { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
+          { id: 'age', label: this.$t('age') },
+          { id: 'education', label: this.$t('education'), additionalClass: 'optional' },
+          { id: 'terms', label: this.$t('number-of-terms'), additionalClass: 'optional' },
+          { id: 'party', label: this.$t('party'), additionalClass: 'optional' },
+          { id: 'district', label: this.$t('district'), additionalClass: 'optional' },
         ];
       }
       return [
         { id: 'image', label: '', additionalClass: 'portrait' },
-        { id: 'name', label: 'Ime', additionalClass: 'name' },
-        { id: 'analysis', label: 'Analiza', additionalClass: 'wider barchartcontainer' },
-        { id: 'change', label: 'Sprememba' },
+        { id: 'name', label: this.$t('name'), additionalClass: 'name' },
+        { id: 'analysis', label: this.$t('analysis'), additionalClass: 'wider barchartcontainer' },
+        { id: 'change', label: this.$t('change') },
       ];
     },
   },
@@ -86,7 +86,6 @@ export default {
     currentSortOrder: String,
     processedMembers: Array,
     currentAnalysisData: Object,
-    infoText: String,
   },
   methods: {
     selectSort(sort) {

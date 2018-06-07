@@ -1,13 +1,17 @@
 <template>
   <div
-    v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-    :id="$options.cardData.cardData._id">
-    <div class="party-list-generator">
+    :id="$options.cardData.cardData._id"
+  >
+    <div
+      class="party-list-generator"
+      v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
+    >
       <div class="row">
         <div class="col-md-12">
           <blue-button-list
             :items="analyses"
-            v-model="currentAnalysis" />
+            v-model="currentAnalysis"
+          />
         </div>
       </div>
 
@@ -41,30 +45,41 @@
               :selected="selectedGenders.indexOf(gender.id) > -1"
               :icon="gender.id"
               :stripe-position="'top'"
-              @click.native="selectGender(gender.id)">
-            </striped-icon-button>
+              @click.native="selectGender(gender.id)"
+            />
           </div>
-
         </div>
       </div>
-
 
       <div class="row">
         <div class="col-md-12">
           <inner-card
-            v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
+            v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder }"
             :demographics="currentAnalysis === 'demographics'"
             @sort="sortBy"
-          />
+          >
+            <div slot="info">
+              <i18n path="info.lead" tag="p" class="info-text lead">
+                <span place="parties">
+                  <span v-if="selectedParties.length">{{$t('party')}}: {{selectedParties.join(', ')}}</span>
+                  <span v-else v-t="'all-parties'"></span>
+                </span>
+                <span place="districts">
+                  <span v-if="selectedDistrictNames.length">{{$t('voting-district')}}: {{selectedDistrictNames.join(', ')}}</span>
+                  <span v-else v-t="'all-voting-districts'"></span>
+                </span>
+                <span place="sortBy">{{sortMap[currentSort]}}</span>
+              </i18n>
+              <template v-if="currentAnalysisData.explanation">
+                <p class="info-text heading" v-t="'info.methodology'"></p>
+                <p class="info-text">{{currentAnalysisData.explanation}}</p>
+              </template>
+            </div>
+          </inner-card>
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else
-    v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
-    :demographics="currentAnalysis === 'demographics'"
-    @sort="sortBy"
-  />
 </template>
 
 <script>
@@ -126,47 +141,13 @@ export default {
         .filter(district => district.selected)
         .map(district => district.label);
     },
-    infoText() {
-      const parties = this.selectedParties.length
-        ? `poslanska skupina: ${this.selectedParties.join(', ')}`
-        : 'vse poslanske skupine';
-      const districts = this.selectedDistrictNames.length
-        ? `volilni okraj: ${this.selectedDistrictNames.join(', ')}`
-        : 'vsi volilni okraji';
-      const firstLine = `Množica vseh trenutno aktivnih poslancev, ki ustrezajo
-        uporabniškemu vnosu (${parties}; ${districts}).`;
-
-      const sortMap = {
-        name: 'abecedi',
-        district: 'okrajih',
-        party: 'poslanskih skupinah',
-        analysis: `rezultatu analize ${this.currentAnalysisData.label}`,
-        change: `aktualni spremembi v rezultatu analize ${this.currentAnalysisData.label}`,
-        age: 'starosti',
-        education: 'stopnji izobrazbe',
-        terms: 'številu mandatov',
-      };
-
-      const secondLine = `Seznam je sortiran po ${sortMap[this.currentSort]}.`;
-      const thirdLine = this.currentAnalysisData.explanation
-        ? `<p class="info-text heading">METODOLOGIJA</p>
-           <p class="info-text">${this.currentAnalysisData.explanation}</p>`
-        : '';
-
-      return `<p class="info-text lead">
-                ${firstLine}
-                ${secondLine}
-              </p>
-              ${thirdLine}`;
-    },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     districtPlaceholder() {
-      if (this.selectedDistricts.length > 0) {
-        return `Izbranih: ${this.selectedDistricts.length}`;
-      }
-      return 'Izberi okraj';
+      return this.selectedDistricts.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedDistricts.length })
+        : this.$t('select-district-placeholder');
     },
     headerConfig() {
       return {
@@ -243,7 +224,7 @@ export default {
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
           if (newMember.person.district.length === 0) {
-            newMember.formattedDistrict = 'okraj ni vnešen';
+            newMember.formattedDistrict = this.$t('missing-district');
           } else {
             newMember.formattedDistrict = newMember.person.district
               .map(memberDistrict =>
@@ -301,6 +282,18 @@ export default {
       }
 
       return sortedAndFiltered;
+    },
+    sortMap() {
+      return {
+        name: this.$t('sort-by--name'),
+        district: this.$t('sort-by--district'),
+        party: this.$t('sort-by--party'),
+        analysis: this.$t('sort-by--analysis', { analysis: this.currentAnalysisData.label }),
+        change: this.$t('sort-by--change', { analysis: this.currentAnalysisData.label }),
+        age: this.$t('sort-by--age'),
+        education: this.$t('sort-by--education'),
+        terms: this.$t('sort-by--terms'),
+      };
     },
   },
   methods: {
@@ -367,6 +360,7 @@ export default {
 .blue-button-list-item {
   font-size: 12px;
 }
+
 .filters {
   display: flex;
 
@@ -374,24 +368,33 @@ export default {
     margin-left: 3px;
     flex: 1;
   }
+
   .text-filter {
     &.search-field {
       height: 58px;
     }
   }
+
   .parties {
     display: flex;
     flex: 3;
+
     .party {
       flex: 1;
-      &:not(:last-child) { margin-right: 3px; }
+
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
     }
   }
+
   .genders {
     display: flex;
     flex: 0;
+
     .gender {
       width: 40px;
+
       &:not(:last-child) {
         margin-right: 3px;
       }

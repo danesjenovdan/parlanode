@@ -1,0 +1,21 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
+      "text": ""
+    },
+    "select-district-placeholder": "Izberi okraj",
+    "all-parties": "vse poslanske skupine",
+    "all-voting-districts": "vsi volilni okraji",
+    "missing-district": "okraj ni vnešen",
+    "voting-district": "volilni okraj",
+    "sort-by--name": "abecedi",
+    "sort-by--district": "okrajih",
+    "sort-by--party": "poslanskih skupinah",
+    "sort-by--analysis": "rezultatu analize {analysis}",
+    "sort-by--change": "aktualni spremembi v rezultatu analize {analysis}",
+    "sort-by--age": "starosti",
+    "sort-by--education": "stopnji izobrazbe",
+    "sort-by--terms": "številu mandatov"
+  }
+}
