@@ -48,6 +48,8 @@
     "not-present--f": "Odsotna",
     "not-present--m": "Odsoten",
     "not-present--plural": "Odsotni",
+    "inequality": "Neenotnost",
+    "everybody": "Vsi",
     "info": {
       "title": "Info",
       "methodology": "METODOLOGIJA"

@@ -2,18 +2,23 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam vseh glasovanj DZ,
-        {{ textFilter ? `ki ustrezajo uporabniškemu vnosu "${textFilter}", ` : '' }}
-        {{ this.selectedTags.length ? `za izbrana matična delovna telesa: "${selectedTags.join(', ')}", ` : '' }}
-        razvrščenih po {{ selectedSort === 'maximum' ? 'neenotnosti' : 'datumu' }}.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.</p>
-      <p class="info-text">Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu. </p>
+      <i18n path="info.lead" tag="p" class="info-text lead">
+        <span place="text">
+          <span v-if="textFilter">"{{textFilter}}"</span>
+          <span v-else v-t="'all-votes'"></span>
+        </span>
+        <span place="wbs">
+          <span v-if="selectedTags.length">{{selectedTags.join(', ')}}</span>
+          <span v-else v-t="'all-working-bodies'"></span>
+        </span>
+        <span place="sortBy">{{sortOptions[selectedSort].toLowerCase()}}</span>
+      </i18n>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p class="info-text" v-t="'info.text[1]'"></p>
     </div>
 
     <div class="groups">
@@ -30,19 +35,19 @@
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label">Išči po naslovu glasovanja</div>
+        <div class="filter-label" v-t="'title-search'"></div>
         <input class="text-filter-input" type="text" v-model="textFilter">
       </div>
       <div class="filter type-dropdown">
-        <div class="filter-label">Tipi glasovanja</div>
+        <div class="filter-label" v-t="'vote-types'"></div>
         <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label">Matično delovno telo</div>
+        <div class="filter-label" v-t="'working-body'"></div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
       </div>
       <div class="filter text-filter">
-        <div class="filter-label">Razvrsti po</div>
+        <div class="filter-label" v-t="'sort-by'"></div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
@@ -60,17 +65,17 @@
           >
             <div class="disunion">
               <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
-              <div class="text">neenotnost</div>
+              <div class="text" v-t="'inequality'"></div>
             </div>
             <div class="name">{{ ballot.text }}</div>
             <div class="result">
               <template v-if="ballot.result">
                 <i class="accepted glyphicon glyphicon-ok"></i>
-                <div class="text">sprejet</div>
+                <div class="text" v-t="'vote-passed'"></div>
               </template>
               <template v-else>
                 <i class="not-accepted glyphicon glyphicon-remove"></i>
-                <div class="text">zavrnjen</div>
+                <div class="text" v-t="'vote-not-passed'"></div>
               </template>
             </div>
           </a>
@@ -82,7 +87,7 @@
 
 <script>
 import { parse as parseDate, format } from 'date-fns';
-import { groupBy, sortBy, zipObject, find } from 'lodash';
+import { groupBy, sortBy, zipObject, find, capitalize } from 'lodash';
 import DateRow from 'components/DateRow.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -105,12 +110,12 @@ export default {
       id: 95,
       color: 'dz',
       acronym: 'DZ',
-      name: 'Vsi',
+      name: this.$t('everybody'),
     }, {
       id: 144,
       color: 'koal',
       acronym: 'koal',
-      name: 'Koalicija',
+      name: capitalize(this.$t('coalition')),
     }];
 
     let namedGroups = [];
@@ -135,16 +140,9 @@ export default {
       voteData: [],
       loading: true,
       selectedSort: 'maximum',
-      sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
+      sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
       textFilter: '',
       allTags: [],
-      // allMonths: [2017, 2016, 2015, 2014, 2013]
-      //   .map(year =>
-      //     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month =>
-      //       ({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false }),
-      //     ),
-      //   )
-      //   .reduce((sum, element) => sum.concat(element), []),
       selectedGroup: 'DZ',
       groups,
       allClassifications,
@@ -153,36 +151,19 @@ export default {
   },
   computed: {
     classificationPlaceholder() {
-      return this.selectedClassifications.length > 0 ? `Izbranih: ${this.selectedClassifications.length}` : 'Izberi';
+      return this.selectedClassifications.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
+        : this.$t('select-placeholder');
     },
     tagPlaceholder() {
-      return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
+      return this.selectedTags.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
     },
-    // monthPlaceholder() {
-    //   return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
-    // },
     dropdownItems() {
-      // const validTags = [];
-      // // const validMonths = [];
-
-      // this.getFilteredVotingDays().forEach((votingDay) => {
-      //   // const year = votingDay.date.split(' ')[2].split('-')[0];
-      //   // const month = votingDay.date.split(' ')[1].split('.')[0];
-      //   // const monthId = `${year}-${month}`;
-      //   // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
-
-      //   votingDay.ballots
-      //     .forEach((ballot) => {
-      //       ballot.tag.forEach((tag) => {
-      //         if (validTags.indexOf(tag) === -1) validTags.push(tag);
-      //       });
-      //     });
-      // });
-
       return {
         tags: this.allTags,
         classifications: this.allClassifications,
-        // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
     selectedTags() {
@@ -195,9 +176,6 @@ export default {
         .filter(classification => classification.selected)
         .map(classification => classification.id);
     },
-    // selectedMonths() {
-    //   return this.allMonths.filter(month => month.selected);
-    // },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
     },
@@ -211,18 +189,30 @@ export default {
       };
     },
     dynamicTitle() {
-      return this.$options.cardData.cardData.name +
-        (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+      return this.$options.cardData.cardData.name + (
+        this.selectedSort === 'date'
+          ? this.$t('sort-by--date').toLowerCase()
+          : this.$t('sort-by--inequality').toLowerCase()
+      );
     },
     generatedCardUrl() {
       const state = {};
 
-      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-      if (this.selectedClassifications.length > 0) state.classifications = this.selectedClassifications;
-      if (this.textFilter.length > 0) state.text = this.textFilter;
-      if (this.selectedSort.length > 0) state.sort = this.selectedSort;
-      if (this.selectedGroup.length > 0) state.selectedGroup = this.selectedGroup;
+      if (this.selectedTags.length > 0) {
+        state.tags = this.selectedTags;
+      }
+      if (this.selectedClassifications.length > 0) {
+        state.classifications = this.selectedClassifications;
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
+      if (this.selectedSort.length > 0) {
+        state.sort = this.selectedSort;
+      }
+      if (this.selectedGroup.length > 0) {
+        state.selectedGroup = this.selectedGroup;
+      }
 
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -241,17 +231,6 @@ export default {
 
         return tagMatch && textMatch && classificationMatch;
       };
-
-      // const filterDates = (votingDay) => {
-      //   if (onlyFilterByText || this.selectedMonths.length === 0) return true;
-      //
-      //   const year = parseInt(votingDay.date.split(' ')[2].split('-')[0], 10);
-      //   const month = parseInt(votingDay.date.split(' ')[1].split('.')[0], 10);
-      //
-      //   console.log(this.selectedMonths);
-      //
-      //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-      // };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
       const getDateFromVote = vote => (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
@@ -274,7 +253,6 @@ export default {
 
       return mappedVotingDays
         .filter(votingDay => (votingDay.ballots.length > 0));
-      // .filter(filterDates);
     },
     selectGroup(acronym) {
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
@@ -290,9 +268,13 @@ export default {
         this.voteData = response[acronym];
 
         this.allClassifications = [];
-        console.log(response.classifications)
-        for (var classificationKey in response.classifications) {
-          this.allClassifications.push({ id: classificationKey, label: response.classifications[classificationKey], selected: false });
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
+        for (const classificationKey in response.classifications) {
+          this.allClassifications.push({
+            id: classificationKey,
+            label: response.classifications[classificationKey],
+            selected: false,
+          });
         }
 
         const selectFromState = (items, stateItemIds) => items
@@ -300,25 +282,26 @@ export default {
 
         if (this.cardData.parlaState) {
           const state = this.cardData.parlaState;
-          if (state.text) this.textFilter = state.text;
-          // if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
-          if (state.classifications) this.allClassifications = selectFromState(this.allClassifications, state.classifications);
-          if (state.sort) this.selectedSort = state.sort;
-          if (state.tags) this.allTags = selectFromState(this.allTags, state.tags);
-          if (state.selectedGroup) this.selectedGroup = state.selectedGroup;
+          if (state.text) {
+            this.textFilter = state.text;
+          }
+          if (state.classifications) {
+            this.allClassifications =
+              selectFromState(this.allClassifications, state.classifications);
+          }
+          if (state.sort) {
+            this.selectedSort = state.sort;
+          }
+          if (state.tags) {
+            this.allTags = selectFromState(this.allTags, state.tags);
+          }
+          if (state.selectedGroup) {
+            this.selectedGroup = state.selectedGroup;
+          }
         }
 
         this.loading = false;
       });
-    },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
     },
   },
   watch: {
@@ -331,8 +314,7 @@ export default {
   },
   created() {
     const context = this.$options.cardData;
-    context.template.pageTitle = context.cardData.name +
-      (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+    context.template.pageTitle = this.dynamicTitle;
   },
 };
 </script>
