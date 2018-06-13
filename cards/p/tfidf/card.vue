@@ -3,13 +3,21 @@
     contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Izpis 10 besed in besednih zvez, ki jih {{ vocabulary.poslanec[gender] }} uporablja pogosteje kot ostali poslanci v DZ.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Analizo izvajamo po statistiki <a href="https://en.wikipedia.org/wiki/Tf-idf">tf-idf</a>.</p>
-      <p class="info-text">Korpus predstavljajo vsi govori, dokument pa vsi {{ vocabulary.poslanca3[gender] }} govori.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text[0]" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
+      <p class="info-text" v-t="'info.text[1]'"></p>
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
@@ -20,26 +28,23 @@
 <script>
 import { getSearchTermLink } from 'components/links';
 import common from 'mixins/common';
+import { memberHeader } from 'mixins/altHeaders';
 import { memberSpeeches } from 'mixins/contextUrls';
 import BarChart from 'components/BarChart.vue';
 
 export default {
-  components: { BarChart },
-  mixins: [common, memberSpeeches],
+  components: {
+    BarChart,
+  },
+  mixins: [
+    common,
+    memberSpeeches,
+    memberHeader,
+  ],
   name: 'PoslanecTFIDF',
   data() {
-    const { gender } = this.$options.cardData.data.person;
-
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: `Besede, ki ${gender === 'm' ? 'ga' : 'jo'} zaznamujejo`,
-      },
-      gender,
     };
   },
   computed: {
@@ -53,23 +58,6 @@ export default {
     generatedCardUrl() {
       return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
     },
-  },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
-  created() {
-    const context = this.$root.$options.cardData;
-    const pronoun = context.data.person.gender === 'f' ? 'jo' : 'ga';
-    context.template.pageTitle =
-      `Besede, ki ${pronoun} zaznamujejo - ${context.data.person.name}`;
   },
 };
 </script>
