@@ -1,0 +1,12 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka postavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.",
+      "text": "Podatke pridobivamo s spletnega mesta {link}.",
+      "link": {
+        "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
+        "text": "DZ RS"
+      }
+    }
+  }
+}

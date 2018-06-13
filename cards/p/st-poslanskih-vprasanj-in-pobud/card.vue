@@ -6,13 +6,17 @@
     :results="$options.cardData.data.results"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Število poslanskih vprašanj in pobud, ki jih je {{vocabulary.poslanec[gender]}} {{vocabulary.postaviti[gender]}} v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Podatke pridobivamo s spletnega mesta <a target="_blank" href="https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/">DZ RS</a>.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
   </score-avg-max>
 </template>
@@ -27,10 +31,5 @@ export default {
     ScoreAvgMax,
   },
   mixins: [common],
-  data() {
-    return {
-      gender: this.$options.cardData.data.person.gender,
-    };
-  },
 };
 </script>
