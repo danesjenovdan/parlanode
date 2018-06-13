@@ -6,65 +6,51 @@
     :results="$options.cardData.data.results"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Pogostosti uporabe stilno zaznamovanih besed v {{vocabulary.poslanca[gender]}} govorih.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Z združevanjem kvalifikatorjev <a class="funblue-light-hover" target="_blank" href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika">SSKJ</a> in <a class="funblue-light-hover" target="_blank" href="http://www.fran.si/131/snb-slovar-novejsega-besedja">SNB</a> smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.
-      </p>
-      <p class="info-text">
-        Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).
-      </p>
-      <p class="info-text">
-        Podjetje <a class="funblue-light-hover" target="_blank" href="http://www.amebis.si/">Amebis</a> je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text[0]" tag="p" class="info-text">
+        <a
+          place="link1"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[0].link')"
+          v-t="'info.links[0].text'"
+        />
+        <a
+          place="link2"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[1].link')"
+          v-t="'info.links[1].text'"
+        />
+      </i18n>
+      <p class="info-text" v-t="'info.text[1]'"></p>
+      <i18n path="info.text[2]" tag="p" class="info-text">
+        <a
+          place="link3"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[2].link')"
+          v-t="'info.links[2].text'"
+        />
+      </i18n>
       <div class="info-text">
-        Ekscesno besedje:
+        <span v-t="'style-scores.elevated-vocabulary'"></span>:
         <ul>
-          <li>
-            Kvalifikatorji iz SSKJ
-            <ul>
-              <li>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično (iron.), otroško (otr.)</li>
-            </ul>
-          </li>
-          <li>
-            Kvalifikatorji iz SNB
-            <ul>
-              <li>slabšalno (slabš.), vulgarno (vulg.)</li>
-            </ul>
-          </li>
+          <li v-t="'info.elevated-qualifiers[0]'"></li>
         </ul>
-
-        Privzdignjeno besedje
+        <span v-t="'style-scores.simple-vocabulary'"></span>:
         <ul>
-          <li>
-            Kvalifikatorji iz SSKJ
-            <ul>
-              <li>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)</li>
-            </ul>
-          </li>
+          <li v-t="'info.simple-qualifiers[0]'"></li>
+          <li v-t="'info.simple-qualifiers[1]'"></li>
         </ul>
-
-        Preprosto besedje
+        <span v-t="'style-scores.excessive-vocabulary'"></span>:
         <ul>
-          <li>
-            Kvalifikatorji iz SSKJ
-            <ul>
-              <li>narečno (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.)</li>
-            </ul>
-          </li>
-          <li>
-            Kvalifikatorji iz SNB
-            <ul>
-              <li>pogovorno (pog.)</li>
-            </ul>
-          </li>
+          <li v-t="'info.excessive-qualifiers[0]'"></li>
+          <li v-t="'info.excessive-qualifiers[1]'"></li>
         </ul>
       </div>
-      <p class="info-text">
-        Črtni graf prikazuje delež posameznega tipa besedja v {{vocabulary.poslanca[gender]}} govorih glede na povprečje, izračunano za celoten sklic. Delež se izračuna po naslednjem algoritmu: vzamejo se vsi {{vocabulary.poslanca3[gender]}} govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za {{vocabulary.poslanec2[gender]}} z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za {{vocabulary.poslanec2[gender]}} se normalizira (min. 1 – max. 100).
-      </p>
+      <p class="info-text" v-t="'info.text[3]'"></p>
     </div>
   </style-scores>
 </template>
@@ -79,10 +65,5 @@ export default {
     StyleScores,
   },
   mixins: [common],
-  data() {
-    return {
-      gender: this.$options.cardData.data.person.gender,
-    };
-  },
 };
 </script>

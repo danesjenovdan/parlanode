@@ -3,7 +3,7 @@
   "name": "Stilne analize",
   "type": "poslanec",
   "dataUrl": "https://analize.parlameter.si/v1/p/getStyleScores",
-  "lastUpdate": "2018-05-07T17:49:16.216Z",
+  "lastUpdate": "2018-06-13T12:24:50.144Z",
   "method": "stilne-analize",
   "group": "p",
   "big": false,

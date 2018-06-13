@@ -62,6 +62,11 @@
     },
     "membership-list": {
       "no-memberships": "Brez članstev."
+    },
+    "style-scores": {
+      "elevated-vocabulary": "Privzdignjeno besedje",
+      "simple-vocabulary": "Preprosto besedje",
+      "excessive-vocabulary": "Ekscesno besedje"
     }
   }
 }
