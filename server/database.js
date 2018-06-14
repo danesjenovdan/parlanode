@@ -1,18 +1,20 @@
 const mongoose = require('mongoose');
-const chalk    = require('chalk');
-const Promise  = require('bluebird');
-const config   = require('../config');
-const _        = require('lodash');
+const chalk = require('chalk');
+const config = require('../config');
+
+function createMongoURL(host, db, user, password) {
+  host = host.replace(/^mongodb:\/\//, '').replace(/\/$/, '');
+  const auth = user ? `${password ? `${user}:${password}` : user}@` : '';
+  return `mongodb://${auth}${host}/${db}`;
+}
 
 /**
  * Connects to MongoDB
- * @param cb
  */
-exports.connect = function ( cb ) {
-
-  return new Promise(function ( resolve, reject ) {
-
-    console.log(chalk.magenta(`| MONGO DATABASE |`) + ` -` + chalk.green(` Connecting to ${CFG.db.url + CFG.db.name}`));
+exports.connect = () => (
+  new Promise((resolve, reject) => {
+    // eslint-disable-next-line no-console
+    console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green(`connecting to ${config.db.url + config.db.name}`)}`);
 
     // handle missing mongo username and password
     if (process.platform === 'win32') {
@@ -24,31 +26,24 @@ exports.connect = function ( cb ) {
       if (!config.db.password || config.db.password === 'undefined') {
         config.db.password = '';
       }
-    } else if ( _.isNil(config.db.user) || config.db.user === 'undefined' || _.isNil(!config.db.password) || config.db.password === 'undefined' ) {
-      console.log(config);
-      return reject('Missing mongo username or password. Add MONGO_USERNAME and MONGO_PASSWORD environment variables.');
+    } else if (config.db.user == null || config.db.user === 'undefined' || config.db.password == null || config.db.password === 'undefined') {
+      reject(new Error('Missing mongo username or password. Add MONGO_USERNAME and MONGO_PASSWORD environment variables.'));
+      return;
     }
 
-    mongoose.connect(CFG.db.url + CFG.db.name, {
-      useMongoClient : true,
-      user           : config.db.user,
-      pass           : config.db.password
+    const { url: host, name: db, user, password } = config.db;
+    mongoose.connect(createMongoURL(host, db, user, password), {
+      useMongoClient: true,
     });
 
-    mongoose.connection.on('error', function ( err ) {
+    mongoose.connection.on('error', (err) => {
       reject(err);
     });
 
-    mongoose.connection.once('open', function () {
-
-      if ( cb ) {
-        cb();
-      }
-      console.log(chalk.green(chalk.magenta('| MONGO DATABASE |') + ' - connected'));
+    mongoose.connection.once('open', () => {
+      // eslint-disable-next-line no-console
+      console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green('connected')}`);
       resolve();
-
     });
-
-  });
-
-};
+  })
+);

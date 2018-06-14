@@ -3,7 +3,6 @@
  */
 
 var mongoose = require('mongoose');
-var Promise = require('bluebird');
 var request = require('request');
 var ejs = require('ejs');
 

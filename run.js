@@ -1,21 +1,63 @@
-/**
- * Set CFG as global variable ( sorry )
- */
-global.CFG = require('./config');
-
-const server   = require('./server/server');
+const server = require('./server/server');
 const database = require('./server/database');
-const chalk    = require('chalk');
+const chalk = require('chalk');
 const mongoose = require('mongoose');
 const inquirer = require('inquirer');
-const bcrypt   = require('bcryptjs');
+const bcrypt = require('bcryptjs');
+
+/**
+ * Prompt for login credentials if none exist
+ * TODO: remove when removing legacy cms
+ */
+function initializeDeployment() {
+  const Config = mongoose.model('Config');
+
+  return Config.findOne({})
+    .then((configDoc) => {
+      if (configDoc && configDoc.password) {
+        return Promise.resolve();
+      }
+
+      return inquirer.prompt([
+        {
+          type: 'email',
+          message: 'Enter your email',
+          name: 'email',
+        },
+        {
+          type: 'text',
+          message: 'Enter a password',
+          name: 'password',
+        },
+      ])
+        .then((response) => {
+          const userData = bcrypt.genSalt(10)
+            .then(salt => bcrypt.hash(response.password, salt))
+            .then(hash => ({
+              email: response.email,
+              hash,
+            }));
+          return userData;
+        })
+        .then((userData) => {
+          const config = new Config({
+            email: userData.email,
+            password: userData.hash,
+          });
+          return config.save();
+        })
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.log('Error while creating login:', err);
+        });
+    });
+}
 
 /**
  * Init app
  * @returns {Promise.<T>|Promise|*}
  */
 function init() {
-
   const hasFullICU = (() => {
     try {
       const january = new Date(9e8);
@@ -25,77 +67,31 @@ function init() {
       return false;
     }
   })();
-  if (hasFullICU) {
-    console.log(chalk.green('Node started with FULL ICU for Intl!'));
-  } else {
+  if (!hasFullICU) {
+    // eslint-disable-next-line no-console
     console.warn(chalk.red('Node was NOT started with FULL ICU for Intl!'));
   }
 
   return database.connect()
-    .then(() => server.init(true))
+    .then(() => server.init())
     .then(initializeDeployment)
     .then(() => {
-
+      // eslint-disable-next-line no-console
       console.log(chalk.green('All is well!'));
-
     })
-    .catch(( err ) => {
-      console.error(chalk.red('Error: ', err));
+    .catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(chalk.red('Failed to start:'), err);
+      process.exit(1);
     });
-
-}
-
-function initializeDeployment() {
-
-  const Config = mongoose.model('Config');
-
-  return Config.findOne({})
-    .then(( configDoc ) => {
-
-      if ( configDoc && configDoc.password ) return Promise.resolve();
-
-      return inquirer.prompt([{
-        type    : 'email',
-        message : 'Enter your email',
-        name    : 'email'
-      }, {
-        type    : 'text',
-        message : 'Enter a password',
-        name    : 'password'
-      }]).then(( response ) => {
-
-          return bcrypt.genSalt(10)
-            .then(salt => bcrypt.hash(response.password, salt))
-            .then(hash => ({
-              hash,
-              email : response.email
-            }));
-
-        })
-        .then(( userData ) => {
-
-          const config = new Config({
-            password : userData.hash,
-            email    : userData.email
-          });
-
-          return config.save();
-
-        })
-        .catch(( err ) => {
-          console.log(err);
-        });
-
-    });
-
 }
 
 /**
  * Run if main
  */
-if ( require.main === module ) {
+if (require.main === module) {
   init();
 }
 
-exports.app  = server.app;
+exports.app = server.app;
 exports.init = init;

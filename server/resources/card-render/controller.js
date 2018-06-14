@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Promise  = require('bluebird');
 const request  = require('request');
 const ejs      = require('ejs');
 

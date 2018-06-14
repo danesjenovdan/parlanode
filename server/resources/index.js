@@ -14,7 +14,7 @@ const routers = require('require-all')({
   recursive   : true
 });
 
-// Set Mongoose Promise to BlueBird
-require('mongoose').Promise = require('bluebird');
+// Set Mongoose Promise to native Promise
+require('mongoose').Promise = global.Promise;
 
 module.exports = app => _.each(routers, resource => _.each(resource, router => router(app)));

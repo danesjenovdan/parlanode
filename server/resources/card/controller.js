@@ -1,8 +1,6 @@
-/* globals CFG */
 /* eslint no-underscore-dangle: "off", no-param-reassign: "off" */
-
+const config = require('../../../config');
 const mongoose = require('mongoose');
-const Promise = require('bluebird');
 const request = require('request');
 const ejs = require('ejs');
 const fs = require('fs');
@@ -221,11 +219,11 @@ exports.render = (req, res) => {
         delay: 2, filename: cardRenderDoc._id, selector, scale: 2, format: 'jpg',
       })
         .src(`https://glej.parlameter.si/card/${cardRenderDoc._id}`, ['480x320'], { crop: true })
-        .dest(CFG.cardCapturePath)
+        .dest(config.cardCapturePath)
         .run()
         .then(() => {
-          cardRenderDoc.imageUrl = `${CFG.cardCaptureRootUrl}/${cardRenderDoc._id}.jpg`;
-          cardRenderDoc.imageLocalPath = `${CFG.cardCapturePath}/${cardRenderDoc._id}.jpg`;
+          cardRenderDoc.imageUrl = `${config.cardCaptureRootUrl}/${cardRenderDoc._id}.jpg`;
+          cardRenderDoc.imageLocalPath = `${config.cardCapturePath}/${cardRenderDoc._id}.jpg`;
 
           cardRenderDoc.save()
             .then(() => {
@@ -383,7 +381,7 @@ exports.render = (req, res) => {
                       if (ogEjs) {
                         const ogHtml = ejs.render(ogEjs, cardData);
 
-                        webshot(ogHtml, `${CFG.ogCapturePath}/${cardRender._id}.jpeg`, {
+                        webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
                           siteType: 'html',
                           captureSelector: '#og-container',
                           quality: 80,
@@ -391,7 +389,7 @@ exports.render = (req, res) => {
                           if (err1) {
                             console.log('Err:1 ', err1);
                           } else {
-                            cardRender.ogImageUrl = `${CFG.ogRootUrl + cardRender._id}.jpeg`;
+                            cardRender.ogImageUrl = `${config.ogRootUrl + cardRender._id}.jpeg`;
 
                             const $ = cheerio.load(html, { decodeEntities: false });
                             $('head').append(`<meta property="og:image" content="${cardRender.ogImageUrl}" />`);
