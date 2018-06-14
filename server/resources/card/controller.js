@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const request = require('request');
 const ejs = require('ejs');
 const fs = require('fs');
-const { isDate } = require('../../utils/date');
 const cheerio = require('cheerio');
 const _ = require('lodash');
 const webshot = require('webshot');
@@ -297,7 +296,9 @@ exports.render = (req, res) => {
       if (!customUrl) {
         let analizeUrl = cardDoc.dataUrl;
 
-        if (!isDate(id)) {
+        // TODO: this was !isDate(id), that was always returning false
+        // check what it should have been doing
+        if (true) {
           if (id && id !== undefined && typeof id === 'string' && id.length > 0) {
             analizeUrl = `${analizeUrl}/${id}`;
           }
@@ -504,7 +505,9 @@ exports.render = (req, res) => {
     }
   }
 
-  if (isDate(id)) {
+  // TODO: this was isDate(id), that was always returning false
+  // check what it should have been doing
+  if (false) {
     date = id;
     cacheData.date = date;
   } else if (req.params['0'].length > 0 && req.params['0'] !== undefined) {
