@@ -1,7 +1,7 @@
 {
-  "name": "parlameter-front",
+  "name": "parlanode",
   "version": "1.0.0",
-  "description": "Parlameter frontend server for serving embeds and the page with cms for managing them",
+  "description": "Parlameter frontend server for serving embeds",
   "main": "run.js",
   "scripts": {
     "dev": "NODE_ENV=develop NODE_ICU_DATA=node_modules/full-icu node_modules/.bin/supervisor run",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FranciZ/parlameter-front.git"
+    "url": "git+https://github.com/danesjenovdan/parlanode.git"
   },
-  "author": "FranciZ",
+  "author": "danesjenovdan",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/FranciZ/parlameter-front/issues"
+    "url": "https://github.com/danesjenovdan/parlanode/issues"
   },
-  "homepage": "https://github.com/FranciZ/parlameter-front#readme",
+  "homepage": "https://github.com/danesjenovdan/parlanode#readme",
   "dependencies": {
     "axios": "^0.17.1",
     "babel-core": "^6.26.0",
@@ -29,7 +29,6 @@
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "bcryptjs": "2.4.3",
     "body-parser": "^1.18.2",
     "chalk": "^1.1.3",
     "cheerio": "^1.0.0-rc.2",

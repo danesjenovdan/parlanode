@@ -2,56 +2,9 @@ const server = require('./server/server');
 const database = require('./server/database');
 const chalk = require('chalk');
 const mongoose = require('mongoose');
-const inquirer = require('inquirer');
-const bcrypt = require('bcryptjs');
 
-/**
- * Prompt for login credentials if none exist
- * TODO: remove when removing legacy cms
- */
-function initializeDeployment() {
-  const Config = mongoose.model('Config');
-
-  return Config.findOne({})
-    .then((configDoc) => {
-      if (configDoc && configDoc.password) {
-        return Promise.resolve();
-      }
-
-      return inquirer.prompt([
-        {
-          type: 'email',
-          message: 'Enter your email',
-          name: 'email',
-        },
-        {
-          type: 'text',
-          message: 'Enter a password',
-          name: 'password',
-        },
-      ])
-        .then((response) => {
-          const userData = bcrypt.genSalt(10)
-            .then(salt => bcrypt.hash(response.password, salt))
-            .then(hash => ({
-              email: response.email,
-              hash,
-            }));
-          return userData;
-        })
-        .then((userData) => {
-          const config = new Config({
-            email: userData.email,
-            password: userData.hash,
-          });
-          return config.save();
-        })
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.log('Error while creating login:', err);
-        });
-    });
-}
+// Set Mongoose Promise to native Promise
+mongoose.Promise = global.Promise;
 
 /**
  * Init app
@@ -72,9 +25,9 @@ function init() {
     console.warn(chalk.red('Node was NOT started with FULL ICU for Intl!'));
   }
 
-  return database.connect()
-    .then(() => server.init())
-    .then(initializeDeployment)
+  return Promise.resolve()
+    .then(database.connect)
+    .then(server.init)
     .then(() => {
       // eslint-disable-next-line no-console
       console.log(chalk.green('All is well!'));
