@@ -56,14 +56,23 @@ exports.getCardById = (req, res) => {
 };
 
 exports.getUrls = (req, res) => {
-  const Card = mongoose.model('Card');
+  const CardRender = mongoose.model('CardRender');
 
-  Card.find({})
+  CardRender.find({})
     .then((cardDocs) => {
       const cards = cardDocs.map(cardDoc => ({
-        group: cardDoc.group,
+        _id: cardDoc._id,
         method: cardDoc.method,
-        uniquePath: cardDoc.uniquePath,
+        group: cardDoc.group,
+        state: cardDoc.state,
+        date: cardDoc.date,
+        dataUrl: cardDoc.dataUrl,
+        card: cardDoc.card,
+        cardUrl: cardDoc.cardUrl,
+        cardLastUpdate: cardDoc.cardLastUpdate,
+        html: `HTML length: ${cardDoc.html.length}`,
+        ogImageUrl: cardDoc.ogImageUrl,
+        dateTime: cardDoc.dateTime,
       }));
 
       res.send(cards);
