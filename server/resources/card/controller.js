@@ -8,52 +8,8 @@ const cheerio = require('cheerio');
 const _ = require('lodash');
 const webshot = require('webshot');
 const Pageres = require('pageres');
-global.Vue = require('vue');
+global.Vue = require('vue'); // TODO: do we need this to be global
 const renderer = require('vue-server-renderer');
-
-const replaceHeader = (cardData, html) => {
-  const headerHtmlString = fs.readFileSync('views/alt_header.ejs', 'utf-8');
-  const renderedHtmlHeader = ejs.render(headerHtmlString, cardData);
-
-  const $ = cheerio.load(html, { decodeEntities: false });
-  $('.card-header').empty().append(renderedHtmlHeader);
-
-  return $.html();
-};
-
-const addFrame = (templateName, previewWidth, cardData, html) => {
-  const htmlString = fs.readFileSync(`views/${templateName}.ejs`, 'utf-8');
-  const renderedHtmlString = ejs.render(htmlString, cardData);
-  const $ = cheerio.load(renderedHtmlString, { decodeEntities: false });
-
-  if (previewWidth) {
-    $('#card-container').css({
-      width: `${previewWidth}px`,
-      margin: 'auto',
-    });
-  }
-
-  $('#card-container').html(html);
-
-  return $.html();
-};
-
-exports.getCardById = (req, res) => {
-  const { cardId } = req.params;
-  const CardRender = mongoose.model('CardRender');
-
-  CardRender.findOne({ _id: cardId })
-    .then((cardDoc) => {
-      if (!cardDoc) {
-        res.status(404).send();
-      } else {
-        res.send(cardDoc.html);
-      }
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-};
 
 exports.getUrls = (req, res) => {
   const CardRender = mongoose.model('CardRender');
@@ -82,13 +38,24 @@ exports.getUrls = (req, res) => {
     });
 };
 
-/**
- *
- * @param req
- * @param res
- */
+exports.getCardById = (req, res) => {
+  const { cardId } = req.params;
+  const CardRender = mongoose.model('CardRender');
+
+  CardRender.findOne({ _id: cardId })
+    .then((cardDoc) => {
+      if (!cardDoc) {
+        res.status(404).send();
+      } else {
+        res.send(cardDoc.html);
+      }
+    })
+    .catch((err) => {
+      res.status(400).send(err);
+    });
+};
+
 exports.render = (req, res) => {
-  const Card = mongoose.model('Card');
   const CardRender = mongoose.model('CardRender');
 
   const { group, method, id } = req.params;
@@ -99,7 +66,6 @@ exports.render = (req, res) => {
     embed,
     forceRender,
     image,
-    width,
   } = req.query;
 
   let state = req.query.state || '{}';
@@ -203,225 +169,204 @@ exports.render = (req, res) => {
   function compileCard() {
     console.log('Compile:', `${group}/${method}`);
 
-    Card.findOne({ method, group }).lean().then((cardDoc) => {
-      if (!cardDoc) {
+    let cardDoc = null;
+    try {
+      // Vue based cards are loaded locally
+      cardDoc = loadCardFromFile(group, method);
+      cardDoc.vue = true;
+      cardDoc.altHeader = altHeader;
+    } catch (error) {
+      console.error('Missing:', `${group}/${method}`);
+      res.status(404).send('Card not found');
+      return;
+    }
+
+    let dataUrl;
+
+    if (!customUrl) {
+      let analizeUrl = cardDoc.dataUrl;
+
+      // TODO: this was !isDate(id), that was always returning false
+      // check what it should have been doing
+      if (true) {
+        if (id && id !== undefined && typeof id === 'string' && id.length > 0) {
+          analizeUrl = `${analizeUrl}/${id}`;
+        }
+      }
+
+      if (date) {
+        analizeUrl = `${analizeUrl}/${date}`;
+      }
+      dataUrl = analizeUrl;
+    } else {
+      dataUrl = decodeURI(customUrl);
+    }
+
+    cacheData.dataUrl = dataUrl;
+    cacheData.card = cardDoc._id;
+    cacheData.cardUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+    cacheData.cardLastUpdate = cardDoc.lastUpdate;
+
+    request(dataUrl, { rejectUnauthorized: false }, (err, _res, body) => {
+      if (!err) {
         try {
-          // Vue based cards are loaded locally
-          cardDoc = loadCardFromFile(group, method);
-          cardDoc.vue = true;
-          cardDoc.altHeader = altHeader;
-        } catch (error) {
-          console.error('Missing:', `${group}/${method}`);
-          res.status(404).send('Card not found');
-          return;
-        }
-      }
+          const data = JSON.parse(body);
 
-      let dataUrl;
-
-      if (!customUrl) {
-        let analizeUrl = cardDoc.dataUrl;
-
-        // TODO: this was !isDate(id), that was always returning false
-        // check what it should have been doing
-        if (true) {
-          if (id && id !== undefined && typeof id === 'string' && id.length > 0) {
-            analizeUrl = `${analizeUrl}/${id}`;
-          }
-        }
-
-        if (date) {
-          analizeUrl = `${analizeUrl}/${date}`;
-        }
-        dataUrl = analizeUrl;
-      } else {
-        dataUrl = decodeURI(customUrl);
-      }
-
-      cacheData.dataUrl = dataUrl;
-      cacheData.card = cardDoc._id;
-      cacheData.cardUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
-      cacheData.cardLastUpdate = cardDoc.lastUpdate;
-
-      request(dataUrl, { rejectUnauthorized: false }, (err, _res, body) => {
-        if (!err) {
           try {
-            const data = JSON.parse(body);
+            const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
+            const urlsData = JSON.parse(fs.readFileSync('assets/urls.json', 'utf-8'));
+
+            const cardData = {
+              data,
+              vocab,
+              cardData: cardDoc,
+              customUrl,
+              urlsData,
+            };
 
             try {
-              const vocab = JSON.parse(fs.readFileSync('assets/vocab.json', 'utf-8'));
-              const urlsData = JSON.parse(fs.readFileSync('assets/urls.json', 'utf-8'));
+              if (state) state = JSON.parse(state);
+              let onlyStrings = true;
 
-              const cardData = {
-                data,
-                vocab,
-                cardData: cardDoc,
-                customUrl,
-                urlsData,
-              };
-
-              try {
-                if (state) state = JSON.parse(state);
-                let onlyStrings = true;
-
-                _.each(cardData.state, (key, val) => {
-                  if (typeof key !== 'string' && typeof val !== 'string') {
-                    onlyStrings = false;
-                  }
-                });
-
-                if (!onlyStrings) {
-                  throw new Error(err);
-                } else {
-                  cardData.state = state;
+              _.each(cardData.state, (key, val) => {
+                if (typeof key !== 'string' && typeof val !== 'string') {
+                  onlyStrings = false;
                 }
-              } catch (error) {
-                throw new Error(error);
-              }
+              });
 
-
-              /**
-                 * Rendering ejs from the stored cardDocument (from CMS)
-                 * @type {String}
-                 */
-              const render = (html, vue) => {
-                if (altHeader && !vue) {
-                  html = replaceHeader(cardData, html);
-                }
-
-                if ((frame || embed) && !vue) {
-                  const templateName = frame ? 'card_frame' : 'embed_frame';
-                  html = addFrame(templateName, width, cardData, html);
-                }
-
-                cacheData.html = html;
-
-                const cardRender = new CardRender(cacheData);
-                cardRender.save((err3) => {
-                  /**
-                     * RENDER OG IMAGE IF CARD TYPE IS DEFINED
-                     */
-                  if (cardDoc.type && cardDoc.type !== 'iskanje') {
-                    try {
-                      const ogEjs = fs.readFileSync(`views/og/${cardDoc.type}.ejs`, 'utf-8');
-
-                      if (ogEjs) {
-                        const ogHtml = ejs.render(ogEjs, cardData);
-
-                        webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
-                          siteType: 'html',
-                          captureSelector: '#og-container',
-                          quality: 80,
-                        }, (err1) => {
-                          if (err1) {
-                            console.log('Err:1 ', err1);
-                          } else {
-                            cardRender.ogImageUrl = `${config.ogRootUrl + cardRender._id}.jpeg`;
-
-                            const $ = cheerio.load(html, { decodeEntities: false });
-                            $('head').append(`<meta property="og:image" content="${cardRender.ogImageUrl}" />`);
-                            $('head').append(`<meta name="twitter:image" content="${cardRender.ogImageUrl}" />`);
-
-                            cardRender.html = $.html();
-
-                            cardRender.save()
-                              .then(() => {
-                                cardResponse(req, res, cardRender, cardRender.html, {
-                                  image,
-                                });
-                              });
-                          }
-                        });
-                      }
-                    } catch (err2) {
-                      console.log('Err:2 ', err2);
-                      res.status(400).send({ err: err2.stack, data: cardData });
-                    }
-                  } else {
-                    console.log('No card type');
-                    cardResponse(req, res, cardRender, cardRender.html, {
-                      image,
-                    });
-                    res.end();
-                  }
-
-                  if (err3) {
-                    console.log('Err:3 ', err3);
-                    res.status(400).send(err3);
-                  }
-                })
-                  .catch((err4) => {
-                    console.log('Err:4 ', err4);
-                    res.status(400).send(err4);
-                  });
-              };
-
-              if (!cardDoc.vue) {
-                const html = ejs.render(cardDoc.ejs, cardData);
-                render(html);
+              if (!onlyStrings) {
+                throw new Error(err);
               } else {
-                const bundlesPath = `cards/${group}/${method}/bundles/`;
-                const serverBundle = fs.readFileSync(`${bundlesPath}server.js`, 'utf-8');
-                const clientBundle = fs.readFileSync(`${bundlesPath}client.js`, 'utf-8');
-                let vueTemplateName = 'default';
-                if (frame) {
-                  vueTemplateName = 'frame';
-                } else if (embed) {
-                  vueTemplateName = 'embed';
-                }
-                const stylePath = `${bundlesPath}style.css`;
-                const style = fs.existsSync(stylePath) ? `<style>${fs.readFileSync(stylePath, 'utf-8')}</style>` : '';
-
-                const rendererInstance = renderer.createBundleRenderer(serverBundle, {
-                  template: fs.readFileSync(`cards/template_${vueTemplateName}.html`, 'utf-8'),
-                  runInNewContext: false,
-                });
-                const stringifiedCardData = JSON.stringify(cardData);
-
-                const context = JSON.parse(stringifiedCardData);
-
-                context.clientBundle = clientBundle;
-
-                console.log('server-side context');
-                console.log(context.state);
-
-                context.parlaState = context.state;
-
-                rendererInstance.renderToString(
-                  context,
-                  (error, html) => {
-                    if (error) throw error;
-                    if (style) {
-                      html = html.replace('<!--extra-style-->', style);
-                    }
-                    render(html, true);
-                  },
-                );
+                cardData.state = state;
               }
-            } catch (err4) {
-              console.log('Err:4 ', err4);
-              res.send(err4.toString(), 400);
+            } catch (error) {
+              throw new Error(error);
             }
-          } catch (err5) {
-            console.log('Err:5 ', err5);
-            res.status(400).send({
-              body,
-              dataUrl,
-              err: err5,
-              stack: err5.stack,
-              msg: 'Data source url not returning json',
+
+
+            /**
+               * Rendering ejs from the stored cardDocument (from CMS)
+               * @type {String}
+               */
+            const render = (html) => {
+              cacheData.html = html;
+
+              const cardRender = new CardRender(cacheData);
+              cardRender.save((err3) => {
+                /**
+                   * RENDER OG IMAGE IF CARD TYPE IS DEFINED
+                   */
+                if (cardDoc.type && cardDoc.type !== 'iskanje') {
+                  try {
+                    const ogEjs = fs.readFileSync(`views/og/${cardDoc.type}.ejs`, 'utf-8');
+
+                    if (ogEjs) {
+                      const ogHtml = ejs.render(ogEjs, cardData);
+
+                      webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
+                        siteType: 'html',
+                        captureSelector: '#og-container',
+                        quality: 80,
+                      }, (err1) => {
+                        if (err1) {
+                          console.log('Err:1 ', err1);
+                        } else {
+                          cardRender.ogImageUrl = `${config.ogRootUrl + cardRender._id}.jpeg`;
+
+                          const $ = cheerio.load(html, { decodeEntities: false });
+                          $('head').append(`<meta property="og:image" content="${cardRender.ogImageUrl}" />`);
+                          $('head').append(`<meta name="twitter:image" content="${cardRender.ogImageUrl}" />`);
+
+                          cardRender.html = $.html();
+
+                          cardRender.save()
+                            .then(() => {
+                              cardResponse(req, res, cardRender, cardRender.html, {
+                                image,
+                              });
+                            });
+                        }
+                      });
+                    }
+                  } catch (err2) {
+                    console.log('Err:2 ', err2);
+                    res.status(400).send({ err: err2.stack, data: cardData });
+                  }
+                } else {
+                  console.log('No card type');
+                  cardResponse(req, res, cardRender, cardRender.html, {
+                    image,
+                  });
+                  res.end();
+                }
+
+                if (err3) {
+                  console.log('Err:3 ', err3);
+                  res.status(400).send(err3);
+                }
+              })
+                .catch((err4) => {
+                  console.log('Err:4 ', err4);
+                  res.status(400).send(err4);
+                });
+            };
+
+            const bundlesPath = `cards/${group}/${method}/bundles/`;
+            const serverBundle = fs.readFileSync(`${bundlesPath}server.js`, 'utf-8');
+            const clientBundle = fs.readFileSync(`${bundlesPath}client.js`, 'utf-8');
+            let vueTemplateName = 'default';
+            if (frame) {
+              vueTemplateName = 'frame';
+            } else if (embed) {
+              vueTemplateName = 'embed';
+            }
+            const stylePath = `${bundlesPath}style.css`;
+            const style = fs.existsSync(stylePath) ? `<style>${fs.readFileSync(stylePath, 'utf-8')}</style>` : '';
+
+            const rendererInstance = renderer.createBundleRenderer(serverBundle, {
+              template: fs.readFileSync(`cards/template_${vueTemplateName}.html`, 'utf-8'),
+              runInNewContext: false,
             });
+            const stringifiedCardData = JSON.stringify(cardData);
+
+            const context = JSON.parse(stringifiedCardData);
+
+            context.clientBundle = clientBundle;
+
+            console.log('server-side context');
+            console.log(context.state);
+
+            context.parlaState = context.state;
+
+            rendererInstance.renderToString(
+              context,
+              (error, html) => {
+                if (error) throw error;
+                if (style) {
+                  html = html.replace('<!--extra-style-->', style);
+                }
+                render(html, true);
+              },
+            );
+          } catch (err4) {
+            console.log('Err:4 ', err4);
+            res.send(err4.toString(), 400);
           }
-        } else {
-          console.log('Err:6 ', err);
-          res.status(400).send({ err, msg: 'Data source request error' });
+        } catch (err5) {
+          console.log('Err:5 ', err5);
+          res.status(400).send({
+            body,
+            dataUrl,
+            err: err5,
+            stack: err5.stack,
+            msg: 'Data source url not returning json',
+          });
         }
-      });
-    })
-      .catch((err) => {
-        console.log('Err:7 ', err);
-        res.status(400).send(err);
-      });
+      } else {
+        console.log('Err:6 ', err);
+        res.status(400).send({ err, msg: 'Data source request error' });
+      }
+    });
   }
 
   if (customUrl) {
@@ -470,15 +415,8 @@ exports.render = (req, res) => {
           }
         };
 
-        Card.findById(cardRenderDoc.card)
-          .then((cardDoc) => {
-            cardDoc = cardDoc || loadCardFromFile(cacheData.group, cacheData.method);
-            compileOrRespond(cardDoc);
-          })
-          .catch(() => {
-            const cardDoc = loadCardFromFile(cacheData.group, cacheData.method);
-            compileOrRespond(cardDoc);
-          });
+        const cardDoc = loadCardFromFile(cacheData.group, cacheData.method);
+        compileOrRespond(cardDoc);
       }
     });
 };
