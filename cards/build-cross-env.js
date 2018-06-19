@@ -33,7 +33,7 @@ console.log(chalk.green(cmd), `(${lang})`, chalk.yellow(cardPath));
 
 if (!fs.existsSync(path.join(__dirname, cardPath, 'card.json'))) {
   // eslint-disable-next-line no-console
-  console.log(chalk.red("Invalid card path 'card.json' doesn't exist."));
+  console.error(chalk.red("Invalid card path 'card.json' doesn't exist."));
   process.exit(1);
 }
 
@@ -55,7 +55,8 @@ if (cmd === 'build') {
   cp.on('close', (code) => {
     if (code) {
       // eslint-disable-next-line no-console
-      console.log(chalk.red('error'), `Build failed with exit code ${code}.`);
+      console.error(chalk.red('error'), `Build failed with exit code ${code}.`);
+      process.exit(code);
     }
   });
 }
@@ -78,7 +79,8 @@ if (cmd === 'dev') {
   cp.on('close', (code) => {
     if (code) {
       // eslint-disable-next-line no-console
-      console.log(chalk.red('error'), `Dev server failed with exit code ${code}.`);
+      console.error(chalk.red('error'), `Dev server failed with exit code ${code}.`);
+      process.exit(code);
     }
   });
 }
