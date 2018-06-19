@@ -19,6 +19,7 @@ const CardRender = mongoose.Schema({
   ogImageUrl: String,
   imageLocalPath: String,
   imageUrl: String,
+  lastAccessed: Date,
 });
 
 mongoose.model('CardRender', CardRender);

@@ -125,7 +125,7 @@ async function addOgImage(cardJSON, cardRender, context) {
 async function renderCard(cacheData, cardJSON, originalUrl) {
   cacheData.dataUrl = cardJSON.dataUrl; // TODO add full url with domain from config
   cacheData.card = cardJSON._id;
-  cacheData.cardUrl = originalUrl;
+  cacheData.cardUrl = `${config.cardRootUrl}${originalUrl}`;
   cacheData.cardLastUpdate = cardJSON.lastUpdate;
 
   let fetchUrl;
@@ -186,6 +186,7 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
     await addOgImage(cardJSON, cardRender, context);
   }
 
+  cardRender.lastAccessed = new Date();
   return cardRender.save();
 }
 
@@ -200,11 +201,13 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
     // eslint-disable-next-line no-console
     console.log(`Card: ${cacheData.group}/${cacheData.method} - TRYING CACHE`);
     const CardRender = mongoose.model('CardRender');
-    renderedCard = await CardRender.findOne(cacheData).lean().sort({ dateTime: -1 });
-
-    if (!renderedCard) {
+    renderedCard = await CardRender.findOne(cacheData).sort({ dateTime: -1 });
+    if (renderedCard) {
+      renderedCard.lastAccessed = new Date();
+      renderedCard.save();
+    } else {
       const cacheDataYesterday = { ...cacheData, date: formattedDate(-1) };
-      renderedCard = await CardRender.findOne(cacheDataYesterday).lean().sort({ dateTime: -1 });
+      renderedCard = await CardRender.findOne(cacheDataYesterday).sort({ dateTime: -1 });
       if (renderedCard) {
         // render today's cache but don't await it
         renderCard(cacheData, cardJSON, originalUrl);
