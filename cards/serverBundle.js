@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import request from 'request';
 import { merge } from 'lodash';
-import SearchDropdown from 'parlassets/components/SearchDropdown.vue';
+import SearchDropdown from 'components/SearchDropdown.vue';
 import Card from 'cardPath/card.vue';
 
 import i18nDefault from 'i18n/defaults.json';

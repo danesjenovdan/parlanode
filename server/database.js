@@ -32,9 +32,7 @@ exports.connect = () => (
     }
 
     const { url: host, name: db, user, password } = config.db;
-    mongoose.connect(createMongoURL(host, db, user, password), {
-      useMongoClient: true,
-    });
+    mongoose.connect(createMongoURL(host, db, user, password));
 
     mongoose.connection.on('error', (err) => {
       reject(err);

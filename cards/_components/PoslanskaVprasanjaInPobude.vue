@@ -37,14 +37,13 @@
 </template>
 
 <script>
-import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 
 import CardWrapper from 'components/Card/Wrapper.vue';
-import PSearchDropdown from 'parlassets/components/SearchDropdown.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import QuestionList from 'components/QuestionList.vue';
 
 export default {
