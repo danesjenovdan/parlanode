@@ -51,11 +51,25 @@ module.exports = (cardPath) => {
         },
         {
           test: /\.scss$/,
-          use: [
-            'vue-style-loader',
-            'css-loader',
-            'sass-loader',
-          ],
+          use: ExtractTextPlugin.extract({
+            fallback: 'vue-style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  url: false,
+                  minimize: true,
+                  sourceMap: true,
+                },
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                },
+              },
+            ],
+          }),
           exclude: /node_modules/,
         },
       ],
@@ -80,7 +94,7 @@ module.exports = (cardPath) => {
         collections: true,
       }),
       new ExtractTextPlugin({
-        filename: `${cardPath}/bundles/style.css`,
+        filename: 'style.css',
       }),
       new webpack.DefinePlugin({
         'process.env': {

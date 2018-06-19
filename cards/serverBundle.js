@@ -6,10 +6,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 import Card from 'cardPath/card.vue';
 
 import i18nDefault from 'i18n/defaults.json';
-let i18nCard = {}
-try {
-  i18nCard = require('i18n/card.json');
-} catch(e) {}
+import i18nCard from 'i18n/card.json';
 
 Vue.use(VueI18n);
 
@@ -43,6 +40,7 @@ export default (context) => {
   // const cardState = JSON.parse(JSON.stringify(context.parlaState));
 
   // THIS NEEDS A REWORK BECAUSE BRAINFUCK
+  // TODO: you can get custom url here
   context.state = {
     data: context.data,
     cardData: context.cardData,
