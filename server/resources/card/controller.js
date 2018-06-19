@@ -10,6 +10,7 @@ global.Vue = require('vue'); // TODO: do we need this to be global
 const renderer = require('vue-server-renderer');
 // const exec = util.promisify(require('child_process').exec);
 const { performance } = require('perf_hooks');
+const dateFns = require('date-fns');
 const config = require('../../../config');
 
 exports.deleteAll = (req, res) => {
@@ -188,6 +189,10 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
   return cardRender.save();
 }
 
+function formattedDate(days = 0) {
+  return dateFns.format(dateFns.addDays(new Date(), days), 'D.M.YYYY');
+}
+
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
   const cardJSON = await loadCardJSON(cacheData);
   let renderedCard = null;
@@ -196,10 +201,22 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
     console.log(`Card: ${cacheData.group}/${cacheData.method} - TRYING CACHE`);
     const CardRender = mongoose.model('CardRender');
     renderedCard = await CardRender.findOne(cacheData).lean().sort({ dateTime: -1 });
+
+    if (!renderedCard) {
+      const cacheDataYesterday = { ...cacheData, date: formattedDate(-1) };
+      renderedCard = await CardRender.findOne(cacheDataYesterday).lean().sort({ dateTime: -1 });
+      if (renderedCard) {
+        // render today's cache but don't await it
+        renderCard(cacheData, cardJSON, originalUrl);
+        // eslint-disable-next-line no-console
+        console.log(`Card: ${cacheData.group}/${cacheData.method} - RETURN YESTERDAY'S CACHE AND RENDER NEW`);
+        return renderedCard;
+      }
+    }
   }
   if (!renderedCard || Number(cardJSON.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
     // eslint-disable-next-line no-console
-    console.log(`Card: ${cacheData.group}/${cacheData.method} - NOT CACHED`);
+    console.log(`Card: ${cacheData.group}/${cacheData.method} - NOT CACHED (forceRender=${forceRender})`);
     // TODO this changes the date in card.json which means it recompiles every time
     // await buildCard(cacheData);
     // cardJSON = await loadCardJSON(cacheData);
@@ -208,17 +225,12 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   return renderedCard;
 }
 
-function dateToday() {
-  const date = new Date();
-  return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
-}
-
 const IS_VALID_CUSTOM_URL = /^https?:\/\/[^/]*\.parlameter\.si\//;
 
 exports.render = (req, res) => {
   const { group, method } = req.params;
   const id = req.params.id || null;
-  const date = req.params.date || dateToday();
+  const date = req.params.date || formattedDate();
   const embed = !!req.query.embed;
   const frame = !!req.query.frame;
   const altHeader = !!req.query.altHeader;
