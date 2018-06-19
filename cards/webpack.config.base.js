@@ -4,6 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+process.traceDeprecation = true;
 
 function ensureDirs(filePath) {
   const dirname = path.dirname(filePath);
@@ -36,9 +39,13 @@ module.exports = (cardPath) => {
   createEmptyJsonFile(i18nCardPath);
 
   return {
+    mode: 'production',
+    optimization: {
+      minimize: true,
+    },
     devtool: false,
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.vue$/,
           loader: 'vue-loader',
@@ -49,6 +56,15 @@ module.exports = (cardPath) => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            'vue-style-loader',
+            'css-loader',
+            'sass-loader',
+          ],
           exclude: /node_modules/,
         },
       ],
@@ -79,24 +95,25 @@ module.exports = (cardPath) => {
         shorthands: true,
         collections: true,
       }),
+      new VueLoaderPlugin(),
       // disable this whole plugin to get better debugging output
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-          screw_ie8: true,
-          conditionals: true,
-          unused: true,
-          comparisons: true,
-          sequences: true,
-          dead_code: true,
-          evaluate: true,
-          if_return: true,
-          join_vars: true,
-        },
-        output: {
-          comments: false,
-        },
-      }),
+      // new webpack.optimize.UglifyJsPlugin({
+      //   compress: {
+      //     warnings: false,
+      //     screw_ie8: true,
+      //     conditionals: true,
+      //     unused: true,
+      //     comparisons: true,
+      //     sequences: true,
+      //     dead_code: true,
+      //     evaluate: true,
+      //     if_return: true,
+      //     join_vars: true,
+      //   },
+      //   output: {
+      //     comments: false,
+      //   },
+      // }),
       new webpack.LoaderOptionsPlugin({
         minimize: true,
       }),

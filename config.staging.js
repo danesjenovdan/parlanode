@@ -12,6 +12,6 @@ module.exports = {
   },
   apiPrefix       : '/api',
   ogCapturePath   : './og',
-  ogRootUrl       : 'https://cdn.whatever.com/og_cards/', // root url for OG images
+  ogRootUrl       : 'https://cdn.whatever.com/og_cards', // root url for OG images
   cardCapturePath : './card_captures', // where cards are stored
 };

@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.config.base');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = () => {
   let cardName = process.env.CARD_NAME;
@@ -11,7 +12,7 @@ module.exports = () => {
   }
 
   const config = baseConfig(`${path.resolve(__dirname)}/${cardName}`);
-  config.module.loaders[0].options.extractCSS = false;
+  config.module.rules[0].options.extractCSS = false;
 
   return Object.assign(config, {
     entry: './cards/devBundle.js',
@@ -27,6 +28,7 @@ module.exports = () => {
           CARD_LANG: JSON.stringify(process.env.CARD_LANG || 'sl'),
         },
       }),
+      new VueLoaderPlugin(),
     ],
   });
 };

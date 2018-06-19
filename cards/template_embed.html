@@ -64,8 +64,8 @@
     </style>
 
     <div id="card-container" class="{{ template.embedContainerClass }}">
-      <!--extra-style-->
-      <!--vue-ssr-outlet-->
+        <style>{{{ styleBundle }}}</style>
+        <!--vue-ssr-outlet-->
     </div>
 
     <script>{{{ clientBundle }}}</script>

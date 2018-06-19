@@ -25,7 +25,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.4",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -36,7 +36,7 @@
     "cors": "^2.8.4",
     "css-loader": "^0.28.7",
     "date-fns": "^1.29.0",
-    "ejs": "^2.5.7",
+    "ejs": "^2.6.1",
     "eslint": "^4.12.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-html": "^4.0.3",
@@ -45,32 +45,31 @@
     "express": "~4.16.2",
     "express-session": "^1.15.6",
     "express-validator": "^3.2.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fs-extra": "^6.0.1",
     "full-icu": "^1.2.0",
     "inquirer": "^4.0.1",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
-    "lodash-webpack-plugin": "^0.11.4",
+    "lodash-webpack-plugin": "^0.11.5",
     "mongoose": "^4.13.5",
-    "node-sass": "^4.7.2",
-    "pageres": "4.5.1",
+    "node-sass": "^4.9.0",
     "parlassets": "danesjenovdan/parlassets",
     "rand-token": "^0.3.0",
-    "request": "^2.83.0",
+    "request": "^2.87.0",
     "require-all": "2.2.0",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.0.3",
     "serve-static": "^1.13.1",
     "supertest": "^3.0.0",
     "supervisor": "0.12.0",
-    "uglify-js": "3.2.0",
     "vue": "^2.5.16",
     "vue-i18n": "^7.7.0",
     "vue-i18n-extensions": "^0.1.0",
-    "vue-loader": "13.5.0",
+    "vue-loader": "^15.2.4",
     "vue-server-renderer": "^2.5.16",
     "vue-template-compiler": "^2.5.16",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4",
+    "webpack": "^4.12.0",
+    "webpack-dev-server": "^3.1.4",
     "webshot": "^0.18.0"
   },
   "eslintConfig": {
@@ -112,6 +111,7 @@
     ]
   },
   "devDependencies": {
-    "handlebars": "^4.0.11"
+    "handlebars": "^4.0.11",
+    "webpack-cli": "^3.0.8"
   }
 }

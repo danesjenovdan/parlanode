@@ -32,7 +32,7 @@ module.exports = (cardPath) => {
     locale: process.env.CARD_LANG || 'sl',
     messages: _.merge({}, i18nDefault, i18nCard),
   });
-  config.module.loaders[0].options.compilerModules = [i18nExtensions.module(i18n)];
+  config.module.rules[0].options.compilerModules = [i18nExtensions.module(i18n)];
 
   return Object.assign(config, {
     entry: './cards/serverBundle.js',

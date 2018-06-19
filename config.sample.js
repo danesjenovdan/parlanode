@@ -12,11 +12,11 @@ const sample = {
     password: `${process.env.MONGO_PASSWORD}`, // or password in plaintext
   },
   urls: {
-    analize: 'https://analize.parlameter.si/', // DATA URL BASE
+    analize: 'https://analize.parlameter.si', // DATA URL BASE
   },
   apiPrefix: '/api',
   ogCapturePath: './og',
-  ogRootUrl: 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
+  ogRootUrl: 'https://cdn.parlameter.si/v1/parlassets/og_cards', // root url for OG images
   cardCapturePath: './card_captures', // where cards are stored
 };
 

@@ -12,6 +12,6 @@ module.exports = {
   },
   apiPrefix       : '/api',
   ogCapturePath   : '/home/parladaddy/parlacdn/v1/parlassets/og_cards',
-  ogRootUrl       : 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
+  ogRootUrl       : 'https://cdn.parlameter.si/v1/parlassets/og_cards', // root url for OG images
   cardCapturePath : '/home/parladaddy/parlacdn/v1/parlassets/card_captures', // where cards are stored
 };
