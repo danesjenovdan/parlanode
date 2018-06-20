@@ -12,8 +12,34 @@ const { directive: t } = require('vue-i18n-extensions');
 const exec = util.promisify(require('child_process').exec);
 const { performance } = require('perf_hooks');
 const dateFns = require('date-fns');
+const _ = require('lodash');
 const config = require('../../../config');
 const urlSlugs = require('../../../assets/urls.json');
+
+function getModelObjects(modelName, res, mapFunc) {
+  const Model = mongoose.model(modelName);
+  Model.find({}).lean()
+    .then((docs) => {
+      res.send({
+        count: docs.length,
+        docs: mapFunc ? docs.map(mapFunc) : docs,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+}
+
+exports.getRenders = (req, res) => {
+  getModelObjects('CardRender', res, (doc) => {
+    doc.html = `HTML length: ${doc.html.length}`;
+    return doc;
+  });
+};
+
+exports.getBuilds = (req, res) => {
+  getModelObjects('CardBuild', res);
+};
 
 function clearModel(modelName, res) {
   const Model = mongoose.model(modelName);
@@ -34,32 +60,43 @@ exports.deleteBuilds = (req, res) => {
   clearModel('CardBuild', res);
 };
 
-function getModelObjects(modelName, res, mapFunc) {
-  const Model = mongoose.model(modelName);
-  Model.find({}).lean()
-    .then((docs) => {
-      res.send({
-        count: docs.length,
-        cards: mapFunc ? docs.map(mapFunc) : docs,
-      });
+exports.deleteBuildId = (req, res) => {
+  const CardBuild = mongoose.model('CardBuild');
+  CardBuild.findByIdAndRemove(req.params.id)
+    .then((obj) => {
+      res.send({ deleted: !!obj });
     })
     .catch((err) => {
-      res.status(500).send(err);
+      res.status(400).send(err);
     });
-}
-
-exports.getRenders = (req, res) => {
-  getModelObjects('CardRender', res, (doc) => {
-    doc.html = `HTML length: ${doc.html.length}`;
-    return doc;
-  });
 };
 
-exports.getBuilds = (req, res) => {
-  getModelObjects('CardBuild', res);
-};
-
-exports.cleanUp = () => {
+exports.cleanUp = (req, res) => {
+  const cutoff = dateFns.addDays(new Date(), -28);
+  const CardRender = mongoose.model('CardRender');
+  CardRender.remove({ lastAccessed: { $lt: cutoff } })
+    .then(() => CardRender.find({}).distinct('_id'))
+    .then((docs) => {
+      const existing = docs.map(f => `${f}.jpeg`);
+      return fs.readdir(config.ogCapturePath)
+        .then((files) => {
+          _.pullAll(files, existing);
+          return files.reduce(
+            (p, f) => p.then(() => fs.remove(`${config.ogCapturePath}/${f}`)),
+            Promise.resolve(),
+          );
+        })
+        .then(() => {
+          if (res) {
+            res.send({ ok: true });
+          }
+        });
+    })
+    .catch((err) => {
+      if (res) {
+        res.status(400).send(err);
+      }
+    });
 };
 
 async function loadCardJSON(cacheData) {

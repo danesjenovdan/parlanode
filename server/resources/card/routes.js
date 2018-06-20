@@ -7,13 +7,14 @@ function setIntervalMidnight(func) {
     try {
       func();
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
     }
   };
   setTimeout(() => {
     safeFunc();
     setInterval(safeFunc, ONE_DAY);
-  }, 5000 /* startOfTomorrow() - Date.now() */);
+  }, startOfTomorrow() - Date.now());
 }
 
 module.exports = (app) => {
@@ -21,6 +22,8 @@ module.exports = (app) => {
   app.get('/api/cards/getBuilds', controller.getBuilds);
   app.get('/api/cards/deleteRenders', controller.deleteRenders);
   app.get('/api/cards/deleteBuilds', controller.deleteBuilds);
+  app.get('/api/cards/deleteBuild/:id', controller.deleteBuildId);
+  app.get('/api/cards/cleanUp', controller.cleanUp);
 
   app.get('/:group/:method/', controller.render);
   app.get('/:group/:method/:id(\\d+)/', controller.render);
