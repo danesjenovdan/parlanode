@@ -2,7 +2,7 @@
   "_id": "ps-st-poslanskih-vprasanj-in-pobud",
   "name": "Št. poslanskih vprašanj in pobud",
   "type": "poslanska_skupina",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getNumberOfQuestions",
+  "dataUrl": "{analize}/v1/pg/getNumberOfQuestions",
   "lastUpdate": "2018-05-07T19:15:16.495Z",
   "method": "st-poslanskih-vprasanj-in-pobud",
   "group": "ps",

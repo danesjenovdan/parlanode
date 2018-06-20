@@ -2,7 +2,7 @@
   "_id": "ps_najmanjkrat-enako",
   "name": "Najmanjkrat glasujejo enako",
   "type": "poslanec",
-  "dataUrl": "https://analize.parlameter.si/v1/p/getLeastEqualVoters",
+  "dataUrl": "{analize}/v1/p/getLeastEqualVoters",
   "lastUpdate": "2018-06-06T15:32:02.937Z",
   "method": "najmanjkrat-enako",
   "group": "p",

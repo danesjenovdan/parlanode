@@ -1,7 +1,7 @@
 {
   "_id": "s_raba-po-strankah",
   "name": "Raba po poslanskih skupinah",
-  "dataUrl": "https://isci.parlameter.si/q",
+  "dataUrl": "{isci}/q",
   "type": "empty",
   "lastUpdate": "2018-06-04T15:12:20.961Z",
   "method": "raba-po-strankah",

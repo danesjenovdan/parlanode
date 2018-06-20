@@ -2,7 +2,7 @@
   "_id": "p-neujemanje-s-poslansko-skupino",
   "name": "Neujemanje s poslansko skupino",
   "type": "poslanec",
-  "dataUrl": "http://analize.parlameter.si/v1/p/getMismatchWithPG",
+  "dataUrl": "{analize}/v1/p/getMismatchWithPG",
   "lastUpdate": "2018-06-06T15:56:21.083Z",
   "method": "neujemanje-s-poslansko-skupino",
   "group": "p",

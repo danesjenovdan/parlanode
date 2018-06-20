@@ -2,7 +2,7 @@
   "_id": "s_govori",
   "name": "Transkript",
   "type": "seje",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getSpeechesOfSession",
+  "dataUrl": "{analize}/v1/s/getSpeechesOfSession",
   "lastUpdate": "2018-05-14T14:10:57.838Z",
   "method": "govori",
   "group": "s",

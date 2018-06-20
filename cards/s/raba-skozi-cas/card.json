@@ -1,7 +1,7 @@
 {
   "_id": "s_raba-skozi-cas",
   "name": "Raba skozi čas",
-  "dataUrl": "https://isci.parlameter.si/q",
+  "dataUrl": "{isci}/q",
   "type": "empty",
   "lastUpdate": "2018-06-04T14:44:14.291Z",
   "method": "raba-skozi-cas",
