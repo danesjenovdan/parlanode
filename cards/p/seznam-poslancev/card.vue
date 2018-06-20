@@ -94,6 +94,7 @@ import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
+import config from '../../../config.js'; // TODO: dont do this
 
 export default {
   components: {
@@ -344,7 +345,7 @@ export default {
   },
   created() {
     const that = this;
-    $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', (response) => {
+    $.getJSON(`${config.urls.analize}/v1/pg/getListOfPGs/`, (response) => {
       that.parties = response.data.map(party => ({
         acronym: party.party.acronym,
         color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
