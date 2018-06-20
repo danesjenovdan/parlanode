@@ -9,10 +9,11 @@ const webshot = util.promisify(require('webshot'));
 global.Vue = require('vue'); // TODO: do we need this to be global
 const renderer = require('vue-server-renderer');
 const { directive: t } = require('vue-i18n-extensions');
-// const exec = util.promisify(require('child_process').exec);
+const exec = util.promisify(require('child_process').exec);
 const { performance } = require('perf_hooks');
 const dateFns = require('date-fns');
 const config = require('../../../config');
+const urlSlugs = require('../../../assets/urls.json');
 
 exports.deleteAll = (req, res) => {
   const CardRender = mongoose.model('CardRender');
@@ -69,6 +70,23 @@ async function loadCardJSON(cacheData) {
   return cardJSON;
 }
 
+async function loadBuildJSON(cacheData) {
+  const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
+  const buildJSON = await fs.readJson(`${bundlesPath}/build.json`);
+  buildJSON.lastBuilt = new Date(buildJSON.lastBuilt);
+  return buildJSON;
+}
+
+async function saveBuildJSON(cacheData, cardJSON) {
+  const buildData = {
+    lastBuilt: cardJSON.lastUpdate.toJSON(),
+    language: config.cardLang,
+    dataUrl: cardJSON.dataUrl,
+  };
+  const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
+  await fs.writeJson(`${bundlesPath}/build.json`, buildData);
+}
+
 async function fetchData(dataUrl) {
   let dataRes;
   try {
@@ -91,18 +109,65 @@ async function loadBundles(cacheData) {
   ]);
 }
 
-// async function buildCard(cacheData) {
-//   try {
-//     // TODO: lang
-//     await exec(`node cards/build-cross-env ${cacheData.group}/${cacheData.method} build sl`);
-//   } catch (error) {
-//     // eslint-disable-next-line no-console
-//     console.log(error.stdout);
-//     // eslint-disable-next-line no-console
-//     console.error(error.stderr);
-//     throw error;
-//   }
-// }
+function expandUrl(dataUrl) {
+  Object.keys(config.urls).forEach((key) => {
+    dataUrl = dataUrl.replace(`{${key}}`, config.urls[key]);
+  });
+  return dataUrl;
+}
+
+async function shouldBuildCard(cacheData, cardJSON) {
+  try {
+    const buildJSON = await loadBuildJSON(cacheData);
+    if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(buildJSON.lastBuilt)) {
+      return true;
+    }
+    if (Number(buildJSON.lastBuilt) !== Number(cardJSON.lastUpdate)) {
+      return true;
+    }
+    if (buildJSON.language !== config.cardLang) {
+      return true;
+    }
+    if (expandUrl(buildJSON.dataUrl) !== expandUrl(cardJSON.dataUrl)) {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    if (error.code !== 'ENOENT') {
+      throw error;
+    }
+    return true;
+  }
+}
+
+// Store build commands cards that are currently building so we don't build
+// the same card twice at the same time
+const ongoingCardBuilds = new Map();
+
+async function buildCard(cacheData, cardJSON) {
+  const buildCommand = `node cards/build-cross-env ${cacheData.group}/${cacheData.method} build ${config.cardLang}`;
+  try {
+    let promise;
+    if (ongoingCardBuilds.has(buildCommand)) {
+      promise = ongoingCardBuilds.get(buildCommand);
+    } else {
+      promise = exec(buildCommand);
+      ongoingCardBuilds.set(buildCommand, promise);
+    }
+    await promise;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error.stdout);
+    // eslint-disable-next-line no-console
+    console.error(error.stderr);
+    throw error;
+  } finally {
+    ongoingCardBuilds.delete(buildCommand);
+  }
+  cardJSON = await loadCardJSON(cacheData);
+  await saveBuildJSON(cacheData, cardJSON);
+  return cardJSON;
+}
 
 async function addOgImage(cardJSON, cardRender, context) {
   const ogEjs = await fs.readFile(`views/og/${cardJSON.type}.ejs`, 'utf-8');
@@ -124,7 +189,7 @@ async function addOgImage(cardJSON, cardRender, context) {
 }
 
 async function renderCard(cacheData, cardJSON, originalUrl) {
-  cacheData.dataUrl = cardJSON.dataUrl; // TODO add full url with domain from config
+  cacheData.dataUrl = cardJSON.dataUrl;
   cacheData.card = cardJSON._id;
   cacheData.cardUrl = `${config.cardRootUrl}${originalUrl}`;
   cacheData.cardLastUpdate = cardJSON.lastUpdate;
@@ -133,8 +198,7 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
   if (cacheData.customUrl) {
     fetchUrl = decodeURI(cacheData.customUrl);
   } else {
-    // TODO: get domain for url from config and remove domain from each card url
-    fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
+    fetchUrl = `${expandUrl(cacheData.dataUrl)}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
   }
   const data = await fetchData(fetchUrl);
 
@@ -197,7 +261,7 @@ function formattedDate(days = 0) {
 }
 
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
-  const cardJSON = await loadCardJSON(cacheData);
+  let cardJSON = await loadCardJSON(cacheData);
   let renderedCard = null;
   if (!forceRender) {
     // eslint-disable-next-line no-console
@@ -222,9 +286,11 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   if (!renderedCard || Number(cardJSON.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
     // eslint-disable-next-line no-console
     console.log(`Card: ${cacheData.group}/${cacheData.method} - NOT CACHED (forceRender=${forceRender})`);
-    // TODO this changes the date in card.json which means it recompiles every time
-    // await buildCard(cacheData);
-    // cardJSON = await loadCardJSON(cacheData);
+    if (await shouldBuildCard(cacheData, cardJSON)) {
+      // eslint-disable-next-line no-console
+      console.log(`Card: ${cacheData.group}/${cacheData.method} - BUILDING`);
+      cardJSON = await buildCard(cacheData, cardJSON);
+    }
     renderedCard = await renderCard(cacheData, cardJSON, originalUrl);
   }
   return renderedCard;

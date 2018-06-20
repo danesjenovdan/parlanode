@@ -7,6 +7,7 @@ const expressValidator = require('express-validator');
 const axios = require('axios');
 const fs = require('fs-extra');
 const path = require('path');
+const _ = require('lodash');
 const config = require('../config');
 
 const app = express();
@@ -14,22 +15,40 @@ const app = express();
 const urlSlugsPath = path.resolve(__dirname, '../assets/urls.json');
 const urlSlugsUrl = `${config.urls.analize}/v1/p/getSlugs/`;
 
-async function fetchUrlSlugs() {
-  const dataRes = await axios.get(urlSlugsUrl);
-  if (typeof dataRes.data !== 'object') {
-    throw new Error(`Request did not return JSON (${urlSlugsUrl})`);
+/* eslint-disable no-underscore-dangle */
+async function fetchUrlSlugs(compare = false) {
+  try {
+    const res = await axios.get(urlSlugsUrl);
+    if (typeof res.data !== 'object') {
+      throw new Error(`Request did not return JSON (${urlSlugsUrl})`);
+    }
+    const newData = { ...res.data };
+
+    if (compare) {
+      const fileData = await fs.readJson(urlSlugsPath);
+      delete fileData.__lastUpdate;
+      if (!_.isEqual(newData, fileData)) {
+        newData.__lastUpdate = Date.now();
+      }
+    } else {
+      newData.__lastUpdate = Date.now();
+    }
+
+    await fs.writeJson(urlSlugsPath, newData);
+  } catch (error) {
+    if (!compare) {
+      throw error;
+    } else {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
   }
-  await fs.writeJson(urlSlugsPath, dataRes.data);
 }
 
 async function preloadUrlSlugs() {
   // eslint-disable-next-line no-console
   console.log('Preloading url slugs');
-  if (fs.existsSync(urlSlugsPath)) {
-    fetchUrlSlugs();
-  } else {
-    await fetchUrlSlugs();
-  }
+  await fetchUrlSlugs(fs.existsSync(urlSlugsPath));
 }
 
 function setupExpress() {
