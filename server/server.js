@@ -4,9 +4,33 @@ const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const expressValidator = require('express-validator');
+const axios = require('axios');
+const fs = require('fs-extra');
+const path = require('path');
 const config = require('../config');
 
 const app = express();
+
+const urlSlugsPath = path.resolve(__dirname, '../assets/urls.json');
+const urlSlugsUrl = `${config.urls.analize}/v1/p/getSlugs/`;
+
+async function fetchUrlSlugs() {
+  const dataRes = await axios.get(urlSlugsUrl);
+  if (typeof dataRes.data !== 'object') {
+    throw new Error(`Request did not return JSON (${urlSlugsUrl})`);
+  }
+  await fs.writeJson(urlSlugsPath, dataRes.data);
+}
+
+async function preloadUrlSlugs() {
+  // eslint-disable-next-line no-console
+  console.log('Preloading url slugs');
+  if (fs.existsSync(urlSlugsPath)) {
+    fetchUrlSlugs();
+  } else {
+    await fetchUrlSlugs();
+  }
+}
 
 function setupExpress() {
   return new Promise((resolve, reject) => {
@@ -45,6 +69,7 @@ function setupResources() {
 
 exports.init = () => (
   Promise.resolve()
+    .then(preloadUrlSlugs)
     .then(setupExpress)
     .then(setupResources)
 );
