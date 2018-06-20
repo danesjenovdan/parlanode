@@ -11,7 +11,10 @@ const config = {
   },
   urls: {
     analize: 'https://analize.parlameter.si',
+    isci: 'https://isci.parlameter.si',
+    data: 'https://data.parlameter.si',
   },
+  cardLang: 'sl',
   ogCapturePath: './og',
   ogRootUrl: `http://localhost:${port}/og_cards`,
   cardRootUrl: `http://localhost:${port}`,
