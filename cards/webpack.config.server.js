@@ -29,6 +29,8 @@ module.exports = (cardPath) => {
     .slice(-2)
     .join('/');
 
+  const baseConfigObject = baseConfig(cardPath);
+
   const i18nDefault = require(path.resolve(__dirname, '_i18n', cardLang, 'defaults.json'));
   const i18nCard = require(path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`));
 
@@ -37,7 +39,7 @@ module.exports = (cardPath) => {
     messages: _.merge({}, i18nDefault, i18nCard),
   });
 
-  return merge.smart(baseConfig(cardPath), {
+  return merge.smart(baseConfigObject, {
     entry: './cards/serverBundle.js',
     output: {
       path: path.resolve(cardPath, 'bundles'),
