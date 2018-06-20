@@ -14,7 +14,7 @@ function createMongoURL(host, db, user, password) {
 exports.connect = () => (
   new Promise((resolve, reject) => {
     // eslint-disable-next-line no-console
-    console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green(`connecting to ${config.db.url + config.db.name}`)}`);
+    console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green(`connecting to ${config.db.url}/${config.db.name}`)}`);
 
     // handle missing mongo username and password
     if (process.platform === 'win32') {

@@ -23,3 +23,13 @@ const CardRender = mongoose.Schema({
 });
 
 mongoose.model('CardRender', CardRender);
+
+const CardBuild = mongoose.Schema({
+  group: { type: String, index: true, required: true },
+  method: { type: String, index: true, required: true },
+  lastBuilt: { type: Date, required: true },
+  language: { type: String, required: true },
+  dataUrl: { type: String, required: true },
+});
+
+mongoose.model('CardBuild', CardBuild);

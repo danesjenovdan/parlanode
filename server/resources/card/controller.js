@@ -15,76 +15,57 @@ const dateFns = require('date-fns');
 const config = require('../../../config');
 const urlSlugs = require('../../../assets/urls.json');
 
-exports.deleteAll = (req, res) => {
-  const CardRender = mongoose.model('CardRender');
-
-  CardRender.remove({})
-    .then(() => {
-      res.send('Done');
+function clearModel(modelName, res) {
+  const Model = mongoose.model(modelName);
+  Model.remove({})
+    .then((obj) => {
+      res.send(obj);
     })
     .catch((err) => {
       res.status(400).send(err);
     });
+}
+
+exports.deleteRenders = (req, res) => {
+  clearModel('CardRender', res);
 };
 
-exports.getUrls = (req, res) => {
-  const CardRender = mongoose.model('CardRender');
+exports.deleteBuilds = (req, res) => {
+  clearModel('CardBuild', res);
+};
 
-  CardRender.find({}).lean()
-    .then((cardDocs) => {
-      const cards = cardDocs.map((cardDoc) => {
-        cardDoc.html = `HTML length: ${cardDoc.html.length}`;
-        return cardDoc;
-      });
-
+function getModelObjects(modelName, res, mapFunc) {
+  const Model = mongoose.model(modelName);
+  Model.find({}).lean()
+    .then((docs) => {
       res.send({
-        count: cards.length,
-        cards,
+        count: docs.length,
+        cards: mapFunc ? docs.map(mapFunc) : docs,
       });
     })
     .catch((err) => {
-      res.status(400).send(err);
+      res.status(500).send(err);
     });
+}
+
+exports.getRenders = (req, res) => {
+  getModelObjects('CardRender', res, (doc) => {
+    doc.html = `HTML length: ${doc.html.length}`;
+    return doc;
+  });
 };
 
-exports.getCardById = (req, res) => {
-  const { cardId } = req.params;
-  const CardRender = mongoose.model('CardRender');
+exports.getBuilds = (req, res) => {
+  getModelObjects('CardBuild', res);
+};
 
-  CardRender.findOne({ _id: cardId }).lean()
-    .then((cardDoc) => {
-      if (!cardDoc) {
-        res.status(404).send();
-      } else {
-        res.send(cardDoc.html);
-      }
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
+exports.cleanUp = () => {
 };
 
 async function loadCardJSON(cacheData) {
   const cardJSON = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
   cardJSON.lastUpdate = new Date(cardJSON.lastUpdate);
   return cardJSON;
-}
-
-async function loadBuildJSON(cacheData) {
-  const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
-  const buildJSON = await fs.readJson(`${bundlesPath}/build.json`);
-  buildJSON.lastBuilt = new Date(buildJSON.lastBuilt);
-  return buildJSON;
-}
-
-async function saveBuildJSON(cacheData, cardJSON) {
-  const buildData = {
-    lastBuilt: cardJSON.lastUpdate.toJSON(),
-    language: config.cardLang,
-    dataUrl: cardJSON.dataUrl,
-  };
-  const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
-  await fs.writeJson(`${bundlesPath}/build.json`, buildData);
 }
 
 async function fetchData(dataUrl) {
@@ -118,17 +99,21 @@ function expandUrl(dataUrl) {
 
 async function shouldBuildCard(cacheData, cardJSON) {
   try {
-    const buildJSON = await loadBuildJSON(cacheData);
-    if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(buildJSON.lastBuilt)) {
+    const CardBuild = mongoose.model('CardBuild');
+    const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method });
+    if (!cardBuild) {
       return true;
     }
-    if (Number(buildJSON.lastBuilt) !== Number(cardJSON.lastUpdate)) {
+    if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(cardBuild.lastBuilt)) {
       return true;
     }
-    if (buildJSON.language !== config.cardLang) {
+    if (Number(cardBuild.lastBuilt) !== Number(cardJSON.lastUpdate)) {
       return true;
     }
-    if (expandUrl(buildJSON.dataUrl) !== expandUrl(cardJSON.dataUrl)) {
+    if (cardBuild.language !== config.cardLang) {
+      return true;
+    }
+    if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJSON.dataUrl)) {
       return true;
     }
     return false;
@@ -165,7 +150,16 @@ async function buildCard(cacheData, cardJSON) {
     ongoingCardBuilds.delete(buildCommand);
   }
   cardJSON = await loadCardJSON(cacheData);
-  await saveBuildJSON(cacheData, cardJSON);
+  const CardBuild = mongoose.model('CardBuild');
+  await CardBuild.findOneAndUpdate(
+    { group: cacheData.group, method: cacheData.method },
+    {
+      lastBuilt: cardJSON.lastUpdate.toJSON(),
+      language: config.cardLang,
+      dataUrl: cardJSON.dataUrl,
+    },
+    { upsert: true, new: true, setDefaultsOnInsert: true },
+  );
   return cardJSON;
 }
 
