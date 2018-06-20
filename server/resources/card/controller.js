@@ -228,6 +228,7 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
     clientBundle,
     styleBundle,
   };
+  context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 
   const html = await rendererInstance.renderToString(context);
   cacheData.html = html;
