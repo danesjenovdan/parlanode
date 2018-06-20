@@ -42,3 +42,4 @@ build/Release
 config.dev.js
 
 /cards/**/bundles
+/assets/urls.json
