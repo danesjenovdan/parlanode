@@ -88,7 +88,7 @@
                     </div>
                     <div class="embed-divider"></div>
                     <div class="embed-script">
-                      <textarea class="form-control" data-id="0" data-url="https://glej.parlameter.si/ps/seznam-poslanskih-skupin/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></iframe></textarea>
+                      <textarea class="form-control" data-id="0" data-url="https://glej.hr.parlameter.si/ps/seznam-poslanskih-skupin/"><script>(function(d,script){script=d.createElement('script');script.type='text/javascript';script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src = 'https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.min.js';d.getElementsByTagName('head')[0].appendChild(script);}(document));</script><iframe frameborder="0" width="100%" src="{{ generatedCardUrl }}&embed=true"></iframe></textarea>
                       <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed">KOPIRAJ</button>
                     </div>
                   </div>
@@ -247,18 +247,18 @@
           params.analysis = this.currentAnalysis
         }
 
-        return 'https://glej.parlameter.si/ps/seznam-poslanskih-skupin/' +
-          '?customUrl=' + encodeURIComponent('https://analize.parlameter.si/v1/pg/getListOfPGs') +
+        return 'https://glej.hr.parlameter.si/ps/seznam-poslanskih-skupin/' +
+          '?customUrl=' + encodeURIComponent('http://analize.hr.parlameter.si/v1/pg/getListOfPGs') +
           (Object.keys(params).length > 0 ? '&state=' + encodeURIComponent(JSON.stringify(params)) : '')
       }
     },
     created: function() {
       var that = this
 
-      $.getJSON('https://analize.parlameter.si/v1/p/getSlugs/', function(response) {
+      $.getJSON('http://analize.hr.parlameter.si/v1/p/getSlugs/', function(response) {
         that.slugs = response
       })
-      $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', function(response) {
+      $.getJSON('http://analize.hr.parlameter.si/v1/pg/getListOfPGs/', function(response) {
         that.partyData = response.data.sort(function(partyA, partyB) {
           var a = partyA.results.seat_count
           var b = partyB.results.seat_count

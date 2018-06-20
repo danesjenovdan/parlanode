@@ -91,7 +91,7 @@
 
 <script>
 
-// https://isci.parlameter.si/filter/kriza?people=80
+// http://isci.hr.parlameter.si/filter/kriza?people=80
 
 // make query var
 var query = <%- JSON.stringify(query); %>;
@@ -107,7 +107,7 @@ function capitalise(string) {
     }
 
   function generateSearchUrl(queryParams) {
-    var searchurl = "https://isci.parlameter.si/filter/" + query.q + '?';
+    var searchurl = "http://isci.hr.parlameter.si/filter/" + query.q + '?';
     if (queryParams.people && queryParams.people.length > 0) {
         searchurl = searchurl + 'people=' + queryParams.people
     }
@@ -199,7 +199,7 @@ function capitalise(string) {
       var day = 1;
       var month = date.getMonth() + 1;
       var year = date.getFullYear();
-      
+
       return String(day) + '.' + String(month) + '.' + String(year);
   }
 
@@ -211,7 +211,7 @@ function capitalise(string) {
         if (this.ppspodatki[0]) {
             if (this.ppspodatki[0].id === 'loading') {
                 return 'Nalagamo filtre ...'
-            }    
+            }
         }
             return this.ppsselectedTags.length > 0 ? 'Izbranih filtrov: ' + this.ppsselectedTags.length : 'Izberi filtre'
       },
@@ -224,7 +224,7 @@ function capitalise(string) {
           if (this.caspodatki[0]) {
               if (this.caspodatki[0].id === 'loading') {
                 return 'Nalagamo filtre ...'
-            } 
+            }
           }
         return this.casselectedTags.length > 0 ? 'Izbranih filtrov: ' + this.casselectedTags.length : 'Izberi filtre'
       },
@@ -313,9 +313,9 @@ function capitalise(string) {
                 .sort(function(a, b) {
                     return b.count - a.count;
                 });
-            
+
             console.log(poslanci);
-            
+
             var ps = response.facet_counts.facet_fields.party_e
                 .filter(function(party) {
                     return party.score > 0;
@@ -335,7 +335,7 @@ function capitalise(string) {
                 .sort(function(a, b) {
                     return b.count - a.count;
                 });
-            
+
             console.log(ps);
 
             self.ppspodatki = poslanci.concat(ps);
@@ -386,7 +386,7 @@ function capitalise(string) {
 
             // delovna telesa
             self.dtpodatki = response.organizations.map(function (wb) {
-                
+
                 var tempobject = {
                     id: wb.id,
                     label: wb.name,

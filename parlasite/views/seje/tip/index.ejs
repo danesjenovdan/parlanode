@@ -58,7 +58,7 @@
                 newPosition = $(".session-list .session").length - 1;
             }
 
-            var jqxhr = $.ajax("https://glej.parlameter.si/wb/getWorkingBodies/" + id + "")
+            var jqxhr = $.ajax("https://glej.hr.parlameter.si/wb/getWorkingBodies/" + id + "")
                 .done(function (data) {
                     var cont = $('<div class="tmpContainer" />').html(data);
                     if ($(window).width() < 768) {

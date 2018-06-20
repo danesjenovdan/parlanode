@@ -131,7 +131,7 @@ const routes = [
       // },
       {
         name      : 'zadnjeSeje',
-        sourceUrl : '/s/zadnjih-5-sej/?customUrl=https%3A%2F%2Fanalize.parlameter.si%2Fv1%2Fs%2FgetSessionsList&state=%7B"onlyLatest"%3Atrue%7D',
+        sourceUrl : '/s/zadnjih-5-sej/?customUrl=https%3A%2F%2Fanalize.hr.parlameter.si%2Fv1%2Fs%2FgetSessionsList&state=%7B"onlyLatest"%3Atrue%7D',
         resolve   : (req, res, route, card) => {
 
           return getMPIdByName(req.params.fullName, req)
@@ -171,7 +171,7 @@ const routes = [
     cards       : [{
       name: 'zakonodaja',
       sourceUrl: '/c/zakonodaja/',
-      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.hr.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
     }]
   },
   {
@@ -181,7 +181,7 @@ const routes = [
     cards       : [{
       name: 'zakon',
       sourceUrl: '/s/zakon/',
-      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.hr.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
     }]
   },
   {
@@ -275,7 +275,7 @@ const routes = [
           //const renderedPath = pattern.stringify({motionid: req.params.motionid});
 
           let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
-          // console.log(cardUrl);
+          console.log(cardUrl);
 
           if (req.query.forceRender) {
             cardUrl += '&forceRender=true';
@@ -306,6 +306,7 @@ const routes = [
           return getMPIdByName(req.params.fullName, req)
             .then((mpData) => {
 
+              console.log(mpData)
               let mpId   = mpData.mpId;
               let mpSlug = mpData.mpSlug;
 
@@ -877,7 +878,7 @@ const routes = [
 
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : mpId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?people=' + mpId)}&state=${JSON.stringify({person: mpId})}`;
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('http://isci.hr.parlameter.si/filter/*/0?people=' + mpId)}&state=${JSON.stringify({person: mpId})}`;
 
               if (req.query.forceRender) {
                 cardUrl += '&forceRender=true';
@@ -1472,7 +1473,7 @@ const routes = [
               let psSlug         = psData.psSlug;
               var pattern        = new UrlPattern(card.sourceUrl);
               const renderedPath = pattern.stringify({ id : psId });
-              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('https://isci.parlameter.si/filter/*/0?parties=' + psId)}&state=${JSON.stringify({parties: psId})}`;
+              let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent('http://isci.hr.parlameter.si/filter/*/0?parties=' + psId)}&state=${JSON.stringify({parties: psId})}`;
 
               if (req.query.forceRender) {
                 cardUrl += '&forceRender=true';
@@ -1663,7 +1664,7 @@ const routes = [
       {
         name      : 'zakonodajaSeja',
         sourceUrl : '/c/zakonodaja/:id',
-        resolve: (req, res, route, card) => resolve_card_with_custom_url(`http://analize.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
+        resolve: (req, res, route, card) => resolve_card_with_custom_url(`http://analize.hr.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
         // resolve   : (req, res, route, card) => {
         //   var pattern        = new UrlPattern(card.sourceUrl);
         //   const renderedPath = pattern.stringify({ id : req.params.id });
@@ -2504,7 +2505,7 @@ function getMPIdByName(name, req) {
   let selectedMp;
 
   //works ok
-  // return fetch('https://data.parlameter.si/v1/getMPs')
+  // return fetch('http://data.hr.parlameter.si/v1/getMPs')
   //     .then((res)=> res.json())
   //     .then((jsonBody) => {
   //            var mpsList = jsonBody;
@@ -2538,7 +2539,7 @@ function getMPIdByName(name, req) {
 }
 
 function getLawDataByEPA(epa, req) {
-  return fetch(`https://analize.parlameter.si/v1/s/getLegislation/${epa}`)
+  return fetch(`http://analize.hr.parlameter.si/v1/s/getLegislation/${epa}`)
     .then((res) => res.json());
 }
 
@@ -2582,7 +2583,7 @@ function getSessionIds(params, req, session_type) {
   let type;
 
   //works ok
-  // return fetch('https://analize.parlameter.si/v1/s/getSessionsByClassification')
+  // return fetch('http://analize.hr.parlameter.si/v1/s/getSessionsByClassification')
   //     .then((res)=> res.json())
   //     .then((jsonBody) => {
   //          //var spsList = jsonBody;
@@ -2662,7 +2663,7 @@ function getSessionsByType(params, req) {
   let type;
 
   //works ok
-  // return fetch('https://analize.parlameter.si/v1/s/getSessionsByClassification')
+  // return fetch('http://analize.hr.parlameter.si/v1/s/getSessionsByClassification')
   //     .then((res)=> res.json())
   //     .then((jsonBody) => {
   //         //var spsList = jsonBody;
@@ -2694,7 +2695,7 @@ function getSessionsByType(params, req) {
 }
 
 
-//https://analize.parlameter.si/v1/p/getSlugs/
+//http://analize.hr.parlameter.si/v1/p/getSlugs/
 function getAllLinks() {
 
 }

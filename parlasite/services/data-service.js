@@ -56,7 +56,7 @@ function spsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://analize.parlameter.si/v1/s/getSessionsByClassification/', (err, res, body) => {
+    request('http://analize.hr.parlameter.si/v1/s/getSessionsByClassification/', (err, res, body) => {
 
       if (err) return reject(err);
 
@@ -112,7 +112,7 @@ function mpsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://data.parlameter.si/v1/getMPs/', (err, res, body) => {
+    request('http://data.hr.parlameter.si/v1/getMPs/', (err, res, body) => {
 
       if (err) return reject(err);
 
@@ -167,7 +167,7 @@ function opsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://data.parlameter.si/v1/getAllPGs/', (err, res, body) => {
+    request('http://data.hr.parlameter.si/v1/getAllPGs/', (err, res, body) => {
 
       if (err) return reject(err);
 
@@ -222,7 +222,7 @@ function mpsopsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://analize.parlameter.si/v1/p/getAllActiveMembers/', (err, res, body) => {
+    request('http://analize.hr.parlameter.si/v1/p/getAllActiveMembers/', (err, res, body) => {
 
       if (err) return reject(err);
 
@@ -277,7 +277,7 @@ function mpsopsurlsRequest() {
 
   return new Promise((resolve, reject) => {
 
-    request('https://analize.parlameter.si/v1/p/getSlugs/', (err, res, body) => {
+    request('http://analize.hr.parlameter.si/v1/p/getSlugs/', (err, res, body) => {
 
       if (err) return reject(err);
 
