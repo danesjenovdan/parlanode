@@ -8,6 +8,7 @@ const util = require('util');
 const webshot = util.promisify(require('webshot'));
 global.Vue = require('vue'); // TODO: do we need this to be global
 const renderer = require('vue-server-renderer');
+const { directive: t } = require('vue-i18n-extensions');
 // const exec = util.promisify(require('child_process').exec);
 const { performance } = require('perf_hooks');
 const dateFns = require('date-fns');
@@ -150,6 +151,7 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
   const rendererInstance = renderer.createBundleRenderer(serverBundle, {
     template,
     runInNewContext: false,
+    directives: { t },
   });
 
   const parsedState = JSON.parse(cacheData.state);

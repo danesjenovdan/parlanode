@@ -20,6 +20,7 @@ const compileWithWebpack = config =>
         hash: false,
         modules: false,
         version: false,
+        children: false,
       }));
       resolve();
     });
@@ -42,6 +43,7 @@ const refreshLastUpdate = (path) => {
 
 const compileAndRefresh = path =>
   Promise.all([
+    console.log(serverConfig(path).module.rules[0]),
     compileWithWebpack(clientConfig(path)),
     compileWithWebpack(serverConfig(path)),
   ]).then(() => {
