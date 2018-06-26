@@ -90,24 +90,21 @@
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
+import { partyHeader } from 'mixins/altHeaders';
 import { getPersonLink, getPersonPortrait } from 'components/links';
 
 export default {
   components: { },
-  mixins: [common, partyOverview, partyTitle],
+  mixins: [
+    common,
+    partyOverview,
+    partyTitle,
+    partyHeader,
+  ],
   name: 'OsnovneInformacijePS',
   data() {
-    const { party } = this.$options.cardData.data;
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        heading: party.name,
-        subheading: `${party.acronym} | ${party.is_coalition ? 'koalicija' : 'opozicija'}`,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-        circleText: party.acronym,
-        circleClass: `${party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-      },
     };
   },
   computed: {
