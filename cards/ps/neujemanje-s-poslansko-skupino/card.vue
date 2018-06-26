@@ -6,16 +6,10 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše je ujemanje.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Za vsako glasovanje izračunamo "glas poslanske skupine", ki ji posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja proti najmanjšemu.
-      </p>
-      <p class="info-text">
-        Vse glasovnice z vrednostjo "NI" ignoriramo, kar ima za posledico to, da če je večinski glas poslanske skupine "NI" (večina poslank in poslancev se glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima poslanska skupina več "večinskih glasov" (dve opciji imata enako največje število glasov znotraj poslanske skupine) upoštevamo obe opciji pri primerjavi z individualnimi poslanci ni poslankami.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p class="info-text" v-t="'info.text[1]'"></p>
     </div>
     <person-list :people="people" />
   </card-wrapper>
@@ -25,6 +19,7 @@
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
+import { partyHeader } from 'mixins/altHeaders';
 import PersonList from 'components/PersonList.vue';
 
 export default {
@@ -33,7 +28,10 @@ export default {
     partyOverview,
     partyTitle,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    partyHeader,
+  ],
   name: 'NeujemanjeSPoslanskoSkupino',
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
@@ -46,15 +44,6 @@ export default {
       data: this.$options.cardData.data,
       party,
       people,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: party.name,
-        subheading: `${party.acronym} | ${party.is_coalition ? 'koalicija' : 'opozicija'}`,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-        circleText: party.acronym,
-        circleClass: `${party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-      },
     };
   },
   computed: {
