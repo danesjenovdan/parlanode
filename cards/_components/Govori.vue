@@ -7,8 +7,6 @@
     :card-url="shareUrl"
   >
     <div slot="info">
-      <!-- "lead": "Izpis povezav do vseh govorov poslancev poslanske skupine v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.",
-      "text": "Naložimo povezave do vseh govorov poslancev izbrane poslanske skupine, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (poslanci, časovno obdobje, vrsta seje)." -->
       <p class="info-text lead" v-t="'info.lead'"></p>
       <p class="info-text heading" v-t="'info.methodology'"></p>
       <p class="info-text" v-t="'info.text'"></p>
@@ -83,7 +81,7 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
-import { memberHeader } from 'mixins/altHeaders';
+import { memberHeader, partyHeader } from 'mixins/altHeaders';
 
 import axios from 'axios';
 
@@ -101,7 +99,6 @@ export default {
   },
   mixins: [
     common,
-    memberHeader,
   ],
   data() {
     // console.log(this.party);
@@ -279,6 +276,12 @@ export default {
           r[a.session_id].push(a);
           return r;
         }, Object.create(null));
+    },
+    headerConfig() {
+      if (this.type === 'person') {
+        return memberHeader.computed.headerConfig.call(this);
+      }
+      return partyHeader.computed.headerConfig.call(this);
     },
   },
   methods: {
