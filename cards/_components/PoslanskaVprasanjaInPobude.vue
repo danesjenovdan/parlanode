@@ -3,30 +3,38 @@
     :id="$root.$options.cardData.cardData._id"
     content-class="full"
     :card-url="cardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-        <p class="info-text lead">Pregled poslanskih vprašanj na nivoju poslanske skupine.</p>
-        <p class="info-text heading">METODOLOGIJA</p>
-        <p class="info-text">Zbrali smo vsa poslanska vprašanja, jih sortirali po poslanskih skupinah in jih ponudili v pregled glede na poslanca/-ko, ki jih je postavil/-a, glede na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi iskanje po naslovu poslanskih vprašanj.</p>
-        <p class="info-text">Nabor poslanskih vprašanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text[0]'"></p>
+      <i18n path="info.text[1]" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
 
     <div class="filters">
       <div class="filter tag-dropdown">
-        <div class="filter-label">Poslanec/-ka</div>
-          <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
+        <div class="filter-label" v-t="'mp'"></div>
+        <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
       </div>
       <div class="filter tag-dropdown naslovljenec">
-        <div class="filter-label">Naslovljenec/-ka</div>
-          <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
+        <div class="filter-label" v-t="'addressee'"></div>
+        <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
       </div>
       <div class="filter month-dropdown">
-        <div class="filter-label">Časovno obdobje</div>
-          <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
+        <div class="filter-label" v-t="'time-period'"></div>
+        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter text-filter">
-        <div class="filter-label">Išči po naslovu vprašanja</div>
+        <div class="filter-label" v-t="'title-search'"></div>
         <input class="text-filter-input" type="text" v-model="textFilter">
       </div>
     </div>
@@ -37,14 +45,14 @@
 </template>
 
 <script>
-import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
+import { partyHeader, memberHeader } from 'mixins/altHeaders';
 
 import CardWrapper from 'components/Card/Wrapper.vue';
-import PSearchDropdown from 'parlassets/components/SearchDropdown.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import QuestionList from 'components/QuestionList.vue';
 
 export default {
@@ -52,13 +60,19 @@ export default {
   mixins: [common, partyOverview, partyTitle],
   computed: {
     MPsPlaceholder() {
-      return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';
+      return this.selectedMPs.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedMPs.length })
+        : this.$t('select-placeholder');
     },
     recipientsPlaceholder() {
-      return this.selectedRecipients.length > 0 ? `Izbranih: ${this.selectedRecipients.length}` : 'Izberi';
+      return this.selectedRecipients.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedRecipients.length })
+        : this.$t('select-placeholder');
     },
     monthPlaceholder() {
-      return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+      return this.selectedMonths.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
+        : this.$t('select-placeholder');
     },
     dropdownItems() {
       const validMPs = [];
@@ -72,14 +86,19 @@ export default {
 
         questionDay.questions
           .forEach((question) => {
-            if (validMPs.indexOf(question.person.id) === -1) validMPs.push(question.person.id);
-            if (validRecipients.indexOf(question.recipient_text) === -1) validRecipients.push(question.recipient_text);
+            if (validMPs.indexOf(question.person.id) === -1) {
+              validMPs.push(question.person.id);
+            }
+            if (validRecipients.indexOf(question.recipient_text) === -1) {
+              validRecipients.push(question.recipient_text);
+            }
           });
       });
 
       return {
         MPs: this.allMPs.filter(mp => validMPs.indexOf(mp.id) > -1),
-        recipients: this.allRecipients.filter(recipient => validRecipients.indexOf(recipient.id) > -1),// this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
+        recipients: this.allRecipients
+          .filter(recipient => validRecipients.indexOf(recipient.id) > -1),
         months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
@@ -96,10 +115,6 @@ export default {
     selectedMonths() {
       return this.allMonths.filter(month => month.selected);
     },
-    // selectedOptions() {
-    //   return this.allOptions.filter(option => option.selected)
-    //                         .map(option => option.id);
-    // },
     filteredQuestionDays() {
       return this.getFilteredQuestionDays();
     },
@@ -111,51 +126,39 @@ export default {
       if (this.textFilter.length > 0) state.text = this.textFilter;
       if (this.selectedMPs.length > 0) state.mps = this.selectedMPs;
 
-      return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}/${this[this.type].id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     headerConfig() {
-      let specifics;
       if (this.type === 'person') {
-        specifics = {
-          heading: this.person.name,
-          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleImage: this.person.gov_id,
-        }
-      } else {
-        specifics = {
-          heading: this.party.name,
-          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleText: this.party.acronym,
-          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        }
+        return memberHeader.computed.headerConfig.call(this);
       }
-
-      return Object.assign({}, specifics, {
-        alternative: this.cardData.cardData.altHeader ? JSON.parse(this.cardData.cardData.altHeader) : false,
-        title: this.cardData.cardData.name
-      })
-    }
+      return partyHeader.computed.headerConfig.call(this);
+    },
   },
   data() {
     const selectFromState = (items, stateItemIds) =>
-      items.map(item =>
-        Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-      )
+      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
 
     let allMonths = generateMonths();
-    let allMPs = this.cardData.data.all_authors.map(
-      author => ({ id: author.id, label: author.name, selected: false })
-    );
-    let allRecipients = this.cardData.data.all_recipients.map(
-      recipient => ({ id: recipient, label: recipient, selected: false })
-    );
-    let textFilter = ''
+    let allMPs = this.cardData.data.all_authors
+      .map(author => ({ id: author.id, label: author.name, selected: false }));
+    let allRecipients = this.cardData.data.all_recipients
+      .map(recipient => ({ id: recipient, label: recipient, selected: false }));
+    let textFilter = '';
 
     if (this.cardData.parlaState) {
-      if (this.cardData.parlaState.text) textFilter = this.cardData.parlaState.text;
-      if (this.cardData.parlaState.months) allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
-      if (this.cardData.parlaState.recipients) allRecipients = selectFromState(allRecipients, this.cardData.parlaState.recipients);
-      if (this.cardData.parlaState.mps) allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
+      if (this.cardData.parlaState.text) {
+        textFilter = this.cardData.parlaState.text;
+      }
+      if (this.cardData.parlaState.months) {
+        allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
+      }
+      if (this.cardData.parlaState.recipients) {
+        allRecipients = selectFromState(allRecipients, this.cardData.parlaState.recipients);
+      }
+      if (this.cardData.parlaState.mps) {
+        allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
+      }
     }
 
     return {
@@ -169,16 +172,12 @@ export default {
     };
   },
   methods: {
-    // toggleOption(optionId) {
-    //   const clickedOption = this.allOptions.filter(option => option.id === optionId)[0];
-    //   clickedOption.selected = !clickedOption.selected;
-    // },
-    getFilteredQuestionDays(onlyFilterByText = false) { //getFilteredVotingDays
-      const filterQuestions = (question) => { //filterBallots
+    getFilteredQuestionDays(onlyFilterByText = false) {
+      const filterQuestions = (question) => {
         const MPMatch = onlyFilterByText || this.selectedMPs.length === 0 ||
-          this.selectedMPs.indexOf(question.person.id) !== -1
+          this.selectedMPs.indexOf(question.person.id) !== -1;
         const recipientMatch = onlyFilterByText || this.selectedRecipients.length === 0 ||
-          this.selectedRecipients.indexOf(question.recipient_text) !== -1
+          this.selectedRecipients.indexOf(question.recipient_text) !== -1;
         const textMatch = this.textFilter === '' ||
           question.title.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
 
@@ -196,26 +195,7 @@ export default {
       return this.questionDays
         .map(questionDay => ({
           date: questionDay.date,
-          questions: questionDay.questions
-            .filter(filterQuestions)
-            // .map((ballot) => {
-            //   const ballotClone = JSON.parse(JSON.stringify(ballot));
-            //   if (ballot.option === 'ni') {
-            //     ballotClone.label = this.type === 'person'
-            //       ? `Ni ${this.vocabulary.glasovati[this.person.gender]} o`
-            //       : 'Niso glasovali o';
-            //   } else {
-            //     ballotClone.label = this.type === 'person'
-            //       ? `${capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
-            //       : `Glasovali ${ballot.option.toUpperCase()}`;
-            //   }
-
-            //   if (ballot.result !== 'none') {
-            //     ballotClone.outcome = ballot.result === true ? 'Predlog sprejet' : 'Predlog zavrnjen';
-            //   }
-
-            //   return ballotClone;
-            // }),
+          questions: questionDay.questions.filter(filterQuestions),
         }))
         .filter(questionDay => questionDay.questions.length > 0)
         .filter(filterDates);
@@ -229,7 +209,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1
+      validator: value => ['person', 'party'].indexOf(value) > -1,
     },
     person: Object,
     party: Object,
