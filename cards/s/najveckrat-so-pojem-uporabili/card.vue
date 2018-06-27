@@ -5,13 +5,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam 5 poslancev, ki so iskalni niz največkrat uporabili, razvrščen od največje proti najmanjši vrednosti.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Preštejemo, kolikokrat je posamezni/-a poslanec/-ka izrekel/-a iskani niz in osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev. Prikažemo jih pet z največ rezultati.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
     <person-list :people="people" :show-party-link="true" />
