@@ -1,0 +1,15 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Izpis 10 besed in besednih zvez, ki jih poslanska skupina uporablja pogosteje kot ostale poslanske skupine v DZ.",
+      "text": [
+        "Analizo izvajamo po statistiki {link}.",
+        "Korpus predstavljajo vsi govori, dokument pa vsi govori poslank in poslancev v poslanski skupini."
+      ],
+      "link": {
+        "link": "https://en.wikipedia.org/wiki/Tf-idf",
+        "text": "tf-idf"
+      }
+    }
+  }
+}
