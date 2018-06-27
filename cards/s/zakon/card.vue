@@ -2,12 +2,20 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Povzetek <span v-if="data.classification==='zakon'">zakona</span><span v-else>akta</span> in rezultati vseh z njim povezanih glasovanj.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Iz <a class="funblue-light-hover" href="https://www.dz-rs.si">www.dz-rs.si</a> naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
 
     <!-- Card content goes here -->
