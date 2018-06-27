@@ -3,7 +3,7 @@
   "name": "Prisotnost na sejah DZ",
   "type": "poslanska_skupina",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getPercentOFAttendedSessionPG",
-  "lastUpdate": "2018-05-07T18:47:33.020Z",
+  "lastUpdate": "2018-06-27T10:49:33.659Z",
   "method": "prisotnost-na-sejah-dz",
   "group": "ps",
   "big": false,

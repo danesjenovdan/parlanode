@@ -1,0 +1,12 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ.",
+      "text": "Podatke pridobivamo s spletnega mesta {link}.",
+      "link": {
+        "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
+        "text": "DZ RS"
+      }
+    }
+  }
+}

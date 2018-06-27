@@ -6,16 +6,12 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam povezav do vseh govorov, ki vsebujejo iskalni niz.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Po transkriptih vseh sej poiščemo in izpišemo povezave do vseh govorov, v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu od najnovejše do najstarejše. Zajeto množico poslancev določajo uporabniške nastavitve filtrov, in sicer glede na časovno obdobje, poslanca/-ko in/ali poslansko skupino in/ali sejo.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
-    <div v-if="rawSpeeches.length === 0" class="no-results">Brez zadetkov.</div>
+    <div v-if="rawSpeeches.length === 0" class="no-results" v-t="'no-results'"></div>
     <scroll-shadow v-else ref="shadow">
       <ul class="person-list thing-list" @scroll="$refs.shadow.check($event.currentTarget)" ref="scrollElement">
         <li v-for="speech in speeches" :key="speech.speech_id" class="person">

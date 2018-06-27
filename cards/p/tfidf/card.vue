@@ -21,7 +21,7 @@
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <div v-else class="empty-dataset">Brez govorov.</div>
+    <div v-else class="empty-dataset" v-t="'no-speeches'"></div>
   </card-wrapper>
 </template>
 

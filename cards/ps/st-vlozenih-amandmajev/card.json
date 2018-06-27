@@ -3,7 +3,7 @@
   "name": "Št. vloženih amandmajev",
   "type": "poslanska_skupina",
   "dataUrl": "http://analize.parlameter.si/v1/pg/getNumberOfAmendmetsOfPG",
-  "lastUpdate": "2018-05-07T19:08:22.582Z",
+  "lastUpdate": "2018-06-27T11:35:32.636Z",
   "method": "st-vlozenih-amandmajev",
   "group": "ps",
   "big": false,

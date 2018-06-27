@@ -28,57 +28,57 @@
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
             <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
             <a :href="vote.url">
-              <div class=" col-md-1 ">
+              <div class=" col-md-1">
                 <div :class="vote.accepted">
                   <p>
                     <i :class="vote.accepted_glyph"></i>
                   </p>
                 </div>
               </div>
-              <div class="col-md-11 border-left ">
-                <div class="col-md-6 ">
-                  <div class="session_title ">
+              <div class="col-md-11 border-left">
+                <div class="col-md-6">
+                  <div class="session_title">
                     <p>
                       {{ getVoteText(vote) }}
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6 ">
-                  <div class="session_votes ">
-                    <div class="progress smallbar ">
+                <div class="col-md-6">
+                  <div class="session_votes">
+                    <div class="progress smallbar">
                       <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                        <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
+                        <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                       </div>
                       <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                        <span class="sr-only ">{{ vote.percent_against }}% votes against</span>
+                        <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                       </div>
                       <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                        <span class="sr-only ">{{ vote.percent_abstain }}% votes abstained</span>
+                        <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                       </div>
                       <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                        <span class="sr-only ">{{ vote.percent_not_present }}% not present</span>
+                        <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                       </div>
                     </div>
-                    <div class="row ">
-                      <div class="col-xs-3 ">
+                    <div class="row">
+                      <div class="col-xs-3">
                         {{ vote.votes_for }}
                         <div class="type" v-t="'vote-for'"></div>
-                        <div class="indicator ney ">&nbsp;</div>
+                        <div class="indicator ney">&nbsp;</div>
                       </div>
-                      <div class="col-xs-3 ">
+                      <div class="col-xs-3">
                         {{ vote.against }}
                         <div class="type" v-t="'vote-against'"></div>
-                        <div class="indicator aye ">&nbsp;</div>
+                        <div class="indicator aye">&nbsp;</div>
                       </div>
-                      <div class="col-xs-3 ">
+                      <div class="col-xs-3">
                         {{ vote.abstain }}
                         <div class="type" v-t="'vote-abstained'"></div>
-                        <div class="indicator not ">&nbsp;</div>
+                        <div class="indicator not">&nbsp;</div>
                       </div>
-                      <div class="col-xs-3 ">
+                      <div class="col-xs-3">
                         {{ vote.not_present }}
                         <div class="type" v-t="'vote-not'"></div>
-                        <div class="indicator abstention ">&nbsp;</div>
+                        <div class="indicator abstention">&nbsp;</div>
                       </div>
                     </div>
                   </div>

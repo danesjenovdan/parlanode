@@ -8,6 +8,7 @@
     "confirm": "Potrdi",
     "data-currently-unavailable": "Podatki trenutno niso na voljo.",
     "title-search": "Išči po naslovu",
+    "contents-search": "Išči po vsebini govorov",
     "working-body": "Matično delovno telo",
     "vote-types": "Tipi glasovanja",
     "select-placeholder": "Izberi",
@@ -41,7 +42,8 @@
     "party": "Poslanska skupina",
     "time-period": "Časovno obdobje",
     "session-type": "Vrsta seje",
-    "no-results": "Brez rezultatov.",
+    "no-results": "Brez zadetkov.",
+    "no-speeches": "Brez govorov.",
     "present--f": "Prisotna",
     "present--m": "Prisoten",
     "present--plural": "Prisotni",
@@ -50,6 +52,9 @@
     "not-present--plural": "Odsotni",
     "inequality": "Neenotnost",
     "everybody": "Vsi",
+    "show": "Prikaži",
+    "full-speech": "Cel govor",
+    "session-processing": "Seja v obdelavi.",
     "info": {
       "title": "Info",
       "methodology": "METODOLOGIJA"

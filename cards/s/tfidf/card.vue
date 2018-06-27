@@ -2,26 +2,28 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">
-        Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje kot na vseh drugih sejah.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Analizo izvajamo po statistiki <a target="_blank" class="funblue-light-hover" href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a>.
-      </p>
-      <p class="info-text">
-        Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text[0]" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
+      <p class="info-text" v-t="'info.text[1]'"></p>
     </div>
 
     <div v-if="chartRows.length" class="columns">
       <bar-chart :data="chartRows1" :alreadyCalculated="true" />
       <bar-chart :data="chartRows2" :alreadyCalculated="true" />
     </div>
-    <div v-else class="empty-dataset">Seja v obdelavi.</div>
+    <div v-else class="empty-dataset" v-t="'session-processing'"></div>
   </card-wrapper>
 </template>
 

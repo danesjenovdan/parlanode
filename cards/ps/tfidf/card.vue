@@ -3,17 +3,25 @@
     contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Izpis 10 besed in besednih zvez, ki jih poslanska skupina uporablja pogosteje kot ostale poslanske skupine v DZ.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Analizo izvajamo po statistiki <a href="https://en.wikipedia.org/wiki/Tf-idf">tf-idf</a>.</p>
-      <p class="info-text">Korpus predstavljajo vsi govori, dokument pa vsi govori poslank in poslancev v poslanski skupini.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text[0]" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
+      <p class="info-text" v-t="'info.text[1]'"></p>
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <div v-else class="empty-dataset">Brez govorov.</div>
+    <div v-else class="empty-dataset" v-t="'no-speeches'"></div>
   </card-wrapper>
 </template>
 
@@ -21,22 +29,20 @@
 import { getSearchTermLink } from 'components/links';
 import common from 'mixins/common';
 import { partySpeeches } from 'mixins/contextUrls';
+import { partyHeader } from 'mixins/altHeaders';
 import BarChart from 'components/BarChart.vue';
 
 export default {
   components: { BarChart },
-  mixins: [common, partySpeeches],
+  mixins: [
+    common,
+    partySpeeches,
+    partyHeader,
+  ],
   name: 'PSTFIDF',
   data() {
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: 'Besede, ki jih zaznamujejo',
-      },
     };
   },
   computed: {
@@ -55,20 +61,10 @@ export default {
     decodeHTML(html) {
       return html.replace('&shy;', '\u00AD');
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
   },
   created() {
     const context = this.$root.$options.cardData;
-    context.template.pageTitle =
-      `Besede, ki jih zaznamujejo - ${context.data.party.name}`;
+    context.template.pageTitle = `Besede, ki jih zaznamujejo - ${context.data.party.name}`;
   },
 };
 </script>

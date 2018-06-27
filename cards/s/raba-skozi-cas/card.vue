@@ -5,20 +5,16 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
     <p-tabs>
-      <p-tab label="Cel mandat">
+      <p-tab :label="$t('whole-term')">
         <time-line-chart :data="timeChartData" />
       </p-tab>
-      <p-tab label="Zadnje leto">
+      <p-tab :label="$t('last-year')">
         <time-bar-chart :data="timeChartData" />
       </p-tab>
     </p-tabs>

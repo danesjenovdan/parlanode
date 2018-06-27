@@ -6,13 +6,17 @@
     :results="$options.cardData.data.result"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Št. amandmajev, ki jih je vložila ta poslanska skupina v primerjavi s povprečno in najvišjo vrednostjo med vsemi poslanskimi skupinami.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s spletnega mesta <a href="http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine" target="_blank" class="funblue-light-hover">DZ RS</a>.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
   </score-avg-max>
 </template>

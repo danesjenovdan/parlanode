@@ -5,13 +5,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Pregled vseh glasovanj, ki vsebujejo iskalni niz, razvščenih glede na čas.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text text">
-        Po glasovanjih vseh sej poiščemo in izpišemo povezave do vseh glasovanj, v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu (od najnovejše do najstarejše) in podobnosti z iskalnim nizom.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
     <seznam-glasovanj :data="votes" :show-filters="false" />

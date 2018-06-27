@@ -3,7 +3,7 @@
   "name": "Neujemanje s poslansko skupino",
   "type": "poslanska_skupina",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getPGMismatch",
-  "lastUpdate": "2018-06-05T08:45:34.134Z",
+  "lastUpdate": "2018-06-26T15:07:10.867Z",
   "method": "neujemanje-s-poslansko-skupino",
   "group": "ps",
   "big": false,

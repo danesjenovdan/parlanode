@@ -5,12 +5,43 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
-      <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="http://www.dz-rs.si">DZ RS</a>.</p>
-      <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622</a>.</p>
-      <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text[0]'"></p>
+      <i18n path="info.text[1]" tag="p" class="info-text">
+        <a
+          place="link1"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[0].link')"
+          v-t="'info.links[0].text'"
+        />
+      </i18n>
+      <i18n path="info.text[2]" tag="p" class="info-text">
+        <a
+          place="link2"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[1].link')"
+          v-t="'info.links[1].text'"
+        />
+        <a
+          place="link3"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[2].link')"
+          v-t="'info.links[2].text'"
+        />
+      </i18n>
+      <i18n path="info.text[3]" tag="p" class="info-text">
+        <a
+          place="link4"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[3].link')"
+          v-t="'info.links[3].text'"
+        />
+      </i18n>
     </div>
 
     <seznam-glasovanj :data="votes" :filters="filters" @filters-changed="onFiltersChanged" />

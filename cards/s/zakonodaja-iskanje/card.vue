@@ -5,13 +5,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam vseh zakonov in aktov, ki bodisi v naslovu bodisi v povzetku vsebujejo vaš iskalni niz in so o njih na seji DZ glasovali v času trenutnega sklica.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text text">
-        Po naslovih in povzetkih vseh zakonov in aktov, obravnavanih v tem sklicu, poiščemo pojavitve iskalnega niza in izpišemo povezave do vseh tistih zakonov ali aktov, v katerih se pojavi njegova lema. Na koncu zakone oziroma akte razvrstimo po podobnosti z iskalnim nizom.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
     <div class="legislation-list">
@@ -66,9 +62,9 @@ export default {
   },
   computed: {
     columns: () => [
-      { id: 'name', label: 'Ime', additionalClass: 'small-text' },
-      { id: 'epa', label: 'EPA', additionalClass: 'small-text' },
-      { id: 'result', label: 'Status', additionalClass: 'small-text' },
+      { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
+      { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
+      { id: 'result', label: this.$t('status'), additionalClass: 'small-text' },
     ],
     generatedCardUrl() {
       const state = { text: this.keywords };
@@ -79,15 +75,15 @@ export default {
       const mapResultIcon = {
         sprejet: {
           icon: 'glyphicon-ok',
-          name: 'Sprejet',
+          name: this.$t('vote-passed'),
         },
         zavrnjen: {
           icon: 'glyphicon-remove',
-          name: 'Zavrnjen',
+          name: this.$t('vote-not-passed'),
         },
         v_obravnavi: {
           icon: 'v-obravnavi',
-          name: 'V obravnavi',
+          name: this.$t('vote-under-consideration'),
         },
       };
 
