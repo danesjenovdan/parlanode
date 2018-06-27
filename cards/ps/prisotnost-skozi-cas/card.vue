@@ -7,13 +7,9 @@
     v-bind="{ generatedCardUrl }"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Prisotnost poslanske skupine na glasovanjih DZ skozi čas.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Seštejemo število glasovanj, na katerih bi v izbranem mesecu morali biti prisotni poslanci poslanske skupine, in z odstotki prikažemo, kolikšnega deleža glasovanj so se udeležili.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
   </prisotnost-chart>
 </template>
