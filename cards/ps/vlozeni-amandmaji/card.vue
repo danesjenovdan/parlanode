@@ -8,9 +8,40 @@
       <p class="info-text lead" v-t="'info.lead'"></p>
       <p class="info-text heading" v-t="'info.methodology'"></p>
       <p class="info-text" v-t="'info.text[0]'"></p>
-      <p class="info-text" v-t="'info.text[1]'"></p>
-      <p class="info-text" v-t="'info.text[2]'"></p>
-      <p class="info-text" v-t="'info.text[3]'"></p>
+      <i18n path="info.text[1]" tag="p" class="info-text">
+        <a
+          place="link1"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[0].link')"
+          v-t="'info.links[0].text'"
+        />
+      </i18n>
+      <i18n path="info.text[2]" tag="p" class="info-text">
+        <a
+          place="link2"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[1].link')"
+          v-t="'info.links[1].text'"
+        />
+        <a
+          place="link3"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[2].link')"
+          v-t="'info.links[2].text'"
+        />
+      </i18n>
+      <i18n path="info.text[3]" tag="p" class="info-text">
+        <a
+          place="link4"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.links[3].link')"
+          v-t="'info.links[3].text'"
+        />
+      </i18n>
     </div>
 
     <div class="filters">
