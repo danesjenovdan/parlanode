@@ -1,21 +1,14 @@
 /* globals module */
-const webpack = require('webpack');
+const path = require('path');
+const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = (cardPath) => {
-  const config = baseConfig(cardPath);
-  return Object.assign(config, {
+  return merge(baseConfig(cardPath), {
     entry: './cards/clientBundle.js',
     output: {
-      filename: `${cardPath}/bundles/client.js`,
+      path: path.resolve(cardPath, 'bundles'),
+      filename: 'client.js',
     },
-    plugins: config.plugins.concat([
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-          CARD_LANG: JSON.stringify(process.env.CARD_LANG || 'sl'),
-        },
-      }),
-    ]),
   });
 };

@@ -1,6 +1,6 @@
 /* globals module */
 const path = require('path');
-const webpack = require('webpack');
+const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = () => {
@@ -10,23 +10,33 @@ module.exports = () => {
     cardName = cardName.replace('cards/', '');
   }
 
-  const config = baseConfig(`${path.resolve(__dirname)}/${cardName}`);
-  config.module.loaders[0].options.extractCSS = false;
-
-  return Object.assign(config, {
+  return merge.smart(baseConfig(`${path.resolve(__dirname)}/${cardName}`), {
+    mode: 'development',
+    optimization: {
+      minimize: false,
+    },
+    devtool: 'cheap-module-eval-source-map',
     entry: './cards/devBundle.js',
     output: {
       path: path.resolve(__dirname, './build'),
       publicPath: '/build/',
       filename: 'bundle.js',
     },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: '"development"',
-          CARD_LANG: JSON.stringify(process.env.CARD_LANG || 'sl'),
+    module: {
+      rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader',
+          options: {
+            extractCSS: false,
+          },
         },
-      }),
-    ],
+      ],
+    },
+    devServer: {
+      historyApiFallback: true,
+      publicPath: '/build/',
+      stats: 'minimal',
+    },
   });
 };

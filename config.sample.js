@@ -1,23 +1,23 @@
-/* global console */
+const port = 3000;
 
-/* global console */
-
-const sample = {
-  port: 3000,
-  serverTimeout: 600000,
+const config = {
+  port,
+  serverTimeout: 30000,
   db: {
     name: 'parla-db',
-    url: 'mongodb://localhost/',
-    user: `${process.env.MONGO_USERNAME}`, // or username in plaintext
-    password: `${process.env.MONGO_PASSWORD}`, // or password in plaintext
+    url: 'localhost',
+    user: `${process.env.MONGO_USERNAME}`,
+    password: `${process.env.MONGO_PASSWORD}`,
   },
   urls: {
-    analize: 'https://analize.parlameter.si/', // DATA URL BASE
+    analize: 'https://analize.parlameter.si',
+    isci: 'https://isci.parlameter.si',
+    data: 'https://data.parlameter.si',
   },
-  apiPrefix: '/api',
+  cardLang: 'sl',
   ogCapturePath: './og',
-  ogRootUrl: 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
-  cardCapturePath: './card_captures', // where cards are stored
+  ogRootUrl: `http://localhost:${port}/og_cards`,
+  cardRootUrl: `http://localhost:${port}`,
 };
 
-module.exports = sample;
+module.exports = config;

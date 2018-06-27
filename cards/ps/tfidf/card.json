@@ -1,9 +1,9 @@
 {
   "_id": "ps_tfidf",
-  "name": "Besede, ki jih zaznamujejo",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getTFIDF",
+  "name": "Besede, ki jo/ga zaznamujejo",
+  "dataUrl": "{analize}/v1/pg/getTFIDF",
   "type": "poslanska_skupina",
-  "lastUpdate": "2018-06-27T12:05:21.127Z",
+  "lastUpdate": "2018-05-04T11:01:25.248Z",
   "method": "tfidf",
   "group": "ps",
   "high": false,

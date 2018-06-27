@@ -1,17 +1,11 @@
-module.exports = {
-  port            : 7004,
-  serverTimeout   : 600000,
-  db              : {
+const config = {
+  port: 7004,
+  db: {
     name: 'parladb',
-    url: 'mongodb://localhost/',
-    user: `${process.env.MONGO_USERNAME}`,
-    password: `${process.env.MONGO_PASSWORD}`,
   },
-  urls            : {
-    analize : 'https://analize.parlameter.si', // DATA URL BASE
-  },
-  apiPrefix       : '/api',
-  ogCapturePath   : '/home/parladaddy/parlacdn/v1/parlassets/og_cards',
-  ogRootUrl       : 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
-  cardCapturePath : '/home/parladaddy/parlacdn/v1/parlassets/card_captures', // where cards are stored
+  ogCapturePath: '/home/parladaddy/parlacdn/v1/parlassets/og_cards',
+  ogRootUrl: 'https://cdn.parlameter.si/v1/parlassets/og_cards',
+  cardRootUrl: 'https://glej.parlameter.si',
 };
+
+module.exports = config;

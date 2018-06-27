@@ -1,7 +1,7 @@
 {
   "_id": "ps_seznam_poslanskih_skupin",
   "name": "Seznam poslanskih skupin",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getListOfPGs",
+  "dataUrl": "{analize}/v1/pg/getListOfPGs",
   "type": "seznam_poslanskih_skupin",
   "lastUpdate": "2018-04-24T16:50:19.766Z",
   "method": "seznam-poslanskih-skupin",

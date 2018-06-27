@@ -40,3 +40,6 @@ build/Release
 
 # Dev config for local use
 config.dev.js
+
+/cards/**/bundles
+/assets/urls.json
