@@ -5,16 +5,12 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Pregled pogostosti pojavljanja iskalnega niza v govorih glede na poslansko skupino.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Za vsak zadetek glede na iskalni niz preverimo, v koliko govorih poslank in poslancev poslanskih skupin se pojavi. Seštejemo jih glede na poslansko skupino in prikažemo v krožnem grafikonu.
-      </p>
+      <p class="info-text lead" v-t="'info.lead'"></p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text'"></p>
     </div>
 
-    <div v-if="data.response.numFound === 0" class="no-results">Brez zadetkov.</div>
+    <div v-if="data.response.numFound === 0" class="no-results" v-t="'no-results'"></div>
     <div v-else id="pie-chart">
       <pie-chart :data="pieData" />
     </div>
