@@ -5,9 +5,15 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text">
-        Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu <a href="http://www.dz-rs.si" target="_blank" class="funblue-light-hover">DZ RS</a>, strojno razbijemo na posamezne govorne nastope. To je kartica, ki predstavlja en govor.
-      </p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+          :href="$t('info.link.link')"
+          v-t="'info.link.text'"
+        />
+      </i18n>
     </div>
 
     <speech :speech="data" v-quotable show-session />

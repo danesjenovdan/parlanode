@@ -33,7 +33,7 @@
         <span class="quote-text">{{speech.results.quoted_text}}</span>
         {{quotePaddingAfter}}
       </div>
-      <a href="#" class="full-text-link" @click="showFullSpeech">Cel govor</a>
+      <a href="#" class="full-text-link" @click="showFullSpeech" v-t="'full-speech'"></a>
       <div class="quote-button">“</div>
     </div>
     <div class="links">
