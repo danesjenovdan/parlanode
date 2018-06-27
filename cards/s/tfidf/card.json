@@ -3,7 +3,7 @@
   "name": "Besede, ki so zaznamovale sejo",
   "type": "seje",
   "dataUrl": "https://analize.parlameter.si/v1/s/getTFIDF",
-  "lastUpdate": "2018-05-10T13:25:17.054Z",
+  "lastUpdate": "2018-06-27T14:33:26.323Z",
   "method": "tfidf",
   "group": "s",
   "big": true,
