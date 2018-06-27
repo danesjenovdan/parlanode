@@ -2,36 +2,32 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+  >
     <div slot="info">
-      <p class="info-text lead"></p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta DZ RS.</p>
-      <p class="info-text">Rezultat posameznega glasovanja ima tri različne izpise: na nivoju poslancev, na nivoju poslanskih skupin ter glede na stran vlade.</p>
+      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p class="info-text" v-t="'info.text[1]'"></p>
       <div class="info-text">
         <ul>
-          <li>Prvi zavihek omogoča pregled glasov poslancev, filtriranje glede na vrednost glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem glasovanju. "60% ZA" npr. pomeni, da je ZA glasovalo 60 od 90 poslancev.</li>
-          <li>Drugi zavihek prikaže glasove poslanskih skupin. Na koncu vsake vrstice je izpisan večinski glas poslanske skupine, gumbi z vrednostmi glasovnic pa odpirajo sezname poslancev, ki so oddali tak glas. S strelo opozarjamo na razkole v poslanskih skupinah - izrišemo jo nad tistimi glasovi, ki niso enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.</li>
-          <li>Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo opozarjamo na nepričakovane glasove - označujemo odstopanje od večinskega glasu koalicije.</li>
+          <li v-t="'info.text[2]'"></li>
+          <li v-t="'info.text[3]'"></li>
+          <li v-t="'info.text[4]'"></li>
         </ul>
       </div>
-      <p class="info-text heading">OZNAČEVANJE S STRELO</p>
-      <p class="info-text">S strelo opozarjamo na razkole v poslanskih skupinah oziroma v koaliciji - izrišemo jo nad tistimi glasovanji,  ki vsebujejo glasove, ki niso enaki večinskemu glasu poslanske skupine / koalicije, pri čemer so odsotni glasovi izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.</p>
-      <!-- <p class="info-text heading">OZNAČEVANJE S PLAMENOM</p>
-      <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis.</a></p>
-      <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p> -->
+      <p class="info-text heading" v-t="'info.text[5]'"></p>
+      <p class="info-text" v-t="'info.text[6]'"></p>
     </div>
 
     <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
       <div class="result">
         <template v-if="data.result.accepted">
           <i class="accepted glyphicon glyphicon-ok"></i>
-          <div class="text">sprejet</div>
+          <div class="text" v-t="'vote-passed'"></div>
         </template>
         <template v-else>
           <i class="not-accepted glyphicon glyphicon-remove"></i>
-          <div class="text">zavrnjen</div>
+          <div class="text" v-t="'vote-not-passed'"></div>
         </template>
       </div>
       <div class="name">{{ data.name }}</div>
@@ -46,7 +42,7 @@
       :show-parent="true"
     />
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="visible-xs">
-      <p-tab label="Poslanci">
+      <p-tab :label="$t('mps')">
         <poslanci
           :members="data.members"
           :member-votes="data.all"
@@ -54,7 +50,7 @@
           :state="state"
         />
       </p-tab>
-      <p-tab label="Poslanske skupine">
+      <p-tab :label="$t('parties')">
         <poslanske-skupine
           ref="parties"
           :members="data.members"
@@ -64,7 +60,7 @@
           :selectedOption="state.selectedOption || null"
         />
       </p-tab>
-      <p-tab label="Stran vlade">
+      <p-tab :label="$t('gov-side')">
         <poslanske-skupine
           ref="sides"
           :members="data.members"
@@ -76,7 +72,7 @@
       </p-tab>
     </p-tabs>
     <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
-      <p-tab label="Povzetek" variant="dark">
+      <p-tab :label="$t('summary')">
         <excerpt
           :content="data.abstract || ''"
           :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
@@ -84,7 +80,7 @@
           :show-parent="true"
         />
       </p-tab>
-      <p-tab label="Poslanci">
+      <p-tab :label="$t('mps')">
         <poslanci
           :members="data.members"
           :member-votes="data.all"
@@ -92,7 +88,7 @@
           :state="state"
         />
       </p-tab>
-      <p-tab label="Poslanske skupine">
+      <p-tab :label="$t('parties')">
         <poslanske-skupine
           ref="parties"
           :members="data.members"
@@ -102,7 +98,7 @@
           :selectedOption="state.selectedOption || null"
         />
       </p-tab>
-      <p-tab label="Stran vlade">
+      <p-tab :label="$t('gov-side')">
         <poslanske-skupine
           ref="sides"
           :members="data.members"
@@ -127,19 +123,17 @@ import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-// puščam not develop verzijo, tukaj je verzija glasovanje-update za lažji debugging, če bo potreben
-  // components: {
-    // Excerpt,
-    // Poslanci,
-    // PoslanskeSkupine,
-    // PTab,
-    // PTabs,
-  // },
-  components: { Poslanci, PoslanskeSkupine, PSearchDropdown, PTab, PTabs, Excerpt },
+  components: {
+    Poslanci,
+    PoslanskeSkupine,
+    PSearchDropdown,
+    PTab,
+    PTabs,
+    Excerpt,
+  },
   mixins: [common],
   name: 'GlasovanjeSeje',
   data() {
-    console.log(this.$options.cardData);
     return {
       showMobileExcerpt: false,
       data: this.$options.cardData.data,
@@ -155,7 +149,7 @@ export default {
       coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
         party: {
           id: side,
-          name: side === 'coalition' ? 'KOALICIJA' : 'OPOZICIJA',
+          name: this.$t(side),
         },
         votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'not_present']),
         max: {
@@ -191,17 +185,8 @@ export default {
       }
       this.state.selectedTab = tabNumber;
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
   },
-// glasovanje-update je bilo prazno, created() je iz developa
+  // glasovanje-update je bilo prazno, created() je iz developa
   created() {
     this.$options.cardData.template.contextUrl =
       `${this.slugs.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
@@ -213,8 +198,6 @@ export default {
     this.$on('selectedparty', (newSelectedParty) => {
       this.state.selectedParty = newSelectedParty;
     });
-
-    // this.$emit('selectedoption', 'for');
   },
 };
 </script>
