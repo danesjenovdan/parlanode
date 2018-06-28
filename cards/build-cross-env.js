@@ -44,7 +44,7 @@ process.argv.slice(3).forEach((arg) => {
     args[key] = val;
   }
 });
-const isFalse = arg => [false, 0, 'false', '0', 'no'].includes(arg);
+const isFalse = arg => [false, 0, 'false', '0', 'no', 'off'].includes(arg);
 
 if (cmd === 'build') {
   const cpEnv = Object.create(process.env);
