@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 const { spawn } = require('child_process');
 
-let [cardPath, cmd, lang] = process.argv.slice(2);
+let [cardPath, cmd, lang] = process.argv.slice(2).filter(arg => !arg.startsWith('--'));
 
 if (cmd && cmd.length === 2) {
   [cmd, lang] = [lang, cmd];
@@ -37,11 +37,23 @@ if (!fs.existsSync(path.join(__dirname, cardPath, 'card.json'))) {
   process.exit(1);
 }
 
+const args = {};
+process.argv.slice(3).forEach((arg) => {
+  if (arg.startsWith('--')) {
+    const [key, val] = arg.includes('=') ? arg.slice(2).split('=') : [arg.slice(2), true];
+    args[key] = val;
+  }
+});
+const isFalse = arg => [false, 0, 'false', '0', 'no'].includes(arg);
+
 if (cmd === 'build') {
   const cpEnv = Object.create(process.env);
   cpEnv.NODE_ENV = 'production';
   cpEnv.CARD_NAME = cardPath;
   cpEnv.CARD_LANG = lang;
+  if (isFalse(args['update-timestamp'])) {
+    cpEnv.DONT_UPDATE_TIMESTAMP = true;
+  }
 
   const cpArgs = ['cards/build.js'];
 

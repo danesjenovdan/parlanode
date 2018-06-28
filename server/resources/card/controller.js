@@ -167,7 +167,7 @@ async function shouldBuildCard(cacheData, cardJSON) {
 const ongoingCardBuilds = new Map();
 
 async function buildCard(cacheData, cardJSON) {
-  const buildCommand = `node cards/build-cross-env ${cacheData.group}/${cacheData.method} build ${config.cardLang}`;
+  const buildCommand = `node cards/build-cross-env ${cacheData.group}/${cacheData.method} build ${config.cardLang} --update-timestamp=false`;
   try {
     let promise;
     if (ongoingCardBuilds.has(buildCommand)) {

@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const fs = require('fs');
+const fs = require('fs-extra');
 const clientConfig = require('./webpack.config.client');
 const serverConfig = require('./webpack.config.server');
 const chalk = require('chalk');
@@ -30,27 +30,25 @@ const compileWithWebpack = config =>
   });
 
 // Refreshes lastUpdate param in card.json file on passed path
-const refreshLastUpdate = (path) => {
-  const dataJsonPath = `${path}/card.json`;
-  fs.readFile(dataJsonPath, (err, data) => {
-    if (err) throw err;
-    const dataObject = JSON.parse(data);
-    dataObject.lastUpdate = new Date().toJSON();
-    fs.writeFile(
-      dataJsonPath,
-      JSON.stringify(dataObject, null, 2),
-      (error) => { if (error) throw Error(error); },
-    );
-  });
+const refreshLastUpdate = async (path) => {
+  const cardJsonPath = `${path}/card.json`;
+  const json = await fs.readJson(cardJsonPath);
+  json.lastUpdate = new Date().toJSON();
+  await fs.writeJson(cardJsonPath, json, { spaces: 2 });
+  // eslint-disable-next-line no-console
+  console.log(chalk.green('Updated card.json timestamp.'));
 };
 
-const compileAndRefresh = path =>
-  Promise.all([
+const compileAndRefresh = (path) => {
+  const compile = Promise.all([
     compileWithWebpack(clientConfig(path)),
     compileWithWebpack(serverConfig(path)),
-  ]).then(() => {
-    refreshLastUpdate(path);
-  });
+  ]);
+  if (!process.env.DONT_UPDATE_TIMESTAMP) {
+    return compile.then(() => refreshLastUpdate(path));
+  }
+  return compile;
+};
 
 if (!process.env.CARD_NAME) {
   // eslint-disable-next-line no-console
