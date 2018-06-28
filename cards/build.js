@@ -14,7 +14,10 @@ const dirs = p =>
 const compileWithWebpack = config =>
   new Promise((resolve, reject) => {
     webpack(config, (err, stats) => {
-      if (err) { reject(err); }
+      if (err) {
+        reject(err);
+      }
+      // eslint-disable-next-line no-console
       console.log(stats.toString({
         colors: true,
         hash: false,
@@ -49,16 +52,17 @@ const compileAndRefresh = path =>
     refreshLastUpdate(path);
   });
 
-if (process.env.CARD_NAME === '') {
-  const error = chalk.styles.red;
-  const path = {
-    open: chalk.styles.yellow.open + chalk.styles.italic.open,
-    close: chalk.styles.yellow.close + chalk.styles.italic.close,
-  };
-  console.log(`${error.open}ERROR:${error.close} Specify card path (e.g. ${path.open}s/seznam-sej${path.close}) to build one cards or ${path.open}all${path.close} to build all cards.`);
+if (!process.env.CARD_NAME) {
+  // eslint-disable-next-line no-console
+  console.log(`${chalk.red('ERROR:')} Specify card path (e.g. ${chalk.yellow('s/seznam-sej')} or ${chalk.yellow('all')}) to build one or all cards.`);
 } else if (process.env.CARD_NAME.toLowerCase() === 'all') {
   const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s').concat(dirs('./cards/c')));
-  paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve());
+  paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve())
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      process.exit(1);
+    });
 } else {
   let cardName = process.env.CARD_NAME;
 
@@ -66,5 +70,10 @@ if (process.env.CARD_NAME === '') {
     cardName = cardName.replace('cards/', '');
   }
 
-  compileAndRefresh(`./cards/${cardName}`);
+  compileAndRefresh(`./cards/${cardName}`)
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      process.exit(1);
+    });
 }
