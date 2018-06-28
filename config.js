@@ -15,14 +15,14 @@ const defaultConfig = {
     password: `${process.env.MONGO_PASSWORD}`,
   },
   urls: {
-    analize: 'https://analize.parlameter.si',
-    isci: 'https://isci.parlameter.si',
-    data: 'https://data.parlameter.si',
+    analize: 'https://analize.parlameter.si/v1',
+    // data: 'https://data.parlameter.si/v1',
+    // isci: 'https://isci.parlameter.si',
+    // glej: 'https://glej.parlameter.si',
   },
   cardLang: 'sl',
   ogCapturePath: './og',
   ogRootUrl: `http://localhost:${port}/og_cards`,
-  cardRootUrl: `http://localhost:${port}`,
 };
 
 if (env === 'development') {

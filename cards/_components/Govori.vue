@@ -146,7 +146,7 @@ export default {
   },
   created() {
     if (this.type === 'party') {
-      axios.get(`https://analize.parlameter.si/v1/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
+      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
         this.allPeople = response.data.results.map((person) => {
           const newPerson = {
             id: person.id,
@@ -231,7 +231,7 @@ export default {
 
       const textFilter = this.textFilter.length ? this.textFilter : '*';
 
-      return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
+      return `${this.slugs.urls.isci}/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
     },
     selectedSessions() {
       return this.allSessions.filter(session => session.selected);

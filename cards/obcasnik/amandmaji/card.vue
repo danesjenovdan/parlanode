@@ -52,7 +52,7 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
-      generatedCardUrl: 'https://glej.parlameter.si/obcasnik/amandmaji/?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json',
+      generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json`,
     };
   },
   computed: {

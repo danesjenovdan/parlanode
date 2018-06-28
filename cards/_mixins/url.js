@@ -2,7 +2,7 @@ export default {
   computed: {
     url() {
       const { cardData } = this.$root.$options.cardData;
-      return `https://glej.parlameter.si/${cardData.group}/${cardData.method}/`;
+      return `${this.slugs.urls.glej}/${cardData.group}/${cardData.method}/`;
     },
   },
   methods: {

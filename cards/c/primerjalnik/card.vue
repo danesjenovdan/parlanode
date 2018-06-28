@@ -216,7 +216,7 @@ export default {
         : this.$t('select-mps');
     },
     queryUrl() {
-      const base = 'https://analize.parlameter.si/v1/s/getComparedVotes/';
+      const base = `${this.slugs.urls.analize}/s/getComparedVotes/`;
       const samePeopleIds = this.selectedSamePeople.map(person => person.id).toString();
       const samePartyIds = this.sameParties.map(party => party.id).toString();
       const diffPeopleIds = this.selectedDifferentPeople.map(person => person.id).toString();
@@ -282,13 +282,13 @@ export default {
       if (this.selectedTab > 0) {
         state.selectedTab = this.selectedTab;
       }
-      return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   mounted() {
     const self = this;
     const PGPromise = $.ajax({
-      url: 'https://data.parlameter.si/v1/getAllPGs/',
+      url: `${this.slugs.urls.data}/getAllPGs/`,
       method: 'GET',
       success: (data) => {
         const sameParties = this.$options.cardData.parlaState.sameParties || [];
@@ -307,7 +307,7 @@ export default {
       },
     });
     const peoplePromise = $.ajax({
-      url: 'https://data.parlameter.si/v1/getMPs/',
+      url: `${this.slugs.urls.data}/getMPs/`,
       method: 'GET',
       success: (data) => {
         const samePeople = this.$options.cardData.parlaState.samePeople || [];

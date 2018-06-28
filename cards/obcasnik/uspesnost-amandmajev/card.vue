@@ -65,7 +65,7 @@ export default {
         title: this.$options.cardData.cardData.name,
       },
       rows,
-      generatedCardUrl: 'https://glej.parlameter.si/obcasnik/uspesnost-amandmajev/?state={}',
+      generatedCardUrl: `${this.url}?state={}`,
     };
   },
   methods: {

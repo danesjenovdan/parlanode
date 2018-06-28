@@ -61,7 +61,7 @@
             :key="ballot.id_parladata"
             target="_blank"
             class="ballot"
-            :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
+            :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
           >
             <div class="disunion">
               <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
@@ -260,7 +260,7 @@ export default {
     fetchVotesForGroup(acronym = 'DZ') {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
-      $.getJSON(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
+      $.getJSON(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`, (response) => {
         if (this.allTags.length === 0) {
           this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
         }

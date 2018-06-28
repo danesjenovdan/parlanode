@@ -13,7 +13,7 @@ const config = require('../config');
 const app = express();
 
 const urlSlugsPath = path.resolve(__dirname, '../assets/urls.json');
-const urlSlugsUrl = `${config.urls.analize}/v1/p/getSlugs/`;
+const urlSlugsUrl = `${config.urls.analize}/p/getSlugs/`;
 
 /* eslint-disable no-underscore-dangle */
 async function fetchUrlSlugs(compare = false) {
@@ -23,6 +23,8 @@ async function fetchUrlSlugs(compare = false) {
       throw new Error(`Request did not return JSON (${urlSlugsUrl})`);
     }
     const newData = { ...res.data };
+    // allow replacing urls in config
+    newData.urls = { ...newData.urls, ...config.urls };
 
     if (compare) {
       const fileData = await fs.readJson(urlSlugsPath);

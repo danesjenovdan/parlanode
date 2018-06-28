@@ -4,7 +4,7 @@
 
 <script>
 /* global d3, query, customUrl */
-function chart(rawData) {
+function chart(rawData, component) {
   $('.partychart2 svg').remove();
 
   function getQueryParams(str) {
@@ -27,7 +27,7 @@ function chart(rawData) {
     };
   }
 
-  $.getJSON('https://data.parlameter.si/v1/getAllPGsExt/', (response) => {
+  $.getJSON(`${component.slugs.urls.data}/getAllPGsExt/`, (response) => {
     const parties = response;
 
     let sum = 0;
@@ -194,7 +194,7 @@ export default {
   },
   methods: {
     renderChart() {
-      chart(this.data);
+      chart(this.data, this);
     },
   },
   watch: {

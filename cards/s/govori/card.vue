@@ -119,13 +119,13 @@ export default {
           const allText = cardElement.find('.mywords').val();
           const startIndex = allText.indexOf(selectedText);
           const endIndex = startIndex + selectedText.length;
-          const url = `https://analize.parlameter.si/v1/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
+          const url = `${this.slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
           $.ajax({
             url,
             async: false,
             dataType: 'json',
-            success: result => window.open(`https://glej.parlameter.si/s/citat/${result.id}?frame=true`),
+            success: result => window.open(`${this.slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
     },

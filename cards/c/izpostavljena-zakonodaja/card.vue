@@ -94,9 +94,9 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      const customUrl = encodeURIComponent('https://analize.parlameter.si/v1/s/getExposedLegislation/');
+      const customUrl = encodeURIComponent(`${this.slugs.urls.analize}/s/getExposedLegislation/`);
       const state = encodeURIComponent(JSON.stringify({ selectedTab: this.selectedTab }));
-      return `https://glej.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${customUrl}&state=${state}`;
+      return `${this.url}?customUrl=${customUrl}&state=${state}`;
     },
   },
 };

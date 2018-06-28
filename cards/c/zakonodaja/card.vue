@@ -140,7 +140,7 @@ export default {
         state.wb = this.selectedWorkingBodies;
       }
 
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/s/getAllLegislation/')}`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getAllLegislation/`)}`;
     },
     processedData() {
       const filterLegislation = (legislation) => {

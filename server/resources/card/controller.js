@@ -128,8 +128,8 @@ async function loadBundles(cacheData) {
 }
 
 function expandUrl(dataUrl) {
-  Object.keys(config.urls).forEach((key) => {
-    dataUrl = dataUrl.replace(`{${key}}`, config.urls[key]);
+  Object.keys(urlSlugs.urls).forEach((key) => {
+    dataUrl = dataUrl.replace(`{${key}}`, urlSlugs.urls[key]);
   });
   return dataUrl;
 }
@@ -222,7 +222,7 @@ async function addOgImage(cardJSON, cardRender, context) {
 async function renderCard(cacheData, cardJSON, originalUrl) {
   cacheData.dataUrl = cardJSON.dataUrl;
   cacheData.card = cardJSON._id;
-  cacheData.cardUrl = `${config.cardRootUrl}${originalUrl}`;
+  cacheData.cardUrl = `${urlSlugs.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJSON.lastUpdate;
 
   let fetchUrl;

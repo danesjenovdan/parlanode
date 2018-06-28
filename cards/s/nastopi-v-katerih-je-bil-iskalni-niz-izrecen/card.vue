@@ -93,7 +93,7 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/q/${this.keywords}`;
+      const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
     },
     speeches() {
@@ -122,7 +122,7 @@ export default {
       }
       this.fetching = true;
       this.page += 1;
-      $.get(`https://isci.parlameter.si/q/${this.keywords}/${this.page}`, (response) => {
+      $.get(`${this.slugs.urls.isci}/q/${this.keywords}/${this.page}`, (response) => {
         this.rawSpeeches = this.rawSpeeches.concat(response.highlighting);
         if (this.allResults <= (this.page + 1) * PAGE_SIZE) {
           this.$refs.scrollElement.removeEventListener('scroll', this.checkIfBottom);

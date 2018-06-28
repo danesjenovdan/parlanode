@@ -60,7 +60,7 @@ export default {
       return this.data.facet_counts.facet_ranges.datetime_dt;
     },
     generatedCardUrl() {
-      const customUrl = encodeURIComponent(`https://isci.parlameter.si/q/${this.keywords}`);
+      const customUrl = encodeURIComponent(`${this.slugs.urls.isci}/q/${this.keywords}`);
       return `${this.url}?customUrl=${customUrl}&altHeader=true`;
     },
   },

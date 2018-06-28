@@ -48,7 +48,7 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/v2/${this.keywords.replace(/\s+/g, '+')}`;
+      const searchUrl = `${this.slugs.urls.isci}/v2/${this.keywords.replace(/\s+/g, '+')}`;
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
     },
     votes() {

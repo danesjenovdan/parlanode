@@ -68,7 +68,7 @@ export default {
     ],
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/l/${this.keywords}`;
+      const searchUrl = `${this.slugs.urls.isci}/l/${this.keywords}`;
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
     },
     mappedItems() {

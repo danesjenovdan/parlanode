@@ -25,7 +25,7 @@
 import SortableTable from 'components/SortableTable.vue';
 import common from 'mixins/common';
 import formatDate from 'helpers/dateFormatter';
-import { ICONS_ROOT_URL, ORGS_ROOT_URL } from 'components/constants';
+import { ICONS_ROOT_URL } from 'components/constants';
 
 export default {
   components: { SortableTable },
@@ -49,10 +49,7 @@ export default {
         { link: this.getSessionUrl(session), text: session.name },
         formatDate(session.date_ts),
         formatDate(session.updated_at_ts),
-        { contents: session.orgs.map(org => ({
-          text: org.name,
-          link: this.organisationIsWorkingBody(org.id) ? `${ORGS_ROOT_URL}${org.id}?frame=true&altHeader=true` : null,
-        })) },
+        { contents: session.orgs.map(org => ({ text: org.name, link: null })) },
       ]);
     },
   },

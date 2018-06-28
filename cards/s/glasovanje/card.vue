@@ -162,7 +162,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `https://glej.parlameter.si/s/glasovanje/${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
+      return `${this.url}${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
     },
   },
   methods: {

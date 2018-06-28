@@ -38,7 +38,7 @@
     </div>
     <div class="links">
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
-      <a :href="`https://glej.parlameter.si/s/govor/${speech.results.speech_id}?frame=true`" v-if="!showSession" class="share"></a>
+      <a :href="`${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`" v-if="!showSession" class="share"></a>
     </div>
   </div>
 </template>

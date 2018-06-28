@@ -48,7 +48,7 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/q/${this.keywords}`;
+      const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
     },
     pieData() {

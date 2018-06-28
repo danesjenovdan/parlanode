@@ -221,7 +221,7 @@ export default {
         .map(encodeURIComponent)
         .join('+');
 
-      axios.get(`https://isci.parlameter.si/q/${query}`)
+      axios.get(`${this.slugs.urls.isci}/q/${query}`)
         .then((response) => {
           const scoreHigherThanZero = i => i.score > 0;
 
