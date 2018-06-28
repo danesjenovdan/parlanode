@@ -2,7 +2,7 @@
   "_id": "ps-prisotnost-na-glasovanjih-sej-dz",
   "name": "Prisotnost na glasovanjih sej DZ",
   "type": "poslanska_skupina",
-  "dataUrl": "{analize}/v1/pg/getPercentOFAttendedSessionPG",
+  "dataUrl": "{analize}/pg/getPercentOFAttendedSessionPG",
   "lastUpdate": "2018-05-07T18:47:15.843Z",
   "method": "prisotnost-na-glasovanjih-sej-dz",
   "group": "ps",

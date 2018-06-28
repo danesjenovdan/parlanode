@@ -1,7 +1,7 @@
 {
   "_id": "ps_osnovne-informacije",
   "name": "Osnovne informacije",
-  "dataUrl": "{analize}/v1/pg/getBasicInfOfPG",
+  "dataUrl": "{analize}/pg/getBasicInfOfPG",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-06-26T15:10:03.260Z",
   "method": "osnovne-informacije",

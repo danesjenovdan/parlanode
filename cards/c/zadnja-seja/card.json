@@ -2,7 +2,7 @@
   "_id": "c_zadnja-seja",
   "name": "Zadnja seja",
   "type": "seje",
-  "dataUrl": "{analize}/v1/s/getLastSessionLanding",
+  "dataUrl": "{analize}/s/getLastSessionLanding",
   "lastUpdate": "2018-06-05T12:32:20.432Z",
   "method": "zadnja-seja",
   "group": "c",

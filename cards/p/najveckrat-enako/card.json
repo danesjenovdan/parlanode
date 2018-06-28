@@ -2,7 +2,7 @@
   "_id": "ps_najveckrat-enako",
   "name": "Največkrat glasujejo enako",
   "type": "poslanec",
-  "dataUrl": "{analize}/v1/p/getMostEqualVoters",
+  "dataUrl": "{analize}/p/getMostEqualVoters",
   "lastUpdate": "2018-06-06T15:36:29.441Z",
   "method": "najveckrat-enako",
   "group": "p",

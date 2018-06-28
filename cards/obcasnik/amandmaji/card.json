@@ -1,7 +1,7 @@
 {
   "_id": "random_id",
   "name": "Amandmaji poslanskih skupin",
-  "dataUrl": "{data}/v1/getAmendments",
+  "dataUrl": "{data}/getAmendments",
   "type": "amandmaji",
   "lastUpdate": "2017-07-10T08:48:56.117Z",
   "method": "amandmaji",

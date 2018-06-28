@@ -1,7 +1,7 @@
 {
   "_id": "s_seznam_sej",
   "name": "Seznam sej",
-  "dataUrl": "{analize}/v1/s/getSessionsList",
+  "dataUrl": "{analize}/s/getSessionsList",
   "type": "seznam_sej",
   "lastUpdate": "2018-05-03T16:42:45.768Z",
   "method": "seznam-sej",

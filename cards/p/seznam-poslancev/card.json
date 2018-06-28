@@ -1,7 +1,7 @@
 {
   "_id": "p_seznam_poslancev",
   "name": "Seznam poslancev",
-  "dataUrl": "{analize}/v1/p/getListOfMembersTickers",
+  "dataUrl": "{analize}/p/getListOfMembersTickers",
   "type": "seznam_poslancev",
   "lastUpdate": "2018-06-20T12:19:19.936Z",
   "method": "seznam-poslancev",

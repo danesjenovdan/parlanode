@@ -2,7 +2,7 @@
   "_id": "ps-neenotnost-glasovanj",
   "name": "Neenotnost glasovanj",
   "type": "poslanska_skupina",
-  "dataUrl": "{analize}/v1/pg/getDisunionOrg",
+  "dataUrl": "{analize}/pg/getDisunionOrg",
   "lastUpdate": "2018-01-09T11:01:55.311Z",
   "method": "neenotnost-glasovanj",
   "group": "ps",

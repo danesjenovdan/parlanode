@@ -1,7 +1,7 @@
 {
   "_id": "s_seznam_glasovanj",
   "name": "Druga glasovanja",
-  "dataUrl": "{analize}/v1/s/getMotionOfSession",
+  "dataUrl": "{analize}/s/getMotionOfSession",
   "type": "seje",
   "lastUpdate": "2018-06-27T14:26:21.565Z",
   "method": "seznam-glasovanj",

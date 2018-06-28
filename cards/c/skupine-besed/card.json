@@ -2,7 +2,7 @@
   "_id": "c_skupine-besed",
   "name": "Skupine besed",
   "type": "empty",
-  "dataUrl": "{data}/v1/getNumberOfSpeeches/",
+  "dataUrl": "{data}/getNumberOfSpeeches/",
   "lastUpdate": "2018-06-05T12:03:18.415Z",
   "method": "skupine-besed",
   "group": "c",

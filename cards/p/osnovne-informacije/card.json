@@ -1,7 +1,7 @@
 {
   "_id": "p_osnovne-informacije",
   "name": "Osnovne informacije",
-  "dataUrl": "{analize}/v1/p/getMPStatic",
+  "dataUrl": "{analize}/p/getMPStatic",
   "type": "poslanec",
   "lastUpdate": "2018-06-20T09:53:48.618Z",
   "method": "osnovne-informacije",

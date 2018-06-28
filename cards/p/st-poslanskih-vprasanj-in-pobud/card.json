@@ -2,7 +2,7 @@
   "_id": "p_st-poslanskih-vprasanj-in-pobud",
   "name": "Št. poslanskih vprašanj in pobud",
   "type": "poslanec",
-  "dataUrl": "{analize}/v1/p/getNumberOfQuestions",
+  "dataUrl": "{analize}/p/getNumberOfQuestions",
   "lastUpdate": "2018-06-13T10:30:47.098Z",
   "method": "st-poslanskih-vprasanj-in-pobud",
   "group": "p",

@@ -1,7 +1,7 @@
 {
   "_id": "p_prisotnost-skozi-cas",
   "name": "Prisotnost na glasovanjih sej DZ skozi čas",
-  "dataUrl": "{analize}/v1/p/getPresenceThroughTime",
+  "dataUrl": "{analize}/p/getPresenceThroughTime",
   "type": "poslanec",
   "lastUpdate": "2018-06-06T17:06:26.505Z",
   "method": "prisotnost-skozi-cas",

@@ -1,7 +1,7 @@
 {
   "_id": "ps_poslanska_vprasanja_in_pobude",
   "name": "Poslanska vprašanja in pobude",
-  "dataUrl": "{analize}/v1/pg/getQuestionsOfPG",
+  "dataUrl": "{analize}/pg/getQuestionsOfPG",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-06-26T15:34:56.152Z",
   "method": "poslanska-vprasanja-in-pobude",

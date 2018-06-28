@@ -1,7 +1,7 @@
 {
   "_id": "random_id",
   "name": "Uspešnost vloženih amandmajev",
-  "dataUrl": "{data}/v1/getAmendments/",
+  "dataUrl": "{data}/getAmendments/",
   "type": "amandmaji",
   "lastUpdate": "2017-07-10T09:50:38.148Z",
   "method": "uspesnost-amandmajev",

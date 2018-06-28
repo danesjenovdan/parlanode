@@ -1,7 +1,7 @@
 {
   "_id": "p_govori",
   "name": "Govori",
-  "dataUrl": "{analize}/v1/p/getMPStatic",
+  "dataUrl": "{analize}/p/getMPStatic",
   "type": "empty",
   "lastUpdate": "2018-06-06T15:19:56.715Z",
   "method": "govori",

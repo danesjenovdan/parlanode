@@ -2,7 +2,7 @@
   "_id": "ps_najlazje-pridruzili",
   "name": "Največkrat glasujejo enako",
   "type": "poslanska_skupina",
-  "dataUrl": "{analize}/v1/pg/getMostMatchingThem",
+  "dataUrl": "{analize}/pg/getMostMatchingThem",
   "lastUpdate": "2018-05-08T13:51:21.292Z",
   "method": "najlazje-pridruzili",
   "group": "ps",

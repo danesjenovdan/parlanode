@@ -2,7 +2,7 @@
   "_id": "ps_besedni-zaklad",
   "name": "Raznolikost besedišča",
   "type": "poslanska_skupina",
-  "dataUrl": "{analize}/v1/pg/getVocabularySize",
+  "dataUrl": "{analize}/pg/getVocabularySize",
   "lastUpdate": "2018-06-13T12:47:45.408Z",
   "method": "besedni-zaklad",
   "group": "ps",
