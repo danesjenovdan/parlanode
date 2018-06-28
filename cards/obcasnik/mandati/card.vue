@@ -12,12 +12,12 @@
 
     <ul class="person-list">
       <li class="person" v-for="member in data">
-        <a :href="slugs.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="portrait column">
+        <a :href="slugs.urls.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="portrait column">
                 <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.gov_id + '.png'" />
             </a>
         <div class="column name">
-          <a :href="slugs.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="funblue-light-hover">{{ member.name }}</a><br>
-          <a v-if="member.acronym.indexOf('NeP') === -1" :href="slugs.base + slugs.partyLink.base + slugs.party[member.party_id].acronym + slugs.partyLink.pregled" class="funblue-light-hover">{{ member.acronym }}</a>
+          <a :href="slugs.urls.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="funblue-light-hover">{{ member.name }}</a><br>
+          <a v-if="member.acronym.indexOf('NeP') === -1" :href="slugs.urls.base + slugs.partyLink.base + slugs.party[member.party_id].acronym + slugs.partyLink.pregled" class="funblue-light-hover">{{ member.acronym }}</a>
           <span v-if="member.acronym.indexOf('NeP') !== -1">{{ member.acronym }}</span>
         </div>
         <div class="column large-number">

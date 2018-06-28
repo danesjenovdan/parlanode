@@ -1,5 +1,5 @@
 <template>
-    <a class="ballot" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
+    <a class="ballot" :href="`${slugs.urls.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
     <div class="disunion">
         <div :class="['icon', ballot.option]"></div>
         <div class="text">
@@ -21,21 +21,21 @@ import common from 'mixins/common';
 
 export default {
   name: 'Ballot',
-  mixins: [ common ],
+  mixins: [common],
   props: {
     ballot: {
       type: Object,
       required: true,
     },
     type: {
-        type: String,
-        default: 'person',
+      type: String,
+      default: 'person',
     },
   },
   filters: {
     toPercent(val) {
-      return parseInt(val) + ' %';
-    }
+      return `${parseInt(val, 10)} %`;
+    },
   },
 };
 </script>

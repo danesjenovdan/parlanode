@@ -93,7 +93,7 @@ export default {
     },
   },
   created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanci`;
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanci`;
   },
 };
 </script>

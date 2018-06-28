@@ -24,7 +24,7 @@ export default {
       embedContainerClass:
         (this.$root.$options.cardData.cardData.big ? ' big-card' : '') +
         (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
-      contextUrl: this.slugs.base,
+      contextUrl: this.slugs.urls.base,
     };
   },
 };

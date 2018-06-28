@@ -62,7 +62,7 @@ export default {
   name: 'GlasovanjaSeja',
   created() {
     this.$options.cardData.template.contextUrl =
-      `${this.slugs.base}/seja/glasovanja/${this.data.session.id}`;
+      `${this.slugs.urls.base}/seja/glasovanja/${this.data.session.id}`;
     this.$options.cardData.template.pageTitle =
       `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
   },

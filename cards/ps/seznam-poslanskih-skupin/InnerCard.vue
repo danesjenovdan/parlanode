@@ -43,7 +43,7 @@ export default {
     currentAnalysisData: Object,
   },
   created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanske-skupine`;
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanske-skupine`;
   },
   methods: {
     getPartyLink,

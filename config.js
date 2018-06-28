@@ -19,6 +19,7 @@ const defaultConfig = {
     // data: 'https://data.parlameter.si/v1',
     // isci: 'https://isci.parlameter.si',
     // glej: 'https://glej.parlameter.si',
+    // base: 'https://parlameter.si',
   },
   cardLang: 'sl',
   ogCapturePath: './og',

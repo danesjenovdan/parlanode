@@ -14,6 +14,7 @@ const config = {
     data: 'https://data.parlameter.si/v1',
     isci: 'https://isci.parlameter.si',
     glej: `http://localhost:${port}`,
+    base: 'http://localhost:3066',
   },
   cardLang: 'sl',
   ogCapturePath: './og',

@@ -56,11 +56,11 @@ export default {
   methods: {
     getSessionUrl(session) {
       if (!this.slugs || session.link_to === 'nothing') return '';
-      return this.slugs.base + '/seja/zakonodaja/' + session.id;
+      return `${this.slugs.urls.base}/seja/zakonodaja/${session.id}`;
     },
   },
   created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/seje`;
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seje`;
   },
 };
 </script>

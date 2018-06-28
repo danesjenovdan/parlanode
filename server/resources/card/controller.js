@@ -339,7 +339,7 @@ exports.render = (req, res) => {
   const embed = !!req.query.embed;
   const frame = !!req.query.frame;
   const altHeader = !!req.query.altHeader;
-  const customUrl = expandUrl(decodeURI(req.query.customUrl)) || null;
+  const customUrl = req.query.customUrl ? expandUrl(decodeURI(req.query.customUrl)) : null;
   const state = req.query.state || '{}';
 
   const forceRender = !!req.query.forceRender;

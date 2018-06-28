@@ -1,7 +1,7 @@
 <template>
   <div class="card-footer">
     <div class="card-logo hidden">
-      <a :href="slugs.base">
+      <a :href="slugs.urls.base">
         <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
       </a>
     </div>

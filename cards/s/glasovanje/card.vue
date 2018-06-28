@@ -189,7 +189,7 @@ export default {
   // glasovanje-update je bilo prazno, created() je iz developa
   created() {
     this.$options.cardData.template.contextUrl =
-      `${this.slugs.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
+      `${this.slugs.urls.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
   },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {
