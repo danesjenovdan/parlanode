@@ -128,9 +128,11 @@ async function loadBundles(cacheData) {
 }
 
 function expandUrl(dataUrl) {
-  Object.keys(urlSlugs.urls).forEach((key) => {
-    dataUrl = dataUrl.replace(`{${key}}`, urlSlugs.urls[key]);
-  });
+  if (typeof dataUrl === 'string') {
+    Object.keys(urlSlugs.urls).forEach((key) => {
+      dataUrl = dataUrl.replace(`{${key}}`, urlSlugs.urls[key]);
+    });
+  }
   return dataUrl;
 }
 
@@ -220,16 +222,16 @@ async function addOgImage(cardJSON, cardRender, context) {
 }
 
 async function renderCard(cacheData, cardJSON, originalUrl) {
-  cacheData.dataUrl = cardJSON.dataUrl;
+  cacheData.dataUrl = expandUrl(cardJSON.dataUrl);
   cacheData.card = cardJSON._id;
   cacheData.cardUrl = `${urlSlugs.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJSON.lastUpdate;
 
   let fetchUrl;
   if (cacheData.customUrl) {
-    fetchUrl = decodeURI(cacheData.customUrl);
+    fetchUrl = cacheData.customUrl;
   } else {
-    fetchUrl = `${expandUrl(cacheData.dataUrl)}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
+    fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
   }
   const data = await fetchData(fetchUrl);
 
@@ -337,7 +339,7 @@ exports.render = (req, res) => {
   const embed = !!req.query.embed;
   const frame = !!req.query.frame;
   const altHeader = !!req.query.altHeader;
-  const customUrl = req.query.customUrl || null;
+  const customUrl = expandUrl(decodeURI(req.query.customUrl)) || null;
   const state = req.query.state || '{}';
 
   const forceRender = !!req.query.forceRender;

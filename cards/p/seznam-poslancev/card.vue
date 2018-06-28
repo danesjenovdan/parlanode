@@ -86,6 +86,7 @@
 import { find } from 'lodash';
 
 import stateLoader from 'helpers/stateLoader';
+import common from 'mixins/common';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
@@ -94,7 +95,6 @@ import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
-import config from '../../../config.js'; // TODO: dont do this
 
 export default {
   components: {
@@ -105,7 +105,10 @@ export default {
     StripedButton,
     StripedIconButton,
   },
-  mixins: [urlFunctionalities],
+  mixins: [
+    common,
+    urlFunctionalities,
+  ],
   name: 'SeznamPoslancev',
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
@@ -345,7 +348,7 @@ export default {
   },
   created() {
     const that = this;
-    $.getJSON(`${config.urls.analize}/v1/pg/getListOfPGs/`, (response) => {
+    $.getJSON(`${this.slugs.urls.analize}/pg/getListOfPGs/`, (response) => {
       that.parties = response.data.map(party => ({
         acronym: party.party.acronym,
         color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
