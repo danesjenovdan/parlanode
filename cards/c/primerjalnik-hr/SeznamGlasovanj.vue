@@ -196,15 +196,6 @@ export default {
       }
       return text;
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
   },
 };
 </script>

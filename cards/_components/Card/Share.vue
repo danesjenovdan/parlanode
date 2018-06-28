@@ -49,7 +49,9 @@ export default {
       try {
         succeed = document.execCommand('copy');
       } catch (e) {
-        return e;
+        // eslint-disable-next-line no-console
+        console.error('failed to copy to cliboard', e);
+        return;
       }
 
       // change text

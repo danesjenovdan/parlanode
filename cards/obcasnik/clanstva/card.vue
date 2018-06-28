@@ -40,15 +40,6 @@
       };
     },
     methods: {
-      measurePiwik(filter, sort, order) {
-        if (typeof measure === 'function') {
-          if (sort !== '') {
-            measure('s', 'session-sort', `${sort} ${order}`, '');
-          } else if (filter !== '') {
-            measure('s', 'session-filter', filter, '');
-          }
-        }
-      },
       createAdjacencyMatrix(data) {
         // Define the div for the tooltip
         var tooltipdiv = d3.select('#viz').append("div")

@@ -78,15 +78,6 @@ export default {
       const multiplier = 10 ** (precision || 0);
       return Math.round(value * multiplier) / multiplier;
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
   },
 };
 </script>

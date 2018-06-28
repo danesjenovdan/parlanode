@@ -163,17 +163,6 @@ export default {
       return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ startTab: this.startTab }))}`;
     },
   },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
 };
 </script>
 

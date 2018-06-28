@@ -57,17 +57,6 @@
         generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json`,
       };
     },
-    methods: {
-      measurePiwik(filter, sort, order) {
-        if (typeof measure === 'function') {
-          if (sort !== '') {
-            measure('s', 'session-sort', `${sort} ${order}`, '');
-          } else if (filter !== '') {
-            measure('s', 'session-filter', filter, '');
-          }
-        }
-      },
-    },
   };
 </script>
 
