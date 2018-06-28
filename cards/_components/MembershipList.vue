@@ -8,10 +8,7 @@
             v-for="membershipItem in contents"
             :key="membershipItem.name">
             <template v-if="name === 'Delovna telesa'">
-              <template v-if="membershipItem.name === 'Kolegij predsednika državnega zbora'">
-                {{ membershipItem.name }}
-              </template>
-              <a v-else class="funblue-light-hover" target="_blank" :href="`https://glej.parlameter.si/wb/getWorkingBodies/${membershipItem.org_id}?frame=true&altHeader=true`">{{ membershipItem.name }}</a>
+              {{ membershipItem.name }}
             </template>
             <a v-else-if="membershipItem.url != null" class="funblue-light-hover" target="_blank" :href="membershipItem.url">{{ membershipItem.name }}</a>
             <template v-else>{{ membershipItem.name }}</template>
