@@ -35,6 +35,7 @@
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
+import { memberHeader } from 'mixins/altHeaders';
 import PersonList from 'components/PersonList.vue';
 
 export default {
@@ -43,7 +44,10 @@ export default {
     memberOverview,
     memberTitle,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    memberHeader,
+  ],
   name: 'NajveckratGlasujejoEnako',
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
@@ -51,17 +55,9 @@ export default {
       person.score = `${o.ratio.toFixed(2).replace('.', ',')}`;
       return person;
     });
-    const { person } = this.$options.cardData.data;
     return {
       data: this.$options.cardData.data,
       people,
-      headerConfig: {
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-        heading: person.name,
-        subheading: `${person.party.acronym} | ${person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-        circleImage: person.gov_id,
-      },
     };
   },
   computed: {

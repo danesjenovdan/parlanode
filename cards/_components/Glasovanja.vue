@@ -73,7 +73,6 @@
 </template>
 
 <script>
-import { capitalize } from 'lodash';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import Toggle from 'components/Toggle.vue';

@@ -3,7 +3,7 @@
     :id="cardData.cardData._id"
     :data-id="`${cardGroup}/${cardMethod}`"
     content-class="full"
-    v-bind="{ headerConfig }"
+    :header-config="headerConfig"
     :card-url="shareUrl"
   >
     <div slot="info">
