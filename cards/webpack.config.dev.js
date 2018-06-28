@@ -1,6 +1,7 @@
 /* globals module */
 const path = require('path');
 const merge = require('webpack-merge');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = () => {
@@ -38,5 +39,10 @@ module.exports = () => {
       publicPath: '/build/',
       stats: 'minimal',
     },
+    plugins: [
+      new ExtractTextPlugin({
+        disable: true,
+      }),
+    ],
   });
 };

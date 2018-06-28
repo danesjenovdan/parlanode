@@ -12,14 +12,6 @@ const baseConfig = require('./webpack.config.base');
 
 Vue.use(VueI18n);
 
-// const merge = webpackMerge({
-//   customizeArray: webpackMerge.unique(
-//     'plugins',
-//     ['DefinePlugin'],
-//     plugin => plugin.constructor && plugin.constructor.name,
-//   ),
-// });
-
 module.exports = (cardPath) => {
   const cardLang = process.env.CARD_LANG || 'sl';
   // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'

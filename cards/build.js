@@ -43,7 +43,6 @@ const refreshLastUpdate = (path) => {
 
 const compileAndRefresh = path =>
   Promise.all([
-    console.log(serverConfig(path).module.rules[0]),
     compileWithWebpack(clientConfig(path)),
     compileWithWebpack(serverConfig(path)),
   ]).then(() => {
@@ -69,4 +68,3 @@ if (process.env.CARD_NAME === '') {
 
   compileAndRefresh(`./cards/${cardName}`);
 }
-

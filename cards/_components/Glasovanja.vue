@@ -257,14 +257,17 @@ export default {
             .filter(filterBallots)
             .map((ballot) => {
               const ballotClone = JSON.parse(JSON.stringify(ballot));
-              if (ballot.option === 'ni') {
-                ballotClone.label = this.type === 'person'
-                  ? `Ni ${this.vocabulary.glasovati[this.person.gender]} o`
-                  : 'Niso glasovali o';
+              const form = this.type === 'person' ? this.person.gender : 'plural';
+              if (ballot.option === 'za') {
+                ballotClone.label = this.$t(`voted-for--${form}`);
+              } else if (ballot.option === 'proti') {
+                ballotClone.label = this.$t(`voted-against--${form}`);
+              } else if (ballot.option === 'ni') {
+                ballotClone.label = this.$t(`voted-not--${form}`);
+              } else if (ballot.option === 'kvorum') {
+                ballotClone.label = this.$t(`voted-quorum--${form}`);
               } else {
-                ballotClone.label = this.type === 'person'
-                  ? `${capitalize(this.vocabulary.glasovati[this.person.gender])} ${ballot.option.toUpperCase()}`
-                  : `Glasovali ${ballot.option.toUpperCase()}`;
+                ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
               }
 
               if (ballot.result !== 'none' && ballot.result != null) {
