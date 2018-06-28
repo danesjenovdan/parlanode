@@ -30,6 +30,5 @@ const fakeCardData = {
   i18n,
 };
 
-const app = new Vue(Object.assign({}, Card, fakeCardData));
-
-app.$mount('#app');
+window.app = new Vue(Object.assign({}, Card, fakeCardData));
+window.app.$mount('#app');

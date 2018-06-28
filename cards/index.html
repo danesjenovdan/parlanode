@@ -28,12 +28,15 @@
   </div>
   <div class="container">
     <div class="">
-      <div class="col-md-12">
+      <div class="col-md-12" id="development-card-container-div">
         <div id="app"></div>
       </div>
     </div>
   </div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="build/bundle.js"></script>
+  <script>
+    document.getElementById('development-card-container-div').className = window.app.$options.cardData.template.frameContainerClass;
+  </script>
 </body>
 </html>
