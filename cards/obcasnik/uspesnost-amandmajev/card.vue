@@ -20,13 +20,13 @@ import StackedBarChart from 'components/StackedBarChart.vue';
 
 export default {
   components: {
-    StackedBarChart
+    StackedBarChart,
   },
   mixins: [common],
   name: 'ObcasnikUspesnostAmandmajev',
   data() {
-    const data = this.$options.cardData.data
-    const parties =  ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
+    const data = this.$options.cardData.data;
+    const parties = ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
 
     const rows = parties.map((acronym) => {
       const successful = data
@@ -45,14 +45,14 @@ export default {
         stack: [
           {
             label: 'uspešnih',
-            value: successful
+            value: successful,
           },
           {
             label: 'neuspešnih',
-            value: unsuccessful
-          }
+            value: unsuccessful,
+          },
         ],
-      }
+      };
     });
 
     return {

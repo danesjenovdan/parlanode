@@ -28,7 +28,8 @@ import Speech from 'components/Speech.vue';
 function getSelected() {
   if (window.getSelection) {
     return window.getSelection();
-  } else if (document.getSelection) {
+  }
+  if (document.getSelection) {
     return document.getSelection();
   }
   const selection = document.selection && document.selection.createRange();

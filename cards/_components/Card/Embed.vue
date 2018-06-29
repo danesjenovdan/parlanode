@@ -69,7 +69,9 @@ export default {
       try {
         succeeded = document.execCommand('copy');
       } catch (e) {
-        return e;
+        // eslint-disable-next-line no-console
+        console.log('copy to clipboard failed', e);
+        return;
       }
       this.$refs.embedInput.blur();
       this.copied = succeeded;

@@ -136,8 +136,9 @@ export default {
     },
   },
   data() {
-    const selectFromState = (items, stateItemIds) =>
-      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
+    const selectFromState = (items, stateItemIds) => (
+      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
+    );
 
     let allMonths = generateMonths();
     let allMPs = this.cardData.data.all_authors
@@ -174,13 +175,13 @@ export default {
   methods: {
     getFilteredQuestionDays(onlyFilterByText = false) {
       const filterQuestions = (question) => {
-        const MPMatch = onlyFilterByText || this.selectedMPs.length === 0 ||
-          this.selectedMPs.indexOf(question.person.id) !== -1;
-        const recipientMatch = onlyFilterByText || this.selectedRecipients.length === 0 ||
-          this.selectedRecipients.indexOf(question.recipient_text) !== -1;
-        const textMatch = this.textFilter === '' ||
-          question.title.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-
+        const MPMatch = onlyFilterByText
+          || this.selectedMPs.length === 0
+          || this.selectedMPs.indexOf(question.person.id) !== -1;
+        const recipientMatch = onlyFilterByText || this.selectedRecipients.length === 0
+          || this.selectedRecipients.indexOf(question.recipient_text) !== -1;
+        const textMatch = this.textFilter === ''
+          || question.title.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
         return MPMatch && recipientMatch && textMatch;
       };
 

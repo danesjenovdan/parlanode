@@ -191,11 +191,9 @@ export default {
     processedMembers() {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
-        analysisMax = this.memberData.reduce(
-          (biggest, member) =>
-            Math.max(biggest, (member.results[this.currentAnalysis].score || 0)),
-          0,
-        );
+        analysisMax = this.memberData.reduce((biggest, member) => (
+          Math.max(biggest, (member.results[this.currentAnalysis].score || 0))
+        ), 0);
       }
 
       const sortedAndFiltered = this.memberData
@@ -213,11 +211,9 @@ export default {
             partyMatch = this.selectedParties.indexOf(member.person.party.acronym) > -1;
           }
           if (this.selectedDistricts.length > 0) {
-            districtMatch = member.person.district.reduce(
-              (prevMatch, memberDistrict) =>
-                prevMatch || this.selectedDistricts.indexOf(String(memberDistrict)) > -1,
-              false,
-            );
+            districtMatch = member.person.district.reduce((prevMatch, memberDistrict) => (
+              prevMatch || this.selectedDistricts.indexOf(String(memberDistrict)) > -1
+            ), false);
           }
           if (this.selectedGenders.length > 0) {
             genderMatch = this.selectedGenders.indexOf(member.person.gender) > -1;
@@ -231,8 +227,7 @@ export default {
             newMember.formattedDistrict = this.$t('missing-district');
           } else {
             newMember.formattedDistrict = newMember.person.district
-              .map(memberDistrict =>
-                find(this.districts, { id: String(memberDistrict) }).label)
+              .map(memberDistrict => find(this.districts, { id: String(memberDistrict) }).label)
               .join(', ');
           }
 

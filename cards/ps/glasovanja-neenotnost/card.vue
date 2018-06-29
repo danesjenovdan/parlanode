@@ -222,13 +222,14 @@ export default {
       if (!this.voteData || this.voteData.length === 0) return [];
 
       const filterBallots = (ballot) => {
-        const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-          ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const textMatch = this.textFilter === '' ||
-          ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0 ||
-          this.selectedClassifications.indexOf(ballot.classification) > -1;
-
+        const tagMatch = onlyFilterByText
+          || this.selectedTags.length === 0
+          || ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const textMatch = this.textFilter === ''
+          || ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const classificationMatch = onlyFilterByText
+          || this.selectedClassifications.length === 0
+          || this.selectedClassifications.indexOf(ballot.classification) > -1;
         return tagMatch && textMatch && classificationMatch;
       };
 
@@ -286,8 +287,10 @@ export default {
             this.textFilter = state.text;
           }
           if (state.classifications) {
-            this.allClassifications =
-              selectFromState(this.allClassifications, state.classifications);
+            this.allClassifications = selectFromState(
+              this.allClassifications,
+              state.classifications,
+            );
           }
           if (state.sort) {
             this.selectedSort = state.sort;

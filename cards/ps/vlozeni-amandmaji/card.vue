@@ -261,10 +261,12 @@
       getFilteredVotingDays(onlyFilterByText = false) {
         const filterVotes = (vote) => {
           const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-          const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-            vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-          const voteTypeMatch = onlyFilterByText || this.selectedVoteTypes.length === 0 ||
-            this.selectedVoteTypes.indexOf(vote.result) > -1;
+          const tagMatch = onlyFilterByText
+            || this.selectedTags.length === 0
+            || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+          const voteTypeMatch = onlyFilterByText
+            || this.selectedVoteTypes.length === 0
+            || this.selectedVoteTypes.indexOf(vote.result) > -1;
           return textMatch && tagMatch && voteTypeMatch;
         };
 
@@ -276,8 +278,9 @@
           .filter((votingDay) => {
             if (votingDay.results.length === 0) return false;
             const monthId = formattedDateToMonthId(votingDay.date);
-            return onlyFilterByText || this.selectedMonths.length === 0 ||
-              this.selectedMonths.indexOf(monthId) > -1;
+            return onlyFilterByText
+              || this.selectedMonths.length === 0
+              || this.selectedMonths.indexOf(monthId) > -1;
           });
       },
       toggleVoteType(voteTypeId) {

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { find, get } from 'lodash';
+import { find } from 'lodash';
 import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
@@ -53,9 +53,9 @@ export default {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     processedPartyData() {
-      const maxValue = this.data.reduce((oldValue, nextParty) =>
-        Math.max(oldValue, nextParty.results[this.currentAnalysis]),
-      0);
+      const maxValue = this.data.reduce((oldValue, nextParty) => (
+        Math.max(oldValue, nextParty.results[this.currentAnalysis])
+      ), 0);
 
       return this.data.map((party) => {
         const rawValue = party.results[this.currentAnalysis];

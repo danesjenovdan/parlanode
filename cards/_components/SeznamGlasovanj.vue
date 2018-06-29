@@ -93,7 +93,6 @@
 </template>
 
 <script>
-import { uniq, flatMap, intersection } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
@@ -148,16 +147,25 @@ export default {
       this.votes = this.processVotes();
       this.allTags = this.processTags();
     },
+    textFilter() {
+      this.emitFiltersChanged();
+    },
+    selectedTags() {
+      this.emitFiltersChanged();
+    },
+    selectedResults() {
+      this.emitFiltersChanged();
+    },
   },
   computed: {
     filteredVotes() {
       const filterVotes = (vote) => {
-        const textMatch = this.textFilter === '' ||
-          vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const tagMatch = this.selectedTags.length === 0 ||
-          vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const resultMatch = this.selectedResults.length === 0 ||
-          this.selectedResults.indexOf(vote.result) > -1;
+        const textMatch = this.textFilter === ''
+          || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch = this.selectedTags.length === 0
+          || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const resultMatch = this.selectedResults.length === 0
+          || this.selectedResults.indexOf(vote.result) > -1;
         return textMatch && tagMatch && resultMatch;
       };
       return this.votes.filter(filterVotes);
@@ -219,17 +227,6 @@ export default {
         tags: this.selectedTags,
         results: this.selectedResults,
       });
-    },
-  },
-  watch: {
-    textFilter() {
-      this.emitFiltersChanged();
-    },
-    selectedTags() {
-      this.emitFiltersChanged();
-    },
-    selectedResults() {
-      this.emitFiltersChanged();
     },
   },
 };

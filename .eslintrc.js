@@ -8,6 +8,7 @@ module.exports = {
   globals: {
     measure: false,
     $: false,
+    d3: false,
   },
   plugins: ['vue', 'import', 'html'],
   rules: {

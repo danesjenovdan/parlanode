@@ -299,6 +299,7 @@ export default {
         }));
       },
       error(error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       },
     });
@@ -327,6 +328,7 @@ export default {
         this.loadResults();
       },
       error(error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       },
     });
@@ -367,6 +369,7 @@ export default {
           this.loading = false;
         },
         error(error) {
+          // eslint-disable-next-line no-console
           console.log(error);
           this.loading = false;
         },

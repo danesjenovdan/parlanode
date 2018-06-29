@@ -1,42 +1,42 @@
 <template>
-    <li :class="cssClass">
-        <div class="person-container">
-            <a :href="getPersonLink(speech.person)" class="portrait">
-                <img :src="getPersonPortrait(speech.person)" />
-            </a>
+  <li :class="cssClass">
+    <div class="person-container">
+      <a :href="getPersonLink(speech.person)" class="portrait">
+        <img :src="getPersonPortrait(speech.person)" />
+      </a>
 
-            <div class="name">
-                <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{ speech.person.name }}</a><br>
-            </div>
-        </div>
+      <div class="name">
+        <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{ speech.person.name }}</a><br>
+      </div>
+    </div>
 
-        <div class="motion">
-            <a :href="getSessionSpeechLink(speech)" class="funblue-light-hover" v-html="speech.content_t.substr(0, 180) + '...'"></a>
-        </div>
-    </li>
+    <div class="motion">
+      <a :href="getSessionSpeechLink(speech)" class="funblue-light-hover" v-html="speech.content_t.substr(0, 180) + '...'"></a>
+    </div>
+  </li>
 </template>
 
 <script>
-  import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from './links';
+import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from './links';
 
-  export default {
-    methods: {
-      getPersonPortrait,
-      getPersonLink,
-      getSessionSpeechLink
+export default {
+  methods: {
+    getPersonPortrait,
+    getPersonLink,
+    getSessionSpeechLink,
+  },
+  props: {
+    speech: {
+      type: Object,
+      required: true,
     },
-    props: {
-      speech: {
-        type: Object,
-        required: true
-      },
-      cssClass: {
-        type: String,
-        reqired: false,
-        default: ''
-      }
-    }
-  }
+    cssClass: {
+      type: String,
+      reqired: false,
+      default: '',
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -52,11 +52,11 @@
   @include respond-to(mobile) {
     flex-wrap: wrap;
   }
-  
+
   &:last-child {
     border-bottom: 0;
   }
-  
+
   .person-container {
     flex: 2;
     display: flex;
@@ -65,7 +65,7 @@
         flex-shrink: 0;
         flex-basis: 100%;
     }
-    
+
     .portrait {
       margin-left: 7px;
       float: left;

@@ -23,7 +23,7 @@
         <div class="votes">
           <striped-button
             v-for="vote in votes"
-            @click.native="expandVote(party.party.id, vote.id)"
+            @click.native="expandVote($event, party.party.id, vote.id)"
             :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
             :color="vote.id"
             :key="vote.id"
@@ -80,11 +80,11 @@ export default {
     expandedMembers() {
       return this.members.filter((member) => {
         if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
-          return member.person.party.is_coalition === (this.expandedParty === 'coalition') &&
-                 member.option === this.expandedOption;
+          return member.person.party.is_coalition === (this.expandedParty === 'coalition')
+            && member.option === this.expandedOption;
         }
-        return member.person.party.id === this.expandedParty &&
-               member.option === this.expandedOption;
+        return member.person.party.id === this.expandedParty
+          && member.option === this.expandedOption;
       });
     },
   },
@@ -109,7 +109,7 @@ export default {
     getMemberPartyLink,
     getMemberPortrait,
     mapVotes,
-    expandVote(party, option) {
+    expandVote(event, party, option) {
       if (find(this.parties, ['party.id', party]).votes[option] === 0) {
         return;
       }

@@ -8,13 +8,13 @@
 </template>
 
 <script>
-    export default {
-      name: 'CardEmpty',
-      props: {
-        text: {
-          type: String,
-          default: 'Podatki trenutno niso na voljo.'
-        }
-      }
-    };
+export default {
+  name: 'CardEmpty',
+  props: {
+    text: {
+      type: String,
+      default: 'Podatki trenutno niso na voljo.',
+    },
+  },
+};
 </script>

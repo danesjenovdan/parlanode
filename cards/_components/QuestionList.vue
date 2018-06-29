@@ -69,7 +69,8 @@ export default {
         .map((recipient) => {
           if (includes(recipient, 'minister')) {
             return `ministru ${recipient.split('minister ')[1]}`;
-          } else if (includes(recipient, 'ministrica')) {
+          }
+          if (includes(recipient, 'ministrica')) {
             return `ministrici ${recipient.split('ministrica ')[1]}`;
           }
           return 'Vladi';

@@ -89,11 +89,10 @@ export default {
       cur.documents.forEach((document) => { // TODO fix after data is fixed
         prev.push(document);
       });
-      console.log(prev, cur);
       return prev;
     }, []);
     const title = this.$options.cardData.parlaState.fullName
-      ? this.$options.cardData.data.text.slice(0, 100) + '...'
+      ? `${this.$options.cardData.data.text.slice(0, 100)}...`
       : 'Zakon';
 
     // did we have "glasovanje o zakonu v celoti"
@@ -122,12 +121,10 @@ export default {
         return max;
       }, {
         key: '',
-        value: 0
+        value: 0,
       });
 
-      numberOfVotes = Object.keys(vote).reduce((total, current) => {
-        return total + vote[current];
-      }, 0);
+      numberOfVotes = Object.keys(vote).reduce((total, current) => total + vote[current], 0);
     }
 
     let startTab = 0;

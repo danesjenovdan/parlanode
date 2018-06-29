@@ -122,12 +122,12 @@ export default {
   computed: {
     filteredVotes() {
       const filterVotes = (vote) => {
-        const textMatch = this.textFilter === '' ||
-          vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const tagMatch = this.selectedTags.length === 0 ||
-          vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const resultMatch = this.selectedResults.length === 0 ||
-          this.selectedResults.indexOf(vote.result) > -1;
+        const textMatch = this.textFilter === ''
+          || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch = this.selectedTags.length === 0
+          || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const resultMatch = this.selectedResults.length === 0
+          || this.selectedResults.indexOf(vote.result) > -1;
         return textMatch && tagMatch && resultMatch;
       };
       return this.votes.filter(filterVotes);

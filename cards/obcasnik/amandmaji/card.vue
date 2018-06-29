@@ -57,28 +57,22 @@ export default {
   },
   computed: {
     seatCountData() {
-      return this.data.map((row) => {
-        return {
-          'label': row.party.acronym,
-          'value': row.results.seat_count,
-        }
-      });
+      return this.data.map(row => ({
+        label: row.party.acronym,
+        value: row.results.seat_count,
+      }));
     },
     amandmajiData() {
-      return this.data.map((row) => {
-        return {
-          'label': row.party.acronym,
-          'value': row.results.amandmaji,
-        }
-      });
+      return this.data.map(row => ({
+        label: row.party.acronym,
+        value: row.results.amandmaji,
+      }));
     },
     amandmajiNaPoslancaData() {
-      return this.data.map((row) => {
-        return {
-          'label': row.party.acronym,
-          'value': row.results.amandmaji_na_poslanca,
-        }
-      });
+      return this.data.map(row => ({
+        label: row.party.acronym,
+        value: row.results.amandmaji_na_poslanca,
+      }));
     },
   },
   methods: {
@@ -88,6 +82,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

@@ -85,12 +85,9 @@ export default {
           const namesToMatch = this.nameFilter.split('|');
           nameMatch = namesToMatch.reduce((result, nameToMatch) => {
             if (!result) {
-              console.log(nameToMatch);
-              console.log(member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1);
               return member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1;
-            } else {
-              return result;
             }
+            return result;
           }, false);
         }
 
@@ -117,9 +114,8 @@ export default {
     getSelectedOption(option) {
       if (this.state.selectedOption) {
         return this.state.selectedOption === option;
-      } else {
-        return false;
       }
+      return false;
     },
     getMemberLink,
     getMemberPortrait,

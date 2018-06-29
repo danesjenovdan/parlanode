@@ -36,17 +36,10 @@
     mixins: [common],
     name: 'ImeKartice',
     data() {
-
-      // const members = this.$options.cardData.data.map((member) => {
-      //   return {
-
-      //   }
-      // });
-
       return {
-        data: this.$options.cardData.data.filter(person => person.mandates > 3).sort((a, b) => {
-          return b.mandates - a.mandates;
-        }),
+        data: this.$options.cardData.data
+          .filter(person => person.mandates > 3)
+          .sort((a, b) => b.mandates - a.mandates),
         headerConfig: {
           circleIcon: 'og-list',
           heading: '&nbsp;',

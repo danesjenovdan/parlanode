@@ -164,8 +164,9 @@ export default {
     },
   },
   data() {
-    const selectFromState = (items, stateItemIds) =>
-      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
+    const selectFromState = (items, stateItemIds) => (
+      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
+    );
 
     let allOptions = [{
       id: 'za',
@@ -237,15 +238,15 @@ export default {
     },
     getFilteredVotingDays(onlyFilterByText = false) {
       const filterBallots = (ballot) => {
-        const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-          ballot.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const textMatch = this.textFilter === '' ||
-          ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const optionMatch = onlyFilterByText || this.selectedOptions.length === 0 ||
-          this.selectedOptions.indexOf(ballot.option) > -1;
-        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0 ||
-          this.selectedClassifications.indexOf(ballot.classification) > -1;
-
+        const tagMatch = onlyFilterByText
+          || this.selectedTags.length === 0
+          || ballot.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const textMatch = this.textFilter === ''
+          || ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const optionMatch = onlyFilterByText || this.selectedOptions.length === 0
+          || this.selectedOptions.indexOf(ballot.option) > -1;
+        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0
+          || this.selectedClassifications.indexOf(ballot.classification) > -1;
         return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 

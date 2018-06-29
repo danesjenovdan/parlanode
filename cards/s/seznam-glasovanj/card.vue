@@ -61,10 +61,8 @@ export default {
   },
   name: 'GlasovanjaSeja',
   created() {
-    this.$options.cardData.template.contextUrl =
-      `${this.slugs.urls.base}/seja/glasovanja/${this.data.session.id}`;
-    this.$options.cardData.template.pageTitle =
-      `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
+    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanja/${this.data.session.id}`;
+    this.$options.cardData.template.pageTitle = `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
   },
   data() {
     const state = this.$options.cardData.parlaState;

@@ -68,9 +68,9 @@ export default {
   computed: {
     filteredItems() {
       const filterAndSort = items => items
-        .filter(item =>
-          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
-        )
+        .filter(item => (
+          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1
+        ))
         .map((item, index) => {
           // eslint-disable-next-line no-param-reassign
           item.sortIndex = index;
@@ -82,12 +82,20 @@ export default {
               return a.label.localeCompare(b.label, 'sl');
             }
 
-            if (a.selected && !b.selected) return -1;
-            else if (!a.selected && b.selected) return 1;
+            if (a.selected && !b.selected) {
+              return -1;
+            }
+            if (!a.selected && b.selected) {
+              return 1;
+            }
           }
 
-          if (a.sortIndex < b.sortIndex) return -1;
-          else if (a.sortIndex > b.sortIndex) return 1;
+          if (a.sortIndex < b.sortIndex) {
+            return -1;
+          }
+          if (a.sortIndex > b.sortIndex) {
+            return 1;
+          }
 
           return 0;
         })
@@ -100,9 +108,9 @@ export default {
       if (this.groups) {
         return this.groups
           .map((group) => {
-            const itemsFromGroup = filterAndSort(this.items.filter(
-              item => group.items.indexOf(item.id) > -1),
-            );
+            const itemsFromGroup = filterAndSort(this.items.filter(item => (
+              group.items.indexOf(item.id) > -1
+            )));
 
             itemsFromGroup.forEach((item, index) => {
               // eslint-disable-next-line no-param-reassign
@@ -175,7 +183,7 @@ export default {
     up: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   methods: {
     selectItem(selectedItemId) {

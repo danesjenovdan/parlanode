@@ -42,74 +42,56 @@
     methods: {
       createAdjacencyMatrix(data) {
         // Define the div for the tooltip
-        var tooltipdiv = d3.select('#viz').append("div")
-            .attr("class", "matricatooltip");
+        const tooltipdiv = d3.select('#viz').append('div')
+          .attr('class', 'matricatooltip');
 
-        var adjacencyMatrix = d3.layout.adjacencyMatrix()
+        const adjacencyMatrixInst = d3.layout.adjacencyMatrix()
           .size([600, 600])
           .nodes(data.nodes)
           .links(data.links)
           .directed(false)
-          .nodeID(function (d) {
-            return d.name
-          });
-        var matrixData = adjacencyMatrix();
-        console.log(matrixData)
-        var someColors = d3.scale.category20b();
-        d3.select("svg")
-          .append("g")
-          .attr("transform", "translate(50,50)")
-          .attr("id", "adjacencyG")
-          .selectAll("rect")
+          .nodeID(d => d.name);
+        const matrixData = adjacencyMatrixInst();
+        const someColors = d3.scale.category20b();
+        d3.select('svg')
+          .append('g')
+          .attr('transform', 'translate(50,50)')
+          .attr('id', 'adjacencyG')
+          .selectAll('rect')
           .data(matrixData)
           .enter()
-          .append("rect")
-          .attr("width", function (d) {
-            return d.width
-          })
-          .attr("height", function (d) {
-            return d.height
-          })
-          .attr("x", function (d) {
-            return d.x
-          })
-          .attr("y", function (d) {
-            return d.y
-          })
+          .append('rect')
+          .attr('width', d => d.width)
+          .attr('height', d => d.height)
+          .attr('x', d => d.x)
+          .attr('y', d => d.y)
           .attr('class', d => d.id)
-          .style("stroke", "black")
-          .style("stroke-width", "1px")
-          .style("stroke-opacity", .1)
-          .style("fill", function (d) {
-            return someColors(d.source.group)
-          })
-          .style("fill-opacity", function (d) {
-            return d.weight / 1000 * 0.8;
-          })
+          .style('stroke', 'black')
+          .style('stroke-width', '1px')
+          .style('stroke-opacity', 0.1)
+          .style('fill', d => someColors(d.source.group))
+          .style('fill-opacity', d => d.weight / 1000 * 0.8)
           .on('mouseover', (d) => { // setup tooltip
-            let text = d.source.name + ' in ' + d.target.name + ' sta v isti poslanski skupini preživela ' + d.weight + ' dni.';
+            const text = `${d.source.name} in ${d.target.name} sta v isti poslanski skupini preživela ${d.weight} dni.`;
 
             tooltipdiv.transition()
               .duration(200)
               .style('opacity', 0.9);
 
-            tooltipdiv.html('<p>' + text + '</p>')
-              .style("left", (d3.event.pageX - (tooltipdiv.node().getBoundingClientRect().width / 2) - $('#viz').offset().left + 10 + "px"))
-                    .style("top", (d3.event.pageY - $('#viz').offset().top - 30) + "px");
-
+            tooltipdiv.html(`<p>${text}</p>`)
+              .style('left', `${d3.event.pageX - (tooltipdiv.node().getBoundingClientRect().width / 2) - $('#viz').offset().left + 10}px`)
+              .style('top', `${d3.event.pageY - $('#viz').offset().top - 30}px`);
           });
-          // .on('mouseout', (d) => {
-          //   tooltipdiv.transition()
-          //     .duration(200)
-          //     .style('opacity', 0);
-          // });
-        d3.select("#adjacencyG")
-          .call(adjacencyMatrix.xAxis);
-        d3.select("#adjacencyG")
-          .call(adjacencyMatrix.yAxis);
-
-
-      }
+        // .on('mouseout', (d) => {
+        //   tooltipdiv.transition()
+        //     .duration(200)
+        //     .style('opacity', 0);
+        // });
+        d3.select('#adjacencyG')
+          .call(adjacencyMatrixInst.xAxis);
+        d3.select('#adjacencyG')
+          .call(adjacencyMatrixInst.yAxis);
+      },
     },
     mounted() {
       d3.layout.adjacencyMatrix = adjacencyMatrix;

@@ -120,9 +120,11 @@ export default {
         .filter((session) => {
           if (this.currentFilter === 'Seje DZ') {
             return session.orgs.filter(org => org.id === 95).length > 0;
-          } else if (this.currentFilter === 'Seje kolegija predsednika DZ') {
+          }
+          if (this.currentFilter === 'Seje kolegija predsednika DZ') {
             return session.orgs.filter(org => org.id === 9).length > 0;
-          } else if (this.currentFilter === 'Seje delovnih teles') {
+          }
+          if (this.currentFilter === 'Seje delovnih teles') {
             let match = false;
             if (this.currentWorkingBodies.length === 0) {
               session.orgs.forEach((org) => {
@@ -150,7 +152,8 @@ export default {
               b = sessionB.date_ts;
               if (a < b) {
                 return -1;
-              } else if (a > b) {
+              }
+              if (a > b) {
                 return 1;
               }
               // never return 0, chrome and firefox sort differently and that can break SSR
@@ -160,7 +163,8 @@ export default {
               b = sessionB.updated_at_ts;
               if (a < b) {
                 return -1;
-              } else if (a > b) {
+              }
+              if (a > b) {
                 return 1;
               }
               // never return 0, chrome and firefox sort differently and that can break SSR
