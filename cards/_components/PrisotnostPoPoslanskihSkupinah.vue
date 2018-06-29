@@ -1,6 +1,6 @@
 <template>
   <div class="presence-list">
-    <div class="presence" v-for="obj in data" :key="obj.org.id">
+    <div v-for="obj in data" :key="obj.org.id" class="presence">
       <div class="percent">{{ obj.percent }}%</div>
       <div class="party">{{ obj.org.acronym }}</div>
       <div :class="['line', `${obj.org.acronym.replace(/ /g, '_').toLowerCase()}-background`]" :style="`width: ${obj.percent}%;`"></div>

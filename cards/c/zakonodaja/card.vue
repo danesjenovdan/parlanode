@@ -6,21 +6,21 @@
           <ul class="button-filters">
             <striped-button
               v-for="(filter, index) in filters"
-              @click.native="selectFilter(filter)"
-              color="sds"
               :key="index"
               :selected="filter === currentFilter"
               :small-text="$t(filter)"
+              color="sds"
+              @click.native="selectFilter(filter)"
             />
           </ul>
 
           <div class="filter text-filter">
-            <div class="filter-label" v-t="'title-search'"></div>
+            <div v-t="'title-search'" class="filter-label"></div>
             <p-search-field v-model="textFilter"></p-search-field>
           </div>
 
           <div class="filter month-dropdown">
-            <div class="filter-label" v-t="'working-body'"></div>
+            <div v-t="'working-body'" class="filter-label"></div>
             <p-search-dropdown
               :items="allworkingBodies"
               :placeholder="inputPlaceholder"
@@ -29,8 +29,8 @@
           </div>
 
           <div class="filter only-abstracts">
-            <input id="only-abstracts" type="checkbox" v-model="onlyAbstracts" class="checkbox" />
-            <label for="only-abstracts" v-t="'only-abstracts'"></label>
+            <input id="only-abstracts" v-model="onlyAbstracts" type="checkbox" class="checkbox" />
+            <label v-t="'only-abstracts'" for="only-abstracts"></label>
           </div>
         </div>
       </div>
@@ -42,7 +42,6 @@
       :current-sort="currentSort"
       :current-sort-order="currentSortOrder"
       :select-sort="selectSort"
-      :info-text="infoText"
       :generated-card-url="generatedCardUrl"
     />
   </div>
@@ -57,6 +56,7 @@ import dateParser from 'helpers/dateParser';
 import InnerCard from './innerCard.vue';
 
 export default {
+  name: 'Zakonodaja',
   components: {
     StripedButton,
     PSearchField,
@@ -64,7 +64,6 @@ export default {
     PSearchDropdown,
   },
   mixins: [common],
-  name: 'Zakonodaja',
   data() {
     // get all working bodies from result data
     let allworkingBodies = this.$options.cardData.data.results
@@ -124,9 +123,6 @@ export default {
         id: 'result',
         label: this.$t('status'),
       }];
-    },
-    infoText() {
-
     },
     generatedCardUrl() {
       const state = {};

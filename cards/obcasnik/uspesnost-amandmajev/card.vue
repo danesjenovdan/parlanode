@@ -19,11 +19,11 @@ import common from 'mixins/common';
 import StackedBarChart from 'components/StackedBarChart.vue';
 
 export default {
+  name: 'ObcasnikUspesnostAmandmajev',
   components: {
     StackedBarChart,
   },
   mixins: [common],
-  name: 'ObcasnikUspesnostAmandmajev',
   data() {
     const data = this.$options.cardData.data;
     const parties = ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP

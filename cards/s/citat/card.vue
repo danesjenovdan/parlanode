@@ -7,16 +7,16 @@
     <div slot="info">
       <i18n path="info.text" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
     </div>
 
-    <speech :speech="data" v-quotable show-session />
+    <speech v-quotable :speech="data" show-session />
   </card-wrapper>
 </template>
 
@@ -42,37 +42,9 @@ function getSelected() {
 let selectElement;
 
 export default {
+  name: 'Govori',
   components: {
     Speech,
-  },
-  mixins: [
-    common,
-    memberTitle,
-  ],
-  name: 'Govori',
-  data() {
-    const sessionName = this.$options.cardData.data.results.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
-    return {
-      data: this.$options.cardData.data,
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.results.session.name,
-        subheading: this.$options.cardData.data.results.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-    };
-  },
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
-    },
   },
   directives: {
     quotable(elem) {
@@ -124,6 +96,34 @@ export default {
             success: result => window.open(`${this.slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
+    },
+  },
+  mixins: [
+    common,
+    memberTitle,
+  ],
+  data() {
+    const sessionName = this.$options.cardData.data.results.session.name;
+    let imageName = 'seja-redna';
+    if (sessionName.indexOf('izredna') !== -1) {
+      imageName = 'seja-izredna';
+    } else if (sessionName.indexOf('nujna') !== -1) {
+      imageName = 'seja-nujna';
+    }
+    return {
+      data: this.$options.cardData.data,
+      headerConfig: {
+        mediaImage: imageName,
+        heading: this.$options.cardData.data.results.session.name,
+        subheading: this.$options.cardData.data.results.session.date,
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.$options.cardData.cardData.name,
+      },
+    };
+  },
+  computed: {
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
     },
   },
 };

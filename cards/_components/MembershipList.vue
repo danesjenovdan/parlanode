@@ -4,13 +4,13 @@
       <ul class="membership-list">
         <template v-if="contents.length">
           <li
-            class="key"
             v-for="membershipItem in contents"
-            :key="membershipItem.name">
+            :key="membershipItem.name"
+            class="key">
             <template v-if="name === 'Delovna telesa'">
               {{ membershipItem.name }}
             </template>
-            <a v-else-if="membershipItem.url != null" class="funblue-light-hover" target="_blank" :href="membershipItem.url">{{ membershipItem.name }}</a>
+            <a v-else-if="membershipItem.url != null" :href="membershipItem.url" class="funblue-light-hover" target="_blank">{{ membershipItem.name }}</a>
             <template v-else>{{ membershipItem.name }}</template>
           </li>
         </template>

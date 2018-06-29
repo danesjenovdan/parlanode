@@ -6,32 +6,32 @@
     :results="$options.cardData.data.results"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n path="info.text[0]" tag="p" class="info-text">
         <a
+          v-t="'info.links[0].text'"
+          :href="$t('info.links[0].link')"
           place="link1"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[0].link')"
-          v-t="'info.links[0].text'"
         />
         <a
+          v-t="'info.links[1].text'"
+          :href="$t('info.links[1].link')"
           place="link2"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[1].link')"
-          v-t="'info.links[1].text'"
         />
       </i18n>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
       <i18n path="info.text[2]" tag="p" class="info-text">
         <a
+          v-t="'info.links[2].text'"
+          :href="$t('info.links[2].link')"
           place="link3"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[2].link')"
-          v-t="'info.links[2].text'"
         />
       </i18n>
       <div class="info-text">
@@ -50,7 +50,7 @@
           <li v-t="'info.excessive-qualifiers[1]'"></li>
         </ul>
       </div>
-      <p class="info-text" v-t="'info.text[3]'"></p>
+      <p v-t="'info.text[3]'" class="info-text"></p>
     </div>
   </style-scores>
 </template>

@@ -5,80 +5,84 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
       <i18n path="info.text[1]" tag="p" class="info-text">
         <a
+          v-t="'info.links[0].text'"
+          :href="$t('info.links[0].link')"
           place="link1"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[0].link')"
-          v-t="'info.links[0].text'"
         />
       </i18n>
       <i18n path="info.text[2]" tag="p" class="info-text">
         <a
+          v-t="'info.links[1].text'"
+          :href="$t('info.links[1].link')"
           place="link2"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[1].link')"
-          v-t="'info.links[1].text'"
         />
         <a
+          v-t="'info.links[2].text'"
+          :href="$t('info.links[2].link')"
           place="link3"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[2].link')"
-          v-t="'info.links[2].text'"
         />
       </i18n>
       <i18n path="info.text[3]" tag="p" class="info-text">
         <a
+          v-t="'info.links[3].text'"
+          :href="$t('info.links[3].link')"
           place="link4"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[3].link')"
-          v-t="'info.links[3].text'"
         />
       </i18n>
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'title-search'"></div>
+        <div v-t="'title-search'" class="filter-label"></div>
         <search-field v-model="textFilter"/>
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'working-body'"></div>
+        <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
       </div>
       <div class="filter month-dropdown">
-        <div class="filter-label" v-t="'time-period'"></div>
+        <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></p-search-dropdown>
       </div>
       <div class="filter button-filter">
-        <div class="filter-label" v-t="'show'"></div>
+        <div v-t="'show'" class="filter-label"></div>
         <div class="filter-content">
           <striped-button
             v-for="voteType in voteTypes"
-            @click.native="toggleVoteType(voteType.id)"
             :color="voteType.color"
             :key="voteType.id"
             :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
             :small-text="voteType.label"
+            @click.native="toggleVoteType(voteType.id)"
           />
         </div>
       </div>
     </div>
     <div id="votingCard" class="date-list">
-      <div class="session_voting"
-            v-for="votingDay in filteredVotingDays"
-            :key="votingDay.date">
+      <div
+        v-for="votingDay in filteredVotingDays"
+        :key="votingDay.date"
+        class="session_voting"
+      >
         <div class="date">{{ votingDay.date }}</div>
-        <div class="clearfix single_voting"
-              v-for="(vote, index) in votingDay.results"
-              :key="index">
+        <div
+          v-for="(vote, index) in votingDay.results"
+          :key="index"
+          class="clearfix single_voting"
+        >
           <a :href="vote.url">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
@@ -101,38 +105,38 @@
               <div class="col-md-6">
                 <div class="session_votes">
                   <div class="progress smallbar">
-                    <div class="progress-bar fontblue" :style="{ width: `${vote.percent_votes_for}%` }">
+                    <div :style="{ width: `${vote.percent_votes_for}%` }" class="progress-bar fontblue">
                       <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                     </div>
-                    <div class="progress-bar funblue" :style="{ width: `${vote.percent_against}%` }">
+                    <div :style="{ width: `${vote.percent_against}%` }" class="progress-bar funblue">
                       <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                     </div>
-                    <div class="progress-bar ignoreblue" :style="{ width: `${vote.percent_abstain}%` }">
+                    <div :style="{ width: `${vote.percent_abstain}%` }" class="progress-bar ignoreblue">
                       <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                     </div>
-                    <div class="progress-bar noblue" :style="{ width: `${vote.percent_not_present}%` }">
+                    <div :style="{ width: `${vote.percent_not_present}%` }" class="progress-bar noblue">
                       <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-3">
                       {{ vote.votes_for }}
-                      <div class="type" v-t="'vote-for'"></div>
+                      <div v-t="'vote-for'" class="type"></div>
                       <div class="indicator aye">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.against }}
-                      <div class="type" v-t="'vote-against'"></div>
+                      <div v-t="'vote-against'" class="type"></div>
                       <div class="indicator ney">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.abstain }}
-                      <div class="type" v-t="'vote-abstained'"></div>
+                      <div v-t="'vote-abstained'" class="type"></div>
                       <div class="indicator abstention">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.not_present }}
-                      <div class="type" v-t="'vote-not'"></div>
+                      <div v-t="'vote-not'" class="type"></div>
                       <div class="indicator not">&nbsp;</div>
                     </div>
                   </div>
@@ -166,9 +170,9 @@ const formattedDateToMonthId = (date) => {
 };
 
 export default {
+  name: 'VlozeniAmandmaji',
   components: { PSearchDropdown, SearchField, StripedButton },
   mixins: [common, partyTitle, partyHeader],
-  name: 'VlozeniAmandmaji',
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 

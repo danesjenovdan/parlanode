@@ -9,22 +9,22 @@
           <ul class="button-filters">
             <striped-button
               v-for="(filter, index) in filters"
-              @click.native="selectFilter(filter)"
-              color="sds"
               :key="index"
               :selected="filter === currentFilter"
               :small-text="filter"
+              color="sds"
+              @click.native="selectFilter(filter)"
             />
           </ul>
 
           <p-search-dropdown
-            class="dropdown-filter"
             :items="workingBodies"
             :placeholder="inputPlaceholder"
+            class="dropdown-filter"
           />
 
           <div class="align-checkbox">
-            <input id="justFive" type="checkbox" v-model="justFive" class="checkbox" />
+            <input id="justFive" v-model="justFive" type="checkbox" class="checkbox" />
             <label for="justFive">Samo zadnjih 5</label>
           </div>
         </div>
@@ -70,9 +70,9 @@ import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
 
 export default {
+  name: 'SeznamSej',
   components: { InnerCard, PSearchDropdown, StripedButton },
   mixins: [common],
-  name: 'SeznamSej',
   data() {
     return {
       sessions: this.$options.cardData.data.sessions,
@@ -207,6 +207,21 @@ export default {
       return `Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu${filterAndWorkingBodiesText}. Seznam je sortiran po ${sortTexts[this.currentSort]}${justFiveText}.`;
     },
   },
+  watch: {
+    currentFilter(newValue) {
+      if (newValue !== 'Seje delovnih teles') {
+        this.workingBodies.forEach((workingBody) => {
+          // eslint-disable-next-line
+          workingBody.selected = false;
+        });
+      }
+    },
+    currentWorkingBodies(newValue) {
+      if (newValue.length !== 0 && this.currentFilter !== 'Seje delovnih teles') {
+        this.currentFilter = 'Seje delovnih teles';
+      }
+    },
+  },
   created() {
     $.getJSON(`${this.slugs.urls.analize}/s/getWorkingBodies/`, (response) => {
       const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
@@ -242,21 +257,6 @@ export default {
         measure('s', 'session-sort', `${sort} ${order}`, '');
       } else if (filter !== '') {
         measure('s', 'session-filter', filter, '');
-      }
-    },
-  },
-  watch: {
-    currentFilter(newValue) {
-      if (newValue !== 'Seje delovnih teles') {
-        this.workingBodies.forEach((workingBody) => {
-          // eslint-disable-next-line
-          workingBody.selected = false;
-        });
-      }
-    },
-    currentWorkingBodies(newValue) {
-      if (newValue.length !== 0 && this.currentFilter !== 'Seje delovnih teles') {
-        this.currentFilter = 'Seje delovnih teles';
       }
     },
   },

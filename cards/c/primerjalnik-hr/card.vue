@@ -6,9 +6,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
       <div class="info-text">
         <ul>
           <li v-t="'info.list[0]'"></li>
@@ -25,15 +25,15 @@
             <tag
               v-for="party in sameParties"
               :key="party.id"
-              class="tag"
               :text="party.acronym"
+              class="tag"
               @click="togglePartySame(party)"
             />
             <tag
               v-for="person in selectedSamePeople"
               :key="person.id"
-              class="tag"
               :text="person.name"
+              class="tag"
               @click="removePerson(person)"
             />
             <plus @click="toggleModal('same', true)" />
@@ -42,15 +42,15 @@
             <tag
               v-for="party in differentParties"
               :key="party.id"
-              class="tag"
               :text="party.acronym"
+              class="tag"
               @click="togglePartyDifferent(party)"
             />
             <tag
               v-for="person in selectedDifferentPeople"
               :key="person.id"
-              class="tag"
               :text="person.name"
+              class="tag"
               @click="removePerson(person)"
             />
             <plus @click="toggleModal('different', true)" />
@@ -64,12 +64,12 @@
             <div class="searchfilter-checkbox">
               <input
                 id="rev"
+                :checked="special"
                 type="checkbox"
                 class="checkbox"
                 @click="toggleSpecial"
-                :checked="special"
               />
-              <label for="rev" v-t="'ignore-absent'"></label>
+              <label v-t="'ignore-absent'" for="rev"></label>
             </div>
           </div>
           <div class="col-xs-5 nopadding">
@@ -81,7 +81,7 @@
         </div>
       </text-frame>
 
-      <p-tabs @switch="focusTab" :start-tab="selectedTab">
+      <p-tabs :start-tab="selectedTab" @switch="focusTab">
         <p-tab :label="$t('tabs.vote-list')">
           <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
           <div v-else class="glasovanja">
@@ -106,9 +106,9 @@
             v-for="party in parties"
             :key="party.id"
             :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
-            @click="togglePartySame(party)"
             :data-id="party.id"
             :data-acronym="party.acronym"
+            @click="togglePartySame(party)"
           >
             {{ party.acronym }}
           </span>
@@ -131,9 +131,9 @@
             v-for="party in parties"
             :key="party.id"
             :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
-            @click="togglePartyDifferent(party)"
             :data-id="party.id"
             :data-acronym="party.acronym"
+            @click="togglePartyDifferent(party)"
           >
             {{ party.acronym }}
           </span>
@@ -163,6 +163,7 @@ import TimeChart from 'components/TimeChart.vue';
 import SeznamGlasovanj from './SeznamGlasovanj.vue';
 
 export default {
+  name: 'PrimerjalnikGlasovanj',
   components: {
     BarChart,
     EmptyCircle,
@@ -178,7 +179,6 @@ export default {
     SeznamGlasovanj,
   },
   mixins: [common],
-  name: 'PrimerjalnikGlasovanj',
   data() {
     return {
       loading: true,
@@ -281,6 +281,26 @@ export default {
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
+  watch: {
+    selectedSamePeople(newSelectedSamePeople) {
+      newSelectedSamePeople.forEach((person) => {
+        this.selectedDifferentPeople
+          .filter(p => p.id === person.id)
+          .forEach((p) => {
+            p.selected = false;
+          });
+      });
+    },
+    selectedDifferentPeople(newSelectedDifferentPeople) {
+      newSelectedDifferentPeople.forEach((person) => {
+        this.selectedSamePeople
+          .filter(p => p.id === person.id)
+          .forEach((p) => {
+            p.selected = false;
+          });
+      });
+    },
+  },
   mounted() {
     const self = this;
     const PGPromise = $.ajax({
@@ -377,26 +397,6 @@ export default {
     },
     focusTab(tabindex) {
       this.selectedTab = tabindex;
-    },
-  },
-  watch: {
-    selectedSamePeople(newSelectedSamePeople) {
-      newSelectedSamePeople.forEach((person) => {
-        this.selectedDifferentPeople
-          .filter(p => p.id === person.id)
-          .forEach((p) => {
-            p.selected = false;
-          });
-      });
-    },
-    selectedDifferentPeople(newSelectedDifferentPeople) {
-      newSelectedDifferentPeople.forEach((person) => {
-        this.selectedSamePeople
-          .filter(p => p.id === person.id)
-          .forEach((p) => {
-            p.selected = false;
-          });
-      });
     },
   },
 };

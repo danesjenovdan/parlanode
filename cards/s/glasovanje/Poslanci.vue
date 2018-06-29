@@ -8,13 +8,13 @@
       <div class="vote-filters">
         <striped-button
           v-for="vote in votes"
-          @click.native="toggleVote(vote.id)"
           :color="vote.id"
           :key="vote.id"
           :selected="vote.selected"
           :small-text="vote.label"
           :text="String(memberVotes[vote.id])"
           :disabled="memberVotes[vote.id] === 0"
+          @click.native="toggleVote(vote.id)"
         />
       </div>
       <result
@@ -24,15 +24,15 @@
       />
     </div>
     <ul class="person-list">
-      <li class="item" v-for="member in filteredMembers">
+      <li v-for="member in filteredMembers" :key="member.person.id" class="item">
         <div class="column portrait">
           <a :href="getMemberLink(member)">
             <img :src="getMemberPortrait(member)" />
           </a>
         </div>
         <div class="column wider name">
-          <a class="funblue-light-hover" :href="getMemberLink(member)">{{ member.person.name }}</a><br>
-          <a class="funblue-light-hover" :href="getMemberPartyLink(member)">{{ member.person.party.acronym }}</a>
+          <a :href="getMemberLink(member)" class="funblue-light-hover">{{ member.person.name }}</a><br>
+          <a :href="getMemberPartyLink(member)" class="funblue-light-hover">{{ member.person.party.acronym }}</a>
         </div>
         <div class="column vote">
           <div :class="`option option-${member.option}`">{{ translateOption(member.option, member.person.gender) }}</div>
@@ -51,8 +51,14 @@ import mapVotes from './mapVotes';
 import Result from './ResultShit.vue';
 
 export default {
-  name: 'GlasovanjeSeje_Poslanci',
+  name: 'GlasovanjeSejePoslanci',
   components: { StripedButton, SearchField, Result },
+  props: {
+    members: Array,
+    memberVotes: Object,
+    result: Object,
+    state: Object,
+  },
   data() {
     return {
       nameFilter: '',
@@ -98,12 +104,6 @@ export default {
         return nameMatch && optionMatch;
       });
     },
-  },
-  props: {
-    members: Array,
-    memberVotes: Object,
-    result: Object,
-    state: Object,
   },
   mounted() {
     if (this.state.nameFilter) {

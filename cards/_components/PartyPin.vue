@@ -8,8 +8,8 @@
     </div>
     <a
       :href="partyLink"
-      class="avgminimg img-circle avgminimg-party img-circle"
       :class="partyCssClass"
+      class="avgminimg img-circle avgminimg-party img-circle"
       @mouseover="tooltipVisible = true"
       @mouseout="tooltipVisible = false"
     >

@@ -7,19 +7,19 @@
     <div slot="info">
       <i18n path="info.text" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
     </div>
 
     <div v-if="speeches.length" class="multiple-speeches">
-      <speech v-for="speech in speeches" :key="speech.results.speech_id" :speech="speech" v-quotable />
+      <speech v-quotable v-for="speech in speeches" :key="speech.results.speech_id" :speech="speech" />
     </div>
-    <div v-else class="empty-dataset" v-t="'session-processing'"></div>
+    <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -44,40 +44,9 @@ function getSelected() {
 let selectElement;
 
 export default {
+  name: 'Govori',
   components: {
     Speech,
-  },
-  mixins: [common],
-  name: 'Govori',
-  data() {
-    const sessionName = this.$options.cardData.data.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
-    return {
-      data: this.$options.cardData.data,
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.session.name,
-        subheading: this.$options.cardData.data.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-    };
-  },
-  computed: {
-    speeches() {
-      if (this.data.results && this.data.results.length) {
-        return this.data.results;
-      }
-      return [];
-    },
-    generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.session.id}?altHeader=true`;
-    },
   },
   directives: {
     quotable(elem) {
@@ -129,6 +98,37 @@ export default {
             success: result => window.open(`${this.slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
+    },
+  },
+  mixins: [common],
+  data() {
+    const sessionName = this.$options.cardData.data.session.name;
+    let imageName = 'seja-redna';
+    if (sessionName.indexOf('izredna') !== -1) {
+      imageName = 'seja-izredna';
+    } else if (sessionName.indexOf('nujna') !== -1) {
+      imageName = 'seja-nujna';
+    }
+    return {
+      data: this.$options.cardData.data,
+      headerConfig: {
+        mediaImage: imageName,
+        heading: this.$options.cardData.data.session.name,
+        subheading: this.$options.cardData.data.session.date,
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.$options.cardData.cardData.name,
+      },
+    };
+  },
+  computed: {
+    speeches() {
+      if (this.data.results && this.data.results.length) {
+        return this.data.results;
+      }
+      return [];
+    },
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.session.id}?altHeader=true`;
     },
   },
 };

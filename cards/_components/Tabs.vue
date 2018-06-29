@@ -3,9 +3,9 @@
     <ul class="p-tabs-headers">
       <li
         v-for="(header, index) in headers"
-        @click="select(index)"
         :key="index"
-        :class="['p-tabs-header', header.variant, { active: index === active }]">
+        :class="['p-tabs-header', header.variant, { active: index === active }]"
+        @click="select(index)">
         <span>{{ header.label }}</span>
       </li>
     </ul>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: 'Tabs',
+  props: {
+    startTab: Number,
+  },
   data() {
     return {
       tabs: [],
@@ -41,9 +44,6 @@ export default {
         this.$emit('switch', tabIndex);
       }
     },
-  },
-  props: {
-    startTab: Number,
   },
 };
 </script>

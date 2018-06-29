@@ -189,17 +189,17 @@ export default {
   props: {
     data: Array,
   },
+  watch: {
+    data() {
+      this.renderChart();
+    },
+  },
   mounted() {
     this.renderChart();
   },
   methods: {
     renderChart() {
       chart(this.data, this);
-    },
-  },
-  watch: {
-    data() {
-      this.renderChart();
     },
   },
 };

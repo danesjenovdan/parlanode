@@ -2,11 +2,11 @@
   <div class="card-content-share">
     <div class="card-back-content">
       <div class="share-content">
-        <label for="share-url" v-t="'share.direct-link'"></label>
-        <input type="url" class="form-control share-url" id="share-url" :value="shortenedUrl" ref="urlInput" />
+        <label v-t="'share.direct-link'" for="share-url"></label>
+        <input id="share-url" ref="urlInput" :value="shortenedUrl" type="url" class="form-control share-url" />
         <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">
-          <span v-if="copied" v-t="'copied'"></span>
-          <span v-else v-t="'copy'"></span>
+          <span v-t="'copied'" v-if="copied"></span>
+          <span v-t="'copy'" v-else></span>
         </button>
       </div>
     </div>
@@ -17,13 +17,23 @@
 export default {
   name: 'CardShare',
 
+  props: {
+    url: String,
+  },
+
   data: () => ({
     shortenedUrl: '',
     copied: false,
   }),
 
-  props: {
-    url: String,
+  watch: {
+    url() {
+      this.shortenUrl();
+    },
+  },
+
+  mounted() {
+    this.shortenUrl();
   },
 
   methods: {
@@ -57,16 +67,6 @@ export default {
       // change text
       this.copied = succeed;
     },
-  },
-
-  watch: {
-    url() {
-      this.shortenUrl();
-    },
-  },
-
-  mounted() {
-    this.shortenUrl();
   },
 };
 </script>

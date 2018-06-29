@@ -1,23 +1,23 @@
 <template>
   <card-wrapper
-    contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n path="info.text[0]" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
       <div class="info-text">
         <span v-t="'info.text[2]'"></span>
         <ul>
@@ -39,6 +39,7 @@ import { memberHeader } from 'mixins/altHeaders';
 import PersonList from 'components/PersonList.vue';
 
 export default {
+  name: 'NajmanjkratGlasujejoEnako',
   components: {
     PersonList,
     memberOverview,
@@ -48,7 +49,6 @@ export default {
     common,
     memberHeader,
   ],
-  name: 'NajmanjkratGlasujejoEnako',
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;

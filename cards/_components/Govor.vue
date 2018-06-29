@@ -20,11 +20,6 @@
 import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from './links';
 
 export default {
-  methods: {
-    getPersonPortrait,
-    getPersonLink,
-    getSessionSpeechLink,
-  },
   props: {
     speech: {
       type: Object,
@@ -35,6 +30,11 @@ export default {
       reqired: false,
       default: '',
     },
+  },
+  methods: {
+    getPersonPortrait,
+    getPersonLink,
+    getSessionSpeechLink,
   },
 };
 </script>

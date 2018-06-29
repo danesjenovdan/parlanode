@@ -6,11 +6,11 @@
     :results="$options.cardData.data.results"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
-      <p class="info-text" v-t="'info.text[1]'"></p>
-      <p class="info-text" v-t="'info.text[2]'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
+      <p v-t="'info.text[2]'" class="info-text"></p>
     </div>
   </score-avg-max>
 </template>

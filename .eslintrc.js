@@ -21,15 +21,11 @@ module.exports = {
     'import',
   ],
   rules: {
-    'vue/require-v-for-key': 'off',
-    'max-len': 'off',
-    'vue/html-indent': 'off',
-    'vue/name-property-casing': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/attribute-hyphenation': 'off',
-    'vue/order-in-components': 'off',
+    'vue/require-v-for-key': 'off', // TODO: remove this
+    'vue/require-default-prop': 'off', // TODO: remove this
+    'max-len': 'off', // TODO: remove this
     'vue/max-attributes-per-line': 'off',
-    'vue/attributes-order': 'off',
+    // 'vue/attributes-order': 'off',
     'vue/html-self-closing': 'off',
     // 'vue/max-attributes-per-line': ['error', { 'singleline': 2 }],
     // 'vue/html-self-closing': ['error', { 'html': { 'normal': 'any' } }],

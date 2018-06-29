@@ -1,27 +1,27 @@
 <template>
   <card-wrapper
-    contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n path="info.text[0]" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <div v-else class="empty-dataset" v-t="'no-speeches'"></div>
+    <div v-t="'no-speeches'" v-else class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -33,6 +33,7 @@ import { memberSpeeches } from 'mixins/contextUrls';
 import BarChart from 'components/BarChart.vue';
 
 export default {
+  name: 'PoslanecTFIDF',
   components: {
     BarChart,
   },
@@ -41,7 +42,6 @@ export default {
     memberSpeeches,
     memberHeader,
   ],
-  name: 'PoslanecTFIDF',
   data() {
     return {
       data: this.$options.cardData.data,

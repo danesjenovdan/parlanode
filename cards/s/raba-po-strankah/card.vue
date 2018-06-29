@@ -5,12 +5,12 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div v-if="data.response.numFound === 0" class="no-results" v-t="'no-results'"></div>
+    <div v-t="'no-results'" v-if="data.response.numFound === 0" class="no-results"></div>
     <div v-else id="pie-chart">
       <pie-chart :data="pieData" />
     </div>
@@ -23,14 +23,14 @@ import { searchTitle } from 'mixins/titles';
 import PieChart from 'components/PieChart.vue';
 
 export default {
+  name: 'RabaPoPoslanskihSkupinah',
+  components: {
+    PieChart,
+  },
   mixins: [
     common,
     searchTitle,
   ],
-  components: {
-    PieChart,
-  },
-  name: 'RabaPoPoslanskihSkupinah',
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
     return {

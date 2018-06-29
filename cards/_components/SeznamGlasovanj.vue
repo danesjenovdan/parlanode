@@ -1,29 +1,29 @@
 <template>
   <div id="seznam-glasovanj">
-    <div class="filters" v-if="showFilters">
+    <div v-if="showFilters" class="filters">
       <div class="filter option-party-buttons">
         <striped-button
           v-for="result in allResults"
-          @click.native="toggleResult(result.id)"
           :color="result.color"
           :key="result.id"
           :selected="selectedResults.indexOf(result.id) > -1"
           :small-text="result.label"
+          @click.native="toggleResult(result.id)"
         />
       </div>
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'title-search'"></div>
-        <input class="text-filter-input" type="text" v-model="textFilter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'working-body'"></div>
+        <div v-t="'working-body'" class="filter-label"></div>
         <search-dropdown :items="allTags" :placeholder="tagPlaceholder"></search-dropdown>
       </div>
     </div>
     <scroll-shadow ref="shadow">
       <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
         <div class="session_voting">
-          <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
+          <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
             <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
@@ -46,38 +46,38 @@
                 <div class="col-md-6">
                   <div class="session_votes">
                     <div class="progress smallbar">
-                      <div class="progress-bar funblue " :style="{ width: vote.percent_votes_for + '%' }">
+                      <div :style="{ width: vote.percent_votes_for + '%' }" class="progress-bar funblue ">
                         <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                       </div>
-                      <div class="progress-bar fontblue " :style="{ width: vote.percent_against + '%' }">
+                      <div :style="{ width: vote.percent_against + '%' }" class="progress-bar fontblue ">
                         <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                       </div>
-                      <div class="progress-bar noblue " :style="{ width: vote.percent_abstain + '%' }">
+                      <div :style="{ width: vote.percent_abstain + '%' }" class="progress-bar noblue ">
                         <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                       </div>
-                      <div class="progress-bar ignoreblue " :style="{ width: vote.percent_not_present + '%' }">
+                      <div :style="{ width: vote.percent_not_present + '%' }" class="progress-bar ignoreblue ">
                         <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-xs-3">
                         {{ vote.votes_for }}
-                        <div class="type" v-t="'vote-for'"></div>
+                        <div v-t="'vote-for'" class="type"></div>
                         <div class="indicator ney">&nbsp;</div>
                       </div>
                       <div class="col-xs-3">
                         {{ vote.against }}
-                        <div class="type" v-t="'vote-against'"></div>
+                        <div v-t="'vote-against'" class="type"></div>
                         <div class="indicator aye">&nbsp;</div>
                       </div>
                       <div class="col-xs-3">
                         {{ vote.abstain }}
-                        <div class="type" v-t="'vote-abstained'"></div>
+                        <div v-t="'vote-abstained'" class="type"></div>
                         <div class="indicator not">&nbsp;</div>
                       </div>
                       <div class="col-xs-3">
                         {{ vote.not_present }}
-                        <div class="type" v-t="'vote-not'"></div>
+                        <div v-t="'vote-not'" class="type"></div>
                         <div class="indicator abstention">&nbsp;</div>
                       </div>
                     </div>
@@ -142,21 +142,6 @@ export default {
       allResults,
     };
   },
-  watch: {
-    data() {
-      this.votes = this.processVotes();
-      this.allTags = this.processTags();
-    },
-    textFilter() {
-      this.emitFiltersChanged();
-    },
-    selectedTags() {
-      this.emitFiltersChanged();
-    },
-    selectedResults() {
-      this.emitFiltersChanged();
-    },
-  },
   computed: {
     filteredVotes() {
       const filterVotes = (vote) => {
@@ -183,6 +168,21 @@ export default {
     selectedResults() {
       return this.allResults.filter(result => result.selected)
         .map(result => result.id);
+    },
+  },
+  watch: {
+    data() {
+      this.votes = this.processVotes();
+      this.allTags = this.processTags();
+    },
+    textFilter() {
+      this.emitFiltersChanged();
+    },
+    selectedTags() {
+      this.emitFiltersChanged();
+    },
+    selectedResults() {
+      this.emitFiltersChanged();
     },
   },
   methods: {

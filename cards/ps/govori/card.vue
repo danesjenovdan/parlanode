@@ -1,8 +1,8 @@
 <template>
   <govori
     :card-data="$options.cardData"
-    type="party"
     :party="$options.cardData.data.highlighting[0].person.party"
+    type="party"
   />
 </template>
 

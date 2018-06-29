@@ -3,8 +3,8 @@
     :id="$options.cardData.cardData._id"
   >
     <div
-      class="party-list-generator"
       v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
+      class="party-list-generator"
     >
       <div class="row">
         <div class="col-md-12">
@@ -19,32 +19,32 @@
         <div class="col-md-12 filters">
           <div class="parties filter">
             <striped-button
-              class="party"
               v-for="party in parties"
-              @click.native="selectParty(party.acronym)"
               :color="party.color"
               :key="party.acronym"
               :selected="selectedParties.indexOf(party.acronym) > -1"
               :small-text="party.acronym"
               :is-uppercase="false"
+              class="party"
               stripe-position="bottom"
+              @click.native="selectParty(party.acronym)"
             />
           </div>
-          <search-field class="filter text-filter" v-model="textFilter" />
+          <search-field v-model="textFilter" class="filter text-filter" />
           <p-search-dropdown
-            class="filter district-filter"
             :items="districts"
             :placeholder="districtPlaceholder"
+            class="filter district-filter"
           />
           <div class="genders filter">
             <striped-icon-button
-              class="gender"
               v-for="gender in genders"
               :color="'funblue'"
               :key="gender.id"
               :selected="selectedGenders.indexOf(gender.id) > -1"
               :icon="gender.id"
               :stripe-position="'top'"
+              class="gender"
               @click.native="selectGender(gender.id)"
             />
           </div>
@@ -61,18 +61,18 @@
             <div slot="info">
               <i18n path="info.lead" tag="p" class="info-text lead">
                 <span place="parties">
-                  <span v-if="selectedParties.length">{{$t('party')}}: {{selectedParties.join(', ')}}</span>
-                  <span v-else v-t="'all-parties'"></span>
+                  <span v-if="selectedParties.length">{{ $t('party') }}: {{ selectedParties.join(', ') }}</span>
+                  <span v-t="'all-parties'" v-else></span>
                 </span>
                 <span place="districts">
-                  <span v-if="selectedDistrictNames.length">{{$t('voting-district')}}: {{selectedDistrictNames.join(', ')}}</span>
-                  <span v-else v-t="'all-voting-districts'"></span>
+                  <span v-if="selectedDistrictNames.length">{{ $t('voting-district') }}: {{ selectedDistrictNames.join(', ') }}</span>
+                  <span v-t="'all-voting-districts'" v-else></span>
                 </span>
-                <span place="sortBy">{{sortMap[currentSort]}}</span>
+                <span place="sortBy">{{ sortMap[currentSort] }}</span>
               </i18n>
               <template v-if="currentAnalysisData.explanation">
-                <p class="info-text heading" v-t="'info.methodology'"></p>
-                <p class="info-text">{{currentAnalysisData.explanation}}</p>
+                <p v-t="'info.methodology'" class="info-text heading"></p>
+                <p class="info-text">{{ currentAnalysisData.explanation }}</p>
               </template>
             </div>
           </inner-card>
@@ -97,6 +97,7 @@ import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
 
 export default {
+  name: 'SeznamPoslancev',
   components: {
     BlueButtonList,
     InnerCard,
@@ -109,7 +110,6 @@ export default {
     common,
     urlFunctionalities,
   ],
-  name: 'SeznamPoslancev',
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
@@ -295,6 +295,26 @@ export default {
       };
     },
   },
+  watch: {
+    currentAnalysis(newValue) {
+      if (newValue === 'demographics') {
+        this.currentSort = 'name';
+        this.currentSortOrder = 'asc';
+      } else {
+        this.currentSort = 'analysis';
+        this.currentSortOrder = 'desc';
+      }
+    },
+  },
+  created() {
+    const that = this;
+    $.getJSON(`${this.slugs.urls.analize}/pg/getListOfPGs/`, (response) => {
+      that.parties = response.data.map(party => ({
+        acronym: party.party.acronym,
+        color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
+      }));
+    });
+  },
   methods: {
     selectParty(id) {
       const position = this.selectedParties.indexOf(id);
@@ -320,26 +340,6 @@ export default {
         this.currentSort = sort;
       }
     },
-  },
-  watch: {
-    currentAnalysis(newValue) {
-      if (newValue === 'demographics') {
-        this.currentSort = 'name';
-        this.currentSortOrder = 'asc';
-      } else {
-        this.currentSort = 'analysis';
-        this.currentSortOrder = 'desc';
-      }
-    },
-  },
-  created() {
-    const that = this;
-    $.getJSON(`${this.slugs.urls.analize}/pg/getListOfPGs/`, (response) => {
-      that.parties = response.data.map(party => ({
-        acronym: party.party.acronym,
-        color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
-      }));
-    });
   },
 };
 </script>

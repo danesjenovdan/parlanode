@@ -5,9 +5,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
       <div class="info-text">
         <ul>
           <li v-t="'info.text[2]'"></li>
@@ -15,33 +15,33 @@
           <li v-t="'info.text[4]'"></li>
         </ul>
       </div>
-      <p class="info-text heading" v-t="'info.text[5]'"></p>
-      <p class="info-text" v-t="'info.text[6]'"></p>
+      <p v-t="'info.text[5]'" class="info-text heading"></p>
+      <p v-t="'info.text[6]'" class="info-text"></p>
     </div>
 
     <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
       <div class="result">
         <template v-if="data.result.accepted">
           <i class="accepted glyphicon glyphicon-ok"></i>
-          <div class="text" v-t="'vote-passed'"></div>
+          <div v-t="'vote-passed'" class="text"></div>
         </template>
         <template v-else>
           <i class="not-accepted glyphicon glyphicon-remove"></i>
-          <div class="text" v-t="'vote-not-passed'"></div>
+          <div v-t="'vote-not-passed'" class="text"></div>
         </template>
       </div>
       <div class="name">{{ data.name }}</div>
     </div>
     <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
+      v-if="showMobileExcerpt"
       :content="data.abstract || ''"
       :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
       :documents="data.documents"
-      class="visible-xs"
-      v-if="showMobileExcerpt"
       :show-parent="true"
+      class="visible-xs"
     />
-    <p-tabs @switch="focusTab" :start-tab="selectedTab" class="visible-xs">
+    <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
       <p-tab :label="$t('mps')">
         <poslanci
           :members="data.members"
@@ -56,8 +56,8 @@
           :members="data.members"
           :parties="data.parties"
           :state="state"
-          :selectedParty="state.selectedParty || null"
-          :selectedOption="state.selectedOption || null"
+          :selected-party="state.selectedParty || null"
+          :selected-option="state.selectedOption || null"
         />
       </p-tab>
       <p-tab :label="$t('gov-side')">
@@ -66,12 +66,12 @@
           :members="data.members"
           :parties="coalitionOpositionParties"
           :state="state"
-          :selectedParty="state.selectedParty || null"
-          :selectedOption="state.selectedOption || null"
+          :selected-party="state.selectedParty || null"
+          :selected-option="state.selectedOption || null"
         />
       </p-tab>
     </p-tabs>
-    <p-tabs @switch="focusTab" :start-tab="selectedTab" class="hidden-xs">
+    <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
       <p-tab :label="$t('summary')">
         <excerpt
           :content="data.abstract || ''"
@@ -94,8 +94,8 @@
           :members="data.members"
           :parties="data.parties"
           :state="state"
-          :selectedParty="state.selectedParty || null"
-          :selectedOption="state.selectedOption || null"
+          :selected-party="state.selectedParty || null"
+          :selected-option="state.selectedOption || null"
         />
       </p-tab>
       <p-tab :label="$t('gov-side')">
@@ -104,8 +104,8 @@
           :members="data.members"
           :parties="coalitionOpositionParties"
           :state="state"
-          :selectedParty="state.selectedParty || null"
-          :selectedOption="state.selectedOption || null"
+          :selected-party="state.selectedParty || null"
+          :selected-option="state.selectedOption || null"
         />
       </p-tab>
     </p-tabs>
@@ -123,6 +123,7 @@ import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
+  name: 'GlasovanjeSeje',
   components: {
     Poslanci,
     PoslanskeSkupine,
@@ -132,7 +133,6 @@ export default {
     Excerpt,
   },
   mixins: [common],
-  name: 'GlasovanjeSeje',
   data() {
     return {
       showMobileExcerpt: false,
@@ -165,6 +165,18 @@ export default {
       return `${this.url}${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
     },
   },
+  // glasovanje-update je bilo prazno, created() je iz developa
+  created() {
+    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
+  },
+  mounted() {
+    this.$on('selectedoption', (newSelectedOption) => {
+      this.state.selectedOption = newSelectedOption;
+    });
+    this.$on('selectedparty', (newSelectedParty) => {
+      this.state.selectedParty = newSelectedParty;
+    });
+  },
   methods: {
     focusTab(tabNumber) {
       if (tabNumber !== 1) {
@@ -185,18 +197,6 @@ export default {
       }
       this.state.selectedTab = tabNumber;
     },
-  },
-  // glasovanje-update je bilo prazno, created() je iz developa
-  created() {
-    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
-  },
-  mounted() {
-    this.$on('selectedoption', (newSelectedOption) => {
-      this.state.selectedOption = newSelectedOption;
-    });
-    this.$on('selectedparty', (newSelectedParty) => {
-      this.state.selectedParty = newSelectedParty;
-    });
   },
 };
 </script>

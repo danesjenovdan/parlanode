@@ -15,8 +15,13 @@
 import DonutChart from 'components/DonutChart.vue';
 
 export default {
-  name: 'GlasovanjeSeje_Result',
+  name: 'GlasovanjeSejeResultShit',
   components: { DonutChart },
+  props: {
+    chartData: Array,
+    option: String,
+    score: Number,
+  },
   data() {
     return {
       votes: [
@@ -38,11 +43,6 @@ export default {
         cant_compute: 'ni večinskega glasu',
       }[this.option];
     },
-  },
-  props: {
-    chartData: Array,
-    option: String,
-    score: Number,
   },
 };
 </script>

@@ -7,47 +7,47 @@
     <div slot="info">
       <i18n path="info.lead" tag="p" class="info-text lead">
         <span place="text">
-          <span v-if="textFilter">"{{textFilter}}"</span>
-          <span v-else v-t="'all-votes'"></span>
+          <span v-if="textFilter">"{{ textFilter }}"</span>
+          <span v-t="'all-votes'" v-else></span>
         </span>
         <span place="wbs">
-          <span v-if="selectedTags.length">{{selectedTags.join(', ')}}</span>
-          <span v-else v-t="'all-working-bodies'"></span>
+          <span v-if="selectedTags.length">{{ selectedTags.join(', ') }}</span>
+          <span v-t="'all-working-bodies'" v-else></span>
         </span>
-        <span place="sortBy">{{sortOptions[selectedSort].toLowerCase()}}</span>
+        <span place="sortBy">{{ sortOptions[selectedSort].toLowerCase() }}</span>
       </i18n>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
     <div class="groups">
       <striped-button
         v-for="group in groups"
-        @click.native="selectGroup(group.acronym)"
         :color="group.color.toLowerCase()"
         :key="group.acronym"
         :selected="group.acronym === selectedGroup"
         :small-text="group.name"
         :is-uppercase="false"
+        @click.native="selectGroup(group.acronym)"
       />
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'title-search'"></div>
-        <input class="text-filter-input" type="text" v-model="textFilter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
       <div class="filter type-dropdown">
-        <div class="filter-label" v-t="'vote-types'"></div>
+        <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'working-body'"></div>
+        <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
       </div>
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'sort-by'"></div>
+        <div v-t="'sort-by'" class="filter-label"></div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
@@ -59,23 +59,23 @@
           <a
             v-for="ballot in day.ballots"
             :key="ballot.id_parladata"
+            :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
             target="_blank"
             class="ballot"
-            :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
           >
             <div class="disunion">
               <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
-              <div class="text" v-t="'inequality'"></div>
+              <div v-t="'inequality'" class="text"></div>
             </div>
             <div class="name">{{ ballot.text }}</div>
             <div class="result">
               <template v-if="ballot.result">
                 <i class="accepted glyphicon glyphicon-ok"></i>
-                <div class="text" v-t="'vote-passed'"></div>
+                <div v-t="'vote-passed'" class="text"></div>
               </template>
               <template v-else>
                 <i class="not-accepted glyphicon glyphicon-remove"></i>
-                <div class="text" v-t="'vote-not-passed'"></div>
+                <div v-t="'vote-not-passed'" class="text"></div>
               </template>
             </div>
           </a>
@@ -96,6 +96,7 @@ import common from 'mixins/common';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
+  name: 'GlasovanjaNeenotnost',
   components: {
     DateRow,
     PSearchDropdown,
@@ -104,7 +105,6 @@ export default {
     ScrollShadow,
   },
   mixins: [common],
-  name: 'GlasovanjaNeenotnost',
   data() {
     let groups = [{
       id: 95,
@@ -217,6 +217,18 @@ export default {
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
+  watch: {
+    selectedGroup(newValue) {
+      this.fetchVotesForGroup(newValue);
+    },
+  },
+  beforeMount() {
+    this.fetchVotesForGroup();
+  },
+  created() {
+    const context = this.$options.cardData;
+    context.template.pageTitle = this.dynamicTitle;
+  },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
       if (!this.voteData || this.voteData.length === 0) return [];
@@ -306,18 +318,6 @@ export default {
         this.loading = false;
       });
     },
-  },
-  watch: {
-    selectedGroup(newValue) {
-      this.fetchVotesForGroup(newValue);
-    },
-  },
-  beforeMount() {
-    this.fetchVotesForGroup();
-  },
-  created() {
-    const context = this.$options.cardData;
-    context.template.pageTitle = this.dynamicTitle;
   },
 };
 </script>

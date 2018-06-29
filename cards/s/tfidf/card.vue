@@ -5,25 +5,25 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n path="info.text[0]" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
-      <p class="info-text" v-t="'info.text[1]'"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
     <div v-if="chartRows.length" class="columns">
-      <bar-chart :data="chartRows1" :alreadyCalculated="true" />
-      <bar-chart :data="chartRows2" :alreadyCalculated="true" />
+      <bar-chart :data="chartRows1" :already-calculated="true" />
+      <bar-chart :data="chartRows2" :already-calculated="true" />
     </div>
-    <div v-else class="empty-dataset" v-t="'session-processing'"></div>
+    <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -33,11 +33,11 @@ import BarChart from 'components/BarChart.vue';
 import { getSearchTermLink } from 'components/links';
 
 export default {
+  name: 'BesedeKiSoZaznamovaleSejo',
   components: {
     BarChart,
   },
   mixins: [common],
-  name: 'BesedeKiSoZaznamovaleSejo',
   data() {
     const sessionName = this.$options.cardData.data.session.name;
     let imageName = 'seja-redna';

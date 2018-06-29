@@ -18,9 +18,11 @@
 import common from 'mixins/common';
 
 export default {
+  // TODO: remove eslint comment
+  // eslint-disable-next-line vue/name-property-casing
+  name: '{{ componentName }}',
   components: { },
   mixins: [common],
-  name: '{{ componentName }}',
   data() {
     return {
       data: this.$options.cardData.data,

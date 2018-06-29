@@ -1,44 +1,44 @@
 <template>
   <div :class="['speech-holder', {'just-quote': showQuote}]" :id="speech.results.speech_id">
-    <input type="hidden" class="mywords" :value="getSpeechContent(speech)" />
+    <input :value="getSpeechContent(speech)" type="hidden" class="mywords" />
     <div class="person-session">
       <div class="person">
         <template v-if="speech.person.type === 'mp'">
           <a :href="getPersonLink(speech.person)">
-            <img class="portrait" :src="getPersonPortrait(speech.person)" />
+            <img :src="getPersonPortrait(speech.person)" class="portrait" />
           </a>
           <a :href="getPersonLink(speech.person)" class="funblue-light-hover">
-            <span class="name">{{speech.person.name}}</span>
+            <span class="name">{{ speech.person.name }}</span>
           </a>
         </template>
         <template v-else>
-          <img class="portrait" :src="getPersonPortrait(speech.person)" />
-          <span class="name">{{speech.person.name}}</span>
+          <img :src="getPersonPortrait(speech.person)" class="portrait" />
+          <span class="name">{{ speech.person.name }}</span>
         </template>
       </div>
       <div v-if="showSession" class="session">
-        <a :href="getSessionTranscriptLink(speech.results.session)" class="funblue-light-hover">{{speech.results.session.name}}</a><br>
-        <span class="date">{{speech.results.session.date}}</span>
+        <a :href="getSessionTranscriptLink(speech.results.session)" class="funblue-light-hover">{{ speech.results.session.name }}</a><br>
+        <span class="date">{{ speech.results.session.date }}</span>
       </div>
     </div>
     <div class="everything">
       <div class="speech-text">
-        {{getSpeechContent(speech)}}
+        {{ getSpeechContent(speech) }}
         <div class="quote-button">“</div>
       </div>
     </div>
     <div v-if="speech.results.quoted_text" class="quote">
       <div class="speech-text">
-        {{quotePaddingBefore}}
-        <span class="quote-text">{{speech.results.quoted_text}}</span>
-        {{quotePaddingAfter}}
+        {{ quotePaddingBefore }}
+        <span class="quote-text">{{ speech.results.quoted_text }}</span>
+        {{ quotePaddingAfter }}
       </div>
-      <a href="#" class="full-text-link" @click="showFullSpeech" v-t="'full-speech'"></a>
+      <a v-t="'full-speech'" href="#" class="full-text-link" @click="showFullSpeech"></a>
       <div class="quote-button">“</div>
     </div>
     <div class="links">
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
-      <a :href="`${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`" v-if="!showSession" class="share"></a>
+      <a v-if="!showSession" :href="`${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`" class="share"></a>
     </div>
   </div>
 </template>

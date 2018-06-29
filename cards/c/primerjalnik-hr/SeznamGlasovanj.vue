@@ -3,7 +3,7 @@
     <scroll-shadow ref="shadow">
       <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
         <div class="session_voting">
-          <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
+          <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
             <div class="col-md-1">
               <div :class="vote.accepted">
                 <p>
@@ -22,38 +22,38 @@
               <div class="col-md-6">
                 <div class="session_votes">
                   <div class="progress smallbar">
-                    <div class="progress-bar funblue" :style="{ width: vote.percent_votes_for + '%' }">
+                    <div :style="{ width: vote.percent_votes_for + '%' }" class="progress-bar funblue">
                       <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                     </div>
-                    <div class="progress-bar fontblue" :style="{ width: vote.percent_against + '%' }">
+                    <div :style="{ width: vote.percent_against + '%' }" class="progress-bar fontblue">
                       <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                     </div>
-                    <div class="progress-bar noblue" :style="{ width: vote.percent_abstain + '%' }">
+                    <div :style="{ width: vote.percent_abstain + '%' }" class="progress-bar noblue">
                       <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                     </div>
-                    <div class="progress-bar ignoreblue" :style="{ width: vote.percent_not_present + '%' }">
+                    <div :style="{ width: vote.percent_not_present + '%' }" class="progress-bar ignoreblue">
                       <span class="sr-only">{{ vote.percent_not_present }}% votes not present</span>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-3">
                       {{ vote.votes_for }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-for'"></div>
+                      <div v-t="'seznam-glasovanj.vote-for'" class="type"></div>
                       <div class="indicator ney">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.against }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-against'"></div>
+                      <div v-t="'seznam-glasovanj.vote-against'" class="type"></div>
                       <div class="indicator aye">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.abstain }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-abstained'"></div>
+                      <div v-t="'seznam-glasovanj.vote-abstained'" class="type"></div>
                       <div class="indicator not">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.not_present }}
-                      <div class="type" v-t="'seznam-glasovanj.vote-not'"></div>
+                      <div v-t="'seznam-glasovanj.vote-not'" class="type"></div>
                       <div class="indicator abstention">&nbsp;</div>
                     </div>
                   </div>
@@ -112,13 +112,6 @@ export default {
     };
   },
 
-  watch: {
-    data() {
-      this.votes = this.processVotes();
-      this.allTags = this.processTags();
-    },
-  },
-
   computed: {
     filteredVotes() {
       const filterVotes = (vote) => {
@@ -157,6 +150,13 @@ export default {
     selectedResults() {
       return this.allResults.filter(result => result.selected)
         .map(result => result.id);
+    },
+  },
+
+  watch: {
+    data() {
+      this.votes = this.processVotes();
+      this.allTags = this.processTags();
     },
   },
 

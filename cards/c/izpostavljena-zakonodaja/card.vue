@@ -1,22 +1,22 @@
 <template>
   <card-wrapper
-    class="card-halfling card-featured-legislation"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
-    contentHeight="518px"
+    class="card-halfling card-featured-legislation"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
     <div class="p-tabs-2col legislation">
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">
           <div class="row">
-            <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration" :key="legislation.epa">
-              <a class="legislation__single" :href="slugs.legislationLink + legislation.epa">
+            <div v-for="legislation in data.under_consideration" :key="legislation.epa" class="col-xs-12 col-sm-6 legislation__wrapper">
+              <a :href="slugs.legislationLink + legislation.epa" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
                     <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" />
@@ -31,8 +31,8 @@
         </p-tab>
         <p-tab :label="$t('recently-passed')">
           <div class="legislation row">
-            <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.accepted" :key="legislation.epa">
-              <a class="legislation__single" :href="slugs.legislationLink + legislation.epa">
+            <div v-for="legislation in data.accepted" :key="legislation.epa" class="col-sm-6 legislation__wrapper">
+              <a :href="slugs.legislationLink + legislation.epa" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
                     <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" />
@@ -47,7 +47,7 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a :href="`${slugs.legislationLink}`" v-t="'all-legislation'"></a>
+        <a v-t="'all-legislation'" :href="`${slugs.legislationLink}`"></a>
       </div>
     </div>
   </card-wrapper>
@@ -60,9 +60,9 @@ import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 
 export default {
+  name: 'IzpostavljenaZakonodaja',
   components: { PTab, PTabs },
   mixins: [common],
-  name: 'IzpostavljenaZakonodaja',
   data() {
     return {
       data: this.$options.cardData.data,
@@ -76,17 +76,17 @@ export default {
       },
     };
   },
-  created() {
-    if (this.state.selectedTab) {
-      this.selectedTab = this.state.selectedTab;
-    }
-  },
   computed: {
     generatedCardUrl() {
       const customUrl = encodeURIComponent(`${this.slugs.urls.analize}/s/getExposedLegislation/`);
       const state = encodeURIComponent(JSON.stringify({ selectedTab: this.selectedTab }));
       return `${this.url}?customUrl=${customUrl}&state=${state}`;
     },
+  },
+  created() {
+    if (this.state.selectedTab) {
+      this.selectedTab = this.state.selectedTab;
+    }
   },
 };
 </script>

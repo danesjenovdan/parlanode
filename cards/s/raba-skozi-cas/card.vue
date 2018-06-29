@@ -5,9 +5,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <p-tabs>
@@ -30,6 +30,7 @@ import TimeLineChart from 'components/TimeLineChart.vue';
 import TimeBarChart from 'components/TimeBarChart.vue';
 
 export default {
+  name: 'RabaSkoziCas',
   components: {
     PTabs,
     PTab,
@@ -40,7 +41,6 @@ export default {
     common,
     searchTitle,
   ],
-  name: 'RabaSkoziCas',
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
     return {

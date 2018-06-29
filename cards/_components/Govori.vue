@@ -2,25 +2,25 @@
   <card-wrapper
     :id="cardData.cardData._id"
     :data-id="`${cardGroup}/${cardMethod}`"
-    content-class="full"
     :header-config="headerConfig"
     :card-url="shareUrl"
+    content-class="full"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'contents-search'"></div>
+        <div v-t="'contents-search'" class="filter-label"></div>
         <search-field v-model="textFilter" @input="searchSpeakings()" />
       </div>
 
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
-      <div class="filter month-dropdown" v-if="type === 'party'">
-        <div class="filter-label" v-t="'mps'"></div>
+      <div v-if="type === 'party'" class="filter month-dropdown">
+        <div v-t="'mps'" class="filter-label"></div>
         <search-dropdown
           :items="allPeople"
           :placeholder="peoplePlaceholder"
@@ -32,7 +32,7 @@
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
 
       <div class="filter month-dropdown">
-        <div class="filter-label" v-t="'time-period'"></div>
+        <div v-t="'time-period'" class="filter-label"></div>
         <search-dropdown
           :items="dropdownMonths"
           :placeholder="monthPlaceholder"
@@ -43,7 +43,7 @@
       </div>
 
       <div class="filter month-dropdown">
-        <div class="filter-label" v-t="'session-type'"></div>
+        <div v-t="'session-type'" class="filter-label"></div>
         <search-dropdown
           :items="dropdownSessions"
           :placeholder="sessionPlaceholder"
@@ -56,14 +56,14 @@
 
     <div class="speaks">
       <scroll-shadow ref="shadow">
-        <div id="speaks" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" @scroll="$refs.shadow.check($event.currentTarget)">
+        <div v-infinite-scroll="loadMore" id="speaks" infinite-scroll-disabled="busy" infinite-scroll-distance="10" @scroll="$refs.shadow.check($event.currentTarget)">
           <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.date">
             <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs" :key="indexOrg">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
             <ul class="speaks__list">
               <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
             </ul>
           </div>
-          <div v-if="speakingDays.length===0" class="empty-dataset" v-t="'no-results'"></div>
+          <div v-t="'no-results'" v-if="speakingDays.length===0" class="empty-dataset"></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -100,6 +100,19 @@ export default {
   mixins: [
     common,
   ],
+  props: {
+    cardData: {
+      type: Object,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
+    },
+    person: Object,
+    party: Object,
+  },
   data() {
     // console.log(this.party);
     const textFilter = '';
@@ -143,28 +156,6 @@ export default {
       allSessions,
       allPeople,
     };
-  },
-  created() {
-    if (this.type === 'party') {
-      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
-        this.allPeople = response.data.results.map((person) => {
-          const newPerson = {
-            id: person.id,
-            name: person.name,
-            label: person.name,
-            selected: false,
-          };
-
-          return newPerson;
-        });
-
-        // console.log(allPeople);
-        // console.log(allMonths);
-      });
-    }
-  },
-  mounted() {
-    // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
   },
   computed: {
     shareUrl() {
@@ -284,6 +275,28 @@ export default {
       return partyHeader.computed.headerConfig.call(this);
     },
   },
+  created() {
+    if (this.type === 'party') {
+      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
+        this.allPeople = response.data.results.map((person) => {
+          const newPerson = {
+            id: person.id,
+            name: person.name,
+            label: person.name,
+            selected: false,
+          };
+
+          return newPerson;
+        });
+
+        // console.log(allPeople);
+        // console.log(allMonths);
+      });
+    }
+  },
+  mounted() {
+    // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
+  },
   methods: {
     searchSpeakings(waitTime = 750) {
       if (!Number.isInteger(waitTime)) {
@@ -332,19 +345,6 @@ export default {
         }, 200);
       }
     },
-  },
-  props: {
-    cardData: {
-      type: Object,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
-    },
-    person: Object,
-    party: Object,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-content" v-show="show">
+  <div v-show="show" class="tab-content">
     <slot></slot>
   </div>
 </template>
@@ -17,17 +17,17 @@ export default {
       default: 'dark',
     },
   },
+  computed: {
+    show() {
+      return this.$parent.show === this;
+    },
+  },
   created() {
     this.$parent.tabs.push(this);
     this.$parent.headers.push({
       label: this.label,
       variant: this.variant,
     });
-  },
-  computed: {
-    show() {
-      return this.$parent.show === this;
-    },
   },
 };
 </script>

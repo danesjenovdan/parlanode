@@ -1,28 +1,28 @@
 <template>
   <div
-    :class="['search-dropdown', { small: small }]"
-    v-click-outside="function() { toggleDropdown(false) }">
+    v-click-outside="function() { toggleDropdown(false) }"
+    :class="['search-dropdown', { small: small }]">
     <div
       v-if="selectedIds.length > 0"
       class="search-dropdown-clear"
       @click="clearSelection">×</div>
     <input
+      v-model="filter"
+      :placeholder="adjustedPlaceholder"
       class="search-dropdown-input"
       type="text"
-      v-model="filter"
       @focus="toggleDropdown(true)"
       @keydown.enter.prevent="selectItem(filteredItems[focused].id)"
       @keydown.up.prevent="focus(focused - 1, true)"
-      @keydown.down.prevent="focus(focused + 1, true)"
-      :placeholder="adjustedPlaceholder">
+      @keydown.down.prevent="focus(focused + 1, true)">
     <ul
       :class="['search-dropdown-options', { visible: active, up: up }]"
       :style="{'margin-top': upMargin}"
       @mouseleave="focus(-1)">
       <template v-for="(item, index) in filteredItems">
         <li
-          :key="`${item.id}1`"
           v-if="item.groupLabel"
+          :key="`${item.id}1`"
           class="search-dropdown-group-label">
           {{ item.groupLabel }}
         </li>
@@ -47,24 +47,60 @@ const ITEM_COUNT = 10;
 
 export default {
   name: 'SearchDropdown',
+  directives: {
+    clickOutside: {
+      bind(el, binding) {
+        const handler = (e) => {
+          if (!el.contains(e.target) && el !== e.target) {
+            binding.value(e);
+          }
+        };
+        // eslint-disable-next-line no-param-reassign
+        el.vueClickOutside = handler;
+        document.addEventListener('click', handler);
+      },
+      unbind(el) {
+        document.removeEventListener('click', el.vueClickOutside);
+        // eslint-disable-next-line no-param-reassign
+        el.vueClickOutside = null;
+      },
+    },
+  },
+  props: {
+    alphabetise: {
+      type: Boolean,
+      default: true,
+    },
+    groups: Array,
+    items: {
+      type: Array,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      required: true,
+    },
+    selectCallback: Function,
+    clearCallback: Function,
+    single: {
+      type: Boolean,
+      default: false,
+    },
+    small: {
+      type: Boolean,
+      default: false,
+    },
+    up: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data: () => ({
     filter: '',
     active: false,
     focused: -1,
     upMargin: 0,
   }),
-  watch: {
-    filter() {
-      this.focus(this.focused);
-    },
-    active() {
-      this.$nextTick(() => {
-        if (this.up) {
-          this.upMargin = `-${this.$el.querySelector('.search-dropdown-options').getBoundingClientRect().height + 39}px`;
-        }
-      });
-    },
-  },
   computed: {
     filteredItems() {
       const filterAndSort = items => items
@@ -137,52 +173,16 @@ export default {
       return selectedItem ? selectedItem.label : this.placeholder;
     },
   },
-  directives: {
-    clickOutside: {
-      bind(el, binding) {
-        const handler = (e) => {
-          if (!el.contains(e.target) && el !== e.target) {
-            binding.value(e);
-          }
-        };
-        // eslint-disable-next-line no-param-reassign
-        el.vueClickOutside = handler;
-        document.addEventListener('click', handler);
-      },
-      unbind(el) {
-        document.removeEventListener('click', el.vueClickOutside);
-        // eslint-disable-next-line no-param-reassign
-        el.vueClickOutside = null;
-      },
+  watch: {
+    filter() {
+      this.focus(this.focused);
     },
-  },
-  props: {
-    alphabetise: {
-      type: Boolean,
-      default: true,
-    },
-    groups: Array,
-    items: {
-      type: Array,
-      required: true,
-    },
-    placeholder: {
-      type: String,
-      required: true,
-    },
-    selectCallback: Function,
-    clearCallback: Function,
-    single: {
-      type: Boolean,
-      default: false,
-    },
-    small: {
-      type: Boolean,
-      default: false,
-    },
-    up: {
-      type: Boolean,
-      default: false,
+    active() {
+      this.$nextTick(() => {
+        if (this.up) {
+          this.upMargin = `-${this.$el.querySelector('.search-dropdown-options').getBoundingClientRect().height + 39}px`;
+        }
+      });
     },
   },
   methods: {

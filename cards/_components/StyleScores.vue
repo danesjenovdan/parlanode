@@ -1,30 +1,30 @@
 <template>
   <card-wrapper
     :id="cardData.cardData._id"
-    class="card-halfling"
     :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    class="card-halfling"
   >
-    <slot name="info" slot="info"></slot>
+    <slot slot="info" name="info"></slot>
 
-    <div class="card-content-front" v-cloak>
+    <div v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
           <div class="me_poslanec">
-            <div class="poslanec_title" v-t="'style-scores.elevated-vocabulary'"></div>
+            <div v-t="'style-scores.elevated-vocabulary'" class="poslanec_title"></div>
           </div>
           <div class="me_poslanec">
-            <div class="poslanec_title" v-t="'style-scores.simple-vocabulary'"></div>
+            <div v-t="'style-scores.simple-vocabulary'" class="poslanec_title"></div>
           </div>
           <div class="me_poslanec">
-            <div class="poslanec_title" v-t="'style-scores.excessive-vocabulary'"></div>
+            <div v-t="'style-scores.excessive-vocabulary'" class="poslanec_title"></div>
           </div>
         </div>
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.privzdignjeno" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('privzdignjeno')">
+              <div :aria-valuenow="results.privzdignjeno" :style="getBarStyle('privzdignjeno')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">{{ results.privzdignjeno.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.privzdignjeno.toFixed(2).replace('.', ',') }}
@@ -34,7 +34,7 @@
           </div>
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.preprosto" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('preprosto')">
+              <div :aria-valuenow="results.preprosto" :style="getBarStyle('preprosto')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">{{ results.preprosto.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.preprosto.toFixed(2).replace('.', ',') }}
@@ -44,7 +44,7 @@
           </div>
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.problematicno" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('problematicno')">
+              <div :aria-valuenow="results.problematicno" :style="getBarStyle('problematicno')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">{{ results.problematicno.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.problematicno.toFixed(2).replace('.', ',') }}
@@ -66,11 +66,11 @@ import PartyPin from 'components/PartyPin.vue';
 
 export default {
   name: 'ScoreAvgMax',
-  mixins: [common],
   components: {
     PersonPin,
     PartyPin,
   },
+  mixins: [common],
   props: {
     cardData: {
       type: Object,
@@ -87,11 +87,6 @@ export default {
     },
     person: Object,
     party: Object,
-  },
-  methods: {
-    getBarStyle(key) {
-      return { width: `${(this.results[key] / this.maxValue) * 70}%` };
-    },
   },
   computed: {
     headerConfig() {
@@ -114,6 +109,11 @@ export default {
         this.results.preprosto,
         this.results.problematicno,
       );
+    },
+  },
+  methods: {
+    getBarStyle(key) {
+      return { width: `${(this.results[key] / this.maxValue) * 70}%` };
     },
   },
 };

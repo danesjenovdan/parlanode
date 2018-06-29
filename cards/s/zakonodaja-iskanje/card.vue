@@ -102,7 +102,8 @@ export default {
       });
     },
     processedData() {
-      const sortedLegislation = this.data.sort((A, B) => {
+      const dataCopy = this.data.slice();
+      const sortedLegislation = dataCopy.sort((A, B) => {
         let a;
         let b;
 
@@ -110,7 +111,7 @@ export default {
           case 'name':
             a = A.text_t[0];
             b = B.text_t[0];
-            return a.toLowerCase().localeCompare(b.toLowerCase());
+            return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           case 'epa':
             a = typeof A.id !== 'undefined' ? A.id : '';
             b = typeof B.id !== 'undefined' ? B.id : '';
@@ -120,13 +121,15 @@ export default {
             b = 'v obravnavi';
             if (typeof A.result !== 'undefined') a = A.result[0];
             if (typeof B.result !== 'undefined') b = B.result[0];
-            return a.toLowerCase().localeCompare(b.toLowerCase());
+            return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           default:
             return 0;
         }
       });
 
-      if (this.currentSortOrder === 'desc') sortedLegislation.reverse();
+      if (this.currentSortOrder === 'desc') {
+        sortedLegislation.reverse();
+      }
 
       return sortedLegislation;
     },

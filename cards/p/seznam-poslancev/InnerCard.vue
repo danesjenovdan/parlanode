@@ -4,15 +4,15 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
   >
-    <slot name="info" slot="info"></slot>
+    <slot slot="info" name="info"></slot>
 
     <sortable-table
-      class="person-list"
       :columns="columns"
       :items="mappedMembers"
       :sort="currentSort"
       :sort-order="currentSortOrder"
       :sort-callback="selectSort"
+      class="person-list"
     />
   </card-wrapper>
 </template>
@@ -35,9 +35,18 @@ const arabicToRoman = arabic => ({
 }[arabic]);
 
 export default {
+  name: 'SeznamPoslancevInnerCard',
   components: { SortableTable },
   mixins: [common],
-  name: 'SeznamPoslancevInnerCard',
+  props: {
+    demographics: Boolean,
+    headerConfig: Object,
+    generatedCardUrl: String,
+    currentSort: String,
+    currentSortOrder: String,
+    processedMembers: Array,
+    currentAnalysisData: Object,
+  },
   computed: {
     mappedMembers() {
       if (this.demographics) {
@@ -78,22 +87,13 @@ export default {
       ];
     },
   },
-  props: {
-    demographics: Boolean,
-    headerConfig: Object,
-    generatedCardUrl: String,
-    currentSort: String,
-    currentSortOrder: String,
-    processedMembers: Array,
-    currentAnalysisData: Object,
+  created() {
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanci`;
   },
   methods: {
     selectSort(sort) {
       this.$emit('sort', sort);
     },
-  },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanci`;
   },
 };
 </script>

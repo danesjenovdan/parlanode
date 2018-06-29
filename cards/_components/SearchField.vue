@@ -1,10 +1,10 @@
 <template>
   <input
-    class="search-field"
-    @input="$emit('input', $event.target.value)"
     :placeholder="placeholder"
-    type="text"
     :value="value"
+    class="search-field"
+    type="text"
+    @input="$emit('input', $event.target.value)"
     @keyup.enter="$emit('enter', $event.target.value)"
   />
 </template>

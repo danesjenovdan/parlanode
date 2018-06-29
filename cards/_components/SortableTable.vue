@@ -5,7 +5,9 @@
         <div
           v-if="column.label"
           :class="['column', column.additionalClass, { sort: sort === column.id }, { reverse: sortOrder === 'desc' }]"
-          @click="sortCallback(column.id)">
+          :key="column.id"
+          @click="sortCallback(column.id)"
+        >
           {{ column.label }}
         </div>
       </template>
@@ -13,21 +15,21 @@
     <div v-if="items.length === 0" class="empty-dataset">Brez rezultatov.</div>
     <li v-for="item in items" class="item">
       <div
-        v-for="cell, cellIndex in item"
-        :class="['column', ...columns[cellIndex].additionalClass, cell && cell.value <= 0 ? 'red' : '']"
+        v-for="(cell, cellIndex) in item"
+        :class="['column', ...columns[cellIndex].additionalClass, (cell && cell.value <= 0) ? 'red' : '']"
       >
         <template v-if="typeof cell === 'object' && cell.contents">
-          <template v-for="content, contentIndex in cell.contents">
+          <template v-for="(content, contentIndex) in cell.contents">
             <template v-if="content.link">
               <a :href="content.link">{{ content.text }}</a>
             </template>
-            <template v-else>{{ content.text }}</template>{{ contentIndex < cell.contents.length - 1 ? ', ' : '' }}
+            <template v-else>{{ content.text }}</template>{{ (cell.contents.length - contentIndex) > 1 ? ', ' : '' }}
           </template>
         </template>
         <template v-else-if="cell && cell.barchart">
           <div class="value">{{ cell.value }}</div>
           <div class="barcontainer">
-            <div class="bar" :style="{width: cell.width + '%'}"></div>
+            <div :style="{width: cell.width + '%'}" class="bar"></div>
           </div>
         </template>
         <template v-else-if="cell && cell.ticker">

@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 2 2`">
+  <svg :viewBox="`0 0 2 2`" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <mask :id="`donut-hole${_uid}`">
         <circle cx="1" cy="1" r="1" fill="white" />
@@ -12,6 +12,7 @@
       :d="`M${sector.L},${sector.L} L${sector.L},0 A${sector.L},${sector.L} 0 ${sector.arcSweep},1 ${sector.X}, ${sector.Y} z`"
       :transform="`rotate(${sector.R}, ${sector.L}, ${sector.L})`"
       :mask="`url(#donut-hole${_uid})`"
+      :key="sector.color"
     />
   </svg>
 </template>
@@ -19,12 +20,12 @@
 <script>
 export default {
   name: 'DonutChart',
-  data: () => ({
-    size: 100,
-  }),
   props: {
     sectionData: Array,
   },
+  data: () => ({
+    size: 100,
+  }),
   computed: {
     sectors() {
       let a = 0; // Angle

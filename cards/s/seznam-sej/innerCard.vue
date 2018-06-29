@@ -11,12 +11,12 @@
     </div>
 
     <sortable-table
-      class="session-list"
       :columns="columns"
       :items="mappedSessions"
       :sort="currentSort"
       :sort-order="currentSortOrder"
       :sort-callback="selectSort"
+      class="session-list"
     />
   </card-wrapper>
 </template>
@@ -28,9 +28,9 @@ import formatDate from 'helpers/dateFormatter';
 import { ICONS_ROOT_URL } from 'components/constants';
 
 export default {
+  name: 'SeznamSejKartica',
   components: { SortableTable },
   mixins: [common],
-  name: 'SeznamSejKartica',
   props: {
     headerConfig: Object,
     columns: Array,
@@ -53,14 +53,14 @@ export default {
       ]);
     },
   },
+  created() {
+    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seje`;
+  },
   methods: {
     getSessionUrl(session) {
       if (!this.slugs || session.link_to === 'nothing') return '';
       return `${this.slugs.urls.base}/seja/zakonodaja/${session.id}`;
     },
-  },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seje`;
   },
 };
 </script>

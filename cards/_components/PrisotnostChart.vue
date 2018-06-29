@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     @backChange="handleBackChange"
   >
-    <slot name="info" slot="info"></slot>
+    <slot slot="info" name="info"></slot>
     <div class="prisotnost-chart"></div>
   </card-wrapper>
 </template>
@@ -48,6 +48,9 @@ export default {
     },
     cardGroup: () => this.cardData.cardData.group,
     cardMethod: () => this.cardData.cardData.method,
+  },
+  mounted() {
+    this.renderChart();
   },
   methods: {
     handleBackChange(newBack) {
@@ -262,9 +265,6 @@ export default {
         .attr('x', -70)
         .style('fill', '#ffffff');
     },
-  },
-  mounted() {
-    this.renderChart();
   },
 };
 </script>

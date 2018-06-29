@@ -5,41 +5,41 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
       <i18n path="info.text[1]" tag="p" class="info-text">
         <a
+          v-t="'info.links[0].text'"
+          :href="$t('info.links[0].link')"
           place="link1"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[0].link')"
-          v-t="'info.links[0].text'"
         />
       </i18n>
       <i18n path="info.text[2]" tag="p" class="info-text">
         <a
+          v-t="'info.links[1].text'"
+          :href="$t('info.links[1].link')"
           place="link2"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[1].link')"
-          v-t="'info.links[1].text'"
         />
         <a
+          v-t="'info.links[2].text'"
+          :href="$t('info.links[2].link')"
           place="link3"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[2].link')"
-          v-t="'info.links[2].text'"
         />
       </i18n>
       <i18n path="info.text[3]" tag="p" class="info-text">
         <a
+          v-t="'info.links[3].text'"
+          :href="$t('info.links[3].link')"
           place="link4"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.links[3].link')"
-          v-t="'info.links[3].text'"
         />
       </i18n>
     </div>
@@ -53,17 +53,13 @@ import common from 'mixins/common';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 
 export default {
-  mixins: [
-    common,
-  ],
+  name: 'GlasovanjaSeja',
   components: {
     SeznamGlasovanj,
   },
-  name: 'GlasovanjaSeja',
-  created() {
-    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanja/${this.data.session.id}`;
-    this.$options.cardData.template.pageTitle = `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
-  },
+  mixins: [
+    common,
+  ],
   data() {
     const state = this.$options.cardData.parlaState;
     const text = state && state.text ? state.text : '';
@@ -123,6 +119,10 @@ export default {
         tags: this.data.tags,
       };
     },
+  },
+  created() {
+    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanja/${this.data.session.id}`;
+    this.$options.cardData.template.pageTitle = `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
   },
   methods: {
     onFiltersChanged(newFilters) {

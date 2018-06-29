@@ -1,27 +1,30 @@
 <template>
-    <div class="session_voting">
-      <div class="row" v-for="row in rows">
-        <div class="col-xs-12" style="background-color: #f0f0f0; margin-bottom: 10px; padding: 10px;">
-          {{ row.name }}
-          <span
+  <div class="session_voting">
+    <div v-for="row in rows" :key="row.name" class="row">
+      <div class="col-xs-12" style="background-color: #f0f0f0; margin-bottom: 10px; padding: 10px;">
+        {{ row.name }}
+        <span
+          v-for="(chunk, k) in row.reverseStack"
           :class="['pull-right', 'legenda', reverseColorClasses[k + reverseColorClasses.length - row.stack.length]]"
-          v-for="chunk, k in row.reverseStack">
-            <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label}}:</span> {{ chunk.value}}
-          </span>
-          <div class="session_votes">
-            <div class="progress smallbar" :style="{width: String(row.percentage) + '%'}">
-              <div
-              v-for="chunk, i in row.stack"
+          :key="chunk.label"
+        >
+          <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label }}:</span> {{ chunk.value }}
+        </span>
+        <div class="session_votes">
+          <div :style="{width: String(row.percentage) + '%'}" class="progress smallbar">
+            <div
+              v-for="(chunk, i) in row.stack"
               :class="['progress-bar', colorClasses[i]]"
-              :style="{ width: String(chunk.percentage) + '%'}">
-                <span class="sr-only">{{ chunk.percentage }}%</span>
-              </div>
+              :style="{ width: String(chunk.percentage) + '%'}"
+              :key="chunk.label"
+            >
+              <span class="sr-only">{{ chunk.percentage }}%</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--</ul>-->
+  </div>
 </template>
 
 <script>

@@ -5,15 +5,15 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n path="info.text" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
     </div>
@@ -58,7 +58,7 @@
         >
         </seznam-glasovanj>
       </p-tab>
-      <p-tab label="Drugi postopki" variant="dark" v-if="data.extra_abstract">
+      <p-tab v-if="data.extra_abstract" label="Drugi postopki" variant="dark">
         <excerpt
           :content="data.extra_abstract || ''"
           :main-law="{}"
@@ -81,9 +81,9 @@ import Result from 'components/Result.vue';
 import mapVotes from 'helpers/mapVotes';
 
 export default {
+  name: 'Zakon',
   components: { PTab, PTabs, Excerpt, SeznamGlasovanj, Result },
   mixins: [common],
-  name: 'Zakon',
   data() {
     const documents = this.$options.cardData.data.votes.reduce((prev, cur) => {
       cur.documents.forEach((document) => { // TODO fix after data is fixed

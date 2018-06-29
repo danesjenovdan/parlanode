@@ -8,8 +8,8 @@
     </div>
     <a
       :href="personLink"
-      class="avgminimg img-circle"
       :style="{ 'background-image': `url('${personPortraitUrl}')` }"
+      class="avgminimg img-circle"
       @mouseover="tooltipVisible = true"
       @mouseout="tooltipVisible = false"
     />

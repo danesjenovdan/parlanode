@@ -1,21 +1,21 @@
 <template>
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
-    content-class="full"
     :card-url="cardUrl"
     :header-config="headerConfig"
+    content-class="full"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
       <i18n path="info.text[1]" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
     </div>
@@ -28,15 +28,15 @@
     </div>
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'title-search'"></div>
+        <div v-t="'title-search'" class="filter-label"></div>
         <p-search-field v-model="textFilter" />
       </div>
       <div class="filter type-dropdown">
-        <div class="filter-label" v-t="'vote-types'"></div>
+        <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'working-body'"></div>
+        <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
       <div v-if="type === 'person'" class="filter option-party-buttons">
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div v-if="type === 'party'" class="filter text-filter">
-        <div class="filter-label" v-t="'sort-by'"></div>
+        <div v-t="'sort-by'" class="filter-label"></div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
@@ -58,7 +58,7 @@
     <scroll-shadow ref="shadow">
       <div id="card-votes" class="votes stickinme date-list" @scroll="$refs.shadow.check($event.currentTarget)">
         <template v-for="votingDay in filteredVotingDays">
-          <div v-if="type === 'person' || selectedSort === 'date'" class="date" :key="`${votingDay.date}-1`">
+          <div v-if="type === 'person' || selectedSort === 'date'" :key="`${votingDay.date}-1`" class="date">
             {{ votingDay.date }}
           </div>
           <div :key="`${votingDay.date}-2`">
@@ -93,75 +93,24 @@ export default {
     Ballot,
     ScrollShadow,
   },
+  filters: {
+    toPercent(val) {
+      return `${parseInt(val, 10)} %`;
+    },
+  },
   mixins: [common],
-  computed: {
-    tagPlaceholder() {
-      return this.selectedTags.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('select-placeholder');
+  props: {
+    cardData: {
+      type: Object,
+      required: true,
     },
-    classificationPlaceholder() {
-      return this.selectedClassifications.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
-        : this.$t('select-placeholder');
+    type: {
+      type: String,
+      required: true,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
     },
-    dropdownItems() {
-      const validTags = [];
-
-      this.getFilteredVotingDays(true).forEach((votingDay) => {
-        votingDay.ballots
-          .forEach((ballot) => {
-            ballot.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) validTags.push(tag);
-            });
-          });
-      });
-
-      return {
-        tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        classifications: this.allClassifications,
-      };
-    },
-    selectedTags() {
-      return this.allTags
-        .filter(tag => tag.selected)
-        .map(tag => tag.id);
-    },
-    selectedClassifications() {
-      return this.allClassifications
-        .filter(classification => classification.selected)
-        .map(classification => classification.id);
-    },
-    selectedOptions() {
-      return this.allOptions.filter(option => option.selected).map(option => option.id);
-    },
-    filteredVotingDays() {
-      return this.getFilteredVotingDays();
-    },
-    cardUrl() {
-      const state = {};
-
-      if (this.selectedTags.length > 0) {
-        state.tags = this.selectedTags;
-      }
-      if (this.selectedClassifications.length > 0) {
-        state.classifications = this.selectedClassifications;
-      }
-      if (this.textFilter.length > 0) {
-        state.text = this.textFilter;
-      }
-      if (this.selectedOptions.length > 0) {
-        state.options = this.selectedOptions;
-      }
-
-      return `${this.url}${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
-    },
-    headerConfig() {
-      if (this.type === 'person') {
-        return memberHeader.computed.headerConfig.call(this);
-      }
-      return partyHeader.computed.headerConfig.call(this);
-    },
+    person: Object,
+    party: Object,
   },
   data() {
     const selectFromState = (items, stateItemIds) => (
@@ -231,6 +180,79 @@ export default {
       textFilter,
     };
   },
+  computed: {
+    tagPlaceholder() {
+      return this.selectedTags.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
+    },
+    classificationPlaceholder() {
+      return this.selectedClassifications.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
+        : this.$t('select-placeholder');
+    },
+    dropdownItems() {
+      const validTags = [];
+
+      this.getFilteredVotingDays(true).forEach((votingDay) => {
+        votingDay.ballots
+          .forEach((ballot) => {
+            ballot.tags.forEach((tag) => {
+              if (validTags.indexOf(tag) === -1) validTags.push(tag);
+            });
+          });
+      });
+
+      return {
+        tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
+        classifications: this.allClassifications,
+      };
+    },
+    selectedTags() {
+      return this.allTags
+        .filter(tag => tag.selected)
+        .map(tag => tag.id);
+    },
+    selectedClassifications() {
+      return this.allClassifications
+        .filter(classification => classification.selected)
+        .map(classification => classification.id);
+    },
+    selectedOptions() {
+      return this.allOptions.filter(option => option.selected).map(option => option.id);
+    },
+    filteredVotingDays() {
+      return this.getFilteredVotingDays();
+    },
+    cardUrl() {
+      const state = {};
+
+      if (this.selectedTags.length > 0) {
+        state.tags = this.selectedTags;
+      }
+      if (this.selectedClassifications.length > 0) {
+        state.classifications = this.selectedClassifications;
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
+      if (this.selectedOptions.length > 0) {
+        state.options = this.selectedOptions;
+      }
+
+      return `${this.url}${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+    },
+    headerConfig() {
+      if (this.type === 'person') {
+        return memberHeader.computed.headerConfig.call(this);
+      }
+      return partyHeader.computed.headerConfig.call(this);
+    },
+  },
+  created() {
+    (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
+    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+  },
   methods: {
     toggleOption(optionId) {
       const clickedOption = this.allOptions.filter(option => option.id === optionId)[0];
@@ -297,28 +319,6 @@ export default {
 
       return votingDays;
     },
-  },
-  filters: {
-    toPercent(val) {
-      return `${parseInt(val, 10)} %`;
-    },
-  },
-  props: {
-    cardData: {
-      type: Object,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
-    },
-    person: Object,
-    party: Object,
-  },
-  created() {
-    (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
-    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
   },
 };
 </script>

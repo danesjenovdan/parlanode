@@ -1,30 +1,30 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    contentHeight="518px"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div v-if="rawSpeeches.length === 0" class="no-results" v-t="'no-results'"></div>
+    <div v-t="'no-results'" v-if="rawSpeeches.length === 0" class="no-results"></div>
     <scroll-shadow v-else ref="shadow">
-      <ul class="person-list thing-list" @scroll="$refs.shadow.check($event.currentTarget)" ref="scrollElement">
+      <ul ref="scrollElement" class="person-list thing-list" @scroll="$refs.shadow.check($event.currentTarget)">
         <li v-for="speech in speeches" :key="speech.speech_id" class="person">
           <template v-if="speech.person.type === 'mp'">
-            <a class="column portrait" :href="speech.memberUrl">
+            <a :href="speech.memberUrl" class="column portrait">
               <img :src="speech.memberImageUrl" />
             </a>
             <div class="column name">
-              <a class="funblue-light-hover" :href="speech.memberUrl">{{ speech.person.name }}</a><br/>
+              <a :href="speech.memberUrl" class="funblue-light-hover">{{ speech.person.name }}</a><br/>
               <template v-if="speech.partyUrl">
-                <a class="funblue-light-hover" :href="speech.partyUrl">{{ speech.person.party.acronym }}</a>
+                <a :href="speech.partyUrl" class="funblue-light-hover">{{ speech.person.party.acronym }}</a>
               </template>
-              <template v-else>{{ speech.person.party.acronym}}</template>
+              <template v-else>{{ speech.person.party.acronym }}</template>
             </div>
           </template>
           <template v-else>
@@ -38,7 +38,7 @@
 
           <div class="column date">{{ speech.formattedDate }}</div>
           <div class="column quote">
-            <a class="funblue-light-hover" :href="speech.speechUrl" v-html="speech.content_t"></a>
+            <a :href="speech.speechUrl" class="funblue-light-hover" v-html="speech.content_t"></a>
           </div>
         </li>
       </ul>
@@ -64,14 +64,14 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 const PAGE_SIZE = 50;
 
 export default {
+  name: 'NastopiVKaterihJeBilIskalniNizIzrecen',
+  components: {
+    ScrollShadow,
+  },
   mixins: [
     common,
     searchTitle,
   ],
-  components: {
-    ScrollShadow,
-  },
-  name: 'NastopiVKaterihJeBilIskalniNizIzrecen',
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q
       .split('content_t:')[1].split(')')[0];
@@ -110,6 +110,11 @@ export default {
       });
     },
   },
+  mounted() {
+    if (this.allResults > PAGE_SIZE) {
+      this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
+    }
+  },
   methods: {
     checkIfBottom() {
       const el = this.$refs.scrollElement;
@@ -131,11 +136,6 @@ export default {
         this.fetching = false;
       });
     },
-  },
-  mounted() {
-    if (this.allResults > PAGE_SIZE) {
-      this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
-    }
   },
 };
 </script>

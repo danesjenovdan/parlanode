@@ -24,9 +24,9 @@ import adjacencyMatrix from 'helpers/adjacencyMatrix';
 // import 'helpers/adjacencyMatrix';
 
 export default {
+  name: 'ObcasnikClanstva',
   components: {},
   mixins: [common],
-  name: 'ObcasnikClanstva',
   data() {
     return {
       data: this.$options.cardData.data,
@@ -38,6 +38,19 @@ export default {
         title: this.$options.cardData.cardData.name,
       },
     };
+  },
+  mounted() {
+    d3.layout.adjacencyMatrix = adjacencyMatrix;
+
+    const adjacencyData = this.data;
+    // adjacencyData.nodes = this.data.nodes.sort((a, b) => {
+    //   return a.group - b.group;
+    // });
+    // adjacencyData.links = this.data.links.sort((a, b) => {
+    //   return a.source - b.source;
+    // });
+
+    this.createAdjacencyMatrix(adjacencyData);
   },
   methods: {
     createAdjacencyMatrix(data) {
@@ -92,19 +105,6 @@ export default {
       d3.select('#adjacencyG')
         .call(adjacencyMatrixInst.yAxis);
     },
-  },
-  mounted() {
-    d3.layout.adjacencyMatrix = adjacencyMatrix;
-
-    const adjacencyData = this.data;
-    // adjacencyData.nodes = this.data.nodes.sort((a, b) => {
-    //   return a.group - b.group;
-    // });
-    // adjacencyData.links = this.data.links.sort((a, b) => {
-    //   return a.source - b.source;
-    // });
-
-    this.createAdjacencyMatrix(adjacencyData);
   },
 };
 </script>

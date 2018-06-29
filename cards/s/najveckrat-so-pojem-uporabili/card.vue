@@ -5,9 +5,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <person-list :people="people" :show-party-link="true" />
@@ -20,6 +20,7 @@ import { searchTitle } from 'mixins/titles';
 import PersonList from 'components/PersonList.vue';
 
 export default {
+  name: 'NajveckratSoPojemUporabili',
   components: {
     PersonList,
   },
@@ -27,7 +28,6 @@ export default {
     common,
     searchTitle,
   ],
-  name: 'NajvečkratSoPojemUporabili',
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
     const { data } = this.$options.cardData;

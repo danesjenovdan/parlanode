@@ -135,17 +135,17 @@ export default {
   props: {
     data: Object,
   },
+  watch: {
+    data() {
+      this.renderChart();
+    },
+  },
   mounted() {
     this.renderChart();
   },
   methods: {
     renderChart() {
       chart(this.data);
-    },
-  },
-  watch: {
-    data() {
-      this.renderChart();
     },
   },
 };

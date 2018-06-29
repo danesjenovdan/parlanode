@@ -1,45 +1,45 @@
 <template>
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
-    content-class="full"
     :card-url="cardUrl"
     :header-config="headerConfig"
+    content-class="full"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text[0]'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
       <i18n path="info.text[1]" tag="p" class="info-text">
         <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          :href="$t('info.link.link')"
-          v-t="'info.link.text'"
         />
       </i18n>
     </div>
 
     <div class="filters">
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'mp'"></div>
+        <div v-t="'mp'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
       </div>
       <div class="filter tag-dropdown naslovljenec">
-        <div class="filter-label" v-t="'addressee'"></div>
+        <div v-t="'addressee'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
       </div>
       <div class="filter month-dropdown">
-        <div class="filter-label" v-t="'time-period'"></div>
+        <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'title-search'"></div>
-        <input class="text-filter-input" type="text" v-model="textFilter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
     </div>
     <div id="vprasanja">
-      <question-list :questionDays="filteredQuestionDays" showAuthor />
+      <question-list :question-days="filteredQuestionDays" show-author />
     </div>
   </card-wrapper>
 </template>
@@ -58,6 +58,56 @@ import QuestionList from 'components/QuestionList.vue';
 export default {
   components: { CardWrapper, PSearchDropdown, QuestionList },
   mixins: [common, partyOverview, partyTitle],
+  props: {
+    cardData: {
+      type: Object,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
+    },
+    person: Object,
+    party: Object,
+  },
+  data() {
+    const selectFromState = (items, stateItemIds) => (
+      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
+    );
+
+    let allMonths = generateMonths();
+    let allMPs = this.cardData.data.all_authors
+      .map(author => ({ id: author.id, label: author.name, selected: false }));
+    let allRecipients = this.cardData.data.all_recipients
+      .map(recipient => ({ id: recipient, label: recipient, selected: false }));
+    let textFilter = '';
+
+    if (this.cardData.parlaState) {
+      if (this.cardData.parlaState.text) {
+        textFilter = this.cardData.parlaState.text;
+      }
+      if (this.cardData.parlaState.months) {
+        allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
+      }
+      if (this.cardData.parlaState.recipients) {
+        allRecipients = selectFromState(allRecipients, this.cardData.parlaState.recipients);
+      }
+      if (this.cardData.parlaState.mps) {
+        allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
+      }
+    }
+
+    return {
+      cardMethod: this.cardData.cardData.method,
+      cardGroup: this.cardData.cardData.group,
+      questionDays: this.cardData.data.results,
+      allMonths,
+      allMPs,
+      allRecipients,
+      textFilter,
+    };
+  },
   computed: {
     MPsPlaceholder() {
       return this.selectedMPs.length > 0
@@ -135,43 +185,6 @@ export default {
       return partyHeader.computed.headerConfig.call(this);
     },
   },
-  data() {
-    const selectFromState = (items, stateItemIds) => (
-      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
-    );
-
-    let allMonths = generateMonths();
-    let allMPs = this.cardData.data.all_authors
-      .map(author => ({ id: author.id, label: author.name, selected: false }));
-    let allRecipients = this.cardData.data.all_recipients
-      .map(recipient => ({ id: recipient, label: recipient, selected: false }));
-    let textFilter = '';
-
-    if (this.cardData.parlaState) {
-      if (this.cardData.parlaState.text) {
-        textFilter = this.cardData.parlaState.text;
-      }
-      if (this.cardData.parlaState.months) {
-        allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
-      }
-      if (this.cardData.parlaState.recipients) {
-        allRecipients = selectFromState(allRecipients, this.cardData.parlaState.recipients);
-      }
-      if (this.cardData.parlaState.mps) {
-        allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
-      }
-    }
-
-    return {
-      cardMethod: this.cardData.cardData.method,
-      cardGroup: this.cardData.cardData.group,
-      questionDays: this.cardData.data.results,
-      allMonths,
-      allMPs,
-      allRecipients,
-      textFilter,
-    };
-  },
   methods: {
     getFilteredQuestionDays(onlyFilterByText = false) {
       const filterQuestions = (question) => {
@@ -201,19 +214,6 @@ export default {
         .filter(questionDay => questionDay.questions.length > 0)
         .filter(filterDates);
     },
-  },
-  props: {
-    cardData: {
-      type: Object,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
-    },
-    person: Object,
-    party: Object,
   },
 };
 </script>

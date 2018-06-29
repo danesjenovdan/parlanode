@@ -1,34 +1,36 @@
 <template>
   <div class="excerpt">
-    <div class="icon-container" :class="{'show-parent': showParent}"
+    <div
       v-if="icon"
+      :class="{'show-parent': showParent}"
+      class="icon-container"
     >
-      <div class="icon" :style="{'background-image': `url('https://cdn.parlameter.si/v1/parlassets/icons/legislation/${icon}')`}"></div>
+      <div :style="{'background-image': `url('https://cdn.parlameter.si/v1/parlassets/icons/legislation/${icon}')`}" class="icon"></div>
     </div>
-    <div class="rich-text" v-if="content || (content.length !== 0)" :class="{'show-parent': showParent, 'show-documents': documents.length > 0}">
+    <div v-if="content || (content.length !== 0)" :class="{'show-parent': showParent, 'show-documents': documents.length > 0}" class="rich-text">
       <div class="text-container" v-html="content">
       </div>
     </div>
-    <div class="no-abstract" v-else>
+    <div v-else class="no-abstract">
       <p>Za ta zakon žal nimamo povzetka.</p>
     </div>
-    <div class="metacontainer" v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)">
+    <div v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)" class="metacontainer">
       <hr>
       <div class="metadata">
-        <div class="main-law-label" v-if="(mainLaw.epa !== '') && showParent">
+        <div v-if="(mainLaw.epa !== '') && showParent" class="main-law-label">
           Matični zakon:
         </div>
         <div class="main-law-name">
-          <a :href="mainLaw.link" v-if="(mainLaw.epa !== '') && showParent">{{ mainLaw.name }}</a>
+          <a v-if="(mainLaw.epa !== '') && showParent" :href="mainLaw.link">{{ mainLaw.name }}</a>
         </div>
         <div v-if="documents.length > 0" class="documents">
           <p-search-dropdown
-            single
-            small
             :items="mappedDocuments"
-            placeholder="Dokumenti"
             :select-callback="openDocument"
             :up="true"
+            single
+            small
+            placeholder="Dokumenti"
           />
         </div>
       </div>

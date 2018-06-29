@@ -7,32 +7,32 @@
     <div slot="info">
       <i18n path="info.lead" tag="p" class="info-text lead">
         <a
+          v-t="'info.link'"
           place="link"
           class="funblue-light-hover"
           target="_blank"
           href="http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
-          v-t="'info.link'"
         />
       </i18n>
-      <div class="info-text heading" v-t="'info.words-heading'"></div>
-      <p class="info-text" v-t="'info.words-text'"></p>
-      <p class="info-text heading" v-t="'info.presence-headinig'"></p>
-      <p class="info-text" v-t="'info.presence-text'"></p>
-      <p class="info-text heading" v-t="'info.votes-heading'"></p>
-      <p class="info-text" v-t="'info.votes-text'"></p>
+      <div v-t="'info.words-heading'" class="info-text heading"></div>
+      <p v-t="'info.words-text'" class="info-text"></p>
+      <p v-t="'info.presence-headinig'" class="info-text heading"></p>
+      <p v-t="'info.presence-text'" class="info-text"></p>
+      <p v-t="'info.votes-heading'" class="info-text heading"></p>
+      <p v-t="'info.votes-text'" class="info-text"></p>
     </div>
 
-    <div class="smalldate">{{data.session.date}}</div>
+    <div class="smalldate">{{ data.session.date }}</div>
     <hr>
     <div class="link">
-      <a class="funblue-light-hover" :href="getSessionTranscriptLink(data.session)">
+      <a :href="getSessionTranscriptLink(data.session)" class="funblue-light-hover">
         <span class="glyphicon glyphicon-comment"></span>
         <span v-t="'info.words-heading'"></span>
       </a>
     </div>
     <div v-if="chartRows.length" class="columns">
-      <bar-chart :data="chartRows1" :alreadyCalculated="true" />
-      <bar-chart :data="chartRows2" :alreadyCalculated="true" />
+      <bar-chart :data="chartRows1" :already-calculated="true" />
+      <bar-chart :data="chartRows2" :already-calculated="true" />
     </div>
     <hr>
     <div class="link">
@@ -44,7 +44,7 @@
     <prisotnost-po-poslanskih-skupinah :data="data.presence" />
     <hr>
     <div class="link">
-      <a class="funblue-light-hover" :href="getSessionVotesLink(data.session)">
+      <a :href="getSessionVotesLink(data.session)" class="funblue-light-hover">
         <span class="glyphicon glyphicon-comment"></span>
         <span v-t="'info.votes-heading'"></span>
       </a>
@@ -67,13 +67,13 @@ import {
 } from 'components/links';
 
 export default {
+  name: 'ZadnjaSeja',
   components: {
     BarChart,
     SeznamGlasovanj,
     PrisotnostPoPoslanskihSkupinah,
   },
   mixins: [common],
-  name: 'ZadnjaSeja',
   data() {
     const sessionName = this.$options.cardData.data.session.name;
     let imageName = 'seja-redna';

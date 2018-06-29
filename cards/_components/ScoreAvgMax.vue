@@ -1,14 +1,14 @@
 <template>
   <card-wrapper
     :id="cardData.cardData._id"
-    class="card-halfling"
     :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    class="card-halfling"
   >
-    <slot name="info" slot="info"></slot>
+    <slot slot="info" name="info"></slot>
 
-    <div class="card-content-front" v-cloak>
+    <div v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
           <div class="me_poslanec">
@@ -17,16 +17,16 @@
             </div>
           </div>
           <div class="other_poslanec">
-            <div class="poslanec_title" v-t="'average'"></div>
+            <div v-t="'average'" class="poslanec_title"></div>
           </div>
           <div class="other_poslanec">
-            <div class="poslanec_title" v-t="'maximum'"></div>
+            <div v-t="'maximum'" class="poslanec_title"></div>
           </div>
         </div>
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar red" role="progressbar" :aria-valuenow="getScore" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('score')">
+              <div :aria-valuenow="getScore" :style="getBarStyle('score')" class="progress-bar red" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">{{ getScore }}%</span>
                 <div class="progress_number">
                   {{ Math.round(getScore) }}
@@ -36,7 +36,7 @@
           </div>
           <div class="other_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.average" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('average')">
+              <div :aria-valuenow="results.average" :style="getBarStyle('average')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">{{ results.average }}%</span>
                 <div class="progress_number">
                   {{ Math.round(results.average) }}
@@ -46,7 +46,7 @@
           </div>
           <div class="other_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="getMaxValue" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('max')">
+              <div :aria-valuenow="getMaxValue" :style="getBarStyle('max')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">{{ getMaxValue }}%</span>
                 <template v-if="type === 'poslanec'">
                   <person-pin v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
@@ -84,11 +84,11 @@ import PartyPin from 'components/PartyPin.vue';
 
 export default {
   name: 'ScoreAvgMax',
-  mixins: [common],
   components: {
     PersonPin,
     PartyPin,
   },
+  mixins: [common],
   props: {
     cardData: {
       type: Object,
@@ -105,17 +105,6 @@ export default {
     },
     person: Object,
     party: Object,
-  },
-  methods: {
-    getBarStyle(key) {
-      if (key === 'max') {
-        return { width: '100%' };
-      }
-      if (key === 'score') {
-        return { width: `${(this.getScore / this.getMaxValue) * 100}%` };
-      }
-      return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
-    },
   },
   computed: {
     getName() {
@@ -148,6 +137,17 @@ export default {
         return this.results.max.pgs ? this.results.max.pgs : this.results.max.parties;
       }
       return this.results.maxPG;
+    },
+  },
+  methods: {
+    getBarStyle(key) {
+      if (key === 'max') {
+        return { width: '100%' };
+      }
+      if (key === 'score') {
+        return { width: `${(this.getScore / this.getMaxValue) * 100}%` };
+      }
+      return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
     },
   },
 };

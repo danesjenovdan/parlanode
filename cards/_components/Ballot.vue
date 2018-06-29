@@ -1,19 +1,19 @@
 <template>
-    <a class="ballot" :href="`${slugs.urls.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
+  <a :href="`${slugs.urls.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`" class="ballot">
     <div class="disunion">
-        <div :class="['icon', ballot.option]"></div>
-        <div class="text">
+      <div :class="['icon', ballot.option]"></div>
+      <div class="text">
         <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span> {{ ballot.option }}
-        </div>
+      </div>
     </div>
     <div class="name">
-        <p>{{ ballot.motion }}</p>
+      <p>{{ ballot.motion }}</p>
     </div>
     <div class="outcome">
-        <i :class="[{'glyphicon glyphicon-ok':ballot.result === true}, {'glyphicon glyphicon-remove':ballot.result === false}]"></i>
-        <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
+      <i :class="[{'glyphicon glyphicon-ok':ballot.result === true}, {'glyphicon glyphicon-remove':ballot.result === false}]"></i>
+      <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
     </div>
-    </a>
+  </a>
 </template>
 
 <script>
@@ -21,6 +21,11 @@ import common from 'mixins/common';
 
 export default {
   name: 'Ballot',
+  filters: {
+    toPercent(val) {
+      return `${parseInt(val, 10)} %`;
+    },
+  },
   mixins: [common],
   props: {
     ballot: {
@@ -30,11 +35,6 @@ export default {
     type: {
       type: String,
       default: 'person',
-    },
-  },
-  filters: {
-    toPercent(val) {
-      return `${parseInt(val, 10)} %`;
     },
   },
 };

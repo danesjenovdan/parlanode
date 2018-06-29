@@ -1,5 +1,5 @@
 <template>
-  <div @click="renderChart" class="timechart"></div>
+  <div class="timechart" @click="renderChart"></div>
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
   name: 'TimeChart',
   props: {
     data: Array,
+  },
+  watch: {
+    data() {
+      this.renderChart();
+    },
   },
   mounted() {
     this.renderChart();
@@ -159,11 +164,6 @@ export default {
         .style('fill', '#ffffff')
         .attr('text-anchor', 'middle')
         .attr('y', -18);
-    },
-  },
-  watch: {
-    data() {
-      this.renderChart();
     },
   },
 };

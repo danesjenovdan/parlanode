@@ -12,7 +12,7 @@
 
       <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
-      <div v-else class="card-content-front" :class="contentFrontClass" v-cloak>
+      <div v-else v-cloak :class="contentFrontClass" class="card-content-front">
         <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
           <div class="card-content__empty-inner">
             <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
@@ -44,13 +44,6 @@ export default {
     CardHeader,
     CardFooter,
   },
-  data() {
-    return {
-      currentBack: null,
-      transitionClass: null,
-      previousHeight: null,
-    };
-  },
   props: {
     contentClass: [String, Object],
     contentFrontClass: [String, Object],
@@ -59,6 +52,18 @@ export default {
     contentHeight: {
       type: String,
       default: 'auto',
+    },
+  },
+  data() {
+    return {
+      currentBack: null,
+      transitionClass: null,
+      previousHeight: null,
+    };
+  },
+  watch: {
+    currentBack(newBack) {
+      this.$emit('backChange', newBack);
     },
   },
   methods: {
@@ -83,11 +88,6 @@ export default {
         }, RIPPLE_DURATION / 2);
         window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
       }
-    },
-  },
-  watch: {
-    currentBack(newBack) {
-      this.$emit('backChange', newBack);
     },
   },
 };

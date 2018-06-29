@@ -35,13 +35,13 @@ import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 
 export default {
+  name: 'ObcasnikAmandmaji',
   components: {
     BarChart,
     PTab,
     PTabs,
   },
   mixins: [common],
-  name: 'ObcasnikAmandmaji',
   data() {
     return {
       data: this.$options.cardData.data.data,

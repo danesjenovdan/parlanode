@@ -1,29 +1,29 @@
 <template>
   <card-wrapper
-    class="card-halfling card-seznam-zakonov"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    class="card-halfling card-seznam-zakonov"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <p class="info-text">
         <span v-t="'info.text'"></span>
         <template v-for="infoLink in $t('info.links')">
           {{ ' ' }}
-          <a :key="infoLink.text" :href="infoLink.link" v-t="infoLink.text"></a>
+          <a v-t="infoLink.text" :key="infoLink.text" :href="infoLink.link"></a>
           {{ ' ' }}
         </template>
       </p>
     </div>
 
     <sortable-table
-      class="legislation-list"
       :columns="columns"
       :items="mappedItems"
       :sort="currentSort"
       :sort-order="currentSortOrder"
       :sort-callback="selectSort"
+      class="legislation-list"
     />
   </card-wrapper>
 </template>
@@ -33,11 +33,11 @@ import SortableTable from 'components/SortableTable.vue';
 import common from 'mixins/common';
 
 export default {
+  name: 'SeznamZakonovKartica',
   components: {
     SortableTable,
   },
   mixins: [common],
-  name: 'SeznamZakonovKartica',
   props: {
     headerConfig: Object,
     columns: Array,

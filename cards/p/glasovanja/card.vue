@@ -1,8 +1,8 @@
 <template>
   <glasovanja
     :card-data="$options.cardData"
-    type="person"
     :person="$options.cardData.data.person"
+    type="person"
   />
 </template>
 

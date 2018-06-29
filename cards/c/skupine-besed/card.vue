@@ -6,9 +6,9 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <div id="skupine-besed">
@@ -35,25 +35,25 @@
             <div class="searchfilter-checkbox">
               <input
                 id="rev"
+                :checked="showRelative"
                 type="checkbox"
                 class="checkbox"
-                @click="changeShowRelative"
-                :checked="showRelative">
-              <label for="rev" v-t="'show-relative'"></label>
+                @click="changeShowRelative">
+              <label v-t="'show-relative'" for="rev"></label>
             </div>
           </div>
         </div>
       </text-frame>
 
-      <p-tabs @switch="focusTab" :start-tab="selectedTab">
+      <p-tabs :start-tab="selectedTab" @switch="focusTab">
         <p-tab :label="$t('speakers')">
           <scroll-shadow ref="shadow">
             <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
               <bar-chart
                 v-if="results.people.length"
                 :data="showRelative ? resultsRelative.people : results.people"
-                show-numbers
                 :show-percentage="!showRelative"
+                show-numbers
                 flexible-labels
               />
               <empty-circle
@@ -69,8 +69,8 @@
               <bar-chart
                 v-if="results.parties.length"
                 :data="showRelative ? resultsRelative.parties: results.parties"
-                show-numbers
                 :show-percentage="!showRelative"
+                show-numbers
                 flexible-labels
               />
               <empty-circle
@@ -114,6 +114,7 @@ import TextFrame from 'components/TextFrame.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
+  name: 'SkupineBesed',
   components: {
     BarChart,
     EmptyCircle,
@@ -128,7 +129,6 @@ export default {
     ScrollShadow,
   },
   mixins: [common],
-  name: 'SkupineBesed',
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
@@ -175,6 +175,11 @@ export default {
     generatedCardUrl() {
       return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
     },
+  },
+  mounted() {
+    if (this.words.length) {
+      this.loadResults();
+    }
   },
   methods: {
     focusTab(tab) {
@@ -277,11 +282,6 @@ export default {
     },
     getPersonLink,
     getPersonPortrait,
-  },
-  mounted() {
-    if (this.words.length) {
-      this.loadResults();
-    }
   },
 };
 </script>
