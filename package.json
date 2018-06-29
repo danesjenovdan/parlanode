@@ -7,6 +7,7 @@
     "start": "NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
     "dev": "NODE_ENV=develop NODE_ICU_DATA=node_modules/full-icu supervisor run",
     "cards-generate": "node cards/generate.js",
+    "cards-lint": "eslint cards",
     "cards": "node cards/build-cross-env.js"
   },
   "repository": {
@@ -34,10 +35,11 @@
     "css-loader": "0.28.11",
     "date-fns": "^1.29.0",
     "ejs": "^2.6.1",
-    "eslint": "4.9.0",
-    "eslint-config-airbnb-base": "12.1.0",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-import-resolver-alias": "1.1.0",
     "eslint-plugin-html": "4.0.3",
-    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-import": "2.13.0",
     "eslint-plugin-vue": "4.5.0",
     "express": "4.16.3",
     "express-session": "^1.15.6",
@@ -45,6 +47,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fs-extra": "^6.0.1",
     "full-icu": "1.2.1",
+    "handlebars": "4.0.11",
     "inquirer": "6.0.0",
     "jquery": "3.3.1",
     "lodash": "4.17.10",
@@ -72,35 +75,6 @@
     "webpack-node-externals": "^1.7.2",
     "webshot": "^0.18.0"
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true
-    },
-    "globals": {
-      "measure": false,
-      "$": false
-    },
-    "extends": "airbnb-base",
-    "plugins": [
-      "vue",
-      "import",
-      "html"
-    ],
-    "rules": {
-      "import/no-extraneous-dependencies": "off",
-      "import/no-unresolved": "off",
-      "import/extensions": "off",
-      "object-curly-newline": [
-        "error",
-        {
-          "multiline": true,
-          "consistent": true
-        }
-      ],
-      "no-param-reassign": "off",
-      "prefer-destructuring": "off"
-    }
-  },
   "babel": {
     "plugins": [
       "lodash",
@@ -109,8 +83,5 @@
     "presets": [
       "env"
     ]
-  },
-  "devDependencies": {
-    "handlebars": "^4.0.11"
   }
 }

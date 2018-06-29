@@ -12,7 +12,8 @@ const config = require('../config');
 
 const app = express();
 
-const urlSlugsPath = path.resolve(__dirname, '../assets/urls.json');
+const assetsPath = path.resolve(__dirname, '../assets');
+const urlSlugsPath = path.resolve(assetsPath, 'urls.json');
 const urlSlugsUrl = `${config.urls.analize}/p/getSlugs/`;
 
 /* eslint-disable no-underscore-dangle */
@@ -36,6 +37,7 @@ async function fetchUrlSlugs(compare = false) {
       newData.__lastUpdate = Date.now();
     }
 
+    await fs.ensureDir(assetsPath);
     await fs.writeJson(urlSlugsPath, newData);
   } catch (error) {
     if (!compare) {

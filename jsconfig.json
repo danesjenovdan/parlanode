@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["./cards/_components/*"],
+      "helpers/*": ["./cards/_helpers/*"],
+      "mixins/*": ["./cards/_mixins/*"],
+      "directives/*": ["./cards/_directives/*"],
+      "i18n/*": ["./cards/_i18n/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/bundles"]
+}
