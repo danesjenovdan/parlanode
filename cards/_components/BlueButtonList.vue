@@ -40,7 +40,10 @@ export default {
       type: Array,
       required: true,
     },
-    value: String,
+    value: {
+      type: String,
+      default: '',
+    },
   },
   methods: {
     changeSelection(event) {

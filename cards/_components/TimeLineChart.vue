@@ -268,7 +268,10 @@ function chart(rawData) {
 export default {
   name: 'TimeLineChart',
   props: {
-    data: Object,
+    data: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   watch: {
     data() {

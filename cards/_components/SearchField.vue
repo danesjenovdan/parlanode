@@ -13,8 +13,14 @@
 export default {
   name: 'SearchField',
   props: {
-    value: String,
-    placeholder: String,
+    value: {
+      type: String,
+      default: '',
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>

@@ -70,9 +70,18 @@ export default {
   name: 'GlasovanjeSejePoslanskeSkupine',
   components: { StripedButton, Result },
   props: {
-    members: Array,
-    parties: Array,
-    state: Object,
+    members: {
+      type: Array,
+      default: () => [],
+    },
+    parties: {
+      type: Array,
+      default: () => [],
+    },
+    state: {
+      type: Object,
+      default: () => ({}),
+    },
     selectedParty: {
       type: [String, Number],
       default: null,

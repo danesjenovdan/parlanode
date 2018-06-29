@@ -51,10 +51,22 @@ export default {
     CardFooter,
   },
   props: {
-    contentClass: [String, Object],
-    contentFrontClass: [String, Object],
-    cardUrl: String,
-    headerConfig: Object,
+    contentClass: {
+      type: [String, Object],
+      default: '',
+    },
+    contentFrontClass: {
+      type: [String, Object],
+      default: '',
+    },
+    cardUrl: {
+      type: String,
+      default: '',
+    },
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
     contentHeight: {
       type: String,
       default: 'auto',

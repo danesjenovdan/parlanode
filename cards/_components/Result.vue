@@ -16,9 +16,18 @@ export default {
   name: 'GlasovanjeSejeResult',
   components: { DonutChart },
   props: {
-    chartData: Array,
-    option: String,
-    score: Number,
+    chartData: {
+      type: Array,
+      default: () => [],
+    },
+    option: {
+      type: String,
+      default: '',
+    },
+    score: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {

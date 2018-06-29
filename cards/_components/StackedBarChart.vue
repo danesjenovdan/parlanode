@@ -32,7 +32,10 @@
 export default {
   name: 'StackedBarChart',
   props: {
-    data: Array,
+    data: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {

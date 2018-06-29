@@ -37,15 +37,27 @@
 export default {
   name: 'StripedIconButton',
   props: {
-    selected: Boolean,
-    color: String,
-    disabled: Boolean,
+    selected: {
+      type: Boolean,
+      default: false,
+    },
+    color: {
+      type: String,
+      default: '',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     stripePosition: {
       type: String,
       default: 'top',
       validator: value => ['top', 'bottom'].indexOf(value) > -1,
     },
-    icon: String,
+    icon: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     className() {

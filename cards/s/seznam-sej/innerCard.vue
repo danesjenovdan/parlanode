@@ -4,7 +4,6 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
   >
-
     <div slot="info">
       <p class="info-text lead">{{ infoText }}</p>
       <p class="info-text heading">METODOLOGIJA</p>
@@ -33,15 +32,38 @@ export default {
   components: { SortableTable },
   mixins: [common],
   props: {
-    headerConfig: Object,
-    columns: Array,
-    currentSort: String,
-    currentSortOrder: String,
-    selectSort: Function,
-    processedSessions: Array,
-    organisationIsWorkingBody: Function,
-    infoText: String,
-    generatedCardUrl: String,
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    columns: {
+      type: Array,
+      default: () => [],
+    },
+    currentSort: {
+      type: String,
+      default: '',
+    },
+    currentSortOrder: {
+      type: String,
+      default: '',
+    },
+    selectSort: {
+      type: Function,
+      default: () => {},
+    },
+    processedSessions: {
+      type: Array,
+      default: () => [],
+    },
+    infoText: {
+      type: String,
+      default: '',
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     mappedSessions() {

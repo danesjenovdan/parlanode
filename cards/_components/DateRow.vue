@@ -6,7 +6,10 @@
 export default {
   name: 'DateRow',
   props: {
-    date: String,
+    date: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>

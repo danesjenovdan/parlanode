@@ -8,7 +8,10 @@ import getD3Locale from 'i18n/d3locales';
 export default {
   name: 'TimeChart',
   props: {
-    data: Array,
+    data: {
+      type: Array,
+      default: () => [],
+    },
   },
   watch: {
     data() {

@@ -72,8 +72,14 @@ export default {
       required: true,
       validator: value => ['person', 'party'].indexOf(value) > -1,
     },
-    person: Object,
-    party: Object,
+    person: {
+      type: Object,
+      default: () => ({}),
+    },
+    party: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   data() {
     const selectFromState = (items, stateItemIds) => (

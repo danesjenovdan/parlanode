@@ -50,7 +50,10 @@ export default {
       type: Array,
       required: true,
     },
-    showPartyLink: Boolean,
+    showPartyLink: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     getPersonPartyLink,

@@ -20,7 +20,10 @@
 export default {
   name: 'Tabs',
   props: {
-    startTab: Number,
+    startTab: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {

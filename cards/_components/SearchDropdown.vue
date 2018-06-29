@@ -76,7 +76,10 @@ export default {
       type: Boolean,
       default: true,
     },
-    groups: Array,
+    groups: {
+      type: Array,
+      default: () => [],
+    },
     items: {
       type: Array,
       required: true,
@@ -85,8 +88,14 @@ export default {
       type: String,
       required: true,
     },
-    selectCallback: Function,
-    clearCallback: Function,
+    selectCallback: {
+      type: Function,
+      default: () => {},
+    },
+    clearCallback: {
+      type: Function,
+      default: () => {},
+    },
     single: {
       type: Boolean,
       default: false,

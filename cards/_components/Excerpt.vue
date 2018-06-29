@@ -65,7 +65,7 @@ export default {
     },
     documents: {
       type: Array,
-      required: false,
+      default: () => [],
     },
     showParent: {
       type: Boolean,
@@ -73,7 +73,7 @@ export default {
     },
     icon: {
       type: String,
-      required: false,
+      default: '',
     },
   },
   computed: {

@@ -35,9 +35,18 @@ export default {
       type: Array,
       required: true,
     },
-    person: Object,
-    party: Object,
-    generatedCardUrl: String,
+    person: {
+      type: Object,
+      default: () => ({}),
+    },
+    party: {
+      type: Object,
+      default: () => ({}),
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     headerConfig() {

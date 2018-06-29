@@ -39,13 +39,34 @@ export default {
   },
   mixins: [common],
   props: {
-    headerConfig: Object,
-    columns: Array,
-    items: Array,
-    currentSort: String,
-    currentSortOrder: String,
-    selectSort: Function,
-    generatedCardUrl: String,
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    columns: {
+      type: Array,
+      default: () => [],
+    },
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    currentSort: {
+      type: String,
+      default: '',
+    },
+    currentSortOrder: {
+      type: String,
+      default: '',
+    },
+    selectSort: {
+      type: Function,
+      default: () => {},
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     mappedItems() {

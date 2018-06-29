@@ -61,10 +61,22 @@ export default {
   name: 'GlasovanjeSejePoslanci',
   components: { StripedButton, SearchField, Result },
   props: {
-    members: Array,
-    memberVotes: Object,
-    result: Object,
-    state: Object,
+    members: {
+      type: Array,
+      default: () => [],
+    },
+    memberVotes: {
+      type: Object,
+      default: () => ({}),
+    },
+    result: {
+      type: Object,
+      default: () => ({}),
+    },
+    state: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   data() {
     return {

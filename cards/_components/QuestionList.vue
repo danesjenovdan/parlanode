@@ -70,7 +70,10 @@ export default {
       type: Array,
       required: true,
     },
-    showAuthor: Boolean,
+    showAuthor: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     getPersonLink,

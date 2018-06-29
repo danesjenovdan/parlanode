@@ -40,14 +40,26 @@
 export default {
   name: 'BarChart',
   props: {
-    data: Array,
-    showNumbers: Boolean,
+    data: {
+      type: Array,
+      default: () => [],
+    },
+    showNumbers: {
+      type: Boolean,
+      default: false,
+    },
     showPercentage: {
       type: Boolean,
       default: true,
     },
-    alreadyCalculated: Boolean,
-    flexibleLabels: Boolean,
+    alreadyCalculated: {
+      type: Boolean,
+      default: false,
+    },
+    flexibleLabels: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     rows() {

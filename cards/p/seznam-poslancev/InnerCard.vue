@@ -39,13 +39,34 @@ export default {
   components: { SortableTable },
   mixins: [common],
   props: {
-    demographics: Boolean,
-    headerConfig: Object,
-    generatedCardUrl: String,
-    currentSort: String,
-    currentSortOrder: String,
-    processedMembers: Array,
-    currentAnalysisData: Object,
+    demographics: {
+      type: Boolean,
+      default: false,
+    },
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
+    currentSort: {
+      type: String,
+      default: '',
+    },
+    currentSortOrder: {
+      type: String,
+      default: '',
+    },
+    processedMembers: {
+      type: Array,
+      default: () => [],
+    },
+    currentAnalysisData: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   computed: {
     mappedMembers() {

@@ -45,10 +45,22 @@ export default {
   name: 'SeznamPoslanskihSkupinInnerCard',
   mixins: [common],
   props: {
-    processedPartyData: Array,
-    headerConfig: Object,
-    generatedCardUrl: String,
-    currentAnalysisData: Object,
+    processedPartyData: {
+      type: Array,
+      default: () => [],
+    },
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
+    currentAnalysisData: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   created() {
     this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanske-skupine`;

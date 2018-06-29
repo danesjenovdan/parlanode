@@ -187,7 +187,10 @@ function chart(rawData, component) {
 export default {
   name: 'PieChart',
   props: {
-    data: Array,
+    data: {
+      type: Array,
+      default: () => [],
+    },
   },
   watch: {
     data() {

@@ -46,7 +46,10 @@ export default {
   name: 'CardEmbed',
 
   props: {
-    url: String,
+    url: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {

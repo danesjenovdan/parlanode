@@ -24,7 +24,10 @@ export default {
   name: 'CardShare',
 
   props: {
-    url: String,
+    url: {
+      type: String,
+      default: '',
+    },
   },
 
   data: () => ({

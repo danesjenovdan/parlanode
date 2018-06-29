@@ -35,8 +35,14 @@ export default {
     ScrollShadow,
   },
   props: {
-    name: String,
-    contents: Array,
+    name: {
+      type: String,
+      default: '',
+    },
+    contents: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {};

@@ -15,8 +15,14 @@
 export default {
   name: 'Toggle',
   props: {
-    options: Object,
-    value: [String, Number, Boolean],
+    options: {
+      type: Object,
+      default: () => ({}),
+    },
+    value: {
+      type: [String, Number, Boolean],
+      default: '',
+    },
   },
   methods: {
     handleClick(newValue) {

@@ -133,7 +133,10 @@ function chart(rawData) {
 export default {
   name: 'TimeBarChart',
   props: {
-    data: Object,
+    data: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   watch: {
     data() {

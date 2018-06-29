@@ -124,8 +124,14 @@ export default {
       type: Object,
       required: true,
     },
-    person: Object,
-    party: Object,
+    person: {
+      type: Object,
+      default: () => ({}),
+    },
+    party: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   computed: {
     getName() {

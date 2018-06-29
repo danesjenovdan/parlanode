@@ -64,11 +64,26 @@
 export default {
   name: 'SortableTable',
   props: {
-    columns: Array,
-    items: Array,
-    sort: String,
-    sortOrder: String,
-    sortCallback: Function,
+    columns: {
+      type: Array,
+      default: () => [],
+    },
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    sort: {
+      type: String,
+      default: '',
+    },
+    sortOrder: {
+      type: String,
+      default: '',
+    },
+    sortCallback: {
+      type: Function,
+      default: () => {},
+    },
   },
   methods: {
     getColumnClasses(column, cell) {

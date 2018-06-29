@@ -38,8 +38,14 @@
 export default {
   name: 'CardHeader',
   props: {
-    config: Object,
-    currentBack: String,
+    config: {
+      type: Object,
+      default: () => ({}),
+    },
+    currentBack: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>

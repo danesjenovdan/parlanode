@@ -33,7 +33,10 @@
 export default {
   name: 'DonutChart',
   props: {
-    sectionData: Array,
+    sectionData: {
+      type: Array,
+      default: () => [],
+    },
   },
   data: () => ({
     size: 100,

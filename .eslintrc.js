@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
   extends: [
     'airbnb-base',
-    // 'plugin:vue/base',
     'plugin:vue/recommended',
   ],
   parserOptions: {
@@ -21,8 +20,6 @@ module.exports = {
     'import',
   ],
   rules: {
-    'vue/require-v-for-key': 'off', // TODO: remove this
-    'vue/require-default-prop': 'off', // TODO: remove this
     'vue/max-attributes-per-line': ['error', { 'singleline': 3 }],
     'vue/html-self-closing': ['error', { html: { normal: 'any' } }],
     'vue/html-closing-bracket-newline': ['error', { multiline: 'always' }],
