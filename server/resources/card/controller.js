@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 const mongoose = require('mongoose');
 const axios = require('axios');
 const fs = require('fs-extra');
@@ -143,6 +142,7 @@ async function shouldBuildCard(cacheData, cardJSON) {
     if (!cardBuild) {
       return true;
     }
+    // eslint-disable-next-line no-underscore-dangle
     if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(cardBuild.lastBuilt)) {
       return true;
     }
@@ -206,12 +206,14 @@ async function addOgImage(cardJSON, cardRender, context) {
   const ogEjs = await fs.readFile(`views/og/${cardJSON.type}.ejs`, 'utf-8');
   const ogHtml = ejs.render(ogEjs, context);
 
+  // eslint-disable-next-line no-underscore-dangle
   await webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
     siteType: 'html',
     captureSelector: '#og-container',
     quality: 80,
   });
 
+  // eslint-disable-next-line no-underscore-dangle
   cardRender.ogImageUrl = `${config.ogRootUrl}/${cardRender._id}.jpeg`;
 
   const $ = cheerio.load(cardRender.html, { decodeEntities: false });
@@ -222,8 +224,9 @@ async function addOgImage(cardJSON, cardRender, context) {
 }
 
 async function renderCard(cacheData, cardJSON, originalUrl) {
-  cacheData.dataUrl = expandUrl(cardJSON.dataUrl);
+  // eslint-disable-next-line no-underscore-dangle
   cacheData.card = cardJSON._id;
+  cacheData.dataUrl = expandUrl(cardJSON.dataUrl);
   cacheData.cardUrl = `${urlSlugs.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJSON.lastUpdate;
 

@@ -69,6 +69,7 @@
 
 <script>
 import { find, get } from 'lodash';
+import axios from 'axios';
 import common from 'mixins/common';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -228,14 +229,15 @@ export default {
     },
   },
   created() {
-    $.getJSON(`${this.slugs.urls.analize}/s/getWorkingBodies/`, (response) => {
-      const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
-      this.workingBodies = response.map(workingBody => ({
-        id: workingBody.id,
-        label: workingBody.name,
-        selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
-      }));
-    });
+    axios.get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
+      .then((response) => {
+        const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
+        this.workingBodies = response.data.map(workingBody => ({
+          id: workingBody.id,
+          label: workingBody.name,
+          selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
+        }));
+      });
   },
   methods: {
     organisationIsWorkingBody(organisationId) {

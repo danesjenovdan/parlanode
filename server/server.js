@@ -3,7 +3,6 @@ const chalk = require('chalk');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const expressValidator = require('express-validator');
 const axios = require('axios');
 const fs = require('fs-extra');
 const path = require('path');
@@ -68,7 +67,13 @@ function setupExpress() {
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(expressValidator());
+
+    // eslint-disable-next-line global-require
+    require('./resources')(app);
+
+    app.get('*', (req, res) => {
+      res.status(400).send('Bad Request');
+    });
 
     // start listening on port
     const server = app.listen(config.port, () => {
@@ -85,14 +90,8 @@ function setupExpress() {
   });
 }
 
-function setupResources() {
-  // eslint-disable-next-line global-require
-  require('./resources')(app);
-}
-
 exports.init = () => (
   Promise.resolve()
     .then(preloadUrlSlugs)
     .then(setupExpress)
-    .then(setupResources)
 );

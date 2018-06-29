@@ -8,17 +8,11 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
   },
-  env: {
-    browser: true,
-  },
   globals: {
     measure: false,
     $: false,
     d3: false,
   },
-  plugins: [
-    'import',
-  ],
   rules: {
     'vue/max-attributes-per-line': ['error', { 'singleline': 3 }],
     'vue/html-self-closing': ['error', { html: { normal: 'any' } }],

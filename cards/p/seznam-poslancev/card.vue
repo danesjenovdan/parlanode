@@ -93,7 +93,7 @@
 
 <script>
 import { find } from 'lodash';
-
+import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import urlFunctionalities from 'mixins/urlFunctionalities';
@@ -316,13 +316,13 @@ export default {
     },
   },
   created() {
-    const that = this;
-    $.getJSON(`${this.slugs.urls.analize}/pg/getListOfPGs/`, (response) => {
-      that.parties = response.data.map(party => ({
-        acronym: party.party.acronym,
-        color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
-      }));
-    });
+    axios.get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
+      .then((response) => {
+        this.parties = response.data.data.map(party => ({
+          acronym: party.party.acronym,
+          color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
+        }));
+      });
   },
   methods: {
     selectParty(id) {
