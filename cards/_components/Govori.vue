@@ -60,7 +60,7 @@
           <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.date">
             <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs" :key="indexOrg">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
             <ul class="speaks__list">
-              <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
+              <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech" />
             </ul>
           </div>
           <div v-t="'no-results'" v-if="speakingDays.length===0" class="empty-dataset"></div>

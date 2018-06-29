@@ -14,7 +14,8 @@
         `card-${button}`,
         { 'card-exit': currentBack === button }
       ]"
-      @click="toggleBack(button)">
+      @click="toggleBack(button)"
+    >
     </div>
   </div>
 </template>

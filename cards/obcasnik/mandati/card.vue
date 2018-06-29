@@ -2,7 +2,8 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
+    :header-config="headerConfig"
+  >
 
     <div slot="info">
       <p class="info-text lead"></p>
@@ -13,7 +14,7 @@
     <ul class="person-list">
       <li v-for="member in data" :key="member.id" class="person">
         <a :href="slugs.urls.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="portrait column">
-          <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.gov_id + '.png'" />
+          <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.gov_id + '.png'">
         </a>
         <div class="column name">
           <a :href="slugs.urls.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="funblue-light-hover">{{ member.name }}</a><br>

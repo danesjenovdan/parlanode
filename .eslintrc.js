@@ -25,10 +25,10 @@ module.exports = {
     'vue/require-default-prop': 'off', // TODO: remove this
     'max-len': 'off', // TODO: remove this
     'vue/max-attributes-per-line': 'off',
-    // 'vue/attributes-order': 'off',
-    'vue/html-self-closing': 'off',
     // 'vue/max-attributes-per-line': ['error', { 'singleline': 2 }],
-    // 'vue/html-self-closing': ['error', { 'html': { 'normal': 'any' } }],
+    'vue/html-self-closing': ['error', { html: { normal: 'any' } }],
+    'vue/html-closing-bracket-newline': ['error', { multiline: 'always' }],
+    'vue/html-closing-bracket-spacing': 'error',
     'object-curly-newline': ['error', { multiline: true, consistent: true }],
     'no-param-reassign': 'off',
     'prefer-destructuring': 'off',

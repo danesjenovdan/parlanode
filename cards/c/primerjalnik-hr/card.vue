@@ -68,7 +68,7 @@
                 type="checkbox"
                 class="checkbox"
                 @click="toggleSpecial"
-              />
+              >
               <label v-t="'ignore-absent'" for="rev"></label>
             </div>
           </div>
@@ -90,7 +90,7 @@
         </p-tab>
         <p-tab :label="$t('tabs.time-chart')">
           <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
-          <time-chart v-else :data="data"></time-chart>
+          <time-chart v-else :data="data" />
         </p-tab>
       </p-tabs>
 

@@ -47,15 +47,15 @@
     <div class="filters">
       <div class="filter text-filter">
         <div v-t="'title-search'" class="filter-label"></div>
-        <search-field v-model="textFilter"/>
+        <search-field v-model="textFilter" />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></p-search-dropdown>
+        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
       </div>
       <div class="filter button-filter">
         <div v-t="'show'" class="filter-label"></div>

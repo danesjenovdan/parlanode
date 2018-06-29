@@ -6,7 +6,7 @@
     type="text"
     @input="$emit('input', $event.target.value)"
     @keyup.enter="$emit('enter', $event.target.value)"
-  />
+  >
 </template>
 
 <script>

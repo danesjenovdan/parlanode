@@ -2,7 +2,7 @@
   <li :class="cssClass">
     <div class="person-container">
       <a :href="getPersonLink(speech.person)" class="portrait">
-        <img :src="getPersonPortrait(speech.person)" />
+        <img :src="getPersonPortrait(speech.person)">
       </a>
 
       <div class="name">

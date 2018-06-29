@@ -17,10 +17,10 @@
         <li v-for="speech in speeches" :key="speech.speech_id" class="person">
           <template v-if="speech.person.type === 'mp'">
             <a :href="speech.memberUrl" class="column portrait">
-              <img :src="speech.memberImageUrl" />
+              <img :src="speech.memberImageUrl">
             </a>
             <div class="column name">
-              <a :href="speech.memberUrl" class="funblue-light-hover">{{ speech.person.name }}</a><br/>
+              <a :href="speech.memberUrl" class="funblue-light-hover">{{ speech.person.name }}</a><br>
               <template v-if="speech.partyUrl">
                 <a :href="speech.partyUrl" class="funblue-light-hover">{{ speech.person.party.acronym }}</a>
               </template>
@@ -29,10 +29,10 @@
           </template>
           <template v-else>
             <div class="column portrait">
-              <img :src="speech.memberImageUrl" />
+              <img :src="speech.memberImageUrl">
             </div>
             <div class="column name">
-              {{ speech.person.name }}<br/>
+              {{ speech.person.name }}<br>
             </div>
           </template>
 

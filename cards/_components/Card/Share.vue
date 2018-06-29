@@ -3,7 +3,7 @@
     <div class="card-back-content">
       <div class="share-content">
         <label v-t="'share.direct-link'" for="share-url"></label>
-        <input id="share-url" ref="urlInput" :value="shortenedUrl" type="url" class="form-control share-url" />
+        <input id="share-url" ref="urlInput" :value="shortenedUrl" type="url" class="form-control share-url">
         <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">
           <span v-t="'copied'" v-if="copied"></span>
           <span v-t="'copy'" v-else></span>

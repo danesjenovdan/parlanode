@@ -4,13 +4,13 @@
       <div v-for="(row, index) in rows" :key="index" class="column chart-label">
         <div class="label-container">
           <template v-if="row.link">
-            <img v-if="row.portrait" :src="row.portrait" class="portrait" />
+            <img v-if="row.portrait" :src="row.portrait" class="portrait">
             <a :href="row.link" class="funblue-light-hover">
               {{ row.name }}
             </a>
           </template>
           <template v-else>
-            <img v-if="row.portrait" :src="row.portrait" class="portrait" />
+            <img v-if="row.portrait" :src="row.portrait" class="portrait">
             {{ row.name }}
           </template>
         </div>
@@ -21,7 +21,8 @@
         <div class="progress hugebar">
           <div
             :style="{ width: row.widthPercentage + '%'}"
-            class="progress-bar funblue">
+            class="progress-bar funblue"
+          >
           </div>
           <div v-if="showNumbers && showPercentage" class="progress_number">
             {{ row.value.toString().replace('.', ',') + ' | ' + row.percentage }} %

@@ -22,7 +22,7 @@
 
     <div v-show="false" class="card-content__empty"> <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
-        <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
+        <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg">
         <p v-t="'data-currently-unavailable'"></p>
       </div>
     </div>
@@ -63,7 +63,7 @@
           </div>
           <div :key="`${votingDay.date}-2`">
             <div v-for="ballot in votingDay.ballots" :key="ballot.vote_id">
-              <ballot :ballot="ballot" type="person"></ballot>
+              <ballot :ballot="ballot" type="person" />
             </div>
           </div>
         </template>

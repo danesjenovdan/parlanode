@@ -2,7 +2,8 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
+    :header-config="headerConfig"
+  >
 
     <div slot="info">
       <p class="info-text lead"></p>
@@ -11,8 +12,7 @@
     </div>
 
     <div id="viz">
-      <svg viewBox="0 0 700 700">
-      </svg>
+      <svg viewBox="0 0 700 700" />
     </div>
     <div id="controls"></div>
   </card-wrapper>

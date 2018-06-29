@@ -2,7 +2,8 @@
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
+    :header-config="headerConfig"
+  >
 
     <div slot="info">
       <p class="info-text lead">Seznam poslanskih skupin glede na rezultate analize {{ currentAnalysisData.titleSuffix }}</p>

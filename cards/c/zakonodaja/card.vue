@@ -16,7 +16,7 @@
 
           <div class="filter text-filter">
             <div v-t="'title-search'" class="filter-label"></div>
-            <p-search-field v-model="textFilter"></p-search-field>
+            <p-search-field v-model="textFilter" />
           </div>
 
           <div class="filter month-dropdown">
@@ -24,12 +24,12 @@
             <p-search-dropdown
               :items="allworkingBodies"
               :placeholder="inputPlaceholder"
-              :alphabetise="false">
-            </p-search-dropdown>
+              :alphabetise="false"
+            />
           </div>
 
           <div class="filter only-abstracts">
-            <input id="only-abstracts" v-model="onlyAbstracts" type="checkbox" class="checkbox" />
+            <input id="only-abstracts" v-model="onlyAbstracts" type="checkbox" class="checkbox">
             <label v-t="'only-abstracts'" for="only-abstracts"></label>
           </div>
         </div>

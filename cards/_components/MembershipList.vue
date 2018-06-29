@@ -6,7 +6,8 @@
           <li
             v-for="membershipItem in contents"
             :key="membershipItem.name"
-            class="key">
+            class="key"
+          >
             <template v-if="name === 'Delovna telesa'">
               {{ membershipItem.name }}
             </template>

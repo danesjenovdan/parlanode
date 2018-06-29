@@ -2,7 +2,8 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
+    :header-config="headerConfig"
+  >
 
     <div slot="info">
       <p class="info-text lead"></p>
@@ -16,13 +17,13 @@
 
     <p-tabs @switch="focusTab">
       <p-tab label="Št. članov PS">
-        <bar-chart :data="seatCountData" show-numbers></bar-chart>
+        <bar-chart :data="seatCountData" show-numbers />
       </p-tab>
       <p-tab label="Št. vloženih amandmajev">
-        <bar-chart :data="amandmajiData" show-numbers></bar-chart>
+        <bar-chart :data="amandmajiData" show-numbers />
       </p-tab>
       <p-tab label="Št. vloženih amandmajev na poslanca">
-        <bar-chart :data="amandmajiNaPoslancaData" show-numbers></bar-chart>
+        <bar-chart :data="amandmajiNaPoslancaData" show-numbers />
       </p-tab>
     </p-tabs>
   </card-wrapper>

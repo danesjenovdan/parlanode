@@ -40,7 +40,7 @@
         :score="finalVoteResult.value / numberOfVotes * 100"
         :option="finalVoteResult.key"
         :chart-data="finalVoteData"
-      ></result>
+      />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
       <p-tab label="Povzetek" variant="dark">
@@ -55,8 +55,7 @@
       <p-tab label="Glasovanja">
         <seznam-glasovanj
           :data="data"
-        >
-        </seznam-glasovanj>
+        />
       </p-tab>
       <p-tab v-if="data.extra_abstract" label="Drugi postopki" variant="dark">
         <excerpt

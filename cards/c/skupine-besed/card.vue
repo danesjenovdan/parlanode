@@ -38,7 +38,8 @@
                 :checked="showRelative"
                 type="checkbox"
                 class="checkbox"
-                @click="changeShowRelative">
+                @click="changeShowRelative"
+              >
               <label v-t="'show-relative'" for="rev"></label>
             </div>
           </div>
@@ -89,7 +90,7 @@
         @close="toggleModal(false)"
         @ok="toggleModal(false, true)"
       >
-        <search-field v-model="modalInputText" @enter="toggleModal(false, true)"/>
+        <search-field v-model="modalInputText" @enter="toggleModal(false, true)" />
       </modal>
     </div>
   </card-wrapper>

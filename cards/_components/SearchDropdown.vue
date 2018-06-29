@@ -1,11 +1,13 @@
 <template>
   <div
     v-click-outside="function() { toggleDropdown(false) }"
-    :class="['search-dropdown', { small: small }]">
+    :class="['search-dropdown', { small: small }]"
+  >
     <div
       v-if="selectedIds.length > 0"
       class="search-dropdown-clear"
-      @click="clearSelection">×</div>
+      @click="clearSelection"
+    >×</div>
     <input
       v-model="filter"
       :placeholder="adjustedPlaceholder"
@@ -14,16 +16,19 @@
       @focus="toggleDropdown(true)"
       @keydown.enter.prevent="selectItem(filteredItems[focused].id)"
       @keydown.up.prevent="focus(focused - 1, true)"
-      @keydown.down.prevent="focus(focused + 1, true)">
+      @keydown.down.prevent="focus(focused + 1, true)"
+    >
     <ul
       :class="['search-dropdown-options', { visible: active, up: up }]"
       :style="{'margin-top': upMargin}"
-      @mouseleave="focus(-1)">
+      @mouseleave="focus(-1)"
+    >
       <template v-for="(item, index) in filteredItems">
         <li
           v-if="item.groupLabel"
           :key="`${item.id}1`"
-          class="search-dropdown-group-label">
+          class="search-dropdown-group-label"
+        >
           {{ item.groupLabel }}
         </li>
         <!-- glasovanje-update je bilo brez :key, ki je bil v developu zgoraj je bil :key v developu, zaenkrat puščam oba-->
@@ -31,7 +36,8 @@
           :key="`${item.id}2`"
           :class="{ selected : item.selected, focused : focused === index }"
           @click="selectItem(item.id)"
-          @mouseenter="focus(index)">
+          @mouseenter="focus(index)"
+        >
           <div class="search-dropdown-label">{{ item.label }}</div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>

@@ -17,7 +17,7 @@
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
-        <search-dropdown :items="allTags" :placeholder="tagPlaceholder"></search-dropdown>
+        <search-dropdown :items="allTags" :placeholder="tagPlaceholder" />
       </div>
     </div>
     <scroll-shadow ref="shadow">

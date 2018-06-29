@@ -1,18 +1,18 @@
 <template>
   <div :class="['speech-holder', {'just-quote': showQuote}]" :id="speech.results.speech_id">
-    <input :value="getSpeechContent(speech)" type="hidden" class="mywords" />
+    <input :value="getSpeechContent(speech)" type="hidden" class="mywords">
     <div class="person-session">
       <div class="person">
         <template v-if="speech.person.type === 'mp'">
           <a :href="getPersonLink(speech.person)">
-            <img :src="getPersonPortrait(speech.person)" class="portrait" />
+            <img :src="getPersonPortrait(speech.person)" class="portrait">
           </a>
           <a :href="getPersonLink(speech.person)" class="funblue-light-hover">
             <span class="name">{{ speech.person.name }}</span>
           </a>
         </template>
         <template v-else>
-          <img :src="getPersonPortrait(speech.person)" class="portrait" />
+          <img :src="getPersonPortrait(speech.person)" class="portrait">
           <span class="name">{{ speech.person.name }}</span>
         </template>
       </div>

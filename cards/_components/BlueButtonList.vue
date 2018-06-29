@@ -8,7 +8,8 @@
           'blue-button-list-item',
           { 'is-selected': item.id === value },
         ]"
-        @click="$emit('input', item.id)">
+        @click="$emit('input', item.id)"
+      >
         {{ item.label }}
       </li>
     </ul>
@@ -16,12 +17,14 @@
       <label>Izberi analizo</label>
       <div class="select">
         <select
-          @change="changeSelection">
+          @change="changeSelection"
+        >
           <option
             v-for="item in items"
             :key="item.id"
             :value="item.id"
-            :selected="item.id === value">
+            :selected="item.id === value"
+          >
             {{ item.label }}
           </option>
         </select>

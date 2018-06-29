@@ -1,13 +1,15 @@
 <template>
   <div
     v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-    :id="$options.cardData.cardData._id">
+    :id="$options.cardData.cardData._id"
+  >
     <div class="party-list-generator">
       <div class="row">
         <div class="col-md-12">
           <blue-button-list
             :items="analyses"
-            v-model="currentAnalysis" />
+            v-model="currentAnalysis"
+          />
         </div>
       </div>
 

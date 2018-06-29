@@ -5,7 +5,8 @@
         v-for="(header, index) in headers"
         :key="index"
         :class="['p-tabs-header', header.variant, { active: index === active }]"
-        @click="select(index)">
+        @click="select(index)"
+      >
         <span>{{ header.label }}</span>
       </li>
     </ul>

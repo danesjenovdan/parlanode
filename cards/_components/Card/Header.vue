@@ -5,11 +5,11 @@
         <div class="alt-header">
           <div v-if="config.circleText || config.mediaImage" :class="config.circleClass" class="media-object img-circle session-logo">
             <b v-if="config.circleText">{{ config.circleText }}</b>
-            <img v-else :src="`https://cdn.parlameter.si/v1/parlassets/icons/${config.mediaImage}.svg`" />
+            <img v-else :src="`https://cdn.parlameter.si/v1/parlassets/icons/${config.mediaImage}.svg`">
           </div>
-          <img v-else-if="config.circleImage" :src="`https://cdn.parlameter.si/v1/parlassets/img/people/square/${config.circleImage}.png`" class="portrait column" />
+          <img v-else-if="config.circleImage" :src="`https://cdn.parlameter.si/v1/parlassets/img/people/square/${config.circleImage}.png`" class="portrait column">
           <div v-else-if="config.circleIcon" class="icon-circle">
-            <img :src="`https://cdn.parlameter.si/v1/parlassets/icons/${config.circleIcon}.svg`" />
+            <img :src="`https://cdn.parlameter.si/v1/parlassets/icons/${config.circleIcon}.svg`">
           </div>
           <div class="header-info-container">
             <h1 v-html="config.heading"></h1>

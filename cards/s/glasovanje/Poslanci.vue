@@ -27,7 +27,7 @@
       <li v-for="member in filteredMembers" :key="member.person.id" class="item">
         <div class="column portrait">
           <a :href="getMemberLink(member)">
-            <img :src="getMemberPortrait(member)" />
+            <img :src="getMemberPortrait(member)">
           </a>
         </div>
         <div class="column wider name">

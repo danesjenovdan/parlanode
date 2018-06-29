@@ -8,14 +8,14 @@
           class="person"
         >
           <a :href="getPersonLink(person)" class="portrait column">
-            <img :src="getPersonPortrait(person)" />
+            <img :src="getPersonPortrait(person)">
           </a>
           <div class="column name">
             <a :href="getPersonLink(person)" class="funblue-light-hover">
               {{ person.name }}
             </a>
             <template v-if="showPartyLink">
-              <br />
+              <br>
               <a v-if="getPersonPartyLink(person)" :href="getPersonPartyLink(person)" class="funblue-light-hover">
                 {{ person.party.acronym }}
               </a>

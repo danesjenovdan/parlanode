@@ -24,7 +24,7 @@
           />
 
           <div class="align-checkbox">
-            <input id="justFive" v-model="justFive" type="checkbox" class="checkbox" />
+            <input id="justFive" v-model="justFive" type="checkbox" class="checkbox">
             <label for="justFive">Samo zadnjih 5</label>
           </div>
         </div>
