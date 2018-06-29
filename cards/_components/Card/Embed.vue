@@ -19,7 +19,13 @@
         </div>
         <div class="embed-divider"></div>
         <div class="embed-script">
-          <textarea ref="embedInput" :data-url="url" class="form-control" data-id="" v-html="embedCode"></textarea>
+          <textarea
+            ref="embedInput"
+            :data-url="url"
+            class="form-control"
+            data-id=""
+            v-html="embedCode"
+          ></textarea>
           <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode">
             <span v-t="'copied'" v-if="copied"></span>
             <span v-t="'copy'" v-else></span>

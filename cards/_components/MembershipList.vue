@@ -11,7 +11,12 @@
             <template v-if="name === 'Delovna telesa'">
               {{ membershipItem.name }}
             </template>
-            <a v-else-if="membershipItem.url != null" :href="membershipItem.url" class="funblue-light-hover" target="_blank">{{ membershipItem.name }}</a>
+            <a
+              v-else-if="membershipItem.url != null"
+              :href="membershipItem.url"
+              class="funblue-light-hover"
+              target="_blank"
+            >{{ membershipItem.name }}</a>
             <template v-else>{{ membershipItem.name }}</template>
           </li>
         </template>

@@ -26,7 +26,14 @@
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div :aria-valuenow="getScore" :style="getBarStyle('score')" class="progress-bar red" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div
+                :aria-valuenow="getScore"
+                :style="getBarStyle('score')"
+                class="progress-bar red"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ getScore }}%</span>
                 <div class="progress_number">
                   {{ Math.round(getScore) }}
@@ -36,7 +43,14 @@
           </div>
           <div class="other_poslanec">
             <div class="progress smallbar">
-              <div :aria-valuenow="results.average" :style="getBarStyle('average')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div
+                :aria-valuenow="results.average"
+                :style="getBarStyle('average')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.average }}%</span>
                 <div class="progress_number">
                   {{ Math.round(results.average) }}
@@ -46,7 +60,14 @@
           </div>
           <div class="other_poslanec">
             <div class="progress smallbar">
-              <div :aria-valuenow="getMaxValue" :style="getBarStyle('max')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div
+                :aria-valuenow="getMaxValue"
+                :style="getBarStyle('max')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ getMaxValue }}%</span>
                 <template v-if="type === 'poslanec'">
                   <person-pin v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />

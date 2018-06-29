@@ -24,7 +24,14 @@
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div :aria-valuenow="results.privzdignjeno" :style="getBarStyle('privzdignjeno')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div
+                :aria-valuenow="results.privzdignjeno"
+                :style="getBarStyle('privzdignjeno')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.privzdignjeno.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.privzdignjeno.toFixed(2).replace('.', ',') }}
@@ -34,7 +41,14 @@
           </div>
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div :aria-valuenow="results.preprosto" :style="getBarStyle('preprosto')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div
+                :aria-valuenow="results.preprosto"
+                :style="getBarStyle('preprosto')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.preprosto.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.preprosto.toFixed(2).replace('.', ',') }}
@@ -44,7 +58,14 @@
           </div>
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div :aria-valuenow="results.problematicno" :style="getBarStyle('problematicno')" class="progress-bar funblue" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div
+                :aria-valuenow="results.problematicno"
+                :style="getBarStyle('problematicno')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.problematicno.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.problematicno.toFixed(2).replace('.', ',') }}

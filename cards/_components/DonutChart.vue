@@ -2,8 +2,18 @@
   <svg :viewBox="`0 0 2 2`" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <mask :id="`donut-hole${_uid}`">
-        <circle cx="1" cy="1" r="1" fill="white" />
-        <circle cx="1" cy="1" r="0.7" fill="black" />
+        <circle
+          cx="1"
+          cy="1"
+          r="1"
+          fill="white"
+        />
+        <circle
+          cx="1"
+          cy="1"
+          r="0.7"
+          fill="black"
+        />
       </mask>
     </defs>
     <path

@@ -33,7 +33,12 @@
         <span class="quote-text">{{ speech.results.quoted_text }}</span>
         {{ quotePaddingAfter }}
       </div>
-      <a v-t="'full-speech'" href="#" class="full-text-link" @click="showFullSpeech"></a>
+      <a
+        v-t="'full-speech'"
+        href="#"
+        class="full-text-link"
+        @click="showFullSpeech"
+      ></a>
       <div class="quote-button">“</div>
     </div>
     <div class="links">

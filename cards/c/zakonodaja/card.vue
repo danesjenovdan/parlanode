@@ -29,7 +29,12 @@
           </div>
 
           <div class="filter only-abstracts">
-            <input id="only-abstracts" v-model="onlyAbstracts" type="checkbox" class="checkbox">
+            <input
+              id="only-abstracts"
+              v-model="onlyAbstracts"
+              type="checkbox"
+              class="checkbox"
+            >
             <label v-t="'only-abstracts'" for="only-abstracts"></label>
           </div>
         </div>

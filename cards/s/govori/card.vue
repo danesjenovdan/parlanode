@@ -17,7 +17,12 @@
     </div>
 
     <div v-if="speeches.length" class="multiple-speeches">
-      <speech v-quotable v-for="speech in speeches" :key="speech.results.speech_id" :speech="speech" />
+      <speech
+        v-quotable
+        v-for="speech in speeches"
+        :key="speech.results.speech_id"
+        :speech="speech"
+      />
     </div>
     <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
