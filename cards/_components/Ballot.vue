@@ -1,5 +1,8 @@
 <template>
-  <a :href="`${slugs.urls.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`" class="ballot">
+  <a
+    :href="`${slugs.urls.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`"
+    class="ballot"
+  >
     <div class="disunion">
       <div :class="['icon', ballot.option]"></div>
       <div class="text">
@@ -10,7 +13,7 @@
       <p>{{ ballot.motion }}</p>
     </div>
     <div class="outcome">
-      <i :class="[{'glyphicon glyphicon-ok':ballot.result === true}, {'glyphicon glyphicon-remove':ballot.result === false}]"></i>
+      <i :class="['glyphicon', `glyphicon-${ballot.result === true ? 'ok' : 'remove'}`]"></i>
       <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
     </div>
   </a>

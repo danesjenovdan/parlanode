@@ -44,8 +44,13 @@
               <a :href="getMemberLink(member)"><img :src="getMemberPortrait(member)"></a>
             </div>
             <div class="column name">
-              <a :href="getMemberLink(member)" class="funblue-light-hover">{{ member.person.name }}</a><br>
-              <a :href="getMemberPartyLink(member)" class="funblue-light-hover">{{ member.person.party.acronym }}</a>
+              <a :href="getMemberLink(member)" class="funblue-light-hover">
+                {{ member.person.name }}
+              </a>
+              <br>
+              <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+                {{ member.person.party.acronym }}
+              </a>
             </div>
           </li>
         </ul>

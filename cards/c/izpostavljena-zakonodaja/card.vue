@@ -15,7 +15,11 @@
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">
           <div class="row">
-            <div v-for="legislation in data.under_consideration" :key="legislation.epa" class="col-xs-12 col-sm-6 legislation__wrapper">
+            <div
+              v-for="legislation in data.under_consideration"
+              :key="legislation.epa"
+              class="col-xs-12 col-sm-6 legislation__wrapper"
+            >
               <a :href="slugs.legislationLink + legislation.epa" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
@@ -31,7 +35,11 @@
         </p-tab>
         <p-tab :label="$t('recently-passed')">
           <div class="legislation row">
-            <div v-for="legislation in data.accepted" :key="legislation.epa" class="col-sm-6 legislation__wrapper">
+            <div
+              v-for="legislation in data.accepted"
+              :key="legislation.epa"
+              class="col-sm-6 legislation__wrapper"
+            >
               <a :href="slugs.legislationLink + legislation.epa" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">

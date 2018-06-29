@@ -16,6 +16,7 @@
         />
       </mask>
     </defs>
+    <!-- eslint-disable max-len -->
     <path
       v-for="sector in sectors"
       :fill="sector.color"
@@ -24,6 +25,7 @@
       :mask="`url(#donut-hole${_uid})`"
       :key="sector.color"
     />
+    <!-- eslint-enable max-len -->
   </svg>
 </template>
 

@@ -32,7 +32,9 @@
       </div>
       <div class="name">{{ data.name }}</div>
     </div>
-    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
+    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">
+      Izvleček
+    </div>
     <excerpt
       v-if="showMobileExcerpt"
       :content="data.abstract || ''"

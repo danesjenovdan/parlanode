@@ -64,7 +64,10 @@
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
           <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.date">
-            <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs" :key="indexOrg">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
+            <div class="date">
+              {{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }},
+              {{ ' ' + speakingDay[0].session.orgs.map(org => org.name).join(', ') }}
+            </div>
             <ul class="speaks__list">
               <govor
                 v-for="speech in speakingDay"

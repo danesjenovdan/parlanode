@@ -3,7 +3,11 @@
     <template v-if="config.alternative">
       <div class="alt-header-container">
         <div class="alt-header">
-          <div v-if="config.circleText || config.mediaImage" :class="config.circleClass" class="media-object img-circle session-logo">
+          <div
+            v-if="config.circleText || config.mediaImage"
+            :class="config.circleClass"
+            class="media-object img-circle session-logo"
+          >
             <b v-if="config.circleText">{{ config.circleText }}</b>
             <img v-else :src="`https://cdn.parlameter.si/v1/parlassets/icons/${config.mediaImage}.svg`">
           </div>

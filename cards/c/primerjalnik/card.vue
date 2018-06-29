@@ -75,7 +75,9 @@
           <div class="col-xs-5 nopadding">
             <i18n path="comparator-vote-percent" tag="p" class="summary">
               <strong place="num">{{ votes.length }}</strong>
-              <strong place="percent">{{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%</strong>
+              <strong place="percent">
+                {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
+              </strong>
             </i18n>
           </div>
         </div>

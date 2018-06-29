@@ -13,12 +13,16 @@
 
     <ul class="person-list">
       <li v-for="member in data" :key="member.id" class="person">
-        <a :href="slugs.urls.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="portrait column">
-          <img :src="'https://cdn.parlameter.si/v1/parlassets/img/people/square/' + member.gov_id + '.png'">
+        <a :href="getPersonLink(member)" class="portrait column">
+          <img :src="getPersonPortrait(member)">
         </a>
         <div class="column name">
-          <a :href="slugs.urls.base + slugs.personLink.base + slugs.person[member.id].slug + slugs.personLink.pregled" class="funblue-light-hover">{{ member.name }}</a><br>
-          <a v-if="member.acronym.indexOf('NeP') === -1" :href="slugs.urls.base + slugs.partyLink.base + slugs.party[member.party_id].acronym + slugs.partyLink.pregled" class="funblue-light-hover">{{ member.acronym }}</a>
+          <a :href="getPersonLink(member)" class="funblue-light-hover">{{ member.name }}</a><br>
+          <a
+            v-if="member.acronym.indexOf('NeP') === -1"
+            :href="getMemberPartyIdLink(member)"
+            class="funblue-light-hover"
+          >{{ member.acronym }}</a>
           <span v-if="member.acronym.indexOf('NeP') !== -1">{{ member.acronym }}</span>
         </div>
         <div class="column large-number">
@@ -31,6 +35,7 @@
 
 <script>
 import common from 'mixins/common';
+import { getPersonLink, getPersonPortrait, getMemberPartyIdLink } from 'components/links';
 
 export default {
   name: 'ImeKartice',
@@ -51,9 +56,10 @@ export default {
       generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json`,
     };
   },
+  methods: {
+    getPersonLink,
+    getPersonPortrait,
+    getMemberPartyIdLink,
+  },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

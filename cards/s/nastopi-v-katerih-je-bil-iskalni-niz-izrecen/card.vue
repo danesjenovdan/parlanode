@@ -13,16 +13,25 @@
 
     <div v-t="'no-results'" v-if="rawSpeeches.length === 0" class="no-results"></div>
     <scroll-shadow v-else ref="shadow">
-      <ul ref="scrollElement" class="person-list thing-list" @scroll="$refs.shadow.check($event.currentTarget)">
+      <ul
+        ref="scrollElement"
+        class="person-list thing-list"
+        @scroll="$refs.shadow.check($event.currentTarget)"
+      >
         <li v-for="speech in speeches" :key="speech.speech_id" class="person">
           <template v-if="speech.person.type === 'mp'">
             <a :href="speech.memberUrl" class="column portrait">
               <img :src="speech.memberImageUrl">
             </a>
             <div class="column name">
-              <a :href="speech.memberUrl" class="funblue-light-hover">{{ speech.person.name }}</a><br>
+              <a :href="speech.memberUrl" class="funblue-light-hover">
+                {{ speech.person.name }}
+              </a>
+              <br>
               <template v-if="speech.partyUrl">
-                <a :href="speech.partyUrl" class="funblue-light-hover">{{ speech.person.party.acronym }}</a>
+                <a :href="speech.partyUrl" class="funblue-light-hover">
+                  {{ speech.person.party.acronym }}
+                </a>
               </template>
               <template v-else>{{ speech.person.party.acronym }}</template>
             </div>

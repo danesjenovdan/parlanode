@@ -1,6 +1,9 @@
 <template>
   <div id="zakonodaja">
-    <div v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator" class="row legislation-list">
+    <div
+      v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
+      class="row legislation-list"
+    >
       <div class="session-list-generator">
         <div class="col-md-12 filters">
           <ul class="button-filters">

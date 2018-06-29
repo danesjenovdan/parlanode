@@ -5,10 +5,11 @@
         {{ row.name }}
         <span
           v-for="(chunk, k) in row.reverseStack"
-          :class="['pull-right', 'legenda', reverseColorClasses[k + reverseColorClasses.length - row.stack.length]]"
+          :class="['pull-right', 'legenda', getReverseColor(row, k)]"
           :key="chunk.label"
         >
-          <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label }}:</span> {{ chunk.value }}
+          <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label }}: </span>
+          {{ chunk.value }}
         </span>
         <div class="session_votes">
           <div :style="{width: String(row.percentage) + '%'}" class="progress smallbar">
@@ -62,6 +63,11 @@ export default {
   watch: {
     data() {
       this.renderChart();
+    },
+  },
+  methods: {
+    getReverseColor(row, k) {
+      return this.reverseColorClasses[k + this.reverseColorClasses.length - row.stack.length];
     },
   },
 };

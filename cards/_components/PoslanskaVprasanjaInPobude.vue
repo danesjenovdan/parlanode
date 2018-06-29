@@ -31,7 +31,11 @@
       </div>
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
+        <p-search-dropdown
+          :items="dropdownItems.months"
+          :placeholder="monthPlaceholder"
+          :alphabetise="false"
+        />
       </div>
       <div class="filter text-filter">
         <div v-t="'title-search'" class="filter-label"></div>

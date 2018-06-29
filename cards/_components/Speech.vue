@@ -17,7 +17,10 @@
         </template>
       </div>
       <div v-if="showSession" class="session">
-        <a :href="getSessionTranscriptLink(speech.results.session)" class="funblue-light-hover">{{ speech.results.session.name }}</a><br>
+        <a
+          :href="getSessionTranscriptLink(speech.results.session)"
+          class="funblue-light-hover"
+        >{{ speech.results.session.name }}</a><br>
         <span class="date">{{ speech.results.session.date }}</span>
       </div>
     </div>
@@ -43,7 +46,11 @@
     </div>
     <div class="links">
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
-      <a v-if="!showSession" :href="`${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`" class="share"></a>
+      <a
+        v-if="!showSession"
+        :href="`${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`"
+        class="share"
+      ></a>
     </div>
   </div>
 </template>

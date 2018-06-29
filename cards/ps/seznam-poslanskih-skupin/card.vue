@@ -15,12 +15,17 @@
 
       <div class="row">
         <div class="col-md-12">
-          <inner-card v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }" />
+          <inner-card
+            v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }"
+          />
         </div>
       </div>
     </div>
   </div>
-  <inner-card v-else v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }" />
+  <inner-card
+    v-else
+    v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }"
+  />
 </template>
 
 <script>

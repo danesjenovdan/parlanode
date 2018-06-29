@@ -7,14 +7,21 @@
     >
       <div :style="{'background-image': `url('https://cdn.parlameter.si/v1/parlassets/icons/legislation/${icon}')`}" class="icon"></div>
     </div>
-    <div v-if="content || (content.length !== 0)" :class="{'show-parent': showParent, 'show-documents': documents.length > 0}" class="rich-text">
+    <div
+      v-if="content || (content.length !== 0)"
+      :class="{'show-parent': showParent, 'show-documents': documents.length > 0}"
+      class="rich-text"
+    >
       <div class="text-container" v-html="content">
       </div>
     </div>
     <div v-else class="no-abstract">
       <p>Za ta zakon žal nimamo povzetka.</p>
     </div>
-    <div v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)" class="metacontainer">
+    <div
+      v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)"
+      class="metacontainer"
+    >
       <hr>
       <div class="metadata">
         <div v-if="(mainLaw.epa !== '') && showParent" class="main-law-label">

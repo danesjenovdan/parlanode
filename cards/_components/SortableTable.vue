@@ -4,8 +4,8 @@
       <template v-for="column in columns">
         <div
           v-if="column.label"
-          :class="['column', column.additionalClass, { sort: sort === column.id }, { reverse: sortOrder === 'desc' }]"
           :key="column.id"
+          :class="getColumnClasses(column)"
           @click="sortCallback(column.id)"
         >
           {{ column.label }}
@@ -13,17 +13,19 @@
       </template>
     </li>
     <div v-if="items.length === 0" class="empty-dataset">Brez rezultatov.</div>
-    <li v-for="item in items" class="item">
+    <li v-for="(item, k) in items" :key="k" class="item">
       <div
-        v-for="(cell, cellIndex) in item"
-        :class="['column', ...columns[cellIndex].additionalClass, (cell && cell.value <= 0) ? 'red' : '']"
+        v-for="(cell, i) in item"
+        :key="i"
+        :class="getColumnClasses(columns[i], cell)"
       >
         <template v-if="typeof cell === 'object' && cell.contents">
-          <template v-for="(content, contentIndex) in cell.contents">
+          <template v-for="(content, j) in cell.contents">
             <template v-if="content.link">
-              <a :href="content.link">{{ content.text }}</a>
+              <a :href="content.link" :key="j">{{ content.text }}</a>
             </template>
-            <template v-else>{{ content.text }}</template>{{ (cell.contents.length - contentIndex) > 1 ? ', ' : '' }}
+            <template v-else>{{ content.text }}</template>
+            {{ (cell.contents.length - j) > 1 ? ', ' : '' }}
           </template>
         </template>
         <template v-else-if="cell && cell.barchart">
@@ -67,6 +69,25 @@ export default {
     sort: String,
     sortOrder: String,
     sortCallback: Function,
+  },
+  methods: {
+    getColumnClasses(column, cell) {
+      const classes = [
+        'column',
+        column.additionalClass,
+      ];
+      if (!cell) {
+        return [
+          ...classes,
+          { sort: this.sort === column.id },
+          { reverse: this.sortOrder === 'desc' },
+        ];
+      }
+      return [
+        ...classes,
+        { red: (cell && cell.value <= 0) },
+      ];
+    },
   },
 };
 </script>

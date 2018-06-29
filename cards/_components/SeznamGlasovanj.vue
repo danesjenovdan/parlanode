@@ -26,7 +26,11 @@
           <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-            <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
+            <div
+              v-if="vote.has_outliers && !vote.is_outlier"
+              class="lightning-badge"
+              style="position: absolute; left: -37px;"
+            ></div>
             <a :href="vote.url">
               <div class=" col-md-1">
                 <div :class="vote.accepted">
@@ -46,16 +50,28 @@
                 <div class="col-md-6">
                   <div class="session_votes">
                     <div class="progress smallbar">
-                      <div :style="{ width: vote.percent_votes_for + '%' }" class="progress-bar funblue ">
+                      <div
+                        :style="{ width: vote.percent_votes_for + '%' }"
+                        class="progress-bar funblue"
+                      >
                         <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                       </div>
-                      <div :style="{ width: vote.percent_against + '%' }" class="progress-bar fontblue ">
+                      <div
+                        :style="{ width: vote.percent_against + '%' }"
+                        class="progress-bar fontblue"
+                      >
                         <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                       </div>
-                      <div :style="{ width: vote.percent_abstain + '%' }" class="progress-bar noblue ">
+                      <div
+                        :style="{ width: vote.percent_abstain + '%' }"
+                        class="progress-bar noblue"
+                      >
                         <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                       </div>
-                      <div :style="{ width: vote.percent_not_present + '%' }" class="progress-bar ignoreblue ">
+                      <div
+                        :style="{ width: vote.percent_not_present + '%' }"
+                        class="progress-bar ignoreblue"
+                      >
                         <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                       </div>
                     </div>

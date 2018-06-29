@@ -6,12 +6,19 @@
       </a>
 
       <div class="name">
-        <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{ speech.person.name }}</a><br>
+        <a
+          :href="getPersonLink(speech.person)"
+          class="funblue-light-hover"
+        >{{ speech.person.name }}</a><br>
       </div>
     </div>
 
     <div class="motion">
-      <a :href="getSessionSpeechLink(speech)" class="funblue-light-hover" v-html="speech.content_t.substr(0, 180) + '...'"></a>
+      <a
+        :href="getSessionSpeechLink(speech)"
+        class="funblue-light-hover"
+        v-html="speech.content_t.substr(0, 180) + '...'"
+      ></a>
     </div>
   </li>
 </template>

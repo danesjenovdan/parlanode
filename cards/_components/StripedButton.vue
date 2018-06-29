@@ -1,6 +1,8 @@
 <template>
   <div :class="className">
-    <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">{{ smallText }}</div>
+    <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">
+      {{ smallText }}
+    </div>
     <div v-if="text" class="text">{{ text }}</div>
   </div>
 </template>

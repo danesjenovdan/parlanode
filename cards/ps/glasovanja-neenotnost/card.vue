@@ -40,7 +40,11 @@
       </div>
       <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
+        <p-search-dropdown
+          :items="dropdownItems.classifications"
+          :placeholder="classificationPlaceholder"
+          :alphabetise="false"
+        />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
@@ -53,7 +57,10 @@
     </div>
 
     <scroll-shadow ref="shadow">
-      <div :class="['results', {'is-loading': loading }]" @scroll="$refs.shadow.check($event.currentTarget)">
+      <div
+        :class="['results', {'is-loading': loading }]"
+        @scroll="$refs.shadow.check($event.currentTarget)"
+      >
         <template v-for="day in filteredVotingDays">
           <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
           <a

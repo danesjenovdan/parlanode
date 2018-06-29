@@ -33,7 +33,11 @@
       </div>
       <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
+        <p-search-dropdown
+          :items="dropdownItems.classifications"
+          :placeholder="classificationPlaceholder"
+          :alphabetise="false"
+        />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
@@ -41,12 +45,12 @@
       </div>
       <div v-if="type === 'person'" class="filter option-party-buttons">
         <div
-          v-for="option in allOptions"
-          :key="option.id"
-          :class="['party-button', option.class, { selected: selectedOptions.indexOf(option.id) > -1 }]"
-          @click="toggleOption(option.id)"
+          v-for="opt in allOptions"
+          :key="opt.id"
+          :class="['party-button', opt.class, { selected: selectedOptions.indexOf(opt.id) > -1 }]"
+          @click="toggleOption(opt.id)"
         >
-          {{ option.label }}
+          {{ opt.label }}
         </div>
       </div>
       <div v-if="type === 'party'" class="filter text-filter">
@@ -56,9 +60,17 @@
     </div>
 
     <scroll-shadow ref="shadow">
-      <div id="card-votes" class="votes stickinme date-list" @scroll="$refs.shadow.check($event.currentTarget)">
+      <div
+        id="card-votes"
+        class="votes stickinme date-list"
+        @scroll="$refs.shadow.check($event.currentTarget)"
+      >
         <template v-for="votingDay in filteredVotingDays">
-          <div v-if="type === 'person' || selectedSort === 'date'" :key="`${votingDay.date}-1`" class="date">
+          <div
+            v-if="type === 'person' || selectedSort === 'date'"
+            :key="`${votingDay.date}-1`"
+            class="date"
+          >
             {{ votingDay.date }}
           </div>
           <div :key="`${votingDay.date}-2`">

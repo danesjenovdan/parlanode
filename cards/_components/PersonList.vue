@@ -16,7 +16,11 @@
             </a>
             <template v-if="showPartyLink">
               <br>
-              <a v-if="getPersonPartyLink(person)" :href="getPersonPartyLink(person)" class="funblue-light-hover">
+              <a
+                v-if="getPersonPartyLink(person)"
+                :href="getPersonPartyLink(person)"
+                class="funblue-light-hover"
+              >
                 {{ person.party.acronym }}
               </a>
               <span v-else>

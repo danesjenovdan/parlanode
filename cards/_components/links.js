@@ -25,7 +25,7 @@ export const getPersonPartyLink = person => getPartyLink(person.party);
 export const getMemberLink = member => getPersonLink(member.person);
 export const getMemberPortrait = member => getPersonPortrait(member.person);
 export const getMemberPartyLink = member => getPersonPartyLink(member.person);
-
+export const getMemberPartyIdLink = member => `${urlsData.urls.base}${urlsData.partyLink.base}${urlsData.party[member.party_id].acronym}${urlsData.partyLink.pregled}`;
 
 export const getSessionTranscriptLink = session => `${urlsData.urls.base}${urlsData.sessionLink.transkript}${session.id}`;
 export const getSessionVotesLink = session => `${urlsData.urls.base}${urlsData.sessionLink.glasovanja}${session.id}`;

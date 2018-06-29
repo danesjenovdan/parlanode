@@ -41,7 +41,8 @@ export default {
     left: 0;
     width: 100%;
     height: 6px;
-    box-shadow: inset 0px 11.5px 4px -10px rgba(0, 0, 0, 0.24), inset 0px 11.5px 6px -10px rgba(0, 0, 0, 0.24);
+    box-shadow: inset 0px 11.5px 4px -10px rgba(0, 0, 0, 0.24),
+                inset 0px 11.5px 6px -10px rgba(0, 0, 0, 0.24);
     pointer-events: none;
     opacity: 0;
     z-index: 3;

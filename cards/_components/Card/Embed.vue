@@ -26,7 +26,10 @@
             data-id=""
             v-html="embedCode"
           ></textarea>
-          <button class="btn-parlameter btn-full-width btn-blue btn-copy-embed" @click="copyEmbedCode">
+          <button
+            class="btn-parlameter btn-full-width btn-blue btn-copy-embed"
+            @click="copyEmbedCode"
+          >
             <span v-t="'copied'" v-if="copied"></span>
             <span v-t="'copy'" v-else></span>
           </button>

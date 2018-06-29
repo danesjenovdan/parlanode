@@ -8,7 +8,11 @@
             <li v-for="question in day.questions" :key="question.id">
               <div class="parlaicon parlaicon-vprasanje"></div>
               <div class="motion">
-                <a v-if="showAuthor" :href="getPersonLink(question.person)" class="funblue-light-hover">
+                <a
+                  v-if="showAuthor"
+                  :href="getPersonLink(question.person)"
+                  class="funblue-light-hover"
+                >
                   {{ question.person.name }}
                 </a>
                 {{ getRecipient(question) }}
@@ -24,13 +28,22 @@
               <div class="motion">
                 <template v-if="event.type === 'ballot'">
                   {{ getEventOptionText(event) }}
-                  <a :href="getSessionVoteLink(event)" class="funblue-light-hover">{{ event.vote_name }}</a>
+                  <a
+                    :href="getSessionVoteLink(event)"
+                    class="funblue-light-hover"
+                  >{{ event.vote_name }}</a>
                 </template>
                 <template v-else-if="event.type === 'speech'">
-                  <a :href="getSessionSpeechLink(event)" class="funblue-light-hover">{{ getEventOptionText(event) }}</a> na {{ event.session.name }} {{ event.session.org.name }}
+                  <a :href="getSessionSpeechLink(event)" class="funblue-light-hover">
+                    {{ getEventOptionText(event) }}
+                  </a> na {{ event.session.name }} {{ event.session.org.name }}
                 </template>
                 <template v-else>
-                  {{ getEventOptionText(event) }} <a :href="event.content_url" class="funblue-light-hover" target="_blank">{{ event.title }}</a>
+                  {{ getEventOptionText(event) }}
+                  {{ ' ' }}
+                  <a :href="event.content_url" class="funblue-light-hover" target="_blank">
+                    {{ event.title }}
+                  </a>
                 </template>
               </div>
             </li>

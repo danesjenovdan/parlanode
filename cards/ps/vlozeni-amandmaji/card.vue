@@ -55,7 +55,11 @@
       </div>
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false" />
+        <p-search-dropdown
+          :items="dropdownItems.months"
+          :placeholder="monthPlaceholder"
+          :alphabetise="false"
+        />
       </div>
       <div class="filter button-filter">
         <div v-t="'show'" class="filter-label"></div>
@@ -86,7 +90,11 @@
           <a :href="vote.url">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-            <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="left: -37px; position: absolute;"></div>
+            <div
+              v-if="vote.has_outliers && !vote.is_outlier"
+              class="lightning-badge"
+              style="left: -37px; position: absolute;"
+            ></div>
             <div class="col-md-1">
               <div :class="vote.accepted">
                 <p>
@@ -97,24 +105,34 @@
             <div class="col-md-11 border-left">
               <div class="col-md-6">
                 <div class="session_title">
-                  <p>
-                    {{ vote.text.split(' ').length > 19 ? vote.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.text }}
-                  </p>
+                  <p>{{ getVoteText(vote) }}</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="session_votes">
                   <div class="progress smallbar">
-                    <div :style="{ width: `${vote.percent_votes_for}%` }" class="progress-bar fontblue">
+                    <div
+                      :style="{ width: `${vote.percent_votes_for}%` }"
+                      class="progress-bar fontblue"
+                    >
                       <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                     </div>
-                    <div :style="{ width: `${vote.percent_against}%` }" class="progress-bar funblue">
+                    <div
+                      :style="{ width: `${vote.percent_against}%` }"
+                      class="progress-bar funblue"
+                    >
                       <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                     </div>
-                    <div :style="{ width: `${vote.percent_abstain}%` }" class="progress-bar ignoreblue">
+                    <div
+                      :style="{ width: `${vote.percent_abstain}%` }"
+                      class="progress-bar ignoreblue"
+                    >
                       <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                     </div>
-                    <div :style="{ width: `${vote.percent_not_present}%` }" class="progress-bar noblue">
+                    <div
+                      :style="{ width: `${vote.percent_not_present}%` }"
+                      class="progress-bar noblue"
+                    >
                       <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                     </div>
                   </div>
@@ -290,6 +308,13 @@ export default {
     toggleVoteType(voteTypeId) {
       const clickedResult = find(this.voteTypes, { id: voteTypeId });
       clickedResult.selected = !clickedResult.selected;
+    },
+    getVoteText(vote) {
+      const text = vote.short_text || vote.text;
+      if (text.split(' ').length > 14) {
+        return `${text.split(' ').splice(0, 14).join(' ')} ...`;
+      }
+      return text;
     },
   },
 };
