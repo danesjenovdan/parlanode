@@ -5,7 +5,7 @@
   "main": "run.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
-    "dev": "cross-env NODE_ENV=develop NODE_ICU_DATA=node_modules/full-icu nodemon run.js",
+    "dev": "cross-env NODE_ENV=development NODE_ICU_DATA=node_modules/full-icu nodemon run.js",
     "cards-generate": "node cards/generate.js",
     "cards": "node cards/build-cross-env.js",
     "lint": "eslint --ext js,vue ./"
@@ -30,7 +30,6 @@
     "body-parser": "1.18.3",
     "chalk": "2.4.1",
     "cheerio": "^1.0.0-rc.2",
-    "commander": "2.15.1",
     "cors": "^2.8.4",
     "cross-env": "5.2.0",
     "css-loader": "0.28.11",
@@ -76,5 +75,8 @@
     "presets": [
       "env"
     ]
+  },
+  "nodemonConfig": {
+    "ignore": ["assets/*", "og/*", "cards/*"]
   }
 }

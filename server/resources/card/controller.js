@@ -9,6 +9,8 @@ global.Vue = require('vue'); // TODO: do we need this to be global
 const renderer = require('vue-server-renderer');
 const { directive: t } = require('vue-i18n-extensions');
 const exec = util.promisify(require('child_process').exec);
+// TODO: remove this comment when vscode is fixed
+// eslint-disable-next-line import/no-unresolved
 const { performance } = require('perf_hooks');
 const dateFns = require('date-fns');
 const _ = require('lodash');
