@@ -1,7 +1,7 @@
-const server = require('./server/server');
-const database = require('./server/database');
 const chalk = require('chalk');
 const mongoose = require('mongoose');
+const server = require('./server/server');
+const database = require('./server/database');
 
 // Set Mongoose Promise to native Promise
 mongoose.Promise = global.Promise;

@@ -1,5 +1,5 @@
-const controller = require('./controller');
 const { startOfTomorrow } = require('date-fns');
+const controller = require('./controller');
 
 function setIntervalMidnight(func) {
   const ONE_DAY = 1000 * 60 * 60 * 24;

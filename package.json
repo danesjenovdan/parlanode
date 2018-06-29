@@ -7,8 +7,8 @@
     "start": "NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
     "dev": "NODE_ENV=develop NODE_ICU_DATA=node_modules/full-icu supervisor run",
     "cards-generate": "node cards/generate.js",
-    "cards-lint": "eslint --ext js,vue ./cards",
-    "cards": "node cards/build-cross-env.js"
+    "cards": "node cards/build-cross-env.js",
+    "lint": "eslint --ext js,vue ./"
   },
   "repository": {
     "type": "git",
