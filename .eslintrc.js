@@ -3,9 +3,12 @@ const path = require('path');
 module.exports = {
   extends: [
     'airbnb-base',
-    'plugin:vue/base',
-    // 'plugin:vue/recommended',
+    // 'plugin:vue/base',
+    'plugin:vue/recommended',
   ],
+  parserOptions: {
+    ecmaVersion: 2018,
+  },
   env: {
     browser: true,
   },
@@ -15,11 +18,21 @@ module.exports = {
     d3: false,
   },
   plugins: [
-    'vue',
     'import',
-    // 'html',
   ],
   rules: {
+    'vue/require-v-for-key': 'off',
+    'max-len': 'off',
+    'vue/html-indent': 'off',
+    'vue/name-property-casing': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/attribute-hyphenation': 'off',
+    'vue/order-in-components': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/attributes-order': 'off',
+    'vue/html-self-closing': 'off',
+    // 'vue/max-attributes-per-line': ['error', { 'singleline': 2 }],
+    // 'vue/html-self-closing': ['error', { 'html': { 'normal': 'any' } }],
     'object-curly-newline': ['error', { multiline: true, consistent: true }],
     'no-param-reassign': 'off',
     'prefer-destructuring': 'off',

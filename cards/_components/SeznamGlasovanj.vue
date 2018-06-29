@@ -46,16 +46,16 @@
                 <div class="col-md-6">
                   <div class="session_votes">
                     <div class="progress smallbar">
-                      <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
+                      <div class="progress-bar funblue " :style="{ width: vote.percent_votes_for + '%' }">
                         <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                       </div>
-                      <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_against + '%' }">
+                      <div class="progress-bar fontblue " :style="{ width: vote.percent_against + '%' }">
                         <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                       </div>
-                      <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
+                      <div class="progress-bar noblue " :style="{ width: vote.percent_abstain + '%' }">
                         <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                       </div>
-                      <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
+                      <div class="progress-bar ignoreblue " :style="{ width: vote.percent_not_present + '%' }">
                         <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                       </div>
                     </div>

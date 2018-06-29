@@ -5,21 +5,21 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead" v-t="'info.lead'"></p>
-      <p class="info-text heading" v-t="'info.methodology'"></p>
-      <p class="info-text" v-t="'info.text'"></p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <div class="legislation-list">
       <scroll-shadow ref="shadow">
         <div id="card-search" @scroll="$refs.shadow.check($event.currentTarget)">
           <sortable-table
-            class=""
             :columns="columns"
             :items="mappedItems"
             :sort="currentSort"
             :sort-order="currentSortOrder"
             :sort-callback="selectSort"
+            class=""
           />
         </div>
       </scroll-shadow>
@@ -34,6 +34,7 @@ import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 
 export default {
+  name: 'ZakonodajaIskanje',
   components: {
     SortableTable,
     ScrollShadow,
@@ -42,7 +43,6 @@ export default {
     common,
     searchTitle,
   ],
-  name: 'ZakonodajaIskanje',
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
     return {

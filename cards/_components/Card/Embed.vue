@@ -6,7 +6,7 @@
         <div class="embed-switch-container">
           <div class="embed-label" v-t="'embed.always-refresh'"></div>
           <div class="embed-switch-big-box" @click="toggleEmbedSwitch">
-            <div :class="['embed-switch-box', { off: !this.refresh }]">
+            <div :class="['embed-switch-box', { off: !refresh }]">
               <div class="embed-switch">
                 <div class="embed-switches">
                   <div class="leftswitch" v-t="'yes'"></div>

@@ -16,7 +16,7 @@
       @keydown.down.prevent="focus(focused + 1, true)"
       :placeholder="adjustedPlaceholder">
     <ul
-      :class="['search-dropdown-options', { visible: this.active, up: this.up }]"
+      :class="['search-dropdown-options', { visible: active, up: up }]"
       :style="{'margin-top': upMargin}"
       @mouseleave="focus(-1)">
       <template v-for="(item, index) in filteredItems">

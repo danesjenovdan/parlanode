@@ -39,7 +39,7 @@
         <div class="filter-label" v-t="'working-body'"></div>
         <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
-      <div v-if="this.type === 'person'" class="filter option-party-buttons">
+      <div v-if="type === 'person'" class="filter option-party-buttons">
         <div
           v-for="option in allOptions"
           :key="option.id"
@@ -49,7 +49,7 @@
           {{ option.label }}
         </div>
       </div>
-      <div v-if="this.type === 'party'" class="filter text-filter">
+      <div v-if="type === 'party'" class="filter text-filter">
         <div class="filter-label" v-t="'sort-by'"></div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
