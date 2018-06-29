@@ -1,4 +1,4 @@
-/* eslint-disable global-require, no-console */
+/* eslint-disable global-require */
 const _ = require('lodash');
 
 let config;
@@ -26,16 +26,12 @@ const defaultConfig = {
   ogRootUrl: `http://localhost:${port}/og_cards`,
 };
 
-if (env === 'development') {
-  config = require('./config.dev.js');
-} else if (env === 'staging') {
-  config = require('./config.staging.js');
-} else if (env === 'production') {
-  config = require('./config.prod.js');
+if (env === 'production') {
+  config = require('./production');
+} else if (env === 'development') {
+  config = require('./development');
 } else {
-  config = require('./config.sample.js');
-  console.warn('Using sample config. Please copy and edit it accordingly, this probably won\'t run.');
-  console.warn('Technically, this is an invalid environment. "development", "staging" or "production" required.');
+  config = require('./sample');
 }
 
 module.exports = _.merge({}, defaultConfig, config);
