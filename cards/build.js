@@ -1,17 +1,16 @@
 const webpack = require('webpack');
 const fs = require('fs-extra');
+const chalk = require('chalk');
 const clientConfig = require('./webpack.config.client');
 const serverConfig = require('./webpack.config.server');
-const chalk = require('chalk');
 
 // Returns all directories on certain path
-const dirs = p =>
-  fs.readdirSync(p)
-    .filter(f => fs.statSync(`${p}/${f}`).isDirectory())
-    .map(f => `${p}/${f}`);
+const dirs = p => fs.readdirSync(p)
+  .filter(f => fs.statSync(`${p}/${f}`).isDirectory())
+  .map(f => `${p}/${f}`);
 
 // Runs webpack compilation with passed configuration
-const compileWithWebpack = config =>
+const compileWithWebpack = config => (
   new Promise((resolve, reject) => {
     webpack(config, (err, stats) => {
       if (err) {
@@ -27,7 +26,8 @@ const compileWithWebpack = config =>
       }));
       resolve();
     });
-  });
+  })
+);
 
 // Refreshes lastUpdate param in card.json file on passed path
 const refreshLastUpdate = async (path) => {

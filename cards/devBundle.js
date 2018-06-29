@@ -1,15 +1,14 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import _ from 'lodash';
+/* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';
 import cardData from 'cardPath/card.json';
 import data from 'cardPath/data.json';
 import parlaState from 'cardPath/state.json';
 import i18nDefault from 'i18n/defaults.json';
-let i18nCard = {}
-try {
-  i18nCard = require('i18n/card.json');
-} catch(e) {}
+import i18nCard from 'i18n/card.json';
+/* eslint-enable import/no-unresolved */
 
 Vue.use(VueI18n);
 

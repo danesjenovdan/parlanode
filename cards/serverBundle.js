@@ -3,10 +3,11 @@ import VueI18n from 'vue-i18n';
 import request from 'request';
 import { merge } from 'lodash';
 import SearchDropdown from 'components/SearchDropdown.vue';
+/* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';
-
 import i18nDefault from 'i18n/defaults.json';
 import i18nCard from 'i18n/card.json';
+/* eslint-enable import/no-unresolved */
 
 Vue.use(VueI18n);
 

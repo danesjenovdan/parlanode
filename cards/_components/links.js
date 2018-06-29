@@ -1,23 +1,23 @@
 import urlsData from '../../assets/urls.json';
-import { PORTRAIT_ROOT_URL, SEARCH_ROOT_URL } from './constants.js';
+import { PORTRAIT_ROOT_URL, SEARCH_ROOT_URL } from './constants';
 
-export const getPersonLink = person =>
-  urlsData.urls.base +
-  urlsData.personLink.base +
-    (typeof urlsData.person[person.id] !== 'undefined' ? urlsData.person[person.id].slug : '') +
-  urlsData.personLink.pregled;
+export const getPersonLink = person => (
+  urlsData.urls.base
+  + urlsData.personLink.base
+  + (typeof urlsData.person[person.id] !== 'undefined' ? urlsData.person[person.id].slug : '')
+  + urlsData.personLink.pregled
+);
 
-export const getPersonPortrait = person =>
-  `${PORTRAIT_ROOT_URL}${person.gov_id}.png`;
+export const getPersonPortrait = person => `${PORTRAIT_ROOT_URL}${person.gov_id}.png`;
 
 export const getPartyLink = (party) => {
   if (!party.acronym || party.acronym.indexOf('NeP') > -1) {
     return '';
   }
-  return urlsData.urls.base +
-         urlsData.partyLink.base +
-         urlsData.party[party.id].acronym +
-         urlsData.partyLink.pregled;
+  return urlsData.urls.base
+         + urlsData.partyLink.base
+         + urlsData.party[party.id].acronym
+         + urlsData.partyLink.pregled;
 };
 
 export const getPersonPartyLink = person => getPartyLink(person.party);

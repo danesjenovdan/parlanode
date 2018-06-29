@@ -22,8 +22,8 @@ export default {
         ? 'col-md-12'
         : 'col-md-6 col-md-offset-3',
       embedContainerClass:
-        (this.$root.$options.cardData.cardData.big ? ' big-card' : '') +
-        (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
+        (this.$root.$options.cardData.cardData.big ? ' big-card' : '')
+        + (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
       contextUrl: this.slugs.urls.base,
     };
   },
