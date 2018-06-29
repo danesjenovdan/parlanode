@@ -73,7 +73,8 @@ export default {
   },
   name: 'NastopiVKaterihJeBilIskalniNizIzrecen',
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
+    const keywords = this.$options.cardData.data.responseHeader.params.q
+      .split('content_t:')[1].split(')')[0];
     return {
       data: this.$options.cardData.data,
       headerConfig: {

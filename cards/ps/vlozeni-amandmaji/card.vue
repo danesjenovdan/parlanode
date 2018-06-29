@@ -147,148 +147,148 @@
 </template>
 
 <script>
-  import { format as formatDate } from 'date-fns';
-  import { find } from 'lodash';
+import { format as formatDate } from 'date-fns';
+import { find } from 'lodash';
 
-  import voteMapper from 'helpers/voteMapper';
-  import stateLoader from 'helpers/stateLoader';
-  import generateMonths from 'helpers/generateMonths';
-  import common from 'mixins/common';
-  import { partyTitle } from 'mixins/titles';
-  import { partyHeader } from 'mixins/altHeaders';
-  import PSearchDropdown from 'components/SearchDropdown.vue';
-  import SearchField from 'components/SearchField.vue';
-  import StripedButton from 'components/StripedButton.vue';
+import voteMapper from 'helpers/voteMapper';
+import stateLoader from 'helpers/stateLoader';
+import generateMonths from 'helpers/generateMonths';
+import common from 'mixins/common';
+import { partyTitle } from 'mixins/titles';
+import { partyHeader } from 'mixins/altHeaders';
+import PSearchDropdown from 'components/SearchDropdown.vue';
+import SearchField from 'components/SearchField.vue';
+import StripedButton from 'components/StripedButton.vue';
 
-  const formattedDateToMonthId = (date) => {
-    const [day, month, year] = date.split('. ');
-    return formatDate(new Date(year, month - 1, day), 'YYYY-M');
-  };
+const formattedDateToMonthId = (date) => {
+  const [day, month, year] = date.split('. ');
+  return formatDate(new Date(year, month - 1, day), 'YYYY-M');
+};
 
-  export default {
-    components: { PSearchDropdown, SearchField, StripedButton },
-    mixins: [common, partyTitle, partyHeader],
-    name: 'VlozeniAmandmaji',
-    data() {
-      const loadFromState = stateLoader(this.$options.cardData.parlaState);
+export default {
+  components: { PSearchDropdown, SearchField, StripedButton },
+  mixins: [common, partyTitle, partyHeader],
+  name: 'VlozeniAmandmaji',
+  data() {
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
-      const voteTypes = [
-        { id: true, color: 'binary-for', label: this.$t('accepted'), selected: false },
-        { id: false, color: 'binary-against', label: this.$t('rejected'), selected: false },
-      ];
+    const voteTypes = [
+      { id: true, color: 'binary-for', label: this.$t('accepted'), selected: false },
+      { id: false, color: 'binary-against', label: this.$t('rejected'), selected: false },
+    ];
 
-      const votingDays = this.$options.cardData.data.results.map(votingDay => ({
-        date: votingDay.date,
-        results: votingDay.votes.map(voteMapper),
-      }));
+    const votingDays = this.$options.cardData.data.results.map(votingDay => ({
+      date: votingDay.date,
+      results: votingDay.votes.map(voteMapper),
+    }));
 
-      const allTags = this.$options.cardData.data.all_tags
-        .map(tag => ({ id: tag, label: tag, selected: false }));
+    const allTags = this.$options.cardData.data.all_tags
+      .map(tag => ({ id: tag, label: tag, selected: false }));
 
-      const allMonths = generateMonths();
+    const allMonths = generateMonths();
 
-      return {
-        data: this.$options.cardData.data,
-        textFilter: loadFromState('text') || '',
-        votingDays,
-        allTags: loadFromState('tags', allTags) || allTags,
-        allMonths: loadFromState('months', allMonths) || allMonths,
-        voteTypes: loadFromState('voteTypes', voteTypes) || voteTypes,
-      };
+    return {
+      data: this.$options.cardData.data,
+      textFilter: loadFromState('text') || '',
+      votingDays,
+      allTags: loadFromState('tags', allTags) || allTags,
+      allMonths: loadFromState('months', allMonths) || allMonths,
+      voteTypes: loadFromState('voteTypes', voteTypes) || voteTypes,
+    };
+  },
+  computed: {
+    generatedCardUrl() {
+      const state = {};
+
+      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
+      if (this.selectedMonths.length > 0) state.months = this.selectedMonths;
+      if (this.selectedVoteTypes.length > 0) state.voteTypes = this.selectedVoteTypes;
+      if (this.textFilter.length > 0) state.text = this.textFilter;
+
+      return `${this.url}${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
-    computed: {
-      generatedCardUrl() {
-        const state = {};
+    filteredVotingDays() {
+      return this.getFilteredVotingDays();
+    },
+    tagPlaceholder() {
+      return this.selectedTags.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
+    },
+    monthPlaceholder() {
+      return this.selectedMonths.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
+        : this.$t('select-placeholder');
+    },
+    dropdownItems() {
+      const validTags = [];
+      const validMonths = [];
 
-        if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-        if (this.selectedMonths.length > 0) state.months = this.selectedMonths;
-        if (this.selectedVoteTypes.length > 0) state.voteTypes = this.selectedVoteTypes;
-        if (this.textFilter.length > 0) state.text = this.textFilter;
-
-        return `${this.url}${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
-      },
-      filteredVotingDays() {
-        return this.getFilteredVotingDays();
-      },
-      tagPlaceholder() {
-        return this.selectedTags.length > 0
-          ? this.$t('selected-placeholder', { num: this.selectedTags.length })
-          : this.$t('select-placeholder');
-      },
-      monthPlaceholder() {
-        return this.selectedMonths.length > 0
-          ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
-          : this.$t('select-placeholder');
-      },
-      dropdownItems() {
-        const validTags = [];
-        const validMonths = [];
-
-        this.getFilteredVotingDays(true).forEach((votingDay) => {
-          const monthId = formattedDateToMonthId(votingDay.date);
-          if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
-          votingDay.results.forEach((vote) => {
-            vote.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) validTags.push(tag);
-            });
+      this.getFilteredVotingDays(true).forEach((votingDay) => {
+        const monthId = formattedDateToMonthId(votingDay.date);
+        if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+        votingDay.results.forEach((vote) => {
+          vote.tags.forEach((tag) => {
+            if (validTags.indexOf(tag) === -1) validTags.push(tag);
           });
         });
+      });
 
-        return {
-          tags: this.allTags
-            .filter(tag => validTags.indexOf(tag.id) > -1 || tag.selected),
-          months: this.allMonths
-            .filter(month => validMonths.indexOf(month.id) > -1 || month.selected),
-        };
-      },
-      selectedTags() {
-        return this.allTags
-          .filter(tag => tag.selected)
-          .map(tag => tag.id);
-      },
-      selectedMonths() {
-        return this.allMonths
-          .filter(month => month.selected)
-          .map(month => month.id);
-      },
-      selectedVoteTypes() {
-        return this.voteTypes
-          .filter(voteType => voteType.selected)
-          .map(voteType => voteType.id);
-      },
+      return {
+        tags: this.allTags
+          .filter(tag => validTags.indexOf(tag.id) > -1 || tag.selected),
+        months: this.allMonths
+          .filter(month => validMonths.indexOf(month.id) > -1 || month.selected),
+      };
     },
-    methods: {
-      getFilteredVotingDays(onlyFilterByText = false) {
-        const filterVotes = (vote) => {
-          const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-          const tagMatch = onlyFilterByText
+    selectedTags() {
+      return this.allTags
+        .filter(tag => tag.selected)
+        .map(tag => tag.id);
+    },
+    selectedMonths() {
+      return this.allMonths
+        .filter(month => month.selected)
+        .map(month => month.id);
+    },
+    selectedVoteTypes() {
+      return this.voteTypes
+        .filter(voteType => voteType.selected)
+        .map(voteType => voteType.id);
+    },
+  },
+  methods: {
+    getFilteredVotingDays(onlyFilterByText = false) {
+      const filterVotes = (vote) => {
+        const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch = onlyFilterByText
             || this.selectedTags.length === 0
             || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-          const voteTypeMatch = onlyFilterByText
+        const voteTypeMatch = onlyFilterByText
             || this.selectedVoteTypes.length === 0
             || this.selectedVoteTypes.indexOf(vote.result) > -1;
-          return textMatch && tagMatch && voteTypeMatch;
-        };
+        return textMatch && tagMatch && voteTypeMatch;
+      };
 
-        return this.votingDays
-          .map(votingDay => ({
-            date: votingDay.date,
-            results: votingDay.results.filter(filterVotes),
-          }))
-          .filter((votingDay) => {
-            if (votingDay.results.length === 0) return false;
-            const monthId = formattedDateToMonthId(votingDay.date);
-            return onlyFilterByText
+      return this.votingDays
+        .map(votingDay => ({
+          date: votingDay.date,
+          results: votingDay.results.filter(filterVotes),
+        }))
+        .filter((votingDay) => {
+          if (votingDay.results.length === 0) return false;
+          const monthId = formattedDateToMonthId(votingDay.date);
+          return onlyFilterByText
               || this.selectedMonths.length === 0
               || this.selectedMonths.indexOf(monthId) > -1;
-          });
-      },
-      toggleVoteType(voteTypeId) {
-        const clickedResult = find(this.voteTypes, { id: voteTypeId });
-        clickedResult.selected = !clickedResult.selected;
-      },
+        });
     },
-  };
+    toggleVoteType(voteTypeId) {
+      const clickedResult = find(this.voteTypes, { id: voteTypeId });
+      clickedResult.selected = !clickedResult.selected;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -384,9 +384,6 @@
       }
     }
   }
-
-
-
 
 
   @media (max-width: 991px) {

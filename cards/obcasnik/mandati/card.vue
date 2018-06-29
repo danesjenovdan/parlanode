@@ -29,28 +29,28 @@
 </template>
 
 <script>
-  import common from 'mixins/common';
+import common from 'mixins/common';
 
-  export default {
-    components: {},
-    mixins: [common],
-    name: 'ImeKartice',
-    data() {
-      return {
-        data: this.$options.cardData.data
-          .filter(person => person.mandates > 3)
-          .sort((a, b) => b.mandates - a.mandates),
-        headerConfig: {
-          circleIcon: 'og-list',
-          heading: '&nbsp;',
-          subheading: '7. sklic parlamenta',
-          alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: this.$options.cardData.cardData.name,
-        },
-        generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json`,
-      };
-    },
-  };
+export default {
+  components: {},
+  mixins: [common],
+  name: 'ImeKartice',
+  data() {
+    return {
+      data: this.$options.cardData.data
+        .filter(person => person.mandates > 3)
+        .sort((a, b) => b.mandates - a.mandates),
+      headerConfig: {
+        circleIcon: 'og-list',
+        heading: '&nbsp;',
+        subheading: '7. sklic parlamenta',
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.$options.cardData.cardData.name,
+      },
+      generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json`,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>

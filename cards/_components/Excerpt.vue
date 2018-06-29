@@ -171,7 +171,7 @@ hr {
     // padding-left: 20px;
     // padding-right: 20px;
   }
-  
+
   .rich-text {
     overflow-x: hidden;
     overflow-y: auto;

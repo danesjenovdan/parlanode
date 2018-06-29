@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  extends: 'airbnb-base',
+  extends: [
+    'airbnb-base',
+    'plugin:vue/base',
+    // 'plugin:vue/recommended',
+  ],
   env: {
     browser: true,
   },
@@ -10,7 +14,11 @@ module.exports = {
     $: false,
     d3: false,
   },
-  plugins: ['vue', 'import', 'html'],
+  plugins: [
+    'vue',
+    'import',
+    // 'html',
+  ],
   rules: {
     'object-curly-newline': ['error', { multiline: true, consistent: true }],
     'no-param-reassign': 'off',
