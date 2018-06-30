@@ -23,19 +23,21 @@ if (['dev', 'build'].indexOf(cmd) === -1) {
   process.exit(1);
 }
 
-cardPath = path.normalize(cardPath)
-  .replace(/\\/g, '/')
-  .replace(/^cards\//, '')
-  .replace(/\/$/, '');
+if (cardPath !== 'all') {
+  cardPath = path.normalize(cardPath)
+    .replace(/\\/g, '/')
+    .replace(/^cards\//, '')
+    .replace(/\/$/, '');
+
+  if (!fs.existsSync(path.join(__dirname, cardPath, 'card.json'))) {
+    // eslint-disable-next-line no-console
+    console.error(chalk.red(`Invalid card path. '${chalk.yellow(cardPath)}/card.json' doesn't exist.`));
+    process.exit(1);
+  }
+}
 
 // eslint-disable-next-line no-console
 console.log(chalk.green(cmd), `(${lang})`, chalk.yellow(cardPath));
-
-if (!fs.existsSync(path.join(__dirname, cardPath, 'card.json'))) {
-  // eslint-disable-next-line no-console
-  console.error(chalk.red("Invalid card path 'card.json' doesn't exist."));
-  process.exit(1);
-}
 
 const args = {};
 process.argv.slice(3).forEach((arg) => {

@@ -40,6 +40,8 @@ const refreshLastUpdate = async (path) => {
 };
 
 const compileAndRefresh = (path) => {
+  // eslint-disable-next-line no-console
+  console.log(chalk.green(`Building ${chalk.yellow(path)}`));
   const compile = Promise.all([
     compileWithWebpack(clientConfig(path)),
     compileWithWebpack(serverConfig(path)),
@@ -62,12 +64,7 @@ if (!process.env.CARD_NAME) {
       process.exit(1);
     });
 } else {
-  let cardName = process.env.CARD_NAME;
-
-  if (cardName.indexOf('cards/') === 0) {
-    cardName = cardName.replace('cards/', '');
-  }
-
+  const cardName = process.env.CARD_NAME;
   compileAndRefresh(`./cards/${cardName}`)
     .catch((error) => {
       // eslint-disable-next-line no-console

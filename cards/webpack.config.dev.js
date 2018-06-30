@@ -6,12 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = () => {
-  let cardName = process.env.CARD_NAME;
-
-  if (cardName.indexOf('cards/') === 0) {
-    cardName = cardName.replace('cards/', '');
-  }
-
+  const cardName = process.env.CARD_NAME;
   return merge.smart(baseConfig(`${path.resolve(__dirname)}/${cardName}`), {
     mode: 'development',
     optimization: {
