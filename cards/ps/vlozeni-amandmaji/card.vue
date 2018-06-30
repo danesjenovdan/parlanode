@@ -201,7 +201,7 @@ export default {
 
     const votingDays = this.$options.cardData.data.results.map(votingDay => ({
       date: votingDay.date,
-      results: votingDay.votes.map(voteMapper),
+      results: votingDay.votes.map(o => voteMapper(o, this.slugs)),
     }));
 
     const allTags = this.$options.cardData.data.all_tags
@@ -326,7 +326,7 @@ export default {
     getVoteText(vote) {
       const text = vote.short_text || vote.text;
       if (text.split(' ').length > 14) {
-        return `${text.split(' ').splice(0, 14).join(' ')} ...`;
+        return `${text.split(' ').slice(0, 14).join(' ')} ...`;
       }
       return text;
     },

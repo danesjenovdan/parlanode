@@ -46,7 +46,7 @@
       <p-tab label="Povzetek" variant="dark">
         <excerpt
           :content="content"
-          :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
+          :main-law="excerptData"
           :documents="documents"
           :show-parent="false"
           :icon="data.icon"
@@ -157,6 +157,13 @@ export default {
     },
     generatedCardUrl() {
       return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ startTab: this.startTab }))}`;
+    },
+    excerptData() {
+      return {
+        epa: this.data.epa || '',
+        name: this.data.text || '',
+        link: `${this.slugs.urls.base}/zakonodaja/${this.data.epa}`,
+      };
     },
   },
 };

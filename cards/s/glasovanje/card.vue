@@ -38,7 +38,7 @@
     <excerpt
       v-if="showMobileExcerpt"
       :content="data.abstract || ''"
-      :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
+      :main-law="excerptData"
       :documents="data.documents"
       :show-parent="true"
       class="visible-xs"
@@ -77,7 +77,7 @@
       <p-tab :label="$t('summary')">
         <excerpt
           :content="data.abstract || ''"
-          :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
+          :main-law="excerptData"
           :documents="data.documents"
           :show-parent="true"
         />
@@ -165,6 +165,13 @@ export default {
   computed: {
     generatedCardUrl() {
       return `${this.url}${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
+    },
+    excerptData() {
+      return {
+        epa: this.data.legislation.epa || '',
+        name: this.data.legislation.text,
+        link: `${this.slugs.urls.base}/zakonodaja/${this.data.legislation.epa}`,
+      };
     },
   },
   // glasovanje-update je bilo prazno, created() je iz developa

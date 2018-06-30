@@ -234,7 +234,10 @@ export default {
     },
     voteObject() {
       return {
-        votes: this.data.map(v => v.results),
+        votes: this.data.map(v => ({
+          ...v.results,
+          session_id: v.session.id,
+        })),
         session: {},
         tags: [],
       };

@@ -205,7 +205,7 @@ export default {
     processVotes() {
       const votes = this.data.votes.map((e) => {
         const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
-        e.url = `https://parlameter.si/seja/glasovanje/${(e.session_id || this.data.session.id)}/${e.motion_id}`;
+        e.url = `${this.$root.slugs.urls.base}/seja/glasovanje/${(e.session_id || this.data.session.id)}/${e.motion_id}`;
         e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
         e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
         e.percent_votes_for = Math.floor((e.votes_for / allInVotes) * 100);
@@ -233,7 +233,7 @@ export default {
     getVoteText(vote) {
       const text = vote.short_text || vote.text;
       if (text.split(' ').length > 14) {
-        return `${text.split(' ').splice(0, 14).join(' ')} ...`;
+        return `${text.split(' ').slice(0, 14).join(' ')} ...`;
       }
       return text;
     },

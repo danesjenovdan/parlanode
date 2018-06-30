@@ -29,7 +29,7 @@ function chart(rawData) {
   }
 
   function generateSearchUrl(queryParams) {
-    let searchurl = `https://parlameter.si/seje/isci/filter/?q=${timeQuery.q}`;
+    let searchurl = `${this.$root.slugs.urls.base}/seje/isci/filter/?q=${timeQuery.q}`;
     if (queryParams.people && queryParams.people.length > 0) {
       if (!searchurl.endsWith('?')) {
         searchurl = `${searchurl}&people=${queryParams.people}`;
