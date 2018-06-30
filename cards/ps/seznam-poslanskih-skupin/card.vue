@@ -16,7 +16,10 @@
       <div class="row">
         <div class="col-md-12">
           <inner-card
-            v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }"
+            :processed-party-data="processedPartyData"
+            :header-config="headerConfig"
+            :generated-card-url="generatedCardUrl"
+            :current-analysis-data="currentAnalysisData"
           />
         </div>
       </div>
@@ -24,21 +27,29 @@
   </div>
   <inner-card
     v-else
-    v-bind="{ processedPartyData, headerConfig, generatedCardUrl, currentAnalysisData }"
+    :processed-party-data="processedPartyData"
+    :header-config="headerConfig"
+    :generated-card-url="generatedCardUrl"
+    :current-analysis-data="currentAnalysisData"
   />
 </template>
 
 <script>
 import { find } from 'lodash';
-import urlFunctionalities from 'mixins/urlFunctionalities';
+import common from 'mixins/common';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
 
 export default {
   name: 'SeznamPoslanskihSkupin',
-  components: { BlueButtonList, InnerCard },
-  mixins: [urlFunctionalities],
+  components: {
+    BlueButtonList,
+    InnerCard,
+  },
+  mixins: [
+    common,
+  ],
   data() {
     return {
       data: this.$options.cardData.data.data,
@@ -53,7 +64,7 @@ export default {
         heading: '&nbsp;',
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: `${this.$options.cardData.cardData.name} ${this.currentAnalysisData.titleSuffix}`,
+        title: this.currentAnalysisData.title,
       };
     },
     currentAnalysisData() {
@@ -78,6 +89,10 @@ export default {
         params.analysis = this.currentAnalysis;
       }
       return params;
+    },
+    generatedCardUrl() {
+      const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
+      return `${this.url}?altHeader=true${state}`;
     },
   },
   methods: {

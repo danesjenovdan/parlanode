@@ -1,10 +1,10 @@
 <template>
   <prisotnost-chart
     :card-data="$options.cardData"
+    :type="$options.cardData.cardData.type"
     :person="$options.cardData.data.person"
     :results="$options.cardData.data.results"
-    v-bind="{ generatedCardUrl }"
-    type="poslanec"
+    :generated-card-url="generatedCardUrl"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -18,7 +18,6 @@
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
-import urlFunctionalities from 'mixins/urlFunctionalities';
 import PrisotnostChart from 'components/PrisotnostChart.vue';
 
 export default {
@@ -28,14 +27,13 @@ export default {
   },
   mixins: [
     common,
-    urlFunctionalities,
     memberOverview,
     memberTitle,
   ],
-  data() {
-    return {
-      urlParameters: {},
-    };
+  computed: {
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
+    },
   },
 };
 </script>

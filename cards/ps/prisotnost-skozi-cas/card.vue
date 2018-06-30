@@ -4,7 +4,7 @@
     :type="$options.cardData.cardData.type"
     :party="$options.cardData.data.party"
     :results="$options.cardData.data.results"
-    v-bind="{ generatedCardUrl }"
+    :generated-card-url="generatedCardUrl"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -18,7 +18,6 @@
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
-import urlFunctionalities from 'mixins/urlFunctionalities';
 import PrisotnostChart from 'components/PrisotnostChart.vue';
 
 export default {
@@ -28,14 +27,13 @@ export default {
   },
   mixins: [
     common,
-    urlFunctionalities,
     partyOverview,
     partyTitle,
   ],
-  data() {
-    return {
-      urlParameters: {},
-    };
+  computed: {
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.party.id}?altHeader=true`;
+    },
   },
 };
 </script>

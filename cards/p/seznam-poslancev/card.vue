@@ -96,7 +96,6 @@ import { find } from 'lodash';
 import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
-import urlFunctionalities from 'mixins/urlFunctionalities';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
@@ -117,7 +116,6 @@ export default {
   },
   mixins: [
     common,
-    urlFunctionalities,
   ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
@@ -196,6 +194,10 @@ export default {
       }
 
       return parameters;
+    },
+    generatedCardUrl() {
+      const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
+      return `${this.url}?altHeader=true${state}`;
     },
     processedMembers() {
       let analysisMax = 0;

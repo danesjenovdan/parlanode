@@ -5,10 +5,8 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam poslanskih skupin glede na rezultate analize {{ currentAnalysisData.titleSuffix }}
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text lead" v-text="currentAnalysisData.title"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <p class="info-text" v-html="currentAnalysisData.explanation"></p>
     </div>
 
