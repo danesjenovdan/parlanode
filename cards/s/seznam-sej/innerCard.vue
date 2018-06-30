@@ -81,7 +81,9 @@ export default {
   },
   methods: {
     getSessionUrl(session) {
-      if (!this.slugs || session.link_to === 'nothing') return '';
+      if (!this.slugs || session.link_to === 'nothing') {
+        return '';
+      }
       return `${this.slugs.urls.base}/seja/zakonodaja/${session.id}`;
     },
   },

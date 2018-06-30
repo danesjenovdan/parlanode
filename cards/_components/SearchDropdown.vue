@@ -233,7 +233,9 @@ export default {
     focus(index, withKeyboard) {
       this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);
 
-      if (!withKeyboard) return;
+      if (!withKeyboard) {
+        return;
+      }
 
       const additionalOffset = this.filteredItems.slice(0, this.focused + 1)
         .map(item => (item.groupLabel ? 1 : 0))

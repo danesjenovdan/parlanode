@@ -238,7 +238,9 @@ export default {
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
-      if (!this.voteData || this.voteData.length === 0) return [];
+      if (!this.voteData || this.voteData.length === 0) {
+        return [];
+      }
 
       const filterBallots = (ballot) => {
         const tagMatch = onlyFilterByText

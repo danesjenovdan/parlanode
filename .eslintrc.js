@@ -18,6 +18,8 @@ module.exports = {
     'vue/html-self-closing': ['error', { html: { normal: 'any' } }],
     'vue/html-closing-bracket-newline': ['error', { multiline: 'always' }],
     'vue/html-closing-bracket-spacing': 'error',
+    'curly': ['error', 'all'],
+    'brace-style': ['error', '1tbs', { allowSingleLine: false }],
     'object-curly-newline': ['error', { multiline: true, consistent: true }],
     'no-param-reassign': 'off',
     'prefer-destructuring': 'off',

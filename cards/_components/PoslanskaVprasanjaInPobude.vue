@@ -142,7 +142,9 @@ export default {
       this.getFilteredQuestionDays(true).forEach((questionDay) => {
         const [, month, year] = questionDay.date.split(' ').map(string => parseInt(string, 10));
         const monthId = `${year}-${month}`;
-        if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+        if (validMonths.indexOf(monthId) === -1) {
+          validMonths.push(monthId);
+        }
 
         questionDay.questions
           .forEach((question) => {
@@ -181,10 +183,18 @@ export default {
     cardUrl() {
       const state = {};
 
-      if (this.selectedRecipients.length > 0) state.recipients = this.selectedRecipients;
-      if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-      if (this.textFilter.length > 0) state.text = this.textFilter;
-      if (this.selectedMPs.length > 0) state.mps = this.selectedMPs;
+      if (this.selectedRecipients.length > 0) {
+        state.recipients = this.selectedRecipients;
+      }
+      if (this.selectedMonths.length > 0) {
+        state.months = this.selectedMonths.map(month => month.id);
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
+      if (this.selectedMPs.length > 0) {
+        state.mps = this.selectedMPs;
+      }
 
       return `${this.url}/${this[this.type].id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -209,7 +219,9 @@ export default {
       };
 
       const filterDates = (questionDay) => {
-        if (onlyFilterByText || this.selectedMonths.length === 0) return true;
+        if (onlyFilterByText || this.selectedMonths.length === 0) {
+          return true;
+        }
 
         const [, month, year] = questionDay.date.split(' ').map(string => parseInt(string, 10));
 

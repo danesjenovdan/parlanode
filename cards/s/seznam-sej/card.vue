@@ -185,16 +185,24 @@ export default {
           }
         });
 
-      if (this.currentSortOrder === 'desc') sortedAndFiltered.reverse();
-      if (this.justFive) sortedAndFiltered = sortedAndFiltered.slice(0, 5);
+      if (this.currentSortOrder === 'desc') {
+        sortedAndFiltered.reverse();
+      }
+      if (this.justFive) {
+        sortedAndFiltered = sortedAndFiltered.slice(0, 5);
+      }
 
       return sortedAndFiltered;
     },
     generatedCardUrl() {
       const params = { filters: this.currentFilter };
 
-      if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies;
-      if (this.justFive) params.justFive = true;
+      if (this.currentWorkingBodies.length > 0) {
+        params.workingBodies = this.currentWorkingBodies;
+      }
+      if (this.justFive) {
+        params.justFive = true;
+      }
 
       return `${this.url}?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
     },
@@ -258,7 +266,9 @@ export default {
       this.measurePiwik(filter, '', '');
     },
     measurePiwik(filter, sort, order) {
-      if (typeof measure !== 'function') return;
+      if (typeof measure !== 'function') {
+        return;
+      }
 
       if (sort !== '') {
         measure('s', 'session-sort', `${sort} ${order}`, '');

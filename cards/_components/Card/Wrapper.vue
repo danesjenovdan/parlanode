@@ -96,7 +96,9 @@ export default {
           contentElement.style.height = `${contentElement.offsetHeight}px`;
           this.currentBack = newBack;
         }, RIPPLE_DURATION / 2);
-        window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
+        window.setTimeout(() => {
+          this.transitionClass = null;
+        }, RIPPLE_DURATION);
       } else {
         this.transitionClass = ['revealed', `clicked-${newBack}`];
 
@@ -104,7 +106,9 @@ export default {
           this.currentBack = null;
           contentElement.style.height = this.previousHeight;
         }, RIPPLE_DURATION / 2);
-        window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
+        window.setTimeout(() => {
+          this.transitionClass = null;
+        }, RIPPLE_DURATION);
       }
     },
   },

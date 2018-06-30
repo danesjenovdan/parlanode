@@ -147,7 +147,9 @@ export default {
 
       this.votes.forEach((vote) => {
         vote.tags.forEach((tag) => {
-          if (validTags.indexOf(tag) === -1) validTags.push(tag);
+          if (validTags.indexOf(tag) === -1) {
+            validTags.push(tag);
+          }
         });
       });
       return {

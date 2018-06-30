@@ -119,8 +119,12 @@ export default {
           case 'result':
             a = 'v obravnavi';
             b = 'v obravnavi';
-            if (typeof A.result !== 'undefined') a = A.result[0];
-            if (typeof B.result !== 'undefined') b = B.result[0];
+            if (typeof A.result !== 'undefined') {
+              a = A.result[0];
+            }
+            if (typeof B.result !== 'undefined') {
+              b = B.result[0];
+            }
             return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           default:
             return 0;

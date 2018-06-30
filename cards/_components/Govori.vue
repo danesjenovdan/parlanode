@@ -338,7 +338,9 @@ export default {
       }, waitTime);
     },
     loadMore() {
-      if (this.card.lockLoading || this.card.isLoading) return;
+      if (this.card.lockLoading || this.card.isLoading) {
+        return;
+      }
       this.card.isLoading = true;
       this.card.currentPage += 1;
 

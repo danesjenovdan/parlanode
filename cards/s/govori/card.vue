@@ -67,7 +67,9 @@ export default {
         .on('mouseup', (event) => {
           event.preventDefault();
           $(document).find('.everything .quote-button').hide();
-          if (selectElement !== event.currentTarget) return;
+          if (selectElement !== event.currentTarget) {
+            return;
+          }
 
           const selection = getSelected();
 

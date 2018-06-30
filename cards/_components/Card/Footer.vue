@@ -40,7 +40,9 @@ export default {
         this.$emit('toggleBack', name);
         this.currentBack = this.currentBack === name ? null : name;
         this.clicksDisabled = true;
-        window.setTimeout(() => { this.clicksDisabled = false; }, RIPPLE_DURATION);
+        window.setTimeout(() => {
+          this.clicksDisabled = false;
+        }, RIPPLE_DURATION);
       }
     },
   },

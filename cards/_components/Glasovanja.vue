@@ -173,7 +173,9 @@ export default {
 
     if (this.cardData.parlaState) {
       const state = this.cardData.parlaState;
-      if (state.text) textFilter = state.text;
+      if (state.text) {
+        textFilter = state.text;
+      }
 
       if (state.classifications) {
         allClassifications = selectFromState(allClassifications, state.classifications);
@@ -216,7 +218,9 @@ export default {
         votingDay.ballots
           .forEach((ballot) => {
             ballot.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) validTags.push(tag);
+              if (validTags.indexOf(tag) === -1) {
+                validTags.push(tag);
+              }
             });
           });
       });

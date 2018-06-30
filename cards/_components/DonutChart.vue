@@ -56,7 +56,9 @@ export default {
 
       return this.sectionData.map((item) => {
         a = 360 * item.percentage;
-        if (a === 360) a = 359.999;
+        if (a === 360) {
+          a = 359.999;
+        }
         aCalc = (a > 180) ? 360 - a : a;
         aRad = (aCalc * Math.PI) / 180;
         z = Math.sqrt(2 - (2 * Math.cos(aRad)));

@@ -222,10 +222,18 @@ export default {
     generatedCardUrl() {
       const state = {};
 
-      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      if (this.selectedMonths.length > 0) state.months = this.selectedMonths;
-      if (this.selectedVoteTypes.length > 0) state.voteTypes = this.selectedVoteTypes;
-      if (this.textFilter.length > 0) state.text = this.textFilter;
+      if (this.selectedTags.length > 0) {
+        state.tags = this.selectedTags;
+      }
+      if (this.selectedMonths.length > 0) {
+        state.months = this.selectedMonths;
+      }
+      if (this.selectedVoteTypes.length > 0) {
+        state.voteTypes = this.selectedVoteTypes;
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
 
       return `${this.url}${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
@@ -248,10 +256,14 @@ export default {
 
       this.getFilteredVotingDays(true).forEach((votingDay) => {
         const monthId = formattedDateToMonthId(votingDay.date);
-        if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
+        if (validMonths.indexOf(monthId) === -1) {
+          validMonths.push(monthId);
+        }
         votingDay.results.forEach((vote) => {
           vote.tags.forEach((tag) => {
-            if (validTags.indexOf(tag) === -1) validTags.push(tag);
+            if (validTags.indexOf(tag) === -1) {
+              validTags.push(tag);
+            }
           });
         });
       });
@@ -298,7 +310,9 @@ export default {
           results: votingDay.results.filter(filterVotes),
         }))
         .filter((votingDay) => {
-          if (votingDay.results.length === 0) return false;
+          if (votingDay.results.length === 0) {
+            return false;
+          }
           const monthId = formattedDateToMonthId(votingDay.date);
           return onlyFilterByText
               || this.selectedMonths.length === 0

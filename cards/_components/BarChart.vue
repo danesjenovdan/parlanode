@@ -63,7 +63,9 @@ export default {
   },
   computed: {
     rows() {
-      if (this.alreadyCalculated) return this.data;
+      if (this.alreadyCalculated) {
+        return this.data;
+      }
 
       const rows = JSON.parse(JSON.stringify(this.data));
       const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value), 0);
