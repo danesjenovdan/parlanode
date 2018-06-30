@@ -1,4 +1,5 @@
 /* globals module */
+const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -43,6 +44,10 @@ module.exports = () => {
       new ExtractTextPlugin({
         disable: true,
       }),
+      new webpack.NormalModuleReplacementPlugin(
+        /assets\/urls\.json$/,
+        require.resolve('../assets/urls.dev.json'),
+      ),
     ],
   });
 };
