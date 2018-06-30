@@ -27,7 +27,7 @@ function chart(rawData, component) {
     };
   }
 
-  $.getJSON(`${component.slugs.urls.data}/getAllPGsExt/`, (response) => {
+  $.getJSON(`${component.$root.slugs.urls.data}/getAllPGsExt/`, (response) => {
     const parties = response;
 
     let sum = 0;
