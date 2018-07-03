@@ -310,16 +310,6 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
     if (renderedCard) {
       renderedCard.lastAccessed = new Date();
       renderedCard.save();
-    } else {
-      const cacheDataYesterday = { ...cacheData, date: formattedDate(-1) };
-      renderedCard = await CardRender.findOne(cacheDataYesterday).sort({ dateTime: -1 });
-      if (renderedCard) {
-        // render today's cache but don't await it
-        renderCard(cacheData, cardJSON, originalUrl);
-        // eslint-disable-next-line no-console
-        console.log(`Card: ${cacheData.group}/${cacheData.method} - RETURN YESTERDAY'S CACHE AND RENDER NEW`);
-        return renderedCard;
-      }
     }
   }
   if (!renderedCard || Number(cardJSON.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
