@@ -3,10 +3,9 @@ const _ = require('lodash');
 
 let config;
 const env = process.env.NODE_ENV;
-const port = Number.parseInt(process.env.PORT, 10) || 3000;
 
 const defaultConfig = {
-  port,
+  port: 3000,
   serverTimeout: 30000,
   db: {
     name: 'parla-db',
@@ -23,7 +22,7 @@ const defaultConfig = {
   },
   cardLang: 'sl',
   ogCapturePath: './og',
-  ogRootUrl: `http://localhost:${port}/og_cards`,
+  ogRootUrl: 'http://localhost:3000/og_cards',
 };
 
 if (env === 'production') {
