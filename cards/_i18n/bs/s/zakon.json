@@ -1,0 +1,12 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Povzetek zakona/akta in rezultati vseh z njim povezanih glasovanj.",
+      "text": "Iz {link} naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.",
+      "link": {
+        "link": "https://www.dz-rs.si",
+        "text": "www.dz-rs.si"
+      }
+    }
+  }
+}
