@@ -1,0 +1,12 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Seznam vseh članov poslanske skupine.",
+      "text": "Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino, črpamo s spletnega mesta {link}. Prikazani so samo trenutno aktivni poslanci.",
+      "link": {
+        "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
+        "text": "DZ RS"
+      }
+    }
+  }
+}
