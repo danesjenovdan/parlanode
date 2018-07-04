@@ -20,6 +20,7 @@ function init() {
       return false;
     }
   })();
+
   if (!hasFullICU) {
     // eslint-disable-next-line no-console
     console.warn(chalk.red('Node was NOT started with FULL ICU for Intl!'));
