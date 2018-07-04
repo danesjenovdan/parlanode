@@ -1,5 +1,7 @@
+/* eslint-disable no-underscore-dangle */
 const mongoose = require('mongoose');
 const axios = require('axios');
+const path = require('path');
 const fs = require('fs-extra');
 const ejs = require('ejs');
 const cheerio = require('cheerio');
@@ -144,7 +146,6 @@ async function shouldBuildCard(cacheData, cardJSON) {
     if (!cardBuild) {
       return true;
     }
-    // eslint-disable-next-line no-underscore-dangle
     if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(cardBuild.lastBuilt)) {
       return true;
     }
@@ -208,14 +209,17 @@ async function addOgImage(cardJSON, cardRender, context) {
   const ogEjs = await fs.readFile(`views/og/${cardJSON.type}.ejs`, 'utf-8');
   const ogHtml = ejs.render(ogEjs, context);
 
-  // eslint-disable-next-line no-underscore-dangle
-  await webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
+  // don't await call to webshot so it doesn't block card response
+  /* await */ webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
     siteType: 'html',
     captureSelector: '#og-container',
     quality: 80,
-  });
+  })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error('webshot failed:', error);
+    });
 
-  // eslint-disable-next-line no-underscore-dangle
   cardRender.ogImageUrl = `${config.ogRootUrl}/${cardRender._id}.jpeg`;
 
   const $ = cheerio.load(cardRender.html, { decodeEntities: false });
@@ -226,7 +230,6 @@ async function addOgImage(cardJSON, cardRender, context) {
 }
 
 async function renderCard(cacheData, cardJSON, originalUrl) {
-  // eslint-disable-next-line no-underscore-dangle
   cacheData.card = cardJSON._id;
   cacheData.dataUrl = expandUrl(cardJSON.dataUrl);
   cacheData.cardUrl = `${urlSlugs.urls.glej}${originalUrl}`;
@@ -377,5 +380,39 @@ exports.render = (req, res) => {
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
+    });
+};
+
+// serve-static serves the og images directly so this gets hit only if webshot was not done yet
+// we just wait for a couple of seconds and return the image if it exists
+exports.waitForOgImage = (req, res) => {
+  const CardRender = mongoose.model('CardRender');
+
+  CardRender.findById(req.params.renderId)
+    .then((cardRender) => {
+      if (!cardRender) {
+        // eslint-disable-next-line no-console
+        console.error('og image request cardRender not found:', req.params.renderId);
+        return res.status(404).send('Not Found');
+      }
+
+      const imgPath = path.resolve(config.ogCapturePath, `${cardRender._id}.jpeg`);
+      if (fs.existsSync(imgPath)) {
+        return res.sendFile(imgPath);
+      }
+
+      return setTimeout(() => {
+        if (fs.existsSync(imgPath)) {
+          return res.sendFile(imgPath);
+        }
+        // eslint-disable-next-line no-console
+        console.error('og image request file not found after delay:', req.params.renderId);
+        return res.status(404).send('Not Found');
+      }, 5000);
+    })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error('og image request failed:', error.message);
+      return res.status(500).send('Error');
     });
 };
