@@ -1,0 +1,14 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu {link}.",
+      "link": "DZ RS",
+      "words-heading": "Besede, ki so zaznamovale sejo",
+      "words-text": "Analizo izvajamo po statistiki tf-idf. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
+      "presence-heading": "Prisotnost poslanskih skupin na seji",
+      "presence-text": "Poslanske skupine razvrstimo glede na odstotek, na koliko glasovanjih izbrane seje so bili prisotni njihovi poslanci in poslanke.",
+      "votes-heading": "Glasovanja",
+      "votes-text": "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate."
+    }
+  }
+}
