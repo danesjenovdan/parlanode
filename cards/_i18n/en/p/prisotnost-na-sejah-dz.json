@@ -1,0 +1,8 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Prisotnost poslanca/-ke na sejah DZ v primerjavi s povprečno in največjo vrednostjo.",
+      "text": "Preštejemo vse seje in preverimo, če je poslanec/-ka glasoval/-a na vsaj enem glasovanju na posamezni seji. Če je glasoval/-a vsaj enkrat, ga/jo štejemo kot prisotno/-ega na posamezni seji. Delimo število sej, ko je bil/-a prisoten/-a, s številom vseh sej in normaliziramo (min 1 - max 100)."
+    }
+  }
+}
