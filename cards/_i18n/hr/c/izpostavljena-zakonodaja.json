@@ -1,0 +1,11 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Kažemo šest zakonov, ki so še v parlamentarni obravnavi, in šest nedavno sprejetih.",
+      "text": "Izpostavljene zakone določamo uredniško, in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi. To je edina stvar na Parlametru, ki je ne kurira računalnik, ampak človek."
+    },
+    "under-consideration": "Trenutno v obravnavi",
+    "recently-passed": "Nedavno sprejeto",
+    "all-legislation": "Vsa zakonodaja"
+  }
+}
