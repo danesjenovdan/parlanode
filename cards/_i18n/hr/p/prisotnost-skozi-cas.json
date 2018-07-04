@@ -1,0 +1,8 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Prisotnost poslanca/-ke na glasovanjih DZ skozi čas.",
+      "text": "Vsak mesec preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom vseh glasovanj, na katerih bi moral/-a poslanec/-ka ta mesec glasovati. Če poslanec/-ka v izbranem mesecu mandata ni imel/-a, prikažemo, na kolikšnem odstotku glasovanj ni imel/-a pravice glasovati."
+    }
+  }
+}
