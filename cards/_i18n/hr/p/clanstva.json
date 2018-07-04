@@ -1,0 +1,12 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Izpis vseh članstev poslanca/-ke v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.",
+      "text": "Podatki o članstvih pridobljeni s spletnega mesta {link}.",
+      "link": {
+        "text": "DZ RS",
+        "link": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi"
+      }
+    }
+  }
+}

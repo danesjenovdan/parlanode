@@ -1,0 +1,31 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Pregled vseh glasovanj, ki so se zgodila na seji",
+      "text": [
+        "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
+        "Nabor glasovanj pridobimo s spletnega mesta {link1}.",
+        "Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, {link2} in opisana v {link3}.",
+        "Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo {link4} pridobimo \"log-likelihood\" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju \"log-likelihood\" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse \"log-likelihood\" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj \"nepričakovana.\" V kartici jih označimo z ikono ognja."
+      ],
+      "links": [
+        {
+          "link": "http://www.dz-rs.si",
+          "text": "DZ RS"
+        },
+        {
+          "link": "http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+          "text": "kot je implementirana v knjižicah scikit-learn"
+        },
+        {
+          "link": "http://www.miketipping.com/papers/met-mppca.pdf",
+          "text": "M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622"
+        },
+        {
+          "link": "https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485",
+          "text": "score_samples"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Pregled poslanskih vprašanj na nivoju poslanske skupine.",
+      "text": [
+        "Zbrali smo vsa poslanska vprašanja, jih sortirali po poslanskih skupinah in jih ponudili v pregled glede na poslanca/-ko, ki jih je postavil/-a, glede na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi iskanje po naslovu poslanskih vprašanj.",
+        "Nabor poslanskih vprašanj pridobimo s spletnega mesta {link}."
+      ],
+      "link": {
+        "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
+        "text": "DZ RS"
+      }
+    },
+    "mp": "Poslanec/-ka",
+    "addressee": "Naslovljenec/-ka"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "sl": {
+    "info": {
+      "text": "Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu {link}, strojno razbijemo na posamezne govorne nastope. To je kartica, ki predstavlja en govor.",
+      "link": {
+        "link": "http://www.dz-rs.si",
+        "text": "DZ RS"
+      }
+    }
+  }
+}

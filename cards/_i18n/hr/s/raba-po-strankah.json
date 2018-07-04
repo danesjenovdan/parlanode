@@ -1,0 +1,8 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na poslansko skupino.",
+      "text": "Za vsak zadetek glede na iskalni niz preverimo, v koliko govorih poslank in poslancev poslanskih skupin se pojavi. Seštejemo jih glede na poslansko skupino in prikažemo v krožnem grafikonu."
+    }
+  }
+}
