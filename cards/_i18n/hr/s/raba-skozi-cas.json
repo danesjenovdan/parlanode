@@ -1,0 +1,10 @@
+{
+  "sl": {
+    "info": {
+      "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.",
+      "text": "Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu."
+    },
+    "whole-term": "Cel mandat",
+    "last-year": "Zadnje leto"
+  }
+}
