@@ -3,7 +3,7 @@
   "name": "Seznam poslancev",
   "dataUrl": "{analize}/p/getListOfMembersTickers",
   "type": "seznam_poslancev",
-  "lastUpdate": "2018-06-28T15:59:43.025Z",
+  "lastUpdate": "2018-07-05T13:30:11.352Z",
   "method": "seznam-poslancev",
   "group": "p",
   "big": true,

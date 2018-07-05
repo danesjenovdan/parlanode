@@ -78,7 +78,7 @@ export default {
     },
     groups: {
       type: Array,
-      default: () => [],
+      default: null,
     },
     items: {
       type: Array,
@@ -109,12 +109,14 @@ export default {
       default: false,
     },
   },
-  data: () => ({
-    filter: '',
-    active: false,
-    focused: -1,
-    upMargin: 0,
-  }),
+  data() {
+    return {
+      filter: '',
+      active: false,
+      focused: -1,
+      upMargin: 0,
+    };
+  },
   computed: {
     filteredItems() {
       const filterAndSort = items => items
