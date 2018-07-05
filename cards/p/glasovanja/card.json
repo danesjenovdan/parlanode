@@ -3,7 +3,7 @@
   "name": "Glasovanja",
   "dataUrl": "{analize}/p/getTaggedBallots",
   "type": "poslanec",
-  "lastUpdate": "2018-06-28T12:40:48.705Z",
+  "lastUpdate": "2018-07-05T15:56:47.290Z",
   "method": "glasovanja",
   "group": "p",
   "big": true
