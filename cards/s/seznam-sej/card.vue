@@ -30,7 +30,7 @@
               type="checkbox"
               class="checkbox"
             >
-            <label for="justFive">Samo zadnjih 5</label>
+            <label v-t="'just-last-five'" for="justFive"></label>
           </div>
         </div>
       </div>
@@ -45,8 +45,9 @@
             :select-sort="selectSort"
             :processed-sessions="processedSessions"
             :organisation-is-working-body="organisationIsWorkingBody"
-            :info-text="infoText"
             :generated-card-url="generatedCardUrl"
+            :current-filter="currentFilter"
+            :just-five="justFive"
           />
         </div>
       </div>
@@ -62,8 +63,9 @@
     :select-sort="selectSort"
     :processed-sessions="processedSessions"
     :organisation-is-working-body="organisationIsWorkingBody"
-    :info-text="infoText"
     :generated-card-url="generatedCardUrl"
+    :current-filter="currentFilter"
+    :just-five="justFive"
   />
 </template>
 
@@ -77,16 +79,24 @@ import InnerCard from './innerCard.vue';
 
 export default {
   name: 'SeznamSej',
-  components: { InnerCard, PSearchDropdown, StripedButton },
-  mixins: [common],
+  components: {
+    InnerCard,
+    PSearchDropdown,
+    StripedButton,
+  },
+  mixins: [
+    common,
+  ],
   data() {
+    const i18nConfig = this.$i18n.messages[this.$i18n.locale].config;
     return {
+      i18nConfig,
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
+      filters: i18nConfig.tabs.map(e => e.title),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData, 'state.filter') || 'Seje DZ',
+      currentFilter: get(this.$options.cardData, 'state.filter') || i18nConfig.tabs[0].title,
       justFive: get(this.$options.cardData, 'state.justFive') || false,
       headerConfig: {
         circleIcon: 'og-list',
@@ -98,13 +108,15 @@ export default {
     };
   },
   computed: {
-    columns: () => [
-      { id: 'image', label: '', additionalClass: 'image' },
-      { id: 'name', label: 'Ime', additionalClass: 'wider name' },
-      { id: 'date', label: 'Začetek' },
-      { id: 'updated', label: 'Sprememba', additionalClass: 'optional' },
-      { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' },
-    ],
+    columns() {
+      return [
+        { id: 'image', label: '', additionalClass: 'image' },
+        { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
+        { id: 'date', label: this.$t('start') },
+        { id: 'updated', label: this.$t('change'), additionalClass: 'optional' },
+        { id: 'workingBody', label: this.$t('organization'), additionalClass: 'wider optional' },
+      ];
+    },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
@@ -119,18 +131,19 @@ export default {
         .map(workingBody => workingBody.label);
     },
     inputPlaceholder() {
-      return this.currentWorkingBodies.length ? `izbranih delovnih teles: ${this.currentWorkingBodies.length}` : 'izberi delovno telo';
+      return this.currentWorkingBodies.length > 0
+        ? this.$t('selected-placeholder', { num: this.currentWorkingBodies.length })
+        : this.$t('select-working-body-placeholder');
     },
     processedSessions() {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
-          if (this.currentFilter === 'Seje DZ') {
-            return session.orgs.filter(org => org.id === 95).length > 0;
-          }
-          if (this.currentFilter === 'Seje kolegija predsednika DZ') {
-            return session.orgs.filter(org => org.id === 9).length > 0;
-          }
-          if (this.currentFilter === 'Seje delovnih teles') {
+          const selectedTab = this.i18nConfig.tabs.find(t => t.title === this.currentFilter);
+          if (selectedTab) {
+            if (selectedTab.org_ids && selectedTab.org_ids.length) {
+              return session.orgs.filter(org => selectedTab.org_ids.indexOf(org.id) !== -1).length;
+            }
+            // if no selectedTab.org_ids
             let match = false;
             if (this.currentWorkingBodies.length === 0) {
               session.orgs.forEach((org) => {
@@ -152,7 +165,7 @@ export default {
             case 'name':
               a = sessionA.name;
               b = sessionB.name;
-              return a.toLowerCase().localeCompare(b.toLowerCase());
+              return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
             case 'date':
               a = sessionA.date_ts;
               b = sessionB.date_ts;
@@ -195,44 +208,34 @@ export default {
       return sortedAndFiltered;
     },
     generatedCardUrl() {
-      const params = { filters: this.currentFilter };
+      const params = {
+        filters: this.currentFilter,
+      };
 
       if (this.currentWorkingBodies.length > 0) {
         params.workingBodies = this.currentWorkingBodies;
       }
+
       if (this.justFive) {
         params.justFive = true;
       }
 
-      return `${this.url}?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
-    },
-    infoText() {
-      const filterText = `${this.currentFilter}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
-      const workingBodiesText = this.currentWorkingBodyNames.join(', ');
-      const filterAndWorkingBodiesText = filterText || workingBodiesText ? ` (${filterText}${workingBodiesText})` : '';
-      const sortTexts = {
-        name: 'imenu seje',
-        date: 'datumu začetka seje',
-        updated: 'datumu zadnje spremembe podatkov o seji',
-        workingBody: 'imenu organizacije',
-      };
-      const justFiveText = this.justFive ? ', izpis pa omejen samo na zgornjih pet sej' : '';
-
-      return `Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu${filterAndWorkingBodiesText}. Seznam je sortiran po ${sortTexts[this.currentSort]}${justFiveText}.`;
+      return `${this.url}${Object.keys(params).length > 0 ? `?state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
     },
   },
   watch: {
     currentFilter(newValue) {
-      if (newValue !== 'Seje delovnih teles') {
+      const otherTab = this.i18nConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      if (newValue !== otherTab.title) {
         this.workingBodies.forEach((workingBody) => {
-          // eslint-disable-next-line
           workingBody.selected = false;
         });
       }
     },
     currentWorkingBodies(newValue) {
-      if (newValue.length !== 0 && this.currentFilter !== 'Seje delovnih teles') {
-        this.currentFilter = 'Seje delovnih teles';
+      const otherTab = this.i18nConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      if (newValue.length !== 0 && this.currentFilter !== otherTab.title) {
+        this.currentFilter = otherTab.title;
       }
     },
   },
@@ -249,7 +252,13 @@ export default {
   },
   methods: {
     organisationIsWorkingBody(organisationId) {
-      return [9, 95].indexOf(organisationId) === -1;
+      const orgIds = this.i18nConfig.tabs.reduce((acc, cur) => {
+        if (cur.org_ids) {
+          return acc.concat(cur.org_ids);
+        }
+        return acc;
+      }, []);
+      return orgIds.indexOf(organisationId) === -1;
     },
     selectSort(sortId) {
       if (this.currentSort === sortId) {

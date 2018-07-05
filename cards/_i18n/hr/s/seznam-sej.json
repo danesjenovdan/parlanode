@@ -1,0 +1,21 @@
+{
+  "hr": {
+    "config": {
+      "tabs": [
+        {
+          "title": "Seje sabora",
+          "org_ids": [
+            199
+          ]
+        },
+        {
+          "title": "Ostale seje"
+        }
+      ]
+    },
+    "info": {
+      "lead": "",
+      "text": ""
+    }
+  }
+}

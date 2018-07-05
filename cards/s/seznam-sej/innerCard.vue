@@ -5,9 +5,37 @@
     :header-config="headerConfig"
   >
     <div slot="info">
-      <p class="info-text lead">{{ infoText }}</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Podatke o sejah pridobivamo iz spletnega mesta DZ RS, natančneje od <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDt/poDatumu/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3F0NXQw8DX09PTz9HI0M3E30w9EUBJkYARV4W4b4-PoYGnib6UdRot8dXT-G8Wj6_S0N3Qw8Q43dTYx9QwwMfI2I02-AAzgakGg_pgej8BtfkBsKAooAQ6b9bA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/">tu</a>, <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3INMjAw8Db0tQ3x8fQwNvM30wwkpiAJKG-AAjgYE9LtD9BNvv7-loZuBZ6ixu4mxb4iBga8RcfrxOJCA_oLcUCBwVAQAGc0QlQ!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/">tu</a> in <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDt/poDatumu/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3F0NXQw8DX09PTz9HI0M3E30w9EUBJkYARV4W4b4-PoYGnib6UdRot8dXT-G8Wj6_S0N3Qw8Q43dTYx9QwwMfI2I02-AAzgakGg_pgej8BtfkBsKAooAQ6b9bA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/.">tu.</a></p>
+      <i18n path="info.lead" tag="p" class="info-text lead">
+        <span place="filter">{{ currentFilter }}</span>
+        <span place="just-last-five">
+          <span v-t="'limited-to-last-five'" v-if="justFive"></span>
+        </span>
+        <span place="sort-by">{{ $t(`sort-by--${currentSort}`) }}</span>
+      </i18n>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          v-t="'info.links[0].text'"
+          :href="$t('info.links[0].link')"
+          place="link1"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+        <a
+          v-t="'info.links[1].text'"
+          :href="$t('info.links[1].link')"
+          place="link2"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+        <a
+          v-t="'info.links[2].text'"
+          :href="$t('info.links[2].link')"
+          place="link3"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
     </div>
 
     <sortable-table
@@ -56,13 +84,17 @@ export default {
       type: Array,
       default: () => [],
     },
-    infoText: {
-      type: String,
-      default: '',
-    },
     generatedCardUrl: {
       type: String,
       default: '',
+    },
+    currentFilter: {
+      type: String,
+      default: '',
+    },
+    justFive: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
