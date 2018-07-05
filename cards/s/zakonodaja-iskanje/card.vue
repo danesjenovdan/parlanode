@@ -117,8 +117,8 @@ export default {
             b = typeof B.id !== 'undefined' ? B.id : '';
             return parseInt(a, 10) - parseInt(b, 10);
           case 'result':
-            a = 'v obravnavi';
-            b = 'v obravnavi';
+            a = this.$t('vote-under-consideration');
+            b = this.$t('vote-under-consideration');
             if (typeof A.result !== 'undefined') {
               a = A.result[0];
             }

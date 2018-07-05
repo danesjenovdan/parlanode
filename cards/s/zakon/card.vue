@@ -31,7 +31,7 @@
         </template>
         <template v-else>
           <i class="glyphicon v-obravnavi"></i>
-          <div class="text">v obravnavi</div>
+          <div v-t="'vote-under-consideration'" class="text"></div>
         </template>
       </div>
       <div class="law-title">{{ $options.cardData.data.text }}</div>

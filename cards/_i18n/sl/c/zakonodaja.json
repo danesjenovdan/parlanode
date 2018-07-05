@@ -1,5 +1,18 @@
 {
   "sl": {
+    "config": {
+      "tabs": [
+        {
+          "title": "Zakoni",
+          "classifications": [
+            "zakon"
+          ]
+        },
+        {
+          "title": "Akti"
+        }
+      ]
+    },
     "info": {
       "lead": "Seznam vseh zakonov in aktov, o katerih so v tem sklicu glasovali na sejah Državnega zbora in ustrezajo uporabniškemu vnosu (naslov, matično delovno telo).",
       "text": "Podatke o sejah pridobivamo iz spletnega mesta DZ RS.",

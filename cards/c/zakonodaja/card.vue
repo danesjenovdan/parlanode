@@ -11,7 +11,7 @@
               v-for="(filter, index) in filters"
               :key="index"
               :selected="filter === currentFilter"
-              :small-text="$t(filter)"
+              :small-text="filter"
               color="sds"
               @click.native="selectFilter(filter)"
             />
@@ -25,7 +25,7 @@
           <div class="filter month-dropdown">
             <div v-t="'working-body'" class="filter-label"></div>
             <p-search-dropdown
-              :items="allworkingBodies"
+              :items="allWorkingBodies"
               :placeholder="inputPlaceholder"
               :alphabetise="false"
             />
@@ -74,24 +74,27 @@ export default {
   mixins: [common],
   data() {
     // get all working bodies from result data
-    let allworkingBodies = this.$options.cardData.data.results
+    let allWorkingBodies = this.$options.cardData.data.results
       .map(x => x.mdt)
       .filter(x => x.id > 0);
     // prepare for dropdown ui component
-    allworkingBodies = allworkingBodies
+    allWorkingBodies = allWorkingBodies
       .map(wb => ({ id: wb.id, label: wb.name, selected: false }));
     // remove duplicates
-    allworkingBodies = allworkingBodies
+    allWorkingBodies = allWorkingBodies
       .map(JSON.stringify)
       .reverse()
       .filter((e, i, a) => a.indexOf(e, i + 1) === -1)
       .reverse()
       .map(JSON.parse);
 
+    const i18nConfig = this.$i18n.messages[this.$i18n.locale].config;
+
     return {
+      i18nConfig,
       data: this.$options.cardData.data.results,
-      filters: ['laws', 'acts'],
-      currentFilter: this.$options.cardData.parlaState.filter || 'laws',
+      filters: i18nConfig.tabs.map(e => e.title),
+      currentFilter: this.$options.cardData.parlaState.filter || i18nConfig.tabs[0].title,
       currentSort: 'updated',
       currentSortOrder: 'desc',
       textFilter: '',
@@ -102,7 +105,7 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$options.cardData.cardData.name,
       },
-      allworkingBodies,
+      allWorkingBodies,
       onlyAbstracts: false,
     };
   },
@@ -113,7 +116,7 @@ export default {
         : this.$t('select-placeholder');
     },
     selectedWorkingBodies() {
-      return this.allworkingBodies.filter(wb => wb.selected).map(wb => wb.id);
+      return this.allWorkingBodies.filter(wb => wb.selected).map(wb => wb.id);
     },
     columns() {
       return [{
@@ -151,11 +154,28 @@ export default {
         const textMatch = this.textFilter === ''
           || legislation.text === null
           || legislation.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const typeMatch = this.currentFilter === ''
-          || legislation.classification === (this.currentFilter === 'laws' ? 'zakon' : 'akt');
         const wbMatch = this.selectedWorkingBodies.length === 0
           || this.selectedWorkingBodies.includes(legislation.mdt.id);
         const onlyAbstractsMatch = !this.onlyAbstracts || legislation.abstractVisible;
+
+        let typeMatch = this.currentFilter === '';
+        if (!typeMatch) {
+          const currentTab = this.i18nConfig.tabs.find(e => e.title === this.currentFilter);
+          if (currentTab) {
+            const classification = legislation.classification == null ? 'null' : legislation.classification;
+            if (currentTab.classifications) {
+              typeMatch = currentTab.classifications.indexOf(classification) !== -1;
+            } else {
+              const classifications = this.i18nConfig.tabs.reduce((acc, cur) => {
+                if (cur.classifications) {
+                  return acc.concat(cur.classifications);
+                }
+                return acc;
+              }, []);
+              typeMatch = classifications.indexOf(classification) === -1;
+            }
+          }
+        }
 
         return textMatch && typeMatch && wbMatch && onlyAbstractsMatch;
       };
@@ -178,8 +198,8 @@ export default {
             b = B.mdt_text;
             return a.localeCompare(b, 'sl');
           case 'result':
-            a = A.result || 'v obravnavi';
-            b = B.result || 'v obravnavi';
+            a = A.result || this.$t('vote-under-consideration');
+            b = B.result || this.$t('vote-under-consideration');
             return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           case 'epa':
             a = parseInt(A.epa || '0-VII', 10);
