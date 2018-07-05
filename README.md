@@ -21,6 +21,10 @@ This readme concerns the development of the parlanode "backend", meaning the par
 $ yarn run dev
 ```
 
+## Configuration
+
+When you run this app in production it will try to require `config/production.js`. Look at the sample config or symlink one of the existing configs by running `ln -s production.js ./production_si.js`
+
 ## Deployment
 
 Every merge to master will trigger the webhook that tests and deploys parlanode to production. Success or error messages will be sent to DJND Slack #parladeploy channel.
