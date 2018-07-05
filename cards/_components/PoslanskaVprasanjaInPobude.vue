@@ -196,7 +196,7 @@ export default {
         state.mps = this.selectedMPs;
       }
 
-      return `${this.url}/${this[this.type].id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this[this.type].id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     headerConfig() {
       if (this.type === 'person') {
