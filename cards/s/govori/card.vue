@@ -30,6 +30,7 @@
 
 <script>
 import common from 'mixins/common';
+import { sessionHeader } from 'mixins/altHeaders';
 import Speech from 'components/Speech.vue';
 
 function getSelected() {
@@ -107,24 +108,13 @@ export default {
         });
     },
   },
-  mixins: [common],
+  mixins: [
+    common,
+    sessionHeader,
+  ],
   data() {
-    const sessionName = this.$options.cardData.data.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.session.name,
-        subheading: this.$options.cardData.data.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
     };
   },
   computed: {

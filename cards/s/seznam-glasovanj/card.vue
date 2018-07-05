@@ -50,6 +50,7 @@
 
 <script>
 import common from 'mixins/common';
+import { sessionHeader } from 'mixins/altHeaders';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 
 export default {
@@ -59,6 +60,7 @@ export default {
   },
   mixins: [
     common,
+    sessionHeader,
   ],
   data() {
     const state = this.$options.cardData.parlaState;
@@ -66,26 +68,12 @@ export default {
     const tags = state && state.tags ? state.tags : [];
     const results = state && state.results ? state.results : [];
 
-    const sessionName = this.$options.cardData.data.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
     return {
       data: this.$options.cardData.data,
       filters: {
         text,
         tags,
         results,
-      },
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.session.name,
-        subheading: this.$options.cardData.data.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
       },
     };
   },

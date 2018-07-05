@@ -51,6 +51,31 @@ export const searchHeader = {
   },
 };
 
+export const sessionHeader = {
+  computed: {
+    headerConfig() {
+      const cardData = this.cardData || this.$options.cardData;
+      const session = cardData.data.session || cardData.data.results.session;
+      const sessionName = session.name;
+
+      let imageName = 'seja-redna';
+      if (sessionName.indexOf('izredna') !== -1) {
+        imageName = 'seja-izredna';
+      } else if (sessionName.indexOf('nujna') !== -1) {
+        imageName = 'seja-nujna';
+      }
+
+      return {
+        mediaImage: imageName,
+        heading: sessionName,
+        subheading: session.date,
+        alternative: cardData.cardData.altHeader === 'true',
+        title: cardData.cardData.name,
+      };
+    },
+  },
+};
+
 export const defaultHeaderConfig = (comp, overrides = {}) => {
   const headerConfig = {
     circleIcon: 'og-list',
