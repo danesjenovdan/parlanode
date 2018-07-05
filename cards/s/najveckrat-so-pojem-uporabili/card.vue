@@ -17,6 +17,7 @@
 <script>
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
+import { searchHeader } from 'mixins/altHeaders';
 import PersonList from 'components/PersonList.vue';
 
 export default {
@@ -27,6 +28,7 @@ export default {
   mixins: [
     common,
     searchTitle,
+    searchHeader,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
@@ -42,13 +44,6 @@ export default {
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
       keywords,
       people,
     };

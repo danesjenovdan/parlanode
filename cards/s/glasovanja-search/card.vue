@@ -17,6 +17,7 @@
 <script>
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import common from 'mixins/common';
+import { searchHeader } from 'mixins/altHeaders';
 import { searchTitle } from 'mixins/titles';
 
 export default {
@@ -27,6 +28,7 @@ export default {
   mixins: [
     common,
     searchTitle,
+    searchHeader,
   ],
   data() {
     const keywords = this.$options.cardData.data.search_query.replace(/\+/g, ' ');
@@ -35,13 +37,6 @@ export default {
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
       keywords,
     };
   },

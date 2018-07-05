@@ -24,6 +24,7 @@
 <script>
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
+import { searchHeader } from 'mixins/altHeaders';
 import PTabs from 'components/Tabs.vue';
 import PTab from 'components/Tab.vue';
 import TimeLineChart from 'components/TimeLineChart.vue';
@@ -40,18 +41,12 @@ export default {
   mixins: [
     common,
     searchTitle,
+    searchHeader,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
       keywords,
     };
   },

@@ -61,6 +61,7 @@
 <script>
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
+import { searchHeader } from 'mixins/altHeaders';
 import {
   getPersonLink,
   getPersonPartyLink,
@@ -80,19 +81,13 @@ export default {
   mixins: [
     common,
     searchTitle,
+    searchHeader,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q
       .split('content_t:')[1].split(')')[0];
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
       keywords,
       rawSpeeches: this.$options.cardData.data.highlighting,
       allResults: this.$options.cardData.data.response.numFound,

@@ -37,6 +37,20 @@ export const partyHeader = {
   },
 };
 
+export const searchHeader = {
+  computed: {
+    headerConfig() {
+      return {
+        circleIcon: 'og-search',
+        heading: this.keywords,
+        subheading: 'iskalni niz',
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.$options.cardData.cardData.name,
+      };
+    },
+  },
+};
+
 export const defaultHeaderConfig = (comp, overrides = {}) => {
   const headerConfig = {
     circleIcon: 'og-list',
