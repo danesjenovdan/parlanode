@@ -14,6 +14,9 @@ export const getPartyLink = (party) => {
   if (!party.acronym || party.acronym.indexOf('NeP') > -1) {
     return '';
   }
+  if (!urlsData.party[party.id]) {
+    return '';
+  }
   return urlsData.urls.base
          + urlsData.partyLink.base
          + urlsData.party[party.id].acronym
