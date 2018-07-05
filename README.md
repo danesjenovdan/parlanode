@@ -23,6 +23,8 @@ $ yarn run dev
 
 ## Configuration
 
+For development copy `config/sample.js` to `config/development.js` and change any settings in there.
+
 When you run this app in production it will try to require `config/production.js`. Look at the sample config or symlink one of the existing configs by running `ln -s production.js ./production_si.js`
 
 ## Deployment
