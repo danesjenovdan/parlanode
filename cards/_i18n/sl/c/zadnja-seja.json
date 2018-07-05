@@ -2,7 +2,10 @@
   "sl": {
     "info": {
       "lead": "Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu {link}.",
-      "link": "DZ RS",
+      "link": {
+        "link": "http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
+        "text": "DZ RS"
+      },
       "words-heading": "Besede, ki so zaznamovale sejo",
       "words-text": "Analizo izvajamo po statistiki tf-idf. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
       "presence-heading": "Prisotnost poslanskih skupin na seji",

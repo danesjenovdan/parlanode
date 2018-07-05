@@ -7,11 +7,11 @@
     <div slot="info">
       <i18n path="info.lead" tag="p" class="info-text lead">
         <a
-          v-t="'info.link'"
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
           place="link"
           class="funblue-light-hover"
           target="_blank"
-          href="http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
         />
       </i18n>
       <div v-t="'info.words-heading'" class="info-text heading"></div>
