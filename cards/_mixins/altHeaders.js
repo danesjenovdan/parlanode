@@ -1,3 +1,5 @@
+import { assign } from 'lodash';
+
 export const memberHeader = {
   computed: {
     headerConfig() {
@@ -33,4 +35,16 @@ export const partyHeader = {
       };
     },
   },
+};
+
+export const defaultHeaderConfig = (comp, overrides = {}) => {
+  const headerConfig = {
+    circleIcon: 'og-list',
+    heading: '&nbsp;',
+    subheading: '7. sklic parlamenta',
+    alternative: comp.$options.cardData.cardData.altHeader === 'true',
+    title: comp.$options.cardData.cardData.name,
+  };
+
+  return assign({}, headerConfig, overrides);
 };

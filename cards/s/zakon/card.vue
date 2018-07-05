@@ -72,6 +72,7 @@
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
@@ -134,13 +135,7 @@ export default {
     return {
       data: this.$options.cardData.data,
       documents,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title,
-      },
+      headerConfig: defaultHeaderConfig(this, { title }),
       finalVoteExists,
       finalVoteData,
       finalVoteResult,

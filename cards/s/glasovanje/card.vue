@@ -117,6 +117,7 @@
 <script>
 import { pick } from 'lodash';
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
@@ -141,13 +142,7 @@ export default {
       data: this.$options.cardData.data,
       state: this.$options.cardData.parlaState,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
       coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
         party: {
           id: side,

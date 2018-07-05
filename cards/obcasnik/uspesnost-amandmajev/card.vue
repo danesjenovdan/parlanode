@@ -17,6 +17,7 @@
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import StackedBarChart from 'components/StackedBarChart.vue';
 
 export default {
@@ -58,13 +59,7 @@ export default {
 
     return {
       data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
       rows,
       generatedCardUrl: `${this.url}?state={}`,
     };

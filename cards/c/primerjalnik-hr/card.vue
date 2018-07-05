@@ -151,6 +151,7 @@
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import BarChart from 'components/BarChart.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
 import LoadLink from 'components/LoadLink.vue';
@@ -193,13 +194,7 @@ export default {
       sameModalVisible: false,
       differentModalVisible: false,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: {
-        circleIcon: 'primerjalnik',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this, { circleIcon: 'primerjalnik' }),
     };
   },
   computed: {

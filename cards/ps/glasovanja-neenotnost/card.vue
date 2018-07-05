@@ -100,6 +100,7 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import Toggle from 'components/Toggle.vue';
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
@@ -187,13 +188,10 @@ export default {
       return this.getFilteredVotingDays();
     },
     headerConfig() {
-      return {
+      return defaultHeaderConfig(this, {
         circleIcon: 'seznam-glasovanj',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.dynamicTitle,
-      };
+      });
     },
     dynamicTitle() {
       return this.$options.cardData.cardData.name + (

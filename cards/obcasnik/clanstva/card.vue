@@ -20,6 +20,7 @@
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import adjacencyMatrix from 'helpers/adjacencyMatrix';
 // import 'helpers/adjacencyMatrix';
 
@@ -30,13 +31,7 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
     };
   },
   mounted() {

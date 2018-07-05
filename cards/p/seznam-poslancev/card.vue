@@ -96,6 +96,7 @@ import { find } from 'lodash';
 import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
@@ -161,13 +162,9 @@ export default {
         : this.$t('select-district-placeholder');
     },
     headerConfig() {
-      return {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
+      return defaultHeaderConfig(this, {
         title: `${this.$options.cardData.cardData.name} ${this.currentAnalysisData.titleSuffix}`,
-      };
+      });
     },
     selectedDistricts() {
       return this.districts

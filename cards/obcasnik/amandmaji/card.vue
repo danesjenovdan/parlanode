@@ -39,6 +39,7 @@
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import BarChart from 'components/BarChart.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
@@ -54,13 +55,7 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data.data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
       generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json`,
     };
   },

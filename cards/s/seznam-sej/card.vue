@@ -73,6 +73,7 @@
 import { find, get } from 'lodash';
 import axios from 'axios';
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
@@ -98,13 +99,7 @@ export default {
       currentSortOrder: 'desc',
       currentFilter: get(this.$options.cardData, 'state.filter') || i18nConfig.tabs[0].title,
       justFive: get(this.$options.cardData, 'state.justFive') || false,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
     };
   },
   computed: {

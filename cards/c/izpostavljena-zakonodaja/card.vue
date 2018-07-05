@@ -63,7 +63,7 @@
 
 <script>
 import common from 'mixins/common';
-
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 
@@ -76,12 +76,7 @@ export default {
       data: this.$options.cardData.data,
       state: this.$options.cardData.parlaState || {},
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
     };
   },
   computed: {

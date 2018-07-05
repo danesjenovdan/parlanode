@@ -37,6 +37,7 @@
 <script>
 import { find } from 'lodash';
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
@@ -59,13 +60,9 @@ export default {
   },
   computed: {
     headerConfig() {
-      return {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
+      return defaultHeaderConfig(this, {
         title: this.currentAnalysisData.title,
-      };
+      });
     },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });

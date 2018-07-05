@@ -99,7 +99,7 @@
 <script>
 import axios from 'axios';
 import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links';
-
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';
@@ -136,13 +136,7 @@ export default {
     return {
       data: this.$options.cardData.data,
       emptyText: this.$t('empty-text'),
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
       showRelative: loadFromState('showRelative') || false,
       modalShown: false,
       modalInputText: '',

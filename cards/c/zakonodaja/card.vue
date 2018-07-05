@@ -57,6 +57,7 @@
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
@@ -99,12 +100,7 @@ export default {
       currentSortOrder: 'desc',
       textFilter: '',
       workingBodies: [],
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
       allWorkingBodies,
       onlyAbstracts: false,
     };
