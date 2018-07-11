@@ -9,7 +9,7 @@ const defaultConfig = {
   serverTimeout: 30000,
   db: {
     name: 'parla-db',
-    url: 'localhost',
+    url: 'localhost:27017',
     user: `${process.env.MONGO_USERNAME}`,
     password: `${process.env.MONGO_PASSWORD}`,
   },
