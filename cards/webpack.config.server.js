@@ -55,9 +55,10 @@ module.exports = (cardPath) => {
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
+          VUE_ENV: JSON.stringify('server'),
           NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
           CARD_LANG: JSON.stringify(cardLang),
-          VUE_ENV: JSON.stringify('server'),
+          CARD_NAME: JSON.stringify(process.env.CARD_NAME),
         },
       }),
     ],

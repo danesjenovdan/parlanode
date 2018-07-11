@@ -108,6 +108,7 @@ module.exports = (cardPath) => {
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
           CARD_LANG: JSON.stringify(process.env.CARD_LANG || 'sl'),
+          CARD_NAME: JSON.stringify(process.env.CARD_NAME),
         },
       }),
     ],
