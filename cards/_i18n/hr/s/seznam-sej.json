@@ -11,7 +11,13 @@
         ]
       },
       {
-        "title": "Ostale seje"
+        "title": "Ostale seje",
+        "org_ids": [
+          9
+        ]
+      },
+      {
+        "title": "Seje delovnih teles"
       }
     ]
   },
