@@ -6,13 +6,19 @@
     "config": {
       "tabs": [
         {
-          "title": "Seje sabora",
+          "title": "Seje DZ",
           "org_ids": [
-            199
+            95
           ]
         },
         {
-          "title": "Ostale seje"
+          "title": "Seje kolegija predsednika DZ",
+          "org_ids": [
+            9
+          ]
+        },
+        {
+          "title": "Seje delovnih teles"
         }
       ]
     },
