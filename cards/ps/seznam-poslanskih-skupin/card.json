@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/pg/getListOfPGs",
   "type": "seznam_poslanskih_skupin",
   "lastUpdate": "2018-06-30T14:21:11.815Z",
-  "method": "seznam-poslanskih-skupin",
-  "group": "ps",
   "big": true,
   "high": true
 }

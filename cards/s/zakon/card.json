@@ -4,8 +4,6 @@
   "type": "empty",
   "dataUrl": "{analize}/s/getLegislation/",
   "lastUpdate": "2018-06-04T14:23:22.265Z",
-  "method": "zakon",
-  "group": "s",
   "big": true,
   "high": true
 }

@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/p/getMPStatic",
   "type": "poslanec",
   "lastUpdate": "2018-06-20T09:53:48.618Z",
-  "method": "osnovne-informacije",
-  "group": "p",
   "big": false,
   "high": false
 }

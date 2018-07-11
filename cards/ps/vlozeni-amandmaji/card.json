@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/pg/getAmendmentsOfPG",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-06-27T12:39:08.449Z",
-  "method": "vlozeni-amandmaji",
-  "group": "ps",
   "big": true,
   "high": true
 }

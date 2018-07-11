@@ -4,8 +4,6 @@
   "type": "poslanec",
   "dataUrl": "{analize}/p/getNumberOfSpokenWords",
   "lastUpdate": "2018-06-13T10:35:25.159Z",
-  "method": "stevilo-izgovorjenih-besed",
-  "group": "p",
   "big": false,
   "high": false
 }

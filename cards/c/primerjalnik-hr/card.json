@@ -4,8 +4,6 @@
   "dataUrl": "http://51.15.135.53/analize/v1/p/getListOfMembersTickers/",
   "type": "primerjalnik",
   "lastUpdate": "2018-06-04T16:01:29.483Z",
-  "method": "primerjalnik-hr",
-  "group": "c",
   "big": true,
   "high": true
 }

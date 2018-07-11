@@ -4,7 +4,6 @@
   "dataUrl": "{analize}/pg/getTaggedBallots",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-06-13T13:09:52.705Z",
-  "method": "glasovanja",
-  "group": "ps",
-  "big": true
+  "big": true,
+  "high": false
 }

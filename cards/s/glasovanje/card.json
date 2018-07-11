@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/s/getMotionAnalize",
   "type": "glasovanje",
   "lastUpdate": "2018-06-27T13:55:50.241Z",
-  "method": "glasovanje",
-  "group": "s",
   "high": true,
   "big": true
 }

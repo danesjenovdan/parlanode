@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/s/getExposedLegislation",
   "type": "empty",
   "lastUpdate": "2018-06-05T10:21:30.611Z",
-  "method": "izpostavljena-zakonodaja",
-  "group": "c",
   "big": true,
   "high": false
 }

@@ -4,6 +4,6 @@
   "dataUrl": "{analize}/p/getTFIDF",
   "type": "poslanec",
   "lastUpdate": "2018-06-13T12:36:44.168Z",
-  "method": "tfidf",
-  "group": "p"
+  "big": false,
+  "high": false
 }

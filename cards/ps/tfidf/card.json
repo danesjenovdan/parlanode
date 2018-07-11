@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/pg/getTFIDF",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-05-04T11:01:25.248Z",
-  "method": "tfidf",
-  "group": "ps",
   "high": false,
   "big": false
 }

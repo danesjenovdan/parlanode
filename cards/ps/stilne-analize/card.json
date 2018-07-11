@@ -4,8 +4,6 @@
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getStyleScores",
   "lastUpdate": "2018-05-08T12:10:29.385Z",
-  "method": "stilne-analize",
-  "group": "ps",
   "big": false,
   "high": false
 }

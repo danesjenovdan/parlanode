@@ -4,8 +4,6 @@
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getMPsOfPG",
   "lastUpdate": "2018-06-13T12:51:50.670Z",
-  "method": "clanice-in-clani",
-  "group": "ps",
   "big": false,
   "high": false
 }

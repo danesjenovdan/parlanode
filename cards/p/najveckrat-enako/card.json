@@ -4,8 +4,6 @@
   "type": "poslanec",
   "dataUrl": "{analize}/p/getMostEqualVoters",
   "lastUpdate": "2018-06-06T15:36:29.441Z",
-  "method": "najveckrat-enako",
-  "group": "p",
   "big": false,
   "high": false
 }

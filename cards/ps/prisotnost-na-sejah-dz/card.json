@@ -4,8 +4,6 @@
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getPercentOFAttendedSessionPG",
   "lastUpdate": "2018-05-07T18:47:33.020Z",
-  "method": "prisotnost-na-sejah-dz",
-  "group": "ps",
   "big": false,
   "high": false
 }

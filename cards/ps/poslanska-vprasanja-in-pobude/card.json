@@ -4,7 +4,6 @@
   "dataUrl": "{analize}/pg/getQuestionsOfPG",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-07-05T14:55:10.139Z",
-  "method": "poslanska-vprasanja-in-pobude",
-  "group": "ps",
-  "big": true
+  "big": true,
+  "high": false
 }

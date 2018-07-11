@@ -4,8 +4,6 @@
   "type": "poslanec",
   "dataUrl": "{analize}/p/getStyleScores",
   "lastUpdate": "2018-06-13T12:24:50.144Z",
-  "method": "stilne-analize",
-  "group": "p",
   "big": false,
   "high": false
 }

@@ -4,8 +4,6 @@
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getPGMismatch",
   "lastUpdate": "2018-06-05T08:45:34.134Z",
-  "method": "neujemanje-s-poslansko-skupino",
-  "group": "ps",
   "big": false,
   "high": false
 }

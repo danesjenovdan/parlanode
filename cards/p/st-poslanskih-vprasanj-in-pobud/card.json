@@ -4,8 +4,6 @@
   "type": "poslanec",
   "dataUrl": "{analize}/p/getNumberOfQuestions",
   "lastUpdate": "2018-06-13T10:30:47.098Z",
-  "method": "st-poslanskih-vprasanj-in-pobud",
-  "group": "p",
   "big": false,
   "high": false
 }

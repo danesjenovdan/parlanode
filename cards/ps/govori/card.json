@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/",
   "type": "empty",
   "lastUpdate": "2018-07-05T15:29:38.477Z",
-  "method": "govori",
-  "group": "ps",
   "big": true,
   "high": false
 }

@@ -4,8 +4,6 @@
   "type": "seje",
   "dataUrl": "{analize}/s/getSpeech",
   "lastUpdate": "2018-05-14T15:26:48.664Z",
-  "method": "govor",
-  "group": "s",
   "big": true,
   "high": false
 }

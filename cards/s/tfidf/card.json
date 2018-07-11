@@ -4,8 +4,6 @@
   "type": "seje",
   "dataUrl": "{analize}/s/getTFIDF",
   "lastUpdate": "2018-05-10T13:25:17.054Z",
-  "method": "tfidf",
-  "group": "s",
   "big": true,
   "high": false
 }

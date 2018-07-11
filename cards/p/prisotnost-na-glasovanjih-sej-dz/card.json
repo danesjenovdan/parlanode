@@ -4,8 +4,6 @@
   "type": "poslanec",
   "dataUrl": "{analize}/p/getPresence",
   "lastUpdate": "2018-06-06T16:46:42.809Z",
-  "method": "prisotnost-na-glasovanjih-sej-dz",
-  "group": "p",
   "big": false,
   "high": false
 }

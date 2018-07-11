@@ -4,7 +4,6 @@
   "dataUrl": "{data}/getAllPGsExt/",
   "type": "neenotnost",
   "lastUpdate": "2018-06-13T14:04:43.773Z",
-  "method": "glasovanja-neenotnost",
-  "group": "ps",
-  "big": "true"
+  "big": true,
+  "high": false
 }

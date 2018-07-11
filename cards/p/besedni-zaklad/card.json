@@ -4,8 +4,6 @@
   "type": "poslanec",
   "dataUrl": "{analize}/p/getVocabularySize",
   "lastUpdate": "2018-06-06T12:42:19.230Z",
-  "method": "besedni-zaklad",
-  "group": "p",
   "big": false,
   "high": false
 }

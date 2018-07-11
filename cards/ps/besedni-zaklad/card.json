@@ -4,8 +4,6 @@
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getVocabularySize",
   "lastUpdate": "2018-06-13T12:47:45.408Z",
-  "method": "besedni-zaklad",
-  "group": "ps",
   "big": false,
   "high": false
 }

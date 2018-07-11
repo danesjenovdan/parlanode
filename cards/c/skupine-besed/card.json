@@ -4,8 +4,6 @@
   "type": "empty",
   "dataUrl": "{data}/getNumberOfSpeeches/",
   "lastUpdate": "2018-06-05T12:03:18.415Z",
-  "method": "skupine-besed",
-  "group": "c",
   "big": true,
   "high": true
 }

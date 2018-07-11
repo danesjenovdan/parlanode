@@ -4,7 +4,6 @@
   "dataUrl": "{analize}/s/getSessionsList",
   "type": "seznam_sej",
   "lastUpdate": "2018-07-05T13:17:24.271Z",
-  "method": "seznam-sej",
-  "group": "s",
-  "big": "true"
+  "big": true,
+  "high": false
 }

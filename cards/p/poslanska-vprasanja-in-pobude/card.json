@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/p/getQuestions",
   "type": "poslanec",
   "lastUpdate": "2018-06-06T16:36:04.821Z",
-  "method": "poslanska-vprasanja-in-pobude",
-  "group": "p",
   "big": false,
   "high": false
 }

@@ -4,8 +4,6 @@
   "dataUrl": "{analize}/p/getListOfMembersTickers/",
   "type": "primerjalnik",
   "lastUpdate": "2018-06-04T15:48:07.903Z",
-  "method": "primerjalnik",
-  "group": "c",
   "big": true,
   "high": true
 }
