@@ -10,9 +10,12 @@ import i18nCard from 'i18n/card.json';
 
 Vue.use(VueI18n);
 
+const locale = process.env.CARD_LANG;
 const i18n = new VueI18n({
-  locale: process.env.CARD_LANG,
-  messages: merge({}, i18nDefault, i18nCard),
+  locale,
+  messages: {
+    [locale]: merge({}, i18nDefault, i18nCard),
+  },
 });
 
 Vue.component('SearchDropdown', SearchDropdown);

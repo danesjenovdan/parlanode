@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import _ from 'lodash';
+import { merge } from 'lodash';
 /* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';
 import cardData from 'cardPath/card.json';
@@ -12,9 +12,12 @@ import i18nCard from 'i18n/card.json';
 
 Vue.use(VueI18n);
 
+const locale = process.env.CARD_LANG;
 const i18n = new VueI18n({
   locale: process.env.CARD_LANG || 'sl',
-  messages: _.merge({}, i18nDefault, i18nCard),
+  messages: {
+    [locale]: merge({}, i18nDefault, i18nCard),
+  },
 });
 
 const fakeCardData = {

@@ -1,11 +1,9 @@
 {
-  "sl": {
-    "card": {
-      "title": "Seznam poslanskih skupin"
-    },
-    "info": {
-      "lead": "",
-      "text": ""
-    }
+  "card": {
+    "title": "Seznam poslanskih skupin"
+  },
+  "info": {
+    "lead": "",
+    "text": ""
   }
 }
