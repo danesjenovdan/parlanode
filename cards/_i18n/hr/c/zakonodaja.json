@@ -5,7 +5,13 @@
   "config": {
     "tabs": [
       {
-        "title": "Zakonodaja"
+        "title": "Zakonodaja",
+        "classifications": [
+          "zakon"
+        ]
+      },
+      {
+        "title": "Akti"
       }
     ]
   },
