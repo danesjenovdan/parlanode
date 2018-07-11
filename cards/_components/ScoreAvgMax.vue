@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :id="cardData.cardData._id"
-    :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     class="card-halfling"
@@ -145,8 +144,6 @@ export default {
       }
       return partyHeader.computed.headerConfig.call(this);
     },
-    cardGroup: () => this.cardData.cardData.group,
-    cardMethod: () => this.cardData.cardData.method,
     generatedCardUrl() {
       if (this.type === 'poslanec') {
         return `${this.url}${this.person.id}?altHeader=true`;

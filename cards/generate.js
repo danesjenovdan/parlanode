@@ -84,11 +84,11 @@ inquirer.prompt([
   const newCardFolder = `cards/${answers.group}/${answers.method}/`;
   const finalData = {
     _id: `${answers.group}-${answers.method}`,
-    lastUpdate: new Date(),
+    lastUpdate: new Date().toJSON(),
     componentName: upperFirst(camelCase(answers.name)),
     ...answers,
   };
-  const cliCommand = `yarn run cards-dev ${answers.group}/${answers.method}`;
+  const cliCommand = `yarn run cards ${answers.group}/${answers.method}`;
 
   fs.mkdirSync(newCardFolder);
 

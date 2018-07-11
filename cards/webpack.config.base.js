@@ -8,10 +8,18 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 process.traceDeprecation = true;
 
-function createEmptyTranslationFile(filePath, cardLang) {
+function createEmptyTranslationFile(filePath) {
   if (!fs.existsSync(filePath)) {
     fs.ensureFileSync(filePath);
-    fs.writeFileSync(filePath, `{ "${cardLang}": { "info": { "lead": "", "text": "" } } }`, 'utf8');
+    const defaultJsonData = {
+      info: {
+        lead: '',
+        text: '',
+      },
+    };
+    fs.writeJsonSync(filePath, defaultJsonData, {
+      spaces: 2,
+    });
   }
 }
 
@@ -25,9 +33,9 @@ module.exports = (cardPath) => {
     .join('/');
 
   const i18nDefaultPath = path.resolve(__dirname, '_i18n', cardLang, 'defaults.json');
-  createEmptyTranslationFile(i18nDefaultPath, cardLang);
+  createEmptyTranslationFile(i18nDefaultPath);
   const i18nCardPath = path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`);
-  createEmptyTranslationFile(i18nCardPath, cardLang);
+  createEmptyTranslationFile(i18nCardPath);
 
   return {
     mode: 'production',

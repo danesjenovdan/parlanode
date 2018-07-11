@@ -189,8 +189,6 @@ export default {
     }
 
     return {
-      cardMethod: this.cardData.cardData.method,
-      cardGroup: this.cardData.cardData.group,
       votingDays: this.cardData.data.results,
       selectedSort: 'date',
       sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },

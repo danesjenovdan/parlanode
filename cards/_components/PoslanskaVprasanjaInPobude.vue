@@ -109,8 +109,6 @@ export default {
     }
 
     return {
-      cardMethod: this.cardData.cardData.method,
-      cardGroup: this.cardData.cardData.group,
       questionDays: this.cardData.data.results,
       allMonths,
       allMPs,

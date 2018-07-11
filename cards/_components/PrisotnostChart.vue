@@ -55,8 +55,6 @@ export default {
       }
       return partyHeader.computed.headerConfig.call(this);
     },
-    cardGroup: () => this.cardData.cardData.group,
-    cardMethod: () => this.cardData.cardData.method,
   },
   mounted() {
     this.renderChart();

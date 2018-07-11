@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :id="cardData.cardData._id"
-    :data-id="`${cardGroup}/${cardMethod}`"
     :header-config="headerConfig"
     :card-url="shareUrl"
     content-class="full"
@@ -168,8 +167,6 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      cardMethod: this.cardData.cardData.method,
-      cardGroup: this.cardData.cardData.group,
       speakingDays: this.cardData.data.highlighting,
       textFilter,
       allMonths,
