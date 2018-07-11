@@ -1,5 +1,5 @@
 {
-  "_id": "ps_najmanjkrat-enako",
+  "_id": "p_najmanjkrat-enako",
   "name": "Najmanjkrat glasujejo enako",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getLeastEqualVoters",

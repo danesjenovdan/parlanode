@@ -1,5 +1,5 @@
 {
-  "_id": "ps-st-poslanskih-vprasanj-in-pobud",
+  "_id": "ps_st-poslanskih-vprasanj-in-pobud",
   "name": "Št. poslanskih vprašanj in pobud",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getNumberOfQuestions",

@@ -1,5 +1,5 @@
 {
-  "_id": "ps_glasovanja_neenotnost",
+  "_id": "ps_glasovanja-neenotnost",
   "name": "Seznam glasovanj po ",
   "dataUrl": "{data}/getAllPGsExt/",
   "type": "neenotnost",

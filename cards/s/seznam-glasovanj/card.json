@@ -1,5 +1,5 @@
 {
-  "_id": "s_seznam_glasovanj",
+  "_id": "s_seznam-glasovanj",
   "name": "Druga glasovanja",
   "dataUrl": "{analize}/s/getMotionOfSession",
   "type": "seje",

@@ -1,5 +1,5 @@
 {
-  "_id": "ps-neenotnost-glasovanj",
+  "_id": "ps_neenotnost-glasovanj",
   "name": "Neenotnost glasovanj",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getDisunionOrg",

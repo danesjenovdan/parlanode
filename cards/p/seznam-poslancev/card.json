@@ -1,5 +1,5 @@
 {
-  "_id": "p_seznam_poslancev",
+  "_id": "p_seznam-poslancev",
   "name": "Seznam poslancev",
   "dataUrl": "{analize}/p/getListOfMembersTickers",
   "type": "seznam_poslancev",

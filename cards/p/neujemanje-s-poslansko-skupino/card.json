@@ -1,5 +1,5 @@
 {
-  "_id": "p-neujemanje-s-poslansko-skupino",
+  "_id": "p_neujemanje-s-poslansko-skupino",
   "name": "Neujemanje s poslansko skupino",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getMismatchWithPG",

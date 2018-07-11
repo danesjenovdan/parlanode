@@ -1,5 +1,5 @@
 {
-  "_id": "ps_vlozeni_amandmaji",
+  "_id": "ps_vlozeni-amandmaji",
   "name": "Vloženi amandmaji",
   "dataUrl": "{analize}/pg/getAmendmentsOfPG",
   "type": "poslanska_skupina",

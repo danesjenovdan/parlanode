@@ -1,5 +1,5 @@
 {
-  "_id": "s_seznam_sej",
+  "_id": "s_seznam-sej",
   "name": "Seznam sej",
   "dataUrl": "{analize}/s/getSessionsList",
   "type": "seznam_sej",

@@ -1,5 +1,5 @@
 {
-  "_id": "c_izpostavljena_zakonodaja",
+  "_id": "c_izpostavljena-zakonodaja",
   "name": "Izpostavljena zakonodaja",
   "dataUrl": "{analize}/s/getExposedLegislation",
   "type": "empty",

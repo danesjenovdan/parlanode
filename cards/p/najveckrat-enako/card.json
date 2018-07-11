@@ -1,5 +1,5 @@
 {
-  "_id": "ps_najveckrat-enako",
+  "_id": "p_najveckrat-enako",
   "name": "Največkrat glasujejo enako",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getMostEqualVoters",

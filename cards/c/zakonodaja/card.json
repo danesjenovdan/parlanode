@@ -1,5 +1,5 @@
 {
-  "_id": "zakonodaja",
+  "_id": "c_zakonodaja",
   "name": "Seznam zakonodaje",
   "dataUrl": "{analize}/s/getAllLegislation",
   "type": "empty",

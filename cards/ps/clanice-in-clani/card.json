@@ -1,5 +1,5 @@
 {
-  "_id": "ps_clani",
+  "_id": "ps_clanice-in-clani",
   "name": "Članice in člani poslanske skupine",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getMPsOfPG",
