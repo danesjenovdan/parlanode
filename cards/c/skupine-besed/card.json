@@ -1,6 +1,5 @@
 {
   "_id": "c_skupine-besed",
-  "name": "Skupine besed",
   "type": "empty",
   "dataUrl": "{data}/getNumberOfSpeeches/",
   "lastUpdate": "2018-06-05T12:03:18.415Z",

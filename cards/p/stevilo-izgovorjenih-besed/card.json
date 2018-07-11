@@ -1,6 +1,5 @@
 {
   "_id": "p_stevilo-izgovorjenih-besed",
-  "name": "Število izgovorjenih besed",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getNumberOfSpokenWords",
   "lastUpdate": "2018-06-13T10:35:25.159Z",

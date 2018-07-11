@@ -1,6 +1,5 @@
 {
   "_id": "s_citat",
-  "name": "Citat",
   "type": "seje",
   "dataUrl": "{analize}/s/getQuote",
   "lastUpdate": "2018-05-15T13:03:42.643Z",

@@ -1,6 +1,5 @@
 {
   "_id": "p_besedni-zaklad",
-  "name": "Raznolikost besedišča",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getVocabularySize",
   "lastUpdate": "2018-06-06T12:42:19.230Z",

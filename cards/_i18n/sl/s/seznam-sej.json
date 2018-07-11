@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Seznam sej"
+    },
     "config": {
       "tabs": [
         {

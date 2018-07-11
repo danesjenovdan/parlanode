@@ -1,6 +1,5 @@
 {
   "_id": "ps_glasovanja-neenotnost",
-  "name": "Seznam glasovanj po ",
   "dataUrl": "{data}/getAllPGsExt/",
   "type": "neenotnost",
   "lastUpdate": "2018-06-13T14:04:43.773Z",

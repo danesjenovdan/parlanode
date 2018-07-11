@@ -1,6 +1,5 @@
 {
   "_id": "c_zakonodaja",
-  "name": "Seznam zakonodaje",
   "dataUrl": "{analize}/s/getAllLegislation",
   "type": "empty",
   "lastUpdate": "2018-07-05T14:47:17.951Z",

@@ -1,6 +1,5 @@
 {
   "_id": "s_glasovanja-search",
-  "name": "Glasovanja, ki vsebujejo iskalni niz",
   "dataUrl": "{isci}/l",
   "type": "empty",
   "lastUpdate": "2018-06-27T13:27:05.714Z",

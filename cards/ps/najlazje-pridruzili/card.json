@@ -1,6 +1,5 @@
 {
   "_id": "ps_najlazje-pridruzili",
-  "name": "Največkrat glasujejo enako",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getMostMatchingThem",
   "lastUpdate": "2018-05-08T13:51:21.292Z",

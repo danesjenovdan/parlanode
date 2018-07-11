@@ -1,6 +1,5 @@
 {
   "_id": "s_govori",
-  "name": "Transkript",
   "type": "seje",
   "dataUrl": "{analize}/s/getSpeechesOfSession",
   "lastUpdate": "2018-05-14T14:10:57.838Z",

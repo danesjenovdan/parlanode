@@ -1,6 +1,5 @@
 {
   "_id": "p_prisotnost-na-glasovanjih-sej-dz",
-  "name": "Prisotnost na glasovanjih sej DZ",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getPresence",
   "lastUpdate": "2018-06-06T16:46:42.809Z",

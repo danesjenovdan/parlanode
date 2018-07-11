@@ -1,6 +1,5 @@
 {
   "_id": "ps_stilne-analize",
-  "name": "Stilne analize",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getStyleScores",
   "lastUpdate": "2018-05-08T12:10:29.385Z",

@@ -1,6 +1,5 @@
 {
   "_id": "p_povprecno-stevilo-govorov-na-sejo",
-  "name": "Povprečno število govorov na sejo",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getAverageNumberOfSpeechesPerSession",
   "lastUpdate": "2018-06-06T16:41:40.980Z",

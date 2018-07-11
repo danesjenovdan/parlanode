@@ -1,6 +1,5 @@
 {
   "_id": "ps_glasovanja",
-  "name": "Glasovanja",
   "dataUrl": "{analize}/pg/getTaggedBallots",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-06-13T13:09:52.705Z",

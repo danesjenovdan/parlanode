@@ -1,6 +1,5 @@
 {
   "_id": "ps_seznam-poslanskih-skupin",
-  "name": "Seznam poslanskih skupin",
   "dataUrl": "{analize}/pg/getListOfPGs",
   "type": "seznam_poslanskih_skupin",
   "lastUpdate": "2018-06-30T14:21:11.815Z",

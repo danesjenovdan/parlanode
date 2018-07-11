@@ -1,6 +1,5 @@
 {
   "_id": "s_tfidf",
-  "name": "Besede, ki so zaznamovale sejo",
   "type": "seje",
   "dataUrl": "{analize}/s/getTFIDF",
   "lastUpdate": "2018-05-10T13:25:17.054Z",

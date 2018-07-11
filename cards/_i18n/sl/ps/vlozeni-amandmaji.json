@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Vloženi amandmaji"
+    },
     "info": {
       "lead": "Pregled vseh glasovanj, ki so se zgodila na seji",
       "text": [

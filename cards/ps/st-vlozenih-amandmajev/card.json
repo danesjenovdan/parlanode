@@ -1,6 +1,5 @@
 {
   "_id": "ps_st-vlozenih-amandmajev",
-  "name": "Št. vloženih amandmajev",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getNumberOfAmendmetsOfPG",
   "lastUpdate": "2018-05-07T19:08:22.582Z",

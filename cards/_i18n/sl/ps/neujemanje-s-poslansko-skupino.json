@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Neujemanje s poslansko skupino"
+    },
     "info": {
       "lead": "Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše je ujemanje.",
       "text": [

@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Najmanjkrat glasujejo enako"
+    },
     "info": {
       "lead": "Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot \"glas poslanske skupine\". Razvrščeni so glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.",
       "text": [

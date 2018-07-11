@@ -1,6 +1,5 @@
 {
   "_id": "p_najmanjkrat-enako",
-  "name": "Najmanjkrat glasujejo enako",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getLeastEqualVoters",
   "lastUpdate": "2018-06-06T15:32:02.937Z",

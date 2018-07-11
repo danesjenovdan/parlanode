@@ -1,6 +1,5 @@
 {
   "_id": "ps_prisotnost-na-sejah-dz",
-  "name": "Prisotnost na sejah DZ",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getPercentOFAttendedSessionPG",
   "lastUpdate": "2018-05-07T18:47:33.020Z",

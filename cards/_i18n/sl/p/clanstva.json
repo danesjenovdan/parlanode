@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Članstva"
+    },
     "info": {
       "lead": "Izpis vseh članstev poslanca/-ke v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.",
       "text": "Podatki o članstvih pridobljeni s spletnega mesta {link}.",

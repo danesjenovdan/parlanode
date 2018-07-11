@@ -1,6 +1,5 @@
 {
   "_id": "ps_neujemanje-s-poslansko-skupino",
-  "name": "Neujemanje s poslansko skupino",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getPGMismatch",
   "lastUpdate": "2018-06-05T08:45:34.134Z",

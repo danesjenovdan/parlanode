@@ -1,1 +1,11 @@
-{ "sl": { "info": { "lead": "", "text": "" } } }
+{
+  "sl": {
+    "card": {
+      "title": "Seznam poslanskih skupin"
+    },
+    "info": {
+      "lead": "",
+      "text": ""
+    }
+  }
+}

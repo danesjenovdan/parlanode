@@ -1,6 +1,5 @@
 {
   "_id": "s_govor",
-  "name": "Govor",
   "type": "seje",
   "dataUrl": "{analize}/s/getSpeech",
   "lastUpdate": "2018-05-14T15:26:48.664Z",

@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Seznam zakonodaje"
+    },
     "config": {
       "tabs": [
         {

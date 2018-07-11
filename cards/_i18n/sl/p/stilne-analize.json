@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Stilne analize"
+    },
     "info": {
       "lead": "Pogostosti uporabe stilno zaznamovanih besed v poslančevih/-kinih govorih.",
       "text": [

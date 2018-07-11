@@ -1,5 +1,8 @@
 {
   "sl": {
+    "card": {
+      "title": "Seznam poslancev"
+    },
     "info": {
       "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
       "text": ""
