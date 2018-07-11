@@ -17,7 +17,7 @@ export default {
   ],
   created() {
     this.$root.$options.cardData.template = {
-      pageTitle: this.$root.$options.cardData.cardData.name,
+      pageTitle: this.$t('card.title'),
       frameContainerClass: this.$root.$options.cardData.cardData.big
         ? 'col-md-12'
         : 'col-md-6 col-md-offset-3',

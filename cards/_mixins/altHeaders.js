@@ -12,7 +12,7 @@ export const memberHeader = {
         heading: person.name,
         subheading: `${person.party.acronym} | ${coalitionText}`,
         alternative: cardData.cardData.altHeader === 'true',
-        title: cardData.cardData.name,
+        title: this.$t('card.title'),
       };
     },
   },
@@ -31,7 +31,7 @@ export const partyHeader = {
         heading: party.name,
         subheading: `${party.acronym} | ${coalitionText}`,
         alternative: cardData.cardData.altHeader === 'true',
-        title: cardData.cardData.name,
+        title: this.$t('card.title'),
       };
     },
   },
@@ -45,7 +45,7 @@ export const searchHeader = {
         heading: this.keywords,
         subheading: 'iskalni niz',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
+        title: this.$t('card.title'),
       };
     },
   },
@@ -70,7 +70,7 @@ export const sessionHeader = {
         heading: sessionName,
         subheading: session.date,
         alternative: cardData.cardData.altHeader === 'true',
-        title: cardData.cardData.name,
+        title: this.$t('card.title'),
       };
     },
   },
@@ -82,7 +82,7 @@ export const defaultHeaderConfig = (comp, overrides = {}) => {
     heading: '&nbsp;',
     subheading: '7. sklic parlamenta',
     alternative: comp.$options.cardData.cardData.altHeader === 'true',
-    title: comp.$options.cardData.cardData.name,
+    title: comp.$t('card.title'),
   };
 
   return assign({}, headerConfig, overrides);

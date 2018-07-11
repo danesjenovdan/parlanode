@@ -33,7 +33,7 @@ export default {
         heading: '&nbsp;',
         subheading: '7. sklic parlamenta',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
+        title: this.$t('card.title'),
       },
     };
   },

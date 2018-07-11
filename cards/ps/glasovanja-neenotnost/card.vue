@@ -194,7 +194,7 @@ export default {
       });
     },
     dynamicTitle() {
-      return this.$options.cardData.cardData.name + (
+      return this.$t('card.title') + (
         this.selectedSort === 'date'
           ? this.$t('sort-by--date').toLowerCase()
           : this.$t('sort-by--inequality').toLowerCase()

@@ -163,7 +163,7 @@ export default {
     },
     headerConfig() {
       return defaultHeaderConfig(this, {
-        title: `${this.$options.cardData.cardData.name} ${this.currentAnalysisData.titleSuffix}`,
+        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
     selectedDistricts() {
