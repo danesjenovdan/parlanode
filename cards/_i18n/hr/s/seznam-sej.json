@@ -2,25 +2,6 @@
   "card": {
     "title": "Seznam sej"
   },
-  "config": {
-    "tabs": [
-      {
-        "title": "Seje sabora",
-        "org_ids": [
-          199
-        ]
-      },
-      {
-        "title": "Ostale seje",
-        "org_ids": [
-          9
-        ]
-      },
-      {
-        "title": "Seje delovnih teles"
-      }
-    ]
-  },
   "info": {
     "lead": "Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu ({filter}). Seznam je sortiran po {sort-by}{just-last-five}.",
     "text": "Podatke o sejah pridobivamo iz spletnega mesta DZ RS, natančneje od {link1}, {link2} in {link3}.",
