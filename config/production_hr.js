@@ -10,6 +10,6 @@ module.exports = {
     glej: 'http://glej.hr.parlameter.si',
     base: 'http://hr.parlameter.si',
   },
-  cardLang: 'sl',
+  cardLang: 'hr',
   ogRootUrl: 'http://glej.hr.parlameter.si/og_cards',
 };
