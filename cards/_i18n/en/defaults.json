@@ -68,6 +68,9 @@
   "session-processing": "Session is being processed.",
   "organization": "Organizacija",
   "start": "Začetek",
+  "legislation": "Zakonodaja",
+  "laws": "Zakoni",
+  "acts": "Akti",
   "info": {
     "title": "Info",
     "methodology": "METHODOLOGY"
