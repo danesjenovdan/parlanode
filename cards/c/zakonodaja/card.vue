@@ -11,7 +11,7 @@
               v-for="(filter, index) in filters"
               :key="index"
               :selected="filter === currentFilter"
-              :small-text="filter"
+              :small-text="$te(filter) ? $t(filter) : filter"
               color="sds"
               @click.native="selectFilter(filter)"
             />
@@ -63,6 +63,7 @@ import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import dateParser from 'helpers/dateParser';
 import InnerCard from './innerCard.vue';
+import cardConfigJson from './config.json';
 
 export default {
   name: 'Zakonodaja',
@@ -89,13 +90,13 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const i18nConfig = this.$i18n.messages[this.$i18n.locale].config;
+    const cardConfig = cardConfigJson[this.$i18n.locale];
 
     return {
-      i18nConfig,
+      cardConfig,
       data: this.$options.cardData.data.results,
-      filters: i18nConfig.tabs.map(e => e.title),
-      currentFilter: this.$options.cardData.parlaState.filter || i18nConfig.tabs[0].title,
+      filters: cardConfig.tabs.map(e => e.title),
+      currentFilter: this.$options.cardData.parlaState.filter || cardConfig.tabs[0].title,
       currentSort: 'updated',
       currentSortOrder: 'desc',
       textFilter: '',
@@ -156,13 +157,13 @@ export default {
 
         let typeMatch = this.currentFilter === '';
         if (!typeMatch) {
-          const currentTab = this.i18nConfig.tabs.find(e => e.title === this.currentFilter);
+          const currentTab = this.cardConfig.tabs.find(e => e.title === this.currentFilter);
           if (currentTab) {
             const classification = legislation.classification == null ? 'null' : legislation.classification;
             if (currentTab.classifications) {
               typeMatch = currentTab.classifications.indexOf(classification) !== -1;
             } else {
-              const classifications = this.i18nConfig.tabs.reduce((acc, cur) => {
+              const classifications = this.cardConfig.tabs.reduce((acc, cur) => {
                 if (cur.classifications) {
                   return acc.concat(cur.classifications);
                 }

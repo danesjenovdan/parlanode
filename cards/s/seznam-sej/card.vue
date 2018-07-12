@@ -11,7 +11,7 @@
               v-for="(filter, index) in filters"
               :key="index"
               :selected="filter === currentFilter"
-              :small-text="filter"
+              :small-text="$te(filter) ? $t(filter) : filter"
               color="sds"
               @click.native="selectFilter(filter)"
             />
@@ -77,6 +77,7 @@ import { defaultHeaderConfig } from 'mixins/altHeaders';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
+import cardConfigJson from './config.json';
 
 export default {
   name: 'SeznamSej',
@@ -89,15 +90,15 @@ export default {
     common,
   ],
   data() {
-    const i18nConfig = this.$i18n.messages[this.$i18n.locale].config;
+    const cardConfig = cardConfigJson[this.$i18n.locale];
     return {
-      i18nConfig,
+      cardConfig,
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      filters: i18nConfig.tabs.map(e => e.title),
+      filters: cardConfig.tabs.map(e => e.title),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData, 'state.filter') || i18nConfig.tabs[0].title,
+      currentFilter: get(this.$options.cardData, 'state.filter') || cardConfig.tabs[0].title,
       justFive: get(this.$options.cardData, 'state.justFive') || false,
       headerConfig: defaultHeaderConfig(this),
     };
@@ -133,7 +134,7 @@ export default {
     processedSessions() {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
-          const selectedTab = this.i18nConfig.tabs.find(t => t.title === this.currentFilter);
+          const selectedTab = this.cardConfig.tabs.find(t => t.title === this.currentFilter);
           if (selectedTab) {
             if (selectedTab.org_ids && selectedTab.org_ids.length) {
               return session.orgs.filter(org => selectedTab.org_ids.indexOf(org.id) !== -1).length;
@@ -220,7 +221,7 @@ export default {
   },
   watch: {
     currentFilter(newValue) {
-      const otherTab = this.i18nConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      const otherTab = this.cardConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
       if (newValue !== otherTab.title) {
         this.workingBodies.forEach((workingBody) => {
           workingBody.selected = false;
@@ -228,7 +229,7 @@ export default {
       }
     },
     currentWorkingBodies(newValue) {
-      const otherTab = this.i18nConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      const otherTab = this.cardConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
       if (newValue.length !== 0 && this.currentFilter !== otherTab.title) {
         this.currentFilter = otherTab.title;
       }
@@ -247,7 +248,7 @@ export default {
   },
   methods: {
     organisationIsWorkingBody(organisationId) {
-      const orgIds = this.i18nConfig.tabs.reduce((acc, cur) => {
+      const orgIds = this.cardConfig.tabs.reduce((acc, cur) => {
         if (cur.org_ids) {
           return acc.concat(cur.org_ids);
         }

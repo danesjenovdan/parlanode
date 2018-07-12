@@ -1,0 +1,22 @@
+{
+  "sl": {
+    "tabs": [
+      {
+        "title": "laws",
+        "classifications": [
+          "zakon"
+        ]
+      },
+      {
+        "title": "acts"
+      }
+    ]
+  },
+  "hr": {
+    "tabs": [
+      {
+        "title": "legislation"
+      }
+    ]
+  }
+}
