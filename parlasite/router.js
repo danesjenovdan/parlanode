@@ -171,7 +171,7 @@ const routes = [
     cards       : [{
       name: 'zakonodaja',
       sourceUrl: '/c/zakonodaja/',
-      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('https://analize.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
     }]
   },
   {
@@ -181,7 +181,7 @@ const routes = [
     cards       : [{
       name: 'zakon',
       sourceUrl: '/s/zakon/',
-      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
+      resolve: (req, res, route, card) => resolve_card_with_custom_url('https://analize.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
     }]
   },
   {
@@ -1663,7 +1663,7 @@ const routes = [
       {
         name      : 'zakonodajaSeja',
         sourceUrl : '/c/zakonodaja/:id',
-        resolve: (req, res, route, card) => resolve_card_with_custom_url(`http://analize.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
+        resolve: (req, res, route, card) => resolve_card_with_custom_url(`https://analize.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
         // resolve   : (req, res, route, card) => {
         //   var pattern        = new UrlPattern(card.sourceUrl);
         //   const renderedPath = pattern.stringify({ id : req.params.id });
