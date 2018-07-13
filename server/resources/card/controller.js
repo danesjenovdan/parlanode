@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs-extra');
+const glob = require('glob');
 const ejs = require('ejs');
 const cheerio = require('cheerio');
 const util = require('util');
@@ -415,4 +416,54 @@ exports.waitForOgImage = (req, res) => {
       console.error('og image request failed:', error.message);
       return res.status(500).send('Error');
     });
+};
+
+exports.rebuildUpdated = (req, res) => {
+  glob('./cards/**/card.json', (error, files) => {
+    if (error) {
+      res.status(500).send(error);
+      return;
+    }
+
+    // set headers so browsers expect chunked text and don't buffer response
+    // text while waiting for new data
+    res.writeHead(200, {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Transfer-Encoding': 'chunked',
+      'X-Content-Type-Options': 'nosniff',
+    });
+
+    const allCards = files
+      .filter(f => !f.includes('_empty'))
+      .map(f => (
+        path.resolve(f)
+          .replace(/\\/g, '/')
+          .split('/')
+          .slice(-3, -1)
+      ))
+      .map(([group, method]) => ({ group, method }));
+
+    res.write('cards :\n');
+
+    const maybeBuild = async (cacheData, i) => {
+      res.write(`${i + 1 / allCards.length} | ${cacheData.group}/${cacheData.method}`);
+      const cardJSON = await loadCardJSON(cacheData);
+      if (await shouldBuildCard(cacheData, cardJSON)) {
+        res.write(' - BUILDING ...');
+        await buildCard(cacheData, cardJSON);
+        res.write(' DONE');
+      }
+      res.write('\n');
+    };
+
+    allCards.reduce((p, c, i) => p.then(() => maybeBuild(c, i)), Promise.resolve())
+      .then(() => {
+        res.end('\n\nEND');
+      })
+      .catch((pError) => {
+        // eslint-disable-next-line no-console
+        console.error(pError);
+        res.end(`\n\nError: ${pError.message}`);
+      });
+  });
 };

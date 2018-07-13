@@ -24,6 +24,7 @@ module.exports = (app) => {
   app.get('/api/cards/deleteBuilds', controller.deleteBuilds);
   app.get('/api/cards/deleteBuild/:id', controller.deleteBuildId);
   app.get('/api/cards/cleanUp', controller.cleanUp);
+  app.get('/api/cards/rebuildUpdated', controller.rebuildUpdated);
 
   // server.js serves static assets in this folder, this is hit only if the file does not exist
   app.get('/og_cards/:renderId([0-9a-f]+).jpeg', controller.waitForOgImage);
