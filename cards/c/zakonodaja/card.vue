@@ -92,7 +92,6 @@ export default {
 
     const cardConfig = cardConfigJson[this.$i18n.locale];
 
-    console.log(this);
     return {
       cardConfig,
       data: this.$options.cardData.data.results,
@@ -217,7 +216,6 @@ export default {
   },
   methods: {
     selectSort(sortId) {
-      console.log(sortId);
       if (this.currentSort === sortId) {
         this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc';
       } else {
