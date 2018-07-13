@@ -1,13 +1,10 @@
 const webpack = require('webpack');
 const fs = require('fs-extra');
+const path = require('path');
 const chalk = require('chalk');
+const glob = require('glob');
 const clientConfig = require('./webpack.config.client');
 const serverConfig = require('./webpack.config.server');
-
-// Returns all directories on certain path
-const dirs = p => fs.readdirSync(p)
-  .filter(f => fs.statSync(`${p}/${f}`).isDirectory())
-  .map(f => `${p}/${f}`);
 
 // Runs webpack compilation with passed configuration
 const compileWithWebpack = config => (
@@ -30,8 +27,8 @@ const compileWithWebpack = config => (
 );
 
 // Refreshes lastUpdate param in card.json file on passed path
-const refreshLastUpdate = async (path) => {
-  const cardJsonPath = `${path}/card.json`;
+const refreshLastUpdate = async (cardPath) => {
+  const cardJsonPath = `${cardPath}/card.json`;
   const json = await fs.readJson(cardJsonPath);
   json.lastUpdate = new Date().toJSON();
   await fs.writeJson(cardJsonPath, json, { spaces: 2 });
@@ -39,15 +36,15 @@ const refreshLastUpdate = async (path) => {
   console.log(chalk.green('Updated card.json timestamp.'));
 };
 
-const compileAndRefresh = (path) => {
+const compileAndRefresh = (cardPath) => {
   // eslint-disable-next-line no-console
-  console.log(chalk.green(`Building ${chalk.yellow(path)}`));
+  console.log(chalk.green(`Building ${chalk.yellow(cardPath)}`));
   const compile = Promise.all([
-    compileWithWebpack(clientConfig(path)),
-    compileWithWebpack(serverConfig(path)),
+    compileWithWebpack(clientConfig(cardPath)),
+    compileWithWebpack(serverConfig(cardPath)),
   ]);
   if (!process.env.DONT_UPDATE_TIMESTAMP) {
-    return compile.then(() => refreshLastUpdate(path));
+    return compile.then(() => refreshLastUpdate(cardPath));
   }
   return compile;
 };
@@ -56,13 +53,30 @@ if (!process.env.CARD_NAME) {
   // eslint-disable-next-line no-console
   console.log(`${chalk.red('ERROR:')} Specify card path (e.g. ${chalk.yellow('s/seznam-sej')} or ${chalk.yellow('all')}) to build one or all cards.`);
 } else if (process.env.CARD_NAME.toLowerCase() === 'all') {
-  const paths = dirs('./cards/p').concat(dirs('./cards/ps')).concat(dirs('./cards/s').concat(dirs('./cards/c')));
-  paths.reduce((promise, path) => promise.then(() => compileAndRefresh(path)), Promise.resolve())
-    .catch((error) => {
+  glob('./cards/**/card.json', (error, files) => {
+    if (error) {
       // eslint-disable-next-line no-console
       console.error(error);
       process.exit(1);
-    });
+    }
+
+    const allCards = files
+      .filter(f => !f.includes('_empty'))
+      .map(f => (
+        path.resolve(f)
+          .replace(/\\/g, '/')
+          .split('/')
+          .slice(-3, -1)
+          .join('/')
+      ));
+
+    allCards.reduce((p, c) => p.then(() => compileAndRefresh(`./cards/${c}`)), Promise.resolve())
+      .catch((pError) => {
+        // eslint-disable-next-line no-console
+        console.error(pError);
+        process.exit(1);
+      });
+  });
 } else {
   const cardName = process.env.CARD_NAME;
   compileAndRefresh(`./cards/${cardName}`)

@@ -443,10 +443,8 @@ exports.rebuildUpdated = (req, res) => {
       ))
       .map(([group, method]) => ({ group, method }));
 
-    res.write('cards :\n');
-
     const maybeBuild = async (cacheData, i) => {
-      res.write(`${i + 1 / allCards.length} | ${cacheData.group}/${cacheData.method}`);
+      res.write(`${i + 1} / ${allCards.length} | ${cacheData.group}/${cacheData.method}`);
       const cardJSON = await loadCardJSON(cacheData);
       if (await shouldBuildCard(cacheData, cardJSON)) {
         res.write(' - BUILDING ...');
