@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 const _ = require('lodash');
 
 let config;
@@ -26,10 +25,13 @@ const defaultConfig = {
 };
 
 if (env === 'production') {
+  // eslint-disable-next-line global-require, import/no-unresolved
   config = require('./production');
 } else if (env === 'development') {
+  // eslint-disable-next-line global-require, import/no-unresolved
   config = require('./development');
 } else {
+  // eslint-disable-next-line global-require
   config = require('./sample');
 }
 
