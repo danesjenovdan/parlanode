@@ -59,11 +59,11 @@ function setupExpress() {
     // eslint-disable-next-line no-console
     console.log(`${chalk.magenta('| EXPRESS SERVER |')} - ${chalk.green('starting')}`);
 
-    // use ejs as the view engine
-    app.set('view engine', 'ejs');
+    // disable "X-Powered-By: Express" header
+    app.disable('x-powered-by');
+
     // serve static assets on /assets
     app.use('/assets', serveStatic('assets'));
-    app.use('/og_cards', serveStatic('og'));
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));

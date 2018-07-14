@@ -4,10 +4,8 @@ const axios = require('axios');
 const path = require('path');
 const fs = require('fs-extra');
 const glob = require('glob');
-const ejs = require('ejs');
-const cheerio = require('cheerio');
 const util = require('util');
-const webshot = util.promisify(require('webshot'));
+//const webshot = util.promisify(require('webshot'));
 global.Vue = require('vue'); // TODO: do we need this to be global
 const renderer = require('vue-server-renderer');
 const { directive: t } = require('vue-i18n-extensions');
@@ -206,30 +204,6 @@ async function buildCard(cacheData, cardJson) {
   return cardJson;
 }
 
-async function addOgImage(cardJson, cardRender, context) {
-  const ogEjs = await fs.readFile(`views/og/${cardJson.type}.ejs`, 'utf-8');
-  const ogHtml = ejs.render(ogEjs, context);
-
-  // don't await call to webshot so it doesn't block card response
-  /* await */ webshot(ogHtml, `${config.ogCapturePath}/${cardRender._id}.jpeg`, {
-    siteType: 'html',
-    captureSelector: '#og-container',
-    quality: 80,
-  })
-    .catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error('webshot failed:', error);
-    });
-
-  cardRender.ogImageUrl = `${config.ogRootUrl}/${cardRender._id}.jpeg`;
-
-  const $ = cheerio.load(cardRender.html, { decodeEntities: false });
-  $('head').append(`<meta property="og:image" content="${cardRender.ogImageUrl}" />`);
-  $('head').append(`<meta name="twitter:image" content="${cardRender.ogImageUrl}" />`);
-
-  cardRender.html = $.html();
-}
-
 async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.card = cardJson._id;
   cacheData.dataUrl = expandUrl(cardJson.dataUrl);
@@ -290,10 +264,6 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   });
 
   const cardRender = new CardRender(cacheData);
-
-  if (cardJson.type && cardJson.type !== 'iskanje' && (cacheData.frame || cacheData.embed)) {
-    await addOgImage(cardJson, cardRender, context);
-  }
 
   cardRender.lastAccessed = new Date();
   return cardRender.save();
@@ -381,40 +351,6 @@ exports.render = (req, res) => {
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
-    });
-};
-
-// serve-static serves the og images directly so this gets hit only if webshot was not done yet
-// we just wait for a couple of seconds and return the image if it exists
-exports.waitForOgImage = (req, res) => {
-  const CardRender = mongoose.model('CardRender');
-
-  CardRender.findById(req.params.renderId)
-    .then((cardRender) => {
-      if (!cardRender) {
-        // eslint-disable-next-line no-console
-        console.error('og image request cardRender not found:', req.params.renderId);
-        return res.status(404).send('Not Found');
-      }
-
-      const imgPath = path.resolve(config.ogCapturePath, `${cardRender._id}.jpeg`);
-      if (fs.existsSync(imgPath)) {
-        return res.sendFile(imgPath);
-      }
-
-      return setTimeout(() => {
-        if (fs.existsSync(imgPath)) {
-          return res.sendFile(imgPath);
-        }
-        // eslint-disable-next-line no-console
-        console.error('og image request file not found after delay:', req.params.renderId);
-        return res.status(404).send('Not Found');
-      }, 5000);
-    })
-    .catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error('og image request failed:', error.message);
-      return res.status(500).send('Error');
     });
 };
 
