@@ -175,13 +175,15 @@ const routes = [
     }]
   },
   {
-    path        : '/zakonodaja/:epa',
+    path        : /^\/zakonodaja\/(.+)/,
     viewPath    : 'zakonodaja/zakon',
     pageTitle   : 'Zakonodaja',
     cards       : [{
       name: 'zakon',
       sourceUrl: '/s/zakon/',
-      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.hr.parlameter.si/v1/s/getLegislation/' + req.params.epa, req, card, {})
+      resolve: (req, res, route, card) => {
+        return resolve_card_with_custom_url('http://analize.hr.parlameter.si/v1/s/getLegislation/' + req.params[0], req, card, {})
+      },
     }]
   },
   {
@@ -1689,24 +1691,23 @@ const routes = [
       {
         name      : 'zakonodajaSeja',
         sourceUrl : '/c/zakonodaja/:id',
-        resolve: (req, res, route, card) => resolve_card_with_custom_url(`http://analize.hr.parlameter.si/v1/s/getLegislationList/${req.params.id}`, req, card, {})
-        // resolve   : (req, res, route, card) => {
-        //   var pattern        = new UrlPattern(card.sourceUrl);
-        //   const renderedPath = pattern.stringify({ id : req.params.id });
-        //   let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}`;
+        resolve   : (req, res, route, card) => {
+          var pattern        = new UrlPattern(card.sourceUrl);
+          const renderedPath = pattern.stringify({ id : req.params.id });
+          let cardUrl        = `${config.CARD_RENDERER_API_ROOT}${renderedPath}?customUrl=${encodeURIComponent(`http://analize.hr.parlameter.si/v1/s/getLegislationList/${req.params.id}`)}`;
 
-        //   if (req.query.forceRender) {
-        //     cardUrl += '?forceRender=true';
-        //   }
+          if (req.query.forceRender) {
+            cardUrl += '&forceRender=true';
+          }
 
-        //   return fetch(cardUrl)
-        //     .then((res) => {
-        //       return res.text();
-        //     })
-        //     .then((body) => {
-        //       return body;
-        //     });
-        // }
+          return fetch(cardUrl)
+            .then((res) => {
+              return res.text();
+            })
+            .then((body) => {
+              return body;
+            });
+        }
       },
     ]
   },
@@ -2191,7 +2192,7 @@ function createRoute(app, route) {
           } else if (route.viewPath.indexOf('zakonodaja') !== -1) {
             if (route.viewPath.indexOf('/zakon') !== -1) {
 
-              getLawDataByEPA(req.params.epa).then((lawData) => {
+              getLawDataByEPA(req.params[0]).then((lawData) => {
                 // console.log(lawData);
 
                 const dataExtend = {
