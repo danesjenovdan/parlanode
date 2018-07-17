@@ -2,7 +2,7 @@
   "_id": "p_stevilo-izgovorjenih-besed",
   "type": "poslanec",
   "dataUrl": "{analize}/p/getNumberOfSpokenWords",
-  "lastUpdate": "2018-06-13T10:35:25.159Z",
+  "lastUpdate": "2018-07-17T13:23:31.174Z",
   "big": false,
   "high": false
 }

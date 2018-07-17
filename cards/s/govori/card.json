@@ -2,7 +2,7 @@
   "_id": "s_govori",
   "type": "seje",
   "dataUrl": "{analize}/s/getSpeechesOfSession",
-  "lastUpdate": "2018-05-14T14:10:57.838Z",
+  "lastUpdate": "2018-07-17T13:24:47.065Z",
   "big": true,
   "high": true
 }

@@ -2,7 +2,7 @@
   "_id": "ps_stilne-analize",
   "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getStyleScores",
-  "lastUpdate": "2018-05-08T12:10:29.385Z",
+  "lastUpdate": "2018-07-17T13:24:26.202Z",
   "big": false,
   "high": false
 }

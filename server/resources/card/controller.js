@@ -104,9 +104,9 @@ exports.cleanUp = (req, res) => {
 };
 
 async function loadCardJSON(cacheData) {
-  const cardJSON = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
-  cardJSON.lastUpdate = new Date(cardJSON.lastUpdate);
-  return cardJSON;
+  const cardJson = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
+  cardJson.lastUpdate = new Date(cardJson.lastUpdate);
+  return cardJson;
 }
 
 async function fetchData(dataUrl) {
@@ -140,7 +140,7 @@ function expandUrl(dataUrl) {
   return dataUrl;
 }
 
-async function shouldBuildCard(cacheData, cardJSON) {
+async function shouldBuildCard(cacheData, cardJson) {
   try {
     const CardBuild = mongoose.model('CardBuild');
     const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method });
@@ -150,13 +150,13 @@ async function shouldBuildCard(cacheData, cardJSON) {
     if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(cardBuild.lastBuilt)) {
       return true;
     }
-    if (Number(cardBuild.lastBuilt) !== Number(cardJSON.lastUpdate)) {
+    if (Number(cardBuild.lastBuilt) !== Number(cardJson.lastUpdate)) {
       return true;
     }
     if (cardBuild.language !== config.cardLang) {
       return true;
     }
-    if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJSON.dataUrl)) {
+    if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
       return true;
     }
     return false;
@@ -172,8 +172,8 @@ async function shouldBuildCard(cacheData, cardJSON) {
 // the same card twice at the same time
 const ongoingCardBuilds = new Map();
 
-async function buildCard(cacheData, cardJSON) {
-  const buildCommand = `node cards/build-cross-env ${cacheData.group}/${cacheData.method} build ${config.cardLang} --update-timestamp=false`;
+async function buildCard(cacheData, cardJson) {
+  const buildCommand = `node cards/build-cross-env.js ${cacheData.group}/${cacheData.method} build ${config.cardLang} --update-timestamp=false`;
   try {
     let promise;
     if (ongoingCardBuilds.has(buildCommand)) {
@@ -192,22 +192,22 @@ async function buildCard(cacheData, cardJSON) {
   } finally {
     ongoingCardBuilds.delete(buildCommand);
   }
-  cardJSON = await loadCardJSON(cacheData);
+  cardJson = await loadCardJSON(cacheData);
   const CardBuild = mongoose.model('CardBuild');
   await CardBuild.findOneAndUpdate(
     { group: cacheData.group, method: cacheData.method },
     {
-      lastBuilt: cardJSON.lastUpdate.toJSON(),
+      lastBuilt: cardJson.lastUpdate.toJSON(),
       language: config.cardLang,
-      dataUrl: cardJSON.dataUrl,
+      dataUrl: cardJson.dataUrl,
     },
     { upsert: true, new: true, setDefaultsOnInsert: true },
   );
-  return cardJSON;
+  return cardJson;
 }
 
-async function addOgImage(cardJSON, cardRender, context) {
-  const ogEjs = await fs.readFile(`views/og/${cardJSON.type}.ejs`, 'utf-8');
+async function addOgImage(cardJson, cardRender, context) {
+  const ogEjs = await fs.readFile(`views/og/${cardJson.type}.ejs`, 'utf-8');
   const ogHtml = ejs.render(ogEjs, context);
 
   // don't await call to webshot so it doesn't block card response
@@ -230,11 +230,11 @@ async function addOgImage(cardJSON, cardRender, context) {
   cardRender.html = $.html();
 }
 
-async function renderCard(cacheData, cardJSON, originalUrl) {
-  cacheData.card = cardJSON._id;
-  cacheData.dataUrl = expandUrl(cardJSON.dataUrl);
+async function renderCard(cacheData, cardJson, originalUrl) {
+  cacheData.card = cardJson._id;
+  cacheData.dataUrl = expandUrl(cardJson.dataUrl);
   cacheData.cardUrl = `${urlSlugs.urls.glej}${originalUrl}`;
-  cacheData.cardLastUpdate = cardJSON.lastUpdate;
+  cacheData.cardLastUpdate = cardJson.lastUpdate;
 
   let fetchUrl;
   if (cacheData.customUrl) {
@@ -263,7 +263,7 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
   const parsedState = JSON.parse(cacheData.state);
   const context = {
     data,
-    cardData: cardJSON,
+    cardData: cardJson,
     customUrl: fetchUrl,
     state: parsedState,
     parlaState: parsedState,
@@ -291,8 +291,8 @@ async function renderCard(cacheData, cardJSON, originalUrl) {
 
   const cardRender = new CardRender(cacheData);
 
-  if (cardJSON.type && cardJSON.type !== 'iskanje' && (cacheData.frame || cacheData.embed)) {
-    await addOgImage(cardJSON, cardRender, context);
+  if (cardJson.type && cardJson.type !== 'iskanje' && (cacheData.frame || cacheData.embed)) {
+    await addOgImage(cardJson, cardRender, context);
   }
 
   cardRender.lastAccessed = new Date();
@@ -304,7 +304,7 @@ function formattedDate(days = 0) {
 }
 
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
-  let cardJSON = await loadCardJSON(cacheData);
+  let cardJson = await loadCardJSON(cacheData);
   let renderedCard = null;
   if (!forceRender) {
     // eslint-disable-next-line no-console
@@ -316,15 +316,15 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
       renderedCard.save();
     }
   }
-  if (!renderedCard || Number(cardJSON.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
+  if (!renderedCard || Number(cardJson.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
     // eslint-disable-next-line no-console
     console.log(`Card: ${cacheData.group}/${cacheData.method} - NOT CACHED (forceRender=${forceRender})`);
-    if (await shouldBuildCard(cacheData, cardJSON)) {
+    if (await shouldBuildCard(cacheData, cardJson)) {
       // eslint-disable-next-line no-console
       console.log(`Card: ${cacheData.group}/${cacheData.method} - BUILDING`);
-      cardJSON = await buildCard(cacheData, cardJSON);
+      cardJson = await buildCard(cacheData, cardJson);
     }
-    renderedCard = await renderCard(cacheData, cardJSON, originalUrl);
+    renderedCard = await renderCard(cacheData, cardJson, originalUrl);
   }
   return renderedCard;
 }
@@ -445,10 +445,10 @@ exports.rebuildUpdated = (req, res) => {
 
     const maybeBuild = async (cacheData, i) => {
       res.write(`${i + 1} / ${allCards.length} | ${cacheData.group}/${cacheData.method}`);
-      const cardJSON = await loadCardJSON(cacheData);
-      if (await shouldBuildCard(cacheData, cardJSON)) {
+      const cardJson = await loadCardJSON(cacheData);
+      if (await shouldBuildCard(cacheData, cardJson)) {
         res.write(' - BUILDING ...');
-        await buildCard(cacheData, cardJSON);
+        await buildCard(cacheData, cardJson);
         res.write(' DONE');
       }
       res.write('\n');
