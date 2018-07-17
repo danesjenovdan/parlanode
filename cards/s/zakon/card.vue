@@ -175,7 +175,7 @@ export default {
   }
 }
 
-#s-zakon {
+#s_zakon {
   .card-content {
     height: 518px;
   }
