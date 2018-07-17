@@ -94,7 +94,7 @@
 
 <script>
 import { parse as parseDate, format } from 'date-fns';
-import { groupBy, sortBy, zipObject, find, capitalize } from 'lodash';
+import { groupBy, sortBy, zipObject, find } from 'lodash';
 import DateRow from 'components/DateRow.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -114,34 +114,44 @@ export default {
   },
   mixins: [common],
   data() {
-    let groups = [{
-      id: 95,
+    const data = Object.keys(this.$options.cardData.data).map((key) => {
+      const obj = this.$options.cardData.data[key];
+      return {
+        id: Number(key),
+        ...obj,
+      };
+    });
+
+    const all = data.find(o => o.type === 'parliament');
+    const coalition = data.find(o => o.type === 'coalition');
+
+    let groups = [];
+    groups.push({
+      id: all.id,
       color: 'dz',
-      acronym: 'DZ',
+      acronym: all.acronym,
       name: this.$t('everybody'),
-    }, {
-      id: 144,
+    });
+    groups.push({
+      id: coalition.id,
       color: 'koal',
-      acronym: 'koal',
-      name: capitalize(this.$t('coalition')),
-    }];
+      acronym: coalition.acronym,
+      name: coalition.name,
+    });
 
     let namedGroups = [];
-    Object.keys(this.$options.cardData.data).forEach((groupName) => {
-      const groupValue = this.$options.cardData.data[groupName];
-      if (!groupValue.disbanded) {
+    data.forEach((group) => {
+      if (!group.disbanded && group.type === 'party') {
         namedGroups.push({
-          id: groupName,
-          acronym: groupValue.acronym,
-          color: groupValue.acronym.toLowerCase().replace(/ /g, '_'),
-          name: groupValue.acronym,
+          id: group.id,
+          acronym: group.acronym,
+          color: group.acronym.toLowerCase().replace(/ /g, '_'),
+          name: group.acronym,
         });
       }
     });
 
-    const allClassifications = [];
-
-    namedGroups = sortBy(namedGroups, 'name');
+    namedGroups = sortBy(namedGroups, ['name']);
     groups = groups.concat(namedGroups);
 
     return {
@@ -151,9 +161,9 @@ export default {
       sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
       textFilter: '',
       allTags: [],
-      selectedGroup: 'DZ',
+      selectedGroup: groups[0].acronym,
       groups,
-      allClassifications,
+      allClassifications: [],
       cardData: this.$options.cardData,
     };
   },
@@ -228,7 +238,7 @@ export default {
     },
   },
   beforeMount() {
-    this.fetchVotesForGroup();
+    this.fetchVotesForGroup(this.groups[0].acronym);
   },
   created() {
     const context = this.$options.cardData;
@@ -275,9 +285,9 @@ export default {
         .filter(votingDay => (votingDay.ballots.length > 0));
     },
     selectGroup(acronym) {
-      this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
+      this.selectedGroup = this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
-    fetchVotesForGroup(acronym = 'DZ') {
+    fetchVotesForGroup(acronym) {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
       $.getJSON(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`, (response) => {

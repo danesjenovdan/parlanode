@@ -1,62 +1,170 @@
 {
-    "1": {
-        "acronym": "SMC",
-        "founded": null,
-        "name": "PS Stranka modernega centra",
-        "disbanded": null
-    },
-    "2": {
-        "acronym": "IMNS",
-        "founded": null,
-        "name": "PS italijanske in mad\u017earske narodne skupnosti",
-        "disbanded": null
-    },
-    "3": {
-        "acronym": "DeSUS",
-        "founded": null,
-        "name": "PS Demokratska Stranka Upokojencev Slovenije",
-        "disbanded": null
-    },
-    "4": {
-        "acronym": "ZAAB",
-        "founded": "2014-08-01T00:00:00",
-        "name": "PS Zavezni\u0161tvo Alenke Bratu\u0161ek",
-        "disbanded": "2015-09-08T00:00:00"
-    },
-    "5": {
-        "acronym": "SDS",
-        "founded": "2014-08-01T00:00:00",
-        "name": "PS Slovenska Demokratska Stranka",
-        "disbanded": null
-    },
-    "6": {
-        "acronym": "NSI",
-        "founded": null,
-        "name": "PS Nova Slovenija",
-        "disbanded": null
-    },
-    "7": {
-        "acronym": "SD",
-        "founded": null,
-        "name": "PS Socialni Demokrati",
-        "disbanded": null
-    },
-    "8": {
-        "acronym": "Levica",
-        "founded": "2014-08-06T00:00:00",
-        "name": "PS Levica",
-        "disbanded": null
-    },
-    "109": {
-        "acronym": "PS NP",
-        "founded": "2016-01-29T00:00:00",
-        "name": "PS nepovezanih poslancev ",
-        "disbanded": null
-    },
-    "97": {
-        "acronym": "PS NP",
-        "founded": "2015-09-14T00:00:00",
-        "name": "PS nepovezanih poslancev ",
-        "disbanded": "2016-01-28T00:00:00"
-    }
+  "258": {
+    "acronym": "SNAGA",
+    "founded": null,
+    "type": "party",
+    "name": "SNAGA - Stranka narodnog i gra\u0111anskog aktivizma",
+    "disbanded": null
+  },
+  "261": {
+    "acronym": "IDS",
+    "founded": null,
+    "type": "party",
+    "name": "Istarski demokratski sabor",
+    "disbanded": null
+  },
+  "263": {
+    "acronym": "Most",
+    "founded": null,
+    "type": "party",
+    "name": "Most nezavisnih lista",
+    "disbanded": null
+  },
+  "266": {
+    "acronym": "Reformisti",
+    "founded": null,
+    "type": "party",
+    "name": "Narodna stranka - reformisti",
+    "disbanded": null
+  },
+  "268": {
+    "acronym": "SDP",
+    "founded": null,
+    "type": "party",
+    "name": "Socijaldemokratska partija Hrvatske",
+    "disbanded": null
+  },
+  "274": {
+    "acronym": "HDZ",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatska demokratska zajednica",
+    "disbanded": null
+  },
+  "275": {
+    "acronym": "NHR",
+    "founded": null,
+    "type": "party",
+    "name": "Bruna Esih - Zlatko Hasanbegovi\u0107: Neovisni za Hrvatsku",
+    "disbanded": null
+  },
+  "279": {
+    "acronym": "NZ",
+    "founded": null,
+    "type": "party",
+    "name": "Nezavisni",
+    "disbanded": null
+  },
+  "282": {
+    "acronym": "HDS",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatska demokr\u0161\u0107anska stranka",
+    "disbanded": null
+  },
+  "289": {
+    "acronym": "HNS",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatska narodna stranka - liberalni demokrati",
+    "disbanded": null
+  },
+  "291": {
+    "acronym": "\u017divi zid",
+    "founded": null,
+    "type": "party",
+    "name": "\u017divi zid",
+    "disbanded": null
+  },
+  "295": {
+    "acronym": "HRAST",
+    "founded": null,
+    "type": "party",
+    "name": "HRAST - Pokret za uspje\u0161nu Hrvatsku",
+    "disbanded": null
+  },
+  "300": {
+    "acronym": "HSS",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatska selja\u010dka stranka",
+    "disbanded": null
+  },
+  "303": {
+    "acronym": "BM 365",
+    "founded": null,
+    "type": "party",
+    "name": "Bandi\u0107 Milan 365 - Stranka rada i solidarnosti",
+    "disbanded": null
+  },
+  "308": {
+    "acronym": "GLAS",
+    "founded": null,
+    "type": "party",
+    "name": "Gra\u0111ansko-liberalni savez",
+    "disbanded": null
+  },
+  "315": {
+    "acronym": "SDSS",
+    "founded": null,
+    "type": "party",
+    "name": "Samostalna demokratska srpska stranka",
+    "disbanded": null
+  },
+  "316": {
+    "acronym": "NLM",
+    "founded": null,
+    "type": "party",
+    "name": "Nezavisna lista mladih",
+    "disbanded": null
+  },
+  "325": {
+    "acronym": "PH",
+    "founded": null,
+    "type": "party",
+    "name": "Promijenimo Hrvatsku",
+    "disbanded": null
+  },
+  "326": {
+    "acronym": "HSLS",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatska socijalno-liberalna stranka",
+    "disbanded": null
+  },
+  "199": {
+    "acronym": "sabor",
+    "founded": null,
+    "type": "parliament",
+    "name": "Sabor",
+    "disbanded": null
+  },
+  "329": {
+    "acronym": "HSU",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatska stranka umirovljenika",
+    "disbanded": null
+  },
+  "341": {
+    "acronym": "HDSSB",
+    "founded": null,
+    "type": "party",
+    "name": "Hrvatski demokratski savez Slavonije i Baranje",
+    "disbanded": null
+  },
+  "345": {
+    "acronym": "opozicija",
+    "founded": null,
+    "type": "oposition",
+    "name": "Opozicija",
+    "disbanded": null
+  },
+  "346": {
+    "acronym": "koalicija",
+    "founded": null,
+    "type": "coalition",
+    "name": "Koalicija",
+    "disbanded": null
+  }
 }

@@ -822,9 +822,9 @@
     }
   },
   "urls": {
-    "analize": "https://analize.parlameter.si/v1",
-    "data": "https://data.parlameter.si/v1",
-    "isci": "https://isci.parlameter.si",
+    "analize": "http://analize.hr.parlameter.si/v1",
+    "data": "http://data.hr.parlameter.si/v1",
+    "isci": "http://isci.hr.parlameter.si",
     "glej": "http://localhost:3000",
     "base": "http://localhost:3066"
   },

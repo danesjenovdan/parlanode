@@ -1,8 +1,8 @@
 {
   "_id": "ps_glasovanja-neenotnost",
-  "dataUrl": "{data}/getAllPGsExt/",
+  "dataUrl": "{data}/getAllORGsExt/",
   "type": "neenotnost",
-  "lastUpdate": "2018-07-17T13:23:47.213Z",
+  "lastUpdate": "2018-07-17T14:59:54.675Z",
   "big": true,
   "high": false
 }
