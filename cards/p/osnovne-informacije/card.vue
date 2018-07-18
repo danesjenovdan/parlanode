@@ -107,7 +107,7 @@
         </div>
         <div class="bordertop0">
           <i18n path="age" tag="span" class="key">
-            <b place="age">{{ data.results.age }}</b>
+            <b place="age">{{ age }}</b>
           </i18n>
         </div>
       </div>
@@ -192,6 +192,7 @@
 </template>
 
 <script>
+import { parse, differenceInCalendarYears } from 'date-fns';
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
@@ -215,6 +216,9 @@ export default {
   computed: {
     generatedCardUrl() {
       return `${this.url}${this.data.person.id}?altHeader=true`;
+    },
+    age() {
+      return differenceInCalendarYears(new Date(), parse(this.data.results.birth_date));
     },
   },
   methods: {
