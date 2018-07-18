@@ -91,5 +91,23 @@
     "elevated-vocabulary": "Privzdignjeno besedje",
     "simple-vocabulary": "Preprosto besedje",
     "excessive-vocabulary": "Ekscesno besedje"
+  },
+  "question": {
+    "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--f": "Zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}."
+  },
+  "event": {
+    "ballot--for--m": "Glasoval ZA {title}",
+    "ballot--for--f": "Glasovala ZA {title}",
+    "ballot--against--m": "Glasoval PROTI {title}",
+    "ballot--against--f": "Glasovala PROTI {title}",
+    "ballot--not--m": "NI glasoval za {title}",
+    "ballot--not--f": "NI glasovala za {title}",
+    "ballot--quorum--m": "VZDRŽAL se je glasovanja o {title}",
+    "ballot--quorum--f": "VZDRŽALA se je glasovanja o {title}",
+    "speech--m": "Govoril na {session} {org}",
+    "speech--f": "Govorila na {session} {org}"
   }
 }
