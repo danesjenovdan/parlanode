@@ -23,6 +23,10 @@
         :key="speech.results.speech_id"
         :speech="speech"
       />
+      <div v-if="!allLoaded" class="load-more-container">
+        <load-link v-if="!fetching" :text="$t('load-more-speeches')" @click="fetchNextPage" />
+        <div v-if="fetching" class="nalagalnik"></div>
+      </div>
     </div>
     <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
@@ -32,6 +36,7 @@
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
 import Speech from 'components/Speech.vue';
+import LoadLink from 'components/LoadLink.vue';
 
 function getSelected() {
   if (window.getSelection) {
@@ -53,6 +58,7 @@ export default {
   name: 'Govori',
   components: {
     Speech,
+    LoadLink,
   },
   directives: {
     quotable(elem) {
@@ -113,19 +119,37 @@ export default {
     sessionHeader,
   ],
   data() {
+    const data = this.$options.cardData.data;
     return {
-      data: this.$options.cardData.data,
+      data,
+      speeches: data.results || [],
+      numFound: data.count || 0,
+      page: 1,
+      fetching: false,
     };
   },
   computed: {
-    speeches() {
-      if (this.data.results && this.data.results.length) {
-        return this.data.results;
-      }
-      return [];
+    allLoaded() {
+      return this.numFound <= this.speeches.length;
     },
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.session.id}?altHeader=true`;
+      return `${this.url}${this.data.session.id}?altHeader=true`;
+    },
+  },
+  mounted() {
+    document.body.style.overflowAnchor = 'none';
+  },
+  methods: {
+    fetchNextPage() {
+      if (this.fetching) {
+        return;
+      }
+      this.fetching = true;
+      this.page += 1;
+      $.get(`${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${this.page}`, (response) => {
+        this.speeches = this.speeches.concat(response.results);
+        this.fetching = false;
+      });
     },
   },
 };
@@ -134,6 +158,7 @@ export default {
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/color_classes';
 
 .empty-dataset {
   font-size: 16px;
@@ -163,6 +188,21 @@ $lightest-blue: #e9eff2;
 
   &:target {
     background: $lightest-blue;
+  }
+}
+
+.load-more-container {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+
+  .load {
+    margin: 12px 0;
+    @include link-hover;
+  }
+
+  .nalagalnik {
+    height: 51px;
   }
 }
 </style>
