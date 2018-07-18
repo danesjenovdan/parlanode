@@ -93,6 +93,7 @@
 
 <script>
 import { find } from 'lodash';
+import { parse, differenceInCalendarYears } from 'date-fns';
 import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
@@ -104,6 +105,13 @@ import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
+
+function getAge(date) {
+  if (!date) {
+    return 0;
+  }
+  return differenceInCalendarYears(new Date(), parse(date));
+}
 
 export default {
   name: 'SeznamPoslancev',
@@ -231,7 +239,7 @@ export default {
         })
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
-          if (newMember.person.district.length === 0) {
+          if (!newMember.person.district || !newMember.person.district.length) {
             newMember.formattedDistrict = this.$t('missing-district');
           } else {
             newMember.formattedDistrict = newMember.person.district
@@ -239,8 +247,8 @@ export default {
               .join(', ');
           }
 
-          newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
-          newMember.age = (newMember.results.age && newMember.results.age.score) || '';
+          newMember.partylink = newMember.person.party.acronym && newMember.person.party.acronym.indexOf('NeP') === -1;
+          newMember.age = getAge(newMember.results.birth_date && newMember.results.birth_date.score) || '';
           const education = newMember.results.education && newMember.results.education.score;
           newMember.education = parseInt(education || 0, 10);
           newMember.terms = newMember.results.mandates.score || 1;
