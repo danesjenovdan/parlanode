@@ -3,7 +3,7 @@
     "title": "Prisutnost na glasanjima na sjednicama HS-a kroz vrijeme"
   },
   "info": {
-    "lead": "Prisotnost poslanca/-ke na glasovanjih DZ skozi čas.",
-    "text": "Vsak mesec preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom vseh glasovanj, na katerih bi moral/-a poslanec/-ka ta mesec glasovati. Če poslanec/-ka v izbranem mesecu mandata ni imel/-a, prikažemo, na kolikšnem odstotku glasovanj ni imel/-a pravice glasovati."
+    "lead": "Prisutnost zastupnice na glasanju na sjednicama HS-a tijekom vremena.",
+    "text": "Svaki mjesec prebroje se svi glasovi zastupnice i taj broj se podijeli sa zbrojem svih glasanja sa sjednica na kojima se moralo glasati taj mjesec. Ako zastupnica u odabranom mjesecu nije imala mandat, prikazuje se u kolikom postotku glasanja nije imala pravo glasati."
   }
 }
