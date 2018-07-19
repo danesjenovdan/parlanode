@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "Primerjalnik glasovanj"
+    "title": "Komparator glasanja"
   },
   "info": {
     "text": [
-      "Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.",
-      "Rezultate prikazujemo na tri načine:"
+      "Kartica prikazuje sva glasanja koja odgovaraju odabranim uvjetima. Kada se uspoređuju klubovi koristi se izračunata većina glasova dobivena tako da se prebroji za koju je opciju glasao najveći broj zastupnica iz istog kluba.",
+      "Rezultati su prikazani na tri načina:"
     ],
     "list": [
-      "kot seznam vseh glasovanj,",
+      "kao popis svih glasova,",
       "kot črtni grafikon ki predstavlja število glasovanj na dan,",
       "kot histogram s seštevki glasovanj glede na matično delovno telo."
     ]
