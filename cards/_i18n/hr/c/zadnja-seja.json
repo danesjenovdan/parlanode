@@ -3,7 +3,7 @@
     "title": "Posljednja sjednica"
   },
   "info": {
-    "lead": "Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu {link}.",
+    "lead": "Pregled statistika posljednje sjednice za koju su podaci objavljeni na web stranicama Hrvatskog sabora {link}.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
       "text": "DZ RS"
