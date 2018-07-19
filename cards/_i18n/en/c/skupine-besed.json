@@ -9,7 +9,7 @@
   "speakers": "Speakers",
   "parties": "Parliamentary groups",
   "input-words": "Enter a word or multiple words separated by a comma.",
-  "empty-text": "Za prikaz rezultatov dodaj vsaj dve besedi.",
-  "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
-  "show-relative": "Prikaži relativno metriko"
+  "empty-text": "To view results add at least two words.",
+  "wordgroups-text": "Show me who talk about {words} the most. {load}",
+  "show-relative": "Display relative metric"
 }
