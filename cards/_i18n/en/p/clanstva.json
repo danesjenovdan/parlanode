@@ -3,10 +3,10 @@
     "title": "Membership"
   },
   "info": {
-    "lead": "Izpis vseh članstev poslanca/-ke v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.",
-    "text": "Podatki o članstvih pridobljeni s spletnega mesta {link}.",
+    "lead": "List of memberships in working bodies, permanent delegations and parliamentary friendship groups.",
+    "text": "Information regarding memberships has been sourced from the web site {link}.",
     "link": {
-      "text": "DZ RS",
+      "text": "National Assembly of the Republic of Slovenia",
       "link": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi"
     }
   }
