@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Seznam poslancev"
+    "title": "Popis zastupnica"
   },
   "info": {
-    "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
+    "lead": "Skup svih trenutno aktivnih zastupnica koje odgovaraju korisničkom izboru ({parties}; {districts}). Pregled je sortiran po {sortBy}.",
     "text": ""
   },
-  "select-district-placeholder": "Izberi okraj",
-  "all-parties": "vse poslanske skupine",
+  "select-district-placeholder": "Odaberite izbornu jedinicu",
+  "all-parties": "svi klubovi",
   "all-voting-districts": "vsi volilni okraji",
   "missing-district": "okraj ni vnešen",
   "voting-district": "volilni okraj",
