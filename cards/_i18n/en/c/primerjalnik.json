@@ -4,25 +4,25 @@
   },
   "info": {
     "text": [
-      "Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.",
-      "Rezultate prikazujemo na tri načine:"
+      "The card displays all voting events that match selected criteria. When comparing parliamentary groups it calculates the majority vote by counting the number of votes for each option and chose the one with the highest number of votes.",
+      "Results are displayed in three ways:"
     ],
     "list": [
-      "kot seznam vseh glasovanj,",
-      "kot črtni grafikon ki predstavlja število glasovanj na dan,",
-      "kot histogram s seštevki glasovanj glede na matično delovno telo."
+      "as a list of all voting events,",
+      "as a line chart that shows the number of votes on any given day,",
+      "as a histogram showing sums of votes based on working bodies."
     ]
   },
-  "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih. {load}",
-  "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
-  "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
+  "comparator-text": "I want to know, when {same} voted the same, but {different} voted differently. {load}",
+  "ignore-absent": "Ignore \"absent\" votes",
+  "comparator-vote-percent": "{num} filtered voting events represents {percent} of all voting events.",
   "tabs": {
-    "vote-list": "Seznam glasovanj",
-    "time-chart": "Dinamika skozi čas",
-    "bar-chart": "Dinamika glede na MDT"
+    "vote-list": "List of voting events",
+    "time-chart": "Timeline",
+    "bar-chart": "Working bodies dynamics"
   },
-  "select-parties-people": "Vklopi cele poslanske skupine ali dodaj posamezne poslance.",
-  "select-mps": "Izberi poslance",
-  "selected-mps": "Izbranih: {num}",
-  "empty-state-text": "Za prikaz glasovanj dodaj vsaj dva akterja."
+  "select-parties-people": "Select parliamentary groups or add individual MPs.",
+  "select-mps": "Choose MPs",
+  "selected-mps": "Chosen: {num}",
+  "empty-state-text": "To view voting events add at least two agents."
 }
