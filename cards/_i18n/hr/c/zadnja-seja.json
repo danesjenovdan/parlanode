@@ -6,7 +6,7 @@
     "lead": "Pregled statistika posljednje sjednice za koju su podaci objavljeni na web stranicama Hrvatskog sabora {link}.",
     "link": {
       "link": "http://edoc.sabor.hr/Statistika/ZakonodavnaAktivnost.aspx",
-      "text": "DZ RS"
+      "text": "HS"
     },
     "words-heading": "Besede, ki so zaznamovale sejo",
     "words-text": "Analizo izvajamo po statistiki tf-idf. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
