@@ -81,28 +81,28 @@
     "direct-link": "Izravna poveznica na karticu"
   },
   "embed": {
-    "title": "Vdelaj",
-    "always-refresh": "Podatki naj se vedno osvežujejo"
+    "title": "Ugradi",
+    "always-refresh": "Podaci se uvijek moraju osvježiti"
   },
   "membership-list": {
-    "no-memberships": "Brez članstev."
+    "no-memberships": "Bez članstva."
   },
   "style-scores": {
-    "elevated-vocabulary": "Privzdignjeno besedje",
-    "simple-vocabulary": "Preprosto besedje",
-    "excessive-vocabulary": "Ekscesno besedje"
+    "elevated-vocabulary": "Uzvišeni rječnik",
+    "simple-vocabulary": "Jednostavan rječnik",
+    "excessive-vocabulary": "Ekscesni rječnik"
   },
   "question": {
-    "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--f": "Zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--m": "{name} je zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--m": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
+    "asked--f": "Postavila je pitanje {title} na koje mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}."
   },
   "event": {
-    "ballot--for--m": "Glasoval ZA {title}",
-    "ballot--for--f": "Glasovala ZA {title}",
-    "ballot--against--m": "Glasoval PROTI {title}",
-    "ballot--against--f": "Glasovala PROTI {title}",
+    "ballot--for--m": "Glasao je ZA {title}",
+    "ballot--for--f": "Glasala je za {title}",
+    "ballot--against--m": "Glasao je PROTIV {title}",
+    "ballot--against--f": "Glasala je PROTIV {title}",
     "ballot--not--m": "NI glasoval za {title}",
     "ballot--not--f": "NI glasovala za {title}",
     "ballot--quorum--m": "VZDRŽAL se je glasovanja o {title}",
