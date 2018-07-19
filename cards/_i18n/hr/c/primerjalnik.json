@@ -15,14 +15,14 @@
   },
   "comparator-text": "Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili različito od njih. {load}",
   "ignore-absent": "Zanemari \"odsutne\" glasove",
-  "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
+  "comparator-vote-percent": "{num} filtriranih glasanja predstavlja {percent} svih glasanja.",
   "tabs": {
-    "vote-list": "Seznam glasovanj",
-    "time-chart": "Dinamika skozi čas",
-    "bar-chart": "Dinamika glede na MDT"
+    "vote-list": "Pregled glasanja",
+    "time-chart": "Dinamika tijekom vremena",
+    "bar-chart": "Dinamika u odnosu na MRT"
   },
-  "select-parties-people": "Vklopi cele poslanske skupine ali dodaj posamezne poslance.",
-  "select-mps": "Izberi poslance",
-  "selected-mps": "Izbranih: {num}",
-  "empty-state-text": "Za prikaz glasovanj dodaj vsaj dva akterja."
+  "select-parties-people": "Uključi čitave klubove ili dodaj pojedine zastupnice.",
+  "select-mps": "Odaberi zastupnice",
+  "selected-mps": "Odabranih: {num}",
+  "empty-state-text": "Za prikaz glasanja dodaj najmanje dva aktera."
 }
