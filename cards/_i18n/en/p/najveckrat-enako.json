@@ -6,7 +6,7 @@
     "lead": "List of 5 MPs that most often vote the same as the selected member. MPs are ranked ascending. The higher the value, the bigger the commonalities between the two MPs.",
     "text": [
       "We calculate {link} between the results of MPs' votes and the results of everyone else while we transform the votes into numerical values between -1 and 1.",
-      "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.",
+      "When we calculate the \"distance\" between MPs we rank them based on the result and show the top 5.",
       "Številčne vrednosti glasov"
     ],
     "link": {
