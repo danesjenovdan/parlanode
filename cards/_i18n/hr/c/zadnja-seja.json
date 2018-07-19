@@ -8,11 +8,11 @@
       "link": "http://edoc.sabor.hr/Statistika/ZakonodavnaAktivnost.aspx",
       "text": "HS"
     },
-    "words-heading": "Besede, ki so zaznamovale sejo",
-    "words-text": "Analizo izvajamo po statistiki tf-idf. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
-    "presence-heading": "Prisotnost poslanskih skupin na seji",
-    "presence-text": "Poslanske skupine razvrstimo glede na odstotek, na koliko glasovanjih izbrane seje so bili prisotni njihovi poslanci in poslanke.",
-    "votes-heading": "Glasovanja",
-    "votes-text": "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate."
+    "words-heading": "Riječi koje su dominirale sjednicom",
+    "words-text": "Statistike se izračunavaju pomoću modela tf-idf. Korpus čine svi govori, a u dokumentima svi govori na sjednici.",
+    "presence-heading": "Prisutnost klubova na sjednici",
+    "presence-text": "Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane sjednice bile njihove zastupnice.",
+    "votes-heading": "Glasanja",
+    "votes-text": "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi ( ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale."
   }
 }
