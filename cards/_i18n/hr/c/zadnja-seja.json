@@ -5,7 +5,7 @@
   "info": {
     "lead": "Pregled statistika posljednje sjednice za koju su podaci objavljeni na web stranicama Hrvatskog sabora {link}.",
     "link": {
-      "link": "http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
+      "link": "http://edoc.sabor.hr/Statistika/ZakonodavnaAktivnost.aspx",
       "text": "DZ RS"
     },
     "words-heading": "Besede, ki so zaznamovale sejo",
