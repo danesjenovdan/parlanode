@@ -3,12 +3,12 @@
     "title": "Grupe riječi"
   },
   "info": {
-    "lead": "Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.",
-    "text": "Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov."
+    "lead": "Kartica prikazuje koje govornice ili klubovi apsolutno i relativno najviše govore o određenoj temi ili upotrebljavaju određenu grupu riječi.",
+    "text": "Prebroji se koliko puta je pojedina govornica izrekla najmanje dva pretraživana niza i one koje su ih barem jednom upotrijebile rangirane su prema broju ponavljanja, podijeljeno s frakcijskim brojem svih govora te zastupnice, njezinog kluba i ukupnog broja svih govora."
   },
-  "speakers": "Govorci",
-  "parties": "Poslanske skupine",
-  "input-words": "Vnesi posamezno besedo ali več besed, ločenih z vejico.",
+  "speakers": "Govornice",
+  "parties": "Klubovi zastupnica",
+  "input-words": "Unesi jednu ili više riječi odvojenih zarezom.",
   "empty-text": "Za prikaz rezultatov dodaj vsaj dve besedi.",
   "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
   "show-relative": "Prikaži relativno metriko"
