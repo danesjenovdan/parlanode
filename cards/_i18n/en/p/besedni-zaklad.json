@@ -6,7 +6,7 @@
     "lead": "Raznolikost besedišča, ki ga uporablja poslanec/-ka v svojih govorih v primerjavi s povprečno in največjo vrednostjo.",
     "text": [
       "Iz vseh poslančevih/-kinih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn.",
-      "Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...).",
+      "In the end we calculate the coefficient. To calculate the coefficient we put the number of unique spoken words above the fraction line, and the number of words which are repeated with some frequency (once, twice, three times...) multiplied with the square of the frequency (one squared, two squared, three squared...) below the fraction line.",
       "For the phrase \"Today is a new day and today is the day for the Parlameter\" the result is 7 / ((3*2^2) + (4*1^2)) = 0,4375"
     ]
   }
