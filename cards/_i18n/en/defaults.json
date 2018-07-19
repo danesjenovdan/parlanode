@@ -70,8 +70,8 @@
   "start": "Beginning",
   "legislation": "Legislation",
   "laws": "Laws",
-  "acts": "Akti",
-  "load-more-speeches": "Naloži več govorov",
+  "acts": "Acts",
+  "load-more-speeches": "Load more speeches",
   "info": {
     "title": "Info",
     "methodology": "METHODOLOGY"
@@ -93,21 +93,21 @@
     "excessive-vocabulary": "Excessive speech"
   },
   "question": {
-    "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--f": "Zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--m": "{name} je zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--m": "Asked question {title} that requires answer from {recipient}.",
+    "asked--f": "Asked question {title} that requires answer from {recipient}.",
+    "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
+    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}."
   },
   "event": {
-    "ballot--for--m": "Glasoval ZA {title}",
-    "ballot--for--f": "Glasovala ZA {title}",
-    "ballot--against--m": "Glasoval PROTI {title}",
-    "ballot--against--f": "Glasovala PROTI {title}",
-    "ballot--not--m": "NI glasoval za {title}",
-    "ballot--not--f": "NI glasovala za {title}",
-    "ballot--quorum--m": "VZDRŽAL se je glasovanja o {title}",
-    "ballot--quorum--f": "VZDRŽALA se je glasovanja o {title}",
-    "speech--m": "Govoril na {session} {org}",
-    "speech--f": "Govorila na {session} {org}"
+    "ballot--for--m": "Voted FOR {title}",
+    "ballot--for--f": "Voted FOR {title}",
+    "ballot--against--m": "Voted AGAINST {title}",
+    "ballot--against--f": "Voted AGAINST {title}",
+    "ballot--not--m": "Did not vote on {title}",
+    "ballot--not--f": "Did not vote on {title}",
+    "ballot--quorum--m": "ABSTAINED from voting on {title}",
+    "ballot--quorum--f": "ABSTAINED from voting on {title}",
+    "speech--m": "Spoke at {session} {org}",
+    "speech--f": "Spoke at {session} {org}"
   }
 }
