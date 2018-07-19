@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Stilne analize"
+    "title": "Stilske analize"
   },
   "info": {
-    "lead": "Pogostosti uporabe stilno zaznamovanih besed v poslančevih/-kinih govorih.",
+    "lead": "Učestalost korištenja stilski obilježenih riječi u govorima.",
     "text": [
       "Z združevanjem kvalifikatorjev {link1} in {link2} smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.",
       "Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).",
