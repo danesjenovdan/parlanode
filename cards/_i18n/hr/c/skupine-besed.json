@@ -10,6 +10,6 @@
   "parties": "Klubovi zastupnica",
   "input-words": "Unesi jednu ili više riječi odvojenih zarezom.",
   "empty-text": "Za prikaz rezultata dodajte najmanje dvije riječi.",
-  "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
+  "wordgroups-text": "Prikaži tko najviše spominje sljedeću grupu riječi: {words} {load}",
   "show-relative": "Prikaži relativno metriko"
 }
