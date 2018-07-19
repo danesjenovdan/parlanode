@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "List of all pieces of legislation MPs voted on in this sitting and match the user query (title, working body).",
-    "text": "Podatke o sejah pridobivamo iz spletnega mesta DZ RS.",
+    "text": "Information on the sessions is derived from the National Assembly of Republic of Slovenia web site.",
     "links": [
       {
         "text": "Laws",
