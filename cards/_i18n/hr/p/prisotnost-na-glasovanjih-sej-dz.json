@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisotnost na glasovanjih sej DZ"
+    "title": "Prisutnost na glasanjima na sjednicama HS-a"
   },
   "info": {
-    "lead": "Prisotnosti poslanca/-ke na glasovanjih DZ v primerjavi s povprečjem in največjo vrednostjo.",
-    "text": "Preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom vseh glasovanj, na katerih bi moral/-a poslanec/-ka glasovati. Rezultat izpišemo skupaj s povprečno in največjo vrednostjo."
+    "lead": "Prisutnost na glasanjima na sjednicama HS-a u odnosu na prosječnu i maksimalnu vrijednost.",
+    "text": "Prebroje se svi glasovi zastupnice i taj broj se podijeli sa zbrojem svih glasanja sa sjednica na kojima se moralo glasati. Rezultat se ispiše skupa s prosječnom i maksimalnom vrijednošću."
   }
 }
