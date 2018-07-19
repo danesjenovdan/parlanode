@@ -6,7 +6,7 @@
     "lead": "Popis svih zastupnica iz kluba koje su svrstane prema vrijednosti slaganja s glasom kluba. Što je veća vrijednost, manje je slaganje.",
     "text": [
       "Za svako glasanje izračuna se \"glas kluba\" kojem pojedina zastupnica pripada. Zatim se za svaku članicu izračunava postotak glasanja kada je zastupnica glasala drugačije od većinskog glasa kluba kojem pripada. Rezultati su razvrstani od najvećeg odstupanja prema najmanjem.",
-      "Vse glasovnice z vrednostjo \"NI\" ignoriramo, kar ima za posledico to, da če je večinski glas poslanske skupine \"NI\" (večina poslank in poslancev se glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima poslanska skupina več \"večinskih glasov\" (dve opciji imata enako največje število glasov znotraj poslanske skupine) upoštevamo obe opciji pri primerjavi z individualnimi poslanci ni poslankami."
+      "Izuzimaju se zastupnice s vrijednošću \"NEMA\", što znači da ako je većinski glas kluba \"NEMA\" (većina zastupnica kluba nije bila na glasanju) to glasanje je isključeno iz analize. Ako klub ima više 'većinskih glasova' (dvije opcije imaju jednak najveći broj glasova unutar kluba), uzimaju se obje opcije i uspoređuju s individualnim zastupnicama."
     ]
   }
 }
