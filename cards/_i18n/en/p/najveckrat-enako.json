@@ -1,11 +1,11 @@
 {
   "card": {
-    "title": "Največkrat glasujejo enako"
+    "title": "Most likely to vote the same"
   },
   "info": {
-    "lead": "Seznam 5 poslancev, ki največkrat glasujejo enako kot izbrani/-a poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od najmanjše proti največji. Manjša kot je vrednost, večje je ujemanje glasovanj.",
+    "lead": "List of 5 MPs that most often vote the same as the selected member. MPs are ranked ascending. The higher the value, the bigger the commonalities between the two MPs.",
     "text": [
-      "Izračunamo {link} med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
+      "We calculate {link} between the results of MPs' votes and the results of everyone else while we transform the votes into numerical values between -1 and 1.",
       "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.",
       "Številčne vrednosti glasov"
     ],
