@@ -7,16 +7,16 @@
     "text": [
       "We calculate {link} between the results of MPs' votes and the results of everyone else while we transform the votes into numerical values between -1 and 1.",
       "When we calculate the \"distance\" between MPs we rank them based on the result and show the top 5.",
-      "Številčne vrednosti glasov"
+      "Votes' numerical values"
     ],
     "link": {
-      "text": "evklidsko razdaljo",
+      "text": "euclidean distance",
       "link": "https://en.wikipedia.org/wiki/Euclidean_distance"
     },
     "list": [
-      "-1: proti",
-      "0: vzdržan/-a ali ni prisoten/-na",
-      "1: za"
+      "-1: against",
+      "0: abstained or not present",
+      "1: for"
     ]
   }
 }
