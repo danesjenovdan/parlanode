@@ -11,5 +11,5 @@
   "input-words": "Unesi jednu ili više riječi odvojenih zarezom.",
   "empty-text": "Za prikaz rezultata dodajte najmanje dvije riječi.",
   "wordgroups-text": "Prikaži tko najviše spominje sljedeću grupu riječi: {words} {load}",
-  "show-relative": "Prikaži relativno metriko"
+  "show-relative": "Prikaži relativni mjerni podatak"
 }
