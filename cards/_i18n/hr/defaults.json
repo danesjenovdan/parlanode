@@ -100,14 +100,14 @@
   },
   "event": {
     "ballot--for--m": "Glasao je ZA {title}",
-    "ballot--for--f": "Glasala je za {title}",
+    "ballot--for--f": "Glasala je ZA {title}",
     "ballot--against--m": "Glasao je PROTIV {title}",
     "ballot--against--f": "Glasala je PROTIV {title}",
-    "ballot--not--m": "NI glasoval za {title}",
-    "ballot--not--f": "NI glasovala za {title}",
-    "ballot--quorum--m": "VZDRŽAL se je glasovanja o {title}",
-    "ballot--quorum--f": "VZDRŽALA se je glasovanja o {title}",
-    "speech--m": "Govoril na {session} {org}",
-    "speech--f": "Govorila na {session} {org}"
+    "ballot--not--m": "Nije glasao za {title}",
+    "ballot--not--f": "Nije glasala za {title}",
+    "ballot--quorum--m": "SUZDRŽAO se od glasanja o {title}",
+    "ballot--quorum--f": "SUZDRŽALA se od glasanja o {title}",
+    "speech--m": "Govorio je na {session} {org}",
+    "speech--f": "Govorila je na {session} {org}"
   }
 }
