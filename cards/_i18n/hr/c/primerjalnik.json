@@ -9,12 +9,12 @@
     ],
     "list": [
       "kao popis svih glasova,",
-      "kot črtni grafikon ki predstavlja število glasovanj na dan,",
-      "kot histogram s seštevki glasovanj glede na matično delovno telo."
+      "kao linijski grafikon koji predstavlja broj glasova dnevno,",
+      "kao histogram s ukupnim brojem glasova u odnosu na matično radno tijelo."
     ]
   },
-  "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih. {load}",
-  "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
+  "comparator-text": "Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili različito od njih. {load}",
+  "ignore-absent": "Zanemari \"odsutne\" glasove",
   "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
   "tabs": {
     "vote-list": "Seznam glasovanj",
