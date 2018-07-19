@@ -21,8 +21,8 @@
     "time-chart": "Dinamika tijekom vremena",
     "bar-chart": "Dinamika u odnosu na MRT"
   },
-  "select-parties-people": "Uključi čitave klubove ili dodaj pojedine zastupnice.",
-  "select-mps": "Odaberi zastupnice",
+  "select-parties-people": "Uključite čitave klubove ili dodajte pojedine zastupnice.",
+  "select-mps": "Odaberite zastupnice",
   "selected-mps": "Odabranih: {num}",
-  "empty-state-text": "Za prikaz glasanja dodaj najmanje dva aktera."
+  "empty-state-text": "Za prikaz glasanja dodajte najmanje dva aktera."
 }
