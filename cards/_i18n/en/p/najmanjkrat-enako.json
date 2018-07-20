@@ -5,17 +5,17 @@
   "info": {
     "lead": "A list of 5 MPs who most often vote differently than the selected MP. MPs are ranked in a descending order. The higher the value, the lower the voting matching.",
     "text": [
-      "Izračunamo {link} med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
-      "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.",
-      "Številčne vrednosti glasov"
+      "We calculate {link} between the results of MP's voting and everyone else's voting (votes are converted to numerical values between -1 and 1).",
+      "When we calculate the \"distance\" between all MPs we rank them according to their result and show the last (i.e. furthest removed) five.",
+      "The numerical value of the votes"
     ],
     "link": {
-      "text": "evklidsko razdaljo",
+      "text": "Euclidean distance",
       "link": "https://en.wikipedia.org/wiki/Euclidean_distance"
     },
     "list": [
-      "-1: proti",
-      "0: vzdržan/-a ali ni prisoten/-na",
+      "-1: against",
+      "0: abstain or not present",
       "1: for"
     ]
   }
