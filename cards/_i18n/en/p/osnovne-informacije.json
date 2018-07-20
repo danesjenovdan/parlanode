@@ -6,19 +6,19 @@
     "lead": "Overview of MP's basic information.",
     "text": [
       "We obtained the content for this card from the web site {link} (parliamentary group, age, membership in working bodies) and the web site of State Election Commission (the number of votes received). For all other information we contacted the PR departments of parliamentary groups.",
-      "Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto Državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
+      "We received information from NSi, SD, (then) ZaAB and ZL. SMC directed us to their web site and SDS directed us to the web site of the National Assembly. We collected the missing data using the Google search engine and gave all the parliamentary parties an opportunity to make corrections before the publication."
     ],
     "link": {
-      "text": "DZ RS",
+      "text": "National Assembly of the Republic of Slovenia",
       "link": "http://www.dz-rs.si/wps/portal/Home/"
     }
   },
-  "elected-to-district--m": "Izvoljen z {numVotes} glasovi v {district}",
-  "elected-to-district--f": "Izvoljena z {numVotes} glasovi v {district}",
-  "number-of-mandates": "Število mandatov",
-  "previous-occupation": "Prejšnji status",
-  "education": "Izobrazba",
-  "age": "Starost: {age} let",
-  "social-media": "Družbena omrežja",
-  "no-social-media": "ni družbenih omrežij."
+  "elected-to-district--m": "Elected with {numVotes} votes in {district}",
+  "elected-to-district--f": "Elected with {numVotes} votes in {district}",
+  "number-of-mandates": "Number of mandates",
+  "previous-occupation": "Previous status",
+  "education": "Education",
+  "age": "Age: {age} years",
+  "social-media": "Social media",
+  "no-social-media": "no social media."
 }
