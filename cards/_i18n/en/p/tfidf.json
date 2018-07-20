@@ -6,7 +6,7 @@
     "lead": "List of 10 words and phrases that the MP uses more often than other MPs in the National Assembly.",
     "text": [
       "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori."
+      "Corpus refers to all speeches and document refers to all speeches by the MP."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",
