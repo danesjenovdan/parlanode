@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "MP's attendance at voting in the National Assembly through time.",
-    "text": "Vsak mesec preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom vseh glasovanj, na katerih bi moral/-a poslanec/-ka ta mesec glasovati. Če poslanec/-ka v izbranem mesecu mandata ni imel/-a, prikažemo, na kolikšnem odstotku glasovanj ni imel/-a pravice glasovati."
+    "text": "Every month we count all ballots casted by the MP and divide them by the number of all voting instances for that month where the MP should have been voting. In cases where the MP did not have a mandate in the selected month we show the percentage of voting where they did not have the right to vote."
   }
 }
