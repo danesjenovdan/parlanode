@@ -6,13 +6,13 @@
     "lead": "An overview of analysis of the latest session available at {link}.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "text": "National Assembly of the Republic of Slovenia"
     },
     "words-heading": "Words that marked the session",
     "words-text": "We perform the analysis according to the tf-idf statistic. The corpus are all speeches while the documents are all speeches at this particular session.",
     "presence-heading": "Parliamentary group attendance",
     "presence-text": "Parliamentary groups are sorted based on the percentage of votes their members attended.",
     "votes-heading": "Voting events",
-    "votes-text": "We count individual votes (FOR, AGAINST, ABSTAIN) for all voting events at the session and the number of members who didn't vote and display the results."
+    "votes-text": "For all voting events at the session we count individual votes (FOR, AGAINST, ABSTAIN) and the number of MPs who did not vote, and display the results."
   }
 }
