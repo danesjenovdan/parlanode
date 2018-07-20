@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Poslanska vprašanja in pobude"
+    "title": "Parliamentary questions and initiatives"
   },
   "info": {
-    "lead": "Izpis vseh poslanskih vprašanj in pobud, ki ji je poslanec/-ka postavil/-a v tem sklicu DZ RS.",
+    "lead": "A list of all parliamentary questions and initiatives by the MP in this parliamentary term of the National Assembly of the Republic of Slovenia.",
     "text": "Podatke pridobivamo s spletnega mesta {link}.",
     "link": {
       "text": "DZ RS",
