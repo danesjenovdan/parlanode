@@ -4,10 +4,10 @@
   },
   "info": {
     "lead": "The number of words spoken by the MP in all of their previous speeches in the National Assembly compared to the average and maximum values.",
-    "text": "Seštejemo besede v govorih poslanca/-ke, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link}.",
+    "text": "We count the words in MP's speeches, as found in transcripts obtained from the web site {link}.",
     "link": {
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "text": "National Assembly of the Republic of Slovenia"
     }
   }
 }
