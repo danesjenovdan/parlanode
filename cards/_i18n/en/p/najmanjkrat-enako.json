@@ -3,7 +3,7 @@
     "title": "Least likely to vote the same"
   },
   "info": {
-    "lead": "Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot izbrani/-a poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.",
+    "lead": "A list of 5 MPs who most often vote differently than the selected MP. MPs are ranked in a descending order. The higher the value, the lower the voting matching.",
     "text": [
       "Izračunamo {link} med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
       "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.",
