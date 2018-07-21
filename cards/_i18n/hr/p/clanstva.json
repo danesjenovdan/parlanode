@@ -4,10 +4,10 @@
   },
   "info": {
     "lead": "Ispis svih članstava u radnim tijelima, stalnim izaslanstvima i skupinama prijateljstva.",
-    "text": "Podatki o članstvih pridobljeni s spletnega mesta {link}.",
+    "text": "Podaci su preuzeti s web stranice Hrvatskoga sabora {link}.",
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi"
+      "text": "HS",
+      "link": "http://www.sabor.hr/zastupnici-9"
     }
   }
 }
