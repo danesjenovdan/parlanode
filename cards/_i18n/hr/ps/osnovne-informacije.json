@@ -6,11 +6,11 @@
     "lead": "Pregled osnovnih informacija o klubu.",
     "text": "Podaci su preuzeti s web stranica Hrvatskoga sabora (klub, dob, članstva u radnim tijelima), i s web stranice Državnog izbornog povjerenstva (broj glasova dobivenih na izborima). Za ostale informacije obratili smo se tajništvima klubova. Podatke smo dobili od (nabrojati klubove). Podaci o prijašnjem zaposlenju preuzeti su iz registra imovinskih kartica dužnosnika i aplikacije Mozaik veza."
   },
-  "party-leader": "Vodja poslanske skupine",
-  "deputy-leader-m": "Namestnik",
-  "deputy-leader-f": "Namestnica",
-  "number-of-seats": "Število poslanskih sedežev:",
+  "party-leader": "Predsjednica kluba",
+  "deputy-leader-m": "Zamjenik",
+  "deputy-leader-f": "Zamjenica",
+  "number-of-seats": "Broj zastupničkih mjesta:",
   "contact": "Kontakt:",
-  "social-media": "Družbena omrežja:",
-  "no-social-media": "ni družbenih omrežij."
+  "social-media": "Društvene mreže:",
+  "no-social-media": "nije na društvenim mrežama."
 }
