@@ -4,10 +4,10 @@
   },
   "info": {
     "lead": "A list of all members of the parliamentary group.",
-    "text": "Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino, črpamo s spletnega mesta {link}. Prikazani so samo trenutno aktivni poslanci.",
+    "text": "Names and pictures of each of the parliamentary groups' MPs are obtained from the web page {link}. Shown are only currently active MPs.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
-      "text": "DZ RS"
+      "text": "National Assembly of the Republic of Slovenia"
     }
   }
 }
