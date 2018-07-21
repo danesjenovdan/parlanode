@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "A list of links to all speeches by the parliamentary group's MPs in this sitting, corresponding to user query, sorted by date.",
-    "text": "We load the links to all speeches by the MPs of a selected parliamentary groups obtained from the National Assembly of the Republic of Slovenia web page. We then display the ones that match user query (MPs, time period, type of the session)."
+    "text": "We load the links to all speeches by the MPs of a selected parliamentary groups obtained from the transcripts of the National Assembly of the Republic of Slovenia web page. We then display the ones that match user query (MPs, time period, type of the session)."
   }
 }
