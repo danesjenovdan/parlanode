@@ -9,10 +9,10 @@
       "Zastupnička pitanja preuzimaju se sa web stranice {link}."
     ],
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "link": "http://edoc.sabor.hr/ZastupnickaPitanja.aspx",
+      "text": "HS"
     }
   },
-  "mp": "Poslanec/-ka",
+  "mp": "Zastupnica",
   "addressee": "Naslovljenec/-ka"
 }
