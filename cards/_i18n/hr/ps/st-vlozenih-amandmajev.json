@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "Br. amandmana koje je uložio odabrani klub u usporedbi s prosjekom i maksimalnom vrijednosti među svim klubovima.",
-    "text": "Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s spletnega mesta {link}.",
+    "text": "Broj mjesta pojedinog kluba dobije se tako da se prebroje sve njegove trenutno aktivne članice. Podaci se preuzimaju sa stranice {link}.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
       "text": "DZ RS"
