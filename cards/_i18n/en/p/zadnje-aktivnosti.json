@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Last activity"
+    "title": "Latest activity"
   },
   "info": {
-    "lead": "Links to all MP's votes and speeches in the last ten days since the MP's last activity.",
-    "text": "Podatke dobimo s spletnega mesta Državnega zbora. Na kartici izpisujemo povezave do vseh poslančevih/-kinih glasovanj in govorov, ki so se zgodili v zadnjih desetih dneh, ko je bil/-a poslanec/-ka aktiven/-a."
+    "lead": "Links to all MP's votes and speeches in the last ten days of the MP's latest activity.",
+    "text": "The data is collected from the web page of the National Assembly. The card contains links to all MP's votes and speeches in the last ten days of the MP's latest activity."
   }
 }
