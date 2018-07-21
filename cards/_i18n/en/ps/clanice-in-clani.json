@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Članice in člani poslanske skupine"
+    "title": "Members of the parliamentary group"
   },
   "info": {
-    "lead": "Seznam vseh članov poslanske skupine.",
+    "lead": "A list of all members of the parliamentary group.",
     "text": "Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino, črpamo s spletnega mesta {link}. Prikazani so samo trenutno aktivni poslanci.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
