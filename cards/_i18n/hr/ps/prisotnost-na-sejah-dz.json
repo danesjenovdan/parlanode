@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisotnost na sejah DZ"
+    "title": "Prisutnost na sjednicama HS-a"
   },
   "info": {
-    "lead": "Prisotnost poslanske skupine na sejah DZ v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Za vsako sejo in vsako poslansko skupino preverimo, koliko članic in članov je na seji govorilo in/ali glasovalo vsaj enkrat. Ko vse seje seštejemo, seštevek delimo s številom sej pomnoženim s številom poslank in poslancev v poslanski skupini. Na koncu normaliziramo (min 1 - max 100)."
+    "lead": "Prisutnost kluba na sjednicama HS-a u odnosu na prosječnu i maksimalnu vrijednost.",
+    "text": "Za svaku sjednicu i svaki klub provjerava se koliko je članica barem jednom govorilo i/ili glasalo na sjednici. Kad se sve sjednice zbroje, dobiveni rezultat dijeli se s brojem sjednica i množi s brojem zastupnica u klubu. Rezultat se na kraju normalizira (min 1 - max 100)."
   }
 }
