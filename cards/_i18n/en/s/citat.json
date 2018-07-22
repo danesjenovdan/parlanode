@@ -3,10 +3,10 @@
     "title": "Quote"
   },
   "info": {
-    "text": "Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu {link}, strojno razbijemo na posamezne govorne nastope. To je kartica, ki predstavlja en govor.",
+    "text": "We mechanically break up transcripts of sessions, published as an HTML document on the web page {link}, into separate speeches. This then becomes a card which represents one speech.",
     "link": {
       "link": "http://www.dz-rs.si",
-      "text": "DZ RS"
+      "text": "National Assembly of the Republic of Slovenia"
     }
   }
 }
