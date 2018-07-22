@@ -5,15 +5,15 @@
   "info": {
     "text": [
       "We obtain sets of votes from the web page of the National Assembly of Republic of Slovenia.",
-      "Results of the vote are displayed in three ways: by the MP, by the parliamentary group and by coalition-opposition.",
+      "Results of the vote are displayed in three ways: by the MP, by the parliamentary group and by Government - Opposition.",
       "The first tab gives you the overview of the vote, and allows you to filter results according to the value of the ballot (FOR, AGAINST, ABSTAIN, DID NOT VOTE) and look up individual MPs. The majority vote is printed out next to the pie chart. For example, \"60% FOR\" means that 60 out of 90 MPs voted FOR.",
-      "The second tab shows parliamentary groups' votes. At the end of each line the majority vote of the parliamentary group is printed and pressing the button next to it gives you access to a list of the MPs who voted the same as the majority of the parliamentary group. The lightning sign indicates discrepancies within the parliamentary group - it is next to all the votes that are not the same as the majority vote (MPs who were not present are not included). If the majority of the parliamentary group was not present there is no majority vote.",
-      "The third tab shows voting results according to coalition - opposition. Here again we use the lightning symbol to highlight unexpected votes i.e. instances where the MP's vote is different than the majority vote.",
+      "The second tab shows parliamentary groups' votes. At the end of each line the majority vote of the parliamentary group is printed and pressing the button next to it gives you access to a list of the MPs who voted the same as the majority of the parliamentary group. The lightning sign indicates discrepancies within the parliamentary group - it is next to all the votes that are not the same as the majority vote (MPs who are not present are not included). If the majority of the parliamentary group is not present there is no majority vote.",
+      "The third tab shows voting results according to Government - Opposition. Here again we use the lightning symbol to highlight unexpected votes i.e. instances where the MP's vote is different than the majority vote.",
       "Lightning symbol",
-      "S strelo opozarjamo na razkole v poslanskih skupinah oziroma v koaliciji - izrišemo jo nad tistimi glasovanji,  ki vsebujejo glasove, ki niso enaki večinskemu glasu poslanske skupine / koalicije, pri čemer so odsotni glasovi izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni."
+      "The lightning sign indicates discrepancies within the parliamentary group or within the coalition - it is next to all the votes that are not the same as the majority vote (MPs who were are present are not included). If the majority of the parliamentary group is not present there is no majority vote."
     ]
   },
-  "parties": "Poslanske skupine",
-  "gov-side": "Stran vlade",
-  "summary": "Povzetek"
+  "parties": "Parliamentary groups",
+  "gov-side": "Government or Opposition",
+  "summary": "Summary"
 }
