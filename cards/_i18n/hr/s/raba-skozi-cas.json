@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Raba skozi čas"
+    "title": "Korištenje tijekom vremena"
   },
   "info": {
-    "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.",
+    "lead": "Pregled učestalosti ponavljanja pretraživanog niza u govorima tijekom vremena.",
     "text": "Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu."
   },
   "whole-term": "Cel mandat",
