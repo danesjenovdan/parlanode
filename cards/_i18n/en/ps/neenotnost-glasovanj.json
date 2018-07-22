@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "Vote disparity within the selected parliamentary group for voting events in the National Assembly compared to the average and maximum value of disparity within all the parliamentary groups.",
-    "text": "Za vsako glasovanje za poslansko skupino preštejemo, koliko poslancev je oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo do 100 in dobimo stopnjo neenotnosti oz. odstotek poslank in poslancev, ki se z večinskim glasom niso strinjali."
+    "text": "For each voting event we count which ballot (FOR, AGAINST, NOT PRESENT, ABSTAIN) was submitted by the parliamentary group's MPs. We calculate the percentage of those who voted for most popular option. That percentage is subtracted from 100 to get level of disparity i. e. the percentage of MPs who did not vote the same as the majority."
   }
 }
