@@ -4,8 +4,8 @@
   },
   "info": {
     "lead": "Pregled učestalosti ponavljanja pretraživanog niza u govorima tijekom vremena.",
-    "text": "Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu."
+    "text": "Prebroji se pojavljivanje pretraživanog niza kroz cijeli mandat i rezultat zbraja po mjesecima. Rezultati se potom prikazuju bilo za cijeli mandat, bilo za posljednjih godinu dana."
   },
-  "whole-term": "Cel mandat",
-  "last-year": "Zadnje leto"
+  "whole-term": "Cijeli mandat",
+  "last-year": "Posljednjih godinu dana"
 }
