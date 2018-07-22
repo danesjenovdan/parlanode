@@ -6,7 +6,7 @@
     "lead": "Ispis 10 riječi i fraza koje je odabrana zastupnica koristila češće od ostalih zastupnica u Hrvatskom saboru HS-u.",
     "text": [
       "Analiza se provodi prema statistici {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori."
+      "Korpus čine svi govori, a dokument svi govori odabrane zastupnice."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",
