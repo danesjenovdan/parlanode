@@ -13,11 +13,11 @@
     "links": [
       {
         "link": "http://www.sabor.hr/hr",
-        "text": "DZ RS"
+        "text": "HS"
       },
       {
         "link": "http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
-        "text": "kot je implementirana v knjižicah scikit-learn"
+        "text": "kako je implementirana u knjižicama scikit-learn"
       },
       {
         "link": "http://www.miketipping.com/papers/met-mppca.pdf",
@@ -29,6 +29,6 @@
       }
     ]
   },
-  "accepted": "sprejeti",
-  "rejected": "zavrnjeni"
+  "accepted": "doneseni",
+  "rejected": "odbijen"
 }
