@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Članice in člani poslanske skupine"
+    "title": "Članice i članovi kluba"
   },
   "info": {
-    "lead": "Seznam vseh članov poslanske skupine.",
-    "text": "Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino, črpamo s spletnega mesta {link}. Prikazani so samo trenutno aktivni poslanci.",
+    "lead": "Popis svih članica kluba zastupnika.",
+    "text": "Imena i fotografije zastupnica koji predstavljaju klub preuzete su sa stranice {link}. Prikazane su samo aktualne članice.",
     "link": {
-      "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
-      "text": "DZ RS"
+      "link": "http://www.sabor.hr/zastupnici-9",
+      "text": "HS"
     }
   }
 }
