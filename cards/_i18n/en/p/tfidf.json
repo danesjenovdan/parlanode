@@ -5,7 +5,7 @@
   "info": {
     "lead": "List of 10 words and phrases that the MP uses more often than other MPs in the National Assembly.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
+      "We use the following statistics {link} to conduct the analysis.",
       "Corpus refers to all speeches and document refers to all speeches by the MP."
     ],
     "link": {
