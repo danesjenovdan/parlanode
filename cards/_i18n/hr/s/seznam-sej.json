@@ -24,7 +24,7 @@
   "just-last-five": "Samo posljednjih 5",
   "select-working-body-placeholder": "Izaberite radno tijelo",
   "sort-by--name": "naziv sjednice",
-  "sort-by--date": "datumu začetka seje",
-  "sort-by--updated": "datumu zadnje spremembe podatkov o seji",
-  "sort-by--workingBody": "imenu organizacije"
+  "sort-by--date": "datumu početka sjednice",
+  "sort-by--updated": "datumu zadnje izmjene podataka o sjednici",
+  "sort-by--workingBody": "nazivu tijela"
 }
