@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "Popis pet zastupnica koje su najčešće koristile pretraživani niz riječi, razvrstane prema najmanjoj vrijednosti.",
-    "text": "Preštejemo, kolikokrat je posamezni/-a poslanec/-ka izrekel/-a iskani niz in osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev. Prikažemo jih pet z največ rezultati."
+    "text": "Prebroji se koliko puta je pojedina zastupnica izrekla pretraživani niz i osobe koje su ga barem jednom upotrijebile rangirane su prema broju ponavljanja. Prikazuje se pet s najvećim zbrojem."
   }
 }
