@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Glasovanja, ki vsebujejo iskalni niz"
+    "title": "Voting events which contain the query"
   },
   "info": {
-    "lead": "Pregled vseh glasovanj, ki vsebujejo iskalni niz, razvščenih glede na čas.",
-    "text": "Po glasovanjih vseh sej poiščemo in izpišemo povezave do vseh glasovanj, v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu (od najnovejše do najstarejše) in podobnosti z iskalnim nizom."
+    "lead": "A list of all voting events which contain the query, sorted by time.",
+    "text": "From all the voting events we identify and print out links to all votes where the search query was mentioned. Results are then sorted by date (newer to older) and similarity with the query."
   }
 }
