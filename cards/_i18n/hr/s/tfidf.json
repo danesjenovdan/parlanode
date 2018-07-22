@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Besede, ki so zaznamovale sejo"
+    "title": "Riječi koje su dominirale sjednicom"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje kot na vseh drugih sejah.",
+    "lead": "Ispis 10 riječi i fraza koje su na sjednici korištene češće nego na svim drugim sjednicama.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi govori na seji."
+      "Analiza se provodi prema statistici {link}.",
+      "Korpus čine svi govori, a dokument svi govori na sjednici."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf",
