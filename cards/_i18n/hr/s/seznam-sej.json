@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Seznam sej"
+    "title": "Popis sjednica"
   },
   "info": {
-    "lead": "Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu ({filter}). Seznam je sortiran po {sort-by}{just-last-five}.",
+    "lead": "Popis svih sjednica toga saziva HS-a koji odgovaraju korisničkom unosu ({filter}). Popis je sortiran prema {sort-by}{just-last-five}.",
     "text": "Podatke o sejah pridobivamo iz spletnega mesta DZ RS, natančneje od {link1}, {link2} in {link3}.",
     "links": [
       {
