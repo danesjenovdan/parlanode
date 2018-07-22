@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Besede, ki jo/ga zaznamujejo"
+    "title": "Riječi koje označavaju zastupnicu"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki jih poslanska skupina uporablja pogosteje kot ostale poslanske skupine v DZ.",
+    "lead": "Ispis 10 riječi i fraza koje klub koristi češće od ostalih klubova u HS-u.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi govori poslank in poslancev v poslanski skupini."
+      "Analiza se provodi prema statistici {link}.",
+      "Korpus čine svi govori, a dokument svi govori svih zastupnica u klubu."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",
