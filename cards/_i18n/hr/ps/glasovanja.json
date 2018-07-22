@@ -1,15 +1,15 @@
 {
   "card": {
-    "title": "Glasovanja"
+    "title": "Glasanja"
   },
   "info": {
-    "lead": "Pregled vseh glasovanj, ki so se zgodila na seji.",
+    "lead": "Pregled svih glasanja na sjednici.",
     "text": [
-      "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
-      "Nabor glasovanj pridobimo s spletnega mesta {link}."
+      "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi ( ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale te ispišu rezultati.",
+      "Zbirka glasanja preuzima se s web stranica Hrvatskog sabora {link}."
     ],
     "link": {
-      "text": "DZ RS",
+      "text": "HS",
       "link": "https://www.izbori.hr/site/opce-informacije/rezultati-izbora-otvoreni-podaci/izbori/480"
     }
   }
