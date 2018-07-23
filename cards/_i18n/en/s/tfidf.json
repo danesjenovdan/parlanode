@@ -6,7 +6,7 @@
     "lead": "A list of 10 words and phrases which were used more often during this session than during all other sessions.",
     "text": [
       "We use the following statistics {link} to conduct the analysis.",
-      "Corpus refers to all speeches and document refers to all speeches at this session."
+      "The corpus refers to all speeches while the document refers to all speeches at this particular session."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf",
