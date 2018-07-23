@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Zakon"
+    "title": "Law"
   },
   "info": {
-    "lead": "Povzetek zakona/akta in rezultati vseh z njim povezanih glasovanj.",
+    "lead": "A summary of the law or the act and results of all related votes.",
     "text": "Iz {link} naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.",
     "link": {
       "link": "https://www.dz-rs.si",
