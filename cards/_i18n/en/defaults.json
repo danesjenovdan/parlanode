@@ -18,7 +18,7 @@
   "status": "Status",
   "age": "Age",
   "education": "Education level",
-  "number-of-terms": "Number of mandates",
+  "number-of-terms": "Number of terms of office",
   "district": "District",
   "analysis": "Analysis",
   "vote-passed": "Accepted",
@@ -66,11 +66,12 @@
   "show": "Show",
   "full-speech": "Whole speech",
   "session-processing": "Session is being processed.",
-  "organization": "Organizacija",
-  "start": "Začetek",
-  "legislation": "Zakonodaja",
-  "laws": "Zakoni",
-  "acts": "Akti",
+  "organization": "Organisation",
+  "start": "Beginning",
+  "legislation": "Legislation",
+  "laws": "Laws",
+  "acts": "Acts",
+  "load-more-speeches": "Load more speeches",
   "info": {
     "title": "Info",
     "methodology": "METHODOLOGY"
@@ -90,5 +91,23 @@
     "elevated-vocabulary": "Elevated speech",
     "simple-vocabulary": "Simple speech",
     "excessive-vocabulary": "Excessive speech"
+  },
+  "question": {
+    "asked--m": "Asked question {title} that requires answer from {recipient}.",
+    "asked--f": "Asked question {title} that requires answer from {recipient}.",
+    "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
+    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}."
+  },
+  "event": {
+    "ballot--for--m": "Voted FOR {title}",
+    "ballot--for--f": "Voted FOR {title}",
+    "ballot--against--m": "Voted AGAINST {title}",
+    "ballot--against--f": "Voted AGAINST {title}",
+    "ballot--not--m": "Did not vote on {title}",
+    "ballot--not--f": "Did not vote on {title}",
+    "ballot--quorum--m": "ABSTAINED from voting on {title}",
+    "ballot--quorum--f": "ABSTAINED from voting on {title}",
+    "speech--m": "Spoke at {session} {org}",
+    "speech--f": "Spoke at {session} {org}"
   }
 }

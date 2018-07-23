@@ -1,22 +1,22 @@
 {
   "card": {
-    "title": "Seznam poslancev"
+    "title": "A list of all MPs"
   },
   "info": {
-    "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
+    "lead": "A set of all currently active MPs, corresponding to user entry ({parties}; {districts}). The list is sorted by {sortBy}.",
     "text": ""
   },
-  "select-district-placeholder": "Izberi okraj",
-  "all-parties": "vse poslanske skupine",
-  "all-voting-districts": "vsi volilni okraji",
-  "missing-district": "okraj ni vnešen",
-  "voting-district": "volilni okraj",
-  "sort-by--name": "abecedi",
-  "sort-by--district": "okrajih",
-  "sort-by--party": "poslanskih skupinah",
-  "sort-by--analysis": "rezultatu analize {analysis}",
-  "sort-by--change": "aktualni spremembi v rezultatu analize {analysis}",
-  "sort-by--age": "starosti",
-  "sort-by--education": "stopnji izobrazbe",
-  "sort-by--terms": "številu mandatov"
+  "select-district-placeholder": "Select district",
+  "all-parties": "all parliamentary groups",
+  "all-voting-districts": "all electoral districts",
+  "missing-district": "the district is not entered",
+  "voting-district": "electoral district",
+  "sort-by--name": "alphabet",
+  "sort-by--district": "district",
+  "sort-by--party": "parliamentary groups",
+  "sort-by--analysis": "analysis results {analysis}",
+  "sort-by--change": "current change in the analysis results {analysis}",
+  "sort-by--age": "age",
+  "sort-by--education": "level of education",
+  "sort-by--terms": "number of terms of office"
 }

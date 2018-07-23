@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Št. poslanskih vprašanj in pobud"
+    "title": "Br. zastupničkih pitanja i inicijativa"
   },
   "info": {
-    "lead": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
+    "lead": "Prebroje se sva pitanja i inicijative zastupnica odabranog kluba u jednom sazivu.",
+    "text": "Podaci su preuzeti sa stranice {link}.",
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
-      "text": "DZ RS"
+      "link": "edoc.sabor.hr http://edoc.sabor.hr/ZastupnickaPitanja.aspx",
+      "text": "HS"
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Povprečno število govorov na sejo"
+    "title": "Prosječan broj govora po sjednici"
   },
   "info": {
-    "lead": "Povprečno število govorov poslanca/-ke na sejo v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Preštejemo poslačeve/-kine govore, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link} in število delimo s številom sej, na katerih je bil/-a poslanec/-ka prisoten/-na. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim in najvišjim.",
+    "lead": "Prosječan broj govora zastupnice po sjednici u odnosu na prosječnu i maksimalnu vrijednost.",
+    "text": "Prebroje se govori zastupnice, preuzeti iz transkripata {link}, i broj se podijeli s brojem sjednica na kojima je zastupnica bila prisutna. Broj svih govora najprije se dijeli s brojem zastupnica, a zatim s brojem svih sjednica (na kojima se raspravljalo). Individualni rezultat uspoređujemo s prosječnim i maksimalnim vrijednostima.",
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      "text": "HS",
+      "link": "http://edoc.sabor.hr/Fonogrami.aspx"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Raba po poslanskih skupinah"
+    "title": "Use by the parliamentary group"
   },
   "info": {
-    "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na poslansko skupino.",
+    "lead": "Frequency of the use of searched query by parliamentary group.",
     "text": "Za vsak zadetek glede na iskalni niz preverimo, v koliko govorih poslank in poslancev poslanskih skupin se pojavi. Seštejemo jih glede na poslansko skupino in prikažemo v krožnem grafikonu."
   }
 }

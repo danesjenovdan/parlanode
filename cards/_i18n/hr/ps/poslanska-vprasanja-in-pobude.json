@@ -1,18 +1,18 @@
 {
   "card": {
-    "title": "Poslanska vprašanja in pobude"
+    "title": "Zastupnička pitanja i inicijative"
   },
   "info": {
-    "lead": "Pregled poslanskih vprašanj na nivoju poslanske skupine.",
+    "lead": "Pregled zastupničkih pitanja na razini kluba.",
     "text": [
-      "Zbrali smo vsa poslanska vprašanja, jih sortirali po poslanskih skupinah in jih ponudili v pregled glede na poslanca/-ko, ki jih je postavil/-a, glede na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi iskanje po naslovu poslanskih vprašanj.",
-      "Nabor poslanskih vprašanj pridobimo s spletnega mesta {link}."
+      "Sva pitanja zastupnica razvrstana su prema klubovima i moguće ih je pretraživati prema imenu zastupnice koja ih je postavila, prema tome kome su pitanja upućena i prema vremenskom razdoblju. Omogućeno je pretraživanje i prema naslovu pitanja.",
+      "Zastupnička pitanja preuzimaju se sa web stranice {link}."
     ],
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "link": "http://edoc.sabor.hr/ZastupnickaPitanja.aspx",
+      "text": "HS"
     }
   },
-  "mp": "Poslanec/-ka",
-  "addressee": "Naslovljenec/-ka"
+  "mp": "Zastupnica",
+  "addressee": "Primateljica"
 }

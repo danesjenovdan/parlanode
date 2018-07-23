@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "Seznam glasovanj po "
+    "title": "List of voting events according to "
   },
   "info": {
-    "lead": "Seznam vseh glasovanj DZ, ki ustrezajo uporabniškemu vnosu ({text}), za izbrana matična delovna telesa ({wbs}), razvrščenih po {sortBy}.",
+    "lead": "A list of all voting events in the National Assembly, corresponding to user query ({text}), for selected working bodies responsible ({wbs}), sorted by {sortBy}.",
     "text": [
-      "Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.",
-      "Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu."
+      "A list of all voting events corresponding to user query that happened in this sitting of the National Assembly and were published on the dz-rs.si web page.",
+      "The results are sorted either by disparity or by date."
     ]
   },
-  "all-votes": "vsa glasovanja",
-  "all-working-bodies": "vsa matična delovna telesa"
+  "all-votes": "all voting events",
+  "all-working-bodies": "all working bodies responsible"
 }

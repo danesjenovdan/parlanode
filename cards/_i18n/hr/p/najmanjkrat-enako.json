@@ -1,21 +1,21 @@
 {
   "card": {
-    "title": "Najmanjkrat glasujejo enako"
+    "title": "Najrjeđe glasaju jednako"
   },
   "info": {
-    "lead": "Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot izbrani/-a poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.",
+    "lead": "Popis pet zastupnica koje najrjeđe glasaju jednako kao izabrana zastupnica. Zastupnice se klasificiraju prema vrijednostima od najveće do najmanje. Što je vrijednost veća, manje je slaganje u glasanju.",
     "text": [
-      "Izračunamo {link} med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
-      "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.",
-      "Številčne vrednosti glasov"
+      "Izračunava se {link} između rezultata glasanja zastupnice i rezultata svih ostalih zastupnica (pri čemu se vrijednost glasa pretvori u brojčane vrijednosti između -1 i 1).",
+      "Kad se izračuna 'udaljenosti' između svih zastupnica, razvrstava ih se prema rezultatu i prikazuje se zadnjih odnosno najudaljenijih pet.",
+      "Brojčane vrijednosti glasova"
     ],
     "link": {
-      "text": "evklidsko razdaljo",
+      "text": "euklidska udaljenost",
       "link": "https://en.wikipedia.org/wiki/Euclidean_distance"
     },
     "list": [
-      "-1: proti",
-      "0: vzdržan/-a ali ni prisoten/-na",
+      "-1: protiv",
+      "0: suzdržana ili nije prisutana",
       "1: za"
     ]
   }

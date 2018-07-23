@@ -3,7 +3,7 @@
     "title": "Zadnje aktivnosti"
   },
   "info": {
-    "lead": "Povezave do vseh poslančevih/-kinih glasovanj in govorov, ki so se zgodili v zadnjih desetih dneh, ko je bil/-a poslanec/-ka aktiven/-a.",
-    "text": "Podatke dobimo s spletnega mesta Državnega zbora. Na kartici izpisujemo povezave do vseh poslančevih/-kinih glasovanj in govorov, ki so se zgodili v zadnjih desetih dneh, ko je bil/-a poslanec/-ka aktiven/-a."
+    "lead": "Poveznice na sva glasanja i govore posljednjih deset dana aktivnog zastupničkog mandata.",
+    "text": "Podaci su preuzeti s web stranice Hrvatskog sabora. Na kartici su prikazane poveznice na sva glasanja i govore u posljednjih deset dana aktivnog zastupničkog mandata."
   }
 }

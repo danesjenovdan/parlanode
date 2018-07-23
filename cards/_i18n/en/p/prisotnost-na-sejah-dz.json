@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisotnost na sejah DZ"
+    "title": "Attendance at the National Assembly sessions"
   },
   "info": {
-    "lead": "Prisotnost poslanca/-ke na sejah DZ v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Preštejemo vse seje in preverimo, če je poslanec/-ka glasoval/-a na vsaj enem glasovanju na posamezni seji. Če je glasoval/-a vsaj enkrat, ga/jo štejemo kot prisotno/-ega na posamezni seji. Delimo število sej, ko je bil/-a prisoten/-a, s številom vseh sej in normaliziramo (min 1 - max 100)."
+    "lead": "MP's attendance on National Assembly sessions compared to average and maximum value.",
+    "text": "We count all the sessions and check whether the MP voted at least once during an individual session. If they voted at least once we count them as present at the individual session. We divide the number of sessions where the MP was present with the number of all sessions and normalise the number (min 1 - max 100)."
   }
 }

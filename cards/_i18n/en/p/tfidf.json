@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Besede, ki jo/ga zaznamujejo"
+    "title": "Characterised by the following words"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki jih poslanec/-ka uporablja pogosteje kot ostali poslanci v DZ.",
+    "lead": "List of 10 words and phrases that the MP uses more often than other MPs in the National Assembly.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori."
+      "We use the following statistics {link} to conduct the analysis.",
+      "Corpus refers to all speeches and document refers to all speeches by the MP."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",

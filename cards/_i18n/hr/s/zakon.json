@@ -3,11 +3,11 @@
     "title": "Zakon"
   },
   "info": {
-    "lead": "Povzetek zakona/akta in rezultati vseh z njim povezanih glasovanj.",
-    "text": "Iz {link} naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.",
+    "lead": "Sažetak zakona/akata i rezultati svih s njim povezanih glasanja.",
+    "text": "Sa stranice {link} preuzimaju se sva glasanja vezana za istu PZ/PZE oznaku. Glasanja s istom PZ/PZE oznakom spajamo sa zakonom ili aktom kojem oznaka pripada.",
     "link": {
-      "link": "https://www.dz-rs.si",
-      "text": "www.dz-rs.si"
+      "link": "http://www.sabor.hr/hr",
+      "text": "www.sabor.hr"
     }
   }
 }

@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Neujemanje s poslansko skupino"
+    "title": "Deviation from parliamentary group"
   },
   "info": {
-    "lead": "Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše je ujemanje.",
+    "lead": "A list of all the parliamentary group's MPs, sorted by the extend to which they vote the same as the parliamentary group. The bigger the value, the smaller the voting matching.",
     "text": [
-      "Za vsako glasovanje izračunamo \"glas poslanske skupine\", ki ji posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja proti najmanjšemu.",
-      "Vse glasovnice z vrednostjo \"NI\" ignoriramo, kar ima za posledico to, da če je večinski glas poslanske skupine \"NI\" (večina poslank in poslancev se glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima poslanska skupina več \"večinskih glasov\" (dve opciji imata enako največje število glasov znotraj poslanske skupine) upoštevamo obe opciji pri primerjavi z individualnimi poslanci ni poslankami."
+      "For each voting event we calculate the \"parliamentary group's vote\" for the parliamentary group that the MP is a member of. For each MP we calculate the percentage of votes where they voted differently than their parliamentary group's majority vote and sort the results from the biggest to smallest level of deviation. ",
+      "We ignore all the ballots with value \"NOT PRESENT\". If the majority vote of the parliamentary group is \"NOT PRESENT\" (the majority of their MPs was not present at the vote) that voting event is not included in the analysis. If the parliamentary group has multiple “majority votes\" (i. e. two options have the same number of votes within the parliamentary group) we consider all options in our comparison with the individual MPs."
     ]
   }
 }

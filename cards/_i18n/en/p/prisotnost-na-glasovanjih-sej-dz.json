@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisotnost na glasovanjih sej DZ"
+    "title": "Attendance at voting in the National Assembly"
   },
   "info": {
-    "lead": "Prisotnosti poslanca/-ke na glasovanjih DZ v primerjavi s povprečjem in največjo vrednostjo.",
-    "text": "Preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom vseh glasovanj, na katerih bi moral/-a poslanec/-ka glasovati. Rezultat izpišemo skupaj s povprečno in največjo vrednostjo."
+    "lead": "MP's attendance at voting in the National Assembly compared to the average and maximum value.",
+    "text": "We count all submitted ballots by the MP and divide the number by the number of all voting events where the MP should have been participating. The result is displayed together with average and maximum value."
   }
 }

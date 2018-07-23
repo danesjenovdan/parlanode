@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Povprečno število govorov na sejo"
+    "title": "The average number of speeches per session"
   },
   "info": {
-    "lead": "Povprečno število govorov poslanca/-ke na sejo v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Preštejemo poslačeve/-kine govore, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link} in število delimo s številom sej, na katerih je bil/-a poslanec/-ka prisoten/-na. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim in najvišjim.",
+    "lead": "The average number of speeches by the MP compared to the average and maximum values.",
+    "text": "We count the MP's speeches found in transcripts retrieved from the web site {link} and divide by the number of sessions the MP attended. We divide the number of all speeches first by the number of all MP and then by the number of all sessions (where speeches were made). We compare the individual result with average and maximum values.",
     "link": {
-      "text": "DZ RS",
+      "text": "National Assembly of the Republic of Slovenia",
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
     }
   }

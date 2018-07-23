@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Izpostavljena zakonodaja"
+    "title": "Istaknuti zakoni"
   },
   "info": {
-    "lead": "Kažemo šest zakonov, ki so še v parlamentarni obravnavi, in šest nedavno sprejetih.",
-    "text": "Izpostavljene zakone določamo uredniško, in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi. To je edina stvar na Parlametru, ki je ne kurira računalnik, ampak človek."
+    "lead": "Prikazuje se šest zakona koji su još u saborskoj proceduri i šest nedavno prihvaćenih.",
+    "text": "Koji će zakoni biti prikazani odlučuje uredništvo, a prema kriteriju koliko je zanimljiv medijima i civilnom društvu. To je ujedno i jedini sadržaj Parlametra koji ne generira računalo nego odabire čovjek."
   },
-  "under-consideration": "Trenutno v obravnavi",
-  "recently-passed": "Nedavno sprejeto",
-  "all-legislation": "Vsa zakonodaja"
+  "under-consideration": "Trenutno u proceduri",
+  "recently-passed": "Nedavno doneseni",
+  "all-legislation": "Svi zakoni"
 }

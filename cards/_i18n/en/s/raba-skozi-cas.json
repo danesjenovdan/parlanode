@@ -1,11 +1,11 @@
 {
   "card": {
-    "title": "Raba skozi čas"
+    "title": "Use through time"
   },
   "info": {
-    "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.",
-    "text": "Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu."
+    "lead": "Frequency of use of searched query through time.",
+    "text": "We count the number of occurrences of searched query by month. We then display the results for either the whole term of office or for the previous year."
   },
-  "whole-term": "Cel mandat",
-  "last-year": "Zadnje leto"
+  "whole-term": "The whole term of office",
+  "last-year": "Previous year"
 }

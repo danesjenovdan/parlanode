@@ -1,15 +1,15 @@
 {
   "card": {
-    "title": "Skupine besed"
+    "title": "Word groups"
   },
   "info": {
-    "lead": "Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.",
-    "text": "Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov."
+    "lead": "The card shows which speakers or which parliamentary groups absolutely and relatively talk about a group of words the most.",
+    "text": "We count the times a speaker says at least two search queries. Those, that said it at least once are ranked according to the number of occurrences divided by the number of all speeches of this speaker or parliamentary group and the total number of all speeches."
   },
-  "speakers": "Govorci",
-  "parties": "Poslanske skupine",
-  "input-words": "Vnesi posamezno besedo ali več besed, ločenih z vejico.",
-  "empty-text": "Za prikaz rezultatov dodaj vsaj dve besedi.",
-  "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
-  "show-relative": "Prikaži relativno metriko"
+  "speakers": "Speakers",
+  "parties": "Parliamentary groups",
+  "input-words": "Enter a word or multiple words separated by a comma.",
+  "empty-text": "To view results add at least two words.",
+  "wordgroups-text": "Show me who talk about {words} the most. {load}",
+  "show-relative": "Display relative metric"
 }
