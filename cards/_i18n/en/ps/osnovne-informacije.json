@@ -3,8 +3,8 @@
     "title": "Basic information"
   },
   "info": {
-    "lead": "Pregled osnovnih informacij poslanske skupine.",
-    "text": "Vsebine za to kartico smo pridobili s spletnega mesta DZ RS (poslanska skupina, starost, članstva v delovnih telesih) in s spletnega mesta DVK (število prejetih glasov). Za ostale vsebine smo se obrnili na PR službe poslanskih skupin. Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
+    "lead": "Overview of parliamentary group's basic information.",
+    "text": "We obtained the content for this card from the National Assembly web site (parliamentary group, age, membership in working bodies) and the web site of State Election Commission (the number of votes received). For all other information we contacted the PR departments of parliamentary groups. We received information from NSi, SD, (then) ZaAB and ZL. SMC directed us to their web site and SDS directed us to the web site of the National Assembly. We collected the missing data using the Google search engine and gave all the parliamentary parties an opportunity to make corrections before publication."
   },
   "party-leader": "Vodja poslanske skupine",
   "deputy-leader-m": "Namestnik",
