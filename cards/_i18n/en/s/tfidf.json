@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Besede, ki so zaznamovale sejo"
+    "title": "Words that marked the session"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje kot na vseh drugih sejah.",
+    "lead": "A list of 10 words and phrases which were used more often during this session than during all other sessions.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi govori na seji."
+      "We use the following statistics {link} to conduct the analysis.",
+      "Corpus refers to all speeches and document refers to all speeches at this session."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf",
