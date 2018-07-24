@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Deviation from parliamentary group"
+    "title": "Deviation from the parliamentary group"
   },
   "info": {
-    "lead": "MP's vote discrepancy from the majority vote of the parliamentary group they are affiliated with, compared to the average and maximum value.",
+    "lead": "MP's vote deviation from the majority vote of their parliamentary group, compared to the average and maximum value.",
     "text": [
-      "For all voting events we calculate majority vote for each parliamentary group. Majority vote refers to the option that a majority of MP's voted for.",
-      "For each MP we identify their current parliamentary group and we calculate the percentage of matching votes during the period of their membership. In all the calculations we ignore the ballot \"not present\"."
+      "For all voting events we calculate the majority vote for each parliamentary group. Majority vote refers to the option that a majority of the MP's voted for.",
+      "For each MP we identify their current parliamentary group and we calculate the percentage of matching votes during the period of their membership. In all calculations we ignore the ballot \"not present\"."
     ]
   }
 }

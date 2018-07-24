@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "A list of all parliamentary questions and initiatives by the MP in this parliamentary term of the National Assembly of the Republic of Slovenia.",
-    "text": "We collect the data from the web page {link}.",
+    "text": "Data is retrieved from the web site {link}.",
     "link": {
       "text": "National Assembly of the Republic of Slovenia",
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/"

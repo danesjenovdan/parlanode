@@ -4,7 +4,7 @@
   },
   "info": {
     "text": [
-      "We obtain sets of votes from the web page of the National Assembly of Republic of Slovenia.",
+      "We obtain voting records from the web page of the National Assembly of the Republic of Slovenia.",
       "Results of the vote are displayed in three ways: by the MP, by the parliamentary group and by Government - Opposition.",
       "The first tab gives you the overview of the vote, and allows you to filter results according to the value of the ballot (FOR, AGAINST, ABSTAIN, DID NOT VOTE) and look up individual MPs. The majority vote is printed out next to the pie chart. For example, \"60% FOR\" means that 60 out of 90 MPs voted FOR.",
       "The second tab shows parliamentary groups' votes. At the end of each line the majority vote of the parliamentary group is printed and pressing the button next to it gives you access to a list of the MPs who voted the same as the majority of the parliamentary group. The lightning sign indicates discrepancies within the parliamentary group - it is next to all the votes that are not the same as the majority vote (MPs who are not present are not included). If the majority of the parliamentary group is not present there is no majority vote.",
@@ -15,5 +15,5 @@
   },
   "parties": "Parliamentary groups",
   "gov-side": "Government or Opposition",
-  "summary": "Summary"
+  "summary": "Abstract"
 }

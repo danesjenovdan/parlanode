@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Besede, ki jo/ga zaznamujejo"
+    "title": "Characterised by the following words"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki jih poslanska skupina uporablja pogosteje kot ostale poslanske skupine v DZ.",
+    "lead": "List of 10 words and phrases that the parliamentary group uses more often than other parliamentary groups in the National Assembly.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi govori poslank in poslancev v poslanski skupini."
+      "We use the following statistics {link} to conduct the analysis.",
+      "The corpus refers to all speeches while the document refers to all speeches by the parliamentary group's MPs."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",

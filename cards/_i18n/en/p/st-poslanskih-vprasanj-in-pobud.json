@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "The number of parliamentary questions and initiatives by the MP in this sitting of the National Assembly compared to the average and maximum value.",
-    "text": "Data retrieved from web site {link}.",
+    "text": "Data is retrieved from the web site {link}.",
     "link": {
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
       "text": "National Assembly of the Republic of Slovenia"

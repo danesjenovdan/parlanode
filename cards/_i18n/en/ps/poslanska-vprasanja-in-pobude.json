@@ -1,18 +1,18 @@
 {
   "card": {
-    "title": "Poslanska vprašanja in pobude"
+    "title": "Parliamentary questions and initiatives"
   },
   "info": {
-    "lead": "Pregled poslanskih vprašanj na nivoju poslanske skupine.",
+    "lead": "An overview of parliamentary questions by parliamentary group.",
     "text": [
-      "Zbrali smo vsa poslanska vprašanja, jih sortirali po poslanskih skupinah in jih ponudili v pregled glede na poslanca/-ko, ki jih je postavil/-a, glede na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi iskanje po naslovu poslanskih vprašanj.",
-      "Nabor poslanskih vprašanj pridobimo s spletnega mesta {link}."
+      "We collected all parliamentary questions and sorted them by parliamentary groups. Questions can be viewed by the MP who gave them, by the person to whom the question was addressed to, and by date. It is also possible to search through questions by their title.",
+      "We obtain records of parliamentary questions from the web page {link}."
     ],
     "link": {
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "text": "National Assembly of the Republic of Slovenia"
     }
   },
-  "mp": "Poslanec/-ka",
-  "addressee": "Naslovljenec/-ka"
+  "mp": "MP",
+  "addressee": "Addressed to"
 }

@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "Stilne analize"
+    "title": "Stylistic analysis"
   },
   "info": {
-    "lead": "Pogostost uporabe stilno zaznamovanih besed v govorih poslancev poslanske skupine.",
+    "lead": "The frequency of words in speeches by the parliamentary group's MPs.",
     "text": [
-      "Z združevanjem kvalifikatorjev {link1} in {link2} smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.",
+      "We define excessive, above average and average vocabulary in MPs' speeches by combing the qualifiers {link1} and {link2}.",
       "Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).",
-      "Podjetje {link3} je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.",
-      "Črtni graf prikazuje delež posameznega tipa besedja v govorih poslanske skupine glede na povprečje, izračunano za celoten sklic. Delež se izračuna po naslednjem algoritmu: vzamejo se vsi govori poslanske skupine, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslansko skupino z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslansko skupino se normalizira (min. 1 – max. 100)."
+      "Company {link3} prepared lists of words containing qualifiers from transcripts of parliamentary speeches.",
+      "The connected graph is showing the proportion of each type of vocabulary in the MP's speeches compared to the average and calculated for the whole sitting of the parliament. The proportions are calculated using the following algorithm: we take all speeches by the MP and count the number of words (and their recurrences) in each vocabulary category. We run this analysis for all the MPs and then divide parliamentary group's value with the average value (a sum of all the MPs divided by the number of the MPs). Values of categories for each parliamentary group are normalised (min 1 - max 100)."
     ],
     "links": [
       {
