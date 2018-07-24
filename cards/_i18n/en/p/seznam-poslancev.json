@@ -15,7 +15,7 @@
   "sort-by--district": "district",
   "sort-by--party": "parliamentary groups",
   "sort-by--analysis": "analysis results {analysis}",
-  "sort-by--change": "current change in the analysis results {analysis}",
+  "sort-by--change": "an update of the results of the analysis {analysis}",
   "sort-by--age": "age",
   "sort-by--education": "level of education",
   "sort-by--terms": "number of terms of office"
