@@ -30,5 +30,18 @@
         "title": "Ostale seje"
       }
     ]
+  },
+  "en": {
+    "tabs": [
+      {
+        "title": "HOC sessions",
+        "org_ids": [
+          11
+        ]
+      },
+      {
+        "title": "Other sessions"
+      }
+    ]
   }
 }
