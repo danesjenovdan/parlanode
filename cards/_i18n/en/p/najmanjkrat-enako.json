@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "Least likely to vote the same"
+    "title": "Least often vote the same"
   },
   "info": {
     "lead": "A list of 5 MPs who most often vote differently than the selected MP. MPs are ranked in a descending order. The higher the value, the lower the voting matching.",
