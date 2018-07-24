@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "MP's attendance at voting in the National Assembly compared to the average and maximum value.",
-    "text": "We count all submitted ballots by the MP and divide the number by the number of all voting events where the MP should have been participating. The result is displayed together with average and maximum value."
+    "text": "We count all submitted ballots by the MP and divide the number by the number of all voting events where the MP should have been participating. The result is displayed together with the average and maximum value."
   }
 }
