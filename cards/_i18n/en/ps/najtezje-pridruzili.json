@@ -3,7 +3,7 @@
     "title": "Least likely to vote the same"
   },
   "info": {
-    "lead": "A list of 5 MPs who most often vote differently than the \"vote of the parliamentary group\". MPs are ranked in a descending order. The higher the value, the lower the voting matching.",
+    "lead": "List of 5 MPs who most often vote differently than the \"vote of the parliamentary group\". MPs are ranked in a descending order. The higher the value, the lower the commonalities between the two MPs.",
     "text": [
       "We calculate the Euclidean distance between the results of parliamentary group's voting and everyone else's voting (votes are converted to numerical values between -1 and 1).",
       "We calculate the \"distance\" between all the MPs, rank them based on the results and show the top 5.",
