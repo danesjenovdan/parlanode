@@ -1,10 +1,10 @@
 {
   "card": {
-    "title": "The average number of speeches per session"
+    "title": "Average number of speeches per session"
   },
   "info": {
     "lead": "The average number of speeches by the MP compared to the average and maximum values.",
-    "text": "We count the MP's speeches found in transcripts retrieved from the web site {link} and divide by the number of sessions the MP attended. We divide the number of all speeches first by the number of all MP and then by the number of all sessions (where speeches were made). We compare the individual result with average and maximum values.",
+    "text": "We count the MP's speeches found in transcripts retrieved from the web site {link} and divide it by the number of sessions the MP attended. We divide the number of all speeches first by the number of all the MPs and then by the number of all sessions (where speeches were made). We compare the individual result with the average and maximum values.",
     "link": {
       "text": "National Assembly of the Republic of Slovenia",
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
