@@ -1,15 +1,25 @@
-.idea
-.vscode
+# os garbage
 .DS_Store
+
+# package manager files
 node_modules/
 bower_components/
-/og
 *.log
-yarn-error.log
+
+# editor configs
+.idea
+.vscode
 
 # configs
 config/development.js
 config/production.js
 
+# compiled bundles
 /cards/**/bundles
+/og-images/**/bundles
+
+# auto-downloaded assets
 /assets/urls.json
+
+# generated images
+/og
