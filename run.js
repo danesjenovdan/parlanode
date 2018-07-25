@@ -47,5 +47,7 @@ if (require.main === module) {
   init();
 }
 
-exports.app = server.app;
-exports.init = init;
+module.exports = {
+  app: server.app,
+  init,
+};

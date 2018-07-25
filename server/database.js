@@ -11,8 +11,8 @@ function createMongoURL(host, db, user, password) {
 /**
  * Connects to MongoDB
  */
-exports.connect = () => (
-  new Promise((resolve, reject) => {
+function connect() {
+  return new Promise((resolve, reject) => {
     // eslint-disable-next-line no-console
     console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green(`connecting to ${config.db.url}/${config.db.name}`)}`);
 
@@ -45,5 +45,9 @@ exports.connect = () => (
       console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green('connected')}`);
       resolve();
     });
-  })
-);
+  });
+}
+
+module.exports = {
+  connect,
+};

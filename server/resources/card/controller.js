@@ -29,16 +29,16 @@ function getModelObjects(modelName, res, mapFunc) {
     });
 }
 
-exports.getRenders = (req, res) => {
+function getRenders(req, res) {
   getModelObjects('CardRender', res, (doc) => {
     doc.html = `HTML length: ${doc.html.length}`;
     return doc;
   });
-};
+}
 
-exports.getBuilds = (req, res) => {
+function getBuilds(req, res) {
   getModelObjects('CardBuild', res);
-};
+}
 
 function clearModel(modelName, res) {
   const Model = mongoose.model(modelName);
@@ -51,15 +51,15 @@ function clearModel(modelName, res) {
     });
 }
 
-exports.deleteRenders = (req, res) => {
+function deleteRenders(req, res) {
   clearModel('CardRender', res);
-};
+}
 
-exports.deleteBuilds = (req, res) => {
+function deleteBuilds(req, res) {
   clearModel('CardBuild', res);
-};
+}
 
-exports.deleteBuildId = (req, res) => {
+function deleteBuildId(req, res) {
   const CardBuild = mongoose.model('CardBuild');
   CardBuild.findByIdAndRemove(req.params.id)
     .then((obj) => {
@@ -68,7 +68,7 @@ exports.deleteBuildId = (req, res) => {
     .catch((err) => {
       res.status(400).send(err);
     });
-};
+}
 
 async function loadCardJSON(cacheData) {
   const cardJson = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
@@ -270,7 +270,7 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
 
 const IS_VALID_CUSTOM_URL = /^https?:\/\/[^/]*\.parlameter\.si\//;
 
-exports.render = (req, res) => {
+function render(req, res) {
   const { group, method } = req.params;
   const id = req.params.id || null;
   const date = req.params.date || formattedDate();
@@ -321,9 +321,9 @@ exports.render = (req, res) => {
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
     });
-};
+}
 
-exports.rebuildUpdated = (req, res) => {
+function rebuildUpdated(req, res) {
   glob('./cards/**/card.json', (error, files) => {
     if (error) {
       res.status(500).send(error);
@@ -369,4 +369,14 @@ exports.rebuildUpdated = (req, res) => {
         res.end(`\n\nError: ${pError.message}`);
       });
   });
+}
+
+module.exports = {
+  getRenders,
+  getBuilds,
+  deleteRenders,
+  deleteBuilds,
+  deleteBuildId,
+  rebuildUpdated,
+  render,
 };

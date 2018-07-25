@@ -90,8 +90,12 @@ function setupExpress() {
   });
 }
 
-exports.init = () => (
-  Promise.resolve()
+function init() {
+  return Promise.resolve()
     .then(preloadUrlSlugs)
-    .then(setupExpress)
-);
+    .then(setupExpress);
+}
+
+module.exports = {
+  init,
+};
