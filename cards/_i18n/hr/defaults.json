@@ -84,6 +84,9 @@
     "title": "Ugradi",
     "always-refresh": "Podaci se uvijek moraju osvježiti"
   },
+  "previous": {
+    "title": "Prejšnje verzije"
+  },
   "membership-list": {
     "no-memberships": "Bez članstva."
   },
