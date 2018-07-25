@@ -84,6 +84,9 @@
     "title": "Vdelaj",
     "always-refresh": "Podatki naj se vedno osvežujejo"
   },
+  "previous": {
+    "title": "Prejšnje verzije"
+  },
   "membership-list": {
     "no-memberships": "Brez članstev."
   },

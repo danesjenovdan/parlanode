@@ -29,7 +29,8 @@
       <h1 v-t="'info.title'" v-if="currentBack === 'info'"></h1>
       <h1 v-t="'embed.title'" v-else-if="currentBack === 'embed'"></h1>
       <h1 v-t="'share.title'" v-else-if="currentBack === 'share'"></h1>
-      <h1 v-else v-text="config.title"></h1>
+      <h1 v-t="'previous.title'" v-else-if="currentBack === 'previous'"></h1>
+      <h1 v-else>{{ config.title }}</h1>
     </template>
   </div>
 </template>
