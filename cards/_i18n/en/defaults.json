@@ -84,6 +84,9 @@
     "title": "Embed",
     "always-refresh": "Data should keep refreshing"
   },
+  "previous": {
+    "title": "Prejšnje verzije"
+  },
   "membership-list": {
     "no-memberships": "No memberships."
   },
