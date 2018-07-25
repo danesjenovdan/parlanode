@@ -71,7 +71,7 @@ export default {
     color: $white;
     display: flex;
     flex: 1;
-    font-size: 10px;
+    font-size: 12px;
     height: 61px;
     line-height: 16px;
     margin-right: 3px;

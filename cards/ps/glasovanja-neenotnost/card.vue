@@ -295,7 +295,7 @@ export default {
           this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
         }
 
-        this.voteData = response[acronym];
+        this.voteData = response.results;
 
         this.allClassifications = [];
         // eslint-disable-next-line no-restricted-syntax, guard-for-in
