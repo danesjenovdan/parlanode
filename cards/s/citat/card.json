@@ -3,7 +3,7 @@
   "name": "Citat",
   "type": "seje",
   "dataUrl": "https://analize.parlameter.si/v1/s/getQuote",
-  "lastUpdate": "2018-05-15T13:03:42.643Z",
+  "lastUpdate": "2018-07-25T14:44:37.091Z",
   "method": "citat",
   "group": "s",
   "big": true,

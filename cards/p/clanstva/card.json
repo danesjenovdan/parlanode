@@ -3,7 +3,7 @@
   "name": "Članstva",
   "dataUrl": "https://analize.parlameter.si/v1/p/getMembershipsOfMember",
   "type": "poslanec",
-  "lastUpdate": "2018-06-04T14:20:00.110Z",
+  "lastUpdate": "2018-07-25T14:43:24.834Z",
   "method": "clanstva",
   "group": "p",
   "big": false

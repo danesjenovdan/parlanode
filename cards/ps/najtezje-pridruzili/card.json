@@ -3,7 +3,7 @@
   "name": "Najmanjkrat glasujejo enako",
   "type": "poslanska_skupina",
   "dataUrl": "https://analize.parlameter.si/v1/pg/getLessMatchingThem",
-  "lastUpdate": "2018-05-08T13:55:55.116Z",
+  "lastUpdate": "2018-07-25T14:44:11.700Z",
   "method": "najtezje-pridruzili",
   "group": "ps",
   "big": false,
