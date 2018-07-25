@@ -19,6 +19,9 @@
       "title": "Vdelaj",
       "always-refresh": "Podatki naj se vedno osvežujejo"
     },
+    "previous": {
+      "title": "Prejšnje verzije"
+    },
     "seznam-glasovanj": {
       "title-search": "Išči po naslovu glasovanja",
       "working-body": "Matično delovno telo",
