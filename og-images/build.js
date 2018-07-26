@@ -1,10 +1,10 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const { spawn } = require('child_process');
 
 const dir = 'og-images';
-let [currentPath, cmd] = process.argv.slice(2);
+let [currentPath, cmd] = process.argv.slice(2).filter(arg => !arg.startsWith('--'));
 
 if (!cmd) {
   cmd = 'dev';
@@ -22,9 +22,9 @@ if (currentPath !== 'all') {
     .replace(new RegExp(`^${dir}\\/`), '')
     .replace(/\/$/, '');
 
-  if (!fs.existsSync(path.join(__dirname, currentPath, 'og.vue'))) {
+  if (!fs.existsSync(path.join(__dirname, currentPath, 'og.json'))) {
     // eslint-disable-next-line no-console
-    console.error(chalk.red(`Invalid path. '${chalk.yellow(currentPath)}/og.vue' doesn't exist.`));
+    console.error(chalk.red(`Invalid path. '${chalk.yellow(currentPath)}/og.json' doesn't exist.`));
     process.exit(1);
   }
 }
@@ -60,13 +60,15 @@ if (cmd === 'build') {
   const webpack = require('webpack');
   const serverConfig = require('./webpack.config.server');
   /* eslint-enable global-require */
+  const updateTimestamp = !process.argv.slice(3).find(arg => arg === '--dont-update-timestamp');
 
-  webpack(serverConfig(currentPath), (error, stats) => {
+  webpack(serverConfig(currentPath), async (error, stats) => {
     if (error) {
       // eslint-disable-next-line no-console
       console.error(chalk.red('error'), 'Build failed:', error);
       process.exit(1);
     }
+
     // eslint-disable-next-line no-console
     console.log(stats.toString({
       colors: true,
@@ -75,5 +77,15 @@ if (cmd === 'build') {
       version: false,
       children: false,
     }));
+
+    if (updateTimestamp) {
+      // Update timestamp in og.json
+      const jsonPath = path.join(__dirname, currentPath, 'og.json');
+      const json = await fs.readJson(jsonPath);
+      json.updated = new Date().toJSON();
+      await fs.writeJson(jsonPath, json, { spaces: 2 });
+      // eslint-disable-next-line no-console
+      console.log(chalk.green('Updated og.json timestamp.'));
+    }
   });
 }
