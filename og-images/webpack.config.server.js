@@ -1,66 +1,29 @@
-/* globals module */
-/* eslint-disable global-require, import/no-dynamic-require */
+const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const nodeExternals = require('webpack-node-externals');
-const path = require('path');
-const _ = require('lodash');
-const Vue = require('vue');
-const VueI18n = require('vue-i18n');
-const i18nExtensions = require('vue-i18n-extensions');
+const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 const baseConfig = require('./webpack.config.base');
 
-Vue.use(VueI18n);
-
-module.exports = (cardPath) => {
-  const cardLang = process.env.CARD_LANG || 'sl';
-  // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
-  const cardDir = path.resolve(cardPath)
-    .replace(/\\/g, '/')
-    .split('/')
-    .slice(-2)
-    .join('/');
-
-  const baseConfigObject = baseConfig(cardPath);
-
-  const i18nDefault = require(path.resolve(__dirname, '_i18n', cardLang, 'defaults.json'));
-  const i18nCard = require(path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`));
-
-  const i18n = new VueI18n({
-    locale: cardLang,
-    messages: _.merge({}, i18nDefault, i18nCard),
-  });
-
-  return merge.smart(baseConfigObject, {
-    entry: './cards/serverBundle.js',
-    output: {
-      path: path.resolve(cardPath, 'bundles'),
-      filename: 'server.js',
-      libraryTarget: 'commonjs2',
-    },
-    target: 'node',
-    externals: [nodeExternals()],
-    module: {
-      rules: [
-        {
-          test: /\.vue$/,
-          loader: 'vue-loader',
-          options: {
-            extractCSS: true,
-            compilerModules: [i18nExtensions.module(i18n)],
-          },
-        },
-      ],
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          VUE_ENV: JSON.stringify('server'),
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-          CARD_LANG: JSON.stringify(cardLang),
-          CARD_NAME: JSON.stringify(process.env.CARD_NAME),
-        },
-      }),
-    ],
-  });
-};
+module.exports = currentPath => merge.smart(baseConfig(currentPath), {
+  entry: path.resolve(__dirname, 'bundle-server.js'),
+  output: {
+    path: path.resolve(currentPath, 'bundles'),
+    filename: 'server.js',
+    libraryTarget: 'commonjs2',
+  },
+  target: 'node',
+  externals: [nodeExternals()],
+  plugins: [
+    // This is the plugin that turns the entire output of the server build
+    // into a single JSON file. The default file name will be
+    // `vue-ssr-server-bundle.json`
+    new VueSSRServerPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+        VUE_ENV: JSON.stringify('server'),
+      },
+    }),
+  ],
+});
