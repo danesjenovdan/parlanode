@@ -17,7 +17,8 @@ mongoose.model('OgRender', OgRender);
 
 const OgBuild = mongoose.Schema({
   name: { type: String, index: true, required: true },
-  time: { type: Date, required: true },
+  updated: { type: Date, required: true },
+  built: { type: Date, required: true },
 });
 
 mongoose.model('OgBuild', OgBuild);
