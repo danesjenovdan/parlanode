@@ -55,26 +55,25 @@ if (cmd === 'dev') {
   });
 }
 
-// if (cmd === 'build') {
-//   const cpEnv = Object.create(process.env);
-//   cpEnv.NODE_ENV = 'production';
-//   cpEnv.CARD_NAME = cardPath;
-//   cpEnv.CARD_LANG = lang;
+if (cmd === 'build') {
+  /* eslint-disable global-require */
+  const webpack = require('webpack');
+  const serverConfig = require('./webpack.config.server');
+  /* eslint-enable global-require */
 
-//   const cpArgs = ['cards/build.js'];
-
-//   const cp = spawn('node', cpArgs, { stdio: 'inherit', env: cpEnv });
-
-//   cp.on('error', (error) => {
-//     // eslint-disable-next-line no-console
-//     console.error(error);
-//   });
-
-//   cp.on('close', (code) => {
-//     if (code) {
-//       // eslint-disable-next-line no-console
-//       console.error(chalk.red('error'), `Build failed with exit code ${code}.`);
-//       process.exit(code);
-//     }
-//   });
-// }
+  webpack(serverConfig(currentPath), (error, stats) => {
+    if (error) {
+      // eslint-disable-next-line no-console
+      console.error(chalk.red('error'), 'Build failed:', error);
+      process.exit(1);
+    }
+    // eslint-disable-next-line no-console
+    console.log(stats.toString({
+      colors: true,
+      hash: false,
+      modules: false,
+      version: false,
+      children: false,
+    }));
+  });
+}
