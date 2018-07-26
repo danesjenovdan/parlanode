@@ -32,7 +32,7 @@ export default {
 .logo-container {
   margin-top: auto;
 
-  /deep/ img {
+  img {
     height: 100px;
   }
 }

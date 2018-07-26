@@ -1,11 +1,14 @@
 const fs = require('fs-extra');
+const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const webshot = util.promisify(require('webshot'));
 const mongoose = require('mongoose');
 const renderer = require('vue-server-renderer');
 // TODO: remove this comment when vscode is fixed
 // eslint-disable-next-line import/no-unresolved
 const { performance } = require('perf_hooks');
+const config = require('../../../config');
 
 const OgRender = mongoose.model('OgRender');
 const OgBuild = mongoose.model('OgBuild');
@@ -134,7 +137,12 @@ async function renderOgImage(cacheData, ogJson) {
 
   const saved = await ogRender.save();
 
-  console.log(saved);
+  await fs.writeFile(`${config.ogCapturePath}/${saved.id}.html`, html);
+
+  await webshot(html, `${config.ogCapturePath}/${saved.id}.png`, {
+    siteType: 'html',
+    captureSelector: '#og-container',
+  });
 
   return saved;
 }
@@ -189,7 +197,7 @@ function render(req, res) {
       // eslint-disable-next-line no-console
       console.log(`OgImage: ${name} - END after ${Math.round(performance.now() - startTime)} ms`);
       if (ogRender && ogRender.id) {
-        res.send(ogRender.id);
+        res.sendFile(path.resolve(`${config.ogCapturePath}/${ogRender.id}.png`));
       } else {
         res.status(500).send({ error: 'no og render' });
       }
