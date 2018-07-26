@@ -14,6 +14,5 @@ export default {
 .parlameter-logo img {
   display: block;
   margin: 0 auto;
-  width: 160px;
 }
 </style>

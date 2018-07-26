@@ -4,10 +4,12 @@
       TEST
     </vertical-half>
     <vertical-half variant="white">
-      <h2 class="cardname">
-        Amandmaji
+      <h2 class="title-text">
+        Naslov kartice
       </h2>
-      <parlameter-logo />
+      <div class="logo-container">
+        <parlameter-logo />
+      </div>
     </vertical-half>
     <!-- <div class="left-half">
       <div class="personimg">
@@ -38,8 +40,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo-container {
+  margin-top: auto;
 
+  /deep/ img {
+    height: 100px;
+  }
+}
 
+.title-text {
+  text-align: center;
+  font-size: 44px;
+  color: #003243;
+  flex: 1;
+  margin-bottom: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
         // .personimg {
         //     width: 300px;
@@ -75,12 +93,4 @@ export default {
         //     font-family: "Roboto Slab", sans-serif;
         //     font-weight: 300;
         // }
-
-        .cardname {
-            font-size: 44px;
-            color: #009cdd;
-            margin-top: 200px;
-        }
-
-
-    </style>
+</style>
