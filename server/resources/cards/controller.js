@@ -159,18 +159,16 @@ async function buildCard(cacheData, cardJson) {
   } finally {
     ongoingCardBuilds.delete(buildCommand);
   }
-  cardJson = await loadCardJSON(cacheData);
   const CardBuild = mongoose.model('CardBuild');
   await CardBuild.findOneAndUpdate(
     { group: cacheData.group, method: cacheData.method },
     {
-      lastBuilt: cardJson.lastUpdate.toJSON(),
+      lastBuilt: cardJson.lastUpdate,
       language: config.cardLang,
       dataUrl: cardJson.dataUrl,
     },
     { upsert: true, new: true, setDefaultsOnInsert: true },
   );
-  return cardJson;
 }
 
 async function renderCard(cacheData, cardJson, originalUrl) {
@@ -243,7 +241,7 @@ function formattedDate(days = 0) {
 }
 
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
-  let cardJson = await loadCardJSON(cacheData);
+  const cardJson = await loadCardJSON(cacheData);
   let renderedCard = null;
   if (!forceRender) {
     // eslint-disable-next-line no-console
@@ -261,7 +259,7 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
     if (await shouldBuildCard(cacheData, cardJson)) {
       // eslint-disable-next-line no-console
       console.log(`Card: ${cacheData.group}/${cacheData.method} - BUILDING`);
-      cardJson = await buildCard(cacheData, cardJson);
+      await buildCard(cacheData, cardJson);
     }
     renderedCard = await renderCard(cacheData, cardJson, originalUrl);
   }
