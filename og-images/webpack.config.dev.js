@@ -2,7 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 
-module.exports = currentPath => merge.smart(baseConfig(currentPath), {
+module.exports = merge.smart(baseConfig(process.env.CURRENT_PATH), {
   mode: 'development',
   optimization: {
     minimize: false,

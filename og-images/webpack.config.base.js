@@ -33,7 +33,7 @@ module.exports = currentPath => ({
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '~': `${path.resolve(currentPath)}`,
+      '~': `${path.resolve(__dirname, currentPath)}`,
     },
   },
   plugins: [
