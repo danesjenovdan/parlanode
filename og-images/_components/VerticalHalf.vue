@@ -28,4 +28,11 @@ export default {
 .vertical-half--white {
   background: #fff;
 }
+
+.vertical-half--bg {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/og-back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 </style>
