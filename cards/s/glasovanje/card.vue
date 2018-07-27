@@ -119,6 +119,7 @@
 import { pick } from 'lodash';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';

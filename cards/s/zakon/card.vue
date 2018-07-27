@@ -74,6 +74,7 @@
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';

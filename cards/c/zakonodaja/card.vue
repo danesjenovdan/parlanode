@@ -59,6 +59,7 @@
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';

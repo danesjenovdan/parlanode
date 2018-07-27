@@ -157,6 +157,7 @@
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import BarChart from 'components/BarChart.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
 import LoadLink from 'components/LoadLink.vue';

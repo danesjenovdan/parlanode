@@ -101,6 +101,7 @@
 import axios from 'axios';
 import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';

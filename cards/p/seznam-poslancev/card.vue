@@ -99,6 +99,7 @@ import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';

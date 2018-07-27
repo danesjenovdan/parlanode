@@ -102,6 +102,7 @@ import StripedButton from 'components/StripedButton.vue';
 import Toggle from 'components/Toggle.vue';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {

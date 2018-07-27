@@ -19,6 +19,7 @@
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import StackedBarChart from 'components/StackedBarChart.vue';
 
 export default {

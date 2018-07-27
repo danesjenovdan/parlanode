@@ -37,6 +37,7 @@
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import { getPersonLink, getPersonPortrait, getMemberPartyIdLink } from 'components/links';
 
 export default {

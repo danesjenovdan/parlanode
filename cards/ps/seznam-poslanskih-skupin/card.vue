@@ -40,6 +40,7 @@
 import { find } from 'lodash';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';

@@ -76,6 +76,7 @@ import { find, get } from 'lodash';
 import axios from 'axios';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';

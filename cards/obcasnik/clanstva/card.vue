@@ -22,6 +22,7 @@
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import adjacencyMatrix from 'helpers/adjacencyMatrix';
 // import 'helpers/adjacencyMatrix';
 
