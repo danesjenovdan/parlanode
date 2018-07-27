@@ -37,8 +37,9 @@
 <script>
 import { reduce } from 'lodash';
 import common from 'mixins/common';
-import { memberOverview as memberOverviewUrl } from 'mixins/contextUrls';
-import { memberHeader as memberAltHeader } from 'mixins/altHeaders';
+import { memberOverview } from 'mixins/contextUrls';
+import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import { memberTitle } from 'mixins/titles';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
@@ -51,7 +52,13 @@ export default {
     PTabs,
     MembershipList,
   },
-  mixins: [common, memberAltHeader, memberOverviewUrl, memberTitle],
+  mixins: [
+    common,
+    memberHeader,
+    memberOgImage,
+    memberOverview,
+    memberTitle,
+  ],
   data() {
     return {
       data: this.$options.cardData.data,
