@@ -1,10 +1,10 @@
 <template>
   <prisotnost-chart
     :card-data="$options.cardData"
-    type="person"
     :person="$options.cardData.data.person"
     :results="$options.cardData.data.results"
     :generated-card-url="generatedCardUrl"
+    type="person"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>

@@ -1,9 +1,9 @@
 <template>
   <score-avg-max
     :card-data="$options.cardData"
-    type="party"
     :party="$options.cardData.data.organization"
     :results="$options.cardData.data.result"
+    type="party"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
