@@ -55,10 +55,10 @@
 import { getPersonLink, getSessionVoteLink, getSessionSpeechLink } from 'components/links';
 
 function getBallotOption(option) {
-  if (option === 'za') {
+  if (option === 'za' || option === 'aye') {
     return 'for';
   }
-  if (option === 'proti') {
+  if (option === 'proti' || option === 'nay' || option === 'no') {
     return 'against';
   }
   if (option === 'ni') {
