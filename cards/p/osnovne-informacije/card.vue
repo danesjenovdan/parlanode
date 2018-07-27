@@ -3,6 +3,7 @@
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
     content-height="518px"
   >
     <div slot="info">
@@ -197,6 +198,7 @@ import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
 import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
 
 export default {
@@ -207,6 +209,7 @@ export default {
     memberOverview,
     memberTitle,
     memberHeader,
+    memberOgImage,
   ],
   data() {
     return {

@@ -71,6 +71,10 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    ogConfig: {
+      type: Object,
+      default: () => ({}),
+    },
     contentHeight: {
       type: String,
       default: 'auto',
@@ -87,6 +91,17 @@ export default {
     currentBack(newBack) {
       this.$emit('backChange', newBack);
     },
+  },
+  created() {
+    const ogConfig = this.ogConfig;
+    if (ogConfig) {
+      const ogImagePath = `${this.$root.slugs.urls.glej}/og-image/${ogConfig.name}/`;
+      const ogImageParams = `?${Object.keys(ogConfig).map(k => `${k}=${encodeURIComponent(ogConfig[k])}`).join('&')}`;
+      this.$root.$options.cardData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
+    } else {
+      // eslint-disable-next-line no-console
+      console.warn('Missing ogConfig!');
+    }
   },
   methods: {
     toggleBack(newBack) {

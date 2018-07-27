@@ -1,1122 +1,9 @@
 {
-  "person": {
-    "1243": {
-      "slug": "goran-aleksic"
-    },
-    "1244": {
-      "slug": "tulio-demetlika"
-    },
-    "1245": {
-      "slug": "slaven-dobrovic"
-    },
-    "1246": {
-      "slug": "darinko-dumbovic"
-    },
-    "1247": {
-      "slug": "sasa-dujic"
-    },
-    "1248": {
-      "slug": "pero-cosic"
-    },
-    "1249": {
-      "slug": "bruna-esih"
-    },
-    "1250": {
-      "slug": "stevo-culej"
-    },
-    "1251": {
-      "slug": "sonja-cikotic"
-    },
-    "1252": {
-      "slug": "josip-dakic"
-    },
-    "1253": {
-      "slug": "igor-dragovan"
-    },
-    "1254": {
-      "slug": "goran-dodig"
-    },
-    "1255": {
-      "slug": "mato-cicak"
-    },
-    "1256": {
-      "slug": "stjepan-curaj"
-    },
-    "1257": {
-      "slug": "branimir-bunjac"
-    },
-    "1258": {
-      "slug": "ivan-celic"
-    },
-    "1259": {
-      "slug": "marko-vucetic"
-    },
-    "1260": {
-      "slug": "hrvoje-zekanovic"
-    },
-    "1261": {
-      "slug": "tomislav-zagar"
-    },
-    "1262": {
-      "slug": "mihael-zmajlovic"
-    },
-    "1263": {
-      "slug": "sinisa-varga"
-    },
-    "1264": {
-      "slug": "davor-vlaovic"
-    },
-    "1265": {
-      "slug": "franko-vidovic"
-    },
-    "1266": {
-      "slug": "kazimir-varda"
-    },
-    "1267": {
-      "slug": "miroslav-tudman"
-    },
-    "1268": {
-      "slug": "marko-vesligaj"
-    },
-    "1269": {
-      "slug": "ivan-suker"
-    },
-    "1270": {
-      "slug": "damir-tomic"
-    },
-    "1271": {
-      "slug": "bernarda-topolko"
-    },
-    "1272": {
-      "slug": "miro-totgergeli"
-    },
-    "1273": {
-      "slug": "zarko-tusek"
-    },
-    "1274": {
-      "slug": "nada-turina-duric"
-    },
-    "1275": {
-      "slug": "marin-skibola"
-    },
-    "1276": {
-      "slug": "petar-skoric"
-    },
-    "1277": {
-      "slug": "giovanni-sponza"
-    },
-    "1278": {
-      "slug": "marko-simic"
-    },
-    "1279": {
-      "slug": "ivan-sipic"
-    },
-    "1280": {
-      "slug": "andelko-stricak"
-    },
-    "1281": {
-      "slug": "stipo-sapina"
-    },
-    "1282": {
-      "slug": "davor-ivo-stier"
-    },
-    "1283": {
-      "slug": "nenad-stazic"
-    },
-    "1284": {
-      "slug": "hrvoje-runtic"
-    },
-    "1285": {
-      "slug": "ines-strenja-linic"
-    },
-    "1286": {
-      "slug": "ante-sanader"
-    },
-    "1287": {
-      "slug": "tomislav-saucha"
-    },
-    "1288": {
-      "slug": "ivan-vilibor-sincic"
-    },
-    "1289": {
-      "slug": "marko-sladoljev"
-    },
-    "1290": {
-      "slug": "tomislav-sokol"
-    },
-    "1291": {
-      "slug": "zeljko-reiner"
-    },
-    "1292": {
-      "slug": "milorad-pupovac"
-    },
-    "1293": {
-      "slug": "zdravko-ronko"
-    },
-    "1294": {
-      "slug": "ante-pranic"
-    },
-    "1295": {
-      "slug": "dragica-roscic"
-    },
-    "1296": {
-      "slug": "marija-puh"
-    },
-    "1297": {
-      "slug": "zeljko-raguz"
-    },
-    "1298": {
-      "slug": "furio-radin"
-    },
-    "1299": {
-      "slug": "ana-marija-petin"
-    },
-    "1300": {
-      "slug": "alen-prelec"
-    },
-    "1301": {
-      "slug": "vesna-pusic"
-    },
-    "1302": {
-      "slug": "ivan-pernar"
-    },
-    "1303": {
-      "slug": "bozo-petrov"
-    },
-    "1304": {
-      "slug": "robert-podolnjak"
-    },
-    "1305": {
-      "slug": "sanja-putica"
-    },
-    "1306": {
-      "slug": "irena-petrijevcanin-vuksanovic"
-    },
-    "1307": {
-      "slug": "grozdana-peric"
-    },
-    "1308": {
-      "slug": "milanka-opacic"
-    },
-    "1309": {
-      "slug": "boris-milosevic"
-    },
-    "1310": {
-      "slug": "vlaho-orepic"
-    },
-    "1311": {
-      "slug": "domagoj-ivan-milosevic"
-    },
-    "1312": {
-      "slug": "ranko-ostojic"
-    },
-    "1313": {
-      "slug": "tomislav-panenic"
-    },
-    "1314": {
-      "slug": "darko-paric"
-    },
-    "1315": {
-      "slug": "davor-milicevic"
-    },
-    "1316": {
-      "slug": "orsat-miljenic"
-    },
-    "1317": {
-      "slug": "ivica-misic"
-    },
-    "1318": {
-      "slug": "ivana-nincevic-lesandric"
-    },
-    "1319": {
-      "slug": "mirando-mrsic"
-    },
-    "1320": {
-      "slug": "boris-miletic"
-    },
-    "1321": {
-      "slug": "domagoj-mikulic"
-    },
-    "1322": {
-      "slug": "anka-mrak-taritas"
-    },
-    "1323": {
-      "slug": "andrija-mikulic"
-    },
-    "1324": {
-      "slug": "ljubica-maksimcuk"
-    },
-    "1325": {
-      "slug": "gordan-maras"
-    },
-    "1326": {
-      "slug": "damir-mateljan"
-    },
-    "1327": {
-      "slug": "predrag-matic"
-    },
-    "1328": {
-      "slug": "ivan-lovrinovic"
-    },
-    "1329": {
-      "slug": "franjo-lucic"
-    },
-    "1330": {
-      "slug": "ljubica-lukacic"
-    },
-    "1331": {
-      "slug": "bozica-makar"
-    },
-    "1332": {
-      "slug": "ermina-lekaj-prljaskaj"
-    },
-    "1333": {
-      "slug": "zeljko-lenart"
-    },
-    "1334": {
-      "slug": "tomislav-liposcak"
-    },
-    "1335": {
-      "slug": "davor-loncar"
-    },
-    "1336": {
-      "slug": "marta-luc-polanc"
-    },
-    "1337": {
-      "slug": "bozo-ljubic"
-    },
-    "1338": {
-      "slug": "mladen-madjer"
-    },
-    "1339": {
-      "slug": "boris-lalovac"
-    },
-    "1340": {
-      "slug": "vlatko-kopic"
-    },
-    "1341": {
-      "slug": "josip-krizanic"
-    },
-    "1342": {
-      "slug": "marijan-kustic"
-    },
-    "1343": {
-      "slug": "zeljko-lackovic"
-    },
-    "1344": {
-      "slug": "ivan-kirin"
-    },
-    "1345": {
-      "slug": "mladen-karlic"
-    },
-    "1346": {
-      "slug": "branka-juricev-martincev"
-    },
-    "1347": {
-      "slug": "veljko-kajtazi"
-    },
-    "1348": {
-      "slug": "ana-komparic-devcic"
-    },
-    "1349": {
-      "slug": "stjepan-kovac"
-    },
-    "1350": {
-      "slug": "darinko-kosor"
-    },
-    "1351": {
-      "slug": "miro-kovac"
-    },
-    "1352": {
-      "slug": "tomislav-klaric"
-    },
-    "1353": {
-      "slug": "anton-kliman"
-    },
-    "1354": {
-      "slug": "josko-klisovic"
-    },
-    "1355": {
-      "slug": "zeljko-jovanovic"
-    },
-    "1356": {
-      "slug": "dragana-jeckov"
-    },
-    "1357": {
-      "slug": "marija-jelkovac"
-    },
-    "1358": {
-      "slug": "sinisa-hajdas-doncic"
-    },
-    "1359": {
-      "slug": "zeljka-josic"
-    },
-    "1360": {
-      "slug": "silvano-hrelja"
-    },
-    "1361": {
-      "slug": "romana-jerkovic"
-    },
-    "1362": {
-      "slug": "mario-habek"
-    },
-    "1363": {
-      "slug": "zlatko-hasanbegovic"
-    },
-    "1364": {
-      "slug": "gordan-jandrokovic"
-    },
-    "1365": {
-      "slug": "branko-hrg"
-    },
-    "1366": {
-      "slug": "robert-jankovics"
-    },
-    "1367": {
-      "slug": "darko-horvat"
-    },
-    "1368": {
-      "slug": "domagoj-hajdukovic"
-    },
-    "1369": {
-      "slug": "peda-grbin"
-    },
-    "1370": {
-      "slug": "nikola-grmoja"
-    },
-    "1371": {
-      "slug": "branko-grcic"
-    },
-    "1372": {
-      "slug": "damir-felak"
-    },
-    "1373": {
-      "slug": "miro-bulj"
-    },
-    "1374": {
-      "slug": "goran-beus-richembergh"
-    },
-    "1375": {
-      "slug": "vladimir-bilek"
-    },
-    "1376": {
-      "slug": "kreso-beljak"
-    },
-    "1377": {
-      "slug": "davor-bernardic"
-    },
-    "1378": {
-      "slug": "milijan-brkic"
-    },
-    "1379": {
-      "slug": "arsen-bauk"
-    },
-    "1380": {
-      "slug": "vesna-bedekovic"
-    },
-    "1381": {
-      "slug": "josip-boric"
-    },
-    "1382": {
-      "slug": "milorad-batinic"
-    },
-    "1383": {
-      "slug": "drazen-barisic"
-    },
-    "1384": {
-      "slug": "branimir-glavas"
-    },
-    "1385": {
-      "slug": "bojan-glavasevic"
-    },
-    "1386": {
-      "slug": "zeljko-glasnovic"
-    },
-    "1387": {
-      "slug": "sabina-glasovac"
-    },
-    "1388": {
-      "slug": "marija-alfirev"
-    },
-    "1389": {
-      "slug": "ante-babic"
-    },
-    "1390": {
-      "slug": "vedran-babic"
-    },
-    "1391": {
-      "slug": "ante-bacic"
-    },
-    "1392": {
-      "slug": "marijana-balic"
-    },
-    "1393": {
-      "slug": "branko-bacic"
-    },
-    "1394": {
-      "slug": "ambrusec-ljubica"
-    },
-    "1395": {
-      "slug": "anusic-ivan"
-    },
-    "1396": {
-      "slug": "boban-blazenko"
-    },
-    "1397": {
-      "slug": "bosnjakovic-drazen"
-    },
-    "1398": {
-      "slug": "buric-majda"
-    },
-    "1399": {
-      "slug": "frankovic-mato"
-    },
-    "1400": {
-      "slug": "horvat-mile"
-    },
-    "1401": {
-      "slug": "jelic-damir"
-    },
-    "1402": {
-      "slug": "kristic-maro"
-    },
-    "1403": {
-      "slug": "krstulovic-opara-andro"
-    },
-    "1404": {
-      "slug": "mesic-jasen"
-    },
-    "1405": {
-      "slug": "milinovic-darko"
-    },
-    "1406": {
-      "slug": "prgomet-drago"
-    },
-    "1407": {
-      "slug": "romic-davor"
-    },
-    "1409": {
-      "slug": "simic-miroslav"
-    },
-    "1412": {
-      "slug": "salapic-josip"
-    },
-    "1413": {
-      "slug": "vrdoljak-ivan"
-    },
-    "1414": {
-      "slug": "babic-nikolina"
-    },
-    "1416": {
-      "slug": "felbar-natko"
-    },
-    "1418": {
-      "slug": "kovacic-ivan"
-    },
-    "1419": {
-      "slug": "krsticevic-damir"
-    },
-    "1420": {
-      "slug": "kujundzic-milan"
-    },
-    "1421": {
-      "slug": "kulic-makar-sanda"
-    },
-    "1422": {
-      "slug": "maric-goran"
-    },
-    "1423": {
-      "slug": "milinkovic-drazen"
-    },
-    "1424": {
-      "slug": "penava-ivan"
-    },
-    "1425": {
-      "slug": "plenkovic-andrej"
-    },
-    "1427": {
-      "slug": "udovicic-monika"
-    },
-    "1428": {
-      "slug": "baricevic-martin"
-    },
-    "1448": {
-      "slug": "zarko-katic"
-    }
-  },
-  "base": "http://hr.parlameter.si",
   "partyLink": {
     "govori": "/govori/",
     "base": "/poslanska-skupina/",
     "pregled": "/pregled/",
     "glasovanja": "/glasovanja/"
-  },
-  "party": {
-    "199": {
-      "acronym": "sabor",
-      "realAcronym": "sabor",
-      "slug": "sabor"
-    },
-    "258": {
-      "acronym": "snaga",
-      "realAcronym": "SNAGA",
-      "slug": "snaga-stranka-narodnog-i-gradanskog-aktivizma"
-    },
-    "259": {
-      "acronym": "odbor-za-zakonodavstvo",
-      "realAcronym": "Odbor za zakonodavstvo",
-      "slug": "odbor-za-zakonodavstvo"
-    },
-    "260": {
-      "acronym": "odbor-za-pravosude",
-      "realAcronym": "Odbor za pravosu\u0111e",
-      "slug": "odbor-za-pravosude"
-    },
-    "261": {
-      "acronym": "ids",
-      "realAcronym": "IDS",
-      "slug": "istarski-demokratski-sabor"
-    },
-    "262": {
-      "acronym": "odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu",
-      "realAcronym": "Odbor za lokalnu i podru\u010dnu (regionalnu) samoupravu",
-      "slug": "odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu"
-    },
-    "263": {
-      "acronym": "most",
-      "realAcronym": "Most",
-      "slug": "most-nezavisnih-lista"
-    },
-    "264": {
-      "acronym": "odbor-za-prostorno-uredenje-i-graditeljstvo",
-      "realAcronym": "Odbor za prostorno ure\u0111enje i graditeljstvo",
-      "slug": "odbor-za-prostorno-uredenje-i-graditeljstvo"
-    },
-    "265": {
-      "acronym": "odbor-za-zastitu-okolisa-i-prirode",
-      "realAcronym": "Odbor za za\u0161titu okoli\u0161a i prirode",
-      "slug": "odbor-za-zastitu-okolisa-i-prirode"
-    },
-    "266": {
-      "acronym": "reformisti",
-      "realAcronym": "Reformisti",
-      "slug": "narodna-stranka-reformisti"
-    },
-    "267": {
-      "acronym": "odbor-za-regionalni-razvoj-i-fondove-europske-unije",
-      "realAcronym": "Odbor za regionalni razvoj i fondove Europske unije",
-      "slug": "odbor-za-regionalni-razvoj-i-fondove-europske-unije"
-    },
-    "268": {
-      "acronym": "sdp",
-      "realAcronym": "SDP",
-      "slug": "socijaldemokratska-partija-hrvatske"
-    },
-    "269": {
-      "acronym": "izvrsni-odbor-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji",
-      "realAcronym": "Izvr\u0161ni odbor Nacionalne grupe Hrvatskoga sabora pri Interparlamentarnoj uniji",
-      "slug": "izvrsni-odbor-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji"
-    },
-    "270": {
-      "acronym": "odbor-za-gospodarstvo",
-      "realAcronym": "Odbor za gospodarstvo",
-      "slug": "odbor-za-gospodarstvo"
-    },
-    "271": {
-      "acronym": "odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo",
-      "realAcronym": "Odbor za rad, mirovinski sustav i socijalno partnerstvo",
-      "slug": "odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo"
-    },
-    "272": {
-      "acronym": "odbor-za-pomorstvo-promet-i-infrastrukturu",
-      "realAcronym": "Odbor za pomorstvo, promet i infrastrukturu",
-      "slug": "odbor-za-pomorstvo-promet-i-infrastrukturu"
-    },
-    "273": {
-      "acronym": "odbor-za-meduparlamentarnu-suradnju",
-      "realAcronym": "Odbor za me\u0111uparlamentarnu suradnju",
-      "slug": "odbor-za-meduparlamentarnu-suradnju"
-    },
-    "274": {
-      "acronym": "hdz",
-      "realAcronym": "HDZ",
-      "slug": "hrvatska-demokratska-zajednica"
-    },
-    "275": {
-      "acronym": "nhr",
-      "realAcronym": "NHR",
-      "slug": "bruna-esih-zlatko-hasanbegovic-neovisni-za-hrvatsku"
-    },
-    "276": {
-      "acronym": "odbor-za-obranu",
-      "realAcronym": "Odbor za obranu",
-      "slug": "odbor-za-obranu"
-    },
-    "277": {
-      "acronym": "odbor-za-ratne-veterane",
-      "realAcronym": "Odbor za ratne veterane",
-      "slug": "odbor-za-ratne-veterane"
-    },
-    "278": {
-      "acronym": "nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije",
-      "realAcronym": "Nacionalno vije\u0107e za pra\u0107enje provedbe Strategije suzbijanja korupcije",
-      "slug": "nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije"
-    },
-    "279": {
-      "acronym": "nz",
-      "realAcronym": "NZ",
-      "slug": "nezavisni"
-    },
-    "280": {
-      "acronym": "drzavno-povjerenstvo-za-procjenu-stete-od-elementarnih-nepogoda",
-      "realAcronym": "Dr\u017eavno povjerenstvo za procjenu \u0161tete od elementarnih nepogoda",
-      "slug": "drzavno-povjerenstvo-za-procjenu-stete-od-elementarnih-nepogoda"
-    },
-    "281": {
-      "acronym": "odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
-      "realAcronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-      "slug": "odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost"
-    },
-    "282": {
-      "acronym": "hds",
-      "realAcronym": "HDS",
-      "slug": "hrvatska-demokrscanska-stranka"
-    },
-    "283": {
-      "acronym": "odbor-za-zdravstvo-i-socijalnu-politiku",
-      "realAcronym": "Odbor za zdravstvo i socijalnu politiku",
-      "slug": "odbor-za-zdravstvo-i-socijalnu-politiku"
-    },
-    "284": {
-      "acronym": "odbor-za-obrazovanje-znanost-i-kulturu",
-      "realAcronym": "Odbor za obrazovanje, znanost i kulturu",
-      "slug": "odbor-za-obrazovanje-znanost-i-kulturu"
-    },
-    "285": {
-      "acronym": "istrazno-povjerenstvo-za-utvrdivanje-odgovornosti-za-rezultate-upravljanja-i-raspolaganja-financijs",
-      "realAcronym": "Istra\u017eno povjerenstvo za utvr\u0111ivanje odgovornosti za rezultate upravljanja i raspolaganja financijs",
-      "slug": "istrazno-povjerenstvo-za-utvrdivanje-odgovornosti-za-rezultate-upravljanja-i-raspolaganja-financijskim-i-drugim-resursima-imunoloskog-zavoda"
-    },
-    "286": {
-      "acronym": "odbor-za-obitelj-mlade-i-sport",
-      "realAcronym": "Odbor za obitelj, mlade i sport",
-      "slug": "odbor-za-obitelj-mlade-i-sport"
-    },
-    "287": {
-      "acronym": "odbor-za-hrvate-izvan-republike-hrvatske",
-      "realAcronym": "Odbor za Hrvate izvan Republike Hrvatske",
-      "slug": "odbor-za-hrvate-izvan-republike-hrvatske"
-    },
-    "288": {
-      "acronym": "odbor-za-predstavke-i-prituzbe",
-      "realAcronym": "Odbor za predstavke i pritu\u017ebe",
-      "slug": "odbor-za-predstavke-i-prituzbe"
-    },
-    "289": {
-      "acronym": "hns",
-      "realAcronym": "HNS",
-      "slug": "hrvatska-narodna-stranka-liberalni-demokrati"
-    },
-    "290": {
-      "acronym": "istrazno-povjerenstvo-za-utvrdivanje-cinjenica-u-vezi-okolnosti-nastanka-poslovnog-koncerna-agrokor",
-      "realAcronym": "Istra\u017eno povjerenstvo za utvr\u0111ivanje \u010dinjenica u vezi okolnosti nastanka poslovnog koncerna Agrokor",
-      "slug": "istrazno-povjerenstvo-za-utvrdivanje-cinjenica-u-vezi-okolnosti-nastanka-poslovnog-koncerna-agrokor-njegove-danasnje-pozicije-na-trzistu-nastanka-njegovih-poslovnih-problema-a-posebno-dugovanja-prema-dobavljacima-te-ostalim-vjerovnicima-uloge-regulatora-na-trzistima-vezano-za-agrokorove-poslovne-aktivnosti-i-okolnosti-koje-su-dovele-do-aktivnosti-vlade-republike-hrvatske-prema-agrokoru-odnosno-prijedloga-mogucih-rjesenja-za-situaciju-u-kojoj-se-agrokor-nasao"
-    },
-    "291": {
-      "acronym": "zivi-zid",
-      "realAcronym": "Zivi zid",
-      "slug": "zivi-zid"
-    },
-    "292": {
-      "acronym": "odbor-za-vanjsku-politiku",
-      "realAcronym": "Odbor za vanjsku politiku",
-      "slug": "odbor-za-vanjsku-politiku"
-    },
-    "293": {
-      "acronym": "odbor-za-europske-poslove",
-      "realAcronym": "Odbor za europske poslove",
-      "slug": "odbor-za-europske-poslove"
-    },
-    "294": {
-      "acronym": "odbor-za-izbor-imenovanja-i-upravne-poslove",
-      "realAcronym": "Odbor za izbor, imenovanja i upravne poslove",
-      "slug": "odbor-za-izbor-imenovanja-i-upravne-poslove"
-    },
-    "295": {
-      "acronym": "hrast",
-      "realAcronym": "HRAST",
-      "slug": "hrast-pokret-za-uspjesnu-hrvatsku"
-    },
-    "296": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradn",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Organizacije za europsku sigurnost i suradn",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradnju"
-    },
-    "297": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Vije\u0107a Europe",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe"
-    },
-    "298": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-dimenziji-srednjoeuropske-inicijative",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj dimenziji Srednjoeuropske inicijative",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-dimenziji-srednjoeuropske-inicijative"
-    },
-    "299": {
-      "acronym": "odbor-za-ravnopravnost-spolova",
-      "realAcronym": "Odbor za ravnopravnost spolova",
-      "slug": "odbor-za-ravnopravnost-spolova"
-    },
-    "300": {
-      "acronym": "hss",
-      "realAcronym": "HSS",
-      "slug": "hrvatska-seljacka-stranka"
-    },
-    "301": {
-      "acronym": "odbor-za-poljoprivredu",
-      "realAcronym": "Odbor za poljoprivredu",
-      "slug": "odbor-za-poljoprivredu"
-    },
-    "302": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini NATO-a",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a"
-    },
-    "303": {
-      "acronym": "bm-365",
-      "realAcronym": "BM 365",
-      "slug": "bandic-milan-365-stranka-rada-i-solidarnosti"
-    },
-    "304": {
-      "acronym": "odbor-za-informiranje-informatizaciju-i-medije",
-      "realAcronym": "Odbor za informiranje, informatizaciju i medije",
-      "slug": "odbor-za-informiranje-informatizaciju-i-medije"
-    },
-    "305": {
-      "acronym": "savjet-za-robne-zalihe-iz-reda-zastupnika",
-      "realAcronym": "Savjet za robne zalihe iz reda zastupnika",
-      "slug": "savjet-za-robne-zalihe-iz-reda-zastupnika"
-    },
-    "306": {
-      "acronym": "odbor-za-financije-i-drzavni-proracun",
-      "realAcronym": "Odbor za financije i dr\u017eavni prora\u010dun",
-      "slug": "odbor-za-financije-i-drzavni-proracun"
-    },
-    "307": {
-      "acronym": "mandatno-imunitetno-povjerenstvo",
-      "realAcronym": "Mandatno-imunitetno povjerenstvo",
-      "slug": "mandatno-imunitetno-povjerenstvo"
-    },
-    "308": {
-      "acronym": "glas",
-      "realAcronym": "GLAS",
-      "slug": "gradansko-liberalni-savez"
-    },
-    "309": {
-      "acronym": "odbor-za-turizam",
-      "realAcronym": "Odbor za turizam",
-      "slug": "odbor-za-turizam"
-    },
-    "310": {
-      "acronym": "klub-zastupnika-istarskog-demokratskog-sabora-primorskogoranskog-saveza-i-liste-za-rijeku",
-      "realAcronym": "Klub zastupnika Istarskog demokratskog sabora, Primorskogoranskog saveza i Liste za Rijeku",
-      "slug": "klub-zastupnika-istarskog-demokratskog-sabora-primorskogoranskog-saveza-i-liste-za-rijeku"
-    },
-    "311": {
-      "acronym": "odbor-za-ustav-poslovnik-i-politicki-sustav",
-      "realAcronym": "Odbor za Ustav, Poslovnik i politi\u010dki sustav",
-      "slug": "odbor-za-ustav-poslovnik-i-politicki-sustav"
-    },
-    "312": {
-      "acronym": "odbor-za-ljudska-prava-i-prava-nacionalnih-manjina",
-      "realAcronym": "Odbor za ljudska prava i prava nacionalnih manjina",
-      "slug": "odbor-za-ljudska-prava-i-prava-nacionalnih-manjina"
-    },
-    "313": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Mediterana",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana"
-    },
-    "314": {
-      "acronym": "hrvatski-sabor",
-      "realAcronym": "Hrvatski sabor",
-      "slug": "hrvatski-sabor"
-    },
-    "315": {
-      "acronym": "sdss",
-      "realAcronym": "SDSS",
-      "slug": "samostalna-demokratska-srpska-stranka"
-    },
-    "316": {
-      "acronym": "nlm",
-      "realAcronym": "NLM",
-      "slug": "nezavisna-lista-mladih"
-    },
-    "317": {
-      "acronym": "nadzorni-odbor-financijske-agencije-iz-reda-zastupnika",
-      "realAcronym": "Nadzorni odbor Financijske agencije iz reda zastupnika",
-      "slug": "nadzorni-odbor-financijske-agencije-iz-reda-zastupnika"
-    },
-    "318": {
-      "acronym": "nadzorni-odbor-hrvatske-banke-za-obnovu-i-razvitak-iz-reda-zastupnika",
-      "realAcronym": "Nadzorni odbor Hrvatske banke za obnovu i razvitak iz reda zastupnika",
-      "slug": "nadzorni-odbor-hrvatske-banke-za-obnovu-i-razvitak-iz-reda-zastupnika"
-    },
-    "319": {
-      "acronym": "klub-zastupnika-zivog-zida-i-snaga-e",
-      "realAcronym": "Klub zastupnika \u017divog zida i SNAGA-e",
-      "slug": "klub-zastupnika-zivog-zida-i-snaga-e"
-    },
-    "320": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini SEECP-a",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a"
-    },
-    "321": {
-      "acronym": "povjerenstvo-za-fiskalnu-politiku",
-      "realAcronym": "Povjerenstvo za fiskalnu politiku",
-      "slug": "povjerenstvo-za-fiskalnu-politiku"
-    },
-    "322": {
-      "acronym": "klub-zastupnika-samostalne-demokratske-srpske-stranke",
-      "realAcronym": "Klub zastupnika Samostalne demokratske srpske stranke",
-      "slug": "klub-zastupnika-samostalne-demokratske-srpske-stranke"
-    },
-    "323": {
-      "acronym": "drzavno-sudbeno-vijece-iz-reda-zastupnika",
-      "realAcronym": "Dr\u017eavno sudbeno vije\u0107e iz reda zastupnika",
-      "slug": "drzavno-sudbeno-vijece-iz-reda-zastupnika"
-    },
-    "324": {
-      "acronym": "klub-zastupnika-gradanskoliberalnog-saveza-i-hrvatske-stranke-umirovljenika",
-      "realAcronym": "Klub zastupnika Gra\u0111anskoliberalnog saveza i Hrvatske stranke umirovljenika",
-      "slug": "klub-zastupnika-gradanskoliberalnog-saveza-i-hrvatske-stranke-umirovljenika"
-    },
-    "325": {
-      "acronym": "ph",
-      "realAcronym": "PH",
-      "slug": "promijenimo-hrvatsku"
-    },
-    "326": {
-      "acronym": "hsls",
-      "realAcronym": "HSLS",
-      "slug": "hrvatska-socijalno-liberalna-stranka"
-    },
-    "327": {
-      "acronym": "drzavnoodvjetnicko-vijece-iz-reda-zastupnika",
-      "realAcronym": "Dr\u017eavnoodvjetni\u010dko vije\u0107e iz reda zastupnika",
-      "slug": "drzavnoodvjetnicko-vijece-iz-reda-zastupnika"
-    },
-    "328": {
-      "acronym": "savjet-javne-ustanove-spomen-podrucja-jasenovac-iz-reda-zastupnika",
-      "realAcronym": "Savjet Javne ustanove Spomen-podru\u010dja Jasenovac iz reda zastupnika",
-      "slug": "savjet-javne-ustanove-spomen-podrucja-jasenovac-iz-reda-zastupnika"
-    },
-    "329": {
-      "acronym": "hsu",
-      "realAcronym": "HSU",
-      "slug": "hrvatska-stranka-umirovljenika"
-    },
-    "330": {
-      "acronym": "klub-zastupnika-neovisni-za-hrvatsku",
-      "realAcronym": "Klub zastupnika Neovisni za Hrvatsku",
-      "slug": "klub-zastupnika-neovisni-za-hrvatsku"
-    },
-    "331": {
-      "acronym": "hrvatski-sabor",
-      "realAcronym": "Hrvatski sabor",
-      "slug": "hrvatski-sabor"
-    },
-    "332": {
-      "acronym": "ured-predsjednika",
-      "realAcronym": "Ured predsjednika",
-      "slug": "ured-predsjednika"
-    },
-    "333": {
-      "acronym": "kluba-zastupnika-hrvatske-demokrscanske-stranke-hrvatske-socijalnoliberalne-stranke-i-hrvatskog-de",
-      "realAcronym": "Kluba zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalnoliberalne stranke i Hrvatskog de",
-      "slug": "kluba-zastupnika-hrvatske-demokrscanske-stranke-hrvatske-socijalnoliberalne-stranke-i-hrvatskog-demokratskog-saveza-slavonije-i-baranje"
-    },
-    "334": {
-      "acronym": "klub-zastupnika-stranke-rada-i-solidarnosti-reformista-i-nezavisnih-zastupnika",
-      "realAcronym": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika",
-      "slug": "klub-zastupnika-stranke-rada-i-solidarnosti-reformista-i-nezavisnih-zastupnika"
-    },
-    "335": {
-      "acronym": "klub-zastupnika-mosta-nezavisnih-lista",
-      "realAcronym": "Klub zastupnika Mosta nezavisnih lista",
-      "slug": "klub-zastupnika-mosta-nezavisnih-lista"
-    },
-    "336": {
-      "acronym": "klub-zastupnika-nacionalnih-manjina",
-      "realAcronym": "Klub zastupnika nacionalnih manjina",
-      "slug": "klub-zastupnika-nacionalnih-manjina"
-    },
-    "337": {
-      "acronym": "klub-zastupnika-hrvatske-seljacke-stranke",
-      "realAcronym": "Klub zastupnika Hrvatske selja\u010dke stranke",
-      "slug": "klub-zastupnika-hrvatske-seljacke-stranke"
-    },
-    "338": {
-      "acronym": "otocno-vijece-iz-reda-zastupnika",
-      "realAcronym": "Oto\u010dno vije\u0107e iz reda zastupnika",
-      "slug": "otocno-vijece-iz-reda-zastupnika"
-    },
-    "339": {
-      "acronym": "klub-zastupnika-socijaldemokratske-partije-hrvatske",
-      "realAcronym": "Klub zastupnika Socijaldemokratske partije Hrvatske",
-      "slug": "klub-zastupnika-socijaldemokratske-partije-hrvatske"
-    },
-    "340": {
-      "acronym": "klub-zastupnika-hrvatske-narodne-strankeliberalnih-demokrata",
-      "realAcronym": "Klub zastupnika Hrvatske narodne strankeliberalnih demokrata",
-      "slug": "klub-zastupnika-hrvatske-narodne-strankeliberalnih-demokrata"
-    },
-    "341": {
-      "acronym": "hdssb",
-      "realAcronym": "HDSSB",
-      "slug": "hrvatski-demokratski-savez-slavonije-i-baranje"
-    },
-    "342": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Unije za Mediteran",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran"
-    },
-    "343": {
-      "acronym": "klub-zastupnika-hrvatske-demokratske-zajednice",
-      "realAcronym": "Klub zastupnika Hrvatske demokratske zajednice",
-      "slug": "klub-zastupnika-hrvatske-demokratske-zajednice"
-    },
-    "344": {
-      "acronym": "ostali",
-      "realAcronym": "ostali",
-      "slug": "ostali"
-    },
-    "345": {
-      "acronym": "opozicija",
-      "realAcronym": "opozicija",
-      "slug": "opozicija"
-    },
-    "346": {
-      "acronym": "koalicija",
-      "realAcronym": "koalicija",
-      "slug": "koalicija"
-    },
-    "347": {
-      "acronym": "vlada",
-      "realAcronym": "Vlada",
-      "slug": "vlada"
-    },
-    "385": {
-      "acronym": "ministarstvo-mora-prometa-i-infrastrukture",
-      "realAcronym": "Ministarstvo mora, prometa i infrastrukture",
-      "slug": "ministarstvo-mora-prometa-i-infrastrukture"
-    },
-    "387": {
-      "acronym": "ministarstvo-drzavne-imovine",
-      "realAcronym": "Ministarstvo dr\u017eavne imovine",
-      "slug": "ministarstvo-drzavne-imovine"
-    },
-    "388": {
-      "acronym": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku",
-      "realAcronym": "Ministarstvo za demografiju, obitelj, mlade i socijalnu politiku",
-      "slug": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku"
-    },
-    "389": {
-      "acronym": "ministarstvo-kulture",
-      "realAcronym": "Ministarstvo kulture",
-      "slug": "ministarstvo-kulture"
-    },
-    "390": {
-      "acronym": "ministarstvo-unutarnjih-poslova",
-      "realAcronym": "Ministarstvo unutarnjih poslova",
-      "slug": "ministarstvo-unutarnjih-poslova"
-    },
-    "391": {
-      "acronym": "ministarstvo-poljoprivrede",
-      "realAcronym": "Ministarstvo poljoprivrede",
-      "slug": "ministarstvo-poljoprivrede"
-    },
-    "392": {
-      "acronym": "ministarstvo-zdravstva",
-      "realAcronym": "Ministarstvo zdravstva",
-      "slug": "ministarstvo-zdravstva"
-    },
-    "394": {
-      "acronym": "ministarstvo-pravosuda",
-      "realAcronym": "Ministarstvo pravosu\u0111a",
-      "slug": "ministarstvo-pravosuda"
-    },
-    "395": {
-      "acronym": "ministarstvo-zastite-okolisa-i-energetike",
-      "realAcronym": "Ministarstvo za\u0161tite okoli\u0161a i energetike",
-      "slug": "ministarstvo-zastite-okolisa-i-energetike"
-    },
-    "396": {
-      "acronym": "ministarstvo-graditeljstva-i-prostornoga-uredenja",
-      "realAcronym": "Ministarstvo graditeljstva i prostornoga ure\u0111enja",
-      "slug": "ministarstvo-graditeljstva-i-prostornoga-uredenja"
-    },
-    "397": {
-      "acronym": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije",
-      "realAcronym": "Ministarstvo regionalnoga razvoja i fondova Europske unije",
-      "slug": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije"
-    },
-    "398": {
-      "acronym": "ministarstvo-financija",
-      "realAcronym": "Ministarstvo financija",
-      "slug": "ministarstvo-financija"
-    },
-    "401": {
-      "acronym": "ministarstvo-znanosti-i-obrazovanja",
-      "realAcronym": "Ministarstvo znanosti i obrazovanja",
-      "slug": "ministarstvo-znanosti-i-obrazovanja"
-    },
-    "402": {
-      "acronym": "ministarstvo-turizma",
-      "realAcronym": "Ministarstvo turizma",
-      "slug": "ministarstvo-turizma"
-    },
-    "405": {
-      "acronym": "ministarstvo-uprave",
-      "realAcronym": "Ministarstvo uprave",
-      "slug": "ministarstvo-uprave"
-    },
-    "406": {
-      "acronym": "ministarstvo-obrane",
-      "realAcronym": "Ministarstvo obrane",
-      "slug": "ministarstvo-obrane"
-    },
-    "407": {
-      "acronym": "ministarstvo-gospodarstva-poduzetnistva-i-obrta",
-      "realAcronym": "Ministarstvo gospodarstva, poduzetni\u0161tva i obrta",
-      "slug": "ministarstvo-gospodarstva-poduzetnistva-i-obrta"
-    },
-    "408": {
-      "acronym": "ministarstvo-rada-i-mirovinskog-sustava",
-      "realAcronym": "Ministarstvo rada i mirovinskog sustava",
-      "slug": "ministarstvo-rada-i-mirovinskog-sustava"
-    },
-    "409": {
-      "acronym": "ministarstvo-hrvatskih-branitelja",
-      "realAcronym": "Ministarstvo hrvatskih branitelja",
-      "slug": "ministarstvo-hrvatskih-branitelja"
-    },
-    "410": {
-      "acronym": "ministarstvo-branitelja",
-      "realAcronym": "Ministarstvo branitelja",
-      "slug": "ministarstvo-branitelja"
-    },
-    "411": {
-      "acronym": "ministarstvo-znanosti-obrazovanja-i-sporta",
-      "realAcronym": "Ministarstvo znanosti, obrazovanja i \u0161porta",
-      "slug": "ministarstvo-znanosti-obrazovanja-i-sporta"
-    },
-    "412": {
-      "acronym": "ministarstvo-gospodarstva-rada-i-poduzetnistva",
-      "realAcronym": "Ministarstvo gospodarstva, rada i poduzetni\u0161tva",
-      "slug": "ministarstvo-gospodarstva-rada-i-poduzetnistva"
-    }
   },
   "personLink": {
     "govori": "/govori/",
@@ -1124,19 +11,706 @@
     "pregled": "/pregled/",
     "glasovanja": "/glasovanja/"
   },
-  "legislationLink": "/zakonodaja/",
   "sessionLink": {
     "prisotnost": "/seja/prisotnost/",
     "glasovanje": "/seja/glasovanje/",
     "transkript": "/seja/transkript/",
     "glasovanja": "/seja/glasovanja/"
   },
-  "urls": {
-    "analize": "http://analize.hr.parlameter.si/v1",
-    "data": "http://data.hr.parlameter.si/v1",
-    "isci": "http://isci.hr.parlameter.si",
-    "glej": "http://localhost:3000",
-    "base": "http://localhost:3066"
+  "person": {
+    "1": { "slug": "diane-abbott" },
+    "2": { "slug": "debbie-abrahams" },
+    "3": { "slug": "nigel-adams" },
+    "4": { "slug": "bim-afolami" },
+    "5": { "slug": "adam-afriyie" },
+    "6": { "slug": "peter-aldous" },
+    "7": { "slug": "heidi-alexander" },
+    "8": { "slug": "rushanara-ali" },
+    "9": { "slug": "lucy-allan" },
+    "10": { "slug": "heidi-allen" },
+    "11": { "slug": "rosena-allin-khan" },
+    "12": { "slug": "mike-amesbury" },
+    "13": { "slug": "david-amess" },
+    "14": { "slug": "stuart-andrew" },
+    "15": { "slug": "tonia-antoniazzi" },
+    "16": { "slug": "edward-argar" },
+    "17": { "slug": "jon-ashworth" },
+    "18": { "slug": "victoria-atkins" },
+    "19": { "slug": "ian-austin" },
+    "20": { "slug": "richard-bacon" },
+    "21": { "slug": "kemi-badenoch" },
+    "22": { "slug": "adrian-bailey" },
+    "23": { "slug": "steven-baker" },
+    "24": { "slug": "harriett-baldwin" },
+    "25": { "slug": "stephen-barclay" },
+    "26": { "slug": "hannah-bardell" },
+    "27": { "slug": "john-baron" },
+    "28": { "slug": "kevin-barron" },
+    "29": { "slug": "guto-bebb" },
+    "30": { "slug": "margaret-beckett" },
+    "31": { "slug": "henry-bellingham" },
+    "32": { "slug": "hilary-benn" },
+    "33": { "slug": "richard-benyon" },
+    "34": { "slug": "john-bercow" },
+    "35": { "slug": "paul-beresford" },
+    "36": { "slug": "luciana-berger" },
+    "37": { "slug": "jake-berry" },
+    "38": { "slug": "clive-betts" },
+    "39": { "slug": "mhairi-black" },
+    "40": { "slug": "ian-blackford" },
+    "41": { "slug": "bob-blackman" },
+    "42": { "slug": "kirsty-blackman" },
+    "43": { "slug": "roberta-blackman-woods" },
+    "44": { "slug": "paul-blomfield" },
+    "45": { "slug": "crispin-blunt" },
+    "46": { "slug": "nicholas-boles" },
+    "47": { "slug": "peter-bone" },
+    "48": { "slug": "peter-bottomley" },
+    "49": { "slug": "andrew-bowie" },
+    "50": { "slug": "tracy-brabin" },
+    "51": { "slug": "ben-bradley" },
+    "52": { "slug": "karen-bradley" },
+    "53": { "slug": "ben-bradshaw" },
+    "54": { "slug": "graham-brady" },
+    "55": { "slug": "mickey-brady" },
+    "56": { "slug": "tom-brake" },
+    "57": { "slug": "kevin-brennan" },
+    "58": { "slug": "jack-brereton" },
+    "59": { "slug": "andrew-bridgen" },
+    "60": { "slug": "steve-brine" },
+    "61": { "slug": "deidre-brock" },
+    "62": { "slug": "james-brokenshire" },
+    "63": { "slug": "alan-brown" },
+    "64": { "slug": "lyn-brown" },
+    "65": { "slug": "nick-brown" },
+    "66": { "slug": "fiona-bruce" },
+    "67": { "slug": "chris-bryant" },
+    "68": { "slug": "karen-buck" },
+    "69": { "slug": "robert-buckland" },
+    "70": { "slug": "richard-burden" },
+    "71": { "slug": "alex-burghart" },
+    "72": { "slug": "richard-burgon" },
+    "73": { "slug": "conor-burns" },
+    "74": { "slug": "alistair-burt" },
+    "75": { "slug": "dawn-butler" },
+    "76": { "slug": "liam-byrne" },
+    "77": { "slug": "vincent-cable" },
+    "78": { "slug": "ruth-cadbury" },
+    "79": { "slug": "alun-cairns" },
+    "80": { "slug": "lisa-cameron" },
+    "81": { "slug": "alan-campbell" },
+    "82": { "slug": "gregory-campbell" },
+    "83": { "slug": "ronnie-campbell" },
+    "84": { "slug": "dan-carden" },
+    "85": { "slug": "alistair-carmichael" },
+    "86": { "slug": "james-cartlidge" },
+    "87": { "slug": "bill-cash" },
+    "88": { "slug": "maria-caulfield" },
+    "89": { "slug": "alex-chalk" },
+    "90": { "slug": "sarah-champion" },
+    "91": { "slug": "douglas-chapman" },
+    "92": { "slug": "jenny-chapman" },
+    "93": { "slug": "bambos-charalambous" },
+    "94": { "slug": "joanna-cherry" },
+    "95": { "slug": "rehman-chishti" },
+    "96": { "slug": "christopher-chope" },
+    "97": { "slug": "jo-churchill" },
+    "98": { "slug": "colin-clark" },
+    "99": { "slug": "greg-clark" },
+    "100": { "slug": "kenneth-clarke" },
+    "101": { "slug": "simon-clarke" },
+    "102": { "slug": "james-cleverly" },
+    "103": { "slug": "geoffrey-clifton-brown" },
+    "104": { "slug": "ann-clwyd" },
+    "105": { "slug": "vernon-coaker" },
+    "106": { "slug": "ann-coffey" },
+    "107": { "slug": "therese-coffey" },
+    "108": { "slug": "damian-collins" },
+    "109": { "slug": "julie-cooper" },
+    "110": { "slug": "rosie-cooper" },
+    "111": { "slug": "yvette-cooper" },
+    "112": { "slug": "jeremy-corbyn" },
+    "113": { "slug": "alberto-costa" },
+    "114": { "slug": "robert-courts" },
+    "115": { "slug": "ronnie-cowan" },
+    "116": { "slug": "geoffrey-cox" },
+    "117": { "slug": "neil-coyle" },
+    "118": { "slug": "stephen-crabb" },
+    "119": { "slug": "david-crausby" },
+    "120": { "slug": "angela-crawley" },
+    "121": { "slug": "mary-creagh" },
+    "122": { "slug": "stella-creasy" },
+    "123": { "slug": "tracey-crouch" },
+    "124": { "slug": "jon-cruddas" },
+    "125": { "slug": "john-cryer" },
+    "126": { "slug": "judith-cummins" },
+    "127": { "slug": "alex-cunningham" },
+    "128": { "slug": "jim-cunningham" },
+    "129": { "slug": "nicholas-dakin" },
+    "130": { "slug": "edward-davey" },
+    "131": { "slug": "wayne-david" },
+    "132": { "slug": "chris-davies" },
+    "133": { "slug": "david-davies" },
+    "134": { "slug": "geraint-davies" },
+    "135": { "slug": "glyn-davies" },
+    "136": { "slug": "mims-davies" },
+    "137": { "slug": "philip-davies" },
+    "138": { "slug": "david-davis" },
+    "139": { "slug": "martyn-day" },
+    "140": { "slug": "marsha-de-cordova" },
+    "141": { "slug": "gloria-de-piero" },
+    "142": { "slug": "thangam-debbonaire" },
+    "143": { "slug": "emma-dent-coad" },
+    "144": { "slug": "tanmanjeet-singh-dhesi" },
+    "145": { "slug": "caroline-dinenage" },
+    "146": { "slug": "jonathan-djanogly" },
+    "147": { "slug": "leo-docherty" },
+    "148": { "slug": "martin-docherty" },
+    "149": { "slug": "anneliese-dodds" },
+    "150": { "slug": "nigel-dodds" },
+    "151": { "slug": "jeffrey-m-donaldson" },
+    "152": { "slug": "michelle-donelan" },
+    "153": { "slug": "nadine-dorries" },
+    "154": { "slug": "steve-double" },
+    "155": { "slug": "stephen-doughty" },
+    "156": { "slug": "peter-dowd" },
+    "157": { "slug": "oliver-dowden" },
+    "158": { "slug": "jackie-doyle-price" },
+    "159": { "slug": "richard-drax" },
+    "160": { "slug": "david-drew" },
+    "161": { "slug": "jack-dromey" },
+    "162": { "slug": "james-duddridge" },
+    "163": { "slug": "rosie-duffield" },
+    "164": { "slug": "david-duguid" },
+    "165": { "slug": "alan-duncan" },
+    "166": { "slug": "iain-duncan-smith" },
+    "167": { "slug": "philip-dunne" },
+    "168": { "slug": "angela-eagle" },
+    "169": { "slug": "maria-eagle" },
+    "170": { "slug": "jonathan-edwards" },
+    "171": { "slug": "clive-efford" },
+    "172": { "slug": "julie-elliott" },
+    "173": { "slug": "michael-ellis" },
+    "174": { "slug": "louise-ellman" },
+    "175": { "slug": "tobias-ellwood" },
+    "176": { "slug": "chris-elmore" },
+    "177": { "slug": "charlie-elphicke" },
+    "178": { "slug": "bill-esterson" },
+    "179": { "slug": "george-eustice" },
+    "180": { "slug": "chris-evans" },
+    "181": { "slug": "nigel-evans" },
+    "182": { "slug": "david-evennett" },
+    "183": { "slug": "michael-fabricant" },
+    "184": { "slug": "michael-fallon" },
+    "185": { "slug": "paul-farrelly" },
+    "186": { "slug": "tim-farron" },
+    "187": { "slug": "marion-fellows" },
+    "188": { "slug": "suella-fernandes" },
+    "189": { "slug": "frank-field" },
+    "190": { "slug": "mark-field" },
+    "191": { "slug": "jim-fitzpatrick" },
+    "192": { "slug": "colleen-fletcher" },
+    "193": { "slug": "caroline-flint" },
+    "194": { "slug": "paul-flynn" },
+    "195": { "slug": "vicky-ford" },
+    "196": { "slug": "kevin-foster" },
+    "197": { "slug": "yvonne-fovargue" },
+    "198": { "slug": "liam-fox" },
+    "199": { "slug": "vicky-foxcroft" },
+    "200": { "slug": "mark-francois" },
+    "201": { "slug": "lucy-frazer" },
+    "202": { "slug": "george-freeman" },
+    "203": { "slug": "mike-freer" },
+    "204": { "slug": "james-frith" },
+    "205": { "slug": "gill-furniss" },
+    "206": { "slug": "marcus-fysh" },
+    "207": { "slug": "hugh-gaffney" },
+    "208": { "slug": "roger-gale" },
+    "209": { "slug": "mike-gapes" },
+    "210": { "slug": "barry-gardiner" },
+    "211": { "slug": "mark-garnier" },
+    "212": { "slug": "david-gauke" },
+    "213": { "slug": "ruth-george" },
+    "214": { "slug": "stephen-gethins" },
+    "215": { "slug": "nusrat-ghani" },
+    "216": { "slug": "nick-gibb" },
+    "217": { "slug": "patricia-gibson" },
+    "218": { "slug": "michelle-gildernew" },
+    "219": { "slug": "preet-kaur-gill" },
+    "220": { "slug": "cheryl-gillan" },
+    "221": { "slug": "paul-girvan" },
+    "222": { "slug": "john-glen" },
+    "223": { "slug": "mary-glindon" },
+    "224": { "slug": "roger-godsiff" },
+    "225": { "slug": "zac-goldsmith" },
+    "226": { "slug": "helen-goodman" },
+    "227": { "slug": "robert-goodwill" },
+    "228": { "slug": "michael-gove" },
+    "229": { "slug": "patrick-grady" },
+    "230": { "slug": "luke-graham" },
+    "231": { "slug": "richard-graham" },
+    "232": { "slug": "bill-grant" },
+    "233": { "slug": "helen-grant" },
+    "234": { "slug": "peter-grant" },
+    "235": { "slug": "james-gray" },
+    "236": { "slug": "neil-gray" },
+    "237": { "slug": "chris-grayling" },
+    "238": { "slug": "chris-green" },
+    "239": { "slug": "damian-green" },
+    "240": { "slug": "kate-green" },
+    "241": { "slug": "justine-greening" },
+    "242": { "slug": "lilian-greenwood" },
+    "243": { "slug": "margaret-greenwood" },
+    "244": { "slug": "dominic-grieve" },
+    "245": { "slug": "nia-griffith" },
+    "246": { "slug": "andrew-griffiths" },
+    "247": { "slug": "john-grogan" },
+    "248": { "slug": "andrew-gwynne" },
+    "249": { "slug": "sam-gyimah" },
+    "250": { "slug": "louise-haigh" },
+    "251": { "slug": "kirstene-hair" },
+    "252": { "slug": "robert-halfon" },
+    "253": { "slug": "luke-hall" },
+    "254": { "slug": "fabian-hamilton" },
+    "255": { "slug": "philip-hammond" },
+    "256": { "slug": "stephen-hammond" },
+    "257": { "slug": "matthew-hancock" },
+    "258": { "slug": "greg-hands" },
+    "259": { "slug": "david-hanson" },
+    "260": { "slug": "emma-hardy" },
+    "261": { "slug": "harriet-harman" },
+    "262": { "slug": "mark-harper" },
+    "263": { "slug": "richard-harrington" },
+    "264": { "slug": "carolyn-harris" },
+    "265": { "slug": "rebecca-harris" },
+    "266": { "slug": "trudy-harrison" },
+    "267": { "slug": "simon-hart" },
+    "268": { "slug": "helen-hayes" },
+    "269": { "slug": "john-hayes" },
+    "270": { "slug": "sue-hayman" },
+    "271": { "slug": "christopher-hazzard" },
+    "272": { "slug": "oliver-heald" },
+    "273": { "slug": "john-healey" },
+    "274": { "slug": "james-heappey" },
+    "275": { "slug": "chris-heaton-harris" },
+    "276": { "slug": "peter-heaton-jones" },
+    "277": { "slug": "gordon-henderson" },
+    "278": { "slug": "mark-hendrick" },
+    "279": { "slug": "drew-hendry" },
+    "280": { "slug": "stephen-hepburn" },
+    "281": { "slug": "nick-herbert" },
+    "282": { "slug": "sylvia-hermon" },
+    "283": { "slug": "mike-hill" },
+    "284": { "slug": "meg-hillier" },
+    "285": { "slug": "damian-hinds" },
+    "286": { "slug": "simon-hoare" },
+    "287": { "slug": "wera-hobhouse" },
+    "288": { "slug": "margaret-hodge" },
+    "289": { "slug": "sharon-hodgson" },
+    "290": { "slug": "kate-hoey" },
+    "291": { "slug": "kate-hollern" },
+    "292": { "slug": "george-hollingbery" },
+    "293": { "slug": "kevin-hollinrake" },
+    "294": { "slug": "philip-hollobone" },
+    "295": { "slug": "adam-holloway" },
+    "296": { "slug": "kelvin-hopkins" },
+    "297": { "slug": "stewart-hosie" },
+    "298": { "slug": "george-howarth" },
+    "299": { "slug": "john-howell" },
+    "300": { "slug": "lindsay-hoyle" },
+    "301": { "slug": "nigel-huddleston" },
+    "302": { "slug": "eddie-hughes" },
+    "303": { "slug": "jeremy-hunt" },
+    "304": { "slug": "rupa-huq" },
+    "305": { "slug": "nick-hurd" },
+    "306": { "slug": "imran-hussain" },
+    "307": { "slug": "alister-jack" },
+    "308": { "slug": "margot-james" },
+    "309": { "slug": "christine-jardine" },
+    "310": { "slug": "dan-jarvis" },
+    "311": { "slug": "sajid-javid" },
+    "312": { "slug": "ranil-jayawardena" },
+    "313": { "slug": "bernard-jenkin" },
+    "314": { "slug": "andrea-jenkyns" },
+    "315": { "slug": "robert-jenrick" },
+    "316": { "slug": "boris-johnson" },
+    "317": { "slug": "dr-caroline-johnson" },
+    "318": { "slug": "diana-r-johnson" },
+    "319": { "slug": "gareth-johnson" },
+    "320": { "slug": "jo-johnson" },
+    "321": { "slug": "andrew-jones" },
+    "322": { "slug": "darren-jones" },
+    "323": { "slug": "david-jones" },
+    "324": { "slug": "gerald-jones" },
+    "325": { "slug": "graham-jones" },
+    "326": { "slug": "helen-jones" },
+    "327": { "slug": "kevan-jones" },
+    "328": { "slug": "marcus-jones" },
+    "329": { "slug": "sarah-jones" },
+    "330": { "slug": "susan-elan-jones" },
+    "331": { "slug": "mike-kane" },
+    "332": { "slug": "daniel-kawczynski" },
+    "333": { "slug": "gillian-keegan" },
+    "334": { "slug": "barbara-keeley" },
+    "335": { "slug": "liz-kendall" },
+    "336": { "slug": "seema-kennedy" },
+    "337": { "slug": "stephen-kerr" },
+    "338": { "slug": "afzal-khan" },
+    "339": { "slug": "gerard-killen" },
+    "340": { "slug": "stephen-kinnock" },
+    "341": { "slug": "greg-knight" },
+    "342": { "slug": "julian-knight" },
+    "343": { "slug": "kwasi-kwarteng" },
+    "344": { "slug": "peter-kyle" },
+    "345": { "slug": "eleanor-laing" },
+    "346": { "slug": "lesley-laird" },
+    "347": { "slug": "ben-lake" },
+    "348": { "slug": "norman-lamb" },
+    "349": { "slug": "david-lammy" },
+    "350": { "slug": "john-lamont" },
+    "351": { "slug": "mark-lancaster" },
+    "352": { "slug": "pauline-latham" },
+    "353": { "slug": "ian-lavery" },
+    "354": { "slug": "chris-law" },
+    "355": { "slug": "andrea-leadsom" },
+    "356": { "slug": "karen-lee" },
+    "357": { "slug": "phillip-lee" },
+    "358": { "slug": "jeremy-lefroy" },
+    "359": { "slug": "edward-leigh" },
+    "360": { "slug": "chris-leslie" },
+    "361": { "slug": "oliver-letwin" },
+    "362": { "slug": "emma-lewell-buck" },
+    "363": { "slug": "andrew-lewer" },
+    "364": { "slug": "brandon-lewis" },
+    "365": { "slug": "clive-lewis" },
+    "366": { "slug": "ivan-lewis" },
+    "367": { "slug": "julian-lewis" },
+    "368": { "slug": "ian-liddell-grainger" },
+    "369": { "slug": "david-lidington" },
+    "370": { "slug": "david-linden" },
+    "371": { "slug": "emma-little-pengelly" },
+    "372": { "slug": "stephen-lloyd" },
+    "373": { "slug": "tony-lloyd" },
+    "374": { "slug": "rebecca-long-bailey" },
+    "375": { "slug": "julia-lopez" },
+    "376": { "slug": "jack-lopresti" },
+    "377": { "slug": "jonathan-lord" },
+    "378": { "slug": "tim-loughton" },
+    "379": { "slug": "caroline-lucas" },
+    "380": { "slug": "ian-lucas" },
+    "381": { "slug": "holly-lynch" },
+    "382": { "slug": "craig-mackinlay" },
+    "383": { "slug": "rachel-maclean" },
+    "384": { "slug": "angus-macneil" },
+    "385": { "slug": "justin-madders" },
+    "386": { "slug": "khalid-mahmood" },
+    "387": { "slug": "shabana-mahmood" },
+    "388": { "slug": "anne-main" },
+    "389": { "slug": "alan-mak" },
+    "390": { "slug": "seema-malhotra" },
+    "391": { "slug": "kit-malthouse" },
+    "392": { "slug": "john-mann" },
+    "393": { "slug": "scott-mann" },
+    "394": { "slug": "gordon-marsden" },
+    "395": { "slug": "sandy-martin" },
+    "396": { "slug": "rachael-maskell" },
+    "397": { "slug": "paul-maskey" },
+    "398": { "slug": "paul-masterton" },
+    "399": { "slug": "chris-matheson" },
+    "400": { "slug": "theresa-may" },
+    "401": { "slug": "paul-maynard" },
+    "402": { "slug": "steve-mccabe" },
+    "403": { "slug": "elisha-mccallion" },
+    "404": { "slug": "kerry-mccarthy" },
+    "405": { "slug": "siobhain-mcdonagh" },
+    "406": { "slug": "andy-mcdonald" },
+    "407": { "slug": "stewart-mcdonald" },
+    "408": { "slug": "stuart-mcdonald" },
+    "409": { "slug": "john-martin-mcdonnell" },
+    "410": { "slug": "pat-mcfadden" },
+    "411": { "slug": "conor-mcginn" },
+    "412": { "slug": "alison-mcgovern" },
+    "413": { "slug": "liz-mcinnes" },
+    "414": { "slug": "catherine-mckinnell" },
+    "415": { "slug": "patrick-mcloughlin" },
+    "416": { "slug": "jim-mcmahon" },
+    "417": { "slug": "anna-mcmorrin" },
+    "418": { "slug": "john-mcnally" },
+    "419": { "slug": "stephen-mcpartland" },
+    "420": { "slug": "esther-mcvey" },
+    "421": { "slug": "ian-mearns" },
+    "422": { "slug": "mark-menzies" },
+    "423": { "slug": "johnny-mercer" },
+    "424": { "slug": "huw-merriman" },
+    "425": { "slug": "stephen-metcalfe" },
+    "426": { "slug": "ed-miliband" },
+    "427": { "slug": "maria-miller" },
+    "428": { "slug": "amanda-milling" },
+    "429": { "slug": "nigel-mills" },
+    "430": { "slug": "anne-milton" },
+    "431": { "slug": "andrew-mitchell" },
+    "432": { "slug": "francie-molloy" },
+    "433": { "slug": "carol-monaghan" },
+    "434": { "slug": "madeleine-moon" },
+    "435": { "slug": "damien-moore" },
+    "436": { "slug": "layla-moran" },
+    "437": { "slug": "penny-mordaunt" },
+    "438": { "slug": "jessica-morden" },
+    "439": { "slug": "nicky-morgan" },
+    "440": { "slug": "stephen-morgan" },
+    "441": { "slug": "anne-marie-morris" },
+    "442": { "slug": "david-morris" },
+    "443": { "slug": "grahame-morris" },
+    "444": { "slug": "james-morris" },
+    "445": { "slug": "wendy-morton" },
+    "446": { "slug": "david-mundell" },
+    "447": { "slug": "ian-murray" },
+    "448": { "slug": "sheryll-murray" },
+    "449": { "slug": "andrew-murrison" },
+    "450": { "slug": "lisa-nandy" },
+    "451": { "slug": "bob-neill" },
+    "452": { "slug": "gavin-newlands" },
+    "453": { "slug": "sarah-newton" },
+    "454": { "slug": "caroline-nokes" },
+    "455": { "slug": "jesse-norman" },
+    "456": { "slug": "alex-norris" },
+    "457": { "slug": "neil-o-brien" },
+    "458": { "slug": "brendan-o-hara" },
+    "459": { "slug": "jared-o-mara" },
+    "460": { "slug": "matthew-offord" },
+    "461": { "slug": "fiona-onasanya" },
+    "462": { "slug": "melanie-onn" },
+    "463": { "slug": "chi-onwurah" },
+    "464": { "slug": "guy-opperman" },
+    "465": { "slug": "kate-osamor" },
+    "466": { "slug": "albert-owen" },
+    "467": { "slug": "ian-paisley-jnr" },
+    "468": { "slug": "neil-parish" },
+    "469": { "slug": "priti-patel" },
+    "470": { "slug": "owen-paterson" },
+    "471": { "slug": "mark-pawsey" },
+    "472": { "slug": "stephanie-peacock" },
+    "473": { "slug": "teresa-pearce" },
+    "474": { "slug": "mike-penning" },
+    "475": { "slug": "matthew-pennycook" },
+    "476": { "slug": "john-penrose" },
+    "477": { "slug": "andrew-percy" },
+    "478": { "slug": "toby-perkins" },
+    "479": { "slug": "claire-perry" },
+    "480": { "slug": "jess-phillips" },
+    "481": { "slug": "bridget-phillipson" },
+    "482": { "slug": "chris-philp" },
+    "483": { "slug": "laura-pidcock" },
+    "484": { "slug": "christopher-pincher" },
+    "485": { "slug": "jo-platt" },
+    "486": { "slug": "luke-pollard" },
+    "487": { "slug": "daniel-poulter" },
+    "488": { "slug": "steve-pound" },
+    "489": { "slug": "rebecca-pow" },
+    "490": { "slug": "lucy-powell" },
+    "491": { "slug": "victoria-prentis" },
+    "492": { "slug": "mark-prisk" },
+    "493": { "slug": "mark-pritchard" },
+    "494": { "slug": "tom-pursglove" },
+    "495": { "slug": "jeremy-quin" },
+    "496": { "slug": "will-quince" },
+    "497": { "slug": "yasmin-qureshi" },
+    "498": { "slug": "dominic-raab" },
+    "499": { "slug": "faisal-rashid" },
+    "500": { "slug": "angela-rayner" },
+    "501": { "slug": "john-redwood" },
+    "502": { "slug": "steve-reed" },
+    "503": { "slug": "christina-rees" },
+    "504": { "slug": "jacob-rees-mogg" },
+    "505": { "slug": "ellie-reeves" },
+    "506": { "slug": "rachel-reeves" },
+    "507": { "slug": "emma-reynolds" },
+    "508": { "slug": "jonathan-reynolds" },
+    "509": { "slug": "marie-rimmer" },
+    "510": { "slug": "laurence-robertson" },
+    "511": { "slug": "gavin-robinson" },
+    "512": { "slug": "geoffrey-robinson" },
+    "513": { "slug": "mary-robinson" },
+    "514": { "slug": "matt-rodda" },
+    "515": { "slug": "andrew-rosindell" },
+    "516": { "slug": "douglas-ross" },
+    "517": { "slug": "danielle-rowley" },
+    "518": { "slug": "lee-rowley" },
+    "519": { "slug": "chris-ruane" },
+    "520": { "slug": "amber-rudd" },
+    "521": { "slug": "lloyd-russell-moyle" },
+    "522": { "slug": "david-rutley" },
+    "523": { "slug": "joan-ryan" },
+    "524": { "slug": "antoinette-sandbach" },
+    "525": { "slug": "liz-saville-roberts" },
+    "526": { "slug": "paul-scully" },
+    "527": { "slug": "bob-seely" },
+    "528": { "slug": "andrew-selous" },
+    "529": { "slug": "naseem-shah" },
+    "530": { "slug": "jim-shannon" },
+    "531": { "slug": "grant-shapps" },
+    "532": { "slug": "alok-sharma" },
+    "533": { "slug": "virendra-sharma" },
+    "534": { "slug": "barry-sheerman" },
+    "535": { "slug": "alec-shelbrooke" },
+    "536": { "slug": "tommy-sheppard" },
+    "537": { "slug": "paula-sherriff" },
+    "538": { "slug": "gavin-shuker" },
+    "539": { "slug": "tulip-siddiq" },
+    "540": { "slug": "david-simpson" },
+    "541": { "slug": "keith-simpson" },
+    "542": { "slug": "chris-skidmore" },
+    "543": { "slug": "dennis-skinner" },
+    "544": { "slug": "andrew-slaughter" },
+    "545": { "slug": "ruth-smeeth" },
+    "546": { "slug": "angela-smith" },
+    "547": { "slug": "cat-smith" },
+    "548": { "slug": "chloe-smith" },
+    "549": { "slug": "eleanor-smith" },
+    "550": { "slug": "henry-smith" },
+    "551": { "slug": "jeff-smith" },
+    "552": { "slug": "julian-smith" },
+    "553": { "slug": "laura-smith" },
+    "554": { "slug": "nick-smith" },
+    "555": { "slug": "owen-smith" },
+    "556": { "slug": "royston-smith" },
+    "557": { "slug": "karin-smyth" },
+    "558": { "slug": "gareth-snell" },
+    "559": { "slug": "nicholas-soames" },
+    "560": { "slug": "alex-sobel" },
+    "561": { "slug": "anna-soubry" },
+    "562": { "slug": "john-spellar" },
+    "563": { "slug": "caroline-spelman" },
+    "564": { "slug": "mark-spencer" },
+    "565": { "slug": "keir-starmer" },
+    "566": { "slug": "chris-stephens" },
+    "567": { "slug": "andrew-stephenson" },
+    "568": { "slug": "jo-stevens" },
+    "569": { "slug": "john-stevenson" },
+    "570": { "slug": "bob-stewart" },
+    "571": { "slug": "iain-stewart" },
+    "572": { "slug": "rory-stewart" },
+    "573": { "slug": "jamie-stone" },
+    "574": { "slug": "gary-streeter" },
+    "575": { "slug": "wes-streeting" },
+    "576": { "slug": "mel-stride" },
+    "577": { "slug": "graham-stringer" },
+    "578": { "slug": "graham-stuart" },
+    "579": { "slug": "julian-sturdy" },
+    "580": { "slug": "rishi-sunak" },
+    "581": { "slug": "desmond-swayne" },
+    "582": { "slug": "paul-sweeney" },
+    "583": { "slug": "jo-swinson" },
+    "584": { "slug": "hugo-swire" },
+    "585": { "slug": "robert-syms" },
+    "586": { "slug": "mark-tami" },
+    "587": { "slug": "alison-thewliss" },
+    "588": { "slug": "derek-thomas" },
+    "589": { "slug": "gareth-thomas" },
+    "590": { "slug": "nick-thomas-symonds" },
+    "591": { "slug": "ross-thomson" },
+    "592": { "slug": "emily-thornberry" },
+    "593": { "slug": "maggie-throup" },
+    "594": { "slug": "stephen-timms" },
+    "595": { "slug": "kelly-tolhurst" },
+    "596": { "slug": "justin-tomlinson" },
+    "597": { "slug": "michael-tomlinson" },
+    "598": { "slug": "craig-tracey" },
+    "599": { "slug": "david-tredinnick" },
+    "600": { "slug": "anne-marie-trevelyan" },
+    "601": { "slug": "jon-trickett" },
+    "602": { "slug": "elizabeth-truss" },
+    "603": { "slug": "thomas-tugendhat" },
+    "604": { "slug": "anna-turley" },
+    "605": { "slug": "karl-turner" },
+    "606": { "slug": "derek-twigg" },
+    "607": { "slug": "stephen-twigg" },
+    "608": { "slug": "liz-twist" },
+    "609": { "slug": "chuka-umunna" },
+    "610": { "slug": "ed-vaizey" },
+    "611": { "slug": "shailesh-vara" },
+    "612": { "slug": "keith-vaz" },
+    "613": { "slug": "valerie-vaz" },
+    "614": { "slug": "martin-vickers" },
+    "615": { "slug": "theresa-villiers" },
+    "616": { "slug": "charles-walker" },
+    "617": { "slug": "robin-walker" },
+    "618": { "slug": "thelma-walker" },
+    "619": { "slug": "ben-wallace" },
+    "620": { "slug": "david-warburton" },
+    "621": { "slug": "matt-warman" },
+    "622": { "slug": "giles-watling" },
+    "623": { "slug": "tom-watson" },
+    "624": { "slug": "catherine-west" },
+    "625": { "slug": "matt-western" },
+    "626": { "slug": "helen-whately" },
+    "627": { "slug": "heather-wheeler" },
+    "628": { "slug": "alan-whitehead" },
+    "629": { "slug": "martin-whitfield" },
+    "630": { "slug": "philippa-whitford" },
+    "631": { "slug": "craig-whittaker" },
+    "632": { "slug": "john-whittingdale" },
+    "633": { "slug": "bill-wiggin" },
+    "634": { "slug": "hywel-williams" },
+    "635": { "slug": "paul-williams" },
+    "636": { "slug": "chris-williamson" },
+    "637": { "slug": "gavin-williamson" },
+    "638": { "slug": "phil-wilson" },
+    "639": { "slug": "sammy-wilson" },
+    "640": { "slug": "rosie-winterton" },
+    "641": { "slug": "pete-wishart" },
+    "642": { "slug": "sarah-wollaston" },
+    "643": { "slug": "mike-wood" },
+    "644": { "slug": "john-woodcock" },
+    "645": { "slug": "william-wragg" },
+    "646": { "slug": "jeremy-wright" },
+    "647": { "slug": "mohammad-yasin" },
+    "648": { "slug": "nadhim-zahawi" },
+    "649": { "slug": "daniel-zeichner" }
   },
-  "__lastUpdate": 1531920459995
+  "base": "http://uk.parlameter.si",
+  "urls": {
+    "data": "http://data.uk.parlameter.si/v1",
+    "base": "http://localhost:3066",
+    "isci": "http://isci.uk.parlameter.si",
+    "analize": "http://analize.uk.parlameter.si/v1",
+    "glej": "http://localhost:3000"
+  },
+  "party": {
+    "1": { "acronym": "lab", "realAcronym": "Lab", "slug": "lab" },
+    "2": { "acronym": "con", "realAcronym": "Con", "slug": "con" },
+    "3": { "acronym": "snp", "realAcronym": "SNP", "slug": "snp" },
+    "4": { "acronym": "speaker", "realAcronym": "Speaker", "slug": "speaker" },
+    "5": { "acronym": "sf", "realAcronym": "SF", "slug": "sf" },
+    "6": { "acronym": "ldem", "realAcronym": "LDem", "slug": "ldem" },
+    "7": { "acronym": "dup", "realAcronym": "DUP", "slug": "dup" },
+    "8": { "acronym": "pc", "realAcronym": "PC", "slug": "pc" },
+    "9": {
+      "acronym": "independent",
+      "realAcronym": "Independent",
+      "slug": "independent"
+    },
+    "10": { "acronym": "green", "realAcronym": "Green", "slug": "green" },
+    "11": {
+      "acronym": "house-of-commons",
+      "realAcronym": "House of Commons",
+      "slug": "house-of-commons"
+    },
+    "12": {
+      "acronym": "opozicija",
+      "realAcronym": "Opozicija",
+      "slug": "opozicija"
+    },
+    "13": {
+      "acronym": "koalicija",
+      "realAcronym": "Koalicija",
+      "slug": "koalicija"
+    },
+    "14": {
+      "acronym": "administration-committee",
+      "realAcronym": "Administration Committee",
+      "slug": "administration-committee"
+    }
+  },
+  "__lastUpdate": 1532694863021
 }
