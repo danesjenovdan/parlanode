@@ -2,6 +2,7 @@
   <card-wrapper
     :id="cardData.cardData._id"
     :header-config="headerConfig"
+    :og-config="ogConfig"
     :card-url="shareUrl"
     content-class="full"
   >

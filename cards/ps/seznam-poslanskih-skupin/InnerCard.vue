@@ -3,6 +3,7 @@
     :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
       <p class="info-text lead" v-text="currentAnalysisData.title"></p>

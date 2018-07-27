@@ -39,6 +39,7 @@
         <div class="col-md-12">
           <inner-card
             :header-config="headerConfig"
+            :og-config="ogConfig"
             :columns="columns"
             :current-sort="currentSort"
             :current-sort-order="currentSortOrder"
@@ -57,6 +58,7 @@
     v-else
     :id="$options.cardData.cardData._id"
     :header-config="headerConfig"
+    :og-config="ogConfig"
     :columns="columns"
     :current-sort="currentSort"
     :current-sort-order="currentSortOrder"

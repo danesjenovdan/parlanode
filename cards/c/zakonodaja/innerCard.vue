@@ -2,6 +2,7 @@
   <card-wrapper
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
     class="card-halfling card-seznam-zakonov"
   >
     <div slot="info">

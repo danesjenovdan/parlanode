@@ -18,6 +18,7 @@
           <inner-card
             :processed-party-data="processedPartyData"
             :header-config="headerConfig"
+            :og-config="ogConfig"
             :generated-card-url="generatedCardUrl"
             :current-analysis-data="currentAnalysisData"
           />
@@ -29,6 +30,7 @@
     v-else
     :processed-party-data="processedPartyData"
     :header-config="headerConfig"
+    :og-config="ogConfig"
     :generated-card-url="generatedCardUrl"
     :current-analysis-data="currentAnalysisData"
   />

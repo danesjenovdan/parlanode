@@ -4,6 +4,7 @@
     :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>

@@ -3,6 +3,7 @@
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
 
     <div slot="info">

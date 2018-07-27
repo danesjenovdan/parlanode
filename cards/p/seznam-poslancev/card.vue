@@ -55,6 +55,7 @@
         <div class="col-md-12">
           <inner-card
             :header-config="headerConfig"
+            :og-config="ogConfig"
             :generated-card-url="generatedCardUrl"
             :current-analysis-data="currentAnalysisData"
             :processed-members="processedMembers"

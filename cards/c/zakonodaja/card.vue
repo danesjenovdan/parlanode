@@ -45,6 +45,7 @@
     </div>
     <inner-card
       :header-config="headerConfig"
+      :og-config="ogConfig"
       :columns="columns"
       :items="processedData"
       :current-sort="currentSort"

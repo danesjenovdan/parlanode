@@ -3,6 +3,7 @@
     :id="cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
     class="card-halfling"
   >
     <slot slot="info" name="info"></slot>
