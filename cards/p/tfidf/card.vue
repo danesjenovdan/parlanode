@@ -30,6 +30,7 @@
 import { getSearchTermLink } from 'components/links';
 import common from 'mixins/common';
 import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import { memberSpeeches } from 'mixins/contextUrls';
 import BarChart from 'components/BarChart.vue';
 
@@ -42,6 +43,7 @@ export default {
     common,
     memberSpeeches,
     memberHeader,
+    memberOgImage,
   ],
   data() {
     return {

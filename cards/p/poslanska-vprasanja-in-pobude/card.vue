@@ -27,6 +27,7 @@ import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
 import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import QuestionList from 'components/QuestionList.vue';
 
 export default {
@@ -39,6 +40,7 @@ export default {
     memberOverview,
     memberTitle,
     memberHeader,
+    memberOgImage,
   ],
   data() {
     return {

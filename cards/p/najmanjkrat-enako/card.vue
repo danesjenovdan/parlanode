@@ -37,6 +37,7 @@ import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
 import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import PersonList from 'components/PersonList.vue';
 
 export default {
@@ -49,6 +50,7 @@ export default {
   mixins: [
     common,
     memberHeader,
+    memberOgImage,
   ],
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
