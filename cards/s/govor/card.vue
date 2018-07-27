@@ -25,6 +25,7 @@
 import common from 'mixins/common';
 import { memberTitle } from 'mixins/titles';
 import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import Speech from 'components/Speech.vue';
 
 function getSelected() {
@@ -106,6 +107,7 @@ export default {
     common,
     memberTitle,
     sessionHeader,
+    sessionOgImage,
   ],
   data() {
     return {

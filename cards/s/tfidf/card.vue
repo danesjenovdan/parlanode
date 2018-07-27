@@ -31,6 +31,7 @@
 <script>
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import BarChart from 'components/BarChart.vue';
 import { getSearchTermLink } from 'components/links';
 
@@ -42,6 +43,7 @@ export default {
   mixins: [
     common,
     sessionHeader,
+    sessionOgImage,
   ],
   data() {
     return {

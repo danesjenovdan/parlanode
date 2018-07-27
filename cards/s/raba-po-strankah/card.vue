@@ -22,6 +22,7 @@
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
 import PieChart from 'components/PieChart.vue';
 
 export default {
@@ -33,6 +34,7 @@ export default {
     common,
     searchTitle,
     searchHeader,
+    searchOgImage,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];

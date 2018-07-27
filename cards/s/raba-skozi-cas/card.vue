@@ -26,6 +26,7 @@
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
 import PTabs from 'components/Tabs.vue';
 import PTab from 'components/Tab.vue';
 import TimeLineChart from 'components/TimeLineChart.vue';
@@ -43,6 +44,7 @@ export default {
     common,
     searchTitle,
     searchHeader,
+    searchOgImage,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];

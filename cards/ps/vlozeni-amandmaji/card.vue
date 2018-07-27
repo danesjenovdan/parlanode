@@ -179,6 +179,7 @@ import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
+import { partyOgImage } from 'mixins/ogImages';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -191,7 +192,12 @@ const formattedDateToMonthId = (date) => {
 export default {
   name: 'VlozeniAmandmaji',
   components: { PSearchDropdown, SearchField, StripedButton },
-  mixins: [common, partyTitle, partyHeader],
+  mixins: [
+    common,
+    partyTitle,
+    partyHeader,
+    partyOgImage,
+  ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 

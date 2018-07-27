@@ -25,6 +25,7 @@
 <script>
 import common from 'mixins/common';
 import { partyHeader } from 'mixins/altHeaders';
+import { partyOgImage } from 'mixins/ogImages';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 import PersonList from 'components/PersonList.vue';
@@ -39,6 +40,7 @@ export default {
     partyOverview,
     partyTitle,
     partyHeader,
+    partyOgImage,
   ],
   data() {
     return {

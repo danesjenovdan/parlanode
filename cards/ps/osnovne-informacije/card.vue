@@ -149,6 +149,7 @@ import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
+import { partyOgImage } from 'mixins/ogImages';
 import { getPersonLink, getPersonPortrait } from 'components/links';
 
 export default {
@@ -159,6 +160,7 @@ export default {
     partyOverview,
     partyTitle,
     partyHeader,
+    partyOgImage,
   ],
   data() {
     return {

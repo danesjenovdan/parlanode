@@ -59,6 +59,7 @@
 <script>
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import BarChart from 'components/BarChart.vue';
 import PrisotnostPoPoslanskihSkupinah from 'components/PrisotnostPoPoslanskihSkupinah.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
@@ -78,6 +79,7 @@ export default {
   mixins: [
     common,
     sessionHeader,
+    sessionOgImage,
   ],
   data() {
     return {

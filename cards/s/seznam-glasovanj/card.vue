@@ -52,6 +52,7 @@
 <script>
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 
 export default {
@@ -62,6 +63,7 @@ export default {
   mixins: [
     common,
     sessionHeader,
+    sessionOgImage,
   ],
   data() {
     const state = this.$options.cardData.parlaState;

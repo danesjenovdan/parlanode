@@ -63,6 +63,7 @@
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
 import {
   getPersonLink,
   getPersonPartyLink,
@@ -83,6 +84,7 @@ export default {
     common,
     searchTitle,
     searchHeader,
+    searchOgImage,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q

@@ -29,6 +29,7 @@ import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
+import { partyOgImage } from 'mixins/ogImages';
 import PersonList from 'components/PersonList.vue';
 
 export default {
@@ -41,6 +42,7 @@ export default {
     partyOverview,
     partyTitle,
     partyHeader,
+    partyOgImage,
   ],
   data() {
     const people = this.$options.cardData.data.results.map((o) => {

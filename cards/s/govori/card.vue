@@ -36,6 +36,7 @@
 <script>
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import Speech from 'components/Speech.vue';
 import LoadLink from 'components/LoadLink.vue';
 
@@ -118,6 +119,7 @@ export default {
   mixins: [
     common,
     sessionHeader,
+    sessionOgImage,
   ],
   data() {
     const data = this.$options.cardData.data;

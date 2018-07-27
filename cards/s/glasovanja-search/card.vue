@@ -19,6 +19,7 @@
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import common from 'mixins/common';
 import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
 import { searchTitle } from 'mixins/titles';
 
 export default {
@@ -30,6 +31,7 @@ export default {
     common,
     searchTitle,
     searchHeader,
+    searchOgImage,
   ],
   data() {
     const keywords = this.$options.cardData.data.search_query.replace(/\+/g, ' ');
