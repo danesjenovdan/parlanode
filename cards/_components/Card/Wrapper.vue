@@ -73,7 +73,7 @@ export default {
     },
     ogConfig: {
       type: Object,
-      default: () => ({}),
+      default: null,
     },
     contentHeight: {
       type: String,
