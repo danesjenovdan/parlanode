@@ -1,7 +1,6 @@
 {
   "_id": "ps_poslanska-vprasanja-in-pobude",
   "dataUrl": "{analize}/pg/getQuestionsOfPG",
-  "type": "poslanska_skupina",
   "lastUpdate": "2018-07-18T16:32:18.202Z",
   "big": true,
   "high": false

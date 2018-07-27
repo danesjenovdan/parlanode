@@ -1,7 +1,6 @@
 {
   "_id": "s_seznam-glasovanj",
   "dataUrl": "{analize}/s/getMotionOfSession",
-  "type": "seje",
   "lastUpdate": "2018-07-17T13:25:00.611Z",
   "big": true,
   "high": true

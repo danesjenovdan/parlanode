@@ -1,7 +1,6 @@
 {
   "_id": "ps_govori",
   "dataUrl": "{analize}/",
-  "type": "empty",
   "lastUpdate": "2018-07-17T13:23:53.500Z",
   "big": true,
   "high": false

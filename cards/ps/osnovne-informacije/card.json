@@ -1,7 +1,6 @@
 {
   "_id": "ps_osnovne-informacije",
   "dataUrl": "{analize}/pg/getBasicInfOfPG",
-  "type": "poslanska_skupina",
   "lastUpdate": "2018-07-17T13:24:06.151Z",
   "big": false,
   "high": false

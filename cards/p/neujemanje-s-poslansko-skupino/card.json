@@ -1,6 +1,5 @@
 {
   "_id": "p_neujemanje-s-poslansko-skupino",
-  "type": "poslanec",
   "dataUrl": "{analize}/p/getMismatchWithPG",
   "lastUpdate": "2018-07-17T13:23:06.241Z",
   "big": false,

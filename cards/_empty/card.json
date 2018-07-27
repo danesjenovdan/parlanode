@@ -1,6 +1,5 @@
 {
   "_id": "{{ _id }}",
-  "type": "{{ type }}",
   "dataUrl": "{{ dataUrl }}",
   "lastUpdate": "{{ lastUpdate }}",
   "big": {{ big }},

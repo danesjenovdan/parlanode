@@ -1,7 +1,6 @@
 {
   "_id": "c_zakonodaja",
   "dataUrl": "{analize}/s/getAllLegislation",
-  "type": "empty",
   "lastUpdate": "2018-07-24T13:54:31.755Z",
   "big": true,
   "high": false

@@ -1,7 +1,6 @@
 {
   "_id": "c_izpostavljena-zakonodaja",
   "dataUrl": "{analize}/s/getExposedLegislation",
-  "type": "empty",
   "lastUpdate": "2018-07-17T13:22:20.628Z",
   "big": true,
   "high": false

@@ -1,6 +1,5 @@
 {
   "_id": "s_govori",
-  "type": "seje",
   "dataUrl": "{analize}/s/getSpeechesOfSession",
   "lastUpdate": "2018-07-18T12:31:01.019Z",
   "big": true,

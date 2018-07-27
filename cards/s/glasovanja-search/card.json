@@ -1,7 +1,6 @@
 {
   "_id": "s_glasovanja-search",
   "dataUrl": "{isci}/l",
-  "type": "empty",
   "lastUpdate": "2018-07-17T13:24:37.469Z",
   "big": true,
   "high": true

@@ -2,7 +2,6 @@
   "_id": "random_id",
   "name": "Članstva v poslanskih skupinah",
   "dataUrl": "{analize}/",
-  "type": "tip_alt_headerja",
   "lastUpdate": "2018-07-17T13:22:41.734Z",
   "method": "clanstva",
   "group": "obcasnik"

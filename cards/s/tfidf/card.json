@@ -1,6 +1,5 @@
 {
   "_id": "s_tfidf",
-  "type": "seje",
   "dataUrl": "{analize}/s/getTFIDF",
   "lastUpdate": "2018-07-17T13:25:06.541Z",
   "big": true,

@@ -1,6 +1,5 @@
 {
   "_id": "ps_neujemanje-s-poslansko-skupino",
-  "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getPGMismatch",
   "lastUpdate": "2018-07-17T13:24:03.662Z",
   "big": false,

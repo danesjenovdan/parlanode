@@ -1,7 +1,6 @@
 {
   "_id": "ps_tfidf",
   "dataUrl": "{analize}/pg/getTFIDF",
-  "type": "poslanska_skupina",
   "lastUpdate": "2018-07-17T13:24:28.456Z",
   "high": false,
   "big": false

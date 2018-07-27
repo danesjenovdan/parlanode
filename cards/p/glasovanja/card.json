@@ -1,7 +1,6 @@
 {
   "_id": "p_glasovanja",
   "dataUrl": "{analize}/p/getTaggedBallots",
-  "type": "poslanec",
   "lastUpdate": "2018-07-17T13:22:55.196Z",
   "big": true,
   "high": false

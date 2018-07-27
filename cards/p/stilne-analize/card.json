@@ -1,6 +1,5 @@
 {
   "_id": "p_stilne-analize",
-  "type": "poslanec",
   "dataUrl": "{analize}/p/getStyleScores",
   "lastUpdate": "2018-07-17T13:23:33.754Z",
   "big": false,

@@ -1,6 +1,5 @@
 {
   "_id": "c_zadnja-seja",
-  "type": "seje",
   "dataUrl": "{analize}/s/getLastSessionLanding",
   "lastUpdate": "2018-07-17T13:22:33.246Z",
   "big": true,

@@ -1,6 +1,5 @@
 {
   "_id": "ps_st-poslanskih-vprasanj-in-pobud",
-  "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getNumberOfQuestions",
   "lastUpdate": "2018-07-17T13:24:21.273Z",
   "big": false,

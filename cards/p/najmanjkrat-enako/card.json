@@ -1,6 +1,5 @@
 {
   "_id": "p_najmanjkrat-enako",
-  "type": "poslanec",
   "dataUrl": "{analize}/p/getLeastEqualVoters",
   "lastUpdate": "2018-07-17T13:23:01.002Z",
   "big": false,

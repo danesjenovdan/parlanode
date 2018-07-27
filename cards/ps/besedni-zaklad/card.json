@@ -1,6 +1,5 @@
 {
   "_id": "ps_besedni-zaklad",
-  "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getVocabularySize",
   "lastUpdate": "2018-07-17T13:23:41.185Z",
   "big": false,

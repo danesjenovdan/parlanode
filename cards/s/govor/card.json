@@ -1,6 +1,5 @@
 {
   "_id": "s_govor",
-  "type": "seje",
   "dataUrl": "{analize}/s/getSpeech",
   "lastUpdate": "2018-07-17T13:24:44.568Z",
   "big": true,

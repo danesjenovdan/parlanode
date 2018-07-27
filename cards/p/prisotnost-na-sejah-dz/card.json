@@ -1,7 +1,6 @@
 {
   "_id": "p_prisotnost-na-sejah-dz",
   "dataUrl": "{analize}/p/getPresence",
-  "type": "poslanec",
   "lastUpdate": "2018-07-17T13:23:19.009Z",
   "big": false,
   "high": false

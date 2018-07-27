@@ -1,7 +1,6 @@
 {
   "_id": "ps_prisotnost-skozi-cas",
   "dataUrl": "{analize}/pg/getPresenceThroughTime",
-  "type": "poslanska_skupina",
   "lastUpdate": "2018-07-17T13:24:16.298Z",
   "big": true,
   "high": false

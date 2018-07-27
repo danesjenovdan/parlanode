@@ -1,6 +1,5 @@
 {
   "_id": "s_citat",
-  "type": "seje",
   "dataUrl": "{analize}/s/getQuote",
   "lastUpdate": "2018-07-17T13:24:34.327Z",
   "big": true,

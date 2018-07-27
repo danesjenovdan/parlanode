@@ -1,6 +1,5 @@
 {
   "_id": "s_zakon",
-  "type": "empty",
   "dataUrl": "{analize}/s/getLegislation/",
   "lastUpdate": "2018-07-17T13:25:10.565Z",
   "big": true,

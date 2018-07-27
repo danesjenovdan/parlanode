@@ -1,6 +1,5 @@
 {
   "_id": "ps_najlazje-pridruzili",
-  "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getMostMatchingThem",
   "lastUpdate": "2018-07-17T13:23:55.920Z",
   "big": false,

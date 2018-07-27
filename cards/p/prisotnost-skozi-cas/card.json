@@ -1,7 +1,6 @@
 {
   "_id": "p_prisotnost-skozi-cas",
   "dataUrl": "{analize}/p/getPresenceThroughTime",
-  "type": "poslanec",
   "lastUpdate": "2018-07-17T13:23:21.460Z",
   "big": true,
   "high": false

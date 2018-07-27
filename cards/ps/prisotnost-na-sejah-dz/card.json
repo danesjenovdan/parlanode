@@ -1,6 +1,5 @@
 {
   "_id": "ps_prisotnost-na-sejah-dz",
-  "type": "poslanska_skupina",
   "dataUrl": "{analize}/pg/getPercentOFAttendedSessionPG",
   "lastUpdate": "2018-07-17T13:24:14.035Z",
   "big": false,

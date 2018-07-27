@@ -1,6 +1,5 @@
 {
   "_id": "p_prisotnost-na-glasovanjih-sej-dz",
-  "type": "poslanec",
   "dataUrl": "{analize}/p/getPresence",
   "lastUpdate": "2018-07-17T13:23:16.529Z",
   "big": false,

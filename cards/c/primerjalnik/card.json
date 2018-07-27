@@ -1,7 +1,6 @@
 {
   "_id": "c_primerjalnik",
   "dataUrl": "{analize}/p/getListOfMembersTickers/",
-  "type": "primerjalnik",
   "lastUpdate": "2018-07-17T13:22:25.687Z",
   "big": true,
   "high": true

@@ -1,6 +1,5 @@
 {
   "_id": "p_besedni-zaklad",
-  "type": "poslanec",
   "dataUrl": "{analize}/p/getVocabularySize",
   "lastUpdate": "2018-07-17T13:22:49.090Z",
   "big": false,
