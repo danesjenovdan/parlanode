@@ -82,6 +82,7 @@
 <script>
 import common from 'mixins/common';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
+import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import PersonPin from 'components/PersonPin.vue';
 import PartyPin from 'components/PartyPin.vue';
 
@@ -121,6 +122,12 @@ export default {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
+    },
+    ogConfig() {
+      if (this.type === 'poslanec') {
+        return memberOgImage.computed.headerConfig.call(this);
+      }
+      return partyOgImage.computed.headerConfig.call(this);
     },
     generatedCardUrl() {
       if (this.type === 'poslanec') {

@@ -94,7 +94,7 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 
 import common from 'mixins/common';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
-
+import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
@@ -268,6 +268,12 @@ export default {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
+    },
+    ogConfig() {
+      if (this.type === 'person') {
+        return memberOgImage.computed.headerConfig.call(this);
+      }
+      return partyOgImage.computed.headerConfig.call(this);
     },
   },
   created() {

@@ -14,6 +14,7 @@
 <script>
 import CardWrapper from 'components/Card/Wrapper.vue';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
+import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import getD3Locale from 'i18n/d3locales';
 
 /* globals d3 */
@@ -55,6 +56,12 @@ export default {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
+    },
+    ogConfig() {
+      if (this.type === 'poslanec') {
+        return memberOgImage.computed.headerConfig.call(this);
+      }
+      return partyOgImage.computed.headerConfig.call(this);
     },
   },
   mounted() {

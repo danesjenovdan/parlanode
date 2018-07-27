@@ -55,7 +55,7 @@ import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader, memberHeader } from 'mixins/altHeaders';
-
+import { partyOgImage, memberOgImage } from 'mixins/ogImages';
 import CardWrapper from 'components/Card/Wrapper.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import QuestionList from 'components/QuestionList.vue';
@@ -202,6 +202,12 @@ export default {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
+    },
+    ogConfig() {
+      if (this.type === 'person') {
+        return memberOgImage.computed.headerConfig.call(this);
+      }
+      return partyOgImage.computed.headerConfig.call(this);
     },
   },
   methods: {

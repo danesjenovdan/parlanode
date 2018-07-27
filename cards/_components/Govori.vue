@@ -96,6 +96,7 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
+import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 
 import axios from 'axios';
 
@@ -291,6 +292,12 @@ export default {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
+    },
+    ogConfig() {
+      if (this.type === 'person') {
+        return memberOgImage.computed.headerConfig.call(this);
+      }
+      return partyOgImage.computed.headerConfig.call(this);
     },
   },
   created() {
