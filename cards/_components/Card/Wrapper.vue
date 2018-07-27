@@ -43,6 +43,7 @@ import CardShare from 'components/Card/Share.vue';
 import CardPrevious from 'components/Card/Previous.vue';
 import CardHeader from 'components/Card/Header.vue';
 import CardFooter from 'components/Card/Footer.vue';
+import slugs from '../../../assets/urls.json';
 
 export default {
   name: 'CardWrapper',
@@ -95,7 +96,7 @@ export default {
   created() {
     const ogConfig = this.ogConfig;
     if (ogConfig) {
-      const ogImagePath = `${this.$root.slugs.urls.glej}/og-image/${ogConfig.name}/`;
+      const ogImagePath = `${slugs.urls.glej}/og-image/${ogConfig.name}/`;
       const ogImageParams = `?${Object.keys(ogConfig).map(k => `${k}=${encodeURIComponent(ogConfig[k])}`).join('&')}`;
       this.$root.$options.cardData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
     } else {
