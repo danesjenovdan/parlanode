@@ -1,7 +1,7 @@
 {
   "_id": "ps_prisotnost-na-glasovanjih-sej-dz",
   "dataUrl": "{analize}/pg/getPercentOFAttendedSessionPG",
-  "lastUpdate": "2018-07-17T13:24:11.614Z",
+  "lastUpdate": "2018-07-27T15:00:17.493Z",
   "big": false,
   "high": false
 }

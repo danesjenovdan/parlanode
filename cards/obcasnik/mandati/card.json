@@ -2,7 +2,7 @@
   "_id": "random_id",
   "name": "Seznam poslancev po številu mandatov",
   "dataUrl": "{analize}/",
-  "lastUpdate": "2018-07-17T13:22:44.019Z",
+  "lastUpdate": "2018-07-27T14:57:59.639Z",
   "method": "ime_metode",
   "group": "[p|s|ps]"
 }
