@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "A list of all session in this sitting, corresponding to user query ({filter}). The list is filtered by {sort-by}{just-last-five}.",
-    "text": "Information on the sessions is derived from National Assembly's web site, more specifically {link1}, {link2} and {link3}.",
+    "text": "Information on the sessions is derived from the National Assembly's web site, more specifically {link1}, {link2} and {link3}.",
     "links": [
       {
         "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDt/poDatumu/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3F0NXQw8DX09PTz9HI0M3E30w9EUBJkYARV4W4b4-PoYGnib6UdRot8dXT-G8Wj6_S0N3Qw8Q43dTYx9QwwMfI2I02-AAzgakGg_pgej8BtfkBsKAooAQ6b9bA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/",
@@ -25,6 +25,6 @@
   "select-working-body-placeholder": "Choose a working body",
   "sort-by--name": "session name",
   "sort-by--date": "date when the session started",
-  "sort-by--updated": "date when last update of the session was made",
+  "sort-by--updated": "date when last update was made",
   "sort-by--workingBody": "name of the organisation"
 }
