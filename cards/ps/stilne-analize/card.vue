@@ -1,7 +1,7 @@
 <template>
   <style-scores
     :card-data="$options.cardData"
-    :type="$options.cardData.cardData.type"
+    type="party"
     :party="$options.cardData.data.party"
     :results="$options.cardData.data.results"
   >

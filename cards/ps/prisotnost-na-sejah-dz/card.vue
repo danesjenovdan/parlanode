@@ -1,7 +1,7 @@
 <template>
   <score-avg-max
     :card-data="$options.cardData"
-    :type="$options.cardData.cardData.type"
+    type="party"
     :party="$options.cardData.data.organization"
     :results="$options.cardData.data.sessions"
   >

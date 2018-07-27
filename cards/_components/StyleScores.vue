@@ -101,7 +101,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['poslanec', 'poslanska_skupina'].indexOf(value) > -1,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
     },
     results: {
       type: Object,
@@ -118,19 +118,19 @@ export default {
   },
   computed: {
     headerConfig() {
-      if (this.type === 'poslanec') {
+      if (this.type === 'person') {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
-      if (this.type === 'poslanec') {
+      if (this.type === 'person') {
         return memberOgImage.computed.headerConfig.call(this);
       }
       return partyOgImage.computed.headerConfig.call(this);
     },
     generatedCardUrl() {
-      if (this.type === 'poslanec') {
+      if (this.type === 'person') {
         return `${this.url}${this.person.id}?altHeader=true`;
       }
       return `${this.url}${this.party.id}?altHeader=true`;

@@ -31,7 +31,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['poslanec', 'poslanska_skupina'].indexOf(value) > -1,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
     },
     results: {
       type: Array,
@@ -52,13 +52,13 @@ export default {
   },
   computed: {
     headerConfig() {
-      if (this.type === 'poslanec') {
+      if (this.type === 'person') {
         return memberHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
-      if (this.type === 'poslanec') {
+      if (this.type === 'person') {
         return memberOgImage.computed.headerConfig.call(this);
       }
       return partyOgImage.computed.headerConfig.call(this);
@@ -207,7 +207,7 @@ export default {
 
           if (Math.round(d3.select(bars[0][0]).datum().y) > 0) {
             let prisoten;
-            if (this.type === 'poslanec') {
+            if (this.type === 'person') {
               prisoten = this.$t(`present--${this.person.gender}`);
             } else {
               prisoten = this.$t('present--plural');
@@ -223,7 +223,7 @@ export default {
           }
           if (Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001) > 0) {
             let odsoten;
-            if (this.type === 'poslanec') {
+            if (this.type === 'person') {
               odsoten = this.$t(`not-present--${this.person.gender}`);
             } else {
               odsoten = this.$t('not-present--plural');
