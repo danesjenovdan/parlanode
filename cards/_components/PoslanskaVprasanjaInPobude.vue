@@ -205,9 +205,9 @@ export default {
     },
     ogConfig() {
       if (this.type === 'person') {
-        return memberOgImage.computed.headerConfig.call(this);
+        return memberOgImage.computed.ogConfig.call(this);
       }
-      return partyOgImage.computed.headerConfig.call(this);
+      return partyOgImage.computed.ogConfig.call(this);
     },
   },
   methods: {
