@@ -303,7 +303,8 @@ export default {
           this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
         }
 
-        this.voteData = response.results;
+        // TODO: this.voteData = response.results;
+        this.voteData = response.results || response[acronym];
 
         this.allClassifications = [];
         // eslint-disable-next-line no-restricted-syntax, guard-for-in
