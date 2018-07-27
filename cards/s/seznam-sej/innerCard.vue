@@ -65,6 +65,10 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    ogConfig: {
+      type: Object,
+      default: null,
+    },
     columns: {
       type: Array,
       default: () => [],

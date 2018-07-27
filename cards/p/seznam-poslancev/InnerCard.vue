@@ -48,6 +48,10 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    ogConfig: {
+      type: Object,
+      default: null,
+    },
     generatedCardUrl: {
       type: String,
       default: '',

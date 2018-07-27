@@ -36,6 +36,10 @@ export default {
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$t('card.title'),
       },
+      ogConfig: {
+        // TODO: fix this when developing card
+        // best if you include a mixin from 'mixins/ogImages'
+      },
     };
   },
 };
