@@ -67,6 +67,11 @@ export default {
         title: this.currentAnalysisData.title,
       });
     },
+    ogConfig() {
+      return defaultOgImage(this, {
+        title: this.currentAnalysisData.title,
+      });
+    },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },

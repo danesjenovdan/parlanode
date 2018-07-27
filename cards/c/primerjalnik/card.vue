@@ -201,6 +201,7 @@ export default {
       differentModalVisible: false,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this, { circleIcon: 'primerjalnik' }),
+      ogConfig: defaultOgImage(this, { icon: 'primerjalnik' }),
     };
   },
   computed: {

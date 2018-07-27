@@ -205,6 +205,12 @@ export default {
         title: this.dynamicTitle,
       });
     },
+    ogConfig() {
+      return defaultOgImage(this, {
+        icon: 'seznam-glasovanj',
+        title: this.dynamicTitle,
+      });
+    },
     dynamicTitle() {
       return this.$t('card.title') + (
         this.selectedSort === 'date'

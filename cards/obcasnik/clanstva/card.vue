@@ -34,6 +34,7 @@ export default {
     return {
       data: this.$options.cardData.data,
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
     };
   },
   mounted() {

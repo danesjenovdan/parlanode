@@ -58,6 +58,7 @@ export default {
     return {
       data: this.$options.cardData.data.data,
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json`,
     };
   },

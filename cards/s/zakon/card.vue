@@ -138,6 +138,7 @@ export default {
       data: this.$options.cardData.data,
       documents,
       headerConfig: defaultHeaderConfig(this, { title }),
+      ogConfig: defaultOgImage(this, { title }),
       finalVoteExists,
       finalVoteData,
       finalVoteResult,

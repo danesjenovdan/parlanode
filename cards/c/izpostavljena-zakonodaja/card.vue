@@ -79,6 +79,7 @@ export default {
       state: this.$options.cardData.parlaState || {},
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
     };
   },
   computed: {

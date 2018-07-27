@@ -104,6 +104,7 @@ export default {
       currentFilter: get(this.$options.cardData, 'state.filter') || cardConfig.tabs[0].title,
       justFive: get(this.$options.cardData, 'state.justFive') || false,
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
     };
   },
   computed: {

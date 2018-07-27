@@ -50,6 +50,7 @@ export default {
         .filter(person => person.mandates > 3)
         .sort((a, b) => b.mandates - a.mandates),
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json`,
     };
   },

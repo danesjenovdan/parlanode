@@ -139,6 +139,7 @@ export default {
       data: this.$options.cardData.data,
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       showRelative: loadFromState('showRelative') || false,
       modalShown: false,
       modalInputText: '',

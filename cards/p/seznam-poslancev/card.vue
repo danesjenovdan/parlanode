@@ -176,6 +176,11 @@ export default {
         title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
+    ogConfig() {
+      return defaultOgImage(this, {
+        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+      });
+    },
     selectedDistricts() {
       return this.districts
         .filter(district => district.selected)

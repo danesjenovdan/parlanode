@@ -62,6 +62,7 @@ export default {
     return {
       data,
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       rows,
       generatedCardUrl: `${this.url}?state={}`,
     };

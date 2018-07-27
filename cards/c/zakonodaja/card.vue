@@ -104,6 +104,7 @@ export default {
       textFilter: '',
       workingBodies: [],
       headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       allWorkingBodies,
       onlyAbstracts: false,
     };
