@@ -9,7 +9,7 @@ export default (context) => {
   const app = new Vue({
     ...og,
     context: {
-      ...context,
+      params: context.params,
       env: process.env,
     },
   });

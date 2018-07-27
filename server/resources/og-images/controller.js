@@ -113,7 +113,10 @@ async function buildBundle(cacheData, ogJson) {
 }
 
 async function renderOgImage(cacheData, ogJson) {
-  const serverBundle = await fs.readFile(`og-images/${cacheData.name}/bundles/server.js`, 'utf-8');
+  const [serverBundle, styleBundle] = await Promise.all([
+    fs.readFile(`og-images/${cacheData.name}/bundles/server.js`, 'utf-8'),
+    fs.readFile(`og-images/${cacheData.name}/bundles/style.css`, 'utf-8'),
+  ]);
   const template = await fs.readFile('og-images/template.html', 'utf-8');
 
   const rendererInstance = renderer.createBundleRenderer(serverBundle, {
@@ -124,6 +127,7 @@ async function renderOgImage(cacheData, ogJson) {
   const { name, ...params } = cacheData;
   const context = {
     params,
+    styleBundle,
   };
 
   const html = await rendererInstance.renderToString(context);

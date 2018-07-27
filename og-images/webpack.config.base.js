@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 process.traceDeprecation = true;
 
@@ -15,6 +16,9 @@ module.exports = currentPath => ({
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          extractCSS: true,
+        },
       },
       {
         test: /\.js$/,
@@ -22,11 +26,25 @@ module.exports = currentPath => ({
       },
       {
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
+                minimize: true,
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
+        }),
       },
     ],
   },
@@ -38,6 +56,9 @@ module.exports = currentPath => ({
   },
   plugins: [
     new VueLoaderPlugin(),
+    new ExtractTextPlugin({
+      filename: 'style.css',
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
