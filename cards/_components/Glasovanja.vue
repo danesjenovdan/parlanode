@@ -91,12 +91,27 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import Toggle from 'components/Toggle.vue';
 import Ballot from 'components/Ballot.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
-
 import common from 'mixins/common';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
+
+function getBallotOption(option) {
+  if (option === 'za' || option === 'aye') {
+    return 'for';
+  }
+  if (option === 'proti' || option === 'nay' || option === 'no') {
+    return 'against';
+  }
+  if (option === 'ni') {
+    return 'not';
+  }
+  if (option === 'kvorum') {
+    return 'quorum';
+  }
+  return option;
+}
 
 export default {
   components: {
@@ -307,17 +322,8 @@ export default {
             .map((ballot) => {
               const ballotClone = JSON.parse(JSON.stringify(ballot));
               const form = this.type === 'person' ? this.person.gender : 'plural';
-              if (ballot.option === 'za') {
-                ballotClone.label = this.$t(`voted-for--${form}`);
-              } else if (ballot.option === 'proti') {
-                ballotClone.label = this.$t(`voted-against--${form}`);
-              } else if (ballot.option === 'ni') {
-                ballotClone.label = this.$t(`voted-not--${form}`);
-              } else if (ballot.option === 'kvorum') {
-                ballotClone.label = this.$t(`voted-quorum--${form}`);
-              } else {
-                ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
-              }
+              const option = getBallotOption(ballot.option);
+              ballotClone.label = this.$t(`voted-${option}--${form}`);
 
               if (ballot.result !== 'none' && ballot.result != null) {
                 ballotClone.outcome = ballot.result === true ? this.$t('vote-passed') : this.$t('vote-not-passed');
