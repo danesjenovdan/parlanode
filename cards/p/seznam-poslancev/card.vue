@@ -89,6 +89,39 @@
         </div>
       </div>
     </div>
+    <inner-card
+      :header-config="headerConfig"
+      :og-config="ogConfig"
+      :generated-card-url="generatedCardUrl"
+      :current-analysis-data="currentAnalysisData"
+      :processed-members="processedMembers"
+      :current-sort="currentSort"
+      :current-sort-order="currentSortOrder"
+      :demographics="currentAnalysis === 'demographics'"
+      @sort="sortBy"
+    >
+      <div slot="info">
+        <i18n path="info.lead" tag="p" class="info-text lead">
+          <span place="parties">
+            <span v-if="selectedParties.length">
+              {{ $t('party') }}: {{ selectedParties.join(', ') }}
+            </span>
+            <span v-t="'all-parties'" v-else></span>
+          </span>
+          <span place="districts">
+            <span v-if="selectedDistrictNames.length">
+              {{ $t('voting-district') }}: {{ selectedDistrictNames.join(', ') }}
+            </span>
+            <span v-t="'all-voting-districts'" v-else></span>
+          </span>
+          <span place="sortBy">{{ sortMap[currentSort] }}</span>
+        </i18n>
+        <template v-if="currentAnalysisData.explanation">
+          <p v-t="'info.methodology'" class="info-text heading"></p>
+          <p class="info-text">{{ currentAnalysisData.explanation }}</p>
+        </template>
+      </div>
+    </inner-card>
   </div>
 </template>
 
