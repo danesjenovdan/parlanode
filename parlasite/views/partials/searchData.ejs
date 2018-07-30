@@ -3,17 +3,17 @@
         var parties = [];
         for (person_i in data) {
             if (parties.indexOf(data[person_i].party.acronym) === -1) {
-
-
                 var tmp = data[person_i].party;
-                tmp.url =  mpsopsurls.base + mpsopsurls.partyLink.base + mpsopsurls.party[data[person_i].party.id].acronym + mpsopsurls.partyLink.pregled;
-
-                parties.push(tmp);
-
+                var acr = mpsopsurls.party[data[person_i].party.id]
+                if (acr) {
+                    tmp.url =  mpsopsurls.base + mpsopsurls.partyLink.base + mpsopsurls.party[data[person_i].party.id].acronym + mpsopsurls.partyLink.pregled;
+                    parties.push(tmp);
+                }
             }
         }
         return parties;
     }
+
     function uniq(a, param){
         return a.filter(function(item, pos, array){
             return array.map(function(mapItem){ return mapItem[param]; }).indexOf(item[param]) === pos;
@@ -23,10 +23,8 @@
     var mps_data = [];
     for (person_i in mpsops) {
         var tmp = mpsops[person_i];
-
         tmp.url =  mpsopsurls.base + mpsopsurls.personLink.base + mpsopsurls.person[mpsops[person_i].id].slug + mpsopsurls.personLink.pregled;
         mps_data.push(tmp);
-
     }
 
     var partyObjects = getPartyObjects(mpsops);
