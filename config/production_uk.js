@@ -11,5 +11,4 @@ module.exports = {
     base: 'http://uk.parlameter.si',
   },
   cardLang: 'en',
-  ogRootUrl: 'http://glej.uk.parlameter.si/og_cards',
 };

@@ -96,8 +96,9 @@ export default {
   created() {
     const ogConfig = this.ogConfig;
     if (ogConfig) {
-      const ogImagePath = `${slugs.urls.glej}/og-image/${ogConfig.name}/`;
-      const ogImageParams = `?${Object.keys(ogConfig).map(k => `${k}=${encodeURIComponent(ogConfig[k])}`).join('&')}`;
+      const { name, ...params } = ogConfig;
+      const ogImagePath = `${slugs.urls.glej}/og-image/${name}/`;
+      const ogImageParams = `?${Object.keys(params).map(k => `${k}=${encodeURIComponent(params[k])}`).join('&')}`;
       this.$root.$options.cardData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
     } else {
       // eslint-disable-next-line no-console

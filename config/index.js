@@ -21,7 +21,6 @@ const defaultConfig = {
   },
   cardLang: 'sl',
   ogCapturePath: './og',
-  ogRootUrl: 'http://localhost:3000/og_cards',
 };
 
 if (env === 'production') {

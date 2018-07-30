@@ -139,6 +139,7 @@ async function renderOgImage(cacheData, ogJson) {
     updated: ogJson.updated,
   });
 
+  await fs.ensureDir(config.ogCapturePath);
   await fs.writeFile(`${config.ogCapturePath}/${ogRender.id}.html`, html);
 
   await takeScreenshot(`${config.ogCapturePath}/${ogRender.id}.png`, {
