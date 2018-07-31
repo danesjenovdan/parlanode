@@ -4,11 +4,11 @@ module.exports = {
     name: 'parladb',
   },
   urls: {
-    analize: 'http://analize.parlameter.si/v1',
-    data: 'http://data.parlameter.si/v1',
-    isci: 'http://isci.parlameter.si',
-    glej: 'http://glej.parlameter.si',
-    base: 'http://parlameter.si',
+    analize: 'https://analize.parlameter.si/v1',
+    data: 'https://data.parlameter.si/v1',
+    isci: 'https://isci.parlameter.si',
+    glej: 'https://glej.parlameter.si',
+    base: 'https://parlameter.si',
   },
   cardLang: 'sl',
 };
