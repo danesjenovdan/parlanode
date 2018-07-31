@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "A list of links to all the speeches where the searched query was used.",
-    "text": "From all the speeches in the transcripts we identify and print out links to all votes where the searched query was mentioned. Results are then sorted by date from newer to older. The user can then sort the displayed speeches by a time period, the MP, the parliamentary group or the session."
+    "text": "From all transcribed speeches we identify and print out links to all votes where the searched query was mentioned. Results are then sorted by date from newer to older. The user can then search through displayed speeches by a time period, an MP, a parliamentary group or a session."
   }
 }

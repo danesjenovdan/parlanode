@@ -3,7 +3,7 @@
     "title": "Voting events which contain the query"
   },
   "info": {
-    "lead": "A list of all the laws or acts which contain the searched query either in the title or in the abstract and were voted on during this sitting.",
-    "text": "We look for the searched query in all the titles and abstracts of laws and acts discussed in this sitting. Links to results are displayed in order of relevance to the searched query."
+    "lead": "A list of all laws or acts which contain the searched query either in the title or in the abstract and were voted on during this sitting.",
+    "text": "We look for the searched query in all the titles and abstracts of laws and acts discussed in this sitting. Links to results are displayed in order of relevance."
   }
 }
