@@ -1,51 +1,27 @@
-"use strict";
-const server  = require('./server');
-const config  = require('./config');
-const router  = require('./router');
-const dataService = require('./services/data-service');
+const chalk = require('chalk');
+const data = require('./server/data');
+const server = require('./server/server');
 
-function init(){
-
-  return preloadSPS()
-    .then(() => preloadMPS())
-    .then(() => preloadOPS())
-    .then(() => preloadMPSOPS())
-    .then(() => preloadMPSOPSURLS())
-    .then(server.start)
-    .then(router)
+function init() {
+  return Promise.resolve()
+    .then(data.preload)
+    .then(server.init)
     .then(() => {
-      console.log(`All is well on port ${config.PORT}`);
+      // eslint-disable-next-line no-console
+      console.log(chalk.green('All is well!'));
     })
-    .catch((err)=>{
-      console.log(err);
+    .catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(chalk.red('Failed to start:'), err);
+      process.exit(1);
     });
-
-}
-
-function preloadSPS(){
-  console.log('Preloading SPS data');
-  return dataService.loadSPS();
-}
-function preloadMPS(){
-  console.log('Preloading MPS data');
-  return dataService.loadMPS();
-}
-function preloadOPS(){
-  console.log('Preloading OPS data');
-  return dataService.loadOPS();
-}
-function preloadMPSOPS(){
-  console.log('Preloading MPSOPS data');
-  return dataService.loadMPSOPS();
-}
-function preloadMPSOPSURLS(){
-  console.log('Preloading MPSOPSURLS data');
-  return dataService.loadMPSOPSURLS();
 }
 
 if (require.main === module) {
   init();
 }
 
-exports.app = server.app;
-exports.init = init;
+module.exports = {
+  app: server.app,
+  init,
+};

@@ -2,7 +2,6 @@
 const _           = require('lodash');
 const fetch       = require('node-fetch');
 const UrlPattern  = require('url-pattern');
-const Promise     = require('bluebird');
 const config      = require('./config');
 const slug        = require('slug');
 const mpsList     = require('./services/data-service').mps;
