@@ -9,11 +9,7 @@ const opsList     = require('./services/data-service').ops;
 const spsList     = require('./services/data-service').sps;
 const mpsopsList  = require('./services/data-service').mpsops;
 const ejs         = require('ejs');
-const webshot     = require('webshot');
-const fs          = require('fs');
 const hash        = require('object-hash');
-const https       = require('https');
-const dataService = require('./services/data-service');
 
 
 function resolve_card(req, card, state = {}) {
@@ -59,132 +55,6 @@ function resolve_card_with_custom_url(url, req, card, state = {}) {
 }
 
 const routes = [
-  {
-    path      : '/',
-    viewPath  : 'landing',
-    pageTitle : 'Parlameter',
-    cards     : [
-      {
-        name      : 'izpostavljenaZakonodaja',
-        sourceUrl : '/c/izpostavljena-zakonodaja/',
-        resolve   : (req, res, route, card) => {
-          return resolve_card(req, card);
-        },
-      },
-      {
-        name      : 'zadnjaSeja',
-        sourceUrl : '/c/zadnja-seja/',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl)
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
-        }
-      },
-      // {
-      //   name      : 'besedniZaklad',
-      //   sourceUrl : '/c/besedni-zaklad-vsi/',
-      //   resolve   : (req, res, route, card) => {
-      //     return getMPIdByName(req.params.fullName, req)
-      //       .then((mpData) => {
-      //         let mpId    = mpData.mpId;
-      //         let mpSlug  = mpData.mpSlug;
-      //         let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-      //         if (req.query.forceRender) {
-      //           cardUrl += '?forceRender=true';
-      //         }
-
-      //         return fetch(cardUrl)
-      //           .then((res) => {
-      //             return res.text();
-      //           })
-      //           .then((body) => {
-      //             return body;
-      //           });
-      //       });
-      //   }
-      // },
-      {
-        name      : 'zadnjeSeje',
-        sourceUrl : '/s/zadnjih-5-sej/?customUrl=https%3A%2F%2Fanalize.hr.parlameter.si%2Fv1%2Fs%2FgetSessionsList&state=%7B"onlyLatest"%3Atrue%7D',
-        resolve   : (req, res, route, card) => {
-
-          return getMPIdByName(req.params.fullName, req)
-            .then((mpData) => {
-
-              let mpId   = mpData.mpId;
-              let mpSlug = mpData.mpSlug;
-
-              let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
-
-              if (req.query.forceRender) {
-                cardUrl += '?forceRender=true';
-              }
-
-              return fetch(cardUrl, { rejectUnauthorized : false })
-                .then((res) => {
-
-                  return res.text();
-
-                })
-                .then((body) => {
-
-                  return body;
-
-                });
-
-            });
-
-        }
-      }
-    ]
-  },
-  {
-    path        : '/zakonodaja',
-    viewPath    : 'zakonodaja',
-    pageTitle   : 'Zakonodaja',
-    cards       : [{
-      name: 'zakonodaja',
-      sourceUrl: '/c/zakonodaja/',
-      resolve: (req, res, route, card) => resolve_card_with_custom_url('http://analize.hr.parlameter.si/v1/s/getAllLegislation/', req, card, {generator: true})
-    }]
-  },
-  {
-    path        : /^\/zakonodaja\/(.+)/,
-    viewPath    : 'zakonodaja/zakon',
-    pageTitle   : 'Zakonodaja',
-    cards       : [{
-      name: 'zakon',
-      sourceUrl: '/s/zakon/',
-      resolve: (req, res, route, card) => {
-        return resolve_card_with_custom_url('http://analize.hr.parlameter.si/v1/s/getLegislation/' + req.params[0], req, card, {})
-      },
-    }]
-  },
   {
       path      : '/orodja',
       viewPath  : 'orodja',
@@ -1574,36 +1444,6 @@ const routes = [
     ]
   },
   {
-    path      : '/seje',
-    viewPath  : 'seje',
-    pageTitle : 'Seznam sej',
-    cards     : [
-      {
-        name      : 'seznamSej',
-        sourceUrl : '/s/seznam-sej/',
-        resolve   : (req, res, route, card) => {
-
-          //var pattern = new UrlPattern(card.sourceUrl);
-          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
-
-          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
-
-          if (req.query.forceRender) {
-            cardUrl += '?forceRender=true';
-          }
-
-          return fetch(cardUrl)
-            .then((res) => {
-              return res.text();
-            })
-            .then((body) => {
-              return body;
-            });
-        }
-      },
-    ]
-  },
-  {
     path       : '/seje/isci/',
     extraPaths : ['/search/', '/seje/search/', '/isci/'],
     viewPath   : 'seje/search',
@@ -1614,13 +1454,6 @@ const routes = [
     extraPaths : ['/search/filter/', '/seje/search/filter/', '/isci/filter/'],
     viewPath   : 'seje/search/filter',
     pageTitle  : 'Išči seje',
-  },
-  {
-    path       : '/seje/tip/:fullName',
-    extraPaths : ['/seje/tip/:fullName/:date'],
-    viewPath   : 'seje/tip',
-    pageTitle  : 'Seja <%- name %>',
-    cards      : []
   },
   {
     path       : '/seja/glasovanje/:id/:motionid',
@@ -1832,41 +1665,6 @@ const routes = [
       // },
     ]
   },
-  {
-    path      : '/seje/:imeAnalize',
-    viewPath  : 'seje/seja',
-    pageTitle : 'Seja - <%- imeAnalize %>',
-    cards     : {
-      poslanec : {
-        url : ''
-      }
-    }
-  },
-  {
-    path      : '/pravno-obvestilo',
-    viewPath  : 'about/pravno-obvestilo',
-    pageTitle : 'Pravno obvestilo',
-  },
-  {
-    path      : '/za-medije',
-    viewPath  : 'about/za-medije',
-    pageTitle : 'Za medije'
-  },
-  {
-    path      : '/o-projektu',
-    viewPath  : 'about/o-projektu',
-    pageTitle : 'O projektu',
-  },
-  {
-    path      : '/parlameter-obvestila',
-    viewPath  : 'obvestila',
-    pageTitle : 'Parlameter obvestila',
-  },
-  {
-    path      : '/parlameter-obvestila/settings',
-    viewPath  : 'obvestila/settings',
-    pageTitle : 'Parlameter obvestila - nastavitve',
-  }
 ];
 
 module.exports = (app) => {
@@ -1878,67 +1676,11 @@ module.exports = (app) => {
     });
   });
 
-  /**
-   * Fetch and update sps data
-   */
-  app.get('/fetch/sps', (req, res) => {
-
-    if (req.query.t !== 'vkSzv8Nu4eDkLBk7kUw4BBhyLjysJm') return res.status(400).send('Missing or wrong token');
-
-    dataService.loadSPS(true)
-      .then(spsData => res.send(spsData))
-      .catch(err => res.status(400).send(err || err.stack));
-
-  });
-
   // redirect from glasovanja to druga-glasovanja
   app.get('/seja/glasovanja/:sessionId', (req, res) => {
     res.redirect('/seja/druga-glasovanja/' + req.params.sessionId);
   });
-
-  app.get('/*', function (req, res) {
-    res.status(404).render('error/404', { pageTitle : "Sorry, page not found", activeMenu : "", ogImageUrl : "" });
-  });
 };
-
-
-/**
- * Render og image
- * @param {String} ejsPath
- * @param {String} ogPath
- * @param {Object} data
- */
-function renderOg(ejsPath, ogPath, data) {
-
-  return new Promise((resolve, reject) => {
-
-    try {
-
-      const ogEjs  = fs.readFileSync(ejsPath, 'utf-8');
-      const ogHtml = ejs.render(ogEjs, data);
-
-      webshot(ogHtml, ogPath, {
-        siteType        : 'html',
-        captureSelector : '#og-container',
-        quality         : 80
-      }, (err) => {
-
-        if (err) return reject(err);
-
-        resolve();
-
-      });
-
-    }
-    catch (err) {
-
-      reject(err);
-
-    }
-
-  });
-
-}
 
 function createRoute(app, route) {
   app.get(route.path, (req, res) => {
@@ -2089,55 +1831,6 @@ function createRoute(app, route) {
             }
 
           }
-          else if (route.viewPath.indexOf("seje") > -1) {
-
-            getSessionsByType(req.params, req)
-              .then((sesData) => {
-
-                // const pageTitle = ejs.render(route.pageTitle, {name: req.params.fullName.split('-').join(' ')});
-
-                const dataExtend = {
-                  sesData     : sesData,
-                  slug        : req.slug,
-                  activeMenu  : route.viewPath,
-                  views,
-                  'pageTitle' : 'Seznam sej'
-                };
-
-                Object.assign(common, dataExtend);
-
-                const hashObject = {
-                  sesData : sesData.s
-                };
-
-                // console.log(sesData);
-
-                const hashString = hash(hashObject);
-                const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
-
-                // console.log('Seje');
-
-                common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
-
-                if (forceRenderOg) {
-
-                  renderOg('views/og/seznam_sej.ejs', ogPath, common)
-                    .then(() => {
-
-                      res.render(route.viewPath, common);
-
-                    });
-
-                }
-                else {
-
-                  res.render(route.viewPath, common);
-
-                }
-
-              });
-
-          }
           else if (route.viewPath.indexOf("seja") > -1) {
             var session_type = '';
             if (route.viewPath.indexOf("/transkript/dt/")) {
@@ -2188,41 +1881,7 @@ function createRoute(app, route) {
 
               });
 
-          } else if (route.viewPath.indexOf('zakonodaja') !== -1) {
-            if (route.viewPath.indexOf('/zakon') !== -1) {
 
-              getLawDataByEPA(req.params[0]).then((lawData) => {
-                // console.log(lawData);
-
-                const dataExtend = {
-                  slug: req.slug,
-                  activeMenu: route.viewPath,
-                  pageTitle: lawData.text,
-                  lawData,
-                  views,
-                };
-
-                Object.assign(common, dataExtend);
-
-                common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
-
-                res.render(route.viewPath, common);
-              });
-            } else {
-
-              const dataExtend = {
-                slug: req.slug,
-                activeMenu: 'zakonodaja',
-                pageTitle: 'Zakonodaja',
-                views,
-              };
-
-              Object.assign(common, dataExtend);
-
-              common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
-
-              res.render(route.viewPath, common);
-            }
 
           } else if (route.viewPath.indexOf('orodja') > -1) {
             // console.log('orodja');
@@ -2269,15 +1928,12 @@ function createRoute(app, route) {
             // }
           } else {
 
-            var activeMenu = (route.viewPath == 'landing') ? route.viewPath : 'P';
             getMPIdByName(req.params.fullName, req)
               .then((mpData) => {
 
                 // POSLANEC
 
                 let pageTitle = 'Parlameter';
-
-                // console.log('Landing');
 
                 if (mpData.mp) {
                   pageTitle = ejs.render(route.pageTitle, { name : mpData.mp.name });
@@ -2291,47 +1947,6 @@ function createRoute(app, route) {
                   };
 
                   Object.assign(common, dataExtend);
-
-                  const hashObj = {
-                    mpId     : mpData.mpId,
-                    nameSlug : mpData.mp.nameSlug
-                  };
-
-                  const hashString = hash(hashObj);
-                  const ogPath     = config.OG_CAPTURE_PATH + hashString + '.jpeg';
-
-                  common.ogImageUrl = config.OG_ROOT_URL + hashString + '.jpeg';
-
-                  if (forceRenderOg) {
-
-                    renderOg('views/og/poslanec.ejs', ogPath, common)
-                      .then(() => {
-
-                        res.render(route.viewPath, common);
-
-                      });
-
-                  }
-                  else {
-
-                    res.render(route.viewPath, common);
-
-                  }
-
-                }
-                else {
-
-                  const dataExtend = {
-                    mp         : mpData.mp,
-                    slug       : req.slug,
-                    activeMenu : route.viewPath,
-                    pageTitle  : pageTitle,
-                    views
-                  };
-
-                  Object.assign(common, dataExtend);
-
-                  common.ogImageUrl = 'https://cdn.parlameter.si/v1/parlassets/og_cards/site/og-parlameter.png';
 
                   res.render(route.viewPath, common);
 
@@ -2563,12 +2178,6 @@ function getMPIdByName(name, req) {
   // });
 }
 
-function getLawDataByEPA(epa, req) {
-  return fetch(`http://analize.hr.parlameter.si/v1/s/getLegislation/${epa}`)
-    .then((res) => res.json());
-}
-
-
 function getPSIdByName(name, req) {
   let psId;
   let psSlug;
@@ -2716,11 +2325,5 @@ function getSessionsByType(params, req) {
 
   return Promise.resolve({ psId, psSlug, sesData : returnData, type : type });
   // });
-
-}
-
-
-//http://analize.hr.parlameter.si/v1/p/getSlugs/
-function getAllLinks() {
 
 }

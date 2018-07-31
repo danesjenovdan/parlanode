@@ -1,23 +1,24 @@
-<% include partials/header.ejs %>
+<% include ./_partials/header.ejs %>
 
 <div class="row">
-    <div class="col-md-10 col-md-offset-1" id="about">
-        <div class="lead-text-container">
-            <a href="/o-projektu" class="lead-text">Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.&nbsp;</a>
-        </div>
+  <div class="col-md-10 col-md-offset-1" id="about">
+    <div class="lead-text-container">
+      <a href="/o-projektu" class="lead-text">
+        Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.
+      </a>
     </div>
+  </div>
 </div>
 
-
-<% include partials/session_search_landing.ejs %>
+<% include ./_partials/session_search_landing.ejs %>
 
 <div class="row">
     <div class="col-md-12">
-        <%- views.izpostavljenaZakonodaja %>
+        <%- 'views.izpostavljenaZakonodaja' %>
     </div>
     <div class="col-md-12 ">
-        <%- views.zadnjaSeja %>
+        <%- 'views.zadnjaSeja' %>
     </div>
 </div>
 
-<% include partials/footer.ejs %>
+<% include ./_partials/footer.ejs %>

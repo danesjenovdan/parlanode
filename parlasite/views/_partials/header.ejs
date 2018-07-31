@@ -18,7 +18,7 @@ function getActiveMenu(inp) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,500&amp;subset=latin,latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700" rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='https://cdn.parlameter.si/v1/parlassets/icons/favicon.ico'/>
     <meta name="google-site-verification" content="KR2vVdu1jrwHQR26kJHqQVzvC9fwJEoM1DOId7y7HWQ" />
@@ -27,12 +27,12 @@ function getActiveMenu(inp) {
     <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<%- pageTitle %>">
-    <meta name="twitter:image" content="<%- ogImageUrl %>">
+    <% if (typeof ogImageUrl !== 'undefined') { %><meta name="twitter:image" content="<%- ogImageUrl %>"><% } %>
 
     <meta property="og:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<%- pageTitle %>">
-    <meta property="og:image" content="<%- ogImageUrl %>">
+    <% if (typeof ogImageUrl !== 'undefined') { %><meta property="og:image" content="<%- ogImageUrl %>"><% } %>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.parlameter.si/v1/parlassets/scss/style.css" rel="stylesheet">
@@ -43,7 +43,7 @@ function getActiveMenu(inp) {
     <script src="https://unpkg.com/vue@2.5.16/dist/vue.min.js"></script>
     <script src="https://unpkg.com/vue-i18n@7.7.0/dist/vue-i18n.js"></script>
     <script src="https://cdn.ravenjs.com/3.15.0/vue/raven.min.js"></script>
-    <script>Raven.config('https://b615fce983b843c8958aedcd3a9c9d60@sentry.ilol.si/70').install()</script>
+    <script>/*Raven.config('https://b615fce983b843c8958aedcd3a9c9d60@sentry.ilol.si/70').install()*/</script>
     <script src="https://cdn.parlameter.si/v1/parlassets/js/script.js"></script>
     <script src="https://cdn.parlameter.si/v1/parlassets/js/components.js"></script>
 
@@ -85,7 +85,6 @@ function getActiveMenu(inp) {
             <div class="navbar-header">
                 <a class="navbar-brand logo" href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282.82 170.08">
-                        <title>Asset 1</title>
                         <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
                                 <g id="_Group_" data-name="&lt;Group&gt;">

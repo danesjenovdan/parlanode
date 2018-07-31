@@ -1,4 +1,4 @@
-<%
+<%/*
     function getPartyObjects(data) {
         var parties = [];
         for (person_i in data) {
@@ -28,12 +28,12 @@
     }
 
     var partyObjects = getPartyObjects(mpsops);
-%>
+*/%>
 <script>
     var  mps_data;
     var  ops_data;
     var  sps_data;
 
-    ops_data = <%- JSON.stringify(uniq(partyObjects, 'acronym')); %>;
-    mps_data = <%- JSON.stringify(mps_data); %>;
+    ops_data = <%-/* JSON.stringify(uniq(partyObjects, 'acronym')); */%>;
+    mps_data = <%-/* JSON.stringify(mps_data); */%>;
 </script>

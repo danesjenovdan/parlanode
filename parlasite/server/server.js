@@ -23,20 +23,25 @@ function setupExpress() {
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // eslint-disable-next-line global-require
-    require('./resources')(app);
+    require('./routes')(app);
 
-    // TODO: 404
+    // all other routes
     app.get('*', (req, res) => {
-      res.status(400).send('Bad Request');
+      res.status(404).render('error/404', {
+        pageTitle: '404 Not Found',
+        activeMenu: '',
+      });
     });
 
     // catch-all error handler (needs all 4 args)
     // eslint-disable-next-line no-unused-vars
     app.use((error, req, res, next) => {
+      // TODO: sentry
+      console.log('error', error);
       res.status(500).render('error/500', {
-        title: '500: Internal Server Error',
-        error,
+        pageTitle: '500 Internal Server Error',
         activeMenu: '',
+        error,
       });
     });
 

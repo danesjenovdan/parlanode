@@ -1,0 +1,56 @@
+<% include ../_partials/header.ejs %>
+
+<style>
+/* TODO: remove style tags from templates */
+.backgroundwhite {
+  background: #fff;
+  padding: 15px;
+}
+.v-obravnavi {
+  width: 25px!important;
+  height: 25px;
+  background: url(https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg);
+  background-size: contain!important;
+  margin-bottom: -6px;
+  position: relative;
+  display: inline-block;
+}
+</style>
+
+<div class="session-container">
+  <div class="row header  text-center">
+    <div class="col-lg-12">
+      <% if (lawData.icon) { %>
+        <div class="media-object img-circle session-logo backgroundwhite">
+          <img src="https://cdn.parlameter.si/v1/parlassets/icons/legislation/<%= lawData.icon %>">
+        </div>
+      <% } else { %>
+        <div class="media-object img-circle session-logo backgroundred">
+          <b>Z</b>
+        </div>
+      <% } %>
+      <h1 style="max-width: 600px; position: relative; margin: auto;"><%= lawData.text %></h1>
+      <br />
+      <font class="date">
+        <%= lawData.created_at %> <!-- TODO: ?? -->
+      </font>
+      <%
+        if (lawData.result == 'accepted') {
+          icon = 'glyphicon-ok';
+          color = '#009cdd';
+        } else if (lawData.result === 'rejected') {
+          icon = 'glyphicon-remove';
+          color = '#ff5e41';
+        } else {
+          icon = 'v-obravnavi';
+          color = '#333333';
+        }
+      %>
+      <h2><i class="glyphicon <%= icon %>" style="color: <%= color %>;"></i> <%= lawData.result || 'v obravnavi' %></h2>
+    </div>
+  </div>
+</div>
+
+<%- 'views.zakon' %>
+
+<% include ../_partials/footer.ejs %>

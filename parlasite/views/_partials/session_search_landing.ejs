@@ -24,7 +24,7 @@
 
                         <div class="input-group search">
                             <input type="text" class="form-control search-input-header simplebox" placeholder=""
-                                   name="q" value="<%= query.q; %>">
+                                   name="q" value="<%= query; %>">
                             <span class="input-group-btn">
                             <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"
                                                                                 aria-hidden="true"></span></button>
@@ -37,9 +37,9 @@
 
                     </form>
 
-                    <% if((typeof query.q !== "undefined") && (query.q.length > 0)){ %>
+                    <% if((typeof query !== "undefined") && (query.length > 0)){ %>
                     <br><br>
-                    <h3 class="searchresults">Rezultati za iskalni niz "<%= query.q; %>"</h3>
+                    <h3 class="searchresults">Rezultati za iskalni niz "<%= query; %>"</h3>
                     <% } %>
 
                 </div>

@@ -2,15 +2,31 @@ const path = require('path');
 const fs = require('fs-extra');
 const fetch = require('node-fetch');
 const { CronJob } = require('cron');
+const config = require('../config');
 
 const dataPath = path.resolve(__dirname, '../data');
 fs.ensureDirSync(dataPath);
 
 const dataFiles = {
-  urls: 'http://analize.hr.parlameter.si/v1/p/getSlugs/',
-  mps: 'http://analize.hr.parlameter.si/v1/p/getAllActiveMembers/',
-  pgs: 'http://data.hr.parlameter.si/v1/getAllPGs/',
-  sessions: 'http://analize.hr.parlameter.si/v1/s/getSessionsByClassification/',
+  urls: `${config.urls.analize}/p/getSlugs/`,
+  mps: `${config.urls.analize}/p/getAllActiveMembers/`,
+  pgs: `${config.urls.data}/getAllPGs/`,
+  sessions: `${config.urls.analize}/s/getSessionsByClassification/`,
+  laws: `${config.urls.analize}/s/getAllLegislation/`,
+};
+
+const dataTransforms = {
+  urls(data) {
+    // allow replacing urls in config
+    data.urls = { ...data.urls, ...config.urls };
+    return data;
+  },
+  pgs(data) {
+    return Object.keys(data).map(key => data[key]);
+  },
+  laws(data) {
+    return data.results;
+  },
 };
 
 const loadedData = {};
@@ -19,7 +35,8 @@ async function fetchData(name) {
   const filePath = path.resolve(dataPath, `${name}.json`);
   const res = await fetch(dataFiles[name]);
   if (res.ok && res.status >= 200 && res.status < 400) {
-    const data = await res.json();
+    let data = await res.json();
+    data = dataTransforms[name] ? dataTransforms[name](data) : data;
     await fs.writeJson(filePath, data, {
       spaces: 2,
     });
@@ -85,5 +102,8 @@ module.exports = {
   },
   get sessions() {
     return loadedData.sessions;
+  },
+  get laws() {
+    return loadedData.laws;
   },
 };
