@@ -1,100 +1,95 @@
+<% include ../../_partials/header.ejs %>
+
+<%# TODO: this whole file; extract search into a component or card %>
 <div class="session-container session-search-container">
-    <div class="row">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="narrow-inner-container">
+        <h2>Išči po vseh sejah</h2>
+        <form method="get" action="/seje/isci/filter">
+          <div class="input-group search">
+            <input type="text" class="form-control simplebox" placeholder="" name="q" value="<%= query %>">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </span>
+          </div>
+        </form>
+        <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
+      </div>
 
-        <div class="col-lg-12">
-            <div class="narrow-inner-container">
-                <h2>Išči po vseh sejah</h2>
-
-                <form method="get" action="/seje/isci/filter">
-
-                    <div class="input-group search">
-                        <input type="text" class="form-control simplebox" placeholder="" name="q" value="<%=query.q;%>">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </span>
-                    </div>
-                </form>
-                <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
-
-            </div>
-
-            <% if((typeof query.q !== "undefined") && (query.q.length > 0)){%>
+      <% if ((typeof query !== "undefined") && (query.length > 0)) { %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="searchfilter-container searchfilter-master-container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="searchfilter-container searchfilter-master-container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="searchfilter-container" id="pps">
-                                            <div class="searchfilter-label">Išči po poslancih in/ali poslanskih skupinah</div>
-                                            <div class="searchfilter-input">
-                                                <search-dropdown :alphabetise="false" :items="ppspodatki" :groups="ppsskupine" :placeholder="ppsinputPlaceholder"></search-dropdown>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="searchfilter-container" id="cas">
-                                            <div class="searchfilter-label">Išči v časovnem obdobju</div>
-                                            <div class="searchfilter-input">
-                                                <search-dropdown :alphabetise="false" :items="caspodatki" :placeholder="casinputPlaceholder"></search-dropdown>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="searchfilter-container" id="seje">
-                                    <div class="searchfilter-label">Išči po sejah</div>
-                                    <div class="searchfilter-checkbox">
-                                        <input id="dz" type="checkbox" class="checkbox" @click="toggleDZ" v-bind:checked="dz" v-bind:disabled="dzDisabled">
-                                        <label for="dz">Seje Državnega zbora</label>
-                                    </div>
-                                    <div class="searchfilter-checkbox">
-                                        <input id="kdz" type="checkbox" class="checkbox" @click="toggleKolegij" v-bind:checked="council" v-bind:disabled="kolegijDisabled">
-                                        <label for="kdz">Seje Kolegija predsednika Državnega zbora</label>
-                                    </div>
-                                    <div class="searchfilter-checkbox">
-                                        <input id="dt" type="checkbox" @click="handleCheckbox" v-bind:disabled="dtdisabled" :checked="dtchecked" class="checkbox with-input">
-                                        <label for="dt">&nbsp;</label>
-                                        <div class="searchfilter-input checkbox-searchfilter">
-                                            <search-dropdown v-bind:class="{ disabled: dtdisabled }" :items="dtpodatki" :alphabetise="false" @click="handleCheckbox" :placeholder="dtinputPlaceholder"></search-dropdown>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div v-show="fetching" class="search-loader">
-                            <div class="nalagalnik"></div>
-                        </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="searchfilter-container" id="pps">
+                      <div class="searchfilter-label">Išči po poslancih in/ali poslanskih skupinah</div>
+                      <div class="searchfilter-input">
+                        <search-dropdown :alphabetise="false" :items="ppspodatki" :groups="ppsskupine" :placeholder="ppsinputPlaceholder"></search-dropdown>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="/seje/isci?q=<%= query.q %>" class="parlabutton parlabutton-filter">Enostavno iskanje</a>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="searchfilter-container" id="cas">
+                      <div class="searchfilter-label">Išči v časovnem obdobju</div>
+                      <div class="searchfilter-input">
+                        <search-dropdown :alphabetise="false" :items="caspodatki" :placeholder="casinputPlaceholder"></search-dropdown>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-6">
+                <div class="searchfilter-container" id="seje">
+                  <div class="searchfilter-label">Išči po sejah</div>
+                  <div class="searchfilter-checkbox">
+                    <input id="dz" type="checkbox" class="checkbox" @click="toggleDZ" v-bind:checked="dz" v-bind:disabled="dzDisabled">
+                    <label for="dz">Seje Državnega zbora</label>
+                  </div>
+                  <div class="searchfilter-checkbox">
+                    <input id="kdz" type="checkbox" class="checkbox" @click="toggleKolegij" v-bind:checked="council" v-bind:disabled="kolegijDisabled">
+                    <label for="kdz">Seje Kolegija predsednika Državnega zbora</label>
+                  </div>
+                  <div class="searchfilter-checkbox">
+                    <input id="dt" type="checkbox" @click="handleCheckbox" v-bind:disabled="dtdisabled" :checked="dtchecked" class="checkbox with-input">
+                    <label for="dt">&nbsp;</label>
+                    <div class="searchfilter-input checkbox-searchfilter">
+                      <search-dropdown v-bind:class="{ disabled: dtdisabled }" :items="dtpodatki" :alphabetise="false" @click="handleCheckbox" :placeholder="dtinputPlaceholder"></search-dropdown>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- <div class="narrow-inner-container">
-                <br><br>
-                <h3 class="searchresults">Rezultati za iskalni niz "<%=query.q;%>"</h3>
-            </div> -->
-            <% } %>
-
+            <div v-show="fetching" class="search-loader">
+              <div class="nalagalnik"></div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/seje/isci?q=<%= query %>" class="parlabutton parlabutton-filter">Enostavno iskanje</a>
+        </div>
+      </div>
+      <% } %>
+
     </div>
+  </div>
 </div>
 
-<% include ./searchpopup.ejs %>
+<% include ../../_partials/searchpopup.ejs %>
 
 <script>
 
 // http://isci.hr.parlameter.si/filter/kriza?people=80
 
 // make query var
-var query = <%- JSON.stringify(query); %>;
+var query = <%- JSON.stringify(queryObj); %>;
 
 function capitalise(string) {
     return string[0].toUpperCase() + string.substring(1)
@@ -516,6 +511,24 @@ function capitalise(string) {
         }
     }
   });
-
-
 </script>
+
+<div id="session_search_results_filter">
+  <div class="col-md-12 ">
+    <div class="getmedata" id="nastopi-v-katerih-je-bil-iskalni-niz-izrecen"></div>
+  </div>
+  <div class="col-md-12 ">
+    <div class="getmedata" id="raba-skozi-cas"></div>
+  </div>
+  <div class="col-md-6 ">
+    <div class="getmedata" id="najveckrat-so-pojem-uporabili"></div>
+  </div>
+  <div class="col-md-6 ">
+    <div class="getmedata" id="raba-po-strankah"></div>
+  </div>
+  <div class="col-md-12 ">
+    <div class="getmedata-voting" id="glasovanja-search"></div>
+  </div>
+</div>
+
+<% include ../../_partials/footer.ejs %>

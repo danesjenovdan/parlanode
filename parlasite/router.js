@@ -1269,18 +1269,6 @@ const routes = [
     ]
   },
   {
-    path       : '/seje/isci/',
-    extraPaths : ['/search/', '/seje/search/', '/isci/'],
-    viewPath   : 'seje/search',
-    pageTitle  : 'Išči seje',
-  },
-  {
-    path       : '/seje/isci/filter/',
-    extraPaths : ['/search/filter/', '/seje/search/filter/', '/isci/filter/'],
-    viewPath   : 'seje/search/filter',
-    pageTitle  : 'Išči seje',
-  },
-  {
     path       : '/seja/glasovanje/:id/:motionid',
     extraPaths : ['/seja/glasovanje/:id/:motionid/:date', '/s/glasovanje/:id/:motionid', '/s/glasovanje/:id/:motionid/:date'],
     viewPath   : 'seja/glasovanje',

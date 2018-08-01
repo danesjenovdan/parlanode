@@ -1,0 +1,94 @@
+<% include ../../_partials/header.ejs %>
+
+<%# TODO: this whole file; extract search into a component or card %>
+<div class="session-container session-search-container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="narrow-inner-container">
+        <h2>Išči po vseh sejah</h2>
+        <form method="get" action="/seje/isci" class="searchForm">
+          <div class="input-group search">
+            <input type="text" class="form-control simplebox" placeholder="" name="q" value="<%= query %>">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </span>
+          </div>
+        </form>
+        <div class="searchinfo measure" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
+        <style>
+        .parlabutton-filter {
+            margin: auto;
+            position: relative;
+            width: 200px;
+            text-align: center;
+            color: #ffffff;
+            padding: 10px;
+            background-color: #197197;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+        }
+        .parlabutton-filter:hover {
+            background-color: #009cdd;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .tooltip-session-search-container {
+            max-width: 300px;
+        }
+        </style>
+        <script>
+        var progressbarTooltip = {
+          init: function (classname) {
+            var $majorparent = $('.' + classname);
+            $majorparent.append('<div class="progressbar-tooltip tooltip-' + classname + '"></div>');
+            $majorparent.find('.tooltipme')
+              .on('mouseover', function (e) {
+                $('.tooltip-' + classname)
+                  .css('opacity', 0.9)
+                  .html($(this).data('tooltiptext'))
+                  .css("left", (e.pageX - ($('.tooltip-' + classname).width() / 2) - $majorparent.offset().left))
+                  .css("top", (e.pageY + 40 - $majorparent.offset().top));
+              })
+              .on('mouseout', function(e) {
+                $('.tooltip-' + classname)
+                  .css('opacity', 0);
+              });
+          }
+        }
+        $(document).ready(function () {
+          progressbarTooltip.init('session-search-container');
+        });
+        </script>
+        <div class="col-md-12">
+          <a href="/seje/isci/filter?q=<%= query %>" class="parlabutton-filter tooltipme" data-tooltiptext="To je eksperimentalna funkcionalnost, trenutno dela zelo počasi. Delamo na optimizaciji, najbolj vztrajni pa jo lahko preizkusite že zdaj.">Napredno iskanje</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../../_partials/searchpopup.ejs %>
+
+<div id="session_search_results">
+  <div class="col-md-12 ">
+    <div class="getmedata" id="nastopi-v-katerih-je-bil-iskalni-niz-izrecen"></div>
+  </div>
+  <div class="col-md-12 ">
+    <div class="getmedata-legislation" id="zakonodaja"></div>
+  </div>
+  <div class="col-md-12 ">
+    <div class="getmedata" id="raba-skozi-cas"></div>
+  </div>
+  <div class="col-md-6 ">
+    <div class="getmedata" id="najveckrat-so-pojem-uporabili"></div>
+  </div>
+  <div class="col-md-6 ">
+    <div class="getmedata" id="raba-po-strankah"></div>
+  </div>
+  <div class="col-md-12 ">
+    <div class="getmedata-voting" id="glasovanja-search"></div>
+  </div>
+</div>
+
+<% include ../../_partials/footer.ejs %>
