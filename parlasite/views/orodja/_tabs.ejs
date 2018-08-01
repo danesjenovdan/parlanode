@@ -1,0 +1,46 @@
+<style>
+.party-list-generator li {
+  font-size: 12px !important;
+}
+
+.party-list-generator li a {
+  color: #fff;
+  text-decoration: none;
+}
+</style>
+
+<%
+  var tools = [
+    { id: 'obvestila', label: 'Parlameter obvestila', link: 'https://obvestila.parlameter.si/' },
+    { id: 'primerjalnik-glasovanj', label: 'Primerjalnik glasovanj', link: '/orodja/primerjalnik-glasovanj' },
+    { id: 'raziskovalec-neenotnosti', label: 'Raziskovalec neenotnosti', link: '/orodja/raziskovalec-neenotnosti' },
+    { id: 'parlamentarni-kompas', label: 'Parlamentarni kompas', link: '/orodja/parlamentarni-kompas' },
+    // { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
+    { id: 'skupine-besed', label: 'Skupine besed', link: '/orodja/skupine-besed' },
+  ];
+%>
+
+<div id="orodja-tabs-container" class="row">
+  <div class="party-list-generator col-md-12">
+    <ul class="analyses">
+      <% for (const tool of tools) { %>
+        <li class="<%- (tool.id === currentTool) ? 'selected' : '' %>">
+          <a href="<%- tool.link %>"><%- tool.label %></a>
+        </li>
+      <% } %>
+    </ul>
+
+    <div class="mobile-analyses">
+      <label for="tool">Izberi orodje</label>
+      <div class="select">
+        <select name="tools" id="tools" onchange="javascript:window.location.href = this.value">
+          <% for (const tool of tools) { %>
+            <option value="<%- tool.link %>" <%- (tool.id === currentTool) ? 'selected' : '' %>>
+              <%- tool.label %>
+            </option>
+          <% } %>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,158 @@
 <% include ../_partials/header.ejs %>
 
+<style>
+.tool {
+  text-align: center;
+  min-width: 290px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width : 767px) {
+  .tool {
+    margin-bottom: 15px;
+  }
+}
+
+.tool__overlay-link {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-indent: -9999px;
+}
+
+.tool-content {
+  border: 1px solid #c8c8c8;
+  padding: 22px 18px 45px 27px;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.tool-content:hover {
+  background-color: #dddbdb;
+  transition: all linear 0.3s;
+}
+
+.tool-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.96px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.tool-desc {
+  line-height: 24px;
+  font-weight: 300;
+  max-width: 238px;
+  margin: 0 auto;
+  padding-bottom: 17px;
+}
+
+.tool-arrow {
+  width: 36px;
+  height: 29px;
+  background: url(https://cdn.parlameter.si/v1/parlassets/icons/arrow_right_blue.svg) no-repeat;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: right ease-out 0.3s;
+}
+
+.tool:hover .tool-arrow {
+  right: 50%;
+  margin-right: -18px;
+}
+
+.circle {
+  height: 101px;
+  width: 102px;
+  background-color: #fff;
+  padding: 27px 15px 24px 27px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 auto;
+}
+
+.obvestila .circle {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/obvestila.svg');
+  background-size: 60px 50px;
+}
+
+.primerjalnik-glasovanj .circle {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/primerjalnik.svg');
+  background-size: 58px 48px;
+}
+
+.raziskovalec-neenotnosti .circle {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/neenotnost.svg');
+  background-size: 44px 44px;
+}
+
+.parlamentarni-kompas .circle {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/kompas.svg');
+  background-size: 50px 50px;
+}
+
+.parlatube .circle {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/parlatube.svg');
+  background-size: 39px 25px;
+}
+
+.skupine-besed .circle {
+  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/skupine-besed.svg');
+  background-size: 50px 50px;
+}
+</style>
+
+<%
+  var tools = [
+    {
+      icon  : 'obvestila',
+      title : 'Parlameter obvestila',
+      link  : 'https://obvestila.parlameter.si',
+      text  : 'Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).'
+    },
+    {
+      icon  : 'primerjalnik-glasovanj',
+      title : 'Primerjalnik glasovanj',
+      link  : '/orodja/primerjalnik-glasovanj',
+      text  : 'S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?'
+    },
+    {
+      icon  : 'raziskovalec-neenotnosti',
+      title : 'Raziskovalec neenotnosti',
+      link  : '/orodja/raziskovalec-neenotnosti',
+      text  : 'Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah.'
+    },
+    {
+      icon  : 'parlamentarni-kompas',
+      title : 'Parlamentarni kompas',
+      link  : '/orodja/parlamentarni-kompas',
+      text  : 'Vizualizacija vseh poslank in poslancev v virtualnem "prostoru". Dlje ko sta poslanca narazen, bolj različno glasujeta.'
+    },
+    // {
+    //   icon  : 'parlatube',
+    //   title : 'Parlatube',
+    //   link  : '/orodja/parlatube',
+    //   text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    // },
+    {
+      icon  : 'skupine-besed',
+      title : 'Skupine besed',
+      link  : '/orodja/skupine-besed',
+      text  : 'Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>'
+    },
+  ];
+%>
+
 <div id="orodja-container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1" id="about">
@@ -10,178 +163,18 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool" v-for="tool in tools">
-      <div class="tool-content" :class="tool.icon">
-        <a class="tool__overlay-link" :href="tool.link">{{ tool.title }}</a>
-        <div class="img-circle circle"></div>
-        <h3 class="tool-title">{{ tool.title }}</h3>
-
-        <p class="tool-desc" v-html="tool.text"></p>
-        <a class="tool-arrow" href="#"></a>
+    <% for (const tool of tools) { %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
+        <div class="tool-content <%- tool.icon %>">
+          <a class="tool__overlay-link" href="<%- tool.link %>"><%- tool.title %></a>
+          <div class="img-circle circle"></div>
+          <h3 class="tool-title"><%- tool.title %></h3>
+          <p class="tool-desc"><%- tool.text %></p>
+          <a class="tool-arrow" href="#"></a>
+        </div>
       </div>
-    </div>
+    <% } %>
   </div>
 </div>
-
-<script>
-  new Vue({
-      el: '#orodja-container',
-      data: {
-          tools: [
-              {
-                  icon  : 'obvestila',
-                  title : 'Parlameter obvestila',
-                  link  : 'https://obvestila.parlameter.si',
-                  text  : 'Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).'
-              },
-              {
-                  icon  : 'primerjalnik',
-                  title : 'Primerjalnik glasovanj',
-                  link  : '/orodja/primerjalnik-glasovanj',
-                  text  : 'S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?'
-              },
-              {
-                  icon  : 'raziskovalec',
-                  title : 'Raziskovalec neenotnosti',
-                  link  : '/orodja/raziskovalec-neenotnosti',
-                  text  : 'Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah.'
-              },
-              {
-                  icon  : 'kompas',
-                  title : 'Parlamentarni kompas',
-                  link  : '/orodja/parlamentarni-kompas',
-                  text  : 'Vizualizacija vseh poslank in poslancev v virtualnem "prostoru". Dlje ko sta poslanca narazen, bolj različno glasujeta.'
-              },
-              // {
-              //     icon  : 'parlatube',
-              //     title : 'Parlatube',
-              //     link  : '/orodja/parlatube',
-              //     text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-              // },
-              {
-                  icon  : 'skupine-besed',
-                  title : 'Skupine besed',
-                  link  : '/orodja/skupine-besed',
-                  text  : 'Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>'
-              },
-          ]
-      }
-  })
-</script>
-
-<style>
-  .tool {
-      text-align: center;
-      min-width: 290px;
-      overflow: hidden;
-      margin-bottom: 30px;
-  }
-
-  @media only screen and (max-width : 767px) {
-      .tool {
-          margin-bottom: 15px;
-      }
-  }
-
-  .tool__overlay-link {
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    text-indent: -9999px;
-  }
-
-  .tool-content {
-    border: 1px solid #c8c8c8;
-    padding: 22px 18px 45px 27px;
-    width: 100%;
-    float: left;
-    position: relative;
-
-  }
-
-  .tool-content:hover {
-    background-color: #dddbdb;
-    transition: all linear 0.3s;
-  }
-
-  .tool-title {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0.96px;
-    margin-bottom: 20px;
-    font-family: "Roboto Slab", sans-serif;
-  }
-
-  .tool-desc {
-    line-height: 24px;
-    font-weight: 300;
-    max-width: 238px;
-    margin: 0 auto;
-    padding-bottom: 17px;
-  }
-
-  .tool-arrow {
-      width: 36px;
-      height: 29px;
-      background: url(https://cdn.parlameter.si/v1/parlassets/icons/arrow_right_blue.svg) no-repeat;
-      background-size: contain;
-      display: block;
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      transition: right ease-out 0.3s;
-  }
-
-  .tool:hover .tool-arrow {
-      right: 50%;
-      margin-right: -18px;
-  }
-
-  .circle {
-    height: 101px;
-    width: 102px;
-    background-color: #fff;
-    padding: 27px 15px 24px 27px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    margin: 0 auto;
-  }
-
-  .obvestila .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/obvestila.svg');
-    background-size: 60px 50px;
-  }
-
-  .primerjalnik .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/primerjalnik.svg');
-    background-size: 58px 48px;
-  }
-
-  .raziskovalec .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/neenotnost.svg');
-    background-size: 44px 44px;
-  }
-
-  .kompas .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/kompas.svg');
-    background-size: 50px 50px;
-  }
-
-  .parlatube .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/parlatube.svg');
-    background-size: 39px 25px;
-  }
-
-  .skupine-besed .circle {
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/orodja/skupine-besed.svg');
-    background-size: 50px 50px;
-  }
-</style>
-
-
 
 <% include ../_partials/footer.ejs %>
