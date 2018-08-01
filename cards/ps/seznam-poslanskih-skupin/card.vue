@@ -42,8 +42,41 @@ import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import BlueButtonList from 'components/BlueButtonList.vue';
-import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
+
+const analysesIDs = [
+  {
+    id: 'seat_count',
+  },
+  {
+    id: 'presence_sessions',
+    unit: 'percent',
+  },
+  {
+    id: 'presence_votes',
+    unit: 'percent',
+  },
+  {
+    id: 'number_of_questions',
+    round: true,
+    roundingPrecision: 0,
+  },
+  {
+    id: 'vocabulary_size',
+  },
+  {
+    id: 'privzdignjeno',
+    roundingPrecision: 3,
+  },
+  {
+    id: 'preprosto',
+    roundingPrecision: 3,
+  },
+  {
+    id: 'problematicno',
+    roundingPrecision: 3,
+  },
+];
 
 export default {
   name: 'SeznamPoslanskihSkupin',
@@ -55,6 +88,13 @@ export default {
     common,
   ],
   data() {
+    const analyses = analysesIDs.map(a => ({
+      id: a.id,
+      label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
+      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
+      explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
+    }));
+
     return {
       data: this.$options.cardData.data.data,
       currentAnalysis: this.$options.cardData.parlaState.analysis || 'seat_count',
@@ -64,12 +104,12 @@ export default {
   computed: {
     headerConfig() {
       return defaultHeaderConfig(this, {
-        title: this.currentAnalysisData.title,
+        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
     ogConfig() {
       return defaultOgImage(this, {
-        title: this.currentAnalysisData.title,
+        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
     currentAnalysisData() {
