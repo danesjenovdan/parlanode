@@ -1,16 +1,9 @@
-"use strict";
-const _           = require('lodash');
-const fetch       = require('node-fetch');
-const UrlPattern  = require('url-pattern');
-const config      = require('./config');
-const slug        = require('slug');
-const mpsList     = require('./services/data-service').mps;
-const opsList     = require('./services/data-service').ops;
-const spsList     = require('./services/data-service').sps;
-const mpsopsList  = require('./services/data-service').mpsops;
-const ejs         = require('ejs');
-const hash        = require('object-hash');
-
+const _ = require('lodash');
+const fetch = require('node-fetch');
+const UrlPattern = require('url-pattern');
+const slug = require('slug');
+const ejs = require('ejs');
+const config = require('./config');
 
 function resolve_card(req, card, state = {}) {
   let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}`;
@@ -26,25 +19,6 @@ function resolve_card(req, card, state = {}) {
   if (req.query.forceRender) {
     cardUrl += '?forceRender=true';
   }
-
-  return fetch(cardUrl).then((res) => {
-    return res.text();
-  })
-  .then((body) => {
-    return body;
-  });
-}
-
-function resolve_card_with_custom_url(url, req, card, state = {}) {
-  // console.log(`resolving card with url ${url}`);
-  let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?customUrl=${encodeURIComponent(url)}`;
-  // console.log(cardUrl, 'prvic');
-  if (Object.keys(state).length !== 0) {
-    const stateString = encodeURIComponent(JSON.stringify(state));
-    cardUrl = `${cardUrl}&state=${stateString}`;
-  }
-
-  // console.log(cardUrl);
 
   return fetch(cardUrl).then((res) => {
     return res.text();
@@ -131,37 +105,6 @@ const routes = [
         resolve: (req, res, route, card) => resolve_card(req, card, {generator: true})
       },
     ]
-  },
-  {
-    path      : '/poslanci',
-    viewPath  : 'poslanci',
-    pageTitle : 'Seznam poslancev',
-    cards     : [
-      {
-        name      : 'seznamPoslancev',
-        sourceUrl : '/p/seznam-poslancev/',
-        resolve   : (req, res, route, card) => {
-
-          //var pattern = new UrlPattern(card.sourceUrl);
-          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
-
-          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
-          console.log(cardUrl);
-
-          if (req.query.forceRender) {
-            cardUrl += '&forceRender=true';
-          }
-
-          return fetch(cardUrl)
-            .then((res) => {
-              return res.text();
-            })
-            .then((body) => {
-              return body;
-            });
-        }
-      },
-    ],
   },
   {
     path       : '/p/:fullName',
@@ -908,47 +851,6 @@ const routes = [
     ]
   },
   {
-    path      : '/poslanske-skupine',
-    viewPath  : 'poslanske-skupine',
-    pageTitle : 'Seznam poslanskih skupin',
-    cards     : [
-      {
-        name      : 'seznamPoslanskihSkupin',
-        sourceUrl : '/ps/seznam-poslanskih-skupin/',
-        resolve   : (req, res, route, card) => {
-
-          //var pattern = new UrlPattern(card.sourceUrl);
-          //const renderedPath = pattern.stringify({motionid: req.params.motionid});
-
-          let cardUrl = `${config.CARD_RENDERER_API_ROOT}${card.sourceUrl}?state=%7B"generator"%3Atrue%7D`;
-          // console.log(cardUrl);
-
-          if (req.query.forceRender) {
-            cardUrl += '&forceRender=true';
-          }
-
-          return fetch(cardUrl)
-            .then((res) => {
-              return res.text();
-            })
-            .then((body) => {
-              return body;
-            });
-        }
-      },
-    ]
-  },
-  {
-    path      : '/poslanske-skupine/:imeAnalize',
-    viewPath  : 'poslanske-skupine/analiza',
-    pageTitle : 'Poslanske skupine - <%- imeAnalize %>',
-    cards     : {
-      poslanec : {
-        url : ''
-      }
-    }
-  },
-  {
     path       : '/poslanska-skupina/pregled/:fullName',
     extraPaths : ['/poslanska-skupina/pregled/:fullName/:date', '/poslanska-skupina/:fullName/pregled', '/ps/id/:id', '/ps/pregled/id/:id', '/ps/id/:id/:date', '/ps/pregled/id/:id/:date'],
     viewPath   : 'poslanska-skupina/pregled',
@@ -1674,11 +1576,6 @@ module.exports = (app) => {
       route.path = path;
       createRoute(app, route);
     });
-  });
-
-  // redirect from glasovanja to druga-glasovanja
-  app.get('/seja/glasovanja/:sessionId', (req, res) => {
-    res.redirect('/seja/druga-glasovanja/' + req.params.sessionId);
   });
 };
 

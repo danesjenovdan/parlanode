@@ -83,7 +83,7 @@ async function preload() {
 }
 
 // fetch new data one minute after restart
-setTimeout(refetch, 60000);
+// setTimeout(refetch, 60000);
 
 // fetch new data every day at 4am
 const cron = new CronJob('00 04 * * *', refetch);
