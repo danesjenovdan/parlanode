@@ -140,7 +140,6 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
 import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
-import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
 
 function getAge(date) {
@@ -149,6 +148,31 @@ function getAge(date) {
   }
   return differenceInCalendarYears(new Date(), parse(date));
 }
+
+const analysesIDs = [
+  {
+    id: 'demographics',
+  },
+  {
+    id: 'presence_votes',
+    round: true,
+    unit: 'percent',
+  },
+  {
+    id: 'number_of_questions',
+    round: true,
+    roundingPrecision: 0,
+  },
+  {
+    id: 'speeches_per_session',
+  },
+  {
+    id: 'spoken_words',
+  },
+  {
+    id: 'mismatch_of_pg',
+  },
+];
 
 export default {
   name: 'SeznamPoslancev',
@@ -177,6 +201,13 @@ export default {
       { id: 'm', label: 'moški', selected: false },
       { id: 'f', label: 'ženski', selected: false },
     ];
+
+    const analyses = analysesIDs.map(a => ({
+      id: a.id,
+      label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
+      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
+      explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
+    }));
 
     return {
       memberData: this.$options.cardData.data.data,
