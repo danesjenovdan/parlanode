@@ -31,9 +31,9 @@
       <% } %>
       <h1 style="max-width: 600px; position: relative; margin: auto;"><%= lawData.text %></h1>
       <br />
-      <font class="date">
+      <div class="date">
         <%= lawData.created_at %> <!-- TODO: ?? -->
-      </font>
+      </div>
       <%
         if (lawData.result == 'accepted') {
           icon = 'glyphicon-ok';

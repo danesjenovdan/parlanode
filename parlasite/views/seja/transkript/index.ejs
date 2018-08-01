@@ -13,13 +13,13 @@
             <h1> <%-sesData.name%></h1>
             <h2> <%-sesData.org.name%></h2>
 
-            <font class="date">
+            <div class="date">
                 <%-sesData.date%>
-            </font>
+            </div>
             <br/>
-            <font class="datepublished">
+            <div class="datepublished">
                 podatki objavljeni: <%-sesData.date%> <%=(sesData.in_review)?'(v pregledu)':null%>
-            </font>
+            </div>
             <% } %>
 
             <% //if((sesData.type != 'kolegij') && (sesData.votes == true)) { %>
