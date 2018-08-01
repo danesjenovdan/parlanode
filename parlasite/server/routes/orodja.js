@@ -9,18 +9,32 @@ router.get('/', (req, res) => {
   });
 });
 
-// router.get('/*', (req, res, next) => {
-//   const epa = req.params[0];
-//   const lawData = data.laws.find(law => law.epa === epa);
-//   if (lawData) {
-//     res.render('zakonodaja/zakon', {
-//       activeMenu: 'zakonodaja',
-//       pageTitle: 'Zakonodaja',
-//       lawData,
-//     });
-//   } else {
-//     next();
-//   }
-// });
+router.get('/primerjalnik-glasovanj', (req, res) => {
+  res.render('orodja/primerjalnik-glasovanj', {
+    activeMenu: 'orodja',
+    pageTitle: 'Primerjalnik glasovanj',
+  });
+});
+
+router.get('/raziskovalec-neenotnosti', (req, res) => {
+  res.render('orodja/raziskovalec-neenotnosti', {
+    activeMenu: 'orodja',
+    pageTitle: 'Raziskovalec neenotnosti',
+  });
+});
+
+router.get('/parlamentarni-kompas', (req, res) => {
+  res.render('orodja/parlamentarni-kompas', {
+    activeMenu: 'orodja',
+    pageTitle: 'Parlamentarni kompas',
+  });
+});
+
+router.get('/skupine-besed', (req, res) => {
+  res.render('orodja/skupine-besed', {
+    activeMenu: 'orodja',
+    pageTitle: 'Skupine besed',
+  });
+});
 
 module.exports = router;

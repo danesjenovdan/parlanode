@@ -1,7 +1,6 @@
-<% include ../../_partials/header.ejs %>
+<% include ../_partials/header.ejs %>
 
-
-<div id="orodja-skupine-besed-container" class="row">
+<div id="orodja-primerjalnik-container" class="row">
     <div class="party-list-generator col-md-12">
         <ul class="analyses">
             <li v-for="tool in tools"
@@ -14,13 +13,13 @@
             <label for="tool">Izberi orodje</label>
             <div class="select">
                 <select
-                        name="tools"
-                        id="tools"
-                        v-model="currentTool"
-                        @change="selectTool(currentTool)">
+                    name="tools"
+                    id="tools"
+                    v-model="currentTool"
+                    @change="selectTool(currentTool)">
                     <option
-                            v-for="tool in tools"
-                            :value="tool.id">
+                        v-for="tool in tools"
+                        :value="tool.id">
                         {{ tool.label }}
                     </option>
                 </select>
@@ -30,13 +29,13 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <%- views.skupineBesed %>
+        <%- 'views.primerjalnikGlasovanj' %>
     </div>
 </div>
 
 <script>
   new Vue({
-    el: '#orodja-skupine-besed-container',
+    el: '#orodja-primerjalnik-container',
     data: {
       tools: [
         { id: 'obvestila', label: 'Parlameter obvestila', link: 'https://obvestila.parlameter.si/' },
@@ -46,7 +45,7 @@
         // { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
         { id: 'skupine-besed', label: 'Skupine besed', link: '/orodja/skupine-besed' },
       ],
-      currentTool: 'skupine-besed'
+      currentTool: 'primerjalnik'
     },
     methods: {
       selectTool: function (toolId) {
@@ -65,4 +64,4 @@
     .party-list-generator li a { color: #fff; text-decoration: none;}
 </style>
 
-<% include ../../_partials/footer.ejs %>
+<% include ../_partials/footer.ejs %>

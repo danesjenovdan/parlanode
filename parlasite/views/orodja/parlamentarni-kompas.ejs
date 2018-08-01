@@ -1,6 +1,6 @@
-<% include ../../_partials/header.ejs %>
+<% include ../_partials/header.ejs %>
 
-<div id="orodja-primerjalnik-container" class="row">
+<div id="orodja-kompas-container" class="row">
     <div class="party-list-generator col-md-12">
         <ul class="analyses">
             <li v-for="tool in tools"
@@ -29,13 +29,13 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <%- views.primerjalnikGlasovanj %>
+        <%- 'views.kompas' %>
     </div>
 </div>
 
 <script>
   new Vue({
-    el: '#orodja-primerjalnik-container',
+    el: '#orodja-kompas-container',
     data: {
       tools: [
         { id: 'obvestila', label: 'Parlameter obvestila', link: 'https://obvestila.parlameter.si/' },
@@ -45,7 +45,7 @@
         // { id: 'parlatube', label: 'Parlatube', link: '/orodja/parlatube' },
         { id: 'skupine-besed', label: 'Skupine besed', link: '/orodja/skupine-besed' },
       ],
-      currentTool: 'primerjalnik'
+      currentTool: 'kompas'
     },
     methods: {
       selectTool: function (toolId) {
@@ -64,4 +64,4 @@
     .party-list-generator li a { color: #fff; text-decoration: none;}
 </style>
 
-<% include ../../_partials/footer.ejs %>
+<% include ../_partials/footer.ejs %>
