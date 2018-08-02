@@ -1,7 +1,6 @@
 const _ = require('lodash');
 const fetch = require('node-fetch');
 const UrlPattern = require('url-pattern');
-const slug = require('slug');
 const ejs = require('ejs');
 const config = require('./config');
 
