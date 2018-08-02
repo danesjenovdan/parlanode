@@ -7,13 +7,13 @@
 <div class="row">
   <div class="col-md-12">
     <% if (session.type === 'dz') { %>
-      <%- 'views.besedeKiSoZaznamovaleSejo' %>
+      <%- await fetchCard('/s/tfidf/', session.id) %>
     <% } %>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%- 'views.govori' %>
+    <%- await fetchCard('/s/govori/', session.id) %>
   </div>
 </div>
 <% } else { %>

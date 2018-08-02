@@ -6,7 +6,7 @@
 <% if (session.type != 'kolegij') { %>
   <% if (session.votes) { %>
     <div class="col-md-12">
-      <%- 'views.zakonodajaSeja' %>
+      <%- await fetchCard('/c/zakonodaja/', session.id, { customUrl: `{analize}/s/getLegislationList/${session.id}` }) %>
     </div>
   <% } else if (session.org.name === 'Državni zbor') { %>
     <% include ../empty-state/state1dz.ejs %>
@@ -14,18 +14,7 @@
     <% include ../empty-state/state1.ejs %>
   <% } %>
 <% } else { %>
-  <% if (session.votes) { %>
-    <div class="col-md-12">
-      <%- 'views.besedeKiSoZaznamovaleSejo' %>
-    </div>
-    <div class="col-md-12">
-      <%- 'views.transkript' %>
-    </div>
-  <% } else if (session.org.name === 'Državni zbor') { %>
-    <% include ../empty-state/state2dz.ejs %>
-  <% } else { %>
-    <% include ../empty-state/state2.ejs %>
-  <% } %>
+  <% include ../empty-state/state2.ejs %>
 <% } %>
 
 <% include ../_partials/footer.ejs %>

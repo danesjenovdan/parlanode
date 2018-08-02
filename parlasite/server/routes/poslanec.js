@@ -1,5 +1,6 @@
 const express = require('express');
 const data = require('../data');
+const { asyncRender: ar } = require('../utils');
 
 const router = express.Router();
 
@@ -12,10 +13,10 @@ function getData(idParam, slugParam) {
   return (id && mp && party) ? { mp, party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-]+)/pregled'], (req, res, next) => {
+router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-]+)/pregled'], ar((render, req, res, next) => {
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
-    res.render('poslanec/pregled', {
+    render('poslanec/pregled', {
       activeMenu: 'poslanci',
       pageTitle: `Pregled - ${mpData.mp.name}`,
       activeTab: 'pregled',
@@ -24,12 +25,12 @@ router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-
   } else {
     next();
   }
-});
+}));
 
-router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], (req, res, next) => {
+router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], ar((render, req, res, next) => {
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
-    res.render('poslanec/glasovanja', {
+    render('poslanec/glasovanja', {
       activeMenu: 'poslanci',
       pageTitle: `Glasovanja - ${mpData.mp.name}`,
       activeTab: 'glasovanja',
@@ -38,12 +39,12 @@ router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], (req, res, n
   } else {
     next();
   }
-});
+}));
 
-router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], (req, res, next) => {
+router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], ar((render, req, res, next) => {
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
-    res.render('poslanec/govori', {
+    render('poslanec/govori', {
       activeMenu: 'poslanci',
       pageTitle: `Govori - ${mpData.mp.name}`,
       activeTab: 'govori',
@@ -52,6 +53,6 @@ router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], (req, res, next) => 
   } else {
     next();
   }
-});
+}));
 
 module.exports = router;

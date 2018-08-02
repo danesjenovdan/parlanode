@@ -3,16 +3,16 @@
 <% include ./_header.ejs %>
 
 <div class="col-md-12">
-  <%- 'views.govori' %>
+  <%- await fetchCard('/ps/govori/', party.id, { customUrl: `{isci}/filter/*/0?parties=${party.id}`, state: { parties: party.id } }) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.besedeKiJihDelajoPosebne' %>
+  <%- await fetchCard('/ps/tfidf/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.besedniZaklad' %>
+  <%- await fetchCard('/ps/besedni-zaklad/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.stilneAnalize' %>
+  <%- await fetchCard('/ps/stilne-analize/', party.id) %>
 </div>
 
 <% include ../_partials/footer.ejs %>

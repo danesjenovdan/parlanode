@@ -2,6 +2,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const config = require('../../config');
 const data = require('../data');
+const { asyncRender: ar } = require('../utils');
 
 const router = express.Router();
 
@@ -18,10 +19,10 @@ function getData(idParam) {
   return (id && session) ? { session } : null;
 }
 
-router.get(['/:id(\\d+)', '/:id(\\d+)/zakonodaja'], (req, res, next) => {
+router.get(['/:id(\\d+)', '/:id(\\d+)/zakonodaja'], ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
-    res.render('seja/zakonodaja', {
+    render('seja/zakonodaja', {
       activeMenu: 'seje',
       pageTitle: 'Seja - Zakonodaja',
       activeTab: 'zakonodaja',
@@ -30,12 +31,12 @@ router.get(['/:id(\\d+)', '/:id(\\d+)/zakonodaja'], (req, res, next) => {
   } else {
     next();
   }
-});
+}));
 
-router.get('/:id(\\d+)/druga-glasovanja', (req, res, next) => {
+router.get('/:id(\\d+)/druga-glasovanja', ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
-    res.render('seja/druga-glasovanja', {
+    render('seja/druga-glasovanja', {
       activeMenu: 'seje',
       pageTitle: 'Seja - Druga glasovanja',
       activeTab: 'druga-glasovanja',
@@ -44,12 +45,12 @@ router.get('/:id(\\d+)/druga-glasovanja', (req, res, next) => {
   } else {
     next();
   }
-});
+}));
 
-router.get('/:id(\\d+)/transkript', (req, res, next) => {
+router.get('/:id(\\d+)/transkript', ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
-    res.render('seja/transkript', {
+    render('seja/transkript', {
       activeMenu: 'seje',
       pageTitle: 'Seja - Transkript',
       activeTab: 'transkript',
@@ -58,20 +59,21 @@ router.get('/:id(\\d+)/transkript', (req, res, next) => {
   } else {
     next();
   }
-});
+}));
 
-router.get('/:id(\\d+)/glasovanje/:motionId(\\d+)', (req, res, next) => {
+router.get('/:id(\\d+)/glasovanje/:motionId(\\d+)', ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
     const motionId = Number(req.params.motionId);
     isMotionValid(sesData.session.id, motionId)
       .then((isValid) => {
         if (isValid) {
-          res.render('seja/glasovanje', {
+          render('seja/glasovanje', {
             activeMenu: 'seje',
             pageTitle: 'Seja - Glasovanje',
             activeTab: 'glasovanje',
             ...sesData,
+            motionId,
           });
         } else {
           next();
@@ -83,6 +85,6 @@ router.get('/:id(\\d+)/glasovanje/:motionId(\\d+)', (req, res, next) => {
   } else {
     next();
   }
-});
+}));
 
 module.exports = router;

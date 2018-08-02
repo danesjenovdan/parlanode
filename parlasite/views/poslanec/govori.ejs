@@ -3,22 +3,22 @@
 <% include ./_header.ejs %>
 
 <div class="col-md-12">
-  <%- 'views.govori' %>
+  <%- await fetchCard('/p/govori/', mp.id, { customUrl: `{isci}/filter/*/0?people=${mp.id}`, state: { person: mp.id } }) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.besedeKiDelajoPosebno' %>
+  <%- await fetchCard('/p/tfidf/', mp.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.steviloIzgovorjenihBesed' %>
+  <%- await fetchCard('/p/stevilo-izgovorjenih-besed/', mp.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.povprecnoSteviloGovorovNaSejo' %>
+  <%- await fetchCard('/p/povprecno-stevilo-govorov-na-sejo/', mp.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.besedniZaklad' %>
+  <%- await fetchCard('/p/besedni-zaklad/', mp.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.stilneAnalize' %>
+  <%- await fetchCard('/p/stilne-analize/', mp.id) %>
 </div>
 
 <% include ../_partials/footer.ejs %>

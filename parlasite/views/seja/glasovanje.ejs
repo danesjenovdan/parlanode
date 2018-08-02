@@ -4,7 +4,7 @@
 
 <% if (session.votes) { %>
 <div class="col-md-12">
-  <%- 'views.glasovanjeSeja' %>
+  <%- await fetchCard('/s/glasovanje/', motionId) %>
 </div>
 <% } else { %>
   <% include ../empty-state/state2.ejs %>

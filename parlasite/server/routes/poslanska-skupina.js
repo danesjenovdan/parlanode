@@ -1,5 +1,6 @@
 const express = require('express');
 const data = require('../data');
+const { asyncRender: ar } = require('../utils');
 
 const router = express.Router();
 
@@ -31,10 +32,10 @@ function getData(idParam, slugParam) {
   return (id && party) ? { party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-]+)/pregled'], (req, res, next) => {
+router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-]+)/pregled'], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
-    res.render('poslanska-skupina/pregled', {
+    render('poslanska-skupina/pregled', {
       activeMenu: 'poslanske-skupine',
       pageTitle: `Pregled - ${pgData.party.name}`,
       activeTab: 'pregled',
@@ -43,12 +44,12 @@ router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-
   } else {
     next();
   }
-});
+}));
 
-router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], (req, res, next) => {
+router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
-    res.render('poslanska-skupina/glasovanja', {
+    render('poslanska-skupina/glasovanja', {
       activeMenu: 'poslanske-skupine',
       pageTitle: `Glasovanja - ${pgData.party.name}`,
       activeTab: 'glasovanja',
@@ -57,12 +58,12 @@ router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], (req, res, n
   } else {
     next();
   }
-});
+}));
 
-router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], (req, res, next) => {
+router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
-    res.render('poslanska-skupina/govori', {
+    render('poslanska-skupina/govori', {
       activeMenu: 'poslanske-skupine',
       pageTitle: `Govori - ${pgData.party.name}`,
       activeTab: 'govori',
@@ -71,6 +72,6 @@ router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], (req, res, next) => 
   } else {
     next();
   }
-});
+}));
 
 module.exports = router;

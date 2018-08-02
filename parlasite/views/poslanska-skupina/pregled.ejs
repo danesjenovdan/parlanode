@@ -3,28 +3,28 @@
 <% include ./_header.ejs %>
 
 <div class="col-md-6">
-  <%- 'views.osnovneInformacije' %>
+  <%- await fetchCard('/ps/osnovne-informacije/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.claniceInClani' %>
+  <%- await fetchCard('/ps/clanice-in-clani/', party.id) %>
 </div>
 <div class="col-md-12">
-  <%- 'views.vprasanja' %>
+  <%- await fetchCard('/ps/poslanska-vprasanja-in-pobude/', party.id) %>
 </div>
 <div class="col-md-12">
-  <%- 'views.prisotnostSkoziCas' %>
+  <%- await fetchCard('/ps/prisotnost-skozi-cas/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.izracunanaPrisotnostSeje' %>
+  <%- await fetchCard('/ps/prisotnost-na-sejah-dz/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.izracunanaPrisotnostGlasovanja' %>
+  <%- await fetchCard('/ps/prisotnost-na-glasovanjih-sej-dz/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.steviloVlozenihAmandmajev' %>
+  <%- await fetchCard('/ps/st-vlozenih-amandmajev/', party.id) %>
 </div>
 <div class="col-md-6">
-  <%- 'views.stVprasanj' %>
+  <%- await fetchCard('/ps/st-poslanskih-vprasanj-in-pobud/', party.id) %>
 </div>
 
 <% include ../_partials/footer.ejs %>
