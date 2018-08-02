@@ -1,0 +1,24 @@
+<div class="session-container">
+  <div class="row header  text-center">
+    <div class="col-lg-12">
+      <div class="media-object img-circle session-logo backgroundred">
+        <b>S</b>
+      </div>
+      <h1><%- session.name %></h1>
+      <h2><%- session.org.name %></h2>
+      <div class="date">
+        <%- session.date %>
+      </div>
+      <div class="datepublished">
+        podatki objavljeni: <%- session.date %> <%= session.in_review ? '(v pregledu)' : '' %>
+      </div>
+      <div class="group-container-menu">
+        <ul class="clearfix">
+          <li><a href="/seja/<%- session.id %>/zakonodaja" class="<%- activeTab === 'zakonodaja' ? 'active' : '' %>">Zakonodaja</a></li>
+          <li><a href="/seja/<%- session.id %>/druga-glasovanja" class="<%- activeTab === 'druga-glasovanja' ? 'active' : '' %>">Druga glasovanja</a></li>
+          <li><a href="/seja/<%- session.id %>/transkript" class="<%- activeTab === 'transkript' ? 'active' : '' %>">Transkript</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

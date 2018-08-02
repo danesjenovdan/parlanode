@@ -6,7 +6,7 @@
 <% if (session.type != 'kolegij') { %>
   <% if (session.votes) { %>
     <div class="col-md-12">
-      <%- 'views.zakonodajaSeja' %>
+      <%- 'views.glasovanjaSeja' %>
     </div>
   <% } else if (session.org.name === 'Državni zbor') { %>
     <% include ../empty-state/state1dz.ejs %>

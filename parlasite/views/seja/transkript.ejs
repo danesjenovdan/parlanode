@@ -1,0 +1,23 @@
+<% include ../_partials/header.ejs %>
+
+<% include ./_header.ejs %>
+
+<%# TODO: type is hardcoded %>
+<% if (session.speeches) { %>
+<div class="row">
+  <div class="col-md-12">
+    <% if (session.type === 'dz') { %>
+      <%- 'views.besedeKiSoZaznamovaleSejo' %>
+    <% } %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%- 'views.govori' %>
+  </div>
+</div>
+<% } else { %>
+  <% include ../empty-state/state5.ejs %>
+<% } %>
+
+<% include ../_partials/footer.ejs %>

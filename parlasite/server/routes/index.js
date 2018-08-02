@@ -8,5 +8,5 @@ module.exports = (app) => {
   app.use('/p', require('./poslanec'));
   app.use('/ps', require('./poslanska-skupina'));
 
-  // app.use('/seja', require('./seja'));
+  app.use('/seja', require('./seja'));
 };
