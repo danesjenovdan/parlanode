@@ -1,4 +1,5 @@
 const express = require('express');
+const { asyncRender: ar } = require('../utils');
 
 const router = express.Router();
 
@@ -6,13 +7,13 @@ const router = express.Router();
  * TOP NAVIGATION
  */
 
-router.get('/', (req, res) => {
-  res.render('landing', {
+router.get('/', ar((render, req) => {
+  render('landing', {
     activeMenu: 'landing',
     pageTitle: 'Parlameter',
     query: req.query.q,
   });
-});
+}));
 
 // get /zakonodaja -> routes/zakonodaja.js
 

@@ -13,12 +13,12 @@
 <% include ./_search.ejs %>
 
 <div class="row">
-    <div class="col-md-12">
-        <%- 'views.izpostavljenaZakonodaja' %>
-    </div>
-    <div class="col-md-12">
-        <%- 'views.zadnjaSeja' %>
-    </div>
+  <div class="col-md-12">
+    <%- await fetchCard('/c/izpostavljena-zakonodaja/') %>
+  </div>
+  <div class="col-md-12">
+    <%- await fetchCard('/c/zadnja-seja/') %>
+  </div>
 </div>
 
 <% include ../_partials/footer.ejs %>
