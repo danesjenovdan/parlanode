@@ -95,11 +95,12 @@ function refetch() {
 async function preload() {
   // eslint-disable-next-line no-console
   console.log('Preloading data files');
-  return Promise.all(Object.keys(dataFiles).map(name => loadData(name)));
+  return Promise.all(Object.keys(dataFiles).map(name => loadData(name)))
+    .then(() => {
+      // async fetch new data since everything could have been loaded from old files
+      refetch();
+    });
 }
-
-// fetch new data one minute after restart
-// setTimeout(refetch, 60000);
 
 // fetch new data every day at 4am
 const cron = new CronJob('00 04 * * *', refetch);
