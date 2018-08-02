@@ -22,16 +22,15 @@
         font-size: 18px;
         font-weight: 300;
     }
-    font,
-    font.date,
-    font.datepublished {
+    .date,
+    .datepublished {
         font-weight: 300;
     }
-    font.date {
+    .date {
         font-size: 14px;
         font-family: 'Roboto Slab', serif;
     }
-    font.datepublished {
+    .datepublished {
         font-size: 14px;
         display: inline-block;
         margin-bottom: 50px;
