@@ -1,20 +1,21 @@
 const express = require('express');
 const data = require('../data');
+const { asyncRender: ar } = require('../utils');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('zakonodaja', {
+router.get('/', ar((render) => {
+  render('zakonodaja', {
     activeMenu: 'zakonodaja',
     pageTitle: 'Zakonodaja',
   });
-});
+}));
 
-router.get('/*', (req, res, next) => {
+router.get('/*', ar((render, req, res, next) => {
   const epa = req.params[0];
   const lawData = data.laws.find(law => law.epa === epa);
   if (lawData) {
-    res.render('zakonodaja/zakon', {
+    render('zakonodaja/zakon', {
       activeMenu: 'zakonodaja',
       pageTitle: 'Zakonodaja',
       lawData,
@@ -22,6 +23,6 @@ router.get('/*', (req, res, next) => {
   } else {
     next();
   }
-});
+}));
 
 module.exports = router;

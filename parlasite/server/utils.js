@@ -1,4 +1,3 @@
-const { URLSearchParams } = require('url');
 const fetch = require('node-fetch');
 const config = require('../config');
 
@@ -34,13 +33,20 @@ function stringifyParams(params) {
   return '';
 }
 
-async function fetchCard(cardPath, params = {}) {
+async function fetchCard(cardPath, id, params = {}) {
+  // optional second argument
+  if (typeof id === 'object') {
+    params = id;
+    id = undefined;
+  }
+
   // TODO: forceRender
   // if (req.query.forceRender) {
   //   params.forceRender = true;
   // }
 
-  const cardUrl = `${config.urls.glej}${cardPath}${stringifyParams(params)}`;
+  const idParam = id != null ? id : '';
+  const cardUrl = `${config.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
@@ -50,7 +56,7 @@ async function fetchCard(cardPath, params = {}) {
     const text = await res.text();
     return text;
   }
-  return `<div class="alert alert-danger">Failed to render: ${cardPath}</div>`;
+  return `<div class="alert alert-danger">Failed to render card: ${cardPath}</div>`;
 }
 
 module.exports = {

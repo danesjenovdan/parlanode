@@ -1,13 +1,14 @@
 const express = require('express');
+const { asyncRender: ar } = require('../utils');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('seje', {
+router.get('/', ar((render) => {
+  render('seje', {
     activeMenu: 'seje',
     pageTitle: 'Seznam sej',
   });
-});
+}));
 
 router.get('/isci', (req, res) => {
   res.render('seje/isci', {
