@@ -5,6 +5,7 @@ const data = require('../data');
 
 const router = express.Router();
 
+// TODO: is there a way to preload this?
 async function isMotionValid(sessionId, motionId) {
   const res = await fetch(`${config.urls.analize}/s/getMotionOfSession/${sessionId}`);
   const json = await res.json();
