@@ -2,7 +2,6 @@ const express = require('express');
 const chalk = require('chalk');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
-const { fetchCard } = require('./utils');
 const config = require('../config');
 
 const app = express();
@@ -17,7 +16,6 @@ function setupExpress() {
 
     // set template renderer
     app.set('view engine', 'ejs');
-    app.locals.fetchCard = fetchCard;
 
     // serve static assets
     app.use(serveStatic('public'));

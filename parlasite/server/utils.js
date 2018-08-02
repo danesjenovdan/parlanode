@@ -1,23 +1,6 @@
 const fetch = require('node-fetch');
 const config = require('../config');
 
-const asyncRoute = fn => (...args) => fn(...args).catch(args[2]);
-
-const asyncRender = fn => (req, res, next) => {
-  const render = (view, opts) => {
-    res.render(view, { ...opts, async: true }, (error, promise) => {
-      if (error) {
-        next(error);
-      } else {
-        promise
-          .then(html => res.send(html))
-          .catch(pError => next(pError));
-      }
-    });
-  };
-  fn(render, req, res, next);
-};
-
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
     const query = Object.keys(params)
@@ -40,10 +23,9 @@ async function fetchCard(cardPath, id, params = {}) {
     id = undefined;
   }
 
-  // TODO: forceRender
-  // if (req.query.forceRender) {
-  //   params.forceRender = true;
-  // }
+  if (this.req.query.forceRender) {
+    params.forceRender = true;
+  }
 
   const idParam = id != null ? id : '';
   const cardUrl = `${config.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
@@ -59,8 +41,30 @@ async function fetchCard(cardPath, id, params = {}) {
   return `<div class="alert alert-danger">Failed to render card: ${cardPath}</div>`;
 }
 
+const asyncRoute = fn => (...args) => fn(...args).catch(args[2]);
+
+const asyncRender = fn => (req, res, next) => {
+  const render = (view, opts) => {
+    const options = {
+      ...opts,
+      fetchCard: fetchCard.bind({ req, res }),
+      async: true,
+    };
+    res.render(view, options, (error, promise) => {
+      if (error) {
+        next(error);
+      } else {
+        promise
+          .then(html => res.send(html))
+          .catch(pError => next(pError));
+      }
+    });
+  };
+  fn(render, req, res, next);
+};
+
 module.exports = {
+  fetchCard,
   asyncRoute,
   asyncRender,
-  fetchCard,
 };
