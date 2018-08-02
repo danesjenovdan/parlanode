@@ -19,19 +19,19 @@ router.get('/', ar((render, req) => {
 
 // get /seje -> routes/seje.js
 
-router.get('/poslanci', (req, res) => {
-  res.render('landing/poslanci', {
+router.get('/poslanci', ar((render) => {
+  render('landing/poslanci', {
     activeMenu: 'poslanci',
     pageTitle: 'Seznam poslancev',
   });
-});
+}));
 
-router.get('/poslanske-skupine', (req, res) => {
-  res.render('landing/poslanske-skupine', {
+router.get('/poslanske-skupine', ar((render) => {
+  render('landing/poslanske-skupine', {
     activeMenu: 'poslanske-skupine',
     pageTitle: 'Seznam poslanskih skupin',
   });
-});
+}));
 
 // get /orodja -> routes/orodja.js
 

@@ -1,3 +1,4 @@
+const { URLSearchParams } = require('url');
 const fetch = require('node-fetch');
 const config = require('../config');
 
@@ -18,15 +19,38 @@ const asyncRender = fn => (req, res, next) => {
   fn(render, req, res, next);
 };
 
-async function fetchCard(cardPath, { customUrl } = {}) {
-  console.log('fetch card called', cardPath, customUrl);
+function stringifyParams(params) {
+  if (Object.keys(params).length > 0) {
+    const query = Object.keys(params)
+      .map((key) => {
+        const val = (typeof params[key] === 'object')
+          ? JSON.stringify(params[key])
+          : String(params[key]);
+        return `${key}=${encodeURIComponent(val)}`;
+      })
+      .join('&');
+    return `?${query}`;
+  }
+  return '';
+}
 
-  const cardUrl = `${config.urls.glej}${cardPath}`;
-  console.log(cardUrl);
+async function fetchCard(cardPath, params = {}) {
+  // TODO: forceRender
+  // if (req.query.forceRender) {
+  //   params.forceRender = true;
+  // }
+
+  const cardUrl = `${config.urls.glej}${cardPath}${stringifyParams(params)}`;
+
+  // eslint-disable-next-line no-console
+  console.log('Fetching:', cardUrl);
 
   const res = await fetch(cardUrl);
-  const text = await res.text();
-  return text;
+  if (res.ok) {
+    const text = await res.text();
+    return text;
+  }
+  return `<div class="alert alert-danger">Failed to render: ${cardPath}</div>`;
 }
 
 module.exports = {

@@ -1,5 +1,5 @@
 <% include ../_partials/header.ejs %>
 
-<%- 'views.seznamPoslancev' %>
+<%- await fetchCard('/p/seznam-poslancev/', { state: { generator: true } }) %>
 
 <% include ../_partials/footer.ejs %>
