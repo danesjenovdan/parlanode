@@ -10,7 +10,7 @@ fs.ensureDirSync(dataPath);
 const dataFiles = {
   urls: `${config.urls.analize}/p/getSlugs/`,
   mps: `${config.urls.data}/getMPs/`,
-  pgs: `${config.urls.data}/getAllPGs/`,
+  pgs: `${config.urls.data}/getAllPGs/`, // TODO: getAllPGsExt
   sessions: `${config.urls.analize}/s/getSessionsByClassification/`,
   laws: `${config.urls.analize}/s/getAllLegislation/`,
 };

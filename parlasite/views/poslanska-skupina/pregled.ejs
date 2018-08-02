@@ -1,58 +1,30 @@
-<% include ../../_partials/header.ejs %>
+<% include ../_partials/header.ejs %>
 
-<div class="group-container">
-    <div class="row header  text-center">
-        <div class="col-lg-12">
-
-            <div class="media-object img-circle session-logo <%- ps.acronym.replace(/ /g, '_').toLowerCase() %>-background  <%- ps.acronym.replace(/ /g, '_').toLowerCase() %>-fill  <%- ps.acronym.replace(/ /g, '_').toLowerCase() %>-border ">
-                <b><%- realAcronym.realAcronym %></b>
-            </div>
-
-            <h1><%- ps.name %></h1>
-            <h3><%= ps.is_coalition ? "koalicija" : "opozicija" %></h3>
-
-            <div class="group-container-menu">
-                <ul class="clearfix">
-                    <li>
-                        <a class="active" href="/poslanska-skupina/pregled/<%- slug %>">Pregled</a>
-                    </li>
-                    <li>
-                        <a href="/poslanska-skupina/glasovanja/<%- slug %>">Glasovanja</a>
-                    </li>
-                    <li>
-                        <a href="/poslanska-skupina/govori/<%- slug %>">Govori</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</div>
-
+<% include ./_header.ejs %>
 
 <div class="col-md-6 ">
-    <%- views.osnovneInformacije %>
+  <%- 'views.osnovneInformacije' %>
 </div>
 <div class="col-md-6 ">
-    <%- views.claniceInClani %>
+  <%- 'views.claniceInClani' %>
 </div>
 <div class="col-md-12 ">
-    <%- views.vprasanja %>
+  <%- 'views.vprasanja' %>
 </div>
 <div class="col-md-12 ">
-    <%- views.prisotnostSkoziCas %>
+  <%- 'views.prisotnostSkoziCas' %>
 </div>
 <div class="col-md-6 ">
-    <%- views.izracunanaPrisotnostSeje %>
+  <%- 'views.izracunanaPrisotnostSeje' %>
 </div>
 <div class="col-md-6 ">
-    <%- views.izracunanaPrisotnostGlasovanja %>
+  <%- 'views.izracunanaPrisotnostGlasovanja' %>
 </div>
 <div class="col-md-6">
-    <%- views.steviloVlozenihAmandmajev %>
+  <%- 'views.steviloVlozenihAmandmajev' %>
 </div>
 <div class="col-md-6 ">
-    <%- views.stVprasanj %>
+  <%- 'views.stVprasanj' %>
 </div>
 
-<% include ../../_partials/footer.ejs %>
+<% include ../_partials/footer.ejs %>

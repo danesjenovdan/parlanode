@@ -1,0 +1,23 @@
+<%
+  var classPrefix = party.acronym.toLowerCase().replace(/ /g, '_');
+  var classes = ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
+%>
+
+<div class="group-container">
+  <div class="row header text-center">
+    <div class="col-lg-12">
+      <div class="media-object img-circle session-logo <%- classes %>">
+        <b><%- party.acronym %></b>
+      </div>
+      <h1><%- party.name %></h1>
+      <h3><%= party.is_coalition ? "koalicija" : "opozicija" %></h3>
+      <div class="group-container-menu">
+        <ul class="clearfix">
+          <li><a href="/ps/<%- slug %>/pregled" class="<%- activeTab === 'pregled' ? 'active' : '' %>">Pregled</a></li>
+          <li><a href="/ps/<%- slug %>/glasovanja" class="<%- activeTab === 'glasovanja' ? 'active' : '' %>">Glasovanja</a></li>
+          <li><a href="/ps/<%- slug %>/govori" class="<%- activeTab === 'govori' ? 'active' : '' %>">Govori</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

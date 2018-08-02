@@ -6,5 +6,7 @@ module.exports = (app) => {
   app.use('/orodja', require('./orodja'));
 
   app.use('/p', require('./poslanec'));
-  // app.use('/ps', require('./poslanska-skupina'));
+  app.use('/ps', require('./poslanska-skupina'));
+
+  // app.use('/seja', require('./seja'));
 };
