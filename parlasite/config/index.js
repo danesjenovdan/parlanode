@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV;
 
 const defaultConfig = {
   port: 3066,
-  serverTimeout: 30000,
+  serverTimeout: 120000,
   urls: {
     analize: 'https://analize.parlameter.si/v1',
     // data: 'https://data.parlameter.si/v1',
