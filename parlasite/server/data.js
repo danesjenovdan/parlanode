@@ -66,7 +66,7 @@ async function loadData(name) {
   const filePath = path.resolve(dataPath, `${name}.json`);
   if (fs.existsSync(filePath)) {
     try {
-      loadedData[name] = await fs.readJsonSync(filePath);
+      loadedData[name] = await fs.readJson(filePath);
       return loadedData[name];
     } catch (error) {
       // eslint-disable-next-line no-console

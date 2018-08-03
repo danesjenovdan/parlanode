@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
 const fetch = require('node-fetch');
-const config = require('../config');
+const data = require('./data');
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
@@ -31,7 +31,7 @@ async function fetchCard(cardPath, id, params = {}) {
   }
 
   const idParam = id != null ? id : '';
-  const cardUrl = `${config.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
+  const cardUrl = `${data.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
