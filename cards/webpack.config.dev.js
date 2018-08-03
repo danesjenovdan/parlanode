@@ -40,8 +40,12 @@ module.exports = () => {
         disable: true,
       }),
       new webpack.NormalModuleReplacementPlugin(
-        /assets\/urls\.json$/,
-        require.resolve('../assets/urls.dev.json'),
+        /data\/urls\.json$/,
+        require.resolve('../data/urls.dev.json'),
+      ),
+      new webpack.NormalModuleReplacementPlugin(
+        /data\/siteMap\.json$/,
+        require.resolve('../data/siteMap.default.json'),
       ),
     ],
   });
