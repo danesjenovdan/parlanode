@@ -14,6 +14,49 @@ const defaultConfig = {
     // base: 'https://parlameter.si',
   },
   siteLang: 'sl',
+  siteMap: {
+    landing: {
+      legislation: 'zakonodaja',
+      sessions: 'seje',
+      members: 'poslanci',
+      parties: 'poslanske-skupine',
+      tools: 'orodja',
+      about: 'o-projektu',
+      media: 'za-medije',
+      legal: 'pravno-obvestilo',
+    },
+    sessions: {
+      search: {
+        base: 'isci',
+        filter: 'filter',
+      },
+    },
+    tools: {
+      voteComparator: 'primerjalnik-glasovanj',
+      discord: 'raziskovalec-neenotnosti',
+      compass: 'parlamentarni-kompas',
+      wordGroups: 'skupine-besed',
+    },
+    member: {
+      base: 'p',
+      overview: 'pregled',
+      votings: 'glasovanja',
+      speeches: 'govori',
+    },
+    party: {
+      base: 'ps',
+      overview: 'pregled',
+      votings: 'glasovanja',
+      speeches: 'govori',
+    },
+    session: {
+      base: 'seja',
+      legislation: 'zakonodaja',
+      otherVotings: 'druga-glasovanja',
+      transcript: 'transkript',
+      vote: 'glasovanje',
+    },
+  },
 };
 
 if (env === 'production') {

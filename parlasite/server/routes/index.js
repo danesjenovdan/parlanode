@@ -1,12 +1,16 @@
+const { siteMap: sm } = require('../../config');
+
 /* eslint-disable global-require */
 module.exports = (app) => {
   app.use('/', require('./landing'));
-  app.use('/zakonodaja', require('./zakonodaja'));
-  app.use('/seje', require('./seje'));
-  app.use('/orodja', require('./orodja'));
 
-  app.use('/p', require('./poslanec'));
-  app.use('/ps', require('./poslanska-skupina'));
+  app.use(`/${sm.landing.legislation}`, require('./zakonodaja'));
+  app.use(`/${sm.landing.sessions}`, require('./seje'));
+  app.use(`/${sm.landing.tools}`, require('./orodja'));
 
-  app.use('/seja', require('./seja'));
+  app.use(`/${sm.member.base}`, require('./poslanec'));
+  app.use(`/${sm.party.base}`, require('./poslanska-skupina'));
+  app.use(`/${sm.session.base}`, require('./seja'));
+
+  app.use('/api', require('./api'));
 };

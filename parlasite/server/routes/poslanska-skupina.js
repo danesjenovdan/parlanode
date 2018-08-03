@@ -1,6 +1,7 @@
 const express = require('express');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
+const { siteMap: sm } = require('../../config');
 
 const router = express.Router();
 
@@ -32,7 +33,7 @@ function getData(idParam, slugParam) {
   return (id && party) ? { party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-]+)/pregled'], ar((render, req, res, next) => {
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z-]+)', `/:slug([a-z-]+)/${sm.party.overview}`], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
     render('poslanska-skupina/pregled', {
@@ -46,7 +47,7 @@ router.get(['/:id(\\d+)', '/:id(\\d+)/pregled', '/:slug([a-z-]+)', '/:slug([a-z-
   }
 }));
 
-router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.party.votings}`, `/:slug([a-z-]+)/${sm.party.votings}`], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
     render('poslanska-skupina/glasovanja', {
@@ -60,7 +61,7 @@ router.get(['/:id(\\d+)/glasovanja', '/:slug([a-z-]+)/glasovanja'], ar((render, 
   }
 }));
 
-router.get(['/:id(\\d+)/govori', '/:slug([a-z-]+)/govori'], ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.party.speeches}`, `/:slug([a-z-]+)/${sm.party.speeches}`], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
     render('poslanska-skupina/govori', {

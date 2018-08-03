@@ -1,5 +1,6 @@
 const express = require('express');
 const { asyncRender: ar } = require('../utils');
+const { siteMap: sm } = require('../../config');
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router.get('/', ar((render) => {
   });
 }));
 
-router.get('/isci', (req, res) => {
+router.get(`/${sm.sessions.search.base}`, (req, res) => {
   res.render('seje/isci', {
     activeMenu: 'seje',
     pageTitle: 'Išči seje',
@@ -18,7 +19,7 @@ router.get('/isci', (req, res) => {
   });
 });
 
-router.get('/isci/filter', (req, res) => {
+router.get(`/${sm.sessions.search.base}/${sm.sessions.search.filter}`, (req, res) => {
   res.render('seje/isci/filter', {
     activeMenu: 'seje',
     pageTitle: 'Išči seje',

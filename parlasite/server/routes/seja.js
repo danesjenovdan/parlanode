@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 const config = require('../../config');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
+const { siteMap: sm } = require('../../config');
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ function getData(idParam) {
   return (id && session) ? { session } : null;
 }
 
-router.get(['/:id(\\d+)', '/:id(\\d+)/zakonodaja'], ar((render, req, res, next) => {
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/zakonodaja', {
@@ -33,7 +34,7 @@ router.get(['/:id(\\d+)', '/:id(\\d+)/zakonodaja'], ar((render, req, res, next) 
   }
 }));
 
-router.get('/:id(\\d+)/druga-glasovanja', ar((render, req, res, next) => {
+router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/druga-glasovanja', {
@@ -47,7 +48,7 @@ router.get('/:id(\\d+)/druga-glasovanja', ar((render, req, res, next) => {
   }
 }));
 
-router.get('/:id(\\d+)/transkript', ar((render, req, res, next) => {
+router.get(`/:id(\\d+)/${sm.session.transcript}`, ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/transkript', {
@@ -61,7 +62,7 @@ router.get('/:id(\\d+)/transkript', ar((render, req, res, next) => {
   }
 }));
 
-router.get('/:id(\\d+)/glasovanje/:motionId(\\d+)', ar((render, req, res, next) => {
+router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
     const motionId = Number(req.params.motionId);

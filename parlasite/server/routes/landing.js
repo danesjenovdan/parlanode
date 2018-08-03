@@ -1,5 +1,6 @@
 const express = require('express');
 const { asyncRender: ar } = require('../utils');
+const { siteMap: sm } = require('../../config');
 
 const router = express.Router();
 
@@ -19,14 +20,14 @@ router.get('/', ar((render, req) => {
 
 // get /seje -> routes/seje.js
 
-router.get('/poslanci', ar((render) => {
+router.get(`/${sm.landing.members}`, ar((render) => {
   render('landing/poslanci', {
     activeMenu: 'poslanci',
     pageTitle: 'Seznam poslancev',
   });
 }));
 
-router.get('/poslanske-skupine', ar((render) => {
+router.get(`/${sm.landing.parties}`, ar((render) => {
   render('landing/poslanske-skupine', {
     activeMenu: 'poslanske-skupine',
     pageTitle: 'Seznam poslanskih skupin',
@@ -39,21 +40,21 @@ router.get('/poslanske-skupine', ar((render) => {
  * ABOUT PAGES
  */
 
-router.get('/o-projektu', (req, res) => {
+router.get(`/${sm.landing.about}`, (req, res) => {
   res.render('landing/o-projektu', {
     activeMenu: 'landing',
     pageTitle: 'O projektu',
   });
 });
 
-router.get('/za-medije', (req, res) => {
+router.get(`/${sm.landing.media}`, (req, res) => {
   res.render('landing/za-medije', {
     activeMenu: 'landing',
     pageTitle: 'Za medije',
   });
 });
 
-router.get('/pravno-obvestilo', (req, res) => {
+router.get(`/${sm.landing.legal}`, (req, res) => {
   res.render('landing/pravno-obvestilo', {
     activeMenu: 'landing',
     pageTitle: 'Pravno obvestilo',
