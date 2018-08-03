@@ -37,7 +37,9 @@ async function fetchUrlSlugs(compare = false) {
     }
 
     await fs.ensureDir(assetsPath);
-    await fs.writeJson(urlSlugsPath, newData);
+    await fs.writeJson(urlSlugsPath, newData, {
+      spaces: 2,
+    });
   } catch (error) {
     if (!compare) {
       throw error;

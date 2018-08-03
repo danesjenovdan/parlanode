@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,11 +32,20 @@
         <div id="app"></div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12" id="development-card-template-context" style="margin-top: 20px;">
+      </div>
+    </div>
   </div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="build/bundle.js"></script>
   <script>
     document.getElementById('development-card-container-div').className = window.app.$options.cardData.template.frameContainerClass;
+    const template = window.app.$options.cardData.template;
+    const templateContext = Object.keys(template)
+      .map(key => `<dt>${key}</dt><dd>${template[key]}</dd>`)
+      .join('');
+    document.getElementById('development-card-template-context').innerHTML = `<dl class="dl-horizontal">${templateContext}</dl>`;
   </script>
 </body>
 </html>
