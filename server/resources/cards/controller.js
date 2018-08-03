@@ -1,9 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 const mongoose = require('mongoose');
 const axios = require('axios');
-const path = require('path');
 const fs = require('fs-extra');
-const glob = require('glob');
 const util = require('util');
 const renderer = require('vue-server-renderer');
 const { directive: t } = require('vue-i18n-extensions');
@@ -15,60 +13,8 @@ const dateFns = require('date-fns');
 const config = require('../../../config');
 const data = require('../../data');
 
-function getModelObjects(modelName, res, mapFunc) {
-  const Model = mongoose.model(modelName);
-  Model.find({}).lean()
-    .then((docs) => {
-      res.send({
-        count: docs.length,
-        docs: mapFunc ? docs.map(mapFunc) : docs,
-      });
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-    });
-}
-
-function getRenders(req, res) {
-  getModelObjects('CardRender', res, (doc) => {
-    doc.html = `HTML length: ${doc.html.length}`;
-    return doc;
-  });
-}
-
-function getBuilds(req, res) {
-  getModelObjects('CardBuild', res);
-}
-
-function clearModel(modelName, res) {
-  const Model = mongoose.model(modelName);
-  Model.remove({})
-    .then((obj) => {
-      res.send(obj);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-}
-
-function deleteRenders(req, res) {
-  clearModel('CardRender', res);
-}
-
-function deleteBuilds(req, res) {
-  clearModel('CardBuild', res);
-}
-
-function deleteBuildId(req, res) {
-  const CardBuild = mongoose.model('CardBuild');
-  CardBuild.findByIdAndRemove(req.params.id)
-    .then((obj) => {
-      res.send({ deleted: !!obj });
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-}
+const CardBuild = mongoose.model('CardBuild');
+const CardRender = mongoose.model('CardRender');
 
 async function loadCardJson(cacheData) {
   const cardJson = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
@@ -98,6 +44,35 @@ async function loadBundles(cacheData) {
   ]);
 }
 
+async function saveBuildEntry(cacheData, cardJson) {
+  await CardBuild.findOneAndUpdate(
+    { group: cacheData.group, method: cacheData.method },
+    {
+      lastBuilt: cardJson.lastUpdate,
+      language: config.cardLang,
+      dataUrl: cardJson.dataUrl,
+    },
+    { upsert: true, new: true, setDefaultsOnInsert: true },
+  );
+}
+
+async function getBundlesModifiedTime(cacheData) {
+  try {
+    const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
+    const stats = await Promise.all([
+      fs.stat(`${bundlesPath}/server.js`),
+      fs.stat(`${bundlesPath}/client.js`),
+      fs.stat(`${bundlesPath}/style.css`),
+    ]);
+    return Math.min(...stats.map(s => s.mtimeMs));
+  } catch (error) {
+    if (error.code !== 'ENOENT') {
+      throw error;
+    }
+    return 0;
+  }
+}
+
 function expandUrl(dataUrl) {
   if (typeof dataUrl === 'string') {
     Object.keys(data.urls.urls).forEach((key) => {
@@ -108,28 +83,35 @@ function expandUrl(dataUrl) {
 }
 
 async function shouldBuildCard(cacheData, cardJson) {
-  try {
-    const CardBuild = mongoose.model('CardBuild');
-    const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method });
-    if (!cardBuild) {
-      return true;
-    }
-    if (Number(cardBuild.lastBuilt) !== Number(cardJson.lastUpdate)) {
-      return true;
-    }
-    if (cardBuild.language !== config.cardLang) {
-      return true;
-    }
-    if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
-      return true;
-    }
-    return false;
-  } catch (error) {
-    if (error.code !== 'ENOENT') {
-      throw error;
+  const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method });
+  if (!cardBuild) {
+    if (await getBundlesModifiedTime(cacheData) > 0) {
+      // if there is no build entry in db but files exist just add the entry
+      await saveBuildEntry(cacheData, cardJson);
+      return false;
     }
     return true;
   }
+  if (Number(cardBuild.lastBuilt) !== Number(cardJson.lastUpdate)) {
+    if (process.env.NODE_ENV !== 'production') {
+      // in development environments, if there is a newer card json update
+      // time and files were modified around that time just update the entry
+      const filesModifiedTime = await getBundlesModifiedTime(cacheData);
+      const areTimesClose = Math.abs(Number(cardJson.lastUpdate) - filesModifiedTime) < 5000;
+      if (areTimesClose) {
+        await saveBuildEntry(cacheData, cardJson);
+        return false;
+      }
+    }
+    return true;
+  }
+  if (cardBuild.language !== config.cardLang) {
+    return true;
+  }
+  if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
+    return true;
+  }
+  return false;
 }
 
 // Store build commands cards that are currently building so we don't build
@@ -156,16 +138,7 @@ async function buildCard(cacheData, cardJson) {
   } finally {
     ongoingCardBuilds.delete(buildCommand);
   }
-  const CardBuild = mongoose.model('CardBuild');
-  await CardBuild.findOneAndUpdate(
-    { group: cacheData.group, method: cacheData.method },
-    {
-      lastBuilt: cardJson.lastUpdate,
-      language: config.cardLang,
-      dataUrl: cardJson.dataUrl,
-    },
-    { upsert: true, new: true, setDefaultsOnInsert: true },
-  );
+  await saveBuildEntry(cacheData, cardJson);
 }
 
 async function renderCard(cacheData, cardJson, originalUrl) {
@@ -215,8 +188,6 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   const html = await rendererInstance.renderToString(context);
   cacheData.html = html;
 
-  const CardRender = mongoose.model('CardRender');
-
   await CardRender.remove({
     group: cacheData.group,
     method: cacheData.method,
@@ -245,7 +216,6 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   if (!forceRender) {
     // eslint-disable-next-line no-console
     console.log(`Card: ${cacheData.group}/${cacheData.method} - TRYING CACHE`);
-    const CardRender = mongoose.model('CardRender');
     renderedCard = await CardRender.findOne(cacheData).sort({ dateTime: -1 });
     if (renderedCard) {
       renderedCard.lastAccessed = new Date();
@@ -320,60 +290,9 @@ function render(req, res) {
     });
 }
 
-function rebuildUpdated(req, res) {
-  glob('./cards/**/card.json', (error, files) => {
-    if (error) {
-      res.status(500).send(error);
-      return;
-    }
-
-    // set headers so browsers expect chunked text and don't buffer response
-    // text while waiting for new data
-    res.writeHead(200, {
-      'Content-Type': 'text/plain; charset=utf-8',
-      'Transfer-Encoding': 'chunked',
-      'X-Content-Type-Options': 'nosniff',
-    });
-
-    const allCards = files
-      .filter(f => !f.includes('_empty'))
-      .map(f => (
-        path.resolve(f)
-          .replace(/\\/g, '/')
-          .split('/')
-          .slice(-3, -1)
-      ))
-      .map(([group, method]) => ({ group, method }));
-
-    const maybeBuild = async (cacheData, i) => {
-      res.write(`${i + 1} / ${allCards.length} | ${cacheData.group}/${cacheData.method}`);
-      const cardJson = await loadCardJson(cacheData);
-      if (await shouldBuildCard(cacheData, cardJson)) {
-        res.write(' - BUILDING ...');
-        await buildCard(cacheData, cardJson);
-        res.write(' DONE');
-      }
-      res.write('\n');
-    };
-
-    allCards.reduce((p, c, i) => p.then(() => maybeBuild(c, i)), Promise.resolve())
-      .then(() => {
-        res.end('\n\nEND');
-      })
-      .catch((pError) => {
-        // eslint-disable-next-line no-console
-        console.error(pError);
-        res.end(`\n\nError: ${pError.message}`);
-      });
-  });
-}
-
 module.exports = {
-  getRenders,
-  getBuilds,
-  deleteRenders,
-  deleteBuilds,
-  deleteBuildId,
-  rebuildUpdated,
+  loadCardJson,
+  shouldBuildCard,
+  buildCard,
   render,
 };

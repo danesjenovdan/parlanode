@@ -5,4 +5,6 @@ module.exports = (app) => {
 
   require('./cards/model');
   require('./cards/routes')(app);
+
+  require('./api/routes')(app);
 };

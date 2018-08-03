@@ -81,8 +81,9 @@
   "nodemonConfig": {
     "ignore": [
       "data/*",
-      "og/*",
-      "cards/*"
+      "cards/*",
+      "og-images/*",
+      "og/*"
     ]
   }
 }

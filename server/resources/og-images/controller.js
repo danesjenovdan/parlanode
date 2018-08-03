@@ -13,47 +13,6 @@ const { takeScreenshot } = require('../../utils/screenshot');
 const OgRender = mongoose.model('OgRender');
 const OgBuild = mongoose.model('OgBuild');
 
-function getModelObjects(modelName, res, mapFunc) {
-  const Model = mongoose.model(modelName);
-  Model.find({}).lean()
-    .then((docs) => {
-      res.send({
-        count: docs.length,
-        docs: mapFunc ? docs.map(mapFunc) : docs,
-      });
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-    });
-}
-
-function getRenders(req, res) {
-  getModelObjects('OgRender', res);
-}
-
-function getBuilds(req, res) {
-  getModelObjects('OgBuild', res);
-}
-
-function clearModel(modelName, res) {
-  const Model = mongoose.model(modelName);
-  Model.remove({})
-    .then((obj) => {
-      res.send(obj);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-}
-
-function deleteRenders(req, res) {
-  clearModel('OgRender', res);
-}
-
-function deleteBuilds(req, res) {
-  clearModel('OgBuild', res);
-}
-
 async function loadOgJson(cacheData) {
   const ogJson = await fs.readJson(`og-images/${cacheData.name}/og.json`);
   ogJson.updated = new Date(ogJson.updated);
@@ -61,21 +20,14 @@ async function loadOgJson(cacheData) {
 }
 
 async function shouldBuildBundle(cacheData, ogJson) {
-  try {
-    const ogBuild = await OgBuild.findOne({ name: cacheData.name });
-    if (!ogBuild) {
-      return true;
-    }
-    if (Number(ogBuild.updated) !== Number(ogJson.updated)) {
-      return true;
-    }
-    return false;
-  } catch (error) {
-    if (error.code !== 'ENOENT') {
-      throw error;
-    }
+  const ogBuild = await OgBuild.findOne({ name: cacheData.name });
+  if (!ogBuild) {
     return true;
   }
+  if (Number(ogBuild.updated) !== Number(ogJson.updated)) {
+    return true;
+  }
+  return false;
 }
 
 // Store build commands that are currently in progress so we don't build
@@ -216,9 +168,8 @@ function render(req, res) {
 }
 
 module.exports = {
-  getRenders,
-  getBuilds,
-  deleteRenders,
-  deleteBuilds,
+  loadOgJson,
+  shouldBuildBundle,
+  buildBundle,
   render,
 };
