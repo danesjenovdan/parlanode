@@ -99,7 +99,7 @@
 
 <script>
 import axios from 'axios';
-import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links';
+import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import stateLoader from 'helpers/stateLoader';
@@ -131,7 +131,10 @@ export default {
     TextFrame,
     ScrollShadow,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
@@ -235,7 +238,7 @@ export default {
               label: party.party.acronym,
               // eslint-disable-next-line max-len
               value: Number((party.score / (this.data.orgs[party.party.id] / this.data.all_speeches)).toFixed(4) || 0),
-              link: this.getPartyLink(party.party),
+              link: this.getPartyLinkSafe(party.party),
             }));
 
           const people = response.data.facet_counts.facet_fields.speaker_i
@@ -257,7 +260,7 @@ export default {
               label: party.party.acronym,
               // eslint-disable-next-line max-len
               value: party.score,
-              link: this.getPartyLink(party.party),
+              link: this.getPartyLinkSafe(party.party),
             }));
 
           const people2 = response.data.facet_counts.facet_fields.speaker_i
@@ -275,11 +278,9 @@ export default {
           this.loading = false;
         });
     },
-    getPartyLink(party) {
-      return party.id === -1 ? '' : getPartyLink(party);
+    getPartyLinkSafe(party) {
+      return party.id === -1 ? '' : this.getPartyLink(party);
     },
-    getPersonLink,
-    getPersonPortrait,
   },
 };
 </script>

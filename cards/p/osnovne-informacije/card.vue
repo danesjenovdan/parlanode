@@ -199,7 +199,7 @@ import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
 import { memberHeader } from 'mixins/altHeaders';
 import { memberOgImage } from 'mixins/ogImages';
-import { getPersonLink, getPersonPortrait, getPersonPartyLink } from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'OsnovneInformacijePS',
@@ -210,6 +210,7 @@ export default {
     memberTitle,
     memberHeader,
     memberOgImage,
+    links,
   ],
   data() {
     return {
@@ -223,11 +224,6 @@ export default {
     age() {
       return differenceInCalendarYears(new Date(), parse(this.data.results.birth_date));
     },
-  },
-  methods: {
-    getPersonLink,
-    getPersonPortrait,
-    getPersonPartyLink,
   },
 };
 </script>

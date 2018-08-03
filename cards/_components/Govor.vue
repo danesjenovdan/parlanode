@@ -24,9 +24,12 @@
 </template>
 
 <script>
-import { getPersonPortrait, getPersonLink, getSessionSpeechLink } from './links';
+import links from 'mixins/links';
 
 export default {
+  mixins: [
+    links,
+  ],
   props: {
     speech: {
       type: Object,
@@ -37,11 +40,6 @@ export default {
       reqired: false,
       default: '',
     },
-  },
-  methods: {
-    getPersonPortrait,
-    getPersonLink,
-    getSessionSpeechLink,
   },
 };
 </script>

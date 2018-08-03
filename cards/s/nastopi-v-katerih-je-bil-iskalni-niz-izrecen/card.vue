@@ -64,12 +64,7 @@ import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
-import {
-  getPersonLink,
-  getPersonPartyLink,
-  getPersonPortrait,
-  getSessionSpeechLink,
-} from 'components/links';
+import links from 'mixins/links';
 import dateFormatter from 'helpers/dateFormatter';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
@@ -85,6 +80,7 @@ export default {
     searchTitle,
     searchHeader,
     searchOgImage,
+    links,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q
@@ -107,12 +103,12 @@ export default {
     speeches() {
       return this.rawSpeeches.map((speech) => {
         if (speech.person.type === 'mp') {
-          speech.memberUrl = getPersonLink(speech.person);
-          speech.partyUrl = getPersonPartyLink(speech.person);
+          speech.memberUrl = this.getPersonLink(speech.person);
+          speech.partyUrl = this.getPersonPartyLink(speech.person);
         }
-        speech.memberImageUrl = getPersonPortrait(speech.person);
+        speech.memberImageUrl = this.getPersonPortrait(speech.person);
         speech.formattedDate = dateFormatter(speech.date);
-        speech.speechUrl = getSessionSpeechLink(speech);
+        speech.speechUrl = this.getSessionSpeechLink(speech);
         return speech;
       });
     },

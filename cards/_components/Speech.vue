@@ -56,17 +56,15 @@
 </template>
 
 <script>
-import {
-  getPersonPortrait,
-  getPersonLink,
-  getSessionSpeechLink,
-  getSessionTranscriptLink,
-} from 'components/links';
+import links from 'mixins/links';
 
 const PADDING_LENGTH = 30;
 
 export default {
   name: 'Speech',
+  mixins: [
+    links,
+  ],
   props: {
     speech: {
       type: Object,
@@ -79,10 +77,6 @@ export default {
   },
   data() {
     return {
-      getPersonPortrait,
-      getPersonLink,
-      getSessionSpeechLink,
-      getSessionTranscriptLink,
       hideQuote: false,
     };
   },

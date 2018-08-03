@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { getPersonLink, getSessionVoteLink, getSessionSpeechLink } from 'components/links';
+import links from 'mixins/links';
 
 function getBallotOption(option) {
   if (option === 'za' || option === 'aye') {
@@ -72,6 +72,9 @@ function getBallotOption(option) {
 
 export default {
   name: 'Event',
+  mixins: [
+    links,
+  ],
   props: {
     event: {
       type: Object,
@@ -115,11 +118,6 @@ export default {
       }
       return '';
     },
-  },
-  methods: {
-    getPersonLink,
-    getSessionVoteLink,
-    getSessionSpeechLink,
   },
 };
 </script>

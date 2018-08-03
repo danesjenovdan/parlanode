@@ -19,10 +19,13 @@
 </template>
 
 <script>
-import { getPartyLink } from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'PartyPin',
+  mixins: [
+    links,
+  ],
   props: {
     party: {
       type: Object,
@@ -36,7 +39,7 @@ export default {
   },
   computed: {
     partyLink() {
-      return getPartyLink(this.party);
+      return this.getPartyLink(this.party);
     },
     partyCssClass() {
       return `${this.party.acronym.toLowerCase().replace(/ /g, '_')}-background`;

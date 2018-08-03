@@ -17,10 +17,13 @@
 </template>
 
 <script>
-import { getPersonLink, getPersonPortrait } from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'PersonPin',
+  mixins: [
+    links,
+  ],
   props: {
     person: {
       type: Object,
@@ -35,10 +38,10 @@ export default {
   },
   computed: {
     personLink() {
-      return getPersonLink(this.person);
+      return this.getPersonLink(this.person);
     },
     personPortraitUrl() {
-      return getPersonPortrait(this.person);
+      return this.getPersonPortrait(this.person);
     },
   },
 };

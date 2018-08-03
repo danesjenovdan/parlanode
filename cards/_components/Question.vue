@@ -24,10 +24,13 @@
 </template>
 
 <script>
-import { getPersonLink } from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'Question',
+  mixins: [
+    links,
+  ],
   props: {
     question: {
       type: Object,
@@ -44,9 +47,6 @@ export default {
         || (this.$root.data && this.$root.data.person && this.$root.data.person.gender);
       return `question.asked${this.showAuthor ? '--with-name' : ''}--${gender}`;
     },
-  },
-  methods: {
-    getPersonLink,
   },
 };
 </script>

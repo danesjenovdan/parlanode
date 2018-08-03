@@ -150,7 +150,7 @@ import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
 import { partyOgImage } from 'mixins/ogImages';
-import { getPersonLink, getPersonPortrait } from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'OsnovneInformacijePS',
@@ -161,6 +161,7 @@ export default {
     partyTitle,
     partyHeader,
     partyOgImage,
+    links,
   ],
   data() {
     return {
@@ -177,10 +178,6 @@ export default {
     generatedCardUrl() {
       return `${this.url}${this.data.party.id}?altHeader=true`;
     },
-  },
-  methods: {
-    getPersonLink,
-    getPersonPortrait,
   },
 };
 </script>

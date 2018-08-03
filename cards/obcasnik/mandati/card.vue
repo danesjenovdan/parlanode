@@ -5,7 +5,6 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-
     <div slot="info">
       <p class="info-text lead"></p>
       <p class="info-text heading">METODOLOGIJA</p>
@@ -38,12 +37,15 @@
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
-import { getPersonLink, getPersonPortrait, getMemberPartyIdLink } from 'components/links';
+import links from 'mixins/links';
 
 export default {
-  name: 'ImeKartice',
+  name: 'ObcasnikMandati',
   components: {},
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     return {
       data: this.$options.cardData.data
@@ -53,11 +55,6 @@ export default {
       ogConfig: defaultOgImage(this),
       generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Fmandati.json`,
     };
-  },
-  methods: {
-    getPersonLink,
-    getPersonPortrait,
-    getMemberPartyIdLink,
   },
 };
 </script>

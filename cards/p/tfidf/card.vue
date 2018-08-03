@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { getSearchTermLink } from 'components/links';
+import links from 'mixins/links';
 import common from 'mixins/common';
 import { memberHeader } from 'mixins/altHeaders';
 import { memberOgImage } from 'mixins/ogImages';
@@ -44,6 +44,7 @@ export default {
     memberSpeeches,
     memberHeader,
     memberOgImage,
+    links,
   ],
   data() {
     return {
@@ -55,7 +56,7 @@ export default {
       return this.data.results.map(item => ({
         label: item.term,
         value: Math.round(item.scores['tf-idf'] * 5000),
-        link: getSearchTermLink(item.term),
+        link: this.getSearchTermLink(item.term),
       }));
     },
     generatedCardUrl() {

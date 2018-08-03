@@ -52,14 +52,21 @@
 <script>
 import { find } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
-import { getMemberLink, getMemberPortrait, getMemberPartyLink } from 'components/links';
+import links from 'mixins/links';
 import SearchField from 'components/SearchField.vue';
 import mapVotes from './mapVotes';
 import Result from './ResultShit.vue';
 
 export default {
   name: 'GlasovanjeSejePoslanci',
-  components: { StripedButton, SearchField, Result },
+  components: {
+    StripedButton,
+    SearchField,
+    Result,
+  },
+  mixins: [
+    links,
+  ],
   props: {
     members: {
       type: Array,
@@ -136,9 +143,6 @@ export default {
       }
       return false;
     },
-    getMemberLink,
-    getMemberPortrait,
-    getMemberPartyLink,
     mapVotes,
     translateOption(option, gender) {
       return {

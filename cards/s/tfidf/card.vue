@@ -33,7 +33,7 @@ import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
 import { sessionOgImage } from 'mixins/ogImages';
 import BarChart from 'components/BarChart.vue';
-import { getSearchTermLink } from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'BesedeKiSoZaznamovaleSejo',
@@ -44,6 +44,7 @@ export default {
     common,
     sessionHeader,
     sessionOgImage,
+    links,
   ],
   data() {
     return {
@@ -66,7 +67,7 @@ export default {
         .map(row => ({
           name: this.decodeHTML(row.term),
           value: row.value,
-          link: getSearchTermLink(row.term),
+          link: this.getSearchTermLink(row.term),
           widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
           percentage: ((row.value / mytotal) * 100).toFixed(2),
         }))

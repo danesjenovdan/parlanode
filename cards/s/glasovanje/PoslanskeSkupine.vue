@@ -61,14 +61,20 @@
 
 <script>
 import { find } from 'lodash';
-import { getPartyLink, getMemberLink, getMemberPartyLink, getMemberPortrait } from 'components/links';
+import links from 'mixins/links';
 import StripedButton from 'components/StripedButton.vue';
 import mapVotes from './mapVotes';
 import Result from './Result.vue';
 
 export default {
   name: 'GlasovanjeSejePoslanskeSkupine',
-  components: { StripedButton, Result },
+  components: {
+    StripedButton,
+    Result,
+  },
+  mixins: [
+    links,
+  ],
   props: {
     members: {
       type: Array,
@@ -123,10 +129,6 @@ export default {
     this.expandedOption = this.selectedOption;
   },
   methods: {
-    getPartyLink,
-    getMemberLink,
-    getMemberPartyLink,
-    getMemberPortrait,
     mapVotes,
     expandVote(event, party, option) {
       if (find(this.parties, ['party.id', party]).votes[option] === 0) {

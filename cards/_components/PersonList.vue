@@ -38,13 +38,16 @@
 </template>
 
 <script>
-import { getPersonPartyLink, getPersonLink, getPersonPortrait } from 'components/links';
+import links from 'mixins/links';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
   components: {
     ScrollShadow,
   },
+  mixins: [
+    links,
+  ],
   props: {
     people: {
       type: Array,
@@ -54,11 +57,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  methods: {
-    getPersonPartyLink,
-    getPersonLink,
-    getPersonPortrait,
   },
 };
 </script>

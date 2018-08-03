@@ -63,11 +63,7 @@ import { sessionOgImage } from 'mixins/ogImages';
 import BarChart from 'components/BarChart.vue';
 import PrisotnostPoPoslanskihSkupinah from 'components/PrisotnostPoPoslanskihSkupinah.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
-import {
-  getSessionTranscriptLink,
-  getSearchTermLink,
-  getSessionVotesLink,
-} from 'components/links';
+import links from 'mixins/links';
 
 export default {
   name: 'ZadnjaSeja',
@@ -80,11 +76,10 @@ export default {
     common,
     sessionHeader,
     sessionOgImage,
+    links,
   ],
   data() {
     return {
-      getSessionTranscriptLink,
-      getSessionVotesLink,
       data: this.$options.cardData.data,
     };
   },
@@ -104,7 +99,7 @@ export default {
         .map(row => ({
           name: this.decodeHTML(row.term),
           value: row.value,
-          link: getSearchTermLink(row.term),
+          link: this.getSearchTermLink(row.term),
           widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
           percentage: ((row.value / mytotal) * 100).toFixed(2),
         }))
