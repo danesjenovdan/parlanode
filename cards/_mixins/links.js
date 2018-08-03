@@ -3,10 +3,11 @@ import { PORTRAIT_ROOT_URL } from '../_components/constants';
 export default {
   methods: {
     getPersonLink(person) {
-      if (!this.slugs.person[person.id]) {
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      if (!slugs.person[person.id]) {
         return '';
       }
-      return `${this.slugs.urls.base}/p/${this.slugs.person[person.id].slug}`;
+      return `${slugs.urls.base}/${sm.member.base}/${slugs.person[person.id].slug}`;
     },
     getPersonPortrait(person) {
       return `${PORTRAIT_ROOT_URL}${person.gov_id}.png`;
@@ -15,10 +16,11 @@ export default {
       if (!party.acronym || party.acronym.indexOf('NeP') > -1) {
         return '';
       }
-      if (!this.slugs.party[party.id]) {
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      if (!slugs.party[party.id]) {
         return '';
       }
-      return `${this.slugs.urls.base}/ps/${this.slugs.party[party.id].acronym}`;
+      return `${slugs.urls.base}/${sm.party.base}/${slugs.party[party.id].acronym}`;
     },
     getPersonPartyLink(person) {
       return this.getPartyLink(person.party);
@@ -33,34 +35,43 @@ export default {
       return this.getPersonPartyLink(member.person);
     },
     getMemberPartyIdLink(member) {
-      if (!this.slugs.party[member.party_id]) {
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      if (!slugs.party[member.party_id]) {
         return '';
       }
-      return `${this.slugs.urls.base}/ps/${this.slugs.party[member.party_id].acronym}`;
+      return `${slugs.urls.base}/${sm.party.base}/${slugs.party[member.party_id].acronym}`;
     },
     getSessionLegislationLink(session) {
-      return `${this.slugs.urls.base}/seja/${session.id}/zakonodaja`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.session.base}/${session.id}/${sm.session.legislation}`;
     },
     getSessionTranscriptLink(session) {
-      return `${this.slugs.urls.base}/seja/${session.id}/transkript`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.session.base}/${session.id}/${sm.session.transcript}`;
     },
     getSessionVotesLink(session) {
-      return `${this.slugs.urls.base}/seja/${session.id}/druga-glasovanja`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
     },
     getSessionSpeechLink(session) {
-      return `${this.slugs.urls.base}/seja/${session.session_id || session.session.id}/transkript#${session.speech_id}`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.session.base}/${session.session_id || session.session.id}/${sm.session.transcript}#${session.speech_id}`;
     },
     getSessionVoteLink(session) {
-      return `${this.slugs.urls.base}/seja/${session.session_id}/glasovanje/${session.vote_id}`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.session.base}/${session.session_id}/${sm.session.vote}/${session.vote_id}`;
     },
     getSearchTermLink(term) {
-      return `${this.slugs.urls.base}/seje/isci/filter?q=${encodeURIComponent(`"${term}"`)}`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.landing.sessions}/${sm.sessions.search.base}/${sm.sessions.search.filter}?q=${encodeURIComponent(`"${term}"`)}`;
     },
     getLegislationLink(legislation) {
-      return `${this.slugs.urls.base}/zakonodaja/${legislation.epa || legislation.id}`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.landing.legislation}/${legislation.epa || legislation.id}`;
     },
     getLegislationListLink() {
-      return `${this.slugs.urls.base}/zakonodaja`;
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.landing.legislation}`;
     },
   },
 };
