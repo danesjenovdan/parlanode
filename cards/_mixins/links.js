@@ -53,5 +53,8 @@ export default {
     getSearchTermLink(term) {
       return `${this.slugs.urls.base}/seje/isci/filter?q=${encodeURIComponent(`"${term}"`)}`;
     },
+    getLegislationLink(legislation) {
+      return `${this.slugs.urls.base}/zakonodaja/${legislation.epa || legislation.id}`;
+    },
   },
 };

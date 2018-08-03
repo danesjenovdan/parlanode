@@ -21,7 +21,7 @@
               :key="legislation.epa"
               class="col-xs-12 col-sm-6 legislation__wrapper"
             >
-              <a :href="slugs.legislationLink + legislation.epa" class="legislation__single">
+              <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
                     <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon">
@@ -41,7 +41,7 @@
               :key="legislation.epa"
               class="col-sm-6 legislation__wrapper"
             >
-              <a :href="slugs.legislationLink + legislation.epa" class="legislation__single">
+              <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
                     <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon">
@@ -56,7 +56,7 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a v-t="'all-legislation'" :href="`${slugs.legislationLink}`"></a>
+        <a v-t="'all-legislation'" :href="`/zakonodaja/`"></a>
       </div>
     </div>
   </card-wrapper>
@@ -64,6 +64,7 @@
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import PTab from 'components/Tab.vue';
@@ -72,7 +73,10 @@ import PTabs from 'components/Tabs.vue';
 export default {
   name: 'IzpostavljenaZakonodaja',
   components: { PTab, PTabs },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     return {
       data: this.$options.cardData.data,

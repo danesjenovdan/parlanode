@@ -32,13 +32,17 @@
 <script>
 import SortableTable from 'components/SortableTable.vue';
 import common from 'mixins/common';
+import links from 'mixins/links';
 
 export default {
   name: 'SeznamZakonovKartica',
   components: {
     SortableTable,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   props: {
     headerConfig: {
       type: Object,
@@ -99,7 +103,7 @@ export default {
         const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
         return [
-          { html: `<a href="${this.slugs.legislationLink}${legislation.epa}" class="funblue-light-hover">${legislation.text}</a>` },
+          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text}</a>` },
           { text: legislation.epa },
           { text: legislation.date },
           { html: outcomeHtml },

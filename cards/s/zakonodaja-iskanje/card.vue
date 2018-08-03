@@ -35,6 +35,7 @@ import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
+import links from 'mixins/links';
 
 export default {
   name: 'ZakonodajaIskanje',
@@ -47,6 +48,7 @@ export default {
     searchTitle,
     searchHeader,
     searchOgImage,
+    links,
   ],
   data() {
     const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
@@ -93,7 +95,7 @@ export default {
 
         const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
         return [
-          { html: `<a href="${this.slugs.legislationLink}${legislation.id}" class="funblue-light-hover">${legislation.text_t[0]}</a>` },
+          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text_t[0]}</a>` },
           { text: typeof legislation.id !== 'undefined' ? legislation.id : '' },
           { html: outcomeHtml },
         ];

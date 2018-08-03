@@ -1,47 +1,44 @@
 export const partyOverview = {
   created() {
-    const party = this.$root.$options.cardData.data.party
-      || this.$root.$options.cardData.data.organization;
-    const slugs = this.$root.$options.cardData.urls;
-    this.$root.$options.cardData.template.contextUrl = `${slugs.urls.base}/poslanska-skupina/${slugs.party[party.id].slug}${slugs.partyLink.pregled}`;
+    const { template, urls: slugs, data } = this.$root.$options.cardData;
+    const party = data.party || data.organization;
+    template.contextUrl = `${slugs.urls.base}/ps/${slugs.party[party.id].acronym}`;
   },
 };
 
 export const partyVotes = {
   created() {
-    const party = this.$root.$options.cardData.data.party
-      || this.$root.$options.cardData.data.organization;
-    const slugs = this.$root.$options.cardData.urls;
-    this.$root.$options.cardData.template.contextUrl = `${slugs.urls.base}/poslanska-skupina/${slugs.party[party.id].slug}${slugs.partyLink.glasovanja}`;
+    const { template, urls: slugs, data } = this.$root.$options.cardData;
+    const party = data.party || data.organization;
+    template.contextUrl = `${slugs.urls.base}/ps/${slugs.party[party.id].acronym}/glasovanja`;
   },
 };
 
 export const partySpeeches = {
   created() {
-    const party = this.$root.$options.cardData.data.party
-      || this.$root.$options.cardData.data.organization;
-    const slugs = this.$root.$options.cardData.urls;
-    this.$root.$options.cardData.template.contextUrl = `${slugs.urls.base}/poslanska-skupina/${slugs.party[party.id].slug}${slugs.partyLink.govori}`;
+    const { template, urls: slugs, data } = this.$root.$options.cardData;
+    const party = data.party || data.organization;
+    template.contextUrl = `${slugs.urls.base}/ps/${slugs.party[party.id].acronym}/govori`;
   },
 };
 
 export const memberOverview = {
   created() {
-    const slugs = this.$root.$options.cardData.urls;
-    this.$root.$options.cardData.template.contextUrl = `${slugs.urls.base}/poslanec/${slugs.person[this.$root.$options.cardData.data.person.id].slug}${slugs.personLink.pregled}`;
+    const { template, urls: slugs, data } = this.$root.$options.cardData;
+    template.contextUrl = `${slugs.urls.base}/p/${slugs.person[data.person.id].slug}`;
   },
 };
 
 export const memberVotes = {
   created() {
-    const slugs = this.$root.$options.cardData.urls;
-    this.$root.$options.cardData.template.contextUrl = `${slugs.urls.base}/poslanec/${slugs.person[this.$root.$options.cardData.data.person.id].slug}${slugs.personLink.glasovanja}`;
+    const { template, urls: slugs, data } = this.$root.$options.cardData;
+    template.contextUrl = `${slugs.urls.base}/p/${slugs.person[data.person.id].slug}/glasovanja`;
   },
 };
 
 export const memberSpeeches = {
   created() {
-    const slugs = this.$root.$options.cardData.urls;
-    this.$root.$options.cardData.template.contextUrl = `${slugs.urls.base}/poslanec/${slugs.person[this.$root.$options.cardData.data.person.id].slug}${slugs.personLink.govori}`;
+    const { template, urls: slugs, data } = this.$root.$options.cardData;
+    template.contextUrl = `${slugs.urls.base}/p/${slugs.person[data.person.id].slug}/govori`;
   },
 };
