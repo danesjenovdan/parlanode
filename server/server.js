@@ -3,58 +3,9 @@ const chalk = require('chalk');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const axios = require('axios');
-const fs = require('fs-extra');
-const path = require('path');
-const _ = require('lodash');
 const config = require('../config');
 
 const app = express();
-
-const assetsPath = path.resolve(__dirname, '../assets');
-const urlSlugsPath = path.resolve(assetsPath, 'urls.json');
-const urlSlugsUrl = `${config.urls.analize}/p/getSlugs/`;
-
-/* eslint-disable no-underscore-dangle */
-async function fetchUrlSlugs(compare = false) {
-  try {
-    const res = await axios.get(urlSlugsUrl);
-    if (typeof res.data !== 'object') {
-      throw new Error(`Request did not return JSON (${urlSlugsUrl})`);
-    }
-    const newData = { ...res.data };
-    // allow replacing urls in config
-    newData.urls = { ...newData.urls, ...config.urls };
-
-    if (compare) {
-      const fileData = await fs.readJson(urlSlugsPath);
-      delete fileData.__lastUpdate;
-      if (!_.isEqual(newData, fileData)) {
-        newData.__lastUpdate = Date.now();
-      }
-    } else {
-      newData.__lastUpdate = Date.now();
-    }
-
-    await fs.ensureDir(assetsPath);
-    await fs.writeJson(urlSlugsPath, newData, {
-      spaces: 2,
-    });
-  } catch (error) {
-    if (!compare) {
-      throw error;
-    } else {
-      // eslint-disable-next-line no-console
-      console.error(error);
-    }
-  }
-}
-
-async function preloadUrlSlugs() {
-  // eslint-disable-next-line no-console
-  console.log('Preloading url slugs');
-  await fetchUrlSlugs(fs.existsSync(urlSlugsPath));
-}
 
 function setupExpress() {
   return new Promise((resolve, reject) => {
@@ -94,7 +45,6 @@ function setupExpress() {
 
 function init() {
   return Promise.resolve()
-    .then(preloadUrlSlugs)
     .then(setupExpress);
 }
 

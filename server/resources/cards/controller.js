@@ -13,7 +13,7 @@ const exec = util.promisify(require('child_process').exec);
 const { performance } = require('perf_hooks');
 const dateFns = require('date-fns');
 const config = require('../../../config');
-const urlSlugs = require('../../../assets/urls.json');
+const data = require('../../data');
 
 function getModelObjects(modelName, res, mapFunc) {
   const Model = mongoose.model(modelName);
@@ -100,8 +100,8 @@ async function loadBundles(cacheData) {
 
 function expandUrl(dataUrl) {
   if (typeof dataUrl === 'string') {
-    Object.keys(urlSlugs.urls).forEach((key) => {
-      dataUrl = dataUrl.replace(`{${key}}`, urlSlugs.urls[key]);
+    Object.keys(data.urls.urls).forEach((key) => {
+      dataUrl = dataUrl.replace(`{${key}}`, data.urls.urls[key]);
     });
   }
   return dataUrl;
@@ -112,9 +112,6 @@ async function shouldBuildCard(cacheData, cardJson) {
     const CardBuild = mongoose.model('CardBuild');
     const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method });
     if (!cardBuild) {
-      return true;
-    }
-    if (urlSlugs.__lastUpdate && urlSlugs.__lastUpdate > Number(cardBuild.lastBuilt)) {
       return true;
     }
     if (Number(cardBuild.lastBuilt) !== Number(cardJson.lastUpdate)) {
@@ -174,7 +171,7 @@ async function buildCard(cacheData, cardJson) {
 async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.card = cardJson._id;
   cacheData.dataUrl = expandUrl(cardJson.dataUrl);
-  cacheData.cardUrl = `${urlSlugs.urls.glej}${originalUrl}`;
+  cacheData.cardUrl = `${data.urls.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJson.lastUpdate;
 
   let fetchUrl;
@@ -183,7 +180,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   } else {
     fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
   }
-  const data = await fetchData(fetchUrl);
+  const fetchedData = await fetchData(fetchUrl);
 
   const [serverBundle, clientBundle, styleBundle] = await loadBundles(cacheData);
 
@@ -203,7 +200,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
 
   const parsedState = JSON.parse(cacheData.state);
   const context = {
-    data,
+    fetchedData,
     cardData: cardJson,
     customUrl: fetchUrl,
     state: parsedState,

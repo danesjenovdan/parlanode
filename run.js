@@ -1,7 +1,8 @@
 const chalk = require('chalk');
 const mongoose = require('mongoose');
-const server = require('./server/server');
 const database = require('./server/database');
+const data = require('./server/data');
+const server = require('./server/server');
 
 // Set Mongoose Promise to native Promise
 mongoose.Promise = global.Promise;
@@ -28,6 +29,7 @@ function init() {
 
   return Promise.resolve()
     .then(database.connect)
+    .then(data.preload)
     .then(server.init)
     .then(() => {
       // eslint-disable-next-line no-console

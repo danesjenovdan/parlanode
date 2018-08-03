@@ -19,7 +19,7 @@ config/production.js
 /og-images/**/bundles
 
 # auto-downloaded assets
-/assets/urls.json
+/data/*
 
 # generated images
 /og
