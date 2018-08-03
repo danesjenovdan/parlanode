@@ -10,12 +10,12 @@ import i18nCard from 'i18n/card.json';
 
 const locale = process.env.CARD_LANG;
 const i18n = new VueI18n({
-  locale: process.env.CARD_LANG,
+  locale,
   messages: {
     [locale]: merge({}, i18nDefault, i18nCard),
   },
 });
 
-const app = new Vue(Object.assign({}, Card, { cardData: window.__INITIAL_STATE__, i18n }));
+const app = new Vue(Object.assign({}, Card, { ...window.__INITIAL_STATE__, i18n }));
 
 app.$mount(`#${cardData._id}`);

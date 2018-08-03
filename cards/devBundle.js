@@ -3,13 +3,14 @@ import VueI18n from 'vue-i18n';
 import { merge } from 'lodash';
 /* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';
-import cardData from 'cardPath/card.json';
+import cardJson from 'cardPath/card.json';
 import data from 'cardPath/data.json';
 import parlaState from 'cardPath/state.json';
 import i18nDefault from 'i18n/defaults.json';
 import i18nCard from 'i18n/card.json';
 /* eslint-enable import/no-unresolved */
 import urls from '../data/urls.json';
+import siteMap from '../data/siteMap.json';
 
 Vue.use(VueI18n);
 
@@ -21,18 +22,16 @@ const i18n = new VueI18n({
   },
 });
 
-const fakeCardData = {
+const cardData = {
+  data,
   cardData: {
-    data,
-    parlaState,
-    cardData: {
-      altHeader: window.location.href.indexOf('altHeader=true') !== -1 ? 'true' : false,
-      ...cardData,
-    },
-    urls,
+    altHeader: window.location.href.indexOf('altHeader=true') !== -1 ? 'true' : false,
+    ...cardJson,
   },
-  i18n,
+  parlaState,
+  urls,
+  siteMap,
 };
 
-window.app = new Vue(Object.assign({}, Card, fakeCardData));
+window.app = new Vue(Object.assign({}, Card, { cardData, i18n }));
 window.app.$mount('#app');

@@ -70,7 +70,7 @@ function deleteBuildId(req, res) {
     });
 }
 
-async function loadCardJSON(cacheData) {
+async function loadCardJson(cacheData) {
   const cardJson = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
   cardJson.lastUpdate = new Date(cardJson.lastUpdate);
   return cardJson;
@@ -208,6 +208,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     clientBundle,
     styleBundle,
     urls: data.urls,
+    siteMap: data.siteMap,
   };
   context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 
@@ -239,7 +240,7 @@ function formattedDate(days = 0) {
 }
 
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
-  const cardJson = await loadCardJSON(cacheData);
+  const cardJson = await loadCardJson(cacheData);
   let renderedCard = null;
   if (!forceRender) {
     // eslint-disable-next-line no-console
@@ -346,7 +347,7 @@ function rebuildUpdated(req, res) {
 
     const maybeBuild = async (cacheData, i) => {
       res.write(`${i + 1} / ${allCards.length} | ${cacheData.group}/${cacheData.method}`);
-      const cardJson = await loadCardJSON(cacheData);
+      const cardJson = await loadCardJson(cacheData);
       if (await shouldBuildCard(cacheData, cardJson)) {
         res.write(' - BUILDING ...');
         await buildCard(cacheData, cardJson);
