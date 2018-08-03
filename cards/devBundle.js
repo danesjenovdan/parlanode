@@ -9,6 +9,7 @@ import parlaState from 'cardPath/state.json';
 import i18nDefault from 'i18n/defaults.json';
 import i18nCard from 'i18n/card.json';
 /* eslint-enable import/no-unresolved */
+import urls from '../data/urls.json';
 
 Vue.use(VueI18n);
 
@@ -28,6 +29,7 @@ const fakeCardData = {
       altHeader: window.location.href.indexOf('altHeader=true') !== -1 ? 'true' : false,
       ...cardData,
     },
+    urls,
   },
   i18n,
 };

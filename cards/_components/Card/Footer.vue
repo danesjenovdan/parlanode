@@ -23,7 +23,6 @@
 <script>
 import { get } from 'lodash';
 import { RIPPLE_DURATION } from 'components/constants';
-import slugs from '../../../assets/urls.json';
 
 export default {
   name: 'CardFooter',
@@ -31,7 +30,7 @@ export default {
     return {
       clicksDisabled: false,
       currentBack: null,
-      slugs,
+      slugs: this.$root.$options.cardData.urls,
     };
   },
   computed: {

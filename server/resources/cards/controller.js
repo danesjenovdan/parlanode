@@ -200,13 +200,14 @@ async function renderCard(cacheData, cardJson, originalUrl) {
 
   const parsedState = JSON.parse(cacheData.state);
   const context = {
-    fetchedData,
+    data: fetchedData,
     cardData: cardJson,
     customUrl: fetchUrl,
     state: parsedState,
     parlaState: parsedState,
     clientBundle,
     styleBundle,
+    urls: data.urls,
   };
   context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 

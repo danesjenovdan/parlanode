@@ -29,6 +29,7 @@ export default (context) => {
     data: context.data,
     cardData: context.cardData,
     parlaState: context.parlaState,
+    urls: context.urls,
   };
 
   const app = new Vue(Object.assign({}, Card, { cardData: context, i18n }));
