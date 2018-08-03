@@ -1,61 +1,66 @@
 {
   "person": {
     "is_active": false,
-    "district": [
-      2
-    ],
-    "name": "Goran Aleksi\u0107",
-    "gov_id": "1243",
+    "district": [89],
+    "name": "Eva Irgl",
+    "gov_id": "P023",
     "gender": "f",
     "party": {
-      "acronym": "SNAGA",
+      "acronym": "SDS",
       "is_coalition": false,
-      "id": 258,
-      "name": "SNAGA - Stranka narodnog i gra\u0111anskog aktivizma"
+      "id": 5,
+      "name": "PS Slovenska Demokratska Stranka"
     },
     "type": "mp",
-    "id": 1243,
+    "id": 35,
     "has_function": false
   },
-  "created_at": "17.07.2018",
-  "created_for": "17.07.2018",
+  "created_at": "02.08.2018",
+  "created_for": "02.08.2018",
   "results": {
-    "voters": null,
-    "acronym": "SNAGA",
-    "mandates": 1,
-    "party_id": 258,
+    "voters": 3379,
+    "acronym": "SDS",
+    "mandates": 4,
+    "party_id": 5,
     "groups": [
       {
-        "group_id": 260,
-        "group_name": "Odbor za pravosu\u0111e"
+        "group_id": 13,
+        "group_name":
+          "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti"
       },
+      { "group_id": 15, "group_name": "Mandatno-volilna komisija" },
       {
-        "group_id": 259,
-        "group_name": "Odbor za zakonodavstvo"
+        "group_id": 23,
+        "group_name":
+          "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
+      },
+      { "group_id": 25, "group_name": "Odbor za pravosodje" }
+    ],
+    "education": "gimnazijska maturantka\r\n",
+    "working_bodies_functions": [
+      {
+        "role": "president",
+        "wb": {
+          "acronym": "",
+          "is_coalition": false,
+          "id": 13,
+          "name":
+            "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti"
+        }
       }
     ],
-    "education": "VSS - diplomirani in\u017eenjer prometa",
-    "working_bodies_functions": [],
-    "previous_occupation": "",
-    "name": "Goran Aleksi\u0107",
-    "district": [
-      "I. izborna jedinica"
-    ],
-    "age": 53,
+    "previous_occupation": "poslanka ",
+    "name": "Eva Irgl",
+    "district": ["Ajdov\u0161\u010dina"],
+    "age": 41,
     "social": [
       {
-        "twitter": null,
-        "facebook": null,
+        "twitter": "https://twitter.com/evairgll",
+        "facebook": "https://www.facebook.com/eva.irgl.3",
         "linkedin": null
       }
     ],
-    "birth_date": "1965-01-12",
-    "party": "SNAGA - Stranka narodnog i gra\u0111anskog aktivizma"
-  },
-  "previous_versions": [
-    {
-      "title": "7. sklic parlamenta",
-      "url": "https://glej.parlameter.si/p/osnovne-informacije/2"
-    }
-  ]
+    "birth_date": "1976-12-09",
+    "party": "PS Slovenska Demokratska Stranka"
+  }
 }

@@ -1,4 +1,3 @@
-/* globals module */
 /* eslint-disable global-require, import/no-dynamic-require */
 const webpack = require('webpack');
 const merge = require('webpack-merge');
@@ -14,17 +13,10 @@ Vue.use(VueI18n);
 
 module.exports = (cardPath) => {
   const cardLang = process.env.CARD_LANG || 'sl';
-  // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
-  const cardDir = path.resolve(cardPath)
-    .replace(/\\/g, '/')
-    .split('/')
-    .slice(-2)
-    .join('/');
-
   const baseConfigObject = baseConfig(cardPath);
 
   const i18nDefault = require(path.resolve(__dirname, '_i18n', cardLang, 'defaults.json'));
-  const i18nCard = require(path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`));
+  const i18nCard = require(path.resolve(__dirname, '_i18n', cardLang, `${cardPath}.json`));
 
   const i18n = new VueI18n({
     locale: cardLang,
@@ -32,9 +24,9 @@ module.exports = (cardPath) => {
   });
 
   return merge.smart(baseConfigObject, {
-    entry: './cards/serverBundle.js',
+    entry: path.resolve(__dirname, 'bundle-server.js'),
     output: {
-      path: path.resolve(cardPath, 'bundles'),
+      path: path.resolve(__dirname, cardPath, 'bundles'),
       filename: 'server.js',
       libraryTarget: 'commonjs2',
     },
@@ -56,7 +48,7 @@ module.exports = (cardPath) => {
       new webpack.DefinePlugin({
         'process.env': {
           VUE_ENV: JSON.stringify('server'),
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+          NODE_ENV: JSON.stringify('production'),
           CARD_LANG: JSON.stringify(cardLang),
           CARD_NAME: JSON.stringify(process.env.CARD_NAME),
         },

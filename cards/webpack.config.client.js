@@ -5,9 +5,9 @@ const baseConfig = require('./webpack.config.base');
 
 module.exports = cardPath => (
   merge(baseConfig(cardPath), {
-    entry: './cards/clientBundle.js',
+    entry: path.resolve(__dirname, 'bundle-client.js'),
     output: {
-      path: path.resolve(cardPath, 'bundles'),
+      path: path.resolve(__dirname, cardPath, 'bundles'),
       filename: 'client.js',
     },
   })

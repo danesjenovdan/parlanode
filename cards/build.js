@@ -28,7 +28,7 @@ const compileWithWebpack = config => (
 
 // Refreshes lastUpdate param in card.json file on passed path
 const refreshLastUpdate = async (cardPath) => {
-  const cardJsonPath = `${cardPath}/card.json`;
+  const cardJsonPath = `./cards/${cardPath}/card.json`;
   const json = await fs.readJson(cardJsonPath);
   json.lastUpdate = new Date().toJSON();
   await fs.writeJson(cardJsonPath, json, { spaces: 2 });
@@ -70,7 +70,7 @@ if (!process.env.CARD_NAME) {
           .join('/')
       ));
 
-    allCards.reduce((p, c) => p.then(() => compileAndRefresh(`./cards/${c}`)), Promise.resolve())
+    allCards.reduce((p, c) => p.then(() => compileAndRefresh(c)), Promise.resolve())
       .catch((pError) => {
         // eslint-disable-next-line no-console
         console.error(pError);
@@ -79,7 +79,7 @@ if (!process.env.CARD_NAME) {
   });
 } else {
   const cardName = process.env.CARD_NAME;
-  compileAndRefresh(`./cards/${cardName}`)
+  compileAndRefresh(cardName)
     .catch((error) => {
       // eslint-disable-next-line no-console
       console.error(error);

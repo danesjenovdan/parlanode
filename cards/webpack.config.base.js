@@ -1,10 +1,9 @@
-/* globals module */
-const webpack = require('webpack');
 const fs = require('fs-extra');
 const path = require('path');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 process.traceDeprecation = true;
 
@@ -25,16 +24,10 @@ function createEmptyTranslationFile(filePath) {
 
 module.exports = (cardPath) => {
   const cardLang = process.env.CARD_LANG || 'sl';
-  // gets 'ps/clani' from '/whatever/dir/parlanode/cards/ps/clani'
-  const cardDir = path.resolve(cardPath)
-    .replace(/\\/g, '/')
-    .split('/')
-    .slice(-2)
-    .join('/');
 
   const i18nDefaultPath = path.resolve(__dirname, '_i18n', cardLang, 'defaults.json');
   createEmptyTranslationFile(i18nDefaultPath);
-  const i18nCardPath = path.resolve(__dirname, '_i18n', cardLang, `${cardDir}.json`);
+  const i18nCardPath = path.resolve(__dirname, '_i18n', cardLang, `${cardPath}.json`);
   createEmptyTranslationFile(i18nCardPath);
 
   return {
@@ -55,7 +48,6 @@ module.exports = (cardPath) => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          exclude: /node_modules/,
         },
         {
           test: /\.scss$/,
@@ -78,14 +70,13 @@ module.exports = (cardPath) => {
               },
             ],
           }),
-          exclude: /node_modules/,
         },
       ],
     },
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.esm.js',
-        cardPath: `${path.resolve(cardPath)}`,
+        cardPath: `${path.resolve(__dirname, cardPath)}`,
         components: `${path.resolve(__dirname)}/_components`,
         helpers: `${path.resolve(__dirname)}/_helpers`,
         mixins: `${path.resolve(__dirname)}/_mixins`,

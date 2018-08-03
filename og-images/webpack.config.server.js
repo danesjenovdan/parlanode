@@ -16,8 +16,8 @@ module.exports = currentPath => merge.smart(baseConfig(currentPath), {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
         VUE_ENV: JSON.stringify('server'),
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
   ],
