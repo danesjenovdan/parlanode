@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import links from 'mixins/links';
+
 /* global d3 */
 function chart(rawData, component) {
   $('.timelinechart svg').remove();
@@ -267,6 +269,9 @@ function chart(rawData, component) {
 
 export default {
   name: 'TimeLineChart',
+  mixins: [
+    links,
+  ],
   props: {
     data: {
       type: Object,
