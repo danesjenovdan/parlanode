@@ -31,7 +31,7 @@ async function fetchCard(cardPath, id, params = {}) {
   }
 
   const idParam = id != null ? id : '';
-  const cardUrl = `${data.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
+  const cardUrl = `${data.urls.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
@@ -67,10 +67,10 @@ const asyncRender = fn => (req, res, next) => {
   fn(render, req, res, next);
 };
 
-function expandProps(msg, data) {
+function expandProps(msg, props) {
   msg = String(msg);
-  Object.keys(data).forEach((key) => {
-    msg = msg.replace(`{${key}}`, String(data[key]));
+  Object.keys(props).forEach((key) => {
+    msg = msg.replace(`{${key}}`, String(props[key]));
   });
   return msg;
 }
@@ -78,7 +78,7 @@ function expandProps(msg, data) {
 function i18n(lang) {
   const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
 
-  return (path, data = {}) => {
+  return (path, props = {}) => {
     const msg = messages[path] || _.get(messages, path);
     if (!msg) {
       // eslint-disable-next-line no-console
@@ -93,7 +93,7 @@ function i18n(lang) {
       }
       return String(msg);
     }
-    return expandProps(msg, data);
+    return expandProps(msg, props);
   };
 }
 
