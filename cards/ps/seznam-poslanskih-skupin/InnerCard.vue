@@ -39,12 +39,14 @@
 <script>
 import common from 'mixins/common';
 import links from 'mixins/links';
+import { partyList } from 'mixins/contextUrls';
 
 export default {
   name: 'SeznamPoslanskihSkupinInnerCard',
   mixins: [
     common,
     links,
+    partyList,
   ],
   props: {
     processedPartyData: {
@@ -67,9 +69,6 @@ export default {
       type: Object,
       default: () => ({}),
     },
-  },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanske-skupine`;
   },
 };
 </script>

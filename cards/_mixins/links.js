@@ -38,11 +38,14 @@ export default {
       }
       return `${this.slugs.urls.base}/ps/${this.slugs.party[member.party_id].acronym}`;
     },
+    getSessionLegislationLink(session) {
+      return `${this.slugs.urls.base}/seja/${session.id}/zakonodaja`;
+    },
     getSessionTranscriptLink(session) {
       return `${this.slugs.urls.base}/seja/${session.id}/transkript`;
     },
     getSessionVotesLink(session) {
-      return `${this.slugs.urls.base}/seja/${session.id}/glasovanja`;
+      return `${this.slugs.urls.base}/seja/${session.id}/druga-glasovanja`;
     },
     getSessionSpeechLink(session) {
       return `${this.slugs.urls.base}/seja/${session.session_id || session.session.id}/transkript#${session.speech_id}`;
@@ -55,6 +58,9 @@ export default {
     },
     getLegislationLink(legislation) {
       return `${this.slugs.urls.base}/zakonodaja/${legislation.epa || legislation.id}`;
+    },
+    getLegislationListLink() {
+      return `${this.slugs.urls.base}/zakonodaja`;
     },
   },
 };

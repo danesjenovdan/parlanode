@@ -22,3 +22,10 @@ export const searchTitle = {
     context.template.pageTitle = `Iskalni niz: ${keywords}`;
   },
 };
+
+export const otherVotingsTitle = {
+  created() {
+    const context = this.$root.$options.cardData;
+    context.template.pageTitle = `Druga glasovanja - ${context.data.session.name}`;
+  },
+};

@@ -208,7 +208,7 @@ export default {
 
     const votingDays = this.$options.cardData.data.results.map(votingDay => ({
       date: votingDay.date,
-      results: votingDay.votes.map(o => voteMapper(o, this.slugs)),
+      results: votingDay.votes.map(voteMapper),
     }));
 
     const allTags = this.$options.cardData.data.all_tags

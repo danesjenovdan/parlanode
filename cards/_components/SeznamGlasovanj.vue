@@ -112,6 +112,7 @@
 import StripedButton from 'components/StripedButton.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
+import links from 'mixins/links';
 
 export default {
   name: 'SeznamGlasovanj',
@@ -120,6 +121,9 @@ export default {
     SearchDropdown,
     ScrollShadow,
   },
+  mixins: [
+    links,
+  ],
   props: {
     data: {
       required: true,
@@ -205,7 +209,7 @@ export default {
     processVotes() {
       const votes = this.data.votes.map((e) => {
         const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
-        e.url = `${this.$root.slugs.urls.base}/seja/glasovanje/${(e.session_id || this.data.session.id)}/${e.motion_id}`;
+        e.url = this.getSessionVoteLink({ session_id: (e.session_id || this.data.session.id), vote_id: e.motion_id });
         e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
         e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
         e.percent_votes_for = Math.floor((e.votes_for / allInVotes) * 100);

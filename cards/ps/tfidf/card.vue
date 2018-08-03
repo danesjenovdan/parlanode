@@ -61,10 +61,6 @@ export default {
       return `${this.url}${this.$options.cardData.data.party.id}?altHeader=true`;
     },
   },
-  created() {
-    const context = this.$root.$options.cardData;
-    context.template.pageTitle = `Besede, ki jih zaznamujejo - ${context.data.party.name}`;
-  },
   methods: {
     decodeHTML(html) {
       return html.replace('&shy;', '\u00AD');

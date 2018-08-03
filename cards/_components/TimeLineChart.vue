@@ -4,7 +4,7 @@
 
 <script>
 /* global d3 */
-function chart(rawData) {
+function chart(rawData, component) {
   $('.timelinechart svg').remove();
 
   function getQueryParams(str) {
@@ -29,7 +29,7 @@ function chart(rawData) {
   }
 
   function generateSearchUrl(queryParams) {
-    let searchurl = `${this.$root.slugs.urls.base}/seje/isci/filter/?q=${timeQuery.q}`;
+    let searchurl = component.getSearchTermLink(timeQuery.q);
     if (queryParams.people && queryParams.people.length > 0) {
       if (!searchurl.endsWith('?')) {
         searchurl = `${searchurl}&people=${queryParams.people}`;
@@ -283,7 +283,7 @@ export default {
   },
   methods: {
     renderChart() {
-      chart(this.data);
+      chart(this.data, this);
     },
   },
 };

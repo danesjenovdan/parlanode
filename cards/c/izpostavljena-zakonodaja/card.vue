@@ -56,7 +56,7 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a v-t="'all-legislation'" :href="`/zakonodaja/`"></a>
+        <a v-t="'all-legislation'" :href="getLegislationListLink()"></a>
       </div>
     </div>
   </card-wrapper>

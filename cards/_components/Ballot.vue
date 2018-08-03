@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="`${slugs.urls.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`"
+    :href="getSessionVoteLink(ballot)"
     class="ballot"
   >
     <div class="disunion">
@@ -21,6 +21,7 @@
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
 
 export default {
   name: 'Ballot',
@@ -29,7 +30,10 @@ export default {
       return `${parseInt(val, 10)} %`;
     },
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   props: {
     ballot: {
       type: Object,

@@ -73,6 +73,7 @@
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import PTab from 'components/Tab.vue';
@@ -84,8 +85,17 @@ import mapVotes from 'helpers/mapVotes';
 
 export default {
   name: 'Zakon',
-  components: { PTab, PTabs, Excerpt, SeznamGlasovanj, Result },
-  mixins: [common],
+  components: {
+    PTab,
+    PTabs,
+    Excerpt,
+    SeznamGlasovanj,
+    Result,
+  },
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     const documents = this.$options.cardData.data.votes.reduce((prev, cur) => {
       cur.documents.forEach((document) => { // TODO fix after data is fixed
@@ -160,7 +170,7 @@ export default {
       return {
         epa: this.data.epa || '',
         name: this.data.text || '',
-        link: `${this.slugs.urls.base}/zakonodaja/${this.data.epa}`,
+        link: this.getLegislationLink(this.data),
       };
     },
   },

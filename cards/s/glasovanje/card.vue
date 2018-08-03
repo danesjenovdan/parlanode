@@ -118,6 +118,7 @@
 <script>
 import { pick } from 'lodash';
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import PSearchDropdown from 'components/SearchDropdown.vue';
@@ -137,7 +138,10 @@ export default {
     PTabs,
     Excerpt,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     return {
       showMobileExcerpt: false,
@@ -168,13 +172,16 @@ export default {
       return {
         epa: this.data.legislation.epa || '',
         name: this.data.legislation.text,
-        link: `${this.slugs.urls.base}/zakonodaja/${this.data.legislation.epa}`,
+        link: this.getLegislationLink(this.data.legislation),
       };
     },
   },
   // glasovanje-update je bilo prazno, created() je iz developa
   created() {
-    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanje/${this.data.session.id}/${this.data.id}`;
+    this.$options.cardData.template.contextUrl = this.getSessionVoteLink({
+      session_id: this.data.session.id,
+      vote_id: this.data.id,
+    });
   },
   mounted() {
     this.$on('selectedoption', (newSelectedOption) => {

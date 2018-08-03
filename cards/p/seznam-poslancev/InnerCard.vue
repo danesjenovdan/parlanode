@@ -22,6 +22,7 @@
 import common from 'mixins/common';
 import SortableTable from 'components/SortableTable.vue';
 import links from 'mixins/links';
+import { memberList } from 'mixins/contextUrls';
 
 const arabicToRoman = arabic => ({
   0: '',
@@ -41,6 +42,7 @@ export default {
   mixins: [
     common,
     links,
+    memberList,
   ],
   props: {
     demographics: {
@@ -115,9 +117,6 @@ export default {
         { id: 'change', label: this.$t('change') },
       ];
     },
-  },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/poslanci`;
   },
   methods: {
     selectSort(sort) {

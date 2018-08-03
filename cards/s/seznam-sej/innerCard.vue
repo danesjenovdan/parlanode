@@ -53,13 +53,21 @@
 <script>
 import SortableTable from 'components/SortableTable.vue';
 import common from 'mixins/common';
+import links from 'mixins/links';
+import { sessions as sessionsContextUrl } from 'mixins/contextUrls';
 import formatDate from 'helpers/dateFormatter';
 import { ICONS_ROOT_URL } from 'components/constants';
 
 export default {
   name: 'SeznamSejKartica',
-  components: { SortableTable },
-  mixins: [common],
+  components: {
+    SortableTable,
+  },
+  mixins: [
+    common,
+    links,
+    sessionsContextUrl,
+  ],
   props: {
     headerConfig: {
       type: Object,
@@ -113,15 +121,12 @@ export default {
       ]);
     },
   },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seje`;
-  },
   methods: {
     getSessionUrl(session) {
       if (!this.slugs || session.link_to === 'nothing') {
         return '';
       }
-      return `${this.slugs.urls.base}/seja/zakonodaja/${session.id}`;
+      return this.getSessionLegislationLink(session);
     },
   },
 };

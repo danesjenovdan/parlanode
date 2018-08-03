@@ -1,6 +1,6 @@
 import { pick } from 'lodash';
 
-export default (vote, slugs) => {
+export default (vote) => {
   const newVote = pick(vote.results, [
     'tags', 'text', 'votes_for', 'against', 'abstain', 'not_present', 'result',
   ]);
@@ -9,7 +9,10 @@ export default (vote, slugs) => {
                    + vote.results.abstain
                    + vote.results.not_present;
   newVote.date = vote.session.date_ts;
-  newVote.url = `${slugs.urls.base}/seja/glasovanje/${vote.session.id}/${vote.results.motion_id}`;
+  newVote.url = this.getSessionVoteLink({
+    session_id: vote.session.id,
+    vote_id: vote.results.motion_id,
+  });
   newVote.accepted = `accepted ${vote.results.result ? 'aye' : 'nay'}`;
   newVote.accepted_glyph = `glyphicon glyphicon-${vote.results.result ? 'ok' : 'remove'}`;
   newVote.percent_votes_for = Math.floor((vote.results.votes_for / allInVotes) * 100);

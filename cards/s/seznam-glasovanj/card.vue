@@ -51,8 +51,10 @@
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { sessionHeader } from 'mixins/altHeaders';
 import { sessionOgImage } from 'mixins/ogImages';
+import { otherVotingsTitle } from 'mixins/titles';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 
 export default {
@@ -64,6 +66,8 @@ export default {
     common,
     sessionHeader,
     sessionOgImage,
+    otherVotingsTitle,
+    links,
   ],
   data() {
     const state = this.$options.cardData.parlaState;
@@ -112,8 +116,7 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = `${this.slugs.urls.base}/seja/glasovanja/${this.data.session.id}`;
-    this.$options.cardData.template.pageTitle = `Druga glasovanja - ${this.$options.cardData.data.session.name}`;
+    this.$options.cardData.template.contextUrl = this.getSessionVotesLink(this.data.session);
   },
   methods: {
     onFiltersChanged(newFilters) {
