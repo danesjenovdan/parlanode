@@ -9,6 +9,7 @@ fs.ensureDirSync(dataPath);
 
 const dataFiles = {
   urls: `${config.urls.analize}/p/getSlugs/`,
+  siteMap: `${config.urls.base}/api/sitemap`,
 };
 
 const dataTransforms = {
@@ -19,21 +20,41 @@ const dataTransforms = {
   },
 };
 
+const dataOnFetchFailure = {
+  siteMap(error) {
+    // eslint-disable-next-line no-console
+    console.warn('Failed fetching siteMap:', error.message, '\nTrying to use local siteMap.');
+    const filePath = path.resolve(dataPath, 'siteMap.json');
+    if (fs.existsSync(filePath)) {
+      return fs.readJsonSync(filePath);
+    }
+    return fs.readJsonSync(path.resolve(dataPath, 'siteMap.default.json'));
+  },
+};
+
 const loadedData = {};
 
 async function fetchData(name) {
-  const filePath = path.resolve(dataPath, `${name}.json`);
-  const res = await fetch(dataFiles[name]);
-  if (res.ok && res.status >= 200 && res.status < 400) {
-    let data = await res.json();
-    data = dataTransforms[name] ? dataTransforms[name](data) : data;
-    await fs.writeJson(filePath, data, {
-      spaces: 2,
-    });
-    loadedData[name] = data;
-    return loadedData[name];
+  try {
+    const filePath = path.resolve(dataPath, `${name}.json`);
+    const res = await fetch(dataFiles[name]);
+    if (res.ok && res.status >= 200 && res.status < 400) {
+      let data = await res.json();
+      data = dataTransforms[name] ? dataTransforms[name](data) : data;
+      await fs.writeJson(filePath, data, {
+        spaces: 2,
+      });
+      loadedData[name] = data;
+      return loadedData[name];
+    }
+    throw new Error(`Failed fetching data for '${name}': ${dataFiles[name]} status: ${res.status}`);
+  } catch (error) {
+    if (dataOnFetchFailure[name]) {
+      loadedData[name] = dataOnFetchFailure[name](error);
+      return loadedData[name];
+    }
+    throw error;
   }
-  throw new Error(`Failed fetching data for '${name}': ${dataFiles[name]} status: ${res.status}`);
 }
 
 async function loadData(name) {
@@ -88,29 +109,6 @@ module.exports = {
     return loadedData.urls;
   },
   get siteMap() {
-    // siteMap is not preloaded since its possible parlasite is not started
-    // so only fetch it on first request
-    if (loadedData.siteMap) {
-      return loadedData.siteMap;
-    }
-    if (!dataFiles.siteMap) {
-      dataFiles.siteMap = `${config.urls.base}/api/sitemap`;
-      // eslint-disable-next-line no-console
-      console.log('Started fetching siteMap');
-      loadData('siteMap')
-        .then(() => {
-          // eslint-disable-next-line no-console
-          console.log('Finished fetching siteMap');
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.error('Failed fetching siteMap:', error);
-        });
-    }
-    const filePath = path.resolve(dataPath, 'siteMap.json');
-    if (fs.existsSync(filePath)) {
-      return fs.readJsonSync(filePath);
-    }
-    return fs.readJsonSync(path.resolve(dataPath, 'siteMap.default.json'));
+    return loadedData.siteMap;
   },
 };
