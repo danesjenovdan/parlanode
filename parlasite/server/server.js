@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const config = require('../config');
+const { i18n } = require('./utils');
 
 const app = express();
 
@@ -16,6 +17,7 @@ function setupExpress() {
 
     // set template renderer
     app.set('view engine', 'ejs');
+    app.locals.i18n = i18n(config.siteLang);
 
     // serve static assets
     app.use(serveStatic('public'));
