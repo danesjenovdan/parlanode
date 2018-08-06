@@ -10,13 +10,7 @@ process.traceDeprecation = true;
 function createEmptyTranslationFile(filePath) {
   if (!fs.existsSync(filePath)) {
     fs.ensureFileSync(filePath);
-    const defaultJsonData = {
-      info: {
-        lead: '',
-        text: '',
-      },
-    };
-    fs.writeJsonSync(filePath, defaultJsonData, {
+    fs.writeJsonSync(filePath, {}, {
       spaces: 2,
     });
   }
