@@ -29,7 +29,7 @@ module.exports = (cardPath) => {
     optimization: {
       minimize: true,
     },
-    devtool: false,
+    devtool: 'source-map',
     module: {
       rules: [
         {
