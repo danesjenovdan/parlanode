@@ -149,17 +149,18 @@ async function buildCard(cacheData, cardJson) {
 
 async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.card = cardJson._id;
-  cacheData.dataUrl = expandUrl(cardJson.dataUrl);
+  cacheData.dataUrl = cardJson.dataUrl ? expandUrl(cardJson.dataUrl) : null;
+  cacheData.customUrl = cardJson.dataUrl ? expandUrl(cacheData.customUrl) : null;
   cacheData.cardUrl = `${data.urls.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJson.lastUpdate;
 
-  let fetchUrl;
+  let fetchUrl = null;
   if (cacheData.customUrl) {
     fetchUrl = cacheData.customUrl;
-  } else {
+  } else if (cacheData.dataUrl) {
     fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
   }
-  const fetchedData = await fetchData(fetchUrl, cacheData);
+  const fetchedData = fetchUrl ? await fetchData(fetchUrl, cacheData) : null;
 
   const [serverBundle, clientBundle, styleBundle] = await loadBundles(cacheData);
 

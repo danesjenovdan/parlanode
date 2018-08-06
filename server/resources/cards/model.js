@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const CardRender = mongoose.Schema({
   dateTime: { type: Date, default: Date.now },
-  dataUrl: { type: String, required: true },
+  dataUrl: String,
   html: String,
   card: String,
   cardUrl: String,
@@ -26,7 +26,7 @@ const CardBuild = mongoose.Schema({
   method: { type: String, index: true, required: true },
   lastBuilt: { type: Date, required: true },
   language: { type: String, required: true },
-  dataUrl: { type: String, required: true },
+  dataUrl: String,
 });
 
 mongoose.model('CardBuild', CardBuild);

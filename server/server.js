@@ -1,6 +1,5 @@
 const express = require('express');
 const chalk = require('chalk');
-const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const config = require('../config');
@@ -15,8 +14,6 @@ function setupExpress() {
     // disable "X-Powered-By: Express" header
     app.disable('x-powered-by');
 
-    // serve static assets on /assets
-    app.use('/assets', serveStatic('assets'));
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
