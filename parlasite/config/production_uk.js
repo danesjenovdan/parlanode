@@ -7,5 +7,5 @@ module.exports = {
     glej: 'http://glej.uk.parlameter.si',
     base: 'http://uk.parlameter.si',
   },
-  siteLang: 'en',
+  siteLang: 'sl',
 };
