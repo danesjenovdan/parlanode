@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import { get } from 'lodash';
 import Govori from 'components/Govori.vue';
 
 export default {
@@ -17,12 +16,22 @@ export default {
   },
   computed: {
     party() {
-      let party = get(this.$options.cardData.data, 'highlighting[0].person.party');
+      let party = this.$options.cardData.data
+        && this.$options.cardData.data.highlighting
+        && this.$options.cardData.data.highlighting[0]
+        && this.$options.cardData.data.highlighting[0].person
+        && this.$options.cardData.data.highlighting[0].person.party;
       if (party) {
         return party;
       }
-      const parties = get(this.$options.cardData.data, 'facet_counts.facet_fields.party_e');
-      const partyId = get(this.$options.cardData.data, 'filters.parties[0]');
+      const parties = this.$options.cardData.data
+        && this.$options.cardData.data.facet_counts
+        && this.$options.cardData.data.facet_counts.facet_fields
+        && this.$options.cardData.data.facet_counts.facet_fields.party_e;
+      const partyId = this.$options.cardData.data
+        && this.$options.cardData.data.filters
+        && this.$options.cardData.data.filters.parties
+        && this.$options.cardData.data.filters.parties[0];
       if (parties) {
         party = parties.map(p => p.party).find(p => p.id === Number(partyId));
       }

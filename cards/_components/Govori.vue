@@ -429,7 +429,9 @@ export default {
 
 #speaks {
   height: 433px;
+  overflow-x: hidden;
   overflow-y: auto;
+  overflow-anchor: none;
 
   @include respond-to(mobile) {
     height: 216px;
