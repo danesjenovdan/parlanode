@@ -44,9 +44,9 @@ async function fetchCard(cardPath, id, params = {}) {
       return text;
     }
   } catch (error) {
-    return `<div class="alert alert-danger">Failed to fetch card: ${cardPath}</div>`;
+    return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
   }
-  return `<div class="alert alert-danger">Failed to render card: ${cardPath}</div>`;
+  return `<div class="alert alert-danger" style="margin-top:20px">Failed to render card: ${cardPath}</div>`;
 }
 
 const asyncRoute = fn => (...args) => fn(...args).catch(args[2]);
