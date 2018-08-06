@@ -31,16 +31,20 @@ async function fetchCard(cardPath, id, params = {}) {
   }
 
   const idParam = id != null ? id : '';
-  const cardUrl = `${data.urls.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
+  const cardUrl = `${data.urls.urls.glej}ww${cardPath}${idParam}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
 
-  // TODO: if fetch errors dont show 500 but return like for non ok response
-  const res = await fetch(cardUrl);
-  if (res.ok) {
-    const text = await res.text();
-    return text;
+  try {
+    // TODO: if fetch errors dont show 500 but return like for non ok response
+    const res = await fetch(cardUrl);
+    if (res.ok) {
+      const text = await res.text();
+      return text;
+    }
+  } catch (error) {
+    return `<div class="alert alert-danger">Failed to fetch card: ${cardPath}</div>`;
   }
   return `<div class="alert alert-danger">Failed to render card: ${cardPath}</div>`;
 }
