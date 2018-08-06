@@ -11,21 +11,21 @@ router.get('/', ar((render) => {
   });
 }));
 
-router.get(`/${sm.sessions.search.base}`, (req, res) => {
-  res.render('seje/isci', {
+router.get(`/${sm.sessions.search.base}`, ar((render, req) => {
+  render('seje/isci', {
     activeMenu: 'seje',
     pageTitle: 'Išči seje',
     query: req.query.q,
   });
-});
+}));
 
-router.get(`/${sm.sessions.search.base}/${sm.sessions.search.filter}`, (req, res) => {
-  res.render('seje/isci/filter', {
+router.get(`/${sm.sessions.search.base}/${sm.sessions.search.filter}`, ar((render, req) => {
+  render('seje/isci/filter', {
     activeMenu: 'seje',
     pageTitle: 'Išči seje',
     query: req.query.q,
     queryObj: req.query, // TODO: remove this when fixing seje/isci/filter.ejs
   });
-});
+}));
 
 module.exports = router;

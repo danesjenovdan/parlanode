@@ -515,19 +515,19 @@ function capitalise(string) {
 
 <div id="session_search_results_filter">
   <div class="col-md-12">
-    <div class="getmedata" id="nastopi-v-katerih-je-bil-iskalni-niz-izrecen"></div>
+    <%- await fetchCard('/s/nastopi-v-katerih-je-bil-iskalni-niz-izrecen/', { state: {} }) %>
   </div>
   <div class="col-md-12">
-    <div class="getmedata" id="raba-skozi-cas"></div>
+    <%- await fetchCard('/s/raba-skozi-cas/', { state: {} }) %>
   </div>
   <div class="col-md-6">
-    <div class="getmedata" id="najveckrat-so-pojem-uporabili"></div>
+    <%- await fetchCard('/s/najveckrat-so-pojem-uporabili/', { state: {} }) %>
   </div>
   <div class="col-md-6">
-    <div class="getmedata" id="raba-po-strankah"></div>
+    <%- await fetchCard('/s/raba-po-strankah/', { state: {} }) %>
   </div>
   <div class="col-md-12">
-    <div class="getmedata-voting" id="glasovanja-search"></div>
+    <%- await fetchCard('/s/glasovanja-search/', { state: {} }) %>
   </div>
 </div>
 
