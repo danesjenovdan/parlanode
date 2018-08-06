@@ -44,6 +44,8 @@ async function fetchCard(cardPath, id, params = {}) {
       return text;
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Failed to fetch card:', error);
     return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
   }
   return `<div class="alert alert-danger" style="margin-top:20px">Failed to render card: ${cardPath}</div>`;
