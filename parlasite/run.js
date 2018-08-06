@@ -10,9 +10,9 @@ function init() {
       // eslint-disable-next-line no-console
       console.log(chalk.green('All is well!'));
     })
-    .catch((err) => {
+    .catch((error) => {
       // eslint-disable-next-line no-console
-      console.error(chalk.red('Failed to start:'), err);
+      console.error(chalk.red('Failed to start:'), error);
       process.exit(1);
     });
 }
