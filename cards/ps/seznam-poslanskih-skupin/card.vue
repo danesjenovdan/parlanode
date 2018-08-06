@@ -1,39 +1,25 @@
 <template>
-  <div
-    v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-    :id="$options.cardData.cardData._id"
-  >
-    <div class="party-list-generator">
-      <div class="row">
-        <div class="col-md-12">
-          <blue-button-list
-            :items="analyses"
-            v-model="currentAnalysis"
-          />
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator" class="party-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="analyses"
+              v-model="currentAnalysis"
+            />
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <inner-card
-            :processed-party-data="processedPartyData"
-            :header-config="headerConfig"
-            :og-config="ogConfig"
-            :generated-card-url="generatedCardUrl"
-            :current-analysis-data="currentAnalysisData"
-          />
-        </div>
-      </div>
-    </div>
+      <inner-card
+        :processed-party-data="processedPartyData"
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+        :generated-card-url="generatedCardUrl"
+        :current-analysis-data="currentAnalysisData"
+      />
+    </generator>
   </div>
-  <inner-card
-    v-else
-    :processed-party-data="processedPartyData"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    :generated-card-url="generatedCardUrl"
-    :current-analysis-data="currentAnalysisData"
-  />
 </template>
 
 <script>
@@ -41,6 +27,7 @@ import { find } from 'lodash';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
@@ -81,6 +68,7 @@ const analysesIDs = [
 export default {
   name: 'SeznamPoslanskihSkupin',
   components: {
+    Generator,
     BlueButtonList,
     InnerCard,
   },

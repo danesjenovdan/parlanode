@@ -1,95 +1,51 @@
 <template>
-  <div
-    :id="$options.cardData.cardData._id"
-  >
-    <div
-      v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-      class="party-list-generator"
-    >
-      <div class="row">
-        <div class="col-md-12">
-          <blue-button-list
-            :items="analyses"
-            v-model="currentAnalysis"
-          />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 filters">
-          <div class="parties filter">
-            <striped-button
-              v-for="party in parties"
-              :color="party.color"
-              :key="party.acronym"
-              :selected="selectedParties.indexOf(party.acronym) > -1"
-              :small-text="party.acronym"
-              :is-uppercase="false"
-              class="party"
-              stripe-position="bottom"
-              @click.native="selectParty(party.acronym)"
-            />
-          </div>
-          <search-field v-model="textFilter" class="filter text-filter" />
-          <p-search-dropdown
-            :items="districts"
-            :placeholder="districtPlaceholder"
-            class="filter district-filter"
-          />
-          <div class="genders filter">
-            <striped-icon-button
-              v-for="gender in genders"
-              :color="'funblue'"
-              :key="gender.id"
-              :selected="selectedGenders.indexOf(gender.id) > -1"
-              :icon="gender.id"
-              :stripe-position="'top'"
-              class="gender"
-              @click.native="selectGender(gender.id)"
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator" class="party-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="analyses"
+              v-model="currentAnalysis"
             />
           </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <inner-card
-            :header-config="headerConfig"
-            :og-config="ogConfig"
-            :generated-card-url="generatedCardUrl"
-            :current-analysis-data="currentAnalysisData"
-            :processed-members="processedMembers"
-            :current-sort="currentSort"
-            :current-sort-order="currentSortOrder"
-            :demographics="currentAnalysis === 'demographics'"
-            @sort="sortBy"
-          >
-            <div slot="info">
-              <i18n path="info.lead" tag="p" class="info-text lead">
-                <span place="parties">
-                  <span v-if="selectedParties.length">
-                    {{ $t('party') }}: {{ selectedParties.join(', ') }}
-                  </span>
-                  <span v-t="'all-parties'" v-else></span>
-                </span>
-                <span place="districts">
-                  <span v-if="selectedDistrictNames.length">
-                    {{ $t('voting-district') }}: {{ selectedDistrictNames.join(', ') }}
-                  </span>
-                  <span v-t="'all-voting-districts'" v-else></span>
-                </span>
-                <span place="sortBy">{{ sortMap[currentSort] }}</span>
-              </i18n>
-              <template v-if="currentAnalysisData.explanation">
-                <p v-t="'info.methodology'" class="info-text heading"></p>
-                <p class="info-text">{{ currentAnalysisData.explanation }}</p>
-              </template>
+        <div class="row">
+          <div class="col-md-12 filters">
+            <div class="parties filter">
+              <striped-button
+                v-for="party in parties"
+                :color="party.color"
+                :key="party.acronym"
+                :selected="selectedParties.indexOf(party.acronym) > -1"
+                :small-text="party.acronym"
+                :is-uppercase="false"
+                class="party"
+                stripe-position="bottom"
+                @click.native="selectParty(party.acronym)"
+              />
             </div>
-          </inner-card>
+            <search-field v-model="textFilter" class="filter text-filter" />
+            <p-search-dropdown
+              :items="districts"
+              :placeholder="districtPlaceholder"
+              class="filter district-filter"
+            />
+            <div class="genders filter">
+              <striped-icon-button
+                v-for="gender in genders"
+                :color="'funblue'"
+                :key="gender.id"
+                :selected="selectedGenders.indexOf(gender.id) > -1"
+                :icon="gender.id"
+                :stripe-position="'top'"
+                class="gender"
+                @click.native="selectGender(gender.id)"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div v-else>
       <inner-card
         :header-config="headerConfig"
         :og-config="ogConfig"
@@ -123,7 +79,7 @@
           </template>
         </div>
       </inner-card>
-    </div>
+    </generator>
   </div>
 </template>
 
@@ -135,6 +91,7 @@ import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
@@ -177,6 +134,7 @@ const analysesIDs = [
 export default {
   name: 'SeznamPoslancev',
   components: {
+    Generator,
     BlueButtonList,
     InnerCard,
     PSearchDropdown,

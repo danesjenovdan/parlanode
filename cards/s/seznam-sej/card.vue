@@ -1,74 +1,53 @@
 <template>
-  <div
-    v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-    :id="$options.cardData.cardData._id"
-  >
-    <div class="session-list-generator">
-      <div class="row">
-        <div class="col-md-12 filters">
-          <ul class="button-filters">
-            <striped-button
-              v-for="(filter, index) in filters"
-              :key="index"
-              :selected="filter === currentFilter"
-              :small-text="$te(filter) ? $t(filter) : filter"
-              color="sds"
-              @click.native="selectFilter(filter)"
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator" class="session-list-generator">
+        <div class="row">
+          <div class="col-md-12 filters">
+            <ul class="button-filters">
+              <striped-button
+                v-for="(filter, index) in filters"
+                :key="index"
+                :selected="filter === currentFilter"
+                :small-text="$te(filter) ? $t(filter) : filter"
+                color="sds"
+                @click.native="selectFilter(filter)"
+              />
+            </ul>
+
+            <p-search-dropdown
+              :items="workingBodies"
+              :placeholder="inputPlaceholder"
+              class="dropdown-filter"
             />
-          </ul>
 
-          <p-search-dropdown
-            :items="workingBodies"
-            :placeholder="inputPlaceholder"
-            class="dropdown-filter"
-          />
-
-          <div class="align-checkbox">
-            <input
-              id="justFive"
-              v-model="justFive"
-              type="checkbox"
-              class="checkbox"
-            >
-            <label v-t="'just-last-five'" for="justFive"></label>
+            <div class="align-checkbox">
+              <input
+                id="justFive"
+                v-model="justFive"
+                type="checkbox"
+                class="checkbox"
+              >
+              <label v-t="'just-last-five'" for="justFive"></label>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <inner-card
-            :header-config="headerConfig"
-            :og-config="ogConfig"
-            :columns="columns"
-            :current-sort="currentSort"
-            :current-sort-order="currentSortOrder"
-            :select-sort="selectSort"
-            :processed-sessions="processedSessions"
-            :organisation-is-working-body="organisationIsWorkingBody"
-            :generated-card-url="generatedCardUrl"
-            :current-filter="currentFilter"
-            :just-five="justFive"
-          />
-        </div>
-      </div>
-    </div>
+      <inner-card
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+        :columns="columns"
+        :current-sort="currentSort"
+        :current-sort-order="currentSortOrder"
+        :select-sort="selectSort"
+        :processed-sessions="processedSessions"
+        :organisation-is-working-body="organisationIsWorkingBody"
+        :generated-card-url="generatedCardUrl"
+        :current-filter="currentFilter"
+        :just-five="justFive"
+      />
+    </generator>
   </div>
-  <inner-card
-    v-else
-    :id="$options.cardData.cardData._id"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    :columns="columns"
-    :current-sort="currentSort"
-    :current-sort-order="currentSortOrder"
-    :select-sort="selectSort"
-    :processed-sessions="processedSessions"
-    :organisation-is-working-body="organisationIsWorkingBody"
-    :generated-card-url="generatedCardUrl"
-    :current-filter="currentFilter"
-    :just-five="justFive"
-  />
 </template>
 
 <script>
@@ -77,6 +56,7 @@ import axios from 'axios';
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import InnerCard from './innerCard.vue';
@@ -85,6 +65,7 @@ import cardConfigJson from './config.json';
 export default {
   name: 'SeznamSej',
   components: {
+    Generator,
     InnerCard,
     PSearchDropdown,
     StripedButton,

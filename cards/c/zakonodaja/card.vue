@@ -1,58 +1,57 @@
 <template>
   <div :id="$options.cardData.cardData._id">
-    <div
-      v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-      class="row legislation-list"
-    >
-      <div class="session-list-generator">
-        <div class="col-md-12 filters">
-          <ul class="button-filters">
-            <striped-button
-              v-for="(filter, index) in filters"
-              :key="index"
-              :selected="filter === currentFilter"
-              :small-text="$te(filter) ? $t(filter) : filter"
-              color="sds"
-              @click.native="selectFilter(filter)"
-            />
-          </ul>
+    <generator>
+      <div slot="generator" class="row legislation-list">
+        <div class="session-list-generator">
+          <div class="col-md-12 filters">
+            <ul class="button-filters">
+              <striped-button
+                v-for="(filter, index) in filters"
+                :key="index"
+                :selected="filter === currentFilter"
+                :small-text="$te(filter) ? $t(filter) : filter"
+                color="sds"
+                @click.native="selectFilter(filter)"
+              />
+            </ul>
 
-          <div class="filter text-filter">
-            <div v-t="'title-search'" class="filter-label"></div>
-            <p-search-field v-model="textFilter" />
-          </div>
+            <div class="filter text-filter">
+              <div v-t="'title-search'" class="filter-label"></div>
+              <p-search-field v-model="textFilter" />
+            </div>
 
-          <div class="filter month-dropdown">
-            <div v-t="'working-body'" class="filter-label"></div>
-            <p-search-dropdown
-              :items="allWorkingBodies"
-              :placeholder="inputPlaceholder"
-              :alphabetise="false"
-            />
-          </div>
+            <div class="filter month-dropdown">
+              <div v-t="'working-body'" class="filter-label"></div>
+              <p-search-dropdown
+                :items="allWorkingBodies"
+                :placeholder="inputPlaceholder"
+                :alphabetise="false"
+              />
+            </div>
 
-          <div class="filter only-abstracts">
-            <input
-              id="only-abstracts"
-              v-model="onlyAbstracts"
-              type="checkbox"
-              class="checkbox"
-            >
-            <label v-t="'only-abstracts'" for="only-abstracts"></label>
+            <div class="filter only-abstracts">
+              <input
+                id="only-abstracts"
+                v-model="onlyAbstracts"
+                type="checkbox"
+                class="checkbox"
+              >
+              <label v-t="'only-abstracts'" for="only-abstracts"></label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <inner-card
-      :header-config="headerConfig"
-      :og-config="ogConfig"
-      :columns="columns"
-      :items="processedData"
-      :current-sort="currentSort"
-      :current-sort-order="currentSortOrder"
-      :select-sort="selectSort"
-      :generated-card-url="generatedCardUrl"
-    />
+      <inner-card
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+        :columns="columns"
+        :items="processedData"
+        :current-sort="currentSort"
+        :current-sort-order="currentSortOrder"
+        :select-sort="selectSort"
+        :generated-card-url="generatedCardUrl"
+      />
+    </generator>
   </div>
 </template>
 
@@ -60,6 +59,7 @@
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
@@ -70,6 +70,7 @@ import cardConfigJson from './config.json';
 export default {
   name: 'Zakonodaja',
   components: {
+    Generator,
     StripedButton,
     PSearchField,
     InnerCard,
