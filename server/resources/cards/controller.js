@@ -22,10 +22,16 @@ async function loadCardJson(cacheData) {
   return cardJson;
 }
 
-async function fetchData(dataUrl) {
+async function fetchData(dataUrl, cacheData) {
   let dataRes;
   try {
-    dataRes = await axios.get(dataUrl);
+    dataRes = await axios.get(dataUrl, {
+      headers: {
+        'X-Parlameter-Card-Path': `${cacheData.group}/${cacheData.method}`,
+        'X-Parlameter-Card-ID': cacheData.id != null ? cacheData.id : '',
+        'X-Parlameter-Card-Url': cacheData.cardUrl,
+      },
+    });
   } catch (err) {
     throw new Error(`${err.message} (${dataUrl})`);
   }
@@ -153,7 +159,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   } else {
     fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
   }
-  const fetchedData = await fetchData(fetchUrl);
+  const fetchedData = await fetchData(fetchUrl, cacheData);
 
   const [serverBundle, clientBundle, styleBundle] = await loadBundles(cacheData);
 
