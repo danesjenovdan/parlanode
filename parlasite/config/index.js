@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
-let config;
 const env = process.env.NODE_ENV;
+let config;
 
 const defaultConfig = {
   port: 3066,
