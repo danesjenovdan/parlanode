@@ -21,7 +21,7 @@ function setupExpress() {
     app.locals.siteMap = config.siteMap;
 
     // serve static assets
-    app.use(serveStatic('public')); // TODO:
+    app.use(serveStatic('public'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
 
