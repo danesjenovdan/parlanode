@@ -1,6 +1,5 @@
 {
   "_id": "dashboard_test",
-  "dataUrl": "{data}/p/getListOfMembersTickers/",
   "lastUpdate": "2018-07-27T14:57:31.039Z",
   "big": true,
   "high": true
