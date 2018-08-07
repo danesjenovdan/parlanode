@@ -2,15 +2,6 @@
 
 <% include ../../_partials/search.ejs %>
 
-<%# TODO: remove %>
-<div class="col-md-12">
-  <style>
-  .session-search-container { margin-bottom: 0; }
-  .parlabutton-filter { position: relative; top: -25px; }
-  </style>
-  <a href="/seje/isci/filter?q=<%= query %>" class="parlabutton-filter tooltipme" title="To je eksperimentalna funkcionalnost, trenutno dela zelo počasi. Delamo na optimizaciji, najbolj vztrajni pa jo lahko preizkusite že zdaj.">Napredno iskanje</a>
-</div>
-
 <div id="session-search-results">
   <div class="col-md-12">
     <%- await fetchCard('/s/nastopi-v-katerih-je-bil-iskalni-niz-izrecen/', { state: { query } }) %>
