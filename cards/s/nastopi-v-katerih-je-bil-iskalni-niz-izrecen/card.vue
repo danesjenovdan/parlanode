@@ -1,6 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': fetching}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -12,7 +13,7 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div v-t="'no-results'" v-if="rawSpeeches.length === 0" class="no-results"></div>
+    <div v-t="'no-results'" v-if="rawSpeeches.length === 0 && !fetching" class="no-results"></div>
     <scroll-shadow v-else ref="shadow">
       <ul
         ref="scrollElement"
@@ -60,6 +61,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
@@ -67,6 +69,7 @@ import { searchOgImage } from 'mixins/ogImages';
 import links from 'mixins/links';
 import dateFormatter from 'helpers/dateFormatter';
 import ScrollShadow from 'components/ScrollShadow.vue';
+import stateLoader from 'helpers/stateLoader';
 
 const PAGE_SIZE = 50;
 
@@ -83,22 +86,19 @@ export default {
     links,
   ],
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q
-      .split('content_t:')[1].split(')')[0];
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data,
-      keywords,
-      rawSpeeches: this.$options.cardData.data.highlighting,
-      allResults: this.$options.cardData.data.response.numFound,
+      keywords: loadFromState('query'),
+      rawSpeeches: [],
+      allResults: 0,
       page: 0,
-      fetching: false,
+      fetching: true,
     };
   },
   computed: {
     generatedCardUrl() {
-      const state = { text: this.keywords };
-      const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      const state = { query: this.keywords };
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     speeches() {
       return this.rawSpeeches.map((speech) => {
@@ -114,9 +114,22 @@ export default {
     },
   },
   mounted() {
-    if (this.allResults > PAGE_SIZE) {
-      this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
-    }
+    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.rawSpeeches = res.data.highlighting || [];
+        this.allResults = res.data.response.numFound;
+        this.fetching = false;
+        if (this.allResults > PAGE_SIZE) {
+          this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
+        }
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.fetching = false;
+        this.error = true;
+      });
   },
   methods: {
     checkIfBottom() {
