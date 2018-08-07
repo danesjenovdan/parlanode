@@ -149,11 +149,16 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      background-color: rgba($white, 0.6);
+      background-image: url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif);
+      background-repeat: no-repeat;
+      background-position: center center;
       content: '';
-      height: 100%;
       position: absolute;
-      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       z-index: 1;
     }
   }

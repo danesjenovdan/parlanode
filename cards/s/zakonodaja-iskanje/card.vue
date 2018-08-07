@@ -1,6 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -15,6 +16,7 @@
       <scroll-shadow ref="shadow">
         <div id="card-search" @scroll="$refs.shadow.check($event.currentTarget)">
           <sortable-table
+            v-if="!loading"
             :columns="columns"
             :items="mappedItems"
             :sort="currentSort"
@@ -29,6 +31,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SortableTable from 'components/SortableTable.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 import common from 'mixins/common';
@@ -36,6 +39,7 @@ import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
 import links from 'mixins/links';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
   name: 'ZakonodajaIskanje',
@@ -51,25 +55,28 @@ export default {
     links,
   ],
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data.response.docs,
+      data: [],
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      keywords,
+      keywords: loadFromState('query'),
+      loading: true,
+      error: false,
     };
   },
   computed: {
-    columns: () => [
-      { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
-      { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
-      { id: 'result', label: this.$t('status'), additionalClass: 'small-text' },
-    ],
+    columns() {
+      return [
+        { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
+        { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
+        { id: 'result', label: this.$t('status'), additionalClass: 'small-text' },
+      ];
+    },
     generatedCardUrl() {
-      const state = { text: this.keywords };
-      const searchUrl = `${this.slugs.urls.isci}/l/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      const state = { query: this.keywords };
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     mappedItems() {
       const mapResultIcon = {
@@ -137,6 +144,20 @@ export default {
 
       return sortedLegislation;
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/l/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.data = (res.data.response && res.data.response.docs) || [];
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
   methods: {
     selectSort(sortId) {
