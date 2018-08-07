@@ -1,6 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -11,7 +12,7 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <p-tabs>
+    <p-tabs v-if="!loading">
       <p-tab :label="$t('whole-term')">
         <time-line-chart :data="timeChartData" />
       </p-tab>
@@ -23,6 +24,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
@@ -31,6 +33,7 @@ import PTabs from 'components/Tabs.vue';
 import PTab from 'components/Tab.vue';
 import TimeLineChart from 'components/TimeLineChart.vue';
 import TimeBarChart from 'components/TimeBarChart.vue';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
   name: 'RabaSkoziCas',
@@ -47,20 +50,34 @@ export default {
     searchOgImage,
   ],
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data,
-      keywords,
+      data: null,
+      keywords: loadFromState('query'),
+      loading: true,
     };
   },
   computed: {
     timeChartData() {
-      return this.data.facet_counts.facet_ranges.datetime_dt;
+      return (this.data && this.data.facet_counts.facet_ranges.datetime_dt) || {};
     },
     generatedCardUrl() {
-      const customUrl = encodeURIComponent(`${this.slugs.urls.isci}/q/${this.keywords}`);
-      return `${this.url}?customUrl=${customUrl}&altHeader=true`;
+      return `${this.url}?altHeader=true`;
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.data = res.data;
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
 };
 </script>
