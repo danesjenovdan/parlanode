@@ -73,7 +73,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <a href="/seje/isci?q=<%= query %>" class="parlabutton parlabutton-filter">Enostavno iskanje</a>
+          <a href="/seje/isci?q=<%= query %>" class="parlabutton-filter">Enostavno iskanje</a>
         </div>
       </div>
       <% } %>
@@ -515,19 +515,19 @@ function capitalise(string) {
 
 <div id="session_search_results_filter">
   <div class="col-md-12">
-    <%- await fetchCard('/s/nastopi-v-katerih-je-bil-iskalni-niz-izrecen/', { state: {} }) %>
+    <%- await fetchCard('/s/nastopi-v-katerih-je-bil-iskalni-niz-izrecen/', { state: { query } }) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchCard('/s/raba-skozi-cas/', { state: {} }) %>
+    <%- await fetchCard('/s/raba-skozi-cas/', { state: { query } }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/s/najveckrat-so-pojem-uporabili/', { state: {} }) %>
+    <%- await fetchCard('/s/najveckrat-so-pojem-uporabili/', { state: { query } }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/s/raba-po-strankah/', { state: {} }) %>
+    <%- await fetchCard('/s/raba-po-strankah/', { state: { query } }) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchCard('/s/glasovanja-search/', { state: {} }) %>
+    <%- await fetchCard('/s/glasovanja-search/', { state: { query } }) %>
   </div>
 </div>
 

@@ -8,11 +8,10 @@ const router = express.Router();
  * TOP NAVIGATION
  */
 
-router.get('/', ar((render, req) => {
+router.get('/', ar((render) => {
   render('landing', {
     activeMenu: 'landing',
     pageTitle: 'Parlameter',
-    query: req.query.q,
   });
 }));
 
