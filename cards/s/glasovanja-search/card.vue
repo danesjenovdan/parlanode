@@ -1,6 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -16,11 +17,13 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import common from 'mixins/common';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
 import { searchTitle } from 'mixins/titles';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
   name: 'GlasovanjaIskanje',
@@ -34,31 +37,52 @@ export default {
     searchOgImage,
   ],
   data() {
-    const keywords = this.$options.cardData.data.search_query.replace(/\+/g, ' ');
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data.data,
+      data: null,
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      keywords,
+      keywords: loadFromState('query'),
+      loading: true,
     };
   },
   computed: {
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `${this.slugs.urls.isci}/v2/${this.keywords.replace(/\s+/g, '+')}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     votes() {
+      if (this.data) {
+        return {
+          votes: this.data.map(motion => ({
+            ...motion.results,
+            session_id: motion.session.id,
+          })),
+          session: {},
+          tags: [],
+        };
+      }
       return {
-        votes: this.data.map(motion => ({
-          ...motion.results,
-          session_id: motion.session.id,
-        })),
+        votes: [],
         session: {},
         tags: [],
       };
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/v2/${this.keywords.replace(/\s+/g, '+')}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.data = res.data.data;
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
 };
 </script>
