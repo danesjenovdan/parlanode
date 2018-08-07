@@ -1,6 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -16,11 +17,13 @@
 </template>
 
 <script>
+import axios from 'axios';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
 import PersonList from 'components/PersonList.vue';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
   name: 'NajveckratSoPojemUporabili',
@@ -34,29 +37,42 @@ export default {
     searchOgImage,
   ],
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
-    const { data } = this.$options.cardData;
-    const people = data.facet_counts.facet_fields.speaker_i
-      .map((o) => {
-        const { person } = o;
-        person.score = `${Math.round(o.score)}`;
-        return person;
-      })
-      .slice(0, 5);
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      keywords,
-      people,
+      keywords: loadFromState('query'),
+      loading: true,
+      people: null,
     };
   },
   computed: {
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        const people = res.data.facet_counts.facet_fields.speaker_i
+          .map((o) => {
+            const { person } = o;
+            person.score = `${Math.round(o.score)}`;
+            return person;
+          })
+          .slice(0, 5);
+        this.people = people;
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
 };
 </script>
