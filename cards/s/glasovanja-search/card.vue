@@ -5,6 +5,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    content-height="500px"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -12,7 +13,7 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <seznam-glasovanj :data="votes" :show-filters="false" />
+    <seznam-glasovanj v-if="data" :data="votes" :show-filters="false" />
   </card-wrapper>
 </template>
 
@@ -49,7 +50,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      const state = { text: this.keywords };
+      const state = { query: this.keywords };
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     votes() {

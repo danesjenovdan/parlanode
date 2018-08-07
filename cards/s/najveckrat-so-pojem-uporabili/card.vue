@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      const state = { text: this.keywords };
+      const state = { query: this.keywords };
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },

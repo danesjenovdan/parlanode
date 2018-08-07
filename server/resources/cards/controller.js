@@ -85,7 +85,7 @@ function expandUrl(dataUrl) {
       dataUrl = dataUrl.replace(`{${key}}`, data.urls.urls[key]);
     });
   }
-  return dataUrl;
+  return null;
 }
 
 async function shouldBuildCard(cacheData, cardJson) {
