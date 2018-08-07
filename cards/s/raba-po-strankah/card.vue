@@ -1,6 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -11,7 +12,11 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div v-t="'no-results'" v-if="data.response.numFound === 0" class="no-results"></div>
+    <div
+      v-t="'no-results'"
+      v-if="!loading && data && data.response.numFound === 0"
+      class="no-results"
+    />
     <div v-else id="pie-chart">
       <pie-chart :data="pieData" />
     </div>
@@ -19,11 +24,13 @@
 </template>
 
 <script>
+import axios from 'axios';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
 import PieChart from 'components/PieChart.vue';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
   name: 'RabaPoPoslanskihSkupinah',
@@ -37,23 +44,35 @@ export default {
     searchOgImage,
   ],
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data,
-      keywords,
+      data: null,
+      keywords: loadFromState('query'),
+      loading: true,
     };
   },
   computed: {
     generatedCardUrl() {
       const state = { text: this.keywords };
-      const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     pieData() {
-      return this.data.facet_counts.facet_fields.party_i;
+      return (this.data && this.data.facet_counts.facet_fields.party_i) || [];
     },
   },
-  methods: {
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.data = res.data;
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
 };
 </script>
