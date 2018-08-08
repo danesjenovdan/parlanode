@@ -30,6 +30,7 @@ module.exports = merge.smart(baseConfig(process.env.CARD_NAME), {
   devServer: {
     historyApiFallback: true,
     publicPath: '/build/',
+    contentBase: [path.resolve(__dirname), path.resolve(__dirname, '..', 'parlassets')],
     stats: 'minimal',
   },
   plugins: [

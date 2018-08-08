@@ -78,6 +78,7 @@ module.exports = (cardPath) => {
         'i18n/card.json$': i18nCardPath,
         'i18n/defaults.json$': i18nDefaultPath,
         i18n: `${path.resolve(__dirname)}/_i18n`,
+        parlassets: `${path.resolve(__dirname, '..', 'parlassets')}`,
       },
     },
     plugins: [
