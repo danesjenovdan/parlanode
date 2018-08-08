@@ -84,6 +84,7 @@ function expandUrl(dataUrl) {
     Object.keys(data.urls.urls).forEach((key) => {
       dataUrl = dataUrl.replace(`{${key}}`, data.urls.urls[key]);
     });
+    return dataUrl;
   }
   return null;
 }
