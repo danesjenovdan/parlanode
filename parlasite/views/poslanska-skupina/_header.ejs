@@ -10,7 +10,7 @@
         <b><%- party.acronym %></b>
       </div>
       <h1><%- party.name %></h1>
-      <h3><%= party.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h3>
+      <h3><%- party.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h3>
       <div class="group-container-menu">
         <ul class="clearfix">
           <li><a href="/ps/<%- slug %>/pregled" class="<%- activeTab === i18n('general.overview') ? 'active' : '' %>">i18n('general.overview')</a></li>

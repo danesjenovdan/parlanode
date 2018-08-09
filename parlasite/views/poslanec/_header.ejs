@@ -17,7 +17,7 @@ body {
       <img src="https://cdn.parlameter.si/v1/parlassets/img/people/square/<%- mp.gov_id %>.png" class="media-object img-circle session-logo <%- classes %>">
       <h1><%- mp.name %></h1>
       <h2><%= party.acronym %></h2>
-      <h3><%= party.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h3>
+      <h3><%- party.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h3>
       <% if (!mp.active) { %>
       <h3><%- i18n('general.inactive') %></h3>
       <% } %>
