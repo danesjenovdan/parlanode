@@ -34,13 +34,19 @@
   "en": {
     "tabs": [
       {
-        "title": "HOC sessions",
+        "title": "Seje DZ",
         "org_ids": [
-          11
+          95
         ]
       },
       {
-        "title": "Other sessions"
+        "title": "Seje kolegija predsednika DZ",
+        "org_ids": [
+          9
+        ]
+      },
+      {
+        "title": "Seje delovnih teles"
       }
     ]
   }
