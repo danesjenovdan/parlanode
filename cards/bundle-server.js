@@ -20,19 +20,30 @@ const i18n = new VueI18n({
 // the default export should be a function
 // which will receive the context of the render call
 export default (context) => {
-  const cardData = {
-    data: context.data,
-    cardData: context.cardData,
-    parlaState: context.parlaState,
-    urls: context.urls,
-    siteMap: context.siteMap,
+  // we pass `context` as the `cardData` property directly so vue components can
+  // change and add data to the `cardData` object that we need for rendering the
+  // html template which uses `context` as the context
+  const serverContext = {
+    cardData: context,
+    i18n,
   };
 
-  // This gets passed to client as state
-  context.state = {
-    cardData,
+  // we don't pass `context` as `cardData` directly because client state is
+  // serialized as json and that would fail due to circular references
+  const clientContext = {
+    cardData: {
+      data: context.data,
+      cardData: context.cardData,
+      parlaState: context.parlaState,
+      urls: context.urls,
+      siteMap: context.siteMap,
+    },
+    // i18n is added in bundle-client.js
   };
 
-  const app = new Vue(Object.assign({}, Card, { cardData, i18n }));
+  // context.state is passed to the client
+  context.state = clientContext;
+
+  const app = new Vue(Object.assign({}, Card, serverContext));
   return new Promise(resolve => resolve(app));
 };
