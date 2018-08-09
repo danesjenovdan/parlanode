@@ -148,6 +148,10 @@
     "under_consideration": "under consideration",
     "legislation": "legislation",
     "other_votings": "other votings",
-    "transcripts": "transcripts"
+    "transcripts": "transcripts",
+    "state_one": "The national assembly of the republic of Slovenia doesn't publish voting records from working bodies.",
+    "state_two": "The national assembly of the republic of Slovenia doesn't publish voting records from the assembly's president's collegium.",
+    "state_one_dz": "Sorry, no votings at this session yet.",
+    "state_five": "Sorry, no transcripts for this session yet."
   }
 }

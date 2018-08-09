@@ -148,6 +148,10 @@
     "under_consideration": "v obravnavi",
     "legislation": "zakonodaja",
     "other_votings": "druga glasovanja",
-    "transcripts": "transkripti"
+    "transcripts": "transkripti",
+    "state_one": "Državni zbor RS ne objavlja podatkov o glasovanjih na delovnih telesih. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Povej jim</a>, da morajo to spremeniti.",
+    "state_two": "Državni zbor RS ne objavlja podatkov o glasovanjih na Kolegiju predsednika državnega zbora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Povej jim</a>, da morajo to spremeniti.",
+    "state_one_dz": "Glasovanja iz izbrane seje žal še niso na voljo.",
+    "state_five": "Transkripta govorov izbrane seje žal še ni na spletu."
   }
 }
