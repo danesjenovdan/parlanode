@@ -11,20 +11,20 @@
     "presence_sessions": {
       "label": "Attendance at the National Assembly sessions",
       "titleSuffix": " the results of the analysis with the presence of the DZ",
-      "explanation": "Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100)."
+      "explanation": "We count all the sessions and check every member of that parliamentary group if they voted at least once at that session. In case they voted at least once, they are counted as present. The sum of all attendace is divided with the number of representatives in the parliamentary group, this result is then divided with the number of sessions and normalised (min 1 - max 100)."
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " glede na rezultate analize s prisotnostjo na glasovanjih sej DZ",
-      "explanation": "Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100)."
+      "label": "Attendance at votings",
+      "titleSuffix": " the results of the analysis with the presence at votings",
+      "explanation": "We count all the voting events as well as the number of representatives from the parliamentary group was present at any given voting. The sum of all submitted ballots is divided with the number of representatives in the parliamentary group and the number of votings. The result is then normalised (min 1 - max 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " glede na rezultate analize po št. poslanskih vprašanj in pobud",
-      "explanation": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega mesta DZ RS."
+      "label": "The number of parliamentary questions and initiatives",
+      "titleSuffix": " number of MPs' questions",
+      "explanation": "We count all the parliamentary questions and initiatives by the parliamentary group's MPs in this sitting of the National Assembly."
     },
     "vocabulary_size": {
-      "label": "Raznolikost besedišča",
+      "label": "Vocabulary strength",
       "titleSuffix": " glede na rezultate analize z raznolikostjo besedišča",
       "explanation": "Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved \"Danes je nov dan in danes je dan za Parlameter\" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
     },
