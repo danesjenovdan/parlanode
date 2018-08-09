@@ -22,14 +22,14 @@ router.get('/', ar((render, req) => {
 
 router.get(`/${sm.landing.members}`, ar((render) => {
   render('landing/poslanci', {
-    activeMenu: 'poslanci',
+    activeMenu: 'mps',
     pageTitle: 'Seznam poslancev',
   });
 }));
 
 router.get(`/${sm.landing.parties}`, ar((render) => {
   render('landing/poslanske-skupine', {
-    activeMenu: 'poslanske-skupine',
+    activeMenu: 'pgs',
     pageTitle: 'Seznam poslanskih skupin',
   });
 }));

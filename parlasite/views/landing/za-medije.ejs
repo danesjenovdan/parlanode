@@ -1,21 +1,21 @@
 <% include ../_partials/header.ejs %>
 
+<!-- TODO unfinished translations -->
+
 <div class="col-md-12">
     <div class="card-container" id="about">
         <div class="card-content">
 
             <div class="col-md-12 text-center title-container">
-                <span class="gradient-title">Za boljšo in lepšo zgodbo</span>
+                <span class="gradient-title"><%- i18n('press.title') %></span>
             </div>
 
             <div class="col-md-10 col-md-offset-1">
-                <div class="padded-text text-center">
-                    Na tej strani so zbrane informacije o Parlametru, objave za medije ter vizualni materiali. Vse je ponujeno v prosto rabo. Neposredna vprašanja in/ali povabila k izjavam oz. intervjujem naslovite na <a href="mailto:press@parlameter.si">press@parlameter.si</a>, odzvali se bomo hitro in z veseljem.
-                </div>
+                <div class="padded-text text-center"><%- i18n('press.body') %></div>
             </div>
 
             <div class="col-md-12 text-center title-container">
-                <span class="gradient-title">Slikovno gradivo</span>
+                <span class="gradient-title"><%- i18n('press.photos.title') %></span>
             </div>
 
             <div class="col-md-4">

@@ -112,47 +112,6 @@
 }
 </style>
 
-<%
-  var tools = [
-    {
-      icon  : 'obvestila',
-      title : 'Parlameter obvestila',
-      link  : 'https://obvestila.parlameter.si',
-      text  : 'Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).'
-    },
-    {
-      icon  : 'primerjalnik-glasovanj',
-      title : 'Primerjalnik glasovanj',
-      link  : '/orodja/primerjalnik-glasovanj',
-      text  : 'S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?'
-    },
-    {
-      icon  : 'raziskovalec-neenotnosti',
-      title : 'Raziskovalec neenotnosti',
-      link  : '/orodja/raziskovalec-neenotnosti',
-      text  : 'Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah.'
-    },
-    {
-      icon  : 'parlamentarni-kompas',
-      title : 'Parlamentarni kompas',
-      link  : '/orodja/parlamentarni-kompas',
-      text  : 'Vizualizacija vseh poslank in poslancev v virtualnem "prostoru". Dlje ko sta poslanca narazen, bolj različno glasujeta.'
-    },
-    // {
-    //   icon  : 'parlatube',
-    //   title : 'Parlatube',
-    //   link  : '/orodja/parlatube',
-    //   text  : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    // },
-    {
-      icon  : 'skupine-besed',
-      title : 'Skupine besed',
-      link  : '/orodja/skupine-besed',
-      text  : 'Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>'
-    },
-  ];
-%>
-
 <div id="orodja-container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1" id="about">
@@ -163,17 +122,51 @@
   </div>
 
   <div class="row">
-    <% for (const tool of tools) { %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
-        <div class="tool-content <%- tool.icon %>">
-          <a class="tool__overlay-link" href="<%- tool.link %>"><%- tool.title %></a>
-          <div class="img-circle circle"></div>
-          <h3 class="tool-title"><%- tool.title %></h3>
-          <p class="tool-desc"><%- tool.text %></p>
-          <a class="tool-arrow" href="#"></a>
-        </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
+      <div class="tool-content <%- i18n('tools[0].icon') %>">
+        <a class="tool__overlay-link" href="<%- i18n('tools[0].link') %>"><%- i18n('tools[0].label') %></a>
+        <div class="img-circle circle"></div>
+        <h3 class="tool-title"><%- i18n('tools[0].label') %></h3>
+        <p class="tool-desc"><%- i18n('tools[0].text') %></p>
+        <a class="tool-arrow" href="#"></a>
       </div>
-    <% } %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
+      <div class="tool-content <%- i18n('tools[1].icon') %>">
+        <a class="tool__overlay-link" href="<%- i18n('tools[1].link') %>"><%- i18n('tools[1].label') %></a>
+        <div class="img-circle circle"></div>
+        <h3 class="tool-title"><%- i18n('tools[1].label') %></h3>
+        <p class="tool-desc"><%- i18n('tools[1].text') %></p>
+        <a class="tool-arrow" href="#"></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
+      <div class="tool-content <%- i18n('tools[2].icon') %>">
+        <a class="tool__overlay-link" href="<%- i18n('tools[2].link') %>"><%- i18n('tools[2].label') %></a>
+        <div class="img-circle circle"></div>
+        <h3 class="tool-title"><%- i18n('tools[2].label') %></h3>
+        <p class="tool-desc"><%- i18n('tools[2].text') %></p>
+        <a class="tool-arrow" href="#"></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
+      <div class="tool-content <%- i18n('tools[3].icon') %>">
+        <a class="tool__overlay-link" href="<%- i18n('tools[3].link') %>"><%- i18n('tools[3].label') %></a>
+        <div class="img-circle circle"></div>
+        <h3 class="tool-title"><%- i18n('tools[3].label') %></h3>
+        <p class="tool-desc"><%- i18n('tools[3].text') %></p>
+        <a class="tool-arrow" href="#"></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tool">
+      <div class="tool-content <%- i18n('tools[4].icon') %>">
+        <a class="tool__overlay-link" href="<%- i18n('tools[4].link') %>"><%- i18n('tools[4].label') %></a>
+        <div class="img-circle circle"></div>
+        <h3 class="tool-title"><%- i18n('tools[4].label') %></h3>
+        <p class="tool-desc"><%- i18n('tools[4].text') %></p>
+        <a class="tool-arrow" href="#"></a>
+      </div>
+    </div>
   </div>
 </div>
 

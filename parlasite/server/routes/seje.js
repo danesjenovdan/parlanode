@@ -6,14 +6,14 @@ const router = express.Router();
 
 router.get('/', ar((render) => {
   render('seje', {
-    activeMenu: 'seje',
+    activeMenu: 'sessions',
     pageTitle: 'Seznam sej',
   });
 }));
 
 router.get(`/${sm.sessions.search.base}`, ar((render, req) => {
   render('seje/isci', {
-    activeMenu: 'seje',
+    activeMenu: 'sessions',
     pageTitle: 'Išči seje',
     query: req.query.q,
   });
@@ -21,7 +21,7 @@ router.get(`/${sm.sessions.search.base}`, ar((render, req) => {
 
 router.get(`/${sm.sessions.search.base}/${sm.sessions.search.filter}`, ar((render, req) => {
   render('seje/isci/filter', {
-    activeMenu: 'seje',
+    activeMenu: 'sessions',
     pageTitle: 'Išči seje',
     query: req.query.q,
     queryObj: req.query, // TODO: remove this when fixing seje/isci/filter.ejs

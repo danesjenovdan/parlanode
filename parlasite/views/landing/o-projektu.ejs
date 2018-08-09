@@ -5,45 +5,41 @@
         <div class="card-content">
             <div class="col-md-10 col-md-offset-1">
                 <div class="lead-text-container">
-                    <span class="lead-text">Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.</span>
+                    <span class="lead-text"><%- i18n('about.lead') %></span>
                 </div>
 
-                <div class="padded-text text-center">
-                    Uporabnikom prijazna vizualna zasnova in tehnološko napredna modularna zasnova povečujeta transparentnost delovanja najpomembnejše demokratične institucije in omogočata učinkovit vpogled v odločevalski proces.
-                </div>
+                <div class="padded-text text-center"><%- i18n('about.afterlead') %></div>
             </div>
 
             <div class="col-md-12">
                 <div class="video-container">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/49rAjdfnmYU" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="<%- i18n('about.videourl') %>" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
 
             <div class="container-fluid">
                 <div class="col-md-4 public-col">
-                    <div class="gradient-title">Splošna javnost</div>
-                    <p>Delovanje demokracije je odvisno od budnega in odgovornega nadzora nad delovanjem oblasti, za kar pa je predpogoj dobro informirana javnost. Hvala, ker ti ni vseeno.</p>
+                    <div class="gradient-title"><%- i18n('about.columns.first.title') %></div>
+                    <p><%- i18n('about.columns.first.paragraph') %></p>
                 </div>
 
                 <div class="col-md-4 public-col">
-                    <div class="gradient-title">Medijska javnost</div>
-                    <p>Vse obstoječe kartice je mogoče brezplačno vdelati na katero koli spletno mesto. Podatke obdelamo mi, da se lahko mediji posvetijo interpretaciji.</p>
-                </div>
-
-                <div class="col-md-4 public-col">
-                    <div class="gradient-title">Razvijalska javnost</div>
-                    <p>Vsi podatki so brezplačno na voljo preko dveh API vmesnikov, na Githubu pa je objavljena tudi vsa koda. Vse potrebno najdeš na <a href="https://dev.parlameter.si">strani za razvijalce</a>, če potrebuješ še kakšno pomoč, pa se nam javi po e-pošti!</p>
-                </div>
+                        <div class="gradient-title"><%- i18n('about.columns.second.title') %></div>
+                        <p><%- i18n('about.columns.second.paragraph') %></p>
+                    </div>
+    
+                    <div class="col-md-4 public-col">
+                        <div class="gradient-title"><%- i18n('about.columns.third.title') %></div>
+                        <p><%- i18n('about.columns.third.paragraph') %></p>
+                    </div>
             </div>
 
             <hr>
 
             <div class="col-md-10 col-md-offset-1">
-                <div class="padded-text text-center">
-                    Parlameter nastaja v okviru inštituta <a href="http://danesjenovdan.si" class="funblue-light-hover">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju.
-                </div>
+                <div class="padded-text text-center"><%- i18n('about.thanks') %></div>
             </div>
         </div>
 

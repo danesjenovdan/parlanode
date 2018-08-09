@@ -23,7 +23,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar((render, r
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/zakonodaja', {
-      activeMenu: 'seje',
+      activeMenu: 'sessions',
       pageTitle: 'Seja - Zakonodaja',
       activeTab: 'zakonodaja',
       ...sesData,
@@ -37,7 +37,7 @@ router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) 
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/druga-glasovanja', {
-      activeMenu: 'seje',
+      activeMenu: 'sessions',
       pageTitle: 'Seja - Druga glasovanja',
       activeTab: 'druga-glasovanja',
       ...sesData,
@@ -51,7 +51,7 @@ router.get(`/:id(\\d+)/${sm.session.transcript}`, ar((render, req, res, next) =>
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/transkript', {
-      activeMenu: 'seje',
+      activeMenu: 'sessions',
       pageTitle: 'Seja - Transkript',
       activeTab: 'transkript',
       ...sesData,
@@ -69,7 +69,7 @@ router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar((render, req, res
       .then((isValid) => {
         if (isValid) {
           render('seja/glasovanje', {
-            activeMenu: 'seje',
+            activeMenu: 'sessions',
             pageTitle: 'Seja - Glasovanje',
             activeTab: 'glasovanje',
             ...sesData,

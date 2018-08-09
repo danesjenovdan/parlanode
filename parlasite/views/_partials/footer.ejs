@@ -6,16 +6,16 @@
         <div class="col-lg-6">
           <div class="row">
             <div class="col-lg-4">
-              <a href="/o-projektu" class="colorBlack">O projektu</a>
+              <a href="/o-projektu" class="colorBlack"><%- i18n('footer.about') %></a>
               <br>
               <br>
             </div>
             <div class="col-lg-6">
-              <label class="control-label">Prijavi se na mesečnik!</label>
+              <label class="control-label"><%- i18n('footer.newsletter_sign_up') %></label>
               <div class="input-group newslettersubscribemsg">
                 <input type="email" class="form-control newslettersubscribe simplebox required" placeholder="Email">
                 <span class="input-group-btn">
-                  <button class="btn btn-default newslettersubscribeButton simplebox measure" data-mc="social" data-ma="link" data-mn="emesecnik" data-mv="" type="button">Oddaj</button>
+                  <button class="btn btn-default newslettersubscribeButton simplebox measure" data-mc="social" data-ma="link" data-mn="emesecnik" data-mv="" type="button"><%- i18n('footer.newsletter_submit') %></button>
                 </span>
               </div>
               <br>
@@ -27,7 +27,7 @@
           <div class="row">
             <div class="col-lg-8 col-md-6  col-xs-6">
               <button class="btn doniraj measure" data-mc="donate" data-ma="start" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-doniraj">
-                Doniraj!
+                <%- i18n('footer.donate') %>
                 <i class="parlaicon parlaicon-doniraj">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M35.3.5c-4.4 0-8.5 2.7-10.6 6.8-.2.3-.6.4-.8 0C21.6 3.2 17.6.5 13 .5 6.1.5.5 6.7.5 14.4c0 7.9 8.6 22.4 23 32.9.2.1.3.2.5.2s.3 0 .5-.1c14-9.2 23-25.9 23-33.3C47.5 6.6 42 .5 35.3.5z" class="red"/></svg>
                 </i>
@@ -36,8 +36,8 @@
               <br>
             </div>
             <div class="col-lg-4 col-md-6 col-xs-6">
-              <p><a href="/za-medije" class="colorBlack">Za medije</a></p>
-              <p><a href="/pravno-obvestilo" class="colorBlack">Pravno obvestilo</a></p>
+              <p><a href="/za-medije" class="colorBlack"><%- i18n('footer.press') %></a></p>
+              <p><a href="/pravno-obvestilo" class="colorBlack"><%- i18n('footer.legal') %></a></p>
             </div>
           </div>
         </div>

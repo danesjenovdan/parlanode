@@ -10,7 +10,7 @@
         <%- session.date %>
       </div>
       <div class="datepublished">
-        podatki objavljeni: <%- session.date %> <%= session.in_review ? '(v pregledu)' : '' %>
+        <%- i18n('general.data_published') %>: <%- session.date %> <%= session.in_review ? i18n('general.in_review') : '' %>
       </div>
       <div class="group-container-menu">
         <ul class="clearfix">

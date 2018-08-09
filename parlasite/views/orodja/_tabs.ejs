@@ -23,22 +23,42 @@
 <div id="orodja-tabs-container" class="row">
   <div class="party-list-generator col-md-12">
     <ul class="analyses">
-      <% for (const tool of tools) { %>
-        <li class="<%- (tool.id === currentTool) ? 'selected' : '' %>">
-          <a href="<%- tool.link %>"><%- tool.label %></a>
-        </li>
-      <% } %>
+      <li class="<%- (i18n('tools[0].id') === currentTool) ? 'selected' : '' %>">
+        <a href="<%- i18n('tools[0].link') %>"><%- i18n('tools[0].label') %></a>
+      </li>
+      <li class="<%- (i18n('tools[1].id') === currentTool) ? 'selected' : '' %>">
+        <a href="<%- i18n('tools[1].link') %>"><%- i18n('tools[1].label') %></a>
+      </li>
+      <li class="<%- (i18n('tools[2].id') === currentTool) ? 'selected' : '' %>">
+        <a href="<%- i18n('tools[2].link') %>"><%- i18n('tools[2].label') %></a>
+      </li>
+      <li class="<%- (i18n('tools[3].id') === currentTool) ? 'selected' : '' %>">
+        <a href="<%- i18n('tools[3].link') %>"><%- i18n('tools[3].label') %></a>
+      </li>
+      <li class="<%- (i18n('tools[4].id') === currentTool) ? 'selected' : '' %>">
+        <a href="<%- i18n('tools[4].link') %>"><%- i18n('tools[4].label') %></a>
+      </li>
     </ul>
 
     <div class="mobile-analyses">
       <label for="tool">Izberi orodje</label>
       <div class="select">
         <select name="tools" id="tools" onchange="javascript:window.location.href = this.value">
-          <% for (const tool of tools) { %>
-            <option value="<%- tool.link %>" <%- (tool.id === currentTool) ? 'selected' : '' %>>
-              <%- tool.label %>
-            </option>
-          <% } %>
+          <option value="<%- i18n('tools[0].link') %>" <%- (i18n('tools[0].id') === currentTool) ? 'selected' : '' %>>
+            <%- i18n('tools[0].label') %>
+          </option>
+          <option value="<%- i18n('tools[1].link') %>" <%- (i18n('tools[1].id') === currentTool) ? 'selected' : '' %>>
+            <%- i18n('tools[1].label') %>
+          </option>
+          <option value="<%- i18n('tools[2].link') %>" <%- (i18n('tools[2].id') === currentTool) ? 'selected' : '' %>>
+            <%- i18n('tools[2].label') %>
+          </option>
+          <option value="<%- i18n('tools[3].link') %>" <%- (i18n('tools[3].id') === currentTool) ? 'selected' : '' %>>
+            <%- i18n('tools[3].label') %>
+          </option>
+          <option value="<%- i18n('tools[4].link') %>" <%- (i18n('tools[4].id') === currentTool) ? 'selected' : '' %>>
+            <%- i18n('tools[4].label') %>
+          </option>
         </select>
       </div>
     </div>

@@ -8,32 +8,32 @@
             <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
           </div>
           <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Kako iskati?</h4>
+          <h4 class="modal-title"><%- i18n('search_popup.title') %></h4>
         </div>
         <div class="modal-body">
           <div class="container-fluid">
             <p>
-              Za privzet način iskanja je nastavljeno široko ujemanje (med zadetki se znajdejo vsi govori, ki vsebujejo katero koli od besed v iskalnem nizu). Med rezultati zadetkov se zaradi pregibanja pojavljajo vse slovnične oblike znotraj iste besedne vrste. To ne velja zgolj za iskanje z natančnim ujemanjem ("narekovaji").
+              <%- i18n('search_popup.first_paragraph') %>
             </p>
             <p>
-              Če želiš svoj iskalni niz dodatno modificirati, lahko uporabiš naslednje operatorje:
+              <%- i18n('search_popup.second_paragraph') %>
             </p>
             <div class="row flex-wrap">
               <div class="col-sm-6">
                 <div class="light-bg">
-                  <h4>IN</h4>
-                  <p>med rezultati iskanja bodo zgolj zadetki, ki vključujejo vse besede v iskalnem nizu (a ne glede na njihov vrstni red)</p>
+                  <h4><%- i18n('search_popup.operators[0].name') %></h4>
+                  <p><%- i18n('search_popup.operators[0].description') %></p>
                   <div class="row">
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Primer iskanja:</i></div>
-                      <div>Ivan IN Cankar</div>
+                      <div><i><%- i18n('search_popup.operators[0].example_title') %></i></div>
+                      <div><%- i18n('search_popup.operators[0].example_text') %></div>
                     </div>
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Rezultati iskanja:</i></div>
+                      <div><i><%- i18n('search_popup.operators[0].example_result_title') %></i></div>
                       <div>
-                        Ivan Cankar<br> Cankar, Ivan
+                        <%- i18n('search_popup.operators[0].example_result_text') %>
                       </div>
                     </div>
                   </div>
@@ -41,13 +41,13 @@
               </div>
               <div class="col-sm-6">
                 <div class="light-bg">
-                  <h4>"NAREKOVAJI"</h4>
-                  <p>med rezultati iskanja bodo samo zadetki, ki vključujejo točen nabor znakov</p>
+                  <h4><%- i18n('search_popup.operators[1].name') %></h4>
+                  <p><%- i18n('search_popup.operators[1].description') %></p>
                   <div class="row">
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Primer iskanja:</i></div>
-                      <div>"Humanitarna kriza"</div>
+                      <div><i><%- i18n('search_popup.operators[1].example_title') %></i></div>
+                      <div><%- i18n('search_popup.operators[1].example_text') %></div>
                     </div>
                   </div>
                 </div>
@@ -56,24 +56,24 @@
             <div class="row flex-wrap">
               <div class="col-sm-6">
                 <div class="light-bg">
-                  <h4>! (KLICAJ)</h4>
-                  <p>rezultati iskanja nujno vključujejo s klicajem označeno besedo v iskalnem nizu, druge besede iskalnega niza pa služijo zgolj za rangiranje rezultatov</p>
+                  <h4><%- i18n('search_popup.operators[2].name') %></h4>
+                  <p><%- i18n('search_popup.operators[2].description') %></p>
                   <div class="row">
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Primer iskanja:</i></div>
-                      <div>Poslanska !skupina</div>
+                      <div><i><%- i18n('search_popup.operators[2].example_title') %></i></div>
+                      <div><%- i18n('search_popup.operators[2].example_text') %></div>
                     </div>
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Rezultati iskanja:</i></div>
+                      <div><i><%- i18n('search_popup.operators[2].example_result_title') %></i></div>
                       <div>
-                        Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina
+                        <%- i18n('search_popup.operators[2].example_result_text') %>
                       </div>
                       <br>
-                      <div><i>Ni rezultat iskanja:</i></div>
+                      <div><i><%- i18n('search_popup.operators[2].example_excluded_result_title') %></i></div>
                       <div>
-                        Poslanska služba
+                        <%- i18n('search_popup.operators[2].example_excluded_result_text') %>
                       </div>
                     </div>
                   </div>
@@ -81,24 +81,24 @@
               </div>
               <div class="col-sm-6">
                 <div class="light-bg">
-                  <h4>- (MINUS)</h4>
-                  <p>rezultati iskanja izključujejo zadetke s posamezno besedo v iskalnem nizu, če to besedo predhaja minus (-)</p>
+                  <h4><%- i18n('search_popup.operators[3].name') %></h4>
+                  <p><%- i18n('search_popup.operators[3].description') %></p>
                   <div class="row">
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Primer iskanja:</i></div>
-                      <div>-Poslanska skupina</div>
+                      <div><i><%- i18n('search_popup.operators[3].example_title') %></i></div>
+                      <div><%- i18n('search_popup.operators[3].example_text') %></div>
                     </div>
                     <div class="col-xs-6">
                       <br>
-                      <div><i>Rezultati iskanja:</i></div>
+                      <div><i><%- i18n('search_popup.operators[3].example_result_title') %></i></div>
                       <div>
-                        skupina poslancev,<br> mednarodna skupina
+                        <%- i18n('search_popup.operators[3].example_result_text') %>
                       </div>
                       <br>
-                      <div><i>Ni rezultat iskanja:</i></div>
+                      <div><i><%- i18n('search_popup.operators[3].example_excluded_result_title') %></i></div>
                       <div>
-                        Poslanska skupina
+                        <%- i18n('search_popup.operators[3].example_excluded_result_text') %>
                       </div>
                     </div>
                   </div>

@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', ar((render) => {
   render('zakonodaja', {
-    activeMenu: 'zakonodaja',
+    activeMenu: 'legislation',
     pageTitle: 'Zakonodaja',
   });
 }));
@@ -16,7 +16,7 @@ router.get('/*', ar((render, req, res, next) => {
   const lawData = data.laws.find(law => law.epa === epa);
   if (lawData) {
     render('zakonodaja/zakon', {
-      activeMenu: 'zakonodaja',
+      activeMenu: 'legislations',
       pageTitle: 'Zakonodaja',
       lawData,
     });
