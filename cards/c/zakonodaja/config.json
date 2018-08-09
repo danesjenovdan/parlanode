@@ -22,7 +22,13 @@
   "en": {
     "tabs": [
       {
-        "title": "legislation"
+        "title": "laws",
+        "classifications": [
+          "zakon"
+        ]
+      },
+      {
+        "title": "acts"
       }
     ]
   }
