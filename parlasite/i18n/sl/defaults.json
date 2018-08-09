@@ -145,6 +145,9 @@
     "speeches": "govori",
     "data_published": "podatki objavljeni",
     "in_review": "v pregledu",
-    "under_consideration": "v obravnavi"
+    "under_consideration": "v obravnavi",
+    "legislation": "zakonodaja",
+    "other_votings": "druga glasovanja",
+    "transcripts": "transkripti"
   }
 }
