@@ -23,9 +23,9 @@ body {
       <% } %>
       <div class="member-container-menu">
         <ul class="clearfix">
-          <li><a href="/p/<%- slug %>/pregled" class="<%- activeTab === i18n('general.overview') ? 'active' : '' %>"><%- i18n('general.overview') %></a></li>
-          <li><a href="/p/<%- slug %>/glasovanja" class="<%- activeTab === i18n('general.voting') ? 'active' : '' %>"><%-i18n('general.voting') %></a></li>
-          <li><a href="/p/<%- slug %>/govori" class="<%- activeTab === i18n('general.speeches') ? 'active' : '' %>"><%- i18n('general.speeches') %></a></li>
+          <li><a href="/p/<%- slug %>/pregled" class="<%- activeTab === 'pregled' ? 'active' : '' %>"><%- i18n('general.overview') %></a></li>
+          <li><a href="/p/<%- slug %>/glasovanja" class="<%- activeTab === 'glasovanja' ? 'active' : '' %>"><%-i18n('general.voting') %></a></li>
+          <li><a href="/p/<%- slug %>/govori" class="<%- activeTab === 'govori' ? 'active' : '' %>"><%- i18n('general.speeches') %></a></li>
         </ul>
       </div>
     </div>
