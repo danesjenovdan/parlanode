@@ -21,32 +21,32 @@
   "sort-by--terms": "number of terms of office",
   "analysis-texts": {
     "demographics": {
-      "label": "Demografija"
+      "label": "Demographics"
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " po prisotnosti na glasovanjih sej DZ",
-      "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100)."
+      "label": "Attendance at votings",
+      "titleSuffix": " attendance at votings in the National Assembly",
+      "explanation": "The number of voting events where the representative was present is divided by the number of all voting events and normalised (min 1-max 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " po št. poslanskih vprašanj in pobud",
-      "explanation": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo."
+      "label": "The number of parliamentary questions and initiatives",
+      "titleSuffix": " the number of parliamentary questions and initiatives",
+      "explanation": "The number of parliamentary questions and initiatives by the MP in this sitting of the National Assembly compared to the average and maximum value."
     },
     "speeches_per_session": {
-      "label": "Št. govorov na sejo",
-      "titleSuffix": " po št. govorov na sejo",
-      "explanation": "Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim."
+      "label": "Number of speeches per session",
+      "titleSuffix": " no. speeches at the session",
+      "explanation": "We count the MP's speeches and divide it by the number of sessions where the MP spoke. We divide the number of all speeches first by the number of all the MPs and then by the number of all sessions (where speeches were made). We compare the individual result with the average and maximum values."
     },
     "spoken_words": {
-      "label": "Št. izgovorjenih besed",
-      "titleSuffix": " po št. izgovorjenih besed",
-      "explanation": "Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ."
+      "label": "Number of spoken words",
+      "titleSuffix": " no. spoken words",
+      "explanation": "The number of words by the MEP said in all his previous speeches in the DZ."
     },
     "mismatch_of_pg": {
-      "label": "Neujemanje s poslansko skupino",
-      "titleSuffix": " po neujemanju s poslansko skupino",
-      "explanation": "Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ."
+      "label": "Deviation from the parliamentary group",
+      "titleSuffix": " deviation from the parliamentary group",
+      "explanation": "Derogation from the majority voice of ballots group in the DZ."
     }
   }
 }
