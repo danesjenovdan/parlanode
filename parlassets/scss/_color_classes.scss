@@ -15,10 +15,10 @@
 }
 
 @mixin link-hover {
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 
   &:hover {
-    background: #e1f6ff;
+    background-color: $funblue-light-hover;
     text-decoration: none;
   }
 }

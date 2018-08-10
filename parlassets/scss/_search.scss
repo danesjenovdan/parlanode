@@ -1,5 +1,5 @@
 .searchfilter-container {
-  background-color: #d8e2e6;
+  background-color: $funblue-light;
   padding: 15px;
 }
 
@@ -139,7 +139,7 @@
           height: 16px;
           line-height: 16px;
           font-size: 12px;
-          background-color: #ededed;
+          background-color: $grey;
           top: 0;
           left: 0;
           padding-left: 5px;
@@ -155,7 +155,7 @@
       }
 
       .searchperson-container {
-        border-bottom: 1px solid #ededed;
+        border-bottom: 1px solid $grey;
         height: 60px;
         padding: 10px;
         line-height: 40px;
@@ -163,7 +163,7 @@
       }
 
       .session-ac-search {
-        background: #e8f1f4;
+        background: $funblue-light;
         padding: 10px 5px;
         color: $funblue;
         cursor: pointer;

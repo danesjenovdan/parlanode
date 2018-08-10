@@ -92,7 +92,7 @@
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
-        background: #ededed;
+        background: $grey;
         cursor: default;
         text-transform: uppercase;
       }
@@ -105,7 +105,7 @@
       &:not(:last-of-type):not(.selected)::after {
         $left-right-spacing: 22px;
         content: '';
-        background: #ebebeb;
+        background: $grey;
         height: 1px;
         width: calc(100% - 2*#{$left-right-spacing});
         position: absolute;

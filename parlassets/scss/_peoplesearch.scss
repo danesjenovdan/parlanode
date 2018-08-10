@@ -61,7 +61,7 @@
     height: 16px;
     line-height: 16px;
     font-size: 12px;
-    background-color: #ededed;
+    background-color: $grey;
 
     top: 0;
     left: 0;
@@ -71,7 +71,7 @@
 }
 
 .searchperson-container {
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid $grey;
     height: 60px;
     padding: 10px;
     line-height: 40px;
@@ -85,10 +85,10 @@
 }
 
 .tt-cursor {
-    background-color: #ededed;
+    background-color: $grey;
 }
 
 .tt-suggestion:hover {
     cursor: pointer;
-    background-color: #ededed;
+    background-color: $grey;
 }

@@ -33,9 +33,9 @@
 #about .lead-text-container a.lead-text:hover,
 #about .lead-text-container a.lead-text:focus,
 #about .lead-text-container a.lead-text:active {
-    background-color: #337ab7;
+    background-color: $funblue-hover;
     /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 #337ab7, -10px 0 0 #337ab7;
+    box-shadow: 10px 0 0 $funblue-hover, -10px 0 0 $funblue-hover;
     color: $white;
     text-decoration: none;
 }

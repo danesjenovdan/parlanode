@@ -31,7 +31,7 @@
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
-      background-color: #227497;
+      background-color: $sadblue;
 
       @include respond-to(limbo) {
         font-size: 12px;

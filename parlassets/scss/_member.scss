@@ -41,7 +41,7 @@
                 color: $white;
                 border: 1px solid $darkgrey;
                 text-transform: uppercase;
-                background-color: #227497;
+                background-color: $sadblue;
             }
             a.active {
                 color: $white;
@@ -149,7 +149,7 @@
 
     justify-content: flex-end;
 
-    color: #525252;
+    color: $black;
     font-weight:500;
   }
 }

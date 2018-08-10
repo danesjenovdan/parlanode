@@ -41,7 +41,7 @@
 
 .session-types {
   .session-types-title {
-    color: #525252;
+    color: $black;
     font-size: 18px;
     font-weight: 500;
   }
@@ -60,7 +60,7 @@
       padding: 5px 20px;
       text-transform: uppercase;
       width: calc(33.33% - 6.667px);
-      background-color: #227497;
+      background-color: $sadblue;
       &.active, &:hover {
         background: $funblue;
         color: $white;
@@ -90,24 +90,24 @@
       border-right: none;
 
       &:focus {
-          border-color: #009cd9;
+          border-color: $funblue;
       }
       &:focus ~ .input-group-btn .btn {
-          border-color: #009cd9;
+          border-color: $funblue;
       }
     }
     .btn {
       border-color: $grey-medium;
       border-left: none;
       border-radius: 0;
-      color: #009cd9;
+      color: $funblue;
       height: 50px;
       transition: border-color 0.15s;
     }
   }
   h3.searchresults {
     font-size: 18px;
-    color: #525252;
+    color: $black;
     font-weight: 500;
   }
 }
@@ -297,11 +297,11 @@
         margin-bottom: 0;
     }
     .panel-default {
-        border-color: #ddd;
+        border-color: $darkgrey;
     }
     .panel-default > .panel-heading {
         background-color: $white;
-        border-color: #ddd;
+        border-color: $darkgrey;
         color: $grey-dark;
     }
     .panel-group .panel-heading {
@@ -575,12 +575,12 @@
 
     h2 {
         font-weight: 500;
-        color: #525252;
+        color: $black;
     }
 }
 h2.izberi-vrsto-seje {
     font-size: 18px;
-    color: #525252;
+    color: $black;
     font-weight: 500;
 }
 

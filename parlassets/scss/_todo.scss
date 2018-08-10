@@ -797,7 +797,7 @@
     a:hover,
     span:focus,
     span:hover {
-      color: #6d6d6d;
+      color: $black;
     }
 
     &.active > a,
@@ -814,7 +814,7 @@
       border: none;
       border-radius: 50%;
       box-sizing: border-box;
-      color: #6d6d6d;
+      color: $black;
       font-size: 14px;
       height: 18px;
       line-height: 18px;
@@ -823,8 +823,8 @@
       width: 18px;
     }
     &:first-child a, &:last-child a {
-      background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#337ab7"/></svg>');
-      color: #337ab7;
+      background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#{$fontblue}"/></svg>');
+      color: $fontblue;
       font-size: 36px;
       font-weight: 100;
       line-height: 18px;

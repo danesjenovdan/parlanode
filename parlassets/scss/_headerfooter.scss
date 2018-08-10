@@ -5,13 +5,13 @@ header.header {
         padding: 0;
     }
     .logo .cls-1 {
-        fill: #227497;
+        fill: $sadblue;
     }
     .logo .cls-2 {
-        fill: #009cd9;
+        fill: $funblue;
     }
     .logo .cls-3 {
-        fill: #003143;
+        fill: $ignoreblue;
     }
 
     .navbar-default {
@@ -262,7 +262,7 @@ header.header {
         height: 16px;
         line-height: 16px;
         font-size: 12px;
-        background-color: #ededed;
+        background-color: $grey;
 
         top: 0;
         left: 0;
@@ -273,7 +273,7 @@ header.header {
 
 
     .header-search .searchperson-container {
-        border-bottom: 1px solid #ededed;
+        border-bottom: 1px solid $grey;
         height: 60px;
         padding: 10px;
         line-height: 40px;
@@ -286,11 +286,11 @@ header.header {
     }
 
     .header-search .tt-cursor {
-        background-color: #ededed;
+        background-color: $grey;
     }
 
     .session-ac-search {
-        background: #e8f1f4;
+        background: $funblue-light;
         padding: 10px 5px;
         color: $funblue;
         cursor: pointer;
@@ -432,14 +432,14 @@ footer.footer {
         border-bottom: 1px solid $black;
         background: none;
         padding: 7px 12px 6px 12px;
-        color: #337ab7;
+        color: $fontblue;
         padding-right: 0;
         text-transform: uppercase;
     }
     .newslettersubscribeButton:hover {
         background: none;
         border-bottom: 1px solid $black;
-        color: #337ab7;
+        color: $fontblue;
         padding-right: 0;
     }
 
