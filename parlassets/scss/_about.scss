@@ -9,7 +9,7 @@
 
 #about .lead-text-container {
     font-family: "Roboto Slab", sans-serif;
-    color: #fff;
+    color: $white;
     font-style: italic;
     font-size: 24px;
     text-align: center;
@@ -21,13 +21,13 @@
 }
 
 #about .lead-text-container .lead-text {
-    background-color: #009cdd;
+    background-color: $funblue;
     padding: 5px 0;
     line-height: 2;
     /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 #009cdd, -10px 0 0 #009cdd;
+    box-shadow: 10px 0 0 $funblue, -10px 0 0 $funblue;
     box-decoration-break: clone;
-    color: #fff;
+    color: $white;
 }
 
 #about .lead-text-container a.lead-text:hover,
@@ -36,12 +36,12 @@
     background-color: #337ab7;
     /* fix inline multiline text padding */
     box-shadow: 10px 0 0 #337ab7, -10px 0 0 #337ab7;
-    color: #fff;
+    color: $white;
     text-decoration: none;
 }
 
 #about .lead-text a {
-    color: #fff;
+    color: $white;
     font-variant: small-caps;
     font-weight: 700;
 }
@@ -73,14 +73,14 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #009cdd;
+    color: $funblue;
 }
 
 @supports ( -webkit-background-clip: text ) {
     #about .gradient-title {
-        background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);    /* FF3.6-15 */
-        background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-linear-gradient(left, $funblue 0%, $red 100%);    /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, $funblue 0%, $red 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, $funblue 0%, $red 100%);     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -93,7 +93,7 @@
 }
 
 #about .post-entry {
-    background: #f0f0f0;
+    background: $grey;
     padding: 20px;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 300;
@@ -104,7 +104,7 @@
 
 #about .post-entry .post-info {
     flex-grow: 2;
-    color: #505050;
+    color: $black;
 }
 
 #about .post-entry .post-title {
@@ -125,7 +125,7 @@
 }
 
 #about .thumbnail {
-    background: #f0f0f0;
+    background: $grey;
     border: none;
     border-radius: 0;
     font-style: italic;
@@ -136,7 +136,7 @@
     line-height: 20px;
     display: flex;
     margin-bottom: -4px;
-    color: #505050;
+    color: $black;
 }
 
 #about .thumbnail .caption-text {

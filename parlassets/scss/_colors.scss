@@ -1,7 +1,7 @@
 $white: #fff;
 $grey: #f0f0f0;
 $grey-medium: #c8c8c8;
-$grey-dark: #333333;
+$grey-dark: #333;
 $darkgrey: #dbdbdb;
 $black: #505050;
 $sadblue: #197197;
@@ -12,8 +12,6 @@ $fontblue: #00628c;
 $ignoreblue: #003b54;
 $noblue: #99e1ff;
 $red: #ff5e41;
-$green: #7ae7bf;
-$border-light : #f0f0f0;
 
 $party-colors: (
   'smc': #8fcfee,
@@ -55,27 +53,15 @@ $option-colors: (
 );
 
 // hover colors
-$funblue-hover: rgba(0, 156, 221, 0.7);
-$fontblue-hover: rgba(0, 98, 140, 0.7);
-$ignoreblue-hover: rgba(0, 59, 84, 0.7);
-$noblue-hover: rgba(153, 225, 255, 0.7);
+$funblue-hover: rgba($funblue, 0.7);
+$fontblue-hover: rgba($fontblue, 0.7);
+$ignoreblue-hover: rgba($noblue, 0.7);
+$noblue-hover: rgba($noblue, 0.7);
 
-$party-colors-hover: (
-  'smc': rgba(143, 207, 238, 0.7),
-  'sds': rgba(34, 162, 224, 0.7),
-  'desus': rgba(83, 136, 170, 0.7),
-  'sd': rgba(79, 99, 121, 0.7),
-  'zl': rgba(133, 119, 153, 0.7),
-  'levica': rgba(133, 119, 153, 0.7),
-  'nsi': rgba(183, 136, 138, 0.7),
-  'ps_np': rgba(217, 119, 107, 0.7),
-  'ps-np': rgba(217, 119, 107, 0.7),
-  'imns': rgba(186, 89, 76, 0.7),
-  'nep': rgba(133, 63, 54, 0.7),
-  'nep_-_zl': rgba(133, 63, 54, 0.7),
-  'nep_-_ač': rgba(133, 63, 54, 0.7),
-  'nep_-_mh': rgba(133, 63, 54, 0.7)
-);
+$party-colors-hover: ();
+@each $party, $color in $party-colors {
+  $party-colors-hover: map-merge($party-colors-hover, (#{$party}: rgba($color, 0.7)));
+}
 
 $option-colors-hover: (
   'for': $fontblue-hover,

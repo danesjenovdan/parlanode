@@ -149,7 +149,7 @@
 }
 
 .member {
-  border-bottom: 1px solid $border-light;
+  border-bottom: 1px solid $grey;
   padding: 10px 15px 10px 0;
   position: relative;
 
@@ -246,7 +246,7 @@
       margin: 0 20px 0 0;
       list-style-type: none;
       float: left;
-      border-top: 1px solid $border-light;
+      border-top: 1px solid $grey;
       padding: 0 15px 0 0;
       width: calc(100%);
 
@@ -356,14 +356,14 @@
 }
 
 .poslanec .bordertop {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $grey;
 }
 
 .poslanec .key {
   display: inline-block;
   font-size: 16px;
   padding: 10px 0;
-  color: #505050;
+  color: $black;
   width: 88%;
 }
 
@@ -644,7 +644,7 @@
     color: $funblue;
   }
   .member {
-    border-bottom: 1px solid $border-light;
+    border-bottom: 1px solid $grey;
     padding: 10px 0;
     .image {
       background-position: center center;
@@ -674,7 +674,7 @@
   .row {
 
     .border {
-      border-bottom: 1px solid $border-light;
+      border-bottom: 1px solid $grey;
       margin-bottom: 10px;
       padding-bottom: 10px;
     }
@@ -806,11 +806,11 @@
     &.active > span,
     &.active > span:focus,
     &.active > span:hover {
-      background-color: #009cdd;
+      background-color: $funblue;
     }
 
     a {
-      background: #f0f0f0;
+      background: $grey;
       border: none;
       border-radius: 50%;
       box-sizing: border-box;

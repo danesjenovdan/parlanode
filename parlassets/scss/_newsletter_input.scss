@@ -16,7 +16,7 @@
   width: 60%;
   border: none;
   border-radius: 0;
-  background: #f0f0f0;
+  background: $grey;
   color: #aaa;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -96,7 +96,7 @@
 
 .input-label-hoshi::after {
   margin-top: 2px;
-  border-bottom: 4px solid #009cdd;
+  border-bottom: 4px solid $funblue;
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
   -webkit-transition: -webkit-transform 0.3s;

@@ -29,7 +29,7 @@
   margin-top: 5px;
   width: 30px;
   height: 30px;
-  background-color: #f0f0f0;
+  background-color: $grey;
 }
 
 .searchfilter-checkbox .checkbox.with-input+label:before {
@@ -51,17 +51,17 @@
   position: relative;
   width: 250px;
   text-align: center;
-  color: #ffffff;
+  color: $white;
   padding: 10px;
-  background-color: #197197;
+  background-color: $sadblue;
   cursor: pointer;
   display: block;
   margin-top: 20px;
 }
 
 .parlabutton-filter:hover {
-  background-color: #009cdd;
-  color: #ffffff;
+  background-color: $funblue;
+  color: $white;
   text-decoration: none;
 }
 
@@ -92,9 +92,9 @@
 
 // search info button
 .searchinfo {
-    background-color: #ffffff;
+    background-color: $white;
     border-radius: 50%;
-    color: #00628c;
+    color: $fontblue;
     cursor: pointer;
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
