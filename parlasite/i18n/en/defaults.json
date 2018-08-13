@@ -57,43 +57,48 @@
     "title": "How to search?",
     "first_paragraph": "The default search is broad. (it will return all speeches containing any of the words entered).",
     "second_paragraph": "If you want to modify your search query you can use the following operators:",
-    "operators": [{
-      "name": "IN",
-      "description": "the engine will return only those results that include all the words in the query (regardless of their order)",
-      "example_title": "Example:",
-      "example_text": "Ivan IN Cankar",
-      "example_result_title": "Results:",
-      "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
-      "example_excluded_result_title": "",
-      "example_excluded_result_text": ""
-    }, {
-      "name": "\"QUOTATIONS MARKS\"",
-      "description": "the engine will return only the results that contain an exact match between the double quotes",
-      "example_title": "Example:",
-      "example_text": "Humanitarna kriza",
-      "example_result_title": "",
-      "example_result_text": "",
-      "example_excluded_result_title": "",
-      "example_excluded_result_text": ""
-    }, {
-      "name": "! (EXCLAMATION POINT)",
-      "description": "results will always include the words marked with an exclamation point, while other words serve to rank the results",
-      "example_title": "Example:",
-      "example_text": "Poslanska !skupina",
-      "example_result_title": "Results:",
-      "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
-      "example_excluded_result_title": "Ni rezultat iskanja",
-      "example_excluded_result_text": "Poslanska služba"
-    }, {
-      "name": "- (MINUS)",
-      "description": "the results will not include the words preceded by the minus sign",
-      "example_title": "Example:",
-      "example_text": "-Poslanska skupina",
-      "example_result_title": "Results:",
-      "example_result_text": "skupina poslancev,<br> mednarodna skupina",
-      "example_excluded_result_title": "Not a result:",
-      "example_excluded_result_text": "Poslanska skupina"
-    }]
+    "operators": [
+      {
+        "name": "IN",
+        "description": "the engine will return only those results that include all the words in the query (regardless of their order)",
+        "example_title": "Example:",
+        "example_text": "Ivan IN Cankar",
+        "example_result_title": "Results:",
+        "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "\"QUOTATIONS MARKS\"",
+        "description": "the engine will return only the results that contain an exact match between the double quotes",
+        "example_title": "Example:",
+        "example_text": "Humanitarna kriza",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (EXCLAMATION POINT)",
+        "description": "results will always include the words marked with an exclamation point, while other words serve to rank the results",
+        "example_title": "Example:",
+        "example_text": "Poslanska !skupina",
+        "example_result_title": "Results:",
+        "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
+        "example_excluded_result_title": "Ni rezultat iskanja",
+        "example_excluded_result_text": "Poslanska služba"
+      },
+      {
+        "name": "- (MINUS)",
+        "description": "the results will not include the words preceded by the minus sign",
+        "example_title": "Example:",
+        "example_text": "-Poslanska skupina",
+        "example_result_title": "Results:",
+        "example_result_text": "skupina poslancev,<br> mednarodna skupina",
+        "example_excluded_result_title": "Not a result:",
+        "example_excluded_result_text": "Poslanska skupina"
+      }
+    ]
   },
   "donation": {
     "intro": "Your donation will help ensure Parlameter's lognevity.",
@@ -104,38 +109,44 @@
     "business_success_email": "email",
     "business_success_message": "message",
     "business_success_send": "SEND"
-  }, 
-  "tools" : [{ 
-    "id": "obvestila",
-    "label": "Parlameter notifications",
-    "link": "https://obvestila.parlameter.si/",
-    "text": "Parliamentary clipping! Get an email alert every time someone says a word (or more).",
-    "icon": "obvestila"
-  }, {
-    "id": "primerjalnik-glasovanj",
-    "label": "Vote comparator",
-    "link": "/orodja/primerjalnik-glasovanj",
-    "text": "The vote comparator allows you to answer questions like: When did members of Levica vote the same as members of SDS?",
-    "icon": "primerjalnik-glasovanj"
-  }, {
-    "id": "raziskovalec-neenotnosti",
-    "label": "Discord researcher",
-    "link": "/orodja/raziskovalec-neenotnosti",
-    "text": "Explore the discord in parties based on how much they disagreed on specific pieces of legislation.",
-    "icon": "raziskovalec-neenotnosti"
-  }, {
-    "id": "parlamentarni-kompas",
-    "label": "Parliamentary compass",
-    "link": "/orodja/parlamentarni-kompas",
-    "text": "A visualisation of all MPs in virtual space. The further they are, the more likely they are to vote differently.",
-    "icon": "parlamentarni-kompas"
-  }, {
-    "id": "skupine-besed",
-    "label": "Word groups",
-    "link": "/orodja/skupine-besed",
-    "text": "Explore who talks about certain topics the most or who says the words you choose most often.<br><br>",
-    "icon": "skupine-besed"
-  }],
+  },
+  "tools": [
+    {
+      "id": "obvestila",
+      "label": "Parlameter notifications",
+      "link": "https://obvestila.parlameter.si/",
+      "text": "Parliamentary clipping! Get an email alert every time someone says a word (or more).",
+      "icon": "obvestila"
+    },
+    {
+      "id": "primerjalnik-glasovanj",
+      "label": "Vote comparator",
+      "link": "/orodja/primerjalnik-glasovanj",
+      "text": "The vote comparator allows you to answer questions like: When did members of Levica vote the same as members of SDS?",
+      "icon": "primerjalnik-glasovanj"
+    },
+    {
+      "id": "raziskovalec-neenotnosti",
+      "label": "Discord researcher",
+      "link": "/orodja/raziskovalec-neenotnosti",
+      "text": "Explore the discord in parties based on how much they disagreed on specific pieces of legislation.",
+      "icon": "raziskovalec-neenotnosti"
+    },
+    {
+      "id": "parlamentarni-kompas",
+      "label": "Parliamentary compass",
+      "link": "/orodja/parlamentarni-kompas",
+      "text": "A visualisation of all MPs in virtual space. The further they are, the more likely they are to vote differently.",
+      "icon": "parlamentarni-kompas"
+    },
+    {
+      "id": "skupine-besed",
+      "label": "Word groups",
+      "link": "/orodja/skupine-besed",
+      "text": "Explore who talks about certain topics the most or who says the words you choose most often.<br><br>",
+      "icon": "skupine-besed"
+    }
+  ],
   "general": {
     "coalition": "coalition",
     "opposition": "opposition",
