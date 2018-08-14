@@ -13,14 +13,14 @@
     "columns": {
       "first": {
         "title": "Opća javnost",
-        "paragraph": "Delovanje demokracije je odvisno od budnega in odgovornega nadzora nad delovanjem oblasti, za kar pa je predpogoj dobro informirana javnost. Hvala, ker ti ni vseeno."
+        "paragraph": "Funkcioniranje demokracije ovisi o budnom i odgovornom nadzoru rada vladajućih, a preduvjet za to je dobro informirana javnost. Hvala što vam nije svejedno."
       },
       "second": {
         "title": "Medijska javnost",
-        "paragraph": "Vse obstoječe kartice je mogoče brezplačno vdelati na katero koli spletno mesto. Podatke obdelamo mi, da se lahko mediji posvetijo interpretaciji."
+        "paragraph": "Sve postojeće kartice mogu se besplatno preuzeti i ugraditi na bilo koju web stranicu. Podaci su obrađeni kako bi se mediji lakše posvetili interpretaciji."
       },
       "third": {
-        "title": "Razvijalska javnost",
+        "title": "Programerska javnost",
         "paragraph": "Vsi podatki so brezplačno na voljo preko dveh API vmesnikov, na Githubu pa je objavljena tudi vsa koda. Vse potrebno najdeš na <a href=\"https://dev.parlameter.si\">strani za razvijalce</a>, če potrebuješ še kakšno pomoč, pa se nam javi po e-pošti!"
       }
     },
