@@ -1,18 +1,18 @@
 {
   "landing": {
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
+    "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
     "search": {
-      "part_one": "Išči",
-      "part_two": "zakone, glasovanja, poslance, poslanske skupine ali njihove govore"
+      "part_one": "Traži",
+      "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
     }
   },
   "about": {
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
-    "afterlead": "Uporabnikom prijazna vizualna zasnova in tehnološko napredna modularna zasnova povečujeta transparentnost delovanja najpomembnejše demokratične institucije in omogočata učinkovit vpogled v odločevalski proces.",
+    "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
+    "afterlead": "Vizualna rješenja prilagođena korisniku i tehnološki napredni modularni dizajn povećavaju transparentnost djelovanja najvažnije demokratske institucije i omogućuju učinkovit uvid u proces donošenja odluka.",
     "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
     "columns": {
       "first": {
-        "title": "Splošna javnost",
+        "title": "Opća javnost",
         "paragraph": "Delovanje demokracije je odvisno od budnega in odgovornega nadzora nad delovanjem oblasti, za kar pa je predpogoj dobro informirana javnost. Hvala, ker ti ni vseeno."
       },
       "second": {
