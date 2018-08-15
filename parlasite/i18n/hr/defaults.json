@@ -55,23 +55,23 @@
   },
   "search_popup": {
     "title": "Kako pretraživati?",
-    "first_paragraph": "Za privzet način iskanja je nastavljeno široko ujemanje (med zadetki se znajdejo vsi govori, ki vsebujejo katero koli od besed v iskalnem nizu). Med rezultati zadetkov se zaradi pregibanja pojavljajo vse slovnične oblike znotraj iste besedne vrste. To ne velja zgolj za iskanje z natančnim ujemanjem (\"narekovaji\").",
-    "second_paragraph": "Če želiš svoj iskalni niz dodatno modificirati, lahko uporabiš naslednje operatorje:",
+    "first_paragraph": "Za zadani način pretraživanja postavljeno je široko podudaranje (kao rezultat se pojavljuju svi govori koji sadrže bilo koju od riječi iz pretraživanja). Među rezultatima pretrage se zbog preklapanja prikazuju svi gramatički oblici iste vrste riječi. Ovo se odnosi na sva, osim na pretraživanje točnog podudaranja („navodnici“).",
+    "second_paragraph": "Za napredno pretraživanje mogu se koristiti sljedeći operatori:",
     "operators": [
       {
-        "name": "IN",
-        "description": "med rezultati iskanja bodo zgolj zadetki, ki vključujejo vse besede v iskalnem nizu (a ne glede na njihov vrstni red)",
-        "example_title": "Primer iskanja:",
-        "example_text": "Ivan IN Cankar",
-        "example_result_title": "Rezultati iskanja:",
-        "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
+        "name": "I",
+        "description": "pretraživanje će prikazati samo one rezultate koji uključuju sve riječi u nizu povezane veznikom I (bez obzira na njihov redoslijed)",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "Ivan I Šuker",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "Ivan Šuker<br> Šuker, Ivan",
         "example_excluded_result_title": "",
         "example_excluded_result_text": ""
       },
       {
-        "name": "\"NAREKOVAJI\"",
-        "description": "med rezultati iskanja bodo samo zadetki, ki vključujejo točen nabor znakov",
-        "example_title": "Primer iskanja:",
+        "name": "„NAVODNICI“",
+        "description": "prikazuje samo rezultate koji sadrže točan skup znakova",
+        "example_title": "Primjer pretraživanja:",
         "example_text": "Humanitarna kriza",
         "example_result_title": "",
         "example_result_text": "",
@@ -79,11 +79,11 @@
         "example_excluded_result_text": ""
       },
       {
-        "name": "! (KLICAJ)",
-        "description": "rezultati iskanja nujno vključujejo s klicajem označeno besedo v iskalnem nizu, druge besede iskalnega niza pa služijo zgolj za rangiranje rezultatov",
-        "example_title": "Primer iskanja:",
-        "example_text": "Poslanska !skupina",
-        "example_result_title": "Rezultati iskanja:",
+        "name": "! (USKLIČNIK)",
+        "description": "rezultati pretraživanja obavezno uključuju riječ označenu uskličnikom, dok druge riječi u nizu za pretraživanje služe samo za rangiranje rezultata",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "Klub !zastupnica",
+        "example_result_title": "Rezultati pretrage:",
         "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
         "example_excluded_result_title": "Ni rezultat iskanja",
         "example_excluded_result_text": "Poslanska služba"
