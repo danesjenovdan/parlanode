@@ -90,10 +90,10 @@
       },
       {
         "name": "- (MINUS)",
-        "description": "rezultati iskanja izključujejo zadetke s posamezno besedo v iskalnem nizu, če to besedo predhaja minus (-)",
-        "example_title": "Primer iskanja:",
-        "example_text": "-Poslanska skupina",
-        "example_result_title": "Rezultati iskanja:",
+        "description": "rezultati pretraživanja isključuju riječi ispred kojih je stavljen minus (-)",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "-Klub zastupnica",
+        "example_result_title": "Rezultati pretrage:",
         "example_result_text": "skupina poslancev,<br> mednarodna skupina",
         "example_excluded_result_title": "Ni rezultat iskanja",
         "example_excluded_result_text": "Poslanska skupina"
