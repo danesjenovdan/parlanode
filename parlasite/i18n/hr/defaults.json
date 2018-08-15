@@ -94,26 +94,26 @@
         "example_title": "Primjer pretraživanja:",
         "example_text": "-Klub zastupnica",
         "example_result_title": "Rezultati pretrage:",
-        "example_result_text": "skupina poslancev,<br> mednarodna skupina",
-        "example_excluded_result_title": "Ni rezultat iskanja",
-        "example_excluded_result_text": "Poslanska skupina"
+        "example_result_text": "zastupnica stranke,<br> zastupnica manjina",
+        "example_excluded_result_title": "Nije rezultat pretrage",
+        "example_excluded_result_text": "Klub zastupnica"
       }
     ]
   },
   "donation": {
-    "intro": "Tvoja donacija bo pomagala zagotoviti nadaljnji razvoj in omogočiti dolgoročno delovanje Parlametra.",
-    "personal": "OSEBNA<br>DONACIJA",
-    "business": "CORPORATE<br>DONACIJA",
+    "intro": "Donacijom pomažete daljnji razvoj i omogućujete dugoročni rad Parlametra.",
+    "personal": "OSOBNA<br>DONACIJA",
+    "business": "KORPORATIVNA<br>DONACIJA",
     "bitcoin": "BITCOIN DONACIJA",
-    "business_success": "Najlažje, da se o podrobnostih pogovorimo po e-pošti.",
-    "business_success_email": "e-pošta",
-    "business_success_message": "sporočilo",
-    "business_success_send": "POŠLJI"
+    "business_success": "Pojedinosti je najlakše dogovoriti e-mailom.",
+    "business_success_email": "e-mail",
+    "business_success_message": "poruka",
+    "business_success_send": "POŠALJI"
   },
   "tools": [
     {
       "id": "obvestila",
-      "label": "Parlameter obvestila",
+      "label": "Parlametar obavijesti",
       "link": "https://obvestila.parlameter.si/",
       "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).",
       "icon": "obvestila"
