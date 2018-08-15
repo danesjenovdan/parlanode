@@ -115,14 +115,14 @@
       "id": "obvestila",
       "label": "Parlametar obavijesti",
       "link": "https://obvestila.parlameter.si/",
-      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).",
+      "text": "Isječci sa sjednica Sabora! Primite obavijest na mail svaki puta kad netko u Saboru izgovori riječ (ili više njih) koje ste odabrali.",
       "icon": "obvestila"
     },
     {
       "id": "primerjalnik-glasovanj",
-      "label": "Primerjalnik glasovanj",
+      "label": "Komparator glasanja",
       "link": "/orodja/primerjalnik-glasovanj",
-      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?",
+      "text": "Komparator glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?",
       "icon": "primerjalnik-glasovanj"
     },
     {
