@@ -84,8 +84,8 @@
         "example_title": "Primjer pretraživanja:",
         "example_text": "Klub !zastupnica",
         "example_result_title": "Rezultati pretrage:",
-        "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
-        "example_excluded_result_title": "Ni rezultat iskanja",
+        "example_result_text": "Klub zastupnica,<br> zastupnica kluba,<br> zastupnica manjina",
+        "example_excluded_result_title": "Rezultati pretrage",
         "example_excluded_result_text": "Poslanska služba"
       },
       {
