@@ -4,23 +4,23 @@
   },
   "analysis-texts": {
     "seat_count": {
-      "label": "Število sedežev",
-      "titleSuffix": " po številu sedežev",
-      "explanation": "Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane."
+      "label": "Broj mjesta",
+      "titleSuffix": " prema broju mjesta",
+      "explanation": "Broj mjesta svakog kluba izračunava se na način da se prebroje sve njihove trenutno aktivne članice."
     },
     "presence_sessions": {
-      "label": "Prisotnost na sejah DZ",
-      "titleSuffix": " glede na rezultate analize s prisotnostjo na sejah DZ",
-      "explanation": "Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100)."
+      "label": "Prisutnost na sjednicama HS-a",
+      "titleSuffix": " prema rezultatima analize prisutnosti na sjednicama HS-a",
+      "explanation": "Prebroje se sve sjednice i za svaku zastupnicu kluba je li na pojedinoj sjednici bar jednom glasala. Ako jest, smatra se da je bila prisutna toj sjednici. Zbroj svih prisutnih zastupnica kluba na sjednicama HS-a podijeli se brojem svih zastupnica u klubu, a dobiveni rezultat podijeli se brojem sjednica i normalizira (min 1 - max 100)."
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " glede na rezultate analize s prisotnostjo na glasovanjih sej DZ",
-      "explanation": "Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100)."
+      "label": "Prisutnost na glasanjima na sjednicama HS-a",
+      "titleSuffix": " prema rezultatima analize prisutnosti na glasanjima na sjednicama HS-a",
+      "explanation": "Prebroje se sva glasanja, a zatim koliko je zastupnica iz kluba bilo prisutno na pojedinom glasanju. Zbroj svih predanih glasova zastupnica istog kluba podijeli se s brojem zastupnica u klubu, a dobiveni rezultat podijeli se brojem glasanja i normalizira (min 1 - max 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " glede na rezultate analize po št. poslanskih vprašanj in pobud",
+      "label": "Br. zastupničkih pitanja i inicijativa",
+      "titleSuffix": " prema rezultatima analize o br. zastupničkih pitanja i inicijativa",
       "explanation": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega mesta DZ RS."
     },
     "vocabulary_size": {
