@@ -12,10 +12,35 @@
         <div v-else>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. A ullam nesciunt illum quidem neque doloribus repellat accusamus expedita accusantium similique. Reiciendis incidunt expedita aliquam reprehenderit provident. Alias aut fugiat dolores.
         </div>
+        <div v-if="error" class="error-message">Error: {{ error.message }}</div>
         <div class="card-modal-buttons">
-          <div v-if="data.generateData" class="card-modal-button">{{ $t('generate') }}</div>
-          <div v-if="data.loadData" class="card-modal-button">{{ $t('load') }}</div>
-          <div v-if="data.saveData" class="card-modal-button">{{ $t('save') }}</div>
+          <button
+            v-if="data.generateData"
+            :disabled="buttonsDisabled"
+            type="button"
+            class="card-modal-button"
+            @click="generateData"
+          >
+            {{ $t('generate') }}
+          </button>
+          <button
+            v-if="data.loadData"
+            :disabled="buttonsDisabled"
+            type="button"
+            class="card-modal-button"
+            @click="loadData"
+          >
+            {{ $t('load') }}
+          </button>
+          <button
+            v-if="data.saveData"
+            :disabled="buttonsDisabled"
+            type="button"
+            class="card-modal-button"
+            @click="saveData"
+          >
+            {{ $t('save') }}
+          </button>
         </div>
       </modal>
     </div>
@@ -26,7 +51,7 @@
 import Modal from 'components/Modal.vue';
 
 export default {
-  name: 'DashFancyModal',
+  name: 'DashboardFancyModal',
   components: {
     Modal,
   },
@@ -41,16 +66,22 @@ export default {
       modalOpen: true,
       fields: null,
       loading: true,
+      saving: false,
+      generating: false,
+      error: null,
     };
+  },
+  computed: {
+    buttonsDisabled() {
+      return this.loading || this.saving || this.generating;
+    },
   },
   mounted() {
     document.body.classList.add('modal-open');
     if (this.data.loadData) {
-      this.data.loadData()
-        .then((data) => {
-          this.fields = data;
-          this.loading = false;
-        });
+      this.loadData();
+    } else {
+      this.loading = false;
     }
   },
   beforeDestroy() {
@@ -60,6 +91,47 @@ export default {
     modalClosed() {
       this.modalOpen = false;
       this.$emit('closed');
+    },
+    loadData() {
+      if (this.data.loadData) {
+        this.loading = true;
+        this.data.loadData()
+          .then((data) => {
+            console.log(data);
+            this.fields = data;
+            this.loading = false;
+          })
+          .catch((error) => {
+            this.error = error;
+            this.loading = false;
+          });
+      }
+    },
+    saveData() {
+      if (this.data.saveData) {
+        this.saving = true;
+        this.data.saveData()
+          .then(() => {
+            this.saving = false;
+          })
+          .catch((error) => {
+            this.error = error;
+            this.saving = false;
+          });
+      }
+    },
+    generateData() {
+      if (this.data.generateData) {
+        this.generating = true;
+        this.data.generateData()
+          .then(() => {
+            this.generating = false;
+          })
+          .catch((error) => {
+            this.error = error;
+            this.generating = false;
+          });
+      }
     },
   },
 };
@@ -80,12 +152,27 @@ export default {
       font-size: 14px;
       line-height: 18px;
       padding: 6px 12px;
+      border: 0;
 
       &:not(:first-child) {
         margin-left: 10px;
       }
     }
   }
+}
+
+.error-message {
+  font-weight: 500;
+  margin: 12px 0 0 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+[disabled] {
+  opacity: 0.6;
+  filter: grayscale(100%);
+  cursor: default;
+  pointer-events: none;
 }
 /*
 Modal.prototype.checkScrollbar = function () {

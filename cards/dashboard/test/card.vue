@@ -18,7 +18,7 @@
           <template v-else>{{ column.text }}</template>
         </template>
       </dashboard-table>
-      <dash-fancy-modal
+      <dashboard-fancy-modal
         v-if="modalOpen && modalData"
         :data="modalData"
         @closed="closeModal"
@@ -33,7 +33,8 @@ import common from 'mixins/common';
 import DashWrapper from 'components/Card/DashWrapper.vue';
 import DashboardTable from 'components/DashboardTable.vue';
 import DashboardButton from 'components/DashboardButton.vue';
-import DashFancyModal from 'components/DashFancyModal.vue';
+import DashboardFancyModal from 'components/DashboardFancyModal.vue';
+import parlapi from 'mixins/parlapi';
 
 export default {
   name: 'DashboardTest',
@@ -41,10 +42,11 @@ export default {
     DashWrapper,
     DashboardTable,
     DashboardButton,
-    DashFancyModal,
+    DashboardFancyModal,
   },
   mixins: [
     common,
+    parlapi,
   ],
   data() {
     return {
@@ -74,23 +76,19 @@ export default {
     },
   },
   mounted() {
-    const token = localStorage.getItem('access_token');
-    if (token) {
-      axios.get('https://data.parlameter.si/v1/sessions/?limit=1000&organization=95&ordering=-start_time', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((res) => {
-          this.sessions = res.data.results;
-        });
-    }
+    this.$parlapi.getSessions()
+      .then((res) => {
+        this.sessions = res.data.results;
+      });
   },
   methods: {
     openModal(session) {
       console.log(session);
       this.modalData = {
         title: `TFIDF - ${session.name}`,
+        loadData: () => {
+          return this.$parlapi.getSessionTFIDF(session.id);
+        },
       };
       this.modalOpen = true;
     },
