@@ -1,5 +1,5 @@
 <template functional>
-  <div v-bind="data.attrs" class="dash-button" v-on="listeners">
+  <div v-bind="data.attrs" :class="['dash-button', data.class]" v-on="listeners">
     <slot />
   </div>
 </template>

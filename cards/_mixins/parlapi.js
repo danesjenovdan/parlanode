@@ -6,6 +6,22 @@ function parlapi() {
   const locale = this.$root.$i18n.locale;
   const config = parlapiConfig[locale];
   const token = localStorage.getItem('access_token');
+  // TODO: function that uses refresh token to get new access token
+  /*
+    something like:
+
+    function retry(func) {
+      func()
+        .then(res => {
+          if (res.status ~= 4xx) {
+            return getNewToken() // either use refresh token or prompt for user/pass
+              .then(func)
+          }
+          return res
+        })
+    }
+
+  */
 
   const data = axios.create({
     baseURL: slugs.urls.data,
@@ -24,6 +40,12 @@ function parlapi() {
     },
     getSessionTFIDF(id) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${id}`);
+    },
+    patchSessionsTFIDF(tfidf) {
+      return analize.patch(`/s/tfidfs/${tfidf.id}`, tfidf);
+    },
+    updateSession(id) {
+      return analize.get(`/s/setMotionOfSession/${id}?key=nekijabolteskega`); // TODO: this key?
     },
   };
 }

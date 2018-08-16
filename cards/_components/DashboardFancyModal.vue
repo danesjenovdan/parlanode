@@ -37,7 +37,7 @@
             :disabled="buttonsDisabled"
             type="button"
             class="card-modal-button"
-            @click="saveData"
+            @click="saveData(fields)"
           >
             {{ $t('save') }}
           </button>
@@ -107,10 +107,10 @@ export default {
           });
       }
     },
-    saveData() {
+    saveData(fields) {
       if (this.data.saveData) {
         this.saving = true;
-        this.data.saveData()
+        this.data.saveData(fields)
           .then(() => {
             this.saving = false;
           })

@@ -10,10 +10,14 @@
             <dashboard-button disabled>{{ $t('votings') }}</dashboard-button>
           </template>
           <template v-else-if="index === 2">
-            <dashboard-button @click="openModal(column.session)">TFIDF</dashboard-button>
+            <dashboard-button @click="openModal(column.session)">
+              TFIDF
+            </dashboard-button>
           </template>
           <template v-else-if="index === 3">
-            <dashboard-button disabled>{{ $t('update-session') }}</dashboard-button>
+            <dashboard-loading-button :load="updateSession(column.session)">
+              {{ $t('update-session') }}
+            </dashboard-loading-button>
           </template>
           <template v-else>{{ column.text }}</template>
         </template>
@@ -23,16 +27,18 @@
         :data="modalData"
         @closed="closeModal"
       />
+      <div v-if="error">Error: {{ error.message }}</div>
+      <div v-else-if="sessions == null" class="nalagalnik"></div>
     </div>
   </dash-wrapper>
 </template>
 
 <script>
-import axios from 'axios';
 import common from 'mixins/common';
 import DashWrapper from 'components/Card/DashWrapper.vue';
 import DashboardTable from 'components/DashboardTable.vue';
 import DashboardButton from 'components/DashboardButton.vue';
+import DashboardLoadingButton from 'components/DashboardLoadingButton.vue';
 import DashboardFancyModal from 'components/DashboardFancyModal.vue';
 import parlapi from 'mixins/parlapi';
 
@@ -43,6 +49,7 @@ export default {
     DashboardTable,
     DashboardButton,
     DashboardFancyModal,
+    DashboardLoadingButton,
   },
   mixins: [
     common,
@@ -50,9 +57,10 @@ export default {
   ],
   data() {
     return {
-      sessions: [],
+      sessions: null,
       modalOpen: false,
       modalData: null,
+      error: null,
     };
   },
   computed: {
@@ -65,29 +73,42 @@ export default {
       ];
     },
     mappedItems() {
-      return this.sessions.map((session) => {
-        return [
-          { text: session.name },
-          { id: session.id },
-          { session },
-          { id: session.id },
-        ];
-      });
+      if (this.sessions) {
+        return this.sessions.map((session) => {
+          return [
+            { text: session.name },
+            { id: session.id },
+            { session },
+            { session },
+          ];
+        });
+      }
+      return [];
     },
   },
   mounted() {
     this.$parlapi.getSessions()
       .then((res) => {
         this.sessions = res.data.results;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.error = error;
       });
   },
   methods: {
     openModal(session) {
-      console.log(session);
       this.modalData = {
         title: `TFIDF - ${session.name}`,
         loadData: () => {
           return this.$parlapi.getSessionTFIDF(session.id);
+          // TODO: get data from this -^ response and return it
+        },
+        saveData: (fields) => {
+          // TODO: get correct data from fields and call api with it
+          const tfidf = fields;
+          return this.$parlapi.patchSessionsTFIDF(tfidf);
         },
       };
       this.modalOpen = true;
@@ -95,6 +116,9 @@ export default {
     closeModal() {
       this.modalData = null;
       this.modalOpen = false;
+    },
+    updateSession(session) {
+      return () => this.$parlapi.updateSession(session.id);
     },
   },
 };
