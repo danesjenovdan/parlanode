@@ -26,26 +26,26 @@
     "presence_votes": {
       "label": "Prisutnost na glasanjima na sjednicama HS-a",
       "titleSuffix": " prema prisutnosti na glasanjima na sjednicama HS-a",
-      "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100)."
+      "explanation": "Broj glasanja kada je zastupnica bila prisutna podijeli se s brojem svih glasanja i normalizira (min 1 - max 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " po št. poslanskih vprašanj in pobud",
-      "explanation": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo."
+      "label": "Br. zastupničkih pitanja i inicijativa",
+      "titleSuffix": " prema br. zastupničkih pitanja i inicijativa",
+      "explanation": "Broj zastupničkih pitanja i inicijativa koje je zastupnica postavila u jednom sazivu HS u odnosu na prosječnu i maksimalnu vrijednost."
     },
     "speeches_per_session": {
-      "label": "Št. govorov na sejo",
-      "titleSuffix": " po št. govorov na sejo",
-      "explanation": "Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim."
+      "label": "Br. govora na sjednici",
+      "titleSuffix": " prema br. govora na sjednici",
+      "explanation": "Prebroje se govori odabrane zastupnice i broj se podijeli s brojem sjednica na kojima je zastupnica govorila. Broj svih govora najprije se dijeli s brojem zastupnica, a zatim s brojem svih sjednica (na kojima se govorilo). Individualni rezultat uspoređuje se s prosjekom."
     },
     "spoken_words": {
-      "label": "Št. izgovorjenih besed",
-      "titleSuffix": " po št. izgovorjenih besed",
-      "explanation": "Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ."
+      "label": "Br. izgovorenih riječi",
+      "titleSuffix": " prema br. izgovorenih riječi",
+      "explanation": "Broj riječi koje je zastupnica izgovorila u svim svojim dosadašnjim govorima u HS."
     },
     "mismatch_of_pg": {
-      "label": "Neujemanje s poslansko skupino",
-      "titleSuffix": " po neujemanju s poslansko skupino",
+      "label": "Neslaganje s klubom",
+      "titleSuffix": " prema neslaganju s klubom",
       "explanation": "Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ."
     }
   }
