@@ -13,6 +13,6 @@
     "presence-heading": "Prisutnost klubova na sjednici",
     "presence-text": "Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane sjednice bile njihove zastupnice.",
     "votes-heading": "Glasanja",
-    "votes-text": "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi ( ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale."
+    "votes-text": "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi ( ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale, te ispišu rezultati."
   }
 }
