@@ -21,16 +21,16 @@
     "number_of_questions": {
       "label": "Br. zastupničkih pitanja i inicijativa",
       "titleSuffix": " prema rezultatima analize o br. zastupničkih pitanja i inicijativa",
-      "explanation": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega mesta DZ RS."
+      "explanation": "Prebroje se sva pitanja i inicijative zastupnica odabranog kluba u jednom sazivu HS-a. Podaci se preuzimaju s web stranice sabor. hr."
     },
     "vocabulary_size": {
-      "label": "Raznolikost besedišča",
-      "titleSuffix": " glede na rezultate analize z raznolikostjo besedišča",
-      "explanation": "Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved \"Danes je nov dan in danes je dan za Parlameter\" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
+      "label": "Raznolikost vokabulara",
+      "titleSuffix": " prema rezultatima analize raznolikosti vokabulara",
+      "explanation": "Iz svih govora zastupnice prebroje se jedinstvene riječi i broj svih izgovorenih riječi. Potom se prebroji koliko se puta svaka jedinstvena riječ pojavljuje. Jedinstvene riječi podjele se u kategorije na način da su u istom skupu riječi koje se ponavljaju jednom, dvaput, triput itd. Na koncu se izračuna koeficijent gdje je broj svih jedinstvenih izgovorenih riječi iznad razlomačke crte, a ispod je broj riječi koje se ponavljaju s određenom učestalošću (jednom, dvaput, triput …) i pomnoži se s brojem ponavljanja na kvadrat (jedan na kvadrat, dva na kvadrat, tri na kvadrat …). Rečenica „Danas je novi dan i danas je dan za Parlametar“ daje rezultat 7/ ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za svaki klub zbrajaju se rezultati zastupnica i dijele s brojem zastupnica u klubu. Pojedinačni rezultati podijele se s ukupnim zbrojem i normaliziraju (min 1 - max 100)."
     },
     "privzdignjeno": {
-      "label": "Privzdignjeno besedje",
-      "titleSuffix": " glede na rezultate analize s privzdignjenim besedjem",
+      "label": "Uzvišeni rječnik",
+      "titleSuffix": " prema rezultatima analize uzvišenog rječnika",
       "explanation": "Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji iz SNB<br>/<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
     },
     "preprosto": {
