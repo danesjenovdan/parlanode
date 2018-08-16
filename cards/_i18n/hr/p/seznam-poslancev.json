@@ -24,8 +24,8 @@
       "label": "Demografija"
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " po prisotnosti na glasovanjih sej DZ",
+      "label": "Prisutnost na glasanjima na sjednicama HS-a",
+      "titleSuffix": " prema prisutnosti na glasanjima na sjednicama HS-a",
       "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100)."
     },
     "number_of_questions": {
