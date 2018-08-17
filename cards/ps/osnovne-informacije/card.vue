@@ -245,7 +245,7 @@ export default {
   svg {
     width: 22px;
     height: 22px;
-    fill: #197197;
+    fill: $sadblue;
     &:hover { fill: $funblue; }
   }
 }

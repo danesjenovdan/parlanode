@@ -164,7 +164,7 @@ export default {
         .style('yx', 3);
 
       focus.append('text')
-        .style('fill', '#ffffff')
+        .style('fill', '#fff')
         .attr('text-anchor', 'middle')
         .attr('y', -18);
     },
