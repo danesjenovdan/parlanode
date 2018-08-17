@@ -108,13 +108,40 @@ function deleteCardBuildId(req, res) {
     });
 }
 
+function progressDots(res) {
+  const wave = "`'-.,_,.-'";
+  let i = 0;
+  let interval = null;
+  let time = null;
+  return {
+    start() {
+      time = Date.now();
+      interval = setInterval(() => {
+        res.write(wave[i % wave.length]);
+        i += 1;
+      }, 1000);
+    },
+    stop() {
+      time = Date.now() - time;
+      clearInterval(interval);
+      interval = null;
+    },
+    get time() {
+      return time;
+    },
+  };
+}
+
 async function maybeBuildCard(cacheData, index, length, forceBuild, res) {
   res.write(`${index + 1} / ${length} | ${cacheData.group}/${cacheData.method}`);
   const cardJson = await loadCardJson(cacheData);
   if (forceBuild || await shouldBuildCard(cacheData, cardJson)) {
-    res.write(' - BUILDING ...');
+    res.write(' - BUILDING ');
+    res.progressDots = progressDots(res);
+    res.progressDots.start();
     await buildCard(cacheData, cardJson);
-    res.write(' DONE');
+    res.progressDots.stop();
+    res.write(` DONE in ${(res.progressDots.time / 1000).toFixed(2)}s`);
   }
   res.write('\n');
 }
@@ -138,6 +165,9 @@ function rebuildCards(forceBuild) {
             res.end('\n\nEND');
           })
           .catch((pError) => {
+            if (res.progressDots) {
+              res.progressDots.stop();
+            }
             // eslint-disable-next-line no-console
             console.error(pError);
             res.end(`\n\nError: ${pError.message}`);
