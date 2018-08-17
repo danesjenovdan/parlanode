@@ -44,7 +44,7 @@ export default {
   .option {
     align-items: center;
     background: $funblue-light;
-    color: #333;
+    color: $grey-dark;
     cursor: pointer;
     flex: 1;
     text-align: center;

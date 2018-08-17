@@ -134,7 +134,7 @@ export default {
         @include respond-to(mobile) { margin: 0 15px; }
 
         .text {
-        color: #333;
+        color: $grey-dark;
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
