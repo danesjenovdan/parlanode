@@ -137,10 +137,15 @@ async function maybeBuildCard(cacheData, index, length, forceBuild, res) {
   const cardJson = await loadCardJson(cacheData);
   if (forceBuild || await shouldBuildCard(cacheData, cardJson)) {
     res.write(' - BUILDING ');
-    res.progressDots = progressDots(res);
-    res.progressDots.start();
-    await buildCard(cacheData, cardJson);
-    res.progressDots.stop();
+    const dots = progressDots(res);
+    dots.start();
+    try {
+      await buildCard(cacheData, cardJson);
+    } catch (error) {
+      throw error;
+    } finally {
+      dots.stop();
+    }
     res.write(` DONE in ${(res.progressDots.time / 1000).toFixed(2)}s`);
   }
   res.write('\n');
@@ -165,9 +170,6 @@ function rebuildCards(forceBuild) {
             res.end('\n\nEND');
           })
           .catch((pError) => {
-            if (res.progressDots) {
-              res.progressDots.stop();
-            }
             // eslint-disable-next-line no-console
             console.error(pError);
             res.end(`\n\nError: ${pError.message}`);

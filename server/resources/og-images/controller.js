@@ -41,7 +41,7 @@ async function buildBundle(cacheData, ogJson) {
     if (ongoingBuilds.has(buildCommand)) {
       promise = ongoingBuilds.get(buildCommand);
     } else {
-      promise = exec(buildCommand);
+      promise = exec(buildCommand, { timeout: 60000 });
       ongoingBuilds.set(buildCommand, promise);
     }
     await promise;
