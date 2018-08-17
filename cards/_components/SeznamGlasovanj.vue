@@ -262,7 +262,7 @@ export default {
 }
 
 #votingCard div.member span {
-  color: #525252;
+  color: $black;
   font-weight: 500;
 }
 
@@ -360,7 +360,7 @@ export default {
 
   .border-left {
     border-left: none;
-    border-top: 2px solid #dbdbdb;
+    border-top: 2px solid $darkgrey;
   }
   .single_voting:hover {
     .border-left {
@@ -395,7 +395,7 @@ export default {
 }
 
 .seja_anchor:hover {
-  color: #525252;
+  color: $black;
 }
 
 .card-content-front {

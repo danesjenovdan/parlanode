@@ -172,7 +172,7 @@ $medium-gray: #d0d0d0;
 
     .portrait {
       border-radius: 50%;
-      box-shadow: 0 0 4px #dddddd;
+      box-shadow: 0 0 4px $darkgrey;
       height: $portrait-size;
       width: $portrait-size;
       margin-right: $portrait-margin;

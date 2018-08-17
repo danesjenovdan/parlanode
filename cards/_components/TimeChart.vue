@@ -205,7 +205,7 @@ export default {
 
 .focus rect {
   border: 0px;
-  background-color: #525252;
+  background-color: $black;
   border-radius: 3px;
   padding: 2px 10px;
   color: $white;
