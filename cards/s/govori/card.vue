@@ -171,8 +171,6 @@ export default {
   color: $grey-medium;
 }
 
-$lightest-blue: #e9eff2;
-
 .multiple-speeches /deep/ .speech-holder {
   border-top: 1px solid $grey;
 
@@ -190,7 +188,7 @@ $lightest-blue: #e9eff2;
   }
 
   &:target {
-    background: $lightest-blue;
+    background: $grey;
   }
 }
 

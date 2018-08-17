@@ -141,7 +141,7 @@ export default {
     }
 
     &:hover {
-      background-color: #e7f5fe;
+      background-color: $funblue-light-hover;
     }
 
     &:focus,

@@ -453,7 +453,7 @@ export default {
       padding-bottom: 15px;
       &:hover {
         .border-left {
-          border-top-color: #cadde6;
+          border-top-color: $funblue-light;
         }
       }
     }
@@ -462,8 +462,8 @@ export default {
   .single_voting {
     position: relative;
     &:hover {
-      background-color: #e1f6ff;
-      .border-left { border-left-color: #cadde6; }
+      background-color: $funblue-light-hover;
+      .border-left { border-left-color: $funblue-light; }
     }
   }
 

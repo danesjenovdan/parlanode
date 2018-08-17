@@ -171,7 +171,7 @@ export default {
 }
 
 .bar {
-  fill: #ccebf8;
+  fill: $funblue-light-hover;
 }
 
 .smallbarcontainer text {

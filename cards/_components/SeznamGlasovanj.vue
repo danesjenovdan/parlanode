@@ -364,7 +364,7 @@ export default {
   }
   .single_voting:hover {
     .border-left {
-      border-top-color: #cadde6;
+      border-top-color: $funblue-light;
     }
   }
 
@@ -387,10 +387,10 @@ export default {
 }
 
 .single_voting:hover {
-  background-color: #e1f6ff;
+  background-color: $funblue-light-hover;
 
   .border-left {
-    border-left-color: #cadde6;
+    border-left-color: $funblue-light;
   }
 }
 
