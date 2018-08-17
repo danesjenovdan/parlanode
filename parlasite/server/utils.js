@@ -43,12 +43,15 @@ async function fetchCard(cardPath, id, params = {}) {
       const text = await res.text();
       return text;
     }
+    const text = await res.text();
+    // eslint-disable-next-line no-console
+    console.error(`Failed to fetch card: status=${res.status} text=${text}`);
+    return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status})</div>`;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
     return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
   }
-  return `<div class="alert alert-danger" style="margin-top:20px">Failed to render card: ${cardPath}</div>`;
 }
 
 const asyncRoute = fn => (...args) => fn(...args).catch(args[2]);
