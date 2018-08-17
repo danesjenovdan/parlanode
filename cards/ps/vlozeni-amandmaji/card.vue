@@ -347,7 +347,7 @@ export default {
 
   .card-header h1,
   .card-footer h1 {
-    color: #525252;
+    color: $black;
   }
 
   #votingCard {
@@ -356,7 +356,7 @@ export default {
   }
 
   #votingCard div.member span {
-    color: #525252;
+    color: $black;
     font-weight: 500;
   }
 
@@ -374,7 +374,7 @@ export default {
     padding: 0;
 
     &:empty::after {
-      color: #c8c8c8;
+      color: $grey-medium;
       content: "Ni rezultatov.";
       left: calc(50% - 41px);
       position: absolute;
@@ -446,14 +446,14 @@ export default {
 
     .border-left {
       border-left: none;
-      border-top: 2px solid #dbdbdb;
+      border-top: 2px solid $darkgrey;
     }
 
     .single_voting {
       padding-bottom: 15px;
       &:hover {
         .border-left {
-          border-top-color: #cadde6;
+          border-top-color: $funblue-light;
         }
       }
     }
@@ -462,8 +462,8 @@ export default {
   .single_voting {
     position: relative;
     &:hover {
-      background-color: #e1f6ff;
-      .border-left { border-left-color: #cadde6; }
+      background-color: $funblue-light-hover;
+      .border-left { border-left-color: $funblue-light; }
     }
   }
 
@@ -476,7 +476,7 @@ export default {
   }
 
   .seja_anchor:hover {
-    color: #525252;
+    color: $black;
   }
 
   .card-content-front {
@@ -556,11 +556,12 @@ export default {
   }
 </style>
 <style lang="scss">
+@import '~parlassets/scss/colors';
   .card-glasovanja-seja {
     .search-dropdown-input {
       padding-top: 11px;
       padding-bottom: 11px;
-      background-color: #ffffff;
+      background-color: $white;
     }
 
     .search-dropdown-options { top: 50px; }

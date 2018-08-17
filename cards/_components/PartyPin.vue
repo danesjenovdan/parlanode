@@ -62,7 +62,7 @@ export default {
     line-height: 27px;
     cursor: pointer;
     font-size: 11px;
-    color: #fff;
+    color: $white;
   }
 
   &[data-name="PS Levica"],
@@ -79,12 +79,12 @@ export default {
     text-align: center;
     border: 0px;
     pointer-events: none;
-    background-color: #525252;
+    background-color: $black;
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;
 
-    color: #ffffff;
+    color: $white;
 
     transition: opacity 0.25s ease-out;
 

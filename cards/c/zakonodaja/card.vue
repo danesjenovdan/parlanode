@@ -242,7 +242,7 @@ export default {
   padding: 0;
 
   a {
-    color: #009cda;
+    color: $funblue;
   }
 
   .dropdown-filter.search-dropdown { height: 51px; }
@@ -344,7 +344,7 @@ export default {
         background-size: 24px 24px;
         background-repeat: no-repeat;
         background-position: right 9px center;
-        border: 1px solid #c8c8c8;
+        border: 1px solid $grey-medium;
         font-size: 16px;
         height: 51px;
         line-height: 27px;
@@ -392,7 +392,7 @@ export default {
 
 .button-filters {
   .striped-button {
-    background-color: #f0f0f0;
+    background-color: $grey;
   }
 }
 </style>

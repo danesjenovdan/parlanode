@@ -271,10 +271,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
 .button-filters {
   .striped-button {
     flex: 1;
-    background-color: #f0f0f0;
+    background-color: $grey;
     &:not(:last-child) { margin-right: 5px; }
   }
 }

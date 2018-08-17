@@ -195,7 +195,7 @@ export default {
   }
 
   a {
-    color: #009cda;
+    color: $funblue;
   }
 
   .headers {

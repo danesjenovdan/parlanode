@@ -65,7 +65,7 @@ export default {
 
   &-item {
     align-items: center;
-    background-color: #227497;
+    background-color: $sadblue;
     border: 1px solid $grey-medium;
     box-sizing: border-box;
     color: $white;

@@ -406,7 +406,7 @@ export default {
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid #c8c8c8;
+      border: 1px solid $grey-medium;
       font-size: 16px;
       height: 51px;
       line-height: 27px;
@@ -436,7 +436,7 @@ export default {
   position: relative;
 
   &:empty::after {
-    color: #c8c8c8;
+    color: $grey-medium;
     content: "Ni rezultatov.";
     left: calc(50% - 41px);
     position: absolute;

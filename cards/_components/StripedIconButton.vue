@@ -140,10 +140,10 @@ export default {
   }
 
   $special-groups: (
-    dz: #fe5e41,
-    koal: #00628c,
-    opoz: #a9a9a9,
-    funblue: #009cdd,
+    dz: $red,
+    koal: $fontblue,
+    opoz: $grey-medium,
+    funblue: $funblue,
   );
 
 
@@ -162,7 +162,7 @@ export default {
 }
 .is-selected {
   .parlaicon-m, .parlaicon-f {
-    fill: #ffffff;
+    fill: $white;
   }
 }
 </style>

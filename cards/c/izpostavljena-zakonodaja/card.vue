@@ -141,7 +141,7 @@ export default {
     }
 
     &:hover {
-      background-color: #e7f5fe;
+      background-color: $funblue-light-hover;
     }
 
     &:focus,
@@ -173,7 +173,7 @@ export default {
     left: 0;
     bottom: 0;
     padding: 4px 20px 15px 20px;
-    background: #ffffff;
+    background: $white;
     width: 100%;
 
     a {
@@ -183,7 +183,7 @@ export default {
         no-repeat top left;
       font-size: 14px;
       font-weight: 400;
-      color: #227497;
+      color: $sadblue;
       text-transform: uppercase;
     }
   }

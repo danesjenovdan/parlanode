@@ -255,7 +255,7 @@ export default {
     }
 
     .text {
-      color: #333;
+      color: $grey-dark;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;

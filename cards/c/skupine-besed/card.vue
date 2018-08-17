@@ -287,6 +287,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/colors';
 
 .results {
   height: 400px;
@@ -315,12 +316,12 @@ export default {
   }
 
   .checkbox + label:before {
-    background-color: #f0f5f8;
+    background-color: $grey;
   }
 
   .checkbox + label {
     font-size: 11px;
-    color: #555555;
+    color: $black;
     white-space: nowrap;
   }
 }

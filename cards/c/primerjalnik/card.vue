@@ -443,7 +443,7 @@ export default {
     text-align: right;
 
     font-size: 11px;
-    color: #555555;
+    color: $black;
 
     @include respond-to(mobile) {
       text-align: left;
@@ -455,7 +455,7 @@ export default {
 }
 
 .primerjalnik-ps-switch {
-  background: #ffffff;
+  background: $white;
   cursor: pointer;
   padding: 5px;
   display: inline-block;
@@ -476,7 +476,7 @@ export default {
 
   &.on {
     background: $funblue;
-    color: #ffffff;
+    color: $white;
 
     &::after {
       transform: rotate(0deg);
@@ -494,12 +494,12 @@ export default {
 }
 
 .searchfilter-checkbox .checkbox + label:before {
-  background-color: #f0f5f8;
+  background-color: $grey;
 }
 
 .searchfilter-checkbox .checkbox + label {
   font-size: 11px;
-  color: #555555;
+  color: $black;
 }
 
 .tab-content {

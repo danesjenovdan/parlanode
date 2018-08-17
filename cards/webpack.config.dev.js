@@ -30,7 +30,12 @@ module.exports = merge.smart(baseConfig(process.env.CARD_NAME), {
   devServer: {
     historyApiFallback: true,
     publicPath: '/build/',
+    contentBase: [path.resolve(__dirname), path.resolve(__dirname, '..', 'parlassets')],
+    watchContentBase: true,
     stats: 'minimal',
+    watchOptions: {
+      aggregateTimeout: 1000,
+    },
   },
   plugins: [
     new ExtractTextPlugin({

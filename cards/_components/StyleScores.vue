@@ -152,6 +152,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
 .progress {
   overflow: visible; /* this overrides bootstrap which we should get rid of anyway */
 }
@@ -177,7 +179,7 @@ export default {
   position: absolute;
   right: 0;
   transform: translateX(100%);
-  color: #333;
+  color: $grey-dark;
   line-height: 30px;
 }
 </style>

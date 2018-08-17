@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
-const { spawn } = require('child_process');
+const spawn = require('cross-spawn');
+const kill = require('tree-kill');
 
 let [cardPath, cmd, lang] = process.argv.slice(2).filter(arg => !arg.startsWith('--'));
 
@@ -57,9 +58,7 @@ if (cmd === 'build') {
     cpEnv.DONT_UPDATE_TIMESTAMP = true;
   }
 
-  const cpArgs = ['cards/build.js'];
-
-  const cp = spawn('node', cpArgs, { stdio: 'inherit', env: cpEnv });
+  const cp = spawn('node', ['cards/build.js'], { stdio: 'inherit', env: cpEnv });
 
   cp.on('error', (error) => {
     // eslint-disable-next-line no-console
@@ -80,10 +79,11 @@ if (cmd === 'dev') {
   cpEnv.CARD_NAME = cardPath;
   cpEnv.CARD_LANG = lang;
 
-  const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--content-base', 'cards', '--hot', '--progress', '--open', '--inline'];
+  const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--progress', '--open', '--inline'];
+  const cp = spawn('webpack-dev-server', cpArgs, { stdio: 'inherit', env: cpEnv });
 
-  const proc = `webpack-dev-server${process.platform === 'win32' ? '.cmd' : ''}`;
-  const cp = spawn(proc, cpArgs, { stdio: 'inherit', env: cpEnv });
+  const scssArgs = ['run', '--cwd=parlassets', 'sass-dev-win'];
+  const scssCp = spawn('yarn', scssArgs, { stdio: 'inherit' });
 
   cp.on('error', (error) => {
     // eslint-disable-next-line no-console
@@ -94,7 +94,24 @@ if (cmd === 'dev') {
     if (code) {
       // eslint-disable-next-line no-console
       console.error(chalk.red('error'), `Dev server failed with exit code ${code}.`);
-      process.exit(code);
+      kill(scssCp.pid, () => {
+        process.exit(code);
+      });
+    }
+  });
+
+  scssCp.on('error', (error) => {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  });
+
+  scssCp.on('close', (code) => {
+    if (code) {
+      // eslint-disable-next-line no-console
+      console.error(chalk.red('error'), `Scss watch failed with exit code ${code}.`);
+      kill(cp.pid, () => {
+        process.exit(code);
+      });
     }
   });
 }

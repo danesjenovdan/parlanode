@@ -449,7 +449,7 @@ export default {
   }
 
   .nalagalnik__wrapper {
-    background: rgba(255, 255, 255, .75);
+    background: $white-hover;
     height: 100%;
     left: 0;
     position: absolute;
@@ -463,7 +463,7 @@ export default {
   }
 
   .date {
-    background-color: #f0f0f0;
+    background-color: $grey;
     font-weight: bold;
     padding: 10px;
   }

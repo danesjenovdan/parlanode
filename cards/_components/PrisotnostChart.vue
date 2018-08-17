@@ -198,7 +198,7 @@ export default {
 
           focus.append('text')
             .text(locale.timeFormat('%B %Y')(d3.select(bars[0][0]).datum().x))
-            .style('fill', '#ffffff')
+            .style('fill', '#fff')
             .attr('text-anchor', 'start')
             .attr('x', -70)
             .attr('y', -18);
@@ -214,7 +214,7 @@ export default {
             }
             focus.append('text')
               .text(`${prisoten} | ${Math.round(d3.select(bars[0][0]).datum().y)} %`)
-              .style('fill', '#ffffff')
+              .style('fill', '#fff')
               .attr('text-anchor', 'start')
               .attr('x', -70)
               .attr('y', tooltiptop);
@@ -230,7 +230,7 @@ export default {
             }
             focus.append('text')
               .text(`${odsoten} | ${Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001)} %`) // odštevamo zaradi case-a 20.5 + 79.5
-              .style('fill', '#ffffff')
+              .style('fill', '#fff')
               .attr('text-anchor', 'start')
               .attr('x', -70)
               .attr('y', tooltiptop);
@@ -240,7 +240,7 @@ export default {
           if (Math.round(d3.select(bars[0][2]).datum().y) > 0) {
             focus.append('text')
               .text(`Brez mandata | ${Math.round(d3.select(bars[0][2]).datum().y)} %`)
-              .style('fill', '#ffffff')
+              .style('fill', '#fff')
               .attr('text-anchor', 'start')
               .attr('x', -70)
               .attr('y', tooltiptop);
@@ -278,7 +278,7 @@ export default {
         .attr('height', 1.5)
         .attr('y', -9)
         .attr('x', -70)
-        .style('fill', '#ffffff');
+        .style('fill', '#fff');
     },
   },
 };
@@ -323,40 +323,40 @@ export default {
 .prisotnost-chart .line {
     fill: none;
     stroke-width: 2;
-    stroke: #009cdd;
+    stroke: $funblue;
 }
 .prisotnost-chart .dot {
-    fill: #009cdd;
+    fill: $funblue;
 }
 
 .focus rect {
     border: 0px;
-    background-color: #525252;
+    background-color: $black;
     border-radius: 3px;
     padding: 2px 10px;
 
-    color: #ffffff;
+    color: $white;
 }
 
 .focus circle {
-    fill: #009cdd;
+    fill: $funblue;
 }
 
 .tabs-header:hover { text-decoration: none; }
 
 
 .presencething-present rect {
-    fill: #bfe4f4;
-    stroke: #ffffff;
+    fill: $funblue-light-hover;
+    stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: #009cdd;
+        fill: $funblue;
     }
 }
 .presencething-notPresent rect {
-    fill: #feefec;
-    stroke: #ffffff;
+    fill: $red-light-hover;
+    stroke: $white;
     stroke-width: 1;
 
     &.hovered {
@@ -364,12 +364,12 @@ export default {
     }
 }
 .presencething-notMember rect {
-    fill: #ececec;
-    stroke: #ffffff;
+    fill: $grey;
+    stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: #a1a1a1;
+        fill: $grey-medium;
     }
 }
 </style>

@@ -5,9 +5,11 @@
 </template>
 
 <style lang="scss">
+@import '~parlassets/scss/colors';
+
 .text-frame {
   text-align: center;
-  background-color: #f0f5f8;
+  background-color: $grey;
   padding: 30px;
   font-family: 'Roboto Slab', serif;
   font-size: 18px;

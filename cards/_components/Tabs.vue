@@ -90,7 +90,7 @@ export default {
         background: $sadblue;
         color: $white;
         &.active { background: $funblue; }
-        &:hover { background: rgba($funblue, 0.7); }
+        &:hover { background: $funblue-hover; }
       }
       &.light {
         background: $grey;
@@ -100,7 +100,7 @@ export default {
           color: $white;
         }
         &:hover {
-          background: rgba($funblue, 0.7);
+          background: $funblue-hover;
           color: $white;
         }
       }

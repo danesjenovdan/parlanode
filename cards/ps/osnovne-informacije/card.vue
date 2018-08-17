@@ -184,6 +184,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~parlassets/scss/breakpoints";
+@import "~parlassets/scss/colors";
 
 .parlaicon-vodja {
   background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vodja.svg");
@@ -209,13 +210,13 @@ export default {
 }
 
 .bordertop {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $grey;
   padding: 10px 0;
   margin: 5px 0;
 }
 
 .bordertop0 {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $grey;
   padding: 0;
   margin: 0;
 }
@@ -230,7 +231,7 @@ export default {
   .member_data {
     text-align: left;
     h4 { margin: 5px 0; }
-    a { color: #505050; }
+    a { color: $black; }
   }
 
   .img-responsive{
@@ -244,8 +245,8 @@ export default {
   svg {
     width: 22px;
     height: 22px;
-    fill: #197197;
-    &:hover { fill: #009cdd; }
+    fill: $sadblue;
+    &:hover { fill: $funblue; }
   }
 }
 

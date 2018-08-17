@@ -122,9 +122,9 @@ export default {
   }
 
   $special-groups: (
-    dz: #fe5e41,
-    koal: #00628c,
-    opoz: #a9a9a9
+    dz: $red,
+    koal: $fontblue,
+    opoz: $grey-medium
   );
 
 

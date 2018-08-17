@@ -155,6 +155,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~parlassets/scss/colors";
+
 .axis path,
 .axis line {
   fill: none;
@@ -169,18 +171,18 @@ export default {
 }
 
 .bar {
-  fill: #ccebf8;
+  fill: $funblue-light-hover;
 }
 
 .smallbarcontainer text {
-  fill: #009cdd;
+  fill: $funblue;
   font-weight: 300;
   transition: all 0.2s ease-out;
 }
 
 .smallbarcontainer:hover {
   .bar {
-    fill: #009cdd;
+    fill: $funblue;
   }
 
   text {

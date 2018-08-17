@@ -171,10 +171,8 @@ export default {
   color: $grey-medium;
 }
 
-$lightest-blue: #e9eff2;
-
 .multiple-speeches /deep/ .speech-holder {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $grey;
 
   @include respond-to(desktop) {
     padding-bottom: 20px;
@@ -190,7 +188,7 @@ $lightest-blue: #e9eff2;
   }
 
   &:target {
-    background: $lightest-blue;
+    background: $grey;
   }
 }
 

@@ -149,7 +149,7 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background-color: rgba($white, 0.6);
+      background-color: $white-hover;
       background-image: url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif);
       background-repeat: no-repeat;
       background-position: center center;

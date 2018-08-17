@@ -119,7 +119,7 @@ export default {
 }
 
 #votingCard div.member span {
-  color: #525252;
+  color: $black;
   font-weight: 500;
 }
 
@@ -137,7 +137,7 @@ export default {
   padding: 12px 15px 15px 12px;
 
   &:empty::after {
-    color: #c8c8c8;
+    color: $grey-medium;
     content: "Ni rezultatov.";
     left: calc(50% - 41px);
     position: absolute;
@@ -163,7 +163,7 @@ export default {
 }
 
 .accepted.nay {
-  color: #ff5e41;
+  color: $red;
 }
 
 .session_voting .accepted {
@@ -213,11 +213,11 @@ export default {
 
   .border-left {
     border-left: none;
-    border-top: 2px solid #dbdbdb;
+    border-top: 2px solid $darkgrey;
   }
   .single_voting:hover {
     .border-left {
-      border-top-color: #cadde6;
+      border-top-color: $funblue-light;
     }
   }
 
@@ -240,15 +240,15 @@ export default {
 }
 
 .single_voting:hover {
-  background-color: #e1f6ff;
+  background-color: $funblue-light-hover;
 
   .border-left {
-    border-left-color: #cadde6;
+    border-left-color: $funblue-light;
   }
 }
 
 .seja_anchor:hover {
-  color: #525252;
+  color: $black;
 }
 
 .card-content-front {

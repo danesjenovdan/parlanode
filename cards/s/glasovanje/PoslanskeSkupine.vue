@@ -220,6 +220,6 @@ export default {
       .members {
         padding-top: 14px;
         @include respond-to(desktop) { padding-top: 0; }
-        .person-list .item { border-color: #dddddd; }
+        .person-list .item { border-color: $darkgrey; }
       }
 </style>

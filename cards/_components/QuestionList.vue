@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
 .questions {
   min-height: 100px;
   flex: 1;
@@ -59,7 +61,7 @@ export default {
   height: 518px;
 
   &:empty::after {
-    color: #c8c8c8;
+    color: $grey-medium;
     content: "Ni rezultatov.";
     left: calc(50% - 41px);
     position: absolute;

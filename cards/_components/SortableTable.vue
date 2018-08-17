@@ -136,7 +136,7 @@ export default {
 .value {
   font-size: 16px;
   line-height: 18px;
-  background-color: #ffffff;
+  background-color: $white;
   // padding-right: 20px;
   display: flex;
   flex: 0 0 74px;

@@ -164,7 +164,7 @@ export default {
         .style('yx', 3);
 
       focus.append('text')
-        .style('fill', '#ffffff')
+        .style('fill', '#fff')
         .attr('text-anchor', 'middle')
         .attr('y', -18);
     },
@@ -196,23 +196,23 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: #009cdd;
+  stroke: $funblue;
 }
 
 .smalldata .dot {
-  fill: #009cdd;
+  fill: $funblue;
 }
 
 .focus rect {
   border: 0px;
-  background-color: #525252;
+  background-color: $black;
   border-radius: 3px;
   padding: 2px 10px;
-  color: #ffffff;
+  color: $white;
 }
 
 .focus circle {
-  fill: #009cdd;
+  fill: $funblue;
 }
 
 .tabs-header:hover {

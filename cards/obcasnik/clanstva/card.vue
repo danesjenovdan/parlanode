@@ -108,6 +108,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~parlassets/scss/colors';
   // svg {
   //     height: 1400px;
   //     width: 1400px;
@@ -132,11 +133,11 @@ export default {
     text-align: center;
     border: 0px;
     pointer-events: none;
-    background-color: #525252;
+    background-color: $black;
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;
 
-    color: #ffffff;
+    color: $white;
 }
 </style>
