@@ -196,11 +196,11 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: #009cdd;
+  stroke: $funblue;
 }
 
 .smalldata .dot {
-  fill: #009cdd;
+  fill: $funblue;
 }
 
 .focus rect {
@@ -212,7 +212,7 @@ export default {
 }
 
 .focus circle {
-  fill: #009cdd;
+  fill: $funblue;
 }
 
 .tabs-header:hover {

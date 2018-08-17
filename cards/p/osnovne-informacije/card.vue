@@ -230,6 +230,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~parlassets/scss/breakpoints";
+@import "~parlassets/scss/colors";
 
 .parlaicon-vodja {
   background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vodja.svg");
@@ -291,7 +292,7 @@ export default {
     width: 22px;
     height: 22px;
     fill: #197197;
-    &:hover { fill: #009cdd; }
+    &:hover { fill: $funblue; }
   }
 }
 

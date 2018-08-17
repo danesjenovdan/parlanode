@@ -323,10 +323,10 @@ export default {
 .prisotnost-chart .line {
     fill: none;
     stroke-width: 2;
-    stroke: #009cdd;
+    stroke: $funblue;
 }
 .prisotnost-chart .dot {
-    fill: #009cdd;
+    fill: $funblue;
 }
 
 .focus rect {
@@ -339,7 +339,7 @@ export default {
 }
 
 .focus circle {
-    fill: #009cdd;
+    fill: $funblue;
 }
 
 .tabs-header:hover { text-decoration: none; }
@@ -351,7 +351,7 @@ export default {
     stroke-width: 1;
 
     &.hovered {
-        fill: #009cdd;
+        fill: $funblue;
     }
 }
 .presencething-notPresent rect {

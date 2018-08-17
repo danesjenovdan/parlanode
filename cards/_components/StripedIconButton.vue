@@ -143,7 +143,7 @@ export default {
     dz: #fe5e41,
     koal: #00628c,
     opoz: #a9a9a9,
-    funblue: #009cdd,
+    funblue: $funblue,
   );
 
 

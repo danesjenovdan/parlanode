@@ -295,6 +295,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~parlassets/scss/colors";
+
 .axis path,
 .axis line {
   fill: none;
@@ -316,10 +318,10 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: #009cdd;
+  stroke: $funblue;
 }
 
 .smalldata .dot {
-  fill: #009cdd;
+  fill: $funblue;
 }
 </style>
