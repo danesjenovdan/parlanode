@@ -231,7 +231,7 @@ export default {
   .member_data {
     text-align: left;
     h4 { margin: 5px 0; }
-    a { color: #505050; }
+    a { color: $black; }
   }
 
   .img-responsive{

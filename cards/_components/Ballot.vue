@@ -64,7 +64,7 @@ export default {
     }
 
     background: #f0f0f0;
-    color: #505050;
+    color: $black;
     display: block;
     margin: 7px 0 8px;
     min-height: 90px;
@@ -91,7 +91,7 @@ export default {
         @include respond-to(desktop) {
         border-bottom: none;
         border-top: none;
-        border-left: 1px solid #505050;
+        border-left: 1px solid $black;
         align-items: center;
         display: flex;
         flex: 4;
@@ -99,8 +99,8 @@ export default {
         padding: 5px 20px;
         }
 
-        border-bottom: 1px solid #505050;
-        border-top: 1px solid #505050;
+        border-bottom: 1px solid $black;
+        border-top: 1px solid $black;
         font-family: Roboto Slab,Times New Roman,serif;
         font-size: 11px;
         font-weight: 300;
@@ -114,7 +114,7 @@ export default {
 
     .outcome {
         @include respond-to(desktop) {
-        border-left: 1px solid #505050;
+        border-left: 1px solid $black;
         justify-content: left;
         padding: 0 0 0 16px;
         width: 136px;
