@@ -160,7 +160,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .infinite-scroll-loader {
-  background: rgba($white, 0.75);
+  background: $white-hover;
   height: 100%;
   left: 0;
   position: absolute;

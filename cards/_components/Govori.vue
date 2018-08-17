@@ -449,7 +449,7 @@ export default {
   }
 
   .nalagalnik__wrapper {
-    background: rgba(255, 255, 255, .75);
+    background: $white-hover;
     height: 100%;
     left: 0;
     position: absolute;
