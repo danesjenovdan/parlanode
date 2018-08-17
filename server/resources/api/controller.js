@@ -146,7 +146,7 @@ async function maybeBuildCard(cacheData, index, length, forceBuild, res) {
     } finally {
       dots.stop();
     }
-    res.write(` DONE in ${(res.progressDots.time / 1000).toFixed(2)}s`);
+    res.write(` DONE in ${(dots.time / 1000).toFixed(2)}s`);
   }
   res.write('\n');
 }
