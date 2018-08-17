@@ -13,6 +13,7 @@ const compileWithWebpack = config => (
     webpack(config, (err, stats) => {
       if (err || (stats.compilation.errors && stats.compilation.errors.length)) {
         reject(err || stats.compilation.errors[0]);
+        return;
       }
       // eslint-disable-next-line no-console
       console.log(stats.toString({
