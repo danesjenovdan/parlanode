@@ -308,7 +308,7 @@ $medium-gray: #d0d0d0;
       color: #cacaca;
 
       .quote-text {
-        color: #000000;
+        color: #000;
       }
     }
 

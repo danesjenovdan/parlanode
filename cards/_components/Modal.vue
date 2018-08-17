@@ -47,7 +47,7 @@ export default {
   margin-left: -120px;
   top: 100px;
   z-index: 100;
-  background-color: #F0F5F8;
+  background-color: $grey;
 
   @include card(2);
 

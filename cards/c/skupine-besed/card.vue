@@ -316,7 +316,7 @@ export default {
   }
 
   .checkbox + label:before {
-    background-color: #f0f5f8;
+    background-color: $grey;
   }
 
   .checkbox + label {

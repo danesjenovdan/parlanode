@@ -494,7 +494,7 @@ export default {
 }
 
 .searchfilter-checkbox .checkbox + label:before {
-  background-color: #f0f5f8;
+  background-color: $grey;
 }
 
 .searchfilter-checkbox .checkbox + label {

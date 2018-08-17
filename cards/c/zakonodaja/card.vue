@@ -242,7 +242,7 @@ export default {
   padding: 0;
 
   a {
-    color: #009cda;
+    color: $funblue;
   }
 
   .dropdown-filter.search-dropdown { height: 51px; }
