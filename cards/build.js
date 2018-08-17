@@ -59,7 +59,8 @@ if (!process.env.CARD_NAME) {
     if (error) {
       // eslint-disable-next-line no-console
       console.error(error);
-      process.exit(1);
+      process.exitCode = 1;
+      return;
     }
 
     const allCards = files
@@ -76,7 +77,7 @@ if (!process.env.CARD_NAME) {
       .catch((pError) => {
         // eslint-disable-next-line no-console
         console.error(pError);
-        process.exit(1);
+        process.exitCode = 1;
       });
   });
 } else {
@@ -85,6 +86,6 @@ if (!process.env.CARD_NAME) {
     .catch((error) => {
       // eslint-disable-next-line no-console
       console.error(error);
-      process.exit(1);
+      process.exitCode = 1;
     });
 }
