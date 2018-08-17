@@ -283,7 +283,7 @@ hr {
 }
 
 .search-dropdown-input {
-  background-color: #ffffff;
+  background-color: $white;
   font-family: 'Roboto', sans-serif;
 }
 

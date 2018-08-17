@@ -335,7 +335,7 @@ export default {
     border-radius: 3px;
     padding: 2px 10px;
 
-    color: #ffffff;
+    color: $white;
 }
 
 .focus circle {
@@ -347,7 +347,7 @@ export default {
 
 .presencething-present rect {
     fill: #bfe4f4;
-    stroke: #ffffff;
+    stroke: $white;
     stroke-width: 1;
 
     &.hovered {
@@ -356,7 +356,7 @@ export default {
 }
 .presencething-notPresent rect {
     fill: #feefec;
-    stroke: #ffffff;
+    stroke: $white;
     stroke-width: 1;
 
     &.hovered {
@@ -365,7 +365,7 @@ export default {
 }
 .presencething-notMember rect {
     fill: #ececec;
-    stroke: #ffffff;
+    stroke: $white;
     stroke-width: 1;
 
     &.hovered {

@@ -208,7 +208,7 @@ export default {
   background-color: #525252;
   border-radius: 3px;
   padding: 2px 10px;
-  color: #ffffff;
+  color: $white;
 }
 
 .focus circle {

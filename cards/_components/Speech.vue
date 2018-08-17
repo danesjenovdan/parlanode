@@ -210,7 +210,7 @@ $medium-gray: #d0d0d0;
 .quote-button {
   background: #197197;
   border-radius: 50%;
-  color: #ffffff;
+  color: $white;
   cursor: pointer;
   display: none;
   font-family: Times New Roman, serif;

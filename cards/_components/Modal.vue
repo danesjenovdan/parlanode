@@ -55,7 +55,7 @@ export default {
     width: 100%;
     line-height: 40px;
     font-size: 16px;
-    color: #ffffff;
+    color: $white;
     background-color: $funblue;
     text-align: center;
     margin-top: 10px;
@@ -70,7 +70,7 @@ export default {
   &-header {
     width: 100%;
     background-color: $funblue;
-    color: #ffffff;
+    color: $white;
     font-family: 'Roboto Slab', serif;
     padding: 10px 50px 10px 10px;
 

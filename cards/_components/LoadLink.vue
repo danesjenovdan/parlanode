@@ -15,7 +15,7 @@
   cursor: pointer;
   font-weight: 600;
 
-  &:hover { background-color: #ffffff; }
+  &:hover { background-color: $white; }
 
   &::after {
     content: '';

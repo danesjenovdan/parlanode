@@ -556,11 +556,12 @@ export default {
   }
 </style>
 <style lang="scss">
+@import '~parlassets/scss/colors';
   .card-glasovanja-seja {
     .search-dropdown-input {
       padding-top: 11px;
       padding-bottom: 11px;
-      background-color: #ffffff;
+      background-color: $white;
     }
 
     .search-dropdown-options { top: 50px; }

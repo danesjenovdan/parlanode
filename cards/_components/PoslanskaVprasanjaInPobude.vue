@@ -247,6 +247,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/colors';
 
 .card-content-front {
   display: flex;
@@ -328,7 +329,7 @@ export default {
   .search-dropdown-options { top: 50px; }
 
   .search-dropdown input {
-    background-color: #ffffff;
+    background-color: $white;
   }
 }
 

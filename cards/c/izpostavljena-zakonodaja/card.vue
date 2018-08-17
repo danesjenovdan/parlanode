@@ -173,7 +173,7 @@ export default {
     left: 0;
     bottom: 0;
     padding: 4px 20px 15px 20px;
-    background: #ffffff;
+    background: $white;
     width: 100%;
 
     a {

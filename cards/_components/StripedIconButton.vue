@@ -162,7 +162,7 @@ export default {
 }
 .is-selected {
   .parlaicon-m, .parlaicon-f {
-    fill: #ffffff;
+    fill: $white;
   }
 }
 </style>

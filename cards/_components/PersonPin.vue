@@ -70,7 +70,7 @@ export default {
     padding: 2px 10px;
     opacity: 0;
 
-    color: #ffffff;
+    color: $white;
 
     transition: opacity 0.25s ease-out;
 

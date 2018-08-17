@@ -455,7 +455,7 @@ export default {
 }
 
 .primerjalnik-ps-switch {
-  background: #ffffff;
+  background: $white;
   cursor: pointer;
   padding: 5px;
   display: inline-block;
@@ -476,7 +476,7 @@ export default {
 
   &.on {
     background: $funblue;
-    color: #ffffff;
+    color: $white;
 
     &::after {
       transform: rotate(0deg);
