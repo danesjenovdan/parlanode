@@ -62,10 +62,13 @@ if (cmd === 'build') {
   /* eslint-enable global-require */
   const updateTimestamp = !process.argv.slice(3).find(arg => arg === '--dont-update-timestamp');
 
-  webpack(serverConfig(currentPath), async (error, stats) => {
-    if (error) {
+  const config = serverConfig(currentPath);
+  config.bail = true;
+  webpack(config, async (error, stats) => {
+    if (error || (stats.compilation.errors && stats.compilation.errors.length)) {
+      const err = error || stats.compilation.errors[0];
       // eslint-disable-next-line no-console
-      console.error(chalk.red('error'), 'Build failed:', error);
+      console.error(chalk.red('error'), 'Build failed:', err);
       process.exit(1);
     }
 

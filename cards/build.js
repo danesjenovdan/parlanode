@@ -9,9 +9,10 @@ const serverConfig = require('./webpack.config.server');
 // Runs webpack compilation with passed configuration
 const compileWithWebpack = config => (
   new Promise((resolve, reject) => {
+    config.bail = true;
     webpack(config, (err, stats) => {
-      if (err) {
-        reject(err);
+      if (err || (stats.compilation.errors && stats.compilation.errors.length)) {
+        reject(err || stats.compilation.errors[0]);
       }
       // eslint-disable-next-line no-console
       console.log(stats.toString({
