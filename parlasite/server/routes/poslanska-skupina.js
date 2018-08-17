@@ -33,7 +33,7 @@ function getData(idParam, slugParam) {
   return (id && party) ? { party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z-]+)', `/:slug([a-z-]+)/${sm.party.overview}`], ar((render, req, res, next) => {
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
     render('poslanska-skupina/pregled', {
@@ -47,7 +47,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z-]+)', 
   }
 }));
 
-router.get([`/:id(\\d+)/${sm.party.votings}`, `/:slug([a-z-]+)/${sm.party.votings}`], ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.party.votings}`, `/:slug([a-z0-9-]+)/${sm.party.votings}`], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
     render('poslanska-skupina/glasovanja', {
@@ -61,7 +61,7 @@ router.get([`/:id(\\d+)/${sm.party.votings}`, `/:slug([a-z-]+)/${sm.party.voting
   }
 }));
 
-router.get([`/:id(\\d+)/${sm.party.speeches}`, `/:slug([a-z-]+)/${sm.party.speeches}`], ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.party.speeches}`, `/:slug([a-z0-9-]+)/${sm.party.speeches}`], ar((render, req, res, next) => {
   const pgData = getData(req.params.id, req.params.slug);
   if (pgData) {
     render('poslanska-skupina/govori', {

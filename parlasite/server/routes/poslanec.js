@@ -14,7 +14,7 @@ function getData(idParam, slugParam) {
   return (id && mp && party) ? { mp, party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z-]+)', `/:slug([a-z-]+)/${sm.member.overview}`], ar((render, req, res, next) => {
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], ar((render, req, res, next) => {
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
     render('poslanec/pregled', {
@@ -28,7 +28,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z-]+)',
   }
 }));
 
-router.get([`/:id(\\d+)/${sm.member.votings}`, `/:slug([a-z-]+)/${sm.member.votings}`], ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.member.votings}`, `/:slug([a-z0-9-]+)/${sm.member.votings}`], ar((render, req, res, next) => {
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
     render('poslanec/glasovanja', {
@@ -42,7 +42,7 @@ router.get([`/:id(\\d+)/${sm.member.votings}`, `/:slug([a-z-]+)/${sm.member.voti
   }
 }));
 
-router.get([`/:id(\\d+)/${sm.member.speeches}`, `/:slug([a-z-]+)/${sm.member.speeches}`], ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.member.speeches}`, `/:slug([a-z0-9-]+)/${sm.member.speeches}`], ar((render, req, res, next) => {
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
     render('poslanec/govori', {
