@@ -407,7 +407,7 @@ export default {
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid #c8c8c8;
+      border: 1px solid $grey-medium;
       font-size: 16px;
       height: 53px;
       line-height: 27px;

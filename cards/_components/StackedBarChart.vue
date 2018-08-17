@@ -137,7 +137,7 @@ export default {
   padding: 12px 15px 15px 12px;
 
   &:empty::after {
-    color: #c8c8c8;
+    color: $grey-medium;
     content: "Ni rezultatov.";
     left: calc(50% - 41px);
     position: absolute;
