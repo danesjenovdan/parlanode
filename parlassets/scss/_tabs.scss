@@ -47,7 +47,7 @@
       text-transform: uppercase;
       background: $sadblue;
       &.active { background: $funblue; }
-      &:hover { background: rgba($funblue, 0.7) }
+      &:hover { background: $funblue-hover }
       @include respond-to(desktop) {
         font-size: 16px;
         padding-bottom: 15px;

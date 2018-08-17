@@ -17,7 +17,7 @@
   @extend %scroller;
 
   &.disabled::before {
-    background-color: rgba($white, 0.5);
+    background-color: $white-hover;
     bottom: 0;
     content: '';
     display: block;
