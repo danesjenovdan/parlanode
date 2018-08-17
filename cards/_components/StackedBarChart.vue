@@ -163,7 +163,7 @@ export default {
 }
 
 .accepted.nay {
-  color: #ff5e41;
+  color: $red;
 }
 
 .session_voting .accepted {

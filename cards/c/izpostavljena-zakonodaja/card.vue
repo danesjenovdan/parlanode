@@ -183,7 +183,7 @@ export default {
         no-repeat top left;
       font-size: 14px;
       font-weight: 400;
-      color: #227497;
+      color: $sadblue;
       text-transform: uppercase;
     }
   }

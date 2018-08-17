@@ -140,7 +140,7 @@ export default {
   }
 
   $special-groups: (
-    dz: #fe5e41,
+    dz: $red,
     koal: $fontblue,
     opoz: #a9a9a9,
     funblue: $funblue,
