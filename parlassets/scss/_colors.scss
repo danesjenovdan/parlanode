@@ -58,6 +58,7 @@ $funblue-light-hover: #e1f6ff;
 $fontblue-hover: rgba($fontblue, 0.7);
 $ignoreblue-hover: rgba($noblue, 0.7);
 $noblue-hover: rgba($noblue, 0.7);
+$red-light-hover: #feefec;
 
 $party-colors-hover: ();
 @each $party, $color in $party-colors {
