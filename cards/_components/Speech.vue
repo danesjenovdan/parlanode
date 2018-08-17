@@ -119,10 +119,6 @@ export default {
   @return 'data:image/svg+xml;utf8,<svg fill="%23#{str_slice('#{$color}', 2)}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 80" width="82" height="80"><path d="M68 52c-4.828 0-9.094 2.457-11.61 6.188l-29.04-13.98a13.964 13.964 0 0 0 0-8.416l29.035-13.98C58.905 25.542 63.17 28 67.998 28c7.72 0 14-6.28 14-14s-6.28-14-14-14-14 6.28-14 14c0 1.465.23 2.88.648 4.207L25.61 32.187C23.095 28.457 18.83 26 14 26 6.28 26 0 32.28 0 40s6.28 14 14 14c4.83 0 9.094-2.457 11.61-6.188l29.038 13.98A13.933 13.933 0 0 0 54 66c0 7.718 6.28 14 14 14s14-6.282 14-14-6.28-14-14-14zm0-48c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10S62.486 4 68 4zM14 50C8.486 50 4 45.514 4 40s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm54 26c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10z"/></svg>'
 };
 
-$blue: $funblue;
-$light-blue: #b4e9ff;
-$medium-gray: #d0d0d0;
-
 %text-styling {
   font-family: Roboto Slab;
   font-size: 14px;
@@ -135,7 +131,7 @@ $medium-gray: #d0d0d0;
 }
 
 %link-styling {
-  color: $blue;
+  color: $funblue;
   display: block;
   font-size: 16px;
   text-align: center;
@@ -143,7 +139,7 @@ $medium-gray: #d0d0d0;
   text-transform: uppercase;
 
   &:hover {
-    color: $blue;
+    color: $funblue;
   }
 }
 
@@ -255,7 +251,7 @@ $medium-gray: #d0d0d0;
     }
 
     &:hover {
-      background-color: $light-blue;
+      background-color: $funblue-light-hover;
       cursor: pointer;
     }
   }
@@ -281,7 +277,7 @@ $medium-gray: #d0d0d0;
   .everything,
   .quote {
     flex: 1;
-    ::selection { background: $light-blue; }
+    ::selection { background: $funblue-light-hover; }
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
     }
@@ -298,14 +294,14 @@ $medium-gray: #d0d0d0;
 
   &.just-quote {
     .quote-button {
-      background: $medium-gray;
+      background: $grey-medium;
       cursor: default;
       display: block;
       top: 50%;
     }
 
     .speech-text {
-      color: #cacaca;
+      color: $grey-medium;
 
       .quote-text {
         color: #000;

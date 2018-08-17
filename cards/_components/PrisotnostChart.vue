@@ -346,7 +346,7 @@ export default {
 
 
 .presencething-present rect {
-    fill: #bfe4f4;
+    fill: $funblue-light-hover;
     stroke: $white;
     stroke-width: 1;
 
@@ -355,7 +355,7 @@ export default {
     }
 }
 .presencething-notPresent rect {
-    fill: #feefec;
+    fill: $red-light-hover;
     stroke: $white;
     stroke-width: 1;
 
@@ -364,12 +364,12 @@ export default {
     }
 }
 .presencething-notMember rect {
-    fill: #ececec;
+    fill: $grey;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: #a1a1a1;
+        fill: $grey-medium;
     }
 }
 </style>
