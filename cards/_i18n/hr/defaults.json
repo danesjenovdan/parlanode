@@ -21,9 +21,9 @@
   "number-of-terms": "Broj mandata",
   "district": "Izborna jedinica",
   "analysis": "Analiza",
-  "vote-passed": "Prihvaćen",
+  "vote-passed": "Donesen",
   "vote-not-passed": "Odbijen",
-  "vote-under-consideration": "U čitanju",
+  "vote-under-consideration": "U proceduri",
   "average": "Prosjek",
   "maximum": "Najviše",
   "coalition": "koalicija",
@@ -47,7 +47,7 @@
   "voted-not--m": "Nije glasao o",
   "voted-not--plural": "Nisu glasali o",
   "sort-by": "Razvrstaj prema",
-  "sort-by--inequality": "Neujednačenosti",
+  "sort-by--inequality": "Razjedinjenosti",
   "sort-by--date": "Datumu",
   "mps": "Zastupnice",
   "party": "Klubovi",
@@ -85,7 +85,7 @@
     "always-refresh": "Podaci se uvijek moraju osvježiti"
   },
   "previous": {
-    "title": "Prejšnje verzije"
+    "title": "Prethodne verzije"
   },
   "membership-list": {
     "no-memberships": "Bez članstva."

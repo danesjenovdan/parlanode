@@ -29,7 +29,7 @@
       "explanation": "The number of voting events where the representative was present is divided by the number of all voting events and normalised (min 1-max 100)."
     },
     "number_of_questions": {
-      "label": "The number of parliamentary questions and initiatives",
+      "label": "Number of parliamentary questions",
       "titleSuffix": " the number of parliamentary questions and initiatives",
       "explanation": "The number of parliamentary questions and initiatives by the MP in this sitting of the National Assembly compared to the average and maximum value."
     },
