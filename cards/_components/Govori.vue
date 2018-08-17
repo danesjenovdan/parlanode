@@ -463,7 +463,7 @@ export default {
   }
 
   .date {
-    background-color: #f0f0f0;
+    background-color: $grey;
     font-weight: bold;
     padding: 10px;
   }

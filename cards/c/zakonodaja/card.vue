@@ -392,7 +392,7 @@ export default {
 
 .button-filters {
   .striped-button {
-    background-color: #f0f0f0;
+    background-color: $grey;
   }
 }
 </style>

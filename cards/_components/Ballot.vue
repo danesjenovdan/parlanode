@@ -63,7 +63,7 @@ export default {
         text-decoration: none;
     }
 
-    background: #f0f0f0;
+    background: $grey;
     color: $black;
     display: block;
     margin: 7px 0 8px;
