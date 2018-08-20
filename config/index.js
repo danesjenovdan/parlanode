@@ -13,6 +13,7 @@ const defaultConfig = {
     password: `${process.env.MONGO_PASSWORD}`,
   },
   urls: {
+    cdn: 'https://cdn.parlameter.si/v1/parlassets',
     analize: 'https://analize.parlameter.si/v1',
     // data: 'https://data.parlameter.si/v1',
     // isci: 'https://isci.parlameter.si',

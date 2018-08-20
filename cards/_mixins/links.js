@@ -1,5 +1,3 @@
-import { PORTRAIT_ROOT_URL } from '../_components/constants';
-
 export default {
   methods: {
     getPersonLink(person) {
@@ -10,7 +8,8 @@ export default {
       return `${slugs.urls.base}/${sm.member.base}/${slugs.person[person.id].slug}`;
     },
     getPersonPortrait(person) {
-      return `${PORTRAIT_ROOT_URL}${person.gov_id}.png`;
+      const { urls: slugs } = this.$root.$options.cardData;
+      return `${slugs.urls.cdn}/img/people/square/${person.gov_id}.png`;
     },
     getPartyLink(party) {
       if (!party.acronym || party.acronym.indexOf('NeP') > -1) {
