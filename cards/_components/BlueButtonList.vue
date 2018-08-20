@@ -69,11 +69,10 @@ export default {
     box-sizing: border-box;
     color: $fontblue;
     display: flex;
-    flex: 1;
+    // flex: 1;
     font-size: 13px;
-    height: 43px;
     line-height: 16px;
-    padding: 0 10px;
+    padding: 7ox 10px;
 
     &:last-child {
       border-right: 1px solid $grey-medium;
