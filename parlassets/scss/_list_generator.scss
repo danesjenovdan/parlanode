@@ -174,8 +174,6 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 .session-list-generator {
   @extend %list-generator;
 
-  margin-top: 14px;
-
   .button-filters li {
     @include respond-to(mobile) {
       width: calc(33.333% - 2px);
