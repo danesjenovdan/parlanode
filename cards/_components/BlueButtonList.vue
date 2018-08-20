@@ -65,36 +65,40 @@ export default {
 
   &-item {
     align-items: center;
-    background-color: $sadblue;
-    border: 1px solid $grey-medium;
+    border-left: 1px solid $grey-medium;
     box-sizing: border-box;
-    color: $white;
+    color: $fontblue;
     display: flex;
     flex: 1;
-    font-size: 12px;
-    height: 61px;
+    font-size: 13px;
+    height: 43px;
     line-height: 16px;
-    margin-right: 3px;
-    padding: 0 12px;
-    text-transform: uppercase;
+    padding: 0 10px;
 
-    @include respond-to(limbo) { font-size: 12px; }
-
-    &.is-selected {
-      background-color: $funblue;
-      color: $white;
-      &:hover {
-        cursor: default;
-        background-color: $funblue;
-      }
+    &:last-child {
+      border-right: 1px solid $grey-medium;
     }
 
-    &:last-child { margin-right: 0; }
+    &:hover,
+    &.is-selected {
+      border-left-color: transparent;
+      border-right-color: transparent;
+      background-color: $funblue-light;
+    }
 
     &:hover {
-      background-color: $funblue-hover;
-      color: $white;
       cursor: pointer;
+    }
+
+    &:hover + &,
+    &.is-selected + & {
+      border-left-color: transparent;
+    }
+
+    &.is-selected {
+      &:hover {
+        cursor: default;
+      }
     }
   }
 
