@@ -5,7 +5,8 @@ function parlapi() {
   const slugs = this.$root.$options.cardData.urls;
   const locale = this.$root.$i18n.locale;
   const config = parlapiConfig[locale];
-  const token = localStorage.getItem('access_token');
+  const dataToken = localStorage.getItem('data_token');
+  const analizeToken = localStorage.getItem('analize_token');
   // TODO: function that uses refresh token to get new access token
   /*
     something like:
@@ -26,12 +27,15 @@ function parlapi() {
   const data = axios.create({
     baseURL: slugs.urls.data,
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${dataToken}`,
     },
   });
 
   const analize = axios.create({
     baseURL: slugs.urls.analize,
+    headers: {
+      Authorization: `Bearer ${analizeToken}`,
+    },
   });
 
   return {
