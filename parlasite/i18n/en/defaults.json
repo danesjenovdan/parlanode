@@ -1,4 +1,5 @@
 {
+  "cdn": "http://cdn.uk.parlameter.si",
   "landing": {
     "lead": "Parlameter analyses votings and speeches in the parliament to help you monitor your politicians.",
     "search": {
