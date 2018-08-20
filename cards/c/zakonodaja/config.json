@@ -2,33 +2,33 @@
   "sl": {
     "tabs": [
       {
-        "title": "laws",
+        "title": "Zakonodaja",
         "classifications": [
           "zakon"
         ]
       },
       {
-        "title": "acts"
+        "title": "Akti"
       }
     ]
   },
   "hr": {
     "tabs": [
       {
-        "title": "legislation"
+        "title": "Zakonodaja"
       }
     ]
   },
   "en": {
     "tabs": [
       {
-        "title": "laws",
+        "title": "Zakonodaja",
         "classifications": [
           "zakon"
         ]
       },
       {
-        "title": "acts"
+        "title": "Akti"
       }
     ]
   }

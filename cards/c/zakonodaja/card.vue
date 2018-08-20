@@ -1,35 +1,28 @@
 <template>
   <div :id="$options.cardData.cardData._id">
     <generator>
-      <div slot="generator" class="row legislation-list">
-        <div class="session-list-generator">
+      <div slot="generator" class="session-list-generator legislation-list">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="filters"
+              v-model="currentFilter"
+            />
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-12 filters">
-            <ul class="button-filters">
-              <striped-button
-                v-for="(filter, index) in filters"
-                :key="index"
-                :selected="filter === currentFilter"
-                :small-text="$te(filter) ? $t(filter) : filter"
-                color="sds"
-                @click.native="selectFilter(filter)"
-              />
-            </ul>
-
             <div class="filter text-filter">
-              <div v-t="'title-search'" class="filter-label"></div>
               <p-search-field v-model="textFilter" />
             </div>
-
             <div class="filter month-dropdown">
-              <div v-t="'working-body'" class="filter-label"></div>
               <p-search-dropdown
                 :items="allWorkingBodies"
                 :placeholder="inputPlaceholder"
                 :alphabetise="false"
               />
             </div>
-
-            <div class="filter only-abstracts">
+            <div class="filter align-checkbox">
               <input
                 id="only-abstracts"
                 v-model="onlyAbstracts"
@@ -63,6 +56,7 @@ import Generator from 'components/Generator.vue';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
+import BlueButtonList from 'components/BlueButtonList.vue';
 import dateParser from 'helpers/dateParser';
 import InnerCard from './innerCard.vue';
 import cardConfigJson from './config.json';
@@ -75,6 +69,7 @@ export default {
     PSearchField,
     InnerCard,
     PSearchDropdown,
+    BlueButtonList,
   },
   mixins: [common],
   data() {
@@ -98,7 +93,7 @@ export default {
     return {
       cardConfig,
       data: this.$options.cardData.data.results,
-      filters: cardConfig.tabs.map(e => e.title),
+      filters: cardConfig.tabs.map(e => ({ id: e.title, label: e.title })),
       currentFilter: this.$options.cardData.parlaState.filter || cardConfig.tabs[0].title,
       currentSort: 'updated',
       currentSortOrder: 'desc',
@@ -114,7 +109,7 @@ export default {
     inputPlaceholder() {
       return this.selectedWorkingBodies.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedWorkingBodies.length })
-        : this.$t('select-placeholder');
+        : this.$t('select-working-body-placeholder');
     },
     selectedWorkingBodies() {
       return this.allWorkingBodies.filter(wb => wb.selected).map(wb => wb.id);
@@ -227,9 +222,6 @@ export default {
         this.currentSortOrder = 'asc';
       }
     },
-    selectFilter(filter) {
-      this.currentFilter = filter;
-    },
   },
 };
 </script>
@@ -295,28 +287,19 @@ export default {
 
 
   .filters {
-    padding: 0;
+    margin-top: 14px;
 
     .dropdown-filter {
       margin-right: 0;
 
-      @include respond-to(desktop) { margin-left: 10px; }
+      @include respond-to(desktop) {
+        margin-left: 10px;
+      }
     }
 
     $label-height: 26px;
 
     display: flex;
-
-    .striped-button {
-      width: 50%;
-      height: 51px;
-    }
-
-    .filter-label {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: $label-height;
-    }
 
     .month-dropdown {
       width: 100%;
@@ -334,7 +317,6 @@ export default {
     .text-filter {
       @include respond-to(desktop) {
         width: 26%;
-        margin-left: 10px;
       }
 
       width: 100%;
@@ -359,40 +341,19 @@ export default {
       padding-bottom: 11px;
     }
 
-    .button-filters {
-
-      @include respond-to(desktop) {
-        flex: 0;
-        margin-top: $label-height;
-      }
-
-      .striped-button {
-        @include respond-to(mobile) { width: 49%; }
-        @include respond-to(desktop) { width: 140px; }
-
-        &:first-child {
-          @include respond-to(desktop) { margin-right: 10px; }
-        }
-      }
+    .dropdown-filter {
+      margin: 0;
+      flex: 1.5;
     }
 
-    .only-abstracts {
-      padding-top: 40px;
-      padding-left: 10px;
-
-      @include respond-to(mobile) {
-        padding-top: 10px;
-        padding-left: 0;
-        margin-bottom: -5px;
-      }
+    .filter {
+      flex: 1.5;
     }
 
-  }
-}
-
-.button-filters {
-  .striped-button {
-    background-color: $grey;
+    .align-checkbox {
+      flex: 1;
+      justify-content: center;
+    }
   }
 }
 </style>
