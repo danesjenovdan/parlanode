@@ -92,6 +92,14 @@ export default {
           icon: 'v-obravnavi',
           name: this.$t('vote-under-consideration'),
         },
+        accepted: {
+          icon: 'glyphicon-ok',
+          name: this.$t('vote-passed'),
+        },
+        rejected: {
+          icon: 'glyphicon-remove',
+          name: this.$t('vote-not-passed'),
+        },
       };
 
       return this.items.map((legislation) => {

@@ -22,11 +22,11 @@
     <!-- Card content goes here -->
     <div class="result-container">
       <div class="result">
-        <template v-if="data.result === 'sprejet'">
+        <template v-if="(data.result === 'sprejet') || (data.result === 'accepted')">
           <i class="accepted glyphicon glyphicon-ok"></i>
           <div class="text">sprejet</div>
         </template>
-        <template v-else-if="data.result === 'zavrnjen'">
+        <template v-else-if="(data.result === 'zavrnjen') || (data.result === 'rejected')">
           <i class="not-accepted glyphicon glyphicon-remove"></i>
           <div class="text">zavrnjen</div>
         </template>
