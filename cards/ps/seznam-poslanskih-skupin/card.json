@@ -1,7 +1,7 @@
 {
   "_id": "ps_seznam-poslanskih-skupin",
   "dataUrl": "{analize}/pg/getListOfPGs",
-  "lastUpdate": "2018-08-20T13:43:00.338Z",
+  "lastUpdate": "2018-08-20T15:59:49.815Z",
   "big": true,
   "high": true
 }
