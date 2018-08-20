@@ -12,20 +12,12 @@
         </div>
         <div class="row">
           <div class="col-md-12 filters">
-            <div class="parties filter">
-              <striped-button
-                v-for="party in parties"
-                :color="party.color"
-                :key="party.acronym"
-                :selected="selectedParties.indexOf(party.acronym) > -1"
-                :small-text="party.acronym"
-                :is-uppercase="false"
-                class="party"
-                stripe-position="bottom"
-                @click.native="selectParty(party.acronym)"
-              />
-            </div>
             <search-field v-model="textFilter" class="filter text-filter" />
+            <p-search-dropdown
+              :items="parties"
+              :placeholder="partiesPlaceholder"
+              class="filter parties"
+            />
             <p-search-dropdown
               :items="districts"
               :placeholder="districtPlaceholder"
@@ -95,7 +87,6 @@ import Generator from 'components/Generator.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
-import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
 import InnerCard from './InnerCard.vue';
 
@@ -139,7 +130,6 @@ export default {
     InnerCard,
     PSearchDropdown,
     SearchField,
-    StripedButton,
     StripedIconButton,
   },
   mixins: [
@@ -190,6 +180,11 @@ export default {
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
+    partiesPlaceholder() {
+      return this.selectedPartiesDropdown.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedPartiesDropdown.length })
+        : this.$t('select-parties-placeholder');
+    },
     districtPlaceholder() {
       return this.selectedDistricts.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedDistricts.length })
@@ -204,6 +199,11 @@ export default {
       return defaultOgImage(this, {
         title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
       });
+    },
+    selectedPartiesDropdown() {
+      return this.parties
+        .filter(party => party.selected)
+        .map(party => party.id);
     },
     selectedDistricts() {
       return this.districts
@@ -222,8 +222,10 @@ export default {
       if (this.currentSortOrder !== 'asc') {
         parameters.sortOrder = this.currentSortOrder;
       }
-      if (this.selectedParties.length > 0) {
-        parameters.parties = this.selectedParties;
+      if (this.selectedPartiesDropdown.length > 0) {
+        parameters.parties = this.parties
+          .filter(party => party.selected)
+          .map(party => party.acronym);
       }
       if (this.selectedGenders.length > 0) {
         parameters.genders = this.selectedGenders;
@@ -357,20 +359,14 @@ export default {
     axios.get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
       .then((response) => {
         this.parties = response.data.data.map(party => ({
+          id: party.party.id,
+          label: party.party.name,
           acronym: party.party.acronym,
-          color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
+          selected: this.selectedParties.indexOf(party.party.acronym) !== -1,
         }));
       });
   },
   methods: {
-    selectParty(id) {
-      const position = this.selectedParties.indexOf(id);
-      if (position > -1) {
-        this.selectedParties.splice(position, 1);
-      } else {
-        this.selectedParties.push(id);
-      }
-    },
     selectGender(id) {
       const position = this.selectedGenders.indexOf(id);
       if (position > -1) {
@@ -400,6 +396,7 @@ export default {
 
 .filters {
   display: flex;
+  margin-top: 14px;
 
   .filter:not(:first-child) {
     margin-left: 3px;
@@ -412,20 +409,11 @@ export default {
     }
   }
 
-  .parties {
-    display: flex;
-    flex: 3;
-
-    .party {
-      flex: 1;
-
-      &:not(:last-child) {
-        margin-right: 3px;
-      }
-    }
+  .filter.search-field {
+    flex: 1.5;
   }
 
-  .genders {
+  .filter.genders {
     display: flex;
     flex: 0;
 
@@ -440,14 +428,6 @@ export default {
 
   @include respond-to(mobile) {
     flex-wrap: wrap;
-
-    .parties {
-      flex: 1 1 100%;
-
-      .party {
-        margin-bottom: 10px;
-      }
-    }
 
     .district-filter  {
       display: none;

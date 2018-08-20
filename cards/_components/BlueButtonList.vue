@@ -60,7 +60,7 @@ export default {
 .blue-button-list {
   @include show-for(desktop, flex);
   list-style: none;
-  margin: 14px 0;
+  margin-top: 14px;
   padding: 0;
 
   &-item {
@@ -72,7 +72,7 @@ export default {
     // flex: 1;
     font-size: 13px;
     line-height: 16px;
-    padding: 7ox 10px;
+    padding: 7px 10px;
 
     &:last-child {
       border-right: 1px solid $grey-medium;
