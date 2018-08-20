@@ -53,7 +53,7 @@
           <i18n path="info.lead" tag="p" class="info-text lead">
             <span place="parties">
               <span v-if="selectedParties.length">
-                {{ $t('party') }}: {{ selectedParties.join(', ') }}
+                {{ $t('party') }}: {{ selectedParties.map(p => p.acronym).join(', ') }}
               </span>
               <span v-t="'all-parties'" v-else></span>
             </span>
@@ -164,7 +164,7 @@ export default {
       currentSortOrder: loadFromState('sortOrder') || 'asc',
       analyses,
       parties: [],
-      selectedParties: loadFromState('parties') || [],
+      selectedPartiesState: loadFromState('parties') || [],
       textFilter: '',
       districts,
       genders,
@@ -181,8 +181,8 @@ export default {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     partiesPlaceholder() {
-      return this.selectedPartiesDropdown.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedPartiesDropdown.length })
+      return this.selectedParties.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedParties.length })
         : this.$t('select-parties-placeholder');
     },
     districtPlaceholder() {
@@ -200,10 +200,9 @@ export default {
         title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
-    selectedPartiesDropdown() {
+    selectedParties() {
       return this.parties
-        .filter(party => party.selected)
-        .map(party => party.id);
+        .filter(party => party.selected);
     },
     selectedDistricts() {
       return this.districts
@@ -222,9 +221,8 @@ export default {
       if (this.currentSortOrder !== 'asc') {
         parameters.sortOrder = this.currentSortOrder;
       }
-      if (this.selectedPartiesDropdown.length > 0) {
-        parameters.parties = this.parties
-          .filter(party => party.selected)
+      if (this.selectedParties.length > 0) {
+        parameters.parties = this.selectedParties
           .map(party => party.acronym);
       }
       if (this.selectedGenders.length > 0) {
@@ -257,7 +255,8 @@ export default {
               .indexOf(this.textFilter.toLowerCase()) > -1;
           }
           if (this.selectedParties.length > 0) {
-            partyMatch = this.selectedParties.indexOf(member.person.party.acronym) > -1;
+            partyMatch = this.selectedParties
+              .find(p => p.id === member.person.party.id) != null;
           }
           if (this.selectedDistricts.length > 0) {
             districtMatch = member.person.district.reduce((prevMatch, memberDistrict) => (
@@ -362,7 +361,7 @@ export default {
           id: party.party.id,
           label: party.party.name,
           acronym: party.party.acronym,
-          selected: this.selectedParties.indexOf(party.party.acronym) !== -1,
+          selected: this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
         }));
       });
   },
@@ -399,7 +398,7 @@ export default {
   margin-top: 14px;
 
   .filter:not(:first-child) {
-    margin-left: 3px;
+    margin: 0 0 0 3px;
     flex: 1;
   }
 
@@ -428,6 +427,16 @@ export default {
 
   @include respond-to(mobile) {
     flex-wrap: wrap;
+
+    .filter.search-field {
+      flex-basis: auto;
+      order: 1;
+      margin-top: 5px;
+    }
+
+    .filter.parties {
+      margin: 0;
+    }
 
     .district-filter  {
       display: none;

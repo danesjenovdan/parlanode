@@ -61,6 +61,7 @@ export default {
   @include show-for(desktop, flex);
   list-style: none;
   margin-top: 14px;
+  margin-bottom: 0;
   padding: 0;
 
   &-item {
@@ -69,7 +70,6 @@ export default {
     box-sizing: border-box;
     color: $fontblue;
     display: flex;
-    // flex: 1;
     font-size: 13px;
     line-height: 16px;
     padding: 7px 10px;
