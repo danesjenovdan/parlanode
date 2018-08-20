@@ -3,24 +3,20 @@
     <generator>
       <div slot="generator" class="session-list-generator">
         <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="filters"
+              v-model="currentFilter"
+            />
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-12 filters">
-            <ul class="button-filters">
-              <striped-button
-                v-for="(filter, index) in filters"
-                :key="index"
-                :selected="filter === currentFilter"
-                :small-text="$te(filter) ? $t(filter) : filter"
-                color="sds"
-                @click.native="selectFilter(filter)"
-              />
-            </ul>
-
             <p-search-dropdown
               :items="workingBodies"
               :placeholder="inputPlaceholder"
               class="dropdown-filter"
             />
-
             <div class="align-checkbox">
               <input
                 id="justFive"
@@ -59,6 +55,7 @@ import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
+import BlueButtonList from 'components/BlueButtonList.vue';
 import InnerCard from './innerCard.vue';
 import cardConfigJson from './config.json';
 
@@ -69,6 +66,7 @@ export default {
     InnerCard,
     PSearchDropdown,
     StripedButton,
+    BlueButtonList,
   },
   mixins: [
     common,
@@ -79,7 +77,7 @@ export default {
       cardConfig,
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      filters: cardConfig.tabs.map(e => e.title),
+      filters: cardConfig.tabs.map(e => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
       currentFilter: get(this.$options.cardData, 'state.filter') || cardConfig.tabs[0].title,
@@ -248,36 +246,23 @@ export default {
         this.currentSort = sortId;
         this.currentSortOrder = 'asc';
       }
-
-      this.measurePiwik('', sortId, this.currentSortOrder);
-    },
-    selectFilter(filter) {
-      this.currentFilter = filter;
-      this.measurePiwik(filter, '', '');
-    },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure !== 'function') {
-        return;
-      }
-
-      if (sort !== '') {
-        measure('s', 'session-sort', `${sort} ${order}`, '');
-      } else if (filter !== '') {
-        measure('s', 'session-filter', filter, '');
-      }
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
+.filters {
+  margin-top: 14px;
 
-.button-filters {
-  .striped-button {
+  .dropdown-filter {
+    margin: 0;
+    flex: 1.5;
+  }
+
+  .align-checkbox {
     flex: 1;
-    background-color: $grey;
-    &:not(:last-child) { margin-right: 5px; }
+    justify-content: center;
   }
 }
 </style>

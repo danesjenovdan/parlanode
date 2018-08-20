@@ -73,6 +73,7 @@ export default {
     font-size: 13px;
     line-height: 16px;
     padding: 7px 10px;
+    min-height: 46px;
 
     &:last-child {
       border-right: 1px solid $grey-medium;
