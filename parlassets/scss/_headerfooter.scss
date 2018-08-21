@@ -161,7 +161,7 @@ header.header {
         line-height: 22px;
         position: relative;
         bottom: -5px;
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search.svg");
+        background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
     }
 
     .header-searchhide {
@@ -631,7 +631,7 @@ footer.footer {
         }
 
         .search-field {
-            background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg");
+            background-image: url("#{getConfig('urls.cdn')}/icons/search_blue.svg");
             background-size: 24px 24px;
             background-repeat: no-repeat;
             background-position: right 9px center;

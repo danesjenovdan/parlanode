@@ -23,7 +23,7 @@
 .search-icon {
   width: 30px;
   height: 30px;
-  // background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+  // background-image: url('#{getConfig('urls.cdn')}/icons/search.svg');
   // background-size: contain;
 
   position: absolute;
