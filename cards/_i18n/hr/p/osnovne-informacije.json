@@ -1,0 +1,24 @@
+{
+  "card": {
+    "title": "Osnovne informacije"
+  },
+  "info": {
+    "lead": "Pregled osnovnih informacija o zastupnici.",
+    "text": [
+      "Podaci su preuzeti s web stranice {link}, (klub, dob, članstva u radnim tijelima) i web stranice DIP-a (broj osvojenih glasova). Ostali podaci dobiveni su iz tajništva klubova.",
+      "Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto Državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
+    ],
+    "link": {
+      "text": "HS",
+      "link": "http://www.sabor.hr/hr"
+    }
+  },
+  "elected-to-district--m": "Izabran s {numVotes} glasova u {district}",
+  "elected-to-district--f": "Izabrana s {numVotes} glasova u {district}",
+  "number-of-mandates": "Broj mandata",
+  "previous-occupation": "Prijašnji status",
+  "education": "Obrazovanje",
+  "age": "Dob: {age} godina",
+  "social-media": "Društvene mreže",
+  "no-social-media": "nije na društvenim mrežama."
+}

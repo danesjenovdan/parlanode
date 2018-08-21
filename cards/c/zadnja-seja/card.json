@@ -1,11 +1,7 @@
 {
   "_id": "c_zadnja-seja",
-  "name": "Zadnja seja",
-  "type": "seje",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getLastSessionLanding",
-  "lastUpdate": "2018-07-25T14:45:17.727Z",
-  "method": "zadnja-seja",
-  "group": "c",
+  "dataUrl": "{analize}/s/getLastSessionLanding",
+  "lastUpdate": "2018-07-27T14:57:42.982Z",
   "big": true,
   "high": true
 }

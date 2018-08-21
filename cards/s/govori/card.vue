@@ -3,28 +3,48 @@
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
-      <p class="info-text">
-        Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu <a href="http://www.dz-rs.si" target="_blank" class="funblue-light-hover">DZ RS</a>, strojno razbijemo na posamezne govorne nastope in jih v izvornem vrstnem redu združimo v kartico transkript.
-      </p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
     </div>
 
     <div v-if="speeches.length" class="multiple-speeches">
-      <speech v-for="speech in speeches" :key="speech.results.speech_id" :speech="speech" v-quotable />
+      <speech
+        v-quotable
+        v-for="speech in speeches"
+        :key="speech.results.speech_id"
+        :speech="speech"
+      />
+      <div v-if="!allLoaded" class="load-more-container">
+        <load-link v-if="!fetching" :text="$t('load-more-speeches')" @click="fetchNextPage" />
+        <div v-if="fetching" class="nalagalnik"></div>
+      </div>
     </div>
-    <div v-else class="empty-dataset">Seja v obdelavi.</div>
+    <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
 <script>
 import common from 'mixins/common';
+import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import Speech from 'components/Speech.vue';
+import LoadLink from 'components/LoadLink.vue';
 
 function getSelected() {
   if (window.getSelection) {
     return window.getSelection();
-  } else if (document.getSelection) {
+  }
+  if (document.getSelection) {
     return document.getSelection();
   }
   const selection = document.selection && document.selection.createRange();
@@ -37,40 +57,10 @@ function getSelected() {
 let selectElement;
 
 export default {
+  name: 'Govori',
   components: {
     Speech,
-  },
-  mixins: [common],
-  name: 'Govori',
-  data() {
-    const sessionName = this.$options.cardData.data.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
-    return {
-      data: this.$options.cardData.data,
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.session.name,
-        subheading: this.$options.cardData.data.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-    };
-  },
-  computed: {
-    speeches() {
-      if (this.data.results && this.data.results.length) {
-        return this.data.results;
-      }
-      return [];
-    },
-    generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.session.id}?altHeader=true`;
-    },
+    LoadLink,
   },
   directives: {
     quotable(elem) {
@@ -86,7 +76,9 @@ export default {
         .on('mouseup', (event) => {
           event.preventDefault();
           $(document).find('.everything .quote-button').hide();
-          if (selectElement !== event.currentTarget) return;
+          if (selectElement !== event.currentTarget) {
+            return;
+          }
 
           const selection = getSelected();
 
@@ -113,15 +105,54 @@ export default {
           const allText = cardElement.find('.mywords').val();
           const startIndex = allText.indexOf(selectedText);
           const endIndex = startIndex + selectedText.length;
-          const url = `https://analize.parlameter.si/v1/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
+          const url = `${this.slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
           $.ajax({
             url,
             async: false,
             dataType: 'json',
-            success: result => window.open(`https://glej.parlameter.si/s/citat/${result.id}?frame=true`),
+            success: result => window.open(`${this.slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
+    },
+  },
+  mixins: [
+    common,
+    sessionHeader,
+    sessionOgImage,
+  ],
+  data() {
+    const data = this.$options.cardData.data;
+    return {
+      data,
+      speeches: data.results || [],
+      numFound: data.count || 0,
+      page: 1,
+      fetching: false,
+    };
+  },
+  computed: {
+    allLoaded() {
+      return this.numFound <= this.speeches.length;
+    },
+    generatedCardUrl() {
+      return `${this.url}${this.data.session.id}?altHeader=true`;
+    },
+  },
+  mounted() {
+    document.body.style.overflowAnchor = 'none';
+  },
+  methods: {
+    fetchNextPage() {
+      if (this.fetching) {
+        return;
+      }
+      this.fetching = true;
+      this.page += 1;
+      $.get(`${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${this.page}`, (response) => {
+        this.speeches = this.speeches.concat(response.results);
+        this.fetching = false;
+      });
     },
   },
 };
@@ -130,6 +161,7 @@ export default {
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/color_classes';
 
 .empty-dataset {
   font-size: 16px;
@@ -139,10 +171,8 @@ export default {
   color: $grey-medium;
 }
 
-$lightest-blue: #e9eff2;
-
 .multiple-speeches /deep/ .speech-holder {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $grey;
 
   @include respond-to(desktop) {
     padding-bottom: 20px;
@@ -158,7 +188,22 @@ $lightest-blue: #e9eff2;
   }
 
   &:target {
-    background: $lightest-blue;
+    background: $grey;
+  }
+}
+
+.load-more-container {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+
+  .load {
+    margin: 12px 0;
+    @include link-hover;
+  }
+
+  .nalagalnik {
+    height: 51px;
   }
 }
 </style>

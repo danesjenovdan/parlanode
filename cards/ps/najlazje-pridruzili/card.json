@@ -1,11 +1,7 @@
 {
   "_id": "ps_najlazje-pridruzili",
-  "name": "Največkrat glasujejo enako",
-  "type": "poslanska_skupina",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getMostMatchingThem",
-  "lastUpdate": "2018-07-25T14:44:10.043Z",
-  "method": "najlazje-pridruzili",
-  "group": "ps",
+  "dataUrl": "{analize}/pg/getMostMatchingThem",
+  "lastUpdate": "2018-07-27T14:59:53.267Z",
   "big": false,
   "high": false
 }

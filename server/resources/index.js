@@ -1,20 +1,10 @@
-const _ = require('lodash');
+/* eslint-disable global-require */
+module.exports = (app) => {
+  require('./og-images/model');
+  require('./og-images/routes')(app);
 
-const models = require('require-all')({
-  dirname     : __dirname,
-  filter      : /(model)\.js$/,
-  excludeDirs : /^\.(git|svn)$/,
-  recursive   : true
-});
+  require('./cards/model');
+  require('./cards/routes')(app);
 
-const routers = require('require-all')({
-  dirname     : __dirname,
-  filter      : /(routes)\.js$/,
-  excludeDirs : /^\.(git|svn)$/,
-  recursive   : true
-});
-
-// Set Mongoose Promise to BlueBird
-require('mongoose').Promise = require('bluebird');
-
-module.exports = app => _.each(routers, resource => _.each(resource, router => router(app)));
+  require('./api/routes')(app);
+};

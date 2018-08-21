@@ -1,8 +1,9 @@
 <template>
   <poslanska-vprasanja-in-pobude
     :card-data="$options.cardData"
+    :party="$options.cardData.data.party"
     type="party"
-    :party="$options.cardData.data.party" />
+  />
 </template>
 
 <script>

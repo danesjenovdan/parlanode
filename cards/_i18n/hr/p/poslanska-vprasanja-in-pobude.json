@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "Zastupnička pitanja i inicijative"
+  },
+  "info": {
+    "lead": "Prikaz svih zastupničkih pitanja i inicijativa koje je zastupnica postavila u tom sazivu HS-a.",
+    "text": "Podaci se preuzimaju s web stranice {link}.",
+    "link": {
+      "text": "HS",
+      "link": "http://edoc.sabor.hr/ZastupnickaPitanja.aspx"
+    }
+  }
+}

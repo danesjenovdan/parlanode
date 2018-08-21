@@ -1,29 +1,28 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam vseh zakonov in aktov, ki bodisi v naslovu bodisi v povzetku vsebujejo vaš iskalni niz in so o njih na seji DZ glasovali v času trenutnega sklica.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text text">
-        Po naslovih in povzetkih vseh zakonov in aktov, obravnavanih v tem sklicu, poiščemo pojavitve iskalnega niza in izpišemo povezave do vseh tistih zakonov ali aktov, v katerih se pojavi njegova lema. Na koncu zakone oziroma akte razvrstimo po podobnosti z iskalnim nizom.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <div class="legislation-list">
       <scroll-shadow ref="shadow">
         <div id="card-search" @scroll="$refs.shadow.check($event.currentTarget)">
           <sortable-table
-            class=""
+            v-if="!loading"
             :columns="columns"
             :items="mappedItems"
             :sort="currentSort"
             :sort-order="currentSortOrder"
             :sort-callback="selectSort"
+            class=""
           />
         </div>
       </scroll-shadow>
@@ -32,12 +31,18 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SortableTable from 'components/SortableTable.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
+import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
+import links from 'mixins/links';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
+  name: 'ZakonodajaIskanje',
   components: {
     SortableTable,
     ScrollShadow,
@@ -45,49 +50,47 @@ export default {
   mixins: [
     common,
     searchTitle,
+    searchHeader,
+    searchOgImage,
+    links,
   ],
-  name: 'ZakonodajaIskanje',
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data.response.docs,
+      data: [],
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-      keywords,
+      keywords: loadFromState('query'),
+      loading: true,
+      error: false,
     };
   },
   computed: {
-    columns: () => [
-      { id: 'name', label: 'Ime', additionalClass: 'small-text' },
-      { id: 'epa', label: 'EPA', additionalClass: 'small-text' },
-      { id: 'result', label: 'Status', additionalClass: 'small-text' },
-    ],
+    columns() {
+      return [
+        { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
+        { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
+        { id: 'result', label: this.$t('status'), additionalClass: 'small-text' },
+      ];
+    },
     generatedCardUrl() {
-      const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/l/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      const state = { query: this.keywords };
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     mappedItems() {
       const mapResultIcon = {
         sprejet: {
           icon: 'glyphicon-ok',
-          name: 'Sprejet',
+          name: this.$t('vote-passed'),
         },
         zavrnjen: {
           icon: 'glyphicon-remove',
-          name: 'Zavrnjen',
+          name: this.$t('vote-not-passed'),
         },
         v_obravnavi: {
           icon: 'v-obravnavi',
-          name: 'V obravnavi',
+          name: this.$t('vote-under-consideration'),
         },
       };
 
@@ -99,14 +102,15 @@ export default {
 
         const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
         return [
-          { html: `<a href="${this.slugs.legislationLink}${legislation.id}" class="funblue-light-hover">${legislation.text_t[0]}</a>` },
+          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text_t[0]}</a>` },
           { text: typeof legislation.id !== 'undefined' ? legislation.id : '' },
           { html: outcomeHtml },
         ];
       });
     },
     processedData() {
-      const sortedLegislation = this.data.sort((A, B) => {
+      const dataCopy = this.data.slice();
+      const sortedLegislation = dataCopy.sort((A, B) => {
         let a;
         let b;
 
@@ -114,26 +118,46 @@ export default {
           case 'name':
             a = A.text_t[0];
             b = B.text_t[0];
-            return a.toLowerCase().localeCompare(b.toLowerCase());
+            return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           case 'epa':
             a = typeof A.id !== 'undefined' ? A.id : '';
             b = typeof B.id !== 'undefined' ? B.id : '';
             return parseInt(a, 10) - parseInt(b, 10);
           case 'result':
-            a = 'v obravnavi';
-            b = 'v obravnavi';
-            if (typeof A.result !== 'undefined') a = A.result[0];
-            if (typeof B.result !== 'undefined') b = B.result[0];
-            return a.toLowerCase().localeCompare(b.toLowerCase());
+            a = this.$t('vote-under-consideration');
+            b = this.$t('vote-under-consideration');
+            if (typeof A.result !== 'undefined') {
+              a = A.result[0];
+            }
+            if (typeof B.result !== 'undefined') {
+              b = B.result[0];
+            }
+            return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           default:
             return 0;
         }
       });
 
-      if (this.currentSortOrder === 'desc') sortedLegislation.reverse();
+      if (this.currentSortOrder === 'desc') {
+        sortedLegislation.reverse();
+      }
 
       return sortedLegislation;
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/l/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.data = (res.data.response && res.data.response.docs) || [];
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
   methods: {
     selectSort(sortId) {
@@ -171,7 +195,7 @@ export default {
   }
 
   a {
-    color: #009cda;
+    color: $funblue;
   }
 
   .headers {
@@ -245,7 +269,7 @@ export default {
       &.v-obravnavi {
         width: 38px !important;
         height: 38px;
-        background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
+        background: url("#{getConfig('urls.cdn')}/icons/v-obravnavi.svg");
         background-size: contain !important;
         background-repeat: no-repeat;
       }

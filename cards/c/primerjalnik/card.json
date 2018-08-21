@@ -1,11 +1,7 @@
 {
   "_id": "c_primerjalnik",
-  "name": "Primerjalnik glasovanj",
-  "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers/",
-  "type": "primerjalnik",
-  "lastUpdate": "2018-07-25T14:45:09.086Z",
-  "method": "primerjalnik",
-  "group": "c",
+  "dataUrl": "{analize}/p/getListOfMembersTickers/",
+  "lastUpdate": "2018-07-27T14:57:31.039Z",
   "big": true,
   "high": true
 }

@@ -2,28 +2,37 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Povzetek <span v-if="data.classification==='zakon'">zakona</span><span v-else>akta</span> in rezultati vseh z njim povezanih glasovanj.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Iz <a class="funblue-light-hover" href="https://www.dz-rs.si">www.dz-rs.si</a> naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.</p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
     </div>
 
     <!-- Card content goes here -->
     <div class="result-container">
       <div class="result">
-        <template v-if="data.result === 'sprejet'">
+        <template v-if="(data.result === 'sprejet') || (data.result === 'accepted')">
           <i class="accepted glyphicon glyphicon-ok"></i>
           <div class="text">sprejet</div>
         </template>
-        <template v-else-if="data.result === 'zavrnjen'">
+        <template v-else-if="(data.result === 'zavrnjen') || (data.result === 'rejected')">
           <i class="not-accepted glyphicon glyphicon-remove"></i>
           <div class="text">zavrnjen</div>
         </template>
         <template v-else>
           <i class="glyphicon v-obravnavi"></i>
-          <div class="text">v obravnavi</div>
+          <div v-t="'vote-under-consideration'" class="text"></div>
         </template>
       </div>
       <div class="law-title">{{ $options.cardData.data.text }}</div>
@@ -32,13 +41,13 @@
         :score="finalVoteResult.value / numberOfVotes * 100"
         :option="finalVoteResult.key"
         :chart-data="finalVoteData"
-      ></result>
+      />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
       <p-tab label="Povzetek" variant="dark">
         <excerpt
           :content="content"
-          :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
+          :main-law="excerptData"
           :documents="documents"
           :show-parent="false"
           :icon="data.icon"
@@ -47,10 +56,9 @@
       <p-tab label="Glasovanja">
         <seznam-glasovanj
           :data="data"
-        >
-        </seznam-glasovanj>
+        />
       </p-tab>
-      <p-tab label="Drugi postopki" variant="dark" v-if="data.extra_abstract">
+      <p-tab v-if="data.extra_abstract" label="Drugi postopki" variant="dark">
         <excerpt
           :content="data.extra_abstract || ''"
           :main-law="{}"
@@ -65,6 +73,9 @@
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
@@ -73,19 +84,27 @@ import Result from 'components/Result.vue';
 import mapVotes from 'helpers/mapVotes';
 
 export default {
-  components: { PTab, PTabs, Excerpt, SeznamGlasovanj, Result },
-  mixins: [common],
   name: 'Zakon',
+  components: {
+    PTab,
+    PTabs,
+    Excerpt,
+    SeznamGlasovanj,
+    Result,
+  },
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     const documents = this.$options.cardData.data.votes.reduce((prev, cur) => {
       cur.documents.forEach((document) => { // TODO fix after data is fixed
         prev.push(document);
       });
-      console.log(prev, cur);
       return prev;
     }, []);
     const title = this.$options.cardData.parlaState.fullName
-      ? this.$options.cardData.data.text.slice(0, 100) + '...'
+      ? `${this.$options.cardData.data.text.slice(0, 100)}...`
       : 'Zakon';
 
     // did we have "glasovanje o zakonu v celoti"
@@ -114,12 +133,10 @@ export default {
         return max;
       }, {
         key: '',
-        value: 0
+        value: 0,
       });
 
-      numberOfVotes = Object.keys(vote).reduce((total, current) => {
-        return total + vote[current];
-      }, 0);
+      numberOfVotes = Object.keys(vote).reduce((total, current) => total + vote[current], 0);
     }
 
     let startTab = 0;
@@ -130,13 +147,8 @@ export default {
     return {
       data: this.$options.cardData.data,
       documents,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title,
-      },
+      headerConfig: defaultHeaderConfig(this, { title }),
+      ogConfig: defaultOgImage(this, { title }),
       finalVoteExists,
       finalVoteData,
       finalVoteResult,
@@ -152,18 +164,14 @@ export default {
       return '';
     },
     generatedCardUrl() {
-      return `https://glej.parlameter.si/s/zakon/?customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/s/getLegislation/' + this.data.epa)}&state=${encodeURIComponent(JSON.stringify({startTab: this.startTab}))}`;
+      return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ startTab: this.startTab }))}`;
     },
-  },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
+    excerptData() {
+      return {
+        epa: this.data.epa || '',
+        name: this.data.text || '',
+        link: this.getLegislationLink(this.data),
+      };
     },
   },
 };
@@ -180,7 +188,7 @@ export default {
   }
 }
 
-#s-zakon {
+#s_zakon {
   .card-content {
     height: 518px;
   }
@@ -220,7 +228,7 @@ export default {
     .v-obravnavi {
       width: 38px !important;
       height: 38px;
-      background: url('https://cdn.parlameter.si/v1/parlassets/icons/v-obravnavi.svg');
+      background: url("#{getConfig('urls.cdn')}/icons/v-obravnavi.svg");
       background-size: contain !important;
       background-repeat: no-repeat;
     }
@@ -248,7 +256,7 @@ export default {
       }
 
       .text {
-        color: #333;
+        color: $grey-dark;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;

@@ -1,11 +1,7 @@
 {
-  "_id": "c_izpostavljena_zakonodaja",
-  "name": "Izpostavljena zakonodaja",
-  "dataUrl": "http://analize.parlameter.si/v1/s/getExposedLegislation",
-  "type": "empty",
-  "lastUpdate": "2018-07-25T14:45:05.632Z",
-  "method": "izpostavljena-zakonodaja",
-  "group": "c",
+  "_id": "c_izpostavljena-zakonodaja",
+  "dataUrl": "{analize}/s/getExposedLegislation",
+  "lastUpdate": "2018-07-27T14:57:23.000Z",
   "big": true,
   "high": false
 }

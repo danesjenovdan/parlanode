@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "List of voting events according to "
+  },
+  "info": {
+    "lead": "A list of all voting events in the National Assembly, corresponding to user query ({text}), for selected working bodies responsible ({wbs}), sorted by {sortBy}.",
+    "text": [
+      "A list of all voting events corresponding to user query that happened in this sitting of the National Assembly and were published on the dz-rs.si web page.",
+      "The results are sorted either by disparity or by date."
+    ]
+  },
+  "all-votes": "all voting events",
+  "all-working-bodies": "all working bodies responsible"
+}

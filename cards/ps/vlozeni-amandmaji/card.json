@@ -1,11 +1,7 @@
 {
-  "_id": "ps_vlozeni_amandmaji",
-  "name": "Vloženi amandmaji",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getAmendmentsOfPG",
-  "type": "poslanska_skupina",
-  "lastUpdate": "2018-07-25T14:44:35.500Z",
-  "method": "vlozeni-amandmaji",
-  "group": "ps",
+  "_id": "ps_vlozeni-amandmaji",
+  "dataUrl": "{analize}/pg/getAmendmentsOfPG",
+  "lastUpdate": "2018-07-27T15:00:50.235Z",
   "big": true,
   "high": true
 }

@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "Članice i članovi kluba"
+  },
+  "info": {
+    "lead": "Popis svih članica kluba zastupnika.",
+    "text": "Imena i fotografije zastupnica koji predstavljaju klub preuzete su sa stranice {link}. Prikazane su samo aktualne članice.",
+    "link": {
+      "link": "http://www.sabor.hr/zastupnici-9",
+      "text": "HS"
+    }
+  }
+}

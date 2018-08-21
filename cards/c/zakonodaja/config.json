@@ -1,0 +1,35 @@
+{
+  "sl": {
+    "tabs": [
+      {
+        "title": "Zakonodaja",
+        "classifications": [
+          "zakon"
+        ]
+      },
+      {
+        "title": "Akti"
+      }
+    ]
+  },
+  "hr": {
+    "tabs": [
+      {
+        "title": "Zakonodaja"
+      }
+    ]
+  },
+  "en": {
+    "tabs": [
+      {
+        "title": "Zakonodaja",
+        "classifications": [
+          "zakon"
+        ]
+      },
+      {
+        "title": "Akti"
+      }
+    ]
+  }
+}

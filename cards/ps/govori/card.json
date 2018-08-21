@@ -1,11 +1,7 @@
 {
   "_id": "ps_govori",
-  "name": "Govori",
-  "dataUrl": "https://analize.parlameter.si/v1/",
-  "type": "empty",
-  "lastUpdate": "2018-07-25T14:44:08.436Z",
-  "method": "govori",
-  "group": "ps",
+  "dataUrl": "{analize}/",
+  "lastUpdate": "2018-08-06T12:31:48.717Z",
   "big": true,
   "high": false
 }

@@ -1,36 +1,37 @@
 <template>
   <card-wrapper
     :id="cardData.cardData._id"
-    class="card-halfling"
-    :data-id="`${cardData.cardData.group}/${cardData.cardData.method}`"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
+    class="card-halfling"
   >
-    <slot name="info" slot="info"></slot>
+    <slot slot="info" name="info"></slot>
 
-    <div class="card-content-front" v-cloak>
+    <div v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
           <div class="me_poslanec">
-            <div class="poslanec_title">
-              Privzdignjeno besedje
-            </div>
+            <div v-t="'style-scores.elevated-vocabulary'" class="poslanec_title"></div>
           </div>
           <div class="me_poslanec">
-            <div class="poslanec_title">
-              Preprosto besedje
-            </div>
+            <div v-t="'style-scores.simple-vocabulary'" class="poslanec_title"></div>
           </div>
           <div class="me_poslanec">
-            <div class="poslanec_title">
-              Ekscesno besedje
-            </div>
+            <div v-t="'style-scores.excessive-vocabulary'" class="poslanec_title"></div>
           </div>
         </div>
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.privzdignjeno" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('privzdignjeno')">
+              <div
+                :aria-valuenow="results.privzdignjeno"
+                :style="getBarStyle('privzdignjeno')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.privzdignjeno.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.privzdignjeno.toFixed(2).replace('.', ',') }}
@@ -40,7 +41,14 @@
           </div>
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.preprosto" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('preprosto')">
+              <div
+                :aria-valuenow="results.preprosto"
+                :style="getBarStyle('preprosto')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.preprosto.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.preprosto.toFixed(2).replace('.', ',') }}
@@ -50,7 +58,14 @@
           </div>
           <div class="me_poslanec">
             <div class="progress smallbar">
-              <div class="progress-bar funblue" role="progressbar" :aria-valuenow="results.problematicno" aria-valuemin="0" aria-valuemax="100" :style="getBarStyle('problematicno')">
+              <div
+                :aria-valuenow="results.problematicno"
+                :style="getBarStyle('problematicno')"
+                class="progress-bar funblue"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
                 <span class="sr-only">{{ results.problematicno.toFixed(2) }}%</span>
                 <div class="progress_number">
                   {{ results.problematicno.toFixed(2).replace('.', ',') }}
@@ -66,16 +81,18 @@
 
 <script>
 import common from 'mixins/common';
+import { memberHeader, partyHeader } from 'mixins/altHeaders';
+import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import PersonPin from 'components/PersonPin.vue';
 import PartyPin from 'components/PartyPin.vue';
 
 export default {
   name: 'ScoreAvgMax',
-  mixins: [common],
   components: {
     PersonPin,
     PartyPin,
   },
+  mixins: [common],
   props: {
     cardData: {
       type: Object,
@@ -84,45 +101,36 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['poslanec', 'poslanska_skupina'].indexOf(value) > -1,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
     },
     results: {
       type: Object,
       required: true,
     },
-    person: Object,
-    party: Object,
-  },
-  methods: {
-    getBarStyle(key) {
-      return { width: `${(this.results[key] / this.maxValue) * 70}%` };
+    person: {
+      type: Object,
+      default: () => ({}),
+    },
+    party: {
+      type: Object,
+      default: () => ({}),
     },
   },
   computed: {
     headerConfig() {
-      let specifics;
-      if (this.type === 'poslanec') {
-        specifics = {
-          heading: this.person.name,
-          subheading: `${this.person.party.acronym} | ${this.person.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleImage: this.person.gov_id,
-        };
-      } else {
-        specifics = {
-          heading: this.party.name,
-          subheading: `${this.party.acronym} | ${this.party.is_coalition ? 'koalicija' : 'opozicija'}`,
-          circleText: this.party.acronym,
-          circleClass: `${this.party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-        };
+      if (this.type === 'person') {
+        return memberHeader.computed.headerConfig.call(this);
       }
-      specifics.alternative = JSON.parse(this.cardData.cardData.altHeader || 'false');
-      specifics.title = this.cardData.cardData.name;
-      return specifics;
+      return partyHeader.computed.headerConfig.call(this);
     },
-    cardGroup: () => this.cardData.cardData.group,
-    cardMethod: () => this.cardData.cardData.method,
+    ogConfig() {
+      if (this.type === 'person') {
+        return memberOgImage.computed.ogConfig.call(this);
+      }
+      return partyOgImage.computed.ogConfig.call(this);
+    },
     generatedCardUrl() {
-      if (this.type === 'poslanec') {
+      if (this.type === 'person') {
         return `${this.url}${this.person.id}?altHeader=true`;
       }
       return `${this.url}${this.party.id}?altHeader=true`;
@@ -135,10 +143,17 @@ export default {
       );
     },
   },
+  methods: {
+    getBarStyle(key) {
+      return { width: `${(this.results[key] / this.maxValue) * 70}%` };
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
 .progress {
   overflow: visible; /* this overrides bootstrap which we should get rid of anyway */
 }
@@ -164,7 +179,7 @@ export default {
   position: absolute;
   right: 0;
   transform: translateX(100%);
-  color: #333;
+  color: $grey-dark;
   line-height: 30px;
 }
 </style>

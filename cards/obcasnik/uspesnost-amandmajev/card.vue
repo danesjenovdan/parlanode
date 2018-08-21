@@ -2,7 +2,9 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
 
     <div slot="info">
       <p class="info-text lead"></p>
@@ -10,23 +12,25 @@
       <p class="info-text"></p>
     </div>
 
-    <stacked-bar-chart :data="rows"></stacked-bar-chart>
+    <stacked-bar-chart :data="rows" />
   </card-wrapper>
 </template>
 
 <script>
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import StackedBarChart from 'components/StackedBarChart.vue';
 
 export default {
+  name: 'ObcasnikUspesnostAmandmajev',
   components: {
-    StackedBarChart
+    StackedBarChart,
   },
   mixins: [common],
-  name: 'ObcasnikUspesnostAmandmajev',
   data() {
-    const data = this.$options.cardData.data
-    const parties =  ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
+    const data = this.$options.cardData.data;
+    const parties = ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
 
     const rows = parties.map((acronym) => {
       const successful = data
@@ -45,39 +49,25 @@ export default {
         stack: [
           {
             label: 'uspešnih',
-            value: successful
+            value: successful,
           },
           {
             label: 'neuspešnih',
-            value: unsuccessful
-          }
+            value: unsuccessful,
+          },
         ],
-      }
+      };
     });
 
     return {
       data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       rows,
-      generatedCardUrl: 'https://glej.parlameter.si/obcasnik/uspesnost-amandmajev/?state={}',
+      generatedCardUrl: `${this.url}?state={}`,
     };
   },
   methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
     focusTab() {
       return true;
     },

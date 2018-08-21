@@ -1,18 +1,14 @@
 <template>
   <score-avg-max
     :card-data="$options.cardData"
-    :type="$options.cardData.cardData.type"
     :party="$options.cardData.data.organization"
     :results="$options.cardData.data.votes"
+    type="party"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Prisotnost poslanske skupine na glasovanjih DZ v primerjavi s povprečjem in največjo vrednostjo.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Število glasovanj, ko je poslanska skupina prisotna na glasovanjih delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100).
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
   </score-avg-max>
 </template>

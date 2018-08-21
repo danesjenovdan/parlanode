@@ -4,30 +4,34 @@
       <template v-for="column in columns">
         <div
           v-if="column.label"
-          :class="['column', column.additionalClass, { sort: sort === column.id }, { reverse: sortOrder === 'desc' }]"
-          @click="sortCallback(column.id)">
+          :key="column.id"
+          :class="getColumnClasses(column)"
+          @click="sortCallback(column.id)"
+        >
           {{ column.label }}
         </div>
       </template>
     </li>
     <div v-if="items.length === 0" class="empty-dataset">Brez rezultatov.</div>
-    <li v-for="item in items" class="item">
+    <li v-for="(item, k) in items" :key="k" class="item">
       <div
-        v-for="cell, cellIndex in item"
-        :class="['column', ...columns[cellIndex].additionalClass, cell && cell.value <= 0 ? 'red' : '']"
+        v-for="(cell, i) in item"
+        :key="i"
+        :class="getColumnClasses(columns[i], cell)"
       >
         <template v-if="typeof cell === 'object' && cell.contents">
-          <template v-for="content, contentIndex in cell.contents">
+          <template v-for="(content, j) in cell.contents">
             <template v-if="content.link">
-              <a :href="content.link">{{ content.text }}</a>
+              <a :href="content.link" :key="j">{{ content.text }}</a>
             </template>
-            <template v-else>{{ content.text }}</template>{{ contentIndex < cell.contents.length - 1 ? ', ' : '' }}
+            <template v-else>{{ content.text }}</template>
+            {{ (cell.contents.length - j) > 1 ? ', ' : '' }}
           </template>
         </template>
         <template v-else-if="cell && cell.barchart">
           <div class="value">{{ cell.value }}</div>
           <div class="barcontainer">
-            <div class="bar" :style="{width: cell.width + '%'}"></div>
+            <div :style="{width: cell.width + '%'}" class="bar"></div>
           </div>
         </template>
         <template v-else-if="cell && cell.ticker">
@@ -60,11 +64,45 @@
 export default {
   name: 'SortableTable',
   props: {
-    columns: Array,
-    items: Array,
-    sort: String,
-    sortOrder: String,
-    sortCallback: Function,
+    columns: {
+      type: Array,
+      default: () => [],
+    },
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    sort: {
+      type: String,
+      default: '',
+    },
+    sortOrder: {
+      type: String,
+      default: '',
+    },
+    sortCallback: {
+      type: Function,
+      default: () => {},
+    },
+  },
+  methods: {
+    getColumnClasses(column, cell) {
+      const classes = [
+        'column',
+        column.additionalClass,
+      ];
+      if (!cell) {
+        return [
+          ...classes,
+          { sort: this.sort === column.id },
+          { reverse: this.sortOrder === 'desc' },
+        ];
+      }
+      return [
+        ...classes,
+        { red: (cell && cell.value <= 0) },
+      ];
+    },
   },
 };
 </script>
@@ -98,7 +136,7 @@ export default {
 .value {
   font-size: 16px;
   line-height: 18px;
-  background-color: #ffffff;
+  background-color: $white;
   // padding-right: 20px;
   display: flex;
   flex: 0 0 74px;

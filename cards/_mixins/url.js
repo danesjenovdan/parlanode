@@ -1,8 +1,7 @@
 export default {
   computed: {
     url() {
-      const { cardData } = this.$root.$options.cardData;
-      return `https://glej.parlameter.si/${cardData.group}/${cardData.method}/`;
+      return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/`;
     },
   },
   methods: {

@@ -1,6 +1,8 @@
 <template>
   <div :class="className">
-    <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">{{ smallText }}</div>
+    <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">
+      {{ smallText }}
+    </div>
     <div v-if="text" class="text">{{ text }}</div>
   </div>
 </template>
@@ -9,15 +11,30 @@
 export default {
   name: 'StripedButton',
   props: {
-    selected: Boolean,
-    smallText: String,
+    selected: {
+      type: Boolean,
+      default: false,
+    },
+    smallText: {
+      type: String,
+      default: '',
+    },
     isUppercase: {
       type: Boolean,
       default: true,
     },
-    text: String,
-    color: String,
-    disabled: Boolean,
+    text: {
+      type: String,
+      default: '',
+    },
+    color: {
+      type: String,
+      default: '',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     stripePosition: {
       type: String,
       default: 'top',
@@ -105,9 +122,9 @@ export default {
   }
 
   $special-groups: (
-    dz: #fe5e41,
-    koal: #00628c,
-    opoz: #a9a9a9
+    dz: $red,
+    koal: $fontblue,
+    opoz: $grey-medium
   );
 
 

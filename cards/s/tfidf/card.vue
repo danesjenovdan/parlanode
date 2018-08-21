@@ -2,57 +2,53 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">
-        Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje kot na vseh drugih sejah.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Analizo izvajamo po statistiki <a target="_blank" class="funblue-light-hover" href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a>.
-      </p>
-      <p class="info-text">
-        Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <i18n path="info.text[0]" tag="p" class="info-text">
+        <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
+      <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
     <div v-if="chartRows.length" class="columns">
-      <bar-chart :data="chartRows1" :alreadyCalculated="true" />
-      <bar-chart :data="chartRows2" :alreadyCalculated="true" />
+      <bar-chart :data="chartRows1" :already-calculated="true" />
+      <bar-chart :data="chartRows2" :already-calculated="true" />
     </div>
-    <div v-else class="empty-dataset">Seja v obdelavi.</div>
+    <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
 <script>
 import common from 'mixins/common';
+import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import BarChart from 'components/BarChart.vue';
-import { getSearchTermLink } from 'components/links';
+import links from 'mixins/links';
 
 export default {
+  name: 'BesedeKiSoZaznamovaleSejo',
   components: {
     BarChart,
   },
-  mixins: [common],
-  name: 'BesedeKiSoZaznamovaleSejo',
+  mixins: [
+    common,
+    sessionHeader,
+    sessionOgImage,
+    links,
+  ],
   data() {
-    const sessionName = this.$options.cardData.data.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.session.name,
-        subheading: this.$options.cardData.data.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
     };
   },
   computed: {
@@ -71,7 +67,7 @@ export default {
         .map(row => ({
           name: this.decodeHTML(row.term),
           value: row.value,
-          link: getSearchTermLink(row.term),
+          link: this.getSearchTermLink(row.term),
           widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
           percentage: ((row.value / mytotal) * 100).toFixed(2),
         }))

@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Istaknuti zakoni"
+  },
+  "info": {
+    "lead": "Prikazuje se šest zakona koji su još u saborskoj proceduri i šest nedavno donesenih.",
+    "text": "Koji će zakoni biti prikazani odlučuje uredništvo, a prema kriteriju koliko je zanimljiv medijima i civilnom društvu. To je ujedno i jedini sadržaj Parlametra koji ne generira računalo nego odabire čovjek."
+  },
+  "under-consideration": "Trenutno u proceduri",
+  "recently-passed": "Nedavno doneseni",
+  "all-legislation": "Svi zakoni"
+}

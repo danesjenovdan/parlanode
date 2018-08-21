@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function () {
     var directed = true,
         size = [1, 1],

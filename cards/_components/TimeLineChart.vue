@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import links from 'mixins/links';
+
 /* global d3 */
-function chart(rawData) {
+function chart(rawData, component) {
   $('.timelinechart svg').remove();
 
   function getQueryParams(str) {
@@ -29,7 +31,7 @@ function chart(rawData) {
   }
 
   function generateSearchUrl(queryParams) {
-    let searchurl = `https://parlameter.si/seje/isci/filter/?q=${timeQuery.q}`;
+    let searchurl = component.getSearchTermLink(timeQuery.q);
     if (queryParams.people && queryParams.people.length > 0) {
       if (!searchurl.endsWith('?')) {
         searchurl = `${searchurl}&people=${queryParams.people}`;
@@ -257,7 +259,7 @@ function chart(rawData) {
       .style('yx', 3);
 
     focus.append('text')
-      .style('fill', '#ffffff')
+      .style('fill', '#fff')
       .attr('text-anchor', 'middle')
       .attr('y', -18);
   }
@@ -267,15 +269,13 @@ function chart(rawData) {
 
 export default {
   name: 'TimeLineChart',
+  mixins: [
+    links,
+  ],
   props: {
-    data: Object,
-  },
-  mounted() {
-    this.renderChart();
-  },
-  methods: {
-    renderChart() {
-      chart(this.data);
+    data: {
+      type: Object,
+      default: () => ({}),
     },
   },
   watch: {
@@ -283,10 +283,20 @@ export default {
       this.renderChart();
     },
   },
+  mounted() {
+    this.renderChart();
+  },
+  methods: {
+    renderChart() {
+      chart(this.data, this);
+    },
+  },
 };
 </script>
 
 <style lang="scss">
+@import "~parlassets/scss/colors";
+
 .axis path,
 .axis line {
   fill: none;
@@ -308,10 +318,10 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: #009cdd;
+  stroke: $funblue;
 }
 
 .smalldata .dot {
-  fill: #009cdd;
+  fill: $funblue;
 }
 </style>

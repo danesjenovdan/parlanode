@@ -1,9 +1,8 @@
 {
   "_id": "random_id",
   "name": "Amandmaji poslanskih skupin",
-  "dataUrl": "https://data.parlameter.si/v1/getAmendments",
-  "type": "amandmaji",
-  "lastUpdate": "2017-07-10T08:48:56.117Z",
+  "dataUrl": "{data}/getAmendments",
+  "lastUpdate": "2018-07-27T14:57:52.433Z",
   "method": "amandmaji",
   "group": "obcasnik"
 }

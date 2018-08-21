@@ -1,11 +1,7 @@
 {
-  "_id": "zakonodaja",
-  "name": "Seznam zakonodaje",
-  "dataUrl": "http://analize.parlameter.si/v1/s/getAllLegislation",
-  "type": "empty",
-  "lastUpdate": "2018-07-25T14:45:19.995Z",
-  "method": "zakonodaja",
-  "group": "c",
+  "_id": "c_zakonodaja",
+  "dataUrl": "{analize}/s/getAllLegislation",
+  "lastUpdate": "2018-08-20T16:49:21.390Z",
   "big": true,
   "high": false
 }

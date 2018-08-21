@@ -1,0 +1,21 @@
+{
+  "card": {
+    "title": "Popis zakona"
+  },
+  "info": {
+    "lead": "Popis svih zakona i akata o kojima su u jednom sazivu glasali na sjednicama Hrvatskog sabora, a koje odgovaraju korisničkom izboru (naslov, matično radno tijelo).",
+    "text": "Podaci o sjednicama preuzeti su s web stranica Hrvatskog sabora.",
+    "links": [
+      {
+        "text": "Zakoni",
+        "link": "http://edoc.sabor.hr/Akti.aspx"
+      },
+      {
+        "text": "Akti",
+        "link": "http://edoc.sabor.hr/Akti.aspx"
+      }
+    ]
+  },
+  "select-working-body-placeholder": "Izberi delovno telo",
+  "only-abstracts": "Samo po sažecima"
+}

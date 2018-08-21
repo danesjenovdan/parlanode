@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Transkript"
+  },
+  "info": {
+    "text": "Transkripti sjednica koji se objavljuju na stranici {link}, strojno se raščlanjuju u pojedinačne govorne nastupe i prema izvornom redoslijedu kombiniraju u kartici transkripata.",
+    "link": {
+      "link": "http://www.sabor.hr/hr",
+      "text": "HS"
+    }
+  }
+}

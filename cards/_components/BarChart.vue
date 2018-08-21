@@ -4,13 +4,13 @@
       <div v-for="(row, index) in rows" :key="index" class="column chart-label">
         <div class="label-container">
           <template v-if="row.link">
-            <img v-if="row.portrait" class="portrait" :src="row.portrait" />
+            <img v-if="row.portrait" :src="row.portrait" class="portrait">
             <a :href="row.link" class="funblue-light-hover">
               {{ row.name }}
             </a>
           </template>
           <template v-else>
-            <img v-if="row.portrait" class="portrait" :src="row.portrait" />
+            <img v-if="row.portrait" :src="row.portrait" class="portrait">
             {{ row.name }}
           </template>
         </div>
@@ -18,18 +18,19 @@
     </div>
     <div class="column-bar">
       <div v-for="(row, index) in rows" :key="index" class="column chart">
-          <div class="progress hugebar">
-              <div
-                class="progress-bar funblue"
-                :style="{ width: row.widthPercentage + '%'}">
-              </div>
-              <div v-if="showNumbers && showPercentage" class="progress_number">
-                {{ row.value + ' | ' + row.percentage }} %
-              </div>
-              <div v-else-if="showNumbers" class="progress_number">
-                {{ row.value }}
-              </div>
+        <div class="progress hugebar">
+          <div
+            :style="{ width: row.widthPercentage + '%'}"
+            class="progress-bar funblue"
+          >
           </div>
+          <div v-if="showNumbers && showPercentage" class="progress_number">
+            {{ row.value.toString().replace('.', ',') + ' | ' + row.percentage }} %
+          </div>
+          <div v-else-if="showNumbers" class="progress_number">
+            {{ row.value.toString().replace('.', ',') }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -39,18 +40,32 @@
 export default {
   name: 'BarChart',
   props: {
-    data: Array,
-    showNumbers: Boolean,
+    data: {
+      type: Array,
+      default: () => [],
+    },
+    showNumbers: {
+      type: Boolean,
+      default: false,
+    },
     showPercentage: {
       type: Boolean,
       default: true,
     },
-    alreadyCalculated: Boolean,
-    flexibleLabels: Boolean,
+    alreadyCalculated: {
+      type: Boolean,
+      default: false,
+    },
+    flexibleLabels: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     rows() {
-      if (this.alreadyCalculated) return this.data;
+      if (this.alreadyCalculated) {
+        return this.data;
+      }
 
       const rows = JSON.parse(JSON.stringify(this.data));
       const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value), 0);
@@ -62,7 +77,7 @@ export default {
         value: row.value,
         portrait: row.portrait,
         widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
-        percentage: ((row.value / mytotal) * 100).toFixed(2),
+        percentage: ((row.value / mytotal) * 100).toFixed(2).replace('.', ','),
       })).sort((a, b) => b.value - a.value);
     },
   },

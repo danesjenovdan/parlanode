@@ -14,10 +14,16 @@
 
       <card-previous v-else-if="currentBack === 'previous'" />
 
-      <div v-else class="card-content-front" :class="contentFrontClass" :style="{ 'overflow-y': contentFrontScroll }" v-cloak>
-        <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
+      <div
+        v-else
+        v-cloak
+        :class="contentFrontClass"
+        class="card-content-front"
+      >
+        <!-- this needs fixing, it's currently hardcoded -->
+        <div v-if="false" class="card-content__empty">
           <div class="card-content__empty-inner">
-            <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg" />
+            <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`">
             <p v-t="'data-currently-unavailable'"></p>
           </div>
         </div>
@@ -48,23 +54,57 @@ export default {
     CardHeader,
     CardFooter,
   },
+  props: {
+    contentClass: {
+      type: [String, Object],
+      default: '',
+    },
+    contentFrontClass: {
+      type: [String, Object],
+      default: '',
+    },
+    cardUrl: {
+      type: String,
+      default: '',
+    },
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    ogConfig: {
+      type: Object,
+      default: null,
+    },
+    contentHeight: {
+      type: String,
+      default: 'auto',
+    },
+  },
   data() {
     return {
       currentBack: null,
       transitionClass: null,
       previousHeight: null,
+      slugs: this.$root.$options.cardData.urls,
     };
   },
-  props: {
-    contentClass: [String, Object],
-    contentFrontClass: [String, Object],
-    cardUrl: String,
-    headerConfig: Object,
-    contentHeight: {
-      type: String,
-      default: 'auto',
+  watch: {
+    currentBack(newBack) {
+      this.$emit('backChange', newBack);
     },
-    contentFrontScroll: String,
+  },
+  created() {
+    const ogConfig = this.ogConfig;
+    if (ogConfig) {
+      const { name, ...params } = ogConfig;
+      const slugs = this.$root.$options.cardData.urls;
+      const ogImagePath = `${slugs.urls.glej}/og-image/${name}/`;
+      const ogImageParams = `?${Object.keys(params).map(k => `${k}=${encodeURIComponent(params[k])}`).join('&')}`;
+      this.$root.$options.cardData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
+    } else {
+      // eslint-disable-next-line no-console
+      console.warn('Missing ogConfig!');
+    }
   },
   methods: {
     toggleBack(newBack) {
@@ -78,7 +118,9 @@ export default {
           contentElement.style.height = `${contentElement.offsetHeight}px`;
           this.currentBack = newBack;
         }, RIPPLE_DURATION / 2);
-        window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
+        window.setTimeout(() => {
+          this.transitionClass = null;
+        }, RIPPLE_DURATION);
       } else {
         this.transitionClass = ['revealed', `clicked-${newBack}`];
 
@@ -86,13 +128,10 @@ export default {
           this.currentBack = null;
           contentElement.style.height = this.previousHeight;
         }, RIPPLE_DURATION / 2);
-        window.setTimeout(() => { this.transitionClass = null; }, RIPPLE_DURATION);
+        window.setTimeout(() => {
+          this.transitionClass = null;
+        }, RIPPLE_DURATION);
       }
-    },
-  },
-  watch: {
-    currentBack(newBack) {
-      this.$emit('backChange', newBack);
     },
   },
 };
@@ -111,16 +150,18 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: rgba($white, 0.6) url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      background-color: $white-hover;
+      background-image: url("#{getConfig('urls.cdn')}/img/loader.gif");
+      background-repeat: no-repeat;
+      background-position: center center;
       content: '';
-      height: 100%;
       position: absolute;
-      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       z-index: 1;
     }
   }
 }
-
-// why is this not working in child card?
-.card-scroll { padding: 0; }
 </style>

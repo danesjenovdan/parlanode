@@ -1,11 +1,7 @@
 {
   "_id": "s_citat",
-  "name": "Citat",
-  "type": "seje",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getQuote",
-  "lastUpdate": "2018-07-25T14:44:37.091Z",
-  "method": "citat",
-  "group": "s",
+  "dataUrl": "{analize}/s/getQuote",
+  "lastUpdate": "2018-07-27T15:00:54.330Z",
   "big": true,
   "high": true
 }

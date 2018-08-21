@@ -4,7 +4,9 @@ export default (state) => {
   }
 
   return (key, fullOptions) => {
-    if (!Object.prototype.hasOwnProperty.call(state, key)) return false;
+    if (!Object.prototype.hasOwnProperty.call(state, key)) {
+      return false;
+    }
 
     if (fullOptions) {
       // Full options have been passed, so the value in the state should be

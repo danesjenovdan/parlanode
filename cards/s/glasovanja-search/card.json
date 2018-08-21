@@ -1,11 +1,6 @@
 {
   "_id": "s_glasovanja-search",
-  "name": "Glasovanja, ki vsebujejo iskalni niz",
-  "dataUrl": "https://isci.parlameter.si/l",
-  "type": "empty",
-  "lastUpdate": "2018-07-25T14:44:39.399Z",
-  "method": "glasovanja-search",
-  "group": "s",
+  "lastUpdate": "2018-08-07T12:29:48.591Z",
   "big": true,
   "high": true
 }

@@ -2,75 +2,88 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam vseh glasovanj DZ,
-        {{ textFilter ? `ki ustrezajo uporabniškemu vnosu "${textFilter}", ` : '' }}
-        {{ this.selectedTags.length ? `za izbrana matična delovna telesa: "${selectedTags.join(', ')}", ` : '' }}
-        razvrščenih po {{ selectedSort === 'maximum' ? 'neenotnosti' : 'datumu' }}.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu dz-rs.si ter ustrezajo uporabniškemu vnosu.</p>
-      <p class="info-text">Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu. </p>
+      <i18n path="info.lead" tag="p" class="info-text lead">
+        <span place="text">
+          <span v-if="textFilter">"{{ textFilter }}"</span>
+          <span v-t="'all-votes'" v-else></span>
+        </span>
+        <span place="wbs">
+          <span v-if="selectedTags.length">{{ selectedTags.join(', ') }}</span>
+          <span v-t="'all-working-bodies'" v-else></span>
+        </span>
+        <span place="sortBy">{{ sortOptions[selectedSort].toLowerCase() }}</span>
+      </i18n>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
     <div class="groups">
       <striped-button
         v-for="group in groups"
-        @click.native="selectGroup(group.acronym)"
         :color="group.color.toLowerCase()"
         :key="group.acronym"
         :selected="group.acronym === selectedGroup"
         :small-text="group.name"
         :is-uppercase="false"
+        @click.native="selectGroup(group.acronym)"
       />
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label">Išči po naslovu glasovanja</div>
-        <input class="text-filter-input" type="text" v-model="textFilter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
       <div class="filter type-dropdown">
-        <div class="filter-label">Tipi glasovanja</div>
-        <p-search-dropdown :items="dropdownItems.classifications" :placeholder="classificationPlaceholder" :alphabetise="false" />
+        <div v-t="'vote-types'" class="filter-label"></div>
+        <p-search-dropdown
+          :items="dropdownItems.classifications"
+          :placeholder="classificationPlaceholder"
+          :alphabetise="false"
+        />
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label">Matično delovno telo</div>
-        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
+        <div v-t="'working-body'" class="filter-label"></div>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
       <div class="filter text-filter">
-        <div class="filter-label">Razvrsti po</div>
+        <div v-t="'sort-by'" class="filter-label"></div>
         <toggle v-model="selectedSort" :options="sortOptions" />
       </div>
     </div>
 
     <scroll-shadow ref="shadow">
-      <div :class="['results', {'is-loading': loading }]" @scroll="$refs.shadow.check($event.currentTarget)">
+      <div
+        :class="['results', {'is-loading': loading }]"
+        @scroll="$refs.shadow.check($event.currentTarget)"
+      >
         <template v-for="day in filteredVotingDays">
           <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
           <a
             v-for="ballot in day.ballots"
             :key="ballot.id_parladata"
+            :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
             target="_blank"
             class="ballot"
-            :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
           >
             <div class="disunion">
               <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
-              <div class="text">neenotnost</div>
+              <div v-t="'inequality'" class="text"></div>
             </div>
             <div class="name">{{ ballot.text }}</div>
             <div class="result">
               <template v-if="ballot.result">
                 <i class="accepted glyphicon glyphicon-ok"></i>
-                <div class="text">sprejet</div>
+                <div v-t="'vote-passed'" class="text"></div>
               </template>
               <template v-else>
                 <i class="not-accepted glyphicon glyphicon-remove"></i>
-                <div class="text">zavrnjen</div>
+                <div v-t="'vote-not-passed'" class="text"></div>
               </template>
             </div>
           </a>
@@ -88,9 +101,12 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import Toggle from 'components/Toggle.vue';
 import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
+  name: 'GlasovanjaNeenotnost',
   components: {
     DateRow,
     PSearchDropdown,
@@ -99,90 +115,75 @@ export default {
     ScrollShadow,
   },
   mixins: [common],
-  name: 'GlasovanjaNeenotnost',
   data() {
-    let groups = [{
-      id: 95,
+    const data = Object.keys(this.$options.cardData.data).map((key) => {
+      const obj = this.$options.cardData.data[key];
+      return {
+        id: Number(key),
+        ...obj,
+      };
+    });
+
+    const all = data.find(o => o.type === 'parliament');
+    const coalition = data.find(o => o.type === 'coalition');
+
+    let groups = [];
+    groups.push({
+      id: all.id,
       color: 'dz',
-      acronym: 'DZ',
-      name: 'Vsi',
-    }, {
-      id: 144,
+      acronym: all.acronym,
+      name: this.$t('everybody'),
+    });
+    groups.push({
+      id: coalition.id,
       color: 'koal',
-      acronym: 'koal',
-      name: 'Koalicija',
-    }];
+      acronym: coalition.acronym,
+      name: coalition.name,
+    });
 
     let namedGroups = [];
-    Object.keys(this.$options.cardData.data).forEach((groupName) => {
-      const groupValue = this.$options.cardData.data[groupName];
-      if (!groupValue.disbanded) {
+    data.forEach((group) => {
+      if (!group.disbanded && group.type === 'party') {
         namedGroups.push({
-          id: groupName,
-          acronym: groupValue.acronym,
-          color: groupValue.acronym.toLowerCase().replace(/ /g, '_'),
-          name: groupValue.acronym,
+          id: group.id,
+          acronym: group.acronym,
+          color: group.acronym.toLowerCase().replace(/ /g, '_'),
+          name: group.acronym,
         });
       }
     });
 
-    const allClassifications = [];
-
-    namedGroups = sortBy(namedGroups, 'name');
+    namedGroups = sortBy(namedGroups, ['name']);
     groups = groups.concat(namedGroups);
 
     return {
       voteData: [],
       loading: true,
       selectedSort: 'maximum',
-      sortOptions: { maximum: 'Neenotnosti', date: 'Datumu' },
+      sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
       textFilter: '',
       allTags: [],
-      // allMonths: [2017, 2016, 2015, 2014, 2013]
-      //   .map(year =>
-      //     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month =>
-      //       ({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false }),
-      //     ),
-      //   )
-      //   .reduce((sum, element) => sum.concat(element), []),
-      selectedGroup: 'DZ',
+      selectedGroup: groups[0].acronym,
       groups,
-      allClassifications,
+      allClassifications: [],
       cardData: this.$options.cardData,
     };
   },
   computed: {
     classificationPlaceholder() {
-      return this.selectedClassifications.length > 0 ? `Izbranih: ${this.selectedClassifications.length}` : 'Izberi';
+      return this.selectedClassifications.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
+        : this.$t('select-placeholder');
     },
     tagPlaceholder() {
-      return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
+      return this.selectedTags.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
     },
-    // monthPlaceholder() {
-    //   return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
-    // },
     dropdownItems() {
-      // const validTags = [];
-      // // const validMonths = [];
-
-      // this.getFilteredVotingDays().forEach((votingDay) => {
-      //   // const year = votingDay.date.split(' ')[2].split('-')[0];
-      //   // const month = votingDay.date.split(' ')[1].split('.')[0];
-      //   // const monthId = `${year}-${month}`;
-      //   // if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
-
-      //   votingDay.ballots
-      //     .forEach((ballot) => {
-      //       ballot.tag.forEach((tag) => {
-      //         if (validTags.indexOf(tag) === -1) validTags.push(tag);
-      //       });
-      //     });
-      // });
-
       return {
         tags: this.allTags,
         classifications: this.allClassifications,
-        // months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
       };
     },
     selectedTags() {
@@ -195,63 +196,79 @@ export default {
         .filter(classification => classification.selected)
         .map(classification => classification.id);
     },
-    // selectedMonths() {
-    //   return this.allMonths.filter(month => month.selected);
-    // },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
     },
     headerConfig() {
-      return {
+      return defaultHeaderConfig(this, {
         circleIcon: 'seznam-glasovanj',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.dynamicTitle,
-      };
+      });
+    },
+    ogConfig() {
+      return defaultOgImage(this, {
+        icon: 'seznam-glasovanj',
+        title: this.dynamicTitle,
+      });
     },
     dynamicTitle() {
-      return this.$options.cardData.cardData.name +
-        (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
+      return this.$t('card.title') + (
+        this.selectedSort === 'date'
+          ? this.$t('sort-by--date').toLowerCase()
+          : this.$t('sort-by--inequality').toLowerCase()
+      );
     },
     generatedCardUrl() {
       const state = {};
 
-      if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-      // if (this.selectedMonths.length > 0) state.months = this.selectedMonths.map(month => month.id);
-      if (this.selectedClassifications.length > 0) state.classifications = this.selectedClassifications;
-      if (this.textFilter.length > 0) state.text = this.textFilter;
-      if (this.selectedSort.length > 0) state.sort = this.selectedSort;
-      if (this.selectedGroup.length > 0) state.selectedGroup = this.selectedGroup;
+      if (this.selectedTags.length > 0) {
+        state.tags = this.selectedTags;
+      }
+      if (this.selectedClassifications.length > 0) {
+        state.classifications = this.selectedClassifications;
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
+      if (this.selectedSort.length > 0) {
+        state.sort = this.selectedSort;
+      }
+      if (this.selectedGroup.length > 0) {
+        state.selectedGroup = this.selectedGroup;
+      }
 
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
+  watch: {
+    selectedGroup(newValue) {
+      this.fetchVotesForGroup(newValue);
+    },
+  },
+  beforeMount() {
+    this.fetchVotesForGroup(this.groups[0].acronym);
+  },
+  created() {
+    const context = this.$options.cardData;
+    context.template.pageTitle = this.dynamicTitle;
+  },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
-      if (!this.voteData || this.voteData.length === 0) return [];
+      if (!this.voteData || this.voteData.length === 0) {
+        return [];
+      }
 
       const filterBallots = (ballot) => {
-        const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-          ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const textMatch = this.textFilter === '' ||
-          ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0 ||
-          this.selectedClassifications.indexOf(ballot.classification) > -1;
-
+        const tagMatch = onlyFilterByText
+          || this.selectedTags.length === 0
+          || ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const textMatch = this.textFilter === ''
+          || ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const classificationMatch = onlyFilterByText
+          || this.selectedClassifications.length === 0
+          || this.selectedClassifications.indexOf(ballot.classification) > -1;
         return tagMatch && textMatch && classificationMatch;
       };
-
-      // const filterDates = (votingDay) => {
-      //   if (onlyFilterByText || this.selectedMonths.length === 0) return true;
-      //
-      //   const year = parseInt(votingDay.date.split(' ')[2].split('-')[0], 10);
-      //   const month = parseInt(votingDay.date.split(' ')[1].split('.')[0], 10);
-      //
-      //   console.log(this.selectedMonths);
-      //
-      //   return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
-      // };
 
       const votes = sortBy(this.voteData, this.selectedSort).reverse();
       const getDateFromVote = vote => (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
@@ -274,25 +291,29 @@ export default {
 
       return mappedVotingDays
         .filter(votingDay => (votingDay.ballots.length > 0));
-      // .filter(filterDates);
     },
     selectGroup(acronym) {
-      this.selectedGroup = this.selectedGroup !== acronym ? acronym : 'DZ';
+      this.selectedGroup = this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
-    fetchVotesForGroup(acronym = 'DZ') {
+    fetchVotesForGroup(acronym) {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
-      $.getJSON(`https://analize.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
+      $.getJSON(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`, (response) => {
         if (this.allTags.length === 0) {
           this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
         }
 
-        this.voteData = response[acronym];
+        // TODO: this.voteData = response.results;
+        this.voteData = response.results || response[acronym];
 
         this.allClassifications = [];
-        console.log(response.classifications)
-        for (var classificationKey in response.classifications) {
-          this.allClassifications.push({ id: classificationKey, label: response.classifications[classificationKey], selected: false });
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
+        for (const classificationKey in response.classifications) {
+          this.allClassifications.push({
+            id: classificationKey,
+            label: response.classifications[classificationKey],
+            selected: false,
+          });
         }
 
         const selectFromState = (items, stateItemIds) => items
@@ -300,39 +321,29 @@ export default {
 
         if (this.cardData.parlaState) {
           const state = this.cardData.parlaState;
-          if (state.text) this.textFilter = state.text;
-          // if (state.months) this.allMonths = selectFromState(this.allMonths, state.months);
-          if (state.classifications) this.allClassifications = selectFromState(this.allClassifications, state.classifications);
-          if (state.sort) this.selectedSort = state.sort;
-          if (state.tags) this.allTags = selectFromState(this.allTags, state.tags);
-          if (state.selectedGroup) this.selectedGroup = state.selectedGroup;
+          if (state.text) {
+            this.textFilter = state.text;
+          }
+          if (state.classifications) {
+            this.allClassifications = selectFromState(
+              this.allClassifications,
+              state.classifications,
+            );
+          }
+          if (state.sort) {
+            this.selectedSort = state.sort;
+          }
+          if (state.tags) {
+            this.allTags = selectFromState(this.allTags, state.tags);
+          }
+          if (state.selectedGroup) {
+            this.selectedGroup = state.selectedGroup;
+          }
         }
 
         this.loading = false;
       });
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
-  watch: {
-    selectedGroup(newValue) {
-      this.fetchVotesForGroup(newValue);
-    },
-  },
-  beforeMount() {
-    this.fetchVotesForGroup();
-  },
-  created() {
-    const context = this.$options.cardData;
-    context.template.pageTitle = context.cardData.name +
-      (this.selectedSort === 'date' ? 'datumu' : 'neenotnosti');
   },
 };
 </script>
@@ -392,11 +403,11 @@ export default {
     width: 100%;
 
     .text-filter-input {
-      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+      background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid #c8c8c8;
+      border: 1px solid $grey-medium;
       font-size: 16px;
       height: 53px;
       line-height: 27px;
@@ -434,7 +445,7 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      background: $white url("#{getConfig('urls.cdn')}/img/loader.gif") no-repeat center center;
       content: '';
       height: 100%;
       position: absolute;
@@ -541,7 +552,7 @@ export default {
       }
 
       .text {
-        color: #333;
+        color: $grey-dark;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;

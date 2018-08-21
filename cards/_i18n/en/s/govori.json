@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Transcript"
+  },
+  "info": {
+    "text": "We mechanically break up transcripts of sessions, published as an HTML document on the web page {link}, into separate speeches. Speeches are then combined in their original order in a card transcript.",
+    "link": {
+      "link": "http://www.dz-rs.si",
+      "text": "National Assembly of the Republic of Slovenia"
+    }
+  }
+}

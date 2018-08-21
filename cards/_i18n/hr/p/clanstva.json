@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "Članstva"
+  },
+  "info": {
+    "lead": "Ispis svih članstava u radnim tijelima, stalnim izaslanstvima i skupinama prijateljstva.",
+    "text": "Podaci su preuzeti s web stranice Hrvatskoga sabora {link}.",
+    "link": {
+      "text": "HS",
+      "link": "http://www.sabor.hr/zastupnici-9"
+    }
+  }
+}

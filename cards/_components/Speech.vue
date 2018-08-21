@@ -1,60 +1,70 @@
 <template>
   <div :class="['speech-holder', {'just-quote': showQuote}]" :id="speech.results.speech_id">
-    <input type="hidden" class="mywords" :value="getSpeechContent(speech)" />
+    <input :value="getSpeechContent(speech)" type="hidden" class="mywords">
     <div class="person-session">
       <div class="person">
         <template v-if="speech.person.type === 'mp'">
           <a :href="getPersonLink(speech.person)">
-            <img class="portrait" :src="getPersonPortrait(speech.person)" />
+            <img :src="getPersonPortrait(speech.person)" class="portrait">
           </a>
           <a :href="getPersonLink(speech.person)" class="funblue-light-hover">
-            <span class="name">{{speech.person.name}}</span>
+            <span class="name">{{ speech.person.name }}</span>
           </a>
         </template>
         <template v-else>
-          <img class="portrait" :src="getPersonPortrait(speech.person)" />
-          <span class="name">{{speech.person.name}}</span>
+          <img :src="getPersonPortrait(speech.person)" class="portrait">
+          <span class="name">{{ speech.person.name }}</span>
         </template>
       </div>
       <div v-if="showSession" class="session">
-        <a :href="getSessionTranscriptLink(speech.results.session)" class="funblue-light-hover">{{speech.results.session.name}}</a><br>
-        <span class="date">{{speech.results.session.date}}</span>
+        <a
+          :href="getSessionTranscriptLink(speech.results.session)"
+          class="funblue-light-hover"
+        >{{ speech.results.session.name }}</a><br>
+        <span class="date">{{ speech.results.session.date }}</span>
       </div>
     </div>
     <div class="everything">
       <div class="speech-text">
-        {{getSpeechContent(speech)}}
+        {{ getSpeechContent(speech) }}
         <div class="quote-button">“</div>
       </div>
     </div>
     <div v-if="speech.results.quoted_text" class="quote">
       <div class="speech-text">
-        {{quotePaddingBefore}}
-        <span class="quote-text">{{speech.results.quoted_text}}</span>
-        {{quotePaddingAfter}}
+        {{ quotePaddingBefore }}
+        <span class="quote-text">{{ speech.results.quoted_text }}</span>
+        {{ quotePaddingAfter }}
       </div>
-      <a href="#" class="full-text-link" @click="showFullSpeech">Cel govor</a>
+      <a
+        v-t="'full-speech'"
+        href="#"
+        class="full-text-link"
+        @click="showFullSpeech"
+      ></a>
       <div class="quote-button">“</div>
     </div>
     <div class="links">
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
-      <a :href="`https://glej.parlameter.si/s/govor/${speech.results.speech_id}?frame=true`" v-if="!showSession" class="share"></a>
+      <a
+        v-if="!showSession"
+        :href="`${$root.slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`"
+        class="share"
+      ></a>
     </div>
   </div>
 </template>
 
 <script>
-import {
-  getPersonPortrait,
-  getPersonLink,
-  getSessionSpeechLink,
-  getSessionTranscriptLink,
-} from 'components/links';
+import links from 'mixins/links';
 
 const PADDING_LENGTH = 30;
 
 export default {
   name: 'Speech',
+  mixins: [
+    links,
+  ],
   props: {
     speech: {
       type: Object,
@@ -67,10 +77,6 @@ export default {
   },
   data() {
     return {
-      getPersonPortrait,
-      getPersonLink,
-      getSessionSpeechLink,
-      getSessionTranscriptLink,
       hideQuote: false,
     };
   },
@@ -113,10 +119,6 @@ export default {
   @return 'data:image/svg+xml;utf8,<svg fill="%23#{str_slice('#{$color}', 2)}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 80" width="82" height="80"><path d="M68 52c-4.828 0-9.094 2.457-11.61 6.188l-29.04-13.98a13.964 13.964 0 0 0 0-8.416l29.035-13.98C58.905 25.542 63.17 28 67.998 28c7.72 0 14-6.28 14-14s-6.28-14-14-14-14 6.28-14 14c0 1.465.23 2.88.648 4.207L25.61 32.187C23.095 28.457 18.83 26 14 26 6.28 26 0 32.28 0 40s6.28 14 14 14c4.83 0 9.094-2.457 11.61-6.188l29.038 13.98A13.933 13.933 0 0 0 54 66c0 7.718 6.28 14 14 14s14-6.282 14-14-6.28-14-14-14zm0-48c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10S62.486 4 68 4zM14 50C8.486 50 4 45.514 4 40s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm54 26c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10z"/></svg>'
 };
 
-$blue: #009cdd;
-$light-blue: #b4e9ff;
-$medium-gray: #d0d0d0;
-
 %text-styling {
   font-family: Roboto Slab;
   font-size: 14px;
@@ -129,7 +131,7 @@ $medium-gray: #d0d0d0;
 }
 
 %link-styling {
-  color: $blue;
+  color: $funblue;
   display: block;
   font-size: 16px;
   text-align: center;
@@ -137,7 +139,7 @@ $medium-gray: #d0d0d0;
   text-transform: uppercase;
 
   &:hover {
-    color: $blue;
+    color: $funblue;
   }
 }
 
@@ -166,7 +168,7 @@ $medium-gray: #d0d0d0;
 
     .portrait {
       border-radius: 50%;
-      box-shadow: 0 0 4px #dddddd;
+      box-shadow: 0 0 4px $darkgrey;
       height: $portrait-size;
       width: $portrait-size;
       margin-right: $portrait-margin;
@@ -202,9 +204,9 @@ $medium-gray: #d0d0d0;
 }
 
 .quote-button {
-  background: #197197;
+  background: $sadblue;
   border-radius: 50%;
-  color: #ffffff;
+  color: $white;
   cursor: pointer;
   display: none;
   font-family: Times New Roman, serif;
@@ -249,7 +251,7 @@ $medium-gray: #d0d0d0;
     }
 
     &:hover {
-      background-color: $light-blue;
+      background-color: $funblue-light-hover;
       cursor: pointer;
     }
   }
@@ -275,7 +277,7 @@ $medium-gray: #d0d0d0;
   .everything,
   .quote {
     flex: 1;
-    ::selection { background: $light-blue; }
+    ::selection { background: $funblue-light-hover; }
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
     }
@@ -292,17 +294,17 @@ $medium-gray: #d0d0d0;
 
   &.just-quote {
     .quote-button {
-      background: $medium-gray;
+      background: $grey-medium;
       cursor: default;
       display: block;
       top: 50%;
     }
 
     .speech-text {
-      color: #cacaca;
+      color: $grey-medium;
 
       .quote-text {
-        color: #000000;
+        color: #000;
       }
     }
 

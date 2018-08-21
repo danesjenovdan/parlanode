@@ -1,20 +1,26 @@
 <template>
   <input
-    class="search-field"
-    @input="$emit('input', $event.target.value)"
     :placeholder="placeholder"
-    type="text"
     :value="value"
+    class="search-field"
+    type="text"
+    @input="$emit('input', $event.target.value)"
     @keyup.enter="$emit('enter', $event.target.value)"
-  />
+  >
 </template>
 
 <script>
 export default {
   name: 'SearchField',
   props: {
-    value: String,
-    placeholder: String,
+    value: {
+      type: String,
+      default: '',
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
@@ -23,11 +29,11 @@ export default {
 @import '~parlassets/scss/colors';
 
 .search-field {
-  background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+  background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
   background-size: 24px 24px;
   background-repeat: no-repeat;
   background-position: right 9px center;
-  border: 1px solid #c8c8c8;
+  border: 1px solid $grey-medium;
   font-size: 16px;
   height: 51px;
   line-height: 27px;

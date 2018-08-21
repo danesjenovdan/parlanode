@@ -1,0 +1,53 @@
+{
+  "sl": {
+    "tabs": [
+      {
+        "title": "Seje DZ",
+        "org_ids": [
+          95
+        ]
+      },
+      {
+        "title": "Seje kolegija predsednika DZ",
+        "org_ids": [
+          9
+        ]
+      },
+      {
+        "title": "Seje delovnih teles"
+      }
+    ]
+  },
+  "hr": {
+    "tabs": [
+      {
+        "title": "Seje sabora",
+        "org_ids": [
+          199
+        ]
+      },
+      {
+        "title": "Ostale seje"
+      }
+    ]
+  },
+  "en": {
+    "tabs": [
+      {
+        "title": "Seje DZ",
+        "org_ids": [
+          95
+        ]
+      },
+      {
+        "title": "Seje kolegija predsednika DZ",
+        "org_ids": [
+          9
+        ]
+      },
+      {
+        "title": "Seje delovnih teles"
+      }
+    ]
+  }
+}

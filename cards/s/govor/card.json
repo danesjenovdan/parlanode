@@ -1,11 +1,7 @@
 {
   "_id": "s_govor",
-  "name": "Govor",
-  "type": "seje",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getSpeech",
-  "lastUpdate": "2018-07-25T14:44:44.331Z",
-  "method": "govor",
-  "group": "s",
+  "dataUrl": "{analize}/s/getSpeech",
+  "lastUpdate": "2018-07-27T15:01:09.550Z",
   "big": true,
   "high": false
 }

@@ -8,15 +8,19 @@
           class="person"
         >
           <a :href="getPersonLink(person)" class="portrait column">
-            <img :src="getPersonPortrait(person)" />
+            <img :src="getPersonPortrait(person)">
           </a>
           <div class="column name">
             <a :href="getPersonLink(person)" class="funblue-light-hover">
               {{ person.name }}
             </a>
             <template v-if="showPartyLink">
-              <br />
-              <a v-if="getPersonPartyLink(person)" :href="getPersonPartyLink(person)" class="funblue-light-hover">
+              <br>
+              <a
+                v-if="getPersonPartyLink(person)"
+                :href="getPersonPartyLink(person)"
+                class="funblue-light-hover"
+              >
                 {{ person.party.acronym }}
               </a>
               <span v-else>
@@ -34,24 +38,25 @@
 </template>
 
 <script>
-import { getPersonPartyLink, getPersonLink, getPersonPortrait } from 'components/links';
+import links from 'mixins/links';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
   components: {
     ScrollShadow,
   },
+  mixins: [
+    links,
+  ],
   props: {
     people: {
       type: Array,
       required: true,
     },
-    showPartyLink: Boolean,
-  },
-  methods: {
-    getPersonPartyLink,
-    getPersonLink,
-    getPersonPortrait,
+    showPartyLink: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>

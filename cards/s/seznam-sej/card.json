@@ -1,10 +1,7 @@
 {
-  "_id": "s_seznam_sej",
-  "name": "Seznam sej",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getSessionsList",
-  "type": "seznam_sej",
-  "lastUpdate": "2018-07-25T14:44:57.682Z",
-  "method": "seznam-sej",
-  "group": "s",
-  "big": "true"
+  "_id": "s_seznam-sej",
+  "dataUrl": "{analize}/s/getSessionsList",
+  "lastUpdate": "2018-08-20T16:23:33.937Z",
+  "big": true,
+  "high": false
 }

@@ -1,8 +1,8 @@
 <template>
   <glasovanja
     :card-data="$options.cardData"
-    type="party"
     :party="$options.cardData.data.party"
+    type="party"
   />
 </template>
 

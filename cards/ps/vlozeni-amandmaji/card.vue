@@ -2,56 +2,100 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Pregled vseh glasovanj, ki so se zgodila na seji</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.</p>
-      <p class="info-text">Nabor glasovanj pridobimo s spletnega mesta <a href="http://www.dz-rs.si">DZ RS</a>.</p>
-      <p class="info-text">Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">kot je implementirana v knjižicah scikit-learn</a> in opisana v <a href="http://www.miketipping.com/papers/met-mppca.pdf">M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622</a>.</p>
-      <p class="info-text">Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo <a href="https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485">score_samples</a> pridobimo "log-likelihood" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju "log-likelihood" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse "log-likelihood" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj "nepričakovana." V kartici jih označimo z ikono ognja.</p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <i18n path="info.text[1]" tag="p" class="info-text">
+        <a
+          v-t="'info.links[0].text'"
+          :href="$t('info.links[0].link')"
+          place="link1"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
+      <i18n path="info.text[2]" tag="p" class="info-text">
+        <a
+          v-t="'info.links[1].text'"
+          :href="$t('info.links[1].link')"
+          place="link2"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+        <a
+          v-t="'info.links[2].text'"
+          :href="$t('info.links[2].link')"
+          place="link3"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
+      <i18n path="info.text[3]" tag="p" class="info-text">
+        <a
+          v-t="'info.links[3].text'"
+          :href="$t('info.links[3].link')"
+          place="link4"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label">Išči po naslovu glasovanja</div>
-        <search-field v-model="textFilter"/>
+        <div v-t="'title-search'" class="filter-label"></div>
+        <search-field v-model="textFilter" />
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label">Matično delovno telo</div>
-        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder"></p-search-dropdown>
+        <div v-t="'working-body'" class="filter-label"></div>
+        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
       </div>
       <div class="filter month-dropdown">
-        <div class="filter-label">Časovno obdobje</div>
-        <p-search-dropdown :items="dropdownItems.months" :placeholder="monthPlaceholder" :alphabetise="false"></p-search-dropdown>
+        <div v-t="'time-period'" class="filter-label"></div>
+        <p-search-dropdown
+          :items="dropdownItems.months"
+          :placeholder="monthPlaceholder"
+          :alphabetise="false"
+        />
       </div>
       <div class="filter button-filter">
-        <div class="filter-label">Prikaži</div>
+        <div v-t="'show'" class="filter-label"></div>
         <div class="filter-content">
           <striped-button
             v-for="voteType in voteTypes"
-            @click.native="toggleVoteType(voteType.id)"
             :color="voteType.color"
             :key="voteType.id"
             :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
             :small-text="voteType.label"
+            @click.native="toggleVoteType(voteType.id)"
           />
         </div>
       </div>
     </div>
     <div id="votingCard" class="date-list">
-      <div class="session_voting"
-            v-for="votingDay in filteredVotingDays"
-            :key="votingDay.date">
+      <div
+        v-for="votingDay in filteredVotingDays"
+        :key="votingDay.date"
+        class="session_voting"
+      >
         <div class="date">{{ votingDay.date }}</div>
-        <div class="clearfix single_voting"
-              v-for="(vote, index) in votingDay.results"
-              :key="index">
+        <div
+          v-for="(vote, index) in votingDay.results"
+          :key="index"
+          class="clearfix single_voting"
+        >
           <a :href="vote.url">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-            <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="left: -37px; position: absolute;"></div>
+            <div
+              v-if="vote.has_outliers && !vote.is_outlier"
+              class="lightning-badge"
+              style="left: -37px; position: absolute;"
+            ></div>
             <div class="col-md-1">
               <div :class="vote.accepted">
                 <p>
@@ -62,47 +106,57 @@
             <div class="col-md-11 border-left">
               <div class="col-md-6">
                 <div class="session_title">
-                  <p>
-                    {{ vote.text.split(' ').length > 19 ? vote.text.split(' ').splice(0, 19).join(' ') + ' ...' : vote.text }}
-                  </p>
+                  <p>{{ getVoteText(vote) }}</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="session_votes">
                   <div class="progress smallbar">
-                    <div class="progress-bar fontblue" :style="{ width: `${vote.percent_votes_for}%` }">
+                    <div
+                      :style="{ width: `${vote.percent_votes_for}%` }"
+                      class="progress-bar fontblue"
+                    >
                       <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                     </div>
-                    <div class="progress-bar funblue" :style="{ width: `${vote.percent_against}%` }">
-                      <span class="sr-only">{{ vote.percent_against }}% votes for</span>
+                    <div
+                      :style="{ width: `${vote.percent_against}%` }"
+                      class="progress-bar funblue"
+                    >
+                      <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                     </div>
-                    <div class="progress-bar ignoreblue" :style="{ width: `${vote.percent_abstain}%` }">
-                      <span class="sr-only">{{ vote.percent_abstain }}% votes for</span>
+                    <div
+                      :style="{ width: `${vote.percent_abstain}%` }"
+                      class="progress-bar ignoreblue"
+                    >
+                      <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                     </div>
-                    <div class="progress-bar noblue" :style="{ width: `${vote.percent_not_present}%` }">
-                      <span class="sr-only">{{ vote.percent_not_present }}% votes for</span>
+                    <div
+                      :style="{ width: `${vote.percent_not_present}%` }"
+                      class="progress-bar noblue"
+                    >
+                      <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                     </div>
                   </div>
-                  <div class="row ">
-                    <div class="col-xs-3 ">
+                  <div class="row">
+                    <div class="col-xs-3">
                       {{ vote.votes_for }}
-                      <div class="type ">Za</div>
-                      <div class="indicator aye ">&nbsp;</div>
+                      <div v-t="'vote-for'" class="type"></div>
+                      <div class="indicator aye">&nbsp;</div>
                     </div>
-                    <div class="col-xs-3 ">
+                    <div class="col-xs-3">
                       {{ vote.against }}
-                      <div class="type ">Proti</div>
-                      <div class="indicator ney ">&nbsp;</div>
+                      <div v-t="'vote-against'" class="type"></div>
+                      <div class="indicator ney">&nbsp;</div>
                     </div>
-                    <div class="col-xs-3 ">
+                    <div class="col-xs-3">
                       {{ vote.abstain }}
-                      <div class="type ">Vzdržan</div>
-                      <div class="indicator abstention ">&nbsp;</div>
+                      <div v-t="'vote-abstained'" class="type"></div>
+                      <div class="indicator abstention">&nbsp;</div>
                     </div>
-                    <div class="col-xs-3 ">
+                    <div class="col-xs-3">
                       {{ vote.not_present }}
-                      <div class="type ">Niso</div>
-                      <div class="indicator not ">&nbsp;</div>
+                      <div v-t="'vote-not'" class="type"></div>
+                      <div class="indicator not">&nbsp;</div>
                     </div>
                   </div>
                 </div>
@@ -116,159 +170,175 @@
 </template>
 
 <script>
-  import { format as formatDate } from 'date-fns';
-  import { find } from 'lodash';
+import { format as formatDate } from 'date-fns';
+import { find } from 'lodash';
 
-  import voteMapper from 'helpers/voteMapper';
-  import stateLoader from 'helpers/stateLoader';
-  import generateMonths from 'helpers/generateMonths';
-  import common from 'mixins/common';
-  import { partyTitle } from 'mixins/titles';
-  import PSearchDropdown from 'components/SearchDropdown.vue';
-  import SearchField from 'components/SearchField.vue';
-  import StripedButton from 'components/StripedButton.vue';
+import voteMapper from 'helpers/voteMapper';
+import stateLoader from 'helpers/stateLoader';
+import generateMonths from 'helpers/generateMonths';
+import common from 'mixins/common';
+import { partyTitle } from 'mixins/titles';
+import { partyHeader } from 'mixins/altHeaders';
+import { partyOgImage } from 'mixins/ogImages';
+import PSearchDropdown from 'components/SearchDropdown.vue';
+import SearchField from 'components/SearchField.vue';
+import StripedButton from 'components/StripedButton.vue';
 
-  const formattedDateToMonthId = (date) => {
-    const [day, month, year] = date.split('. ');
-    return formatDate(new Date(year, month - 1, day), 'YYYY-M');
-  };
+const formattedDateToMonthId = (date) => {
+  const [day, month, year] = date.split('. ');
+  return formatDate(new Date(year, month - 1, day), 'YYYY-M');
+};
 
-  export default {
-    components: { PSearchDropdown, SearchField, StripedButton },
-    mixins: [common, partyTitle],
-    name: 'VlozeniAmandmaji',
-    data() {
-      const loadFromState = stateLoader(this.$options.cardData.parlaState);
+export default {
+  name: 'VlozeniAmandmaji',
+  components: { PSearchDropdown, SearchField, StripedButton },
+  mixins: [
+    common,
+    partyTitle,
+    partyHeader,
+    partyOgImage,
+  ],
+  data() {
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
-      const voteTypes = [{
-        id: true, color: 'binary-for', label: 'sprejeti', selected: false,
-      }, {
-        id: false, color: 'binary-against', label: 'zavrnjeni', selected: false,
-      }];
+    const voteTypes = [
+      { id: true, color: 'binary-for', label: this.$t('accepted'), selected: false },
+      { id: false, color: 'binary-against', label: this.$t('rejected'), selected: false },
+    ];
 
-      const votingDays = this.$options.cardData.data.results.map(votingDay => ({
-        date: votingDay.date,
-        results: votingDay.votes.map(voteMapper),
-      }));
+    const votingDays = this.$options.cardData.data.results.map(votingDay => ({
+      date: votingDay.date,
+      results: votingDay.votes.map(voteMapper),
+    }));
 
-      const allTags = this.$options.cardData.data.all_tags
-        .map(tag => ({ id: tag, label: tag, selected: false }));
+    const allTags = this.$options.cardData.data.all_tags
+      .map(tag => ({ id: tag, label: tag, selected: false }));
 
-      const allMonths = generateMonths();
+    const allMonths = generateMonths();
 
-      return {
-        data: this.$options.cardData.data,
-        headerConfig: {
-          circleIcon: 'og-list',
-          heading: '&nbsp;',
-          subheading: '7. sklic parlamenta',
-          alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: 'Vloženi amandmaji',
-        },
-        cardMethod: this.$options.cardData.cardData.method,
-        cardGroup: this.$options.cardData.cardData.group,
-        textFilter: loadFromState('text') || '',
-        votingDays,
-        allTags: loadFromState('tags', allTags) || allTags,
-        allMonths: loadFromState('months', allMonths) || allMonths,
-        voteTypes: loadFromState('voteTypes', voteTypes) || voteTypes,
-      };
+    return {
+      data: this.$options.cardData.data,
+      textFilter: loadFromState('text') || '',
+      votingDays,
+      allTags: loadFromState('tags', allTags) || allTags,
+      allMonths: loadFromState('months', allMonths) || allMonths,
+      voteTypes: loadFromState('voteTypes', voteTypes) || voteTypes,
+    };
+  },
+  computed: {
+    generatedCardUrl() {
+      const state = {};
+
+      if (this.selectedTags.length > 0) {
+        state.tags = this.selectedTags;
+      }
+      if (this.selectedMonths.length > 0) {
+        state.months = this.selectedMonths;
+      }
+      if (this.selectedVoteTypes.length > 0) {
+        state.voteTypes = this.selectedVoteTypes;
+      }
+      if (this.textFilter.length > 0) {
+        state.text = this.textFilter;
+      }
+
+      return `${this.url}${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
-    computed: {
-      generatedCardUrl() {
-        const state = {};
+    filteredVotingDays() {
+      return this.getFilteredVotingDays();
+    },
+    tagPlaceholder() {
+      return this.selectedTags.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
+    },
+    monthPlaceholder() {
+      return this.selectedMonths.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
+        : this.$t('select-placeholder');
+    },
+    dropdownItems() {
+      const validTags = [];
+      const validMonths = [];
 
-        if (this.selectedTags.length > 0) state.tags = this.selectedTags;
-        if (this.selectedMonths.length > 0) state.months = this.selectedMonths;
-        if (this.selectedVoteTypes.length > 0) state.voteTypes = this.selectedVoteTypes;
-        if (this.textFilter.length > 0) state.text = this.textFilter;
-
-        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
-      },
-      filteredVotingDays() {
-        return this.getFilteredVotingDays();
-      },
-      tagPlaceholder() {
-        return this.selectedTags.length > 0 ? `Izbranih: ${this.selectedTags.length}` : 'Izberi';
-      },
-      monthPlaceholder() {
-        return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
-      },
-      dropdownItems() {
-        const validTags = [];
-        const validMonths = [];
-
-        this.getFilteredVotingDays(true).forEach((votingDay) => {
-          const monthId = formattedDateToMonthId(votingDay.date);
-          if (validMonths.indexOf(monthId) === -1) validMonths.push(monthId);
-          votingDay.results.forEach((vote) => {
-            vote.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) validTags.push(tag);
-            });
+      this.getFilteredVotingDays(true).forEach((votingDay) => {
+        const monthId = formattedDateToMonthId(votingDay.date);
+        if (validMonths.indexOf(monthId) === -1) {
+          validMonths.push(monthId);
+        }
+        votingDay.results.forEach((vote) => {
+          vote.tags.forEach((tag) => {
+            if (validTags.indexOf(tag) === -1) {
+              validTags.push(tag);
+            }
           });
         });
+      });
 
-        return {
-          tags: this.allTags
-            .filter(tag => validTags.indexOf(tag.id) > -1 || tag.selected),
-          months: this.allMonths
-            .filter(month => validMonths.indexOf(month.id) > -1 || month.selected),
-        };
-      },
-      selectedTags() {
-        return this.allTags
-          .filter(tag => tag.selected)
-          .map(tag => tag.id);
-      },
-      selectedMonths() {
-        return this.allMonths
-          .filter(month => month.selected)
-          .map(month => month.id);
-      },
-      selectedVoteTypes() {
-        return this.voteTypes
-          .filter(voteType => voteType.selected)
-          .map(voteType => voteType.id);
-      },
+      return {
+        tags: this.allTags
+          .filter(tag => validTags.indexOf(tag.id) > -1 || tag.selected),
+        months: this.allMonths
+          .filter(month => validMonths.indexOf(month.id) > -1 || month.selected),
+      };
     },
-    methods: {
-      getFilteredVotingDays(onlyFilterByText = false) {
-        const filterVotes = (vote) => {
-          const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-          const tagMatch = onlyFilterByText || this.selectedTags.length === 0 ||
-            vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-          const voteTypeMatch = onlyFilterByText || this.selectedVoteTypes.length === 0 ||
-            this.selectedVoteTypes.indexOf(vote.result) > -1;
-          return textMatch && tagMatch && voteTypeMatch;
-        };
+    selectedTags() {
+      return this.allTags
+        .filter(tag => tag.selected)
+        .map(tag => tag.id);
+    },
+    selectedMonths() {
+      return this.allMonths
+        .filter(month => month.selected)
+        .map(month => month.id);
+    },
+    selectedVoteTypes() {
+      return this.voteTypes
+        .filter(voteType => voteType.selected)
+        .map(voteType => voteType.id);
+    },
+  },
+  methods: {
+    getFilteredVotingDays(onlyFilterByText = false) {
+      const filterVotes = (vote) => {
+        const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch = onlyFilterByText
+            || this.selectedTags.length === 0
+            || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const voteTypeMatch = onlyFilterByText
+            || this.selectedVoteTypes.length === 0
+            || this.selectedVoteTypes.indexOf(vote.result) > -1;
+        return textMatch && tagMatch && voteTypeMatch;
+      };
 
-        return this.votingDays
-          .map(votingDay => ({
-            date: votingDay.date,
-            results: votingDay.results.filter(filterVotes),
-          }))
-          .filter((votingDay) => {
-            if (votingDay.results.length === 0) return false;
-            const monthId = formattedDateToMonthId(votingDay.date);
-            return onlyFilterByText || this.selectedMonths.length === 0 ||
-              this.selectedMonths.indexOf(monthId) > -1;
-          });
-      },
-      toggleVoteType(voteTypeId) {
-        const clickedResult = find(this.voteTypes, { id: voteTypeId });
-        clickedResult.selected = !clickedResult.selected;
-      },
-      measurePiwik(filter, sort, order) {
-        if (typeof measure === 'function') {
-          if (sort !== '') {
-            measure('s', 'session-sort', `${sort} ${order}`, '');
-          } else if (filter !== '') {
-            measure('s', 'session-filter', filter, '');
+      return this.votingDays
+        .map(votingDay => ({
+          date: votingDay.date,
+          results: votingDay.results.filter(filterVotes),
+        }))
+        .filter((votingDay) => {
+          if (votingDay.results.length === 0) {
+            return false;
           }
-        }
-      },
+          const monthId = formattedDateToMonthId(votingDay.date);
+          return onlyFilterByText
+              || this.selectedMonths.length === 0
+              || this.selectedMonths.indexOf(monthId) > -1;
+        });
     },
-  };
+    toggleVoteType(voteTypeId) {
+      const clickedResult = find(this.voteTypes, { id: voteTypeId });
+      clickedResult.selected = !clickedResult.selected;
+    },
+    getVoteText(vote) {
+      const text = vote.short_text || vote.text;
+      if (text.split(' ').length > 14) {
+        return `${text.split(' ').slice(0, 14).join(' ')} ...`;
+      }
+      return text;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -277,7 +347,7 @@
 
   .card-header h1,
   .card-footer h1 {
-    color: #525252;
+    color: $black;
   }
 
   #votingCard {
@@ -286,7 +356,7 @@
   }
 
   #votingCard div.member span {
-    color: #525252;
+    color: $black;
     font-weight: 500;
   }
 
@@ -304,7 +374,7 @@
     padding: 0;
 
     &:empty::after {
-      color: #c8c8c8;
+      color: $grey-medium;
       content: "Ni rezultatov.";
       left: calc(50% - 41px);
       position: absolute;
@@ -366,9 +436,6 @@
   }
 
 
-
-
-
   @media (max-width: 991px) {
     .session_voting .session_title {
       height: 93px;
@@ -379,14 +446,14 @@
 
     .border-left {
       border-left: none;
-      border-top: 2px solid #dbdbdb;
+      border-top: 2px solid $darkgrey;
     }
 
     .single_voting {
       padding-bottom: 15px;
       &:hover {
         .border-left {
-          border-top-color: #cadde6;
+          border-top-color: $funblue-light;
         }
       }
     }
@@ -395,8 +462,8 @@
   .single_voting {
     position: relative;
     &:hover {
-      background-color: #e1f6ff;
-      .border-left { border-left-color: #cadde6; }
+      background-color: $funblue-light-hover;
+      .border-left { border-left-color: $funblue-light; }
     }
   }
 
@@ -409,7 +476,7 @@
   }
 
   .seja_anchor:hover {
-    color: #525252;
+    color: $black;
   }
 
   .card-content-front {
@@ -489,11 +556,12 @@
   }
 </style>
 <style lang="scss">
+@import '~parlassets/scss/colors';
   .card-glasovanja-seja {
     .search-dropdown-input {
       padding-top: 11px;
       padding-bottom: 11px;
-      background-color: #ffffff;
+      background-color: $white;
     }
 
     .search-dropdown-options { top: 50px; }

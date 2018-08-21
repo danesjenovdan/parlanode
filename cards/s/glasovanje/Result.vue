@@ -13,8 +13,22 @@
 import DonutChart from 'components/DonutChart.vue';
 
 export default {
-  name: 'GlasovanjeSeje_Result',
+  name: 'GlasovanjeSejeResult',
   components: { DonutChart },
+  props: {
+    chartData: {
+      type: Array,
+      default: () => [],
+    },
+    option: {
+      type: String,
+      default: '',
+    },
+    score: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
       votes: [
@@ -36,11 +50,6 @@ export default {
         cant_compute: 'ni večinskega glasu',
       }[this.option];
     },
-  },
-  props: {
-    chartData: Array,
-    option: String,
-    score: Number,
   },
 };
 </script>
@@ -64,7 +73,7 @@ export default {
     margin: 0 8px 0 40px;
     width: 58px;
 
-    $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
+    $icon-path: "#{getConfig('urls.cdn')}/icons";
     &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
     &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
     &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }

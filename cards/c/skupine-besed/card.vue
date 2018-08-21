@@ -4,56 +4,58 @@
     :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <div id="skupine-besed">
       <text-frame>
-        <p>Pokaži mi, kdo največ omenja naslednjo skupino besed:
-          <tag
-            v-for="(word, index) in words"
-            :key="index + word"
-            :text="word"
-            @click="removeWord(word)"
-          />
-          <plus @click="toggleModal(true)" />
-          <load-link
-            text="Naloži"
-            @click="loadResults(true)"
-          />
-        </p>
+        <i18n path="wordgroups-text" tag="p">
+          <span place="words">
+            <tag
+              v-for="(word, index) in words"
+              :key="index + word"
+              :text="word"
+              @click="removeWord(word)"
+            />
+            <plus @click="toggleModal(true)" />
+          </span>
+          <span place="load">
+            <load-link
+              :text="$t('load')"
+              @click="loadResults(true)"
+            />
+          </span>
+        </i18n>
         <div class="row extras">
           <div class="col-xs-12">
             <div class="searchfilter-checkbox">
               <input
                 id="rev"
+                :checked="showRelative"
                 type="checkbox"
                 class="checkbox"
                 @click="changeShowRelative"
-                :checked="showRelative">
-              <label for="rev">Prikaži relativno metriko</label>
+              >
+              <label v-t="'show-relative'" for="rev"></label>
             </div>
           </div>
         </div>
       </text-frame>
 
-      <p-tabs @switch="focusTab" :start-tab="selectedTab">
-        <p-tab label="Govorci">
+      <p-tabs :start-tab="selectedTab" @switch="focusTab">
+        <p-tab :label="$t('speakers')">
           <scroll-shadow ref="shadow">
             <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
               <bar-chart
                 v-if="results.people.length"
                 :data="showRelative ? resultsRelative.people : results.people"
-                show-numbers
                 :show-percentage="!showRelative"
+                show-numbers
                 flexible-labels
               />
               <empty-circle
@@ -63,14 +65,14 @@
             </div>
           </scroll-shadow>
         </p-tab>
-        <p-tab label="Poslanske skupine">
+        <p-tab :label="$t('parties')">
           <scroll-shadow ref="shadowPS">
             <div class="results" @scroll="$refs.shadowPS.check($event.currentTarget)">
               <bar-chart
                 v-if="results.parties.length"
                 :data="showRelative ? resultsRelative.parties: results.parties"
-                show-numbers
                 :show-percentage="!showRelative"
+                show-numbers
                 flexible-labels
               />
               <empty-circle
@@ -84,12 +86,12 @@
 
       <modal
         v-if="modalShown"
-        header="Vnesi posamezno besedo ali več besed, ločenih z vejico."
-        button="Potrdi"
+        :header="$t('input-words')"
+        :button="$t('confirm')"
         @close="toggleModal(false)"
         @ok="toggleModal(false, true)"
       >
-        <search-field v-model="modalInputText" @enter="toggleModal(false, true)"/>
+        <search-field v-model="modalInputText" @enter="toggleModal(false, true)" />
       </modal>
     </div>
   </card-wrapper>
@@ -97,8 +99,9 @@
 
 <script>
 import axios from 'axios';
-import { getPersonPortrait, getPartyLink, getPersonLink } from 'components/links';
-
+import links from 'mixins/links';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import BarChart from 'components/BarChart.vue';
@@ -114,6 +117,7 @@ import TextFrame from 'components/TextFrame.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 export default {
+  name: 'SkupineBesed',
   components: {
     BarChart,
     EmptyCircle,
@@ -127,21 +131,18 @@ export default {
     TextFrame,
     ScrollShadow,
   },
-  mixins: [common],
-  name: 'SkupineBesed',
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
     return {
       data: this.$options.cardData.data,
-      emptyText: 'Za prikaz rezultatov dodaj vsaj dve besedi.',
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      emptyText: this.$t('empty-text'),
+      headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
       showRelative: loadFromState('showRelative') || false,
       modalShown: false,
       modalInputText: '',
@@ -176,6 +177,11 @@ export default {
       return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
     },
   },
+  mounted() {
+    if (this.words.length) {
+      this.loadResults();
+    }
+  },
   methods: {
     focusTab(tab) {
       this.selectedTab = tab;
@@ -209,7 +215,7 @@ export default {
       if (this.words.length < 2 || this.loading) {
         if (user) {
           // eslint-disable-next-line no-alert
-          alert('Dodaj vsaj dve besedi.');
+          alert(this.$t('empty-text'));
         }
         return;
       }
@@ -221,7 +227,7 @@ export default {
         .map(encodeURIComponent)
         .join('+');
 
-      axios.get(`https://isci.parlameter.si/q/${query}`)
+      axios.get(`${this.slugs.urls.isci}/q/${query}`)
         .then((response) => {
           const scoreHigherThanZero = i => i.score > 0;
 
@@ -232,7 +238,7 @@ export default {
               label: party.party.acronym,
               // eslint-disable-next-line max-len
               value: Number((party.score / (this.data.orgs[party.party.id] / this.data.all_speeches)).toFixed(4) || 0),
-              link: this.getPartyLink(party.party),
+              link: this.getPartyLinkSafe(party.party),
             }));
 
           const people = response.data.facet_counts.facet_fields.speaker_i
@@ -254,7 +260,7 @@ export default {
               label: party.party.acronym,
               // eslint-disable-next-line max-len
               value: party.score,
-              link: this.getPartyLink(party.party),
+              link: this.getPartyLinkSafe(party.party),
             }));
 
           const people2 = response.data.facet_counts.facet_fields.speaker_i
@@ -272,22 +278,16 @@ export default {
           this.loading = false;
         });
     },
-    getPartyLink(party) {
-      return party.id === -1 ? '' : getPartyLink(party);
+    getPartyLinkSafe(party) {
+      return party.id === -1 ? '' : this.getPartyLink(party);
     },
-    getPersonLink,
-    getPersonPortrait,
-  },
-  mounted() {
-    if (this.words.length) {
-      this.loadResults();
-    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/colors';
 
 .results {
   height: 400px;
@@ -316,12 +316,12 @@ export default {
   }
 
   .checkbox + label:before {
-    background-color: #f0f5f8;
+    background-color: $grey;
   }
 
   .checkbox + label {
     font-size: 11px;
-    color: #555555;
+    color: $black;
     white-space: nowrap;
   }
 }

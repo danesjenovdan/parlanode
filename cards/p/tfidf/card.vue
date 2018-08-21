@@ -1,45 +1,54 @@
 <template>
   <card-wrapper
-    contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+    content-height="518px"
+  >
     <div slot="info">
-      <p class="info-text lead">Izpis 10 besed in besednih zvez, ki jih {{ vocabulary.poslanec[gender] }} uporablja pogosteje kot ostali poslanci v DZ.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Analizo izvajamo po statistiki <a href="https://en.wikipedia.org/wiki/Tf-idf">tf-idf</a>.</p>
-      <p class="info-text">Korpus predstavljajo vsi govori, dokument pa vsi {{ vocabulary.poslanca3[gender] }} govori.</p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <i18n path="info.text[0]" tag="p" class="info-text">
+        <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
+      <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <div v-else class="empty-dataset">Brez govorov.</div>
+    <div v-t="'no-speeches'" v-else class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
 <script>
-import { getSearchTermLink } from 'components/links';
+import links from 'mixins/links';
 import common from 'mixins/common';
+import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import { memberSpeeches } from 'mixins/contextUrls';
 import BarChart from 'components/BarChart.vue';
 
 export default {
-  components: { BarChart },
-  mixins: [common, memberSpeeches],
   name: 'PoslanecTFIDF',
+  components: {
+    BarChart,
+  },
+  mixins: [
+    common,
+    memberSpeeches,
+    memberHeader,
+    memberOgImage,
+    links,
+  ],
   data() {
-    const { gender } = this.$options.cardData.data.person;
-
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: `Besede, ki ${gender === 'm' ? 'ga' : 'jo'} zaznamujejo`,
-      },
-      gender,
     };
   },
   computed: {
@@ -47,29 +56,12 @@ export default {
       return this.data.results.map(item => ({
         label: item.term,
         value: Math.round(item.scores['tf-idf'] * 5000),
-        link: getSearchTermLink(item.term),
+        link: this.getSearchTermLink(item.term),
       }));
     },
     generatedCardUrl() {
       return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
     },
-  },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
-  created() {
-    const context = this.$root.$options.cardData;
-    const pronoun = context.data.person.gender === 'f' ? 'jo' : 'ga';
-    context.template.pageTitle =
-      `Besede, ki ${pronoun} zaznamujejo - ${context.data.person.name}`;
   },
 };
 </script>

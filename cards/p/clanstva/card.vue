@@ -2,12 +2,21 @@
   <card-wrapper
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Izpis vseh članstev {{ vocabulary.poslanec3[data.person.gender] }} v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Podatki o članstvih pridobljeni s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
     </div>
 
     <div class="memberships">
@@ -28,21 +37,28 @@
 <script>
 import { reduce } from 'lodash';
 import common from 'mixins/common';
-import { memberOverview as memberOverviewUrl } from 'mixins/contextUrls';
-import { member as memberAltHeader } from 'mixins/altHeaders';
+import { memberOverview } from 'mixins/contextUrls';
+import { memberHeader } from 'mixins/altHeaders';
+import { memberOgImage } from 'mixins/ogImages';
 import { memberTitle } from 'mixins/titles';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import MembershipList from 'components/MembershipList.vue';
 
 export default {
+  name: 'Clanstva',
   components: {
     PTab,
     PTabs,
     MembershipList,
   },
-  mixins: [common, memberAltHeader, memberOverviewUrl, memberTitle],
-  name: 'Clanstva',
+  mixins: [
+    common,
+    memberHeader,
+    memberOgImage,
+    memberOverview,
+    memberTitle,
+  ],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -50,6 +66,7 @@ export default {
   },
   computed: {
     tabs() {
+      // TODO: i18n, this is so specific for slo parliament check later
       const membershipTabMap = {
         odbor: 'Delovna telesa',
         kolegij: 'Delovna telesa',

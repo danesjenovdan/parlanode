@@ -1,27 +1,22 @@
 <template>
   <card-wrapper
-    contentHeight="518px"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam 5 poslancev, ki največkrat glasujejo enako kot "glas poslanske skupine". Razvrščeni so glede na vrednosti od najmanjše proti največji. Manjša kot je vrednost, večje je ujemanje glasovanj.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Izračunamo evklidsko razdaljo med rezultati glasovanj poslanske skupine in rezultati vseh ostalih poslancev (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).
-      </p>
-      <p class="info-text">
-        Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text[0]'" class="info-text"></p>
+      <p v-t="'info.text[1]'" class="info-text"></p>
       <div class="info-text">
-        Številčne vrednosti glasov
-        <ul class="info-text">
-          <li>-1: proti</li>
-          <li>0: vzdržan/-a ali ni prisoten/-na</li>
-          <li>1: za</li>
+        <span v-t="'info.text[2]'"></span>
+        <ul>
+          <li v-t="'info.list[0]'"></li>
+          <li v-t="'info.list[1]'"></li>
+          <li v-t="'info.list[2]'"></li>
         </ul>
       </div>
     </div>
@@ -33,14 +28,22 @@
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
+import { partyHeader } from 'mixins/altHeaders';
+import { partyOgImage } from 'mixins/ogImages';
 import PersonList from 'components/PersonList.vue';
 
 export default {
+  name: 'NajveckratGlasujejoEnako',
   components: {
     PersonList,
   },
-  mixins: [common, partyOverview, partyTitle],
-  name: 'NajveckratGlasujejoEnako',
+  mixins: [
+    common,
+    partyOverview,
+    partyTitle,
+    partyHeader,
+    partyOgImage,
+  ],
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;
@@ -52,15 +55,6 @@ export default {
       data: this.$options.cardData.data,
       party,
       people,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: party.name,
-        subheading: `${party.acronym} | ${party.is_coalition ? 'koalicija' : 'opozicija'}`,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-        circleText: party.acronym,
-        circleClass: `${party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
-      },
     };
   },
   computed: {

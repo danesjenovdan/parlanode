@@ -1,30 +1,46 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 2 2`">
+  <svg :viewBox="`0 0 2 2`" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <mask :id="`donut-hole${_uid}`">
-        <circle cx="1" cy="1" r="1" fill="white" />
-        <circle cx="1" cy="1" r="0.7" fill="black" />
+        <circle
+          cx="1"
+          cy="1"
+          r="1"
+          fill="white"
+        />
+        <circle
+          cx="1"
+          cy="1"
+          r="0.7"
+          fill="black"
+        />
       </mask>
     </defs>
+    <!-- eslint-disable max-len -->
     <path
       v-for="sector in sectors"
       :fill="sector.color"
       :d="`M${sector.L},${sector.L} L${sector.L},0 A${sector.L},${sector.L} 0 ${sector.arcSweep},1 ${sector.X}, ${sector.Y} z`"
       :transform="`rotate(${sector.R}, ${sector.L}, ${sector.L})`"
       :mask="`url(#donut-hole${_uid})`"
+      :key="sector.color"
     />
+    <!-- eslint-enable max-len -->
   </svg>
 </template>
 
 <script>
 export default {
   name: 'DonutChart',
+  props: {
+    sectionData: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data: () => ({
     size: 100,
   }),
-  props: {
-    sectionData: Array,
-  },
   computed: {
     sectors() {
       let a = 0; // Angle
@@ -40,7 +56,9 @@ export default {
 
       return this.sectionData.map((item) => {
         a = 360 * item.percentage;
-        if (a === 360) a = 359.999;
+        if (a === 360) {
+          a = 359.999;
+        }
         aCalc = (a > 180) ? 360 - a : a;
         aRad = (aCalc * Math.PI) / 180;
         z = Math.sqrt(2 - (2 * Math.cos(aRad)));

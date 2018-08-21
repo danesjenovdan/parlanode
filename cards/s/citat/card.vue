@@ -3,26 +3,36 @@
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
-      <p class="info-text">
-        Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu <a href="http://www.dz-rs.si" target="_blank" class="funblue-light-hover">DZ RS</a>, strojno razbijemo na posamezne govorne nastope. To je kartica, ki predstavlja en govor.
-      </p>
+      <i18n path="info.text" tag="p" class="info-text">
+        <a
+          v-t="'info.link.text'"
+          :href="$t('info.link.link')"
+          place="link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
     </div>
 
-    <speech :speech="data" v-quotable show-session />
+    <speech v-quotable :speech="data" show-session />
   </card-wrapper>
 </template>
 
 <script>
 import common from 'mixins/common';
 import { memberTitle } from 'mixins/titles';
+import { sessionHeader } from 'mixins/altHeaders';
+import { sessionOgImage } from 'mixins/ogImages';
 import Speech from 'components/Speech.vue';
 
 function getSelected() {
   if (window.getSelection) {
     return window.getSelection();
-  } else if (document.getSelection) {
+  }
+  if (document.getSelection) {
     return document.getSelection();
   }
   const selection = document.selection && document.selection.createRange();
@@ -35,37 +45,9 @@ function getSelected() {
 let selectElement;
 
 export default {
+  name: 'Govori',
   components: {
     Speech,
-  },
-  mixins: [
-    common,
-    memberTitle,
-  ],
-  name: 'Govori',
-  data() {
-    const sessionName = this.$options.cardData.data.results.session.name;
-    let imageName = 'seja-redna';
-    if (sessionName.indexOf('izredna') !== -1) {
-      imageName = 'seja-izredna';
-    } else if (sessionName.indexOf('nujna') !== -1) {
-      imageName = 'seja-nujna';
-    }
-    return {
-      data: this.$options.cardData.data,
-      headerConfig: {
-        mediaImage: imageName,
-        heading: this.$options.cardData.data.results.session.name,
-        subheading: this.$options.cardData.data.results.session.date,
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-    };
-  },
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
-    },
   },
   directives: {
     quotable(elem) {
@@ -81,7 +63,9 @@ export default {
         .on('mouseup', (event) => {
           event.preventDefault();
           $(document).find('.everything .quote-button').hide();
-          if (selectElement !== event.currentTarget) return;
+          if (selectElement !== event.currentTarget) {
+            return;
+          }
 
           const selection = getSelected();
 
@@ -108,15 +92,31 @@ export default {
           const allText = cardElement.find('.mywords').val();
           const startIndex = allText.indexOf(selectedText);
           const endIndex = startIndex + selectedText.length;
-          const url = `https://analize.parlameter.si/v1/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
+          const url = `${this.slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
           $.ajax({
             url,
             async: false,
             dataType: 'json',
-            success: result => window.open(`https://glej.parlameter.si/s/citat/${result.id}?frame=true`),
+            success: result => window.open(`${this.slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
+    },
+  },
+  mixins: [
+    common,
+    memberTitle,
+    sessionHeader,
+    sessionOgImage,
+  ],
+  data() {
+    return {
+      data: this.$options.cardData.data,
+    };
+  },
+  computed: {
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
     },
   },
 };

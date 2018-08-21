@@ -4,7 +4,8 @@
       v-for="(optionLabel, optionValue) in options"
       :key="optionValue"
       :class="['option', { 'is-selected' : optionValue === value }]"
-      @click="handleClick(optionValue)">
+      @click="handleClick(optionValue)"
+    >
       {{ optionLabel }}
     </div>
   </div>
@@ -14,8 +15,14 @@
 export default {
   name: 'Toggle',
   props: {
-    options: Object,
-    value: [String, Number, Boolean],
+    options: {
+      type: Object,
+      default: () => ({}),
+    },
+    value: {
+      type: [String, Number, Boolean],
+      default: '',
+    },
   },
   methods: {
     handleClick(newValue) {
@@ -37,7 +44,7 @@ export default {
   .option {
     align-items: center;
     background: $funblue-light;
-    color: #333;
+    color: $grey-dark;
     cursor: pointer;
     flex: 1;
     text-align: center;

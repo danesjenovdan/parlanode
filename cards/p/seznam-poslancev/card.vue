@@ -1,96 +1,140 @@
 <template>
-  <div
-    v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-    :id="$options.cardData.cardData._id">
-    <div class="party-list-generator">
-      <div class="row">
-        <div class="col-md-12">
-          <blue-button-list
-            :items="analyses"
-            v-model="currentAnalysis" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 filters">
-          <div class="parties filter">
-            <striped-button
-              class="party"
-              v-for="party in parties"
-              @click.native="selectParty(party.acronym)"
-              :color="party.color"
-              :key="party.acronym"
-              :selected="selectedParties.indexOf(party.acronym) > -1"
-              :small-text="party.acronym"
-              :is-uppercase="false"
-              stripe-position="bottom"
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator" class="party-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="analyses"
+              v-model="currentAnalysis"
             />
           </div>
-          <search-field class="filter text-filter" v-model="textFilter" />
-          <p-search-dropdown
-            class="filter district-filter"
-            :items="districts"
-            :placeholder="districtPlaceholder"
-          />
-          <div class="genders filter">
-            <striped-icon-button
-              class="gender"
-              v-for="gender in genders"
-              :color="'funblue'"
-              :key="gender.id"
-              :selected="selectedGenders.indexOf(gender.id) > -1"
-              :icon="gender.id"
-              :stripe-position="'top'"
-              @click.native="selectGender(gender.id)">
-            </striped-icon-button>
+        </div>
+        <div class="row">
+          <div class="col-md-12 filters">
+            <search-field v-model="textFilter" class="filter text-filter" />
+            <p-search-dropdown
+              :items="parties"
+              :placeholder="partiesPlaceholder"
+              class="filter parties"
+            />
+            <p-search-dropdown
+              :items="districts"
+              :placeholder="districtPlaceholder"
+              class="filter district-filter"
+            />
+            <div class="genders filter">
+              <striped-icon-button
+                v-for="gender in genders"
+                :color="'funblue'"
+                :key="gender.id"
+                :selected="selectedGenders.indexOf(gender.id) > -1"
+                :icon="gender.id"
+                :stripe-position="'top'"
+                class="gender"
+                @click.native="selectGender(gender.id)"
+              />
+            </div>
           </div>
-
         </div>
       </div>
-
-
-      <div class="row">
-        <div class="col-md-12">
-          <inner-card
-            v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
-            :demographics="currentAnalysis === 'demographics'"
-            @sort="sortBy"
-          />
+      <inner-card
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+        :generated-card-url="generatedCardUrl"
+        :current-analysis-data="currentAnalysisData"
+        :processed-members="processedMembers"
+        :current-sort="currentSort"
+        :current-sort-order="currentSortOrder"
+        :demographics="currentAnalysis === 'demographics'"
+        @sort="sortBy"
+      >
+        <div slot="info">
+          <i18n path="info.lead" tag="p" class="info-text lead">
+            <span place="parties">
+              <span v-if="selectedParties.length">
+                {{ $t('party') }}: {{ selectedParties.map(p => p.acronym).join(', ') }}
+              </span>
+              <span v-t="'all-parties'" v-else></span>
+            </span>
+            <span place="districts">
+              <span v-if="selectedDistrictNames.length">
+                {{ $t('voting-district') }}: {{ selectedDistrictNames.join(', ') }}
+              </span>
+              <span v-t="'all-voting-districts'" v-else></span>
+            </span>
+            <span place="sortBy">{{ sortMap[currentSort] }}</span>
+          </i18n>
+          <template v-if="currentAnalysisData.explanation">
+            <p v-t="'info.methodology'" class="info-text heading"></p>
+            <p class="info-text">{{ currentAnalysisData.explanation }}</p>
+          </template>
         </div>
-      </div>
-    </div>
+      </inner-card>
+    </generator>
   </div>
-  <inner-card v-else
-    v-bind="{ headerConfig, generatedCardUrl, currentAnalysisData, processedMembers, currentSort, currentSortOrder, infoText }"
-    :demographics="currentAnalysis === 'demographics'"
-    @sort="sortBy"
-  />
 </template>
 
 <script>
 import { find } from 'lodash';
-
+import { parse, differenceInCalendarYears } from 'date-fns';
+import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
-import urlFunctionalities from 'mixins/urlFunctionalities';
+import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import SearchField from 'components/SearchField.vue';
-import StripedButton from 'components/StripedButton.vue';
 import StripedIconButton from 'components/StripedIconButton.vue';
-import analyses from './analyses.json';
 import InnerCard from './InnerCard.vue';
 
+function getAge(date) {
+  if (!date) {
+    return 0;
+  }
+  return differenceInCalendarYears(new Date(), parse(date));
+}
+
+const analysesIDs = [
+  {
+    id: 'demographics',
+  },
+  {
+    id: 'presence_votes',
+    round: true,
+    unit: 'percent',
+  },
+  {
+    id: 'number_of_questions',
+    round: true,
+    roundingPrecision: 0,
+  },
+  {
+    id: 'speeches_per_session',
+  },
+  {
+    id: 'spoken_words',
+  },
+  {
+    id: 'mismatch_of_pg',
+  },
+];
+
 export default {
+  name: 'SeznamPoslancev',
   components: {
+    Generator,
     BlueButtonList,
     InnerCard,
     PSearchDropdown,
     SearchField,
-    StripedButton,
     StripedIconButton,
   },
-  mixins: [urlFunctionalities],
-  name: 'SeznamPoslancev',
+  mixins: [
+    common,
+  ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
@@ -106,6 +150,13 @@ export default {
       { id: 'f', label: 'ženski', selected: false },
     ];
 
+    const analyses = analysesIDs.map(a => ({
+      id: a.id,
+      label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
+      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
+      explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
+    }));
+
     return {
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
@@ -113,7 +164,7 @@ export default {
       currentSortOrder: loadFromState('sortOrder') || 'asc',
       analyses,
       parties: [],
-      selectedParties: loadFromState('parties') || [],
+      selectedPartiesState: loadFromState('parties') || [],
       textFilter: '',
       districts,
       genders,
@@ -126,56 +177,32 @@ export default {
         .filter(district => district.selected)
         .map(district => district.label);
     },
-    infoText() {
-      const parties = this.selectedParties.length
-        ? `poslanska skupina: ${this.selectedParties.join(', ')}`
-        : 'vse poslanske skupine';
-      const districts = this.selectedDistrictNames.length
-        ? `volilni okraj: ${this.selectedDistrictNames.join(', ')}`
-        : 'vsi volilni okraji';
-      const firstLine = `Množica vseh trenutno aktivnih poslancev, ki ustrezajo
-        uporabniškemu vnosu (${parties}; ${districts}).`;
-
-      const sortMap = {
-        name: 'abecedi',
-        district: 'okrajih',
-        party: 'poslanskih skupinah',
-        analysis: `rezultatu analize ${this.currentAnalysisData.label}`,
-        change: `aktualni spremembi v rezultatu analize ${this.currentAnalysisData.label}`,
-        age: 'starosti',
-        education: 'stopnji izobrazbe',
-        terms: 'številu mandatov',
-      };
-
-      const secondLine = `Seznam je sortiran po ${sortMap[this.currentSort]}.`;
-      const thirdLine = this.currentAnalysisData.explanation
-        ? `<p class="info-text heading">METODOLOGIJA</p>
-           <p class="info-text">${this.currentAnalysisData.explanation}</p>`
-        : '';
-
-      return `<p class="info-text lead">
-                ${firstLine}
-                ${secondLine}
-              </p>
-              ${thirdLine}`;
-    },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
+    partiesPlaceholder() {
+      return this.selectedParties.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedParties.length })
+        : this.$t('select-parties-placeholder');
+    },
     districtPlaceholder() {
-      if (this.selectedDistricts.length > 0) {
-        return `Izbranih: ${this.selectedDistricts.length}`;
-      }
-      return 'Izberi okraj';
+      return this.selectedDistricts.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedDistricts.length })
+        : this.$t('select-district-placeholder');
     },
     headerConfig() {
-      return {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: `${this.$options.cardData.cardData.name} ${this.currentAnalysisData.titleSuffix}`,
-      };
+      return defaultHeaderConfig(this, {
+        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+      });
+    },
+    ogConfig() {
+      return defaultOgImage(this, {
+        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+      });
+    },
+    selectedParties() {
+      return this.parties
+        .filter(party => party.selected);
     },
     selectedDistricts() {
       return this.districts
@@ -195,7 +222,8 @@ export default {
         parameters.sortOrder = this.currentSortOrder;
       }
       if (this.selectedParties.length > 0) {
-        parameters.parties = this.selectedParties;
+        parameters.parties = this.selectedParties
+          .map(party => party.acronym);
       }
       if (this.selectedGenders.length > 0) {
         parameters.genders = this.selectedGenders;
@@ -203,14 +231,16 @@ export default {
 
       return parameters;
     },
+    generatedCardUrl() {
+      const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
+      return `${this.url}?altHeader=true${state}`;
+    },
     processedMembers() {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
-        analysisMax = this.memberData.reduce(
-          (biggest, member) =>
-            Math.max(biggest, (member.results[this.currentAnalysis].score || 0)),
-          0,
-        );
+        analysisMax = this.memberData.reduce((biggest, member) => (
+          Math.max(biggest, (member.results[this.currentAnalysis].score || 0))
+        ), 0);
       }
 
       const sortedAndFiltered = this.memberData
@@ -225,14 +255,13 @@ export default {
               .indexOf(this.textFilter.toLowerCase()) > -1;
           }
           if (this.selectedParties.length > 0) {
-            partyMatch = this.selectedParties.indexOf(member.person.party.acronym) > -1;
+            partyMatch = this.selectedParties
+              .find(p => p.id === member.person.party.id) != null;
           }
           if (this.selectedDistricts.length > 0) {
-            districtMatch = member.person.district.reduce(
-              (prevMatch, memberDistrict) =>
-                prevMatch || this.selectedDistricts.indexOf(String(memberDistrict)) > -1,
-              false,
-            );
+            districtMatch = member.person.district.reduce((prevMatch, memberDistrict) => (
+              prevMatch || this.selectedDistricts.indexOf(String(memberDistrict)) > -1
+            ), false);
           }
           if (this.selectedGenders.length > 0) {
             genderMatch = this.selectedGenders.indexOf(member.person.gender) > -1;
@@ -242,17 +271,16 @@ export default {
         })
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
-          if (newMember.person.district.length === 0) {
-            newMember.formattedDistrict = 'okraj ni vnešen';
+          if (!newMember.person.district || !newMember.person.district.length) {
+            newMember.formattedDistrict = this.$t('missing-district');
           } else {
             newMember.formattedDistrict = newMember.person.district
-              .map(memberDistrict =>
-                find(this.districts, { id: String(memberDistrict) }).label)
+              .map(memberDistrict => find(this.districts, { id: String(memberDistrict) }).label)
               .join(', ');
           }
 
-          newMember.partylink = newMember.person.party.acronym.indexOf('NeP') === -1;
-          newMember.age = (newMember.results.age && newMember.results.age.score) || '';
+          newMember.partylink = newMember.person.party.acronym && newMember.person.party.acronym.indexOf('NeP') === -1;
+          newMember.age = getAge(newMember.results.birth_date && newMember.results.birth_date.score) || '';
           const education = newMember.results.education && newMember.results.education.score;
           newMember.education = parseInt(education || 0, 10);
           newMember.terms = newMember.results.mandates.score || 1;
@@ -302,25 +330,42 @@ export default {
 
       return sortedAndFiltered;
     },
+    sortMap() {
+      return {
+        name: this.$t('sort-by--name'),
+        district: this.$t('sort-by--district'),
+        party: this.$t('sort-by--party'),
+        analysis: this.$t('sort-by--analysis', { analysis: this.currentAnalysisData.label }),
+        change: this.$t('sort-by--change', { analysis: this.currentAnalysisData.label }),
+        age: this.$t('sort-by--age'),
+        education: this.$t('sort-by--education'),
+        terms: this.$t('sort-by--terms'),
+      };
+    },
+  },
+  watch: {
+    currentAnalysis(newValue) {
+      if (newValue === 'demographics') {
+        this.currentSort = 'name';
+        this.currentSortOrder = 'asc';
+      } else {
+        this.currentSort = 'analysis';
+        this.currentSortOrder = 'desc';
+      }
+    },
+  },
+  created() {
+    axios.get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
+      .then((response) => {
+        this.parties = response.data.data.map(party => ({
+          id: party.party.id,
+          label: party.party.name,
+          acronym: party.party.acronym,
+          selected: this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
+        }));
+      });
   },
   methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-    selectParty(id) {
-      const position = this.selectedParties.indexOf(id);
-      if (position > -1) {
-        this.selectedParties.splice(position, 1);
-      } else {
-        this.selectedParties.push(id);
-      }
-    },
     selectGender(id) {
       const position = this.selectedGenders.indexOf(id);
       if (position > -1) {
@@ -338,26 +383,6 @@ export default {
       }
     },
   },
-  watch: {
-    currentAnalysis(newValue) {
-      if (newValue === 'demographics') {
-        this.currentSort = 'name';
-        this.currentSortOrder = 'asc';
-      } else {
-        this.currentSort = 'analysis';
-        this.currentSortOrder = 'desc';
-      }
-    },
-  },
-  created() {
-    const that = this;
-    $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', (response) => {
-      that.parties = response.data.map(party => ({
-        acronym: party.party.acronym,
-        color: party.party.acronym.toLowerCase().replace(/ /g, '_'),
-      }));
-    });
-  },
 };
 </script>
 
@@ -367,31 +392,33 @@ export default {
 .blue-button-list-item {
   font-size: 12px;
 }
+
 .filters {
   display: flex;
+  margin-top: 14px;
 
-  .filter {
-    margin-left: 3px;
+  .filter:not(:first-child) {
+    margin: 0 0 0 3px;
     flex: 1;
   }
+
   .text-filter {
     &.search-field {
       height: 58px;
     }
   }
-  .parties {
-    display: flex;
-    flex: 3;
-    .party {
-      flex: 1;
-      &:not(:last-child) { margin-right: 3px; }
-    }
+
+  .filter.search-field {
+    flex: 1.5;
   }
-  .genders {
+
+  .filter.genders {
     display: flex;
     flex: 0;
+
     .gender {
       width: 40px;
+
       &:not(:last-child) {
         margin-right: 3px;
       }
@@ -401,12 +428,14 @@ export default {
   @include respond-to(mobile) {
     flex-wrap: wrap;
 
-    .parties {
-      flex: 1 1 100%;
+    .filter.search-field {
+      flex-basis: auto;
+      order: 1;
+      margin-top: 5px;
+    }
 
-      .party {
-        margin-bottom: 10px;
-      }
+    .filter.parties {
+      margin: 0;
     }
 
     .district-filter  {

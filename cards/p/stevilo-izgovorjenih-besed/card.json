@@ -1,11 +1,7 @@
 {
   "_id": "p_stevilo-izgovorjenih-besed",
-  "name": "Število izgovorjenih besed",
-  "type": "poslanec",
-  "dataUrl": "https://analize.parlameter.si/v1/p/getNumberOfSpokenWords",
-  "lastUpdate": "2018-07-25T14:43:52.663Z",
-  "method": "stevilo-izgovorjenih-besed",
-  "group": "p",
+  "dataUrl": "{analize}/p/getNumberOfSpokenWords",
+  "lastUpdate": "2018-07-27T14:59:13.218Z",
   "big": false,
   "high": false
 }

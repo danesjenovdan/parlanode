@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "The number of amendments introduced"
+  },
+  "info": {
+    "lead": "The number of amendments the parliamentary group introduced, compared to maximum and average value of amendments per parliamentary groups.",
+    "text": "We identify the number of parliamentary groups' MPs by counting all of their currently active members. The information regarding that is retrieved from the web page {link}.",
+    "link": {
+      "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
+      "text": "National Assembly of the Republic of Slovenia"
+    }
+  }
+}

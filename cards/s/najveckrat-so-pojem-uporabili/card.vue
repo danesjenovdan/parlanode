@@ -1,17 +1,15 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam 5 poslancev, ki so iskalni niz največkrat uporabili, razvrščen od največje proti najmanjši vrednosti.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Preštejemo, kolikokrat je posamezni/-a poslanec/-ka izrekel/-a iskani niz in osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev. Prikažemo jih pet z največ rezultati.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <person-list :people="people" :show-party-link="true" />
@@ -19,50 +17,62 @@
 </template>
 
 <script>
+import axios from 'axios';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
+import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
 import PersonList from 'components/PersonList.vue';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
+  name: 'NajveckratSoPojemUporabili',
   components: {
     PersonList,
   },
   mixins: [
     common,
     searchTitle,
+    searchHeader,
+    searchOgImage,
   ],
-  name: 'NajvečkratSoPojemUporabili',
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1];
-    const { data } = this.$options.cardData;
-    const people = data.facet_counts.facet_fields.speaker_i
-      .map((o) => {
-        const { person } = o;
-        person.score = `${Math.round(o.score)}`;
-        return person;
-      })
-      .slice(0, 5);
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-      keywords,
-      people,
+      keywords: loadFromState('query'),
+      loading: true,
+      people: null,
     };
   },
   computed: {
     generatedCardUrl() {
-      const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/q/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      const state = { query: this.keywords };
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        const people = res.data.facet_counts.facet_fields.speaker_i
+          .map((o) => {
+            const { person } = o;
+            person.score = `${Math.round(o.score)}`;
+            return person;
+          })
+          .slice(0, 5);
+        this.people = people;
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
 };
 </script>

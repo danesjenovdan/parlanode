@@ -1,101 +1,101 @@
 <template>
-  <div
-    v-if="$options.cardData.parlaState && $options.cardData.parlaState.generator"
-    :id="$options.cardData.cardData._id">
-    <div class="session-list-generator">
-      <div class="row">
-        <div class="col-md-12 filters">
-          <ul class="button-filters">
-            <striped-button
-              v-for="(filter, index) in filters"
-              @click.native="selectFilter(filter)"
-              color="sds"
-              :key="index"
-              :selected="filter === currentFilter"
-              :small-text="filter"
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator" class="session-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              :items="filters"
+              v-model="currentFilter"
             />
-          </ul>
-
-          <p-search-dropdown
-            class="dropdown-filter"
-            :items="workingBodies"
-            :placeholder="inputPlaceholder"
-          />
-
-          <div class="align-checkbox">
-            <input id="justFive" type="checkbox" v-model="justFive" class="checkbox" />
-            <label for="justFive">Samo zadnjih 5</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 filters">
+            <p-search-dropdown
+              :items="workingBodies"
+              :placeholder="inputPlaceholder"
+              class="dropdown-filter"
+            />
+            <div class="align-checkbox">
+              <input
+                id="justFive"
+                v-model="justFive"
+                type="checkbox"
+                class="checkbox"
+              >
+              <label v-t="'just-last-five'" for="justFive"></label>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <inner-card
-            :header-config="headerConfig"
-            :columns="columns"
-            :current-sort="currentSort"
-            :current-sort-order="currentSortOrder"
-            :select-sort="selectSort"
-            :processed-sessions="processedSessions"
-            :organisation-is-working-body="organisationIsWorkingBody"
-            :info-text="infoText"
-            :generated-card-url="generatedCardUrl"
-          />
-        </div>
-      </div>
-    </div>
+      <inner-card
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+        :columns="columns"
+        :current-sort="currentSort"
+        :current-sort-order="currentSortOrder"
+        :select-sort="selectSort"
+        :processed-sessions="processedSessions"
+        :organisation-is-working-body="organisationIsWorkingBody"
+        :generated-card-url="generatedCardUrl"
+        :current-filter="currentFilter"
+        :just-five="justFive"
+      />
+    </generator>
   </div>
-  <inner-card
-    v-else
-    :id="$options.cardData.cardData._id"
-    :header-config="headerConfig"
-    :columns="columns"
-    :current-sort="currentSort"
-    :current-sort-order="currentSortOrder"
-    :select-sort="selectSort"
-    :processed-sessions="processedSessions"
-    :organisation-is-working-body="organisationIsWorkingBody"
-    :info-text="infoText"
-    :generated-card-url="generatedCardUrl"
-  />
 </template>
 
 <script>
 import { find, get } from 'lodash';
+import axios from 'axios';
+import common from 'mixins/common';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
+import BlueButtonList from 'components/BlueButtonList.vue';
 import InnerCard from './innerCard.vue';
+import cardConfigJson from './config.json';
 
 export default {
-  components: { InnerCard, PSearchDropdown, StripedButton },
   name: 'SeznamSej',
+  components: {
+    Generator,
+    InnerCard,
+    PSearchDropdown,
+    StripedButton,
+    BlueButtonList,
+  },
+  mixins: [
+    common,
+  ],
   data() {
+    const cardConfig = cardConfigJson[this.$i18n.locale];
     return {
+      cardConfig,
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      filters: ['Seje DZ', 'Seje kolegija predsednika DZ', 'Seje delovnih teles'],
+      filters: cardConfig.tabs.map(e => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData, 'state.filter') || 'Seje DZ',
+      currentFilter: get(this.$options.cardData, 'state.filter') || cardConfig.tabs[0].title,
       justFive: get(this.$options.cardData, 'state.justFive') || false,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
     };
   },
   computed: {
-    columns: () => [
-      { id: 'image', label: '', additionalClass: 'image' },
-      { id: 'name', label: 'Ime', additionalClass: 'wider name' },
-      { id: 'date', label: 'Začetek' },
-      { id: 'updated', label: 'Sprememba', additionalClass: 'optional' },
-      { id: 'workingBody', label: 'Organizacija', additionalClass: 'wider optional' },
-    ],
+    columns() {
+      return [
+        { id: 'image', label: '', additionalClass: 'image' },
+        { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
+        { id: 'date', label: this.$t('start') },
+        { id: 'updated', label: this.$t('change'), additionalClass: 'optional' },
+        { id: 'workingBody', label: this.$t('organization'), additionalClass: 'wider optional' },
+      ];
+    },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
@@ -110,16 +110,19 @@ export default {
         .map(workingBody => workingBody.label);
     },
     inputPlaceholder() {
-      return this.currentWorkingBodies.length ? `izbranih delovnih teles: ${this.currentWorkingBodies.length}` : 'izberi delovno telo';
+      return this.currentWorkingBodies.length > 0
+        ? this.$t('selected-placeholder', { num: this.currentWorkingBodies.length })
+        : this.$t('select-working-body-placeholder');
     },
     processedSessions() {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
-          if (this.currentFilter === 'Seje DZ') {
-            return session.orgs.filter(org => org.id === 95).length > 0;
-          } else if (this.currentFilter === 'Seje kolegija predsednika DZ') {
-            return session.orgs.filter(org => org.id === 9).length > 0;
-          } else if (this.currentFilter === 'Seje delovnih teles') {
+          const selectedTab = this.cardConfig.tabs.find(t => t.title === this.currentFilter);
+          if (selectedTab) {
+            if (selectedTab.org_ids && selectedTab.org_ids.length) {
+              return session.orgs.filter(org => selectedTab.org_ids.indexOf(org.id) !== -1).length;
+            }
+            // if no selectedTab.org_ids
             let match = false;
             if (this.currentWorkingBodies.length === 0) {
               session.orgs.forEach((org) => {
@@ -141,13 +144,14 @@ export default {
             case 'name':
               a = sessionA.name;
               b = sessionB.name;
-              return a.toLowerCase().localeCompare(b.toLowerCase());
+              return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
             case 'date':
               a = sessionA.date_ts;
               b = sessionB.date_ts;
               if (a < b) {
                 return -1;
-              } else if (a > b) {
+              }
+              if (a > b) {
                 return 1;
               }
               // never return 0, chrome and firefox sort differently and that can break SSR
@@ -157,7 +161,8 @@ export default {
               b = sessionB.updated_at_ts;
               if (a < b) {
                 return -1;
-              } else if (a > b) {
+              }
+              if (a > b) {
                 return 1;
               }
               // never return 0, chrome and firefox sort differently and that can break SSR
@@ -172,47 +177,67 @@ export default {
           }
         });
 
-      if (this.currentSortOrder === 'desc') sortedAndFiltered.reverse();
-      if (this.justFive) sortedAndFiltered = sortedAndFiltered.slice(0, 5);
+      if (this.currentSortOrder === 'desc') {
+        sortedAndFiltered.reverse();
+      }
+      if (this.justFive) {
+        sortedAndFiltered = sortedAndFiltered.slice(0, 5);
+      }
 
       return sortedAndFiltered;
     },
     generatedCardUrl() {
-      const params = { filters: this.currentFilter };
-
-      if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies;
-      if (this.justFive) params.justFive = true;
-
-      return `https://glej.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
-    },
-    infoText() {
-      const filterText = `${this.currentFilter}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
-      const workingBodiesText = this.currentWorkingBodyNames.join(', ');
-      const filterAndWorkingBodiesText = filterText || workingBodiesText ? ` (${filterText}${workingBodiesText})` : '';
-      const sortTexts = {
-        name: 'imenu seje',
-        date: 'datumu začetka seje',
-        updated: 'datumu zadnje spremembe podatkov o seji',
-        workingBody: 'imenu organizacije',
+      const params = {
+        filters: this.currentFilter,
       };
-      const justFiveText = this.justFive ? ', izpis pa omejen samo na zgornjih pet sej' : '';
 
-      return `Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu${filterAndWorkingBodiesText}. Seznam je sortiran po ${sortTexts[this.currentSort]}${justFiveText}.`;
+      if (this.currentWorkingBodies.length > 0) {
+        params.workingBodies = this.currentWorkingBodies;
+      }
+
+      if (this.justFive) {
+        params.justFive = true;
+      }
+
+      return `${this.url}${Object.keys(params).length > 0 ? `?state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
+    },
+  },
+  watch: {
+    currentFilter(newValue) {
+      const otherTab = this.cardConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      if (newValue !== otherTab.title) {
+        this.workingBodies.forEach((workingBody) => {
+          workingBody.selected = false;
+        });
+      }
+    },
+    currentWorkingBodies(newValue) {
+      const otherTab = this.cardConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      if (newValue.length !== 0 && this.currentFilter !== otherTab.title) {
+        this.currentFilter = otherTab.title;
+      }
     },
   },
   created() {
-    $.getJSON('https://analize.parlameter.si/v1/s/getWorkingBodies/', (response) => {
-      const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
-      this.workingBodies = response.map(workingBody => ({
-        id: workingBody.id,
-        label: workingBody.name,
-        selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
-      }));
-    });
+    axios.get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
+      .then((response) => {
+        const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
+        this.workingBodies = response.data.map(workingBody => ({
+          id: workingBody.id,
+          label: workingBody.name,
+          selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
+        }));
+      });
   },
   methods: {
     organisationIsWorkingBody(organisationId) {
-      return [9, 95].indexOf(organisationId) === -1;
+      const orgIds = this.cardConfig.tabs.reduce((acc, cur) => {
+        if (cur.org_ids) {
+          return acc.concat(cur.org_ids);
+        }
+        return acc;
+      }, []);
+      return orgIds.indexOf(organisationId) === -1;
     },
     selectSort(sortId) {
       if (this.currentSort === sortId) {
@@ -221,50 +246,23 @@ export default {
         this.currentSort = sortId;
         this.currentSortOrder = 'asc';
       }
-
-      this.measurePiwik('', sortId, this.currentSortOrder);
-    },
-    selectFilter(filter) {
-      this.currentFilter = filter;
-      this.measurePiwik(filter, '', '');
-    },
-    getWorkingBodyUrl(workingBodyId) {
-      return `https://glej.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
-    },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure !== 'function') return;
-
-      if (sort !== '') {
-        measure('s', 'session-sort', `${sort} ${order}`, '');
-      } else if (filter !== '') {
-        measure('s', 'session-filter', filter, '');
-      }
-    },
-  },
-  watch: {
-    currentFilter(newValue) {
-      if (newValue !== 'Seje delovnih teles') {
-        this.workingBodies.forEach((workingBody) => {
-          // eslint-disable-next-line
-          workingBody.selected = false;
-        });
-      }
-    },
-    currentWorkingBodies(newValue) {
-      if (newValue.length !== 0 && this.currentFilter !== 'Seje delovnih teles') {
-        this.currentFilter = 'Seje delovnih teles';
-      }
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.button-filters {
-  .striped-button {
+.filters {
+  margin-top: 14px;
+
+  .dropdown-filter {
+    margin: 0;
+    flex: 1.5;
+  }
+
+  .align-checkbox {
     flex: 1;
-    background-color: #f0f0f0;
-    &:not(:last-child) { margin-right: 5px; }
+    justify-content: center;
   }
 }
 </style>

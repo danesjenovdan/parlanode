@@ -1,11 +1,7 @@
 {
-  "_id": "s-zakon",
-  "name": "Zakon",
-  "type": "empty",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getLegislation/",
-  "lastUpdate": "2018-07-25T14:45:02.376Z",
-  "method": "zakon",
-  "group": "s",
+  "_id": "s_zakon",
+  "dataUrl": "{analize}/s/getLegislation/",
+  "lastUpdate": "2018-07-27T15:01:50.381Z",
   "big": true,
   "high": true
 }

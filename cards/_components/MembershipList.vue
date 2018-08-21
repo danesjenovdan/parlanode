@@ -4,20 +4,23 @@
       <ul class="membership-list">
         <template v-if="contents.length">
           <li
-            class="key"
             v-for="membershipItem in contents"
-            :key="membershipItem.name">
+            :key="membershipItem.name"
+            class="key"
+          >
             <template v-if="name === 'Delovna telesa'">
-              <template v-if="membershipItem.name === 'Kolegij predsednika državnega zbora'">
-                {{ membershipItem.name }}
-              </template>
-              <a v-else class="funblue-light-hover" target="_blank" :href="`https://glej.parlameter.si/wb/getWorkingBodies/${membershipItem.org_id}?frame=true&altHeader=true`">{{ membershipItem.name }}</a>
+              {{ membershipItem.name }}
             </template>
-            <a v-else-if="membershipItem.url != null" class="funblue-light-hover" target="_blank" :href="membershipItem.url">{{ membershipItem.name }}</a>
+            <a
+              v-else-if="membershipItem.url != null"
+              :href="membershipItem.url"
+              class="funblue-light-hover"
+              target="_blank"
+            >{{ membershipItem.name }}</a>
             <template v-else>{{ membershipItem.name }}</template>
           </li>
         </template>
-        <div v-else class="no-results"><i>Brez članstev.</i></div>
+        <div v-else class="no-results"><i v-t="'membership-list.no-memberships'"></i></div>
       </ul>
     </div>
   </scroll-shadow>
@@ -32,8 +35,14 @@ export default {
     ScrollShadow,
   },
   props: {
-    name: String,
-    contents: Array,
+    name: {
+      type: String,
+      default: '',
+    },
+    contents: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {};

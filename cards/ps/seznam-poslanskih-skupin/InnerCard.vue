@@ -2,11 +2,12 @@
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
     <div slot="info">
-      <p class="info-text lead">Seznam poslanskih skupin glede na rezultate analize {{currentAnalysisData.titleSuffix}}</p>
-      <p class="info-text heading">METODOLOGIJA</p>
+      <p class="info-text lead" v-text="currentAnalysisData.title"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
       <p class="info-text" v-html="currentAnalysisData.explanation"></p>
     </div>
 
@@ -14,13 +15,19 @@
       <li v-if="processedPartyData.length === 0" class="loader">
         <div class="nalagalnik"></div>
       </li>
-      <li v-for="(party, index) in processedPartyData" class="labeled-chart" :key="index">
+      <li v-for="(party, index) in processedPartyData" :key="index" class="labeled-chart">
         <div class="column chart-label">
-          <a class="funblue-light-hover" :href="getPartyLink(party.party)">{{ party.party.acronym }}</a>
+          <a :href="getPartyLink(party.party)" class="funblue-light-hover">
+            {{ party.party.acronym }}
+          </a>
         </div>
         <div class="column chart">
           <div class="progress hugebar">
-            <div class="progress-bar funblue" role="progressbar" :style="{ width: party.chartWidth }"></div>
+            <div
+              :style="{ width: party.chartWidth }"
+              class="progress-bar funblue"
+              role="progressbar"
+            ></div>
             <div class="progress_number">{{ party.displayValue }}</div>
           </div>
         </div>
@@ -31,22 +38,37 @@
 
 <script>
 import common from 'mixins/common';
-import { getPartyLink } from 'components/links';
+import links from 'mixins/links';
+import { partyList } from 'mixins/contextUrls';
 
 export default {
-  mixins: [common],
   name: 'SeznamPoslanskihSkupinInnerCard',
+  mixins: [
+    common,
+    links,
+    partyList,
+  ],
   props: {
-    processedPartyData: Array,
-    headerConfig: Object,
-    generatedCardUrl: String,
-    currentAnalysisData: Object,
-  },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanske-skupine`;
-  },
-  methods: {
-    getPartyLink,
+    processedPartyData: {
+      type: Array,
+      default: () => [],
+    },
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    ogConfig: {
+      type: Object,
+      default: null,
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
+    currentAnalysisData: {
+      type: Object,
+      default: () => ({}),
+    },
   },
 };
 </script>

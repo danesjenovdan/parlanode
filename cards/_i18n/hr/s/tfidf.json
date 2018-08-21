@@ -1,0 +1,16 @@
+{
+  "card": {
+    "title": "Riječi koje su dominirale sjednicom"
+  },
+  "info": {
+    "lead": "Ispis 10 riječi i fraza koje su na sjednici korištene češće nego na svim drugim sjednicama.",
+    "text": [
+      "Analiza se provodi prema statistici {link}.",
+      "Korpus čine svi govori, a dokument svi govori na sjednici."
+    ],
+    "link": {
+      "link": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf",
+      "text": "tf-idf"
+    }
+  }
+}

@@ -1,8 +1,8 @@
 <template>
   <div class="card-footer">
     <div class="card-logo hidden">
-      <a :href="slugs.base">
-        <img src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
+      <a :href="slugs.urls.base">
+        <img :src="`${slugs.urls.cdn}/img/logo-parlameter.svg`" alt="parlameter logo">
       </a>
     </div>
 
@@ -14,7 +14,8 @@
         `card-${button}`,
         { 'card-exit': currentBack === button }
       ]"
-      @click="toggleBack(button)">
+      @click="toggleBack(button)"
+    >
     </div>
   </div>
 </template>
@@ -22,7 +23,6 @@
 <script>
 import { get } from 'lodash';
 import { RIPPLE_DURATION } from 'components/constants';
-import slugs from '../../../assets/urls.json';
 
 export default {
   name: 'CardFooter',
@@ -30,7 +30,7 @@ export default {
     return {
       clicksDisabled: false,
       currentBack: null,
-      slugs,
+      slugs: this.$root.$options.cardData.urls,
     };
   },
   computed: {
@@ -48,7 +48,9 @@ export default {
         this.$emit('toggleBack', name);
         this.currentBack = this.currentBack === name ? null : name;
         this.clicksDisabled = true;
-        window.setTimeout(() => { this.clicksDisabled = false; }, RIPPLE_DURATION);
+        window.setTimeout(() => {
+          this.clicksDisabled = false;
+        }, RIPPLE_DURATION);
       }
     },
   },

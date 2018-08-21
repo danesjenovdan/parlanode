@@ -1,6 +1,6 @@
 <template>
   <div class="parties">
-    <div class="party" v-for="party in parties">
+    <div v-for="party in parties" :key="party.party.id" class="party">
       <div class="description">
         <div class="name">
           <template v-if="party.party.acronym">
@@ -23,7 +23,6 @@
         <div class="votes">
           <striped-button
             v-for="vote in votes"
-            @click.native="expandVote(party.party.id, vote.id)"
             :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
             :color="vote.id"
             :key="vote.id"
@@ -31,6 +30,7 @@
             :small-text="vote.label"
             :text="String(party.votes[vote.id])"
             :disabled="party.votes[vote.id] === 0"
+            @click.native="expandVote($event, party.party.id, vote.id)"
           />
         </div>
       </div>
@@ -39,13 +39,18 @@
         class="members"
       >
         <ul class="person-list">
-          <li v-for="member in expandedMembers" class="item">
+          <li v-for="member in expandedMembers" :key="member.person.id" class="item">
             <div class="column portrait">
               <a :href="getMemberLink(member)"><img :src="getMemberPortrait(member)"></a>
             </div>
             <div class="column name">
-              <a class="funblue-light-hover" :href="getMemberLink(member)">{{ member.person.name }}</a><br>
-              <a class="funblue-light-hover" :href="getMemberPartyLink(member)">{{ member.person.party.acronym }}</a>
+              <a :href="getMemberLink(member)" class="funblue-light-hover">
+                {{ member.person.name }}
+              </a>
+              <br>
+              <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+                {{ member.person.party.acronym }}
+              </a>
             </div>
           </li>
         </ul>
@@ -56,14 +61,42 @@
 
 <script>
 import { find } from 'lodash';
-import { getPartyLink, getMemberLink, getMemberPartyLink, getMemberPortrait } from 'components/links';
+import links from 'mixins/links';
 import StripedButton from 'components/StripedButton.vue';
 import mapVotes from './mapVotes';
 import Result from './Result.vue';
 
 export default {
-  name: 'GlasovanjeSeje_PoslanskeSkupine',
-  components: { StripedButton, Result },
+  name: 'GlasovanjeSejePoslanskeSkupine',
+  components: {
+    StripedButton,
+    Result,
+  },
+  mixins: [
+    links,
+  ],
+  props: {
+    members: {
+      type: Array,
+      default: () => [],
+    },
+    parties: {
+      type: Array,
+      default: () => [],
+    },
+    state: {
+      type: Object,
+      default: () => ({}),
+    },
+    selectedParty: {
+      type: [String, Number],
+      default: null,
+    },
+    selectedOption: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     return {
       votes: [
@@ -80,36 +113,24 @@ export default {
     expandedMembers() {
       return this.members.filter((member) => {
         if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
-          return member.person.party.is_coalition === (this.expandedParty === 'coalition') &&
-                 member.option === this.expandedOption;
+          return member.person.party.is_coalition === (this.expandedParty === 'coalition')
+            && member.option === this.expandedOption;
         }
-        return member.person.party.id === this.expandedParty &&
-               member.option === this.expandedOption;
+        return member.person.party.id === this.expandedParty
+          && member.option === this.expandedOption;
       });
-    },
-  },
-  props: {
-    members: Array,
-    parties: Array,
-    state: Object,
-    selectedParty: {
-      type: [String, Number],
-      default: null,
-    },
-    selectedOption: {
-      type: String,
-      default: null,
     },
   },
   watch: {
   },
+
+  mounted() {
+    this.expandedParty = this.selectedParty;
+    this.expandedOption = this.selectedOption;
+  },
   methods: {
-    getPartyLink,
-    getMemberLink,
-    getMemberPartyLink,
-    getMemberPortrait,
     mapVotes,
-    expandVote(party, option) {
+    expandVote(event, party, option) {
       if (find(this.parties, ['party.id', party]).votes[option] === 0) {
         return;
       }
@@ -127,11 +148,6 @@ export default {
       this.$parent.$parent.$parent.$emit('selectedparty', this.expandedParty);
       this.$parent.$parent.$parent.$emit('selectedoption', this.expandedOption);
     },
-  },
-
-  mounted() {
-    this.expandedParty = this.selectedParty;
-    this.expandedOption = this.selectedOption;
   },
 };
 </script>
@@ -204,6 +220,6 @@ export default {
       .members {
         padding-top: 14px;
         @include respond-to(desktop) { padding-top: 0; }
-        .person-list .item { border-color: #dddddd; }
+        .person-list .item { border-color: $darkgrey; }
       }
 </style>

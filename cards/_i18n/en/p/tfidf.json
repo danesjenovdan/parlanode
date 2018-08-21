@@ -1,0 +1,16 @@
+{
+  "card": {
+    "title": "Characterised by the following words"
+  },
+  "info": {
+    "lead": "A list of 10 words and phrases that the MP uses more often than other MPs in the National Assembly.",
+    "text": [
+      "We use the following statistics {link} to conduct the analysis.",
+      "The corpus refers to all speeches while the document refers to all speeches by the MP."
+    ],
+    "link": {
+      "link": "https://en.wikipedia.org/wiki/Tf-idf",
+      "text": "tf-idf"
+    }
+  }
+}

@@ -8,13 +8,13 @@
       <div class="vote-filters">
         <striped-button
           v-for="vote in votes"
-          @click.native="toggleVote(vote.id)"
           :color="vote.id"
           :key="vote.id"
           :selected="vote.selected"
           :small-text="vote.label"
           :text="String(memberVotes[vote.id])"
           :disabled="memberVotes[vote.id] === 0"
+          @click.native="toggleVote(vote.id)"
         />
       </div>
       <result
@@ -24,18 +24,25 @@
       />
     </div>
     <ul class="person-list">
-      <li class="item" v-for="member in filteredMembers">
+      <li v-for="member in filteredMembers" :key="member.person.id" class="item">
         <div class="column portrait">
           <a :href="getMemberLink(member)">
-            <img :src="getMemberPortrait(member)" />
+            <img :src="getMemberPortrait(member)">
           </a>
         </div>
         <div class="column wider name">
-          <a class="funblue-light-hover" :href="getMemberLink(member)">{{ member.person.name }}</a><br>
-          <a class="funblue-light-hover" :href="getMemberPartyLink(member)">{{ member.person.party.acronym }}</a>
+          <a :href="getMemberLink(member)" class="funblue-light-hover">
+            {{ member.person.name }}
+          </a>
+          <br>
+          <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+            {{ member.person.party.acronym }}
+          </a>
         </div>
         <div class="column vote">
-          <div :class="`option option-${member.option}`">{{ translateOption(member.option, member.person.gender) }}</div>
+          <div :class="`option option-${member.option}`">
+            {{ translateOption(member.option, member.person.gender) }}
+          </div>
         </div>
       </li>
     </ul>
@@ -45,14 +52,39 @@
 <script>
 import { find } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
-import { getMemberLink, getMemberPortrait, getMemberPartyLink } from 'components/links';
+import links from 'mixins/links';
 import SearchField from 'components/SearchField.vue';
 import mapVotes from './mapVotes';
 import Result from './ResultShit.vue';
 
 export default {
-  name: 'GlasovanjeSeje_Poslanci',
-  components: { StripedButton, SearchField, Result },
+  name: 'GlasovanjeSejePoslanci',
+  components: {
+    StripedButton,
+    SearchField,
+    Result,
+  },
+  mixins: [
+    links,
+  ],
+  props: {
+    members: {
+      type: Array,
+      default: () => [],
+    },
+    memberVotes: {
+      type: Object,
+      default: () => ({}),
+    },
+    result: {
+      type: Object,
+      default: () => ({}),
+    },
+    state: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       nameFilter: '',
@@ -85,12 +117,9 @@ export default {
           const namesToMatch = this.nameFilter.split('|');
           nameMatch = namesToMatch.reduce((result, nameToMatch) => {
             if (!result) {
-              console.log(nameToMatch);
-              console.log(member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1);
               return member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1;
-            } else {
-              return result;
             }
+            return result;
           }, false);
         }
 
@@ -102,12 +131,6 @@ export default {
       });
     },
   },
-  props: {
-    members: Array,
-    memberVotes: Object,
-    result: Object,
-    state: Object,
-  },
   mounted() {
     if (this.state.nameFilter) {
       this.nameFilter = this.state.nameFilter;
@@ -117,13 +140,9 @@ export default {
     getSelectedOption(option) {
       if (this.state.selectedOption) {
         return this.state.selectedOption === option;
-      } else {
-        return false;
       }
+      return false;
     },
-    getMemberLink,
-    getMemberPortrait,
-    getMemberPartyLink,
     mapVotes,
     translateOption(option, gender) {
       return {
@@ -218,7 +237,7 @@ export default {
       width: 58px;
       @include respond-to(desktop) { width: 125px; }
 
-      $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
+      $icon-path: "#{getConfig('urls.cdn')}/icons";
       &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
       &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
       &.option-not_present { background-image: url(#{$icon-path}/ni_v2.svg) }

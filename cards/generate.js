@@ -58,12 +58,13 @@ inquirer.prompt([
     validate(value) {
       if (value.length === 0) {
         return 'Data URL is mandatory.';
-      } else if (!value.match(URL_REGEX)) {
+      }
+      if (!value.match(URL_REGEX)) {
         return 'Data URL must be a valid URL address.';
       }
       return true;
     },
-    default: 'https://analize.parlameter.si/v1/',
+    default: '{analize}/',
   },
   {
     type: 'confirm',
@@ -83,11 +84,11 @@ inquirer.prompt([
   const newCardFolder = `cards/${answers.group}/${answers.method}/`;
   const finalData = {
     _id: `${answers.group}-${answers.method}`,
-    lastUpdate: new Date(),
+    lastUpdate: new Date().toJSON(),
     componentName: upperFirst(camelCase(answers.name)),
     ...answers,
   };
-  const cliCommand = `yarn run cards-dev ${answers.group}/${answers.method}`;
+  const cliCommand = `yarn run cards ${answers.group}/${answers.method}`;
 
   fs.mkdirSync(newCardFolder);
 
@@ -99,7 +100,8 @@ inquirer.prompt([
     fs.writeFileSync(newCardFolder + file, result);
   });
 
-  console.log(`\nCard "${answers.name}" generated successfully!\n` +
-    'To start development, simply run:\n\n' +
-    `  ${chalk.italic.yellow(cliCommand)}\n`);
+  // eslint-disable-next-line no-console
+  console.log(`\nCard "${answers.name}" generated successfully!\nTo start development, simply run:`);
+  // eslint-disable-next-line no-console
+  console.log(`\n${chalk.italic.yellow(cliCommand)}\n`);
 });

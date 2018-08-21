@@ -1,61 +1,50 @@
-const express          = require('express');
-const app              = express();
-const chalk            = require('chalk');
-const serveStatic      = require('serve-static');
-const bodyParser       = require('body-parser');
-const cors             = require('cors');
-const session          = require('express-session');
-const expressValidator = require('express-validator');
+const express = require('express');
+const chalk = require('chalk');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const config = require('../config');
 
-exports.init = function (startListening) {
+const app = express();
 
-  return setupExpress(startListening)
-    .then(setupResources)
-    .catch(function (err) {
+function setupExpress() {
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line no-console
+    console.log(`${chalk.magenta('| EXPRESS SERVER |')} - ${chalk.green('starting')}`);
 
-      console.log(err);
+    // disable "X-Powered-By: Express" header
+    app.disable('x-powered-by');
 
-    });
-
-};
-
-exports.app = app;
-
-function setupExpress(startListening) {
-
-  return new Promise(function (resolve, reject) {
-
-    // use ejs as the view engine
-    app.set('view engine', 'ejs');
-    // serve static assets on /assets
-    app.use('/assets', serveStatic('assets'));
-    app.use('/cms-dev', serveStatic('cms-dev'));
-    app.use('/cms', serveStatic('cms-dev/dist'));
     app.use(cors());
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended : true }));
-    app.use(expressValidator());
+    app.use(bodyParser.urlencoded({ extended: true }));
+
+    // eslint-disable-next-line global-require
+    require('./resources')(app);
+
+    app.get('*', (req, res) => {
+      res.status(400).send('Bad Request');
+    });
 
     // start listening on port
-    if (startListening) {
-
-      const server   = app.listen(CFG.port, function () {
-
-        console.log(chalk.green(chalk.magenta('| EXPRESS SERVER |') + ' - running on: http://localhost:' + CFG.port));
-        resolve();
-
-      });
-      server.timeout = CFG.serverTimeout;
-    } else {
+    const server = app.listen(config.port, () => {
+      // eslint-disable-next-line no-console
+      console.log(`${chalk.magenta('| EXPRESS SERVER |')} - ${chalk.green(`started on: http://localhost:${config.port}/`)}`);
       resolve();
-    }
+    });
 
+    server.on('error', (err) => {
+      reject(err);
+    });
+
+    server.timeout = config.serverTimeout;
   });
-
 }
 
-function setupResources() {
-
-  require('./resources')(app);
-
+function init() {
+  return Promise.resolve()
+    .then(setupExpress);
 }
+
+module.exports = {
+  init,
+};

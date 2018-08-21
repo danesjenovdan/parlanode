@@ -1,84 +1,100 @@
 <template>
   <div id="seznam-glasovanj">
-    <div class="filters" v-if="showFilters">
+    <div v-if="showFilters" class="filters">
       <div class="filter option-party-buttons">
         <striped-button
           v-for="result in allResults"
-          @click.native="toggleResult(result.id)"
           :color="result.color"
           :key="result.id"
           :selected="selectedResults.indexOf(result.id) > -1"
           :small-text="result.label"
+          @click.native="toggleResult(result.id)"
         />
       </div>
       <div class="filter text-filter">
-        <div class="filter-label" v-t="'seznam-glasovanj.title-search'"></div>
-        <input class="text-filter-input" type="text" v-model="textFilter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
       <div class="filter tag-dropdown">
-        <div class="filter-label" v-t="'seznam-glasovanj.working-body'"></div>
-        <search-dropdown :items="allTags" :placeholder="tagPlaceholder"></search-dropdown>
+        <div v-t="'working-body'" class="filter-label"></div>
+        <search-dropdown :items="allTags" :placeholder="tagPlaceholder" />
       </div>
     </div>
     <scroll-shadow ref="shadow">
       <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
         <div class="session_voting">
-          <div v-for="vote in filteredVotes" class="clearfix single_voting" :key="vote.motion_id">
+          <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
             <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-            <div v-if="vote.has_outliers && !vote.is_outlier" class="lightning-badge" style="position: absolute; left: -37px;"></div>
+            <div
+              v-if="vote.has_outliers && !vote.is_outlier"
+              class="lightning-badge"
+              style="position: absolute; left: -37px;"
+            ></div>
             <a :href="vote.url">
-              <div class=" col-md-1 ">
+              <div class=" col-md-1">
                 <div :class="vote.accepted">
                   <p>
                     <i :class="vote.accepted_glyph"></i>
                   </p>
                 </div>
               </div>
-              <div class="col-md-11 border-left ">
-                <div class="col-md-6 ">
-                  <div class="session_title ">
+              <div class="col-md-11 border-left">
+                <div class="col-md-6">
+                  <div class="session_title">
                     <p>
                       {{ getVoteText(vote) }}
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6 ">
-                  <div class="session_votes ">
-                    <div class="progress smallbar ">
-                      <div class="progress-bar funblue " v-bind:style="{ width: vote.percent_votes_for + '%' }">
-                        <span class="sr-only ">{{ vote.percent_votes_for }}% votes for</span>
+                <div class="col-md-6">
+                  <div class="session_votes">
+                    <div class="progress smallbar">
+                      <div
+                        :style="{ width: vote.percent_votes_for + '%' }"
+                        class="progress-bar funblue"
+                      >
+                        <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                       </div>
-                      <div class="progress-bar fontblue " v-bind:style="{ width: vote.percent_against + '%' }">
-                        <span class="sr-only ">{{ vote.percent_against }}% votes for</span>
+                      <div
+                        :style="{ width: vote.percent_against + '%' }"
+                        class="progress-bar fontblue"
+                      >
+                        <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                       </div>
-                      <div class="progress-bar noblue " v-bind:style="{ width: vote.percent_abstain + '%' }">
-                        <span class="sr-only ">{{ vote.percent_abstain }}% votes for</span>
+                      <div
+                        :style="{ width: vote.percent_abstain + '%' }"
+                        class="progress-bar noblue"
+                      >
+                        <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                       </div>
-                      <div class="progress-bar ignoreblue " v-bind:style="{ width: vote.percent_not_present + '%' }">
-                        <span class="sr-only ">{{ vote.percent_not_present }}% votes for</span>
+                      <div
+                        :style="{ width: vote.percent_not_present + '%' }"
+                        class="progress-bar ignoreblue"
+                      >
+                        <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                       </div>
                     </div>
-                    <div class="row ">
-                      <div class="col-xs-3 ">
+                    <div class="row">
+                      <div class="col-xs-3">
                         {{ vote.votes_for }}
-                        <div class="type ">Za</div>
-                        <div class="indicator ney ">&nbsp;</div>
+                        <div v-t="'vote-for'" class="type"></div>
+                        <div class="indicator ney">&nbsp;</div>
                       </div>
-                      <div class="col-xs-3 ">
+                      <div class="col-xs-3">
                         {{ vote.against }}
-                        <div class="type ">Proti</div>
-                        <div class="indicator aye ">&nbsp;</div>
+                        <div v-t="'vote-against'" class="type"></div>
+                        <div class="indicator aye">&nbsp;</div>
                       </div>
-                      <div class="col-xs-3 ">
+                      <div class="col-xs-3">
                         {{ vote.abstain }}
-                        <div class="type ">Vzdržan</div>
-                        <div class="indicator not ">&nbsp;</div>
+                        <div v-t="'vote-abstained'" class="type"></div>
+                        <div class="indicator not">&nbsp;</div>
                       </div>
-                      <div class="col-xs-3 ">
+                      <div class="col-xs-3">
                         {{ vote.not_present }}
-                        <div class="type ">Niso</div>
-                        <div class="indicator abstention ">&nbsp;</div>
+                        <div v-t="'vote-not'" class="type"></div>
+                        <div class="indicator abstention">&nbsp;</div>
                       </div>
                     </div>
                   </div>
@@ -93,10 +109,10 @@
 </template>
 
 <script>
-import { uniq, flatMap, intersection } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import SearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
+import links from 'mixins/links';
 
 export default {
   name: 'SeznamGlasovanj',
@@ -105,6 +121,9 @@ export default {
     SearchDropdown,
     ScrollShadow,
   },
+  mixins: [
+    links,
+  ],
   props: {
     data: {
       required: true,
@@ -123,8 +142,8 @@ export default {
     const votes = this.processVotes();
 
     const allResults = [
-      { id: true, color: 'binary-for', label: this.$t('seznam-glasovanj.vote-passed'), selected: false },
-      { id: false, color: 'binary-against', label: this.$t('seznam-glasovanj.vote-not-passed'), selected: false },
+      { id: true, color: 'binary-for', label: this.$t('vote-passed'), selected: false },
+      { id: false, color: 'binary-against', label: this.$t('vote-not-passed'), selected: false },
     ];
     if (this.filters.results) {
       allResults.forEach((r) => {
@@ -143,29 +162,23 @@ export default {
       allResults,
     };
   },
-  watch: {
-    data() {
-      this.votes = this.processVotes();
-      this.allTags = this.processTags();
-    },
-  },
   computed: {
     filteredVotes() {
       const filterVotes = (vote) => {
-        const textMatch = this.textFilter === '' ||
-          vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const tagMatch = this.selectedTags.length === 0 ||
-          vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const resultMatch = this.selectedResults.length === 0 ||
-          this.selectedResults.indexOf(vote.result) > -1;
+        const textMatch = this.textFilter === ''
+          || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch = this.selectedTags.length === 0
+          || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const resultMatch = this.selectedResults.length === 0
+          || this.selectedResults.indexOf(vote.result) > -1;
         return textMatch && tagMatch && resultMatch;
       };
       return this.votes.filter(filterVotes);
     },
     tagPlaceholder() {
       return this.selectedTags.length > 0
-        ? this.$t('seznam-glasovanj.selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('seznam-glasovanj.select-placeholder');
+        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
+        : this.$t('select-placeholder');
     },
     selectedTags() {
       return this.allTags
@@ -177,11 +190,26 @@ export default {
         .map(result => result.id);
     },
   },
+  watch: {
+    data() {
+      this.votes = this.processVotes();
+      this.allTags = this.processTags();
+    },
+    textFilter() {
+      this.emitFiltersChanged();
+    },
+    selectedTags() {
+      this.emitFiltersChanged();
+    },
+    selectedResults() {
+      this.emitFiltersChanged();
+    },
+  },
   methods: {
     processVotes() {
       const votes = this.data.votes.map((e) => {
         const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
-        e.url = `https://parlameter.si/seja/glasovanje/${(e.session_id || this.data.session.id)}/${e.motion_id}`;
+        e.url = this.getSessionVoteLink({ session_id: (e.session_id || this.data.session.id), vote_id: e.motion_id });
         e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
         e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
         e.percent_votes_for = Math.floor((e.votes_for / allInVotes) * 100);
@@ -209,7 +237,7 @@ export default {
     getVoteText(vote) {
       const text = vote.short_text || vote.text;
       if (text.split(' ').length > 14) {
-        return `${text.split(' ').splice(0, 14).join(' ')} ...`;
+        return `${text.split(' ').slice(0, 14).join(' ')} ...`;
       }
       return text;
     },
@@ -219,17 +247,6 @@ export default {
         tags: this.selectedTags,
         results: this.selectedResults,
       });
-    },
-  },
-  watch: {
-    textFilter() {
-      this.emitFiltersChanged();
-    },
-    selectedTags() {
-      this.emitFiltersChanged();
-    },
-    selectedResults() {
-      this.emitFiltersChanged();
     },
   },
 };
@@ -245,7 +262,7 @@ export default {
 }
 
 #votingCard div.member span {
-  color: #525252;
+  color: $black;
   font-weight: 500;
 }
 
@@ -263,7 +280,7 @@ export default {
   padding: 12px 0 0 12px;
 
   &:empty::after {
-    color: #c8c8c8;
+    color: $grey-medium;
     content: "Ni rezultatov.";
     left: calc(50% - 41px);
     position: absolute;
@@ -293,7 +310,7 @@ export default {
 }
 
 .accepted.nay {
-  color: #ff5e41;
+  color: $red;
 }
 
 .session_voting .accepted {
@@ -343,11 +360,11 @@ export default {
 
   .border-left {
     border-left: none;
-    border-top: 2px solid #dbdbdb;
+    border-top: 2px solid $darkgrey;
   }
   .single_voting:hover {
     .border-left {
-      border-top-color: #cadde6;
+      border-top-color: $funblue-light;
     }
   }
 
@@ -370,15 +387,15 @@ export default {
 }
 
 .single_voting:hover {
-  background-color: #e1f6ff;
+  background-color: $funblue-light-hover;
 
   .border-left {
-    border-left-color: #cadde6;
+    border-left-color: $funblue-light;
   }
 }
 
 .seja_anchor:hover {
-  color: #525252;
+  color: $black;
 }
 
 .card-content-front {
@@ -429,11 +446,11 @@ export default {
     width: 26%; // 100%
 
     .text-filter-input {
-      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+      background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid #c8c8c8;
+      border: 1px solid $grey-medium;
       font-size: 16px;
       height: 51px;
       line-height: 27px;

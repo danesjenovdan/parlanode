@@ -1,30 +1,26 @@
 <template>
   <card-wrapper
     :id="cardData.cardData._id"
-    :data-id="`${cardGroup}/${cardMethod}`"
-    content-class="full"
-    v-bind="{ headerConfig }"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
     :card-url="shareUrl"
+    content-class="full"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Izpis povezav do vseh <span v-if="this.type==='person'">poslančevih govorov</span><span v-else>govorov poslancev poslanske skupine</span> v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Naložimo povezave do vseh govorov <span v-if="this.type==='person'">izbranega poslanca</span><span v-else>poslancev izbrane poslanske skupine</span>, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (<span v-if="this.type==='party'">poslanci, </span>časovno obdobje, vrsta seje).
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
     <div class="filters">
       <div class="filter text-filter">
-        <div class="filter-label">Išči po vsebini govorov</div>
+        <div v-t="'contents-search'" class="filter-label"></div>
         <search-field v-model="textFilter" @input="searchSpeakings()" />
       </div>
 
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
-      <div class="filter month-dropdown" v-if="type === 'party'">
-        <div class="filter-label">Poslanci</div>
+      <div v-if="type === 'party'" class="filter month-dropdown">
+        <div v-t="'mps'" class="filter-label"></div>
         <search-dropdown
           :items="allPeople"
           :placeholder="peoplePlaceholder"
@@ -36,7 +32,7 @@
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
 
       <div class="filter month-dropdown">
-        <div class="filter-label">Časovno obdobje</div>
+        <div v-t="'time-period'" class="filter-label"></div>
         <search-dropdown
           :items="dropdownMonths"
           :placeholder="monthPlaceholder"
@@ -47,7 +43,7 @@
       </div>
 
       <div class="filter month-dropdown">
-        <div class="filter-label">Vrsta seje</div>
+        <div v-t="'session-type'" class="filter-label"></div>
         <search-dropdown
           :items="dropdownSessions"
           :placeholder="sessionPlaceholder"
@@ -60,14 +56,28 @@
 
     <div class="speaks">
       <scroll-shadow ref="shadow">
-        <div id="speaks" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" @scroll="$refs.shadow.check($event.currentTarget)">
+        <div
+          v-infinite-scroll="loadMore"
+          id="speaks"
+          infinite-scroll-disabled="busy"
+          infinite-scroll-distance="10"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
           <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.date">
-            <div class="date">{{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }}, <span v-for="(org, indexOrg) in speakingDay[0].session.orgs" :key="indexOrg">{{ org.name }} <span v-if="indexOrg < (speakingDay[0].session.orgs.length - 1)">,</span></span></div>
+            <div class="date">
+              {{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }},
+              {{ ' ' + speakingDay[0].session.orgs.map(org => org.name).join(', ') }}
+            </div>
             <ul class="speaks__list">
-              <govor v-for="speech in speakingDay" :key="speech.speech_id" :speech="speech" css-class="person-speech"></govor>
+              <govor
+                v-for="speech in speakingDay"
+                :key="speech.speech_id"
+                :speech="speech"
+                css-class="person-speech"
+              />
             </ul>
           </div>
-          <div v-if="speakingDays.length===0" class="empty-dataset">Brez rezultatov.</div>
+          <div v-t="'no-results'" v-if="speakingDays.length===0" class="empty-dataset"></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -85,6 +95,8 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
+import { memberHeader, partyHeader } from 'mixins/altHeaders';
+import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 
 import axios from 'axios';
 
@@ -100,7 +112,28 @@ export default {
     Govor,
     ScrollShadow,
   },
-  mixins: [common],
+  mixins: [
+    common,
+  ],
+  props: {
+    cardData: {
+      type: Object,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+      validator: value => ['person', 'party'].indexOf(value) > -1,
+    },
+    person: {
+      type: Object,
+      default: () => ({}),
+    },
+    party: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
   data() {
     // console.log(this.party);
     const textFilter = '';
@@ -136,36 +169,12 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      cardMethod: this.cardData.cardData.method,
-      cardGroup: this.cardData.cardData.group,
       speakingDays: this.cardData.data.highlighting,
       textFilter,
       allMonths,
       allSessions,
       allPeople,
     };
-  },
-  created() {
-    if (this.type === 'party') {
-      axios.get(`https://analize.parlameter.si/v1/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
-        this.allPeople = response.data.results.map((person) => {
-          const newPerson = {
-            id: person.id,
-            name: person.name,
-            label: person.name,
-            selected: false,
-          };
-
-          return newPerson;
-        });
-
-        // console.log(allPeople);
-        // console.log(allMonths);
-      });
-    }
-  },
-  mounted() {
-    // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
   },
   computed: {
     shareUrl() {
@@ -196,9 +205,9 @@ export default {
       state.textFilter = this.textFilter.length ? this.textFilter : '*';
 
       if (this.type === 'person') {
-        return `https://glej.parlameter.si/p/govori/${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
+        return `${this.url}${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
       }
-      return `https://glej.parlameter.si/ps/govori/${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
+      return `${this.url}${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
     },
     cardUrl() {
       const state = {};
@@ -232,7 +241,7 @@ export default {
 
       const textFilter = this.textFilter.length ? this.textFilter : '*';
 
-      return `https://isci.parlameter.si/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
+      return `${this.slugs.urls.isci}/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
     },
     selectedSessions() {
       return this.allSessions.filter(session => session.selected);
@@ -244,13 +253,19 @@ export default {
       return this.allPeople.filter(person => person.selected);
     },
     sessionPlaceholder() {
-      return this.selectedSessions.length > 0 ? `Izbranih: ${this.selectedSessions.length}` : 'Izberi';
+      return this.selectedSessions.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedSessions.length })
+        : this.$t('select-placeholder');
     },
     monthPlaceholder() {
-      return this.selectedMonths.length > 0 ? `Izbranih: ${this.selectedMonths.length}` : 'Izberi';
+      return this.selectedMonths.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
+        : this.$t('select-placeholder');
     },
     peoplePlaceholder() {
-      return this.selectedPeople.length > 0 ? `Izbranih: ${this.selectedPeople.length}` : 'Izberi';
+      return this.selectedPeople.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedPeople.length })
+        : this.$t('select-placeholder');
     },
     dropdownItems() {
       return {
@@ -273,11 +288,39 @@ export default {
         }, Object.create(null));
     },
     headerConfig() {
-      return Object.assign({}, {
-        alternative: JSON.parse(this.cardData.cardData.altHeader || 'false'),
-        title: this.cardData.cardData.name,
-      });
+      if (this.type === 'person') {
+        return memberHeader.computed.headerConfig.call(this);
+      }
+      return partyHeader.computed.headerConfig.call(this);
     },
+    ogConfig() {
+      if (this.type === 'person') {
+        return memberOgImage.computed.ogConfig.call(this);
+      }
+      return partyOgImage.computed.ogConfig.call(this);
+    },
+  },
+  created() {
+    if (this.type === 'party') {
+      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
+        this.allPeople = response.data.results.map((person) => {
+          const newPerson = {
+            id: person.id,
+            name: person.name,
+            label: person.name,
+            selected: false,
+          };
+
+          return newPerson;
+        });
+
+        // console.log(allPeople);
+        // console.log(allMonths);
+      });
+    }
+  },
+  mounted() {
+    // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
   },
   methods: {
     searchSpeakings(waitTime = 750) {
@@ -300,7 +343,9 @@ export default {
       }, waitTime);
     },
     loadMore() {
-      if (this.card.lockLoading || this.card.isLoading) return;
+      if (this.card.lockLoading || this.card.isLoading) {
+        return;
+      }
       this.card.isLoading = true;
       this.card.currentPage += 1;
 
@@ -327,28 +372,6 @@ export default {
         }, 200);
       }
     },
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
-    },
-  },
-  props: {
-    cardData: {
-      type: Object,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
-    },
-    person: Object,
-    party: Object,
   },
 };
 </script>
@@ -358,7 +381,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .search-field {
-  background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
+  background-image: url("#{getConfig('urls.cdn')}/icons/search_blue.svg");
 }
 
 .filters {
@@ -406,7 +429,9 @@ export default {
 
 #speaks {
   height: 433px;
+  overflow-x: hidden;
   overflow-y: auto;
+  overflow-anchor: none;
 
   @include respond-to(mobile) {
     height: 216px;
@@ -424,7 +449,7 @@ export default {
   }
 
   .nalagalnik__wrapper {
-    background: rgba(255, 255, 255, .75);
+    background: $white-hover;
     height: 100%;
     left: 0;
     position: absolute;
@@ -438,7 +463,7 @@ export default {
   }
 
   .date {
-    background-color: #f0f0f0;
+    background-color: $grey;
     font-weight: bold;
     padding: 10px;
   }

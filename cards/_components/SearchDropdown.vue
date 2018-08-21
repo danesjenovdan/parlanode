@@ -1,37 +1,42 @@
 <template>
   <div
+    v-click-outside="function() { toggleDropdown(false) }"
     :class="['search-dropdown', { small: small }]"
-    v-click-outside="function() { toggleDropdown(false) }">
+  >
     <div
       v-if="selectedIds.length > 0"
       class="search-dropdown-clear"
-      @click="clearSelection">×</div>
+      @click="clearSelection"
+    >×</div>
     <input
+      v-model="filter"
+      :placeholder="adjustedPlaceholder"
       class="search-dropdown-input"
       type="text"
-      v-model="filter"
       @focus="toggleDropdown(true)"
       @keydown.enter.prevent="selectItem(filteredItems[focused].id)"
       @keydown.up.prevent="focus(focused - 1, true)"
       @keydown.down.prevent="focus(focused + 1, true)"
-      :placeholder="adjustedPlaceholder">
+    >
     <ul
-      :class="['search-dropdown-options', { visible: this.active, up: this.up }]"
+      :class="['search-dropdown-options', { visible: active, up: up }]"
       :style="{'margin-top': upMargin}"
-      @mouseleave="focus(-1)">
+      @mouseleave="focus(-1)"
+    >
       <template v-for="(item, index) in filteredItems">
         <li
-          :key="`${item.id}1`"
           v-if="item.groupLabel"
-          class="search-dropdown-group-label">
+          :key="`${item.id}1`"
+          class="search-dropdown-group-label"
+        >
           {{ item.groupLabel }}
         </li>
-        <!-- glasovanje-update je bilo brez :key, ki je bil v developu zgoraj je bil :key v developu, zaenkrat puščam oba-->
         <li
           :key="`${item.id}2`"
           :class="{ selected : item.selected, focused : focused === index }"
           @click="selectItem(item.id)"
-          @mouseenter="focus(index)">
+          @mouseenter="focus(index)"
+        >
           <div class="search-dropdown-label">{{ item.label }}</div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
@@ -47,30 +52,77 @@ const ITEM_COUNT = 10;
 
 export default {
   name: 'SearchDropdown',
-  data: () => ({
-    filter: '',
-    active: false,
-    focused: -1,
-    upMargin: 0,
-  }),
-  watch: {
-    filter() {
-      this.focus(this.focused);
+  directives: {
+    clickOutside: {
+      bind(el, binding) {
+        const handler = (e) => {
+          if (!el.contains(e.target) && el !== e.target) {
+            binding.value(e);
+          }
+        };
+        // eslint-disable-next-line no-param-reassign
+        el.vueClickOutside = handler;
+        document.addEventListener('click', handler);
+      },
+      unbind(el) {
+        document.removeEventListener('click', el.vueClickOutside);
+        // eslint-disable-next-line no-param-reassign
+        el.vueClickOutside = null;
+      },
     },
-    active() {
-      this.$nextTick(() => {
-        if (this.up) {
-          this.upMargin = `-${this.$el.querySelector('.search-dropdown-options').getBoundingClientRect().height + 39}px`;
-        }
-      });
+  },
+  props: {
+    alphabetise: {
+      type: Boolean,
+      default: true,
     },
+    groups: {
+      type: Array,
+      default: null,
+    },
+    items: {
+      type: Array,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      required: true,
+    },
+    selectCallback: {
+      type: Function,
+      default: () => {},
+    },
+    clearCallback: {
+      type: Function,
+      default: () => {},
+    },
+    single: {
+      type: Boolean,
+      default: false,
+    },
+    small: {
+      type: Boolean,
+      default: false,
+    },
+    up: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      filter: '',
+      active: false,
+      focused: -1,
+      upMargin: 0,
+    };
   },
   computed: {
     filteredItems() {
       const filterAndSort = items => items
-        .filter(item =>
-          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1,
-        )
+        .filter(item => (
+          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1
+        ))
         .map((item, index) => {
           // eslint-disable-next-line no-param-reassign
           item.sortIndex = index;
@@ -82,12 +134,20 @@ export default {
               return a.label.localeCompare(b.label, 'sl');
             }
 
-            if (a.selected && !b.selected) return -1;
-            else if (!a.selected && b.selected) return 1;
+            if (a.selected && !b.selected) {
+              return -1;
+            }
+            if (!a.selected && b.selected) {
+              return 1;
+            }
           }
 
-          if (a.sortIndex < b.sortIndex) return -1;
-          else if (a.sortIndex > b.sortIndex) return 1;
+          if (a.sortIndex < b.sortIndex) {
+            return -1;
+          }
+          if (a.sortIndex > b.sortIndex) {
+            return 1;
+          }
 
           return 0;
         })
@@ -100,9 +160,9 @@ export default {
       if (this.groups) {
         return this.groups
           .map((group) => {
-            const itemsFromGroup = filterAndSort(this.items.filter(
-              item => group.items.indexOf(item.id) > -1),
-            );
+            const itemsFromGroup = filterAndSort(this.items.filter(item => (
+              group.items.indexOf(item.id) > -1
+            )));
 
             itemsFromGroup.forEach((item, index) => {
               // eslint-disable-next-line no-param-reassign
@@ -129,53 +189,17 @@ export default {
       return selectedItem ? selectedItem.label : this.placeholder;
     },
   },
-  directives: {
-    clickOutside: {
-      bind(el, binding) {
-        const handler = (e) => {
-          if (!el.contains(e.target) && el !== e.target) {
-            binding.value(e);
-          }
-        };
-        // eslint-disable-next-line no-param-reassign
-        el.vueClickOutside = handler;
-        document.addEventListener('click', handler);
-      },
-      unbind(el) {
-        document.removeEventListener('click', el.vueClickOutside);
-        // eslint-disable-next-line no-param-reassign
-        el.vueClickOutside = null;
-      },
+  watch: {
+    filter() {
+      this.focus(this.focused);
     },
-  },
-  props: {
-    alphabetise: {
-      type: Boolean,
-      default: true,
+    active() {
+      this.$nextTick(() => {
+        if (this.up) {
+          this.upMargin = `-${this.$el.querySelector('.search-dropdown-options').getBoundingClientRect().height + 39}px`;
+        }
+      });
     },
-    groups: Array,
-    items: {
-      type: Array,
-      required: true,
-    },
-    placeholder: {
-      type: String,
-      required: true,
-    },
-    selectCallback: Function,
-    clearCallback: Function,
-    single: {
-      type: Boolean,
-      default: false,
-    },
-    small: {
-      type: Boolean,
-      default: false,
-    },
-    up: {
-      type: Boolean,
-      default: false,
-    }
   },
   methods: {
     selectItem(selectedItemId) {
@@ -211,7 +235,9 @@ export default {
     focus(index, withKeyboard) {
       this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);
 
-      if (!withKeyboard) return;
+      if (!withKeyboard) {
+        return;
+      }
 
       const additionalOffset = this.filteredItems.slice(0, this.focused + 1)
         .map(item => (item.groupLabel ? 1 : 0))

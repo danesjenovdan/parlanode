@@ -1,48 +1,55 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    contentHeight="518px"
+    :content-class="{'is-loading': fetching}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Seznam povezav do vseh govorov, ki vsebujejo iskalni niz.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Po transkriptih vseh sej poiščemo in izpišemo povezave do vseh govorov, v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu od najnovejše do najstarejše. Zajeto množico poslancev določajo uporabniške nastavitve filtrov, in sicer glede na časovno obdobje, poslanca/-ko in/ali poslansko skupino in/ali sejo.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div v-if="rawSpeeches.length === 0" class="no-results">Brez zadetkov.</div>
+    <div v-t="'no-results'" v-if="rawSpeeches.length === 0 && !fetching" class="no-results"></div>
     <scroll-shadow v-else ref="shadow">
-      <ul class="person-list thing-list" @scroll="$refs.shadow.check($event.currentTarget)" ref="scrollElement">
+      <ul
+        ref="scrollElement"
+        class="person-list thing-list"
+        @scroll="$refs.shadow.check($event.currentTarget)"
+      >
         <li v-for="speech in speeches" :key="speech.speech_id" class="person">
           <template v-if="speech.person.type === 'mp'">
-            <a class="column portrait" :href="speech.memberUrl">
-              <img :src="speech.memberImageUrl" />
+            <a :href="speech.memberUrl" class="column portrait">
+              <img :src="speech.memberImageUrl">
             </a>
             <div class="column name">
-              <a class="funblue-light-hover" :href="speech.memberUrl">{{ speech.person.name }}</a><br/>
+              <a :href="speech.memberUrl" class="funblue-light-hover">
+                {{ speech.person.name }}
+              </a>
+              <br>
               <template v-if="speech.partyUrl">
-                <a class="funblue-light-hover" :href="speech.partyUrl">{{ speech.person.party.acronym }}</a>
+                <a :href="speech.partyUrl" class="funblue-light-hover">
+                  {{ speech.person.party.acronym }}
+                </a>
               </template>
-              <template v-else>{{ speech.person.party.acronym}}</template>
+              <template v-else>{{ speech.person.party.acronym }}</template>
             </div>
           </template>
           <template v-else>
             <div class="column portrait">
-              <img :src="speech.memberImageUrl" />
+              <img :src="speech.memberImageUrl">
             </div>
             <div class="column name">
-              {{ speech.person.name }}<br/>
+              {{ speech.person.name }}<br>
             </div>
           </template>
 
           <div class="column date">{{ speech.formattedDate }}</div>
           <div class="column quote">
-            <a class="funblue-light-hover" :href="speech.speechUrl" v-html="speech.content_t"></a>
+            <a :href="speech.speechUrl" class="funblue-light-hover" v-html="speech.content_t"></a>
           </div>
         </li>
       </ul>
@@ -54,64 +61,75 @@
 </template>
 
 <script>
+import axios from 'axios';
 import common from 'mixins/common';
 import { searchTitle } from 'mixins/titles';
-import {
-  getPersonLink,
-  getPersonPartyLink,
-  getPersonPortrait,
-  getSessionSpeechLink,
-} from 'components/links';
+import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
+import links from 'mixins/links';
 import dateFormatter from 'helpers/dateFormatter';
 import ScrollShadow from 'components/ScrollShadow.vue';
+import stateLoader from 'helpers/stateLoader';
 
 const PAGE_SIZE = 50;
 
 export default {
-  mixins: [
-    common,
-    searchTitle,
-  ],
+  name: 'NastopiVKaterihJeBilIskalniNizIzrecen',
   components: {
     ScrollShadow,
   },
-  name: 'NastopiVKaterihJeBilIskalniNizIzrecen',
+  mixins: [
+    common,
+    searchTitle,
+    searchHeader,
+    searchOgImage,
+    links,
+  ],
   data() {
-    const keywords = this.$options.cardData.data.responseHeader.params.q.split('content_t:')[1].split(')')[0];
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-      keywords,
-      rawSpeeches: this.$options.cardData.data.highlighting,
-      allResults: this.$options.cardData.data.response.numFound,
+      keywords: loadFromState('query'),
+      rawSpeeches: [],
+      allResults: 0,
       page: 0,
-      fetching: false,
+      fetching: true,
     };
   },
   computed: {
     generatedCardUrl() {
-      const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/q/${this.keywords}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      const state = { query: this.keywords };
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     speeches() {
       return this.rawSpeeches.map((speech) => {
         if (speech.person.type === 'mp') {
-          speech.memberUrl = getPersonLink(speech.person);
-          speech.partyUrl = getPersonPartyLink(speech.person);
+          speech.memberUrl = this.getPersonLink(speech.person);
+          speech.partyUrl = this.getPersonPartyLink(speech.person);
         }
-        speech.memberImageUrl = getPersonPortrait(speech.person);
+        speech.memberImageUrl = this.getPersonPortrait(speech.person);
         speech.formattedDate = dateFormatter(speech.date);
-        speech.speechUrl = getSessionSpeechLink(speech);
+        speech.speechUrl = this.getSessionSpeechLink(speech);
         return speech;
       });
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.rawSpeeches = res.data.highlighting || [];
+        this.allResults = res.data.response.numFound;
+        this.fetching = false;
+        if (this.allResults > PAGE_SIZE) {
+          this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
+        }
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.fetching = false;
+        this.error = true;
+      });
   },
   methods: {
     checkIfBottom() {
@@ -126,7 +144,7 @@ export default {
       }
       this.fetching = true;
       this.page += 1;
-      $.get(`https://isci.parlameter.si/q/${this.keywords}/${this.page}`, (response) => {
+      $.get(`${this.slugs.urls.isci}/q/${this.keywords}/${this.page}`, (response) => {
         this.rawSpeeches = this.rawSpeeches.concat(response.highlighting);
         if (this.allResults <= (this.page + 1) * PAGE_SIZE) {
           this.$refs.scrollElement.removeEventListener('scroll', this.checkIfBottom);
@@ -135,11 +153,6 @@ export default {
       });
     },
   },
-  mounted() {
-    if (this.allResults > PAGE_SIZE) {
-      this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
-    }
-  },
 };
 </script>
 
@@ -147,7 +160,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .infinite-scroll-loader {
-  background: rgba($white, 0.75);
+  background: $white-hover;
   height: 100%;
   left: 0;
   position: absolute;

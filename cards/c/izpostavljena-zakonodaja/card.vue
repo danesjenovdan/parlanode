@@ -1,45 +1,54 @@
 <template>
   <card-wrapper
-    class="card-halfling card-featured-legislation"
     :id="$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
-    contentHeight="518px"
+    :og-config="ogConfig"
+    class="card-halfling card-featured-legislation"
+    content-height="518px"
   >
     <div slot="info">
-      <p class="info-text lead">Kažemo šest zakonov, ki so še v parlamentarni obravnavi, in šest nedavno sprejetih.</p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">Izpostavljene zakone določamo uredniško, in sicer glede na to, koliko zanimanja zanje zaznamo v medijih in civilni družbi. To je edina stvar na Parlametru, ki je ne kurira računalnik, ampak človek.</p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
     <div class="p-tabs-2col legislation">
       <p-tabs :start-tab="selectedTab">
-        <p-tab label="Trenutno v obravnavi">
+        <p-tab :label="$t('under-consideration')">
           <div class="row">
-            <div class="col-xs-12 col-sm-6 legislation__wrapper" v-for="legislation in data.under_consideration" :key="legislation.epa">
-              <a class="legislation__single" :href="slugs.legislationLink + legislation.epa">
+            <div
+              v-for="legislation in data.under_consideration"
+              :key="legislation.epa"
+              class="col-xs-12 col-sm-6 legislation__wrapper"
+            >
+              <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
-                    <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" />
+                    <img v-if="legislation.icon" :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`">
                   </div>
                 </div>
                 <div class="text">
-                  {{ legislation.text}}
+                  {{ legislation.text }}
                 </div>
               </a>
             </div>
           </div>
         </p-tab>
-        <p-tab label="Nedavno sprejeto">
+        <p-tab :label="$t('recently-passed')">
           <div class="legislation row">
-            <div class="col-sm-6 legislation__wrapper" v-for="legislation in data.accepted" :key="legislation.epa">
-              <a class="legislation__single" :href="slugs.legislationLink + legislation.epa">
+            <div
+              v-for="legislation in data.accepted"
+              :key="legislation.epa"
+              class="col-sm-6 legislation__wrapper"
+            >
+              <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
-                    <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon" />
+                    <img v-if="legislation.icon" :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`">
                   </div>
                 </div>
                 <div class="text">
-                  {{ legislation.text}}
+                  {{ legislation.text }}
                 </div>
               </a>
             </div>
@@ -47,7 +56,7 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a :href="`https://parlameter.si${slugs.legislationLink}`">VSA ZAKONODAJA</a>
+        <a v-t="'all-legislation'" :href="getLegislationListLink()"></a>
       </div>
     </div>
   </card-wrapper>
@@ -55,49 +64,39 @@
 
 <script>
 import common from 'mixins/common';
-
+import links from 'mixins/links';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultOgImage } from 'mixins/ogImages';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 
 export default {
-  components: { PTab, PTabs },
-  mixins: [common],
   name: 'IzpostavljenaZakonodaja',
+  components: { PTab, PTabs },
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     return {
       data: this.$options.cardData.data,
       state: this.$options.cardData.parlaState || {},
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: {
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
+      headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
     };
   },
-  methods: {
-    measurePiwik(filter, sort, order) {
-      if (typeof measure === 'function') {
-        if (sort !== '') {
-          measure('s', 'session-sort', `${sort} ${order}`, '');
-        } else if (filter !== '') {
-          measure('s', 'session-filter', filter, '');
-        }
-      }
+  computed: {
+    generatedCardUrl() {
+      const customUrl = encodeURIComponent(`${this.slugs.urls.analize}/s/getExposedLegislation/`);
+      const state = encodeURIComponent(JSON.stringify({ selectedTab: this.selectedTab }));
+      return `${this.url}?customUrl=${customUrl}&state=${state}`;
     },
   },
   created() {
     if (this.state.selectedTab) {
       this.selectedTab = this.state.selectedTab;
     }
-  },
-  computed: {
-    generatedCardUrl() {
-      const customUrl = encodeURIComponent('https://analize.parlameter.si/v1/s/getExposedLegislation/');
-      const state = encodeURIComponent(JSON.stringify({ selectedTab: this.selectedTab }));
-      return `https://glej.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${customUrl}&state=${state}`;
-    },
   },
 };
 </script>
@@ -142,7 +141,7 @@ export default {
     }
 
     &:hover {
-      background-color: #e7f5fe;
+      background-color: $funblue-light-hover;
     }
 
     &:focus,
@@ -174,17 +173,18 @@ export default {
     left: 0;
     bottom: 0;
     padding: 4px 20px 15px 20px;
-    background: #ffffff;
+    background: $white;
     width: 100%;
 
     a {
       padding: 3px;
       padding-left: 32px;
-      background: url(https://cdn.parlameter.si/v1/parlassets/icons/zakonodaja-modra.svg)
+      background: url("#{getConfig('urls.cdn')}/icons/zakonodaja-modra.svg")
         no-repeat top left;
       font-size: 14px;
       font-weight: 400;
-      color: #227497;
+      color: $sadblue;
+      text-transform: uppercase;
     }
   }
 }

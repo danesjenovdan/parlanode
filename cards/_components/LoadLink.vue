@@ -15,12 +15,12 @@
   cursor: pointer;
   font-weight: 600;
 
-  &:hover { background-color: #ffffff; }
+  &:hover { background-color: $white; }
 
   &::after {
     content: '';
     display: inline-block;
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/nalozi.svg');
+    background-image: url("#{getConfig('urls.cdn')}/icons/nalozi.svg");
     width: 20px;
     height: 20px;
     position: relative;

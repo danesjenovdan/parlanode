@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "Broj izgovorenih riječi"
+  },
+  "info": {
+    "lead": "Broj riječi koje je zastupnica izgovorila u svim svojim govorima u HS-u u odnosu na prosječnu i maksimalnu vrijednost.",
+    "text": "Zbrajaju se riječi u govorima zastupnice preuzetima iz transkripata objavljenih na {link}.",
+    "link": {
+      "link": "http://edoc.sabor.hr/Fonogrami.aspx",
+      "text": "HS"
+    }
+  }
+}

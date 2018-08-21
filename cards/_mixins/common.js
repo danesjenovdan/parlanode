@@ -1,14 +1,10 @@
 import CardWrapper from 'components/Card/Wrapper.vue';
-
 import url from 'mixins/url';
-import slugs from '../../assets/urls.json';
-import vocabulary from '../../assets/vocab.json';
 
 export default {
   data() {
     return {
-      slugs,
-      vocabulary,
+      slugs: this.$root.$options.cardData.urls,
     };
   },
   components: {
@@ -19,14 +15,14 @@ export default {
   ],
   created() {
     this.$root.$options.cardData.template = {
-      pageTitle: this.$root.$options.cardData.cardData.name,
+      pageTitle: this.$te('card.title') ? this.$t('card.title') : '',
       frameContainerClass: this.$root.$options.cardData.cardData.big
         ? 'col-md-12'
         : 'col-md-6 col-md-offset-3',
       embedContainerClass:
-        (this.$root.$options.cardData.cardData.big ? ' big-card' : '') +
-        (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
-      contextUrl: this.slugs.base,
+        (this.$root.$options.cardData.cardData.big ? ' big-card' : '')
+        + (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
+      contextUrl: this.slugs.urls.base,
     };
   },
 };

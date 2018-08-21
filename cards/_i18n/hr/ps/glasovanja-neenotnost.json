@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Popis glasanja po "
+  },
+  "info": {
+    "lead": "Popis svih glasanja HS-a koja odgovaraju korisničkom izboru ({text}), za izabrana matična radna tijela ({wbs}), razvrstana prema {sortBy}.",
+    "text": [
+      "Popis svih glasanja koja su se dogodila u aktualnom sazivu HS-a i bila objavljena na stranicama sabor.hr\/sjednica-sabora te odgovaraju korisničkom izboru.",
+      "Rezultati se klasificiraju bilo po razjedinjenosti odabranog tijela, bilo po datumu."
+    ]
+  },
+  "all-votes": "sva glasanja",
+  "all-working-bodies": "sva matična radna tijela"
+}

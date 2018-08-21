@@ -1,0 +1,53 @@
+{
+  "card": {
+    "title": "Popis zastupnica"
+  },
+  "info": {
+    "lead": "Skup svih trenutno aktivnih zastupnica koje odgovaraju korisničkom izboru ({parties}; {districts}). Pregled je sortiran po {sortBy}.",
+    "text": ""
+  },
+  "select-district-placeholder": "Odaberite izbornu jedinicu",
+  "select-parties-placeholder": "Izberi poslansko skupino",
+  "all-parties": "svi klubovi",
+  "all-voting-districts": "sve izborne jedinice",
+  "missing-district": "izborna jedinica nije unijeta",
+  "voting-district": "izborna jedinica",
+  "sort-by--name": "abecedi",
+  "sort-by--district": "izbornoj jedinici",
+  "sort-by--party": "klubu",
+  "sort-by--analysis": "rezultatu analize {analysis}",
+  "sort-by--change": "trenutna promjena u rezultatu analize {analysis}",
+  "sort-by--age": "dob",
+  "sort-by--education": "stupanj obrazovanja",
+  "sort-by--terms": "broj mandata",
+  "analysis-texts": {
+    "demographics": {
+      "label": "Demografija"
+    },
+    "presence_votes": {
+      "label": "Prisutnost na glasanjima na sjednicama HS-a",
+      "titleSuffix": " prema prisutnosti na glasanjima na sjednicama HS-a",
+      "explanation": "Broj glasanja kada je zastupnica bila prisutna podijeli se s brojem svih glasanja i normalizira (min 1 - max 100)."
+    },
+    "number_of_questions": {
+      "label": "Br. zastupničkih pitanja i inicijativa",
+      "titleSuffix": " prema br. zastupničkih pitanja i inicijativa",
+      "explanation": "Broj zastupničkih pitanja i inicijativa koje je zastupnica postavila u jednom sazivu HS u odnosu na prosječnu i maksimalnu vrijednost."
+    },
+    "speeches_per_session": {
+      "label": "Br. govora na sjednici",
+      "titleSuffix": " prema br. govora na sjednici",
+      "explanation": "Prebroje se govori odabrane zastupnice i broj se podijeli s brojem sjednica na kojima je zastupnica govorila. Broj svih govora najprije se dijeli s brojem zastupnica, a zatim s brojem svih sjednica (na kojima se govorilo). Individualni rezultat uspoređuje se s prosjekom."
+    },
+    "spoken_words": {
+      "label": "Br. izgovorenih riječi",
+      "titleSuffix": " prema br. izgovorenih riječi",
+      "explanation": "Broj riječi koje je zastupnica izgovorila u svim svojim dosadašnjim govorima u HS."
+    },
+    "mismatch_of_pg": {
+      "label": "Neslaganje s klubom",
+      "titleSuffix": " prema neslaganju s klubom",
+      "explanation": "Odstupanje od većinskog glasa kluba na glasanjima u HS."
+    }
+  }
+}

@@ -2,17 +2,18 @@
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
-    :header-config="headerConfig">
-
-    <div slot="info" v-html="infoText"></div>
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
+    <slot slot="info" name="info"></slot>
 
     <sortable-table
-      class="person-list"
       :columns="columns"
       :items="mappedMembers"
       :sort="currentSort"
       :sort-order="currentSortOrder"
       :sort-callback="selectSort"
+      class="person-list"
     />
   </card-wrapper>
 </template>
@@ -20,7 +21,8 @@
 <script>
 import common from 'mixins/common';
 import SortableTable from 'components/SortableTable.vue';
-import { getMemberLink, getMemberPortrait, getMemberPartyLink } from 'components/links';
+import links from 'mixins/links';
+import { memberList } from 'mixins/contextUrls';
 
 const arabicToRoman = arabic => ({
   0: '',
@@ -35,25 +37,63 @@ const arabicToRoman = arabic => ({
 }[arabic]);
 
 export default {
-  components: { SortableTable },
-  mixins: [common],
   name: 'SeznamPoslancevInnerCard',
+  components: { SortableTable },
+  mixins: [
+    common,
+    links,
+    memberList,
+  ],
+  props: {
+    demographics: {
+      type: Boolean,
+      default: false,
+    },
+    headerConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    ogConfig: {
+      type: Object,
+      default: null,
+    },
+    generatedCardUrl: {
+      type: String,
+      default: '',
+    },
+    currentSort: {
+      type: String,
+      default: '',
+    },
+    currentSortOrder: {
+      type: String,
+      default: '',
+    },
+    processedMembers: {
+      type: Array,
+      default: () => [],
+    },
+    currentAnalysisData: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
   computed: {
     mappedMembers() {
       if (this.demographics) {
         return this.processedMembers.map(member => [
-          { link: getMemberLink(member), image: getMemberPortrait(member) },
-          { link: getMemberLink(member), text: member.person.name },
+          { link: this.getMemberLink(member), image: this.getMemberPortrait(member) },
+          { link: this.getMemberLink(member), text: member.person.name },
           member.age,
           arabicToRoman(member.education),
           member.terms,
-          { link: member.partylink ? getMemberPartyLink(member) : '', text: member.person.party.acronym },
+          { link: member.partylink ? this.getMemberPartyLink(member) : '', text: member.person.party.acronym },
           member.formattedDistrict,
         ]);
       }
       return this.processedMembers.map(member => [
-        { link: getMemberLink(member), image: getMemberPortrait(member) },
-        { link: getMemberLink(member), text: member.person.name },
+        { link: this.getMemberLink(member), image: this.getMemberPortrait(member) },
+        { link: this.getMemberLink(member), text: member.person.name },
         { barchart: true, value: member.analysisValue, width: member.analysisPercentage },
         member.analysisDiff,
       ]);
@@ -62,39 +102,26 @@ export default {
       if (this.demographics) {
         return [
           { id: 'image', label: '', additionalClass: 'portrait' },
-          { id: 'name', label: 'Ime', additionalClass: 'wider name' },
-          { id: 'age', label: 'Starost' },
-          { id: 'education', label: 'Stopnja izobrazbe', additionalClass: 'optional' },
-          { id: 'terms', label: 'Število mandatov', additionalClass: 'optional' },
-          { id: 'party', label: 'PS', additionalClass: 'optional' },
-          { id: 'district', label: 'Okraj', additionalClass: 'optional' },
+          { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
+          { id: 'age', label: this.$t('age') },
+          { id: 'education', label: this.$t('education'), additionalClass: 'optional' },
+          { id: 'terms', label: this.$t('number-of-terms'), additionalClass: 'optional' },
+          { id: 'party', label: this.$t('party'), additionalClass: 'optional' },
+          { id: 'district', label: this.$t('district'), additionalClass: 'optional' },
         ];
       }
       return [
         { id: 'image', label: '', additionalClass: 'portrait' },
-        { id: 'name', label: 'Ime', additionalClass: 'name' },
-        { id: 'analysis', label: 'Analiza', additionalClass: 'wider barchartcontainer' },
-        { id: 'change', label: 'Sprememba' },
+        { id: 'name', label: this.$t('name'), additionalClass: 'name' },
+        { id: 'analysis', label: this.$t('analysis'), additionalClass: 'wider barchartcontainer' },
+        { id: 'change', label: this.$t('change') },
       ];
     },
-  },
-  props: {
-    demographics: Boolean,
-    headerConfig: Object,
-    generatedCardUrl: String,
-    currentSort: String,
-    currentSortOrder: String,
-    processedMembers: Array,
-    currentAnalysisData: Object,
-    infoText: String,
   },
   methods: {
     selectSort(sort) {
       this.$emit('sort', sort);
     },
-  },
-  created() {
-    this.$root.$options.cardData.template.contextUrl = `${this.slugs.base}/poslanci`;
   },
 };
 </script>

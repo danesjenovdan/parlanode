@@ -1,41 +1,48 @@
 <template>
-    <a class="ballot" :href="`${slugs.base}/seja/glasovanje/${ballot.session_id}/${ballot.vote_id}`">
+  <a
+    :href="getSessionVoteLink(ballot)"
+    class="ballot"
+  >
     <div class="disunion">
-        <div :class="['icon', ballot.option]"></div>
-        <div class="text">
+      <div :class="['icon', ballot.option]"></div>
+      <div class="text">
         <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span> {{ ballot.option }}
-        </div>
+      </div>
     </div>
     <div class="name">
-        <p>{{ ballot.motion }}</p>
+      <p>{{ ballot.motion }}</p>
     </div>
     <div class="outcome">
-        <i :class="[{'glyphicon glyphicon-ok':ballot.result === true}, {'glyphicon glyphicon-remove':ballot.result === false}]"></i>
-        <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
+      <i :class="['glyphicon', `glyphicon-${ballot.result === true ? 'ok' : 'remove'}`]"></i>
+      <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
     </div>
-    </a>
+  </a>
 </template>
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
 
 export default {
   name: 'Ballot',
-  mixins: [ common ],
+  filters: {
+    toPercent(val) {
+      return `${parseInt(val, 10)} %`;
+    },
+  },
+  mixins: [
+    common,
+    links,
+  ],
   props: {
     ballot: {
       type: Object,
       required: true,
     },
     type: {
-        type: String,
-        default: 'person',
+      type: String,
+      default: 'person',
     },
-  },
-  filters: {
-    toPercent(val) {
-      return parseInt(val) + ' %';
-    }
   },
 };
 </script>
@@ -56,8 +63,8 @@ export default {
         text-decoration: none;
     }
 
-    background: #f0f0f0;
-    color: #505050;
+    background: $grey;
+    color: $black;
     display: block;
     margin: 7px 0 8px;
     min-height: 90px;
@@ -84,7 +91,7 @@ export default {
         @include respond-to(desktop) {
         border-bottom: none;
         border-top: none;
-        border-left: 1px solid #505050;
+        border-left: 1px solid $black;
         align-items: center;
         display: flex;
         flex: 4;
@@ -92,8 +99,8 @@ export default {
         padding: 5px 20px;
         }
 
-        border-bottom: 1px solid #505050;
-        border-top: 1px solid #505050;
+        border-bottom: 1px solid $black;
+        border-top: 1px solid $black;
         font-family: Roboto Slab,Times New Roman,serif;
         font-size: 11px;
         font-weight: 300;
@@ -107,7 +114,7 @@ export default {
 
     .outcome {
         @include respond-to(desktop) {
-        border-left: 1px solid #505050;
+        border-left: 1px solid $black;
         justify-content: left;
         padding: 0 0 0 16px;
         width: 136px;
@@ -127,7 +134,7 @@ export default {
         @include respond-to(mobile) { margin: 0 15px; }
 
         .text {
-        color: #333;
+        color: $grey-dark;
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
@@ -177,10 +184,10 @@ export default {
       align-items: center;
       height: 42px;
 
-      &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_za_v2.svg"); }
-      &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_proti_v2.svg"); }
-      &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
-      &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_vzdrzan_v2.svg"); }
+      &.za { background-image: url("#{getConfig('urls.cdn')}/icons/g_za_v2.svg"); }
+      &.proti { background-image: url("#{getConfig('urls.cdn')}/icons/g_proti_v2.svg"); }
+      &.ni { background-image: url("#{getConfig('urls.cdn')}/icons/ni_v2.svg"); }
+      &.kvorum { background-image: url("#{getConfig('urls.cdn')}/icons/g_vzdrzan_v2.svg"); }
     }
 
     .text {

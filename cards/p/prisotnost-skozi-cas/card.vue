@@ -1,19 +1,15 @@
 <template>
   <prisotnost-chart
     :card-data="$options.cardData"
-    type="poslanec"
     :person="$options.cardData.data.person"
     :results="$options.cardData.data.results"
-    v-bind="{ generatedCardUrl }"
+    :generated-card-url="generatedCardUrl"
+    type="person"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Prisotnost {{vocabulary.poslanec3[gender]}} na glasovanjih DZ skozi čas.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text">
-        Vsak mesec preštejemo vse oddane glasovnice {{vocabulary.poslanec3[gender]}} in število delimo s številom vseh glasovanj, na katerih bi {{vocabulary.morati[gender]}} {{vocabulary.poslanec[gender]}} ta mesec glasovati. Če {{vocabulary.poslanec[gender]}} v izbranem mesecu mandata ni {{vocabulary.imeti[gender]}}, prikažemo, na kolikšnem odstotku glasovanj ni {{vocabulary.imeti[gender]}} pravice glasovati.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
   </prisotnost-chart>
 </template>
@@ -22,9 +18,7 @@
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
-import urlFunctionalities from 'mixins/urlFunctionalities';
 import PrisotnostChart from 'components/PrisotnostChart.vue';
-import vocabulary from '../../../assets/vocab.json';
 
 export default {
   name: 'PrisotnostSkoziCas',
@@ -33,16 +27,13 @@ export default {
   },
   mixins: [
     common,
-    urlFunctionalities,
     memberOverview,
     memberTitle,
   ],
-  data() {
-    return {
-      gender: this.$options.cardData.data.person.gender,
-      vocabulary,
-      urlParameters: {},
-    };
+  computed: {
+    generatedCardUrl() {
+      return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
+    },
   },
 };
 </script>

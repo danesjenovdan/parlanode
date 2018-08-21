@@ -1,11 +1,7 @@
 {
   "_id": "s_tfidf",
-  "name": "Besede, ki so zaznamovale sejo",
-  "type": "seje",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getTFIDF",
-  "lastUpdate": "2018-07-25T14:44:59.255Z",
-  "method": "tfidf",
-  "group": "s",
+  "dataUrl": "{analize}/s/getTFIDF",
+  "lastUpdate": "2018-07-27T15:01:43.946Z",
   "big": true,
   "high": false
 }

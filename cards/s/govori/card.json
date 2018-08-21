@@ -1,11 +1,7 @@
 {
   "_id": "s_govori",
-  "name": "Transkript",
-  "type": "seje",
-  "dataUrl": "https://analize.parlameter.si/v1/s/getSpeechesOfSession",
-  "lastUpdate": "2018-07-25T14:44:45.912Z",
-  "method": "govori",
-  "group": "s",
+  "dataUrl": "{analize}/s/getSpeechesOfSession",
+  "lastUpdate": "2018-07-27T15:01:14.236Z",
   "big": true,
   "high": true
 }

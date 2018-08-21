@@ -1,70 +1,89 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
+    :content-class="{'is-loading': loading}"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
+    :og-config="ogConfig"
+    content-height="500px"
   >
     <div slot="info">
-      <p class="info-text lead">
-        Pregled vseh glasovanj, ki vsebujejo iskalni niz, razvščenih glede na čas.
-      </p>
-      <p class="info-text heading">METODOLOGIJA</p>
-      <p class="info-text text">
-        Po glasovanjih vseh sej poiščemo in izpišemo povezave do vseh glasovanj, v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu (od najnovejše do najstarejše) in podobnosti z iskalnim nizom.
-      </p>
+      <p v-t="'info.lead'" class="info-text lead"></p>
+      <p v-t="'info.methodology'" class="info-text heading"></p>
+      <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <seznam-glasovanj :data="votes" :show-filters="false" />
+    <seznam-glasovanj v-if="data" :data="votes" :show-filters="false" />
   </card-wrapper>
 </template>
 
 <script>
+import axios from 'axios';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import common from 'mixins/common';
+import { searchHeader } from 'mixins/altHeaders';
+import { searchOgImage } from 'mixins/ogImages';
 import { searchTitle } from 'mixins/titles';
+import stateLoader from 'helpers/stateLoader';
 
 export default {
+  name: 'GlasovanjaIskanje',
   components: {
     SeznamGlasovanj,
   },
   mixins: [
     common,
     searchTitle,
+    searchHeader,
+    searchOgImage,
   ],
-  name: 'GlasovanjaIskanje',
   data() {
-    const keywords = this.$options.cardData.data.search_query.replace(/\+/g, ' ');
+    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: this.$options.cardData.data.data,
+      data: null,
       currentSort: '',
       currentSortOrder: 'DESC',
       workingBodies: [],
-      headerConfig: {
-        circleIcon: 'og-search',
-        heading: keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
-      },
-      keywords,
+      keywords: loadFromState('query'),
+      loading: true,
     };
   },
   computed: {
     generatedCardUrl() {
-      const state = { text: this.keywords };
-      const searchUrl = `https://isci.parlameter.si/v2/${this.keywords.replace(/\s+/g, '+')}`;
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+      const state = { query: this.keywords };
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     votes() {
+      if (this.data) {
+        return {
+          votes: this.data.map(motion => ({
+            ...motion.results,
+            session_id: motion.session.id,
+          })),
+          session: {},
+          tags: [],
+        };
+      }
       return {
-        votes: this.data.map(motion => ({
-          ...motion.results,
-          session_id: motion.session.id,
-        })),
+        votes: [],
         session: {},
         tags: [],
       };
     },
+  },
+  mounted() {
+    const searchUrl = `${this.slugs.urls.isci}/v2/${this.keywords.replace(/\s+/g, '+')}`;
+    axios.get(searchUrl)
+      .then((res) => {
+        this.data = res.data.data;
+        this.loading = false;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.loading = false;
+        this.error = true;
+      });
   },
 };
 </script>

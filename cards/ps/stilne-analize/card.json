@@ -1,11 +1,7 @@
 {
   "_id": "ps_stilne-analize",
-  "name": "Stilne analize",
-  "type": "poslanska_skupina",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getStyleScores",
-  "lastUpdate": "2018-07-25T14:44:31.088Z",
-  "method": "stilne-analize",
-  "group": "ps",
+  "dataUrl": "{analize}/pg/getStyleScores",
+  "lastUpdate": "2018-07-27T15:00:41.117Z",
   "big": false,
   "high": false
 }

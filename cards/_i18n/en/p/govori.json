@@ -1,0 +1,9 @@
+{
+  "card": {
+    "title": "Speeches"
+  },
+  "info": {
+    "lead": "A list of links to all MP's speeches in this sitting, corresponding to user query, sorted by date.",
+    "text": "We load links to all speeches of the selected MP obtained from the National Assembly of the Republic of Slovenia web page. We then display the ones that match user query (time period, the type of the session)."
+  }
+}
