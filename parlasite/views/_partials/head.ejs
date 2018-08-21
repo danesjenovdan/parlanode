@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%- pageTitle %></title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.parlameter.si/v1/parlassets/icons/favicon.ico">
+  <meta name="google-site-verification" content="KR2vVdu1jrwHQR26kJHqQVzvC9fwJEoM1DOId7y7HWQ">
+
+  <meta name="twitter:creator" content="@danesjenovdan">
+  <meta name="twitter:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%- pageTitle %>">
+  <% if (typeof ogImageUrl !== 'undefined') { %><meta name="twitter:image" content="<%- ogImageUrl %>"><% } %>
+
+  <meta property="og:description" content="Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%- pageTitle %>">
+  <% if (typeof ogImageUrl !== 'undefined') { %><meta property="og:image" content="<%- ogImageUrl %>"><% } %>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,500&amp;subset=latin,latin-ext">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.parlameter.si/v1/parlassets/scss/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdn.parlameter.si/v1/parlassets/js/typeahead.bundle.min.js"></script>
+  <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-i18n@7.8.1/dist/vue-i18n.min.js"></script>
+  <script src="https://cdn.ravenjs.com/3.24.1/vue/raven.min.js"></script>
+  <script>/*Raven.config('https://b615fce983b843c8958aedcd3a9c9d60@sentry.ilol.si/70').install()*/</script>
+  <script src="https://cdn.parlameter.si/v1/parlassets/js/script.js"></script>
+  <script src="https://cdn.parlameter.si/v1/parlassets/js/components.js"></script><%# TODO: remove this %>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["setDomains", ["*.parlameter.si"]]);
+    _paq.push(["disableCookies"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    _paq.push(['enableHeartBeatTimer']);
+    (function() {
+      var u="//zy.si/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '13']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="//zy.si/piwik.php?idsite=13" style="border:0" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+
+  <style>
+  .searchheader, .searchperson-container {
+    width: 100% !important;
+  }
+  </style>
+</head>

@@ -1,7 +1,18 @@
-node_modules/
-.idea/
+# os garbage
 .DS_Store
-.idea
-/og
 
-data/*
+# package manager files
+node_modules/
+bower_components/
+*.log
+
+# editor configs
+.idea
+.vscode
+
+# configs
+config/development.js
+config/production.js
+
+# auto-downloaded assets
+/data/*

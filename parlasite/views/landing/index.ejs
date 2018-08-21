@@ -1,0 +1,24 @@
+<% include ../_partials/header.ejs %>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1" id="about">
+    <div class="lead-text-container">
+      <a href="/o-projektu" class="lead-text">
+        <%- i18n('landing.lead') %>
+      </a>
+    </div>
+  </div>
+</div>
+
+<% include ../_partials/search.ejs %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/c/izpostavljena-zakonodaja/') %>
+  </div>
+  <div class="col-md-12">
+    <%- await fetchCard('/c/zadnja-seja/') %>
+  </div>
+</div>
+
+<% include ../_partials/footer.ejs %>

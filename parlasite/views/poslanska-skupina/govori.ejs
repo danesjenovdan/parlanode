@@ -1,0 +1,18 @@
+<% include ../_partials/header.ejs %>
+
+<% include ./_header.ejs %>
+
+<div class="col-md-12">
+  <%- await fetchCard('/ps/govori/', party.id, { customUrl: `{isci}/filter/*/0?parties=${party.id}`, state: { parties: party.id } }) %>
+</div>
+<div class="col-md-6">
+  <%- await fetchCard('/ps/tfidf/', party.id) %>
+</div>
+<div class="col-md-6">
+  <%- await fetchCard('/ps/besedni-zaklad/', party.id) %>
+</div>
+<div class="col-md-6">
+  <%- await fetchCard('/ps/stilne-analize/', party.id) %>
+</div>
+
+<% include ../_partials/footer.ejs %>

@@ -1,0 +1,90 @@
+<!-- DONATION MODAL -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj">
+  <div class="modal-dialog modal-center" role="document">
+    <div class="modal-center-wrapper">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-logo">
+            <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
+          </div>
+          <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="text-center lead">
+              <%- i18n('donation.info') %>
+            </div>
+            <div class="text-center">
+              <img src="https://cdn.parlameter.si/v1/parlassets/img/icons/donacija.png" alt="donacija">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-6">
+            <a href="http://danesjenovdan.si/dolzni/" target="_blank">
+              <button type="button" class="btn-multiline btn-full-width"><%- i18n('donation.personal') %></button>
+              <!--data-dismiss="modal" data-next-target="#modal-doniraj-amount"-->
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-email"><%- i18n('donation.corporate') %></button>
+          </div>
+          <div class="col-xs-12">
+            <div class="btn-multiline btn-full-width text-center btn-donation-container">
+              <%- i18n('donation.bitcoin') %>
+              <br>
+              <input value="1PjBM4wZmtCvvf5sQUXRCY23xZf4ep7kyp" class="form-control" readonly="readonly" autocorrect="off" spellcheck="false" />
+            </div>
+            <script>
+              $('.btn-donation-container input').on('focus', function () {
+                this.select();
+                document.execCommand('copy');
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-doniraj-email">
+  <div class="modal-dialog modal-center" role="document">
+    <div class="modal-center-wrapper">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-logo">
+            <img class="img-responsive" src="https://cdn.parlameter.si/v1/parlassets/img/logo-parlameter.svg" alt="parlameter logo">
+          </div>
+          <button type="button" class="close modal-back" data-dismiss="modal" data-next-target="#modal-doniraj" aria-label="Back"><span aria-hidden="true">&lsaquo;</span></button>
+          <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="text-center lead">
+              <%- i18n('donation.business_success') %>
+            </div>
+            <form class="business-donation">
+              <div class="form-group has-feedback">
+                <label class="control-label sr-only" for="business-donation-email"><%- i18n('donation.business_success_email') %></label>
+                <input type="text" class="form-control required" id="business-donation-email" placeholder="<%- i18n('donation.business_success_email') %>">
+                <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <label class="control-label sr-only" for="business-donation-message"><%- i18n('donation.business_success_message') %></label>
+                <textarea class="form-control required" id="business-donation-message" placeholder="<%- i18n('donation.business_success_message') %>"></textarea>
+                <span class="glyphicon glyphicon-align-left form-control-feedback" aria-hidden="true"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-6 col-xs-offset-3">
+            <button type="button" id="business-donation-btn" class="btn-multiline btn-full-width"><%- i18n('donation.business_success_send') %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- - - - - - - - - - - /DONATION MODAL -->
