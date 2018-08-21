@@ -23,7 +23,7 @@
         <!-- this needs fixing, it's currently hardcoded -->
         <div v-if="false" class="card-content__empty">
           <div class="card-content__empty-inner">
-            <img src="//cdn.parlameter.si/v1/parlassets/img/icons/no-data.svg">
+            <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`">
             <p v-t="'data-currently-unavailable'"></p>
           </div>
         </div>
@@ -85,6 +85,7 @@ export default {
       currentBack: null,
       transitionClass: null,
       previousHeight: null,
+      slugs: this.$root.$options.cardData.urls,
     };
   },
   watch: {
