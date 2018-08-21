@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Card development</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://cdn.parlameter.si/v1/parlassets/js/typeahead.bundle.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vue-i18n@7.8.1/dist/vue-i18n.min.js"></script>
@@ -28,15 +28,16 @@
       </div>
     </div>
   </div>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="/build/bundle.js"></script>
   <script>
-    document.getElementById('development-card-container-div').className = window.app.$options.cardData.template.frameContainerClass;
+    document.getElementById('development-card-container-div').className =
+      window.app.$options.cardData.template.frameContainerClass;
     const template = window.app.$options.cardData.template;
     const templateContext = Object.keys(template)
       .map(key => `<dt>${key}</dt><dd>${template[key]}</dd>`)
       .join('');
-    document.getElementById('development-card-template-context').innerHTML = `<dl class="dl-horizontal">${templateContext}</dl>`;
+    document.getElementById('development-card-template-context').innerHTML =
+      `<dl class="dl-horizontal">${templateContext}</dl>`;
   </script>
 </body>
 </html>

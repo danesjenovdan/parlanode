@@ -29,7 +29,6 @@
 import OgContainer from '../_components/OgContainer.vue';
 import VerticalHalf from '../_components/VerticalHalf.vue';
 import TitleLogoHalf from '../_components/TitleLogoHalf.vue';
-import { PORTRAIT_ROOT_URL, ICONS_ROOT_URL } from '../../cards/_components/constants';
 
 export default {
   name: 'Circle',
@@ -45,10 +44,10 @@ export default {
   },
   methods: {
     getPortraitUrl(image) {
-      return `${PORTRAIT_ROOT_URL}${image}.png`;
+      return `https://cdn.parlameter.si/v1/parlassets/img/people/square/${image}.png`;
     },
     getIconUrl(icon) {
-      return `${ICONS_ROOT_URL}${icon}.svg`;
+      return `https://cdn.parlameter.si/v1/parlassets/icons/${icon}.svg`;
     },
   },
 };

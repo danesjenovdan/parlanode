@@ -56,7 +56,6 @@ import common from 'mixins/common';
 import links from 'mixins/links';
 import { sessions as sessionsContextUrl } from 'mixins/contextUrls';
 import formatDate from 'helpers/dateFormatter';
-import { ICONS_ROOT_URL } from 'components/constants';
 
 export default {
   name: 'SeznamSejKartica',
@@ -113,7 +112,7 @@ export default {
   computed: {
     mappedSessions() {
       return this.processedSessions.map(session => [
-        { link: this.getSessionUrl(session), image: `${ICONS_ROOT_URL}seja-${session.name.split(' ')[1]}.svg` },
+        { link: this.getSessionUrl(session), image: `${this.slugs.urls.cdn}/icons/seja-${session.name.split(' ')[1]}.svg` },
         { link: this.getSessionUrl(session), text: session.name },
         formatDate(session.date_ts),
         formatDate(session.updated_at_ts),

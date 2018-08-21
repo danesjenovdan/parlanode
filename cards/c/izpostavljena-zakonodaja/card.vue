@@ -24,7 +24,7 @@
               <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
-                    <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon">
+                    <img v-if="legislation.icon" :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`">
                   </div>
                 </div>
                 <div class="text">
@@ -44,7 +44,7 @@
               <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
-                    <img v-if="legislation.icon" :src="'https://cdn.parlameter.si/v1/parlassets/icons/legislation/' + legislation.icon">
+                    <img v-if="legislation.icon" :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`">
                   </div>
                 </div>
                 <div class="text">

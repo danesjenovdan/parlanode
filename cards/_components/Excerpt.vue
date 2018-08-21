@@ -5,7 +5,10 @@
       :class="{'show-parent': showParent}"
       class="icon-container"
     >
-      <div :style="{'background-image': `url('https://cdn.parlameter.si/v1/parlassets/icons/legislation/${icon}')`}" class="icon"></div>
+      <div
+        :style="{'background-image': `url('${slugs.urls.cdn}/icons/legislation/${icon}')`}"
+        class="icon"
+      />
     </div>
     <div
       v-if="content || (content.length !== 0)"
