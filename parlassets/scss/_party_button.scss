@@ -1,7 +1,7 @@
 .party-button {
-  border-top: 1px solid #c8c8c8;
-  border-left: 1px solid #c8c8c8;
-  border-right: 1px solid #c8c8c8;
+  border-top: 1px solid $grey-medium;
+  border-left: 1px solid $grey-medium;
+  border-right: 1px solid $grey-medium;
   border-bottom: 7px solid;
   cursor: pointer;
   flex: 1;
@@ -13,11 +13,11 @@
   text-align: center;
 
   &.selected {
-    border-bottom: 1px solid #c8c8c8 !important;
-    color: #ffffff;
+    border-bottom: 1px solid $grey-medium !important;
+    color: $white;
   }
   &:hover {
-    color: #ffffff;
+    color: $white;
   }
 
 

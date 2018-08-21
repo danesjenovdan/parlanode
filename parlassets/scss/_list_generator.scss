@@ -31,7 +31,7 @@
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
-      background-color: #227497;
+      background-color: $sadblue;
 
       @include respond-to(limbo) {
         font-size: 12px;
@@ -173,8 +173,6 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .session-list-generator {
   @extend %list-generator;
-
-  margin-top: 14px;
 
   .button-filters li {
     @include respond-to(mobile) {

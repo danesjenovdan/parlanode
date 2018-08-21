@@ -5,13 +5,13 @@ header.header {
         padding: 0;
     }
     .logo .cls-1 {
-        fill: #227497;
+        fill: $sadblue;
     }
     .logo .cls-2 {
-        fill: #009cd9;
+        fill: $funblue;
     }
     .logo .cls-3 {
-        fill: #003143;
+        fill: $ignoreblue;
     }
 
     .navbar-default {
@@ -161,7 +161,7 @@ header.header {
         line-height: 22px;
         position: relative;
         bottom: -5px;
-        background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search.svg");
+        background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
     }
 
     .header-searchhide {
@@ -262,7 +262,7 @@ header.header {
         height: 16px;
         line-height: 16px;
         font-size: 12px;
-        background-color: #ededed;
+        background-color: $grey;
 
         top: 0;
         left: 0;
@@ -273,7 +273,7 @@ header.header {
 
 
     .header-search .searchperson-container {
-        border-bottom: 1px solid #ededed;
+        border-bottom: 1px solid $grey;
         height: 60px;
         padding: 10px;
         line-height: 40px;
@@ -286,11 +286,11 @@ header.header {
     }
 
     .header-search .tt-cursor {
-        background-color: #ededed;
+        background-color: $grey;
     }
 
     .session-ac-search {
-        background: #e8f1f4;
+        background: $funblue-light;
         padding: 10px 5px;
         color: $funblue;
         cursor: pointer;
@@ -432,14 +432,14 @@ footer.footer {
         border-bottom: 1px solid $black;
         background: none;
         padding: 7px 12px 6px 12px;
-        color: #337ab7;
+        color: $fontblue;
         padding-right: 0;
         text-transform: uppercase;
     }
     .newslettersubscribeButton:hover {
         background: none;
         border-bottom: 1px solid $black;
-        color: #337ab7;
+        color: $fontblue;
         padding-right: 0;
     }
 
@@ -512,10 +512,10 @@ footer.footer {
     .navbar-nav > li {
         width: 100% !important;
         text-align: left !important;
-        border-bottom: 1px solid #c8c8c8;
+        border-bottom: 1px solid $grey-medium;
 
         &:first-child {
-            border-top: 1px solid #c8c8c8;
+            border-top: 1px solid $grey-medium;
         }
 
         &:last-child a {
@@ -528,7 +528,7 @@ footer.footer {
         .navbar-collapse {
             position: absolute;
             z-index: 99;
-            background: #f0f0f0;
+            background: $grey;
             width: 100%;
             margin: 0 auto;
             padding: 0;
@@ -570,7 +570,7 @@ footer.footer {
                 z-index: 99;
 
                 &-line {
-                    background-color: #333;
+                    background-color: $grey-dark;
                     height: 3px;
                     width: 28px;
                     position: absolute;
@@ -631,7 +631,7 @@ footer.footer {
         }
 
         .search-field {
-            background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg");
+            background-image: url("#{getConfig('urls.cdn')}/icons/search_blue.svg");
             background-size: 24px 24px;
             background-repeat: no-repeat;
             background-position: right 9px center;

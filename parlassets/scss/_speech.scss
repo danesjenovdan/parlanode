@@ -4,9 +4,9 @@
   $similar-speech-tab-content-distance: 17px;
   $similar-speech-tabs-offset-bottom: 46px;
 
-  $blue: #009cdd;
-  $light-gray: #f0f0f0;
-  $medium-gray: #d0d0d0;
+  $blue: $funblue;
+  $light-gray: $grey;
+  $medium-gray: $grey-medium;
 
   %text-styling {
     font-family: Roboto Slab;
@@ -29,7 +29,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0 0 4px #dddddd;
+    box-shadow: 0 0 4px $darkgrey;
     height: 32px;
     width: 32px;
   }
@@ -83,8 +83,8 @@
         top: 50%;
       }
       .speech-text {
-        color: #cacaca;
-        span { color: #000000; }
+        color: $grey-medium;
+        span { color: #000; }
       }
       .full-text-link {
         @extend %link-styling;
@@ -109,12 +109,12 @@
   }
 
   .quote-button {
-    background: #197197;
+    background: $sadblue;
     border-radius: 50%;
-    color: #ffffff;
+    color: $white;
     cursor: pointer;
     display: none;
-    font-family: Times New Roman, serif;
+    font-family: "Times New Roman", serif;
     font-size: 44px;
     height: 33px;
     left: 50px;
@@ -158,7 +158,7 @@
           line-height: $heading-height;
           position: relative;
           .close-button {
-            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="#1a7298" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
+            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="#{$sadblue}}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
             cursor: pointer;
             height: 17px;
             position: absolute;
@@ -258,7 +258,7 @@
     }
 
     .toggle-arrow {
-      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#00628c"/></svg>') rgba(#f9f9f9, 0.9);
+      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#{$fontblue}"/></svg>') rgba(#f9f9f9, 0.9);
       border-bottom: 20px solid rgba(#f9f9f9, 0.9);
       bottom: 0;
       cursor: pointer;

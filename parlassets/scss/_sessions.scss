@@ -41,7 +41,7 @@
 
 .session-types {
   .session-types-title {
-    color: #525252;
+    color: $black;
     font-size: 18px;
     font-weight: 500;
   }
@@ -60,7 +60,7 @@
       padding: 5px 20px;
       text-transform: uppercase;
       width: calc(33.33% - 6.667px);
-      background-color: #227497;
+      background-color: $sadblue;
       &.active, &:hover {
         background: $funblue;
         color: $white;
@@ -88,26 +88,26 @@
       height: 50px;
       border-color: $grey-medium;
       border-right: none;
-      
+
       &:focus {
-          border-color: #009cd9;
+          border-color: $funblue;
       }
       &:focus ~ .input-group-btn .btn {
-          border-color: #009cd9;
+          border-color: $funblue;
       }
     }
     .btn {
       border-color: $grey-medium;
       border-left: none;
       border-radius: 0;
-      color: #009cd9;
+      color: $funblue;
       height: 50px;
       transition: border-color 0.15s;
     }
   }
   h3.searchresults {
     font-size: 18px;
-    color: #525252;
+    color: $black;
     font-weight: 500;
   }
 }
@@ -169,7 +169,7 @@
         padding-bottom: 15px;
         &.border-right { border-right: 1px solid $grey; }
         .member {
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid $grey;
             padding: 10px 0;
             position: relative;
             h3 {
@@ -202,7 +202,7 @@
                     display: inline-block;
                     font-size: 16px;
                     font-weight: 300;
-                    border-bottom: 1px solid #f0f0f0;
+                    border-bottom: 1px solid $grey;
                     margin-bottom: 10px;
                     padding: 0 20px 10px 20px;
                 }
@@ -224,7 +224,7 @@
             a {
                 border: medium none;
                 border-radius: 0;
-                color: #009cdd;
+                color: $funblue;
                 font-size: 40px;
                 line-height: 20px;
                 padding: 0;
@@ -233,7 +233,7 @@
         }
         li.active {
             a {
-                color: #ff5e41;
+                color: $red;
             }
         }
     }
@@ -286,7 +286,7 @@
 }
 .session_transcript {
     .panel {
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid transparent;
         border-radius: 4px;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -297,12 +297,12 @@
         margin-bottom: 0;
     }
     .panel-default {
-        border-color: #ddd;
+        border-color: $darkgrey;
     }
     .panel-default > .panel-heading {
         background-color: $white;
-        border-color: #ddd;
-        color: #333;
+        border-color: $darkgrey;
+        color: $grey-dark;
     }
     .panel-group .panel-heading {
         border-bottom: 0 none;
@@ -563,7 +563,7 @@
 .odpri-vse {
     margin-top: 20px;
     margin-bottom: 10px;
-    color: #009cdd;
+    color: $funblue;
     font-size: 18px;
     line-height: 26.4px;
     cursor: pointer;
@@ -575,12 +575,12 @@
 
     h2 {
         font-weight: 500;
-        color: #525252;
+        color: $black;
     }
 }
 h2.izberi-vrsto-seje {
     font-size: 18px;
-    color: #525252;
+    color: $black;
     font-weight: 500;
 }
 

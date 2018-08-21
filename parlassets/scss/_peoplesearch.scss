@@ -23,7 +23,7 @@
 .search-icon {
   width: 30px;
   height: 30px;
-  // background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+  // background-image: url('#{getConfig('urls.cdn')}/icons/search.svg');
   // background-size: contain;
 
   position: absolute;
@@ -48,7 +48,7 @@
 
 .tt-dataset {
     padding: 0;
-    background-color: #ffffff;
+    background-color: $white;
     width: 100%;
 
     // max-height: 150px;
@@ -61,7 +61,7 @@
     height: 16px;
     line-height: 16px;
     font-size: 12px;
-    background-color: #ededed;
+    background-color: $grey;
 
     top: 0;
     left: 0;
@@ -71,11 +71,11 @@
 }
 
 .searchperson-container {
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid $grey;
     height: 60px;
     padding: 10px;
     line-height: 40px;
-    background-color: #ffffff;
+    background-color: $white;
 }
 
 .avgminimg-party {
@@ -85,10 +85,10 @@
 }
 
 .tt-cursor {
-    background-color: #ededed;
+    background-color: $grey;
 }
 
 .tt-suggestion:hover {
     cursor: pointer;
-    background-color: #ededed;
+    background-color: $grey;
 }

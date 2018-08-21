@@ -51,7 +51,7 @@
             &:last-child {
               margin-right: 0;
             }
-            
+
             a {
 
                 vertical-align: middle;
@@ -63,7 +63,7 @@
                 color: $white;
                 border: 1px solid $darkgrey;
                 text-transform: uppercase;
-                background-color: #227497;
+                background-color: $sadblue;
             }
             a.active {
                 color: $white;

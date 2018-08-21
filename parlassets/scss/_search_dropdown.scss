@@ -8,7 +8,7 @@
   $clear-button-size: 20px;
   $item-height: 23px;
 
-  border: 1px solid #c8c8c8;
+  border: 1px solid $grey-medium;
   box-sizing: border-box;
   $height: $height;
   position: relative;
@@ -17,7 +17,7 @@
   @extend %scroller;
 
   &.disabled::before {
-    background-color: rgba($white, 0.5);
+    background-color: $white-hover;
     bottom: 0;
     content: '';
     display: block;
@@ -64,12 +64,12 @@
   }
 
   &-options {
-    $normal-background: #ffffff;
-    $selected-background: #197197;
+    $normal-background: $white;
+    $selected-background: $sadblue;
     background: $normal-background;
-    border-left: 1px solid #c8c8c8;
-    border-bottom: 1px solid #c8c8c8;
-    border-right: 1px solid #c8c8c8;
+    border-left: 1px solid $grey-medium;
+    border-bottom: 1px solid $grey-medium;
+    border-right: 1px solid $grey-medium;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
@@ -92,20 +92,20 @@
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
-        background: #ededed;
+        background: $grey;
         cursor: default;
         text-transform: uppercase;
       }
       &.focused { background: darken($normal-background, 10%); }
       &.selected {
         background-color: $selected-background;
-        color: #ffffff;
+        color: $white;
         &.focused { background: darken($selected-background, 10%); }
       }
       &:not(:last-of-type):not(.selected)::after {
         $left-right-spacing: 22px;
         content: '';
-        background: #ebebeb;
+        background: $grey;
         height: 1px;
         width: calc(100% - 2*#{$left-right-spacing});
         position: absolute;
