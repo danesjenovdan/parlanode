@@ -1,0 +1,5 @@
+<% include ../_partials/header.ejs %>
+
+<%- await fetchCard('/ps/seznam-poslanskih-skupin/', { state: { generator: true } }) %>
+
+<% include ../_partials/footer.ejs %>

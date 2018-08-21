@@ -1,0 +1,18 @@
+<% include ../_partials/header.ejs %>
+
+<% include ./_header.ejs %>
+
+<div class="col-md-12">
+  <%- await fetchCard('/p/glasovanja/', mp.id) %>
+</div>
+<div class="col-md-6">
+  <%- await fetchCard('/p/najveckrat-enako/', mp.id) %>
+</div>
+<div class="col-md-6">
+  <%- await fetchCard('/p/najmanjkrat-enako/', mp.id) %>
+</div>
+<div class="col-md-6">
+  <%- await fetchCard('/p/neujemanje-s-poslansko-skupino/', mp.id) %>
+</div>
+
+<% include ../_partials/footer.ejs %>

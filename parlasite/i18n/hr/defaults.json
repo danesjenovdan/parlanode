@@ -1,0 +1,169 @@
+{
+  "cdn": "http://cdn.hr.parlameter.si",
+  "landing": {
+    "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
+    "search": {
+      "part_one": "Traži",
+      "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
+    }
+  },
+  "about": {
+    "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
+    "afterlead": "Vizualna rješenja prilagođena korisniku i tehnološki napredni modularni dizajn povećavaju transparentnost djelovanja najvažnije demokratske institucije i omogućuju učinkovit uvid u proces donošenja odluka.",
+    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "columns": {
+      "first": {
+        "title": "Opća javnost",
+        "paragraph": "Funkcioniranje demokracije ovisi o budnom i odgovornom nadzoru rada vladajućih, a preduvjet za to je dobro informirana javnost. Hvala što vam nije svejedno."
+      },
+      "second": {
+        "title": "Medijska javnost",
+        "paragraph": "Sve postojeće kartice mogu se besplatno preuzeti i ugraditi na bilo koju web stranicu. Podaci su obrađeni kako bi se mediji lakše posvetili interpretaciji."
+      },
+      "third": {
+        "title": "Programerska javnost",
+        "paragraph": "Svi podaci su besplatno dostupni kroz dva API sučelja, i sav kod objavljen je na Githubu. Sve potrebno možete pronaći na <a href=\"https://dev.parlameter.si\">stranici za programere</a>, a ako trebate pomoć obratite nam se putem e-maila!"
+      }
+    },
+    "thanks": "Parlametar je aplikacija koju GONG i institut <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, razvijaju kao hrvatsku verziju parlameter.si sučelja ove slovenske organizacije usredotočene na digitalnu političku participaciju i transparentnost. Hvala NED, Google DNI i svim pojedincima koji su pomogli projekt svojim nesebičnim zalaganjem."
+  },
+  "legal": {
+    "title": "Pravne napomene",
+    "body": "<h3>1. O PARLAMETRU</h3><p>Parlameter je spletno orodje, ki z raznolikimi analizami glasovanj in transkriptov lajša spremljanje dela v Državnem zboru. Prek učinkovitega vpogleda v odločevalski proces orodje veča transparentnost delovanja najpomembnejše demokratične institucije.</p><p>Arhitekturo spletne aplikacije sestavljajo trije glavni deli: Parla-data, kjer se nabirajo surovi podatki, Parla-lize, kjer se izračunavajo statistične vrednosti analiz ter Parla-meter, kjer vsebine zaživijo v spletni obliki.</p><p>Parlameter vsebine obstajajo na dva načina: dostopne so bodisi na spletnem mestu parlameter.si bodisi kot samostojne kartice, vdelane v druga spletna mesta. Kartica je osnovna enota, ki ima svoj URL naslov, svojo kodo za vdelavo in svoje “informacijsko besedilo”, v katerem je razložena metodologija, s katero je kartica nastala.</p><p>Spletno mesto parlameter.si je razdeljeno na tri sklope: Poslanci, Poslanske skupine ter Seje. Vsakega od teh sestavljajo seznami (torej, seznam poslancev, seznam poslanskih skupin in sezam sej), ki delujejo kot vstopna točka za posamezne instance tega sklopa - torej, profile posameznih poslank/-cev, poslanskih skupin, sej. Slednji sestojijo iz treh podstrani, pri poslancih in poslanskih skupinah so to Pregled, Glasovanja, Govori, pri sejah pa Prisotnost, Glasovanja, Transkript. Kadar zaradi nedosegljivosti podatkov ni možno zgenerirati nobene kartice na posamezni podstrani, se slednja skrije (podstrani Glasovanja in Prisotnost zaradi neobstoja podatkov denimo nista dostopni na instancah sej delovnih teles).</p><p>Na nivoju poslancev se računajo naslednje analize: raznolikost besedišča, razrez glasovanj, največkrat/najmanjkrat glasujejo enako, ekscesno besedje, preprosto besedje, privzdignjeno besedje, besede, ki ga/jo delajo posebno/-ega, prisotnost na sejah DZ, prisotnost na glasovanjih sej DZ, št. izgovorjenih besed, št. govorov na sejo, politični kompas.</p><p>Na nivoju poslanskih skupin se računajo naslednje analize: prisotnost na sejah DZ, prisotnost na glasovanjih sej dz, raznolikost besedišča, ekscesno besedje, privzdignjeno besedje, preprosto besedje, najlažje/najtežje bi se jim pridružili, odstopanje od poslanske skupine, razrez glasovanj, besede, ki jih delajo posebne, politični kompas.</p><p>Parlameter ima tudi iskalnik po transkriptih, ki uporabnikom omogoča, da z vpisom ključne besede sami zgenerirajo štiri kartice: seznam govorov, na katerih je bilo iskano geslo izrečeno, raba iskanega gesla skozi čas in seznam petih poslank in poslancev ter tudi poslanskih skupin ki so o tem govorili največkrat.</p><p>Metodologije analiz so javno dostopne v “informacijskem predelu” vsake posamezne kartice.</p><p>Parlameter razvijamo in vzdržujemo na inštitutu Danes je nov dan.</p><h3>2. VIRI PODATKOV</h3><p>Zaradi neobstoja javnosti dostopnih strojno berljivih parlamentarnih podatkov, se baza aplikacije Parlameter polni z metodo sintaktičnega razčlenjevalnika HTML dokumentov spletnih mest dz-rs.si in dvk-rs.si, pri čemer lahko pride do napak, za katere Inštitut Danes je nov dan, njegovi člani in njegovi sodelavci in avtorji aplikacije ne sprejemajo nikakršne odgovornosti ali jamstev. Pravna obvestila si lahko preberete <a href=\"http://www.dz-rs.si/wps/portal/Home/pravnoObvestilo\">tukaj</a> ali <a href=\"http://www.dvk-rs.si/index.php/si/pravno-obvestilo\">tukaj</a>.</p><h3>3. INTELEKTUALNA LASTNINA</h3><p>Parlameter ne uporablja nobene kode, katere licenca bi omejevala njeno rabo.</p><p>Parlameter kartice lahko vsakdo uporablja brezplačno, brez vnaprejšnje privolitve avtorjev aplikacije, ki pa si vseeno pridržuje pravico, da ob sočasnem obvestilu po e-pošti omeji nekatere vrste rabe od trenutka obvestila dalje.</p><h3>4. OMEJITEV ODGOVORNOSTI</h3><p>Vse informacije spletne aplikacije Parlameter niso nujno celovite, popolne, točne in posodobljene, so splošne in ne upoštevajo morebitnih posebnih okoliščin posameznikov ali posameznih skupin, ki jih zadevajo.</p><p>Avtorji aplikacije si bomo prizadevali za zagotavljanje ažurnih in točnih podatkov in informacij, vendar za morebitne netočnosti ali necelovitosti ne prevzemamo nikakršne zakonske ali druge odgovornosti.</p><p>Avtorji aplikacije prav tako ne odgovarjamo za morebitne napake / razhajanja v podatkih, ki jih pridobivamo s strani tretjih oseb (glej točko 2).</p><p>Pridržujemo si pravico do prerazporejanja kartic na spletni aplikaciji Parlameter. Vsi seznami so ali razporejeni po abecednem vrstnem redu ali pa glede na vrednosti v izbranih analizah. Vrstni redi kartic na posameznih podstraneh so naključni in ne vsebujejo nikakršne vsebinske ali kakršne koli druge vrednostne sodbe.</p><p>Avtorji aplikacije ne odgovarjamo za nadomestilo</p><ol style=\"list-style:lower-roman\"><li>morebitne neposredne, posredne, naključne, posebne, kaznovalne, posledične škode, ali druge kakršne koli druge oblike škode, ki posredno, neposredno ali na kakršenkoli drug način izhaja iz napak, pomot ali netočnosti vsebine spletne aplikacije, rabe neoptimalnih statističnih metod, interpretacije vsebine spletne aplikacije s strani tretjih oseb ali iz kakršnih koli drugih dejstev povezanih z aplikacijo ali njeno uporabo,</li><li>kakršne koli škode, ki nastane zaradi nepooblaščenega dostopa do, ali uporabe, naših strežnikov in/ali katerih koli in vseh v njih shranjenih podatkov.</li></ol><p>Pridržujemo si pravico do dodajanja, odstranjevanja, spreminjanja ali nadgradnje podatkov kadarkoli, na kakršenkoli način, delno ali v celoti, ne glede na razlog ter brez predhodnega obvestila.</p><p>Navkljub trudu, da bi na spletni platformi v vsakem trenutku zagotovili točnost vseh podatkov in informacij, se lahko pojavijo napake. Prizadevamo si, da bi jih kar najprej odkrili in odpravili, prav tako pa bomo hvaležni, če nas boste o njih obvestili tudi vi. Zavezujemo se k prizadevanju, da bomo v največ 7 delovnih dneh od odkritja popravili vse morebitne napake, ki nam jih bodo sporočili in dokazali uporabniki.</p><p>Kartice so za brezplačno vdelavo na voljo vsakomur, vendar objaviteljem avtorji orodja ne jamčimo pravilnega delovanja. Prizadevali si bomo za minimalizacijo tehničnih napak, vendar za morebitno nedosegljivost strežnikov, nepravilno prikazovanje kartice oziroma spletnega mesta, na katerem je vdelana, ne odgovarjamo. Enako velja za (trenutno še ne dostopna) API-ja Parladata in Parlalize.</p>"
+  },
+  "press": {
+    "todo": true,
+    "title": "Za bolju i pregledniju priču",
+    "body": "Ova stranica sadrži informacije o Parlametru, objave za medije i vizualne materijale. Sve je slobodno za besplatno korištenje. Izravna pitanja i/ili upite za izjave i intervjue šaljite na press@parlametar.hr, odgovorit ćemo brzo i sa zadovoljstvom.",
+    "photos": {
+      "title": "Vizualni materijali"
+    }
+  },
+  "menu": {
+    "legislation": "Zakonodavstvo",
+    "sessions": "Sjednice",
+    "mps": "Zastupnice",
+    "pgs": "Klubovi",
+    "tools": "Alati"
+  },
+  "footer": {
+    "about": "O projektu",
+    "newsletter_sign_up": "Pretplatite se na newsletter!",
+    "newsletter_submit": "Pošalji",
+    "donate": "Doniraj!",
+    "press": "Za medije",
+    "legal": "Pravne napomene"
+  },
+  "search_popup": {
+    "title": "Kako pretraživati?",
+    "first_paragraph": "Za zadani način pretraživanja postavljeno je široko podudaranje (kao rezultat se pojavljuju svi govori koji sadrže bilo koju od riječi iz pretraživanja). Među rezultatima pretrage se zbog preklapanja prikazuju svi gramatički oblici iste vrste riječi. Ovo se odnosi na sva, osim na pretraživanje točnog podudaranja („navodnici“).",
+    "second_paragraph": "Za napredno pretraživanje mogu se koristiti sljedeći operatori:",
+    "operators": [
+      {
+        "name": "I",
+        "description": "pretraživanje će prikazati samo one rezultate koji uključuju sve riječi u nizu povezane veznikom I (bez obzira na njihov redoslijed)",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "Ivan I Šuker",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "Ivan Šuker<br> Šuker, Ivan",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "„NAVODNICI“",
+        "description": "prikazuje samo rezultate koji sadrže točan skup znakova",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "Humanitarna kriza",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (USKLIČNIK)",
+        "description": "rezultati pretraživanja obavezno uključuju riječ označenu uskličnikom, dok druge riječi u nizu za pretraživanje služe samo za rangiranje rezultata",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "Klub !zastupnica",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "Klub zastupnica,<br> zastupnica kluba,<br> zastupnica manjina",
+        "example_excluded_result_title": "Rezultati pretrage",
+        "example_excluded_result_text": "Zastupnički mandat"
+      },
+      {
+        "name": "- (MINUS)",
+        "description": "rezultati pretraživanja isključuju riječi ispred kojih je stavljen minus (-)",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "-Klub zastupnica",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "zastupnica stranke,<br> zastupnica manjina",
+        "example_excluded_result_title": "Nije rezultat pretrage",
+        "example_excluded_result_text": "Klub zastupnica"
+      }
+    ]
+  },
+  "donation": {
+    "intro": "Donacijom pomažete daljnji razvoj i omogućujete dugoročni rad Parlametra.",
+    "personal": "OSOBNA<br>DONACIJA",
+    "business": "KORPORATIVNA<br>DONACIJA",
+    "bitcoin": "BITCOIN DONACIJA",
+    "business_success": "Pojedinosti je najlakše dogovoriti e-mailom.",
+    "business_success_email": "e-mail",
+    "business_success_message": "poruka",
+    "business_success_send": "POŠALJI"
+  },
+  "tools": [
+    {
+      "id": "obvestila",
+      "label": "Parlametar obavijesti",
+      "link": "https://obvestila.parlameter.si/",
+      "text": "Isječci sa sjednica Sabora! Primite obavijest na mail svaki puta kad netko u Saboru izgovori riječ (ili više njih) koje ste odabrali.",
+      "icon": "obvestila"
+    },
+    {
+      "id": "primerjalnik-glasovanj",
+      "label": "Komparator glasanja",
+      "link": "/orodja/primerjalnik-glasovanj",
+      "text": "Komparator glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?",
+      "icon": "primerjalnik-glasovanj"
+    },
+    {
+      "id": "raziskovalec-neenotnosti",
+      "label": "Pretraživač nesložnosti",
+      "link": "/orodja/raziskovalec-neenotnosti",
+      "text": "Istražite nesložnosti unutar klubova zastupnica s obzirom na to koliko je unutar kluba bilo neslaganja u glasanju.",
+      "icon": "raziskovalec-neenotnosti"
+    },
+    {
+      "id": "parlamentarni-kompas",
+      "label": "Saborski kompas",
+      "link": "/orodja/parlamentarni-kompas",
+      "text": "Vizualizacija svih zastupnica u virtualnom 'prostoru'. Što je veća udaljenost među zastupnicama, veće su razlike u njihovom glasanju.",
+      "icon": "parlamentarni-kompas"
+    },
+    {
+      "id": "skupine-besed",
+      "label": "Grupe riječi",
+      "link": "/orodja/skupine-besed",
+      "text": "Istražite tko najviše govori o određenoj temi, ili tko među zastupnicama najčešće koristi određene grupe riječi.<br><br>",
+      "icon": "skupine-besed"
+    }
+  ],
+  "general": {
+    "coalition": "koalicija",
+    "opposition": "opozicija",
+    "inactive": "NEAKTIVNA",
+    "overview": "pregled",
+    "voting": "glasanja",
+    "speeches": "govori",
+    "data_published": "objavljeni podaci",
+    "in_review": "u pregledu",
+    "under_consideration": "u čitanju",
+    "legislation": "zakonodavstvo",
+    "other_votings": "druga glasanja",
+    "transcripts": "transkripti",
+    "state_one": "Hrvatski sabor ne objavljuje podatke o glasanju na sjednicama radnih tijela. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Poruči im</a>, to moraju promijeniti.",
+    "state_two": "Hrvatski sabor ne objavljuje nikakve podatke o sjednicama i radu Predsjedništva Sabora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Poruči im, to moraju promijeniti.",
+    "state_one_dz": "Podaci o glasanju na izabranoj sjednici na žalost još nisu dostupni.",
+    "state_five": "Transkripti govora izabrane sjednice na žalost još nisu dostupni on-line."
+  }
+}

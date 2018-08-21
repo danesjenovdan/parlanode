@@ -1,0 +1,11 @@
+<% include ../_partials/header.ejs %>
+
+<% include ./_tabs.ejs %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/ps/glasovanja-neenotnost/') %>
+  </div>
+</div>
+
+<% include ../_partials/footer.ejs %>

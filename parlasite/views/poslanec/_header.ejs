@@ -1,0 +1,33 @@
+<% if (!mp.active) { %>
+<style>
+body {
+  filter: grayscale(100%);
+}
+</style>
+<% } %>
+
+<%
+  var classPrefix = party.acronym.toLowerCase().replace(/ /g, '_');
+  var classes = ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
+%>
+
+<div class="member-container">
+  <div class="row header text-center">
+    <div class="col-lg-12">
+      <img src="<%- i18n('cdn') %>/v1/parlassets/img/people/square/<%- mp.gov_id %>.png" class="media-object img-circle session-logo <%- classes %>">
+      <h1><%- mp.name %></h1>
+      <h2><%= party.acronym %></h2>
+      <h3><%- party.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h3>
+      <% if (!mp.active) { %>
+      <h3><%- i18n('general.inactive') %></h3>
+      <% } %>
+      <div class="member-container-menu">
+        <ul class="clearfix">
+          <li><a href="/p/<%- slug %>/pregled" class="<%- activeTab === 'pregled' ? 'active' : '' %>"><%- i18n('general.overview') %></a></li>
+          <li><a href="/p/<%- slug %>/glasovanja" class="<%- activeTab === 'glasovanja' ? 'active' : '' %>"><%-i18n('general.voting') %></a></li>
+          <li><a href="/p/<%- slug %>/govori" class="<%- activeTab === 'govori' ? 'active' : '' %>"><%- i18n('general.speeches') %></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
