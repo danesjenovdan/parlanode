@@ -237,7 +237,7 @@ export default {
       width: 58px;
       @include respond-to(desktop) { width: 125px; }
 
-      $icon-path: 'https://cdn.parlameter.si/v1/parlassets/icons';
+      $icon-path: "#{getConfig('urls.cdn')}/icons";
       &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
       &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
       &.option-not_present { background-image: url(#{$icon-path}/ni_v2.svg) }

@@ -381,7 +381,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .search-field {
-  background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg');
+  background-image: url("#{getConfig('urls.cdn')}/icons/search_blue.svg");
 }
 
 .filters {

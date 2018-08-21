@@ -4,6 +4,9 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const sass = require('node-sass');
+const _ = require('lodash');
+const config = require('../config');
 
 process.traceDeprecation = true;
 
@@ -60,6 +63,15 @@ module.exports = (cardPath) => {
                 loader: 'sass-loader',
                 options: {
                   sourceMap: true,
+                  functions: {
+                    'getConfig($key)': (key) => {
+                      const value = _.get(config, key.getValue().split('.'));
+                      if (typeof value === 'string') {
+                        return sass.types.String(value);
+                      }
+                      return sass.types.String(key.getValue());
+                    },
+                  },
                 },
               },
             ],

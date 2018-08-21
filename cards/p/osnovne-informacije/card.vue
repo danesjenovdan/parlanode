@@ -233,16 +233,16 @@ export default {
 @import "~parlassets/scss/colors";
 
 .parlaicon-vodja {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vodja.svg");
+  background-image: url("#{getConfig('urls.cdn')}/icons/vodja.svg");
 }
 .parlaicon-namestnik {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/namestnik.svg");
+  background-image: url("#{getConfig('urls.cdn')}/icons/namestnik.svg");
 }
 .parlaicon-sedezi {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/sedezi.svg");
+  background-image: url("#{getConfig('urls.cdn')}/icons/sedezi.svg");
 }
 .parlaicon-kontakt {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/kontakt.svg");
+  background-image: url("#{getConfig('urls.cdn')}/icons/kontakt.svg");
 }
 .parlaicon-omrezja{
   width: 30px;

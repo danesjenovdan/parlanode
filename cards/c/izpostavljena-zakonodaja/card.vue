@@ -179,7 +179,7 @@ export default {
     a {
       padding: 3px;
       padding-left: 32px;
-      background: url(https://cdn.parlameter.si/v1/parlassets/icons/zakonodaja-modra.svg)
+      background: url("#{getConfig('urls.cdn')}/icons/zakonodaja-modra.svg")
         no-repeat top left;
       font-size: 14px;
       font-weight: 400;

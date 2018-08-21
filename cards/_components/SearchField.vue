@@ -29,7 +29,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .search-field {
-  background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+  background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
   background-size: 24px 24px;
   background-repeat: no-repeat;
   background-position: right 9px center;

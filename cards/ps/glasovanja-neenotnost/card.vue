@@ -403,7 +403,7 @@ export default {
     width: 100%;
 
     .text-filter-input {
-      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+      background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
@@ -445,7 +445,7 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif) no-repeat center center;
+      background: $white url("#{getConfig('urls.cdn')}/img/loader.gif") no-repeat center center;
       content: '';
       height: 100%;
       position: absolute;

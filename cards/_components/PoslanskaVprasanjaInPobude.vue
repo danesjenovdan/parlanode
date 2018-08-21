@@ -287,7 +287,7 @@ export default {
     width: 26%; // 100%
 
     .text-filter-input {
-      background-image: url('https://cdn.parlameter.si/v1/parlassets/icons/search.svg');
+      background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
@@ -381,10 +381,10 @@ export default {
       height: 48px;
       width: 52px;
 
-      &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za.svg"); }
-      &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti.svg"); }
-      &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni.svg"); }
-      &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan.svg"); }
+      &.za { background-image: url("#{getConfig('urls.cdn')}/icons/za.svg"); }
+      &.proti { background-image: url("#{getConfig('urls.cdn')}/icons/proti.svg"); }
+      &.ni { background-image: url("#{getConfig('urls.cdn')}/icons/ni.svg"); }
+      &.kvorum { background-image: url("#{getConfig('urls.cdn')}/icons/vzdrzan.svg"); }
     }
 
     .parlaicon {

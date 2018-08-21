@@ -326,7 +326,7 @@ export default {
   position: absolute;
   bottom: -6px;
   width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
+  background-image: url("#{getConfig('urls.cdn')}/icons/strela.svg");
   background-size: 11px 19px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -340,7 +340,7 @@ export default {
   position: absolute;
   top: -7px;
   width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
+  background-image: url("#{getConfig('urls.cdn')}/icons/ogenj.svg");
   background-size: 40px 40px;
   background-position: center center;
   background-repeat: no-repeat;

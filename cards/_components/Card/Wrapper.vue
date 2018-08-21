@@ -150,7 +150,7 @@ export default {
     position: relative;
     &::before {
       background-color: $white-hover;
-      background-image: url(https://cdn.parlameter.si/v1/parlassets/img/loader.gif);
+      background-image: url("#{getConfig('urls.cdn')}/img/loader.gif");
       background-repeat: no-repeat;
       background-position: center center;
       content: '';

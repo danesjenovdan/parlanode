@@ -184,10 +184,10 @@ export default {
       align-items: center;
       height: 42px;
 
-      &.za { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_za_v2.svg"); }
-      &.proti { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_proti_v2.svg"); }
-      &.ni { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
-      &.kvorum { background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/g_vzdrzan_v2.svg"); }
+      &.za { background-image: url("#{getConfig('urls.cdn')}/icons/g_za_v2.svg"); }
+      &.proti { background-image: url("#{getConfig('urls.cdn')}/icons/g_proti_v2.svg"); }
+      &.ni { background-image: url("#{getConfig('urls.cdn')}/icons/ni_v2.svg"); }
+      &.kvorum { background-image: url("#{getConfig('urls.cdn')}/icons/g_vzdrzan_v2.svg"); }
     }
 
     .text {

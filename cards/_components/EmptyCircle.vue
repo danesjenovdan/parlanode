@@ -26,7 +26,7 @@ export default {
 
   .circle {
     $size: 220px;
-    background-image: url('https://cdn.parlameter.si/v1/parlassets/img/icons/primerjalnik-empty-no-text.png');
+    background-image: url("#{getConfig('urls.cdn')}/img/icons/primerjalnik-empty-no-text.png");
     background-size: $size;
     font-size: 17px;
     font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
