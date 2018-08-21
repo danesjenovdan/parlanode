@@ -12,6 +12,8 @@
 
       <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
+      <card-previous v-else-if="currentBack === 'previous'" />
+
       <div v-else class="card-content-front" :class="contentFrontClass" :style="{ 'overflow-y': contentFrontScroll }" v-cloak>
         <div v-if="false" class="card-content__empty"> <!-- this needs fixing, it's currently hardcoded -->
           <div class="card-content__empty-inner">
@@ -32,6 +34,7 @@ import { RIPPLE_DURATION } from 'components/constants';
 import CardInfo from 'components/Card/Info.vue';
 import CardEmbed from 'components/Card/Embed.vue';
 import CardShare from 'components/Card/Share.vue';
+import CardPrevious from 'components/Card/Previous.vue';
 import CardHeader from 'components/Card/Header.vue';
 import CardFooter from 'components/Card/Footer.vue';
 
@@ -41,6 +44,7 @@ export default {
     CardInfo,
     CardEmbed,
     CardShare,
+    CardPrevious,
     CardHeader,
     CardFooter,
   },

@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { get } from 'lodash';
 import { RIPPLE_DURATION } from 'components/constants';
 import slugs from '../../../assets/urls.json';
 
@@ -30,8 +31,16 @@ export default {
       clicksDisabled: false,
       currentBack: null,
       slugs,
-      buttons: ['share', 'embed', 'info'],
     };
+  },
+  computed: {
+    buttons() {
+      const previous = get(this.$root.$options.cardData.data, 'previous_versions');
+      if (previous && previous.length) {
+        return ['share', 'embed', 'info', 'previous'];
+      }
+      return ['share', 'embed', 'info'];
+    },
   },
   methods: {
     toggleBack(name) {
@@ -47,6 +56,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-info:not(.card-exit)::before { content: 'i'; }
-.card-exit::before { content: '×'; }
+.card-info:not(.card-exit)::before {
+  content: 'i';
+  font-weight: 100;
+}
+
+.card-previous::before {
+  content: 'p';
+  font-weight: 100;
+}
+
+.card-exit::before {
+  content: '×';
+}
 </style>

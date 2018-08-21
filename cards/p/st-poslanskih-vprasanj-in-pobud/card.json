@@ -3,7 +3,7 @@
   "name": "Št. poslanskih vprašanj in pobud",
   "type": "poslanec",
   "dataUrl": "https://analize.parlameter.si/v1/p/getNumberOfQuestions",
-  "lastUpdate": "2018-05-07T12:22:12.258Z",
+  "lastUpdate": "2018-07-25T14:43:50.899Z",
   "method": "st-poslanskih-vprasanj-in-pobud",
   "group": "p",
   "big": false,

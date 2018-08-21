@@ -3,7 +3,7 @@
   "name": "Transkript",
   "type": "seje",
   "dataUrl": "https://analize.parlameter.si/v1/s/getSpeechesOfSession",
-  "lastUpdate": "2018-05-14T14:10:57.838Z",
+  "lastUpdate": "2018-07-25T14:44:45.912Z",
   "method": "govori",
   "group": "s",
   "big": true,
