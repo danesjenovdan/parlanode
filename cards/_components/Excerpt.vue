@@ -79,6 +79,11 @@ export default {
       default: '',
     },
   },
+  data() {
+    return {
+      slugs: this.$root.$options.cardData.urls,
+    };
+  },
   computed: {
     mappedDocuments() {
       return this.documents.map((document, index) => ({
