@@ -8,38 +8,38 @@ $second: #caebf2;
 $third: #258498;
 
 // tabs
-$tab-active: $second; // $first;
+$tab-active: $first;
 $tab-hover: #ff8888;
-$tab-passive: $first; // #ff5555;
+$tab-passive: #ff5555;
 
 // links
-$link: $first;
+$link: $third;
 $link-hover-background: #caebf2;
 
 // card footer buttons
-$card-footer-button-passive-background: $first; // #ff5555;
-$card-footer-button-hover-background: $second; // $first;
+$card-footer-button-passive-background: #ff5555;
+$card-footer-button-hover-background: $first;
 
 // scroller
 $scroller: #caebf2;
-$element: $first;
+$element: #258498;
 
 // barcharts
-$barchart-this: $third; // $first;
+$barchart-this: $first;
 $barchart-other: $second; 
 $barchart-default: $second;
 
 // icons
-$icon-accepted: $second; // #4fbdd4;
-$icon-rejected: $third; // $first;
-$icon-session: $third;
-$icon-transcript: $first;
+$icon-accepted: #4fbdd4;
+$icon-rejected: $first;
+$icon-session: $first;
+$icon-transcript: #258498;
 $icon-transcript-hover-background: #ceadf2;
 
 
 // buttons
-$button-for: $second;
-$button-against: $first;
+$button-for: #4fbdd4;
+$button-against: #1b606f;
 $button-abstained: #afe1eb;
 $button-absent: #0b252b;
 
@@ -49,9 +49,9 @@ $dropdown-selected-element: #ff8888;
 
 // other
 $light-background: #fdf8f8;
-$light-background-link: $first; // #900900;
-$tools-arrow: $second;
-$cta-passive-background: $second; // #ff5555;
+$light-background-link: #900900;
+$tools-arrow: $first;
+$cta-passive-background: #ff5555;
 $cta-hover-background: $first;
 
 // common

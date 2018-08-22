@@ -242,7 +242,7 @@
   color: #ffffff; }
 
 .for-fill {
-  fill: #ff0000; }
+  fill: #258498; }
 
 .against-fill {
   fill: #caebf2; }
@@ -1332,13 +1332,13 @@ footer.footer {
     border-bottom: 1px solid #c8c8c8;
     background: none;
     padding: 7px 12px 6px 12px;
-    color: #ff0000;
+    color: #258498;
     padding-right: 0;
     text-transform: uppercase; }
   footer.footer .newslettersubscribeButton:hover {
     background: none;
     border-bottom: 1px solid #c8c8c8;
-    color: #ff0000;
+    color: #258498;
     padding-right: 0; }
 
 @media (max-width: 992px) {
@@ -1986,7 +1986,7 @@ footer.footer {
       font-size: 3px;
       margin: 0 auto; }
     .session_voting .session_votes .indicator.aye {
-      background: #ff0000; }
+      background: #258498; }
     .session_voting .session_votes .indicator.ney {
       background: #caebf2; }
     .session_voting .session_votes .indicator.abstention {
@@ -2477,9 +2477,9 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     .party-button.nep_-_bk.selected {
       background-color: #853f36; }
   .party-button.for {
-    border-bottom-color: #ff0000; }
+    border-bottom-color: #258498; }
     .party-button.for.selected {
-      background-color: #ff0000; }
+      background-color: #258498; }
   .party-button.against {
     border-bottom-color: #caebf2; }
     .party-button.against.selected {
@@ -2523,7 +2523,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .party-button.nep_-_bk:hover {
     background-color: rgba(133, 63, 54, 0.7); }
   .party-button.for:hover {
-    background-color: rgba(255, 0, 0, 0.7); }
+    background-color: rgba(37, 132, 152, 0.7); }
   .party-button.against:hover {
     background-color: rgba(202, 235, 242, 0.7); }
   .party-button.kvorum:hover {
@@ -3723,7 +3723,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
             left: 0;
             position: absolute; }
 .card-govor .toggle-arrow, .card-govori .toggle-arrow {
-  background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#ff0000"/></svg>') rgba(249, 249, 249, 0.9);
+  background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#258498"/></svg>') rgba(249, 249, 249, 0.9);
   border-bottom: 20px solid rgba(249, 249, 249, 0.9);
   bottom: 0;
   cursor: pointer;
@@ -3934,7 +3934,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 .searchinfo {
   background-color: #ffffff;
   border-radius: 50%;
-  color: #ff0000;
+  color: #258498;
   cursor: pointer;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
@@ -4275,7 +4275,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .progress.smallbar .sadblue-light,
 .indicator.sadblue-light {
-  background: #ff0000; }
+  background: #258498; }
 
 .progress.smallbar .ignoreblue,
 .indicator.ignoreblue {
@@ -4291,7 +4291,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .progress.smallbar .fontblue,
 .indicator.fontblue {
-  background: #ff0000; }
+  background: #258498; }
 
 .progress.smallbar .funblue-light,
 .indicator.funblue-light {
@@ -4329,7 +4329,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .indexsessionpart .link {
   border-top: 1px solid #f0f0f0;
-  color: #ff0000;
+  color: #258498;
   margin-top: 10px;
   padding: 10px 0 20px;
   text-transform: uppercase; }
@@ -4533,8 +4533,8 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     padding: 0;
     width: 18px; }
   .pagination li:first-child a, .pagination li:last-child a {
-    background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#ff0000"/></svg>');
-    color: #ff0000;
+    background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#258498"/></svg>');
+    color: #258498;
     font-size: 36px;
     font-weight: 100;
     line-height: 18px;
