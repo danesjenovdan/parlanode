@@ -230,8 +230,12 @@ export default {
 
   .member_data {
     text-align: left;
-    h4 { margin: 5px 0; }
-    a { color: $black; }
+    h4 {
+      margin: 5px 0;
+    }
+    a {
+      color: $font-default;
+    }
   }
 
   .img-responsive{
@@ -264,6 +268,10 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    .key {
+      color: $font-default;
     }
   }
 }

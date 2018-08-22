@@ -311,6 +311,10 @@ export default {
       flex-direction: column;
       justify-content: center;
     }
+
+    .key {
+      color: $font-default;
+    }
   }
 }
 </style>

@@ -365,11 +365,6 @@ export default {
   .border-left {
     border-left: none;
   }
-  .single_voting:hover {
-    .border-left {
-      border-top-color: $funblue-light;
-    }
-  }
 
   .single_voting {
     padding-bottom: 15px;
@@ -397,10 +392,11 @@ export default {
 }
 
 .single_voting:hover {
-  background-color: $funblue-light-hover;
+  background-color: $link-hover-background;
 
-  .border-left {
-    border-left-color: $funblue-light;
+  a {
+    text-decoration: none;
+    color: $link;
   }
 }
 

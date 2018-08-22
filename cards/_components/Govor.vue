@@ -104,8 +104,9 @@ export default {
     @include respond-to(mobile) {
         padding-top: 10px;
     }
+
     a {
-      color: $black;
+      color: $font-default;
       margin: 0;
       font-size: 14px;
       line-height: 20px;
