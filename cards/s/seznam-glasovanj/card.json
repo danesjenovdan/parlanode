@@ -1,7 +1,7 @@
 {
   "_id": "s_seznam-glasovanj",
   "dataUrl": "{analize}/s/getMotionOfSession",
-  "lastUpdate": "2018-07-27T15:01:34.712Z",
+  "lastUpdate": "2018-08-22T10:48:43.406Z",
   "big": true,
   "high": true
 }

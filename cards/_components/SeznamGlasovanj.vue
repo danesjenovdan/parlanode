@@ -32,7 +32,7 @@
               style="position: absolute; left: -37px;"
             ></div>
             <a :href="vote.url">
-              <div class=" col-md-1">
+              <div class="col-md-1 icon-col">
                 <div :class="vote.accepted">
                   <p>
                     <i :class="vote.accepted_glyph"></i>
@@ -360,7 +360,6 @@ export default {
 
   .border-left {
     border-left: none;
-    border-top: 2px solid $darkgrey;
   }
   .single_voting:hover {
     .border-left {
@@ -370,6 +369,13 @@ export default {
 
   .single_voting {
     padding-bottom: 15px;
+
+    .icon-col {
+      float: left;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 18px;
+    }
   }
 }
 

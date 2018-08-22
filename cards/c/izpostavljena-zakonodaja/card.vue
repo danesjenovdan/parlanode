@@ -24,7 +24,10 @@
               <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
-                    <img v-if="legislation.icon" :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`">
+                    <img
+                      v-if="legislation.icon"
+                      :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`"
+                    >
                   </div>
                 </div>
                 <div class="text">
@@ -44,7 +47,10 @@
               <a :href="getLegislationLink(legislation)" class="legislation__single">
                 <div class="icon">
                   <div class="img-circle circle">
-                    <img v-if="legislation.icon" :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`">
+                    <img
+                      v-if="legislation.icon"
+                      :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`"
+                    >
                   </div>
                 </div>
                 <div class="text">
@@ -124,9 +130,12 @@ export default {
     text-decoration: none;
 
     .text {
-      line-height: 18px;
+      $line-height: 18px;
+      line-height: $line-height;
       font-weight: 300;
       font-size: 14px;
+      overflow: hidden;
+      max-height: $line-height * 4;
     }
 
     .circle {
