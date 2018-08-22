@@ -1,17 +1,82 @@
-$white: #fff;
-$grey: #f0f0f0;
-$grey-medium: #c8c8c8;
-$grey-dark: #333;
-$darkgrey: #dbdbdb;
-$black: #505050;
-$sadblue: #197197;
-$sadblue-light: #8cb8cb;
-$funblue: #009cdd;
-$funblue-light: #d2dfeb;
-$fontblue: #00628c;
-$ignoreblue: #003b54;
-$noblue: #99e1ff;
-$red: #ff5e41;
+/////////////////////////////
+/////// GLOBAL COLORS ///////
+/////////////////////////////
+
+// gradient
+$first: #197197;
+$second: #009cdd;
+$third: #ff5e41;
+
+// tabs
+$tab-active: #009cdd;
+$tab-hover: #86B3DF;
+$tab-passive: #197197;
+
+// links
+$link: #197197;
+$link-hover-background: #d9e7ed;
+
+// card footer buttons
+$card-footer-button-passive-background: #197197;
+$card-footer-button-hover-background: #009cdd;
+
+// scroller
+$scroller: #F1F5F7;
+$element: #197197;
+
+// barcharts
+$barchart-this: #ff5e41;
+$barchart-other: #009cdd;
+$barchart-default: #009cdd;
+
+// icons
+$icon-accepted: #009cdd;
+$icon-rejected: #ff5e41;
+$icon-session: #ff5e41;
+$icon-transcript: #197197;
+$icon-transcript-hover-background: #F1F5F7;
+
+
+// buttons
+$button-for: #009cdd;
+$button-against: #197197;
+$button-abstained: #88dcff;
+$button-absent: #003c55;
+
+// dropdown
+$dropdown-arrow: #197197;
+$dropdown-selected-element: #efefef;
+
+// other
+$light-background: #F1F5F7;
+$tools-arrow: #009cdd;
+$cta-passive-background: #009cdd;
+$cta-hover-background: #197197;
+
+// common
+$white: #ffffff;
+$font-default: #333333;
+$font-placeholder: #c8c8c8;
+$background: #f0f0f0;
+
+
+
+/////////////////////////////
+//////// OLD COLORS /////////
+/////////////////////////////
+$grey: $background;
+$grey-medium: $font-placeholder;
+$grey-dark: $font-default;
+$darkgrey: $font-placeholder; // TODO THIS SHOULD BE REMOVED
+$black: $font-placeholder; // TODO to je pri govorih
+$sadblue: $first;
+$sadblue-light: $link;
+$funblue: $second;
+$funblue-light: $link-hover-background;
+$fontblue: $link;
+$ignoreblue: $button-absent;
+$noblue: $button-abstained;
+$red: $third;
 
 $party-colors: (
   'smc': #8fcfee,
