@@ -117,6 +117,13 @@ export default {
   margin: 70px 0;
   text-align: center;
 }
+
+.headers {
+  .column {
+    color: $font-default;
+  }
+}
+
 .session-list .item .column.ticker {
   color: $funblue;
   line-height: 18px;
@@ -125,6 +132,7 @@ export default {
     color: $red;
   }
 }
+
 .barchartcontainer  {
   flex-wrap: nowrap;
   flex-direction: row;
@@ -142,10 +150,12 @@ export default {
   flex: 0 0 74px;
   width: 74px;
 }
+
 .barcontainer {
   display: flex;
   flex: 1 1 0%;
 }
+
 .bar {
   width: 100%;
   background-color: $funblue;
@@ -158,11 +168,14 @@ export default {
   .item {
     padding: 0;
   }
+
   .headers {
     margin-left: 0;
+
     .column {
       text-align: left;
       padding: 0 15px;
+      color: $font-default;
 
       &:first-child {
         margin-left: 0;

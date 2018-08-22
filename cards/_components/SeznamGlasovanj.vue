@@ -209,7 +209,10 @@ export default {
     processVotes() {
       const votes = this.data.votes.map((e) => {
         const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
-        e.url = this.getSessionVoteLink({ session_id: (e.session_id || this.data.session.id), vote_id: e.motion_id });
+        e.url = this.getSessionVoteLink({
+          session_id: (e.session_id || this.data.session.id),
+          vote_id: e.motion_id,
+        });
         e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
         e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
         e.percent_votes_for = Math.floor((e.votes_for / allInVotes) * 100);
@@ -259,6 +262,7 @@ export default {
 #votingCard {
   height: 500px;
   overflow-y: auto;
+  color: $font-default;
 }
 
 #votingCard div.member span {
