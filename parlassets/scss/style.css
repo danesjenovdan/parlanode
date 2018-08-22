@@ -242,16 +242,16 @@
   color: #ffffff; }
 
 .for-fill {
-  fill: #197197; }
+  fill: #ff0000; }
 
 .against-fill {
-  fill: #009cdd; }
+  fill: #caebf2; }
 
 .kvorum-fill {
-  fill: #003c55; }
+  fill: #0b252b; }
 
 .ni-fill {
-  fill: #88dcff; }
+  fill: #afe1eb; }
 
 .funblue-light-hover {
   transition: background-color 0.2s; }
@@ -374,7 +374,7 @@ a:focus, button:focus {
       flex: 2; }
 
 .nalagalnik {
-  background: url("https://cdn.parlameter.si/v1/parlassets/img/loader.gif") no-repeat center center;
+  background: url("http://cdn.hr.parlameter.si/v1/parlassets/img/loader.gif") no-repeat center center;
   height: 100px;
   width: 100%; }
 
@@ -426,7 +426,7 @@ a:focus, button:focus {
 
 input.required.error,
 footer.footer input.form-control.newslettersubscribe.error {
-  border: 1px solid #ff5e41; }
+  border: 1px solid #258498; }
 
 .narrow-inner-container {
   margin: 0 auto 40px auto;
@@ -438,10 +438,10 @@ footer.footer input.form-control.newslettersubscribe.error {
   width: 4px;
   height: 4px; }
 .card-container ::-webkit-scrollbar-track, .search-dropdown ::-webkit-scrollbar-track {
-  background: #d9e7ed;
+  background: #caebf2;
   border-radius: 0; }
 .card-container ::-webkit-scrollbar-thumb, .search-dropdown ::-webkit-scrollbar-thumb {
-  background: #197197;
+  background: #ff0000;
   border-radius: 0; }
 
 .checkbox {
@@ -465,7 +465,7 @@ footer.footer input.form-control.newslettersubscribe.error {
       top: 0;
       width: 22px; }
   .checkbox:checked + label:before {
-    background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="10.125" fill="%23009cdd" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>'); }
+    background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="10.125" fill="%23caebf2" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>'); }
   .checkbox.checkbox-twolines + label {
     line-height: 14px;
     max-width: 115px; }
@@ -497,7 +497,7 @@ footer.footer input.form-control.newslettersubscribe.error {
     text-transform: uppercase;
     vertical-align: top; }
   .select::after {
-    border-color: #197197 transparent transparent transparent;
+    border-color: #ff0000 transparent transparent transparent;
     border-style: solid;
     border-width: 6px 6px 0 6px;
     content: '';
@@ -533,13 +533,13 @@ footer.footer input.form-control.newslettersubscribe.error {
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
   .card-header .card-header-border {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-    background: #009cdd;
+    background: #caebf2;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #009cdd 0%, #ff5e41 100%);
+    background: -moz-linear-gradient(top, #caebf2 0%, #258498 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #009cdd 0%, #ff5e41 100%);
+    background: -webkit-linear-gradient(top, #caebf2 0%, #258498 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #009cdd 0%, #ff5e41 100%);
+    background: linear-gradient(to bottom, #caebf2 0%, #258498 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=0 );
     /* IE6-9 */
@@ -608,13 +608,13 @@ footer.footer input.form-control.newslettersubscribe.error {
     width: 100%;
     height: 1px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$red+0,009cdd+100 */
-    background: #ff5e41;
+    background: #258498;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #ff5e41 0%, #009cdd 100%);
+    background: -moz-linear-gradient(left, #258498 0%, #caebf2 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #ff5e41 0%, #009cdd 100%);
+    background: -webkit-linear-gradient(left, #258498 0%, #caebf2 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #ff5e41 0%, #009cdd 100%);
+    background: linear-gradient(to right, #258498 0%, #caebf2 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$funblue',GradientType=1 );
     /* IE6-9 */ }
@@ -627,7 +627,7 @@ footer.footer input.form-control.newslettersubscribe.error {
   float: right;
   margin-left: 8px;
   border-radius: 50%;
-  background-color: #197197;
+  background-color: #ff0000;
   font-family: 'Roboto Slab';
   font-weight: 700;
   font-size: 16px;
@@ -637,19 +637,19 @@ footer.footer input.form-control.newslettersubscribe.error {
   cursor: pointer; }
   .card-circle-button:hover,
   .card-circle-button-vue:hover {
-    background-color: #009cdd; }
+    background-color: #caebf2; }
 
 .card-info {
   font-weight: 100; }
 
 .card-embed {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/embed.svg");
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/embed.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70% 70%; }
 
 .card-share {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/share.svg");
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/share.svg");
   background-repeat: no-repeat;
   background-position: 6px center;
   background-size: 50% 50%; }
@@ -667,7 +667,7 @@ footer.footer input.form-control.newslettersubscribe.error {
     float: left;
     margin-left: 15px; }
     .card-header-embed .headerwords-container h1 {
-      color: #009cdd;
+      color: #caebf2;
       font-weight: 200;
       font-size: 20px !important;
       line-height: 20px !important; }
@@ -687,7 +687,7 @@ footer.footer input.form-control.newslettersubscribe.error {
 /*}*/
 .card-embed-header-divider {
   height: 1px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/img/shortline.png");
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/img/shortline.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: -20px;
@@ -739,7 +739,7 @@ footer.footer input.form-control.newslettersubscribe.error {
   overflow: hidden; }
 
 .card-exit {
-  background-color: #009cdd;
+  background-color: #caebf2;
   background-image: none;
   font-size: 26px;
   font-weight: 300;
@@ -770,7 +770,7 @@ input.form-control, textarea.form-control {
   border: 1px solid #000; }
 
 .btn-parlameter {
-  background-color: #009cdd;
+  background-color: #caebf2;
   border: none;
   color: #ffffff;
   height: 34px;
@@ -820,7 +820,7 @@ input.form-control, textarea.form-control {
       float: left;
       width: 50%;
       text-align: left;
-      background-color: #009cdd;
+      background-color: #caebf2;
       padding-left: 10px;
       color: #ffffff; }
     .embed-switch-box .embed-switch .rightswitch {
@@ -834,7 +834,7 @@ input.form-control, textarea.form-control {
   width: 26px;
   height: 26px;
   border-radius: 13px;
-  background-color: #197197;
+  background-color: #ff0000;
   position: absolute;
   top: 3px;
   right: 10px;
@@ -935,7 +935,7 @@ input.form-control, textarea.form-control {
 
 .card-container::before {
   content: '';
-  background-color: #009cdd;
+  background-color: #caebf2;
   position: absolute;
   border-radius: 50%;
   width: 30px;
@@ -962,7 +962,7 @@ input.form-control, textarea.form-control {
   animation: ripple 0.6s forwards; }
 
 .card-container.revealed::before {
-  background-color: #197197;
+  background-color: #ff0000;
   animation: ripple 0.6s forwards; }
 
 .card-footer .card-logo {
@@ -1034,11 +1034,11 @@ header.header .logo {
   height: 70px;
   padding: 0; }
 header.header .logo .cls-1 {
-  fill: #197197; }
+  fill: #ff0000; }
 header.header .logo .cls-2 {
-  fill: #009cdd; }
+  fill: #caebf2; }
 header.header .logo .cls-3 {
-  fill: #003c55; }
+  fill: #0b252b; }
 header.header .navbar-default {
   background-color: transparent;
   padding-top: 10px; }
@@ -1069,9 +1069,9 @@ header.header .search {
   border: none;
   border-radius: 0; }
 header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-default .navbar-nav > li > a:hover {
-  color: #009cdd; }
+  color: #caebf2; }
 header.header .navbar-default .navbar-nav > .active > a, header.header .navbar-default .navbar-nav > .active > a:focus, header.header .navbar-default .navbar-nav > .active > a:hover {
-  color: #009cdd;
+  color: #caebf2;
   background: #f0f0f0; }
 header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-default .navbar-nav > li > a:hover {
   background: #f0f0f0; }
@@ -1140,7 +1140,7 @@ header.header .parlaicon-search {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/search.svg"); }
 header.header .header-searchhide {
   display: none;
   position: relative;
@@ -1223,12 +1223,12 @@ header.header .header-search .searchperson-container {
 header.header .header-search .tt-cursor {
   background-color: #f0f0f0; }
 header.header .session-ac-search {
-  background: #d9e7ed;
+  background: #caebf2;
   padding: 10px 5px;
-  color: #009cdd;
+  color: #caebf2;
   cursor: pointer; }
 header.header .session-ac-search .glyphicon-search {
-  color: #009cdd;
+  color: #caebf2;
   font-size: 16px; }
 
 .session_transcript_menu {
@@ -1268,24 +1268,24 @@ footer.footer {
     height: 35px;
     line-height: 35px;
     position: relative;
-    color: #009cdd;
+    color: #caebf2;
     margin: 0 0px 0 30px; }
   footer.footer .parlaicon-facebook-parlameter {
     width: 35px;
     height: 35px;
     line-height: 35px;
     position: relative;
-    color: #009cdd;
+    color: #caebf2;
     margin: 0 0px 0 20px;
     text-decoration: none; }
   footer.footer .parlaicon-facebook-parlameter .blue,
   footer.footer .parlaicon-twitter-parlameter .blue {
-    fill: #009cdd;
-    stroke: #009cdd; }
+    fill: #caebf2;
+    stroke: #caebf2; }
   footer.footer .parlaicon-facebook-parlameter:hover .blue,
   footer.footer .parlaicon-twitter-parlameter:hover .blue {
-    fill: #197197;
-    stroke: #197197;
+    fill: #ff0000;
+    stroke: #ff0000;
     text-decoration: none; }
   footer.footer .doniraj {
     border: 1px solid #c8c8c8;
@@ -1300,10 +1300,10 @@ footer.footer {
     bottom: -5px;
     right: -5px;
     margin-right: 5px;
-    color: #009cdd; }
+    color: #caebf2; }
   footer.footer .parlaicon-doniraj .red {
-    fill: #ff5e41;
-    stroke: #ff5e41; }
+    fill: #258498;
+    stroke: #258498; }
   footer.footer .parlaicon-doniraj {
     display: inline-block;
     -webkit-transform: translateZ(0);
@@ -1332,13 +1332,13 @@ footer.footer {
     border-bottom: 1px solid #c8c8c8;
     background: none;
     padding: 7px 12px 6px 12px;
-    color: #197197;
+    color: #ff0000;
     padding-right: 0;
     text-transform: uppercase; }
   footer.footer .newslettersubscribeButton:hover {
     background: none;
     border-bottom: 1px solid #c8c8c8;
-    color: #197197;
+    color: #ff0000;
     padding-right: 0; }
 
 @media (max-width: 992px) {
@@ -1358,13 +1358,13 @@ footer.footer {
   width: 100%;
   overflow: hidden;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-  background: #009cdd;
+  background: #caebf2;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+  background: linear-gradient(to right, #caebf2 0%, #258498 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
   /* IE6-9 */ }
@@ -1399,13 +1399,13 @@ footer.footer {
   width: 100%;
   height: 200%;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-  background: #009cdd;
+  background: #caebf2;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+  background: linear-gradient(to right, #caebf2 0%, #258498 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
   /* IE6-9 */
@@ -1493,7 +1493,7 @@ footer.footer {
   header.header .mobile-menu--opened .mobile-menu__hambuger-line--3 {
     transform: translateY(-12px) translateY(50%) rotate(135deg); }
   header.header .search-field {
-    background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search_blue.svg");
+    background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/search_blue.svg");
     background-size: 24px 24px;
     background-repeat: no-repeat;
     background-position: right 9px center;
@@ -1553,17 +1553,17 @@ footer.footer {
   .progress.hugebar {
     height: 30px; }
     .progress.hugebar .red {
-      background: #ff5e41; }
+      background: #258498; }
   .progress.smallbar .funblue {
-    background: #009cdd; }
+    background: #caebf2; }
   .progress.smallbar .red {
-    background: #ff5e41; }
+    background: #258498; }
 
 .progress-bar {
   border: none;
   box-shadow: none;
   border-radius: 0;
-  background-color: #009cdd; }
+  background-color: #caebf2; }
 
 .progress_number {
   display: inline-block;
@@ -1645,13 +1645,14 @@ footer.footer {
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 300; }
-  .session-container .date,
-  .session-container .datepublished {
+  .session-container font,
+  .session-container font.date,
+  .session-container font.datepublished {
     font-weight: 300; }
-  .session-container .date {
+  .session-container font.date {
     font-size: 14px;
     font-family: 'Roboto Slab', serif; }
-  .session-container .datepublished {
+  .session-container font.datepublished {
     font-size: 14px;
     display: inline-block;
     margin-bottom: 50px;
@@ -1676,9 +1677,9 @@ footer.footer {
     padding: 5px 20px;
     text-transform: uppercase;
     width: calc(33.33% - 6.667px);
-    background-color: #197197; }
+    background-color: #ff0000; }
     .session-types .session-types-list .session-type.active, .session-types .session-types-list .session-type:hover {
-      background: #009cdd;
+      background: #caebf2;
       color: #ffffff; }
     .session-types .session-types-list .session-type:active, .session-types .session-types-list .session-type:focus, .session-types .session-types-list .session-type:hover {
       text-decoration: none; }
@@ -1699,14 +1700,14 @@ footer.footer {
   border-color: #c8c8c8;
   border-right: none; }
   .narrow-inner-container .search .form-control:focus {
-    border-color: #009cdd; }
+    border-color: #caebf2; }
   .narrow-inner-container .search .form-control:focus ~ .input-group-btn .btn {
-    border-color: #009cdd; }
+    border-color: #caebf2; }
 .narrow-inner-container .search .btn {
   border-color: #c8c8c8;
   border-left: none;
   border-radius: 0;
-  color: #009cdd;
+  color: #caebf2;
   height: 50px;
   transition: border-color 0.15s; }
 .narrow-inner-container h3.searchresults {
@@ -1718,7 +1719,7 @@ footer.footer {
   display: flex;
   flex-wrap: wrap; }
   .session-list .session {
-    background-color: #009cdd;
+    background-color: #caebf2;
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     color: #ffffff;
@@ -1742,7 +1743,7 @@ footer.footer {
     .session-list .session.active {
       cursor: default; }
       .session-list .session.active:after {
-        background: #009cdd;
+        background: #caebf2;
         content: '';
         width: 22px;
         height: 22px;
@@ -1811,13 +1812,13 @@ footer.footer {
     .sessionsGetSessionByDate .nav-tabs li a {
       border: medium none;
       border-radius: 0;
-      color: #009cdd;
+      color: #caebf2;
       font-size: 40px;
       line-height: 20px;
       padding: 0;
       margin: 0; }
   .sessionsGetSessionByDate .nav-tabs li.active a {
-    color: #ff5e41; }
+    color: #258498; }
 
 .session-logo {
   color: #ffffff;
@@ -1832,7 +1833,7 @@ footer.footer {
     font-size: 24px; }
 
 .session-logo.backgroundred {
-  background: #ff5e41; }
+  background: #258498; }
 
 .session_transcript_menu ul {
   padding: 0; }
@@ -1854,7 +1855,7 @@ footer.footer {
     .session_transcript_menu ul li a.active,
     .session_transcript_menu ul li a:hover {
       color: #ffffff;
-      background: #009cdd;
+      background: #caebf2;
       text-decoration: none; }
 
 .session_transcript .panel {
@@ -1891,13 +1892,13 @@ footer.footer {
     float: left;
     margin-right: 1%; }
   .session_transcript .panel-title a .status {
-    background: url("https://cdn.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
+    background: url("http://cdn.hr.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
     width: 40px;
     height: 40px;
     display: inline-block;
     float: right; }
   .session_transcript .panel-title a.collapsed .status {
-    background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
+    background: url("http://cdn.hr.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
     width: 40px;
     height: 40px; }
 .session_transcript .panel-collapse.collapsed .status {
@@ -1917,7 +1918,7 @@ footer.footer {
   z-index: 10;
   position: relative; }
 .session_transcript .panel-collapse .status a {
-  background: url("https://cdn.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
+  background: url("http://cdn.hr.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block;
@@ -1925,7 +1926,7 @@ footer.footer {
 .session_transcript .panel-collapse .status a:hover {
   text-decoration: none; }
 .session_transcript .panel-collapse.collapsed .status a {
-  background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
+  background: url("http://cdn.hr.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block; }
@@ -1965,9 +1966,9 @@ footer.footer {
     line-height: 100px;
     font-size: 24px; }
   .session_voting .accepted.aye {
-    color: #009cdd; }
+    color: #caebf2; }
   .session_voting .accepted.nay {
-    color: #ff5e41; }
+    color: #258498; }
   .session_voting .session_votes {
     text-align: center;
     font-size: 35px;
@@ -1985,17 +1986,17 @@ footer.footer {
       font-size: 3px;
       margin: 0 auto; }
     .session_voting .session_votes .indicator.aye {
-      background: #197197; }
+      background: #ff0000; }
     .session_voting .session_votes .indicator.ney {
-      background: #009cdd; }
+      background: #caebf2; }
     .session_voting .session_votes .indicator.abstention {
-      background: #003c55; }
+      background: #0b252b; }
     .session_voting .session_votes .indicator.not {
-      background: #88dcff; }
+      background: #afe1eb; }
   .session_voting a {
     color: inherit; }
   .session_voting a:hover {
-    color: #009cdd; }
+    color: #caebf2; }
 
 .session_report {
   background: #f0f0f0;
@@ -2087,7 +2088,7 @@ footer.footer {
 .odpri-vse {
   margin-top: 20px;
   margin-bottom: 10px;
-  color: #009cdd;
+  color: #caebf2;
   font-size: 18px;
   line-height: 26.4px;
   cursor: pointer; }
@@ -2147,14 +2148,14 @@ span.session-date {
       color: #ffffff;
       border: 1px solid #c8c8c8;
       text-transform: uppercase;
-      background-color: #197197; }
+      background-color: #ff0000; }
     .member-container-menu ul li a.active {
       color: #ffffff;
-      background: #009cdd;
+      background: #caebf2;
       text-decoration: none; }
     .member-container-menu ul li a:hover {
       color: #ffffff;
-      background: rgba(0, 156, 221, 0.7);
+      background: rgba(202, 235, 242, 0.7);
       text-decoration: none; }
 
 .poslanec {
@@ -2248,18 +2249,18 @@ span.session-date {
     margin-right: 3px;
     padding: 0 12px;
     text-transform: uppercase;
-    background-color: #197197; }
+    background-color: #ff0000; }
     @media (min-width: 768px) and (max-width: 991px) {
       .party-list-generator .analyses li, .member-list-generator .analyses li, .session-list-generator .analyses li {
         font-size: 12px; } }
     .party-list-generator .analyses li.selected, .member-list-generator .analyses li.selected, .session-list-generator .analyses li.selected {
-      background-color: #009cdd;
+      background-color: #caebf2;
       color: #ffffff;
       cursor: default; }
     .party-list-generator .analyses li:last-child, .member-list-generator .analyses li:last-child, .session-list-generator .analyses li:last-child {
       margin-right: 0; }
     .party-list-generator .analyses li:hover, .member-list-generator .analyses li:hover, .session-list-generator .analyses li:hover {
-      background-color: rgba(0, 156, 221, 0.7);
+      background-color: rgba(202, 235, 242, 0.7);
       color: #ffffff; }
 .party-list-generator .mobile-analyses, .member-list-generator .mobile-analyses, .session-list-generator .mobile-analyses {
   display: none; }
@@ -2476,21 +2477,21 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     .party-button.nep_-_bk.selected {
       background-color: #853f36; }
   .party-button.for {
-    border-bottom-color: #197197; }
+    border-bottom-color: #ff0000; }
     .party-button.for.selected {
-      background-color: #197197; }
+      background-color: #ff0000; }
   .party-button.against {
-    border-bottom-color: #009cdd; }
+    border-bottom-color: #caebf2; }
     .party-button.against.selected {
-      background-color: #009cdd; }
+      background-color: #caebf2; }
   .party-button.kvorum {
-    border-bottom-color: #003c55; }
+    border-bottom-color: #0b252b; }
     .party-button.kvorum.selected {
-      background-color: #003c55; }
+      background-color: #0b252b; }
   .party-button.ni {
-    border-bottom-color: #88dcff; }
+    border-bottom-color: #afe1eb; }
     .party-button.ni.selected {
-      background-color: #88dcff; }
+      background-color: #afe1eb; }
   .party-button.smc:hover {
     background-color: rgba(143, 207, 238, 0.7); }
   .party-button.sds:hover {
@@ -2522,13 +2523,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .party-button.nep_-_bk:hover {
     background-color: rgba(133, 63, 54, 0.7); }
   .party-button.for:hover {
-    background-color: rgba(25, 113, 151, 0.7); }
+    background-color: rgba(255, 0, 0, 0.7); }
   .party-button.against:hover {
-    background-color: rgba(0, 156, 221, 0.7); }
+    background-color: rgba(202, 235, 242, 0.7); }
   .party-button.kvorum:hover {
-    background-color: rgba(136, 220, 255, 0.7); }
+    background-color: rgba(175, 225, 235, 0.7); }
   .party-button.ni:hover {
-    background-color: rgba(136, 220, 255, 0.7); }
+    background-color: rgba(175, 225, 235, 0.7); }
 
 .party-list, .word-list {
   margin: 0 0 15px 0;
@@ -2600,7 +2601,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       .person-list .headers .column.sort::after, .person-list .headers .column:not(.sort):hover::after {
         border-style: solid;
         border-width: 9px 7.5px 0;
-        border-color: #009cdd transparent transparent;
+        border-color: #caebf2 transparent transparent;
         content: '';
         display: inline-block;
         margin-left: 8px;
@@ -2666,10 +2667,10 @@ div[id^="orodja-"] .party-list-generator .analyses li {
           font-size: 29px; }
         .person-list .person .column .outcome i.glyphicon-ok,
         .person-list .item .column .outcome i.glyphicon-ok {
-          color: #009cdd; }
+          color: #caebf2; }
         .person-list .person .column .outcome i.glyphicon-remove,
         .person-list .item .column .outcome i.glyphicon-remove {
-          color: #ff5e41; }
+          color: #258498; }
   @media (max-width: 767px) {
     .person-list .headers {
       margin-left: 45px; }
@@ -2716,7 +2717,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       .session-list .headers .column.sort::after, .session-list .headers .column:not(.sort):hover::after {
         border-style: solid;
         border-width: 9px 7.5px 0;
-        border-color: #009cdd transparent transparent;
+        border-color: #caebf2 transparent transparent;
         content: '';
         display: inline-block;
         margin-left: 8px;
@@ -2782,10 +2783,10 @@ div[id^="orodja-"] .party-list-generator .analyses li {
           font-size: 29px; }
         .session-list .person .column .outcome i.glyphicon-ok,
         .session-list .item .column .outcome i.glyphicon-ok {
-          color: #009cdd; }
+          color: #caebf2; }
         .session-list .person .column .outcome i.glyphicon-remove,
         .session-list .item .column .outcome i.glyphicon-remove {
-          color: #ff5e41; }
+          color: #258498; }
   @media (max-width: 767px) {
     .session-list .headers {
       margin-left: 43px; }
@@ -2836,7 +2837,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       .legislation-list .headers .column.sort::after, .legislation-list .headers .column:not(.sort):hover::after {
         border-style: solid;
         border-width: 9px 7.5px 0;
-        border-color: #009cdd transparent transparent;
+        border-color: #caebf2 transparent transparent;
         content: '';
         display: inline-block;
         margin-left: 8px;
@@ -2902,10 +2903,10 @@ div[id^="orodja-"] .party-list-generator .analyses li {
           font-size: 29px; }
         .legislation-list .person .column .outcome i.glyphicon-ok,
         .legislation-list .item .column .outcome i.glyphicon-ok {
-          color: #009cdd; }
+          color: #caebf2; }
         .legislation-list .person .column .outcome i.glyphicon-remove,
         .legislation-list .item .column .outcome i.glyphicon-remove {
-          color: #ff5e41; }
+          color: #258498; }
   @media (max-width: 767px) {
     .legislation-list .headers {
       margin-left: 0; }
@@ -2945,7 +2946,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   box-sizing: border-box;
   position: relative; }
   .search-dropdown::after {
-    border-color: #197197 transparent transparent transparent;
+    border-color: #ff0000 transparent transparent transparent;
     border-style: solid;
     border-width: 11px 9px 0 9px;
     content: '';
@@ -2975,7 +2976,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .search-dropdown.small .search-dropdown-clear {
     top: 8px; }
   .search-dropdown-clear {
-    color: #197197;
+    color: #ff0000;
     cursor: pointer;
     font-size: 25px;
     height: 20px;
@@ -3028,10 +3029,10 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       .search-dropdown-options li.focused {
         background: #e6e6e6; }
       .search-dropdown-options li.selected {
-        background-color: #197197;
+        background-color: #ff0000;
         color: #ffffff; }
         .search-dropdown-options li.selected.focused {
-          background: #12506b; }
+          background: #cc0000; }
       .search-dropdown-options li:not(:last-of-type):not(.selected)::after {
         content: '';
         background: #f0f0f0;
@@ -3064,7 +3065,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .group-container .me_group {
     padding-bottom: 30px; }
     .group-container .me_group .progress-bar {
-      background: #009cdd; }
+      background: #caebf2; }
     .group-container .me_group .col150 {
       width: 20%; }
     .group-container .me_group .col280 {
@@ -3098,23 +3099,23 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       color: #ffffff;
       border: 1px solid #c8c8c8;
       text-transform: uppercase;
-      background-color: #197197; }
+      background-color: #ff0000; }
     .group-container-menu ul li a.active {
       color: #ffffff;
-      background: #009cdd;
+      background: #caebf2;
       text-decoration: none; }
     .group-container-menu ul li a:hover {
       color: #ffffff;
-      background: rgba(0, 156, 221, 0.7);
+      background: rgba(202, 235, 242, 0.7);
       text-decoration: none; }
 
 .group-container-menu.group_data ul li a {
-  background: #197197;
+  background: #ff0000;
   color: #ffffff; }
 .group-container-menu.group_data ul li a.active,
 .group-container-menu.group_data ul li a:hover {
   color: #ffffff;
-  background: #009cdd;
+  background: #caebf2;
   text-decoration: none; }
 
 @media (max-width: 956px) {
@@ -3158,46 +3159,46 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   background-position: center; }
 
 .parlaicon-clanstva {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/clanstva.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/clanstva.svg"); }
 
 .parlaicon-skupina {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/skupina.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/skupina.svg"); }
 
 .parlaicon-funkcija {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/funkcija.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/funkcija.svg"); }
 
 .parlaicon-delaza {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/delaza.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/delaza.svg"); }
 
 .parlaicon-mandat {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/mandat.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/mandat.svg"); }
 
 .parlaicon-status {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/status.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/status.svg"); }
 
 .parlaicon-izobrazba {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/izobrazba.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/izobrazba.svg"); }
 
 .parlaicon-starost {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/starost.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/starost.svg"); }
 
 .parlaicon-za {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/za_v2.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/za_v2.svg"); }
 
 .parlaicon-ni {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/ni_v2.svg"); }
 
 .parlaicon-proti {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/proti_v2.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/proti_v2.svg"); }
 
 .parlaicon-kvorum {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vzdrzan_v2.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/vzdrzan_v2.svg"); }
 
 .parlaicon-govor {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/govor.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/govor.svg"); }
 
 .parlaicon-vprasanje {
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/vprasanja.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/vprasanja.svg"); }
 
 .parlaicon-facebook {
   width: 22px;
@@ -3205,7 +3206,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/facebook.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/facebook.svg"); }
 
 .parlaicon-twitter {
   width: 22px;
@@ -3213,7 +3214,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/twitter.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/twitter.svg"); }
 
 .parlaicon-linkedin {
   width: 22px;
@@ -3221,7 +3222,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/linkedin.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/linkedin.svg"); }
 
 .parlaicon-omrezja {
   width: 22px;
@@ -3229,13 +3230,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   line-height: 22px;
   position: relative;
   bottom: -5px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/omrezja.svg"); }
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/omrezja.svg"); }
 
 .people-search {
   border-top: 0px solid;
   border-right: 0px solid;
   border-left: 0px solid;
-  border-bottom: 2px solid #197197;
+  border-bottom: 2px solid #ff0000;
   width: 220px;
   height: 35px;
   position: relative; }
@@ -3256,8 +3257,8 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   right: 0;
   top: 23px; }
   .search-icon .svg_1 {
-    fill: #197197;
-    stroke: #197197; }
+    fill: #ff0000;
+    stroke: #ff0000; }
 
 .tt-menu {
   max-height: 300px;
@@ -3327,7 +3328,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       .tabs .tabs-headers .tabs-header:last-child {
         margin-right: 0; }
       .tabs .tabs-headers .tabs-header.active {
-        background: #009cdd;
+        background: #caebf2;
         color: #ffffff;
         cursor: default; }
       @media (min-width: 768px) {
@@ -3344,11 +3345,11 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     padding-bottom: 7px;
     padding-top: 8px;
     text-transform: uppercase;
-    background: #197197; }
+    background: #ff0000; }
     .tabs.dark .tabs-headers .tabs-header.active {
-      background: #009cdd; }
+      background: #caebf2; }
     .tabs.dark .tabs-headers .tabs-header:hover {
-      background: rgba(0, 156, 221, 0.7); }
+      background: rgba(202, 235, 242, 0.7); }
     @media (min-width: 768px) {
       .tabs.dark .tabs-headers .tabs-header {
         font-size: 16px;
@@ -3380,11 +3381,11 @@ div[id^="orodja-"] .party-list-generator .analyses li {
         border: none; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
       color: #ffffff;
-      background: #009cdd;
+      background: #caebf2;
       border: none; }
     .nav-tabs > li:hover > a, .nav-tabs > li:hover > a:focus, .nav-tabs > li:hover > a:hover {
       color: #ffffff;
-      background: #009cdd;
+      background: #caebf2;
       border: none; }
   @media (max-width: 767px) {
     .nav-tabs {
@@ -3417,7 +3418,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       margin: auto; }
 
 .modal-header {
-  background: #009cdd; }
+  background: #caebf2; }
   .modal-header .modal-title {
     font-size: 20px;
     line-height: 24px;
@@ -3457,7 +3458,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .modal-body .form-group.has-feedback[class*="col-"] .form-control-feedback {
     left: 15px; }
   .modal-body .form-control {
-    border-color: #009cdd; }
+    border-color: #caebf2; }
   .modal-body .large-text {
     font-size: 18px;
     height: 35px; }
@@ -3475,7 +3476,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       width: 35px;
       margin-top: 5px; }
   .modal-body .checkbox:checked + label:before {
-    background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.5" height="23.125" fill="#009cdd" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>'); }
+    background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.5" height="23.125" fill="#caebf2" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>'); }
   .modal-body .input-group-addon {
     border: none;
     background: none; }
@@ -3485,11 +3486,11 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .modal-body #donation-amount {
     text-align: right; }
   .modal-body .heart {
-    fill: #ff5e41;
+    fill: #258498;
     width: 150px;
     display: inline-block; }
   .modal-body .light-bg {
-    background-color: #d9e7ed;
+    background-color: #caebf2;
     padding: 10px 15px;
     margin-bottom: 30px; }
     .modal-body .light-bg .row > div {
@@ -3507,7 +3508,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   padding-right: 5px; }
 .modal-footer .btn-payment,
 .modal-footer .btn-multiline {
-  background-color: #197197;
+  background-color: #ff0000;
   border: none;
   color: #ffffff;
   padding: 10px 0;
@@ -3528,7 +3529,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   padding-right: 10px; }
   .modal-footer .btn-donation-container input {
     margin-top: 8px;
-    border-color: #009cdd;
+    border-color: #caebf2;
     font-size: 12px;
     text-align: center; }
 
@@ -3538,14 +3539,14 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   font-weight: 300;
   line-height: 30px; }
 .card-govor .card-content.just-quote .full-text-link, .card-govori .card-content.just-quote .card-govor .full-text-link, .card-govor .similar-speech .similar-speech-content .similar-speech-link, .card-govori .similar-speech .similar-speech-content .card-govor .similar-speech-link, .card-govor .card-content.just-quote .card-govori .full-text-link, .card-govori .card-content.just-quote .full-text-link, .card-govor .similar-speech .similar-speech-content .card-govori .similar-speech-link, .card-govori .similar-speech .similar-speech-content .similar-speech-link {
-  color: #009cdd;
+  color: #caebf2;
   display: block;
   font-size: 16px;
   text-align: center;
   text-decoration: underline;
   text-transform: uppercase; }
   .card-govor .card-content.just-quote .full-text-link:hover, .card-govori .card-content.just-quote .card-govor .full-text-link:hover, .card-govor .similar-speech .similar-speech-content .similar-speech-link:hover, .card-govori .similar-speech .similar-speech-content .card-govor .similar-speech-link:hover, .card-govor .card-content.just-quote .card-govori .full-text-link:hover, .card-govori .card-content.just-quote .full-text-link:hover, .card-govor .similar-speech .similar-speech-content .card-govori .similar-speech-link:hover, .card-govori .similar-speech .similar-speech-content .similar-speech-link:hover {
-    color: #009cdd; }
+    color: #caebf2; }
 .card-govor .portrait, .card-govori .portrait {
   background-position: center;
   background-size: cover;
@@ -3612,7 +3613,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     .card-govor .speech-text, .card-govori .speech-text {
       padding: 0; } }
 .card-govor .quote-button, .card-govori .quote-button {
-  background: #197197;
+  background: #ff0000;
   border-radius: 50%;
   color: #ffffff;
   cursor: pointer;
@@ -3651,7 +3652,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       line-height: 66px;
       position: relative; }
       .card-govor .similar-speech .similar-speech-content .similar-speech-heading .close-button, .card-govori .similar-speech .similar-speech-content .similar-speech-heading .close-button {
-        background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="#197197}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
+        background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="#ff0000}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
         cursor: pointer;
         height: 17px;
         position: absolute;
@@ -3716,13 +3717,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
             font-family: Roboto Slab;
             font-size: 15px; }
           .card-govor .similar-speech .similar-speech-tabs ul li .speech .rating, .card-govori .similar-speech .similar-speech-tabs ul li .speech .rating {
-            background: #009cdd;
+            background: #caebf2;
             bottom: 0;
             height: 7px;
             left: 0;
             position: absolute; }
 .card-govor .toggle-arrow, .card-govori .toggle-arrow {
-  background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#197197"/></svg>') rgba(249, 249, 249, 0.9);
+  background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#ff0000"/></svg>') rgba(249, 249, 249, 0.9);
   border-bottom: 20px solid rgba(249, 249, 249, 0.9);
   bottom: 0;
   cursor: pointer;
@@ -3776,9 +3777,9 @@ div[id^="orodja-"] .party-list-generator .analyses li {
         font-size: 18px;
         line-height: 20px;
         margin-top: 18px;
-        color: #197197; }
+        color: #ff0000; }
     .alt-header-container .alt-header .icon-circle {
-      background: #009cdd;
+      background: #caebf2;
       border-radius: 50%;
       flex-shrink: 0;
       height: 80px;
@@ -3798,13 +3799,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     height: 1px;
     width: 100%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-    background: #009cdd;
+    background: #caebf2;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+    background: linear-gradient(to right, #caebf2 0%, #258498 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
     /* IE6-9 */ }
@@ -3815,7 +3816,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   padding: 0 !important; }
 
 .rayen:hover {
-  background-color: #197197 !important; }
+  background-color: #ff0000 !important; }
 
 .rayen:focus {
   text-decoration: none; }
@@ -3827,7 +3828,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #009cdd;
+  background-color: #caebf2;
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
 
@@ -3851,10 +3852,10 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   transform: translate3d(0, 100%, 0); }
 
 .rayen.active:hover {
-  background-color: #009cdd !important; }
+  background-color: #caebf2 !important; }
 
 .searchfilter-container {
-  background-color: #d9e7ed;
+  background-color: #caebf2;
   padding: 15px; }
 
 #seje .searchfilter-label {
@@ -3899,13 +3900,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   text-align: center;
   color: #ffffff;
   padding: 10px;
-  background-color: #197197;
+  background-color: #ff0000;
   cursor: pointer;
   display: block;
   margin-top: 20px; }
 
 .parlabutton-filter:hover {
-  background-color: #009cdd;
+  background-color: #caebf2;
   color: #ffffff;
   text-decoration: none; }
 
@@ -3933,7 +3934,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 .searchinfo {
   background-color: #ffffff;
   border-radius: 50%;
-  color: #197197;
+  color: #ff0000;
   cursor: pointer;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
@@ -3980,9 +3981,9 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     line-height: 40px;
     background-color: #ffffff; }
   .landing .session-search-container .searchForm .session-ac-search {
-    background: #d9e7ed;
+    background: #caebf2;
     padding: 10px 5px;
-    color: #009cdd;
+    color: #caebf2;
     cursor: pointer; }
 
 .single_voting .lightning-badge::before {
@@ -3994,7 +3995,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   position: absolute;
   top: -7px;
   width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/strela.svg");
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/strela.svg");
   background-size: 11px 19px;
   background-position: center center;
   background-repeat: no-repeat; }
@@ -4007,7 +4008,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   position: absolute;
   top: -7px;
   width: 31px;
-  background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/ogenj.svg");
+  background-image: url("http://cdn.hr.parlameter.si/v1/parlassets/icons/ogenj.svg");
   background-size: 40px 40px;
   background-position: center center;
   background-repeat: no-repeat; }
@@ -4228,7 +4229,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   width: 88%; }
 
 .poslanec a {
-  color: #197197; }
+  color: #ff0000; }
 
 .noborder {
   border: none; }
@@ -4254,12 +4255,12 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   border: medium none;
   border-radius: 0;
   padding: 5px;
-  color: #009cdd;
+  color: #caebf2;
   font-size: 40px;
   line-height: 20px; }
 
 .poslanec .getListFriendlyBodies .nav-tabs li.active a {
-  color: #ff5e41; }
+  color: #258498; }
 
 .me_poslanec_mini {
   padding-bottom: 20px; }
@@ -4270,31 +4271,31 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .progress.smallbar .red,
 .indicator.red {
-  background: #ff5e41; }
+  background: #258498; }
 
 .progress.smallbar .sadblue-light,
 .indicator.sadblue-light {
-  background: #197197; }
+  background: #ff0000; }
 
 .progress.smallbar .ignoreblue,
 .indicator.ignoreblue {
-  background: #003c55; }
+  background: #0b252b; }
 
 .progress.smallbar .funblue,
 .indicator.funblue {
-  background: #009cdd; }
+  background: #caebf2; }
 
 .progress.smallbar .noblue,
 .indicator.noblue {
-  background: #88dcff; }
+  background: #afe1eb; }
 
 .progress.smallbar .fontblue,
 .indicator.fontblue {
-  background: #197197; }
+  background: #ff0000; }
 
 .progress.smallbar .funblue-light,
 .indicator.funblue-light {
-  background: #d9e7ed; }
+  background: #caebf2; }
 
 .nmbr {
   float: left;
@@ -4318,7 +4319,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     line-height: 58px;
     margin: 5px;
     padding: 10px 10px;
-    background: #009cdd; }
+    background: #caebf2; }
     .well a .more {
       font-size: 18px;
       text-transform: uppercase;
@@ -4328,7 +4329,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .indexsessionpart .link {
   border-top: 1px solid #f0f0f0;
-  color: #197197;
+  color: #ff0000;
   margin-top: 10px;
   padding: 10px 0 20px;
   text-transform: uppercase; }
@@ -4352,7 +4353,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 .iconshowtype:hover,
 .iconshowtype.active {
-  color: #009cdd;
+  color: #caebf2;
   text-decoration: none; }
 
 #poslanci_search .group-container-menu.group_data ul {
@@ -4361,7 +4362,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     margin: 0;
     width: 10.8%; }
     #poslanci_search .group-container-menu.group_data ul li a {
-      background: #197197;
+      background: #ff0000;
       color: #ffffff;
       padding: 10px;
       text-align: center;
@@ -4370,7 +4371,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     #poslanci_search .group-container-menu.group_data ul li a.active,
     #poslanci_search .group-container-menu.group_data ul li a:hover {
       color: #ffffff;
-      background: #009cdd;
+      background: #caebf2;
       text-decoration: none; }
 #poslanci_search .poslanci_search.nav {
   text-transform: uppercase;
@@ -4389,22 +4390,22 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       line-height: 10px;
       margin-left: 20px;
       vertical-align: middle;
-      color: #197197; }
+      color: #ff0000; }
       #poslanci_search .poslanci_search.nav a .icon a.icon.up {
-        color: #197197; }
+        color: #ff0000; }
       #poslanci_search .poslanci_search.nav a .icon a.icon.down {
-        color: #197197; }
+        color: #ff0000; }
   #poslanci_search .poslanci_search.nav a:hover {
-    color: #009cdd;
+    color: #caebf2;
     text-decoration: none; }
     #poslanci_search .poslanci_search.nav a:hover .icon .up {
-      color: #197197; }
+      color: #ff0000; }
     #poslanci_search .poslanci_search.nav a:hover .icon .down {
-      color: #197197; }
+      color: #ff0000; }
     #poslanci_search .poslanci_search.nav a:hover .icon .up.active {
-      color: #009cdd; }
+      color: #caebf2; }
     #poslanci_search .poslanci_search.nav a:hover .icon .down.active {
-      color: #009cdd; }
+      color: #caebf2; }
 #poslanci_search .form-control {
   border-radius: 0;
   border-right: medium none;
@@ -4423,7 +4424,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   height: 40px;
   background: none;
   box-shadow: none;
-  color: #009cdd; }
+  color: #caebf2; }
 #poslanci_search .member {
   border-bottom: 1px solid #f0f0f0;
   padding: 10px 0; }
@@ -4492,7 +4493,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     .getPager .pagination li a span {
       color: #c8c8c8; }
   .getPager .pagination li.active a {
-    background: #009cdd;
+    background: #caebf2;
     color: #ffffff; }
 
 .izracunana_prisotnost .tab-content .me_poslanec {
@@ -4518,7 +4519,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .pagination li span:hover {
     color: #c8c8c8; }
   .pagination li.active > a, .pagination li.active > a:focus, .pagination li.active > a:hover, .pagination li.active > span, .pagination li.active > span:focus, .pagination li.active > span:hover {
-    background-color: #009cdd; }
+    background-color: #caebf2; }
   .pagination li a {
     background: #f0f0f0;
     border: none;
@@ -4532,8 +4533,8 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     padding: 0;
     width: 18px; }
   .pagination li:first-child a, .pagination li:last-child a {
-    background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#197197"/></svg>');
-    color: #197197;
+    background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#ff0000"/></svg>');
+    color: #ff0000;
     font-size: 36px;
     font-weight: 100;
     line-height: 18px;
@@ -4561,20 +4562,20 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       font-size: 18px; } }
 
 #about .lead-text-container .lead-text {
-  background-color: #009cdd;
+  background-color: #caebf2;
   padding: 5px 0;
   line-height: 2;
   /* fix inline multiline text padding */
-  box-shadow: 10px 0 0 #009cdd, -10px 0 0 #009cdd;
+  box-shadow: 10px 0 0 #caebf2, -10px 0 0 #caebf2;
   box-decoration-break: clone;
   color: #ffffff; }
 
 #about .lead-text-container a.lead-text:hover,
 #about .lead-text-container a.lead-text:focus,
 #about .lead-text-container a.lead-text:active {
-  background-color: rgba(0, 156, 221, 0.7);
+  background-color: rgba(202, 235, 242, 0.7);
   /* fix inline multiline text padding */
-  box-shadow: 10px 0 0 rgba(0, 156, 221, 0.7), -10px 0 0 rgba(0, 156, 221, 0.7);
+  box-shadow: 10px 0 0 rgba(202, 235, 242, 0.7), -10px 0 0 rgba(202, 235, 242, 0.7);
   color: #ffffff;
   text-decoration: none; }
 
@@ -4606,15 +4607,15 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #009cdd; }
+  color: #caebf2; }
 
 @supports (-webkit-background-clip: text) {
   #about .gradient-title {
-    background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+    background: linear-gradient(to right, #caebf2 0%, #258498 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; } }
