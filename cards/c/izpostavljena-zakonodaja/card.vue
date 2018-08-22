@@ -62,7 +62,7 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a v-t="'all-legislation'" :href="getLegislationListLink()"></a>
+        <a v-t="'all-legislation'" :href="getLegislationListLink()" class="funblue-light-hover"></a>
       </div>
     </div>
   </card-wrapper>
@@ -122,7 +122,7 @@ export default {
 
   &__single {
     background: $grey;
-    color: $black;
+    color: $font-default;
     display: flex;
     align-items: center;
     height: 125px;
@@ -150,7 +150,8 @@ export default {
     }
 
     &:hover {
-      background-color: $funblue-light-hover;
+      color: $link;
+      background-color: $link-hover-background;
     }
 
     &:focus,
@@ -186,10 +187,10 @@ export default {
     width: 100%;
 
     a {
-      padding: 3px;
-      padding-left: 32px;
-      background: url("#{getConfig('urls.cdn')}/icons/zakonodaja-modra.svg")
-        no-repeat top left;
+      padding-left: 22px;
+      background-image: url("#{getConfig('urls.cdn')}/icons/zakonodaja-modra.svg");
+      background-repeat: no-repeat;
+      background-position: center left;
       font-size: 14px;
       font-weight: 400;
       color: $sadblue;
