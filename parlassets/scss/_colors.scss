@@ -3,56 +3,55 @@
 /////////////////////////////
 
 // gradient
-$first: #ff0000;
-$second: #caebf2;
-$third: #258498;
+$first: #197197;
+$second: #009cdd;
+$third: #ff5e41;
 
 // tabs
-$tab-active: $first;
-$tab-hover: #ff8888;
-$tab-passive: #ff5555;
+$tab-active: #009cdd;
+$tab-hover: #86B3DF;
+$tab-passive: #197197;
 
 // links
-$link: $third;
-$link-hover-background: #caebf2;
+$link: #197197;
+$link-hover-background: #d9e7ed;
 
 // card footer buttons
-$card-footer-button-passive-background: #ff5555;
-$card-footer-button-hover-background: $first;
+$card-footer-button-passive-background: #197197;
+$card-footer-button-hover-background: #009cdd;
 
 // scroller
-$scroller: #caebf2;
-$element: #258498;
+$scroller: #F1F5F7;
+$element: #197197;
 
 // barcharts
-$barchart-this: $first;
-$barchart-other: $second;
-$barchart-default: $second;
+$barchart-this: #ff5e41;
+$barchart-other: #009cdd;
+$barchart-default: #009cdd;
 
 // icons
-$icon-accepted: #4fbdd4;
-$icon-rejected: $first;
-$icon-session: $first;
-$icon-transcript: #258498;
-$icon-transcript-hover-background: #ceadf2;
+$icon-accepted: #009cdd;
+$icon-rejected: #ff5e41;
+$icon-session: #ff5e41;
+$icon-transcript: #197197;
+$icon-transcript-hover-background: #F1F5F7;
 
 
 // buttons
-$button-for: #4fbdd4;
-$button-against: #1b606f;
-$button-abstained: #afe1eb;
-$button-absent: #0b252b;
+$button-for: #009cdd;
+$button-against: #197197;
+$button-abstained: #88dcff;
+$button-absent: #003c55;
 
 // dropdown
-$dropdown-arrow: $first;
-$dropdown-selected-element: #ff8888;
+$dropdown-arrow: #197197;
+$dropdown-selected-element: #efefef;
 
 // other
-$light-background: #fdf8f8;
-$light-background-link: #900900;
-$tools-arrow: $first;
-$cta-passive-background: #ff5555;
-$cta-hover-background: $first;
+$light-background: #F1F5F7;
+$tools-arrow: #009cdd;
+$cta-passive-background: #009cdd;
+$cta-hover-background: #197197;
 
 // common
 $white: #ffffff;
@@ -60,10 +59,6 @@ $font-default: #333333;
 $font-placeholder: #c8c8c8;
 $background: #f0f0f0;
 
-// logo
-$logo-first: $first; // TODO
-$logo-second: $second; // TODO
-$logo-third: $font-default; // TODO
 
 
 /////////////////////////////
