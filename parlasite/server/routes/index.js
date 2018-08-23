@@ -13,4 +13,12 @@ module.exports = (app) => {
   app.use(`/${sm.session.base}`, require('./seja'));
 
   app.use('/api', require('./api'));
+
+  // old urls redirects
+  app.use('/poslanec/*', (req, res) => {
+    res.redirect(`/${sm.member.base}/${req.params[0]}`);
+  });
+  app.use('/poslanska-skupina/*', (req, res) => {
+    res.redirect(`/${sm.party.base}/${req.params[0]}`);
+  });
 };
