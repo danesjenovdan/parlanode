@@ -9,8 +9,18 @@
         @close="modalClosed"
       >
         <div v-if="loading" class="nalagalnik"></div>
-        <div v-else>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. A ullam nesciunt illum quidem neque doloribus repellat accusamus expedita accusantium similique. Reiciendis incidunt expedita aliquam reprehenderit provident. Alias aut fugiat dolores.
+        <div v-else-if="loadedData">
+          <div v-for="(d, i) in loadedData.data" :key="i">
+            <template v-if="typeof d === 'string' || typeof d === 'number'">
+              {{ d }}
+            </template>
+            <template v-else>
+              <div v-for="(val, key) in d" v-if="typeof val === 'string'" :key="key">
+                <label>{{ key }}</label>
+                <input v-model="d[key]" class="form-control">
+              </div>
+            </template>
+          </div>
         </div>
         <div v-if="error" class="error-message">Error: {{ error.message }}</div>
         <div class="card-modal-buttons">
@@ -37,7 +47,7 @@
             :disabled="buttonsDisabled"
             type="button"
             class="card-modal-button"
-            @click="saveData(fields)"
+            @click="saveData(loadedData)"
           >
             {{ $t('save') }}
           </button>
@@ -64,7 +74,7 @@ export default {
   data() {
     return {
       modalOpen: true,
-      fields: null,
+      loadedData: null,
       loading: true,
       saving: false,
       generating: false,
@@ -97,8 +107,7 @@ export default {
         this.loading = true;
         this.data.loadData()
           .then((data) => {
-            console.log(data);
-            this.fields = data;
+            this.loadedData = data;
             this.loading = false;
           })
           .catch((error) => {
@@ -107,17 +116,18 @@ export default {
           });
       }
     },
-    saveData(fields) {
+    saveData(loadedData) {
       if (this.data.saveData) {
         this.saving = true;
-        this.data.saveData(fields)
-          .then(() => {
-            this.saving = false;
-          })
-          .catch((error) => {
-            this.error = error;
-            this.saving = false;
-          });
+        console.log(this.loadedData);
+        // this.data.saveData(loadedData)
+        //   .then(() => {
+        //     this.saving = false;
+        //   })
+        //   .catch((error) => {
+        //     this.error = error;
+        //     this.saving = false;
+        //   });
       }
     },
     generateData() {

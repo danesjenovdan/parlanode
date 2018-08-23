@@ -101,15 +101,15 @@ export default {
     openModal(session) {
       this.modalData = {
         title: `TFIDF - ${session.name}`,
-        loadData: () => {
-          return this.$parlapi.getSessionTFIDF(session.id);
-          // TODO: get data from this -^ response and return it
+        loadData: async () => {
+          const data = await this.$parlapi.getSessionTFIDF(session.id);
+          const tfidf = data.data.results.length && data.data.results[0];
+          return {
+            id: tfidf.id,
+            data: tfidf.data,
+          };
         },
-        saveData: (fields) => {
-          // TODO: get correct data from fields and call api with it
-          const tfidf = fields;
-          return this.$parlapi.patchSessionsTFIDF(tfidf);
-        },
+        saveData: tfidf => this.$parlapi.patchSessionsTFIDF(tfidf),
       };
       this.modalOpen = true;
     },
