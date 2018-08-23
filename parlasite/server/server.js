@@ -18,7 +18,8 @@ function setupExpress() {
     // set template renderer
     app.set('view engine', 'ejs');
     app.locals.i18n = i18n(config.siteLang);
-    app.locals.siteMap = config.siteMap;
+    app.locals.config = config;
+    app.locals.sm = config.siteMap;
 
     // serve static assets
     app.use(serveStatic('public'));

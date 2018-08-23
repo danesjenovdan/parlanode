@@ -1,5 +1,4 @@
 {
-  "cdn": "https://cdn.parlameter.si",
   "landing": {
     "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
     "search": {
@@ -105,8 +104,8 @@
     "business_success_email": "e-pošta",
     "business_success_message": "sporočilo",
     "business_success_send": "POŠLJI"
-  }, 
-  "tools" : [{ 
+  },
+  "tools" : [{
     "id": "obvestila",
     "label": "Parlameter obvestila",
     "link": "https://obvestila.parlameter.si/",
