@@ -11,7 +11,7 @@ function getData(idParam, slugParam) {
   const mp = id && data.mps.find(m => m.id === id);
   const party = mp && data.pgs.find(p => p.id === mp.party_id);
   const slug = mp && (slugParam || people[id].slug);
-  return (id && mp && party) ? { mp, party, slug } : null;
+  return (id && mp && slug) ? { mp, party, slug } : null;
 }
 
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], ar((render, req, res, next) => {
