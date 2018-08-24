@@ -55,7 +55,7 @@
   },
   "search_popup": {
     "title": "Kako pretraživati?",
-    "first_paragraph": "Za zadani način pretraživanja postavljeno je široko podudaranje (kao rezultat se pojavljuju svi govori koji sadrže bilo koju od riječi iz pretraživanja). Među rezultatima pretrage se zbog preklapanja prikazuju svi gramatički oblici iste vrste riječi. Ovo se odnosi na sva, osim na pretraživanje točnog podudaranja („navodnici“).",
+    "first_paragraph": "Za zadani način pretraživanja postavljeno je široko podudaranje (kao rezultat se pojavljuju svi govori koji sadrže bilo koju od riječi iz pretraživanja). Među rezultatima pretrage prikazuju se svi gramatički oblici iste vrste riječi. Ovo se odnosi na sva, osim na pretraživanje točnog podudaranja („navodnici“).",
     "second_paragraph": "Za napredno pretraživanje mogu se koristiti sljedeći operatori:",
     "operators": [
       {
@@ -85,7 +85,7 @@
         "example_text": "Klub !zastupnica",
         "example_result_title": "Rezultati pretrage:",
         "example_result_text": "Klub zastupnica,<br> zastupnica kluba,<br> zastupnica manjina",
-        "example_excluded_result_title": "Rezultati pretrage",
+        "example_excluded_result_title": "Nije rezultat pretrage",
         "example_excluded_result_text": "Zastupnički mandat"
       },
       {
