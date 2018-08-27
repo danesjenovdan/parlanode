@@ -8,7 +8,7 @@
           :class="getColumnClasses(column)"
           @click="sortCallback(column.id)"
         >
-          {{ column.label }}
+          <span>{{ column.label }}</span>
         </div>
       </template>
     </li>
@@ -121,6 +121,28 @@ export default {
 .headers {
   .column {
     color: $font-default;
+    position: relative;
+
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    &.sort span::after,
+    &:not(.sort):hover span::after {
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent $funblue;
+      border-width: 0 6px 7px;
+      position: absolute;
+      margin-left: 6px;
+      margin-top: 6px;
+      transform: rotate(0deg);
+    }
+
+    &.sort.reverse span::after {
+      transform: rotate(180deg);
+    }
   }
 }
 
