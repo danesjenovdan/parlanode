@@ -378,6 +378,13 @@ export default {
   }
 }
 
+@media (max-width: 767px) {
+  .session_voting .session_title {
+    height: 75px;
+    margin-left: 54px;
+  }
+}
+
 .single_voting {
   position: relative;
 }
