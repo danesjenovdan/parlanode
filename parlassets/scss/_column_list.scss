@@ -28,18 +28,9 @@
       text-transform: uppercase;
       white-space: nowrap;
 
-      &.sort::after,
-      &:not(.sort):hover::after {
-        border-style: solid;
-        border-width: 9px 7.5px 0;
-        border-color: $funblue transparent transparent;
-        content: '';
-        display: inline-block;
-        margin-left: 8px;
-        transform: rotate(180deg);
+      &:first-child {
+        text-align: left;
       }
-      &.sort.reverse::after { transform: none; }
-      &:first-child { text-align: left; }
     }
   }
 
