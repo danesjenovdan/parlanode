@@ -1,244 +1,212 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext");
-.smc-background {
-  background: #8fcfee; }
+.hds_ + _hsls_ + _hdssb-background {
+  background: #258498; }
 
-.smc-fill {
-  fill: #8fcfee; }
+.hds_ + _hsls_ + _hdssb-fill {
+  fill: #258498; }
 
-.smc-stroke {
-  stroke: #8fcfee; }
+.hds_ + _hsls_ + _hdssb-stroke {
+  stroke: #258498; }
 
-.smc-border {
-  border: 2px solid #8fcfee; }
+.hds_ + _hsls_ + _hdssb-border {
+  border: 2px solid #258498; }
 
-.smc-hover:hover {
-  background: #8fcfee;
+.hds_ + _hsls_ + _hdssb-hover:hover {
+  background: #258498;
   color: #ffffff; }
 
-.sds-background {
-  background: #22a2e0; }
+.nhr-background {
+  background: #4095a7; }
 
-.sds-fill {
-  fill: #22a2e0; }
+.nhr-fill {
+  fill: #4095a7; }
 
-.sds-stroke {
-  stroke: #22a2e0; }
+.nhr-stroke {
+  stroke: #4095a7; }
 
-.sds-border {
-  border: 2px solid #22a2e0; }
+.nhr-border {
+  border: 2px solid #4095a7; }
 
-.sds-hover:hover {
-  background: #22a2e0;
+.nhr-hover:hover {
+  background: #4095a7;
   color: #ffffff; }
 
-.desus-background {
-  background: #5388aa; }
+.hns-background {
+  background: #5ca6b6; }
 
-.desus-fill {
-  fill: #5388aa; }
+.hns-fill {
+  fill: #5ca6b6; }
 
-.desus-stroke {
-  stroke: #5388aa; }
+.hns-stroke {
+  stroke: #5ca6b6; }
 
-.desus-border {
-  border: 2px solid #5388aa; }
+.hns-border {
+  border: 2px solid #5ca6b6; }
 
-.desus-hover:hover {
-  background: #5388aa;
+.hns-hover:hover {
+  background: #5ca6b6;
   color: #ffffff; }
 
-.sd-background {
-  background: #4f6379; }
+.bm_365_ + _reformisti_ + _nezavisni-background {
+  background: #77b7c5; }
 
-.sd-fill {
-  fill: #4f6379; }
+.bm_365_ + _reformisti_ + _nezavisni-fill {
+  fill: #77b7c5; }
 
-.sd-stroke {
-  stroke: #4f6379; }
+.bm_365_ + _reformisti_ + _nezavisni-stroke {
+  stroke: #77b7c5; }
 
-.sd-border {
-  border: 2px solid #4f6379; }
+.bm_365_ + _reformisti_ + _nezavisni-border {
+  border: 2px solid #77b7c5; }
 
-.sd-hover:hover {
-  background: #4f6379;
+.bm_365_ + _reformisti_ + _nezavisni-hover:hover {
+  background: #77b7c5;
   color: #ffffff; }
 
-.zl-background {
-  background: #857799; }
+.sdss-background {
+  background: #93c8d4; }
 
-.zl-fill {
-  fill: #857799; }
+.sdss-fill {
+  fill: #93c8d4; }
 
-.zl-stroke {
-  stroke: #857799; }
+.sdss-stroke {
+  stroke: #93c8d4; }
 
-.zl-border {
-  border: 2px solid #857799; }
+.sdss-border {
+  border: 2px solid #93c8d4; }
 
-.zl-hover:hover {
-  background: #857799;
+.sdss-hover:hover {
+  background: #93c8d4;
   color: #ffffff; }
 
-.levica-background {
-  background: #857799; }
+.sdp-background {
+  background: #aed9e3; }
 
-.levica-fill {
-  fill: #857799; }
+.sdp-fill {
+  fill: #aed9e3; }
 
-.levica-stroke {
-  stroke: #857799; }
+.sdp-stroke {
+  stroke: #aed9e3; }
 
-.levica-border {
-  border: 2px solid #857799; }
+.sdp-border {
+  border: 2px solid #aed9e3; }
 
-.levica-hover:hover {
-  background: #857799;
+.sdp-hover:hover {
+  background: #aed9e3;
   color: #ffffff; }
 
-.nsi-background {
-  background: #b7888a; }
+.hdz-background {
+  background: #caebf2; }
 
-.nsi-fill {
-  fill: #b7888a; }
+.hdz-fill {
+  fill: #caebf2; }
 
-.nsi-stroke {
-  stroke: #b7888a; }
+.hdz-stroke {
+  stroke: #caebf2; }
 
-.nsi-border {
-  border: 2px solid #b7888a; }
+.hdz-border {
+  border: 2px solid #caebf2; }
 
-.nsi-hover:hover {
-  background: #b7888a;
+.hdz-hover:hover {
+  background: #caebf2;
   color: #ffffff; }
 
-.ps_np-background {
-  background: #d9776b; }
+.glas_ + _hsu-background {
+  background: #d1c9cf; }
 
-.ps_np-fill {
-  fill: #d9776b; }
+.glas_ + _hsu-fill {
+  fill: #d1c9cf; }
 
-.ps_np-stroke {
-  stroke: #d9776b; }
+.glas_ + _hsu-stroke {
+  stroke: #d1c9cf; }
 
-.ps_np-border {
-  border: 2px solid #d9776b; }
+.glas_ + _hsu-border {
+  border: 2px solid #d1c9cf; }
 
-.ps_np-hover:hover {
-  background: #d9776b;
+.glas_ + _hsu-hover:hover {
+  background: #d1c9cf;
   color: #ffffff; }
 
-.ps-np-background {
-  background: #d9776b; }
+.živi_zid_ + _snaga-background {
+  background: #d9a7ac; }
 
-.ps-np-fill {
-  fill: #d9776b; }
+.živi_zid_ + _snaga-fill {
+  fill: #d9a7ac; }
 
-.ps-np-stroke {
-  stroke: #d9776b; }
+.živi_zid_ + _snaga-stroke {
+  stroke: #d9a7ac; }
 
-.ps-np-border {
-  border: 2px solid #d9776b; }
+.živi_zid_ + _snaga-border {
+  border: 2px solid #d9a7ac; }
 
-.ps-np-hover:hover {
-  background: #d9776b;
+.živi_zid_ + _snaga-hover:hover {
+  background: #d9a7ac;
   color: #ffffff; }
 
-.imns-background {
-  background: #ba594c; }
+.manjina-background {
+  background: #e0868a; }
 
-.imns-fill {
-  fill: #ba594c; }
+.manjina-fill {
+  fill: #e0868a; }
 
-.imns-stroke {
-  stroke: #ba594c; }
+.manjina-stroke {
+  stroke: #e0868a; }
 
-.imns-border {
-  border: 2px solid #ba594c; }
+.manjina-border {
+  border: 2px solid #e0868a; }
 
-.imns-hover:hover {
-  background: #ba594c;
+.manjina-hover:hover {
+  background: #e0868a;
   color: #ffffff; }
 
-.nep-background {
-  background: #853f36; }
+.hss-background {
+  background: #e86467; }
 
-.nep-fill {
-  fill: #853f36; }
+.hss-fill {
+  fill: #e86467; }
 
-.nep-stroke {
-  stroke: #853f36; }
+.hss-stroke {
+  stroke: #e86467; }
 
-.nep-border {
-  border: 2px solid #853f36; }
+.hss-border {
+  border: 2px solid #e86467; }
 
-.nep-hover:hover {
-  background: #853f36;
+.hss-hover:hover {
+  background: #e86467;
   color: #ffffff; }
 
-.nep_-_zl-background {
-  background: #853f36; }
+.ids_ + _pgs_ + _ri-background {
+  background: #ef4345; }
 
-.nep_-_zl-fill {
-  fill: #853f36; }
+.ids_ + _pgs_ + _ri-fill {
+  fill: #ef4345; }
 
-.nep_-_zl-stroke {
-  stroke: #853f36; }
+.ids_ + _pgs_ + _ri-stroke {
+  stroke: #ef4345; }
 
-.nep_-_zl-border {
-  border: 2px solid #853f36; }
+.ids_ + _pgs_ + _ri-border {
+  border: 2px solid #ef4345; }
 
-.nep_-_zl-hover:hover {
-  background: #853f36;
+.ids_ + _pgs_ + _ri-hover:hover {
+  background: #ef4345;
   color: #ffffff; }
 
-.nep_-_ač-background {
-  background: #853f36; }
+.most-background {
+  background: #f72122; }
 
-.nep_-_ač-fill {
-  fill: #853f36; }
+.most-fill {
+  fill: #f72122; }
 
-.nep_-_ač-stroke {
-  stroke: #853f36; }
+.most-stroke {
+  stroke: #f72122; }
 
-.nep_-_ač-border {
-  border: 2px solid #853f36; }
+.most-border {
+  border: 2px solid #f72122; }
 
-.nep_-_ač-hover:hover {
-  background: #853f36;
-  color: #ffffff; }
-
-.nep_-_mh-background {
-  background: #853f36; }
-
-.nep_-_mh-fill {
-  fill: #853f36; }
-
-.nep_-_mh-stroke {
-  stroke: #853f36; }
-
-.nep_-_mh-border {
-  border: 2px solid #853f36; }
-
-.nep_-_mh-hover:hover {
-  background: #853f36;
-  color: #ffffff; }
-
-.nep_-_bk-background {
-  background: #853f36; }
-
-.nep_-_bk-fill {
-  fill: #853f36; }
-
-.nep_-_bk-stroke {
-  stroke: #853f36; }
-
-.nep_-_bk-border {
-  border: 2px solid #853f36; }
-
-.nep_-_bk-hover:hover {
-  background: #853f36;
+.most-hover:hover {
+  background: #f72122;
   color: #ffffff; }
 
 .for-fill {
@@ -2416,66 +2384,58 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     color: #ffffff; }
   .party-button:hover {
     color: #ffffff; }
-  .party-button.smc {
-    border-bottom-color: #8fcfee; }
-    .party-button.smc.selected {
-      background-color: #8fcfee; }
-  .party-button.sds {
-    border-bottom-color: #22a2e0; }
-    .party-button.sds.selected {
-      background-color: #22a2e0; }
-  .party-button.desus {
-    border-bottom-color: #5388aa; }
-    .party-button.desus.selected {
-      background-color: #5388aa; }
-  .party-button.sd {
-    border-bottom-color: #4f6379; }
-    .party-button.sd.selected {
-      background-color: #4f6379; }
-  .party-button.zl {
-    border-bottom-color: #857799; }
-    .party-button.zl.selected {
-      background-color: #857799; }
-  .party-button.levica {
-    border-bottom-color: #857799; }
-    .party-button.levica.selected {
-      background-color: #857799; }
-  .party-button.nsi {
-    border-bottom-color: #b7888a; }
-    .party-button.nsi.selected {
-      background-color: #b7888a; }
-  .party-button.ps_np {
-    border-bottom-color: #d9776b; }
-    .party-button.ps_np.selected {
-      background-color: #d9776b; }
-  .party-button.ps-np {
-    border-bottom-color: #d9776b; }
-    .party-button.ps-np.selected {
-      background-color: #d9776b; }
-  .party-button.imns {
-    border-bottom-color: #ba594c; }
-    .party-button.imns.selected {
-      background-color: #ba594c; }
-  .party-button.nep {
-    border-bottom-color: #853f36; }
-    .party-button.nep.selected {
-      background-color: #853f36; }
-  .party-button.nep_-_zl {
-    border-bottom-color: #853f36; }
-    .party-button.nep_-_zl.selected {
-      background-color: #853f36; }
-  .party-button.nep_-_ač {
-    border-bottom-color: #853f36; }
-    .party-button.nep_-_ač.selected {
-      background-color: #853f36; }
-  .party-button.nep_-_mh {
-    border-bottom-color: #853f36; }
-    .party-button.nep_-_mh.selected {
-      background-color: #853f36; }
-  .party-button.nep_-_bk {
-    border-bottom-color: #853f36; }
-    .party-button.nep_-_bk.selected {
-      background-color: #853f36; }
+  .party-button.hds_ + _hsls_ + _hdssb {
+    border-bottom-color: #258498; }
+    .party-button.hds_ + _hsls_ + _hdssb.selected {
+      background-color: #258498; }
+  .party-button.nhr {
+    border-bottom-color: #4095a7; }
+    .party-button.nhr.selected {
+      background-color: #4095a7; }
+  .party-button.hns {
+    border-bottom-color: #5ca6b6; }
+    .party-button.hns.selected {
+      background-color: #5ca6b6; }
+  .party-button.bm_365_ + _reformisti_ + _nezavisni {
+    border-bottom-color: #77b7c5; }
+    .party-button.bm_365_ + _reformisti_ + _nezavisni.selected {
+      background-color: #77b7c5; }
+  .party-button.sdss {
+    border-bottom-color: #93c8d4; }
+    .party-button.sdss.selected {
+      background-color: #93c8d4; }
+  .party-button.sdp {
+    border-bottom-color: #aed9e3; }
+    .party-button.sdp.selected {
+      background-color: #aed9e3; }
+  .party-button.hdz {
+    border-bottom-color: #caebf2; }
+    .party-button.hdz.selected {
+      background-color: #caebf2; }
+  .party-button.glas_ + _hsu {
+    border-bottom-color: #d1c9cf; }
+    .party-button.glas_ + _hsu.selected {
+      background-color: #d1c9cf; }
+  .party-button.živi_zid_ + _snaga {
+    border-bottom-color: #d9a7ac; }
+    .party-button.živi_zid_ + _snaga.selected {
+      background-color: #d9a7ac; }
+  .party-button.manjina {
+    border-bottom-color: #e0868a; }
+    .party-button.manjina.selected {
+      background-color: #e0868a; }
+  .party-button.hss {
+    border-bottom-color: #e86467; }
+    .party-button.hss.selected {
+      background-color: #e86467; }
+  .party-button.ids_ + _pgs_ + _ri {
+    border-bottom-color: #ef4345; }
+    .party-button.ids_ + _pgs_ + _ri.selected {
+      background-color: #ef4345; }
+  .party-button.most {
+    border-bottom-color: #f72122; }
+    .party-button.most.selected {
+      background-color: #f72122; }
   .party-button.for {
     border-bottom-color: #258498; }
     .party-button.for.selected {
@@ -2492,36 +2452,32 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     border-bottom-color: #afe1eb; }
     .party-button.ni.selected {
       background-color: #afe1eb; }
-  .party-button.smc:hover {
-    background-color: rgba(143, 207, 238, 0.7); }
-  .party-button.sds:hover {
-    background-color: rgba(34, 162, 224, 0.7); }
-  .party-button.desus:hover {
-    background-color: rgba(83, 136, 170, 0.7); }
-  .party-button.sd:hover {
-    background-color: rgba(79, 99, 121, 0.7); }
-  .party-button.zl:hover {
-    background-color: rgba(133, 119, 153, 0.7); }
-  .party-button.levica:hover {
-    background-color: rgba(133, 119, 153, 0.7); }
-  .party-button.nsi:hover {
-    background-color: rgba(183, 136, 138, 0.7); }
-  .party-button.ps_np:hover {
-    background-color: rgba(217, 119, 107, 0.7); }
-  .party-button.ps-np:hover {
-    background-color: rgba(217, 119, 107, 0.7); }
-  .party-button.imns:hover {
-    background-color: rgba(186, 89, 76, 0.7); }
-  .party-button.nep:hover {
-    background-color: rgba(133, 63, 54, 0.7); }
-  .party-button.nep_-_zl:hover {
-    background-color: rgba(133, 63, 54, 0.7); }
-  .party-button.nep_-_ač:hover {
-    background-color: rgba(133, 63, 54, 0.7); }
-  .party-button.nep_-_mh:hover {
-    background-color: rgba(133, 63, 54, 0.7); }
-  .party-button.nep_-_bk:hover {
-    background-color: rgba(133, 63, 54, 0.7); }
+  .party-button.hds_ + _hsls_ + _hdssb:hover {
+    background-color: rgba(37, 132, 152, 0.7); }
+  .party-button.nhr:hover {
+    background-color: rgba(64, 149, 167, 0.7); }
+  .party-button.hns:hover {
+    background-color: rgba(92, 166, 182, 0.7); }
+  .party-button.bm_365_ + _reformisti_ + _nezavisni:hover {
+    background-color: rgba(119, 183, 197, 0.7); }
+  .party-button.sdss:hover {
+    background-color: rgba(147, 200, 212, 0.7); }
+  .party-button.sdp:hover {
+    background-color: rgba(174, 217, 227, 0.7); }
+  .party-button.hdz:hover {
+    background-color: rgba(202, 235, 242, 0.7); }
+  .party-button.glas_ + _hsu:hover {
+    background-color: rgba(209, 201, 207, 0.7); }
+  .party-button.živi_zid_ + _snaga:hover {
+    background-color: rgba(217, 167, 172, 0.7); }
+  .party-button.manjina:hover {
+    background-color: rgba(224, 134, 138, 0.7); }
+  .party-button.hss:hover {
+    background-color: rgba(232, 100, 103, 0.7); }
+  .party-button.ids_ + _pgs_ + _ri:hover {
+    background-color: rgba(239, 67, 69, 0.7); }
+  .party-button.most:hover {
+    background-color: rgba(247, 33, 34, 0.7); }
   .party-button.for:hover {
     background-color: rgba(37, 132, 152, 0.7); }
   .party-button.against:hover {
