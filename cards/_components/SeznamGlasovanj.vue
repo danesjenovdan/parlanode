@@ -382,6 +382,11 @@ export default {
   .session_voting .session_title {
     height: 75px;
     margin-left: 54px;
+
+    p {
+      max-height: 80px;
+      overflow: hidden;
+    }
   }
 }
 
