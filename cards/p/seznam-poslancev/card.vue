@@ -14,12 +14,12 @@
           <div class="col-md-12 filters">
             <search-field v-model="textFilter" class="filter text-filter" />
             <p-search-dropdown
-              :items="parties"
+              v-model="parties"
               :placeholder="partiesPlaceholder"
               class="filter parties"
             />
             <p-search-dropdown
-              :items="districts"
+              v-model="districts"
               :placeholder="districtPlaceholder"
               class="filter district-filter"
             />

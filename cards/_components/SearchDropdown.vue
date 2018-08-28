@@ -80,21 +80,13 @@ export default {
       type: Array,
       default: null,
     },
-    items: {
+    value: {
       type: Array,
       required: true,
     },
     placeholder: {
       type: String,
-      required: true,
-    },
-    selectCallback: {
-      type: Function,
-      default: () => {},
-    },
-    clearCallback: {
-      type: Function,
-      default: () => {},
+      default: null,
     },
     single: {
       type: Boolean,
@@ -160,7 +152,7 @@ export default {
       if (this.groups) {
         return this.groups
           .map((group) => {
-            const itemsFromGroup = filterAndSort(this.items.filter(item => (
+            const itemsFromGroup = filterAndSort(this.value.filter(item => (
               group.items.indexOf(item.id) > -1
             )));
 
@@ -173,7 +165,7 @@ export default {
           })
           .reduce((a, b) => a.concat(b), []);
       }
-      return filterAndSort(this.items);
+      return filterAndSort(this.value);
     },
     selectedIds() {
       return this.filteredItems
@@ -181,12 +173,18 @@ export default {
         .map(item => item.id);
     },
     adjustedPlaceholder() {
-      if (!this.single) {
-        return this.placeholder;
+      if (this.single) {
+        const selectedItem = this.filteredItems.filter(item => item.selected)[0];
+        return selectedItem ? selectedItem.label : this.$t('select-placeholder');
       }
 
-      const selectedItem = this.filteredItems.filter(item => item.selected)[0];
-      return selectedItem ? selectedItem.label : this.placeholder;
+      if (this.placeholder) {
+        return (this.placeholder);
+      }
+
+      return this.selectedIds.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedIds.length })
+        : this.$t('select-placeholder');
     },
   },
   watch: {
@@ -205,19 +203,20 @@ export default {
     selectItem(selectedItemId) {
       if (this.single) {
         this.clearSelection();
-        this.toggleItem(selectedItemId);
         this.toggleDropdown(false);
-      } else {
-        this.toggleItem(selectedItemId);
       }
-
-      if (this.selectCallback) {
-        this.selectCallback(selectedItemId);
-      }
+      this.toggleItem(selectedItemId);
     },
     toggleItem(itemId) {
-      const clickedItem = this.items.filter(item => item.id === itemId)[0];
-      this.$set(clickedItem, 'selected', !clickedItem.selected);
+      this.$emit('select', itemId);
+      this.$emit(
+        'input',
+        JSON.parse(JSON.stringify(this.value))
+          .map(item => ({
+            ...item,
+            selected: item.id === itemId ? !item.selected : item.selected,
+          })),
+      );
     },
     toggleDropdown(state) {
       if (state === false) {
@@ -226,11 +225,10 @@ export default {
       this.active = state;
     },
     clearSelection() {
-      this.selectedIds.forEach(this.toggleItem);
-
-      if (this.clearCallback) {
-        this.clearCallback();
-      }
+      let newItems = JSON.parse(JSON.stringify(this.value));
+      newItems = newItems.map(item => ({ ...item, selected: false }));
+      this.$emit('clear');
+      this.$emit('input', newItems);
     },
     focus(index, withKeyboard) {
       this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);

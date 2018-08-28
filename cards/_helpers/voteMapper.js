@@ -1,6 +1,6 @@
 import { pick } from 'lodash';
 
-export default (vote) => {
+export default (vote, linkGenerator) => {
   const newVote = pick(vote.results, [
     'tags', 'text', 'votes_for', 'against', 'abstain', 'not_present', 'result',
   ]);
@@ -9,7 +9,7 @@ export default (vote) => {
                    + vote.results.abstain
                    + vote.results.not_present;
   newVote.date = vote.session.date_ts;
-  newVote.url = this.getSessionVoteLink({
+  newVote.url = linkGenerator({
     session_id: vote.session.id,
     vote_id: vote.results.motion_id,
   });

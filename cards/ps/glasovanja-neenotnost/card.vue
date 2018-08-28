@@ -42,14 +42,13 @@
       <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown
-          :items="dropdownItems.classifications"
-          :placeholder="classificationPlaceholder"
+          v-model="allClassifications"
           :alphabetise="false"
         />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
+        <p-search-dropdown v-model="allTags" />
       </div>
       <div class="filter text-filter">
         <div v-t="'sort-by'" class="filter-label"></div>
@@ -170,22 +169,6 @@ export default {
     };
   },
   computed: {
-    classificationPlaceholder() {
-      return this.selectedClassifications.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
-        : this.$t('select-placeholder');
-    },
-    tagPlaceholder() {
-      return this.selectedTags.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('select-placeholder');
-    },
-    dropdownItems() {
-      return {
-        tags: this.allTags,
-        classifications: this.allClassifications,
-      };
-    },
     selectedTags() {
       return this.allTags
         .filter(tag => tag.selected)

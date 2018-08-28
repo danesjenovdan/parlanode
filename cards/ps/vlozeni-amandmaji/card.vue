@@ -52,14 +52,17 @@
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
+        <p-search-dropdown
+          :value="dropdownItems.tags"
+          @input="updateDropdownOptions('allTags', $event)"
+        />
       </div>
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown
-          :items="dropdownItems.months"
-          :placeholder="monthPlaceholder"
+          :value="dropdownItems.months"
           :alphabetise="false"
+          @input="updateDropdownOptions('allMonths', $event)"
         />
       </div>
       <div class="filter button-filter">
@@ -177,6 +180,7 @@ import voteMapper from 'helpers/voteMapper';
 import stateLoader from 'helpers/stateLoader';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
 import { partyOgImage } from 'mixins/ogImages';
@@ -194,6 +198,7 @@ export default {
   components: { PSearchDropdown, SearchField, StripedButton },
   mixins: [
     common,
+    links,
     partyTitle,
     partyHeader,
     partyOgImage,
@@ -208,7 +213,7 @@ export default {
 
     const votingDays = this.$options.cardData.data.results.map(votingDay => ({
       date: votingDay.date,
-      results: votingDay.votes.map(voteMapper),
+      results: votingDay.votes.map(vote => voteMapper(vote, this.getSessionVoteLink)),
     }));
 
     const allTags = this.$options.cardData.data.all_tags
@@ -246,16 +251,6 @@ export default {
     },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
-    },
-    tagPlaceholder() {
-      return this.selectedTags.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('select-placeholder');
-    },
-    monthPlaceholder() {
-      return this.selectedMonths.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
-        : this.$t('select-placeholder');
     },
     dropdownItems() {
       const validTags = [];
@@ -336,6 +331,12 @@ export default {
         return `${text.split(' ').slice(0, 14).join(' ')} ...`;
       }
       return text;
+    },
+    updateDropdownOptions(itemType, newOptions) {
+      const allItems = this[itemType];
+      newOptions.forEach((newOption) => {
+        find(allItems, { id: newOption.id }).selected = newOption.selected;
+      });
     },
   },
 };
