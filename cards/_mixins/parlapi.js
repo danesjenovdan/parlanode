@@ -45,8 +45,8 @@ function parlapi() {
     getSessionTFIDF(id) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${id}`);
     },
-    patchSessionsTFIDF(tfidf) {
-      return analize.patch(`/s/tfidfs/${tfidf.id}`, tfidf);
+    patchSessionsTFIDF(id, tfidf) {
+      return analize.patch(`/s/tfidfs/${id}`, tfidf);
     },
     updateSession(id) {
       return analize.get(`/s/setMotionOfSession/${id}?key=nekijabolteskega`); // TODO: this key?
@@ -56,9 +56,10 @@ function parlapi() {
 
 export default {
   created() {
+    const $parlapi = parlapi.call(this);
     Object.defineProperty(this, '$parlapi', {
       get() {
-        return parlapi.call(this);
+        return $parlapi;
       },
     });
   },
