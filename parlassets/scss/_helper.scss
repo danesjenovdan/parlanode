@@ -111,7 +111,7 @@ $cdn_home_icon: getConfig('urls.cdn') + '/icons/';
 
 @mixin arrow($width, $height, $top, $right) {
   &::after {
-    border-color: $sadblue transparent transparent transparent;
+    border-color: $dropdown-arrow transparent transparent transparent;
     border-style: solid;
     border-width: $height $width/2 0 $width/2;
     content: '';
