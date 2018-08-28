@@ -10,17 +10,9 @@
       >
         <div v-if="loading" class="nalagalnik"></div>
         <div v-else-if="loadedData">
-          <div v-for="(d, i) in loadedData.data" :key="i">
-            <template v-if="typeof d === 'string' || typeof d === 'number'">
-              {{ d }}
-            </template>
-            <template v-else>
-              <div v-for="(val, key) in d" v-if="typeof val === 'string'" :key="key">
-                <label>{{ key }}</label>
-                <input v-model="d[key]" class="form-control">
-              </div>
-            </template>
-          </div>
+          <slot :loaded-data="loadedData" name="modal-data">
+            {{ loadedData }}
+          </slot>
         </div>
         <div v-if="error" class="error-message">Error: {{ error.message }}</div>
         <div class="card-modal-buttons">
@@ -109,6 +101,7 @@ export default {
           .then((data) => {
             this.loadedData = data;
             this.loading = false;
+            console.log(this.loadedData);
           })
           .catch((error) => {
             this.error = error;
@@ -119,15 +112,14 @@ export default {
     saveData(loadedData) {
       if (this.data.saveData) {
         this.saving = true;
-        console.log(this.loadedData);
-        // this.data.saveData(loadedData)
-        //   .then(() => {
-        //     this.saving = false;
-        //   })
-        //   .catch((error) => {
-        //     this.error = error;
-        //     this.saving = false;
-        //   });
+        this.data.saveData(loadedData)
+          .then(() => {
+            this.saving = false;
+          })
+          .catch((error) => {
+            this.error = error;
+            this.saving = false;
+          });
       }
     },
     generateData() {
@@ -184,42 +176,4 @@ export default {
   cursor: default;
   pointer-events: none;
 }
-/*
-Modal.prototype.checkScrollbar = function () {
-    var fullWindowWidth = window.innerWidth
-    if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
-      var documentElementRect = document.documentElement.getBoundingClientRect()
-      fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left)
-    }
-    this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
-    this.scrollbarWidth = this.measureScrollbar()
-  }
-
-  Modal.prototype.setScrollbar = function () {
-    var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
-    this.originalBodyPad = document.body.style.paddingRight || ''
-    if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
-  }
-
-  Modal.prototype.resetScrollbar = function () {
-    this.$body.css('padding-right', this.originalBodyPad)
-  }
-
-  Modal.prototype.measureScrollbar = function () { // thx walsh
-    var scrollDiv = document.createElement('div')
-    scrollDiv.className = 'modal-scrollbar-measure'
-    this.$body.append(scrollDiv)
-    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    this.$body[0].removeChild(scrollDiv)
-    return scrollbarWidth
-  }
-.modal-scrollbar-measure {
-  position: absolute;
-  top: -9999px;
-  width: 50px;
-  height: 50px;
-  overflow: scroll;
-}
-*/
-
 </style>

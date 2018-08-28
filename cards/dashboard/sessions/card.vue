@@ -1,32 +1,36 @@
 <template>
   <dash-wrapper :id="$options.cardData.cardData._id">
     <div id="dash-sessions-list">
-      <dashboard-table
+      <dash-table
         :columns="columns"
         :items="mappedItems"
       >
         <template slot="item-col" slot-scope="{ column, index }">
           <template v-if="index === 1">
-            <dashboard-button disabled>{{ $t('votings') }}</dashboard-button>
+            <dash-button disabled>{{ $t('votings') }}</dash-button>
           </template>
           <template v-else-if="index === 2">
-            <dashboard-button @click="openModal(column.session)">
+            <dash-button @click="openTfidfModal(column.session)">
               TFIDF
-            </dashboard-button>
+            </dash-button>
           </template>
           <template v-else-if="index === 3">
-            <dashboard-loading-button :load="updateSession(column.session)">
+            <dash-loading-button :load="updateSession(column.session)">
               {{ $t('update-session') }}
-            </dashboard-loading-button>
+            </dash-loading-button>
           </template>
           <template v-else>{{ column.text }}</template>
         </template>
-      </dashboard-table>
-      <dashboard-fancy-modal
-        v-if="modalOpen && modalData"
-        :data="modalData"
-        @closed="closeModal"
-      />
+      </dash-table>
+      <dash-fancy-modal
+        v-if="tfidfModalOpen && tfidfModalData"
+        :data="tfidfModalData"
+        @closed="closeTfidfModal"
+      >
+        <template slot="modal-data" slot-scope="{ loadedData }">
+          <tfidf-modal-content :data="loadedData.data" />
+        </template>
+      </dash-fancy-modal>
       <div v-if="error">Error: {{ error.message }}</div>
       <div v-else-if="sessions == null" class="nalagalnik"></div>
     </div>
@@ -36,20 +40,22 @@
 <script>
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
-import DashboardTable from 'components/Dashboard/Table.vue';
-import DashboardButton from 'components/Dashboard/Button.vue';
-import DashboardLoadingButton from 'components/Dashboard/LoadingButton.vue';
-import DashboardFancyModal from 'components/Dashboard/FancyModal.vue';
+import DashTable from 'components/Dashboard/Table.vue';
+import DashButton from 'components/Dashboard/Button.vue';
+import DashLoadingButton from 'components/Dashboard/LoadingButton.vue';
+import DashFancyModal from 'components/Dashboard/FancyModal.vue';
+import TfidfModalContent from 'components/Dashboard/TfidfModalContent.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
   name: 'DashboardTest',
   components: {
     DashWrapper,
-    DashboardTable,
-    DashboardButton,
-    DashboardFancyModal,
-    DashboardLoadingButton,
+    DashTable,
+    DashButton,
+    DashFancyModal,
+    DashLoadingButton,
+    TfidfModalContent,
   },
   mixins: [
     common,
@@ -58,8 +64,8 @@ export default {
   data() {
     return {
       sessions: null,
-      modalOpen: false,
-      modalData: null,
+      tfidfModalOpen: false,
+      tfidfModalData: null,
       error: null,
     };
   },
@@ -74,14 +80,12 @@ export default {
     },
     mappedItems() {
       if (this.sessions) {
-        return this.sessions.map((session) => {
-          return [
-            { text: session.name },
-            { id: session.id },
-            { session },
-            { session },
-          ];
-        });
+        return this.sessions.map(session => [
+          { text: session.name },
+          { id: session.id },
+          { session },
+          { session },
+        ]);
       }
       return [];
     },
@@ -98,8 +102,8 @@ export default {
       });
   },
   methods: {
-    openModal(session) {
-      this.modalData = {
+    openTfidfModal(session) {
+      this.tfidfModalData = {
         title: `TFIDF - ${session.name}`,
         loadData: async () => {
           const data = await this.$parlapi.getSessionTFIDF(session.id);
@@ -109,13 +113,13 @@ export default {
             data: tfidf.data,
           };
         },
-        saveData: tfidf => this.$parlapi.patchSessionsTFIDF(tfidf),
+        saveData: tfidf => this.$parlapi.patchSessionsTFIDF(tfidf.id, tfidf),
       };
-      this.modalOpen = true;
+      this.tfidfModalOpen = true;
     },
-    closeModal() {
-      this.modalData = null;
-      this.modalOpen = false;
+    closeTfidfModal() {
+      this.tfidfModalData = null;
+      this.tfidfModalOpen = false;
     },
     updateSession(session) {
       return () => this.$parlapi.updateSession(session.id);
