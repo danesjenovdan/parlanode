@@ -409,7 +409,7 @@ footer.footer input.form-control.newslettersubscribe.error {
   background: #caebf2;
   border-radius: 0; }
 .card-container ::-webkit-scrollbar-thumb, .search-dropdown ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  background: #258498;
   border-radius: 0; }
 
 .checkbox {
@@ -595,7 +595,7 @@ footer.footer input.form-control.newslettersubscribe.error {
   float: right;
   margin-left: 8px;
   border-radius: 50%;
-  background-color: #ff0000;
+  background-color: #ff5555;
   font-family: 'Roboto Slab';
   font-weight: 700;
   font-size: 16px;
@@ -605,7 +605,7 @@ footer.footer input.form-control.newslettersubscribe.error {
   cursor: pointer; }
   .card-circle-button:hover,
   .card-circle-button-vue:hover {
-    background-color: #caebf2; }
+    background-color: #ff0000; }
 
 .card-info {
   font-weight: 100; }
@@ -1520,18 +1520,22 @@ footer.footer {
   margin-bottom: 0; }
   .progress.hugebar {
     height: 30px; }
-    .progress.hugebar .red {
-      background: #258498; }
-  .progress.smallbar .funblue {
+    .progress.hugebar .this {
+      background: #ff0000; }
+  .progress.smallbar .this {
+    background: #ff0000; }
+  .progress.smallbar .other {
     background: #caebf2; }
-  .progress.smallbar .red {
-    background: #258498; }
 
 .progress-bar {
   border: none;
   box-shadow: none;
   border-radius: 0;
   background-color: #caebf2; }
+  .progress-bar .this {
+    background: #ff0000; }
+  .progress-bar .other {
+    background: #caebf2; }
 
 .progress_number {
   display: inline-block;
@@ -1794,14 +1798,12 @@ footer.footer {
   width: 90px;
   height: 90px;
   margin-bottom: 20px;
-  display: inline-block; }
+  display: inline-block;
+  background-color: #ff0000; }
   .session-logo b {
     display: inline-block;
     line-height: 90px;
     font-size: 24px; }
-
-.session-logo.backgroundred {
-  background: #258498; }
 
 .session_transcript_menu ul {
   padding: 0; }
