@@ -7,7 +7,9 @@
       >
         <template slot="item-col" slot-scope="{ column, index }">
           <template v-if="index === 1">
-            <dash-button disabled>{{ $t('votings') }}</dash-button>
+            <dash-button @click="window.location.href = `/votings/${column.id}`">
+              {{ $t('votings') }}
+            </dash-button>
           </template>
           <template v-else-if="index === 2">
             <dash-button @click="openTfidfModal(column.session)">
@@ -48,7 +50,7 @@ import TfidfModalContent from 'components/Dashboard/TfidfModalContent.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
-  name: 'DashboardTest',
+  name: 'DashboardSessions',
   components: {
     DashWrapper,
     DashTable,
@@ -81,7 +83,7 @@ export default {
     mappedItems() {
       if (this.sessions) {
         return this.sessions.map(session => [
-          { text: session.name },
+          { text: session.name, id: session.id },
           { id: session.id },
           { session },
           { session },
@@ -129,10 +131,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-[disabled] {
-  opacity: 0.6;
-  filter: grayscale(100%);
-  cursor: default;
-  pointer-events: none;
-}
 </style>
