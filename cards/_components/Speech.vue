@@ -244,27 +244,27 @@ export default {
     height: 30px;
     width: 30px;
     display: block;
-    color: red;
+    color: $link;
 
     &:not(:first-child) {
       margin-left: 9px;
     }
 
     &:hover {
-      background-color: $funblue-light-hover;
+      background-color: $link-hover-background;
       cursor: pointer;
     }
   }
 
   .link {
-    background-image: url('#{icon-link($funblue)}');
-    &:hover { background-image: url('#{icon-link($sadblue)}'); }
+    background-image: url('#{icon-link($link)}');
+    &:hover { background-image: url('#{icon-link($link)}'); }
   }
 
   .share {
     background-position-x: 5px;
-    background-image: url('#{icon-share($funblue)}');
-    &:hover { background-image: url('#{icon-share($sadblue)}'); }
+    background-image: url('#{icon-share($link)}');
+    &:hover { background-image: url('#{icon-share($link)}'); }
   }
 }
 
