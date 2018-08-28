@@ -541,7 +541,7 @@ footer.footer input.form-control.newslettersubscribe.error {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #009cdd 0%, #ff5e41 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$third', endColorstr='$first',GradientType=0 );
     /* IE6-9 */
     display: flex;
     float: none;
@@ -616,7 +616,7 @@ footer.footer input.form-control.newslettersubscribe.error {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #ff5e41 0%, #009cdd 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$funblue',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
     /* IE6-9 */ }
 
 .card-circle-button,
@@ -1366,7 +1366,7 @@ footer.footer {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
   /* IE6-9 */ }
   @media (max-width: 767px) {
     .stripeeltop {
@@ -1407,7 +1407,7 @@ footer.footer {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
   /* IE6-9 */
   top: 15px;
   -webkit-transform: rotate(1deg);
@@ -3806,7 +3806,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
     /* IE6-9 */ }
 
 .rayen {
