@@ -29,7 +29,7 @@
               <div
                 :aria-valuenow="getScore"
                 :style="getBarStyle('score')"
-                class="progress-bar red"
+                class="progress-bar this"
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -46,7 +46,7 @@
               <div
                 :aria-valuenow="results.average"
                 :style="getBarStyle('average')"
-                class="progress-bar funblue"
+                class="progress-bar other"
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -63,7 +63,7 @@
               <div
                 :aria-valuenow="getMaxValue"
                 :style="getBarStyle('max')"
-                class="progress-bar funblue"
+                class="progress-bar other"
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -218,7 +218,7 @@ export default {
   position: absolute;
   right: 0;
   transform: translateX(100%);
-  color: $grey-dark;
+  color: $font-default;
   line-height: 30px;
 }
 </style>
