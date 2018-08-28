@@ -35,11 +35,11 @@
 
 <script>
 import common from 'mixins/common';
-import DashWrapper from 'components/Card/DashWrapper.vue';
-import DashboardTable from 'components/DashboardTable.vue';
-import DashboardButton from 'components/DashboardButton.vue';
-import DashboardLoadingButton from 'components/DashboardLoadingButton.vue';
-import DashboardFancyModal from 'components/DashboardFancyModal.vue';
+import DashWrapper from 'components/Dashboard/Wrapper.vue';
+import DashboardTable from 'components/Dashboard/Table.vue';
+import DashboardButton from 'components/Dashboard/Button.vue';
+import DashboardLoadingButton from 'components/Dashboard/LoadingButton.vue';
+import DashboardFancyModal from 'components/Dashboard/FancyModal.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
