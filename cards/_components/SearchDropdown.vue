@@ -253,11 +253,21 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/colors';
 
 .up {
   border-bottom: none;
   border-top: 1px solid $grey-medium;
+}
+
+.search-dropdown-options li {
+  margin-right: 0;
+
+  &.search-dropdown-group-label {
+    background: linear-gradient(to right, #cc6b5b, #6a93c8);
+    color: white;
+    &::after { content: none; }
+  }
 }
 </style>
