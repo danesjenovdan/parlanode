@@ -87,10 +87,10 @@ export default {
       }
       @include respond-to(desktop) { font-size: 16px; }
       &.dark {
-        background: $sadblue;
+        background: $tab-passive;
         color: $white;
-        &.active { background: $funblue; }
-        &:hover { background: $funblue-hover; }
+        &.active { background: $tab-active; }
+        &:hover { background: $tab-hover; }
       }
       &.light {
         background: $grey;
