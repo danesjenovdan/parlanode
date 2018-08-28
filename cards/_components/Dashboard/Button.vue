@@ -19,4 +19,11 @@
     background-color: $funblue-hover;
   }
 }
+
+[disabled] {
+  opacity: 0.6;
+  filter: grayscale(100%);
+  cursor: default;
+  pointer-events: none;
+}
 </style>

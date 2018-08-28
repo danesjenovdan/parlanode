@@ -1,5 +1,9 @@
 <template>
-  <dashboard-button :class="{ 'dash-button--running': running }" @click="onClick">
+  <dashboard-button
+    :class="{ 'dash-button--running': running }"
+    :disabled="running"
+    @click="onClick"
+  >
     <div v-if="running" class="dash-button__loader-wrapper">
       <div class="dash-button__loader"></div>
     </div>
@@ -36,7 +40,7 @@ export default {
           this.running = false;
         })
         .catch((error) => {
-          // this.running = false;
+          this.running = false;
           this.error = error;
         });
     },
@@ -70,6 +74,10 @@ export default {
     border-left-color: #fff;
     transform: translateZ(0);
     animation: button__loader 1.1s infinite linear;
+  }
+
+  .dash-button__text-wrapper {
+    opacity: 0;
   }
 }
 
