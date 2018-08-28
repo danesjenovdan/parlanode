@@ -100,10 +100,10 @@ export default {
   data() {
     return {
       votes: [
-        { id: 'for', label: 'za' },
-        { id: 'against', label: 'proti' },
-        { id: 'abstain', label: 'vzdržani' },
-        { id: 'not_present', label: 'niso' },
+        { id: 'for', label: this.$t('vote-for') },
+        { id: 'against', label: this.$t('vote-against') },
+        { id: 'abstain', label: this.$t('vote-abstained-plural') },
+        { id: 'not_present', label: this.$t('vote-not-plural') },
       ],
       expandedParty: null,
       expandedOption: null,
@@ -186,10 +186,12 @@ export default {
       .name {
         font-size: 14px;
         min-width: 94px;
+
         @include respond-to(desktop) {
           font-size: 18px;
           order: 1;
           font-weight: 300;
+          flex: 0.8;
         }
       }
 
@@ -201,7 +203,6 @@ export default {
           order: 2;
           width: 400px;
         }
-        @include respond-to(limbo) { width: 300px; }
 
         .striped-button {
           flex: 1;
@@ -210,7 +211,8 @@ export default {
       }
 
       .result {
-        flex: 1;
+        flex: 1.2;
+
         @include respond-to(desktop) {
           max-width: 300px;
           order: 3;

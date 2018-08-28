@@ -33,9 +33,11 @@
       </div>
       <div class="name">{{ data.name }}</div>
     </div>
-    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">
-      Izvleček
-    </div>
+    <div
+      v-t="'summary'"
+      class="izvlecek-switch visible-xs"
+      @click="showMobileExcerpt = !showMobileExcerpt"
+    />
     <excerpt
       v-if="showMobileExcerpt"
       :content="data.abstract || ''"

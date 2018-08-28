@@ -22,18 +22,13 @@
     <!-- Card content goes here -->
     <div class="result-container">
       <div class="result">
-        <template v-if="(data.result === 'sprejet') || (data.result === 'accepted')">
-          <i class="accepted glyphicon glyphicon-ok"></i>
-          <div class="text">sprejet</div>
-        </template>
-        <template v-else-if="(data.result === 'zavrnjen') || (data.result === 'rejected')">
-          <i class="not-accepted glyphicon glyphicon-remove"></i>
-          <div class="text">zavrnjen</div>
-        </template>
-        <template v-else>
-          <i class="glyphicon v-obravnavi"></i>
-          <div v-t="'vote-under-consideration'" class="text"></div>
-        </template>
+        <div
+          :style="{
+            'background-image': `url('${slugs.urls.cdn}/icons/vote-result--${data.result}.svg')`,
+          }"
+          class="result-icon"
+        />
+        <div v-t="`vote-result--${data.result}`" class="text"></div>
       </div>
       <div class="law-title">{{ $options.cardData.data.text }}</div>
       <result
@@ -225,14 +220,6 @@ export default {
       margin-bottom: 24px;
     }
 
-    .v-obravnavi {
-      width: 38px !important;
-      height: 38px;
-      background: url("#{getConfig('urls.cdn')}/icons/v-obravnavi.svg");
-      background-size: contain !important;
-      background-repeat: no-repeat;
-    }
-
     .result {
       align-items: center;
       // border-bottom: $section-border;
@@ -246,13 +233,11 @@ export default {
         padding: 0 22px 0 0;
       }
 
-      .glyphicon {
-        font-size: 24px;
-        margin-bottom: 4px;
-        &.accepted { color: $funblue; }
-        &.not-accepted { color: $red; }
-
-        @include respond-to(desktop) { font-size: 29px; }
+      .result-icon {
+        width: 38px !important;
+        height: 38px;
+        background-size: contain !important;
+        background-repeat: no-repeat;
       }
 
       .text {

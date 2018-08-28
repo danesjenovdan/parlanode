@@ -14,7 +14,9 @@ import DonutChart from 'components/DonutChart.vue';
 
 export default {
   name: 'GlasovanjeSejeResult',
-  components: { DonutChart },
+  components: {
+    DonutChart,
+  },
   props: {
     chartData: {
       type: Array,
@@ -29,26 +31,20 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {
-      votes: [
-        { id: 'for', label: 'za' },
-        { id: 'against', label: 'proti' },
-        { id: 'abstain', label: 'vzdržani' },
-        { id: 'not_present', label: 'niso' },
-      ],
-    };
-  },
   computed: {
     translatedOption() {
-      // TODO: Include all options and ask about translations
-      return {
-        for: 'za',
-        against: 'proti',
-        not_present: 'odsotnih',
-        abstain: 'vzdržanih',
-        cant_compute: 'ni večinskega glasu',
-      }[this.option];
+      switch (this.option) {
+        case 'for':
+          return this.$t('vote-for');
+        case 'against':
+          return this.$t('vote-against');
+        case 'abstain':
+          return this.$t('vote-abstained-plural');
+        case 'not_present':
+          return this.$t('vote-not-plural');
+        default:
+          return '';
+      }
     },
   },
 };
