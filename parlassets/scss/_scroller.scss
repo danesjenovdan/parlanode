@@ -5,12 +5,12 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: $funblue-light;
+    background: $scroller;
     border-radius: 0;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: $sadblue;
+    background: $element;
     border-radius: 0;
   }
 }
