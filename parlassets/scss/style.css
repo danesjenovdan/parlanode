@@ -300,6 +300,7 @@ h1 {
       font-size: 11px; }
     .footer .input-group {
       font-size: 9px; } }
+
 .other_poslanec .poslanec_title, .progress_flex .progress_title .poslanec_title, .session-container .paneltab .member h3, .session-container .paneltab #votingCard .member h3, #votingCard .session-container .paneltab .member h3, .person-list .person .column,
 .person-list .item .column, .session-list .person .column,
 .session-list .item .column, .legislation-list .person .column,
@@ -384,6 +385,7 @@ a:focus, button:focus {
     transform: scale(1.1); }
   75% {
     transform: scale(0.9); } }
+
 .empty50 {
   height: 50px;
   display: block;
@@ -400,11 +402,13 @@ a:focus, button:focus {
   font-size: 22px;
   margin-bottom: 5px;
   margin-top: 0; }
+
 .member-container h2, .group-container h2 {
   font-size: 18px;
   font-weight: 300;
   margin-bottom: 8px;
   margin-top: 0; }
+
 .member-container h3, .group-container h3 {
   font-family: Roboto Slab, serif;
   font-size: 14px;
@@ -437,9 +441,11 @@ footer.footer input.form-control.newslettersubscribe.error {
 .card-container ::-webkit-scrollbar, .search-dropdown ::-webkit-scrollbar {
   width: 4px;
   height: 4px; }
+
 .card-container ::-webkit-scrollbar-track, .search-dropdown ::-webkit-scrollbar-track {
-  background: #d9e7ed;
+  background: #F1F5F7;
   border-radius: 0; }
+
 .card-container ::-webkit-scrollbar-thumb, .search-dropdown ::-webkit-scrollbar-thumb {
   background: #197197;
   border-radius: 0; }
@@ -532,14 +538,14 @@ footer.footer input.form-control.newslettersubscribe.error {
   .card-header.shadow {
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
   .card-header .card-header-border {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-    background: #009cdd;
+    /* Created with: http://colorzilla.com/gradient-editor/ */
+    background: #ff5e41;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #009cdd 0%, #ff5e41 100%);
+    background: -moz-linear-gradient(top, #ff5e41 0%, #009cdd 50%, #197197 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #009cdd 0%, #ff5e41 100%);
+    background: -webkit-linear-gradient(top, #ff5e41 0%, #009cdd 50%, #197197 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #009cdd 0%, #ff5e41 100%);
+    background: linear-gradient(to bottom, #ff5e41 0%, #009cdd 50%, #197197 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$third', endColorstr='$first',GradientType=0 );
     /* IE6-9 */
@@ -607,14 +613,14 @@ footer.footer input.form-control.newslettersubscribe.error {
     left: 0;
     width: 100%;
     height: 1px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$red+0,009cdd+100 */
-    background: #ff5e41;
+    /* Created with: http://colorzilla.com/gradient-editor/*/
+    background: #197197;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #ff5e41 0%, #009cdd 100%);
+    background: -moz-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #ff5e41 0%, #009cdd 100%);
+    background: -webkit-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #ff5e41 0%, #009cdd 100%);
+    background: linear-gradient(to right, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
     /* IE6-9 */ }
@@ -880,7 +886,8 @@ input.form-control, textarea.form-control {
     top: -30px;
     left: -30px;
     /*background-color: rgba(255, 255, 255, 0);
-    transform: scale(70);*/ } }
+        transform: scale(70);*/ } }
+
 .card-container, .card-content {
   overflow: hidden; }
 
@@ -1025,6 +1032,7 @@ input.form-control, textarea.form-control {
 #ps_glasovanja .filters .search-dropdown-input {
   padding-top: 11px;
   padding-bottom: 11px; }
+
 #p_glasovanja .filters .search-dropdown-options,
 #ps_glasovanja .filters .search-dropdown-options {
   top: 50px; }
@@ -1033,17 +1041,23 @@ header.header .logo {
   width: 110px;
   height: 70px;
   padding: 0; }
+
 header.header .logo .cls-1 {
   fill: #197197; }
+
 header.header .logo .cls-2 {
   fill: #009cdd; }
+
 header.header .logo .cls-3 {
   fill: #003c55; }
+
 header.header .navbar-default {
   background-color: transparent;
   padding-top: 10px; }
+
 header.header .navbar-collapse {
   border-top: none; }
+
 header.header .navbar {
   border-radius: 0;
   border-bottom: 1px solid #c8c8c8;
@@ -1052,6 +1066,7 @@ header.header .navbar {
   border-right: none;
   padding-bottom: 10px;
   margin-bottom: 10px; }
+
 header.header .navbar-nav > li > a {
   font-size: 16px;
   color: #333333;
@@ -1061,20 +1076,27 @@ header.header .navbar-nav > li > a {
   header.header .navbar-nav > li > a.greyer {
     color: #c8c8c8;
     font-weight: 400; }
+
 header.header .search {
   margin-top: 10px; }
+
 header.header .btn-default {
   background: transparent; }
+
 header.header .search {
   border: none;
   border-radius: 0; }
+
 header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-default .navbar-nav > li > a:hover {
   color: #009cdd; }
+
 header.header .navbar-default .navbar-nav > .active > a, header.header .navbar-default .navbar-nav > .active > a:focus, header.header .navbar-default .navbar-nav > .active > a:hover {
   color: #009cdd;
   background: #f0f0f0; }
+
 header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-default .navbar-nav > li > a:hover {
   background: #f0f0f0; }
+
 @media (min-width: 768px) {
   header.header .navbar .navbar-nav {
     display: inline-block;
@@ -1082,17 +1104,20 @@ header.header .navbar-default .navbar-nav > li > a:focus, header.header .navbar-
     vertical-align: top; }
   header.header .navbar .navbar-collapse {
     text-align: center; } }
+
 header.header #topheadersearch {
   border: none;
   margin: 0;
   position: absolute;
   right: 0;
   padding: 0; }
+
 @media (min-width: 992px) {
   header.header .navbar .navbar-nav {
     margin-left: -110px; }
   header.header #topheadersearch .twitter-typeahead {
     min-width: 200px; } }
+
 @media (max-width: 992px) {
   header.header .navbar-collapse {
     margin-left: -15px;
@@ -1134,6 +1159,7 @@ header.header #topheadersearch {
   header.header .navbar-nav > li:last-child > a {
     padding-right: 0;
     text-align: right; } }
+
 header.header .parlaicon-search {
   width: 22px;
   height: 22px;
@@ -1141,14 +1167,17 @@ header.header .parlaicon-search {
   position: relative;
   bottom: -5px;
   background-image: url("https://cdn.parlameter.si/v1/parlassets/icons/search.svg"); }
+
 header.header .header-searchhide {
   display: none;
   position: relative;
   top: 17px;
   z-index: 9;
   background: #f0f0f0; }
+
 header.header .search-input-header {
   background: none; }
+
 header.header .twitter-typeahead .search-input-header,
 header.header .twitter-typeahead .search-input-header:focus {
   -webkit-box-shadow: none;
@@ -1156,23 +1185,28 @@ header.header .twitter-typeahead .search-input-header:focus {
   box-shadow: none;
   border: 0;
   background: none; }
+
 header.header .search-input-header-prepend,
 header.header .search-input-header-append {
   background: none;
   display: inline-block;
   height: 34px; }
+
 header.header .search-input-header-prepend .glyphicon.glyphicon-search,
 header.header .search-input-header-append .glyphicon.glyphicon-remove {
   position: relative;
   top: 4px; }
+
 header.header .search-input-header-append.xclose {
   cursor: pointer; }
+
 header.header .searchiconbuttton {
   width: 30px;
   height: 30px;
   display: inline-block;
   margin-top: 8px;
   cursor: pointer; }
+
 @media (max-width: 992px) {
   header.header #topheadersearch {
     position: relative;
@@ -1188,16 +1222,19 @@ header.header .searchiconbuttton {
     width: 90%; }
   header.header .navbar-header {
     width: 100%; } }
+
 header.header .header-search .tt-menu {
   max-height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   width: 200px;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
+
 header.header .header-search .tt-dataset {
   padding: 0;
   background-color: #ffffff;
   width: 200px; }
+
 header.header .header-search .tt-dataset .searchheader {
   display: block;
   position: relative;
@@ -1210,6 +1247,7 @@ header.header .header-search .tt-dataset .searchheader {
   left: 0;
   padding-left: 5px;
   z-index: 10; }
+
 header.header .header-search .searchperson-container {
   border-bottom: 1px solid #f0f0f0;
   height: 60px;
@@ -1220,13 +1258,16 @@ header.header .header-search .searchperson-container {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
 header.header .header-search .tt-cursor {
   background-color: #f0f0f0; }
+
 header.header .session-ac-search {
   background: #d9e7ed;
   padding: 10px 5px;
   color: #009cdd;
   cursor: pointer; }
+
 header.header .session-ac-search .glyphicon-search {
   color: #009cdd;
   font-size: 16px; }
@@ -1308,7 +1349,7 @@ footer.footer {
     display: inline-block;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0); }
+    box-shadow: 0 0 1px transparent; }
   footer.footer .doniraj:hover .parlaicon-doniraj {
     -webkit-animation-name: pulse;
     animation-name: pulse;
@@ -1343,28 +1384,29 @@ footer.footer {
 
 @media (max-width: 992px) {
   /*
-      body{
-          margin-bottom: 600px;
-      }
-      footer.footer {
-          height: 600px;
-      }
-  */
+    body{
+        margin-bottom: 600px;
+    }
+    footer.footer {
+        height: 600px;
+    }
+*/
   .parlaicon-social-align {
     text-align: right; } }
+
 .stripeeltop {
   position: relative;
   height: 40px;
   width: 100%;
   overflow: hidden;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-  background: #009cdd;
+  /* Created with: http://colorzilla.com/gradient-editor/*/
+  background: #197197;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -moz-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -webkit-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+  background: linear-gradient(to right, #197197 0%, #009cdd 50%, #ff5e41 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
   /* IE6-9 */ }
@@ -1398,14 +1440,14 @@ footer.footer {
   left: 0;
   width: 100%;
   height: 200%;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-  background: #009cdd;
+  /* Created with: http://colorzilla.com/gradient-editor/*/
+  background: #197197;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -moz-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+  background: -webkit-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+  background: linear-gradient(to right, #197197 0%, #009cdd 50%, #ff5e41 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
   /* IE6-9 */
@@ -1423,7 +1465,6 @@ footer.footer {
       border-top: 1px solid #c8c8c8; }
     .navbar-nav > li:last-child a {
       text-align: left !important; }
-
   header.header .navbar-collapse {
     position: absolute;
     z-index: 99;
@@ -1505,14 +1546,15 @@ footer.footer {
     padding: 12px 42px 12px 14px;
     width: 100%;
     margin-top: 20px; }
-
   header.header .search {
     display: block; } }
+
 @media (min-width: 768px) {
   header.header .search-field {
     display: none; }
   header.header .navbar-collapse {
     display: block !important; } }
+
 .me_poslanec {
   padding-bottom: 25px; }
 
@@ -1552,18 +1594,22 @@ footer.footer {
   margin-bottom: 0; }
   .progress.hugebar {
     height: 30px; }
-    .progress.hugebar .red {
+    .progress.hugebar .this {
       background: #ff5e41; }
-  .progress.smallbar .funblue {
-    background: #009cdd; }
-  .progress.smallbar .red {
+  .progress.smallbar .this {
     background: #ff5e41; }
+  .progress.smallbar .other {
+    background: #009cdd; }
 
 .progress-bar {
   border: none;
   box-shadow: none;
   border-radius: 0;
   background-color: #009cdd; }
+  .progress-bar .this {
+    background: #ff5e41; }
+  .progress-bar .other {
+    background: #009cdd; }
 
 .progress_number {
   display: inline-block;
@@ -1661,6 +1707,7 @@ footer.footer {
   color: #c8c8c8;
   font-size: 18px;
   font-weight: 500; }
+
 .session-types .session-types-list {
   display: flex;
   justify-content: space-between;
@@ -1691,6 +1738,7 @@ footer.footer {
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase; }
+
 .narrow-inner-container .search .form-control {
   border-radius: 0;
   border-right: medium none;
@@ -1702,6 +1750,7 @@ footer.footer {
     border-color: #009cdd; }
   .narrow-inner-container .search .form-control:focus ~ .input-group-btn .btn {
     border-color: #009cdd; }
+
 .narrow-inner-container .search .btn {
   border-color: #c8c8c8;
   border-left: none;
@@ -1709,6 +1758,7 @@ footer.footer {
   color: #009cdd;
   height: 50px;
   transition: border-color 0.15s; }
+
 .narrow-inner-container h3.searchresults {
   font-size: 18px;
   color: #c8c8c8;
@@ -1800,6 +1850,7 @@ footer.footer {
   .sessionsGetSessionByDate .tab-pane .date {
     font-size: 16px;
     font-weight: 400; }
+
 .sessionsGetSessionByDate .nav-tabs {
   border: medium none;
   text-align: center; }
@@ -1825,14 +1876,12 @@ footer.footer {
   width: 90px;
   height: 90px;
   margin-bottom: 20px;
-  display: inline-block; }
+  display: inline-block;
+  background-color: #ff5e41; }
   .session-logo b {
     display: inline-block;
     line-height: 90px;
     font-size: 24px; }
-
-.session-logo.backgroundred {
-  background: #ff5e41; }
 
 .session_transcript_menu ul {
   padding: 0; }
@@ -1863,22 +1912,28 @@ footer.footer {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px; }
+
 .session_transcript .panel-group .panel {
   border-radius: 4px;
   margin-bottom: 0; }
+
 .session_transcript .panel-default {
   border-color: #c8c8c8; }
+
 .session_transcript .panel-default > .panel-heading {
   background-color: #ffffff;
   border-color: #c8c8c8;
   color: #333333; }
+
 .session_transcript .panel-group .panel-heading {
   border-bottom: 0 none; }
+
 .session_transcript .panel-heading {
   border-bottom: 1px solid transparent;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   padding: 10px 15px; }
+
 .session_transcript .panel-title {
   color: inherit;
   font-size: 20px;
@@ -1900,12 +1955,14 @@ footer.footer {
     background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
     width: 40px;
     height: 40px; }
+
 .session_transcript .panel-collapse.collapsed .status {
   text-align: center;
   background: rgba(240, 240, 240, 0.4);
   cursor: pointer;
   margin-top: -60px;
   padding: 15px 0; }
+
 .session_transcript .panel-collapse .status {
   margin-top: 0px;
   cursor: pointer;
@@ -1916,19 +1973,23 @@ footer.footer {
   padding: 15px 0;
   z-index: 10;
   position: relative; }
+
 .session_transcript .panel-collapse .status a {
   background: url("https://cdn.parlameter.si/v1/parlassets/img/arrup.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block;
   text-decoration: none; }
+
 .session_transcript .panel-collapse .status a:hover {
   text-decoration: none; }
+
 .session_transcript .panel-collapse.collapsed .status a {
   background: url("https://cdn.parlameter.si/v1/parlassets/img/arrdown.png") top center no-repeat;
   width: 40px;
   height: 40px;
   display: inline-block; }
+
 .session_transcript .panel-collapse.collapsed .status .fadeover {
   height: 20px;
   margin-top: -20px;
@@ -1936,13 +1997,17 @@ footer.footer {
   width: 98.7%;
   display: block;
   background: rgba(240, 240, 240, 0.4); }
+
 .session_transcript .panel-collapse .status .fadeover {
   display: none; }
+
 .session_transcript .panel-collapse.collapsed .alltrans {
   height: 100px;
   overflow: hidden; }
+
 .session_transcript .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top: none; }
+
 .session_transcript .panel-body {
   padding-left: 150px;
   padding-right: 150px;
@@ -2079,11 +2144,11 @@ footer.footer {
     font-size: 30px;
     line-height: 40px;
     margin: 15px 0; }
-
   .session_voting .session_votes .type {
     font-size: 14px;
     line-height: 30px;
     text-transform: uppercase; } }
+
 .odpri-vse {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -2171,6 +2236,7 @@ span.session-date {
 @media (max-width: 990px) {
   .member-container-menu ul li a {
     padding: 10px 20px; } }
+
 @media (max-width: 956px) {
   .member-container-menu ul {
     padding: 0;
@@ -2180,10 +2246,12 @@ span.session-date {
       .member-container-menu ul li a {
         font-size: 14px;
         padding: 10px 10px; } }
+
 @media (max-width: 440px) {
   .member-container-menu ul li a {
     font-size: 12px;
     padding: 5px 5px; } }
+
 /* added by muki */
 .member, #votingCard .member {
   display: flex;
@@ -2217,10 +2285,7 @@ span.session-date {
   padding-bottom: 10px; }
 
 /* end of added by muki */
-.party-list-generator .analyses, .member-list-generator .analyses, .session-list-generator .analyses, .party-list-generator .parties, .member-list-generator .parties, .session-list-generator .parties,
-.party-list-generator .button-filters,
-.member-list-generator .button-filters,
-.session-list-generator .button-filters {
+.party-list-generator .analyses, .member-list-generator .analyses, .session-list-generator .analyses, .party-list-generator .parties, .member-list-generator .parties, .session-list-generator .parties, .party-list-generator .button-filters, .member-list-generator .button-filters, .session-list-generator .button-filters {
   display: flex;
   list-style: none;
   margin: 0;
@@ -2229,6 +2294,7 @@ span.session-date {
 .party-list-generator .card-container, .member-list-generator .card-container, .session-list-generator .card-container {
   margin-left: 0;
   margin-right: 0; }
+
 .party-list-generator .analyses, .member-list-generator .analyses, .session-list-generator .analyses {
   display: none;
   margin: 14px 0; }
@@ -2261,6 +2327,7 @@ span.session-date {
     .party-list-generator .analyses li:hover, .member-list-generator .analyses li:hover, .session-list-generator .analyses li:hover {
       background-color: rgba(0, 156, 221, 0.7);
       color: #ffffff; }
+
 .party-list-generator .mobile-analyses, .member-list-generator .mobile-analyses, .session-list-generator .mobile-analyses {
   display: none; }
   @media (max-width: 767px) {
@@ -2273,68 +2340,42 @@ span.session-date {
     width: 100%; }
     .party-list-generator .mobile-analyses .select select, .member-list-generator .mobile-analyses .select select, .session-list-generator .mobile-analyses .select select {
       width: 100%; }
-.party-list-generator .parties-districts, .member-list-generator .parties-districts, .session-list-generator .parties-districts,
-.party-list-generator .filters,
-.member-list-generator .filters,
-.session-list-generator .filters {
+
+.party-list-generator .parties-districts, .member-list-generator .parties-districts, .session-list-generator .parties-districts, .party-list-generator .filters, .member-list-generator .filters, .session-list-generator .filters {
   display: flex; }
-.party-list-generator .parties, .member-list-generator .parties, .session-list-generator .parties,
-.party-list-generator .button-filters,
-.member-list-generator .button-filters,
-.session-list-generator .button-filters {
+
+.party-list-generator .parties, .member-list-generator .parties, .session-list-generator .parties, .party-list-generator .button-filters, .member-list-generator .button-filters, .session-list-generator .button-filters {
   flex: 2; }
   @media (max-width: 767px) {
-    .party-list-generator .parties, .member-list-generator .parties, .session-list-generator .parties,
-    .party-list-generator .button-filters,
-    .member-list-generator .button-filters,
-    .session-list-generator .button-filters {
+    .party-list-generator .parties, .member-list-generator .parties, .session-list-generator .parties, .party-list-generator .button-filters, .member-list-generator .button-filters, .session-list-generator .button-filters {
       flex-wrap: wrap;
       justify-content: space-between;
       margin-top: 7px; } }
-  .party-list-generator .parties li, .member-list-generator .parties li, .session-list-generator .parties li,
-  .party-list-generator .button-filters li,
-  .member-list-generator .button-filters li,
-  .session-list-generator .button-filters li {
+  .party-list-generator .parties li, .member-list-generator .parties li, .session-list-generator .parties li, .party-list-generator .button-filters li, .member-list-generator .button-filters li, .session-list-generator .button-filters li {
     box-sizing: border-box;
     margin-right: 3px; }
-    .party-list-generator .parties li:last-child, .member-list-generator .parties li:last-child, .session-list-generator .parties li:last-child,
-    .party-list-generator .button-filters li:last-child,
-    .member-list-generator .button-filters li:last-child,
-    .session-list-generator .button-filters li:last-child {
+    .party-list-generator .parties li:last-child, .member-list-generator .parties li:last-child, .session-list-generator .parties li:last-child, .party-list-generator .button-filters li:last-child, .member-list-generator .button-filters li:last-child, .session-list-generator .button-filters li:last-child {
       margin-right: 0; }
     @media (max-width: 767px) {
-      .party-list-generator .parties li, .member-list-generator .parties li, .session-list-generator .parties li,
-      .party-list-generator .button-filters li,
-      .member-list-generator .button-filters li,
-      .session-list-generator .button-filters li {
+      .party-list-generator .parties li, .member-list-generator .parties li, .session-list-generator .parties li, .party-list-generator .button-filters li, .member-list-generator .button-filters li, .session-list-generator .button-filters li {
         flex: none;
         margin: 3px 0 0; } }
-.party-list-generator .districts, .member-list-generator .districts, .session-list-generator .districts,
-.party-list-generator .dropdown-filter,
-.member-list-generator .dropdown-filter,
-.session-list-generator .dropdown-filter {
+
+.party-list-generator .districts, .member-list-generator .districts, .session-list-generator .districts, .party-list-generator .dropdown-filter, .member-list-generator .dropdown-filter, .session-list-generator .dropdown-filter {
   display: none;
   flex: 1;
   margin-left: 15px; }
   @media (min-width: 768px) {
-    .party-list-generator .districts, .member-list-generator .districts, .session-list-generator .districts,
-    .party-list-generator .dropdown-filter,
-    .member-list-generator .dropdown-filter,
-    .session-list-generator .dropdown-filter {
+    .party-list-generator .districts, .member-list-generator .districts, .session-list-generator .districts, .party-list-generator .dropdown-filter, .member-list-generator .dropdown-filter, .session-list-generator .dropdown-filter {
       display: flex; } }
-.party-list-generator .exclude-presiding, .member-list-generator .exclude-presiding, .session-list-generator .exclude-presiding,
-.party-list-generator .align-checkbox,
-.member-list-generator .align-checkbox,
-.session-list-generator .align-checkbox {
+
+.party-list-generator .exclude-presiding, .member-list-generator .exclude-presiding, .session-list-generator .exclude-presiding, .party-list-generator .align-checkbox, .member-list-generator .align-checkbox, .session-list-generator .align-checkbox {
   display: none;
   align-items: center;
   justify-content: flex-end;
   width: 142px; }
   @media (min-width: 768px) {
-    .party-list-generator .exclude-presiding, .member-list-generator .exclude-presiding, .session-list-generator .exclude-presiding,
-    .party-list-generator .align-checkbox,
-    .member-list-generator .align-checkbox,
-    .session-list-generator .align-checkbox {
+    .party-list-generator .exclude-presiding, .member-list-generator .exclude-presiding, .session-list-generator .exclude-presiding, .party-list-generator .align-checkbox, .member-list-generator .align-checkbox, .session-list-generator .align-checkbox {
       display: flex; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2366,6 +2407,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .member-list-generator .parties li,
   .member-list-generator .button-filters li {
     width: calc(25% - 2.25px); } }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .member-list-generator .analyses {
     flex-wrap: wrap;
@@ -2380,6 +2422,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 @media (max-width: 767px) {
   .session-list-generator .button-filters li {
     width: calc(33.333% - 2px); } }
+
 @media (max-width: 767px) {
   .session-list-generator .filters {
     flex-wrap: wrap; }
@@ -2554,6 +2597,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   text-align: center; }
   .party-list .loader .nalagalnik {
     height: 300px; }
+
 .party-list .labeled-chart {
   padding: 5px 0; }
   .party-list .labeled-chart .column.chart-label {
@@ -2597,16 +2641,6 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap; }
-      .person-list .headers .column.sort::after, .person-list .headers .column:not(.sort):hover::after {
-        border-style: solid;
-        border-width: 9px 7.5px 0;
-        border-color: #009cdd transparent transparent;
-        content: '';
-        display: inline-block;
-        margin-left: 8px;
-        transform: rotate(180deg); }
-      .person-list .headers .column.sort.reverse::after {
-        transform: none; }
       .person-list .headers .column:first-child {
         text-align: left; }
   .person-list .person,
@@ -2713,16 +2747,6 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap; }
-      .session-list .headers .column.sort::after, .session-list .headers .column:not(.sort):hover::after {
-        border-style: solid;
-        border-width: 9px 7.5px 0;
-        border-color: #009cdd transparent transparent;
-        content: '';
-        display: inline-block;
-        margin-left: 8px;
-        transform: rotate(180deg); }
-      .session-list .headers .column.sort.reverse::after {
-        transform: none; }
       .session-list .headers .column:first-child {
         text-align: left; }
   .session-list .person,
@@ -2833,16 +2857,6 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap; }
-      .legislation-list .headers .column.sort::after, .legislation-list .headers .column:not(.sort):hover::after {
-        border-style: solid;
-        border-width: 9px 7.5px 0;
-        border-color: #009cdd transparent transparent;
-        content: '';
-        display: inline-block;
-        margin-left: 8px;
-        transform: rotate(180deg); }
-      .legislation-list .headers .column.sort.reverse::after {
-        transform: none; }
       .legislation-list .headers .column:first-child {
         text-align: left; }
   .legislation-list .person,
@@ -3111,6 +3125,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 .group-container-menu.group_data ul li a {
   background: #197197;
   color: #ffffff; }
+
 .group-container-menu.group_data ul li a.active,
 .group-container-menu.group_data ul li a:hover {
   color: #ffffff;
@@ -3126,12 +3141,14 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       .group-container-menu ul li a {
         font-size: 14px;
         padding: 10px 10px; } }
+
 @media (max-width: 444px) {
   .group-container-menu ul li {
     width: 100%; }
     .group-container-menu ul li a {
       font-size: 14px;
       padding: 10px 10px; } }
+
 .group_voting ul {
   padding: 0; }
   .group_voting ul li {
@@ -3505,6 +3522,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 .modal-footer .col-less-padding {
   padding-left: 5px;
   padding-right: 5px; }
+
 .modal-footer .btn-payment,
 .modal-footer .btn-multiline {
   background-color: #197197;
@@ -3512,6 +3530,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   color: #ffffff;
   padding: 10px 0;
   margin-bottom: 10px; }
+
 .modal-footer .btn-payment {
   padding-top: 65px;
   font-size: 10px;
@@ -3523,6 +3542,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     background-image: url("../img/icons/paypal.png"); }
   .modal-footer .btn-payment.icon-poloznica {
     background-image: url("../img/icons/poloznica.png"); }
+
 .modal-footer .btn-donation-container {
   padding-left: 10px;
   padding-right: 10px; }
@@ -3537,6 +3557,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   font-size: 18px;
   font-weight: 300;
   line-height: 30px; }
+
 .card-govor .card-content.just-quote .full-text-link, .card-govori .card-content.just-quote .card-govor .full-text-link, .card-govor .similar-speech .similar-speech-content .similar-speech-link, .card-govori .similar-speech .similar-speech-content .card-govor .similar-speech-link, .card-govor .card-content.just-quote .card-govori .full-text-link, .card-govori .card-content.just-quote .full-text-link, .card-govor .similar-speech .similar-speech-content .card-govori .similar-speech-link, .card-govori .similar-speech .similar-speech-content .similar-speech-link {
   color: #009cdd;
   display: block;
@@ -3546,6 +3567,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   text-transform: uppercase; }
   .card-govor .card-content.just-quote .full-text-link:hover, .card-govori .card-content.just-quote .card-govor .full-text-link:hover, .card-govor .similar-speech .similar-speech-content .similar-speech-link:hover, .card-govori .similar-speech .similar-speech-content .card-govor .similar-speech-link:hover, .card-govor .card-content.just-quote .card-govori .full-text-link:hover, .card-govori .card-content.just-quote .full-text-link:hover, .card-govor .similar-speech .similar-speech-content .card-govori .similar-speech-link:hover, .card-govori .similar-speech .similar-speech-content .similar-speech-link:hover {
     color: #009cdd; }
+
 .card-govor .portrait, .card-govori .portrait {
   background-position: center;
   background-size: cover;
@@ -3553,6 +3575,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   box-shadow: 0 0 4px #c8c8c8;
   height: 32px;
   width: 32px; }
+
 .card-govor .card-header-person, .card-govori .card-header-person {
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
@@ -3565,6 +3588,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .card-govor .card-header-person .portrait, .card-govori .card-header-person .portrait {
     margin-right: 24px;
     margin-left: 33px; }
+
 .card-govor .card-content, .card-govori .card-content {
   padding-bottom: 72px;
   position: relative;
@@ -3604,6 +3628,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       display: none; }
     .card-govor .card-content.just-quote .quote, .card-govori .card-content.just-quote .quote {
       display: block; }
+
 .card-govor .speech-text, .card-govori .speech-text {
   margin: 36px 0;
   padding: 0 133px;
@@ -3611,6 +3636,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   @media (max-width: 767px) {
     .card-govor .speech-text, .card-govori .speech-text {
       padding: 0; } }
+
 .card-govor .quote-button, .card-govori .quote-button {
   background: #197197;
   border-radius: 50%;
@@ -3630,6 +3656,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   @media (max-width: 767px) {
     .card-govor .quote-button, .card-govori .quote-button {
       display: none !important; } }
+
 .card-govor .similar-speech, .card-govori .similar-speech {
   margin-bottom: 46px; }
   .card-govor .similar-speech .similar-speech-content, .card-govori .similar-speech .similar-speech-content {
@@ -3721,6 +3748,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
             height: 7px;
             left: 0;
             position: absolute; }
+
 .card-govor .toggle-arrow, .card-govori .toggle-arrow {
   background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#197197"/></svg>') rgba(249, 249, 249, 0.9);
   border-bottom: 20px solid rgba(249, 249, 249, 0.9);
@@ -3797,14 +3825,14 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .alt-header-container .alt-header-border {
     height: 1px;
     width: 100%;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-    background: #009cdd;
+    /* Created with: http://colorzilla.com/gradient-editor/*/
+    background: #197197;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -moz-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -webkit-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+    background: linear-gradient(to right, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
     /* IE6-9 */ }
@@ -3998,6 +4026,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   background-size: 11px 19px;
   background-position: center center;
   background-repeat: no-repeat; }
+
 .single_voting .fire-badge::before {
   background: #c8c8c8;
   border-radius: 50%;
@@ -4068,6 +4097,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     padding: 0 1px; }
     #votingCardHorizontal .slider div.member {
       margin: 0 14px; } }
+
 @media (max-width: 500px) {
   #votingCardHorizontal .slider {
     width: 100%;
@@ -4077,6 +4107,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     padding-bottom: 20px; }
   #votingCardHorizontal .navigate-left, #votingCardHorizontal .navigate-right {
     display: none; } }
+
 .clearfix {
   clear: both; }
 
@@ -4123,6 +4154,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   #votingCard div.member span {
     font-size: 30px;
     margin: 14px 0 0 0; } }
+
 .recent-activity {
   color: #c8c8c8; }
   .recent-activity #scrollbar-recent-activity {
@@ -4336,6 +4368,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 .seja_transkript .me_poslanec .poslanec_title {
   font-weight: 100;
   line-height: 34px; }
+
 .seja_transkript .me_poslanec .nmbr {
   float: left;
   width: 25px;
@@ -4372,6 +4405,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       color: #ffffff;
       background: #009cdd;
       text-decoration: none; }
+
 #poslanci_search .poslanci_search.nav {
   text-transform: uppercase;
   padding: 20px 0 0 0;
@@ -4405,6 +4439,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
       color: #009cdd; }
     #poslanci_search .poslanci_search.nav a:hover .icon .down.active {
       color: #009cdd; }
+
 #poslanci_search .form-control {
   border-radius: 0;
   border-right: medium none;
@@ -4412,11 +4447,14 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   font-size: 20px;
   height: 40px;
   background: none; }
+
 #poslanci_search .form-control:focus {
   border: 1px solid #c8c8c8; }
+
 #poslanci_search .input-group-btn:hover {
   border: none;
   outline: none; }
+
 #poslanci_search .input-group-btn button.btn {
   border-radius: 0;
   border-left: medium none;
@@ -4424,6 +4462,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   background: none;
   box-shadow: none;
   color: #009cdd; }
+
 #poslanci_search .member {
   border-bottom: 1px solid #f0f0f0;
   padding: 10px 0; }
@@ -4449,6 +4488,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 10px;
   padding-bottom: 10px; }
+
 .searchnastopi .row .member, .searchnastopi .row #votingCard .member, #votingCard .searchnastopi .row .member {
   padding: 10px 0; }
   .searchnastopi .row .member .image, .searchnastopi .row #votingCard .member .image, #votingCard .searchnastopi .row .member .image {
@@ -4470,6 +4510,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     font-size: 16px;
     font-weight: 300;
     margin: 12px 0 0 0; }
+
 .searchnastopi .row .desc {
   font-size: 16px;
   font-weight: 300; }
@@ -4502,6 +4543,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .izracunana_prisotnost .tab-content .me_poslanec .progress_number {
     font-size: 25px;
     line-height: 20px; }
+
 .izracunana_prisotnost .tab-content .other_poslanec {
   padding-bottom: 10px; }
 
@@ -4517,7 +4559,12 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .pagination li span:focus,
   .pagination li span:hover {
     color: #c8c8c8; }
-  .pagination li.active > a, .pagination li.active > a:focus, .pagination li.active > a:hover, .pagination li.active > span, .pagination li.active > span:focus, .pagination li.active > span:hover {
+  .pagination li.active > a,
+  .pagination li.active > a:focus,
+  .pagination li.active > a:hover,
+  .pagination li.active > span,
+  .pagination li.active > span:focus,
+  .pagination li.active > span:hover {
     background-color: #009cdd; }
   .pagination li a {
     background: #f0f0f0;
@@ -4610,14 +4657,20 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
 @supports (-webkit-background-clip: text) {
   #about .gradient-title {
-    background: -moz-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    /* Created with: http://colorzilla.com/gradient-editor/*/
+    background: #197197;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #009cdd 0%, #ff5e41 100%);
+    background: -webkit-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+    background: linear-gradient(to right, #197197 0%, #009cdd 50%, #ff5e41 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
+    /* IE6-9 */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; } }
+
 #about .title-container {
   margin-top: 45px;
   margin-bottom: 45px; }
@@ -4682,3 +4735,70 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   @media (max-width: 767px) {
     #empty_state .lead-container {
       font-size: 14px; } }
+
+#framed .logo {
+  max-width: 120px;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px; }
+
+#framed .logo svg {
+  width: 100%; }
+
+#framed .cls-1 {
+  fill: #197197; }
+
+#framed .cls-2 {
+  fill: #009cdd; }
+
+#framed .cls-3 {
+  fill: #333333; }
+
+#framed .gradient-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Created with: http://colorzilla.com/gradient-editor/*/
+  background: #197197;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #197197 0%, #009cdd 50%, #ff5e41 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #197197 0%, #009cdd 50%, #ff5e41 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
+  /* IE6-9 */ }
+
+#framed .gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f0f0+0,f0f0f0+100&0.6+0,1+14 */
+  background: -moz-linear-gradient(top, rgba(240, 240, 240, 0.6) 0%, #f0f0f0 14%, #f0f0f0 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(240, 240, 240, 0.6) 0%, #f0f0f0 14%, #f0f0f0 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.6) 0%, #f0f0f0 14%, #f0f0f0 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99f0f0f0', endColorstr='#f0f0f0', GradientType=0);
+  /* IE6-9 */ }
+
+#framed .permalink {
+  color: #333333;
+  margin: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Roboto Slab';
+  font-weight: 300; }
+
+#framed .permalink:hover {
+  text-decoration: none; }
