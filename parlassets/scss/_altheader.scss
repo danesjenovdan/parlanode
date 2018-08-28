@@ -90,6 +90,6 @@
     .alt-header-border {
         height: 1px;
         width: 100%;
-        @include gradient('horizontal', 'blue');
+        @include gradient('horizontal');
     }
 }

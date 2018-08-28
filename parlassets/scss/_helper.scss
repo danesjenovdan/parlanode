@@ -92,42 +92,20 @@ $cdn_home_icon: getConfig('urls.cdn') + '/icons/';
 @mixin gradient($direction: 'vertical', $first_color: 'blue') {
     @if $direction == 'vertical' {
         // TOP TO BOTTOM
-        @if $first_color == 'blue' {
-            // BLUE TO RED
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-            background: $funblue; /* Old browsers */
-            background: -moz-linear-gradient(top,  $funblue 0%, $red 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top,  $funblue 0%,$red 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom,  $funblue 0%,$red 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=0 ); /* IE6-9 */
-        } @else {
-            // RED TO BLUE
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$red+0,009cdd+100 */
-            background: $red; /* Old browsers */
-            background: -moz-linear-gradient(top,  $red 0%, $funblue 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top,  $red 0%,$funblue 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom,  $red 0%,$funblue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$funblue',GradientType=0 ); /* IE6-9 */
-        }
+        /* Created with: http://colorzilla.com/gradient-editor/ */
+        background: $third; /* Old browsers */
+        background: -moz-linear-gradient(top, $third 0%, $second 50%, $first 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, $third 0%,$second 50%,$first 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, $third 0%,$second 50%,$first 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$third', endColorstr='$first',GradientType=0 ); /* IE6-9 */
     } @else {
         // LEFT TO RIGHT
-        @if $first_color == 'blue' {
-            // BLUE TO RED
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-            background: $funblue; /* Old browsers */
-            background: -moz-linear-gradient(left,  $funblue 0%, $red 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(left,  $funblue 0%,$red 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to right,  $funblue 0%,$red 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 ); /* IE6-9 */
-        } @else {
-            // RED TO BLUE
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$red+0,009cdd+100 */
-            background: $red; /* Old browsers */
-            background: -moz-linear-gradient(left,  $red 0%, $funblue 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(left,  $red 0%,$funblue 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to right,  $red 0%,$funblue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$funblue',GradientType=1 ); /* IE6-9 */
-        }
+        /* Created with: http://colorzilla.com/gradient-editor/*/
+        background: $first; /* Old browsers */
+        background: -moz-linear-gradient(left, $first 0%, $second 50%, $third 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, $first 0%,$second 50%,$third 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, $first 0%,$second 50%,$third 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 ); /* IE6-9 */
     }
 }
 

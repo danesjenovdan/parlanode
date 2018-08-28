@@ -506,16 +506,16 @@ footer.footer input.form-control.newslettersubscribe.error {
   .card-header.shadow {
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
   .card-header .card-header-border {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-    background: #caebf2;
+    /* Created with: http://colorzilla.com/gradient-editor/ */
+    background: #258498;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #caebf2 0%, #258498 100%);
+    background: -moz-linear-gradient(top, #258498 0%, #caebf2 50%, #ff0000 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #caebf2 0%, #258498 100%);
+    background: -webkit-linear-gradient(top, #258498 0%, #caebf2 50%, #ff0000 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #caebf2 0%, #258498 100%);
+    background: linear-gradient(to bottom, #258498 0%, #caebf2 50%, #ff0000 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$third', endColorstr='$first',GradientType=0 );
     /* IE6-9 */
     display: flex;
     float: none;
@@ -581,16 +581,16 @@ footer.footer input.form-control.newslettersubscribe.error {
     left: 0;
     width: 100%;
     height: 1px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$red+0,009cdd+100 */
-    background: #258498;
+    /* Created with: http://colorzilla.com/gradient-editor/*/
+    background: #ff0000;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #258498 0%, #caebf2 100%);
+    background: -moz-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #258498 0%, #caebf2 100%);
+    background: -webkit-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #258498 0%, #caebf2 100%);
+    background: linear-gradient(to right, #ff0000 0%, #caebf2 50%, #258498 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$funblue',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
     /* IE6-9 */ }
 
 .card-circle-button,
@@ -1367,16 +1367,16 @@ footer.footer {
   height: 40px;
   width: 100%;
   overflow: hidden;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-  background: #caebf2;
+  /* Created with: http://colorzilla.com/gradient-editor/*/
+  background: #ff0000;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
+  background: -moz-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
+  background: -webkit-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #caebf2 0%, #258498 100%);
+  background: linear-gradient(to right, #ff0000 0%, #caebf2 50%, #258498 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
   /* IE6-9 */ }
   @media (max-width: 767px) {
     .stripeeltop {
@@ -1408,16 +1408,16 @@ footer.footer {
   left: 0;
   width: 100%;
   height: 200%;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-  background: #caebf2;
+  /* Created with: http://colorzilla.com/gradient-editor/*/
+  background: #ff0000;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
+  background: -moz-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
+  background: -webkit-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #caebf2 0%, #258498 100%);
+  background: linear-gradient(to right, #ff0000 0%, #caebf2 50%, #258498 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
   /* IE6-9 */
   top: 15px;
   -webkit-transform: rotate(1deg);
@@ -3780,16 +3780,16 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   .alt-header-container .alt-header-border {
     height: 1px;
     width: 100%;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$funblue+0,ff5e41+100 */
-    background: #caebf2;
+    /* Created with: http://colorzilla.com/gradient-editor/*/
+    background: #ff0000;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #caebf2 0%, #258498 100%);
+    background: -moz-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #caebf2 0%, #258498 100%);
+    background: -webkit-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #caebf2 0%, #258498 100%);
+    background: linear-gradient(to right, #ff0000 0%, #caebf2 50%, #258498 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$funblue', endColorstr='$red',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
     /* IE6-9 */ }
 
 .rayen {
