@@ -4614,3 +4614,62 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   @media (max-width: 767px) {
     #empty_state .lead-container {
       font-size: 14px; } }
+
+#framed .logo {
+  max-width: 120px;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px; }
+#framed .logo svg {
+  width: 100%; }
+#framed .cls-1 {
+  fill: #ff0000; }
+#framed .cls-2 {
+  fill: #caebf2; }
+#framed .cls-3 {
+  fill: #333333; }
+#framed .gradient-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Created with: http://colorzilla.com/gradient-editor/*/
+  background: #ff0000;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #ff0000 0%, #caebf2 50%, #258498 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #ff0000 0%, #caebf2 50%, #258498 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first', endColorstr='$third',GradientType=1 );
+  /* IE6-9 */ }
+#framed .gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f0f0+0,f0f0f0+100&0.6+0,1+14 */
+  background: -moz-linear-gradient(top, rgba(240, 240, 240, 0.6) 0%, #f0f0f0 14%, #f0f0f0 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(240, 240, 240, 0.6) 0%, #f0f0f0 14%, #f0f0f0 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.6) 0%, #f0f0f0 14%, #f0f0f0 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99f0f0f0', endColorstr='#f0f0f0', GradientType=0);
+  /* IE6-9 */ }
+#framed .permalink {
+  color: #333333;
+  margin: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Roboto Slab';
+  font-weight: 300; }
+#framed .permalink:hover {
+  text-decoration: none; }
