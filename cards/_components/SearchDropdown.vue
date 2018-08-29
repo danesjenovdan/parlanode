@@ -265,8 +265,8 @@ export default {
   margin-right: 0;
 
   &.search-dropdown-group-label {
-    background: linear-gradient(to right, #cc6b5b, #6a93c8);
-    color: white;
+    background: linear-gradient(to left, $first, $third);
+    color: $white;
     &::after { content: none; }
   }
 }
