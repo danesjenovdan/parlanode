@@ -48,6 +48,10 @@
               :style="{background: item.color}"
               class="color"
             />
+            <span
+              v-else-if="item.colorClass"
+              :class="['color', item.colorClass]"
+            />
             <span v-html="highlightLabel(item.label)" />
           </div>
           <div v-if="item.count">{{ item.count }}</div>
@@ -199,7 +203,7 @@ export default {
         : this.$t('select-placeholder');
     },
     largeItems() {
-      return this.value && (this.value[0].image || this.value[0].color);
+      return this.value && (this.value[0].image || this.value[0].color || this.value[0].colorClass);
     },
   },
   watch: {
@@ -287,6 +291,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/helper';
 
 .up {
   border-bottom: none;
@@ -320,7 +326,8 @@ export default {
   }
 
   &.search-dropdown-group-label {
-    background: linear-gradient(to left, $first, $third);
+    @include gradient('horizontal');
+    // background: linear-gradient(to left, $first, $third);
     color: $white;
     &::after { content: none; }
   }
