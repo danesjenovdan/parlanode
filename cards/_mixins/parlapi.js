@@ -51,6 +51,15 @@ function parlapi() {
     updateSession(id) {
       return analize.get(`/s/setMotionOfSession/${id}?key=nekijabolteskega`); // TODO: this key?
     },
+    getVotings(sessionId) {
+      return data.get(`/votes/?session=${sessionId}&limit=1000&organization=${config.parliament_id}&ordering=-start_time`);
+    },
+    getMotions(sessionId) {
+      return data.get(`/motions/?session=${sessionId}&limit=1000&organization=${config.parliament_id}&ordering=-start_time`);
+    },
+    getTags() {
+      return data.get('/tags/?limit=1000');
+    },
   };
 }
 

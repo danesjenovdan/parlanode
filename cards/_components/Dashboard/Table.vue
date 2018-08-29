@@ -11,7 +11,7 @@
     </div>
     <div class="table-contents">
       <div v-for="(item, i) in items" :key="i" class="table-row">
-        <slot :item="item" name="item">
+        <slot :item="item" :index="i" name="item">
           <div v-for="(column, c) in item" :key="c" class="table-col">
             <slot :column="column" :index="c" name="item-col">
               {{ 'text' in column ? column.text : column }}
@@ -47,13 +47,18 @@ export default {
 
     .table-row {
       display: flex;
-      height: 46px;
+      min-height: 46px;
+      margin-left: -5px;
+      margin-right: -5px;
+      border-top: 1px solid #ccc;
 
       .table-col {
         flex-grow: 1;
         flex-basis: 0;
         display: flex;
         align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
 
         &.header {
           text-transform: uppercase;
