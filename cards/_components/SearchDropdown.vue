@@ -48,6 +48,7 @@
               :style="{background: item.color}"
               class="color"
             />
+            <span v-html="highlightLabel(item.label)" />
           </div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
@@ -199,7 +200,7 @@ export default {
     },
     largeItems() {
       return this.value && (this.value[0].image || this.value[0].color);
-  },
+    },
   },
   watch: {
     filter() {
@@ -272,7 +273,13 @@ export default {
         large: this.largeItems,
       };
     },
+    highlightLabel(label) {
+      if (this.filter === '') {
+        return label;
       }
+
+      const regEx = new RegExp(this.filter, 'ig');
+      return label.replace(regEx, '<b>$&</b>');
     },
   },
 };
