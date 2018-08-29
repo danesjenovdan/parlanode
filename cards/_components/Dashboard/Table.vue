@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-table">
-    <div class="table-headers">
+    <div v-if="columns && columns.length" class="table-headers">
       <div class="table-row">
         <div v-for="column in columns" :key="column.id" class="table-col header">
           <slot :column="column" name="header-col">
@@ -29,7 +29,7 @@ export default {
   props: {
     columns: {
       type: Array,
-      default: () => [],
+      default: null,
     },
     items: {
       type: Array,
@@ -41,28 +41,36 @@ export default {
 
 <style scoped lang="scss">
 .dashboard-table {
-
   .table-headers,
   .table-contents {
-
     .table-row {
       display: flex;
       min-height: 46px;
       margin-left: -5px;
       margin-right: -5px;
       border-top: 1px solid #ccc;
+      flex-wrap: wrap;
+      padding: 10px 0;
 
       .table-col {
         flex-grow: 1;
         flex-basis: 0;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding-left: 5px;
         padding-right: 5px;
+        flex-direction: column;
 
         &.header {
           text-transform: uppercase;
           font-weight: 500;
+        }
+
+        label {
+          width: 100%;
+          font-weight: 700;
+          text-transform: uppercase;
         }
       }
     }

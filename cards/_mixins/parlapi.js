@@ -42,8 +42,8 @@ function parlapi() {
     getSessions() {
       return data.get(`/sessions/?limit=1000&organization=${config.parliament_id}&ordering=-start_time`);
     },
-    getSessionTFIDF(id) {
-      return analize.get(`/s/tfidfs/?session__id_parladata=${id}`);
+    getSessionTFIDF(sessionId) {
+      return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
     },
     patchSessionsTFIDF(id, tfidf) {
       return analize.patch(`/s/tfidfs/${id}`, tfidf);
@@ -59,6 +59,12 @@ function parlapi() {
     },
     getTags() {
       return data.get('/tags/?limit=1000');
+    },
+    getVotingAbstract(votingId) {
+      return analize.get(`/s/vote-notes/?id_parladata=${votingId}`);
+    },
+    patchVotingAbstract(id, abstract) {
+      return analize.patch(`/s/vote-notes/${id}`, abstract);
     },
   };
 }

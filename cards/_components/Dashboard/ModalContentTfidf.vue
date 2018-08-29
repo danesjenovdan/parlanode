@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'DashboardTfidfModalContent',
+  name: 'DashboardModalContentTfidf',
   props: {
     data: {
       type: Array,

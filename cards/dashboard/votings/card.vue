@@ -2,28 +2,56 @@
   <dash-wrapper :id="$options.cardData.cardData._id">
     <div id="dash-votings-list">
       <dash-table
-        :columns="columns"
         :items="mappedItems"
       >
         <template slot="item-col" slot-scope="{ column, index }">
-          <template v-if="index === 0">{{ column.text }}</template>
+          <template v-if="index === 0">
+            <label>{{ $t('name') }}</label>
+            <input v-model="column.voting.name" class="form-control">
+          </template>
           <template v-if="index === 1">
-            <search-dropdown :items="mappedTags(column.tags)" small />
+            <label>{{ $t('tags') }}</label>
+            <dash-array-selector
+              v-model="column.tags"
+              :options="tags"
+              single
+              small
+            />
           </template>
           <template v-if="index === 2">
-            {{ column.result }}
+            <label>{{ $t('result') }}</label>
+            <p-search-dropdown
+              v-model="column.result"
+              single
+              small
+              @select="changeResult(column.id, $event)"
+            />
           </template>
           <template v-if="index === 3">
-            <div>
-              <div>{{ $t('vote-for') }}: {{ column.votes.za }}</div>
-              <div>{{ $t('vote-against') }}: {{ column.votes.proti }}</div>
-              <div>{{ $t('vote-abstained-plural') }}: {{ column.votes.kvorum }}</div>
-              <div>{{ $t('vote-not-plural') }}: {{ column.votes.ni }}</div>
+            <label>{{ $t('votes') }}</label>
+            <div class="vote-results">
+              <div class="vote-result-number">
+                {{ $t('vote-for') }}: {{ column.votes.za }}
+              </div>
+              <div class="vote-result-number">
+                {{ $t('vote-against') }}: {{ column.votes.proti }}
+              </div>
+              <div class="vote-result-number">
+                {{ $t('vote-abstained-plural') }}: {{ column.votes.kvorum }}
+              </div>
+              <div class="vote-result-number">
+                {{ $t('vote-not-plural') }}: {{ column.votes.ni }}
+              </div>
             </div>
           </template>
           <template v-if="index === 4">
+            <dash-button @click="openAbstractModal(column.voting)">
+              {{ $t('edit-abstract') }}
+            </dash-button>
+          </template>
+          <template v-if="index === 5">
             <dash-button>
-              {{ $t('edit') }}
+              {{ $t('save') }}
             </dash-button>
           </template>
         </template>
@@ -31,6 +59,15 @@
       <div v-if="error">Error: {{ error.message }}</div>
       <div v-else-if="votings == null" class="nalagalnik"></div>
     </div>
+    <dash-fancy-modal
+      v-if="abstractModalOpen && abstractModalData"
+      :data="abstractModalData"
+      @closed="closeAbstractModal"
+    >
+      <template slot="modal-data" slot-scope="{ loadedData }">
+        <modal-content-abstract :loaded-data="loadedData" />
+      </template>
+    </dash-fancy-modal>
   </dash-wrapper>
 </template>
 
@@ -41,8 +78,9 @@ import DashTable from 'components/Dashboard/Table.vue';
 import DashButton from 'components/Dashboard/Button.vue';
 import DashLoadingButton from 'components/Dashboard/LoadingButton.vue';
 import DashFancyModal from 'components/Dashboard/FancyModal.vue';
-import TfidfModalContent from 'components/Dashboard/TfidfModalContent.vue';
-import SearchDropdown from 'components/SearchDropdown.vue';
+import DashArraySelector from 'components/Dashboard/ArraySelector.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
+import ModalContentAbstract from 'components/Dashboard/ModalContentAbstract.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
@@ -53,8 +91,9 @@ export default {
     DashButton,
     DashFancyModal,
     DashLoadingButton,
-    TfidfModalContent,
-    SearchDropdown,
+    DashArraySelector,
+    PSearchDropdown,
+    ModalContentAbstract,
   },
   mixins: [
     common,
@@ -66,30 +105,39 @@ export default {
       votings: null,
       motions: null,
       tags: null,
-      tfidfModalOpen: false,
-      tfidfModalData: null,
+      abstractModalOpen: false,
+      abstractModalData: null,
       error: null,
     };
   },
   computed: {
-    columns() {
-      return [
-        // { id: 'name', label: this.$t('name') },
-        { id: 'tags', label: this.$t('tags') },
-        { id: 'result', label: this.$t('result') },
-        { id: 'votes', label: this.$t('votes') },
-        { id: 'abstract', label: this.$t('abstract') },
-      ];
-    },
     mappedItems() {
       if (this.votings) {
-        return this.votings.map(voting => [
-          { text: voting.name },
-          { tags: voting.tags },
-          { result: voting.result },
-          { votes: voting.results },
-          { voting },
-        ]);
+        return this.votings.map((voting) => {
+          const motion = this.motions.find(m => m.id === voting.motion);
+          return [
+            { voting },
+            { tags: voting.tags },
+            {
+              id: motion.id,
+              result: [
+                {
+                  id: '0',
+                  label: this.$t('vote-not-passed'),
+                  selected: motion.result === '0',
+                },
+                {
+                  id: '1',
+                  label: this.$t('vote-passed'),
+                  selected: motion.result === '1',
+                },
+              ],
+            },
+            { votes: voting.results },
+            { voting },
+            { voting },
+          ];
+        });
       }
       return [];
     },
@@ -112,29 +160,82 @@ export default {
       });
   },
   methods: {
-    mappedTags(tags) {
-      const mapped = this.tags.map(tag => ({
-        label: tag.name,
-        id: tag.id,
-        selected: tags && tags.indexOf(tag.name) !== -1,
-      }));
-      return mapped;
+    changeResult(motionId, value) {
+      const motion = this.motions.find(m => m.id === motionId);
+      if (motion) {
+        motion.result = value;
+      }
+    },
+    openAbstractModal(voting) {
+      this.abstractModalData = {
+        title: `Abstract - ${voting.name}`,
+        loadData: async () => {
+          const data = await this.$parlapi.getVotingAbstract(voting.id);
+          const abstract = data.data.results.length && data.data.results[0];
+          return {
+            id: abstract.id,
+            note: abstract.note,
+            abstractVisible: abstract.abstractVisible,
+          };
+        },
+        saveData: abstract => this.$parlapi.patchVotingAbstract(abstract.id, abstract),
+      };
+      this.abstractModalOpen = true;
+    },
+    closeAbstractModal() {
+      this.abstractModalData = null;
+      this.abstractModalOpen = false;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-#dash-votings-list {
-  /deep/ .table-contents {
-    .table-row {
-      flex-wrap: wrap;
-      padding: 10px 0;
+#dashboard_votings {
+  &.card-container,
+  & /deep/ .card-content {
+    overflow: visible;
+  }
+}
 
-      .table-col:first-child {
+#dash-votings-list /deep/ {
+  .table-contents,
+  .table-headers {
+    .table-row {
+      .table-col:nth-child(1) {
         flex: 0;
         flex-basis: 100%;
+        padding-bottom: 10px;
       }
+
+      .table-col:nth-child(2) {
+        flex: 2.3;
+      }
+
+      .table-col:nth-child(4) {
+        flex: 1.2;
+      }
+
+      .table-col:nth-child(5),
+      .table-col:nth-child(6) {
+        flex-grow: 0;
+        flex-basis: auto;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .search-dropdown {
+    width: 100%;
+  }
+
+  .vote-results {
+    display: flex;
+    flex-wrap: wrap;
+
+    .vote-result-number {
+      flex: 1;
+      flex-basis: 50%;
     }
   }
 }

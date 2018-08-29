@@ -16,33 +16,27 @@
         </div>
         <div v-if="error" class="error-message">Error: {{ error.message }}</div>
         <div class="card-modal-buttons">
-          <button
+          <dash-button
             v-if="data.generateData"
             :disabled="buttonsDisabled"
-            type="button"
-            class="card-modal-button"
             @click="generateData"
           >
             {{ $t('generate') }}
-          </button>
-          <button
+          </dash-button>
+          <dash-button
             v-if="data.loadData"
             :disabled="buttonsDisabled"
-            type="button"
-            class="card-modal-button"
             @click="loadData"
           >
             {{ $t('load') }}
-          </button>
-          <button
+          </dash-button>
+          <dash-button
             v-if="data.saveData"
             :disabled="buttonsDisabled"
-            type="button"
-            class="card-modal-button"
             @click="saveData(loadedData)"
           >
             {{ $t('save') }}
-          </button>
+          </dash-button>
         </div>
       </modal>
     </div>
@@ -51,11 +45,13 @@
 
 <script>
 import Modal from 'components/Modal.vue';
+import DashButton from 'components/Dashboard/Button.vue';
 
 export default {
   name: 'DashboardFancyModal',
   components: {
     Modal,
+    DashButton,
   },
   props: {
     data: {
@@ -146,15 +142,10 @@ export default {
 
   .card-modal-buttons {
     display: flex;
+    margin-top: 10px;
 
-    .card-modal-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      line-height: 18px;
-      padding: 6px 12px;
-      border: 0;
+    .dash-button {
+      flex: 1;
 
       &:not(:first-child) {
         margin-left: 10px;
@@ -168,12 +159,5 @@ export default {
   margin: 12px 0 0 0;
   text-align: center;
   font-size: 16px;
-}
-
-[disabled] {
-  opacity: 0.6;
-  filter: grayscale(100%);
-  cursor: default;
-  pointer-events: none;
 }
 </style>

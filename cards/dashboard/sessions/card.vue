@@ -24,18 +24,18 @@
           <template v-else>{{ column.text }}</template>
         </template>
       </dash-table>
-      <dash-fancy-modal
-        v-if="tfidfModalOpen && tfidfModalData"
-        :data="tfidfModalData"
-        @closed="closeTfidfModal"
-      >
-        <template slot="modal-data" slot-scope="{ loadedData }">
-          <tfidf-modal-content :data="loadedData.data" />
-        </template>
-      </dash-fancy-modal>
       <div v-if="error">Error: {{ error.message }}</div>
       <div v-else-if="sessions == null" class="nalagalnik"></div>
     </div>
+    <dash-fancy-modal
+      v-if="tfidfModalOpen && tfidfModalData"
+      :data="tfidfModalData"
+      @closed="closeTfidfModal"
+    >
+      <template slot="modal-data" slot-scope="{ loadedData }">
+        <modal-content-tfidf :data="loadedData.data" />
+      </template>
+    </dash-fancy-modal>
   </dash-wrapper>
 </template>
 
@@ -46,7 +46,7 @@ import DashTable from 'components/Dashboard/Table.vue';
 import DashButton from 'components/Dashboard/Button.vue';
 import DashLoadingButton from 'components/Dashboard/LoadingButton.vue';
 import DashFancyModal from 'components/Dashboard/FancyModal.vue';
-import TfidfModalContent from 'components/Dashboard/TfidfModalContent.vue';
+import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
@@ -57,7 +57,7 @@ export default {
     DashButton,
     DashFancyModal,
     DashLoadingButton,
-    TfidfModalContent,
+    ModalContentTfidf,
   },
   mixins: [
     common,
@@ -131,4 +131,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#dash-sessions-list /deep/ {
+  .table-contents,
+  .table-headers {
+    .table-row {
+      .table-col:nth-child(1) {
+        align-items: flex-start;
+      }
+    }
+  }
+}
 </style>

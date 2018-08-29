@@ -13,7 +13,9 @@
   color: $white;
   cursor: pointer;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 10px 16px 9px;
+  text-align: center;
+  text-transform: uppercase;
 
   &:hover {
     background-color: $funblue-hover;
