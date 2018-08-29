@@ -35,12 +35,12 @@
         </div>
         <div v-if="documents.length > 0" class="documents">
           <p-search-dropdown
-            :items="mappedDocuments"
-            :select-callback="openDocument"
-            :up="true"
+            :value="mappedDocuments"
+            up
             single
             small
             placeholder="Dokumenti"
+            @select="openDocument"
           />
         </div>
       </div>

@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-md-12 filters">
             <p-search-dropdown
-              :items="workingBodies"
+              v-model="workingBodies"
               :placeholder="inputPlaceholder"
               class="dropdown-filter"
             />

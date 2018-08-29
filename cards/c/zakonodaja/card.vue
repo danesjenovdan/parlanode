@@ -17,7 +17,7 @@
             </div>
             <div class="filter month-dropdown">
               <p-search-dropdown
-                :items="allWorkingBodies"
+                v-model="allWorkingBodies"
                 :placeholder="inputPlaceholder"
                 :alphabetise="false"
               />

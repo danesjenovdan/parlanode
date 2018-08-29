@@ -24,18 +24,24 @@
     <div class="filters">
       <div class="filter tag-dropdown">
         <div v-t="'mp'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
+        <p-search-dropdown
+          :value="dropdownItems.MPs"
+          @input="updateDropdownOptions('allMPs', $event)"
+        />
       </div>
       <div class="filter tag-dropdown naslovljenec">
         <div v-t="'addressee'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.recipients" :placeholder="recipientsPlaceholder" />
+        <p-search-dropdown
+          :value="dropdownItems.recipients"
+          @input="updateDropdownOptions('allRecipients', $event)"
+        />
       </div>
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown
-          :items="dropdownItems.months"
-          :placeholder="monthPlaceholder"
+          :value="dropdownItems.months"
           :alphabetise="false"
+          @input="updateDropdownOptions('allMonths', $event)"
         />
       </div>
       <div class="filter text-filter">
@@ -50,6 +56,7 @@
 </template>
 
 <script>
+import { find } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
@@ -118,21 +125,6 @@ export default {
     };
   },
   computed: {
-    MPsPlaceholder() {
-      return this.selectedMPs.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedMPs.length })
-        : this.$t('select-placeholder');
-    },
-    recipientsPlaceholder() {
-      return this.selectedRecipients.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedRecipients.length })
-        : this.$t('select-placeholder');
-    },
-    monthPlaceholder() {
-      return this.selectedMonths.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
-        : this.$t('select-placeholder');
-    },
     dropdownItems() {
       const validMPs = [];
       const validRecipients = [];
@@ -240,6 +232,12 @@ export default {
         }))
         .filter(questionDay => questionDay.questions.length > 0)
         .filter(filterDates);
+    },
+    updateDropdownOptions(itemType, newOptions) {
+      const allItems = this[itemType];
+      newOptions.forEach((newOption) => {
+        find(allItems, { id: newOption.id }).selected = newOption.selected;
+      });
     },
   },
 };

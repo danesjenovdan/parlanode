@@ -17,7 +17,7 @@
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
-        <search-dropdown :items="allTags" :placeholder="tagPlaceholder" />
+        <p-search-dropdown v-model="allTags" />
       </div>
     </div>
     <scroll-shadow ref="shadow">
@@ -110,7 +110,7 @@
 
 <script>
 import StripedButton from 'components/StripedButton.vue';
-import SearchDropdown from 'components/SearchDropdown.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 import links from 'mixins/links';
 
@@ -118,7 +118,7 @@ export default {
   name: 'SeznamGlasovanj',
   components: {
     StripedButton,
-    SearchDropdown,
+    PSearchDropdown,
     ScrollShadow,
   },
   mixins: [
@@ -174,11 +174,6 @@ export default {
         return textMatch && tagMatch && resultMatch;
       };
       return this.votes.filter(filterVotes);
-    },
-    tagPlaceholder() {
-      return this.selectedTags.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('select-placeholder');
     },
     selectedTags() {
       return this.allTags
