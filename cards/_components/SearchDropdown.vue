@@ -33,11 +33,22 @@
         </li>
         <li
           :key="`${item.id}2`"
-          :class="{ selected : item.selected, focused : focused === index }"
+          :class="generateItemClass(item, index)"
           @click="selectItem(item.id)"
           @mouseenter="focus(index)"
         >
-          <div class="search-dropdown-label">{{ item.label }}</div>
+          <div class="search-dropdown-label">
+            <img
+              v-if="item.image"
+              :src="item.image"
+              class="image"
+            >
+            <span
+              v-else-if="item.color"
+              :style="{background: item.color}"
+              class="color"
+            />
+          </div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
       </template>
@@ -186,6 +197,9 @@ export default {
         ? this.$t('selected-placeholder', { num: this.selectedIds.length })
         : this.$t('select-placeholder');
     },
+    largeItems() {
+      return this.value && (this.value[0].image || this.value[0].color);
+  },
   },
   watch: {
     filter() {
@@ -231,6 +245,7 @@ export default {
       this.$emit('input', newItems);
     },
     focus(index, withKeyboard) {
+      const multiplier = this.largeItems ? 2 : 1;
       this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);
 
       if (!withKeyboard) {
@@ -241,12 +256,22 @@ export default {
         .map(item => (item.groupLabel ? 1 : 0))
         .reduce((a, b) => a + b, 0);
       const optionListEl = this.$el.lastChild;
-      const focusedPosition = (this.focused + additionalOffset) * ITEM_HEIGHT;
+      const focusedPosition = (this.focused * multiplier + additionalOffset) * ITEM_HEIGHT;
 
       if (focusedPosition < optionListEl.scrollTop) {
         optionListEl.scrollTop = focusedPosition;
-      } else if (focusedPosition > optionListEl.scrollTop + ((ITEM_COUNT - 1) * ITEM_HEIGHT)) {
-        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - 1) * ITEM_HEIGHT);
+      } else if (focusedPosition > optionListEl.scrollTop
+        + ((ITEM_COUNT - multiplier) * ITEM_HEIGHT)) {
+        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - multiplier) * ITEM_HEIGHT);
+      }
+    },
+    generateItemClass(item, index) {
+      return {
+        selected: item.selected,
+        focused: this.focused === index,
+        large: this.largeItems,
+      };
+    },
       }
     },
   },
@@ -263,6 +288,29 @@ export default {
 
 .search-dropdown-options li {
   margin-right: 0;
+
+  &.large {
+    height: 46px;
+    line-height: 46px;
+    padding: 0 5px;
+
+    &::after { content: none; }
+
+    .image {
+      border-radius: 50%;
+      height: 37px;
+      margin-right: 3px;
+      width: 37px;
+    }
+
+    .color {
+      display: inline-block;
+      border-radius: 50%;
+      height: 16px;
+      margin: 0 13px -3px 11px;
+      width: 16px;
+    }
+  }
 
   &.search-dropdown-group-label {
     background: linear-gradient(to left, $first, $third);
