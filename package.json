@@ -62,6 +62,7 @@
     "vue-i18n": "7.8.1",
     "vue-i18n-extensions": "^0.1.0",
     "vue-loader": "^15.2.4",
+    "vue-pell-editor": "^2.0.1",
     "vue-server-renderer": "^2.5.16",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.15.1",

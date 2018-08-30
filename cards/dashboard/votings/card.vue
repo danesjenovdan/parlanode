@@ -1,64 +1,66 @@
 <template>
-  <dash-wrapper :id="$options.cardData.cardData._id">
-    <div id="dash-votings-list">
-      <dash-table
-        :items="mappedItems"
-      >
-        <template slot="item-col" slot-scope="{ column, index }">
-          <template v-if="index === 0">
-            <label>{{ $t('name') }}</label>
-            <input v-model="column.voting.name" class="form-control">
-          </template>
-          <template v-if="index === 1">
-            <label>{{ $t('tags') }}</label>
-            <dash-array-selector
-              v-model="column.tags"
-              :options="tags"
-              single
-              small
-            />
-          </template>
-          <template v-if="index === 2">
-            <label>{{ $t('result') }}</label>
-            <p-search-dropdown
-              v-model="column.result"
-              single
-              small
-              @select="changeResult(column.id, $event)"
-            />
-          </template>
-          <template v-if="index === 3">
-            <label>{{ $t('votes') }}</label>
-            <div class="vote-results">
-              <div class="vote-result-number">
-                {{ $t('vote-for') }}: {{ column.votes.za }}
+  <div>
+    <dash-wrapper :id="$options.cardData.cardData._id">
+      <div id="dash-votings-list">
+        <dash-table
+          :items="mappedItems"
+        >
+          <template slot="item-col" slot-scope="{ column, index }">
+            <template v-if="index === 0">
+              <label>{{ $t('name') }}</label>
+              <input v-model="column.voting.name" class="form-control">
+            </template>
+            <template v-if="index === 1">
+              <label>{{ $t('tags') }}</label>
+              <dash-array-selector
+                v-model="column.tags"
+                :options="tags"
+                single
+                small
+              />
+            </template>
+            <template v-if="index === 2">
+              <label>{{ $t('result') }}</label>
+              <p-search-dropdown
+                v-model="column.result"
+                single
+                small
+                @select="changeResult(column.id, $event)"
+              />
+            </template>
+            <template v-if="index === 3">
+              <label>{{ $t('votes') }}</label>
+              <div class="vote-results">
+                <div class="vote-result-number">
+                  {{ $t('vote-for') }}: {{ column.votes.za }}
+                </div>
+                <div class="vote-result-number">
+                  {{ $t('vote-against') }}: {{ column.votes.proti }}
+                </div>
+                <div class="vote-result-number">
+                  {{ $t('vote-abstained-plural') }}: {{ column.votes.kvorum }}
+                </div>
+                <div class="vote-result-number">
+                  {{ $t('vote-not-plural') }}: {{ column.votes.ni }}
+                </div>
               </div>
-              <div class="vote-result-number">
-                {{ $t('vote-against') }}: {{ column.votes.proti }}
-              </div>
-              <div class="vote-result-number">
-                {{ $t('vote-abstained-plural') }}: {{ column.votes.kvorum }}
-              </div>
-              <div class="vote-result-number">
-                {{ $t('vote-not-plural') }}: {{ column.votes.ni }}
-              </div>
-            </div>
+            </template>
+            <template v-if="index === 4">
+              <dash-button @click="openAbstractModal(column.voting)">
+                {{ $t('edit-abstract') }}
+              </dash-button>
+            </template>
+            <template v-if="index === 5">
+              <dash-loading-button :load="saveData(column.voting)">
+                {{ $t('save') }}
+              </dash-loading-button>
+            </template>
           </template>
-          <template v-if="index === 4">
-            <dash-button @click="openAbstractModal(column.voting)">
-              {{ $t('edit-abstract') }}
-            </dash-button>
-          </template>
-          <template v-if="index === 5">
-            <dash-button>
-              {{ $t('save') }}
-            </dash-button>
-          </template>
-        </template>
-      </dash-table>
-      <div v-if="error">Error: {{ error.message }}</div>
-      <div v-else-if="votings == null" class="nalagalnik"></div>
-    </div>
+        </dash-table>
+        <div v-if="error">Error: {{ error.message }}</div>
+        <div v-else-if="votings == null" class="nalagalnik"></div>
+      </div>
+    </dash-wrapper>
     <dash-fancy-modal
       v-if="abstractModalOpen && abstractModalData"
       :data="abstractModalData"
@@ -68,7 +70,7 @@
         <modal-content-abstract :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
-  </dash-wrapper>
+  </div>
 </template>
 
 <script>
@@ -185,6 +187,20 @@ export default {
     closeAbstractModal() {
       this.abstractModalData = null;
       this.abstractModalOpen = false;
+    },
+    saveData(voting) {
+      return () => {
+        const motion = this.motions.find(m => m.id === voting.motion);
+        return Promise.all([
+          this.$parlapi.patchVoting(voting.id, voting),
+          this.$parlapi.patchMotion(motion.id, motion),
+        ])
+          .catch((error) => {
+            // eslint-disable-next-line no-console
+            console.error(error);
+            this.error = error;
+          });
+      };
     },
   },
 };

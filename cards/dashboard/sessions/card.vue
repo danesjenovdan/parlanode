@@ -1,32 +1,34 @@
 <template>
-  <dash-wrapper :id="$options.cardData.cardData._id">
-    <div id="dash-sessions-list">
-      <dash-table
-        :columns="columns"
-        :items="mappedItems"
-      >
-        <template slot="item-col" slot-scope="{ column, index }">
-          <template v-if="index === 1">
-            <dash-button @click="window.location.href = `/votings/${column.id}`">
-              {{ $t('votings') }}
-            </dash-button>
+  <div>
+    <dash-wrapper :id="$options.cardData.cardData._id">
+      <div id="dash-sessions-list">
+        <dash-table
+          :columns="columns"
+          :items="mappedItems"
+        >
+          <template slot="item-col" slot-scope="{ column, index }">
+            <template v-if="index === 1">
+              <dash-button @click="window.location.href = `/votings/${column.id}`">
+                {{ $t('votings') }}
+              </dash-button>
+            </template>
+            <template v-else-if="index === 2">
+              <dash-button @click="openTfidfModal(column.session)">
+                TFIDF
+              </dash-button>
+            </template>
+            <template v-else-if="index === 3">
+              <dash-loading-button :load="updateSession(column.session)">
+                {{ $t('update-session') }}
+              </dash-loading-button>
+            </template>
+            <template v-else>{{ column.text }}</template>
           </template>
-          <template v-else-if="index === 2">
-            <dash-button @click="openTfidfModal(column.session)">
-              TFIDF
-            </dash-button>
-          </template>
-          <template v-else-if="index === 3">
-            <dash-loading-button :load="updateSession(column.session)">
-              {{ $t('update-session') }}
-            </dash-loading-button>
-          </template>
-          <template v-else>{{ column.text }}</template>
-        </template>
-      </dash-table>
-      <div v-if="error">Error: {{ error.message }}</div>
-      <div v-else-if="sessions == null" class="nalagalnik"></div>
-    </div>
+        </dash-table>
+        <div v-if="error">Error: {{ error.message }}</div>
+        <div v-else-if="sessions == null" class="nalagalnik"></div>
+      </div>
+    </dash-wrapper>
     <dash-fancy-modal
       v-if="tfidfModalOpen && tfidfModalData"
       :data="tfidfModalData"
@@ -36,7 +38,7 @@
         <modal-content-tfidf :data="loadedData.data" />
       </template>
     </dash-fancy-modal>
-  </dash-wrapper>
+  </div>
 </template>
 
 <script>

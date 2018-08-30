@@ -88,7 +88,10 @@ export default {
   methods: {
     modalClosed() {
       this.modalOpen = false;
-      this.$emit('closed');
+      // make sure v-dom-portal has time to remove element from dom
+      this.$nextTick(() => {
+        this.$emit('closed');
+      });
     },
     loadData() {
       if (this.data.loadData) {
