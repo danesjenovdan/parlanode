@@ -37,13 +37,13 @@
         <template v-else-if="cell && cell.ticker">
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
-        <template v-else-if="cell.html">
+        <template v-else-if="cell && cell.html">
           <div v-html="cell.html"></div>
         </template>
         <template v-else>
           <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
-          <template v-else>
-            <template v-if="cell && cell.link">
+          <template v-else-if="cell">
+            <template v-if="cell.link">
               <a :href="cell.link">
                 <img v-if="cell.image" :src="cell.image">
                 <template v-else>{{ cell.text }}</template>
