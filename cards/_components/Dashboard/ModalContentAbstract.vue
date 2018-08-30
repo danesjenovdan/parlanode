@@ -15,6 +15,13 @@
       default-paragraph-separator="p"
       @change="onEditorChange"
     />
+    <vue-pell-editor
+      v-if="typeof loadedData.extra_note !== 'undefined'"
+      v-model="loadedData.extra_note"
+      :actions="editorOptions"
+      default-paragraph-separator="p"
+      @change="onEditorChange"
+    />
   </div>
 </template>
 
@@ -76,5 +83,13 @@ export default {
 <style lang="scss" scoped>
 .vp-editor {
   background-color: #fff;
+
+  /deep/ .pell-content {
+    height: 200px;
+  }
+
+  & + .vp-editor {
+    margin-top: 10px;
+  }
 }
 </style>
