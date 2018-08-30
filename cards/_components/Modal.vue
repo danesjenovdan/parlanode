@@ -10,6 +10,7 @@
     <div class="card-modal-content">
       <slot />
       <div
+        v-if="showButton"
         class="card-modal-button"
         @click="$emit('ok')"
       >
@@ -29,7 +30,11 @@ export default {
     },
     button: {
       type: String,
-      required: true,
+      default: 'OK',
+    },
+    showButton: {
+      type: Boolean,
+      default: true,
     },
   },
 };
@@ -44,7 +49,7 @@ export default {
   position: absolute;
   width: 280px;
   left: 50%;
-  margin-left: -120px;
+  transform: translateX(-50%);
   top: 100px;
   z-index: 100;
   background-color: $grey;
@@ -73,12 +78,14 @@ export default {
     color: $white;
     font-family: 'Roboto Slab', serif;
     padding: 10px 50px 10px 10px;
+    position: relative;
 
     .closeme {
       display: block;
       position: absolute;
       right: 10px;
-      top: -1px;
+      top: calc(50% - 2px);
+      transform: translateY(-50%);
       font-size: 40px;
       cursor: pointer;
 

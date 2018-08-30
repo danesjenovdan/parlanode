@@ -1,5 +1,4 @@
-import Vue from 'vue';
-import VueI18n from 'vue-i18n';
+/* global Vue, VueI18n */
 import { merge } from 'lodash';
 /* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';

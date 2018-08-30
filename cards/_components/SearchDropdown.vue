@@ -224,7 +224,10 @@ export default {
         this.clearSelection();
         this.toggleDropdown(false);
       }
-      this.toggleItem(selectedItemId);
+      // make sure clearSelection propagates
+      this.$nextTick(() => {
+        this.toggleItem(selectedItemId);
+      });
     },
     toggleItem(itemId) {
       this.$emit('select', itemId);

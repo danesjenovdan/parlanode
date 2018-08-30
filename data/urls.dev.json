@@ -1,22 +1,4 @@
 {
-  "partyLink": {
-    "govori": "/govori/",
-    "base": "/poslanska-skupina/",
-    "pregled": "/pregled/",
-    "glasovanja": "/glasovanja/"
-  },
-  "personLink": {
-    "govori": "/govori/",
-    "base": "/poslanec/",
-    "pregled": "/pregled/",
-    "glasovanja": "/glasovanja/"
-  },
-  "sessionLink": {
-    "prisotnost": "/seja/prisotnost/",
-    "glasovanje": "/seja/glasovanje/",
-    "transkript": "/seja/transkript/",
-    "glasovanja": "/seja/glasovanja/"
-  },
   "person": {
     "2": {
       "slug": "anja-bah-zibert"
@@ -329,6 +311,20 @@
     }
   },
   "base": "http://parlameter.si",
+  "partyLink": {
+    "govori": "/govori/",
+    "base": "/poslanska-skupina/",
+    "pregled": "/pregled/",
+    "glasovanja": "/glasovanja/"
+  },
+  "urls": {
+    "data": "https://data.parlameter.si/v1",
+    "base": "http://localhost:3066",
+    "isci": "https://isci.parlameter.si",
+    "analize": "https://analize.parlameter.si/v1",
+    "glej": "http://localhost:3000",
+    "cdn": "https://cdn.parlameter.si/v1/parlassets"
+  },
   "party": {
     "1": {
       "acronym": "smc",
@@ -1071,13 +1067,17 @@
       "slug": "nepovezani-poslanec-bojan-krajnc"
     }
   },
+  "personLink": {
+    "govori": "/govori/",
+    "base": "/poslanec/",
+    "pregled": "/pregled/",
+    "glasovanja": "/glasovanja/"
+  },
   "legislationLink": "/zakonodaja/",
-  "urls": {
-    "cdn": "https://cdn.parlameter.si/v1/parlassets",
-    "analize": "https://analize.parlameter.si/v1",
-    "data": "https://data.parlameter.si/v1",
-    "isci": "https://isci.parlameter.si",
-    "glej": "http://localhost:3000",
-    "base": "http://localhost:3066"
+  "sessionLink": {
+    "prisotnost": "/seja/prisotnost/",
+    "glasovanje": "/seja/glasovanje/",
+    "transkript": "/seja/transkript/",
+    "glasovanja": "/seja/glasovanja/"
   }
 }
