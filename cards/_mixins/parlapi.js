@@ -103,6 +103,29 @@ function parlapi() {
     patchLegislation(id, legislation) {
       return analize.patch(`/s/legislations/${id}`, legislation);
     },
+
+    // organisations
+    getParties() {
+      return data.get('/organizations/?classification=Party&limit=1000');
+    },
+    getAllOrganisations() {
+      return data.get('/organizations/?limit=1000');
+    },
+    getOrganisationSocialLinks(orgId) {
+      return data.get(`/links/?tags__name=social&organization=${orgId}`);
+    },
+    patchOrganisation(id, org) {
+      return data.patch(`/organizations/${id}`, org);
+    },
+    getOrganisationTFIDF(orgId) {
+      return analize.get(`/pg/tfidfs/?organization__id_parladata=${orgId}`);
+    },
+    patchOrganisationTFIDF(id, tfidf) {
+      return analize.patch(`/pg/tfidfs/${id}`, tfidf);
+    },
+    getOrganisationMemberships(orgId) {
+      return data.get(`memberships/?organization=${orgId}`);
+    },
   };
 }
 
