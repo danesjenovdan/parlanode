@@ -16,6 +16,7 @@
   "epa": "PZ\/PZE",
   "change": "Promjena",
   "status": "Status",
+  "result": "Rezultat",
   "age": "Dob",
   "education-level": "Stopnja izobrazbe",
   "education": "Izobrazba",
@@ -89,6 +90,7 @@
   "votings": "Glasovanja",
   "save": "Shrani",
   "generate": "Ustvari",
+  "edit-abstract": "Uredi povzetek",
   "info": {
     "title": "Info",
     "methodology": "METODOLOGIJA"
