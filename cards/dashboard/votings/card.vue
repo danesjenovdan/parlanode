@@ -191,6 +191,7 @@ export default {
     saveData(voting) {
       return () => {
         const motion = this.motions.find(m => m.id === voting.motion);
+        motion.text = voting.name;
         return Promise.all([
           this.$parlapi.patchVoting(voting.id, voting),
           this.$parlapi.patchMotion(motion.id, motion),
