@@ -4,10 +4,11 @@
       <div id="dash-votings-list">
         <dash-table
           :items="mappedItems"
+          :paginate="10"
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              <label>{{ $t('name') }}</label>
+              <label>{{ $t('name') }} <small>{{ column.voting.start_time }}</small></label>
               <input v-model="column.voting.name" class="form-control">
             </template>
             <template v-if="index === 1">
@@ -74,6 +75,7 @@
 </template>
 
 <script>
+import { orderBy } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -151,7 +153,7 @@ export default {
       this.$parlapi.getTags(),
     ])
       .then(([votings, motions, tags]) => {
-        this.votings = votings.data.results;
+        this.votings = orderBy(votings.data.results, ['start_time'], ['desc']);
         this.motions = motions.data.results;
         this.tags = tags.data.results;
       })

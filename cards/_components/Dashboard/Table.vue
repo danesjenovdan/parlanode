@@ -1,5 +1,12 @@
 <template>
   <div class="dashboard-table">
+    <slot v-if="pages > 1" v-bind="{ page, pages, per: paginate }" name="top-pager">
+      <div class="table-pager">
+        <dash-button @click="prevPage">&lt;</dash-button>
+        {{ page + 1 }} / {{ pages }}
+        <dash-button @click="nextPage">&gt;</dash-button>
+      </div>
+    </slot>
     <div v-if="columns && columns.length" class="table-headers">
       <div class="table-row">
         <div v-for="column in columns" :key="column.id" class="table-col header">
@@ -10,7 +17,7 @@
       </div>
     </div>
     <div class="table-contents">
-      <div v-for="(item, i) in items" :key="i" class="table-row">
+      <div v-for="(item, i) in activeItems" :key="item.id" class="table-row">
         <slot :item="item" :index="i" name="item">
           <div v-for="(column, c) in item" :key="c" class="table-col">
             <slot :column="column" :index="c" name="item-col">
@@ -20,12 +27,24 @@
         </slot>
       </div>
     </div>
+    <slot v-if="pages > 1" v-bind="{ page, pages, per: paginate }" name="bottom-pager">
+      <div class="table-pager">
+        <dash-button @click="prevPage">&lt;</dash-button>
+        {{ page + 1 }} / {{ pages }}
+        <dash-button @click="nextPage">&gt;</dash-button>
+      </div>
+    </slot>
   </div>
 </template>
 
 <script>
+import DashButton from 'components/Dashboard/Button.vue';
+
 export default {
   name: 'DashboardTable',
+  components: {
+    DashButton,
+  },
   props: {
     columns: {
       type: Array,
@@ -34,6 +53,36 @@ export default {
     items: {
       type: Array,
       default: () => [],
+    },
+    paginate: {
+      type: Number,
+      default: -1,
+    },
+  },
+  data() {
+    return {
+      page: 0,
+    };
+  },
+  computed: {
+    pages() {
+      return this.paginate <= 0 ? 1 : Math.ceil(this.items.length / this.paginate);
+    },
+    activeItems() {
+      if (this.pages <= 1) {
+        return this.items;
+      }
+      const begin = this.paginate * this.page;
+      const end = this.paginate * (this.page + 1);
+      return this.items.slice(begin, end);
+    },
+  },
+  methods: {
+    prevPage() {
+      this.page = Math.max(0, this.page - 1);
+    },
+    nextPage() {
+      this.page = Math.min(this.pages - 1, this.page + 1);
     },
   },
 };
@@ -71,6 +120,11 @@ export default {
           width: 100%;
           font-weight: 700;
           text-transform: uppercase;
+
+          small {
+            font-weight: 400;
+            float: right;
+          }
         }
       }
     }
@@ -79,6 +133,17 @@ export default {
   .table-headers {
     .table-row {
       border-top: 0;
+    }
+  }
+
+  .table-pager {
+    margin: 10px 0;
+    text-align: center;
+    user-select: none;
+
+    /deep/ .dash-button {
+      padding: 4px 11px 3px;
+      margin: 0 10px;
     }
   }
 }
