@@ -32,16 +32,16 @@
               <label>{{ $t('votes') }}</label>
               <div class="vote-results">
                 <div class="vote-result-number">
-                  {{ $t('vote-for') }}: {{ column.votes.za }}
+                  {{ $t('vote-for') }}: {{ column.votes.for }}
                 </div>
                 <div class="vote-result-number">
-                  {{ $t('vote-against') }}: {{ column.votes.proti }}
+                  {{ $t('vote-against') }}: {{ column.votes.against }}
                 </div>
                 <div class="vote-result-number">
-                  {{ $t('vote-abstained-plural') }}: {{ column.votes.kvorum }}
+                  {{ $t('vote-abstained-plural') }}: {{ column.votes.abstain }}
                 </div>
                 <div class="vote-result-number">
-                  {{ $t('vote-not-plural') }}: {{ column.votes.ni }}
+                  {{ $t('vote-not-plural') }}: {{ column.votes.absent }}
                 </div>
               </div>
             </template>
