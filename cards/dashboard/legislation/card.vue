@@ -96,13 +96,6 @@ export default {
     };
   },
   computed: {
-    columns() {
-      return [
-        { id: 'abstract', label: this.$t('abstract') },
-        { id: 'abstract2', label: this.$t('extra-abstract') },
-        { id: 'icon', label: this.$t('icon') },
-      ];
-    },
     mappedItems() {
       if (this.legislation) {
         return this.legislation.map(legislation => [
