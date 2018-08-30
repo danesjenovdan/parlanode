@@ -75,5 +75,11 @@ export default {
       }
     }
   }
+
+  .table-headers {
+    .table-row {
+      border-top: 0;
+    }
+  }
 }
 </style>

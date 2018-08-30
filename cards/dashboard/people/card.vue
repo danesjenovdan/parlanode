@@ -1,32 +1,29 @@
 <template>
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
-      <div id="dash-sessions-list">
+      <div id="dash-people-list">
         <dash-table
-          :columns="columns"
           :items="mappedItems"
+          :columns="columns"
         >
           <template slot="item-col" slot-scope="{ column, index }">
+            <template v-if="index === 0">
+              {{ column.person.name }}
+            </template>
             <template v-if="index === 1">
-              <dash-button @click="window.location.href = `/votings/${column.id}`">
-                {{ $t('votings') }}
+              <dash-button @click="openInfoModal(column.person)">
+                {{ $t('edit-info') }}
               </dash-button>
             </template>
-            <template v-else-if="index === 2">
-              <dash-button @click="openTfidfModal(column.session)">
+            <template v-if="index === 2">
+              <dash-button @click="openTfidfModal(column.person)">
                 TFIDF
               </dash-button>
             </template>
-            <template v-else-if="index === 3">
-              <dash-loading-button :load="updateSession(column.session)">
-                {{ $t('update-session') }}
-              </dash-loading-button>
-            </template>
-            <template v-else>{{ column.text }}</template>
           </template>
         </dash-table>
         <div v-if="error">Error: {{ error.message }}</div>
-        <div v-else-if="sessions == null" class="nalagalnik"></div>
+        <div v-else-if="people == null" class="nalagalnik"></div>
       </div>
     </dash-wrapper>
     <dash-fancy-modal
@@ -38,6 +35,27 @@
         <modal-content-tfidf :data="loadedData.data" />
       </template>
     </dash-fancy-modal>
+    <dash-fancy-modal
+      v-if="infoModalOpen && infoModalData"
+      :data="infoModalData"
+      @closed="closeInfoModal"
+    >
+      <template slot="modal-data" slot-scope="{ loadedData }">
+        {{ loadedData }}
+        <!--
+          I NEED:
+            - number of votes
+            - district
+            - no. of mandates
+            - prev status
+            - izobrazba
+            - birth date
+          NOT IN THIS API:
+            - party: se bo na organizacijah štelal
+            - social networks
+         -->
+      </template>
+    </dash-fancy-modal>
   </div>
 </template>
 
@@ -46,19 +64,17 @@ import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
 import DashButton from 'components/Dashboard/Button.vue';
-import DashLoadingButton from 'components/Dashboard/LoadingButton.vue';
 import DashFancyModal from 'components/Dashboard/FancyModal.vue';
 import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
-  name: 'DashboardSessions',
+  name: 'DashboardPeople',
   components: {
     DashWrapper,
     DashTable,
     DashButton,
     DashFancyModal,
-    DashLoadingButton,
     ModalContentTfidf,
   },
   mixins: [
@@ -67,9 +83,11 @@ export default {
   ],
   data() {
     return {
-      sessions: null,
+      people: null,
       tfidfModalOpen: false,
       tfidfModalData: null,
+      infoModalOpen: false,
+      infoModalData: null,
       error: null,
     };
   },
@@ -77,27 +95,25 @@ export default {
     columns() {
       return [
         { id: 'name', label: this.$t('name') },
-        { id: 'votings', label: this.$t('votings') },
+        { id: 'info', label: 'INFO' },
         { id: 'tfidf', label: 'TFIDF' },
-        { id: 'update', label: this.$t('update-session') },
       ];
     },
     mappedItems() {
-      if (this.sessions) {
-        return this.sessions.map(session => [
-          { text: session.name, id: session.id },
-          { id: session.id },
-          { session },
-          { session },
+      if (this.people) {
+        return this.people.map(person => [
+          { person },
+          { person },
+          { person },
         ]);
       }
       return [];
     },
   },
   mounted() {
-    this.$parlapi.getSessions()
-      .then((res) => {
-        this.sessions = res.data.results;
+    this.$parlapi.getPeople()
+      .then((people) => {
+        this.people = people.data.results;
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -106,18 +122,18 @@ export default {
       });
   },
   methods: {
-    openTfidfModal(session) {
+    openTfidfModal(person) {
       this.tfidfModalData = {
-        title: `TFIDF - ${session.name}`,
+        title: `TFIDF - ${person.name}`,
         loadData: async () => {
-          const data = await this.$parlapi.getSessionTFIDF(session.id);
+          const data = await this.$parlapi.getPersonTFIDF(person.id);
           const tfidf = data.data.results.length && data.data.results[0];
           return {
             id: tfidf.id,
             data: tfidf.data,
           };
         },
-        saveData: tfidf => this.$parlapi.patchSessionTFIDF(tfidf.id, tfidf),
+        saveData: tfidf => this.$parlapi.patchPersonTFIDF(tfidf.id, tfidf),
       };
       this.tfidfModalOpen = true;
     },
@@ -125,15 +141,27 @@ export default {
       this.tfidfModalData = null;
       this.tfidfModalOpen = false;
     },
-    updateSession(session) {
-      return () => this.$parlapi.updateSession(session.id);
+    openInfoModal(person) {
+      this.infoModalData = {
+        title: `INFO - ${person.name}`,
+        loadData: async () => person,
+        saveData: async (personInfo) => {
+          // TODO: patchPerson here since we always save to server in these popup modals
+          // patchPerson(person.id, personInfo)
+        },
+      };
+      this.infoModalOpen = true;
+    },
+    closeInfoModal() {
+      this.infoModalData = null;
+      this.infoModalOpen = false;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-#dash-sessions-list /deep/ {
+#dash-people-list /deep/ {
   .table-contents,
   .table-headers {
     .table-row {

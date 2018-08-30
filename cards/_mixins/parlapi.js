@@ -49,7 +49,7 @@ function parlapi() {
     getSessionTFIDF(sessionId) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
     },
-    patchSessionsTFIDF(id, tfidf) {
+    patchSessionTFIDF(id, tfidf) {
       return analize.patch(`/s/tfidfs/${id}`, tfidf);
     },
     updateSession(id) {
@@ -75,6 +75,15 @@ function parlapi() {
     },
     patchVotingAbstract(id, abstract) {
       return analize.patch(`/s/vote-notes/${id}`, abstract);
+    },
+    getPeople() {
+      return data.get('/persons/?limit=1000');
+    },
+    getPersonTFIDF(personId) {
+      return analize.get(`/p/tfidfs/?person__id_parladata=${personId}`);
+    },
+    patchPersonTFIDF(id, tfidf) {
+      return analize.patch(`/p/tfidfs/${id}`, tfidf);
     },
   };
 }
