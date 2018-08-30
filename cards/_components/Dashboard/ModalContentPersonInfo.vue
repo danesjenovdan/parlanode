@@ -1,20 +1,87 @@
 <template>
   <div>
-    <div>
-      <input
-        v-model="loadedData.abstractVisible"
-        :id="`abstractVisible-${loadedData.id}`"
-        type="checkbox"
-        class="checkbox"
-      >
-      <label v-t="'show'" :for="`abstractVisible-${loadedData.id}`"></label>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('number-of-votes') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.number="loadedData.person.voters" class="form-control" type="number">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('number-of-terms') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.number="loadedData.person.mandates" class="form-control" type="number">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('previous-occupation') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="loadedData.person.previous_occupation" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('birth-date') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="birthDate" class="form-control" type="date">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('education') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="loadedData.person.education" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('education-level') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="loadedData.person.education_level" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('district') }}</label>
+          </div>
+          <div class="col-md-12 small">
+            {{ loadedData.person.districts }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('social-media') }}</label>
+          </div>
+          <div class="col-md-12 small">
+            {{ loadedData.social.map(o => o.url) }}
+          </div>
+        </div>
+      </div>
     </div>
-    <vue-pell-editor
-      v-model="loadedData.note"
-      :actions="editorOptions"
-      default-paragraph-separator="p"
-      @change="onEditorChange"
-    />
   </div>
 </template>
 
@@ -27,40 +94,34 @@ export default {
       default: null,
     },
   },
-  data() {
-    return {
-    };
-  },
-  methods: {
-    onEditorChange({ editor }) {
-      const content = editor.querySelector('.pell-content');
-      let nested;
-      // eslint-disable-next-line no-cond-assign
-      while ((nested = content.querySelector('p > p, p > ul, ul > p')) != null) {
-        content.insertBefore(nested, nested.parentElement);
-      }
-
-      let children = content.childNodes;
-      for (let i = 0; i < children.length; i += 1) {
-        const child = children[i];
-        if (child.nodeType === 3 || child.tagName === 'BR') {
-          const p = document.createElement('p');
-          content.insertBefore(p, child);
-          p.appendChild(child);
-        }
-      }
-
-      children = content.childNodes;
-      for (let i = 0; i < children.length; i += 1) {
-        const child = children[i];
-        if (!child.innerHTML || !child.innerHTML.trim()) {
-          content.removeChild(child);
-        }
-      }
+  computed: {
+    birthDate: {
+      get() {
+        const birth = this.loadedData.person.birth_date || '';
+        return birth.split('T')[0];
+      },
+      set(newVal) {
+        this.loadedData.person.birth_date = `${newVal}T00:00:00`;
+      },
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  > [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+label {
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 </style>

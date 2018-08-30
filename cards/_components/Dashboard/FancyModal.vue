@@ -100,7 +100,6 @@ export default {
           .then((data) => {
             this.loadedData = data;
             this.loading = false;
-            console.log(this.loadedData);
           })
           .catch((error) => {
             this.error = error;

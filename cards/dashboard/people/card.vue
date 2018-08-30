@@ -2,6 +2,15 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-people-list">
+        <div>
+          <input
+            id="mpsOnly"
+            v-model="mpsOnly"
+            type="checkbox"
+            class="checkbox"
+          >
+          <label for="mpsOnly">{{ $t('only-mps') }}</label>
+        </div>
         <dash-table
           :items="mappedItems"
           :columns="columns"
@@ -41,31 +50,21 @@
       @closed="closeInfoModal"
     >
       <template slot="modal-data" slot-scope="{ loadedData }">
-        {{ loadedData }}
-        <!--
-          I NEED:
-            - number of votes
-            - district
-            - no. of mandates
-            - prev status
-            - izobrazba
-            - birth date
-          NOT IN THIS API:
-            - party: se bo na organizacijah štelal
-            - social networks
-         -->
+        <modal-content-person-info :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
   </div>
 </template>
 
 <script>
+import { assign, sortBy } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
 import DashButton from 'components/Dashboard/Button.vue';
 import DashFancyModal from 'components/Dashboard/FancyModal.vue';
 import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
+import ModalContentPersonInfo from 'components/Dashboard/ModalContentPersonInfo.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
@@ -76,6 +75,7 @@ export default {
     DashButton,
     DashFancyModal,
     ModalContentTfidf,
+    ModalContentPersonInfo,
   },
   mixins: [
     common,
@@ -83,6 +83,7 @@ export default {
   ],
   data() {
     return {
+      mpsOnly: true,
       people: null,
       tfidfModalOpen: false,
       tfidfModalData: null,
@@ -110,18 +111,33 @@ export default {
       return [];
     },
   },
+  watch: {
+    mpsOnly() {
+      this.fetchPeople();
+    },
+  },
   mounted() {
-    this.$parlapi.getPeople()
-      .then((people) => {
-        this.people = people.data.results;
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error(error);
-        this.error = error;
-      });
+    this.fetchPeople();
   },
   methods: {
+    fetchPeople() {
+      this.people = null;
+      this.error = null;
+
+      (
+        this.mpsOnly
+          ? this.$parlapi.getPeopleMpsOnly()
+          : this.$parlapi.getPeople()
+      )
+        .then((people) => {
+          this.people = sortBy(people.data.results, ['name']);
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.error = error;
+        });
+    },
     openTfidfModal(person) {
       this.tfidfModalData = {
         title: `TFIDF - ${person.name}`,
@@ -144,10 +160,25 @@ export default {
     openInfoModal(person) {
       this.infoModalData = {
         title: `INFO - ${person.name}`,
-        loadData: async () => person,
+        loadData: async () => {
+          const links = await this.$parlapi.getPersonSocialLinks(person.id);
+          return {
+            person: {
+              voters: person.voters,
+              mandates: person.mandates,
+              previous_occupation: person.previous_occupation,
+              education: person.education,
+              education_level: person.education_level,
+              districts: person.districts,
+              birth_date: person.birth_date,
+            },
+            social: links.data.results,
+          };
+        },
         saveData: async (personInfo) => {
-          // TODO: patchPerson here since we always save to server in these popup modals
-          // patchPerson(person.id, personInfo)
+          assign(person, personInfo.person);
+          return this.$parlapi.patchPerson(person.id, person);
+          // TODO: personInfo.social
         },
       };
       this.infoModalOpen = true;

@@ -77,13 +77,25 @@ function parlapi() {
       return analize.patch(`/s/vote-notes/${id}`, abstract);
     },
     getPeople() {
-      return data.get('/persons/?limit=1000');
+      return data.get('/persons/?limit=10000');
+    },
+    getPeopleMpsOnly() {
+      return data.get('/persons/?limit=10000&mps=true');
+    },
+    patchPerson(id, person) {
+      return data.patch(`/persons/${id}`, person);
     },
     getPersonTFIDF(personId) {
       return analize.get(`/p/tfidfs/?person__id_parladata=${personId}`);
     },
     patchPersonTFIDF(id, tfidf) {
       return analize.patch(`/p/tfidfs/${id}`, tfidf);
+    },
+    getPersonSocialLinks(personId) {
+      return data.get(`/links/?tags__name=social&person=${personId}`);
+    },
+    patchLink(id, link) {
+      return data.patch(`/links/${id}/`, link); // needs trailing slash or it doesnt work ??
     },
   };
 }
