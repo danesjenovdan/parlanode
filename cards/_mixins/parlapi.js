@@ -72,6 +72,9 @@ function parlapi() {
     getTags() {
       return data.get('/tags/?limit=10000');
     },
+    postTag(tag) {
+      return data.post('/tags/', tag);
+    },
     getVotingAbstract(votingId) {
       return analize.get(`/s/vote-notes/?id_parladata=${votingId}`);
     },
