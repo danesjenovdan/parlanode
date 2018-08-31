@@ -18,6 +18,7 @@
                 :options="tags"
                 small
               />
+              add tag to list <input v-model="addTagValue" class="form-control" @keydown.enter.prevent="addTag">
             </template>
             <template v-if="index === 2">
               <label>{{ $t('result') }}</label>
@@ -111,6 +112,7 @@ export default {
       abstractModalOpen: false,
       abstractModalData: null,
       error: null,
+      addTagValue: '',
     };
   },
   computed: {
@@ -203,6 +205,12 @@ export default {
             this.error = error;
           });
       };
+    },
+    addTag() {
+      this.tags.push({
+        name: this.addTagValue,
+      });
+      this.addTagValue = '';
     },
   },
 };

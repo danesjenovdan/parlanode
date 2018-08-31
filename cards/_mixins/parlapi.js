@@ -105,7 +105,7 @@ function parlapi() {
     },
     // legislation
     getLegislation() {
-      return analize.get('/s/legislations/?limit=10');
+      return analize.get('/s/legislations/?limit=10000');
     },
     patchLegislation(id, legislation) {
       return analize.patch(`/s/legislations/${id}/`, legislation);
