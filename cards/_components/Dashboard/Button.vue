@@ -9,7 +9,7 @@
 
 .dash-button {
   display: inline-block;
-  background-color: $funblue;
+  background-color: $first;
   color: $white;
   cursor: pointer;
   font-weight: 500;
@@ -18,7 +18,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: $funblue-hover;
+    background-color: $second;
   }
 }
 
