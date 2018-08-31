@@ -15,10 +15,6 @@
   },
   "elected-to-district--m": "Elected with {numVotes} votes in {district}",
   "elected-to-district--f": "Elected with {numVotes} votes in {district}",
-  "number-of-mandates": "Number of terms of office",
-  "previous-occupation": "Previous status",
-  "education": "Education",
   "age": "Age: {age} years",
-  "social-media": "Social media",
   "no-social-media": "no social media."
 }
