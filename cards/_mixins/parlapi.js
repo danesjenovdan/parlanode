@@ -43,6 +43,7 @@ function parlapi() {
   });
 
   return {
+    // sessions
     getSessions() {
       return data.get(`/sessions/?limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
@@ -55,6 +56,7 @@ function parlapi() {
     updateSession(id) {
       return analize.get(`/s/setMotionOfSession/${id}?key=nekijabolteskega`); // TODO: this key?
     },
+    // votings
     getVotings(sessionId) {
       return data.get(`/votes/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
@@ -76,6 +78,7 @@ function parlapi() {
     patchVotingAbstract(id, abstract) {
       return analize.patch(`/s/vote-notes/${id}`, abstract);
     },
+    // people
     getPeople() {
       return data.get('/persons/?limit=10000');
     },
@@ -97,13 +100,13 @@ function parlapi() {
     patchLink(id, link) {
       return data.patch(`/links/${id}/`, link); // needs trailing slash or it doesnt work ??
     },
+    // legislation
     getLegislation() {
       return analize.get('/s/legislations/?limit=10000');
     },
     patchLegislation(id, legislation) {
       return analize.patch(`/s/legislations/${id}`, legislation);
     },
-
     // organisations
     getParties() {
       return data.get('/organizations/?classification=Party&limit=10000');
@@ -124,7 +127,7 @@ function parlapi() {
       return analize.patch(`/pg/tfidfs/${id}`, tfidf);
     },
     getOrganisationMemberships(orgId) {
-      return data.get(`memberships/?organization=${orgId}`);
+      return data.get(`/memberships/?organization=${orgId}`);
     },
   };
 }

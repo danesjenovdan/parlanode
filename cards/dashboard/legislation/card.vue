@@ -39,6 +39,10 @@
               </dash-button>
             </template>
             <template v-if="index === 5">
+              <label>{{ $t('icon') }}</label>
+              <input v-model="column.legislation.icon" class="form-control">
+            </template>
+            <template v-if="index === 6">
               <dash-loading-button :load="saveData(column.legislation)">
                 {{ $t('save') }}
               </dash-loading-button>
@@ -120,6 +124,7 @@ export default {
           },
           { legislation },
           { legislation },
+          { legislation },
         ]);
       }
       return [];
@@ -194,7 +199,7 @@ export default {
       }
 
       .table-col:nth-child(5),
-      .table-col:nth-child(6) {
+      .table-col:nth-child(7) {
         flex-grow: 0;
         flex-basis: auto;
         justify-content: flex-end;
