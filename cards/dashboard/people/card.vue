@@ -14,6 +14,7 @@
         <dash-table
           :items="mappedItems"
           :columns="columns"
+          :paginate="50"
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
