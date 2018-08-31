@@ -51,7 +51,7 @@ function parlapi() {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
     },
     patchSessionTFIDF(id, tfidf) {
-      return analize.patch(`/s/tfidfs/${id}`, tfidf);
+      return analize.patch(`/s/tfidfs/${id}/`, tfidf);
     },
     updateSession(id) {
       return analize.get(`/s/setMotionOfSession/${id}?key=nekijabolteskega`); // TODO: this key?
@@ -61,13 +61,13 @@ function parlapi() {
       return data.get(`/votes/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
     patchVoting(id, voting) {
-      return data.patch(`/votes/${id}`, voting);
+      return data.patch(`/votes/${id}/`, voting);
     },
     getMotions(sessionId) {
       return data.get(`/motions/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
     patchMotion(id, motion) {
-      return data.patch(`/motions/${id}`, motion);
+      return data.patch(`/motions/${id}/`, motion);
     },
     getTags() {
       return data.get('/tags/?limit=10000');
@@ -76,7 +76,7 @@ function parlapi() {
       return analize.get(`/s/vote-notes/?id_parladata=${votingId}`);
     },
     patchVotingAbstract(id, abstract) {
-      return analize.patch(`/s/vote-notes/${id}`, abstract);
+      return analize.patch(`/s/vote-notes/${id}/`, abstract);
     },
     // people
     getPeople() {
@@ -86,13 +86,13 @@ function parlapi() {
       return data.get('/persons/?limit=10000&mps=true');
     },
     patchPerson(id, person) {
-      return data.patch(`/persons/${id}`, person);
+      return data.patch(`/persons/${id}/`, person);
     },
     getPersonTFIDF(personId) {
       return analize.get(`/p/tfidfs/?person__id_parladata=${personId}`);
     },
     patchPersonTFIDF(id, tfidf) {
-      return analize.patch(`/p/tfidfs/${id}`, tfidf);
+      return analize.patch(`/p/tfidfs/${id}/`, tfidf);
     },
     getPersonSocialLinks(personId) {
       return data.get(`/links/?tags__name=social&person=${personId}`);
