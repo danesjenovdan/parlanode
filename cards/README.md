@@ -11,6 +11,13 @@ Cards are stored in (sub)directories that correspond to their group/method in th
 - `data.json` - sample response of the card's data URL, used as data source instead of real API during development
 - `state.json` - sample state object, used for simulation purposes during development (in production, state object is passed as a URL parameter)
 
+## Parlassets submodule
+
+Parlameter cards rely heavily on common styles, colors, mixins etc. defined in Parlassets. Parlassets is included as a submodule so all imports work. To set it up run
+
+`git config submodule.parlassets.branch <desired branch ie. hr>`
+`git submodule update --init --recursive --remote`
+
 ## Commands
 
 Start dev server for specified card and launch browser

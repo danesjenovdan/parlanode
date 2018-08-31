@@ -35,14 +35,13 @@
       <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown
-          :items="dropdownItems.classifications"
-          :placeholder="classificationPlaceholder"
+          v-model="allClassifications"
           :alphabetise="false"
         />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown :items="dropdownItems.tags" :placeholder="tagPlaceholder" />
+        <p-search-dropdown v-model="dropdownTags" />
       </div>
       <div v-if="type === 'person'" class="filter option-party-buttons">
         <div
@@ -86,6 +85,7 @@
 </template>
 
 <script>
+import { find } from 'lodash';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import Toggle from 'components/Toggle.vue';
@@ -215,34 +215,27 @@ export default {
     };
   },
   computed: {
-    tagPlaceholder() {
-      return this.selectedTags.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedTags.length })
-        : this.$t('select-placeholder');
-    },
-    classificationPlaceholder() {
-      return this.selectedClassifications.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedClassifications.length })
-        : this.$t('select-placeholder');
-    },
-    dropdownItems() {
-      const validTags = [];
+    dropdownTags: {
+      get() {
+        const validTags = [];
 
-      this.getFilteredVotingDays(true).forEach((votingDay) => {
-        votingDay.ballots
-          .forEach((ballot) => {
-            ballot.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) {
-                validTags.push(tag);
-              }
+        this.getFilteredVotingDays(true).forEach((votingDay) => {
+          votingDay.ballots
+            .forEach((ballot) => {
+              ballot.tags.forEach((tag) => {
+                if (validTags.indexOf(tag) === -1) {
+                  validTags.push(tag);
+                }
+              });
             });
-          });
-      });
+        });
 
-      return {
-        tags: this.allTags.filter(tag => validTags.indexOf(tag.id) > -1),
-        classifications: this.allClassifications,
-      };
+        return this.allTags.filter(tag => validTags.indexOf(tag.id) > -1);
+      },
+      set(newTags) {
+        this.allTags = this.allTags
+          .map(tag => find(newTags, { id: tag.id }) || tag);
+      },
     },
     selectedTags() {
       return this.allTags

@@ -12,12 +12,12 @@
   <script src="https://unpkg.com/vue-i18n@7.8.1/dist/vue-i18n.min.js"></script>
   <script src="https://cdn.ravenjs.com/3.15.0/vue/raven.min.js"></script>
   <script>Raven.config('https://b615fce983b843c8958aedcd3a9c9d60@sentry.ilol.si/70').install()</script>
-  <script src="https://cdn.parlameter.si/v1/parlassets/js/script.js"></script>
+  <script src="{{ urls.urls.cdn }}/js/script.js"></script>
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" data-remove="false" data-concat="false">
-  <link rel="stylesheet" href="https://cdn.parlameter.si/v1/parlassets/scss/style.css" data-remove="false" data-concat="false">
+  <link rel="stylesheet" href="{{ urls.urls.cdn }}/scss/style.css" data-remove="false" data-concat="false">
 
-  <script src="https://cdn.parlameter.si/v1/parlassets/js/iframeResizer.contentWindow.min.js"></script>
+  <script :src="{{ urls.urls.cdn }}/js/iframeResizer.contentWindow.min.js"></script>
 
   <base href="https://parlameter.si/" />
   <base target="_blank" />

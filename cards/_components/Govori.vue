@@ -15,41 +15,35 @@
     <div class="filters">
       <div class="filter text-filter">
         <div v-t="'contents-search'" class="filter-label"></div>
-        <search-field v-model="textFilter" @input="searchSpeakings()" />
+        <search-field v-model="textFilter" @input="searchSpeakings(true)" />
       </div>
 
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div v-if="type === 'party'" class="filter month-dropdown">
         <div v-t="'mps'" class="filter-label"></div>
-        <search-dropdown
-          :items="allPeople"
-          :placeholder="peoplePlaceholder"
-          :alphabetise="true"
-          :select-callback="searchSpeakings"
-          :clear-callback="searchSpeakings"
+        <p-search-dropdown
+          v-model="allPeople"
+          @input="searchSpeakings"
         />
       </div>
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
 
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
-        <search-dropdown
-          :items="dropdownMonths"
-          :placeholder="monthPlaceholder"
+        <p-search-dropdown
+          v-model="allMonths"
           :alphabetise="false"
-          :select-callback="searchSpeakings"
-          :clear-callback="searchSpeakings"
+          @input="searchSpeakings"
+          @clear="searchSpeakings"
         />
       </div>
 
       <div class="filter month-dropdown">
         <div v-t="'session-type'" class="filter-label"></div>
-        <search-dropdown
-          :items="dropdownSessions"
-          :placeholder="sessionPlaceholder"
-          :alphabetise="true"
-          :select-callback="searchSpeakings"
-          :clear-callback="searchSpeakings"
+        <p-search-dropdown
+          v-model="allSessions"
+          @input="searchSpeakings"
+          @clear="searchSpeakings"
         />
       </div>
     </div>
@@ -90,7 +84,7 @@
 <script>
 import Govor from 'components/Govor.vue';
 import SearchField from 'components/SearchField.vue';
-import SearchDropdown from 'components/SearchDropdown.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
 import generateMonths from 'helpers/generateMonths';
@@ -108,7 +102,7 @@ export default {
   },
   components: {
     SearchField,
-    SearchDropdown,
+    PSearchDropdown,
     Govor,
     ScrollShadow,
   },
@@ -252,33 +246,6 @@ export default {
     selectedPeople() {
       return this.allPeople.filter(person => person.selected);
     },
-    sessionPlaceholder() {
-      return this.selectedSessions.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedSessions.length })
-        : this.$t('select-placeholder');
-    },
-    monthPlaceholder() {
-      return this.selectedMonths.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedMonths.length })
-        : this.$t('select-placeholder');
-    },
-    peoplePlaceholder() {
-      return this.selectedPeople.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedPeople.length })
-        : this.$t('select-placeholder');
-    },
-    dropdownItems() {
-      return {
-        months: this.allMonths,
-        sessions: this.allSessions,
-      };
-    },
-    dropdownMonths() {
-      return this.allMonths;
-    },
-    dropdownSessions() {
-      return this.allSessions;
-    },
     groupSpeakingDays() {
       return this.speakingDays
         .reduce((r, a) => {
@@ -323,10 +290,8 @@ export default {
     // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
   },
   methods: {
-    searchSpeakings(waitTime = 750) {
-      if (!Number.isInteger(waitTime)) {
-        waitTime = 0;
-      }
+    searchSpeakings(delay = false) {
+      const waitTime = delay ? 750 : 0;
 
       this.card.lockLoading = true;
       setTimeout(() => {

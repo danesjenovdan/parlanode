@@ -33,11 +33,27 @@
         </li>
         <li
           :key="`${item.id}2`"
-          :class="{ selected : item.selected, focused : focused === index }"
+          :class="generateItemClass(item, index)"
           @click="selectItem(item.id)"
           @mouseenter="focus(index)"
         >
-          <div class="search-dropdown-label">{{ item.label }}</div>
+          <div class="search-dropdown-label">
+            <img
+              v-if="item.image"
+              :src="item.image"
+              class="image"
+            >
+            <span
+              v-else-if="item.color"
+              :style="{background: item.color}"
+              class="color"
+            />
+            <span
+              v-else-if="item.colorClass"
+              :class="['color', item.colorClass]"
+            />
+            <span v-html="highlightLabel(item.label)" />
+          </div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
       </template>
@@ -80,21 +96,13 @@ export default {
       type: Array,
       default: null,
     },
-    items: {
+    value: {
       type: Array,
       required: true,
     },
     placeholder: {
       type: String,
-      required: true,
-    },
-    selectCallback: {
-      type: Function,
-      default: () => {},
-    },
-    clearCallback: {
-      type: Function,
-      default: () => {},
+      default: null,
     },
     single: {
       type: Boolean,
@@ -160,7 +168,7 @@ export default {
       if (this.groups) {
         return this.groups
           .map((group) => {
-            const itemsFromGroup = filterAndSort(this.items.filter(item => (
+            const itemsFromGroup = filterAndSort(this.value.filter(item => (
               group.items.indexOf(item.id) > -1
             )));
 
@@ -173,7 +181,7 @@ export default {
           })
           .reduce((a, b) => a.concat(b), []);
       }
-      return filterAndSort(this.items);
+      return filterAndSort(this.value);
     },
     selectedIds() {
       return this.filteredItems
@@ -181,12 +189,21 @@ export default {
         .map(item => item.id);
     },
     adjustedPlaceholder() {
-      if (!this.single) {
-        return this.placeholder;
+      if (this.single) {
+        const selectedItem = this.filteredItems.filter(item => item.selected)[0];
+        return selectedItem ? selectedItem.label : this.$t('select-placeholder');
       }
 
-      const selectedItem = this.filteredItems.filter(item => item.selected)[0];
-      return selectedItem ? selectedItem.label : this.placeholder;
+      if (this.placeholder) {
+        return (this.placeholder);
+      }
+
+      return this.selectedIds.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedIds.length })
+        : this.$t('select-placeholder');
+    },
+    largeItems() {
+      return this.value && (this.value[0].image || this.value[0].color || this.value[0].colorClass);
     },
   },
   watch: {
@@ -205,19 +222,23 @@ export default {
     selectItem(selectedItemId) {
       if (this.single) {
         this.clearSelection();
-        this.toggleItem(selectedItemId);
         this.toggleDropdown(false);
-      } else {
+      }
+      // make sure clearSelection propagates
+      this.$nextTick(() => {
         this.toggleItem(selectedItemId);
-      }
-
-      if (this.selectCallback) {
-        this.selectCallback(selectedItemId);
-      }
+      });
     },
     toggleItem(itemId) {
-      const clickedItem = this.items.filter(item => item.id === itemId)[0];
-      this.$set(clickedItem, 'selected', !clickedItem.selected);
+      this.$emit('select', itemId);
+      this.$emit(
+        'input',
+        JSON.parse(JSON.stringify(this.value))
+          .map(item => ({
+            ...item,
+            selected: item.id === itemId ? !item.selected : item.selected,
+          })),
+      );
     },
     toggleDropdown(state) {
       if (state === false) {
@@ -226,13 +247,13 @@ export default {
       this.active = state;
     },
     clearSelection() {
-      this.selectedIds.forEach(this.toggleItem);
-
-      if (this.clearCallback) {
-        this.clearCallback();
-      }
+      let newItems = JSON.parse(JSON.stringify(this.value));
+      newItems = newItems.map(item => ({ ...item, selected: false }));
+      this.$emit('clear');
+      this.$emit('input', newItems);
     },
     focus(index, withKeyboard) {
+      const multiplier = this.largeItems ? 2 : 1;
       this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);
 
       if (!withKeyboard) {
@@ -243,23 +264,75 @@ export default {
         .map(item => (item.groupLabel ? 1 : 0))
         .reduce((a, b) => a + b, 0);
       const optionListEl = this.$el.lastChild;
-      const focusedPosition = (this.focused + additionalOffset) * ITEM_HEIGHT;
+      const focusedPosition = (this.focused * multiplier + additionalOffset) * ITEM_HEIGHT;
 
       if (focusedPosition < optionListEl.scrollTop) {
         optionListEl.scrollTop = focusedPosition;
-      } else if (focusedPosition > optionListEl.scrollTop + ((ITEM_COUNT - 1) * ITEM_HEIGHT)) {
-        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - 1) * ITEM_HEIGHT);
+      } else if (focusedPosition > optionListEl.scrollTop
+        + ((ITEM_COUNT - multiplier) * ITEM_HEIGHT)) {
+        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - multiplier) * ITEM_HEIGHT);
       }
+    },
+    generateItemClass(item, index) {
+      return {
+        selected: item.selected,
+        focused: this.focused === index,
+        large: this.largeItems,
+      };
+    },
+    highlightLabel(label) {
+      if (this.filter === '') {
+        return label;
+      }
+
+      const regEx = new RegExp(this.filter, 'ig');
+      return label.replace(regEx, '<b>$&</b>');
     },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/helper';
 
 .up {
   border-bottom: none;
   border-top: 1px solid $grey-medium;
+}
+
+.search-dropdown-options li {
+  margin-right: 0;
+
+  &.large {
+    height: 46px;
+    line-height: 46px;
+    padding: 0 5px;
+
+    &::after { content: none; }
+
+    .image {
+      border-radius: 50%;
+      height: 37px;
+      margin-right: 3px;
+      width: 37px;
+    }
+
+    .color {
+      display: inline-block;
+      border-radius: 50%;
+      height: 16px;
+      margin: 0 13px -3px 11px;
+      width: 16px;
+    }
+  }
+
+  &.search-dropdown-group-label {
+    @include gradient('horizontal');
+    // background: linear-gradient(to left, $first, $third);
+    color: $white;
+    &::after { content: none; }
+  }
 }
 </style>

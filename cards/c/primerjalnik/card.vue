@@ -121,7 +121,7 @@
           </span>
         </p>
         <p-search-dropdown
-          :items="samePeople"
+          v-model="samePeople"
           :placeholder="samePeoplePlaceholder"
         />
       </modal>
@@ -146,7 +146,7 @@
           </span>
         </p>
         <p-search-dropdown
-          :items="differentPeople"
+          v-model="differentPeople"
           :placeholder="differentPeoplePlaceholder"
         />
       </modal>

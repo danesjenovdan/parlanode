@@ -75,7 +75,7 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            <span v-t="'number-of-mandates'"></span>: <b>{{ data.results.mandates }}</b>
+            <span v-t="'number-of-terms'"></span>: <b>{{ data.results.mandates }}</b>
           </span>
         </div>
       </div>

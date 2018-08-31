@@ -95,10 +95,10 @@ export default {
         { id: 'votes', label: 'Glasovi', additionalClass: 'optional' },
       ],
       votes: [
-        { id: 'for', label: 'za', selected: this.getSelectedOption('za') },
-        { id: 'against', label: 'proti', selected: this.getSelectedOption('proti') },
-        { id: 'abstain', label: 'vzdržani', selected: this.getSelectedOption('vzdržani') },
-        { id: 'not_present', label: 'niso', selected: this.getSelectedOption('niso') },
+        { id: 'for', label: this.$t('vote-for'), selected: this.getSelectedOption('for') },
+        { id: 'against', label: this.$t('vote-against'), selected: this.getSelectedOption('against') },
+        { id: 'abstain', label: this.$t('vote-abstained-plural'), selected: this.getSelectedOption('abstain') },
+        { id: 'not_present', label: this.$t('vote-not-plural'), selected: this.getSelectedOption('not_present') },
       ],
     };
   },
@@ -147,20 +147,20 @@ export default {
     translateOption(option, gender) {
       return {
         for: {
-          m: 'za',
-          f: 'za',
+          m: this.$t('vote-for'),
+          f: this.$t('vote-for'),
         },
         against: {
-          m: 'proti',
-          f: 'proti',
+          m: this.$t('vote-against'),
+          f: this.$t('vote-against'),
         },
         not_present: {
-          m: 'odsoten',
-          f: 'odsotna',
+          m: this.$t('not-present--m'),
+          f: this.$t('not-present--f'),
         },
         abstain: {
-          m: 'vzdržan',
-          f: 'vzdržana',
+          m: this.$t('vote-abstained--m'),
+          f: this.$t('vote-abstained--f'),
         },
       }[option][gender];
     },

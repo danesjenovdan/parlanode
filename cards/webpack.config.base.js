@@ -45,6 +45,7 @@ module.exports = (cardPath) => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
+          exclude: /node_modules/,
         },
         {
           test: /\.scss$/,

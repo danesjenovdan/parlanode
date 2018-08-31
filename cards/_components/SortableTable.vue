@@ -8,7 +8,7 @@
           :class="getColumnClasses(column)"
           @click="sortCallback(column.id)"
         >
-          {{ column.label }}
+          <span>{{ column.label }}</span>
         </div>
       </template>
     </li>
@@ -37,13 +37,13 @@
         <template v-else-if="cell && cell.ticker">
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
-        <template v-else-if="cell.html">
+        <template v-else-if="cell && cell.html">
           <div v-html="cell.html"></div>
         </template>
         <template v-else>
           <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
-          <template v-else>
-            <template v-if="cell && cell.link">
+          <template v-else-if="cell">
+            <template v-if="cell.link">
               <a :href="cell.link">
                 <img v-if="cell.image" :src="cell.image">
                 <template v-else>{{ cell.text }}</template>
@@ -121,6 +121,28 @@ export default {
 .headers {
   .column {
     color: $font-default;
+    position: relative;
+
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    &.sort span::after,
+    &:not(.sort):hover span::after {
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent $funblue;
+      border-width: 0 6px 7px;
+      position: absolute;
+      margin-left: 6px;
+      margin-top: 6px;
+      transform: rotate(0deg);
+    }
+
+    &.sort.reverse span::after {
+      transform: rotate(180deg);
+    }
   }
 }
 

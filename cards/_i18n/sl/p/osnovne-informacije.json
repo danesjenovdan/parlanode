@@ -15,10 +15,6 @@
   },
   "elected-to-district--m": "Izvoljen z {numVotes} glasovi v {district}",
   "elected-to-district--f": "Izvoljena z {numVotes} glasovi v {district}",
-  "number-of-mandates": "Število mandatov",
-  "previous-occupation": "Prejšnji status",
-  "education": "Izobrazba",
   "age": "Starost: {age} let",
-  "social-media": "Družbena omrežja",
   "no-social-media": "ni družbenih omrežij."
 }

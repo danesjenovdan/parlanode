@@ -33,9 +33,11 @@
       </div>
       <div class="name">{{ data.name }}</div>
     </div>
-    <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">
-      Izvleček
-    </div>
+    <div
+      v-t="'summary'"
+      class="izvlecek-switch visible-xs"
+      @click="showMobileExcerpt = !showMobileExcerpt"
+    />
     <excerpt
       v-if="showMobileExcerpt"
       :content="data.abstract || ''"
@@ -121,7 +123,6 @@ import common from 'mixins/common';
 import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
-import PSearchDropdown from 'components/SearchDropdown.vue';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
@@ -133,7 +134,6 @@ export default {
   components: {
     Poslanci,
     PoslanskeSkupine,
-    PSearchDropdown,
     PTab,
     PTabs,
     Excerpt,
