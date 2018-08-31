@@ -209,6 +209,7 @@ export default {
     addTag() {
       this.tags.push({
         name: this.addTagValue,
+        id: Math.random().toString(36).substring(9),
       });
       this.addTagValue = '';
     },
