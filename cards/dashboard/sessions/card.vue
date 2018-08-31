@@ -5,19 +5,23 @@
         <dash-table
           :columns="columns"
           :items="mappedItems"
+          :paginate="50"
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 1">
+              <small>{{ column.session.start_time }}</small>
+            </template>
+            <template v-if="index === 2">
               <dash-button @click="window.location.href = `/votings/${column.id}`">
                 {{ $t('votings') }}
               </dash-button>
             </template>
-            <template v-else-if="index === 2">
+            <template v-else-if="index === 3">
               <dash-button @click="openTfidfModal(column.session)">
                 TFIDF
               </dash-button>
             </template>
-            <template v-else-if="index === 3">
+            <template v-else-if="index === 4">
               <dash-loading-button :load="updateSession(column.session)">
                 {{ $t('update-session') }}
               </dash-loading-button>
@@ -42,6 +46,7 @@
 </template>
 
 <script>
+import { orderBy } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -77,6 +82,7 @@ export default {
     columns() {
       return [
         { id: 'name', label: this.$t('name') },
+        { id: 'start_time', label: '' },
         { id: 'votings', label: this.$t('votings') },
         { id: 'tfidf', label: 'TFIDF' },
         { id: 'update', label: this.$t('update-session') },
@@ -86,6 +92,7 @@ export default {
       if (this.sessions) {
         return this.sessions.map(session => [
           { text: session.name, id: session.id },
+          { session },
           { id: session.id },
           { session },
           { session },
@@ -97,7 +104,7 @@ export default {
   mounted() {
     this.$parlapi.getSessions()
       .then((res) => {
-        this.sessions = res.data.results;
+        this.sessions = orderBy(res.data.results, ['start_time'], ['desc']);
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
