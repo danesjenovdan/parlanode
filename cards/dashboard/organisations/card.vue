@@ -18,7 +18,7 @@
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              {{ column.org._name }}
+              {{ column.org._name }} ({{ column.org._acronym }})
             </template>
             <template v-if="index === 1">
               <dash-button @click="openInfoModal(column.org)">
@@ -73,7 +73,7 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import { assign, sortBy } from 'lodash';
+import { sortBy } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';

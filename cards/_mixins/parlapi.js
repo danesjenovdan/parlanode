@@ -105,10 +105,10 @@ function parlapi() {
     },
     // legislation
     getLegislation() {
-      return analize.get('/s/legislations/?limit=10000');
+      return analize.get('/s/legislations/?limit=10');
     },
     patchLegislation(id, legislation) {
-      return analize.patch(`/s/legislations/${id}`, legislation);
+      return analize.patch(`/s/legislations/${id}/`, legislation);
     },
     // organisations
     getParties() {

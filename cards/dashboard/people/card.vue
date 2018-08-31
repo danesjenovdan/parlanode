@@ -33,7 +33,7 @@
           </template>
         </dash-table>
         <div v-if="error">Error: {{ error.message }}</div>
-        <div v-else-if="people == null" class="nalagalnik"></div>
+        <div v-else-if="people === null" class="nalagalnik"></div>
       </div>
     </dash-wrapper>
     <dash-fancy-modal
