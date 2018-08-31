@@ -16,7 +16,6 @@
               <dash-array-selector
                 v-model="column.tags"
                 :options="tags"
-                single
                 small
               />
             </template>

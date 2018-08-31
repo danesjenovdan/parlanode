@@ -12,7 +12,7 @@
               <small>{{ column.session.start_time }}</small>
             </template>
             <template v-if="index === 2">
-              <dash-button @click="window.location.href = `/votings/${column.id}`">
+              <dash-button @click="navigate(`?page=votings&session=${column.id}`)">
                 {{ $t('votings') }}
               </dash-button>
             </template>
@@ -134,6 +134,9 @@ export default {
     },
     updateSession(session) {
       return () => this.$parlapi.updateSession(session.id);
+    },
+    navigate(url) {
+      window.location.href = url;
     },
   },
 };

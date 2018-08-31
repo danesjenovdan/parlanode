@@ -101,6 +101,20 @@ export default {
     };
   },
   computed: {
+    statusLabels() {
+      const obj = {};
+      this.statusOptions.forEach(([key]) => {
+        obj[key] = this.$t(`vote-result--${key}`);
+      });
+      return obj;
+    },
+    resultLabels() {
+      const obj = {};
+      this.resultOptions.forEach(([key]) => {
+        obj[key] = this.$t(`vote-result--${key}`);
+      });
+      return obj;
+    },
     mappedItems() {
       if (this.legislation) {
         return this.legislation.map(legislation => [
@@ -110,7 +124,7 @@ export default {
             id: legislation.id,
             status: this.statusOptions.map(([key, val]) => ({
               id: key,
-              label: this.$t(`vote-result--${key}`),
+              label: this.statusLabels[key],
               selected: legislation.status === val,
             })),
           },
@@ -118,7 +132,7 @@ export default {
             id: legislation.id,
             result: this.resultOptions.map(([key, val]) => ({
               id: key,
-              label: this.$t(`vote-result--${key}`),
+              label: this.resultLabels[key],
               selected: legislation.result === val,
             })),
           },
