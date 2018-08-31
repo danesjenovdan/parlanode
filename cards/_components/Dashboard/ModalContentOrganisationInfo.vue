@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="row">
           <div class="col-md-12">
             <label>{{ $t('name') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.org.name" class="form-control" type="text">
+            <input v-model="loadedData.org.name" class="form-control">
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
             <label>{{ $t('acronym') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.org.acronym" class="form-control" type="text">
+            <input v-model="loadedData.org.acronym" class="form-control">
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
             <label>{{ $t('classification') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.org.classification" class="form-control" type="text">
+            <input v-model="loadedData.org.classification" class="form-control">
           </div>
         </div>
       </div>

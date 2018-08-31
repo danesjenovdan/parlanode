@@ -1,7 +1,7 @@
 <template>
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
-      <div id="dash-people-list">
+      <div id="dash-organisations-list">
         <div>
           <input
             id="partiesOnly"
@@ -14,27 +14,25 @@
         <dash-table
           :items="mappedItems"
           :columns="columns"
+          :paginate="50"
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
               {{ column.org._name }}
             </template>
-
             <template v-if="index === 1">
               <dash-button @click="openInfoModal(column.org)">
                 {{ $t('edit-info') }}
               </dash-button>
             </template>
-
             <template v-if="(index === 2) && (column.org.classification === 'poslanska skupina')">
               <dash-button @click="openTfidfModal(column.org)">
                 TFIDF
               </dash-button>
             </template>
-
             <template v-if="(index === 3)">
               <dash-button @click="openMembershipsModal(column.org)">
-                {{ $t('memberships') }}
+                {{ $t('edit-memberships') }}
               </dash-button>
             </template>
           </template>
@@ -74,6 +72,7 @@
 </template>
 
 <script>
+/* eslint-disable no-underscore-dangle */
 import { assign, sortBy } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
@@ -119,7 +118,7 @@ export default {
         { id: 'name', label: this.$t('name') },
         { id: 'info', label: 'INFO' },
         { id: 'tfidf', label: 'TFIDF' },
-        { id: 'memberships', label: this.$t('memberships') },
+        { id: 'memberships', label: this.$t('edit-memberships') },
       ];
     },
     mappedItems() {
@@ -154,7 +153,7 @@ export default {
       )
         .then((orgs) => {
           console.log(orgs.data.results[1]);
-          this.orgs = sortBy(orgs.data.results, ['name']);
+          this.orgs = sortBy(orgs.data.results, ['_name']);
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
@@ -209,10 +208,9 @@ export default {
       this.infoModalData = null;
       this.infoModalOpen = false;
     },
-
     openMembershipsModal(org) {
       this.membershipsModalData = {
-        title: `$t('memberships') - ${org._name}`,
+        title: `${this.$t('edit-memberships')} - ${org._name}`,
         loadData: async () => {
           const data = await this.$parlapi.getOrganisationMemberships(org.id);
           console.log(data);
@@ -243,12 +241,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#dash-people-list /deep/ {
+#dash-organisations-list /deep/ {
   .table-contents,
   .table-headers {
     .table-row {
       .table-col:nth-child(1) {
         align-items: flex-start;
+        flex: 2;
+      }
+
+      .table-col:nth-child(3) {
+        flex: 0.5;
       }
     }
   }

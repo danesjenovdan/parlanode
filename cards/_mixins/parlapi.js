@@ -44,7 +44,7 @@ function parlapi() {
 
   return {
     getSessions() {
-      return data.get(`/sessions/?limit=1000&organization=${config.parliament_id}&ordering=-start_time`);
+      return data.get(`/sessions/?limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
     getSessionTFIDF(sessionId) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
@@ -56,19 +56,19 @@ function parlapi() {
       return analize.get(`/s/setMotionOfSession/${id}?key=nekijabolteskega`); // TODO: this key?
     },
     getVotings(sessionId) {
-      return data.get(`/votes/?session=${sessionId}&limit=1000&organization=${config.parliament_id}&ordering=-start_time`);
+      return data.get(`/votes/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
     patchVoting(id, voting) {
       return data.patch(`/votes/${id}`, voting);
     },
     getMotions(sessionId) {
-      return data.get(`/motions/?session=${sessionId}&limit=1000&organization=${config.parliament_id}&ordering=-start_time`);
+      return data.get(`/motions/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
     },
     patchMotion(id, motion) {
       return data.patch(`/motions/${id}`, motion);
     },
     getTags() {
-      return data.get('/tags/?limit=1000');
+      return data.get('/tags/?limit=10000');
     },
     getVotingAbstract(votingId) {
       return analize.get(`/s/vote-notes/?id_parladata=${votingId}`);
@@ -106,10 +106,10 @@ function parlapi() {
 
     // organisations
     getParties() {
-      return data.get('/organizations/?classification=Party&limit=1000');
+      return data.get('/organizations/?classification=Party&limit=10000');
     },
     getAllOrganisations() {
-      return data.get('/organizations/?limit=1000');
+      return data.get('/organizations/?limit=10000');
     },
     getOrganisationSocialLinks(orgId) {
       return data.get(`/links/?tags__name=social&organization=${orgId}`);
