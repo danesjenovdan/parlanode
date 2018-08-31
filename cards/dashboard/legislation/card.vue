@@ -4,10 +4,11 @@
       <div id="dash-legislation-list">
         <dash-table
           :items="mappedItems"
+          :paginate="50"
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              <label>{{ $t('name') }}</label>
+              <label>{{ $t('name') }} <small>{{ column.legislation.date }}</small></label>
               <input v-model="column.legislation.text" class="form-control">
             </template>
             <template v-if="index === 1">
@@ -61,7 +62,7 @@
 </template>
 
 <script>
-import { assign } from 'lodash';
+import { orderBy, assign } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -127,7 +128,7 @@ export default {
   mounted() {
     this.$parlapi.getLegislation()
       .then((res) => {
-        this.legislation = res.data.results;
+        this.legislation = orderBy(res.data.results, ['date'], ['desc']);
         this.statusOptions = res.data.status_options;
         this.resultOptions = res.data.result_options;
       })
