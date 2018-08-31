@@ -163,6 +163,8 @@ export default {
         title: `INFO - ${person.name}`,
         loadData: async () => {
           const links = await this.$parlapi.getPersonSocialLinks(person.id);
+          const facebook = links.data.results.find(link => link.tags.indexOf('fb') !== -1);
+          const twitter = links.data.results.find(link => link.tags.indexOf('tw') !== -1);
           return {
             person: {
               voters: person.voters,
@@ -173,13 +175,43 @@ export default {
               districts: person.districts,
               birth_date: person.birth_date,
             },
-            social: links.data.results,
+            socials: {
+              facebook: facebook || {
+                tags: ['social', 'fb'],
+                url: '',
+                note: 'FB',
+                name: '',
+              },
+              twitter: twitter || {
+                tags: ['social', 'tw'],
+                url: '',
+                note: 'TW',
+                name: '',
+              },
+            },
           };
         },
         saveData: async (personInfo) => {
+          const fb = personInfo.socials.facebook;
+          if (fb.url) {
+            if (fb.id) {
+              await this.$parlapi.patchLink(fb.id, fb);
+            } else {
+              const fbRes = await this.$parlapi.postLink(fb);
+              fb.id = fbRes.data.id;
+            }
+          }
+          const tw = personInfo.socials.twitter;
+          if (tw.url) {
+            if (tw.id) {
+              await this.$parlapi.patchLink(tw.id, tw);
+            } else {
+              const twRes = await this.$parlapi.postLink(tw);
+              tw.id = twRes.data.id;
+            }
+          }
           assign(person, personInfo.person);
           return this.$parlapi.patchPerson(person.id, person);
-          // TODO: personInfo.social
         },
       };
       this.infoModalOpen = true;

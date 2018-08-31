@@ -100,6 +100,9 @@ function parlapi() {
     patchLink(id, link) {
       return data.patch(`/links/${id}/`, link); // needs trailing slash or it doesnt work ??
     },
+    postLink(link) {
+      return data.post('/links/', link);
+    },
     // legislation
     getLegislation() {
       return analize.get('/s/legislations/?limit=10000');

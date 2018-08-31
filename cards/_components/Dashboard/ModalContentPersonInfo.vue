@@ -64,20 +64,20 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12">
-            <label>{{ $t('district') }}</label>
+            <label>Facebook</label>
           </div>
           <div class="col-md-12 small">
-            {{ loadedData.person.districts }}
+            <input v-model.trim="loadedData.socials.facebook.url" class="form-control">
           </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12">
-            <label>{{ $t('social-media') }}</label>
+            <label>Twitter</label>
           </div>
           <div class="col-md-12 small">
-            {{ loadedData.social.map(o => o.url) }}
+            <input v-model.trim="loadedData.socials.twitter.url" class="form-control">
           </div>
         </div>
       </div>
