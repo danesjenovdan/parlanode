@@ -7,7 +7,7 @@
             <label>{{ $t('name') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org.name" class="form-control">
+            <input v-model="loadedData.org._name" class="form-control">
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
             <label>{{ $t('acronym') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org.acronym" class="form-control">
+            <input v-model="loadedData.org._acronym" class="form-control">
           </div>
         </div>
       </div>

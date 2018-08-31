@@ -73,7 +73,7 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import { sortBy } from 'lodash';
+import { sortBy, assign } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -187,19 +187,18 @@ export default {
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
           return {
             org: {
-              name: org._name,
-              acronym: org._acronym,
+              _name: org._name,
+              _acronym: org._acronym,
               classification: org.classification,
             },
             social: links.data.results,
           };
         },
-        saveData: async (data) => {
-          // assign(org, orgInfo.org);
-          // return this.$parlapi.patchOrganisation(org.id, org);
-          // // TODO: personInfo.social
-          console.log(data);
-          return {};
+        saveData: async (orgInfo) => {
+          assign(org, orgInfo.org);
+          return this.$parlapi.patchOrganisation(org.id, org);
+          // console.log(data);
+          // return {};
         },
       };
       this.infoModalOpen = true;

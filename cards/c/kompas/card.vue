@@ -449,7 +449,6 @@ export default {
           this.drawCompass();
         });
       }
-      console.log(newback);
     },
   },
 };

@@ -121,16 +121,23 @@ function parlapi() {
       return data.get(`/links/?tags__name=social&organization=${orgId}`);
     },
     patchOrganisation(id, org) {
-      return data.patch(`/organizations/${id}`, org);
+      return data.patch(`/organizations/${id}/`, org);
     },
     getOrganisationTFIDF(orgId) {
       return analize.get(`/pg/tfidfs/?organization__id_parladata=${orgId}`);
     },
     patchOrganisationTFIDF(id, tfidf) {
-      return analize.patch(`/pg/tfidfs/${id}`, tfidf);
+      return analize.patch(`/pg/tfidfs/${id}/`, tfidf);
     },
     getOrganisationMemberships(orgId) {
       return data.get(`/memberships/?organization=${orgId}`);
+    },
+    // TODO
+    getPersonalOrganisationMemberships(pId, orgId) {
+      return data.get(`/memberships/?person__id=${pId}&organization=${orgId}`);
+    },
+    patchOrganisationMembership(membershipId, membershipData) {
+      return data.patch(`/memberships/${membershipId}/`, membershipData);
     },
   };
 }
