@@ -32,7 +32,7 @@
     padding: 5px 0;
     .column.chart-label {
       flex: none;
-      width: 136px;
+      width: 170px;
       @include respond-to(mobile) { width: 60px; }
     }
     @include respond-to(mobile) { padding: 4px 0; }
