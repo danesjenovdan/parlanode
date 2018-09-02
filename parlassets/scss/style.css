@@ -1617,18 +1617,25 @@ footer.footer {
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 300; }
-  .session-container font,
-  .session-container font.date,
-  .session-container font.datepublished {
+  .session-container .date,
+  .session-container .datepublished {
     font-weight: 300; }
-  .session-container font.date {
+  .session-container .date {
     font-size: 14px;
     font-family: 'Roboto Slab', serif; }
-  .session-container font.datepublished {
+  .session-container .datepublished {
     font-size: 14px;
     display: inline-block;
     margin-bottom: 50px;
     font-family: 'Roboto Slab', serif; }
+  .session-container .result-icon {
+    width: 28px !important;
+    height: 28px;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px; }
 
 .session-types .session-types-title {
   color: #c8c8c8;
@@ -2517,7 +2524,7 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   padding: 5px 0; }
   .party-list .labeled-chart .column.chart-label {
     flex: none;
-    width: 136px; }
+    width: 170px; }
     @media (max-width: 767px) {
       .party-list .labeled-chart .column.chart-label {
         width: 60px; } }
