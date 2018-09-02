@@ -62,10 +62,10 @@ function getBallotOption(option) {
     return 'against';
   }
   if (option === 'ni') {
-    return 'not';
+    return 'absent';
   }
   if (option === 'kvorum') {
-    return 'quorum';
+    return 'abstain';
   }
   return option;
 }
@@ -93,9 +93,9 @@ export default {
             return 'parlaicon-za';
           case 'against':
             return 'parlaicon-proti';
-          case 'not':
+          case 'absent':
             return 'parlaicon-ni';
-          case 'quorum':
+          case 'abstain':
             return 'parlaicon-kvorum';
           default:
             return '';
