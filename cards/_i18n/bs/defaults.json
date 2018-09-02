@@ -61,6 +61,12 @@
   "voted-not--f": "Ni glasovala o",
   "voted-not--m": "Ni glasoval o",
   "voted-not--plural": "Niso glasovali o",
+  "voted-abstain--f": "Glasovala KVORUM",
+  "voted-abstain--m": "Glasoval KVORUM",
+  "voted-abstain--plural": "Glasovali KVORUM",
+  "voted-absent--f": "Ni glasovala o",
+  "voted-absent--m": "Ni glasoval o",
+  "voted-absent--plural": "Niso glasovali o",
   "sort-by": "Razvrsti po",
   "sort-by--inequality": "Neenotnosti",
   "sort-by--date": "Datumu",
@@ -129,6 +135,10 @@
     "ballot--not--f": "NI glasovala za {title}",
     "ballot--quorum--m": "VZDRŽAL se je glasovanja o {title}",
     "ballot--quorum--f": "VZDRŽALA se je glasovanja o {title}",
+    "ballot--absent--m": "NI glasoval za {title}",
+    "ballot--absent--f": "NI glasovala za {title}",
+    "ballot--abstain--m": "VZDRŽAL se je glasovanja o {title}",
+    "ballot--abstain--f": "VZDRŽALA se je glasovanja o {title}",
     "speech--m": "Govoril na {session} {org}",
     "speech--f": "Govorila na {session} {org}"
   }
