@@ -1,0 +1,305 @@
+{
+  "created_for": "07.05.2018",
+  "presence": [
+    {
+      "org": {
+        "acronym": "SDS",
+        "is_coalition": false,
+        "id": 5,
+        "name": "PS Slovenska Demokratska Stranka"
+      },
+      "percent": 92
+    },
+    {
+      "org": {
+        "acronym": "DeSUS",
+        "is_coalition": true,
+        "id": 3,
+        "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      },
+      "percent": 81
+    },
+    {
+      "org": {
+        "acronym": "SMC",
+        "is_coalition": true,
+        "id": 1,
+        "name": "PS Stranka modernega centra"
+      },
+      "percent": 55
+    },
+    {
+      "org": {
+        "acronym": "PS NP",
+        "is_coalition": false,
+        "id": 109,
+        "name": "PS nepovezanih poslancev "
+      },
+      "percent": 50
+    },
+    {
+      "org": {
+        "acronym": "IMNS",
+        "is_coalition": false,
+        "id": 2,
+        "name": "PS italijanske in mad\u017earske narodne skupnosti"
+      },
+      "percent": 50
+    },
+    {
+      "org": {
+        "acronym": "SD",
+        "is_coalition": true,
+        "id": 7,
+        "name": "PS Socialni Demokrati"
+      },
+      "percent": 40
+    },
+    {
+      "org": {
+        "acronym": "NSI",
+        "is_coalition": false,
+        "id": 6,
+        "name": "PS Nova Slovenija"
+      },
+      "percent": 40
+    },
+    {
+      "org": {
+        "acronym": "Levica",
+        "is_coalition": false,
+        "id": 8,
+        "name": "PS Levica"
+      },
+      "percent": 10
+    }
+  ],
+  "created_at": "10.05.2018",
+  "tfidf": {
+    "session": {
+      "name": "63. izredna seja",
+      "date_ts": "2018-05-07T02:00:00",
+      "updated_at": "8. 5. 2018",
+      "org": {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "name": "Dr\u017eavni zbor",
+        "id": 95
+      },
+      "date": "7. 5. 2018",
+      "orgs": [
+        {
+          "acronym": "DZ",
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor",
+          "id": 95
+        }
+      ],
+      "id": 10165,
+      "in_review": false
+    },
+    "created_at": "10.05.2018",
+    "created_for": "10.05.2018",
+    "results": [
+      {
+        "term": "ilegalen",
+        "scores": { "tf": 25, "df": 903, "tf-idf": 0.02768549280177187 }
+      },
+      {
+        "term": "tajen",
+        "scores": { "tf": 32, "df": 1627, "tf-idf": 0.019668100799016593 }
+      },
+      {
+        "term": "oro\u017eje",
+        "scores": { "tf": 17, "df": 1151, "tf-idf": 0.014769765421372719 }
+      },
+      {
+        "term": "varnosten",
+        "scores": { "tf": 48, "df": 4405, "tf-idf": 0.010896708286038592 }
+      },
+      {
+        "term": "migracija",
+        "scores": { "tf": 17, "df": 1709, "tf-idf": 0.00994733762434172 }
+      },
+      {
+        "term": "policija",
+        "scores": { "tf": 40, "df": 5681, "tf-idf": 0.0070410139060024645 }
+      },
+      {
+        "term": "varnost",
+        "scores": { "tf": 50, "df": 9021, "tf-idf": 0.005542622769094336 }
+      },
+      {
+        "term": "slu\u017eba",
+        "scores": { "tf": 95, "df": 17281, "tf-idf": 0.00549736705051791 }
+      },
+      {
+        "term": "nadzor",
+        "scores": { "tf": 47, "df": 10352, "tf-idf": 0.0045401854714064915 }
+      },
+      {
+        "term": "komisija",
+        "scores": { "tf": 85, "df": 20377, "tf-idf": 0.004171369681503656 }
+      },
+      {
+        "term": "vojska",
+        "scores": { "tf": 11, "df": 3441, "tf-idf": 0.0031967451322290033 }
+      },
+      {
+        "term": "to",
+        "scores": { "tf": 244, "df": 80023, "tf-idf": 0.003049123377029104 }
+      },
+      {
+        "term": "se",
+        "scores": { "tf": 265, "df": 92676, "tf-idf": 0.0028594242306530277 }
+      },
+      {
+        "term": "tudi",
+        "scores": { "tf": 218, "df": 79574, "tf-idf": 0.0027395883077387085 }
+      },
+      {
+        "term": "biti",
+        "scores": { "tf": 201, "df": 80255, "tf-idf": 0.0025045168525325524 }
+      },
+      {
+        "term": "so",
+        "scores": { "tf": 154, "df": 63871, "tf-idf": 0.0024111098933788416 }
+      },
+      {
+        "term": "poro\u010dilo",
+        "scores": { "tf": 24, "df": 10160, "tf-idf": 0.002362204724409449 }
+      },
+      {
+        "term": "hud",
+        "scores": { "tf": 13, "df": 6055, "tf-idf": 0.0021469859620148637 }
+      },
+      {
+        "term": "tisti",
+        "scores": { "tf": 90, "df": 42551, "tf-idf": 0.0021151089281097974 }
+      },
+      {
+        "term": "za",
+        "scores": { "tf": 212, "df": 101521, "tf-idf": 0.0020882379015179126 }
+      },
+      {
+        "term": "tam",
+        "scores": { "tf": 36, "df": 18167, "tf-idf": 0.0019816150162382342 }
+      },
+      {
+        "term": "opozarjati",
+        "scores": { "tf": 19, "df": 10122, "tf-idf": 0.0018770993874728315 }
+      },
+      {
+        "term": "ali",
+        "scores": { "tf": 93, "df": 52617, "tf-idf": 0.0017674895946177091 }
+      },
+      {
+        "term": "notranji",
+        "scores": { "tf": 13, "df": 7386, "tf-idf": 0.001760086650419713 }
+      }
+    ]
+  },
+  "session": {
+    "name": "63. izredna seja",
+    "orgs": [
+      {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 95,
+        "name": "Dr\u017eavni zbor"
+      }
+    ],
+    "date": "7. 5. 2018",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 95,
+      "name": "Dr\u017eavni zbor"
+    },
+    "date_ts": "2018-05-07T02:00:00",
+    "updated_at": "8. 5. 2018",
+    "in_review": false,
+    "id": 10165
+  },
+  "motions": [
+    {
+      "session": {
+        "name": "63. izredna seja",
+        "date_ts": "2018-05-07T02:00:00",
+        "updated_at": "8. 5. 2018",
+        "org": {
+          "acronym": "DZ",
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor",
+          "id": 95
+        },
+        "date": "7. 5. 2018",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "is_coalition": false,
+            "name": "Dr\u017eavni zbor",
+            "id": 95
+          }
+        ],
+        "id": 10165,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 1,
+        "classification": "1",
+        "tags": ["Proceduralna glasovanja"],
+        "text": "Dnevni red v celoti",
+        "is_outlier": false,
+        "votes_for": 57,
+        "against": 1,
+        "result": true,
+        "motion_id": 9968,
+        "has_outliers": true,
+        "not_present": 31,
+        "epa": null
+      }
+    },
+    {
+      "session": {
+        "name": "63. izredna seja",
+        "date_ts": "2018-05-07T02:00:00",
+        "updated_at": "8. 5. 2018",
+        "org": {
+          "acronym": "DZ",
+          "is_coalition": false,
+          "name": "Dr\u017eavni zbor",
+          "id": 95
+        },
+        "date": "7. 5. 2018",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "is_coalition": false,
+            "name": "Dr\u017eavni zbor",
+            "id": 95
+          }
+        ],
+        "id": 10165,
+        "in_review": false
+      },
+      "results": {
+        "abstain": 3,
+        "classification": "11",
+        "tags": [
+          "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb"
+        ],
+        "text":
+          "Poro\u010dilo o delu Komisije za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb v letu 2017 (TAJNO) - Glasovanje o predlogu sklepa",
+        "is_outlier": false,
+        "votes_for": 32,
+        "against": 12,
+        "result": true,
+        "motion_id": 9967,
+        "has_outliers": false,
+        "not_present": 43,
+        "epa": "2774-VII"
+      }
+    }
+  ]
+}
