@@ -62,7 +62,7 @@ export default {
     },
     getSearchTermLink(term) {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
-      return `${slugs.urls.base}/${sm.landing.sessions}/${sm.sessions.search.base}/${sm.sessions.search.filter}?q=${encodeURIComponent(`"${term}"`)}`;
+      return `${slugs.urls.base}/${sm.landing.sessions}/${sm.sessions.search.base}/?q=${encodeURIComponent(`"${term}"`)}`;
     },
     getLegislationLink(legislation) {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;

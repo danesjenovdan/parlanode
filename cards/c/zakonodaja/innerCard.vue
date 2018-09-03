@@ -80,25 +80,33 @@ export default {
   computed: {
     mappedItems() {
       const mapResultIcon = {
-        sprejet: {
+        enacted: {
           icon: 'glyphicon-ok',
-          name: this.$t('vote-passed'),
+          name: this.$t('vote-result--enacted'),
         },
-        zavrnjen: {
-          icon: 'glyphicon-remove',
-          name: this.$t('vote-not-passed'),
-        },
-        vObravnavi: {
-          icon: 'v-obravnavi',
-          name: this.$t('vote-under-consideration'),
-        },
-        accepted: {
+        adopted: {
           icon: 'glyphicon-ok',
-          name: this.$t('vote-passed'),
+          name: this.$t('vote-result--adopted'),
         },
         rejected: {
           icon: 'glyphicon-remove',
-          name: this.$t('vote-not-passed'),
+          name: this.$t('vote-result--rejected'),
+        },
+        retracted: {
+          icon: 'glyphicon-remove',
+          name: this.$t('vote-result--retracted'),
+        },
+        submitted: {
+          icon: 'v-obravnavi',
+          name: this.$t('vote-result--submitted'),
+        },
+        received: {
+          icon: 'v-obravnavi',
+          name: this.$t('vote-result--received'),
+        },
+        in_procedure: {
+          icon: 'v-obravnavi',
+          name: this.$t('vote-result--in_procedure'),
         },
       };
 
@@ -107,6 +115,8 @@ export default {
         if (!mapKey) {
           mapKey = 'vObravnavi';
         }
+
+        console.log(mapKey);
 
         const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
