@@ -178,7 +178,7 @@ import { find } from 'lodash';
 
 import voteMapper from 'helpers/voteMapper';
 import stateLoader from 'helpers/stateLoader';
-import generateMonths from 'helpers/generateMonths';
+import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
 import links from 'mixins/links';
 import { partyTitle } from 'mixins/titles';
@@ -202,6 +202,7 @@ export default {
     partyTitle,
     partyHeader,
     partyOgImage,
+    generateMonths,
   ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
@@ -219,7 +220,7 @@ export default {
     const allTags = this.$options.cardData.data.all_tags
       .map(tag => ({ id: tag, label: tag, selected: false }));
 
-    const allMonths = generateMonths();
+    const allMonths = this.generateMonths(this.$t('months'));
 
     return {
       data: this.$options.cardData.data,

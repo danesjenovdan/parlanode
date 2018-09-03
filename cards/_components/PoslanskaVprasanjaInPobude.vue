@@ -57,7 +57,7 @@
 
 <script>
 import { find } from 'lodash';
-import generateMonths from 'helpers/generateMonths';
+import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
@@ -69,7 +69,7 @@ import QuestionList from 'components/QuestionList.vue';
 
 export default {
   components: { CardWrapper, PSearchDropdown, QuestionList },
-  mixins: [common, partyOverview, partyTitle],
+  mixins: [common, partyOverview, partyTitle, generateMonths],
   props: {
     cardData: {
       type: Object,
@@ -94,7 +94,7 @@ export default {
       items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
     );
 
-    let allMonths = generateMonths();
+    let allMonths = this.generateMonths(this.$t('months'));
     let allMPs = this.cardData.data.all_authors
       .map(author => ({ id: author.id, label: author.name, selected: false }));
     let allRecipients = this.cardData.data.all_recipients

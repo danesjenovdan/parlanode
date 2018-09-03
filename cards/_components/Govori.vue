@@ -87,7 +87,7 @@ import SearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 
-import generateMonths from 'helpers/generateMonths';
+import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
@@ -108,6 +108,7 @@ export default {
   },
   mixins: [
     common,
+    generateMonths,
   ],
   props: {
     cardData: {
@@ -131,7 +132,7 @@ export default {
   data() {
     // console.log(this.party);
     const textFilter = '';
-    const allMonths = generateMonths();
+    const allMonths = this.generateMonths(this.$t('months'));
     const allPeople = [];
 
     // const arrayColumn = (arr, n) => arr.map(x => x[n]);

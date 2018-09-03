@@ -141,5 +141,6 @@
     "ballot--abstain--f": "SUZDRŽALA se od glasanja o {title}",
     "speech--m": "Govorio je na {session} {org}",
     "speech--f": "Govorila je na {session} {org}"
-  }
+  },
+  "months": ["aasdjanuar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december"]
 }
