@@ -35,11 +35,12 @@
     </div>
     <div
       v-t="'summary'"
+      v-if="data.abstract"
       class="izvlecek-switch visible-xs"
       @click="showMobileExcerpt = !showMobileExcerpt"
     />
     <excerpt
-      v-if="showMobileExcerpt"
+      v-if="showMobileExcerpt && data.abstract"
       :content="data.abstract || ''"
       :main-law="excerptData"
       :documents="data.documents"
@@ -77,7 +78,7 @@
       </p-tab>
     </p-tabs>
     <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
-      <p-tab :label="$t('summary')">
+      <p-tab v-if="data.abstract" :label="$t('summary')">
         <excerpt
           :content="data.abstract || ''"
           :main-law="excerptData"
