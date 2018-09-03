@@ -2,7 +2,7 @@
   "_id": "c-kompas",
   "name": "Parlamentarni kompas",
   "type": "kompas",
-  "dataUrl": "https://analize.parlameter.si/v1/p/getCompass/",
+  "dataUrl": "{ analize }/p/getCompass/",
   "lastUpdate": "Wed Jun 27 2018 13:52:43 GMT+0200 (CEST)",
   "method": "kompas",
   "group": "c",
