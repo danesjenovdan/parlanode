@@ -375,14 +375,6 @@ export default {
     font-weight: 400;
     padding: 0;
 
-    &:empty::after {
-      color: $grey-medium;
-      content: "Ni rezultatov.";
-      left: calc(50% - 41px);
-      position: absolute;
-      top: calc(50% - 10px);
-    }
-
     .session_votes .progress.smallbar {
       height: 15px;
     }

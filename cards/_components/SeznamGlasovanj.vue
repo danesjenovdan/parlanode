@@ -23,84 +23,87 @@
     <scroll-shadow ref="shadow">
       <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
         <div class="session_voting">
-          <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
-            <div v-if="vote.is_outlier" class="fire-badge"></div>
-            <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
-            <div
-              v-if="vote.has_outliers && !vote.is_outlier"
-              class="lightning-badge"
-              style="position: absolute; left: -37px;"
-            ></div>
-            <a :href="vote.url">
-              <div class="col-md-1 icon-col">
-                <div :class="vote.accepted">
-                  <p>
-                    <i :class="vote.accepted_glyph"></i>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-11 border-left">
-                <div class="col-md-6">
-                  <div class="session_title">
+          <div v-t="'no-results'" v-if="filteredVotes.length === 0" class="no-results" />
+          <div v-else>
+            <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
+              <div v-if="vote.is_outlier" class="fire-badge"></div>
+              <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+              <div
+                v-if="vote.has_outliers && !vote.is_outlier"
+                class="lightning-badge"
+                style="position: absolute; left: -37px;"
+              ></div>
+              <a :href="vote.url">
+                <div class="col-md-1 icon-col">
+                  <div :class="vote.accepted">
                     <p>
-                      {{ getVoteText(vote) }}
+                      <i :class="vote.accepted_glyph"></i>
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="session_votes">
-                    <div class="progress smallbar">
-                      <div
-                        :style="{ width: vote.percent_votes_for + '%' }"
-                        class="progress-bar funblue"
-                      >
-                        <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
-                      </div>
-                      <div
-                        :style="{ width: vote.percent_against + '%' }"
-                        class="progress-bar fontblue"
-                      >
-                        <span class="sr-only">{{ vote.percent_against }}% votes against</span>
-                      </div>
-                      <div
-                        :style="{ width: vote.percent_abstain + '%' }"
-                        class="progress-bar noblue"
-                      >
-                        <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
-                      </div>
-                      <div
-                        :style="{ width: vote.percent_not_present + '%' }"
-                        class="progress-bar ignoreblue"
-                      >
-                        <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
-                      </div>
+                <div class="col-md-11 border-left">
+                  <div class="col-md-6">
+                    <div class="session_title">
+                      <p>
+                        {{ getVoteText(vote) }}
+                      </p>
                     </div>
-                    <div class="row">
-                      <div class="col-xs-3">
-                        {{ vote.votes_for }}
-                        <div v-t="'vote-for'" class="type"></div>
-                        <div class="indicator ney">&nbsp;</div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="session_votes">
+                      <div class="progress smallbar">
+                        <div
+                          :style="{ width: vote.percent_votes_for + '%' }"
+                          class="progress-bar funblue"
+                        >
+                          <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
+                        </div>
+                        <div
+                          :style="{ width: vote.percent_against + '%' }"
+                          class="progress-bar fontblue"
+                        >
+                          <span class="sr-only">{{ vote.percent_against }}% votes against</span>
+                        </div>
+                        <div
+                          :style="{ width: vote.percent_abstain + '%' }"
+                          class="progress-bar noblue"
+                        >
+                          <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
+                        </div>
+                        <div
+                          :style="{ width: vote.percent_not_present + '%' }"
+                          class="progress-bar ignoreblue"
+                        >
+                          <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
+                        </div>
                       </div>
-                      <div class="col-xs-3">
-                        {{ vote.against }}
-                        <div v-t="'vote-against'" class="type"></div>
-                        <div class="indicator aye">&nbsp;</div>
-                      </div>
-                      <div class="col-xs-3">
-                        {{ vote.abstain }}
-                        <div v-t="'vote-abstained'" class="type"></div>
-                        <div class="indicator not">&nbsp;</div>
-                      </div>
-                      <div class="col-xs-3">
-                        {{ vote.not_present }}
-                        <div v-t="'vote-not'" class="type"></div>
-                        <div class="indicator abstention">&nbsp;</div>
+                      <div class="row">
+                        <div class="col-xs-3">
+                          {{ vote.votes_for }}
+                          <div v-t="'vote-for'" class="type"></div>
+                          <div class="indicator ney">&nbsp;</div>
+                        </div>
+                        <div class="col-xs-3">
+                          {{ vote.against }}
+                          <div v-t="'vote-against'" class="type"></div>
+                          <div class="indicator aye">&nbsp;</div>
+                        </div>
+                        <div class="col-xs-3">
+                          {{ vote.abstain }}
+                          <div v-t="'vote-abstained'" class="type"></div>
+                          <div class="indicator not">&nbsp;</div>
+                        </div>
+                        <div class="col-xs-3">
+                          {{ vote.not_present }}
+                          <div v-t="'vote-not'" class="type"></div>
+                          <div class="indicator abstention">&nbsp;</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -277,14 +280,6 @@ export default {
 .session_voting {
   font-weight: 400;
   padding: 12px 0 0 12px;
-
-  &:empty::after {
-    color: $grey-medium;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
 
   .session_votes .progress.smallbar {
     height: 15px;

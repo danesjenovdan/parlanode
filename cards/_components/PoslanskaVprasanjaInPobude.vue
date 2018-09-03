@@ -339,14 +339,6 @@ export default {
   margin-top: 18px;
   position: relative;
 
-  &:empty::after {
-    color: $grey-medium;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
-
   .date {
     font-weight: 500;
   }
