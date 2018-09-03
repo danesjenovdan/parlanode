@@ -156,13 +156,13 @@
     "speeches": "govori",
     "data_published": "objavljeni podaci",
     "in_review": "u pregledu",
-    "vote-result--enacted": "Izvršen",
-    "vote-result--submitted": "Oddan",
-    "vote-result--rejected": "Zavrnjen",
-    "vote-result--retracted": "Umaknjen",
-    "vote-result--adopted": "Sprejet",
-    "vote-result--received": "Prejet",
-    "vote-result--in_procedure": "V obravnavi",
+    "vote-result--enacted": "Donesen",
+    "vote-result--submitted": "Dostavljeno radi informiranja",
+    "vote-result--rejected": "Odbijen",
+    "vote-result--retracted": "Povučen",
+    "vote-result--adopted": "Prihvaćen",
+    "vote-result--received": "Prima se na znanje",
+    "vote-result--in_procedure": "U proceduri",
     "legislation": "zakonodavstvo",
     "other_votings": "druga glasanja",
     "transcripts": "transkripti",
@@ -170,6 +170,6 @@
     "state_two": "Hrvatski sabor ne objavljuje nikakve podatke o sjednicama i radu Predsjedništva Sabora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Poruči im, to moraju promijeniti.",
     "state_one_dz": "Podaci o glasanju na izabranoj sjednici na žalost još nisu dostupni.",
     "state_five": "Transkripti govora izabrane sjednice na žalost još nisu dostupni on-line.",
-    "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!"
+    "tools_intro": "CROATIAN TRANSLATION HERE"
   }
 }
