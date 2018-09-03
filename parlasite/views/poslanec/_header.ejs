@@ -7,7 +7,7 @@ body {
 <% } %>
 
 <%
-  var classPrefix = party && party.acronym.toLowerCase().replace(/ /g, '_');
+  var classPrefix = party && party.acronym.toLowerCase().replace(/[ +,]/g, '_');
   var classes = classPrefix && ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
 %>
 
