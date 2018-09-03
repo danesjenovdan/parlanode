@@ -19,7 +19,7 @@
       </div>
     </div>
     <div v-else class="no-abstract">
-      <p>Za ta zakon žal nimamo povzetka.</p>
+      <p v-t="'no-abstract'"></p>
     </div>
     <div
       v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)"
