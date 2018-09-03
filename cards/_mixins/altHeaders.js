@@ -27,7 +27,7 @@ export const partyHeader = {
 
       return {
         circleText: party.acronym,
-        circleClass: `${party.acronym.replace(/ /g, '_').toLowerCase()}-background`,
+        circleClass: `${party.acronym.replace(/[ +,]/g, '_').toLowerCase()}-background`,
         heading: party.name,
         subheading: `${party.acronym} | ${coalitionText}`,
         alternative: cardData.cardData.altHeader === 'true',

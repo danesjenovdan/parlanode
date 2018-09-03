@@ -102,7 +102,7 @@ function chart(rawData, component) {
 
     g.append('path')
       .attr('d', arc)
-      .attr('class', d => `${parties[d.data.party].acronym.replace(/ /g, '_').replace(/[+,]/g, '').toLowerCase()}-fill`);
+      .attr('class', d => `${parties[d.data.party].acronym.replace(/[ +,]/g, '_').toLowerCase()}-fill`);
 
     const labels = svg.selectAll('text').data(piedata)
       .enter()
