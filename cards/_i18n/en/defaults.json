@@ -124,8 +124,10 @@
   "question": {
     "asked--m": "Asked question {title} that requires answer from {recipient}.",
     "asked--f": "Asked question {title} that requires answer from {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
     "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
-    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}."
+    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Voted FOR {title}",
