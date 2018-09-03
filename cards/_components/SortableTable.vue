@@ -12,7 +12,7 @@
         </div>
       </template>
     </li>
-    <div v-if="items.length === 0" class="empty-dataset">Brez rezultatov.</div>
+    <div v-t="'no-results'" v-if="items.length === 0" class="empty-dataset"></div>
     <li v-for="(item, k) in items" :key="k" class="item">
       <div
         v-for="(cell, i) in item"
