@@ -12,12 +12,15 @@
         class="funblue-light-hover"
         place="name"
       >{{ question.person.name }}</a>
-      <a
-        :href="question.url"
-        target="_blank"
-        class="funblue-light-hover"
-        place="title"
-      >{{ question.title }}</a>
+      <span place="title">
+        <a
+          v-if="question.url"
+          :href="question.url"
+          target="_blank"
+          class="funblue-light-hover"
+        >{{ question.title }}</a>
+        <strong v-else>{{ question.title }}</strong>
+      </span>
       <span place="recipient">{{ question.recipient_text }}</span>
     </i18n>
   </div>
@@ -74,7 +77,11 @@ export default {
     margin-right: 10px;
 
     a {
-      font-weight: normal;
+      font-weight: 400;
+    }
+
+    strong {
+      font-weight: 400;
     }
   }
 }
