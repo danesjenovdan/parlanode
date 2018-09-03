@@ -146,7 +146,7 @@ export default {
         namedGroups.push({
           id: group.id,
           acronym: group.acronym,
-          color: group.acronym.toLowerCase().replace(/ /g, '_'),
+          color: group.acronym.toLowerCase().replace(/[ +,]/g, '_'),
           name: group.acronym,
         });
       }

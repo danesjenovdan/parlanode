@@ -103,7 +103,7 @@ export default {
         id: group[0].person.party.acronym,
         label: group[0].person.party.acronym,
         selected: false,
-        colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/ /g, '_')}-background`,
+        colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
       };
     });
 
@@ -369,7 +369,7 @@ export default {
         .data(this.partyAcronyms)
         .enter()
         .append('g')
-        .attr('id', (d, i) => `kompasgroup${d[0].person.party.acronym.replace(/ /g, '_')}`);
+        .attr('id', (d, i) => `kompasgroup${d[0].person.party.acronym.replace(/[ +,]/g, '_')}`);
 
       const defs = svg.append('defs');
 
@@ -410,7 +410,7 @@ export default {
       // tooltip end
 
       this.partyAcronyms.forEach((group) => {
-        svg.select(`#kompasgroup${group[0].person.party.acronym.replace(/ /g, '_')}`)
+        svg.select(`#kompasgroup${group[0].person.party.acronym.replace(/[ +,]/g, '_')}`)
           .classed('partygroup', true)
           .selectAll('.dot')
           .data(group)
@@ -420,8 +420,8 @@ export default {
           .attr('id', d => `_${d.person.id}`)
           .attr('r', 3)
           .attr('transform', d => `translate(${this.x(d.score.vT1)},${this.y(d.score.vT2)})`)
-          .classed(`${group[0].person.party.acronym.replace(/ /g, '_').toLowerCase()}-fill`, true)
-          .classed(`${group[0].person.party.acronym.replace(/ /g, '_').toLowerCase()}-stroke`, true)
+          .classed(`${group[0].person.party.acronym.replace(/[ +,]/g, '_').toLowerCase()}-fill`, true)
+          .classed(`${group[0].person.party.acronym.replace(/[ +,]/g, '_').toLowerCase()}-stroke`, true)
           // .style('stroke', function(
           .on('click', (d) => {
             this.selectCallback(d.person.id);

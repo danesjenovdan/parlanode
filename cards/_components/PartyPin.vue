@@ -42,7 +42,7 @@ export default {
       return this.getPartyLink(this.party);
     },
     partyCssClass() {
-      return `${this.party.acronym.toLowerCase().replace(/ /g, '_')}-background`;
+      return `${this.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`;
     },
   },
 };
