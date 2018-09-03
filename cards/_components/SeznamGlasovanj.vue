@@ -33,7 +33,8 @@
                 class="lightning-badge"
                 style="position: absolute; left: -37px;"
               ></div>
-              <a :href="vote.url">
+              <div v-if="!vote.has_votes" class="hand-badge"></div>
+              <component :is="vote.has_votes ? 'a' : 'div'" :href="vote.has_votes && vote.url" class="show clearfix">
                 <div class="col-md-1 icon-col">
                   <div :class="vote.accepted">
                     <p>
@@ -102,7 +103,7 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </component>
             </div>
           </div>
         </div>
@@ -221,6 +222,9 @@ export default {
         if (this.data.text && e.text.indexOf(this.data.text) === 0) {
           e.short_text = e.text.slice(this.data.text.length).replace(/^[\s-]*/, '');
         }
+
+        // if has_votes is undefined assume we always have votes
+        e.has_votes = typeof e.has_votes === 'boolean' ? e.has_votes : true;
 
         return e;
       });
@@ -393,10 +397,9 @@ export default {
   margin-bottom: 15px;
 }
 
-.single_voting:hover {
-  background-color: $link-hover-background;
-
-  a {
+.single_voting {
+  a:hover {
+    background-color: $link-hover-background;
     text-decoration: none;
     color: $link;
   }
