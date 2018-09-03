@@ -85,12 +85,8 @@ export default {
       .scale(y)
       .orient('left')
       .tickSize(0);
-    
-    const zoomBeh = d3.behavior.zoom()
-      .x(x)
-      .y(y)
-      .scaleExtent([0.6, 10])
-      .on('zoom', this.zoom);
+
+    const zoomBeh = null;
 
     const people = kompasData.map((p) => {
       return {
@@ -161,6 +157,12 @@ export default {
   },
 
   mounted() {
+    this.zoomBeh = d3.behavior.zoom()
+      .x(this.x)
+      .y(this.y)
+      .scaleExtent([0.6, 10])
+      .on('zoom', this.zoom);
+
     this.drawCompass();
   },
 
