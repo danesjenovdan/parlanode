@@ -57,39 +57,15 @@ export default {
 
     const partyAcronyms = this.groupBy(kompasData, item => [item.person.party.acronym]);
 
-    const x = d3.scale.linear()
-      .range([0, width])
-      .nice();
-
-    const y = d3.scale.linear()
-      .range([height, 0])
-      .nice();
-
-    const xMax = d3.max(kompasData, d => d.score.vT1) * 1.05;
-    let xMin = d3.min(kompasData, d => d.score.vT1) > 0;
-    xMin = xMin > 0 ? 0 : xMin;
-    const yMax = d3.max(kompasData, d => d.score.vT2) * 1.05;
-    let yMin = d3.min(kompasData, d => d.score.vT2);
-    yMin = yMin > 0 ? 0 : yMin;
-
-    x.domain([xMin, xMax]);
-    y.domain([yMin, yMax]);
-
-    const xAxis = d3.svg.axis()
-      .scale(x)
-      .orient('bottom')
-      .tickSize(0);
-
-    const yAxis = d3.svg.axis()
-      .scale(y)
-      .orient('left')
-      .tickSize(0);
-    
-    const zoomBeh = d3.behavior.zoom()
-      .x(x)
-      .y(y)
-      .scaleExtent([0.6, 10])
-      .on('zoom', this.zoom);
+    const x = null;
+    const y = null;
+    const xMax = null;
+    const yMax = null;
+    const xMin = null;
+    const yMin = null;
+    const xAxis = null;
+    const yAxis = null;
+    const zoomBeh = null;
 
     const people = kompasData.map((p) => {
       return {
@@ -160,6 +136,40 @@ export default {
   },
 
   mounted() {
+    this.x = d3.scale.linear()
+      .range([0, this.width])
+      .nice();
+
+    this.y = d3.scale.linear()
+      .range([this.height, 0])
+      .nice();
+
+    this.xMax = d3.max(this.kompasData, d => d.score.vT1) * 1.05;
+    this.xMin = d3.min(this.kompasData, d => d.score.vT1) > 0;
+    this.xMin = this.xMin > 0 ? 0 : this.xMin;
+    this.yMax = d3.max(this.kompasData, d => d.score.vT2) * 1.05;
+    this.yMin = d3.min(this.kompasData, d => d.score.vT2);
+    this.yMin = this.yMin > 0 ? 0 : this.yMin;
+
+    this.x.domain([this.xMin, this.xMax]);
+    this.y.domain([this.yMin, this.yMax]);
+
+    this.xAxis = d3.svg.axis()
+      .scale(this.x)
+      .orient('bottom')
+      .tickSize(0);
+
+    this.yAxis = d3.svg.axis()
+      .scale(this.y)
+      .orient('left')
+      .tickSize(0);
+
+    this.zoomBeh = d3.behavior.zoom()
+      .x(this.x)
+      .y(this.y)
+      .scaleExtent([0.6, 10])
+      .on('zoom', this.zoom);
+
     this.drawCompass();
   },
 
