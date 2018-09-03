@@ -1,19 +1,19 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext");
-.hds_ + _hsls_ + _hdssb-background {
+.hds___hsls___hdssb-background {
   background: #258498; }
 
-.hds_ + _hsls_ + _hdssb-fill {
+.hds___hsls___hdssb-fill {
   fill: #258498; }
 
-.hds_ + _hsls_ + _hdssb-stroke {
+.hds___hsls___hdssb-stroke {
   stroke: #258498; }
 
-.hds_ + _hsls_ + _hdssb-border {
+.hds___hsls___hdssb-border {
   border: 2px solid #258498; }
 
-.hds_ + _hsls_ + _hdssb-hover:hover {
+.hds___hsls___hdssb-hover:hover {
   background: #258498;
   color: #ffffff; }
 
@@ -49,19 +49,19 @@
   background: #5ca6b6;
   color: #ffffff; }
 
-.bm_365_ + _reformisti_ + _nezavisni-background {
+.bm_365___reformisti___nezavisni-background {
   background: #77b7c5; }
 
-.bm_365_ + _reformisti_ + _nezavisni-fill {
+.bm_365___reformisti___nezavisni-fill {
   fill: #77b7c5; }
 
-.bm_365_ + _reformisti_ + _nezavisni-stroke {
+.bm_365___reformisti___nezavisni-stroke {
   stroke: #77b7c5; }
 
-.bm_365_ + _reformisti_ + _nezavisni-border {
+.bm_365___reformisti___nezavisni-border {
   border: 2px solid #77b7c5; }
 
-.bm_365_ + _reformisti_ + _nezavisni-hover:hover {
+.bm_365___reformisti___nezavisni-hover:hover {
   background: #77b7c5;
   color: #ffffff; }
 
@@ -113,35 +113,35 @@
   background: #caebf2;
   color: #ffffff; }
 
-.glas_ + _hsu-background {
+.glas___hsu-background {
   background: #d1c9cf; }
 
-.glas_ + _hsu-fill {
+.glas___hsu-fill {
   fill: #d1c9cf; }
 
-.glas_ + _hsu-stroke {
+.glas___hsu-stroke {
   stroke: #d1c9cf; }
 
-.glas_ + _hsu-border {
+.glas___hsu-border {
   border: 2px solid #d1c9cf; }
 
-.glas_ + _hsu-hover:hover {
+.glas___hsu-hover:hover {
   background: #d1c9cf;
   color: #ffffff; }
 
-.živi_zid_ + _snaga-background {
+.živi_zid___snaga-background {
   background: #d9a7ac; }
 
-.živi_zid_ + _snaga-fill {
+.živi_zid___snaga-fill {
   fill: #d9a7ac; }
 
-.živi_zid_ + _snaga-stroke {
+.živi_zid___snaga-stroke {
   stroke: #d9a7ac; }
 
-.živi_zid_ + _snaga-border {
+.živi_zid___snaga-border {
   border: 2px solid #d9a7ac; }
 
-.živi_zid_ + _snaga-hover:hover {
+.živi_zid___snaga-hover:hover {
   background: #d9a7ac;
   color: #ffffff; }
 
@@ -177,19 +177,19 @@
   background: #e86467;
   color: #ffffff; }
 
-.ids_ + _pgs_ + _ri-background {
+.ids___pgs___ri-background {
   background: #ef4345; }
 
-.ids_ + _pgs_ + _ri-fill {
+.ids___pgs___ri-fill {
   fill: #ef4345; }
 
-.ids_ + _pgs_ + _ri-stroke {
+.ids___pgs___ri-stroke {
   stroke: #ef4345; }
 
-.ids_ + _pgs_ + _ri-border {
+.ids___pgs___ri-border {
   border: 2px solid #ef4345; }
 
-.ids_ + _pgs_ + _ri-hover:hover {
+.ids___pgs___ri-hover:hover {
   background: #ef4345;
   color: #ffffff; }
 
@@ -2393,9 +2393,9 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     color: #ffffff; }
   .party-button:hover {
     color: #ffffff; }
-  .party-button.hds_ + _hsls_ + _hdssb {
+  .party-button.hds___hsls___hdssb {
     border-bottom-color: #258498; }
-    .party-button.hds_ + _hsls_ + _hdssb.selected {
+    .party-button.hds___hsls___hdssb.selected {
       background-color: #258498; }
   .party-button.nhr {
     border-bottom-color: #4095a7; }
@@ -2405,9 +2405,9 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     border-bottom-color: #5ca6b6; }
     .party-button.hns.selected {
       background-color: #5ca6b6; }
-  .party-button.bm_365_ + _reformisti_ + _nezavisni {
+  .party-button.bm_365___reformisti___nezavisni {
     border-bottom-color: #77b7c5; }
-    .party-button.bm_365_ + _reformisti_ + _nezavisni.selected {
+    .party-button.bm_365___reformisti___nezavisni.selected {
       background-color: #77b7c5; }
   .party-button.sdss {
     border-bottom-color: #93c8d4; }
@@ -2421,13 +2421,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     border-bottom-color: #caebf2; }
     .party-button.hdz.selected {
       background-color: #caebf2; }
-  .party-button.glas_ + _hsu {
+  .party-button.glas___hsu {
     border-bottom-color: #d1c9cf; }
-    .party-button.glas_ + _hsu.selected {
+    .party-button.glas___hsu.selected {
       background-color: #d1c9cf; }
-  .party-button.živi_zid_ + _snaga {
+  .party-button.živi_zid___snaga {
     border-bottom-color: #d9a7ac; }
-    .party-button.živi_zid_ + _snaga.selected {
+    .party-button.živi_zid___snaga.selected {
       background-color: #d9a7ac; }
   .party-button.manjina {
     border-bottom-color: #e0868a; }
@@ -2437,9 +2437,9 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     border-bottom-color: #e86467; }
     .party-button.hss.selected {
       background-color: #e86467; }
-  .party-button.ids_ + _pgs_ + _ri {
+  .party-button.ids___pgs___ri {
     border-bottom-color: #ef4345; }
-    .party-button.ids_ + _pgs_ + _ri.selected {
+    .party-button.ids___pgs___ri.selected {
       background-color: #ef4345; }
   .party-button.most {
     border-bottom-color: #f72122; }
@@ -2461,13 +2461,13 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     border-bottom-color: #afe1eb; }
     .party-button.ni.selected {
       background-color: #afe1eb; }
-  .party-button.hds_ + _hsls_ + _hdssb:hover {
+  .party-button.hds___hsls___hdssb:hover {
     background-color: rgba(37, 132, 152, 0.7); }
   .party-button.nhr:hover {
     background-color: rgba(64, 149, 167, 0.7); }
   .party-button.hns:hover {
     background-color: rgba(92, 166, 182, 0.7); }
-  .party-button.bm_365_ + _reformisti_ + _nezavisni:hover {
+  .party-button.bm_365___reformisti___nezavisni:hover {
     background-color: rgba(119, 183, 197, 0.7); }
   .party-button.sdss:hover {
     background-color: rgba(147, 200, 212, 0.7); }
@@ -2475,15 +2475,15 @@ div[id^="orodja-"] .party-list-generator .analyses li {
     background-color: rgba(174, 217, 227, 0.7); }
   .party-button.hdz:hover {
     background-color: rgba(202, 235, 242, 0.7); }
-  .party-button.glas_ + _hsu:hover {
+  .party-button.glas___hsu:hover {
     background-color: rgba(209, 201, 207, 0.7); }
-  .party-button.živi_zid_ + _snaga:hover {
+  .party-button.živi_zid___snaga:hover {
     background-color: rgba(217, 167, 172, 0.7); }
   .party-button.manjina:hover {
     background-color: rgba(224, 134, 138, 0.7); }
   .party-button.hss:hover {
     background-color: rgba(232, 100, 103, 0.7); }
-  .party-button.ids_ + _pgs_ + _ri:hover {
+  .party-button.ids___pgs___ri:hover {
     background-color: rgba(239, 67, 69, 0.7); }
   .party-button.most:hover {
     background-color: rgba(247, 33, 34, 0.7); }
