@@ -1,23 +1,26 @@
 <template>
   <scroll-shadow ref="shadow">
     <div class="questions date-list" @scroll="$refs.shadow.check($event.currentTarget)">
-      <div v-for="day in questionDays" :key="day.date">
-        <div class="date">{{ day.date }}</div>
-        <template v-if="day.questions">
-          <question
-            v-for="question in day.questions"
-            :key="question.id"
-            :question="question"
-            :show-author="showAuthor"
-          />
-        </template>
-        <template v-else-if="day.events">
-          <event
-            v-for="(event, i) in day.events"
-            :key="`${day.date}-${i}`"
-            :event="event"
-          />
-        </template>
+      <div v-t="'no-results'" v-if="questionDays.length === 0" class="no-results" />
+      <div v-else>
+        <div v-for="day in questionDays" :key="day.date">
+          <div class="date">{{ day.date }}</div>
+          <template v-if="day.questions">
+            <question
+              v-for="question in day.questions"
+              :key="question.id"
+              :question="question"
+              :show-author="showAuthor"
+            />
+          </template>
+          <template v-else-if="day.events">
+            <event
+              v-for="(event, i) in day.events"
+              :key="`${day.date}-${i}`"
+              :event="event"
+            />
+          </template>
+        </div>
       </div>
     </div>
   </scroll-shadow>
@@ -59,14 +62,6 @@ export default {
   max-height: 100%;
   position: relative;
   height: 518px;
-
-  &:empty::after {
-    color: $grey-medium;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
 
   .date {
     font-weight: 500;

@@ -65,20 +65,23 @@
         class="votes stickinme date-list"
         @scroll="$refs.shadow.check($event.currentTarget)"
       >
-        <template v-for="votingDay in filteredVotingDays">
-          <div
-            v-if="type === 'person' || selectedSort === 'date'"
-            :key="`${votingDay.date}-1`"
-            class="date"
-          >
-            {{ votingDay.date }}
-          </div>
-          <div :key="`${votingDay.date}-2`">
-            <div v-for="ballot in votingDay.ballots" :key="ballot.vote_id">
-              <ballot :ballot="ballot" type="person" />
+        <div v-t="'no-results'" v-if="filteredVotingDays.length === 0" class="no-results" />
+        <div v-else>
+          <template v-for="votingDay in filteredVotingDays">
+            <div
+              v-if="type === 'person' || selectedSort === 'date'"
+              :key="`${votingDay.date}-1`"
+              class="date"
+            >
+              {{ votingDay.date }}
             </div>
-          </div>
-        </template>
+            <div :key="`${votingDay.date}-2`">
+              <div v-for="ballot in votingDay.ballots" :key="ballot.vote_id">
+                <ballot :ballot="ballot" type="person" />
+              </div>
+            </div>
+          </template>
+        </div>
       </div>
     </scroll-shadow>
   </card-wrapper>
@@ -427,14 +430,6 @@ export default {
   // list-style: none;
   overflow-y: auto;
   position: relative;
-
-  &:empty::after {
-    color: $grey-medium;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
 
   ul {
     list-style: none;
