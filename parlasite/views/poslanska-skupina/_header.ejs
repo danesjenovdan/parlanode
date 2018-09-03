@@ -1,5 +1,5 @@
 <%
-  var classPrefix = party.acronym.toLowerCase().replace(/ /g, '_');
+  var classPrefix = party.acronym.toLowerCase().replace(/[ +,]/g, '_');
   var classes = ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
 %>
 
