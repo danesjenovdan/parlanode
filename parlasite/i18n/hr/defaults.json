@@ -55,7 +55,7 @@
   },
   "search_popup": {
     "title": "Kako pretraživati?",
-    "first_paragraph": "Za zadani način pretraživanja postavljeno je široko podudaranje (kao rezultat se pojavljuju svi govori koji sadrže bilo koju od riječi iz pretraživanja). Među rezultatima pretrage se zbog preklapanja prikazuju svi gramatički oblici iste vrste riječi. Ovo se odnosi na sva, osim na pretraživanje točnog podudaranja („navodnici“).",
+    "first_paragraph": "Za zadani način pretraživanja postavljeno je široko podudaranje (kao rezultat se pojavljuju svi govori koji sadrže bilo koju od riječi iz pretraživanja). Među rezultatima pretrage prikazuju se svi gramatički oblici iste vrste riječi. Ovo se odnosi na sva, osim na pretraživanje točnog podudaranja („navodnici“).",
     "second_paragraph": "Za napredno pretraživanje mogu se koristiti sljedeći operatori:",
     "operators": [
       {
@@ -85,7 +85,7 @@
         "example_text": "Klub !zastupnica",
         "example_result_title": "Rezultati pretrage:",
         "example_result_text": "Klub zastupnica,<br> zastupnica kluba,<br> zastupnica manjina",
-        "example_excluded_result_title": "Rezultati pretrage",
+        "example_excluded_result_title": "Nije rezultat pretrage",
         "example_excluded_result_text": "Zastupnički mandat"
       },
       {
@@ -156,13 +156,20 @@
     "speeches": "govori",
     "data_published": "objavljeni podaci",
     "in_review": "u pregledu",
-    "under_consideration": "u čitanju",
+    "vote-result--enacted": "Donesen",
+    "vote-result--submitted": "Dostavljeno radi informiranja",
+    "vote-result--rejected": "Odbijen",
+    "vote-result--retracted": "Povučen",
+    "vote-result--adopted": "Prihvaćen",
+    "vote-result--received": "Prima se na znanje",
+    "vote-result--in_procedure": "U proceduri",
     "legislation": "zakonodavstvo",
     "other_votings": "druga glasanja",
     "transcripts": "transkripti",
     "state_one": "Hrvatski sabor ne objavljuje podatke o glasanju na sjednicama radnih tijela. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Poruči im</a>, to moraju promijeniti.",
     "state_two": "Hrvatski sabor ne objavljuje nikakve podatke o sjednicama i radu Predsjedništva Sabora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Poruči im, to moraju promijeniti.",
     "state_one_dz": "Podaci o glasanju na izabranoj sjednici na žalost još nisu dostupni.",
-    "state_five": "Transkripti govora izabrane sjednice na žalost još nisu dostupni on-line."
+    "state_five": "Transkripti govora izabrane sjednice na žalost još nisu dostupni on-line.",
+    "tools_intro": "CROATIAN TRANSLATION HERE"
   }
 }
