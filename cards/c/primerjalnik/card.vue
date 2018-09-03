@@ -95,10 +95,10 @@
           <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
           <time-chart v-else :data="data" />
         </p-tab>
-        <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
+        <!-- <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
           <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
           <bar-chart v-else :data="barChartData" show-numbers />
-        </p-tab>
+        </p-tab> -->
       </p-tabs>
 
       <modal
