@@ -180,7 +180,7 @@ export default {
     Object.keys(this.cardData.data.classifications).forEach((classificationKey) => {
       allClassifications.push({
         id: classificationKey,
-        label: this.cardData.data.classifications[classificationKey],
+        label: this.$t(this.cardData.data.classifications[classificationKey]),
         selected: false,
       });
     });

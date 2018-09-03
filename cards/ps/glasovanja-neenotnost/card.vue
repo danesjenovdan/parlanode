@@ -294,7 +294,7 @@ export default {
         for (const classificationKey in response.classifications) {
           this.allClassifications.push({
             id: classificationKey,
-            label: response.classifications[classificationKey],
+            label: this.$t(response.classifications[classificationKey]),
             selected: false,
           });
         }

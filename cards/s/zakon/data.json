@@ -1,20 +1,18 @@
 {
-  "status": "adopted",
+  "status": "enacted",
   "created_for": "10.05.2018",
   "classification": "zakon",
   "tags": [],
-  "text": "Prijedlog zakona o provedbi Uredbe (EU) 2017/745 o medicinskim proizvodima i Uredbe (EU) 2017/746 o in vitro dijagnostičkim medicinskim proizvodima",
+  "text": "Prijedlog zakona o potvr\u0111ivanju Okvirnog sporazuma izme\u0111u \u0160vicarskog saveznog vije\u0107a i Vlade Republike Hrvatske o provedbi \u0160vicarsko-hrvatskog programa suradnje na smanjenju ekonomskih i socijalnih nejednakosti unutar pro\u0161irene Europske unije, s Kona\u010dnim prijedlogom zakona",
   "abstract": null,
   "session": {
     "name": "8",
-    "orgs": [
-      {
-        "acronym": "sabor",
-        "is_coalition": false,
-        "id": 199,
-        "name": "Sabor"
-      }
-    ],
+    "orgs": [{
+      "acronym": "sabor",
+      "is_coalition": false,
+      "id": 199,
+      "name": "Sabor"
+    }],
     "date": "10. 5. 2018",
     "org": {
       "acronym": "sabor",
@@ -27,36 +25,31 @@
     "in_review": false,
     "id": 141
   },
-  "result": "adopted",
+  "result": "enacted",
   "icon": null,
-  "votes": [
-    {
-      "abstain": 0,
-      "tags": [],
-      "text": "PRIJEDLOG ZAKONA O PROVEDBI UREDBE (EU) 2017/745 O MEDICINSKIM PROIZVODIMA I UREDBE (EU) 2017/746 O IN VITRO DIJAGNOSTIČKIM MEDICINSKIM PROIZVODIMA, prvo čitanje, P.Z.E. br. 381 – predlagateljica: Vlada Republike Hrvatske",
-      "start_time": "2018-07-06T11:42:00",
-      "is_outlier": false,
-      "votes_for": 96,
-      "session_id": 141,
-      "documents": [
-        {
-          "url": "http://www.sabor.hr/fgs.axd?id=54329",
-          "name": "PZE_381.pdf"
-        },
-        {
-          "url": "http://www.sabor.hr/fgs.axd?id=54329",
-          "name": "PZE_381.pdf"
-        }
-      ],
-      "against": 1,
-      "motion_id": 4155,
-      "has_outliers": false,
-      "not_present": 54,
-      "result": true
-    }
-  ],
+  "votes": [{
+    "abstain": 0,
+    "tags": ["Odbor za regionalni razvoj i fondove Europske unije", "Odbor za zakonodavstvo"],
+    "text": "Prijedlog zakona o potvr\u0111ivanju Okvirnog sporazuma izme\u0111u \u0160vicarskog saveznog vije\u0107a i Vlade Republike Hrvatske o provedbi \u0160vicarsko-hrvatskog programa suradnje na smanjenju ekonomskih i socijalnih nejednakosti unutar pro\u0161irene Europske unije, s Kona\u010dnim prijedlogom zakona, hitni postupak, prvo i drugo \u010ditanje, p.z. br. 52",
+    "start_time": "2016-12-15T18:15:00",
+    "is_outlier": false,
+    "votes_for": 108,
+    "session_id": 138,
+    "documents": [{
+      "url": "http://www.sabor.hr/fgs.axd?id=47409",
+      "name": "PZ_52.pdf"
+    }, {
+      "url": "http://www.sabor.hr/fgs.axd?id=47409",
+      "name": "PZ_52.pdf"
+    }],
+    "against": 0,
+    "motion_id": 3652,
+    "has_outliers": false,
+    "not_present": 45,
+    "result": true
+  }],
   "extra_abstract": null,
   "created_at": "27.08.2018",
   "abstractVisible": false,
-  "epa": "381"
+  "epa": "52"
 }
