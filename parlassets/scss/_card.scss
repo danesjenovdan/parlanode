@@ -22,6 +22,11 @@
     flex-wrap: nowrap;
     align-items: stretch;
 
+    // 2 row height
+    min-height: 104px;
+    align-items: center;
+    // 2 row end
+
     &.shadow {
         box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     }
@@ -34,6 +39,7 @@
       margin-left: 20px;
       width: 3px;
       flex-shrink: 0;
+      align-self: stretch;
     }
     h1 {
       margin: 0;
