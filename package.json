@@ -36,6 +36,7 @@
     "cross-env": "5.2.0",
     "cross-spawn": "^6.0.5",
     "css-loader": "0.28.11",
+    "d3v3": "^1.0.3",
     "date-fns": "^1.29.0",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "13.0.0",
