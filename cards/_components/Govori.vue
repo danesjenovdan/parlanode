@@ -38,14 +38,14 @@
         />
       </div>
 
-      <div class="filter month-dropdown">
+      <!-- <div class="filter month-dropdown">
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allSessions"
           @input="searchSpeakings"
           @clear="searchSpeakings"
         />
-      </div>
+      </div> -->
     </div>
 
     <div class="speaks">
