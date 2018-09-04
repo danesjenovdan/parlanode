@@ -258,7 +258,7 @@
 }
 
 .card-exit {
-    background-color: $funblue;
+    background-color: $card-footer-button-passive-background;
     background-image: none;
     font-size: 26px;
     font-weight: 300;
@@ -355,7 +355,7 @@ input.form-control, textarea.form-control {
             float: left;
             width: 50%;
             text-align: left;
-            background-color: $funblue;
+            background-color: $tab-passive;
             padding-left: 10px;
             color: $white;
         }
