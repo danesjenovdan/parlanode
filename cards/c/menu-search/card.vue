@@ -1,6 +1,6 @@
 <template>
   <transparent-wrapper
-    :id="`${$options.cardData.cardData._id}}`"
+    :id="`${$options.cardData.cardData._id}`"
     :card-url="url"
     :header-config="headerConfig"
     :og-config="ogConfig"
