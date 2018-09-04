@@ -36,3 +36,4 @@ node_modules
 .DS_Store
 .idea
 
+/scss/_overrides.scss
