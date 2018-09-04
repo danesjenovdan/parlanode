@@ -81,6 +81,7 @@ export default {
 #ps_tfidf /deep/ .card-content-front {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .word-list {
