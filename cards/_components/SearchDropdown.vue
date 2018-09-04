@@ -304,6 +304,10 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/helper';
 
+.search-dropdown {
+  text-align: left;
+}
+
 .up {
   border-bottom: none;
   border-top: 1px solid $grey-medium;
