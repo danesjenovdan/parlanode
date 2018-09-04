@@ -42,18 +42,18 @@
                 color: $white;
                 border: 1px solid $font-placeholder;
                 text-transform: uppercase;
-                background-color: $first;
+                background-color: $tab-passive;
             }
 
             a.active {
                 color: $white;
-                background-color: $second;
+                background-color: $tab-active;
                 text-decoration: none;
             }
 
             a:hover {
                 color: $white;
-                background-color: $second-hover;
+                background-color: $tab-active;
                 text-decoration: none;
             }
 
