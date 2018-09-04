@@ -50,7 +50,7 @@ export default {
     Speech,
   },
   directives: {
-    quotable(elem) {
+    quotable(elem, binding, vnode) {
       const cardElement = $(elem);
       const speechTextElement = cardElement.find('.speech-text');
       const quoteElement = cardElement.find('.everything .quote-button');
@@ -92,13 +92,14 @@ export default {
           const allText = cardElement.find('.mywords').val();
           const startIndex = allText.indexOf(selectedText);
           const endIndex = startIndex + selectedText.length;
-          const url = `${this.slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
+          const slugs = vnode.componentInstance.$root.slugs;
+          const url = `${slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
           $.ajax({
             url,
             async: false,
             dataType: 'json',
-            success: result => window.open(`${this.slugs.urls.glej}/s/citat/${result.id}?frame=true`),
+            success: result => window.open(`${slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
     },
