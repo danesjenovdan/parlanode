@@ -21,7 +21,7 @@
     margin-left: $image-width + $image-margin;
 
     .column {
-      color: $black;
+      color: $font-placeholder;
       cursor: pointer;
       font-size: 14px;
       font-weight: 500;
@@ -38,7 +38,7 @@
   .item {
     @extend %flex;
 
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $background;
     padding: 8px 0;
     &:last-child { border: none; }
 
@@ -77,7 +77,7 @@
         text-align: left;
 
         .text {
-          color: $grey-dark;
+          color: $font-default;
           font-size: 18px;
           font-weight: 300;
           margin-left: 16px;
@@ -96,11 +96,11 @@
           }
 
           &.glyphicon-ok {
-            color: $funblue;
+            color: $icon-accepted;
           }
 
           &.glyphicon-remove {
-            color: $red;
+            color: $icon-rejected;
           }
         }
       }

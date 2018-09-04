@@ -9,7 +9,7 @@
   $item-height: 23px;
   $border-width: 1px;
 
-  border: $border-width solid $grey-medium;
+  border: $border-width solid $font-placeholder;
   box-sizing: border-box;
   position: relative;
 
@@ -41,7 +41,7 @@
   &-clear {
     $size: 20px;
 
-    color: $sadblue;
+    color: $first;
     cursor: pointer;
     font-size: 25px;
     height: $clear-button-size;
@@ -54,7 +54,7 @@
   }
 
   &-input {
-    background: $grey;
+    background: $background;
     border: none;
     box-sizing: border-box;
     font-size: 16px;
@@ -66,11 +66,11 @@
 
   &-options {
     $normal-background: $white;
-    $selected-background: $sadblue;
+    $selected-background: $first;
     background: $normal-background;
-    border-left: $border-width solid $grey-medium;
-    border-bottom: $border-width solid $grey-medium;
-    border-right: $border-width solid $grey-medium;
+    border-left: $border-width solid $font-placeholder;
+    border-bottom: $border-width solid $font-placeholder;
+    border-right: $border-width solid $font-placeholder;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
@@ -93,7 +93,7 @@
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
-        background: $grey;
+        background: $background;
         cursor: default;
         text-transform: uppercase;
       }
@@ -106,7 +106,7 @@
       &:not(:last-of-type):not(.selected)::after {
         $left-right-spacing: 22px;
         content: '';
-        background: $grey;
+        background: $background;
         height: 1px;
         width: calc(100% - 2*#{$left-right-spacing});
         position: absolute;

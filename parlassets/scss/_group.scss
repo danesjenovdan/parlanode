@@ -17,7 +17,7 @@
     .me_group {
         padding-bottom: 30px;
         .progress-bar {
-            background: $funblue;
+            background: $barchart-default;
         }
         .col150 {
             width: 20%;
@@ -60,7 +60,7 @@
                 line-height: 30px;
                 padding: 10px 40px;
                 color: $white;
-                border: 1px solid $darkgrey;
+                border: 1px solid $font-placeholder;
                 text-transform: uppercase;
                 background-color: $tab-passive;
             }
@@ -81,13 +81,13 @@
     ul {
         li {
             a {
-                background: $sadblue;
+                background: $link;
                 color: $white;
             }
             a.active,
             a:hover {
                 color: $white;
-                background: $funblue;
+                background: $link-hover-background-hover;
                 text-decoration: none;
             }
         }

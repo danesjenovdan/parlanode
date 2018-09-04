@@ -73,7 +73,7 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: $funblue;
+    color: $first;
 }
 
 @supports ( -webkit-background-clip: text ) {
@@ -92,7 +92,7 @@
 }
 
 #about .post-entry {
-    background: $grey;
+    background: $background;
     padding: 20px;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 300;
@@ -103,7 +103,7 @@
 
 #about .post-entry .post-info {
     flex-grow: 2;
-    color: $black;
+    color: $font-placeholder;
 }
 
 #about .post-entry .post-title {
@@ -124,7 +124,7 @@
 }
 
 #about .thumbnail {
-    background: $grey;
+    background: $background;
     border: none;
     border-radius: 0;
     font-style: italic;
@@ -135,7 +135,7 @@
     line-height: 20px;
     display: flex;
     margin-bottom: -4px;
-    color: $black;
+    color: $font-placeholder;
 }
 
 #about .thumbnail .caption-text {

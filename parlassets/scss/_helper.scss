@@ -44,7 +44,7 @@
 }
 
 body {
-    background-color: $grey;
+    background-color: $background;
 }
 
 .container {
@@ -197,7 +197,7 @@ $cdn_home_icon: getConfig('urls.cdn') + '/icons/';
 
 input.required.error,
 footer.footer input.form-control.newslettersubscribe.error{
-  border:1px solid $red;
+  border:1px solid $first;
 }
 
 .narrow-inner-container {

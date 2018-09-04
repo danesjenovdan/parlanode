@@ -1,5 +1,5 @@
 .searchfilter-container {
-  background-color: $funblue-light;
+  background-color: $link-hover-background;
   padding: 15px;
 }
 
@@ -29,7 +29,7 @@
   margin-top: 5px;
   width: 30px;
   height: 30px;
-  background-color: $grey;
+  background-color: $background;
 }
 
 .searchfilter-checkbox .checkbox.with-input+label:before {
@@ -53,14 +53,14 @@
   text-align: center;
   color: $white;
   padding: 10px;
-  background-color: $sadblue;
+  background-color: $first;
   cursor: pointer;
   display: block;
   margin-top: 20px;
 }
 
 .parlabutton-filter:hover {
-  background-color: $funblue;
+  background-color: $second;
   color: $white;
   text-decoration: none;
 }
@@ -94,7 +94,7 @@
 .searchinfo {
     background-color: $white;
     border-radius: 50%;
-    color: $fontblue;
+    color: $link;
     cursor: pointer;
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
@@ -139,7 +139,7 @@
           height: 16px;
           line-height: 16px;
           font-size: 12px;
-          background-color: $grey;
+          background-color: $background;
           top: 0;
           left: 0;
           padding-left: 5px;
@@ -155,7 +155,7 @@
       }
 
       .searchperson-container {
-        border-bottom: 1px solid $grey;
+        border-bottom: 1px solid $background;
         height: 60px;
         padding: 10px;
         line-height: 40px;
@@ -163,9 +163,9 @@
       }
 
       .session-ac-search {
-        background: $funblue-light;
+        background: $link-hover-background;
         padding: 10px 5px;
-        color: $funblue;
+        color: $second;
         cursor: pointer;
       }
     }

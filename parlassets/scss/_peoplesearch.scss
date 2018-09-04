@@ -2,7 +2,7 @@
   border-top: 0px solid;
   border-right: 0px solid;
   border-left: 0px solid;
-  border-bottom: 2px solid $sadblue;
+  border-bottom: 2px solid $first;
 
   width: 220px;
   height: 35px;
@@ -31,8 +31,8 @@
   top: 23px;
 
   .svg_1 {
-    fill: $sadblue;
-    stroke: $sadblue;
+    fill: $first;
+    stroke: $first;
   }
 }
 
@@ -61,7 +61,7 @@
     height: 16px;
     line-height: 16px;
     font-size: 12px;
-    background-color: $grey;
+    background-color: $background;
 
     top: 0;
     left: 0;
@@ -71,7 +71,7 @@
 }
 
 .searchperson-container {
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $background;
     height: 60px;
     padding: 10px;
     line-height: 40px;
@@ -85,10 +85,10 @@
 }
 
 .tt-cursor {
-    background-color: $grey;
+    background-color: $background;
 }
 
 .tt-suggestion:hover {
     cursor: pointer;
-    background-color: $grey;
+    background-color: $background;
 }
