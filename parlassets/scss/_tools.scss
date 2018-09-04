@@ -60,7 +60,8 @@
 .tool-arrow {
   width: 36px;
   height: 29px;
-  background: url($cdn_home_icon + 'arrow_right_blue.svg') no-repeat;
+  background: url($cdn_home_icon + 'arrow_right_blue.svg');
+  background-repeat: no-repeat;
   background-size: contain;
   display: block;
   position: absolute;
