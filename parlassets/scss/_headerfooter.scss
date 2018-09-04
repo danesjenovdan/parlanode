@@ -52,14 +52,18 @@ header.header {
     }
 
     .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-        color: $first;
+        color: $font-default;
     }
 
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
         color: $first;
+        background: transparent;
+        background-color: transparent;
     }
 
     .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+        background: transparent;
+        background-color: transparent;
     }
 
 
