@@ -14,7 +14,7 @@
       class="search-dropdown-input"
       type="text"
       @focus="toggleDropdown(true)"
-      @keydown.enter.prevent="selectItem(filteredItems[focused].id)"
+      @keydown.enter.prevent="pressEnter"
       @keydown.up.prevent="focus(focused - 1, true)"
       @keydown.down.prevent="focus(focused + 1, true)"
     >
@@ -219,6 +219,13 @@ export default {
     },
   },
   methods: {
+    pressEnter() {
+      if (this.focused === -1) {
+        this.$emit('search', this.filter);
+      } else {
+        this.selectItem(this.filteredItems[this.focused].id);
+      }
+    },
     selectItem(selectedItemId) {
       if (this.single) {
         this.clearSelection();
