@@ -318,10 +318,10 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: $funblue;
+  stroke: $second;
 }
 
 .smalldata .dot {
-  fill: $funblue;
+  fill: $second;
 }
 </style>

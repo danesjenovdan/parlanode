@@ -114,13 +114,13 @@ export default {
   line-height: 1.5em;
   margin: 12px 0;
   padding: 40px;
-  background: $grey;
+  background: $background;
   height: 442px;
   position: relative;
 }
 
 hr {
-  background: $black;
+  background: $font-placeholder;
   height: 1px;
   margin: 10px 0 0 0;
 }
@@ -216,7 +216,7 @@ hr {
     p {
       flex: 2;
       font-size: 18px;
-      border-bottom: 1px solid $black;
+      border-bottom: 1px solid $font-placeholder;
       margin-bottom: 0;
       padding-top: 1em;
       padding-bottom: 1em;
@@ -231,7 +231,7 @@ hr {
         padding-left: 20px;
         padding-top: 1em;
         padding-bottom: 1em;
-        border-bottom: 1px solid $black;
+        border-bottom: 1px solid $font-placeholder;
 
         &:last-child {
           border-bottom: none !important;
@@ -256,7 +256,7 @@ hr {
   font-family: 'Roboto Slab', serif;
   text-align: center;
   font-size: 16px;
-  color: $grey-dark;
+  color: $font-default;
   width: 100%;
   font-style: italic;
   padding-bottom: 40px;
@@ -287,7 +287,7 @@ hr {
   position: absolute;
   width: calc(100% - 80px);
   bottom: 10px;
-  background: $grey;
+  background: $background;
 }
 
 .search-dropdown-input {

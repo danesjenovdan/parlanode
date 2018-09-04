@@ -121,7 +121,7 @@ export default {
   }
 
   &__single {
-    background: $grey;
+    background: $background;
     color: $font-default;
     display: flex;
     align-items: center;
@@ -193,7 +193,7 @@ export default {
       background-position: center left;
       font-size: 14px;
       font-weight: 400;
-      color: $sadblue;
+      color: $first;
       text-transform: uppercase;
     }
   }

@@ -66,9 +66,9 @@ export default {
 
   &-item {
     align-items: center;
-    border-left: 1px solid $grey-medium;
+    border-left: 1px solid $font-placeholder;
     box-sizing: border-box;
-    color: $fontblue;
+    color: $link;
     display: flex;
     font-size: 13px;
     line-height: 16px;
@@ -76,14 +76,14 @@ export default {
     min-height: 46px;
 
     &:last-child {
-      border-right: 1px solid $grey-medium;
+      border-right: 1px solid $font-placeholder;
     }
 
     &:hover,
     &.is-selected {
       border-left-color: transparent;
       border-right-color: transparent;
-      background-color: $funblue-light;
+      background-color: $link-hover-background;
     }
 
     &:hover {

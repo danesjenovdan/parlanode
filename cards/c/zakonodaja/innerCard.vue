@@ -137,7 +137,7 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 .empty-dataset {
-  color: $grey-medium;
+  color: $font-placeholder;
   font-style: normal !important;
 }
 

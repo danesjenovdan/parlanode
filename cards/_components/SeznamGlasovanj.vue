@@ -268,7 +268,7 @@ export default {
 }
 
 #votingCard div.member span {
-  color: $black;
+  color: $font-placeholder;
   font-weight: 500;
 }
 
@@ -308,7 +308,7 @@ export default {
 }
 
 .accepted.nay {
-  color: $red;
+  color: $third;
 }
 
 .session_voting .accepted {
@@ -406,7 +406,7 @@ export default {
 }
 
 .seja_anchor:hover {
-  color: $black;
+  color: $font-placeholder;
 }
 
 .card-content-front {
@@ -461,7 +461,7 @@ export default {
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid $grey-medium;
+      border: 1px solid $font-placeholder;
       font-size: 16px;
       height: 51px;
       line-height: 27px;

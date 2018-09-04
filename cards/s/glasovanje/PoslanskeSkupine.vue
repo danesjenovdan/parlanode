@@ -163,7 +163,7 @@ export default {
 }
 
   .party {
-    background: $grey;
+    background: $background;
     margin-bottom: 12px;
     padding: 10px 18px 14px;
     @include respond-to(desktop) {
@@ -222,6 +222,6 @@ export default {
       .members {
         padding-top: 14px;
         @include respond-to(desktop) { padding-top: 0; }
-        .person-list .item { border-color: $darkgrey; }
+        .person-list .item { border-color: $font-placeholder; }
       }
 </style>

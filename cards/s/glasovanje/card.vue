@@ -221,8 +221,8 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 .summary {
-  $section-border: 1px solid $black;
-  background: $grey;
+  $section-border: 1px solid $font-placeholder;
+  background: $background;
   margin: 7px 0 8px 0;
   min-height: 90px;
   padding: 10px 14px;
@@ -249,14 +249,14 @@ export default {
     .glyphicon {
       font-size: 24px;
       margin-bottom: 4px;
-      &.accepted { color: $funblue; }
-      &.not-accepted { color: $red; }
+      &.accepted { color: $second; }
+      &.not-accepted { color: $third; }
 
       @include respond-to(desktop) { font-size: 29px; }
     }
 
     .text {
-      color: $grey-dark;
+      color: $font-default;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
@@ -319,7 +319,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .lightning-badge::before {
-  background: $darkgrey;
+  background: $font-placeholder;
   border-radius: 50%;
   content: '';
   height: 31px;
@@ -333,7 +333,7 @@ export default {
   background-repeat: no-repeat;
 }
 .fire-badge::before {
-  background: $darkgrey;
+  background: $font-placeholder;
   border-radius: 50%;
   content: '';
   height: 31px;
@@ -354,7 +354,7 @@ export default {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
-  background: $grey-medium;
+  background: $font-placeholder;
   margin-bottom: 10px;
 }
 </style>

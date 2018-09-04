@@ -210,13 +210,13 @@ export default {
 }
 
 .bordertop {
-  border-top: 1px solid $grey;
+  border-top: 1px solid $background;
   padding: 10px 0;
   margin: 5px 0;
 }
 
 .bordertop0 {
-  border-top: 1px solid $grey;
+  border-top: 1px solid $background;
   padding: 0;
   margin: 0;
 }
@@ -249,8 +249,8 @@ export default {
   svg {
     width: 22px;
     height: 22px;
-    fill: $sadblue;
-    &:hover { fill: $funblue; }
+    fill: $first;
+    &:hover { fill: $second; }
   }
 }
 

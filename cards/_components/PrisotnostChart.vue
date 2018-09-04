@@ -297,7 +297,7 @@ export default {
 }
 .tick line {
         stroke-width: 1;
-        stroke: $black;
+        stroke: $font-placeholder;
 }
 .tick text {
     font-size: 10px;
@@ -323,15 +323,15 @@ export default {
 .prisotnost-chart .line {
     fill: none;
     stroke-width: 2;
-    stroke: $funblue;
+    stroke: $second;
 }
 .prisotnost-chart .dot {
-    fill: $funblue;
+    fill: $second;
 }
 
 .focus rect {
     border: 0px;
-    background-color: $black;
+    background-color: $font-placeholder;
     border-radius: 3px;
     padding: 2px 10px;
 
@@ -339,37 +339,37 @@ export default {
 }
 
 .focus circle {
-    fill: $funblue;
+    fill: $second;
 }
 
 .tabs-header:hover { text-decoration: none; }
 
 
 .presencething-present rect {
-    fill: $funblue-light-hover;
+    fill: $link-hover-background-hover;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: $funblue;
+        fill: $second;
     }
 }
 .presencething-notPresent rect {
-    fill: $red-light-hover;
+    fill: $third-light-hover;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: $red;
+        fill: $third;
     }
 }
 .presencething-notMember rect {
-    fill: $grey;
+    fill: $background;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: $grey-medium;
+        fill: $font-placeholder;
     }
 }
 </style>
