@@ -106,8 +106,13 @@
     @include show-for(desktop, flex);
 
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     width: 142px;
+    flex: 1;
+
+    label {
+      margin: 0;
+    }
   }
 }
 
