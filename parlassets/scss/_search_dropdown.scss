@@ -8,7 +8,7 @@
   $clear-button-size: 20px;
   $item-height: 23px;
 
-  border: 1px solid $grey-medium;
+  border: 1px solid $font-placeholder;
   box-sizing: border-box;
   $height: $height;
   position: relative;
@@ -40,7 +40,7 @@
   &-clear {
     $size: 20px;
 
-    color: $sadblue;
+    color: $first;
     cursor: pointer;
     font-size: 25px;
     height: $clear-button-size;
@@ -53,7 +53,7 @@
   }
 
   &-input {
-    background: $grey;
+    background: $background;
     border: none;
     box-sizing: border-box;
     font-size: 16px;
@@ -65,11 +65,11 @@
 
   &-options {
     $normal-background: $white;
-    $selected-background: $sadblue;
+    $selected-background: $first;
     background: $normal-background;
-    border-left: 1px solid $grey-medium;
-    border-bottom: 1px solid $grey-medium;
-    border-right: 1px solid $grey-medium;
+    border-left: 1px solid $font-placeholder;
+    border-bottom: 1px solid $font-placeholder;
+    border-right: 1px solid $font-placeholder;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
@@ -92,7 +92,7 @@
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
-        background: $grey;
+        background: $background;
         cursor: default;
         text-transform: uppercase;
       }
@@ -105,7 +105,7 @@
       &:not(:last-of-type):not(.selected)::after {
         $left-right-spacing: 22px;
         content: '';
-        background: $grey;
+        background: $background;
         height: 1px;
         width: calc(100% - 2*#{$left-right-spacing});
         position: absolute;

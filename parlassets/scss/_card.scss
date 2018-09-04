@@ -78,7 +78,7 @@
 // end of muki made this global (removed col-md-12 > etc.)
 
 .card-placeholder {
-    background-color: $grey;
+    background-color: $background;
     width: 100%;
     height: 300px;
 }
@@ -154,14 +154,14 @@
         margin-left: 15px;
 
         h1 {
-            color: $funblue;
+            color: $first;
             font-weight: 200;
             font-size: 20px !important;
             line-height: 20px !important;
         }
 
         h2 {
-            color: $black;
+            color: $font-placeholder;
             font-size: 18px;
             font-weight: 200;
 
@@ -297,7 +297,7 @@ input.form-control, textarea.form-control {
 }
 
 .btn-parlameter {
-    background-color: $funblue;
+    background-color: $first;
     border: none;
     color: $white;
     height: 34px;
@@ -364,7 +364,7 @@ input.form-control, textarea.form-control {
             float: right;
             width: 50%;
             text-align: right;
-            background-color: $grey;
+            background-color: $background;
             padding-right: 10px;
         }
     }
@@ -376,7 +376,7 @@ input.form-control, textarea.form-control {
     width: 26px;
     height: 26px;
     border-radius: 13px;
-    background-color: $sadblue;
+    background-color: $first;
     position: absolute;
     top: 3px;
     right: 10px;
@@ -427,18 +427,14 @@ input.form-control, textarea.form-control {
 @keyframes ripple {
     0% {
         transform: scale(1);
-        /*background-color: $sadblue;*/
     }
     50% {
         transform: scale(100);
-        /*background-color: $sadblue;*/
     }
     100% {
         transform: scale(1);
         top: -30px;
         left: -30px;
-        /*background-color: rgba(255, 255, 255, 0);
-        transform: scale(70);*/
     }
 }
 
@@ -475,7 +471,7 @@ input.form-control, textarea.form-control {
     }
 
     &__empty-inner {
-        background: $grey;
+        background: $background;
         width: 216px;
         height: 216px;
         border-radius: 50%;
@@ -497,7 +493,7 @@ input.form-control, textarea.form-control {
 
         p {
             font-family: "Roboto Slab", sans-serif;
-            color: $grey-dark;
+            color: $font-default;
             font-style: italic;
             font-size: 16px;
             text-align: center;
@@ -512,7 +508,7 @@ input.form-control, textarea.form-control {
 }
 .card-container::before {
     content: '';
-    background-color: $funblue;
+    background-color: $card-footer-button-hover-background;
     position: absolute;
     border-radius: 50%;
     width: 30px;
@@ -541,7 +537,7 @@ input.form-control, textarea.form-control {
     animation: ripple 0.6s forwards;
 }
 .card-container.revealed::before {
-    background-color: $sadblue;
+    background-color: $card-footer-button-hover-background;
     animation: ripple 0.6s forwards;
 }
 
@@ -614,7 +610,7 @@ input.form-control, textarea.form-control {
         }
 
         .date {
-            background-color: $grey;
+            background-color: $background;
             font-weight: bold;
             padding: 10px;
         }
