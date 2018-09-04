@@ -1,6 +1,6 @@
 <template>
   <transparent-wrapper
-    :id="`${$options.cardData.cardData._id}${Math.random().toString(36).substring(9)}`"
+    :id="`${$options.cardData.cardData._id}}`"
     :card-url="url"
     :header-config="headerConfig"
     :og-config="ogConfig"
