@@ -12,8 +12,8 @@
     padding: 0;
     .tabs-header {
       align-items: center;
-      background: $grey;
-      color: $black;
+      background: $background;
+      color: $font-placeholder;
       cursor: pointer;
       display: flex;
       flex: 1;
@@ -25,7 +25,7 @@
       user-select: none;
       &:last-child { margin-right: 0; }
       &.active {
-        background: $funblue;
+        background: $second;
         color: $white;
         cursor: default;
       }
@@ -45,9 +45,9 @@
       padding-bottom: 7px;
       padding-top: 8px;
       text-transform: uppercase;
-      background: $sadblue;
-      &.active { background: $funblue; }
-      &:hover { background: $funblue-hover }
+      background: $first;
+      &.active { background: $second; }
+      &:hover { background: $second-hover }
       @include respond-to(desktop) {
         font-size: 16px;
         padding-bottom: 15px;
@@ -68,10 +68,10 @@
 
     &:first-child { margin-left: 0 }
     & > a {
-      background: $grey;
+      background: $background;
       border: none;
       border-radius: 0;
-      color: $black;
+      color: $font-placeholder;
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -83,14 +83,14 @@
     &.active {
       & > a, & > a:focus, & > a:hover {
         color: $white;
-        background: $funblue;
+        background: $second;
         border: none;
       }
     }
     &:hover {
       & > a, & > a:focus, & > a:hover {
         color: $white;
-        background: $funblue;
+        background: $second;
         border: none;
       }
     }

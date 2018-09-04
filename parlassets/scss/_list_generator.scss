@@ -20,7 +20,7 @@
 
     li {
       align-items: center;
-      border: 1px solid $grey-medium;
+      border: 1px solid $font-placeholder;
       box-sizing: border-box;
       color: $white;
       cursor: pointer;
@@ -31,14 +31,14 @@
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
-      background-color: $sadblue;
+      background-color: $first;
 
       @include respond-to(limbo) {
         font-size: 12px;
       }
 
       &.selected {
-        background-color: $funblue;
+        background-color: $second;
         color: $white;
         cursor: default;
       }
@@ -46,7 +46,7 @@
       &:last-child { margin-right: 0; }
 
       &:hover {
-        background-color: $funblue-hover;
+        background-color: $second-hover;
         color: $white;
       }
     }
@@ -106,8 +106,13 @@
     @include show-for(desktop, flex);
 
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     width: 142px;
+    flex: 1;
+
+    label {
+      margin: 0;
+    }
   }
 }
 

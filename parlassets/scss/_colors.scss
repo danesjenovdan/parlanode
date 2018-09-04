@@ -13,8 +13,8 @@ $tab-hover: #86B3DF;
 $tab-passive: #197197;
 
 // links
-$link: #197197;
-$link-hover-background: #d9e7ed;
+$link: $third;
+$link-hover-background: #f3fafc;
 
 // card footer buttons
 $card-footer-button-passive-background: #197197;
@@ -25,16 +25,16 @@ $scroller: #F1F5F7;
 $element: #197197;
 
 // barcharts
-$barchart-this: #ff5e41;
-$barchart-other: #009cdd;
-$barchart-default: #009cdd;
+$barchart-this: $first;
+$barchart-other: $third;
+$barchart-default: $third;
 
 // icons
-$icon-accepted: #009cdd;
-$icon-rejected: #ff5e41;
-$icon-session: #ff5e41;
-$icon-transcript: #197197;
-$icon-transcript-hover-background: #F1F5F7;
+$icon-accepted: #4fbdd4;
+$icon-rejected: $first;
+$icon-session: $second;
+$icon-transcript: #258498;
+$icon-transcript-hover-background: #ceadf2;
 
 
 // buttons
@@ -58,6 +58,8 @@ $white: #ffffff;
 $font-default: #333333;
 $font-placeholder: #c8c8c8;
 $background: #f0f0f0;
+$tools-border: #c8c8c8;
+$tools-background-hover: #dddbdb;
 
 // logo
 $logo-first: $first; // TODO
@@ -68,19 +70,6 @@ $logo-third: $font-default; // TODO
 /////////////////////////////
 //////// OLD COLORS /////////
 /////////////////////////////
-$grey: $background;
-$grey-medium: $font-placeholder;
-$grey-dark: $font-default;
-$darkgrey: $font-placeholder; // TODO THIS SHOULD BE REMOVED
-$black: $font-placeholder; // TODO to je pri govorih
-$sadblue: $first;
-$sadblue-light: $link;
-$funblue: $second;
-$funblue-light: $link-hover-background;
-$fontblue: $link;
-$ignoreblue: $button-absent;
-$noblue: $button-abstained;
-$red: $third;
 
 $party-colors: (
   'hds___hsls___hdssb': #258498,
@@ -100,34 +89,34 @@ $party-colors: (
 
 
 $vote-colors: (
-  'votes_for': $fontblue,
-  'against': $funblue,
-  'abstain': $ignoreblue,
-  'not_present': $noblue
+  'votes_for': $link,
+  'against': $second,
+  'abstain': $button-absent,
+  'not_present': $button-abstained
 );
 
 $proper-vote-colors: (
-  'for': $fontblue,
-  'against': $funblue,
-  'abstain': $ignoreblue,
-  'not_present': $noblue
+  'for': $link,
+  'against': $second,
+  'abstain': $button-absent,
+  'not_present': $button-abstained
 );
 
 $option-colors: (
-  'for': $fontblue,
-  'against': $funblue,
-  'kvorum': $ignoreblue,
-  'ni': $noblue
+  'for': $link,
+  'against': $second,
+  'kvorum': $button-absent,
+  'ni': $button-abstained
 );
 
 // hover colors TODO
 $white-hover: rgba($white, 0.7);
-$funblue-hover: rgba($funblue, 0.7);
-$funblue-light-hover: #e1f6ff;
-$fontblue-hover: rgba($fontblue, 0.7);
-$ignoreblue-hover: rgba($noblue, 0.7);
-$noblue-hover: rgba($noblue, 0.7);
-$red-light-hover: #feefec;
+$second-hover: rgba($second, 0.7);
+$link-hover-background-hover: #e1f6ff;
+$link-hover: rgba($link, 0.7);
+$button-absent-hover: rgba($button-abstained, 0.7);
+$button-abstained-hover: rgba($button-abstained, 0.7);
+$first-light-hover: #feefec;
 
 $party-colors-hover: ();
 @each $party, $color in $party-colors {
@@ -135,20 +124,20 @@ $party-colors-hover: ();
 }
 
 $option-colors-hover: (
-  'for': $fontblue-hover,
-  'against': $funblue-hover,
-  'kvorum': $ignoreblue-hover,
-  'ni': $noblue-hover
+  'for': $link-hover,
+  'against': $second-hover,
+  'kvorum': $button-absent-hover,
+  'ni': $button-abstained-hover
 );
 
 $proper-vote-colors-hover: (
-  'for': $fontblue-hover,
-  'against': $funblue-hover,
-  'abstain': $ignoreblue-hover,
-  'not_present': $noblue-hover
+  'for': $link-hover,
+  'against': $second-hover,
+  'abstain': $button-absent-hover,
+  'not_present': $button-abstained-hover
 );
 
 $binary-vote-colors: (
-  'binary-for': $funblue,
-  'binary-against': $red
+  'binary-for': $second,
+  'binary-against': $first
 );

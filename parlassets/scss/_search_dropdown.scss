@@ -7,10 +7,10 @@
   $clear-button-right: 36px;
   $clear-button-size: 20px;
   $item-height: 23px;
+  $border-width: 1px;
 
-  border: 1px solid $grey-medium;
+  border: $border-width solid $font-placeholder;
   box-sizing: border-box;
-  $height: $height;
   position: relative;
 
   @include arrow(18px, 11px, 20px, 14px);
@@ -27,6 +27,7 @@
     top: 0;
     z-index: 2;
   }
+
   &.small {
     .search-dropdown-input {
       padding-bottom: 5px;
@@ -40,7 +41,7 @@
   &-clear {
     $size: 20px;
 
-    color: $sadblue;
+    color: $first;
     cursor: pointer;
     font-size: 25px;
     height: $clear-button-size;
@@ -53,11 +54,11 @@
   }
 
   &-input {
-    background: $grey;
+    background: $background;
     border: none;
     box-sizing: border-box;
     font-size: 16px;
-    line-height: $height - 2 * $padding-top-bottom;
+    line-height: $height - (2 * $padding-top-bottom) - (2 * $border-width);
     outline: none;
     padding: $padding-top-bottom $clear-button-right+$clear-button-size $padding-top-bottom $padding-left-right;
     width: 100%;
@@ -65,11 +66,11 @@
 
   &-options {
     $normal-background: $white;
-    $selected-background: $sadblue;
+    $selected-background: $first;
     background: $normal-background;
-    border-left: 1px solid $grey-medium;
-    border-bottom: 1px solid $grey-medium;
-    border-right: 1px solid $grey-medium;
+    border-left: $border-width solid $font-placeholder;
+    border-bottom: $border-width solid $font-placeholder;
+    border-right: $border-width solid $font-placeholder;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
@@ -92,7 +93,7 @@
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
-        background: $grey;
+        background: $background;
         cursor: default;
         text-transform: uppercase;
       }
@@ -105,7 +106,7 @@
       &:not(:last-of-type):not(.selected)::after {
         $left-right-spacing: 22px;
         content: '';
-        background: $grey;
+        background: $background;
         height: 1px;
         width: calc(100% - 2*#{$left-right-spacing});
         position: absolute;

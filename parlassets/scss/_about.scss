@@ -21,11 +21,11 @@
 }
 
 #about .lead-text-container .lead-text {
-    background-color: $funblue;
+    background-color: $cta-passive-background;
     padding: 5px 0;
     line-height: 2;
     /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 $funblue, -10px 0 0 $funblue;
+    box-shadow: 10px 0 0 $cta-passive-background, -10px 0 0 $cta-passive-background;
     box-decoration-break: clone;
     color: $white;
 }
@@ -33,9 +33,9 @@
 #about .lead-text-container a.lead-text:hover,
 #about .lead-text-container a.lead-text:focus,
 #about .lead-text-container a.lead-text:active {
-    background-color: $funblue-hover;
+    background-color: $cta-hover-background;
     /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 $funblue-hover, -10px 0 0 $funblue-hover;
+    box-shadow: 10px 0 0 $cta-hover-background, -10px 0 0 $cta-hover-background;
     color: $white;
     text-decoration: none;
 }
@@ -73,7 +73,7 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: $funblue;
+    color: $first;
 }
 
 @supports ( -webkit-background-clip: text ) {
@@ -92,7 +92,7 @@
 }
 
 #about .post-entry {
-    background: $grey;
+    background: $background;
     padding: 20px;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 300;
@@ -103,7 +103,7 @@
 
 #about .post-entry .post-info {
     flex-grow: 2;
-    color: $black;
+    color: $font-placeholder;
 }
 
 #about .post-entry .post-title {
@@ -124,7 +124,7 @@
 }
 
 #about .thumbnail {
-    background: $grey;
+    background: $background;
     border: none;
     border-radius: 0;
     font-style: italic;
@@ -135,7 +135,7 @@
     line-height: 20px;
     display: flex;
     margin-bottom: -4px;
-    color: $black;
+    color: $font-placeholder;
 }
 
 #about .thumbnail .caption-text {
