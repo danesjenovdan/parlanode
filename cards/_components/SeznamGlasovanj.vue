@@ -476,7 +476,5 @@ export default {
 
     width: 100%;
   }
-
-  .search-dropdown-options { top: 50px; }
 }
 </style>

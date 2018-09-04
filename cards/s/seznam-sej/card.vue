@@ -259,10 +259,5 @@ export default {
     margin: 0;
     flex: 1.5;
   }
-
-  .align-checkbox {
-    flex: 1;
-    justify-content: center;
-  }
 }
 </style>

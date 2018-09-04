@@ -257,13 +257,18 @@ export default {
 }
 
 .filters {
-
   $label-height: 26px;
 
   display: flex;
-  justify-content: space-between;
-
   min-height: 83px;
+
+  .filter {
+    flex: 1;
+  }
+
+  .filter:not(:last-child) {
+    margin-right: 10px;
+  }
 
   .filter-label {
     font-size: 14px;
@@ -321,17 +326,6 @@ export default {
     @include show-for(desktop);
 
     width: 17.5%;
-  }
-
-  .search-dropdown-input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  .search-dropdown-options { top: 50px; }
-
-  .search-dropdown input {
-    background-color: $white;
   }
 }
 

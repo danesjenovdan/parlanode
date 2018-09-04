@@ -33,7 +33,6 @@ export default {
 
 .transparent {
   border: none;
-  background-color: none;
   background: transparent;
   box-shadow: none;
 
