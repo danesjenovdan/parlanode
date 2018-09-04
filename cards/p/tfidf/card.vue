@@ -4,7 +4,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-height="518px"
+    content-height="544px"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -73,5 +73,14 @@ export default {
   margin: 70px 0;
   text-align: center;
   font-style: italic;
+}
+
+#p_tfidf /deep/ .card-content-front {
+  display: flex;
+  align-items: center;
+}
+
+.word-list {
+  width: 100%;
 }
 </style>
