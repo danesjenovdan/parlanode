@@ -14,7 +14,7 @@ $tab-passive: #ff5555;
 
 // links
 $link: $third;
-$link-hover-background: #caebf2;
+$link-hover-background: #f3fafc;
 
 // card footer buttons
 $card-footer-button-passive-background: #ff5555;
@@ -26,13 +26,13 @@ $element: #258498;
 
 // barcharts
 $barchart-this: $first;
-$barchart-other: $second;
-$barchart-default: $second;
+$barchart-other: $third;
+$barchart-default: $third;
 
 // icons
 $icon-accepted: #4fbdd4;
 $icon-rejected: $first;
-$icon-session: $first;
+$icon-session: $second;
 $icon-transcript: #258498;
 $icon-transcript-hover-background: #ceadf2;
 
