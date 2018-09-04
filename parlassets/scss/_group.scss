@@ -53,7 +53,6 @@
             }
 
             a {
-
                 vertical-align: middle;
                 display: block;
                 font-size: 16px;
@@ -63,16 +62,16 @@
                 color: $white;
                 border: 1px solid $darkgrey;
                 text-transform: uppercase;
-                background-color: $sadblue;
+                background-color: $tab-passive;
             }
             a.active {
                 color: $white;
-                background: $funblue;
+                background: $tab-active;
                 text-decoration: none;
             }
             a:hover {
                 color: $white;
-                background: $funblue-hover;
+                background: $tab-active;
                 text-decoration: none;
             }
         }
