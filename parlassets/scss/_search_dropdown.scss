@@ -9,7 +9,7 @@
   $item-height: 23px;
   $border-width: 1px;
 
-  border: $border-width solid $grey-medium;
+  border: $border-width solid $font-placeholder;
   box-sizing: border-box;
   position: relative;
 
@@ -68,9 +68,9 @@
     $normal-background: $white;
     $selected-background: $first;
     background: $normal-background;
-    border-left: $border-width solid $grey-medium;
-    border-bottom: $border-width solid $grey-medium;
-    border-right: $border-width solid $grey-medium;
+    border-left: $border-width solid $font-placeholder;
+    border-bottom: $border-width solid $font-placeholder;
+    border-right: $border-width solid $font-placeholder;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
