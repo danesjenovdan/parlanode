@@ -40,6 +40,10 @@ header.header {
 
     .search {
         margin-top: 10px;
+
+        .card-content {
+            padding: 0;
+        }
     }
 
     .btn-default {
