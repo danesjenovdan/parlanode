@@ -237,15 +237,13 @@ export default {
     color: $funblue;
   }
 
-  .dropdown-filter.search-dropdown { height: 51px; }
-
   .item .column {
     &:first-child {
       font-family: "Roboto Slab", sans-serif;
     }
   }
 
-  .column{
+  .column {
     font-size: 16px;
 
     &:nth-child(2),
@@ -285,20 +283,8 @@ export default {
     }
   }
 
-
   .filters {
     margin-top: 14px;
-
-    .dropdown-filter {
-      margin-right: 0;
-
-      @include respond-to(desktop) {
-        margin-left: 10px;
-      }
-    }
-
-    $label-height: 26px;
-
     display: flex;
 
     .month-dropdown {
@@ -336,23 +322,8 @@ export default {
       }
     }
 
-    .search-dropdown-input {
-      padding-top: 11px;
-      padding-bottom: 11px;
-    }
-
-    .dropdown-filter {
-      margin: 0;
-      flex: 1.5;
-    }
-
     .filter {
       flex: 1.5;
-    }
-
-    .align-checkbox {
-      flex: 1;
-      justify-content: center;
     }
   }
 }

@@ -36,7 +36,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .toggle {
-  $height: 53px;
+  $height: 51px;
   display: flex;
   font-size: 15px;
   height: $height;

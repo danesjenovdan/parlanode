@@ -381,9 +381,11 @@ export default {
   }
 
   .text-filter {
-    @include respond-to(desktop) { width: 26%; }
-
     width: 100%;
+
+    @include respond-to(desktop) {
+      width: 26%;
+    }
 
     .text-filter-input {
       background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
@@ -392,8 +394,8 @@ export default {
       background-position: right 9px center;
       border: 1px solid $grey-medium;
       font-size: 16px;
-      height: 53px;
-      line-height: 27px;
+      height: 51px;
+      line-height: 25px;
       outline: none;
       padding: 12px 42px 12px 14px;
       width: 100%;
@@ -401,9 +403,11 @@ export default {
   }
 
   .tag-dropdown {
-    @include respond-to(desktop) { width: 26%; }
-
     width: 100%;
+
+    @include respond-to(desktop) {
+      width: 26%;
+    }
   }
 
   .type-dropdown {
@@ -411,13 +415,6 @@ export default {
 
     width: 17.5%;
   }
-
-  .search-dropdown-input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  .search-dropdown-options { top: 50px; }
 }
 
 .results {

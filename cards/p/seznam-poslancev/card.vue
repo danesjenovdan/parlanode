@@ -16,12 +16,12 @@
             <p-search-dropdown
               v-model="parties"
               :placeholder="partiesPlaceholder"
-              class="filter parties"
+              class="filter"
             />
             <p-search-dropdown
               v-model="districts"
               :placeholder="districtPlaceholder"
-              class="filter district-filter"
+              class="filter"
             />
             <div class="genders filter">
               <striped-icon-button
@@ -398,14 +398,11 @@ export default {
   margin-top: 14px;
 
   .filter:not(:first-child) {
-    margin: 0 0 0 3px;
-    flex: 1;
+    margin-left: 3px;
   }
 
-  .text-filter {
-    &.search-field {
-      height: 58px;
-    }
+  .filter {
+    flex: 1;
   }
 
   .filter.search-field {

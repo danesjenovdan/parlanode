@@ -361,11 +361,6 @@ export default {
   overflow-y: auto;
 }
 
-.toggle {
-  height: 51px !important;
-  line-height: 51px !important;
-}
-
 .card-content-front {
   display: flex;
   flex-direction: column;
