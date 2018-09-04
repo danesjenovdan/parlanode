@@ -1,35 +1,104 @@
-$white: #fff;
-$grey: #f0f0f0;
-$grey-medium: #c8c8c8;
-$grey-dark: #333;
-$darkgrey: #dbdbdb;
-$black: #505050;
-$sadblue: #197197;
-$sadblue-light: #8cb8cb;
-$funblue: #009cdd;
-$funblue-light: #d2dfeb;
-$fontblue: #00628c;
-$ignoreblue: #003b54;
-$noblue: #99e1ff;
-$red: #ff5e41;
+/////////////////////////////
+/////// GLOBAL COLORS ///////
+/////////////////////////////
+
+// gradient
+$first: #ff0000;
+$second: #caebf2;
+$third: #258498;
+
+// tabs
+$tab-active: $first;
+$tab-hover: #ff8888;
+$tab-passive: #ff5555;
+
+// links
+$link: $third;
+$link-hover-background: #caebf2;
+
+// card footer buttons
+$card-footer-button-passive-background: #ff5555;
+$card-footer-button-hover-background: $first;
+
+// scroller
+$scroller: #caebf2;
+$element: #258498;
+
+// barcharts
+$barchart-this: $first;
+$barchart-other: $second;
+$barchart-default: $second;
+
+// icons
+$icon-accepted: #4fbdd4;
+$icon-rejected: $first;
+$icon-session: $first;
+$icon-transcript: #258498;
+$icon-transcript-hover-background: #ceadf2;
+
+
+// buttons
+$button-for: #4fbdd4;
+$button-against: #1b606f;
+$button-abstained: #afe1eb;
+$button-absent: #0b252b;
+
+// dropdown
+$dropdown-arrow: $first;
+$dropdown-selected-element: #ff8888;
+
+// other
+$light-background: #fdf8f8;
+$light-background-link: #900900;
+$tools-arrow: $first;
+$cta-passive-background: #ff5555;
+$cta-hover-background: $first;
+
+// common
+$white: #ffffff;
+$font-default: #333333;
+$font-placeholder: #c8c8c8;
+$background: #f0f0f0;
+
+// logo
+$logo-first: $first; // TODO
+$logo-second: $second; // TODO
+$logo-third: $font-default; // TODO
+
+
+/////////////////////////////
+//////// OLD COLORS /////////
+/////////////////////////////
+$grey: $background;
+$grey-medium: $font-placeholder;
+$grey-dark: $font-default;
+$darkgrey: $font-placeholder; // TODO THIS SHOULD BE REMOVED
+$black: $font-placeholder; // TODO to je pri govorih
+$sadblue: $first;
+$sadblue-light: $link;
+$funblue: $second;
+$funblue-light: $link-hover-background;
+$fontblue: $link;
+$ignoreblue: $button-absent;
+$noblue: $button-abstained;
+$red: $third;
 
 $party-colors: (
-  'smc': #8fcfee,
-  'sds': #22a2e0,
-  'desus': #5388aa,
-  'sd': #4f6379,
-  'zl': #857799,
-  'levica': #857799,
-  'nsi': #b7888a,
-  'ps_np': #d9776b,
-  'ps-np': #d9776b,
-  'imns': #ba594c,
-  'nep': #853f36,
-  'nep_-_zl': #853f36,
-  'nep_-_ač': #853f36,
-  'nep_-_mh': #853f36,
-  'nep_-_bk': #853f36
+  'hds___hsls___hdssb': #258498,
+  'nhr': #4095a7,
+  'hns': #5ca6b6,
+  'bm_365___reformisti___nezavisni': #77b7c5,
+  'sdss': #93c8d4,
+  'sdp': #aed9e3,
+  'hdz': #caebf2,
+  'glas___hsu': #d1c9cf,
+  'živi_zid___snaga': #d9a7ac,
+  'manjina': #e0868a,
+  'hss': #e86467,
+  'ids___pgs___ri': #ef4345,
+  'most': #f72122
 );
+
 
 $vote-colors: (
   'votes_for': $fontblue,
@@ -52,7 +121,7 @@ $option-colors: (
   'ni': $noblue
 );
 
-// hover colors
+// hover colors TODO
 $white-hover: rgba($white, 0.7);
 $funblue-hover: rgba($funblue, 0.7);
 $funblue-light-hover: #e1f6ff;

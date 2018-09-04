@@ -40,11 +40,19 @@
     margin-bottom: 0;
     &.hugebar {
       height: 30px;
-      .red { background: $red; }
+
+      .this {
+          background: $barchart-this;
+      }
     }
     &.smallbar {
-      .funblue { background: $funblue; }
-      .red { background: $red; }
+
+      .this {
+          background: $barchart-this;
+      }
+      .other {
+          background: $barchart-other;
+      }
     }
 }
 
@@ -52,7 +60,14 @@
     border: none;
     box-shadow: none;
     border-radius: 0;
-    background-color: $funblue;
+    background-color: $barchart-default;
+
+    .this {
+        background: $barchart-this;
+    }
+    .other {
+        background: $barchart-other;
+    }
 }
 
 .progress_number {

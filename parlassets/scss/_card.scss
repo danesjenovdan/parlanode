@@ -22,18 +22,24 @@
     flex-wrap: nowrap;
     align-items: stretch;
 
+    // 2 row height
+    min-height: 104px;
+    align-items: center;
+    // 2 row end
+
     &.shadow {
         box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     }
 
     .card-header-border {
-      @include gradient('vertical', 'blue');
+      @include gradient('vertical');
       display: flex;
       float: none;
       height: auto;
       margin-left: 20px;
       width: 3px;
       flex-shrink: 0;
+      align-self: stretch;
     }
     h1 {
       margin: 0;
@@ -91,7 +97,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        @include gradient('horizontal', 'red');
+        @include gradient('horizontal');
     }
 }
 .card-circle-button,
@@ -102,7 +108,7 @@
     float: right;
     margin-left: 8px;
     @include border-radius(50%);
-    background-color: $sadblue;
+    background-color: $card-footer-button-passive-background;
     font-family: 'Roboto Slab';
     font-weight: 700;
     font-size: 16px;
@@ -111,7 +117,7 @@
     color: $white;
     cursor: pointer;
     &:hover {
-        background-color: $funblue;
+        background-color: $card-footer-button-hover-background;
     }
 }
 .card-info {
