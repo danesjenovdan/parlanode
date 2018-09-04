@@ -16,28 +16,26 @@ export default {
   },
   computed: {
     party() {
-      let party = this.$options.cardData.data
-        && this.$options.cardData.data.highlighting
-        && this.$options.cardData.data.highlighting[0]
-        && this.$options.cardData.data.highlighting[0].person
-        && this.$options.cardData.data.highlighting[0].person.party;
-      if (party) {
-        return party;
+      const { data } = this.$options.cardData;
+      if (data.party) {
+        return data.party;
       }
-      const parties = this.$options.cardData.data
-        && this.$options.cardData.data.facet_counts
-        && this.$options.cardData.data.facet_counts.facet_fields
-        && this.$options.cardData.data.facet_counts.facet_fields.party_e;
-      const partyId = this.$options.cardData.data
-        && this.$options.cardData.data.filters
-        && this.$options.cardData.data.filters.parties
-        && this.$options.cardData.data.filters.parties[0];
-      if (parties) {
-        party = parties.map(p => p.party).find(p => p.id === Number(partyId));
+
+      const first = data && data.highlighting && data.highlighting[0];
+      if (first && first.person && first.person.party) {
+        return first.person.party;
       }
-      if (party) {
-        return party;
+
+      const facets = data && data.facet_counts && data.facet_counts.facet_fields;
+      const parties = facets && facets.party_e;
+      const partyId = data && data.filters && data.filters.parties && data.filters.parties[0];
+      if (parties && partyId) {
+        const party = parties.map(p => p.party).find(p => p.id === Number(partyId));
+        if (party) {
+          return party;
+        }
       }
+
       return {
         acronym: '???',
         is_coalition: true,
