@@ -355,7 +355,7 @@ export default {
     }
 }
 .presencething-notPresent rect {
-    fill: $third-light-hover;
+    fill: $dropdown-selected-element;
     stroke: $white;
     stroke-width: 1;
 
