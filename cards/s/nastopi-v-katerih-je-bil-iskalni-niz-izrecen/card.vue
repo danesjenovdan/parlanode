@@ -195,7 +195,7 @@ export default {
       text-align: left;
 
       .funblue-light-hover {
-        color: $black;
+        color: $font-placeholder;
 
         /deep/ em {
           font-style: normal;

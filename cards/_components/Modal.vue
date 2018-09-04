@@ -52,7 +52,7 @@ export default {
   transform: translateX(-50%);
   top: 100px;
   z-index: 100;
-  background-color: $grey;
+  background-color: $background;
 
   @include card(2);
 
@@ -61,7 +61,7 @@ export default {
     line-height: 40px;
     font-size: 16px;
     color: $white;
-    background-color: $funblue;
+    background-color: $second;
     text-align: center;
     margin-top: 10px;
     cursor: pointer;
@@ -74,7 +74,7 @@ export default {
 
   &-header {
     width: 100%;
-    background-color: $funblue;
+    background-color: $second;
     color: $white;
     font-family: 'Roboto Slab', serif;
     padding: 10px 50px 10px 10px;

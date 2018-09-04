@@ -47,7 +47,7 @@ export default {
 
     .presence {
       text-align: center;
-      background: $grey;
+      background: $background;
       padding: 12px;
       margin: 0 5px 10px 5px;
       position: relative;

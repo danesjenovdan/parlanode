@@ -168,11 +168,11 @@ export default {
   line-height: 20px;
   margin: 70px 0;
   text-align: center;
-  color: $grey-medium;
+  color: $font-placeholder;
 }
 
 .multiple-speeches /deep/ .speech-holder {
-  border-top: 1px solid $grey;
+  border-top: 1px solid $background;
 
   @include respond-to(desktop) {
     padding-bottom: 20px;
@@ -188,7 +188,7 @@ export default {
   }
 
   &:target {
-    background: $grey;
+    background: $background;
   }
 }
 

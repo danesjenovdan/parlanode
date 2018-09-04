@@ -316,12 +316,12 @@ export default {
   }
 
   .checkbox + label:before {
-    background-color: $grey;
+    background-color: $background;
   }
 
   .checkbox + label {
     font-size: 11px;
-    color: $black;
+    color: $font-placeholder;
     white-space: nowrap;
   }
 }

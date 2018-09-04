@@ -18,7 +18,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 .date-row {
-  background-color: $grey;
+  background-color: $background;
   font-weight: bold;
   padding: 10px;
 }

@@ -397,7 +397,7 @@ export default {
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid $grey-medium;
+      border: 1px solid $font-placeholder;
       font-size: 16px;
       height: 51px;
       line-height: 27px;

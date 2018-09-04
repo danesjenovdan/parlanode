@@ -98,7 +98,7 @@ export default {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: $funblue;
+    background-color: $second;
   }
 }
 .legenda.fontblue {
@@ -107,7 +107,7 @@ export default {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: $fontblue;
+    background-color: $link;
   }
 }
 
@@ -122,7 +122,7 @@ export default {
 }
 
 #votingCard div.member span {
-  color: $black;
+  color: $font-placeholder;
   font-weight: 500;
 }
 
@@ -158,7 +158,7 @@ export default {
 }
 
 .accepted.nay {
-  color: $red;
+  color: $third;
 }
 
 .session_voting .accepted {
@@ -208,11 +208,11 @@ export default {
 
   .border-left {
     border-left: none;
-    border-top: 2px solid $darkgrey;
+    border-top: 2px solid $font-placeholder;
   }
   .single_voting:hover {
     .border-left {
-      border-top-color: $funblue-light;
+      border-top-color: $link-hover-background;
     }
   }
 
@@ -235,15 +235,15 @@ export default {
 }
 
 .single_voting:hover {
-  background-color: $funblue-light-hover;
+  background-color: $link-hover-background-hover;
 
   .border-left {
-    border-left-color: $funblue-light;
+    border-left-color: $link-hover-background;
   }
 }
 
 .seja_anchor:hover {
-  color: $black;
+  color: $font-placeholder;
 }
 
 .card-content-front {

@@ -62,7 +62,7 @@ export default {
     color: $link;
   }
 
-  background: $grey;
+  background: $background;
   color: $font-default;
   display: block;
   margin: 7px 0 8px;
@@ -90,7 +90,7 @@ export default {
     @include respond-to(desktop) {
       border-bottom: none;
       border-top: none;
-      border-left: 1px solid $black;
+      border-left: 1px solid $font-placeholder;
       align-items: center;
       display: flex;
       flex: 4;
@@ -98,8 +98,8 @@ export default {
       padding: 5px 20px;
     }
 
-    border-bottom: 1px solid $black;
-    border-top: 1px solid $black;
+    border-bottom: 1px solid $font-placeholder;
+    border-top: 1px solid $font-placeholder;
     font-family: Roboto Slab, Times New Roman, serif;
     font-size: 11px;
     font-weight: 300;
@@ -113,7 +113,7 @@ export default {
 
   .outcome {
     @include respond-to(desktop) {
-      border-left: 1px solid $black;
+      border-left: 1px solid $font-placeholder;
       justify-content: left;
       padding: 0 0 0 16px;
       width: 136px;
@@ -135,7 +135,7 @@ export default {
     }
 
     .text {
-      color: $grey-dark;
+      color: $font-default;
       font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
@@ -156,11 +156,11 @@ export default {
         font-size: 29px;
 
         &.glyphicon-ok {
-          color: $funblue;
+          color: $second;
         }
 
         &.glyphicon-remove {
-          color: $red;
+          color: $third;
         }
       }
     }

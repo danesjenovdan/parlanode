@@ -392,7 +392,7 @@ export default {
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid $grey-medium;
+      border: 1px solid $font-placeholder;
       font-size: 16px;
       height: 51px;
       line-height: 25px;
@@ -440,9 +440,9 @@ export default {
   }
 
   .ballot {
-    $section-border: 1px solid $black;
-    background: $grey;
-    color: $black;
+    $section-border: 1px solid $font-placeholder;
+    background: $background;
+    color: $font-placeholder;
     display: block;
     margin: 7px 0 8px 0;
     min-height: 90px;
@@ -525,14 +525,14 @@ export default {
       .glyphicon {
         font-size: 24px;
         margin-bottom: 4px;
-        &.accepted { color: $funblue; }
-        &.not-accepted { color: $red; }
+        &.accepted { color: $second; }
+        &.not-accepted { color: $third; }
 
         @include respond-to(desktop) { font-size: 29px; }
       }
 
       .text {
-        color: $grey-dark;
+        color: $font-default;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;

@@ -93,14 +93,14 @@ export default {
         &:hover { background: $tab-hover; }
       }
       &.light {
-        background: $grey;
-        color: $black;
+        background: $background;
+        color: $font-placeholder;
         &.active {
-          background: $funblue;
+          background: $second;
           color: $white;
         }
         &:hover {
-          background: $funblue-hover;
+          background: $second-hover;
           color: $white;
         }
       }

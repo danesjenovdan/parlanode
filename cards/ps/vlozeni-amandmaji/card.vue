@@ -349,7 +349,7 @@ export default {
 
   .card-header h1,
   .card-footer h1 {
-    color: $black;
+    color: $font-placeholder;
   }
 
   #votingCard {
@@ -358,7 +358,7 @@ export default {
   }
 
   #votingCard div.member span {
-    color: $black;
+    color: $font-placeholder;
     font-weight: 500;
   }
 
@@ -440,14 +440,14 @@ export default {
 
     .border-left {
       border-left: none;
-      border-top: 2px solid $darkgrey;
+      border-top: 2px solid $font-placeholder;
     }
 
     .single_voting {
       padding-bottom: 15px;
       &:hover {
         .border-left {
-          border-top-color: $funblue-light;
+          border-top-color: $link-hover-background;
         }
       }
     }
@@ -456,8 +456,8 @@ export default {
   .single_voting {
     position: relative;
     &:hover {
-      background-color: $funblue-light-hover;
-      .border-left { border-left-color: $funblue-light; }
+      background-color: $link-hover-background-hover;
+      .border-left { border-left-color: $link-hover-background; }
     }
   }
 
@@ -470,7 +470,7 @@ export default {
   }
 
   .seja_anchor:hover {
-    color: $black;
+    color: $font-placeholder;
   }
 
   .card-content-front {
@@ -533,18 +533,18 @@ export default {
 
   .option-party-buttons {
     .sprejet {
-      border-bottom-color: $funblue;
+      border-bottom-color: $second;
 
       &.selected, &:hover {
-        background-color: $funblue;
+        background-color: $second;
       }
     }
 
     .zavrnjen {
-      border-bottom-color: $red;
+      border-bottom-color: $third;
 
       &.selected, &:hover {
-        background-color: $red;
+        background-color: $third;
       }
     }
   }

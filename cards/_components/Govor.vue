@@ -48,7 +48,7 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 .person-speech {
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid $background;
   padding: 15px 0;
   list-style: none;
   display: flex;

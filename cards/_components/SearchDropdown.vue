@@ -310,7 +310,7 @@ export default {
 
 .up {
   border-bottom: none;
-  border-top: 1px solid $grey-medium;
+  border-top: 1px solid $font-placeholder;
 }
 
 .search-dropdown-options li {

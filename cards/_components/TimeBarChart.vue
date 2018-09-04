@@ -171,18 +171,18 @@ export default {
 }
 
 .bar {
-  fill: $funblue-light-hover;
+  fill: $link-hover-background-hover;
 }
 
 .smallbarcontainer text {
-  fill: $funblue;
+  fill: $second;
   font-weight: 300;
   transition: all 0.2s ease-out;
 }
 
 .smallbarcontainer:hover {
   .bar {
-    fill: $funblue;
+    fill: $second;
   }
 
   text {

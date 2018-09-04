@@ -179,7 +179,7 @@ export default {
   position: absolute;
   right: 0;
   transform: translateX(100%);
-  color: $grey-dark;
+  color: $font-default;
   line-height: 30px;
 }
 </style>

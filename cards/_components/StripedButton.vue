@@ -62,7 +62,7 @@ export default {
 .striped-button {
   align-items: center;
   background: $white;
-  border: 1px solid $grey-medium;
+  border: 1px solid $font-placeholder;
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -124,9 +124,9 @@ export default {
   }
 
   $special-groups: (
-    dz: $red,
-    koal: $fontblue,
-    opoz: $grey-medium
+    dz: $third,
+    koal: $link,
+    opoz: $font-placeholder
   );
 
 
