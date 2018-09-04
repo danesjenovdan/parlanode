@@ -31,27 +31,53 @@
             &:last-child {
               margin-right: 0;
             }
+
             a {
                 vertical-align: middle;
                 display: block;
                 font-size: 16px;
                 font-weight: 300;
                 line-height: 30px;
-                padding: 10px 40px;
+                padding: 10px 30px;
                 color: $white;
                 border: 1px solid $font-placeholder;
                 text-transform: uppercase;
                 background-color: $first;
             }
+
             a.active {
                 color: $white;
-                background: $second;
+                background-color: $second;
                 text-decoration: none;
             }
+
             a:hover {
                 color: $white;
-                background: $second-hover;
+                background-color: $second-hover;
                 text-decoration: none;
+            }
+
+            .nav-icon {
+              background-size: 32px;
+              background-repeat: no-repeat;
+              background-position: 28px center;
+              padding-left: 66px;
+              text-transform: capitalize;
+            }
+
+            .nav-icon-overview {
+              background-image: url("#{getConfig('urls.cdn')}/icons/navigation/overview.svg");
+              background-size: 32px;
+            }
+
+            .nav-icon-votings {
+              background-image: url("#{getConfig('urls.cdn')}/icons/navigation/votings.svg");
+              background-size: 28px;
+            }
+
+            .nav-icon-speeches {
+              background-image: url("#{getConfig('urls.cdn')}/icons/navigation/speeches.svg");
+              background-size: 24px;
             }
         }
     }
