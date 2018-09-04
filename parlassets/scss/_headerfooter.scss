@@ -32,7 +32,7 @@ header.header {
     }
     .navbar-nav > li > a {
         font-size: 16px;
-        color: $link;
+        color: $font-default;
         font-weight: 500;
         padding: 20px 30px;
         margin: 0;
@@ -52,7 +52,7 @@ header.header {
     }
 
     .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-        color: $font-default;
+        color: $first;
     }
 
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
