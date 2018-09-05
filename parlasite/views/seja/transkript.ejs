@@ -13,7 +13,7 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/s/govori/', session.id) %>
+    <%- await fetchCard('/s/govori/', session.id, { page: transcriptPage }) %>
   </div>
 </div>
 <% } else { %>
