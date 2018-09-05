@@ -15,27 +15,9 @@
               <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--3"></span>
             </a>
           </div>
-          <form id="topheadersearch" class="navbar-form pull-right searchForm" role="search" action="/seje/isci/">
-            <div class="form-group">
-              <div class="header-searchhide">
-                <div class="header-search">
-                  <div class="search-input-header-prepend">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </div>
-                  <input type="text" class="search-input-header form-control" placeholder="Vpiši iskalni niz" name="q">
-                  <div class="search-input-header-append xclose">
-                    <span class="glyphicon glyphicon-remove"></span>
-                  </div>
-                </div>
-              </div>
-              <span class="searchiconbuttton">
-                <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 100 100"><path fill="none" d="M-1-1h102v102H-1z"/><path d="M101 93.255L69.639 61.893c4.902-6.543 7.557-14.458 7.557-22.78 0-10.18-3.966-19.748-11.163-26.946C58.837 4.968 49.269 1.005 39.087 1.005c-10.179 0-19.748 3.963-26.945 11.162-14.856 14.856-14.856 39.032-.002 53.89 7.198 7.199 16.767 11.163 26.946 11.163 8.338 0 16.264-2.663 22.815-7.581l31.356 31.356 7.743-7.74zM39.085 67.292c-7.526 0-14.604-2.931-19.927-8.252-5.323-5.323-8.254-12.401-8.254-19.929 0-7.528 2.932-14.604 8.255-19.927 5.323-5.321 12.401-8.252 19.927-8.252 7.529 0 14.606 2.931 19.926 8.253C70 30.172 70 48.052 59.012 59.04c-5.322 5.321-12.397 8.252-19.927 8.252z" class="svg_1"/></svg>
-              </span>
-            </div>
-          </form>
         </div>
         <div class="collapse-not navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="visible nav navbar-nav">
             <li class="<%= activeMenu === 'legislation' ? 'active' : '' %>">
               <a href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
             </li>
@@ -51,12 +33,51 @@
             <li class="<%= activeMenu === 'tools' ? 'active' : '' %>">
               <a href="/<%- sm.landing.tools %>"><%- i18n('menu.tools') %></a>
             </li>
+            <li class="hidden-xs open-search">
+              <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+            </li>
           </ul>
-          <form action="/<%- sm.landing.sessions %>/<%- sm.sessions.search.base %>" class="search">
-            <input name="q" class="search-field" placeholder="Išči">
-          </form>
+          <div class="search">
+            <%- await fetchCard('/c/menu-search/'); %>
+          </div>
+          <div class="close-search glyphicon glyphicon-remove"></div>
         </div>
       </nav>
     </div>
   </header>
   <div class="container">
+
+  <style>
+    .navbar-collapse {
+      position: relative;
+    }
+    .search, .close-search {
+      display: none;
+    }
+    .search.visible {
+      display: block;
+      width: 70%;
+      right: 30px;
+      top: -20px;
+      overflow: visible;
+      z-index: 100;
+      position: absolute;
+    }
+
+    .close-search.visible {
+      display: block;
+      position: absolute;
+      right: 0;
+      font-size: 20px;
+      top: 25px;
+      cursor: pointer;
+    }
+
+    .nav {
+      display: none !important;
+    }
+    .nav.visible {
+      display: inline-block !important;
+      float: right !important;
+    }
+  </style>

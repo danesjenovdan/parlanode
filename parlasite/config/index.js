@@ -66,6 +66,7 @@ if (env === 'production') {
 } else if (env === 'development') {
   // eslint-disable-next-line global-require, import/no-unresolved
   config = require('./development');
+  console.log(config);
 } else {
   // eslint-disable-next-line global-require
   config = require('./sample');
