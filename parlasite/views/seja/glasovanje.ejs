@@ -7,7 +7,7 @@
   <%- await fetchCard('/s/glasovanje/', motionId) %>
 </div>
 <% } else { %>
-  <%- include('../empty-state/state2.ejs') %>
+  <%- await include('../empty-state/state2.ejs') %>
 <% } %>
 
-<%- include('../_partials/footer.ejs') %>
+<%- await include('../_partials/footer.ejs') %>
