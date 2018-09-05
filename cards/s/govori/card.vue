@@ -145,7 +145,7 @@ export default {
     page = Math.min(Math.max(page, 0), data.pages);
 
     const speechesPerPage = Array(data.pages);
-    speechesPerPage[page - 1] = data.results;
+    speechesPerPage[data.page - 1] = data.results;
 
     return {
       data,
@@ -183,6 +183,16 @@ export default {
         $.get(`${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`, (response) => {
           this.$set(this.speechesPerPage, newPage - 1, response.results);
           this.fetching = false;
+
+          // needed if dynamically loaded to reset the css :target and scroll to selected element
+          this.$nextTick(() => {
+            const target = document.getElementById(window.location.hash.slice(1));
+            if (target) {
+              const tmp = window.location.hash;
+              window.location.hash = '';
+              window.location.hash = tmp;
+            }
+          });
         });
       }
     },
