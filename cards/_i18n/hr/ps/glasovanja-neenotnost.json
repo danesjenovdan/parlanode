@@ -10,5 +10,9 @@
     ]
   },
   "all-votes": "sva glasanja",
-  "all-working-bodies": "sva matična radna tijela"
+  "all-working-bodies": "sva matična radna tijela",
+  "parties": "Poslanske skupine",
+  "opposition": "opozicija",
+  "everyone": "Vsi",
+  "parliament": "sabor"
 }
