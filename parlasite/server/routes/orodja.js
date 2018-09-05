@@ -4,12 +4,12 @@ const { siteMap: sm } = require('../../config');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('orodja', {
+router.get('/', ar((render) => {
+  render('orodja', {
     activeMenu: 'tools',
     pageTitle: 'Orodja',
   });
-});
+}));
 
 router.get(`/${sm.tools.voteComparator}`, ar((render) => {
   render('orodja/primerjalnik-glasovanj', {

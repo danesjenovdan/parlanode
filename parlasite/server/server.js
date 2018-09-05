@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const config = require('../config');
-const { i18n } = require('./utils');
+const { i18n, asyncRender: ar } = require('./utils');
 
 const app = express();
 
@@ -17,6 +17,9 @@ function setupExpress() {
 
     // set template renderer
     app.set('view engine', 'ejs');
+    app.set('view options', {
+      async: true,
+    });
     app.locals.i18n = i18n(config.siteLang);
     app.locals.config = config;
     app.locals.sm = config.siteMap;
@@ -30,23 +33,27 @@ function setupExpress() {
     require('./routes')(app);
 
     // all other routes
-    app.get('*', (req, res) => {
-      res.status(404).render('error/404', {
+    app.get('*', ar((render, req, res) => {
+      res.status(404);
+      render('error/404', {
         pageTitle: '404 Not Found',
         activeMenu: '',
       });
-    });
+    }));
 
     // catch-all error handler (needs all 4 args)
     // eslint-disable-next-line no-unused-vars
     app.use((error, req, res, next) => {
-      // TODO: sentry
-      console.log('error', error);
-      res.status(500).render('error/500', {
-        pageTitle: '500 Internal Server Error',
-        activeMenu: '',
-        error,
-      });
+      ar((render) => {
+        // TODO: sentry
+        console.log('error', error);
+        res.status(500);
+        render('error/500', {
+          pageTitle: '500 Internal Server Error',
+          activeMenu: '',
+          error,
+        });
+      })(req, res, next);
     });
 
     // start listening on port
