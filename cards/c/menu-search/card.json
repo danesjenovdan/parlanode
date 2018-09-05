@@ -1,6 +1,6 @@
 {
   "_id": "c-menu-search",
-  "dataUrl": "http://analize.hr.parlameter.si/v1/p/getListOfMembersTickers/",
+  "dataUrl": "{analize}/p/getListOfMembersTickers/",
   "lastUpdate": "2018-09-04T06:49:25.426Z",
   "big": true,
   "high": true
