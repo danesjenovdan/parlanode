@@ -76,6 +76,7 @@
   "session-type": "Session type",
   "no-results": "No hits.",
   "no-speeches": "No speeches.",
+  "no-abstract": "Za ta zakon žal nimamo povzetka.",
   "present--f": "Present",
   "present--m": "Present",
   "present--plural": "Present",
@@ -92,7 +93,6 @@
   "legislation": "Legislation",
   "laws": "Laws",
   "acts": "Acts",
-  "load-more-speeches": "Load more speeches",
   "votings": "Glasovanja",
   "save": "Shrani",
   "generate": "Ustvari",
@@ -123,8 +123,10 @@
   "question": {
     "asked--m": "Asked question {title} that requires answer from {recipient}.",
     "asked--f": "Asked question {title} that requires answer from {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
     "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
-    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}."
+    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Voted FOR {title}",
