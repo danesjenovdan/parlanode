@@ -17,17 +17,29 @@
       </i18n>
     </div>
 
-    <div v-if="speeches.length" class="multiple-speeches">
+    <div v-if="count > 0" class="multiple-speeches">
+      <pagination
+        v-if="count > perPage"
+        :page="page"
+        :count="count"
+        :per-page="perPage"
+        @change="onPageChange"
+      />
+      <div v-if="fetching" class="nalagalnik"></div>
       <speech
         v-quotable
         v-for="speech in speeches"
         :key="speech.results.speech_id"
         :speech="speech"
+        :per-page="perPage"
       />
-      <div v-if="!allLoaded" class="load-more-container">
-        <load-link v-if="!fetching" :text="$t('load-more-speeches')" @click="fetchNextPage" />
-        <div v-if="fetching" class="nalagalnik"></div>
-      </div>
+      <pagination
+        v-if="!fetching && count > perPage"
+        :page="page"
+        :count="count"
+        :per-page="perPage"
+        @change="onPageChange"
+      />
     </div>
     <div v-t="'session-processing'" v-else class="empty-dataset"></div>
   </card-wrapper>
@@ -37,8 +49,10 @@
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
 import { sessionOgImage } from 'mixins/ogImages';
+import { SPEECHES_PER_PAGE } from 'components/constants';
 import Speech from 'components/Speech.vue';
 import LoadLink from 'components/LoadLink.vue';
+import Pagination from 'components/Pagination.vue';
 
 function getSelected() {
   if (window.getSelection) {
@@ -61,6 +75,7 @@ export default {
   components: {
     Speech,
     LoadLink,
+    Pagination,
   },
   directives: {
     quotable(elem, binding, vnode) {
@@ -124,17 +139,26 @@ export default {
   ],
   data() {
     const data = this.$options.cardData.data;
+
+    const state = this.$options.cardData.parlaState;
+    let page = (state && state.page) || Number(data.page);
+    page = Math.min(Math.max(page, 0), data.pages);
+
+    const speechesPerPage = Array(data.pages);
+    speechesPerPage[page - 1] = data.results;
+
     return {
       data,
-      speeches: data.results || [],
-      numFound: data.count || 0,
-      page: 1,
+      speechesPerPage,
+      count: data.count,
+      perPage: data.per_page || SPEECHES_PER_PAGE,
+      page,
       fetching: false,
     };
   },
   computed: {
-    allLoaded() {
-      return this.numFound <= this.speeches.length;
+    speeches() {
+      return this.speechesPerPage[this.page - 1] || [];
     },
     generatedCardUrl() {
       return `${this.url}${this.data.session.id}?altHeader=true`;
@@ -142,18 +166,32 @@ export default {
   },
   mounted() {
     document.body.style.overflowAnchor = 'none';
+
+    if (this.page !== Number(this.data.page)) {
+      this.onPageChange(this.page);
+    }
   },
   methods: {
-    fetchNextPage() {
+    onPageChange(newPage) {
       if (this.fetching) {
         return;
       }
-      this.fetching = true;
-      this.page += 1;
-      $.get(`${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${this.page}`, (response) => {
-        this.speeches = this.speeches.concat(response.results);
-        this.fetching = false;
-      });
+      this.page = newPage;
+      this.scrollToTop();
+      if (!this.speechesPerPage[newPage - 1]) {
+        this.fetching = true;
+        $.get(`${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`, (response) => {
+          this.$set(this.speechesPerPage, newPage - 1, response.results);
+          this.fetching = false;
+        });
+      }
+    },
+    scrollToTop() {
+      const { _id: id } = this.$options.cardData.cardData;
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView();
+      }
     },
   },
 };
@@ -193,18 +231,8 @@ export default {
   }
 }
 
-.load-more-container {
-  text-align: center;
-  font-size: 18px;
-  padding: 20px 0;
-
-  .load {
-    margin: 12px 0;
-    @include link-hover;
-  }
-
-  .nalagalnik {
-    height: 51px;
-  }
+.nalagalnik {
+  height: 51px;
+  background-size: 38px;
 }
 </style>

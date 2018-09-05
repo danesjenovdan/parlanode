@@ -57,6 +57,7 @@
 
 <script>
 import links from 'mixins/links';
+import { SPEECHES_PER_PAGE } from 'components/constants';
 
 const PADDING_LENGTH = 30;
 
@@ -73,6 +74,10 @@ export default {
     showSession: {
       type: Boolean,
       default: false,
+    },
+    perPage: {
+      type: Number,
+      default: SPEECHES_PER_PAGE,
     },
   },
   data() {
