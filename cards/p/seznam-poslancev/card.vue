@@ -362,6 +362,7 @@ export default {
           label: party.party.name,
           acronym: party.party.acronym,
           selected: this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
+          colorClass: `${party.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
         }));
       });
   },
