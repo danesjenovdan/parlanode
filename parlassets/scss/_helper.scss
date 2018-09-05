@@ -137,6 +137,7 @@ $cdn_home_icon: getConfig('urls.cdn') + '/icons/';
 
 .nalagalnik{
   background: url($cdn_home_img + 'loader.gif') no-repeat center center;
+  background-size: 38px;
   height: 100px;
   width: 100%;
 }
