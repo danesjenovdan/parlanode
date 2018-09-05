@@ -1,7 +1,7 @@
 {
   "_id": "s_govori",
   "dataUrl": "{analize}/s/getSpeechesOfSession",
-  "lastUpdate": "2018-09-04T15:06:47.294Z",
+  "lastUpdate": "2018-09-05T13:42:48.885Z",
   "big": true,
   "high": true
 }
