@@ -693,10 +693,6 @@
       padding-bottom: 10px;
     }
 
-    .col-lg-6 {
-
-    }
-
     .member {
       padding: 10px 0;
 
@@ -732,45 +728,6 @@
   }
 }
 
-.getPager {
-  .pagination {
-
-    text-align: center;
-    width: 280px;
-    margin: 0 auto;
-    display: block;
-
-    li {
-      a {
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        border-radius: 20px;
-
-        background: $font-placeholder;
-        color: $font-placeholder;
-
-        font-size: 14px;
-        padding: 5px 10px;
-        margin-right: 10px;
-
-        border: none;
-
-        span {
-          color: $font-placeholder;
-        }
-
-      }
-    }
-    li.active {
-      a {
-        background: $second;
-        color: $white;
-      }
-    }
-
-  }
-
-}
 
 .izracunana_prisotnost {
   .tab-content {
@@ -795,57 +752,6 @@
   .tab-content {
     .tab-pane {
       text-align: center;
-    }
-  }
-}
-
-.pagination {
-  margin: 13px 0 8px 0;
-
-  &-container {
-    text-align: center;
-  }
-
-  li {
-    a:focus,
-    a:hover,
-    span:focus,
-    span:hover {
-      color: $font-placeholder;
-    }
-
-    &.active > a,
-    &.active > a:focus,
-    &.active > a:hover,
-    &.active > span,
-    &.active > span:focus,
-    &.active > span:hover {
-      background-color: $second;
-    }
-
-    a {
-      background: $background;
-      border: none;
-      border-radius: 50%;
-      box-sizing: border-box;
-      color: $font-placeholder;
-      font-size: 14px;
-      height: 18px;
-      line-height: 18px;
-      margin: 0 1px;
-      padding: 0;
-      width: 18px;
-    }
-    &:first-child a, &:last-child a {
-      background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.879" height="11" viewBox="0 0 5.878153 11"><path d="M5.878 5.5L.388 0l-.39.39L5.1 5.5l-5.1 5.11.39.39 5.49-5.5z" fill="#{$link}"/></svg>');
-      color: $link;
-      font-size: 36px;
-      font-weight: 100;
-      line-height: 18px;
-      margin: 0;
-    }
-    &:first-child a {
-      transform: scaleX(-1);
     }
   }
 }
