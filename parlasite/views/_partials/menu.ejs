@@ -37,22 +37,22 @@
         <div class="collapse-not navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
             <li class="<%= activeMenu === 'legislation' ? 'active' : '' %>">
-              <a href="/zakonodaja"><%- i18n('menu.legislation') %></a>
+              <a href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
             </li>
             <li class="<%= activeMenu === 'sessions' ? 'active' : '' %>">
-              <a href="/seje"><%- i18n('menu.sessions') %></a>
+              <a href="/<%- sm.landing.sessions %>"><%- i18n('menu.sessions') %></a>
             </li>
             <li class="<%= activeMenu === 'mps' ? 'active' : '' %>">
-              <a href="/poslanci"><%- i18n('menu.mps') %></a>
+              <a href="/<%- sm.landing.members %>"><%- i18n('menu.mps') %></a>
             </li>
             <li class="<%= activeMenu === 'pgs' ? 'active' : '' %>">
-              <a href="/poslanske-skupine"><%- i18n('menu.pgs') %></a>
+              <a href="/<%- sm.landing.parties %>"><%- i18n('menu.pgs') %></a>
             </li>
             <li class="<%= activeMenu === 'tools' ? 'active' : '' %>">
-              <a href="/orodja"><%- i18n('menu.tools') %></a>
+              <a href="/<%- sm.landing.tools %>"><%- i18n('menu.tools') %></a>
             </li>
           </ul>
-          <form action="/seje/isci" class="search">
+          <form action="/<%- sm.landing.sessions %>/<%- sm.sessions.search.base %>" class="search">
             <input name="q" class="search-field" placeholder="Išči">
           </form>
         </div>
