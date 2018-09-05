@@ -47,7 +47,7 @@ router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) 
   }
 }));
 
-router.get(`/:id(\\d+)/${sm.session.transcript}`, ar((render, req, res, next) => {
+router.get([`/:id(\\d+)/${sm.session.transcript}`, `/:id(\\d+)/${sm.session.transcript}/:transcriptPage`], ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/transkript', {
@@ -55,6 +55,7 @@ router.get(`/:id(\\d+)/${sm.session.transcript}`, ar((render, req, res, next) =>
       pageTitle: 'Seja - Transkript',
       activeTab: 'transkript',
       ...sesData,
+      transcriptPage: req.params.transcriptPage || 1,
     });
   } else {
     next();
