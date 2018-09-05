@@ -1,13 +1,13 @@
-<% include ../_partials/header.ejs %>
+<%- await include('../_partials/header.ejs') %>
 
-<% include ./_header.ejs %>
+<%- await include('./_header.ejs') %>
 
 <% if (session.votes) { %>
 <div class="col-md-12">
   <%- await fetchCard('/s/glasovanje/', motionId) %>
 </div>
 <% } else { %>
-  <% include ../empty-state/state2.ejs %>
+  <% include('../empty-state/state2.ejs') %>
 <% } %>
 
-<% include ../_partials/footer.ejs %>
+<% include('../_partials/footer.ejs') %>

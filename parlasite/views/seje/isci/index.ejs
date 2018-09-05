@@ -1,4 +1,4 @@
-<% include ../../_partials/header.ejs %>
+<%- await include('../../_partials/header.ejs') %>
 
 <div class="landing">
   <div class="session-container session-search-container">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <% include ../../_partials/search-popup.ejs %>
+  <% include('../../_partials/search-popup.ejs') %>
 </div>
 
 <style>
@@ -49,4 +49,4 @@
   </div>
 </div>
 
-<% include ../../_partials/footer.ejs %>
+<% include('../../_partials/footer.ejs') %>
