@@ -39,7 +39,7 @@
       />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab label="Povzetek" variant="dark">
+      <p-tab v-if="data.abstract" label="Povzetek" variant="dark">
         <excerpt
           :content="content"
           :main-law="excerptData"
@@ -206,8 +206,8 @@ export default {
   }
 
   .result-container {
-    $section-border: 1px solid $black;
-    background: $grey;
+    $section-border: 1px solid $font-placeholder;
+    background: $background;
     margin: 7px 0 8px 0;
     min-height: 90px;
     padding: 10px 14px;
@@ -241,7 +241,7 @@ export default {
       }
 
       .text {
-        color: $grey-dark;
+        color: $font-default;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;

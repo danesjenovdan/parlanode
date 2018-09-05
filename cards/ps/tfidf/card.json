@@ -1,7 +1,7 @@
 {
   "_id": "ps_tfidf",
   "dataUrl": "{analize}/pg/getTFIDF",
-  "lastUpdate": "2018-07-27T15:00:44.818Z",
+  "lastUpdate": "2018-09-04T15:56:24.019Z",
   "high": false,
   "big": false
 }

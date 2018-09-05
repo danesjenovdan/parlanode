@@ -11,7 +11,7 @@
 .load {
   display: inline-block;
   white-space: nowrap;
-  color: $sadblue;
+  color: $first;
   cursor: pointer;
   font-weight: 600;
 

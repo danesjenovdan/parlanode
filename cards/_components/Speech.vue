@@ -57,6 +57,7 @@
 
 <script>
 import links from 'mixins/links';
+import { SPEECHES_PER_PAGE } from 'components/constants';
 
 const PADDING_LENGTH = 30;
 
@@ -73,6 +74,10 @@ export default {
     showSession: {
       type: Boolean,
       default: false,
+    },
+    perPage: {
+      type: Number,
+      default: SPEECHES_PER_PAGE,
     },
   },
   data() {
@@ -131,7 +136,7 @@ export default {
 }
 
 %link-styling {
-  color: $funblue;
+  color: $second;
   display: block;
   font-size: 16px;
   text-align: center;
@@ -139,7 +144,7 @@ export default {
   text-transform: uppercase;
 
   &:hover {
-    color: $funblue;
+    color: $second;
   }
 }
 
@@ -168,7 +173,7 @@ export default {
 
     .portrait {
       border-radius: 50%;
-      box-shadow: 0 0 4px $darkgrey;
+      box-shadow: 0 0 4px $font-placeholder;
       height: $portrait-size;
       width: $portrait-size;
       margin-right: $portrait-margin;
@@ -204,7 +209,7 @@ export default {
 }
 
 .quote-button {
-  background: $sadblue;
+  background: $first;
   border-radius: 50%;
   color: $white;
   cursor: pointer;
@@ -277,7 +282,7 @@ export default {
   .everything,
   .quote {
     flex: 1;
-    ::selection { background: $funblue-light-hover; }
+    ::selection { background: $link-hover-background-hover; }
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
     }
@@ -294,14 +299,14 @@ export default {
 
   &.just-quote {
     .quote-button {
-      background: $grey-medium;
+      background: $font-placeholder;
       cursor: default;
       display: block;
       top: 50%;
     }
 
     .speech-text {
-      color: $grey-medium;
+      color: $font-placeholder;
 
       .quote-text {
         color: #000;

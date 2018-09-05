@@ -5,7 +5,7 @@
         <div class="percent">{{ obj.percent }}%</div>
         <div class="party">{{ obj.org.acronym }}</div>
         <div
-          :class="['line', `${obj.org.acronym.replace(/ /g, '_').toLowerCase()}-background`]"
+          :class="['line', `${obj.org.acronym.replace(/[ +,]/g, '_').toLowerCase()}-background`]"
           :style="`width: ${obj.percent}%;`"
         ></div>
       </div>
@@ -47,7 +47,7 @@ export default {
 
     .presence {
       text-align: center;
-      background: $grey;
+      background: $background;
       padding: 12px;
       margin: 0 5px 10px 5px;
       position: relative;

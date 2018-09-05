@@ -3,7 +3,9 @@
 </template>
 
 <script>
-/* global d3, query, customUrl */
+/* global, query, customUrl */
+import d3 from 'd3v3';
+
 function chart(rawData, component) {
   $('.partychart2 svg').remove();
 
@@ -100,7 +102,7 @@ function chart(rawData, component) {
 
     g.append('path')
       .attr('d', arc)
-      .style('fill', d => color(d.data.party));
+      .attr('class', d => `${parties[d.data.party].acronym.replace(/[ +,]/g, '_').toLowerCase()}-fill`);
 
     const labels = svg.selectAll('text').data(piedata)
       .enter()

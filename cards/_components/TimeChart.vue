@@ -196,23 +196,23 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: $funblue;
+  stroke: $second;
 }
 
 .smalldata .dot {
-  fill: $funblue;
+  fill: $second;
 }
 
 .focus rect {
   border: 0px;
-  background-color: $black;
+  background-color: $font-placeholder;
   border-radius: 3px;
   padding: 2px 10px;
   color: $white;
 }
 
 .focus circle {
-  fill: $funblue;
+  fill: $second;
 }
 
 .tabs-header:hover {

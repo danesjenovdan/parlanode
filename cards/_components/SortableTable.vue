@@ -12,7 +12,7 @@
         </div>
       </template>
     </li>
-    <div v-if="items.length === 0" class="empty-dataset">Brez rezultatov.</div>
+    <div v-t="'no-results'" v-if="items.length === 0" class="empty-dataset"></div>
     <li v-for="(item, k) in items" :key="k" class="item">
       <div
         v-for="(cell, i) in item"
@@ -132,7 +132,7 @@ export default {
     &:not(.sort):hover span::after {
       content: '';
       border-style: solid;
-      border-color: transparent transparent $funblue;
+      border-color: transparent transparent $second;
       border-width: 0 6px 7px;
       position: absolute;
       margin-left: 6px;
@@ -147,11 +147,11 @@ export default {
 }
 
 .session-list .item .column.ticker {
-  color: $funblue;
+  color: $second;
   line-height: 18px;
 
   &.red {
-    color: $red;
+    color: $third;
   }
 }
 
@@ -180,7 +180,7 @@ export default {
 
 .bar {
   width: 100%;
-  background-color: $funblue;
+  background-color: $second;
   height: 18px;
   display: flex;
   flex-wrap: nowrap;

@@ -22,7 +22,7 @@
       <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
-    <div class="groups">
+    <!-- <div class="groups">
       <striped-button
         v-for="group in groups"
         :color="group.color.toLowerCase()"
@@ -32,7 +32,7 @@
         :is-uppercase="false"
         @click.native="selectGroup(group.acronym)"
       />
-    </div>
+    </div> -->
 
     <div class="filters">
       <div class="filter text-filter">
@@ -40,11 +40,14 @@
         <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
       <div class="filter type-dropdown">
-        <div v-t="'vote-types'" class="filter-label"></div>
+        <div v-t="'parties'" class="filter-label"></div>
         <p-search-dropdown
-          v-model="allClassifications"
-          :alphabetise="false"
-        />
+          :value="allItems"
+          :placeholder="$t('search_placeholder')"
+          :single="true"
+          :groups="partyGroups"
+          @select="selectCallback"
+        ></p-search-dropdown>
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
@@ -146,7 +149,7 @@ export default {
         namedGroups.push({
           id: group.id,
           acronym: group.acronym,
-          color: group.acronym.toLowerCase().replace(/ /g, '_'),
+          color: group.acronym.toLowerCase().replace(/[ +,]/g, '_'),
           name: group.acronym,
         });
       }
@@ -155,7 +158,27 @@ export default {
     namedGroups = sortBy(namedGroups, ['name']);
     groups = groups.concat(namedGroups);
 
+    // SEARCH DROPDOWN FOR PEOPLE AND PARTIES
+    const partyGroups = [{
+      label: 'Stranke',
+      items: Object.keys(this.$options.cardData.data).map(key => key),
+    }];
+
+    const parties = Object.keys(this.$options.cardData.data)
+      .filter(key => this.$options.cardData.data[key].acronym !== this.$t('opposition'))
+      .map((key) => {
+        return {
+          id: key,
+          label: this.$options.cardData.data[key].acronym === this.$t('parliament') ? this.$t('parliament') : this.$options.cardData.data[key].acronym,
+          selected: this.$options.cardData.data[key].acronym === this.$t('parliament'),
+          colorClass: `${this.$options.cardData.data[key].acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+        };
+      });
+    // SEARCH DROPDOWN END
+
     return {
+      partyGroups,
+      parties,
       voteData: [],
       loading: true,
       selectedSort: 'maximum',
@@ -169,6 +192,9 @@ export default {
     };
   },
   computed: {
+    allItems() {
+      return this.parties;
+    },
     selectedTags() {
       return this.allTags
         .filter(tag => tag.selected)
@@ -236,6 +262,33 @@ export default {
     context.template.pageTitle = this.dynamicTitle;
   },
   methods: {
+    groupBy(array, f) {
+      const groups = {};
+      array.forEach((o) => {
+        const group = JSON.stringify(f(o));
+        groups[group] = groups[group] || [];
+        groups[group].push(o);
+      });
+      return Object.keys(groups).map(group => groups[group]);
+    },
+    selectCallback(id) {
+      this.parties.forEach((p) => {
+        p.selected = false;
+      });
+
+      this.parties.find(p => p.id === id).selected = !this.parties.find(p => p.id === id).selected;
+
+      this.selectGroup(this.parties.find(p => p.id === id).label);
+    },
+    clearCallback() {
+      this.parties.forEach((p) => {
+        p.selected = false;
+      });
+
+      this.parties.find(p => p.label === this.$t('parliament')).selected = true;
+
+      this.selectGroup(this.$t('parliament'));
+    },
     getFilteredVotingDays(onlyFilterByText = false) {
       if (!this.voteData || this.voteData.length === 0) {
         return [];
@@ -381,19 +434,21 @@ export default {
   }
 
   .text-filter {
-    @include respond-to(desktop) { width: 26%; }
-
     width: 100%;
+
+    @include respond-to(desktop) {
+      width: 26%;
+    }
 
     .text-filter-input {
       background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid $grey-medium;
+      border: 1px solid $font-placeholder;
       font-size: 16px;
-      height: 53px;
-      line-height: 27px;
+      height: 51px;
+      line-height: 25px;
       outline: none;
       padding: 12px 42px 12px 14px;
       width: 100%;
@@ -401,9 +456,11 @@ export default {
   }
 
   .tag-dropdown {
-    @include respond-to(desktop) { width: 26%; }
-
     width: 100%;
+
+    @include respond-to(desktop) {
+      width: 26%;
+    }
   }
 
   .type-dropdown {
@@ -411,13 +468,6 @@ export default {
 
     width: 17.5%;
   }
-
-  .search-dropdown-input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  .search-dropdown-options { top: 50px; }
 }
 
 .results {
@@ -443,16 +493,19 @@ export default {
   }
 
   .ballot {
-    $section-border: 1px solid $black;
-    background: $grey;
-    color: $black;
+    $section-border: 1px solid $font-placeholder;
+    background: $background;
+    color: $font-default;
     display: block;
     margin: 7px 0 8px 0;
     min-height: 90px;
     padding: 10px 14px;
     position: relative;
 
-    &:hover, &:active, &:focus { text-decoration: none; }
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+      background: $link-hover-background;
+    }
 
     @include respond-to(desktop) {
       display: flex;
@@ -528,14 +581,14 @@ export default {
       .glyphicon {
         font-size: 24px;
         margin-bottom: 4px;
-        &.accepted { color: $funblue; }
-        &.not-accepted { color: $red; }
+        &.accepted { color: $second; }
+        &.not-accepted { color: $third; }
 
         @include respond-to(desktop) { font-size: 29px; }
       }
 
       .text {
-        color: $grey-dark;
+        color: $font-default;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;

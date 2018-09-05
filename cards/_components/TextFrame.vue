@@ -9,7 +9,7 @@
 
 .text-frame {
   text-align: center;
-  background-color: $grey;
+  background-color: $background;
   padding: 30px;
   font-family: 'Roboto Slab', serif;
   font-size: 18px;

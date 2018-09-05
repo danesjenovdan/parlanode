@@ -234,10 +234,8 @@ export default {
   padding: 0;
 
   a {
-    color: $funblue;
+    color: $second;
   }
-
-  .dropdown-filter.search-dropdown { height: 51px; }
 
   .item .column {
     &:first-child {
@@ -245,7 +243,7 @@ export default {
     }
   }
 
-  .column{
+  .column {
     font-size: 16px;
 
     &:nth-child(2),
@@ -285,20 +283,8 @@ export default {
     }
   }
 
-
   .filters {
     margin-top: 14px;
-
-    .dropdown-filter {
-      margin-right: 0;
-
-      @include respond-to(desktop) {
-        margin-left: 10px;
-      }
-    }
-
-    $label-height: 26px;
-
     display: flex;
 
     .month-dropdown {
@@ -326,7 +312,7 @@ export default {
         background-size: 24px 24px;
         background-repeat: no-repeat;
         background-position: right 9px center;
-        border: 1px solid $grey-medium;
+        border: 1px solid $font-placeholder;
         font-size: 16px;
         height: 51px;
         line-height: 27px;
@@ -336,23 +322,8 @@ export default {
       }
     }
 
-    .search-dropdown-input {
-      padding-top: 11px;
-      padding-bottom: 11px;
-    }
-
-    .dropdown-filter {
-      margin: 0;
-      flex: 1.5;
-    }
-
     .filter {
       flex: 1.5;
-    }
-
-    .align-checkbox {
-      flex: 1;
-      justify-content: center;
     }
   }
 }

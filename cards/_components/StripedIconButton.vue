@@ -80,17 +80,16 @@ export default {
 .striped-button {
   align-items: center;
   background: $white;
-  border: 1px solid $grey-medium;
+  border: 1px solid $font-placeholder;
   cursor: default;
   display: flex;
   flex-direction: column;
-  height: 54px;
+  height: 51px;
   justify-content: center;
   padding: 0 10px;
   position: relative;
   text-align: center;
   user-select: none;
-  @include respond-to(desktop) { height: 58px; }
 
   // &.lightning-badge:before { top: -16px; }
 
@@ -140,10 +139,10 @@ export default {
   }
 
   $special-groups: (
-    dz: $red,
-    koal: $fontblue,
-    opoz: $grey-medium,
-    funblue: $funblue,
+    dz: $third,
+    koal: $link,
+    opoz: $font-placeholder,
+    funblue: $second,
   );
 
 
@@ -158,7 +157,7 @@ export default {
 }
 
 .parlaicon-m, .parlaicon-f {
-  fill: $black;
+  fill: $font-placeholder;
 }
 .is-selected {
   .parlaicon-m, .parlaicon-f {

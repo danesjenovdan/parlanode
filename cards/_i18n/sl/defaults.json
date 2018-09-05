@@ -76,6 +76,7 @@
   "session-type": "Vrsta seje",
   "no-results": "Brez zadetkov.",
   "no-speeches": "Brez govorov.",
+  "no-abstract": "Za ta zakon žal nimamo povzetka.",
   "present--f": "Prisotna",
   "present--m": "Prisoten",
   "present--plural": "Prisotni",
@@ -92,7 +93,6 @@
   "legislation": "Zakonodaja",
   "laws": "Zakoni",
   "acts": "Akti",
-  "load-more-speeches": "Naloži več govorov",
   "votings": "Glasovanja",
   "save": "Shrani",
   "generate": "Ustvari",
@@ -123,8 +123,10 @@
   "question": {
     "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
     "asked--f": "Zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
     "asked--with-name--m": "{name} je zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Glasoval ZA {title}",

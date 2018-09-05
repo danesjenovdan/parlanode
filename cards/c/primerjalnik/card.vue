@@ -443,7 +443,7 @@ export default {
     text-align: right;
 
     font-size: 11px;
-    color: $black;
+    color: $font-placeholder;
 
     @include respond-to(mobile) {
       text-align: left;
@@ -460,7 +460,7 @@ export default {
   padding: 5px;
   display: inline-block;
   margin: 5px;
-  color: $funblue;
+  color: $second;
 
   &::after {
     content: '×';
@@ -475,7 +475,7 @@ export default {
   }
 
   &.on {
-    background: $funblue;
+    background: $second;
     color: $white;
 
     &::after {
@@ -485,7 +485,7 @@ export default {
 }
 
 .loadme {
-  background: $funblue;
+  background: $second;
   width: 200px;
   height: 50px;
   margin: auto;
@@ -494,12 +494,12 @@ export default {
 }
 
 .searchfilter-checkbox .checkbox + label:before {
-  background-color: $grey;
+  background-color: $background;
 }
 
 .searchfilter-checkbox .checkbox + label {
   font-size: 11px;
-  color: $black;
+  color: $font-placeholder;
 }
 
 .tab-content {

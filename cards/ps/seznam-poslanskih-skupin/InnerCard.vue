@@ -72,3 +72,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.party-list .labeled-chart .column.chart-label {
+  line-height: 1.1;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+</style>

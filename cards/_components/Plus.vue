@@ -14,7 +14,7 @@
   font-size: 21px;
   line-height: 12px;
   cursor: pointer;
-  color: $funblue;
+  color: $second;
   position: relative;
   top: 3px;
   font-family: 'Roboto', sans-serif;

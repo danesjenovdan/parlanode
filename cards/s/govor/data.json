@@ -1,50 +1,52 @@
 {
   "person": {
     "is_active": false,
-    "district": [76],
-    "name": "Milan Brglez",
-    "gov_id": "P243",
-    "gender": "m",
+    "district": [
+      3
+    ],
+    "name": "Marta Luc-Polanc",
+    "gov_id": "1336",
+    "gender": "f",
     "party": {
-      "acronym": "SMC",
-      "is_coalition": true,
-      "id": 1,
-      "name": "PS Stranka modernega centra"
+      "acronym": "SDP",
+      "is_coalition": false,
+      "id": 339,
+      "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
     },
     "type": "mp",
-    "id": 11,
-    "has_function": true
+    "id": 1336,
+    "has_function": false
   },
-  "created_at": "19.04.2018",
-  "created_for": "16.04.2018",
+  "created_at": "20.08.2018",
+  "created_for": "11.04.2018",
   "results": {
-    "quote_id": null,
-    "content":
-      "Spo\u0161tovane kolegice poslanke in kolegi poslanci, gospe in gospodje!\nPri\u010denjamo 60. izredno sejo Dr\u017eavnega zbora, ki sem jo sklical na podlagi prvega odstavka 58. \u010dlena in drugega odstavka 60. \u010dlena Poslovnika Dr\u017eavnega zbora. \nObve\u0161\u010den sem, da se dana\u0161nje seje ne morejo udele\u017eiti naslednje poslanke in poslanci: mag. Tanja Cink, dr. Jasna Murgel, gospa Irena Gro\u0161elj Ko\u0161nik, gospod Danilo Anton Ranc, dr. Simona Kustec Lipicer od 13. do 20. ure, gospod Marjan Dolin\u0161ek, gospod Roberto Battelli, dr. L\u00e1szl\u00f3 G\u00f6ncz, dr. Vinko Gorenak, gospod Franc Laj, gospod Franc Jur\u0161a do 12. ure, gospod Franc Breznik, gospod Ivan Prelog do 13. ure, dr. Matej Ta\u0161ner Vatovec do 11. ure, Miha Kordi\u0161, od 16. ure pa bom odsoten tudi sam. \nNa sejo sem vabil predstavnika Dr\u017eavnega sveta k 24. to\u010dki dnevnega reda, predstavnika Urada predsednika Republike Slovenije in predstavnika Sodnega sveta k 25. to\u010dki dnevnega reda ter predstavnike Vlade k vsem to\u010dkam dnevnega reda. Vse prisotne lepo pozdravljam.\nPrehajamo na dolo\u010ditev dnevnega reda 60. izredne seje Dr\u017eavnega zbora. Predlog dnevnega reda ste prejeli v sredo, 11. aprila 2018 s sklicem seje. O predlogu dnevnega reda bomo odlo\u010dali v skladu s prvim odstavkom 64. \u010dlena Poslovnika Dr\u017eavnega zbora. Predlogov za \u0161iritev dnevnega reda seje nisem prejel. Zboru predlagam, da za dana\u0161njo sejo dolo\u010di dnevni red, kot ste ga prejeli s sklicem. \nPrehajamo na odlo\u010danje. Poslanke in poslance prosim, da preverite delovanje glasovalnih naprav. \nGlasujemo. Navzo\u010dih je 58 poslank in poslancev, za je glasovalo 54, proti nih\u010de. \n(Za je glasovalo 54.) (Proti nih\u010de.)\nUgotavljam, da je dnevni red 60. izredne seje zbora dolo\u010den.\n (nadaljevanje) Prehajamo na 20. TO\u010cKO DNEVNEGA REDA, TO JE NA DRUGO OBRAVNAVO PREDLOGA ZAKONA O VARNOSTI V \u017dELEZNI\u0160KEM PROMETU, V OKVIRU REDNEGA POSTOPKA. Predlog zakona je v obravnavo zboru predlo\u017eila Vlada. \nZa dopolnilno obrazlo\u017eitev predloga zakona dajem besedo predstavniku Vlade, dr\u017eavnemu sekretarju na Ministrstvu za infrastrukturo, mag. Klemnu Potisku.",
+    "content": "Zahvaljujem predsjedni\u010de Sabora, po\u0161tovani predsjedni\u010de Vlade, moje pitanje se odnosi na problem zaga\u0111enja vode u Slavonskom Brodu.\nNaime u ponedjeljak, dakle prije 2 dana gra\u0111ani Slavonskog Broda su donijeli obavijest da imaju sada ispravnu i pitku vodu. Me\u0111utim, gra\u0111ani su vrlo uznemireni, nisu tu vijest prihvatili sa povjerenjem i ve\u0107ina gra\u0111ana i dan danas vam jo\u0161 ne konzumira vodu u Slavonskom Brodu.\nA za\u0161to je to tako, naime cijela ta krizna situacija koja je trajala jedno tjedno i pol dana je obilje\u017eena brojnim sukobima i politi\u010dkim prepucavanjima izme\u0111u ministara va\u0161e Vlade i gradona\u010delnika Duspare.\nPri tome je va\u0161 ministar \u0106ori\u0107 optu\u017eio da na\u0161 vodovodni sustav, odnosno cijeli sustav pro\u010di\u0161\u0107avanja vode nije adekvatan, da je zapu\u0161ten i da pro\u010dista\u010dima je iza\u0161ao rok trajanja. Naime, tu su vrlo ozbiljne optu\u017ebe i vjerujte gra\u0111ani su zbog njih vrlo uznemireni jer sada nisu sigurni za svoje, nisu sigurni u konzumiranje vode za svoje zdravlje.\nPa vam ja imam konkretno, s druge strane je gradona\u010delnik Duspara optu\u017eio Vladu da ne\u0161to prikriva. Pa ja imam konkretno dva pitanja koja bih vam postavila. Prvo pitanje, ukoliko Vlada ni\u0161ta ne prikriva i ukoliko je sve bilo transparentno zbog \u010dega mi u gradu Brodu do danas nismo dobili izvje\u0161\u0107e nadle\u017enih inspekcija koje su bile na terenu a to je sanitarna inspekcija, vodopravna inspekcija, inspekcija za\u0161tite okoli\u0161a, zna\u010di na stranu organi istrage, nas zanima \u0161ta je nadle\u017ena inspekcija utvrdila na terenu.\nA broj 2, obzirom da ste objavili da je voda ispravna i zdrava za konzumiranje ja vas pitam kako to mo\u017eete garantirati i biti u to sigurni obzirom da mi do danas ne znamo \u0161ta je uzrok zaga\u0111enja? Kako nam mo\u017eete garantirati da ve\u0107 ve\u010deras voda ne\u0107e biti zaga\u0111ena ugljikovodicima?\nZahvaljujem.",
     "session": {
-      "name": "60. izredna seja",
+      "name": "8. sjednica",
       "orgs": [
         {
-          "acronym": "DZ",
+          "acronym": "sabor",
           "is_coalition": false,
-          "id": 95,
-          "name": "Dr\u017eavni zbor"
+          "id": 199,
+          "name": "Hrvatski sabor"
         }
       ],
-      "date": "16. 4. 2018",
+      "date": "10. 5. 2018",
       "org": {
-        "acronym": "DZ",
+        "acronym": "sabor",
         "is_coalition": false,
-        "id": 95,
-        "name": "Dr\u017eavni zbor"
+        "id": 199,
+        "name": "Hrvatski sabor"
       },
-      "date_ts": "2018-04-16T02:00:00",
-      "updated_at": "20. 4. 2018",
+      "date_ts": "2018-05-10T10:47:00",
+      "updated_at": "27. 8. 2018",
       "in_review": false,
-      "id": 10151
+      "id": 141
     },
+    "quote_id": null,
+    "the_order": 151,
     "quoted_text": null,
-    "speech_id": 1380317,
+    "speech_id": 122543,
     "end_idx": null,
     "start_idx": null
   }

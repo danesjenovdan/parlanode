@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find, intersection } from 'lodash';
 import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
@@ -139,9 +139,12 @@ export default {
 
         questionDay.questions
           .forEach((question) => {
-            if (validMPs.indexOf(question.person.id) === -1) {
-              validMPs.push(question.person.id);
-            }
+            const authors = question.authors || [question.person];
+            authors.forEach((author) => {
+              if (validMPs.indexOf(author.id) === -1) {
+                validMPs.push(author.id);
+              }
+            });
             if (validRecipients.indexOf(question.recipient_text) === -1) {
               validRecipients.push(question.recipient_text);
             }
@@ -205,9 +208,10 @@ export default {
   methods: {
     getFilteredQuestionDays(onlyFilterByText = false) {
       const filterQuestions = (question) => {
+        const authorIds = (question.authors || [question.person]).map(a => a.id);
         const MPMatch = onlyFilterByText
           || this.selectedMPs.length === 0
-          || this.selectedMPs.indexOf(question.person.id) !== -1;
+          || intersection(this.selectedMPs, authorIds).length > 0;
         const recipientMatch = onlyFilterByText || this.selectedRecipients.length === 0
           || this.selectedRecipients.indexOf(question.recipient_text) !== -1;
         const textMatch = this.textFilter === ''
@@ -253,13 +257,18 @@ export default {
 }
 
 .filters {
-
   $label-height: 26px;
 
   display: flex;
-  justify-content: space-between;
-
   min-height: 83px;
+
+  .filter {
+    flex: 1;
+  }
+
+  .filter:not(:last-child) {
+    margin-right: 10px;
+  }
 
   .filter-label {
     font-size: 14px;
@@ -289,7 +298,7 @@ export default {
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
-      border: 1px solid $grey-medium;
+      border: 1px solid $font-placeholder;
       font-size: 16px;
       height: 51px;
       line-height: 27px;
@@ -318,17 +327,6 @@ export default {
 
     width: 17.5%;
   }
-
-  .search-dropdown-input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  .search-dropdown-options { top: 50px; }
-
-  .search-dropdown input {
-    background-color: $white;
-  }
 }
 
 .votes {
@@ -338,14 +336,6 @@ export default {
   overflow-y: auto;
   margin-top: 18px;
   position: relative;
-
-  &:empty::after {
-    color: $grey-medium;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
 
   .date {
     font-weight: 500;

@@ -42,7 +42,7 @@ export default {
       return this.getPartyLink(this.party);
     },
     partyCssClass() {
-      return `${this.party.acronym.toLowerCase().replace(/ /g, '_')}-background`;
+      return `${this.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`;
     },
   },
 };
@@ -79,7 +79,7 @@ export default {
     text-align: center;
     border: 0px;
     pointer-events: none;
-    background-color: $black;
+    background-color: $font-placeholder;
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;

@@ -8,17 +8,22 @@
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              <label>{{ $t('name') }} <small>{{ column.voting.start_time }}</small></label>
+              <label>
+                {{ $t('name') }}
+                <small>{{ column.voting.start_time }}</small>
+              </label>
               <input v-model="column.voting.name" class="form-control">
             </template>
             <template v-if="index === 1">
-              <label>{{ $t('tags') }}</label>
+              <label>
+                {{ $t('tags') }}
+                <small><dash-button @click="openTagModal">+</dash-button></small>
+              </label>
               <dash-array-selector
                 v-model="column.tags"
                 :options="tags"
                 small
               />
-              add tag to list <input v-model="addTagValue" class="form-control" @keydown.enter.prevent="addTag">
             </template>
             <template v-if="index === 2">
               <label>{{ $t('result') }}</label>
@@ -71,6 +76,21 @@
         <modal-content-abstract :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
+    <dash-fancy-modal
+      v-if="tagModalOpen && tagModalData"
+      :data="tagModalData"
+      @closed="closeTagModal"
+    >
+      <template slot="modal-data" slot-scope="{ loadedData }">
+        <input
+          v-model.trim="loadedData.newTagName"
+          class="form-control"
+        >
+        <div v-for="tag in loadedData.tags" :key="tag.slug">
+          {{ tag.name }}
+        </div>
+      </template>
+    </dash-fancy-modal>
   </div>
 </template>
 
@@ -111,8 +131,9 @@ export default {
       tags: null,
       abstractModalOpen: false,
       abstractModalData: null,
+      tagModalOpen: false,
+      tagModalData: null,
       error: null,
-      addTagValue: '',
     };
   },
   computed: {
@@ -191,6 +212,31 @@ export default {
       this.abstractModalData = null;
       this.abstractModalOpen = false;
     },
+    openTagModal() {
+      this.tagModalData = {
+        title: this.$t('add-tag'),
+        loadData: async () => ({
+          newTagName: '',
+        }),
+        saveData: async (tagData) => {
+          await this.$parlapi.postTag({
+            name: tagData.newTagName,
+            slug: tagData.newTagName.toLowerCase()
+              .replace(/[^a-z0-9]/g, '-')
+              .replace(/--+/g, '-')
+              .replace(/^-|-$/g, ''),
+          });
+          const tags = await this.$parlapi.getTags();
+          this.tags = tags.data.results;
+          tagData.newTagName = '';
+        },
+      };
+      this.tagModalOpen = true;
+    },
+    closeTagModal() {
+      this.tagModalData = null;
+      this.tagModalOpen = false;
+    },
     saveData(voting) {
       return () => {
         const motion = this.motions.find(m => m.id === voting.motion);
@@ -205,13 +251,6 @@ export default {
             this.error = error;
           });
       };
-    },
-    addTag() {
-      this.tags.push({
-        name: this.addTagValue,
-        id: Math.random().toString(36).substring(9),
-      });
-      this.addTagValue = '';
     },
   },
 };
@@ -248,6 +287,12 @@ export default {
         flex-grow: 0;
         flex-basis: auto;
         justify-content: flex-end;
+      }
+
+      label {
+        .dash-button {
+          padding: 2px 6px;
+        }
       }
     }
   }

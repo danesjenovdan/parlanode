@@ -194,12 +194,12 @@
     "glasovanja": "/glasovanja/"
   },
   "urls": {
-    "cdn": "http://cdn.hr.parlameter.si/v1/parlassets",
-    "data": "http://data.hr.parlameter.si/v1",
-    "base": "http://hr.parlameter.si",
-    "isci": "http://isci.hr.parlameter.si",
-    "analize": "http://analize.hr.parlameter.si/v1",
-    "glej": "http://glej.hr.parlameter.si"
+    "cdn": "http://cdn.parlametar.hr/v1/parlassets",
+    "analize": "https://analize.parlametar.hr/v1",
+    "data": "https://data.parlametar.hr/v1",
+    "isci": "https://isci.parlametar.hr",
+    "glej": "https://glej.parlametar.hr",
+    "base": "https://beta.parlametar.hr"
   },
   "party": {
     "199": { "acronym": "sabor", "realAcronym": "sabor", "slug": "sabor" },

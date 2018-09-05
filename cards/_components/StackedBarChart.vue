@@ -1,25 +1,28 @@
 <template>
   <div class="session_voting">
-    <div v-for="row in rows" :key="row.name" class="row">
-      <div class="col-xs-12" style="background-color: #f0f0f0; margin-bottom: 10px; padding: 10px;">
-        {{ row.name }}
-        <span
-          v-for="(chunk, k) in row.reverseStack"
-          :class="['pull-right', 'legenda', getReverseColor(row, k)]"
-          :key="chunk.label"
-        >
-          <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label }}: </span>
-          {{ chunk.value }}
-        </span>
-        <div class="session_votes">
-          <div :style="{width: String(row.percentage) + '%'}" class="progress smallbar">
-            <div
-              v-for="(chunk, i) in row.stack"
-              :class="['progress-bar', colorClasses[i]]"
-              :style="{ width: String(chunk.percentage) + '%'}"
-              :key="chunk.label"
-            >
-              <span class="sr-only">{{ chunk.percentage }}%</span>
+    <div v-t="'no-results'" v-if="rows.length === 0" class="no-results" />
+    <div v-else>
+      <div v-for="row in rows" :key="row.name" class="row">
+        <div class="col-xs-12" style="background-color:#f0f0f0;margin-bottom:10px;padding:10px;">
+          {{ row.name }}
+          <span
+            v-for="(chunk, k) in row.reverseStack"
+            :class="['pull-right', 'legenda', getReverseColor(row, k)]"
+            :key="chunk.label"
+          >
+            <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label }}: </span>
+            {{ chunk.value }}
+          </span>
+          <div class="session_votes">
+            <div :style="{width: String(row.percentage) + '%'}" class="progress smallbar">
+              <div
+                v-for="(chunk, i) in row.stack"
+                :class="['progress-bar', colorClasses[i]]"
+                :style="{ width: String(chunk.percentage) + '%'}"
+                :key="chunk.label"
+              >
+                <span class="sr-only">{{ chunk.percentage }}%</span>
+              </div>
             </div>
           </div>
         </div>
@@ -95,7 +98,7 @@ export default {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: $funblue;
+    background-color: $second;
   }
 }
 .legenda.fontblue {
@@ -104,7 +107,7 @@ export default {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: $fontblue;
+    background-color: $link;
   }
 }
 
@@ -119,7 +122,7 @@ export default {
 }
 
 #votingCard div.member span {
-  color: $black;
+  color: $font-placeholder;
   font-weight: 500;
 }
 
@@ -135,14 +138,6 @@ export default {
 .session_voting {
   font-weight: 400;
   padding: 12px 15px 15px 12px;
-
-  &:empty::after {
-    color: $grey-medium;
-    content: "Ni rezultatov.";
-    left: calc(50% - 41px);
-    position: absolute;
-    top: calc(50% - 10px);
-  }
 
   .session_votes .progress.smallbar {
     height: 25px;
@@ -163,7 +158,7 @@ export default {
 }
 
 .accepted.nay {
-  color: $red;
+  color: $third;
 }
 
 .session_voting .accepted {
@@ -213,11 +208,11 @@ export default {
 
   .border-left {
     border-left: none;
-    border-top: 2px solid $darkgrey;
+    border-top: 2px solid $font-placeholder;
   }
   .single_voting:hover {
     .border-left {
-      border-top-color: $funblue-light;
+      border-top-color: $link-hover-background;
     }
   }
 
@@ -240,15 +235,15 @@ export default {
 }
 
 .single_voting:hover {
-  background-color: $funblue-light-hover;
+  background-color: $link-hover-background-hover;
 
   .border-left {
-    border-left-color: $funblue-light;
+    border-left-color: $link-hover-background;
   }
 }
 
 .seja_anchor:hover {
-  color: $black;
+  color: $font-placeholder;
 }
 
 .card-content-front {

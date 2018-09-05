@@ -111,6 +111,6 @@ export default {
   line-height: 20px;
   margin: 70px 0;
   text-align: center;
-  color: $grey-medium;
+  color: $font-placeholder;
 }
 </style>

@@ -62,17 +62,15 @@ export default {
 .striped-button {
   align-items: center;
   background: $white;
-  border: 1px solid $grey-medium;
+  border: 1px solid $font-placeholder;
   cursor: default;
   display: flex;
   flex-direction: column;
-  height: 54px;
+  height: 51px;
   justify-content: center;
-  padding: 0 10px;
   position: relative;
   text-align: center;
   user-select: none;
-  @include respond-to(desktop) { height: 58px; }
 
   // &.lightning-badge:before { top: -16px; }
 
@@ -89,9 +87,13 @@ export default {
   }
 
   .small-text {
+    padding: 0 8px;
     font-size: 10px;
     line-height: 1em;
-    @include respond-to(desktop) { font-size: 13px; }
+
+    @include respond-to(desktop) {
+      font-size: 12px;
+    }
 
     &.is-uppercase {
       text-transform: uppercase;
@@ -122,9 +124,9 @@ export default {
   }
 
   $special-groups: (
-    dz: $red,
-    koal: $fontblue,
-    opoz: $grey-medium
+    dz: $third,
+    koal: $link,
+    opoz: $font-placeholder
   );
 
 

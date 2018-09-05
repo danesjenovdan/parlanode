@@ -36,20 +36,20 @@ export default {
 @import '~parlassets/scss/colors';
 
 .toggle {
-  $height: 53px;
+  $height: 51px;
   display: flex;
   font-size: 15px;
   height: $height;
   line-height: $height;
   .option {
     align-items: center;
-    background: $funblue-light;
-    color: $grey-dark;
+    background: $link-hover-background;
+    color: $font-default;
     cursor: pointer;
     flex: 1;
     text-align: center;
     &.is-selected {
-      background: $sadblue;
+      background: $first;
       color: $white;
       cursor: default;
     }
