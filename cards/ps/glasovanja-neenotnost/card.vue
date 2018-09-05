@@ -22,7 +22,7 @@
       <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
-    <div class="groups">
+    <!-- <div class="groups">
       <striped-button
         v-for="group in groups"
         :color="group.color.toLowerCase()"
@@ -32,7 +32,7 @@
         :is-uppercase="false"
         @click.native="selectGroup(group.acronym)"
       />
-    </div>
+    </div> -->
 
     <div class="filters">
       <div class="filter text-filter">
@@ -40,11 +40,14 @@
         <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
       <div class="filter type-dropdown">
-        <div v-t="'vote-types'" class="filter-label"></div>
+        <div v-t="'parties'" class="filter-label"></div>
         <p-search-dropdown
-          v-model="allClassifications"
-          :alphabetise="false"
-        />
+          :value="allItems"
+          :placeholder="$t('search_placeholder')"
+          :single="true"
+          :groups="partyGroups"
+          @select="selectCallback"
+        ></p-search-dropdown>
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
@@ -155,7 +158,27 @@ export default {
     namedGroups = sortBy(namedGroups, ['name']);
     groups = groups.concat(namedGroups);
 
+    // SEARCH DROPDOWN FOR PEOPLE AND PARTIES
+    const partyGroups = [{
+      label: 'Stranke',
+      items: Object.keys(this.$options.cardData.data).map(key => key),
+    }];
+
+    const parties = Object.keys(this.$options.cardData.data)
+      .filter(key => this.$options.cardData.data[key].acronym !== this.$t('opposition'))
+      .map((key) => {
+        return {
+          id: key,
+          label: this.$options.cardData.data[key].acronym === this.$t('parliament') ? this.$t('parliament') : this.$options.cardData.data[key].acronym,
+          selected: this.$options.cardData.data[key].acronym === this.$t('parliament'),
+          colorClass: `${this.$options.cardData.data[key].acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+        };
+      });
+    // SEARCH DROPDOWN END
+
     return {
+      partyGroups,
+      parties,
       voteData: [],
       loading: true,
       selectedSort: 'maximum',
@@ -169,6 +192,9 @@ export default {
     };
   },
   computed: {
+    allItems() {
+      return this.parties;
+    },
     selectedTags() {
       return this.allTags
         .filter(tag => tag.selected)
@@ -236,6 +262,33 @@ export default {
     context.template.pageTitle = this.dynamicTitle;
   },
   methods: {
+    groupBy(array, f) {
+      const groups = {};
+      array.forEach((o) => {
+        const group = JSON.stringify(f(o));
+        groups[group] = groups[group] || [];
+        groups[group].push(o);
+      });
+      return Object.keys(groups).map(group => groups[group]);
+    },
+    selectCallback(id) {
+      this.parties.forEach((p) => {
+        p.selected = false;
+      });
+
+      this.parties.find(p => p.id === id).selected = !this.parties.find(p => p.id === id).selected;
+
+      this.selectGroup(this.parties.find(p => p.id === id).label);
+    },
+    clearCallback() {
+      this.parties.forEach((p) => {
+        p.selected = false;
+      });
+
+      this.parties.find(p => p.label === this.$t('parliament')).selected = true;
+
+      this.selectGroup(this.$t('parliament'));
+    },
     getFilteredVotingDays(onlyFilterByText = false) {
       if (!this.voteData || this.voteData.length === 0) {
         return [];
@@ -442,14 +495,17 @@ export default {
   .ballot {
     $section-border: 1px solid $font-placeholder;
     background: $background;
-    color: $font-placeholder;
+    color: $font-default;
     display: block;
     margin: 7px 0 8px 0;
     min-height: 90px;
     padding: 10px 14px;
     position: relative;
 
-    &:hover, &:active, &:focus { text-decoration: none; }
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+      background: $link-hover-background;
+    }
 
     @include respond-to(desktop) {
       display: flex;
