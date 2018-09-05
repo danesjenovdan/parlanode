@@ -5,8 +5,6 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-
-    <!-- Card content goes here -->
     <p-search-dropdown
       :value="allItems"
       :placeholder="$t('search_placeholder')"
@@ -14,8 +12,7 @@
       :groups="groups"
       @select="selectCallback"
       @search="searchCallback"
-    ></p-search-dropdown>
-    
+    />
   </transparent-wrapper>
 </template>
 
@@ -26,8 +23,6 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import links from 'mixins/links';
 
 export default {
-  // TODO: remove eslint comment
-  // eslint-disable-next-line vue/name-property-casing
   name: 'MenuSearch',
   components: {
     TransparentWrapper,
@@ -39,59 +34,40 @@ export default {
   ],
   data() {
     const grouped = this.groupBy(
-      this.$options.cardData.data.data, item => [item.person.party.acronym]
+      this.$options.cardData.data.data,
+      item => [item.person.party.acronym],
     );
 
     const groups = [{
       label: 'Stranke',
       items: grouped.map(group => group[0].person.party.acronym),
-    }].concat(grouped.map((group) => {
-      return {
-        label: group[0].person.party.acronym,
-        items: group.map(p => p.person.id),
-        id: group[0].person.party.id,
-      };
+    }].concat(grouped.map(group => ({
+      label: group[0].person.party.acronym,
+      items: group.map(p => p.person.id),
+      id: group[0].person.party.id,
+    })));
+
+    const parties = grouped.map(group => ({
+      id: group[0].person.party.acronym,
+      label: group[0].person.party.acronym,
+      selected: false,
+      colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
     }));
 
-    const parties = grouped.map((group) => {
-      return {
-        id: group[0].person.party.acronym,
-        label: group[0].person.party.acronym,
-        selected: false,
-        colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
-      };
-    });
-
-    const people = this.$options.cardData.data.data.map((p) => {
-      return {
-        id: p.person.id,
-        label: p.person.name,
-        selected: false,
-        image: this.getPersonPortrait(p.person),
-        acronym: p.person.party.acronym,
-      };
-    });
+    const people = this.$options.cardData.data.data.map(p => ({
+      id: p.person.id,
+      label: p.person.name,
+      selected: false,
+      image: this.getPersonPortrait(p.person),
+      acronym: p.person.party.acronym,
+    }));
 
     return {
       grouped,
       groups,
       people,
       parties,
-      searchInput: '',
       data: this.$options.cardData.data,
-      headerConfig: {
-        // TODO: fix this when developing card
-        // best if you include a mixin from 'mixins/altHeaders'
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$t('card.title'),
-      },
-      ogConfig: {
-        // TODO: fix this when developing card
-        // best if you include a mixin from 'mixins/ogImages'
-      },
     };
   },
   computed: {
@@ -110,7 +86,6 @@ export default {
       return Object.keys(groups).map(group => groups[group]);
     },
     selectCallback(id) {
-      console.log(id);
       if (parseInt(id, 10)) {
         // it's a person
         document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.member.base}/${this.slugs.person[id].slug}`;
@@ -137,17 +112,14 @@ export default {
 .search-dropdown::after {
   content: "\e003";
   font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
   border: none;
   font-size: 22px;
-
-  position: relative;
-  display: inline-block;
-  top: 6px;
-  right: 40px;
-
+  top: 0;
+  right: 0;
+  display: flex;
+  height: 100%;
+  width: 40px;
+  align-items: center;
   color: $first;
 }
 </style>
