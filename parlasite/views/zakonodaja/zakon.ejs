@@ -1,4 +1,4 @@
-<% include ../_partials/header.ejs %>
+<%- await include('../_partials/header.ejs') %>
 
 <style>
 /* TODO: remove style tags from all templates */
@@ -44,4 +44,4 @@
 
 <%- await fetchCard('/s/zakon/', { customUrl: `{analize}/s/getLegislation/${lawData.epa}`}) %>
 
-<% include ../_partials/footer.ejs %>
+<% include('../_partials/footer.ejs') %>

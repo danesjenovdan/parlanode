@@ -1,6 +1,6 @@
-<% include ../_partials/header.ejs %>
+<%- await include('../_partials/header.ejs') %>
 
-<% include ./_header.ejs %>
+<%- await include('./_header.ejs') %>
 
 <%# TODO: type is hardcoded %>
 <% if (session.type != 'kolegij') { %>
@@ -9,12 +9,12 @@
       <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: true } }) %>
     </div>
   <% } else if (session.org.name === 'Državni zbor') { %>
-    <% include ../empty-state/state1dz.ejs %>
+    <% include('../empty-state/state1dz.ejs') %>
   <% } else { %>
-    <% include ../empty-state/state1.ejs %>
+    <% include('../empty-state/state1.ejs') %>
   <% } %>
 <% } else { %>
-  <% include ../empty-state/state2.ejs %>
+  <% include('../empty-state/state2.ejs') %>
 <% } %>
 
-<% include ../_partials/footer.ejs %>
+<% include('../_partials/footer.ejs') %>
