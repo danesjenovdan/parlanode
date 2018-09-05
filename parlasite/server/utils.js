@@ -73,7 +73,11 @@ const asyncRender = fn => (req, res, next) => {
       }
     });
   };
-  fn(render, req, res, next);
+  try {
+    fn(render, req, res, next);
+  } catch (error) {
+    next(error);
+  }
 };
 
 function expandProps(msg, props) {
