@@ -260,13 +260,13 @@
     height: 90px;
     margin-bottom: 20px;
     display: inline-block;
+    background-color: $first;
+
     b {
         display: inline-block;
         line-height: 90px;
         font-size: 24px;
     }
-
-    background-color: $icon-session;
 }
 
 .session_transcript_menu {
