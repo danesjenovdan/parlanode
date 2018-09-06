@@ -17,6 +17,7 @@ header.header {
     .navbar-default {
         background-color: transparent;
         padding-top: 10px;
+        height: 100px;
     }
     .navbar-collapse {
         border-top: none;
@@ -232,9 +233,6 @@ header.header {
         }
         .twitter-typeahead{
             width:90%;
-        }
-        .navbar-header{
-            width:100%;
         }
     }
 
@@ -545,6 +543,9 @@ footer.footer {
         .navbar-header {
             margin-bottom: 13px !important;
             overflow-x: hidden;
+            position: absolute;
+            z-index: 20;
+            height: 80px;
         }
 
         .searchForm {
