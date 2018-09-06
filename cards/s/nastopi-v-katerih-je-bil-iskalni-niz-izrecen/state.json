@@ -1,3 +1,5 @@
 {
-  "query": "policija"
+  "query": "policija",
+  "mps": [1380, 1381],
+  "pgs": []
 }

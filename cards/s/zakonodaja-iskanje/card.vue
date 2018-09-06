@@ -22,7 +22,6 @@
             :sort="currentSort"
             :sort-order="currentSortOrder"
             :sort-callback="selectSort"
-            class=""
           />
         </div>
       </scroll-shadow>

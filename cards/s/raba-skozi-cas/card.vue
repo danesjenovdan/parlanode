@@ -54,6 +54,8 @@ export default {
     return {
       data: null,
       keywords: loadFromState('query'),
+      mps: loadFromState('mps') || [],
+      pgs: loadFromState('pgs') || [],
       loading: true,
     };
   },
@@ -66,7 +68,7 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
+    const searchUrl = `${this.slugs.urls.isci}/filter/${this.keywords}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
     axios.get(searchUrl)
       .then((res) => {
         this.data = res.data;
