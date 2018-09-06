@@ -56,11 +56,11 @@ export default {
       return this.data.results.map(item => ({
         label: item.term,
         value: Math.round(item.scores['tf-idf'] * 5000),
-        link: this.getSearchTermLink(item.term),
+        link: this.getSearchTermLink(item.term, { mps: [this.data.person.id] }),
       }));
     },
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
+      return `${this.url}${this.data.person.id}?altHeader=true`;
     },
   },
 };

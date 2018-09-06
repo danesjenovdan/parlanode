@@ -209,7 +209,7 @@ export default {
       const votes = this.data.votes.map((e) => {
         const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
         e.url = this.getSessionVoteLink({
-          session_id: (e.session_id || this.data.session.id),
+          session_id: (e.session_id || (e.session && e.session.id) || this.data.session.id),
           vote_id: e.motion_id,
         });
         e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;

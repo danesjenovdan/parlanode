@@ -89,6 +89,8 @@ export default {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
       keywords: loadFromState('query'),
+      mps: loadFromState('mps') || [],
+      pgs: loadFromState('pgs') || [],
       rawSpeeches: [],
       allResults: 0,
       page: 0,
@@ -112,10 +114,12 @@ export default {
         return speech;
       });
     },
+    searchUrl() {
+      return `${this.slugs.urls.isci}/filter/${this.keywords}/${this.page}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/q/${this.keywords}`;
-    axios.get(searchUrl)
+    axios.get(this.searchUrl)
       .then((res) => {
         this.rawSpeeches = res.data.highlighting || [];
         this.allResults = res.data.response.numFound;
@@ -144,7 +148,7 @@ export default {
       }
       this.fetching = true;
       this.page += 1;
-      $.get(`${this.slugs.urls.isci}/q/${this.keywords}/${this.page}`, (response) => {
+      $.get(this.searchUrl, (response) => {
         this.rawSpeeches = this.rawSpeeches.concat(response.highlighting);
         if (this.allResults <= (this.page + 1) * PAGE_SIZE) {
           this.$refs.scrollElement.removeEventListener('scroll', this.checkIfBottom);

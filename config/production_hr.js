@@ -4,7 +4,7 @@ module.exports = {
     name: 'parladb',
   },
   urls: {
-    cdn: 'http://cdn.parlametar.hr/v1/parlassets',
+    cdn: 'https://cdn.parlametar.hr/v1/parlassets',
     analize: 'https://analize.parlametar.hr/v1',
     data: 'https://data.parlametar.hr/v1',
     isci: 'https://isci.parlametar.hr',
