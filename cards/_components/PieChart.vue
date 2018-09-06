@@ -3,7 +3,7 @@
 </template>
 
 <script>
-/* global, query, customUrl */
+/* global query, customUrl */
 import d3 from 'd3v3';
 
 function chart(rawData, component) {
@@ -65,18 +65,6 @@ function chart(rawData, component) {
     const width = 400 - margin.left - margin.right;
     const height = 500 - margin.top - margin.bottom;
     const radius = Math.min(width, height) / 2;
-
-    const color = d3.scale.ordinal()
-      .range([
-        '#8FCFEE',
-        '#4FB5E6',
-        '#AA7375',
-        '#534961',
-        '#4F6379',
-        '#5388AA',
-        '#D9776B',
-        '#BA594C',
-      ]);
 
     const arc = d3.svg.arc()
       .outerRadius(radius - 30)

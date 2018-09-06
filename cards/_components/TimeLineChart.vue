@@ -3,9 +3,9 @@
 </template>
 
 <script>
+import d3 from 'd3v3';
 import links from 'mixins/links';
 
-/* global d3 */
 function chart(rawData, component) {
   $('.timelinechart svg').remove();
 
