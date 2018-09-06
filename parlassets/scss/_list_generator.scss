@@ -20,7 +20,7 @@
 
     li {
       align-items: center;
-      border: 1px solid $font-placeholder;
+      border: none;
       box-sizing: border-box;
       color: $white;
       cursor: pointer;
@@ -31,23 +31,23 @@
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
-      background-color: $first;
+      background-color: $tab-passive;
 
       @include respond-to(limbo) {
         font-size: 12px;
       }
 
-      &.selected {
-        background-color: $second;
-        color: $white;
-        cursor: default;
-      }
-
       &:last-child { margin-right: 0; }
 
       &:hover {
-        background-color: $second-hover;
+        background-color: $tab-hover;
         color: $white;
+      }
+
+      &.selected {
+        background-color: $tab-active;
+        color: $white;
+        cursor: default;
       }
     }
   }

@@ -40,21 +40,21 @@
                 line-height: 30px;
                 padding: 10px 30px;
                 color: $white;
-                border: 1px solid $font-placeholder;
+                border: none;
                 text-transform: uppercase;
                 background-color: $tab-passive;
             }
 
-            a.active {
+            a:hover {
                 color: $white;
-                background-color: $tab-active;
+                background-color: $tab-hover;
                 text-decoration: none;
             }
 
-            a:hover {
-                color: $white;
-                background-color: $tab-active;
-                text-decoration: none;
+            a.active {
+              color: $white;
+              background-color: $tab-active;
+              text-decoration: none;
             }
 
             .nav-icon {

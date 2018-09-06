@@ -113,7 +113,7 @@ $option-colors: (
 // hover colors TODO
 $white-hover: rgba($white, 0.7);
 $second-hover: rgba($second, 0.7);
-$link-hover-background-hover: #e1f6ff;
+$link-hover-background-hover: $link-hover-background;
 $link-hover: rgba($link, 0.7);
 $button-absent-hover: rgba($button-abstained, 0.7);
 $button-abstained-hover: rgba($button-abstained, 0.7);
