@@ -7,7 +7,7 @@
     "text": "Prebroji se koliko puta je pojedina govornica izrekla najmanje dva pretraživana niza i one koje su ih barem jednom upotrijebile rangirane su prema broju ponavljanja, podijeljeno s frakcijskim brojem svih govora te zastupnice, njezinog kluba i ukupnog broja svih govora."
   },
   "speakers": "Govornice",
-  "parties": "Klubovi zastupnica",
+  "parties": "Klubovi",
   "input-words": "Unesi jednu ili više riječi odvojenih zarezom.",
   "empty-text": "Za prikaz rezultata dodajte najmanje dvije riječi.",
   "wordgroups-text": "Prikaži tko najviše spominje sljedeću grupu riječi: {words} {load}",
