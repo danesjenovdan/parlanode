@@ -12,19 +12,14 @@ router.get('/', ar((render) => {
 }));
 
 router.get(`/${sm.sessions.search.base}`, ar((render, req) => {
+  const mps = req.query.mps ? req.query.mps.split(',').map(Number).filter(Boolean) : undefined;
+  const pgs = req.query.pgs ? req.query.pgs.split(',').map(Number).filter(Boolean) : undefined;
   render('seje/isci', {
     activeMenu: 'sessions',
     pageTitle: 'Išči seje',
     query: req.query.q,
-  });
-}));
-
-router.get(`/${sm.sessions.search.base}/${sm.sessions.search.filter}`, ar((render, req) => {
-  render('seje/isci/filter', {
-    activeMenu: 'sessions',
-    pageTitle: 'Išči seje',
-    query: req.query.q,
-    queryObj: req.query, // TODO: remove this when fixing seje/isci/filter.ejs
+    mps,
+    pgs,
   });
 }));
 
