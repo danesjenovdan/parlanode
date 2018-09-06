@@ -132,7 +132,7 @@ export default {
     &:not(.sort):hover span::after {
       content: '';
       border-style: solid;
-      border-color: transparent transparent $second;
+      border-color: transparent transparent $first;
       border-width: 0 6px 7px;
       position: absolute;
       margin-left: 6px;
@@ -180,7 +180,7 @@ export default {
 
 .bar {
   width: 100%;
-  background-color: $second;
+  background-color: $third;
   height: 18px;
   display: flex;
   flex-wrap: nowrap;
