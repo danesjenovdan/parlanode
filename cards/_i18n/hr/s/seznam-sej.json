@@ -3,7 +3,7 @@
     "title": "Popis sjednica"
   },
   "info": {
-    "lead": "Popis svih sjednica onog saziva HS-a koji odgovara korisničkom unosu ({filter}). Popis je sortiran prema {sort-by}{just-last-five}.",
+    "lead": "Popis svih sjednica HS-a koji odgovara korisničkom unosu ({filter}). Popis je sortiran prema {sort-by}{just-last-five}.",
     "text": "Podaci o sjednicama preuzimaju se sa stranice HS-a, točnije {link1}, {link2} i {link3}.",
     "links": [
       {
@@ -23,7 +23,7 @@
   "limited-to-last-five": ", pregled je ograničen na samo prvih pet sjednica",
   "just-last-five": "Samo posljednjih 5",
   "select-working-body-placeholder": "Izaberite radno tijelo",
-  "sort-by--name": "naziv sjednice",
+  "sort-by--name": "nazivu sjednice",
   "sort-by--date": "datumu početka sjednice",
   "sort-by--updated": "datumu zadnje izmjene podataka o sjednici",
   "sort-by--workingBody": "nazivu tijela"
