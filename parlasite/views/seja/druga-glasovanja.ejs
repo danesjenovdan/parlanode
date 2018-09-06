@@ -6,7 +6,8 @@
 <% if (session.type != 'kolegij') { %>
   <% if (session.votes) { %>
     <div class="col-md-12">
-      <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: true } }) %>
+      <%# [HR] show all votes here "onlyOther: false" %>
+      <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: false } }) %>
     </div>
   <% } else if (session.org.name === 'Državni zbor') { %>
     <%- await include('../empty-state/state1dz.ejs') %>
