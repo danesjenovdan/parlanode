@@ -2,8 +2,6 @@
 
 <%- await include('./_header.ejs') %>
 
-<script>window.location.href = '/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.otherVotings %>';</script>
-
 <%# TODO: type is hardcoded %>
 <% if (session.type != 'kolegij') { %>
   <% if (session.votes) { %>
