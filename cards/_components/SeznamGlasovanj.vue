@@ -55,25 +55,25 @@
                       <div class="progress smallbar">
                         <div
                           :style="{ width: vote.percent_votes_for + '%' }"
-                          class="progress-bar funblue"
+                          class="progress-bar aye"
                         >
                           <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
                         </div>
                         <div
                           :style="{ width: vote.percent_against + '%' }"
-                          class="progress-bar fontblue"
+                          class="progress-bar ney"
                         >
                           <span class="sr-only">{{ vote.percent_against }}% votes against</span>
                         </div>
                         <div
                           :style="{ width: vote.percent_abstain + '%' }"
-                          class="progress-bar noblue"
+                          class="progress-bar abstention"
                         >
                           <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                         </div>
                         <div
                           :style="{ width: vote.percent_not_present + '%' }"
-                          class="progress-bar ignoreblue"
+                          class="progress-bar not"
                         >
                           <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
                         </div>
@@ -82,22 +82,22 @@
                         <div class="col-xs-3">
                           {{ vote.votes_for }}
                           <div v-t="'vote-for'" class="type"></div>
-                          <div class="indicator ney">&nbsp;</div>
+                          <div class="indicator aye">&nbsp;</div>
                         </div>
                         <div class="col-xs-3">
                           {{ vote.against }}
                           <div v-t="'vote-against'" class="type"></div>
-                          <div class="indicator aye">&nbsp;</div>
+                          <div class="indicator ney">&nbsp;</div>
                         </div>
                         <div class="col-xs-3">
                           {{ vote.abstain }}
                           <div v-t="'vote-abstained'" class="type"></div>
-                          <div class="indicator not">&nbsp;</div>
+                          <div class="indicator abstention">&nbsp;</div>
                         </div>
                         <div class="col-xs-3">
                           {{ vote.not_present }}
                           <div v-t="'vote-not'" class="type"></div>
-                          <div class="indicator abstention">&nbsp;</div>
+                          <div class="indicator not">&nbsp;</div>
                         </div>
                       </div>
                     </div>
@@ -305,10 +305,6 @@ export default {
     }
   }
 
-}
-
-.accepted.nay {
-  color: $third;
 }
 
 .session_voting .accepted {
