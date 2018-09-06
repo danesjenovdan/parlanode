@@ -260,7 +260,10 @@
     height: 90px;
     margin-bottom: 20px;
     display: inline-block;
-    background-color: $first;
+
+    &.backgroundred {
+        background-color: $first;
+    }
 
     b {
         display: inline-block;
@@ -432,7 +435,7 @@
         font-size: 24px;
     }
     .accepted.aye {
-        color: $second;
+        color: $icon-accepted;
     }
     .accepted.nay {
         color: $first;
@@ -455,17 +458,21 @@
             font-size: 3px;
             margin: 0 auto;
         }
+        .progress.smallbar .aye,
         .indicator.aye {
+            background: $icon-accepted;
+        }
+        .progress.smallbar .ney,
+        .indicator.ney {
             background: $link;
         }
-        .indicator.ney {
-            background: $second;
-        }
+        .progress.smallbar .abstention,
         .indicator.abstention {
-            background: $button-absent;
-        }
-        .indicator.not {
             background: $button-abstained;
+        }
+        .progress.smallbar .not,
+        .indicator.not {
+            background: $button-absent;
         }
     }
     a {
