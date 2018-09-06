@@ -1,6 +1,6 @@
 {
   "_id": "c_vsa-glasovanja",
-  "dataUrl": "{analize}/s/getAllVotes/",
+  "dataUrl": "{analize}/s/getAllVotes",
   "lastUpdate": "2018-09-06T13:04:58.754Z",
   "big": true,
   "high": true
