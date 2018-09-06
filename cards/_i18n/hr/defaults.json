@@ -96,7 +96,7 @@
   "votings": "Glasanja",
   "save": "Spremi",
   "generate": "Kreiraj",
-  "edit-abstract": "Uredi povzetek",
+  "edit-abstract": "Uredi sažetak",
   "info": {
     "title": "Info",
     "methodology": "METODOLOGIJA"
@@ -123,10 +123,10 @@
   "question": {
     "asked--m": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
     "asked--f": "Postavila je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
     "asked--with-name--m": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.",
     "asked--with-name--f": "{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--with-name--plural": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Glasao je ZA {title}",
@@ -137,41 +137,41 @@
     "ballot--not--f": "Nije glasala za {title}",
     "ballot--quorum--m": "SUZDRŽAO se od glasanja o {title}",
     "ballot--quorum--f": "SUZDRŽALA se od glasanja o {title}",
-    "ballot--absent--m": "NI glasoval za {title}",
-    "ballot--absent--f": "NI glasovala za {title}",
-    "ballot--abstain--m": "VZDRŽAL se je glasovanja o {title}",
-    "ballot--abstain--f": "VZDRŽALA se je glasovanja o {title}",
+    "ballot--absent--m": "Nije glasao za {title}",
+    "ballot--absent--f": "Nije glasala za {title}",
+    "ballot--abstain--m": "SUZDRŽAO se od glasanja o {title}",
+    "ballot--abstain--f": "SUZDRŽALA se od glasanja o {title}",
     "speech--m": "Govorio je na {session} {org}",
     "speech--f": "Govorila je na {session} {org}"
   },
   "months": [
-    "januar",
-    "februar",
-    "marec",
-    "april",
-    "maj",
-    "junij",
-    "julij",
-    "avgust",
-    "september",
-    "oktober",
-    "november",
-    "december"
+    "siječanj",
+    "veljača",
+    "ožujak",
+    "travanj",
+    "svibanj",
+    "lipanj",
+    "srpanj",
+    "kolovoz",
+    "rujan",
+    "listopad",
+    "studeni",
+    "prosinac"
   ],
   "vote_types": {
     "agenda": "dnevni red",
-    "whole_law": "glasovanje o zakonu v celoti",
-    "amendment": "amandma",
+    "whole_law": "glasanje o zakonu u cjelini",
+    "amendment": "amandman",
     "no_confidence": "interpelacija",
-    "record_conclusion": "evidenčni sklep",
-    "conclusion_proposal": "predlog sklepa",
+    "record_conclusion": "prvo čitanje",
+    "conclusion_proposal": "prijedlog zakona",
     "ratification": "zakon o ratifikaciji",
     "naming": "imenovanje",
-    "call_proposal": "predlog za razpis",
-    "recommendation": "priporočilo",
-    "report": "poročilo",
+    "call_proposal": "za raspisivanje",
+    "recommendation": "preporuka",
+    "report": "izvješće",
     "procedural_proposal": "proceduralni predlog",
     "personal_property_decree": "odlok o načrtu ravnanja s stvarnim premoženjem",
-    "other": "drugo"
+    "other": "ostalo"
   }
 }
