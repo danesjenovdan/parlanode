@@ -322,6 +322,13 @@ footer.footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 210px;
+    color: $font-default;
+
+    a {
+        color: $link;
+        font-weight: 400;
+    }
+
     .cnt {
         border-top: 1px solid $font-placeholder;
         padding-top: 10px;
@@ -340,41 +347,36 @@ footer.footer {
         margin-top: 10px;
     }
 
-    .colorBlack{
-        color: $font-placeholder;
-    }
-
     .parlaicon-twitter-parlameter {
         width: 35px;
         height: 35px;
         line-height: 35px;
         position: relative;
-        color: $second;
-        margin: 0 0px 0 30px;
+        margin-left: 20px;
     }
+
     .parlaicon-facebook-parlameter {
         width: 35px;
         height: 35px;
         line-height: 35px;
         position: relative;
-        color: $second;
-        margin: 0 0px 0 20px;
+        margin: 0;
         text-decoration: none;
     }
+
     .parlaicon-facebook-parlameter .blue,
     .parlaicon-twitter-parlameter .blue {
-        fill: $second;
-        stroke: $second;
+        fill: $card-footer-button-passive-background;
+        stroke: $card-footer-button-passive-background;
     }
+
     .parlaicon-facebook-parlameter:hover .blue,
     .parlaicon-twitter-parlameter:hover .blue {
-        fill: $first;
-        stroke: $first;
+        fill: $card-footer-button-hover-background;
+        stroke: $card-footer-button-hover-background;
         text-decoration: none;
     }
-    .parlaicon-social-align{
 
-    }
     .doniraj{
         border: 1px solid $font-placeholder;
         background: none;
