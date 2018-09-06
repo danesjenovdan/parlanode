@@ -142,7 +142,7 @@ export default {
     dz: $third,
     koal: $link,
     opoz: $font-placeholder,
-    funblue: $second,
+    funblue: $first,
   );
 
 
