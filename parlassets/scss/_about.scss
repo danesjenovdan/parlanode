@@ -20,6 +20,14 @@
     }
 }
 
+#about .lead-text-container a,
+#about .lead-text-container a:hover,
+#about .lead-text-container a:focus,
+#about .lead-text-container a:visited {
+    display: inline-block;
+    text-decoration: none;
+}
+
 #about .lead-text-container .lead-text {
     background-color: $cta-passive-background;
     padding: 5px 0;
@@ -30,9 +38,9 @@
     color: $white;
 }
 
-#about .lead-text-container a.lead-text:hover,
-#about .lead-text-container a.lead-text:focus,
-#about .lead-text-container a.lead-text:active {
+#about .lead-text-container a:hover .lead-text,
+#about .lead-text-container a:focus .lead-text,
+#about .lead-text-container a:active .lead-text {
     background-color: $cta-hover-background;
     /* fix inline multiline text padding */
     box-shadow: 10px 0 0 $cta-hover-background, -10px 0 0 $cta-hover-background;
