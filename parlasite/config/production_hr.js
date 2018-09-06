@@ -9,4 +9,12 @@ module.exports = {
     base: 'https://beta.parlametar.hr',
   },
   siteLang: 'hr',
+  siteMap: {
+    landing: {
+      legislation: 'glasanja',
+    },
+    session: {
+      otherVotings: 'glasanja',
+    },
+  },
 };
