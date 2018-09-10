@@ -155,23 +155,23 @@ export default {
     );
 
     let allOptions = [{
-      id: 'za',
+      id: 'for',
       class: 'for',
       label: this.$t('vote-for'),
       selected: false,
     }, {
-      id: 'proti',
+      id: 'against',
       class: 'against',
       label: this.$t('vote-against'),
       selected: false,
     }, {
-      id: 'kvorum',
-      class: 'kvorum',
+      id: 'quorum',
+      class: 'quorum',
       label: (this.type === 'person' ? this.$t('vote-abstained') : this.$t('vote-abstained-plural')),
       selected: false,
     }, {
-      id: 'ni',
-      class: 'ni',
+      id: 'not',
+      class: 'not',
       label: (this.type === 'person' ? this.$t('vote-not') : this.$t('vote-not-plural')),
       selected: false,
     }];
@@ -183,7 +183,7 @@ export default {
     Object.keys(this.cardData.data.classifications).forEach((classificationKey) => {
       allClassifications.push({
         id: classificationKey,
-        label: this.$t(this.cardData.data.classifications[classificationKey]),
+        label: this.$t(`vote_types.${this.cardData.data.classifications[classificationKey]}`),
         selected: false,
       });
     });
@@ -319,6 +319,7 @@ export default {
               const ballotClone = JSON.parse(JSON.stringify(ballot));
               const form = this.type === 'person' ? this.person.gender : 'plural';
               const option = getBallotOption(ballot.option);
+              ballotClone.option = option;
               ballotClone.label = this.$t(`voted-${option}--${form}`);
 
               if (ballot.result !== 'none' && ballot.result != null) {
