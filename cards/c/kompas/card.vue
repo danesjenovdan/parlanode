@@ -1,37 +1,45 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.cardData._id"
-    :card-url="url"
-    :header-config="headerConfig"
-    @backChange="backChangeCallback"
-  >
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator">
+        <tools-tabs current-tool="compass" />
+      </div>
+      <card-wrapper
+        :card-url="url"
+        :header-config="headerConfig"
+        @backChange="backChangeCallback"
+      >
 
-    <div id="kompas">
-      <p-search-dropdown
-        :value="allItems"
-        :groups="groups"
-        :placeholder="peoplePlaceholder"
-        @select="selectCallback"
-        @clear="clearCallback"
-      />
-      <div id="visualisation"></div>
-    </div>
+        <div id="kompas">
+          <p-search-dropdown
+            :value="allItems"
+            :groups="groups"
+            :placeholder="peoplePlaceholder"
+            @select="selectCallback"
+            @clear="clearCallback"
+          />
+          <div id="visualisation"></div>
+        </div>
 
-    <div slot="info">
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-      <p v-t="'info.text[2]'" class="info-text"></p>
-    </div>
+        <div slot="info">
+          <p v-t="'info.lead'" class="info-text lead"></p>
+          <p v-t="'info.methodology'" class="info-text heading"></p>
+          <p v-t="'info.text[0]'" class="info-text"></p>
+          <p v-t="'info.text[1]'" class="info-text"></p>
+          <p v-t="'info.text[2]'" class="info-text"></p>
+        </div>
 
-    <!-- Card content goes here -->
-  </card-wrapper>
+        <!-- Card content goes here -->
+      </card-wrapper>
+    </generator>
+  </div>
 </template>
 
 <script>
 import common from 'mixins/common';
 import links from 'mixins/links';
+import Generator from 'components/Generator.vue';
+import ToolsTabs from 'components/ToolsTabs.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import { defaultOgImage } from 'mixins/ogImages';
 import d3 from 'd3v3';
@@ -39,7 +47,11 @@ import d3 from 'd3v3';
 export default {
   name: 'Kompas',
 
-  components: { PSearchDropdown },
+  components: {
+    Generator,
+    ToolsTabs,
+    PSearchDropdown,
+  },
 
   mixins: [common, links],
 
@@ -224,7 +236,7 @@ export default {
     },
 
     showPersonPicture(datum) {
-      const svg = d3.select('#visualisation'); 
+      const svg = d3.select('#visualisation');
       // display person image
       d3.select(`#kompas-personcard${datum.person.id}`)
         .classed('hidden', false);

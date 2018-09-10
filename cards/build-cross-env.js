@@ -82,7 +82,7 @@ if (cmd === 'dev') {
   const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--progress', '--open', '--inline'];
   const cp = spawn('webpack-dev-server', cpArgs, { stdio: 'inherit', env: cpEnv });
 
-  const scssArgs = ['run', '--cwd=parlassets', 'sass-dev-win'];
+  const scssArgs = ['run', '--cwd=parlassets', 'dev'];
   const scssCp = spawn('yarn', scssArgs, { stdio: 'inherit' });
 
   cp.on('error', (error) => {

@@ -1,190 +1,560 @@
 {
   "person": {
-    "1544": { "slug": "klarin-ivan" },
-    "1243": { "slug": "goran-aleksic" },
-    "1244": { "slug": "tulio-demetlika" },
-    "1245": { "slug": "slaven-dobrovic" },
-    "1246": { "slug": "darinko-dumbovic" },
-    "1247": { "slug": "sasa-dujic" },
-    "1248": { "slug": "pero-cosic" },
-    "1249": { "slug": "bruna-esih" },
-    "1250": { "slug": "stevo-culej" },
-    "1251": { "slug": "sonja-cikotic" },
-    "1252": { "slug": "josip-dakic" },
-    "1253": { "slug": "igor-dragovan" },
-    "1254": { "slug": "goran-dodig" },
-    "1255": { "slug": "mato-cicak" },
-    "1256": { "slug": "stjepan-curaj" },
-    "1257": { "slug": "branimir-bunjac" },
-    "1258": { "slug": "ivan-celic" },
-    "1259": { "slug": "marko-vucetic" },
-    "1260": { "slug": "hrvoje-zekanovic" },
-    "1261": { "slug": "tomislav-zagar" },
-    "1262": { "slug": "mihael-zmajlovic" },
-    "1263": { "slug": "sinisa-varga" },
-    "1264": { "slug": "davor-vlaovic" },
-    "1265": { "slug": "franko-vidovic" },
-    "1266": { "slug": "kazimir-varda" },
-    "1267": { "slug": "miroslav-tudman" },
-    "1268": { "slug": "marko-vesligaj" },
-    "1269": { "slug": "ivan-suker" },
-    "1270": { "slug": "damir-tomic" },
-    "1271": { "slug": "bernarda-topolko" },
-    "1272": { "slug": "miro-totgergeli" },
-    "1273": { "slug": "zarko-tusek" },
-    "1274": { "slug": "nada-turina-duric" },
-    "1275": { "slug": "marin-skibola" },
-    "1276": { "slug": "petar-skoric" },
-    "1277": { "slug": "giovanni-sponza" },
-    "1278": { "slug": "marko-simic" },
-    "1279": { "slug": "ivan-sipic" },
-    "1280": { "slug": "andelko-stricak" },
-    "1281": { "slug": "stipo-sapina" },
-    "1282": { "slug": "davor-ivo-stier" },
-    "1283": { "slug": "nenad-stazic" },
-    "1284": { "slug": "hrvoje-runtic" },
-    "1285": { "slug": "ines-strenja-linic" },
-    "1286": { "slug": "ante-sanader" },
-    "1287": { "slug": "tomislav-saucha" },
-    "1288": { "slug": "ivan-vilibor-sincic" },
-    "1289": { "slug": "marko-sladoljev" },
-    "1290": { "slug": "tomislav-sokol" },
-    "1291": { "slug": "zeljko-reiner" },
-    "1292": { "slug": "milorad-pupovac" },
-    "1293": { "slug": "zdravko-ronko" },
-    "1294": { "slug": "ante-pranic" },
-    "1295": { "slug": "dragica-roscic" },
-    "1296": { "slug": "marija-puh" },
-    "1297": { "slug": "zeljko-raguz" },
-    "1298": { "slug": "furio-radin" },
-    "1299": { "slug": "ana-marija-petin" },
-    "1300": { "slug": "alen-prelec" },
-    "1301": { "slug": "vesna-pusic" },
-    "1302": { "slug": "ivan-pernar" },
-    "1303": { "slug": "bozo-petrov" },
-    "1304": { "slug": "robert-podolnjak" },
-    "1305": { "slug": "sanja-putica" },
-    "1306": { "slug": "irena-petrijevcanin-vuksanovic" },
-    "1307": { "slug": "grozdana-peric" },
-    "1308": { "slug": "milanka-opacic" },
-    "1309": { "slug": "boris-milosevic" },
-    "1310": { "slug": "vlaho-orepic" },
-    "1311": { "slug": "domagoj-ivan-milosevic" },
-    "1312": { "slug": "ranko-ostojic" },
-    "1313": { "slug": "tomislav-panenic" },
-    "1314": { "slug": "darko-paric" },
-    "1315": { "slug": "davor-milicevic" },
-    "1316": { "slug": "orsat-miljenic" },
-    "1317": { "slug": "ivica-misic" },
-    "1318": { "slug": "ivana-nincevic-lesandric" },
-    "1319": { "slug": "mirando-mrsic" },
-    "1320": { "slug": "boris-miletic" },
-    "1321": { "slug": "domagoj-mikulic" },
-    "1322": { "slug": "anka-mrak-taritas" },
-    "1323": { "slug": "andrija-mikulic" },
-    "1324": { "slug": "ljubica-maksimcuk" },
-    "1325": { "slug": "gordan-maras" },
-    "1326": { "slug": "damir-mateljan" },
-    "1327": { "slug": "predrag-matic" },
-    "1328": { "slug": "ivan-lovrinovic" },
-    "1329": { "slug": "franjo-lucic" },
-    "1330": { "slug": "ljubica-lukacic" },
-    "1331": { "slug": "bozica-makar" },
-    "1332": { "slug": "ermina-lekaj-prljaskaj" },
-    "1333": { "slug": "zeljko-lenart" },
-    "1334": { "slug": "tomislav-liposcak" },
-    "1335": { "slug": "davor-loncar" },
-    "1336": { "slug": "marta-luc-polanc" },
-    "1337": { "slug": "bozo-ljubic" },
-    "1338": { "slug": "mladen-madjer" },
-    "1339": { "slug": "boris-lalovac" },
-    "1340": { "slug": "vlatko-kopic" },
-    "1341": { "slug": "josip-krizanic" },
-    "1342": { "slug": "marijan-kustic" },
-    "1343": { "slug": "zeljko-lackovic" },
-    "1344": { "slug": "ivan-kirin" },
-    "1345": { "slug": "mladen-karlic" },
-    "1346": { "slug": "branka-juricev-martincev" },
-    "1347": { "slug": "veljko-kajtazi" },
-    "1348": { "slug": "ana-komparic-devcic" },
-    "1349": { "slug": "stjepan-kovac" },
-    "1350": { "slug": "darinko-kosor" },
-    "1351": { "slug": "miro-kovac" },
-    "1352": { "slug": "tomislav-klaric" },
-    "1353": { "slug": "anton-kliman" },
-    "1354": { "slug": "josko-klisovic" },
-    "1355": { "slug": "zeljko-jovanovic" },
-    "1356": { "slug": "dragana-jeckov" },
-    "1357": { "slug": "marija-jelkovac" },
-    "1358": { "slug": "sinisa-hajdas-doncic" },
-    "1359": { "slug": "zeljka-josic" },
-    "1360": { "slug": "silvano-hrelja" },
-    "1361": { "slug": "romana-jerkovic" },
-    "1362": { "slug": "mario-habek" },
-    "1363": { "slug": "zlatko-hasanbegovic" },
-    "1364": { "slug": "gordan-jandrokovic" },
-    "1365": { "slug": "branko-hrg" },
-    "1366": { "slug": "robert-jankovics" },
-    "1367": { "slug": "darko-horvat" },
-    "1368": { "slug": "domagoj-hajdukovic" },
-    "1369": { "slug": "peda-grbin" },
-    "1370": { "slug": "nikola-grmoja" },
-    "1371": { "slug": "branko-grcic" },
-    "1372": { "slug": "damir-felak" },
-    "1373": { "slug": "miro-bulj" },
-    "1374": { "slug": "goran-beus-richembergh" },
-    "1375": { "slug": "vladimir-bilek" },
-    "1376": { "slug": "kreso-beljak" },
-    "1377": { "slug": "davor-bernardic" },
-    "1378": { "slug": "milijan-brkic" },
-    "1379": { "slug": "arsen-bauk" },
-    "1380": { "slug": "vesna-bedekovic" },
-    "1381": { "slug": "josip-boric" },
-    "1382": { "slug": "milorad-batinic" },
-    "1383": { "slug": "drazen-barisic" },
-    "1384": { "slug": "branimir-glavas" },
-    "1385": { "slug": "bojan-glavasevic" },
-    "1386": { "slug": "zeljko-glasnovic" },
-    "1387": { "slug": "sabina-glasovac" },
-    "1388": { "slug": "marija-alfirev" },
-    "1389": { "slug": "ante-babic" },
-    "1390": { "slug": "vedran-babic" },
-    "1391": { "slug": "ante-bacic" },
-    "1392": { "slug": "marijana-balic" },
-    "1393": { "slug": "branko-bacic" },
-    "1394": { "slug": "ambrusec-ljubica" },
-    "1395": { "slug": "anusic-ivan" },
-    "1396": { "slug": "boban-blazenko" },
-    "1397": { "slug": "bosnjakovic-drazen" },
-    "1398": { "slug": "buric-majda" },
-    "1399": { "slug": "frankovic-mato" },
-    "1400": { "slug": "horvat-mile" },
-    "1401": { "slug": "jelic-damir" },
-    "1402": { "slug": "kristic-maro" },
-    "1403": { "slug": "krstulovic-opara-andro" },
-    "1404": { "slug": "mesic-jasen" },
-    "1405": { "slug": "milinovic-darko" },
-    "1406": { "slug": "prgomet-drago" },
-    "1407": { "slug": "romic-davor" },
-    "1409": { "slug": "simic-miroslav" },
-    "1412": { "slug": "salapic-josip" },
-    "1413": { "slug": "vrdoljak-ivan" },
-    "1414": { "slug": "babic-nikolina" },
-    "1415": { "slug": "coric-tomislav" },
-    "1416": { "slug": "felbar-natko" },
-    "1417": { "slug": "katalinic-josip" },
-    "1418": { "slug": "kovacic-ivan" },
-    "1419": { "slug": "krsticevic-damir" },
-    "1420": { "slug": "kujundzic-milan" },
-    "1421": { "slug": "kulic-makar-sanda" },
-    "1422": { "slug": "maric-goran" },
-    "1423": { "slug": "milinkovic-drazen" },
-    "1424": { "slug": "penava-ivan" },
-    "1425": { "slug": "plenkovic-andrej" },
-    "1427": { "slug": "udovicic-monika" },
-    "1428": { "slug": "baricevic-martin" },
-    "1448": { "slug": "zarko-katic" },
-    "1533": { "slug": "suncana-glavak" }
+    "1243": {
+      "slug": "goran-aleksic"
+    },
+    "1244": {
+      "slug": "tulio-demetlika"
+    },
+    "1245": {
+      "slug": "slaven-dobrovic"
+    },
+    "1246": {
+      "slug": "darinko-dumbovic"
+    },
+    "1247": {
+      "slug": "sasa-dujic"
+    },
+    "1248": {
+      "slug": "pero-cosic"
+    },
+    "1249": {
+      "slug": "bruna-esih"
+    },
+    "1250": {
+      "slug": "stevo-culej"
+    },
+    "1251": {
+      "slug": "sonja-cikotic"
+    },
+    "1252": {
+      "slug": "josip-dakic"
+    },
+    "1253": {
+      "slug": "igor-dragovan"
+    },
+    "1254": {
+      "slug": "goran-dodig"
+    },
+    "1255": {
+      "slug": "mato-cicak"
+    },
+    "1256": {
+      "slug": "stjepan-curaj"
+    },
+    "1257": {
+      "slug": "branimir-bunjac"
+    },
+    "1258": {
+      "slug": "ivan-celic"
+    },
+    "1259": {
+      "slug": "marko-vucetic"
+    },
+    "1260": {
+      "slug": "hrvoje-zekanovic"
+    },
+    "1261": {
+      "slug": "tomislav-zagar"
+    },
+    "1262": {
+      "slug": "mihael-zmajlovic"
+    },
+    "1263": {
+      "slug": "sinisa-varga"
+    },
+    "1264": {
+      "slug": "davor-vlaovic"
+    },
+    "1265": {
+      "slug": "franko-vidovic"
+    },
+    "1266": {
+      "slug": "kazimir-varda"
+    },
+    "1267": {
+      "slug": "miroslav-tudman"
+    },
+    "1268": {
+      "slug": "marko-vesligaj"
+    },
+    "1269": {
+      "slug": "ivan-suker"
+    },
+    "1270": {
+      "slug": "damir-tomic"
+    },
+    "1271": {
+      "slug": "bernarda-topolko"
+    },
+    "1272": {
+      "slug": "miro-totgergeli"
+    },
+    "1273": {
+      "slug": "zarko-tusek"
+    },
+    "1274": {
+      "slug": "nada-turina-duric"
+    },
+    "1275": {
+      "slug": "marin-skibola"
+    },
+    "1276": {
+      "slug": "petar-skoric"
+    },
+    "1277": {
+      "slug": "giovanni-sponza"
+    },
+    "1278": {
+      "slug": "marko-simic"
+    },
+    "1279": {
+      "slug": "ivan-sipic"
+    },
+    "1280": {
+      "slug": "andelko-stricak"
+    },
+    "1281": {
+      "slug": "stipo-sapina"
+    },
+    "1282": {
+      "slug": "davor-ivo-stier"
+    },
+    "1283": {
+      "slug": "nenad-stazic"
+    },
+    "1284": {
+      "slug": "hrvoje-runtic"
+    },
+    "1285": {
+      "slug": "ines-strenja-linic"
+    },
+    "1286": {
+      "slug": "ante-sanader"
+    },
+    "1287": {
+      "slug": "tomislav-saucha"
+    },
+    "1288": {
+      "slug": "ivan-vilibor-sincic"
+    },
+    "1289": {
+      "slug": "marko-sladoljev"
+    },
+    "1290": {
+      "slug": "tomislav-sokol"
+    },
+    "1291": {
+      "slug": "zeljko-reiner"
+    },
+    "1292": {
+      "slug": "milorad-pupovac"
+    },
+    "1293": {
+      "slug": "zdravko-ronko"
+    },
+    "1294": {
+      "slug": "ante-pranic"
+    },
+    "1295": {
+      "slug": "dragica-roscic"
+    },
+    "1296": {
+      "slug": "marija-puh"
+    },
+    "1297": {
+      "slug": "zeljko-raguz"
+    },
+    "1298": {
+      "slug": "furio-radin"
+    },
+    "1299": {
+      "slug": "ana-marija-petin"
+    },
+    "1300": {
+      "slug": "alen-prelec"
+    },
+    "1301": {
+      "slug": "vesna-pusic"
+    },
+    "1302": {
+      "slug": "ivan-pernar"
+    },
+    "1303": {
+      "slug": "bozo-petrov"
+    },
+    "1304": {
+      "slug": "robert-podolnjak"
+    },
+    "1305": {
+      "slug": "sanja-putica"
+    },
+    "1306": {
+      "slug": "irena-petrijevcanin-vuksanovic"
+    },
+    "1307": {
+      "slug": "grozdana-peric"
+    },
+    "1308": {
+      "slug": "milanka-opacic"
+    },
+    "1309": {
+      "slug": "boris-milosevic"
+    },
+    "1310": {
+      "slug": "vlaho-orepic"
+    },
+    "1311": {
+      "slug": "domagoj-ivan-milosevic"
+    },
+    "1312": {
+      "slug": "ranko-ostojic"
+    },
+    "1313": {
+      "slug": "tomislav-panenic"
+    },
+    "1314": {
+      "slug": "darko-paric"
+    },
+    "1315": {
+      "slug": "davor-milicevic"
+    },
+    "1316": {
+      "slug": "orsat-miljenic"
+    },
+    "1317": {
+      "slug": "ivica-misic"
+    },
+    "1318": {
+      "slug": "ivana-nincevic-lesandric"
+    },
+    "1319": {
+      "slug": "mirando-mrsic"
+    },
+    "1320": {
+      "slug": "boris-miletic"
+    },
+    "1321": {
+      "slug": "domagoj-mikulic"
+    },
+    "1322": {
+      "slug": "anka-mrak-taritas"
+    },
+    "1323": {
+      "slug": "andrija-mikulic"
+    },
+    "1324": {
+      "slug": "ljubica-maksimcuk"
+    },
+    "1325": {
+      "slug": "gordan-maras"
+    },
+    "1326": {
+      "slug": "damir-mateljan"
+    },
+    "1327": {
+      "slug": "predrag-matic"
+    },
+    "1328": {
+      "slug": "ivan-lovrinovic"
+    },
+    "1329": {
+      "slug": "franjo-lucic"
+    },
+    "1330": {
+      "slug": "ljubica-lukacic"
+    },
+    "1331": {
+      "slug": "bozica-makar"
+    },
+    "1332": {
+      "slug": "ermina-lekaj-prljaskaj"
+    },
+    "1333": {
+      "slug": "zeljko-lenart"
+    },
+    "1334": {
+      "slug": "tomislav-liposcak"
+    },
+    "1335": {
+      "slug": "davor-loncar"
+    },
+    "1336": {
+      "slug": "marta-luc-polanc"
+    },
+    "1337": {
+      "slug": "bozo-ljubic"
+    },
+    "1338": {
+      "slug": "mladen-madjer"
+    },
+    "1339": {
+      "slug": "boris-lalovac"
+    },
+    "1340": {
+      "slug": "vlatko-kopic"
+    },
+    "1341": {
+      "slug": "josip-krizanic"
+    },
+    "1342": {
+      "slug": "marijan-kustic"
+    },
+    "1343": {
+      "slug": "zeljko-lackovic"
+    },
+    "1344": {
+      "slug": "ivan-kirin"
+    },
+    "1345": {
+      "slug": "mladen-karlic"
+    },
+    "1346": {
+      "slug": "branka-juricev-martincev"
+    },
+    "1347": {
+      "slug": "veljko-kajtazi"
+    },
+    "1348": {
+      "slug": "ana-komparic-devcic"
+    },
+    "1349": {
+      "slug": "stjepan-kovac"
+    },
+    "1350": {
+      "slug": "darinko-kosor"
+    },
+    "1351": {
+      "slug": "miro-kovac"
+    },
+    "1352": {
+      "slug": "tomislav-klaric"
+    },
+    "1353": {
+      "slug": "anton-kliman"
+    },
+    "1354": {
+      "slug": "josko-klisovic"
+    },
+    "1355": {
+      "slug": "zeljko-jovanovic"
+    },
+    "1356": {
+      "slug": "dragana-jeckov"
+    },
+    "1357": {
+      "slug": "marija-jelkovac"
+    },
+    "1358": {
+      "slug": "sinisa-hajdas-doncic"
+    },
+    "1359": {
+      "slug": "zeljka-josic"
+    },
+    "1360": {
+      "slug": "silvano-hrelja"
+    },
+    "1361": {
+      "slug": "romana-jerkovic"
+    },
+    "1362": {
+      "slug": "mario-habek"
+    },
+    "1363": {
+      "slug": "zlatko-hasanbegovic"
+    },
+    "1364": {
+      "slug": "gordan-jandrokovic"
+    },
+    "1365": {
+      "slug": "branko-hrg"
+    },
+    "1366": {
+      "slug": "robert-jankovics"
+    },
+    "1367": {
+      "slug": "darko-horvat"
+    },
+    "1368": {
+      "slug": "domagoj-hajdukovic"
+    },
+    "1369": {
+      "slug": "peda-grbin"
+    },
+    "1370": {
+      "slug": "nikola-grmoja"
+    },
+    "1371": {
+      "slug": "branko-grcic"
+    },
+    "1372": {
+      "slug": "damir-felak"
+    },
+    "1373": {
+      "slug": "miro-bulj"
+    },
+    "1374": {
+      "slug": "goran-beus-richembergh"
+    },
+    "1375": {
+      "slug": "vladimir-bilek"
+    },
+    "1376": {
+      "slug": "kreso-beljak"
+    },
+    "1377": {
+      "slug": "davor-bernardic"
+    },
+    "1378": {
+      "slug": "milijan-brkic"
+    },
+    "1379": {
+      "slug": "arsen-bauk"
+    },
+    "1380": {
+      "slug": "vesna-bedekovic"
+    },
+    "1381": {
+      "slug": "josip-boric"
+    },
+    "1382": {
+      "slug": "milorad-batinic"
+    },
+    "1383": {
+      "slug": "drazen-barisic"
+    },
+    "1384": {
+      "slug": "branimir-glavas"
+    },
+    "1385": {
+      "slug": "bojan-glavasevic"
+    },
+    "1386": {
+      "slug": "zeljko-glasnovic"
+    },
+    "1387": {
+      "slug": "sabina-glasovac"
+    },
+    "1388": {
+      "slug": "marija-alfirev"
+    },
+    "1389": {
+      "slug": "ante-babic"
+    },
+    "1390": {
+      "slug": "vedran-babic"
+    },
+    "1391": {
+      "slug": "ante-bacic"
+    },
+    "1392": {
+      "slug": "marijana-balic"
+    },
+    "1393": {
+      "slug": "branko-bacic"
+    },
+    "1394": {
+      "slug": "ambrusec-ljubica"
+    },
+    "1395": {
+      "slug": "anusic-ivan"
+    },
+    "1396": {
+      "slug": "boban-blazenko"
+    },
+    "1397": {
+      "slug": "bosnjakovic-drazen"
+    },
+    "1398": {
+      "slug": "buric-majda"
+    },
+    "1399": {
+      "slug": "frankovic-mato"
+    },
+    "1400": {
+      "slug": "horvat-mile"
+    },
+    "1401": {
+      "slug": "jelic-damir"
+    },
+    "1402": {
+      "slug": "kristic-maro"
+    },
+    "1403": {
+      "slug": "krstulovic-opara-andro"
+    },
+    "1404": {
+      "slug": "mesic-jasen"
+    },
+    "1405": {
+      "slug": "milinovic-darko"
+    },
+    "1406": {
+      "slug": "prgomet-drago"
+    },
+    "1407": {
+      "slug": "romic-davor"
+    },
+    "1409": {
+      "slug": "simic-miroslav"
+    },
+    "1412": {
+      "slug": "salapic-josip"
+    },
+    "1413": {
+      "slug": "vrdoljak-ivan"
+    },
+    "1414": {
+      "slug": "babic-nikolina"
+    },
+    "1415": {
+      "slug": "coric-tomislav"
+    },
+    "1416": {
+      "slug": "felbar-natko"
+    },
+    "1417": {
+      "slug": "katalinic-josip"
+    },
+    "1418": {
+      "slug": "kovacic-ivan"
+    },
+    "1419": {
+      "slug": "krsticevic-damir"
+    },
+    "1420": {
+      "slug": "kujundzic-milan"
+    },
+    "1421": {
+      "slug": "kulic-makar-sanda"
+    },
+    "1422": {
+      "slug": "maric-goran"
+    },
+    "1423": {
+      "slug": "milinkovic-drazen"
+    },
+    "1424": {
+      "slug": "penava-ivan"
+    },
+    "1425": {
+      "slug": "plenkovic-andrej"
+    },
+    "1427": {
+      "slug": "udovicic-monika"
+    },
+    "1428": {
+      "slug": "baricevic-martin"
+    },
+    "1448": {
+      "slug": "zarko-katic"
+    },
+    "1533": {
+      "slug": "suncana-glavak"
+    },
+    "1544": {
+      "slug": "klarin-ivan"
+    }
   },
   "base": "http://hr.parlameter.si",
   "partyLink": {
@@ -194,15 +564,19 @@
     "glasovanja": "/glasovanja/"
   },
   "urls": {
-    "cdn": "http://cdn.parlametar.hr/v1/parlassets",
-    "analize": "https://analize.parlametar.hr/v1",
     "data": "https://data.parlametar.hr/v1",
+    "base": "http://localhost:3066",
     "isci": "https://isci.parlametar.hr",
-    "glej": "https://glej.parlametar.hr",
-    "base": "https://beta.parlametar.hr"
+    "analize": "https://analize.parlametar.hr/v1",
+    "glej": "http://localhost:3000",
+    "cdn": "http://localhost:8080"
   },
   "party": {
-    "199": { "acronym": "sabor", "realAcronym": "sabor", "slug": "sabor" },
+    "199": {
+      "acronym": "sabor",
+      "realAcronym": "sabor",
+      "slug": "hrvatski-sabor"
+    },
     "258": {
       "acronym": "snaga",
       "realAcronym": "SNAGA",
@@ -215,7 +589,7 @@
     },
     "260": {
       "acronym": "odbor-za-pravosude",
-      "realAcronym": "Odbor za pravosu\u0111e",
+      "realAcronym": "Odbor za pravosuđe",
       "slug": "odbor-za-pravosude"
     },
     "261": {
@@ -225,7 +599,7 @@
     },
     "262": {
       "acronym": "odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu",
-      "realAcronym": "Odbor za lokalnu i podru\u010dnu (regionalnu) samoupravu",
+      "realAcronym": "Odbor za lokalnu i područnu (regionalnu) samoupravu",
       "slug": "odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu"
     },
     "263": {
@@ -235,12 +609,12 @@
     },
     "264": {
       "acronym": "odbor-za-prostorno-uredenje-i-graditeljstvo",
-      "realAcronym": "Odbor za prostorno ure\u0111enje i graditeljstvo",
+      "realAcronym": "Odbor za prostorno uređenje i graditeljstvo",
       "slug": "odbor-za-prostorno-uredenje-i-graditeljstvo"
     },
     "265": {
       "acronym": "odbor-za-zastitu-okolisa-i-prirode",
-      "realAcronym": "Odbor za za\u0161titu okoli\u0161a i prirode",
+      "realAcronym": "Odbor za zaštitu okoliša i prirode",
       "slug": "odbor-za-zastitu-okolisa-i-prirode"
     },
     "266": {
@@ -260,7 +634,7 @@
     },
     "269": {
       "acronym": "izvrsni-odbor-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji",
-      "realAcronym": "Izvr\u0161ni odbor Nacionalne grupe Hrvatskoga sabora pri Interparlamentarnoj uniji",
+      "realAcronym": "Izvršni odbor Nacionalne grupe Hrvatskoga sabora pri Interparlamentarnoj uniji",
       "slug": "izvrsni-odbor-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji"
     },
     "270": {
@@ -280,7 +654,7 @@
     },
     "273": {
       "acronym": "odbor-za-meduparlamentarnu-suradnju",
-      "realAcronym": "Odbor za me\u0111uparlamentarnu suradnju",
+      "realAcronym": "Odbor za međuparlamentarnu suradnju",
       "slug": "odbor-za-meduparlamentarnu-suradnju"
     },
     "274": {
@@ -305,13 +679,17 @@
     },
     "278": {
       "acronym": "nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije",
-      "realAcronym": "Nacionalno vije\u0107e za pra\u0107enje provedbe Strategije suzbijanja korupcije",
+      "realAcronym": "Nacionalno vijeće za praćenje provedbe Strategije suzbijanja korupcije",
       "slug": "nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije"
     },
-    "279": { "acronym": "nz", "realAcronym": "NZ", "slug": "nezavisni" },
+    "279": {
+      "acronym": "nz",
+      "realAcronym": "NZ",
+      "slug": "nezavisni"
+    },
     "280": {
       "acronym": "drzavno-povjerenstvo-za-procjenu-stete-od-elementarnih-nepogoda",
-      "realAcronym": "Dr\u017eavno povjerenstvo za procjenu \u0161tete od elementarnih nepogoda",
+      "realAcronym": "Državno povjerenstvo za procjenu štete od elementarnih nepogoda",
       "slug": "drzavno-povjerenstvo-za-procjenu-stete-od-elementarnih-nepogoda"
     },
     "281": {
@@ -336,7 +714,7 @@
     },
     "285": {
       "acronym": "istrazno-povjerenstvo-za-utvrdivanje-odgovornosti-za-rezultate-upravljanja-i-raspolaganja-financijs",
-      "realAcronym": "Istra\u017eno povjerenstvo za utvr\u0111ivanje odgovornosti za rezultate upravljanja i raspolaganja financijs",
+      "realAcronym": "Istražno povjerenstvo za utvrđivanje odgovornosti za rezultate upravljanja i raspolaganja financijs",
       "slug": "istrazno-povjerenstvo-za-utvrdivanje-odgovornosti-za-rezultate-upravljanja-i-raspolaganja-financijskim-i-drugim-resursima-imunoloskog-zavoda"
     },
     "286": {
@@ -351,7 +729,7 @@
     },
     "288": {
       "acronym": "odbor-za-predstavke-i-prituzbe",
-      "realAcronym": "Odbor za predstavke i pritu\u017ebe",
+      "realAcronym": "Odbor za predstavke i pritužbe",
       "slug": "odbor-za-predstavke-i-prituzbe"
     },
     "289": {
@@ -361,12 +739,12 @@
     },
     "290": {
       "acronym": "istrazno-povjerenstvo-za-utvrdivanje-cinjenica-u-vezi-okolnosti-nastanka-poslovnog-koncerna-agrokor",
-      "realAcronym": "Istra\u017eno povjerenstvo za utvr\u0111ivanje \u010dinjenica u vezi okolnosti nastanka poslovnog koncerna Agrokor",
+      "realAcronym": "Istražno povjerenstvo za utvrđivanje činjenica u vezi okolnosti nastanka poslovnog koncerna Agrokor",
       "slug": "istrazno-povjerenstvo-za-utvrdivanje-cinjenica-u-vezi-okolnosti-nastanka-poslovnog-koncerna-agrokor-njegove-danasnje-pozicije-na-trzistu-nastanka-njegovih-poslovnih-problema-a-posebno-dugovanja-prema-dobavljacima-te-ostalim-vjerovnicima-uloge-regulatora-na-trzistima-vezano-za-agrokorove-poslovne-aktivnosti-i-okolnosti-koje-su-dovele-do-aktivnosti-vlade-republike-hrvatske-prema-agrokoru-odnosno-prijedloga-mogucih-rjesenja-za-situaciju-u-kojoj-se-agrokor-nasao"
     },
     "291": {
       "acronym": "zivi-zid",
-      "realAcronym": "\u017divi zid",
+      "realAcronym": "Živi zid",
       "slug": "zivi-zid"
     },
     "292": {
@@ -391,12 +769,12 @@
     },
     "296": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradn",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Organizacije za europsku sigurnost i suradn",
+      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skupštini Organizacije za europsku sigurnost i suradn",
       "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradnju"
     },
     "297": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Vije\u0107a Europe",
+      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skupštini Vijeća Europe",
       "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe"
     },
     "298": {
@@ -421,7 +799,7 @@
     },
     "302": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini NATO-a",
+      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skupštini NATO-a",
       "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a"
     },
     "303": {
@@ -441,7 +819,7 @@
     },
     "306": {
       "acronym": "odbor-za-financije-i-drzavni-proracun",
-      "realAcronym": "Odbor za financije i dr\u017eavni prora\u010dun",
+      "realAcronym": "Odbor za financije i državni proračun",
       "slug": "odbor-za-financije-i-drzavni-proracun"
     },
     "307": {
@@ -466,7 +844,7 @@
     },
     "311": {
       "acronym": "odbor-za-ustav-poslovnik-i-politicki-sustav",
-      "realAcronym": "Odbor za Ustav, Poslovnik i politi\u010dki sustav",
+      "realAcronym": "Odbor za Ustav, Poslovnik i politički sustav",
       "slug": "odbor-za-ustav-poslovnik-i-politicki-sustav"
     },
     "312": {
@@ -476,7 +854,7 @@
     },
     "313": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Mediterana",
+      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skupštini Mediterana",
       "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana"
     },
     "314": {
@@ -506,12 +884,12 @@
     },
     "319": {
       "acronym": "zivi-zid-snaga",
-      "realAcronym": "\u017divi zid + SNAGA",
+      "realAcronym": "Živi zid + SNAGA",
       "slug": "klub-zastupnika-zivog-zida-i-snaga-e"
     },
     "320": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini SEECP-a",
+      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skupštini SEECP-a",
       "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a"
     },
     "321": {
@@ -526,7 +904,7 @@
     },
     "323": {
       "acronym": "drzavno-sudbeno-vijece-iz-reda-zastupnika",
-      "realAcronym": "Dr\u017eavno sudbeno vije\u0107e iz reda zastupnika",
+      "realAcronym": "Državno sudbeno vijeće iz reda zastupnika",
       "slug": "drzavno-sudbeno-vijece-iz-reda-zastupnika"
     },
     "324": {
@@ -546,12 +924,12 @@
     },
     "327": {
       "acronym": "drzavnoodvjetnicko-vijece-iz-reda-zastupnika",
-      "realAcronym": "Dr\u017eavnoodvjetni\u010dko vije\u0107e iz reda zastupnika",
+      "realAcronym": "Državnoodvjetničko vijeće iz reda zastupnika",
       "slug": "drzavnoodvjetnicko-vijece-iz-reda-zastupnika"
     },
     "328": {
       "acronym": "savjet-javne-ustanove-spomen-podrucja-jasenovac-iz-reda-zastupnika",
-      "realAcronym": "Savjet Javne ustanove Spomen-podru\u010dja Jasenovac iz reda zastupnika",
+      "realAcronym": "Savjet Javne ustanove Spomen-područja Jasenovac iz reda zastupnika",
       "slug": "savjet-javne-ustanove-spomen-podrucja-jasenovac-iz-reda-zastupnika"
     },
     "329": {
@@ -601,7 +979,7 @@
     },
     "338": {
       "acronym": "otocno-vijece-iz-reda-zastupnika",
-      "realAcronym": "Oto\u010dno vije\u0107e iz reda zastupnika",
+      "realAcronym": "Otočno vijeće iz reda zastupnika",
       "slug": "otocno-vijece-iz-reda-zastupnika"
     },
     "339": {
@@ -621,7 +999,7 @@
     },
     "342": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Unije za Mediteran",
+      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skupštini Unije za Mediteran",
       "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran"
     },
     "343": {
@@ -629,7 +1007,11 @@
       "realAcronym": "HDZ",
       "slug": "klub-zastupnika-hrvatske-demokratske-zajednice"
     },
-    "344": { "acronym": "ostali", "realAcronym": "ostali", "slug": "ostali" },
+    "344": {
+      "acronym": "ostali",
+      "realAcronym": "ostali",
+      "slug": "ostali"
+    },
     "345": {
       "acronym": "opozicija",
       "realAcronym": "opozicija",
@@ -640,7 +1022,11 @@
       "realAcronym": "koalicija",
       "slug": "koalicija"
     },
-    "347": { "acronym": "vlada", "realAcronym": "Vlada", "slug": "vlada" },
+    "347": {
+      "acronym": "vlada",
+      "realAcronym": "Vlada",
+      "slug": "vlada"
+    },
     "385": {
       "acronym": "ministarstvo-mora-prometa-i-infrastrukture",
       "realAcronym": "Ministarstvo mora, prometa i infrastrukture",
@@ -648,7 +1034,7 @@
     },
     "387": {
       "acronym": "ministarstvo-drzavne-imovine",
-      "realAcronym": "Ministarstvo dr\u017eavne imovine",
+      "realAcronym": "Ministarstvo državne imovine",
       "slug": "ministarstvo-drzavne-imovine"
     },
     "388": {
@@ -678,17 +1064,17 @@
     },
     "394": {
       "acronym": "ministarstvo-pravosuda",
-      "realAcronym": "Ministarstvo pravosu\u0111a",
+      "realAcronym": "Ministarstvo pravosuđa",
       "slug": "ministarstvo-pravosuda"
     },
     "395": {
       "acronym": "ministarstvo-zastite-okolisa-i-energetike",
-      "realAcronym": "Ministarstvo za\u0161tite okoli\u0161a i energetike",
+      "realAcronym": "Ministarstvo zaštite okoliša i energetike",
       "slug": "ministarstvo-zastite-okolisa-i-energetike"
     },
     "396": {
       "acronym": "ministarstvo-graditeljstva-i-prostornoga-uredenja",
-      "realAcronym": "Ministarstvo graditeljstva i prostornoga ure\u0111enja",
+      "realAcronym": "Ministarstvo graditeljstva i prostornoga uređenja",
       "slug": "ministarstvo-graditeljstva-i-prostornoga-uredenja"
     },
     "397": {
@@ -723,7 +1109,7 @@
     },
     "407": {
       "acronym": "ministarstvo-gospodarstva-poduzetnistva-i-obrta",
-      "realAcronym": "Ministarstvo gospodarstva, poduzetni\u0161tva i obrta",
+      "realAcronym": "Ministarstvo gospodarstva, poduzetništva i obrta",
       "slug": "ministarstvo-gospodarstva-poduzetnistva-i-obrta"
     },
     "408": {
@@ -743,18 +1129,133 @@
     },
     "411": {
       "acronym": "ministarstvo-znanosti-obrazovanja-i-sporta",
-      "realAcronym": "Ministarstvo znanosti, obrazovanja i \u0161porta",
+      "realAcronym": "Ministarstvo znanosti, obrazovanja i športa",
       "slug": "ministarstvo-znanosti-obrazovanja-i-sporta"
     },
     "412": {
       "acronym": "ministarstvo-gospodarstva-rada-i-poduzetnistva",
-      "realAcronym": "Ministarstvo gospodarstva, rada i poduzetni\u0161tva",
+      "realAcronym": "Ministarstvo gospodarstva, rada i poduzetništva",
       "slug": "ministarstvo-gospodarstva-rada-i-poduzetnistva"
     },
     "413": {
       "acronym": "temp",
       "realAcronym": "TEMP",
       "slug": "klub-nezavisnih-temporary"
+    },
+    "414": {
+      "acronym": "ministarstvo-pravosuda",
+      "realAcronym": "Ministarstvo pravosuđa",
+      "slug": "ministarstvo-pravosuda"
+    },
+    "415": {
+      "acronym": "ministarstvo-zdravstva",
+      "realAcronym": "Ministarstvo zdravstva",
+      "slug": "ministarstvo-zdravstva"
+    },
+    "416": {
+      "acronym": "vlada",
+      "realAcronym": "vlada",
+      "slug": "vlada"
+    },
+    "417": {
+      "acronym": "ministarstvo-mora-prometa-i-infrastrukture",
+      "realAcronym": "Ministarstvo mora, prometa i infrastrukture",
+      "slug": "ministarstvo-mora-prometa-i-infrastrukture"
+    },
+    "418": {
+      "acronym": "ministarstvo-uprave",
+      "realAcronym": "Ministarstvo uprave",
+      "slug": "ministarstvo-uprave"
+    },
+    "419": {
+      "acronym": "ministarstvo-gospodarstva-poduzetnistva-i-obrta",
+      "realAcronym": "Ministarstvo gospodarstva, poduzetništva i obrta",
+      "slug": "ministarstvo-gospodarstva-poduzetnistva-i-obrta"
+    },
+    "420": {
+      "acronym": "ministarstvo-kulture",
+      "realAcronym": "Ministarstvo kulture",
+      "slug": "ministarstvo-kulture"
+    },
+    "421": {
+      "acronym": "ministarstvo-unutarnjih-poslova",
+      "realAcronym": "Ministarstvo unutarnjih poslova",
+      "slug": "ministarstvo-unutarnjih-poslova"
+    },
+    "422": {
+      "acronym": "ministarstvo-drzavne-imovine",
+      "realAcronym": "Ministarstvo državne imovine",
+      "slug": "ministarstvo-drzavne-imovine"
+    },
+    "423": {
+      "acronym": "ministarstvo-financija",
+      "realAcronym": "Ministarstvo financija",
+      "slug": "ministarstvo-financija"
+    },
+    "424": {
+      "acronym": "ministarstvo-znanosti-i-obrazovanja",
+      "realAcronym": "Ministarstvo znanosti i obrazovanja",
+      "slug": "ministarstvo-znanosti-i-obrazovanja"
+    },
+    "425": {
+      "acronym": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije",
+      "realAcronym": "Ministarstvo regionalnoga razvoja i fondova Europske unije",
+      "slug": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije"
+    },
+    "426": {
+      "acronym": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku",
+      "realAcronym": "Ministarstvo za demografiju, obitelj, mlade i socijalnu politiku",
+      "slug": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku"
+    },
+    "427": {
+      "acronym": "ministarstvo-rada-i-mirovinskog-sustava",
+      "realAcronym": "Ministarstvo rada i mirovinskog sustava",
+      "slug": "ministarstvo-rada-i-mirovinskog-sustava"
+    },
+    "428": {
+      "acronym": "ministarstvo-zastite-okolisa-i-energetike",
+      "realAcronym": "Ministarstvo zaštite okoliša i energetike",
+      "slug": "ministarstvo-zastite-okolisa-i-energetike"
+    },
+    "429": {
+      "acronym": "ministarstvo-turizma",
+      "realAcronym": "Ministarstvo turizma",
+      "slug": "ministarstvo-turizma"
+    },
+    "430": {
+      "acronym": "ministarstvo-poljoprivrede",
+      "realAcronym": "Ministarstvo poljoprivrede",
+      "slug": "ministarstvo-poljoprivrede"
+    },
+    "431": {
+      "acronym": "ministarstvo-hrvatskih-branitelja",
+      "realAcronym": "Ministarstvo hrvatskih branitelja",
+      "slug": "ministarstvo-hrvatskih-branitelja"
+    },
+    "432": {
+      "acronym": "ministarstvo-graditeljstva-i-prostornoga-uredenja",
+      "realAcronym": "Ministarstvo graditeljstva i prostornoga uređenja",
+      "slug": "ministarstvo-graditeljstva-i-prostornoga-uredenja"
+    },
+    "433": {
+      "acronym": "ministarstvo-branitelja",
+      "realAcronym": "Ministarstvo branitelja",
+      "slug": "ministarstvo-branitelja"
+    },
+    "434": {
+      "acronym": "ministarstvo-obrane",
+      "realAcronym": "Ministarstvo obrane",
+      "slug": "ministarstvo-obrane"
+    },
+    "435": {
+      "acronym": "ministarstvo-znanosti-obrazovanja-i-sporta",
+      "realAcronym": "Ministarstvo znanosti, obrazovanja i športa",
+      "slug": "ministarstvo-znanosti-obrazovanja-i-sporta"
+    },
+    "436": {
+      "acronym": "ministarstvo-gospodarstva-rada-i-poduzetnistva",
+      "realAcronym": "Ministarstvo gospodarstva, rada i poduzetništva",
+      "slug": "ministarstvo-gospodarstva-rada-i-poduzetnistva"
     }
   },
   "personLink": {

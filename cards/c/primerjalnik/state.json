@@ -2,5 +2,6 @@
   "sameParties": [
     1,
     5
-  ]
+  ],
+  "generator": true
 }
