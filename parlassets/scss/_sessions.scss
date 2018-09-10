@@ -260,13 +260,16 @@
     height: 90px;
     margin-bottom: 20px;
     display: inline-block;
+
+    &.backgroundred {
+        background-color: $first;
+    }
+
     b {
         display: inline-block;
         line-height: 90px;
         font-size: 24px;
     }
-
-    background-color: $icon-session;
 }
 
 .session_transcript_menu {
@@ -432,7 +435,7 @@
         font-size: 24px;
     }
     .accepted.aye {
-        color: $second;
+        color: $icon-accepted;
     }
     .accepted.nay {
         color: $first;
@@ -455,17 +458,21 @@
             font-size: 3px;
             margin: 0 auto;
         }
+        .progress.smallbar .aye,
         .indicator.aye {
+            background: $icon-accepted;
+        }
+        .progress.smallbar .ney,
+        .indicator.ney {
             background: $link;
         }
-        .indicator.ney {
-            background: $second;
-        }
+        .progress.smallbar .abstention,
         .indicator.abstention {
-            background: $button-absent;
-        }
-        .indicator.not {
             background: $button-abstained;
+        }
+        .progress.smallbar .not,
+        .indicator.not {
+            background: $button-absent;
         }
     }
     a {
@@ -541,7 +548,7 @@
 
     h2 {
         font-weight: 500;
-        color: $font-placeholder;
+        color: $font-default;
     }
 }
 h2.izberi-vrsto-seje {
