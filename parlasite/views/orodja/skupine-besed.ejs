@@ -1,10 +1,8 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await include('./_tabs.ejs') %>
-
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/c/skupine-besed/') %>
+    <%- await fetchCard('/c/skupine-besed/', { state: { generator: true }}) %>
   </div>
 </div>
 
