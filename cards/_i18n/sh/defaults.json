@@ -173,5 +173,12 @@
     "procedural_proposal": "proceduralni predlog",
     "personal_property_decree": "odlok o načrtu ravnanja s stvarnim premoženjem",
     "other": "drugo"
+  },
+  "tools": {
+    "notifications": "Parlameter obvestila",
+    "vote-comparator": "Primerjalnik glasovanj",
+    "discord": "Raziskovalec neenotnosti",
+    "compass": "Parlamentarni kompas",
+    "word-groups": "Skupine besed"
   }
 }
