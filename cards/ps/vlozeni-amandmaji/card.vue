@@ -153,12 +153,12 @@
                     </div>
                     <div class="col-xs-3">
                       {{ vote.abstain }}
-                      <div v-t="'vote-abstained'" class="type"></div>
+                      <div v-t="'vote-abstain'" class="type"></div>
                       <div class="indicator abstention">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
                       {{ vote.not_present }}
-                      <div v-t="'vote-not'" class="type"></div>
+                      <div v-t="'vote-absent'" class="type"></div>
                       <div class="indicator not">&nbsp;</div>
                     </div>
                   </div>

@@ -100,22 +100,6 @@ import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
-function getBallotOption(option) {
-  if (option === 'za' || option === 'aye') {
-    return 'for';
-  }
-  if (option === 'proti' || option === 'nay' || option === 'no') {
-    return 'against';
-  }
-  if (option === 'ni') {
-    return 'not';
-  }
-  if (option === 'kvorum') {
-    return 'quorum';
-  }
-  return option;
-}
-
 export default {
   components: {
     PSearchDropdown,
@@ -165,14 +149,14 @@ export default {
       label: this.$t('vote-against'),
       selected: false,
     }, {
-      id: 'quorum',
-      class: 'quorum',
-      label: (this.type === 'person' ? this.$t('vote-abstained') : this.$t('vote-abstained-plural')),
+      id: 'abstain',
+      class: 'abstain',
+      label: (this.type === 'person' ? this.$t('vote-abstain') : this.$t('vote-abstain-plural')),
       selected: false,
     }, {
-      id: 'not',
-      class: 'not',
-      label: (this.type === 'person' ? this.$t('vote-not') : this.$t('vote-not-plural')),
+      id: 'absent',
+      class: 'absent',
+      label: (this.type === 'person' ? this.$t('vote-absent') : this.$t('vote-absent-plural')),
       selected: false,
     }];
 
@@ -318,9 +302,7 @@ export default {
             .map((ballot) => {
               const ballotClone = JSON.parse(JSON.stringify(ballot));
               const form = this.type === 'person' ? this.person.gender : 'plural';
-              const option = getBallotOption(ballot.option);
-              ballotClone.option = option;
-              ballotClone.label = this.$t(`voted-${option}--${form}`);
+              ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
 
               if (ballot.result !== 'none' && ballot.result != null) {
                 ballotClone.outcome = ballot.result === true ? this.$t('vote-passed') : this.$t('vote-not-passed');
