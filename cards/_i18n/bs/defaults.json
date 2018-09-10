@@ -180,5 +180,8 @@
     "discord": "Raziskovalec neenotnosti",
     "compass": "Parlamentarni kompas",
     "word-groups": "Skupine besed"
+  },
+  "frame": {
+    "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
   }
 }
