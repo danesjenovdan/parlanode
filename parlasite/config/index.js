@@ -33,6 +33,7 @@ const defaultConfig = {
       },
     },
     tools: {
+      notifications: 'https://obvestila.parlameter.si',
       voteComparator: 'primerjalnik-glasovanj',
       discord: 'raziskovalec-neenotnosti',
       compass: 'parlamentarni-kompas',
