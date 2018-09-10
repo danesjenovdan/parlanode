@@ -10,6 +10,7 @@ const exec = util.promisify(require('child_process').exec);
 // eslint-disable-next-line import/no-unresolved
 const { performance } = require('perf_hooks');
 const dateFns = require('date-fns');
+const _ = require('lodash');
 const config = require('../../../config');
 const data = require('../../data');
 
@@ -48,6 +49,16 @@ async function loadBundles(cacheData) {
     fs.readFile(`${bundlesPath}/client.js`, 'utf-8'),
     fs.readFile(`${bundlesPath}/style.css`, 'utf-8'),
   ]);
+}
+
+async function loadI18n(cacheData) {
+  const i18nDefaultsPath = `cards/_i18n/${config.cardLang}/defaults.json`;
+  const i18nCardPath = `cards/_i18n/${config.cardLang}/${cacheData.group}/${cacheData.method}.json`;
+  const [i18nDefault, i18nCard] = await Promise.all([
+    fs.readJson(i18nDefaultsPath),
+    fs.readJson(i18nCardPath),
+  ]);
+  return _.merge({}, i18nDefault, i18nCard);
 }
 
 async function saveBuildEntry(cacheData, cardJson) {
@@ -164,6 +175,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   const fetchedData = fetchUrl ? await fetchData(fetchUrl, cacheData) : null;
 
   const [serverBundle, clientBundle, styleBundle] = await loadBundles(cacheData);
+  const i18n = await loadI18n(cacheData);
 
   let vueTemplateName = 'default';
   if (cacheData.frame) {
@@ -190,6 +202,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     styleBundle,
     urls: data.urls,
     siteMap: data.siteMap,
+    i18n: _.curry(_.get)(i18n, _, 'undefined i18n key'),
   };
   context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 
