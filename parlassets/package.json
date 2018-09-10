@@ -4,11 +4,9 @@
   "description": "Assets for frontend for Parlameter",
   "main": "index.js",
   "scripts": {
-    "sass": "PATH=$(npm bin):$PATH node-sass scss/style.scss scss/style.css && PATH=$(npm bin):$PATH postcss -u autoprefixer -o scss/style.css scss/style.css",
-    "sass-win": "node-sass scss/style.scss scss/style.css && postcss -u autoprefixer -o scss/style.css scss/style.css",
-    "sass-dev": "PATH=$(npm bin):$PATH node-sass scss/style.scss scss/style.css -w",
-    "sass-dev-win": "node-sass scss/style.scss scss/style.css -w",
-    "build": "npm run sass;"
+    "sass": "node-sass scss/style.scss scss/style.css && postcss -u autoprefixer -o scss/style.css scss/style.css",
+    "dev": "nodemon --ext scss --exec \"yarn run sass\"",
+    "serve": "http-server -p 8080"
   },
   "repository": {
     "type": "git",
@@ -31,7 +29,9 @@
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.3.0",
     "file-loader": "^0.11.1",
+    "http-server": "^0.11.1",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.18.4",
     "postcss-cli": "^4.0.0",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
