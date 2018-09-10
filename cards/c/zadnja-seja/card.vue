@@ -17,7 +17,7 @@
       </i18n>
       <div v-t="'info.words-heading'" class="info-text heading"></div>
       <p v-t="'info.words-text'" class="info-text"></p>
-      <p v-t="'info.presence-headinig'" class="info-text heading"></p>
+      <p v-t="'info.presence-heading'" class="info-text heading"></p>
       <p v-t="'info.presence-text'" class="info-text"></p>
       <p v-t="'info.votes-heading'" class="info-text heading"></p>
       <p v-t="'info.votes-text'" class="info-text"></p>
