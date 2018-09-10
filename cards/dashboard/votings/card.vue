@@ -44,10 +44,10 @@
                   {{ $t('vote-against') }}: {{ column.votes.against }}
                 </div>
                 <div class="vote-result-number">
-                  {{ $t('vote-abstained-plural') }}: {{ column.votes.abstain }}
+                  {{ $t('vote-abstain-plural') }}: {{ column.votes.abstain }}
                 </div>
                 <div class="vote-result-number">
-                  {{ $t('vote-not-plural') }}: {{ column.votes.absent }}
+                  {{ $t('vote-absent-plural') }}: {{ column.votes.absent }}
                 </div>
               </div>
             </template>

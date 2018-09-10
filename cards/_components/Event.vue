@@ -54,22 +54,6 @@
 <script>
 import links from 'mixins/links';
 
-function getBallotOption(option) {
-  if (option === 'za' || option === 'aye') {
-    return 'for';
-  }
-  if (option === 'proti' || option === 'nay' || option === 'no') {
-    return 'against';
-  }
-  if (option === 'ni') {
-    return 'absent';
-  }
-  if (option === 'kvorum') {
-    return 'abstain';
-  }
-  return option;
-}
-
 export default {
   name: 'Event',
   mixins: [
@@ -87,8 +71,7 @@ export default {
         return 'parlaicon-vprasanje';
       }
       if (this.event.type === 'ballot') {
-        // TODO: i18n
-        switch (getBallotOption(this.event.option)) {
+        switch (this.event.option) {
           case 'for':
             return 'parlaicon-za';
           case 'against':
@@ -111,7 +94,7 @@ export default {
         return `question.asked--${this.$root.data.person.gender}`;
       }
       if (this.event.type === 'ballot') {
-        return `event.ballot--${getBallotOption(this.event.option)}--${this.$root.data.person.gender}`;
+        return `event.ballot--${this.event.option}--${this.$root.data.person.gender}`;
       }
       if (this.event.type === 'speech') {
         return `event.speech--${this.$root.data.person.gender}`;

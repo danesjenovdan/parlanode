@@ -39,9 +39,9 @@ export default {
         case 'against':
           return this.$t('vote-against');
         case 'abstain':
-          return this.$t('vote-abstained-plural');
+          return this.$t('vote-abstain-plural');
         case 'not_present':
-          return this.$t('vote-not-plural');
+          return this.$t('vote-absent-plural');
         default:
           return '';
       }

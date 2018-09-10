@@ -97,8 +97,8 @@ export default {
       votes: [
         { id: 'for', label: this.$t('vote-for'), selected: this.getSelectedOption('for') },
         { id: 'against', label: this.$t('vote-against'), selected: this.getSelectedOption('against') },
-        { id: 'abstain', label: this.$t('vote-abstained-plural'), selected: this.getSelectedOption('abstain') },
-        { id: 'not_present', label: this.$t('vote-not-plural'), selected: this.getSelectedOption('not_present') },
+        { id: 'abstain', label: this.$t('vote-abstain-plural'), selected: this.getSelectedOption('abstain') },
+        { id: 'not_present', label: this.$t('vote-absent-plural'), selected: this.getSelectedOption('not_present') },
       ],
     };
   },
@@ -159,8 +159,8 @@ export default {
           f: this.$t('not-present--f'),
         },
         abstain: {
-          m: this.$t('vote-abstained--m'),
-          f: this.$t('vote-abstained--f'),
+          m: this.$t('vote-abstain--m'),
+          f: this.$t('vote-abstain--f'),
         },
       }[option][gender];
     },
