@@ -1,100 +1,106 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.cardData._id"
-    :content-class="{'is-loading': loading}"
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
-    <div slot="info">
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </div>
-
-    <div id="skupine-besed">
-      <text-frame>
-        <i18n path="wordgroups-text" tag="p">
-          <span place="words">
-            <tag
-              v-for="(word, index) in words"
-              :key="index + word"
-              :text="word"
-              @click="removeWord(word)"
-            />
-            <plus @click="toggleModal(true)" />
-          </span>
-          <span place="load">
-            <load-link
-              :text="$t('load')"
-              @click="loadResults(true)"
-            />
-          </span>
-        </i18n>
-        <div class="row extras">
-          <div class="col-xs-12">
-            <div class="searchfilter-checkbox">
-              <input
-                id="rev"
-                :checked="showRelative"
-                type="checkbox"
-                class="checkbox"
-                @click="changeShowRelative"
-              >
-              <label v-t="'show-relative'" for="rev"></label>
-            </div>
-          </div>
-        </div>
-      </text-frame>
-
-      <p-tabs :start-tab="selectedTab" @switch="focusTab">
-        <p-tab :label="$t('speakers')">
-          <scroll-shadow ref="shadow">
-            <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
-              <bar-chart
-                v-if="results.people.length"
-                :data="showRelative ? resultsRelative.people : results.people"
-                :show-percentage="!showRelative"
-                show-numbers
-                flexible-labels
-              />
-              <empty-circle
-                v-else
-                :text="emptyText"
-              />
-            </div>
-          </scroll-shadow>
-        </p-tab>
-        <p-tab :label="$t('parties')">
-          <scroll-shadow ref="shadowPS">
-            <div class="results" @scroll="$refs.shadowPS.check($event.currentTarget)">
-              <bar-chart
-                v-if="results.parties.length"
-                :data="showRelative ? resultsRelative.parties: results.parties"
-                :show-percentage="!showRelative"
-                show-numbers
-                flexible-labels
-              />
-              <empty-circle
-                v-else
-                :text="emptyText"
-              />
-            </div>
-          </scroll-shadow>
-        </p-tab>
-      </p-tabs>
-
-      <modal
-        v-if="modalShown"
-        :header="$t('input-words')"
-        :button="$t('confirm')"
-        @close="toggleModal(false)"
-        @ok="toggleModal(false, true)"
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator">
+        <tools-tabs current-tool="wordGroups" />
+      </div>
+      <card-wrapper
+        :content-class="{'is-loading': loading}"
+        :card-url="generatedCardUrl"
+        :header-config="headerConfig"
+        :og-config="ogConfig"
       >
-        <search-field v-model="modalInputText" @enter="toggleModal(false, true)" />
-      </modal>
-    </div>
-  </card-wrapper>
+        <div slot="info">
+          <p v-t="'info.lead'" class="info-text lead"></p>
+          <p v-t="'info.methodology'" class="info-text heading"></p>
+          <p v-t="'info.text'" class="info-text"></p>
+        </div>
+
+        <div id="skupine-besed">
+          <text-frame>
+            <i18n path="wordgroups-text" tag="p">
+              <span place="words">
+                <tag
+                  v-for="(word, index) in words"
+                  :key="index + word"
+                  :text="word"
+                  @click="removeWord(word)"
+                />
+                <plus @click="toggleModal(true)" />
+              </span>
+              <span place="load">
+                <load-link
+                  :text="$t('load')"
+                  @click="loadResults(true)"
+                />
+              </span>
+            </i18n>
+            <div class="row extras">
+              <div class="col-xs-12">
+                <div class="searchfilter-checkbox">
+                  <input
+                    id="rev"
+                    :checked="showRelative"
+                    type="checkbox"
+                    class="checkbox"
+                    @click="changeShowRelative"
+                  >
+                  <label v-t="'show-relative'" for="rev"></label>
+                </div>
+              </div>
+            </div>
+          </text-frame>
+
+          <p-tabs :start-tab="selectedTab" @switch="focusTab">
+            <p-tab :label="$t('speakers')">
+              <scroll-shadow ref="shadow">
+                <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
+                  <bar-chart
+                    v-if="results.people.length"
+                    :data="showRelative ? resultsRelative.people : results.people"
+                    :show-percentage="!showRelative"
+                    show-numbers
+                    flexible-labels
+                  />
+                  <empty-circle
+                    v-else
+                    :text="emptyText"
+                  />
+                </div>
+              </scroll-shadow>
+            </p-tab>
+            <p-tab :label="$t('parties')">
+              <scroll-shadow ref="shadowPS">
+                <div class="results" @scroll="$refs.shadowPS.check($event.currentTarget)">
+                  <bar-chart
+                    v-if="results.parties.length"
+                    :data="showRelative ? resultsRelative.parties: results.parties"
+                    :show-percentage="!showRelative"
+                    show-numbers
+                    flexible-labels
+                  />
+                  <empty-circle
+                    v-else
+                    :text="emptyText"
+                  />
+                </div>
+              </scroll-shadow>
+            </p-tab>
+          </p-tabs>
+
+          <modal
+            v-if="modalShown"
+            :header="$t('input-words')"
+            :button="$t('confirm')"
+            @close="toggleModal(false)"
+            @ok="toggleModal(false, true)"
+          >
+            <search-field v-model="modalInputText" @enter="toggleModal(false, true)" />
+          </modal>
+        </div>
+      </card-wrapper>
+    </generator>
+  </div>
 </template>
 
 <script>
@@ -104,6 +110,8 @@ import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
+import Generator from 'components/Generator.vue';
+import ToolsTabs from 'components/ToolsTabs.vue';
 import BarChart from 'components/BarChart.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
 import LoadLink from 'components/LoadLink.vue';
@@ -119,6 +127,8 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 export default {
   name: 'SkupineBesed',
   components: {
+    Generator,
+    ToolsTabs,
     BarChart,
     EmptyCircle,
     LoadLink,

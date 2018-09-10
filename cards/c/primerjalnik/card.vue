@@ -1,163 +1,170 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.cardData._id"
-    :content-class="{'is-loading': loading}"
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
-    <div slot="info">
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-      <div class="info-text">
-        <ul>
-          <li v-t="'info.list[0]'"></li>
-          <li v-t="'info.list[1]'"></li>
-          <li v-t="'info.list[2]'"></li>
-        </ul>
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator">
+        <tools-tabs current-tool="voteComparator" />
       </div>
-    </div>
-
-    <div id="primerjalnik">
-      <text-frame class="primerjalnik">
-        <i18n path="comparator-text" tag="p">
-          <span place="same" class="primerjalnik-for">
-            <tag
-              v-for="party in sameParties"
-              :key="party.id"
-              :text="party.acronym"
-              class="tag"
-              @click="togglePartySame(party)"
-            />
-            <tag
-              v-for="person in selectedSamePeople"
-              :key="person.id"
-              :text="person.name"
-              class="tag"
-              @click="removePerson(person)"
-            />
-            <plus @click="toggleModal('same', true)" />
-          </span>
-          <span place="different" class="primerjalnik-against">
-            <tag
-              v-for="party in differentParties"
-              :key="party.id"
-              :text="party.acronym"
-              class="tag"
-              @click="togglePartyDifferent(party)"
-            />
-            <tag
-              v-for="person in selectedDifferentPeople"
-              :key="person.id"
-              :text="person.name"
-              class="tag"
-              @click="removePerson(person)"
-            />
-            <plus @click="toggleModal('different', true)" />
-          </span>
-          <span place="load">
-            <load-link :text="$t('load')" @click="loadResults" />
-          </span>
-        </i18n>
-        <div class="row primerjalnik-extras">
-          <div class="col-xs-7 nopadding">
-            <div class="searchfilter-checkbox">
-              <input
-                id="rev"
-                :checked="special"
-                type="checkbox"
-                class="checkbox"
-                @click="toggleSpecial"
-              >
-              <label v-t="'ignore-absent'" for="rev"></label>
-            </div>
-          </div>
-          <div class="col-xs-5 nopadding">
-            <i18n path="comparator-vote-percent" tag="p" class="summary">
-              <strong place="num">{{ votes.length }}</strong>
-              <strong place="percent">
-                {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
-              </strong>
-            </i18n>
+      <card-wrapper
+        :content-class="{'is-loading': loading}"
+        :card-url="generatedCardUrl"
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+      >
+        <div slot="info">
+          <p v-t="'info.methodology'" class="info-text heading"></p>
+          <p v-t="'info.text[0]'" class="info-text"></p>
+          <p v-t="'info.text[1]'" class="info-text"></p>
+          <div class="info-text">
+            <ul>
+              <li v-t="'info.list[0]'"></li>
+              <li v-t="'info.list[1]'"></li>
+              <li v-t="'info.list[2]'"></li>
+            </ul>
           </div>
         </div>
-      </text-frame>
 
-      <p-tabs :start-tab="selectedTab" @switch="focusTab">
-        <p-tab :label="$t('tabs.vote-list')">
-          <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
-          <div v-else class="glasovanja">
-            <seznam-glasovanj :data="voteObject" :show-filters="false" />
-          </div>
-        </p-tab>
-        <p-tab :label="$t('tabs.time-chart')">
-          <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
-          <time-chart v-else :data="data" />
-        </p-tab>
-        <!-- <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
-          <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
-          <bar-chart v-else :data="barChartData" show-numbers />
-        </p-tab> -->
-      </p-tabs>
+        <div id="primerjalnik">
+          <text-frame class="primerjalnik">
+            <i18n path="comparator-text" tag="p">
+              <span place="same" class="primerjalnik-for">
+                <tag
+                  v-for="party in sameParties"
+                  :key="party.id"
+                  :text="party.acronym"
+                  class="tag"
+                  @click="togglePartySame(party)"
+                />
+                <tag
+                  v-for="person in selectedSamePeople"
+                  :key="person.id"
+                  :text="person.name"
+                  class="tag"
+                  @click="removePerson(person)"
+                />
+                <plus @click="toggleModal('same', true)" />
+              </span>
+              <span place="different" class="primerjalnik-against">
+                <tag
+                  v-for="party in differentParties"
+                  :key="party.id"
+                  :text="party.acronym"
+                  class="tag"
+                  @click="togglePartyDifferent(party)"
+                />
+                <tag
+                  v-for="person in selectedDifferentPeople"
+                  :key="person.id"
+                  :text="person.name"
+                  class="tag"
+                  @click="removePerson(person)"
+                />
+                <plus @click="toggleModal('different', true)" />
+              </span>
+              <span place="load">
+                <load-link :text="$t('load')" @click="loadResults" />
+              </span>
+            </i18n>
+            <div class="row primerjalnik-extras">
+              <div class="col-xs-7 nopadding">
+                <div class="searchfilter-checkbox">
+                  <input
+                    id="rev"
+                    :checked="special"
+                    type="checkbox"
+                    class="checkbox"
+                    @click="toggleSpecial"
+                  >
+                  <label v-t="'ignore-absent'" for="rev"></label>
+                </div>
+              </div>
+              <div class="col-xs-5 nopadding">
+                <i18n path="comparator-vote-percent" tag="p" class="summary">
+                  <strong place="num">{{ votes.length }}</strong>
+                  <strong place="percent">
+                    {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
+                  </strong>
+                </i18n>
+              </div>
+            </div>
+          </text-frame>
 
-      <modal
-        v-show="sameModalVisible"
-        :header="$t('select-parties-people')"
-        :button="$t('confirm')"
-        @ok="toggleModal('same', false)"
-        @close="toggleModal('same', false)"
-      >
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
-            :data-id="party.id"
-            :data-acronym="party.acronym"
-            @click="togglePartySame(party)"
+          <p-tabs :start-tab="selectedTab" @switch="focusTab">
+            <p-tab :label="$t('tabs.vote-list')">
+              <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+              <div v-else class="glasovanja">
+                <seznam-glasovanj :data="voteObject" :show-filters="false" />
+              </div>
+            </p-tab>
+            <p-tab :label="$t('tabs.time-chart')">
+              <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+              <time-chart v-else :data="data" />
+            </p-tab>
+            <!-- <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
+              <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+              <bar-chart v-else :data="barChartData" show-numbers />
+            </p-tab> -->
+          </p-tabs>
+
+          <modal
+            v-show="sameModalVisible"
+            :header="$t('select-parties-people')"
+            :button="$t('confirm')"
+            @ok="toggleModal('same', false)"
+            @close="toggleModal('same', false)"
           >
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
-          v-model="samePeople"
-          :placeholder="samePeoplePlaceholder"
-        />
-      </modal>
+            <p>
+              <span
+                v-for="party in parties"
+                :key="party.id"
+                :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
+                :data-id="party.id"
+                :data-acronym="party.acronym"
+                @click="togglePartySame(party)"
+              >
+                {{ party.acronym }}
+              </span>
+            </p>
+            <p-search-dropdown
+              v-model="samePeople"
+              :placeholder="samePeoplePlaceholder"
+            />
+          </modal>
 
-      <modal
-        v-show="differentModalVisible"
-        :header="$t('select-parties-people')"
-        :button="$t('confirm')"
-        @ok="toggleModal('different', false)"
-        @close="toggleModal('different', false)"
-      >
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
-            :data-id="party.id"
-            :data-acronym="party.acronym"
-            @click="togglePartyDifferent(party)"
+          <modal
+            v-show="differentModalVisible"
+            :header="$t('select-parties-people')"
+            :button="$t('confirm')"
+            @ok="toggleModal('different', false)"
+            @close="toggleModal('different', false)"
           >
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
-          v-model="differentPeople"
-          :placeholder="differentPeoplePlaceholder"
-        />
-      </modal>
-    </div>
-  </card-wrapper>
+            <p>
+              <span
+                v-for="party in parties"
+                :key="party.id"
+                :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
+                :data-id="party.id"
+                :data-acronym="party.acronym"
+                @click="togglePartyDifferent(party)"
+              >
+                {{ party.acronym }}
+              </span>
+            </p>
+            <p-search-dropdown
+              v-model="differentPeople"
+              :placeholder="differentPeoplePlaceholder"
+            />
+          </modal>
+        </div>
+      </card-wrapper>
+    </generator>
+  </div>
 </template>
 
 <script>
 import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
+import Generator from 'components/Generator.vue';
 import BarChart from 'components/BarChart.vue';
 import EmptyCircle from 'components/EmptyCircle.vue';
 import LoadLink from 'components/LoadLink.vue';
@@ -170,10 +177,13 @@ import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
 import TimeChart from 'components/TimeChart.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import BlueButtonList from 'components/BlueButtonList.vue';
+import ToolsTabs from 'components/ToolsTabs.vue';
 
 export default {
   name: 'PrimerjalnikGlasovanj',
   components: {
+    Generator,
     BarChart,
     EmptyCircle,
     PSearchDropdown,
@@ -186,8 +196,12 @@ export default {
     TextFrame,
     TimeChart,
     SeznamGlasovanj,
+    BlueButtonList,
+    ToolsTabs,
   },
-  mixins: [common],
+  mixins: [
+    common,
+  ],
   data() {
     return {
       loading: true,

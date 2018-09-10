@@ -1,103 +1,111 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.cardData._id"
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
-    <div slot="info">
-      <i18n path="info.lead" tag="p" class="info-text lead">
-        <span place="text">
-          <span v-if="textFilter">"{{ textFilter }}"</span>
-          <span v-t="'all-votes'" v-else></span>
-        </span>
-        <span place="wbs">
-          <span v-if="selectedTags.length">{{ selectedTags.join(', ') }}</span>
-          <span v-t="'all-working-bodies'" v-else></span>
-        </span>
-        <span place="sortBy">{{ sortOptions[selectedSort].toLowerCase() }}</span>
-      </i18n>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-    </div>
-
-    <!-- <div class="groups">
-      <striped-button
-        v-for="group in groups"
-        :color="group.color.toLowerCase()"
-        :key="group.acronym"
-        :selected="group.acronym === selectedGroup"
-        :small-text="group.name"
-        :is-uppercase="false"
-        @click.native="selectGroup(group.acronym)"
-      />
-    </div> -->
-
-    <div class="filters">
-      <div class="filter text-filter">
-        <div v-t="'title-search'" class="filter-label"></div>
-        <input v-model="textFilter" class="text-filter-input" type="text">
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator">
+        <tools-tabs current-tool="discord" />
       </div>
-      <div class="filter type-dropdown">
-        <div v-t="'parties'" class="filter-label"></div>
-        <p-search-dropdown
-          :value="allItems"
-          :placeholder="$t('search_placeholder')"
-          :single="true"
-          :groups="partyGroups"
-          @select="selectCallback"
-        ></p-search-dropdown>
-      </div>
-      <div class="filter tag-dropdown">
-        <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown v-model="allTags" />
-      </div>
-      <div class="filter text-filter">
-        <div v-t="'sort-by'" class="filter-label"></div>
-        <toggle v-model="selectedSort" :options="sortOptions" />
-      </div>
-    </div>
-
-    <scroll-shadow ref="shadow">
-      <div
-        :class="['results', {'is-loading': loading }]"
-        @scroll="$refs.shadow.check($event.currentTarget)"
+      <card-wrapper
+        :card-url="generatedCardUrl"
+        :header-config="headerConfig"
+        :og-config="ogConfig"
       >
-        <template v-for="day in filteredVotingDays">
-          <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
-          <a
-            v-for="ballot in day.ballots"
-            :key="ballot.id_parladata"
-            :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
-            target="_blank"
-            class="ballot"
+        <div slot="info">
+          <i18n path="info.lead" tag="p" class="info-text lead">
+            <span place="text">
+              <span v-if="textFilter">"{{ textFilter }}"</span>
+              <span v-t="'all-votes'" v-else></span>
+            </span>
+            <span place="wbs">
+              <span v-if="selectedTags.length">{{ selectedTags.join(', ') }}</span>
+              <span v-t="'all-working-bodies'" v-else></span>
+            </span>
+            <span place="sortBy">{{ sortOptions[selectedSort].toLowerCase() }}</span>
+          </i18n>
+          <p v-t="'info.methodology'" class="info-text heading"></p>
+          <p v-t="'info.text[0]'" class="info-text"></p>
+          <p v-t="'info.text[1]'" class="info-text"></p>
+        </div>
+
+        <!-- <div class="groups">
+          <striped-button
+            v-for="group in groups"
+            :color="group.color.toLowerCase()"
+            :key="group.acronym"
+            :selected="group.acronym === selectedGroup"
+            :small-text="group.name"
+            :is-uppercase="false"
+            @click.native="selectGroup(group.acronym)"
+          />
+        </div> -->
+
+        <div class="filters">
+          <div class="filter text-filter">
+            <div v-t="'title-search'" class="filter-label"></div>
+            <input v-model="textFilter" class="text-filter-input" type="text">
+          </div>
+          <div class="filter type-dropdown">
+            <div v-t="'parties'" class="filter-label"></div>
+            <p-search-dropdown
+              :value="allItems"
+              :placeholder="$t('search_placeholder')"
+              :single="true"
+              :groups="partyGroups"
+              @select="selectCallback"
+            />
+          </div>
+          <div class="filter tag-dropdown">
+            <div v-t="'working-body'" class="filter-label"></div>
+            <p-search-dropdown v-model="allTags" />
+          </div>
+          <div class="filter text-filter">
+            <div v-t="'sort-by'" class="filter-label"></div>
+            <toggle v-model="selectedSort" :options="sortOptions" />
+          </div>
+        </div>
+
+        <scroll-shadow ref="shadow">
+          <div
+            :class="['results', {'is-loading': loading }]"
+            @scroll="$refs.shadow.check($event.currentTarget)"
           >
-            <div class="disunion">
-              <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
-              <div v-t="'inequality'" class="text"></div>
-            </div>
-            <div class="name">{{ ballot.text }}</div>
-            <div class="result">
-              <template v-if="ballot.result">
-                <i class="accepted glyphicon glyphicon-ok"></i>
-                <div v-t="'vote-passed'" class="text"></div>
-              </template>
-              <template v-else>
-                <i class="not-accepted glyphicon glyphicon-remove"></i>
-                <div v-t="'vote-not-passed'" class="text"></div>
-              </template>
-            </div>
-          </a>
-        </template>
-      </div>
-    </scroll-shadow>
-  </card-wrapper>
+            <template v-for="day in filteredVotingDays">
+              <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
+              <a
+                v-for="ballot in day.ballots"
+                :key="ballot.id_parladata"
+                :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
+                target="_blank"
+                class="ballot"
+              >
+                <div class="disunion">
+                  <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
+                  <div v-t="'inequality'" class="text"></div>
+                </div>
+                <div class="name">{{ ballot.text }}</div>
+                <div class="result">
+                  <template v-if="ballot.result">
+                    <i class="accepted glyphicon glyphicon-ok"></i>
+                    <div v-t="'vote-passed'" class="text"></div>
+                  </template>
+                  <template v-else>
+                    <i class="not-accepted glyphicon glyphicon-remove"></i>
+                    <div v-t="'vote-not-passed'" class="text"></div>
+                  </template>
+                </div>
+              </a>
+            </template>
+          </div>
+        </scroll-shadow>
+      </card-wrapper>
+    </generator>
+  </div>
 </template>
 
 <script>
 import { parse as parseDate, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find } from 'lodash';
+import Generator from 'components/Generator.vue';
+import ToolsTabs from 'components/ToolsTabs.vue';
 import DateRow from 'components/DateRow.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
@@ -110,6 +118,8 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 export default {
   name: 'GlasovanjaNeenotnost',
   components: {
+    Generator,
+    ToolsTabs,
     DateRow,
     PSearchDropdown,
     StripedButton,
