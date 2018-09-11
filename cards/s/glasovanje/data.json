@@ -1,22 +1,28 @@
 {
   "gov_side": {
     "coalition": {
-      "max": { "max_opt": "for", "maxOptPerc": 96.7741935483871 },
+      "max": {
+        "max_opt": "against",
+        "maxOptPerc": 98.38709677419355
+      },
       "votes": {
+        "absent": 1.0,
         "abstain": 0.0,
-        "not_present": 2.0,
-        "for": 60.0,
-        "against": 0.0
+        "for": 0.0,
+        "against": 61.0
       },
       "outliers": []
     },
     "opposition": {
-      "max": { "max_opt": "not_present", "maxOptPerc": 58.42696629213483 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 62.92134831460674
+      },
       "votes": {
+        "absent": 56.0,
         "abstain": 0.0,
-        "not_present": 52.0,
-        "for": 36.0,
-        "against": 1.0
+        "for": 10.0,
+        "against": 23.0
       },
       "outliers": []
     }
@@ -24,86 +30,58 @@
   "created_for": "10.05.2018",
   "abstractVisible": false,
   "abstract": null,
-  "all": { "abstain": 0, "not_present": 54, "against": 1, "for": 96 },
+  "all": {
+    "absent": 57,
+    "abstain": 0,
+    "against": 84,
+    "for": 10
+  },
   "session": {
-    "name": "8",
+    "name": "8. sjednica",
     "orgs": [
-      { "acronym": "sabor", "is_coalition": false, "id": 199, "name": "Sabor" }
+      {
+        "acronym": "sabor",
+        "is_coalition": false,
+        "id": 199,
+        "name": "Hrvatski sabor"
+      }
     ],
     "date": "10. 5. 2018",
     "org": {
       "acronym": "sabor",
       "is_coalition": false,
       "id": 199,
-      "name": "Sabor"
+      "name": "Hrvatski sabor"
     },
     "date_ts": "2018-05-10T10:47:00",
-    "updated_at": "27. 8. 2018",
+    "updated_at": "10. 9. 2018",
     "in_review": false,
     "id": 141
   },
   "result": {
     "is_outlier": false,
-    "accepted": true,
-    "value": 63.576158940397356,
-    "max_opt": "for"
+    "accepted": false,
+    "value": 55.62913907284768,
+    "max_opt": "against"
   },
   "members": [
     {
       "person": {
         "is_active": false,
-        "district": [6],
-        "name": "Marko Ve\u0161ligaj",
-        "gov_id": "1268",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1268,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Mladen Madjer",
-        "gov_id": "1338",
-        "gender": "m",
-        "party": {
-          "acronym": "HSS",
-          "is_coalition": false,
-          "id": 337,
-          "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
-        },
-        "type": "mp",
-        "id": 1338,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Bernarda Topolko",
-        "gov_id": "1271",
+        "district": [
+          1
+        ],
+        "name": "Sonja \u010cikoti\u0107",
+        "gov_id": "1251",
         "gender": "f",
         "party": {
-          "acronym": "HNS",
+          "acronym": "Most",
           "is_coalition": false,
-          "id": 340,
-          "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
         },
         "type": "mp",
-        "id": 1271,
+        "id": 1251,
         "has_function": false
       },
       "option": "for",
@@ -112,978 +90,42 @@
     {
       "person": {
         "is_active": false,
-        "district": [6],
-        "name": "Bo\u017eica Makar",
-        "gov_id": "1331",
-        "gender": "f",
-        "party": {
-          "acronym": "HNS",
-          "is_coalition": false,
-          "id": 340,
-          "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
-        },
-        "type": "mp",
-        "id": 1331,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Marija Puh",
-        "gov_id": "1296",
-        "gender": "f",
-        "party": {
-          "acronym": "HNS",
-          "is_coalition": false,
-          "id": 340,
-          "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
-        },
-        "type": "mp",
-        "id": 1296,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Ivan \u0160ipi\u0107",
-        "gov_id": "1279",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1279,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Marko \u0160imi\u0107",
-        "gov_id": "1278",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1278,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Stipo \u0160apina",
-        "gov_id": "1281",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1281,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Anton Kliman",
-        "gov_id": "1353",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1353,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "\u017deljko Reiner",
-        "gov_id": "1291",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1291,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Davor Ivo Stier",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1282,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Miroslav Tu\u0111man",
-        "gov_id": "1267",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1267,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Grozdana Peri\u0107",
-        "gov_id": "1307",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1307,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Irena Petrijev\u010danin Vuksanovi\u0107",
-        "gov_id": "1306",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1306,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Dragica Ro\u0161\u010di\u0107",
-        "gov_id": "1295",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1295,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Petar \u0160kori\u0107",
-        "gov_id": "1276",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1276,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Ljubica Maksim\u010duk",
-        "gov_id": "1324",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1324,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Sanja Putica",
-        "gov_id": "1305",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1305,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Marija Jelkovac",
-        "gov_id": "1357",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1357,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "\u017deljka Josi\u0107",
-        "gov_id": "1359",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1359,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Branka Juri\u010dev-Martin\u010dev",
-        "gov_id": "1346",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1346,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Vesna Bedekovi\u0107",
-        "gov_id": "1380",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1380,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Ante Ba\u010di\u0107",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1391,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Branko Ba\u010di\u0107",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1393,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Marijana Bali\u0107",
-        "gov_id": "1392",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1392,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Ante Babi\u0107",
-        "gov_id": "1389",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1389,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": null,
-        "district": null,
-        "name": "Sun\u010dana Glavak",
-        "gov_id": null,
-        "gender": null,
-        "party": {
-          "acronym": null,
-          "is_coalition": null,
-          "id": null,
-          "name": null
-        },
-        "type": "visitor",
-        "id": 1533,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Domagoj Ivan Milo\u0161evi\u0107",
-        "gov_id": "1311",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1311,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Ivan \u0160uker",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1269,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Mato \u010ci\u010dak",
-        "gov_id": "1255",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1255,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Domagoj Mikuli\u0107",
-        "gov_id": "1321",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1321,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "An\u0111elko Stri\u010dak",
-        "gov_id": "1280",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1280,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Tomislav Sokol",
-        "gov_id": "1290",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1290,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Miro Totgergeli",
-        "gov_id": "1272",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1272,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "\u017darko Tu\u0161ek",
-        "gov_id": "1273",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1273,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Stevo Culej",
-        "gov_id": "1250",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1250,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Davor Mili\u010devi\u0107",
-        "gov_id": "1315",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1315,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Ante Sanader",
-        "gov_id": "1286",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1286,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Ivan Kirin",
-        "gov_id": "1344",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1344,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Tomislav Klari\u0107",
-        "gov_id": "1352",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1352,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [12],
-        "name": "\u017deljko Ragu\u017e",
-        "gov_id": "1297",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1297,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Damir Felak",
-        "gov_id": "1372",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1372,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "Gordan Jandrokovi\u0107",
-        "gov_id": "1364",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1364,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Mladen Karli\u0107",
-        "gov_id": "1345",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1345,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Andrija Mikuli\u0107",
-        "gov_id": "1323",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1323,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Dra\u017een Bari\u0161i\u0107",
-        "gov_id": "1383",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1383,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Josip Bori\u0107",
-        "gov_id": "1381",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1381,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Marko Vu\u010deti\u0107",
-        "gov_id": "1259",
-        "gender": "m",
-        "party": {
-          "acronym": "TEMP",
-          "is_coalition": false,
-          "id": 413,
-          "name": "Klub nezavisnih (temporary)"
-        },
-        "type": "mp",
-        "id": 1259,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
+        "district": [
+          11
+        ],
         "name": "Ermina Lekaj-Prljaskaj",
         "gov_id": "1332",
         "gender": "f",
         "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
+          "acronym": "BM 365, Reformisti, Nezavisni",
           "is_coalition": false,
           "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
         "id": 1332,
         "has_function": false
       },
       "option": "for",
-      "is_outlier": false
+      "is_outlier": true
     },
     {
       "person": {
         "is_active": false,
-        "district": [2],
-        "name": "Ljubica Luka\u010di\u0107",
-        "gov_id": "1330",
-        "gender": "f",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1330,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Anka Mrak-Tarita\u0161",
-        "gov_id": "1322",
-        "gender": "f",
-        "party": {
-          "acronym": "GLAS + HSU",
-          "is_coalition": false,
-          "id": 324,
-          "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
-        },
-        "type": "mp",
-        "id": 1322,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Mirando Mrsi\u0107",
-        "gov_id": "1319",
+        "district": [
+          7
+        ],
+        "name": "Marko Sladoljev",
+        "gov_id": "1289",
         "gender": "m",
         "party": {
-          "acronym": "TEMP",
+          "acronym": "Most",
           "is_coalition": false,
-          "id": 413,
-          "name": "Klub nezavisnih (temporary)"
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
         },
         "type": "mp",
-        "id": 1319,
+        "id": 1289,
         "has_function": false
       },
       "option": "for",
@@ -1092,38 +134,20 @@
     {
       "person": {
         "is_active": false,
-        "district": [2],
-        "name": "Vesna Pusi\u0107",
-        "gov_id": "1301",
-        "gender": "f",
-        "party": {
-          "acronym": "GLAS + HSU",
-          "is_coalition": false,
-          "id": 324,
-          "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
-        },
-        "type": "mp",
-        "id": 1301,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Davor Lon\u010dar",
-        "gov_id": "1335",
+        "district": [
+          6
+        ],
+        "name": "Branimir Bunjac",
+        "gov_id": "1257",
         "gender": "m",
         "party": {
-          "acronym": "HDZ",
+          "acronym": "\u017divi zid, SNAGA",
           "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
+          "id": 319,
+          "name": "Klub \u017divog zida i SNAGA-e"
         },
         "type": "mp",
-        "id": 1335,
+        "id": 1257,
         "has_function": false
       },
       "option": "for",
@@ -1132,95 +156,17 @@
     {
       "person": {
         "is_active": false,
-        "district": [3],
-        "name": "Pero \u0106osi\u0107",
-        "gov_id": "1248",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1248,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Goran Dodig",
-        "gov_id": "1254",
-        "gender": "m",
-        "party": {
-          "acronym": "HDS + HSLS + HDSSB",
-          "is_coalition": false,
-          "id": 333,
-          "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
-        },
-        "type": "mp",
-        "id": 1254,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Franjo Luci\u0107",
-        "gov_id": "1329",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1329,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Ivica Mi\u0161i\u0107",
-        "gov_id": "1317",
-        "gender": "m",
-        "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
-          "is_coalition": false,
-          "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
-        },
-        "type": "mp",
-        "id": 1317,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
+        "district": [
+          11
+        ],
         "name": "Furio Radin",
         "gov_id": "1298",
         "gender": "m",
         "party": {
-          "acronym": "IDS + PGS + RI",
+          "acronym": "IDS, PGS, RI",
           "is_coalition": false,
           "id": 310,
-          "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+          "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
         },
         "type": "mp",
         "id": 1298,
@@ -1232,18 +178,20 @@
     {
       "person": {
         "is_active": false,
-        "district": [7],
-        "name": "Tomislav Saucha",
-        "gov_id": "1287",
+        "district": [
+          1
+        ],
+        "name": "Hrvoje Runti\u0107",
+        "gov_id": "1284",
         "gender": "m",
         "party": {
-          "acronym": "HNS",
+          "acronym": "Most",
           "is_coalition": false,
-          "id": 340,
-          "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
         },
         "type": "mp",
-        "id": 1287,
+        "id": 1284,
         "has_function": false
       },
       "option": "for",
@@ -1252,738 +200,108 @@
     {
       "person": {
         "is_active": false,
-        "district": [7],
-        "name": "Ivan \u0106eli\u0107",
-        "gov_id": "1258",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1258,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Josip \u0110aki\u0107",
-        "gov_id": "1252",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1252,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Branko Hrg",
-        "gov_id": "1365",
-        "gender": "m",
-        "party": {
-          "acronym": "HDS + HSLS + HDSSB",
-          "is_coalition": false,
-          "id": 333,
-          "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
-        },
-        "type": "mp",
-        "id": 1365,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "\u017deljko Lackovi\u0107",
-        "gov_id": "1343",
-        "gender": "m",
-        "party": {
-          "acronym": "TEMP",
-          "is_coalition": false,
-          "id": 413,
-          "name": "Klub nezavisnih (temporary)"
-        },
-        "type": "mp",
-        "id": 1343,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
-        "name": "Veljko Kajtazi",
-        "gov_id": "1347",
-        "gender": "m",
-        "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
-          "is_coalition": false,
-          "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
-        },
-        "type": "mp",
-        "id": 1347,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
-        "name": "Vladimir Bilek",
-        "gov_id": "1375",
-        "gender": "m",
-        "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
-          "is_coalition": false,
-          "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
-        },
-        "type": "mp",
-        "id": 1375,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Branimir Glava\u0161",
-        "gov_id": "1384",
-        "gender": "m",
-        "party": {
-          "acronym": "HDS + HSLS + HDSSB",
-          "is_coalition": false,
-          "id": 333,
-          "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
-        },
-        "type": "mp",
-        "id": 1384,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
-        "name": "Robert Jankovics",
-        "gov_id": "1366",
-        "gender": "m",
-        "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
-          "is_coalition": false,
-          "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
-        },
-        "type": "mp",
-        "id": 1366,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [12],
-        "name": "Bo\u017eo Ljubi\u0107",
-        "gov_id": "1337",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1337,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Stjepan \u010curaj",
-        "gov_id": "1256",
-        "gender": "m",
-        "party": {
-          "acronym": "HNS",
-          "is_coalition": false,
-          "id": 340,
-          "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
-        },
-        "type": "mp",
-        "id": 1256,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "Jo\u0161ko Klisovi\u0107",
-        "gov_id": "1354",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1354,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
-        "name": "Dragana Jeckov",
-        "gov_id": "1356",
-        "gender": "f",
-        "party": {
-          "acronym": "SDSS",
-          "is_coalition": false,
-          "id": 322,
-          "name": "Klub zastupnika Samostalne demokratske srpske stranke"
-        },
-        "type": "mp",
-        "id": 1356,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Marija Alfirev",
-        "gov_id": "1388",
-        "gender": "f",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1388,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Sabina Glasovac",
-        "gov_id": "1387",
-        "gender": "f",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1387,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Pe\u0111a Grbin",
-        "gov_id": "1369",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1369,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Silvano Hrelja",
-        "gov_id": "1360",
-        "gender": "m",
-        "party": {
-          "acronym": "GLAS + HSU",
-          "is_coalition": false,
-          "id": 324,
-          "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
-        },
-        "type": "mp",
-        "id": 1360,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "\u017deljko Jovanovi\u0107",
-        "gov_id": "1355",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1355,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Milorad Batini\u0107",
-        "gov_id": "1382",
-        "gender": "m",
-        "party": {
-          "acronym": "HNS",
-          "is_coalition": false,
-          "id": 340,
-          "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
-        },
-        "type": "mp",
-        "id": 1382,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Arsen Bauk",
-        "gov_id": "1379",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1379,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Bojan Glava\u0161evi\u0107",
-        "gov_id": "1385",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1385,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Domagoj Hajdukovi\u0107",
-        "gov_id": "1368",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1368,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
-        "name": "Boris Milo\u0161evi\u0107",
-        "gov_id": "1309",
-        "gender": "m",
-        "party": {
-          "acronym": "SDSS",
-          "is_coalition": false,
-          "id": 322,
-          "name": "Klub zastupnika Samostalne demokratske srpske stranke"
-        },
-        "type": "mp",
-        "id": 1309,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Boris Lalovac",
-        "gov_id": "1339",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1339,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Miro Kova\u010d",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1351,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Nenad Stazi\u0107",
-        "gov_id": "1283",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1283,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Ka\u017eimir Varda",
-        "gov_id": "1266",
-        "gender": "m",
-        "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
-          "is_coalition": false,
-          "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
-        },
-        "type": "mp",
-        "id": 1266,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "Sini\u0161a Varga",
-        "gov_id": "1263",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1263,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Vlatko Kopi\u0107",
-        "gov_id": "1340",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1340,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "Darinko Kosor",
-        "gov_id": "1350",
-        "gender": "m",
-        "party": {
-          "acronym": "HDS + HSLS + HDSSB",
-          "is_coalition": false,
-          "id": 333,
-          "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
-        },
-        "type": "mp",
-        "id": 1350,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Tomislav Lipo\u0161\u0107ak",
-        "gov_id": "1334",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1334,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [11],
-        "name": "Milorad Pupovac",
-        "gov_id": "1292",
-        "gender": "m",
-        "party": {
-          "acronym": "SDSS",
-          "is_coalition": false,
-          "id": 322,
-          "name": "Klub zastupnika Samostalne demokratske srpske stranke"
-        },
-        "type": "mp",
-        "id": 1292,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Zdravko Ronko",
-        "gov_id": "1293",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1293,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Marijan Kusti\u0107",
-        "gov_id": "1342",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1342,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Josip Kri\u017eani\u0107",
-        "gov_id": "1341",
-        "gender": "m",
-        "party": {
-          "acronym": "HDZ",
-          "is_coalition": false,
-          "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
-        },
-        "type": "mp",
-        "id": 1341,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Predrag Mati\u0107",
-        "gov_id": "1327",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1327,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Darinko Dumbovi\u0107",
-        "gov_id": "1246",
-        "gender": "m",
-        "party": {
-          "acronym": "BM 365 + Reformisti + Nezavisni",
-          "is_coalition": false,
-          "id": 334,
-          "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
-        },
-        "type": "mp",
-        "id": 1246,
-        "has_function": false
-      },
-      "option": "for",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
+        "district": [
+          7
+        ],
         "name": "Ivan Vilibor Sin\u010di\u0107",
         "gov_id": "1288",
         "gender": "m",
         "party": {
-          "acronym": "\u017divi zid + SNAGA",
+          "acronym": "\u017divi zid, SNAGA",
           "is_coalition": false,
           "id": 319,
-          "name": "Klub zastupnika \u017divog zida i SNAGA-e"
+          "name": "Klub \u017divog zida i SNAGA-e"
         },
         "type": "mp",
         "id": 1288,
+        "has_function": false
+      },
+      "option": "for",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Marin \u0160kibola",
+        "gov_id": "1275",
+        "gender": "m",
+        "party": {
+          "acronym": "Nezavisni",
+          "is_coalition": false,
+          "id": 413,
+          "name": "Klub nezavisnih"
+        },
+        "type": "mp",
+        "id": 1275,
+        "has_function": false
+      },
+      "option": "for",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Miro Bulj",
+        "gov_id": "1373",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1373,
+        "has_function": false
+      },
+      "option": "for",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Nikola Grmoja",
+        "gov_id": "1370",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1370,
+        "has_function": false
+      },
+      "option": "for",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Darinko Kosor",
+        "gov_id": "1350",
+        "gender": "m",
+        "party": {
+          "acronym": "HDS, HSLS, HDSSB",
+          "is_coalition": false,
+          "id": 333,
+          "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
+        },
+        "type": "mp",
+        "id": 1350,
         "has_function": false
       },
       "option": "against",
@@ -1992,1047 +310,1791 @@
     {
       "person": {
         "is_active": false,
-        "district": [10],
-        "name": "Vedran Babi\u0107",
-        "gov_id": "1390",
+        "district": [
+          10
+        ],
+        "name": "\u017deljko Lackovi\u0107",
+        "gov_id": "1343",
         "gender": "m",
         "party": {
-          "acronym": "SDP",
+          "acronym": "Nezavisni",
           "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+          "id": 413,
+          "name": "Klub nezavisnih"
         },
         "type": "mp",
-        "id": 1390,
+        "id": 1343,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [7],
-        "name": "Kre\u0161o Beljak",
-        "gov_id": "1376",
+        "district": [
+          11
+        ],
+        "name": "Milorad Pupovac",
+        "gov_id": "1292",
         "gender": "m",
         "party": {
-          "acronym": "HSS",
+          "acronym": "SDSS",
           "is_coalition": false,
-          "id": 337,
-          "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
+          "id": 322,
+          "name": "Klub Samostalne demokratske srpske stranke"
         },
         "type": "mp",
-        "id": 1376,
+        "id": 1292,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [2],
-        "name": "Igor Dragovan",
-        "gov_id": "1253",
+        "district": [
+          11
+        ],
+        "name": "Veljko Kajtazi",
+        "gov_id": "1347",
         "gender": "m",
         "party": {
-          "acronym": "SDP",
+          "acronym": "BM 365, Reformisti, Nezavisni",
           "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+          "id": 334,
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 1253,
+        "id": 1347,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [7],
-        "name": "Sa\u0161a \u0110uji\u0107",
-        "gov_id": "1247",
+        "district": [
+          11
+        ],
+        "name": "Vladimir Bilek",
+        "gov_id": "1375",
         "gender": "m",
         "party": {
-          "acronym": "SDP",
+          "acronym": "BM 365, Reformisti, Nezavisni",
           "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+          "id": 334,
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 1247,
+        "id": 1375,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [5],
-        "name": "Ivan Pernar",
-        "gov_id": "1302",
+        "district": [
+          5
+        ],
+        "name": "Dra\u017een Bari\u0161i\u0107",
+        "gov_id": "1383",
         "gender": "m",
         "party": {
-          "acronym": "\u017divi zid + SNAGA",
-          "is_coalition": false,
-          "id": 319,
-          "name": "Klub zastupnika \u017divog zida i SNAGA-e"
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 1302,
+        "id": 1383,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [2],
-        "name": "Goran Aleksi\u0107",
-        "gov_id": "1243",
+        "district": [
+          9
+        ],
+        "name": "Josip Bori\u0107",
+        "gov_id": "1381",
         "gender": "m",
         "party": {
-          "acronym": "\u017divi zid + SNAGA",
-          "is_coalition": false,
-          "id": 319,
-          "name": "Klub zastupnika \u017divog zida i SNAGA-e"
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 1243,
+        "id": 1381,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [3],
-        "name": "Tomislav Paneni\u0107",
-        "gov_id": "1313",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1313,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Bo\u017eo Petrov",
-        "gov_id": "1303",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1303,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Robert Podolnjak",
-        "gov_id": "1304",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1304,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Marko Sladoljev",
-        "gov_id": "1289",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1289,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "Nikola Grmoja",
-        "gov_id": "1370",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1370,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Miro Bulj",
-        "gov_id": "1373",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1373,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "Davor Bernardi\u0107",
-        "gov_id": "1377",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1377,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Ranko Ostoji\u0107",
-        "gov_id": "1312",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1312,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Branko Gr\u010di\u0107",
-        "gov_id": "1371",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1371,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Mario Habek",
-        "gov_id": "1362",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1362,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Sini\u0161a Hajda\u0161 Don\u010di\u0107",
-        "gov_id": "1358",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1358,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Romana Jerkovi\u0107",
-        "gov_id": "1361",
-        "gender": "f",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1361,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Ana Kompari\u0107 Dev\u010di\u0107",
-        "gov_id": "1348",
-        "gender": "f",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1348,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Marta Luc-Polanc",
-        "gov_id": "1336",
-        "gender": "f",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1336,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Gordan Maras",
-        "gov_id": "1325",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1325,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Damir Mateljan",
-        "gov_id": "1326",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1326,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [2],
-        "name": "Orsat Miljeni\u0107",
-        "gov_id": "1316",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1316,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Milanka Opa\u010di\u0107",
-        "gov_id": "1308",
-        "gender": "f",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1308,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Darko Pari\u0107",
-        "gov_id": "1314",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1314,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Damir Tomi\u0107",
-        "gov_id": "1270",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1270,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Franko Vidovi\u0107",
-        "gov_id": "1265",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1265,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [7],
-        "name": "Mihael Zmajlovi\u0107",
-        "gov_id": "1262",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1262,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Stjepan Kova\u010d",
-        "gov_id": "1349",
-        "gender": "m",
-        "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
-        },
-        "type": "mp",
-        "id": 1349,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
+        "district": [
+          10
+        ],
         "name": "Milijan Brki\u0107",
         "gov_id": "1378",
         "gender": "m",
         "party": {
           "acronym": "HDZ",
-          "is_coalition": false,
+          "is_coalition": true,
           "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
         "id": 1378,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [1],
-        "name": "Tomislav \u017dagar",
-        "gov_id": "1261",
+        "district": [
+          1
+        ],
+        "name": "Branimir Glava\u0161",
+        "gov_id": "1384",
         "gender": "m",
         "party": {
-          "acronym": "Most",
+          "acronym": "HDS, HSLS, HDSSB",
           "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
+          "id": 333,
+          "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
         },
         "type": "mp",
-        "id": 1261,
+        "id": 1384,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [10],
-        "name": "Zlatko Hasanbegovi\u0107",
-        "gov_id": "1363",
+        "district": [
+          1
+        ],
+        "name": "Domagoj Hajdukovi\u0107",
+        "gov_id": "1368",
         "gender": "m",
         "party": {
-          "acronym": "NHR",
+          "acronym": "SDP",
           "is_coalition": false,
-          "id": 330,
-          "name": "Klub zastupnika Neovisni za Hrvatsku"
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
-        "id": 1363,
+        "id": 1368,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [12],
-        "name": "\u017deljko Glasnovi\u0107",
-        "gov_id": "1386",
+        "district": [
+          11
+        ],
+        "name": "Robert Jankovics",
+        "gov_id": "1366",
         "gender": "m",
         "party": {
-          "acronym": "NHR",
+          "acronym": "BM 365, Reformisti, Nezavisni",
           "is_coalition": false,
-          "id": 330,
-          "name": "Klub zastupnika Neovisni za Hrvatsku"
+          "id": 334,
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 1386,
+        "id": 1366,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [5],
-        "name": "Goran Beus Richembergh",
-        "gov_id": "1374",
+        "district": [
+          6
+        ],
+        "name": "Milorad Batini\u0107",
+        "gov_id": "1382",
         "gender": "m",
         "party": {
-          "acronym": "GLAS + HSU",
-          "is_coalition": false,
-          "id": 324,
-          "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+          "acronym": "HNS",
+          "is_coalition": true,
+          "id": 340,
+          "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
         },
         "type": "mp",
-        "id": 1374,
+        "id": 1382,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [2],
-        "name": "Bruna Esih",
-        "gov_id": "1249",
+        "district": [
+          6
+        ],
+        "name": "Bo\u017eica Makar",
+        "gov_id": "1331",
         "gender": "f",
         "party": {
-          "acronym": "NHR",
-          "is_coalition": false,
-          "id": 330,
-          "name": "Klub zastupnika Neovisni za Hrvatsku"
+          "acronym": "HNS",
+          "is_coalition": true,
+          "id": 340,
+          "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
         },
         "type": "mp",
-        "id": 1249,
+        "id": 1331,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [1],
-        "name": "Sonja \u010cikoti\u0107",
-        "gov_id": "1251",
+        "district": [
+          4
+        ],
+        "name": "Boris Lalovac",
+        "gov_id": "1339",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1339,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Zdravko Ronko",
+        "gov_id": "1293",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1293,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Marija Puh",
+        "gov_id": "1296",
         "gender": "f",
         "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
+          "acronym": "HNS",
+          "is_coalition": true,
+          "id": 340,
+          "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
         },
         "type": "mp",
-        "id": 1251,
+        "id": 1296,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [9],
-        "name": "Nada Turina-\u0110uri\u0107",
-        "gov_id": "1274",
+        "district": [
+          1
+        ],
+        "name": "Stjepan \u010curaj",
+        "gov_id": "1256",
+        "gender": "m",
+        "party": {
+          "acronym": "HNS",
+          "is_coalition": true,
+          "id": 340,
+          "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
+        },
+        "type": "mp",
+        "id": 1256,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "\u017deljka Josi\u0107",
+        "gov_id": "1359",
         "gender": "f",
         "party": {
-          "acronym": "GLAS + HSU",
-          "is_coalition": false,
-          "id": 324,
-          "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 1274,
+        "id": 1359,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [2],
-        "name": "Vlaho Orepi\u0107",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "TEMP",
-          "is_coalition": false,
-          "id": 413,
-          "name": "Klub nezavisnih (temporary)"
-        },
-        "type": "mp",
-        "id": 1310,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Marin \u0160kibola",
-        "gov_id": "1275",
-        "gender": "m",
-        "party": {
-          "acronym": "TEMP",
-          "is_coalition": false,
-          "id": 413,
-          "name": "Klub nezavisnih (temporary)"
-        },
-        "type": "mp",
-        "id": 1275,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [10],
-        "name": "Slaven Dobrovi\u0107",
-        "gov_id": null,
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1245,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Giovanni Sponza",
-        "gov_id": "1277",
-        "gender": "m",
-        "party": {
-          "acronym": "IDS + PGS + RI",
-          "is_coalition": false,
-          "id": 310,
-          "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
-        },
-        "type": "mp",
-        "id": 1277,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Tulio Demetlika",
-        "gov_id": "1244",
-        "gender": "m",
-        "party": {
-          "acronym": "IDS + PGS + RI",
-          "is_coalition": false,
-          "id": 310,
-          "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
-        },
-        "type": "mp",
-        "id": 1244,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Boris Mileti\u0107",
-        "gov_id": "1320",
-        "gender": "m",
-        "party": {
-          "acronym": "IDS + PGS + RI",
-          "is_coalition": false,
-          "id": 310,
-          "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
-        },
-        "type": "mp",
-        "id": 1320,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [6],
-        "name": "Branimir Bunjac",
-        "gov_id": "1257",
-        "gender": "m",
-        "party": {
-          "acronym": "\u017divi zid + SNAGA",
-          "is_coalition": false,
-          "id": 319,
-          "name": "Klub zastupnika \u017divog zida i SNAGA-e"
-        },
-        "type": "mp",
-        "id": 1257,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [4],
-        "name": "Ante Prani\u0107",
-        "gov_id": "1294",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1294,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [9],
-        "name": "Ines Strenja-Lini\u0107",
-        "gov_id": "1285",
-        "gender": "f",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1285,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Hrvoje Runti\u0107",
-        "gov_id": "1284",
-        "gender": "m",
-        "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
-        },
-        "type": "mp",
-        "id": 1284,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [1],
-        "name": "Ana-Marija Petin",
-        "gov_id": "1299",
-        "gender": "f",
-        "party": {
-          "acronym": "HSS",
-          "is_coalition": false,
-          "id": 337,
-          "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
-        },
-        "type": "mp",
-        "id": 1299,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [3],
-        "name": "Davor Vlaovi\u0107",
-        "gov_id": "1264",
-        "gender": "m",
-        "party": {
-          "acronym": "HSS",
-          "is_coalition": false,
-          "id": 337,
-          "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
-        },
-        "type": "mp",
-        "id": 1264,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [5],
-        "name": "\u017deljko Lenart",
-        "gov_id": "1333",
-        "gender": "m",
-        "party": {
-          "acronym": "HSS",
-          "is_coalition": false,
-          "id": 337,
-          "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
-        },
-        "type": "mp",
-        "id": 1333,
-        "has_function": false
-      },
-      "option": "not_present",
-      "is_outlier": false
-    },
-    {
-      "person": {
-        "is_active": false,
-        "district": [8],
-        "name": "Hrvoje Zekanovi\u0107",
-        "gov_id": "1260",
+        "district": [
+          7
+        ],
+        "name": "Tomislav Klari\u0107",
+        "gov_id": "1352",
         "gender": "m",
         "party": {
           "acronym": "HDZ",
-          "is_coalition": false,
+          "is_coalition": true,
           "id": 343,
-          "name": "Klub zastupnika Hrvatske demokratske zajednice"
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 1260,
+        "id": 1352,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [10],
-        "name": "Ivan Lovrinovi\u0107",
-        "gov_id": "1328",
+        "district": [
+          3
+        ],
+        "name": "Mladen Karli\u0107",
+        "gov_id": "1345",
         "gender": "m",
         "party": {
-          "acronym": "GLAS + HSU",
-          "is_coalition": false,
-          "id": 324,
-          "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 1328,
+        "id": 1345,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [2],
+        "district": [
+          9
+        ],
+        "name": "Ivan Kirin",
+        "gov_id": "1344",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1344,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Branka Juri\u010dev-Martin\u010dev",
+        "gov_id": "1346",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1346,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Ante Sanader",
+        "gov_id": "1286",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1286,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Vlatko Kopi\u0107",
+        "gov_id": "1340",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1340,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Anton Kliman",
+        "gov_id": "1353",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1353,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Miro Kova\u010d",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1351,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Tomislav Lipo\u0161\u0107ak",
+        "gov_id": "1334",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1334,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Sanja Putica",
+        "gov_id": "1305",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1305,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          12
+        ],
+        "name": "\u017deljko Ragu\u017e",
+        "gov_id": "1297",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1297,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Dragica Ro\u0161\u010di\u0107",
+        "gov_id": "1295",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1295,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Tomislav Sokol",
+        "gov_id": "1290",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1290,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Davor Ivo Stier",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1282,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Irena Petrijev\u010danin Vuksanovi\u0107",
+        "gov_id": "1306",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1306,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Grozdana Peri\u0107",
+        "gov_id": "1307",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1307,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Domagoj Ivan Milo\u0161evi\u0107",
+        "gov_id": "1311",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1311,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Davor Mili\u010devi\u0107",
+        "gov_id": "1315",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1315,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Domagoj Mikuli\u0107",
+        "gov_id": "1321",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1321,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Andrija Mikuli\u0107",
+        "gov_id": "1323",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1323,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Ljubica Maksim\u010duk",
+        "gov_id": "1324",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1324,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Franjo Luci\u0107",
+        "gov_id": "1329",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1329,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Ljubica Luka\u010di\u0107",
+        "gov_id": "1330",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1330,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Davor Lon\u010dar",
+        "gov_id": "1335",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1335,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          12
+        ],
+        "name": "Bo\u017eo Ljubi\u0107",
+        "gov_id": "1337",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1337,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Josip Kri\u017eani\u0107",
+        "gov_id": "1341",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1341,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Marijan Kusti\u0107",
+        "gov_id": "1342",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1342,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Stevo Culej",
+        "gov_id": "1250",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1250,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Mato \u010ci\u010dak",
+        "gov_id": "1255",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1255,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Ivan \u0106eli\u0107",
+        "gov_id": "1258",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1258,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Pero \u0106osi\u0107",
+        "gov_id": "1248",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1248,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Josip \u0110aki\u0107",
+        "gov_id": "1252",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1252,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Damir Felak",
+        "gov_id": "1372",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1372,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Sun\u010dana Glavak",
+        "gov_id": null,
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1533,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Gordan Jandrokovi\u0107",
+        "gov_id": "1364",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1364,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "An\u0111elko Stri\u010dak",
+        "gov_id": "1280",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1280,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Stipo \u0160apina",
+        "gov_id": "1281",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1281,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Marija Jelkovac",
+        "gov_id": "1357",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1357,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Ivan \u0160ipi\u0107",
+        "gov_id": "1279",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1279,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Sabina Glasovac",
+        "gov_id": "1387",
+        "gender": "f",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1387,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Marija Alfirev",
+        "gov_id": "1388",
+        "gender": "f",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1388,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Tomislav Saucha",
+        "gov_id": "1287",
+        "gender": "m",
+        "party": {
+          "acronym": "HNS",
+          "is_coalition": true,
+          "id": 340,
+          "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
+        },
+        "type": "mp",
+        "id": 1287,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "\u017deljko Jovanovi\u0107",
+        "gov_id": "1355",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1355,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Darinko Dumbovi\u0107",
+        "gov_id": "1246",
+        "gender": "m",
+        "party": {
+          "acronym": "BM 365, Reformisti, Nezavisni",
+          "is_coalition": false,
+          "id": 334,
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+        },
+        "type": "mp",
+        "id": 1246,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Ivica Mi\u0161i\u0107",
+        "gov_id": "1317",
+        "gender": "m",
+        "party": {
+          "acronym": "BM 365, Reformisti, Nezavisni",
+          "is_coalition": false,
+          "id": 334,
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+        },
+        "type": "mp",
+        "id": 1317,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          11
+        ],
+        "name": "Boris Milo\u0161evi\u0107",
+        "gov_id": "1309",
+        "gender": "m",
+        "party": {
+          "acronym": "SDSS",
+          "is_coalition": false,
+          "id": 322,
+          "name": "Klub Samostalne demokratske srpske stranke"
+        },
+        "type": "mp",
+        "id": 1309,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          11
+        ],
+        "name": "Dragana Jeckov",
+        "gov_id": "1356",
+        "gender": "f",
+        "party": {
+          "acronym": "SDSS",
+          "is_coalition": false,
+          "id": 322,
+          "name": "Klub Samostalne demokratske srpske stranke"
+        },
+        "type": "mp",
+        "id": 1356,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Branko Hrg",
+        "gov_id": "1365",
+        "gender": "m",
+        "party": {
+          "acronym": "HDS, HSLS, HDSSB",
+          "is_coalition": false,
+          "id": 333,
+          "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
+        },
+        "type": "mp",
+        "id": 1365,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Goran Dodig",
+        "gov_id": "1254",
+        "gender": "m",
+        "party": {
+          "acronym": "HDS, HSLS, HDSSB",
+          "is_coalition": false,
+          "id": 333,
+          "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
+        },
+        "type": "mp",
+        "id": 1254,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Branko Ba\u010di\u0107",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1393,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Ante Babi\u0107",
+        "gov_id": "1389",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1389,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Ante Ba\u010di\u0107",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1391,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Marijana Bali\u0107",
+        "gov_id": "1392",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1392,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Vesna Bedekovi\u0107",
+        "gov_id": "1380",
+        "gender": "f",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1380,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Mirando Mrsi\u0107",
+        "gov_id": "1319",
+        "gender": "m",
+        "party": {
+          "acronym": "Nezavisni",
+          "is_coalition": false,
+          "id": 413,
+          "name": "Klub nezavisnih"
+        },
+        "type": "mp",
+        "id": 1319,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Ka\u017eimir Varda",
+        "gov_id": "1266",
+        "gender": "m",
+        "party": {
+          "acronym": "BM 365, Reformisti, Nezavisni",
+          "is_coalition": false,
+          "id": 334,
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+        },
+        "type": "mp",
+        "id": 1266,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "\u017darko Tu\u0161ek",
+        "gov_id": "1273",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1273,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Ivan \u0160uker",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1269,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Miro Totgergeli",
+        "gov_id": "1272",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1272,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Miroslav Tu\u0111man",
+        "gov_id": "1267",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1267,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Petar \u0160kori\u0107",
+        "gov_id": "1276",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1276,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Bernarda Topolko",
+        "gov_id": "1271",
+        "gender": "f",
+        "party": {
+          "acronym": "HNS",
+          "is_coalition": true,
+          "id": 340,
+          "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
+        },
+        "type": "mp",
+        "id": 1271,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Predrag Mati\u0107",
+        "gov_id": "1327",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1327,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "\u017deljko Reiner",
+        "gov_id": "1291",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1291,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
         "name": "Alen Prelec",
         "gov_id": "1300",
         "gender": "m",
@@ -3040,19 +2102,65 @@
           "acronym": "SDP",
           "is_coalition": false,
           "id": 339,
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
         "id": 1300,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "against",
       "is_outlier": false
     },
     {
       "person": {
         "is_active": false,
-        "district": [4],
+        "district": [
+          3
+        ],
+        "name": "Marko \u0160imi\u0107",
+        "gov_id": "1278",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1278,
+        "has_function": false
+      },
+      "option": "against",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Hrvoje Zekanovi\u0107",
+        "gov_id": "1260",
+        "gender": "m",
+        "party": {
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "name": "Klub Hrvatske demokratske zajednice"
+        },
+        "type": "mp",
+        "id": 1260,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
         "name": "Ivana Nin\u010devi\u0107-Lesandri\u0107",
         "gov_id": "1318",
         "gender": "f",
@@ -3060,55 +2168,1274 @@
           "acronym": "Most",
           "is_coalition": false,
           "id": 335,
-          "name": "Klub zastupnika Mosta nezavisnih lista"
+          "name": "Klub Mosta nezavisnih lista"
         },
         "type": "mp",
         "id": 1318,
         "has_function": false
       },
-      "option": "not_present",
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Igor Dragovan",
+        "gov_id": "1253",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1253,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Tulio Demetlika",
+        "gov_id": "1244",
+        "gender": "m",
+        "party": {
+          "acronym": "IDS, PGS, RI",
+          "is_coalition": false,
+          "id": 310,
+          "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+        },
+        "type": "mp",
+        "id": 1244,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Boris Mileti\u0107",
+        "gov_id": "1320",
+        "gender": "m",
+        "party": {
+          "acronym": "IDS, PGS, RI",
+          "is_coalition": false,
+          "id": 310,
+          "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+        },
+        "type": "mp",
+        "id": 1320,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Ante Prani\u0107",
+        "gov_id": "1294",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1294,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Giovanni Sponza",
+        "gov_id": "1277",
+        "gender": "m",
+        "party": {
+          "acronym": "IDS, PGS, RI",
+          "is_coalition": false,
+          "id": 310,
+          "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+        },
+        "type": "mp",
+        "id": 1277,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Marko Ve\u0161ligaj",
+        "gov_id": "1268",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1268,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Franko Vidovi\u0107",
+        "gov_id": "1265",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1265,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Mihael Zmajlovi\u0107",
+        "gov_id": "1262",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1262,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Sa\u0161a \u0110uji\u0107",
+        "gov_id": "1247",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1247,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Ivan Lovrinovi\u0107",
+        "gov_id": "1328",
+        "gender": "m",
+        "party": {
+          "acronym": "GLAS, HSU",
+          "is_coalition": false,
+          "id": 324,
+          "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        },
+        "type": "mp",
+        "id": 1328,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Sini\u0161a Varga",
+        "gov_id": "1263",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1263,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Tomislav \u017dagar",
+        "gov_id": "1261",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1261,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Silvano Hrelja",
+        "gov_id": "1360",
+        "gender": "m",
+        "party": {
+          "acronym": "GLAS, HSU",
+          "is_coalition": false,
+          "id": 324,
+          "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        },
+        "type": "mp",
+        "id": 1360,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "\u017deljko Lenart",
+        "gov_id": "1333",
+        "gender": "m",
+        "party": {
+          "acronym": "HSS",
+          "is_coalition": false,
+          "id": 337,
+          "name": "Klub Hrvatske selja\u010dke stranke"
+        },
+        "type": "mp",
+        "id": 1333,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Mladen Madjer",
+        "gov_id": "1338",
+        "gender": "m",
+        "party": {
+          "acronym": "HSS",
+          "is_coalition": false,
+          "id": 337,
+          "name": "Klub Hrvatske selja\u010dke stranke"
+        },
+        "type": "mp",
+        "id": 1338,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Bo\u017eo Petrov",
+        "gov_id": "1303",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1303,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Goran Beus Richembergh",
+        "gov_id": "1374",
+        "gender": "m",
+        "party": {
+          "acronym": "GLAS, HSU",
+          "is_coalition": false,
+          "id": 324,
+          "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        },
+        "type": "mp",
+        "id": 1374,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Ivan Pernar",
+        "gov_id": "1302",
+        "gender": "m",
+        "party": {
+          "acronym": "\u017divi zid, SNAGA",
+          "is_coalition": false,
+          "id": 319,
+          "name": "Klub \u017divog zida i SNAGA-e"
+        },
+        "type": "mp",
+        "id": 1302,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          12
+        ],
+        "name": "\u017deljko Glasnovi\u0107",
+        "gov_id": "1386",
+        "gender": "m",
+        "party": {
+          "acronym": "NHR",
+          "is_coalition": false,
+          "id": 330,
+          "name": "Klub Neovisni za Hrvatsku"
+        },
+        "type": "mp",
+        "id": 1386,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Milanka Opa\u010di\u0107",
+        "gov_id": "1308",
+        "gender": "f",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1308,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Nenad Stazi\u0107",
+        "gov_id": "1283",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1283,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Ranko Ostoji\u0107",
+        "gov_id": "1312",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1312,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Darko Pari\u0107",
+        "gov_id": "1314",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1314,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Orsat Miljeni\u0107",
+        "gov_id": "1316",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1316,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Gordan Maras",
+        "gov_id": "1325",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1325,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Ana Kompari\u0107 Dev\u010di\u0107",
+        "gov_id": "1348",
+        "gender": "f",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1348,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Marta Luc-Polanc",
+        "gov_id": "1336",
+        "gender": "f",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1336,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Damir Mateljan",
+        "gov_id": "1326",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1326,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Stjepan Kova\u010d",
+        "gov_id": "1349",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1349,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Romana Jerkovi\u0107",
+        "gov_id": "1361",
+        "gender": "f",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1361,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Jo\u0161ko Klisovi\u0107",
+        "gov_id": "1354",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1354,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Sini\u0161a Hajda\u0161 Don\u010di\u0107",
+        "gov_id": "1358",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1358,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "name": "Bojan Glava\u0161evi\u0107",
+        "gov_id": "1385",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1385,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Branko Gr\u010di\u0107",
+        "gov_id": "1371",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1371,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Mario Habek",
+        "gov_id": "1362",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1362,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Pe\u0111a Grbin",
+        "gov_id": "1369",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1369,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Davor Bernardi\u0107",
+        "gov_id": "1377",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1377,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "name": "Arsen Bauk",
+        "gov_id": "1379",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1379,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Vedran Babi\u0107",
+        "gov_id": "1390",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1390,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Tomislav Paneni\u0107",
+        "gov_id": "1313",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1313,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "name": "Kre\u0161o Beljak",
+        "gov_id": "1376",
+        "gender": "m",
+        "party": {
+          "acronym": "HSS",
+          "is_coalition": false,
+          "id": 337,
+          "name": "Klub Hrvatske selja\u010dke stranke"
+        },
+        "type": "mp",
+        "id": 1376,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "name": "Robert Podolnjak",
+        "gov_id": "1304",
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1304,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "name": "Davor Vlaovi\u0107",
+        "gov_id": "1264",
+        "gender": "m",
+        "party": {
+          "acronym": "HSS",
+          "is_coalition": false,
+          "id": 337,
+          "name": "Klub Hrvatske selja\u010dke stranke"
+        },
+        "type": "mp",
+        "id": 1264,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Ana-Marija Petin",
+        "gov_id": "1299",
+        "gender": "f",
+        "party": {
+          "acronym": "HSS",
+          "is_coalition": false,
+          "id": 337,
+          "name": "Klub Hrvatske selja\u010dke stranke"
+        },
+        "type": "mp",
+        "id": 1299,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Anka Mrak-Tarita\u0161",
+        "gov_id": "1322",
+        "gender": "f",
+        "party": {
+          "acronym": "GLAS, HSU",
+          "is_coalition": false,
+          "id": 324,
+          "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        },
+        "type": "mp",
+        "id": 1322,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Nada Turina-\u0110uri\u0107",
+        "gov_id": "1274",
+        "gender": "f",
+        "party": {
+          "acronym": "GLAS, HSU",
+          "is_coalition": false,
+          "id": 324,
+          "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        },
+        "type": "mp",
+        "id": 1274,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Vlaho Orepi\u0107",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "Nezavisni",
+          "is_coalition": false,
+          "id": 413,
+          "name": "Klub nezavisnih"
+        },
+        "type": "mp",
+        "id": 1310,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Bruna Esih",
+        "gov_id": "1249",
+        "gender": "f",
+        "party": {
+          "acronym": "NHR",
+          "is_coalition": false,
+          "id": 330,
+          "name": "Klub Neovisni za Hrvatsku"
+        },
+        "type": "mp",
+        "id": 1249,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          9
+        ],
+        "name": "Ines Strenja-Lini\u0107",
+        "gov_id": "1285",
+        "gender": "f",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1285,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Vesna Pusi\u0107",
+        "gov_id": "1301",
+        "gender": "f",
+        "party": {
+          "acronym": "GLAS, HSU",
+          "is_coalition": false,
+          "id": 324,
+          "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        },
+        "type": "mp",
+        "id": 1301,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "name": "Goran Aleksi\u0107",
+        "gov_id": "1243",
+        "gender": "m",
+        "party": {
+          "acronym": "\u017divi zid, SNAGA",
+          "is_coalition": false,
+          "id": 319,
+          "name": "Klub \u017divog zida i SNAGA-e"
+        },
+        "type": "mp",
+        "id": 1243,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Zlatko Hasanbegovi\u0107",
+        "gov_id": "1363",
+        "gender": "m",
+        "party": {
+          "acronym": "NHR",
+          "is_coalition": false,
+          "id": 330,
+          "name": "Klub Neovisni za Hrvatsku"
+        },
+        "type": "mp",
+        "id": 1363,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          10
+        ],
+        "name": "Slaven Dobrovi\u0107",
+        "gov_id": null,
+        "gender": "m",
+        "party": {
+          "acronym": "Most",
+          "is_coalition": false,
+          "id": 335,
+          "name": "Klub Mosta nezavisnih lista"
+        },
+        "type": "mp",
+        "id": 1245,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "name": "Damir Tomi\u0107",
+        "gov_id": "1270",
+        "gender": "m",
+        "party": {
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "name": "Klub Socijaldemokratske partije Hrvatske"
+        },
+        "type": "mp",
+        "id": 1270,
+        "has_function": false
+      },
+      "option": "absent",
+      "is_outlier": false
+    },
+    {
+      "person": {
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "name": "Marko Vu\u010deti\u0107",
+        "gov_id": "1259",
+        "gender": "m",
+        "party": {
+          "acronym": "Nezavisni",
+          "is_coalition": false,
+          "id": 413,
+          "name": "Klub nezavisnih"
+        },
+        "type": "mp",
+        "id": 1259,
+        "has_function": false
+      },
+      "option": "absent",
       "is_outlier": false
     }
   ],
   "parties": [
     {
-      "max": { "max_opt": "for", "maxOptPerc": 96.42857142857143 },
+      "max": {
+        "max_opt": "against",
+        "maxOptPerc": 98.21428571428571
+      },
       "votes": {
+        "absent": 1.0,
         "abstain": 0.0,
-        "not_present": 2.0,
-        "for": 54.0,
-        "against": 0.0
+        "for": 0.0,
+        "against": 55.0
       },
       "outliers": [],
       "party": {
         "acronym": "HDZ",
-        "is_coalition": false,
+        "is_coalition": true,
         "id": 343,
-        "name": "Klub zastupnika Hrvatske demokratske zajednice"
+        "name": "Klub Hrvatske demokratske zajednice"
       }
     },
     {
-      "max": { "max_opt": "not_present", "maxOptPerc": 60.0 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 77.14285714285715
+      },
       "votes": {
+        "absent": 27.0,
         "abstain": 0.0,
-        "not_present": 21.0,
-        "for": 14.0,
-        "against": 0.0
+        "for": 0.0,
+        "against": 8.0
       },
       "outliers": [],
       "party": {
         "acronym": "SDP",
         "is_coalition": false,
         "id": 339,
-        "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+        "name": "Klub Socijaldemokratske partije Hrvatske"
       }
     },
     {
-      "max": { "max_opt": "not_present", "maxOptPerc": 100.0 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 61.53846153846154
+      },
       "votes": {
+        "absent": 8.0,
         "abstain": 0.0,
-        "not_present": 13.0,
-        "for": 0.0,
+        "for": 5.0,
         "against": 0.0
       },
       "outliers": [],
@@ -3116,63 +3443,77 @@
         "acronym": "Most",
         "is_coalition": false,
         "id": 335,
-        "name": "Klub zastupnika Mosta nezavisnih lista"
+        "name": "Klub Mosta nezavisnih lista"
       }
     },
     {
-      "max": { "max_opt": "for", "maxOptPerc": 100.0 },
-      "votes": {
-        "abstain": 0.0,
-        "not_present": 0.0,
-        "for": 7.0,
-        "against": 0.0
+      "max": {
+        "max_opt": "against",
+        "maxOptPerc": 85.71428571428571
       },
-      "outliers": [],
+      "votes": {
+        "absent": 0.0,
+        "abstain": 0.0,
+        "for": 1.0,
+        "against": 6.0
+      },
+      "outliers": [
+        "for"
+      ],
       "party": {
-        "acronym": "BM 365 + Reformisti + Nezavisni",
+        "acronym": "BM 365, Reformisti, Nezavisni",
         "is_coalition": false,
         "id": 334,
-        "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+        "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
       }
     },
     {
-      "max": { "max_opt": "for", "maxOptPerc": 100.0 },
+      "max": {
+        "max_opt": "against",
+        "maxOptPerc": 100.0
+      },
       "votes": {
+        "absent": 0.0,
         "abstain": 0.0,
-        "not_present": 0.0,
-        "for": 6.0,
-        "against": 0.0
+        "for": 0.0,
+        "against": 6.0
       },
       "outliers": [],
       "party": {
         "acronym": "HNS",
-        "is_coalition": false,
+        "is_coalition": true,
         "id": 340,
-        "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
+        "name": "Klub Hrvatske narodne stranke - liberalnih demokrata"
       }
     },
     {
-      "max": { "max_opt": "for", "maxOptPerc": 50.0 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 100.0
+      },
       "votes": {
+        "absent": 6.0,
         "abstain": 0.0,
-        "not_present": 3.0,
-        "for": 3.0,
+        "for": 0.0,
         "against": 0.0
       },
       "outliers": [],
       "party": {
-        "acronym": "GLAS + HSU",
+        "acronym": "GLAS, HSU",
         "is_coalition": false,
         "id": 324,
-        "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
+        "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
       }
     },
     {
-      "max": { "max_opt": "not_present", "maxOptPerc": 80.0 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 100.0
+      },
       "votes": {
+        "absent": 5.0,
         "abstain": 0.0,
-        "not_present": 4.0,
-        "for": 1.0,
+        "for": 0.0,
         "against": 0.0
       },
       "outliers": [],
@@ -3180,62 +3521,74 @@
         "acronym": "HSS",
         "is_coalition": false,
         "id": 337,
-        "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
+        "name": "Klub Hrvatske selja\u010dke stranke"
       }
     },
     {
-      "max": { "max_opt": "not_present", "maxOptPerc": 75.0 },
+      "max": {
+        "max_opt": "for",
+        "maxOptPerc": 50.0
+      },
       "votes": {
+        "absent": 2.0,
         "abstain": 0.0,
-        "not_present": 3.0,
-        "for": 0.0,
-        "against": 1.0
+        "for": 2.0,
+        "against": 0.0
       },
       "outliers": [],
       "party": {
-        "acronym": "\u017divi zid + SNAGA",
+        "acronym": "\u017divi zid, SNAGA",
         "is_coalition": false,
         "id": 319,
-        "name": "Klub zastupnika \u017divog zida i SNAGA-e"
+        "name": "Klub \u017divog zida i SNAGA-e"
       }
     },
     {
-      "max": { "max_opt": "not_present", "maxOptPerc": 75.0 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 75.0
+      },
       "votes": {
+        "absent": 3.0,
         "abstain": 0.0,
-        "not_present": 3.0,
         "for": 1.0,
         "against": 0.0
       },
       "outliers": [],
       "party": {
-        "acronym": "IDS + PGS + RI",
+        "acronym": "IDS, PGS, RI",
         "is_coalition": false,
         "id": 310,
-        "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+        "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
       }
     },
     {
-      "max": { "max_opt": "for", "maxOptPerc": 100.0 },
+      "max": {
+        "max_opt": "against",
+        "maxOptPerc": 100.0
+      },
       "votes": {
+        "absent": 0.0,
         "abstain": 0.0,
-        "not_present": 0.0,
-        "for": 4.0,
-        "against": 0.0
+        "for": 0.0,
+        "against": 4.0
       },
       "outliers": [],
       "party": {
-        "acronym": "HDS + HSLS + HDSSB",
+        "acronym": "HDS, HSLS, HDSSB",
         "is_coalition": false,
         "id": 333,
-        "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
+        "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
       }
     },
     {
-      "max": { "max_opt": "not_present", "maxOptPerc": 100.0 },
+      "max": {
+        "max_opt": "absent",
+        "maxOptPerc": 100.0
+      },
       "votes": {
+        "absent": 3.0,
         "abstain": 0.0,
-        "not_present": 3.0,
         "for": 0.0,
         "against": 0.0
       },
@@ -3244,35 +3597,60 @@
         "acronym": "NHR",
         "is_coalition": false,
         "id": 330,
-        "name": "Klub zastupnika Neovisni za Hrvatsku"
+        "name": "Klub Neovisni za Hrvatsku"
       }
     },
     {
-      "max": { "max_opt": "for", "maxOptPerc": 100.0 },
+      "max": {
+        "max_opt": "against",
+        "maxOptPerc": 100.0
+      },
       "votes": {
+        "absent": 0.0,
         "abstain": 0.0,
-        "not_present": 0.0,
-        "for": 3.0,
-        "against": 0.0
+        "for": 0.0,
+        "against": 3.0
       },
       "outliers": [],
       "party": {
         "acronym": "SDSS",
         "is_coalition": false,
         "id": 322,
-        "name": "Klub zastupnika Samostalne demokratske srpske stranke"
+        "name": "Klub Samostalne demokratske srpske stranke"
       }
     }
   ],
-  "id": "4155",
+  "id": "4216",
   "documents": [
-    { "url": "http://www.sabor.hr/fgs.axd?id=54329", "name": "PZE_381.pdf" },
-    { "url": "http://www.sabor.hr/fgs.axd?id=54329", "name": "PZE_381.pdf" }
+    {
+      "url": "http://www.sabor.hr/fgs.axd?id=54066",
+      "name": "IZMJENA_PREDSTAVNIKA_VLADE_RH_PZ_206.pdf"
+    },
+    {
+      "url": "http://www.sabor.hr/fgs.axd?id=53006",
+      "name": "MISLJENJE_EUROPSKE_SREDISNJE_BANKE_PZ_205_PZ_206.pdf"
+    },
+    {
+      "url": "http://www.sabor.hr/fgs.axd?id=50779",
+      "name": "PZ_206.pdf"
+    },
+    {
+      "url": "http://www.sabor.hr/fgs.axd?id=54066",
+      "name": "IZMJENA_PREDSTAVNIKA_VLADE_RH_PZ_206.pdf"
+    },
+    {
+      "url": "http://www.sabor.hr/fgs.axd?id=53006",
+      "name": "MISLJENJE_EUROPSKE_SREDISNJE_BANKE_PZ_205_PZ_206.pdf"
+    },
+    {
+      "url": "http://www.sabor.hr/fgs.axd?id=50779",
+      "name": "PZ_206.pdf"
+    }
   ],
-  "name": "PRIJEDLOG ZAKONA O PROVEDBI UREDBE (EU) 2017/745 O MEDICINSKIM PROIZVODIMA I UREDBE (EU) 2017/746 O IN VITRO DIJAGNOSTI\u010cKIM MEDICINSKIM PROIZVODIMA, prvo \u010ditanje, P.Z.E. br. 381 \u2013 predlagateljica: Vlada Republike Hrvatske",
-  "created_at": "27.08.2018",
+  "name": "Kona\u010dni prijedlog zakona o dopuni Zakona o Dr\u017eavnom uredu za reviziju, hitni postupak, prvo i drugo \u010ditanje, p. z. br. 206 - predlagatelj: zastupnik Ivan Lovrinovi\u0107",
+  "created_at": "10.09.2018",
   "legislation": {
-    "text": "Prijedlog zakona o provedbi Uredbe (EU) 2017/745 o medicinskim proizvodima i Uredbe (EU) 2017/746 o in vitro dijagnosti\u010dkim medicinskim proizvodima",
-    "epa": "381"
+    "text": "",
+    "epa": null
   }
 }

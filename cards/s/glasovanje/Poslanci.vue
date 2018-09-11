@@ -98,7 +98,7 @@ export default {
         { id: 'for', label: this.$t('vote-for'), selected: this.getSelectedOption('for') },
         { id: 'against', label: this.$t('vote-against'), selected: this.getSelectedOption('against') },
         { id: 'abstain', label: this.$t('vote-abstain-plural'), selected: this.getSelectedOption('abstain') },
-        { id: 'not_present', label: this.$t('vote-absent-plural'), selected: this.getSelectedOption('not_present') },
+        { id: 'absent', label: this.$t('vote-absent-plural'), selected: this.getSelectedOption('absent') },
       ],
     };
   },
@@ -154,9 +154,9 @@ export default {
           m: this.$t('vote-against'),
           f: this.$t('vote-against'),
         },
-        not_present: {
-          m: this.$t('not-present--m'),
-          f: this.$t('not-present--f'),
+        absent: {
+          m: this.$t('absent--m'),
+          f: this.$t('absent--f'),
         },
         abstain: {
           m: this.$t('vote-abstain--m'),
@@ -223,30 +223,25 @@ export default {
   @include respond-to(desktop) { height: 394.5px; }
 }
 
-  .vote {
-    display: flex;
-    justify-content: flex-end;
-    .option {
-      background-size: 40px 40px;
-      background-repeat: no-repeat;
-      background-position: top center;
-      font-size: 11px;
-      font-weight: 500;
-      padding-top: 40px;
-      text-transform: uppercase;
-      width: 58px;
-      @include respond-to(desktop) { width: 125px; }
+.vote {
+  display: flex;
+  justify-content: flex-end;
+  .option {
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    font-size: 11px;
+    font-weight: 500;
+    padding-top: 40px;
+    text-transform: uppercase;
+    width: 58px;
+    @include respond-to(desktop) { width: 125px; }
 
-      $icon-path: "#{getConfig('urls.cdn')}/icons";
-      &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
-      &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
-      &.option-not_present { background-image: url(#{$icon-path}/ni_v2.svg) }
-      &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
-    }
+    $icon-path: "#{getConfig('urls.cdn')}/icons";
+    &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
+    &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
+    &.option-absent { background-image: url(#{$icon-path}/ni_v2.svg) }
+    &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
   }
-
-  // MUKI HACK
-  .search-field {
-    align-self: flex-start;
-  }
+}
 </style>

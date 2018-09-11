@@ -251,12 +251,12 @@
         "tags": ["Proceduralna glasovanja"],
         "text": "Dnevni red v celoti",
         "is_outlier": false,
-        "votes_for": 57,
+        "for": 57,
         "against": 1,
         "result": true,
         "motion_id": 9968,
         "has_outliers": true,
-        "not_present": 31,
+        "absent": 31,
         "epa": null
       }
     },
@@ -292,12 +292,12 @@
         "text":
           "Poro\u010dilo o delu Komisije za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb v letu 2017 (TAJNO) - Glasovanje o predlogu sklepa",
         "is_outlier": false,
-        "votes_for": 32,
+        "for": 32,
         "against": 12,
         "result": true,
         "motion_id": 9967,
         "has_outliers": false,
-        "not_present": 43,
+        "absent": 43,
         "epa": "2774-VII"
       }
     }

@@ -40,7 +40,7 @@ export default {
           return this.$t('vote-against');
         case 'abstain':
           return this.$t('vote-abstain-plural');
-        case 'not_present':
+        case 'absent':
           return this.$t('vote-absent-plural');
         default:
           return '';
@@ -72,7 +72,7 @@ export default {
     $icon-path: "#{getConfig('urls.cdn')}/icons";
     &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
     &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
-    &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+    &.option-absent { background-image: url(#{$icon-path}/ni.svg) }
     &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
   }
 

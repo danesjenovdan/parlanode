@@ -224,9 +224,9 @@ export default {
           if (Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001) > 0) {
             let odsoten;
             if (this.type === 'person') {
-              odsoten = this.$t(`not-present--${this.person.gender}`);
+              odsoten = this.$t(`absent--${this.person.gender}`);
             } else {
-              odsoten = this.$t('not-present--plural');
+              odsoten = this.$t('absent--plural');
             }
             focus.append('text')
               .text(`${odsoten} | ${Math.round(d3.select(bars[0][1]).datum().y - 0.0000000001)} %`) // odštevamo zaradi case-a 20.5 + 79.5

@@ -2,7 +2,7 @@ const COLORS = {
   for: '#00628c',
   against: '#009cdd',
   abstain: '#003b54',
-  not_present: '#99e1ff',
+  absent: '#99e1ff',
 };
 
 export default (votes) => {

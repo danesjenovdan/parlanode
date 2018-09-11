@@ -54,10 +54,10 @@
                     <div class="session_votes">
                       <div class="progress smallbar">
                         <div
-                          :style="{ width: vote.percent_votes_for + '%' }"
+                          :style="{ width: vote.percent_for + '%' }"
                           class="progress-bar aye"
                         >
-                          <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
+                          <span class="sr-only">{{ vote.percent_for }}% votes for</span>
                         </div>
                         <div
                           :style="{ width: vote.percent_against + '%' }"
@@ -72,15 +72,15 @@
                           <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                         </div>
                         <div
-                          :style="{ width: vote.percent_not_present + '%' }"
+                          :style="{ width: vote.percent_absent + '%' }"
                           class="progress-bar not"
                         >
-                          <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
+                          <span class="sr-only">{{ vote.percent_absent }}% not present</span>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-xs-3">
-                          {{ vote.votes_for }}
+                          {{ vote.for }}
                           <div v-t="'vote-for'" class="type"></div>
                           <div class="indicator aye">&nbsp;</div>
                         </div>
@@ -95,7 +95,7 @@
                           <div class="indicator abstention">&nbsp;</div>
                         </div>
                         <div class="col-xs-3">
-                          {{ vote.not_present }}
+                          {{ vote.absent }}
                           <div v-t="'vote-absent'" class="type"></div>
                           <div class="indicator not">&nbsp;</div>
                         </div>
@@ -207,17 +207,17 @@ export default {
   methods: {
     processVotes() {
       const votes = this.data.votes.map((e) => {
-        const allInVotes = e.votes_for + e.against + e.abstain + e.not_present;
+        const allInVotes = e.for + e.against + e.abstain + e.absent;
         e.url = this.getSessionVoteLink({
           session_id: (e.session_id || (e.session && e.session.id) || this.data.session.id),
           vote_id: e.motion_id,
         });
         e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
         e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
-        e.percent_votes_for = Math.floor((e.votes_for / allInVotes) * 100);
+        e.percent_for = Math.floor((e.for / allInVotes) * 100);
         e.percent_against = Math.floor((e.against / allInVotes) * 100);
         e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
-        e.percent_not_present = Math.floor((e.not_present / allInVotes) * 100);
+        e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
 
         if (this.data.text && e.text.indexOf(this.data.text) === 0) {
           e.short_text = e.text.slice(this.data.text.length).replace(/^[\s-]*/, '');
