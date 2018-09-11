@@ -8,7 +8,7 @@
       "link": "http://www.sabor.hr/sjednica-sabora",
       "text": "HS"
     },
-    "words-heading": "Riječi koje su dominirale sjednicom",
+    "words-heading": "Riječi koje označavaju sjednicu",
     "words-text": "Statistike se izračunavaju pomoću modela tf-idf. Korpus čine svi govori, a dokument svi govori na sjednici.",
     "presence-heading": "Prisutnost klubova na sjednici na glasanju",
     "presence-text": "Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane sjednice bile njihove zastupnice.",
