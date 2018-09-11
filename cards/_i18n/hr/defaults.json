@@ -132,8 +132,8 @@
     "ballot--absent--f": "Nije glasala za {title}",
     "ballot--abstain--m": "SUZDRŽAO se od glasanja o {title}",
     "ballot--abstain--f": "SUZDRŽALA se od glasanja o {title}",
-    "speech--m": "Govorio je na {session} {org}",
-    "speech--f": "Govorila je na {session} {org}"
+    "speech--m": "Govorio na: {session}",
+    "speech--f": "Govorila na: {session}"
   },
   "months": [
     "siječanj",
