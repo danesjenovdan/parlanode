@@ -89,17 +89,17 @@ $party-colors: (
 
 
 $vote-colors: (
-  'votes_for': $link,
+  'for': $link,
   'against': $second,
   'abstain': $button-absent,
-  'not_present': $button-abstained
+  'absent': $button-abstained
 );
 
 $proper-vote-colors: (
   'for': $link,
   'against': $second,
   'abstain': $button-absent,
-  'not_present': $button-abstained
+  'absent': $button-abstained
 );
 
 $option-colors: (
@@ -134,7 +134,7 @@ $proper-vote-colors-hover: (
   'for': $link-hover,
   'against': $second-hover,
   'abstain': $button-absent-hover,
-  'not_present': $button-abstained-hover
+  'absent': $button-abstained-hover
 );
 
 $binary-vote-colors: (
