@@ -279,7 +279,7 @@ export default {
               .join(', ');
           }
 
-          newMember.partylink = newMember.person.party.acronym && newMember.person.party.acronym.indexOf('NeP') === -1;
+          newMember.partylink = newMember.person.party.classification === 'pg';
           newMember.age = getAge(newMember.results.birth_date && newMember.results.birth_date.score) || '';
           const education = newMember.results.education && newMember.results.education.score;
           newMember.education = parseInt(education || 0, 10);

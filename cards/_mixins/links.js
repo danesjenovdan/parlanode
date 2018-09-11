@@ -14,7 +14,7 @@ export default {
       return `${slugs.urls.cdn}/img/people/square/${person.gov_id}.png`;
     },
     getPartyLink(party) {
-      if (!party.acronym || party.acronym.indexOf('NeP') > -1) {
+      if (!party.acronym || party.classification !== 'pg') {
         return '';
       }
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
