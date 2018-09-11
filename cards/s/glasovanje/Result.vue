@@ -42,6 +42,8 @@ export default {
           return this.$t('vote-abstain-plural');
         case 'absent':
           return this.$t('vote-absent-plural');
+        case 'cant_compute':
+          return this.$t('vote-no-majority');
         default:
           return '';
       }

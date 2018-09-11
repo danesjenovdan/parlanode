@@ -29,26 +29,22 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {
-      votes: [
-        { id: 'for', label: 'za' },
-        { id: 'against', label: 'proti' },
-        { id: 'abstain', label: 'vzdržani' },
-        { id: 'absent', label: 'niso' },
-      ],
-    };
-  },
   computed: {
     translatedOption() {
-      // TODO: Include all options and ask about translations
-      return {
-        for: 'za',
-        against: 'proti',
-        absent: 'odsotnih',
-        abstain: 'vzdržanih',
-        cant_compute: 'ni večinskega glasu',
-      }[this.option];
+      switch (this.option) {
+        case 'for':
+          return this.$t('vote-for');
+        case 'against':
+          return this.$t('vote-against');
+        case 'abstain':
+          return this.$t('vote-abstain-plural');
+        case 'absent':
+          return this.$t('vote-absent-plural');
+        case 'cant_compute':
+          return this.$t('vote-no-majority');
+        default:
+          return '';
+      }
     },
   },
 };
