@@ -47,8 +47,8 @@
   "vote-abstain--m": "Vzdržan",
   "vote-abstain--f": "Suzdržana",
   "vote-abstain-plural": "Vzdržani",
-  "vote-absent": "Ni",
-  "vote-absent-plural": "Niso",
+  "vote-absent": "Nema",
+  "vote-absent-plural": "Nema",
   "voted-for--f": "Glasala ZA",
   "voted-for--m": "Glasao ZA",
   "voted-for--plural": "Glasali ZA",
@@ -165,11 +165,11 @@
     "other": "ostalo"
   },
   "tools": {
-    "notifications": "Parlameter obvestila",
-    "vote-comparator": "Primerjalnik glasovanj",
-    "discord": "Raziskovalec neenotnosti",
-    "compass": "Parlamentarni kompas",
-    "word-groups": "Skupine besed"
+    "notifications": "Parlametar obavijesti",
+    "vote-comparator": "Komparator glasanja",
+    "discord": "Pretraživač razjedinjenosti",
+    "compass": "Saborski kompas",
+    "word-groups": "Grupe riječi"
   },
   "frame": {
     "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
