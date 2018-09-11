@@ -73,18 +73,18 @@ $logo-third: $font-default; // TODO
 /////////////////////////////
 
 $party-colors: (
-  'hds___hsls___hdssb': #258498,
+  'hds__hsls__hdssb': #258498,
   'nhr': #4095a7,
   'hns': #5ca6b6,
-  'bm_365___reformisti___nezavisni': #77b7c5,
+  'bm_365__reformisti__nezavisni': #77b7c5,
   'sdss': #93c8d4,
   'sdp': #aed9e3,
   'hdz': #caebf2,
-  'glas___hsu': #d1c9cf,
-  'živi_zid___snaga': #d9a7ac,
+  'glas__hsu': #d1c9cf,
+  'živi_zid__snaga': #d9a7ac,
   'manjina': #e0868a,
   'hss': #e86467,
-  'ids___pgs___ri': #ef4345,
+  'ids__pgs__ri': #ef4345,
   'most': #f72122
 );
 
@@ -142,4 +142,3 @@ $binary-vote-colors: (
   'binary-for': $second,
   'binary-against': $first
 );
-
