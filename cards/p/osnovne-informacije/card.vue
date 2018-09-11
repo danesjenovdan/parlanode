@@ -30,7 +30,7 @@
           <span class="key">
             <span v-t="'party'"></span>:
             <a
-              v-if="data.person.party.acronym.indexOf('NeP') === -1"
+              v-if="data.person.party.classification === 'pg'"
               :href="getPersonPartyLink(data.person)"
               class="funblue-light-hover"
             >
