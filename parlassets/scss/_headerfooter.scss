@@ -96,10 +96,6 @@ header.header {
         .navbar .navbar-nav {
             margin-left: -110px;
         }
-
-        #topheadersearch .twitter-typeahead {
-            min-width: 200px;
-        }
     }
 
 
@@ -181,14 +177,6 @@ header.header {
     .search-input-header {
         background: none;
     }
-    .twitter-typeahead .search-input-header,
-    .twitter-typeahead .search-input-header:focus {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        border: 0;
-        background: none;
-    }
 
     .search-input-header-prepend,
     .search-input-header-append{
@@ -230,9 +218,6 @@ header.header {
         }
         .navbar-form .form-group{
             width:100%;
-        }
-        .twitter-typeahead{
-            width:90%;
         }
     }
 
