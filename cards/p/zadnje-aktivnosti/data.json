@@ -11,7 +11,7 @@
       "acronym": "SDP",
       "is_coalition": false,
       "id": 339,
-      "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+      "name": "Klub Socijaldemokratske partije Hrvatske"
     },
     "type": "mp",
     "id": 1300,
@@ -147,16 +147,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o sudjelovanju civilnih stru\u010dnjaka u me\u0111unarodnim misijama i operacijama, prvo \u010ditanje, p.z. br. 389 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4232,
+          "vote_name": "Prijedlog odluke o imenovanju predsjednika i \u0161est \u010dlanova Vije\u0107a za gra\u0111anski nadzor sigurnosno-obavje\u0161tajnih agencija - predlagatelj: Odbor za unutarnju politiku i nacionalnu sigurnost",
+          "vote_id": 4227,
           "type": "ballot"
         },
         {
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke o imenovanju predsjednika i \u0161est \u010dlanova Vije\u0107a za gra\u0111anski nadzor sigurnosno-obavje\u0161tajnih agencija - predlagatelj: Odbor za unutarnju politiku i nacionalnu sigurnost",
-          "vote_id": 4227,
+          "vote_name": "Prijedlog zakona o sudjelovanju civilnih stru\u010dnjaka u me\u0111unarodnim misijama i operacijama, prvo \u010ditanje, p.z. br. 389 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4232,
           "type": "ballot"
         },
         {
@@ -272,16 +272,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o zdravstvenoj za\u0161titi, prvo \u010ditanje, p.z.e. br. 379 \u2013 predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4163,
+          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o lijekovima, prvo \u010ditanje, p.z.e. br. 380 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4166,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o lijekovima, prvo \u010ditanje, p.z.e. br. 380 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4166,
+          "vote_name": "Prijedlog zakona o zdravstvenoj za\u0161titi, prvo \u010ditanje, p.z.e. br. 379 \u2013 predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4163,
           "type": "ballot"
         },
         {
@@ -304,16 +304,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o provedbi Konvencije o gra\u0111anskopravnim vidovima me\u0111unarodne otmice djece, prvo \u010ditanje, p.z. br. 377 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4157,
+          "vote_name": "Prijedlog zakona o Fondu hrvatskih branitelja iz Domovinskog rata i \u010dlanova njihovih obitelji, prvo \u010ditanje, p.z. br. 385 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4154,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o Fondu hrvatskih branitelja iz Domovinskog rata i \u010dlanova njihovih obitelji, prvo \u010ditanje, p.z. br. 385 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4154,
+          "vote_name": "Prijedlog zakona o provedbi Konvencije o gra\u0111anskopravnim vidovima me\u0111unarodne otmice djece, prvo \u010ditanje, p.z. br. 377 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4157,
           "type": "ballot"
         },
         {
@@ -392,16 +392,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Izvje\u0161\u0107e o Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o dopuni Ustava Republike Hrvatske \u010dlankom 72.a, te Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o izmjeni \u010dlanka 72. Ustava Republike Hrvatske - podnositelj: Odbor za Ustav, Poslovnik i politi\u010dki sustav, zaklju\u010dak 1",
-          "vote_id": 4160,
+          "vote_name": "Izvje\u0161\u0107e o Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o dopuni Ustava Republike Hrvatske \u010dlankom 72.a, te Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o izmjeni \u010dlanka 72. Ustava Republike Hrvatske - podnositelj: Odbor za Ustav, Poslovnik i politi\u010dki sustav, zaklju\u010dak 2",
+          "vote_id": 4168,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Izvje\u0161\u0107e o Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o dopuni Ustava Republike Hrvatske \u010dlankom 72.a, te Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o izmjeni \u010dlanka 72. Ustava Republike Hrvatske - podnositelj: Odbor za Ustav, Poslovnik i politi\u010dki sustav, zaklju\u010dak 2",
-          "vote_id": 4168,
+          "vote_name": "Izvje\u0161\u0107e o Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o dopuni Ustava Republike Hrvatske \u010dlankom 72.a, te Zahtjevu za raspisivanje dr\u017eavnog referenduma Gra\u0111anske inicijative \"Narod odlu\u010duje\" o izmjeni \u010dlanka 72. Ustava Republike Hrvatske - podnositelj: Odbor za Ustav, Poslovnik i politi\u010dki sustav, zaklju\u010dak 1",
+          "vote_id": 4160,
           "type": "ballot"
         },
         {
@@ -416,16 +416,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o \u017ei\u010darama, prvo \u010ditanje, p.z.e. br. 357 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4192,
+          "vote_name": "Kona\u010dni prijedlog zakona o dr\u017eavnoj potpori za istra\u017eiva\u010dko-razvojne projekte, drugo \u010ditanje, p.z. br. 269 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4198,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o dr\u017eavnoj potpori za istra\u017eiva\u010dko-razvojne projekte, drugo \u010ditanje, p.z. br. 269 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4198,
+          "vote_name": "Prijedlog zakona o \u017ei\u010darama, prvo \u010ditanje, p.z.e. br. 357 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4192,
           "type": "ballot"
         },
         {
@@ -448,16 +448,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o biogorivima za prijevoz, prvo \u010ditanje, p.z.e. br. 351 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4202,
+          "vote_name": "Kona\u010dni prijedlog zakona o potvr\u0111ivanju Protokola o pristupanju uz Sporazum o trgovini izme\u0111u Europske unije i njezinih dr\u017eava \u010dlanica, s jedne strane, i Kolumbije i Perua, s druge strane, kako bi se uzelo u obzir pristupanje Ekvadora, drugo \u010ditanje, p.z. br. 349 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4201,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o potvr\u0111ivanju Protokola o pristupanju uz Sporazum o trgovini izme\u0111u Europske unije i njezinih dr\u017eava \u010dlanica, s jedne strane, i Kolumbije i Perua, s druge strane, kako bi se uzelo u obzir pristupanje Ekvadora, drugo \u010ditanje, p.z. br. 349 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4201,
+          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o biogorivima za prijevoz, prvo \u010ditanje, p.z.e. br. 351 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4202,
           "type": "ballot"
         },
         {
@@ -544,16 +544,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o elektroni\u010dkom novcu, drugo \u010ditanje, p.z.e. br. 288 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4171,
+          "vote_name": "Kona\u010dni prijedlog zakona o platnom prometu, drugo \u010ditanje, p.z.e. br. 289 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4169,
           "type": "ballot"
         },
         {
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o platnom prometu, drugo \u010ditanje, p.z.e. br. 289 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4169,
+          "vote_name": "Kona\u010dni prijedlog zakona o elektroni\u010dkom novcu, drugo \u010ditanje, p.z.e. br. 288 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4171,
           "type": "ballot"
         },
         {
@@ -581,16 +581,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Odbora za rad, mirovinski sustav i socijalno partnerstvo Hrvatskoga sabora",
-          "vote_id": 4959,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o imenovanju dva \u010dlana Savjeta za robne zalihe",
+          "vote_id": 4962,
           "type": "ballot"
         },
         {
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o imenovanju dva \u010dlana Savjeta za robne zalihe",
-          "vote_id": 4962,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Odbora za rad, mirovinski sustav i socijalno partnerstvo Hrvatskoga sabora",
+          "vote_id": 4959,
           "type": "ballot"
         },
         {
@@ -620,17 +620,17 @@
         {
           "option": "against",
           "session_id": 141,
-          "result": false,
-          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopunama Zakona o Hrvatskoj narodnoj banci, hitni postupak, prvo i drugo \u010ditanje, p.z. br. 205 - predlagatelj: zastupnik Ivan Lovrinovi\u0107",
-          "vote_id": 4217,
+          "result": true,
+          "vote_name": "Interpelacija o radu Vlade Republike Hrvatske radi postupanja Vlade Republike Hrvatske vezanih uz najavljenu renacionalizaciju INA-e i privatizaciju 25 posto manje jedne dionice HEP-a - podnositelji: 19 zastupnika u Hrvatskome saboru",
+          "vote_id": 4951,
           "type": "ballot"
         },
         {
           "option": "against",
           "session_id": 141,
-          "result": true,
-          "vote_name": "Interpelacija o radu Vlade Republike Hrvatske radi postupanja Vlade Republike Hrvatske vezanih uz najavljenu renacionalizaciju INA-e i privatizaciju 25 posto manje jedne dionice HEP-a - podnositelji: 19 zastupnika u Hrvatskome saboru",
-          "vote_id": 4951,
+          "result": false,
+          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopunama Zakona o Hrvatskoj narodnoj banci, hitni postupak, prvo i drugo \u010ditanje, p.z. br. 205 - predlagatelj: zastupnik Ivan Lovrinovi\u0107",
+          "vote_id": 4217,
           "type": "ballot"
         },
         {
@@ -841,56 +841,8 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Odbora za gospodarstvo Hrvatskoga sabora",
-          "vote_id": 4971,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru \u010dlanice i prestanku mandata \u010dlana Odbora za regionalni razvoj i fondove Europske unije Hrvatskoga sabora",
-          "vote_id": 4973,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Mandatno-imunitetnog povjerenstva Hrvatskoga sabora",
-          "vote_id": 4974,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru potpredsjednice i prestanku mandata potpredsjednika Odbora za me\u0111uparlamentarnu suradnju Hrvatskoga sabora",
-          "vote_id": 4975,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o imenovanju \u010dlanice i zamjenika \u010dlana i prestanku mandata \u010dlana i zamjenice \u010dlana Izaslanstva Hrvatskoga sabora u Parlamentarnoj dimenziji Srednjoeuropske inicijative",
-          "vote_id": 4976,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlana Odbora za obranu Hrvatskoga sabora",
-          "vote_id": 4970,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlana Nacionalnog vije\u0107a za pra\u0107enje provedbe Strategije suzbijanja korupcije",
-          "vote_id": 4963,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Odbora za Hrvate izvan Republike Hrvatske Hrvatskoga sabora",
+          "vote_id": 4978,
           "type": "ballot"
         },
         {
@@ -905,8 +857,56 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Odbora za Hrvate izvan Republike Hrvatske Hrvatskoga sabora",
-          "vote_id": 4978,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o imenovanju \u010dlanice i zamjenika \u010dlana i prestanku mandata \u010dlana i zamjenice \u010dlana Izaslanstva Hrvatskoga sabora u Parlamentarnoj dimenziji Srednjoeuropske inicijative",
+          "vote_id": 4976,
+          "type": "ballot"
+        },
+        {
+          "option": "absent",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru potpredsjednice i prestanku mandata potpredsjednika Odbora za me\u0111uparlamentarnu suradnju Hrvatskoga sabora",
+          "vote_id": 4975,
+          "type": "ballot"
+        },
+        {
+          "option": "absent",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Mandatno-imunitetnog povjerenstva Hrvatskoga sabora",
+          "vote_id": 4974,
+          "type": "ballot"
+        },
+        {
+          "option": "absent",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlana Nacionalnog vije\u0107a za pra\u0107enje provedbe Strategije suzbijanja korupcije",
+          "vote_id": 4963,
+          "type": "ballot"
+        },
+        {
+          "option": "absent",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru \u010dlanice i prestanku mandata \u010dlana Odbora za regionalni razvoj i fondove Europske unije Hrvatskoga sabora",
+          "vote_id": 4973,
+          "type": "ballot"
+        },
+        {
+          "option": "absent",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o izboru i prestanku mandata \u010dlana Odbora za gospodarstvo Hrvatskoga sabora",
+          "vote_id": 4971,
+          "type": "ballot"
+        },
+        {
+          "option": "absent",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlana Odbora za obranu Hrvatskoga sabora",
+          "vote_id": 4970,
           "type": "ballot"
         },
         {
@@ -937,14 +937,6 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke o progla\u0161enju 2018. godine \"Godinom Jurja Kri\u017eani\u0107a\" - predlagatelj: Odbor za obrazovanje, znanost i kulturu",
-          "vote_id": 4127,
-          "type": "ballot"
-        },
-        {
-          "option": "for",
-          "session_id": 141,
-          "result": true,
           "vote_name": "Prijedlog za dodjelu Povelje Hrvatskom Crvenom kri\u017eu - podnositelj: Predsjednik Hrvatskoga sabora",
           "vote_id": 4141,
           "type": "ballot"
@@ -953,8 +945,8 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke o razrje\u0161enju \u010dlanice Upravnog vije\u0107a Hrvatske energetske regulatorne agencije",
-          "vote_id": 4137,
+          "vote_name": "Prijedlog odluke o progla\u0161enju 2018. godine \"Godinom Jurja Kri\u017eani\u0107a\" - predlagatelj: Odbor za obrazovanje, znanost i kulturu",
+          "vote_id": 4127,
           "type": "ballot"
         },
         {
@@ -963,6 +955,14 @@
           "result": true,
           "vote_name": "Prijedlog odluke o imenovanju dijela \u010dlanova Upravnog vije\u0107a Hrvatske energetske regulatorne agencije",
           "vote_id": 4138,
+          "type": "ballot"
+        },
+        {
+          "option": "for",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke o razrje\u0161enju \u010dlanice Upravnog vije\u0107a Hrvatske energetske regulatorne agencije",
+          "vote_id": 4137,
           "type": "ballot"
         },
         {
@@ -1041,16 +1041,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o provedbi Uredbe (EU) br. 1286/2014 o dokumentima s klju\u010dnim informacijama za upakirane investicijske proizvode, prvo \u010ditanje, p.z.e. br. 342 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4134,
+          "vote_name": "Kona\u010dni prijedlog zakona o uvjetima za pru\u017eanje usluga carinskog zastupanja, drugo \u010ditanje, p.z.e. br. 292 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4121,
           "type": "ballot"
         },
         {
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o uvjetima za pru\u017eanje usluga carinskog zastupanja, drugo \u010ditanje, p.z.e. br. 292 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4121,
+          "vote_name": "Prijedlog zakona o provedbi Uredbe (EU) br. 1286/2014 o dokumentima s klju\u010dnim informacijama za upakirane investicijske proizvode, prvo \u010ditanje, p.z.e. br. 342 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4134,
           "type": "ballot"
         },
         {
@@ -1073,16 +1073,16 @@
           "option": "abstain",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o regulaciji energetskih djelatnosti, prvo \u010ditanje, p.z.e. br. 343 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4132,
+          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopunama Zakona o unapre\u0111enju poduzetni\u010dke infrastrukture, drugo \u010ditanje, p.z. br. 259 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4135,
           "type": "ballot"
         },
         {
           "option": "abstain",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopunama Zakona o unapre\u0111enju poduzetni\u010dke infrastrukture, drugo \u010ditanje, p.z. br. 259 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4135,
+          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o regulaciji energetskih djelatnosti, prvo \u010ditanje, p.z.e. br. 343 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4132,
           "type": "ballot"
         },
         {
@@ -1150,16 +1150,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o pravosudnoj suradnji u kaznenim stvarima s dr\u017eavama \u010dlanicama Europske unije, prvo \u010ditanje, p.z.e. br. 336 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4136,
+          "vote_name": "Kona\u010dni prijedlog zakona o istra\u017eivanju i eksploataciji ugljikovodika, drugo \u010ditanje, p.z.e. br. 258 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4142,
           "type": "ballot"
         },
         {
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o istra\u017eivanju i eksploataciji ugljikovodika, drugo \u010ditanje, p.z.e. br. 258 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4142,
+          "vote_name": "Prijedlog zakona o izmjenama i dopunama Zakona o pravosudnoj suradnji u kaznenim stvarima s dr\u017eavama \u010dlanicama Europske unije, prvo \u010ditanje, p.z.e. br. 336 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4136,
           "type": "ballot"
         },
         {
@@ -1174,16 +1174,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopuni Zakona o Nacionalnoj infrastrukturi prostornih podataka, drugo \u010ditanje, p.z.e. br. 279 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 4048,
+          "vote_name": "Izvje\u0161\u0107e o prikupljenim popisima arhivskog gradiva iz \u010dlanka 21. a stavka 1. Zakona o arhivskom gradivu i arhivima - podnositeljica: Vlada Republike Hrvatske",
+          "vote_id": 4130,
           "type": "ballot"
         },
         {
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Izvje\u0161\u0107e o prikupljenim popisima arhivskog gradiva iz \u010dlanka 21. a stavka 1. Zakona o arhivskom gradivu i arhivima - podnositeljica: Vlada Republike Hrvatske",
-          "vote_id": 4130,
+          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopuni Zakona o Nacionalnoj infrastrukturi prostornih podataka, drugo \u010ditanje, p.z.e. br. 279 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 4048,
           "type": "ballot"
         },
         {
@@ -1239,22 +1239,6 @@
           "type": "ballot"
         },
         {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Godi\u0161nje izvje\u0161\u0107e Hrvatske agencije za nadzor financijskih usluga za 2015. godinu - podnositeljica: Hrvatska agencija za nadzor financijskih usluga",
-          "vote_id": 4038,
-          "type": "ballot"
-        },
-        {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu Vije\u0107a za vodne usluge od o\u017eujka 2015. do prosinca 2016. - podnositelj: Vije\u0107e za vodne usluge",
-          "vote_id": 4037,
-          "type": "ballot"
-        },
-        {
           "option": "absent",
           "session_id": 141,
           "result": true,
@@ -1274,16 +1258,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjenama i dopuni Zakona o privremenom uzdr\u017eavanju, prvo \u010ditanje, p.z. br. 323 - predlagatelj: Klub zastupnika \u017divoga zida i SNAGA-e",
-          "vote_id": 3800,
+          "vote_name": "Prijedlog zakona o izmjenama Zakona o Hrvatskoj radioteleviziji, prvo \u010ditanje, p.z. br. 252 - predlagatelj: Klub zastupnika \u017divog  zida i SNAGA-e",
+          "vote_id": 3793,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjenama Zakona o Hrvatskoj radioteleviziji, prvo \u010ditanje, p.z. br. 252 - predlagatelj: Klub zastupnika \u017divog  zida i SNAGA-e",
-          "vote_id": 3793,
+          "vote_name": "Prijedlog zakona o izmjenama i dopuni Zakona o privremenom uzdr\u017eavanju, prvo \u010ditanje, p.z. br. 323 - predlagatelj: Klub zastupnika \u017divoga zida i SNAGA-e",
+          "vote_id": 3800,
           "type": "ballot"
         },
         {
@@ -1295,22 +1279,6 @@
           "type": "ballot"
         },
         {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o nedavanju vjerodostojnog tuma\u010denja \u010dlanka 42. stavka 3. Zakona o izborima zastupnika u Hrvatski sabor (''Narodne novine'', br. 116/99., 109/00. \u2013 vjerodostojno tuma\u010denje, 53/03., 167/03. \u2013 Odluka o nedavanju vjerodostojnog tuma\u010denja, 44/06. \u2013 Zakon o Dr\u017eavnom izbornom povjerenstvu Republike Hrvatske, 19/07., 20/09. \u2013 vjerodostojno tuma\u010denje, 145/10., 24/11. \u2013 Zakon o financiranju politi\u010dkih aktivnosti i izborne promid\u017ebe, 93/11. \u2013 Odluka Ustavnoga suda Republike Hrvatske i 120/11. \u2013 pro\u010di\u0161\u0107eni tekst, 19/15., 104/15. \u2013 Odluka Ustavnog suda Republike Hrvatske) - predlagatelj: Odbor za zakonodavstvo;",
-          "vote_id": 3791,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o nedavanju vjerodostojnog tuma\u010denja \u010dlanka 42. stavka 3. Zakona o izborima zastupnika u Hrvatski sabor (''Narodne novine'', br. 116/99., 109/00. \u2013 vjerodostojno tuma\u010denje, 53/03., 167/03. \u2013 Odluka o nedavanju vjerodostojnog tuma\u010denja, 44/06. \u2013 Zakon o Dr\u017eavnom izbornom povjerenstvu Republike Hrvatske, 19/07., 20/09. \u2013 vjerodostojno tuma\u010denje, 145/10., 24/11. \u2013 Zakon o financiranju politi\u010dkih aktivnosti i izborne promid\u017ebe, 93/11. \u2013 Odluka Ustavnoga suda Republike Hrvatske i 120/11. \u2013 pro\u010di\u0161\u0107eni tekst, 19/15., 104/15. \u2013 Odluka Ustavnog suda Republike Hrvatske) - predlagatelj: Odbor za zakonodavstvo;",
-          "vote_id": 3791,
-          "type": "ballot"
-        },
-        {
           "option": "absent",
           "session_id": 141,
           "result": true,
@@ -1319,11 +1287,11 @@
           "type": "ballot"
         },
         {
-          "option": "ni",
+          "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke o nedavanju vjerodostojnog tuma\u010denja \u010dlanka 3. Zakona o dodatku na mirovine ostvarene prema Zakonu o mirovinskom osiguranju (\"Narodne novine\", br. 79/09. i 114/11.) - predlagatelj: Odbor za zakonodavstvo;",
-          "vote_id": 3794,
+          "vote_name": "Prijedlog odluke o nedavanju vjerodostojnog tuma\u010denja \u010dlanka 42. stavka 3. Zakona o izborima zastupnika u Hrvatski sabor (''Narodne novine'', br. 116/99., 109/00. \u2013 vjerodostojno tuma\u010denje, 53/03., 167/03. \u2013 Odluka o nedavanju vjerodostojnog tuma\u010denja, 44/06. \u2013 Zakon o Dr\u017eavnom izbornom povjerenstvu Republike Hrvatske, 19/07., 20/09. \u2013 vjerodostojno tuma\u010denje, 145/10., 24/11. \u2013 Zakon o financiranju politi\u010dkih aktivnosti i izborne promid\u017ebe, 93/11. \u2013 Odluka Ustavnoga suda Republike Hrvatske i 120/11. \u2013 pro\u010di\u0161\u0107eni tekst, 19/15., 104/15. \u2013 Odluka Ustavnog suda Republike Hrvatske) - predlagatelj: Odbor za zakonodavstvo;",
+          "vote_id": 3791,
           "type": "ballot"
         },
         {
@@ -1332,14 +1300,6 @@
           "result": true,
           "vote_name": "Prijedlog odluke o nedavanju vjerodostojnog tuma\u010denja \u010dlanka 3. Zakona o dodatku na mirovine ostvarene prema Zakonu o mirovinskom osiguranju (\"Narodne novine\", br. 79/09. i 114/11.) - predlagatelj: Odbor za zakonodavstvo;",
           "vote_id": 3794,
-          "type": "ballot"
-        },
-        {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o izboru dva zamjenika pravobraniteljice za djecu - predlagateljica: Pravobraniteljica za djecu",
-          "vote_id": 3796,
           "type": "ballot"
         },
         {
@@ -1359,15 +1319,7 @@
           "type": "ballot"
         },
         {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Poslovnik pravobranitelja za djecu - potvr\u0111ivanje - podnositeljica: Pravobraniteljica za djecu",
-          "vote_id": 3797,
-          "type": "ballot"
-        },
-        {
-          "option": "ni",
+          "option": "absent",
           "session_id": 141,
           "result": true,
           "vote_name": "Izvje\u0161\u0107e o radu pravobraniteljice za djecu za 2017. godinu - podnositeljica: Pravobraniteljica za djecu",
@@ -1380,38 +1332,6 @@
           "result": true,
           "vote_name": "Izvje\u0161\u0107e o radu pravobraniteljice za djecu za 2016. godinu - podnositeljica: Pravobraniteljica za djecu",
           "vote_id": 3803,
-          "type": "ballot"
-        },
-        {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu pravobraniteljice za djecu za 2016. godinu - podnositeljica: Pravobraniteljica za djecu",
-          "vote_id": 3803,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu pravobraniteljice za djecu za 2017. godinu - podnositeljica: Pravobraniteljica za djecu",
-          "vote_id": 3802,
-          "type": "ballot"
-        },
-        {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu pravobranitelja za osobe s invaliditetom za 2017. godinu - podnositeljica: Pravobraniteljica za osobe s invaliditetom",
-          "vote_id": 3804,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu pravobranitelja za osobe s invaliditetom za 2017. godinu - podnositeljica: Pravobraniteljica za osobe s invaliditetom",
-          "vote_id": 3804,
           "type": "ballot"
         },
         {
@@ -1423,11 +1343,11 @@
           "type": "ballot"
         },
         {
-          "option": "ni",
+          "option": "absent",
           "session_id": 141,
-          "result": false,
-          "vote_name": "Prijedlog odluke o izmjenama Odluke o osnivanju Istra\u017enog povjerenstva za utvr\u0111ivanje \u010dinjenica u vezi okolnosti nastanka poslovnog koncerna Agrokor, njegove dana\u0161nje pozicije na tr\u017ei\u0161tu, nastanka njegovih poslovnih problema, a posebno dugovanja prema dobavlja\u010dima te ostalim vjerovnicima, uloge regulatora na tr\u017ei\u0161tima vezano za Agrokorove poslovne aktivnosti i okolnosti koje su dovele do aktivnosti Vlade Republike Hrvatske prema Agrokoru odnosno prijedloga mogu\u0107ih rje\u0161enja za situaciju u kojoj se Agrokor na\u0161ao - predlagatelji: 36 zastupnika u Hrvatskome saboru",
-          "vote_id": 3792,
+          "result": true,
+          "vote_name": "Izvje\u0161\u0107e o radu pravobranitelja za osobe s invaliditetom za 2017. godinu - podnositeljica: Pravobraniteljica za osobe s invaliditetom",
+          "vote_id": 3804,
           "type": "ballot"
         },
         {
@@ -1455,18 +1375,10 @@
           "type": "ballot"
         },
         {
-          "option": "za",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu Istra\u017enog povjerenstva za utvr\u0111ivanje odgovornosti za rezultate upravljanja i raspolaganja financijskim i drugim resursima Imunolo\u0161kog zavoda - podnositelj: Istra\u017eno povjerenstvo za utvr\u0111ivanje odgovornosti za rezultate upravljanja i raspolaganja financijskim i drugim resursima Imunolo\u0161kog zavoda;",
-          "vote_id": 3790,
-          "type": "ballot"
-        },
-        {
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -1498,34 +1410,7 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
-            "orgs": [
-              {
-                "acronym": "sabor",
-                "id": 199,
-                "is_coalition": false,
-                "name": "Hrvatski sabor"
-              }
-            ],
-            "date": "10. 5. 2018",
-            "org": {
-              "acronym": "sabor",
-              "id": 199,
-              "is_coalition": false,
-              "name": "Hrvatski sabor"
-            },
-            "id": 141,
-            "in_review": false
-          },
-          "speech_id": 175710,
-          "type": "speech",
-          "the_order": 4445
-        },
-        {
-          "session": {
-            "name": "8. sjednica",
-            "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -1547,6 +1432,33 @@
           "speech_id": 175046,
           "type": "speech",
           "the_order": 4403
+        },
+        {
+          "session": {
+            "name": "8. sjednica",
+            "date_ts": "2018-05-10T10:47:00",
+            "updated_at": "10. 9. 2018",
+            "orgs": [
+              {
+                "acronym": "sabor",
+                "id": 199,
+                "is_coalition": false,
+                "name": "Hrvatski sabor"
+              }
+            ],
+            "date": "10. 5. 2018",
+            "org": {
+              "acronym": "sabor",
+              "id": 199,
+              "is_coalition": false,
+              "name": "Hrvatski sabor"
+            },
+            "id": 141,
+            "in_review": false
+          },
+          "speech_id": 175710,
+          "type": "speech",
+          "the_order": 4445
         }
       ]
     },
@@ -1557,7 +1469,7 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -1589,16 +1501,16 @@
           "option": "against",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o izmjeni Zakona o obveznim odnosima, prvo \u010ditanje, p.z. br. 311 - predlagatelj: Klub zastupnika SDP-a",
-          "vote_id": 3808,
+          "vote_name": "Prijedlog zakona o dopuni Zakona o osobnom identifikacijskom broju, prvo \u010ditanje, p.z. br. 310 - predlagatelji: Klub zastupnika GLAS-a i HSU-a i Klub zastupnika Mosta nezavisnih lista",
+          "vote_id": 3999,
           "type": "ballot"
         },
         {
           "option": "against",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog zakona o dopuni Zakona o osobnom identifikacijskom broju, prvo \u010ditanje, p.z. br. 310 - predlagatelji: Klub zastupnika GLAS-a i HSU-a i Klub zastupnika Mosta nezavisnih lista",
-          "vote_id": 3999,
+          "vote_name": "Prijedlog zakona o izmjeni Zakona o obveznim odnosima, prvo \u010ditanje, p.z. br. 311 - predlagatelj: Klub zastupnika SDP-a",
+          "vote_id": 3808,
           "type": "ballot"
         },
         {
@@ -1626,7 +1538,7 @@
           "type": "ballot"
         },
         {
-          "option": "ni",
+          "option": "absent",
           "session_id": 141,
           "result": true,
           "vote_name": "Godi\u0161nje izvje\u0161\u0107e o obrani za 2017. godinu - podnositeljica: Vlada Republike Hrvatske",
@@ -1637,8 +1549,8 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Godi\u0161nje izvje\u0161\u0107e o obrani za 2017. godinu - podnositeljica: Vlada Republike Hrvatske",
-          "vote_id": 3778,
+          "vote_name": "Prijedlog odluke o razrje\u0161enju \u010dlana i imenovanju \u010dlana Povjerenstva za fiskalnu politiku - predlagatelj: Odbor za financije i dr\u017eavni prora\u010dun",
+          "vote_id": 3819,
           "type": "ballot"
         },
         {
@@ -1647,30 +1559,6 @@
           "result": true,
           "vote_name": "Prijedlog zakona o Hrvatskoj matici iseljenika, prvo \u010ditanje, p.z. br. 330 - predlagateljica: Vlada Republike Hrvatske",
           "vote_id": 3381,
-          "type": "ballot"
-        },
-        {
-          "option": "ni",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o razrje\u0161enju \u010dlana i imenovanju \u010dlana Povjerenstva za fiskalnu politiku - predlagatelj: Odbor za financije i dr\u017eavni prora\u010dun",
-          "vote_id": 3819,
-          "type": "ballot"
-        },
-        {
-          "option": "absent",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o razrje\u0161enju \u010dlana i imenovanju \u010dlana Povjerenstva za fiskalnu politiku - predlagatelj: Odbor za financije i dr\u017eavni prora\u010dun",
-          "vote_id": 3819,
-          "type": "ballot"
-        },
-        {
-          "option": "za",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o radu Dr\u017eavnog ureda za reviziju za 2017. - podnositelj: Dr\u017eavni ured za reviziju",
-          "vote_id": 3811,
           "type": "ballot"
         },
         {
@@ -1709,16 +1597,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o prestanku va\u017eenja Zakona o Centru za pra\u0107enje poslovanja energetskog sektora i investicija, drugo \u010ditanje, p.z. br. 214 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3822,
+          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopunama Zakona o vodama, drugo \u010ditanje, p.z.e. br. 242 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 3832,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama i dopunama Zakona o vodama, drugo \u010ditanje, p.z.e. br. 242 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3832,
+          "vote_name": "Kona\u010dni prijedlog zakona o prestanku va\u017eenja Zakona o Centru za pra\u0107enje poslovanja energetskog sektora i investicija, drugo \u010ditanje, p.z. br. 214 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 3822,
           "type": "ballot"
         },
         {
@@ -1741,16 +1629,16 @@
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama Zakona o \u017eigu, drugo \u010ditanje, p.z. br. 272 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3774,
+          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama Zakona o industrijskom dizajnu, drugo \u010ditanje, p.z. br. 273 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 3775,
           "type": "ballot"
         },
         {
           "option": "absent",
           "session_id": 141,
           "result": true,
-          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama Zakona o industrijskom dizajnu, drugo \u010ditanje, p.z. br. 273 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3775,
+          "vote_name": "Kona\u010dni prijedlog zakona o izmjenama Zakona o \u017eigu, drugo \u010ditanje, p.z. br. 272 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 3774,
           "type": "ballot"
         },
         {
@@ -1770,7 +1658,7 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -1831,22 +1719,6 @@
           "type": "ballot"
         },
         {
-          "option": "kvorum",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o razrje\u0161enju predsjednika, zamjenika predsjednika i \u010dlanova Vije\u0107a Hrvatske regulatorne agencije za mre\u017ene djelatnosti",
-          "vote_id": 3817,
-          "type": "ballot"
-        },
-        {
-          "option": "abstain",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o imenovanju predsjednika, zamjenika predsjednika i \u010dlanova Vije\u0107a Hrvatske regulatorne agencije za mre\u017ene djelatnosti - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3810,
-          "type": "ballot"
-        },
-        {
           "option": "abstain",
           "session_id": 141,
           "result": true,
@@ -1855,7 +1727,7 @@
           "type": "ballot"
         },
         {
-          "option": "kvorum",
+          "option": "abstain",
           "session_id": 141,
           "result": true,
           "vote_name": "Prijedlog odluke o imenovanju predsjednika, zamjenika predsjednika i \u010dlanova Vije\u0107a Hrvatske regulatorne agencije za mre\u017ene djelatnosti - predlagateljica: Vlada Republike Hrvatske",
@@ -1864,14 +1736,6 @@
         },
         {
           "option": "for",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog zakona o tr\u017ei\u0161tu kapitala, prvo \u010ditanje, p.z.e. br. 321 - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3818,
-          "type": "ballot"
-        },
-        {
-          "option": "za",
           "session_id": 141,
           "result": true,
           "vote_name": "Godi\u0161nje izvje\u0161\u0107e o dr\u017eavnim potporama za 2016. godinu - podnositeljica: Vlada Republike Hrvatske",
@@ -1882,8 +1746,8 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Godi\u0161nje izvje\u0161\u0107e o dr\u017eavnim potporama za 2016. godinu - podnositeljica: Vlada Republike Hrvatske",
-          "vote_id": 3813,
+          "vote_name": "Prijedlog zakona o tr\u017ei\u0161tu kapitala, prvo \u010ditanje, p.z.e. br. 321 - predlagateljica: Vlada Republike Hrvatske",
+          "vote_id": 3818,
           "type": "ballot"
         },
         {
@@ -1927,34 +1791,7 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
-            "orgs": [
-              {
-                "acronym": "sabor",
-                "id": 199,
-                "is_coalition": false,
-                "name": "Hrvatski sabor"
-              }
-            ],
-            "date": "10. 5. 2018",
-            "org": {
-              "acronym": "sabor",
-              "id": 199,
-              "is_coalition": false,
-              "name": "Hrvatski sabor"
-            },
-            "id": 141,
-            "in_review": false
-          },
-          "speech_id": 173282,
-          "type": "speech",
-          "the_order": 2184
-        },
-        {
-          "session": {
-            "name": "8. sjednica",
-            "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -1981,34 +1818,7 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
-            "orgs": [
-              {
-                "acronym": "sabor",
-                "id": 199,
-                "is_coalition": false,
-                "name": "Hrvatski sabor"
-              }
-            ],
-            "date": "10. 5. 2018",
-            "org": {
-              "acronym": "sabor",
-              "id": 199,
-              "is_coalition": false,
-              "name": "Hrvatski sabor"
-            },
-            "id": 141,
-            "in_review": false
-          },
-          "speech_id": 173316,
-          "type": "speech",
-          "the_order": 2187
-        },
-        {
-          "session": {
-            "name": "8. sjednica",
-            "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -2035,7 +1845,61 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
+            "orgs": [
+              {
+                "acronym": "sabor",
+                "id": 199,
+                "is_coalition": false,
+                "name": "Hrvatski sabor"
+              }
+            ],
+            "date": "10. 5. 2018",
+            "org": {
+              "acronym": "sabor",
+              "id": 199,
+              "is_coalition": false,
+              "name": "Hrvatski sabor"
+            },
+            "id": 141,
+            "in_review": false
+          },
+          "speech_id": 173316,
+          "type": "speech",
+          "the_order": 2187
+        },
+        {
+          "session": {
+            "name": "8. sjednica",
+            "date_ts": "2018-05-10T10:47:00",
+            "updated_at": "10. 9. 2018",
+            "orgs": [
+              {
+                "acronym": "sabor",
+                "id": 199,
+                "is_coalition": false,
+                "name": "Hrvatski sabor"
+              }
+            ],
+            "date": "10. 5. 2018",
+            "org": {
+              "acronym": "sabor",
+              "id": 199,
+              "is_coalition": false,
+              "name": "Hrvatski sabor"
+            },
+            "id": 141,
+            "in_review": false
+          },
+          "speech_id": 173282,
+          "type": "speech",
+          "the_order": 2184
+        },
+        {
+          "session": {
+            "name": "8. sjednica",
+            "date_ts": "2018-05-10T10:47:00",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -2062,7 +1926,7 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -2094,8 +1958,16 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlanice Odbora za zdravstvo i socijalnu politiku Hrvatskoga sabora",
-          "vote_id": 4965,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlana Odbora za vanjsku politiku Hrvatskoga sabora",
+          "vote_id": 4968,
+          "type": "ballot"
+        },
+        {
+          "option": "for",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju \u010dlanice Odbora za regionalni razvoj i fondove Europske unije Hrvatskoga sabora",
+          "vote_id": 4969,
           "type": "ballot"
         },
         {
@@ -2118,24 +1990,8 @@
           "option": "for",
           "session_id": 141,
           "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju \u010dlanice Odbora za regionalni razvoj i fondove Europske unije Hrvatskoga sabora",
-          "vote_id": 4969,
-          "type": "ballot"
-        },
-        {
-          "option": "for",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlana Odbora za vanjsku politiku Hrvatskoga sabora",
-          "vote_id": 4968,
-          "type": "ballot"
-        },
-        {
-          "option": "for",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju \u010dlana i izboru \u010dlanice Odbora za obitelj, mlade i sport Hrvatskoga sabora",
-          "vote_id": 4967,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju i izboru \u010dlanice Odbora za zdravstvo i socijalnu politiku Hrvatskoga sabora",
+          "vote_id": 4965,
           "type": "ballot"
         },
         {
@@ -2144,6 +2000,14 @@
           "result": true,
           "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju \u010dlana i izboru \u010dlanice Odbora za unutarnju politiku i nacionalnu sigurnost Hrvatskoga sabora",
           "vote_id": 4966,
+          "type": "ballot"
+        },
+        {
+          "option": "for",
+          "session_id": 141,
+          "result": true,
+          "vote_name": "Prijedlog odluke Odbora za izbor, imenovanja i upravne poslove o razrje\u0161enju \u010dlana i izboru \u010dlanice Odbora za obitelj, mlade i sport Hrvatskoga sabora",
+          "vote_id": 4967,
           "type": "ballot"
         },
         {
@@ -2179,14 +2043,6 @@
           "type": "ballot"
         },
         {
-          "option": "kvorum",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Godi\u0161nje izvje\u0161\u0107e o radu dr\u017eavnog odvjetni\u0161tva za 2016. godinu - podnositelj: Dr\u017eavno odvjetni\u0161tvo Republike Hrvatske",
-          "vote_id": 3798,
-          "type": "ballot"
-        },
-        {
           "option": "abstain",
           "session_id": 141,
           "result": true,
@@ -2196,14 +2052,6 @@
         },
         {
           "option": "abstain",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Godi\u0161nje izvje\u0161\u0107e o radu dr\u017eavnog odvjetni\u0161tva za 2015. godinu - podnositelj: Dr\u017eavno odvjetni\u0161tvo Republike Hrvatske",
-          "vote_id": 3799,
-          "type": "ballot"
-        },
-        {
-          "option": "kvorum",
           "session_id": 141,
           "result": true,
           "vote_name": "Godi\u0161nje izvje\u0161\u0107e o radu dr\u017eavnog odvjetni\u0161tva za 2015. godinu - podnositelj: Dr\u017eavno odvjetni\u0161tvo Republike Hrvatske",
@@ -2219,23 +2067,7 @@
           "type": "ballot"
         },
         {
-          "option": "proti",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o imenovanju ravnatelja Agencije za za\u0161titu osobnih podataka - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3998,
-          "type": "ballot"
-        },
-        {
           "option": "for",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o razrje\u0161enju ravnatelja Agencije za za\u0161titu osobnih podataka",
-          "vote_id": 3765,
-          "type": "ballot"
-        },
-        {
-          "option": "za",
           "session_id": 141,
           "result": true,
           "vote_name": "Prijedlog odluke o razrje\u0161enju ravnatelja Agencije za za\u0161titu osobnih podataka",
@@ -2267,14 +2099,6 @@
           "type": "ballot"
         },
         {
-          "option": "kvorum",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Prijedlog odluke o imenovanju Glavnog dr\u017eavnog odvjetnika Republike Hrvatske - predlagateljica: Vlada Republike Hrvatske",
-          "vote_id": 3377,
-          "type": "ballot"
-        },
-        {
           "option": "abstain",
           "session_id": 141,
           "result": true,
@@ -2283,45 +2107,10 @@
           "type": "ballot"
         },
         {
-          "option": "kvorum",
-          "session_id": 141,
-          "result": true,
-          "vote_name": "Izvje\u0161\u0107e o sastancima Europskoga vije\u0107a i Europskoga vije\u0107a (\u010dl. 50) odr\u017eanih u Bruxellesu 22. i 23. o\u017eujka 2018. - podnositelj: Predsjednik Vlade Republike Hrvatske",
-          "vote_id": 3823,
-          "type": "ballot"
-        },
-        {
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
-            "orgs": [
-              {
-                "acronym": "sabor",
-                "id": 199,
-                "is_coalition": false,
-                "name": "Hrvatski sabor"
-              }
-            ],
-            "date": "10. 5. 2018",
-            "org": {
-              "acronym": "sabor",
-              "id": 199,
-              "is_coalition": false,
-              "name": "Hrvatski sabor"
-            },
-            "id": 141,
-            "in_review": false
-          },
-          "speech_id": 120997,
-          "type": "speech",
-          "the_order": 1959
-        },
-        {
-          "session": {
-            "name": "8. sjednica",
-            "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
@@ -2348,7 +2137,34 @@
           "session": {
             "name": "8. sjednica",
             "date_ts": "2018-05-10T10:47:00",
-            "updated_at": "27. 8. 2018",
+            "updated_at": "10. 9. 2018",
+            "orgs": [
+              {
+                "acronym": "sabor",
+                "id": 199,
+                "is_coalition": false,
+                "name": "Hrvatski sabor"
+              }
+            ],
+            "date": "10. 5. 2018",
+            "org": {
+              "acronym": "sabor",
+              "id": 199,
+              "is_coalition": false,
+              "name": "Hrvatski sabor"
+            },
+            "id": 141,
+            "in_review": false
+          },
+          "speech_id": 120997,
+          "type": "speech",
+          "the_order": 1959
+        },
+        {
+          "session": {
+            "name": "8. sjednica",
+            "date_ts": "2018-05-10T10:47:00",
+            "updated_at": "10. 9. 2018",
             "orgs": [
               {
                 "acronym": "sabor",
