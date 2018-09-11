@@ -39,8 +39,10 @@ export default {
     );
 
     const groups = [{
-      label: 'Stranke',
-      items: grouped.map(group => group[0].person.party.acronym),
+      label: this.$t('parties'),
+      items: grouped
+        .filter(group => group[0].person.party.classification === 'pg')
+        .map(group => group[0].person.party.acronym),
     }].concat(grouped.map(group => ({
       label: group[0].person.party.acronym,
       items: group.map(p => p.person.id),
