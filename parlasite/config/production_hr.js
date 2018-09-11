@@ -12,9 +12,45 @@ module.exports = {
   siteMap: {
     landing: {
       legislation: 'glasanja',
+      sessions: 'sjednice',
+      members: 'zastupnice',
+      parties: 'klubovi',
+      tools: 'alati',
+      about: 'o-projektu', // TODO: i18n
+      media: 'za-medije', // TODO: i18n
+      legal: 'pravno-obvestilo', // TODO: i18n
+    },
+    sessions: {
+      search: {
+        base: 'trazi',
+        filter: 'filter',
+      },
+    },
+    tools: {
+      notifications: 'https://obvestila.parlameter.si', // TODO: i18n
+      voteComparator: 'komparator-glasanja',
+      discord: 'pretrazivac-razjedinjenosti',
+      compass: 'saborski-kompas',
+      wordGroups: 'grupe-rijeci',
+    },
+    member: {
+      base: 'zastupnica',
+      overview: 'pregled',
+      votings: 'glasanja',
+      speeches: 'govori',
+    },
+    party: {
+      base: 'klub',
+      overview: 'pregled',
+      votings: 'glasanja',
+      speeches: 'govori',
     },
     session: {
+      base: 'sjednica',
+      legislation: 'pregled', // doesn't exist
       otherVotings: 'glasanja',
+      transcript: 'transkript',
+      vote: 'glasanje',
     },
   },
 };
