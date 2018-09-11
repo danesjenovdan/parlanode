@@ -111,10 +111,10 @@ export default {
     if (finalVoteExists) {
       const filteredVote = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1)[0];
       const vote = {
-        for: filteredVote.votes_for,
+        for: filteredVote.for,
         against: filteredVote.against,
         abstain: filteredVote.abstain,
-        not_present: filteredVote.not_present,
+        absent: filteredVote.absent,
       };
       finalVoteData = mapVotes(vote);
 

@@ -33,7 +33,7 @@
     "text": "Prijedlog zakona o potvr\u0111ivanju Okvirnog sporazuma izme\u0111u \u0160vicarskog saveznog vije\u0107a i Vlade Republike Hrvatske o provedbi \u0160vicarsko-hrvatskog programa suradnje na smanjenju ekonomskih i socijalnih nejednakosti unutar pro\u0161irene Europske unije, s Kona\u010dnim prijedlogom zakona, hitni postupak, prvo i drugo \u010ditanje, p.z. br. 52",
     "start_time": "2016-12-15T18:15:00",
     "is_outlier": false,
-    "votes_for": 108,
+    "for": 108,
     "session_id": 138,
     "documents": [{
       "url": "http://www.sabor.hr/fgs.axd?id=47409",
@@ -45,7 +45,7 @@
     "against": 0,
     "motion_id": 3652,
     "has_outliers": false,
-    "not_present": 45,
+    "absent": 45,
     "result": true
   }],
   "extra_abstract": null,

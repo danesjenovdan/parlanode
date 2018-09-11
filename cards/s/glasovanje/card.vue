@@ -156,7 +156,7 @@ export default {
           id: side,
           name: this.$t(side),
         },
-        votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'not_present']),
+        votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
         max: {
           maxOptPerc: this.$options.cardData.data.gov_side[side].max.maxOptPerc,
           max_opt: this.$options.cardData.data.gov_side[side].max.max_opt,

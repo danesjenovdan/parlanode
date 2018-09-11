@@ -35,7 +35,7 @@ export default {
         { id: 'for', label: 'za' },
         { id: 'against', label: 'proti' },
         { id: 'abstain', label: 'vzdržani' },
-        { id: 'not_present', label: 'niso' },
+        { id: 'absent', label: 'niso' },
       ],
     };
   },
@@ -45,7 +45,7 @@ export default {
       return {
         for: 'za',
         against: 'proti',
-        not_present: 'odsotnih',
+        absent: 'odsotnih',
         abstain: 'vzdržanih',
         cant_compute: 'ni večinskega glasu',
       }[this.option];
@@ -76,7 +76,7 @@ export default {
     $icon-path: "#{getConfig('urls.cdn')}/icons";
     &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
     &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
-    &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+    &.option-absent { background-image: url(#{$icon-path}/ni.svg) }
     &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
   }
 
