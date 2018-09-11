@@ -116,10 +116,10 @@
                 <div class="session_votes">
                   <div class="progress smallbar">
                     <div
-                      :style="{ width: `${vote.percent_votes_for}%` }"
+                      :style="{ width: `${vote.percent_for}%` }"
                       class="progress-bar fontblue"
                     >
-                      <span class="sr-only">{{ vote.percent_votes_for }}% votes for</span>
+                      <span class="sr-only">{{ vote.percent_for }}% votes for</span>
                     </div>
                     <div
                       :style="{ width: `${vote.percent_against}%` }"
@@ -134,15 +134,15 @@
                       <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
                     </div>
                     <div
-                      :style="{ width: `${vote.percent_not_present}%` }"
+                      :style="{ width: `${vote.percent_absent}%` }"
                       class="progress-bar noblue"
                     >
-                      <span class="sr-only">{{ vote.percent_not_present }}% not present</span>
+                      <span class="sr-only">{{ vote.percent_absent }}% not present</span>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-3">
-                      {{ vote.votes_for }}
+                      {{ vote.for }}
                       <div v-t="'vote-for'" class="type"></div>
                       <div class="indicator aye">&nbsp;</div>
                     </div>
@@ -153,12 +153,12 @@
                     </div>
                     <div class="col-xs-3">
                       {{ vote.abstain }}
-                      <div v-t="'vote-abstained'" class="type"></div>
+                      <div v-t="'vote-abstain'" class="type"></div>
                       <div class="indicator abstention">&nbsp;</div>
                     </div>
                     <div class="col-xs-3">
-                      {{ vote.not_present }}
-                      <div v-t="'vote-not'" class="type"></div>
+                      {{ vote.absent }}
+                      <div v-t="'vote-absent'" class="type"></div>
                       <div class="indicator not">&nbsp;</div>
                     </div>
                   </div>

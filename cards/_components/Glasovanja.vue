@@ -100,22 +100,6 @@ import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import { memberVotes, partyVotes } from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 
-function getBallotOption(option) {
-  if (option === 'za' || option === 'aye') {
-    return 'for';
-  }
-  if (option === 'proti' || option === 'nay' || option === 'no') {
-    return 'against';
-  }
-  if (option === 'ni') {
-    return 'not';
-  }
-  if (option === 'kvorum') {
-    return 'quorum';
-  }
-  return option;
-}
-
 export default {
   components: {
     PSearchDropdown,
@@ -155,24 +139,24 @@ export default {
     );
 
     let allOptions = [{
-      id: 'za',
+      id: 'for',
       class: 'for',
       label: this.$t('vote-for'),
       selected: false,
     }, {
-      id: 'proti',
+      id: 'against',
       class: 'against',
       label: this.$t('vote-against'),
       selected: false,
     }, {
-      id: 'kvorum',
-      class: 'kvorum',
-      label: (this.type === 'person' ? this.$t('vote-abstained') : this.$t('vote-abstained-plural')),
+      id: 'abstain',
+      class: 'abstain',
+      label: (this.type === 'person' ? this.$t('vote-abstain') : this.$t('vote-abstain-plural')),
       selected: false,
     }, {
-      id: 'ni',
-      class: 'ni',
-      label: (this.type === 'person' ? this.$t('vote-not') : this.$t('vote-not-plural')),
+      id: 'absent',
+      class: 'absent',
+      label: (this.type === 'person' ? this.$t('vote-absent') : this.$t('vote-absent-plural')),
       selected: false,
     }];
 
@@ -183,7 +167,7 @@ export default {
     Object.keys(this.cardData.data.classifications).forEach((classificationKey) => {
       allClassifications.push({
         id: classificationKey,
-        label: this.$t(this.cardData.data.classifications[classificationKey]),
+        label: this.$t(`vote_types.${this.cardData.data.classifications[classificationKey]}`),
         selected: false,
       });
     });
@@ -318,8 +302,7 @@ export default {
             .map((ballot) => {
               const ballotClone = JSON.parse(JSON.stringify(ballot));
               const form = this.type === 'person' ? this.person.gender : 'plural';
-              const option = getBallotOption(ballot.option);
-              ballotClone.label = this.$t(`voted-${option}--${form}`);
+              ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
 
               if (ballot.result !== 'none' && ballot.result != null) {
                 ballotClone.outcome = ballot.result === true ? this.$t('vote-passed') : this.$t('vote-not-passed');

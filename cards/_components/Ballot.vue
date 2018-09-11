@@ -6,7 +6,7 @@
     <div class="disunion">
       <div :class="['icon', ballot.option]"></div>
       <div class="text">
-        <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span> {{ ballot.option }}
+        <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span> {{ ballot.label }}
       </div>
     </div>
     <div class="name">
@@ -185,16 +185,16 @@ export default {
     align-items: center;
     height: 42px;
 
-    &.za {
+    &.for {
       background-image: url("#{getConfig('urls.cdn')}/icons/g_za_v2.svg");
     }
-    &.proti {
+    &.against {
       background-image: url("#{getConfig('urls.cdn')}/icons/g_proti_v2.svg");
     }
-    &.ni {
+    &.not {
       background-image: url("#{getConfig('urls.cdn')}/icons/ni_v2.svg");
     }
-    &.kvorum {
+    &.quorum {
       background-image: url("#{getConfig('urls.cdn')}/icons/g_vzdrzan_v2.svg");
     }
   }

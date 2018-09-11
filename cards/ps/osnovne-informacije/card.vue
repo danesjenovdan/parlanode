@@ -30,7 +30,8 @@
                 <h3>
                   <a :href="getPersonLink(person)" class="funblue-light-hover">{{ person.name }}</a>
                 </h3>
-                <h4 v-t="'party-leader'" v-if="index === 0"></h4>
+                <h4 v-t="'party-leader-f'" v-if="index === 0 && person.gender === 'f'"></h4>
+                <h4 v-t="'party-leader-m'" v-else-if="index === 0"></h4>
                 <h4 v-t="'deputy-leader-f'" v-else-if="person.gender === 'f'"></h4>
                 <h4 v-t="'deputy-leader-m'" v-else></h4>
               </div>

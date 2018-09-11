@@ -27,8 +27,8 @@
             "text": "Zakon o spremembi Zakona o socialnem varstvu - Glasovanje o zakonu v celoti",
             "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 13,
-            "votes_for": 39,
+            "absent": 13,
+            "for": 39,
             "result": true
         }
     }, {
@@ -58,8 +58,8 @@
             "text": "Zakon o spremembi Zakona o socialnem varstvu - Glasovanje o zakonu v celoti",
             "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 13,
-            "votes_for": 39,
+            "absent": 13,
+            "for": 39,
             "result": true
         }
     }, {
@@ -89,8 +89,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o omejevanju porabe alkohola - Glasovanje o zakonu v celoti",
             "tags": ["Odbor za zdravstvo"],
             "is_outlier": false,
-            "not_present": 21,
-            "votes_for": 40,
+            "absent": 21,
+            "for": 40,
             "result": true
         }
     }, {
@@ -120,8 +120,8 @@
             "text": "Zakon o pogrebni in pokopali\u0161ki dejavnosti - Ponovno odlo\u010danje",
             "tags": ["Odbor za gospodarstvo"],
             "is_outlier": false,
-            "not_present": 9,
-            "votes_for": 56,
+            "absent": 9,
+            "for": 56,
             "result": true
         }
     }, {
@@ -151,8 +151,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o motornih vozilih - Glasovanje o zakonu v celoti",
             "tags": ["Odbor za infrastrukturo, okolje in prostor"],
             "is_outlier": false,
-            "not_present": 32,
-            "votes_for": 32,
+            "absent": 32,
+            "for": 32,
             "result": true
         }
     }, {
@@ -182,8 +182,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
             "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
             "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 37,
+            "absent": 14,
+            "for": 37,
             "result": false
         }
     }, {
@@ -213,8 +213,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
             "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
             "is_outlier": false,
-            "not_present": 14,
-            "votes_for": 37,
+            "absent": 14,
+            "for": 37,
             "result": false
         }
     }, {
@@ -244,8 +244,8 @@
             "text": "Interpelacija o delu in odgovornosti ministrice za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti, dr. Anje Kopa\u010d Mrak - Glasovanje o interpelaciji - MiDDSZEM Anja Kopa\u010d Mrak",
             "tags": ["Interpelacija"],
             "is_outlier": false,
-            "not_present": 8,
-            "votes_for": 43,
+            "absent": 8,
+            "for": 43,
             "result": false
         }
     }, {
@@ -275,8 +275,8 @@
             "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 126. \u010dlenu 18.3.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
             "tags": ["Odbor za finance in monetarno politiko"],
             "is_outlier": false,
-            "not_present": 25,
-            "votes_for": 20,
+            "absent": 25,
+            "for": 20,
             "result": false
         }
     }, {
@@ -306,8 +306,8 @@
             "text": "Proceduralni predlog (pridobitev magnetograma seje Mandatno volilne komisije - nesprejet)",
             "tags": ["Proceduralna glasovanja"],
             "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 28,
+            "absent": 16,
+            "for": 28,
             "result": null
         }
     }, {
@@ -337,8 +337,8 @@
             "text": "Predlog za imenovanje na sodni\u0161ko mesto vrhovnega sodnika na Vrhovnem sodi\u0161\u010du Republike Slovenije - Glasovanje",
             "tags": ["Proceduralna glasovanja"],
             "is_outlier": false,
-            "not_present": 16,
-            "votes_for": 32,
+            "absent": 16,
+            "for": 32,
             "result": null
         }
     }, {
@@ -368,8 +368,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2014 in 2015 - Amandma: K 5. \u010dlenu 16.12.2014 [ZaAB - Poslanska skupina Zavezni\u0161tvo Alenke Bratu\u0161ek]",
             "tags": ["Odbor za finance in monetarno politiko"],
             "is_outlier": true,
-            "not_present": 14,
-            "votes_for": 44,
+            "absent": 14,
+            "for": 44,
             "result": true
         }
     }, {
@@ -399,8 +399,8 @@
             "text": "Zakon o spremembi in dopolnitvi Zakona o delovnih razmerjih - Eviden\u010dni sklep o primernosti predloga zakona 19.12.2014",
             "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 7,
-            "votes_for": 31,
+            "absent": 7,
+            "for": 31,
             "result": false
         }
     }, {
@@ -430,8 +430,8 @@
             "text": "Zakon o spremembi in dopolnitvi Zakona o delovnih razmerjih - Eviden\u010dni sklep o primernosti predloga zakona 19.12.2014",
             "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 7,
-            "votes_for": 31,
+            "absent": 7,
+            "for": 31,
             "result": false
         }
     }, {
@@ -461,8 +461,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o zakonski zvezi in dru\u017einskih razmerjih - Glasovanje o zakonu v celoti",
             "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 6,
-            "votes_for": 51,
+            "absent": 6,
+            "for": 51,
             "result": true
         }
     }, {
@@ -492,8 +492,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 2. \u010dlenu 3.7.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
             "tags": ["Odbor za gospodarstvo"],
             "is_outlier": true,
-            "not_present": 3,
-            "votes_for": 44,
+            "absent": 3,
+            "for": 44,
             "result": true
         }
     }, {
@@ -523,8 +523,8 @@
             "text": "Razprava o odgovoru ministra za infrastrukturo na poslansko vpra\u0161anje Janka Vebra glede izgradnje drugega \u017eelezni\u0161kega tira med Koprom in Diva\u010do - Eviden\u010dni sklep",
             "tags": ["Poslanska vpra\u0161anja"],
             "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 37,
+            "absent": 18,
+            "for": 37,
             "result": true
         }
     }, {
@@ -554,8 +554,8 @@
             "text": "Razprava o odgovoru ministra za kmetijstvo, gozdarstvo in prehrano na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi z na\u010drtovanimi in porabljenimi sredstvi reprezentance - Eviden\u010dni sklep",
             "tags": ["Poslanska vpra\u0161anja"],
             "is_outlier": true,
-            "not_present": 41,
-            "votes_for": 27,
+            "absent": 41,
+            "for": 27,
             "result": true
         }
     }, {
@@ -585,8 +585,8 @@
             "text": "Predlog sklepa (razprava o odgovoru ministra za gospodarski razvoj in tehnologijo Zdravka Po\u010dival\u0161ka na poslansko vpra\u0161anje Marijana Pojbi\u010da v zvezi s prodajo dr\u017eavnega premo\u017eenja)",
             "tags": ["Poslanska vpra\u0161anja"],
             "is_outlier": false,
-            "not_present": 30,
-            "votes_for": 24,
+            "absent": 30,
+            "for": 24,
             "result": false
         }
     }, {
@@ -616,8 +616,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o trgovini - Amandma: K 7. \u010dlenu 9.6.2015 [SD - Poslanska skupina Socialnih demokratov]",
             "tags": ["Odbor za gospodarstvo"],
             "is_outlier": false,
-            "not_present": 10,
-            "votes_for": 15,
+            "absent": 10,
+            "for": 15,
             "result": false
         }
     }, {
@@ -647,8 +647,8 @@
             "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okro\u017ene sodnice na Okro\u017enem sodi\u0161\u010du v Slovenj Gradcu - Glasovanje",
             "tags": ["Mandatno-volilna komisija"],
             "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 30,
+            "absent": 19,
+            "for": 30,
             "result": true
         }
     }, {
@@ -678,8 +678,8 @@
             "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okrajnega sodnika na Okrajnem sodi\u0161\u010du v Kranju - Glasovanje",
             "tags": ["Mandatno-volilna komisija"],
             "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 37,
+            "absent": 18,
+            "for": 37,
             "result": true
         }
     }, {
@@ -709,8 +709,8 @@
             "text": "Predlog za imenovanje \u010dlanov Nadzornega sveta Slovenske tiskovne agencije - Glasovanje o Predlogu sklepa o imenovanju \u010dlana Nadzornega sveta Slovenske tiskovne agencije - Lidija Pavlov\u010di\u010d",
             "tags": ["Mandatno-volilna komisija"],
             "is_outlier": false,
-            "not_present": 3,
-            "votes_for": 46,
+            "absent": 3,
+            "for": 46,
             "result": true
         }
     }, {
@@ -740,8 +740,8 @@
             "text": "Zakon o spremembah Zakona za uravnote\u017eenje javnih financ - Eviden\u010dni sklep o primernosti predloga zakona",
             "tags": ["Odbor za finance in monetarno politiko"],
             "is_outlier": false,
-            "not_present": 18,
-            "votes_for": 26,
+            "absent": 18,
+            "for": 26,
             "result": false
         }
     }, {
@@ -771,8 +771,8 @@
             "text": "Zakon o lekarni\u0161ki dejavnosti - Amandma: K 26. \u010dlenu 6.12.2016 [ZL - Poslanska skupina Zdru\u017eena levica]",
             "tags": ["Odbor za zdravstvo"],
             "is_outlier": false,
-            "not_present": 11,
-            "votes_for": 40,
+            "absent": 11,
+            "for": 40,
             "result": true
         }
     }, {
@@ -802,8 +802,8 @@
             "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
             "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
             "is_outlier": false,
-            "not_present": 31,
-            "votes_for": 12,
+            "absent": 31,
+            "for": 12,
             "result": false
         }
     }, {
@@ -833,8 +833,8 @@
             "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
             "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
             "is_outlier": false,
-            "not_present": 31,
-            "votes_for": 12,
+            "absent": 31,
+            "for": 12,
             "result": false
         }
     }, {
@@ -864,8 +864,8 @@
             "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
             "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
             "is_outlier": false,
-            "not_present": 31,
-            "votes_for": 20,
+            "absent": 31,
+            "for": 20,
             "result": false
         }
     }, {
@@ -895,8 +895,8 @@
             "text": "Priporo\u010dilo v zvezi s problematiko delovanja Dru\u017ebe za upravljanje terjatev bank, d. d., v povezavi z dru\u017ebami in podjetji, katerih ban\u010dne terjatve so bile prenesene na Dru\u017ebo za upravljanje terjatev bank, d. d. - Glasovanje",
             "tags": ["Komisija za nadzor javnih financ"],
             "is_outlier": false,
-            "not_present": 21,
-            "votes_for": 21,
+            "absent": 21,
+            "for": 21,
             "result": false
         }
     }, {
@@ -926,8 +926,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o praznikih in dela prostih dnevih v Republiki Sloveniji - Amandma: K 1. \u010dlenu 24.2.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
             "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
             "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 18,
+            "absent": 15,
+            "for": 18,
             "result": false
         }
     }, {
@@ -957,8 +957,8 @@
             "text": "Zakon o vajeni\u0161tvu - Amandma: K 28. \u010dlenu 13.4.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
             "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
             "is_outlier": false,
-            "not_present": 24,
-            "votes_for": 47,
+            "absent": 24,
+            "for": 47,
             "result": true
         }
     }, {
@@ -988,8 +988,8 @@
             "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 67. \u010dlenu 9.11.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
             "tags": ["Odbor za finance in monetarno politiko"],
             "is_outlier": false,
-            "not_present": 15,
-            "votes_for": 15,
+            "absent": 15,
+            "for": 15,
             "result": false
         }
     }, {
@@ -1019,8 +1019,8 @@
             "text": "Priporo\u010dilo v zvezi s problematiko svetovalnih pogodb v Novi Ljubljanski banki, d. d. - Glasovanje o aktu v celoti",
             "tags": ["Komisija za nadzor javnih financ"],
             "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 37,
+            "absent": 19,
+            "for": 37,
             "result": true
         }
     }, {
@@ -1050,8 +1050,8 @@
             "text": "Priporo\u010dilo za vzpostavitev u\u010dinkovitega pravnega varstva v primeru zavr\u017eenja kazenske ovadbe - Eviden\u010dni sklep 17.2.2017",
             "tags": ["Odbor za pravosodje"],
             "is_outlier": false,
-            "not_present": 17,
-            "votes_for": 47,
+            "absent": 17,
+            "for": 47,
             "result": true
         }
     }, {
@@ -1081,8 +1081,8 @@
             "text": "Zakon o spremembah in dopolnitvah Zakona o pravilih cestnega prometa - Eviden\u010dni sklep o primernosti predloga zakona 17.5.2016",
             "tags": ["Odbor za infrastrukturo, okolje in prostor"],
             "is_outlier": false,
-            "not_present": 19,
-            "votes_for": 35,
+            "absent": 19,
+            "for": 35,
             "result": false
         }
     }]

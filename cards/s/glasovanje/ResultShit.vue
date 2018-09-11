@@ -31,26 +31,22 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {
-      votes: [
-        { id: 'for', label: 'za' },
-        { id: 'against', label: 'proti' },
-        { id: 'abstain', label: 'vzdržani' },
-        { id: 'not_present', label: 'niso' },
-      ],
-    };
-  },
   computed: {
     translatedOption() {
-      // TODO: Include all options and ask about translations
-      return {
-        for: 'za',
-        against: 'proti',
-        not_present: 'odsotnih',
-        abstain: 'vzdržanih',
-        cant_compute: 'ni večinskega glasu',
-      }[this.option];
+      switch (this.option) {
+        case 'for':
+          return this.$t('vote-for');
+        case 'against':
+          return this.$t('vote-against');
+        case 'abstain':
+          return this.$t('vote-abstain-plural');
+        case 'absent':
+          return this.$t('vote-absent-plural');
+        case 'cant_compute':
+          return this.$t('vote-no-majority');
+        default:
+          return '';
+      }
     },
   },
 };
@@ -78,7 +74,7 @@ export default {
     $icon-path: "#{getConfig('urls.cdn')}/icons";
     &.option-for { background-image: url(#{$icon-path}/za_v2.svg) }
     &.option-against { background-image: url(#{$icon-path}/proti_v2.svg) }
-    &.option-not_present { background-image: url(#{$icon-path}/ni.svg) }
+    &.option-absent { background-image: url(#{$icon-path}/ni.svg) }
     &.option-abstain { background-image: url(#{$icon-path}/vzdrzan_v2.svg) }
   }
 

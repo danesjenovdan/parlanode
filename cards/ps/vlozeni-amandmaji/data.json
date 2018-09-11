@@ -38,8 +38,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o podpornem okolju za podjetni\u0161tvo - Amandma: K 6. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 9,
-        "votes_for": 76,
+        "absent": 9,
+        "for": 76,
         "result": true
       }
     }, {
@@ -71,8 +71,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o podpornem okolju za podjetni\u0161tvo - Amandma: K 2. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 9,
-        "votes_for": 76,
+        "absent": 9,
+        "for": 76,
         "result": true
       }
     }, {
@@ -104,8 +104,8 @@
         "text": "Zakon o \u0161portu - Amandma: K 88. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
         "is_outlier": true,
-        "not_present": 11,
-        "votes_for": 51,
+        "absent": 11,
+        "for": 51,
         "result": true
       }
     }, {
@@ -137,8 +137,8 @@
         "text": "Zakon o \u0161portu - Amandma: K 85. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
         "is_outlier": true,
-        "not_present": 11,
-        "votes_for": 52,
+        "absent": 11,
+        "for": 52,
         "result": true
       }
     }, {
@@ -170,8 +170,8 @@
         "text": "Zakon o \u0161portu - Amandma: K 34. \u010dlenu 16.5.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
         "is_outlier": true,
-        "not_present": 12,
-        "votes_for": 50,
+        "absent": 12,
+        "for": 50,
         "result": true
       }
     }]
@@ -206,8 +206,8 @@
         "text": "Zakon o vajeni\u0161tvu - Amandma: K 28. \u010dlenu 25.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 56,
+        "absent": 18,
+        "for": 56,
         "result": true
       }
     }]
@@ -242,8 +242,8 @@
         "text": "Zakon o dr\u017eavnem odvetni\u0161tvu - Amandma: K 94. \u010dlenu 13.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za pravosodje"],
         "is_outlier": false,
-        "not_present": 23,
-        "votes_for": 52,
+        "absent": 23,
+        "for": 52,
         "result": true
       }
     }, {
@@ -275,8 +275,8 @@
         "text": "Zakon o Sodnem svetu - Amandma: K 26. \u010dlenu 13.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za pravosodje"],
         "is_outlier": false,
-        "not_present": 22,
-        "votes_for": 52,
+        "absent": 22,
+        "for": 52,
         "result": true
       }
     }, {
@@ -308,8 +308,8 @@
         "text": "Zakon o vajeni\u0161tvu - Amandma: K 35. \u010dlenu 14.4.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
         "is_outlier": false,
-        "not_present": 23,
-        "votes_for": 50,
+        "absent": 23,
+        "for": 50,
         "result": true
       }
     }]
@@ -344,8 +344,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o pravdnem postopku - Amandma: K 112. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za pravosodje"],
         "is_outlier": false,
-        "not_present": 14,
-        "votes_for": 60,
+        "absent": 14,
+        "for": 60,
         "result": true
       }
     }, {
@@ -377,8 +377,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finan\u010dnih instrumentov - Amandma: K 58. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 15,
-        "votes_for": 49,
+        "absent": 15,
+        "for": 49,
         "result": true
       }
     }, {
@@ -410,8 +410,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finan\u010dnih instrumentov - Amandma: K 51. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 49,
+        "absent": 15,
+        "for": 49,
         "result": true
       }
     }, {
@@ -443,8 +443,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finan\u010dnih instrumentov - Amandma: K 25. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 48,
+        "absent": 16,
+        "for": 48,
         "result": true
       }
     }]
@@ -479,8 +479,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 55,
+        "absent": 18,
+        "for": 55,
         "result": true
       }
     }, {
@@ -512,8 +512,8 @@
         "text": "Zakon o \u010dezmejnem izvajanju storitev - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": false,
-        "not_present": 16,
-        "votes_for": 56,
+        "absent": 16,
+        "for": 56,
         "result": true
       }
     }, {
@@ -545,8 +545,8 @@
         "text": "Zakon o osebni asistenci - Amandma: K 9. \u010dlenu 7.2.2017 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 72,
+        "absent": 18,
+        "for": 72,
         "result": true
       }
     }]
@@ -581,8 +581,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": true,
-        "not_present": 21,
-        "votes_for": 47,
+        "absent": 21,
+        "for": 47,
         "result": true
       }
     }]
@@ -617,8 +617,8 @@
         "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 27. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 12,
-        "votes_for": 54,
+        "absent": 12,
+        "for": 54,
         "result": true
       }
     }, {
@@ -650,8 +650,8 @@
         "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 24. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 12,
-        "votes_for": 54,
+        "absent": 12,
+        "for": 54,
         "result": true
       }
     }, {
@@ -683,8 +683,8 @@
         "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 8. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 12,
-        "votes_for": 54,
+        "absent": 12,
+        "for": 54,
         "result": true
       }
     }, {
@@ -716,8 +716,8 @@
         "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Amandma: K 3. \u010dlenu 8.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 12,
-        "votes_for": 55,
+        "absent": 12,
+        "for": 55,
         "result": true
       }
     }, {
@@ -749,8 +749,8 @@
         "text": "Zakon o voznikih - Amandma: K 80. \u010dlenu 6.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": false,
-        "not_present": 12,
-        "votes_for": 41,
+        "absent": 12,
+        "for": 41,
         "result": true
       }
     }, {
@@ -782,8 +782,8 @@
         "text": "Zakon o voznikih - Amandma: K 30. \u010dlenu 6.12.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": false,
-        "not_present": 12,
-        "votes_for": 53,
+        "absent": 12,
+        "for": 53,
         "result": true
       }
     }, {
@@ -815,8 +815,8 @@
         "text": "Zakon o lekarni\u0161ki dejavnosti - Amandma: K 4. \u010dlenu 6.12.2016 [SMC - Poslanska skupina Stranke modernega centra; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za zdravstvo"],
         "is_outlier": true,
-        "not_present": 10,
-        "votes_for": 49,
+        "absent": 10,
+        "for": 49,
         "result": true
       }
     }]
@@ -851,8 +851,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 22. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": true,
-        "not_present": 13,
-        "votes_for": 50,
+        "absent": 13,
+        "for": 50,
         "result": true
       }
     }, {
@@ -884,8 +884,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 21. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": true,
-        "not_present": 13,
-        "votes_for": 51,
+        "absent": 13,
+        "for": 51,
         "result": true
       }
     }, {
@@ -917,8 +917,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 18. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": false,
-        "not_present": 14,
-        "votes_for": 47,
+        "absent": 14,
+        "for": 47,
         "result": true
       }
     }, {
@@ -950,8 +950,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 14. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": true,
-        "not_present": 14,
-        "votes_for": 51,
+        "absent": 14,
+        "for": 51,
         "result": true
       }
     }, {
@@ -983,8 +983,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 4. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": false,
-        "not_present": 13,
-        "votes_for": 47,
+        "absent": 13,
+        "for": 47,
         "result": true
       }
     }, {
@@ -1016,8 +1016,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 2. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": true,
-        "not_present": 14,
-        "votes_for": 46,
+        "absent": 14,
+        "for": 46,
         "result": true
       }
     }, {
@@ -1049,8 +1049,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gozdovih - Amandma: K 1. \u010dlenu 22.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": true,
-        "not_present": 14,
-        "votes_for": 55,
+        "absent": 14,
+        "for": 55,
         "result": true
       }
     }]
@@ -1085,8 +1085,8 @@
         "text": "Zakon o centralnem kreditnem registru - Amandma: K 15. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 11,
-        "votes_for": 62,
+        "absent": 11,
+        "for": 62,
         "result": true
       }
     }, {
@@ -1118,8 +1118,8 @@
         "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 72. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 12,
-        "votes_for": 68,
+        "absent": 12,
+        "for": 68,
         "result": true
       }
     }, {
@@ -1151,8 +1151,8 @@
         "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 67. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 14,
-        "votes_for": 66,
+        "absent": 14,
+        "for": 66,
         "result": true
       }
     }, {
@@ -1184,8 +1184,8 @@
         "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 31. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 11,
-        "votes_for": 70,
+        "absent": 11,
+        "for": 70,
         "result": true
       }
     }, {
@@ -1217,8 +1217,8 @@
         "text": "Zakon o potro\u0161ni\u0161kih kreditih - Amandma: K 29. \u010dlenu 8.11.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 11,
-        "votes_for": 68,
+        "absent": 11,
+        "for": 68,
         "result": true
       }
     }]
@@ -1253,8 +1253,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o uresni\u010devanju javnega interesa za kulturo - Amandma: K 15. \u010dlenu 11.10.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": true,
-        "not_present": 27,
-        "votes_for": 49,
+        "absent": 27,
+        "for": 49,
         "result": true
       }
     }]
@@ -1289,8 +1289,8 @@
         "text": "Zakon o dimnikarskih storitvah - Amandma: K 36. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 25,
-        "votes_for": 48,
+        "absent": 25,
+        "for": 48,
         "result": true
       }
     }, {
@@ -1322,8 +1322,8 @@
         "text": "Zakon o dimnikarskih storitvah - Amandma: K 33. \u010dlenu 15.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 25,
-        "votes_for": 48,
+        "absent": 25,
+        "for": 48,
         "result": true
       }
     }, {
@@ -1355,8 +1355,8 @@
         "text": "Zakon o dimnikarskih storitvah - Amandma: K 15. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 25,
-        "votes_for": 48,
+        "absent": 25,
+        "for": 48,
         "result": true
       }
     }, {
@@ -1388,8 +1388,8 @@
         "text": "Zakon o dimnikarskih storitvah - Amandma: K 7. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 26,
-        "votes_for": 46,
+        "absent": 26,
+        "for": 46,
         "result": true
       }
     }]
@@ -1424,8 +1424,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 81. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": true,
-        "not_present": 19,
-        "votes_for": 52,
+        "absent": 19,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1457,8 +1457,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 77. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 51,
+        "absent": 18,
+        "for": 51,
         "result": true
       }
     }, {
@@ -1490,8 +1490,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 46. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": false,
-        "not_present": 20,
-        "votes_for": 52,
+        "absent": 20,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1523,8 +1523,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 35. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": true,
-        "not_present": 21,
-        "votes_for": 51,
+        "absent": 21,
+        "for": 51,
         "result": true
       }
     }, {
@@ -1556,8 +1556,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 14. \u010dlenu 13.9.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": false,
-        "not_present": 24,
-        "votes_for": 50,
+        "absent": 24,
+        "for": 50,
         "result": true
       }
     }]
@@ -1592,8 +1592,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 85. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 18,
-        "votes_for": 52,
+        "absent": 18,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1625,8 +1625,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 83. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -1658,8 +1658,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 80. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -1691,8 +1691,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 79. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -1724,8 +1724,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 77 a. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 52,
+        "absent": 15,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1757,8 +1757,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 77. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 52,
+        "absent": 15,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1790,8 +1790,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 76. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 17,
-        "votes_for": 52,
+        "absent": 17,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1823,8 +1823,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 75 b. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1856,8 +1856,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 70. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 15,
-        "votes_for": 57,
+        "absent": 15,
+        "for": 57,
         "result": true
       }
     }, {
@@ -1889,8 +1889,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 52. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1922,8 +1922,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 50. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1955,8 +1955,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 46. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 17,
-        "votes_for": 52,
+        "absent": 17,
+        "for": 52,
         "result": true
       }
     }, {
@@ -1988,8 +1988,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 45. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2021,8 +2021,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 44. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2054,8 +2054,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 43. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2087,8 +2087,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 35. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 53,
+        "absent": 16,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2120,8 +2120,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 33. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 19,
-        "votes_for": 51,
+        "absent": 19,
+        "for": 51,
         "result": true
       }
     }, {
@@ -2153,8 +2153,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 30. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 22,
-        "votes_for": 46,
+        "absent": 22,
+        "for": 46,
         "result": true
       }
     }, {
@@ -2186,8 +2186,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 27. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 53,
+        "absent": 16,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2219,8 +2219,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 26. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 52,
+        "absent": 15,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2252,8 +2252,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 25. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2285,8 +2285,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 21. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 53,
+        "absent": 16,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2318,8 +2318,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 19. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2351,8 +2351,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 14. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 53,
+        "absent": 16,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2384,8 +2384,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 10. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2417,8 +2417,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 9. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 53,
+        "absent": 16,
+        "for": 53,
         "result": true
       }
     }, {
@@ -2450,8 +2450,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 6. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 52,
+        "absent": 16,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2483,8 +2483,8 @@
         "text": "Zakon o kolektivnem upravljanju avtorske in sorodnih pravic - Amandma: K 3. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 52,
+        "absent": 18,
+        "for": 52,
         "result": true
       }
     }]
@@ -2519,8 +2519,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o Slovenskem dr\u017eavnem holdingu - Amandma: K 4. \u010dlenu 5.7.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 19,
-        "votes_for": 46,
+        "absent": 19,
+        "for": 46,
         "result": true
       }
     }]
@@ -2555,8 +2555,8 @@
         "text": "Zakon o tro\u0161arinah - Amandma: K 92. \u010dlenu 7.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 18,
-        "votes_for": 50,
+        "absent": 18,
+        "for": 50,
         "result": true
       }
     }, {
@@ -2588,8 +2588,8 @@
         "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 268. a. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 19,
-        "votes_for": 51,
+        "absent": 19,
+        "for": 51,
         "result": true
       }
     }, {
@@ -2621,8 +2621,8 @@
         "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 268. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 19,
-        "votes_for": 48,
+        "absent": 19,
+        "for": 48,
         "result": true
       }
     }, {
@@ -2654,8 +2654,8 @@
         "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 233. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 19,
-        "votes_for": 51,
+        "absent": 19,
+        "for": 51,
         "result": true
       }
     }, {
@@ -2687,8 +2687,8 @@
         "text": "Zakon o re\u0161evanju in prisilnem prenehanju bank - Amandma: K 215. \u010dlenu 10.6.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 20,
-        "votes_for": 49,
+        "absent": 20,
+        "for": 49,
         "result": true
       }
     }]
@@ -2723,8 +2723,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o socialnem varstvu - Amandma: K 9. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": false,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }]
@@ -2759,8 +2759,8 @@
         "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 47. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 52,
+        "absent": 15,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2792,8 +2792,8 @@
         "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 46. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 51,
+        "absent": 16,
+        "for": 51,
         "result": true
       }
     }, {
@@ -2825,8 +2825,8 @@
         "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 19. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 52,
+        "absent": 15,
+        "for": 52,
         "result": true
       }
     }, {
@@ -2858,8 +2858,8 @@
         "text": "Zakon o postopku priznavanja poklicnih kvalifikacij za opravljanje reguliranih poklicev - Amandma: K 3. \u010dlenu 10.5.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": true,
-        "not_present": 22,
-        "votes_for": 50,
+        "absent": 22,
+        "for": 50,
         "result": true
       }
     }]
@@ -2894,8 +2894,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o prekr\u0161kih - Amandma: K 8. \u010dlenu 12.4.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za pravosodje"],
         "is_outlier": true,
-        "not_present": 20,
-        "votes_for": 47,
+        "absent": 20,
+        "for": 47,
         "result": true
       }
     }]
@@ -2930,8 +2930,8 @@
         "text": "Zakon o spremembah in dopolnitvah Pomorskega zakonika - Amandma: K 50. \u010dlenu 12.4.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": false,
-        "not_present": 21,
-        "votes_for": 66,
+        "absent": 21,
+        "for": 66,
         "result": true
       }
     }]
@@ -2966,8 +2966,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o finan\u010dnem poslovanju, postopkih zaradi insolventnosti in prisilnem prenehanju - Amandma: K 32. \u010dlenu 22.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 16,
-        "votes_for": 71,
+        "absent": 16,
+        "for": 71,
         "result": true
       }
     }, {
@@ -2999,8 +2999,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o finan\u010dnem poslovanju, postopkih zaradi insolventnosti in prisilnem prenehanju - Amandma: K 1. \u010dlenu 22.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 16,
-        "votes_for": 74,
+        "absent": 16,
+        "for": 74,
         "result": true
       }
     }, {
@@ -3032,8 +3032,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o kmetijskih zemlji\u0161\u010dih - Amandma: K 15. \u010dlenu 17.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": false,
-        "not_present": 12,
-        "votes_for": 60,
+        "absent": 12,
+        "for": 60,
         "result": true
       }
     }]
@@ -3068,8 +3068,8 @@
         "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 125. \u010dlenu 4.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": true,
-        "not_present": 39,
-        "votes_for": 46,
+        "absent": 39,
+        "for": 46,
         "result": true
       }
     }, {
@@ -3101,8 +3101,8 @@
         "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 70. \u010dlenu 4.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": true,
-        "not_present": 40,
-        "votes_for": 3,
+        "absent": 40,
+        "for": 3,
         "result": false
       }
     }, {
@@ -3134,8 +3134,8 @@
         "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 51. \u010dlenu 4.3.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": true,
-        "not_present": 39,
-        "votes_for": 45,
+        "absent": 39,
+        "for": 45,
         "result": true
       }
     }]
@@ -3170,8 +3170,8 @@
         "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 125. \u010dlenu 23.2.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": false,
-        "not_present": 15,
-        "votes_for": 53,
+        "absent": 15,
+        "for": 53,
         "result": true
       }
     }, {
@@ -3203,8 +3203,8 @@
         "text": "Zakon o mednarodni za\u0161\u010diti - Amandma: K 84. \u010dlenu 29.2.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": false,
-        "not_present": 14,
-        "votes_for": 57,
+        "absent": 14,
+        "for": 57,
         "result": true
       }
     }]
@@ -3239,8 +3239,8 @@
         "text": "Priporo\u010dilo v zvezi z na\u010drti Vlade za re\u0161evanje migrantske krize - Amandma: K 1. to\u010dki 22.2.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb"],
         "is_outlier": false,
-        "not_present": 16,
-        "votes_for": 49,
+        "absent": 16,
+        "for": 49,
         "result": true
       }
     }]
@@ -3275,8 +3275,8 @@
         "text": "Zakon o gospodarjenju z gozdovi v lasti Republike Slovenije - Amandma: K 45. \u010dlenu 19.1.2016 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": false,
-        "not_present": 24,
-        "votes_for": 49,
+        "absent": 24,
+        "for": 49,
         "result": true
       }
     }, {
@@ -3308,8 +3308,8 @@
         "text": "Zakon o gospodarjenju z gozdovi v lasti Republike Slovenije - Amandma: K 15. \u010dlenu 19.1.2016 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
         "is_outlier": false,
-        "not_present": 24,
-        "votes_for": 44,
+        "absent": 24,
+        "for": 44,
         "result": true
       }
     }]
@@ -3344,8 +3344,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o medijih - Amandma: K 3. \u010dlenu 19.1.2016 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za kulturo"],
         "is_outlier": false,
-        "not_present": 17,
-        "votes_for": 58,
+        "absent": 17,
+        "for": 58,
         "result": true
       }
     }]
@@ -3380,8 +3380,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o ukrepih Republike Slovenije za krepitev stabilnosti bank - Amandma: K 8. \u010dlenu 8.12.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 28,
-        "votes_for": 57,
+        "absent": 28,
+        "for": 57,
         "result": true
       }
     }]
@@ -3416,8 +3416,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 26. \u010dlenu 11.12.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": true,
-        "not_present": 34,
-        "votes_for": 50,
+        "absent": 34,
+        "for": 50,
         "result": true
       }
     }]
@@ -3452,8 +3452,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o ukrepih Republike Slovenije za krepitev stabilnosti bank - Amandma: K 8. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 15,
-        "votes_for": 47,
+        "absent": 15,
+        "for": 47,
         "result": true
       }
     }, {
@@ -3485,8 +3485,8 @@
         "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 617. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 18,
-        "votes_for": 41,
+        "absent": 18,
+        "for": 41,
         "result": true
       }
     }, {
@@ -3518,8 +3518,8 @@
         "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 616. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 17,
-        "votes_for": 43,
+        "absent": 17,
+        "for": 43,
         "result": true
       }
     }, {
@@ -3551,8 +3551,8 @@
         "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 611. \u010dlenu 10.11.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 16,
-        "votes_for": 44,
+        "absent": 16,
+        "for": 44,
         "result": true
       }
     }]
@@ -3587,8 +3587,8 @@
         "text": "Zakon o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2016 in 2017 - Amandma: K 73. \u010dlenu 18.11.2015 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 9,
-        "votes_for": 52,
+        "absent": 9,
+        "for": 52,
         "result": true
       }
     }]
@@ -3623,8 +3623,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o \u017eelezni\u0161kem prometu - Amandma: K 21. \u010dlenu 13.10.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": false,
-        "not_present": 28,
-        "votes_for": 52,
+        "absent": 28,
+        "for": 52,
         "result": true
       }
     }]
@@ -3659,8 +3659,8 @@
         "text": "Zakon o nematerializiranih vrednostnih papirjih - Amandma: K 48. \u010dlenu 15.9.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 10,
-        "votes_for": 71,
+        "absent": 10,
+        "for": 71,
         "result": true
       }
     }]
@@ -3695,8 +3695,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o vodah - Amandma: K 14. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 5,
-        "votes_for": 65,
+        "absent": 5,
+        "for": 65,
         "result": true
       }
     }, {
@@ -3728,8 +3728,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o vodah - Amandma: K 13. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 6,
-        "votes_for": 58,
+        "absent": 6,
+        "for": 58,
         "result": true
       }
     }]
@@ -3764,8 +3764,8 @@
         "text": "Zakon o dav\u010dnem potrjevanju ra\u010dunov - Amandma: K 23. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 7,
-        "votes_for": 58,
+        "absent": 7,
+        "for": 58,
         "result": true
       }
     }, {
@@ -3797,8 +3797,8 @@
         "text": "Zakon o dav\u010dnem potrjevanju ra\u010dunov - Amandma: K 19. \u010dlenu 2.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": false,
-        "not_present": 5,
-        "votes_for": 58,
+        "absent": 5,
+        "for": 58,
         "result": true
       }
     }]
@@ -3833,8 +3833,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 104. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 4,
-        "votes_for": 76,
+        "absent": 4,
+        "for": 76,
         "result": true
       }
     }, {
@@ -3866,8 +3866,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 2. \u010dlenu 3.7.2015 [SMC - Poslanska skupina Stranke modernega centra; DeSUS - Poslanska skupina Demokrati\u010dne stranke upokojencev Slovenije; SD - Poslanska skupina Socialnih demokratov]",
         "tags": ["Odbor za gospodarstvo"],
         "is_outlier": true,
-        "not_present": 4,
-        "votes_for": 62,
+        "absent": 4,
+        "for": 62,
         "result": true
       }
     }]
@@ -3902,8 +3902,8 @@
         "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 160. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 14,
-        "votes_for": 48,
+        "absent": 14,
+        "for": 48,
         "result": true
       }
     }, {
@@ -3935,8 +3935,8 @@
         "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 156. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 15,
-        "votes_for": 48,
+        "absent": 15,
+        "for": 48,
         "result": true
       }
     }, {
@@ -3968,8 +3968,8 @@
         "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 37. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 14,
-        "votes_for": 48,
+        "absent": 14,
+        "for": 48,
         "result": true
       }
     }, {
@@ -4001,8 +4001,8 @@
         "text": "Zakon o upravljavcih alternativnih investicijskih skladov - Amandma: K 6. \u010dlenu 14.4.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 14,
-        "votes_for": 48,
+        "absent": 14,
+        "for": 48,
         "result": true
       }
     }]
@@ -4037,8 +4037,8 @@
         "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 324. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 26,
-        "votes_for": 44,
+        "absent": 26,
+        "for": 44,
         "result": true
       }
     }, {
@@ -4070,8 +4070,8 @@
         "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 4. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za finance in monetarno politiko"],
         "is_outlier": true,
-        "not_present": 27,
-        "votes_for": 46,
+        "absent": 27,
+        "for": 46,
         "result": true
       }
     }]
@@ -4106,8 +4106,8 @@
         "text": "Zakon o cestninjenju - Amandma: K 46. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 17,
-        "votes_for": 53,
+        "absent": 17,
+        "for": 53,
         "result": true
       }
     }, {
@@ -4139,8 +4139,8 @@
         "text": "Zakon o cestninjenju - Amandma: K 41. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": true,
-        "not_present": 17,
-        "votes_for": 53,
+        "absent": 17,
+        "for": 53,
         "result": true
       }
     }, {
@@ -4172,8 +4172,8 @@
         "text": "Zakon o cestninjenju - Amandma: K 13. \u010dlenu 19.3.2015 [SMC - Poslanska skupina Stranke modernega centra]",
         "tags": ["Odbor za infrastrukturo, okolje in prostor"],
         "is_outlier": false,
-        "not_present": 17,
-        "votes_for": 53,
+        "absent": 17,
+        "for": 53,
         "result": true
       }
     }]
@@ -4208,8 +4208,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o sodi\u0161\u010dih - Amandma: K 2. \u010dlenu 24.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Odbor za pravosodje"],
         "is_outlier": false,
-        "not_present": 24,
-        "votes_for": 45,
+        "absent": 24,
+        "for": 45,
         "result": true
       }
     }]
@@ -4244,8 +4244,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o eksplozivih in pirotehni\u010dnih izdelkih - Amandma: K 28. \u010dlenu 24.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
         "is_outlier": false,
-        "not_present": 9,
-        "votes_for": 76,
+        "absent": 9,
+        "for": 76,
         "result": true
       }
     }]
@@ -4280,8 +4280,8 @@
         "text": "Rebalans prora\u010duna Republike Slovenije za leto 2015 - Amandma: 1540 Urad Vlade RS za narodnosti (180402) 6.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Komisija za narodni skupnosti"],
         "is_outlier": true,
-        "not_present": 8,
-        "votes_for": 77,
+        "absent": 8,
+        "for": 77,
         "result": true
       }
     }, {
@@ -4313,8 +4313,8 @@
         "text": "Zakon o interventnih ukrepih za uravnote\u017eenje javnih financ ob\u010din - Amandma: K 31. \u010dlenu 20.2.2015 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Komisija za nadzor javnih financ"],
         "is_outlier": true,
-        "not_present": 7,
-        "votes_for": 52,
+        "absent": 7,
+        "for": 52,
         "result": true
       }
     }]
@@ -4349,8 +4349,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o mati\u010dni evidenci zavarovancev in u\u017eivalcev pravic iz obveznega pokojninskega in invalidskega zavarovanja - Amandma: K 8. \u010dlenu 12.12.2014 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 53,
+        "absent": 18,
+        "for": 53,
         "result": true
       }
     }]
@@ -4385,8 +4385,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o zaposlitveni rehabilitaciji in zaposlovanju invalidov - Amandma: K 7. \u010dlenu 16.12.2014 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": false,
-        "not_present": 18,
-        "votes_for": 53,
+        "absent": 18,
+        "for": 53,
         "result": true
       }
     }, {
@@ -4418,8 +4418,8 @@
         "text": "Zakon o spremembah in dopolnitvah Zakona o zaposlitveni rehabilitaciji in zaposlovanju invalidov - Amandma: K 2. \u010dlenu 12.12.2014 [SMC - Poslanska skupina Stranke Mira Cerarja]",
         "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
         "is_outlier": false,
-        "not_present": 16,
-        "votes_for": 54,
+        "absent": 16,
+        "for": 54,
         "result": true
       }
     }]

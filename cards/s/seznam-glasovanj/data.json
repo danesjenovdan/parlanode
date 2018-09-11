@@ -48,8 +48,8 @@
       "text": "Dnevni red v celoti",
       "tags": ["Proceduralna glasovanja"],
       "is_outlier": false,
-      "not_present": 23,
-      "votes_for": 64,
+      "absent": 23,
+      "for": 64,
       "result": true,
       "epa": "1234-VII"
     }
@@ -81,8 +81,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra] Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra] Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra] Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra] Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 3. \u010dlenu 17.1.2017 [SMC - Poslanska skupina Stranke modernega centra]",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": true,
-      "not_present": 21,
-      "votes_for": 47,
+      "absent": 21,
+      "for": 47,
       "result": true
     }
   }, {
@@ -113,8 +113,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Amandma: K 22. \u010dlenu 17.1.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 19,
+      "absent": 21,
+      "for": 19,
       "result": false
     }
   }, {
@@ -145,8 +145,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Eviden\u010dni sklep da se tretja obravnava opravi na isti seji 23.1.2017",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 64,
+      "absent": 21,
+      "for": 64,
       "result": true
     }
   }, {
@@ -177,8 +177,8 @@
       "text": "Priporo\u010dilo Vladi Republike Slovenije v zvezi s cenzuro na javnem zavodu Radiotelevizija Slovenija - Eviden\u010dni sklep MDT 23.1.2017",
       "tags": ["Odbor za kulturo"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 50,
+      "absent": 21,
+      "for": 50,
       "result": true
     }
   }, {
@@ -209,8 +209,8 @@
       "text": "Vmesno poro\u010dilo o kakovosti (kurilni vrednosti), zalogah in odkupni ceni premoga pri investiciji v blok 6 TE\u0160 - Glasovanje o Bistvenih ugotovitvah iz Vmesnega poro\u010dila",
       "tags": ["Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 59,
+      "absent": 21,
+      "for": 59,
       "result": true
     }
   }, {
@@ -241,8 +241,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 14,
-      "votes_for": 37,
+      "absent": 14,
+      "for": 37,
       "result": false
     }
   }, {
@@ -273,8 +273,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o nematerializiranih vrednostnih papirjih - Glasovanje o zakonu v celoti",
       "tags": ["Odbor za finance in monetarno politiko"],
       "is_outlier": true,
-      "not_present": 10,
-      "votes_for": 52,
+      "absent": 10,
+      "for": 52,
       "result": true
     }
   }, {
@@ -305,8 +305,8 @@
       "text": "Zakon o dopolnitvi Zakona o ban\u010dni\u0161tvu - Eviden\u010dni sklep o primernosti predloga zakona 25.1.2017",
       "tags": ["Odbor za finance in monetarno politiko"],
       "is_outlier": false,
-      "not_present": 13,
-      "votes_for": 33,
+      "absent": 13,
+      "for": 33,
       "result": false
     }
   }, {
@@ -337,8 +337,8 @@
       "text": "Priporo\u010dilo v zvezi s popla\u010dilom nadomestila rimskokatoli\u0161ki cerkvi iz naslova dolgotrajnosti denacionalizacijskih postopkov in ostalih njihovih terjatev - Eviden\u010dni sklep MDT 25.1.2017",
       "tags": ["Odbor za pravosodje"],
       "is_outlier": false,
-      "not_present": 11,
-      "votes_for": 65,
+      "absent": 11,
+      "for": 65,
       "result": true
     }
   }, {
@@ -369,8 +369,8 @@
       "text": "Zakon o ratifikaciji Spremenjenega sporazuma o ustanovitvi Generalne komisije za ribi\u0161tvo v Sredozemlju - Glasovanje o zakonu v celoti",
       "tags": ["Odbor za kmetijstvo, gozdarstvo in prehrano"],
       "is_outlier": false,
-      "not_present": 11,
-      "votes_for": 71,
+      "absent": 11,
+      "for": 71,
       "result": true
     }
   }, {
@@ -401,8 +401,8 @@
       "text": "Soglasje k imenovanju generalnega direktorja Zavoda za zdravstveno zavarovanje Slovenije - Glasovanje",
       "tags": ["Odbor za zdravstvo"],
       "is_outlier": false,
-      "not_present": 16,
-      "votes_for": 54,
+      "absent": 16,
+      "for": 54,
       "result": true
     }
   }, {
@@ -433,8 +433,8 @@
       "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okrajnega sodnika na Okrajnem sodi\u0161\u010du v Trbovljah - Glasovanje",
       "tags": ["Odbor za pravosodje"],
       "is_outlier": true,
-      "not_present": 14,
-      "votes_for": 52,
+      "absent": 14,
+      "for": 52,
       "result": true
     }
   }, {
@@ -465,8 +465,8 @@
       "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okro\u017ene sodnice na Delovnem sodi\u0161\u010du v Mariboru - Glasovanje",
       "tags": ["Odbor za pravosodje"],
       "is_outlier": true,
-      "not_present": 14,
-      "votes_for": 52,
+      "absent": 14,
+      "for": 52,
       "result": true
     }
   }, {
@@ -497,8 +497,8 @@
       "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okro\u017ene sodnice na Delovnem in socialnem sodi\u0161\u010du v Ljubljani - Glasovanje",
       "tags": ["Odbor za pravosodje"],
       "is_outlier": true,
-      "not_present": 14,
-      "votes_for": 52,
+      "absent": 14,
+      "for": 52,
       "result": true
     }
   }, {
@@ -529,8 +529,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje - Glasovanje o zakonu v celoti",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 15,
-      "votes_for": 67,
+      "absent": 15,
+      "for": 67,
       "result": true
     }
   }, {
@@ -561,8 +561,8 @@
       "text": "Zakon o spremembi in dopolnitvah Zakona o tujcih - Amandma: K 1. \u010dlenu 25.1.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 18,
-      "votes_for": 21,
+      "absent": 18,
+      "for": 21,
       "result": false
     }
   }, {
@@ -593,8 +593,8 @@
       "text": "Zakon o spremembi in dopolnitvah Zakona o tujcih - Amandma: K 1. \u010dlenu 25.1.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 18,
-      "votes_for": 46,
+      "absent": 18,
+      "for": 46,
       "result": true
     }
   }, {
@@ -625,8 +625,8 @@
       "text": "Zakon o spremembi in dopolnitvah Zakona o tujcih - Glasovanje o zakonu v celoti",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 19,
-      "votes_for": 47,
+      "absent": 19,
+      "for": 47,
       "result": true
     }
   }, {
@@ -657,8 +657,8 @@
       "text": "(Glasovanje o tem, da Zakonodajno-pravna slu\u017eba pripravi uradna pre\u010di\u0161\u010dena besedila Zakona o tujcih, Zakona o mednarodni za\u0161\u010diti in Zakona o za\u010dasni za\u0161\u010diti razseljenih oseb)",
       "tags": ["Proceduralna glasovanja"],
       "is_outlier": false,
-      "not_present": 26,
-      "votes_for": 57,
+      "absent": 26,
+      "for": 57,
       "result": true
     }
   }, {
@@ -689,8 +689,8 @@
       "text": "Zakon o spremembi Zakona o zakonski zvezi in dru\u017einskih razmerjih - Eviden\u010dni sklep MDT 26.1.2017",
       "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
       "is_outlier": false,
-      "not_present": 26,
-      "votes_for": 47,
+      "absent": 26,
+      "for": 47,
       "result": true
     }
   }, {
@@ -721,8 +721,8 @@
       "text": "Zakon o dopolnitvah Zakona o sodi\u0161\u010dih - Eviden\u010dni sklep MDT 26.1.2017",
       "tags": ["Odbor za pravosodje"],
       "is_outlier": false,
-      "not_present": 28,
-      "votes_for": 40,
+      "absent": 28,
+      "for": 40,
       "result": true
     }
   }, {
@@ -753,8 +753,8 @@
       "text": "Zakon o spremembah in dopolnitvah Zakona o dr\u017eavnem to\u017eilstvu - Eviden\u010dni sklep MDT 26.1.2017",
       "tags": ["Odbor za pravosodje"],
       "is_outlier": false,
-      "not_present": 28,
-      "votes_for": 43,
+      "absent": 28,
+      "for": 43,
       "result": true
     }
   }, {
@@ -785,8 +785,8 @@
       "text": "Zakon o pomo\u010di za re\u0161evanje in prestrukturiranje gospodarskih dru\u017eb in zadrug v te\u017eavah - Glasovanje o zakonu v celoti",
       "tags": ["Odbor za gospodarstvo"],
       "is_outlier": true,
-      "not_present": 26,
-      "votes_for": 49,
+      "absent": 26,
+      "for": 49,
       "result": true
     }
   }, {
@@ -817,8 +817,8 @@
       "text": "Zakon o oblikovanju cen naftnih derivatov - Eviden\u010dni sklep MDT 26.1.2017",
       "tags": ["Odbor za gospodarstvo"],
       "is_outlier": false,
-      "not_present": 29,
-      "votes_for": 57,
+      "absent": 29,
+      "for": 57,
       "result": true
     }
   }, {
@@ -849,8 +849,8 @@
       "text": "Eviden\u010dni sklep da se tretja obravnava (Predloga zakona o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje v okviru rednega postopka) opravi na isti seji 23.1.2017",
       "tags": ["Proceduralna glasovanja"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 64,
+      "absent": 21,
+      "for": 64,
       "result": true
     }
   }, {
@@ -881,8 +881,8 @@
       "text": "Amandma: K 3. \u010dlenu (Zakona o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje) 17.1.2017 (SMC, DeSUS, SD)",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": true,
-      "not_present": 21,
-      "votes_for": 47,
+      "absent": 21,
+      "for": 47,
       "result": true
     }
   }, {
@@ -913,8 +913,8 @@
       "text": "Amandma: K 22. \u010dlenu (Predloga zakona o spremembah in dopolnitvah Zakona o nadzoru dr\u017eavne meje v okviru rednega postopka) 17.1.2017 [SDS - Poslanska skupina Slovenske demokratske stranke]",
       "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 19,
+      "absent": 21,
+      "for": 19,
       "result": false
     }
   }, {
@@ -945,8 +945,8 @@
       "text": "Glasovanje o Bistvenih ugotovitvah iz Vmesnega poro\u010dila (o kakovosti kurilne vrednosti, zalogah in odkupni ceni premoga pri investiciji blok 6 Termoelektrarne \u0160o\u0161tanj)",
       "tags": ["Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 59,
+      "absent": 21,
+      "for": 59,
       "result": true
     }
   }, {
@@ -977,8 +977,8 @@
       "text": "(Glasovanje o predlogu priporo\u010dila Vladi Republike Slovenije v zvezi s cenzuro na javnem zavodu Radiotelevizija Slovenija)",
       "tags": ["Odbor za kulturo"],
       "is_outlier": false,
-      "not_present": 21,
-      "votes_for": 50,
+      "absent": 21,
+      "for": 50,
       "result": true
     }
   }],

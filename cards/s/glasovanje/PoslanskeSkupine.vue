@@ -102,8 +102,8 @@ export default {
       votes: [
         { id: 'for', label: this.$t('vote-for') },
         { id: 'against', label: this.$t('vote-against') },
-        { id: 'abstain', label: this.$t('vote-abstained-plural') },
-        { id: 'not_present', label: this.$t('vote-not-plural') },
+        { id: 'abstain', label: this.$t('vote-abstain-plural') },
+        { id: 'absent', label: this.$t('vote-absent-plural') },
       ],
       expandedParty: null,
       expandedOption: null,

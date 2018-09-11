@@ -5,5 +5,6 @@
     "test"
   ],
   "selectedTab": 0,
-  "showRelative": true
+  "showRelative": true,
+  "generator": true
 }
