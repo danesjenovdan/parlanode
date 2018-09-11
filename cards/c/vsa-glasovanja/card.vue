@@ -72,6 +72,7 @@ export default {
         votes,
         session: this.data.session,
         tags: this.data.tags,
+        classifications: this.data.classifications,
       };
     },
   },

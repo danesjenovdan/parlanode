@@ -19,6 +19,10 @@
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="allTags" />
       </div>
+      <div v-if="allClassifications.length" class="filter tag-dropdown">
+        <div v-t="'vote-types'" class="filter-label"></div>
+        <p-search-dropdown v-model="allClassifications" />
+      </div>
     </div>
     <scroll-shadow ref="shadow">
       <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
@@ -34,7 +38,11 @@
                 style="position: absolute; left: -37px;"
               ></div>
               <div v-if="!vote.has_votes" class="hand-badge"></div>
-              <component :is="vote.has_votes ? 'a' : 'div'" :href="vote.has_votes && vote.url" class="show clearfix">
+              <component
+                :is="vote.has_votes ? 'a' : 'div'"
+                :href="vote.has_votes && vote.url"
+                class="show clearfix"
+              >
                 <div class="col-md-1 icon-col">
                   <div :class="vote.accepted">
                     <p>
@@ -113,6 +121,7 @@
 </template>
 
 <script>
+import { map } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
@@ -156,6 +165,7 @@ export default {
     }
 
     const allTags = this.processTags();
+    const allClassifications = this.processClassifications();
 
     const textFilter = this.filters && this.filters.text ? this.filters.text : '';
 
@@ -163,6 +173,7 @@ export default {
       textFilter,
       votes,
       allTags,
+      allClassifications,
       allResults,
     };
   },
@@ -173,9 +184,12 @@ export default {
           || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
         const tagMatch = this.selectedTags.length === 0
           || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+        const classificationMatch = this.selectedClassifications.length === 0
+          // eslint-disable-next-line eqeqeq
+          || this.selectedClassifications.find(c => c == vote.classification);
         const resultMatch = this.selectedResults.length === 0
           || this.selectedResults.indexOf(vote.result) > -1;
-        return textMatch && tagMatch && resultMatch;
+        return textMatch && tagMatch && classificationMatch && resultMatch;
       };
       return this.votes.filter(filterVotes);
     },
@@ -183,6 +197,11 @@ export default {
       return this.allTags
         .filter(tag => tag.selected)
         .map(tag => tag.id);
+    },
+    selectedClassifications() {
+      return this.allClassifications
+        .filter(c => c.selected)
+        .map(c => c.id);
     },
     selectedResults() {
       return this.allResults.filter(result => result.selected)
@@ -193,11 +212,15 @@ export default {
     data() {
       this.votes = this.processVotes();
       this.allTags = this.processTags();
+      this.allClassifications = this.processClassifications();
     },
     textFilter() {
       this.emitFiltersChanged();
     },
     selectedTags() {
+      this.emitFiltersChanged();
+    },
+    selectedClassifications() {
       this.emitFiltersChanged();
     },
     selectedResults() {
@@ -235,6 +258,13 @@ export default {
       const allTags = this.data.tags.map(tag => ({ id: tag, label: tag, selected: false }));
       return allTags;
     },
+    processClassifications() {
+      return map(this.data.classifications || {}, (val, key) => ({
+        id: key,
+        label: this.$t(`vote_types.${val}`),
+        selected: false,
+      }));
+    },
     toggleResult(resultId) {
       const clickedResult = this.allResults.filter(result => result.id === resultId)[0];
       clickedResult.selected = !clickedResult.selected;
@@ -250,6 +280,7 @@ export default {
       this.$emit('filters-changed', {
         text: this.textFilter,
         tags: this.selectedTags,
+        classifications: this.selectedClassifications,
         results: this.selectedResults,
       });
     },
