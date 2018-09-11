@@ -191,10 +191,10 @@ export default {
     &.against {
       background-image: url("#{getConfig('urls.cdn')}/icons/g_proti_v2.svg");
     }
-    &.not {
+    &.absent {
       background-image: url("#{getConfig('urls.cdn')}/icons/ni_v2.svg");
     }
-    &.quorum {
+    &.abstain {
       background-image: url("#{getConfig('urls.cdn')}/icons/g_vzdrzan_v2.svg");
     }
   }
