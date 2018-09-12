@@ -5,8 +5,10 @@
 <%# TODO: type is hardcoded %>
 <% if (session.type != 'kolegij') { %>
   <% if (session.votes) { %>
-    <div class="col-md-12">
-      <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: true } }) %>
+    <div class="row">
+      <div class="col-md-12">
+        <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: true } }) %>
+      </div>
     </div>
   <% } else if (session.org.name === 'Državni zbor') { %>
     <%- await include('../empty-state/state1dz.ejs') %>

@@ -2,20 +2,22 @@
 
 <%- await include('./_header.ejs') %>
 
-<div class="col-md-12">
-  <%- await fetchCard('/ps/glasovanja/', party.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/ps/najlazje-pridruzili/', party.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/ps/najtezje-pridruzili/', party.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/ps/neujemanje-s-poslansko-skupino/', party.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/ps/neenotnost-glasovanj/', party.id) %>
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/ps/glasovanja/', party.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/ps/najlazje-pridruzili/', party.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/ps/najtezje-pridruzili/', party.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/ps/neujemanje-s-poslansko-skupino/', party.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/ps/neenotnost-glasovanj/', party.id) %>
+  </div>
 </div>
 
 <%- await include('../_partials/footer.ejs') %>
