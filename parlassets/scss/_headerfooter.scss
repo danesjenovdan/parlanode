@@ -340,6 +340,7 @@ footer.footer {
         border-top: none;
         padding-top: 10px;
         margin-top: 10px;
+        position: relative;
 
         &::before {
             content: '';
