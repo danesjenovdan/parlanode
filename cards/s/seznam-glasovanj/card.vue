@@ -18,7 +18,8 @@
           target="_blank"
         />
       </i18n>
-      <i18n path="info.text[2]" tag="p" class="info-text">
+      <i18n path="info.text[2]" tag="p" class="info-text heading" />
+      <i18n path="info.text[3]" tag="p" class="info-text">
         <a
           v-t="'info.links[1].text'"
           :href="$t('info.links[1].link')"
@@ -34,7 +35,7 @@
           target="_blank"
         />
       </i18n>
-      <i18n path="info.text[3]" tag="p" class="info-text">
+      <i18n path="info.text[4]" tag="p" class="info-text">
         <a
           v-t="'info.links[3].text'"
           :href="$t('info.links[3].link')"
