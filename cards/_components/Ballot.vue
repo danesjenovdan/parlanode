@@ -156,11 +156,11 @@ export default {
         font-size: 29px;
 
         &.glyphicon-ok {
-          color: $second;
+          color: $icon-accepted;
         }
 
         &.glyphicon-remove {
-          color: $third;
+          color: $icon-rejected;
         }
       }
     }
