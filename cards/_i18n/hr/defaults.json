@@ -130,7 +130,7 @@
     "ballot--against--m": "Glasao je PROTIV {title}",
     "ballot--against--f": "Glasala je PROTIV {title}",
     "ballot--absent--m": "Nije glasao za {title}",
-    "ballot--absent--f": "Nije glasala za {title}",
+    "ballot--absent--f": "NIJE glasala za {title}",
     "ballot--abstain--m": "SUZDRŽAO se od glasanja o {title}",
     "ballot--abstain--f": "SUZDRŽALA se od glasanja o {title}",
     "speech--m": "Govorio na: {session}",
