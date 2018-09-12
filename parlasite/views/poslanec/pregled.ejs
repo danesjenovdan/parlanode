@@ -2,26 +2,31 @@
 
 <%- await include('./_header.ejs') %>
 
-<div class="col-md-6">
-  <%- await fetchCard('/p/osnovne-informacije/', mp.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/p/zadnje-aktivnosti/', mp.id) %>
-</div>
-<div class="col-md-12">
-  <%- await fetchCard('/p/prisotnost-skozi-cas/', mp.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/p/prisotnost-na-sejah-dz/', mp.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/p/prisotnost-na-glasovanjih-sej-dz/', mp.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/p/poslanska-vprasanja-in-pobude/', mp.id) %>
-</div>
-<div class="col-md-6">
-  <%- await fetchCard('/p/st-poslanskih-vprasanj-in-pobud/', mp.id) %>
+<div class="row">
+  <div class="col-md-6">
+    <%- await fetchCard('/p/osnovne-informacije/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/p/zadnje-aktivnosti/', mp.id) %>
+  </div>
+  <div class="col-md-12">
+    <%- await fetchCard('/p/prisotnost-skozi-cas/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/p/prisotnost-na-sejah-dz/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/p/prisotnost-na-glasovanjih-sej-dz/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/p/poslanska-vprasanja-in-pobude/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/p/st-poslanskih-vprasanj-in-pobud/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/p/clanstva/', mp.id) %>
+  </div>
 </div>
 
 <%- await include('../_partials/footer.ejs') %>
