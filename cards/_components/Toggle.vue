@@ -41,15 +41,22 @@ export default {
   font-size: 15px;
   height: $height;
   line-height: $height;
+
   .option {
     align-items: center;
-    background: $link-hover-background;
-    color: $font-default;
+    background: $tab-passive;
+    color: $white;
     cursor: pointer;
     flex: 1;
     text-align: center;
+    padding: 0 10px;
+
+    &:hover {
+      background: $tab-hover;
+    }
+
     &.is-selected {
-      background: $first;
+      background: $tab-active;
       color: $white;
       cursor: default;
     }

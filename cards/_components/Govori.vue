@@ -346,10 +346,6 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
-.search-field {
-  background-image: url("#{getConfig('urls.cdn')}/icons/search_blue.svg");
-}
-
 .filters {
   .filter {
     @include respond-to(desktop) {
