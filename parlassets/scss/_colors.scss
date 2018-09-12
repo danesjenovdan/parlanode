@@ -67,6 +67,14 @@ $logo-first: $first; // TODO
 $logo-second: $second; // TODO
 $logo-third: $font-default; // TODO
 
+// prisotnost skozi cas chart
+$time-presence-present-passive: #caebf2;
+$time-presence-present-active: #258498;
+$time-presence-absent-passive: #ffcbcb;
+$time-presence-absent-active: #ff5555;
+$time-presence-no-term-passive: $font-placeholder;
+$time-presence-no-term-active: $button-absent;
+
 
 /////////////////////////////
 //////// OLD COLORS /////////
