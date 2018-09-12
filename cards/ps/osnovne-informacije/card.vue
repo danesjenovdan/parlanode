@@ -238,6 +238,7 @@ export default {
     display: flex;
     flex: 1;
     margin: 0;
+    min-height: 0; // firefox flex bug
 
     > div {
       display: flex;
