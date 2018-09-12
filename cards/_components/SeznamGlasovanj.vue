@@ -29,90 +29,103 @@
         <div class="session_voting">
           <div v-t="'no-results'" v-if="filteredVotes.length === 0" class="no-results" />
           <div v-else>
-            <div v-for="vote in filteredVotes" :key="vote.motion_id" class="clearfix single_voting">
-              <div v-if="vote.is_outlier" class="fire-badge"></div>
-              <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+            <component
+              :is="virtualize ? 'virtual-list' : 'div'"
+              :size="105"
+              :remain="10"
+              :onscroll="($event) => $refs.shadow.check($event.currentTarget)"
+              :variable="getVirtualItemHeight"
+              class="virtual-list"
+            >
               <div
-                v-if="vote.has_outliers && !vote.is_outlier"
-                class="lightning-badge"
-                style="position: absolute; left: -37px;"
-              ></div>
-              <div v-if="!vote.has_votes" class="hand-badge"></div>
-              <component
-                :is="vote.has_votes ? 'a' : 'div'"
-                :href="vote.has_votes && vote.url"
-                class="show clearfix"
+                v-for="vote in filteredVotes"
+                :key="vote.motion_id"
+                class="clearfix single_voting"
               >
-                <div class="col-md-1 icon-col">
-                  <div :class="vote.accepted">
-                    <p>
-                      <i :class="vote.accepted_glyph"></i>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-11 border-left">
-                  <div class="col-md-6">
-                    <div class="session_title">
+                <div v-if="vote.is_outlier" class="fire-badge"></div>
+                <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+                <div
+                  v-if="vote.has_outliers && !vote.is_outlier"
+                  class="lightning-badge"
+                  style="position: absolute; left: -37px;"
+                ></div>
+                <div v-if="!vote.has_votes" class="hand-badge"></div>
+                <component
+                  :is="vote.has_votes ? 'a' : 'div'"
+                  :href="vote.has_votes && vote.url"
+                  class="show clearfix"
+                >
+                  <div class="col-md-1 icon-col">
+                    <div :class="vote.accepted">
                       <p>
-                        {{ getVoteText(vote) }}
+                        <i :class="vote.accepted_glyph"></i>
                       </p>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="session_votes">
-                      <div class="progress smallbar">
-                        <div
-                          :style="{ width: vote.percent_for + '%' }"
-                          class="progress-bar aye"
-                        >
-                          <span class="sr-only">{{ vote.percent_for }}% votes for</span>
-                        </div>
-                        <div
-                          :style="{ width: vote.percent_against + '%' }"
-                          class="progress-bar ney"
-                        >
-                          <span class="sr-only">{{ vote.percent_against }}% votes against</span>
-                        </div>
-                        <div
-                          :style="{ width: vote.percent_abstain + '%' }"
-                          class="progress-bar abstention"
-                        >
-                          <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
-                        </div>
-                        <div
-                          :style="{ width: vote.percent_absent + '%' }"
-                          class="progress-bar not"
-                        >
-                          <span class="sr-only">{{ vote.percent_absent }}% not present</span>
-                        </div>
+                  <div class="col-md-11 border-left">
+                    <div class="col-md-6">
+                      <div class="session_title">
+                        <p>
+                          {{ getVoteText(vote) }}
+                        </p>
                       </div>
-                      <div class="row">
-                        <div class="col-xs-3">
-                          {{ vote.for }}
-                          <div v-t="'vote-for'" class="type"></div>
-                          <div class="indicator aye">&nbsp;</div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="session_votes">
+                        <div class="progress smallbar">
+                          <div
+                            :style="{ width: vote.percent_for + '%' }"
+                            class="progress-bar aye"
+                          >
+                            <span class="sr-only">{{ vote.percent_for }}% votes for</span>
+                          </div>
+                          <div
+                            :style="{ width: vote.percent_against + '%' }"
+                            class="progress-bar ney"
+                          >
+                            <span class="sr-only">{{ vote.percent_against }}% votes against</span>
+                          </div>
+                          <div
+                            :style="{ width: vote.percent_abstain + '%' }"
+                            class="progress-bar abstention"
+                          >
+                            <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
+                          </div>
+                          <div
+                            :style="{ width: vote.percent_absent + '%' }"
+                            class="progress-bar not"
+                          >
+                            <span class="sr-only">{{ vote.percent_absent }}% not present</span>
+                          </div>
                         </div>
-                        <div class="col-xs-3">
-                          {{ vote.against }}
-                          <div v-t="'vote-against'" class="type"></div>
-                          <div class="indicator ney">&nbsp;</div>
-                        </div>
-                        <div class="col-xs-3">
-                          {{ vote.abstain }}
-                          <div v-t="'vote-abstain'" class="type"></div>
-                          <div class="indicator abstention">&nbsp;</div>
-                        </div>
-                        <div class="col-xs-3">
-                          {{ vote.absent }}
-                          <div v-t="'vote-absent'" class="type"></div>
-                          <div class="indicator not">&nbsp;</div>
+                        <div class="row">
+                          <div class="col-xs-3">
+                            {{ vote.for }}
+                            <div v-t="'vote-for'" class="type"></div>
+                            <div class="indicator aye">&nbsp;</div>
+                          </div>
+                          <div class="col-xs-3">
+                            {{ vote.against }}
+                            <div v-t="'vote-against'" class="type"></div>
+                            <div class="indicator ney">&nbsp;</div>
+                          </div>
+                          <div class="col-xs-3">
+                            {{ vote.abstain }}
+                            <div v-t="'vote-abstain'" class="type"></div>
+                            <div class="indicator abstention">&nbsp;</div>
+                          </div>
+                          <div class="col-xs-3">
+                            {{ vote.absent }}
+                            <div v-t="'vote-absent'" class="type"></div>
+                            <div class="indicator not">&nbsp;</div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </component>
-            </div>
+                </component>
+              </div>
+            </component>
           </div>
         </div>
       </div>
@@ -122,6 +135,7 @@
 
 <script>
 import { map } from 'lodash';
+import VirtualList from 'vue-virtual-scroll-list';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
@@ -130,6 +144,7 @@ import links from 'mixins/links';
 export default {
   name: 'SeznamGlasovanj',
   components: {
+    VirtualList,
     StripedButton,
     PSearchDropdown,
     ScrollShadow,
@@ -149,6 +164,10 @@ export default {
     showFilters: {
       type: Boolean,
       default: true,
+    },
+    virtualize: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -284,6 +303,17 @@ export default {
         results: this.selectedResults,
       });
     },
+    getVirtualItemHeight() {
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth > 991) {
+          return 105 + 15;
+        }
+        if (window.innerWidth > 767) {
+          return 219 + 15;
+        }
+      }
+      return 210 + 15;
+    },
   },
 };
 </script>
@@ -314,7 +344,7 @@ export default {
 
 .session_voting {
   font-weight: 400;
-  padding: 12px 0 0 12px;
+  padding: 0 0 0 12px;
 
   .session_votes .progress.smallbar {
     height: 15px;
@@ -503,5 +533,11 @@ export default {
 
     width: 100%;
   }
+}
+
+.virtual-list {
+  margin-left: -15px;
+  padding-left: 15px;
+  padding-top: 12px;
 }
 </style>
