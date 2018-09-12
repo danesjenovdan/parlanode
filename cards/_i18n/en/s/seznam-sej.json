@@ -26,5 +26,6 @@
   "sort-by--name": "session name",
   "sort-by--date": "date when the session started",
   "sort-by--updated": "date when last update was made",
-  "sort-by--workingBody": "name of the organisation"
+  "sort-by--workingBody": "name of the organisation",
+  "title": "Ime"
 }
