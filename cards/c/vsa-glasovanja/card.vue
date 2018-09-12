@@ -5,7 +5,12 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <seznam-glasovanj :data="votes" :filters="filters" @filters-changed="onFiltersChanged" />
+    <seznam-glasovanj
+      :data="votes"
+      :filters="filters"
+      virtualize
+      @filters-changed="onFiltersChanged"
+    />
   </card-wrapper>
 </template>
 
