@@ -25,7 +25,7 @@
                 {{ $t('edit-info') }}
               </dash-button>
             </template>
-            <template v-if="(index === 2) && (column.org.classification === 'poslanska skupina')">
+            <template v-if="(index === 2) && (column.org.classification === 'pg')">
               <dash-button @click="openTfidfModal(column.org)">
                 TFIDF
               </dash-button>
