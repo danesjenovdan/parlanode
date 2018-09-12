@@ -318,16 +318,39 @@ footer.footer {
         margin-top: 10px;
     }
 
-    .border_top{
-        border-top: 1px solid $font-placeholder;
+    .border_top {
+        border-top: none;
         padding-top: 40px;
         margin-top: 10px;
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 1px;
+            width: calc(100% - 30px);
+            background-color: $font-placeholder;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 15px;
+        }
     }
 
     .border_tope{
-        border-top: 1px dashed $font-placeholder;
+        border-top: none;
         padding-top: 10px;
         margin-top: 10px;
+
+        &::before {
+            content: '';
+            height: 1px;
+            width: calc(100% - 30px);
+            border-top: 1px dashed $font-placeholder;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 15px;
+        }
     }
 
     .parlaicon-twitter-parlameter {
