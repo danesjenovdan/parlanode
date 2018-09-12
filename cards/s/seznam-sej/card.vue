@@ -90,7 +90,7 @@ export default {
     columns() {
       return [
         { id: 'image', label: '', additionalClass: 'image' },
-        { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
+        { id: 'name', label: this.$t('title'), additionalClass: 'wider name' },
         { id: 'date', label: this.$t('start') },
         { id: 'updated', label: this.$t('change'), additionalClass: 'optional' },
         { id: 'workingBody', label: this.$t('organization'), additionalClass: 'wider optional' },
