@@ -26,5 +26,6 @@
   "sort-by--name": "nazivu sjednice",
   "sort-by--date": "datumu početka sjednice",
   "sort-by--updated": "datumu zadnje izmjene podataka o sjednici",
-  "sort-by--workingBody": "nazivu tijela"
+  "sort-by--workingBody": "nazivu tijela",
+  "title": "Ime"
 }
