@@ -2,6 +2,7 @@ const express = require('express');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm } = require('../../config');
+const { i18n } = require('../server');
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z0-9-]+
   if (mpData) {
     render('poslanec/pregled', {
       activeMenu: 'mps',
-      pageTitle: `Pregled - ${mpData.mp.name}`,
+      pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
       activeTab: 'pregled',
       ...mpData,
     });
@@ -33,7 +34,7 @@ router.get([`/:id(\\d+)/${sm.member.votings}`, `/:slug([a-z0-9-]+)/${sm.member.v
   if (mpData) {
     render('poslanec/glasovanja', {
       activeMenu: 'mps',
-      pageTitle: `Glasovanja - ${mpData.mp.name}`,
+      pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
       activeTab: 'glasovanja',
       ...mpData,
     });
@@ -47,7 +48,7 @@ router.get([`/:id(\\d+)/${sm.member.speeches}`, `/:slug([a-z0-9-]+)/${sm.member.
   if (mpData) {
     render('poslanec/govori', {
       activeMenu: 'mps',
-      pageTitle: `Govori - ${mpData.mp.name}`,
+      pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
       activeTab: 'govori',
       ...mpData,
     });
