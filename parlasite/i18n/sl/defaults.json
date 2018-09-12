@@ -1,5 +1,6 @@
 {
   "landing": {
+    "title": "Parlameter",
     "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
     "search": {
       "part_one": "Išči",
@@ -105,44 +106,35 @@
     "business_success_message": "sporočilo",
     "business_success_send": "POŠLJI"
   },
-  "tools" : [{
-    "id": "obvestila",
-    "label": "Parlameter obvestila",
-    "link": "https://obvestila.parlameter.si/",
-    "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).",
-    "icon": "obvestila"
-  }, {
-    "id": "primerjalnik-glasovanj",
-    "label": "Primerjalnik glasovanj",
-    "link": "/orodja/primerjalnik-glasovanj",
-    "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?",
-    "icon": "primerjalnik-glasovanj"
-  }, {
-    "id": "raziskovalec-neenotnosti",
-    "label": "Raziskovalec neenotnosti",
-    "link": "/orodja/raziskovalec-neenotnosti",
-    "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah.",
-    "icon": "raziskovalec-neenotnosti"
-  }, {
-    "id": "parlamentarni-kompas",
-    "label": "Parlamentarni kompas",
-    "link": "/orodja/parlamentarni-kompas",
-    "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta.",
-    "icon": "parlamentarni-kompas"
-  }, {
-    "id": "skupine-besed",
-    "label": "Skupine besed",
-    "link": "/orodja/skupine-besed",
-    "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>",
-    "icon": "skupine-besed"
-  }],
+  "tools": {
+    "notifications": {
+      "title": "Parlameter obvestila",
+      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).",
+    },
+    "voteComparator": {
+      "title": "Primerjalnik glasovanj",
+      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?",
+    },
+    "discord": {
+      "title": "Raziskovalec neenotnosti",
+      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah.",
+    },
+    "compass": {
+      "title": "Parlamentarni kompas",
+      "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta.",
+    },
+    "wordGroups": {
+      "title": "Skupine besed",
+      "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>",
+    }
+  },
   "general": {
     "coalition": "koalicija",
     "opposition": "opozicija",
     "inactive": "NEAKTIVEN",
-    "overview": "pregled",
-    "voting": "glasovanja",
-    "speeches": "govori",
+    "overview": "Pregled",
+    "voting": "Glasovanja",
+    "speeches": "Govori",
     "data_published": "podatki objavljeni",
     "in_review": "v pregledu",
     "vote-result--enacted": "Izvršen",
@@ -167,5 +159,14 @@
     "facebook": "https://www.facebook.com/parlameter",
     "twitter": "https://twitter.com/Parlameter_si",
     "instagram": "https://instagram.com/Parlameter_si"
+  },
+  "titles": {
+    "session": "Seja",
+    "legislation": "Zakonodaja",
+    "other-votings": "Druga glasovanja",
+    "transcript": "Transkript",
+    "voting": "Glasovanje",
+    "session-list": "Seznam sej",
+    "sessions-search": "Išči seje"
   }
 }

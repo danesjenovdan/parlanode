@@ -1,6 +1,7 @@
 const express = require('express');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm } = require('../../config');
+const { i18n } = require('../server');
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ const router = express.Router();
 router.get('/', ar((render, req) => {
   render('landing', {
     activeMenu: 'landing',
-    pageTitle: 'Parlameter',
+    pageTitle: i18n('landing.title'),
     query: req.query.q,
   });
 }));
@@ -23,14 +24,14 @@ router.get('/', ar((render, req) => {
 router.get(`/${sm.landing.members}`, ar((render) => {
   render('landing/poslanci', {
     activeMenu: 'mps',
-    pageTitle: 'Seznam poslancev',
+    pageTitle: i18n('menu.mps'),
   });
 }));
 
 router.get(`/${sm.landing.parties}`, ar((render) => {
   render('landing/poslanske-skupine', {
     activeMenu: 'pgs',
-    pageTitle: 'Seznam poslanskih skupin',
+    pageTitle: i18n('menu.pgs'),
   });
 }));
 
@@ -43,21 +44,21 @@ router.get(`/${sm.landing.parties}`, ar((render) => {
 router.get(`/${sm.landing.about}`, ar((render) => {
   render('landing/o-projektu', {
     activeMenu: 'landing',
-    pageTitle: 'O projektu',
+    pageTitle: i18n('footer.about'),
   });
 }));
 
 router.get(`/${sm.landing.media}`, ar((render) => {
   render('landing/za-medije', {
     activeMenu: 'landing',
-    pageTitle: 'Za medije',
+    pageTitle: i18n('footer.press'),
   });
 }));
 
 router.get(`/${sm.landing.legal}`, ar((render) => {
   render('landing/pravno-obvestilo', {
     activeMenu: 'landing',
-    pageTitle: 'Pravno obvestilo',
+    pageTitle: i18n('legal.title'),
   });
 }));
 

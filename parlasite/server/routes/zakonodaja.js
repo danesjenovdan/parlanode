@@ -1,13 +1,14 @@
 const express = require('express');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
+const { i18n } = require('../server');
 
 const router = express.Router();
 
 router.get('/', ar((render) => {
   render('zakonodaja', {
     activeMenu: 'legislation',
-    pageTitle: 'Zakonodaja',
+    pageTitle: i18n('titles.legislation'),
   });
 }));
 
@@ -17,7 +18,7 @@ router.get('/*', ar((render, req, res, next) => {
   if (lawData) {
     render('zakonodaja/zakon', {
       activeMenu: 'legislations',
-      pageTitle: 'Zakonodaja',
+      pageTitle: i18n('titles.legislation'),
       lawData,
     });
   } else {

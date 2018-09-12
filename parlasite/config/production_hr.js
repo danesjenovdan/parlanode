@@ -16,9 +16,9 @@ module.exports = {
       members: 'zastupnice',
       parties: 'klubovi',
       tools: 'alati',
-      about: 'o-projektu', // TODO: i18n
-      media: 'za-medije', // TODO: i18n
-      legal: 'pravno-obvestilo', // TODO: i18n
+      about: 'o-projektu',
+      media: 'za-medije',
+      legal: 'pravne-napomene',
     },
     sessions: {
       search: {

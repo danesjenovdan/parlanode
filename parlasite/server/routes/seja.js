@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm } = require('../../config');
+const { i18n } = require('../server');
 
 const router = express.Router();
 
@@ -26,7 +27,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar((render, r
   // if (sesData) {
   //   render('seja/zakonodaja', {
   //     activeMenu: 'sessions',
-  //     pageTitle: 'Seja - Zakonodaja',
+  //     pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
   //     activeTab: 'zakonodaja',
   //     ...sesData,
   //   });
@@ -40,7 +41,7 @@ router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) 
   if (sesData) {
     render('seja/druga-glasovanja', {
       activeMenu: 'sessions',
-      pageTitle: 'Seja - Druga glasovanja',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
       activeTab: 'druga-glasovanja',
       ...sesData,
     });
@@ -54,7 +55,7 @@ router.get([`/:id(\\d+)/${sm.session.transcript}`, `/:id(\\d+)/${sm.session.tran
   if (sesData) {
     render('seja/transkript', {
       activeMenu: 'sessions',
-      pageTitle: 'Seja - Transkript',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.transcript')}`,
       activeTab: 'transkript',
       ...sesData,
       transcriptPage: req.params.transcriptPage || 1,
@@ -73,7 +74,7 @@ router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar((render, req, res
         if (isValid) {
           render('seja/glasovanje', {
             activeMenu: 'sessions',
-            pageTitle: 'Seja - Glasovanje',
+            pageTitle: `${i18n('titles.session')} - ${i18n('titles.voting')}`,
             activeTab: 'glasovanje',
             ...sesData,
             motionId,

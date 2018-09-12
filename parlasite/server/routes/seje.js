@@ -1,13 +1,14 @@
 const express = require('express');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm } = require('../../config');
+const { i18n } = require('../server');
 
 const router = express.Router();
 
 router.get('/', ar((render) => {
   render('seje', {
     activeMenu: 'sessions',
-    pageTitle: 'Seznam sej',
+    pageTitle: i18n('titles.session-list'),
   });
 }));
 
@@ -16,7 +17,7 @@ router.get(`/${sm.sessions.search.base}`, ar((render, req) => {
   const pgs = req.query.pgs ? req.query.pgs.split(',').map(Number).filter(Boolean) : undefined;
   render('seje/isci', {
     activeMenu: 'sessions',
-    pageTitle: 'Išči seje',
+    pageTitle: i18n('titles.sessions-search'),
     query: req.query.q,
     mps,
     pgs,
