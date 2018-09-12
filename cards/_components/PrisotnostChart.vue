@@ -12,12 +12,13 @@
 </template>
 
 <script>
+import d3 from 'd3v3';
 import CardWrapper from 'components/Card/Wrapper.vue';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import getD3Locale from 'i18n/d3locales';
 
-/* globals d3 */
+
 export default {
   name: 'PrisotnostChart',
   components: {
@@ -346,30 +347,30 @@ export default {
 
 
 .presencething-present rect {
-    fill: $link-hover-background-hover;
+    fill: $time-presence-present-passive;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: $second;
+        fill: $time-presence-present-active;
     }
 }
 .presencething-notPresent rect {
-    fill: $dropdown-selected-element;
+    fill: $time-presence-absent-passive;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: $third;
+        fill: $time-presence-absent-active;
     }
 }
 .presencething-notMember rect {
-    fill: $background;
+    fill: $time-presence-no-term-passive;
     stroke: $white;
     stroke-width: 1;
 
     &.hovered {
-        fill: $font-placeholder;
+        fill: $time-presence-no-term-active;
     }
 }
 </style>
