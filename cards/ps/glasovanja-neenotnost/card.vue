@@ -498,112 +498,121 @@ export default {
   }
 }
 
-  .date-row {
-    &:not(:first-child) { margin-top: 20px; }
+.date-row {
+  &:not(:first-child) { margin-top: 20px; }
+}
+
+.ballot {
+  $section-border: 1px solid $font-placeholder;
+  background: $background;
+  color: $font-default;
+  display: block;
+  margin: 7px 0 8px 0;
+  min-height: 90px;
+  padding: 10px 14px;
+  position: relative;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    background: $link-hover-background;
+    color: $link;
   }
 
-  .ballot {
-    $section-border: 1px solid $font-placeholder;
-    background: $background;
-    color: $font-default;
-    display: block;
-    margin: 7px 0 8px 0;
-    min-height: 90px;
-    padding: 10px 14px;
-    position: relative;
-
-    &:hover, &:active, &:focus {
-      text-decoration: none;
-      background: $link-hover-background;
+  @include respond-to(desktop) {
+    display: flex;
+    margin: 10px 0;
+    &:first-child {
+      margin-top: 0;
     }
+  }
+
+  .disunion {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 
     @include respond-to(desktop) {
-      display: flex;
-      margin: 10px 0;
-      &:first-child {
-        margin-top: 0;
+      flex-direction: column;
+      padding-right: 16px;
+    }
+    .percentage {
+      font-size: 24px;
+      @include respond-to(desktop) {
+        font-size: 30px;
       }
     }
 
-    .disunion {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-
+    .text {
+      font-size: 13px;
+      line-height: 34px;
+      margin-left: 10px;
+      text-transform: uppercase;
       @include respond-to(desktop) {
-        flex-direction: column;
-        padding-right: 16px;
-      }
-      .percentage {
-        font-size: 24px;
-        @include respond-to(desktop) {
-          font-size: 30px;
-        }
-      }
-
-      .text {
-        font-size: 13px;
-        line-height: 34px;
-        margin-left: 10px;
-        text-transform: uppercase;
-        @include respond-to(desktop) {
-          font-size: 16px;
-          line-height: 23px;
-          margin-left: 0;
-        }
-      }
-    }
-
-    .name {
-      border-bottom: $section-border;
-      border-top: $section-border;
-      font-family: Roboto Slab, Times New Roman, serif;
-      font-size: 11px;
-      font-weight: 300;
-      line-height: 1.45em;
-      padding: 10px 0;
-
-      @include respond-to(desktop) {
-        border-bottom: none;
-        border-top: none;
-        border-left: $section-border;
-        align-items: center;
-        display: flex;
-        flex: 4;
-        font-size: 14px;
-        padding: 5px 20px;
-      }
-    }
-
-    .result {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0 0 0;
-
-      @include respond-to(desktop) {
-        border-left: $section-border;
-        justify-content: left;
-        padding: 0 0 0 16px;
-        width: 136px;
-      }
-
-      .glyphicon {
-        font-size: 24px;
-        margin-bottom: 4px;
-        &.accepted { color: $second; }
-        &.not-accepted { color: $third; }
-
-        @include respond-to(desktop) { font-size: 29px; }
-      }
-
-      .text {
-        color: $font-default;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-left: 12px;
+        font-size: 16px;
+        line-height: 23px;
+        margin-left: 0;
       }
     }
   }
+
+  .name {
+    border-bottom: $section-border;
+    border-top: $section-border;
+    font-family: Roboto Slab, Times New Roman, serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.45em;
+    padding: 10px 0;
+
+    @include respond-to(desktop) {
+      border-bottom: none;
+      border-top: none;
+      border-left: $section-border;
+      align-items: center;
+      display: flex;
+      flex: 4;
+      font-size: 14px;
+      padding: 5px 20px;
+    }
+  }
+
+  .result {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 0 0;
+
+    @include respond-to(desktop) {
+      border-left: $section-border;
+      justify-content: left;
+      padding: 0 0 0 16px;
+      width: 136px;
+    }
+
+    .glyphicon {
+      font-size: 24px;
+      margin-bottom: 4px;
+
+      &.accepted {
+        color: $icon-accepted;
+      }
+
+      &.not-accepted {
+        color: $icon-rejected;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 29px;
+      }
+    }
+
+    .text {
+      color: $font-default;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 12px;
+    }
+  }
+}
 </style>

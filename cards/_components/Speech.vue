@@ -36,12 +36,14 @@
         <span class="quote-text">{{ speech.results.quoted_text }}</span>
         {{ quotePaddingAfter }}
       </div>
-      <a
-        v-t="'full-speech'"
-        href="#"
-        class="full-text-link"
-        @click="showFullSpeech"
-      ></a>
+      <div class="full-text-link">
+        <a
+          v-t="'full-speech'"
+          href="#"
+          class="funblue-light-hover"
+          @click="showFullSpeech"
+        ></a>
+      </div>
       <div class="quote-button">“</div>
     </div>
     <div class="links">
@@ -132,19 +134,6 @@ export default {
 
   @include respond-to(desktop) {
     font-size: 16px;
-  }
-}
-
-%link-styling {
-  color: $second;
-  display: block;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: underline;
-  text-transform: uppercase;
-
-  &:hover {
-    color: $second;
   }
 }
 
@@ -314,12 +303,13 @@ export default {
     }
 
     .full-text-link {
-      $width: 90px;
-      @extend %link-styling;
+      $width: 180px;
       bottom: -36px;
       left: calc(50% - #{$width/2});
       position: absolute;
       width: $width;
+      text-align: center;
+      text-transform: uppercase;
     }
 
     .everything {
