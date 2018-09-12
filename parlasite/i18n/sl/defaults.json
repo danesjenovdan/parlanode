@@ -109,23 +109,23 @@
   "tools": {
     "notifications": {
       "title": "Parlameter obvestila",
-      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več).",
+      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več)."
     },
     "voteComparator": {
       "title": "Primerjalnik glasovanj",
-      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?",
+      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
     },
     "discord": {
       "title": "Raziskovalec neenotnosti",
-      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah.",
+      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah."
     },
     "compass": {
       "title": "Parlamentarni kompas",
-      "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta.",
+      "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta."
     },
     "wordGroups": {
       "title": "Skupine besed",
-      "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>",
+      "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>"
     }
   },
   "general": {
