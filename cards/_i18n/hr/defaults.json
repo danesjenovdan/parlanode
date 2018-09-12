@@ -67,7 +67,7 @@
   "sort-by--date": "Datumu",
   "mps": "Zastupnice",
   "party": "Klubovi",
-  "parties": "Poslanske skupine",
+  "parties": "Klubovi",
   "time-period": "Vremensko razdoblje",
   "session-type": "Vrsta sjednice",
   "no-results": "Bez rezultata.",
@@ -174,6 +174,6 @@
     "word-groups": "Grupe riječi"
   },
   "frame": {
-    "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
+    "show-in-context": "Pokaži karticu u kontekstu web stranice parlametar.hr"
   }
 }
