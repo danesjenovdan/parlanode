@@ -360,6 +360,7 @@ footer.footer {
         line-height: 35px;
         position: relative;
         margin-left: 20px;
+        text-decoration: none;
     }
 
     .parlaicon-facebook-parlameter {
@@ -371,14 +372,25 @@ footer.footer {
         text-decoration: none;
     }
 
+    .parlaicon-instagram-parlameter {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        position: relative;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
     .parlaicon-facebook-parlameter .blue,
-    .parlaicon-twitter-parlameter .blue {
+    .parlaicon-twitter-parlameter .blue,
+    .parlaicon-intagram-parlameter .blue {
         fill: $card-footer-button-passive-background;
         stroke: $card-footer-button-passive-background;
     }
 
     .parlaicon-facebook-parlameter:hover .blue,
-    .parlaicon-twitter-parlameter:hover .blue {
+    .parlaicon-twitter-parlameter:hover .blue,
+    .parlaicon-instagram-parlameter:hover .blue {
         fill: $card-footer-button-hover-background;
         stroke: $card-footer-button-hover-background;
         text-decoration: none;
