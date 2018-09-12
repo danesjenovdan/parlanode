@@ -1,8 +1,19 @@
 @each $party, $color in $party-colors {
-  .#{$party}-background { background: $color; }
-  .#{$party}-fill { fill: $color; }
-  .#{$party}-stroke { stroke: $color; }
-  .#{$party}-border { border: 2px solid $color; }
+  .#{$party}-background {
+    background: $color !important;
+  }
+
+  .#{$party}-fill {
+    fill: $color;
+  }
+
+  .#{$party}-stroke {
+    stroke: $color;
+  }
+
+  .#{$party}-border {
+    border: 2px solid $color;
+  }
 
   .#{$party}-hover:hover {
     background: $color;
@@ -11,7 +22,9 @@
 }
 
 @each $option, $color in $option-colors {
-  .#{$option}-fill { fill: $color; }
+  .#{$option}-fill {
+    fill: $color;
+  }
 }
 
 @mixin link-hover {
@@ -29,4 +42,6 @@
   @include link-hover;
 }
 
-.inactive { filter: grayscale(100%); }
+.inactive {
+  filter: grayscale(100%);
+}
