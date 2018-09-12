@@ -239,7 +239,7 @@ export default {
           }
           if (Math.round(d3.select(bars[0][2]).datum().y) > 0) {
             focus.append('text')
-              .text(`Brez mandata | ${Math.round(d3.select(bars[0][2]).datum().y)} %`)
+              .text(`${this.$t('no-term')} | ${Math.round(d3.select(bars[0][2]).datum().y)} %`)
               .style('fill', '#fff')
               .attr('text-anchor', 'start')
               .attr('x', -70)
