@@ -44,7 +44,7 @@
           <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
           <template v-else-if="cell">
             <template v-if="cell.link">
-              <a :href="cell.link">
+              <a :href="cell.link" class="funblue-light-hover">
                 <img v-if="cell.image" :src="cell.image">
                 <template v-else>{{ cell.text }}</template>
               </a>
