@@ -287,12 +287,16 @@ export default {
   }
 }
 
-.parlaicon-facebook, .parlaicon-twitter {
+.parlaicon-facebook,
+.parlaicon-twitter {
   svg {
     width: 22px;
     height: 22px;
-    fill: $first;
-    &:hover { fill: $second; }
+    fill: $cta-passive-background;
+
+    &:hover {
+      fill: $cta-hover-background;
+    }
   }
 }
 
