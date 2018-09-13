@@ -32,14 +32,14 @@
         <div v-t="'title-search'" class="filter-label"></div>
         <p-search-field v-model="textFilter" />
       </div>
-      <div class="filter type-dropdown">
+      <div class="filter type-dropdown hidden-xs">
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allClassifications"
           :alphabetise="false"
         />
       </div>
-      <div class="filter tag-dropdown">
+      <div class="filter tag-dropdown hidden-xs">
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="dropdownTags" />
       </div>
@@ -342,6 +342,10 @@ export default {
 #card-votes {
   height: 429px;
   overflow-y: auto;
+
+  @include respond-to(mobile) {
+    height: 352px;
+  }
 }
 
 .card-content-front {
