@@ -1,76 +1,80 @@
 <template>
-  <div class="parties">
-    <div v-for="party in parties" :key="party.party.id" class="party">
-      <div class="description">
-        <div class="name">
-          <template v-if="party.party.acronym">
-            <a
-              :href="getPartyLink(party.party)"
-              class="funblue-light-hover"
-            >
-              {{ party.party.acronym }}
-            </a>
-          </template>
-          <template v-else>
-            {{ party.party.name }}
-          </template>
-        </div>
-        <result
-          :score="party.max.maxOptPerc"
-          :option="party.max.max_opt"
-          :chart-data="mapVotes(party.votes)"
-        />
-        <div class="votes">
-          <striped-button
-            v-for="vote in votes"
-            :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
-            :color="vote.id"
-            :key="vote.id"
-            :selected="party.party.id === expandedParty && vote.id === expandedOption"
-            :small-text="vote.label"
-            :text="String(party.votes[vote.id])"
-            :disabled="party.votes[vote.id] === 0"
-            @click.native="expandVote($event, party.party.id, vote.id)"
+  <scroll-shadow ref="shadow">
+    <div class="parties" @scroll="$refs.shadow.check($event.currentTarget)">
+      <div v-for="party in parties" :key="party.party.id" class="party">
+        <div class="description">
+          <div class="name">
+            <template v-if="party.party.acronym">
+              <a
+                :href="getPartyLink(party.party)"
+                class="funblue-light-hover"
+              >
+                {{ party.party.acronym }}
+              </a>
+            </template>
+            <template v-else>
+              {{ party.party.name }}
+            </template>
+          </div>
+          <result
+            :score="party.max.maxOptPerc"
+            :option="party.max.max_opt"
+            :chart-data="mapVotes(party.votes)"
           />
+          <div class="votes">
+            <striped-button
+              v-for="vote in votes"
+              :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
+              :color="vote.id"
+              :key="vote.id"
+              :selected="party.party.id === expandedParty && vote.id === expandedOption"
+              :small-text="vote.label"
+              :text="String(party.votes[vote.id])"
+              :disabled="party.votes[vote.id] === 0"
+              @click.native="expandVote($event, party.party.id, vote.id)"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        v-if="party.party.id === expandedParty"
-        class="members"
-      >
-        <ul class="person-list">
-          <li v-for="member in expandedMembers" :key="member.person.id" class="item">
-            <div class="column portrait">
-              <a :href="getMemberLink(member)"><img :src="getMemberPortrait(member)"></a>
-            </div>
-            <div class="column name">
-              <a :href="getMemberLink(member)" class="funblue-light-hover">
-                {{ member.person.name }}
-              </a>
-              <br>
-              <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
-                {{ member.person.party.acronym }}
-              </a>
-            </div>
-          </li>
-        </ul>
+        <div
+          v-if="party.party.id === expandedParty"
+          class="members"
+        >
+          <ul class="person-list">
+            <li v-for="member in expandedMembers" :key="member.person.id" class="item">
+              <div class="column portrait">
+                <a :href="getMemberLink(member)"><img :src="getMemberPortrait(member)"></a>
+              </div>
+              <div class="column name">
+                <a :href="getMemberLink(member)" class="funblue-light-hover">
+                  {{ member.person.name }}
+                </a>
+                <br>
+                <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+                  {{ member.person.party.acronym }}
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </scroll-shadow>
 </template>
 
 <script>
 import { find } from 'lodash';
 import links from 'mixins/links';
 import StripedButton from 'components/StripedButton.vue';
+import Result from 'components/Result.vue';
+import ScrollShadow from 'components/ScrollShadow.vue';
 import mapVotes from './mapVotes';
-import Result from './Result.vue';
 
 export default {
   name: 'GlasovanjeSejePoslanskeSkupine',
   components: {
     StripedButton,
     Result,
+    ScrollShadow,
   },
   mixins: [
     links,
@@ -210,12 +214,31 @@ export default {
         }
       }
 
-      .result {
+      .result-chart {
         flex: 1.2;
 
         @include respond-to(desktop) {
           max-width: 300px;
           order: 3;
+          justify-content: center;
+        }
+
+        @include respond-to(mobile) {
+          display: flex;
+          flex: 0;
+
+          /deep/ .donut-chart {
+            display: none;
+          }
+
+          /deep/ .text-container {
+            display: flex;
+            margin-right: 0;
+
+            .text {
+              margin-left: 15px;
+            }
+          }
         }
       }
 
