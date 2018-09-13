@@ -112,7 +112,7 @@ export default {
   computed: {
     mappedSessions() {
       return this.processedSessions.map(session => [
-        { link: this.getSessionUrl(session), image: `${this.slugs.urls.cdn}/icons/seja-${session.name.split(' ')[1]}.svg` },
+        // { link: this.getSessionUrl(session), image: `${this.slugs.urls.cdn}/icons/seja-${session.name.split(' ')[1]}.svg` },
         { link: this.getSessionUrl(session), text: session.name },
         formatDate(session.date_ts),
         formatDate(session.updated_at_ts),

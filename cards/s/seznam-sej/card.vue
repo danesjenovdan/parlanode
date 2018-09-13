@@ -89,7 +89,7 @@ export default {
   computed: {
     columns() {
       return [
-        { id: 'image', label: '', additionalClass: 'image' },
+        // { id: 'image', label: '', additionalClass: 'image' },
         { id: 'name', label: this.$t('title'), additionalClass: 'wider name' },
         { id: 'date', label: this.$t('start') },
         { id: 'updated', label: this.$t('change'), additionalClass: 'optional' },
@@ -259,5 +259,9 @@ export default {
     margin: 0;
     flex: 1.5;
   }
+}
+
+#s_seznam-sej /deep/ .session-list .headers {
+  margin-left: 0;
 }
 </style>
