@@ -148,19 +148,36 @@ hr,
 .columns {
   display: flex;
 
-  @include respond-to(mobile) {
-    display: block;
-  }
-
   .word-list {
     flex: 1;
 
     &:first-child {
       margin-right: 20px;
+    }
+  }
 
-      @include respond-to(mobile) {
-        margin-bottom: 0;
+  @include respond-to(mobile) {
+    flex-direction: column;
+
+    .word-list {
+      margin-bottom: 0;
+      margin-right: 0 !important;
+
+      /deep/ .column-label {
+        flex: 0 0 33%;
+
+        .chart-label {
+          word-break: break-word;
+        }
       }
+
+      /deep/ .column-bar {
+        flex: 0 0 66%;
+      }
+    }
+
+    .word-list + .word-list {
+      margin-top: -10px;
     }
   }
 }

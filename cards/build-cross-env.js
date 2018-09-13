@@ -79,7 +79,7 @@ if (cmd === 'dev') {
   cpEnv.CARD_NAME = cardPath;
   cpEnv.CARD_LANG = lang;
 
-  const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--progress', '--open', '--inline'];
+  const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--progress', '--open', '--inline', '--hot'];
   const cp = spawn('webpack-dev-server', cpArgs, { stdio: 'inherit', env: cpEnv });
 
   const scssArgs = ['run', '--cwd=parlassets', 'dev'];
