@@ -16,10 +16,10 @@
   "sort-by--district": "izbornoj jedinici",
   "sort-by--party": "klubu",
   "sort-by--analysis": "rezultatu analize {analysis}",
-  "sort-by--change": "trenutna promjena u rezultatu analize {analysis}",
-  "sort-by--age": "dob",
-  "sort-by--education": "stupanj obrazovanja",
-  "sort-by--terms": "broj mandata",
+  "sort-by--change": "trenutačni promjeni u rezultatu analize {analysis}",
+  "sort-by--age": "starosti",
+  "sort-by--education": "stupanju obrazovanja",
+  "sort-by--terms": "broju mandata",
   "analysis-texts": {
     "demographics": {
       "label": "Demografija"
