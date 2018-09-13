@@ -78,12 +78,12 @@ export default {
       .range([height, 0])
       .nice();
 
-    const xMax = d3.max(kompasData, d => d.score.vT1) * 1.05;
-    let xMin = d3.min(kompasData, d => d.score.vT1) > 0;
-    xMin = xMin > 0 ? 0 : xMin;
-    const yMax = d3.max(kompasData, d => d.score.vT2) * 1.05;
-    let yMin = d3.min(kompasData, d => d.score.vT2);
-    yMin = yMin > 0 ? 0 : yMin;
+    const xMax = d3.max(kompasData, d => d.score.vT1);
+    const xMin = d3.min(kompasData, d => d.score.vT1);
+    // xMin = xMin > 0 ? 0 : xMin;
+    const yMax = d3.max(kompasData, d => d.score.vT2);
+    const yMin = d3.min(kompasData, d => d.score.vT2);
+    // yMin = yMin > 0 ? 0 : yMin;
 
     x.domain([xMin, xMax]);
     y.domain([yMin, yMax]);
@@ -166,6 +166,10 @@ export default {
     allItems() {
       return this.people.concat(this.parties);
     },
+
+    url() {
+      return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/?state={}`;
+    }
   },
 
   mounted() {
@@ -231,7 +235,7 @@ export default {
     centerCompass() {
       // translate points to [0, 0]
       this.zoomBeh.scale([0.7]);
-      this.zoomBeh.translate([200, 50]);
+      this.zoomBeh.translate([100, 50]);
       this.zoom(true);
     },
 
@@ -316,6 +320,7 @@ export default {
     },
 
     selectCallback(id) {
+      console.log(id);
       // it's a person
       if (parseInt(id, 10)) {
         if (!this.people.find(p => p.id === id).selected) {
@@ -439,14 +444,12 @@ export default {
             this.selectCallback(d.person.id);
           })
           .on('mouseover', (d) => { // setup tooltip
-            console.log(this.$el.getBoundingClientRect());
-
             tooltipdiv.transition()
               .duration(200)
               .style('opacity', 0.9);
             tooltipdiv.html(d.person.name)
               .style('left', (`${d3.event.pageX - (tooltipdiv.node().getBoundingClientRect().width / 2) - this.$el.getBoundingClientRect().left - 15}px`))
-              .style('top', `${d3.event.pageY - this.$el.getBoundingClientRect().top - 50}px`);
+              .style('top', `${d3.event.pageY - this.$el.getBoundingClientRect().top - document.documentElement.scrollTop - 220}px`);
           })
           .on('mouseout', (d) => {
             tooltipdiv.transition()
