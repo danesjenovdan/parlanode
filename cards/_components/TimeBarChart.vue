@@ -171,18 +171,18 @@ export default {
 }
 
 .bar {
-  fill: $link-hover-background-hover;
+  fill: $time-use-bar-passive;
 }
 
 .smallbarcontainer text {
-  fill: $second;
+  fill: $font-default;
   font-weight: 300;
   transition: all 0.2s ease-out;
 }
 
 .smallbarcontainer:hover {
   .bar {
-    fill: $second;
+    fill: $time-use-bar-active;
   }
 
   text {
