@@ -1,8 +1,85 @@
+<style>
+.menu.search-open {
+  width: 100% !important;
+}
+@media (max-width: 992px) {
+  .menu-container .logo {
+    width: 80px;
+    margin-top: 10px;
+  }
+
+
+  .menu-container.open .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-container.open .logo {
+    display: none;
+  }
+
+  .menu-container.open .menu-search {
+    display: block !important;
+  }
+
+  .menu-container.open .menu a {
+    padding-left: 0;
+  }
+
+  .menu-container.open .card-content {
+    padding-left: 0;
+  }
+}
+
+/* .menu-container.open .mobile-menu__bg {
+                     transform: scale(60);
+                 }*/
+
+                .menu-container.open .mobile-menu__hambuger-line--1 {
+                    transform: translateY(12px) translateY(-50%) rotate(-135deg);
+                }
+
+                .menu-container.open .mobile-menu__hambuger-line--2 {
+                    opacity: 0;
+                }
+
+                .menu-container.open .mobile-menu__hambuger-line--3 {
+                    transform: translateY(-12px) translateY(50%) rotate(135deg);
+                }
+            }
+</style>
+
 <body>
   <header class="header">
     <div class="stripeeltop"></div>
     <div class="container">
-      <nav class="navbar navbar-default" role="navigation">
+      <div class="menu-container open">
+        <a class="logo" href="/">
+          <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
+        </a>
+        <div class="menu">
+          <a href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
+          <a href="/<%- sm.landing.sessions %>"><%- i18n('menu.sessions') %></a>
+          <a href="/<%- sm.landing.members %>"><%- i18n('menu.mps') %></a>
+          <a href="/<%- sm.landing.parties %>"><%- i18n('menu.pgs') %></a>
+          <a href="/<%- sm.landing.tools %>"><%- i18n('menu.tools') %></a>
+          <div class="menu-search hidden">
+            <%- await fetchCard('/c/menu-search') %>
+          </div>
+        </div>
+        <div class="open-search"><span class="glyphicon glyphicon-search"></span></div>
+        <div class="close-search hidden"><span class="glyphicon glyphicon-remove"></span></div>
+        <div class="mobile-menu__button">
+          <span class="mobile-menu__bg"></span>
+          <a href="#" class="mobile-menu__hambuger">
+            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--1"></span>
+            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--2"></span>
+            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--3"></span>
+          </a>
+        </div>
+      </div>
+      <!-- <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
           <a class="navbar-brand logo" href="/">
           <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="parlameter logo">
@@ -38,46 +115,11 @@
             </li>
           </ul>
           <div class="search">
-            <%- await fetchCard('/c/menu-search/'); %>
+            <%# await fetchCard('/c/menu-search/'); %>
           </div>
           <div class="close-search glyphicon glyphicon-remove"></div>
         </div>
-      </nav>
+      </nav> -->
     </div>
   </header>
   <div class="container">
-
-  <style>
-    .navbar-collapse {
-      position: relative;
-    }
-    .search, .close-search {
-      display: none;
-    }
-    .search.visible {
-      display: block;
-      width: 70%;
-      right: 30px;
-      top: -20px;
-      overflow: visible;
-      z-index: 100;
-      position: absolute;
-    }
-
-    .close-search.visible {
-      display: block;
-      position: absolute;
-      right: 0;
-      font-size: 20px;
-      top: 25px;
-      cursor: pointer;
-    }
-
-    .nav {
-      display: none !important;
-    }
-    .nav.visible {
-      display: inline-block !important;
-      float: right !important;
-    }
-  </style>
