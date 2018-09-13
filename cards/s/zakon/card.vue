@@ -102,6 +102,7 @@ export default {
       ? `${this.$options.cardData.data.text.slice(0, 100)}...`
       : 'Zakon';
 
+    // TODO: i18n
     // did we have "glasovanje o zakonu v celoti"
     const finalVoteExists = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1).length > 0;
 
@@ -109,6 +110,7 @@ export default {
     let finalVoteResult;
     let numberOfVotes;
     if (finalVoteExists) {
+      // TODO: i18n
       const filteredVote = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1)[0];
       const vote = {
         for: filteredVote.for,
@@ -116,7 +118,7 @@ export default {
         abstain: filteredVote.abstain,
         absent: filteredVote.absent,
       };
-      finalVoteData = mapVotes(vote);
+      finalVoteData = mapVotes(vote); // TODO: poglej s/glasovanja kak je narjen
 
       finalVoteResult = Object.keys(vote).reduce((max, current) => {
         if (max.value < vote[current]) {
