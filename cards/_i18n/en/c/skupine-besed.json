@@ -7,7 +7,6 @@
     "text": "We count the times a speaker says at least two search queries. Those, that said it at least once are ranked according to the number of occurrences divided by the number of all speeches of this speaker or parliamentary group and the total number of all speeches."
   },
   "speakers": "Speakers",
-  "parties": "Parliamentary groups",
   "input-words": "Enter a word or multiple words separated by a comma.",
   "empty-text": "To view results add at least two words.",
   "wordgroups-text": "Show me who talk about {words} the most. {load}",
