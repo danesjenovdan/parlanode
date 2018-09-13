@@ -38,10 +38,9 @@
     ul {
         padding: 0;
         margin: 0 auto;
-        display: table;
+        display: inline-block;
 
         li {
-            display: table;
             overflow: hidden;
             float: left;
             text-align: center;
@@ -52,8 +51,11 @@
               margin-right: 0;
             }
 
+            @include respond-to(small-mobile) {
+                width: 100%;
+            }
+
             a {
-                vertical-align: middle;
                 display: block;
                 font-size: 16px;
                 font-weight: 300;
@@ -63,51 +65,65 @@
                 border: none;
                 text-transform: uppercase;
                 background-color: $tab-passive;
-            }
 
-            a:hover {
-                color: $white;
-                background-color: $tab-hover;
-                text-decoration: none;
-            }
+                &:hover {
+                    color: $white;
+                    background-color: $tab-hover;
+                    text-decoration: none;
+                }
 
-            a.active {
-                color: $white;
-                background-color: $tab-active;
-                text-decoration: none;
+                &.active {
+                    color: $white;
+                    background-color: $tab-active;
+                    text-decoration: none;
+                }
+
+                @include respond-to(mobile) {
+                    font-size: 14px;
+                    padding: 6px 16px;
+                }
             }
 
             .nav-icon {
-                background-size: 32px;
+                background-size: 24px;
                 background-repeat: no-repeat;
                 background-position: 24px center;
                 padding-left: 60px;
                 text-transform: capitalize;
+
+                @include respond-to(mobile) {
+                    padding-left: 40px;
+                    background-size: 18px;
+                    background-position: 14px center !important;
+                }
             }
 
             .nav-icon-overview {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/overview.svg");
-                background-size: 32px;
             }
 
             .nav-icon-votings {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/votings.svg");
-                background-size: 28px;
+                background-position: 22px center;
             }
 
             .nav-icon-speeches {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/speeches.svg");
-                background-size: 24px;
+                background-position: 25px center;
             }
 
             .nav-icon-legislation {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/legislation.svg");
-                background-size: 24px;
             }
 
             .nav-icon-transcripts {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/transcripts.svg");
-                background-size: 32px;
+                background-size: 29px;
+                background-position: 21px center;
+
+                @include respond-to(mobile) {
+                    background-size: 22px;
+                }
             }
         }
     }
@@ -129,47 +145,16 @@
     }
 }
 
-@media (max-width: 956px) {
-    .group-container-menu {
-        ul {
-            padding: 0;
-            margin: 0 auto;
-
-
-            li {
-                margin-right: 2px;
-                a {
-                    font-size: 14px;
-                    padding: 10px 10px;
-                }
-            }
-        }
-    }
-}
-
-// @media (max-width: 400px) {
+// @media (max-width: 444px) {
 //     .group-container-menu {
 //         ul {
 //            li {
+//                width: 100%;
 //                 a {
-//                     font-size: 12px;
-//                     padding: 10px 5px;
+//
+//
 //                 }
 //             }
 //         }
 //     }
 // }
-
-@media (max-width: 444px) {
-    .group-container-menu {
-        ul {
-           li {
-               width: 100%;
-                a {
-                    font-size: 14px;
-                    padding: 10px 10px;
-                }
-            }
-        }
-    }
-}
