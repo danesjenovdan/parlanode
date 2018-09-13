@@ -11,7 +11,7 @@
 .tag {
   display: inline-block;
   white-space: nowrap;
-  background-color: $second;
+  background-color: $first;
   color: $white;
   padding: 0px 7px;
   font-size: 14px;
