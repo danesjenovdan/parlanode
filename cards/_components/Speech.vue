@@ -123,7 +123,7 @@ export default {
 };
 
 @function icon-share($color) {
-  @return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.17 43.78"><path fill="none" stroke="%23#{str_slice('#{$color}', 2)}" stroke-width="2" d="M1 1h55.17v41.78H1zm0 31.89h55.17M7.33 7.94zm0 6zm0 6zm0 6z"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="51.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="46.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="41.08" cy="38.02" r="1.74"/></svg>'
+  @return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.17 43.78"><path fill="none" stroke="%23#{str_slice('#{$color}', 2)}" stroke-width="3" d="M1 1h55.17v41.78H1zm0 31.89h55.17M7.33 7.94zm0 6zm0 6zm0 6z"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="51.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="46.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="41.08" cy="38.02" r="1.74"/></svg>'
 };
 
 %text-styling {
