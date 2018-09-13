@@ -108,7 +108,13 @@ export default {
 @import "~parlassets/scss/colors";
 
 .search-dropdown /deep/ .search-dropdown-input {
-  background-color: $white;
+  background-color: transparent;
+}
+
+.search-dropdown {
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
 
 .search-dropdown::after {
@@ -123,5 +129,7 @@ export default {
   width: 40px;
   align-items: center;
   color: $first;
+
+  display: none;
 }
 </style>
