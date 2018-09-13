@@ -91,9 +91,9 @@ export default {
   }
 
   .text-container {
-    text-align: center;
+    text-align: left;
     margin: 0 15px;
-    min-width: 80px;
+    width: 80px;
 
     .percentage {
       font-size: 24px;
