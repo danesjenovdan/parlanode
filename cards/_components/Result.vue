@@ -83,6 +83,7 @@ export default {
     }
     &.option-absent {
       background-image: url(#{$icon-path}/ni.svg);
+      background-size: 33px 33px;
     }
     &.option-abstain {
       background-image: url(#{$icon-path}/vzdrzan_v2.svg);

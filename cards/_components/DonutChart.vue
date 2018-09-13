@@ -1,5 +1,5 @@
 <template>
-  <svg :viewBox="`0 0 2 2`" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <mask :id="`donut-hole${_uid}`">
         <circle
@@ -19,11 +19,11 @@
     <!-- eslint-disable max-len -->
     <path
       v-for="sector in sectors"
-      :fill="sector.color"
+      :class="sector.class"
       :d="`M${sector.L},${sector.L} L${sector.L},0 A${sector.L},${sector.L} 0 ${sector.arcSweep},1 ${sector.X}, ${sector.Y} z`"
       :transform="`rotate(${sector.R}, ${sector.L}, ${sector.L})`"
       :mask="`url(#donut-hole${_uid})`"
-      :key="sector.color"
+      :key="sector.class"
     />
     <!-- eslint-enable max-len -->
   </svg>
@@ -83,7 +83,7 @@ export default {
         R += a;
 
         return {
-          color: item.color,
+          class: item.type,
           arcSweep,
           L: 1,
           X,
@@ -95,3 +95,25 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
+path {
+  &.for {
+    fill: $button-for;
+  }
+
+  &.against {
+    fill: $button-against;
+  }
+
+  &.abstain {
+    fill: $button-abstained;
+  }
+
+  &.absent {
+    fill: $button-absent;
+  }
+}
+</style>

@@ -263,10 +263,18 @@ export default {
     .glyphicon {
       font-size: 24px;
       margin-bottom: 4px;
-      &.accepted { color: $second; }
-      &.not-accepted { color: $third; }
 
-      @include respond-to(desktop) { font-size: 29px; }
+      &.accepted {
+        color: $icon-accepted;
+      }
+
+      &.not-accepted {
+        color: $icon-rejected;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 29px;
+      }
     }
 
     .text {
@@ -279,7 +287,7 @@ export default {
   }
 
   .name {
-    font-family: Roboto Slab, Times New Roman, serif;
+    font-family: "Roboto Slab", "Times New Roman", serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;
@@ -312,6 +320,7 @@ export default {
 
     .dropdown-label {
       @include show-for(desktop);
+
       font-family: Roboto Slab, Times New Roman, serif;
       font-size: 14px;
       font-weight: 300;
@@ -321,12 +330,17 @@ export default {
 
     .p- {
       margin: 10px -2px 3px -2px;
-      @include respond-to(desktop) { margin: 0; }
+
+      @include respond-to(desktop) {
+        margin: 0;
+      }
     }
   }
 }
 
-.tabs .tab-content { overflow: hidden; }
+.tabs .tab-content {
+  overflow: hidden;
+}
 </style>
 
 <style lang="scss">
@@ -346,6 +360,7 @@ export default {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
 .fire-badge::before {
   background: $font-placeholder;
   border-radius: 50%;
