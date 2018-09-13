@@ -112,9 +112,8 @@ export default {
 }
 
 .search-dropdown {
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  border: none;
+  padding-left: 20px;
 }
 
 .search-dropdown::after {
@@ -123,13 +122,11 @@ export default {
   border: none;
   font-size: 22px;
   top: 0;
-  right: 0;
+  left: 0;
   display: flex;
   height: 100%;
   width: 40px;
   align-items: center;
   color: $first;
-
-  display: none;
 }
 </style>
