@@ -123,7 +123,7 @@ export default {
 };
 
 @function icon-share($color) {
-  @return 'data:image/svg+xml;utf8,<svg fill="%23#{str_slice('#{$color}', 2)}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 80" width="82" height="80"><path d="M68 52c-4.828 0-9.094 2.457-11.61 6.188l-29.04-13.98a13.964 13.964 0 0 0 0-8.416l29.035-13.98C58.905 25.542 63.17 28 67.998 28c7.72 0 14-6.28 14-14s-6.28-14-14-14-14 6.28-14 14c0 1.465.23 2.88.648 4.207L25.61 32.187C23.095 28.457 18.83 26 14 26 6.28 26 0 32.28 0 40s6.28 14 14 14c4.83 0 9.094-2.457 11.61-6.188l29.038 13.98A13.933 13.933 0 0 0 54 66c0 7.718 6.28 14 14 14s14-6.282 14-14-6.28-14-14-14zm0-48c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10S62.486 4 68 4zM14 50C8.486 50 4 45.514 4 40s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm54 26c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10z"/></svg>'
+  @return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.17 43.78"><path fill="none" stroke="%23#{str_slice('#{$color}', 2)}" stroke-width="2" d="M1 1h55.17v41.78H1zm0 31.89h55.17M7.33 7.94zm0 6zm0 6zm0 6z"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="51.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="46.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice('#{$color}', 2)}" cx="41.08" cy="38.02" r="1.74"/></svg>'
 };
 
 %text-styling {
@@ -252,13 +252,18 @@ export default {
 
   .link {
     background-image: url('#{icon-link($link)}');
-    &:hover { background-image: url('#{icon-link($link)}'); }
+
+    &:hover {
+      background-image: url('#{icon-link($link)}');
+    }
   }
 
   .share {
-    background-position-x: 5px;
     background-image: url('#{icon-share($link)}');
-    &:hover { background-image: url('#{icon-share($link)}'); }
+
+    &:hover {
+      background-image: url('#{icon-share($link)}');
+    }
   }
 }
 
@@ -271,7 +276,11 @@ export default {
   .everything,
   .quote {
     flex: 1;
-    ::selection { background: $link-hover-background-hover; }
+
+    ::selection {
+      background: $link-hover-background-hover;
+    }
+
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
     }
