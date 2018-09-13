@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "A set of all currently active MPs, corresponding to user entry ({parties}; {districts}). The list is sorted by {sortBy}.",
-    "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na pretekli mesec. Stolpec sprememba se osveži ob koncu vsake redne seje."
+    "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje."
   },
   "select-district-placeholder": "Select district",
   "select-parties-placeholder": "Izberi poslansko skupino",
