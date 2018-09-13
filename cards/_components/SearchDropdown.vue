@@ -116,10 +116,13 @@ export default {
       type: Boolean,
       default: false,
     },
+    filter: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
-      filter: '',
       active: false,
       focused: -1,
       upMargin: 0,

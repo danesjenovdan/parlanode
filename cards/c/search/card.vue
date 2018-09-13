@@ -8,6 +8,7 @@
       :placeholder="$t('search_placeholder')"
       :single="false"
       :groups="groups"
+      :filter="filter"
       @select="selectCallback"
       @search="searchCallback"
     />
@@ -68,6 +69,7 @@ export default {
       people,
       parties,
       data: this.$options.cardData.data,
+      filter: this.$options.cardData.parlaState ? (this.$options.cardData.parlaState.query || '') : '',
     };
   },
   computed: {
