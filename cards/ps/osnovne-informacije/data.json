@@ -2,43 +2,60 @@
   "allVoters": 0,
   "created_for": "11.09.2018",
   "headOfPG": {
-    "is_active": false,
+    "is_active": true,
     "district": [
-      9
+      11
     ],
-    "name": "Giovanni Sponza",
-    "gov_id": "1277",
+    "name": "Robert Jankovics",
+    "gov_id": "1366",
     "gender": "m",
     "party": {
-      "acronym": "IDS, PGS, RI",
+      "acronym": "BM 365, Reformisti, Nezavisni",
       "is_coalition": false,
-      "id": 310,
+      "id": 334,
       "classification": "pg",
-      "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+      "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
     },
     "type": "mp",
-    "id": 1277,
+    "id": 1366,
     "has_function": false
   },
   "social": {
-    "twitter": [
-      "https://twitter.com/idsddi"
-    ],
+    "twitter": null,
     "facebook": [
-      "https://www.facebook.com/ListaRiFm/",
-      "https://www.facebook.com/jadranko.goranski/",
-      "https://www.facebook.com/idsddi/"
+      "https://www.facebook.com/narodna.stranka.reformisti/",
+      "https://www.facebook.com/strankaradaisolidarnosti/"
     ],
-    "email": "klubids@sabor.hr"
+    "email": "strankaradaisolidarnosti.reformisti.nz@sabor.hr"
   },
-  "numberOfSeats": 4,
+  "numberOfSeats": 7,
   "party": {
-    "acronym": "IDS, PGS, RI",
+    "acronym": "BM 365, Reformisti, Nezavisni",
     "is_coalition": false,
-    "id": 310,
+    "id": 334,
     "classification": "pg",
-    "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+    "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
   },
   "created_at": "11.09.2018",
-  "viceOfPG": []
+  "viceOfPG": [
+    {
+      "is_active": true,
+      "district": [
+        5
+      ],
+      "name": "Darinko Dumbovi\u0107",
+      "gov_id": "1246",
+      "gender": "m",
+      "party": {
+        "acronym": "BM 365, Reformisti, Nezavisni",
+        "is_coalition": false,
+        "id": 334,
+        "classification": "pg",
+        "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+      },
+      "type": "mp",
+      "id": 1246,
+      "has_function": false
+    }
+  ]
 }

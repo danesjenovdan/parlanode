@@ -55,13 +55,11 @@
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
         </div>
-        <div class="bordertop0">
+        <div class="bordertop0 contact-container">
           <span class="key">
             <span v-t="'contact'"></span>
             {{ ' ' }}
-            <a :href="`mailto:${data.social.email}`" class="funblue-light-hover">
-              {{ data.social.email }}
-            </a>
+            <a :href="`mailto:${data.social.email}`" class="funblue-light-hover">{{ email }}</a>
           </span>
         </div>
       </div>
@@ -148,6 +146,19 @@ export default {
         ...(this.data.social.facebook || []).map(fb => ({ type: 'fb', url: fb })),
         ...(this.data.social.twitter || []).map(tw => ({ type: 'tw', url: tw })),
       ];
+    },
+    email() {
+      if (this.data.social.email && this.data.social.email.length) {
+        if (this.data.social.email.length < 26) {
+          return this.data.social.email;
+        }
+        const [addr, domain] = this.data.social.email.split('@');
+        if (addr.length < 18) {
+          return this.data.social.email;
+        }
+        return `${addr.slice(0, 17)}...@${domain}`;
+      }
+      return '';
     },
   },
 };
@@ -250,6 +261,15 @@ export default {
     .key {
       color: $font-default;
     }
+  }
+}
+
+.contact-container {
+  overflow: hidden;
+
+  .key {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
