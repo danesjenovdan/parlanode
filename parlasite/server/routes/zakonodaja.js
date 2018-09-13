@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', ar((render) => {
   render('zakonodaja', {
     activeMenu: 'legislation',
-    pageTitle: i18n('titles.legislation'),
+    pageTitle: i18n('menu.legislation'),
   });
 }));
 
