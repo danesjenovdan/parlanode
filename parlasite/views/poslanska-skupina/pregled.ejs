@@ -16,16 +16,13 @@
     <%- await fetchCard('/ps/prisotnost-skozi-cas/', party.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/prisotnost-na-sejah-dz/', party.id) %>
-  </div>
-  <div class="col-md-6">
-    <%- await fetchCard('/ps/prisotnost-na-glasovanjih-sej-dz/', party.id) %>
-  </div>
-  <div class="col-md-6">
     <%- await fetchCard('/ps/st-vlozenih-amandmajev/', party.id) %>
   </div>
   <div class="col-md-6">
     <%- await fetchCard('/ps/st-poslanskih-vprasanj-in-pobud/', party.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/ps/prisotnost-na-glasovanjih-sej-dz/', party.id) %>
   </div>
 </div>
 
