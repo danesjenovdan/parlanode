@@ -1,60 +1,8 @@
-<style>
-.menu.search-open {
-  width: 100% !important;
-}
-@media (max-width: 992px) {
-  .menu-container .logo {
-    width: 80px;
-    margin-top: 10px;
-  }
-
-
-  .menu-container.open .menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .menu-container.open .logo {
-    display: none;
-  }
-
-  .menu-container.open .menu-search {
-    display: block !important;
-  }
-
-  .menu-container.open .menu a {
-    padding-left: 0;
-  }
-
-  .menu-container.open .card-content {
-    padding-left: 0;
-  }
-}
-
-/* .menu-container.open .mobile-menu__bg {
-                     transform: scale(60);
-                 }*/
-
-                .menu-container.open .mobile-menu__hambuger-line--1 {
-                    transform: translateY(12px) translateY(-50%) rotate(-135deg);
-                }
-
-                .menu-container.open .mobile-menu__hambuger-line--2 {
-                    opacity: 0;
-                }
-
-                .menu-container.open .mobile-menu__hambuger-line--3 {
-                    transform: translateY(-12px) translateY(50%) rotate(135deg);
-                }
-            }
-</style>
-
 <body>
   <header class="header">
     <div class="stripeeltop"></div>
     <div class="container">
-      <div class="menu-container open">
+      <div class="menu-container">
         <a class="logo" href="/">
           <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
         </a>
