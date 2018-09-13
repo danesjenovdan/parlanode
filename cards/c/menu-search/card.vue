@@ -100,7 +100,7 @@ export default {
       }
     },
     searchCallback(term) {
-      document.location.href = `${this.slugs.base}/seje/isci?q=${term}`;
+      document.location.href = `${this.getSearchTermLink(term)}`;
     },
   },
 };
