@@ -108,7 +108,7 @@ function chart(rawData, component) {
         d.y = Math.sin(a) * (radius + 20);
         return d.y;
       })
-      .text(d => `${parties[d.data.party].acronym}`)
+      .text(d => `${parties[d.data.party].acronym.substring(0, 9)}${parties[d.data.party].acronym.length > 9 ? '...' : ''}`) // TODO this needs a better fix
       .style('display', (d) => {
         if (+d.data.percentage === 0) {
           return 'none';
