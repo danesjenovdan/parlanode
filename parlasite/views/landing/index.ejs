@@ -23,6 +23,13 @@
                 <%- i18n('landing.search.part_two'); %>
             </p>
           </div>
+          <style>
+          /* TODO this is a dirty hack */
+          #c-search {
+            height: 0;
+            z-index: 1;
+          }
+          </style>
           <div class="search-container">
             <%- await fetchCard('/c/search/'); %>
           </div>
