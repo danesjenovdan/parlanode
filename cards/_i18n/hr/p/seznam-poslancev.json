@@ -4,7 +4,7 @@
   },
   "info": {
     "lead": "Skup svih trenutno aktivnih zastupnica koje odgovaraju korisničkom izboru ({parties}; {districts}). Pregled je sortiran po {sortBy}.",
-    "text": ""
+    "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na pretekli mesec. Stolpec sprememba se osveži ob koncu vsake redne seje."
   },
   "select-district-placeholder": "Izborna jedinica",
   "select-parties-placeholder": "Klub",
