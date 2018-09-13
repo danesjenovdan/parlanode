@@ -67,9 +67,15 @@ body {
     display: none;
   }
 
-  .mobile-menu__button {
-      display: flex;
-  }
+    .mobile-menu__button {
+        height: 70px;
+        line-height: 70px;
+        display: flex;
+        align-items: center;
+        float: right;
+        cursor: pointer;
+        overflow: hidden;
+    }
 }
 
 .menu-search {
