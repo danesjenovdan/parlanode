@@ -12,7 +12,7 @@
             </p>
           </div>
           <div class="search-container">
-            <%- await fetchCard('/c/search/'); %>
+            <%- await fetchCard('/c/search/', {state: { query }}); %>
           </div>
           <div class="searchinfo" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
         </div>
