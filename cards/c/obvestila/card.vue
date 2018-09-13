@@ -42,7 +42,11 @@
               <input v-model="keyword" type="text" name="keyword" class="form-control simplebox keyword" @keyup.enter="firstAction">
 
               <div class="input-group-btn" style="padding-left: 10px;">
-                <div v-t="'add'" @click="firstAction" class="action btn btn-default naprej"></div>
+                <div
+                  v-t="'add'"
+                  class="action btn btn-default naprej"
+                  @click="firstAction"
+                ></div>
               </div>
             </div>
 
@@ -63,26 +67,41 @@
               </div>
             </div>
           </div>
-
-
         </div>
-
-
       </div>
+
       <div v-if="currentStep === 2" class="step step2">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
-            <h2 v-t="'steps[1].textfirst'" class="left"></h2>
+            <h2
+              v-t="'steps[1].textfirst'"
+              class="left"
+            ></h2>
             <ul>
               <li>
                 <div class="exclude-presiding checkbox-twolines">
-                  <input id="modenatancno" type="radio" name="match_mode[]" value="natancno" checked="checked" class="radio">
+                  <input
+                    id="modenatancno"
+                    v-model="matchType"
+                    type="radio"
+                    name="match_mode[]"
+                    value="natancno"
+                    checked="checked"
+                    class="radio"
+                  >
                   <label for="modenatancno">{{ $t('steps[1].firstbullet') }} <span class="fillkeyword">"{{ keyword }}"</span></label>
                 </div>
               </li>
               <li>
                 <div class="exclude-presiding checkbox-twolines">
-                  <input id="modesiroko" type="radio" name="match_mode[]" value="siroko" class="radio">
+                  <input
+                    id="modesiroko"
+                    v-model="matchType"
+                    type="radio"
+                    name="match_mode[]"
+                    value="siroko"
+                    class="radio"
+                  >
                   <label for="modesiroko">{{ $t('steps[1].secondbullet') }} <span class="fillkeyword">{{ keyword }}</span></label>
                 </div>
               </li>
@@ -98,69 +117,87 @@
           </div>
         </div>
       </div>
+
       <div v-if="currentStep === 3" class="step step3">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
-            <h2 class="left">{% trans 'Kako pogosto naj ti pišemo' %}</h2>
-
+            <h2
+              v-t="'steps[2].textfirst'"
+              class="left"
+            ></h2>
             <ul>
               <li>
-                <div class="exclude-presiding checkbox-twolines"><input id="reminderevent" type="radio" name="reminder[]" value="event" class="radio" checked="checked"> <label for="reminderevent">{% trans 'ob dogodku' %}</label></div>
+                <div class="exclude-presiding checkbox-twolines">
+                  <input id="reminderevent" type="radio" name="reminder[]" v-model="frequency" value="event" class="radio" checked="checked">
+                  <label v-t="'steps[2].textsecond'" for="reminderevent"></label>
+                </div>
               </li>
               <li>
-                <div class="exclude-presiding checkbox-twolines"><input id="reminderday" type="radio" name="reminder[]" value="day" class="radio">
-                  <label for="reminderday">{% trans 'največ enkrat na dan' %}</label></div>
+                <div class="exclude-presiding checkbox-twolines">
+                  <input id="reminderday" type="radio" name="reminder[]" v-model="frequency" value="day" class="radio">
+                  <label v-t="'steps[2].textthird'" for="reminderday"></label>
+                </div>
               </li>
               <li>
-                <div class="exclude-presiding checkbox-twolines"><input id="reminderweek" type="radio" name="reminder[]" value="week" class="radio">
-                  <label for="reminderweek">{% trans 'največ enkrat na teden' %}</label></div>
+                <div class="exclude-presiding checkbox-twolines">
+                  <input id="reminderweek" type="radio" name="reminder[]" v-model="frequency" value="week" class="radio">
+                  <label v-t="'steps[2].textfourth'" for="reminderweek"></label>
+                </div>
               </li>
             </ul>
 
-            <div class="action btn btn-default nazaj top50 w50" data-step="2">
+            <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
               <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-              {% trans 'Nazaj' %}
+              {{ $t('back') }}
             </div>
-            <div class="action btn btn-default naprej top50 w50" data-step="4">
-              {% trans 'Nadaljuj' %}
+            <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+              {{ $t('continue') }}
             </div>
           </div>
         </div>
-
       </div>
+
       <div v-if="currentStep === 4" class="step step4">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
-            <h2>{% trans 'Samo še tvoj e-naslov' %}</h2>
+            <h2 v-t="'steps[3].textfirst'"></h2>
 
-            <div class="search">
-              <input type="email" name="email" class="form-control simplebox email" required />
+            <div class="input-group search1">
+              <input
+                v-model="email"
+                type="text"
+                name="email"
+                class="form-control simplebox email"
+                required
+              ></input>
 
-              <div class="action btn btn-default nazaj top50 w50" data-step="3">
+              <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
                 <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-                {% trans 'Nazaj' %}
+                {{ $t('back') }}
               </div>
-              <div class=" btn btn-default naprej disabled top50 w50" data-step="5" id="obvestilasubmitNew">
-                {% trans 'Nastavi opomnik' %}
+              <div class="action btn btn-default naprej top50 w50" @click="submitTrigger">
+                {{ $t('confirm_trigger') }}
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div v-if="currentStep === 5" class="step step5">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
-            <h2><img src="https://obvestila.parlameter.si/static/yij.png">{% trans ' Zabeleženo!' %}</h2>
+            <h2><img :src="`${slugs.urls.cdn}/img/yij.png`">{{ $t('steps[4].textfirst') }}</h2>
 
             <p class="replaceme">
-              {% trans 'Na e-naslov <b>#email#</b> si vklopil/-a obvestila za iskalni niz "#keyword#". Povezava za
-              potrditev naročila in urejanje drugih nastavitev te čaka na mejlu.' %}
+              {{ $t('steps[4].textsecond') }} <b>{{ email }}</b> {{ $t('steps[4].textthird') }} {{ keyword }}. {{ $t('steps[4].textfourth') }}
             </p>
 
             <div style="text-align: center">
-              <div class="action btn btn-default naprej top50 w50" data-step="1">
-                {% trans 'Dodaj nov opomnik' %}
-              </div>
+              <div
+                v-t="'add_new_trigger'"
+                class="action btn btn-default naprej top50 w50"
+                @click="currentStep = 1; keyword = '';"
+              ></div>
             </div>
 
           </div>
@@ -174,56 +211,77 @@
 </template>
 
 <script>
-  import common from 'mixins/common';
-  import TransparentWrapper from 'components/TransparentWrapper.vue';
+import axios from 'axios';
+import common from 'mixins/common';
+import TransparentWrapper from 'components/TransparentWrapper.vue';
 
-  export default {
-    // TODO: remove eslint comment
-    // eslint-disable-next-line vue/name-property-casing
-    name: 'Obvestila',
-    components: {
-      TransparentWrapper,
-    },
-    mixins: [common],
-    data() {
-      return {
-        currentStep: 1,
-        keyword: '',
-        data: this.$options.cardData.data,
-        headerConfig: {
-          // TODO: fix this when developing card
-          // best if you include a mixin from 'mixins/altHeaders'
-          circleIcon: 'og-list',
-          heading: '&nbsp;',
-          subheading: '7. sklic parlamenta',
-          alternative: this.$options.cardData.cardData.altHeader === 'true',
-          title: this.$t('card.title'),
-        },
-        ogConfig: {
-          // TODO: fix this when developing card
-          // best if you include a mixin from 'mixins/ogImages'
-        },
-      };
-    },
+export default {
+  // TODO: remove eslint comment
+  // eslint-disable-next-line vue/name-property-casing
+  name: 'Obvestila',
+  components: {
+    TransparentWrapper,
+  },
+  mixins: [common],
+  data() {
+    return {
+      currentStep: 1,
+      keyword: '',
+      matchType: 'siroko',
+      frequency: 'event',
+      email: '',
+      data: this.$options.cardData.data,
+      headerConfig: {
+        // TODO: fix this when developing card
+        // best if you include a mixin from 'mixins/altHeaders'
+        circleIcon: 'og-list',
+        heading: '&nbsp;',
+        subheading: '7. sklic parlamenta',
+        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        title: this.$t('card.title'),
+      },
+      ogConfig: {
+        // TODO: fix this when developing card
+        // best if you include a mixin from 'mixins/ogImages'
+      },
+    };
+  },
 
-    computed: {
-      emailValid() {
-        return this.validateEmail(this.email);
-      },
+  computed: {
+    emailValid() {
+      return this.validateEmail(this.email);
     },
+  },
 
-    methods: {
-      validateEmail(email) {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-      },
-      firstAction() {
-        if (this.keyword !== '') {
-          this.currentStep += 1;
-        }
-      },
+  methods: {
+    validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     },
-  };
+    firstAction() {
+      if (this.keyword !== '') {
+        this.currentStep += 1;
+      }
+    },
+    submitTrigger() {
+      if (this.validateEmail(this.email)) {
+        const data = {
+          email: this.email,
+          keyword: this.keyword,
+          reminder: this.frequency,
+          mode: this.matchType,
+        };
+
+        const obvestila = axios.create({
+          baseURL: 'https://obavijesti.parlametar.hr', // TODO this.slugs.urls.obvestila
+        });
+        obvestila.post('/setSettings/', data);
+
+        this.currentStep += 1;
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -234,195 +292,193 @@
     padding-bottom: 70px;
     max-width: 700px;
     margin: auto;
-  }
 
-  .headernew .circlebg {
-    position: relative;
-    z-index: 10;
-    background: #f0f0f0;
-    text-align: center;
-    font-size: 12px;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    line-height: 18px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    /*float: left;*/
-
-    box-shadow: none;
-    border: 1px solid #c8c8c8;
-    color: #c8c8c8;
-  }
-
-  .headernew .line {
-    position: absolute;
-    border-bottom: 1px solid #c8c8c8;
-    height: 1px;
-    line-height: 1px;
-    width: 100%;
-    top: 12px;
-  }
-
-  .headernew .hstepboxnew {
-    text-transform: uppercase;
-    width: 24.5%;
-    display: inline-block;
-    overflow: hidden;
-    padding-top: 2px;
-    text-align: center;
-  }
-
-  .headernew .circlebgtext {
-    color: #c8c8c8;
-  }
-
-  .headernew .glyphicon {
-    display: none;
-  }
-
-  .headernew .hstepboxnew.act {
-    cursor: pointer;
-  }
-
-  .headernew.success .circlebg,
-  .headernew .done .circlebg {
-    display: none;
-  }
-
-  .headernew.success .glyphicon,
-  .headernew .done .glyphicon {
-    box-shadow: none;
-    border: 1px solid #009cdd;
-    color: #ffffff;
-    background: #009cdd;
-    width: 20px;
-    height: 20px;
-    line-height: 18px;
-    text-align: center;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-
-  .headernew .act .circlebg {
-    background: #f0f0f0;
-    border: 1px solid #009cdd;
-    box-shadow: none;
-    color: #009cdd;
-  }
-
-  .headernew .act .circlebgtext {
-    color: #009cdd;
-  }
-
-  .headernew .fakeleft,
-  .headernew .fakeright {
-    width: 65px;
-    background: #f0f0f0;
-    height: 10px;
-    position: absolute;
-    top: 5px;
-  }
-
-  .headernew .fakeright {
-    right: 0;
-    width: 70px;
-  }
-
-  @media (max-width: 767px) {
-    .headernew .hstepboxnew {
+    .circlebg {
+      position: relative;
+      z-index: 10;
+      background: $background;
+      text-align: center;
       font-size: 12px;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      line-height: 18px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      /*float: left;*/
+
+      box-shadow: none;
+      border: 1px solid $font-placeholder;
+      color: $font-placeholder;
     }
-  }
 
-  @media (max-width: 510px) {
-    .headernew .hstepboxnew {
-      font-size: 10px;
+    .line {
+      position: absolute;
+      border-bottom: 1px solid $font-placeholder;
+      height: 1px;
+      line-height: 1px;
+      width: 100%;
+      top: 12px;
     }
 
+    .hstepboxnew {
+      text-transform: uppercase;
+      width: 24.5%;
+      display: inline-block;
+      overflow: hidden;
+      padding-top: 2px;
+      text-align: center;
+    }
 
-  }
+    .circlebgtext {
+      color: $font-placeholder;
+    }
 
-  @media (max-width: 992px) {
-    .headernew .fakeleft {
+    .glyphicon {
+      display: none;
+    }
+
+    .hstepboxnew.act {
+      cursor: pointer;
+    }
+
+    &.success .circlebg,
+    .done .circlebg {
+      display: none;
+    }
+
+    &.success .glyphicon,
+    .done .glyphicon {
+      box-shadow: none;
+      border: 1px solid $first;
+      color: #ffffff;
+      background: $first;
+      width: 20px;
+      height: 20px;
+      line-height: 18px;
+      text-align: center;
+      border-radius: 50%;
+      display: inline-block;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .act .circlebg {
+      background: $background;
+      border: 1px solid $first;
+      box-shadow: none;
+      color: $first;
+    }
+
+    .act .circlebgtext {
+      color: $first;
+    }
+
+    .fakeleft,
+    .fakeright {
       width: 65px;
+      background: $background;
+      height: 10px;
+      position: absolute;
+      top: 5px;
     }
 
-    .headernew .fakeright {
-      width: 75px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .headernew .fakeleft {
-      width: 57px;
+    .fakeright {
+      right: 0;
+      width: 70px;
     }
 
-    .headernew .fakeright {
-      width: 57px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .headernew .fakeleft {
-      width: 45px;
+    @media (max-width: 767px) {
+      .headernew .hstepboxnew {
+        font-size: 12px;
+      }
     }
 
-    .headernew .fakeright {
-      width: 49px;
-    }
-  }
-
-  @media (max-width: 350px) {
-    .headernew .fakeleft {
-      width: 36px;
+    @media (max-width: 510px) {
+      .headernew .hstepboxnew {
+        font-size: 10px;
+      }
     }
 
-    .headernew .fakeright {
-      width: 36px;
+    @media (max-width: 992px) {
+      .headernew .fakeleft {
+        width: 65px;
+      }
+
+      .headernew .fakeright {
+        width: 75px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .headernew .fakeleft {
+        width: 57px;
+      }
+
+      .headernew .fakeright {
+        width: 57px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .headernew .fakeleft {
+        width: 45px;
+      }
+
+      .headernew .fakeright {
+        width: 49px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .headernew .fakeleft {
+        width: 36px;
+      }
+
+      .headernew .fakeright {
+        width: 36px;
+      }
     }
   }
 
   /*************************/
   .radio {
     display: none;
-  }
 
-  .radio+label {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding-left: 32px;
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+    &+label {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 22px;
+      padding-left: 32px;
+      position: relative;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 
-  .radio+label:before {
-    border: 1px solid #c8c8c8;
-    border-radius: 50%;
-    box-sizing: border-box;
-    content: '';
-    height: 22px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 22px;
-  }
+      &::before {
+        border: 1px solid $font-placeholder;
+        border-radius: 50%;
+        box-sizing: border-box;
+        content: '';
+        height: 22px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 22px;
+      }
+    }
 
-  .radio:checked+label:before {
-    background-position: 4px 4px;
-    /*background-image: url('data:image/svg+xml;utf8,<svg version="1.1"      xmlns="http://www.w3.org/2000/svg"      xmlns:xlink="http://www.w3.org/1999/xlink"      x="0px" y="0px"      enable-background="new 0 0 5 2"      xml:space="preserve"      viewBox="0 0 5 2"      preserveAspectRatio="xMinYMid slice">   <circle cx="1" cy="1" r="1" fill="#009cdd"/> </svg>');*/
-    background-color: #009cdd;
-    border: 2px solid #eaeaea;
-    background-size: 12px 12px;
-    background-repeat: no-repeat;
+    &:checked+label:before {
+      background-position: 4px 4px;
+      /*background-image: url('data:image/svg+xml;utf8,<svg version="1.1"      xmlns="http://www.w3.org/2000/svg"      xmlns:xlink="http://www.w3.org/1999/xlink"      x="0px" y="0px"      enable-background="new 0 0 5 2"      xml:space="preserve"      viewBox="0 0 5 2"      preserveAspectRatio="xMinYMid slice">   <circle cx="1" cy="1" r="1" fill="$first"/> </svg>');*/
+      background-color: $first;
+      border: 2px solid $font-placeholder;
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+    }
   }
 
   .checkbox+label {
@@ -437,12 +493,12 @@
 
   h2 {
     font-weight: 500;
-    color: #525252;
+    color: $font-default;
     text-align: center;
   }
 
   label {
-    color: #525252;
+    color: $font-default;
   }
 
   .ainnerbig {
@@ -477,12 +533,12 @@
   }
 
   .form-control {
-    border-right: 1px solid #c8c8c8;
+    border-right: 1px solid;
     border-radius: 0;
     border-right: medium none;
     font-size: 20px;
     height: 50px;
-    border-color: #c8c8c8;
+    border-color: $font-placeholder;
     border-right: none;
   }
 
@@ -491,14 +547,14 @@
     position: relative;
     width: auto;
     text-align: center;
-    color: #ffffff;
+    color: $white;
     padding: 13px 30px;
-    background-color: #009cdd;
+    background-color: $first;
     cursor: pointer;
     margin-top: 0px;
     display: inline-block;
 
-    border-color: #c8c8c8;
+    border-color: $font-placeholder;
     border-left: none;
     border-radius: 0;
     height: 50px;
@@ -511,13 +567,13 @@
     position: relative;
     width: auto;
     text-align: center;
-    color: #009cdd;
+    color: $first;
     background: none;
     padding: 13px 30px;
     cursor: pointer;
     margin-top: 0px;
     display: inline-block;
-    border: 1px solid #c8c8c8;
+    border: 1px solid $font-placeholder;
     border-radius: 0;
     height: 50px;
     -webkit-transition: border-color 0.15s;
@@ -537,14 +593,14 @@
     position: relative;
     width: auto;
     text-align: center;
-    color: #ffffff;
+    color: $font-placeholder;
     padding: 13px 30px;
-    background-color: #c8c8c8;
+    background-color: $font-placeholder;
     cursor: auto;
     margin-top: 0px;
     display: inline-block;
 
-    border-color: #c8c8c8;
+    border-color: $font-placeholder;
     border-left: none;
     border-radius: 0;
     height: 50px;
@@ -588,7 +644,7 @@
 
   .header .hstepbox {
     text-transform: uppercase;
-    color: #009cdd;
+    color: $first;
     width: 24.5%;
     display: inline-block;
     overflow: hidden;
@@ -602,8 +658,8 @@
 
   .header .circlebg {
 
-    box-shadow: 0px 0px 2px #009cdd;
-    color: #009cdd;
+    box-shadow: 0px 0px 2px $first;
+    color: $first;
     text-align: center;
     font-size: 12px;
     width: 20px;
@@ -622,7 +678,7 @@
 
   .header .circlebglineleft,
   .header .circlebglineright {
-    background: #009cdd;
+    background: $first;
     height: 1px;
     display: inline-block;
     width: 42.7%;
@@ -662,12 +718,12 @@
   }
 
   .header.success .hstepbox {
-    color: #009cdd;
+    color: $first;
   }
 
   .header.success .circlebglineleft {
-    color: #009cdd;
-    background: #009cdd;
+    color: $first;
+    background: $first;
   }
 
   .header.success .circlebg,
@@ -677,9 +733,9 @@
 
   .header.success .glyphicon,
   .header .done .glyphicon {
-    box-shadow: 0px 0px 2px #009cdd;
+    box-shadow: 0px 0px 2px $first;
     color: #ffffff;
-    background: #009cdd;
+    background: $first;
     width: 20px;
     float: left;
     height: 20px;
@@ -691,12 +747,12 @@
   }
 
   .header.success .circlebglineright {
-    color: #009cdd;
-    background: #009cdd;
+    color: $first;
+    background: $first;
   }
 
   .simplebox {
-    border-right: 1px solid #c8c8c8;
+    border-right: 1px solid $font-placeholder;
   }
 
   .keyword.error,
@@ -815,12 +871,12 @@
   }
 
   .replaceme {
-    color: #525252;
+    color: $font-default;
     text-align: left;
   }
 
   .obvestiladelete .glyphicon {
-    border: 2px solid #525252;
+    border: 2px solid $font-default;
     border-radius: 4px;
     padding: 1px;
   }
@@ -840,7 +896,7 @@
   }
 
   .responseText span {
-    color: #009cdd;
+    color: $first;
   }
 
   #obvestila.settings .search-dropdown-input {
@@ -871,12 +927,12 @@
   }
 
   #obvestila.settings hr {
-    border-top: 1px solid #525252;
+    border-top: 1px solid $font-default;
     margin: 0 0 30px 0;
   }
 
   #obvestila.settings .replaceme {
-    color: #525252;
+    color: $font-default;
     display: inline-block;
   }
 

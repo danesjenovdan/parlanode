@@ -7,6 +7,8 @@
   "add": "Dodaj",
   "continue": "Nastavi",
   "back": "Natrag",
+  "confirm_trigger": "Postavite podsjetnik",
+  "add_new_trigger": "Dodaj novi podsjetnik",
   "steps": [{
     "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
     "textsecond": "MISSING: Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih teles, ti to sporočimo po e-pošti."
@@ -14,5 +16,17 @@
     "textfirst": "Odaberite način podudaranja",
     "firstbullet": "točno podudaranje:",
     "secondbullet": "široko podudaranje:"
+  }, {
+    "textfirst": "Koliko često želite primati obavijesti?",
+    "textsecond": "po događaju",
+    "textthird": "najviše jednom dnevno",
+    "textfourth": "najviše jednom tjedno"
+  }, {
+    "textfirst": "Još samo email adresa"
+  }, {
+    "textfirst": "Zabilježeno!",
+    "textsecond": "Na email adresu",
+    "textthird": "poslana prijava za Parlametar obavijesti za ključnu riječ",
+    "textfourth": "Pogledaj u inbox!"
   }]
 }
