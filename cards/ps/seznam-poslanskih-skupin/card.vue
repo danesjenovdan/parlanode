@@ -35,10 +35,10 @@ const analysesIDs = [
   {
     id: 'seat_count',
   },
-  {
-    id: 'presence_sessions',
-    unit: 'percent',
-  },
+  // {
+  //   id: 'presence_sessions',
+  //   unit: 'percent',
+  // },
   {
     id: 'presence_votes',
     unit: 'percent',
