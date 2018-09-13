@@ -9,7 +9,7 @@
       @click="clearSelection"
     >×</div>
     <input
-      v-model="filter"
+      v-model="localFilter"
       :placeholder="adjustedPlaceholder"
       class="search-dropdown-input"
       type="text"
@@ -126,13 +126,14 @@ export default {
       active: false,
       focused: -1,
       upMargin: 0,
+      localFilter: this.filter,
     };
   },
   computed: {
     filteredItems() {
       const filterAndSort = items => items
         .filter(item => (
-          item.selected || item.label.toLowerCase().indexOf(this.filter.toLowerCase()) > -1
+          item.selected || item.label.toLowerCase().indexOf(this.localFilter.toLowerCase()) > -1
         ))
         .map((item, index) => {
           // eslint-disable-next-line no-param-reassign
@@ -224,7 +225,7 @@ export default {
   methods: {
     pressEnter() {
       if (this.focused === -1) {
-        this.$emit('search', this.filter);
+        this.$emit('search', this.localFilter);
       } else {
         this.selectItem(this.filteredItems[this.focused].id);
       }
@@ -251,9 +252,9 @@ export default {
       );
     },
     toggleDropdown(state) {
-      if (state === false) {
-        this.filter = '';
-      }
+      // if (state === false) {
+      //   this.localFilter = '';
+      // }
       this.active = state;
     },
     clearSelection() {
@@ -291,11 +292,11 @@ export default {
       };
     },
     highlightLabel(label) {
-      if (this.filter === '') {
+      if (this.localFilter === '') {
         return label;
       }
 
-      const regEx = new RegExp(this.filter, 'ig');
+      const regEx = new RegExp(this.localFilter, 'ig');
       return label.replace(regEx, '<b>$&</b>');
     },
   },
