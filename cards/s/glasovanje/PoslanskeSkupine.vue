@@ -234,6 +234,8 @@ export default {
           /deep/ .text-container {
             display: flex;
             margin-right: 0;
+            width: auto;
+            white-space: nowrap;
 
             .text {
               margin-left: 15px;
