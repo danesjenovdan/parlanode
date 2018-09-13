@@ -26,7 +26,8 @@ export const partyHeader = {
       const coalitionText = party.is_coalition ? this.$t('coalition') : this.$t('opposition');
 
       return {
-        circleText: party.acronym,
+        // circleText: party.acronym,
+        mediaImage: 'party',
         circleClass: `${party.acronym.replace(/[ +,]/g, '_').toLowerCase()}-background`,
         heading: party.name,
         subheading: `${party.acronym} | ${coalitionText}`,
