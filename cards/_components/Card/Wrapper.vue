@@ -77,7 +77,7 @@ export default {
     },
     contentHeight: {
       type: String,
-      default: 'auto',
+      default: null,
     },
   },
   data() {
