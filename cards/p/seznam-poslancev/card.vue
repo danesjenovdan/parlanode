@@ -68,6 +68,7 @@
           <template v-if="currentAnalysisData.explanation">
             <p v-t="'info.methodology'" class="info-text heading"></p>
             <p class="info-text">{{ currentAnalysisData.explanation }}</p>
+            <p v-t="'info.text'" class="info-text"></p>
           </template>
         </div>
       </inner-card>
