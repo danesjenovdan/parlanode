@@ -1,296 +1,3 @@
-header.header {
-    .logo {
-        width: 110px;
-        height: 70px;
-        padding: 0;
-    }
-    .logo .cls-1 {
-        fill: $first;
-    }
-    .logo .cls-2 {
-        fill: $second;
-    }
-    .logo .cls-3 {
-        fill: $button-absent;
-    }
-
-    .navbar-default {
-        background-color: transparent;
-        padding-top: 10px;
-        height: 100px;
-    }
-    .navbar-collapse {
-        border-top: none;
-    }
-    .navbar {
-        border-radius: 0;
-        border-bottom: 1px solid $font-placeholder;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-    }
-    .navbar-nav > li > a {
-        font-size: 16px;
-        color: $font-default;
-        font-weight: 500;
-        padding: 20px 30px;
-        margin: 0;
-    }
-
-    .search {
-        margin-top: 10px;
-
-        .card-content {
-            padding: 0;
-        }
-    }
-
-    .btn-default {
-        background: transparent;
-    }
-
-    .search {
-        border: none;
-        border-radius: 0;
-    }
-
-    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-        color: $first;
-    }
-
-    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-        color: $first;
-        background: transparent;
-        background-color: transparent;
-    }
-
-    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-        background: transparent;
-        background-color: transparent;
-    }
-
-
-            @media (min-width: 768px) {
-        .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            vertical-align: top;
-        }
-
-        .navbar .navbar-collapse {
-            text-align: center;
-        }
-    }
-
-    #topheadersearch{
-        border:none;
-        margin: 0;
-        position: absolute;
-        right: 0;
-        padding: 0;
-    }
-
-    @media (min-width: 992px) {
-        .navbar .navbar-nav {
-            margin-left: -110px;
-        }
-    }
-
-
-    @media (max-width: 992px) {
-        .navbar-collapse{
-            margin-left: -15px;
-            margin-right: -15px;
-        }
-
-        .navbar-nav {
-            margin: 0 auto;
-            display: table;
-            table-layout: auto;
-            float: none;
-            width: 100%;
-            text-align: center;
-        }
-
-        .navbar-nav > li {
-            padding-left: 0;
-            padding-right: 0;
-            float: none;
-            margin: 0 auto;
-            text-align: center;
-            width: 140px;
-            display: inline-block;
-        }
-        .navbar-nav > li > a {
-            padding: 20px 0px 20px 0px;
-            font-size: 16px;
-        }
-
-        .navbar-nav > li:first-child {
-            padding-left: 0;
-            float: left;
-            margin: 0;
-            /*width: 100px;*/
-            width: auto;
-        }
-        .navbar-nav > li:first-child > a {
-            padding-left: 0;
-            text-align: left;
-        }
-
-        .navbar-nav > li:last-child {
-            padding-right: 0;
-            float: right;
-            text-align: right;
-            margin: 0;
-            /*width: 100px;*/
-            width: auto;
-        }
-        .navbar-nav > li:last-child > a {
-            padding-right: 0;
-            text-align: right;
-        }
-    }
-    .parlaicon-search {
-        width: 22px;
-        height: 22px;
-        line-height: 22px;
-        position: relative;
-        bottom: -5px;
-        background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
-    }
-
-    .header-searchhide {
-        display: none;
-        position: relative;
-        top: 17px;
-        z-index: 9;
-        background: $background;
-    }
-
-    .header-search {
-
-    }
-
-    .search-input-header {
-        background: none;
-    }
-
-    .search-input-header-prepend,
-    .search-input-header-append{
-        background: none;
-        display: inline-block;
-        height: 34px;
-    }
-
-    .search-input-header-prepend .glyphicon.glyphicon-search,
-    .search-input-header-append .glyphicon.glyphicon-remove {
-        position: relative;
-        top:4px;
-    }
-    .search-input-header-append.xclose{
-        cursor: pointer;
-    }
-    .header-search-find {
-
-    }
-    .searchiconbuttton{
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        margin-top: 8px;
-        cursor: pointer;
-    }
-
-    @media (max-width: 992px) {
-        #topheadersearch{
-            position: relative;
-            padding: 10px 0;
-        }
-        .search-input-header {
-            background: none;
-            width: 98%;
-        }
-        .header-searchhide{
-            top:0;
-        }
-        .navbar-form .form-group{
-            width:100%;
-        }
-    }
-
-
-
-    .header-search .tt-menu {
-        max-height: 300px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        width: 200px;
-
-        @include card(1);
-
-    }
-
-    .header-search .tt-dataset {
-        padding: 0;
-        background-color: $white;
-        width: 200px;
-
-    }
-    .header-search .tt-dataset .searchheader {
-        display: block;
-        position: relative;
-        width: 200px;
-        height: 16px;
-        line-height: 16px;
-        font-size: 12px;
-        background-color: $background;
-
-        top: 0;
-        left: 0;
-
-        padding-left: 5px;
-        z-index: 10;
-    }
-
-
-    .header-search .searchperson-container {
-        border-bottom: 1px solid $background;
-        height: 60px;
-        padding: 10px;
-        line-height: 40px;
-        background-color: $white;
-
-        width: 185px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .header-search .tt-cursor {
-        background-color: $background;
-    }
-
-    .session-ac-search {
-        background: $link-hover-background;
-        padding: 10px 5px;
-        color: $second;
-        cursor: pointer;
-    }
-    .session-ac-search .glyphicon-search {
-        color: $second;
-        font-size:16px;
-    }
-
-}
-
-.session_transcript_menu {
-    margin: 80px auto 0 auto;
-    display: table;
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -299,6 +6,78 @@ body {
     /* Margin bottom by footer height + 50px space */
     margin-bottom: 260px;
 }
+
+
+// MENU
+.menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c8c8c8;
+}
+.menu-container .logo {
+    width: 110px;
+    height: 80px !important;
+    overflow: hidden;
+    display: block;
+    flex-shrink: 0;
+}
+  
+.menu-container .menu {
+    display: flex;
+    width: auto;
+}
+  
+.menu-container .menu a {
+    font-size: 16px;
+    color: #333333;
+    font-weight: 500;
+    padding: 20px 30px;
+    margin: 0;
+}
+.menu-container .menu a:hover {
+    color: #ff0000;
+    text-decoration: none;
+}
+  
+.open-search,
+.close-search {
+    font-size: 16px;
+    padding: 20px 0;
+}
+.open-search:hover,
+.close-search:hover {
+    color: #ff0000;
+    cursor: pointer;
+}
+  
+.mobile-menu__button {
+    display: none;
+}
+  
+@media (max-width: 992px) {
+    .menu-container .menu,
+    .open-search {
+        display: none;
+    }
+}
+  
+.menu-search {
+    height: 80px;
+    margin-top: -10px;
+    width: 100%;
+    z-index: 1;
+}
+#c-menu-search {
+    margin-top: 0;
+}
+// END MENU
+
+
+
+
+
 footer.footer {
     position: absolute;
     bottom: 0;
