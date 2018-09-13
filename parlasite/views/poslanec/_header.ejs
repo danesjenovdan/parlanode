@@ -21,7 +21,7 @@ body {
       <% if (!mp.active) { %>
       <h3><%- i18n('general.inactive') %></h3>
       <% } %>
-      <div class="member-container-menu">
+      <div class="group-container-menu">
         <ul class="clearfix">
           <li><a href="/<%- sm.member.base %>/<%- slug %>/<%- sm.member.overview %>" class="<%- activeTab === 'pregled' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.overview') %></a></li>
           <li><a href="/<%- sm.member.base %>/<%- slug %>/<%- sm.member.votings %>" class="<%- activeTab === 'glasovanja' ? 'active' : '' %> nav-icon nav-icon-votings"><%-i18n('general.voting') %></a></li>
