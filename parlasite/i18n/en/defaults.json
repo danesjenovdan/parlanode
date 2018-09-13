@@ -1,5 +1,6 @@
 {
   "landing": {
+    "title": "Parlameter",
     "lead": "Parlameter analyses votings and speeches in the parliament to help you monitor your politicians.",
     "search": {
       "part_one": "Search",
@@ -110,50 +111,35 @@
     "business_success_message": "message",
     "business_success_send": "SEND"
   },
-  "tools": [
-    {
-      "id": "obvestila",
-      "label": "Parlameter notifications",
-      "link": "https://obvestila.parlameter.si/",
-      "text": "Parliamentary clipping! Get an email alert every time someone says a word (or more).",
-      "icon": "obvestila"
+  "tools": {
+    "notifications": {
+      "title": "Parlameter obvestila",
+      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več)."
     },
-    {
-      "id": "primerjalnik-glasovanj",
-      "label": "Vote comparator",
-      "link": "/orodja/primerjalnik-glasovanj",
-      "text": "The vote comparator allows you to answer questions like: When did members of Levica vote the same as members of SDS?",
-      "icon": "primerjalnik-glasovanj"
+    "voteComparator": {
+      "title": "Primerjalnik glasovanj",
+      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
     },
-    {
-      "id": "raziskovalec-neenotnosti",
-      "label": "Discord researcher",
-      "link": "/orodja/raziskovalec-neenotnosti",
-      "text": "Explore the discord in parties based on how much they disagreed on specific pieces of legislation.",
-      "icon": "raziskovalec-neenotnosti"
+    "discord": {
+      "title": "Raziskovalec neenotnosti",
+      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah."
     },
-    {
-      "id": "parlamentarni-kompas",
-      "label": "Parliamentary compass",
-      "link": "/orodja/parlamentarni-kompas",
-      "text": "A visualisation of all MPs in virtual space. The further they are, the more likely they are to vote differently.",
-      "icon": "parlamentarni-kompas"
+    "compass": {
+      "title": "Parlamentarni kompas",
+      "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta."
     },
-    {
-      "id": "skupine-besed",
-      "label": "Word groups",
-      "link": "/orodja/skupine-besed",
-      "text": "Explore who talks about certain topics the most or who says the words you choose most often.<br><br>",
-      "icon": "skupine-besed"
+    "wordGroups": {
+      "title": "Skupine besed",
+      "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>"
     }
-  ],
+  },
   "general": {
     "coalition": "coalition",
     "opposition": "opposition",
     "inactive": "INACTIVE",
-    "overview": "overview",
-    "voting": "votings",
-    "speeches": "speeches",
+    "overview": "Pregled",
+    "voting": "Glasovanja",
+    "speeches": "Govori",
     "data_published": "data published",
     "in_review": "in review",
     "vote-result--enacted": "Izvršen",
@@ -171,6 +157,21 @@
     "state_one_dz": "Sorry, no votings at this session yet.",
     "state_five": "Sorry, no transcripts for this session yet.",
     "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!",
-    "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?"
+    "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
+    "info_email": "info@parlameter.si"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parlameter",
+    "twitter": "https://twitter.com/Parlameter_si",
+    "instagram": "https://instagram.com/Parlameter_si"
+  },
+  "titles": {
+    "session": "Seja",
+    "legislation": "Zakonodaja",
+    "other-votings": "Druga glasovanja",
+    "transcript": "Transkript",
+    "voting": "Glasovanje",
+    "session-list": "Seznam sej",
+    "sessions-search": "Išči seje"
   }
 }

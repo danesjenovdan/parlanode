@@ -1,5 +1,6 @@
 {
   "landing": {
+    "title": "Parlametar",
     "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
     "search": {
       "part_one": "Traži",
@@ -24,7 +25,7 @@
         "paragraph": "Svi podaci su besplatno dostupni kroz dva API sučelja, i sav kod objavljen je na Githubu. Sve potrebno možete pronaći na <a href=\"https://dev.parlameter.si\">stranici za programere</a>, a ako trebate pomoć obratite nam se putem e-maila!"
       }
     },
-    "thanks": "Parlametar je aplikacija koju GONG i institut <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, razvijaju kao hrvatsku verziju parlameter.si sučelja ove slovenske organizacije usredotočene na digitalnu političku participaciju i transparentnost. Hvala NED, Google DNI i svim pojedincima koji su pomogli projekt svojim nesebičnim zalaganjem."
+    "thanks": "Parlametar je aplikacija koju GONG i institut <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, razvijaju kao hrvatsku verziju parlameter.si sučelja ove slovenske organizacije usredotočene na digitalnu političku participaciju i transparentnost. Hvala NED-u, Google DNI-u i svim pojedinkama koje su pomogle projekt svojim nesebičnim zalaganjem."
   },
   "legal": {
     "title": "Pravne napomene",
@@ -110,50 +111,35 @@
     "business_success_message": "poruka",
     "business_success_send": "POŠALJI"
   },
-  "tools": [
-    {
-      "id": "obvestila",
-      "label": "Parlametar obavijesti",
-      "link": "https://obvestila.parlameter.si/",
-      "text": "Isječci sa sjednica Sabora! Primite obavijest na mail svaki puta kad netko u Saboru izgovori riječ (ili više njih) koje ste odabrali.",
-      "icon": "obvestila"
+  "tools": {
+    "notifications": {
+      "title": "Parlametar obavijesti",
+      "text": "Isječci sa sjednica Sabora! Primite obavijest na mail svaki puta kad netko u Saboru izgovori riječ (ili više njih) koje ste odabrali."
     },
-    {
-      "id": "primerjalnik-glasovanj",
-      "label": "Komparator glasanja",
-      "link": "/orodja/primerjalnik-glasovanj",
-      "text": "Komparator glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?",
-      "icon": "primerjalnik-glasovanj"
+    "voteComparator": {
+      "title": "Komparator glasanja",
+      "text": "Komparator glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?"
     },
-    {
-      "id": "raziskovalec-neenotnosti",
-      "label": "Pretraživač razjedinjenosti",
-      "link": "/orodja/raziskovalec-neenotnosti",
-      "text": "Istražite nesložnosti unutar klubova zastupnica s obzirom na to koliko je unutar kluba bilo neslaganja u glasanju.",
-      "icon": "raziskovalec-neenotnosti"
+    "discord": {
+      "title": "Pretraživač razjedinjenosti",
+      "text": "Istražite nesložnosti unutar klubova zastupnica s obzirom na to koliko je unutar kluba bilo neslaganja u glasanju."
     },
-    {
-      "id": "parlamentarni-kompas",
-      "label": "Saborski kompas",
-      "link": "/orodja/parlamentarni-kompas",
-      "text": "Vizualizacija svih zastupnica u virtualnom 'prostoru'. Što je veća udaljenost među zastupnicama, veće su razlike u njihovom glasanju.",
-      "icon": "parlamentarni-kompas"
+    "compass": {
+      "title": "Saborski kompas",
+      "text": "Vizualizacija svih zastupnica u virtualnom 'prostoru'. Što je veća udaljenost među zastupnicama, veće su razlike u njihovom glasanju."
     },
-    {
-      "id": "skupine-besed",
-      "label": "Grupe riječi",
-      "link": "/orodja/skupine-besed",
-      "text": "Istražite tko najviše govori o određenoj temi, ili tko među zastupnicama najčešće koristi određene grupe riječi.<br><br>",
-      "icon": "skupine-besed"
+    "wordGroups": {
+      "title": "Grupe riječi",
+      "text": "Istražite tko najviše govori o određenoj temi, ili tko među zastupnicama najčešće koristi određene grupe riječi.<br><br>"
     }
-  ],
+  },
   "general": {
     "coalition": "koalicija",
     "opposition": "opozicija",
     "inactive": "NEAKTIVNA",
-    "overview": "pregled",
-    "voting": "glasanja",
-    "speeches": "govori",
+    "overview": "Pregled",
+    "voting": "Glasanja",
+    "speeches": "Govori",
     "data_published": "objavljeni podaci",
     "in_review": "u pregledu",
     "vote-result--enacted": "Donesen",
@@ -171,6 +157,21 @@
     "state_one_dz": "Podaci o glasanju na izabranoj sjednici na žalost još nisu dostupni.",
     "state_five": "Transkripti govora izabrane sjednice na žalost još nisu dostupni on-line.",
     "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
-    "page-not-found-text": "Ovdje nema ništa. Što tražiš?"
+    "page-not-found-text": "Ovdje nema ništa. Što tražiš?",
+    "info_email": "info@parlametar.si"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parlameter",
+    "twitter": "https://twitter.com/Parlameter_si",
+    "instagram": "https://instagram.com/Parlameter_si"
+  },
+  "titles": {
+    "session": "Sjednica",
+    "legislation": "Zakonodavstvo",
+    "other-votings": "Glasanja",
+    "transcript": "Transkript",
+    "voting": "Glasanje",
+    "session-list": "Popis sjednica",
+    "sessions-search": "Traži sjednice"
   }
 }
