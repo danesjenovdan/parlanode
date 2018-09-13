@@ -23,29 +23,31 @@
         :chart-data="mapVotes(memberVotes)"
       />
     </div>
-    <ul class="person-list">
-      <li v-for="member in filteredMembers" :key="member.person.id" class="item">
-        <div class="column portrait">
-          <a :href="getMemberLink(member)">
-            <img :src="getMemberPortrait(member)">
-          </a>
-        </div>
-        <div class="column wider name">
-          <a :href="getMemberLink(member)" class="funblue-light-hover">
-            {{ member.person.name }}
-          </a>
-          <br>
-          <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
-            {{ member.person.party.acronym }}
-          </a>
-        </div>
-        <div class="column vote">
-          <div :class="`option option-${member.option}`">
-            {{ translateOption(member.option, member.person.gender) }}
+    <scroll-shadow ref="shadow">
+      <ul class="person-list" @scroll="$refs.shadow.check($event.currentTarget)">
+        <li v-for="member in filteredMembers" :key="member.person.id" class="item">
+          <div class="column portrait">
+            <a :href="getMemberLink(member)">
+              <img :src="getMemberPortrait(member)">
+            </a>
           </div>
-        </div>
-      </li>
-    </ul>
+          <div class="column wider name">
+            <a :href="getMemberLink(member)" class="funblue-light-hover">
+              {{ member.person.name }}
+            </a>
+            <br>
+            <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+              {{ member.person.party.acronym }}
+            </a>
+          </div>
+          <div class="column vote">
+            <div :class="`option option-${member.option}`">
+              {{ translateOption(member.option, member.person.gender) }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </scroll-shadow>
   </div>
 </template>
 
@@ -54,8 +56,9 @@ import { find } from 'lodash';
 import StripedButton from 'components/StripedButton.vue';
 import links from 'mixins/links';
 import SearchField from 'components/SearchField.vue';
+import Result from 'components/Result.vue';
+import ScrollShadow from 'components/ScrollShadow.vue';
 import mapVotes from './mapVotes';
-import Result from './ResultShit.vue';
 
 export default {
   name: 'GlasovanjeSejePoslanci',
@@ -63,6 +66,7 @@ export default {
     StripedButton,
     SearchField,
     Result,
+    ScrollShadow,
   },
   mixins: [
     links,

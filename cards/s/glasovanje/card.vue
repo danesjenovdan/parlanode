@@ -220,6 +220,20 @@ export default {
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/breakpoints';
 
+#s_glasovanje {
+  /deep/ .p-tabs .p-tabs-content,
+  /deep/ .p-tabs .p-tabs-content .tab-content {
+    overflow-y: visible;
+    overflow-x: visible;
+
+    .scroll-shadow-top::after {
+      left: -20px;
+      right: -20px;
+      width: auto;
+    }
+  }
+}
+
 .summary {
   $section-border: 1px solid $font-placeholder;
   background: $background;
