@@ -1,11 +1,10 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    :content-class="{'is-loading': fetching}"
+    :content-class="['full', { 'is-loading': fetching }]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-height="518px"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>

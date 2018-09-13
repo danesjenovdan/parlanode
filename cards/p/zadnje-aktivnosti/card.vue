@@ -4,7 +4,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-height="518px"
+    content-class="full"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
