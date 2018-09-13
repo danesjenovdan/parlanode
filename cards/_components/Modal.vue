@@ -47,10 +47,11 @@ export default {
 
 .card-modal {
   position: absolute;
-  width: 280px;
+  width: 90%;
+  max-width: 360px;
   left: 50%;
   transform: translateX(-50%);
-  top: 100px;
+  top: 40px;
   z-index: 100;
   background-color: $background;
 
@@ -61,7 +62,7 @@ export default {
     line-height: 40px;
     font-size: 16px;
     color: $white;
-    background-color: $second;
+    background-color: $first;
     text-align: center;
     margin-top: 10px;
     cursor: pointer;
@@ -74,7 +75,7 @@ export default {
 
   &-header {
     width: 100%;
-    background-color: $second;
+    background-color: $first;
     color: $white;
     font-family: 'Roboto Slab', serif;
     padding: 10px 50px 10px 10px;

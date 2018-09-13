@@ -331,7 +331,7 @@ export default {
 
   .checkbox + label {
     font-size: 11px;
-    color: $font-placeholder;
+    color: $font-default;
     white-space: nowrap;
   }
 }

@@ -457,7 +457,7 @@ export default {
     text-align: right;
 
     font-size: 11px;
-    color: $font-placeholder;
+    color: $font-default;
 
     @include respond-to(mobile) {
       text-align: left;
@@ -474,7 +474,7 @@ export default {
   padding: 5px;
   display: inline-block;
   margin: 5px;
-  color: $second;
+  color: $font-default;
 
   &::after {
     content: '×';
@@ -486,14 +486,16 @@ export default {
     transform: rotate(45deg);
     display: inline-block;
     transition: transform 0.2s ease-out;
+    color: $first;
   }
 
   &.on {
-    background: $second;
+    background: $first;
     color: $white;
 
     &::after {
       transform: rotate(0deg);
+      color: $white;
     }
   }
 }
@@ -513,7 +515,7 @@ export default {
 
 .searchfilter-checkbox .checkbox + label {
   font-size: 11px;
-  color: $font-placeholder;
+  color: $font-default;
 }
 
 .tab-content {
