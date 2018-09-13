@@ -6,8 +6,8 @@
     "lead": "Skup svih trenutno aktivnih zastupnica koje odgovaraju korisničkom izboru ({parties}; {districts}). Pregled je sortiran po {sortBy}.",
     "text": ""
   },
-  "select-district-placeholder": "Odaberite izbornu jedinicu",
-  "select-parties-placeholder": "Odaberi klub",
+  "select-district-placeholder": "Izborna jedinica",
+  "select-parties-placeholder": "Klub",
   "all-parties": "svi klubovi",
   "all-voting-districts": "sve izborne jedinice",
   "missing-district": "izborna jedinica nije unijeta",

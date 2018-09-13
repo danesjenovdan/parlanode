@@ -10,7 +10,7 @@
   "contents-search": "Pretraži prema sadržaju govora",
   "working-body": "Matično radno tijelo",
   "vote-types": "Vrste glasanja",
-  "select-placeholder": "Odaberite",
+  "select-placeholder": "Odaberi",
   "selected-placeholder": "Odabranih: {num}",
   "name": "Ime",
   "epa": "PZ\/PZE",
@@ -49,7 +49,7 @@
   "vote-abstain-plural": "Suzdržani",
   "vote-absent": "Nema",
   "vote-absent-plural": "Nema",
-  "vote-no-majority": "Ni večinskega glasu",
+  "vote-no-majority": "Većinski glas ne postoji",
   "voted-for--f": "Glasala ZA",
   "voted-for--m": "Glasao ZA",
   "voted-for--plural": "Glasali ZA",
@@ -67,6 +67,7 @@
   "sort-by--date": "Datumu",
   "mps": "Zastupnice",
   "party": "Klubovi",
+  "parties": "Klubovi",
   "time-period": "Vremensko razdoblje",
   "session-type": "Vrsta sjednice",
   "no-results": "Bez rezultata.",
@@ -78,6 +79,7 @@
   "absent--f": "Odsutna",
   "absent--m": "Odsutan",
   "absent--plural": "Odsutni",
+  "no-term": "Bez mandata",
   "inequality": "Nejedinstvenost",
   "everybody": "Svi",
   "show": "Prikaži",
@@ -129,7 +131,7 @@
     "ballot--against--m": "Glasao je PROTIV {title}",
     "ballot--against--f": "Glasala je PROTIV {title}",
     "ballot--absent--m": "Nije glasao za {title}",
-    "ballot--absent--f": "Nije glasala za {title}",
+    "ballot--absent--f": "NIJE glasala za {title}",
     "ballot--abstain--m": "SUZDRŽAO se od glasanja o {title}",
     "ballot--abstain--f": "SUZDRŽALA se od glasanja o {title}",
     "speech--m": "Govorio na: {session}",
@@ -173,6 +175,6 @@
     "word-groups": "Grupe riječi"
   },
   "frame": {
-    "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
+    "show-in-context": "Pokaži karticu u kontekstu web stranice parlametar.hr"
   }
 }
