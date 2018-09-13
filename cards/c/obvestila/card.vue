@@ -1,5 +1,10 @@
 <template>
-  <transparent-wrapper :id="$options.cardData.cardData._id" :card-url="url" :header-config="headerConfig" :og-config="ogConfig">
+  <transparent-wrapper
+    :id="$options.cardData.cardData._id"
+    :card-url="url"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
 
     <div class="headernew">
       <div class="line"></div>
@@ -29,28 +34,15 @@
     </div>
 
     <div class="content">
-      <div
-        v-if="currentStep === 1"
-        class="step step1"
-      >
+      <div v-if="currentStep === 1" class="step step1">
         <div class="narrow-inner-container">
           <div class="ainnerbig">
             <h2 v-t="'add_trigger'"></h2>
             <div class="input-group search1">
-              <input
-                v-model="keyword"
-                type="text"
-                name="keyword"
-                class="form-control simplebox keyword"
-                @keyup.enter="firstAction"
-              >
+              <input v-model="keyword" type="text" name="keyword" class="form-control simplebox keyword" @keyup.enter="firstAction">
 
               <div class="input-group-btn" style="padding-left: 10px;">
-                <div
-                  v-t="'add'"
-                  @click="firstAction"
-                  class="action btn btn-default naprej"
-                ></div>
+                <div v-t="'add'" @click="firstAction" class="action btn btn-default naprej"></div>
               </div>
             </div>
 
@@ -77,10 +69,7 @@
 
 
       </div>
-      <div
-        v-if="currentStep === 2"
-        class="step step2"
-      >
+      <div v-if="currentStep === 2" class="step step2">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
             <h2 v-t="'steps[1].textfirst'" class="left"></h2>
@@ -109,10 +98,7 @@
           </div>
         </div>
       </div>
-      <div
-        v-if="currentStep === 3"
-        class="step step3"
-      >
+      <div v-if="currentStep === 3" class="step step3">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
             <h2 class="left">{% trans 'Kako pogosto naj ti pišemo' %}</h2>
@@ -142,10 +128,7 @@
         </div>
 
       </div>
-      <div
-        v-if="currentStep === 4"
-        class="step step4"
-      >
+      <div v-if="currentStep === 4" class="step step4">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
             <h2>{% trans 'Samo še tvoj e-naslov' %}</h2>
@@ -164,10 +147,7 @@
           </div>
         </div>
       </div>
-      <div
-        v-if="currentStep === 5"
-        class="step step5"
-      >
+      <div v-if="currentStep === 5" class="step step5">
         <div class="narrow-inner-container">
           <div class="ainnersmall">
             <h2><img src="https://obvestila.parlameter.si/static/yij.png">{% trans ' Zabeleženo!' %}</h2>
@@ -194,69 +174,69 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import TransparentWrapper from 'components/TransparentWrapper.vue';
+  import common from 'mixins/common';
+  import TransparentWrapper from 'components/TransparentWrapper.vue';
 
-export default {
-  // TODO: remove eslint comment
-  // eslint-disable-next-line vue/name-property-casing
-  name: 'Obvestila',
-  components: {
-    TransparentWrapper,
-  },
-  mixins: [common],
-  data() {
-    return {
-      currentStep: 1,
-      keyword: '',
-      data: this.$options.cardData.data,
-      headerConfig: {
-        // TODO: fix this when developing card
-        // best if you include a mixin from 'mixins/altHeaders'
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$t('card.title'),
+  export default {
+    // TODO: remove eslint comment
+    // eslint-disable-next-line vue/name-property-casing
+    name: 'Obvestila',
+    components: {
+      TransparentWrapper,
+    },
+    mixins: [common],
+    data() {
+      return {
+        currentStep: 1,
+        keyword: '',
+        data: this.$options.cardData.data,
+        headerConfig: {
+          // TODO: fix this when developing card
+          // best if you include a mixin from 'mixins/altHeaders'
+          circleIcon: 'og-list',
+          heading: '&nbsp;',
+          subheading: '7. sklic parlamenta',
+          alternative: this.$options.cardData.cardData.altHeader === 'true',
+          title: this.$t('card.title'),
+        },
+        ogConfig: {
+          // TODO: fix this when developing card
+          // best if you include a mixin from 'mixins/ogImages'
+        },
+      };
+    },
+
+    computed: {
+      emailValid() {
+        return this.validateEmail(this.email);
       },
-      ogConfig: {
-        // TODO: fix this when developing card
-        // best if you include a mixin from 'mixins/ogImages'
+    },
+
+    methods: {
+      validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
       },
-    };
-  },
-
-  computed: {
-    emailValid() {
-      return this.validateEmail(this.email);
+      firstAction() {
+        if (this.keyword !== '') {
+          this.currentStep += 1;
+        }
+      },
     },
-  },
-
-  methods: {
-    validateEmail(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    },
-    firstAction() {
-      if (this.keyword !== '') {
-        this.currentStep += 1;
-      }
-    },
-  },
-};
+  };
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
+  @import '~parlassets/scss/colors';
 
-.headernew {
+  .headernew {
     position: relative;
     padding-bottom: 70px;
     max-width: 700px;
     margin: auto;
-}
+  }
 
-.headernew .circlebg {
+  .headernew .circlebg {
     position: relative;
     z-index: 10;
     background: #f0f0f0;
@@ -273,45 +253,45 @@ export default {
     box-shadow: none;
     border: 1px solid #c8c8c8;
     color: #c8c8c8;
-}
+  }
 
-.headernew .line {
+  .headernew .line {
     position: absolute;
     border-bottom: 1px solid #c8c8c8;
     height: 1px;
     line-height: 1px;
     width: 100%;
     top: 12px;
-}
+  }
 
-.headernew .hstepboxnew {
+  .headernew .hstepboxnew {
     text-transform: uppercase;
     width: 24.5%;
     display: inline-block;
     overflow: hidden;
     padding-top: 2px;
     text-align: center;
-}
+  }
 
-.headernew .circlebgtext {
-  color: #c8c8c8;
-}
+  .headernew .circlebgtext {
+    color: #c8c8c8;
+  }
 
-.headernew .glyphicon {
+  .headernew .glyphicon {
     display: none;
-}
+  }
 
-.headernew .hstepboxnew.act {
+  .headernew .hstepboxnew.act {
     cursor: pointer;
-}
+  }
 
-.headernew.success .circlebg,
-.headernew .done .circlebg {
+  .headernew.success .circlebg,
+  .headernew .done .circlebg {
     display: none;
-}
+  }
 
-.headernew.success .glyphicon,
-.headernew .done .glyphicon {
+  .headernew.success .glyphicon,
+  .headernew .done .glyphicon {
     box-shadow: none;
     border: 1px solid #009cdd;
     color: #ffffff;
@@ -323,92 +303,94 @@ export default {
     border-radius: 50%;
     display: inline-block;
     font-size: 12px;
-    margin-bottom:10px;
-}
+    margin-bottom: 10px;
+  }
 
-.headernew .act .circlebg {
+  .headernew .act .circlebg {
     background: #f0f0f0;
     border: 1px solid #009cdd;
     box-shadow: none;
     color: #009cdd;
-}
-.headernew .act .circlebgtext{
-    color: #009cdd;
-}
+  }
 
-.headernew .fakeleft,
-.headernew .fakeright {
+  .headernew .act .circlebgtext {
+    color: #009cdd;
+  }
+
+  .headernew .fakeleft,
+  .headernew .fakeright {
     width: 65px;
     background: #f0f0f0;
     height: 10px;
     position: absolute;
     top: 5px;
-}
+  }
 
-.headernew .fakeright {
+  .headernew .fakeright {
     right: 0;
     width: 70px;
-}
+  }
 
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
     .headernew .hstepboxnew {
-        font-size: 12px;
+      font-size: 12px;
     }
-}
+  }
 
-@media (max-width: 510px) {
+  @media (max-width: 510px) {
     .headernew .hstepboxnew {
-        font-size: 10px;
+      font-size: 10px;
     }
 
 
-}
+  }
 
-@media (max-width: 992px) {
+  @media (max-width: 992px) {
     .headernew .fakeleft {
-        width: 65px;
+      width: 65px;
     }
 
     .headernew .fakeright {
-        width: 75px;
+      width: 75px;
     }
-}
+  }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .headernew .fakeleft {
-        width: 57px;
+      width: 57px;
     }
 
     .headernew .fakeright {
-        width: 57px;
+      width: 57px;
     }
-}
+  }
 
-@media (max-width: 480px) {
+  @media (max-width: 480px) {
     .headernew .fakeleft {
-        width: 45px;
+      width: 45px;
     }
 
     .headernew .fakeright {
-        width: 49px;
+      width: 49px;
     }
-}
+  }
 
-@media (max-width: 350px) {
+  @media (max-width: 350px) {
     .headernew .fakeleft {
-        width: 36px;
+      width: 36px;
     }
 
     .headernew .fakeright {
-        width: 36px;
+      width: 36px;
     }
-}
-/*************************/
-.radio {
+  }
+
+  /*************************/
+  .radio {
     display: none;
-}
+  }
 
-.radio + label {
+  .radio+label {
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -420,9 +402,9 @@ export default {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+  }
 
-.radio + label:before {
+  .radio+label:before {
     border: 1px solid #c8c8c8;
     border-radius: 50%;
     box-sizing: border-box;
@@ -432,58 +414,58 @@ export default {
     position: absolute;
     top: 0;
     width: 22px;
-}
+  }
 
-.radio:checked + label:before {
+  .radio:checked+label:before {
     background-position: 4px 4px;
     /*background-image: url('data:image/svg+xml;utf8,<svg version="1.1"      xmlns="http://www.w3.org/2000/svg"      xmlns:xlink="http://www.w3.org/1999/xlink"      x="0px" y="0px"      enable-background="new 0 0 5 2"      xml:space="preserve"      viewBox="0 0 5 2"      preserveAspectRatio="xMinYMid slice">   <circle cx="1" cy="1" r="1" fill="#009cdd"/> </svg>');*/
     background-color: #009cdd;
     border: 2px solid #eaeaea;
     background-size: 12px 12px;
     background-repeat: no-repeat;
-}
+  }
 
-.checkbox + label {
+  .checkbox+label {
     font-size: 14px;
-}
+  }
 
-/*************************/
+  /*************************/
 
-.step {
+  .step {
     display: block;
-}
+  }
 
-h2 {
+  h2 {
     font-weight: 500;
     color: #525252;
     text-align: center;
-}
+  }
 
-label {
+  label {
     color: #525252;
-}
+  }
 
-.ainnerbig {
+  .ainnerbig {
     width: 500px;
     text-align: left;
     display: inline-block;
-}
+  }
 
-.ainnersmall {
+  .ainnersmall {
     width: 370px;
     text-align: left;
     display: inline-block;
-}
+  }
 
-.step1 p {
+  .step1 p {
     display: inline-block;
     float: left;
     width: 85%;
     font-size: 16px;
     font-family: "Roboto Slab", sans-serif;
-}
+  }
 
-.step1 span {
+  .step1 span {
     display: inline-block;
     float: left;
     width: 15%;
@@ -492,9 +474,9 @@ label {
     text-align: left;
     font-family: "Roboto Slab", sans-serif;
 
-}
+  }
 
-.form-control {
+  .form-control {
     border-right: 1px solid #c8c8c8;
     border-radius: 0;
     border-right: medium none;
@@ -502,9 +484,9 @@ label {
     height: 50px;
     border-color: #c8c8c8;
     border-right: none;
-}
+  }
 
-.naprej {
+  .naprej {
     margin: auto;
     position: relative;
     width: auto;
@@ -522,9 +504,9 @@ label {
     height: 50px;
     -webkit-transition: border-color 0.15s;
     transition: border-color 0.15s;
-}
+  }
 
-.nazaj {
+  .nazaj {
     margin: auto;
     position: relative;
     width: auto;
@@ -540,17 +522,17 @@ label {
     height: 50px;
     -webkit-transition: border-color 0.15s;
     transition: border-color 0.15s;
-}
+  }
 
-.btn.w50 {
+  .btn.w50 {
     width: 49%;
-}
+  }
 
-.nazaj:focus {
+  .nazaj:focus {
     outline: none;
-}
+  }
 
-.disabled {
+  .disabled {
     margin: auto;
     position: relative;
     width: auto;
@@ -568,45 +550,43 @@ label {
     height: 50px;
     -webkit-transition: border-color 0.15s;
     transition: border-color 0.15s;
-}
+  }
 
-ul {
+  ul {
     list-style: none;
     margin: 20px 0 0 0px;
     padding: 0;
-}
+  }
 
-ul li {
+  ul li {
     text-align: left;
     margin-bottom: 20px;
-}
+  }
 
-.searchinfo {
+  .searchinfo {
     top: 15px;
     right: -30px;
     text-align: center;
-}
+  }
 
-.help-info {
+  .help-info {}
 
-}
-
-.help-info .searchinfo {
+  .help-info .searchinfo {
     display: inline-block;
     position: unset;
     margin-left: 10px;
-}
+  }
 
-.top50 {
+  .top50 {
     margin-top: 50px;
-}
+  }
 
-.header {
+  .header {
     padding-top: 20px;
     padding-bottom: 70px;
-}
+  }
 
-.header .hstepbox {
+  .header .hstepbox {
     text-transform: uppercase;
     color: #009cdd;
     width: 24.5%;
@@ -614,13 +594,13 @@ ul li {
     overflow: hidden;
     float: left;
     padding-top: 2px;
-}
+  }
 
-.header .hstepbox.act {
+  .header .hstepbox.act {
     cursor: pointer;
-}
+  }
 
-.header .circlebg {
+  .header .circlebg {
 
     box-shadow: 0px 0px 2px #009cdd;
     color: #009cdd;
@@ -634,14 +614,14 @@ ul li {
     float: left;
     margin-bottom: 10px;
 
-}
+  }
 
-.header .glyphicon {
+  .header .glyphicon {
     display: none;
-}
+  }
 
-.header .circlebglineleft,
-.header .circlebglineright {
+  .header .circlebglineleft,
+  .header .circlebglineright {
     background: #009cdd;
     height: 1px;
     display: inline-block;
@@ -649,54 +629,54 @@ ul li {
     float: left;
     margin-top: 9px;
     margin-bottom: 20px;
-}
+  }
 
-.header .hstepbox .circlebglineleft.nobg,
-.header .hstepbox .circlebglineright.nobg,
-.header .hstepbox.grey .circlebglineright.nobg {
+  .header .hstepbox .circlebglineleft.nobg,
+  .header .hstepbox .circlebglineright.nobg,
+  .header .hstepbox.grey .circlebglineright.nobg {
     background: none;
-}
+  }
 
-/* .header .greybg{*/
-/*background: grey;*/
-/*}*/
-/* .header .greycolor{*/
-/*color: grey;*/
-/*box-shadow: 0px 0px 2px grey;*/
-/*}*/
-.header .grey {
+  /* .header .greybg{*/
+  /*background: grey;*/
+  /*}*/
+  /* .header .greycolor{*/
+  /*color: grey;*/
+  /*box-shadow: 0px 0px 2px grey;*/
+  /*}*/
+  .header .grey {
     color: #dbdbdb;
-}
+  }
 
-.header .hstepbox.grey .circlebglineleft {
+  .header .hstepbox.grey .circlebglineleft {
     background: #dbdbdb;
-}
+  }
 
-.header .hstepbox.grey .circlebg {
+  .header .hstepbox.grey .circlebg {
     color: #dbdbdb;
     box-shadow: 0px 0px 2px #dbdbdb;
-}
+  }
 
-.header .hstepbox.grey .circlebglineright {
+  .header .hstepbox.grey .circlebglineright {
     background: #dbdbdb;
-}
+  }
 
-.header.success .hstepbox {
+  .header.success .hstepbox {
     color: #009cdd;
-}
+  }
 
-.header.success .circlebglineleft {
+  .header.success .circlebglineleft {
     color: #009cdd;
     background: #009cdd;
-}
+  }
 
-.header.success .circlebg,
-.header .done .circlebg {
+  .header.success .circlebg,
+  .header .done .circlebg {
     display: none;
-}
+  }
 
-.header.success .glyphicon,
-.header .done .glyphicon {
+  .header.success .glyphicon,
+  .header .done .glyphicon {
     box-shadow: 0px 0px 2px #009cdd;
     color: #ffffff;
     background: #009cdd;
@@ -708,100 +688,100 @@ ul li {
     border-radius: 50%;
     display: inline-block;
     font-size: 12px;
-}
+  }
 
-.header.success .circlebglineright {
+  .header.success .circlebglineright {
     color: #009cdd;
     background: #009cdd;
-}
+  }
 
-.simplebox {
+  .simplebox {
     border-right: 1px solid #c8c8c8;
-}
+  }
 
-.keyword.error,
-.email.error {
+  .keyword.error,
+  .email.error {
     border: 1px solid red;
-}
+  }
 
-/***********/
+  /***********/
 
-#obvestila.settings h2 {
+  #obvestila.settings h2 {
     text-align: left;
     margin-bottom: 0;
-}
+  }
 
-h2.left {
+  h2.left {
     text-align: left;
-}
+  }
 
-#obvestila.settings .narrow-inner-container {
+  #obvestila.settings .narrow-inner-container {
     text-align: left;
     margin: 0 0 20px 330px;
-}
+  }
 
-#obvestila.settings h2 span {
+  #obvestila.settings h2 span {
     text-transform: lowercase;
-}
+  }
 
-#obvestila.settings .header {
+  #obvestila.settings .header {
     padding-top: 20px;
     padding-bottom: 0;
-}
+  }
 
-.search-dropdown-input {
+  .search-dropdown-input {
     padding: 6px 19px 6px 8px;
     font-size: 12px;
-}
+  }
 
-.search-dropdown-input {
+  .search-dropdown-input {
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-}
+  }
 
-.search-dropdown::after {
+  .search-dropdown::after {
     right: 4px;
     top: 11px;
-}
+  }
 
-.parta1 {
+  .parta1 {
     /*width: 175px;*/
     width: 165px;
     margin-right: 15px;
     display: inline-block;
     float: left;
-}
+  }
 
-.parta1 .search-dropdown-input {
+  .parta1 .search-dropdown-input {
     /*width: 172px;*/
     width: 162px;
-}
+  }
 
-.parta2 {
+  .parta2 {
     /*width: 231px;*/
     width: 231px;
     margin-right: 15px;
     display: inline-block;
     float: left;
-}
+  }
 
-.parta2 .search-dropdown-input {
+  .parta2 .search-dropdown-input {
     /*width: 228px;*/
     width: 228px;
-}
+  }
 
-.parta3 {
+  .parta3 {
     /*width: auto;*/
     width: auto;
     text-align: left;
     display: inline-block;
     float: none;
     font-size: 12px;
-}
+  }
 
-.parta4 {
+  .parta4 {
     /*width: 30px;*/
     width: auto;
     display: inline-block;
@@ -812,9 +792,9 @@ h2.left {
     padding-left: 20px;
     float: right;
     line-height: 36px;
-}
+  }
 
-.parta5 {
+  .parta5 {
     /*width: 30px;*/
     width: 37%;
     display: inline-block;
@@ -822,131 +802,131 @@ h2.left {
     font-size: 12px;
     line-height: 30px;
     cursor: pointer;
-}
+  }
 
-.obvestiladatatpl {
+  .obvestiladatatpl {
     margin-bottom: 10px;
     padding-bottom: 0;
     font-size: 12px;
     line-height: 30px;
     border-bottom: none;
     display: inline-block;
-    width:100%;
-}
+    width: 100%;
+  }
 
-.replaceme {
+  .replaceme {
     color: #525252;
     text-align: left;
-}
+  }
 
-.obvestiladelete .glyphicon {
+  .obvestiladelete .glyphicon {
     border: 2px solid #525252;
     border-radius: 4px;
     padding: 1px;
-}
+  }
 
-.updatedid {
+  .updatedid {
     background: #d8e7ee;
     margin-bottom: 30px;
     display: block;
-}
+  }
 
-.responseText {
+  .responseText {
     background: #d8e7ee;
     margin-bottom: 30px;
     display: block;
     padding: 10px 10px 1px 10px;
     text-align: left;
-}
+  }
 
-.responseText span {
+  .responseText span {
     color: #009cdd;
-}
+  }
 
-#obvestila.settings .search-dropdown-input {
+  #obvestila.settings .search-dropdown-input {
     background: #f0f0f0;
-}
+  }
 
-#obvestila.settings .padding15 {
+  #obvestila.settings .padding15 {
     padding: 10px;
-}
+  }
 
-#obvestila.settings .obvestilaKeyword {
+  #obvestila.settings .obvestilaKeyword {
     font-size: 14px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     width: 109px;
     line-height: 40px;
-}
+  }
 
-#obvestila.settings h4 .glyphicon {
+  #obvestila.settings h4 .glyphicon {
     color: #0ca0de;
     margin-right: 10px;
     font-weight: 100;
-}
+  }
 
-#obvestila.settings h4 {
+  #obvestila.settings h4 {
     font-weight: 300;
-}
+  }
 
-#obvestila.settings hr {
+  #obvestila.settings hr {
     border-top: 1px solid #525252;
     margin: 0 0 30px 0;
-}
+  }
 
-#obvestila.settings .replaceme {
+  #obvestila.settings .replaceme {
     color: #525252;
     display: inline-block;
-}
+  }
 
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
     .header .hstepbox {
-        width: 22.5%;
-        font-size: 12px;
+      width: 22.5%;
+      font-size: 12px;
     }
 
     .header .circlebglineleft,
     .header .circlebglineright {
-        width: 39.7%;
+      width: 39.7%;
     }
-}
+  }
 
-@media (max-width: 510px) {
+  @media (max-width: 510px) {
     .header .hstepbox {
-        width: 23.5%;
-        font-size: 10px;
+      width: 23.5%;
+      font-size: 10px;
     }
 
     .header .circlebglineleft,
     .header .circlebglineright {
-        width: 32.7%;
+      width: 32.7%;
     }
-}
+  }
 
-@media (max-width: 992px) {
+  @media (max-width: 992px) {
     #obvestila.settings .narrow-inner-container {
-        text-align: left;
-        margin: 0 0 20px 0px;
+      text-align: left;
+      margin: 0 0 20px 0px;
     }
 
     .ainnerbig {
-        width: auto;
+      width: auto;
     }
 
     .ainnersmall {
-        width: auto;
+      width: auto;
     }
 
-}
+  }
 
-@media (max-width: 480px) {
+  @media (max-width: 480px) {
     .step1 p {
-        width: 75%;
+      width: 75%;
     }
 
     .step1 span {
-        width: 25%;
+      width: 25%;
     }
-}
+  }
 </style>
