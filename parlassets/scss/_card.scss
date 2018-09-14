@@ -62,14 +62,14 @@
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
 .card-container .card-content.full {
-    $height: 518px;
+    $height: $full-card-height;
     max-height: $height;
     .card-content-front { max-height: $height }
     .card-content-info { max-height: $height }
     @include respond-to(desktop) { height: $height }
 }
 .card-container .card-content.half {
-    $height: 180px;
+    $height: $half-card-height;
     max-height: $height;
     .card-content-front { max-height: $height }
     .card-content-info { max-height: $height }
@@ -454,7 +454,7 @@ input.form-control, textarea.form-control {
 .card-content {
     position: relative;
     z-index: 1;
-    min-height: 180px;
+    min-height: $half-card-height;
 
     &__empty {
         display: flex;
