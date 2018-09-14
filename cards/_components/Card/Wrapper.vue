@@ -2,7 +2,7 @@
   <div :class="['card-container', transitionClass]">
     <card-header :config="headerConfig" :current-back="currentBack" />
 
-    <div :class="['card-content', contentClass]" :style="{ height: contentHeight }">
+    <div :class="['card-content', contentClass]">
 
       <card-info v-if="currentBack === 'info'">
         <slot name="info" />
@@ -73,10 +73,6 @@ export default {
     },
     ogConfig: {
       type: Object,
-      default: null,
-    },
-    contentHeight: {
-      type: String,
       default: null,
     },
   },
