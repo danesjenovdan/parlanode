@@ -115,8 +115,8 @@ export default {
       margin-top: -5px;
       margin-bottom: -5px;
       font-size: 16px;
+      font-weight: 300;
       a {
-        font-weight: 300;
         @include respond-to(mobile) {
           font-size: 14px;
         }
