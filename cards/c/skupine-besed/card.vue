@@ -347,4 +347,9 @@ export default {
     margin-top: 6px;
   }
 }
+#c_skupine-besed {
+  /deep/ .card-content {
+    min-height: 660px;
+  }
+}
 </style>

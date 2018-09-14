@@ -428,6 +428,10 @@ export default {
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/helper';
 
+#c_primerjalnik /deep/ .card-content {
+  min-height: 660px;
+}
+
 .primerjalnik {
   .primerjalnik-extras {
     margin: 40px 0 -20px;
