@@ -66,11 +66,11 @@ export default {
 
 #person-list {
   overflow-y: auto;
-  height: 518px;
+  height: $full-card-height;
 
   @include respond-to(mobile) {
     height: auto;
-    max-height: 518px;
+    max-height: $full-card-height;
   }
 }
 </style>

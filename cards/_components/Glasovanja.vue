@@ -340,7 +340,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 #card-votes {
-  height: 429px;
+  height: $full-card-height - 89px;
   overflow-y: auto;
 
   @include respond-to(mobile) {

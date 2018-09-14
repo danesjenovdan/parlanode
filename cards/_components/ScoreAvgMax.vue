@@ -4,7 +4,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    class="card-halfling"
+    content-class="half"
   >
     <slot slot="info" name="info"></slot>
 
