@@ -14,8 +14,8 @@
       "explanation": "Prebroje se sve sjednice i za svaku zastupnicu kluba je li na pojedinoj sjednici bar jednom glasala. Ako jest, smatra se da je bila prisutna toj sjednici. Zbroj svih prisutnih zastupnica kluba na sjednicama HS-a podijeli se brojem svih zastupnica u klubu, a dobiveni rezultat podijeli se brojem sjednica i normalizira (min 1 - max 100)."
     },
     "presence_votes": {
-      "label": "Prisutnost na glasanjima na sjednicama",
-      "titleSuffix": " prema rezultatima analize prisutnosti na glasanjima na sjednicama HS-a",
+      "label": "Prisutnost na glasanjima",
+      "titleSuffix": " prema rezultatima analize prisutnosti na glasanjima",
       "explanation": "Prebroje se sva glasanja, a zatim koliko je zastupnica iz kluba bilo prisutno na pojedinom glasanju. Zbroj svih predanih glasova zastupnica istog kluba podijeli se s brojem zastupnica u klubu, a dobiveni rezultat podijeli se brojem glasanja i normalizira (min 1 - max 100)."
     },
     "number_of_questions": {
