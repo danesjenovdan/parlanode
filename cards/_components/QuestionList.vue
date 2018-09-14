@@ -54,6 +54,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .questions {
   min-height: 100px;
@@ -61,7 +62,7 @@ export default {
   overflow-y: auto;
   max-height: 100%;
   position: relative;
-  height: 518px;
+  height: $full-card-height;
 
   .date {
     font-weight: 500;

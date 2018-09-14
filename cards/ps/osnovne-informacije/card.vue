@@ -244,7 +244,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: 518px;
+  max-height: $full-card-height;
 
   .row {
     display: flex;

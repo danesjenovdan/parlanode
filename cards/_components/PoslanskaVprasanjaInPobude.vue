@@ -401,6 +401,7 @@ export default {
 }
 
 #vprasanja /deep/ .questions {
-  height: 435px;
+  // height: 435px;
+  height: $full-card-height - 83px;
 }
 </style>

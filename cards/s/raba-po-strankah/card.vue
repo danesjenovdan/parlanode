@@ -83,11 +83,11 @@ export default {
 @import '~parlassets/scss/breakpoints';
 
 #pie-chart {
-  height: 518px;
+  height: $full-card-height;
 
   @include respond-to(mobile) {
     height: auto;
-    max-height: 518px;
+    max-height: $full-card-height;
   }
 }
 </style>

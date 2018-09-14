@@ -390,7 +390,7 @@ export default {
 }
 
 #speaks {
-  height: 433px;
+  height: $full-card-height - 83px;
   overflow-x: hidden;
   overflow-y: auto;
   overflow-anchor: none;

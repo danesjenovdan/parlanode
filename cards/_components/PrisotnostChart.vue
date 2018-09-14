@@ -4,6 +4,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    content-class="full"
     @backChange="handleBackChange"
   >
     <slot slot="info" name="info"></slot>
@@ -86,8 +87,8 @@ export default {
         bottom: 0,
         left: 40,
       };
-      const width = 960 - prisotnostMargin.left - prisotnostMargin.right;
-      const height = 400 - prisotnostMargin.top - prisotnostMargin.bottom;
+      const width = 940 - prisotnostMargin.left - prisotnostMargin.right;
+      const height = 460 - prisotnostMargin.top - prisotnostMargin.bottom;
 
       const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
 
@@ -126,7 +127,7 @@ export default {
 
       const svg = d3.select('.prisotnost-chart').append('svg')
         .attr('class', 'prisotnostchart')
-        .attr('viewBox', '0 0 960 400')
+        .attr('viewBox', '0 0 940 460')
         .attr('preserveAspectRatio', 'xMidYMid meet')
         .append('g')
         .attr('transform', `translate(${prisotnostMargin.left},${prisotnostMargin.top})`);

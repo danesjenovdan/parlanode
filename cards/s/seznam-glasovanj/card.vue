@@ -4,6 +4,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    content-class="full"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -129,4 +130,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/breakpoints';
+
+#s_seznam-glasovanj /deep/ #votingCard {
+  height: $full-card-height - 83px;
+}
 </style>

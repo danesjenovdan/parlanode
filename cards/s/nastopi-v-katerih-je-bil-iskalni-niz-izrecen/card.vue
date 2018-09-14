@@ -161,6 +161,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/colors';
+@import '~parlassets/scss/breakpoints';
 
 .infinite-scroll-loader {
   background: $white-hover;
@@ -177,7 +178,7 @@ export default {
 }
 
 .person-list {
-  height: 518px;
+  height: $full-card-height;
   overflow-y: auto;
 
   .person {
