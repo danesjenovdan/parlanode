@@ -157,7 +157,7 @@ export default {
 }
 
 .parlaicon-m, .parlaicon-f {
-  fill: $font-placeholder;
+  fill: $font-default;
 }
 .is-selected {
   .parlaicon-m, .parlaicon-f {
