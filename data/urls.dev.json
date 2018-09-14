@@ -554,6 +554,9 @@
     },
     "1544": {
       "slug": "klarin-ivan"
+    },
+    "1557": {
+      "slug": "mira-pekec-knezevic"
     }
   },
   "base": "http://hr.parlameter.si",
@@ -839,8 +842,8 @@
     },
     "310": {
       "acronym": "ids-pgs-ri",
-      "realAcronym": "IDS + PGS + RI",
-      "slug": "klub-zastupnika-istarskog-demokratskog-sabora-primorsko-goranskog-saveza-liste-za-rijeku"
+      "realAcronym": "IDS, PGS, RI",
+      "slug": "klub-istarskog-demokratskog-sabora-primorsko-goranskog-saveza-liste-za-rijeku"
     },
     "311": {
       "acronym": "odbor-za-ustav-poslovnik-i-politicki-sustav",
@@ -884,8 +887,8 @@
     },
     "319": {
       "acronym": "zivi-zid-snaga",
-      "realAcronym": "Živi zid + SNAGA",
-      "slug": "klub-zastupnika-zivog-zida-i-snaga-e"
+      "realAcronym": "Živi zid, SNAGA",
+      "slug": "klub-zivog-zida-i-snaga-e"
     },
     "320": {
       "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a",
@@ -900,7 +903,7 @@
     "322": {
       "acronym": "sdss",
       "realAcronym": "SDSS",
-      "slug": "klub-zastupnika-samostalne-demokratske-srpske-stranke"
+      "slug": "klub-samostalne-demokratske-srpske-stranke"
     },
     "323": {
       "acronym": "drzavno-sudbeno-vijece-iz-reda-zastupnika",
@@ -909,8 +912,8 @@
     },
     "324": {
       "acronym": "glas-hsu",
-      "realAcronym": "GLAS + HSU",
-      "slug": "klub-zastupnika-gradansko-liberalnog-saveza-i-hrvatske-stranke-umirovljenika"
+      "realAcronym": "GLAS, HSU",
+      "slug": "klub-gradansko-liberalnog-saveza-i-hrvatske-stranke-umirovljenika"
     },
     "325": {
       "acronym": "ph",
@@ -940,7 +943,7 @@
     "330": {
       "acronym": "nhr",
       "realAcronym": "NHR",
-      "slug": "klub-zastupnika-neovisni-za-hrvatsku"
+      "slug": "klub-neovisni-za-hrvatsku"
     },
     "331": {
       "acronym": "hrvatski-sabor",
@@ -954,18 +957,18 @@
     },
     "333": {
       "acronym": "hds-hsls-hdssb",
-      "realAcronym": "HDS + HSLS + HDSSB",
-      "slug": "klub-zastupnika-hrvatske-demokrscanske-stranke-hrvatske-socijalno-liberalne-stranke-i-hrvatskog-demokratskog-saveza-slavonije-i-baranje"
+      "realAcronym": "HDS, HSLS, HDSSB",
+      "slug": "klub-hrvatske-demokrscanske-stranke-hrvatske-socijalno-liberalne-stranke-i-hrvatskog-demokratskog-saveza-slavonije-i-baranje"
     },
     "334": {
       "acronym": "bm-365-reformisti-nezavisni",
-      "realAcronym": "BM 365 + Reformisti + Nezavisni",
-      "slug": "klub-zastupnika-stranke-rada-i-solidarnosti-reformista-i-nezavisnih-zastupnika"
+      "realAcronym": "BM 365, Reformisti, Nezavisni",
+      "slug": "klub-stranke-rada-i-solidarnosti-reformista-i-nezavisnih-zastupnika"
     },
     "335": {
       "acronym": "most",
       "realAcronym": "Most",
-      "slug": "klub-zastupnika-mosta-nezavisnih-lista"
+      "slug": "klub-mosta-nezavisnih-lista"
     },
     "336": {
       "acronym": "manjina",
@@ -975,7 +978,7 @@
     "337": {
       "acronym": "hss",
       "realAcronym": "HSS",
-      "slug": "klub-zastupnika-hrvatske-seljacke-stranke"
+      "slug": "klub-hrvatske-seljacke-stranke"
     },
     "338": {
       "acronym": "otocno-vijece-iz-reda-zastupnika",
@@ -985,12 +988,12 @@
     "339": {
       "acronym": "sdp",
       "realAcronym": "SDP",
-      "slug": "klub-zastupnika-socijaldemokratske-partije-hrvatske"
+      "slug": "klub-socijaldemokratske-partije-hrvatske"
     },
     "340": {
       "acronym": "hns",
       "realAcronym": "HNS",
-      "slug": "klub-zastupnika-hrvatske-narodne-stranke-liberalnih-demokrata"
+      "slug": "klub-hrvatske-narodne-stranke-liberalnih-demokrata"
     },
     "341": {
       "acronym": "hdssb",
@@ -1005,7 +1008,7 @@
     "343": {
       "acronym": "hdz",
       "realAcronym": "HDZ",
-      "slug": "klub-zastupnika-hrvatske-demokratske-zajednice"
+      "slug": "klub-hrvatske-demokratske-zajednice"
     },
     "344": {
       "acronym": "ostali",
@@ -1138,124 +1141,9 @@
       "slug": "ministarstvo-gospodarstva-rada-i-poduzetnistva"
     },
     "413": {
-      "acronym": "temp",
-      "realAcronym": "TEMP",
-      "slug": "klub-nezavisnih-temporary"
-    },
-    "414": {
-      "acronym": "ministarstvo-pravosuda",
-      "realAcronym": "Ministarstvo pravosuđa",
-      "slug": "ministarstvo-pravosuda"
-    },
-    "415": {
-      "acronym": "ministarstvo-zdravstva",
-      "realAcronym": "Ministarstvo zdravstva",
-      "slug": "ministarstvo-zdravstva"
-    },
-    "416": {
-      "acronym": "vlada",
-      "realAcronym": "vlada",
-      "slug": "vlada"
-    },
-    "417": {
-      "acronym": "ministarstvo-mora-prometa-i-infrastrukture",
-      "realAcronym": "Ministarstvo mora, prometa i infrastrukture",
-      "slug": "ministarstvo-mora-prometa-i-infrastrukture"
-    },
-    "418": {
-      "acronym": "ministarstvo-uprave",
-      "realAcronym": "Ministarstvo uprave",
-      "slug": "ministarstvo-uprave"
-    },
-    "419": {
-      "acronym": "ministarstvo-gospodarstva-poduzetnistva-i-obrta",
-      "realAcronym": "Ministarstvo gospodarstva, poduzetništva i obrta",
-      "slug": "ministarstvo-gospodarstva-poduzetnistva-i-obrta"
-    },
-    "420": {
-      "acronym": "ministarstvo-kulture",
-      "realAcronym": "Ministarstvo kulture",
-      "slug": "ministarstvo-kulture"
-    },
-    "421": {
-      "acronym": "ministarstvo-unutarnjih-poslova",
-      "realAcronym": "Ministarstvo unutarnjih poslova",
-      "slug": "ministarstvo-unutarnjih-poslova"
-    },
-    "422": {
-      "acronym": "ministarstvo-drzavne-imovine",
-      "realAcronym": "Ministarstvo državne imovine",
-      "slug": "ministarstvo-drzavne-imovine"
-    },
-    "423": {
-      "acronym": "ministarstvo-financija",
-      "realAcronym": "Ministarstvo financija",
-      "slug": "ministarstvo-financija"
-    },
-    "424": {
-      "acronym": "ministarstvo-znanosti-i-obrazovanja",
-      "realAcronym": "Ministarstvo znanosti i obrazovanja",
-      "slug": "ministarstvo-znanosti-i-obrazovanja"
-    },
-    "425": {
-      "acronym": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije",
-      "realAcronym": "Ministarstvo regionalnoga razvoja i fondova Europske unije",
-      "slug": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije"
-    },
-    "426": {
-      "acronym": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku",
-      "realAcronym": "Ministarstvo za demografiju, obitelj, mlade i socijalnu politiku",
-      "slug": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku"
-    },
-    "427": {
-      "acronym": "ministarstvo-rada-i-mirovinskog-sustava",
-      "realAcronym": "Ministarstvo rada i mirovinskog sustava",
-      "slug": "ministarstvo-rada-i-mirovinskog-sustava"
-    },
-    "428": {
-      "acronym": "ministarstvo-zastite-okolisa-i-energetike",
-      "realAcronym": "Ministarstvo zaštite okoliša i energetike",
-      "slug": "ministarstvo-zastite-okolisa-i-energetike"
-    },
-    "429": {
-      "acronym": "ministarstvo-turizma",
-      "realAcronym": "Ministarstvo turizma",
-      "slug": "ministarstvo-turizma"
-    },
-    "430": {
-      "acronym": "ministarstvo-poljoprivrede",
-      "realAcronym": "Ministarstvo poljoprivrede",
-      "slug": "ministarstvo-poljoprivrede"
-    },
-    "431": {
-      "acronym": "ministarstvo-hrvatskih-branitelja",
-      "realAcronym": "Ministarstvo hrvatskih branitelja",
-      "slug": "ministarstvo-hrvatskih-branitelja"
-    },
-    "432": {
-      "acronym": "ministarstvo-graditeljstva-i-prostornoga-uredenja",
-      "realAcronym": "Ministarstvo graditeljstva i prostornoga uređenja",
-      "slug": "ministarstvo-graditeljstva-i-prostornoga-uredenja"
-    },
-    "433": {
-      "acronym": "ministarstvo-branitelja",
-      "realAcronym": "Ministarstvo branitelja",
-      "slug": "ministarstvo-branitelja"
-    },
-    "434": {
-      "acronym": "ministarstvo-obrane",
-      "realAcronym": "Ministarstvo obrane",
-      "slug": "ministarstvo-obrane"
-    },
-    "435": {
-      "acronym": "ministarstvo-znanosti-obrazovanja-i-sporta",
-      "realAcronym": "Ministarstvo znanosti, obrazovanja i športa",
-      "slug": "ministarstvo-znanosti-obrazovanja-i-sporta"
-    },
-    "436": {
-      "acronym": "ministarstvo-gospodarstva-rada-i-poduzetnistva",
-      "realAcronym": "Ministarstvo gospodarstva, rada i poduzetništva",
-      "slug": "ministarstvo-gospodarstva-rada-i-poduzetnistva"
+      "acronym": "nezavisni",
+      "realAcronym": "Nezavisni",
+      "slug": "klub-nezavisnih"
     }
   },
   "personLink": {

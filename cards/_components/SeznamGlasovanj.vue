@@ -323,7 +323,7 @@ export default {
 @import '~parlassets/scss/colors';
 
 #votingCard {
-  height: 500px;
+  height: 518px;
   overflow-y: auto;
   color: $font-default;
 }
