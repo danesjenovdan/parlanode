@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    :content-class="{'is-loading': loading}"
+    :content-class="['full', {'is-loading': loading}]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -83,3 +83,30 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+#s_raba-skozi-cas {
+  .timelinechart,
+  .timebarchart {
+    flex: 1;
+
+    /deep/ svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /deep/ .p-tabs {
+    height: 100%;
+
+    .p-tabs-content {
+      display: flex;
+      align-items: center;
+
+      .tab-content {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+</style>

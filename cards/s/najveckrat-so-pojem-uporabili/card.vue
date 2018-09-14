@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.cardData._id"
-    :content-class="{'is-loading': loading}"
+    :content-class="['full', {'is-loading': loading}]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"

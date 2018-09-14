@@ -56,11 +56,11 @@ export default {
   },
   props: {
     contentClass: {
-      type: [String, Object],
+      type: [String, Object, Array],
       default: '',
     },
     contentFrontClass: {
-      type: [String, Object],
+      type: [String, Object, Array],
       default: '',
     },
     cardUrl: {

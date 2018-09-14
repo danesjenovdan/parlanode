@@ -50,8 +50,8 @@ function chart(rawData) {
     bottom: 30,
     left: 30,
   };
-  const width = 960 - margin.left - margin.right;
-  const height = 400 - margin.top - margin.bottom;
+  const width = 940 - margin.left - margin.right;
+  const height = 460 - margin.top - margin.bottom;
 
   const SI = d3.locale({
     decimal: ',',
@@ -76,7 +76,7 @@ function chart(rawData) {
 
   const svg = d3.select('.timebarchart').append('svg')
     .attr('class', 'smalldata')
-    .attr('viewBox', '0 0 960 400')
+    .attr('viewBox', '0 0 940 460')
     .attr('preserveAspectRatio', 'xMidYMid meet')
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
