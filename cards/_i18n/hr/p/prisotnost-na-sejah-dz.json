@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisutnost na sjednicama HS-a"
+    "title": "Prisutnost"
   },
   "info": {
-    "lead": "Prisutnost zastupnica na sjednicama HS-a u odnosu na prosječnu i maksimalnu vrijednost.",
+    "lead": "Prisutnost zastupnica u odnosu na prosječnu i maksimalnu vrijednost.",
     "text": "Prebroje se sve sjednice i provjerava se da li je zastupnica glasala na bar jednom glasanju na pojedinoj sjednici. Ako je glasala barem jednom smatra se kako je bila prisutna na sjednici. Broj sjednica na kojima je bila prisutna podijeli se s ukupnim brojem sjednica, a rezultat normalizira (min 1 – max 100)."
   }
 }
