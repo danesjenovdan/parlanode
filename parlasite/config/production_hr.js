@@ -28,7 +28,7 @@ module.exports = {
       },
     },
     tools: {
-      notifications: 'https://obvestila.parlameter.si', // TODO: i18n
+      notifications: 'obavijesti',
       voteComparator: 'komparator-glasanja',
       discord: 'pretrazivac-razjedinjenosti',
       compass: 'saborski-kompas',
