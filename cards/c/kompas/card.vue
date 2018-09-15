@@ -129,6 +129,9 @@ export default {
       };
     }));
 
+    const state = this.$options.cardData.parlaState.people && this.$options.cardData.parlaState.parties
+      ? this.$options.cardData.parlaState : { people: [], parties: [] };
+
     return {
       data: this.$options.cardData.data,
       headerConfig: {
@@ -154,13 +157,16 @@ export default {
       people,
       parties,
       groups,
+      state,
     };
   },
 
   computed: {
     peoplePlaceholder() {
       const numberOfSelectedPeople = this.people.filter(p => p.selected).length;
-      return numberOfSelectedPeople > 0 ? `Izbranih ${numberOfSelectedPeople} poslancev` : 'Izberi poslance';
+      return numberOfSelectedPeople > 0
+        ? this.$t('selected-mps', { num: numberOfSelectedPeople })
+        : this.$t('select-mps');
     },
 
     allItems() {
@@ -168,8 +174,8 @@ export default {
     },
 
     url() {
-      return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/?state={}`;
-    }
+      return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/?state=${JSON.stringify(this.state)}`;
+    },
   },
 
   mounted() {
@@ -253,11 +259,17 @@ export default {
       // create hull
       svg.select(`#_${datum.person.id}`)
         .attr('r', 20)
-        .style('fill', d => `url(#${d.person.gov_id})`)
+        .style('fill', (d) => {
+          return `url(#${d.person.gov_id})`;
+        })
         .classed('turnedon', true)
         .on('click', (d) => {
           this.selectCallback(d.person.id);
         });
+
+      if (this.state.people.indexOf(datum.person.id) === -1) {
+        this.state.people.push(datum.person.id);
+      }
     },
 
     hidePersonPicture(datum) {
@@ -280,6 +292,10 @@ export default {
         .on('click', (d) => {
           this.selectCallback(d.person.id);
         });
+
+      if (this.state.people.indexOf(datum.person.id) !== -1) {
+        this.state.people.splice(this.state.people.indexOf(datum.person.id), 1);
+      }
     },
 
     showPartyPictures(acronym) {
@@ -288,6 +304,10 @@ export default {
       people.forEach((p) => {
         this.showPersonPicture(this.kompasData.find(pp => pp.person.id === p.id));
       });
+
+      if (this.state.parties.indexOf(acronym) === -1) {
+        this.state.parties.push(acronym);
+      }
     },
 
     hidePartyPictures(acronym) {
@@ -298,6 +318,10 @@ export default {
           this.hidePersonPicture(this.kompasData.find(pp => pp.person.id === p.id));
         }
       });
+
+      if (this.state.parties.indexOf(acronym) !== -1) {
+        this.state.parties.splice(this.state.parties.indexOf(acronym), 1);
+      }
     },
 
     zoomIn(datum, scale) {
@@ -399,12 +423,25 @@ export default {
           .attr('x', -20)
           .attr('y', 20)
           .append('image')
-          .attr('xlink:href', `${this.slugs.urls.cdn}/img/people/square/${datum.person.gov_id}.png`)
+          .attr('xlink:href', this.getPersonPortrait(datum.person))
           .attr('width', 40)
           .attr('height', 40)
           .attr('x', 0)
           .attr('y', 0);
       });
+      defs.append('pattern')
+        .attr('id', 'null')
+        .attr('patternUnits', 'userSpaceOnUse')
+        .attr('width', 40)
+        .attr('height', 40)
+        .attr('x', -20)
+        .attr('y', 20)
+        .append('image')
+        .attr('xlink:href', `${this.slugs.urls.cdn}/img/people/square/null.png`)
+        .attr('width', 40)
+        .attr('height', 40)
+        .attr('x', 0)
+        .attr('y', 0);
 
       svg.append('svg')
         .attr('width', 20)
@@ -458,7 +495,19 @@ export default {
           });
       });
 
-      this.$nextTick(() => this.centerCompass());
+      this.$nextTick(() => {
+        this.centerCompass();
+        const self = this;
+        setTimeout(() => {
+          self.state.parties.forEach((id) => {
+            self.selectCallback(id);
+          });
+
+          self.state.people.forEach((id) => {
+            self.selectCallback(id);
+          });
+        }, 1000);
+      });
     },
 
     backChangeCallback(newback) {
