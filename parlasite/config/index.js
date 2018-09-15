@@ -26,6 +26,7 @@ const defaultConfig = {
       media: 'za-medije',
       legal: 'pravno-obvestilo',
       thankYou: 'hvala',
+      error: 'ups',
     },
     sessions: {
       search: {
