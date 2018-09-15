@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find, filter } from 'lodash';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import Toggle from 'components/Toggle.vue';
@@ -217,7 +217,7 @@ export default {
             });
         });
 
-        return this.allTags.filter(tag => validTags.indexOf(tag.id) > -1);
+        return filter(this.allTags, tag => validTags.indexOf(tag.id) > -1);
       },
       set(newTags) {
         this.allTags = this.allTags
@@ -225,17 +225,15 @@ export default {
       },
     },
     selectedTags() {
-      return this.allTags
-        .filter(tag => tag.selected)
+      return filter(this.allTags, tag => tag.selected)
         .map(tag => tag.id);
     },
     selectedClassifications() {
-      return this.allClassifications
-        .filter(classification => classification.selected)
+      return filter(this.allClassifications, classification => classification.selected)
         .map(classification => classification.id);
     },
     selectedOptions() {
-      return this.allOptions.filter(option => option.selected).map(option => option.id);
+      return filter(this.allOptions, option => option.selected).map(option => option.id);
     },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
@@ -277,14 +275,14 @@ export default {
   },
   methods: {
     toggleOption(optionId) {
-      const clickedOption = this.allOptions.filter(option => option.id === optionId)[0];
+      const clickedOption = filter(this.allOptions, option => option.id === optionId)[0];
       clickedOption.selected = !clickedOption.selected;
     },
     getFilteredVotingDays(onlyFilterByText = false) {
       const filterBallots = (ballot) => {
         const tagMatch = onlyFilterByText
           || this.selectedTags.length === 0
-          || ballot.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
+          || filter(ballot.tags, tag => this.selectedTags.indexOf(tag) > -1).length > 0;
         const textMatch = this.textFilter === ''
           || ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
         const optionMatch = onlyFilterByText || this.selectedOptions.length === 0
@@ -294,11 +292,10 @@ export default {
         return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 
-      const votingDays = this.votingDays
+      const votingDays = filter(this.votingDays
         .map(votingDay => ({
           date: votingDay.date,
-          ballots: votingDay.ballots
-            .filter(filterBallots)
+          ballots: filter(votingDay.ballots, filterBallots)
             .map((ballot) => {
               const ballotClone = JSON.parse(JSON.stringify(ballot));
               const form = this.type === 'person' ? this.person.gender : 'plural';
@@ -310,8 +307,7 @@ export default {
 
               return ballotClone;
             }),
-        }))
-        .filter(votingDay => votingDay.ballots.length > 0);
+        })), votingDay => votingDay.ballots.length > 0);
 
       if (this.type === 'party' && this.selectedSort === 'maximum') {
         const sortyByDisunion = (arr) => {
