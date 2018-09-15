@@ -31,7 +31,6 @@ export default {
         {
           id: 'notifications',
           label: this.$t('tools.notifications'),
-          link: sm.tools.notifications,
         },
         {
           id: 'voteComparator',
