@@ -11,6 +11,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~parlassets/scss/colors";
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext');
 
@@ -19,7 +21,7 @@ export default {
   position: relative;
   width: 1200px;
   height: 630px;
-  background: #009cdd;
+  background: $tab-passive;
   font-family: Roboto, sans-serif;
 }
 </style>

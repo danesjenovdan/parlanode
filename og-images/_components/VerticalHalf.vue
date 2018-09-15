@@ -30,7 +30,7 @@ export default {
 }
 
 .vertical-half--bg {
-  background-image: url('https://cdn.parlameter.si/v1/parlassets/img/og-back.png');
+  background-image: url("#{getConfig('urls.cdn')}/img/og-back.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -9,6 +9,7 @@ const renderer = require('vue-server-renderer');
 const { performance } = require('perf_hooks');
 const config = require('../../../config');
 const { takeScreenshot } = require('../../utils/screenshot');
+const data = require('../../data');
 
 const OgRender = mongoose.model('OgRender');
 const OgBuild = mongoose.model('OgBuild');
@@ -80,6 +81,7 @@ async function renderOgImage(cacheData, ogJson) {
   const context = {
     params,
     styleBundle,
+    urls: data.urls,
   };
 
   const html = await rendererInstance.renderToString(context);
