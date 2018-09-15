@@ -20,6 +20,7 @@ module.exports = {
       media: 'za-medije',
       legal: 'pravne-napomene',
       thankYou: 'hvala',
+      error: 'ups',
     },
     sessions: {
       search: {

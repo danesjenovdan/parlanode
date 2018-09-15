@@ -108,7 +108,12 @@
     "business_success_email": "e-pošta",
     "business_success_message": "sporočilo",
     "business_success_send": "POŠLJI",
-    "thank_you": "HVALA!"
+    "thank_you": "HVALA!",
+    "error": "Ups, nekaj je šlo narobe. :(",
+    "choice": "DONACIJA PO IZBIRI",
+    "amount": "količina",
+    "card": "S KARTICO",
+    "monthly": "mesečna donacija"
   },
   "tools": {
     "notifications": {

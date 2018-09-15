@@ -4,34 +4,81 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+var shopData = null;
+
 $(function () {
-    $(".newslettersubscribeButton").click(function () {
-        $(".newslettersubscribe").removeClass('error');
-        if (validateEmail($(".newslettersubscribe").val())) {
+    // $(".newslettersubscribeButton").click(function () {
+    //     $(".newslettersubscribe").removeClass('error');
+    //     if (validateEmail($(".newslettersubscribe").val())) {
 
 
-            var url = 'http://prispevaj.parlameter.si/parlamail/email/';
-            var jqxhr = $.ajax({
-                method: "POST",
-                url: url,
-                data: {email: $(".newslettersubscribe").val()}
-            })
-                .done(function (data) {
+    //         var url = 'http://prispevaj.parlameter.si/parlamail/email/';
+    //         var jqxhr = $.ajax({
+    //             method: "POST",
+    //             url: url,
+    //             data: {email: $(".newslettersubscribe").val()}
+    //         })
+    //             .done(function (data) {
 
-                    if (data.result == 'ALR_in_DB') {
-                        $(".newslettersubscribemsg").html('').addClass("success").html("Mail je že v bazi.");
-                    } else if (data.result == 'saved') {
-                        $(".newslettersubscribemsg").html('').addClass("success").html("HVALA!");
+    //                 if (data.result == 'ALR_in_DB') {
+    //                     $(".newslettersubscribemsg").html('').addClass("success").html("Mail je že v bazi.");
+    //                 } else if (data.result == 'saved') {
+    //                     $(".newslettersubscribemsg").html('').addClass("success").html("HVALA!");
+    //                 }
+    //             })
+    //             .fail(function () {
+    //                 //alert('not yet configured');
+    //             })
+    //             .always(function () {
+    //             });
+    //     } else {
+    //         $(".newslettersubscribe").addClass('error');
+    //     }
+    // });
+
+    $('#startshop').on('click', function() {
+        $.get('https://shop.djnd.si/api/basket/', function(data) {
+            shopData = data;
+        });
+    });
+
+    $('#submitshop').on('click', function() {
+        var data = {
+            "product_id": 7,
+            "quantity": parseInt($('#donation-amount').val(), 10),
+        }
+        
+        $.ajax('https://shop.djnd.si/api/add_to_basket/?order_key=' + shopData.order_key, {
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            type: 'POST',
+            success: function(resp) {
+                console.log(resp);
+
+                var checkoutData = {
+                    "payment_type": "paypal",
+                    "name": "HR donacija",
+                    "address": "Internet!",
+                    "phone": "040433829",
+                    "info": "To je donacija iz hrvaškega Parlametra.",
+                    "email": "vsi@danesjenovdan.si",
+                    "subscription": $('#donation-monthly').prop('checked'),
+                    "delivery_method": "takeover",
+                    "success_url": thankYouUrl,
+                    "fail_url": errorUrl,
+                }
+
+                $.ajax('https://shop.djnd.si/api/checkout/?order_key=' + shopData.order_key, {
+                    data: JSON.stringify(checkoutData),
+                    contentType: 'application/json',
+                    type: 'POST',
+                    success: function(r) {
+                        console.log(r);
+                        document.location.href = r.redirect_url;
                     }
                 })
-                .fail(function () {
-                    //alert('not yet configured');
-                })
-                .always(function () {
-                });
-        } else {
-            $(".newslettersubscribe").addClass('error');
-        }
+            }
+        });
     });
 
 
@@ -45,9 +92,9 @@ $(function () {
         var target = $(this).data("next-target");
         $(this).data("next-target", "");
         if (target) {
-            if (target == '#modal-doniraj-amount') {
-                getppdata();
-            }
+            // if (target == '#modal-doniraj-amount') {
+            //     getppdata();
+            // }
             $(target).modal('show');
         }
     });
@@ -76,6 +123,10 @@ $(function () {
             $("#business-donation-email").addClass('error');
         }
     });
+
+    // $("#donation-monthly").on('click', function() {
+    //     console.log($(this).attr('checked'));
+    // });
 
 
     $("#modal-doniraj-address #address-donation-btn").click(function () {
@@ -117,47 +168,47 @@ $(function () {
     });
 
 
-    function getppdata() {
-        var token;
-        $("#paypal-container").html('');
-        var jqxhr = $.ajax("http://prispevaj.parlameter.si/getBrainToken/")
-            .done(function (data) {
-                token = data.token;
+    // function getppdata() {
+    //     var token;
+    //     $("#paypal-container").html('');
+    //     var jqxhr = $.ajax("http://prispevaj.parlameter.si/getBrainToken/")
+    //         .done(function (data) {
+    //             token = data.token;
 
-                braintree.setup(token, "custom", {
-                    paypal: {
-                        container: "paypal-container",
-                    },
-                    onPaymentMethodReceived: function (response) {
+    //             braintree.setup(token, "custom", {
+    //                 paypal: {
+    //                     container: "paypal-container",
+    //                 },
+    //                 onPaymentMethodReceived: function (response) {
 
-                        $.ajax({
-                            method: "POST",
-                            url: "http://prispevaj.parlameter.si/cardPayPalResponse/",
-                            data: {
-                                nonce: response['nonce'],
-                                email: response.details.email,
-                                money: $("#donation-amount").val(),
-                                purpose: "Donacija parlameter"
-                            }
-                        }).done(function (resp) {
-                            console.log(resp);
-                            if (resp.status == "OK") {
-                                $("#modal-doniraj-card").modal('hide');
-                                $("#modal-doniraj-hvala-donacija").modal('show');
-                            } else {
-                                alert(resp.status);
-                            }
-                        });
-                    }
-                });
+    //                     $.ajax({
+    //                         method: "POST",
+    //                         url: "http://prispevaj.parlameter.si/cardPayPalResponse/",
+    //                         data: {
+    //                             nonce: response['nonce'],
+    //                             email: response.details.email,
+    //                             money: $("#donation-amount").val(),
+    //                             purpose: "Donacija parlameter"
+    //                         }
+    //                     }).done(function (resp) {
+    //                         console.log(resp);
+    //                         if (resp.status == "OK") {
+    //                             $("#modal-doniraj-card").modal('hide');
+    //                             $("#modal-doniraj-hvala-donacija").modal('show');
+    //                         } else {
+    //                             alert(resp.status);
+    //                         }
+    //                     });
+    //                 }
+    //             });
 
-            })
-            .fail(function () {
-                $("#" + urlid).html(urlid + " error");
-            })
-            .always(function () {
-            });
-    }
+    //         })
+    //         .fail(function () {
+    //             $("#" + urlid).html(urlid + " error");
+    //         })
+    //         .always(function () {
+    //         });
+    // }
 
 
     $("#modal-doniraj-card #modal-doniraj-amount-card").click(function () {
