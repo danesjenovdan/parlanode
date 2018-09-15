@@ -12,3 +12,14 @@
     opacity: 0;
   }
 }
+
+#s_seznam-sej .session-list {
+  .item .column,
+  .headers .column {
+    flex: 1 !important;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+}
