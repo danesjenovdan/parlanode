@@ -157,3 +157,7 @@
     vertical-align: bottom;
     color: $link;
 }
+
+#about .legal-text-container a {
+    @include link-hover;
+}
