@@ -10,6 +10,7 @@ export default (context) => {
     ...og,
     context: {
       params: context.params,
+      urls: context.urls,
       env: process.env,
     },
   });

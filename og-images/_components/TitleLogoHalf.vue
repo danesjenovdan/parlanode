@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~parlassets/scss/colors";
+
 .logo-container {
   margin-top: auto;
 
@@ -40,7 +42,7 @@ export default {
 .title-text {
   text-align: center;
   font-size: 48px;
-  color: #003243;
+  color: $font-default;
   flex: 1;
   margin-bottom: 55px;
   display: flex;

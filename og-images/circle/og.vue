@@ -44,16 +44,18 @@ export default {
   },
   methods: {
     getPortraitUrl(image) {
-      return `https://cdn.parlameter.si/v1/parlassets/img/people/square/${image}.png`;
+      return `${this.$root.$options.context.urls.urls.cdn}/img/people/square/${image}.png`;
     },
     getIconUrl(icon) {
-      return `https://cdn.parlameter.si/v1/parlassets/icons/${icon}.svg`;
+      return `${this.$root.$options.context.urls.urls.cdn}/icons/${icon}.svg`;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "~parlassets/scss/colors";
+
 .circle-container {
   margin-top: 20px;
 
@@ -63,7 +65,7 @@ export default {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background-color: #237396;
+    background-color: $tab-passive;
     border: 5px solid #fff;
     overflow: hidden;
 
@@ -77,6 +79,7 @@ export default {
 
     &.img--icon {
       border: none;
+      border-radius: 0;
       padding: 35px;
 
       img {
@@ -87,7 +90,9 @@ export default {
 
     &.img--acronym {
       border: none;
+      border-radius: 0;
       display: flex;
+      width: 100%;
 
       span {
         color: #fff;

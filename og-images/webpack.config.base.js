@@ -2,6 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const sass = require('node-sass');
+const _ = require('lodash');
+const config = require('../config');
 
 process.traceDeprecation = true;
 
@@ -23,6 +26,7 @@ module.exports = currentPath => ({
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -41,6 +45,15 @@ module.exports = currentPath => ({
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
+                functions: {
+                  'getConfig($key)': (key) => {
+                    const value = _.get(config, key.getValue().split('.'));
+                    if (typeof value === 'string') {
+                      return sass.types.String(value);
+                    }
+                    return sass.types.String(key.getValue());
+                  },
+                },
               },
             },
           ],
@@ -52,6 +65,7 @@ module.exports = currentPath => ({
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '~': `${path.resolve(__dirname, currentPath)}`,
+      parlassets: `${path.resolve(__dirname, '..', 'parlassets')}`,
     },
   },
   plugins: [

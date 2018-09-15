@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development NODE_ICU_DATA=node_modules/full-icu nodemon run.js",
     "cards-generate": "node cards/generate.js",
     "cards": "cross-env NODE_ENV=development node cards/build-cross-env.js",
-    "og-images": "node og-images/build.js",
+    "og-images": "cross-env NODE_ENV=development node og-images/build.js",
     "lint": "eslint . --ext js,vue"
   },
   "repository": {
