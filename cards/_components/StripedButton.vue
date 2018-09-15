@@ -72,12 +72,16 @@ export default {
   text-align: center;
   user-select: none;
 
-  // &.lightning-badge:before { top: -16px; }
+  &.has-stripe-on-top {
+    border-top-width: 9px;
+  }
 
-  &.has-stripe-on-top { border-top-width: 9px; }
-  &.has-stripe-on-bottom { border-bottom-width: 9px; }
+  &.has-stripe-on-bottom {
+    border-bottom-width: 9px;
+  }
 
-  &.is-selected, &:hover:not(.is-disabled) {
+  &.is-selected,
+  &:hover:not(.is-disabled) {
     border-color: transparent !important;
     color: $white;
   }
@@ -89,7 +93,7 @@ export default {
   .small-text {
     padding: 0 8px;
     font-size: 10px;
-    line-height: 1em;
+    line-height: 1.2;
 
     @include respond-to(desktop) {
       font-size: 12px;
@@ -99,10 +103,14 @@ export default {
       text-transform: uppercase;
     }
   }
+
   .text {
-    font-size: 24px;
-    line-height: 1em;
-    @include respond-to(desktop) { font-size: 30px; }
+    font-size: 22px;
+    line-height: 1;
+
+    @include respond-to(desktop) {
+      font-size: 24px;
+    }
   }
 
   @each $vote, $color in $proper-vote-colors {

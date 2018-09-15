@@ -16,12 +16,12 @@
             <p-search-dropdown
               v-model="parties"
               :placeholder="partiesPlaceholder"
-              class="filter"
+              class="filter parties"
             />
             <p-search-dropdown
               v-model="districts"
               :placeholder="districtPlaceholder"
-              class="filter"
+              class="filter district"
             />
             <div class="genders filter">
               <striped-icon-button
@@ -437,7 +437,7 @@ export default {
       margin: 0;
     }
 
-    .district-filter  {
+    .filter.district  {
       display: none;
     }
 

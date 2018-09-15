@@ -14,7 +14,6 @@
       </li>
     </ul>
     <div class="blue-button-list-mobile">
-      <label>Izberi analizo</label>
       <div class="select">
         <select
           @change="changeSelection"
@@ -112,7 +111,10 @@ export default {
 
     .select {
       width: 100%;
-      select { width: 100%; }
+
+      select {
+        width: 100%;
+      }
     }
   }
 }
