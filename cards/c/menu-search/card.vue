@@ -117,6 +117,10 @@ export default {
   border: none;
   padding-left: 20px;
 }
+// TODO this needs a better fix
+.search-dropdown /deep/ .search-dropdown-options {
+  border-bottom: none;
+}
 
 .search-dropdown::after {
   content: "\e003";
