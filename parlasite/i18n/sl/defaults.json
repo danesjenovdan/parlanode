@@ -37,6 +37,9 @@
     "body": "Na tej strani so zbrane informacije o Parlametru, objave za medije ter vizualni materiali. Vse je ponujeno v prosto rabo. Neposredna vprašanja in/ali povabila k izjavam oz. intervjujem naslovite na <a href=\"mailto:press@parlameter.si\">press@parlameter.si</a>, odzvali se bomo hitro in z veseljem.",
     "photos": {
       "title": "Slikovno gradivo"
+    },
+    "releases": {
+      "title": "Objave za medije"
     }
   },
   "menu": {
