@@ -107,7 +107,8 @@
     "business_success": "Najlažje, da se o podrobnostih pogovorimo po e-pošti.",
     "business_success_email": "e-pošta",
     "business_success_message": "sporočilo",
-    "business_success_send": "POŠLJI"
+    "business_success_send": "POŠLJI",
+    "thank_you": "HVALA!"
   },
   "tools": {
     "notifications": {
@@ -170,6 +171,7 @@
     "transcript": "Transkript",
     "voting": "Glasovanje",
     "session-list": "Seznam sej",
-    "sessions-search": "Išči seje"
+    "sessions-search": "Išči seje",
+    "thank-you": "Hvala!"
   }
 }

@@ -19,6 +19,7 @@ module.exports = {
       about: 'o-projektu',
       media: 'za-medije',
       legal: 'pravne-napomene',
+      thankYou: 'hvala',
     },
     sessions: {
       search: {

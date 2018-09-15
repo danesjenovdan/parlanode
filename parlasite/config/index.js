@@ -25,6 +25,7 @@ const defaultConfig = {
       about: 'o-projektu',
       media: 'za-medije',
       legal: 'pravno-obvestilo',
+      thankYou: 'hvala',
     },
     sessions: {
       search: {

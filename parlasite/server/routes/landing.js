@@ -62,4 +62,11 @@ router.get(`/${sm.landing.legal}`, ar((render) => {
   });
 }));
 
+router.get(`/${sm.landing.thankYou}`, ar((render) => {
+  render('landing/hvala', {
+    activeMenu: 'landing',
+    pageTitle: i18n('titles.thank-you'),
+  });
+}));
+
 module.exports = router;
