@@ -5,6 +5,7 @@
 <script>
 import d3 from 'd3v3';
 import links from 'mixins/links';
+import getD3Locale from 'i18n/d3locales';
 
 function chart(rawData, component) {
   $('.timelinechart svg').remove();
@@ -106,20 +107,7 @@ function chart(rawData, component) {
   const width = 940 - margin.left - margin.right;
   const height = 460 - margin.top - margin.bottom;
 
-  const SI = d3.locale({
-    decimal: ',',
-    thousands: ' ',
-    grouping: [3],
-    currency: ['EUR', ''],
-    dateTime: '%d. %m. %Y %H:%M',
-    date: '%d. %m. %Y',
-    time: '%H:%M:%S',
-    periods: ['AM', 'PM'],
-    days: ['nedelja', 'ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota'],
-    shortDays: ['ned', 'pon', 'tor', 'sre', 'čet', 'pet', 'sob'],
-    months: ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'],
-    shortMonths: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'avg', 'sep', 'okt', 'nov', 'dec'],
-  });
+  const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
 
   const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%SZ').parse;
   const bisectDate = d3.bisector(d => d.date).left;
@@ -185,7 +173,7 @@ function chart(rawData, component) {
           focus.attr('transform', `translate(${x(data[data.length - 4].date)},${y(d.occurences)})`);
         }
 
-        focus.select('text').text(`${SI.timeFormat('%B %Y')(d.date)} | ${d.occurences}`);
+        focus.select('text').text(`${locale.timeFormat('%B %Y')(d.date)} | ${d.occurences}`);
       }
     }
 
@@ -220,7 +208,7 @@ function chart(rawData, component) {
     const xAxis = d3.svg.axis()
       .scale(x)
       .orient('bottom')
-      .tickFormat(SI.timeFormat('%b %y'));
+      .tickFormat(locale.timeFormat('%b %y'));
 
     svg.append('g')
       .attr('class', 'x axis bigdata')
