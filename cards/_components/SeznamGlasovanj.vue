@@ -33,7 +33,7 @@
               :is="virtualize ? 'virtual-list' : 'div'"
               :size="105"
               :remain="10"
-              :onscroll="($event) => $refs.shadow.check($event.currentTarget)"
+              :onscroll="checkScrollShadow"
               :variable="getVirtualItemHeight"
               class="virtual-list"
             >
@@ -324,6 +324,9 @@ export default {
         }
       }
       return 210 + 15;
+    },
+    checkScrollShadow(event) {
+      this.$refs.shadow.check(event.currentTarget);
     },
   },
 };

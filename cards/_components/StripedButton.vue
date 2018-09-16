@@ -1,5 +1,10 @@
 <template>
-  <div :class="className">
+  <div
+    :class="className"
+    @mouseenter="onMouseEnter"
+    @mouseleave="onMouseLeave"
+    @click="onClick"
+  >
     <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">
       {{ smallText }}
     </div>
@@ -41,15 +46,32 @@ export default {
       validator: value => ['top', 'bottom'].indexOf(value) > -1,
     },
   },
+  data() {
+    return {
+      hovered: false,
+    };
+  },
   computed: {
     className() {
       return [
         'striped-button',
         { 'is-disabled': this.disabled },
         { 'is-selected': this.selected },
+        { 'is-hovered': this.hovered },
         this.color,
         `has-stripe-on-${this.stripePosition}`,
       ];
+    },
+  },
+  methods: {
+    onMouseEnter() {
+      this.hovered = true;
+    },
+    onMouseLeave() {
+      this.hovered = false;
+    },
+    onClick() {
+      this.hovered = false;
     },
   },
 };
@@ -81,7 +103,7 @@ export default {
   }
 
   &.is-selected,
-  &:hover:not(.is-disabled) {
+  &.is-hovered:not(.is-disabled) {
     border-color: transparent !important;
     color: $white;
   }
@@ -118,7 +140,7 @@ export default {
       &.has-stripe-on-top { border-top-color: $color; }
       &.has-stripe-on-bottom { border-bottom-color: $color; }
       &.is-selected { background: $color; }
-      &:hover:not(.is-disabled) { background: map-get($proper-vote-colors-hover, $vote); }
+      &.is-hovered:not(.is-disabled) { background: map-get($proper-vote-colors-hover, $vote); }
     }
   }
 
@@ -127,7 +149,7 @@ export default {
       &.has-stripe-on-top { border-top-color: $color; }
       &.has-stripe-on-bottom { border-bottom-color: $color; }
       &.is-selected { background: $color; }
-      &:hover:not(.is-disabled) { background: map-get($party-colors-hover, $party); }
+      &.is-hovered:not(.is-disabled) { background: map-get($party-colors-hover, $party); }
     }
   }
 
@@ -143,7 +165,7 @@ export default {
       &.has-stripe-on-top { border-top-color: $color; }
       &.has-stripe-on-bottom { border-bottom-color: $color; }
       &.is-selected { background: $color; }
-      &:hover:not(.is-disabled) { background: lighten($color, 10%); }
+      &.is-hovered:not(.is-disabled) { background: lighten($color, 10%); }
     }
   }
 }
