@@ -254,13 +254,16 @@
     }
 }
 .session-logo {
+    $size: 90px;
+    $padding: 10px;
+
     color: $white;
     text-align: center;
-    width: 90px;
-    height: 90px;
+    width: $size;
+    height: $size;
     margin-bottom: 20px;
     display: inline-block;
-    padding: 10px;
+    padding: $padding;
 
     &.backgroundred {
         background-color: $first;
@@ -268,7 +271,7 @@
 
     b {
         display: inline-block;
-        line-height: 90px;
+        line-height: $size - ($padding * 2);
         font-size: 24px;
     }
 }

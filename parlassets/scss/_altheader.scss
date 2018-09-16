@@ -11,20 +11,23 @@
         display: flex;
 
         .session-logo {
+            $size: 80px;
+            $padding: 10px;
+
             display: block;
             float: left;
             margin-right: 15px;
             margin-bottom: 0;
             border: none;
             flex-shrink: 0;
-            width: 80px;
-            height: 80px;
+            width: $size;
+            height: $size;
             background-color: $icon-session;
-            padding: 10px;
+            padding: $padding;
 
             b {
                 font-size: 20px;
-                line-height: 80px;
+                line-height: $size - ($padding * 2);
             }
         }
 
