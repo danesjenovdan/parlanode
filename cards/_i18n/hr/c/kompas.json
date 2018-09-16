@@ -7,6 +7,6 @@
       "Prva matrica može se smatrati zastupnicama koje se nalaze u N-dimenzionalnom prostoru. (N je broj glasanja koja se međusobno uspoređuju odnosno najudaljenija povijest glasanja jedne zastupnice). Algoritam stvara mapiranje iz N dimenzije na 2, pri čemu pokušava održati udaljenost između zastupnica. Što su zastupnice udaljenije na političkom kompasu to se više razlikuje njihova povijest glasanja."
     ]
   },
-  "select-mps": "Izberi poslance",
+  "select-mps": "Odaberi zastupnice",
   "selected-mps": "Izbranih: {num}"
 }
