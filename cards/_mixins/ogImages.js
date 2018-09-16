@@ -77,7 +77,7 @@ export const defaultOgImage = (comp, overrides = {}) => {
   const ogConfig = {
     name: 'circle',
     icon: 'og-list',
-    h2: '7. sklic parlamenta',
+    h2: '',
     title: comp.$t('card.title'),
   };
 
