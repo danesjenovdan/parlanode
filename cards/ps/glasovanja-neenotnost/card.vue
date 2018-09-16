@@ -49,7 +49,6 @@
               :value="allItems"
               :placeholder="$t('search_placeholder')"
               :single="true"
-              :groups="partyGroups"
               @select="selectCallback"
             />
           </div>
@@ -169,11 +168,6 @@ export default {
     groups = groups.concat(namedGroups);
 
     // SEARCH DROPDOWN FOR PEOPLE AND PARTIES
-    const partyGroups = [{
-      label: 'Stranke',
-      items: Object.keys(this.$options.cardData.data).map(key => key),
-    }];
-
     const parties = Object.keys(this.$options.cardData.data)
       .filter(key => this.$options.cardData.data[key].acronym !== this.$t('opposition'))
       .map((key) => {
@@ -187,7 +181,6 @@ export default {
     // SEARCH DROPDOWN END
 
     return {
-      partyGroups,
       parties,
       voteData: [],
       loading: true,
@@ -203,7 +196,14 @@ export default {
   },
   computed: {
     allItems() {
-      return this.parties;
+      return this.groups.map((group) => {
+        return {
+          id: group.acronym,
+          label: group.acronym,
+          selected: group.acronym === this.selectedGroup,
+          colorClass: `${group.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+        };
+      });
     },
     selectedTags() {
       return this.allTags
@@ -281,23 +281,11 @@ export default {
       });
       return Object.keys(groups).map(group => groups[group]);
     },
-    selectCallback(id) {
-      this.parties.forEach((p) => {
-        p.selected = false;
-      });
-
-      this.parties.find(p => p.id === id).selected = !this.parties.find(p => p.id === id).selected;
-
-      this.selectGroup(this.parties.find(p => p.id === id).label);
+    selectCallback(acronym) {
+      this.selectGroup(acronym);
     },
     clearCallback() {
-      this.parties.forEach((p) => {
-        p.selected = false;
-      });
-
-      this.parties.find(p => p.label === this.$t('parliament')).selected = true;
-
-      this.selectGroup(this.$t('parliament'));
+      this.selectGroup(this.groups[0].acronym);
     },
     getFilteredVotingDays(onlyFilterByText = false) {
       if (!this.voteData || this.voteData.length === 0) {
@@ -339,6 +327,7 @@ export default {
         .filter(votingDay => (votingDay.ballots.length > 0));
     },
     selectGroup(acronym) {
+      this.cardData.parlaState.selectedGroup = acronym;
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
     fetchVotesForGroup(acronym) {
