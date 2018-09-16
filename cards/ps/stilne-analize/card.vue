@@ -58,12 +58,20 @@
 <script>
 import common from 'mixins/common';
 import StyleScores from 'components/StyleScores.vue';
+import links from 'mixins/links';
 
 export default {
   name: 'StilneAnalize',
   components: {
     StyleScores,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
+  created() {
+    const { template, data } = this.$options.cardData;
+    template.contextUrl = this.getPartyLink(data.party);
+  },
 };
 </script>

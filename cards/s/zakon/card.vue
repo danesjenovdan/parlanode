@@ -171,6 +171,9 @@ export default {
       };
     },
   },
+  created() {
+    this.$options.cardData.template.contextUrl = this.getLegislationLink(this.data);
+  },
 };
 </script>
 
