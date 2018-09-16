@@ -413,7 +413,7 @@ export default {
         reminder: keyword.reminder,
         mode: keyword.match_mode,
         delete: true,
-        active: false,
+        active: true,
         uid: this.state.uid,
       };
 
@@ -434,7 +434,7 @@ export default {
         reminder,
         mode: keyword.match_mode,
         delete: false,
-        active: false,
+        active: true,
         uid: this.state.uid,
       };
 
