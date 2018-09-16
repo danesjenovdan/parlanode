@@ -4,7 +4,6 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="full"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -47,7 +46,12 @@
       </i18n>
     </div>
 
-    <seznam-glasovanj :data="votes" :filters="filters" @filters-changed="onFiltersChanged" />
+    <seznam-glasovanj
+      :data="votes"
+      :filters="filters"
+      virtualize
+      @filters-changed="onFiltersChanged"
+    />
   </card-wrapper>
 </template>
 
@@ -75,6 +79,7 @@ export default {
     const state = this.$options.cardData.parlaState;
     const text = state && state.text ? state.text : '';
     const tags = state && state.tags ? state.tags : [];
+    const classifications = state && state.classifications ? state.classifications : [];
     const results = state && state.results ? state.results : [];
 
     return {
@@ -82,6 +87,7 @@ export default {
       filters: {
         text,
         tags,
+        classifications,
         results,
       },
     };
@@ -95,6 +101,9 @@ export default {
       }
       if (this.filters.tags.length) {
         state.tags = this.filters.tags;
+      }
+      if (this.filters.classifications.length) {
+        state.classifications = this.filters.classifications;
       }
       if (this.filters.results.length) {
         state.results = this.filters.results;
@@ -130,9 +139,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-
 #s_seznam-glasovanj /deep/ #votingCard {
-  height: $full-card-height - 83px;
+  height: auto;
+  min-height: 500px;
 }
 </style>
