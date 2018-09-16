@@ -64,7 +64,19 @@ export default {
       return (this.data && this.data.facet_counts.facet_ranges.datetime_dt) || {};
     },
     generatedCardUrl() {
-      return `${this.url}?altHeader=true`;
+      const state = {};
+
+      if (this.keywords) {
+        state.query = this.keywords;
+      }
+      if (this.mps) {
+        state.mps = this.mps;
+      }
+      if (this.pgs) {
+        state.pgs = this.pgs;
+      }
+
+      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   mounted() {
