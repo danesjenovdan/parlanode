@@ -21,7 +21,6 @@ module.exports = {
       legal: 'pravne-napomene',
       thankYou: 'hvala',
       error: 'ups',
-      gender: 'gramatika',
     },
     sessions: {
       search: {

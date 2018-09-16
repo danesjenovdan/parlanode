@@ -55,8 +55,7 @@
     "newsletter_submit": "Pošalji",
     "donate": "Doniraj!",
     "press": "Za medije",
-    "legal": "Pravne napomene",
-    "gender": "Gramatički rod"
+    "legal": "Pravne napomene"
   },
   "search_popup": {
     "title": "Kako pretraživati?",
@@ -184,7 +183,6 @@
     "session-list": "Popis sjednica",
     "sessions-search": "Traži sjednice",
     "thank-you": "Hvala!",
-    "ups": ":(",
-    "gender": "Gramatički rod"
+    "ups": ":("
   }
 }

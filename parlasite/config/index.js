@@ -27,7 +27,6 @@ const defaultConfig = {
       legal: 'pravno-obvestilo',
       thankYou: 'hvala',
       error: 'ups',
-      gender: 'gender',
     },
     sessions: {
       search: {
