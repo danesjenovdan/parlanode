@@ -10,7 +10,7 @@
   "about": {
     "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
     "afterlead": "Vizualna rješenja prilagođena korisniku i tehnološki napredni modularni dizajn povećavaju transparentnost djelovanja najvažnije demokratske institucije i omogućuju učinkovit uvid u proces donošenja odluka.",
-    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "videourl": "https://www.youtube.com/embed/lzwpi9ebG48",
     "columns": {
       "first": {
         "title": "Opća javnost",
@@ -55,7 +55,8 @@
     "newsletter_submit": "Pošalji",
     "donate": "Doniraj!",
     "press": "Za medije",
-    "legal": "Pravne napomene"
+    "legal": "Pravne napomene",
+    "gender": "Gramatički rod"
   },
   "search_popup": {
     "title": "Kako pretraživati?",
@@ -183,6 +184,7 @@
     "session-list": "Popis sjednica",
     "sessions-search": "Traži sjednice",
     "thank-you": "Hvala!",
-    "ups": ":("
+    "ups": ":(",
+    "gender": "Gramatički rod"
   }
 }
