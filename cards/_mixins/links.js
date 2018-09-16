@@ -71,7 +71,7 @@ export default {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
       const url = `${slugs.urls.base}/${sm.landing.sessions}/${sm.sessions.search.base}`;
       const query = [
-        term && term.length ? `q=${encodeURIComponent(`"${term}"`)}` : '',
+        term && term.length ? `q=${encodeURIComponent(`${term}`)}` : '',
         mps && mps.length ? `mps=${mps.join(',')}` : '',
         pgs && pgs.length ? `pgs=${pgs.join(',')}` : '',
       ].filter(Boolean).join('&');
