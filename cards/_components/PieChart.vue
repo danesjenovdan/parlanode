@@ -4,6 +4,7 @@
 
 <script>
 /* global query, customUrl */
+import { isFinite } from 'lodash';
 import d3 from 'd3v3';
 
 function chart(rawData, component) {
@@ -51,7 +52,7 @@ function chart(rawData, component) {
         data.push({
           party: firstpiece,
           occurences: secondpiece,
-          percentage: Number.isNaN(secondpiece / sum) ? 0 : Math.round((secondpiece / sum) * 100),
+          percentage: isFinite(secondpiece / sum) ? 0 : Math.round((secondpiece / sum) * 100),
         });
       }
     });

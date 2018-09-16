@@ -413,7 +413,7 @@ export default {
 
   .filter.genders {
     display: flex;
-    flex: 0;
+    flex: 0 1 auto;
 
     .gender {
       width: 40px;
