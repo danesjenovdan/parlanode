@@ -6,7 +6,7 @@ module.exports = {
     data: 'https://data.parlametar.hr/v1',
     isci: 'https://isci.parlametar.hr',
     glej: 'https://glej.parlametar.hr',
-    base: 'https://beta.parlametar.hr',
+    base: 'https://parlametar.hr',
   },
   siteLang: 'hr',
   siteMap: {
