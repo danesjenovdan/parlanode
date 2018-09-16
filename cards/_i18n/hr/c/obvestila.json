@@ -1,6 +1,6 @@
 {
   "trigger": "okidač",
-  "match": "podudarjanje",
+  "match": "podudaranje",
   "interval": "interval",
   "email": "email",
   "add_trigger": "Dodaj okidač",
