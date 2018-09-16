@@ -1,4 +1,5 @@
 {
+  "title": "Parlamentarni kompas",
   "info": {
     "lead": "Pregled zastupnica u sustavu koordinata s obzirom na sličnost njihovog glasanja. Što su više udaljene zastupnice na političkom kompasu, to se povijest njihovog glasanja više razlikuje.",
     "text": [
@@ -8,5 +9,5 @@
     ]
   },
   "select-mps": "Odaberi zastupnice",
-  "selected-mps": "Izbranih: {num}"
+  "selected-mps": "Odabranih: {num}"
 }
