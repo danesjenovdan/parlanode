@@ -319,3 +319,8 @@ $(function() {
   });
 
 });
+
+$(function () {
+  // all links in legal text should open in a new tab
+  $('.legal-text-container a').attr('target', '_blank');
+});
