@@ -206,6 +206,7 @@ export default {
   }
 
   .vote-filters {
+    min-width: 33%; // fix ie
     display: flex;
     margin: 8px 0;
     @include respond-to(desktop) { margin: 0 0 0 30px; }
@@ -216,8 +217,8 @@ export default {
     }
   }
 
-  .result {
-    @include show-for('above-limbo', flex);
+  .result-chart {
+    @include show-for(above-limbo, flex);
   }
 }
 

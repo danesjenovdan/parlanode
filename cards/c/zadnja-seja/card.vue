@@ -149,7 +149,7 @@ hr,
   display: flex;
 
   .word-list {
-    flex: 1;
+    flex: 1 1 auto;
 
     &:first-child {
       margin-right: 20px;

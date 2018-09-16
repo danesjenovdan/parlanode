@@ -89,6 +89,8 @@ export default {
   .timelinechart,
   .timebarchart {
     flex: 1;
+    height: 100%;
+    display: flex;
 
     /deep/ svg {
       width: 100%;
@@ -105,6 +107,7 @@ export default {
 
       .tab-content {
         flex-basis: 100%;
+        height: 100%;
       }
     }
   }

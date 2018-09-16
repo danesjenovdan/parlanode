@@ -287,6 +287,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
 .axis path,
@@ -306,9 +307,15 @@ export default {
 }
 .prisotnost-chart {
     overflow-x: auto;
+    height: 100%;
+
+    @include respond-to(desktop) {
+      display: flex;
+    }
 }
 .prisotnostchart {
     min-width: 870px;
+    min-height: 435px;
     padding-bottom: 10px;
 }
 .prisotnost-chart .domain {
