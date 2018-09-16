@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import d3 from 'd3v3';
 import getD3Locale from 'i18n/d3locales';
 
 export default {
@@ -196,11 +197,11 @@ export default {
 .smalldata .line {
   fill: none;
   stroke-width: 2;
-  stroke: $second;
+  stroke: $first;
 }
 
 .smalldata .dot {
-  fill: $second;
+  fill: $first;
 }
 
 .focus rect {
@@ -212,7 +213,7 @@ export default {
 }
 
 .focus circle {
-  fill: $second;
+  fill: $first;
 }
 
 .tabs-header:hover {
