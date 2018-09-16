@@ -1,5 +1,5 @@
 /* global Vue, VueI18n */
-import { merge } from 'lodash';
+import { merge, assign } from 'lodash';
 /* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';
 import cardJson from 'cardPath/card.json';
@@ -32,5 +32,5 @@ const cardData = {
   siteMap,
 };
 
-window.app = new Vue(Object.assign({}, Card, { cardData, i18n }));
+window.app = new Vue(assign({}, Card, { cardData, i18n }));
 window.app.$mount('#app');

@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { find, filter } from 'lodash';
+import { find, filter, assign } from 'lodash';
 import PSearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import Toggle from 'components/Toggle.vue';
@@ -135,7 +135,7 @@ export default {
   },
   data() {
     const selectFromState = (items, stateItemIds) => (
-      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
+      items.map(item => assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
     );
 
     let allOptions = [{

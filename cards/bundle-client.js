@@ -1,6 +1,6 @@
 /* global Vue, VueI18n */
 /* eslint-disable no-underscore-dangle */
-import { merge } from 'lodash';
+import { merge, assign } from 'lodash';
 /* eslint-disable import/no-unresolved */
 import Card from 'cardPath/card.vue';
 import cardData from 'cardPath/card.json';
@@ -16,6 +16,6 @@ const i18n = new VueI18n({
   },
 });
 
-const app = new Vue(Object.assign({}, Card, { ...window.__INITIAL_STATE__, i18n }));
+const app = new Vue(assign({}, Card, { ...window.__INITIAL_STATE__, i18n }));
 
 app.$mount(`#${cardData._id}`);

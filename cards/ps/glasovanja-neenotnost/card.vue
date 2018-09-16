@@ -103,7 +103,7 @@
 
 <script>
 import { parse as parseDate, format } from 'date-fns';
-import { groupBy, sortBy, zipObject, find } from 'lodash';
+import { groupBy, sortBy, zipObject, find, assign } from 'lodash';
 import Generator from 'components/Generator.vue';
 import ToolsTabs from 'components/ToolsTabs.vue';
 import DateRow from 'components/DateRow.vue';
@@ -363,7 +363,7 @@ export default {
         }
 
         const selectFromState = (items, stateItemIds) => items
-          .map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
+          .map(item => assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
 
         if (this.cardData.parlaState) {
           const state = this.cardData.parlaState;
