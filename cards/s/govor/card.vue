@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import links from 'mixins/links';
 import common from 'mixins/common';
 import { memberTitle } from 'mixins/titles';
 import { sessionHeader } from 'mixins/altHeaders';
@@ -106,6 +107,7 @@ export default {
   },
   mixins: [
     common,
+    links,
     memberTitle,
     sessionHeader,
     sessionOgImage,
@@ -119,6 +121,9 @@ export default {
     generatedCardUrl() {
       return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
     },
+  },
+  created() {
+    this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(this.data.results);
   },
 };
 </script>
