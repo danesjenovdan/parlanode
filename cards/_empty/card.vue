@@ -32,7 +32,7 @@ export default {
         // best if you include a mixin from 'mixins/altHeaders'
         circleIcon: 'og-list',
         heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
+        subheading: '',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
         title: this.$t('card.title'),
       },

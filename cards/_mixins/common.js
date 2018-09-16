@@ -23,6 +23,7 @@ export default {
         (this.$root.$options.cardData.cardData.big ? ' big-card' : '')
         + (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
       contextUrl: this.slugs.urls.base,
+      ogText: this.$t('ogText'),
     };
   },
 };
