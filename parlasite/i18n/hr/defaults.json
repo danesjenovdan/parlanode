@@ -25,7 +25,7 @@
         "paragraph": "Svi podaci su besplatno dostupni kroz dva API sučelja, i sav kôd objavljen je na Githubu. Sve potrebno možete pronaći na <a href=\"https://dev.parlametar.hr\">stranici za programerke</a>, a ako trebate pomoć obratite nam se putem e-maila!"
       }
     },
-    "thanks": "Parlametar je aplikacija koju <a href=\"https://www.gong.hr/hr/\" class=\"funblue-light-hover\"><GONG</a> i institut <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, razvijaju kao hrvatsku verziju parlameter.si sučelja ove slovenske organizacije usredotočene na digitalnu političku participaciju i transparentnost. Hvala NED-u, Google DNI-u i svim pojedinkama koje su pomogle projekt svojim nesebičnim zalaganjem."
+    "thanks": "Parlametar je aplikacija koju <a href=\"https://www.gong.hr/hr/\" class=\"funblue-light-hover\">GONG</a> i institut <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, razvijaju kao hrvatsku verziju parlameter.si sučelja ove slovenske organizacije usredotočene na digitalnu političku participaciju i transparentnost. Hvala NED-u, Google DNI-u i svim pojedinkama koje su pomogle projekt svojim nesebičnim zalaganjem."
   },
   "legal": {
     "title": "Pravne napomene",
@@ -55,8 +55,7 @@
     "newsletter_submit": "Pošalji",
     "donate": "Doniraj!",
     "press": "Za medije",
-    "legal": "Pravne napomene",
-    "gender": "Gramatički rod"
+    "legal": "Pravne napomene"
   },
   "search_popup": {
     "title": "Kako pretraživati?",
@@ -184,7 +183,6 @@
     "session-list": "Popis sjednica",
     "sessions-search": "Traži sjednice",
     "thank-you": "Hvala!",
-    "ups": ":(",
-    "gender": "Gramatički rod"
+    "ups": ":("
   }
 }
