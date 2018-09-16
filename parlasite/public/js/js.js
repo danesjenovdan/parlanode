@@ -7,20 +7,24 @@ function validateEmail(email) {
 var shopData = null;
 
 $(function() {
-  $(".newslettersubscribeButton").click(function() {
+  $('#newsletterform').on('submit', function(e) {
+    e.preventDefault();
+    return false;
+  });
+  $("#submitnewsletteremail").click(function() {
     $(".newslettersubscribe").removeClass('error');
     if (validateEmail($(".newslettersubscribe").val())) {
-      var url = 'https://gong.us2.list-manage.com/subscribe/post-json?u=96ef5b6d1dbe39953a3a1c215&amp;id=ec01d2995e&c=?';
-      // var url = 'http://prispevaj.parlameter.si/parlamail/email/';
+      var url = 'https://gong.us2.list-manage.com/subscribe/post-json?u=96ef5b6d1dbe39953a3a1c215&id=ec01d2995e&c=?';
 
       var jqxhr = $.ajax({
           method: 'GET',
           url: url,
           dataType: 'json',
           contentType: "application/json; charset=utf-8",
-          data: {
-            email: $(".newslettersubscribe").val()
-          }
+          data: $('#newsletterform').serialize()
+          // JSON.stringify({
+          //   email: $(".newslettersubscribe").val()
+          // }),
         })
         .done(function(data) {
           console.log(data);
@@ -36,6 +40,8 @@ $(function() {
   });
 
   $('#submitshop').on('click', function() {
+    $('#submitshop').addClass('hidden');
+    $('#modal-doniraj-amount .nalagalnik').removeClass('hidden');
     var data = {
       "product_id": 7,
       "quantity": parseInt($('#donation-amount').val(), 10),
@@ -57,8 +63,8 @@ $(function() {
           "email": "vsi@danesjenovdan.si",
           "subscription": $('#donation-monthly').prop('checked'),
           "delivery_method": "takeover",
-          "success_url": thankYouUrl,
-          "fail_url": errorUrl,
+          "success_url": donationThankYouUrl,
+          "fail_url": donationErrorUrl,
         }
 
         $.ajax('https://shop.djnd.si/api/checkout/?order_key=' + shopData.order_key, {
@@ -97,7 +103,7 @@ $(function() {
     $("#business-donation-email").removeClass('error');
     if (validateEmail($("#business-donation-email").val())) {
 
-      var url = 'http://prispevaj.parlameter.si/bussines/';
+      var url = 'https://shop.djnd.si/api/business/';
       var jqxhr = $.ajax({
           method: "POST",
           url: url,
@@ -107,13 +113,11 @@ $(function() {
           }
         })
         .done(function(data) {
-          $(".business-donation").html('').addClass("success").html(data.result);
-          btn.hide();
+          $('#modal-doniraj-email').modal('hide');
         })
         .fail(function() {
-
-        })
-        .always(function() {});
+          alert('Ups ... :(')
+        });
     } else {
       $("#business-donation-email").addClass('error');
     }
@@ -122,177 +126,6 @@ $(function() {
   // $("#donation-monthly").on('click', function() {
   //     console.log($(this).attr('checked'));
   // });
-
-
-  $("#modal-doniraj-address #address-donation-btn").click(function() {
-
-    $("#modal-doniraj-address .required").removeClass('error');
-    $("#modal-doniraj-address .required").each(function() {
-      if ($(this).val() == '') {
-        $(this).addClass("error");
-      }
-    });
-    if ($("#modal-doniraj-address .required.error").length > 0) {
-      return false;
-    }
-
-    var btn = $(this);
-
-    var url = 'http://prispevaj.parlameter.si/donateUPN/';
-    var jqxhr = $.ajax({
-        method: "POST",
-        url: url,
-        data: {
-          email: $("#address-donation-email").val(),
-          name: $("#address-donation-name").val(),
-          surname: $("#address-donation-surname").val(),
-          address: $("#address-donation-address").val(),
-          money: $("#donation-amount").val()
-        }
-      })
-      .done(function(data) {
-        $(".address-donation").html('').addClass("success").html(data.result);
-        $(".card-error").hide();
-        btn.hide();
-      })
-      .fail(function() {
-
-      })
-      .always(function() {});
-  });
-
-
-  // function getppdata() {
-  //     var token;
-  //     $("#paypal-container").html('');
-  //     var jqxhr = $.ajax("http://prispevaj.parlameter.si/getBrainToken/")
-  //         .done(function (data) {
-  //             token = data.token;
-
-  //             braintree.setup(token, "custom", {
-  //                 paypal: {
-  //                     container: "paypal-container",
-  //                 },
-  //                 onPaymentMethodReceived: function (response) {
-
-  //                     $.ajax({
-  //                         method: "POST",
-  //                         url: "http://prispevaj.parlameter.si/cardPayPalResponse/",
-  //                         data: {
-  //                             nonce: response['nonce'],
-  //                             email: response.details.email,
-  //                             money: $("#donation-amount").val(),
-  //                             purpose: "Donacija parlameter"
-  //                         }
-  //                     }).done(function (resp) {
-  //                         console.log(resp);
-  //                         if (resp.status == "OK") {
-  //                             $("#modal-doniraj-card").modal('hide');
-  //                             $("#modal-doniraj-hvala-donacija").modal('show');
-  //                         } else {
-  //                             alert(resp.status);
-  //                         }
-  //                     });
-  //                 }
-  //             });
-
-  //         })
-  //         .fail(function () {
-  //             $("#" + urlid).html(urlid + " error");
-  //         })
-  //         .always(function () {
-  //         });
-  // }
-
-
-  $("#modal-doniraj-card #modal-doniraj-amount-card").click(function() {
-
-    $(".card-error").hide();
-    $("#modal-doniraj-card .required").removeClass('error');
-    $("#modal-doniraj-card .required").each(function() {
-      if ($(this).val() == '') {
-        $(this).addClass("error");
-      }
-    });
-    if ($("#modal-doniraj-card .required.error").length > 0) {
-      return false;
-    }
-
-    var token;
-    var jqxhr = $.ajax("http://prispevaj.parlameter.si/getBrainToken/")
-      .done(function(data) {
-        token = data.token;
-
-        var client = new braintree.api.Client({
-          clientToken: token
-        });
-
-        client.verify3DS({
-          amount: $("#donation-amount").val(),
-          creditCard: {
-            number: $("#card-donation-card-number").val(),
-            expirationDate: $("#card-donation-surname").val(),
-            cvv: $("#card-donation-address").val(),
-          }
-        }, function(err, response) {
-
-          if (err) {
-            $(".card-error").show();
-          } else {
-            $(".card-error").hide();
-
-            //Normal
-            if ($("#donation-monthly").is(':checked')) {
-              $.ajax({
-                method: "POST",
-                url: "http://prispevaj.parlameter.si/cardResponse/",
-                data: {
-                  nonce: response['nonce'],
-                  email: $("#card-donation-email").val(),
-                  money: $("#donation-amount").val(),
-                  purpose: "Donacija parlameter"
-                }
-              }).done(function(resp) {
-                console.log(resp);
-                if (resp.status == "OK") {
-
-                  $("#modal-doniraj-card").modal('hide');
-                  $("#modal-doniraj-hvala-donacija").modal('show');
-
-                } else {
-                  alert(resp.status)
-                }
-              });
-            } else {
-
-              $.ajax({
-                method: "POST",
-                url: "http://prispevaj.parlameter.si/responseRecurring/",
-                data: {
-                  nonce: response['nonce'],
-                  email: $("#card-donation-email").val(),
-                  money: $("#donation-amount").val(),
-                  purpose: "Donacija parlameter"
-                }
-              }).done(function(resp) {
-                console.log(resp);
-                if (resp.status == "OK") {
-
-                  $("#modal-doniraj-card").modal('hide');
-                  $("#modal-doniraj-hvala-donacija").modal('show');
-
-
-                } else {
-                  alert(resp.status)
-                }
-              });
-            }
-          }
-        });
-
-      });
-
-  });
 
   // mobile menu
   $('.mobile-menu__button').on('click', function(e) {

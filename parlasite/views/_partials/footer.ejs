@@ -15,7 +15,9 @@
             <label class="control-label">
               <%- i18n('footer.newsletter_sign_up') %></label>
             <div class="input-group newslettersubscribemsg">
-              <input type="email" class="form-control newslettersubscribe simplebox required" name="EMAIL" placeholder="Email">
+              <form id="newsletterform">
+                <input type="email" class="form-control newslettersubscribe simplebox required" name="EMAIL" placeholder="Email">
+              </form>
               <span class="input-group-btn">
                 <button class="btn btn-default newslettersubscribeButton simplebox" type="button" data-toggle="modal" data-target="#modal-newsletter">
                   <%- i18n('footer.newsletter_submit') %></button>
@@ -111,8 +113,33 @@
         </div>
         <div class="modal-footer">
           <div class="col-xs-12">
-            <button type="button" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-doniraj-amount">Želim primati newsletter!</button>
+            <button type="button" id="submitnewsletteremail" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-newsletter-success">Želim primati newsletter!</button>
             <!--data-dismiss="modal" data-next-target="#modal-doniraj-amount"-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-newsletter-success">
+  <div class="modal-dialog modal-center" role="document">
+    <div class="modal-center-wrapper">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-logo">
+            <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="parlameter logo">
+          </div>
+          <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="text-center lead">
+              <p>Hvala!</p>
+            </div>
+            <div class="text-center">
+            <p>Pogledaj u svoj inbox. ;)</p>
+            </div>
           </div>
         </div>
       </div>

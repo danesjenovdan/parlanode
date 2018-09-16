@@ -72,7 +72,7 @@ router.get(`/${sm.landing.thankYou}`, ar((render) => {
 router.get(`/${sm.landing.error}`, ar((render) => {
   render('landing/ups', {
     activeMenu: 'landing',
-    pageTitle: i18n('titles.thank-you'),
+    pageTitle: i18n('titles.ups'),
   });
 }));
 
