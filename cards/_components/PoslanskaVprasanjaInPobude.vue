@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { find, intersection } from 'lodash';
+import { find, intersection, assign } from 'lodash';
 import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
 import { partyOverview } from 'mixins/contextUrls';
@@ -91,7 +91,7 @@ export default {
   },
   data() {
     const selectFromState = (items, stateItemIds) => (
-      items.map(item => Object.assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
+      items.map(item => assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
     );
 
     let allMonths = this.generateMonths(this.$t('months'));

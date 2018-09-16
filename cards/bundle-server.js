@@ -44,6 +44,6 @@ export default (context) => {
   // context.state is passed to the client
   context.state = clientContext;
 
-  const app = new Vue(Object.assign({}, Card, serverContext));
+  const app = new Vue(_.assign({}, Card, serverContext));
   return new Promise(resolve => resolve(app));
 };
