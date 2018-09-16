@@ -137,9 +137,9 @@ export default {
       headerConfig: {
         circleIcon: 'og-kompas',
         heading: '&nbsp;',
-        subheading: '7. sklic parlamenta',
+        subheading: '',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$options.cardData.cardData.name,
+        title: this.$t('card.title'),
       },
       ogConfig: defaultOgImage(this, { icon: 'og-kompas' }),
       margin,

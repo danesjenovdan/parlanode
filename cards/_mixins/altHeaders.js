@@ -81,7 +81,7 @@ export const defaultHeaderConfig = (comp, overrides = {}) => {
   const headerConfig = {
     circleIcon: 'og-list',
     heading: '&nbsp;',
-    subheading: '7. sklic parlamenta',
+    subheading: '',
     alternative: comp.$options.cardData.cardData.altHeader === 'true',
     title: comp.$t('card.title'),
   };
