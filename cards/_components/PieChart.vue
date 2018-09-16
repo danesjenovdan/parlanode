@@ -52,7 +52,7 @@ function chart(rawData, component) {
         data.push({
           party: firstpiece,
           occurences: secondpiece,
-          percentage: isFinite(secondpiece / sum) ? 0 : Math.round((secondpiece / sum) * 100),
+          percentage: !isFinite(secondpiece / sum) ? 0 : Math.round((secondpiece / sum) * 100),
         });
       }
     });
