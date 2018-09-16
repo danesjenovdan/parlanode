@@ -274,15 +274,26 @@ export default {
       return votes;
     },
     processTags() {
-      const allTags = this.data.tags.map(tag => ({ id: tag, label: tag, selected: false }));
+      const allTags = (this.data.tags || []).map(tag => ({ id: tag, label: tag, selected: false }));
+      if (this.filters.tags) {
+        allTags.forEach((t) => {
+          t.selected = this.filters.tags.indexOf(t.id) !== -1;
+        });
+      }
       return allTags;
     },
     processClassifications() {
-      return map(this.data.classifications || {}, (val, key) => ({
+      const allClassifications = map(this.data.classifications || {}, (val, key) => ({
         id: key,
         label: this.$t(`vote_types.${val}`),
         selected: false,
       }));
+      if (this.filters.classifications) {
+        allClassifications.forEach((c) => {
+          c.selected = this.filters.classifications.indexOf(c.id) !== -1;
+        });
+      }
+      return allClassifications;
     },
     toggleResult(resultId) {
       const clickedResult = this.allResults.filter(result => result.id === resultId)[0];
