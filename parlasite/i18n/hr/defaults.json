@@ -114,11 +114,11 @@
     "business_success_message": "poruka",
     "business_success_send": "POŠALJI",
     "thank_you": "HVALA!",
-    "error": "Ups, nekaj je šlo narobe. :(",
-    "choice": "DONACIJA PO IZBIRI",
+    "error": "Ups, nešto se dogodilo.",
+    "choice": "DONACIJA PO IZBORU",
     "amount": "količina",
-    "card": "S KARTICO",
-    "monthly": "mesečna donacija"
+    "card": "KARTICOM",
+    "monthly": "mjesečna donacija"
   },
   "tools": {
     "notifications": {
@@ -182,6 +182,7 @@
     "voting": "Glasanje",
     "session-list": "Popis sjednica",
     "sessions-search": "Traži sjednice",
-    "thank-you": "Hvala!"
+    "thank-you": "Hvala!",
+    "ups": ":("
   }
 }
