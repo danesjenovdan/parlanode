@@ -1,218 +1,219 @@
 <template>
-  <generator>
-    <div slot="generator">
-      <tools-tabs current-tool="voteComparator" />
-    </div>
-    <transparent-wrapper
-      :id="$options.cardData.cardData._id"
-      :card-url="url"
-      :header-config="headerConfig"
-      :og-config="ogConfig"
-    >
-
-      <div class="headernew">
-        <div class="line"></div>
-
-        <div :class="['hstepboxnew', 'hstep1', {'act': currentStep === 1}]">
-          <div class="fakeleft"></div>
-          <div class="circlebg"> 1</div>
-          <div class="glyphicon glyphicon-ok"></div>
-          <div v-t="'trigger'" class="circlebgtext"></div>
-        </div>
-        <div :class="['hstepboxnew', 'hstep2', {'act': currentStep === 2}]">
-          <div class="circlebg"> 2</div>
-          <div class="glyphicon glyphicon-ok"></div>
-          <div v-t="'match'" class="circlebgtext"></div>
-        </div>
-        <div :class="['hstepboxnew', 'hstep3', {'act': currentStep === 3}]">
-          <div class="circlebg"> 3</div>
-          <div class="glyphicon glyphicon-ok"></div>
-          <div v-t="'interval'" class="circlebgtext"></div>
-        </div>
-        <div :class="['hstepboxnew', 'hstep4', {'act': currentStep === 4}]">
-          <div class="circlebg"> 4</div>
-          <div class="glyphicon glyphicon-ok"></div>
-          <div class="fakeright"></div>
-          <div v-t="'email'" class="circlebgtext"></div>
-        </div>
+  <div :id="$options.cardData.cardData._id">
+    <generator>
+      <div slot="generator">
+        <tools-tabs current-tool="voteComparator" />
       </div>
+      <transparent-wrapper
+        :card-url="url"
+        :header-config="headerConfig"
+        :og-config="ogConfig"
+      >
 
-      <div class="content">
-        <div v-if="currentStep === 1" class="step step1">
-          <div class="narrow-inner-container">
-            <div class="ainnerbig">
-              <h2 v-t="'add_trigger'"></h2>
-              <div class="input-group search1">
-                <input v-model="keyword" type="text" name="keyword" class="form-control simplebox keyword" @keyup.enter="firstAction">
+        <div class="headernew">
+          <div class="line"></div>
 
-                <div class="input-group-btn" style="padding-left: 10px;">
-                  <div
-                    v-t="'add'"
-                    class="action btn btn-default naprej"
-                    @click="firstAction"
-                  ></div>
+          <div :class="['hstepboxnew', 'hstep1', {'act': currentStep === 1}]">
+            <div class="fakeleft"></div>
+            <div class="circlebg"> 1</div>
+            <div class="glyphicon glyphicon-ok"></div>
+            <div v-t="'trigger'" class="circlebgtext"></div>
+          </div>
+          <div :class="['hstepboxnew', 'hstep2', {'act': currentStep === 2}]">
+            <div class="circlebg"> 2</div>
+            <div class="glyphicon glyphicon-ok"></div>
+            <div v-t="'match'" class="circlebgtext"></div>
+          </div>
+          <div :class="['hstepboxnew', 'hstep3', {'act': currentStep === 3}]">
+            <div class="circlebg"> 3</div>
+            <div class="glyphicon glyphicon-ok"></div>
+            <div v-t="'interval'" class="circlebgtext"></div>
+          </div>
+          <div :class="['hstepboxnew', 'hstep4', {'act': currentStep === 4}]">
+            <div class="circlebg"> 4</div>
+            <div class="glyphicon glyphicon-ok"></div>
+            <div class="fakeright"></div>
+            <div v-t="'email'" class="circlebgtext"></div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div v-if="currentStep === 1" class="step step1">
+            <div class="narrow-inner-container">
+              <div class="ainnerbig">
+                <h2 v-t="'add_trigger'"></h2>
+                <div class="input-group search1">
+                  <input v-model="keyword" type="text" name="keyword" class="form-control simplebox keyword" @keyup.enter="firstAction">
+
+                  <div class="input-group-btn" style="padding-left: 10px;">
+                    <div
+                      v-t="'add'"
+                      class="action btn btn-default naprej"
+                      @click="firstAction"
+                    ></div>
+                  </div>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col-md-12">
-                  <br>
-                  <br>
-                  <span><img src="https://obvestila.parlameter.si/static/ena.png"> </span>
-                  <p v-t="'steps[0].textfirst'">
-                  </p>
-                </div>
-                <div class="col-md-12">
-                  <br>
-                  <br>
-                  <span><img src="https://obvestila.parlameter.si/static/dva.png"></span>
-                  <p v-t="'steps[0].textsecond'">
-                  </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <br>
+                    <br>
+                    <span><img src="https://obvestila.parlameter.si/static/ena.png"> </span>
+                    <p v-t="'steps[0].textfirst'">
+                    </p>
+                  </div>
+                  <div class="col-md-12">
+                    <br>
+                    <br>
+                    <span><img src="https://obvestila.parlameter.si/static/dva.png"></span>
+                    <p v-t="'steps[0].textsecond'">
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div v-if="currentStep === 2" class="step step2">
-          <div class="narrow-inner-container">
-            <div class="ainnersmall">
-              <h2
-                v-t="'steps[1].textfirst'"
-                class="left"
-              ></h2>
-              <ul>
-                <li>
-                  <div class="exclude-presiding checkbox-twolines">
-                    <input
-                      id="modenatancno"
-                      v-model="matchType"
-                      type="radio"
-                      name="match_mode[]"
-                      value="natancno"
-                      checked="checked"
-                      class="radio"
-                    >
-                    <label for="modenatancno">{{ $t('steps[1].firstbullet') }} <span class="fillkeyword">"{{ keyword }}"</span></label>
-                  </div>
-                </li>
-                <li>
-                  <div class="exclude-presiding checkbox-twolines">
-                    <input
-                      id="modesiroko"
-                      v-model="matchType"
-                      type="radio"
-                      name="match_mode[]"
-                      value="siroko"
-                      class="radio"
-                    >
-                    <label for="modesiroko">{{ $t('steps[1].secondbullet') }} <span class="fillkeyword">{{ keyword }}</span></label>
-                  </div>
-                </li>
-              </ul>
-
-              <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
-                <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-                {{ $t('back') }}
-              </div>
-              <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
-                {{ $t('continue') }}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="currentStep === 3" class="step step3">
-          <div class="narrow-inner-container">
-            <div class="ainnersmall">
-              <h2
-                v-t="'steps[2].textfirst'"
-                class="left"
-              ></h2>
-              <ul>
-                <li>
-                  <div class="exclude-presiding checkbox-twolines">
-                    <input id="reminderevent" type="radio" name="reminder[]" v-model="frequency" value="event" class="radio" checked="checked">
-                    <label v-t="'steps[2].textsecond'" for="reminderevent"></label>
-                  </div>
-                </li>
-                <li>
-                  <div class="exclude-presiding checkbox-twolines">
-                    <input id="reminderday" type="radio" name="reminder[]" v-model="frequency" value="day" class="radio">
-                    <label v-t="'steps[2].textthird'" for="reminderday"></label>
-                  </div>
-                </li>
-                <li>
-                  <div class="exclude-presiding checkbox-twolines">
-                    <input id="reminderweek" type="radio" name="reminder[]" v-model="frequency" value="week" class="radio">
-                    <label v-t="'steps[2].textfourth'" for="reminderweek"></label>
-                  </div>
-                </li>
-              </ul>
-
-              <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
-                <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-                {{ $t('back') }}
-              </div>
-              <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
-                {{ $t('continue') }}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="currentStep === 4" class="step step4">
-          <div class="narrow-inner-container">
-            <div class="ainnersmall">
-              <h2 v-t="'steps[3].textfirst'"></h2>
-
-              <div class="input-group search1">
-                <input
-                  v-model="email"
-                  type="text"
-                  name="email"
-                  class="form-control simplebox email"
-                  required
-                ></input>
+          <div v-if="currentStep === 2" class="step step2">
+            <div class="narrow-inner-container">
+              <div class="ainnersmall">
+                <h2
+                  v-t="'steps[1].textfirst'"
+                  class="left"
+                ></h2>
+                <ul>
+                  <li>
+                    <div class="exclude-presiding checkbox-twolines">
+                      <input
+                        id="modenatancno"
+                        v-model="matchType"
+                        type="radio"
+                        name="match_mode[]"
+                        value="natancno"
+                        checked="checked"
+                        class="radio"
+                      >
+                      <label for="modenatancno">{{ $t('steps[1].firstbullet') }} <span class="fillkeyword">"{{ keyword }}"</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="exclude-presiding checkbox-twolines">
+                      <input
+                        id="modesiroko"
+                        v-model="matchType"
+                        type="radio"
+                        name="match_mode[]"
+                        value="siroko"
+                        class="radio"
+                      >
+                      <label for="modesiroko">{{ $t('steps[1].secondbullet') }} <span class="fillkeyword">{{ keyword }}</span></label>
+                    </div>
+                  </li>
+                </ul>
 
                 <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
                   <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                   {{ $t('back') }}
                 </div>
-                <div class="action btn btn-default naprej top50 w50" @click="submitTrigger">
-                  {{ $t('confirm_trigger') }}
+                <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+                  {{ $t('continue') }}
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div v-if="currentStep === 5" class="step step5">
-          <div class="narrow-inner-container">
-            <div class="ainnersmall">
-              <h2><img :src="`${slugs.urls.cdn}/img/yij.png`">{{ $t('steps[4].textfirst') }}</h2>
+          <div v-if="currentStep === 3" class="step step3">
+            <div class="narrow-inner-container">
+              <div class="ainnersmall">
+                <h2
+                  v-t="'steps[2].textfirst'"
+                  class="left"
+                ></h2>
+                <ul>
+                  <li>
+                    <div class="exclude-presiding checkbox-twolines">
+                      <input id="reminderevent" type="radio" name="reminder[]" v-model="frequency" value="event" class="radio" checked="checked">
+                      <label v-t="'steps[2].textsecond'" for="reminderevent"></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="exclude-presiding checkbox-twolines">
+                      <input id="reminderday" type="radio" name="reminder[]" v-model="frequency" value="day" class="radio">
+                      <label v-t="'steps[2].textthird'" for="reminderday"></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="exclude-presiding checkbox-twolines">
+                      <input id="reminderweek" type="radio" name="reminder[]" v-model="frequency" value="week" class="radio">
+                      <label v-t="'steps[2].textfourth'" for="reminderweek"></label>
+                    </div>
+                  </li>
+                </ul>
 
-              <p class="replaceme">
-                {{ $t('steps[4].textsecond') }} <b>{{ email }}</b> {{ $t('steps[4].textthird') }} {{ keyword }}. {{ $t('steps[4].textfourth') }}
-              </p>
-
-              <div style="text-align: center">
-                <div
-                  v-t="'add_new_trigger'"
-                  class="action btn btn-default naprej top50 w50"
-                  @click="currentStep = 1; keyword = '';"
-                ></div>
+                <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                  <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
+                  {{ $t('back') }}
+                </div>
+                <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+                  {{ $t('continue') }}
+                </div>
               </div>
-
             </div>
           </div>
 
+          <div v-if="currentStep === 4" class="step step4">
+            <div class="narrow-inner-container">
+              <div class="ainnersmall">
+                <h2 v-t="'steps[3].textfirst'"></h2>
 
+                <div class="input-group search1">
+                  <input
+                    v-model="email"
+                    type="text"
+                    name="email"
+                    class="form-control simplebox email"
+                    required
+                  ></input>
+
+                  <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                    <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
+                    {{ $t('back') }}
+                  </div>
+                  <div class="action btn btn-default naprej top50 w50" @click="submitTrigger">
+                    {{ $t('confirm_trigger') }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="currentStep === 5" class="step step5">
+            <div class="narrow-inner-container">
+              <div class="ainnersmall">
+                <h2><img :src="`${slugs.urls.cdn}/img/yij.png`">{{ $t('steps[4].textfirst') }}</h2>
+
+                <p class="replaceme">
+                  {{ $t('steps[4].textsecond') }} <b>{{ email }}</b> {{ $t('steps[4].textthird') }} {{ keyword }}. {{ $t('steps[4].textfourth') }}
+                </p>
+
+                <div style="text-align: center">
+                  <div
+                    v-t="'add_new_trigger'"
+                    class="action btn btn-default naprej top50 w50"
+                    @click="currentStep = 1; keyword = '';"
+                  ></div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
         </div>
-      </div>
-      <!-- Card content goes here -->
-    </transparent-wrapper>
-  </generator>
+        <!-- Card content goes here -->
+      </transparent-wrapper>
+    </generator>
+  </div>
 </template>
 
 <script>
