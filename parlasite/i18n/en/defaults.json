@@ -55,7 +55,8 @@
     "newsletter_submit": "Submit",
     "donate": "Donate!",
     "press": "Press corner",
-    "legal": "Legal notice"
+    "legal": "Legal notice",
+    "gender": "Gramatički rod"
   },
   "search_popup": {
     "title": "How to search?",
@@ -183,6 +184,7 @@
     "session-list": "Seznam sej",
     "sessions-search": "Išči seje",
     "thank-you": "Hvala!",
-    "ups": ":("
+    "ups": ":(",
+    "gender": "Gramatički rod"
   }
 }
