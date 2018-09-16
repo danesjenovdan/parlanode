@@ -3,7 +3,7 @@
     <div class="filters">
       <search-field
         v-model="nameFilter"
-        placeholder="Vsi poslanci"
+        :placeholder="$t('all-mps')"
       />
       <div class="vote-filters">
         <striped-button
