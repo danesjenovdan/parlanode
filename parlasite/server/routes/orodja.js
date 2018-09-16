@@ -12,11 +12,13 @@ router.get('/', ar((render) => {
   });
 }));
 
-router.get(`/${sm.tools.notifications}`, ar((render) => {
+router.get(`/${sm.tools.notifications}`, ar((render, req) => {
   render('orodja/obvestila', {
     activeMenu: 'tools',
     pageTitle: i18n('tools.notifications.title'),
     currentTool: 'obvestila',
+    uid: req.query.uid || false,
+    settings: req.query.settings || false,
   });
 }));
 
