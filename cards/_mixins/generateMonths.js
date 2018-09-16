@@ -1,13 +1,23 @@
+import { range, flatten } from 'lodash';
+
 export default {
   methods: {
     generateMonths(MONTH_NAMES) {
-      const allMonths = [];
-      [2017, 2016, 2015, 2014, 2013].forEach((year) => {
-        [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1].forEach((month) => {
-          allMonths.push({ id: `${year}-${month}`, label: `${MONTH_NAMES[month - 1]} ${year}`, month, year, selected: false });
-        });
+      const date = new Date();
+      const currentYear = date.getFullYear();
+      const currentMonth = date.getMonth() + 1;
+
+      const allMonths = range(2013, currentYear + 1).map((year) => {
+        const months = year === currentYear ? range(1, currentMonth + 1) : range(1, 13);
+        return months.map(month => ({
+          id: `${year}-${month}`,
+          label: `${MONTH_NAMES[month - 1]} ${year}`,
+          month,
+          year,
+          selected: false,
+        }));
       });
-      return allMonths;
+      return flatten(allMonths).reverse();
     },
   },
 };
