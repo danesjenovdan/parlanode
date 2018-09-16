@@ -76,6 +76,7 @@ export default {
     const state = this.$options.cardData.parlaState;
     const text = state && state.text ? state.text : '';
     const tags = state && state.tags ? state.tags : [];
+    const classifications = state && state.classifications ? state.classifications : [];
     const results = state && state.results ? state.results : [];
 
     return {
@@ -83,6 +84,7 @@ export default {
       filters: {
         text,
         tags,
+        classifications,
         results,
       },
       headerConfig: defaultHeaderConfig(this, {}),
@@ -98,6 +100,9 @@ export default {
       }
       if (this.filters.tags.length) {
         state.tags = this.filters.tags;
+      }
+      if (this.filters.classifications.length) {
+        state.classifications = this.filters.classifications;
       }
       if (this.filters.results.length) {
         state.results = this.filters.results;
