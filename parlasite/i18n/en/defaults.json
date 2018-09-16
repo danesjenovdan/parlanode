@@ -37,6 +37,9 @@
     "body": "This page contains info on Parlameter, press releases and visual materials. All of these are free to use. For interviews, direct questions or requests for statements email <a href=\"mailto:press@parlameter.si\">press@parlameter.si</a>.",
     "photos": {
       "title": "Photos"
+    },
+    "releases": {
+      "title": "Objave za medije"
     }
   },
   "menu": {
@@ -109,7 +112,13 @@
     "business_success": "It's best we discuss this over email.",
     "business_success_email": "email",
     "business_success_message": "message",
-    "business_success_send": "SEND"
+    "business_success_send": "SEND",
+    "thank_you": "HVALA!",
+    "error": "Ups, nekaj je šlo narobe. :(",
+    "choice": "DONACIJA PO IZBIRI",
+    "amount": "količina",
+    "card": "S KARTICO",
+    "monthly": "mesečna donacija"
   },
   "tools": {
     "notifications": {
@@ -172,6 +181,7 @@
     "transcript": "Transkript",
     "voting": "Glasovanje",
     "session-list": "Seznam sej",
-    "sessions-search": "Išči seje"
+    "sessions-search": "Išči seje",
+    "thank-you": "Hvala!"
   }
 }
