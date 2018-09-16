@@ -11,7 +11,7 @@
   "add_new_trigger": "Dodaj novi podsjetnik",
   "steps": [{
     "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
-    "textsecond": "MISSING: Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih teles, ti to sporočimo po e-pošti."
+    "textsecond": "Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici HS-a."
   }, {
     "textfirst": "Odaberite način podudaranja",
     "firstbullet": "točno podudaranje:",
@@ -28,5 +28,14 @@
     "textsecond": "Na email adresu",
     "textthird": "poslana prijava za Parlametar obavijesti za ključnu riječ",
     "textfourth": "Pogledaj u inbox!"
-  }]
+  }],
+  "events": {
+    "event": "po događaju",
+    "day": "najviše jednom dnevno",
+    "week": "najviše jednom tjedno"
+  },
+  "modes": {
+    "precise": "točno podudaranje:",
+    "broad": "široko podudaranje:"
+  }
 }
