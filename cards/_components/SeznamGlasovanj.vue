@@ -134,7 +134,7 @@
 </template>
 
 <script>
-import { map } from 'lodash';
+import { map, sortBy } from 'lodash';
 import VirtualList from 'vue-virtual-scroll-list';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
@@ -270,8 +270,7 @@ export default {
 
         return e;
       });
-      votes.sort((a, b) => a.start_time < b.start_time);
-      return votes;
+      return sortBy(votes, 'start_time');
     },
     processTags() {
       const allTags = (this.data.tags || []).map(tag => ({ id: tag, label: tag, selected: false }));
