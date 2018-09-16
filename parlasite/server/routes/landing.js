@@ -76,11 +76,4 @@ router.get(`/${sm.landing.error}`, ar((render) => {
   });
 }));
 
-router.get(`/${sm.landing.gender}`, ar((render) => {
-  render('landing/gender', {
-    activeMenu: 'landing',
-    pageTitle: i18n('titles.gender'),
-  });
-}));
-
 module.exports = router;
