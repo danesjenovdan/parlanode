@@ -89,8 +89,10 @@ import ScrollShadow from 'components/ScrollShadow.vue';
 
 import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
+import { memberTitle, partyTitle } from 'mixins/titles';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
+import { memberSpeeches, partySpeeches } from 'mixins/contextUrls';
 
 import axios from 'axios';
 
@@ -269,6 +271,9 @@ export default {
     },
   },
   created() {
+    (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(this);
+    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+
     if (this.type === 'party') {
       axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
         this.allPeople = response.data.results.map((person) => {

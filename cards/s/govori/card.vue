@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import links from 'mixins/links';
 import common from 'mixins/common';
 import { sessionHeader } from 'mixins/altHeaders';
 import { sessionOgImage } from 'mixins/ogImages';
@@ -133,6 +134,7 @@ export default {
     },
   },
   mixins: [
+    links,
     common,
     sessionHeader,
     sessionOgImage,
@@ -170,6 +172,9 @@ export default {
     if (this.page !== Number(this.data.page)) {
       this.onPageChange(this.page);
     }
+  },
+  created() {
+    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
   },
   methods: {
     onPageChange(newPage) {

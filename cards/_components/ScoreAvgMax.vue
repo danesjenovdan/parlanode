@@ -99,6 +99,8 @@
 
 <script>
 import common from 'mixins/common';
+import { memberOverview, partyOverview } from 'mixins/contextUrls';
+import { memberTitle, partyTitle } from 'mixins/titles';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import PersonPin from 'components/PersonPin.vue';
@@ -110,7 +112,9 @@ export default {
     PersonPin,
     PartyPin,
   },
-  mixins: [common],
+  mixins: [
+    common,
+  ],
   props: {
     cardData: {
       type: Object,
@@ -170,6 +174,10 @@ export default {
       }
       return this.results.maxPG;
     },
+  },
+  created() {
+    (this.type === 'person' ? memberOverview : partyOverview).created.call(this);
+    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
   },
   methods: {
     getBarStyle(key) {

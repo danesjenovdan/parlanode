@@ -83,6 +83,9 @@ export default {
       return `${this.url}${this.$options.cardData.data.session.id}?altHeader=true`;
     },
   },
+  created() {
+    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
+  },
   methods: {
     decodeHTML(html) {
       return html.replace('&shy;', '\u00AD');

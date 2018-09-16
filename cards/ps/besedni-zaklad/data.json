@@ -1,25 +1,27 @@
 {
   "party": {
-    "acronym": "SMC",
+    "acronym": "HDZ",
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 343,
+    "classification": "pg",
+    "name": "Klub Hrvatske demokratske zajednice"
   },
-  "created_at": "03.12.2016",
-  "created_for": "29.11.2016",
+  "created_at": "13.09.2018",
+  "created_for": "01.09.2018",
   "results": {
     "max": {
-      "score": 126.618018829453,
+      "score": 135.058178419579,
       "parties": [
         {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "NHR",
+          "is_coalition": false,
+          "id": 330,
+          "classification": "pg",
+          "name": "Klub Neovisni za Hrvatsku"
         }
       ]
     },
-    "average": 113.55785257075,
-    "score": 124.0
+    "average": 110.430469462439,
+    "score": 117.0
   }
 }
