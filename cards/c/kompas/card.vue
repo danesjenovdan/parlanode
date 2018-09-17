@@ -139,7 +139,7 @@ export default {
         heading: '&nbsp;',
         subheading: '',
         alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$t('card.title'),
+        title: this.$t('title'),
       },
       ogConfig: defaultOgImage(this, { icon: 'og-kompas' }),
       margin,
