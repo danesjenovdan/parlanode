@@ -47,7 +47,6 @@
             <div v-t="'parties'" class="filter-label"></div>
             <p-search-dropdown
               :value="allItems"
-              :placeholder="$t('search_placeholder')"
               :single="true"
               @select="selectCallback"
             />
@@ -268,8 +267,9 @@ export default {
     this.fetchVotesForGroup(this.groups[0].acronym);
   },
   created() {
-    const context = this.$options.cardData;
-    context.template.pageTitle = this.dynamicTitle;
+    const { template, siteMap: sm } = this.$options.cardData;
+    template.pageTitle = this.dynamicTitle;
+    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
   },
   methods: {
     groupBy(array, f) {
@@ -346,7 +346,7 @@ export default {
         for (const classificationKey in response.classifications) {
           this.allClassifications.push({
             id: classificationKey,
-            label: this.$t(response.classifications[classificationKey]),
+            label: this.$t(`vote_types.${response.classifications[classificationKey]}`),
             selected: false,
           });
         }

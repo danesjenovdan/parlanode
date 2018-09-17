@@ -19,6 +19,7 @@
 <script>
 import axios from 'axios';
 import common from 'mixins/common';
+import { search as searchContext } from 'mixins/contextUrls';
 import { searchTitle } from 'mixins/titles';
 import { searchHeader } from 'mixins/altHeaders';
 import { searchOgImage } from 'mixins/ogImages';
@@ -35,6 +36,7 @@ export default {
     searchTitle,
     searchHeader,
     searchOgImage,
+    searchContext,
   ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);

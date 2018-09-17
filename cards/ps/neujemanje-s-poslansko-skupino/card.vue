@@ -18,7 +18,7 @@
 
 <script>
 import common from 'mixins/common';
-import { partyOverview } from 'mixins/contextUrls';
+import { partyVotes } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
 import { partyOgImage } from 'mixins/ogImages';
@@ -28,11 +28,11 @@ export default {
   name: 'NeujemanjeSPoslanskoSkupino',
   components: {
     PersonList,
-    partyOverview,
     partyTitle,
   },
   mixins: [
     common,
+    partyVotes,
     partyHeader,
     partyOgImage,
   ],

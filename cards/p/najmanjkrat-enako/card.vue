@@ -34,7 +34,7 @@
 
 <script>
 import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
+import { memberVotes } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
 import { memberHeader } from 'mixins/altHeaders';
 import { memberOgImage } from 'mixins/ogImages';
@@ -44,11 +44,11 @@ export default {
   name: 'NajmanjkratGlasujejoEnako',
   components: {
     PersonList,
-    memberOverview,
     memberTitle,
   },
   mixins: [
     common,
+    memberVotes,
     memberHeader,
     memberOgImage,
   ],

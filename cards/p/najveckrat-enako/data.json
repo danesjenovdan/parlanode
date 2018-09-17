@@ -1,117 +1,123 @@
 {
   "person": {
-    "is_active": false,
-    "district": [14],
-    "name": "Ivan Hr\u0161ak",
-    "gov_id": "P176",
+    "is_active": true,
+    "district": [2],
+    "name": "Alen Prelec",
+    "gov_id": "1300",
     "gender": "m",
     "party": {
-      "acronym": "DeSUS",
-      "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      "acronym": "SDP",
+      "is_coalition": false,
+      "id": 339,
+      "classification": "pg",
+      "name": "Klub Socijaldemokratske partije Hrvatske"
     },
     "type": "mp",
-    "id": 34,
+    "id": 1300,
     "has_function": false
   },
-  "created_at": "03.05.2018",
-  "created_for": "03.05.2018",
+  "created_at": "06.09.2018",
+  "created_for": "05.09.2018",
   "results": [
     {
       "person": {
-        "is_active": false,
-        "district": [37],
-        "name": "Marija Antonija Kova\u010di\u010d",
-        "gov_id": "P297",
-        "gender": "f",
+        "is_active": true,
+        "district": [9],
+        "name": "\u017deljko Jovanovi\u0107",
+        "gov_id": "1355",
+        "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "classification": "pg",
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
-        "id": 96,
+        "id": 1355,
         "has_function": false
       },
-      "ratio": 25.2784493195291
+      "ratio": 15.3297097167559
     },
     {
       "person": {
-        "is_active": false,
-        "district": [19],
-        "name": "Franc Jur\u0161a",
-        "gov_id": "P122",
+        "is_active": true,
+        "district": [10],
+        "name": "Vedran Babi\u0107",
+        "gov_id": "1390",
         "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "classification": "pg",
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
-        "id": 37,
+        "id": 1390,
         "has_function": false
       },
-      "ratio": 25.4558441227157
+      "ratio": 15.6524758424985
     },
     {
       "person": {
-        "is_active": false,
-        "district": [46],
-        "name": "Uro\u0161 Prikl",
-        "gov_id": "P280",
+        "is_active": true,
+        "district": [3],
+        "name": "Predrag Mati\u0107",
+        "gov_id": "1327",
         "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "classification": "pg",
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
-        "id": 69,
+        "id": 1327,
         "has_function": false
       },
-      "ratio": 26.0
+      "ratio": 16.4012194668567
     },
     {
       "person": {
-        "is_active": false,
-        "district": [40],
-        "name": "Ivan \u0160kodnik",
-        "gov_id": "P286",
+        "is_active": true,
+        "district": [7],
+        "name": "Damir Mateljan",
+        "gov_id": "1326",
         "gender": "m",
         "party": {
-          "acronym": "SMC",
-          "is_coalition": true,
-          "id": 1,
-          "name": "PS Stranka modernega centra"
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "classification": "pg",
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
-        "id": 76,
+        "id": 1326,
         "has_function": false
       },
-      "ratio": 26.0768096208106
+      "ratio": 17.0
     },
     {
       "person": {
-        "is_active": false,
-        "district": [46],
-        "name": "Branislav Raji\u0107",
-        "gov_id": "P281",
+        "is_active": true,
+        "district": [4],
+        "name": "Boris Lalovac",
+        "gov_id": "1339",
         "gender": "m",
         "party": {
-          "acronym": "SMC",
-          "is_coalition": true,
-          "id": 1,
-          "name": "PS Stranka modernega centra"
+          "acronym": "SDP",
+          "is_coalition": false,
+          "id": 339,
+          "classification": "pg",
+          "name": "Klub Socijaldemokratske partije Hrvatske"
         },
         "type": "mp",
-        "id": 70,
+        "id": 1339,
         "has_function": false
       },
-      "ratio": 26.0768096208106
+      "ratio": 17.0880074906351
     }
   ]
 }

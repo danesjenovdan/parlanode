@@ -1,117 +1,123 @@
 {
   "person": {
-    "is_active": false,
-    "district": [14],
-    "name": "Ivan Hr\u0161ak",
-    "gov_id": "P176",
+    "is_active": true,
+    "district": [2],
+    "name": "Alen Prelec",
+    "gov_id": "1300",
     "gender": "m",
     "party": {
-      "acronym": "DeSUS",
-      "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      "acronym": "SDP",
+      "is_coalition": false,
+      "id": 339,
+      "classification": "pg",
+      "name": "Klub Socijaldemokratske partije Hrvatske"
     },
     "type": "mp",
-    "id": 34,
+    "id": 1300,
     "has_function": false
   },
-  "created_at": "03.05.2018",
-  "created_for": "03.05.2018",
+  "created_at": "06.09.2018",
+  "created_for": "05.09.2018",
   "results": [
     {
       "person": {
-        "is_active": false,
-        "district": [64],
-        "name": "Marko Poga\u010dnik",
-        "gov_id": "P196",
+        "is_active": true,
+        "district": [7],
+        "name": "Ivan Vilibor Sin\u010di\u0107",
+        "gov_id": "1288",
         "gender": "m",
         "party": {
-          "acronym": "SDS",
+          "acronym": "\u017divi zid, SNAGA",
           "is_coalition": false,
-          "id": 5,
-          "name": "PS Slovenska Demokratska Stranka"
+          "id": 319,
+          "classification": "pg",
+          "name": "Klub \u017divog zida i SNAGA-e"
         },
         "type": "mp",
-        "id": 65,
+        "id": 1288,
         "has_function": false
       },
-      "ratio": 75.1465235390168
+      "ratio": 28.9482296522603
     },
     {
       "person": {
-        "is_active": false,
-        "district": [70],
-        "name": "Jo\u017ee Tanko",
-        "gov_id": "P077",
+        "is_active": true,
+        "district": [6],
+        "name": "Branimir Bunjac",
+        "gov_id": "1257",
         "gender": "m",
         "party": {
-          "acronym": "SDS",
+          "acronym": "\u017divi zid, SNAGA",
           "is_coalition": false,
-          "id": 5,
-          "name": "PS Slovenska Demokratska Stranka"
+          "id": 319,
+          "classification": "pg",
+          "name": "Klub \u017divog zida i SNAGA-e"
         },
         "type": "mp",
-        "id": 78,
+        "id": 1257,
         "has_function": false
       },
-      "ratio": 74.9199572877614
+      "ratio": 28.6356421265527
     },
     {
       "person": {
-        "is_active": false,
-        "district": [92],
-        "name": "Andrej \u0160ircelj",
-        "gov_id": "P201",
+        "is_active": true,
+        "district": [8],
+        "name": "Miro Bulj",
+        "gov_id": "1373",
         "gender": "m",
         "party": {
-          "acronym": "SDS",
+          "acronym": "Most",
           "is_coalition": false,
-          "id": 5,
-          "name": "PS Slovenska Demokratska Stranka"
+          "id": 335,
+          "classification": "pg",
+          "name": "Klub Mosta nezavisnih lista"
         },
         "type": "mp",
-        "id": 75,
+        "id": 1373,
         "has_function": false
       },
-      "ratio": 73.3212111192934
+      "ratio": 27.9284800875379
     },
     {
       "person": {
-        "is_active": false,
-        "district": [55],
-        "name": "Danijel Krivec",
-        "gov_id": "P040",
+        "is_active": true,
+        "district": [2],
+        "name": "\u017deljko Reiner",
+        "gov_id": "1291",
         "gender": "m",
         "party": {
-          "acronym": "SDS",
-          "is_coalition": false,
-          "id": 5,
-          "name": "PS Slovenska Demokratska Stranka"
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "classification": "pg",
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 47,
+        "id": 1291,
         "has_function": false
       },
-      "ratio": 73.143694191639
+      "ratio": 27.0924343682881
     },
     {
       "person": {
-        "is_active": false,
-        "district": [34],
-        "name": "Ljubo \u017dnidar",
-        "gov_id": "P212",
-        "gender": "m",
+        "is_active": true,
+        "district": [8],
+        "name": "Branka Juri\u010dev-Martin\u010dev",
+        "gov_id": "1346",
+        "gender": "f",
         "party": {
-          "acronym": "SDS",
-          "is_coalition": false,
-          "id": 5,
-          "name": "PS Slovenska Demokratska Stranka"
+          "acronym": "HDZ",
+          "is_coalition": true,
+          "id": 343,
+          "classification": "pg",
+          "name": "Klub Hrvatske demokratske zajednice"
         },
         "type": "mp",
-        "id": 91,
+        "id": 1346,
         "has_function": false
       },
-      "ratio": 73.0821455623739
+      "ratio": 27.0370116691915
     }
   ]
 }

@@ -126,6 +126,10 @@ export default {
       };
     },
   },
+  created() {
+    const { template, siteMap: sm } = this.$options.cardData;
+    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.legislation}`;
+  },
   methods: {
     onFiltersChanged(newFilters) {
       this.filters = newFilters;
