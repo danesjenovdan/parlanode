@@ -3,7 +3,7 @@
     :id="cardData.cardData._id"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    :card-url="shareUrl"
+    :card-url="generatedCardUrl"
     content-class="full"
   >
     <div slot="info">
@@ -17,7 +17,6 @@
         <div v-t="'contents-search'" class="filter-label"></div>
         <search-field v-model="textFilter" @input="searchSpeakings(true)" />
       </div>
-
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div v-if="type === 'party'" class="filter month-dropdown">
         <div v-t="'mps'" class="filter-label"></div>
@@ -27,7 +26,6 @@
         />
       </div>
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
-
       <div class="filter month-dropdown">
         <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown
@@ -37,11 +35,10 @@
           @clear="searchSpeakings"
         />
       </div>
-
-      <div class="filter month-dropdown">
+      <div v-if="allWorkingBodies.length" class="filter month-dropdown">
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
-          v-model="allSessions"
+          v-model="allWorkingBodies"
           @input="searchSpeakings"
           @clear="searchSpeakings"
         />
@@ -82,20 +79,17 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Govor from 'components/Govor.vue';
 import SearchField from 'components/SearchField.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
-
 import generateMonths from 'mixins/generateMonths';
 import common from 'mixins/common';
 import { memberTitle, partyTitle } from 'mixins/titles';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import { memberSpeeches, partySpeeches } from 'mixins/contextUrls';
-
-import axios from 'axios';
-
 import infiniteScroll from 'directives/infiniteScroll';
 
 export default {
@@ -132,32 +126,22 @@ export default {
     },
   },
   data() {
-    // console.log(this.party);
-    const textFilter = '';
-    const allMonths = this.generateMonths(this.$t('months'));
+    const state = this.cardData.parlaState;
+
     const allPeople = [];
 
-    // const arrayColumn = (arr, n) => arr.map(x => x[n]);
+    const allMonths = this.generateMonths(this.$t('months'));
+    allMonths.forEach((month) => {
+      month.selected = (state.months || []).indexOf(month.id) !== -1;
+    });
 
-    // const highlightingSession = arrayColumn(this.cardData.data.highlighting, 'session');
-    // const highlightingOrgs = [].concat.apply([], arrayColumn(highlightingSession, 'orgs'));
-    // let allSessions = highlightingOrgs.map(
-    //   org => ({
-    //     id: org.id,
-    //     label: org.name,
-    //     selected: false
-    //   })
-    // );
-
-    // allSessions = allSessions.map(JSON.stringify).reverse().filter(function(e, i, a) {
-    //   return a.indexOf(e, i + 1) === -1;
-    // }).reverse().map(JSON.parse)
-
-    const allSessions = this.cardData.data.organizations.map(org => ({
+    const allWorkingBodies = this.cardData.data.organizations.map(org => ({
       label: org.name,
       id: org.id,
-      selected: false,
+      selected: (state.wb || []).indexOf(org.id) !== -1,
     }));
+
+    const textFilter = state.textFilter || '';
 
     return {
       card: {
@@ -166,53 +150,44 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      speakingDays: this.cardData.data.highlighting,
+      speakingDays: this.cardData.data.highlighting || [],
       textFilter,
       allMonths,
-      allSessions,
+      allWorkingBodies,
       allPeople,
     };
   },
   computed: {
-    shareUrl() {
+    generatedCardUrl() {
       const state = {};
 
       if (this.type === 'person') {
-        state.people = this.cardData.parlaState.person;
+        state.people = this.person.id;
       } else if (this.type === 'party') {
-        state.parties = this.cardData.parlaState.parties;
+        state.parties = this.party.id;
+        state.people = this.selectedPeople.map(p => p.id);
       }
 
       if (this.selectedMonths.length > 0) {
-        // since dates in month dropdown are generated as m-y we need to prepare them as 1.m.y
-        state.time_filter = this.selectedMonths.map((m) => {
-          const [year, month] = m.id.split('-');
-          return [1, month, year].join('.');
-        });
+        state.months = this.selectedMonths.map(m => m.id);
       }
 
-      if (this.selectedSessions.length > 0) {
-        state.wb = this.selectedSessions.map(s => s.id);
+      if (this.selectedWorkingBodies.length > 0) {
+        state.wb = this.selectedWorkingBodies.map(org => org.id);
       }
 
-      if (this.selectedPeople.length > 0) {
-        state.people = this.selectedPeople.map(person => person.id);
-      }
+      state.textFilter = this.textFilter || '*';
 
-      state.textFilter = this.textFilter.length ? this.textFilter : '*';
-
-      if (this.type === 'person') {
-        return `${this.url}${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
-      }
-      return `${this.url}${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`;
+      return `${this.url}${this.type === 'person' ? this.person.id : this.party.id}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.searchUrl)}`;
     },
-    cardUrl() {
+    searchUrl() {
       const state = {};
 
       if (this.type === 'person') {
-        state.people = this.cardData.parlaState.person;
+        state.people = this.person.id;
       } else if (this.type === 'party') {
-        state.parties = this.cardData.parlaState.parties;
+        state.parties = this.party.id;
+        state.people = this.selectedPeople.map(p => p.id).join(',');
       }
 
       if (this.selectedMonths.length > 0) {
@@ -223,8 +198,8 @@ export default {
         });
       }
 
-      if (this.selectedSessions.length > 0) {
-        state.wb = this.selectedSessions.map(s => s.id);
+      if (this.selectedWorkingBodies.length > 0) {
+        state.wb = this.selectedWorkingBodies.map(s => s.id);
       }
 
       if (this.selectedPeople.length > 0) {
@@ -240,8 +215,8 @@ export default {
 
       return `${this.slugs.urls.isci}/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
     },
-    selectedSessions() {
-      return this.allSessions.filter(session => session.selected);
+    selectedWorkingBodies() {
+      return this.allWorkingBodies.filter(session => session.selected);
     },
     selectedMonths() {
       return this.allMonths.filter(month => month.selected);
@@ -275,20 +250,13 @@ export default {
     (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
 
     if (this.type === 'party') {
-      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then((response) => {
-        this.allPeople = response.data.results.map((person) => {
-          const newPerson = {
-            id: person.id,
-            name: person.name,
-            label: person.name,
-            selected: false,
-          };
-
-          return newPerson;
-        });
-
-        // console.log(allPeople);
-        // console.log(allMonths);
+      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.party.id}`).then((response) => {
+        this.allPeople = response.data.results.map(person => ({
+          id: person.id,
+          name: person.name,
+          label: person.name,
+          selected: (this.cardData.parlaState.people || []).indexOf(person.id) !== -1,
+        }));
       });
     }
   },
@@ -304,7 +272,7 @@ export default {
         if (!this.card.isLoading) {
           this.card.currentPage = 0;
           this.card.isLoading = true;
-          axios.get(this.cardUrl).then((response) => {
+          axios.get(this.searchUrl).then((response) => {
             this.speakingDays = response.data.highlighting;
             this.speakingDays = response.data.highlighting;
             this.card.isLoading = false;
@@ -320,7 +288,7 @@ export default {
       this.card.isLoading = true;
       this.card.currentPage += 1;
 
-      axios.get(this.cardUrl).then((response) => {
+      axios.get(this.searchUrl).then((response) => {
         this.speakingDays = this.speakingDays.concat(response.data.highlighting);
 
         this.card.isLoading = false;

@@ -1,4 +1,6 @@
 {
   "parties": 343,
-  "text": "zakon"
+  "people": [1389, 1311],
+  "textFilter": "zakon",
+  "months": ["2018-7"]
 }
