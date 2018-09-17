@@ -5,7 +5,7 @@
   "info": {
     "lead": "Pregled svih glasanja na sjednici",
     "text": [
-      "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi ( ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale te ispišu rezultati.",
+      "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale te ispišu rezultati.",
       "Zbirka glasanja preuzima se sa stranice {link1}.",
       "Neočekivana glasanja",
       "Za označavanje neočekivanih rezultata koristi se probabilistička metoda analize glavnih komponenti, {link2} i opisana u {link3}.",
