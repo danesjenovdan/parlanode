@@ -2504,7 +2504,7 @@
   ],
   "responseHeader": {
     "status": 0,
-    "QTime": 251,
+    "QTime": 228,
     "params": {
       "fq": "party_i:(343) AND tip_t:govor",
       "rows": "50",
@@ -4836,6 +4836,13 @@
     "parties": ["343"],
     "is_dz": null,
     "time_filter": null
+  },
+  "party": {
+    "acronym": "HDZ",
+    "is_coalition": true,
+    "id": 343,
+    "classification": "pg",
+    "name": "Klub Hrvatske demokratske zajednice"
   },
   "has_council_score": false,
   "response": {

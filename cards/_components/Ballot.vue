@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import common from 'mixins/common';
 import links from 'mixins/links';
 
 export default {
@@ -30,7 +29,9 @@ export default {
       return `${parseInt(val, 10)} %`;
     },
   },
-  mixins: [common, links],
+  mixins: [
+    links,
+  ],
   props: {
     ballot: {
       type: Object,

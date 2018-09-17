@@ -1,107 +1,113 @@
 {
   "organization": {
-    "acronym": "SMC",
+    "acronym": "HDZ",
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 343,
+    "classification": "pg",
+    "name": "Klub Hrvatske demokratske zajednice"
   },
-  "created_at": "07.05.2018",
-  "created_for": "07.05.2018",
+  "created_at": "06.09.2018",
+  "created_for": "05.09.2018",
   "results": [
     {
       "person": {
-        "is_active": false,
-        "district": [50, 49],
-        "name": "Bojan Krajnc",
-        "gov_id": "P299",
-        "gender": "m",
+        "is_active": true,
+        "district": [11],
+        "name": "Ermina Lekaj-Prljaskaj",
+        "gov_id": "1332",
+        "gender": "f",
         "party": {
-          "acronym": "NeP - BK",
+          "acronym": "BM 365, Reformisti, Nezavisni",
           "is_coalition": false,
-          "id": 149,
-          "name": "Nepovezani poslanec Bojan Krajnc"
+          "id": 334,
+          "classification": "pg",
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 1354,
+        "id": 1332,
         "has_function": false
       },
-      "ratio": 20.4110735318079
+      "ratio": 5.46786767389759
     },
     {
       "person": {
-        "is_active": false,
-        "district": [46],
-        "name": "Uro\u0161 Prikl",
-        "gov_id": "P280",
+        "is_active": true,
+        "district": [11],
+        "name": "Vladimir Bilek",
+        "gov_id": "1375",
         "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "BM 365, Reformisti, Nezavisni",
+          "is_coalition": false,
+          "id": 334,
+          "classification": "pg",
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 69,
+        "id": 1375,
         "has_function": false
       },
-      "ratio": 21.1685738521779
+      "ratio": 5.65508912746785
     },
     {
       "person": {
-        "is_active": false,
-        "district": [14],
-        "name": "Ivan Hr\u0161ak",
-        "gov_id": "P176",
+        "is_active": true,
+        "district": [11],
+        "name": "Veljko Kajtazi",
+        "gov_id": "1347",
         "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "BM 365, Reformisti, Nezavisni",
+          "is_coalition": false,
+          "id": 334,
+          "classification": "pg",
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 34,
+        "id": 1347,
         "has_function": false
       },
-      "ratio": 23.2265011525858
+      "ratio": 6.15642554833567
     },
     {
       "person": {
-        "is_active": false,
-        "district": [19],
-        "name": "Franc Jur\u0161a",
-        "gov_id": "P122",
+        "is_active": true,
+        "district": [10],
+        "name": "Branko Hrg",
+        "gov_id": "1365",
         "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "HDS, HSLS, HDSSB",
+          "is_coalition": false,
+          "id": 333,
+          "classification": "pg",
+          "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
         },
         "type": "mp",
-        "id": 37,
+        "id": 1365,
         "has_function": false
       },
-      "ratio": 23.3047851141364
+      "ratio": 6.90623436757367
     },
     {
       "person": {
-        "is_active": false,
-        "district": [40],
-        "name": "Benedikt Kopmajer",
-        "gov_id": "P261",
+        "is_active": true,
+        "district": [10],
+        "name": "Ka\u017eimir Varda",
+        "gov_id": "1266",
         "gender": "m",
         "party": {
-          "acronym": "DeSUS",
-          "is_coalition": true,
-          "id": 3,
-          "name": "PS Demokratska Stranka Upokojencev Slovenije"
+          "acronym": "BM 365, Reformisti, Nezavisni",
+          "is_coalition": false,
+          "id": 334,
+          "classification": "pg",
+          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
         },
         "type": "mp",
-        "id": 41,
+        "id": 1266,
         "has_function": false
       },
-      "ratio": 23.7034454958354
+      "ratio": 7.70200526940425
     }
   ]
 }

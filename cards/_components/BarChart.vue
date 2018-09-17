@@ -68,13 +68,13 @@ export default {
       }
 
       const rows = JSON.parse(JSON.stringify(this.data));
-      const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value), 0);
+      const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value || 0), 0);
       const mytotal = this.data.reduce((acc, row) => acc + row.value, 0);
 
       return rows.map(row => ({
         link: row.link,
         name: row.label,
-        value: row.value,
+        value: row.value || 0,
         portrait: row.portrait,
         widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
         percentage: ((row.value / mytotal) * 100).toFixed(2).replace('.', ','),

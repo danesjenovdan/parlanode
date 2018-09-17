@@ -41,6 +41,7 @@ import links from 'mixins/links';
 import Generator from 'components/Generator.vue';
 import ToolsTabs from 'components/ToolsTabs.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
+import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import d3 from 'd3v3';
 
@@ -134,13 +135,7 @@ export default {
 
     return {
       data: this.$options.cardData.data,
-      headerConfig: {
-        circleIcon: 'og-kompas',
-        heading: '&nbsp;',
-        subheading: '',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$t('title'),
-      },
+      headerConfig: defaultHeaderConfig(this, { circleIcon: 'og-kompas' }),
       ogConfig: defaultOgImage(this, { icon: 'og-kompas' }),
       margin,
       outerWidth,
@@ -176,6 +171,11 @@ export default {
     url() {
       return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/?state=${JSON.stringify(this.state)}`;
     },
+  },
+
+  created() {
+    const { template, siteMap: sm } = this.$options.cardData;
+    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.compass}`;
   },
 
   mounted() {

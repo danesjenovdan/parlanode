@@ -1,3 +1,5 @@
+import links from 'mixins/links';
+
 export const partyOverview = {
   created() {
     const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
@@ -61,5 +63,15 @@ export const sessions = {
   created() {
     const { template, urls: slugs, siteMap: sm } = this.$root.$options.cardData;
     template.contextUrl = `${slugs.urls.base}/${sm.landing.sessions}`;
+  },
+};
+
+export const search = {
+  mixins: [
+    links,
+  ],
+  created() {
+    const { template } = this.$root.$options.cardData;
+    template.contextUrl = this.getSearchTermLink(this.keywords);
   },
 };

@@ -187,6 +187,10 @@ export default {
       return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
     },
   },
+  created() {
+    const { template, siteMap: sm } = this.$options.cardData;
+    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.wordGroups}`;
+  },
   mounted() {
     if (this.words.length) {
       this.loadResults();
@@ -345,6 +349,10 @@ export default {
 
   .results {
     margin-top: 6px;
+
+    /deep/ .word-list {
+      max-height: none;
+    }
   }
 }
 #c_skupine-besed {
