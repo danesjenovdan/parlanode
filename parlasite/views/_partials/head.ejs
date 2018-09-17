@@ -41,24 +41,25 @@
   </script>
   <!-- END DONATION URLS -->
 
-  <!-- Piwik -->
   <script type="text/javascript">
     var _paq = _paq || [];
-    _paq.push(["setDomains", ["*.parlameter.si"]]);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+    _paq.push(["setCookieDomain", "*.parlametar.hr"]);
+    _paq.push(["setDoNotTrack", true]);
     _paq.push(["disableCookies"]);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
-    _paq.push(['enableHeartBeatTimer']);
     (function() {
-      var u="//zy.si/";
+      var u="//track.paper.link/";
       _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['setSiteId', '13']);
+      _paq.push(['setSiteId', '5']);
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
       g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
-  <noscript><p><img src="//zy.si/piwik.php?idsite=13" style="border:0" alt="" /></p></noscript>
-  <!-- End Piwik Code -->
+  <noscript><p><img src="//track.paper.link/piwik.php?idsite=5&rec=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Matomo Code -->
 
   <style>
   .searchheader, .searchperson-container {
