@@ -10,22 +10,13 @@
   .logo svg {
     width: 100%;
   }
-  .cls-1 {
-    fill: $logo-first;
-  }
-  .cls-2 {
-    fill: $logo-second;
-  }
-  .cls-3 {
-    fill: $logo-third;
-  }
   .gradient-parent {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    
+
     @include gradient('horizontal');
   }
   .gradient {
