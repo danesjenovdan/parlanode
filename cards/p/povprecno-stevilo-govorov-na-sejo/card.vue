@@ -4,6 +4,7 @@
     :person="$options.cardData.data.person"
     :results="$options.cardData.data.results"
     type="person"
+    context="speeches"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>

@@ -4,6 +4,7 @@
     :person="$options.cardData.data.person"
     :results="this.$options.cardData.data.result"
     type="person"
+    context="votings"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>

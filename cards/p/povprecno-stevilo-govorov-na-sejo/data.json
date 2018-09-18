@@ -1,45 +1,51 @@
 {
   "person": {
-    "is_active": false,
-    "district": [14],
-    "name": "Ivan Hr\u0161ak",
-    "gov_id": "P176",
+    "is_active": true,
+    "district": [
+      2
+    ],
+    "name": "Alen Prelec",
+    "gov_id": "1300",
     "gender": "m",
     "party": {
-      "acronym": "DeSUS",
-      "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      "acronym": "SDP",
+      "is_coalition": false,
+      "id": 339,
+      "classification": "pg",
+      "name": "Klub Socijaldemokratske partije Hrvatske"
     },
     "type": "mp",
-    "id": 34,
+    "id": 1300,
     "has_function": false
   },
-  "created_at": "01.02.2018",
-  "created_for": "31.01.2018",
+  "created_at": "13.09.2018",
+  "created_for": "01.09.2018",
   "results": {
     "max": {
-      "score": 60.0,
+      "score": 1696.0,
       "mps": [
         {
-          "is_active": false,
-          "district": [76],
-          "name": "Milan Brglez",
-          "gov_id": "P243",
+          "is_active": true,
+          "district": [
+            2
+          ],
+          "name": "\u017deljko Reiner",
+          "gov_id": "1291",
           "gender": "m",
           "party": {
-            "acronym": "SMC",
+            "acronym": "HDZ",
             "is_coalition": true,
-            "id": 1,
-            "name": "PS Stranka modernega centra"
+            "id": 343,
+            "classification": "pg",
+            "name": "Klub Hrvatske demokratske zajednice"
           },
           "type": "mp",
-          "id": 11,
-          "has_function": true
+          "id": 1291,
+          "has_function": false
         }
       ]
     },
-    "average": 6.0,
-    "score": 5.0
+    "average": 71.0,
+    "score": 27.0
   }
 }
