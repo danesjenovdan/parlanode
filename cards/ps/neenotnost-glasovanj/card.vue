@@ -4,6 +4,7 @@
     :party="$options.cardData.data.organization"
     :results="$options.cardData.data.result"
     type="party"
+    context="votings"
   >
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>

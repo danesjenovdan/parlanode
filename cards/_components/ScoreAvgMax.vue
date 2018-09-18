@@ -99,7 +99,14 @@
 
 <script>
 import common from 'mixins/common';
-import { memberOverview, partyOverview } from 'mixins/contextUrls';
+import {
+  memberOverview,
+  partyOverview,
+  memberVotes,
+  partyVotes,
+  memberSpeeches,
+  partySpeeches,
+} from 'mixins/contextUrls';
 import { memberTitle, partyTitle } from 'mixins/titles';
 import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
@@ -136,6 +143,11 @@ export default {
     party: {
       type: Object,
       default: () => ({}),
+    },
+    context: {
+      type: String,
+      default: 'overview',
+      validator: value => ['overview', 'votings', 'speeches'].indexOf(value) > -1,
     },
   },
   computed: {
@@ -176,8 +188,14 @@ export default {
     },
   },
   created() {
-    (this.type === 'person' ? memberOverview : partyOverview).created.call(this);
     (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+    if (this.context === 'overview') {
+      (this.type === 'person' ? memberOverview : partyOverview).created.call(this);
+    } else if (this.context === 'votings') {
+      (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
+    } else if (this.context === 'speeches') {
+      (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(this);
+    }
   },
   methods: {
     getBarStyle(key) {

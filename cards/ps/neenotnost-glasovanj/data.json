@@ -1,23 +1,25 @@
 {
   "organization": {
-    "acronym": "SMC",
+    "acronym": "HDZ",
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 343,
+    "classification": "pg",
+    "name": "Klub Hrvatske demokratske zajednice"
   },
   "result": {
     "max": {
-      "score": 6.8537414965962284,
+      "score": 12.48180494904889,
       "pgs": [
         {
-          "acronym": "PS NP",
+          "acronym": "\u017divi zid, SNAGA",
           "is_coalition": false,
-          "id": 109,
-          "name": "PS nepovezanih poslancev "
+          "id": 319,
+          "classification": "pg",
+          "name": "Klub \u017divog zida i SNAGA-e"
         }
       ]
     },
-    "average": 3.7912545736351744,
-    "score": 0.6074710196630612
+    "average": 3.178741486482967,
+    "score": 0.22201440001449776
   }
 }
