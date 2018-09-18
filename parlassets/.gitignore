@@ -37,3 +37,7 @@ node_modules
 .idea
 
 /scss/_overrides.scss
+
+
+/config/production.js
+/config/development.js
