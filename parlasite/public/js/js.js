@@ -137,15 +137,13 @@ $(function() {
 
   // search behaviour
   $('.open-search').on('click', function() {
-    $('.menu').addClass('search-open');
-    $('.menu a').addClass('hidden');
+    $('.menu').addClass('hidden');
     $('.menu-search').removeClass('hidden');
     $('.open-search').addClass('hidden');
     $('.close-search').removeClass('hidden');
   });
   $('.close-search').on('click', function() {
-    $('.menu').removeClass('search-open');
-    $('.menu a').removeClass('hidden');
+    $('.menu').removeClass('hidden');
     $('.menu-search').addClass('hidden');
     $('.open-search').removeClass('hidden');
     $('.close-search').addClass('hidden');
