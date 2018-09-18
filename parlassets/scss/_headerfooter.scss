@@ -16,6 +16,7 @@ body {
   justify-content: space-between;
   padding-bottom: 10px;
   border-bottom: 1px solid #c8c8c8;
+  position: relative;
 }
 
 .menu-container .logo {
@@ -48,6 +49,8 @@ body {
 .close-search {
   font-size: 16px;
   padding: 20px 0;
+  width: 16px;
+  height: 80px;
 }
 
 .open-search:hover,
@@ -68,13 +71,18 @@ body {
   }
 
   .mobile-menu__button {
+    width: 40px;
     height: 70px;
     line-height: 70px;
     display: flex;
     align-items: center;
+    justify-content: center;
     float: right;
     cursor: pointer;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .mobile-menu {
@@ -171,12 +179,11 @@ body {
   margin-top: 0;
 }
 
-// MOBILE MENU STUFF
-.menu.search-open {
-  width: 100% !important;
-}
-
 @media (max-width: 992px) {
+  .menu-container {
+    flex-direction: column;
+  }
+
   .menu-container .logo {
     width: 80px;
     margin-top: 10px;
