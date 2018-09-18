@@ -4,8 +4,8 @@
   "description": "Assets for frontend for Parlameter",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass scss/style.scss scss/style.css && postcss -u autoprefixer -o scss/style.css scss/style.css",
-    "dev": "nodemon --ext scss --exec \"yarn run sass\"",
+    "sass": "node-sass --functions=scss/functions.js scss/style.scss scss/style.css && postcss -u autoprefixer -o scss/style.css scss/style.css",
+    "dev": "cross-env NODE_ENV=development nodemon --ext scss --exec \"yarn run sass\"",
     "serve": "http-server -p 8080"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "eslint-plugin-import": "^2.3.0",
     "file-loader": "^0.11.1",
     "http-server": "^0.11.1",
+    "lodash": "^4.17.11",
     "node-sass": "^4.5.3",
     "nodemon": "^1.18.4",
     "postcss-cli": "^4.0.0",
