@@ -12,11 +12,11 @@
           <a href="/<%- sm.landing.members %>"><%- i18n('menu.mps') %></a>
           <a href="/<%- sm.landing.parties %>"><%- i18n('menu.pgs') %></a>
           <a href="/<%- sm.landing.tools %>"><%- i18n('menu.tools') %></a>
-          <div class="menu-search hidden">
-            <%- await fetchCard('/c/menu-search') %>
-          </div>
         </div>
         <div class="open-search"><span class="glyphicon glyphicon-search"></span></div>
+        <div class="menu-search hidden">
+          <%- await fetchCard('/c/menu-search') %>
+        </div>
         <div class="close-search hidden"><span class="glyphicon glyphicon-remove"></span></div>
         <div class="mobile-menu__button">
           <span class="mobile-menu__bg"></span>
@@ -27,47 +27,6 @@
           </a>
         </div>
       </div>
-      <!-- <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <a class="navbar-brand logo" href="/">
-          <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="parlameter logo">
-          </a>
-          <div class="mobile-menu__button">
-            <span class="mobile-menu__bg"></span>
-            <a href="#" class="mobile-menu__hambuger">
-              <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--1"></span>
-              <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--2"></span>
-              <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--3"></span>
-            </a>
-          </div>
-        </div>
-        <div class="collapse-not navbar-collapse navbar-ex1-collapse">
-          <ul class="visible nav navbar-nav">
-            <li class="<%= activeMenu === 'legislation' ? 'active' : '' %>">
-              <a href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
-            </li>
-            <li class="<%= activeMenu === 'sessions' ? 'active' : '' %>">
-              <a href="/<%- sm.landing.sessions %>"><%- i18n('menu.sessions') %></a>
-            </li>
-            <li class="<%= activeMenu === 'mps' ? 'active' : '' %>">
-              <a href="/<%- sm.landing.members %>"><%- i18n('menu.mps') %></a>
-            </li>
-            <li class="<%= activeMenu === 'pgs' ? 'active' : '' %>">
-              <a href="/<%- sm.landing.parties %>"><%- i18n('menu.pgs') %></a>
-            </li>
-            <li class="<%= activeMenu === 'tools' ? 'active' : '' %>">
-              <a href="/<%- sm.landing.tools %>"><%- i18n('menu.tools') %></a>
-            </li>
-            <li class="hidden-xs open-search">
-              <a href="#"><span class="glyphicon glyphicon-search"></span></a>
-            </li>
-          </ul>
-          <div class="search">
-            <%# await fetchCard('/c/menu-search/'); %>
-          </div>
-          <div class="close-search glyphicon glyphicon-remove"></div>
-        </div>
-      </nav> -->
     </div>
   </header>
   <div class="container">
