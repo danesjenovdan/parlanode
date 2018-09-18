@@ -139,12 +139,16 @@ export default {
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
+    const selectedDistrictIds = loadFromState('districts');
     const districts = this.$options.cardData.data.districts
-      .map(district => ({
-        id: Object.keys(district)[0],
-        label: district[Object.keys(district)[0]],
-        selected: false,
-      }));
+      .map((district) => {
+        const id = Object.keys(district)[0];
+        return {
+          id,
+          label: district[id],
+          selected: selectedDistrictIds.indexOf(id) !== -1,
+        };
+      });
 
     const genders = [
       { id: 'm', label: 'moški', selected: false },
@@ -166,7 +170,7 @@ export default {
       analyses,
       parties: [],
       selectedPartiesState: loadFromState('parties') || [],
-      textFilter: '',
+      textFilter: loadFromState('textFilter') || '',
       districts,
       genders,
       selectedGenders: loadFromState('genders') || [],
@@ -213,6 +217,9 @@ export default {
     urlParameters() {
       const parameters = {};
 
+      if (this.textFilter) {
+        parameters.textFilter = this.textFilter;
+      }
       if (this.currentAnalysis !== 'demographics') {
         parameters.analysis = this.currentAnalysis;
       }
@@ -228,6 +235,9 @@ export default {
       }
       if (this.selectedGenders.length > 0) {
         parameters.genders = this.selectedGenders;
+      }
+      if (this.selectedDistricts.length > 0) {
+        parameters.districts = this.selectedDistricts;
       }
 
       return parameters;
