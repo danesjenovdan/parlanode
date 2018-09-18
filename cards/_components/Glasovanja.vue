@@ -32,14 +32,14 @@
         <div v-t="'title-search'" class="filter-label"></div>
         <p-search-field v-model="textFilter" />
       </div>
-      <div class="filter type-dropdown hidden-xs">
+      <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allClassifications"
           :alphabetise="false"
         />
       </div>
-      <div class="filter tag-dropdown hidden-xs">
+      <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="dropdownTags" />
       </div>
@@ -335,18 +335,23 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
-#card-votes {
-  height: $full-card-height - 89px;
-  overflow-y: auto;
-
-  @include respond-to(mobile) {
-    height: 352px;
+#p_glasovanja,
+#ps_glasovanja {
+  /deep/ .card-content,
+  /deep/ .card-content-front {
+    @include respond-to(mobile) {
+      max-height: none;
+    }
   }
-}
 
-.card-content-front {
-  display: flex;
-  flex-direction: column;
+  #card-votes {
+    height: $full-card-height - 89px;
+    overflow-y: auto;
+
+    @include respond-to(mobile) {
+      height: 352px;
+    }
+  }
 }
 
 .filters {
