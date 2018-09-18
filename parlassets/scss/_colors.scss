@@ -74,47 +74,51 @@ $time-presence-absent-active: #ff5555;
 $time-presence-no-term-passive: $font-placeholder;
 $time-presence-no-term-active: $button-absent;
 
+// raba skozi cas chart
+$time-use-bar-active: #fbbfbb;
+$time-use-bar-passive: $tab-hover;
+
 
 /////////////////////////////
 //////// OLD COLORS /////////
 /////////////////////////////
 
 $party-colors: (
-  'hds___hsls___hdssb': #258498,
+  'hds__hsls__hdssb': #258498,
   'nhr': #4095a7,
   'hns': #5ca6b6,
-  'bm_365___reformisti___nezavisni': #77b7c5,
+  'bm_365__reformisti__nezavisni': #77b7c5,
   'sdss': #93c8d4,
   'sdp': #aed9e3,
   'hdz': #caebf2,
-  'glas___hsu': #d1c9cf,
-  'živi_zid___snaga': #d9a7ac,
+  'glas__hsu': #d1c9cf,
+  'živi_zid__snaga': #d9a7ac,
   'manjina': #e0868a,
   'hss': #e86467,
-  'ids___pgs___ri': #ef4345,
+  'ids__pgs__ri': #ef4345,
   'most': #f72122
 );
 
 
 $vote-colors: (
-  'for': $link,
-  'against': $second,
-  'abstain': $button-absent,
-  'absent': $button-abstained
+  'for': $button-for,
+  'against': $button-against,
+  'absent': $button-absent,
+  'abstain': $button-abstained,
 );
 
 $proper-vote-colors: (
-  'for': $link,
-  'against': $second,
-  'abstain': $button-absent,
-  'absent': $button-abstained
+  'for': $button-for,
+  'against': $button-against,
+  'absent': $button-absent,
+  'abstain': $button-abstained
 );
 
 $option-colors: (
-  'for': $link,
-  'against': $second,
-  'kvorum': $button-absent,
-  'ni': $button-abstained
+  'for': $button-for,
+  'against': $button-against,
+  'absent': $button-absent,
+  'abstain': $button-abstained
 );
 
 // hover colors TODO
@@ -122,7 +126,9 @@ $white-hover: rgba($white, 0.7);
 $second-hover: rgba($second, 0.7);
 $link-hover-background-hover: $link-hover-background;
 $link-hover: rgba($link, 0.7);
-$button-absent-hover: rgba($button-abstained, 0.7);
+$button-for-hover: rgba($button-for, 0.7);
+$button-against-hover: rgba($button-against, 0.7);
+$button-absent-hover: rgba($button-absent, 0.7);
 $button-abstained-hover: rgba($button-abstained, 0.7);
 $first-light-hover: #feefec;
 
@@ -132,20 +138,20 @@ $party-colors-hover: ();
 }
 
 $option-colors-hover: (
-  'for': $link-hover,
-  'against': $second-hover,
-  'kvorum': $button-absent-hover,
-  'ni': $button-abstained-hover
+  'for': $button-for-hover,
+  'against': $button-against-hover,
+  'absent': $button-absent-hover,
+  'abstain': $button-abstained-hover
 );
 
 $proper-vote-colors-hover: (
-  'for': $link-hover,
-  'against': $second-hover,
-  'abstain': $button-absent-hover,
-  'absent': $button-abstained-hover
+  'for': $button-for-hover,
+  'against': $button-against-hover,
+  'absent': $button-absent-hover,
+  'abstain': $button-abstained-hover
 );
 
 $binary-vote-colors: (
-  'binary-for': $second,
-  'binary-against': $first
+  'binary-for': $icon-accepted,
+  'binary-against': $icon-rejected
 );

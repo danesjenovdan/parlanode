@@ -129,6 +129,7 @@
 
 #about .post-entry .post-download i {
     vertical-align: middle;
+    color: $link;
 }
 
 #about .thumbnail {
@@ -154,4 +155,9 @@
     font-size: 24px;
     line-height: 20px;
     vertical-align: bottom;
+    color: $link;
+}
+
+#about .legal-text-container a {
+    @include link-hover;
 }

@@ -158,7 +158,7 @@
           line-height: $heading-height;
           position: relative;
           .close-button {
-            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="#{$first}}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
+            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="%23#{str-slice("#{$first}", 2)}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
             cursor: pointer;
             height: 17px;
             position: absolute;
@@ -258,7 +258,7 @@
     }
 
     .toggle-arrow {
-      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="#{$link}"/></svg>') rgba(#f9f9f9, 0.9);
+      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="%23#{str-slice("#{$first}", 2)}"/></svg>') rgba(#f9f9f9, 0.9);
       border-bottom: 20px solid rgba(#f9f9f9, 0.9);
       bottom: 0;
       cursor: pointer;

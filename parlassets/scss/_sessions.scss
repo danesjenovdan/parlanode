@@ -254,12 +254,36 @@
     }
 }
 .session-logo {
+    $size: 90px;
+    $padding: 10px;
+
+    color: $white;
+    text-align: center;
+    width: $size;
+    height: $size;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: $padding;
+
+    &.backgroundred {
+        background-color: $first;
+    }
+
+    b {
+        display: inline-block;
+        line-height: $size - ($padding * 2);
+        font-size: 24px;
+    }
+}
+
+.person-logo {
     color: $white;
     text-align: center;
     width: 90px;
     height: 90px;
     margin-bottom: 20px;
     display: inline-block;
+    padding: 0;
 
     &.backgroundred {
         background-color: $first;

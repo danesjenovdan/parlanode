@@ -1,0 +1,14 @@
+.tool-arrow {
+  background: url($cdn_home_icon + 'arrow_right_hr.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-header .alt-header .media-object.img-circle.session-logo {
+  overflow: hidden;
+
+  b {
+    font-size: 0px;
+    opacity: 0;
+  }
+}

@@ -53,6 +53,7 @@
 
             @include respond-to(small-mobile) {
                 width: 100%;
+                margin-top: 6px;
             }
 
             a {
@@ -85,7 +86,7 @@
             }
 
             .nav-icon {
-                background-size: 24px;
+                background-size: 24px 100%;
                 background-repeat: no-repeat;
                 background-position: 24px center;
                 padding-left: 60px;
@@ -93,7 +94,7 @@
 
                 @include respond-to(mobile) {
                     padding-left: 40px;
-                    background-size: 18px;
+                    background-size: 18px 100%;
                     background-position: 14px center !important;
                 }
             }
@@ -118,11 +119,11 @@
 
             .nav-icon-transcripts {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/transcripts.svg");
-                background-size: 29px;
+                background-size: 29px 100%;
                 background-position: 21px center;
 
                 @include respond-to(mobile) {
-                    background-size: 22px;
+                    background-size: 22px 100%;
                 }
             }
         }
