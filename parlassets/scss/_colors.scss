@@ -9,32 +9,32 @@ $third: #ff5e41;
 
 // tabs
 $tab-active: #009cdd;
-$tab-hover: #86B3DF;
+$tab-hover: #009cddb3;
 $tab-passive: #197197;
 
 // links
-$link: $third;
-$link-hover-background: #f3fafc;
+$link: $first;
+$link-hover-background: #d9e7ed;
 
 // card footer buttons
 $card-footer-button-passive-background: #197197;
 $card-footer-button-hover-background: #009cdd;
 
 // scroller
-$scroller: #F1F5F7;
+$scroller: #d9e7ed;
 $element: #197197;
 
 // barcharts
-$barchart-this: $first;
-$barchart-other: $third;
-$barchart-default: $third;
+$barchart-this: $third;
+$barchart-other: $second;
+$barchart-default: $second;
 
 // icons
-$icon-accepted: #4fbdd4;
-$icon-rejected: $first;
-$icon-session: $second;
-$icon-transcript: #258498;
-$icon-transcript-hover-background: #ceadf2;
+$icon-accepted: $second;
+$icon-rejected: $third;
+$icon-session: $third;
+$icon-transcript: #197197;
+$icon-transcript-hover-background: #d9e7ed;
 
 
 // buttons
@@ -51,7 +51,7 @@ $dropdown-selected-element: #efefef;
 $light-background: #F1F5F7;
 $tools-arrow: #009cdd;
 $cta-passive-background: #009cdd;
-$cta-hover-background: #197197;
+$cta-hover-background: #009cddb3;
 
 // common
 $white: #ffffff;
@@ -61,21 +61,16 @@ $background: #f0f0f0;
 $tools-border: #c8c8c8;
 $tools-background-hover: #dddbdb;
 
-// logo
-$logo-first: $first; // TODO
-$logo-second: $second; // TODO
-$logo-third: $font-default; // TODO
-
 // prisotnost skozi cas chart
-$time-presence-present-passive: #caebf2;
-$time-presence-present-active: #258498;
-$time-presence-absent-passive: #ffcbcb;
-$time-presence-absent-active: #ff5555;
+$time-presence-present-passive: #bbebff;
+$time-presence-present-active: $second;
+$time-presence-absent-passive: #ffe0da;
+$time-presence-absent-active: $third;
 $time-presence-no-term-passive: $font-placeholder;
 $time-presence-no-term-active: $button-absent;
 
 // raba skozi cas chart
-$time-use-bar-active: #fbbfbb;
+$time-use-bar-active: $second;
 $time-use-bar-passive: $tab-hover;
 
 
