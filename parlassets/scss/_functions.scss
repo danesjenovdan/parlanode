@@ -1,8 +1,0 @@
-@function getConfig($key) {
-  @if ($key == "urls.cdn") {
-    @return "https://cdn.parlameter.si/v1/parlassets";
-  }
-  @else {
-    @return "#{$key}";
-  }
-}
