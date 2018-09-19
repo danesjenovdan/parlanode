@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const glob = require('glob');
 const config = require('../../../config');
+const data = require('../../data');
 const { loadCardJson, shouldBuildCard, buildCard } = require('../cards/controller');
 const { loadOgJson, shouldBuildBundle, buildBundle } = require('../og-images/controller');
 
@@ -43,23 +44,63 @@ function getModelObjects(modelName, res, mapFunc) {
 }
 
 function getCardRenders(req, res) {
-  getModelObjects('CardRender', res, (doc) => {
-    doc.html = `HTML length: ${doc.html.length}`;
-    return doc;
-  });
+  const CardRender = mongoose.model('CardRender');
+  Promise.all([
+    CardRender.countDocuments(),
+    CardRender.findOne().sort('dateTime').select('-html'),
+    CardRender.findOne().sort('lastAccessed').select('-html'),
+  ])
+    .then(([count, oldest, stalest]) => {
+      res.send({
+        count,
+        oldest,
+        stalest,
+      });
+    })
+    .catch((error) => {
+      res.status(500).send({
+        error,
+      });
+    });
 }
 
 function getCardBuilds(req, res) {
   getModelObjects('CardBuild', res);
 }
 
-function clearModel(modelName) {
+function clearModel(modelName, req) {
   const Model = mongoose.model(modelName);
-  return Model.remove({});
+
+  let query = Model.find();
+  if (req && req.query && req.query.group) {
+    query = query.where('group', req.query.group);
+  }
+  if (req && req.query && req.query.method) {
+    query = query.where('method', req.query.method);
+  }
+  if (req && req.query && req.query.id) {
+    query = query.where('id', req.query.id);
+  }
+
+  return query.deleteMany();
+}
+
+function deleteOldCardRenders(req, res) {
+  const CardRender = mongoose.model('CardRender');
+  const days = Number(req.query.days) || 28;
+  const time = (1000 * 60 * 60 * 24 * days);
+  CardRender.find().where('lastAccessed').lte(Date.now() - time)
+    .deleteMany()
+    .then((obj) => {
+      res.json(obj);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 }
 
 function deleteCardRenders(req, res) {
-  clearModel('CardRender')
+  clearModel('CardRender', req)
     .then((obj) => {
       res.send(obj);
     })
@@ -69,7 +110,7 @@ function deleteCardRenders(req, res) {
 }
 
 function deleteCardBuilds(req, res) {
-  clearModel('CardBuild', res)
+  clearModel('CardBuild')
     .then(async (obj) => {
       // eslint-disable-next-line no-restricted-syntax
       for (const card of await getAllCardPaths()) {
@@ -161,6 +202,7 @@ function rebuildCards(forceBuild) {
           'Content-Type': 'text/plain; charset=utf-8',
           'Transfer-Encoding': 'chunked',
           'X-Content-Type-Options': 'nosniff',
+          'X-Accel-Buffering': 'no',
         });
 
         allCards.reduce((p, c, i) => (
@@ -204,7 +246,24 @@ function getAllOgPaths() {
 }
 
 function getOgRenders(req, res) {
-  getModelObjects('OgRender', res);
+  const OgRender = mongoose.model('OgRender');
+  Promise.all([
+    OgRender.countDocuments(),
+    OgRender.findOne().sort('dateTime'),
+    OgRender.findOne().sort('lastAccessed'),
+  ])
+    .then(([count, oldest, stalest]) => {
+      res.send({
+        count,
+        oldest,
+        stalest,
+      });
+    })
+    .catch((error) => {
+      res.status(500).send({
+        error,
+      });
+    });
 }
 
 function getOgBuilds(req, res) {
@@ -212,7 +271,7 @@ function getOgBuilds(req, res) {
 }
 
 function deleteOgRenders(req, res) {
-  clearModel('OgRender', res)
+  clearModel('OgRender')
     .then(async (obj) => {
       await fs.remove(`${config.ogCapturePath}`);
       res.send(obj);
@@ -223,7 +282,7 @@ function deleteOgRenders(req, res) {
 }
 
 function deleteOgBuilds(req, res) {
-  clearModel('OgBuild', res)
+  clearModel('OgBuild')
     .then(async (obj) => {
       // eslint-disable-next-line no-restricted-syntax
       for (const og of await getAllOgPaths()) {
@@ -287,6 +346,7 @@ function rebuildOgs(forceBuild) {
           'Content-Type': 'text/plain; charset=utf-8',
           'Transfer-Encoding': 'chunked',
           'X-Content-Type-Options': 'nosniff',
+          'X-Accel-Buffering': 'no',
         });
 
         allOgs.reduce((p, c, i) => (
@@ -307,9 +367,29 @@ function rebuildOgs(forceBuild) {
   };
 }
 
+function refetchData(req, res) {
+  Promise.resolve()
+    .then(() => data.refetch())
+    .then((error) => {
+      if (!error) {
+        res.json({
+          ok: true,
+          message: 'Finished refetch',
+        });
+      } else {
+        res.json({
+          ok: false,
+          message: 'Failed refetch',
+          error,
+        });
+      }
+    });
+}
+
 module.exports = {
   getCardRenders,
   getCardBuilds,
+  deleteOldCardRenders,
   deleteCardRenders,
   deleteCardBuilds,
   deleteCardRenderId,
@@ -322,4 +402,5 @@ module.exports = {
   deleteOgRenderId,
   deleteOgBuildId,
   rebuildOgs,
+  refetchData,
 };

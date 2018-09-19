@@ -42,7 +42,17 @@ async function buildBundle(cacheData, ogJson) {
     if (ongoingBuilds.has(buildCommand)) {
       promise = ongoingBuilds.get(buildCommand);
     } else {
-      promise = exec(buildCommand, { timeout: 60000 });
+      promise = exec(buildCommand, { timeout: 60000 })
+        .then(() => (
+          OgBuild.findOneAndUpdate(
+            { name: cacheData.name },
+            {
+              built: new Date(),
+              updated: ogJson.updated,
+            },
+            { upsert: true, new: true, setDefaultsOnInsert: true },
+          )
+        ));
       ongoingBuilds.set(buildCommand, promise);
     }
     await promise;
@@ -55,14 +65,6 @@ async function buildBundle(cacheData, ogJson) {
   } finally {
     ongoingBuilds.delete(buildCommand);
   }
-  await OgBuild.findOneAndUpdate(
-    { name: cacheData.name },
-    {
-      built: new Date(),
-      updated: ogJson.updated,
-    },
-    { upsert: true, new: true, setDefaultsOnInsert: true },
-  );
 }
 
 async function renderOgImage(cacheData, ogJson) {
