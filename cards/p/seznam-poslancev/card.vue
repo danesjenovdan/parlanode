@@ -139,7 +139,7 @@ export default {
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
-    const selectedDistrictIds = loadFromState('districts');
+    const selectedDistrictIds = loadFromState('districts') || [];
     const districts = this.$options.cardData.data.districts
       .map((district) => {
         const id = Object.keys(district)[0];

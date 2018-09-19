@@ -143,7 +143,8 @@ async function buildCard(cacheData, cardJson) {
     if (ongoingCardBuilds.has(buildCommand)) {
       promise = ongoingCardBuilds.get(buildCommand);
     } else {
-      promise = exec(buildCommand, { timeout: 60000 });
+      promise = exec(buildCommand, { timeout: 60000 })
+        .then(() => saveBuildEntry(cacheData, cardJson));
       ongoingCardBuilds.set(buildCommand, promise);
     }
     await promise;
@@ -156,7 +157,6 @@ async function buildCard(cacheData, cardJson) {
   } finally {
     ongoingCardBuilds.delete(buildCommand);
   }
-  await saveBuildEntry(cacheData, cardJson);
 }
 
 async function renderCard(cacheData, cardJson, originalUrl) {
