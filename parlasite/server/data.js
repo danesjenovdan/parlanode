@@ -81,7 +81,7 @@ async function loadData(name) {
 function refetch() {
   // eslint-disable-next-line no-console
   console.log('Refetching data...');
-  Promise.all(Object.keys(dataFiles).map(name => fetchData(name)))
+  return Promise.all(Object.keys(dataFiles).map(name => fetchData(name)))
     .then(() => {
       // eslint-disable-next-line no-console
       console.log('Finished refetch');
@@ -89,6 +89,7 @@ function refetch() {
     .catch((error) => {
       // eslint-disable-next-line no-console
       console.error('Failed refetch:', error);
+      return error;
     });
 }
 
@@ -110,6 +111,7 @@ cron.start();
 
 module.exports = {
   preload,
+  refetch,
   get urls() {
     return loadedData.urls;
   },
