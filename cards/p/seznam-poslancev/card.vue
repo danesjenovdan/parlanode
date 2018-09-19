@@ -52,15 +52,15 @@
         <div slot="info">
           <i18n path="info.lead" tag="p" class="info-text lead">
             <span place="parties">
-              <span v-if="selectedParties.length">
-                {{ $t('party') }}: {{ selectedParties.map(p => p.acronym).join(', ') }}
-              </span>
+              <span v-if="selectedParties.length">{{
+                `${$t('party')}: ${selectedParties.map(p => p.acronym).join(', ')}`
+              }}</span>
               <span v-t="'all-parties'" v-else></span>
             </span>
             <span place="districts">
-              <span v-if="selectedDistrictNames.length">
-                {{ $t('voting-district') }}: {{ selectedDistrictNames.join(', ') }}
-              </span>
+              <span v-if="selectedDistrictNames.length">{{
+                `${$t('voting-district')}: ${selectedDistrictNames.join(', ')}`
+              }}</span>
               <span v-t="'all-voting-districts'" v-else></span>
             </span>
             <span place="sortBy">{{ sortMap[currentSort] }}</span>
