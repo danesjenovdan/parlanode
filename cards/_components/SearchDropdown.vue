@@ -19,7 +19,7 @@
       @keydown.down.prevent="focus(focused + 1, true)"
     >
     <ul
-      :class="['search-dropdown-options', { visible: active, up: up }]"
+      :class="['search-dropdown-options', { visible: active, up: up, empty: empty }]"
       :style="{'margin-top': upMargin}"
       @mouseleave="focus(-1)"
     >
@@ -130,6 +130,9 @@ export default {
     };
   },
   computed: {
+    empty() {
+      return this.filteredItems.length === 0;
+    },
     filteredItems() {
       const filterAndSort = items => items
         .filter(item => (

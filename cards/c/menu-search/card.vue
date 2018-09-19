@@ -118,7 +118,7 @@ export default {
   padding-left: 20px;
 }
 // TODO this needs a better fix
-.search-dropdown /deep/ .search-dropdown-options {
+.search-dropdown /deep/ .search-dropdown-options.empty {
   border-bottom: none;
 }
 
