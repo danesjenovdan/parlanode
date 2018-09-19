@@ -51,6 +51,7 @@ function parlapi() {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
     },
     patchSessionTFIDF(id, tfidf) {
+      tfidf.is_visible = true;
       return analize.patch(`/s/tfidfs/${id}/`, tfidf);
     },
     updateSession(id) {
@@ -95,6 +96,7 @@ function parlapi() {
       return analize.get(`/p/tfidfs/?person__id_parladata=${personId}`);
     },
     patchPersonTFIDF(id, tfidf) {
+      tfidf.is_visible = true;
       return analize.patch(`/p/tfidfs/${id}/`, tfidf);
     },
     getPersonSocialLinks(personId) {
@@ -130,6 +132,7 @@ function parlapi() {
       return analize.get(`/pg/tfidfs/?organization__id_parladata=${orgId}`);
     },
     patchOrganisationTFIDF(id, tfidf) {
+      tfidf.is_visible = true;
       return analize.patch(`/pg/tfidfs/${id}/`, tfidf);
     },
     getOrganisationMemberships(orgId) {
