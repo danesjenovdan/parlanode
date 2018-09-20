@@ -22,7 +22,15 @@
             <span place="sortBy">{{ sortOptions[selectedSort].toLowerCase() }}</span>
           </i18n>
           <p v-t="'info.methodology'" class="info-text heading"></p>
-          <p v-t="'info.text[0]'" class="info-text"></p>
+          <i18n path="info.text[0]" tag="p" class="info-text">
+            <a
+              v-t="'info.links[0].text'"
+              :href="$t('info.links[0].link')"
+              place="link1"
+              class="funblue-light-hover"
+              target="_blank"
+            />
+          </i18n>
           <p v-t="'info.text[1]'" class="info-text"></p>
         </div>
 
@@ -166,21 +174,7 @@ export default {
     namedGroups = sortBy(namedGroups, ['name']);
     groups = groups.concat(namedGroups);
 
-    // SEARCH DROPDOWN FOR PEOPLE AND PARTIES
-    const parties = Object.keys(this.$options.cardData.data)
-      .filter(key => this.$options.cardData.data[key].acronym !== this.$t('opposition'))
-      .map((key) => {
-        return {
-          id: key,
-          label: this.$options.cardData.data[key].acronym === this.$t('parliament') ? this.$t('parliament') : this.$options.cardData.data[key].acronym,
-          selected: this.$options.cardData.data[key].acronym === this.$t('parliament'),
-          colorClass: `${this.$options.cardData.data[key].acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
-        };
-      });
-    // SEARCH DROPDOWN END
-
     return {
-      parties,
       voteData: [],
       loading: true,
       selectedSort: 'maximum',
@@ -195,14 +189,12 @@ export default {
   },
   computed: {
     allItems() {
-      return this.groups.map((group) => {
-        return {
-          id: group.acronym,
-          label: group.acronym,
-          selected: group.acronym === this.selectedGroup,
-          colorClass: `${group.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
-        };
-      });
+      return this.groups.map(group => ({
+        id: group.acronym,
+        label: group.acronym,
+        selected: group.acronym === this.selectedGroup,
+        colorClass: `${group.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+      }));
     },
     selectedTags() {
       return this.allTags

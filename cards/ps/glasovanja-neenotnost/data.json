@@ -1,6 +1,6 @@
 {
   "322": {
-    "name": "Klub zastupnika Samostalne demokratske srpske stranke",
+    "name": "Klub Samostalne demokratske srpske stranke",
     "acronym": "SDSS",
     "is_coalition": false,
     "disbanded": null,
@@ -9,8 +9,8 @@
     "id": 322
   },
   "324": {
-    "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika",
-    "acronym": "GLAS + HSU",
+    "name": "Klub Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika",
+    "acronym": "GLAS, HSU",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -27,7 +27,7 @@
     "id": 199
   },
   "330": {
-    "name": "Klub zastupnika Neovisni za Hrvatsku",
+    "name": "Klub Neovisni za Hrvatsku",
     "acronym": "NHR",
     "is_coalition": false,
     "disbanded": null,
@@ -36,8 +36,8 @@
     "id": 330
   },
   "333": {
-    "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje",
-    "acronym": "HDS + HSLS + HDSSB",
+    "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje",
+    "acronym": "HDS, HSLS, HDSSB",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -45,8 +45,8 @@
     "id": 333
   },
   "334": {
-    "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika",
-    "acronym": "BM 365 + Reformisti + Nezavisni",
+    "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika",
+    "acronym": "BM 365, Reformisti, Nezavisni",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -54,7 +54,7 @@
     "id": 334
   },
   "335": {
-    "name": "Klub zastupnika Mosta nezavisnih lista",
+    "name": "Klub Mosta nezavisnih lista",
     "acronym": "Most",
     "is_coalition": false,
     "disbanded": null,
@@ -63,7 +63,7 @@
     "id": 335
   },
   "337": {
-    "name": "Klub zastupnika Hrvatske selja\u010dke stranke",
+    "name": "Klub Hrvatske selja\u010dke stranke",
     "acronym": "HSS",
     "is_coalition": false,
     "disbanded": null,
@@ -72,7 +72,7 @@
     "id": 337
   },
   "339": {
-    "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+    "name": "Klub Socijaldemokratske partije Hrvatske",
     "acronym": "SDP",
     "is_coalition": false,
     "disbanded": null,
@@ -81,7 +81,7 @@
     "id": 339
   },
   "340": {
-    "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata",
+    "name": "Klub Hrvatske narodne stranke - liberalnih demokrata",
     "acronym": "HNS",
     "is_coalition": true,
     "disbanded": null,
@@ -90,8 +90,8 @@
     "id": 340
   },
   "310": {
-    "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku",
-    "acronym": "IDS + PGS + RI",
+    "name": "Klub Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku",
+    "acronym": "IDS, PGS, RI",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -99,7 +99,7 @@
     "id": 310
   },
   "343": {
-    "name": "Klub zastupnika Hrvatske demokratske zajednice",
+    "name": "Klub Hrvatske demokratske zajednice",
     "acronym": "HDZ",
     "is_coalition": true,
     "disbanded": null,
@@ -126,8 +126,8 @@
     "id": 346
   },
   "319": {
-    "name": "Klub zastupnika \u017divog zida i SNAGA-e",
-    "acronym": "\u017divi zid + SNAGA",
+    "name": "Klub \u017divog zida i SNAGA-e",
+    "acronym": "\u017divi zid, SNAGA",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
