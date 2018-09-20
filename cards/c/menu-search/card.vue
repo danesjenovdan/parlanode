@@ -109,6 +109,10 @@ export default {
 <style lang="scss" scoped>
 @import "~parlassets/scss/colors";
 
+.card-container /deep/ .card-content {
+  min-height: auto;
+}
+
 .search-dropdown /deep/ .search-dropdown-input {
   background-color: transparent;
 }
