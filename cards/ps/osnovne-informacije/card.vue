@@ -59,7 +59,7 @@
           <span class="key">
             <span v-t="'contact'"></span>
             {{ ' ' }}
-            <a :href="`mailto:${data.social.email}`" class="funblue-light-hover">{{ email }}</a>
+            <a :href="`mailto:${data.social.email}`" target="_blank" class="funblue-light-hover">{{ email }}</a>
           </span>
         </div>
       </div>
