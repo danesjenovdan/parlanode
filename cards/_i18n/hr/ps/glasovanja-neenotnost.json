@@ -5,8 +5,14 @@
   "info": {
     "lead": "Popis svih glasanja HS-a koja odgovaraju korisničkom izboru ({text}), za izabrana matična radna tijela ({wbs}), razvrstana prema {sortBy}.",
     "text": [
-      "Popis svih glasanja koja su se dogodila u aktualnom sazivu HS-a i bila objavljena na stranicama <a href=\"sabor.hr\/sjednica-sabora\" class=\"funblue-light-hover\">sabor.hr\/sjednica-sabora<\/a> te odgovaraju korisničkom izboru.",
+      "Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu {link1} ter ustrezajo uporabniškemu vnosu.",
       "Rezultati se klasificiraju bilo po razjedinjenosti odabranog tijela, bilo po datumu."
+    ],
+    "links": [
+      {
+        "link": "http://www.dz-rs.si",
+        "text": "DZ RS"
+      }
     ]
   },
   "all-votes": "sva glasanja",
