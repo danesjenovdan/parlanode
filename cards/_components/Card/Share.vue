@@ -1,6 +1,7 @@
 <template>
   <div class="card-content-share">
     <div class="card-back-content">
+      <slot />
       <div class="share-content">
         <label v-t="'share.direct-link'" for="share-url"></label>
         <input

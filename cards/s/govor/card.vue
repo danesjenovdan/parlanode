@@ -4,8 +4,10 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    @backChange="toggleBackCallback"
   >
     <div slot="info">
+      <card-header :config="headerConfig" :current-back="backVisible" :class="backVisible" />
       <i18n path="info.text" tag="p" class="info-text">
         <a
           v-t="'info.link.text'"
@@ -15,6 +17,18 @@
           target="_blank"
         />
       </i18n>
+    </div>
+
+    <div slot="embed">
+      <card-header :config="headerConfig" :current-back="backVisible" :class="backVisible" />
+    </div>
+
+    <div slot="share">
+      <card-header :config="headerConfig" :current-back="backVisible" :class="backVisible" />
+    </div>
+
+    <div slot="previous">
+      <card-header :config="headerConfig" :current-back="backVisible" :class="backVisible" />
     </div>
 
     <speech v-quotable :speech="data" show-session />
@@ -28,6 +42,7 @@ import { memberTitle } from 'mixins/titles';
 import { sessionHeader } from 'mixins/altHeaders';
 import { sessionOgImage } from 'mixins/ogImages';
 import Speech from 'components/Speech.vue';
+import CardHeader from 'components/Card/Header.vue';
 
 function getSelected() {
   if (window.getSelection) {
@@ -49,6 +64,7 @@ export default {
   name: 'Govori',
   components: {
     Speech,
+    CardHeader,
   },
   directives: {
     quotable(elem, binding, vnode) {
@@ -115,6 +131,7 @@ export default {
   data() {
     return {
       data: this.$options.cardData.data,
+      backVisible: false,
     };
   },
   computed: {
@@ -125,12 +142,26 @@ export default {
   created() {
     this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(this.data.results);
   },
+  methods: {
+    toggleBackCallback(newBack) {
+      this.backVisible = newBack;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 * /deep/ .card-header {
   display: none;
+
+  &.info,
+  &.share,
+  &.embed,
+  &.previous {
+    display: flex;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
 }
 * /deep/ .card-back-content {
   margin-top: 20px;
