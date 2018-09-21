@@ -8,11 +8,17 @@
         <slot name="info" />
       </card-info>
 
-      <card-embed v-else-if="currentBack === 'embed'" :url="cardUrl" />
+      <card-embed v-else-if="currentBack === 'embed'" :url="cardUrl">
+        <slot name="embed" />
+      </card-embed>
 
-      <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
+      <card-share v-else-if="currentBack === 'share'" :url="cardUrl">
+        <slot name="share" />
+      </card-share>
 
-      <card-previous v-else-if="currentBack === 'previous'" />
+      <card-previous v-else-if="currentBack === 'previous'">
+        <slot name="previous" />
+      </card-previous>
 
       <div
         v-else

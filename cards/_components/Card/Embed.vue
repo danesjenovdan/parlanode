@@ -1,6 +1,7 @@
 <template>
   <div class="card-content-embed">
     <div class="card-back-content">
+      <slot />
       <div class="embed-content">
         <div class="embed-divider"></div>
         <div class="embed-switch-container">
