@@ -34,14 +34,14 @@ body {
 
 .menu-container .menu a {
   font-size: 16px;
-  color: #333333;
+  color: $font-default;
   font-weight: 500;
   padding: 20px 30px;
   margin: 0;
 }
 
 .menu-container .menu a:hover {
-  color: #ff0000;
+  color: $tab-active;
   text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .open-search:hover,
 .close-search:hover {
-  color: #ff0000;
+  color: $tab-active;
   cursor: pointer;
 }
 
