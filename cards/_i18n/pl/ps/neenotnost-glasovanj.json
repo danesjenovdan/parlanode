@@ -1,0 +1,9 @@
+{
+  "card": {
+    "title": "Różnica głosów"
+  },
+  "info": {
+    "lead": "Różnica głosowania wybranej grupy parlamentarnej na posiedzeniach Zgromadzenia Narodowego w porównaniu do średniej i najwyższego stopnia różnicy pomiędzy wszystkimi grupami parlamentarnymi.",
+    "text": "W przypadku każdego głosowania klubu parlamentarnego liczymy ilu członków oddało jakie głosy (ZA, PRZECIW, WSTRZYMANO SIĘ). Obliczamy procent tych, którzy głosowali za najpopularniejszą opcją. Odejmujemy ten procent od 100, aby uzyskać stopień różnicy, tzn. odsetek posłanek i posłów, którzy nie głosowali tak jak większość."
+  }
+}

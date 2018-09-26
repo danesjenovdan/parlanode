@@ -1,0 +1,23 @@
+{
+  "card": {
+    "title": "Lista głosowań przez"
+  },
+  "info": {
+    "lead": "Lista wszystkich głosowań Zgromadzenia Narodowego, odpowiadających zapytaniom użytkownika ({text}), dla wybranych odpowiedzialnych organów roboczych ({wbs}), sklasyfikowanych według {sortBy}.",
+    "text": [
+      "Lista wszystkich głosowań, które odbyły się w aktualnym zwołaniu Zgromadzenia Narodowego i które zostały zamieszczone na stronie {link1} i odpowiadają zapytaniu użytkownika.",
+      "Wyniki są sklasyfikowane według rozbieżności danej oragnizacji lub według daty."
+    ],
+    "links": [
+      {
+        "link": "http://www.dz-rs.si",
+        "text": "ZN RS"
+      }
+    ]
+  },
+  "all-votes": "wszystkie głosowania",
+  "all-working-bodies": "wszystkie odpowiedzialne organy robocze",
+  "opposition": "opozycja",
+  "everyone": "Wszystko",
+  "parliament": "zwołanie"
+}

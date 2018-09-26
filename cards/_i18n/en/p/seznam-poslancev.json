@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "A list of all MPs"
+    "title": "List of all MPs"
   },
   "info": {
     "lead": "A set of all currently active MPs, corresponding to user entry ({parties}; {districts}). The list is sorted by {sortBy}.",
     "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje."
   },
   "select-district-placeholder": "Select district",
-  "select-parties-placeholder": "Izberi poslansko skupino",
+  "select-parties-placeholder": "Select parliamentary group",
   "all-parties": "all parliamentary groups",
   "all-voting-districts": "all electoral districts",
   "missing-district": "the district is not entered",
@@ -25,8 +25,8 @@
       "label": "Demographics"
     },
     "presence_votes": {
-      "label": "Attendance at votings",
-      "titleSuffix": " attendance at votings in the National Assembly",
+      "label": "Attendance at votes",
+      "titleSuffix": " attendance at votes in the National Assembly",
       "explanation": "The number of voting events where the representative was present is divided by the number of all voting events and normalised (min 1-max 100)."
     },
     "number_of_questions": {

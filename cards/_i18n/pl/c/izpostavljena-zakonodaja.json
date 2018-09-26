@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Przedstawione ustawy"
+  },
+  "info": {
+    "lead": "Pokazanych jest sześć aktów prawnych w trakcie obrad oraz sześć niedawno przyjętych.",
+    "text": "Wybór przedstawionych aktów prawnych jest nadzorowany przed redakcję, w zależności od zainteresowania, które wykryjemy w mediach oraz wśród społeczeństwa obywatelskiego. To jednyny element na Parlametrze, który nie jest sterowany komputerowo, lecz przez człowieka."
+  },
+  "under-consideration": "Obecnie w trakcie obrad",
+  "recently-passed": "Niedawno przyjęte",
+  "all-legislation": "Wszystkie ustawy"
+}

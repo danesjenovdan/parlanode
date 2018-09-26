@@ -1,0 +1,16 @@
+{
+  "card": {
+    "title": "Głosowania"
+  },
+  "info": {
+    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie sesji.",
+    "text": [
+      "Dla wszystkich głosowań w sesji liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę członków, którzy nie głosowali oraz przedstawiamy wyniki.",
+      "Uzyskujemy zapisy głosowań ze strony internetowej {link}."
+    ],
+    "link": {
+      "text": "Zgromadzenie Narodowe Republiki Słowenii",
+      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+    }
+  }
+}
