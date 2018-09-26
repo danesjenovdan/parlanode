@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "A list of all MPs"
+    "title": "List of all MPs"
   },
   "info": {
     "lead": "A set of all currently active MPs, corresponding to user entry ({parties}; {districts}). The list is sorted by {sortBy}.",
