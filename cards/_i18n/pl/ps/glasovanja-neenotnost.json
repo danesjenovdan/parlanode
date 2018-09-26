@@ -3,15 +3,15 @@
     "title": "Lista głosowań przez"
   },
   "info": {
-    "lead": "Seznam vseh glasovanj DZ, ki ustrezajo uporabniškemu vnosu ({text}), za izbrana matična delovna telesa ({wbs}), razvrščenih po {sortBy}.",
+    "lead": "Lista wszystkich głosowań Zgromadzenia Narodowego, odpowiadających zapytaniom użytkownika ({text}), dla wybranych odpowiedzialnych organów roboczych ({wbs}), sklasyfikowanych według {sortBy}.",
     "text": [
-      "Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu {link1} ter ustrezajo uporabniškemu vnosu.",
+      "Lista wszystkich głosowań, które odbyły się w aktualnym zwołaniu Zgromadzenia Narodowego i które zostały zamieszczone na stronie {link1} i odpowiadają zapytaniu użytkownika.",
       "Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po datumu."
     ],
     "links": [
       {
         "link": "http://www.dz-rs.si",
-        "text": "DZ RS"
+        "text": "ZN RS"
       }
     ]
   },
