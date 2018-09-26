@@ -7,16 +7,16 @@
   "add": "Add",
   "continue": "Nastavi",
   "back": "Natrag",
-  "confirm_trigger": "Postavite podsjetnik",
+  "confirm_trigger": "Confirm the trigger",
   "add_new_trigger": "Add new trigger",
   "steps": [
     {
       "textfirst": "Set a trigger for a word or a phrase you want to be notified about.",
-      "textsecond": "Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici HS-a."
+      "textsecond": "You will get an email notification not long after the word or the phrase is used in the House of Commons."
     },
     {
-      "textfirst": "Odaberite način podudaranja",
-      "firstbullet": "točno podudaranje:",
+      "textfirst": "I want to be notified when:",
+      "firstbullet": "exact word or phrase:",
       "secondbullet": "široko podudaranje:"
     },
     {
