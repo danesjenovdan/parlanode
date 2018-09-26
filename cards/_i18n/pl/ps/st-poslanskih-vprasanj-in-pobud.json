@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Št. poslanskih vprašanj in pobud"
+    "title": "Nr poselskich zapytań i inicjatyw"
   },
   "info": {
-    "lead": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ.",
+    "lead": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków danego klubu parlamentarnego w trakcie tego posiedzenia Zgromadzenia Narodowego.",
     "text": "Podatke pridobivamo s spletnega mesta {link}.",
     "link": {
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
