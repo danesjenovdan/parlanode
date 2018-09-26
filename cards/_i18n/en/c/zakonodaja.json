@@ -3,7 +3,7 @@
     "title": "Legislation list"
   },
   "info": {
-    "lead": "List of all pieces of legislation MPs voted on in this sitting that match the user query (title, working body).",
+    "lead": "List of all pieces of legislation MPs voted on in this sitting that match the user query (title, committee).",
     "text": "Information on sessions is derived from the National Assembly of the Republic of Slovenia web site.",
     "links": [
       {
@@ -16,6 +16,6 @@
       }
     ]
   },
-  "select-working-body-placeholder": "Select working body",
+  "select-working-body-placeholder": "Select committee",
   "only-abstracts": "Only with abstracts"
 }
