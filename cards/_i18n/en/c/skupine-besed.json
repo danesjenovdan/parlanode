@@ -9,6 +9,6 @@
   "speakers": "Speakers",
   "input-words": "Enter a word or multiple words separated by a comma.",
   "empty-text": "To view results add at least two words.",
-  "wordgroups-text": "Show me who talk about {words} the most. {load}",
+  "wordgroups-text": "Show me who talks about the most: {words} {load}",
   "show-relative": "Display relative metric"
 }
