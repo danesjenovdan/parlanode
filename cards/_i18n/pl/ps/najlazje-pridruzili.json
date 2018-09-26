@@ -5,8 +5,8 @@
   "info": {
     "lead": "Lista 5 członków, którzy najczęściej głosują tak samo jak \"głos grupy parlamentarnej\". Lista skomponowana została w kolejności rosnącej. Im mniejsza wartość, tym większe dopasowanie głosów.",
     "text": [
-      "Izračunamo evklidsko razdaljo med rezultati glasovanj poslanske skupine in rezultati vseh ostalih poslancev (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
-      "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo prvih pet.",
+      "Obliczamy odległość euklidesową pomiędzy wynikami głosowania klubu parlamentarnego i głosami wszystkich innych posłów (przy czym wartość oddanych głosów konwertujemy do wartości liczbowych pomiędzy -1 i 1).",
+      "Podczas obliczania \"odległości\" pomiędzy wszystkimi posłami, klasyfikujemy ich według wyniku i pokazujemy pierwszą piątkę.",
       "Številčne vrednosti glasov"
     ],
     "list": [
