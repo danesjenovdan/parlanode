@@ -18,14 +18,14 @@
   "status": "Status",
   "result": "Rezultat",
   "age": "Age",
-  "education-level": "Stopnja izobrazbe",
+  "education-level": "Educational level attained",
   "education": "Education",
   "number-of-votes": "Število glasov",
   "number-of-terms": "Number of terms of office",
   "previous-occupation": "Previous status",
   "district": "District",
   "birth-date": "Rojstni dan",
-  "social-media": "Družbena omrežja",
+  "social-media": "Social media",
   "analysis": "Analysis",
   "vote-passed": "Passed",
   "vote-not-passed": "Rejected",
@@ -67,7 +67,7 @@
   "sort-by--date": "Date",
   "mps": "MPs",
   "party": "Parliamentary group",
-  "parties": "Poslanske skupine",
+  "parties": "Parliamentary groups",
   "time-period": "Time frame",
   "session-type": "Session type",
   "no-results": "No hits.",
@@ -172,7 +172,7 @@
     "vote-comparator": "Primerjalnik glasovanj",
     "discord": "Raziskovalec neenotnosti",
     "compass": "Parlamentarni kompas",
-    "word-groups": "Skupine besed"
+    "word-groups": "Word groups"
   },
   "frame": {
     "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
