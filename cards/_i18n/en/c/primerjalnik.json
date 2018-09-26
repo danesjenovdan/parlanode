@@ -10,7 +10,7 @@
     "list": [
       "as a list of all voting events,",
       "as a line chart that shows the number of votes on any given day,",
-      "as a histogram showing sums of votes based on working bodies."
+      "as a histogram showing sums of votes based on committees."
     ]
   },
   "comparator-text": "I want to know, when {same} voted the same, but {different} voted differently. {load}",
@@ -19,7 +19,7 @@
   "tabs": {
     "vote-list": "List of voting events",
     "time-chart": "Timeline",
-    "bar-chart": "Working bodies dynamics"
+    "bar-chart": "Committee dynamics"
   },
   "select-parties-people": "Select parliamentary groups or add individual MPs.",
   "select-mps": "Choose MPs",
