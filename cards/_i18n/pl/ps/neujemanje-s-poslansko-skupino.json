@@ -6,7 +6,7 @@
     "lead": "Lista wszystkich członków klubu, sklasyfikowana według stopnia, w jakim głosują oni tak samo jak grupa parlamentarna. Im większa wartość, tym mniejsze podobieństwa w głosowaniu.",
     "text": [
       "Dla każdego głosowania obliczamy \"głos grupy parlamentarnej\", której członkiem jest poseł. Następnie dla każdego posła obliczamy procent głosów, gdzie głosował on inaczej niż większość grupy parlamentarnej. Wyniki szeregujemy od największego do najmniejszego stopnia odchylenia.",
-      "Vse glasovnice z vrednostjo \"NI\" ignoriramo, kar ima za posledico to, da če je večinski glas poslanske skupine \"NI\" (večina poslank in poslancev se glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima poslanska skupina več \"večinskih glasov\" (dve opciji imata enako največje število glasov znotraj poslanske skupine) upoštevamo obe opciji pri primerjavi z individualnimi poslanci ni poslankami."
+      "Ignorujemy wszystkie karty do głosowania z wartością \"NIEOBECNY/A\". Jeżeli większość głosów w grupie parlamentarnej to \"NIEOBECNY/A\" (większość posłów nie była obecna podczas głosowania), to głosowanie to nie jest uwzględnione w analizie. Jeżeli grupa parlamentarna ma więcej \"głosów większości\" (tzn. dwie opcje mają taką samą liczbę głosów w grupie parlamentarnej), rozważamy obydwie opcje i porównujemy z poszczególnymi posłami."
     ]
   }
 }
