@@ -4,10 +4,10 @@
   },
   "info": {
     "lead": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków danego klubu parlamentarnego w trakcie tego posiedzenia Zgromadzenia Narodowego.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
+    "text": "Dane pochodzą ze strony internetowej {link}.",
     "link": {
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
-      "text": "DZ RS"
+      "text": "Zgromadzenie Narodowe Republiki Słowenii"
     }
   }
 }
