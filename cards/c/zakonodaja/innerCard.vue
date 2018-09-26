@@ -81,31 +81,31 @@ export default {
     mappedItems() {
       const mapResultIcon = {
         enacted: {
-          icon: 'glyphicon-ok',
+          icon: 'vote-result--enacted',
           name: this.$t('vote-result--enacted'),
         },
         adopted: {
-          icon: 'glyphicon-ok',
+          icon: 'vote-result--adopted',
           name: this.$t('vote-result--adopted'),
         },
         rejected: {
-          icon: 'glyphicon-remove',
+          icon: 'vote-result--rejected',
           name: this.$t('vote-result--rejected'),
         },
         retracted: {
-          icon: 'glyphicon-remove',
+          icon: 'vote-result--retracted',
           name: this.$t('vote-result--retracted'),
         },
         submitted: {
-          icon: 'v-obravnavi',
+          icon: 'vote-result--submitted',
           name: this.$t('vote-result--submitted'),
         },
         received: {
-          icon: 'v-obravnavi',
+          icon: 'vote-result--received',
           name: this.$t('vote-result--received'),
         },
         in_procedure: {
-          icon: 'v-obravnavi',
+          icon: 'vote-result--in_procedure',
           name: this.$t('vote-result--in_procedure'),
         },
       };
@@ -113,12 +113,10 @@ export default {
       return this.items.map((legislation) => {
         let mapKey = legislation.result;
         if (!mapKey) {
-          mapKey = 'vObravnavi';
+          mapKey = 'in_procedure';
         }
 
-        console.log(mapKey);
-
-        const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+        const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
         return [
           { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text}</a>` },
