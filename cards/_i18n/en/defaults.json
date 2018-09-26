@@ -30,7 +30,7 @@
   "vote-passed": "Accepted",
   "vote-not-passed": "Rejected",
   "vote-under-consideration": "V obravnavi",
-  "vote-result--enacted": "Izvršen",
+  "vote-result--enacted": "Adopted",
   "vote-result--submitted": "Oddan",
   "vote-result--rejected": "Zavrnjen",
   "vote-result--retracted": "Umaknjen",
@@ -90,10 +90,10 @@
   "legislation": "Legislation",
   "laws": "Laws",
   "acts": "Acts",
-  "votings": "Glasovanja",
+  "votings": "Voting events",
   "save": "Shrani",
   "generate": "Ustvari",
-  "edit-abstract": "Uredi povzetek",
+  "edit-abstract": "Edit summary",
   "info": {
     "title": "Info",
     "methodology": "METHODOLOGY"
@@ -132,8 +132,8 @@
     "ballot--against--f": "Voted AGAINST {title}",
     "ballot--absent--m": "NI glasoval za {title}",
     "ballot--absent--f": "NI glasovala za {title}",
-    "ballot--abstain--m": "VZDRŽAL se je glasovanja o {title}",
-    "ballot--abstain--f": "VZDRŽALA se je glasovanja o {title}",
+    "ballot--abstain--m": "ABSTAINED from voting on {title}",
+    "ballot--abstain--f": "ABSTAINED from voting on {title}",
     "speech--m": "Spoke at {session} {org}",
     "speech--f": "Spoke at {session} {org}"
   },
