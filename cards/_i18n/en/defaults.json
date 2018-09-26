@@ -170,8 +170,8 @@
   "tools": {
     "notifications": "Parlameter notifications",
     "vote-comparator": "Vote comparator",
-    "discord": "Raziskovalec neenotnosti",
-    "compass": "Parlamentarni kompas",
+    "discord": "Discord analysis",
+    "compass": "Parliamentary compass",
     "word-groups": "Word groups"
   },
   "frame": {
