@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Št. vloženih amandmajev"
+    "title": "Nr zgłoszonej poprawki"
   },
   "info": {
-    "lead": "Št. amandmajev, ki jih je vložila ta poslanska skupina v primerjavi s povprečno in najvišjo vrednostjo med vsemi poslanskimi skupinami.",
+    "lead": "Liczba poprawek zgłoszonych przez dany klub parlamentarny w porównaniu do maksymalnej i średniej wartości poprawek wśród wszystkich klubów parlamentarnych.",
     "text": "Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane. Podatke pridobivamo s spletnega mesta {link}.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
