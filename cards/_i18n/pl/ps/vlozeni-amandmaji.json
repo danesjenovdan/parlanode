@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Vloženi amandmaji"
+    "title": "Zgłoszone poprawki"
   },
   "info": {
-    "lead": "Pregled vseh glasovanj, ki so se zgodila na seji",
+    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie sesji",
     "text": [
-      "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
-      "Nabor glasovanj pridobimo s spletnega mesta {link1}.",
-      "Za označevanje nepričakovanih rezultatov glasovanj uporabljamo probabilistično metodo analize glavnih komponent, {link2} in opisana v {link3}.",
+      "Dla wszystkich głosowań w sesji liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę członków którzy byli nieobecni oraz przedstawiamy wyniki.",
+      "Zapisy głosowań uzyskujemyze strony internetowej {link}.",
+      "Aby zaznaczyć nieoczekiwane wyniki głosowania, używamy probabilistycznej metody analizy głównych komponentów, {link2} opisanej w {link3}.",
       "Vsa glasovanja pretvorimo v štiridimenzionalne vektorje, kjer vsaka od komponent pomeni število oddanih glasovnic s specifičnim glasom (ZA, PROTI, NI, VZDRŽAN). PCA model prilagodimo matriki in s funkcijo {link4} pridobimo \"log-likelihood\" vsakega glasovanja v našem modelu. Model deluje tako, da skuša pri prilagajanju \"log-likelihood\" vrednost maksimizirati za čim več glasovanj. Ko smo pridobili vse \"log-likelihood\" vrednosti jih razvrstimo od najmanjše proti največji in uporabimo četrtino vseh glasovanj, ki se modelu najslabše prilegajo. Ker v primerjavi z našim modelom ta glasovanja najbolj izstopajo, so kot taka najbolj \"nepričakovana.\" V kartici jih označimo z ikono ognja."
     ],
     "links": [
@@ -30,5 +30,5 @@
     ]
   },
   "accepted": "sprejeti",
-  "rejected": "zavrnjeni"
+  "rejected": "odrzucono"
 }
