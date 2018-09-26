@@ -4,10 +4,10 @@
   },
   "info": {
     "lead": "Lista wszystkich członków klubu parlamentarnego.",
-    "text": "Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino, črpamo s spletnega mesta {link}. Prikazani so samo trenutno aktivni poslanci.",
+    "text": "Nazwiska i zdjęcia posłów reprezentujących każdą z grup pochodzą ze strony internetowej {link}. Pokazani są tylko obecni członkowie.",
     "link": {
       "link": "http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine",
-      "text": "DZ RS"
+      "text": "Zgromadzenie Narodowe"
     }
   }
 }
