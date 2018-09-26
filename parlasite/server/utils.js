@@ -93,7 +93,7 @@ function i18n(lang) {
 
   return (path, props = {}) => {
     const msg = messages[path] || _.get(messages, path);
-    if (!msg) {
+    if (msg == null) {
       // eslint-disable-next-line no-console
       console.warn(chalk.yellow(`[i18n] Translation value for lang="${lang}" path="${path}" is missing.`));
       return path;
