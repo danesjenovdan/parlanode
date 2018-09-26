@@ -5,11 +5,11 @@
   "info": {
     "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie sesji.",
     "text": [
-      "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
-      "Nabor glasovanj pridobimo s spletnega mesta {link}."
+      "Dla wszystkich głosowań w sesji liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę członków, którzy nie głosowali oraz przedstawiamy wyniki.",
+      "Uzyskujemy zapisy głosowań ze strony internetowej {link}."
     ],
     "link": {
-      "text": "DZ RS",
+      "text": "Zgromadzenie Narodowe Republiki Słowenii",
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
     }
   }
