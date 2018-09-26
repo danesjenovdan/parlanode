@@ -3,15 +3,15 @@
   "match": "podudarjanje",
   "interval": "interval",
   "email": "email",
-  "add_trigger": "Dodaj okidač",
+  "add_trigger": "Add a trigger",
   "add": "Add",
   "continue": "Nastavi",
   "back": "Natrag",
   "confirm_trigger": "Postavite podsjetnik",
-  "add_new_trigger": "Dodaj novi podsjetnik",
+  "add_new_trigger": "Add new trigger",
   "steps": [
     {
-      "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
+      "textfirst": "Set a trigger for a word or a phrase you want to be notified about.",
       "textsecond": "Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici HS-a."
     },
     {
