@@ -3,10 +3,10 @@
     "title": "List of voting events according to "
   },
   "info": {
-    "lead": "A list of all voting events in the National Assembly, corresponding to user query ({text}), for selected working bodies responsible ({wbs}), sorted by {sortBy}.",
+    "lead": "A list of all voting events in the National Assembly, corresponding to user query ({text}), for selected committees responsible ({wbs}), sorted by {sortBy}.",
     "text": [
       "Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila objavljena na spletnem mestu {link1} ter ustrezajo uporabniškemu vnosu.",
-      "The results are sorted either by disparity or by date."
+      "The results are sorted either by discord or by date."
     ],
     "links": [
       {
@@ -16,7 +16,7 @@
     ]
   },
   "all-votes": "all voting events",
-  "all-working-bodies": "all working bodies responsible",
+  "all-working-bodies": "all committees responsible",
   "opposition": "opozicija",
   "everyone": "Vsi",
   "parliament": "sabor"

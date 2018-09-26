@@ -8,7 +8,7 @@
   "data-currently-unavailable": "Data currently unavailable.",
   "title-search": "Search by title",
   "contents-search": "Search by content",
-  "working-body": "Working body",
+  "working-body": "Committee",
   "vote-types": "Vote types",
   "select-placeholder": "Choose",
   "selected-placeholder": "Chosen: {num}",
@@ -29,7 +29,7 @@
   "analysis": "Analysis",
   "vote-passed": "Passed",
   "vote-not-passed": "Rejected",
-  "vote-under-consideration": "V obravnavi",
+  "vote-under-consideration": "Under procedure",
   "vote-result--enacted": "Passed",
   "vote-result--submitted": "Submitted",
   "vote-result--rejected": "Rejected",
@@ -47,18 +47,18 @@
   "vote-abstain--m": "Abstained",
   "vote-abstain--f": "Abstained",
   "vote-abstain-plural": "Abstained",
-  "vote-absent": "Ni",
+  "vote-absent": "Absent",
   "vote-absent-plural": "Absent",
-  "vote-no-majority": "Ni večinskega glasu",
+  "vote-no-majority": "No majority vote",
   "voted-for--f": "Voted FOR",
   "voted-for--m": "Voted FOR",
   "voted-for--plural": "Voted FOR",
   "voted-against--f": "Voted AGAINST",
   "voted-against--m": "Voted AGAINST",
   "voted-against--plural": "Voted AGAINST",
-  "voted-abstain--f": "Glasovala KVORUM",
-  "voted-abstain--m": "Glasoval KVORUM",
-  "voted-abstain--plural": "Glasovali KVORUM",
+  "voted-abstain--f": "Abstained from voting on",
+  "voted-abstain--m": "Abstained from voting on",
+  "voted-abstain--plural": "Abstained from voting on",
   "voted-absent--f": "Was absent at",
   "voted-absent--m": "Was absent at",
   "voted-absent--plural": "Didn't vote on",
@@ -72,15 +72,15 @@
   "session-type": "Session type",
   "no-results": "No hits.",
   "no-speeches": "No speeches.",
-  "no-abstract": "Za ta zakon žal nimamo povzetka.",
+  "no-abstract": "We apologise there is no summary for this law.",
   "present--f": "Present",
   "present--m": "Present",
   "present--plural": "Present",
-  "absent--f": "Odsotna",
+  "absent--f": "Absent",
   "absent--m": "Absent",
   "absent--plural": "Absent",
   "no-term": "No mandate",
-  "inequality": "Divided",
+  "inequality": "Discord",
   "everybody": "All",
   "show": "Show",
   "full-speech": "Whole speech",
@@ -91,8 +91,8 @@
   "laws": "Laws",
   "acts": "Acts",
   "votings": "Voting events",
-  "save": "Shrani",
-  "generate": "Ustvari",
+  "save": "Save",
+  "generate": "Generate",
   "edit-abstract": "Edit summary",
   "info": {
     "title": "Info",
@@ -107,7 +107,7 @@
     "always-refresh": "Data should keep refreshing"
   },
   "previous": {
-    "title": "Prejšnje verzije"
+    "title": "Previous versions"
   },
   "membership-list": {
     "no-memberships": "No memberships."
@@ -120,7 +120,7 @@
   "question": {
     "asked--m": "Asked question {title} that requires answer from {recipient}.",
     "asked--f": "Asked question {title} that requires answer from {recipient}.",
-    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Asked a question {title} that needs to be answered by {recipient}.",
     "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
     "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}.",
     "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
@@ -168,10 +168,10 @@
     "other": "drugo"
   },
   "tools": {
-    "notifications": "Parlameter obvestila",
-    "vote-comparator": "Primerjalnik glasovanj",
-    "discord": "Raziskovalec neenotnosti",
-    "compass": "Parlamentarni kompas",
+    "notifications": "Parlameter notifications",
+    "vote-comparator": "Vote comparator",
+    "discord": "Discord analysis",
+    "compass": "Parliamentary compass",
     "word-groups": "Word groups"
   },
   "frame": {

@@ -1,32 +1,32 @@
 {
   "trigger": "okidač",
-  "match": "podudarjanje",
+  "match": "match",
   "interval": "interval",
   "email": "email",
-  "add_trigger": "Dodaj okidač",
-  "add": "Dodaj",
-  "continue": "Nastavi",
-  "back": "Natrag",
-  "confirm_trigger": "Postavite podsjetnik",
-  "add_new_trigger": "Dodaj novi podsjetnik",
+  "add_trigger": "Add a trigger",
+  "add": "Add",
+  "continue": "Next",
+  "back": "Back",
+  "confirm_trigger": "Confirm the trigger",
+  "add_new_trigger": "Add new trigger",
   "steps": [
     {
-      "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
-      "textsecond": "Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici HS-a."
+      "textfirst": "Set a trigger for a word or a phrase you want to be notified about.",
+      "textsecond": "You will get an email notification not long after the word or the phrase is used in the House of Commons."
     },
     {
-      "textfirst": "Odaberite način podudaranja",
-      "firstbullet": "točno podudaranje:",
-      "secondbullet": "široko podudaranje:"
+      "textfirst": "Chose the match",
+      "firstbullet": "exact match:",
+      "secondbullet": "broad match:"
     },
     {
-      "textfirst": "Koliko često želite primati obavijesti?",
-      "textsecond": "po događaju",
-      "textthird": "najviše jednom dnevno",
-      "textfourth": "najviše jednom tjedno"
+      "textfirst": "How often do you want to be notified?",
+      "textsecond": "as it happens",
+      "textthird": "maximum once per day",
+      "textfourth": "maximum once per week"
     },
     {
-      "textfirst": "Još samo email adresa"
+      "textfirst": "The last thing we need is your email address"
     },
     {
       "textfirst": "Zabilježeno!",
@@ -36,12 +36,12 @@
     }
   ],
   "events": {
-    "event": "po događaju",
-    "day": "najviše jednom dnevno",
-    "week": "najviše jednom tjedno"
+    "event": "as it happens",
+    "day": "maximum once per day",
+    "week": "maximum once per week"
   },
   "modes": {
-    "precise": "točno podudaranje:",
-    "broad": "široko podudaranje:"
+    "precise": "exact match:",
+    "broad": "broad match:"
   }
 }

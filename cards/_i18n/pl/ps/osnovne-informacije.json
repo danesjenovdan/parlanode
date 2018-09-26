@@ -1,17 +1,17 @@
 {
   "card": {
-    "title": "Osnovne informacije"
+    "title": "Podstawowe informacje"
   },
   "info": {
-    "lead": "Pregled osnovnih informacij poslanske skupine.",
-    "text": "Vsebine za to kartico smo pridobili s spletnega mesta DZ RS (poslanska skupina, starost, članstva v delovnih telesih) in s spletnega mesta DVK (število prejetih glasov). Za ostale vsebine smo se obrnili na PR službe poslanskih skupin. Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
+    "lead": "Przegląd podstawowych informacji o klubie parlamentarnym.",
+    "text": "Treść dla tej karty uzyskaliśmy ze strony internetowej Zgromadzenia Narodowego (klub parlamentarny, wiek, członkostwo w organach roboczych) oraz ze strony internetowej Państwowej Komisji Wyborczej (liczba otrzymanych głosów). W przypadku wszystkich innych informacji skontaktowaliśmy się z działami PR klubów parlamentarnych. Otrzymaliśmy informacje od NSi, SD, (następnie) ZaAB i ZL. SMC skierował nas na swoją stronę internetową, a SDS skierował nas na stronę internetową Zgromadzenia Narodowego. Zebraliśmy brakujące dane za pomocą wyszukiwarki Google i daliśmy wszystkim klubom parlamentarnym możliwość wprowadzenia poprawek przed publikacją."
   },
-  "party-leader-m": "Vodja poslanske skupine",
-  "party-leader-f": "Vodja poslanske skupine",
-  "deputy-leader-m": "Namestnik",
-  "deputy-leader-f": "Namestnica",
-  "number-of-seats": "Število poslanskih sedežev:",
+  "party-leader-m": "Lider klubu",
+  "party-leader-f": "Lider klubu",
+  "deputy-leader-m": "Zastępca",
+  "deputy-leader-f": "Zastępczyni",
+  "number-of-seats": "Liczba miejsc w parlamencie:",
   "contact": "Kontakt:",
-  "social-media": "Družbena omrežja:",
-  "no-social-media": "ni družbenih omrežij."
+  "social-media": "Media społecznościowe:",
+  "no-social-media": "brak mediów społecznościowych."
 }

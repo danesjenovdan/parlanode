@@ -1,15 +1,15 @@
 {
   "card": {
-    "title": "Seznam poslanskih skupin"
+    "title": "Lista klubów parlamentarnych"
   },
   "analysis-texts": {
     "seat_count": {
-      "label": "Število sedežev",
-      "titleSuffix": " po številu sedežev",
-      "explanation": "Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane."
+      "label": "Liczba miejsc",
+      "titleSuffix": " przez liczbę miejsc",
+      "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jej aktywnych członków."
     },
     "presence_sessions": {
-      "label": "Prisotnost na sejah DZ",
+      "label": "Obecność na sesjach Zgromadzenia Narodowego",
       "titleSuffix": " glede na rezultate analize s prisotnostjo na sejah DZ",
       "explanation": "Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100)."
     },
