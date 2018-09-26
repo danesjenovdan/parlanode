@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "Seznam glasovanj po "
+    "title": "Lista głosowań przez"
   },
   "info": {
     "lead": "Seznam vseh glasovanj DZ, ki ustrezajo uporabniškemu vnosu ({text}), za izbrana matična delovna telesa ({wbs}), razvrščenih po {sortBy}.",
