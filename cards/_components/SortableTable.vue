@@ -182,7 +182,7 @@ export default {
 
 .bar {
   width: 100%;
-  background-color: $third;
+  background-color: $barchart-default;
   height: 18px;
   display: flex;
   flex-wrap: nowrap;
