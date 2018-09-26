@@ -61,7 +61,7 @@
   "voted-abstain--plural": "Glasovali KVORUM",
   "voted-absent--f": "Ni glasovala o",
   "voted-absent--m": "Ni glasoval o",
-  "voted-absent--plural": "Niso glasovali o",
+  "voted-absent--plural": "Were absent at",
   "sort-by": "Order by",
   "sort-by--inequality": "Discord",
   "sort-by--date": "Date",
