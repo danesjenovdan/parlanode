@@ -80,7 +80,7 @@
   "absent--m": "Absent",
   "absent--plural": "Absent",
   "no-term": "No mandate",
-  "inequality": "Divided",
+  "inequality": "Discord",
   "everybody": "All",
   "show": "Show",
   "full-speech": "Whole speech",
@@ -168,8 +168,8 @@
     "other": "drugo"
   },
   "tools": {
-    "notifications": "Parlameter obvestila",
-    "vote-comparator": "Primerjalnik glasovanj",
+    "notifications": "Parlameter notifications",
+    "vote-comparator": "Vote comparator",
     "discord": "Raziskovalec neenotnosti",
     "compass": "Parlamentarni kompas",
     "word-groups": "Word groups"
