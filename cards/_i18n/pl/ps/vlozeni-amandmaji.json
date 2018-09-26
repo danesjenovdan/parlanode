@@ -13,11 +13,11 @@
     "links": [
       {
         "link": "http://www.dz-rs.si",
-        "text": "DZ RS"
+        "text": "ZN RS"
       },
       {
         "link": "http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
-        "text": "kot je implementirana v knjižicah scikit-learn"
+        "text": "jak zaimplementowano w bibliotekach scikit-learn"
       },
       {
         "link": "http://www.miketipping.com/papers/met-mppca.pdf",
@@ -29,6 +29,6 @@
       }
     ]
   },
-  "accepted": "sprejeti",
+  "accepted": "przyjęto",
   "rejected": "odrzucono"
 }
