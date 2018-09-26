@@ -20,7 +20,7 @@
     },
     "number_of_questions": {
       "label": "Nr poselskiego pytania i inicjatywy",
-      "titleSuffix": " glede na rezultate analize po št. poslanskih vprašanj in pobud",
+      "titleSuffix": " zgodnie z wynikami analizy według nr pytania i inicjatywy poselskiej",
       "explanation": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega mesta DZ RS."
     },
     "vocabulary_size": {
