@@ -77,7 +77,7 @@
   "present--m": "Present",
   "present--plural": "Present",
   "absent--f": "Odsotna",
-  "absent--m": "Odsoten",
+  "absent--m": "Absent",
   "absent--plural": "Absent",
   "no-term": "Brez mandata",
   "inequality": "Divided",
