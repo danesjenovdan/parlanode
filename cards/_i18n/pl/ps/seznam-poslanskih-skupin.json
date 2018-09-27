@@ -6,22 +6,22 @@
     "seat_count": {
       "label": "Liczba miejsc",
       "titleSuffix": " przez liczbę miejsc",
-      "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jej aktywnych członków."
+      "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jego aktywnych członków."
     },
     "presence_sessions": {
-      "label": "Obecność na sesjach Zgromadzenia Narodowego",
-      "titleSuffix": " zgodnie z wynikami analizy obecności na sesjach Zgromadzenia Narodowego",
+      "label": "Obecność na sesjach Sejmu RP",
+      "titleSuffix": " zgodnie z wynikami analizy obecności na sesjach Sejmu RP",
       "explanation": "Liczymy wszystkie sesje i sprawdzamy każdego członka tego klubu parlamentarnego, jeśli głosowali co najmniej raz w trakcie tej sesji. W przypadku, gdy głosują co najmniej raz, są liczeni jako obecni. Suma wszystkich uczestników jest podzielona przez liczbę przedstawicieli w klubie parlamentarnym, wynik ten jest następnie dzielony przez liczbę sesji i normalizowany (min. 1 - maks. 100)."
     },
     "presence_votes": {
       "label": "Obecność na głosowaniach",
-      "titleSuffix": " zgodnie z wynikami analizy obecności na głosowaniach Zgromadzenia Narodowego",
+      "titleSuffix": " zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP",
       "explanation": "Liczymy wszystkie głosowania, a także liczbę przedstawicieli z klubu parlamentarnnego obecnych przy każdym głosowaniu. Suma wszystkich oddanych głosów jest dzielona przez liczbę przedstawicieli w klubie parlamentarnym i liczbę głosowań. Wynik jest następnie normalizowany (min. 1 - maks. 100)."
     },
     "number_of_questions": {
       "label": "Nr poselskiego pytania i inicjatywy",
-      "titleSuffix": " zgodnie z wynikami analizy według nr pytania i inicjatywy poselskiej",
-      "explanation": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków wybranego klubu parlamentarnego w odniesieniu do Zgromadzenia Narodowego. Dane uzyskujemy ze strony internetowej"
+      "titleSuffix": " zgodnie z wynikami analizy według nr zapytania i inicjatywy poselskiej",
+      "explanation": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków wybranego klubu parlamentarnego w odniesieniu do Sejmu. Dane uzyskujemy ze strony internetowej Sejmu RP."
     },
     "vocabulary_size": {
       "label": "Różnorodność słownictwa",
