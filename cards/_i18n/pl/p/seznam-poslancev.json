@@ -4,15 +4,15 @@
   },
   "info": {
     "lead": "Zestawienie wszystkich aktualnie aktywnych posłów, odpowiadający zapytaniu użytkownika ({parties}; {districts}). Lista jest uszeregowana według {sortBy}.",
-    "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje."
+    "text": "Kolumna \"Analiza\" odzwierciedla wynik sumaryczny, a kolumna \"Zmiana\" odzwierciedla różnicę w porównaniu do poprzednich danych, które zostały zebrane. Kolumna \"Zmień\" jest odświeżana pod koniec każdej sesji."
   },
-  "select-district-placeholder": "Izberi okraj",
-  "select-parties-placeholder": "Izberi poslansko skupino",
-  "all-parties": "vse poslanske skupine",
-  "all-voting-districts": "vsi volilni okraji",
+  "select-district-placeholder": "Wybierz okręg",
+  "select-parties-placeholder": "Wybierz klub parlamentarny",
+  "all-parties": "wszystkie kluby parlamentarne",
+  "all-voting-districts": "wszystkie okręgi wyborcze",
   "missing-district": "okraj ni vnešen",
-  "voting-district": "volilni okraj",
-  "sort-by--name": "abecedi",
+  "voting-district": "okręg wyborczy",
+  "sort-by--name": "alfabet",
   "sort-by--district": "okrajih",
   "sort-by--party": "poslanskih skupinah",
   "sort-by--analysis": "rezultatu analize {analysis}",
