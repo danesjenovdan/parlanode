@@ -118,20 +118,20 @@
     "excessive-vocabulary": "Przesadne słownictwo"
   },
   "question": {
-    "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--f": "Zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--m": "{name} je zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--m": "Zadał pytanie {title} na któe wymaga odpowiedzi od {recipient}.",
+    "asked--f": "Zadała pytanie {title} na któe wymaga odpowiedzi od {recipient}.",
+    "asked--plural": "Zadali pytanie {title} na któe wymagają odpowiedzi od {recipient}.",
+    "asked--with-name--m": "{name} zadał pytanie {title} na które wymaga odpowiedzi od {recipient}.",
+    "asked--with-name--f": "{name} zadała pytanie {title} na które wymaga odpowiedzi od {recipient}.",
+    "asked--with-name--plural": "{name} zadali pytanie {title} na które wymagają odpowiedzi od {recipient}."
   },
   "event": {
-    "ballot--for--m": "Glasoval ZA {title}",
-    "ballot--for--f": "Glasovala ZA {title}",
-    "ballot--against--m": "Glasoval PROTI {title}",
-    "ballot--against--f": "Glasovala PROTI {title}",
-    "ballot--absent--m": "NI glasoval za {title}",
-    "ballot--absent--f": "NI glasovala za {title}",
+    "ballot--for--m": "Glasowal ZA {title}",
+    "ballot--for--f": "Glasowala ZA {title}",
+    "ballot--against--m": "Glasowal PRZECIW {title}",
+    "ballot--against--f": "Glasowala PRZECIW {title}",
+    "ballot--absent--m": "Nie głosował za {title}",
+    "ballot--absent--f": "Nie głosowała za {title}",
     "ballot--abstain--m": "VZDRŽAL se je glasovanja o {title}",
     "ballot--abstain--f": "VZDRŽALA se je glasovanja o {title}",
     "speech--m": "Govoril na {session} {org}",
