@@ -1,9 +1,9 @@
 {
-  "trigger": "okidač",
-  "match": "podudarjanje",
+  "trigger": "wyzwalacz",
+  "match": "dopasuj",
   "interval": "interwał",
   "email": "e-mail",
-  "add_trigger": "Dodaj okidač",
+  "add_trigger": "Dodaj wyzwalacz",
   "add": "Dodaj",
   "continue": "Dalej",
   "back": "Wstecz",
