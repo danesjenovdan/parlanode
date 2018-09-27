@@ -3,10 +3,10 @@
     "title": "Słowa, które charakteryzują klub"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki jih poslanec/-ka uporablja pogosteje kot ostali poslanci v DZ.",
+    "lead": "Lista 10 słów i zwrotów, które poseł używa częściej niż reszta posłów w Sejmie.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori."
+      "Używamy następujących statystyk {link} do przeprowadzania analiz.",
+      "Korpus prezentuje wszystkie przemowy, a dokument odnosi się do wszystkich wystąpień posła//posłanki."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",
