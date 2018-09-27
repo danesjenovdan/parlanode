@@ -19,7 +19,7 @@
   "tabs": {
     "vote-list": "Lista głosowań",
     "time-chart": "Oś czasu",
-    "bar-chart": "Dinamika glede na MDT"
+    "bar-chart": "Dynamika w odniesieniu do organów roboczych"
   },
   "select-parties-people": "Wybierz klub parlamentarny lub dodaj poszczególnego członka.",
   "select-mps": "Wybierz posła",
