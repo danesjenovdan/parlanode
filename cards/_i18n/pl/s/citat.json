@@ -3,10 +3,10 @@
     "title": "Cytat"
   },
   "info": {
-    "text": "Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu {link}, strojno razbijemo na posamezne govorne nastope. To je kartica, ki predstavlja en govor.",
+    "text": "Transkrypcje sesji w postaci dokumentu HTML opublikowanego na stronie internetowej {link}, są rozbijane na poszczególne przemowy. Stworzona karta przedstawiaja jedną przemowę.",
     "link": {
-      "link": "http://www.dz-rs.si",
-      "text": "DZ RS"
+      "link": "http://www.sejm.gov.pl/",
+      "text": "Sejm RP"
     }
   }
 }
