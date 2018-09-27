@@ -3,11 +3,11 @@
     "title": "Członkostwo"
   },
   "info": {
-    "lead": "Izpis vseh članstev poslanca/-ke v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.",
-    "text": "Podatki o članstvih pridobljeni s spletnega mesta {link}.",
+    "lead": "Lista członków w komisjach, stałych delegacjach i parlamentarnych grupach przyjaźni.",
+    "text": "Dane dotyczące członkostwa pochodzą ze strony internetowej {link}.",
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi"
+      "text": "Sejm RP",
+      "link": "http://www.sejm.gov.pl/sejm8.nsf/poslowie.xsp?type=A"
     }
   }
 }
