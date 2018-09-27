@@ -1,15 +1,15 @@
 {
   "card": {
-    "title": "Vsa glasovanja"
+    "title": "All voting events"
   },
   "info": {
-    "lead": "Popis svih glasanja u Hrvatskom saboru. Glasanja su razvrstana prema datumu od najnovijih do najstarijih.",
+    "lead": "All voting events in the parliament. The voting events are ordered by date from most recent to oldest.",
     "text": [
-      "Za sva glasanja prebroje se svi glasovi (ZA, PROTIV, SUZDRŽANA) i broj zastupnica koje nisu glasale te ispišu rezultati.",
-      "Zbirka glasanja preuzima se s web stranica Hrvatskog sabora {link}.",
-      "Za označavanje neočekivanih rezultata koristi se probabilistička metoda analize glavnih komponenti, {link1} i opisana {link2}.",
-      "Sva glasanja pretvaraju se u četverodimenzionalne vektore, gdje svaka komponenta predstavlja broj danih glasova određene vrijednosti (ZA, PROTIV, ODSUTNA, SUZDRŽANA). PCA model prilagođava se matrici, a funkcijom {link} dobiva se \"log-likelihood\" svakog glasanja u modelu. Model funkcionira tako da prilikom adaptacije \"log-likelihood\" vrijednost nastoji maksimizirati za što je moguće više glasanja. Kad se dobiju sve \"log-likelihood\" vrijednosti, rangiraju se od najmanje do najveće i koristi se četvrtina svih glasanja koji modelu najmanje odgovaraju. Kako u usporedbi s modelom ti glasovi najviše odstupaju, kao takvi su najviše \"neočekivani\". U kartici su označeni simbolom munje.",
-      "Ruka gore označava glasanja na kojima se nije glasalo individualno nego podizanjem ruke."
+      "For all voting events in a session we count the votes (FOR, AGAINST, ABSTAINED) and the number of MPs who were absent and display the results.",
+      "Voting information is collected from the web page of the National Assembly of the Republic of Slovenia {link}.",
+      "To mark unexpected voting results we use the probabilistic method of analysis of main components, {link1} and described in {link2}.",
+      "We transform all voting events into four-dimensional vectors where each of the components shows the number of votes for a specific option (FOR, AGAINST, ABSTAINED, ABSENT). Principal component analysis (PCA) model is adjusted to the matrix and function {link} gives us \"log-likelihood\" of each voting event in our model. The model is set to maximise \"log-likelihood\" value to as many voting events as possible. When we obtain all \"log-likelihood\" values we sort them from smallest to biggest and use a fourth of all voting events which fit the model the least. Compared to our model these voting events stand out and are therefore most \"unexpected\". In the card they are marked with a fire icon.",
+      "Hands up symbol marks voting events where voting happened by raising hands."
     ],
     "links": [
       {
