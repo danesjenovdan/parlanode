@@ -3,11 +3,11 @@
     "title": "Poselskie zapytania i inicjatywy"
   },
   "info": {
-    "lead": "Izpis vseh poslanskih vprašanj in pobud, ki ji je poslanec/-ka postavil/-a v tem sklicu DZ RS.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
+    "lead": "Lista wszystkich poselskich zapytań i inicjatyw, które wystosował poseł/posłanka w tej kadencji w odniesieniu do Sejmu Rzeczypospolitej Polskiej.",
+    "text": "Dane pochodzą ze strony internetowej {link}.",
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/"
+      "text": "Sejm RP",
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/interpelacje.xsp"
     }
   }
 }
