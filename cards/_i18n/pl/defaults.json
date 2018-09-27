@@ -104,18 +104,18 @@
   },
   "embed": {
     "title": "Vdelaj",
-    "always-refresh": "Podatki naj se vedno osvežujejo"
+    "always-refresh": "Dane powinny być zawsze odświeżane"
   },
   "previous": {
-    "title": "Prejšnje verzije"
+    "title": "Poprzednia wersja"
   },
   "membership-list": {
-    "no-memberships": "Brez članstev."
+    "no-memberships": "Bez członkostwa."
   },
   "style-scores": {
-    "elevated-vocabulary": "Privzdignjeno besedje",
-    "simple-vocabulary": "Preprosto besedje",
-    "excessive-vocabulary": "Ekscesno besedje"
+    "elevated-vocabulary": "Podniosłe słownictwo",
+    "simple-vocabulary": "Proste słownictwo",
+    "excessive-vocabulary": "Przesadne słownictwo"
   },
   "question": {
     "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
@@ -169,13 +169,13 @@
   },
   "tools": {
     "notifications": "Parlametr powiadomienia",
-    "vote-comparator": "Primerjalnik glasovanj",
-    "discord": "Raziskovalec neenotnosti",
-    "compass": "Parlamentarni kompas",
-    "word-groups": "Skupine besed"
+    "vote-comparator": "Komparator głosowań",
+    "discord": "Analiza niezgodności",
+    "compass": "Parlamentarny kompas",
+    "word-groups": "Grupy słów"
   },
   "frame": {
-    "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
+    "show-in-context": "Pokaż kartę w kontekście tej strony internetowej"
   },
-  "ogText": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru."
+  "ogText": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu Rp."
 }
