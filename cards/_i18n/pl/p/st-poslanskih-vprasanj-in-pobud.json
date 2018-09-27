@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Št. poslanskih vprašanj in pobud"
+    "title": "Liczba poselskich zapytań i inicjatyw"
   },
   "info": {
-    "lead": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka postavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
+    "lead": "Liczba zapytań i inicjatyw poselskich podejmowanych przez posła na tym posiedzeniu Sejmu RP w porównaniu ze średnią i maksymalną wartością.",
+    "text": "Dane są pobrane ze strony internetowej {link}.",
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
-      "text": "DZ RS"
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/interpelacje.xsp",
+      "text": "Sejm RP"
     }
   }
 }
