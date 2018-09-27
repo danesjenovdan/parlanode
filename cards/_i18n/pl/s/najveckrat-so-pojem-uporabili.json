@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Največkrat so pojem uporabili"
+    "title": "Najczęściej używane pojęcie"
   },
   "info": {
-    "lead": "Seznam 5 poslancev, ki so iskalni niz največkrat uporabili, razvrščen od največje proti najmanjši vrednosti.",
-    "text": "Preštejemo, kolikokrat je posamezni/-a poslanec/-ka izrekel/-a iskani niz in osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev. Prikažemo jih pet z največ rezultati."
+    "lead": "Lista 5 członków, którzy używali szukanej frazy najczęściej, uszeregowana od nawiększej do najmniejszej wartości.",
+    "text": "Liczymy, ile razy każdy poseł użył szukanej frazy. Szeregujemy wszystkich posłów, którzy używali szukanej frazy co najmniej raz. Pokazujemy pięciu, którzy mają najwyższy wynik."
   }
 }
