@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "Lista wszystkich ustaw i aktów prawnych, które zawierają szukaną frazę w tytule lub w streszczeniu, nad którymi głosowano w trakcie bieżącego posiedzenia.",
-    "text": "Po naslovih in povzetkih vseh zakonov in aktov, obravnavanih v tem sklicu, poiščemo pojavitve iskalnega niza in izpišemo povezave do vseh tistih zakonov ali aktov, v katerih se pojavi njegova lema. Na koncu zakone oziroma akte razvrstimo po podobnosti z iskalnim nizom."
+    "text": "Podążając za tytułami i streszczeniami wszystkich ustaw i aktów omawianych w tej sesji, szukamy wystąpień szukanej frazy. Linki do wyników są sortowane według podobieństwa z szukaną frazą."
   }
 }
