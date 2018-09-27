@@ -3,7 +3,7 @@
     "title": "Najczęściej głosują jednakowo"
   },
   "info": {
-    "lead": "Lista 5 członków, którzy najczęściej głosują tak samo jak \"głos grupy parlamentarnej\". Lista skomponowana została w kolejności rosnącej. Im mniejsza wartość, tym większe dopasowanie głosów.",
+    "lead": "Lista 5 członków, którzy najczęściej głosują tak samo jak \"głos klubu parlamentarnego\". Lista skomponowana została w kolejności rosnącej. Im mniejsza wartość, tym większe dopasowanie głosów.",
     "text": [
       "Obliczamy odległość euklidesową pomiędzy wynikami głosowania klubu parlamentarnego i głosami wszystkich innych posłów (przy czym wartość oddanych głosów konwertujemy do wartości liczbowych pomiędzy -1 i 1).",
       "Podczas obliczania \"odległości\" pomiędzy wszystkimi posłami, klasyfikujemy ich zgodnie z wynikiem i pokazujemy pierwszą piątkę.",
