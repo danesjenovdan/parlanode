@@ -3,11 +3,11 @@
     "title": "Grupy słów"
   },
   "info": {
-    "lead": "Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.",
+    "lead": "Karta pokazuje, który mówca, którego klubu parlamentarnego absolutnie i relatywnie najwięcej mówi o określonym temacie lub przy użyciu określonej grupy słów.",
     "text": "Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov."
   },
-  "speakers": "Govorci",
-  "input-words": "Vnesi posamezno besedo ali več besed, ločenih z vejico.",
+  "speakers": "Mówcy",
+  "input-words": "Wprowadż słowo lub kilka słów oddzielonych przecinkiem.",
   "empty-text": "Za prikaz rezultatov dodaj vsaj dve besedi.",
   "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
   "show-relative": "Prikaži relativno metriko"
