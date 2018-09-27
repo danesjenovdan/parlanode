@@ -152,10 +152,10 @@
     "December"
   ],
   "vote_types": {
-    "agenda": "dnevni red",
-    "whole_law": "glasovanje o zakonu v celoti",
-    "amendment": "amandma",
-    "no_confidence": "interpelacija",
+    "agenda": "agenda",
+    "whole_law": "vote about the law in its entirety",
+    "amendment": "amendment",
+    "no_confidence": "Vote of no-confidence",
     "record_conclusion": "evidenčni sklep",
     "conclusion_proposal": "predlog sklepa",
     "ratification": "zakon o ratifikaciji",
