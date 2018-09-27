@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Govori"
+    "title": "Przemowy"
   },
   "info": {
-    "lead": "Izpis povezav do vseh poslančevih/-kinih govorov v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.",
+    "lead": "Zestawienie linków do wszystkich wystąpień w tym posiedzeniu, zgodnie z zapytaniem użytkownika, ułożone wedle dat.",
     "text": "Naložimo povezave do vseh govorov izbranega poslanca/-ke, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno obdobje, vrsta seje)."
   }
 }
