@@ -11,5 +11,5 @@
     ]
   },
   "select-mps": "Choose MPs",
-  "selected-mps": "Izbranih: {num}"
+  "selected-mps": "Selected: {num}"
 }
