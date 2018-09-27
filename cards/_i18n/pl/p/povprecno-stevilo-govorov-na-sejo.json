@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Povprečno število govorov na sejo"
+    "title": "Średnia liczba wystąpień na sesję"
   },
   "info": {
-    "lead": "Povprečno število govorov poslanca/-ke na sejo v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Preštejemo poslačeve/-kine govore, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link} in število delimo s številom sej, na katerih je bil/-a poslanec/-ka prisoten/-na. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim in najvišjim.",
+    "lead": "Średnia liczba wystąpień posłów na sesję w porównaniu do wartości średniej i maksymalnej.",
+    "text": "Liczymy wstąpienia posłów z transkrypcji pobranych z witryny {link} i dzielimy je przez liczbę sesji, w których uczestniczył poseł. Liczbę wszystkich wystąpień dzielimy najpierw przez liczbę wszystkich posłów, a następnie przez liczbę wszystkich sesji (gdzie wygłaszano przemówienia). Porównujemy indywidualny wynik z wartością średnią i maksymalną.",
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      "text": "Sejm RP",
+      "link": "http://www.sejm.gov.pl/sejm8.nsf/terminarz.xsp"
     }
   }
 }
