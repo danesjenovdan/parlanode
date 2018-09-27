@@ -9,8 +9,8 @@
       "Uzyskujemy zapisy głosowań ze strony internetowej {link}."
     ],
     "link": {
-      "text": "Zgromadzenie Narodowe Republiki Słowenii",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      "text": "Sejm Rzeczypospolitej Polskiej",
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/terminarz.xsp"
     }
   }
 }
