@@ -10,22 +10,22 @@
   "select-parties-placeholder": "Wybierz klub parlamentarny",
   "all-parties": "wszystkie kluby parlamentarne",
   "all-voting-districts": "wszystkie okręgi wyborcze",
-  "missing-district": "okraj ni vnešen",
+  "missing-district": "okręg nie został wprowadzony",
   "voting-district": "okręg wyborczy",
-  "sort-by--name": "alfabet",
-  "sort-by--district": "okrajih",
-  "sort-by--party": "poslanskih skupinah",
-  "sort-by--analysis": "rezultatu analize {analysis}",
-  "sort-by--change": "aktualni spremembi v rezultatu analize {analysis}",
-  "sort-by--age": "starosti",
-  "sort-by--education": "stopnji izobrazbe",
-  "sort-by--terms": "številu mandatov",
+  "sort-by--name": "alfabetycznie",
+  "sort-by--district": "okręgi",
+  "sort-by--party": "kluby parlamentarne",
+  "sort-by--analysis": "analiza wyników {analysis}",
+  "sort-by--change": "aktualne zmiany w wynikach analizy {analysis}",
+  "sort-by--age": "wiek",
+  "sort-by--education": "poziom wykształcenia",
+  "sort-by--terms": "liczba kadencji",
   "analysis-texts": {
     "demographics": {
-      "label": "Demografija"
+      "label": "Demografia"
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
+      "label": "Obecność na głosowaniach Sejmu RP",
       "titleSuffix": " po prisotnosti na glasovanjih sej DZ",
       "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100)."
     },
