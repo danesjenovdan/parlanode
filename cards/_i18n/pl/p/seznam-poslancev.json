@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Seznam poslancev"
+    "title": "Lista posłów"
   },
   "info": {
-    "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
+    "lead": "Zestawienie wszystkich aktualnie aktywnych posłów, odpowiadający zapytaniu użytkownika ({parties}; {districts}). Lista jest uszeregowana według {sortBy}.",
     "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje."
   },
   "select-district-placeholder": "Izberi okraj",
