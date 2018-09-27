@@ -11,26 +11,26 @@
   "add_new_trigger": "Dodaj nowe przypomnienie",
   "steps": [
     {
-      "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
-      "textsecond": "Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici HS-a."
+      "textfirst": "Ustaw wyzwalacz dla słowa lub frazy o których chcesz być powiadomiony.",
+      "textsecond": "Dostaniesz wiadomość e-mail zaraz po tym, gdy słowo lub fraza zostanie użyte w trakcie sesji Sejmu RP."
     },
     {
       "textfirst": "Odaberite način podudaranja",
       "firstbullet": "točno podudaranje:",
-      "secondbullet": "široko podudaranje:"
+      "secondbullet": "szerokie dopasowanie:"
     },
     {
-      "textfirst": "Koliko često želite primati obavijesti?",
-      "textsecond": "po događaju",
-      "textthird": "najviše jednom dnevno",
-      "textfourth": "najviše jednom tjedno"
+      "textfirst": "Jak często chcesz otrzymywać powiadomienia?",
+      "textsecond": "kiedy coś się dzieje",
+      "textthird": "maksymalnie raz dziennie",
+      "textfourth": "maksymalnie raz tygodniowo"
     },
     {
-      "textfirst": "Još samo email adresa"
+      "textfirst": "Potrzebujemy już tylko twój adres e-mail"
     },
     {
       "textfirst": "Zabilježeno!",
-      "textsecond": "Na email adresu",
+      "textsecond": "Na adres e-mail",
       "textthird": "poslana prijava za Parlametar obavijesti za ključnu riječ",
       "textfourth": "Zajrzyj do inboxu!"
     }
