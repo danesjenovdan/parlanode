@@ -103,7 +103,7 @@
     "direct-link": "Bezpośredni link do tej strony"
   },
   "embed": {
-    "title": "Vdelaj",
+    "title": "Osadź",
     "always-refresh": "Dane powinny być zawsze odświeżane"
   },
   "previous": {
@@ -132,40 +132,40 @@
     "ballot--against--f": "Glasowala PRZECIW {title}",
     "ballot--absent--m": "Nie głosował za {title}",
     "ballot--absent--f": "Nie głosowała za {title}",
-    "ballot--abstain--m": "VZDRŽAL se je glasovanja o {title}",
-    "ballot--abstain--f": "VZDRŽALA se je glasovanja o {title}",
-    "speech--m": "Govoril na {session} {org}",
-    "speech--f": "Govorila na {session} {org}"
+    "ballot--abstain--m": "WSTRZYMAŁ się od głosowania na {title}",
+    "ballot--abstain--f": "WSTRZYMAŁa się od głosowania na {title}",
+    "speech--m": "Przemawiał na {session} {org}",
+    "speech--f": "Przemawiała na {session} {org}"
   },
   "months": [
-    "januar",
-    "februar",
-    "marec",
-    "april",
+    "styczeń",
+    "luty",
+    "marzec",
+    "kwiecień",
     "maj",
-    "junij",
-    "julij",
-    "avgust",
-    "september",
-    "oktober",
-    "november",
-    "december"
+    "czerwiec",
+    "lipiec",
+    "sierpień",
+    "wrzesień",
+    "październik",
+    "listopad",
+    "grudzień"
   ],
   "vote_types": {
-    "agenda": "dnevni red",
-    "whole_law": "glasovanje o zakonu v celoti",
-    "amendment": "amandma",
-    "no_confidence": "interpelacija",
-    "record_conclusion": "evidenčni sklep",
-    "conclusion_proposal": "predlog sklepa",
-    "ratification": "zakon o ratifikaciji",
-    "naming": "imenovanje",
-    "call_proposal": "predlog za razpis",
-    "recommendation": "priporočilo",
-    "report": "poročilo",
-    "procedural_proposal": "proceduralni predlog",
-    "personal_property_decree": "odlok o načrtu ravnanja s stvarnim premoženjem",
-    "other": "drugo"
+    "agenda": "porządek dnia",
+    "whole_law": "głosowanie nad ustawą w całości",
+    "amendment": "poprawka",
+    "no_confidence": "interpelacja",
+    "record_conclusion": "pierwsze czytanie",
+    "conclusion_proposal": "przedłożenie ustawy",
+    "ratification": "ustawa o ratyfikacji",
+    "naming": "mianowanie",
+    "call_proposal": "wniosek o rozpisanie",
+    "recommendation": "zalecenie",
+    "report": "raport",
+    "procedural_proposal": "wniosek proceduralny",
+    "personal_property_decree": "dekret w sprawie planu zarządzania nieruchomościami",
+    "other": "inne"
   },
   "tools": {
     "notifications": "Parlametr powiadomienia",
