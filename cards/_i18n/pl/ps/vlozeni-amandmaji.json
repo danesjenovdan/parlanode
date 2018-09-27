@@ -8,12 +8,12 @@
       "Dla wszystkich głosowań w sesji liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę członków którzy byli nieobecni oraz przedstawiamy wyniki.",
       "Zapisy głosowań uzyskujemyze strony internetowej {link}.",
       "Aby zaznaczyć nieoczekiwane wyniki głosowania, używamy probabilistycznej metody analizy głównych komponentów, {link2} opisanej w {link3}.",
-      "Wszystkie głosowania przetwarzamy w czterowymiarowe wektory, w których każdy z komponentów pokazuje liczbę głosów dla konkretnej opcji (ZA, PRZECIW, WSTRZYMANO, NIEOBECNY). Model analizy głównych składników (PCA) jest dopasowany do macierzy, a funkcja {link4} daje nam \"log-likehood\" każdego głosowania w naszym modelu. Model jest tak ustawiony, aby zmaksymalizować wartość \"log-likehood\" do jak największej liczby głosowań. Po uzyskaniu wszystkich wartości \"log-likehood\" seregujemy je od najmniejszego do największego i używamy jednej czwartej spośród wszystkich głosowań, które najmniej pasują do modelu. W porównaniu do naszego modelu te głosowania wyróżniają się i dlatego są najbardziej \"nieoczekiwane\". Na karcie są oznaczone ikoną ognia."
+      "Wszystkie głosowania przetwarzamy w czterowymiarowe wektory, w których każdy z komponentów pokazuje liczbę głosów dla konkretnej opcji (ZA, PRZECIW, WSTRZYMANO, NIEOBECNY). Model analizy głównych składników (PCA) jest dopasowany do macierzy, a funkcja {link4} daje nam \"log-likehood\" każdego głosowania w naszym modelu. Model jest tak ustawiony, aby zmaksymalizować wartość \"log-likehood\" do jak największej liczby głosowań. Po uzyskaniu wszystkich wartości \"log-likehood\" szeregujemy je od najmniejszego do największego i używamy jednej czwartej spośród wszystkich głosowań, które najmniej pasują do modelu. W porównaniu do naszego modelu te głosowania wyróżniają się i dlatego są najbardziej \"nieoczekiwane\". Na karcie są oznaczone ikoną ognia."
     ],
     "links": [
       {
-        "link": "http://www.dz-rs.si",
-        "text": "ZN RS"
+        "link": "http://www.sejm.gov.pl/",
+        "text": "Sejm RP"
       },
       {
         "link": "http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
