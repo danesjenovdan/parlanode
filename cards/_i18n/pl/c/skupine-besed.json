@@ -8,7 +8,7 @@
   },
   "speakers": "Mówcy",
   "input-words": "Wprowadż słowo lub kilka słów oddzielonych przecinkiem.",
-  "empty-text": "Za prikaz rezultatov dodaj vsaj dve besedi.",
+  "empty-text": "Aby wyświetlić wyniki, dodaj przynajmniej dwa słowa.",
   "wordgroups-text": "Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}",
-  "show-relative": "Prikaži relativno metriko"
+  "show-relative": "Pokaż relatywną metrykę"
 }
