@@ -7,8 +7,8 @@
   "add": "Dodaj",
   "continue": "Dalej",
   "back": "Wstecz",
-  "confirm_trigger": "Umieść wyzwalacz",
-  "add_new_trigger": "Dodaj nowy wyzwalacz",
+  "confirm_trigger": "Ustaw przypomnienie",
+  "add_new_trigger": "Dodaj nowe przypomnienie",
   "steps": [
     {
       "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
@@ -32,7 +32,7 @@
       "textfirst": "Zabilježeno!",
       "textsecond": "Na email adresu",
       "textthird": "poslana prijava za Parlametar obavijesti za ključnu riječ",
-      "textfourth": "Pogledaj u inbox!"
+      "textfourth": "Zajrzyj do inboxu!"
     }
   ],
   "events": {
