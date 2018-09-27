@@ -8,17 +8,17 @@
       "Wyniki przedstawiamy na trzy sposoby:"
     ],
     "list": [
-      "kot seznam vseh glasovanj,",
-      "kot črtni grafikon ki predstavlja število glasovanj na dan,",
-      "kot histogram s seštevki glasovanj glede na matično delovno telo."
+      "jako lista wszystkich głosowań",
+      "jako wykres liniowy pokazujący liczbę głosowań w danym dniu,",
+      "jako histogram przedstawiający sumy głosowań na podstawie organów roboczych."
     ]
   },
-  "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih. {load}",
-  "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
-  "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
+  "comparator-text": "Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a {different} głosowali inaczej od nich. {load}",
+  "ignore-absent": "Zignoruj \"nieobecne\" głosy",
+  "comparator-vote-percent": "{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań.",
   "tabs": {
-    "vote-list": "Seznam glasovanj",
-    "time-chart": "Dinamika skozi čas",
+    "vote-list": "Lista głosowań",
+    "time-chart": "Oś czasu",
     "bar-chart": "Dinamika glede na MDT"
   },
   "select-parties-people": "Vklopi cele poslanske skupine ali dodaj posamezne poslance.",
