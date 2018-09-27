@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Število izgovorjenih besed"
+    "title": "Liczba wypowiedzianych słów"
   },
   "info": {
-    "lead": "Število besed, ki jih je poslanec/-ka izgovoril/-a v vseh svojih dosedanjih govorih v DZ v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Seštejemo besede v govorih poslanca/-ke, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link}.",
+    "lead": "Liczba słów wypowiedzianych przez posła we wszystkich jego poprzednich wystąpieniach w Sejmie RP, w porównaniu do wartości średniej i maksymalnej.",
+    "text": "Liczyby słowa w przemowach posła/posłanki, które pochodzą z transkrypcji pobranych ze strony internetowej {link}.",
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "link": "http://www.sejm.gov.pl/sejm8.nsf/terminarz.xsp",
+      "text": "Sejm RP"
     }
   }
 }
