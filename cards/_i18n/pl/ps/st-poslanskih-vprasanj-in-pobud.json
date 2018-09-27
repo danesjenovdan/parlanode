@@ -3,11 +3,11 @@
     "title": "Nr poselskich zapytań i inicjatyw"
   },
   "info": {
-    "lead": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków danego klubu parlamentarnego w trakcie tego posiedzenia Zgromadzenia Narodowego.",
+    "lead": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków danego klubu parlamentarnego w trakcie tego posiedzenia Sejmu RP.",
     "text": "Dane pochodzą ze strony internetowej {link}.",
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
-      "text": "Zgromadzenie Narodowe Republiki Słowenii"
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/agent.xsp?symbol=Zapstat2&Nrkadencji=8",
+      "text": "Sejm Rzeczypospolitej Polskiej"
     }
   }
 }
