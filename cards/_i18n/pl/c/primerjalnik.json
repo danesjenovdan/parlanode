@@ -21,8 +21,8 @@
     "time-chart": "Oś czasu",
     "bar-chart": "Dinamika glede na MDT"
   },
-  "select-parties-people": "Vklopi cele poslanske skupine ali dodaj posamezne poslance.",
-  "select-mps": "Izberi poslance",
-  "selected-mps": "Izbranih: {num}",
-  "empty-state-text": "Za prikaz glasovanj dodaj vsaj dva akterja."
+  "select-parties-people": "Wybierz klub parlamentarny lub dodaj poszczególnego członka.",
+  "select-mps": "Wybierz posła",
+  "selected-mps": "Wybrano: {num}",
+  "empty-state-text": "Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli."
 }
