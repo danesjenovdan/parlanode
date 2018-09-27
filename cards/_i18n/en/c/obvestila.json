@@ -1,5 +1,5 @@
 {
-  "trigger": "okidač",
+  "trigger": "trigger",
   "match": "match",
   "interval": "interval",
   "email": "email",
@@ -29,10 +29,10 @@
       "textfirst": "The last thing we need is your email address"
     },
     {
-      "textfirst": "Zabilježeno!",
-      "textsecond": "Na email adresu",
-      "textthird": "poslana prijava za Parlametar obavijesti za ključnu riječ",
-      "textfourth": "Pogledaj u inbox!"
+      "textfirst": "Confirmed!",
+      "textsecond": "To email address",
+      "textthird": "subscription to Parlameter notifications for key word sent",
+      "textfourth": "Check your inbox!"
     }
   ],
   "events": {
