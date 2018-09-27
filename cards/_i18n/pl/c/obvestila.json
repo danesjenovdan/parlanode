@@ -8,7 +8,7 @@
   "continue": "Dalej",
   "back": "Wstecz",
   "confirm_trigger": "Umieść wyzwalacz",
-  "add_new_trigger": "Dodaj novi podsjetnik",
+  "add_new_trigger": "Dodaj nowy wyzwalacz",
   "steps": [
     {
       "textfirst": "Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti obavijest.",
@@ -37,11 +37,11 @@
   ],
   "events": {
     "event": "po događaju",
-    "day": "najviše jednom dnevno",
-    "week": "najviše jednom tjedno"
+    "day": "maksymalnie raz dziennie",
+    "week": "maksymalnie raz tygodniowo"
   },
   "modes": {
-    "precise": "točno podudaranje:",
-    "broad": "široko podudaranje:"
+    "precise": "dokładne dopasowanie:",
+    "broad": "szerokie dopasowanie:"
   }
 }
