@@ -14,11 +14,11 @@
     "links": [
       {
         "link": "http://www.sabor.hr/sjednica-sabora",
-        "text": "HS"
+        "text": "The National Assembly of the Republic of Slovenia"
       },
       {
         "link": "http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
-        "text": "kako je implementirana u knjižicama scikit-learn"
+        "text": "as implemented in scikit-learn papers"
       },
       {
         "link": "http://www.miketipping.com/papers/met-mppca.pdf",
