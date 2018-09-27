@@ -4,7 +4,7 @@
   },
   "info": {
     "text": [
-      "Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.",
+      "Karta zawiera listę wszystkich głosowań, które odpowiadają wybranym kryteriom. Przy porównaniu klubów parlamentarnych stosuje się obliczoną większość głosów, uzyskaną przez zliczenie, za którą opcją głosuje większość posłów.",
       "Wyniki przedstawiamy na trzy sposoby:"
     ],
     "list": [
