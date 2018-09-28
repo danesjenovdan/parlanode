@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "Przegląd wszystkich głosowań, które zawierają szukaną frazę, uszeregowane chronologicznie.",
-    "text": "Spośród głosowaniach we wszystkich sesjach, znajdujemy i wyświetlamy linki do wszystkich głosowań, w których pojawia się szukana fraza, a następnie sortujemy według daty (od najnowszej do najstarszej) oraz podobieństwa z szukaną frazą."
+    "text": "Spośród głosowań we wszystkich posiedzeniach, znajdujemy i wyświetlamy linki do wszystkich głosowań, w których pojawia się szukana fraza, a następnie sortujemy według daty (od najnowszej do najstarszej) oraz podobieństwa z szukaną frazą."
   }
 }
