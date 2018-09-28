@@ -4,6 +4,6 @@
   },
   "info": {
     "lead": "Lista linków do wszystkich wystąpień, które zawierają szukaną frazę.",
-    "text": "Ze wszystkich zapisów sesji znajdujemy i wyświetlamy linki do wszystkich głosów, w których pojawia się szukana fraza. Wyniki są szeregowane według daty, od najnowszej do najstarszej. Użytkownik może następnie przeszukiwać wyświetlane przemówienia ustawiając określone filtry: przedział czasu, posła, klub parlamentarny lub sesję."
+    "text": "Ze wszystkich zapisów wystąpień znajdujemy i wyświetlamy linki do wszystkich głosów, w których pojawia się szukana fraza. Wyniki są szeregowane według daty, od najnowszej do najstarszej. Użytkownik może następnie przeszukiwać wyświetlane wystąpienia ustawiając określone filtry: przedział czasu, posła, klub parlamentarny lub posiedzenie."
   }
 }
