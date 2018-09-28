@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "Nr zgłoszonej poprawki"
+    "title": "Liczba zgłoszonych poprawek"
   },
   "info": {
     "lead": "Liczba poprawek zgłoszonych przez dany klub parlamentarny w porównaniu do maksymalnej i średniej wartości poprawek wśród wszystkich klubów parlamentarnych.",
