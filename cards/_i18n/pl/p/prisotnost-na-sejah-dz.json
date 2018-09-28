@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Obecność na sesjach Sejmu RP"
+    "title": "Obecność na posiedzeniach Sejmu RP"
   },
   "info": {
-    "lead": "Obecność posła/posłanki na sesjach Sejmu RP w porównaniu do wartości średniej i maksymalnej.",
-    "text": "Liczymy wszystkie sesje i sprawdzamy, czy poseł/posłanka głosował/a co najmniej raz podczas pojedynczej sesji. Jeśli głosował/a co najmniej raz, uważamy go/ją za obecnego/ą na tej konkretnej sesji. Dzielimy liczbę sesji, w których poseł/posłanka był/a obecny/a przez liczbą wszystkich sesji i wynik normalizujemy liczbę (min 1 - max 100)."
+    "lead": "Obecność posła/posłanki na posiedzeniach Sejmu RP w porównaniu do wartości średniej i maksymalnej.",
+    "text": "Liczymy wszystkie posiedzenia i sprawdzamy, czy poseł/posłanka głosował/a co najmniej raz podczas pojedynczej sesji. Jeśli głosował/a co najmniej raz, uważamy go/ją za obecnego/ą na tym konkretnym posiedzeniu. Dzielimy liczbę posiedzeń, w których poseł/posłanka był/a obecny/a przez liczbą wszystkich posiedzeń i wynik normalizujemy liczbę (min 1 - max 100)."
   }
 }
