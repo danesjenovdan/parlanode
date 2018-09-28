@@ -1,6 +1,6 @@
 {
   "trigger": "wyzwalacz",
-  "match": "dopasuj",
+  "match": "dopasowanie",
   "interval": "interwał",
   "email": "e-mail",
   "add_trigger": "Dodaj wyzwalacz",
@@ -12,7 +12,7 @@
   "steps": [
     {
       "textfirst": "Ustaw wyzwalacz dla słowa lub frazy o których chcesz być powiadomiony.",
-      "textsecond": "Dostaniesz wiadomość e-mail zaraz po tym, gdy słowo lub fraza zostanie użyte w trakcie sesji Sejmu RP."
+      "textsecond": "Dostaniesz wiadomość e-mail zaraz po tym, gdy słowo lub fraza zostanie użyte w trakcie posiedzenia sejmu."
     },
     {
       "textfirst": "Wybierz metodę dopasowania",
