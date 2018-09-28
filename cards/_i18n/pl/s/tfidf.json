@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Słowa, które charakteryzują sesję"
+    "title": "Słowa, które charakteryzują posiedzenie"
   },
   "info": {
-    "lead": "Lista 10 słów i wyrażeń, które były używane częściej podczas tej sesji niż podczas innych sesji.",
+    "lead": "Lista 10 słów i wyrażeń, które były używane częściej podczas tego posiedzenia niż podczas innych posiedzeń.",
     "text": [
       "Używamy następujących statystyk {link} do przeprowadzania analiz.",
-      "Korpus prezentuje wszystkie przemowy, a dokument odnosi się do wszystkich wystąpień podczas danej sesji."
+      "Korpus prezentuje wszystkie wystąpienia, a dokument odnosi się do wszystkich wystąpień podczas danego posiedzenia."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf",
