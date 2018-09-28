@@ -3,8 +3,8 @@
     "title": "Lista ustaw"
   },
   "info": {
-    "lead": "Lista wszystkich ustaw i aktów prawnych, nad którymi posłowie głosowali w tym posiedzeniu Sejmu Rp, odpowiadających zapytaniu użytkownika (tytuł, odpowiedzialny organ roboczy).",
-    "text": "Informacje o sesjach pochodzą z witryny Sejmu RP.",
+    "lead": "Lista wszystkich ustaw i aktów prawnych, nad którymi posłowie głosowali w tym posiedzeniu Sejmu RP, odpowiadających zapytaniu użytkownika (tytuł, odpowiedzialna komisja).",
+    "text": "Informacje o posiedzeniach pochodzą z witryny Sejmu RP.",
     "links": [
       {
         "text": "Ustawy",
@@ -16,6 +16,6 @@
       }
     ]
   },
-  "select-working-body-placeholder": "Wybrany organ roboczy",
-  "only-abstracts": "Samo s povzetki"
+  "select-working-body-placeholder": "Wybrana komisja",
+  "only-abstracts": "Tylko ze streszczeniem"
 }
