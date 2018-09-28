@@ -3,7 +3,7 @@
     "title": "Cytat"
   },
   "info": {
-    "text": "Transkrypcje sesji w postaci dokumentu HTML opublikowanego na stronie internetowej {link}, są rozbijane na poszczególne przemowy. Stworzona karta przedstawiaja jedną przemowę.",
+    "text": "Transkrypcje posiedzeń w postaci dokumentu HTML opublikowanego na stronie internetowej {link}, są rozbijane na poszczególne przemowy. Ta karta przedstawia jedną przemowę.",
     "link": {
       "link": "http://www.sejm.gov.pl/",
       "text": "Sejm RP"
