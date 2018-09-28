@@ -3,7 +3,7 @@
     "title": "Lista głosowań według"
   },
   "info": {
-    "lead": "Lista wszystkich głosowań sejmu, odpowiadających zapytaniom użytkownika ({text}), dla wybranych odpowiedzialnych organów roboczych ({wbs}), sklasyfikowanych według {sortBy}.",
+    "lead": "Lista wszystkich głosowań Sejmu RP, odpowiadających zapytaniom użytkownika ({text}), dla wybranych odpowiedzialnych komisji ({wbs}), uszeregowanych według {sortBy}.",
     "text": [
       "Lista wszystkich głosowań, które odbyły się w aktualnym posiedzeniu sejmu i które zostały zamieszczone na stronie {link1} i odpowiadają zapytaniu użytkownika.",
       "Wyniki są sklasyfikowane według rozbieżności danego organu lub według daty."
@@ -16,8 +16,8 @@
     ]
   },
   "all-votes": "wszystkie głosowania",
-  "all-working-bodies": "wszystkie odpowiedzialne organy robocze",
+  "all-working-bodies": "wszystkie odpowiedzialne komisje",
   "opposition": "opozycja",
   "everyone": "Wszystko",
-  "parliament": "zwołanie"
+  "parliament": "sejm"
 }
