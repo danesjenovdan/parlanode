@@ -3,12 +3,12 @@
     "title": "Analizy stylistyczne"
   },
   "info": {
-    "lead": "Częstotliwość występowania stylizowanych słów w przemówieniach członków klubu parlamentarnego.",
+    "lead": "Częstotliwość występowania stylizowanych słów w wystąpieniach członków klubu parlamentarnego.",
     "text": [
       "Łącząc kwalifikatory {link1} i {link2} definiujemy przesadne, podniosłe i proste słownictwo w przemówieniach posłów.",
       "Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).",
       "Firma {link3} z transkrypcji przemów poselskich przygotowała listy słów zawierających poszczegolne kwalifikatory.",
-      "Zawarty wykres ukazuje proporcje każdego rodzaju słownictwa w wystąpieniach posła w porównaniu do średniej, obliczone dla całego posiedzenia parlamentu. Proporcje są obliczane za pomocą następującego algorytmu: bierzemy wszystkie przemówienia danej grupy parlamentarnej i liczymy liczbę słów (i ich powtórzeń) w każdej kategorii słownictwa. Analizę przeprowadzamy dla wszystkich posłów, a następnie dzielimy wartość klubu parlamentarnego przez średnią (suma wszystkich posłów podzielona przez liczbę posłów). Wartości kategorii dla każdego klubu parlamentarnego są znormalizowane (min. 1 - maks. 100)."
+      "Zawarty wykres ukazuje proporcje każdego rodzaju słownictwa w wystąpieniach posła w porównaniu do średniej, obliczone dla całego posiedzenia parlamentu. Proporcje są obliczane za pomocą następującego algorytmu: bierzemy wszystkie wystąpienia danego klubu parlamentarnego i liczymy liczbę słów (i ich powtórzeń) w każdej kategorii słownictwa. Analizę przeprowadzamy dla wszystkich posłów, a następnie dzielimy wartość klubu parlamentarnego przez średnią (suma wszystkich posłów podzielona przez liczbę posłów). Wartości kategorii dla każdego klubu parlamentarnego są znormalizowane (min. 1 - maks. 100)."
     ],
     "links": [
       {
