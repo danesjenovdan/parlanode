@@ -3,9 +3,9 @@
     "title": "Głosowania"
   },
   "info": {
-    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie sesji.",
+    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie posiedzenia.",
     "text": [
-      "Dla wszystkich głosowań w sesji liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę członków, którzy nie głosowali oraz przedstawiamy wyniki.",
+      "Dla wszystkich głosowań na posiedzeniu liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę członków, którzy nie głosowali oraz przedstawiamy wyniki.",
       "Uzyskujemy zapisy głosowań ze strony internetowej {link}."
     ],
     "link": {
