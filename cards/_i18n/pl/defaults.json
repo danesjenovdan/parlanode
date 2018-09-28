@@ -8,7 +8,7 @@
   "data-currently-unavailable": "Dane chwilowo niedostępne.",
   "title-search": "Szukaj według tytułu",
   "contents-search": "Szukaj według treści wystąpień",
-  "working-body": "Odpowiedzialny organ roboczy",
+  "working-body": "Odpowiedzialnq komisja",
   "vote-types": "Typy głosowania",
   "select-placeholder": "Wybierz",
   "selected-placeholder": "Wybrano: {num}",
@@ -69,7 +69,7 @@
   "party": "Klubu poselskiego",
   "parties": "Klubów poselskich",
   "time-period": "Okres czasu",
-  "session-type": "Typu sesji",
+  "session-type": "Typu posiedzenia",
   "no-results": "Bez trafień.",
   "no-speeches": "Bez wystąpień.",
   "no-abstract": "Przepraszamy, dla tej ustawy nie mamy streszczenia.",
@@ -84,7 +84,7 @@
   "everybody": "Wszystko",
   "show": "Pokaż",
   "full-speech": "Całe wystąpienie",
-  "session-processing": "Sesja w toku.",
+  "session-processing": "Posiedzenie w toku.",
   "organization": "Organizacja",
   "start": "Start",
   "legislation": "Ustawodawstwo",
@@ -93,7 +93,7 @@
   "votings": "Głosowania",
   "save": "Zapisz",
   "generate": "Utwórz",
-  "edit-abstract": "Edytuj podsumowanie",
+  "edit-abstract": "Edytuj streszczenie",
   "info": {
     "title": "Info",
     "methodology": "METODOLOGIA"
@@ -103,7 +103,7 @@
     "direct-link": "Bezpośredni link do tej strony"
   },
   "embed": {
-    "title": "Osadź",
+    "title": "Umieść",
     "always-refresh": "Dane powinny być zawsze odświeżane"
   },
   "previous": {
@@ -118,9 +118,9 @@
     "excessive-vocabulary": "Przesadne słownictwo"
   },
   "question": {
-    "asked--m": "Zadał pytanie {title} na któe wymaga odpowiedzi od {recipient}.",
-    "asked--f": "Zadała pytanie {title} na któe wymaga odpowiedzi od {recipient}.",
-    "asked--plural": "Zadali pytanie {title} na któe wymagają odpowiedzi od {recipient}.",
+    "asked--m": "Zadał pytanie {title} na które wymaga odpowiedzi od {recipient}.",
+    "asked--f": "Zadała pytanie {title} na które wymaga odpowiedzi od {recipient}.",
+    "asked--plural": "Zadali pytanie {title} na które wymagają odpowiedzi od {recipient}.",
     "asked--with-name--m": "{name} zadał pytanie {title} na które wymaga odpowiedzi od {recipient}.",
     "asked--with-name--f": "{name} zadała pytanie {title} na które wymaga odpowiedzi od {recipient}.",
     "asked--with-name--plural": "{name} zadali pytanie {title} na które wymagają odpowiedzi od {recipient}."
@@ -133,7 +133,7 @@
     "ballot--absent--m": "Nie głosował za {title}",
     "ballot--absent--f": "Nie głosowała za {title}",
     "ballot--abstain--m": "WSTRZYMAŁ się od głosowania na {title}",
-    "ballot--abstain--f": "WSTRZYMAŁa się od głosowania na {title}",
+    "ballot--abstain--f": "WSTRZYMAŁA się od głosowania na {title}",
     "speech--m": "Przemawiał na {session} {org}",
     "speech--f": "Przemawiała na {session} {org}"
   },
@@ -177,5 +177,5 @@
   "frame": {
     "show-in-context": "Pokaż kartę w kontekście tej strony internetowej"
   },
-  "ogText": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu Rp."
+  "ogText": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP."
 }
