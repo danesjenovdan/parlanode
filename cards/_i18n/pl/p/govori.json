@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Przemowy"
+    "title": "Wystąpienia"
   },
   "info": {
     "lead": "Zestawienie linków do wszystkich wystąpień w tym posiedzeniu, zgodnie z zapytaniem użytkownika, ułożone wedle dat.",
-    "text": "Załączamy linki do wszystkich przemówień wybranego posła, uzyskanych ze strony internetowej Sejmu Rzeczypospolitej Polskiej, a następnie wyświetlamy te, które odpowiadają zapytaniu użytkownika (okres czasu, rodzaj sesji)."
+    "text": "Załączamy linki do wszystkich wystąpień wybranego posła, uzyskanych ze strony internetowej Sejmu Rzeczypospolitej Polskiej, a następnie wyświetlamy te, które odpowiadają zapytaniu użytkownika (okres czasu, rodzaj posiedzenia)."
   }
 }
