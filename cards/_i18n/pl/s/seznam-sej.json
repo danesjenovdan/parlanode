@@ -1,10 +1,10 @@
 {
   "card": {
-    "title": "Lista sesji"
+    "title": "Lista posiedzeń"
   },
   "info": {
-    "lead": "Lista wszystkich sesji w tym posiedzeniu, odpowiadającym szukanej frazie. Lista jest sortowana według {sort-by}{just-last-five}.",
-    "text": "Dane o sesjach pochodzą ze strony internetowej Sejmu RP, a dokładnie z {link1}, {link2} i {link3}.",
+    "lead": "Lista wszystkich posiedzeń odpowiadającym szukanej frazie. Lista jest sortowana według {sort-by}{just-last-five}.",
+    "text": "Dane o posiedzeniach pochodzą ze strony internetowej Sejmu RP, a dokładnie z {link1}, {link2} i {link3}.",
     "links": [
       {
         "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDt/poDatumu/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3F0NXQw8DX09PTz9HI0M3E30w9EUBJkYARV4W4b4-PoYGnib6UdRot8dXT-G8Wj6_S0N3Qw8Q43dTYx9QwwMfI2I02-AAzgakGg_pgej8BtfkBsKAooAQ6b9bA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/",
@@ -20,12 +20,12 @@
       }
     ]
   },
-  "limited-to-last-five": ", lista jest ograniczonona do pierwszych pięciu sesji",
+  "limited-to-last-five": ", lista jest ograniczonona do pierwszych pięciu posiedzeń",
   "just-last-five": "Tylko ostatnich 5",
-  "select-working-body-placeholder": "Wybierz organ roboczy",
-  "sort-by--name": "nazwa sesji",
-  "sort-by--date": "data początku sesji",
-  "sort-by--updated": "data ostatniej aktualizacji danych o sesji",
+  "select-working-body-placeholder": "Wybierz komisję",
+  "sort-by--name": "nazwa posiedzenia",
+  "sort-by--date": "data początku posiedzenia",
+  "sort-by--updated": "data ostatniej aktualizacji danych o posiedzeniu",
   "sort-by--workingBody": "nazwa organizacji",
   "title": "Imię"
 }
