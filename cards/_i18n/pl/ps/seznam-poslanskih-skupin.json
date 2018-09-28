@@ -9,24 +9,24 @@
       "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jego aktywnych członków."
     },
     "presence_sessions": {
-      "label": "Obecność na sesjach Sejmu RP",
-      "titleSuffix": " zgodnie z wynikami analizy obecności na sesjach Sejmu RP",
-      "explanation": "Liczymy wszystkie sesje i sprawdzamy każdego członka tego klubu parlamentarnego, jeśli głosowali co najmniej raz w trakcie tej sesji. W przypadku, gdy głosują co najmniej raz, są liczeni jako obecni. Suma wszystkich uczestników jest podzielona przez liczbę przedstawicieli w klubie parlamentarnym, wynik ten jest następnie dzielony przez liczbę sesji i normalizowany (min. 1 - maks. 100)."
+      "label": "Obecność na posiedzeniach Sejmu RP",
+      "titleSuffix": " zgodnie z wynikami analizy obecności na posiedzeniach Sejmu RP",
+      "explanation": "Liczymy wszystkie posiedzenia i sprawdzamy każdego członka tego klubu parlamentarnego, jeśli głosowali co najmniej raz w trakcie tego posiedzenia. W przypadku, gdy głosują co najmniej raz, są liczeni jako obecni. Suma wszystkich uczestników jest podzielona przez liczbę przedstawicieli w klubie parlamentarnym, wynik ten jest następnie dzielony przez liczbę posiedzeń i normalizowany (min. 1 - maks. 100)."
     },
     "presence_votes": {
       "label": "Obecność na głosowaniach",
       "titleSuffix": " zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP",
-      "explanation": "Liczymy wszystkie głosowania, a także liczbę przedstawicieli z klubu parlamentarnnego obecnych przy każdym głosowaniu. Suma wszystkich oddanych głosów jest dzielona przez liczbę przedstawicieli w klubie parlamentarnym i liczbę głosowań. Wynik jest następnie normalizowany (min. 1 - maks. 100)."
+      "explanation": "Liczymy wszystkie głosowania, a także liczbę posłów klubu parlamentarnego obecnych przy każdym głosowaniu. Suma wszystkich oddanych głosów jest dzielona przez liczbę posłów w klubie parlamentarnym i liczbę głosowań. Wynik jest następnie normalizowany (min. 1 - maks. 100)."
     },
     "number_of_questions": {
-      "label": "Nr poselskiego pytania i inicjatywy",
-      "titleSuffix": " zgodnie z wynikami analizy według nr zapytania i inicjatywy poselskiej",
+      "label": "Liczba poselskich zapytań i inicjatyw",
+      "titleSuffix": " zgodnie z wynikami analizy według liczby zapytań i inicjatyw poselskich",
       "explanation": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków wybranego klubu parlamentarnego w odniesieniu do Sejmu. Dane uzyskujemy ze strony internetowej Sejmu RP."
     },
     "vocabulary_size": {
       "label": "Różnorodność słownictwa",
       "titleSuffix": " zgodnie z wynikami analizy różnorodności słownictwa",
-      "explanation": "W każdym przemówieniu poselskim liczymy unikalne słowa i liczbę wszystkich wypowiedzianych słów. Następnie liczymy ile razy pojawia się każde unikalne słowo. Dzielimy je na kategorie, łącząc wszystkie słowa, które powtarzają się raz, dwa razy, trzy razy itd. Na koniec obliczamy współczynnik, w którym liczba wszystkich unikalnych wypowiedzianych słów jest umieszczona powyżej linii ułamka, a pod linią liczba słów powtarzających się z określoną częstotliwością (raz, dwa, trzy razy...) jest mnożona przez częstotliwość na kwadrat (jeden na kwadrat, dwa na kwadrat, trzy na kwadrat...). Zdanie \"Dzisiaj jest nowy dzień i dzisiaj jest dzień dla Parlametru\" daje wynik: 7 / ((3 * 2 ^ 2) + (4 * 1 ^ 2)) = 0,4375 <br> <br> Sumujemy poszczególne wyniki dla każdego klubu parlamentarnego i dzielimy przez liczbę reprezentantów klubu. Dzielimy poszczególne sumy przez sumę całkowitą i normalizujemy (min 1 - maks. 100)."
+      "explanation": "W każdym wystąpieniu poselskim liczymy unikalne słowa i liczbę wszystkich wypowiedzianych słów. Następnie liczymy ile razy pojawia się każde unikalne słowo. Dzielimy je na kategorie, łącząc wszystkie słowa, które powtarzają się raz, dwa razy, trzy razy itd. Na koniec obliczamy współczynnik, w którym liczba wszystkich unikalnych wypowiedzianych słów jest umieszczona powyżej linii ułamka, a pod linią liczba słów powtarzających się z określoną częstotliwością (raz, dwa, trzy razy...) jest mnożona przez częstotliwość na kwadrat (jeden na kwadrat, dwa na kwadrat, trzy na kwadrat...). Zdanie \"Dzisiaj jest nowy dzień i dzisiaj jest dzień dla Parlametru\" daje wynik: 7 / ((3 * 2 ^ 2) + (4 * 1 ^ 2)) = 0,4375 <br> <br> Sumujemy poszczególne wyniki dla każdego klubu parlamentarnego i dzielimy przez liczbę reprezentantów klubu. Dzielimy poszczególne sumy przez sumę całkowitą i normalizujemy (min 1 - maks. 100)."
     },
     "privzdignjeno": {
       "label": "Podniosłe słownictwo",
