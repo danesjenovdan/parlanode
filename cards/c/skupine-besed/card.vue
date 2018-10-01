@@ -246,6 +246,7 @@ export default {
           const scoreHigherThanZero = i => i.score > 0;
 
           const parties = response.data.facet_counts.facet_fields.party_e
+            .filter(party => party.party.classification === 'pg')
             .filter(scoreHigherThanZero)
             .filter(party => party.party.acronym !== 'unknown')
             .map(party => ({
@@ -330,7 +331,7 @@ export default {
   }
 
   .checkbox + label:before {
-    background-color: $background;
+    background-color: transparent;
   }
 
   .checkbox + label {
