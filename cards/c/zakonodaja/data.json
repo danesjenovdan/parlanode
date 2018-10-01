@@ -10223,29 +10223,14 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "21.07.2017",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o elektronskih komunikacijah",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o zdravni\u0161ki slu\u017ebi",
       "has_link": true,
-      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "mdt_text": "Odbor za zdravstvo",
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "1901-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "21.07.2017",
-      "text": "Zakon o ukrepih za odpravo posledic pozebe v kmetijski proizvodnji med 21. in 22. aprilom 2017",
-      "has_link": true,
-      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2082-VII"
+      "epa": "2074-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -10268,6 +10253,21 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "21.07.2017",
+      "text": "Zakon o ukrepih za odpravo posledic pozebe v kmetijski proizvodnji med 21. in 22. aprilom 2017",
+      "has_link": true,
+      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2082-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "21.07.2017",
       "text": "Zakon o spremembi in dopolnitvi Zakona o pokojninskem in invalidskem zavarovanju",
       "has_link": true,
       "mdt_text": "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
@@ -10283,14 +10283,14 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "21.07.2017",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o zdravni\u0161ki slu\u017ebi",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o elektronskih komunikacijah",
       "has_link": true,
-      "mdt_text": "Odbor za zdravstvo",
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "2074-VII"
+      "epa": "1901-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -14090,17 +14090,17 @@
     {
       "type_of_law": null,
       "result": "in_procedure",
-      "classification": "akt",
-      "abstractVisible": false,
+      "classification": "zakon",
+      "abstractVisible": true,
       "date": "14.02.2018",
-      "text": "Letno poro\u010dilo o delu Oddelka za preiskovanje in pregon uradnih oseb s posebnimi pooblastili pri Specializiranem dr\u017eavnem to\u017eilstvu Republike Slovenije za leto 2017",
+      "text": "Zakon o zdravili\u0161kem in klimatskem zdravljenju vojnih invalidov, vojnih veteranov in \u017ertev vojnega nasilja",
       "has_link": false,
       "mdt_text": null,
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "2610-VII"
+      "epa": "2612-VII"
     },
     {
       "type_of_law": null,
@@ -14120,17 +14120,17 @@
     {
       "type_of_law": null,
       "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
+      "classification": "akt",
+      "abstractVisible": false,
       "date": "14.02.2018",
-      "text": "Zakon o zdravili\u0161kem in klimatskem zdravljenju vojnih invalidov, vojnih veteranov in \u017ertev vojnega nasilja",
+      "text": "Letno poro\u010dilo o delu Oddelka za preiskovanje in pregon uradnih oseb s posebnimi pooblastili pri Specializiranem dr\u017eavnem to\u017eilstvu Republike Slovenije za leto 2017",
       "has_link": false,
       "mdt_text": null,
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "2612-VII"
+      "epa": "2610-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -14153,36 +14153,6 @@
       "classification": "zakon",
       "abstractVisible": false,
       "date": "15.02.2018",
-      "text": "Zakon o udele\u017ebi delavcev pri dobi\u010dku",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2614-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "15.02.2018",
-      "text": "Zakon o dodatku k pokojnini za delo in izjemne dose\u017eke na podro\u010dju kulture in raziskovalno-razvojne dejavnosti",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2613-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": false,
-      "date": "15.02.2018",
       "text": "Zakon o spremembah in dopolnitvah Zakona o obrambi",
       "has_link": false,
       "mdt_text": null,
@@ -14191,6 +14161,21 @@
         "id": null
       },
       "epa": "2611-VII"
+    },
+    {
+      "type_of_law": null,
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": false,
+      "date": "15.02.2018",
+      "text": "Zakon o udele\u017ebi delavcev pri dobi\u010dku",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2614-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -14206,6 +14191,21 @@
         "id": null
       },
       "epa": "2374-VII"
+    },
+    {
+      "type_of_law": null,
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "15.02.2018",
+      "text": "Zakon o dodatku k pokojnini za delo in izjemne dose\u017eke na podro\u010dju kulture in raziskovalno-razvojne dejavnosti",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2613-VII"
     },
     {
       "type_of_law": null,
@@ -14945,6 +14945,36 @@
     {
       "type_of_law": null,
       "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": false,
+      "date": "13.03.2018",
+      "text": "Zakon o spremembi Zakona o divjadi in lovstvu",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2489-VII"
+    },
+    {
+      "type_of_law": null,
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "13.03.2018",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o mednarodni za\u0161\u010diti",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2595-VII"
+    },
+    {
+      "type_of_law": null,
+      "result": "in_procedure",
       "classification": "akt",
       "abstractVisible": false,
       "date": "14.03.2018",
@@ -15218,21 +15248,6 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "28.03.2018",
-      "text": "Zakon o delovanju spletnih platform sodelovalnega gospodarstva",
-      "has_link": true,
-      "mdt_text": "Odbor za gospodarstvo",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2649-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "28.03.2018",
       "text": "Zakon o dopolnitvah Zakona o gasilstvu",
       "has_link": true,
       "mdt_text": "Odbor za obrambo",
@@ -15241,6 +15256,21 @@
         "id": null
       },
       "epa": "2661-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "28.03.2018",
+      "text": "Zakon o delovanju spletnih platform sodelovalnega gospodarstva",
+      "has_link": true,
+      "mdt_text": "Odbor za gospodarstvo",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2649-VII"
     },
     {
       "type_of_law": null,
@@ -15783,6 +15813,21 @@
       "epa": "2785-VII"
     },
     {
+      "type_of_law": null,
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "24.04.2018",
+      "text": "Predlog za avtenti\u010dno razlago 120., 121. in 122. \u010dlena Zakona o organizaciji in financiranju vzgoje in izobra\u017eevanja",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2103-VII"
+    },
+    {
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
       "result": "in_procedure",
       "classification": "akt",
@@ -15818,14 +15863,14 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "04.05.2018",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o divjadi in lovstvu",
+      "text": "Zakon o dopolnitvah Zakona o Slovenskem filmskem centru, javni agenciji Republike Slovenije",
       "has_link": true,
-      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "mdt_text": "Odbor za kulturo",
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "2570-VII"
+      "epa": "2663-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -15833,59 +15878,14 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "04.05.2018",
-      "text": "Zakon o spremembah Zakona o ustanovitvi ob\u010din ter o dolo\u010ditvi njihovih obmo\u010dij",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o osebni asistenci",
       "has_link": true,
-      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "mdt_text": "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "2528-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "04.05.2018",
-      "text": "Zakon o dopolnitvah Zakona o ohranjanju narave",
-      "has_link": true,
-      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2531-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "04.05.2018",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o zbirkah podatkov s podro\u010dja zdravstvenega varstva",
-      "has_link": true,
-      "mdt_text": "Odbor za zdravstvo",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2606-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "04.05.2018",
-      "text": "Zakon o spremembah Zakona o priznanju Republike Slovenije za poslovno odli\u010dnost",
-      "has_link": true,
-      "mdt_text": "Odbor za gospodarstvo",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2592-VII"
+      "epa": "2569-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -15908,14 +15908,89 @@
       "classification": "zakon",
       "abstractVisible": true,
       "date": "04.05.2018",
-      "text": "Zakon o dopolnitvah Zakona o Slovenskem filmskem centru, javni agenciji Republike Slovenije",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o socialno varstvenih prejemkih",
       "has_link": true,
-      "mdt_text": "Odbor za kulturo",
+      "mdt_text": "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
       "mdt": {
         "name": "",
         "id": null
       },
-      "epa": "2663-VII"
+      "epa": "2688-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "04.05.2018",
+      "text": "Zakon o dopolnitvah Zakona o ohranjanju narave",
+      "has_link": true,
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2531-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "04.05.2018",
+      "text": "Zakon o spremembah Zakona o ustanovitvi ob\u010din ter o dolo\u010ditvi njihovih obmo\u010dij",
+      "has_link": true,
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2528-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "04.05.2018",
+      "text": "Zakon o spremembah Zakona o priznanju Republike Slovenije za poslovno odli\u010dnost",
+      "has_link": true,
+      "mdt_text": "Odbor za gospodarstvo",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2592-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "04.05.2018",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o divjadi in lovstvu",
+      "has_link": true,
+      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2570-VII"
+    },
+    {
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "04.05.2018",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o zbirkah podatkov s podro\u010dja zdravstvenega varstva",
+      "has_link": true,
+      "mdt_text": "Odbor za zdravstvo",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "2606-VII"
     },
     {
       "type_of_law": "Predlog zakona-OBRAVNAVA",
@@ -15946,36 +16021,6 @@
         "id": null
       },
       "epa": "2529-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "04.05.2018",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o socialno varstvenih prejemkih",
-      "has_link": true,
-      "mdt_text": "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2688-VII"
-    },
-    {
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "04.05.2018",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o osebni asistenci",
-      "has_link": true,
-      "mdt_text": "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2569-VII"
     },
     {
       "type_of_law": "Poro\u010dilo-OBRAVNAVA",
@@ -16145,6 +16190,36 @@
     {
       "type_of_law": null,
       "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "28.05.2018",
+      "text": "Zakon o dopolnitvah Zakona o zdravstveni ustreznosti \u017eivil in izdelkov ter snovi, ki prihajajo v stik z \u017eivili",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "1980-VII"
+    },
+    {
+      "type_of_law": null,
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "28.05.2018",
+      "text": "Zakon o spremembi in dopolnitvi Zakona o zdravstvenem varstvu in zdravstvenem zavarovanju ",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "1988-VII"
+    },
+    {
+      "type_of_law": null,
+      "result": "in_procedure",
       "classification": "akt",
       "abstractVisible": false,
       "date": "31.05.2018",
@@ -16278,6 +16353,21 @@
       "epa": "2865-VII"
     },
     {
+      "type_of_law": null,
+      "result": "in_procedure",
+      "classification": "zakon",
+      "abstractVisible": true,
+      "date": "14.06.2018",
+      "text": "Zakon o spremembah in dopolnitvah Zakona o Slovenskem dr\u017eavnem holdingu ",
+      "has_link": false,
+      "mdt_text": null,
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "epa": "1808-VII"
+    },
+    {
       "type_of_law": "Poro\u010dilo-OBRAVNAVA",
       "result": "in_procedure",
       "classification": "akt",
@@ -16306,96 +16396,6 @@
         "id": null
       },
       "epa": "2879-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": false,
-      "date": "",
-      "text": "Zakon o spremembi Zakona o divjadi in lovstvu",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2489-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "",
-      "text": "Zakon o spremembi in dopolnitvi Zakona o zdravstvenem varstvu in zdravstvenem zavarovanju ",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "1988-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "",
-      "text": "Predlog za avtenti\u010dno razlago 120., 121. in 122. \u010dlena Zakona o organizaciji in financiranju vzgoje in izobra\u017eevanja",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2103-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "",
-      "text": "Zakon o dopolnitvah Zakona o zdravstveni ustreznosti \u017eivil in izdelkov ter snovi, ki prihajajo v stik z \u017eivili",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "1980-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o mednarodni za\u0161\u010diti",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "2595-VII"
-    },
-    {
-      "type_of_law": null,
-      "result": "in_procedure",
-      "classification": "zakon",
-      "abstractVisible": true,
-      "date": "",
-      "text": "Zakon o spremembah in dopolnitvah Zakona o Slovenskem dr\u017eavnem holdingu ",
-      "has_link": false,
-      "mdt_text": null,
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "epa": "1808-VII"
     }
   ]
 }

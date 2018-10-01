@@ -99,13 +99,28 @@ export default {
       currentSortOrder: 'desc',
       textFilter: '',
       workingBodies: [],
-      headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
       allWorkingBodies,
       onlyAbstracts: false,
     };
   },
   computed: {
+    headerConfig() {
+      return defaultHeaderConfig(this, {
+        title: this.dynamicTitle,
+      });
+    },
+    ogConfig() {
+      return defaultOgImage(this, {
+        title: this.dynamicTitle,
+      });
+    },
+    dynamicTitle() {
+      const currentTab = this.cardConfig.tabs.find(e => e.title === this.currentFilter);
+      if (currentTab && currentTab.card_title) {
+        return currentTab.card_title;
+      }
+      return this.$t('card.title');
+    },
     inputPlaceholder() {
       return this.selectedWorkingBodies.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedWorkingBodies.length })
