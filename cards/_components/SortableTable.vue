@@ -186,6 +186,7 @@ export default {
   height: 18px;
   display: flex;
   flex-wrap: nowrap;
+  transition: width .6s ease;
 }
 
 .card-seznam-zakonov .session-list {

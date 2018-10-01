@@ -383,7 +383,7 @@ export default {
       if (position > -1) {
         this.selectedGenders.splice(position, 1);
       } else {
-        this.selectedGenders.push(id);
+        this.selectedGenders = [id];
       }
     },
     sortBy(sort) {
@@ -418,7 +418,7 @@ export default {
   }
 
   .filter.search-field {
-    flex: 1.5;
+    flex: 1.2;
   }
 
   .filter.genders {
