@@ -233,13 +233,6 @@ export default {
         padding: 0 22px 0 0;
       }
 
-      .result-icon {
-        width: 38px !important;
-        height: 38px;
-        background-size: contain !important;
-        background-repeat: no-repeat;
-      }
-
       .text {
         color: $font-default;
         font-size: 14px;
