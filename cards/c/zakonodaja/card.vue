@@ -15,7 +15,7 @@
             <div class="filter text-filter">
               <p-search-field v-model="textFilter" />
             </div>
-            <div class="filter month-dropdown">
+            <div v-if="allWorkingBodies.length" class="filter month-dropdown">
               <p-search-dropdown
                 v-model="allWorkingBodies"
                 :placeholder="inputPlaceholder"
@@ -186,8 +186,8 @@ export default {
             b = B.text;
             return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           case 'updated':
-            a = dateParser(A.date).getTime();
-            b = dateParser(B.date).getTime();
+            a = dateParser(A.date).getTime() || Date.now();
+            b = dateParser(B.date).getTime() || Date.now();
             return a - b;
           case 'workingBody':
             a = A.mdt_text;
