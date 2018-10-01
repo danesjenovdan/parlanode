@@ -295,8 +295,14 @@ export default {
       return allClassifications;
     },
     toggleResult(resultId) {
-      const clickedResult = this.allResults.filter(result => result.id === resultId)[0];
-      clickedResult.selected = !clickedResult.selected;
+      const clickedResult = this.allResults.find(result => result.id === resultId);
+      if (clickedResult && clickedResult.selected) {
+        clickedResult.selected = false;
+      } else {
+        this.allResults.forEach((result) => {
+          result.selected = result.id === resultId;
+        });
+      }
     },
     getVoteText(vote) {
       const text = vote.short_text || vote.text;
