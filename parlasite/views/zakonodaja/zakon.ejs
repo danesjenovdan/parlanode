@@ -1,22 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<style>
-/* TODO: remove style tags from all templates */
-.backgroundwhite {
-  background: #fff;
-  padding: 15px;
-}
-.v-obravnavi {
-  width: 25px !important;
-  height: 25px;
-  background: url("<%- config.urls.cdn %>/icons/v-obravnavi.svg");
-  background-size: contain !important;
-  margin-bottom: -6px;
-  position: relative;
-  display: inline-block;
-}
-</style>
-
 <div class="session-container">
   <div class="row header  text-center">
     <div class="col-lg-12">
@@ -34,9 +17,9 @@
       <div class="date">
         <%= lawData.created_at %> <!-- TODO: ?? -->
       </div>
-      <h2>
-        <div style="background-image: url('<%- config.urls.cdn %>/icons/vote-result--<%= lawData.result %>.svg');" class="result-icon"></div>
-        <%= i18n(`general.vote-result--${lawData.result}`) %>
+      <h2 class="result">
+        <div class="parlaicon vote-result--<%= lawData.result %>" class="result-icon"></div>
+        <div class="text"><%= i18n(`general.vote-result--${lawData.result}`) %></div>
       </h2>
     </div>
   </div>
