@@ -90,7 +90,6 @@
                 background-repeat: no-repeat;
                 background-position: 24px center;
                 padding-left: 60px;
-                text-transform: capitalize;
 
                 @include respond-to(mobile) {
                     padding-left: 40px;
