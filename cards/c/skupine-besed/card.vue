@@ -269,6 +269,7 @@ export default {
           this.resultsRelative = { parties, people };
 
           const parties2 = response.data.facet_counts.facet_fields.party_e
+            .filter(party => party.party.classification === 'pg')
             .filter(scoreHigherThanZero)
             .filter(party => party.party.acronym !== 'unknown')
             .map(party => ({
