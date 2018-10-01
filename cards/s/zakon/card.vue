@@ -184,7 +184,8 @@ export default {
 
 #s_zakon {
   .card-content {
-    height: $full-card-height;
+    // height: $full-card-height;
+    height: 637px;
   }
   .filters {
     margin-top: 10px;
