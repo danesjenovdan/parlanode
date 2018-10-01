@@ -92,7 +92,12 @@
             <p-tab :label="$t('tabs.vote-list')">
               <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
               <div v-else class="glasovanja">
-                <seznam-glasovanj :data="voteObject" :show-filters="false" />
+                <seznam-glasovanj
+                  :data="voteObject"
+                  :show-filters="false"
+                  :virtualize-remain="4"
+                  virtualize
+                />
               </div>
             </p-tab>
             <p-tab :label="$t('tabs.time-chart')">
@@ -100,8 +105,10 @@
               <time-chart v-else :data="data" />
             </p-tab>
             <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
-              <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
-              <bar-chart v-else :data="barChartData" show-numbers />
+              <div class="mdt-wrapper">
+                <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+                <bar-chart v-else :data="barChartData" show-numbers />
+              </div>
             </p-tab>
           </p-tabs>
 
@@ -162,6 +169,7 @@
 
 <script>
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
@@ -197,7 +205,10 @@ export default {
     TimeChart,
     SeznamGlasovanj,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     return {
       loading: true,
@@ -347,20 +358,18 @@ export default {
         const samePeople = this.$options.cardData.parlaState.samePeople || [];
         const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
         const sameData = JSON.parse(JSON.stringify(data));
-        self.samePeople = sameData.map((person) => {
-          person.selected = samePeople.indexOf(person.id) > -1;
-          person.label = person.name;
-
-          return person;
-        });
+        self.samePeople = sameData.map(person => ({
+          selected: samePeople.indexOf(person.id) > -1,
+          label: person.name,
+          image: self.getPersonPortrait(person),
+        }));
 
         const differentData = JSON.parse(JSON.stringify(data));
-        self.differentPeople = differentData.map((person) => {
-          person.selected = differentPeople.indexOf(person.id) > -1;
-          person.label = person.name;
-
-          return person;
-        });
+        self.differentPeople = differentData.map(person => ({
+          selected: differentPeople.indexOf(person.id) > -1,
+          label: person.name,
+          image: self.getPersonPortrait(person),
+        }));
 
         this.loadResults();
       },
@@ -514,7 +523,7 @@ export default {
 }
 
 .searchfilter-checkbox .checkbox + label:before {
-  background-color: $background;
+  background-color: transparent;
 }
 
 .searchfilter-checkbox .checkbox + label {
@@ -523,13 +532,13 @@ export default {
 }
 
 .tab-content {
-  height: 410px;
+  height: 420px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.tab-three {
-  padding-top: 16px;
+.mdt-wrapper {
+  height: 420px;
 }
 
 .nopadding {
@@ -544,11 +553,27 @@ export default {
     overflow-x: visible;
   }
 
-  .glasovanja {
+  /deep/ .p-tabs .p-tabs-content {
     margin-top: 6px;
+  }
 
+  /deep/ .word-list {
+    max-height: none;
+    height: 420px;
+    overflow-y: auto;
+
+    .column-label {
+      flex: 2;
+
+      .chart-label .label-container {
+        line-height: 1;
+      }
+    }
+  }
+
+  .glasovanja {
     /deep/ #votingCard {
-      height: 410px;
+      height: 420px;
     }
   }
 }
