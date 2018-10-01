@@ -361,6 +361,7 @@ export default {
         self.samePeople = sameData.map(person => ({
           selected: samePeople.indexOf(person.id) > -1,
           label: person.name,
+          id: person.id,
           image: self.getPersonPortrait(person),
         }));
 
@@ -368,6 +369,7 @@ export default {
         self.differentPeople = differentData.map(person => ({
           selected: differentPeople.indexOf(person.id) > -1,
           label: person.name,
+          id: person.id,
           image: self.getPersonPortrait(person),
         }));
 

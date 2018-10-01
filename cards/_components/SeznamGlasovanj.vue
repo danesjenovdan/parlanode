@@ -135,7 +135,7 @@
 
 <script>
 import { map, sortBy } from 'lodash';
-import VirtualList from 'components/vue-virtual-scroll-list';
+import VirtualList from 'components/vue-virtual-scroll-list/VirtualList.vue';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
