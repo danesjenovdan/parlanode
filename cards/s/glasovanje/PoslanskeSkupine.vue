@@ -67,7 +67,7 @@ import links from 'mixins/links';
 import StripedButton from 'components/StripedButton.vue';
 import Result from 'components/Result.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
-import mapVotes from './mapVotes';
+import mapVotes from 'helpers/mapVotes';
 
 export default {
   name: 'GlasovanjeSejePoslanskeSkupine',

@@ -19,15 +19,9 @@
       </i18n>
     </div>
 
-    <!-- Card content goes here -->
     <div class="result-container">
       <div class="result">
-        <div
-          :style="{
-            'background-image': `url('${slugs.urls.cdn}/icons/vote-result--${data.result}.svg')`,
-          }"
-          class="result-icon"
-        />
+        <i :class="`parlaicon vote-result--${data.result}`"></i>
         <div v-t="`vote-result--${data.result}`" class="text"></div>
       </div>
       <div class="law-title">{{ $options.cardData.data.text }}</div>
@@ -118,7 +112,7 @@ export default {
         abstain: filteredVote.abstain,
         absent: filteredVote.absent,
       };
-      finalVoteData = mapVotes(vote); // TODO: poglej s/glasovanja kak je narjen
+      finalVoteData = mapVotes(vote);
 
       finalVoteResult = Object.keys(vote).reduce((max, current) => {
         if (max.value < vote[current]) {
