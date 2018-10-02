@@ -9,6 +9,13 @@
         :header-config="headerConfig"
         @backChange="backChangeCallback"
       >
+        <div slot="info">
+          <p v-t="'info.lead'" class="info-text lead"></p>
+          <p v-t="'info.methodology'" class="info-text heading"></p>
+          <p v-t="'info.text[0]'" class="info-text"></p>
+          <p v-t="'info.text[1]'" class="info-text"></p>
+          <p v-t="'info.text[2]'" class="info-text"></p>
+        </div>
 
         <div id="kompas">
           <p-search-dropdown
@@ -20,16 +27,6 @@
           />
           <div id="visualisation"></div>
         </div>
-
-        <div slot="info">
-          <p v-t="'info.lead'" class="info-text lead"></p>
-          <p v-t="'info.methodology'" class="info-text heading"></p>
-          <p v-t="'info.text[0]'" class="info-text"></p>
-          <p v-t="'info.text[1]'" class="info-text"></p>
-          <p v-t="'info.text[2]'" class="info-text"></p>
-        </div>
-
-        <!-- Card content goes here -->
       </card-wrapper>
     </generator>
   </div>
@@ -101,37 +98,35 @@ export default {
 
     const zoomBeh = null;
 
-    const people = kompasData.map((p) => {
-      return {
-        id: p.person.id,
-        label: p.person.name,
-        selected: false,
-        image: this.getPersonPortrait(p.person),
-        acronym: p.person.party.acronym,
-      };
-    });
+    const people = kompasData.map(p => ({
+      id: p.person.id,
+      label: p.person.name,
+      selected: false,
+      image: this.getPersonPortrait(p.person),
+      acronym: p.person.party.acronym,
+    }));
 
-    const parties = partyAcronyms.map((group) => {
-      return {
+    const parties = partyAcronyms
+      .filter(group => group[0].person.party.classification === 'pg')
+      .map(group => ({
         id: group[0].person.party.acronym,
         label: group[0].person.party.acronym,
         selected: false,
         colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
-      };
-    });
+      }));
 
     const groups = [{
-      label: 'Stranke',
+      label: this.$t('parties'),
       items: partyAcronyms.map(group => group[0].person.party.acronym),
-    }].concat(partyAcronyms.map((group) => {
-      return {
-        label: group[0].person.party.acronym,
-        items: group.map(p => p.person.id),
-      };
-    }));
+    }].concat(partyAcronyms.map(group => ({
+      label: group[0].person.party.acronym,
+      items: group.map(p => p.person.id),
+    })));
 
-    const state = this.$options.cardData.parlaState.people && this.$options.cardData.parlaState.parties
-      ? this.$options.cardData.parlaState : { people: [], parties: [] };
+    const parlaState = this.$options.cardData.parlaState;
+    const state = parlaState.people && parlaState.parties
+      ? parlaState
+      : { people: [], parties: [] };
 
     return {
       data: this.$options.cardData.data,
@@ -259,9 +254,7 @@ export default {
       // create hull
       svg.select(`#_${datum.person.id}`)
         .attr('r', 20)
-        .style('fill', (d) => {
-          return `url(#${d.person.gov_id})`;
-        })
+        .style('fill', d => `url(#${d.person.gov_id})`)
         .classed('turnedon', true)
         .on('click', (d) => {
           this.selectCallback(d.person.id);
@@ -344,7 +337,6 @@ export default {
     },
 
     selectCallback(id) {
-      console.log(id);
       // it's a person
       if (parseInt(id, 10)) {
         if (!this.people.find(p => p.id === id).selected) {
@@ -397,7 +389,7 @@ export default {
         .call(this.yAxis);
 
       svg.selectAll('.tick')
-        .each(function () {
+        .each(function _() {
           this.remove();
         });
 
@@ -410,7 +402,7 @@ export default {
         .data(this.partyAcronyms)
         .enter()
         .append('g')
-        .attr('id', (d, i) => `kompasgroup${d[0].person.party.acronym.replace(/[ +,]/g, '_')}`);
+        .attr('id', d => `kompasgroup${d[0].person.party.acronym.replace(/[ +,]/g, '_')}`);
 
       const defs = svg.append('defs');
 
@@ -488,7 +480,7 @@ export default {
               .style('left', (`${d3.event.pageX - (tooltipdiv.node().getBoundingClientRect().width / 2) - this.$el.getBoundingClientRect().left - 15}px`))
               .style('top', `${d3.event.pageY - this.$el.getBoundingClientRect().top - document.documentElement.scrollTop - 220}px`);
           })
-          .on('mouseout', (d) => {
+          .on('mouseout', () => {
             tooltipdiv.transition()
               .duration(200)
               .style('opacity', 0);
