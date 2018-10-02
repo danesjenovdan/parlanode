@@ -123,7 +123,7 @@ export default {
             var bench = this.bench || this.remain
 
             // for better performance, if scroll pass items within now bench, do not update.
-            if (!zone.isLast && (overs > delta.start) && (overs - delta.start <= bench)) {
+            if (!zone.isLast && (overs > delta.start) && (overs - delta.start <= (bench - 2))) {
                 return
             }
 

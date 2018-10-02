@@ -56,6 +56,7 @@
             <p-search-dropdown
               :value="allItems"
               :single="true"
+              hide-clear
               @select="selectCallback"
             />
           </div>
@@ -87,7 +88,7 @@
                   <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
                   <div v-t="'inequality'" class="text"></div>
                 </div>
-                <div class="name">{{ ballot.text }}</div>
+                <div class="name">{{ getVoteText(ballot) }}</div>
                 <div class="result">
                   <template v-if="ballot.result">
                     <i class="accepted glyphicon glyphicon-ok"></i>
@@ -149,14 +150,14 @@ export default {
     groups.push({
       id: all.id,
       color: 'dz',
-      acronym: all.acronym,
+      acronym: this.$t('everybody'),
       name: this.$t('everybody'),
     });
     groups.push({
       id: coalition.id,
       color: 'koal',
-      acronym: coalition.acronym,
-      name: coalition.name,
+      acronym: this.$t('coalition'),
+      name: this.$t('coalition'),
     });
 
     let namedGroups = [];
@@ -370,6 +371,13 @@ export default {
 
         this.loading = false;
       });
+    },
+    getVoteText(vote) {
+      const text = vote.short_text || vote.text;
+      if (text.split(' ').length > 14) {
+        return `${text.split(' ').slice(0, 16).join(' ')} ...`;
+      }
+      return text;
     },
   },
 };
