@@ -1,0 +1,188 @@
+{
+  "landing": {
+    "title": "Parlametr",
+    "lead": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
+    "search": {
+      "part_one": "Szukaj",
+      "part_two": "ustawy, głosowania, posłowie, kluby parlamentarne i ich wystąpienia"
+    }
+  },
+  "about": {
+    "lead": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
+    "afterlead": "Przyjazna dla użytkownika wizualna i technologicznie zaawansowana konstrukcja modułowa zwiększa przejrzystość funkcjonowania najważniejszych instytucji demokratycznych i umożliwia skuteczny wgląd w proces decyzyjny.",
+    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "columns": {
+      "first": {
+        "title": "Opinia publiczna",
+        "paragraph": "Funkcjonowanie demokracji zależy od czujnego i odpowiedzialnego nadzoru nad działaniem władzy, a warunkiem tego jest dobrze poinformowane społeczeństwo. Dziękujemy, że ma to dla ciebie znaczenie."
+      },
+      "second": {
+        "title": "Media publiczne",
+        "paragraph": "Wszystkie istniejące karty można bezpłatnie pobrać i umieścić na dowolnej stronie internetowej. Przetwarzamy dane, aby media mogły skupić się na ich interpretacji."
+      },
+      "third": {
+        "title": "Społeczność programistów",
+        "paragraph": "Wszystkie dane są dostępne bezpłatnie za pośrednictwem dwóch interfejsów API, a cały kod jest publikowany na Github. Wszystko co potrzebne można znaleźć na <a href=\"https://dev.parlameter.si\"> strona dla programisty </a>, jeśli potrzebujesz dodatkowej pomocy, skontaktuj się z nami przez e-mail!"
+      }
+    },
+    "thanks": "Parlametr jest tworzony w ramach instytutu <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\"> Dzisiaj jest nowy dzień </a>, który koncentruje się na cyfrowym uczestnictwie w polityce, przejrzystości i monitorowaniu. Dziękujemy Google DNI, Amebis i wszystkim osobom, które bezinteresownie pomogły nam w opracowaniu tego narzędzia."
+  },
+  "legal": {
+    "title": "Informacje prawne",
+    "body": "<h3> 1. O PARLAMETRZE </ h3> <p> Parlametr to narzędzie internetowe, które przeprowadza analizę głosowań i przemówień w sejmie, aby umożliwić kontrolę nad pracą naszych polityków. Zapewniając wgląd w proces decyzyjny, zwiększa przejrzystość najważniejszej instytucji demokratycznej. </ P> <p> Trzy elementy tworzą architekturę tego narzędzia: Parla-dane, w których zbieramy dane surowe, Parla-lizy, w których obliczamy naszą analizę i wartości statystyczne oraz Parla-metr, przestrzeń online, w której wszystkie te informacje ożywają. </ p> <p> Zawartość Parlametru jest dostępna na dwa sposoby: na stronie internetowej Parlameter.pl lub jako niezależna karta umieszczona na innych stronach internetowych. Karta to podstawowa jednostka z adresem URL, kodem do umieszczenia na stronie i \"tekstem informacyjnym\", która wyjaśnia zastosowaną metodologię. </ P> <p> Strona internetowa Parlametr.pl jest podzielona na pięć części: Ustawodastwo, Posiedzenia, Posłowie, Kluby Parlamentarne i Narzędzia. </ p> <p> Obliczyliśmy następującą analizę dotyczącą posłów: różnorodność słownictwa, wzorce głosowania, najczęściej/najrzadzuej głosują tak samo, przesadne słownictwo, proste słownictwo, podniosłe słownictwo, obecność na sesjach, frekwencja podczas głosowania, liczba wypowiedzianych słów, liczba przemówień na sesję, kompas polityczny. </ p> <p> Liczymy następujące analizy dotyczące klubów parlamentarnych: obecność na sesjach, frekwencja podczas głosowania, różnorodność słownictwa, najtrudniejszy/najłatwiejszy do dołączenia, rozbieżność z grupą polityczną, schematy głosowania, charakterystyczne słowa, kompas polityczny. </ p> <p> Parlametr pozwala ci przeszukiwać transkrypcje i generować karty za pomocą wystąpień, w których padają szukane frazy, użycia szukanej frazy w czasie, listy 5 Posłów, którzy najczęściej używali szukanej frazy oraz listę klubów parlamentarnych, które najczęściej używały sukanej frazy. </ p> <p> Metodologia każdej analizy jest publicznie dostępna w części \"info\" każdej karty. </ p> <p> Parametr został opracowany w instytucie Dzisiaj jest nowy dzień. </ p> <h3> 2. ŹRÓDŁA INFORMACJI </ h3> <p> Z powodu braku czytelnych maszynowo danych sejmowych wypełniamy bazę danych Parlametru metodą syntaktycznego rozioru dokumentów HTML ze stron internetowych sejm.gov.pl. Ten proces może spowodować błędy. Instytut Dzisiaj jest nowym dniem i jego członkowie nie mogą zagwarantować poprawności danych na tej stronie i nie są odpowiedzialni za jakiekolwiek błędy. Tutaj możesz przeczytać informacje prawne <a href=\"http://www.dz-rs.si/wps/portal/Home/pravnoObvestilo\"> tutaj </a> lub <a href = \"http: //www.dvk -rs.si/index.php/si/pravno-obvestilo\">tutaj </a>. </ p> <h3> 3. WŁASNOŚĆ INTELEKTUALNA </ h3> <p> Parlametr używa tylko kodu opensourcingu. </ P> <p> Każdy może korzystać z kart Paralmetru za darmo, bez zgody autorów aplikacji. Instytut Dzisiaj jest nowy dzień zastrzega sobie prawo do zmian. W takim przypadku wyślemy powiadomienie e-mailem, a zmiana zostanie wprowadzona po otrzymaniu powiadomienia. </ P> <h3> 4. OGRANICZENIA ODPOWIEDZIALNOŚCI </ h3> <p> Wszystkie dane na stronie internetowej Parlametru nie muszą być dokładne, poprawne i zaktualizowane. </ P> <p> Autorzy aplikacji będą dążyć do podania poprawnych i aktualnych danych. Jednakże nie możemy ponosić odpowiedzialności za ewentualne rozbieżności lub nieścisłości. </ P> <p> Autorzy aplikacji również nie ponoszą odpowiedzialności za ewentualne błędy danych pochodzące od stron trzecich (patrz punkt 2). </ P> < p> Zachowujemy prawo do zmiany kolejności kart w aplikacji. Wszystkie listy są sortowane według alfabetu lub, w pewnych analizach, według wartości. Kolejność kart na niektórych podstronach jest losowa i nie odzwierciedla żadnej decyzji redakcyjnej. </ P> <p> Autorzy aplikacji nie ponoszą odpowiedzialności za ponumerowanie </ p> <ol style = \"list-style: lower- roman \"> <li> wszelkie możliwe bezpośrednie lub pośrednie, losowe, szczególne lub jakiekolwiek inne rodzaje szkód wynikających z błędów lub niedokładności danych lub analizy w Parlametrze. </ li> </ ol> <p> Zastrzegamy sobie prawo do dodawania, usuwania, zmieniania lub aktualizowania informacji na temat tego narzędzia w dowolnym momencie, w dowolny sposób, częściowo lub całkowicie, bez podania przyczyny i bez wcześniejszego powiadomienia. </ p> <p> Mimo wysiłków mających na celu zapewnienie prawidłowych informacji, mogą się zdarzyć błędy. Dokładamy wszelkich starań, aby odkryć wszelkie niedokładności tak szybko, jak to możliwe. Będziemy wdzięczni za powiadomienie nas o błędach, które odkryjesz. Będziemy dążyć do usunięcia wszystkich błędów w ciągu 7 dni roboczych po otrzymaniu powiadomienia. </ P> <p> Karty Parlametru są bezpłatne dla każdego, jednak autorzy narzędzia nie mogą zagwarantować, że narzędzie będzie działać poprawnie. Staramy się minimalizować błędy techniczne, jednak nie możemy ponosić odpowiedzialności za nieprawidłowe działanie serwerów lub wadliwe działanie strony internetowej, na którym osadzono kartę. To samo dotyczy interfejsów API Parladata i Parlalize. </ P>"
+  },
+  "press": {
+    "todo": true,
+    "title": "Dla lepszej i piękniejszej historii",
+    "body": "Ta strona zawiera informacje o Parlametrze, komunikatach prasowych i materiałach wizualnych. Wszystkie te informacje oddajemy do swobodnego użytku. W przypadku wywiadów, bezpośrednich pytań lub próśb o oświadczenia, wyślij e-mail na adres <a href=\"mailto:press@parlameter.pl\"> press@parlameter.pl </a>.",
+    "photos": {
+      "title": "Materiały wizualne"
+    },
+    "releases": {
+      "title": "Komunikaty prasowe"
+    }
+  },
+  "menu": {
+    "legislation": "Ustawodawstwo",
+    "sessions": "Sesje",
+    "mps": "Posłowie",
+    "pgs": "Kluby parlamentarne",
+    "tools": "Narzędzia"
+  },
+  "footer": {
+    "about": "O projekcie",
+    "newsletter_sign_up": "Zapisz się do newslettera!",
+    "newsletter_submit": "Wyślij",
+    "donate": "Wesprzyj!",
+    "press": "Materiały prasowe",
+    "legal": "Informacje prawne"
+  },
+  "search_popup": {
+    "title": "Jak szukać?",
+    "first_paragraph": "Domyślne wyszukiwanie jest szerokie (wyświetli wszystkie wystąpienia zawierające dowolne z wprowadzonych słów).",
+    "second_paragraph": "Jeśli chcesz zmodyfikować szukaną frazę, możesz użyć następujących operatorów:",
+    "operators": [
+      {
+        "name": "I",
+        "description": "wyszukiwarka zwróci tylko te wyniki, które zawierają wszystkie słowa w szukanej frazie (niezależnie od ich kolejności)",
+        "example_title": "Przykład wyszukiwania:",
+        "example_text": "Ivan I Cankar",
+        "example_result_title": "Wyniki wyszukiwania:",
+        "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "\"CUDZYSŁÓW\"",
+        "description": "wyniki wyszukiwania będą uwzględniać tylko te trafienia, które zawierają dokładny zestaw znaków",
+        "example_title": "Przykład wyszukiwania:",
+        "example_text": "Kryzys humanitarny",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (WYKRZYKNIK)",
+        "description": "wyniki wyszukiwania muszą zawierać słowo zaznaczone wykrzyknikiem w szukanej frazie, podczas gdy inne słowa w szukanej frazie służą tylko do uszeregowania wyników",
+        "example_title": "Przykład wyszukiwania:",
+        "example_text": "!klub parlamentarny",
+        "example_result_title": "Wyniki wyszukiwania:",
+        "example_result_text": "Klub parlamentarny,<br> klub parlamentarny,<br> międzynarodowy klub",
+        "example_excluded_result_title": "Nie znaleziono pasujących wyników",
+        "example_excluded_result_text": "Mandat poselski"
+      },
+      {
+        "name": "-(MINUS)",
+        "description": "wyniki wyszukiwania wykluczają trafienia słowa poprzedzego minusem (-)",
+        "example_title": "Przykład wyszukiwania:",
+        "example_text": "-Klub parlamentarny",
+        "example_result_title": "Wyniki wyszukiwania:",
+        "example_result_text": "klub parlamentarny,<br> międzynarodowy klub",
+        "example_excluded_result_title": "Nie znaleziono pasujących wyników",
+        "example_excluded_result_text": "Klub parlamentarny"
+      }
+    ]
+  },
+  "donation": {
+    "intro": "Twoja darowizna pomoże zapewnić dalszy rozwój i umożliwić długotrwałe działanie Parlametru.",
+    "personal": "INDYWIDUALNA<br>DAROWIZNA",
+    "business": "ZBIOROWA<br>DAROWIZNA",
+    "bitcoin": "BITCOIN DAROWIZNA",
+    "business_success": "O szczegółach najlepiej jest porozmawiać poprzez e-mail.",
+    "business_success_email": "e-mail",
+    "business_success_message": "wiadomość",
+    "business_success_send": "WYŚLIJ",
+    "thank_you": "DZIĘKUJEMY!",
+    "error": "Ups, coś poszło nie tak. :(",
+    "choice": "DAROWIZNA Z WYBORU",
+    "amount": "suma",
+    "card": "ZA POMOCĄ KARTY KREDYTOWEJ",
+    "monthly": "comiesięczna darowizna"
+  },
+  "tools": {
+    "notifications": {
+      "title": "Parlametr powiadomienia",
+      "text": "Fragmenty z posiedzeń sejmowych! Otrzymuj powiadomienia e-mail za każdym razem, gdy ktoś w sejmie wypowie wybrane przez ciebie słowo (lub więcej słów)."
+    },
+    "voteComparator": {
+      "title": "Komparator głosowań",
+      "text": "Komparator głosowań pozwala odpowiedzieć na pytania takie jak: Kiedy członkowie jednej partii głosowali tak samo, jak ich najwięksi rywale polityczni?"
+    },
+    "discord": {
+      "title": "Analiza niezgodności",
+      "text": "Zbadaj niezgodność w klubach parlamentarnych w oparciu o to, jak bardzo nie zgadzali się co do konkretnych aktów prawnych."
+    },
+    "compass": {
+      "title": "Parlamentarny kompas",
+      "text": "Wizualizacja wszystkich posłanek i posłów w wirtualnej \"przestrzeni\". Im dalej od siebie są dwaj posłowie, tym większa niezgodność w ich wzorcach głosowania."
+    },
+    "wordGroups": {
+      "title": "Grupy słów",
+      "text": "Dowiedz się, kto mówi najwięcej o pewnych tematach lub kto najczęściej używa określonych grup słów.<br><br>"
+    }
+  },
+  "general": {
+    "coalition": "koalicja",
+    "opposition": "opozycja",
+    "inactive": "NIEAKTYWNE",
+    "overview": "Przegląd",
+    "voting": "Głosowania",
+    "speeches": "Wystąpienia",
+    "data_published": "opublikowane dane",
+    "in_review": "rozpatrywane",
+    "vote-result--enacted": "Przyjęto",
+    "vote-result--submitted": "Przedłożono",
+    "vote-result--rejected": "Odrzucono",
+    "vote-result--retracted": "Wycofano",
+    "vote-result--adopted": "Przyjęto",
+    "vote-result--received": "Otrzymano",
+    "vote-result--in_procedure": "W czytaniu",
+    "legislation": "ustawodawstwo",
+    "other_votings": "drugie głosowanie",
+    "transcripts": "transkrypcje",
+    "state_one": "Sejm Rzeczypospolitej Polskiej nie publikuje zapisów głosowań komisji.\nPowiedz im, że muszą to zmienić.",
+    "state_two": "Državni zbor RS ne objavlja podatkov o glasovanjih na Kolegiju predsednika državnega zbora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Povej jim</a>, da morajo to spremeniti.",
+    "state_one_dz": "Przepraszamy, dane o głosowaniu z wybranego posiedzenia nie są jeszcze dostępne.",
+    "state_five": "Przepraszamy, transkrypcja wystąpień wybranego posiedzenia nie jest jeszcze dostępna online.",
+    "tools_intro": "Demokracja jest procesem ciągłym, który zależy od naszego uczestnictwa w nim. Skorzystaj z poniższych narzędzi, aby pomóc ci się lepiej zaangażować!",
+    "page-not-found-text": "Tutaj niczego nie ma. Czego szukasz?",
+    "info_email": "info@parlametr.pl"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parlametr",
+    "twitter": "https://twitter.com/Parlametr_pl",
+    "instagram": "[empty]"
+  },
+  "titles": {
+    "session": "Posiedzenie",
+    "legislation": "Ustawodawstwo",
+    "other-votings": "Inne głosowania",
+    "transcript": "Transkrypcja",
+    "voting": "Głosowanie",
+    "session-list": "Lista posiedzeń",
+    "sessions-search": "Szukaj posiedzenia",
+    "thank-you": "Dziękujemy!",
+    "ups": ":("
+  }
+}

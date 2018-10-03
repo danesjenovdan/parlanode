@@ -91,9 +91,9 @@ function expandProps(msg, props) {
 function i18n(lang) {
   const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
 
-  return (path, props = {}) => {
+  const get = (path, props = {}) => {
     const msg = messages[path] || _.get(messages, path);
-    if (!msg) {
+    if (msg == null || msg === '[empty]' || msg === '') {
       // eslint-disable-next-line no-console
       console.warn(chalk.yellow(`[i18n] Translation value for lang="${lang}" path="${path}" is missing.`));
       return path;
@@ -108,6 +108,13 @@ function i18n(lang) {
     }
     return expandProps(msg, props);
   };
+
+  get.exists = (path) => {
+    const msg = messages[path] || _.get(messages, path);
+    return !(msg == null || msg === '[empty]' || msg === '');
+  };
+
+  return get;
 }
 
 module.exports = {
