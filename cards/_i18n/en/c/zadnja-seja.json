@@ -12,7 +12,7 @@
     "words-text": "We perform the analysis according to the tf-idf statistic. The corpus are all speeches while the document are all speeches at this particular session.",
     "presence-heading": "Attendance at voting events by parliamentary group",
     "presence-text": "Parliamentary groups are sorted based on the percentage of votes their members attended.",
-    "votes-heading": "Votings",
+    "votes-heading": "Voting events",
     "votes-text": "For all voting events at a session we count individual votes (FOR, AGAINST, ABSTAIN) and the number of MPs who did not vote, and display the results."
   }
 }

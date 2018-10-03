@@ -1,16 +1,16 @@
 {
   "card": {
-    "title": "Glasovanja"
+    "title": "Głosowania"
   },
   "info": {
-    "lead": "Pregled vseh glasovanj, ki so se zgodila na seji.",
+    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie posiedzenia.",
     "text": [
-      "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
-      "Nabor glasovanj pridobimo s spletnega mesta {link}."
+      "Dla wszystkich głosowań na posiedzeniu liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę posłów, którzy byli nieobecni, oraz przedstawiamy wyniki.",
+      "Zapisy głosowań uzyskujemy ze strony internetowej {link}."
     ],
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      "text": "Sejm RP",
+      "link": "http://www.sejm.gov.pl/sejm8.nsf/terminarz.xsp"
     }
   }
 }

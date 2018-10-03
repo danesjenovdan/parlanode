@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Besede, ki so zaznamovale sejo"
+    "title": "Słowa, które charakteryzują posiedzenie"
   },
   "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje kot na vseh drugih sejah.",
+    "lead": "Lista 10 słów i wyrażeń, które były używane częściej podczas tego posiedzenia niż podczas innych posiedzeń.",
     "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi govori na seji."
+      "Używamy następujących statystyk {link} do przeprowadzania analiz.",
+      "Korpus prezentuje wszystkie wystąpienia, a dokument odnosi się do wszystkich wystąpień podczas danego posiedzenia."
     ],
     "link": {
       "link": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf",

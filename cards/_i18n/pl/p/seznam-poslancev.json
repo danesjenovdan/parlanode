@@ -1,53 +1,53 @@
 {
   "card": {
-    "title": "Seznam poslancev"
+    "title": "Lista posłów"
   },
   "info": {
-    "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
-    "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje."
+    "lead": "Zestawienie wszystkich obecnie aktywnych posłów, odpowiadający zapytaniu użytkownika ({parties}; {districts}). Lista jest uszeregowana według {sortBy}.",
+    "text": "Kolumna \"Analiza\" odzwierciedla wynik sumaryczny, a kolumna \"Zmiana\" odzwierciedla różnicę w porównaniu do poprzednich danych, które zostały zebrane. Kolumna \"Zmień\" jest odświeżana pod koniec każdego posiedzenia."
   },
-  "select-district-placeholder": "Izberi okraj",
-  "select-parties-placeholder": "Izberi poslansko skupino",
-  "all-parties": "vse poslanske skupine",
-  "all-voting-districts": "vsi volilni okraji",
-  "missing-district": "okraj ni vnešen",
-  "voting-district": "volilni okraj",
-  "sort-by--name": "abecedi",
-  "sort-by--district": "okrajih",
-  "sort-by--party": "poslanskih skupinah",
-  "sort-by--analysis": "rezultatu analize {analysis}",
-  "sort-by--change": "aktualni spremembi v rezultatu analize {analysis}",
-  "sort-by--age": "starosti",
-  "sort-by--education": "stopnji izobrazbe",
-  "sort-by--terms": "številu mandatov",
+  "select-district-placeholder": "Wybierz okręg",
+  "select-parties-placeholder": "Wybierz klub parlamentarny",
+  "all-parties": "wszystkie kluby parlamentarne",
+  "all-voting-districts": "wszystkie okręgi wyborcze",
+  "missing-district": "okręg nie został wprowadzony",
+  "voting-district": "okręg wyborczy",
+  "sort-by--name": "alfabetycznie",
+  "sort-by--district": "okręgi",
+  "sort-by--party": "kluby parlamentarne",
+  "sort-by--analysis": "analiza wyników {analysis}",
+  "sort-by--change": "aktualne zmiany w wynikach analizy {analysis}",
+  "sort-by--age": "wiek",
+  "sort-by--education": "poziom wykształcenia",
+  "sort-by--terms": "liczba kadencji",
   "analysis-texts": {
     "demographics": {
-      "label": "Demografija"
+      "label": "Demografia"
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " po prisotnosti na glasovanjih sej DZ",
-      "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100)."
+      "label": "Obecność na głosowaniach Sejmu RP",
+      "titleSuffix": " po obecności na głosowaniach Sejmu RP",
+      "explanation": "Liczba głosowań, gdzie poseł był obecny, jest dzielona przez liczbę wszystkich głosowań i normalizowana (min 1 - max 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " po št. poslanskih vprašanj in pobud",
-      "explanation": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo."
+      "label": "Nr poselskiego zapytania i inicjatywy",
+      "titleSuffix": " po numerze poselskich zapytań i inicjatyw",
+      "explanation": "Liczba zapytań i inicjatyw poselskich podejmowanych przez posła na tym posiedzeniu Sejmu RP w porównaniu ze średnią i maksymalną wartością."
     },
     "speeches_per_session": {
-      "label": "Št. govorov na sejo",
-      "titleSuffix": " po št. govorov na sejo",
-      "explanation": "Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim."
+      "label": "Liczba wystąpień na posiedzenie",
+      "titleSuffix": " po liczbie wystąpień na posiedzenie",
+      "explanation": "Liczymy wstąpienia posłów i dzielimy je przez liczbę posiedzeń, w trakcie których poseł przemawiał. Liczbę wszystkich wystąpień dzielimy najpierw przez liczbę wszystkich posłów, a następnie przez liczbę wszystkich posiedzeń (gdzie wygłaszano przemówienia). Porównujemy indywidualny wynik z wartością średnią i maksymalną."
     },
     "spoken_words": {
-      "label": "Št. izgovorjenih besed",
-      "titleSuffix": " po št. izgovorjenih besed",
-      "explanation": "Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ."
+      "label": "Liczba wypowiedzianych słów",
+      "titleSuffix": " po liczbie wypowiedzianych słów",
+      "explanation": "Liczba słów wypowiedzianych przez poseła w trakcie wszystkich swoich wystąpień w Sejmie."
     },
     "mismatch_of_pg": {
-      "label": "Neujemanje s poslansko skupino",
-      "titleSuffix": " po neujemanju s poslansko skupino",
-      "explanation": "Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ."
+      "label": "Odchylenie od klubu parlamentarnego",
+      "titleSuffix": " po odchyleniu od klubu parlamentarnego",
+      "explanation": "Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu RP."
     }
   }
 }

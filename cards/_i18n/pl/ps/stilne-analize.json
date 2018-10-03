@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "Stilne analize"
+    "title": "Analizy stylistyczne"
   },
   "info": {
-    "lead": "Pogostost uporabe stilno zaznamovanih besed v govorih poslancev poslanske skupine.",
+    "lead": "Częstotliwość występowania stylizowanych słów w wystąpieniach członków klubu parlamentarnego.",
     "text": [
-      "Z združevanjem kvalifikatorjev {link1} in {link2} smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.",
+      "Łącząc kwalifikatory {link1} i {link2} definiujemy przesadne, podniosłe i proste słownictwo w przemówieniach posłów.",
       "Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).",
-      "Podjetje {link3} je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.",
-      "Črtni graf prikazuje delež posameznega tipa besedja v govorih poslanske skupine glede na povprečje, izračunano za celoten sklic. Delež se izračuna po naslednjem algoritmu: vzamejo se vsi govori poslanske skupine, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslansko skupino z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslansko skupino se normalizira (min. 1 – max. 100)."
+      "Firma {link3} z transkrypcji przemów poselskich przygotowała listy słów zawierających poszczegolne kwalifikatory.",
+      "Zawarty wykres ukazuje proporcje każdego rodzaju słownictwa w wystąpieniach posła w porównaniu do średniej, obliczone dla całego posiedzenia parlamentu. Proporcje są obliczane za pomocą następującego algorytmu: bierzemy wszystkie wystąpienia danego klubu parlamentarnego i liczymy liczbę słów (i ich powtórzeń) w każdej kategorii słownictwa. Analizę przeprowadzamy dla wszystkich posłów, a następnie dzielimy wartość klubu parlamentarnego przez średnią (suma wszystkich posłów podzielona przez liczbę posłów). Wartości kategorii dla każdego klubu parlamentarnego są znormalizowane (min. 1 - maks. 100)."
     ],
     "links": [
       {

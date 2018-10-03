@@ -1,11 +1,11 @@
 {
   "card": {
-    "title": "Raba skozi čas"
+    "title": "Użyte w czasie"
   },
   "info": {
-    "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.",
-    "text": "Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem letu."
+    "lead": "Częstotliwość użycia szukanej frazy w czasie.",
+    "text": "Liczbę wystąpień szukanej frazy obliczamy według miesiąca. Następnie wyświetlamy wyniki dla całej kadencji lub poprzedniego roku."
   },
-  "whole-term": "Cel mandat",
-  "last-year": "Zadnje leto"
+  "whole-term": "Cała kadencja",
+  "last-year": "Poprzedni rok"
 }

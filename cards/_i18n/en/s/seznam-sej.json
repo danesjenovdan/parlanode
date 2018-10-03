@@ -22,10 +22,10 @@
   },
   "limited-to-last-five": ", the list is limited to top five sessions",
   "just-last-five": "Only the last 5",
-  "select-working-body-placeholder": "Choose a committee",
+  "select-working-body-placeholder": "Choose a working body",
   "sort-by--name": "session name",
   "sort-by--date": "date when the session started",
   "sort-by--updated": "date when last update was made",
   "sort-by--workingBody": "name of the organisation",
-  "title": "Ime"
+  "title": "Name"
 }

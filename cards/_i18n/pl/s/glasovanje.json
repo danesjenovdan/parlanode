@@ -1,19 +1,19 @@
 {
   "card": {
-    "title": "Glasovanje"
+    "title": "Głosowanie"
   },
   "info": {
     "text": [
-      "Nabor glasovanj pridobimo s spletnega mesta DZ RS.",
-      "Rezultat posameznega glasovanja ima tri različne izpise: na nivoju poslancev, na nivoju poslanskih skupin ter glede na stran vlade.",
-      "Prvi zavihek omogoča pregled glasov poslancev, filtriranje glede na vrednost glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem glasovanju. \"60% ZA\" npr. pomeni, da je ZA glasovalo 60 od 90 poslancev.",
-      "Drugi zavihek prikaže glasove poslanskih skupin. Na koncu vsake vrstice je izpisan večinski glas poslanske skupine, gumbi z vrednostmi glasovnic pa odpirajo sezname poslancev, ki so oddali tak glas. S strelo opozarjamo na razkole v poslanskih skupinah - izrišemo jo nad tistimi glasovi, ki niso enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.",
-      "Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo opozarjamo na nepričakovane glasove - označujemo odstopanje od večinskega glasu koalicije.",
-      "OZNAČEVANJE S STRELO",
-      "S strelo opozarjamo na razkole v poslanskih skupinah oziroma v koaliciji - izrišemo jo nad tistimi glasovanji,  ki vsebujejo glasove, ki niso enaki večinskemu glasu poslanske skupine / koalicije, pri čemer so odsotni glasovi izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni."
+      "Zapisy głosowań uzyskujemyze strony internetowej Sejmu Rzeczypospolitej Polskiej.",
+      "Wyniki każdego głosowania pokazane są na trzy sposoby: na poziomie posła, klubu parlamentarnego oraz rządu.",
+      "Pierwsza zakładka pozwala przeglądać głosowania, filtrując według wartości karty do głosowania (ZA, PRZECIW, WSTRZYMANO SIĘ, NIEOBECNY/A), oraz wyszukiwać poszczególnych posłów. Głos większości jest ukazany obok wykresu kołowego. Na przykład \"60% ZA\" oznacza, że 60% posłów głosowało ZA.",
+      "Druga zakładka pokazuje głosy klubów parlamentarnych. Na końcu każdej linii pokazany jest głos większości grupy parlamentarnej, a naciśnięcie przycisku obok daje dostęp do listy posłów, którzy głosowali tak samo, jak większość klubu parlamentarnego. Symbol błyskawicy wskazuje na rozbieżności w klubie parlamentarnym - znajduje się obok wszystkich głosów, które nie są takie same jak głos większości (posłów, którzy byli nieobecni, nie uwzględnienia się). Jeżeli większość klubu parlamentarnego jest nieobecna, nie ma głosu większości.",
+      "Trzecia zakładka pokazuje wyniki głosowania według strony rządowej. Ponownie używamy symbolu błyskawicy, aby podśkreslić nieoczekiwane głosy, tj. przypadki, w których głos posła jest inny niż głos większości.",
+      "SYMBOL BŁYSKAWICY",
+      "Symbol błyskawicy wskazuje na rozbieżności w klubie parlamentarnym lub koalicji - znajduje się obok wszystkich głosów, które nie są takie same jak głos większości (posłów, którzy byli nieobecni, nie uwzględnienia się). Jeżeli większość klubu parlamentarnego jest nieobecna, nie ma głosu większości."
     ]
   },
-  "gov-side": "Stran vlade",
-  "summary": "Povzetek",
-  "all-mps": "Vsi poslanci"
+  "gov-side": "Strona rządząca",
+  "summary": "Podsumowanie",
+  "all-mps": "Wszyscy posłowie"
 }

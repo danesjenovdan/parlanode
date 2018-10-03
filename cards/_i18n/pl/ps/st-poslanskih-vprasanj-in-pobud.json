@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Št. poslanskih vprašanj in pobud"
+    "title": "Liczba poselskich zapytań i inicjatyw"
   },
   "info": {
-    "lead": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
+    "lead": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków danego klubu parlamentarnego w trakcie tego posiedzenia Sejmu RP.",
+    "text": "Dane pochodzą ze strony internetowej {link}.",
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
-      "text": "DZ RS"
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/agent.xsp?symbol=Zapstat2&Nrkadencji=8",
+      "text": "Sejm Rzeczypospolitej Polskiej"
     }
   }
 }

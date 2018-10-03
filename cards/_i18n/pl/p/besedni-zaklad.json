@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Raznolikost besedišča"
+    "title": "Różnorodność słownictwa"
   },
   "info": {
-    "lead": "Raznolikost besedišča, ki ga uporablja poslanec/-ka v svojih govorih v primerjavi s povprečno in največjo vrednostjo.",
+    "lead": "Różnorodność słownictwa używanego przez posła w swoich wystąpieniach, w porównaniu do wartości średniej i maksymalnej.",
     "text": [
-      "Iz vseh poslančevih/-kinih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn.",
-      "Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...).",
-      "Za poved \"Danes je nov dan in danes je dan za Parlameter\" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375"
+      "Liczymy unikalne słowa i liczbę wszystkich słów wypowiedzianych we wszystkich wystąpieniach danego posła. Następnie liczymy wystąpienia każdego pojedynczego słowa. Dzielimy unikatowe słowa w kategoriach według liczby ich powtórzeń (raz, dwa, trzy razy itd.).",
+      "Ostatecznie obliczamy współczynnik. Aby obliczyć współczynnik, umieszczamy liczbę unikalnych słów nad kreską ułamka i liczbę słów powtarzanych z pewną częstotliwością (raz, dwa, trzy razy...) pomnożoną przez kwadrat częstotliwości (jeden na kwadrat, dwa na kwadrat, trzy na kwadrat...) poniżej kreski ułamka.",
+      "Zdanie \"Dzisiaj jest nowy dzień i dzisiaj jest dzień dla Parlametru\" daje wynik 7 / ((3*2^2) + (4*1^2)) = 0,4375"
     ]
   }
 }

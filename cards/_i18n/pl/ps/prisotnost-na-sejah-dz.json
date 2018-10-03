@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Obecność na sesjach Zgromadzenia Narodowego"
+    "title": "Obecność na posiedzeniach Sejmu RP"
   },
   "info": {
-    "lead": "Obecność grupy parlamentarnej w sesjach Zgromadzenia Narodowego w porównaniu do wartości średniej i maksymalnej.",
-    "text": "Dla każdej sesji i każdego klubu parlamentarnego obliczamy jak wielu członków i członkiń klubu głosowało lub przemawiało przynajmniej raz w trakcie sesji. Kiedy wszystkie sesje zostaną zsumowane, dzielimy ten wynik przez liczbę wszystkich spotkań mnożąc przez liczbę posłów i posłanek w klubie parlamentarnym. Na końcu wynik normalizujemy (min 1-max 100)."
+    "lead": "Obecność klubu parlamentarnego na posiedzeniach Sejmu RP w porównaniu do wartości średniej i maksymalnej.",
+    "text": "Dla każdego posiedzenia i każdego klubu parlamentarnego obliczamy jak wielu członków i członkiń klubu głosowało lub przemawiało przynajmniej raz w trakcie posiedzenia. Kiedy wszystkie posiedzenia zostaną zsumowane, dzielimy ten wynik przez liczbę wszystkich posiedzeń mnożąc przez liczbę posłów i posłanek w klubie parlamentarnym. Na koniec wynik normalizujemy (min 1-max 100)."
   }
 }

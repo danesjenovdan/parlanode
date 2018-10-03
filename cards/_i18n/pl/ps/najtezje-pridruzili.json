@@ -3,7 +3,7 @@
     "title": "Najrzadziej głosują tak samo"
   },
   "info": {
-    "lead": "Lista 5 posłów, którzy najrzadziej głosują tak samo jak \"głos grupy parlamentarnej\". Sklasyfikowano w kolejności malejącej. Im większa wartość, tym mniejsze dopasowanie głosów.",
+    "lead": "Lista 5 posłów, którzy najrzadziej głosują tak samo jak \"głos klubu parlamentarnego\". Sklasyfikowano w kolejności malejącej. Im większa wartość, tym mniejsze dopasowanie głosów.",
     "text": [
       "Obliczamy odległość euklidesową pomiędzy wynikami głosowania klubu parlamentarnego i głosami wszystkich innych posłów (przy czym wartość oddanych głosów konwertujemy do wartości liczbowych pomiędzy -1 i 1).",
       "Podczas obliczania \"odległości\" pomiędzy wszystkimi posłami, klasyfikujemy ich zgodnie z wynikiem i pokazujemy pierwszą piątkę.",

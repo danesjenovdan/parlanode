@@ -8,7 +8,7 @@
   "data-currently-unavailable": "Data currently unavailable.",
   "title-search": "Search by title",
   "contents-search": "Search by content",
-  "working-body": "Committee",
+  "working-body": "Working body responsible",
   "vote-types": "Vote types",
   "select-placeholder": "Choose",
   "selected-placeholder": "Chosen: {num}",
@@ -152,10 +152,10 @@
     "December"
   ],
   "vote_types": {
-    "agenda": "dnevni red",
-    "whole_law": "glasovanje o zakonu v celoti",
-    "amendment": "amandma",
-    "no_confidence": "interpelacija",
+    "agenda": "agenda",
+    "whole_law": "vote about the law in its entirety",
+    "amendment": "amendment",
+    "no_confidence": "Vote of no-confidence",
     "record_conclusion": "evidenčni sklep",
     "conclusion_proposal": "predlog sklepa",
     "ratification": "zakon o ratifikaciji",
@@ -165,7 +165,7 @@
     "report": "poročilo",
     "procedural_proposal": "proceduralni predlog",
     "personal_property_decree": "odlok o načrtu ravnanja s stvarnim premoženjem",
-    "other": "drugo"
+    "other": "other"
   },
   "tools": {
     "notifications": "Parlameter notifications",
@@ -175,7 +175,7 @@
     "word-groups": "Word groups"
   },
   "frame": {
-    "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
+    "show-in-context": "Show card in the context of this web page"
   },
-  "ogText": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru."
+  "ogText": "Parlameter analyses voting and speeches in the parliament to help you monitor your politicians."
 }

@@ -11,13 +11,13 @@
     "links": [
       {
         "link": "http://www.dz-rs.si",
-        "text": "DZ RS"
+        "text": "National Assembly of the Republic of Slovenia"
       }
     ]
   },
   "all-votes": "all voting events",
   "all-working-bodies": "all committees responsible",
-  "opposition": "opozicija",
-  "everyone": "Vsi",
-  "parliament": "sabor"
+  "opposition": "opposition",
+  "everyone": "All",
+  "parliament": "parliament"
 }

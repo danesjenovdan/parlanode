@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Glasovanja, ki vsebujejo iskalni niz"
+    "title": "Głosowania, które zawierają szukaną frazę"
   },
   "info": {
-    "lead": "Pregled vseh glasovanj, ki vsebujejo iskalni niz, razvščenih glede na čas.",
-    "text": "Po glasovanjih vseh sej poiščemo in izpišemo povezave do vseh glasovanj, v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu (od najnovejše do najstarejše) in podobnosti z iskalnim nizom."
+    "lead": "Przegląd wszystkich głosowań, które zawierają szukaną frazę, uszeregowane chronologicznie.",
+    "text": "Spośród głosowań we wszystkich posiedzeniach, znajdujemy i wyświetlamy linki do wszystkich głosowań, w których pojawia się szukana fraza, a następnie sortujemy według daty (od najnowszej do najstarszej) oraz podobieństwa z szukaną frazą."
   }
 }

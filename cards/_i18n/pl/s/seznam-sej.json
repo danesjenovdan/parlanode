@@ -1,31 +1,31 @@
 {
   "card": {
-    "title": "Seznam sej"
+    "title": "Lista posiedzeń"
   },
   "info": {
-    "lead": "Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu ({filter}). Seznam je sortiran po {sort-by}{just-last-five}.",
-    "text": "Podatke o sejah pridobivamo iz spletnega mesta DZ RS, natančneje od {link1}, {link2} in {link3}.",
+    "lead": "Lista wszystkich posiedzeń odpowiadającym szukanej frazie. Lista jest sortowana według {sort-by}{just-last-five}.",
+    "text": "Dane o posiedzeniach pochodzą ze strony internetowej Sejmu RP, a dokładnie z {link1}, {link2} i {link3}.",
     "links": [
       {
         "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDt/poDatumu/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3F0NXQw8DX09PTz9HI0M3E30w9EUBJkYARV4W4b4-PoYGnib6UdRot8dXT-G8Wj6_S0N3Qw8Q43dTYx9QwwMfI2I02-AAzgakGg_pgej8BtfkBsKAooAQ6b9bA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/",
-        "text": "tu"
+        "text": "tutaj"
       },
       {
         "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3INMjAw8Db0tQ3x8fQwNvM30wwkpiAJKG-AAjgYE9LtD9BNvv7-loZuBZ6ixu4mxb4iBga8RcfrxOJCA_oLcUCBwVAQAGc0QlQ!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/",
-        "text": "tu"
+        "text": "tutaj"
       },
       {
         "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDt/poDatumu/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3F0NXQw8DX09PTz9HI0M3E30w9EUBJkYARV4W4b4-PoYGnib6UdRot8dXT-G8Wj6_S0N3Qw8Q43dTYx9QwwMfI2I02-AAzgakGg_pgej8BtfkBsKAooAQ6b9bA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/",
-        "text": "tu"
+        "text": "tutaj"
       }
     ]
   },
-  "limited-to-last-five": ", izpis pa omejen samo na zgornjih pet sej",
-  "just-last-five": "Samo zadnjih 5",
-  "select-working-body-placeholder": "Izberi delovno telo",
-  "sort-by--name": "imenu seje",
-  "sort-by--date": "datumu začetka seje",
-  "sort-by--updated": "datumu zadnje spremembe podatkov o seji",
-  "sort-by--workingBody": "imenu organizacije",
-  "title": "Ime"
+  "limited-to-last-five": ", lista jest ograniczonona do pierwszych pięciu posiedzeń",
+  "just-last-five": "Tylko ostatnich 5",
+  "select-working-body-placeholder": "Wybierz komisję",
+  "sort-by--name": "nazwa posiedzenia",
+  "sort-by--date": "data początku posiedzenia",
+  "sort-by--updated": "data ostatniej aktualizacji danych o posiedzeniu",
+  "sort-by--workingBody": "nazwa organizacji",
+  "title": "Imię"
 }

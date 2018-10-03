@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisotnost na glasovanjih sej DZ skozi čas"
+    "title": "Obecność na głosowaniach Sejmu RP w czasie"
   },
   "info": {
-    "lead": "Prisotnost poslanca/-ke na glasovanjih DZ skozi čas.",
-    "text": "Vsak mesec preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom vseh glasovanj, na katerih bi moral/-a poslanec/-ka ta mesec glasovati. Če poslanec/-ka v izbranem mesecu mandata ni imel/-a, prikažemo, na kolikšnem odstotku glasovanj ni imel/-a pravice glasovati."
+    "lead": "Obecność posła/posłanki na głosowaniach Sejmu RP w czasie.",
+    "text": "Każdego miesiąca liczymy wszystkie karty do głosowania oddane przez posła/posłankę i dzielimy je przez liczbę wszystkich głosowań w danym miesiącu, w których poseł/posłanka powinien/powinna uczestniczyć. W przypadkach, gdy poseł/posłanka nie miał/a mandatu w wybranym miesiącu, pokazujemy procent głosów, w których nie miał/a on/a prawa głosu."
   }
 }

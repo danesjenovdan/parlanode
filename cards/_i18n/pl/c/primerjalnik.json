@@ -1,28 +1,28 @@
 {
   "card": {
-    "title": "Primerjalnik glasovanj"
+    "title": "Komparator głosowań"
   },
   "info": {
     "text": [
-      "Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.",
-      "Rezultate prikazujemo na tri načine:"
+      "Karta zawiera listę wszystkich głosowań, które odpowiadają wybranym kryteriom. Przy porównaniu klubów parlamentarnych stosuje się obliczoną większość głosów, uzyskaną przez zliczenie, za którą opcją głosuje większość posłów.",
+      "Wyniki przedstawiamy na trzy sposoby:"
     ],
     "list": [
-      "kot seznam vseh glasovanj,",
-      "kot črtni grafikon ki predstavlja število glasovanj na dan,",
-      "kot histogram s seštevki glasovanj glede na matično delovno telo."
+      "jako lista wszystkich głosowań",
+      "jako wykres liniowy pokazujący liczbę głosowań w danym dniu,",
+      "jako histogram przedstawiający sumy głosowań w odniesieniu do komisji."
     ]
   },
-  "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih. {load}",
-  "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
-  "comparator-vote-percent": "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.",
+  "comparator-text": "Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a {different} głosowali inaczej od nich. {load}",
+  "ignore-absent": "Zignoruj \"nieobecne\" głosy",
+  "comparator-vote-percent": "{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań.",
   "tabs": {
-    "vote-list": "Seznam glasovanj",
-    "time-chart": "Dinamika skozi čas",
-    "bar-chart": "Dinamika glede na MDT"
+    "vote-list": "Lista głosowań",
+    "time-chart": "Oś czasu",
+    "bar-chart": "Dynamika w odniesieniu do komisji"
   },
-  "select-parties-people": "Vklopi cele poslanske skupine ali dodaj posamezne poslance.",
-  "select-mps": "Izberi poslance",
-  "selected-mps": "Izbranih: {num}",
-  "empty-state-text": "Za prikaz glasovanj dodaj vsaj dva akterja."
+  "select-parties-people": "Wybierz klub parlamentarny lub dodaj poszczególnego posła.",
+  "select-mps": "Wybierz posła",
+  "selected-mps": "Wybrano: {num}",
+  "empty-state-text": "Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli."
 }

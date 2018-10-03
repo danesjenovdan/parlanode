@@ -6,41 +6,41 @@
     "seat_count": {
       "label": "Liczba miejsc",
       "titleSuffix": " przez liczbę miejsc",
-      "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jej aktywnych członków."
+      "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jego aktywnych członków."
     },
     "presence_sessions": {
-      "label": "Obecność na sesjach Zgromadzenia Narodowego",
-      "titleSuffix": " glede na rezultate analize s prisotnostjo na sejah DZ",
-      "explanation": "Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom sej in normaliziramo (min 1 - max 100)."
+      "label": "Obecność na posiedzeniach Sejmu RP",
+      "titleSuffix": " zgodnie z wynikami analizy obecności na posiedzeniach Sejmu RP",
+      "explanation": "Liczymy wszystkie posiedzenia i sprawdzamy każdego członka tego klubu parlamentarnego, jeśli głosowali co najmniej raz w trakcie tego posiedzenia. W przypadku, gdy głosują co najmniej raz, są liczeni jako obecni. Suma wszystkich uczestników jest podzielona przez liczbę przedstawicieli w klubie parlamentarnym, wynik ten jest następnie dzielony przez liczbę posiedzeń i normalizowany (min. 1 - maks. 100)."
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " glede na rezultate analize s prisotnostjo na glasovanjih sej DZ",
-      "explanation": "Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa delimo s številom glasovanj in normaliziramo (min 1 - max 100)."
+      "label": "Obecność na głosowaniach",
+      "titleSuffix": " zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP",
+      "explanation": "Liczymy wszystkie głosowania, a także liczbę posłów klubu parlamentarnego obecnych przy każdym głosowaniu. Suma wszystkich oddanych głosów jest dzielona przez liczbę posłów w klubie parlamentarnym i liczbę głosowań. Wynik jest następnie normalizowany (min. 1 - maks. 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " glede na rezultate analize po št. poslanskih vprašanj in pobud",
-      "explanation": "Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega mesta DZ RS."
+      "label": "Liczba poselskich zapytań i inicjatyw",
+      "titleSuffix": " zgodnie z wynikami analizy według liczby zapytań i inicjatyw poselskich",
+      "explanation": "Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków wybranego klubu parlamentarnego w odniesieniu do Sejmu. Dane uzyskujemy ze strony internetowej Sejmu RP."
     },
     "vocabulary_size": {
-      "label": "Raznolikost besedišča",
-      "titleSuffix": " glede na rezultate analize z raznolikostjo besedišča",
-      "explanation": "Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved \"Danes je nov dan in danes je dan za Parlameter\" je rezultat: 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
+      "label": "Różnorodność słownictwa",
+      "titleSuffix": " zgodnie z wynikami analizy różnorodności słownictwa",
+      "explanation": "W każdym wystąpieniu poselskim liczymy unikalne słowa i liczbę wszystkich wypowiedzianych słów. Następnie liczymy ile razy pojawia się każde unikalne słowo. Dzielimy je na kategorie, łącząc wszystkie słowa, które powtarzają się raz, dwa razy, trzy razy itd. Na koniec obliczamy współczynnik, w którym liczba wszystkich unikalnych wypowiedzianych słów jest umieszczona powyżej linii ułamka, a pod linią liczba słów powtarzających się z określoną częstotliwością (raz, dwa, trzy razy...) jest mnożona przez częstotliwość na kwadrat (jeden na kwadrat, dwa na kwadrat, trzy na kwadrat...). Zdanie \"Dzisiaj jest nowy dzień i dzisiaj jest dzień dla Parlametru\" daje wynik: 7 / ((3 * 2 ^ 2) + (4 * 1 ^ 2)) = 0,4375 <br> <br> Sumujemy poszczególne wyniki dla każdego klubu parlamentarnego i dzielimy przez liczbę reprezentantów klubu. Dzielimy poszczególne sumy przez sumę całkowitą i normalizujemy (min 1 - maks. 100)."
     },
     "privzdignjeno": {
-      "label": "Privzdignjeno besedje",
-      "titleSuffix": " glede na rezultate analize s privzdignjenim besedjem",
+      "label": "Podniosłe słownictwo",
+      "titleSuffix": " zgodnie z wynikami analizy podniosłego słownictwa",
       "explanation": "Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji iz SNB<br>/<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
     },
     "preprosto": {
-      "label": "Preprosto besedje",
-      "titleSuffix": " glede na rezultate analize s preprostim besedjem",
+      "label": "Proste słownictwo",
+      "titleSuffix": " zgodnie z wynikami analizy prostego słownictwa",
       "explanation": "Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>Preprosto besedje<br>Kvalifikatorji iz SSKJ<br>narečno (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>Kvalifikatorji iz SNB<br>pogovorno (pog.)<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
     },
     "problematicno": {
-      "label": "Ekscesno besedje",
-      "titleSuffix": " glede na rezultate analize z ekscesnim besedjem",
+      "label": "Przesadne słownictwo",
+      "titleSuffix": " zgodnie z wynikami analizy przesadnego słownictwa",
       "explanation": "Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.<br>Ekscesno besedje<br>Kvalifikatorji iz SSKJ <br>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično (iron.), otroško (otr.) <br>Kvalifikatorji iz SNB<br>slabšalno (slabš.), vulgarno (vulg.)<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100)."
     }
   }

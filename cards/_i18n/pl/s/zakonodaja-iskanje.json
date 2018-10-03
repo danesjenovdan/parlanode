@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Zakoni, ki vsebujejo iskalni niz"
+    "title": "Głosowania, które zawierają szukaną frazę"
   },
   "info": {
-    "lead": "Seznam vseh zakonov in aktov, ki bodisi v naslovu bodisi v povzetku vsebujejo vaš iskalni niz in so o njih na seji DZ glasovali v času trenutnega sklica.",
-    "text": "Po naslovih in povzetkih vseh zakonov in aktov, obravnavanih v tem sklicu, poiščemo pojavitve iskalnega niza in izpišemo povezave do vseh tistih zakonov ali aktov, v katerih se pojavi njegova lema. Na koncu zakone oziroma akte razvrstimo po podobnosti z iskalnim nizom."
+    "lead": "Lista wszystkich ustaw i aktów prawnych, które zawierają szukaną frazę w tytule lub w streszczeniu, nad którymi głosowano w trakcie bieżącego posiedzenia.",
+    "text": "Podążając za tytułami i streszczeniami wszystkich ustaw i aktów omawianych w tym posiedzeniu, szukamy wystąpień szukanej frazy. Linki do wyników są sortowane według podobieństwa z szukaną frazą."
   }
 }

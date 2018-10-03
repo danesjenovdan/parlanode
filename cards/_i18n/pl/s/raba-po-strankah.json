@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Raba po poslanskih skupinah"
+    "title": "Użyte w klubie parlamentarnym"
   },
   "info": {
-    "lead": "Pregled pogostosti pojavljanja iskalnega niza v govorih glede na poslansko skupino.",
-    "text": "Za vsak zadetek glede na iskalni niz preverimo, v koliko govorih poslank in poslancev poslanskih skupin se pojavi. Seštejemo jih glede na poslansko skupino in prikažemo v krožnem grafikonu."
+    "lead": "Częstotliwość użycia szukanej frazy przez klub parlamentarny.",
+    "text": "Dla każdej szukanej frazy liczymy, ile razy pojawia się w wystąpieniach posłów. Podsumowujemy wyniki ze względu na klub parlamentarny i przedstawiamy na wykresie kołowym."
   }
 }

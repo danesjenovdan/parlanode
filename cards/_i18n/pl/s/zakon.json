@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Zakon"
+    "title": "Ustawa"
   },
   "info": {
-    "lead": "Povzetek zakona/akta in rezultati vseh z njim povezanih glasovanj.",
-    "text": "Iz {link} naložimo glasovanja, ki so večinoma opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko, združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še s povzetkom zakona, ki ga pripravimo sami.",
+    "lead": "Abstrakt ustawy lub aktu prawnego i wszystkich powiązanych z nim głosowań.",
+    "text": "Pobieramy głosowania z odpowiednim numerem identyfikacyjnym z {link}. Głosowania dotyczące tego samego numeru identyfikacyjnego są łączone razem i powiązane z odpowiednią ustawą lub aktem prawnym. Karta zawiera również streszczenie ustawy, które jest przez nas przygotowane.",
     "link": {
-      "link": "https://www.dz-rs.si",
-      "text": "www.dz-rs.si"
+      "link": "http://www.sejm.gov.pl/",
+      "text": "www.sejm.gov.pl"
     }
   }
 }
