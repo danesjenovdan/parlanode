@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "Liczba zgłoszonych poprawek"
+  },
+  "info": {
+    "lead": "Liczba poprawek zgłoszonych przez dany klub parlamentarny w porównaniu do maksymalnej i średniej wartości poprawek wśród wszystkich klubów parlamentarnych.",
+    "text": "Liczba miejsc jest ustalana na podstawie wszystkich aktywnych członków klubu parlamentarnego. Informacje na ten temat są pobierane ze strony internetowej {link}.",
+    "link": {
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/kluby.xsp",
+      "text": "Sejm RP"
+    }
+  }
+}

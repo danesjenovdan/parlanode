@@ -4,7 +4,7 @@
     :class="['search-dropdown', { small: small }]"
   >
     <div
-      v-if="selectedIds.length > 0"
+      v-if="!hideClear && selectedIds.length > 0"
       class="search-dropdown-clear"
       @click="clearSelection"
     >×</div>
@@ -119,6 +119,10 @@ export default {
     filter: {
       type: String,
       default: '',
+    },
+    hideClear: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

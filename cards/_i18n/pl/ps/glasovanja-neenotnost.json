@@ -1,0 +1,23 @@
+{
+  "card": {
+    "title": "Lista głosowań według"
+  },
+  "info": {
+    "lead": "Lista wszystkich głosowań Sejmu RP, odpowiadających zapytaniom użytkownika ({text}), dla wybranych odpowiedzialnych komisji ({wbs}), uszeregowanych według {sortBy}.",
+    "text": [
+      "Lista wszystkich głosowań, które odbyły się w aktualnym posiedzeniu sejmu i które zostały zamieszczone na stronie {link1} i odpowiadają zapytaniu użytkownika.",
+      "Wyniki są sklasyfikowane według rozbieżności danego organu lub według daty."
+    ],
+    "links": [
+      {
+        "link": "http://www.sejm.gov.pl/",
+        "text": "Sejm RP"
+      }
+    ]
+  },
+  "all-votes": "wszystkie głosowania",
+  "all-working-bodies": "wszystkie odpowiedzialne komisje",
+  "opposition": "opozycja",
+  "everyone": "Wszystko",
+  "parliament": "sejm"
+}

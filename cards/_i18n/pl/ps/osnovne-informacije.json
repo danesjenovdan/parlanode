@@ -1,0 +1,17 @@
+{
+  "card": {
+    "title": "Podstawowe informacje"
+  },
+  "info": {
+    "lead": "Przegląd podstawowych informacji o klubie parlamentarnym.",
+    "text": "Treść dla tej karty uzyskaliśmy ze strony internetowej Sejmu Rzeczypospolitej Polskiej (klub parlamentarny, wiek, członkostwo w komisjach) oraz ze strony internetowej Państwowej Komisji Wyborczej (liczba otrzymanych głosów). W przypadku wszystkich innych informacji skontaktowaliśmy się z działami PR klubów parlamentarnych. Otrzymaliśmy informacje od NSi, SD, (następnie) ZaAB i ZL. SMC skierował nas na swoją stronę internetową, a SDS skierował nas na stronę internetową Sejmu RP. Zebraliśmy brakujące dane za pomocą wyszukiwarki Google i daliśmy wszystkim klubom parlamentarnym możliwość wprowadzenia poprawek przed publikacją."
+  },
+  "party-leader-m": "Lider klubu",
+  "party-leader-f": "Lider klubu",
+  "deputy-leader-m": "Zastępca",
+  "deputy-leader-f": "Zastępczyni",
+  "number-of-seats": "Liczba miejsc w parlamencie:",
+  "contact": "Kontakt:",
+  "social-media": "Media społecznościowe:",
+  "no-social-media": "brak mediów społecznościowych."
+}

@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Odchylenie od klubu parlamentarnego"
+  },
+  "info": {
+    "lead": "Lista wszystkich członków klubu, sklasyfikowana według stopnia, w jakim głosują oni tak samo jak klub parlamentarny. Im większa wartość, tym mniejsze podobieństwa w głosowaniu.",
+    "text": [
+      "Dla każdego głosowania obliczamy \"głos klubu parlamentarnego\", którego członkiem jest poseł. Następnie dla każdego posła obliczamy procent głosów, gdzie głosował on inaczej niż większość klubu parlamentarnego. Wyniki szeregujemy od największego do najmniejszego stopnia odchylenia.",
+      "Ignorujemy wszystkie karty do głosowania z wartością \"NIEOBECNY/A\". Jeżeli większość głosów w klubie parlamentarnym to \"NIEOBECNY/A\" (większość posłów nie była obecna podczas głosowania), to głosowanie to nie jest uwzględniane w analizie. Jeżeli klub parlamentarny ma więcej \"głosów większości\" (tzn. dwie opcje mają taką samą liczbę głosów w klubie), rozważamy obydwie opcje i porównujemy z poszczególnymi posłami."
+    ]
+  }
+}

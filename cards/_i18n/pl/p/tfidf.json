@@ -1,0 +1,16 @@
+{
+  "card": {
+    "title": "Słowa, które charakteryzują klub"
+  },
+  "info": {
+    "lead": "Lista 10 słów i zwrotów, które poseł używa częściej niż reszta posłów w Sejmie.",
+    "text": [
+      "Używamy następujących statystyk {link} do przeprowadzania analiz.",
+      "Korpus prezentuje wszystkie przemowy, a dokument odnosi się do wszystkich wystąpień posła/posłanki."
+    ],
+    "link": {
+      "link": "https://en.wikipedia.org/wiki/Tf-idf",
+      "text": "tf-idf"
+    }
+  }
+}

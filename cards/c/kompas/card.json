@@ -3,7 +3,7 @@
   "name": "Parlamentarni kompas",
   "type": "kompas",
   "dataUrl": "{analize}/p/getCompass/",
-  "lastUpdate": "2018-09-10T13:45:45.269Z",
+  "lastUpdate": "2018-10-02T13:53:11.228Z",
   "method": "kompas",
   "group": "c",
   "big": true,

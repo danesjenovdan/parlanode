@@ -1,0 +1,33 @@
+{
+  "card": {
+    "title": "Inne głosowania"
+  },
+  "info": {
+    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie posiedzenia",
+    "text": [
+      "Dla wszystkich głosowań w sesji liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę posłów, którzy byli nieobecni i wyświetlamy wyniki.",
+      "Zapisy głosowań uzyskujemyze strony internetowej {link}.",
+      "Nieoczekiwane głosowanie",
+      "Aby zaznaczyć nieoczekiwane wyniki głosowania, używamy probabilistycznej metody analizy głównych komponentów, {link2} opisanej w {link3}.",
+      "Wszystkie głosowania przetwarzamy w czterowymiarowe wektory, w których każdy z komponentów pokazuje liczbę głosów dla konkretnej opcji (ZA, PRZECIW, WSTRZYMANO SIĘ, NIEOBECNA/Y). Model analizy głównych składników (PCA) jest dopasowany do macierzy, a funkcja {link4} daje nam \"log-likelihood\" każdego głosowania w naszym modelu. Model jest tak ustawiony, aby zmaksymalizować wartość \"log-likelihood\" do jak największej liczby głosowań. Po uzyskaniu wszystkich wartości \"log-likelihood\" sortujemy je od najmniejszej do największej i używamy jednej czwartej spośród wszystkich głosowań, które najmniej pasują do modelu. W porównaniu do naszego modelu te wydarzenia głosowania wyróżniają się i dlatego są najbardziej \"nieoczekiwane\". Na karcie są oznaczone ikoną ognia."
+    ],
+    "links": [
+      {
+        "link": "http://www.sejm.gov.pl/",
+        "text": "Sejm RP"
+      },
+      {
+        "link": "http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+        "text": "jak zaimplementowano w bibliotekach scikit-learn"
+      },
+      {
+        "link": "http://www.miketipping.com/papers/met-mppca.pdf",
+        "text": "M. Tipping and C. Bishop, Probabilistic Principal Component Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622"
+      },
+      {
+        "link": "https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485",
+        "text": "score_samples"
+      }
+    ]
+  }
+}

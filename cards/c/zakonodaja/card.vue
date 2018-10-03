@@ -15,7 +15,7 @@
             <div class="filter text-filter">
               <p-search-field v-model="textFilter" />
             </div>
-            <div class="filter month-dropdown">
+            <div v-if="allWorkingBodies.length" class="filter month-dropdown">
               <p-search-dropdown
                 v-model="allWorkingBodies"
                 :placeholder="inputPlaceholder"
@@ -99,13 +99,28 @@ export default {
       currentSortOrder: 'desc',
       textFilter: '',
       workingBodies: [],
-      headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
       allWorkingBodies,
       onlyAbstracts: false,
     };
   },
   computed: {
+    headerConfig() {
+      return defaultHeaderConfig(this, {
+        title: this.dynamicTitle,
+      });
+    },
+    ogConfig() {
+      return defaultOgImage(this, {
+        title: this.dynamicTitle,
+      });
+    },
+    dynamicTitle() {
+      const currentTab = this.cardConfig.tabs.find(e => e.title === this.currentFilter);
+      if (currentTab && currentTab.card_title) {
+        return currentTab.card_title;
+      }
+      return this.$t('card.title');
+    },
     inputPlaceholder() {
       return this.selectedWorkingBodies.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedWorkingBodies.length })
@@ -186,8 +201,8 @@ export default {
             b = B.text;
             return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
           case 'updated':
-            a = dateParser(A.date).getTime();
-            b = dateParser(B.date).getTime();
+            a = dateParser(A.date).getTime() || Date.now();
+            b = dateParser(B.date).getTime() || Date.now();
             return a - b;
           case 'workingBody':
             a = A.mdt_text;

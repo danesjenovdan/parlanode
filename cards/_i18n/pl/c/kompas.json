@@ -1,0 +1,15 @@
+{
+  "card": {
+    "title": "Parlamentarny kompas"
+  },
+  "info": {
+    "lead": "Wszyscy posłowie są uszeregowani w przestrzeni współrzędnych według tego, jak podobne są ich schematy głosowania. Im dalej od siebie znajdują się dwaj posłowie, tym większa niezgodność w ich wzorcach głosowania.",
+    "text": [
+      "Dla każdego posła i posłanki, przywołujemy historię głosowania (lub absencji). Historię głosów każdego posła porównujemy z historią głosów wszystkich pozostałych posłówów i liczymy, ile razy posłowie głosowali w ten sam sposób. Wyniki umieszczane są w dwuwymiarowej macierzy (wiersze i linie to posłowie, wartość przy Xi, j oznacza liczbę razy, gdy dwóch posłów głosowało w ten sam sposób (posłów oznaczono jako i i j), Następnie macierz jest podzielona na pod-macierze, z których każda ma odpowiednią wartość.",
+      "Algorytm zwraca trzy macierze - u, s i V-transpose. Macierz transpozycyjna V może być traktowana jako nowy zestaw zastępczych współrzędnych. Wybieramy dwie współrzędne z transpozycji V, które najlepiej wyjaśniają poprzednią macierz i wizualizują ją w dwuwymiarowym układzie współrzędnych.",
+      "Możemy myśleć o pierwszej macierzy jako posłach w przestrzeni N-wymiarowej (N to liczba głosów, które porównujemy ze sobą lub najdłuższa historia głosowania jednego posła). Algorytm odwzorowuje wymiary N na 2 wymiary, z priorytetem utrzymywania odległości między parami. Im dalej od siebie dwóch posłów, tym większa różnica w ich historii głosowania."
+    ]
+  },
+  "select-mps": "Wybierz posła",
+  "selected-mps": "Wybrano: {num}"
+}

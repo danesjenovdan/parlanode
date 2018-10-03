@@ -40,7 +40,5 @@ export default {
   outline: none;
   padding: 12px 42px 12px 14px;
   width: 100%;
-
-  &::placeholder { color: $font-placeholder; }
 }
 </style>

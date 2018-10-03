@@ -1,0 +1,20 @@
+{
+  "card": {
+    "title": "Podstawowe informacje"
+  },
+  "info": {
+    "lead": "Przegląd podstawowych informacji o pośle/posłance.",
+    "text": [
+      "Treść dla tej karty pobraliśmy ze strony {link} (klub parlamentarny, wiek, członkostwo w komisjach) oraz ze strony internetowej PKW (liczba otrzymanych głosów). W przypadku innych treści skontaktowaliśmy się z działami PR klubów parlamentarnych.",
+      "Otrzymaliśmy informacje od NSi, SD, (następnie) ZaAB i ZL. SMC skierował nas na swoją stronę internetową, a SDS skierował nas na stronę internetową Sejmu RP. Zebraliśmy brakujące dane za pomocą wyszukiwarki Google i daliśmy wszystkim klubom parlamentarnym możliwość wprowadzenia poprawek przed publikacją."
+    ],
+    "link": {
+      "text": "Sejm RP",
+      "link": "http://www.sejm.gov.pl/"
+    }
+  },
+  "elected-to-district--m": "Wybrany z {numVotes} głosów {district}",
+  "elected-to-district--f": "Wybrana z {numVotes} głosów {district}",
+  "age": "Wiek: {age} lat",
+  "no-social-media": "brak mediów społecznościowych."
+}

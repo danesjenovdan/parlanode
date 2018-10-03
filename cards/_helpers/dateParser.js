@@ -1,7 +1,4 @@
 export default (stringDate) => {
-  const d = new Date();
-  d.setDate(parseInt(stringDate.split('.')[0], 10));
-  d.setMonth(parseInt(stringDate.split('.')[1], 10) - 1);
-  d.setFullYear(parseInt(stringDate.split('.')[2], 10));
-  return d;
+  const dateParts = stringDate.split('.').map(p => Number(p.trim())).reverse();
+  return new Date(Date.UTC(dateParts[0], dateParts[1] - 1, dateParts[2]));
 };

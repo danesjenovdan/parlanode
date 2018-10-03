@@ -79,30 +79,47 @@ export default {
     },
     mappedItems() {
       const mapResultIcon = {
-        sprejet: {
-          icon: 'glyphicon-ok',
-          name: this.$t('vote-passed'),
+        enacted: {
+          icon: 'vote-result--enacted',
+          name: this.$t('vote-result--enacted'),
         },
-        zavrnjen: {
-          icon: 'glyphicon-remove',
-          name: this.$t('vote-not-passed'),
+        adopted: {
+          icon: 'vote-result--adopted',
+          name: this.$t('vote-result--adopted'),
         },
-        v_obravnavi: {
-          icon: 'v-obravnavi',
-          name: this.$t('vote-under-consideration'),
+        rejected: {
+          icon: 'vote-result--rejected',
+          name: this.$t('vote-result--rejected'),
+        },
+        retracted: {
+          icon: 'vote-result--retracted',
+          name: this.$t('vote-result--retracted'),
+        },
+        submitted: {
+          icon: 'vote-result--submitted',
+          name: this.$t('vote-result--submitted'),
+        },
+        received: {
+          icon: 'vote-result--received',
+          name: this.$t('vote-result--received'),
+        },
+        in_procedure: {
+          icon: 'vote-result--in_procedure',
+          name: this.$t('vote-result--in_procedure'),
         },
       };
 
       return this.processedData.map((legislation) => {
-        let mapKey = typeof legislation.result !== 'undefined' ? legislation.result[0] : null;
+        let mapKey = legislation.result != null && legislation.result[0];
         if (!mapKey) {
-          mapKey = 'v_obravnavi';
+          mapKey = 'in_procedure';
         }
 
-        const outcomeHtml = `<div class="outcome"><i class="glyphicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+        const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+
         return [
           { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text_t[0]}</a>` },
-          { text: typeof legislation.id !== 'undefined' ? legislation.id : '' },
+          { text: legislation.id != null ? legislation.id : '' },
           { html: outcomeHtml },
         ];
       });

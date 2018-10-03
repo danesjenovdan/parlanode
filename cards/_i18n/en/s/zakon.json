@@ -6,7 +6,7 @@
     "lead": "Abstract of the law or act and all votes related to it.",
     "text": "We download the voting events, with a corresponding identifying number, from {link}. Votes concerning the same identifying number are combined together and associated with the corresponding law or act. The card also contains the abstract of the law which we prepare.",
     "link": {
-      "link": "https://www.dz-rs.si",
+      "link": "http://www.dz-rs.si",
       "text": "www.dz-rs.si"
     }
   }

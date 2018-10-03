@@ -1,0 +1,16 @@
+{
+  "card": {
+    "title": "Głosowania"
+  },
+  "info": {
+    "lead": "Przegląd wszystkich głosowań, które miały miejsce w trakcie posiedzenia.",
+    "text": [
+      "Dla wszystkich głosowań na posiedzeniu liczymy głosy (ZA, PRZECIW, WSTRZYMANO SIĘ) i liczbę posłów, którzy byli nieobecni, oraz przedstawiamy wyniki.",
+      "Zapisy głosowań uzyskujemy ze strony internetowej {link}."
+    ],
+    "link": {
+      "text": "Sejm RP",
+      "link": "http://www.sejm.gov.pl/sejm8.nsf/terminarz.xsp"
+    }
+  }
+}

@@ -8,7 +8,8 @@
         ]
       },
       {
-        "title": "Akti"
+        "title": "Akti",
+        "card_title": "Seznam aktov"
       }
     ]
   },
@@ -28,7 +29,8 @@
         ]
       },
       {
-        "title": "Akti"
+        "title": "Akti",
+        "card_title": "Seznam aktov"
       }
     ]
   }

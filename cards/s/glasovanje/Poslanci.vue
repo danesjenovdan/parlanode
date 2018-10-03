@@ -58,7 +58,7 @@ import links from 'mixins/links';
 import SearchField from 'components/SearchField.vue';
 import Result from 'components/Result.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
-import mapVotes from './mapVotes';
+import mapVotes from 'helpers/mapVotes';
 
 export default {
   name: 'GlasovanjeSejePoslanci',

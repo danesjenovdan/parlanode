@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Transkrypcja"
+  },
+  "info": {
+    "text": "Transkrypcje sesji w postaci dokumentu HTML opublikowanego na stronie internetowej {link}, są rozbijane na poszczególne przemowy. Przemowy są następnie łączone w ich oryginalnej kolejności na karcie transkrypcji.",
+    "link": {
+      "link": "http://www.sejm.gov.pl/",
+      "text": "Sejm RP"
+    }
+  }
+}

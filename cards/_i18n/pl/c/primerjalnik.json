@@ -1,0 +1,28 @@
+{
+  "card": {
+    "title": "Komparator głosowań"
+  },
+  "info": {
+    "text": [
+      "Karta zawiera listę wszystkich głosowań, które odpowiadają wybranym kryteriom. Przy porównaniu klubów parlamentarnych stosuje się obliczoną większość głosów, uzyskaną przez zliczenie, za którą opcją głosuje większość posłów.",
+      "Wyniki przedstawiamy na trzy sposoby:"
+    ],
+    "list": [
+      "jako lista wszystkich głosowań",
+      "jako wykres liniowy pokazujący liczbę głosowań w danym dniu,",
+      "jako histogram przedstawiający sumy głosowań w odniesieniu do komisji."
+    ]
+  },
+  "comparator-text": "Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a {different} głosowali inaczej od nich. {load}",
+  "ignore-absent": "Zignoruj \"nieobecne\" głosy",
+  "comparator-vote-percent": "{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań.",
+  "tabs": {
+    "vote-list": "Lista głosowań",
+    "time-chart": "Oś czasu",
+    "bar-chart": "Dynamika w odniesieniu do komisji"
+  },
+  "select-parties-people": "Wybierz klub parlamentarny lub dodaj poszczególnego posła.",
+  "select-mps": "Wybierz posła",
+  "selected-mps": "Wybrano: {num}",
+  "empty-state-text": "Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli."
+}

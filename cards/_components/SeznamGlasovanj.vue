@@ -32,7 +32,7 @@
             <component
               :is="virtualize ? 'virtual-list' : 'div'"
               :size="105"
-              :remain="10"
+              :remain="virtualizeRemain"
               :onscroll="checkScrollShadow"
               :variable="getVirtualItemHeight"
               class="virtual-list"
@@ -135,7 +135,7 @@
 
 <script>
 import { map, sortBy } from 'lodash';
-import VirtualList from 'vue-virtual-scroll-list';
+import VirtualList from 'components/vue-virtual-scroll-list/VirtualList.vue';
 import StripedButton from 'components/StripedButton.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
@@ -168,6 +168,10 @@ export default {
     virtualize: {
       type: Boolean,
       default: false,
+    },
+    virtualizeRemain: {
+      type: Number,
+      default: 10,
     },
   },
   data() {
@@ -295,8 +299,14 @@ export default {
       return allClassifications;
     },
     toggleResult(resultId) {
-      const clickedResult = this.allResults.filter(result => result.id === resultId)[0];
-      clickedResult.selected = !clickedResult.selected;
+      const clickedResult = this.allResults.find(result => result.id === resultId);
+      if (clickedResult && clickedResult.selected) {
+        clickedResult.selected = false;
+      } else {
+        this.allResults.forEach((result) => {
+          result.selected = result.id === resultId;
+        });
+      }
     },
     getVoteText(vote) {
       const text = vote.short_text || vote.text;

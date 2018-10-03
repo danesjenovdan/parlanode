@@ -111,6 +111,10 @@ export default {
   background-color: $white;
 }
 
+.search-dropdown /deep/ .search-dropdown-options.empty {
+  border-bottom: none;
+}
+
 .search-dropdown::after {
   content: "\e003";
   font-family: 'Glyphicons Halflings';

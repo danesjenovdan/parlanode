@@ -1,0 +1,13 @@
+{
+  "card": {
+    "title": "Członkowie i członkinie klubu parlamentarnego"
+  },
+  "info": {
+    "lead": "Lista wszystkich członków klubu parlamentarnego.",
+    "text": "Nazwiska i zdjęcia posłów reprezentujących każdy z klubów pochodzą ze strony internetowej {link}. Pokazani są tylko aktualni członkowie.",
+    "link": {
+      "link": "http://www.sejm.gov.pl/Sejm8.nsf/kluby.xsp",
+      "text": "Sejm Rzeczypospolitej Polskiej"
+    }
+  }
+}
