@@ -62,7 +62,11 @@
         </p-tab>
       </p-tabs>
       <div class="legislation__all">
-        <a v-t="'all-legislation'" :href="getLegislationListLink()" class="funblue-light-hover"></a>
+        <a
+          v-t="'all-legislation'"
+          :href="getLegislationListLink()"
+          class="legislation-link-icon funblue-light-hover"
+        ></a>
       </div>
     </div>
   </card-wrapper>
@@ -188,12 +192,8 @@ export default {
 
     a {
       padding-left: 22px;
-      background-image: url("#{getConfig('urls.cdn')}/icons/zakonodaja-modra.svg");
-      background-repeat: no-repeat;
-      background-position: center left;
       font-size: 14px;
       font-weight: 400;
-      color: $first;
       text-transform: uppercase;
     }
   }
