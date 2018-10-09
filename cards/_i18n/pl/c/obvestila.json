@@ -1,47 +1,47 @@
 {
-  "trigger": "wyzwalacz",
-  "match": "dopasowanie",
-  "interval": "interwał",
+  "trigger": "sprožilec",
+  "match": "ujemanje",
+  "interval": "pogostost",
   "email": "e-mail",
-  "add_trigger": "Dodaj wyzwalacz",
+  "add_trigger": "Dodaj sprožilec",
   "add": "Dodaj",
-  "continue": "Dalej",
-  "back": "Wstecz",
-  "confirm_trigger": "Ustaw przypomnienie",
-  "add_new_trigger": "Dodaj nowe przypomnienie",
+  "continue": "Nadaljuj",
+  "back": "Nazaj",
+  "confirm_trigger": "Nastavi opomnik",
+  "add_new_trigger": "Dodaj nov opomnik",
   "steps": [
     {
-      "textfirst": "Ustaw wyzwalacz dla słowa lub frazy o których chcesz być powiadomiony.",
-      "textsecond": "Dostaniesz wiadomość e-mail zaraz po tym, gdy słowo lub fraza zostanie użyte w trakcie posiedzenia sejmu."
+      "textfirst": "Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te obvestimo.",
+      "textsecond": "Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih teles, ti to sporočimo po e-pošti."
     },
     {
-      "textfirst": "Wybierz metodę dopasowania",
-      "firstbullet": "dokładne dopasowanie:",
-      "secondbullet": "szerokie dopasowanie:"
+      "textfirst": "Izberi način ujemanja",
+      "firstbullet": "natančno ujemanje:",
+      "secondbullet": "široko ujemanje:"
     },
     {
-      "textfirst": "Jak często chcesz otrzymywać powiadomienia?",
-      "textsecond": "kiedy coś się dzieje",
-      "textthird": "maksymalnie raz dziennie",
-      "textfourth": "maksymalnie raz tygodniowo"
+      "textfirst": "Kako pogosto naj ti pišemo?",
+      "textsecond": "ob dogodku",
+      "textthird": "največ enkrat na dan",
+      "textfourth": "največ enkrat na teden"
     },
     {
-      "textfirst": "Potrzebujemy już tylko twój adres e-mail"
+      "textfirst": "Samo še tvoj e-naslov"
     },
     {
-      "textfirst": "Zapisano!",
-      "textsecond": "Na adres e-mail",
-      "textthird": "wysłano zgłoszenie do Parlametru w sprawie powiadomień o słowach kluczowych",
-      "textfourth": "Zajrzyj do skrzynki odbiorczej!"
+      "textfirst": "Zabeleženo!",
+      "textsecond": "Na e-naslov",
+      "textthird": "si vklopil/-a obvestila za iskalni niz",
+      "textfourth": "Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na mejlu."
     }
   ],
   "events": {
-    "event": "kiedy coś się dzieje",
-    "day": "maksymalnie raz dziennie",
-    "week": "maksymalnie raz tygodniowo"
+    "event": "ob dogodku",
+    "day": "največ enkrat na dan",
+    "week": "največ enkrat na teden"
   },
   "modes": {
-    "precise": "dokładne dopasowanie:",
-    "broad": "szerokie dopasowanie:"
+    "precise": "natančno ujemanje:",
+    "broad": "široko ujemanje:"
   }
 }
