@@ -1438,7 +1438,7 @@
   },
   "urls": {
     "glej": "http://localhost:3000",
-    "notifications_api": "https://obvestila.pl.parlameter.si",
+    "notifications_api": "http://obvestila.pl.parlameter.si",
     "isci": "http://isci.pl.parlameter.si",
     "analize": "http://analize.pl.parlameter.si/v1",
     "base": "http://localhost:3066",
