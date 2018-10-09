@@ -43,7 +43,7 @@ export default {
         .filter(group => group[0].person.party.classification === 'pg')
         .map(group => group[0].person.party.acronym),
     }].concat(grouped.map(group => ({
-      label: group[0].person.party.acronym,
+      label: group[0].person.party.name,
       items: group.map(p => p.person.id),
       id: group[0].person.party.id,
     })));
