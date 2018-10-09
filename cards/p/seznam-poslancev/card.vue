@@ -242,6 +242,9 @@ export default {
       if (this.selectedDistricts.length > 0) {
         parameters.districts = this.selectedDistricts;
       }
+      if (this.currentPage > 1) {
+        parameters.page = this.currentPage;
+      }
 
       return parameters;
     },
