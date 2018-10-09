@@ -1,47 +1,47 @@
 {
-  "trigger": "trigger",
-  "match": "match",
-  "interval": "interval",
+  "trigger": "sprožilec",
+  "match": "ujemanje",
+  "interval": "pogostost",
   "email": "email",
-  "add_trigger": "Add a trigger",
+  "add_trigger": "Dodaj sprožilec",
   "add": "Add",
-  "continue": "Next",
-  "back": "Back",
-  "confirm_trigger": "Confirm the trigger",
-  "add_new_trigger": "Add new trigger",
+  "continue": "Nadaljuj",
+  "back": "Nazaj",
+  "confirm_trigger": "Nastavi opomnik",
+  "add_new_trigger": "Dodaj nov opomnik",
   "steps": [
     {
-      "textfirst": "Set a trigger for a word or a phrase you want to be notified about.",
-      "textsecond": "You will get an email notification not long after the word or the phrase is used in the House of Commons."
+      "textfirst": "Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te obvestimo.",
+      "textsecond": "Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih teles, ti to sporočimo po e-pošti."
     },
     {
-      "textfirst": "Chose the match",
-      "firstbullet": "exact match:",
-      "secondbullet": "broad match:"
+      "textfirst": "Izberi način ujemanja",
+      "firstbullet": "natančno ujemanje:",
+      "secondbullet": "široko ujemanje:"
     },
     {
-      "textfirst": "How often do you want to be notified?",
-      "textsecond": "as it happens",
-      "textthird": "maximum once per day",
-      "textfourth": "maximum once per week"
+      "textfirst": "Kako pogosto naj ti pišemo?",
+      "textsecond": "ob dogodku",
+      "textthird": "največ enkrat na dan",
+      "textfourth": "največ enkrat na teden"
     },
     {
-      "textfirst": "The last thing we need is your email address"
+      "textfirst": "Samo še tvoj e-naslov"
     },
     {
-      "textfirst": "Confirmed!",
-      "textsecond": "To email address",
-      "textthird": "subscription to Parlameter notifications for key word sent",
-      "textfourth": "Check your inbox!"
+      "textfirst": "Zabeleženo!",
+      "textsecond": "Na e-naslov",
+      "textthird": "si vklopil/-a obvestila za iskalni niz",
+      "textfourth": "Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na mejlu."
     }
   ],
   "events": {
-    "event": "as it happens",
-    "day": "maximum once per day",
-    "week": "maximum once per week"
+    "event": "ob dogodku",
+    "day": "največ enkrat na dan",
+    "week": "največ enkrat na teden"
   },
   "modes": {
-    "precise": "exact match:",
-    "broad": "broad match:"
+    "precise": "natančno ujemanje:",
+    "broad": "široko ujemanje:"
   }
 }
