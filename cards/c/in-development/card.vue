@@ -3,8 +3,11 @@
     :id="$options.cardData.cardData._id"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    content-class="full"
   >
-    <div v-t="'card-in-development'" class="empty-dataset"></div>
+    <div class="empty">
+      <div v-t="'card-in-development'" class="circle"></div>
+    </div>
   </card-wrapper>
 </template>
 
@@ -36,12 +39,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.empty-dataset {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-  font-style: italic;
+.empty {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .circle {
+    $size: 220px;
+    border-radius: 50%;
+    background-image: url("#{getConfig('urls.cdn')}/icons/in-development.svg");
+    background-color: #f0f5f8;
+    background-size: $size / 2.5;
+    background-position: center 40px;
+    background-repeat: no-repeat;
+    font-size: 17px;
+    font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 300;
+    height: $size;
+    left: calc(50% - #{$size / 2});
+    line-height: 19px;
+    padding: 145px 26px 0;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - #{$size / 2});
+    width: $size;
+  }
 }
 
 .card-container /deep/ .card-footer > *,
