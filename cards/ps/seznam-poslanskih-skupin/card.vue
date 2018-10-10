@@ -51,18 +51,18 @@ const analysesIDs = [
   {
     id: 'vocabulary_size',
   },
-  {
-    id: 'privzdignjeno',
-    roundingPrecision: 3,
-  },
-  {
-    id: 'preprosto',
-    roundingPrecision: 3,
-  },
-  {
-    id: 'problematicno',
-    roundingPrecision: 3,
-  },
+  // {
+  //   id: 'privzdignjeno',
+  //   roundingPrecision: 3,
+  // },
+  // {
+  //   id: 'preprosto',
+  //   roundingPrecision: 3,
+  // },
+  // {
+  //   id: 'problematicno',
+  //   roundingPrecision: 3,
+  // },
 ];
 
 export default {
