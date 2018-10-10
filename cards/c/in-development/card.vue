@@ -17,7 +17,7 @@ import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 
 export default {
-  name: 'VsaGlasovanja',
+  name: 'InDevelopment',
   mixins: [
     common,
   ],
