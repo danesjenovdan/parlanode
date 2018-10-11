@@ -1,14 +1,14 @@
 {
   "landing": {
-    "title": "Parlametr",
-    "lead": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
+    "title": "Sejmometr",
+    "lead": "Sejmometr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
     "search": {
       "part_one": "Szukaj",
       "part_two": "ustawy, głosowania, posłowie, kluby parlamentarne i ich wystąpienia"
     }
   },
   "about": {
-    "lead": "Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
+    "lead": "Sejmometr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
     "afterlead": "Przyjazna dla użytkownika wizualna i technologicznie zaawansowana konstrukcja modułowa zwiększa przejrzystość funkcjonowania najważniejszych instytucji demokratycznych i umożliwia skuteczny wgląd w proces decyzyjny.",
     "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
     "columns": {
@@ -25,7 +25,7 @@
         "paragraph": "Wszystkie dane są dostępne bezpłatnie za pośrednictwem dwóch interfejsów API, a cały kod jest publikowany na Github. Wszystko co potrzebne można znaleźć na <a href=\"https://dev.parlameter.si\"> strona dla programisty </a>, jeśli potrzebujesz dodatkowej pomocy, skontaktuj się z nami przez e-mail!"
       }
     },
-    "thanks": "Parlametr jest tworzony w ramach instytutu <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\"> Dzisiaj jest nowy dzień </a>, który koncentruje się na cyfrowym uczestnictwie w polityce, przejrzystości i monitorowaniu. Dziękujemy Google DNI, Amebis i wszystkim osobom, które bezinteresownie pomogły nam w opracowaniu tego narzędzia."
+    "thanks": "Sejmometr jest tworzony w ramach instytutu <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\"> Dzisiaj jest nowy dzień </a>, który koncentruje się na cyfrowym uczestnictwie w polityce, przejrzystości i monitorowaniu. Dziękujemy Google DNI, Amebis i wszystkim osobom, które bezinteresownie pomogły nam w opracowaniu tego narzędzia."
   },
   "legal": {
     "title": "Informacje prawne",
@@ -43,10 +43,10 @@
     }
   },
   "menu": {
-    "legislation": "Ustawodawstwo",
-    "sessions": "Sesje",
+    "legislation": "Projekty",
+    "sessions": "Posiedzenia",
     "mps": "Posłowie",
-    "pgs": "Kluby parlamentarne",
+    "pgs": "Kluby",
     "tools": "Narzędzia"
   },
   "footer": {
@@ -105,7 +105,7 @@
     ]
   },
   "donation": {
-    "intro": "Twoja darowizna pomoże zapewnić dalszy rozwój i umożliwić długotrwałe działanie Parlametru.",
+    "intro": "Twoja darowizna pomoże zapewnić dalszy rozwój i umożliwić długotrwałe działanie Sejmometru.",
     "personal": "INDYWIDUALNA<br>DAROWIZNA",
     "business": "ZBIOROWA<br>DAROWIZNA",
     "bitcoin": "BITCOIN DAROWIZNA",
@@ -122,7 +122,7 @@
   },
   "tools": {
     "notifications": {
-      "title": "Parlametr powiadomienia",
+      "title": "Sejmometr powiadomienia",
       "text": "Fragmenty z posiedzeń sejmowych! Otrzymuj powiadomienia e-mail za każdym razem, gdy ktoś w sejmie wypowie wybrane przez ciebie słowo (lub więcej słów)."
     },
     "voteComparator": {
@@ -158,8 +158,8 @@
     "vote-result--adopted": "Przyjęto",
     "vote-result--received": "Otrzymano",
     "vote-result--in_procedure": "W czytaniu",
-    "legislation": "Debaty",
-    "other_votings": "Głosowanie",
+    "legislation": "Projekty",
+    "other_votings": "Głosowania",
     "transcripts": "Transkrypcje",
     "state_one": "Sejm Rzeczypospolitej Polskiej nie publikuje zapisów głosowań komisji.\nPowiedz im, że muszą to zmienić.",
     "state_two": "Državni zbor RS ne objavlja podatkov o glasovanjih na Kolegiju predsednika državnega zbora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Povej jim</a>, da morajo to spremeniti.",
@@ -176,8 +176,8 @@
   },
   "titles": {
     "session": "Posiedzenie",
-    "legislation": "Ustawodawstwo",
-    "other-votings": "Inne głosowania",
+    "legislation": "Projekty",
+    "other-votings": "Głosowania",
     "transcript": "Transkrypcja",
     "voting": "Głosowanie",
     "session-list": "Lista posiedzeń",
