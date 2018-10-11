@@ -7,7 +7,7 @@
     "text": "Kolumna \"Analiza\" odzwierciedla wynik sumaryczny, a kolumna \"Zmiana\" odzwierciedla różnicę w porównaniu do poprzednich danych, które zostały zebrane. Kolumna \"Zmień\" jest odświeżana pod koniec każdego posiedzenia."
   },
   "select-district-placeholder": "Wybierz okręg",
-  "select-parties-placeholder": "Wybierz klub parlamentarny",
+  "select-parties-placeholder": "Wybierz klub",
   "all-parties": "wszystkie kluby parlamentarne",
   "all-voting-districts": "wszystkie okręgi wyborcze",
   "missing-district": "okręg nie został wprowadzony",
