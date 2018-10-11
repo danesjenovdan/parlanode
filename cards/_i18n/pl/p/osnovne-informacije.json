@@ -16,5 +16,5 @@
   "elected-to-district--m": "Wybrany z {numVotes} głosów {district}",
   "elected-to-district--f": "Wybrana z {numVotes} głosów {district}",
   "age": "Wiek: {age} lat",
-  "no-social-media": "brak mediów społecznościowych."
+  "no-social-media": "brak mediów społecznościowych"
 }
