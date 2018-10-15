@@ -65,7 +65,7 @@ export default {
     text-align: center;
     border: 0px;
     pointer-events: none;
-    background-color: $font-placeholder;
+    background-color: $font-default;
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;
