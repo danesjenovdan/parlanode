@@ -173,6 +173,8 @@ body {
   margin-top: -10px;
   width: 100%;
   z-index: 1;
+  // set bg color to prevent firefox repaint issue on display change
+  background-color: $background;
 }
 
 #c-menu-search {
