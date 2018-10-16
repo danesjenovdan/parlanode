@@ -8,7 +8,7 @@
   "data-currently-unavailable": "Dane chwilowo niedostępne.",
   "title-search": "Szukaj według tytułu",
   "contents-search": "Szukaj według treści wystąpień",
-  "working-body": "Odpowiedzialnq komisja",
+  "working-body": "Odpowiedzialna komisja",
   "vote-types": "Typy głosowania",
   "select-placeholder": "Wybierz",
   "selected-placeholder": "Wybrano: {num}",
@@ -64,9 +64,9 @@
   "voted-absent--plural": "Nie głosowali na",
   "sort-by": "Uporządkuj według",
   "sort-by--inequality": "Niezgodności",
-  "sort-by--date": "Dacie",
+  "sort-by--date": "Daty",
   "mps": "Posłów",
-  "party": "Klubu poselskiego",
+  "party": "Klub poselskiego",
   "parties": "Klubów poselskich",
   "time-period": "Okres czasu",
   "session-type": "Typu posiedzenia",
@@ -126,10 +126,10 @@
     "asked--with-name--plural": "{name} zadali pytanie {title} na które wymagają odpowiedzi od {recipient}."
   },
   "event": {
-    "ballot--for--m": "Glasowal ZA {title}",
+    "ballot--for--m": "Głosował ZA {title}",
     "ballot--for--f": "Głosowała ZA {title}",
-    "ballot--against--m": "Glasowal PRZECIW {title}",
-    "ballot--against--f": "Glasowala PRZECIW {title}",
+    "ballot--against--m": "Głosował PRZECIW {title}",
+    "ballot--against--f": "Głosowała PRZECIW {title}",
     "ballot--absent--m": "Nie głosował za {title}",
     "ballot--absent--f": "Nie głosowała za {title}",
     "ballot--abstain--m": "WSTRZYMAŁ się od głosowania na {title}",
@@ -171,7 +171,7 @@
     "notifications": "Parlametr powiadomienia",
     "vote-comparator": "Komparator głosowań",
     "discord": "Analiza niezgodności",
-    "compass": "Parlamentarny kompas",
+    "compass": "Sejmowy kompas",
     "word-groups": "Grupy słów"
   },
   "frame": {
