@@ -26,7 +26,7 @@
     },
     "presence_votes": {
       "label": "Obecność na głosowaniach Sejmu RP",
-      "titleSuffix": " po obecności na głosowaniach Sejmu RP",
+      "titleSuffix": "według obecności na głosowaniach Sejmu RP",
       "explanation": "Liczba głosowań, gdzie poseł był obecny, jest dzielona przez liczbę wszystkich głosowań i normalizowana (min 1 - max 100)."
     },
     "number_of_questions": {
@@ -41,12 +41,12 @@
     },
     "spoken_words": {
       "label": "Liczba wypowiedzianych słów",
-      "titleSuffix": " po liczbie wypowiedzianych słów",
+      "titleSuffix": "według liczby wypowiedzianych słów",
       "explanation": "Liczba słów wypowiedzianych przez poseła w trakcie wszystkich swoich wystąpień w Sejmie."
     },
     "mismatch_of_pg": {
       "label": "Odchylenie od klubu parlamentarnego",
-      "titleSuffix": " po odchyleniu od klubu parlamentarnego",
+      "titleSuffix": "według odchylenia od klubu parlamentarnego",
       "explanation": "Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu RP."
     }
   }
