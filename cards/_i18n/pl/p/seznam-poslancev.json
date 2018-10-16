@@ -30,7 +30,7 @@
       "explanation": "Liczba głosowań, gdzie poseł był obecny, jest dzielona przez liczbę wszystkich głosowań i normalizowana (min 1 - max 100)."
     },
     "number_of_questions": {
-      "label": "Nr poselskiego zapytania i inicjatywy",
+      "label": "Liczba poselskich zapytań i inicjatyw",
       "titleSuffix": " po numerze poselskich zapytań i inicjatyw",
       "explanation": "Liczba zapytań i inicjatyw poselskich podejmowanych przez posła na tym posiedzeniu Sejmu RP w porównaniu ze średnią i maksymalną wartością."
     },
