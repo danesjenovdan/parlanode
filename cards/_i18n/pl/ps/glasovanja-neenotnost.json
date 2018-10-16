@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "Lista głosowań według"
+    "title": "Lista głosowań według "
   },
   "info": {
     "lead": "Lista wszystkich głosowań Sejmu RP, odpowiadających zapytaniom użytkownika ({text}), dla wybranych odpowiedzialnych komisji ({wbs}), uszeregowanych według {sortBy}.",
