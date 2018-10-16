@@ -5,7 +5,7 @@
   "analysis-texts": {
     "seat_count": {
       "label": "Liczba miejsc",
-      "titleSuffix": " przez liczbę miejsc",
+      "titleSuffix": "według liczby miejsc",
       "explanation": "Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie wszystkich jego aktywnych członków."
     },
     "presence_sessions": {
