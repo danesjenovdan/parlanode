@@ -36,7 +36,7 @@
     },
     "speeches_per_session": {
       "label": "Liczba wystąpień na posiedzenie",
-      "titleSuffix": " po liczbie wystąpień na posiedzenie",
+      "titleSuffix": "według liczby wystąpień na posiedzenie",
       "explanation": "Liczymy wstąpienia posłów i dzielimy je przez liczbę posiedzeń, w trakcie których poseł przemawiał. Liczbę wszystkich wystąpień dzielimy najpierw przez liczbę wszystkich posłów, a następnie przez liczbę wszystkich posiedzeń (gdzie wygłaszano przemówienia). Porównujemy indywidualny wynik z wartością średnią i maksymalną."
     },
     "spoken_words": {
