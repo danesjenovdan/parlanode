@@ -31,10 +31,12 @@ export default {
     },
   },
 
-  data: () => ({
-    shortenedUrl: '',
-    copied: false,
-  }),
+  data() {
+    return {
+      shortenedUrl: `${this.url}&frame=true`,
+      copied: false,
+    };
+  },
 
   watch: {
     url() {
