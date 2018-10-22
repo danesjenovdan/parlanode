@@ -1,0 +1,7 @@
+{
+  "_id": "c_debate",
+  "dataUrl": "{analize}/s/getAgendaItems",
+  "lastUpdate": "2018-10-18T15:24:02.955Z",
+  "big": true,
+  "high": false
+}
