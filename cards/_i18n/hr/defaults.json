@@ -153,7 +153,7 @@
   ],
   "vote_types": {
     "agenda": "dnevni red",
-    "whole_law": "glasanje o zakonu u cjelini",
+    "whole_law": "konačni prijedlog zakona",
     "amendment": "amandman",
     "no_confidence": "interpelacija",
     "record_conclusion": "prvo čitanje",
