@@ -11,14 +11,11 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div class="agenda">
-      <agenda-item
-        v-for="agenda in fixedResults"
-        :key="agenda.id"
-        :agenda="agenda"
-        :session="session"
-      />
-    </div>
+    <agenda-item
+      :agenda="fixedResult"
+      :session="session"
+      :hide-share-icon="true"
+    />
   </card-wrapper>
 </template>
 
@@ -29,7 +26,7 @@ import { defaultOgImage } from 'mixins/ogImages';
 import AgendaItem from 'components/AgendaItem.vue';
 
 export default {
-  name: 'AgendaItems',
+  name: 'AgendaItemCard',
   components: {
     AgendaItem,
   },
@@ -37,27 +34,26 @@ export default {
     common,
   ],
   data() {
-    const { session, results } = this.$options.cardData.data;
+    const { session, result } = this.$options.cardData.data;
     return {
       session,
-      results,
+      result,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.session.id}?altHeader=true`;
+      return `${this.url}${this.result.id}?altHeader=true`;
     },
-    fixedResults() {
-      return this.results
-        .map(a => ({
-          ...a,
-          votings: {
-            votes: a.votings.map(v => v.results),
-            session: this.session,
-          },
-        }));
+    fixedResult() {
+      return {
+        ...this.result,
+        votings: {
+          votes: this.result.votings.map(v => v.results),
+          session: this.session,
+        },
+      };
     },
   },
 };

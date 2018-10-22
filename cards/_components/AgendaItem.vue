@@ -3,9 +3,10 @@
     <div class="agenda-item__header">
       <div class="agenda-item__title" v-text="agenda.text"></div>
       <div class="links">
-        <a :href="''" class="link"></a>
+        <a :href="getSessionAgendaLink(agenda, session.id)" class="link"></a>
         <a
-          :href="''"
+          v-if="!hideShareIcon"
+          :href="getAgendaCardLink(agenda)"
           class="share"
         ></a>
       </div>
@@ -41,6 +42,7 @@ import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import { format } from 'date-fns';
 
 export default {
+  name: 'AgendaItem',
   components: {
     SeznamGlasovanj,
   },
@@ -55,6 +57,10 @@ export default {
     session: {
       type: Object,
       required: true,
+    },
+    hideShareIcon: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
