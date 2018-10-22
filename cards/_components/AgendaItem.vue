@@ -1,101 +1,71 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    class="card-halfling card-seznam-zakonov"
-  >
-    <div slot="info">
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </div>
-
-    <div class="agenda">
-      <div v-for="agenda in filteredResults" :key="agenda.id" class="agenda-item">
-        <div class="agenda-item__header">
-          <div class="agenda-item__title" v-text="agenda.text"></div>
-          <div class="links">
-            <a :href="''" class="link"></a>
-            <a
-              :href="''"
-              class="share"
-            ></a>
-          </div>
-        </div>
-        <div class="agenda-item__debates">
-          <a
-            v-for="debate in agenda.debates"
-            :key="debate.id"
-            :href="getSessionSpeechLink({
-              session_id: session.id,
-              speech_id: debate.start_speech.speech_id,
-              the_order: debate.start_speech.the_order,
-            })"
-            target="_blank"
-            class="agenda-item__debate transcript-link-icon"
-          >
-            {{ formatDate(debate.date) }}
-          </a>
-        </div>
-        <div class="agenda-item__votings">
-          <seznam-glasovanj
-            v-if="agenda.votings.length"
-            :data="getVotings(agenda.votings)"
-            :show-filters="false"
-          />
-        </div>
+  <div :id="agenda.id" class="agenda-item">
+    <div class="agenda-item__header">
+      <div class="agenda-item__title" v-text="agenda.text"></div>
+      <div class="links">
+        <a :href="getSessionAgendaLink(agenda, session.id)" class="link"></a>
+        <a
+          v-if="!hideShareIcon"
+          :href="getAgendaCardLink(agenda)"
+          class="share"
+        ></a>
       </div>
     </div>
-  </card-wrapper>
+    <div class="agenda-item__debates">
+      <a
+        v-for="debate in agenda.debates"
+        :key="debate.id"
+        :href="getSessionSpeechLink({
+          session_id: session.id,
+          speech_id: debate.start_speech.speech_id,
+          the_order: debate.start_speech.the_order,
+        })"
+        target="_blank"
+        class="agenda-item__debate transcript-link-icon"
+      >
+        {{ formatDate(debate.date) }}
+      </a>
+    </div>
+    <div class="agenda-item__votings">
+      <seznam-glasovanj
+        v-if="agenda.votings && agenda.votings.votes && agenda.votings.votes.length"
+        :data="agenda.votings"
+        :show-filters="false"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
-import common from 'mixins/common';
 import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import SortableTable from 'components/SortableTable.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import { format } from 'date-fns';
 
 export default {
-  name: 'Debate',
+  name: 'AgendaItem',
   components: {
-    SortableTable,
     SeznamGlasovanj,
   },
   mixins: [
-    common,
     links,
   ],
-  data() {
-    const { session, results } = this.$options.cardData.data;
-    return {
-      session,
-      results,
-      headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
-    };
-  },
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.session.id}?altHeader=true`;
+  props: {
+    agenda: {
+      type: Object,
+      required: true,
     },
-    filteredResults() {
-      return this.results
-        .filter(r => (r.votings && r.votings.length) || (r.debates && r.debates.length));
+    session: {
+      type: Object,
+      required: true,
+    },
+    hideShareIcon: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
     formatDate(date) {
       return format(new Date(date), 'D. M. YYYY');
-    },
-    getVotings(votings) {
-      return {
-        votes: votings.map(v => v.results),
-        session: this.session,
-      };
     },
   },
 };
@@ -106,12 +76,10 @@ export default {
 @import '~parlassets/scss/colors';
 
 .agenda-item {
-  padding-bottom: 12px;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid $font-placeholder;
-    margin-bottom: 12px;
-  }
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  border-top: 1px solid $background;
 
   .agenda-item__header {
     display: flex;
@@ -125,7 +93,7 @@ export default {
   }
 
   .agenda-item__debates {
-    margin-top: 6px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
 
@@ -150,8 +118,12 @@ export default {
     }
   }
 
-  /deep/ #votingCard {
-    height: auto;
+  /deep/ #seznam-glasovanj {
+    margin-left: -12px;
+
+    #votingCard {
+      height: auto;
+    }
   }
 }
 

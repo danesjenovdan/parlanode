@@ -63,6 +63,10 @@ export default {
       const pageUrlPart = pageNum > 1 ? `/${pageNum}` : '';
       return `${slugs.urls.base}/${sm.session.base}/${speech.session_id || speech.session.id}/${sm.session.transcript}${pageUrlPart}#${speech.speech_id}`;
     },
+    getSpeechCardLink(speech) {
+      const { urls: slugs } = this.$root.$options.cardData;
+      return `${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`;
+    },
     getSessionVoteLink(session) {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
       return `${slugs.urls.base}/${sm.session.base}/${session.session_id}/${sm.session.vote}/${session.vote_id}`;
@@ -84,6 +88,14 @@ export default {
     getLegislationListLink() {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
       return `${slugs.urls.base}/${sm.landing.legislation}`;
+    },
+    getSessionAgendaLink(agenda, sessionId) {
+      const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
+      return `${slugs.urls.base}/${sm.session.base}/${sessionId || agenda.session.id}/${sm.session.legislation}#${agenda.id}`;
+    },
+    getAgendaCardLink(agenda) {
+      const { urls: slugs } = this.$root.$options.cardData;
+      return `${slugs.urls.glej}/s/agenda-item/${agenda.id}?frame=true`;
     },
   },
 };
