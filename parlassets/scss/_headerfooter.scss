@@ -25,6 +25,10 @@ body {
   overflow: hidden;
   display: block;
   flex-shrink: 0;
+
+  img {
+    height: 80px;
+  }
 }
 
 .menu-container .menu {
