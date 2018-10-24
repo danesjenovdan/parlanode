@@ -1,6 +1,6 @@
 {
   "_id": "s_seznam-glasovanj",
-  "dataUrl": "{analize}/s/otherVotes",
+  "dataUrl": "{analize}/s/getOtherVotes",
   "lastUpdate": "2018-09-16T20:32:10.717Z",
   "big": true,
   "high": true
