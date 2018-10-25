@@ -343,12 +343,13 @@ export default {
         .reverse()
         .map((vote) => {
           const { title, projects } = parseVoteTitle(vote.text);
+          const agendas = (vote.agenda_items || []).concat(projects);
           return {
             ...vote,
             title,
-            projects,
+            projects: agendas,
             shortened_title: shortenVoteTitle(title),
-            shortened_projects: projects.map(p => shortenVoteTitle(p, 80)),
+            shortened_projects: agendas.map(p => shortenVoteTitle(p, 80)),
           };
         });
       const getDateFromVote = vote => (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);

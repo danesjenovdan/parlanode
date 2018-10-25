@@ -178,14 +178,16 @@ export default {
     links,
   ],
   data() {
+    const data = this.$options.cardData.data;
+
     // parse vote title and any associated projects from text
-    const { title, projects } = parseVoteTitle(this.$options.cardData.data.name);
+    const { title, projects } = parseVoteTitle(data.name);
 
     return {
       showMobileExcerpt: false,
-      data: this.$options.cardData.data,
+      data,
       title,
-      projects,
+      projects: (data.agenda_items || []).concat(projects),
       state: this.$options.cardData.parlaState,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
@@ -195,12 +197,12 @@ export default {
           id: side,
           name: this.$t(side),
         },
-        votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
+        votes: pick(data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
         max: {
-          maxOptPerc: this.$options.cardData.data.gov_side[side].max.maxOptPerc,
-          max_opt: this.$options.cardData.data.gov_side[side].max.max_opt,
+          maxOptPerc: data.gov_side[side].max.maxOptPerc,
+          max_opt: data.gov_side[side].max.max_opt,
         },
-        outliers: this.$options.cardData.data.gov_side[side].outliers,
+        outliers: data.gov_side[side].outliers,
       })),
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
