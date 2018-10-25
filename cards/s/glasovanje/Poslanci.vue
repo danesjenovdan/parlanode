@@ -36,9 +36,12 @@
               {{ member.person.name }}
             </a>
             <br>
-            <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+            <a v-if="member.person.party.classification === 'pg'" :href="getMemberPartyLink(member)" class="funblue-light-hover">
               {{ member.person.party.acronym }}
             </a>
+            <span v-else>
+              {{ member.person.party.acronym }}
+            </span>
           </div>
           <div class="column vote">
             <div :class="`option option-${member.option}`">

@@ -78,14 +78,19 @@
                             ]"
                           >
                             {{ project }}
-                            <span :style="{ left: visibleTooltipArrowPos }" class="arrow" />
                           </div>
                           <p class="projects">
                             <component
                               v-for="(project, i) in vote.shortened_projects"
                               :is="i > 0 ? 'a' : 'span'"
                               :key="project"
-                              :class="['project', {'project--tooltip': i > 0}]"
+                              :class="[
+                                'project',
+                                {
+                                  'project--tooltip': i !== 0,
+                                  'project--has-tooltip': i !== 0 || project !== vote.projects[0]
+                                }
+                              ]"
                               :data-target="`${vote.motion_id}-${i}`"
                               href="#"
                               @click.prevent="() => {}"
@@ -232,7 +237,6 @@ export default {
       allClassifications,
       allResults,
       visibleTooltip: null,
-      visibleTooltipArrowPos: '50%',
       visibleTooltipTopPos: '20px',
     };
   },
@@ -380,10 +384,6 @@ export default {
       const elem = document.querySelector(`[data-target="${target}"]`);
       if (elem) {
         const elemRect = elem.getBoundingClientRect();
-        // const parentRect = elem.parentElement.getBoundingClientRect();
-        // this.visibleTooltipArrowPos = elem.className.indexOf('project--tooltip') !== -1
-        //   ? `${(elemRect.left + elemRect.width - 10) - parentRect.left}px`
-        //   : '50%';
         this.visibleTooltipTopPos = `${elemRect.bottom + 10}px`;
         this.visibleTooltip = target;
       }
@@ -486,6 +486,10 @@ export default {
     font-weight: 600;
     text-transform: uppercase;
 
+    .project--has-tooltip {
+      cursor: help;
+    }
+
     .project--tooltip {
       &::after {
         content: ', ';
@@ -529,17 +533,6 @@ export default {
   &.tooltip--show {
     opacity: 1;
     visibility: visible;
-  }
-
-  .arrow {
-    display: none;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent $font-default transparent;
   }
 }
 
