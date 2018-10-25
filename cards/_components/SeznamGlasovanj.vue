@@ -308,7 +308,7 @@ export default {
         // parse vote title and any associated projects from text
         const { title, projects } = parseVoteTitle(e.text);
         e.title = title;
-        e.projects = projects;
+        e.projects = (e.agenda_items || []).concat(projects);
 
         // if legislation name is defined trim the legislation name from the start of vote name
         if (this.data.text && e.title.indexOf(this.data.text) === 0) {
