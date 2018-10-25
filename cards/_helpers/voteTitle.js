@@ -19,12 +19,7 @@ function shortenVoteTitle(text, max = 130) {
   return text;
 }
 
-function formatVoteTitle({ title = '', projects = [] }) {
-
-}
-
 export {
   parseVoteTitle,
-  formatVoteTitle,
   shortenVoteTitle,
 };
