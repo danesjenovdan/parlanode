@@ -1429,7 +1429,7 @@
       "slug": "jerzy-kwiecinski"
     }
   },
-  "base": "http://pl.parlameter.si",
+  "base": "https://parlametr.pl",
   "partyLink": {
     "govori": "/govori/",
     "base": "/poslanska-skupina/",
@@ -1438,11 +1438,11 @@
   },
   "urls": {
     "glej": "http://localhost:3000",
-    "notifications_api": "http://obvestila.pl.parlameter.si",
-    "isci": "http://isci.pl.parlameter.si",
-    "analize": "http://analize.pl.parlameter.si/v1",
+    "notifications_api": "https://obvestila.parlametr.pl",
+    "isci": "https://isci.parlametr.pl",
+    "analize": "https://analize.parlametr.pl/v1",
     "base": "http://localhost:3066",
-    "data": "http://data.pl.parlameter.si/v1",
+    "data": "https://data.parlametr.pl/v1",
     "cdn": "http://localhost:8080"
   },
   "party": {
