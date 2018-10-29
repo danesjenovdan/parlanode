@@ -50,7 +50,7 @@
       <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
       <a
         v-if="!showSession"
-        :href="`${$root.slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`"
+        :href="getSpeechCardLink(speech)"
         class="share"
       ></a>
     </div>

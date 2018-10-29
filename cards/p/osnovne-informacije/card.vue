@@ -310,6 +310,8 @@ export default {
     flex: 1;
     margin: 0;
     min-height: 0; // firefox flex bug
+    min-height: -moz-fit-content;
+    min-height: fit-content;
 
     > div {
       display: flex;

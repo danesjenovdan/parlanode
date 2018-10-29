@@ -1,52 +1,43 @@
 {
   "1": {
-    "name": "PS Stranka modernega centra",
-    "acronym": "SMC",
-    "is_coalition": true,
+    "name": "Sejm",
+    "acronym": "Sejm",
+    "is_coalition": false,
     "disbanded": null,
     "founded": null,
-    "type": "party",
+    "type": "parliament",
     "id": 1
   },
   "2": {
-    "name": "PS italijanske in mad\u017earske narodne skupnosti",
-    "acronym": "IMNS",
-    "is_coalition": false,
+    "name": "Prawo i Sprawiedliwo\u015b\u0107",
+    "acronym": "PiS",
+    "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 2
   },
   "3": {
-    "name": "PS Demokratska Stranka Upokojencev Slovenije",
-    "acronym": "DeSUS",
-    "is_coalition": true,
+    "name": "Platforma Obywatelska",
+    "acronym": "PO",
+    "is_coalition": false,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 3
   },
-  "4": {
-    "name": "PS Zavezni\u0161tvo Alenke Bratu\u0161ek",
-    "acronym": "ZAAB",
-    "is_coalition": false,
-    "disbanded": "2015-09-08T00:00:00",
-    "founded": "2014-08-01T00:00:00",
-    "type": "party",
-    "id": 4
-  },
   "5": {
-    "name": "PS Slovenska Demokratska Stranka",
-    "acronym": "SDS",
+    "name": "Polskie Stronnictwo Ludowe - Unia Europejskich Demokrat\u00f3w",
+    "acronym": "PSL-UED",
     "is_coalition": false,
     "disbanded": null,
-    "founded": "2014-08-01T00:00:00",
+    "founded": null,
     "type": "party",
     "id": 5
   },
   "6": {
-    "name": "PS Nova Slovenija",
-    "acronym": "NSI",
+    "name": "Kukiz'15",
+    "acronym": "Kukiz15",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -54,66 +45,48 @@
     "id": 6
   },
   "7": {
-    "name": "PS Socialni Demokrati",
-    "acronym": "SD",
-    "is_coalition": true,
+    "name": "Nowoczesna",
+    "acronym": "N",
+    "is_coalition": false,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 7
   },
   "8": {
-    "name": "PS Levica",
-    "acronym": "Levica",
+    "name": "Wolni i Solidarni",
+    "acronym": "WiS",
     "is_coalition": false,
     "disbanded": null,
-    "founded": "2014-08-06T00:00:00",
+    "founded": null,
     "type": "party",
     "id": 8
   },
-  "109": {
-    "name": "PS nepovezanih poslancev ",
-    "acronym": "PS NP",
+  "9": {
+    "name": "Liberalno-Spo\u0142eczni",
+    "acronym": "L-S",
     "is_coalition": false,
     "disbanded": null,
-    "founded": "2016-01-29T00:00:00",
+    "founded": null,
     "type": "party",
-    "id": 109
+    "id": 9
   },
-  "143": {
-    "name": "Opozicija",
-    "acronym": "opoz",
-    "is_coalition": false,
-    "disbanded": null,
-    "founded": "2014-09-18T14:49:58",
-    "type": "oposition",
-    "id": 143
-  },
-  "144": {
+  "10": {
     "name": "Koalicija",
-    "acronym": "koal",
-    "is_coalition": true,
-    "disbanded": null,
-    "founded": "2014-09-18T14:50:55",
-    "type": "coalition",
-    "id": 144
-  },
-  "97": {
-    "name": "PS nepovezanih poslancev ",
-    "acronym": "PS NP",
-    "is_coalition": false,
-    "disbanded": "2016-01-28T00:00:00",
-    "founded": "2015-09-14T00:00:00",
-    "type": "party",
-    "id": 97
-  },
-  "95": {
-    "name": "Dr\u017eavni zbor",
-    "acronym": "DZ",
+    "acronym": "Coal",
     "is_coalition": true,
     "disbanded": null,
     "founded": null,
-    "type": "parliament",
-    "id": 95
+    "type": "coalition",
+    "id": 10
+  },
+  "11": {
+    "name": "Opozicija",
+    "acronym": "Oppo",
+    "is_coalition": false,
+    "disbanded": null,
+    "founded": null,
+    "type": "oposition",
+    "id": 11
   }
 }

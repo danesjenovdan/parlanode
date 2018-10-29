@@ -1,0 +1,7 @@
+{
+  "_id": "s_agenda-items",
+  "dataUrl": "{analize}/s/getAgendaItems",
+  "lastUpdate": "2018-10-22T14:51:29.046Z",
+  "big": true,
+  "high": false
+}

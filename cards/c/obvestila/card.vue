@@ -21,7 +21,11 @@
                       <div
                         v-for="keyword in keywords"
                         :key="keyword.id"
-                        :class="['obvestiladatatpl', 'clearfix', {'updatedid': (keyword.id === updatedId)}]"
+                        :class="[
+                          'obvestiladatatpl',
+                          'clearfix',
+                          {'updatedid': (keyword.id === updatedId)}
+                        ]"
                       >
                         <div class="">
                           <div class="search padding15">
@@ -29,7 +33,10 @@
                               v-if="keyword.id === updatedId"
                               class="updatedText"
                             >
-                              <h4><span class="glyphicon glyphicon-ok"></span> Uspešno potrjeno!</h4>
+                              <h4>
+                                <span class="glyphicon glyphicon-ok"></span>
+                                Uspešno potrjeno!
+                              </h4>
                             </div>
 
                             <div class="parta1">
@@ -39,9 +46,21 @@
                                   :id="`reminder${keyword.id}`"
                                   class="search-dropdown-input reminder"
                                 >
-                                  <option @click="reminderCallback(keyword, 'event')" value="event" :selected="keyword.reminder === 'event'">{{ $t('events.event') }}</option>
-                                  <option @click="reminderCallback(keyword, 'day')" value="day" :selected="keyword.reminder === 'day'">{{ $t('events.day') }}</option>
-                                  <option @click="reminderCallback(keyword, 'week')" value="week" :selected="keyword.reminder === 'week'">{{ $t('events.week') }}</option>
+                                  <option
+                                    :selected="keyword.reminder === 'event'"
+                                    value="event"
+                                    @click="reminderCallback(keyword, 'event')"
+                                  >{{ $t('events.event') }}</option>
+                                  <option
+                                    :selected="keyword.reminder === 'day'"
+                                    value="day"
+                                    @click="reminderCallback(keyword, 'day')"
+                                  >{{ $t('events.day') }}</option>
+                                  <option
+                                    :selected="keyword.reminder === 'week'"
+                                    value="week"
+                                    @click="reminderCallback(keyword, 'week')"
+                                  >{{ $t('events.week') }}</option>
                                 </select>
                               </div>
                             </div>
@@ -50,7 +69,11 @@
                               <div :id="`obvestilaKeyword_${keyword.id}`" class="obvestilaKeyword">
                                 {{ keyword.keyword }}
                               </div>
-                              <input :id="`keyword${keyword.id}`" :value="keyword.keyword" type="hidden">
+                              <input
+                                :id="`keyword${keyword.id}`"
+                                :value="keyword.keyword"
+                                type="hidden"
+                              >
                             </div>
 
                             <div class="parta4" @click="deleteKeyword(keyword)">
@@ -72,8 +95,16 @@
                                   :id="`match_mode${keyword.keyword}`"
                                   class="search-dropdown-input match_mode"
                                 >
-                                  <option @click="modeCallback(keyword, 'natancno')" value="natancno" :selected="keyword.match_mode === 'natancno'">{{ $t('modes.precise') }}</option>
-                                  <option @click="modeCallback(keyword, 'siroko')" value="obe" :selected="keyword.match_mode === 'siroko'">{{ $t('modes.broad') }}</option>
+                                  <option
+                                    :selected="keyword.match_mode === 'natancno'"
+                                    value="natancno"
+                                    @click="modeCallback(keyword, 'natancno')"
+                                  >{{ $t('modes.precise') }}</option>
+                                  <option
+                                    :selected="keyword.match_mode === 'siroko'"
+                                    value="obe"
+                                    @click="modeCallback(keyword, 'siroko')"
+                                  >{{ $t('modes.broad') }}</option>
                                 </select>
                               </div>
                             </div>
@@ -128,8 +159,13 @@
                 <div class="ainnerbig">
                   <h2 v-t="'add_trigger'"></h2>
                   <div class="input-group search1">
-                    <input v-model="keyword" type="text" name="keyword" class="form-control simplebox keyword" @keyup.enter="firstAction">
-
+                    <input
+                      v-model="keyword"
+                      type="text"
+                      name="keyword"
+                      class="form-control simplebox keyword"
+                      @keyup.enter="firstAction"
+                    >
                     <div class="input-group-btn" style="padding-left: 10px;">
                       <div
                         v-t="'add'"
@@ -178,7 +214,10 @@
                           checked="checked"
                           class="radio"
                         >
-                        <label for="modenatancno">{{ $t('steps[1].firstbullet') }} <span class="fillkeyword">"{{ keyword }}"</span></label>
+                        <label for="modenatancno">
+                          {{ $t('steps[1].firstbullet') }}
+                          <span class="fillkeyword">"{{ keyword }}"</span>
+                        </label>
                       </div>
                     </li>
                     <li>
@@ -191,7 +230,10 @@
                           value="siroko"
                           class="radio"
                         >
-                        <label for="modesiroko">{{ $t('steps[1].secondbullet') }} <span class="fillkeyword">{{ keyword }}</span></label>
+                        <label for="modesiroko">
+                          {{ $t('steps[1].secondbullet') }}
+                          <span class="fillkeyword">{{ keyword }}</span>
+                        </label>
                       </div>
                     </li>
                   </ul>
@@ -217,19 +259,41 @@
                   <ul>
                     <li>
                       <div class="exclude-presiding checkbox-twolines">
-                        <input id="reminderevent" type="radio" name="reminder[]" v-model="frequency" value="event" class="radio" checked="checked">
+                        <input
+                          id="reminderevent"
+                          v-model="frequency"
+                          type="radio"
+                          name="reminder[]"
+                          value="event"
+                          class="radio"
+                          checked="checked"
+                        >
                         <label v-t="'steps[2].textsecond'" for="reminderevent"></label>
                       </div>
                     </li>
                     <li>
                       <div class="exclude-presiding checkbox-twolines">
-                        <input id="reminderday" type="radio" name="reminder[]" v-model="frequency" value="day" class="radio">
+                        <input
+                          id="reminderday"
+                          v-model="frequency"
+                          type="radio"
+                          name="reminder[]"
+                          value="day"
+                          class="radio"
+                        >
                         <label v-t="'steps[2].textthird'" for="reminderday"></label>
                       </div>
                     </li>
                     <li>
                       <div class="exclude-presiding checkbox-twolines">
-                        <input id="reminderweek" type="radio" name="reminder[]" v-model="frequency" value="week" class="radio">
+                        <input
+                          id="reminderweek"
+                          v-model="frequency"
+                          type="radio"
+                          name="reminder[]"
+                          value="week"
+                          class="radio"
+                        >
                         <label v-t="'steps[2].textfourth'" for="reminderweek"></label>
                       </div>
                     </li>
@@ -258,8 +322,7 @@
                       type="text"
                       name="email"
                       required
-                    ></input>
-
+                    >
                     <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
                       <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                       {{ $t('back') }}
@@ -275,10 +338,15 @@
             <div v-if="currentStep === 5" class="step step5">
               <div class="narrow-inner-container">
                 <div class="ainnersmall">
-                  <h2><img :src="`${slugs.urls.cdn}/img/obvestila/yij.png`">{{ $t('steps[4].textfirst') }}</h2>
+                  <h2>
+                    <img :src="`${slugs.urls.cdn}/img/obvestila/yij.png`">
+                    {{ $t('steps[4].textfirst') }}
+                  </h2>
 
                   <p class="replaceme">
-                    {{ $t('steps[4].textsecond') }} <b>{{ email }}</b> {{ $t('steps[4].textthird') }} {{ keyword }}. {{ $t('steps[4].textfourth') }}
+                    {{ $t('steps[4].textsecond') }}
+                    <b>{{ email }}</b>
+                    {{ $t('steps[4].textthird') }} {{ keyword }}. {{ $t('steps[4].textfourth') }}
                   </p>
 
                   <div style="text-align: center">
@@ -288,15 +356,11 @@
                       @click="currentStep = 1; keyword = '';"
                     ></div>
                   </div>
-
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
-        <!-- Card content goes here -->
       </transparent-wrapper>
     </generator>
   </div>
@@ -310,15 +374,15 @@ import Generator from 'components/Generator.vue';
 import ToolsTabs from 'components/ToolsTabs.vue';
 
 export default {
-  // TODO: remove eslint comment
-  // eslint-disable-next-line vue/name-property-casing
   name: 'Obvestila',
   components: {
     TransparentWrapper,
     Generator,
     ToolsTabs,
   },
-  mixins: [common],
+  mixins: [
+    common,
+  ],
   data() {
     return {
       currentStep: 1,
@@ -346,22 +410,24 @@ export default {
       errored: false,
     };
   },
-
   computed: {
     emailValid() {
       return this.validateEmail(this.email);
     },
   },
-
   mounted() {
     this.$nextTick(() => {
       this.getSettings();
     });
   },
-
+  created() {
+    this.$notifApi = axios.create({
+      baseURL: this.slugs.urls.notifications_api,
+    });
+  },
   methods: {
     validateEmail(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
     firstAction() {
@@ -378,10 +444,7 @@ export default {
           mode: this.matchType,
         };
 
-        const obvestila = axios.create({
-          baseURL: 'https://obavijesti.parlametar.hr', // TODO this.slugs.urls.obvestila
-        });
-        obvestila.post('/setSettings/', data);
+        this.$notifApi.post('/setSettings/', data);
 
         this.currentStep += 1;
       } else {
@@ -389,24 +452,16 @@ export default {
       }
     },
     getSettings() {
-      const settings = axios.create({
-        baseUrl: 'https://obavijesti.parlametar.hr', // TODO this.slugs.urls.obvestila
-      });
-
       const data = {
         uid: this.state.uid,
       };
 
-      settings.post('https://obavijesti.parlametar.hr/getSettings/', data).then((r) => {
-        console.log(r);
-        this.keywords = r.data.keywords;
-      });
+      this.$notifApi.post('/getSettings/', data)
+        .then((r) => {
+          this.keywords = r.data.keywords;
+        });
     },
     deleteKeyword(keyword) {
-      const settings = axios.create({
-        baseUrl: 'https://obavijesti.parlametar.hr', // TODO this.slugs.urls.obvestila
-      });
-
       const data = {
         id: keyword.id,
         keyword: keyword.keyword,
@@ -417,17 +472,14 @@ export default {
         uid: this.state.uid,
       };
 
-      settings.post('https://obavijesti.parlametar.hr/updateSettings/', data).then((r) => {
-        if (r.data.result) {
-          this.keywords.splice(this.keywords.indexOf(keyword), 1);
-        }
-      });
+      this.$notifApi.post('/updateSettings/', data)
+        .then((r) => {
+          if (r.data.result) {
+            this.keywords.splice(this.keywords.indexOf(keyword), 1);
+          }
+        });
     },
     reminderCallback(keyword, reminder) {
-      const settings = axios.create({
-        baseUrl: 'https://obavijesti.parlametar.hr', // TODO this.slugs.urls.obvestila
-      });
-
       const data = {
         id: keyword.id,
         keyword: keyword.keyword,
@@ -438,13 +490,9 @@ export default {
         uid: this.state.uid,
       };
 
-      settings.post('https://obavijesti.parlametar.hr/updateSettings/', data);
+      this.$notifApi.post('/updateSettings/', data);
     },
     modeCallback(keyword, mode) {
-      const settings = axios.create({
-        baseUrl: 'https://obavijesti.parlametar.hr', // TODO this.slugs.urls.obvestila
-      });
-
       const data = {
         id: keyword.id,
         keyword: keyword.keyword,
@@ -455,7 +503,7 @@ export default {
         uid: this.state.uid,
       };
 
-      settings.post('https://obavijesti.parlametar.hr/updateSettings/', data);
+      this.$notifApi.post('/updateSettings/', data);
     },
   },
 };
@@ -1167,21 +1215,22 @@ export default {
     border: 2px solid $first;
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   }
+
   @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
 
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
 
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
   }
-}
 </style>

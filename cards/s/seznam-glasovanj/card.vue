@@ -49,6 +49,7 @@
     <seznam-glasovanj
       :data="votes"
       :filters="filters"
+      :virtualize-remain="5"
       virtualize
       @filters-changed="onFiltersChanged"
     />

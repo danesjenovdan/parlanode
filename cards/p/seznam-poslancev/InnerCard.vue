@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    :id="$root.$options.cardData.cardData._id"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -9,11 +8,18 @@
 
     <sortable-table
       :columns="columns"
-      :items="mappedMembers"
+      :items="currentPageMembers"
       :sort="currentSort"
       :sort-order="currentSortOrder"
       :sort-callback="selectSort"
       class="person-list"
+    />
+    <pagination
+      v-if="count > perPage"
+      :page="currentPage"
+      :count="count"
+      :per-page="perPage"
+      @change="onPageChange"
     />
   </card-wrapper>
 </template>
@@ -21,6 +27,7 @@
 <script>
 import common from 'mixins/common';
 import SortableTable from 'components/SortableTable.vue';
+import Pagination from 'components/Pagination.vue';
 import links from 'mixins/links';
 import { memberList } from 'mixins/contextUrls';
 
@@ -38,7 +45,10 @@ const arabicToRoman = arabic => ({
 
 export default {
   name: 'SeznamPoslancevInnerCard',
-  components: { SortableTable },
+  components: {
+    SortableTable,
+    Pagination,
+  },
   mixins: [
     common,
     links,
@@ -77,8 +87,23 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    currentPage: {
+      type: Number,
+      default: 1,
+    },
+  },
+  data() {
+    return {
+      count: this.processedMembers.length,
+      perPage: 50,
+    };
   },
   computed: {
+    currentPageMembers() {
+      const start = (this.currentPage - 1) * this.perPage;
+      const end = start + this.perPage;
+      return this.mappedMembers.slice(start, end);
+    },
     mappedMembers() {
       if (this.demographics) {
         return this.processedMembers.map(member => [
@@ -118,9 +143,26 @@ export default {
       ];
     },
   },
+  watch: {
+    processedMembers(newValue) {
+      this.onPageChange(1);
+      this.count = newValue.length;
+    },
+  },
   methods: {
     selectSort(sort) {
       this.$emit('sort', sort);
+    },
+    onPageChange(newPage) {
+      this.scrollToTop();
+      this.$emit('page-change', newPage);
+    },
+    scrollToTop() {
+      const { _id: id } = this.$root.$options.cardData.cardData;
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView();
+      }
     },
   },
 };

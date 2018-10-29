@@ -88,7 +88,46 @@
                   <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
                   <div v-t="'inequality'" class="text"></div>
                 </div>
-                <div class="name">{{ getVoteText(ballot) }}</div>
+                <div class="name">
+                  <template v-if="ballot.shortened_projects && ballot.shortened_projects.length">
+                    <div
+                      v-for="(project, i) in ballot.projects"
+                      v-if="i !== 0 || project !== ballot.shortened_projects[0]"
+                      :key="`${ballot.id_parladata}-${project}-${i}`"
+                      :style="{ top: visibleTooltipTopPos }"
+                      :class="[
+                        'tooltip',
+                        `tooltip-${ballot.id_parladata}-${i}`,
+                        {'tooltip--show': visibleTooltip === `${ballot.id_parladata}-${i}`}
+                      ]"
+                    >
+                      {{ project }}
+                    </div>
+                    <p class="projects">
+                      <component
+                        v-for="(project, i) in ballot.shortened_projects"
+                        :is="i > 0 ? 'a' : 'span'"
+                        :key="`${ballot.id_parladata}-${project}-${i}`"
+                        :class="[
+                          'project',
+                          {
+                            'project--tooltip': i !== 0,
+                            'project--has-tooltip': i !== 0 || project !== ballot.projects[0]
+                          }
+                        ]"
+                        :data-target="`${ballot.id_parladata}-${i}`"
+                        href="#"
+                        @click.prevent="() => {}"
+                        @mouseover="setVisibleTooltip(`${ballot.id_parladata}-${i}`)"
+                        @mouseout="visibleTooltip = null"
+                      >
+                        <template v-if="i === 0">{{ project }}</template>
+                        <span v-else>{{ i + 1 }}</span>
+                      </component>
+                    </p>
+                  </template>
+                  {{ ballot.shortened_title }}
+                </div>
                 <div class="result">
                   <template v-if="ballot.result">
                     <i class="accepted glyphicon glyphicon-ok"></i>
@@ -121,6 +160,7 @@ import common from 'mixins/common';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import ScrollShadow from 'components/ScrollShadow.vue';
+import { parseVoteTitle, shortenVoteTitle } from 'helpers/voteTitle';
 
 export default {
   name: 'GlasovanjaNeenotnost',
@@ -186,6 +226,8 @@ export default {
       groups,
       allClassifications: [],
       cardData: this.$options.cardData,
+      visibleTooltip: null,
+      visibleTooltipTopPos: '20px',
     };
   },
   computed: {
@@ -297,7 +339,19 @@ export default {
         return tagMatch && textMatch && classificationMatch;
       };
 
-      const votes = sortBy(this.voteData, this.selectedSort).reverse();
+      const votes = sortBy(this.voteData, this.selectedSort)
+        .reverse()
+        .map((vote) => {
+          const { title, projects } = parseVoteTitle(vote.text);
+          const agendas = (vote.agenda_items || []).concat(projects);
+          return {
+            ...vote,
+            title,
+            projects: agendas,
+            shortened_title: shortenVoteTitle(title),
+            shortened_projects: agendas.map(p => shortenVoteTitle(p, 80)),
+          };
+        });
       const getDateFromVote = vote => (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
 
       let currentVotingDays;
@@ -372,12 +426,13 @@ export default {
         this.loading = false;
       });
     },
-    getVoteText(vote) {
-      const text = vote.short_text || vote.text;
-      if (text.split(' ').length > 14) {
-        return `${text.split(' ').slice(0, 16).join(' ')} ...`;
+    setVisibleTooltip(target) {
+      const elem = document.querySelector(`[data-target="${target}"]`);
+      if (elem) {
+        const elemRect = elem.getBoundingClientRect();
+        this.visibleTooltipTopPos = `${elemRect.bottom + 10}px`;
+        this.visibleTooltip = target;
       }
-      return text;
     },
   },
 };
@@ -557,11 +612,51 @@ export default {
       border-bottom: none;
       border-top: none;
       border-left: $section-border;
-      align-items: center;
       display: flex;
       flex: 4;
       font-size: 14px;
       padding: 5px 20px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .projects {
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      .project--has-tooltip {
+        cursor: help;
+      }
+
+      .project--tooltip {
+        color: $font-default;
+        text-decoration: none;
+        cursor: help;
+
+        &::after {
+          content: ', ';
+        }
+
+        &:first-of-type::before {
+          content: '(';
+          margin-left: .25em;
+        }
+
+        &:last-of-type::after {
+          content: ')';
+        }
+
+        span {
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 
@@ -602,6 +697,34 @@ export default {
       text-transform: uppercase;
       margin-left: 12px;
     }
+  }
+}
+
+.tooltip {
+  position: fixed;
+  background-color: $font-default;
+  color: #fff;
+  top: 45%;
+  font-family: Roboto;
+  padding: 3px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  max-width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  visibility: hidden;
+
+  &.tooltip--show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 767px) {
+  .tooltip {
+    max-width: 100%;
+    width: 90%;
   }
 }
 </style>

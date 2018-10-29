@@ -31,7 +31,40 @@
           <div v-t="'vote-not-passed'" class="text"></div>
         </template>
       </div>
-      <div class="name">{{ data.name }}</div>
+      <div class="name">
+        <template v-if="projects && projects.length">
+          <div
+            v-for="(project, i) in projects"
+            v-if="i !== 0"
+            :key="project"
+            :style="{ top: visibleTooltipTopPos }"
+            :class="[
+              'tooltip',
+              `tooltip-${data.id}-${i}`,
+              {'tooltip--show': visibleTooltip === `${data.id}-${i}`}
+            ]"
+          >
+            {{ project }}
+          </div>
+          <p class="projects">
+            <component
+              v-for="(project, i) in projects"
+              :is="i > 0 ? 'a' : 'span'"
+              :key="project"
+              :class="['project', {'project--tooltip': i > 0}]"
+              :data-target="`${data.id}-${i}`"
+              href="#"
+              @click.prevent="() => {}"
+              @mouseover="setVisibleTooltip(`${data.id}-${i}`)"
+              @mouseout="visibleTooltip = null"
+            >
+              <template v-if="i === 0">{{ project }}</template>
+              <span v-else>{{ i + 1 }}</span>
+            </component>
+          </p>
+        </template>
+        <p>{{ title }}</p>
+      </div>
     </div>
     <div
       v-t="'summary'"
@@ -124,6 +157,7 @@ import common from 'mixins/common';
 import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
+import { parseVoteTitle } from 'helpers/voteTitle';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
@@ -144,9 +178,16 @@ export default {
     links,
   ],
   data() {
+    const data = this.$options.cardData.data;
+
+    // parse vote title and any associated projects from text
+    const { title, projects } = parseVoteTitle(data.name);
+
     return {
       showMobileExcerpt: false,
-      data: this.$options.cardData.data,
+      data,
+      title,
+      projects: (data.agenda_items || []).concat(projects),
       state: this.$options.cardData.parlaState,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
@@ -156,13 +197,15 @@ export default {
           id: side,
           name: this.$t(side),
         },
-        votes: pick(this.$options.cardData.data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
+        votes: pick(data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
         max: {
-          maxOptPerc: this.$options.cardData.data.gov_side[side].max.maxOptPerc,
-          max_opt: this.$options.cardData.data.gov_side[side].max.max_opt,
+          maxOptPerc: data.gov_side[side].max.maxOptPerc,
+          max_opt: data.gov_side[side].max.max_opt,
         },
-        outliers: this.$options.cardData.data.gov_side[side].outliers,
+        outliers: data.gov_side[side].outliers,
       })),
+      visibleTooltip: null,
+      visibleTooltipTopPos: '20px',
     };
   },
   computed: {
@@ -211,6 +254,14 @@ export default {
         this.$refs.sides.expandedOption = this.state.selectedOption || null;
       }
       this.state.selectedTab = tabNumber;
+    },
+    setVisibleTooltip(target) {
+      const elem = document.querySelector(`[data-target="${target}"]`);
+      if (elem) {
+        const elemRect = elem.getBoundingClientRect();
+        this.visibleTooltipTopPos = `${elemRect.bottom + 10}px`;
+        this.visibleTooltip = target;
+      }
     },
   },
 };
@@ -294,11 +345,51 @@ export default {
     padding: 10px 0 4px 0;
 
     @include respond-to(desktop) {
-      align-items: center;
       display: flex;
       flex: 4;
       font-size: 14px;
       padding: 5px 0 5px 12px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    p {
+      margin: 6px 0;
+
+      &.projects {
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        .project--tooltip {
+          color: $font-default;
+          text-decoration: none;
+          cursor: help;
+
+          &::after {
+            content: ', ';
+          }
+
+          &:first-of-type::before {
+            content: '(';
+            margin-left: .25em;
+          }
+
+          &:last-of-type::after {
+            content: ')';
+          }
+
+          span {
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -340,6 +431,34 @@ export default {
 
 .tabs .tab-content {
   overflow: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  background-color: $font-default;
+  color: #fff;
+  top: 45%;
+  font-family: Roboto;
+  padding: 3px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  max-width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  visibility: hidden;
+
+  &.tooltip--show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 767px) {
+  .tooltip {
+    max-width: 100%;
+    width: 90%;
+  }
 }
 </style>
 

@@ -46,8 +46,10 @@
         :processed-members="processedMembers"
         :current-sort="currentSort"
         :current-sort-order="currentSortOrder"
+        :current-page="currentPage"
         :demographics="currentAnalysis === 'demographics'"
         @sort="sortBy"
+        @page-change="onPageChange"
       >
         <div slot="info">
           <i18n path="info.lead" tag="p" class="info-text lead">
@@ -167,6 +169,7 @@ export default {
       currentAnalysis: loadFromState('analysis') || 'demographics',
       currentSort: loadFromState('sort') || 'name',
       currentSortOrder: loadFromState('sortOrder') || 'asc',
+      currentPage: loadFromState('page') || 1,
       analyses,
       parties: [],
       selectedPartiesState: loadFromState('parties') || [],
@@ -238,6 +241,9 @@ export default {
       }
       if (this.selectedDistricts.length > 0) {
         parameters.districts = this.selectedDistricts;
+      }
+      if (this.currentPage > 1) {
+        parameters.page = this.currentPage;
       }
 
       return parameters;
@@ -393,6 +399,9 @@ export default {
         this.currentSortOrder = 'asc';
         this.currentSort = sort;
       }
+    },
+    onPageChange(newPage) {
+      this.currentPage = newPage;
     },
   },
 };

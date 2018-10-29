@@ -65,8 +65,45 @@
                   <div class="col-md-11 border-left">
                     <div class="col-md-6">
                       <div class="session_title">
+                        <template v-if="vote.shortened_projects && vote.shortened_projects.length">
+                          <div
+                            v-for="(project, i) in vote.projects"
+                            v-if="i !== 0 || project !== vote.shortened_projects[0]"
+                            :key="project"
+                            :style="{ top: visibleTooltipTopPos }"
+                            :class="[
+                              'tooltip',
+                              `tooltip-${vote.motion_id}-${i}`,
+                              {'tooltip--show': visibleTooltip === `${vote.motion_id}-${i}`}
+                            ]"
+                          >
+                            {{ project }}
+                          </div>
+                          <p class="projects">
+                            <component
+                              v-for="(project, i) in vote.shortened_projects"
+                              :is="i > 0 ? 'a' : 'span'"
+                              :key="project"
+                              :class="[
+                                'project',
+                                {
+                                  'project--tooltip': i !== 0,
+                                  'project--has-tooltip': i !== 0 || project !== vote.projects[0]
+                                }
+                              ]"
+                              :data-target="`${vote.motion_id}-${i}`"
+                              href="#"
+                              @click.prevent="() => {}"
+                              @mouseover="setVisibleTooltip(`${vote.motion_id}-${i}`)"
+                              @mouseout="visibleTooltip = null"
+                            >
+                              <template v-if="i === 0">{{ project }}</template>
+                              <span v-else>{{ i + 1 }}</span>
+                            </component>
+                          </p>
+                        </template>
                         <p>
-                          {{ getVoteText(vote) }}
+                          {{ vote.shortened_title }}
                         </p>
                       </div>
                     </div>
@@ -140,6 +177,7 @@ import StripedButton from 'components/StripedButton.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
 import links from 'mixins/links';
+import { parseVoteTitle, shortenVoteTitle } from 'helpers/voteTitle';
 
 export default {
   name: 'SeznamGlasovanj',
@@ -198,6 +236,8 @@ export default {
       allTags,
       allClassifications,
       allResults,
+      visibleTooltip: null,
+      visibleTooltipTopPos: '20px',
     };
   },
   computed: {
@@ -265,9 +305,19 @@ export default {
         e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
         e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
 
-        if (this.data.text && e.text.indexOf(this.data.text) === 0) {
-          e.short_text = e.text.slice(this.data.text.length).replace(/^[\s-]*/, '');
+        // parse vote title and any associated projects from text
+        const { title, projects } = parseVoteTitle(e.text);
+        e.title = title;
+        e.projects = (e.agenda_items || []).concat(projects);
+
+        // if legislation name is defined trim the legislation name from the start of vote name
+        if (this.data.text && e.title.indexOf(this.data.text) === 0) {
+          e.shortened_title = e.title.slice(this.data.text.length).replace(/^[\s-]*/, '');
         }
+
+        // shorten the title for display
+        e.shortened_projects = e.projects.map(p => shortenVoteTitle(p, 85));
+        e.shortened_title = shortenVoteTitle(e.shortened_title || e.title);
 
         // if has_votes is undefined assume we always have votes
         e.has_votes = typeof e.has_votes === 'boolean' ? e.has_votes : true;
@@ -308,13 +358,6 @@ export default {
         });
       }
     },
-    getVoteText(vote) {
-      const text = vote.short_text || vote.text;
-      if (text.split(' ').length > 14) {
-        return `${text.split(' ').slice(0, 14).join(' ')} ...`;
-      }
-      return text;
-    },
     emitFiltersChanged() {
       this.$emit('filters-changed', {
         text: this.textFilter,
@@ -332,10 +375,18 @@ export default {
           return 219 + 15;
         }
       }
-      return 210 + 15;
+      return 310 + 15;
     },
     checkScrollShadow(event) {
       this.$refs.shadow.check(event.currentTarget);
+    },
+    setVisibleTooltip(target) {
+      const elem = document.querySelector(`[data-target="${target}"]`);
+      if (elem) {
+        const elemRect = elem.getBoundingClientRect();
+        this.visibleTooltipTopPos = `${elemRect.bottom + 10}px`;
+        this.visibleTooltip = target;
+      }
     },
   },
 };
@@ -411,6 +462,11 @@ export default {
 .session_voting .session_title {
   height: 95px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  justify-content: center;
+
   @include respond-to(mobile) {
     margin-top: 15px;
     margin-bottom: 10px;
@@ -418,15 +474,67 @@ export default {
 }
 
 .session_voting .session_title p {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   font-family: Roboto Slab;
-  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 6px 0;
+
+  &.projects {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    .project--has-tooltip {
+      cursor: help;
+    }
+
+    .project--tooltip {
+      &::after {
+        content: ', ';
+      }
+
+      &:first-of-type::before {
+        content: '(';
+        margin-left: .25em;
+      }
+
+      &:last-of-type::after {
+        content: ')';
+      }
+
+      span {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
+.tooltip {
+  position: fixed;
+  background-color: $font-default;
+  color: #fff;
+  top: 45%;
+  font-family: Roboto;
+  padding: 3px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  max-width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  visibility: hidden;
+
+  &.tooltip--show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 @media (max-width: 991px) {
   .session_voting .session_title {
@@ -454,7 +562,7 @@ export default {
 
 @media (max-width: 767px) {
   .session_voting .session_title {
-    height: 75px;
+    height: 175px;
     margin-left: 54px;
 
     p {
@@ -462,16 +570,16 @@ export default {
       overflow: hidden;
     }
   }
+
+  .tooltip {
+    max-width: 100%;
+    width: 90%;
+  }
 }
 
 .single_voting {
   position: relative;
 }
-
-.session_voting .session_title p {
-  font-size: 14px;
-}
-
 
 .session_voting .single_voting {
   margin-bottom: 15px;
