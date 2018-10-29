@@ -99,3 +99,15 @@ $vote-results: (
         background-image: url(encode-svg(str-replace(fs-readFile('icons/vote-result--#{$result}.svg'), '#000', '#{$color}')));
     }
 }
+
+.legislation-link-icon {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/zakonodaja.svg'), '#000', '#{$link}')));
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.transcript-link-icon {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/navigation/transcripts.svg'), '#fff', '#{$link}')));
+    background-repeat: no-repeat;
+    background-position: center left;
+}
