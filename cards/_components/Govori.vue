@@ -178,7 +178,7 @@ export default {
 
       state.textFilter = this.textFilter || '*';
 
-      return `${this.url}${this.type === 'person' ? this.person.id : this.party.id}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.searchUrl)}`;
+      return `${this.url}${this.type === 'person' ? this.person.id : this.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&customUrl=${encodeURIComponent(this.searchUrl)}`;
     },
     searchUrl() {
       const state = {};
