@@ -518,9 +518,11 @@ export default {
   }
 
   .type-dropdown {
-    @include show-for(desktop);
+    width: 100%;
 
-    width: 17.5%;
+    @include respond-to(desktop) {
+      width: 17.5%;
+    }
   }
 }
 
