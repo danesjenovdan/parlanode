@@ -14,7 +14,7 @@ function createMongoURL(host, db, user, password) {
 function connect() {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line no-console
-    console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green(`connecting to ${config.db.url}/${config.db.name}`)}`);
+    console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.yellow(`attempting connection to ${config.db.url}/${config.db.name}`)}`);
 
     // handle missing mongo username and password
     if (process.platform === 'win32') {
@@ -32,19 +32,48 @@ function connect() {
     }
 
     const { url: host, name: db, user, password } = config.db;
-    mongoose.connect(createMongoURL(host, db, user, password), {
-      useNewUrlParser: true,
+    const reconnectTimeout = 5000; // ms.
+
+    function tryConnect() {
+      mongoose
+        .connect(createMongoURL(host, db, user, password), {
+          reconnectTries: 5,
+          reconnectInterval: 200,
+          useNewUrlParser: true,
+          useCreateIndex: true,
+        })
+        .catch(() => {}); // ignore, handeled by events
+    }
+
+    mongoose.connection.on('connecting', () => {
+      // eslint-disable-next-line no-console
+      console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.yellow('connecting...')}`);
     });
 
-    mongoose.connection.on('error', (err) => {
-      reject(err);
+    mongoose.connection.on('connected', () => {
+      // eslint-disable-next-line no-console
+      console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green('connected')}`);
     });
 
     mongoose.connection.once('open', () => {
       // eslint-disable-next-line no-console
-      console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green('connected')}`);
+      console.log(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.green('connection opened')}`);
       resolve();
     });
+
+    mongoose.connection.on('error', (error) => {
+      // eslint-disable-next-line no-console
+      console.error(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.red('error')}`, error);
+      mongoose.disconnect();
+    });
+
+    mongoose.connection.on('disconnected', () => {
+      // eslint-disable-next-line no-console
+      console.error(`${chalk.magenta('| MONGO DATABASE |')} - ${chalk.red(`disconnected; reconnecting in ${reconnectTimeout / 1000}s...`)}`);
+      setTimeout(() => tryConnect(), reconnectTimeout);
+    });
+
+    tryConnect();
   });
 }
 
