@@ -1,5 +1,9 @@
 {
   "edit-info": "Uredi podatke",
   "only-parties": "Svi klubovi",
-  "edit-memberships": "Uredi članstva"
+  "edit-memberships": "Uredi članstva",
+  "only-current": "Samo trenutna",
+  "add-member": "Dodaj člana",
+  "edit-membership": "Uredi članstvo",
+  "save-membership": "Shrani članstvo"
 }
