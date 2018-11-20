@@ -10,6 +10,6 @@
       "The first matrix is best described as representing MPs in an N-dimensional space (N is the number of voting events that are being compared). The algorithm maps N dimensions to 2 dimensions, with the priority of maintaining the distance between the MPs. Further apart the two MPs, greater the difference in their voting history."
     ]
   },
-  "select-mps": "Choose MPs",
+  "select-mps": "Izberi poslance in poslanske skupine",
   "selected-mps": "Selected: {num}"
 }
