@@ -339,19 +339,27 @@ export default {
     selectCallback(id) {
       // it's a person
       if (parseInt(id, 10)) {
-        if (!this.people.find(p => p.id === id).selected) {
-          this.people.find(p => p.id === id).selected = true;
-          this.showPersonPicture(this.kompasData.find(p => p.person.id === id));
-        } else {
-          this.people.find(p => p.id === id).selected = false;
-          this.hidePersonPicture(this.kompasData.find(p => p.person.id === id));
+        const person = this.people.find(p => p.id === id);
+        if (person) {
+          if (!person.selected) {
+            person.selected = true;
+            this.showPersonPicture(this.kompasData.find(p => p.person.id === id));
+          } else {
+            person.selected = false;
+            this.hidePersonPicture(this.kompasData.find(p => p.person.id === id));
+          }
         }
-      } else if (!this.parties.find(p => p.id === id).selected) {
-        this.parties.find(p => p.id === id).selected = true;
-        this.showPartyPictures(id);
       } else {
-        this.parties.find(p => p.id === id).selected = false;
-        this.hidePartyPictures(id);
+        const party = this.parties.find(p => p.id === id);
+        if (party) {
+          if (!party.selected) {
+            party.selected = true;
+            this.showPartyPictures(id);
+          } else {
+            party.selected = false;
+            this.hidePartyPictures(id);
+          }
+        }
       }
     },
 
