@@ -277,7 +277,11 @@
     padding: $padding;
 
     &.backgroundred {
-        background-color: $first;
+        background-color: $icon-session;
+    }
+
+    &.law-logo {
+        background-color: $icon-transcript;
     }
 
     b {
