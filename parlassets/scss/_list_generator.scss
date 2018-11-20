@@ -106,7 +106,8 @@
     @include show-for(desktop, flex);
 
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
+    margin-left: 20px;
     width: 142px;
     flex: 1;
 
