@@ -1,5 +1,5 @@
 <template>
-  <div class="excerpt">
+  <div :class="{'show-documents': documents.length > 0}" class="excerpt">
     <div
       v-if="icon"
       :class="{'show-parent': showParent}"
@@ -117,6 +117,10 @@ export default {
   background: $background;
   height: 442px;
   position: relative;
+
+  &.show-documents {
+    padding-bottom: 60px;
+  }
 }
 
 hr {
@@ -198,10 +202,15 @@ hr {
 
     display: flex;
     margin: auto;
+    width: 100%;
+
+    .text-container {
+      width:100%;
+    }
 
     &.show-parent,
     &.show-documents {
-      max-height: 349px;
+      max-height: 320px;
       @include respond-to(mobile) {
         padding: 0;
         min-height: 320px;
