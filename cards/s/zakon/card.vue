@@ -33,7 +33,7 @@
       />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab v-if="data.abstract /* SL override */ || true" label="Povzetek" variant="dark">
+      <p-tab v-if="data.abstract" label="Povzetek" variant="dark">
         <excerpt
           :content="content"
           :main-law="excerptData"
