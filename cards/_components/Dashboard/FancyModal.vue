@@ -140,6 +140,7 @@ export default {
 <style lang="scss" scoped>
 .modal-container /deep/ .card-modal {
   width: 600px;
+  max-width: 600px;
   z-index: 1050;
 
   .card-modal-buttons {

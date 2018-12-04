@@ -21,18 +21,18 @@ Parlameter cards rely heavily on common styles, colors, mixins etc. defined in P
 ## Commands
 
 Start dev server for specified card and launch browser
-- `yarn run cards <path-to-card>` or
-- `yarn run cards <path-to-card> dev`
+- `npm run cards <path-to-card>` or
+- `npm run cards <path-to-card> dev`
 
 Build client and server bundles for specified card
-- `yarn run cards <path-to-card> build`
+- `npm run cards <path-to-card> build`
 
 Run dev server or build the card with specified language (default: sl)
-- `yarn run cards <path-to-card> dev <lang>`
-- `yarn run cards <path-to-card> build <lang>`
+- `npm run cards <path-to-card> dev <lang>`
+- `npm run cards <path-to-card> build <lang>`
 
 Start card generation wizard
-- `yarn run cards-generate`
+- `npm run cards-generate`
 
 ## (Re)building the card on the server
 

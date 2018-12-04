@@ -7,7 +7,9 @@
     "tools": "orodja",
     "about": "o-projektu",
     "media": "za-medije",
-    "legal": "pravno-obvestilo"
+    "legal": "pravno-obvestilo",
+    "thankYou": "hvala",
+    "error": "ups"
   },
   "sessions": {
     "search": {
@@ -16,6 +18,7 @@
     }
   },
   "tools": {
+    "notifications": "obvestila",
     "voteComparator": "primerjalnik-glasovanj",
     "discord": "raziskovalec-neenotnosti",
     "compass": "parlamentarni-kompas",

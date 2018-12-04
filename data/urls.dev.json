@@ -1,1435 +1,316 @@
 {
   "person": {
+    "2": {
+      "slug": "anja-bah-zibert"
+    },
+    "3": {
+      "slug": "urska-ban"
+    },
+    "4": {
+      "slug": "roberto-battelli"
+    },
+    "5": {
+      "slug": "julijana-bizjak-mlakar"
+    },
+    "6": {
+      "slug": "srecko-blazic"
+    },
+    "7": {
+      "slug": "mirjam-bon-klanjscek"
+    },
+    "8": {
+      "slug": "tilen-bozic"
+    },
+    "9": {
+      "slug": "alenka-bratusek"
+    },
+    "10": {
+      "slug": "franc-breznik"
+    },
+    "11": {
+      "slug": "milan-brglez"
+    },
+    "12": {
+      "slug": "nada-brinovsek"
+    },
+    "13": {
+      "slug": "miro-cerar"
+    },
+    "14": {
+      "slug": "tanja-cink"
+    },
+    "15": {
+      "slug": "andrej-cus"
+    },
+    "16": {
+      "slug": "erika-dekleva"
+    },
+    "17": {
+      "slug": "iva-dimic"
+    },
+    "18": {
+      "slug": "bojan-dobovsek"
+    },
+    "19": {
+      "slug": "marjan-dolinsek"
+    },
+    "20": {
+      "slug": "karl-viktor-erjavec"
+    },
+    "21": {
+      "slug": "marko-ferluga"
+    },
+    "22": {
+      "slug": "tomaz-gantar"
+    },
+    "23": {
+      "slug": "jelka-godec"
+    },
+    "24": {
+      "slug": "laszlo-goncz"
+    },
+    "25": {
+      "slug": "vinko-gorenak"
+    },
+    "26": {
+      "slug": "branko-grims"
+    },
+    "27": {
+      "slug": "irena-groselj-kosnik"
+    },
+    "28": {
+      "slug": "margareta-gucek-zakosek"
+    },
+    "29": {
+      "slug": "primoz-hainz"
+    },
+    "30": {
+      "slug": "matjaz-han"
+    },
+    "31": {
+      "slug": "matjaz-hanzek"
+    },
+    "32": {
+      "slug": "jozef-horvat"
+    },
+    "33": {
+      "slug": "mitja-horvat"
+    },
+    "34": {
+      "slug": "ivan-hrsak"
+    },
+    "35": {
+      "slug": "eva-irgl"
+    },
+    "36": {
+      "slug": "janez-jansa"
+    },
+    "37": {
+      "slug": "franc-jursa"
+    },
+    "38": {
+      "slug": "andreja-katic"
+    },
+    "39": {
+      "slug": "aleksander-kavcic"
+    },
+    "40": {
+      "slug": "anita-kolesa"
+    },
+    "41": {
+      "slug": "benedikt-kopmajer"
+    },
+    "42": {
+      "slug": "miha-kordis"
+    },
     "43": {
-      "slug": "leszek-korzeniowski"
+      "slug": "ksenija-korenjak-kramar"
     },
     "44": {
-      "slug": "wojciech-kossakowski"
+      "slug": "irena-kotnik"
     },
     "45": {
-      "slug": "andrzej-kosztowniak"
+      "slug": "marjana-kotnik-poropat"
     },
     "46": {
-      "slug": "leonard-krasulski"
+      "slug": "lilijana-kozlovic"
     },
     "47": {
-      "slug": "bernadeta-krynicka"
+      "slug": "danijel-krivec"
     },
     "48": {
-      "slug": "marta-kubiak"
+      "slug": "simona-kustec-lipicer"
     },
     "49": {
-      "slug": "marzena-machalek"
+      "slug": "zvonko-lah"
     },
     "50": {
-      "slug": "maciej-malecki"
+      "slug": "franc-laj"
     },
     "51": {
-      "slug": "arkadiusz-myrcha"
+      "slug": "suzana-lep-simenko"
     },
     "52": {
-      "slug": "janusz-sanocki"
+      "slug": "marinka-levicar"
     },
     "53": {
-      "slug": "stefan-niesiolowski"
+      "slug": "tomaz-lisec"
     },
     "54": {
-      "slug": "tomasz-rzymkowski"
+      "slug": "anze-logar"
     },
     "55": {
-      "slug": "andrzej-smirnow"
+      "slug": "zan-mahnic"
     },
     "56": {
-      "slug": "miroslaw-suchon"
+      "slug": "klavdija-markez"
     },
     "57": {
-      "slug": "tadeusz-aziewicz"
+      "slug": "dragan-matic"
     },
     "58": {
-      "slug": "maks-kraczkowski"
+      "slug": "luka-mesec"
     },
     "59": {
-      "slug": "ryszard-bartosik"
+      "slug": "jani-moderndorfer"
     },
     "60": {
-      "slug": "barbara-bartus"
+      "slug": "jasna-murgel"
     },
     "61": {
-      "slug": "jacek-bogucki"
+      "slug": "bojana-mursic"
     },
     "62": {
-      "slug": "magdalena-blenska"
+      "slug": "matjaz-nemec"
     },
     "63": {
-      "slug": "piotr-cieslinski"
+      "slug": "ljudmila-novak"
     },
     "64": {
-      "slug": "ewa-drozd"
+      "slug": "bojan-podkrajsek"
     },
     "65": {
-      "slug": "izabela-kloc"
+      "slug": "marko-pogacnik"
     },
     "66": {
-      "slug": "katarzyna-lubnauer"
+      "slug": "marijan-pojbic"
     },
     "67": {
-      "slug": "beata-malecka-libera"
+      "slug": "andreja-potocnik"
     },
     "68": {
-      "slug": "aleksander-mrowczynski"
+      "slug": "ivan-prelog"
     },
     "69": {
-      "slug": "arkadiusz-mularczyk"
+      "slug": "uros-prikl"
     },
     "70": {
-      "slug": "kazimierz-moskal"
+      "slug": "branislav-rajic"
     },
     "71": {
-      "slug": "pawel-olszewski"
+      "slug": "danilo-anton-ranc"
     },
     "72": {
-      "slug": "monika-rosa"
+      "slug": "kamal-izidor-shaker"
     },
     "73": {
-      "slug": "jakub-rutnicki"
+      "slug": "janja-sluga"
     },
     "74": {
-      "slug": "michal-stasinski"
+      "slug": "vojka-sergan"
     },
     "75": {
-      "slug": "antoni-mezydlo"
+      "slug": "andrej-sircelj"
     },
     "76": {
-      "slug": "ireneusz-ras"
+      "slug": "ivan-skodnik"
     },
     "77": {
-      "slug": "jerzy-wilk"
+      "slug": "marusa-skopac"
     },
     "78": {
-      "slug": "mariusz-witczak"
+      "slug": "joze-tanko"
     },
     "79": {
-      "slug": "witold-zembaczynski"
+      "slug": "matej-tasner-vatovec"
     },
     "80": {
-      "slug": "jaroslaw-zielinski"
+      "slug": "violeta-tomic"
     },
     "81": {
-      "slug": "ireneusz-zyska"
+      "slug": "matej-tonin"
     },
     "82": {
-      "slug": "artur-gorski"
+      "slug": "franc-trcek"
     },
     "83": {
-      "slug": "stanislaw-zmijan"
+      "slug": "janko-veber"
     },
     "84": {
-      "slug": "zbigniew-babalski"
+      "slug": "vesna-vervega"
     },
     "85": {
-      "slug": "zdzislaw-gawlik"
+      "slug": "peter-vilfan"
     },
     "86": {
-      "slug": "ryszard-galla"
+      "slug": "jernej-vrtovec"
     },
     "87": {
-      "slug": "jerzy-gosiewski"
+      "slug": "simon-zajc"
     },
     "88": {
-      "slug": "tomasz-glogowski"
+      "slug": "igor-zorcic"
     },
     "89": {
-      "slug": "andrzej-kobylarz"
+      "slug": "branko-zorman"
     },
     "90": {
-      "slug": "kazimierz-plocke"
+      "slug": "dejan-zidan"
     },
     "91": {
-      "slug": "elzbieta-rafalska"
+      "slug": "ljubo-znidar"
     },
     "92": {
-      "slug": "beata-mateusiak-pielucha"
+      "slug": "dusan-verbic"
     },
     "93": {
-      "slug": "rajmund-miller"
+      "slug": "franc-krizanic"
     },
     "94": {
-      "slug": "krzysztof-ostrowski"
+      "slug": "jana-jenko"
     },
     "95": {
-      "slug": "marek-opiola"
+      "slug": "marija-bacic"
     },
     "96": {
-      "slug": "miroslaw-pampuch"
+      "slug": "marija-antonija-kovacic"
     },
-    "97": {
-      "slug": "mieczyslaw-miazga"
+    "1329": {
+      "slug": "mateja-kozuh-novak"
     },
-    "98": {
-      "slug": "anna-milczanowska"
+    "1354": {
+      "slug": "bojan-krajnc"
     },
-    "99": {
-      "slug": "krystyna-skowronska"
+    "1355": {
+      "slug": "sasa-tabakovic"
     },
-    "100": {
-      "slug": "andrzej-sosnierz"
+    "1356": {
+      "slug": "jan-skoberne"
     },
-    "101": {
-      "slug": "andrzej-szlachta"
+    "1357": {
+      "slug": "dusan-radic"
     },
-    "102": {
-      "slug": "teresa-wargocka"
+    "2933": {
+      "slug": "teja-ljubic"
     },
-    "103": {
-      "slug": "malgorzata-wassermann"
+    "2934": {
+      "slug": "vlasta-pockaj"
     },
-    "104": {
-      "slug": "michal-wojtkiewicz"
-    },
-    "105": {
-      "slug": "joanna-borowiak"
-    },
-    "106": {
-      "slug": "krzysztof-czabanski"
-    },
-    "107": {
-      "slug": "tomasz-zielinski"
-    },
-    "108": {
-      "slug": "lidia-gadek"
-    },
-    "109": {
-      "slug": "bartosz-jozwiak"
-    },
-    "110": {
-      "slug": "bozena-kaminska"
-    },
-    "111": {
-      "slug": "piotr-kaleta"
-    },
-    "112": {
-      "slug": "malgorzata-janowska"
-    },
-    "113": {
-      "slug": "mariusz-kaminski"
-    },
-    "114": {
-      "slug": "jerzy-kozlowski"
-    },
-    "115": {
-      "slug": "izabela-leszczyna"
-    },
-    "116": {
-      "slug": "dariusz-kubiak"
-    },
-    "117": {
-      "slug": "jozef-lassota"
-    },
-    "118": {
-      "slug": "piotr-naimski"
-    },
-    "119": {
-      "slug": "dariusz-piontkowski"
-    },
-    "120": {
-      "slug": "jan-mosinski"
-    },
-    "121": {
-      "slug": "marcin-porzucek"
-    },
-    "122": {
-      "slug": "jan-szyszko"
-    },
-    "123": {
-      "slug": "jacek-zalek"
-    },
-    "124": {
-      "slug": "tomasz-tomczykiewicz"
-    },
-    "125": {
-      "slug": "jan-krzysztof-ardanowski"
-    },
-    "126": {
-      "slug": "piotr-apel"
-    },
-    "127": {
-      "slug": "anna-wasilewska"
-    },
-    "128": {
-      "slug": "jan-warzecha"
-    },
-    "129": {
-      "slug": "barbara-bubula"
-    },
-    "130": {
-      "slug": "antoni-duda"
-    },
-    "131": {
-      "slug": "zofia-czernow"
-    },
-    "132": {
-      "slug": "waldy-dzikowski"
-    },
-    "133": {
-      "slug": "barbara-dziuk"
-    },
-    "134": {
-      "slug": "konrad-glebocki"
-    },
-    "135": {
-      "slug": "andrzej-halicki"
-    },
-    "136": {
-      "slug": "jan-kilian"
-    },
-    "137": {
-      "slug": "zbigniew-konwinski"
-    },
-    "138": {
-      "slug": "bogdan-latosinski"
-    },
-    "139": {
-      "slug": "pawel-lisiecki"
-    },
-    "140": {
-      "slug": "jerzy-meysztowicz"
-    },
-    "141": {
-      "slug": "anna-nems"
-    },
-    "142": {
-      "slug": "malgorzata-chmiel"
-    },
-    "143": {
-      "slug": "zbigniew-chmielowiec"
-    },
-    "144": {
-      "slug": "zbigniew-dolata"
-    },
-    "145": {
-      "slug": "bozenna-bukiewicz"
-    },
-    "146": {
-      "slug": "blazej-parda"
-    },
-    "147": {
-      "slug": "piotr-polak"
-    },
-    "148": {
-      "slug": "leszek-ruszczyk"
-    },
-    "149": {
-      "slug": "anna-elzbieta-sobecka"
-    },
-    "150": {
-      "slug": "zbigniew-pawlowicz"
-    },
-    "151": {
-      "slug": "teresa-piotrowska"
-    },
-    "152": {
-      "slug": "artur-sobon"
-    },
-    "153": {
-      "slug": "czeslaw-hoc"
-    },
-    "154": {
-      "slug": "piotr-babinetz"
-    },
-    "155": {
-      "slug": "jerzy-bielecki"
-    },
-    "156": {
-      "slug": "wojciech-zubowski"
-    },
-    "157": {
-      "slug": "rafal-grupinski"
-    },
-    "158": {
-      "slug": "grzegorz-janik"
-    },
-    "159": {
-      "slug": "krystian-jarubas"
-    },
-    "160": {
-      "slug": "henryka-krzywonos-strycharska"
-    },
-    "161": {
-      "slug": "marek-kuchcinski"
-    },
-    "162": {
-      "slug": "tomasz-piotr-nowak"
-    },
-    "163": {
-      "slug": "jozefa-szczurek-zelazko"
-    },
-    "164": {
-      "slug": "bogdan-rzonca"
-    },
-    "165": {
-      "slug": "zbigniew-sosnowski"
-    },
-    "166": {
-      "slug": "slawomir-jan-piechota"
-    },
-    "167": {
-      "slug": "tomasz-szymanski"
-    },
-    "168": {
-      "slug": "kinga-gajewska"
-    },
-    "169": {
-      "slug": "pawel-arndt"
-    },
-    "170": {
-      "slug": "artur-dunin"
-    },
-    "171": {
-      "slug": "wojciech-ziemniak"
-    },
-    "172": {
-      "slug": "mariusz-trepka"
-    },
-    "173": {
-      "slug": "maria-zuba"
-    },
-    "174": {
-      "slug": "pawel-grabowski"
-    },
-    "175": {
-      "slug": "jaroslaw-gowin"
-    },
-    "176": {
-      "slug": "stanislaw-huskowski"
-    },
-    "177": {
-      "slug": "mariusz-orion-jedrysek"
-    },
-    "178": {
-      "slug": "alicja-kaczorowska"
-    },
-    "179": {
-      "slug": "mieczyslaw-kasprzak"
-    },
-    "180": {
-      "slug": "malgorzata-kidawa-blonska"
-    },
-    "181": {
-      "slug": "kornel-morawiecki"
-    },
-    "182": {
-      "slug": "slawomir-neumann"
-    },
-    "183": {
-      "slug": "elzbieta-radziszewska"
-    },
-    "184": {
-      "slug": "stanislaw-pieta"
-    },
-    "185": {
-      "slug": "piotr-pyzik"
-    },
-    "186": {
-      "slug": "ewa-kolodziej"
-    },
-    "187": {
-      "slug": "joanna-lichocka"
-    },
-    "188": {
-      "slug": "tomasz-latos"
-    },
-    "189": {
-      "slug": "anna-krupka"
-    },
-    "190": {
-      "slug": "andrzej-kryj"
-    },
-    "191": {
-      "slug": "marek-krzakala"
-    },
-    "192": {
-      "slug": "andzelika-mozdzanowska"
-    },
-    "193": {
-      "slug": "joanna-mucha"
-    },
-    "194": {
-      "slug": "bozena-szydlowska"
-    },
-    "195": {
-      "slug": "marek-rucinski"
-    },
-    "196": {
-      "slug": "jacek-swiat"
-    },
-    "197": {
-      "slug": "bartlomiej-stawiarski"
-    },
-    "198": {
-      "slug": "lukasz-schreiber"
-    },
-    "199": {
-      "slug": "halina-szydelko"
-    },
-    "200": {
-      "slug": "lidia-burzynska"
-    },
-    "201": {
-      "slug": "marek-ast"
-    },
-    "202": {
-      "slug": "elzbieta-duda"
-    },
-    "203": {
-      "slug": "stanislaw-tyszka"
-    },
-    "204": {
-      "slug": "bozena-borys-szopa"
-    },
-    "205": {
-      "slug": "anna-zalewska"
-    },
-    "206": {
-      "slug": "szymon-ziolkowski"
-    },
-    "207": {
-      "slug": "borys-budka"
-    },
-    "208": {
-      "slug": "barbara-chrobak"
-    },
-    "209": {
-      "slug": "marta-golbik"
-    },
-    "210": {
-      "slug": "patryk-jaki"
-    },
-    "211": {
-      "slug": "szymon-gizynski"
-    },
-    "212": {
-      "slug": "teresa-halas"
-    },
-    "213": {
-      "slug": "gabriela-lenartowicz"
-    },
-    "214": {
-      "slug": "adam-lipinski"
-    },
-    "215": {
-      "slug": "jozef-lesniak"
-    },
-    "216": {
-      "slug": "grzegorz-matusiak"
-    },
-    "217": {
-      "slug": "krzysztof-michalkiewicz"
-    },
-    "218": {
-      "slug": "beata-szydlo"
-    },
-    "219": {
-      "slug": "jan-szewczak"
-    },
-    "220": {
-      "slug": "edward-siarka"
-    },
-    "221": {
-      "slug": "tomasz-siemoniak"
-    },
-    "222": {
-      "slug": "pawel-skutecki"
-    },
-    "223": {
-      "slug": "lech-sprawka"
-    },
-    "224": {
-      "slug": "szymon-szynkowski-vel-sek"
-    },
-    "225": {
-      "slug": "malgorzata-niemczyk"
-    },
-    "226": {
-      "slug": "wojciech-wilk"
-    },
-    "227": {
-      "slug": "elzbieta-witek"
-    },
-    "228": {
-      "slug": "malgorzata-zwiercan"
-    },
-    "229": {
-      "slug": "pawel-bankowski"
-    },
-    "230": {
-      "slug": "agata-borowiec"
-    },
-    "231": {
-      "slug": "janusz-cichon"
-    },
-    "232": {
-      "slug": "tomasz-cimoszewicz"
-    },
-    "233": {
-      "slug": "tadeusz-cymanski"
-    },
-    "234": {
-      "slug": "przemyslaw-czarnecki"
-    },
-    "235": {
-      "slug": "agnieszka-hanajczyk"
-    },
-    "236": {
-      "slug": "michal-jach"
-    },
-    "237": {
-      "slug": "wieslaw-janczyk"
-    },
-    "238": {
-      "slug": "tomasz-jaskola"
-    },
-    "239": {
-      "slug": "kazimierz-kotowski"
-    },
-    "240": {
-      "slug": "henryk-kowalczyk"
-    },
-    "241": {
-      "slug": "wieslaw-krajewski"
-    },
-    "242": {
-      "slug": "adam-korol"
-    },
-    "243": {
-      "slug": "andrzej-melak"
-    },
-    "244": {
-      "slug": "maciej-maslowski"
-    },
-    "245": {
-      "slug": "urszula-paslawska"
-    },
-    "246": {
-      "slug": "danuta-pietraszewska"
-    },
-    "247": {
-      "slug": "krzysztof-paszyk"
-    },
-    "248": {
-      "slug": "ryszard-petru"
-    },
-    "249": {
-      "slug": "agnieszka-pomaska"
-    },
-    "250": {
-      "slug": "marek-sowa"
-    },
-    "251": {
-      "slug": "dariusz-starzycki"
-    },
-    "252": {
-      "slug": "pawel-suski"
-    },
-    "253": {
-      "slug": "stanislaw-szwed"
-    },
-    "254": {
-      "slug": "robert-warwas"
-    },
-    "255": {
-      "slug": "andrzej-czerwinski"
-    },
-    "256": {
-      "slug": "krystyna-wroblewska"
-    },
-    "257": {
-      "slug": "zbigniew-ajchler"
-    },
-    "258": {
-      "slug": "monika-wielichowska"
-    },
-    "259": {
-      "slug": "pawel-bejda"
-    },
-    "260": {
-      "slug": "sylwester-chruszcz"
-    },
-    "261": {
-      "slug": "andrzej-gawron"
-    },
-    "262": {
-      "slug": "cezary-grabarczyk"
-    },
-    "263": {
-      "slug": "marek-jakubiak"
-    },
-    "264": {
-      "slug": "wojciech-krol"
-    },
-    "265": {
-      "slug": "agnieszka-kolacz-leszczynska"
-    },
-    "266": {
-      "slug": "krzysztof-kubow"
-    },
-    "267": {
-      "slug": "krzysztof-lipiec"
-    },
-    "268": {
-      "slug": "ewa-malik"
-    },
-    "269": {
-      "slug": "grzegorz-raczak"
-    },
-    "270": {
-      "slug": "jaroslaw-porwich"
-    },
-    "271": {
-      "slug": "pawel-pudlowski"
-    },
-    "272": {
-      "slug": "boguslaw-sonik"
-    },
-    "273": {
-      "slug": "pawel-szefernaker"
-    },
-    "274": {
-      "slug": "ewa-szymanska"
-    },
-    "275": {
-      "slug": "grzegorz-raniewicz"
-    },
-    "276": {
-      "slug": "anna-schmidt-rodziewicz"
-    },
-    "277": {
-      "slug": "michal-szczerba"
-    },
-    "278": {
-      "slug": "wlodzimierz-nykiel"
-    },
-    "279": {
-      "slug": "elzbieta-stepien"
-    },
-    "280": {
-      "slug": "agnieszka-scigaj"
-    },
-    "281": {
-      "slug": "grzegorz-tobiszowski"
-    },
-    "282": {
-      "slug": "dominik-tarczynski"
-    },
-    "283": {
-      "slug": "rafal-weber"
-    },
-    "284": {
-      "slug": "marcin-swiecicki"
-    },
-    "285": {
-      "slug": "iwona-sledzinska-katarasinska"
-    },
-    "286": {
-      "slug": "janusz-sniadek"
-    },
-    "287": {
-      "slug": "grzegorz-wojciechowski"
-    },
-    "288": {
-      "slug": "piotr-lukasz-babiarz"
-    },
-    "289": {
-      "slug": "dariusz-bak"
-    },
-    "290": {
-      "slug": "waldemar-buda"
-    },
-    "291": {
-      "slug": "anna-czech"
-    },
-    "292": {
-      "slug": "leszek-dobrzynski"
-    },
-    "293": {
-      "slug": "marcin-duszek"
-    },
-    "294": {
-      "slug": "mariusz-blaszczak"
-    },
-    "295": {
-      "slug": "elzbieta-gelert"
-    },
-    "296": {
-      "slug": "artur-gierada"
-    },
-    "297": {
-      "slug": "robert-kolakowski"
-    },
-    "298": {
-      "slug": "lech-kolakowski"
-    },
-    "299": {
-      "slug": "ewa-lieder"
-    },
-    "300": {
-      "slug": "jan-lopata"
-    },
-    "301": {
-      "slug": "andrzej-maciejewski"
-    },
-    "302": {
-      "slug": "krzysztof-maciejewski"
-    },
-    "303": {
-      "slug": "gabriela-maslowska"
-    },
-    "304": {
-      "slug": "miroslaw-maliszewski"
-    },
-    "305": {
-      "slug": "kazimierz-matuszny"
-    },
-    "306": {
-      "slug": "beata-mazurek"
-    },
-    "307": {
-      "slug": "arkadiusz-marchewka"
-    },
-    "308": {
-      "slug": "robert-mordak"
-    },
-    "309": {
-      "slug": "jacek-protas"
-    },
-    "310": {
-      "slug": "marek-polak"
-    },
-    "311": {
-      "slug": "piotr-misilo"
-    },
-    "312": {
-      "slug": "jerzy-polaczek"
-    },
-    "313": {
-      "slug": "wojciech-murdzek"
-    },
-    "314": {
-      "slug": "jaroslaw-szlachetka"
-    },
-    "315": {
-      "slug": "jacek-tomczak"
-    },
-    "316": {
-      "slug": "krzysztof-truskolaski"
-    },
-    "317": {
-      "slug": "piotr-uruski"
-    },
-    "318": {
-      "slug": "jacek-wilk"
-    },
-    "319": {
-      "slug": "marek-wojcik"
-    },
-    "320": {
-      "slug": "slawomir-zawislak"
-    },
-    "321": {
-      "slug": "artur-zasada"
-    },
-    "322": {
-      "slug": "elzbieta-zielinska"
-    },
-    "323": {
-      "slug": "dorota-arciszewska-mielewczyk"
-    },
-    "324": {
-      "slug": "joanna-augustynowska"
-    },
-    "325": {
-      "slug": "wojciech-buczak"
-    },
-    "326": {
-      "slug": "joanna-fabisiak"
-    },
-    "327": {
-      "slug": "adam-abramowicz"
-    },
-    "328": {
-      "slug": "kamila-gasiuk-pihowicz"
-    },
-    "329": {
-      "slug": "kazimierz-golojuch"
-    },
-    "330": {
-      "slug": "jan-grabiec"
-    },
-    "331": {
-      "slug": "marcin-kierwinski"
-    },
-    "332": {
-      "slug": "tomasz-kucharski"
-    },
-    "333": {
-      "slug": "ewa-kozanecka"
-    },
-    "334": {
-      "slug": "antoni-macierewicz"
-    },
-    "335": {
-      "slug": "katarzyna-osos"
-    },
-    "336": {
-      "slug": "norbert-obrycki"
-    },
-    "337": {
-      "slug": "halina-rozpondek"
-    },
-    "338": {
-      "slug": "joanna-scheuring-wielgus"
-    },
-    "339": {
-      "slug": "artur-szalabawka"
-    },
-    "340": {
-      "slug": "stefan-strzalkowski"
-    },
-    "341": {
-      "slug": "pawel-szramka"
-    },
-    "342": {
-      "slug": "krzysztof-tchorzewski"
-    },
-    "343": {
-      "slug": "andrzej-jaworski"
-    },
-    "344": {
-      "slug": "slawomir-klosowski"
-    },
-    "345": {
-      "slug": "krzysztof-lapinski"
-    },
-    "346": {
-      "slug": "robert-winnicki"
-    },
-    "347": {
-      "slug": "bartlomiej-wroblewski"
-    },
-    "348": {
-      "slug": "waldemar-andzel"
-    },
-    "349": {
-      "slug": "robert-tyszkiewicz"
-    },
-    "350": {
-      "slug": "witold-waszczykowski"
-    },
-    "351": {
-      "slug": "mieczyslaw-kazimierz-baszko"
-    },
-    "352": {
-      "slug": "anna-bialkowska"
-    },
-    "353": {
-      "slug": "wojciech-bakun"
-    },
-    "354": {
-      "slug": "elzbieta-gapinska"
-    },
-    "355": {
-      "slug": "alicja-chybicka"
-    },
-    "356": {
-      "slug": "arkadiusz-czartoryski"
-    },
-    "357": {
-      "slug": "jan-dziedziczak"
-    },
-    "358": {
-      "slug": "piotr-glinski"
-    },
-    "359": {
-      "slug": "wlodzimierz-karpinski"
-    },
-    "360": {
-      "slug": "michal-kaminski"
-    },
-    "361": {
-      "slug": "joanna-kluzik-rostkowska"
-    },
-    "362": {
-      "slug": "piotr-krol"
-    },
-    "363": {
-      "slug": "robert-kropiwnicki"
-    },
-    "364": {
-      "slug": "tomasz-lenz"
-    },
-    "365": {
-      "slug": "izabela-katarzyna-mrzyglocka"
-    },
-    "366": {
-      "slug": "anna-maria-siarkowska"
-    },
-    "367": {
-      "slug": "adam-szlapka"
-    },
-    "368": {
-      "slug": "krystyna-sibinska"
-    },
-    "369": {
-      "slug": "jacek-protasiewicz"
-    },
-    "370": {
-      "slug": "wojciech-szarama"
-    },
-    "371": {
-      "slug": "ryszard-terlecki"
-    },
-    "372": {
-      "slug": "adam-andruszkiewicz"
-    },
-    "373": {
-      "slug": "zbigniew-ziobro"
-    },
-    "374": {
-      "slug": "wojciech-jasinski"
-    },
-    "375": {
-      "slug": "piotr-uscinski"
-    },
-    "376": {
-      "slug": "malgorzata-wypych"
-    },
-    "377": {
-      "slug": "lukasz-zbonikowski"
-    },
-    "378": {
-      "slug": "kazimierz-gwiazdowski"
-    },
-    "379": {
-      "slug": "michal-dworczyk"
-    },
-    "380": {
-      "slug": "anna-cicholska"
-    },
-    "381": {
-      "slug": "katarzyna-czochara"
-    },
-    "382": {
-      "slug": "pawel-kobylinski"
-    },
-    "383": {
-      "slug": "roman-jacek-kosecki"
-    },
-    "384": {
-      "slug": "anna-kwiecien"
-    },
-    "385": {
-      "slug": "bartosz-kownacki"
-    },
-    "386": {
-      "slug": "jaroslaw-krajewski"
-    },
-    "387": {
-      "slug": "jacek-osuch"
-    },
-    "388": {
-      "slug": "malgorzata-pepek"
-    },
-    "389": {
-      "slug": "grzegorz-piechowiak"
-    },
-    "390": {
-      "slug": "marek-rzasa"
-    },
-    "391": {
-      "slug": "iwona-michalek"
-    },
-    "392": {
-      "slug": "czeslaw-mroczek"
-    },
-    "393": {
-      "slug": "marek-zagorski"
-    },
-    "394": {
-      "slug": "ewa-filipiak"
-    },
-    "395": {
-      "slug": "jaroslaw-stawiarski"
-    },
-    "396": {
-      "slug": "rafal-trzaskowski"
-    },
-    "397": {
-      "slug": "kornelia-wroblewska"
-    },
-    "398": {
-      "slug": "rafal-wojcikowski"
-    },
-    "399": {
-      "slug": "andrzej-adamczyk"
-    },
-    "400": {
-      "slug": "wlodzimierz-bernacki"
-    },
-    "401": {
-      "slug": "tadeusz-dziuba"
-    },
-    "402": {
-      "slug": "jerzy-borowczak"
-    },
-    "403": {
-      "slug": "joanna-frydrych"
-    },
-    "404": {
-      "slug": "krzysztof-gluchowski"
-    },
-    "405": {
-      "slug": "jaroslaw-gonciarz"
-    },
-    "406": {
-      "slug": "jerzy-jachnik"
-    },
-    "407": {
-      "slug": "michal-jaros"
-    },
-    "408": {
-      "slug": "magdalena-kochan"
-    },
-    "409": {
-      "slug": "jacek-kurzepa"
-    },
-    "410": {
-      "slug": "stanislaw-lamczyk"
-    },
-    "411": {
-      "slug": "wladyslaw-kosiniak-kamysz"
-    },
-    "412": {
-      "slug": "elzbieta-kruk"
-    },
-    "413": {
-      "slug": "jakub-kulesza"
-    },
-    "414": {
-      "slug": "pawel-kukiz"
-    },
-    "415": {
-      "slug": "krzysztof-mieszkowski"
-    },
-    "416": {
-      "slug": "marek-matuszewski"
-    },
-    "417": {
-      "slug": "jerzy-materna"
-    },
-    "418": {
-      "slug": "slawomir-nitras"
-    },
-    "419": {
-      "slug": "dorota-niedziela"
-    },
-    "420": {
-      "slug": "marzena-okla-drewnowicz"
-    },
-    "421": {
-      "slug": "adam-oldakowski"
-    },
-    "422": {
-      "slug": "piotr-olszowka"
-    },
-    "423": {
-      "slug": "jaroslaw-urbaniak"
-    },
-    "424": {
-      "slug": "maciej-wasik"
-    },
-    "425": {
-      "slug": "jaroslaw-sellin"
-    },
-    "426": {
-      "slug": "genowefa-tokarska"
-    },
-    "427": {
-      "slug": "witold-czarnecki"
-    },
-    "428": {
-      "slug": "adam-cyranski"
-    },
-    "429": {
-      "slug": "jozef-brynkus"
-    },
-    "430": {
-      "slug": "grzegorz-furgo"
-    },
-    "431": {
-      "slug": "stanislaw-gawlowski"
-    },
-    "432": {
-      "slug": "jolanta-hibner"
-    },
-    "433": {
-      "slug": "krzysztof-jurgiel"
-    },
-    "434": {
-      "slug": "eugeniusz-klopotek"
-    },
-    "435": {
-      "slug": "tomasz-kostus"
-    },
-    "436": {
-      "slug": "joanna-kopcinska"
-    },
-    "437": {
-      "slug": "andrzej-matusiewicz"
-    },
-    "438": {
-      "slug": "daniel-milewski"
-    },
-    "439": {
-      "slug": "krystyna-pawlowicz"
-    },
-    "440": {
-      "slug": "jerzy-paul"
-    },
-    "441": {
-      "slug": "anna-paluch"
-    },
-    "442": {
-      "slug": "miroslawa-nykiel"
-    },
-    "443": {
-      "slug": "marek-sawicki"
-    },
-    "444": {
-      "slug": "miroslawa-stachowiak-rozecka"
-    },
-    "445": {
-      "slug": "jolanta-szczypinska"
-    },
-    "446": {
-      "slug": "grzegorz-schreiber"
-    },
-    "447": {
-      "slug": "grzegorz-puda"
-    },
-    "448": {
-      "slug": "krzysztof-sitarski"
-    },
-    "449": {
-      "slug": "tadeusz-wozniak"
-    },
-    "450": {
-      "slug": "grzegorz-adam-wozniak"
-    },
-    "451": {
-      "slug": "jerzy-zyzynski"
-    },
-    "452": {
-      "slug": "jacek-falfus"
-    },
-    "453": {
-      "slug": "maria-malgorzata-janyska"
-    },
-    "454": {
-      "slug": "marek-hok"
-    },
-    "455": {
-      "slug": "jaroslaw-kaczynski"
-    },
-    "456": {
-      "slug": "radoslaw-lubczyk"
-    },
-    "457": {
-      "slug": "pawel-papke"
-    },
-    "458": {
-      "slug": "aldona-mlynczak"
-    },
-    "459": {
-      "slug": "killion-munyama"
-    },
-    "460": {
-      "slug": "stanislaw-piotrowicz"
-    },
-    "461": {
-      "slug": "ewa-kopacz"
-    },
-    "462": {
-      "slug": "marek-kwitek"
-    },
-    "463": {
-      "slug": "stefan-romecki"
-    },
-    "464": {
-      "slug": "wojciech-skurkiewicz"
-    },
-    "465": {
-      "slug": "dorota-rutkowska"
-    },
-    "466": {
-      "slug": "czeslaw-sobierajski"
-    },
-    "467": {
-      "slug": "grzegorz-schetyna"
-    },
-    "468": {
-      "slug": "joanna-schmidt"
-    },
-    "469": {
-      "slug": "cezary-tomczyk"
-    },
-    "470": {
-      "slug": "ewa-tomaszewska"
-    },
-    "471": {
-      "slug": "michal-wojcik"
-    },
-    "472": {
-      "slug": "ryszard-wilczynski"
-    },
-    "473": {
-      "slug": "marek-suski"
-    },
-    "474": {
-      "slug": "krzysztof-zaremba"
-    },
-    "475": {
-      "slug": "piotr-pszczolkowski"
-    },
-    "476": {
-      "slug": "jozef-kurek"
-    },
-    "477": {
-      "slug": "marian-zembala"
-    },
-    "478": {
-      "slug": "urszula-augustyn"
-    },
-    "479": {
-      "slug": "bartosz-arlukowicz"
-    },
-    "480": {
-      "slug": "iwona-arent"
-    },
-    "481": {
-      "slug": "krzysztof-gadowski"
-    },
-    "482": {
-      "slug": "zbigniew-biernat"
-    },
-    "483": {
-      "slug": "joachim-brudzinski"
-    },
-    "484": {
-      "slug": "teresa-glenc"
-    },
-    "485": {
-      "slug": "malgorzata-gosiewska"
-    },
-    "486": {
-      "slug": "bozena-henczyca"
-    },
-    "487": {
-      "slug": "paulina-hennig-kloska"
-    },
-    "488": {
-      "slug": "marcin-horala"
-    },
-    "489": {
-      "slug": "jozefa-hrynkiewicz"
-    },
-    "490": {
-      "slug": "beata-kempa"
-    },
-    "491": {
-      "slug": "jerzy-malecki"
-    },
-    "492": {
-      "slug": "tomasz-lawniczak"
-    },
-    "493": {
-      "slug": "krzysztof-szulowski"
-    },
-    "494": {
-      "slug": "anita-czerwinska"
-    },
-    "495": {
-      "slug": "grzegorz-dlugi"
-    },
-    "496": {
-      "slug": "krzysztof-brejza"
-    },
-    "497": {
-      "slug": "michal-cieslak"
-    },
-    "498": {
-      "slug": "leszek-galemba"
-    },
-    "499": {
-      "slug": "jan-duda"
-    },
-    "500": {
-      "slug": "marek-biernacki"
-    },
-    "501": {
-      "slug": "barbara-dolniak"
-    },
-    "502": {
-      "slug": "piotr-liroy-marzec"
-    },
-    "503": {
-      "slug": "waldemar-olejniczak"
-    },
-    "504": {
-      "slug": "lukasz-rzepecki"
-    },
-    "505": {
-      "slug": "urszula-rusecka"
-    },
-    "506": {
-      "slug": "jaroslaw-sachajko"
-    },
-    "507": {
-      "slug": "jacek-sasin"
-    },
-    "508": {
-      "slug": "kazimierz-smolinski"
-    },
-    "509": {
-      "slug": "krystyna-szumilas"
-    },
-    "510": {
-      "slug": "sylwester-tulajew"
-    },
-    "511": {
-      "slug": "robert-telus"
-    },
-    "512": {
-      "slug": "piotr-zgorzelski"
-    },
-    "513": {
-      "slug": "zbigniew-gryglas"
-    },
-    "514": {
-      "slug": "malgorzata-golinska"
-    },
-    "515": {
-      "slug": "norbert-kaczmarczyk"
-    },
-    "516": {
-      "slug": "jan-klawiter"
-    },
-    "642": {
-      "slug": "andrzej-piotrowski"
-    },
-    "742": {
-      "slug": "jerzy-kwiecinski"
+    "3986": {
+      "slug": "balazic-dejan"
     }
   },
-  "base": "https://parlametr.pl",
+  "base": "http://parlameter.si",
   "partyLink": {
     "govori": "/govori/",
     "base": "/poslanska-skupina/",
@@ -1438,68 +319,753 @@
   },
   "urls": {
     "glej": "http://localhost:3000",
-    "notifications_api": "https://obvestila.parlametr.pl",
-    "isci": "https://isci.parlametr.pl",
-    "analize": "https://analize.parlametr.pl/v1",
+    "notifications_api": "https://obvestila.parlameter.si",
+    "isci": "https://isci.parlameter.si",
+    "analize": "https://analize.parlameter.si/v1",
     "base": "http://localhost:3066",
-    "data": "https://data.parlametr.pl/v1",
+    "data": "https://data.parlameter.si/v1",
     "cdn": "http://localhost:8080"
   },
   "party": {
     "1": {
-      "acronym": "sejm",
-      "realAcronym": "Sejm",
-      "slug": "sejm"
+      "acronym": "smc",
+      "realAcronym": "SMC",
+      "slug": "ps-stranka-modernega-centra"
     },
     "2": {
-      "acronym": "pis",
-      "realAcronym": "PiS",
-      "slug": "prawo-i-sprawiedliwosc"
+      "acronym": "imns",
+      "realAcronym": "IMNS",
+      "slug": "ps-italijanske-in-madzarske-narodne-skupnosti"
     },
     "3": {
-      "acronym": "po",
-      "realAcronym": "PO",
-      "slug": "platforma-obywatelska"
+      "acronym": "desus",
+      "realAcronym": "DeSUS",
+      "slug": "ps-demokratska-stranka-upokojencev-slovenije"
     },
     "4": {
-      "acronym": "unaligend",
-      "realAcronym": "Unaligend",
-      "slug": "unaligend"
+      "acronym": "zaab",
+      "realAcronym": "ZAAB",
+      "slug": "ps-zaveznistvo-alenke-bratusek"
     },
     "5": {
-      "acronym": "psl-ued",
-      "realAcronym": "PSL-UED",
-      "slug": "polskie-stronnictwo-ludowe-unia-europejskich-demokratow"
+      "acronym": "sds",
+      "realAcronym": "SDS",
+      "slug": "ps-slovenska-demokratska-stranka"
     },
     "6": {
-      "acronym": "kukiz15",
-      "realAcronym": "Kukiz15",
-      "slug": "kukiz-15"
+      "acronym": "nsi",
+      "realAcronym": "NSI",
+      "slug": "ps-nova-slovenija"
     },
     "7": {
-      "acronym": "n",
-      "realAcronym": "N",
-      "slug": "nowoczesna"
+      "acronym": "sd",
+      "realAcronym": "SD",
+      "slug": "ps-socialni-demokrati"
     },
     "8": {
-      "acronym": "wis",
-      "realAcronym": "WiS",
-      "slug": "wolni-i-solidarni"
+      "acronym": "levica",
+      "realAcronym": "Levica",
+      "slug": "ps-levica"
     },
     "9": {
-      "acronym": "l-s",
-      "realAcronym": "L-S",
-      "slug": "liberalno-spoleczni"
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "kolegij-predsednika-drzavnega-zbora"
     },
     "10": {
-      "acronym": "coal",
-      "realAcronym": "Coal",
-      "slug": "koalicija"
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "komisija-za-nadzor-javnih-financ"
     },
     "11": {
-      "acronym": "oppo",
-      "realAcronym": "Oppo",
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "komisija-za-narodni-skupnosti"
+    },
+    "12": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "komisija-za-odnose-s-slovenci-v-zamejstvu-in-po-svetu"
+    },
+    "13": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "komisija-za-peticije-ter-za-clovekove-pravice-in-enake-moznosti"
+    },
+    "14": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "komisija-za-poslovnik"
+    },
+    "15": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "mandatno-volilna-komisija"
+    },
+    "16": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-delo-druzino-socialne-zadeve-in-invalide"
+    },
+    "17": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-finance-in-monetarno-politiko"
+    },
+    "18": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-gospodarstvo"
+    },
+    "19": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-infrastrukturo-okolje-in-prostor"
+    },
+    "20": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-izobrazevanje-znanost-sport-in-mladino"
+    },
+    "21": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-kmetijstvo-gozdarstvo-in-prehrano"
+    },
+    "22": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-kulturo"
+    },
+    "23": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo"
+    },
+    "24": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-obrambo"
+    },
+    "25": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-pravosodje"
+    },
+    "26": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-zadeve-evropske-unije"
+    },
+    "27": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-zdravstvo"
+    },
+    "28": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "odbor-za-zunanjo-politiko"
+    },
+    "29": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "ustavna-komisija"
+    },
+    "30": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "delegacija-drzavnega-zbora-v-parlamentarni-skupscini-sveta-evrope"
+    },
+    "31": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "delegacija-drzavnega-zbora-v-parlamentarni-skupscini-nato"
+    },
+    "32": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "delegacija-drzavnega-zbora-v-parlamentarni-skupscini-organizacije-za-varnost-in-sodelovanje-v-evropi"
+    },
+    "33": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "delegacija-drzavnega-zbora-v-parlamentarni-dimenziji-srednjeevropske-pobude"
+    },
+    "34": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "delegacija-drzavnega-zbora-v-parlamentarni-skupscini-unije-za-sredozemlje"
+    },
+    "35": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "nacionalna-skupina-interparlamentarne-unije-v-drzavnem-zboru"
+    },
+    "36": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "delegacija-drzavnega-zbora-v-parlamentarni-skupscini-seecp"
+    },
+    "37": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-argentino"
+    },
+    "38": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-albanijo"
+    },
+    "39": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-avstralijo"
+    },
+    "40": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-avstrijo"
+    },
+    "41": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-azerbajdzanom"
+    },
+    "42": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-belgijo"
+    },
+    "43": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-bolgarijo"
+    },
+    "44": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-bosno-in-hercegovino"
+    },
+    "45": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-brazilijo"
+    },
+    "46": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-cesko"
+    },
+    "47": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-crno-goro"
+    },
+    "48": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-dansko"
+    },
+    "49": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-estonijo"
+    },
+    "50": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-finsko"
+    },
+    "51": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-francijo"
+    },
+    "52": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-grcijo"
+    },
+    "53": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-hrvasko"
+    },
+    "54": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-indijo"
+    },
+    "55": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-italijo"
+    },
+    "56": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-irsko"
+    },
+    "57": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-izraelom"
+    },
+    "58": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-japonsko"
+    },
+    "59": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-kanado"
+    },
+    "60": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-kitajsko"
+    },
+    "61": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-kubo"
+    },
+    "62": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-litvo"
+    },
+    "63": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-madzarsko"
+    },
+    "64": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-makedonijo"
+    },
+    "65": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-malto"
+    },
+    "66": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-mehiko"
+    },
+    "67": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-nemcijo"
+    },
+    "68": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-nizozemsko"
+    },
+    "69": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-norvesko"
+    },
+    "70": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-romunijo"
+    },
+    "71": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-rusijo"
+    },
+    "72": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-slovasko"
+    },
+    "73": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-srbijo"
+    },
+    "74": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-spanijo"
+    },
+    "75": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-svedsko"
+    },
+    "76": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-svico"
+    },
+    "77": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-turcijo"
+    },
+    "78": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-ukrajino"
+    },
+    "79": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-veliko-britanijo"
+    },
+    "80": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-zdruzenimi-drzavami-amerike"
+    },
+    "81": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-iranom"
+    },
+    "82": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-ciprom"
+    },
+    "83": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-poljsko"
+    },
+    "84": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-marokom"
+    },
+    "85": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-islandijo"
+    },
+    "86": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-liechtensteinom"
+    },
+    "87": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-portugalsko"
+    },
+    "88": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-luksemburgom"
+    },
+    "89": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-egiptom"
+    },
+    "90": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-kosovom"
+    },
+    "91": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-latvijo"
+    },
+    "92": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-gruzijo"
+    },
+    "93": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-juzno-korejo"
+    },
+    "94": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-kuvajtom"
+    },
+    "95": {
+      "acronym": "dz",
+      "realAcronym": "DZ",
+      "slug": "drzavni-zbor"
+    },
+    "96": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "ostali"
+    },
+    "97": {
+      "acronym": "ps-np",
+      "realAcronym": "PS NP",
+      "slug": "ps-nepovezanih-poslancev"
+    },
+    "98": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "preiskovalna-komisija-o-ugotavljanju-zlorab-v-slovenskem-bancnem-sistemu-ter-ugotavljanju-vzrokov-in-odgovornosti-za-ze-drugo-sanacijo-bancnega-sistema-v-samostojni-sloveniji"
+    },
+    "100": {
+      "acronym": "nep-bd",
+      "realAcronym": "NeP - BD",
+      "slug": "nepovezani-poslanec-bojan-dobovsek"
+    },
+    "101": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "preiskovalna-komisija-za-ugotavljanje-politicne-odgovornosti-nosilcev-javnih-funkcij-pri-investiciji-v-blok-6-termoelektrarne-sostanj"
+    },
+    "102": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-savdsko-arabijo"
+    },
+    "103": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-turkmenistanom"
+    },
+    "104": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-venezuelo"
+    },
+    "105": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb"
+    },
+    "106": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "preiskovalna-komisija-o-ugotavljanju-zlorab-v-slovenskem-zdravstvenem-sistemu-na-podrocju-prodaje-in-nakupa-zilnih-opornic"
+    },
+    "107": {
+      "acronym": "nep-mbk",
+      "realAcronym": "NeP - MBK",
+      "slug": "nepovezana-poslanka-mirjam-bon-klanjscek"
+    },
+    "108": {
+      "acronym": "nep-ac",
+      "realAcronym": "NeP - AČ",
+      "slug": "nepovezani-poslanec-andrej-cus"
+    },
+    "109": {
+      "acronym": "ps-np",
+      "realAcronym": "PS NP",
+      "slug": "ps-nepovezanih-poslancev"
+    },
+    "110": {
+      "acronym": "nep-ab",
+      "realAcronym": "NeP - AB",
+      "slug": "nepovezana-poslanka-alenka-bratusek"
+    },
+    "111": {
+      "acronym": "nep-zl",
+      "realAcronym": "NeP - ZL",
+      "slug": "nepovezani-poslanec-zvonko-lah"
+    },
+    "112": {
+      "acronym": "nep-jm",
+      "realAcronym": "NeP - JM",
+      "slug": "nepovezani-poslanec-jani-moderndorfer"
+    },
+    "113": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-alzirijo"
+    },
+    "114": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-moldavijo"
+    },
+    "115": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-armenijo"
+    },
+    "116": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-belorusijo"
+    },
+    "117": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-cilom"
+    },
+    "118": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-kazahstanom"
+    },
+    "119": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-novo-zelandijo"
+    },
+    "120": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-palestino"
+    },
+    "121": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-senegalom"
+    },
+    "122": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-s-tunizijo"
+    },
+    "123": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "skupina-prijateljstva-z-zdruzenimi-arabskimi-emirati"
+    },
+    "124": {
+      "acronym": "desus",
+      "realAcronym": "DeSUS",
+      "slug": "demokratska-stranka-upokojencev-slovenije"
+    },
+    "125": {
+      "acronym": "smc",
+      "realAcronym": "SMC",
+      "slug": "stranka-modernega-centra"
+    },
+    "126": {
+      "acronym": "vlada",
+      "realAcronym": "Vlada",
+      "slug": "vlada"
+    },
+    "127": {
+      "acronym": "mddsz",
+      "realAcronym": "MDDSZ",
+      "slug": "ministrstvo-za-delo-druzino-socialne-zadeve-in-enake-moznosti"
+    },
+    "128": {
+      "acronym": "mf",
+      "realAcronym": "MF",
+      "slug": "ministrstvo-za-finance"
+    },
+    "129": {
+      "acronym": "mgrt",
+      "realAcronym": "MGRT",
+      "slug": "ministrstvo-za-gospodarski-razvoj-in-tehnologijo"
+    },
+    "130": {
+      "acronym": "mzip",
+      "realAcronym": "MZIP",
+      "slug": "ministrstvo-za-infrastrukturo"
+    },
+    "131": {
+      "acronym": "mizs",
+      "realAcronym": "MIZS",
+      "slug": "ministrstvo-za-izobrazevanje-znanost-in-sport"
+    },
+    "132": {
+      "acronym": "mju",
+      "realAcronym": "MJU",
+      "slug": "ministrstvo-za-javno-upravo"
+    },
+    "133": {
+      "acronym": "mk",
+      "realAcronym": "MK",
+      "slug": "ministrstvo-za-kulturo"
+    },
+    "134": {
+      "acronym": "mkgp",
+      "realAcronym": "MKGP",
+      "slug": "ministrstvo-za-kmetijstvo-gozdarstvo-in-prehrano"
+    },
+    "135": {
+      "acronym": "mnz",
+      "realAcronym": "MNZ",
+      "slug": "ministrstvo-za-notranje-zadeve"
+    },
+    "136": {
+      "acronym": "mo",
+      "realAcronym": "MO",
+      "slug": "ministrstvo-za-obrambo"
+    },
+    "137": {
+      "acronym": "mop",
+      "realAcronym": "MOP",
+      "slug": "ministrstvo-za-okolje-in-prostor"
+    },
+    "138": {
+      "acronym": "mp",
+      "realAcronym": "MP",
+      "slug": "ministrstvo-za-pravosodje"
+    },
+    "139": {
+      "acronym": "mz",
+      "realAcronym": "MZ",
+      "slug": "ministrstvo-za-zdravje"
+    },
+    "140": {
+      "acronym": "mzz",
+      "realAcronym": "MZZ",
+      "slug": "ministrstvo-za-zunanje-zadeve"
+    },
+    "141": {
+      "acronym": "svrk",
+      "realAcronym": "SVRK",
+      "slug": "sluzba-vlade-za-razvoj-in-evropsko-kohezijsko-politiko"
+    },
+    "142": {
+      "acronym": "uszs",
+      "realAcronym": "USZS",
+      "slug": "urad-vlade-za-slovence-v-zamejstvu-in-po-svetu"
+    },
+    "143": {
+      "acronym": "opoz",
+      "realAcronym": "opoz",
       "slug": "opozicija"
+    },
+    "144": {
+      "acronym": "koal",
+      "realAcronym": "koal",
+      "slug": "koalicija"
+    },
+    "145": {
+      "acronym": "nep-mh",
+      "realAcronym": "NeP - MH",
+      "slug": "nepovezani-poslanec-matjaz-hanzek"
+    },
+    "146": {
+      "acronym": "",
+      "realAcronym": "",
+      "slug": "preiskovalna-komisija-o-ugotavljanju-domnevnega-pranja-denarja-in-financiranja-terorizma-jedrske-proliferacije-ter-financiranja-aktivnosti-tujih-obvescevalno-varnostnih-sluzb-v-tujini-v-novi-ljubljanski-banki-d-d"
+    },
+    "147": {
+      "acronym": "nep-jv",
+      "realAcronym": "NeP - JV",
+      "slug": "nepovezani-poslanec-janko-veber"
+    },
+    "148": {
+      "acronym": "nep-zl",
+      "realAcronym": "NeP - ZL",
+      "slug": "nepovezani-poslanec-zvonko-lah"
+    },
+    "149": {
+      "acronym": "nep-bk",
+      "realAcronym": "NeP - BK",
+      "slug": "nepovezani-poslanec-bojan-krajnc"
     }
   },
   "personLink": {

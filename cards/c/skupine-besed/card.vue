@@ -254,7 +254,22 @@ export default {
               // eslint-disable-next-line max-len
               value: Number((party.score / (this.data.orgs[party.party.id] / this.data.all_speeches)).toFixed(4) || 0),
               link: this.getPartyLinkSafe(party.party),
-            }));
+            }))
+            .reduce((prev, cur) => {
+              const out = prev;
+              let push = true;
+              if (cur.label === 'PS NP') {
+                prev.forEach((thing) => {
+                  if (thing.label === 'PS NP') {
+                    push = false;
+                  }
+                });
+              }
+              if (push) {
+                out.push(cur);
+              }
+              return out;
+            }, []);
 
           const people = response.data.facet_counts.facet_fields.speaker_i
             .filter(scoreHigherThanZero)

@@ -33,13 +33,13 @@
       />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab v-if="data.abstract" label="Povzetek" variant="dark">
+      <p-tab v-if="data.abstract /* SL override */ || true" label="Povzetek" variant="dark">
         <excerpt
           :content="content"
           :main-law="excerptData"
           :documents="documents"
           :show-parent="false"
-          :icon="data.icon"
+          :icon="data.abstract ? data.icon : ''"
         />
       </p-tab>
       <p-tab label="Glasovanja">
