@@ -55,7 +55,7 @@ export default {
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;
-      person.score = `${o.ratio.toFixed(2).replace('.', ',')}`;
+      person.score = `${(o.ratio || 0).toFixed(2).replace('.', ',')}`;
       return person;
     });
     return {
