@@ -6,14 +6,7 @@ const camelCase = require('lodash/camelCase');
 const upperFirst = require('lodash/upperFirst');
 const chalk = require('chalk');
 
-const URL_REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/;
 const CARD_FILES = ['card.json', 'card.vue', 'data.json', 'state.json'];
-const CARD_TYPES = {
-  p: 'poslanec',
-  ps: 'poslanska_skupina',
-  s: 'seja',
-  c: 'empty',
-};
 
 inquirer.prompt([
   {
@@ -45,25 +38,8 @@ inquirer.prompt([
   },
   {
     type: 'input',
-    name: 'type',
-    message: 'Enter the card type:',
-    suffix: ' (used to determine OG image)',
-    validate: value => (value.length > 0 ? true : 'Card type is mandatory.'),
-    default: answers => CARD_TYPES[answers.group],
-  },
-  {
-    type: 'input',
     name: 'dataUrl',
     message: 'Enter the data URL:',
-    validate(value) {
-      if (value.length === 0) {
-        return 'Data URL is mandatory.';
-      }
-      if (!value.match(URL_REGEX)) {
-        return 'Data URL must be a valid URL address.';
-      }
-      return true;
-    },
     default: '{analize}/',
   },
   {
@@ -83,7 +59,7 @@ inquirer.prompt([
 ]).then((answers) => {
   const newCardFolder = `cards/${answers.group}/${answers.method}/`;
   const finalData = {
-    _id: `${answers.group}-${answers.method}`,
+    _id: `${answers.group}_${answers.method}`,
     lastUpdate: new Date().toJSON(),
     componentName: upperFirst(camelCase(answers.name)),
     ...answers,
