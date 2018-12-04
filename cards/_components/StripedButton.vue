@@ -96,10 +96,30 @@ export default {
 
   &.has-stripe-on-top {
     border-top-width: 9px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -9px;
+      left: -1px;
+      right: -1px;
+      height: 9px;
+    }
   }
 
   &.has-stripe-on-bottom {
     border-bottom-width: 9px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -9px;
+      left: -1px;
+      right: -1px;
+      height: 9px;
+    }
   }
 
   &.is-selected,
@@ -135,37 +155,35 @@ export default {
     }
   }
 
-  @each $vote, $color in $proper-vote-colors {
-    &.#{$vote} {
-      &.has-stripe-on-top { border-top-color: $color; }
-      &.has-stripe-on-bottom { border-bottom-color: $color; }
-      &.is-selected { background: $color; }
-      &.is-hovered:not(.is-disabled) { background: map-get($proper-vote-colors-hover, $vote); }
-    }
-  }
-
-  @each $party, $color in $party-colors {
-    &.#{$party} {
-      &.has-stripe-on-top { border-top-color: $color; }
-      &.has-stripe-on-bottom { border-bottom-color: $color; }
-      &.is-selected { background: $color; }
-      &.is-hovered:not(.is-disabled) { background: map-get($party-colors-hover, $party); }
-    }
-  }
-
   $special-groups: (
     dz: $third,
     koal: $link,
     opoz: $font-placeholder
   );
 
+  $allmaps: map-merge(
+    $proper-vote-colors,
+    map-merge($party-colors, map-merge($special-groups, $binary-vote-colors))
+  );
 
-  @each $name, $color in map-merge($special-groups, $binary-vote-colors) {
+  @each $name, $color in $allmaps {
     &.#{$name} {
-      &.has-stripe-on-top { border-top-color: $color; }
-      &.has-stripe-on-bottom { border-bottom-color: $color; }
-      &.is-selected { background: $color; }
-      &.is-hovered:not(.is-disabled) { background: lighten($color, 10%); }
+      &.has-stripe-on-top::after,
+      &.has-stripe-on-bottom::after {
+        background-color: $color;
+      }
+
+      &.is-selected {
+        background-color: $color;
+      }
+
+      &.is-hovered:not(.is-disabled) {
+        background-color: lighten($color, 10%);
+
+        &::after {
+          background-color: lighten($color, 10%);
+        }
+      }
     }
   }
 }

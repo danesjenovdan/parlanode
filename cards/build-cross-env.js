@@ -82,8 +82,8 @@ if (cmd === 'dev') {
   const cpArgs = ['--config', 'cards/webpack.config.dev.js', '--progress', '--open', '--inline', '--hot'];
   const cp = spawn('webpack-dev-server', cpArgs, { stdio: 'inherit', env: cpEnv });
 
-  const scssArgs = ['run', '--cwd=parlassets', 'dev'];
-  const scssCp = spawn('yarn', scssArgs, { stdio: 'inherit' });
+  const scssArgs = ['run', '--prefix', 'parlassets', 'dev'];
+  const scssCp = spawn('npm', scssArgs, { stdio: 'inherit' });
 
   cp.on('error', (error) => {
     // eslint-disable-next-line no-console

@@ -18,7 +18,7 @@ This readme concerns the development of the parlanode "backend", meaning the par
 #### Serving
 
 ```
-$ yarn run dev
+$ npm run dev
 ```
 
 ## Configuration

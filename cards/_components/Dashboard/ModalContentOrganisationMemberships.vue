@@ -14,7 +14,7 @@
         <div v-if="members.length === 0" class="nalagalnik"></div>
         <ul class="person-list">
           <li
-            v-for="person in currentOnly ? currentMembers: members"
+            v-for="person in currentOnly ? currentMembers : members"
             :key="person.id"
             class="person"
           >
@@ -26,27 +26,36 @@
                 {{ person.name }}
               </a>
               <br>
-              <dash-button @click="editPerson(person.id)">Edit</dash-button>
-            </div>
-            <div v-if="person.score" class="column large-number">
-              {{ person.score }}
+              <dash-button @click="editPerson(person.id)">
+                <small>{{ $t('edit-membership') }}</small>
+              </dash-button>
             </div>
           </li>
         </ul>
       </div>
       <div class="col-md-12">
-        <dash-button>{{ $t('add-member') }}</dash-button>
+        <dash-button @click="addMember">
+          {{ $t('add-member') }}
+        </dash-button>
       </div>
     </div>
-    <div v-else class="row">
+    <div v-else-if="adding" class="row">
       <div class="col-md-12">
         <p-search-dropdown
           :value="dropdownItems"
           :placeholder="peoplePlaceholder"
+          single
           @select="selectCallback"
           @clear="clearCallback"
-          single
         />
+      </div>
+    </div>
+    <div v-else class="row">
+      <div class="col-md-12">
+        <p class="lead member-title">
+          <img :src="getPersonPortrait(selectedPerson)" class="img-circle">
+          {{ selectedPerson.name }}
+        </p>
       </div>
       <div
         v-if="selectedPersonId"
@@ -58,10 +67,10 @@
           class="row"
         >
           <div class="col-md-6">
-            Start date
+            <label>Start date</label>
           </div>
           <div class="col-md-6">
-            Start time
+            <label>Start time</label>
           </div>
           <div class="col-md-6">
             <input v-model="membership.start_date" class="form-control" type="date">
@@ -87,24 +96,29 @@
             <label>Role</label>
           </div>
           <div class="col-md-6">
-            <p-search-dropdown
-              v-model="membership.roles"
-              single
-              @select="roleSelectCallback(membership.id, $event)"
-            ></p-search-dropdown>
+            <label>On behalf of</label>
           </div>
           <div class="col-md-6">
-            <label>On behalf of</label>
+            <p-search-dropdown
+              :value="membership.roles"
+              single
+              @select="roleSelectCallback(membership.id, $event)"
+              @clear="roleClearCallback(membership.id)"
+            />
           </div>
           <div class="col-md-6">
             <p-search-dropdown
               :value="membership.organisations"
               single
               @select="onBehalfOfSelectCallback(membership.id, $event)"
-            ></p-search-dropdown>
+              @clear="onBehalfOfClearCallback(membership.id)"
+            />
           </div>
           <div class="col-md-12">
-            <dash-button @click="saveMembership(membership.id)">SAVE MEMBERSHIP</dash-button>
+            <br>
+            <dash-button @click="saveMembership(membership.id)">
+              {{ $t('save-membership') }}
+            </dash-button>
           </div>
         </div>
       </div>
@@ -113,13 +127,14 @@
 </template>
 
 <script>
+/* eslint-disable no-underscore-dangle */
 import { sortBy } from 'lodash';
 import DashButton from 'components/Dashboard/Button.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import parlapi from 'mixins/parlapi';
 import links from 'mixins/links';
 
-// TODO
+//TODO
 // There is a weird bug. If you select someone after you cleared the dropdown
 // it says dropdownItems.find doesn't exist.
 
@@ -147,6 +162,7 @@ export default {
     return {
       currentOnly: true,
       listing: true,
+      adding: false,
       people: [],
       dropdownItems: [],
       selectedPersonId: null,
@@ -157,19 +173,23 @@ export default {
           label: 'voter',
           id: 'voter',
           selected: false,
-        }, {
+        },
+        {
           label: 'member',
           id: 'member',
           selected: false,
-        }, {
+        },
+        {
           label: 'president',
           id: 'president',
           selected: false,
-        }, {
+        },
+        {
           label: 'deputy',
           id: 'deputy',
           selected: false,
-        }],
+        },
+      ],
     };
   },
 
@@ -190,6 +210,7 @@ export default {
     },
 
     personalMemberships() {
+      console.log('personal memeberships')
       if (this.loadedData.data.filter(m => m.person === this.selectedPersonId).length > 0) {
         return this.loadedData.data.filter(m => m.person === this.selectedPersonId).map((m) => {
           return {
@@ -197,20 +218,16 @@ export default {
             start_time: m.start_time.split('T')[1],
             end_date: !m.end_time ? '' : m.end_time.split('T')[0],
             end_time: !m.end_time ? '' : m.end_time.split('T')[1],
-            roles: this.roles.map((role) => {
-              return {
-                id: role.id,
-                label: role.label,
-                selected: role.id === m.role,
-              };
-            }),
-            organisations: this.organisations.map((org) => {
-              return {
-                id: org.id,
-                label: org.label,
-                selected: org.id === m.on_behalf_of,
-              };
-            }),
+            roles: this.roles.map(role => ({
+              id: role.id,
+              label: role.label,
+              selected: role.id === m.role,
+            })),
+            organisations: this.organisations.map(org => ({
+              id: org.id,
+              label: org.label,
+              selected: org.id === m.on_behalf_of,
+            })),
             on_behalf_of: m.on_behalf_of,
             role: m.role,
             id: m.id,
@@ -219,11 +236,28 @@ export default {
       }
 
       return [{
-        start_date: '',
-        start_time: '',
-        end_date: '',
-        end_time: '',
+        start_date: null,
+        start_time: null,
+        end_date: null,
+        end_time: null,
+        roles: this.roles.map(role => ({
+          id: role.id,
+          label: role.label,
+          selected: false,
+        })),
+        organisations: this.organisations.map(org => ({
+          id: org.id,
+          label: org.label,
+          selected: false,
+        })),
+        on_behalf_of: null,
+        role: null,
+        id: null,
       }];
+    },
+
+    selectedPerson() {
+      return this.people.find(p => p.id === this.selectedPersonId);
     },
   },
 
@@ -237,28 +271,24 @@ export default {
       this.$parlapi.getPeople().then((allPeople) => {
         this.people = allPeople.data.results;
 
-        this.dropdownItems = this.people.map((p) => {
-          return {
-            id: p.id,
-            label: p.name,
-            selected: false,
-            image: this.getPersonPortrait(p),
-          };
-        });
+        this.dropdownItems = this.people.map(p => ({
+          id: p.id,
+          label: p.name,
+          selected: false,
+          image: this.getPersonPortrait(p),
+        }));
       });
     },
 
     fetchOrgs() {
       this.$parlapi.getAllOrganisations()
         .then((orgs) => {
-          console.log(orgs.data.results[1]);
-          this.organisations = sortBy(orgs.data.results, ['_name']).map((org) => {
-            return {
+          this.organisations = sortBy(orgs.data.results, ['_name'])
+            .map(org => ({
               id: org.id,
               label: org._name,
               selected: false,
-            };
-          });
+            }));
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
@@ -267,46 +297,44 @@ export default {
         });
     },
 
-    fetchPersonalMemberships() {
-      this.$parlapi.getPersonalOrganisationMemberships().then((memberships) => {
-        this.personalMemberships = memberships.data.results || [];
-      });
-    },
-
-    groupBy(array, f) {
-      const groups = {};
-      array.forEach((o) => {
-        const group = JSON.stringify(f(o));
-        groups[group] = groups[group] || [];
-        groups[group].push(o);
-      });
-      return Object.keys(groups).map(group => groups[group]);
+    addMember() {
+      this.listing = false;
+      this.adding = true;
     },
 
     selectCallback(id) {
+      this.adding = false;
       this.dropdownItems.find(p => p.id === id).selected = true;
       this.selectedPersonId = id;
     },
+
     clearCallback() {
-      this.dropdownItems.find(p => p.selected).selected = false;
+      this.dropdownItems.forEach((p) => {
+        if (p.selected) {
+          p.selected = false;
+        }
+      });
       this.selectedPersonId = null;
     },
 
     roleSelectCallback(id, value) {
-      this.personalMemberships.find(m => m.id === id).role = value;
-      const membershipIndex = this.personalMemberships.indexOf(this.personalMemberships.find(m => m.id === id));
-      this.personalMemberships.find(m => m.id === id).roles.forEach((r) => {
-        if (r.id === value) {
-          r.selected = true;
-        }
-        r.selected = false;
-      });
+      const membership = this.loadedData.data.find(m => m.id === id);
+      membership.role = value;
     },
+
+    roleClearCallback(id) {
+      const membership = this.loadedData.data.find(m => m.id === id);
+      membership.role = null;
+    },
+
     onBehalfOfSelectCallback(id, value) {
-      this.personalMemberships.find(m => m.id === id).on_behalf_of = value;
+      const membership = this.loadedData.data.find(m => m.id === id);
+      membership.on_behalf_of = value;
     },
-    onBehalfOfClearCallback(id, value) {
-      this.personalMemberships.find(m => m.id === id).on_behalf_of = null;
+
+    onBehalfOfClearCallback(id) {
+      const membership = this.loadedData.data.find(m => m.id === id);
+      membership.on_behalf_of = null;
     },
 
     editPerson(id) {
@@ -315,7 +343,8 @@ export default {
     },
 
     saveMembership(id) {
-      const membershipToSave = JSON.parse(JSON.stringify(this.personalMemberships.find(m => m.id === id)));
+      const membership = this.personalMemberships.find(m => m.id === id);
+      const membershipToSave = JSON.parse(JSON.stringify(membership));
 
       membershipToSave.start_time = `${membershipToSave.start_date}T${membershipToSave.start_time}`;
       membershipToSave.end_time = `${membershipToSave.end_date}T${membershipToSave.end_time}`;
@@ -325,6 +354,8 @@ export default {
       }
 
       this.$parlapi.patchOrganisationMembership(id, membershipToSave);
+
+      this.listing = true;
     },
   },
 };
@@ -345,5 +376,9 @@ label {
   margin-top: 10px;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.member-title img {
+  margin-right: 15px;
 }
 </style>

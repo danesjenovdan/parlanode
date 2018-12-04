@@ -167,11 +167,11 @@
                       @keyup.enter="firstAction"
                     >
                     <div class="input-group-btn" style="padding-left: 10px;">
-                      <div
+                      <button
                         v-t="'add'"
                         class="action btn btn-default naprej"
                         @click="firstAction"
-                      ></div>
+                      ></button>
                     </div>
                   </div>
 
@@ -238,13 +238,13 @@
                     </li>
                   </ul>
 
-                  <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                  <button class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
                     <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                     {{ $t('back') }}
-                  </div>
-                  <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+                  </button>
+                  <button class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
                     {{ $t('continue') }}
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -299,13 +299,13 @@
                     </li>
                   </ul>
 
-                  <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                  <button class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
                     <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                     {{ $t('back') }}
-                  </div>
-                  <div class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+                  </button>
+                  <button class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
                     {{ $t('continue') }}
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -314,8 +314,7 @@
               <div class="narrow-inner-container">
                 <div class="ainnersmall">
                   <h2 v-t="'steps[3].textfirst'"></h2>
-
-                  <div class="input-group search1">
+                  <div>
                     <input
                       v-model="email"
                       :class="['form-control', 'simplebox email', {errored: errored}]"
@@ -323,13 +322,16 @@
                       name="email"
                       required
                     >
-                    <div class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                    <button
+                      class="action btn btn-default nazaj top50 w50"
+                      @click="currentStep -= 1"
+                    >
                       <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                       {{ $t('back') }}
-                    </div>
-                    <div class="action btn btn-default naprej top50 w50" @click="submitTrigger">
+                    </button>
+                    <button class="action btn btn-default naprej top50 w50" @click="submitTrigger">
                       {{ $t('confirm_trigger') }}
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -779,12 +781,25 @@ export default {
     margin-top: 0px;
     display: inline-block;
 
-    border-color: $font-placeholder;
-    border-left: none;
+    border: none;
     border-radius: 0;
     height: 50px;
     -webkit-transition: border-color 0.15s;
     transition: border-color 0.15s;
+
+    background-color: $tab-passive;
+
+    &:hover {
+        color: $white;
+        background-color: $tab-hover;
+        text-decoration: none;
+    }
+
+    &.active {
+        color: $white;
+        background-color: $tab-active;
+        text-decoration: none;
+    }
   }
 
   .nazaj {

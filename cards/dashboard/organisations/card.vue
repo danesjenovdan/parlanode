@@ -152,7 +152,6 @@ export default {
           : this.$parlapi.getAllOrganisations()
       )
         .then((orgs) => {
-          console.log(orgs.data.results[1]);
           this.orgs = sortBy(orgs.data.results, ['_name']);
         })
         .catch((error) => {
@@ -197,8 +196,6 @@ export default {
         saveData: async (orgInfo) => {
           assign(org, orgInfo.org);
           return this.$parlapi.patchOrganisation(org.id, org);
-          // console.log(data);
-          // return {};
         },
       };
       this.infoModalOpen = true;
@@ -212,21 +209,11 @@ export default {
         title: `${this.$t('edit-memberships')} - ${org._name}`,
         loadData: async () => {
           const data = await this.$parlapi.getOrganisationMemberships(org.id);
-          console.log(data);
           const theData = data.data.results;
           return {
             id: org.id,
             data: theData,
           };
-          // const tfidf = data.data.results.length && data.data.results[0];
-          // return {
-          //   id: tfidf.id,
-          //   data: tfidf.data,
-          // };
-        },
-        saveData: (theData) => {
-          console.log(theData);
-          // this.$parlapi.patchOrganisationTFIDF(tfidf.id, tfidf),
         },
       };
       this.membershipsModalOpen = true;

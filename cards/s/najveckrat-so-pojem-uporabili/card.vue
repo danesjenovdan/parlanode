@@ -67,6 +67,7 @@ export default {
             person.score = `${Math.round(o.score)}`;
             return person;
           })
+          .filter(person => person.score > 0)
           .slice(0, 5);
         this.people = people;
         this.loading = false;

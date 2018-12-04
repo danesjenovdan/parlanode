@@ -88,7 +88,7 @@ inquirer.prompt([
     componentName: upperFirst(camelCase(answers.name)),
     ...answers,
   };
-  const cliCommand = `yarn run cards ${answers.group}/${answers.method}`;
+  const cliCommand = `npm run cards ${answers.group}/${answers.method}`;
 
   fs.mkdirSync(newCardFolder);
 
