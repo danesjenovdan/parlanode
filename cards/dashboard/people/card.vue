@@ -174,6 +174,7 @@ export default {
               education_level: person.education_level,
               districts: person.districts,
               birth_date: person.birth_date,
+              gov_id: person.gov_id,
             },
             socials: {
               facebook: facebook || {

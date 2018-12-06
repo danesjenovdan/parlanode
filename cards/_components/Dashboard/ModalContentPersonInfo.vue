@@ -81,6 +81,16 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>GOV ID</label>
+          </div>
+          <div class="col-md-12 small">
+            <input v-model.trim="loadedData.person.gov_id" class="form-control">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
