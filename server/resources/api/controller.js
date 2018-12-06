@@ -110,10 +110,20 @@ function deleteCardRenders(req, res) {
 }
 
 function deleteCardBuilds(req, res) {
-  clearModel('CardBuild')
+  // dont allow filtering by person/party id since it doesn't exist on builds
+  req.query.id = undefined;
+
+  clearModel('CardBuild', req)
     .then(async (obj) => {
+      let allCards = await getAllCardPaths();
+      if (req && req.query && req.query.group) {
+        allCards = allCards.filter(c => c.group === req.query.group);
+      }
+      if (req && req.query && req.query.method) {
+        allCards = allCards.filter(c => c.method === req.query.method);
+      }
       // eslint-disable-next-line no-restricted-syntax
-      for (const card of await getAllCardPaths()) {
+      for (const card of allCards) {
         // eslint-disable-next-line no-await-in-loop
         await fs.remove(`./cards/${card.group}/${card.method}/bundles`);
       }
