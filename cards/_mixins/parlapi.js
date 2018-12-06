@@ -136,7 +136,7 @@ function parlapi() {
       return analize.patch(`/pg/tfidfs/${id}/`, tfidf);
     },
     getOrganisationMemberships(orgId) {
-      return data.get(`/memberships/?organization=${orgId}`);
+      return data.get(`/memberships/?organization=${orgId}&limit=10000`);
     },
     // TODO
     getPersonalOrganisationMemberships(pId, orgId) {
