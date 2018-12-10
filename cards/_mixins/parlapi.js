@@ -44,8 +44,8 @@ function parlapi() {
 
   return {
     // sessions
-    getSessions() {
-      return data.get(`/sessions/?limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
+    getSessions(orgId = config.parliament_id) {
+      return data.get(`/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`);
     },
     getSessionTFIDF(sessionId) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
@@ -59,13 +59,13 @@ function parlapi() {
     },
     // votings
     getVotings(sessionId) {
-      return data.get(`/votes/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
+      return data.get(`/votes/?session=${sessionId}&limit=10000&ordering=-start_time`);
     },
     patchVoting(id, voting) {
       return data.patch(`/votes/${id}/`, voting);
     },
     getMotions(sessionId) {
-      return data.get(`/motions/?session=${sessionId}&limit=10000&organization=${config.parliament_id}&ordering=-start_time`);
+      return data.get(`/motions/?session=${sessionId}&limit=10000&ordering=-start_time`);
     },
     patchMotion(id, motion) {
       return data.patch(`/motions/${id}/`, motion);
@@ -137,10 +137,6 @@ function parlapi() {
     },
     getOrganisationMemberships(orgId) {
       return data.get(`/memberships/?organization=${orgId}&limit=10000`);
-    },
-    // TODO
-    getPersonalOrganisationMemberships(pId, orgId) {
-      return data.get(`/memberships/?person__id=${pId}&organization=${orgId}`);
     },
     patchOrganisationMembership(membershipId, membershipData) {
       return data.patch(`/memberships/${membershipId}/`, membershipData);
