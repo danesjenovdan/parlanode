@@ -67,7 +67,7 @@
             <label>Facebook</label>
           </div>
           <div class="col-md-12 small">
-            <input v-model.trim="loadedData.socials.facebook.url" class="form-control">
+            <textarea v-model.trim="loadedData.socials.facebook" class="form-control" />
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@
             <label>Twitter</label>
           </div>
           <div class="col-md-12 small">
-            <input v-model.trim="loadedData.socials.twitter.url" class="form-control">
+            <textarea v-model.trim="loadedData.socials.twitter" class="form-control" />
           </div>
         </div>
       </div>
@@ -133,5 +133,10 @@ label {
   margin-top: 10px;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
 }
 </style>

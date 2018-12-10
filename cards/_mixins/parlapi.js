@@ -108,6 +108,9 @@ function parlapi() {
     postLink(link) {
       return data.post('/links/', link);
     },
+    deleteLink(id) {
+      return data.delete(`/links/${id}/`);
+    },
     // legislation
     getLegislation() {
       return analize.get('/s/legislations/?limit=10000');
