@@ -17,6 +17,9 @@ if (['dev', 'build'].indexOf(cmd) === -1) {
 }
 
 if (currentPath !== 'all') {
+  // on windows sometimes path ends with \ and if the arg is quoted that escapes
+  // the end quote so it's not stripped correctly; remove it here
+  currentPath = currentPath.replace(/"$/, '');
   currentPath = path.normalize(currentPath)
     .replace(/\\/g, '/')
     .replace(new RegExp(`^${dir}\\/`), '')
