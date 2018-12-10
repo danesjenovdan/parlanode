@@ -51,6 +51,16 @@
           </div>
         </div>
       </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <label>Contact Emails</label>
+          </div>
+          <div class="col-md-12 small">
+            <textarea v-model.trim="loadedData.contacts.emails" class="form-control" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

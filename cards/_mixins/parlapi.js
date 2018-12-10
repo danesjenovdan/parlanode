@@ -144,6 +144,18 @@ function parlapi() {
     patchOrganisationMembership(membershipId, membershipData) {
       return data.patch(`/memberships/${membershipId}/`, membershipData);
     },
+    getOrganisationContactEmails(orgId) {
+      return data.get(`/contact_detail/?contact_type=EMAIL&organization=${orgId}&limit=10000`);
+    },
+    patchContact(id, contact) {
+      return data.patch(`/contact_detail/${id}/`, contact);
+    },
+    postContact(contact) {
+      return data.post('/contact_detail/', contact);
+    },
+    deleteContact(id) {
+      return data.delete(`/contact_detail/${id}/`);
+    },
   };
 }
 

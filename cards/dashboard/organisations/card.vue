@@ -186,7 +186,10 @@ export default {
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
           const facebook = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
           const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
-          console.log(org)
+
+          const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
+          const emails = contacts.data.results || [];
+
           return {
             org: {
               _name: org._name,
@@ -196,6 +199,9 @@ export default {
             socials: {
               facebook: facebook.map(e => e.url).join('\n'),
               twitter: twitter.map(e => e.url).join('\n'),
+            },
+            contacts: {
+              emails: emails.map(e => e.value).join('\n'),
             },
           };
         },
@@ -233,6 +239,35 @@ export default {
 
           await Promise.all(zip(fbs, newFbs).map(updateLink));
           await Promise.all(zip(tws, newTws).map(updateLink));
+
+          const mapContactEmails = values => values
+            .split('\n')
+            .map(value => value.trim())
+            .filter(Boolean)
+            .map(value => ({
+              contact_type: 'EMAIL',
+              value,
+              organization: org.id,
+            }));
+
+          const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
+          const emails = contacts.data.results;
+
+          const newEmails = mapContactEmails(orgInfo.contacts.emails);
+
+          const updateContact = async ([contact, newContact]) => {
+            if (contact && newContact) {
+              assign(contact, newContact);
+              await this.$parlapi.patchContact(contact.id, contact);
+            } else if (contact) {
+              await this.$parlapi.deleteContact(contact.id);
+            } else if (newContact) {
+              const contactRes = await this.$parlapi.postContact(newContact);
+              newContact.id = contactRes.data.id;
+            }
+          };
+
+          await Promise.all(zip(emails, newEmails).map(updateContact));
 
           assign(org, orgInfo.org);
           return this.$parlapi.patchOrganisation(org.id, org);
