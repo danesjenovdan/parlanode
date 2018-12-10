@@ -100,7 +100,7 @@ function parlapi() {
       return analize.patch(`/p/tfidfs/${id}/`, tfidf);
     },
     getPersonSocialLinks(personId) {
-      return data.get(`/links/?tags__name=social&person=${personId}`);
+      return data.get(`/links/?tags__name=social&person=${personId}&limit=10000`);
     },
     patchLink(id, link) {
       return data.patch(`/links/${id}/`, link); // needs trailing slash or it doesnt work ??
@@ -126,7 +126,7 @@ function parlapi() {
       return data.get('/organizations/?limit=10000');
     },
     getOrganisationSocialLinks(orgId) {
-      return data.get(`/links/?tags__name=social&organization=${orgId}`);
+      return data.get(`/links/?tags__name=social&organization=${orgId}&limit=10000`);
     },
     patchOrganisation(id, org) {
       return data.patch(`/organizations/${id}/`, org);

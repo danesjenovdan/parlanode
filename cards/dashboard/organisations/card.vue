@@ -73,7 +73,7 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import { sortBy, assign } from 'lodash';
+import { sortBy, assign, zip } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -184,16 +184,56 @@ export default {
         title: `INFO - ${org._name}`,
         loadData: async () => {
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
+          const facebook = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+          console.log(org)
           return {
             org: {
               _name: org._name,
               _acronym: org._acronym,
               classification: org.classification,
             },
-            social: links.data.results,
+            socials: {
+              facebook: facebook.map(e => e.url).join('\n'),
+              twitter: twitter.map(e => e.url).join('\n'),
+            },
           };
         },
         saveData: async (orgInfo) => {
+          const mapSocialUrls = (urls, tag, note) => urls
+            .split('\n')
+            .map(url => url.trim())
+            .filter(Boolean)
+            .map(url => ({
+              tags: ['social', tag],
+              url,
+              note,
+              name: '',
+              organization: org.id,
+            }));
+
+          const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
+          const fbs = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const tws = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+
+          const newFbs = mapSocialUrls(orgInfo.socials.facebook, 'fb', 'FB');
+          const newTws = mapSocialUrls(orgInfo.socials.twitter, 'tw', 'TW');
+
+          const updateLink = async ([link, newLink]) => {
+            if (link && newLink) {
+              assign(link, newLink);
+              await this.$parlapi.patchLink(link.id, link);
+            } else if (link) {
+              await this.$parlapi.deleteLink(link.id);
+            } else if (newLink) {
+              const linkRes = await this.$parlapi.postLink(newLink);
+              newLink.id = linkRes.data.id;
+            }
+          };
+
+          await Promise.all(zip(fbs, newFbs).map(updateLink));
+          await Promise.all(zip(tws, newTws).map(updateLink));
+
           assign(org, orgInfo.org);
           return this.$parlapi.patchOrganisation(org.id, org);
         },
