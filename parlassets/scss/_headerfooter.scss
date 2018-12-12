@@ -44,8 +44,13 @@ body {
   margin: 0;
 }
 
-.menu-container .menu a:hover {
+.menu-container .menu a.active {
   color: $tab-active;
+  text-decoration: none;
+}
+
+.menu-container .menu a:hover {
+  color: $tab-hover;
   text-decoration: none;
 }
 
