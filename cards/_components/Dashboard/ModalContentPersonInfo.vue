@@ -4,14 +4,14 @@
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-12">
-            <label>{{ $t('name') }}</label>
+            <label>{{ $t('display-name') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="fullName" class="form-control" disabled>
+            <input v-model.trim="loadedData.person.name" class="form-control">
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 smaller-field">
         <div class="row">
           <div class="col-md-12">
             <label>honorific_prefix</label>
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 smaller-field">
         <div class="row">
           <div class="col-md-12">
             <label>given_name</label>
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 smaller-field">
         <div class="row">
           <div class="col-md-12">
             <label>additional_name</label>
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 smaller-field">
         <div class="row">
           <div class="col-md-12">
             <label>patronymic_name</label>
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 smaller-field">
         <div class="row">
           <div class="col-md-12">
             <label>family_name</label>
@@ -61,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 smaller-field">
         <div class="row">
           <div class="col-md-12">
             <label>honorific_suffix</label>
@@ -187,22 +187,6 @@ export default {
         this.loadedData.person.birth_date = `${newVal}T00:00:00`;
       },
     },
-    fullName() {
-      const { person } = this.loadedData;
-      const nameParts = [
-        person.honorific_prefix,
-        person.given_name,
-        person.additional_name,
-        person.patronymic_name,
-        person.family_name,
-        person.honorific_suffix,
-      ];
-      const name = nameParts.filter(Boolean).join(' ');
-      if (name.trim()) {
-        person.name = name;
-      }
-      return person.name;
-    },
   },
 };
 </script>
@@ -232,5 +216,20 @@ textarea {
 hr {
   margin: 16px 0 6px;
   border-color: #000;
+}
+
+.smaller-field {
+  font-size: 10px;
+
+  .form-control {
+    font-size: 12px;
+    line-height: 1;
+    padding: 0 7px;
+    height: 25px;
+  }
+
+  label {
+    margin: 4px 0 2px 0;
+  }
 }
 </style>
