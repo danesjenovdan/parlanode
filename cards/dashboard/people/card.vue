@@ -167,6 +167,13 @@ export default {
           const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
           return {
             person: {
+              name: person.name,
+              honorific_prefix: person.honorific_prefix,
+              given_name: person.given_name,
+              additional_name: person.additional_name,
+              patronymic_name: person.patronymic_name,
+              family_name: person.family_name,
+              honorific_suffix: person.honorific_suffix,
               voters: person.voters,
               mandates: person.mandates,
               previous_occupation: person.previous_occupation,
@@ -218,7 +225,7 @@ export default {
           await Promise.all(zip(tws, newTws).map(updateLink));
 
           assign(person, personInfo.person);
-          return this.$parlapi.patchPerson(person.id, person);
+          // return this.$parlapi.patchPerson(person.id, person);
         },
       };
       this.infoModalOpen = true;
