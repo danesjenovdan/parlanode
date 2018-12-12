@@ -1,6 +1,79 @@
 <template>
   <div>
     <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('name') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="fullName" class="form-control" disabled>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>honorific_prefix</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="loadedData.person.honorific_prefix" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>given_name</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="loadedData.person.given_name" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>additional_name</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="loadedData.person.additional_name" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>patronymic_name</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="loadedData.person.patronymic_name" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>family_name</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="loadedData.person.family_name" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>honorific_suffix</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="loadedData.person.honorific_suffix" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <hr>
+      </div>
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12">
@@ -114,6 +187,22 @@ export default {
         this.loadedData.person.birth_date = `${newVal}T00:00:00`;
       },
     },
+    fullName() {
+      const { person } = this.loadedData;
+      const nameParts = [
+        person.honorific_prefix,
+        person.given_name,
+        person.additional_name,
+        person.patronymic_name,
+        person.family_name,
+        person.honorific_suffix,
+      ];
+      const name = nameParts.filter(Boolean).join(' ');
+      if (name.trim()) {
+        person.name = name;
+      }
+      return person.name;
+    },
   },
 };
 </script>
@@ -138,5 +227,10 @@ label {
 textarea {
   resize: vertical;
   min-height: 60px;
+}
+
+hr {
+  margin: 16px 0 6px;
+  border-color: #000;
 }
 </style>
