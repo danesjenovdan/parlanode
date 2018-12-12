@@ -25,7 +25,6 @@ export default {
     },
   },
   data() {
-    const { siteMap: sm } = this.$root.$options.cardData;
     return {
       tools: [
         {
@@ -53,11 +52,8 @@ export default {
   },
   methods: {
     changeTool(value) {
-      const tool = this.tools.find(t => t.id === value);
-      if (tool) {
-        const { siteMap: sm } = this.$root.$options.cardData;
-        window.location.href = tool.link || `/${sm.landing.tools}/${sm.tools[value]}`;
-      }
+      const { siteMap: sm } = this.$root.$options.cardData;
+      window.location.href = `/${sm.landing.tools}/${sm.tools[value]}`;
     },
   },
 };
