@@ -1,43 +1,52 @@
 {
   "1": {
-    "name": "Sejm",
-    "acronym": "Sejm",
-    "is_coalition": false,
+    "name": "Dr\u017eavni zbor",
+    "acronym": "DZ",
+    "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "parliament",
     "id": 1
   },
   "2": {
-    "name": "Prawo i Sprawiedliwo\u015b\u0107",
-    "acronym": "PiS",
-    "is_coalition": true,
+    "name": "Slovenska demokratska stranka",
+    "acronym": "SDS",
+    "is_coalition": false,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 2
   },
   "3": {
-    "name": "Platforma Obywatelska",
-    "acronym": "PO",
-    "is_coalition": false,
+    "name": "Lista Marjana \u0160arca",
+    "acronym": "LM\u0160",
+    "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 3
   },
+  "4": {
+    "name": "Socialni demokrati",
+    "acronym": "SD",
+    "is_coalition": true,
+    "disbanded": null,
+    "founded": null,
+    "type": "party",
+    "id": 4
+  },
   "5": {
-    "name": "Polskie Stronnictwo Ludowe - Unia Europejskich Demokrat\u00f3w",
-    "acronym": "PSL-UED",
-    "is_coalition": false,
+    "name": "Stranka modernega centra",
+    "acronym": "SMC",
+    "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 5
   },
   "6": {
-    "name": "Kukiz'15",
-    "acronym": "Kukiz15",
+    "name": "Levica",
+    "acronym": "Levica",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -45,8 +54,8 @@
     "id": 6
   },
   "7": {
-    "name": "Nowoczesna",
-    "acronym": "N",
+    "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
+    "acronym": "NSi",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
@@ -54,39 +63,57 @@
     "id": 7
   },
   "8": {
-    "name": "Wolni i Solidarni",
-    "acronym": "WiS",
-    "is_coalition": false,
+    "name": "Stranka Alenke Bratu\u0161ek",
+    "acronym": "SAB",
+    "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 8
   },
   "9": {
-    "name": "Liberalno-Spo\u0142eczni",
-    "acronym": "L-S",
-    "is_coalition": false,
+    "name": "Demokrati\u010dna stranka upokojencev Slovenije",
+    "acronym": "DESUS",
+    "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "party",
     "id": 9
   },
   "10": {
+    "name": "Italijanska in Mad\u017earska narodna skupnost",
+    "acronym": "IMNS",
+    "is_coalition": false,
+    "disbanded": null,
+    "founded": null,
+    "type": "party",
+    "id": 10
+  },
+  "11": {
+    "name": "Slovenska nacionalna stranka",
+    "acronym": "SNS",
+    "is_coalition": false,
+    "disbanded": null,
+    "founded": null,
+    "type": "party",
+    "id": 11
+  },
+  "12": {
     "name": "Koalicija",
-    "acronym": "Coal",
+    "acronym": "koal",
     "is_coalition": true,
     "disbanded": null,
     "founded": null,
     "type": "coalition",
-    "id": 10
+    "id": 12
   },
-  "11": {
+  "13": {
     "name": "Opozicija",
-    "acronym": "Oppo",
+    "acronym": "oppo",
     "is_coalition": false,
     "disbanded": null,
     "founded": null,
-    "type": "oposition",
-    "id": 11
+    "type": "opposition",
+    "id": 13
   }
 }

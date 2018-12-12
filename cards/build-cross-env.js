@@ -25,6 +25,9 @@ if (['dev', 'build'].indexOf(cmd) === -1) {
 }
 
 if (cardPath !== 'all') {
+  // on windows sometimes path ends with \ and if the arg is quoted that escapes
+  // the end quote so it's not stripped correctly; remove it here
+  cardPath = cardPath.replace(/"$/, '');
   cardPath = path.normalize(cardPath)
     .replace(/\\/g, '/')
     .replace(/^cards\//, '')

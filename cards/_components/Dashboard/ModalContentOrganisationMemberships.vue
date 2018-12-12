@@ -11,7 +11,7 @@
         <label for="currentOnly">{{ $t('only-current') }}</label>
       </div>
       <div class="col-md-12">
-        <div v-if="members.length === 0" class="nalagalnik"></div>
+        <div v-if="loading > 0" class="nalagalnik"></div>
         <ul class="person-list">
           <li
             v-for="person in currentOnly ? currentMembers : members"
@@ -134,10 +134,6 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import parlapi from 'mixins/parlapi';
 import links from 'mixins/links';
 
-//TODO
-// There is a weird bug. If you select someone after you cleared the dropdown
-// it says dropdownItems.find doesn't exist.
-
 export default {
   name: 'DashboardModalContentOrganisationMemberships',
 
@@ -167,6 +163,7 @@ export default {
       dropdownItems: [],
       selectedPersonId: null,
       organisations: [],
+      loading: 2, // -1 for people; -1 for organisations
       error: null,
       roles: [
         {
@@ -210,29 +207,26 @@ export default {
     },
 
     personalMemberships() {
-      console.log('personal memeberships')
       if (this.loadedData.data.filter(m => m.person === this.selectedPersonId).length > 0) {
-        return this.loadedData.data.filter(m => m.person === this.selectedPersonId).map((m) => {
-          return {
-            start_date: m.start_time.split('T')[0],
-            start_time: m.start_time.split('T')[1],
-            end_date: !m.end_time ? '' : m.end_time.split('T')[0],
-            end_time: !m.end_time ? '' : m.end_time.split('T')[1],
-            roles: this.roles.map(role => ({
-              id: role.id,
-              label: role.label,
-              selected: role.id === m.role,
-            })),
-            organisations: this.organisations.map(org => ({
-              id: org.id,
-              label: org.label,
-              selected: org.id === m.on_behalf_of,
-            })),
-            on_behalf_of: m.on_behalf_of,
-            role: m.role,
-            id: m.id,
-          };
-        });
+        return this.loadedData.data.filter(m => m.person === this.selectedPersonId).map(m => ({
+          start_date: m.start_time.split('T')[0],
+          start_time: m.start_time.split('T')[1],
+          end_date: !m.end_time ? '' : m.end_time.split('T')[0],
+          end_time: !m.end_time ? '' : m.end_time.split('T')[1],
+          roles: this.roles.map(role => ({
+            id: role.id,
+            label: role.label,
+            selected: role.id === m.role,
+          })),
+          organisations: this.organisations.map(org => ({
+            id: org.id,
+            label: org.label,
+            selected: org.id === m.on_behalf_of,
+          })),
+          on_behalf_of: m.on_behalf_of,
+          role: m.role,
+          id: m.id,
+        }));
       }
 
       return [{
@@ -277,6 +271,8 @@ export default {
           selected: false,
           image: this.getPersonPortrait(p),
         }));
+
+        this.loading -= 1;
       });
     },
 
@@ -289,6 +285,8 @@ export default {
               label: org._name,
               selected: false,
             }));
+
+          this.loading -= 1;
         })
         .catch((error) => {
           // eslint-disable-next-line no-console

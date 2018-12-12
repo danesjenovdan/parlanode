@@ -39,6 +39,31 @@
                               </h4>
                             </div>
 
+                            <div class="parta3">
+                              <div :id="`obvestilaKeyword_${keyword.id}`" class="obvestilaKeyword">
+                                {{ keyword.keyword }}
+                              </div>
+                              <input
+                                :id="`keyword${keyword.id}`"
+                                :value="keyword.keyword"
+                                type="hidden"
+                              >
+                            </div>
+
+                            <div class="parta4" @click="deleteKeyword(keyword)">
+                              <div class="obvestiladelete">
+                                <div class="exclude-presiding checkbox-twolines">
+                                  <!-- <span
+                                    :id="`delete${keyword.id}`"
+                                    data-deleted="false"
+                                    class="glyphicon glyphicon-remove"
+                                  ></span> -->
+                                  <!-- eslint-disable-next-line -->
+                                  <svg width="100%" height="100%" fill="#fff" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 100"><g transform="translate(0,-952.36218)"><path style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:1;color:#000000;fill:#fff;fill-opacity:1;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" d="M 39 5 C 35.173892 5 32 8.17389 32 12 L 32 15 L 13 15 A 3.0003 3.0003 0 0 0 12.6875 15 A 3.0040663 3.0040663 0 1 0 13 21 L 76.9375 21 L 75 87.90625 C 74.97939 88.61725 74.605076 89 74 89 L 26 89 C 25.394924 89 25.020608 88.61725 25 87.90625 L 23.25 27.9375 A 3.0010171 3.0010171 0 1 0 17.25 28.09375 L 19 88.0625 C 19.107812 91.7818 22.17308 95 26 95 L 74 95 C 77.82692 95 80.892188 91.7818 81 88.0625 L 82.9375 21 L 87 21 A 3.0003 3.0003 0 1 0 87 15 L 68 15 L 68 12 C 68 8.17389 64.826108 5 61 5 L 39 5 z M 39 11 L 61 11 C 61.605888 11 62 11.39411 62 12 L 62 15 L 38 15 L 38 12 C 38 11.39411 38.394112 11 39 11 z M 35.96875 30.9375 A 3.0003 3.0003 0 0 0 33 34 L 33 76 A 3.0003 3.0003 0 1 0 39 76 L 39 34 A 3.0003 3.0003 0 0 0 35.96875 30.9375 z M 49.96875 30.9375 A 3.0003 3.0003 0 0 0 47 34 L 47 76 A 3.0003 3.0003 0 1 0 53 76 L 53 34 A 3.0003 3.0003 0 0 0 49.96875 30.9375 z M 63.96875 30.9375 A 3.0003 3.0003 0 0 0 61 34 L 61 76 A 3.0003 3.0003 0 1 0 67 76 L 67 34 A 3.0003 3.0003 0 0 0 63.96875 30.9375 z " transform="translate(0,952.36218)"></path></g></svg>
+                                </div>
+                              </div>
+                            </div>
+
                             <div class="parta1">
                               <div class="search-dropdown">
                                 <select
@@ -62,29 +87,6 @@
                                     @click="reminderCallback(keyword, 'week')"
                                   >{{ $t('events.week') }}</option>
                                 </select>
-                              </div>
-                            </div>
-
-                            <div class="parta3">
-                              <div :id="`obvestilaKeyword_${keyword.id}`" class="obvestilaKeyword">
-                                {{ keyword.keyword }}
-                              </div>
-                              <input
-                                :id="`keyword${keyword.id}`"
-                                :value="keyword.keyword"
-                                type="hidden"
-                              >
-                            </div>
-
-                            <div class="parta4" @click="deleteKeyword(keyword)">
-                              <div class="obvestiladelete">
-                                <div class="exclude-presiding checkbox-twolines">
-                                  <label
-                                    :id="`delete${keyword.id}`"
-                                    data-deleted="false"
-                                    class="glyphicon glyphicon-remove"
-                                  ></label>
-                                </div>
                               </div>
                             </div>
 
@@ -787,7 +789,7 @@ export default {
     -webkit-transition: border-color 0.15s;
     transition: border-color 0.15s;
 
-    background-color: $tab-passive;
+    background-color: $tab-active;
 
     &:hover {
         color: $white;
@@ -1044,37 +1046,39 @@ export default {
 
   .parta1 {
     /*width: 175px;*/
-    width: 165px;
-    margin-right: 15px;
+    width: 160px;
+    margin-right: 10px;
     display: inline-block;
-    float: left;
+    // float: left;
   }
 
   .parta1 .search-dropdown-input {
     /*width: 172px;*/
-    width: 162px;
+    width: 157px;
   }
 
   .parta2 {
     /*width: 231px;*/
-    width: 231px;
-    margin-right: 15px;
+    width: 160px;
+    // margin-right: 15px;
     display: inline-block;
-    float: left;
+    // float: left;
   }
 
   .parta2 .search-dropdown-input {
     /*width: 228px;*/
-    width: 228px;
+    width: 157px;
   }
 
   .parta3 {
     /*width: auto;*/
     width: auto;
     text-align: left;
-    display: inline-block;
+    display: block;
     float: none;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
   }
 
   .parta4 {
@@ -1086,8 +1090,11 @@ export default {
     /*line-height: 30px;*/
     cursor: pointer;
     padding-left: 20px;
-    float: right;
+    // float: right;
     line-height: 36px;
+    position: absolute;
+    right: 0;
+    top: 7px;
   }
 
   .parta5 {
@@ -1108,6 +1115,11 @@ export default {
     border-bottom: none;
     display: inline-block;
     width: 100%;
+    border-top: 2px solid $font-placeholder;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
   }
 
   .replaceme {
@@ -1119,6 +1131,18 @@ export default {
     border: 2px solid $font-default;
     border-radius: 4px;
     padding: 1px;
+  }
+
+  .obvestiladelete .exclude-presiding {
+    width: 25px;
+    height: 25px;
+    padding: 0 5px;
+    overflow: hidden;
+    background-color: $tab-active;
+  }
+
+  .obvestiladelete .exclude-presiding:hover {
+    background-color: $tab-hover;
   }
 
   .updatedid {

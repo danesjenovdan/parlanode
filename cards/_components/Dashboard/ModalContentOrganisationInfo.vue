@@ -31,6 +31,36 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>Facebook</label>
+          </div>
+          <div class="col-md-12 small">
+            <textarea v-model.trim="loadedData.socials.facebook" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>Twitter</label>
+          </div>
+          <div class="col-md-12 small">
+            <textarea v-model.trim="loadedData.socials.twitter" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <label>Contact Emails</label>
+          </div>
+          <div class="col-md-12 small">
+            <textarea v-model.trim="loadedData.contacts.emails" class="form-control" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -62,5 +92,10 @@ label {
   margin-top: 10px;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
 }
 </style>

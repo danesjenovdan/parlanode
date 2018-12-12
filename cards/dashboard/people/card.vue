@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { assign, sortBy } from 'lodash';
+import { assign, sortBy, zip } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -163,8 +163,8 @@ export default {
         title: `INFO - ${person.name}`,
         loadData: async () => {
           const links = await this.$parlapi.getPersonSocialLinks(person.id);
-          const facebook = links.data.results.find(link => link.tags.indexOf('fb') !== -1);
-          const twitter = links.data.results.find(link => link.tags.indexOf('tw') !== -1);
+          const facebook = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
           return {
             person: {
               voters: person.voters,
@@ -174,42 +174,49 @@ export default {
               education_level: person.education_level,
               districts: person.districts,
               birth_date: person.birth_date,
+              gov_id: person.gov_id,
             },
             socials: {
-              facebook: facebook || {
-                tags: ['social', 'fb'],
-                url: '',
-                note: 'FB',
-                name: '',
-              },
-              twitter: twitter || {
-                tags: ['social', 'tw'],
-                url: '',
-                note: 'TW',
-                name: '',
-              },
+              facebook: facebook.map(e => e.url).join('\n'),
+              twitter: twitter.map(e => e.url).join('\n'),
             },
           };
         },
         saveData: async (personInfo) => {
-          const fb = personInfo.socials.facebook;
-          if (fb.url) {
-            if (fb.id) {
-              await this.$parlapi.patchLink(fb.id, fb);
-            } else {
-              const fbRes = await this.$parlapi.postLink(fb);
-              fb.id = fbRes.data.id;
+          const mapSocialUrls = (urls, tag, note) => urls
+            .split('\n')
+            .map(url => url.trim())
+            .filter(Boolean)
+            .map(url => ({
+              tags: ['social', tag],
+              url,
+              note,
+              name: '',
+              person: person.id,
+            }));
+
+          const links = await this.$parlapi.getPersonSocialLinks(person.id);
+          const fbs = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const tws = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+
+          const newFbs = mapSocialUrls(personInfo.socials.facebook, 'fb', 'FB');
+          const newTws = mapSocialUrls(personInfo.socials.twitter, 'tw', 'TW');
+
+          const updateLink = async ([link, newLink]) => {
+            if (link && newLink) {
+              assign(link, newLink);
+              await this.$parlapi.patchLink(link.id, link);
+            } else if (link) {
+              await this.$parlapi.deleteLink(link.id);
+            } else if (newLink) {
+              const linkRes = await this.$parlapi.postLink(newLink);
+              newLink.id = linkRes.data.id;
             }
-          }
-          const tw = personInfo.socials.twitter;
-          if (tw.url) {
-            if (tw.id) {
-              await this.$parlapi.patchLink(tw.id, tw);
-            } else {
-              const twRes = await this.$parlapi.postLink(tw);
-              tw.id = twRes.data.id;
-            }
-          }
+          };
+
+          await Promise.all(zip(fbs, newFbs).map(updateLink));
+          await Promise.all(zip(tws, newTws).map(updateLink));
+
           assign(person, personInfo.person);
           return this.$parlapi.patchPerson(person.id, person);
         },
