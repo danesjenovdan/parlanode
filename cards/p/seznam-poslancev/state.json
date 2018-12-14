@@ -1,7 +1,5 @@
 {
   "generator": true,
-  "textFilter": "a",
-  "genders": ["m"],
-  "districts": ["2"],
-  "parties": ["GLAS, HSU", "HDZ"]
+  "analysis":"presence_votes",
+  "sort":"analysis"
 }
