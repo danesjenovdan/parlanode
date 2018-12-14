@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import stableSort from 'stable';
 import { find } from 'lodash';
 import { parse, differenceInCalendarYears } from 'date-fns';
 import axios from 'axios';
@@ -260,7 +261,7 @@ export default {
         ), 0);
       }
 
-      const sortedAndFiltered = this.memberData
+      const filtered = this.memberData
         .filter((member) => {
           let partyMatch = true;
           let districtMatch = true;
@@ -309,37 +310,38 @@ export default {
             newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
           return newMember;
-        })
-        .sort((memberA, memberB) => {
-          let a;
-          let b;
-          switch (this.currentSort) {
-            case 'change':
-              a = memberA.results[this.currentAnalysis].diff;
-              b = memberB.results[this.currentAnalysis].diff;
-              return a - b;
-            case 'analysis':
-              a = (memberA.results[this.currentAnalysis].score || 0);
-              b = (memberB.results[this.currentAnalysis].score || 0);
-              return a - b;
-            case 'name':
-              a = memberA.person.name;
-              b = memberB.person.name;
-              return a.localeCompare(b, 'sl');
-            case 'district':
-              a = memberA.formattedDistrict;
-              b = memberB.formattedDistrict;
-              return a.localeCompare(b, 'sl');
-            case 'party':
-              a = memberA.person.party.acronym;
-              b = memberB.person.party.acronym;
-              return a.localeCompare(b, 'sl');
-            default:
-              a = memberA[this.currentSort];
-              b = memberB[this.currentSort];
-              return a - b;
-          }
         });
+
+      const sortedAndFiltered = stableSort(filtered, (memberA, memberB) => {
+        let a;
+        let b;
+        switch (this.currentSort) {
+          case 'change':
+            a = memberA.results[this.currentAnalysis].diff;
+            b = memberB.results[this.currentAnalysis].diff;
+            return a - b;
+          case 'analysis':
+            a = (memberA.results[this.currentAnalysis].score || 0);
+            b = (memberB.results[this.currentAnalysis].score || 0);
+            return a - b;
+          case 'name':
+            a = memberA.person.name;
+            b = memberB.person.name;
+            return a.localeCompare(b, 'sl');
+          case 'district':
+            a = memberA.formattedDistrict;
+            b = memberB.formattedDistrict;
+            return a.localeCompare(b, 'sl');
+          case 'party':
+            a = memberA.person.party.acronym;
+            b = memberB.person.party.acronym;
+            return a.localeCompare(b, 'sl');
+          default:
+            a = memberA[this.currentSort];
+            b = memberB[this.currentSort];
+            return a - b;
+        }
+      });
 
       if (this.currentSortOrder === 'desc') {
         sortedAndFiltered.reverse();
