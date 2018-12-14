@@ -351,7 +351,7 @@ export default {
         membershipToSave.end_time = null;
       }
 
-      this.$parlapi.patchOrganisationMembership(id, membershipToSave);
+      this.$parlapi.patchMembership(id, membershipToSave);
 
       this.listing = true;
     },
