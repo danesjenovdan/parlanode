@@ -42,6 +42,10 @@ function parlapi() {
     },
   });
 
+  const glej = axios.create({
+    baseURL: slugs.urls.glej,
+  });
+
   return {
     // sessions
     getSessions(orgId = config.parliament_id) {
@@ -161,6 +165,9 @@ function parlapi() {
     },
     deleteContact(id) {
       return data.delete(`/contact_detail/${id}/`);
+    },
+    getLegislationIcons() {
+      return glej.get('/api/icons/legislation');
     },
   };
 }

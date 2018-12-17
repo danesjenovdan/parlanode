@@ -21,4 +21,6 @@ module.exports = (app) => {
   app.get('/api/og-images/rebuild/all', controller.rebuildOgs(true));
 
   app.get('/api/data/refetch', controller.refetchData);
+
+  app.get('/api/icons/legislation', controller.listLegislationIcons);
 };

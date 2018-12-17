@@ -396,6 +396,21 @@ function refetchData(req, res) {
     });
 }
 
+function listLegislationIcons(req, res) {
+  fs.readdir('./parlassets/icons/legislation')
+    .then((files) => {
+      const icons = files.filter(f => f.toLowerCase() !== 'readme.md');
+      res.json({
+        icons,
+      });
+    })
+    .catch((pError) => {
+      // eslint-disable-next-line no-console
+      console.error(pError);
+      res.send(`Error: ${pError.message}`);
+    });
+}
+
 module.exports = {
   getCardRenders,
   getCardBuilds,
@@ -413,4 +428,5 @@ module.exports = {
   deleteOgBuildId,
   rebuildOgs,
   refetchData,
+  listLegislationIcons,
 };

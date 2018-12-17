@@ -40,7 +40,13 @@
             </template>
             <template v-if="index === 5">
               <label>{{ $t('icon') }}</label>
-              <input v-model="column.legislation.icon" class="form-control">
+              <p-search-dropdown
+                v-model="column.icons"
+                single
+                small
+                @select="column.legislation.icon = $event"
+                @clear="column.legislation.icon = null"
+              />
             </template>
             <template v-if="index === 6">
               <dash-loading-button :load="saveData(column.legislation)">
@@ -95,6 +101,9 @@ export default {
   data() {
     return {
       legislation: null,
+      statusOptions: [],
+      resultOptions: [],
+      icons: [],
       abstractModalOpen: false,
       abstractModalData: null,
       error: null,
@@ -116,7 +125,7 @@ export default {
       return obj;
     },
     mappedItems() {
-      if (this.legislation) {
+      if (this.legislation && this.icons.length) {
         return this.legislation.map(legislation => [
           { legislation },
           { legislation },
@@ -137,7 +146,15 @@ export default {
             })),
           },
           { legislation },
-          { legislation },
+          {
+            legislation,
+            icons: this.icons.map(icon => ({
+              id: icon,
+              label: icon,
+              selected: legislation.icon === icon,
+              image: `${this.slugs.urls.cdn}/icons/legislation/${icon}`,
+            })),
+          },
           { legislation },
         ]);
       }
@@ -150,6 +167,16 @@ export default {
         this.legislation = orderBy(res.data.results, ['date'], ['desc']);
         this.statusOptions = res.data.status_options;
         this.resultOptions = res.data.result_options;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.error = error;
+      });
+
+    this.$parlapi.getLegislationIcons()
+      .then((res) => {
+        this.icons = res.data.icons;
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
