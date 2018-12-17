@@ -32,10 +32,11 @@
           </dash-button>
           <dash-button
             v-if="data.saveData"
+            :class="{ 'button-save-success': saved }"
             :disabled="buttonsDisabled"
             @click="saveData(loadedData)"
           >
-            {{ $t('save') }}
+            {{ saved ? $t('saved') : $t('save') }}
           </dash-button>
         </div>
       </modal>
@@ -67,6 +68,7 @@ export default {
       saving: false,
       generating: false,
       error: null,
+      saved: null,
     };
   },
   computed: {
@@ -84,6 +86,9 @@ export default {
   },
   beforeDestroy() {
     document.body.classList.remove('modal-open');
+    if (this.saved) {
+      clearTimeout(this.saved);
+    }
   },
   methods: {
     modalClosed() {
@@ -113,6 +118,9 @@ export default {
         this.data.saveData(loadedData)
           .then(() => {
             this.saving = false;
+            this.saved = setTimeout(() => {
+              this.saved = null;
+            }, 2000);
           })
           .catch((error) => {
             this.error = error;
@@ -162,5 +170,9 @@ export default {
   margin: 12px 0 0 0;
   text-align: center;
   font-size: 16px;
+}
+
+.button-save-success {
+  background-color: #080;
 }
 </style>
