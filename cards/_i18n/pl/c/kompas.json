@@ -10,6 +10,6 @@
       "Możemy myśleć o pierwszej macierzy jako posłach w przestrzeni N-wymiarowej (N to liczba głosów, które porównujemy ze sobą lub najdłuższa historia głosowania jednego posła). Algorytm odwzorowuje wymiary N na 2 wymiary, z priorytetem utrzymywania odległości między parami. Im dalej od siebie dwóch posłów, tym większa różnica w ich historii głosowania."
     ]
   },
-  "select-mps": "Wybierz posła",
+  "select-mps": "Izberi poslance in poslanske skupine",
   "selected-mps": "Wybrano: {num}"
 }

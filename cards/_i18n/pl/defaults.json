@@ -92,8 +92,11 @@
   "acts": "Akty",
   "votings": "Głosowania",
   "save": "Zapisz",
+  "saved": "Shranjeno",
   "generate": "Utwórz",
   "edit-abstract": "Edytuj streszczenie",
+  "acronym": "Kratica",
+  "classification": "Klasifikacija",
   "info": {
     "title": "Info",
     "methodology": "METODOLOGIA"
