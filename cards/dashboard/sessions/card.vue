@@ -82,9 +82,11 @@ export default {
     return {
       orgs: null,
       sessions: null,
+      selectedOrgId: null,
       tfidfModalOpen: false,
       tfidfModalData: null,
       error: null,
+      loading: false,
     };
   },
   computed: {
@@ -117,12 +119,16 @@ export default {
     loadOrgs() {
       this.$parlapi.getAllOrganisations()
         .then((res) => {
+          const orgId = Number(localStorage.getItem('selected_sessions_organization'));
           this.orgs = orderBy(res.data.results, ['_name']).map(org => ({
             id: org.id,
             // eslint-disable-next-line no-underscore-dangle
             label: org._name,
-            selected: false,
+            selected: orgId ? org.id === orgId : false,
           }));
+          if (orgId) {
+            this.onSelectOrg(orgId);
+          }
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
@@ -170,6 +176,9 @@ export default {
     },
     onSelectOrg(orgId) {
       this.selectedOrgId = orgId;
+      if (typeof window !== 'undefined' && 'localStorage' in window) {
+        localStorage.setItem('selected_sessions_organization', orgId);
+      }
       this.loadSessions();
     },
   },
