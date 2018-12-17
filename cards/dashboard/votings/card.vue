@@ -2,6 +2,7 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-votings-list">
+        <h4 v-if="session">{{ session.name }}</h4>
         <dash-table
           :items="mappedItems"
           :paginate="10"
@@ -129,6 +130,7 @@ export default {
       votings: null,
       motions: null,
       tags: null,
+      session: null,
       abstractModalOpen: false,
       abstractModalData: null,
       tagModalOpen: false,
@@ -173,11 +175,13 @@ export default {
       this.$parlapi.getVotings(this.sessionId),
       this.$parlapi.getMotions(this.sessionId),
       this.$parlapi.getTags(),
+      this.$parlapi.getSession(this.sessionId),
     ])
-      .then(([votings, motions, tags]) => {
+      .then(([votings, motions, tags, sessions]) => {
         this.votings = orderBy(votings.data.results, ['start_time'], ['desc']);
         this.motions = motions.data.results;
         this.tags = tags.data.results;
+        this.session = sessions.data.results.length ? sessions.data.results[0] : {};
       })
       .catch((error) => {
         // eslint-disable-next-line no-console

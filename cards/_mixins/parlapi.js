@@ -51,6 +51,9 @@ function parlapi() {
     getSessions(orgId = config.parliament_id) {
       return data.get(`/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`);
     },
+    getSession(id) {
+      return data.get(`/sessions/?id=${id}`);
+    },
     getSessionTFIDF(sessionId) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
     },
