@@ -8,7 +8,18 @@
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              <label>{{ $t('name') }} <small>{{ column.legislation.date }}</small></label>
+              <label>
+                {{ $t('name') }}
+                <div class="is-exposed-checkbox">
+                  <input
+                    :id="`is-exposed_${column.legislation.id}`"
+                    v-model="column.legislation.is_exposed"
+                    type="checkbox"
+                    class="checkbox"
+                  >
+                  <label :for="`is-exposed_${column.legislation.id}`">{{ $t('exposed') }}</label>
+                </div>
+              </label>
               <input v-model="column.legislation.text" class="form-control">
             </template>
             <template v-if="index === 1">
@@ -250,6 +261,10 @@ export default {
 
   textarea {
     resize: none;
+  }
+
+  .is-exposed-checkbox {
+    float: right;
   }
 }
 </style>
