@@ -195,6 +195,7 @@ export default {
               _name: org._name,
               _acronym: org._acronym,
               classification: org.classification,
+              voters: org.voters,
             },
             socials: {
               facebook: facebook.map(e => e.url).join('\n'),
