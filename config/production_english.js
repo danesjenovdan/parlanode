@@ -27,5 +27,15 @@ module.exports = {
         title: 'Seje delovnih teles',
       },
     ],
+    legislation_tabs: [
+      {
+        title: 'Zakonodaja',
+        classifications: ['zakon'],
+      },
+      {
+        title: 'Akti',
+        card_title: 'Seznam aktov',
+      },
+    ],
   },
 };

@@ -19,5 +19,10 @@ module.exports = {
         title: 'Posiedzenia Sejmu',
       },
     ],
+    legislation_tabs: [
+      {
+        title: 'Ustawodawstwo',
+      },
+    ],
   },
 };

@@ -23,5 +23,10 @@ module.exports = {
         title: 'Ostale seje',
       },
     ],
+    legislation_tabs: [
+      {
+        title: 'Zakonodaja',
+      },
+    ],
   },
 };
