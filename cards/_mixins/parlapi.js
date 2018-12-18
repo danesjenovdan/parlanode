@@ -1,32 +1,13 @@
 import axios from 'axios';
-import parlapiConfig from './parlapi-config.json';
 
 function parlapi() {
   if (typeof window === 'undefined') {
     return undefined;
   }
 
-  const slugs = this.$root.$options.cardData.urls;
-  const locale = this.$root.$i18n.locale;
-  const config = parlapiConfig[locale];
+  const { urls: slugs, cardConfig } = this.$root.$options.cardData;
   const dataToken = localStorage.getItem('data_token');
   const analizeToken = localStorage.getItem('analize_token');
-  // TODO: function that uses refresh token to get new access token
-  /*
-    something like:
-
-    function retry(func) {
-      func()
-        .then(res => {
-          if (res.status ~= 4xx) {
-            return getNewToken() // either use refresh token or prompt for user/pass
-              .then(func)
-          }
-          return res
-        })
-    }
-
-  */
 
   const data = axios.create({
     baseURL: slugs.urls.data,
@@ -48,7 +29,7 @@ function parlapi() {
 
   return {
     // sessions
-    getSessions(orgId = config.parliament_id) {
+    getSessions(orgId = cardConfig.parliament_id) {
       return data.get(`/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`);
     },
     getSession(id) {

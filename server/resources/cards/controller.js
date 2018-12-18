@@ -196,13 +196,13 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     data: fetchedData,
     cardData: cardJson,
     customUrl: fetchUrl,
-    state: parsedState,
     parlaState: parsedState,
     clientBundle,
     styleBundle,
     urls: data.urls,
     siteMap: data.siteMap,
     i18n: _.curry(_.get)(i18n, _, 'undefined i18n key'),
+    cardConfig: config.cardConfig || {},
   };
   context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 

@@ -10,6 +10,7 @@ import i18nCard from 'i18n/card.json';
 /* eslint-enable import/no-unresolved */
 import urls from '../data/urls.json';
 import siteMap from '../data/siteMap.json';
+import config from '../config';
 
 Vue.use(VueI18n);
 
@@ -30,6 +31,7 @@ const cardData = {
   parlaState,
   urls,
   siteMap,
+  cardConfig: config.cardConfig || {},
 };
 
 window.app = new Vue(assign({}, Card, { cardData, i18n }));

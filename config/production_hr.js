@@ -12,4 +12,7 @@ module.exports = {
     base: 'https://parlametar.hr',
   },
   cardLang: 'hr',
+  cardConfig: {
+    parliament_id: 199,
+  },
 };

@@ -22,6 +22,9 @@ const defaultConfig = {
   },
   cardLang: 'sl',
   ogCapturePath: './og',
+  cardConfig: {
+    parliament_id: 95,
+  },
 };
 
 if (env === 'production') {
