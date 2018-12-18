@@ -24,6 +24,7 @@ const defaultConfig = {
   ogCapturePath: './og',
   cardConfig: {
     parliament_id: 95,
+    session_list_tabs: [],
   },
 };
 

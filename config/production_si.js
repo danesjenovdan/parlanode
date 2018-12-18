@@ -14,5 +14,18 @@ module.exports = {
   cardLang: 'sl',
   cardConfig: {
     parliament_id: 95,
+    session_list_tabs: [
+      {
+        title: 'Seje DZ',
+        org_ids: [95, 1],
+      },
+      {
+        title: 'Seje kolegija predsednika DZ',
+        org_ids: [9],
+      },
+      {
+        title: 'Seje delovnih teles',
+      },
+    ],
   },
 };

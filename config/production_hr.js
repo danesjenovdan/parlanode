@@ -14,5 +14,14 @@ module.exports = {
   cardLang: 'hr',
   cardConfig: {
     parliament_id: 199,
+    session_list_tabs: [
+      {
+        title: 'Seje sabora',
+        org_ids: [199],
+      },
+      {
+        title: 'Ostale seje',
+      },
+    ],
   },
 };

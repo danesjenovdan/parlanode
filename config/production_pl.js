@@ -14,5 +14,10 @@ module.exports = {
   cardLang: 'pl',
   cardConfig: {
     parliament_id: 1,
+    session_list_tabs: [
+      {
+        title: 'Posiedzenia Sejmu',
+      },
+    ],
   },
 };
