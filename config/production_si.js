@@ -12,7 +12,7 @@ module.exports = {
     base: 'https://parlameter.si',
   },
   cardLang: 'sl',
-  cardConfig: {
+  cardGlobals: {
     parliament_id: 95,
     session_list_tabs: [
       {

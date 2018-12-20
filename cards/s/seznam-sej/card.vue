@@ -71,7 +71,7 @@ export default {
     common,
   ],
   data() {
-    const tabs = this.$options.cardData.cardConfig.session_list_tabs;
+    const tabs = this.$options.cardData.cardGlobals.session_list_tabs;
     return {
       tabs,
       sessions: this.$options.cardData.data.sessions,

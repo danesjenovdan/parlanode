@@ -87,7 +87,7 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const tabs = this.$options.cardData.cardConfig.legislation_tabs;
+    const tabs = this.$options.cardData.cardGlobals.legislation_tabs;
     return {
       tabs,
       data: this.$options.cardData.data.results,

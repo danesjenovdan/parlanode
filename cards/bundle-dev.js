@@ -31,7 +31,7 @@ const cardData = {
   parlaState,
   urls,
   siteMap,
-  cardConfig: config.cardConfig || {},
+  cardGlobals: config.cardGlobals || {},
 };
 
 window.app = new Vue(assign({}, Card, { cardData, i18n }));

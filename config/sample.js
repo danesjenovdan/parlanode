@@ -8,7 +8,7 @@ module.exports = {
     base: 'http://localhost:3066',
   },
   cardLang: 'sl',
-  cardConfig: {
+  cardGlobals: {
     parliament_id: 95,
   },
 };

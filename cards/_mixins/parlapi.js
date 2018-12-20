@@ -5,7 +5,7 @@ function parlapi() {
     return undefined;
   }
 
-  const { urls: slugs, cardConfig } = this.$root.$options.cardData;
+  const { urls: slugs, cardGlobals } = this.$root.$options.cardData;
   const dataToken = localStorage.getItem('data_token');
   const analizeToken = localStorage.getItem('analize_token');
 
@@ -29,7 +29,7 @@ function parlapi() {
 
   return {
     // sessions
-    getSessions(orgId = cardConfig.parliament_id) {
+    getSessions(orgId = cardGlobals.parliament_id) {
       return data.get(`/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`);
     },
     getSession(id) {

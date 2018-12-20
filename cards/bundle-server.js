@@ -37,7 +37,7 @@ export default (context) => {
       parlaState: context.parlaState,
       urls: context.urls,
       siteMap: context.siteMap,
-      cardConfig: context.cardConfig,
+      cardGlobals: context.cardGlobals,
     },
     // i18n is added in bundle-client.js
   };

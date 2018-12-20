@@ -202,7 +202,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     urls: data.urls,
     siteMap: data.siteMap,
     i18n: _.curry(_.get)(i18n, _, 'undefined i18n key'),
-    cardConfig: config.cardConfig || {},
+    cardGlobals: config.cardGlobals || {},
   };
   context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 

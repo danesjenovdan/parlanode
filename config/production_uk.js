@@ -12,7 +12,7 @@ module.exports = {
     base: 'http://uk.parlameter.si',
   },
   cardLang: 'en',
-  cardConfig: {
+  cardGlobals: {
     // parliament_id: 1,
   },
 };
