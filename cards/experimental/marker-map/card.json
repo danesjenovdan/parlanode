@@ -3,6 +3,5 @@
   "dataUrl": "",
   "lastUpdate": "2018-12-18T09:49:13.667Z",
   "big": true,
-  "high": false,
-  "skipSSR": true
+  "high": true
 }
