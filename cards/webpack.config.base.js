@@ -48,6 +48,14 @@ module.exports = (cardPath) => {
           exclude: /node_modules/,
         },
         {
+          test: /\.css$/,
+          loader: 'style-loader/url!file-loader',
+        },
+        {
+          test: /\.csv$/,
+          loader: 'raw-loader',
+        },
+        {
           test: /\.scss$/,
           use: ExtractTextPlugin.extract({
             fallback: 'vue-style-loader',
