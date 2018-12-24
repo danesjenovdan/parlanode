@@ -72,7 +72,7 @@ export default {
 
   computed: {
     filteredListings() {
-      return this.listings.filter(listing => parseInt(listing.reviewedMonths, 10) > 3);
+      return this.listings.filter(listing => parseInt(listing.lastYearsReviews, 10) > 50);
     },
     fullUrl() {
       return `${this.url}?justMe=true`;
@@ -112,6 +112,7 @@ export default {
         accomodates: listing[2],
         type,
         id: listing[0],
+        lastYearsReviews: listing[15],
       };
       return listingObject;
     });
