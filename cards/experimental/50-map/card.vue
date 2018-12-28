@@ -72,7 +72,7 @@ export default {
 
   computed: {
     filteredListings() {
-      return this.listings.filter(listing => parseInt(listing.lastYearsReviews, 10) > 50);
+      return this.listings.filter(listing => parseInt(listing.lastYearsReviews, 10) > 49);
     },
     fullUrl() {
       return `${this.url}?justMe=true`;

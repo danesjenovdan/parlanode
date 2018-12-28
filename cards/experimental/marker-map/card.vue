@@ -106,7 +106,7 @@ export default {
         icon,
         latLng: [parseFloat(listing[10], 10), parseFloat(listing[11], 10)],
         reviewedMonths: listing[9],
-        reviews: listing[12],
+        reviews: listing[8],
         grade: listing[13],
         price: listing[14],
         accomodates: listing[2],
