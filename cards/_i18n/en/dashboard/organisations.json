@@ -5,5 +5,7 @@
   "only-current": "Samo trenutna",
   "add-member": "Dodaj člana",
   "edit-membership": "Uredi članstvo",
-  "save-membership": "Shrani članstvo"
+  "save-membership": "Shrani članstvo",
+  "member": "Član",
+  "add-membership": "Dodaj članstvo"
 }
