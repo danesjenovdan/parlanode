@@ -187,6 +187,7 @@ export default {
       });
     },
     async deleteMembership(m) {
+      // if it was saved it has an ID
       if (m.id) {
         // eslint-disable-next-line no-alert
         const sure = window.confirm('Are you sure you want to DELETE? This is final!');
@@ -194,6 +195,9 @@ export default {
           await this.$parlapi.deleteMembership(m.id);
           this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
         }
+      } else {
+        // it's not saved just remove it
+        this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
       }
     },
   },

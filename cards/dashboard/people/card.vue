@@ -2,7 +2,7 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-people-list">
-        <div>
+        <div v-if="people != null">
           <input
             id="mpsOnly"
             v-model="mpsOnly"
