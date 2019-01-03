@@ -299,6 +299,7 @@ export default {
               on_behalf_of: m.on_behalf_of,
               label: m.label,
               role: m.role,
+              person: person.id,
             };
             if (m.id) {
               // eslint-disable-next-line no-await-in-loop

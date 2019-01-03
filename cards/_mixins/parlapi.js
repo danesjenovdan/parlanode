@@ -138,6 +138,9 @@ function parlapi() {
     postMembership(membership) {
       return data.post('/memberships/', membership);
     },
+    deleteMembership(id) {
+      return data.delete(`/memberships/${id}/`);
+    },
     getOrganisationContactEmails(orgId) {
       return data.get(`/contact_detail/?contact_type=EMAIL&organization=${orgId}&limit=10000`);
     },

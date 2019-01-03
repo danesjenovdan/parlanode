@@ -31,7 +31,7 @@
               </dash-button>
             </template>
             <template v-if="(index === 3)">
-              <dash-button @click="openMembershipsModal(column.org)">
+              <dash-button v-if="false" @click="openMembershipsModal(column.org)">
                 {{ $t('edit-memberships') }}
               </dash-button>
             </template>
