@@ -2,7 +2,7 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-organisations-list">
-        <div>
+        <div v-if="orgs != null">
           <input
             id="partiesOnly"
             v-model="partiesOnly"
@@ -31,7 +31,7 @@
               </dash-button>
             </template>
             <template v-if="(index === 3)">
-              <dash-button v-if="false" @click="openMembershipsModal(column.org)">
+              <dash-button @click="openMembershipsModal(column.org)">
                 {{ $t('edit-memberships') }}
               </dash-button>
             </template>
@@ -73,7 +73,7 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import { sortBy, assign, zip } from 'lodash';
+import { assign, sortBy, zip, groupBy, map } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -284,12 +284,57 @@ export default {
       this.membershipsModalData = {
         title: `${this.$t('edit-memberships')} - ${org._name}`,
         loadData: async () => {
-          const data = await this.$parlapi.getOrganisationMemberships(org.id);
-          const theData = data.data.results;
+          const people = await this.$parlapi.getPeople();
+          const orgs = await this.$parlapi.getAllOrganisations();
+          const membershipsData = await this.$parlapi.getOrganisationMemberships(org.id);
+          const memberships = sortBy(membershipsData.data.results, ['start_time']);
           return {
-            id: org.id,
-            data: theData,
+            people: sortBy(people.data.results, ['name']),
+            orgs: sortBy(orgs.data.results, ['_name']),
+            org_groups: map(groupBy(orgs.data.results, 'classification'), (val, key) => ({
+              label: key,
+              items: val.map(o => o.id),
+            })),
+            memberships: memberships.map((membership) => {
+              const start = membership.start_time ? membership.start_time.split('T') : ['', ''];
+              const end = membership.end_time ? membership.end_time.split('T') : ['', ''];
+              return {
+                id: membership.id,
+                start_date: start[0],
+                start_time: start[1],
+                end_date: end[0],
+                end_time: end[1],
+                on_behalf_of: membership.on_behalf_of,
+                label: membership.label,
+                role: membership.role,
+                person: membership.person,
+              };
+            }),
           };
+        },
+        saveData: async (loadedData) => {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const m of loadedData.memberships) {
+            const startTime = (m.start_date && m.start_time) ? `${m.start_date}T${m.start_time}` : null;
+            const endTime = (m.end_date && m.end_time) ? `${m.end_date}T${m.end_time}` : null;
+            const membership = {
+              start_time: startTime,
+              end_time: endTime,
+              on_behalf_of: m.on_behalf_of,
+              label: m.label,
+              role: m.role,
+              person: m.person,
+              organization: org.id,
+            };
+            if (m.id) {
+              // eslint-disable-next-line no-await-in-loop
+              await this.$parlapi.patchMembership(m.id, membership);
+            } else {
+              // eslint-disable-next-line no-await-in-loop
+              const mRes = await this.$parlapi.postMembership(membership);
+              m.id = mRes.data.id;
+            }
+          }
         },
       };
       this.membershipsModalOpen = true;
