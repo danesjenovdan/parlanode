@@ -3,7 +3,7 @@
     "title": "Grupe riječi"
   },
   "info": {
-    "lead": "Kartica prikazuje, kateri govorci/-ke oziroma katere poslanske skupine absolutno in relativno največ govorijo o določeni tematiki oziroma skupini besed.",
+    "lead": "Kartica prikazuje koji govornici ili klubovi apsolutno i relativno najviše govore o određenoj temi ili upotrebljavaju određenu grupu riječi.",
     "text": "Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke / poslanske skupine in števila vseh govorov."
   },
   "speakers": "Govorci",
