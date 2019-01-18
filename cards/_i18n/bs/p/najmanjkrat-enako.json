@@ -7,15 +7,15 @@
     "text": [
       "Izračunava se {link} između rezultata glasanja zastupnika i rezultata svih ostalih zastupnika (pri čemu se vrijednost glasa pretvori u brojčane vrijednosti između -1 i 1).",
       "Kad se izračuna 'udaljenosti' između svih zastupnika, razvrstava ih se prema rezultatu i prikazuje se zadnjih odnosno najudaljenijih pet.",
-      "Številčne vrednosti glasov"
+      "Brojčane vrijednosti glasova"
     ],
     "link": {
-      "text": "evklidsko razdaljo",
+      "text": "euklidska udaljenost",
       "link": "https://en.wikipedia.org/wiki/Euclidean_distance"
     },
     "list": [
-      "-1: proti",
-      "0: vzdržan/-a ali ni prisoten/-na",
+      "-1: protiv",
+      "0: suzdržan ili nije prisutan",
       "1: za"
     ]
   }
