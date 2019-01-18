@@ -3,9 +3,9 @@
     "title": "Osnovne informacije"
   },
   "info": {
-    "lead": "Pregled osnovnih informacij poslanca/-ke.",
+    "lead": "Pregled osnovnih informacija o zastupniku.",
     "text": [
-      "Vsebine za to kartico smo pridobili s spletnega mesta {link} (poslanska skupina, starost, članstva v delovnih telesih) in s spletnega mesta DVK (število prejetih glasov). Za ostale vsebine smo se obrnili na PR službe poslanskih skupin.",
+      "Podaci su preuzeti s web stranice {link}, (klub, dob, članstva u radnim tijelima) i web stranice CIK-a (broj osvojenih glasova).",
       "Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto Državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
     ],
     "link": {
