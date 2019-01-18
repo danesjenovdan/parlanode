@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Neujemanje s poslansko skupino"
+    "title": "Neslaganje s klubom"
   },
   "info": {
-    "lead": "Odstopanje poslanca od večinskega glasu lastne poslanske skupine v primerjavi s povprečno in največjo vrednostjo.",
+    "lead": "Odstupanje od većinskog glasa vlastitog kluba u odnosu na prosječnu i najveću vrijednost.",
     "text": [
-      "Za vsa glasovanja preračunamo večinski glas za vsako poslansko skupino. Večinski glas je opcija, za katero se je odločilo največ poslancev.",
-      "Za vsakega poslanca najdemo trenutno poslansko skupino in izračunamo odstotek ujemanja glasov v obdobju članstva. Pri vseh izračunih ignoriramo glasovnice \"ni prisoten\"."
+      "Za sva glasanja izračuna se većinski glas za svaki klub. Većinski glas je opcija za koju se odlučio najveći broj zastupnika jednog kluba.",
+      "Za svakog zastupnika traži se klub kojem pripada i izračuna se postotak slaganja glasova u razdoblju članstva u klubu. Iz svih izračuna su izostavljene zastupnice koje nisu bile prisutne na glasanju."
     ]
   }
 }
