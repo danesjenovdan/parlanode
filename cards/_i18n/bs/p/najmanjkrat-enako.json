@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Najmanjkrat glasujejo enako"
+    "title": "Najrjeđe glasaju jednako"
   },
   "info": {
-    "lead": "Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot izbrani/-a poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.",
+    "lead": "Popis pet zastupnika koji najrjeđe glasaju jednako kao izabrani zastupnik. Zastupnici se klasificiraju prema vrijednostima od najveće do najmanje. Što je vrijednost veća, manje je slaganje u glasanju.",
     "text": [
-      "Izračunamo {link} med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).",
-      "Ko izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.",
+      "Izračunava se {link} između rezultata glasanja zastupnika i rezultata svih ostalih zastupnika (pri čemu se vrijednost glasa pretvori u brojčane vrijednosti između -1 i 1).",
+      "Kad se izračuna 'udaljenosti' između svih zastupnika, razvrstava ih se prema rezultatu i prikazuje se zadnjih odnosno najudaljenijih pet.",
       "Številčne vrednosti glasov"
     ],
     "link": {
