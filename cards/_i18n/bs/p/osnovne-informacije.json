@@ -6,15 +6,15 @@
     "lead": "Pregled osnovnih informacija o zastupniku.",
     "text": [
       "Podaci su preuzeti s web stranice {link}, (klub, dob, članstva u radnim tijelima) i web stranice CIK-a (broj osvojenih glasova).",
-      "Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto Državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
+      "Podaci su preuzeti sa stranice Parlamenta BiH (parlament. ba), informacija o prijašnjem zanimanju putem raznih izvora, dok su podaci o profilima na društvenim mrežama skupljeni pomoću Google pretraživača."
     ],
     "link": {
-      "text": "DZ RS",
-      "link": "http://www.dz-rs.si/wps/portal/Home/"
+      "text": "Parlament BiH",
+      "link": "http://www.parlament.ba"
     }
   },
-  "elected-to-district--m": "Izvoljen z {numVotes} glasovi v {district}",
-  "elected-to-district--f": "Izvoljena z {numVotes} glasovi v {district}",
-  "age": "Starost: {age} let",
-  "no-social-media": "ni družbenih omrežij."
+  "elected-to-district--m": "Izabran sa {numVotes} glasova - {district}",
+  "elected-to-district--f": "Izabrana sa {numVotes} glasova - {district}",
+  "age": "Dob: {age} godina",
+  "no-social-media": "nije na društvenim mrežama."
 }
