@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Neenotnost glasovanj"
+    "title": "Razjedinjenost glasanja"
   },
   "info": {
-    "lead": "Neenotnost izbrane poslanske skupine na glasovanjih sej Državnega zbora v primerjavi s povprečno in najvišjo stopnjo neenotnosti med vsemi poslanskimi skupinami.",
-    "text": "Za vsako glasovanje za poslansko skupino preštejemo, koliko poslancev je oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo do 100 in dobimo stopnjo neenotnosti oz. odstotek poslank in poslancev, ki se z večinskim glasom niso strinjali."
+    "lead": "Razjedinjenost odabranog kluba na glasanju na sjednicama Parlamenta u odnosu na prosječnu i najvišu stopu razjedinjenosti među svim klubovima.",
+    "text": "Za svako glasanje za klub se prebroji koliko je zastupnika glasalo i kako (ZA, PROTIV, SUZDRŽANI, ODSUTNI). Izračunava se postotak onih koji su glasali za najpopularniju opciju. Taj postotak oduzima se od 100 I tako dobiva stepen razjedinjenosti odnosno postotak zastupnika koji se nisu priklonili većinskom glasu kluba."
   }
 }
