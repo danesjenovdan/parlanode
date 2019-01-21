@@ -168,17 +168,17 @@
     "report": "izvještaj",
     "procedural_proposal": "proceduralni predlog",
     "personal_property_decree": "tip glasanja",
-    "other": "drugo"
+    "other": "ostalo"
   },
   "tools": {
-    "notifications": "Parlameter obvestila",
-    "vote-comparator": "Primerjalnik glasovanj",
-    "discord": "Raziskovalec neenotnosti",
+    "notifications": "Parlameter obavještenja",
+    "vote-comparator": "Komparator glasanja",
+    "discord": "Pretraživač razjedinjenosti",
     "compass": "Parlamentarni kompas",
-    "word-groups": "Skupine besed"
+    "word-groups": "Grupe riječi"
   },
   "frame": {
-    "show-in-context": "Pokaži kartico v kontekstu spletnega mesta parlameter.si"
+    "show-in-context": "Pokaži karticu u kontekstu web stranice parlameter.javnarasprava.ba"
   },
-  "ogText": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru."
+  "ogText": "Parlameter je alat koji, pomoću analize glasanja i stenograma zastupničkih nastupa, olakšava praćenje rada Parlamenta BiH."
 }
