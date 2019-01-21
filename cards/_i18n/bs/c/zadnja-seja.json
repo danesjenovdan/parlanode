@@ -5,10 +5,10 @@
   "info": {
     "lead": "Pregled statistika posljednje sjednice za koju su podaci objavljeni na web stranicama Parlamenta BiH {link}.",
     "link": {
-      "link": "http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
+      "link": "http://www.izbori.ba/rezultati_izbora?resId=25&langId=1#/2/1/515/0/0/0",
       "text": "Parlament BiH"
     },
-    "words-heading": "Besede, ki so zaznamovale sejo",
+    "words-heading": "Riječi koje označavaju sjednicu",
     "words-text": "Statistike se izračunavaju pomoću modela tf-idf. Korpus čine svi govori, a dokument svi govori na sjednici.",
     "presence-heading": "Prisutnost klubova na sjednici na glasanju",
     "presence-text": "Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane sjednice bili njihovi zastupnici.",
