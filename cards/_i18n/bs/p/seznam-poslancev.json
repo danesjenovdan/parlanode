@@ -1,53 +1,53 @@
 {
   "card": {
-    "title": "Seznam poslancev"
+    "title": "Popis zastupnika"
   },
   "info": {
-    "lead": "Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu ({parties}; {districts}). Seznam je sortiran po {sortBy}.",
-    "text": "Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje."
+    "lead": "Skup svih trenutno aktivnih zastupnika koji odgovaraju korisničkom izboru ({parties}; {districts}). Pregled je sortiran po {sortBy}.",
+    "text": "Kolona analiza izražava zajednički rezultat, a kolona Promjena razliku u odnosu na prethodni mjesec. Kolona Promjena ažurira se svaki 1. dan u mjesecu."
   },
-  "select-district-placeholder": "Izberi okraj",
-  "select-parties-placeholder": "Izberi poslansko skupino",
-  "all-parties": "vse poslanske skupine",
-  "all-voting-districts": "vsi volilni okraji",
-  "missing-district": "okraj ni vnešen",
-  "voting-district": "volilni okraj",
+  "select-district-placeholder": "Izborna jedinica",
+  "select-parties-placeholder": "Klub",
+  "all-parties": "svi klubovi",
+  "all-voting-districts": "sve izborne jedinice",
+  "missing-district": "izborna jedinica nije unijeta",
+  "voting-district": "izborna jedinica",
   "sort-by--name": "abecedi",
-  "sort-by--district": "okrajih",
-  "sort-by--party": "poslanskih skupinah",
+  "sort-by--district": "izbornoj jedinici",
+  "sort-by--party": "klubu",
   "sort-by--analysis": "rezultatu analize {analysis}",
-  "sort-by--change": "aktualni spremembi v rezultatu analize {analysis}",
+  "sort-by--change": "trenutna promjena u rezultatu analize {analysis}",
   "sort-by--age": "starosti",
-  "sort-by--education": "stopnji izobrazbe",
-  "sort-by--terms": "številu mandatov",
+  "sort-by--education": "stepen obrazovanja",
+  "sort-by--terms": "broju mandata",
   "analysis-texts": {
     "demographics": {
       "label": "Demografija"
     },
     "presence_votes": {
-      "label": "Prisotnost na glasovanjih sej DZ",
-      "titleSuffix": " po prisotnosti na glasovanjih sej DZ",
-      "explanation": "Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh glasovanj in normaliziramo (min 1 - max 100)."
+      "label": "Prisutnost na glasanjima",
+      "titleSuffix": " prema prisutnosti na glasanjima",
+      "explanation": "Broj glasanja kada je zastupnik bio prisutan podijeli se s brojem svih glasanja i normalizira (min 1 - max 100)."
     },
     "number_of_questions": {
-      "label": "Št. poslanskih vprašanj in pobud",
-      "titleSuffix": " po št. poslanskih vprašanj in pobud",
-      "explanation": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo."
+      "label": "Br. zastupničkih pitanja i inicijativa",
+      "titleSuffix": " prema br. zastupničkih pitanja i inicijativa",
+      "explanation": "Broj zastupničkih pitanja i inicijativa koje je zastupnik postavio u jednom sazivu Parlamenta u odnosu na prosječnu i maksimalnu vrijednost."
     },
     "speeches_per_session": {
-      "label": "Št. govorov na sejo",
-      "titleSuffix": " po št. govorov na sejo",
-      "explanation": "Preštejemo poslančeve govore in število delimo s številom sej, na katerih je poslanec govoril. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim."
+      "label": "Br. govora na sjednici",
+      "titleSuffix": " prema br. govora na sjednici",
+      "explanation": "Prebroje se govori odabranog zastupnika i broj se podijeli s brojem sjednica na kojima je zastupnik govorio. Broj svih govora najprije se dijeli s brojem zastupnika, a zatim s brojem svih sjednica (na kojima se govorilo). Individualni rezultat uspoređuje se s prosjekom."
     },
     "spoken_words": {
-      "label": "Št. izgovorjenih besed",
-      "titleSuffix": " po št. izgovorjenih besed",
-      "explanation": "Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih govorih v DZ."
+      "label": "Br. izgovorenih riječi",
+      "titleSuffix": " prema br. izgovorenih riječi",
+      "explanation": "Broj riječi koje je zastupnik izgovorio u svim svojim dosadašnjim govorima u Parlamentu."
     },
     "mismatch_of_pg": {
-      "label": "Neujemanje s poslansko skupino",
-      "titleSuffix": " po neujemanju s poslansko skupino",
-      "explanation": "Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ."
+      "label": "Neslaganje s klubom",
+      "titleSuffix": " prema neslaganju s klubom",
+      "explanation": "Odstupanje od većinskog glasa kluba na glasanjima u Parlamentu."
     }
   }
 }
