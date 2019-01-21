@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Povprečno število govorov na sejo"
+    "title": "Prosječan broj govora po sjednici"
   },
   "info": {
-    "lead": "Povprečno število govorov poslanca/-ke na sejo v primerjavi s povprečno in največjo vrednostjo.",
+    "lead": "Prosječan broj govora zastupnika po sjednici u odnosu na prosječnu i maksimalnu vrijednost.",
     "text": "Preštejemo poslačeve/-kine govore, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link} in število delimo s številom sej, na katerih je bil/-a poslanec/-ka prisoten/-na. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim in najvišjim.",
     "link": {
       "text": "DZ RS",
