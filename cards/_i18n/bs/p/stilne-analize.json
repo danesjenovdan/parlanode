@@ -8,7 +8,7 @@
       "Kombiniranjem kvalifikatora {link1} I {link2} definirali smo ekscesni, uzvišeni i jednostavni rječnik u govorima zastupnika.",
       "U obzir su uzeti samo kvalifikatori koji se u oba rječnika nalaze tik iza odrednice i sežu do kraja definicije (ali ne i kvalifikatori za posebna značenja odnosno upotrebe).",
       "Poduzeće {link3} je iz stenograma zastupničkih govora pripremilo popise riječi koje imaju neki od izabranih kvalifikatora.",
-      "Črtni graf prikazuje delež posameznega tipa besedja v poslančevih/-kinih govorih glede na povprečje, izračunano za celoten sklic. Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi/-kini govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca/-ko z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca/-ko se normalizira (min. 1 – max. 100)."
+      "Linijski grafikon prikazuje udio pojedinog tipa rječnika u govorima zastupnika u odnosu na prosjek izračunat za cijeli saziv. Udio se izračunava prema algoritmu: uzmu se svi govori zastupnika, prebroji se broj riječi (i njihovih ponavljanja) u svakoj kategoriji leksema. To se ponovi za sve zastupnike, a zatim se podijeli vrijednost kategorije za zastupnika s prosječnom vrijednošću (zbroj vrijednosti svih zastupnika podijeljen s brojem zastupnika). Vrijednost svake kategorije za zastupnika se normalizira (min. 1 - max. 100)."
     ],
     "links": [
       {
