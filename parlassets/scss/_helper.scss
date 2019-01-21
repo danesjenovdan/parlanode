@@ -205,8 +205,9 @@ $cdn_home_icon: getConfig('urls.cdn') + '/icons/';
 }
 
 input.required.error,
-footer.footer input.form-control.newslettersubscribe.error{
-  border:1px solid $first;
+footer.footer input.form-control.newslettersubscribe.error,
+#donation-amount.error {
+  border:1px solid #f00;
 }
 
 .narrow-inner-container {
