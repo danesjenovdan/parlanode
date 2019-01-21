@@ -4,9 +4,9 @@
   },
   "info": {
     "lead": "Prosječan broj govora zastupnika po sjednici u odnosu na prosječnu i maksimalnu vrijednost.",
-    "text": "Preštejemo poslačeve/-kine govore, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link} in število delimo s številom sej, na katerih je bil/-a poslanec/-ka prisoten/-na. Število vseh govorov delimo najprej s številom poslancev, potem pa še s številom vseh sej (na katerih se je govorilo). Individualni rezultat primerjamo s povprečnim in najvišjim.",
+    "text": "Prebroje se govori zastupnika, preuzeti iz stenograma {link}, i broj se podijeli s brojem sjednica na kojima je zastupnik bio prisutan. Broj svih govora najprije se dijeli s brojem zastupnika, a zatim s brojem svih sjednica (na kojima se raspravljalo). Individualni rezultat uspoređujemo s prosječnim i maksimalnim vrijednostima.",
     "link": {
-      "text": "DZ RS",
+      "text": "Parlament BiH",
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
     }
   }
