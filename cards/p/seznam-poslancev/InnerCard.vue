@@ -94,11 +94,13 @@ export default {
   },
   data() {
     return {
-      count: this.processedMembers.length,
       perPage: 50,
     };
   },
   computed: {
+    count() {
+      return this.processedMembers.length;
+    },
     currentPageMembers() {
       const start = (this.currentPage - 1) * this.perPage;
       const end = start + this.perPage;
@@ -144,9 +146,8 @@ export default {
     },
   },
   watch: {
-    processedMembers(newValue) {
+    processedMembers() {
       this.onPageChange(1);
-      this.count = newValue.length;
     },
   },
   methods: {
@@ -160,7 +161,8 @@ export default {
     scrollToTop() {
       const { _id: id } = this.$root.$options.cardData.cardData;
       const el = document.getElementById(id);
-      if (el) {
+      // only scroll up if top is not visible
+      if (el && el.getBoundingClientRect().top < 0) {
         el.scrollIntoView();
       }
     },
