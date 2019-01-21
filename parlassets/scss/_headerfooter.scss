@@ -8,6 +8,15 @@ body {
   margin-bottom: 260px;
 }
 
+// FIX JUMPING WIDTH BECAUSE OF SCROLLBAR
+html {
+  margin-right: calc(100% - 100vw);
+}
+body {
+  margin-right: calc(100vw - 100%);
+  overflow-x: hidden;
+}
+// END FIX
 
 // MENU
 .menu-container {
