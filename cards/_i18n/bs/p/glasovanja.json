@@ -1,16 +1,16 @@
 {
   "card": {
-    "title": "Glasovanja"
+    "title": "Glasanja"
   },
   "info": {
-    "lead": "Pregled vseh glasovanj, ki so se zgodila na seji.",
+    "lead": "Pregled svih glasanja na sjednici.",
     "text": [
-      "Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.",
-      "Nabor glasovanj pridobimo s spletnega mesta {link}."
+      "Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV, SUZDRŽANA) i broj zastupnika koji nisu glasali i ispišu rezultati.",
+      "Zbirka glasanja preuzima se s web stranica Parlamenta BiH {link}."
     ],
     "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      "text": "Parlament BiH",
+      "link": "http://parlament.ba/session/Read?ConvernerId=1"
     }
   }
 }
