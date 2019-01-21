@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Stilne analize"
+    "title": "Stilske analize"
   },
   "info": {
-    "lead": "Pogostosti uporabe stilno zaznamovanih besed v poslančevih/-kinih govorih.",
+    "lead": "Učestalost korištenja stilski obilježenih riječi u govorima.",
     "text": [
-      "Z združevanjem kvalifikatorjev {link1} in {link2} smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.",
-      "Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).",
-      "Podjetje {link3} je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.",
+      "Kombiniranjem kvalifikatora {link1} I {link2} definirali smo ekscesni, uzvišeni i jednostavni rječnik u govorima zastupnika.",
+      "U obzir su uzeti samo kvalifikatori koji se u oba rječnika nalaze tik iza odrednice i sežu do kraja definicije (ali ne i kvalifikatori za posebna značenja odnosno upotrebe).",
+      "Poduzeće {link3} je iz stenograma zastupničkih govora pripremilo popise riječi koje imaju neki od izabranih kvalifikatora.",
       "Črtni graf prikazuje delež posameznega tipa besedja v poslančevih/-kinih govorih glede na povprečje, izračunano za celoten sklic. Delež se izračuna po naslednjem algoritmu: vzamejo se vsi poslančevi/-kini govori, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslanca/-ko z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslanca/-ko se normalizira (min. 1 – max. 100)."
     ],
     "links": [
