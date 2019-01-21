@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Seznam poslanskih skupin"
+    "title": "Popis klubova"
   },
   "analysis-texts": {
     "seat_count": {
-      "label": "Število sedežev",
-      "titleSuffix": " po številu sedežev",
-      "explanation": "Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse njihove trenutno aktivne člane."
+      "label": "Broj mjesta",
+      "titleSuffix": " prema broju mjesta",
+      "explanation": "Broj mjesta svakog kluba izračunava se na način da se prebroje svi njihovi trenutno aktivni članovi."
     },
     "presence_sessions": {
       "label": "Prisotnost na sejah DZ",
