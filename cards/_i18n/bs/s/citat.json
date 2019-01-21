@@ -3,10 +3,10 @@
     "title": "Citat"
   },
   "info": {
-    "text": "Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu {link}, strojno razbijemo na posamezne govorne nastope. To je kartica, ki predstavlja en govor.",
+    "text": "Stenogrami sjednica koji se u obliku PDF dokumenata objavljuju na stranici {link}, mašinski se raščlanjuju u pojedinačne govorne nastupe. Ovo je kartica koja predstavlja jedan govor.",
     "link": {
-      "link": "http://www.dz-rs.si",
-      "text": "DZ RS"
+      "link": "http://www.parlament.ba",
+      "text": "Parlament BiH"
     }
   }
 }
