@@ -61,7 +61,7 @@
 .tool-arrow {
   width: 36px;
   height: 29px;
-  background-image: url(encode-svg(str-replace(fs-readFile('icons/arrow_right.svg'), '#000', '#{$cta-passive-background}')));
+  background-image: url(encode-svg(str-replace(fs-readFile('icons/arrow_right.svg'), '#000', '#{$tools-arrow}')));
   background-repeat: no-repeat;
   background-size: contain;
   display: block;

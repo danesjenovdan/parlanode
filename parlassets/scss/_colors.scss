@@ -49,9 +49,11 @@ $dropdown-selected-element: #efefef;
 
 // other
 $light-background: #F1F5F7;
+$light-background-link: #900900;
 $tools-arrow: $second;
 $cta-passive-background: $second;
 $cta-hover-background: rgba($second, 0.7);
+$tools-arrow: $cta-passive-background;
 
 // common
 $white: #ffffff;
