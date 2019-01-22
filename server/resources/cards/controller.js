@@ -325,7 +325,8 @@ function render(req, res) {
     .catch((error) => {
       // eslint-disable-next-line no-console
       console.error(error);
-      res.status(500).send({ error: error.message });
+      const message = typeof error === 'string' ? error : error.message;
+      res.status(500).send({ error: message });
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
