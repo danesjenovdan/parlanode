@@ -2,7 +2,7 @@
   <div :id="$options.cardData.cardData._id">
     <generator>
       <div slot="generator" class="session-list-generator">
-        <div class="row">
+        <div v-if="filters.length > 1" class="row">
           <div class="col-md-12">
             <blue-button-list
               :items="filters"
