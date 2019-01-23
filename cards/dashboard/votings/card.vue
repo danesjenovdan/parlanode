@@ -64,6 +64,11 @@
             </template>
           </template>
         </dash-table>
+        <div v-if="votings != null" class="save-all-container">
+          <dash-loading-button :load="saveAllData" class="save-all-button">
+            {{ $t('save-all') }}
+          </dash-loading-button>
+        </div>
         <div v-if="error">Error: {{ error.message }}</div>
         <div v-else-if="votings == null" class="nalagalnik"></div>
       </div>
@@ -256,6 +261,19 @@ export default {
           });
       };
     },
+    async saveAllData() {
+      // eslint-disable-next-line no-alert, no-restricted-globals
+      if (!confirm('Warning! This will save *EVERYTHING* on all pages!')) {
+        return;
+      }
+
+      // this is purposefully sequential to not spam the api all at once
+      // eslint-disable-next-line no-restricted-syntax
+      for (const voting of this.votings) {
+        // eslint-disable-next-line no-await-in-loop
+        await this.saveData(voting)();
+      }
+    },
   },
 };
 </script>
@@ -313,6 +331,10 @@ export default {
       flex: 1;
       flex-basis: 50%;
     }
+  }
+
+  .save-all-container {
+    text-align: right;
   }
 }
 </style>
