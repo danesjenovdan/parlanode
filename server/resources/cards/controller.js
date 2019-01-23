@@ -312,23 +312,41 @@ function render(req, res) {
   // eslint-disable-next-line no-console
   console.log(`Card: ${group}/${method} - START`);
 
+  const sendRenderedCard = (renderedCard) => {
+    // eslint-disable-next-line no-console
+    console.log(`Card: ${renderedCard.group}/${renderedCard.method} - END after ${Math.round(performance.now() - startTime)} ms`);
+    if (renderedCard && renderedCard.html) {
+      res.send(renderedCard.html);
+    } else {
+      throw new Error('No rendered card');
+    }
+  };
+
   getRenderedCard(cacheData, forceRender, req.originalUrl)
-    .then((renderedCard) => {
-      // eslint-disable-next-line no-console
-      console.log(`Card: ${group}/${method} - END after ${Math.round(performance.now() - startTime)} ms`);
-      if (renderedCard && renderedCard.html) {
-        res.send(renderedCard.html);
-      } else {
-        res.status(500).send({ error: 'No rendered card' });
-      }
-    })
+    .then(sendRenderedCard)
     .catch((error) => {
       // eslint-disable-next-line no-console
       console.error(error);
       const message = typeof error === 'string' ? error : error.message;
-      res.status(500).send({ error: message });
+
+      // Try rendering error card
+      const cacheDataErrored = {
+        group: 'c',
+        method: 'errored',
+        id: null,
+        dateRequested: null,
+        embed,
+        frame,
+        altHeader,
+        customUrl: null,
+        state: JSON.stringify({ message: `Failed to render card: /${group}/${method} ${message}` }),
+      };
+      return getRenderedCard(cacheDataErrored, false, '/c/errored')
+        .then(sendRenderedCard);
     })
-    .catch(() => {
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error(error);
       res.status(500).send({ error: 'Internal Server Error' });
     });
 }
