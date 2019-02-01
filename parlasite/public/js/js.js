@@ -30,37 +30,6 @@ $(function() {
   $('.legal-text-container a').attr('target', '_blank');
 });
 
-// NEWSLETTER
-$(function() {
-  function validateEmail(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
-
-  $('#newsletterform').on('submit', function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  $('#submitnewsletteremail').on('click', function() {
-    $('.newslettersubscribe').removeClass('error');
-    if (validateEmail($('.newslettersubscribe').val())) {
-      var url = 'https://gong.us2.list-manage.com/subscribe/post-json?u=96ef5b6d1dbe39953a3a1c215&id=ec01d2995e&c=?';
-
-      $.ajax({
-        method: 'GET',
-        url: url,
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        data: $('#newsletterform').serialize(),
-        success: function() {
-          $('.newslettersubscribemsg').html('').addClass('success').html('HVALA!');
-        }
-      });
-    }
-  });
-});
-
 // SHOP/DONATION MODALS
 $(function() {
   // modal navigation
