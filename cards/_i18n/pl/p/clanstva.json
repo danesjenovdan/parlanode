@@ -1,6 +1,12 @@
 {
   "card": {
-    "title": "Członkostwo"
+    "title": "Członkostwo",
+    "committees": "Delovna telesa",
+    "councils": "Delovna telesa",
+    "comissions": "Delovna telesa",
+    "delegations": "Druga članstva",
+    "friendship_groups": "Druga članstva",
+    "investigative_comissions": "Preiskovalne komisije"
   },
   "info": {
     "lead": "Lista członków w komisjach, stałych delegacjach i parlamentarnych grupach przyjaźni.",
