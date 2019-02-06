@@ -3,6 +3,13 @@
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-votings-list">
         <h4 v-if="session">{{ session.name }}</h4>
+        <div v-if="votings != null" class="filters">
+          <input
+            v-model="filterQuery"
+            :placeholder="$t('search')"
+            class="form-control"
+          >
+        </div>
         <dash-table
           :items="mappedItems"
           :paginate="10"
@@ -141,36 +148,40 @@ export default {
       tagModalOpen: false,
       tagModalData: null,
       error: null,
+      filterQuery: '',
     };
   },
   computed: {
     mappedItems() {
       if (this.votings) {
-        return this.votings.map((voting) => {
-          const motion = this.motions.find(m => m.id === voting.motion);
-          return [
-            { voting },
-            { tags: voting.tags },
-            {
-              id: motion.id,
-              result: [
-                {
-                  id: '0',
-                  label: this.$t('vote-not-passed'),
-                  selected: motion.result === '0',
-                },
-                {
-                  id: '1',
-                  label: this.$t('vote-passed'),
-                  selected: motion.result === '1',
-                },
-              ],
-            },
-            { votes: voting.results },
-            { voting },
-            { voting },
-          ];
-        });
+        const q = this.filterQuery.toLowerCase();
+        return this.votings
+          .filter(v => v.name.toLowerCase().indexOf(q) !== -1)
+          .map((voting) => {
+            const motion = this.motions.find(m => m.id === voting.motion);
+            return [
+              { voting },
+              { tags: voting.tags },
+              {
+                id: motion.id,
+                result: [
+                  {
+                    id: '0',
+                    label: this.$t('vote-not-passed'),
+                    selected: motion.result === '0',
+                  },
+                  {
+                    id: '1',
+                    label: this.$t('vote-passed'),
+                    selected: motion.result === '1',
+                  },
+                ],
+              },
+              { votes: voting.results },
+              { voting },
+              { voting },
+            ];
+          });
       }
       return [];
     },
