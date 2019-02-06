@@ -2,6 +2,13 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-legislation-list">
+        <div v-if="legislation != null" class="filters">
+          <input
+            v-model="filterQuery"
+            :placeholder="$t('search')"
+            class="form-control"
+          >
+        </div>
         <dash-table
           :items="mappedItems"
           :paginate="50"
@@ -118,6 +125,7 @@ export default {
       abstractModalOpen: false,
       abstractModalData: null,
       error: null,
+      filterQuery: '',
     };
   },
   computed: {
@@ -137,37 +145,41 @@ export default {
     },
     mappedItems() {
       if (this.legislation && this.icons.length) {
-        return this.legislation.map(legislation => [
-          { legislation },
-          { legislation },
-          {
-            id: legislation.id,
-            status: this.statusOptions.map(([key, val]) => ({
-              id: key,
-              label: this.statusLabels[key],
-              selected: legislation.status === val,
-            })),
-          },
-          {
-            id: legislation.id,
-            result: this.resultOptions.map(([key, val]) => ({
-              id: key,
-              label: this.resultLabels[key],
-              selected: legislation.result === val,
-            })),
-          },
-          { legislation },
-          {
-            legislation,
-            icons: this.icons.map(icon => ({
-              id: icon,
-              label: icon,
-              selected: legislation.icon === icon,
-              image: `${this.slugs.urls.cdn}/icons/legislation/${icon}`,
-            })),
-          },
-          { legislation },
-        ]);
+        const q = this.filterQuery.toLowerCase();
+        return this.legislation
+          .filter(l => l.text.toLowerCase().indexOf(q) !== -1
+            || l.epa.toLowerCase().indexOf(q) !== -1)
+          .map(legislation => [
+            { legislation },
+            { legislation },
+            {
+              id: legislation.id,
+              status: this.statusOptions.map(([key, val]) => ({
+                id: key,
+                label: this.statusLabels[key],
+                selected: legislation.status === val,
+              })),
+            },
+            {
+              id: legislation.id,
+              result: this.resultOptions.map(([key, val]) => ({
+                id: key,
+                label: this.resultLabels[key],
+                selected: legislation.result === val,
+              })),
+            },
+            { legislation },
+            {
+              legislation,
+              icons: this.icons.map(icon => ({
+                id: icon,
+                label: icon,
+                selected: legislation.icon === icon,
+                image: `${this.slugs.urls.cdn}/icons/legislation/${icon}`,
+              })),
+            },
+            { legislation },
+          ]);
       }
       return [];
     },
