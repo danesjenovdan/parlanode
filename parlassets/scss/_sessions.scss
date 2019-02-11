@@ -495,11 +495,11 @@
         }
         .progress.smallbar .aye,
         .indicator.aye {
-            background: $icon-accepted;
+            background: $button-for;
         }
         .progress.smallbar .ney,
         .indicator.ney {
-            background: $link;
+            background: $button-against;
         }
         .progress.smallbar .abstention,
         .indicator.abstention {
