@@ -1,3 +1,13 @@
+<%
+  function isActiveMenu(currentMenu) {
+    if (typeof activeMenu !== 'undefined') {
+      if (activeMenu === currentMenu) {
+        return 'active'
+      }
+    }
+    return '';
+  }
+%>
 <body>
   <header class="header">
     <div class="stripeeltop"></div>
@@ -7,11 +17,11 @@
           <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
         </a>
         <div class="menu">
-          <a href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
-          <a href="/<%- sm.landing.sessions %>"><%- i18n('menu.sessions') %></a>
-          <a href="/<%- sm.landing.members %>"><%- i18n('menu.mps') %></a>
-          <a href="/<%- sm.landing.parties %>"><%- i18n('menu.pgs') %></a>
-          <a href="/<%- sm.landing.tools %>"><%- i18n('menu.tools') %></a>
+          <a class="<%- isActiveMenu('legislation') %>" href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
+          <a class="<%- isActiveMenu('sessions')    %>" href="/<%- sm.landing.sessions    %>"><%- i18n('menu.sessions')    %></a>
+          <a class="<%- isActiveMenu('mps')         %>" href="/<%- sm.landing.members     %>"><%- i18n('menu.mps')         %></a>
+          <a class="<%- isActiveMenu('pgs')         %>" href="/<%- sm.landing.parties     %>"><%- i18n('menu.pgs')         %></a>
+          <a class="<%- isActiveMenu('tools')       %>" href="/<%- sm.landing.tools       %>"><%- i18n('menu.tools')       %></a>
         </div>
         <div class="open-search"><span class="glyphicon glyphicon-search"></span></div>
         <div class="menu-search hidden">

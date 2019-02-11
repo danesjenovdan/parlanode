@@ -3,34 +3,15 @@
 <footer class="footer">
   <div class="container">
     <div class="row border_top">
-      <div class="col-lg-6">
+      <div class="col-lg-12">
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <a href="/<%- sm.landing.about %>" class="funblue-light-hover">
               <%- i18n('footer.about') %></a>
             <br>
             <br>
           </div>
-          <div class="col-lg-6">
-            <label class="control-label">
-              <%- i18n('footer.newsletter_sign_up') %></label>
-            <div class="input-group newslettersubscribemsg">
-              <form id="newsletterform">
-                <input type="email" class="form-control newslettersubscribe simplebox required" name="EMAIL" placeholder="Email">
-              </form>
-              <span class="input-group-btn">
-                <button class="btn btn-default newslettersubscribeButton simplebox" type="button" data-toggle="modal" data-target="#modal-newsletter">
-                  <%- i18n('footer.newsletter_submit') %></button>
-              </span>
-            </div>
-            <br>
-            <br>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="row">
-          <div class="col-lg-8 col-md-6  col-xs-6">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <button class="btn doniraj" data-mc="donate" data-ma="start" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-doniraj">
               <%- i18n('footer.donate') %>
               <i class="parlaicon parlaicon-doniraj">
@@ -41,7 +22,7 @@
             <br>
             <br>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-6">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <p><a href="/<%- sm.landing.media %>" class="funblue-light-hover">
                 <%- i18n('footer.press') %></a></p>
             <p><a href="/<%- sm.landing.legal %>" class="funblue-light-hover">
@@ -90,65 +71,6 @@
   </div>
   <div class="stripeelbottom"></div>
 </footer>
-
-<!-- NEWSLETTER MODAL -->
-<div class="modal fade" tabindex="-1" role="dialog" id="modal-newsletter">
-  <div class="modal-dialog modal-center" role="document">
-    <div class="modal-center-wrapper">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-logo">
-            <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="parlameter logo">
-          </div>
-          <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="text-center lead">
-              <p>Privatnost</p>
-            </div>
-            <div class="text-center">
-            <p>Klikom na gumb potvrđujete da ste upoznati s našim <a class="funblue-light-hover" target="_blank" href="/<%- sm.landing.legal %>">Pravilima privatnosti</a> i da želite primati newsletter Parlametra pod tim uvjetima.</p>
-            <p>U svakom trenutku možete odjaviti pretplatu na newsletter putem poveznice u podnožju elektroničkih poruka Parlametra. Za više informacija o zaštiti vaše privatnosti, pročitajte Pravila privatnosti na <a class="funblue-light-hover" target="_blank" href="/<%- sm.landing.legal %>"><%- config.urls.base %>/<%- sm.landing.legal %></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <div class="col-xs-12">
-            <button type="button" id="submitnewsletteremail" class="btn-multiline btn-full-width" data-dismiss="modal" data-next-target="#modal-newsletter-success">Želim primati newsletter!</button>
-            <!--data-dismiss="modal" data-next-target="#modal-doniraj-amount"-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" tabindex="-1" role="dialog" id="modal-newsletter-success">
-  <div class="modal-dialog modal-center" role="document">
-    <div class="modal-center-wrapper">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-logo">
-            <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="parlameter logo">
-          </div>
-          <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="text-center lead">
-              <p>Hvala!</p>
-            </div>
-            <div class="text-center">
-            <p>Pogledaj u svoj inbox. ;)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- END NEWSLETTER MODAL -->
 
 <%- await include('donacija.ejs') %>
 <script src="/js/js.js"></script>
