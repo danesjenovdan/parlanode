@@ -2,13 +2,31 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-legislation-list">
+        <div v-if="legislation != null" class="filters">
+          <input
+            v-model="filterQuery"
+            :placeholder="$t('search')"
+            class="form-control"
+          >
+        </div>
         <dash-table
           :items="mappedItems"
           :paginate="50"
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              <label>{{ $t('name') }} <small>{{ column.legislation.date }}</small></label>
+              <label>
+                {{ $t('name') }}
+                <div class="is-exposed-checkbox">
+                  <input
+                    :id="`is-exposed_${column.legislation.id}`"
+                    v-model="column.legislation.is_exposed"
+                    type="checkbox"
+                    class="checkbox"
+                  >
+                  <label :for="`is-exposed_${column.legislation.id}`">{{ $t('exposed') }}</label>
+                </div>
+              </label>
               <input v-model="column.legislation.text" class="form-control">
             </template>
             <template v-if="index === 1">
@@ -40,7 +58,13 @@
             </template>
             <template v-if="index === 5">
               <label>{{ $t('icon') }}</label>
-              <input v-model="column.legislation.icon" class="form-control">
+              <p-search-dropdown
+                v-model="column.icons"
+                single
+                small
+                @select="column.legislation.icon = $event"
+                @clear="column.legislation.icon = null"
+              />
             </template>
             <template v-if="index === 6">
               <dash-loading-button :load="saveData(column.legislation)">
@@ -95,9 +119,13 @@ export default {
   data() {
     return {
       legislation: null,
+      statusOptions: [],
+      resultOptions: [],
+      icons: [],
       abstractModalOpen: false,
       abstractModalData: null,
       error: null,
+      filterQuery: '',
     };
   },
   computed: {
@@ -116,30 +144,42 @@ export default {
       return obj;
     },
     mappedItems() {
-      if (this.legislation) {
-        return this.legislation.map(legislation => [
-          { legislation },
-          { legislation },
-          {
-            id: legislation.id,
-            status: this.statusOptions.map(([key, val]) => ({
-              id: key,
-              label: this.statusLabels[key],
-              selected: legislation.status === val,
-            })),
-          },
-          {
-            id: legislation.id,
-            result: this.resultOptions.map(([key, val]) => ({
-              id: key,
-              label: this.resultLabels[key],
-              selected: legislation.result === val,
-            })),
-          },
-          { legislation },
-          { legislation },
-          { legislation },
-        ]);
+      if (this.legislation && this.icons.length) {
+        const q = this.filterQuery.toLowerCase();
+        return this.legislation
+          .filter(l => l.text.toLowerCase().indexOf(q) !== -1
+            || l.epa.toLowerCase().indexOf(q) !== -1)
+          .map(legislation => [
+            { legislation },
+            { legislation },
+            {
+              id: legislation.id,
+              status: this.statusOptions.map(([key, val]) => ({
+                id: key,
+                label: this.statusLabels[key],
+                selected: legislation.status === val,
+              })),
+            },
+            {
+              id: legislation.id,
+              result: this.resultOptions.map(([key, val]) => ({
+                id: key,
+                label: this.resultLabels[key],
+                selected: legislation.result === val,
+              })),
+            },
+            { legislation },
+            {
+              legislation,
+              icons: this.icons.map(icon => ({
+                id: icon,
+                label: icon,
+                selected: legislation.icon === icon,
+                image: `${this.slugs.urls.cdn}/icons/legislation/${icon}`,
+              })),
+            },
+            { legislation },
+          ]);
       }
       return [];
     },
@@ -150,6 +190,16 @@ export default {
         this.legislation = orderBy(res.data.results, ['date'], ['desc']);
         this.statusOptions = res.data.status_options;
         this.resultOptions = res.data.result_options;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        this.error = error;
+      });
+
+    this.$parlapi.getLegislationIcons()
+      .then((res) => {
+        this.icons = res.data.icons;
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -223,6 +273,10 @@ export default {
 
   textarea {
     resize: none;
+  }
+
+  .is-exposed-checkbox {
+    float: right;
   }
 }
 </style>

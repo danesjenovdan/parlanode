@@ -50,7 +50,7 @@ export default {
     $size: 220px;
     border-radius: 50%;
     background-image: url("#{getConfig('urls.cdn')}/icons/in-development.svg");
-    background-color: #f0f5f8;
+    background-color: $light-background;
     background-size: $size / 2.5;
     background-position: center 40px;
     background-repeat: no-repeat;

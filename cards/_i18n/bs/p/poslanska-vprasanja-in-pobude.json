@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Poslanska vprašanja in pobude"
+    "title": "Zastupnička pitanja i inicijative"
   },
   "info": {
-    "lead": "Izpis vseh poslanskih vprašanj in pobud, ki ji je poslanec/-ka postavil/-a v tem sklicu DZ RS.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
+    "lead": "Prikaz svih zastupničkih pitanja i inicijativa koje je zastupnik postavio u tom sazivu Parlamenta.",
+    "text": "Podaci se preuzimaju s web stranice {link}.",
     "link": {
-      "text": "DZ RS",
+      "text": "Parlament BiH",
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/"
     }
   }

@@ -12,4 +12,30 @@ module.exports = {
     base: 'http://english.parlameter.si',
   },
   cardLang: 'en',
+  cardGlobals: {
+    parliament_id: 95,
+    session_list_tabs: [
+      {
+        title: 'Seje DZ',
+        org_ids: [95, 1],
+      },
+      {
+        title: 'Seje kolegija predsednika DZ',
+        org_ids: [9],
+      },
+      {
+        title: 'Seje delovnih teles',
+      },
+    ],
+    legislation_tabs: [
+      {
+        title: 'Zakonodaja',
+        classifications: ['zakon'],
+      },
+      {
+        title: 'Akti',
+        card_title: 'Seznam aktov',
+      },
+    ],
+  },
 };

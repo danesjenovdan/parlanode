@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "Stilne analize"
+    "title": "Stilske analize"
   },
   "info": {
-    "lead": "Pogostost uporabe stilno zaznamovanih besed v govorih poslancev poslanske skupine.",
+    "lead": "Učestalost korištenja stilski obilježenih riječi u govorima zastupnika iz istog kluba.",
     "text": [
-      "Z združevanjem kvalifikatorjev {link1} in {link2} smo definirali ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.",
-      "Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene oziroma rabe).",
-      "Podjetje {link3} je iz transkriptov poslanskih govorov pripravilo sezname besed, ki imajo katerega od izbranih kvalifikatorjev.",
-      "Črtni graf prikazuje delež posameznega tipa besedja v govorih poslanske skupine glede na povprečje, izračunano za celoten sklic. Delež se izračuna po naslednjem algoritmu: vzamejo se vsi govori poslanske skupine, prešteje se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se izvede za vse poslance, nato se deli vrednost kategorije za poslansko skupino z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom poslancev). Vrednost vsake kategorije za poslansko skupino se normalizira (min. 1 – max. 100)."
+      "Kombinovanjem kvalifikatora {link1} I {link2} definisali smo ekscesni, uzvišeni i jednostavni rječnik u govorima zastupnika.",
+      "U obzir su uzeti samo kvalifikatori koji se u oba rječnika nalaze tik iza odrednice i sežu do kraja definicije (ali ne i kvalifikatori za posebna značenja odnosno upotrebe).",
+      "Poduzeće {link3} je iz stenograma zastupničkih govora pripremilo popise riječi koje imaju neki od izabranih kvalifikatora.",
+      "Linijski grafikon prikazuje udio pojedinog tipa rječnika u govorima kluba u odnosu na prosjek izračunat za cijeli saziv. Udio se izračunava prema algoritmu: uzmu se svi govori kluba, prebroji se broj riječi (i njihovih ponavljanja) u svakoj kategoriji leksema. To se ponovi za sve zastupnike, a zatim se podijeli vrijednost kategorije za klub s prosječnom vrijednošću (zbroj vrijednosti svih zastupnika podijeljen s brojem zastupnika). Vrijednost svake kategorije za klub se normalizira (min. 1 - max. 100)."
     ],
     "links": [
       {

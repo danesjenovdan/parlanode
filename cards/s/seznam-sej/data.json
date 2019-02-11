@@ -1,28 +1,62 @@
 {
-  "created_at": "13.09.2018",
-  "created_for": "13.09.2018",
-  "sessions": [{
-    "updated_at_ts": "2018-09-13T11:36:21.607",
-    "speeches": true,
-    "link_to": "votes",
-    "name": "8. sjednica",
-    "date_ts": "2018-05-10T10:47:00",
-    "votes": true,
-    "updated_at": "13.09.2018",
-    "orgs": [{
-      "acronym": "sabor",
-      "name": "Hrvatski sabor",
-      "is_coalition": false,
-      "classification": "sabor",
-      "id": 199
-    }],
-    "date": "10. 5. 2018",
-    "org": {
-      "acronym": "sabor",
-      "name": "Hrvatski sabor",
-      "is_coalition": false,
-      "classification": "sabor",
-      "id": 199
+  "created_at": "03.01.2019",
+  "created_for": "03.01.2019",
+  "sessions": [
+    {
+      "updated_at_ts": "2018-12-20T13:15:38.700",
+      "speeches": true,
+      "link_to": "votes",
+      "name": "3. redna seja",
+      "date_ts": "2018-12-14T01:00:00",
+      "votes": true,
+      "updated_at": "20.12.2018",
+      "orgs": [
+        {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        }
+      ],
+      "date": "14. 12. 2018",
+      "org": {
+        "acronym": "DZ",
+        "name": "Državni zbor",
+        "is_coalition": false,
+        "classification": "dz",
+        "id": 1
+      },
+      "id": 41,
+      "in_review": true
+    },
+    {
+      "updated_at_ts": "2018-12-20T13:15:42.747",
+      "speeches": true,
+      "link_to": "votes",
+      "name": "17. izredna seja",
+      "date_ts": "2018-12-13T01:00:00",
+      "votes": true,
+      "updated_at": "20.12.2018",
+      "orgs": [
+        {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        }
+      ],
+      "date": "13. 12. 2018",
+      "org": {
+        "acronym": "DZ",
+        "name": "Državni zbor",
+        "is_coalition": false,
+        "classification": "dz",
+        "id": 1
+      },
+      "id": 42,
+      "in_review": true
     },
     "id": 141,
     "in_review": false
@@ -202,4 +236,3 @@
     "id": 142,
     "in_review": false
   }]
-}

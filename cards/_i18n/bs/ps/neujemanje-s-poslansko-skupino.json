@@ -1,12 +1,12 @@
 {
   "card": {
-    "title": "Neujemanje s poslansko skupino"
+    "title": "Neslaganje s klubom"
   },
   "info": {
-    "lead": "Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše je ujemanje.",
+    "lead": "Popis svih zastupnika iz kluba koji su svrstani prema vrijednosti slaganja s većinskim glasom kluba. Što je veća vrijednost, manje je slaganje.",
     "text": [
-      "Za vsako glasovanje izračunamo \"glas poslanske skupine\", ki ji posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja proti najmanjšemu.",
-      "Vse glasovnice z vrednostjo \"NI\" ignoriramo, kar ima za posledico to, da če je večinski glas poslanske skupine \"NI\" (večina poslank in poslancev se glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima poslanska skupina več \"večinskih glasov\" (dve opciji imata enako največje število glasov znotraj poslanske skupine) upoštevamo obe opciji pri primerjavi z individualnimi poslanci ni poslankami."
+      "Za svako glasanje izračuna se 'većinski glas kluba' kojem pojedini zastupnik pripada. Zatim se za svakog člana izračunava postotak glasanja kada je zastupnik glasao drugačije od većinskog glasa kluba kojem pripada. Rezultati su razvrstani od najvećeg odstupanja prema najmanjem.",
+      "Izuzimaju se zastupnici sa vrijednosti \"NISU\", što znači da ako je većinski glas kluba \"NISU\" (većina zastupnika kluba nije bila na glasanju) to glasanje je isključeno iz analize. Ako klub ima više 'većinskih glasova kluba' (dvije opcije imaju jednak najveći broj glasova unutar kluba), uzimaju se obje opcije i uspoređuju s individualnim zastupnicima."
     ]
   }
 }

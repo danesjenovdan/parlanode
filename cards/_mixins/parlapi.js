@@ -1,51 +1,97 @@
 import axios from 'axios';
-import parlapiConfig from './parlapi-config.json';
 
 function parlapi() {
   if (typeof window === 'undefined') {
     return undefined;
   }
 
-  const slugs = this.$root.$options.cardData.urls;
-  const locale = this.$root.$i18n.locale;
-  const config = parlapiConfig[locale];
-  const dataToken = localStorage.getItem('data_token');
-  const analizeToken = localStorage.getItem('analize_token');
-  // TODO: function that uses refresh token to get new access token
-  /*
-    something like:
+  const { urls: slugs, cardGlobals } = this.$root.$options.cardData;
+  const tokens = {
+    data: {
+      url: localStorage.getItem('data_url'),
+      basic: localStorage.getItem('data_basic'),
+      token: localStorage.getItem('data_token'),
+      refresh: localStorage.getItem('data_refresh'),
+      expires: localStorage.getItem('data_expires'),
+    },
+    analize: {
+      url: localStorage.getItem('analize_url'),
+      basic: localStorage.getItem('analize_basic'),
+      token: localStorage.getItem('analize_token'),
+      refresh: localStorage.getItem('analize_refresh'),
+      expires: localStorage.getItem('analize_expires'),
+    },
+  };
 
-    function retry(func) {
-      func()
-        .then(res => {
-          if (res.status ~= 4xx) {
-            return getNewToken() // either use refresh token or prompt for user/pass
-              .then(func)
-          }
-          return res
-        })
-    }
+  function shouldRefreshToken(expiry) {
+    return Date.now() > (expiry - (1000 * 60 * 10)); // 10 min before expiry
+  }
 
-  */
+  function refreshToken(obj, key) {
+    return axios.post(obj.url, {
+      grant_type: 'refresh_token',
+      refresh_token: obj.refresh,
+    }, {
+      headers: {
+        Authorization: `Basic ${obj.basic}`,
+      },
+    })
+      .then((res) => {
+        localStorage.setItem(`${key}_token`, obj.token = res.data.access_token);
+        localStorage.setItem(`${key}_refresh`, obj.refresh = res.data.refresh_token);
+        localStorage.setItem(`${key}_expires`, obj.expires = Date.now() + (res.data.expires_in * 1000));
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        // eslint-disable-next-line no-alert
+        alert('ERROR! Please logout and log back in!');
+      });
+  }
 
   const data = axios.create({
     baseURL: slugs.urls.data,
-    headers: {
-      Authorization: `Bearer ${dataToken}`,
-    },
+  });
+
+  data.interceptors.request.use((config) => {
+    config.headers.Authorization = `Bearer ${tokens.data.token}`;
+    if (shouldRefreshToken(tokens.data.expires)) {
+      return refreshToken(tokens.data, 'data')
+        .then(() => {
+          config.headers.Authorization = `Bearer ${tokens.data.token}`;
+          return config;
+        });
+    }
+    return config;
   });
 
   const analize = axios.create({
     baseURL: slugs.urls.analize,
-    headers: {
-      Authorization: `Bearer ${analizeToken}`,
-    },
+  });
+
+  analize.interceptors.request.use((config) => {
+    config.headers.Authorization = `Bearer ${tokens.analize.token}`;
+    if (shouldRefreshToken(tokens.analize.expires)) {
+      return refreshToken(tokens.analize, 'analize')
+        .then(() => {
+          config.headers.Authorization = `Bearer ${tokens.analize.token}`;
+          return config;
+        });
+    }
+    return config;
+  });
+
+  const glej = axios.create({
+    baseURL: slugs.urls.glej,
   });
 
   return {
     // sessions
-    getSessions(orgId = config.parliament_id) {
+    getSessions(orgId = cardGlobals.parliament_id) {
       return data.get(`/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`);
+    },
+    getSession(id) {
+      return data.get(`/sessions/?id=${id}`);
     },
     getSessionTFIDF(sessionId) {
       return analize.get(`/s/tfidfs/?session__id_parladata=${sessionId}`);
@@ -150,6 +196,9 @@ function parlapi() {
     postMembership(membership) {
       return data.post('/memberships/', membership);
     },
+    deleteMembership(id) {
+      return data.delete(`/memberships/${id}/`);
+    },
     getOrganisationContactEmails(orgId) {
       return data.get(`/contact_detail/?contact_type=EMAIL&organization=${orgId}&limit=10000`);
     },
@@ -161,6 +210,9 @@ function parlapi() {
     },
     deleteContact(id) {
       return data.delete(`/contact_detail/${id}/`);
+    },
+    getLegislationIcons() {
+      return glej.get('/api/icons/legislation');
     },
   };
 }

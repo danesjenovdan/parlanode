@@ -1,71 +1,55 @@
 <template>
   <div>
-    <div v-if="listing" class="row">
+    <div v-for="m in loadedData.memberships" :key="m.id" class="row">
       <div class="col-md-12">
-        <input
-          id="currentOnly"
-          v-model="currentOnly"
-          type="checkbox"
-          class="checkbox"
-        >
-        <label for="currentOnly">{{ $t('only-current') }}</label>
-      </div>
-      <div class="col-md-12">
-        <div v-if="loading > 0" class="nalagalnik"></div>
-        <ul class="person-list">
-          <li
-            v-for="person in currentOnly ? currentMembers : members"
-            :key="person.id"
-            class="person"
-          >
-            <a :href="getPersonLink(person)" class="portrait column">
-              <img :src="getPersonPortrait(person)">
-            </a>
-            <div class="column name">
-              <a :href="getPersonLink(person)" class="funblue-light-hover">
-                {{ person.name }}
-              </a>
-              <br>
-              <dash-button @click="editPerson(person.id)">
-                <small>{{ $t('edit-membership') }}</small>
-              </dash-button>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-12">
-        <dash-button @click="addMember">
-          {{ $t('add-member') }}
-        </dash-button>
-      </div>
-    </div>
-    <div v-else-if="adding" class="row">
-      <div class="col-md-12">
-        <p-search-dropdown
-          :value="dropdownItems"
-          :placeholder="peoplePlaceholder"
-          single
-          @select="selectCallback"
-          @clear="clearCallback"
-        />
-      </div>
-    </div>
-    <div v-else class="row">
-      <div class="col-md-12">
-        <p class="lead member-title">
-          <img :src="getPersonPortrait(selectedPerson)" class="img-circle">
-          {{ selectedPerson.name }}
-        </p>
-      </div>
-      <div
-        v-if="selectedPersonId"
-        class="col-md-12"
-      >
-        <div
-          v-for="membership in personalMemberships"
-          :key="membership.id"
-          class="row"
-        >
+        <div class="row">
+          <div class="col-md-2">
+            <img
+              :src="getPersonPortrait(getPersonObject(m.person))"
+              class="img-circle person-portrait"
+            >
+          </div>
+          <div class="col-md-10">
+            <label>{{ $t('member') }}</label>
+            <dash-button class="delete-button" @click="deleteMembership(m)">&times;</dash-button>
+          </div>
+          <div class="col-md-10">
+            <p-search-dropdown
+              v-model="m.people"
+              single
+              small
+              @select="m.person = $event"
+              @clear="m.person = null"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>On behalf of</label>
+          </div>
+          <div class="col-md-6">
+            <label>Role</label>
+          </div>
+          <div class="col-md-6">
+            <p-search-dropdown
+              v-model="m.on_behalf_ofs"
+              :groups="loadedData.org_groups"
+              single
+              small
+              @select="m.on_behalf_of = $event"
+              @clear="m.on_behalf_of = null"
+            />
+          </div>
+          <div class="col-md-6">
+            <p-search-dropdown
+              v-model="m.roles"
+              single
+              small
+              @select="m.role = $event"
+              @clear="m.role = null"
+            />
+          </div>
+          <br>
           <div class="col-md-6">
             <label>Start date</label>
           </div>
@@ -73,10 +57,10 @@
             <label>Start time</label>
           </div>
           <div class="col-md-6">
-            <input v-model="membership.start_date" class="form-control" type="date">
+            <input v-model="m.start_date" class="form-control" type="date">
           </div>
           <div class="col-md-6">
-            <input v-model="membership.start_time" class="form-control" type="time">
+            <input v-model="m.start_time" class="form-control" type="time">
           </div>
           <br>
           <div class="col-md-6">
@@ -86,41 +70,22 @@
             <label>End time</label>
           </div>
           <div class="col-md-6">
-            <input v-model="membership.end_date" class="form-control" type="date">
+            <input v-model="m.end_date" class="form-control" type="date">
           </div>
           <div class="col-md-6">
-            <input v-model="membership.end_time" class="form-control" type="time">
-          </div>
-          <br>
-          <div class="col-md-6">
-            <label>Role</label>
-          </div>
-          <div class="col-md-6">
-            <label>On behalf of</label>
-          </div>
-          <div class="col-md-6">
-            <p-search-dropdown
-              :value="membership.roles"
-              single
-              @select="roleSelectCallback(membership.id, $event)"
-              @clear="roleClearCallback(membership.id)"
-            />
-          </div>
-          <div class="col-md-6">
-            <p-search-dropdown
-              :value="membership.organisations"
-              single
-              @select="onBehalfOfSelectCallback(membership.id, $event)"
-              @clear="onBehalfOfClearCallback(membership.id)"
-            />
-          </div>
-          <div class="col-md-12">
-            <br>
-            <dash-button @click="saveMembership(membership.id)">
-              {{ $t('save-membership') }}
-            </dash-button>
+            <input v-model="m.end_time" class="form-control" type="time">
           </div>
         </div>
+      </div>
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <dash-button @click="addMembership">
+          {{ $t('add-membership') }}
+        </dash-button>
       </div>
     </div>
   </div>
@@ -128,43 +93,29 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import { sortBy } from 'lodash';
 import DashButton from 'components/Dashboard/Button.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import parlapi from 'mixins/parlapi';
 import links from 'mixins/links';
 
 export default {
-  name: 'DashboardModalContentOrganisationMemberships',
-
+  name: 'DashboardModalContentPersonMemberships',
   components: {
     DashButton,
     PSearchDropdown,
   },
-
   mixins: [
     parlapi,
     links,
   ],
-
   props: {
     loadedData: {
       type: Object,
       default: null,
     },
   },
-
   data() {
     return {
-      currentOnly: true,
-      listing: true,
-      adding: false,
-      people: [],
-      dropdownItems: [],
-      selectedPersonId: null,
-      organisations: [],
-      loading: 2, // -1 for people; -1 for organisations
-      error: null,
       roles: [
         {
           label: 'voter',
@@ -189,171 +140,80 @@ export default {
       ],
     };
   },
-
-  computed: {
-    members() {
-      const ids = this.loadedData.data.map(e => e.person);
-      return this.people.filter(p => ids.indexOf(p.id) !== -1);
+  created() {
+    this.enrichMemberships();
+  },
+  methods: {
+    enrichMemberships() {
+      const { people, orgs, memberships } = this.loadedData;
+      memberships.forEach((m) => {
+        this.$set(m, 'roles', this.roles.map(role => ({
+          id: role.id,
+          label: role.label,
+          selected: role.id === m.role,
+        })));
+        this.$set(m, 'people', people.map(p => ({
+          id: p.id,
+          label: p.name,
+          selected: p.id === m.person,
+        })));
+        this.$set(m, 'on_behalf_ofs', orgs.map(org => ({
+          id: org.id,
+          label: `${org._acronym} - ${org._name}`,
+          selected: org.id === m.on_behalf_of,
+        })));
+      });
     },
-
-    currentMembers() {
-      // return all members who's end_time is null
-      return this.members.filter(p => !this.loadedData.data.find(m => m.person === p.id).end_time);
-    },
-
-    peoplePlaceholder() {
-      const numberOfSelectedPeople = this.people.filter(p => p.selected).length;
-      return numberOfSelectedPeople > 0 ? `Izbranih ${numberOfSelectedPeople} poslancev` : 'Izberi poslance';
-    },
-
-    personalMemberships() {
-      if (this.loadedData.data.filter(m => m.person === this.selectedPersonId).length > 0) {
-        return this.loadedData.data.filter(m => m.person === this.selectedPersonId).map(m => ({
-          start_date: m.start_time.split('T')[0],
-          start_time: m.start_time.split('T')[1],
-          end_date: !m.end_time ? '' : m.end_time.split('T')[0],
-          end_time: !m.end_time ? '' : m.end_time.split('T')[1],
-          roles: this.roles.map(role => ({
-            id: role.id,
-            label: role.label,
-            selected: role.id === m.role,
-          })),
-          organisations: this.organisations.map(org => ({
-            id: org.id,
-            label: org.label,
-            selected: org.id === m.on_behalf_of,
-          })),
-          on_behalf_of: m.on_behalf_of,
-          role: m.role,
-          id: m.id,
-        }));
-      }
-
-      return [{
+    addMembership() {
+      const { people, orgs, memberships } = this.loadedData;
+      memberships.push({
+        id: null,
         start_date: null,
         start_time: null,
         end_date: null,
         end_time: null,
+        role: null,
         roles: this.roles.map(role => ({
           id: role.id,
           label: role.label,
           selected: false,
         })),
-        organisations: this.organisations.map(org => ({
-          id: org.id,
-          label: org.label,
-          selected: false,
-        })),
-        on_behalf_of: null,
-        role: null,
-        id: null,
-      }];
-    },
-
-    selectedPerson() {
-      return this.people.find(p => p.id === this.selectedPersonId);
-    },
-  },
-
-  mounted() {
-    this.fetchPeople();
-    this.fetchOrgs();
-  },
-
-  methods: {
-    fetchPeople() {
-      this.$parlapi.getPeople().then((allPeople) => {
-        this.people = allPeople.data.results;
-
-        this.dropdownItems = this.people.map(p => ({
+        person: null,
+        people: people.map(p => ({
           id: p.id,
           label: p.name,
           selected: false,
-          image: this.getPersonPortrait(p),
-        }));
-
-        this.loading -= 1;
+        })),
+        on_behalf_of: null,
+        on_behalf_ofs: orgs.map(org => ({
+          id: org.id,
+          label: `${org._acronym} - ${org._name}`,
+          selected: false,
+        })),
       });
     },
-
-    fetchOrgs() {
-      this.$parlapi.getAllOrganisations()
-        .then((orgs) => {
-          this.organisations = sortBy(orgs.data.results, ['_name'])
-            .map(org => ({
-              id: org.id,
-              label: org._name,
-              selected: false,
-            }));
-
-          this.loading -= 1;
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.error(error);
-          this.error = error;
-        });
-    },
-
-    addMember() {
-      this.listing = false;
-      this.adding = true;
-    },
-
-    selectCallback(id) {
-      this.adding = false;
-      this.dropdownItems.find(p => p.id === id).selected = true;
-      this.selectedPersonId = id;
-    },
-
-    clearCallback() {
-      this.dropdownItems.forEach((p) => {
-        if (p.selected) {
-          p.selected = false;
+    async deleteMembership(m) {
+      // if it was saved it has an ID
+      if (m.id) {
+        // eslint-disable-next-line no-alert
+        const sure = window.confirm('Are you sure you want to DELETE? This is final!');
+        if (sure) {
+          await this.$parlapi.deleteMembership(m.id);
+          this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
         }
-      });
-      this.selectedPersonId = null;
-    },
-
-    roleSelectCallback(id, value) {
-      const membership = this.loadedData.data.find(m => m.id === id);
-      membership.role = value;
-    },
-
-    roleClearCallback(id) {
-      const membership = this.loadedData.data.find(m => m.id === id);
-      membership.role = null;
-    },
-
-    onBehalfOfSelectCallback(id, value) {
-      const membership = this.loadedData.data.find(m => m.id === id);
-      membership.on_behalf_of = value;
-    },
-
-    onBehalfOfClearCallback(id) {
-      const membership = this.loadedData.data.find(m => m.id === id);
-      membership.on_behalf_of = null;
-    },
-
-    editPerson(id) {
-      this.listing = false;
-      this.selectCallback(id);
-    },
-
-    saveMembership(id) {
-      const membership = this.personalMemberships.find(m => m.id === id);
-      const membershipToSave = JSON.parse(JSON.stringify(membership));
-
-      membershipToSave.start_time = `${membershipToSave.start_date}T${membershipToSave.start_time}`;
-      membershipToSave.end_time = `${membershipToSave.end_date}T${membershipToSave.end_time}`;
-
-      if (membershipToSave.end_time === 'T') {
-        membershipToSave.end_time = null;
+      } else {
+        // it's not saved just remove it
+        this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
       }
-
-      this.$parlapi.patchMembership(id, membershipToSave);
-
-      this.listing = true;
+    },
+    getPersonObject(personId) {
+      if (personId) {
+        const person = this.loadedData.people.find(p => p.id === personId);
+        if (person && person.gov_id) {
+          return person;
+        }
+      }
+      return { gov_id: 'null' };
     },
   },
 };
@@ -376,7 +236,23 @@ label {
   font-weight: 700;
 }
 
-.member-title img {
-  margin-right: 15px;
+hr {
+  margin: 16px 0 6px;
+  border-color: #000;
+}
+
+.delete-button {
+  background-color: #f00;
+  padding: 1px 7px;
+  float: right;
+}
+
+.delete-button:hover {
+  background-color: rgba(#f00, 0.7);
+}
+
+.person-portrait {
+  width: 80px;
+  height: 80px;
 }
 </style>

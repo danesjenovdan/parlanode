@@ -1,9 +1,9 @@
 {
   "card": {
-    "title": "Prisotnost na glasovanjih sej DZ skozi čas"
+    "title": "Prisutnost na glasanjima kroz vrijeme"
   },
   "info": {
-    "lead": "Prisotnost poslanske skupine na glasovanjih DZ skozi čas.",
-    "text": "Seštejemo število glasovanj, na katerih bi v izbranem mesecu morali biti prisotni poslanci poslanske skupine, in z odstotki prikažemo, kolikšnega deleža glasovanj so se udeležili."
+    "lead": "Prisutnost kluba na glasanju na sjednicama Parlamenta BiH tokom vremena.",
+    "text": "Uzima se broj glasanja na kojima bi u odabranom mjesecu trebali biti prisutni zastupnici kluba i u postocima se prikazuje na koliko su od svih glasanja bili."
   }
 }

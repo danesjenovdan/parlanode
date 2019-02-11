@@ -2,7 +2,7 @@
   <div :id="$options.cardData.cardData._id">
     <generator>
       <div slot="generator" class="session-list-generator">
-        <div class="row">
+        <div v-if="filters.length > 1" class="row">
           <div class="col-md-12">
             <blue-button-list
               :items="filters"
@@ -57,7 +57,6 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import InnerCard from './innerCard.vue';
-import cardConfigJson from './config.json';
 
 export default {
   name: 'SeznamSej',
@@ -72,15 +71,15 @@ export default {
     common,
   ],
   data() {
-    const cardConfig = cardConfigJson[this.$i18n.locale];
+    const tabs = this.$options.cardData.cardGlobals.session_list_tabs;
     return {
-      cardConfig,
+      tabs,
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      filters: cardConfig.tabs.map(e => ({ label: e.title, id: e.title })),
+      filters: tabs.map(e => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData, 'state.filter') || cardConfig.tabs[0].title,
+      currentFilter: get(this.$options.cardData, 'state.filter') || tabs[0].title,
       justFive: get(this.$options.cardData, 'state.justFive') || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
@@ -117,7 +116,7 @@ export default {
     processedSessions() {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
-          const selectedTab = this.cardConfig.tabs.find(t => t.title === this.currentFilter);
+          const selectedTab = this.tabs.find(t => t.title === this.currentFilter);
           if (selectedTab) {
             if (selectedTab.org_ids && selectedTab.org_ids.length) {
               return session.orgs.filter(org => selectedTab.org_ids.indexOf(org.id) !== -1).length;
@@ -204,7 +203,7 @@ export default {
   },
   watch: {
     currentFilter(newValue) {
-      const otherTab = this.cardConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      const otherTab = this.tabs.find(t => !t.org_ids || !t.org_ids.length);
       if (newValue !== otherTab.title) {
         this.workingBodies.forEach((workingBody) => {
           workingBody.selected = false;
@@ -212,7 +211,7 @@ export default {
       }
     },
     currentWorkingBodies(newValue) {
-      const otherTab = this.cardConfig.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      const otherTab = this.tabs.find(t => !t.org_ids || !t.org_ids.length);
       if (newValue.length !== 0 && this.currentFilter !== otherTab.title) {
         this.currentFilter = otherTab.title;
       }
@@ -231,7 +230,7 @@ export default {
   },
   methods: {
     organisationIsWorkingBody(organisationId) {
-      const orgIds = this.cardConfig.tabs.reduce((acc, cur) => {
+      const orgIds = this.tabs.reduce((acc, cur) => {
         if (cur.org_ids) {
           return acc.concat(cur.org_ids);
         }

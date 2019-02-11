@@ -1,5 +1,11 @@
 {
   "edit-info": "Edytuj dane",
   "only-parties": "Tylko kluby parlamentarne",
-  "edit-memberships": "Edytuj członkostwo"
+  "edit-memberships": "Edytuj członkostwo",
+  "only-current": "Samo trenutna",
+  "add-member": "Dodaj člana",
+  "edit-membership": "Uredi članstvo",
+  "save-membership": "Shrani članstvo",
+  "member": "Član",
+  "add-membership": "Dodaj članstvo"
 }

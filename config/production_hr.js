@@ -12,4 +12,21 @@ module.exports = {
     base: 'https://parlametar.hr',
   },
   cardLang: 'hr',
+  cardGlobals: {
+    parliament_id: 199,
+    session_list_tabs: [
+      {
+        title: 'Seje sabora',
+        org_ids: [199],
+      },
+      {
+        title: 'Ostale seje',
+      },
+    ],
+    legislation_tabs: [
+      {
+        title: 'Zakonodaja',
+      },
+    ],
+  },
 };

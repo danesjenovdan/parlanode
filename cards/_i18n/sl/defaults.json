@@ -6,6 +6,7 @@
   "load": "Naloži",
   "confirm": "Potrdi",
   "data-currently-unavailable": "Podatki trenutno niso na voljo.",
+  "search": "Išči",
   "title-search": "Išči po naslovu",
   "contents-search": "Išči po vsebini govorov",
   "working-body": "Matično delovno telo",
@@ -92,8 +93,12 @@
   "acts": "Akti",
   "votings": "Glasovanja",
   "save": "Shrani",
+  "save-all": "Shrani vse",
+  "saved": "Shranjeno",
   "generate": "Ustvari",
   "edit-abstract": "Uredi povzetek",
+  "acronym": "Kratica",
+  "classification": "Klasifikacija",
   "info": {
     "title": "Info",
     "methodology": "METODOLOGIJA"

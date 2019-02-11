@@ -34,6 +34,19 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12">
+            <label>{{ $t('number-of-votes') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.number="loadedData.org.voters" class="form-control" type="number">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <hr>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
             <label>Facebook</label>
           </div>
           <div class="col-md-12 small">

@@ -1,5 +1,11 @@
 {
   "edit-info": "Edit information",
   "only-parties": "Only parliamentary groups",
-  "edit-memberships": "Edit membership"
+  "edit-memberships": "Edit membership",
+  "only-current": "Samo trenutna",
+  "add-member": "Dodaj člana",
+  "edit-membership": "Uredi članstvo",
+  "save-membership": "Shrani članstvo",
+  "member": "Član",
+  "add-membership": "Dodaj članstvo"
 }

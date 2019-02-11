@@ -1,4 +1,7 @@
 {
   "edit-info": "Uredi podatke",
-  "only-mps": "Samo zastupnice"
+  "only-mps": "Samo zastupnice",
+  "display-name": "Ime za prikaz",
+  "edit-memberships": "Uredi članstva",
+  "add-membership": "Dodaj članstvo"
 }

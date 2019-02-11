@@ -5,6 +5,7 @@
         <div class="row">
           <div class="col-md-12">
             <label>{{ $t('organization') }}</label>
+            <dash-button class="delete-button" @click="deleteMembership(m)">&times;</dash-button>
           </div>
           <div class="col-md-12">
             <p-search-dropdown
@@ -140,21 +141,21 @@ export default {
     enrichMemberships() {
       const { orgs, memberships } = this.loadedData;
       memberships.forEach((m) => {
-        m.roles = this.roles.map(role => ({
+        this.$set(m, 'roles', this.roles.map(role => ({
           id: role.id,
           label: role.label,
           selected: role.id === m.role,
-        }));
-        m.organizations = orgs.map(org => ({
+        })));
+        this.$set(m, 'organizations', orgs.map(org => ({
           id: org.id,
           label: `${org._acronym} - ${org._name}`,
           selected: org.id === m.organization,
-        }));
-        m.on_behalf_ofs = orgs.map(org => ({
+        })));
+        this.$set(m, 'on_behalf_ofs', orgs.map(org => ({
           id: org.id,
           label: `${org._acronym} - ${org._name}`,
           selected: org.id === m.on_behalf_of,
-        }));
+        })));
       });
     },
     addMembership() {
@@ -185,6 +186,20 @@ export default {
         })),
       });
     },
+    async deleteMembership(m) {
+      // if it was saved it has an ID
+      if (m.id) {
+        // eslint-disable-next-line no-alert
+        const sure = window.confirm('Are you sure you want to DELETE? This is final!');
+        if (sure) {
+          await this.$parlapi.deleteMembership(m.id);
+          this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
+        }
+      } else {
+        // it's not saved just remove it
+        this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
+      }
+    },
   },
 };
 </script>
@@ -209,5 +224,15 @@ label {
 hr {
   margin: 16px 0 6px;
   border-color: #000;
+}
+
+.delete-button {
+  background-color: #f00;
+  padding: 1px 7px;
+  float: right;
+}
+
+.delete-button:hover {
+  background-color: rgba(#f00, 0.7);
 }
 </style>
