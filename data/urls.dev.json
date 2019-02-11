@@ -101,7 +101,7 @@
   },
   "urls": {
     "notifications_api": "https://obvestila.parlametr.pl",
-    "isci": "http://localhost:8888",
+    "isci": "https://isci.parlametar.hr",
     "analize": "http://analize.nov.parlameter.si/v1",
     "data": "http://data.nov.parlameter.si/v1",
     "glej": "http://localhost:3000",

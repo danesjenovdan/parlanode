@@ -24,7 +24,7 @@
   &::after {
     content: '';
     display: inline-block;
-    background-image: url('#{icon-load($link)}');
+    background-image: url('#{icon-load($load-icon)}');
     width: 20px;
     height: 20px;
     position: relative;
