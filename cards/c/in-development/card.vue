@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/colors';
+
 .empty {
   bottom: 0;
   left: 0;
