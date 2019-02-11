@@ -2,6 +2,14 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-votings-list">
+        <h4 v-if="session">{{ session.name }}</h4>
+        <div v-if="votings != null" class="filters">
+          <input
+            v-model="filterQuery"
+            :placeholder="$t('search')"
+            class="form-control"
+          >
+        </div>
         <dash-table
           :items="mappedItems"
           :paginate="10"
@@ -63,6 +71,11 @@
             </template>
           </template>
         </dash-table>
+        <div v-if="votings != null" class="save-all-container">
+          <dash-loading-button :load="saveAllData" class="save-all-button">
+            {{ $t('save-all') }}
+          </dash-loading-button>
+        </div>
         <div v-if="error">Error: {{ error.message }}</div>
         <div v-else-if="votings == null" class="nalagalnik"></div>
       </div>
@@ -129,41 +142,46 @@ export default {
       votings: null,
       motions: null,
       tags: null,
+      session: null,
       abstractModalOpen: false,
       abstractModalData: null,
       tagModalOpen: false,
       tagModalData: null,
       error: null,
+      filterQuery: '',
     };
   },
   computed: {
     mappedItems() {
       if (this.votings) {
-        return this.votings.map((voting) => {
-          const motion = this.motions.find(m => m.id === voting.motion);
-          return [
-            { voting },
-            { tags: voting.tags },
-            {
-              id: motion.id,
-              result: [
-                {
-                  id: '0',
-                  label: this.$t('vote-not-passed'),
-                  selected: motion.result === '0',
-                },
-                {
-                  id: '1',
-                  label: this.$t('vote-passed'),
-                  selected: motion.result === '1',
-                },
-              ],
-            },
-            { votes: voting.results },
-            { voting },
-            { voting },
-          ];
-        });
+        const q = this.filterQuery.toLowerCase();
+        return this.votings
+          .filter(v => v.name.toLowerCase().indexOf(q) !== -1)
+          .map((voting) => {
+            const motion = this.motions.find(m => m.id === voting.motion);
+            return [
+              { voting },
+              { tags: voting.tags },
+              {
+                id: motion.id,
+                result: [
+                  {
+                    id: '0',
+                    label: this.$t('vote-not-passed'),
+                    selected: motion.result === '0',
+                  },
+                  {
+                    id: '1',
+                    label: this.$t('vote-passed'),
+                    selected: motion.result === '1',
+                  },
+                ],
+              },
+              { votes: voting.results },
+              { voting },
+              { voting },
+            ];
+          });
       }
       return [];
     },
@@ -173,11 +191,13 @@ export default {
       this.$parlapi.getVotings(this.sessionId),
       this.$parlapi.getMotions(this.sessionId),
       this.$parlapi.getTags(),
+      this.$parlapi.getSession(this.sessionId),
     ])
-      .then(([votings, motions, tags]) => {
+      .then(([votings, motions, tags, sessions]) => {
         this.votings = orderBy(votings.data.results, ['start_time'], ['desc']);
         this.motions = motions.data.results;
         this.tags = tags.data.results;
+        this.session = sessions.data.results.length ? sessions.data.results[0] : {};
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -252,6 +272,19 @@ export default {
           });
       };
     },
+    async saveAllData() {
+      // eslint-disable-next-line no-alert, no-restricted-globals
+      if (!confirm('Warning! This will save *EVERYTHING* on all pages!')) {
+        return;
+      }
+
+      // this is purposefully sequential to not spam the api all at once
+      // eslint-disable-next-line no-restricted-syntax
+      for (const voting of this.votings) {
+        // eslint-disable-next-line no-await-in-loop
+        await this.saveData(voting)();
+      }
+    },
   },
 };
 </script>
@@ -309,6 +342,10 @@ export default {
       flex: 1;
       flex-basis: 50%;
     }
+  }
+
+  .save-all-container {
+    text-align: right;
   }
 }
 </style>

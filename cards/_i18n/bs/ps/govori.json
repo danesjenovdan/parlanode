@@ -3,7 +3,7 @@
     "title": "Govori"
   },
   "info": {
-    "lead": "Izpis povezav do vseh govorov poslancev poslanske skupine v tem sklicu, ki ustrezajo uporabniškemu vnosu, razvrščenih po datumu.",
-    "text": "Naložimo povezave do vseh govorov poslancev izbrane poslanske skupine, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (poslanci, časovno obdobje, vrsta seje)."
+    "lead": "Ispis linkova na sve govore zastupnika u jednom sazivu, a koji odgovaraju korisničkom izboru, razvrstani prema datumu.",
+    "text": "Učitavaju se linkovi na sve govore odabranog kluba koji se mogu naći u stenogramima objavljenim na web stranicama Parlamenta BiH, i prikazuju oni koji odgovaraju korisničkom izboru (zastupnici, vremensko razdoblje, vrsta sjednice)."
   }
 }

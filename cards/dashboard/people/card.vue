@@ -2,7 +2,7 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-people-list">
-        <div>
+        <div v-if="people != null">
           <input
             id="mpsOnly"
             v-model="mpsOnly"
@@ -18,7 +18,8 @@
         >
           <template slot="item-col" slot-scope="{ column, index }">
             <template v-if="index === 0">
-              {{ column.person.name }}
+              <img :src="getPersonPortrait(column.person)" class="img-circle person-portrait">
+              <span class="person-name">{{ column.person.name }}</span>
             </template>
             <template v-if="index === 1">
               <dash-button @click="openInfoModal(column.person)">
@@ -28,6 +29,11 @@
             <template v-if="index === 2">
               <dash-button @click="openTfidfModal(column.person)">
                 TFIDF
+              </dash-button>
+            </template>
+            <template v-if="(index === 3)">
+              <dash-button @click="openMembershipsModal(column.person)">
+                {{ $t('edit-memberships') }}
               </dash-button>
             </template>
           </template>
@@ -54,18 +60,29 @@
         <modal-content-person-info :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
+    <dash-fancy-modal
+      v-if="membershipsModalOpen && membershipsModalData"
+      :data="membershipsModalData"
+      @closed="closeMembershipsModal"
+    >
+      <template slot="modal-data" slot-scope="{ loadedData }">
+        <modal-content-person-memberships :loaded-data="loadedData" />
+      </template>
+    </dash-fancy-modal>
   </div>
 </template>
 
 <script>
-import { assign, sortBy } from 'lodash';
+import { assign, sortBy, zip, groupBy, map } from 'lodash';
 import common from 'mixins/common';
+import links from 'mixins/links';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
 import DashButton from 'components/Dashboard/Button.vue';
 import DashFancyModal from 'components/Dashboard/FancyModal.vue';
 import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
 import ModalContentPersonInfo from 'components/Dashboard/ModalContentPersonInfo.vue';
+import ModalContentPersonMemberships from 'components/Dashboard/ModalContentPersonMemberships.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
@@ -77,9 +94,11 @@ export default {
     DashFancyModal,
     ModalContentTfidf,
     ModalContentPersonInfo,
+    ModalContentPersonMemberships,
   },
   mixins: [
     common,
+    links,
     parlapi,
   ],
   data() {
@@ -90,6 +109,8 @@ export default {
       tfidfModalData: null,
       infoModalOpen: false,
       infoModalData: null,
+      membershipsModalOpen: false,
+      membershipsModalData: null,
       error: null,
     };
   },
@@ -99,11 +120,13 @@ export default {
         { id: 'name', label: this.$t('name') },
         { id: 'info', label: 'INFO' },
         { id: 'tfidf', label: 'TFIDF' },
+        { id: 'memberships', label: this.$t('edit-memberships') },
       ];
     },
     mappedItems() {
       if (this.people) {
         return this.people.map(person => [
+          { person },
           { person },
           { person },
           { person },
@@ -162,11 +185,18 @@ export default {
       this.infoModalData = {
         title: `INFO - ${person.name}`,
         loadData: async () => {
-          const links = await this.$parlapi.getPersonSocialLinks(person.id);
-          const facebook = links.data.results.find(link => link.tags.indexOf('fb') !== -1);
-          const twitter = links.data.results.find(link => link.tags.indexOf('tw') !== -1);
+          const socialLinks = await this.$parlapi.getPersonSocialLinks(person.id);
+          const facebook = socialLinks.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const twitter = socialLinks.data.results.filter(link => link.tags.indexOf('tw') !== -1);
           return {
             person: {
+              name: person.name,
+              honorific_prefix: person.honorific_prefix,
+              given_name: person.given_name,
+              additional_name: person.additional_name,
+              patronymic_name: person.patronymic_name,
+              family_name: person.family_name,
+              honorific_suffix: person.honorific_suffix,
               voters: person.voters,
               mandates: person.mandates,
               previous_occupation: person.previous_occupation,
@@ -174,42 +204,49 @@ export default {
               education_level: person.education_level,
               districts: person.districts,
               birth_date: person.birth_date,
+              gov_id: person.gov_id,
             },
             socials: {
-              facebook: facebook || {
-                tags: ['social', 'fb'],
-                url: '',
-                note: 'FB',
-                name: '',
-              },
-              twitter: twitter || {
-                tags: ['social', 'tw'],
-                url: '',
-                note: 'TW',
-                name: '',
-              },
+              facebook: facebook.map(e => e.url).join('\n'),
+              twitter: twitter.map(e => e.url).join('\n'),
             },
           };
         },
         saveData: async (personInfo) => {
-          const fb = personInfo.socials.facebook;
-          if (fb.url) {
-            if (fb.id) {
-              await this.$parlapi.patchLink(fb.id, fb);
-            } else {
-              const fbRes = await this.$parlapi.postLink(fb);
-              fb.id = fbRes.data.id;
+          const mapSocialUrls = (urls, tag, note) => urls
+            .split('\n')
+            .map(url => url.trim())
+            .filter(Boolean)
+            .map(url => ({
+              tags: ['social', tag],
+              url,
+              note,
+              name: '',
+              person: person.id,
+            }));
+
+          const socialLinks = await this.$parlapi.getPersonSocialLinks(person.id);
+          const fbs = socialLinks.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const tws = socialLinks.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+
+          const newFbs = mapSocialUrls(personInfo.socials.facebook, 'fb', 'FB');
+          const newTws = mapSocialUrls(personInfo.socials.twitter, 'tw', 'TW');
+
+          const updateLink = async ([link, newLink]) => {
+            if (link && newLink) {
+              assign(link, newLink);
+              await this.$parlapi.patchLink(link.id, link);
+            } else if (link) {
+              await this.$parlapi.deleteLink(link.id);
+            } else if (newLink) {
+              const linkRes = await this.$parlapi.postLink(newLink);
+              newLink.id = linkRes.data.id;
             }
-          }
-          const tw = personInfo.socials.twitter;
-          if (tw.url) {
-            if (tw.id) {
-              await this.$parlapi.patchLink(tw.id, tw);
-            } else {
-              const twRes = await this.$parlapi.postLink(tw);
-              tw.id = twRes.data.id;
-            }
-          }
+          };
+
+          await Promise.all(zip(fbs, newFbs).map(updateLink));
+          await Promise.all(zip(tws, newTws).map(updateLink));
+
           assign(person, personInfo.person);
           return this.$parlapi.patchPerson(person.id, person);
         },
@@ -219,6 +256,67 @@ export default {
     closeInfoModal() {
       this.infoModalData = null;
       this.infoModalOpen = false;
+    },
+    openMembershipsModal(person) {
+      this.membershipsModalData = {
+        title: `${this.$t('edit-memberships')} - ${person.name}`,
+        loadData: async () => {
+          const orgs = await this.$parlapi.getAllOrganisations();
+          const membershipsData = await this.$parlapi.getPersonMemberships(person.id);
+          const memberships = sortBy(membershipsData.data.results, ['start_time']);
+          return {
+            orgs: sortBy(orgs.data.results, ['_name']),
+            org_groups: map(groupBy(orgs.data.results, 'classification'), (val, key) => ({
+              label: key,
+              items: val.map(o => o.id),
+            })),
+            memberships: memberships.map((membership) => {
+              const start = membership.start_time ? membership.start_time.split('T') : ['', ''];
+              const end = membership.end_time ? membership.end_time.split('T') : ['', ''];
+              return {
+                id: membership.id,
+                start_date: start[0],
+                start_time: start[1],
+                end_date: end[0],
+                end_time: end[1],
+                organization: membership.organization,
+                on_behalf_of: membership.on_behalf_of,
+                label: membership.label,
+                role: membership.role,
+              };
+            }),
+          };
+        },
+        saveData: async (loadedData) => {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const m of loadedData.memberships) {
+            const startTime = (m.start_date && m.start_time) ? `${m.start_date}T${m.start_time}` : null;
+            const endTime = (m.end_date && m.end_time) ? `${m.end_date}T${m.end_time}` : null;
+            const membership = {
+              start_time: startTime,
+              end_time: endTime,
+              organization: m.organization,
+              on_behalf_of: m.on_behalf_of,
+              label: m.label,
+              role: m.role,
+              person: person.id,
+            };
+            if (m.id) {
+              // eslint-disable-next-line no-await-in-loop
+              await this.$parlapi.patchMembership(m.id, membership);
+            } else {
+              // eslint-disable-next-line no-await-in-loop
+              const mRes = await this.$parlapi.postMembership(membership);
+              m.id = mRes.data.id;
+            }
+          }
+        },
+      };
+      this.membershipsModalOpen = true;
+    },
+    closeMembershipsModal() {
+      this.membershipsModalData = null;
+      this.membershipsModalOpen = false;
     },
   },
 };
@@ -230,9 +328,20 @@ export default {
   .table-headers {
     .table-row {
       .table-col:nth-child(1) {
-        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-grow: 1.5;
       }
     }
   }
+}
+
+.person-portrait {
+  width: 39px;
+  height: 39px;
+}
+
+.person-name {
+  margin-left: 15px;
 }
 </style>

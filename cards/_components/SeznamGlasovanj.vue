@@ -19,7 +19,7 @@
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="allTags" />
       </div>
-      <div v-if="allClassifications.length" class="filter tag-dropdown">
+      <div v-if="allClassifications.length > 1" class="filter tag-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown v-model="allClassifications" />
       </div>

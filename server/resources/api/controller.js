@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const mongoose = require('mongoose');
 const glob = require('glob');
+const { CronJob } = require('cron');
 const config = require('../../../config');
 const data = require('../../data');
 const { loadCardJson, shouldBuildCard, buildCard } = require('../cards/controller');
@@ -85,17 +86,37 @@ function clearModel(modelName, req) {
   return query.deleteMany();
 }
 
-function deleteOldCardRenders(req, res) {
+function deleteOldCardRendersFromDB(days = 28) {
   const CardRender = mongoose.model('CardRender');
-  const days = Number(req.query.days) || 28;
   const time = (1000 * 60 * 60 * 24 * days);
-  CardRender.find().where('lastAccessed').lte(Date.now() - time)
-    .deleteMany()
+
+  // eslint-disable-next-line no-console
+  console.log(`Deleting renders accessed more than ${days} days ago ...`);
+  return CardRender.deleteMany({
+    lastAccessed: { $lte: Date.now() - time },
+  })
     .then((obj) => {
-      res.json(obj);
+      // eslint-disable-next-line no-console
+      console.log('Finished deleting old renders');
+      return [null, obj];
     })
     .catch((err) => {
-      res.status(500).send(err);
+      // eslint-disable-next-line no-console
+      console.error('Failed deleting old renders:', err);
+      return [err, null];
+    });
+}
+
+function deleteOldCardRenders(req, res) {
+  const days = Number(req.query.days) || 28;
+  Promise.resolve()
+    .then(() => deleteOldCardRendersFromDB(days))
+    .then(([err, obj]) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(obj);
+      }
     });
 }
 
@@ -110,10 +131,20 @@ function deleteCardRenders(req, res) {
 }
 
 function deleteCardBuilds(req, res) {
-  clearModel('CardBuild')
+  // dont allow filtering by person/party id since it doesn't exist on builds
+  req.query.id = undefined;
+
+  clearModel('CardBuild', req)
     .then(async (obj) => {
+      let allCards = await getAllCardPaths();
+      if (req && req.query && req.query.group) {
+        allCards = allCards.filter(c => c.group === req.query.group);
+      }
+      if (req && req.query && req.query.method) {
+        allCards = allCards.filter(c => c.method === req.query.method);
+      }
       // eslint-disable-next-line no-restricted-syntax
-      for (const card of await getAllCardPaths()) {
+      for (const card of allCards) {
         // eslint-disable-next-line no-await-in-loop
         await fs.remove(`./cards/${card.group}/${card.method}/bundles`);
       }
@@ -386,6 +417,25 @@ function refetchData(req, res) {
     });
 }
 
+function listLegislationIcons(req, res) {
+  fs.readdir('./parlassets/icons/legislation')
+    .then((files) => {
+      const icons = files.filter(f => f.toLowerCase() !== 'readme.md');
+      res.json({
+        icons,
+      });
+    })
+    .catch((pError) => {
+      // eslint-disable-next-line no-console
+      console.error(pError);
+      res.send(`Error: ${pError.message}`);
+    });
+}
+
+// delete old card renders every day at 3am
+const cron = new CronJob('00 03 * * *', () => deleteOldCardRendersFromDB(14));
+cron.start();
+
 module.exports = {
   getCardRenders,
   getCardBuilds,
@@ -403,4 +453,5 @@ module.exports = {
   deleteOgBuildId,
   rebuildOgs,
   refetchData,
+  listLegislationIcons,
 };

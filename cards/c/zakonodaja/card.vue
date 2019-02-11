@@ -2,7 +2,7 @@
   <div :id="$options.cardData.cardData._id">
     <generator>
       <div slot="generator" class="session-list-generator legislation-list">
-        <div class="row">
+        <div v-if="filters.length > 1" class="row">
           <div class="col-md-12">
             <blue-button-list
               :items="filters"
@@ -59,7 +59,6 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
 import dateParser from 'helpers/dateParser';
 import InnerCard from './innerCard.vue';
-import cardConfigJson from './config.json';
 
 export default {
   name: 'Zakonodaja',
@@ -88,13 +87,12 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const cardConfig = cardConfigJson[this.$i18n.locale];
-
+    const tabs = this.$options.cardData.cardGlobals.legislation_tabs;
     return {
-      cardConfig,
+      tabs,
       data: this.$options.cardData.data.results,
-      filters: cardConfig.tabs.map(e => ({ id: e.title, label: e.title })),
-      currentFilter: this.$options.cardData.parlaState.filter || cardConfig.tabs[0].title,
+      filters: tabs.map(e => ({ id: e.title, label: e.title })),
+      currentFilter: this.$options.cardData.parlaState.filter || tabs[0].title,
       currentSort: 'updated',
       currentSortOrder: 'desc',
       textFilter: '',
@@ -115,7 +113,7 @@ export default {
       });
     },
     dynamicTitle() {
-      const currentTab = this.cardConfig.tabs.find(e => e.title === this.currentFilter);
+      const currentTab = this.tabs.find(e => e.title === this.currentFilter);
       if (currentTab && currentTab.card_title) {
         return currentTab.card_title;
       }
@@ -171,13 +169,13 @@ export default {
 
         let typeMatch = this.currentFilter === '';
         if (!typeMatch) {
-          const currentTab = this.cardConfig.tabs.find(e => e.title === this.currentFilter);
+          const currentTab = this.tabs.find(e => e.title === this.currentFilter);
           if (currentTab) {
             const classification = legislation.classification == null ? 'null' : legislation.classification;
             if (currentTab.classifications) {
               typeMatch = currentTab.classifications.indexOf(classification) !== -1;
             } else {
-              const classifications = this.cardConfig.tabs.reduce((acc, cur) => {
+              const classifications = this.tabs.reduce((acc, cur) => {
                 if (cur.classifications) {
                   return acc.concat(cur.classifications);
                 }

@@ -2,6 +2,12 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-sessions-list">
+        <p-search-dropdown
+          v-if="orgs"
+          v-model="orgs"
+          single
+          @select="onSelectOrg"
+        />
         <dash-table
           :columns="columns"
           :items="mappedItems"
@@ -30,7 +36,7 @@
           </template>
         </dash-table>
         <div v-if="error">Error: {{ error.message }}</div>
-        <div v-else-if="sessions == null" class="nalagalnik"></div>
+        <div v-else-if="orgs == null || loading" class="nalagalnik"></div>
       </div>
     </dash-wrapper>
     <dash-fancy-modal
@@ -54,6 +60,7 @@ import DashButton from 'components/Dashboard/Button.vue';
 import DashLoadingButton from 'components/Dashboard/LoadingButton.vue';
 import DashFancyModal from 'components/Dashboard/FancyModal.vue';
 import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
@@ -65,6 +72,7 @@ export default {
     DashFancyModal,
     DashLoadingButton,
     ModalContentTfidf,
+    PSearchDropdown,
   },
   mixins: [
     common,
@@ -72,10 +80,13 @@ export default {
   ],
   data() {
     return {
+      orgs: null,
       sessions: null,
+      selectedOrgId: null,
       tfidfModalOpen: false,
       tfidfModalData: null,
       error: null,
+      loading: false,
     };
   },
   computed: {
@@ -102,17 +113,42 @@ export default {
     },
   },
   mounted() {
-    this.$parlapi.getSessions()
-      .then((res) => {
-        this.sessions = orderBy(res.data.results, ['start_time'], ['desc']);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error(error);
-        this.error = error;
-      });
+    this.loadOrgs();
   },
   methods: {
+    loadOrgs() {
+      this.$parlapi.getAllOrganisations()
+        .then((res) => {
+          const orgId = Number(localStorage.getItem('selected_sessions_organization'));
+          this.orgs = orderBy(res.data.results, ['_name']).map(org => ({
+            id: org.id,
+            // eslint-disable-next-line no-underscore-dangle
+            label: org._name,
+            selected: orgId ? org.id === orgId : false,
+          }));
+          if (orgId) {
+            this.onSelectOrg(orgId);
+          }
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.error = error;
+        });
+    },
+    loadSessions() {
+      this.loading = true;
+      this.$parlapi.getSessions(this.selectedOrgId)
+        .then((res) => {
+          this.sessions = orderBy(res.data.results, ['start_time'], ['desc']);
+          this.loading = false;
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.error = error;
+        });
+    },
     openTfidfModal(session) {
       this.tfidfModalData = {
         title: `TFIDF - ${session.name}`,
@@ -138,11 +174,22 @@ export default {
     navigate(url) {
       window.location.href = url;
     },
+    onSelectOrg(orgId) {
+      this.selectedOrgId = orgId;
+      if (typeof window !== 'undefined' && 'localStorage' in window) {
+        localStorage.setItem('selected_sessions_organization', orgId);
+      }
+      this.loadSessions();
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+#dash-sessions-list {
+  min-height: 400px;
+}
+
 #dash-sessions-list /deep/ {
   .table-contents,
   .table-headers {

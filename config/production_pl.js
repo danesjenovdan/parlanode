@@ -12,4 +12,17 @@ module.exports = {
     base: 'https://parlametr.pl',
   },
   cardLang: 'pl',
+  cardGlobals: {
+    parliament_id: 1,
+    session_list_tabs: [
+      {
+        title: 'Posiedzenia Sejmu',
+      },
+    ],
+    legislation_tabs: [
+      {
+        title: 'Ustawodawstwo',
+      },
+    ],
+  },
 };

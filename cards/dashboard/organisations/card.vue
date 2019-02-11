@@ -2,7 +2,7 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-organisations-list">
-        <div>
+        <div v-if="orgs != null">
           <input
             id="partiesOnly"
             v-model="partiesOnly"
@@ -73,7 +73,7 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import { sortBy, assign } from 'lodash';
+import { assign, sortBy, zip, groupBy, map } from 'lodash';
 import common from 'mixins/common';
 import DashWrapper from 'components/Dashboard/Wrapper.vue';
 import DashTable from 'components/Dashboard/Table.vue';
@@ -184,16 +184,92 @@ export default {
         title: `INFO - ${org._name}`,
         loadData: async () => {
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
+          const facebook = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+
+          const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
+          const emails = contacts.data.results || [];
+
           return {
             org: {
               _name: org._name,
               _acronym: org._acronym,
               classification: org.classification,
+              voters: org.voters,
             },
-            social: links.data.results,
+            socials: {
+              facebook: facebook.map(e => e.url).join('\n'),
+              twitter: twitter.map(e => e.url).join('\n'),
+            },
+            contacts: {
+              emails: emails.map(e => e.value).join('\n'),
+            },
           };
         },
         saveData: async (orgInfo) => {
+          const mapSocialUrls = (urls, tag, note) => urls
+            .split('\n')
+            .map(url => url.trim())
+            .filter(Boolean)
+            .map(url => ({
+              tags: ['social', tag],
+              url,
+              note,
+              name: '',
+              organization: org.id,
+            }));
+
+          const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
+          const fbs = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
+          const tws = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+
+          const newFbs = mapSocialUrls(orgInfo.socials.facebook, 'fb', 'FB');
+          const newTws = mapSocialUrls(orgInfo.socials.twitter, 'tw', 'TW');
+
+          const updateLink = async ([link, newLink]) => {
+            if (link && newLink) {
+              assign(link, newLink);
+              await this.$parlapi.patchLink(link.id, link);
+            } else if (link) {
+              await this.$parlapi.deleteLink(link.id);
+            } else if (newLink) {
+              const linkRes = await this.$parlapi.postLink(newLink);
+              newLink.id = linkRes.data.id;
+            }
+          };
+
+          await Promise.all(zip(fbs, newFbs).map(updateLink));
+          await Promise.all(zip(tws, newTws).map(updateLink));
+
+          const mapContactEmails = values => values
+            .split('\n')
+            .map(value => value.trim())
+            .filter(Boolean)
+            .map(value => ({
+              contact_type: 'EMAIL',
+              value,
+              organization: org.id,
+            }));
+
+          const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
+          const emails = contacts.data.results;
+
+          const newEmails = mapContactEmails(orgInfo.contacts.emails);
+
+          const updateContact = async ([contact, newContact]) => {
+            if (contact && newContact) {
+              assign(contact, newContact);
+              await this.$parlapi.patchContact(contact.id, contact);
+            } else if (contact) {
+              await this.$parlapi.deleteContact(contact.id);
+            } else if (newContact) {
+              const contactRes = await this.$parlapi.postContact(newContact);
+              newContact.id = contactRes.data.id;
+            }
+          };
+
+          await Promise.all(zip(emails, newEmails).map(updateContact));
+
           assign(org, orgInfo.org);
           return this.$parlapi.patchOrganisation(org.id, org);
         },
@@ -208,12 +284,57 @@ export default {
       this.membershipsModalData = {
         title: `${this.$t('edit-memberships')} - ${org._name}`,
         loadData: async () => {
-          const data = await this.$parlapi.getOrganisationMemberships(org.id);
-          const theData = data.data.results;
+          const people = await this.$parlapi.getPeople();
+          const orgs = await this.$parlapi.getAllOrganisations();
+          const membershipsData = await this.$parlapi.getOrganisationMemberships(org.id);
+          const memberships = sortBy(membershipsData.data.results, ['start_time']);
           return {
-            id: org.id,
-            data: theData,
+            people: sortBy(people.data.results, ['name']),
+            orgs: sortBy(orgs.data.results, ['_name']),
+            org_groups: map(groupBy(orgs.data.results, 'classification'), (val, key) => ({
+              label: key,
+              items: val.map(o => o.id),
+            })),
+            memberships: memberships.map((membership) => {
+              const start = membership.start_time ? membership.start_time.split('T') : ['', ''];
+              const end = membership.end_time ? membership.end_time.split('T') : ['', ''];
+              return {
+                id: membership.id,
+                start_date: start[0],
+                start_time: start[1],
+                end_date: end[0],
+                end_time: end[1],
+                on_behalf_of: membership.on_behalf_of,
+                label: membership.label,
+                role: membership.role,
+                person: membership.person,
+              };
+            }),
           };
+        },
+        saveData: async (loadedData) => {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const m of loadedData.memberships) {
+            const startTime = (m.start_date && m.start_time) ? `${m.start_date}T${m.start_time}` : null;
+            const endTime = (m.end_date && m.end_time) ? `${m.end_date}T${m.end_time}` : null;
+            const membership = {
+              start_time: startTime,
+              end_time: endTime,
+              on_behalf_of: m.on_behalf_of,
+              label: m.label,
+              role: m.role,
+              person: m.person,
+              organization: org.id,
+            };
+            if (m.id) {
+              // eslint-disable-next-line no-await-in-loop
+              await this.$parlapi.patchMembership(m.id, membership);
+            } else {
+              // eslint-disable-next-line no-await-in-loop
+              const mRes = await this.$parlapi.postMembership(membership);
+              m.id = mRes.data.id;
+            }
+          }
         },
       };
       this.membershipsModalOpen = true;

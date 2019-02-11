@@ -141,7 +141,9 @@ export default {
       selected: (state.wb || []).indexOf(org.id) !== -1,
     }));
 
-    const textFilter = state.textFilter || '';
+    const textFilter = (state.textFilter && state.textFilter.length && state.textFilter !== '*')
+      ? state.textFilter
+      : '';
 
     return {
       card: {

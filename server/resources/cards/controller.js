@@ -159,6 +159,10 @@ async function buildCard(cacheData, cardJson) {
   }
 }
 
+function formattedDate(days = 0) {
+  return dateFns.format(dateFns.addDays(new Date(), days), 'D.M.YYYY');
+}
+
 async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.card = cardJson._id;
   cacheData.dataUrl = cardJson.dataUrl ? expandUrl(cardJson.dataUrl) : null;
@@ -170,7 +174,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   if (cacheData.customUrl) {
     fetchUrl = cacheData.customUrl;
   } else if (cacheData.dataUrl) {
-    fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.date ? `/${cacheData.date}` : ''}`;
+    fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.dateRequested ? `/${cacheData.dateRequested}` : ''}`;
   }
   const fetchedData = fetchUrl ? await fetchData(fetchUrl, cacheData) : null;
 
@@ -196,24 +200,28 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     data: fetchedData,
     cardData: cardJson,
     customUrl: fetchUrl,
-    state: parsedState,
     parlaState: parsedState,
     clientBundle,
     styleBundle,
     urls: data.urls,
     siteMap: data.siteMap,
     i18n: _.curry(_.get)(i18n, _, 'undefined i18n key'),
+    cardGlobals: config.cardGlobals || {},
   };
   context.cardData.altHeader = JSON.stringify(cacheData.altHeader);
 
   const html = await rendererInstance.renderToString(context);
   cacheData.html = html;
 
+  // if no dateRequested, it was rendered with todays data
+  cacheData.dateRendered = cacheData.dateRequested || formattedDate();
+
+  // remove all that match
   await CardRender.remove({
     group: cacheData.group,
     method: cacheData.method,
     id: cacheData.id,
-    date: cacheData.date,
+    dateRendered: cacheData.dateRendered,
     embed: cacheData.embed,
     frame: cacheData.frame,
     altHeader: cacheData.altHeader,
@@ -227,8 +235,21 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   return cardRender.save();
 }
 
-function formattedDate(days = 0) {
-  return dateFns.format(dateFns.addDays(new Date(), days), 'D.M.YYYY');
+async function findRenderedCardForDate(cacheData) {
+  let renderedCard = null;
+  // if no dateRequested, check if todays render exists
+  if (cacheData.dateRequested == null) {
+    const { dateRequested, ...cacheDataToday } = {
+      ...cacheData,
+      dateRendered: formattedDate(),
+    };
+    renderedCard = await CardRender.findOne(cacheDataToday).sort({ dateTime: -1 });
+  }
+  // if dateRequested is specified try to find that days render, or null if no dateRequested
+  if (!renderedCard) {
+    renderedCard = await CardRender.findOne(cacheData).sort({ dateTime: -1 });
+  }
+  return renderedCard;
 }
 
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
@@ -237,11 +258,7 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   if (!forceRender) {
     // eslint-disable-next-line no-console
     console.log(`Card: ${cacheData.group}/${cacheData.method} - TRYING CACHE`);
-    renderedCard = await CardRender.findOne(cacheData).sort({ dateTime: -1 });
-    if (renderedCard) {
-      renderedCard.lastAccessed = new Date();
-      renderedCard.save();
-    }
+    renderedCard = await findRenderedCardForDate(cacheData);
   }
   if (!renderedCard || Number(cardJson.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
     // eslint-disable-next-line no-console
@@ -253,6 +270,10 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
     }
     renderedCard = await renderCard(cacheData, cardJson, originalUrl);
   }
+  if (renderedCard) {
+    renderedCard.lastAccessed = new Date();
+    renderedCard.save();
+  }
   return renderedCard;
 }
 
@@ -261,7 +282,7 @@ const IS_VALID_CUSTOM_URL = /^https?:\/\/[^/]*\.parlamet[ea]?r\.(?:si|hr|pl)\//;
 function render(req, res) {
   const { group, method } = req.params;
   const id = req.params.id || null;
-  const date = req.params.date || formattedDate();
+  const dateRequested = req.params.date || null;
   const embed = !!req.query.embed;
   const frame = !!req.query.frame;
   const altHeader = !!req.query.altHeader;
@@ -279,7 +300,7 @@ function render(req, res) {
     group,
     method,
     id,
-    date,
+    dateRequested,
     embed,
     frame,
     altHeader,
@@ -291,22 +312,41 @@ function render(req, res) {
   // eslint-disable-next-line no-console
   console.log(`Card: ${group}/${method} - START`);
 
+  const sendRenderedCard = (renderedCard) => {
+    // eslint-disable-next-line no-console
+    console.log(`Card: ${renderedCard.group}/${renderedCard.method} - END after ${Math.round(performance.now() - startTime)} ms`);
+    if (renderedCard && renderedCard.html) {
+      res.send(renderedCard.html);
+    } else {
+      throw new Error('No rendered card');
+    }
+  };
+
   getRenderedCard(cacheData, forceRender, req.originalUrl)
-    .then((renderedCard) => {
+    .then(sendRenderedCard)
+    .catch((error) => {
       // eslint-disable-next-line no-console
-      console.log(`Card: ${group}/${method} - END after ${Math.round(performance.now() - startTime)} ms`);
-      if (renderedCard && renderedCard.html) {
-        res.send(renderedCard.html);
-      } else {
-        res.status(500).send({ error: 'No rendered card' });
-      }
+      console.error(error);
+      const message = typeof error === 'string' ? error : error.message;
+
+      // Try rendering error card
+      const cacheDataErrored = {
+        group: 'c',
+        method: 'errored',
+        id: null,
+        dateRequested: null,
+        embed,
+        frame,
+        altHeader,
+        customUrl: null,
+        state: JSON.stringify({ message: `Failed to render card: /${group}/${method} ${message}` }),
+      };
+      return getRenderedCard(cacheDataErrored, false, '/c/errored')
+        .then(sendRenderedCard);
     })
     .catch((error) => {
       // eslint-disable-next-line no-console
       console.error(error);
-      res.status(500).send({ error: error.message });
-    })
-    .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
     });
 }

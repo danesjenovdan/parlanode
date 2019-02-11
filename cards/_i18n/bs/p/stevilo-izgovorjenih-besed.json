@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Število izgovorjenih besed"
+    "title": "Broj izgovorenih riječi"
   },
   "info": {
-    "lead": "Število besed, ki jih je poslanec/-ka izgovoril/-a v vseh svojih dosedanjih govorih v DZ v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Seštejemo besede v govorih poslanca/-ke, ki jih najdemo v transkriptih, pridobljenih s spletnega mesta {link}.",
+    "lead": "Broj riječi koje je zastupnik izgovorio u svim svojim govorima u Parlamentu u odnosu na prosječnu i maksimalnu vrijednost.",
+    "text": "Sabiru se riječi u govorima zastupnika preuzetim iz stenograma objavljenih na {link}.",
     "link": {
       "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
-      "text": "DZ RS"
+      "text": "Parlament BiH"
     }
   }
 }

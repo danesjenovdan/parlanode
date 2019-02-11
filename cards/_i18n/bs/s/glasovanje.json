@@ -1,19 +1,19 @@
 {
   "card": {
-    "title": "Glasovanje"
+    "title": "Glasanje"
   },
   "info": {
     "text": [
-      "Nabor glasovanj pridobimo s spletnega mesta DZ RS.",
-      "Rezultat posameznega glasovanja ima tri različne izpise: na nivoju poslancev, na nivoju poslanskih skupin ter glede na stran vlade.",
-      "Prvi zavihek omogoča pregled glasov poslancev, filtriranje glede na vrednost glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem glasovanju. \"60% ZA\" npr. pomeni, da je ZA glasovalo 60 od 90 poslancev.",
-      "Drugi zavihek prikaže glasove poslanskih skupin. Na koncu vsake vrstice je izpisan večinski glas poslanske skupine, gumbi z vrednostmi glasovnic pa odpirajo sezname poslancev, ki so oddali tak glas. S strelo opozarjamo na razkole v poslanskih skupinah - izrišemo jo nad tistimi glasovi, ki niso enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni.",
-      "Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo opozarjamo na nepričakovane glasove - označujemo odstopanje od večinskega glasu koalicije.",
-      "OZNAČEVANJE S STRELO",
-      "S strelo opozarjamo na razkole v poslanskih skupinah oziroma v koaliciji - izrišemo jo nad tistimi glasovanji,  ki vsebujejo glasove, ki niso enaki večinskemu glasu poslanske skupine / koalicije, pri čemer so odsotni glasovi izvzeti. Če je bila večina poslancev poslanske skupine odsotnih, večinskega glasu ni."
+      "Zbirka glasanja preuzima se s web stranica Parlamenta BiH.",
+      "Rezultati svakog glasanja prikazuju se na tri nivoa: na nivou zastupnika, na nivou klubova i prema politici vlade.",
+      "Prva kartica omogućuje pregled glasova zastupnika i pretraživanje prema vrijednosti glasa (ZA, PROTIV, SUZDRŽAN, ODSUTAN) i imenu zastupnika. Pored kružnog grafikona prikazana je većina glasova na jednom glasanju u Parlamentu. \"60% ZA\" tako znači da je 60% zastupnika glasalo ZA.",
+      "Druga kartica prikazuje glasove klubova. Na kraju svake linije prikazan je većinski glas kluba, a dugmad sa rezultatima glasanja otvaraju liste zastupniaa koji su tako glasali. Simbol munje upozorava na podjele u klubovima - stavlja se iznad onih glasova koji se razlikuju od većine, a odsutni su izuzeti. Tako da, ako je većina zastupnika kluba odsutna, ne postoji ni većinski glas kluba.",
+      "Treća kartica prikazuje rezultat prema politici Vlade. Ovdje također simbol munje upozorava na neočekivane glasove - odnosno odstupanja od većinskog glasa koalicije.",
+      "SIMBOL MUNJE",
+      "Simbol munje upozorava na raskole u klubovima ili u koaliciji - stavlja se iznad onih glasova koji se razlikuju od većinskog glasa kluba ili koalicije, a odsutni su izuzeti. Tako da, ako je većina kluba odsutna, ne postoji ni većinski glas kluba."
     ]
   },
-  "gov-side": "Stran vlade",
-  "summary": "Povzetek",
-  "all-mps": "Vsi poslanci"
+  "gov-side": "Vlada",
+  "summary": "Sažetak",
+  "all-mps": "Svi zastupnici"
 }

@@ -36,6 +36,7 @@ export default {
 
   .presence-item {
     flex: 1 0 25%;
+    display: flex;
 
     @include respond-to(limbo) {
       flex-basis: 50%;
@@ -51,6 +52,7 @@ export default {
       padding: 12px;
       margin: 0 5px 10px 5px;
       position: relative;
+      width: 100%;
 
       .percent,
       .party {

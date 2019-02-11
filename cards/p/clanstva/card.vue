@@ -68,16 +68,17 @@ export default {
     tabs() {
       // TODO: i18n, this is so specific for slo parliament check later
       const membershipTabMap = {
-        odbor: 'Delovna telesa',
-        kolegij: 'Delovna telesa',
-        komisija: 'Delovna telesa',
-        delegacija: 'Stalne delegacije',
-        skupina_prijateljstva: 'Skupine prijateljstva',
-        preiskovalna_komisija: 'Delovna telesa',
+        committee: this.$t('card.committees'),
+        council: this.$t('card.councils'),
+        commission: this.$t('card.commissions'),
+        delegation: this.$t('card.delegations'),
+        friendship_group: this.$t('card.friendship_groups'),
+        investigative_comission: this.$t('card.investigative_comissions'),
       };
 
       return reduce(this.data.memberships, (tabs, membership, membershipName) => {
         const newTabs = JSON.parse(JSON.stringify(tabs));
+        console.log(membershipName);
         if (membershipName in membershipTabMap) {
           const tabId = membershipTabMap[membershipName];
           newTabs[tabId] = newTabs[tabId].concat(membership);
@@ -85,8 +86,8 @@ export default {
         return newTabs;
       }, {
         'Delovna telesa': [],
-        'Stalne delegacije': [],
-        'Skupine prijateljstva': [],
+        'Preiskovalne komisije': [],
+        'Druga članstva': [],
       });
     },
     generatedCardUrl() {
