@@ -82,7 +82,7 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
     axios.get(searchUrl)
       .then((res) => {
         this.data = res.data;
