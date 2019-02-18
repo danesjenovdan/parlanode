@@ -241,7 +241,7 @@ export default {
         .map(encodeURIComponent)
         .join('+');
 
-      axios.get(`${this.slugs.urls.isci}/q/${query}`)
+      axios.get(`${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(query)}`)
         .then((response) => {
           const scoreHigherThanZero = i => i.score > 0;
 

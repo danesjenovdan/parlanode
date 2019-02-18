@@ -116,13 +116,13 @@ export default {
       });
     },
     searchUrl() {
-      return `${this.slugs.urls.isci}/filter/${this.keywords}/${this.page}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+      return `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&page=${this.page}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
     },
   },
   mounted() {
     axios.get(this.searchUrl)
       .then((res) => {
-        this.rawSpeeches = res.data.highlighting || [];
+        this.rawSpeeches = (res.data.response && res.data.response.docs) || [];
         this.allResults = res.data.response.numFound;
         this.fetching = false;
         if (this.allResults > PAGE_SIZE) {
