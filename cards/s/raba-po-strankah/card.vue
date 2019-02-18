@@ -61,7 +61,7 @@ export default {
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     pieData() {
-      return (this.data && this.data.facet_counts.facet_fields.party_i) || [];
+      return (this.data && this.data.facet_counts.facet_fields.party_id) || [];
     },
   },
   mounted() {
