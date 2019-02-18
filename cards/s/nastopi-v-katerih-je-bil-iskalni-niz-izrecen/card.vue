@@ -48,7 +48,11 @@
 
           <div class="column date">{{ speech.formattedDate }}</div>
           <div class="column quote">
-            <a :href="speech.speechUrl" class="funblue-light-hover" v-html="speech.content_t"></a>
+            <a
+              :href="speech.speechUrl"
+              class="funblue-light-hover"
+              v-html="speech.content_hl || speech.content"
+            ></a>
           </div>
         </li>
       </ul>
@@ -110,7 +114,7 @@ export default {
           speech.partyUrl = this.getPersonPartyLink(speech.person);
         }
         speech.memberImageUrl = this.getPersonPortrait(speech.person);
-        speech.formattedDate = dateFormatter(speech.date);
+        speech.formattedDate = dateFormatter(speech.start_time);
         speech.speechUrl = this.getSessionSpeechLink(speech);
         return speech;
       });
@@ -149,13 +153,21 @@ export default {
       }
       this.fetching = true;
       this.page += 1;
-      $.get(this.searchUrl, (response) => {
-        this.rawSpeeches = this.rawSpeeches.concat(response.highlighting);
-        if (this.allResults <= (this.page + 1) * PAGE_SIZE) {
-          this.$refs.scrollElement.removeEventListener('scroll', this.checkIfBottom);
-        }
-        this.fetching = false;
-      });
+      axios.get(this.searchUrl)
+        .then((res) => {
+          const newSpeeches = (res.data.response && res.data.response.docs) || [];
+          this.rawSpeeches = this.rawSpeeches.concat(newSpeeches);
+          if (this.allResults <= (this.page + 1) * PAGE_SIZE) {
+            this.$refs.scrollElement.removeEventListener('scroll', this.checkIfBottom);
+          }
+          this.fetching = false;
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.fetching = false;
+          this.error = true;
+        });
     },
   },
 };
