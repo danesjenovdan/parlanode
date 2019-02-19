@@ -110,16 +110,12 @@ export default {
       };
 
       return this.processedData.map((legislation) => {
-        let mapKey = legislation.result != null && legislation.result[0];
-        if (!mapKey) {
-          mapKey = 'in_procedure';
-        }
-
+        const mapKey = legislation.status || 'in_procedure';
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
         return [
-          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text_t[0]}</a>` },
-          { text: legislation.id != null ? legislation.id : '' },
+          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.title}</a>` },
+          { text: legislation.act_id != null ? legislation.act_id : '' },
           { html: outcomeHtml },
         ];
       });
@@ -162,7 +158,7 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/l/${this.keywords}`;
+    const searchUrl = `${this.slugs.urls.isci}/search/legislation?q=${encodeURIComponent(this.keywords)}`;
     axios.get(searchUrl)
       .then((res) => {
         this.data = (res.data.response && res.data.response.docs) || [];

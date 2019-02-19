@@ -58,10 +58,10 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/filter/${this.keywords}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
     axios.get(searchUrl)
       .then((res) => {
-        const people = res.data.facet_counts.facet_fields.speaker_i
+        const people = res.data.facet_counts.facet_fields.person
           .map((o) => {
             const { person } = o;
             person.score = `${Math.round(o.score)}`;

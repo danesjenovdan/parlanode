@@ -1,96 +1,305 @@
 {
   "person": {
-    "1": { "slug": "peter-jozef-cesnik" },
-    "2": { "slug": "milan-brglez" },
-    "5": { "slug": "marjan-sarec" },
-    "6": { "slug": "luka-mesec" },
-    "7": { "slug": "jozef-horvat" },
-    "8": { "slug": "marko-bandelli" },
-    "9": { "slug": "franc-jursa" },
-    "10": { "slug": "zmago-jelincic-plemeniti" },
-    "11": { "slug": "matjaz-han" },
-    "12": { "slug": "igor-zorcic" },
-    "13": { "slug": "ljudmila-novak" },
-    "14": { "slug": "jernej-vrtovec" },
-    "15": { "slug": "iva-dimic" },
-    "16": { "slug": "matej-tasner-vatovec" },
-    "17": { "slug": "matej-tonin" },
-    "18": { "slug": "anja-bah-zibert" },
-    "19": { "slug": "predrag-bakovic" },
-    "21": { "slug": "samo-bevk" },
-    "22": { "slug": "franc-breznik" },
-    "24": { "slug": "nada-brinovsek" },
-    "25": { "slug": "miro-cerar" },
-    "26": { "slug": "zeljko-cigler" },
-    "27": { "slug": "zvonko-cernac" },
-    "30": { "slug": "lidija-divjak-mirnik" },
-    "31": { "slug": "boris-doblekar" },
-    "32": { "slug": "karmen-furman" },
-    "33": { "slug": "jelka-godec" },
-    "34": { "slug": "brane-golubovic" },
-    "35": { "slug": "monika-gregorcic" },
-    "36": { "slug": "branko-grims" },
-    "38": { "slug": "tina-heferle" },
-    "39": { "slug": "ferenc-horvath" },
-    "41": { "slug": "meira-hot" },
-    "42": { "slug": "ivan-hrsak" },
-    "43": { "slug": "eva-irgl" },
-    "44": { "slug": "jani-ivanusa" },
-    "45": { "slug": "lidija-ivanusa" },
-    "46": { "slug": "janez-jansa" },
-    "48": { "slug": "alenka-jeraj" },
-    "50": { "slug": "dejan-kaloh" },
-    "51": { "slug": "franci-kepa" },
-    "52": { "slug": "soniboj-knezak" },
-    "53": { "slug": "marko-koprivc" },
-    "54": { "slug": "bostjan-korazija" },
-    "55": { "slug": "jerca-korce" },
-    "56": { "slug": "miha-kordis" },
-    "57": { "slug": "aljaz-kovacic" },
-    "58": { "slug": "darij-krajcic" },
-    "59": { "slug": "franc-kramar" },
-    "60": { "slug": "danijel-krivec" },
-    "61": { "slug": "joze-lenart" },
-    "62": { "slug": "jurij-lep" },
-    "63": { "slug": "suzana-lep-simenko" },
-    "64": { "slug": "tomaz-lisec" },
-    "65": { "slug": "anze-logar" },
-    "66": { "slug": "zan-mahnic" },
-    "67": { "slug": "rudi-medved" },
-    "69": { "slug": "bojana-mursic" },
-    "70": { "slug": "matjaz-nemec" },
-    "72": { "slug": "edvard-paulic" },
-    "73": { "slug": "blaz-pavlin" },
-    "74": { "slug": "robert-pavsic" },
-    "75": { "slug": "igor-pecek" },
-    "76": { "slug": "gregor-peric" },
-    "77": { "slug": "zdravko-pocivalsek" },
-    "78": { "slug": "bojan-podkrajsek" },
-    "79": { "slug": "marko-pogacnik" },
-    "80": { "slug": "marijan-pojbic" },
-    "81": { "slug": "robert-polnar" },
-    "82": { "slug": "jani-prednik" },
-    "83": { "slug": "andrej-rajh" },
-    "84": { "slug": "branislav-rajic" },
-    "85": { "slug": "aleksander-rebersek" },
-    "86": { "slug": "franc-rosec" },
-    "87": { "slug": "branko-simonovic" },
-    "88": { "slug": "primoz-siter" },
-    "89": { "slug": "janja-sluga" },
-    "90": { "slug": "vojko-starovic" },
-    "91": { "slug": "natasa-sukic" },
-    "93": { "slug": "andrej-sircelj" },
-    "94": { "slug": "dusan-sisko" },
-    "96": { "slug": "joze-tanko" },
-    "97": { "slug": "violeta-tomic" },
-    "99": { "slug": "franc-trcek" },
-    "100": { "slug": "mateja-udovc" },
-    "102": { "slug": "andreja-zabret" },
-    "104": { "slug": "dejan-zidan" },
-    "105": { "slug": "ziza-felice" },
-    "106": { "slug": "znidaric-mojca" },
-    "107": { "slug": "jozef-lenart" },
-    "126": { "slug": "spela-jakopic" }
+    "1": {
+      "slug": "peter-jozef-cesnik"
+    },
+    "2": {
+      "slug": "milan-brglez"
+    },
+    "5": {
+      "slug": "marjan-sarec"
+    },
+    "6": {
+      "slug": "luka-mesec"
+    },
+    "7": {
+      "slug": "jozef-horvat"
+    },
+    "8": {
+      "slug": "marko-bandelli"
+    },
+    "9": {
+      "slug": "franc-jursa"
+    },
+    "10": {
+      "slug": "zmago-jelincic-plemeniti"
+    },
+    "11": {
+      "slug": "matjaz-han"
+    },
+    "12": {
+      "slug": "igor-zorcic"
+    },
+    "13": {
+      "slug": "ljudmila-novak"
+    },
+    "14": {
+      "slug": "jernej-vrtovec"
+    },
+    "15": {
+      "slug": "iva-dimic"
+    },
+    "16": {
+      "slug": "matej-tasner-vatovec"
+    },
+    "17": {
+      "slug": "matej-tonin"
+    },
+    "18": {
+      "slug": "anja-bah-zibert"
+    },
+    "19": {
+      "slug": "predrag-bakovic"
+    },
+    "21": {
+      "slug": "samo-bevk"
+    },
+    "22": {
+      "slug": "franc-breznik"
+    },
+    "24": {
+      "slug": "nada-brinovsek"
+    },
+    "25": {
+      "slug": "miro-cerar"
+    },
+    "26": {
+      "slug": "zeljko-cigler"
+    },
+    "27": {
+      "slug": "zvonko-cernac"
+    },
+    "30": {
+      "slug": "lidija-divjak-mirnik"
+    },
+    "31": {
+      "slug": "boris-doblekar"
+    },
+    "32": {
+      "slug": "karmen-furman"
+    },
+    "33": {
+      "slug": "jelka-godec"
+    },
+    "34": {
+      "slug": "brane-golubovic"
+    },
+    "35": {
+      "slug": "monika-gregorcic"
+    },
+    "36": {
+      "slug": "branko-grims"
+    },
+    "38": {
+      "slug": "tina-heferle"
+    },
+    "39": {
+      "slug": "ferenc-horvath"
+    },
+    "41": {
+      "slug": "meira-hot"
+    },
+    "42": {
+      "slug": "ivan-hrsak"
+    },
+    "43": {
+      "slug": "eva-irgl"
+    },
+    "44": {
+      "slug": "jani-ivanusa"
+    },
+    "45": {
+      "slug": "lidija-ivanusa"
+    },
+    "46": {
+      "slug": "janez-jansa"
+    },
+    "48": {
+      "slug": "alenka-jeraj"
+    },
+    "50": {
+      "slug": "dejan-kaloh"
+    },
+    "51": {
+      "slug": "franci-kepa"
+    },
+    "52": {
+      "slug": "soniboj-knezak"
+    },
+    "53": {
+      "slug": "marko-koprivc"
+    },
+    "54": {
+      "slug": "bostjan-korazija"
+    },
+    "55": {
+      "slug": "jerca-korce"
+    },
+    "56": {
+      "slug": "miha-kordis"
+    },
+    "57": {
+      "slug": "aljaz-kovacic"
+    },
+    "58": {
+      "slug": "darij-krajcic"
+    },
+    "59": {
+      "slug": "franc-kramar"
+    },
+    "60": {
+      "slug": "danijel-krivec"
+    },
+    "61": {
+      "slug": "joze-lenart"
+    },
+    "62": {
+      "slug": "jurij-lep"
+    },
+    "63": {
+      "slug": "suzana-lep-simenko"
+    },
+    "64": {
+      "slug": "tomaz-lisec"
+    },
+    "65": {
+      "slug": "anze-logar"
+    },
+    "66": {
+      "slug": "zan-mahnic"
+    },
+    "67": {
+      "slug": "rudi-medved"
+    },
+    "69": {
+      "slug": "bojana-mursic"
+    },
+    "70": {
+      "slug": "matjaz-nemec"
+    },
+    "72": {
+      "slug": "edvard-paulic"
+    },
+    "73": {
+      "slug": "blaz-pavlin"
+    },
+    "74": {
+      "slug": "robert-pavsic"
+    },
+    "75": {
+      "slug": "igor-pecek"
+    },
+    "76": {
+      "slug": "gregor-peric"
+    },
+    "77": {
+      "slug": "zdravko-pocivalsek"
+    },
+    "78": {
+      "slug": "bojan-podkrajsek"
+    },
+    "79": {
+      "slug": "marko-pogacnik"
+    },
+    "80": {
+      "slug": "marijan-pojbic"
+    },
+    "81": {
+      "slug": "robert-polnar"
+    },
+    "82": {
+      "slug": "jani-prednik"
+    },
+    "83": {
+      "slug": "andrej-rajh"
+    },
+    "84": {
+      "slug": "branislav-rajic"
+    },
+    "85": {
+      "slug": "aleksander-rebersek"
+    },
+    "86": {
+      "slug": "franc-rosec"
+    },
+    "87": {
+      "slug": "branko-simonovic"
+    },
+    "88": {
+      "slug": "primoz-siter"
+    },
+    "89": {
+      "slug": "janja-sluga"
+    },
+    "90": {
+      "slug": "vojko-starovic"
+    },
+    "91": {
+      "slug": "natasa-sukic"
+    },
+    "93": {
+      "slug": "andrej-sircelj"
+    },
+    "94": {
+      "slug": "dusan-sisko"
+    },
+    "96": {
+      "slug": "joze-tanko"
+    },
+    "97": {
+      "slug": "violeta-tomic"
+    },
+    "99": {
+      "slug": "franc-trcek"
+    },
+    "100": {
+      "slug": "mateja-udovc"
+    },
+    "102": {
+      "slug": "andreja-zabret"
+    },
+    "104": {
+      "slug": "dejan-zidan"
+    },
+    "105": {
+      "slug": "ziza-felice"
+    },
+    "106": {
+      "slug": "mojca-znidaric"
+    },
+    "107": {
+      "slug": "jozef-lenart"
+    },
+    "126": {
+      "slug": "spela-jakopic"
+    },
+    "127": {
+      "slug": "masa-kociper"
+    },
+    "128": {
+      "slug": "nina-maurovic"
+    },
+    "129": {
+      "slug": "jani-janko-moderndorfer"
+    },
+    "130": {
+      "slug": "andrej-susmelj"
+    },
+    "132": {
+      "slug": "karla-urh"
+    },
+    "133": {
+      "slug": "gregor-zidan"
+    },
+    "227": {
+      "slug": "jost-jaksa"
+    },
+    "327": {
+      "slug": "simona-bergoc"
+    },
+    "427": {
+      "slug": "katja-dolzak"
+    }
   },
   "base": "http://nov.parlameter.si",
   "partyLink": {
@@ -100,16 +309,20 @@
     "glasovanja": "/glasovanja/"
   },
   "urls": {
-    "notifications_api": "https://obvestila.parlametr.pl",
-    "isci": "https://isci.parlametar.hr",
-    "analize": "http://analize.nov.parlameter.si/v1",
-    "data": "http://data.nov.parlameter.si/v1",
     "glej": "http://localhost:3000",
+    "notifications_api": "http://obvestila.nov.parlameter.si",
+    "isci": "http://isci.nov.parlameter.si",
+    "analize": "http://analize.nov.parlameter.si/v1",
     "base": "http://localhost:3066",
+    "data": "http://data.nov.parlameter.si/v1",
     "cdn": "http://localhost:8080"
   },
   "party": {
-    "1": { "acronym": "dz", "realAcronym": "DZ", "slug": "drzavni-zbor" },
+    "1": {
+      "acronym": "dz",
+      "realAcronym": "DZ",
+      "slug": "drzavni-zbor"
+    },
     "2": {
       "acronym": "sds",
       "realAcronym": "SDS",
@@ -117,16 +330,24 @@
     },
     "3": {
       "acronym": "lms",
-      "realAcronym": "LM\u0160",
+      "realAcronym": "LMŠ",
       "slug": "lista-marjana-sarca"
     },
-    "4": { "acronym": "sd", "realAcronym": "SD", "slug": "socialni-demokrati" },
+    "4": {
+      "acronym": "sd",
+      "realAcronym": "SD",
+      "slug": "socialni-demokrati"
+    },
     "5": {
       "acronym": "smc",
       "realAcronym": "SMC",
       "slug": "stranka-modernega-centra"
     },
-    "6": { "acronym": "levica", "realAcronym": "Levica", "slug": "levica" },
+    "6": {
+      "acronym": "levica",
+      "realAcronym": "Levica",
+      "slug": "levica"
+    },
     "7": {
       "acronym": "nsi",
       "realAcronym": "NSi",
@@ -139,7 +360,7 @@
     },
     "9": {
       "acronym": "desus",
-      "realAcronym": "DESUS",
+      "realAcronym": "DeSUS",
       "slug": "demokraticna-stranka-upokojencev-slovenije"
     },
     "10": {
@@ -152,9 +373,141 @@
       "realAcronym": "SNS",
       "slug": "slovenska-nacionalna-stranka"
     },
-    "12": { "acronym": "koal", "realAcronym": "koal", "slug": "koalicija" },
-    "13": { "acronym": "oppo", "realAcronym": "oppo", "slug": "opozicija" },
-    "14": { "acronym": "default", "realAcronym": "default", "slug": "defolt" }
+    "12": {
+      "acronym": "koal",
+      "realAcronym": "koal",
+      "slug": "koalicija"
+    },
+    "13": {
+      "acronym": "oppo",
+      "realAcronym": "oppo",
+      "slug": "opozicija"
+    },
+    "14": {
+      "acronym": "default",
+      "realAcronym": "default",
+      "slug": "defolt"
+    },
+    "15": {
+      "acronym": "kolegij-predsednika-drzavnega-zbora",
+      "realAcronym": "Kolegij predsednika Državnega zbora",
+      "slug": "kolegij-predsednika-drzavnega-zbora"
+    },
+    "16": {
+      "acronym": "komisija-za-nadzor-javnih-financ",
+      "realAcronym": "Komisija za nadzor javnih financ",
+      "slug": "komisija-za-nadzor-javnih-financ"
+    },
+    "17": {
+      "acronym": "komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb",
+      "realAcronym": "Komisija za nadzor obveščevalnih in varnostnih služb",
+      "slug": "komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb"
+    },
+    "18": {
+      "acronym": "komisija-za-narodni-skupnosti",
+      "realAcronym": "Komisija za narodni skupnosti",
+      "slug": "komisija-za-narodni-skupnosti"
+    },
+    "19": {
+      "acronym": "komisija-za-odnose-s-slovenci-v-zamejstvu-in-po-svetu",
+      "realAcronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
+      "slug": "komisija-za-odnose-s-slovenci-v-zamejstvu-in-po-svetu"
+    },
+    "20": {
+      "acronym": "komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+      "realAcronym": "Komisija za peticije, človekove pravice in enake možnosti",
+      "slug": "komisija-za-peticije-clovekove-pravice-in-enake-moznosti"
+    },
+    "21": {
+      "acronym": "komisija-za-poslovnik",
+      "realAcronym": "Komisija za poslovnik",
+      "slug": "komisija-za-poslovnik"
+    },
+    "22": {
+      "acronym": "mandatno-volilna-komisija",
+      "realAcronym": "Mandatno-volilna komisija",
+      "slug": "mandatno-volilna-komisija"
+    },
+    "23": {
+      "acronym": "odbor-za-delo-druzino-socialne-zadeve-in-invalide",
+      "realAcronym": "Odbor za delo, družino, socialne zadeve in invalide",
+      "slug": "odbor-za-delo-druzino-socialne-zadeve-in-invalide"
+    },
+    "24": {
+      "acronym": "odbor-za-finance",
+      "realAcronym": "Odbor za finance",
+      "slug": "odbor-za-finance"
+    },
+    "25": {
+      "acronym": "odbor-za-gospodarstvo",
+      "realAcronym": "Odbor za gospodarstvo",
+      "slug": "odbor-za-gospodarstvo"
+    },
+    "26": {
+      "acronym": "odbor-za-infrastrukturo-okolje-in-prostor",
+      "realAcronym": "Odbor za infrastrukturo, okolje in prostor",
+      "slug": "odbor-za-infrastrukturo-okolje-in-prostor"
+    },
+    "27": {
+      "acronym": "odbor-za-izobrazevanje-znanost-sport-in-mladino",
+      "realAcronym": "Odbor za izobraževanje, znanost, šport in mladino",
+      "slug": "odbor-za-izobrazevanje-znanost-sport-in-mladino"
+    },
+    "28": {
+      "acronym": "odbor-za-kmetijstvo-gozdarstvo-in-prehrano",
+      "realAcronym": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "slug": "odbor-za-kmetijstvo-gozdarstvo-in-prehrano"
+    },
+    "29": {
+      "acronym": "odbor-za-kulturo",
+      "realAcronym": "Odbor za kulturo",
+      "slug": "odbor-za-kulturo"
+    },
+    "30": {
+      "acronym": "odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo",
+      "realAcronym": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "slug": "odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo"
+    },
+    "31": {
+      "acronym": "odbor-za-obrambo",
+      "realAcronym": "Odbor za obrambo",
+      "slug": "odbor-za-obrambo"
+    },
+    "32": {
+      "acronym": "odbor-za-pravosodje",
+      "realAcronym": "Odbor za pravosodje",
+      "slug": "odbor-za-pravosodje"
+    },
+    "33": {
+      "acronym": "odbor-za-zadeve-evropske-unije",
+      "realAcronym": "Odbor za zadeve Evropske unije",
+      "slug": "odbor-za-zadeve-evropske-unije"
+    },
+    "34": {
+      "acronym": "odbor-za-zdravstvo",
+      "realAcronym": "Odbor za zdravstvo",
+      "slug": "odbor-za-zdravstvo"
+    },
+    "35": {
+      "acronym": "odbor-za-zunanjo-politiko",
+      "realAcronym": "Odbor za zunanjo politiko",
+      "slug": "odbor-za-zunanjo-politiko"
+    },
+    "36": {
+      "acronym": "mandatno-volilna-komisija",
+      "realAcronym": "Mandatno-volilna komisija",
+      "slug": "mandatno-volilna-komisija"
+    },
+    "60": {
+      "acronym": "preiskovalna-komisija-o-ugotavljanju-odgovornosti-nosilcev-javnih-funkcij-na-programu-otroske-kardio",
+      "realAcronym": "Preiskovalna komisija o ugotavljanju odgovornosti nosilcev javnih funkcij na programu otroške kardio",
+      "slug": "preiskovalna-komisija-o-ugotavljanju-odgovornosti-nosilcev-javnih-funkcij-na-programu-otroske-kardiologije-ter-podrocju-nabav-in-upravljanja-z-medicinsko-opremo-in-zdravstvenim-materialom"
+    },
+    "61": {
+      "acronym": "preiskovalna-komisija-o-ugotavljanju-domnevnega-pranja-denarja-v-nkbm-d-d-domnevnega-nezakonitega",
+      "realAcronym": "Preiskovalna komisija o ugotavljanju domnevnega pranja denarja v NKBM d.d., domnevnega nezakonitega",
+      "slug": "preiskovalna-komisija-o-ugotavljanju-domnevnega-pranja-denarja-v-nkbm-d-d-domnevnega-nezakonitega-financiranja-politicne-stranke-sds-in-domnevnega-nezakonitega-financiranja-volilne-kampanije-sds-za-predcasne-volitve-poslancev-v-drzavni-zbor-2018"
+    }
   },
   "personLink": {
     "govori": "/govori/",

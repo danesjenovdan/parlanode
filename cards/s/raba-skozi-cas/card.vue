@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     timeChartData() {
-      return (this.data && this.data.facet_counts.facet_ranges.datetime_dt) || {};
+      return (this.data && this.data.facet_counts.facet_ranges.start_time) || {};
     },
     generatedCardUrl() {
       const state = {};
@@ -82,7 +82,7 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/filter/${this.keywords}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
     axios.get(searchUrl)
       .then((res) => {
         this.data = res.data;
