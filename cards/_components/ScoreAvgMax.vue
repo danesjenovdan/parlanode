@@ -8,7 +8,10 @@
   >
     <slot slot="info" name="info"></slot>
 
-    <div v-cloak class="card-content-front">
+    <div v-if="getMaxValue <= 0">
+      <div v-t="'no-results'" class="no-results" />
+    </div>
+    <div v-else v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
           <div class="me_poslanec">

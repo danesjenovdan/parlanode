@@ -123,7 +123,7 @@ export default {
         if (this.nameFilter.length > 0) {
           const namesToMatch = this.nameFilter.split('|');
           nameMatch = namesToMatch.reduce((result, nameToMatch) => {
-            if (!result) {
+            if (!result && member.person && member.person.name) {
               return member.person.name.toLowerCase().indexOf(nameToMatch.toLowerCase()) > -1;
             }
             return result;

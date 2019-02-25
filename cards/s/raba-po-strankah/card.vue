@@ -61,11 +61,11 @@ export default {
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     pieData() {
-      return (this.data && this.data.facet_counts.facet_fields.party_i) || [];
+      return (this.data && this.data.facet_counts.facet_fields.party_id) || [];
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/filter/${this.keywords}?people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
     axios.get(searchUrl)
       .then((res) => {
         this.data = res.data;

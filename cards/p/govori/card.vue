@@ -21,21 +21,7 @@ export default {
         return data.person;
       }
 
-      const first = data && data.highlighting && data.highlighting[0];
-      if (first && first.person) {
-        return first.person;
-      }
-
-      const facets = data && data.facet_counts && data.facet_counts.facet_fields;
-      const people = facets && facets.speaker_i;
       const personId = data && data.filters && data.filters.people && data.filters.people[0];
-      if (people && personId) {
-        const person = people.map(p => p.person).find(p => p.id === Number(personId));
-        if (person) {
-          return person;
-        }
-      }
-
       return {
         name: '???',
         district: null,
