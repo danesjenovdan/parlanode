@@ -78,6 +78,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~parlassets/scss/functions';
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/breakpoints';
 
@@ -175,13 +176,15 @@ export default {
 
       &.is-selected {
         background-color: $color;
+        color: choose-contrast-color($color, $white, $font-default);
       }
 
       &.is-hovered:not(.is-disabled) {
-        background-color: lighten($color, 10%);
+        background-color: $color;
+        color: choose-contrast-color($color, $white, $font-default);
 
         &::after {
-          background-color: lighten($color, 10%);
+          background-color: $color;
         }
       }
     }

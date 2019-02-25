@@ -17,7 +17,7 @@
       <a
         :href="getSessionSpeechLink(speech)"
         class="funblue-light-hover"
-        v-html="speech.content_t.substr(0, 180) + '...'"
+        v-html="(speech.content_hl || speech.content).slice(0, 180) + '...'"
       ></a>
     </div>
   </li>

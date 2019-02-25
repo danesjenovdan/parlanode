@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '~parlassets/scss/colors';
+
 .empty {
   bottom: 0;
   left: 0;
@@ -26,8 +28,12 @@ export default {
 
   .circle {
     $size: 220px;
-    background-image: url("#{getConfig('urls.cdn')}/img/icons/primerjalnik-empty-no-text.png");
-    background-size: $size;
+    border-radius: 50%;
+    background-image: url("#{getConfig('urls.cdn')}/img/orodja/primerjalnik.svg");
+    background-color: $light-background;
+    background-size: $size / 2.5;
+    background-position: center 40px;
+    background-repeat: no-repeat;
     font-size: 17px;
     font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
     font-style: italic;
@@ -35,7 +41,7 @@ export default {
     height: $size;
     left: calc(50% - #{$size / 2});
     line-height: 19px;
-    padding: 125px 26px 0;
+    padding: 145px 26px 0;
     position: absolute;
     text-align: center;
     top: calc(50% - #{$size / 2});

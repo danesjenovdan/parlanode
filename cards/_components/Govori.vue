@@ -135,7 +135,7 @@ export default {
       month.selected = (state.months || []).indexOf(month.id) !== -1;
     });
 
-    const allWorkingBodies = this.cardData.data.organizations.map(org => ({
+    const allWorkingBodies = (this.cardData.data.organizations || []).map(org => ({
       label: org.name,
       id: org.id,
       selected: (state.wb || []).indexOf(org.id) !== -1,
@@ -152,7 +152,7 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      speakingDays: this.cardData.data.highlighting || [],
+      speakingDays: (this.cardData.data.response && this.cardData.data.response.docs) || [],
       textFilter,
       allMonths,
       allWorkingBodies,
@@ -208,14 +208,20 @@ export default {
         state.people = this.selectedPeople.map(person => person.id);
       }
 
+      if (this.textFilter.length && this.textFIlter !== '*') {
+        state.q = this.textFilter;
+      }
+
+      if (this.card.currentPage > 0) {
+        state.page = this.card.currentPage;
+      }
+
       let encodedQueryData = '';
       if (Object.keys(state).length !== 0) {
         encodedQueryData = this.encodeQueryData(state);
       }
 
-      const textFilter = this.textFilter.length ? this.textFilter : '*';
-
-      return `${this.slugs.urls.isci}/filter/${textFilter}/${this.card.currentPage}${encodedQueryData}`;
+      return `${this.slugs.urls.isci}/search/speeches${encodedQueryData}`;
     },
     selectedWorkingBodies() {
       return this.allWorkingBodies.filter(session => session.selected);
@@ -275,8 +281,7 @@ export default {
           this.card.currentPage = 0;
           this.card.isLoading = true;
           axios.get(this.searchUrl).then((response) => {
-            this.speakingDays = response.data.highlighting;
-            this.speakingDays = response.data.highlighting;
+            this.speakingDays = response.data.response.docs;
             this.card.isLoading = false;
           });
         }
@@ -291,7 +296,7 @@ export default {
       this.card.currentPage += 1;
 
       axios.get(this.searchUrl).then((response) => {
-        this.speakingDays = this.speakingDays.concat(response.data.highlighting);
+        this.speakingDays = this.speakingDays.concat(response.data.response.docs);
 
         this.card.isLoading = false;
 

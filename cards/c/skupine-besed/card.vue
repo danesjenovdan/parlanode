@@ -238,14 +238,14 @@ export default {
 
       const query = this.words
         .map(word => (word.indexOf(' ') > -1 ? `"${word}"` : word))
-        .map(encodeURIComponent)
-        .join('+');
+        .join(' ');
 
-      axios.get(`${this.slugs.urls.isci}/q/${query}`)
+      axios.get(`${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(query)}`)
         .then((response) => {
           const scoreHigherThanZero = i => i.score > 0;
 
-          const parties = response.data.facet_counts.facet_fields.party_e
+          const parties = response.data.facet_counts.facet_fields.party
+            .filter(party => party.party)
             .filter(party => party.party.classification === 'pg')
             .filter(scoreHigherThanZero)
             .filter(party => party.party.acronym !== 'unknown')
@@ -271,7 +271,8 @@ export default {
               return out;
             }, []);
 
-          const people = response.data.facet_counts.facet_fields.speaker_i
+          const people = response.data.facet_counts.facet_fields.person
+            .filter(person => person.person)
             .filter(scoreHigherThanZero)
             .map(person => ({
               label: person.person.name,
@@ -283,7 +284,8 @@ export default {
 
           this.resultsRelative = { parties, people };
 
-          const parties2 = response.data.facet_counts.facet_fields.party_e
+          const parties2 = response.data.facet_counts.facet_fields.party
+            .filter(party => party.party)
             .filter(party => party.party.classification === 'pg')
             .filter(scoreHigherThanZero)
             .filter(party => party.party.acronym !== 'unknown')
@@ -294,7 +296,8 @@ export default {
               link: this.getPartyLinkSafe(party.party),
             }));
 
-          const people2 = response.data.facet_counts.facet_fields.speaker_i
+          const people2 = response.data.facet_counts.facet_fields.person
+            .filter(person => person.person)
             .filter(scoreHigherThanZero)
             .map(person => ({
               label: person.person.name,

@@ -205,6 +205,7 @@ export default {
               districts: person.districts,
               birth_date: person.birth_date,
               gov_id: person.gov_id,
+              gender: person.gender,
             },
             socials: {
               facebook: facebook.map(e => e.url).join('\n'),

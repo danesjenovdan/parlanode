@@ -73,10 +73,10 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/v2/${this.keywords.replace(/\s+/g, '+')}`;
+    const searchUrl = `${this.slugs.urls.isci}/search/votes?q=${encodeURIComponent(this.keywords)}`;
     axios.get(searchUrl)
       .then((res) => {
-        this.data = res.data.data;
+        this.data = (res.data.response && res.data.response.docs) || [];
         this.loading = false;
       })
       .catch((error) => {
