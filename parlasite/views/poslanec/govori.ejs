@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/p/govori/', mp.id, { customUrl: `{isci}/filter/*/0?people=${mp.id}`, state: { person: mp.id } }) %>
+    <%- await fetchCard('/p/govori/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
   </div>
   <div class="col-md-6">
     <%- await fetchCard('/p/tfidf/', mp.id) %>
