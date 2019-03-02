@@ -13,6 +13,14 @@
     </div>
     <div class="agenda-item__debates">
       <a
+        v-t="'agenda-item-record'"
+        v-for="record in agenda.records"
+        :key="record.id"
+        :href="getAgendaItemRecordLink(record)"
+        target="_blank"
+        class="agenda-item__debate legislation-link-icon"
+      />
+      <a
         v-for="debate in agenda.debates"
         :key="debate.id"
         :href="getSessionSpeechLink({
