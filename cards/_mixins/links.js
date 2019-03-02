@@ -67,9 +67,9 @@ export default {
       const { urls: slugs } = this.$root.$options.cardData;
       return `${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`;
     },
-    getAgendaItemRecordLink(record) {
+    getAgendaItemRecordLink(recordId) {
       const { urls: slugs } = this.$root.$options.cardData;
-      return `${slugs.urls.glej}/s/agenda-item-record/${record.id}?frame=true`;
+      return `${slugs.urls.glej}/s/agenda-item-record/${recordId}?frame=true`;
     },
     getSessionVoteLink(session) {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
