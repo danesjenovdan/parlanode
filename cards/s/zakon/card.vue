@@ -21,8 +21,8 @@
 
     <div class="result-container">
       <div class="result">
-        <i :class="`parlaicon vote-result--${data.result}`"></i>
-        <div v-t="`vote-result--${data.result}`" class="text"></div>
+        <i :class="`parlaicon vote-result--${result}`"></i>
+        <div v-t="`vote-result--${result}`" class="text"></div>
       </div>
       <div class="law-title">{{ $options.cardData.data.text }}</div>
       <result
@@ -149,6 +149,9 @@ export default {
     };
   },
   computed: {
+    result() {
+      return this.data.result || 'in_procedure';
+    },
     content() {
       return fixAbstractHtml(this.data.abstract);
     },
