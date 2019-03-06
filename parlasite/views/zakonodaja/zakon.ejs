@@ -18,8 +18,8 @@
         <%= lawData.created_at %> <!-- TODO: ?? -->
       </div>
       <h2 class="result">
-        <div class="parlaicon vote-result--<%= lawData.result %>" class="result-icon"></div>
-        <div class="text"><%= i18n(`general.vote-result--${lawData.result}`) %></div>
+        <div class="parlaicon vote-result--<%= lawData.result || 'in_procedure' %>" class="result-icon"></div>
+        <div class="text"><%= i18n(`general.vote-result--${lawData.result || 'in_procedure'}`) %></div>
       </h2>
     </div>
   </div>
