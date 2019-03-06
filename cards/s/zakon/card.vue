@@ -49,7 +49,7 @@
       </p-tab>
       <p-tab v-if="data.extra_abstract" label="Drugi postopki" variant="dark">
         <excerpt
-          :content="data.extra_abstract || ''"
+          :content="contentExtra"
           :main-law="{}"
           :documents="[]"
           :show-parent="false"
@@ -71,6 +71,7 @@ import Excerpt from 'components/Excerpt.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import Result from 'components/Result.vue';
 import mapVotes from 'helpers/mapVotes';
+import fixAbstractHtml from 'helpers/fixAbstractHtml';
 
 export default {
   name: 'Zakon',
@@ -149,13 +150,13 @@ export default {
   },
   computed: {
     content() {
-      if (this.data.abstract) {
-        return this.data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '');
-      }
-      return '';
+      return fixAbstractHtml(this.data.abstract);
+    },
+    contentExtra() {
+      return fixAbstractHtml(this.data.extra_abstract);
     },
     generatedCardUrl() {
-      return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ startTab: this.startTab }))}`;
+      return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ selectedTab: this.startTab }))}`;
     },
     excerptData() {
       return {
