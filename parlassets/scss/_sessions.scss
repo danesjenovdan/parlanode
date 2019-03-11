@@ -287,6 +287,11 @@
 
     &.backgroundwhite {
         background-color: $white;
+
+        // icon styles
+        background-size: 65%;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     &.law-logo {
