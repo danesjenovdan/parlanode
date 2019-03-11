@@ -289,6 +289,14 @@
         background-color: $icon-transcript;
     }
 
+    &.backgroundwhite {
+        background-color: $white;
+    }
+
+    &.law-logo {
+        background-color: $icon-transcript;
+    }
+
     b {
         display: inline-block;
         line-height: $size - ($padding * 2);
