@@ -49,7 +49,7 @@
         </div>
         <div class="bordertop0">
           <i18n
-            v-if="data.person.gender === 'f'"
+            v-if="data.results.voters && data.person.gender === 'f'"
             path="elected-to-district--f"
             tag="span"
             class="key"
@@ -58,12 +58,30 @@
             <b place="district">{{ data.results.district.join(', ') }}</b>
           </i18n>
           <i18n
-            v-else
+            v-else-if="data.results.voters"
             path="elected-to-district--m"
             tag="span"
             class="key"
           >
             <b place="numVotes">{{ data.results.voters }}</b>
+            <b place="district">{{ data.results.district.join(', ') }}</b>
+          </i18n>
+          <i18n
+            v-else-if="data.results.points && data.person.gender === 'f'"
+            path="elected-to-district-with-points--f"
+            tag="span"
+            class="key"
+          >
+            <b place="numVotes">{{ data.results.points }}</b>
+            <b place="district">{{ data.results.district.join(', ') }}</b>
+          </i18n>
+          <i18n
+            v-else-if="data.results.points"
+            path="elected-to-district-with-points--m"
+            tag="span"
+            class="key"
+          >
+            <b place="numVotes">{{ data.results.points }}</b>
             <b place="district">{{ data.results.district.join(', ') }}</b>
           </i18n>
         </div>
