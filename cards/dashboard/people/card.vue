@@ -198,6 +198,7 @@ export default {
               family_name: person.family_name,
               honorific_suffix: person.honorific_suffix,
               voters: person.voters,
+              points: person.points,
               mandates: person.mandates,
               previous_occupation: person.previous_occupation,
               education: person.education,

@@ -74,7 +74,7 @@
       <div class="col-md-12">
         <hr>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="row">
           <div class="col-md-12">
             <label>{{ $t('number-of-votes') }}</label>
@@ -84,7 +84,17 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('number-of-points') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.number="loadedData.person.points" class="form-control" type="number">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
         <div class="row">
           <div class="col-md-12">
             <label>{{ $t('number-of-terms') }}</label>
@@ -167,7 +177,7 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12">
-            <label>gender</label>
+            <label>{{ $t('gender') }}</label>
           </div>
           <div class="col-md-12 small">
             <input v-model.trim="loadedData.person.gender" class="form-control">
