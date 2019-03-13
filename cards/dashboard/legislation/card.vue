@@ -252,6 +252,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#dashboard_legislation {
+  &.card-container,
+  & /deep/ .card-content {
+    overflow: visible;
+  }
+}
+
 #dash-legislation-list /deep/ {
   .table-contents,
   .table-headers {
