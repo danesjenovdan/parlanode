@@ -4,8 +4,7 @@
   <div class="row header  text-center">
     <div class="col-lg-12">
       <% if (lawData.icon) { %>
-        <div class="media-object img-circle session-logo backgroundwhite">
-          <img src="<%- config.urls.cdn %>/icons/legislation/<%= lawData.icon %>">
+        <div class="media-object img-circle session-logo backgroundwhite" style="background-image: url('<%- config.urls.cdn %>/icons/legislation/<%= lawData.icon %>');">
         </div>
       <% } else { %>
         <div class="media-object img-circle session-logo backgroundred law-logo">
@@ -18,8 +17,8 @@
         <%= lawData.created_at %> <!-- TODO: ?? -->
       </div>
       <h2 class="result">
-        <div class="parlaicon vote-result--<%= lawData.result %>" class="result-icon"></div>
-        <div class="text"><%= i18n(`general.vote-result--${lawData.result}`) %></div>
+        <div class="parlaicon vote-result--<%= lawData.result || 'in_procedure' %>" class="result-icon"></div>
+        <div class="text"><%= i18n(`general.vote-result--${lawData.result || 'in_procedure'}`) %></div>
       </h2>
     </div>
   </div>
