@@ -300,7 +300,7 @@ export default {
           newMember.partylink = newMember.person.party.classification === 'pg';
           newMember.age = getAge(newMember.results.birth_date && newMember.results.birth_date.score) || '';
           const education = newMember.results.education && newMember.results.education.score;
-          newMember.education = parseInt(education || 0, 10);
+          newMember.education = String(education || 0);
           newMember.terms = newMember.results.mandates.score || 1;
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results[this.currentAnalysis].score || 0;
@@ -336,6 +336,10 @@ export default {
             a = memberA.person.party.acronym;
             b = memberB.person.party.acronym;
             return a.localeCompare(b, 'sl');
+          case 'education':
+            a = parseFloat(String(memberA.results.education.score).replace('/', '.'), 10);
+            b = parseFloat(String(memberB.results.education.score).replace('/', '.'), 10);
+            return a - b;
           default:
             a = memberA[this.currentSort];
             b = memberB[this.currentSort];

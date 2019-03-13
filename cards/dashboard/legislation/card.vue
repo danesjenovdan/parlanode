@@ -60,6 +60,8 @@
               <label>{{ $t('icon') }}</label>
               <p-search-dropdown
                 v-model="column.icons"
+                :manual-value="column.legislation.icon"
+                allow-manual-value
                 single
                 small
                 @select="column.legislation.icon = $event"
@@ -252,6 +254,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#dashboard_legislation {
+  &.card-container,
+  & /deep/ .card-content {
+    overflow: visible;
+  }
+}
+
 #dash-legislation-list /deep/ {
   .table-contents,
   .table-headers {
