@@ -23,6 +23,7 @@ const defaultConfig = {
   cardLang: 'sl',
   ogCapturePath: './og',
   cardGlobals: {
+    timeRangeStart: '2014-01-01',
     parliament_id: 95,
     session_list_tabs: [],
     legislation_tabs: [],

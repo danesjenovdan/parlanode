@@ -13,6 +13,7 @@ module.exports = {
   },
   cardLang: 'hr',
   cardGlobals: {
+    timeRangeStart: '2016-10-14',
     parliament_id: 199,
     session_list_tabs: [
       {
