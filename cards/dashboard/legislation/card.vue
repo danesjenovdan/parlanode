@@ -60,6 +60,8 @@
               <label>{{ $t('icon') }}</label>
               <p-search-dropdown
                 v-model="column.icons"
+                :manual-value="column.legislation.icon"
+                allow-manual-value
                 single
                 small
                 @select="column.legislation.icon = $event"

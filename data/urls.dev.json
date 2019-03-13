@@ -309,7 +309,7 @@
     "glasovanja": "/glasovanja/"
   },
   "urls": {
-    "glej": "http://localhost:3000",
+    "glej": "http://glej.nov.parlameter.si",
     "notifications_api": "http://obvestila.nov.parlameter.si",
     "isci": "http://isci.nov.parlameter.si",
     "analize": "http://analize.nov.parlameter.si/v1",
