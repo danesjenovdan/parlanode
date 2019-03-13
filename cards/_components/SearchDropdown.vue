@@ -241,6 +241,7 @@ export default {
       if (this.single) {
         this.clearSelection();
         this.toggleDropdown(false);
+        this.localFilter = '';
       }
       // make sure clearSelection propagates
       this.$nextTick(() => {
