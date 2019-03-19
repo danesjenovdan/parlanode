@@ -40,6 +40,9 @@
     },
     "releases": {
       "title": "Saopštenja za medije"
+    },
+    "video": {
+      "title": "Video gradivo"
     }
   },
   "menu": {
