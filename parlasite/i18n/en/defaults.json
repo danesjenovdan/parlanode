@@ -40,6 +40,9 @@
     },
     "releases": {
       "title": "Press-releases"
+    },
+    "video": {
+      "title": "Video gradivo"
     }
   },
   "menu": {
