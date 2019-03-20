@@ -22,7 +22,7 @@ const defaultConfig = {
       members: 'poslanci',
       parties: 'poslanske-skupine',
       tools: 'orodja',
-      about: 'o-projektu',
+      about: 'https://parlameter.org/',
       media: 'za-medije',
       legal: 'pravno-obvestilo',
       thankYou: 'hvala',

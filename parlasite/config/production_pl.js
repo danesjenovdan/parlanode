@@ -16,7 +16,7 @@ module.exports = {
       members: 'poslowie',
       parties: 'kluby-poselskie',
       tools: 'narzedzia',
-      about: 'o-projekcie',
+      about: 'https://parlameter.org/',
       media: 'dla-mediow',
       legal: 'informacje-prawne',
       thankYou: 'dziekujemy',

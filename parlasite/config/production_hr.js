@@ -16,7 +16,7 @@ module.exports = {
       members: 'zastupnice',
       parties: 'klubovi',
       tools: 'alati',
-      about: 'o-projektu',
+      about: 'https://parlameter.org/',
       media: 'za-medije',
       legal: 'pravne-napomene',
       thankYou: 'hvala',
