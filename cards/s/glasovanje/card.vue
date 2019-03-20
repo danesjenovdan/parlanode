@@ -23,6 +23,15 @@
       <p v-t="'info.text[6]'" class="info-text"></p>
     </div>
 
+    <div class="date-and-stuff">
+      <a
+        class="funblue-light-hover"
+        :href="getSessionVotesLink(data.session)"
+      >
+        {{ data.session.name }}
+      </a><span class="date">, {{ data.session.date }}</span>
+    </div>
+
     <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
       <div class="result">
         <template v-if="data.result.accepted">
@@ -285,6 +294,16 @@ export default {
       right: -20px;
       width: auto;
     }
+  }
+}
+
+.date-and-stuff {
+  margin-bottom: 20px;
+
+  .date {
+    font-family: Roboto Slab;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 
