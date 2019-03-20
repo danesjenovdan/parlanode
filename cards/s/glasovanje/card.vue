@@ -4,6 +4,9 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    @selectedparty="(newParty) => { this.state.selectedParty = newParty; }"
+    @selectedoption="(newOption) => { this.state.selectedOption = newOption; }"
+    @namefilter="(newNameFilter) => { this.state.nameFilter = newNameFilter; }"
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>
