@@ -138,6 +138,11 @@ export default {
       });
     },
   },
+  watch: {
+    nameFilter(newNameFilter) {
+      this.$parent.$parent.$parent.$emit('namefilter', newNameFilter);
+    }
+  },
   mounted() {
     if (this.state.nameFilter) {
       this.nameFilter = this.state.nameFilter;

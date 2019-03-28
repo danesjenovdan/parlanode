@@ -3,14 +3,24 @@
     <generator>
       <div slot="generator" class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <blue-button-list
               :items="filters"
               v-model="currentFilter"
             />
           </div>
+          <div
+            v-if="currentFilter == this.tabs.find(t => !t.org_ids || !t.org_ids.length).title"
+            class="col-md-6 filters"
+          >
+            <p-search-dropdown
+              v-model="workingBodies"
+              :placeholder="inputPlaceholder"
+              class="dropdown-filter"
+            />
+          </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12 filters">
             <p-search-dropdown
               v-model="workingBodies"
@@ -27,7 +37,7 @@
               <label v-t="'just-last-five'" for="justFive"></label>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <inner-card
         :header-config="headerConfig"

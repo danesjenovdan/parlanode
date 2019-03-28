@@ -4,6 +4,9 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    @selectedparty="(newParty) => { this.state.selectedParty = newParty; }"
+    @selectedoption="(newOption) => { this.state.selectedOption = newOption; }"
+    @namefilter="(newNameFilter) => { this.state.nameFilter = newNameFilter; }"
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>
@@ -18,6 +21,15 @@
       </div>
       <p v-t="'info.text[5]'" class="info-text heading"></p>
       <p v-t="'info.text[6]'" class="info-text"></p>
+    </div>
+
+    <div class="date-and-stuff">
+      <a
+        class="funblue-light-hover"
+        :href="getSessionVotesLink(data.session)"
+      >
+        {{ data.session.name }}
+      </a><span class="date">, {{ data.session.date }}</span>
     </div>
 
     <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
@@ -282,6 +294,16 @@ export default {
       right: -20px;
       width: auto;
     }
+  }
+}
+
+.date-and-stuff {
+  margin-bottom: 20px;
+
+  .date {
+    font-family: Roboto Slab;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 
