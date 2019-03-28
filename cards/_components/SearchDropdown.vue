@@ -215,6 +215,10 @@ export default {
         return this.manualValue;
       }
 
+      if (!selectedItem && this.placeholder) {
+        return this.placeholder;
+      }
+
       if (this.single) {
         return selectedItem ? selectedItem.label : this.$t('select-placeholder');
       }
@@ -257,7 +261,7 @@ export default {
     },
     selectItem(selectedItemId) {
       if (this.single) {
-        this.clearSelection();
+        // this.clearSelection();
         this.toggleDropdown(false);
         this.localFilter = '';
       }
@@ -268,14 +272,21 @@ export default {
     },
     toggleItem(itemId) {
       this.$emit('select', itemId);
-      this.$emit(
-        'input',
-        JSON.parse(JSON.stringify(this.value))
+      let newItems = JSON.parse(JSON.stringify(this.value));
+      if (this.single) {
+        newItems = newItems
+          .map(item => ({
+            ...item,
+            selected: item.id === itemId,
+          }));
+      } else {
+        newItems = newItems
           .map(item => ({
             ...item,
             selected: item.id === itemId ? !item.selected : item.selected,
-          })),
-      );
+          }));
+      }
+      this.$emit('input', newItems);
     },
     toggleDropdown(state) {
       // if (state === false) {

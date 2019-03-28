@@ -135,6 +135,9 @@ function parlapi() {
     getPeopleMpsOnly() {
       return data.get('/persons/?limit=10000&mps=true');
     },
+    getPeopleVotersOf(orgId) {
+      return data.get(`/persons/?limit=10000&voters_of=${orgId}`);
+    },
     patchPerson(id, person) {
       return data.patch(`/persons/${id}/`, person);
     },

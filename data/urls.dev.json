@@ -312,10 +312,10 @@
     "glej": "http://glej.nov.parlameter.si",
     "notifications_api": "http://obvestila.nov.parlameter.si",
     "isci": "http://isci.nov.parlameter.si",
-    "analize": "http://analize.nov.parlameter.si/v1",
+    "analize": "http://analize.ba.parlameter.si/v1",
     "base": "http://localhost:3066",
-    "data": "http://data.nov.parlameter.si/v1",
-    "cdn": "http://localhost:8080"
+    "data": "http://data.ba.parlameter.si/v1",
+    "cdn": "http://cdn.ba.parlameter.si/v1/parlassets"
   },
   "party": {
     "1": {

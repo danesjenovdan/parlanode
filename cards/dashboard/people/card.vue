@@ -2,14 +2,13 @@
   <div>
     <dash-wrapper :id="$options.cardData.cardData._id">
       <div id="dash-people-list">
-        <div v-if="people != null">
-          <input
-            id="mpsOnly"
-            v-model="mpsOnly"
-            type="checkbox"
-            class="checkbox"
-          >
-          <label for="mpsOnly">{{ $t('only-mps') }}</label>
+        <div v-if="organisations != null && people != null">
+          <p-search-dropdown
+            v-model="orgItems"
+            :placeholder="$t('everybody')"
+            single
+            small
+          />
         </div>
         <dash-table
           :items="mappedItems"
@@ -39,7 +38,7 @@
           </template>
         </dash-table>
         <div v-if="error">Error: {{ error.message }}</div>
-        <div v-else-if="people === null" class="nalagalnik"></div>
+        <div v-else-if="organisations == null || people == null" class="nalagalnik"></div>
       </div>
     </dash-wrapper>
     <dash-fancy-modal
@@ -73,6 +72,7 @@
 </template>
 
 <script>
+/* eslint-disable no-underscore-dangle */
 import { assign, sortBy, zip, groupBy, map } from 'lodash';
 import common from 'mixins/common';
 import links from 'mixins/links';
@@ -83,6 +83,7 @@ import DashFancyModal from 'components/Dashboard/FancyModal.vue';
 import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
 import ModalContentPersonInfo from 'components/Dashboard/ModalContentPersonInfo.vue';
 import ModalContentPersonMemberships from 'components/Dashboard/ModalContentPersonMemberships.vue';
+import PSearchDropdown from 'components/SearchDropdown.vue';
 import parlapi from 'mixins/parlapi';
 
 export default {
@@ -95,6 +96,7 @@ export default {
     ModalContentTfidf,
     ModalContentPersonInfo,
     ModalContentPersonMemberships,
+    PSearchDropdown,
   },
   mixins: [
     common,
@@ -103,7 +105,8 @@ export default {
   ],
   data() {
     return {
-      mpsOnly: true,
+      orgItems: null,
+      organisations: null,
       people: null,
       tfidfModalOpen: false,
       tfidfModalData: null,
@@ -134,23 +137,42 @@ export default {
       }
       return [];
     },
+    selectedOrg() {
+      return (this.orgItems || []).find(o => o.selected);
+    },
   },
   watch: {
-    mpsOnly() {
+    selectedOrg() {
       this.fetchPeople();
     },
   },
   mounted() {
-    this.fetchPeople();
+    this.fetchOrganisations();
   },
   methods: {
+    fetchOrganisations() {
+      this.$parlapi.getAllOrganisations()
+        .then((orgs) => {
+          this.organisations = (orgs.data.results || []).filter(o => o.has_voters);
+          this.orgItems = this.organisations.map(org => ({
+            id: org.id,
+            label: org._name,
+            selected: false,
+          }));
+          return this.fetchPeople();
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.error = error;
+        });
+    },
     fetchPeople() {
       this.people = null;
       this.error = null;
-
       (
-        this.mpsOnly
-          ? this.$parlapi.getPeopleMpsOnly()
+        this.selectedOrg
+          ? this.$parlapi.getPeopleVotersOf(this.selectedOrg.id)
           : this.$parlapi.getPeople()
       )
         .then((people) => {
