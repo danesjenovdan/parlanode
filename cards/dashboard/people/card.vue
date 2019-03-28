@@ -219,6 +219,7 @@ export default {
               patronymic_name: person.patronymic_name,
               family_name: person.family_name,
               honorific_suffix: person.honorific_suffix,
+              name_parser: person.name_parser,
               voters: person.voters,
               points: person.points,
               mandates: person.mandates,
