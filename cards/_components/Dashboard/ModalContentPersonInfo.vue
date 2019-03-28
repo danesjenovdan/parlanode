@@ -71,6 +71,16 @@
           </div>
         </div>
       </div>
+      <div class="col-md-12 smaller-field">
+        <div class="row">
+          <div class="col-md-12">
+            <label>name_parser</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.trim="loadedData.person.name_parser" class="form-control">
+          </div>
+        </div>
+      </div>
       <div class="col-md-12">
         <hr>
       </div>

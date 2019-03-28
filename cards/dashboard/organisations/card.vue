@@ -247,6 +247,7 @@ export default {
             .filter(Boolean)
             .map(value => ({
               contact_type: 'EMAIL',
+              label: 'Mail',
               value,
               organization: org.id,
             }));
