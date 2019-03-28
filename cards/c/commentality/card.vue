@@ -4,7 +4,7 @@
     :card-url="url"
   >
     <iframe
-      :src="`http://localhost:8080/embed.html#id=${articleId}`"
+      :src="`https://frontmentality.djnd.si/embed.html#id=${articleId}`"
       width="100%"
       height="800px"
       style="border: none;"
