@@ -55,6 +55,10 @@ export default {
 <style lang="scss">
 @import "~parlassets/scss/colors";
 
+.card-content {
+  padding: 0 !important;
+}
+
 iframe {
   .wrapper {
     background: none;
