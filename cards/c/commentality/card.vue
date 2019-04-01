@@ -55,7 +55,7 @@ export default {
 <style lang="scss">
 @import "~parlassets/scss/colors";
 
-.card-content {
+#c-commentality .card-content {
   padding: 0 !important;
 }
 
