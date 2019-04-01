@@ -27,7 +27,7 @@
 <%- await fetchCard('/s/zakon/', { customUrl: `{analize}/s/getLegislation/${lawData.epa}`}) %>
 
 <% if  (lawData.has_discussion) { %>
-  <%- await fetchCard('/c/commentality/', { state: { epa: lawData.epa} }) %>
+  <%- await fetchCard('/c/commentality/', { state: { EPA: lawData.epa } }) %>
 <% } %>
 
 <%- await include('../_partials/footer.ejs') %>
