@@ -35,7 +35,7 @@ export default {
   margin: 15px 0 20px 0;
 
   .presence-item {
-    flex: 1 0 25%;
+    flex: 0 0 25%;
     display: flex;
 
     @include respond-to(limbo) {
