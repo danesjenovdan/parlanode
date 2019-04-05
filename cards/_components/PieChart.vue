@@ -8,7 +8,7 @@ import { isFinite } from 'lodash';
 import d3 from 'd3v3';
 
 function chart(rawData, component) {
-  $('.partychart2 svg').remove();
+  console.log('doing the chart');
 
   function getQueryParams(str) {
     return (str || document.location.search).replace(/(^\?)/, '').split('&').map(function m(n) {
@@ -188,11 +188,11 @@ export default {
       this.renderChart();
     },
   },
-  mounted() {
-    this.renderChart();
-  },
   methods: {
     renderChart() {
+      if (this.$el.querySelector('.partychart2 svg')) {
+        this.$el.querySelector('.partychart2 svg').parentElement.removeChild(this.$el.querySelector('.partychart2 svg')); // TODO this is salad
+      }
       chart(this.data, this);
     },
   },

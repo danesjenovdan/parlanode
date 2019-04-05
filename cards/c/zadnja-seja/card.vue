@@ -37,10 +37,10 @@
     </div>
     <hr>
     <div class="link">
-      <a class="funblue-light-hover">
+      <span class="link-color">
         <span class="glyphicon glyphicon-comment"></span>
         <span v-t="'info.presence-heading'"></span>
-      </a>
+      </span>
     </div>
     <prisotnost-po-poslanskih-skupinah :data="data.presence" />
     <hr>
@@ -137,6 +137,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
+@import '~parlassets/scss/colors';
 
 hr,
 .link {
@@ -181,6 +182,7 @@ hr,
     }
   }
 }
+
 .votes {
   min-height: 40px;
 
@@ -188,5 +190,9 @@ hr,
     height: auto !important;
     max-height: 500px;
   }
+}
+
+.link-color {
+  color: $link;
 }
 </style>

@@ -80,8 +80,8 @@
               <a
                 v-for="ballot in day.ballots"
                 :key="ballot.id_parladata"
-                :href="slugs.urls.glej + '/s/glasovanje/' + ballot.id_parladata + '?frame=true'"
-                target="_blank"
+                :href="getSessionVoteLink({ session_id: ballot.session_id, vote_id: ballot.id_parladata })"
+                :target="voteLinkTarget"
                 class="ballot"
               >
                 <div class="disunion">
@@ -157,6 +157,7 @@ import PSearchDropdown from 'components/SearchDropdown.vue';
 import StripedButton from 'components/StripedButton.vue';
 import Toggle from 'components/Toggle.vue';
 import common from 'mixins/common';
+import links from 'mixins/links';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import ScrollShadow from 'components/ScrollShadow.vue';
@@ -173,7 +174,10 @@ export default {
     Toggle,
     ScrollShadow,
   },
-  mixins: [common],
+  mixins: [
+    common,
+    links,
+  ],
   data() {
     const data = Object.keys(this.$options.cardData.data).map((key) => {
       const obj = this.$options.cardData.data[key];
@@ -291,6 +295,14 @@ export default {
       }
 
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+    },
+    voteLinkTarget() {
+      if (typeof window !== 'undefined') {
+        if (window === window.top) {
+          return '_self';
+        }
+      }
+      return '_blank';
     },
   },
   watch: {
