@@ -13,10 +13,12 @@
       "link": "http://www.parlament.ba"
     }
   },
-  "elected-to-district--m": "Izabran sa {numVotes} glasova - {district}",
-  "elected-to-district--f": "Izabrana sa {numVotes} glasova - {district}",
-  "elected-to-district-with-points--m": "Izvoljen z {numVotes} točkami v {district}",
-  "elected-to-district-with-points--f": "Izvoljena z {numVotes} točkami v {district}",
+  "elected-to-district": "Št. glasov: {numVotes}, {district}",
+  "elected-to-district--m": "Prejel {numVotes} glasov v okraju {district}",
+  "elected-to-district--f": "Prejela {numVotes} glasov v okraju {district}",
+  "elected-to-district-with-points": "Št. točk: {numVotes}, {district}",
+  "elected-to-district-with-points--m": "Prejel {numVotes} točk v okraju {district}",
+  "elected-to-district-with-points--f": "Prejela {numVotes} točk v okraju {district}",
   "age": "Dob: {age} godina",
   "no-social-media": "nije na društvenim mrežama."
 }
