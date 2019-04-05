@@ -17,37 +17,41 @@
         </div>
 
         <div id="skupine-besed">
-          <text-frame>
-            <i18n path="wordgroups-text" tag="p">
-              <span place="words">
-                <tag
-                  v-for="(word, index) in words"
-                  :key="index + word"
-                  :text="word"
-                  @click="removeWord(word)"
-                />
-                <plus @click="toggleModal(true)" />
-              </span>
-              <span place="load">
+          <text-frame class="skupine-besed">
+            <div class="skupine-besed-text">
+              <i18n path="wordgroups-text" tag="p">
+                <span place="words">
+                  <tag
+                    v-for="(word, index) in words"
+                    :key="index + word"
+                    :text="word"
+                    @click="removeWord(word)"
+                  />
+                  <plus @click="toggleModal(true)" />
+                </span>
+              </i18n>
+              <div class="row extras">
+                <div class="col-xs-12">
+                  <div class="searchfilter-checkbox">
+                    <input
+                      id="rev"
+                      :checked="showRelative"
+                      type="checkbox"
+                      class="checkbox"
+                      @click="changeShowRelative"
+                    >
+                    <label v-t="'show-relative'" for="rev"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skupine-besed-button">
+              <span place="load" class="load-button">
                 <load-link
                   :text="$t('load')"
                   @click="loadResults(true)"
                 />
               </span>
-            </i18n>
-            <div class="row extras">
-              <div class="col-xs-12">
-                <div class="searchfilter-checkbox">
-                  <input
-                    id="rev"
-                    :checked="showRelative"
-                    type="checkbox"
-                    class="checkbox"
-                    @click="changeShowRelative"
-                  >
-                  <label v-t="'show-relative'" for="rev"></label>
-                </div>
-              </div>
             </div>
           </text-frame>
 
@@ -322,6 +326,92 @@ export default {
 <style lang="scss" scoped>
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
+
+.skupine-besed {
+  /deep/.text-frame  {
+    overflow: hidden;
+    padding: 0;
+  }
+  .skupine-besed-text {
+    width: 65%;
+    float: left;
+    padding: 30px 30px 10px 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      height: 88%;
+      width: 1px;
+      background-color: $tools-border;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 12px;
+
+      @include respond-to(limbo) {
+        // height: 115%;
+      }
+    }
+
+    @include respond-to(mobile) {
+      width: 100%;
+      & p {
+        border-bottom: 1px solid $tools-border;
+        padding-bottom: 25px;
+        margin-bottom: -20px;
+      }
+    }
+  }
+  .skupine-besed-button {
+    width: 35%;
+    float: left;
+    text-align: center;
+    position: relative;
+
+    .load-button {
+      display: inline-block;
+      margin-top: 65px;
+
+      @include respond-to(limbo) {
+        margin-top: 80px;
+      }
+
+      @include respond-to(mobile) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    @include respond-to(mobile) {
+      width: 100%;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .extras {
+    margin: 40px 0 0;
+  }
+
+  .searchfilter-checkbox {
+    height: 40px;
+
+    @include respond-to(mobile) {
+      // height: auto;
+    }
+
+    label {
+      text-align: left;
+      margin-bottom: 0;
+
+      @include respond-to(small-mobile) {
+        line-height: 1.4em;
+        padding-top: 10px;
+      }
+    }
+  }
+}
 
 .results {
   height: 400px;
