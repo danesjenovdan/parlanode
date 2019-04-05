@@ -299,22 +299,13 @@ export default {
       }
     }
 
-    &:nth-child(3) {
-      @include respond-to(desktop) {
-        padding-left: 40px;
-      }
-    }
-
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4) .text {
+    &:nth-child(5) .text {
       font-size: 16px !important;
     }
 
     &.small-text {
       font-size: 14px;
     }
-
 
     &:last-child {
       .outcome .text {
