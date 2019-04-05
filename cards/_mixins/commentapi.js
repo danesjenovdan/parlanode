@@ -19,6 +19,9 @@ function commentapi() {
     createArticle(title, owner = propertyId) {
       return backend.post('/articles/', { title, owner });
     },
+    getMostDiscussed() {
+      return backend.get(`/properties/most_discussed/${propertyId}`);
+    },
   };
 }
 
