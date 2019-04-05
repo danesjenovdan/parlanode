@@ -125,12 +125,12 @@
     "excessive-vocabulary": "Ekscesni rječnik"
   },
   "question": {
-    "asked--m": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--f": "Postavila je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--plural": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--m": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--plural": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}."
+    "asked--m": "Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--f": "Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Glasao je ZA {title}",
