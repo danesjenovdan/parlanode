@@ -25,59 +25,75 @@
 
         <div id="primerjalnik">
           <text-frame class="primerjalnik">
-            <i18n path="comparator-text" tag="p">
-              <span place="same" class="primerjalnik-for">
-                <tag
-                  v-for="party in sameParties"
-                  :key="party.id"
-                  :text="party.acronym"
-                  class="tag"
-                  @click="togglePartySame(party)"
-                />
-                <tag
-                  v-for="person in selectedSamePeople"
-                  :key="person.id"
-                  :text="person.name"
-                  class="tag"
-                  @click="removePerson(person)"
-                />
-                <plus @click="toggleModal('same', true)" />
-              </span>
-              <span place="different" class="primerjalnik-against">
-                <tag
-                  v-for="party in differentParties"
-                  :key="party.id"
-                  :text="party.acronym"
-                  class="tag"
-                  @click="togglePartyDifferent(party)"
-                />
-                <tag
-                  v-for="person in selectedDifferentPeople"
-                  :key="person.id"
-                  :text="person.name"
-                  class="tag"
-                  @click="removePerson(person)"
-                />
-                <plus @click="toggleModal('different', true)" />
-              </span>
-              <span place="load">
+            <div class="primerjalnik-text">
+              <i18n path="comparator-text" tag="p">
+                <span place="same" class="primerjalnik-for">
+                  <tag
+                    v-for="party in sameParties"
+                    :key="party.id"
+                    :text="party.acronym"
+                    class="tag"
+                    @click="togglePartySame(party)"
+                  />
+                  <tag
+                    v-for="person in selectedSamePeople"
+                    :key="person.id"
+                    :text="person.label"
+                    class="tag"
+                    @click="removePerson(person)"
+                  />
+                  <plus @click="toggleModal('same', true)" />
+                </span>
+                <span place="different" class="primerjalnik-against">
+                  <tag
+                    v-for="party in differentParties"
+                    :key="party.id"
+                    :text="party.acronym"
+                    class="tag"
+                    @click="togglePartyDifferent(party)"
+                  />
+                  <tag
+                    v-for="person in selectedDifferentPeople"
+                    :key="person.id"
+                    :text="person.name"
+                    class="tag"
+                    @click="removePerson(person)"
+                  />
+                  <plus @click="toggleModal('different', true)" />
+                </span>
+              </i18n>
+              <div class="row primerjalnik-extras">
+                <div class="col-md-6 nopadding">
+                  <div class="searchfilter-checkbox">
+                    <input
+                      id="rev"
+                      :checked="special"
+                      type="checkbox"
+                      class="checkbox"
+                      @click="toggleSpecial"
+                    >
+                    <label v-t="'ignore-absent'" for="rev"></label>
+                  </div>
+                </div>
+                <!-- <div class="col-md-6 nopadding">
+                  <div class="searchfilter-checkbox">
+                    <input
+                      id="rev"
+                      :checked="special"
+                      type="checkbox"
+                      class="checkbox"
+                      @click="toggleSpecial"
+                    >
+                    <label v-t="'ignore-absent'" for="rev"></label>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="primerjalnik-button">
+              <span place="load" class="load-button">
                 <load-link :text="$t('load')" @click="loadResults" />
               </span>
-            </i18n>
-            <div class="row primerjalnik-extras">
-              <div class="col-xs-7 nopadding">
-                <div class="searchfilter-checkbox">
-                  <input
-                    id="rev"
-                    :checked="special"
-                    type="checkbox"
-                    class="checkbox"
-                    @click="toggleSpecial"
-                  >
-                  <label v-t="'ignore-absent'" for="rev"></label>
-                </div>
-              </div>
-              <div class="col-xs-5 nopadding">
+              <div class="row primerjalnik-extras">
                 <i18n path="comparator-vote-percent" tag="p" class="summary">
                   <strong place="num">{{ votes.length }}</strong>
                   <strong place="percent">
@@ -282,7 +298,7 @@ export default {
       }, []);
 
       return tags.map(tag => ({
-        label: tag,
+        label: tag || 'Brez MDT', // TODO i18n
         value: this.data.filter(d => d.results.tags[0] === tag).length,
       }));
     },
@@ -444,15 +460,71 @@ export default {
 }
 
 .primerjalnik {
+  /deep/.text-frame  {
+    overflow: hidden;
+    padding: 0;
+  }
+  .primerjalnik-text {
+    width: 65%;
+    float: left;
+    padding: 30px 30px 10px 30px;
+
+    @include respond-to(mobile) {
+      width: 100%;
+      & p {
+        border-bottom: 1px solid $tools-border;
+        padding-bottom: 25px;
+        margin-bottom: -20px;
+      }
+    }
+  }
+  .primerjalnik-button {
+    width: 35%;
+    float: left;
+    text-align: center;
+    position: relative;
+
+    .load-button {
+      display: inline-block;
+      margin-top: 40px;
+
+      @include respond-to(mobile) {
+        margin-top: 20px;
+      }
+    }
+
+    &::before {
+      content: '';
+      height: 88%;
+      width: 1px;
+      background-color: $tools-border;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 12px;
+
+      @include respond-to(limbo) {
+        // height: 115%;
+      }
+    }
+
+    @include respond-to(mobile) {
+      width: 100%;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
   .primerjalnik-extras {
-    margin: 40px 0 -20px;
+    margin: 40px 0 0;
   }
 
   .searchfilter-checkbox {
     height: 40px;
 
     @include respond-to(mobile) {
-      height: auto;
+      // height: auto;
     }
 
     label {
@@ -461,24 +533,28 @@ export default {
 
       @include respond-to(small-mobile) {
         line-height: 1.4em;
-        padding-top: 5px;
+        padding-top: 10px;
       }
     }
   }
 
   .summary {
     margin-bottom: 0;
-    line-height: 40px;
-    text-align: right;
+    line-height: 20px;
+    text-align: center;
 
     font-size: 11px;
     color: $font-default;
 
+    padding: 10px;
+
     @include respond-to(mobile) {
-      text-align: left;
+      // text-align: left;
       margin-top: 0;
       line-height: 1.4em;
       padding-left: 10px;
+      margin-top: -20px;
+      margin-bottom: 15px;
     }
   }
 }

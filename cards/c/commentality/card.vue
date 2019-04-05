@@ -4,7 +4,7 @@
     :card-url="url"
   >
     <iframe
-      :src="`https://frontmentality.djnd.si/embed.html#id=${articleId}`"
+      :src="`https://frontmentality.djnd.si/parlaembed.html#id=${articleId}`"
       width="100%"
       height="800px"
       style="border: none;"
@@ -54,6 +54,10 @@ export default {
 
 <style lang="scss">
 @import "~parlassets/scss/colors";
+
+#c-commentality .card-content {
+  padding: 0 !important;
+}
 
 iframe {
   .wrapper {

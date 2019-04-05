@@ -181,9 +181,12 @@ hr,
     }
   }
 }
+.votes {
+  min-height: 40px;
 
-.votes /deep/ #votingCard {
-  height: auto !important;
-  max-height: 500px;
+  /deep/ #votingCard {
+    height: auto !important;
+    max-height: 500px;
+  }
 }
 </style>

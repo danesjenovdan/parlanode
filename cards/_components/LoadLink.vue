@@ -5,7 +5,7 @@
   >{{ data.attrs.text }}</span>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/colors';
 
 @function icon-load($color) {
@@ -15,16 +15,24 @@
 .load {
   display: inline-block;
   white-space: nowrap;
-  color: $first;
+  color: $white;
   cursor: pointer;
-  font-weight: 600;
 
-  &:hover { background-color: $white; }
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Roboto';
+  line-height: 56px;
+
+  width: 166px;
+  height: 56px;
+  background-color: $first;
+
+  &:hover { background-color: $second; }
 
   &::after {
     content: '';
     display: inline-block;
-    background-image: url('#{icon-load($load-icon)}');
+    background-image: url('#{icon-load($white)}');
     width: 20px;
     height: 20px;
     position: relative;

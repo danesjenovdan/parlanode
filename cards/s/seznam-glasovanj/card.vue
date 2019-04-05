@@ -144,4 +144,8 @@ export default {
   height: auto;
   min-height: 500px;
 }
+
+/deep/ .filter.tag-dropdown {
+  display: none;
+}
 </style>

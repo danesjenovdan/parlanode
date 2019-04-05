@@ -145,6 +145,15 @@ export default {
     &.sort.reverse span::after {
       transform: rotate(180deg);
     }
+
+    &.no-sort {
+      cursor: auto;
+      pointer-events: none;
+
+      span::after {
+        display: none !important;
+      }
+    }
   }
 }
 

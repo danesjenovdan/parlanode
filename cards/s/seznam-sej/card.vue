@@ -89,8 +89,8 @@ export default {
       filters: tabs.map(e => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData, 'state.filter') || tabs[0].title,
-      justFive: get(this.$options.cardData, 'state.justFive') || false,
+      currentFilter: get(this.$options.cardData.parlaState, 'filters') ||  tabs[0].title,
+      justFive: get(this.$options.cardData.parlaState, 'justFive') ||  false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -230,7 +230,7 @@ export default {
   created() {
     axios.get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
       .then((response) => {
-        const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
+        const existingWorkingBodies = get(this.$options.cardDataparlaState, 'workingBodies') || [];
         this.workingBodies = response.data.map(workingBody => ({
           id: workingBody.id,
           label: workingBody.name,

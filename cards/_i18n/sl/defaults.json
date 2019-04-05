@@ -13,6 +13,7 @@
   "vote-types": "Tipi glasovanja",
   "select-placeholder": "Izberi",
   "selected-placeholder": "Izbranih: {num}",
+  "data": "Podatki",
   "name": "Ime",
   "epa": "EPA",
   "change": "Sprememba",
@@ -125,12 +126,12 @@
     "excessive-vocabulary": "Ekscesno besedje"
   },
   "question": {
-    "asked--m": "Zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--f": "Zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--plural": "Zastavili vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--m": "{name} je zastavil vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je zastavila vprašanje {title} na katerega mora odgovoriti {recipient}.",
-    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--m": "Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--f": "Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Glasoval ZA {title}",
