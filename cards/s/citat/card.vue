@@ -119,7 +119,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
+      return `${this.url}${this.$options.cardData.data.results.quote_id}?altHeader=true`;
     },
   },
   created() {
