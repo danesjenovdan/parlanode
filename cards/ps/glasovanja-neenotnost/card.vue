@@ -339,7 +339,7 @@ export default {
         return tagMatch && textMatch && classificationMatch;
       };
 
-      const votes = sortBy(this.voteData, this.selectedSort)
+      const votes = sortBy(this.voteData, [this.selectedSort])
         .reverse()
         .map((vote) => {
           const { title, projects } = parseVoteTitle(vote.text);
