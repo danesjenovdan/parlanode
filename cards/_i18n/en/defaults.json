@@ -125,12 +125,12 @@
     "excessive-vocabulary": "Excessive speech"
   },
   "question": {
-    "asked--m": "Asked question {title} that requires answer from {recipient}.",
-    "asked--f": "Asked question {title} that requires answer from {recipient}.",
-    "asked--plural": "Asked a question {title} that needs to be answered by {recipient}.",
-    "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
-    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}.",
-    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--m": "Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--f": "Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Voted FOR {title}",
