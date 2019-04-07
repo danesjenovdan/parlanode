@@ -80,13 +80,13 @@
     </div>
     <div
       v-t="'summary'"
-      v-if="data.abstract"
+      v-if="content"
       class="izvlecek-switch visible-xs"
       @click="showMobileExcerpt = !showMobileExcerpt"
     />
     <excerpt
-      v-if="showMobileExcerpt && data.abstract"
-      :content="data.abstract || ''"
+      v-if="showMobileExcerpt && content"
+      :content="content"
       :main-law="excerptData"
       :documents="data.documents"
       :show-parent="true"
@@ -123,9 +123,9 @@
       </p-tab>
     </p-tabs>
     <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
-      <p-tab v-if="data.abstract" :label="$t('summary')">
+      <p-tab v-if="content" :label="$t('summary')">
         <excerpt
-          :content="data.abstract || ''"
+          :content="content"
           :main-law="excerptData"
           :documents="data.documents"
           :show-parent="true"
@@ -173,6 +173,7 @@ import { parseVoteTitle } from 'helpers/voteTitle';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
+import fixAbstractHtml from 'helpers/fixAbstractHtml';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
@@ -230,6 +231,12 @@ export default {
         name: this.data.legislation.text,
         link: this.getLegislationLink(this.data.legislation),
       };
+    },
+    content() {
+      return fixAbstractHtml(this.data.abstract);
+    },
+    contentExtra() {
+      return fixAbstractHtml(this.data.extra_abstract);
     },
   },
   // glasovanje-update je bilo prazno, created() je iz developa

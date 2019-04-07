@@ -49,20 +49,30 @@ const analysesIDs = [
     roundingPrecision: 0,
   },
   {
+    id: 'number_of_amendments',
+    round: true,
+    roundingPrecision: 0,
+  },
+  {
+    id: 'intra_disunion',
+    round: true,
+    roundingPrecision: 2,
+  },
+  {
     id: 'vocabulary_size',
   },
-  {
-    id: 'privzdignjeno',
-    roundingPrecision: 3,
-  },
-  {
-    id: 'preprosto',
-    roundingPrecision: 3,
-  },
-  {
-    id: 'problematicno',
-    roundingPrecision: 3,
-  },
+  // {
+  //   id: 'privzdignjeno',
+  //   roundingPrecision: 3,
+  // },
+  // {
+  //   id: 'preprosto',
+  //   roundingPrecision: 3,
+  // },
+  // {
+  //   id: 'problematicno',
+  //   roundingPrecision: 3,
+  // },
 ];
 
 export default {
@@ -77,7 +87,7 @@ export default {
   ],
   data() {
     const analyses = analysesIDs.map(a => ({
-      id: a.id,
+      ...a,
       label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
       titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
       explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
