@@ -206,6 +206,9 @@ hr {
 
     .text-container {
       width:100%;
+      @include respond-to(mobile) {
+        padding-right: 5px;
+      }
     }
 
     &.show-parent,
