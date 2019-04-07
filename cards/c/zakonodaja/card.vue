@@ -305,12 +305,22 @@ export default {
     &:nth-child(4),
     &:nth-child(5) .text {
       @include respond-to(mobile) {
-        display:none;
+        display: none;
       }
     }
 
-    &:nth-child(5) .text {
-      font-size: 16px !important;
+    &:nth-child(5) {
+      @include respond-to(mobile) {
+        max-width: 52px;
+
+        .outcome {
+          justify-content: center;
+        }
+      }
+
+      .text {
+        font-size: 16px !important;
+      }
     }
 
     &.small-text {
