@@ -98,6 +98,8 @@ export default {
       .reverse()
       .map(JSON.parse);
 
+    const state = this.$options.cardData.parlaState || {};
+
     const tabs = this.$options.cardData.cardGlobals.legislation_tabs;
     return {
       tabs,
@@ -109,8 +111,8 @@ export default {
       textFilter: '',
       workingBodies: [],
       allWorkingBodies,
-      onlyAbstracts: false,
-      onlyWithVotes: false,
+      onlyAbstracts: !!state.onlyAbstracts,
+      onlyWithVotes: !!state.onlyWithVotes,
     };
   },
   computed: {
@@ -176,6 +178,14 @@ export default {
       // @todo probably needs a good fix
       if (this.selectedWorkingBodies.length) {
         state.wb = this.selectedWorkingBodies;
+      }
+
+      if (this.onlyAbstracts) {
+        state.onlyAbstracts = true;
+      }
+
+      if (this.onlyWithVotes) {
+        state.onlyWithVotes = true;
       }
 
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getAllLegislation/`)}`;
