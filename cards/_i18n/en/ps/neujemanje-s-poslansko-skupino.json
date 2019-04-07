@@ -1,11 +1,12 @@
 {
   "card": {
-    "title": "Deviation from the parliamentary group"
+    "title": "Deviation from the parliamentary group",
+    "empty-state-text": "Ta analiza ni na voljo."
   },
   "info": {
     "lead": "List of all the parliamentary group's MPs, sorted by the extend to which they vote the same as the parliamentary group. The bigger the value, the lower the commonalities in the vote.",
     "text": [
-      "For each voting event we calculate the \"parliamentary group's vote\" for the parliamentary group that the MP is a member of. For each MP we calculate the percentage of votes where they voted differently than their parliamentary group's majority vote and sort the results from the biggest to smallest level of deviation. ",
+      "Za vsako glasovanje izračunamo \"glas poslanske skupine\", ki ji pripada posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja proti najmanjšemu.",
       "We ignore all the ballots with value \"NOT PRESENT\". If the majority vote of the parliamentary group is \"NOT PRESENT\" (the majority of their MPs were not present at the vote) that voting event is not included in the analysis. If the parliamentary group has multiple “majority votes\" (i. e. two options have the same number of votes within the parliamentary group) we consider all options in our comparison with the individual MPs."
     ]
   }
