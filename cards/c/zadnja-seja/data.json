@@ -1,198 +1,3100 @@
 {
-  "created_for": "10.05.2018",
+  "created_for": "04.03.2019",
   "presence": [
     {
       "org": {
-        "acronym": "\u017divi zid + SNAGA",
-        "is_coalition": false,
-        "id": 319,
-        "name": "Klub zastupnika \u017divog zida i SNAGA-e"
+        "acronym": "SMC",
+        "is_coalition": true,
+        "id": 5,
+        "classification": "pg",
+        "name": "Stranka modernega centra"
       },
       "percent": 99
     },
     {
       "org": {
-        "acronym": "SDP",
-        "is_coalition": false,
-        "id": 339,
-        "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+        "acronym": "LMŠ",
+        "is_coalition": true,
+        "id": 3,
+        "classification": "pg",
+        "name": "Lista Marjana Šarca"
       },
-      "percent": 99
+      "percent": 98
     },
     {
       "org": {
-        "acronym": "Most",
-        "is_coalition": false,
-        "id": 335,
-        "name": "Klub zastupnika Mosta nezavisnih lista"
+        "acronym": "DeSUS",
+        "is_coalition": true,
+        "id": 9,
+        "classification": "pg",
+        "name": "Demokratična stranka upokojencev Slovenije"
       },
-      "percent": 99
+      "percent": 98
     },
     {
       "org": {
-        "acronym": "BM 365 + Reformisti + Nezavisni",
+        "acronym": "SNS",
         "is_coalition": false,
-        "id": 334,
-        "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+        "id": 11,
+        "classification": "pg",
+        "name": "Slovenska nacionalna stranka"
       },
-      "percent": 99
+      "percent": 96
     },
     {
       "org": {
-        "acronym": "HSS",
+        "acronym": "IMNS",
         "is_coalition": false,
-        "id": 337,
-        "name": "Klub zastupnika Hrvatske selja\u010dke stranke"
+        "id": 10,
+        "classification": "pg",
+        "name": "Italijanska in madžarska narodna skupnost"
       },
-      "percent": 99
+      "percent": 92
     },
     {
       "org": {
-        "acronym": "IDS + PGS + RI",
-        "is_coalition": false,
-        "id": 310,
-        "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku"
+        "acronym": "SD",
+        "is_coalition": true,
+        "id": 4,
+        "classification": "pg",
+        "name": "Socialni demokrati"
       },
-      "percent": 99
+      "percent": 86
     },
     {
       "org": {
-        "acronym": "NHR",
-        "is_coalition": false,
-        "id": 330,
-        "name": "Klub zastupnika Neovisni za Hrvatsku"
+        "acronym": "SAB",
+        "is_coalition": true,
+        "id": 8,
+        "classification": "pg",
+        "name": "Stranka Alenke Bratušek"
       },
-      "percent": 99
+      "percent": 79
     },
     {
       "org": {
-        "acronym": "HDS + HSLS + HDSSB",
+        "acronym": "SDS",
         "is_coalition": false,
-        "id": 333,
-        "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
+        "id": 2,
+        "classification": "pg",
+        "name": "Slovenska demokratska stranka"
       },
-      "percent": 99
+      "percent": 76
     },
     {
       "org": {
-        "acronym": "SDSS",
+        "acronym": "Levica",
         "is_coalition": false,
-        "id": 322,
-        "name": "Klub zastupnika Samostalne demokratske srpske stranke"
+        "id": 6,
+        "classification": "pg",
+        "name": "Levica"
       },
-      "percent": 99
+      "percent": 74
     },
     {
       "org": {
-        "acronym": "HNS",
+        "acronym": "NSi",
         "is_coalition": false,
-        "id": 340,
-        "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata"
+        "id": 7,
+        "classification": "pg",
+        "name": "Nova Slovenija - Krščanski demokrati"
       },
-      "percent": 99
-    },
-    {
-      "org": {
-        "acronym": "GLAS + HSU",
-        "is_coalition": false,
-        "id": 324,
-        "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika"
-      },
-      "percent": 99
-    },
-    {
-      "org": {
-        "acronym": "HDZ",
-        "is_coalition": false,
-        "id": 343,
-        "name": "Klub zastupnika Hrvatske demokratske zajednice"
-      },
-      "percent": 99
+      "percent": 60
     }
   ],
-  "created_at": "02.09.2018",
+  "created_at": "07.04.2019",
   "tfidf": {
     "session": {
-      "name": "8",
-      "date_ts": "2018-05-10T10:47:00",
-      "updated_at": "27. 8. 2018",
+      "name": "5. redna seja",
+      "date_ts": "2019-03-04T01:00:00",
+      "updated_at": "4. 4. 2019",
       "org": {
-        "acronym": "sabor",
+        "acronym": "DZ",
+        "name": "Državni zbor",
         "is_coalition": false,
-        "name": "Sabor",
-        "id": 199
+        "classification": "dz",
+        "id": 1
       },
-      "date": "10. 5. 2018",
+      "date": "4. 3. 2019",
       "orgs": [
         {
-          "acronym": "sabor",
+          "acronym": "DZ",
+          "name": "Državni zbor",
           "is_coalition": false,
-          "name": "Sabor",
-          "id": 199
+          "classification": "dz",
+          "id": 1
         }
       ],
-      "id": 141,
+      "id": 537,
       "in_review": false
     },
-    "created_at": "04.07.2018",
-    "created_for": "04.07.2018",
+    "created_at": "28.03.2019",
+    "created_for": "28.03.2019",
     "results": [
       {
-        "term": "MiFID",
-        "scores": { "tf": 22, "df": 3, "tf-idf": 7.333333333333333 }
-      },
-      { "term": "Brodosplit", "scores": { "tf": 14, "df": 5, "tf-idf": 2.8 } },
-      { "term": "HPK", "scores": { "tf": 36, "df": 16, "tf-idf": 2.25 } },
-      {
-        "term": "Kraljevi\u0107",
-        "scores": { "tf": 18, "df": 8, "tf-idf": 2.25 }
-      },
-      { "term": "HAVC", "scores": { "tf": 40, "df": 20, "tf-idf": 2 } },
-      { "term": "taxi", "scores": { "tf": 78, "df": 39, "tf-idf": 2 } },
-      { "term": "probacija", "scores": { "tf": 18, "df": 10, "tf-idf": 1.8 } },
-      {
-        "term": "kiberneti\u010dke",
-        "scores": { "tf": 17, "df": 10, "tf-idf": 1.7 }
+        "term": "podust",
+        "scores": {
+          "tf": 13,
+          "df": 10,
+          "tf-idf": 1.3
+        }
       },
       {
-        "term": "rod",
-        "scores": { "tf": 65, "df": 44, "tf-idf": 1.4772727272727273 }
+        "term": "privezovanje",
+        "scores": {
+          "tf": 12,
+          "df": 12,
+          "tf-idf": 1
+        }
       },
       {
-        "term": "interpretativna",
-        "scores": { "tf": 27, "df": 19, "tf-idf": 1.4210526315789473 }
+        "term": "Lipica",
+        "scores": {
+          "tf": 39,
+          "df": 63,
+          "tf-idf": 0.6190476190476191
+        }
       },
       {
-        "term": "Jelini\u0107",
-        "scores": { "tf": 15, "df": 11, "tf-idf": 1.3636363636363635 }
+        "term": "mediator",
+        "scores": {
+          "tf": 20,
+          "df": 36,
+          "tf-idf": 0.5555555555555556
+        }
       },
       {
-        "term": "produktovoda",
-        "scores": { "tf": 15, "df": 11, "tf-idf": 1.3636363636363635 }
+        "term": "nepravden",
+        "scores": {
+          "tf": 39,
+          "df": 105,
+          "tf-idf": 0.37142857142857144
+        }
       },
       {
-        "term": "uzdr\u017eavanje",
-        "scores": { "tf": 25, "df": 19, "tf-idf": 1.3157894736842106 }
+        "term": "kandidaten",
+        "scores": {
+          "tf": 10,
+          "df": 30,
+          "tf-idf": 0.3333333333333333
+        }
       },
-      { "term": "vize", "scores": { "tf": 13, "df": 10, "tf-idf": 1.3 } }
+      {
+        "term": "Europol",
+        "scores": {
+          "tf": 18,
+          "df": 55,
+          "tf-idf": 0.32727272727272727
+        }
+      },
+      {
+        "term": "nepraven",
+        "scores": {
+          "tf": 11,
+          "df": 34,
+          "tf-idf": 0.3235294117647059
+        }
+      },
+      {
+        "term": "mediacija",
+        "scores": {
+          "tf": 24,
+          "df": 76,
+          "tf-idf": 0.3157894736842105
+        }
+      },
+      {
+        "term": "kobilarna",
+        "scores": {
+          "tf": 16,
+          "df": 51,
+          "tf-idf": 0.3137254901960784
+        }
+      },
+      {
+        "term": "sendvič",
+        "scores": {
+          "tf": 13,
+          "df": 43,
+          "tf-idf": 0.3023255813953488
+        }
+      },
+      {
+        "term": "pes",
+        "scores": {
+          "tf": 17,
+          "df": 64,
+          "tf-idf": 0.265625
+        }
+      },
+      {
+        "term": "podprogram",
+        "scores": {
+          "tf": 38,
+          "df": 152,
+          "tf-idf": 0.25
+        }
+      },
+      {
+        "term": "čin",
+        "scores": {
+          "tf": 14,
+          "df": 57,
+          "tf-idf": 0.24561403508771928
+        }
+      },
+      {
+        "term": "psa",
+        "scores": {
+          "tf": 10,
+          "df": 49,
+          "tf-idf": 0.20408163265306123
+        }
+      },
+      {
+        "term": "častnikov",
+        "scores": {
+          "tf": 8,
+          "df": 46,
+          "tf-idf": 0.17391304347826086
+        }
+      },
+      {
+        "term": "družinski",
+        "scores": {
+          "tf": 112,
+          "df": 769,
+          "tf-idf": 0.14564369310793238
+        }
+      },
+      {
+        "term": "kmetija",
+        "scores": {
+          "tf": 59,
+          "df": 412,
+          "tf-idf": 0.14320388349514562
+        }
+      },
+      {
+        "term": "kmetovanje",
+        "scores": {
+          "tf": 19,
+          "df": 134,
+          "tf-idf": 0.1417910447761194
+        }
+      },
+      {
+        "term": "zakonik",
+        "scores": {
+          "tf": 44,
+          "df": 331,
+          "tf-idf": 0.13293051359516617
+        }
+      },
+      {
+        "term": "arhitekt",
+        "scores": {
+          "tf": 8,
+          "df": 61,
+          "tf-idf": 0.13114754098360656
+        }
+      },
+      {
+        "term": "navzoč",
+        "scores": {
+          "tf": 58,
+          "df": 474,
+          "tf-idf": 0.12236286919831224
+        }
+      },
+      {
+        "term": "ekološki",
+        "scores": {
+          "tf": 31,
+          "df": 259,
+          "tf-idf": 0.11969111969111969
+        }
+      },
+      {
+        "term": "rezervacija",
+        "scores": {
+          "tf": 17,
+          "df": 149,
+          "tf-idf": 0.11409395973154363
+        }
+      },
+      {
+        "term": "usten",
+        "scores": {
+          "tf": 34,
+          "df": 300,
+          "tf-idf": 0.11333333333333333
+        }
+      },
+      {
+        "term": "venezuela",
+        "scores": {
+          "tf": 17,
+          "df": 167,
+          "tf-idf": 0.10179640718562874
+        }
+      },
+      {
+        "term": "glasovati",
+        "scores": {
+          "tf": 196,
+          "df": 1934,
+          "tf-idf": 0.10134436401240951
+        }
+      },
+      {
+        "term": "odpadek",
+        "scores": {
+          "tf": 34,
+          "df": 338,
+          "tf-idf": 0.10059171597633136
+        }
+      },
+      {
+        "term": "pravilnik",
+        "scores": {
+          "tf": 42,
+          "df": 470,
+          "tf-idf": 0.08936170212765958
+        }
+      },
+      {
+        "term": "glasovnica",
+        "scores": {
+          "tf": 11,
+          "df": 124,
+          "tf-idf": 0.08870967741935484
+        }
+      },
+      {
+        "term": "stanovanje",
+        "scores": {
+          "tf": 43,
+          "df": 503,
+          "tf-idf": 0.08548707753479125
+        }
+      },
+      {
+        "term": "obvoznica",
+        "scores": {
+          "tf": 13,
+          "df": 157,
+          "tf-idf": 0.08280254777070063
+        }
+      },
+      {
+        "term": "izvedenec",
+        "scores": {
+          "tf": 12,
+          "df": 153,
+          "tf-idf": 0.0784313725490196
+        }
+      },
+      {
+        "term": "otrok",
+        "scores": {
+          "tf": 99,
+          "df": 1353,
+          "tf-idf": 0.07317073170731707
+        }
+      },
+      {
+        "term": "otrokov",
+        "scores": {
+          "tf": 11,
+          "df": 151,
+          "tf-idf": 0.0728476821192053
+        }
+      },
+      {
+        "term": "amandmaj",
+        "scores": {
+          "tf": 68,
+          "df": 987,
+          "tf-idf": 0.06889564336372847
+        }
+      },
+      {
+        "term": "žival",
+        "scores": {
+          "tf": 15,
+          "df": 225,
+          "tf-idf": 0.06666666666666667
+        }
+      },
+      {
+        "term": "nega",
+        "scores": {
+          "tf": 10,
+          "df": 153,
+          "tf-idf": 0.06535947712418301
+        }
+      },
+      {
+        "term": "leben",
+        "scores": {
+          "tf": 15,
+          "df": 233,
+          "tf-idf": 0.06437768240343347
+        }
+      },
+      {
+        "term": "najemnina",
+        "scores": {
+          "tf": 12,
+          "df": 188,
+          "tf-idf": 0.06382978723404255
+        }
+      },
+      {
+        "term": "bivalen",
+        "scores": {
+          "tf": 8,
+          "df": 126,
+          "tf-idf": 0.06349206349206349
+        }
+      },
+      {
+        "term": "starš",
+        "scores": {
+          "tf": 43,
+          "df": 684,
+          "tf-idf": 0.06286549707602339
+        }
+      },
+      {
+        "term": "tihotapljenje",
+        "scores": {
+          "tf": 8,
+          "df": 128,
+          "tf-idf": 0.0625
+        }
+      },
+      {
+        "term": "duševen",
+        "scores": {
+          "tf": 11,
+          "df": 177,
+          "tf-idf": 0.062146892655367235
+        }
+      },
+      {
+        "term": "dopusten",
+        "scores": {
+          "tf": 20,
+          "df": 325,
+          "tf-idf": 0.06153846153846154
+        }
+      },
+      {
+        "term": "ribištvo",
+        "scores": {
+          "tf": 14,
+          "df": 228,
+          "tf-idf": 0.06140350877192982
+        }
+      },
+      {
+        "term": "soden",
+        "scores": {
+          "tf": 56,
+          "df": 919,
+          "tf-idf": 0.060935799782372145
+        }
+      },
+      {
+        "term": "postopek",
+        "scores": {
+          "tf": 183,
+          "df": 3009,
+          "tf-idf": 0.06081754735792622
+        }
+      },
+      {
+        "term": "zadolževanje",
+        "scores": {
+          "tf": 14,
+          "df": 232,
+          "tf-idf": 0.0603448275862069
+        }
+      },
+      {
+        "term": "zakon",
+        "scores": {
+          "tf": 313,
+          "df": 5193,
+          "tf-idf": 0.0602734450221452
+        }
+      }
     ]
   },
   "session": {
-    "name": "8",
+    "name": "5. redna seja",
     "orgs": [
-      { "acronym": "sabor", "is_coalition": false, "id": 199, "name": "Sabor" }
+      {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 1,
+        "classification": "dz",
+        "name": "Državni zbor"
+      }
     ],
-    "date": "10. 5. 2018",
+    "date": "4. 3. 2019",
     "org": {
-      "acronym": "sabor",
+      "acronym": "DZ",
       "is_coalition": false,
-      "id": 199,
-      "name": "Sabor"
+      "id": 1,
+      "classification": "dz",
+      "name": "Državni zbor"
     },
-    "date_ts": "2018-05-10T10:47:00",
-    "updated_at": "27. 8. 2018",
+    "date_ts": "2019-03-04T01:00:00",
+    "updated_at": "4. 4. 2019",
     "in_review": false,
-    "id": 141
+    "id": 537
   },
-  "motions": []
+  "motions": [
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 79,
+        "classification": "1",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Širitev dnevnega reda (15.A točka)",
+        "motion_id": 509,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 11
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 79,
+        "classification": "1",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Dnevni red v celoti",
+        "motion_id": 508,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 11
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 43,
+        "classification": "8",
+        "tags": [],
+        "text": "Sklep o imenovanju člana izbirne komisije za izbiro primernih kandidatov za imenovanje namestnice oziroma namestnika predsednika Komisije za preprečevanje korupcije - Glasovanje",
+        "motion_id": 507,
+        "against": 4,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "435-VIII",
+        "absent": 43
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 59,
+        "classification": "14",
+        "tags": [],
+        "text": "Sklep o kandidatu, ki ima pravico opravljati funkcijo poslanca Državnega zbora - Glasovanje - potrditev mandata poslancu, ki nadomesti poslanca, kateremu je prenehal mandat",
+        "motion_id": 506,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "444-VIII",
+        "absent": 30
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 68,
+        "classification": "8",
+        "tags": [
+          "Mandatno-volilna komisija"
+        ],
+        "text": "Kandidatna lista za izvolitev člana Sodnega sveta - Glasovanje o sestavi komisije za tajno glasovanje",
+        "motion_id": 505,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "407-VIII",
+        "absent": 22
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 45,
+        "classification": "13",
+        "tags": [],
+        "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za Varuha človekovih pravic Republike Slovenije za leto 2019 - Glasovanje",
+        "motion_id": 562,
+        "against": 0,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "383-VIII",
+        "absent": 45
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 47,
+        "classification": "13",
+        "tags": [],
+        "text": "Odlok o načrtu ravnanja s stvarnim premoženjem države za organe državne uprave, pravosodne organe, javne zavode, javne gospodarske zavode, javne agencije in javne sklade za leto 2019 - Glasovanje",
+        "motion_id": 561,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "388-VIII",
+        "absent": 43
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 54,
+        "classification": "5",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Evidenčni sklep o sprejetju Splošnega dela Rebalansa proračuna RS za leto 2019 6.3.2019",
+        "motion_id": 560,
+        "against": 26,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 34,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 1537 Urad Vlade RS za Slovence v zamejstvu in po svetu (180401) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 559,
+        "against": 46,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 1911 Ministrstvo za obrambo (070103) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 558,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 1912 Uprava RS za zaščito in reševanje (070301) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 557,
+        "against": 44,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 15
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2130  Ministrstvo za gospodarski razvoj in tehnologijo (050403) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 556,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 29,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2130 Ministrstvo za gospodarski razvoj in tehnologijo (060301) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 555,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 11
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130201) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 554,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SNS - Poslanska skupina Slovenske nacionalne stranke]",
+        "motion_id": 553,
+        "against": 49,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 11
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 32,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 552,
+        "against": 41,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 17
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 551,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 550,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 549,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 32,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 548,
+        "against": 49,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 547,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 546,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 545,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 544,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 543,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 542,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 541,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 540,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 539,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 29,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130303) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 538,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 11
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 29,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2550 Ministrstvo za okolje in prostor (150201) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 537,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2555 Direkcija Republike Slovenije za vode (150201) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 536,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2611 Ministrstvo za delo, družino, socialne zadeve in enake možnosti (200101) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 535,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 31,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 2611 Ministrstvo za delo, družino, socialne zadeve in enake možnosti (200401) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 534,
+        "against": 49,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3330 Ministrstvo za izobraževanje, znanost in šport (190201) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 533,
+        "against": 41,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 19
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 29,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3330 Ministrstvo za izobraževanje, znanost in šport (190301) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 532,
+        "against": 41,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 20
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 28,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3330 Ministrstvo za izobraževanje, znanost in šport (190301) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 531,
+        "against": 49,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 13
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 29,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3330 Ministrstvo za izobraževanje, znanost in šport (190301) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 530,
+        "against": 44,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 17
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 28,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3330 Ministrstvo za izobraževanje, znanost in šport (190902) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 529,
+        "against": 45,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 17
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3340 Ministrstvo za kulturo (180102) 28.2.2019 [SNS - Poslanska skupina Slovenske nacionalne stranke]",
+        "motion_id": 528,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 32,
+        "classification": "14",
+        "tags": [],
+        "text": "Brezpredmetno glasovanje",
+        "motion_id": 527,
+        "against": 49,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": null,
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3340 Ministrstvo za kulturo (180201) 28.2.2019 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+        "motion_id": 526,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 34,
+        "classification": "3",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Amandma: 3340 Ministrstvo za kulturo (180201) 28.2.2019 [SDS - Poslanska skupina Slovenske demokratske stranke]",
+        "motion_id": 525,
+        "against": 46,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": true,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 54,
+        "classification": "5",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Evidenčni sklep o sprejetju posebnega dela Rebalansa proračuna RS za leto 2019  6.3.2019",
+        "motion_id": 524,
+        "against": 26,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 55,
+        "classification": "5",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Evidenčni sklep o sprejetju načrta razvojnih programov Rebalansa proračuna RS za leto 2019 6.3.2019",
+        "motion_id": 523,
+        "against": 26,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 55,
+        "classification": "14",
+        "tags": [
+          "Odbor za finance"
+        ],
+        "text": "Rebalans proračuna Republike Slovenije za leto 2019 - Glasovanje o predlogu Rebalansa proračuna v celoti",
+        "motion_id": 522,
+        "against": 26,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "389-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 55,
+        "classification": "2",
+        "tags": [],
+        "text": "Zakon o spremembah in dopolnitvah Zakona o izvrševanju proračunov Republike Slovenije za leti 2018 in 2019 - Glasovanje o zakonu v celoti",
+        "motion_id": 521,
+        "against": 26,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "387-VIII",
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 50,
+        "classification": "2",
+        "tags": [
+          "Odbor za pravosodje"
+        ],
+        "text": "Zakon o nepravdnem postopku - Glasovanje o zakonu v celoti",
+        "motion_id": 520,
+        "against": 6,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "323-VIII",
+        "absent": 34
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 71,
+        "classification": "2",
+        "tags": [],
+        "text": "Zakon o ratifikaciji Protokola o spremembi odstavka a) 50. člena Konvencije o mednarodnem civilnem letalstvu in Protokola o spremembi 56. člena Konvencije o mednarodnem civilnem letalstvu - Glasovanje o zakonu v celoti",
+        "motion_id": 519,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "386-VIII",
+        "absent": 19
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 72,
+        "classification": "2",
+        "tags": [
+          "Odbor za zunanjo politiko"
+        ],
+        "text": "Zakon o ratifikaciji Okvirnega sporazuma med Evropsko unijo in njenimi državami članicami na eni strani ter Avstralijo na drugi strani - Glasovanje o zakonu v celoti",
+        "motion_id": 518,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "402-VIII",
+        "absent": 18
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 70,
+        "classification": "2",
+        "tags": [
+          "Odbor za zunanjo politiko"
+        ],
+        "text": "Zakon o ratifikaciji Partnerskega sporazuma o odnosih in sodelovanju med Evropsko unijo in njenimi državami članicami na eni strani ter Novo Zelandijo na drugi strani - Glasovanje o zakonu v celoti",
+        "motion_id": 517,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "403-VIII",
+        "absent": 20
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 70,
+        "classification": "2",
+        "tags": [
+          "Odbor za zunanjo politiko"
+        ],
+        "text": "Zakon o ratifikaciji Sporazuma o ustanovitvi Mednarodne fundacije EU-LAK - Glasovanje o zakonu v celoti",
+        "motion_id": 516,
+        "against": 0,
+        "has_votes": true,
+        "result": true,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": "404-VIII",
+        "absent": 20
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "6",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade  Marjana Šarca na poslansko vprašanje Suzane Lep Šimenko v zvezi z dvigom minimalne plače.)",
+        "motion_id": 515,
+        "against": 51,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "6",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade Marjana Šarca na poslansko vprašanje Janija Ivanuše v zvezi s pripravljenostjo Slovenije na novo gospodarsko in finančno krizo.)",
+        "motion_id": 514,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 39,
+        "classification": "6",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Predlog sklepa (razprava o odgovoru predsednika Vlade Marjana Šarca na poslansko vprašanje Luke Mesca v zvezi z napovedano davčno reformo.)",
+        "motion_id": 513,
+        "against": 42,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 9
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "6",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Predlog sklepa (razprava o odgovoru ministra za notranje zadeve Boštjana Poklukarja na poslansko vprašanje mag. Branka Grimsa v zvezi z omejevanjem svobode izražanja.)",
+        "motion_id": 512,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "6",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Predlog sklepa (razprava o odgovoru ministra za zunanje zadeve dr. Mira Cerarja na poslansko vprašanje Janija Ivanuše v zvezi s Slovenci v Venezueli.)",
+        "motion_id": 511,
+        "against": 50,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 10
+      }
+    },
+    {
+      "session": {
+        "name": "5. redna seja",
+        "date_ts": "2019-03-04T01:00:00",
+        "updated_at": "4. 4. 2019",
+        "org": {
+          "acronym": "DZ",
+          "name": "Državni zbor",
+          "is_coalition": false,
+          "classification": "dz",
+          "id": 1
+        },
+        "date": "4. 3. 2019",
+        "orgs": [
+          {
+            "acronym": "DZ",
+            "name": "Državni zbor",
+            "is_coalition": false,
+            "classification": "dz",
+            "id": 1
+          }
+        ],
+        "id": 537,
+        "in_review": false
+      },
+      "results": {
+        "agenda_items": [],
+        "abstain": 0,
+        "for": 30,
+        "classification": "6",
+        "tags": [
+          "Proceduralna glasovanja"
+        ],
+        "text": "Predlog sklepa (razprava o odgovoru ministra za finance dr. Andreja Bertonclja ter ministrice za delo, družino, socialne zadeve in enake možnosti mag. Ksenije Klampfer na poslansko vprašanje Borisa Doblekarja v zvezi s plačilom prispevkov za socialno varnost.)",
+        "motion_id": 510,
+        "against": 41,
+        "has_votes": true,
+        "result": false,
+        "is_outlier": false,
+        "has_outliers": false,
+        "epa": null,
+        "absent": 19
+      }
+    }
+  ]
 }
