@@ -83,7 +83,7 @@ export default {
     },
     getLegislationLink(legislation) {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
-      return `${slugs.urls.base}/${sm.landing.legislation}/${legislation.epa || legislation.id}`;
+      return `${slugs.urls.base}/${sm.landing.legislation}/${legislation.epa || legislation.act_id || legislation.id}`;
     },
     getLegislationListLink() {
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;
