@@ -3,6 +3,7 @@
     :card-data="$options.cardData"
     :party="$options.cardData.data.organization"
     :results="$options.cardData.data.result"
+    :precision="2"
     type="party"
     context="votings"
   >
