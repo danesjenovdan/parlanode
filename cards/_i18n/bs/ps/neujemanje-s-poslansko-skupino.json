@@ -1,11 +1,12 @@
 {
   "card": {
-    "title": "Neslaganje s klubom"
+    "title": "Neslaganje s klubom",
+    "empty-state-text": "Ta analiza ni na voljo."
   },
   "info": {
     "lead": "Popis svih zastupnika iz kluba koji su svrstani prema vrijednosti slaganja s većinskim glasom kluba. Što je veća vrijednost, manje je slaganje.",
     "text": [
-      "Za svako glasanje izračuna se 'većinski glas kluba' kojem pojedini zastupnik pripada. Zatim se za svakog člana izračunava postotak glasanja kada je zastupnik glasao drugačije od većinskog glasa kluba kojem pripada. Rezultati su razvrstani od najvećeg odstupanja prema najmanjem.",
+      "Za vsako glasovanje izračunamo \"glas poslanske skupine\", ki ji pripada posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja proti najmanjšemu.",
       "Izuzimaju se zastupnici sa vrijednosti \"NISU\", što znači da ako je većinski glas kluba \"NISU\" (većina zastupnika kluba nije bila na glasanju) to glasanje je isključeno iz analize. Ako klub ima više 'većinskih glasova kluba' (dvije opcije imaju jednak najveći broj glasova unutar kluba), uzimaju se obje opcije i uspoređuju s individualnim zastupnicima."
     ]
   }
