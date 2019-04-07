@@ -645,6 +645,10 @@ export default {
 
       .chart-label .label-container {
         line-height: 1;
+
+        @include respond-to(mobile) {
+          font-size: 12px;
+        }
       }
     }
   }
