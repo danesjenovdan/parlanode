@@ -158,8 +158,14 @@
     color: $link;
 }
 
-#about .legal-text-container a {
-    @include link-hover;
+#about .legal-text-container {
+    a {
+        @include link-hover;
+    }
+
+    h3 {
+        text-align: left;
+    }
 }
 
 .wise-iframe-wrapper {
