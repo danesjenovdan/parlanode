@@ -355,12 +355,16 @@ export default {
       }
     }
 
-    .text-filter {
-      @include respond-to(desktop) {
-        width: 26%;
-      }
+    .filter {
+      flex: 1.5;
+    }
 
-      width: 100%;
+    .text-filter {
+      flex-basis: 100%;
+
+      @include respond-to(desktop) {
+        flex-basis: 0%;
+      }
 
       .text-filter-input {
         background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
@@ -379,7 +383,26 @@ export default {
 
     .checkbox-filters {
       display: flex;
+      flex-wrap: wrap;
       flex: 1.5;
+
+      .filter.align-checkbox {
+        margin-left: 10px;
+        flex-basis: 160px;
+        margin-top: 12px;
+      }
+
+      @include respond-to(desktop) {
+        margin-top: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 365px;
+
+        .filter.align-checkbox {
+          margin-left: 20px;
+          margin-top: 0px;
+        }
+      }
 
       label[for="only-abstracts"]::after,
       label[for="only-with-votes"]::after {
@@ -401,10 +424,6 @@ export default {
         background-image: url('#{icon-votes($font-default)}');
         background-size: 19px;
       }
-    }
-
-    .filter {
-      flex: 1.5;
     }
   }
 }
