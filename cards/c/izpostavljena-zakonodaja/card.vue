@@ -158,7 +158,7 @@ export default {
       this.$commentapi.getMostDiscussed(),
     ])
       .then(([resAll, resMost]) => {
-        const sortedArticles = sortBy(resMost.data.articles || [], ['voter_count']);
+        const sortedArticles = sortBy(resMost.data.articles || [], ['voter_count']).reverse();
         const epas = sortedArticles.map(a => a.title);
         this.mostDiscussed = epas
           .map(epa => resAll.data.results.find(e => e.epa === epa))
