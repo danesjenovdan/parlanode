@@ -112,6 +112,7 @@
 
 <script>
 import axios from 'axios';
+import { sortBy } from 'lodash';
 import common from 'mixins/common';
 import links from 'mixins/links';
 import commentapi from 'mixins/commentapi';
@@ -157,7 +158,8 @@ export default {
       this.$commentapi.getMostDiscussed(),
     ])
       .then(([resAll, resMost]) => {
-        const epas = resMost.data.articles.map(a => a.title);
+        const sortedArticles = sortBy(resMost.data.articles || [], ['voter_count']);
+        const epas = sortedArticles.map(a => a.title);
         this.mostDiscussed = epas
           .map(epa => resAll.data.results.find(e => e.epa === epa))
           .filter(Boolean)
