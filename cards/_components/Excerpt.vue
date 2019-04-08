@@ -118,6 +118,10 @@ export default {
   height: 442px;
   position: relative;
 
+  @include respond-to(mobile) {
+    padding: 20px;
+  }
+
   &.show-documents {
     padding-bottom: 60px;
   }
@@ -197,18 +201,18 @@ hr {
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 40px;
-
     max-height: 360px;
-
     display: flex;
     margin: auto;
     width: 100%;
 
+    @include respond-to(mobile) {
+      padding: 0 20px 0 10px;
+      height: 320px;
+    }
+
     .text-container {
       width:100%;
-      @include respond-to(mobile) {
-        padding-right: 5px;
-      }
     }
 
     &.show-parent,
@@ -218,11 +222,6 @@ hr {
         padding: 0;
         min-height: 320px;
       }
-    }
-
-    @include respond-to(mobile) {
-      padding: 0;
-      height: 320px;
     }
 
     p {
