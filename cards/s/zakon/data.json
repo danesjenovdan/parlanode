@@ -1,6 +1,6 @@
 {
-  "status": "enacted",
-  "created_for": "08.04.2019",
+  "status": "submitted",
+  "created_for": "29.11.2018",
   "classification": "zakon",
   "tags": [
     "Odbor za finance",
@@ -26,22 +26,71 @@
     "Odbor za kmetijstvo, gozdarstvo in prehrano",
     "Odbor za zdravstvo"
   ],
-  "text": "Zakon o dopolnitvah Zakona o letalstvu",
-  "abstract": "<p style=\"margin: 0px;\"><span style=\"margin: 0px;\"><font color=\"#000000\" face=\"Arial\">S spremembami zakona se med drugim:</font></span></p><ul><li><div style=\"margin: 0px;\"><span style=\"margin: 0px;\"><font color=\"#000000\" face=\"Arial\">za letalske prevoznike dolo\u010da obveznost posredovanja podatkov iz\nsistema rezervacij letalskih vozovnic (PNR) o potnikih policiji,&nbsp;</font></span></div></li><li><div style=\"margin: 0px;\"><span style=\"margin: 0px;\"><font color=\"#000000\" face=\"Arial\">dolo\u010dajo podatki, ki jih morajo posredovati: ime, datum rezervacije,\nnaslove in druge kontaktne podatke iz rezervacije, potovalni status potnika,\npodatke o pla\u010dilu vozovnice, podatke o sede\u017eu in prtljagi, informacije o\npotnikih, ki pogosto letijo, popolni na\u010drt potovanja, podatke o potovalni\nagenciji in vse zbrane podatke potnika (ime, rojstvo, sol, dr\u017eavljanstvo,\npodatki o osebnem dokumentu, mejne prehode vstopov in izstopov, \u2026),</font></span></div></li><li><div style=\"margin: 0px;\"><span style=\"margin: 0px;\"><font color=\"#000000\" face=\"Arial\">dolo\u010da obveznost, da se podatki po\u0161iljajo dvakrat (24 do 48 ur\npred letom in nemudoma po zaprtju leta),</font></span></div></li><li><div style=\"margin: 0px;\"><span style=\"margin: 0px;\"><font color=\"#000000\" face=\"Arial\">na novo dolo\u010dajo globe za prekr\u0161ke.</font></span></div></li></ul>",
+  "text": "Zakon o spremembah Zakona o minimalni pla\u010di",
+  "abstract": "<span style=\"margin: 0px; color: black;\"><font face=\"Arial\"><p style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">S spremembami zakona se dolo\u010da:</p><ul><li><div style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da zna\u0161a minimalna pla\u010da v letu 2019 886,63 evrov,</div></li><li><div style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da zna\u0161a minimalna pla\u010da v letu 2020 940,58 evrov,</div></li><li><p style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da se od leta 2021 dalje minimalna pla\u010da dolo\u010da tako, da je\nvsaj 20 % vi\u0161ja od zneska minimalnih \u017eivljenjskih stro\u0161kov,</p></li><li><div style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da se od 1. januarja 2020 v minimalno pla\u010do ne v\u0161tevajo\ndodatki, del pla\u010de za delovno uspe\u0161nost in pla\u010dilo za poslovno uspe\u0161nost.</div></li></ul><p style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">\n\n<br></p></font></span>",
   "session": {
-    "name": "",
-    "date_ts": "",
-    "date": "",
-    "orgs": "",
-    "id": "",
-    "in_review": ""
+    "name": "15. izredna seja",
+    "orgs": [
+      {
+        "acronym": "DZ",
+        "is_coalition": false,
+        "id": 1,
+        "classification": "dz",
+        "name": "Dr\u017eavni zbor"
+      }
+    ],
+    "date": "29. 11. 2018",
+    "org": {
+      "acronym": "DZ",
+      "is_coalition": false,
+      "id": 1,
+      "classification": "dz",
+      "name": "Dr\u017eavni zbor"
+    },
+    "date_ts": "2018-11-29T01:00:00",
+    "updated_at": "8. 4. 2019",
+    "in_review": true,
+    "id": 280
   },
-  "result": "in_procedure",
-  "icon": "transportation.svg",
-  "votes": [],
+  "result": "enacted",
+  "icon": "worker.svg",
+  "votes": [
+    {
+      "abstain": 15,
+      "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+      "text": "Zakon o spremembah Zakona o minimalni pla\u010di - Eviden\u010dni sklep o primernosti predloga zakona 29.11.2018",
+      "start_time": "2018-11-29T20:53:15",
+      "is_outlier": false,
+      "agenda_items": [],
+      "session_id": 280,
+      "absent": 24,
+      "documents": [],
+      "for": 51,
+      "against": 0,
+      "motion_id": 833,
+      "has_outliers": true,
+      "result": true
+    },
+    {
+      "abstain": 18,
+      "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+      "text": "Zakon o spremembah Zakona o minimalni pla\u010di - Glasovanje o zakonu v celoti",
+      "start_time": "2018-12-13T17:26:12",
+      "is_outlier": false,
+      "agenda_items": [],
+      "session_id": 277,
+      "absent": 16,
+      "documents": [],
+      "for": 56,
+      "against": 0,
+      "motion_id": 826,
+      "has_outliers": false,
+      "result": true
+    }
+  ],
   "extra_abstract": null,
-  "has_discussion": false,
-  "created_at": "15.03.2019",
+  "has_discussion": true,
+  "created_at": "08.04.2019",
   "abstractVisible": true,
-  "epa": "466-VIII"
+  "epa": "228-VIII"
 }

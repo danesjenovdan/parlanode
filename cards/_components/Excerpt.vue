@@ -218,6 +218,7 @@ hr {
     &.show-parent,
     &.show-documents {
       max-height: 320px;
+
       @include respond-to(mobile) {
         padding: 0;
         min-height: 320px;
@@ -231,12 +232,21 @@ hr {
       margin-bottom: 0;
       padding-top: 1em;
       padding-bottom: 1em;
+
+      &:empty {
+        display: none;
+      }
+
+      > br:only-child {
+        display: none;
+      }
     }
 
     ul {
       padding-left: 0;
       margin-bottom: 1em;
       font-size: 14px;
+
       li {
         list-style-type: none;
         padding-left: 20px;
