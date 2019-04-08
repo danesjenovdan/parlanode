@@ -13,6 +13,7 @@
   "vote-types": "Vote types",
   "select-placeholder": "Choose",
   "selected-placeholder": "Chosen: {num}",
+  "data": "Podatki",
   "name": "Name",
   "epa": "Government ID",
   "change": "Change",
@@ -22,10 +23,12 @@
   "education-level": "Educational level attained",
   "education": "Education",
   "number-of-votes": "Number of votes",
+  "number-of-points": "Število točk",
   "number-of-terms": "Number of terms of office",
   "previous-occupation": "Previous status",
   "district": "District",
   "birth-date": "Date of birth",
+  "gender": "Spol",
   "social-media": "Social media",
   "analysis": "Analysis",
   "vote-passed": "Passed",
@@ -66,6 +69,7 @@
   "sort-by": "Order by",
   "sort-by--inequality": "Discord",
   "sort-by--date": "Date",
+  "filtered-to-none": "Brez zadetkov",
   "mps": "MPs",
   "party": "Parliamentary group",
   "parties": "Parliamentary groups",
@@ -123,12 +127,12 @@
     "excessive-vocabulary": "Excessive speech"
   },
   "question": {
-    "asked--m": "Asked question {title} that requires answer from {recipient}.",
-    "asked--f": "Asked question {title} that requires answer from {recipient}.",
-    "asked--plural": "Asked a question {title} that needs to be answered by {recipient}.",
-    "asked--with-name--m": "{name} asked question {title} that requires answer from {recipient}.",
-    "asked--with-name--f": "{name} asked question {title} that requires answer from {recipient}.",
-    "asked--with-name--plural": "{name} so zastavili vprašanje {title} na katerega mora odgovoriti {recipient}."
+    "asked--m": "Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--f": "Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Voted FOR {title}",

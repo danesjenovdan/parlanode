@@ -17,5 +17,6 @@
     ]
   },
   "select-working-body-placeholder": "Wybrana komisja",
-  "only-abstracts": "Tylko ze streszczeniem"
+  "only-abstracts": "Tylko ze streszczeniem",
+  "only-with-votes": "Samo z glasovanji"
 }

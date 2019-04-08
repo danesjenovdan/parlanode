@@ -17,5 +17,6 @@
     ]
   },
   "select-working-body-placeholder": "Select working body",
-  "only-abstracts": "Only with abstracts"
+  "only-abstracts": "Only with abstracts",
+  "only-with-votes": "Samo z glasovanji"
 }
