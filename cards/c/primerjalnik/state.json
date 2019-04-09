@@ -1,6 +1,20 @@
 {
   "sameParties": [
     1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    5
+  ],
+  "differentParties": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
     5
   ],
   "generator": true
