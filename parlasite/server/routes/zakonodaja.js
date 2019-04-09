@@ -17,7 +17,7 @@ router.get('/*', ar((render, req, res, next) => {
   const lawData = data.laws.find(law => law.epa === epa);
   if (lawData) {
     render('zakonodaja/zakon', {
-      activeMenu: 'legislation',
+      activeMenu: 'legislation_act',
       pageTitle: i18n('titles.legislation'),
       lawData,
     });
