@@ -45,7 +45,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z0-9-]+)
     res.redirect(`/${sm.party.base}/${pgData.slug}/${sm.party.overview}`);
   } else if (pgData) {
     render('poslanska-skupina/pregled', {
-      activeMenu: 'pgs',
+      activeMenu: 'pg',
       pageTitle: `${i18n('general.overview')} - ${pgData.party.name}`,
       activeTab: 'pregled',
       ...pgData,
@@ -61,7 +61,7 @@ router.get([`/:id(\\d+)/${sm.party.votings}`, `/:slug([a-z0-9-]+)/${sm.party.vot
     res.redirect(`/${sm.party.base}/${pgData.slug}/${sm.party.votings}`);
   } else if (pgData) {
     render('poslanska-skupina/glasovanja', {
-      activeMenu: 'pgs',
+      activeMenu: 'pg',
       pageTitle: `${i18n('general.voting')} - ${pgData.party.name}`,
       activeTab: 'glasovanja',
       ...pgData,
@@ -77,7 +77,7 @@ router.get([`/:id(\\d+)/${sm.party.speeches}`, `/:slug([a-z0-9-]+)/${sm.party.sp
     res.redirect(`/${sm.party.base}/${pgData.slug}/${sm.party.speeches}`);
   } else if (pgData) {
     render('poslanska-skupina/govori', {
-      activeMenu: 'pgs',
+      activeMenu: 'pg',
       pageTitle: `${i18n('general.speeches')} - ${pgData.party.name}`,
       activeTab: 'govori',
       ...pgData,

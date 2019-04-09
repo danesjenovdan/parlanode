@@ -24,7 +24,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar((render, r
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/zakonodaja', {
-      activeMenu: 'sessions',
+      activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
       activeTab: 'zakonodaja',
       ...sesData,
@@ -38,7 +38,7 @@ router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) 
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/druga-glasovanja', {
-      activeMenu: 'sessions',
+      activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
       activeTab: 'druga-glasovanja',
       ...sesData,
@@ -52,7 +52,7 @@ router.get([`/:id(\\d+)/${sm.session.transcript}`, `/:id(\\d+)/${sm.session.tran
   const sesData = getData(req.params.id);
   if (sesData) {
     render('seja/transkript', {
-      activeMenu: 'sessions',
+      activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.transcript')}`,
       activeTab: 'transkript',
       ...sesData,
@@ -71,7 +71,7 @@ router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar((render, req, res
       .then((isValid) => {
         if (isValid) {
           render('seja/glasovanje', {
-            activeMenu: 'sessions',
+            activeMenu: 'session',
             pageTitle: `${i18n('titles.session')} - ${i18n('titles.voting')}`,
             activeTab: 'glasovanje',
             ...sesData,
