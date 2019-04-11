@@ -15,7 +15,7 @@ const defaultConfig = {
   urls: {
     cdn: 'https://cdn.parlameter.si/v1/parlassets',
     analize: 'https://analize.parlameter.si/v1',
-    analizeV2: 'https://analize.ba.parlameter.si/v2',
+    analizeV2: 'http://analize.ba.parlameter.si/v2',
     // data: 'https://data.parlameter.si/v1',
     // isci: 'https://isci.parlameter.si',
     // glej: 'https://glej.parlameter.si',
