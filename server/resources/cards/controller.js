@@ -143,7 +143,7 @@ async function buildCard(cacheData, cardJson) {
     if (ongoingCardBuilds.has(buildCommand)) {
       promise = ongoingCardBuilds.get(buildCommand);
     } else {
-      promise = exec(buildCommand, { timeout: 60000 })
+      promise = exec(buildCommand, { timeout: 1000 * 60 * 2 })
         .then(() => saveBuildEntry(cacheData, cardJson));
       ongoingCardBuilds.set(buildCommand, promise);
     }
