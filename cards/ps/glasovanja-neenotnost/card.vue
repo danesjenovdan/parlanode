@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="discord" />

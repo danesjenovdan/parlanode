@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.cardData._id">
+    <dash-wrapper :id="$options.cardData.mountId">
       <div id="dash-votings-list">
         <div v-if="votings != null" class="filters">
           <input

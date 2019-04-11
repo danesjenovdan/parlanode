@@ -197,6 +197,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
 
   const parsedState = JSON.parse(cacheData.state);
   const context = {
+    mountId: `${cardJson._id}__${Date.now().toString(36)}`,
     data: fetchedData,
     cardData: cardJson,
     customUrl: fetchUrl,

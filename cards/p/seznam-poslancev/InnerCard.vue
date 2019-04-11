@@ -147,7 +147,7 @@ export default {
       this.$emit('page-change', newPage);
     },
     scrollToTop() {
-      const { _id: id } = this.$root.$options.cardData.cardData;
+      const id = this.$root.$options.cardData.mountId;
       const el = document.getElementById(id);
       // only scroll up if top is not visible
       if (el && el.getBoundingClientRect().top < 0) {

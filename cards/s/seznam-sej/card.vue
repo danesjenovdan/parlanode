@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator" class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
@@ -10,7 +10,7 @@
             />
           </div>
           <div
-            v-if="currentFilter == this.tabs.find(t => !t.org_ids || !t.org_ids.length).title"
+            v-if="currentFilter == tabs.find(t => !t.org_ids || !t.org_ids.length).title"
             class="col-md-6 filters"
           >
             <p-search-dropdown

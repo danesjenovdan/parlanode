@@ -1,6 +1,6 @@
 <template>
   <transparent-wrapper
-    :id="`${$options.cardData.cardData._id}`"
+    :id="`${$options.cardData.mountId}`"
     :card-url="url"
   >
     <p-search-dropdown

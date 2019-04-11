@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -202,7 +202,7 @@ export default {
       }
     },
     scrollToTop() {
-      const { _id: id } = this.$options.cardData.cardData;
+      const id = this.$root.$options.cardData.mountId;
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView();
