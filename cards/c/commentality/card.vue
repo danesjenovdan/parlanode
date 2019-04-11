@@ -4,6 +4,7 @@
     :card-url="url"
   >
     <iframe
+      v-if="articleId !== ''"
       :src="`https://frontmentality.djnd.si/parlaembed.html#id=${articleId}`"
       width="100%"
       height="800px"

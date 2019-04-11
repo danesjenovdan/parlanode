@@ -1,6 +1,6 @@
 {
-  "created_at": "05.04.2019",
-  "created_for": "05.04.2019",
+  "created_at": "07.04.2019",
+  "created_for": "07.04.2019",
   "results": [
     {
       "classification": "akt",
@@ -8,7 +8,7 @@
       "text": "Predlog za sprejem avtentične razlage 120., 121. in  122. člena Zakona o organizaciji in financiranju vzgoje in izobraževanja",
       "has_link": true,
       "type_of_law": "Avtentična razlaga-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "10.04.2018",
       "mdt": {
         "name": "",
@@ -17,26 +17,8 @@
       "icon": "student.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
-      "epa": "2103-VII",
-      "hasVotes": true
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
       "hasVotes": true,
-      "text": "Zapisnik o ugotovitvi izida predčasnih volitev poslancev v Državni zbor Republike Slovenije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "22.06.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "1-VIII"
+      "epa": "2103-VII"
     },
     {
       "classification": "akt",
@@ -44,7 +26,7 @@
       "text": "Predlog za izvolitev predsednika Državnega zbora Republike Slovenije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "22.06.2018",
       "mdt": {
         "name": "",
@@ -53,7 +35,26 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "3-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Zapisnik o ugotovitvi izida predčasnih volitev poslancev v Državni zbor Republike Slovenije",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "22.06.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
+      "epa": "1-VIII"
     },
     {
       "classification": "akt",
@@ -61,7 +62,7 @@
       "text": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.07.2018",
       "mdt": {
         "name": "",
@@ -70,6 +71,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "17-VIII"
     },
     {
@@ -87,6 +89,7 @@
       "icon": "health.svg",
       "has_discussion": false,
       "mdt_text": "Skupni odbor",
+      "hasVotes": true,
       "epa": "16-VIII"
     },
     {
@@ -95,7 +98,7 @@
       "text": "Zakon o izgradnji, upravljanju in gospodarjenju z drugim tirom železniške proge Divača–Koper",
       "has_link": false,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "20.07.2018",
       "mdt": {
         "name": "",
@@ -104,6 +107,7 @@
       "icon": "railway.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": false,
       "epa": "1878-VII"
     },
     {
@@ -119,8 +123,9 @@
         "id": null
       },
       "icon": "money.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Skupni odbor",
+      "hasVotes": true,
       "epa": "42-VIII"
     },
     {
@@ -129,7 +134,7 @@
       "text": "Predlog za izvolitev predsednika Vlade Republike Slovenije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "17.08.2018",
       "mdt": {
         "name": "",
@@ -138,6 +143,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "69-VIII"
     },
     {
@@ -146,7 +152,7 @@
       "text": "Odlok o spremembi Odloka o okviru za pripravo proračunov sektorja država za obdobje od 2018 do 2020",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "24.08.2018",
       "mdt": {
         "name": "",
@@ -155,41 +161,8 @@
       "icon": "budget.svg",
       "has_discussion": false,
       "mdt_text": "Skupni odbor",
+      "hasVotes": true,
       "epa": "65-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog kandidata za podpredsednika Državnega zbora",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "24.08.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "91-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za izvolitev podpredsednice Državnega zbora",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "24.08.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "84-VIII"
     },
     {
       "classification": "akt",
@@ -206,7 +179,44 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "90-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog kandidata za podpredsednika Državnega zbora",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "24.08.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
+      "epa": "91-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za izvolitev podpredsednice Državnega zbora",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "24.08.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
+      "epa": "84-VIII"
     },
     {
       "classification": "akt",
@@ -214,7 +224,7 @@
       "text": "Predlog za izvolitev podpredsednika Državnega zbora",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "31.08.2018",
       "mdt": {
         "name": "",
@@ -223,24 +233,8 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "94-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "31.08.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "95-VIII"
     },
     {
       "classification": "akt",
@@ -257,7 +251,26 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "96-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "31.08.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
+      "epa": "95-VIII"
     },
     {
       "classification": "zakon",
@@ -274,7 +287,26 @@
       "icon": "health.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zdravstvo",
+      "hasVotes": true,
       "epa": "117-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju",
+      "has_link": true,
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "rejected",
+      "date": "12.09.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "insurance.svg",
+      "has_discussion": true,
+      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
+      "epa": "121-VIII"
     },
     {
       "classification": "zakon",
@@ -291,24 +323,8 @@
       "icon": "worker.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "122-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju",
-      "has_link": true,
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "rejected",
-      "date": "12.09.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "insurance.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
-      "epa": "121-VIII"
     },
     {
       "classification": "akt",
@@ -316,7 +332,7 @@
       "text": "Lista kandidatk in kandidatov za ministrice in ministre Vlade Republike Slovenije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "14.09.2018",
       "mdt": {
         "name": "",
@@ -325,7 +341,26 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "99-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Sklep o pravici nadomeščanja poslancev Državnega zbora",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "28.09.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "167-VIII"
     },
     {
       "classification": "akt",
@@ -333,7 +368,7 @@
       "text": "Sklep o razrešitvi člana Statističnega sveta Republike Slovenije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "28.09.2018",
       "mdt": {
         "name": "",
@@ -342,24 +377,8 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "170-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Sklep o pravici nadomeščanja poslancev Državnega zbora",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "28.09.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "167-VIII"
     },
     {
       "classification": "akt",
@@ -367,7 +386,7 @@
       "text": "Predlog za imenovanje guvernerja - člana Sveta Banke Slovenije",
       "has_link": true,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "04.10.2018",
       "mdt": {
         "name": "",
@@ -376,6 +395,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "168-VIII"
     },
     {
@@ -391,8 +411,9 @@
         "id": null
       },
       "icon": "taxes.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "179-VIII"
     },
     {
@@ -410,24 +431,8 @@
       "icon": "insurance.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "191-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrajnega sodnika na Okrajnem sodišču v Litiji",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "12.10.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "109-VIII"
     },
     {
       "classification": "akt",
@@ -435,7 +440,7 @@
       "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrajne sodnice na Okrajnem sodišču na Ptuju",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "12.10.2018",
       "mdt": {
         "name": "",
@@ -444,6 +449,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "175-VIII"
     },
     {
@@ -452,7 +458,7 @@
       "text": "Predloga za izvolitev v sodniško funkcijo na sodniški mesti okrajnih sodnikov na Okrajnem sodišču v Trbovljah",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "12.10.2018",
       "mdt": {
         "name": "",
@@ -461,7 +467,26 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "43-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrajnega sodnika na Okrajnem sodišču v Litiji",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "12.10.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "109-VIII"
     },
     {
       "classification": "zakon",
@@ -476,8 +501,9 @@
         "id": null
       },
       "icon": "transportation.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
       "epa": "205-VIII"
     },
     {
@@ -495,6 +521,7 @@
       "icon": "money.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "206-VIII"
     },
     {
@@ -510,8 +537,9 @@
         "id": null
       },
       "icon": "student.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
       "epa": "211-VIII"
     },
     {
@@ -527,43 +555,10 @@
         "id": null
       },
       "icon": "taxes.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "119-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Sklep o imenovanju članice Statističnega sveta Republike Slovenije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "30.10.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "214-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za imenovanje na sodniško mesto vrhovnega sodnika na Vrhovnem sodišču Republike Slovenije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "30.10.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "185-VIII"
     },
     {
       "classification": "akt",
@@ -571,7 +566,7 @@
       "text": "Sklep o imenovanju namestnika člana Državne volilne komisije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "30.10.2018",
       "mdt": {
         "name": "",
@@ -580,15 +575,16 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "212-VIII"
     },
     {
       "classification": "akt",
       "abstractVisible": false,
-      "text": "Predlog za razrešitev in imenovanje članov Upravnega odbora Prešernovega sklada",
+      "text": "Predlog razrešitve člana in imenovanje članov sveta Agencije za energijo",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "30.10.2018",
       "mdt": {
         "name": "",
@@ -597,6 +593,25 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "190-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za razrešitev in imenovanje članov Upravnega odbora Prešernovega sklada",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "30.10.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "204-VIII"
     },
     {
@@ -605,7 +620,7 @@
       "text": "Predlogi za izvolitev v sodniško funkcijo na sodniška mesta okrajnih sodnic na Okrajnem sodišču v Ljubljani",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "30.10.2018",
       "mdt": {
         "name": "",
@@ -614,15 +629,16 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "180-VIII"
     },
     {
       "classification": "akt",
       "abstractVisible": false,
-      "text": "Predlog razrešitve člana in imenovanje članov sveta Agencije za energijo",
+      "text": "Sklep o imenovanju članice Statističnega sveta Republike Slovenije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "30.10.2018",
       "mdt": {
         "name": "",
@@ -631,7 +647,26 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
-      "epa": "190-VIII"
+      "hasVotes": true,
+      "epa": "214-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za imenovanje na sodniško mesto vrhovnega sodnika na Vrhovnem sodišču Republike Slovenije",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "30.10.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "185-VIII"
     },
     {
       "classification": "akt",
@@ -639,7 +674,7 @@
       "text": "Sklep o razrešitvi člana Nadzornega odbora Sklada za financiranje razgradnje Nuklearne elektrarne Krško in za odlaganje radioaktivnih odpadkov iz Nuklearne elektrarne Krško",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "30.10.2018",
       "mdt": {
         "name": "",
@@ -648,6 +683,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "213-VIII"
     },
     {
@@ -665,7 +701,44 @@
       "icon": "taxes.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "229-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Gradbenega zakona",
+      "has_link": true,
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "in_procedure",
+      "date": "09.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "realestate.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
+      "epa": "164-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o vinu",
+      "has_link": true,
+      "type_of_law": "Predlog zakona-MAPA",
+      "result": "rejected",
+      "date": "09.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "alcohol.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "hasVotes": true,
+      "epa": "234-VIII"
     },
     {
       "classification": "zakon",
@@ -673,7 +746,7 @@
       "text": "Zakon o dopolnitvi Zakona o voznikih",
       "has_link": true,
       "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "09.11.2018",
       "mdt": {
         "name": "",
@@ -682,6 +755,7 @@
       "icon": "transportation.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
       "epa": "163-VIII"
     },
     {
@@ -699,41 +773,8 @@
       "icon": "taxes.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "232-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o vinu",
-      "has_link": true,
-      "type_of_law": "Predlog zakona-MAPA",
-      "result": "rejected",
-      "date": "09.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "alcohol.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
-      "epa": "234-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Gradbenega zakona",
-      "has_link": true,
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": null,
-      "date": "09.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "realestate.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
-      "epa": "164-VIII"
     },
     {
       "classification": "zakon",
@@ -741,7 +782,7 @@
       "text": "Zakon o vračilu denarnih sredstev v Republiko Slovenijo iz posameznih davčnih oaz",
       "has_link": true,
       "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "13.11.2018",
       "mdt": {
         "name": "",
@@ -750,6 +791,7 @@
       "icon": "money.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance in monetarno politiko",
+      "hasVotes": true,
       "epa": "2445-VII"
     },
     {
@@ -767,6 +809,7 @@
       "icon": "family.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "245-VIII"
     },
     {
@@ -784,7 +827,26 @@
       "icon": "family.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "244-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju",
+      "has_link": true,
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "rejected",
+      "date": "15.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "insurance.svg",
+      "has_discussion": true,
+      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
+      "epa": "247-VIII"
     },
     {
       "classification": "zakon",
@@ -801,41 +863,8 @@
       "icon": "youth.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
       "epa": "246-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju",
-      "has_link": true,
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "rejected",
-      "date": "15.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "insurance.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
-      "epa": "247-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Priporočilo v zvezi s črpanjem evropskih kohezijskih sredstev finančne perspektive 2014–2020",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "16.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "investment.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za zadeve Evropske unije",
-      "epa": "222-VIII"
     },
     {
       "classification": "zakon",
@@ -852,6 +881,7 @@
       "icon": "fireman.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za obrambo",
+      "hasVotes": true,
       "epa": "254-VIII"
     },
     {
@@ -869,7 +899,26 @@
       "icon": "realestate.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
       "epa": "260-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": true,
+      "text": "Priporočilo v zvezi s črpanjem evropskih kohezijskih sredstev finančne perspektive 2014–2020",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "16.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "investment.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za zadeve Evropske unije",
+      "hasVotes": true,
+      "epa": "222-VIII"
     },
     {
       "classification": "zakon",
@@ -884,26 +933,10 @@
         "id": null
       },
       "icon": "family.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "195-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o trgu finančnih instrumentov",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "rejected",
-      "date": "30.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "money.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za finance",
-      "epa": "62-VIII"
     },
     {
       "classification": "zakon",
@@ -920,41 +953,8 @@
       "icon": "investment.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "63-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o davku na dodano vrednost",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "rejected",
-      "date": "30.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "taxes.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za finance",
-      "epa": "187-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvi Zakona o uveljavljanju pravic iz javnih sredstev",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "30.11.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "administration.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
-      "epa": "186-VIII"
     },
     {
       "classification": "zakon",
@@ -971,7 +971,62 @@
       "icon": "investment.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "66-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o davku na dodano vrednost",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "rejected",
+      "date": "30.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "taxes.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za finance",
+      "hasVotes": true,
+      "epa": "187-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o trgu finančnih instrumentov",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "rejected",
+      "date": "30.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "money.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za finance",
+      "hasVotes": true,
+      "epa": "62-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvi Zakona o uveljavljanju pravic iz javnih sredstev",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "30.11.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "administration.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
+      "epa": "186-VIII"
     },
     {
       "classification": "zakon",
@@ -979,7 +1034,7 @@
       "text": "Zakon o spremembi in dopolnitvi Zakona o čezmejnem izvajanju storitev",
       "has_link": true,
       "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "03.12.2018",
       "mdt": {
         "name": "",
@@ -988,24 +1043,8 @@
       "icon": "business.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "203-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za izvolitev sodnice Ustavnega sodišča Republike Slovenije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "04.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "243-VIII"
     },
     {
       "classification": "akt",
@@ -1013,7 +1052,7 @@
       "text": "Spremembe in dopolnitve Poslovnika Državne revizijske komisije za revizijo postopkov oddaje javnih naročil",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "04.12.2018",
       "mdt": {
         "name": "",
@@ -1022,92 +1061,8 @@
       "icon": "money.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "hasVotes": true,
       "epa": "2645-VII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za imenovanje direktorja Agencije za zavarovalni nadzor",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "04.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "221-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Sklep o imenovanju člana Nadzornega odbora Sklada za financiranje razgradnje Nuklearne elektrarne Krško in odlaganja radioaktivnih odpadkov iz Nuklearne elektrarne Krško",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "04.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "258-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Peto poročilo o položaju romske skupnosti v Sloveniji",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "04.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "report.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
-      "epa": "45-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Sklep o soglasju k Programu dela in finančnem načrtu Agencije za energijo za leto 2019",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "04.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "energy.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
-      "epa": "172-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Poročilo Varuha človekovih pravic Republike Slovenije o izvajanju nalog državnega preventivnega mehanizma po Opcijskem protokolu h Konvenciji OZN proti mučenju in drugim krutim, nečloveškim ali poniževalnim kaznim ali ravnanju za leto 2017 s predlogom priporočila",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "04.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "porocilo.svg",
-      "has_discussion": false,
-      "mdt_text": "Komisija za peticije ter za človekove pravice in enake možnosti",
-      "epa": "2736-VII"
     },
     {
       "classification": "akt",
@@ -1124,7 +1079,80 @@
       "icon": "budget.svg",
       "has_discussion": false,
       "mdt_text": "Komisija za nadzor javnih financ",
+      "hasVotes": true,
       "epa": "115-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Sklep o imenovanju člana Nadzornega odbora Sklada za financiranje razgradnje Nuklearne elektrarne Krško in odlaganja radioaktivnih odpadkov iz Nuklearne elektrarne Krško",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "04.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
+      "epa": "258-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za izvolitev sodnice Ustavnega sodišča Republike Slovenije",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "04.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "243-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": true,
+      "text": "Sklep o soglasju k Programu dela in finančnem načrtu Agencije za energijo za leto 2019",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "04.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "energy.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
+      "epa": "172-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za imenovanje direktorja Agencije za zavarovalni nadzor",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "04.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "221-VIII"
     },
     {
       "classification": "akt",
@@ -1132,7 +1160,7 @@
       "text": "Triindvajseto redno letno poročilo Varuha človekovih pravic Republike Slovenije za leto 2017 s predlogom priporočila",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "04.12.2018",
       "mdt": {
         "name": "",
@@ -1141,7 +1169,44 @@
       "icon": "porocilo.svg",
       "has_discussion": false,
       "mdt_text": "Komisija za peticije ter za človekove pravice in enake možnosti",
+      "hasVotes": true,
       "epa": "2735-VII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": true,
+      "text": "Poročilo Varuha človekovih pravic Republike Slovenije o izvajanju nalog državnega preventivnega mehanizma po Opcijskem protokolu h Konvenciji OZN proti mučenju in drugim krutim, nečloveškim ali poniževalnim kaznim ali ravnanju za leto 2017 s predlogom priporočila",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "04.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "porocilo.svg",
+      "has_discussion": false,
+      "mdt_text": "Komisija za peticije ter za človekove pravice in enake možnosti",
+      "hasVotes": true,
+      "epa": "2736-VII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": true,
+      "text": "Peto poročilo o položaju romske skupnosti v Sloveniji",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "04.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "report.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "hasVotes": true,
+      "epa": "45-VIII"
     },
     {
       "classification": "zakon",
@@ -1158,6 +1223,7 @@
       "icon": "taxes.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "188-VIII"
     },
     {
@@ -1175,6 +1241,7 @@
       "icon": "money.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "hasVotes": true,
       "epa": "29-VIII"
     },
     {
@@ -1183,7 +1250,7 @@
       "text": "Priporočilo za okrepitev varnosti v Republiki Sloveniji",
       "has_link": true,
       "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "13.12.2018",
       "mdt": {
         "name": "",
@@ -1192,109 +1259,8 @@
       "icon": "army.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "324-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Sklep o imenovanju predsednice in dveh članov Upravnega odbora Sklada za financiranje razgradnje Nuklearne elektrarne Krško in odlaganja radioaktivnih odpadkov iz Nuklearne elektrarne Krško",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "21.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "330-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Odlok o spremembah Odloka o okviru za pripravo proračunov sektorja država za obdobje od 2018 do 2020",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "21.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "budget.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za finance",
-      "epa": "316-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za imenovanje članice Nadzornega sveta Slovenskega državnega holdinga, d. d.",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "21.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "317-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Predlog obtožbe predsednika Vlade Republike Slovenije pred Ustavnim sodiščem Republike Slovenije zaradi kršitev Ustave in hujših kršitev zakona",
-      "has_link": true,
-      "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
-      "date": "21.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "348-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za imenovanje guvernerja - člana Sveta Banke Slovenije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "21.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "300-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrajnega sodnika na Okrajnem sodišču v Kopru",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": null,
-      "date": "21.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "Mandatno-volilna komisija",
-      "epa": "306-VIII"
     },
     {
       "classification": "akt",
@@ -1302,7 +1268,7 @@
       "text": "Predlog kandidata za ministra brez resorja, pristojnega za razvoj, strateške projekte in kohezijo",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "21.12.2018",
       "mdt": {
         "name": "",
@@ -1311,15 +1277,16 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za gospodarstvo",
+      "hasVotes": true,
       "epa": "280-VIII"
     },
     {
       "classification": "akt",
       "abstractVisible": false,
-      "text": "Sklep o imenovanju članice Slovenske nacionalne komisije za UNESCO",
+      "text": "Sklep o imenovanju predsednice in dveh članov Upravnega odbora Sklada za financiranje razgradnje Nuklearne elektrarne Krško in odlaganja radioaktivnih odpadkov iz Nuklearne elektrarne Krško",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "21.12.2018",
       "mdt": {
         "name": "",
@@ -1328,7 +1295,116 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
+      "epa": "330-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Sklep o imenovanju članice Slovenske nacionalne komisije za UNESCO",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "21.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
       "epa": "331-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za imenovanje članice Nadzornega sveta Slovenskega državnega holdinga, d. d.",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "21.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "317-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za imenovanje guvernerja - člana Sveta Banke Slovenije",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "21.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "300-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": true,
+      "text": "Odlok o spremembah Odloka o okviru za pripravo proračunov sektorja država za obdobje od 2018 do 2020",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "21.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "budget.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za finance",
+      "hasVotes": true,
+      "epa": "316-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": true,
+      "text": "Predlog obtožbe predsednika Vlade Republike Slovenije pred Ustavnim sodiščem Republike Slovenije zaradi kršitev Ustave in hujših kršitev zakona",
+      "has_link": true,
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "result": "in_procedure",
+      "date": "21.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": true,
+      "epa": "348-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrajnega sodnika na Okrajnem sodišču v Kopru",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "in_procedure",
+      "date": "21.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
+      "epa": "306-VIII"
     },
     {
       "classification": "zakon",
@@ -1343,8 +1419,9 @@
         "id": null
       },
       "icon": "budget.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "278-VIII"
     },
     {
@@ -1360,60 +1437,10 @@
         "id": null
       },
       "icon": "worker.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "228-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o postopnem zapiranju Rudnika Trbovlje-Hrastnik in razvojnem prestrukturiranju regije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "28.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "regional.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
-      "epa": "279-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o ratifikaciji sprememb Prilog I in II h Konvenciji o preskušanju in označevanju izdelkov iz plemenitih kovin",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "28.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "314-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": false,
-      "text": "Akt o spremembi in dopolnitvi Akta o notifikaciji nasledstva glede konvencij Organizacije Združenih narodov in konvencij, sprejetih v Mednarodni agenciji za atomsko energijo",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "28.12.2018",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "315-VIII"
     },
     {
       "classification": "zakon",
@@ -1430,6 +1457,7 @@
       "icon": "administration.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "hasVotes": true,
       "epa": "282-VIII"
     },
     {
@@ -1447,7 +1475,26 @@
       "icon": "environment.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
       "epa": "290-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": false,
+      "text": "Akt o spremembi in dopolnitvi Akta o notifikaciji nasledstva glede konvencij Organizacije Združenih narodov in konvencij, sprejetih v Mednarodni agenciji za atomsko energijo",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "28.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "315-VIII"
     },
     {
       "classification": "zakon",
@@ -1464,7 +1511,44 @@
       "icon": "money.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "241-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o postopnem zapiranju Rudnika Trbovlje-Hrastnik in razvojnem prestrukturiranju regije",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "28.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "regional.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
+      "epa": "279-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o ratifikaciji sprememb Prilog I in II h Konvenciji o preskušanju in označevanju izdelkov iz plemenitih kovin",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "28.12.2018",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "314-VIII"
     },
     {
       "classification": "zakon",
@@ -1481,6 +1565,7 @@
       "icon": "rights.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+      "hasVotes": true,
       "epa": "303-VIII"
     },
     {
@@ -1498,75 +1583,8 @@
       "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za pravosodje",
+      "hasVotes": true,
       "epa": "323-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o ratifikaciji Pogodbe o načelih, ki urejajo dejavnosti držav pri raziskovanju in uporabi vesolja, vključno z Luno in drugimi nebesnimi telesi",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "04.01.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "310-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o ratifikaciji Sporazuma med Ministrstvom za obrambo Republike Slovenije in Ministrstvom za obrambo Gruzije o sodelovanju na obrambnem področju",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "04.01.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "army.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "2191-VII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o ratifikaciji Sporazuma o spremembi in dopolnitvi Sporazuma o socialnem zavarovanju med Republiko Slovenijo in Republiko Makedonijo in Sporazuma o spremembi Administrativnega sporazuma o izvajanju Sporazuma o socialnem zavarovanju med Republiko Slovenijo in Republiko Makedonijo",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "04.01.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "235-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o ratifikaciji Sporazuma o ustanovitvi Medameriške investicijske korporacije",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "04.01.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "236-VIII"
     },
     {
       "classification": "zakon",
@@ -1583,7 +1601,44 @@
       "icon": null,
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "294-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o ratifikaciji Sporazuma o spremembi in dopolnitvi Sporazuma o socialnem zavarovanju med Republiko Slovenijo in Republiko Makedonijo in Sporazuma o spremembi Administrativnega sporazuma o izvajanju Sporazuma o socialnem zavarovanju med Republiko Slovenijo in Republiko Makedonijo",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "04.01.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "235-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o ratifikaciji Sporazuma med Ministrstvom za obrambo Republike Slovenije in Ministrstvom za obrambo Gruzije o sodelovanju na obrambnem področju",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "04.01.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "army.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "2191-VII"
     },
     {
       "classification": "zakon",
@@ -1600,7 +1655,44 @@
       "icon": null,
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "293-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o ratifikaciji Sporazuma o ustanovitvi Medameriške investicijske korporacije",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "04.01.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "236-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o ratifikaciji Pogodbe o načelih, ki urejajo dejavnosti držav pri raziskovanju in uporabi vesolja, vključno z Luno in drugimi nebesnimi telesi",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "04.01.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "310-VIII"
     },
     {
       "classification": "akt",
@@ -1608,7 +1700,7 @@
       "text": "Predlog za razpis posvetovalnega referenduma o obravnavi migracij",
       "has_link": true,
       "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "17.01.2019",
       "mdt": {
         "name": "",
@@ -1617,6 +1709,7 @@
       "icon": "foreigners.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "265-VIII"
     },
     {
@@ -1634,6 +1727,7 @@
       "icon": "budget.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "389-VIII"
     },
     {
@@ -1651,6 +1745,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "173-VIII"
     },
     {
@@ -1659,7 +1754,7 @@
       "text": "Sklep o razrešitvi in imenovanju podpredsednikov Odbora za notranje zadeve, javno upravo in lokalno samoupravo ter Odbora za kmetijstvo, gozdarstvo in prehrano",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1668,6 +1763,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "174-VIII"
     },
     {
@@ -1676,7 +1772,7 @@
       "text": "Sklep o imenovanju predsednika in podpredsednice Mandatno-volilne komisije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1685,6 +1781,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "2-VIII"
     },
     {
@@ -1693,7 +1790,7 @@
       "text": "Sklep o imenovanju predsednikov in podpredsednikov delovnih teles Državnega zbora ter o razrešitvi podpredsednice in imenovanju podpredsednika Mandatno-volilne komisije",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1702,6 +1799,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "21-VIII"
     },
     {
@@ -1710,7 +1808,7 @@
       "text": "Sklep o razrešitvi člana in izvolitvi članice Komisije za nadzor obveščevalnih in varnostnih služb",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1719,6 +1817,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "262-VIII"
     },
     {
@@ -1736,6 +1835,7 @@
       "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "335-VIII"
     },
     {
@@ -1744,7 +1844,7 @@
       "text": "Predlog za imenovanje podpredsednika Vrhovnega sodišča Republike Slovenije",
       "has_link": true,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1753,6 +1853,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "342-VIII"
     },
     {
@@ -1770,6 +1871,7 @@
       "icon": null,
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "365-VIII"
     },
     {
@@ -1785,8 +1887,9 @@
         "id": null
       },
       "icon": "environment.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "366-VIII"
     },
     {
@@ -1804,6 +1907,7 @@
       "icon": "business.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "367-VIII"
     },
     {
@@ -1812,7 +1916,7 @@
       "text": "Predlog za izvolitev varuha človekovih pravic",
       "has_link": true,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1821,6 +1925,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "371-VIII"
     },
     {
@@ -1829,7 +1934,7 @@
       "text": "Sklep o sestavi in imenovanju predsednika, podpredsednika, članov in namestnikov članov Preiskovalne komisije o ugotavljanju domnevnega pranja denarja v NKBM d.d., domnevnega nezakonitega financiranja politične stranke SDS in domnevnega nezakonitega financiranja volilne kampanje SDS za predčasne volitve poslancev v Državni zbor 2018",
       "has_link": true,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1838,6 +1943,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "379-VIII"
     },
     {
@@ -1846,7 +1952,7 @@
       "text": "Sklep o sestavi in imenovanju predsednika, podpredsednika, članov in namestnikov članov Preiskovalne komisije o ugotavljanju odgovornosti nosilcev javnih funkcij na programu otroške kardiologije ter področju nabav in upravljanja z medicinsko opremo in zdravstvenim materialom",
       "has_link": true,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1855,6 +1961,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "381-VIII"
     },
     {
@@ -1872,6 +1979,7 @@
       "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "41-VIII"
     },
     {
@@ -1880,7 +1988,7 @@
       "text": "Obvestilo Višjega sodišča v Mariboru, Kazenski oddelek o kazenskem postopku zoper poslanca Dejana Kaloha",
       "has_link": true,
       "type_of_law": "Sprejet zakon",
-      "result": null,
+      "result": "in_procedure",
       "date": "06.02.2019",
       "mdt": {
         "name": "",
@@ -1889,6 +1997,7 @@
       "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "68-VIII"
     },
     {
@@ -1906,6 +2015,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "97-VIII"
     },
     {
@@ -1923,6 +2033,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "",
+      "hasVotes": true,
       "epa": "98-VIII"
     },
     {
@@ -1931,7 +2042,7 @@
       "text": "Resolucija o Programu varstva in razvoja Parka Škocjanske jame za obdobje 2019–2023",
       "has_link": true,
       "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "07.02.2019",
       "mdt": {
         "name": "",
@@ -1940,6 +2051,7 @@
       "icon": "environment.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
       "epa": "326-VIII"
     },
     {
@@ -1948,7 +2060,7 @@
       "text": "Odlok o spremembah in dopolnitvah Odloka o ustanovitvi samostojnega visokošolskega zavoda Fakultete za informacijske študije v Novem mestu",
       "has_link": true,
       "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "07.02.2019",
       "mdt": {
         "name": "",
@@ -1957,6 +2069,7 @@
       "icon": "student.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
       "epa": "272-VIII"
     },
     {
@@ -1965,7 +2078,7 @@
       "text": "Odlok o spremembah in doponitvah Odloka o preoblikovanju Univerze v Ljubljani",
       "has_link": true,
       "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "07.02.2019",
       "mdt": {
         "name": "",
@@ -1974,24 +2087,8 @@
       "icon": "student.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
       "epa": "337-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": true,
-      "text": "Odlok o spremembah in dopolnitvah Odloka o ustanovitvi Univerze na Primorskem",
-      "has_link": true,
-      "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
-      "date": "07.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "student.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
-      "epa": "325-VIII"
     },
     {
       "classification": "akt",
@@ -1999,7 +2096,7 @@
       "text": "Odlok o spremembah in dopolnitvah Odloka o preoblikovanju Univerze v Mariboru",
       "has_link": true,
       "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "07.02.2019",
       "mdt": {
         "name": "",
@@ -2008,58 +2105,26 @@
       "icon": "student.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
       "epa": "274-VIII"
     },
     {
-      "classification": "zakon",
+      "classification": "akt",
       "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o reševanju in prisilnem prenehanju bank",
+      "text": "Odlok o spremembah in dopolnitvah Odloka o ustanovitvi Univerze na Primorskem",
       "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "11.02.2019",
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "result": "in_procedure",
+      "date": "07.02.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": "money.svg",
+      "icon": "student.svg",
       "has_discussion": false,
-      "mdt_text": "Odbor za finance",
-      "epa": "275-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o zavarovalništvu",
-      "has_link": true,
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "date": "11.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "insurance.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za finance",
-      "epa": "218-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o nekaterih koncesijskih pogodbah",
-      "has_link": true,
-      "type_of_law": "Sprejet zakon",
-      "result": "enacted",
-      "date": "11.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "administration.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za finance",
-      "epa": "313-VIII"
+      "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
+      "epa": "325-VIII"
     },
     {
       "classification": "zakon",
@@ -2073,9 +2138,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "364-VIII"
     },
     {
@@ -2093,7 +2159,26 @@
       "icon": null,
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "404-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o ratifikaciji Partnerskega sporazuma o odnosih in sodelovanju med Evropsko unijo in njenimi državami članicami na eni strani ter Novo Zelandijo na drugi strani",
+      "has_link": false,
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "date": "11.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "international.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
+      "epa": "403-VIII"
     },
     {
       "classification": "zakon",
@@ -2110,24 +2195,8 @@
       "icon": "science.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za izobraževanje, znanost, šport in mladino",
+      "hasVotes": true,
       "epa": "291-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o ratifikaciji Partnerskega sporazuma o odnosih in sodelovanju med Evropsko unijo in njenimi državami članicami na eni strani ter Novo Zelandijo na drugi strani",
-      "has_link": false,
-      "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": "enacted",
-      "date": "11.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za zunanjo politiko",
-      "epa": "403-VIII"
     },
     {
       "classification": "zakon",
@@ -2141,10 +2210,65 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "402-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o reševanju in prisilnem prenehanju bank",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "11.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "money.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za finance",
+      "hasVotes": true,
+      "epa": "275-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o zavarovalništvu",
+      "has_link": true,
+      "type_of_law": "Predlog zakona-OBRAVNAVA",
+      "result": "enacted",
+      "date": "11.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "insurance.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za finance",
+      "hasVotes": true,
+      "epa": "218-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o nekaterih koncesijskih pogodbah",
+      "has_link": true,
+      "type_of_law": "Sprejet zakon",
+      "result": "enacted",
+      "date": "11.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "administration.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za finance",
+      "hasVotes": true,
+      "epa": "313-VIII"
     },
     {
       "classification": "zakon",
@@ -2161,24 +2285,8 @@
       "icon": "taxes.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za finance",
+      "hasVotes": true,
       "epa": "406-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Odstop s funkcije poslanca Državnega zbora",
-      "has_link": false,
-      "type_of_law": "Drugi akti-OBRAVNAVA",
-      "result": null,
-      "date": "14.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "mandate.svg",
-      "has_discussion": false,
-      "mdt_text": "",
-      "epa": "408-VIII"
     },
     {
       "classification": "akt",
@@ -2186,7 +2294,7 @@
       "text": "Kandidatna lista za izvolitev člana Sodnega sveta",
       "has_link": false,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "14.02.2019",
       "mdt": {
         "name": "",
@@ -2195,7 +2303,44 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "407-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Odstop s funkcije poslanca Državnega zbora",
+      "has_link": false,
+      "type_of_law": "Drugi akti-OBRAVNAVA",
+      "result": "in_procedure",
+      "date": "14.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "mandate.svg",
+      "has_discussion": false,
+      "mdt_text": "",
+      "hasVotes": false,
+      "epa": "408-VIII"
+    },
+    {
+      "classification": "akt",
+      "abstractVisible": false,
+      "text": "Letno poročilo o delu Oddelka za preiskovanje in pregon uradnih oseb s posebnimi pooblastili pri Specializiranem državnem tožilstvu Republike Slovenije (Posebni oddelek) za leto 2018",
+      "has_link": false,
+      "type_of_law": "Poročilo-MAPA",
+      "result": "in_procedure",
+      "date": "15.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "porocilo.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za pravosodje",
+      "hasVotes": false,
+      "epa": "416-VIII"
     },
     {
       "classification": "zakon",
@@ -2212,24 +2357,8 @@
       "icon": "family.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "417-VIII"
-    },
-    {
-      "classification": "akt",
-      "abstractVisible": false,
-      "text": "Letno poročilo o delu Oddelka za preiskovanje in pregon uradnih oseb s posebnimi pooblastili pri Specializiranem državnem tožilstvu Republike Slovenije (Posebni oddelek) za leto 2018",
-      "has_link": false,
-      "type_of_law": "Poročilo-MAPA",
-      "result": null,
-      "date": "15.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": "porocilo.svg",
-      "has_discussion": false,
-      "mdt_text": "Odbor za pravosodje",
-      "epa": "416-VIII"
     },
     {
       "classification": "zakon",
@@ -2246,24 +2375,8 @@
       "icon": "family.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za delo, družino, socialne zadeve in invalide",
+      "hasVotes": true,
       "epa": "418-VIII"
-    },
-    {
-      "classification": "zakon",
-      "abstractVisible": true,
-      "text": "Zakon o spremembah in dopolnitvah Zakona o varstvu pred ionizirajočimi sevanji in jedrski varnosti",
-      "has_link": false,
-      "type_of_law": "Predlog zakona-MAPA",
-      "result": null,
-      "date": "15.02.2019",
-      "mdt": {
-        "name": "",
-        "id": null
-      },
-      "icon": null,
-      "has_discussion": false,
-      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
-      "epa": "414-VIII"
     },
     {
       "classification": "akt",
@@ -2271,7 +2384,7 @@
       "text": "Letno poročilo o poslovanju Specializiranega državnega tožilstva Republike Slovenije za leto 2018",
       "has_link": false,
       "type_of_law": "Poročilo-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "15.02.2019",
       "mdt": {
         "name": "",
@@ -2280,7 +2393,26 @@
       "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za pravosodje",
+      "hasVotes": false,
       "epa": "415-VIII"
+    },
+    {
+      "classification": "zakon",
+      "abstractVisible": true,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o varstvu pred ionizirajočimi sevanji in jedrski varnosti",
+      "has_link": false,
+      "type_of_law": "Predlog zakona-MAPA",
+      "result": "in_procedure",
+      "date": "15.02.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "environment.svg",
+      "has_discussion": false,
+      "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": false,
+      "epa": "414-VIII"
     },
     {
       "classification": "zakon",
@@ -2294,9 +2426,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za zunanjo politiko",
+      "hasVotes": true,
       "epa": "372-VIII"
     },
     {
@@ -2305,7 +2438,7 @@
       "text": "Zahteva Okrožnega sodišča v Ljubljani, Kazenski oddelek, za odločitev o dovoljenju za začetek kazenskega postopka zoper sodnico Katarino Kuret Marolt",
       "has_link": true,
       "type_of_law": "Zadeve MVK-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "18.02.2019",
       "mdt": {
         "name": "",
@@ -2314,6 +2447,7 @@
       "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": "Mandatno-volilna komisija",
+      "hasVotes": true,
       "epa": "108-VIII"
     },
     {
@@ -2322,15 +2456,16 @@
       "text": "Zakon o nepremičninskem posredovanju",
       "has_link": true,
       "type_of_law": "Predlog zakona-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "18.02.2019",
       "mdt": {
         "name": "",
         "id": null
       },
       "icon": "realestate.svg",
-      "has_discussion": false,
+      "has_discussion": true,
       "mdt_text": "Odbor za infrastrukturo, okolje in prostor",
+      "hasVotes": true,
       "epa": "2462-VII"
     },
     {
@@ -2339,7 +2474,7 @@
       "text": "Poročilo o poslovanju družbe Slovenski državni gozdovi, d.o.o. v letu 2016",
       "has_link": false,
       "type_of_law": "Poročilo-OBRAVNAVA",
-      "result": null,
+      "result": "in_procedure",
       "date": "18.02.2019",
       "mdt": {
         "name": "",
@@ -2348,6 +2483,7 @@
       "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+      "hasVotes": false,
       "epa": "2322-VII"
     },
     {
@@ -2356,7 +2492,7 @@
       "text": "Letno poročilo Sveta za radiodifuzijo za obdobje 2017/2018 (maj 2017 - september 2018)",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "19.02.2019",
       "mdt": {
         "name": "",
@@ -2365,6 +2501,7 @@
       "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "349-VIII"
     },
     {
@@ -2373,7 +2510,7 @@
       "text": "Odlok o ustanovitvi Sveta za elektronske komunikacije Republike Slovenije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "19.02.2019",
       "mdt": {
         "name": "",
@@ -2382,6 +2519,7 @@
       "icon": "electronic.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "412-VIII"
     },
     {
@@ -2390,7 +2528,7 @@
       "text": "Zakon o spremembi Zakona o praznikih in dela prostih dnevih v Republiki Sloveniji",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "20.02.2019",
       "mdt": {
         "name": "",
@@ -2399,6 +2537,7 @@
       "icon": "worker.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "419-VIII"
     },
     {
@@ -2407,7 +2546,7 @@
       "text": "Predloga za izvolitev v sodniško funkcijo na sodniški mesti okrožnih sodnic na Okrožnem sodišču v Ljubljani",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "21.02.2019",
       "mdt": {
         "name": "",
@@ -2416,6 +2555,7 @@
       "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "391-VIII"
     },
     {
@@ -2424,7 +2564,7 @@
       "text": "Poročilo Varuha človekovih pravic Republike Slovenije o izvajanju nalog državnega preventivnega mehanizma po Opcijskem protokolu h Konvenciji OZN proti mučenju in drugim krutim, nečloveškim ali poniževalnim kaznim ali ravnanju za leto 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "21.02.2019",
       "mdt": {
         "name": "",
@@ -2433,6 +2573,7 @@
       "icon": "rights.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "421-VIII"
     },
     {
@@ -2447,9 +2588,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "386-VIII"
     },
     {
@@ -2458,32 +2600,34 @@
       "text": "Predlog kandidata za ministra za kulturo",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "27.02.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "424-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o zdravstvenem varstvu in zdravstvenem zavarovanju",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "28.02.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "insurance.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "428-VIII"
     },
     {
@@ -2492,15 +2636,16 @@
       "text": "Zakon o spremembi Zakona o zdravstveni dejavnosti",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "health.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "377-VIII"
     },
     {
@@ -2509,15 +2654,16 @@
       "text": "Sklep o imenovanju člana izbirne komisije za izbiro primernih kandidatov za imenovanje namestnice oziroma namestnika predsednika Komisije za preprečevanje korupcije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "435-VIII"
     },
     {
@@ -2526,15 +2672,16 @@
       "text": "Predlog za izvolitev dveh kandidatov za sodnika na Splošnem sodišču Evropske unije v Luksemburgu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "423-VIII"
     },
     {
@@ -2543,15 +2690,16 @@
       "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrožne sodnice na Okrožnem sodišču v Kopru",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "401-VIII"
     },
     {
@@ -2560,15 +2708,16 @@
       "text": "Sklep o imenovanju članov Nadzornega sveta RTV Slovenija",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "434-VIII"
     },
     {
@@ -2577,15 +2726,16 @@
       "text": "Sklep o sestavi in imenovanju predsednika, podpredsednika, članov in namestnikov članov Preiskovalne komisije o ugotavljanju zlorab in negospodarnega ravnanja v DUTB",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "436-VIII"
     },
     {
@@ -2594,15 +2744,16 @@
       "text": "Sklep o spremembah Sklepa o sestavi in imenovanju predsednika, podpredsednika, članov in namestnikov članov Preiskovalne komisije o ugotavljanju domnevnega pranja denarja v NKBM d.d., domnevnega nezakonitega financiranja politične stranke SDS in domnevnega nezakonitega financiranja volilne kampanje SDS za predčasne volitve poslancev v Državni zbor 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "437-VIII"
     },
     {
@@ -2611,32 +2762,34 @@
       "text": "Sklep o imenovanju predsednika in podpredsednika Ustavne komisije ter podpredsednika Odbora za kulturo",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "427-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o odvetništvu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "429-VIII"
     },
     {
@@ -2651,9 +2804,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "insurance.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "440-VIII"
     },
     {
@@ -2662,15 +2816,16 @@
       "text": "Poročilo o delovanju Nadzornega sveta RTV Slovenija v letu 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "442-VIII"
     },
     {
@@ -2679,15 +2834,16 @@
       "text": "Poročilo Ministrstva za finance glede opravljenega nadzora nad Družbo za upravljanje terjatev bank, d. d., ter izdanih pisnih usmeritvah za obdobje od 1. 10. do 31. 12. 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "01.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "441-VIII"
     },
     {
@@ -2702,9 +2858,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "budget.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "387-VIII"
     },
     {
@@ -2719,9 +2876,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "business.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "368-VIII"
     },
     {
@@ -2730,15 +2888,16 @@
       "text": "Sklep o kandidatu, ki ima pravico opravljati funkcijo poslanca Državnega zbora",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "04.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "444-VIII"
     },
     {
@@ -2747,15 +2906,16 @@
       "text": "Deklaracija o podpori Resoluciji Evropskega parlamenta z dne 2. aprila 2009 o evropski zavesti in totalitarizmu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "05.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "445-VIII"
     },
     {
@@ -2764,15 +2924,16 @@
       "text": "Pobuda za sklenitev Sporazuma med Vlado Republike Slovenije in Vlado Republike Argentine o programu delovnih počitnic",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "07.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "449-VIII"
     },
     {
@@ -2781,15 +2942,16 @@
       "text": "Sklep o imenovanju predsednika Odbora za zadeve Evropske unije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "07.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "450-VIII"
     },
     {
@@ -2804,9 +2966,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "administration.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "370-VIII"
     },
     {
@@ -2821,9 +2984,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "court.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "398-VIII"
     },
     {
@@ -2832,15 +2996,16 @@
       "text": "Pobuda za sklenitev Protokola med Vlado Republike Slovenije in Zveznim svetom Švicarske konfederacije o spremembah Konvencije o izogibanju dvojnega obdavčevanja v zvezi z davki na dohodek in premoženje, podpisane v Ljubljani, dne 12. junija 1996 in spremenjene s protokolom, podpisanim v Ljubljani, dne 7. septembra 2012",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "08.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "453-VIII"
     },
     {
@@ -2849,24 +3014,25 @@
       "text": "Pobuda za sklenitev Protokola o spremembah Sporazuma z dne 3. maja 2006 med Republiko Slovenijo in Zvezno republiko Nemčijo o izogibanju dvojnega obdavčevanja v zvezi z davki od dohodka in premoženja, spremenjenega s protokolom z dne 17. maja 2011",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "08.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "454-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o državnem tožilstvu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "08.03.2019",
       "mdt": {
         "name": "",
@@ -2875,6 +3041,7 @@
       "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "455-VIII"
     },
     {
@@ -2883,32 +3050,34 @@
       "text": "Predlog za začetek postopka za spremembe Ustave Republike Slovenije z osnutkom Ustavnega zakona",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "11.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": "neobstaja",
+      "icon": "court.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "422-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o prijavi prebivališča",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "13.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "rights.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "456-VIII"
     },
     {
@@ -2917,15 +3086,16 @@
       "text": "Obvestilo predsednika Vlade o odstopu Sama Fakina s funkcije ministra za zdravje",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "13.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "458-VIII"
     },
     {
@@ -2934,66 +3104,70 @@
       "text": "Obvestilo predsednika Vlade o odstopu Jureta Lebna s funkcije ministra za okolje in prostor",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "13.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "459-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o nalogah in pooblastilih policije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "15.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "police.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "468-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembi Zakona o organiziranosti in delu v policiji",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "15.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "police.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "467-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o dopolnitvah Zakona o letalstvu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "15.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "transportation.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "466-VIII"
     },
     {
@@ -3002,32 +3176,34 @@
       "text": "Zakon o ureditvi določenih vprašanj v primeru izstopa Združenega kraljestva Velike Britanije in Severne Irske iz Evropske unije brez sporazuma o izstopu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "15.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "471-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o davčnem postopku",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "15.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "taxes.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "469-VIII"
     },
     {
@@ -3036,49 +3212,52 @@
       "text": "Letno poročilo Računskega sodišča Republike Slovenije za leto 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "19.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "472-VIII"
     },
     {
       "classification": "akt",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Predlog za sprejem avtentične razlage 15. člena Zakona o volilni in referendumski kampanji",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "20.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "election.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "473-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah Zakona o dohodnini",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "20.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "taxes.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "474-VIII"
     },
     {
@@ -3087,15 +3266,16 @@
       "text": "Letno poročilo Slovenske tiskovne agencije, STA d. o. o., Ljubljana za poslovno leto 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "20.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "report.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "475-VIII"
     },
     {
@@ -3104,15 +3284,16 @@
       "text": "Lista kandidatov za ministra Vlade Republike Slovenije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "20.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": true,
+      "icon": "mandate.svg",
+      "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "476-VIII"
     },
     {
@@ -3121,15 +3302,16 @@
       "text": "Predlog za izvolitev v sodniško funkcijo na sodniško mesto okrajnega sodnika na Okrajnem sodišču v Mariboru",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "21.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "478-VIII"
     },
     {
@@ -3138,15 +3320,16 @@
       "text": "Sklep o razrešitvi predsednika Državne volilne komisije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "21.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "mandate.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "481-VIII"
     },
     {
@@ -3155,15 +3338,16 @@
       "text": "Sklep o ugotovitvi prenehanja mandata članici Programskega sveta RTV Slovenija",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "21.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": true,
+      "icon": "mandate.svg",
+      "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "483-VIII"
     },
     {
@@ -3172,15 +3356,16 @@
       "text": "Sklep o spremembah Sklepa o sestavi in imenovanju predsednika, podpredsednika, članov in namestnikov članov Preiskovalne komisije o ugotavljanju odgovornosti nosilcev javnih funkcij na programu otroške kardiologije ter področju nabav in upravljanja z medicinsko opremo in zdravstvenim materialom",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "21.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": true,
+      "icon": "mandate.svg",
+      "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "482-VIII"
     },
     {
@@ -3195,9 +3380,10 @@
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "fireman.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": true,
       "epa": "363-VIII"
     },
     {
@@ -3206,15 +3392,16 @@
       "text": "Zakon o ratifikaciji Priloge I k Dopolnilnemu protokolu k ženevskim konvencijam z dne 12. avgusta 1949 o zaščiti žrtev mednarodnih oboroženih spopadov (Protokol I) z dne 8. junija 1977",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "28.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "international.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "487-VIII"
     },
     {
@@ -3223,15 +3410,16 @@
       "text": "Letno poročilo o izvajanju ukrepov Zakona o razvojni podpori Pomurski regiji v obdobju 2010–2019 v letu 2017",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "28.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "porocilo.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "488-VIII"
     },
     {
@@ -3240,83 +3428,88 @@
       "text": "Letno poročilo Državne revizijske komisije za leto 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "29.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "porocilo.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "493-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o socialnem varstvu",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "29.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "rights.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "492-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembi Zakona o pokojninskem in invalidskem zavarovanju",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "29.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "insurance.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "491-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o dohodnini",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "29.03.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "taxes.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "490-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o dopolnitvah Zakona o skupnosti študentov",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "02.04.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "student.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "495-VIII"
     },
     {
@@ -3325,32 +3518,34 @@
       "text": "Resolucija o strategiji nacionalne varnosti Republike Slovenije",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "03.04.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "army.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "496-VIII"
     },
     {
       "classification": "zakon",
-      "abstractVisible": false,
+      "abstractVisible": true,
       "text": "Zakon o spremembah in dopolnitvah Zakona o voznikih",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "03.04.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
-      "has_discussion": false,
+      "icon": "transportation.svg",
+      "has_discussion": true,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "497-VIII"
     },
     {
@@ -3359,15 +3554,16 @@
       "text": "Zakon o spremembah Zakona o preprečevanju dela in zaposlovanja na črno",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "04.04.2019",
       "mdt": {
         "name": "",
         "id": null
       },
-      "icon": null,
+      "icon": "worker.svg",
       "has_discussion": false,
       "mdt_text": null,
+      "hasVotes": false,
       "epa": "504-VIII"
     },
     {
@@ -3376,8 +3572,26 @@
       "text": "Poročilo o izvajanju nalog, ki jih ima družba D.S.U., d. o. o., na podlagi Zakona o zaključku lastninjenja in privatizaciji pravnih oseb v lasti Slovenske razvojne družbe (ZZLPPO) po stanju na dan 31. 12. 2018",
       "has_link": false,
       "type_of_law": null,
-      "result": null,
+      "result": "in_procedure",
       "date": "04.04.2019",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": "porocilo.svg",
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "498-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Akt o odreditvi parlamentarne preiskave za ugotovitev in oceno dejanskega stanja za ugotovitev politične odgovornosti nosilcev javnih funkcij zaradi suma, da so posredno ali neposredno vplivali na domnevno negospodarne ali protipravne odločitve Družbe za upravljanje terjatev bank, d. d., (v nadaljevanju: DUTB) v zvezi s prenosom, upravljanjem in prodajo terjatev bank ali drugega premoženja, drugimi ukrepi iz njene pristojnosti ter upravljanjem družbe, vplivali na odločitve Banke Slovenije, vlade, državnega zbora, drugih državnih organov, ter na odločitve drugih domačih in tujih pravnih oseb, ki so povezane s prenosom, nakupom, prodajo in upravljanjem terjatev bank ali drugega premoženja DUTB",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "in_procedure",
+      "date": "",
       "mdt": {
         "name": "",
         "id": null
@@ -3385,7 +3599,224 @@
       "icon": null,
       "has_discussion": false,
       "mdt_text": null,
-      "epa": "498-VIII"
+      "hasVotes": false,
+      "epa": "343-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Dopolnitev Poslovnika državnega zbora",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "in_procedure",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "477-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog odloka o načrtu ravnanja s stvarnim premoženjem države za Varuha človekovih pravic Republike Slovenije za leto 2019 (OdRSPVČP19-1)",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "enacted",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": true,
+      "epa": "383-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog priporočila v zvezi z Globalnim dogovorom o varnih, urejenih in zakonitih migracijah ter obveščanju javnosti in Državnega zbora RS o mednarodnih zavezah, ki se nanašajo na meddržavne nezakonite migracije",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "rejected",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "226-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog zakona o spremembi Zakona o Vladi Republike Slovenije (ZVRS-J), druga obravnava",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "rejected",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "295-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Sklep o razglasitvi odločitve, ki je bila sprejeta na ponovnem glasovanju na zakonodajnem referendumu o Zakonu o izgradnji, upravljanju in gospodarjenju z drugim tirom železniške proge Divača-Koper (ZIUGDT), ki je bil 13. 5. 2018",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "enacted",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "44-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog deklaracije o usmeritvah za delovanje Republike Slovenije v institucijah Evropske unije v obdobju januar 2019–junij 2020",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "enacted",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "347-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog priporočila v zvezi s problematiko škodljivih in uničujočih ukrepov zoper slovenske podjetnike, ki so dogovorjeni v koalicijski pogodbi ter napadov oziroma ogrožanja slovenskega gospodarstva in s tem blaginje vseh državljanov",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "in_procedure",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "120-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Zahteva za odreditev parlamentarne preiskave izvajanja programa otroške kardiologije ter neracionalnih in nezakonitih nabav medicinske opreme in zdravstvenega materiala na sekundarni in terciarni ravni zdravstvene dejavnosti v Republiki Sloveniji z namenom oblikovanja predlogov za spremembo zakonodaje in za druge odločitve Državnega zbora iz njegove pristojnosti ter za ugotovitev in oceno dejanskega stanja za ugotovitev politične in drugih odgovornosti nosilcev javnih funkcij v zdravstvenih ustanovah na sekundarni in terciarni ravni v Republiki Sloveniji",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "enacted",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "304-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog odloka o načrtu ravnanja s stvarnim premoženjem države za organe državne uprave, pravosodne organe, javne zavode, javne gospodarske zavode, javne agencije in javne sklade za leto 2019 (OdRSPODU19-1)",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "enacted",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": true,
+      "epa": "388-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog zakona o spremembi Zakona o državni upravi (ZDU-1K)",
+      "has_link": false,
+      "type_of_law": null,
+      "result": null,
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": true,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "296-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Predlog priporočila v zvezi z odgovornostjo vlade Mira Cerarja kot skupščine SDH-ja, ki so jo sestavljale politične stranke SMC, SD in DeSUS za škodo, ki je slovenskim davkoplačevalcem nastala zaradi zamud od decembra 2016 do novembra 2018 pri prodaji večinskega deleža v NLB d. d.",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "rejected",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "261-VIII"
+    },
+    {
+      "classification": null,
+      "abstractVisible": true,
+      "text": "Zahteva za odreditev parlamentarne preiskave za ugotovitev in oceno dejanskega stanja za ugotovitev politične odgovornosti nosilcev javnih funkcij zaradi suma vplivanja na domnevno pranje denarja v Novi Kreditni banki Maribor, d. d., s strani tujih državljanov in z njimi povezanih pravnih in fizičnih oseb in za ugotovitev in oceno dejanskega stanja za ugotovitev politične odgovornosti nosilcev javnih funkcij zaradi suma nezakonitega financiranja politične stranke Slovenske demokratske stranke in suma delovanja izdajateljev medijev v lasti te politične stranke in njenih funkcionarjev ter članov in z njimi povezanih pravnih in fizičnih oseb z namenom nezakonitega financiranja volilne kampanje za predčasne volitve poslancev v Državni zbor leta 2018 ter za morebitno spremembo zakonodaje, ki ureja področja preprečevanja pranja denarja in financiranja terorizma, financiranja političnih strank, financiranja volilne kampanje, ustanavljanja in lastninsko-upravljavsko ureditev izdajateljev medijev ter financiranja izdajanja in delovanja medijev v času volilne kampanje",
+      "has_link": false,
+      "type_of_law": null,
+      "result": "enacted",
+      "date": "",
+      "mdt": {
+        "name": "",
+        "id": null
+      },
+      "icon": null,
+      "has_discussion": false,
+      "mdt_text": null,
+      "hasVotes": false,
+      "epa": "305-VIII"
     }
   ]
 }

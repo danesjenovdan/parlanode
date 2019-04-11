@@ -62,38 +62,25 @@
                   <plus @click="toggleModal('different', true)" />
                 </span>
               </i18n>
-              <div class="row primerjalnik-extras">
-                <div class="col-md-6 nopadding">
-                  <div class="searchfilter-checkbox">
-                    <input
-                      id="rev"
-                      :checked="special"
-                      type="checkbox"
-                      class="checkbox"
-                      @click="toggleSpecial"
-                    >
-                    <label v-t="'ignore-absent'" for="rev"></label>
-                  </div>
+              <div class="searchfilter-checkboxes">
+                <div class="searchfilter-checkbox">
+                  <input
+                    id="ignore-absent"
+                    :checked="special"
+                    type="checkbox"
+                    class="checkbox"
+                    @click="toggleSpecial"
+                  >
+                  <label v-t="'ignore-absent'" for="ignore-absent"></label>
                 </div>
-                <!-- <div class="col-md-6 nopadding">
-                  <div class="searchfilter-checkbox">
-                    <input
-                      id="rev"
-                      :checked="special"
-                      type="checkbox"
-                      class="checkbox"
-                      @click="toggleSpecial"
-                    >
-                    <label v-t="'ignore-absent'" for="rev"></label>
-                  </div>
-                </div> -->
               </div>
             </div>
             <div class="primerjalnik-button">
+              <div class="spacer"></div>
               <span place="load" class="load-button">
                 <load-link :text="$t('load')" @click="loadResults" />
               </span>
-              <div class="row primerjalnik-extras">
+              <div>
                 <i18n path="comparator-vote-percent" tag="p" class="summary">
                   <strong place="num">{{ votes.length }}</strong>
                   <strong place="percent">
@@ -459,171 +446,6 @@ export default {
   min-height: 660px;
 }
 
-.primerjalnik {
-  /deep/.text-frame  {
-    overflow: hidden;
-    padding: 0;
-  }
-  .primerjalnik-text {
-    width: 65%;
-    float: left;
-    padding: 30px 30px 10px 30px;
-
-    @include respond-to(mobile) {
-      width: 100%;
-      & p {
-        border-bottom: 1px solid $tools-border;
-        padding-bottom: 25px;
-        margin-bottom: -20px;
-      }
-    }
-  }
-  .primerjalnik-button {
-    width: 35%;
-    float: left;
-    text-align: center;
-    position: relative;
-
-    .load-button {
-      display: inline-block;
-      margin-top: 40px;
-
-      @include respond-to(mobile) {
-        margin-top: 20px;
-      }
-    }
-
-    &::before {
-      content: '';
-      height: 88%;
-      width: 1px;
-      background-color: $tools-border;
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 12px;
-
-      @include respond-to(limbo) {
-        // height: 115%;
-      }
-    }
-
-    @include respond-to(mobile) {
-      width: 100%;
-
-      &:before {
-        display: none;
-      }
-    }
-  }
-  .primerjalnik-extras {
-    margin: 40px 0 0;
-  }
-
-  .searchfilter-checkbox {
-    height: 40px;
-
-    @include respond-to(mobile) {
-      // height: auto;
-    }
-
-    label {
-      text-align: left;
-      margin-bottom: 0;
-
-      @include respond-to(small-mobile) {
-        line-height: 1.4em;
-        padding-top: 10px;
-      }
-    }
-  }
-
-  .summary {
-    margin-bottom: 0;
-    line-height: 20px;
-    text-align: center;
-
-    font-size: 11px;
-    color: $font-default;
-
-    padding: 10px;
-
-    @include respond-to(mobile) {
-      // text-align: left;
-      margin-top: 0;
-      line-height: 1.4em;
-      padding-left: 10px;
-      margin-top: -20px;
-      margin-bottom: 15px;
-    }
-  }
-}
-
-.primerjalnik-ps-switch {
-  background: $white;
-  cursor: pointer;
-  padding: 5px;
-  display: inline-block;
-  margin: 5px;
-  color: $font-default;
-
-  &::after {
-    content: '×';
-    margin-left: 8px;
-    font-size: 20px;
-    line-height: 20px;
-    position: relative;
-    top: 2px;
-    transform: rotate(45deg);
-    display: inline-block;
-    transition: transform 0.2s ease-out;
-    color: $first;
-  }
-
-  &.on {
-    background: $first;
-    color: $white;
-
-    &::after {
-      transform: rotate(0deg);
-      color: $white;
-    }
-  }
-}
-
-.loadme {
-  background: $second;
-  width: 200px;
-  height: 50px;
-  margin: auto;
-  display: block;
-  position: relative;
-}
-
-.searchfilter-checkbox .checkbox + label:before {
-  background-color: transparent;
-}
-
-.searchfilter-checkbox .checkbox + label {
-  font-size: 11px;
-  color: $font-default;
-}
-
-.tab-content {
-  height: 420px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.mdt-wrapper {
-  height: 420px;
-}
-
-.nopadding {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 #primerjalnik {
   /deep/ .p-tabs .p-tabs-content,
   /deep/ .p-tabs .p-tabs-content .tab-content {
@@ -645,6 +467,10 @@ export default {
 
       .chart-label .label-container {
         line-height: 1;
+
+        @include respond-to(mobile) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -652,6 +478,126 @@ export default {
   .glasovanja {
     /deep/ #votingCard {
       height: 420px;
+    }
+  }
+
+  .tab-content,
+  .mdt-wrapper {
+    height: 420px;
+  }
+
+  .primerjalnik-ps-switch {
+    background: $white;
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px;
+    color: $font-default;
+
+    &::after {
+      content: '×';
+      margin-left: 8px;
+      font-size: 20px;
+      line-height: 20px;
+      position: relative;
+      top: 2px;
+      transform: rotate(45deg);
+      display: inline-block;
+      transition: transform 0.2s ease-out;
+      color: $first;
+    }
+
+    &.on {
+      background: $first;
+      color: $white;
+
+      &::after {
+        transform: rotate(0deg);
+        color: $white;
+      }
+    }
+  }
+
+  .primerjalnik.text-frame {
+    display: flex;
+    padding: 10px;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
+
+    .primerjalnik-text,
+    .primerjalnik-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .primerjalnik-text {
+      flex: 1 0 66%;
+      padding: 5px 10px 5px 0;
+
+      @include respond-to(mobile) {
+        padding-right: 0;
+      }
+
+      p {
+        margin: 15px 0 20px;
+
+        @include respond-to(mobile) {
+          border-bottom: 1px solid $tools-border;
+          padding-bottom: 25px;
+        }
+      }
+
+      .searchfilter-checkboxes {
+        display: flex;
+        justify-content: center;
+
+        @include respond-to(mobile) {
+          margin-bottom: 20px;
+        }
+
+        .searchfilter-checkbox {
+          height: 30px;
+
+          .checkbox + label {
+            text-align: left;
+            margin-bottom: 0;
+            font-size: 11px;
+            line-height: 30px;
+            color: $font-default;
+
+            &::before {
+              margin-top: 0;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .primerjalnik-button {
+      flex: 1 0 33%;
+      padding: 5px 0 5px 10px;
+      border-left: 1px solid $tools-border;
+
+      @include respond-to(mobile) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .summary {
+        margin: 0;
+        line-height: 20px;
+        text-align: center;
+        font-size: 11px;
+        color: $font-default;
+
+        @include respond-to(mobile) {
+          margin-top: 15px;
+        }
+      }
     }
   }
 }

@@ -8,11 +8,17 @@
       class="search-dropdown-clear"
       @click="clearSelection"
     >×</div>
+    <!--
+      Don't use v-model="localFilter" because it doesn't work on mobile
+      because of text composition (autocomplete/autocorrect)
+      See: https://github.com/vuejs/vue/issues/8231
+    -->
     <input
-      v-model="localFilter"
+      :value="localFilter"
       :placeholder="adjustedPlaceholder"
       class="search-dropdown-input"
       type="text"
+      @input="localFilter = $event.target.value"
       @focus="toggleDropdown(true)"
       @keydown.enter.prevent="pressEnter"
       @keydown.up.prevent="focus(focused - 1, true)"

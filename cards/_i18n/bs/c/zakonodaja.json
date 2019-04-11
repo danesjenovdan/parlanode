@@ -17,5 +17,6 @@
     ]
   },
   "select-working-body-placeholder": "Odaberi radno tijelo",
-  "only-abstracts": "Samo po sažecima"
+  "only-abstracts": "Samo po sažecima",
+  "only-with-votes": "Samo z glasovanji"
 }

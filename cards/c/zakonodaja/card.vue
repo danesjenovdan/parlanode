@@ -98,19 +98,21 @@ export default {
       .reverse()
       .map(JSON.parse);
 
+    const state = this.$options.cardData.parlaState || {};
+
     const tabs = this.$options.cardData.cardGlobals.legislation_tabs;
     return {
       tabs,
       data: this.$options.cardData.data.results,
       filters: tabs.map(e => ({ id: e.title, label: e.title })),
-      currentFilter: this.$options.cardData.parlaState.filter || tabs[0].title,
+      currentFilter: state.type || tabs[0].title,
       currentSort: 'updated',
       currentSortOrder: 'desc',
-      textFilter: '',
+      textFilter: state.text || '',
       workingBodies: [],
       allWorkingBodies,
-      onlyAbstracts: false,
-      onlyWithVotes: false,
+      onlyAbstracts: !!state.onlyAbstracts,
+      onlyWithVotes: !!state.onlyWithVotes,
     };
   },
   computed: {
@@ -176,6 +178,14 @@ export default {
       // @todo probably needs a good fix
       if (this.selectedWorkingBodies.length) {
         state.wb = this.selectedWorkingBodies;
+      }
+
+      if (this.onlyAbstracts) {
+        state.onlyAbstracts = true;
+      }
+
+      if (this.onlyWithVotes) {
+        state.onlyWithVotes = true;
       }
 
       return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getAllLegislation/`)}`;
@@ -295,12 +305,22 @@ export default {
     &:nth-child(4),
     &:nth-child(5) .text {
       @include respond-to(mobile) {
-        display:none;
+        display: none;
       }
     }
 
-    &:nth-child(5) .text {
-      font-size: 16px !important;
+    &:nth-child(5) {
+      @include respond-to(mobile) {
+        max-width: 52px;
+
+        .outcome {
+          justify-content: center;
+        }
+      }
+
+      .text {
+        font-size: 16px !important;
+      }
     }
 
     &.small-text {
@@ -335,12 +355,16 @@ export default {
       }
     }
 
-    .text-filter {
-      @include respond-to(desktop) {
-        width: 26%;
-      }
+    .filter {
+      flex: 1.5;
+    }
 
-      width: 100%;
+    .text-filter {
+      flex-basis: 100%;
+
+      @include respond-to(desktop) {
+        flex-basis: 0%;
+      }
 
       .text-filter-input {
         background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
@@ -359,7 +383,26 @@ export default {
 
     .checkbox-filters {
       display: flex;
+      flex-wrap: wrap;
       flex: 1.5;
+
+      .filter.align-checkbox {
+        margin-left: 10px;
+        flex-basis: 160px;
+        margin-top: 12px;
+      }
+
+      @include respond-to(desktop) {
+        margin-top: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 365px;
+
+        .filter.align-checkbox {
+          margin-left: 20px;
+          margin-top: 0px;
+        }
+      }
 
       label[for="only-abstracts"]::after,
       label[for="only-with-votes"]::after {
@@ -381,10 +424,6 @@ export default {
         background-image: url('#{icon-votes($font-default)}');
         background-size: 19px;
       }
-    }
-
-    .filter {
-      flex: 1.5;
     }
   }
 }

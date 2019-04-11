@@ -309,13 +309,13 @@
     "glasovanja": "/glasovanja/"
   },
   "urls": {
-    "glej": "http://glej.nov.parlameter.si",
-    "notifications_api": "http://obvestila.nov.parlameter.si",
-    "isci": "http://isci.nov.parlameter.si",
-    "analize": "http://analize.nov.parlameter.si/v1",
+    "glej": "https://glej.nov.parlameter.si",
+    "notifications_api": "https://obvestila.nov.parlameter.si",
+    "isci": "https://isci.nov.parlameter.si",
+    "analize": "https://analize.nov.parlameter.si/v1",
     "base": "http://localhost:3066",
-    "data": "http://data.nov.parlameter.si/v1",
-    "cdn": "http://cdn.nov.parlameter.si/v1/parlassets"
+    "data": "https://data.nov.parlameter.si/v1",
+    "cdn": "https://cdn.nov.parlameter.si/v1/parlassets"
   },
   "party": {
     "1": {

@@ -13,8 +13,12 @@
       "link": "http://www.sabor.hr/hr"
     }
   },
-  "elected-to-district--m": "Izabran s {numVotes} glasova - {district}",
-  "elected-to-district--f": "Izabrana s {numVotes} glasova - {district}",
+  "elected-to-district": "Št. glasov: {numVotes}, {district}",
+  "elected-to-district--m": "Prejel {numVotes} glasov v okraju {district}",
+  "elected-to-district--f": "Prejela {numVotes} glasov v okraju {district}",
+  "elected-to-district-with-points": "Št. točk: {numVotes}, {district}",
+  "elected-to-district-with-points--m": "Prejel {numVotes} točk v okraju {district}",
+  "elected-to-district-with-points--f": "Prejela {numVotes} točk v okraju {district}",
   "age": "Dob: {age} godina",
   "no-social-media": "nije na društvenim mrežama."
 }

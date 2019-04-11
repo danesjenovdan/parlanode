@@ -12,7 +12,14 @@
       <p v-t="'info.text[0]'" class="info-text"></p>
       <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
-    <person-list :people="people" />
+    <person-list
+      v-if="people.length > 2"
+      :people="people"
+    />
+    <empty-circle
+      v-else
+      :text="$t('card.empty-state-text')"
+    />
   </card-wrapper>
 </template>
 
@@ -23,12 +30,14 @@ import { partyTitle } from 'mixins/titles';
 import { partyHeader } from 'mixins/altHeaders';
 import { partyOgImage } from 'mixins/ogImages';
 import PersonList from 'components/PersonList.vue';
+import EmptyCircle from 'components/EmptyCircle.vue';
 
 export default {
   name: 'NeujemanjeSPoslanskoSkupino',
   components: {
     PersonList,
     partyTitle,
+    EmptyCircle,
   },
   mixins: [
     common,
@@ -56,3 +65,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+/deep/ .circle {
+  padding-top: 130px !important;
+}
+</style>

@@ -193,11 +193,7 @@ export default {
       }
 
       if (this.selectedMonths.length > 0) {
-        // since dates in month dropdown are generated as m-y we need to prepare them as 1.m.y
-        state.time_filter = this.selectedMonths.map((m) => {
-          const [year, month] = m.id.split('-');
-          return [1, month, year].join('.');
-        });
+        state.months = this.selectedMonths.map(m => m.id).join(',');
       }
 
       if (this.selectedWorkingBodies.length > 0) {

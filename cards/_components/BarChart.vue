@@ -116,10 +116,8 @@ export default {
       margin-bottom: -5px;
       font-size: 16px;
       font-weight: 300;
-      a {
-        @include respond-to(mobile) {
-          font-size: 14px;
-        }
+      @include respond-to(mobile) {
+        font-size: 14px;
       }
 
       .portrait {

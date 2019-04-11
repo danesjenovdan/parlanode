@@ -2,242 +2,212 @@
   "data": [
     {
       "party": {
-        "acronym": "HDZ",
+        "acronym": "SDS",
+        "name": "Slovenska demokratska stranka",
         "is_coalition": false,
-        "name": "Klub zastupnika Hrvatske demokratske zajednice",
-        "id": 343
+        "classification": "pg",
+        "id": 2
       },
       "results": {
-        "intra_disunion": 0.22201440001449774,
-        "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 118.0,
-        "number_of_questions": 149.0,
-        "seat_count": 56,
-        "presence_votes": 97.8579294443558,
-        "presence_sessions": 99.5535714285714,
-        "problematicno": 0,
-        "preprosto": 0
+        "intra_disunion": 0.40921836663145106,
+        "number_of_amendments": 23,
+        "privzdignjeno": 0.3815078834204986,
+        "vocabulary_size": 107,
+        "number_of_questions": 373,
+        "seat_count": 25,
+        "presence_votes": 66.6372239747634,
+        "presence_sessions": 81.44,
+        "problematicno": 0.6724487237623208,
+        "preprosto": 0.24237226749428414
       }
     },
     {
       "party": {
-        "acronym": "SDP",
-        "is_coalition": false,
-        "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
-        "id": 339
+        "acronym": "LMŠ",
+        "name": "Lista Marjana Šarca",
+        "is_coalition": true,
+        "classification": "pg",
+        "id": 3
       },
       "results": {
-        "intra_disunion": 1.79175928537882,
+        "intra_disunion": 0.21868772657403787,
         "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 111.0,
-        "number_of_questions": 376.0,
-        "seat_count": 34,
-        "presence_votes": 51.1556423716207,
-        "presence_sessions": 100.0,
-        "problematicno": 0,
-        "preprosto": 0
-      }
-    },
-    {
-      "party": {
-        "acronym": "Most",
-        "is_coalition": false,
-        "name": "Klub zastupnika Mosta nezavisnih lista",
-        "id": 335
-      },
-      "results": {
-        "intra_disunion": 4.118231659169987,
-        "number_of_amendments": 1,
-        "privzdignjeno": 0,
-        "vocabulary_size": 117.0,
-        "number_of_questions": 153.0,
+        "privzdignjeno": 0.9850673930971419,
+        "vocabulary_size": 126,
+        "number_of_questions": 28,
         "seat_count": 13,
-        "presence_votes": 56.6666276155805,
-        "presence_sessions": 95.1923076923077,
-        "problematicno": 0,
-        "preprosto": 0
+        "presence_votes": 96.9238217706605,
+        "presence_sessions": 98.7692307692308,
+        "problematicno": 1.185085015592812,
+        "preprosto": 0.5891627118307506
       }
     },
     {
       "party": {
-        "acronym": "BM 365 + Reformisti + Nezavisni",
-        "is_coalition": false,
-        "name": "Klub zastupnika Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika",
-        "id": 334
+        "acronym": "SD",
+        "name": "Socialni demokrati",
+        "is_coalition": true,
+        "classification": "pg",
+        "id": 4
       },
       "results": {
-        "intra_disunion": 1.8000103971712877,
-        "number_of_amendments": 3,
-        "privzdignjeno": 0,
-        "vocabulary_size": 105.0,
-        "number_of_questions": 22.0,
-        "seat_count": 7,
-        "presence_votes": 94.1929499072356,
-        "presence_sessions": 100.0,
-        "problematicno": 0,
-        "preprosto": 0
-      }
-    },
-    {
-      "party": {
-        "acronym": "HNS",
-        "is_coalition": false,
-        "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata",
-        "id": 340
-      },
-      "results": {
-        "intra_disunion": 1.2336244541487995,
+        "intra_disunion": 1.2087526914022082,
         "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 107.0,
-        "number_of_questions": 16.0,
-        "seat_count": 6,
-        "presence_votes": 93.7593399750934,
-        "presence_sessions": 100.0,
-        "problematicno": 0,
-        "preprosto": 0
+        "privzdignjeno": 0.5933077978568028,
+        "vocabulary_size": 134,
+        "number_of_questions": 39,
+        "seat_count": 11,
+        "presence_votes": 90.5936334958417,
+        "presence_sessions": 95.2727272727273,
+        "problematicno": 0.8484539959416741,
+        "preprosto": 0.4428976175229998
       }
     },
     {
       "party": {
-        "acronym": "GLAS + HSU",
-        "is_coalition": false,
-        "name": "Klub zastupnika Gra\u0111ansko-liberalnog saveza i Hrvatske stranke umirovljenika",
-        "id": 324
+        "acronym": "SMC",
+        "name": "Stranka modernega centra",
+        "is_coalition": true,
+        "classification": "pg",
+        "id": 5
       },
       "results": {
-        "intra_disunion": 6.892285298398034,
-        "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 106.0,
-        "number_of_questions": 46.0,
-        "seat_count": 6,
-        "presence_votes": 57.2077922077922,
-        "presence_sessions": 93.75,
-        "problematicno": 0,
-        "preprosto": 0
+        "intra_disunion": 0.1151669921384858,
+        "number_of_amendments": 2,
+        "privzdignjeno": 0.9059146487651697,
+        "vocabulary_size": 112,
+        "number_of_questions": 37,
+        "seat_count": 9,
+        "presence_votes": 90.8141894715309,
+        "presence_sessions": 92.8333333333333,
+        "problematicno": 1.2540858609823005,
+        "preprosto": 0.49097974903920827
       }
     },
     {
       "party": {
-        "acronym": "HSS",
+        "acronym": "Levica",
+        "name": "Levica",
         "is_coalition": false,
-        "name": "Klub zastupnika Hrvatske selja\u010dke stranke",
-        "id": 337
+        "classification": "pg",
+        "id": 6
       },
       "results": {
-        "intra_disunion": 1.5720524017463973,
-        "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 89.0,
-        "number_of_questions": 40.0,
-        "seat_count": 5,
-        "presence_votes": 43.0649350649351,
-        "presence_sessions": 95.0,
-        "problematicno": 0,
-        "preprosto": 0
-      }
-    },
-    {
-      "party": {
-        "acronym": "\u017divi zid + SNAGA",
-        "is_coalition": false,
-        "name": "Klub zastupnika \u017divog zida i SNAGA-e",
-        "id": 319
-      },
-      "results": {
-        "intra_disunion": 12.481804949048895,
-        "number_of_amendments": 15,
-        "privzdignjeno": 0,
-        "vocabulary_size": 123.0,
-        "number_of_questions": 191.0,
-        "seat_count": 4,
-        "presence_votes": 61.4285714285714,
-        "presence_sessions": 100.0,
-        "problematicno": 0,
-        "preprosto": 0
-      }
-    },
-    {
-      "party": {
-        "acronym": "IDS + PGS + RI",
-        "is_coalition": false,
-        "name": "Klub zastupnika Istarskog demokratskog sabora, Primorsko-goranskog saveza, Liste za Rijeku",
-        "id": 310
-      },
-      "results": {
-        "intra_disunion": 4.112081513827073,
+        "intra_disunion": 0.08762705923596213,
         "number_of_amendments": 6,
-        "privzdignjeno": 0,
-        "vocabulary_size": 113.0,
-        "number_of_questions": 24.0,
-        "seat_count": 4,
-        "presence_votes": 45.1298701298701,
-        "presence_sessions": 93.75,
-        "problematicno": 0,
-        "preprosto": 0
+        "privzdignjeno": 0.8967476125608497,
+        "vocabulary_size": 122,
+        "number_of_questions": 221,
+        "seat_count": 9,
+        "presence_votes": 56.7472835611637,
+        "presence_sessions": 82.6666666666667,
+        "problematicno": 1.4856046270700438,
+        "preprosto": 0.6093164983129324
       }
     },
     {
       "party": {
-        "acronym": "HDS + HSLS + HDSSB",
+        "acronym": "NSi",
+        "name": "Nova Slovenija - Krščanski demokrati",
         "is_coalition": false,
-        "name": "Klub zastupnika Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje",
-        "id": 333
+        "classification": "pg",
+        "id": 7
       },
       "results": {
-        "intra_disunion": 1.028020378456987,
+        "intra_disunion": 0.15772870662460567,
+        "number_of_amendments": 20,
+        "privzdignjeno": 0.6048118300638788,
+        "vocabulary_size": 119,
+        "number_of_questions": 71,
+        "seat_count": 7,
+        "presence_votes": 66.2911221270843,
+        "presence_sessions": 82.2857142857143,
+        "problematicno": 1.455237361594985,
+        "preprosto": 0.5064278978500902
+      }
+    },
+    {
+      "party": {
+        "acronym": "DeSUS",
+        "name": "Demokratična stranka upokojencev Slovenije",
+        "is_coalition": true,
+        "classification": "pg",
+        "id": 9
+      },
+      "results": {
+        "intra_disunion": 0.25236593059936907,
         "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 93.0,
-        "number_of_questions": 12.0,
-        "seat_count": 4,
-        "presence_votes": 87.5324675324675,
-        "presence_sessions": 93.75,
+        "privzdignjeno": 0.8417279158285782,
+        "vocabulary_size": 141,
+        "number_of_questions": 4,
+        "seat_count": 5,
+        "presence_votes": 95.4574132492113,
+        "presence_sessions": 96.8,
         "problematicno": 0,
-        "preprosto": 0
+        "preprosto": 0.6894833092079664
       }
     },
     {
       "party": {
-        "acronym": "NHR",
-        "is_coalition": false,
-        "name": "Klub zastupnika Neovisni za Hrvatsku",
-        "id": 330
+        "acronym": "SAB",
+        "name": "Stranka Alenke Bratušek",
+        "is_coalition": true,
+        "classification": "pg",
+        "id": 8
       },
       "results": {
-        "intra_disunion": 2.510917030566048,
-        "number_of_amendments": 1,
-        "privzdignjeno": 0,
-        "vocabulary_size": 134.0,
-        "number_of_questions": 6.0,
-        "seat_count": 3,
-        "presence_votes": 61.9047619047619,
-        "presence_sessions": 100.0,
-        "problematicno": 0,
-        "preprosto": 0
-      }
-    },
-    {
-      "party": {
-        "acronym": "SDSS",
-        "is_coalition": false,
-        "name": "Klub zastupnika Samostalne demokratske srpske stranke",
-        "id": 322
-      },
-      "results": {
-        "intra_disunion": 0.38209606986877725,
+        "intra_disunion": 0.42586750788643535,
         "number_of_amendments": 0,
-        "privzdignjeno": 0,
-        "vocabulary_size": 105.0,
-        "number_of_questions": 16.0,
-        "seat_count": 3,
-        "presence_votes": 92.202380952381,
-        "presence_sessions": 100.0,
+        "privzdignjeno": 1.2742204041677647,
+        "vocabulary_size": 113,
+        "number_of_questions": 22,
+        "seat_count": 5,
+        "presence_votes": 87.0201468058115,
+        "presence_sessions": 91.6333333333333,
+        "problematicno": 2.2459506652713275,
+        "preprosto": 0.9490845062607607
+      }
+    },
+    {
+      "party": {
+        "acronym": "SNS",
+        "name": "Slovenska nacionalna stranka",
+        "is_coalition": false,
+        "classification": "pg",
+        "id": 11
+      },
+      "results": {
+        "intra_disunion": 1.0252365930596214,
+        "number_of_amendments": 2,
+        "privzdignjeno": 1.5195912308988988,
+        "vocabulary_size": 107,
+        "number_of_questions": 160,
+        "seat_count": 4,
+        "presence_votes": 71.2145110410095,
+        "presence_sessions": 88,
+        "problematicno": 0.8531337497845363,
+        "preprosto": 1.7177418305050016
+      }
+    },
+    {
+      "party": {
+        "acronym": "IMNS",
+        "name": "Italijanska in madžarska narodna skupnost",
+        "is_coalition": false,
+        "classification": "pg",
+        "id": 10
+      },
+      "results": {
+        "intra_disunion": 2.2082018927444795,
+        "number_of_amendments": 0,
+        "privzdignjeno": 1.9971032833403906,
+        "vocabulary_size": 108,
+        "number_of_questions": 0,
+        "seat_count": 2,
+        "presence_votes": 76.3406940063091,
+        "presence_sessions": 76,
         "problematicno": 0,
-        "preprosto": 0
+        "preprosto": 3.7625336119760133
       }
     }
   ]

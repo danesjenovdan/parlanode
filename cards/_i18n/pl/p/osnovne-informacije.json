@@ -13,8 +13,12 @@
       "link": "http://www.sejm.gov.pl/"
     }
   },
-  "elected-to-district--m": "Wybrany z {numVotes} głosów {district}",
-  "elected-to-district--f": "Wybrana z {numVotes} głosów {district}",
+  "elected-to-district": "Št. glasov: {numVotes}, {district}",
+  "elected-to-district--m": "Prejel {numVotes} glasov v okraju {district}",
+  "elected-to-district--f": "Prejela {numVotes} glasov v okraju {district}",
+  "elected-to-district-with-points": "Št. točk: {numVotes}, {district}",
+  "elected-to-district-with-points--m": "Prejel {numVotes} točk v okraju {district}",
+  "elected-to-district-with-points--f": "Prejela {numVotes} točk v okraju {district}",
   "age": "Wiek: {age} lat",
   "no-social-media": "brak mediów społecznościowych"
 }

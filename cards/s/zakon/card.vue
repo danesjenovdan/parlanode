@@ -189,7 +189,9 @@ export default {
 #s_zakon {
   .card-content {
     // height: $full-card-height;
-    height: 637px;
+    @include respond-to(desktop) {
+      height: 637px;
+    }
   }
   .filters {
     margin-top: 10px;
@@ -259,9 +261,9 @@ export default {
       width: 100%;
 
       @include respond-to(mobile) {
-        padding: 14px 0px 14px 0px;
+        padding: 14px 0px 9px 0px;
         border-top: $section-border;
-        border-bottom: $section-border;
+        // border-bottom: $section-border;
         width: auto;
         text-align: center;
         justify-content: center;

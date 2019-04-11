@@ -13,6 +13,7 @@
   "vote-types": "Vrste glasanja",
   "select-placeholder": "Odaberi",
   "selected-placeholder": "Odabranih: {num}",
+  "data": "Podatki",
   "name": "Ime",
   "epa": "PZ\/PZE",
   "change": "Promjena",
@@ -22,10 +23,12 @@
   "education-level": "Stupanj obrazovanja",
   "education": "Obrazovanje",
   "number-of-votes": "Broj glasova",
+  "number-of-points": "Število točk",
   "number-of-terms": "Broj mandata",
   "previous-occupation": "Prijašnji status",
   "district": "Izborna jedinica",
   "birth-date": "Datum rođenja",
+  "gender": "Spol",
   "social-media": "Društvene mreže",
   "analysis": "Analiza",
   "vote-passed": "Prihvaćen",
@@ -66,6 +69,7 @@
   "sort-by": "Razvrstaj prema",
   "sort-by--inequality": "Razjedinjenosti",
   "sort-by--date": "Datumu",
+  "filtered-to-none": "Brez zadetkov",
   "mps": "Zastupnice",
   "party": "Klubovi",
   "parties": "Klubovi",
@@ -123,12 +127,12 @@
     "excessive-vocabulary": "Ekscesni rječnik"
   },
   "question": {
-    "asked--m": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--f": "Postavila je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--plural": "Postavio je pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--m": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--f": "{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.",
-    "asked--with-name--plural": "{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}."
+    "asked--m": "Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--f": "Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--plural": "Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--m": "{name} je zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--f": "{name} je zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.",
+    "asked--with-name--plural": "{name} so zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}."
   },
   "event": {
     "ballot--for--m": "Glasao je ZA {title}",
