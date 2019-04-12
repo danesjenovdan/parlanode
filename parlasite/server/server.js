@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const config = require('../config');
-const { i18n: _i18n, asyncRender: ar } = require('./utils');
+const { i18n: _i18n, asyncRender: ar, formatDate } = require('./utils');
 
 const i18n = _i18n(config.siteLang);
 
@@ -25,6 +25,7 @@ function setupExpress() {
     app.locals.i18n = i18n;
     app.locals.config = config;
     app.locals.sm = config.siteMap;
+    app.locals.formatDate = formatDate;
 
     // serve static assets
     app.use(serveStatic('public'));
