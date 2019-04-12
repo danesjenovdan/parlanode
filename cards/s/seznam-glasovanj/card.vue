@@ -140,7 +140,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#s_seznam-glasovanj /deep/ #votingCard {
+/deep/ #votingCard {
   height: auto;
   min-height: 500px;
 }

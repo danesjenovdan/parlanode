@@ -442,7 +442,7 @@ export default {
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/helper';
 
-#c_primerjalnik /deep/ .card-content {
+/deep/ .card-content {
   min-height: 660px;
 }
 

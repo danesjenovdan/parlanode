@@ -290,11 +290,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#dashboard_votings {
-  &.card-container,
-  & /deep/ .card-content {
-    overflow: visible;
-  }
+.card-container,
+/deep/ .card-content {
+  overflow: visible;
 }
 
 #dash-votings-list /deep/ {

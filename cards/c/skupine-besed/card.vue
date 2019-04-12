@@ -324,7 +324,7 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
-#c_skupine-besed /deep/ .card-content {
+/deep/ .card-content {
   min-height: 660px;
 }
 
