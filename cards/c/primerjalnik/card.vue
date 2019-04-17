@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="voteComparator" />
@@ -442,7 +442,7 @@ export default {
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/helper';
 
-#c_primerjalnik /deep/ .card-content {
+/deep/ .card-content {
   min-height: 660px;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :content-class="['full', {'is-loading': loading}]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
@@ -99,30 +99,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#s_raba-skozi-cas {
-  .timelinechart,
-  .timebarchart {
-    flex: 1;
-    height: 100%;
-    display: flex;
+.timelinechart,
+.timebarchart {
+  flex: 1;
+  height: 100%;
+  display: flex;
 
-    /deep/ svg {
-      width: 100%;
-      height: 100%;
-    }
+  /deep/ svg {
+    width: 100%;
+    height: 100%;
   }
+}
 
-  /deep/ .p-tabs {
-    height: 100%;
+/deep/ .p-tabs {
+  height: 100%;
 
-    .p-tabs-content {
-      display: flex;
-      align-items: center;
+  .p-tabs-content {
+    display: flex;
+    align-items: center;
 
-      .tab-content {
-        flex-basis: 100%;
-        height: 100%;
-      }
+    .tab-content {
+      flex-basis: 100%;
+      height: 100%;
     }
   }
 }

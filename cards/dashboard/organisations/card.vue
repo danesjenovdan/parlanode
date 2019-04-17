@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.cardData._id">
+    <dash-wrapper :id="$options.cardData.mountId">
       <div id="dash-organisations-list">
         <div v-if="orgs != null">
           <input

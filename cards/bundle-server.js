@@ -32,6 +32,7 @@ export default (context) => {
   // serialized as json and that would fail due to circular references
   const clientContext = {
     cardData: {
+      mountId: context.mountId,
       data: context.data,
       cardData: context.cardData,
       parlaState: context.parlaState,

@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -175,111 +175,112 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/breakpoints';
 
 #seznam-glasovanj {
-  .filters {
+  /deep/ .filters {
     margin-left: -10px;
     margin-right: -10px;
   }
 }
 
-#s_zakon {
-  .card-content {
-    // height: $full-card-height;
+/deep/ .card-content {
+  // height: $full-card-height;
+  @include respond-to(desktop) {
+    height: 637px;
+  }
+}
+
+/deep/ .filters {
+  margin-top: 10px;
+}
+
+/deep/ #votingCard {
+  max-height: 372px;
+}
+
+/deep/ .p-tabs .p-tabs-content,
+/deep/ .p-tabs .p-tabs-content .tab-content {
+  overflow-y: visible;
+  overflow-x: visible;
+
+  .scroll-shadow-top::after {
+    left: -20px;
+    right: -20px;
+    width: auto;
+  }
+}
+
+.result-container {
+  $section-border: 1px solid $font-placeholder;
+  background: $background;
+  margin: 7px 0 8px 0;
+  min-height: 90px;
+  padding: 10px 14px;
+  position: relative;
+
+  justify-content: space-between;
+
+  @include respond-to(desktop) {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  .result {
+    align-items: center;
+    // border-bottom: $section-border;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 10px 0;
+
     @include respond-to(desktop) {
-      height: 637px;
+      border-bottom: none;
+      border-right: $section-border;
+      padding: 0 22px 0 0;
     }
-  }
-  .filters {
-    margin-top: 10px;
-  }
-  #votingCard {
-    max-height: 372px;
-  }
-  .p-tabs .p-tabs-content,
-  .p-tabs .p-tabs-content .tab-content {
-    overflow-y: visible;
-    overflow-x: visible;
 
-    .scroll-shadow-top::after {
-      left: -20px;
-      right: -20px;
-      width: auto;
+    .text {
+      color: $font-default;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 12px;
     }
   }
 
-  .result-container {
-    $section-border: 1px solid $font-placeholder;
-    background: $background;
-    margin: 7px 0 8px 0;
-    min-height: 90px;
-    padding: 10px 14px;
-    position: relative;
+  .law-title {
+    padding-left: 14px;
+    padding-right: 14px;
 
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-    @include respond-to(desktop) {
-      display: flex;
-      margin-bottom: 24px;
-    }
+    font-family: 'Roboto Slab';
 
-    .result {
-      align-items: center;
+    width: 100%;
+
+    @include respond-to(mobile) {
+      padding: 14px 0px 9px 0px;
+      border-top: $section-border;
       // border-bottom: $section-border;
-      display: flex;
+      width: auto;
+      text-align: center;
       justify-content: center;
-      padding: 0 0 10px 0;
-
-      @include respond-to(desktop) {
-        border-bottom: none;
-        border-right: $section-border;
-        padding: 0 22px 0 0;
-      }
-
-      .text {
-        color: $font-default;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-left: 12px;
-      }
     }
+  }
 
-    .law-title {
-      padding-left: 14px;
-      padding-right: 14px;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-
-      font-family: 'Roboto Slab';
-
-      width: 100%;
-
-      @include respond-to(mobile) {
-        padding: 14px 0px 9px 0px;
-        border-top: $section-border;
-        // border-bottom: $section-border;
-        width: auto;
-        text-align: center;
-        justify-content: center;
-      }
+  /deep/ .result-chart {
+    margin-top: 10px;
+    justify-content: center;
+    @include respond-to(desktop) {
+      margin-top: 0;
+      border-left: $section-border;
     }
-
-    .result-chart {
-      margin-top: 10px;
-      justify-content: center;
-      @include respond-to(desktop) {
-        margin-top: 0;
-        border-left: $section-border;
-      }
-      svg {
-        margin-left: 14px;
-      }
+    svg {
+      margin-left: 14px;
     }
   }
 }

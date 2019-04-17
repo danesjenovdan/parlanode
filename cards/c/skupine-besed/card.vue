@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="wordGroups" />
@@ -324,7 +324,7 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
-#c_skupine-besed /deep/ .card-content {
+/deep/ .card-content {
   min-height: 660px;
 }
 

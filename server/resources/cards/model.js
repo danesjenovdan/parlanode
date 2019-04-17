@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const CardRender = mongoose.Schema({
   dateTime: { type: Date, default: Date.now },
   dataUrl: String,
+  dataUrls: Array, // THIS WAS ADDED TO ALLOW MULTIPLE URLS
   html: String,
   card: String,
   cardUrl: String,
@@ -28,6 +29,7 @@ const CardBuild = mongoose.Schema({
   lastBuilt: { type: Date, required: true },
   language: { type: String, required: true },
   dataUrl: String,
+  dataUrls: Array, // THIS WAS ADDED TO ALLOW MULTIPLE URLS
 });
 
 mongoose.model('CardBuild', CardBuild);
