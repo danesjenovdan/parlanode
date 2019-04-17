@@ -1,6 +1,9 @@
 {
   "_id": "c-search",
-  "dataUrl": "{analize}/p/getListOfMembersTickers/",
+  "dataUrls": {
+    "predstavnicki": "{analizeV2}/p/getListOfMembers/1",
+    "naroda": "{analizeV2}/p/getListOfMembers/51"
+  },
   "lastUpdate": "2019-04-09T15:15:43.795Z",
   "big": true,
   "high": true

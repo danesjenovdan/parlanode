@@ -22,6 +22,7 @@ import common from 'mixins/common';
 import TransparentWrapper from 'components/TransparentWrapper.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import links from 'mixins/links';
+import generators from 'mixins/generatePeopleAndParties';
 
 export default {
   name: 'MenuSearch',
@@ -32,45 +33,32 @@ export default {
   mixins: [
     common,
     links,
+    generators,
   ],
   data() {
-    const grouped = this.groupBy(
-      this.$options.cardData.data.data,
-      item => [item.person.party.acronym],
-    );
+    const groupedPredstavnicki = this.generateGrouped(this.$options.cardData.data.predstavnicki);
+    const groupsPredstavnicki = this.generateGroups(this.$options.cardData.data.predstavnicki);
+    const peoplePredstavnicki = this.generatePeople(this.$options.cardData.data.predstavnicki);
+    const partiesPredstavnicki = this.generateParties(this.$options.cardData.data.predstavnicki);
+    const groupedNaroda = this.generateGrouped(this.$options.cardData.data.naroda);
+    const groupsNaroda = this.generateGroups(this.$options.cardData.data.naroda);
+    const peopleNaroda = this.generatePeople(this.$options.cardData.data.naroda);
+    const partiesNaroda = this.generateParties(this.$options.cardData.data.naroda);
 
-    const groups = [{
-      label: this.$t('parties'),
-      items: grouped
-        .filter(group => group[0].person.party.classification === 'pg')
-        .map(group => group[0].person.party.acronym),
-    }].concat(grouped.map(group => ({
-      label: group[0].person.party.name,
-      acronym: group[0].person.party.acronym,
-      items: group.map(p => p.person.id),
-      id: group[0].person.party.id,
-    })));
-
-    const parties = grouped.map(group => ({
-      id: group[0].person.party.acronym,
-      label: group[0].person.party.acronym,
-      selected: false,
-      colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
-    }));
-
-    const people = this.$options.cardData.data.data.map(p => ({
-      id: p.person.id,
-      label: p.person.name,
-      selected: false,
-      image: this.getPersonPortrait(p.person),
-      acronym: p.person.party.acronym,
-    }));
+    const interimGroups = groupsPredstavnicki;
+    groupsNaroda.forEach((group) => {
+      if (group.label !== this.$t('parties')) {
+        interimGroups.push(group);
+      } else  {
+        interimGroups[0].items = interimGroups[0].items.concat(group.items);
+      }
+    });
 
     return {
-      grouped,
-      groups,
-      people,
-      parties,
+      grouped: groupedPredstavnicki.concat(groupedNaroda),
+      groups: interimGroups,
+      people: peoplePredstavnicki.concat(peopleNaroda),
+      parties: partiesPredstavnicki.concat(partiesNaroda),
       data: this.$options.cardData.data,
       filter: this.$options.cardData.parlaState ? (this.$options.cardData.parlaState.query || '') : '',
     };

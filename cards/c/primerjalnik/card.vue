@@ -189,6 +189,7 @@ import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
 import TimeChart from 'components/TimeChart.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import generators from 'mixins/generatePeopleAndParties';
 
 export default {
   name: 'PrimerjalnikGlasovanj',
@@ -211,6 +212,7 @@ export default {
   mixins: [
     common,
     links,
+    generators,
   ],
   data() {
     return {
@@ -334,59 +336,104 @@ export default {
   },
   mounted() {
     const self = this;
-    const PGPromise = $.ajax({
-      url: `${this.slugs.urls.data}/getAllPGs/`,
-      method: 'GET',
-      success: (data) => {
-        const sameParties = this.$options.cardData.parlaState.sameParties || [];
-        const differentParties = this.$options.cardData.parlaState.differentParties || [];
-        self.parties = Object.keys(data).map(partyId => ({
-          id: data[partyId].id,
-          acronym: data[partyId].acronym,
-          is_coalition: data[partyId].is_coalition,
-          name: data[partyId].name,
-          isSame: sameParties.indexOf(data[partyId].id) > -1,
-          isDifferent: differentParties.indexOf(data[partyId].id) > -1,
-        }));
-      },
-      error(error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      },
-    });
-    const peoplePromise = $.ajax({
-      url: `${this.slugs.urls.data}/getMPs/`,
-      method: 'GET',
-      success: (data) => {
-        const samePeople = this.$options.cardData.parlaState.samePeople || [];
-        const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
-        const sameData = JSON.parse(JSON.stringify(data));
-        self.samePeople = sameData.map(person => ({
-          selected: samePeople.indexOf(person.id) > -1,
-          label: person.name,
-          id: person.id,
-          image: self.getPersonPortrait(person),
-        }));
+    // used to be PGPromise
+    const sameParties = this.$options.cardData.parlaState.sameParties || [];
+    const differentParties = this.$options.cardData.parlaState.differentParties || [];
 
-        const differentData = JSON.parse(JSON.stringify(data));
-        self.differentPeople = differentData.map(person => ({
-          selected: differentPeople.indexOf(person.id) > -1,
-          label: person.name,
-          id: person.id,
-          image: self.getPersonPortrait(person),
-        }));
+    this.parties = this.generateParties(this.$options.cardData.data.predstavnicki)
+      .map(party => ({
+        id: party.properId,
+        acronym: party.acronym,
+        isCoalition: party.isCoalition,
+        name: party.name,
+        isSame: sameParties.indexOf(party.properId) > -1,
+        isDifferent: differentParties.indexOf(party.properId) > -1,
+      }))
+      .concat(this.generateParties(this.$options.cardData.data.naroda)
+        .map(party => ({
+          id: party.properId,
+          acronym: party.acronym,
+          isCoalition: party.isCoalition,
+          name: party.name,
+          isSame: sameParties.indexOf(party.properId) > -1,
+          isDifferent: differentParties.indexOf(party.properId) > -1,
+        })));
+    
+    // used to be peoplePromise
+    const samePeople = this.$options.cardData.parlaState.samePeople || [];
+    const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
 
-        this.loadResults();
-      },
-      error(error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      },
-    });
+    this.samePeople = this.generatePeople(this.$options.cardData.data.predstavnicki)
+      .concat(this.generatePeople(this.$options.cardData.data.naroda))
+      .map(person => ({
+        selected: samePeople.indexOf(person.id) > -1,
+        label: person.label,
+        id: person.id,
+        image: person.image,
+      }));
+    self.differentPeople = this.generatePeople(this.$options.cardData.data.predstavnicki)
+      .concat(this.generatePeople(this.$options.cardData.data.naroda))
+      .map(person => ({
+        selected: differentPeople.indexOf(person.id) > -1,
+        label: person.label,
+        id: person.id,
+        image: person.image,
+      }));
+    
+    this.loadResults();
+    // const PGPromise = $.ajax({
+    //   url: `${this.slugs.urls.data}/getAllPGs/`,
+    //   method: 'GET',
+    //   success: (data) => {
+    //     const sameParties = this.$options.cardData.parlaState.sameParties || [];
+    //     const differentParties = this.$options.cardData.parlaState.differentParties || [];
+    //     self.parties = Object.keys(data).map(partyId => ({
+    //       id: data[partyId].id,
+    //       acronym: data[partyId].acronym,
+    //       isCoalition: data[partyId].isCoalition,
+    //       name: data[partyId].name,
+    //       isSame: sameParties.indexOf(data[partyId].id) > -1,
+    //       isDifferent: differentParties.indexOf(data[partyId].id) > -1,
+    //     }));
+    //   },
+    //   error(error) {
+    //     // eslint-disable-next-line no-console
+    //     console.log(error);
+    //   },
+    // });
+    // const peoplePromise = $.ajax({
+    //   url: `${this.slugs.urls.data}/getMPs/`,
+    //   method: 'GET',
+    //   success: (data) => {
+    //     const samePeople = this.$options.cardData.parlaState.samePeople || [];
+    //     const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
+    //     const sameData = JSON.parse(JSON.stringify(data));
+    //     self.samePeople = sameData.map(person => ({
+    //       selected: samePeople.indexOf(person.id) > -1,
+    //       label: person.name,
+    //       id: person.id,
+    //       image: self.getPersonPortrait(person),
+    //     }));
 
-    Promise.all([PGPromise, peoplePromise]).then(() => {
-      this.loadResults();
-    });
+    //     const differentData = JSON.parse(JSON.stringify(data));
+    //     self.differentPeople = differentData.map(person => ({
+    //       selected: differentPeople.indexOf(person.id) > -1,
+    //       label: person.name,
+    //       id: person.id,
+    //       image: self.getPersonPortrait(person),
+    //     }));
+
+    //     this.loadResults();
+    //   },
+    //   error(error) {
+    //     // eslint-disable-next-line no-console
+    //     console.log(error);
+    //   },
+    // });
+
+    // Promise.all([peoplePromise]).then(() => {
+    //   this.loadResults();
+    // });
   },
   created() {
     const { template, siteMap: sm } = this.$options.cardData;

@@ -1,1089 +1,3930 @@
 {
-    "total": 2151,
-    "results": [{
-        "session": {
-            "name": "30. redna seja",
-            "date_ts": "2017-05-22T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "22. 5. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9580,
-            "in_review": true
+    "predstavnicki": {
+      "districts": [{
+        "1": "FBiH / Izborna jedinica 3"
+      }, {
+        "2": "FBiH / Izborna jedinica 5"
+      }, {
+        "3": "FBiH / Izborna jedinica 1"
+      }, {
+        "4": "FBiH / Izborna jedinica 4"
+      }, {
+        "5": "RS / Izborna jedinica 2"
+      }, {
+        "6": "RS / Izborna jedinica 1"
+      }, {
+        "7": "FBiH / Izborna jedinica 2"
+      }, {
+        "8": "RS / Izborna jedinica 3"
+      }, {
+        "9": "RS"
+      }, {
+        "10": "FBiH"
+      }],
+      "created_at": "2019-04-17T12:23:55.467",
+      "created_for": "2019-04-17",
+      "data": [{
+        "person": {
+          "name": "Adil Osmanovi\u0107",
+          "gov_id": "502",
+          "gender": "m",
+          "is_active": true,
+          "district": [5],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 42,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 32,
-            "motion_id": 7215,
-            "text": "Zakon o spremembi Zakona o socialnem varstvu - Glasovanje o zakonu v celoti",
-            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
-            "is_outlier": false,
-            "absent": 13,
-            "for": 39,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 56.0,
+            "rank": 12
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": 0
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 3.0,
+            "rank": 3
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1963-07-24"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 100,
+            "rank": 5
+          }
         }
-    }, {
-        "session": {
-            "name": "30. redna seja",
-            "date_ts": "2017-05-22T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "22. 5. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9580,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "Aida Baru\u010dija",
+          "gov_id": "542",
+          "gender": "f",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Poslanici bez kluba",
+            "classification": "unaligned MP",
+            "acronym": "Poslanici bez kluba",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 29
+          },
+          "type": "mp",
+          "id": 8,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 32,
-            "motion_id": 7215,
-            "text": "Zakon o spremembi Zakona o socialnem varstvu - Glasovanje o zakonu v celoti",
-            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
-            "is_outlier": false,
-            "absent": 13,
-            "for": 39,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1976-01-01"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "30. redna seja",
-            "date_ts": "2017-05-22T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "22. 5. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9580,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "Alma \u010colo",
+          "gov_id": "503",
+          "gender": "f",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 2,
+          "has_function": false
         },
         "results": {
-            "abstain": 9,
-            "against": 20,
-            "motion_id": 7202,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o omejevanju porabe alkohola - Glasovanje o zakonu v celoti",
-            "tags": ["Odbor za zdravstvo"],
-            "is_outlier": false,
-            "absent": 21,
-            "for": 40,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 96.0,
+            "rank": 9
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 3.0,
+            "rank": 3
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1961-01-15"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 251,
+            "rank": 4
+          }
         }
-    }, {
-        "session": {
-            "name": "22. redna seja",
-            "date_ts": "2016-09-19T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 9. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5574,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Borjana Kri\u0161to",
+          "gov_id": "518",
+          "gender": "f",
+          "is_active": true,
+          "district": [3],
+          "party": {
+            "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+            "classification": "pg",
+            "acronym": "HNS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 20
+          },
+          "type": "mp",
+          "id": 16,
+          "has_function": false
         },
         "results": {
-            "abstain": 8,
-            "against": 17,
-            "motion_id": 4842,
-            "text": "Zakon o pogrebni in pokopali\u0161ki dejavnosti - Ponovno odlo\u010danje",
-            "tags": ["Odbor za gospodarstvo"],
-            "is_outlier": false,
-            "absent": 9,
-            "for": 56,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 124.0,
+            "rank": 8
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 11.0,
+            "rank": 2
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1961-08-13"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 667,
+            "rank": 2
+          }
         }
-    }, {
-        "session": {
-            "name": "22. redna seja",
-            "date_ts": "2016-09-19T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 9. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5574,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Branislav Borenovi\u0107",
+          "gov_id": "536",
+          "gender": "m",
+          "is_active": true,
+          "district": [6],
+          "party": {
+            "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+            "classification": "pg",
+            "acronym": "SDS i PDP",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 25
+          },
+          "type": "mp",
+          "id": 10,
+          "has_function": false
         },
         "results": {
-            "abstain": 3,
-            "against": 23,
-            "motion_id": 4825,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o motornih vozilih - Glasovanje o zakonu v celoti",
-            "tags": ["Odbor za infrastrukturo, okolje in prostor"],
-            "is_outlier": false,
-            "absent": 32,
-            "for": 32,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 33.3333333333333,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 66.6666666666667,
+            "rank": 41
+          },
+          "birth_date": {
+            "score": "1973-03-04"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Damir Arnaut",
+          "gov_id": "538",
+          "gender": "m",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Mje\u0161oviti klub poslanika SBB \u2013 PDA",
+            "classification": "pg",
+            "acronym": "SBB i PDA",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 23
+          },
+          "type": "mp",
+          "id": 1,
+          "has_function": false
         },
         "results": {
-            "abstain": 1,
-            "against": 38,
-            "motion_id": 6775,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
-            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
-            "is_outlier": false,
-            "absent": 14,
-            "for": 37,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 89.0,
+            "rank": 10
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 3.0,
+            "rank": 3
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 83.3333333333333,
+            "rank": 39
+          },
+          "birth_date": {
+            "score": "1975-01-01"
+          },
+          "education": {
+            "score": "8"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 265,
+            "rank": 3
+          }
         }
-    }, {
-        "session": {
-            "name": "26. redna seja",
-            "date_ts": "2017-01-23T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "23. 1. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 8940,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Darijana Kati\u0107",
+          "gov_id": "517",
+          "gender": "f",
+          "is_active": true,
+          "district": [7],
+          "party": {
+            "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+            "classification": "pg",
+            "acronym": "HNS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 20
+          },
+          "type": "mp",
+          "id": 19,
+          "has_function": false
         },
         "results": {
-            "abstain": 1,
-            "against": 38,
-            "motion_id": 6775,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
-            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
-            "is_outlier": false,
-            "absent": 14,
-            "for": 37,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1981-01-26"
+          },
+          "education": {
+            "score": ""
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "20. redna seja",
-            "date_ts": "2016-06-13T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 6. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5576,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Denis Zvizdi\u0107",
+          "gov_id": "504",
+          "gender": "m",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 38,
+          "has_function": false
         },
         "results": {
-            "abstain": 1,
-            "against": 38,
-            "motion_id": 4966,
-            "text": "Interpelacija o delu in odgovornosti ministrice za delo, dru\u017eino, socialne zadeve in enake mo\u017enosti, dr. Anje Kopa\u010d Mrak - Glasovanje o interpelaciji - MiDDSZEM Anja Kopa\u010d Mrak",
-            "tags": ["Interpelacija"],
-            "is_outlier": false,
-            "absent": 8,
-            "for": 43,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1964-06-09"
+          },
+          "education": {
+            "score": "8"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "6. redna seja",
-            "date_ts": "2015-03-25T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "25. 3. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6679,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Dragan Bogdani\u0107",
+          "gov_id": "511",
+          "gender": "m",
+          "is_active": true,
+          "district": [5],
+          "party": {
+            "name": "Klub poslanika Saveza nezavisnih socijaldemokrata \u2013 SNSD",
+            "classification": "pg",
+            "acronym": "SNSD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 24
+          },
+          "type": "mp",
+          "id": 9,
+          "has_function": false
         },
         "results": {
-            "abstain": 3,
-            "against": 42,
-            "motion_id": 6084,
-            "text": "Zakon o ban\u010dni\u0161tvu - Amandma: K 126. \u010dlenu 18.3.2015 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-            "tags": ["Odbor za finance in monetarno politiko"],
-            "is_outlier": false,
-            "absent": 25,
-            "for": 20,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1965-07-05"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "Dragan Mekti\u0107",
+          "gov_id": "531",
+          "gender": "m",
+          "is_active": true,
+          "district": [6],
+          "party": {
+            "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+            "classification": "pg",
+            "acronym": "SDS i PDP",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 25
+          },
+          "type": "mp",
+          "id": 25,
+          "has_function": false
         },
         "results": {
-            "abstain": 5,
-            "against": 41,
-            "motion_id": 4566,
-            "text": "Proceduralni predlog (pridobitev magnetograma seje Mandatno volilne komisije - nesprejet)",
-            "tags": ["Proceduralna glasovanja"],
-            "is_outlier": false,
-            "absent": 16,
-            "for": 28,
-            "result": null
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1956-12-24"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "24. redna seja",
-            "date_ts": "2016-11-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 11. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5572,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "D\u017eenan \u0110onlagi\u0107",
+          "gov_id": "529",
+          "gender": "m",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Klub poslanika DF-a",
+            "classification": "pg",
+            "acronym": "DF",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 22
+          },
+          "type": "mp",
+          "id": 3,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 36,
-            "motion_id": 4565,
-            "text": "Predlog za imenovanje na sodni\u0161ko mesto vrhovnega sodnika na Vrhovnem sodi\u0161\u010du Republike Slovenije - Glasovanje",
-            "tags": ["Proceduralna glasovanja"],
-            "is_outlier": false,
-            "absent": 16,
-            "for": 32,
-            "result": null
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1974-05-31"
+          },
+          "education": {
+            "score": "8"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "3. redna seja",
-            "date_ts": "2014-12-15T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "15. 12. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6682,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Edin Mu\u0161i\u0107",
+          "gov_id": "505",
+          "gender": "m",
+          "is_active": true,
+          "district": [7],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 31,
+          "has_function": false
         },
         "results": {
-            "abstain": 32,
-            "against": 0,
-            "motion_id": 6266,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o izvr\u0161evanju prora\u010dunov Republike Slovenije za leti 2014 in 2015 - Amandma: K 5. \u010dlenu 16.12.2014 [ZaAB - Poslanska skupina Zavezni\u0161tvo Alenke Bratu\u0161ek]",
-            "tags": ["Odbor za finance in monetarno politiko"],
-            "is_outlier": true,
-            "absent": 14,
-            "for": 44,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1962-07-16"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "3. redna seja",
-            "date_ts": "2014-12-15T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "15. 12. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6682,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Edita \u0110apo",
+          "gov_id": "539",
+          "gender": "f",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Mje\u0161oviti klub poslanika SBB \u2013 PDA",
+            "classification": "pg",
+            "acronym": "SBB i PDA",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 23
+          },
+          "type": "mp",
+          "id": 4,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 46,
-            "motion_id": 6218,
-            "text": "Zakon o spremembi in dopolnitvi Zakona o delovnih razmerjih - Eviden\u010dni sklep o primernosti predloga zakona 19.12.2014",
-            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
-            "is_outlier": false,
-            "absent": 7,
-            "for": 31,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1973-10-24"
+          },
+          "education": {
+            "score": "8"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 17,
+            "rank": 14
+          }
         }
-    }, {
-        "session": {
-            "name": "3. redna seja",
-            "date_ts": "2014-12-15T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "15. 12. 2014",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6682,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Enver Bijedi\u0107",
+          "gov_id": "522",
+          "gender": "m",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Klub poslanika SDP BiH",
+            "classification": "pg",
+            "acronym": "SDP BiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 21
+          },
+          "type": "mp",
+          "id": 5,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 46,
-            "motion_id": 6218,
-            "text": "Zakon o spremembi in dopolnitvi Zakona o delovnih razmerjih - Eviden\u010dni sklep o primernosti predloga zakona 19.12.2014",
-            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
-            "is_outlier": false,
-            "absent": 7,
-            "for": 31,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 200.0,
+            "rank": 1
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1961-11-02"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 20,
+            "rank": 11
+          }
         }
-    }, {
-        "session": {
-            "name": "5. redna seja",
-            "date_ts": "2015-03-02T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "2. 3. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6680,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Halid Genjac",
+          "gov_id": "506",
+          "gender": "m",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 20,
+          "has_function": false
         },
         "results": {
-            "abstain": 5,
-            "against": 28,
-            "motion_id": 6164,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o zakonski zvezi in dru\u017einskih razmerjih - Glasovanje o zakonu v celoti",
-            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
-            "is_outlier": false,
-            "absent": 6,
-            "for": 51,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 196.0,
+            "rank": 3
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1958-03-08"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 28,
+            "rank": 9
+          }
         }
-    }, {
-        "session": {
-            "name": "10. redna seja",
-            "date_ts": "2015-07-09T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "9. 7. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6675,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Jakov Gali\u0107",
+          "gov_id": "544",
+          "gender": "m",
+          "is_active": true,
+          "district": [8],
+          "party": {
+            "name": "Klub poslanika Srpski klub",
+            "classification": "pg",
+            "acronym": "SK",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 26
+          },
+          "type": "mp",
+          "id": 18,
+          "has_function": false
         },
         "results": {
-            "abstain": 2,
-            "against": 41,
-            "motion_id": 5892,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o gospodarskih dru\u017ebah - Amandma: K 2. \u010dlenu 3.7.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "tags": ["Odbor za gospodarstvo"],
-            "is_outlier": true,
-            "absent": 3,
-            "for": 44,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "11. redna seja",
-            "date_ts": "2015-09-21T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "21. 9. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6674,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Jasmin Emri\u0107",
+          "gov_id": "540",
+          "gender": "m",
+          "is_active": true,
+          "district": [3],
+          "party": {
+            "name": "Poslanici bez kluba",
+            "classification": "unaligned MP",
+            "acronym": "Poslanici bez kluba",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 29
+          },
+          "type": "mp",
+          "id": 13,
+          "has_function": false
         },
         "results": {
-            "abstain": 5,
-            "against": 30,
-            "motion_id": 5794,
-            "text": "Razprava o odgovoru ministra za infrastrukturo na poslansko vpra\u0161anje Janka Vebra glede izgradnje drugega \u017eelezni\u0161kega tira med Koprom in Diva\u010do - Eviden\u010dni sklep",
-            "tags": ["Poslanska vpra\u0161anja"],
-            "is_outlier": false,
-            "absent": 18,
-            "for": 37,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1969-11-29"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "11. redna seja",
-            "date_ts": "2015-09-21T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "21. 9. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6674,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Mijo Matanovi\u0107",
+          "gov_id": "519",
+          "gender": "m",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+            "classification": "pg",
+            "acronym": "HNS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 20
+          },
+          "type": "mp",
+          "id": 27,
+          "has_function": false
         },
         "results": {
-            "abstain": 9,
-            "against": 13,
-            "motion_id": 5790,
-            "text": "Razprava o odgovoru ministra za kmetijstvo, gozdarstvo in prehrano na poslansko vpra\u0161anje dr. Vinka Gorenaka v zvezi z na\u010drtovanimi in porabljenimi sredstvi reprezentance - Eviden\u010dni sklep",
-            "tags": ["Poslanska vpra\u0161anja"],
-            "is_outlier": true,
-            "absent": 41,
-            "for": 27,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1965-02-14"
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "11. redna seja",
-            "date_ts": "2015-09-21T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "21. 9. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6674,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Mira Peki\u0107",
+          "gov_id": "537",
+          "gender": "f",
+          "is_active": true,
+          "district": [6],
+          "party": {
+            "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+            "classification": "pg",
+            "acronym": "SDS i PDP",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 25
+          },
+          "type": "mp",
+          "id": 33,
+          "has_function": false
         },
         "results": {
-            "abstain": 1,
-            "against": 35,
-            "motion_id": 5789,
-            "text": "Predlog sklepa (razprava o odgovoru ministra za gospodarski razvoj in tehnologijo Zdravka Po\u010dival\u0161ka na poslansko vpra\u0161anje Marijana Pojbi\u010da v zvezi s prodajo dr\u017eavnega premo\u017eenja)",
-            "tags": ["Poslanska vpra\u0161anja"],
-            "is_outlier": false,
-            "absent": 30,
-            "for": 24,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 162.0,
+            "rank": 4
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1966-08-26"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 18,
+            "rank": 13
+          }
         }
-    }, {
-        "session": {
-            "name": "9. redna seja",
-            "date_ts": "2015-06-15T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "15. 6. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6676,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Mirjana Marinkovi\u0107 \u2013 Lepi\u0107",
+          "gov_id": "534",
+          "gender": "f",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Poslanici bez kluba",
+            "classification": "unaligned MP",
+            "acronym": "Poslanici bez kluba",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 29
+          },
+          "type": "mp",
+          "id": 22,
+          "has_function": false
         },
         "results": {
-            "abstain": 2,
-            "against": 63,
-            "motion_id": 5985,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o trgovini - Amandma: K 7. \u010dlenu 9.6.2015 [SD - Poslanska skupina Socialnih demokratov]",
-            "tags": ["Odbor za gospodarstvo"],
-            "is_outlier": false,
-            "absent": 10,
-            "for": 15,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 144.0,
+            "rank": 6
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1961-03-03"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 17,
+            "rank": 14
+          }
         }
-    }, {
-        "session": {
-            "name": "9. redna seja",
-            "date_ts": "2015-06-15T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "15. 6. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6676,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Mirko \u0160arovi\u0107",
+          "gov_id": "532",
+          "gender": "m",
+          "is_active": true,
+          "district": [8],
+          "party": {
+            "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+            "classification": "pg",
+            "acronym": "SDS i PDP",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 25
+          },
+          "type": "mp",
+          "id": 39,
+          "has_function": false
         },
         "results": {
-            "abstain": 18,
-            "against": 23,
-            "motion_id": 5951,
-            "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okro\u017ene sodnice na Okro\u017enem sodi\u0161\u010du v Slovenj Gradcu - Glasovanje",
-            "tags": ["Mandatno-volilna komisija"],
-            "is_outlier": false,
-            "absent": 19,
-            "for": 30,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 83.3333333333333,
+            "rank": 39
+          },
+          "birth_date": {
+            "score": "1956-09-16"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 9,
+            "rank": 16
+          }
         }
-    }, {
-        "session": {
-            "name": "9. redna seja",
-            "date_ts": "2015-06-15T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "15. 6. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6676,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Mirsad Kuki\u0107",
+          "gov_id": "543",
+          "gender": "m",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Mje\u0161oviti klub poslanika SBB \u2013 PDA",
+            "classification": "pg",
+            "acronym": "SBB i PDA",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 23
+          },
+          "type": "mp",
+          "id": 21,
+          "has_function": false
         },
         "results": {
-            "abstain": 13,
-            "against": 22,
-            "motion_id": 5950,
-            "text": "Predlog za izvolitev v sodni\u0161ko funkcijo na sodni\u0161ko mesto okrajnega sodnika na Okrajnem sodi\u0161\u010du v Kranju - Glasovanje",
-            "tags": ["Mandatno-volilna komisija"],
-            "is_outlier": false,
-            "absent": 18,
-            "for": 37,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 66.6666666666667,
+            "rank": 41
+          },
+          "birth_date": {
+            "score": "1958-04-27"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "10. redna seja",
-            "date_ts": "2015-07-09T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "9. 7. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6675,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Nada Mladina",
+          "gov_id": "523",
+          "gender": "f",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Klub poslanika SDP BiH",
+            "classification": "pg",
+            "acronym": "SDP BiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 21
+          },
+          "type": "mp",
+          "id": 29,
+          "has_function": false
         },
         "results": {
-            "abstain": 13,
-            "against": 28,
-            "motion_id": 5927,
-            "text": "Predlog za imenovanje \u010dlanov Nadzornega sveta Slovenske tiskovne agencije - Glasovanje o Predlogu sklepa o imenovanju \u010dlana Nadzornega sveta Slovenske tiskovne agencije - Lidija Pavlov\u010di\u010d",
-            "tags": ["Mandatno-volilna komisija"],
-            "is_outlier": false,
-            "absent": 3,
-            "for": 46,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 135.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 45.0,
+            "rank": 1
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 33.3333333333333,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1947-01-01"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 2281,
+            "rank": 1
+          }
         }
-    }, {
-        "session": {
-            "name": "25. redna seja",
-            "date_ts": "2016-12-12T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "12. 12. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 7654,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "Neboj\u0161a Radmanovi\u0107",
+          "gov_id": "512",
+          "gender": "m",
+          "is_active": true,
+          "district": [6],
+          "party": {
+            "name": "Klub poslanika Saveza nezavisnih socijaldemokrata \u2013 SNSD",
+            "classification": "pg",
+            "acronym": "SNSD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 24
+          },
+          "type": "mp",
+          "id": 35,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 40,
-            "motion_id": 6701,
-            "text": "Zakon o spremembah Zakona za uravnote\u017eenje javnih financ - Eviden\u010dni sklep o primernosti predloga zakona",
-            "tags": ["Odbor za finance in monetarno politiko"],
-            "is_outlier": false,
-            "absent": 18,
-            "for": 26,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1949-10-01"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "25. redna seja",
-            "date_ts": "2016-12-12T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "12. 12. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 7654,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "Nenad Ne\u0161i\u0107",
+          "gov_id": "541",
+          "gender": "m",
+          "is_active": true,
+          "district": [8],
+          "party": {
+            "name": "Klub poslanika Srpski klub",
+            "classification": "pg",
+            "acronym": "SK",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 26
+          },
+          "type": "mp",
+          "id": 40,
+          "has_function": false
         },
         "results": {
-            "abstain": 6,
-            "against": 33,
-            "motion_id": 6683,
-            "text": "Zakon o lekarni\u0161ki dejavnosti - Amandma: K 26. \u010dlenu 6.12.2016 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "tags": ["Odbor za zdravstvo"],
-            "is_outlier": false,
-            "absent": 11,
-            "for": 40,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "12. redna seja",
-            "date_ts": "2015-10-19T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 10. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5584,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Nenad Stevandi\u0107",
+          "gov_id": "513",
+          "gender": "m",
+          "is_active": true,
+          "district": [6],
+          "party": {
+            "name": "Klub poslanika Srpski klub",
+            "classification": "pg",
+            "acronym": "SK",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 26
+          },
+          "type": "mp",
+          "id": 36,
+          "has_function": false
         },
         "results": {
-            "abstain": 7,
-            "against": 40,
-            "motion_id": 5685,
-            "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
-            "is_outlier": false,
-            "absent": 31,
-            "for": 12,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 33.3333333333333,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1966-10-12"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "12. redna seja",
-            "date_ts": "2015-10-19T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 10. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5584,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Nermin Mandra",
+          "gov_id": "507",
+          "gender": "m",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 23,
+          "has_function": false
         },
         "results": {
-            "abstain": 7,
-            "against": 40,
-            "motion_id": 5685,
-            "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
-            "is_outlier": false,
-            "absent": 31,
-            "for": 12,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1969-12-17"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "12. redna seja",
-            "date_ts": "2015-10-19T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 10. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5584,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Nermin Nik\u0161i\u0107",
+          "gov_id": "524",
+          "gender": "m",
+          "is_active": true,
+          "district": [7],
+          "party": {
+            "name": "Klub poslanika SDP BiH",
+            "classification": "pg",
+            "acronym": "SDP BiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 21
+          },
+          "type": "mp",
+          "id": 41,
+          "has_function": false
         },
         "results": {
-            "abstain": 1,
-            "against": 38,
-            "motion_id": 5683,
-            "text": "Zakon o javnem naro\u010danju - Amandma: K 94. \u010dlenu 13.10.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "tags": ["Odbor za notranje zadeve, javno upravo in lokalno samoupravo"],
-            "is_outlier": false,
-            "absent": 31,
-            "for": 20,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1960-12-27"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "12. redna seja",
-            "date_ts": "2015-10-19T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "19. 10. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5584,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Nikola Lovrinovi\u0107",
+          "gov_id": "520",
+          "gender": "m",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+            "classification": "pg",
+            "acronym": "HNS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 20
+          },
+          "type": "mp",
+          "id": 24,
+          "has_function": false
         },
         "results": {
-            "abstain": 10,
-            "against": 38,
-            "motion_id": 5627,
-            "text": "Priporo\u010dilo v zvezi s problematiko delovanja Dru\u017ebe za upravljanje terjatev bank, d. d., v povezavi z dru\u017ebami in podjetji, katerih ban\u010dne terjatve so bile prenesene na Dru\u017ebo za upravljanje terjatev bank, d. d. - Glasovanje",
-            "tags": ["Komisija za nadzor javnih financ"],
-            "is_outlier": false,
-            "absent": 21,
-            "for": 21,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 41.0,
+            "rank": 13
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 2.0,
+            "rank": 6
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1960-09-19"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 96,
+            "rank": 6
+          }
         }
-    }, {
-        "session": {
-            "name": "5. redna seja",
-            "date_ts": "2015-03-02T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "2. 3. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 6680,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Obren Petrovi\u0107",
+          "gov_id": "533",
+          "gender": "m",
+          "is_active": true,
+          "district": [5],
+          "party": {
+            "name": "Klub poslanika Saveza nezavisnih socijaldemokrata \u2013 SNSD",
+            "classification": "pg",
+            "acronym": "SNSD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 24
+          },
+          "type": "mp",
+          "id": 34,
+          "has_function": false
         },
         "results": {
-            "abstain": 4,
-            "against": 53,
-            "motion_id": 6120,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o praznikih in dela prostih dnevih v Republiki Sloveniji - Amandma: K 1. \u010dlenu 24.2.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
-            "is_outlier": false,
-            "absent": 15,
-            "for": 18,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 16.6666666666667,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1957-05-11"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "29. redna seja",
-            "date_ts": "2017-04-20T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "20. 4. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9427,
-            "in_review": true
+      }, {
+        "person": {
+          "name": "Predrag Kojovi\u0107",
+          "gov_id": "535",
+          "gender": "m",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Poslanici bez kluba",
+            "classification": "unaligned MP",
+            "acronym": "Poslanici bez kluba",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 29
+          },
+          "type": "mp",
+          "id": 14,
+          "has_function": false
         },
         "results": {
-            "abstain": 9,
-            "against": 10,
-            "motion_id": 7064,
-            "text": "Zakon o vajeni\u0161tvu - Amandma: K 28. \u010dlenu 13.4.2017 [NSi - Poslanska skupina Nove Slovenije - kr\u0161\u010danskih demokratov]",
-            "tags": ["Odbor za izobra\u017eevanje, znanost, \u0161port in mladino"],
-            "is_outlier": false,
-            "absent": 24,
-            "for": 47,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1965-07-02"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "13. redna seja",
-            "date_ts": "2015-11-16T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 11. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5583,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Predrag Ko\u017eul",
+          "gov_id": "521",
+          "gender": "m",
+          "is_active": true,
+          "district": [7],
+          "party": {
+            "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+            "classification": "pg",
+            "acronym": "HNS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 20
+          },
+          "type": "mp",
+          "id": 12,
+          "has_function": false
         },
         "results": {
-            "abstain": 7,
-            "against": 53,
-            "motion_id": 5409,
-            "text": "Zakon o zavarovalni\u0161tvu - Amandma: K 67. \u010dlenu 9.11.2015 [ZL - Poslanska skupina Zdru\u017eena levica]",
-            "tags": ["Odbor za finance in monetarno politiko"],
-            "is_outlier": false,
-            "absent": 15,
-            "for": 15,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "14. redna seja",
-            "date_ts": "2015-12-14T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "14. 12. 2015",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5582,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Safet Softi\u0107",
+          "gov_id": "508",
+          "gender": "m",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 37,
+          "has_function": false
         },
         "results": {
-            "abstain": 0,
-            "against": 34,
-            "motion_id": 5292,
-            "text": "Priporo\u010dilo v zvezi s problematiko svetovalnih pogodb v Novi Ljubljanski banki, d. d. - Glasovanje o aktu v celoti",
-            "tags": ["Komisija za nadzor javnih financ"],
-            "is_outlier": false,
-            "absent": 19,
-            "for": 37,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1965-11-01"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
         }
-    }, {
-        "session": {
-            "name": "27. redna seja",
-            "date_ts": "2017-02-13T01:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "13. 2. 2017",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 9158,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Sa\u0161a Magazinovi\u0107",
+          "gov_id": "525",
+          "gender": "m",
+          "is_active": true,
+          "district": [1],
+          "party": {
+            "name": "Klub poslanika SDP BiH",
+            "classification": "pg",
+            "acronym": "SDP BiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 21
+          },
+          "type": "mp",
+          "id": 30,
+          "has_function": false
         },
         "results": {
-            "abstain": 3,
-            "against": 23,
-            "motion_id": 6875,
-            "text": "Priporo\u010dilo za vzpostavitev u\u010dinkovitega pravnega varstva v primeru zavr\u017eenja kazenske ovadbe - Eviden\u010dni sklep 17.2.2017",
-            "tags": ["Odbor za pravosodje"],
-            "is_outlier": false,
-            "absent": 17,
-            "for": 47,
-            "result": true
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 152.0,
+            "rank": 5
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1978-11-01"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 72,
+            "rank": 8
+          }
         }
-    }, {
-        "session": {
-            "name": "19. redna seja",
-            "date_ts": "2016-05-16T02:00:00",
-            "orgs": [{
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            }],
-            "date": "16. 5. 2016",
-            "org": {
-                "acronym": "DZ",
-                "is_coalition": false,
-                "id": 95,
-                "name": "Dr\u017eavni zbor"
-            },
-            "id": 5577,
-            "in_review": false
+      }, {
+        "person": {
+          "name": "Snje\u017eana Novakovi\u0107 \u2013 Bursa\u0107",
+          "gov_id": "514",
+          "gender": "f",
+          "is_active": true,
+          "district": [6],
+          "party": {
+            "name": "Klub poslanika Saveza nezavisnih socijaldemokrata \u2013 SNSD",
+            "classification": "pg",
+            "acronym": "SNSD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 24
+          },
+          "type": "mp",
+          "id": 32,
+          "has_function": false
         },
         "results": {
-            "abstain": 2,
-            "against": 34,
-            "motion_id": 5050,
-            "text": "Zakon o spremembah in dopolnitvah Zakona o pravilih cestnega prometa - Eviden\u010dni sklep o primernosti predloga zakona 17.5.2016",
-            "tags": ["Odbor za infrastrukturo, okolje in prostor"],
-            "is_outlier": false,
-            "absent": 19,
-            "for": 35,
-            "result": false
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 59.0,
+            "rank": 11
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 2.0,
+            "rank": 6
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1976-11-20"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 84,
+            "rank": 7
+          }
         }
-    }]
-}
+      }, {
+        "person": {
+          "name": "Sta\u0161a Ko\u0161arac",
+          "gov_id": "515",
+          "gender": "m",
+          "is_active": true,
+          "district": [8],
+          "party": {
+            "name": "Klub poslanika Saveza nezavisnih socijaldemokrata \u2013 SNSD",
+            "classification": "pg",
+            "acronym": "SNSD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 24
+          },
+          "type": "mp",
+          "id": 15,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 200.0,
+            "rank": 1
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1975-03-19"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 20,
+            "rank": 11
+          }
+        }
+      }, {
+        "person": {
+          "name": "Vlatko Glava\u0161",
+          "gov_id": "528",
+          "gender": "m",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Klub poslanika DF-a",
+            "classification": "pg",
+            "acronym": "DF",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 22
+          },
+          "type": "mp",
+          "id": 11,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1962-09-02"
+          },
+          "education": {
+            "score": "4"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
+        }
+      }, {
+        "person": {
+          "name": "Vojin Mitrovi\u0107",
+          "gov_id": "516",
+          "gender": "m",
+          "is_active": true,
+          "district": [5],
+          "party": {
+            "name": "Klub poslanika Saveza nezavisnih socijaldemokrata \u2013 SNSD",
+            "classification": "pg",
+            "acronym": "SNSD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 24
+          },
+          "type": "mp",
+          "id": 28,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1961-04-27"
+          },
+          "education": {
+            "score": "8"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
+        }
+      }, {
+        "person": {
+          "name": "Zlatan Begi\u0107",
+          "gov_id": "530",
+          "gender": "m",
+          "is_active": true,
+          "district": [2],
+          "party": {
+            "name": "Klub poslanika DF-a",
+            "classification": "pg",
+            "acronym": "DF",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 22
+          },
+          "type": "mp",
+          "id": 7,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1975-08-30"
+          },
+          "education": {
+            "score": "8"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 21,
+            "rank": 10
+          }
+        }
+      }, {
+        "person": {
+          "name": "Zukan Helez",
+          "gov_id": "526",
+          "gender": "m",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Klub poslanika SDP BiH",
+            "classification": "pg",
+            "acronym": "SDP BiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 21
+          },
+          "type": "mp",
+          "id": 17,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1964-01-01"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
+        }
+      }, {
+        "person": {
+          "name": "\u0160emsudin Dedi\u0107",
+          "gov_id": "509",
+          "gender": "m",
+          "is_active": true,
+          "district": [3],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 6,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1973-10-05"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
+        }
+      }, {
+        "person": {
+          "name": "\u0160emsudin Mehmedovi\u0107",
+          "gov_id": "510",
+          "gender": "m",
+          "is_active": true,
+          "district": [4],
+          "party": {
+            "name": "Klub poslanika SDA",
+            "classification": "pg",
+            "acronym": "SDA",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 19
+          },
+          "type": "mp",
+          "id": 26,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 14
+          },
+          "gender": {
+            "score": "m"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 17
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": "1961-01-20"
+          },
+          "education": {
+            "score": "7"
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 17
+          }
+        }
+      }]
+    },
+    "naroda": {
+      "districts": [{
+        "1": "FBiH / Izborna jedinica 3"
+      }, {
+        "2": "FBiH / Izborna jedinica 5"
+      }, {
+        "3": "FBiH / Izborna jedinica 1"
+      }, {
+        "4": "FBiH / Izborna jedinica 4"
+      }, {
+        "5": "RS / Izborna jedinica 2"
+      }, {
+        "6": "RS / Izborna jedinica 1"
+      }, {
+        "7": "FBiH / Izborna jedinica 2"
+      }, {
+        "8": "RS / Izborna jedinica 3"
+      }, {
+        "9": "RS"
+      }, {
+        "10": "FBiH"
+      }],
+      "created_at": "2019-04-17T12:23:57.212",
+      "created_for": "2019-04-17",
+      "data": [{
+        "person": {
+          "name": "Amir Fazli\u0107",
+          "gov_id": "551",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub bo\u0161nja\u010dkog naroda",
+            "classification": "club",
+            "acronym": "FBiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 62
+          },
+          "type": "mp",
+          "id": 98,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Asim Sarajli\u0107",
+          "gov_id": "559",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub bo\u0161nja\u010dkog naroda",
+            "classification": "club",
+            "acronym": "FBiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 62
+          },
+          "type": "mp",
+          "id": 105,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 78.0,
+            "rank": 3
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 2.0,
+            "rank": 4
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 144,
+            "rank": 3
+          }
+        }
+      }, {
+        "person": {
+          "name": "Bakir Izetbegovi\u0107",
+          "gov_id": "552",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub bo\u0161nja\u010dkog naroda",
+            "classification": "club",
+            "acronym": "FBiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 62
+          },
+          "type": "mp",
+          "id": 103,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 89.0,
+            "rank": 1
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 7.0,
+            "rank": 2
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 1084,
+            "rank": 2
+          }
+        }
+      }, {
+        "person": {
+          "name": "Bari\u0161a \u010colak",
+          "gov_id": "549",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub hrvatskog naroda",
+            "classification": "club",
+            "acronym": "FBiH-HR",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 60
+          },
+          "type": "mp",
+          "id": 94,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Denis Be\u0107irovi\u0107",
+          "gov_id": "546",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub bo\u0161nja\u010dkog naroda",
+            "classification": "club",
+            "acronym": "FBiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 62
+          },
+          "type": "mp",
+          "id": 97,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 38.0,
+            "rank": 6
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 5.0,
+            "rank": 3
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 85.7142857142857,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 43,
+            "rank": 5
+          }
+        }
+      }, {
+        "person": {
+          "name": "Dragan \u010covi\u0107",
+          "gov_id": "550",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub hrvatskog naroda",
+            "classification": "club",
+            "acronym": "FBiH-HR",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 60
+          },
+          "type": "mp",
+          "id": 95,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Du\u0161anka Majki\u0107",
+          "gov_id": "553",
+          "gender": "f",
+          "is_active": true,
+          "district": [9],
+          "party": {
+            "name": "Klub srpskog naroda",
+            "classification": "club",
+            "acronym": "RS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 61
+          },
+          "type": "mp",
+          "id": 100,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Fahrudin Radon\u010di\u0107",
+          "gov_id": "558",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub bo\u0161nja\u010dkog naroda",
+            "classification": "club",
+            "acronym": "FBiH",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 62
+          },
+          "type": "mp",
+          "id": 108,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Lazar Prodanovi\u0107",
+          "gov_id": "557",
+          "gender": "f",
+          "is_active": true,
+          "district": [9],
+          "party": {
+            "name": "Klub srpskog naroda",
+            "classification": "club",
+            "acronym": "RS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 61
+          },
+          "type": "mp",
+          "id": 106,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Lidija Bradara",
+          "gov_id": "548",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub hrvatskog naroda",
+            "classification": "club",
+            "acronym": "FBiH-HR",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 60
+          },
+          "type": "mp",
+          "id": 102,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 51.0,
+            "rank": 5
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 2.0,
+            "rank": 4
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 96,
+            "rank": 4
+          }
+        }
+      }, {
+        "person": {
+          "name": "Marina Pende\u0161",
+          "gov_id": "556",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub hrvatskog naroda",
+            "classification": "club",
+            "acronym": "FBiH-HR",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 60
+          },
+          "type": "mp",
+          "id": 107,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 6
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 42.8571428571429,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 2,
+            "rank": 7
+          }
+        }
+      }, {
+        "person": {
+          "name": "Mladen Bosi\u0107",
+          "gov_id": "547",
+          "gender": "f",
+          "is_active": true,
+          "district": [9],
+          "party": {
+            "name": "Klub srpskog naroda",
+            "classification": "club",
+            "acronym": "RS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 61
+          },
+          "type": "mp",
+          "id": 101,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 57.1428571428571,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }, {
+        "person": {
+          "name": "Nikola \u0160piri\u0107",
+          "gov_id": "560",
+          "gender": "f",
+          "is_active": true,
+          "district": [9],
+          "party": {
+            "name": "Klub srpskog naroda",
+            "classification": "club",
+            "acronym": "RS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 61
+          },
+          "type": "mp",
+          "id": 104,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 72.0,
+            "rank": 4
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 1.0,
+            "rank": 6
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 17,
+            "rank": 6
+          }
+        }
+      }, {
+        "person": {
+          "name": "Sredoje Novi\u0107",
+          "gov_id": "555",
+          "gender": "f",
+          "is_active": true,
+          "district": [9],
+          "party": {
+            "name": "Klub srpskog naroda",
+            "classification": "club",
+            "acronym": "RS",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 61
+          },
+          "type": "mp",
+          "id": 96,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 84.0,
+            "rank": 2
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 21.0,
+            "rank": 1
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 1948,
+            "rank": 1
+          }
+        }
+      }, {
+        "person": {
+          "name": "Zlatko Mileti\u0107",
+          "gov_id": "554",
+          "gender": "f",
+          "is_active": true,
+          "district": [10],
+          "party": {
+            "name": "Klub hrvatskog naroda",
+            "classification": "club",
+            "acronym": "FBiH-HR",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 60
+          },
+          "type": "mp",
+          "id": 99,
+          "has_function": false
+        },
+        "results": {
+          "vocabulary_size": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 7
+          },
+          "gender": {
+            "score": "f"
+          },
+          "mandates": {
+            "score": null
+          },
+          "speeches_per_session": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 8
+          },
+          "number_of_questions": {
+            "diff": 0,
+            "score": 0.0,
+            "rank": 1
+          },
+          "presence_sessions": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "mismatch_of_pg": {
+            "diff": 0,
+            "score": 57.1428571428571,
+            "rank": 1
+          },
+          "presence_votes": {
+            "diff": 0,
+            "score": 100.0,
+            "rank": 1
+          },
+          "birth_date": {
+            "score": null
+          },
+          "education": {
+            "score": null
+          },
+          "spoken_words": {
+            "diff": 0,
+            "score": 0,
+            "rank": 8
+          }
+        }
+      }]
+    }
+  }
