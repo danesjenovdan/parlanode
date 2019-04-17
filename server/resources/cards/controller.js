@@ -68,6 +68,7 @@ async function saveBuildEntry(cacheData, cardJson) {
       lastBuilt: cardJson.lastUpdate,
       language: config.cardLang,
       dataUrl: cardJson.dataUrl,
+      dataUrls: cardJson.dataUrls, // THIS WAS ADDED TO ALLOW MULTIPLE DATA SOURCES
     },
     { upsert: true, new: true, setDefaultsOnInsert: true },
   );
@@ -129,6 +130,10 @@ async function shouldBuildCard(cacheData, cardJson) {
   if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
     return true;
   }
+  // THIS WAS ADDED TO ALLOW MULTIPLE DATA SOURCES
+  if (cardBuild.dataUrls !== cardJson.dataUrls) {
+    return true;
+  }
   return false;
 }
 
@@ -169,14 +174,43 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.customUrl = cardJson.dataUrl ? expandUrl(cacheData.customUrl) : null;
   cacheData.cardUrl = `${data.urls.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJson.lastUpdate;
+  // iterate over dataUrls to expand all urls
+  cacheData.dataUrls = cardJson.dataUrls ? Object.keys(cardJson.dataUrls).reduce((acc, cur) => {
+    acc[cur] = expandUrl(cardJson.dataUrls[cur]);
+    return acc;
+  }, {}) : null;
 
   let fetchUrl = null;
+  let fetchUrls = null;
   if (cacheData.customUrl) {
     fetchUrl = cacheData.customUrl;
   } else if (cacheData.dataUrl) {
     fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.dateRequested ? `/${cacheData.dateRequested}` : ''}`;
+    console.log(fetchUrl);
+  } else if (cacheData.dataUrls) {
+    // generate all fetch URLs by iterating over dataUrls
+    fetchUrls = Object.keys(cacheData.dataUrls).reduce((acc, cur) => { 
+      acc[cur] = `${cacheData.dataUrls[cur]}${cacheData.dateRequested ? `/${cacheData.dateRequested}` : ''}`;
+      return acc;
+    }, {});
   }
-  const fetchedData = fetchUrl ? await fetchData(fetchUrl, cacheData) : null;
+
+  let fetchedData = {};
+  if (fetchUrl) {
+    console.log('fetching single');
+    fetchedData = await fetchData(fetchUrl, cacheData);
+  } else if (fetchUrls) {
+    console.log('fetching multiple');
+    // generate data object from different URL sources below
+    const allFetches = Object.values(fetchUrls).map(url => fetchData(url, cacheData));
+    const allResponses = await Promise.all(allFetches);
+    console.log('resps', allResponses);
+    fetchedData.data = Object.keys(fetchUrls).forEach((key, index) => fetchedData[key] = allResponses[index]);
+    console.log(fetchedData);
+  } else {
+    console.log('fetching nothing');
+    fetchedData = null;
+  }
 
   const [serverBundle, clientBundle, styleBundle] = await loadBundles(cacheData);
   const i18n = await loadI18n(cacheData);
@@ -198,7 +232,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   const parsedState = JSON.parse(cacheData.state);
   const context = {
     mountId: `${cardJson._id}__${Date.now().toString(36)}`,
-    data: fetchedData,
+    data: fetchedData, // THIS IS ALREADY READY FOR MULTIPLE DATA SOURCES
     cardData: cardJson,
     customUrl: fetchUrl,
     parlaState: parsedState,
