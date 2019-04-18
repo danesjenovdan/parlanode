@@ -1,6 +1,6 @@
 {
   "_id": "p_seznam-poslancev",
-  "dataUrl": "{analize}/p/getListOfMembers",
+  "dataUrl": "{analize}/p/getListOfMembersTickers",
   "lastUpdate": "2019-04-18T13:02:53.600Z",
   "big": true,
   "high": false
