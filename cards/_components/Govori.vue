@@ -54,7 +54,7 @@
           infinite-scroll-distance="10"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.date">
+          <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.id">
             <div class="date">
               {{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }},
               {{ ' ' + speakingDay[0].session.orgs.map(org => org.name).join(', ') }}
@@ -231,8 +231,9 @@ export default {
     groupSpeakingDays() {
       return this.speakingDays
         .reduce((r, a) => {
-          r[a.session_id] = r[a.session_id] || [];
-          r[a.session_id].push(a);
+          const key = `${a.start_time}__${a.session_id}`;
+          r[key] = r[key] || [];
+          r[key].push(a);
           return r;
         }, Object.create(null));
     },
