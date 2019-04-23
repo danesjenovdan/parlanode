@@ -35,7 +35,6 @@ export default {
     },
 
     generateGroups(LoMT) {
-      console.log(this.generateGrouped(LoMT));
       return [{
         label: this.$t('parties'),
         items: this.generateGrouped(LoMT)
