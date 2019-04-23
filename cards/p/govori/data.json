@@ -1,60 +1,60 @@
 {
   "query": "",
-  "filters": { "people": [100] },
+  "filters": { "people": [105] },
   "person": {
-    "name": "Mateja Udovč",
-    "gov_id": "P312",
-    "gender": "f",
+    "name": "Felice Žiža",
+    "gov_id": "P352",
+    "gender": "m",
     "is_active": true,
-    "district": [23],
+    "district": [7],
     "party": {
-      "acronym": "SMC",
-      "name": "Stranka modernega centra",
-      "is_coalition": true,
+      "acronym": "IMNS",
+      "name": "Italijanska in madžarska narodna skupnost",
+      "is_coalition": false,
       "classification": "pg",
-      "id": 5
+      "id": 10
     },
     "type": "mp",
-    "id": 100,
+    "id": 105,
     "has_function": false
   },
   "response": {
-    "numFound": 35,
+    "numFound": 20,
     "start": 0,
     "docs": [
       {
-        "start_time": "2019-01-31T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_29499",
+        "start_time": "2019-03-20T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_37875",
         "term": "VIII",
-        "the_order": 140,
+        "the_order": 610,
         "org_id": 1,
-        "session_id": 272,
-        "content": "Spoštovani!\nS predlogom današnjih sprememb in dopolnitev zakona o raziskovalni in razvojni dejavnosti se veljavni zakon usklajuje s pravnim redom Evropske unije. Vanj prenašamo direktivo evropskega parlamenta in sveta o pogojih za vstop in prebivanje državljanov tretjih držav za namene raziskovanja, študija, opravljanja pripravništva, prostovoljskega dela, programov izmenjave učencev ali izobraževalnih projektov in dela varušk. Danes prenašamo le manjši del omenjene direktive, ki se nanaša na odobritev raziskovalnih organizacij za sklepanje sporazumov o gostovanju z državljani tretjih držav. Preostali del pa bomo prenesli v zakon o tujcih in zakon o zaposlovanju, samozaposlovanju in delu tujcev, ki ga bomo obravnavali v bližnji prihodnosti. Bolj kot vsebina današnjih sprememb in dopolnitev raziskovalnega zakona pa je pravzaprav pomembnejše aktualno stanje in položaj slovenske znanstvene in raziskovalne politike. Trenutno stanje ne omogoča znanstveno raziskovalnega razcepa, razcveta. Capljanje na mestu in zaostajanje z ostalimi primerljivimi državami pa zagotovo ni nekaj, kar si v naši poslanski skupini, pa verjamem, da tudi v drugih, na tem področju želimo v prihodnje. Slovenija se sicer še vedno nahaja v skupini močnih inovatorje, a zaradi prenizkih vlaganj in rasti sredstev za raziskovalno razvojno dejavnost druge države napredujejo hitreje od nas. Ta trend je potrebno čim hitreje obrniti v drugo smer. Nekateri majhni a ne nepomembni koraki za izboljšanje položaja znanosti so bili storjeni že v prejšnjem mandatu. V letu 2015 so se sredstva za raziskovalno razvojno dejavnost končno začela dvigovati. Opaznejšemu dvigu finančnih sredstev pa smo bili priča v letu 2017 in 2018. Od leta 2016 naprej so se začeli intenzivno izvajati instrumenti kohezijske politike, ki so pomembno povečali razpoložljiva sredstva za to dejavnost. Seveda ta nikakor ne more biti nadomestek za nacionalno financiranje, lahko pa integralna sredstva pomembno dopolnjujejo. Slovenija je prav tako začela umeščati v ključne mednarodne raziskovalne organizacije. Slovenskim raziskovalcem pa je omogočen dostop do ključne velike raziskovalne infrastrukture. Ne smemo pozabiti tudi na aktivno podporo velikim evropskim projektom v okviru obzorja 2020 in evropskega raziskovalnega centra. dosežen je bil konsenz med deležniki in v pretežni meri pripravljen nov zakon o raziskovalni in razvojni dejavnosti. A na lovorikah, četudi so te majhne, ne smemo zaspati, zato je nujno, da se aktivno delo na novem zakonu o raziskovalno razvojni dejavnosti nadaljuje tudi naprej. Pri tem je še posebej pomembno, da se bo zagotovilo predvidljivo in stabilno financiranje raziskovalne, razvojne dejavnosti, ki se bo v prihodnih letih postopno približevalo cilju 1 % financiranja v deležu BDP. Če smo to zmogli na področju visokega šolstva, zmoremo tudi tukaj. Prvi preizkus nas vse skupaj čaka že ob sprejemanju rebalansa proračuna za leto 2019. Obeti so zaenkrat dobri. \nV Poslanski skupini Stranke modernega centra pričakujemo, da bomo o novem predlogu zakona o raziskovalni razvojni dejavnosti odločali čim prej. Današnjo novelo pa bomo podprli.",
-        "person_id": 100,
-        "speech_id": 29499,
+        "session_id": 572,
+        "content": "Spoštovani podpredsednik Državnega zbora, spoštovani kolegice in kolegi! Egregio vice presidente della Camera di Stato, egregi deputati! Tisztet Hölgyeim és Uraim! \nNa kratko bom predstavil mnenje Poslanske skupine italijanske in madžarske narodne skupnosti. Povem vam, da bom ponovil večino besed in stavkov, ki so jih predhodniki že povedali pred mano, ampak upam, da bom malenkost krajši. Začel bi s citatom iz besedila Resolucije Evropskega parlamenta o evropski zavesti in totalitarizmu, ki odločno in jasno obsoja vse zločine proti človeštvu ter množične kršitve človekovih pravic, ki so jih zagrešili totalitarni in avtoritarni režimi 20. stoletja, kot so fašizem, nacizem in komunizem. To pravi: »Noben politični organ ali politična stranka nima izključne pravice do razlage zgodovine,« in, »ker ti organi in te stranke ne morejo trditi, da so objektivni.«\nDržavni zbor se je leta 2009 seznanil z vsebino besedila omenjene resolucije, saj so tudi Slovenijo in njene prebivalce zaznamovali vsi omenjeni najhujši totalitarizmi 20. stoletja. O tem je sprejel deklaracijo o seznanitvi z omenjeno resolucijo. V Poslanski skupini italijanske in madžarske narodne skupnosti menimo, da je bila ta odločitev Državnega zbora primerna. Po našem mnenju je najbolj primeren odziv na omenjeno resolucijo takšen, da se dosledno spoštuje človekove pravice in temeljne svoboščine ter človekovo dostojanstvo, svobodo, demokracijo in načela pravne države, vključno s pravicami in spoštovanjem žrtev vseh totalitarnih in avtoritarnih režimov 20. stoletja. Hvala.",
+        "person_id": 105,
+        "speech_id": 37875,
         "type": "speech",
         "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
           "is_active": true,
           "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
             "classification": "pg",
-            "is_coalition": true
+            "is_coalition": false
           },
           "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
+          "id": 105,
+          "gov_id": "P352",
           "has_function": false
         },
         "session": {
-          "name": "4. redna seja",
-          "date_ts": "2019-01-28T01:00:00",
-          "updated_at": "4. 2. 2019",
+          "name": "20. izredna seja",
+          "date_ts": "2019-03-20T01:00:00",
+          "updated_at": "8. 4. 2019",
           "orgs": [
             {
               "acronym": "DZ",
@@ -64,7 +64,7 @@
               "is_coalition": false
             }
           ],
-          "date": "28. 1. 2019",
+          "date": "20. 3. 2019",
           "org": {
             "acronym": "DZ",
             "id": 1,
@@ -72,493 +72,1033 @@
             "classification": "dz",
             "is_coalition": false
           },
-          "id": 272,
-          "in_review": true
-        }
-      },
-      {
-        "start_time": "2019-01-31T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_29559",
-        "term": "VIII",
-        "the_order": 740,
-        "org_id": 1,
-        "session_id": 272,
-        "content": "Spoštovani! \nNovela v slovenski pravni red prenaša spremembe evropske direktive o razvrstitvi nezavarovanih dolžniških instrumentov v primeru insolventnosti. Direktiva dopolnjuje pravila za razvrščanje obveznosti bank za potrebe poplačila v stečajnem postopku iz direktive o reševanju bank. Zagotovila bo enako presojo položaja upnika banke v vseh državah članicah Evropske unije. To je pomembno za upoštevanje ključnega načela, da noben upnik v postopku reševanja banke ne sme biti na slabšem kot bi bil v primeru stečaja bank. Direktiva določa tudi pogoje za oblikovanje novega razreda dolžniških vrednostnih papirjev podrejenih obveznosti. Z njim bo lahko globalno sistemsko pomembna banka izpolnjevala zahtevo po zagotavljanju minimalne višine kapitala in podrejenih obveznosti banke s katerim se krije potencialna izguba banke. Gre za tako imenovani mednarodni standard sprejet na globalni ravni v okviru G20. Cilj standarda je zagotoviti sposobnost pokrivanja izgub in dokapitalizacije za vse globalno sistemsko pomembne banke. Standard bo pomagal zagotoviti, da se med in takoj po postopku lahko kritične funkcije nadaljujejo, ne da bi bil ogrožen denar davkoplačevalcev, javna sredstva ali finančna stabilnost. Evropska unija se je zavzela, da ga bo vključila v svojo reformo bančne unije, potreba po vzpostavitvi bančne unije se je pojavila med finančno krizo leta 2008 in državno dolžniško krizo, ki ji je sledila. Takrat je postalo jasno, da v evroobmočju težave, ki nastanejo zaradi povezav med financami javnega sektorja in bančnim sektorjem lahko hitro prelijejo čez državne meje in povzročijo finančne pretrese tudi v drugih državah članicah Evropske unije. Sprememba slednje direktive je torej pomembna za Evropsko unijo in evroobmočje, kako pa bo vplivala na Slovenijo. Med pomembne banke oziroma institucije se po merilih Evropske centralne banke uvrščajo banke, ki imajo bančno vsoto nad 30 milijard evrov in višjo kot 20 % bruto domači proizvod. Ali se uvrščajo med tri največje banke v državi ali imajo bilančno vsoto nad 5 milijard evrov in imajo v več kot eni državi članici nad 20 % sredstev obveznosti. Konec leta 2017 oziroma v letu 2018 je v Sloveniji delovalo 12 bank. Tri hranilnice in tri podružnice tujih bank. Bilančna vsota slovenska bančnega sistema je konec leta 2017 znašala 37,9 milijard evrov. Največja banka med njimi je Nova Ljubljanska banka. Imela je okoli 12,7 milijard evrov bilančne vsote. V Sloveniji so v letu 2017 in 2018 sodile v skupino pomembnih bank tri banke, NLB, NKBM in Abanka. Vse ti omenjene banke so torej pomembne na nacionalni ravni, niso pa pomembne na svetovni oziroma globalni ravni. Globalna sistemska pomembna banka je banka, ki jo kot takšno opredeli Banka Slovenije v skladu z zakonom o bančništvu in Uredbo Evropske unije, št. 1024/2013.\n  Njen propad ali slabo poslovanje pa bi lahko povzročilo sistemsko tveganje globalnega pomena. Na ravni Evropske unije oziroma evroobmočja je novembra 2018 imelo takšen status 19 bank. Med njimi seveda ni bilo nobene slovenske. Zgolj za primerjavo naj omenim, da se bilančna vsota največjih treh bank giblje med 2 tisoč 100 in 2 tisoč 500 biljonov dolarjev. V Sloveniji sicer takšne banke nimamo, vendar je potrebno vsebino direktive Evropske unije, ki se nanaša na omenjeni standard zaradi harmonizacije prava Evropske unije prenesti v slovenski pravni red. Ne glede na to kakšen pomen ima sprememba direktive za Slovenijo bomo v Stranki modernega centra novelo zakona podprli, saj podpiramo vse ukrepe, ki bodo poskrbeli za odpornost bančnega sistema in njegovo zadostno kapitalizacijo. To je pomembno za ohranitev finančne stabilnosti evroobmočja in za stabilnosti globalnega finančnega sistema.",
-        "person_id": 100,
-        "speech_id": 29559,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "4. redna seja",
-          "date_ts": "2019-01-28T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "DZ",
-              "id": 1,
-              "name": "Državni zbor",
-              "classification": "dz",
-              "is_coalition": false
-            }
-          ],
-          "date": "28. 1. 2019",
-          "org": {
-            "acronym": "DZ",
-            "id": 1,
-            "name": "Državni zbor",
-            "classification": "dz",
-            "is_coalition": false
-          },
-          "id": 272,
-          "in_review": true
-        }
-      },
-      {
-        "start_time": "2019-01-30T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_29336",
-        "term": "VIII",
-        "the_order": 280,
-        "org_id": 1,
-        "session_id": 272,
-        "person_id": 100,
-        "speech_id": 29336,
-        "type": "speech",
-        "content": "Hvala lepa za besedo.\nGlede na izkazano podporo v Državnem zboru, ki izhaja iz seznama podpisov poslancev, ni dvoma, da obstaja velik interes in volja vseh nas o ugotovitvi dejanskega stanja na področju slabe banke. Upam, da se bo ta klima prenesla tudi na samo delovanje preiskovalne komisije. Namen in smisel parlamentarne preiskave je ugotavljanje in raziskovanje dejanskih stanj v zadevi javnega pomena. Ugotovitve bodo podlage za sprejemanje odločitev parlamenta. Primer DUTB kar kliče po eni parlamentarni neodvisni preiskavi njenega poslovanja. V strokovnih krogih, v strokovni javnosti, v javnih medijih, med davkoplačevalci se pojavlja preveč različnih informacij, ki kažejo na netransparentno, nepravilno in včasih tudi na nezakonito delovanje. Potrebno je ugotovitvi odgovornost vseh pristojnih in odgovornih akterjev na tem področju zaradi sumov, da so posredno ali neposredno vplivali na domnevne negospodarske ali protipravne odločitve DUTB. Komisija bo morala ugotoviti odgovornost in vlogo tako vlade kot skupščine DUTB ter upravnih odborov DUTB pri sprejemanju domnevnih spornih odločitev od 6. 2. 2009 naprej. Predvsem bodo morali raziskati postopek prenosa terjatev ali drugega premoženja na DUTB, kjer je bilo več nepravilnosti, na katere je opozarjalo tudi Računsko sodišče v svojem revizijskem poročilu. Potek in stanja pri prenosu terjatev ali drugega premoženja med letom 2013 in 2015, kdo so bili ključni odločevalci pri prenosu, kakšni so bili kriteriji in merila za določitev terjatev in njihovih vrednosti ter po kakšni ceni so banke DUTB zaračunavale prenesene terjatve. Ugotoviti in razjasniti je potrebno metodologijo vrednotenja posameznih kategorij sredstev, posojil, nepremičnin ali lastniških deležev, ki jo je DUTB pripravila v prvi polovici leta 2014. Potrebno je pridobiti in proučiti vse notranje revizije in analize, hkrati pa preveriti še izbor primernosti, delo zunanjih svetovalcev, ki so sodelovali pri postopku vrednotenja. Ugotoviti je potrebno morebitnost, odgovornost Banke Slovenije kot regulatorja bančnega sistema. Skrbnost DUTB pri upravljanju in revidiranju terjatev, ugotoviti ustreznost postopkov prodaje in preprodaje terjatev. Zasledovanje ključnih ciljev DUTV, preveriti način in merila po katerih je DUTB preverjala kupce terjatev z namenom, da teh terjatev ne bi prodali prvotnim dolžnikom ali pa s temi dolžniki povezanimi posredno ali neposredno z osebami ali družbami. Preveriti ustreznost postopkov pri preverjanju izvora denarja namenjenega za nakup DUTB in s tem povezanih tveganj s področij, ki jih ureja Zakon o preprečevanju pranja denarja in financiranju terorizma. Preveriti skladnost svetovalnih pogodb z internimi akti in kadrovsko ter plačilno politiko na DUTB. Hkrati v razpravah ne smemo pozabiti njene naloge in vloge, ki jo ima na področju upravljanja terjatev bank. Njena naloga je pomagati pri prestrukturiranju bank, ki so sistemskega pomena, ki so se znašle v hudih solventnostih in likvidnostnih težavah. DUTB mora delovati v skladu s ključnim ciljem, to je zmanjšanje skupnih stroškov proračuna in povrniti vrednosti premoženja za slovenske davkoplačevalce. Pri svojem poslovanju mora zasledovati cilj za doseganje čim višje cene na trgu pri prodaji premoženja. Hkrati je potrebno poudariti, da se je DUTB pri doseganju svojih strateških ciljev soočala z omejitvami in nedoslednostmi, ki so izhajale tudi iz druge zakonodaje, zlasti s področja zakonov o nesolventnosti in zakonov, ki omejujejo prejemke v družbah v državni lasti. Zato je Državni zbor sprejel spremembe in dopolnitve zakona ZUKSB, ki je začel veljati 27. januarja 2016. Vlada dr. Mira Cerarja je sprejela kar nekaj ukrepov za ureditev stanja na tem področju. Leta 2015 je sprejela nabor ukrepov s ciljem zagotoviti učinkovitejše delovanje DUTB, potrdila ne novo politiko prejemkov in interni akt, procesij in pristojnost odločanja odborov DUTB. Razrešila je tudi tri neizvršne direktorje in predsednika upravnega odbora zaradi kršitev dolžnosti člana upravnega odbora. Zaradi izgube zaupanja je odpoklicala izvršnega direktorja in pri tem ravnala v vlogi skupščine po statutu DUTB. S tem je želela odpraviti pomanjkljivosti, ki jih je ugotovilo Računsko sodišče in Vlada, ter zagotoviti njeno učinkovito delovanje v prihodnje. Vlada si je prizadevala za nemoteno delovanje DUTB, tudi z ustreznimi kadrovskimi rešitvami. Prav zaradi pomembnosti njene vloge je poslovanje za celotni finančni monetarni sektor, je potrebno piskati odgovore na vsa zastavljena navedena vprašanja in primerno ukrepati v skladu s pristojnostjo Državnega zbora in vseh preostalih organov. \nHvala lepa.",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "4. redna seja",
-          "date_ts": "2019-01-28T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "DZ",
-              "id": 1,
-              "name": "Državni zbor",
-              "classification": "dz",
-              "is_coalition": false
-            }
-          ],
-          "date": "28. 1. 2019",
-          "org": {
-            "acronym": "DZ",
-            "id": 1,
-            "name": "Državni zbor",
-            "classification": "dz",
-            "is_coalition": false
-          },
-          "id": 272,
-          "in_review": true
-        }
-      },
-      {
-        "start_time": "2019-01-30T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_29454",
-        "term": "VIII",
-        "the_order": 1460,
-        "org_id": 1,
-        "session_id": 272,
-        "content": "Hvala za besedo, predsedujoči. Spoštovane kolegice, spoštovani kolegi! \n (nadaljevanje)Gospoda kolega Pojbiča iz SDS bi prosila, da ne zavaja javnosti in celotnega Državnega zbora, ko govori, da so na Debelem rtiču nastanjeni migranti. Na Debelem rtiču ni nastanjenih nobenih migrantov. Prav tako Mladinsko zdravilišče Rdečega križa deluje kot običajno. Zato prosim, jaz mislim, da otroci lahko letujejo na Debelem rtiču, tako kot običajno.\nPa, da preidem k svoji razpravi. V svoji razpravi se ne bom preveč ukvarjala s samo vsebino ilegalnih migracij. V tem Državnem zboru smo danes kot že velikokrat poprej veliko govorili in slišali na to temo, vse od povsem neprimernega, na trenutke celo sovražnega govora, kot do konstruktivnih razlag in predlaganih rešitev. Pri tem pa smo skupaj ugotovili, da je problematika migracij, predvsem ilegalnih globalni, večplastni pojav, ki je generiran zunaj naših pristojnosti in meja. Zato ga ni mogoče reševati samo na lokalni ravni z radikalnimi ukrepi, kot so postavljanje ograj in podobni ukrepi. Pri reševanju vprašanj migracij, ilegalnih migracij in beguncev je potrebno najprej identificirati in odpraviti razloge za njihov nastanek. Sprijazniti se moramo z dejstvom, da so migracije del naše realnosti, našega vsakdana. Migracije so se dogajale, se dogajale in se bodo dogajale. Razlogi so različni, v bistvu pa se ne spreminjajo. Vsi si želimo miru in predvsem kvalitetnega življenja in vsi imamo pravico do tega. \nKar se pa tiče predloga za razpis posvetovalnega referenduma o obravnavani migraciji, ki sta jo vložili Poslanska skupina SDS in SNS, za obravnavo in sprejem v Državnem zboru, pa sem mnenja, da je sicer pobuda možna in legitimna, vendar brezpredmetna. V Zakonu o referendumu in o ljudski iniciativi je določeno, da se mora predlog za razpis posvetovalnega referenduma nanašati na vprašanje iz pristojnosti Državnega zbora, ki je širšega pomena za državljane, hkrati pa o tem vprašanju Državni zbor še ni sprejel končne odločitve. Globalni dogovor o varnih, urejenih in zakonitih migracijah je politični dokument, ki ni pravno zavezujoč. Posameznih držav ne zavezuje k spreminjanju nacionalne zakonodaje in na noben način ne posega v njihovo ustavno ureditev, prav tako pa tudi ne bo postal del občega mednarodnega prava. Zato ocenjujem, da pri tej vsebini ne gre za odločitev iz pristojnosti Državnega zbora in nima nobene zakonske podlage. Iz referendumskega vprašanja in obrazložitve ne izhaja, na katero odločitev Državnega zbora se nanaša posvetovalni referendum. V postopku sprejemanja aktov Državnega zbora tudi ni vložena predloga akta, ki bi bil povezan z razpisom predlaganega posvetovalnega referenduma. Zato tudi s tega formalnega vidika ni razloga in pogojev za sprejem pobude. Globalni dogovor migracij je po vsebini dogovor o sodelovanju držav pri odpravljanju vzrokov migracij, preprečevanju neregularnih migracij in trgovine z ljudmi ter pri spodbujanju varnih, urejenih in zakonitih migracij. Slovenija je vedno zagovarjala stališča, da je za naslavljanje migracij potreben celovit, kooperativen pristop. To je tesno sodelovanje med državami izvora, tranzita in cilja, skupaj z relevantnimi mednarodnimi organizacijami. To pa je temeljni namen globalnega dogovora. Tudi sama si bom prizadevala, da bomo to problematiko reševali na strpen, strokoven in učinkovit način. Kot že povedano, predloga za posvetovalni referendum ne bom podprla iz materialnih in formalnih razlogov. Hvala lepa.",
-        "person_id": 100,
-        "speech_id": 29454,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "4. redna seja",
-          "date_ts": "2019-01-28T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "DZ",
-              "id": 1,
-              "name": "Državni zbor",
-              "classification": "dz",
-              "is_coalition": false
-            }
-          ],
-          "date": "28. 1. 2019",
-          "org": {
-            "acronym": "DZ",
-            "id": 1,
-            "name": "Državni zbor",
-            "classification": "dz",
-            "is_coalition": false
-          },
-          "id": 272,
-          "in_review": true
-        }
-      },
-      {
-        "start_time": "2019-01-28T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_18512",
-        "term": "VIII",
-        "the_order": 3500,
-        "org_id": 1,
-        "session_id": 272,
-        "content": "Hvala za besedo.\nSpoštovana ministrica, verjamem, da se obe zelo dobro zavedava cestne problematike na območju Mestne občine Kranj. V Kranju se že vrsto let soočamo s prometnim kolapsom, ki pa ni posledica obnove Savskega mostu, temveč predvsem je posledica povečanja prometa in nepretočnosti križišč. Kot za primer nepretočnosti imamo krožišče na Primskovem. Že kar nekaj časa je minilo od županskih volitev in ker so se kranjski kandidati v svojih programih zavzemali tudi za izgradnjo cestne infrastrukture oziroma so se v času soočanj pogosto soočali z vprašanji izgradnje štiripasovnice na relaciji Kranj–Šenčur in podobno, mene osebno in občanke, občane Kranja in večino Gorenjcev, ki uporabljajo cestno infrastrukturo v Kranju in njegovi okolici, zelo zanima, kdaj se bodo rešili problemi, kot so zastoji v konicah, slaba pretočnost križišč. Na primer križišče v zgornjih Bitnjah, kjer prehajamo na cesto Kranj–Škofja Loka in kjer je med tednom tako gost promet, je vključevanje brez izsiljevanja kot misija nemogoče. Ozka grla, ki so povezana s povečanjem cestnega prometa in dotrajano, neustrezno cestno infrastrukturo na območju Kranja, so v pristojnosti Ministrstva za infrastrukturo.\nZato vas sprašujem:\nKakšne so časovnice obnove oziroma izgradnje cestne infrastrukture v Mestni občini Kranj? \nZanima me predvsem začetek gradnje, dinamika in zaključek, in sicer za krožišča v Zgornjih Bitnjah, ki je na Škofjeloški cesti in cesti na relaciji Kranj–Škofja Loka, krožišče na Primskovem, izgradnja štiripasovnic na relaciji Kranj–Šenčur in ceste Kranj–Škofja Loka.\n Hkrati me zanima:\nKateri cestni objekti so zajeti v rekonstrukcijo ceste Kranj–Škofja Loka, kot na primer pločnik, kolesarske steze, semaforizacija in podobno?\nAli bo prišlo pri izgradnji krožišča v Zgornjih Bitnjah na Škofjeloški cesti do kakršnekoli zapore?\nKje bodo potekali obvozi in kako bo v času gradnje poskrbljeno za ustrezno pretočnost prometa?\nHvala.",
-        "person_id": 100,
-        "speech_id": 18512,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "4. redna seja",
-          "date_ts": "2019-01-28T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "DZ",
-              "id": 1,
-              "name": "Državni zbor",
-              "classification": "dz",
-              "is_coalition": false
-            }
-          ],
-          "date": "28. 1. 2019",
-          "org": {
-            "acronym": "DZ",
-            "id": 1,
-            "name": "Državni zbor",
-            "classification": "dz",
-            "is_coalition": false
-          },
-          "id": 272,
-          "in_review": true
-        }
-      },
-      {
-        "start_time": "2019-01-28T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_18516",
-        "term": "VIII",
-        "the_order": 3540,
-        "org_id": 1,
-        "session_id": 272,
-        "content": "Hvala lepa za dokaj jasne odgovore.\nMe pa samo zanima, ali sem vas prav razumela, da za štiripasovnico časovnice zaenkrat še nimamo.\nHvala.",
-        "person_id": 100,
-        "speech_id": 18516,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "4. redna seja",
-          "date_ts": "2019-01-28T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "DZ",
-              "id": 1,
-              "name": "Državni zbor",
-              "classification": "dz",
-              "is_coalition": false
-            }
-          ],
-          "date": "28. 1. 2019",
-          "org": {
-            "acronym": "DZ",
-            "id": 1,
-            "name": "Državni zbor",
-            "classification": "dz",
-            "is_coalition": false
-          },
-          "id": 272,
-          "in_review": true
-        }
-      },
-      {
-        "start_time": "2019-01-24T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_23819",
-        "term": "VIII",
-        "the_order": 740,
-        "org_id": 16,
-        "session_id": 388,
-        "content": "Hvala lepa za besedo. \nDanes nas predlagatelj opozarja na slabe prakse s področja revizij javnega naročanja, ki se kažejo v znamenju nekaterih temeljnih načel javnega naročanja in posledično vodijo do izbire dražjih izvajalcev, z enakimi ali pa celo nižjimi referencami. Tako nastaneta posredna in neposredna škoda, ki jo pa v končni posledici nosimo vsi davkoplačevalci. V postopkih revizije naj bi se dajalo preveč pozornosti formalnim pomanjkljivostim in le-te pa naj bi odločilno vplivale na odločitev revizije. To je še veliko bolj problematično, ker so odločitve Državne revizijske komisije dokončne in jih ni mogoče izpodbijati pred nobenim organom. Kot je minister predhodno že sam izpostavil, da imamo pri razpisih javnega naročanja že kar neko slovensko folkloro pritožb, osebno menim, da je bila v preteklosti odločitev dobra, da je odločitev Državne revizijske komisije dokončna in je ni mogoče izpodbijati pred nobenim organom, saj ocenjujem, da so s tem postopki hitrejši in hitreje tečejo. Ne morem se strinjati s predlagateljem, ki pravi, da popravek cen v ceniku ne vpliva na končno ceno. Vprašam pa se, kaj je končna cena. Je že res, da trenutno ta sprememba ne vpliva na končno ceno ponudbe, vendar pa to ne pomeni, da ta popravek ne bo vplival na končno ceno izvedbe. Ti popravki cenikov se bodo uporabili, ko se bodo sklepali aneksi. Hkrati bi rada še izpostavila, da odločitev Državne revizijske komisije ne pomeni ponovitve postopka, temveč se postopek lahko vrne v ponovno odločanje naročniku. Se pa sprašujem, zakaj naročnik čaka in ne odloči ponovno, saj ima to možnost. \nSe pa strinjam s kolegi, da na področju javnih naročil nimamo povsem vsega dokončno urejenega, to kaže tudi ta današnji primer, ki ga obravnavamo danes. Še vedno se srečujemo z izigravanjem zakonskih določil, dogovarjanjem ponudnikov, umetnim višanjem cen in onemogočanjem posameznikom konkurenčno nastopanje pri javnih naročilih. Državna revizijska komisija mora poskrbeti, da se v revizijskih postopkih javnega naročanja ne bo ugotavljalo le formalnih pomanjkljivosti izbrane ponudbe, ampak da se bodo uresničila temeljna načela javnega naročanja, torej konkurenčnost ponudnikov ter gospodarna in učinkovita poraba javnih sredstev. Postopki javnega naročanja pa morajo biti kratki in učinkoviti. Mislim, da je čas, da na področju javnega naročanja vzpostavimo učinkovit sistemski nadzor, ki bo preprečil neupravičen odliv proračunskih sredstev. \nHvala lepa.",
-        "person_id": 100,
-        "speech_id": 23819,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "4. nujna seja",
-          "date_ts": "2019-01-24T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "Komisija za nadzor javnih financ",
-              "id": 16,
-              "name": "Komisija za nadzor javnih financ",
-              "classification": "comission",
-              "is_coalition": false
-            }
-          ],
-          "date": "24. 1. 2019",
-          "org": {
-            "acronym": "Komisija za nadzor javnih financ",
-            "id": 16,
-            "name": "Komisija za nadzor javnih financ",
-            "classification": "comission",
-            "is_coalition": false
-          },
-          "id": 388,
+          "id": 572,
           "in_review": false
         }
       },
       {
-        "start_time": "2019-01-23T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_24508",
-        "term": "VIII",
-        "the_order": 360,
-        "org_id": 19,
-        "session_id": 410,
-        "content": "Najlepša hvala, predsednica, za besedo. Vsem skupaj en lep pozdrav tudi v mojem imenu. \nPri spremljanju poročil problematike položaja avtohtone Slovenske narodne skupnosti v sosednjih državah in Slovencev po svetu ter pogledu parlamentarnih gradiv iz tega področje ocenjujem, da je bilo vložene veliko volje in energije za ureditev tega področja. Tudi iz poročil 17. vseslovenskega srečanja, \n (nadaljevanje) ki je bilo 6. julija 2017, je razvidno, da prinašajo veliko predlogov za konkretne aktivnosti. Kljub predstavljenim dosedanjim aktivnostim, zvišanje štipendije, organiziranje pouka v slovenščini, v sosednjih državah, zagotavljanje slovenskih učiteljev in še kakšna stvar bi se lahko našla, pa imam vseeno občutek, da pri vsem manjka poglobljena analiza realnega stanja. Položaj Slovencev v sosednjih državah, tako kot je predlagano v 6. točki poročila vseslovenskega srečanja, s podrobnejšo analizo stanja, poznavanje razmer in konkretnih učinkov posameznih ukrepov, ki jih izvajamo oziroma financiramo, bi lahko optimizirali učinkovitost ukrepov. Mi, poslanci, če bi imeli te analize, bi se lažje mogoče odločali, vi sami pa bi lahko dejansko videli realizacijo, kje so bolj potrebna sredstva, kje prinašajo pluse in kje plusa dodane vrednosti ni. Strinjam se, da moramo največjo pozornost nameniti mladim na vseh področjih delovanja, ki so povezana z matično domovino, vse, od vlaganja v učenje slovenskega jezika, kulture, športa in drugih oblik povezovanja. Vsekakor pa moramo upoštevati tudi njihove individualne interese, to sem poslušala na naši skupni prvi seji. Če si želijo mladi preseliti v matično domovino, bi lahko pripravili strategijo oziroma jim za to vzpostavili pogoje. Če jih zanima samo šport, se bi angažirali na tem področju. Pa če si želijo ostati in živeti v dosedanjem okolju, bi vlagali v ukrepe, da bi lahko tam širili slovenski jezik, našo kulturo in nas predstavljali v zamejstvu. Mislim, da bi morali resnično in realno zajeti vse potrebe teh ciljnih skupin, jih ovrednotiti in na podlagi tega novelirati Strategijo odnosov Republike Slovenije s Slovenci zunaj njenih meja. Tudi oblik sodelovanja na gospodarskem, političnem in drugih področjih ne smemo zanemariti. Zelo primerna oblika sodelovanja je organizacija delovnih obiskov in drugih oblik srečanj različnih ciljnih skupin, kjer bi se lahko identificirale te potrebe. Sama si želim, da bi lahko tudi naša komisija organizirala obiske in delovna srečanja na vaših sedežih zamejskih organizacij, kjer bi se mi lahko pobliže in lažje osebnostno spoznali z vašo problematiko, jo mogoče bolj začutili in potem lažje iskali skupne rešitve. \nSkratka, od Urada Vlade Republike Slovenije za Slovence v zamejstvu in po svetu pričakujem realno analizo stanja, predstavljeno s konkretnimi številkami, kazalci, mogoče s konkretnimi številkami porabe javnih sredstev, in bi se šele na podlagi tega izdelal in sprejel program dela in bi novelirali strategijo na tem področju. \nRes je, da me žalosti, da nimate sredstev 11 milijonov, kot ste jih imeli v preteklosti. Ampak moram pohvaliti vse zamejce izven Slovenije, vse Slovence po svetu, oni delajo ogromno, pa tega ne delajo samo z denarjem, ki ga dobijo iz Slovenije, oni delajo s srcem, oni delajo z dušo za Slovenijo. In mi vsi skupaj jim lahko rečemo samo hvala, mi, poslanci, pa mislim, da se bomo trudili, da jim bomo pristopili na pomoč. \nHvala lepa.",
-        "person_id": 100,
-        "speech_id": 24508,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "2. redna seja",
-          "date_ts": "2018-12-13T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-              "id": 19,
-              "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-              "classification": "comission",
-              "is_coalition": false
-            }
-          ],
-          "date": "13. 12. 2018",
-          "org": {
-            "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-            "id": 19,
-            "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-            "classification": "comission",
-            "is_coalition": false
-          },
-          "id": 410,
-          "in_review": false
-        }
-      },
-      {
-        "start_time": "2019-01-23T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_24582",
-        "term": "VIII",
-        "the_order": 1100,
-        "org_id": 19,
-        "session_id": 410,
-        "content": "Jaz bi samo nekaj vprašala, zdaj, ko ste tako podrobno pojasnili, pa vas zdaj nisem dobro razumela, ali to pomeni, da bo komisija zasedala samo v Celovcu, ali v vseh štirih državah, s katerimi mejimo? Ker sama menim, da bi bilo bolje, da smo enakopravni do vseh držav in do vseh Slovencev po svetu v zamejstvu.\nHvala.",
-        "person_id": 100,
-        "speech_id": 24582,
-        "type": "speech",
-        "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
-          "is_active": true,
-          "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
-            "classification": "pg",
-            "is_coalition": true
-          },
-          "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
-          "has_function": false
-        },
-        "session": {
-          "name": "2. redna seja",
-          "date_ts": "2018-12-13T01:00:00",
-          "updated_at": "4. 2. 2019",
-          "orgs": [
-            {
-              "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-              "id": 19,
-              "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-              "classification": "comission",
-              "is_coalition": false
-            }
-          ],
-          "date": "13. 12. 2018",
-          "org": {
-            "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-            "id": 19,
-            "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-            "classification": "comission",
-            "is_coalition": false
-          },
-          "id": 410,
-          "in_review": false
-        }
-      },
-      {
-        "start_time": "2019-01-10T01:00:00Z",
-        "party_id": 5,
-        "id": "speech_19890",
+        "start_time": "2019-02-14T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_31299",
         "term": "VIII",
         "the_order": 40,
-        "org_id": 21,
-        "session_id": 299,
-        "content": "Hvala za besedo.\nImuniteta poslancev je osnovni garant za kakovost razprave in odločanje v parlamentu. Poslanci pri svojem delu ne smemo imeti bojazni, da bomo zaradi svojih razprav, mnenj, stališč, pogledov ali odločitev, kazensko odgovarjali. Temu pravimo tako imenovano tudi materialna imuniteta, ki jo opredeljuje prvi odstavek 83. člena ustave Republike Slovenije. Označujemo jo tudi kar s svobodo govora, ki nam poslancem omogoča, da lahko svobodno in neovirano nastopamo v parlamentu, govorimo, kritiziramo delo vlade in drugih državnih organov. Izražamo svoja mnenja in na koncu tudi glasujemo.\nDrugi in tretji odstavek 83. člena ustave Republike Slovenije opredeljujejo procesno imuniteto in imuniteto nedotakljivosti. Drugi odstavek določa, da poslanec ne sme biti priprt, niti se zoper njega, če se sklicuje na imuniteto, ne sme začeti kazenski postopek brez dovoljenja Državnega zbora, razen če je bil zaloten pri kaznivem dejanju, ki je, za katero je predpisana kazen nad 5 let. Tretji odstavek 83. člena ustave Republike Slovenije pa predpisuje, da Državni zbor lahko prizna imuniteto tudi poslancu, ki se zanjo ni skliceval ali ki je bil zaloten pri kaznivem dejanju iz drugega odstavka.\nPrav postopki pri uveljavljanju teh dveh institutov v Državnem zboru naj bi bili predmet sprememb in dopolnitev Poslovnika Državnega zbora. Trenutna ureditev za uveljavljanje obeh oblik procesne imunitete namreč predpisuje enak postopek, ne glede na to, gre za zahtevo po prvem odstavku, ko se poslanec sklicuje na imuniteto ali za obvestilo po drugem odstavku 204. člena Poslovnika Državnega zbora, ko se poslanec ne sklicuje na imuniteto ali se ji odpove.\nRazprava in urejanje pravnih podlag na tem področju je nujna. Pravne podlage moramo prilagajati spremembam in odnosu v družbi, zato je tudi na tem\n(nadaljevanje) področju potrebno slediti modernim pravnim ureditvam v drugih okoljih.\nDejstvo je, da je naša sedanja ureditev povzeta iz ustave in iz drugih časov, ki pa ni optimalna za naše sedanje razmere, mislim, da tako pomembno tematiko ne bi smeli zreducirati samo na popravek in spremembe Poslovnika Državnega zbora, ločitev postopkov pri uveljavljanju procesne imunitete, ampak bi morali to tematiko celovito urediti.\nUrediti bi jo morali v spremembah in dopolnitvah 83. člena ustave Republike Slovenije in ostalih navezanih členov ustave Republike Slovenije. Slediti bi morali predlogom prejšnjih delovnih skupin, ki so si prizadevali spremembo ustave, urediti poslansko imuniteto. Vsekakor je potrebno razpravljati tudi o ekskulpaciji(?), odškodninski odgovornosti poslancev pri materialni imuniteti, institut o materialni imuniteti(?) pa bi bilo potrebno razširiti na celotno funkcioniranje poslancev, tudi zunaj Državnega zbora, ko opravljajo svojo funkcijo, ne samo na Državni zbor in delovna telesa kot je doslej to določeno. Po procesni imuniteti pa je potrebno izhajati iz narave tega instituta.\nV večini držav in v teoriji, je procesna imuniteta namenjena nemotenemu delovanje parlamenta. Nikakor pa ni to individualna pravica poslanca, o kateri se lahko sam odloča. Če bomo na takšen način reševali problematiko, bo problem dveh postopkov pri uveljavljanju procesne imunitete, sam po sebi, odpadel.\nZato v Poslanski skupini Stranke modernega centra na podlagi četrtega odstavka 73. člena Poslovnika predlagamo, da Komisija za poslovnik prekine obravnavano točko dnevnega reda, saj menimo, da je smiselno, da se pred razpravo oziroma obravnavo sprememb in dopolnitev Poslovnika Državnega zbora v zvezi z ureditvijo procesne imunitete poslancev, opravi razpravo o samem institutu poslanske imunitete in sicer ustreznost njegove ureditve. Smiselno bi bilo, da o tem pred nadaljevanjem obravnave te točke, opravi posvet delovna skupina, ki je bila ustanovljena za pripravo Predloga novele Zakona o poslancih in Zakona o Državnem zboru. Hvala.",
-        "person_id": 100,
-        "speech_id": 19890,
+        "org_id": 18,
+        "session_id": 520,
+        "person_id": 105,
+        "speech_id": 31299,
         "type": "speech",
+        "content": "Hvala za besedo. Dober dan in lep pozdrav vsem prisotnim.\n Jaz bom nadaljeval v italijanskem jeziku. Najprej bi se rad zahvalil predsedniku oziroma madžarskemu poslancu, torej poslancu madžarske skupnosti Ferencu Horváthu in se mu zahvaljujem za vabilo. Rad bi se zahvalil tudi predsedniku državnega sveta Republike Slovenije Alojzu Kovšci, njeni ekscelenci, madžarski veleposlanici v Sloveniji in generalni sekretarki na Ministrstvu za šolstvo in šport. Rad bi pozdravil tudi vse predstavnike oblasti v dvorani in tudi učitelje in učence različnih šol na današnjem Posvetu o 60. obletnici dvojezične madžarske šole v Sloveniji. Pozdravljam obenem tudi vse goste, ki so danes tukaj prisotni v dvorani.\nDanes obeležujemo pomemben dan za avtohtono madžarsko skupnost v Sloveniji. 60 let je zagotovo zavidljiv rezultat za dvojezično šolo. Slišali smo že besede predsednika pred mano, orisal je zgodovino te šole v Republiki Sloveniji. Poučevanje jezika in sicer madžarskega in italijanskega jezika, torej jezika dveh manjšin v Sloveniji, pa tudi v drugih državah. Poučevanje manjšinskih jezikov je temelj za identiteto nekega naroda in to je tudi nedvomno najpomembnejši element, ki omogoča razvoj kulture in posameznikov različnih narodnosti, zlasti, ko pa govorimo o manjšinah na našem ozemlju. Madžarska dvojezična šola je torej nedvomno pomembna prav za ohranjanje te identitete in poučevanje v tem primeru madžarskega jezika je, tako kot smo že slišali, se začne že v družini. Otroci se jezika naučijo še doma, še preden vstopijo v vrtec, družina igra torej pomembno vlogo, pomembno pa je tudi, da se otroci naučijo svojega materinega jezika. Pogosto ne gre za samo en materni jezik, vemo, da imamo mešane zakone in torej imamo otroke, ki zrastejo v \n madžarski skupnosti v dvojezični ali večjezični družini, je pa zelo pomembno, da se otroci v družinskem okolju naučijo vse jezike, ki tej družini predstavljajo materni jezik. Torej materinega in očetovega jezika.\nPomembno je tudi, da se jim zagotovi nadaljevanje negovanja jezika v šolskem sistemu, torej v vrtcih – v tem primeru madžarskih vrtcih – in osnovnih šolah, kjer je materni jezik prevladujoči jezik. To bo jezik, ki bo nekako jim sledil ves razvoj po celotnem šolskem sistemu. \nSeveda imamo težave, obstajajo težave, slišali smo, da obstajajo težave tako med madžarsko manjšino kot tudi v italijanski manjšini glede števil pripadnikov manjšine, ki obiskujejo šolo. In to je ključnega pomena, da se ohrani jezik, da tudi v prihodnosti zastopa jezikovno manjšino v celotnem teku izobraževanja. Torej, od vrtca prek osnovne šole, srednje šole, do univerze. \nKakovost učiteljev je zagotovo težava, s katero se bo treba soočiti, in se redno moramo s tem vprašanjem soočati vsako leto. Ker tako učitelji kot pedagogi oziroma pomočniki v vrtcih, osnovnih šolah imajo ustrezne jezikovne kompetence tudi na področjih – in tudi v snoveh, ki jih poučujejo – ker bomo samo na ta način lahko zagotovili, da bodo pripadniki tako madžarske kot italijanske manjšinske skupnosti se lahko tudi primerno vključili v kulturno in gospodarsko življenje države, v kateri živimo. Torej Republike Slovenije. \nČe mi je dovoljeno, bi naredil majhno primerjavo med dvojezično šolo za madžarsko manjšino in dvojezično šolo za italijansko manjšino. In torej na Obali, v štirih obalnih občinah – italijanske šole v teh naših dvojezičnih občinah – ni bila nikoli prekinjena. Spremenil se je sistem v povojnem obdobju že s Pariškim mirovnim sporazumom iz februarja leta 1947. Nato pa se je stanje še utrdilo tudi z Londonskim memorandumom iz leta 1954, v katerem so se navedle vse izobraževalne ustanove, torej šole, vrtci, v teh štirih občinah. V vseh teh letih se je sistem prilagajal – tako jugoslovanskemu, nato slovenskemu – sistemu, tako da smo spremenili tako osnovno šolo kot srednjo šolo. Veliko spremembo pa smo videli predvsem v številu vpisanih. Na tem območju, na katerem živi italijanska nacionalna skupnost, smo imeli štiri obdobja. Prvo obdobje je bilo obdobje takojšnjega povojnega obdobja in torej tam smo videli močno zmanjšanje števila med leti 1947 in 1956 - do 70, 80 % se je zmanjšalo število učencev, ki so obiskovali italijanske šole. Pač zaradi izselitve italijanskega prebivalstva, ki nam je vsem znana. Te številke so ostale vse do 70. let, potem pa smo v 70. in 80. letih videli povečano število vpisov tudi s strani večinskega naroda v naše šole. In torej prvi učenci, ki niso bili materni govorci italijanskega jezika, so se začeli vpisovati v naše šole v 70. in 80. letih. Tretje obdobje je obdobje po osamosvojitvi Slovenije, torej od leta 1991 dalje, ko so tudi prebivalci drugih bivših jugoslovanskih republik se začeli vpisovati v vedno večjem številu v šole z italijanskim učnim jezikom. In te šole so postopoma postajale multikulturne enojezične šole, \n (nadaljevanje) v katerih je jezik poučevanja vendarle bil italijanščina v vseh snovi, razen seveda pri pouku angleščine in slovenščine. 4. obdobje je obdobje po letu 2010, ko so se v naše šole začeli vpisovati tudi učenci iz drugih držav, torej ne iz bivše Jugoslavije, torej zlasti Rusije in Ukrajine. In torej lahko vidimo, da imamo med našimi učenci, ki imajo italijanščino za materni jezik, da so oni dejansko manjšina v naši šoli. Pomembno pa je, da se jezik poučuje na določeni kakovosti ravni, in to, da prevladuje v šolskem okolju na tak način, da tudi ostali, ki niso pripadniki italijanske manjšinske skupnosti, se naučijo jezika, ker, kot smo rekli, jezik predstavlja identiteto in temelj za razvoj kulture vsakega naroda, torej tudi italijanskega naroda, in torej tudi za razvoj posameznikov. Vsi torej, ki zaključijo vrtec, torej predšolski del izobraževanja, potem pa šolski del izobraževanja, zapustijo ta sistem z dobrim znanjem italijanskega jezika. To je torej dober način, da se jezik na terenu uveljavi, ker tako vedno večje število ljudi vsaj potencialno zna italijanščino in torej uveljavlja dejansko dvojezičnost na našem območju. Žal vidimo, da ni vedno tako, teorija je namreč eno, praksa je pa nekaj drugega. S tega vidika imamo določene težave pri izvajanju same dvojezičnosti in si prizadevamo tudi s pomočjo Vlade Republike Slovenije in vseh pristojnih organov, ki so zadolženi za nadzor na izvajanjem dvojezičnosti, si pri njih prizadevamo, da bo tudi dvojezičnost tudi konkretno in bolj učinkovito prisotna na terenu. \nS tem bi jaz tudi zaključil in vam ob 60. obletnici dvojezične madžarske šole želim, da bi to bila dodatna spodbuda, da se okrepi vaša šola, da se dodatno okrepi vloga vašega jezika, da se veliko bolje razširi na tem območju, na katerem živi madžarska narodna skupnost. In vam želim, da bi v prihodnjih letih se vaš jezik na tem območju tako razširil, da se tudi konkretno vidi v realnem svetu.\nNajlepša hvala. / aplavz/\nPREDSEDNIK FERENC HORVÁTH: Hvala lepa, gospod poslanec.\nS tem smo zaključili s pozdravnimi nagovori. In preden bomo nadaljevali s prispevki, predlagam, da si skupaj ogledamo videoposnetek, ki ga je pripravil RTV studio Lendava, ki se jim zahvaljujem za to.\nIzvolite. \n/ predstavitev posnetka RTV studio Lendava/ /Aplavz/ \nMenim, da ta film je zelo dobro prikazal situacijo. Mogoče bi prešli na prispevke, mogoče ni to v navadi, ampak najprej predamo besedo mladim oziroma dijakinji, ki bo predstavila svoje vidike glede dvojezičnega šolstva in narodne skupnosti. \nPREDSEDNIK FERENC HORVÁTH: …prosim gospodično Ano Toplak, da predstavi svoj pogled na dvojezično šolstvo in sploh narodnostno vprašanje. \nIzvoli.",
         "person": {
-          "name": "Mateja Udovč",
-          "district": [23],
-          "gender": "f",
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
           "is_active": true,
           "party": {
-            "acronym": "SMC",
-            "id": 5,
-            "name": "Stranka modernega centra",
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
             "classification": "pg",
-            "is_coalition": true
+            "is_coalition": false
           },
           "type": "mp",
-          "id": 100,
-          "gov_id": "P312",
+          "id": 105,
+          "gov_id": "P352",
           "has_function": false
         },
         "session": {
-          "name": "2. redna seja",
-          "date_ts": "2018-12-20T01:00:00",
-          "updated_at": "4. 2. 2019",
+          "name": "1. posvet",
+          "date_ts": "2019-02-14T01:00:00",
+          "updated_at": "4. 3. 2019",
           "orgs": [
             {
-              "acronym": "Komisija za poslovnik",
-              "id": 21,
-              "name": "Komisija za poslovnik",
+              "acronym": "Komisija za narodni skupnosti",
+              "id": 18,
+              "name": "Komisija za narodni skupnosti",
               "classification": "comission",
               "is_coalition": false
             }
           ],
-          "date": "20. 12. 2018",
+          "date": "14. 2. 2019",
           "org": {
-            "acronym": "Komisija za poslovnik",
-            "id": 21,
-            "name": "Komisija za poslovnik",
+            "acronym": "Komisija za narodni skupnosti",
+            "id": 18,
+            "name": "Komisija za narodni skupnosti",
             "classification": "comission",
             "is_coalition": false
           },
-          "id": 299,
+          "id": 520,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2019-02-13T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_31318",
+        "term": "VIII",
+        "the_order": 70,
+        "org_id": 18,
+        "session_id": 521,
+        "person_id": 105,
+        "speech_id": 31318,
+        "type": "speech",
+        "content": "Ja, gospod predsednik, hvala za besedo.\nLep pozdrav vsem prisotnim! / govori v italijanskem jeziku/\nJaz mislim, da je bilo kar izpostavljeno vse, kar smo imeli za povedati.\n Gospod predsednik je lepo povedal, kakšna so bila v bistvu naša pričakovanja in naši plani in naši dogovori, ki je tudi gospod Scheriani lepo povedal, da so nekako začeli že v lanskem letu. Imeli smo pogovore tudi v septembru in oktobru, predvsem z ministrom za kulturo. Seveda danes obžalujemo, da ni nobenega iz Ministrstva za kulturo. Vemo tudi, zakaj, no, to zdaj so težave. Ampak največ, bi rekel, programov in razvoja na nivoju naših inštitucij seveda pričakujemo s strani Ministrstva za kulturo. Imeli smo pogovore seveda tudi z ministrom za šolstvo in za gospodarstvo.\nNo, pričakovanja so bila velika in na koncu, seveda, na mizi, kot je povedal gospod Tremul, predsednik Italijanske unije, v bistvu v zadnjih desetih letih nismo nadoknadili niti to, kar je bila neka izguba pri inflaciji same vsebine financiranja. Tako da – res je, zadovoljni smo, da, seveda, vse, kar lahko izvajamo in smo izvajali do sedaj – je bilo lahko narejeno seveda, ker Republika Slovenija z Uradom za narodnost zagotovo je bila na naši strani. Nam je dovolila, da se razvijemo, ampak seveda, zdaj glede na to, da zadeve je potem treba še razvijati naprej – pričakujemo, da bomo tudi nekaj na tej strani naredili. \nZdaj, imeli smo pred enim mesecem to, kar je mogoče za italijansko narodno skupnost najbolj pomembna zadeva. Imeli smo drugo sejo Komisije za narodnost v januarju mesecu. In takrat smo se pogovarjali seveda o tem, kar je problem glede samega kadra in finančnih sredstev za RTV Koper z italijanskim jezikom. In tam smo seveda pričakovali, glede na to, da svet samega RTV ni v proračunu za leto 2019 umestil določenih sredstev za upokojitev in pričakujemo v tem letu še štiri dodatne upokojitve – upokojitev naših novinarjev – in dogovor je bil z – seveda s koalicijo in tudi z ministrom za kulturo, da se bo država potrudila, da stabiliziramo kadrovsko stanje in finančno stanje. In seveda tukaj je nekaj denarja, ki ga je treba zagotoviti, ali s strani RTV ali s strani proračuna države Slovenije. Tako da to mogoče je res najbolj pomembna točka in tukaj bomo tekom tega leta – ne moremo čakati nikakor proračuna za leto 2020, ker upokojitve so tukaj, pred nami. In to bo treba sproti reševati z nam – tako nekako so nam že napovedali, da za določene količine finančnih sredstev se da porazporediti tudi v – z notranjimi rezervami na določenem resorju.\nTo, kar so dodatne točke, seveda so – tudi to, kar je že izpostavil gospod Tremul – torej AIA ,časopis La Voce del popolo v Kopru in že leta in leta se trudimo, da bi dali malo večjo vidljivost oziroma večje značaje informativnim tiskanim medijem naša narodne skupnosti. \nNaprej so kulturno središče v Kopru, Centro di Cultura Carlo Combi, ki je bil mišljen in tudi deluje na območju vseh štirih občin na dvojezičnem področju italijanske narodne skupnosti, in tudi tukaj je nekaj težav s strani financiranja. Tukaj pa moram se zahvaliti seveda Ministrstvu za kulturo, ki je nekaj dodatnih sredstev za direktorja je bilo zagotovljenih.\nOstalo, to, kar je za bodočnost – in tukaj se pogovarjamo to, kar je naš zunanji minister gospod Cerar govoril o pozitivni recipročnosti. Seveda je slovenska narodna skupnost, /nerazumljivo/ v Italiji - s katero odlično \n sodelujemo in smo zelo aktivni na eni in na drugi strani. So pred kratkim odprli pisarno za dvojezičnost v Trstu. Vemo sicer, da težave v samem središču Trsta oziroma na celem mestu Trsta so relativno velike glede uresničevanja slovenskega jezika, je pa seveda na periferiji samega Trsta, predstavlja pa, bi rekel, neko realno življenje, kjer se slovenski jezik kar aktivno uporablja glede na to, da na določenih področjih je slovenski narod kar večina. Tako da tukaj si prizadevamo že nekaj let, da tudi na našem področju bi seveda odprli s pomočjo Urada za narodnost oziroma seveda Vlade Republike Slovenije – odprli torej to pisarno, ki bi dala možnost glede zmanjšanja razkoraka med uresničevanjem dvojezičnega poslovanja na našem področju.\nIn na koncu to, kar se je že omenilo. Investicije. Investicije – mi smo že s prejšnjo Vlado, s prejšnjim mandatom se pogovarjali, da sta dva nujna objekta, ki potrebujeta prestrukturiranje, to sta italijanska gimnazija v Kopru in vrtec v Luciji. In bilo je planirano, da v letu 2019 se začnejo uresničevati projekti in z letom 2020 pa tudi dobiti finančna sredstva za investicije glede teh dveh struktur. \nEvo, tako da dela je ogromno. Seveda brez denarja, brez finančnih sredstev pa je nemogoče financirati – niti delno, kje pa v celoti vse te projekte in te razvojne panoge, ki sem jih zdaj jaz omenil in seveda tudi pred mano ostali. Hvala lepa.\nPREDSEDNIK FERENC HORVÁTH: Hvala lepa.\nŽeli še kdo besedo od članov komisije?\nGospod Doblekar, izvolite.",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "3. redna seja",
+          "date_ts": "2019-02-13T01:00:00",
+          "updated_at": "4. 3. 2019",
+          "orgs": [
+            {
+              "acronym": "Komisija za narodni skupnosti",
+              "id": 18,
+              "name": "Komisija za narodni skupnosti",
+              "classification": "comission",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 2. 2019",
+          "org": {
+            "acronym": "Komisija za narodni skupnosti",
+            "id": 18,
+            "name": "Komisija za narodni skupnosti",
+            "classification": "comission",
+            "is_coalition": false
+          },
+          "id": 521,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2019-02-06T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_32037",
+        "term": "VIII",
+        "the_order": 330,
+        "org_id": 34,
+        "session_id": 534,
+        "person_id": 105,
+        "speech_id": 32037,
+        "type": "speech",
+        "content": "Gospod predsednik, hvala za besedo. Lep pozdrav vsem! \nJaz bolj kot vprašanje mogoče dva kratka komentarja. Me veseli vidim, da gre ministrstvo za zdravje tako v pravi smeri glede skrajševanja čakalnih dob. Jaz sam menim, da ste nekako zadeli pravi problem torej primarna raven, ki jo je treba razvijati naprej. To so timi, splošni zdravniki, ki seveda ni na trgu same specializacije, družinske medicine, vemo da niso nekaka izpolnjene vse razpisana mesta za specializacijo. Seveda manjkajo tudi sestre na trgu, to ne samo na primarnem, a tudi na sekundarni in terciarni ravni, ker tudi tukaj bežijo v tujino – predvsem Avstrija in Italija.\nGlede primarne ravni, vidim, da ste tudi razumeli, da predvsem kontrolni pregledi, ki predstavljajo največji procent pregledov na sekundarni in terciarni ravni, jih je treba seveda reševati na primarni ravni, kjer splošni zdravnik najboljše pozna svojega pacienta. Seveda tukaj jim je treba dati možnost, splošnim zdravnikom, da imajo še nekaj inštrumentov oziroma pripomočkov za diagnostično obdelavo pacientov in seveda okrepiti mrežo primarnega nivoja.\nTako da tukaj, v tej smeri, jaz mislim, da to se bo absolutno rešilo. Primarna raven mora prevzeti večina kontrolnih pregledov. Če gledam v tujini, večina pacientov, ki so operirani v bolnišnicah, ne pridejo več na pregled v bolnico, ampak je splošni zdravnik, ki vodi pacienta naprej in samo v primeru kakšnih hudih komplikacij ga ponovno napotijo nazaj. Vemo tukaj pa da dostikrat samo za odstranitev šivov, pacienti tudi se vračajo na sekundarno ali terciarno raven, tam kjer so res nepotrebni kontrolni pregledi.\nTo je banalizacija, ampak hočem reči, da se da tukaj ogromno naredit in to jaz mislim, da je absolutno prava pot in ko bomo to dosegli, da bomo imeli tudi dosežen ta cilj, ki seveda ga vsi želimo – od politike, do zdravstvene blagajne in zdravstvenega ministrstva predvsem.\nDrugi komentar je glede specializacij. Tukaj, predvsem to bi hotel izpostavit – problem sekundarnih ustanov, torej regijskih bolnišnic. Ne drži, da je ta zaveza med specializantom in regijskim oziroma regijsko bolnišnico neka resna zaveza, res na papirju je to nekako zapisano, ampak po šestih letih specializacije in to vemo, da v državi stane tam med 200 in 300 tisoč evrov, če zdravnik ne ostane v regijski bolnišnici, plača ob tožbi(?) tam nekje od 6 do 10 tisoč evrov. To ti je 2 procenta vsega, kar je on dobil, da pride do specialističnega izpita.\nTo je problem glede planiranja kadra, nas je(?) predvsem na sekundarni ravni, ker ti specialisti, seveda, ko zaključijo specializacijo, v glavnem bežijo v terciarne centre. Ker tam je, bomo rekli, tudi pomanjkanja specialistov in pobirajo, ker je tudi bolj zanimiva stroka, bomo rekli, da tam so razviti 100 % je najvišja zdravstvena raven v naši državi in seveda je bolj atraktivno za mladega zdravnika, tam kjer lahko se izrazi na najvišjem nivoju. Tako da regionalne bolnišnice tukaj planirajo 5, 6 let – toliko traja specializacija v državi in na koncu, ko so čakali zdravnika, da mu bo prišel izpopolnit kader in seveda time in ambulantno in hospitalno delo, ostanejo brez zdravnika, še vedno naprej. In potem ta igra se kar nadaljuje.\nTako da, tukaj so večina perifernih oziroma regijskih bolnišnic v Sloveniji zelo na tesno in imajo velike težave, ne samo na specializacijo, ko ste rekla prej, omenila, ginekologije, pediatrije, imajo velike težave na radiologiji, anesteziji, otorinolaringologiji, okulistiki – to so vse te manjše specializacije, kjer je pomanjkanje kadra po celi Sloveniji.\nTako da, tukaj bo treba resno, tako kot je bilo do, mislim, 15 ali 20 let nazaj. Specializanti so bili res vezani na bolnišnico, regijsko bolnišnico in takrat, ko so zaključili s specializacijo so imeli, po mojem spominu, dvakratno obdobje obvezno delo v tisti bolnišnici, če je specializacija takrat trajala 4 ali 5 let, pomeni, da so morali biti 10 let zaposleni v oni bolnici, v kolikor niso ostali v bolnišnici, so pa morali vrniti vsa sredstva, 100 % sredstev, ne pa samo 2 %.\nTako da tukaj, to je debata za naprej, seveda ne vem, koliko je danes prav, da se to pogovarjamo, ker se pogovarjamo o rebalansu proračuna, a če so že drugi odprli to temo, mislim, da je prav, da sem tudi jaz nekaj povedal. Hvala lepa.",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "6. nujna seja",
+          "date_ts": "2019-02-06T01:00:00",
+          "updated_at": "4. 3. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zdravstvo",
+              "id": 34,
+              "name": "Odbor za zdravstvo",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "6. 2. 2019",
+          "org": {
+            "acronym": "Odbor za zdravstvo",
+            "id": 34,
+            "name": "Odbor za zdravstvo",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 534,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2019-01-29T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_30206",
+        "term": "VIII",
+        "the_order": 1530,
+        "org_id": 1,
+        "session_id": 272,
+        "content": "Gospod predsednik Državnega zbora, hvala za besedo. Spoštovani poslanci in poslanke, spoštovana generalna sekretarka! Egregio presidente della Camera di Stato, egregi deputati, egregia segretaria generale! Tisztet Hölgyeim és Uraim! Spoštovane dame in gospodje!\nPoslanska skupina italijanske in madžarske narodne skupnosti bo podprla predlog predsednika Republike Boruta Pahorja za kandidata varuha človekovih pravic gospoda Petra Svetino. Prepričani smo, da njegove izkušnje na takšnem področju, ki mu daje določene pristojnosti in znanja, so garancija za učinkovito, kakovostno in dobro delo.\nJaz bi na kratko povedal, kaj pričakujemo tudi z naše strani in s te strani bi se malo povezal na to, kar je opravila z velikim delom v prejšnjem mandatu sedanja še varuhinja človekovih pravic, gospa Vlasta Nussdorfer. V bistvu je bila zelo učinkovita glede samega nadzora, dela na terenu, glede položaja, samih posebnih pravic narodnih skupnosti, ki predstavljajo, kot se je danes večkrat povedalo, kljub temu da se absolutno strinjam z gospodom Jelinčičem, da marsikdo med državljani Republike Slovenije, tudi če ne spada v ranljive skupine, mora biti ščiten s strani ne samo varuha človekovih pravic, ampak marsikoga.\nAvtonomne narodne skupnosti predstavljajo ranljivo skupino, torej imajo velike težave glede uresničevanja svojih pravic v praksi. V zadnjih letih je bil nadzor realen, učinkovit, sistemski, se je naredilo nekaj konkretnih korakov naprej. Tudi glede same uporabe jezikov narodnih skupnosti, torej italijanščine, madžarščine na območjih, kjer živita narodni skupnosti, se je naredil kakšen konkreten korak naprej. Tudi uresničevanje ustavnopravnih aktov se je izboljšalo. Opozarjala je s svojo ekipo, kako je v bistvu dostikrat neučinkovito delo javnih uslužbencev in funkcionarjev glede same rabe in kompetence na nivoju rabe jezika narodnih skupnosti. Dostikrat so odsotni dvojezični obrazci in tudi določeni postopki, ki bi morali teči po zahtevi pripadnikov narodne skupnosti. Žal ne potekajo tako, kot bi bilo treba. Čas pridobivanja določenih dokumentov je zelo dolg. Kot primer, v zadnjih mesecih sem v okviru svoje pisarne na terenu dobil dve signalizaciji. Ena je bila, ko je en naš pripadnik vztrajal, da hoče odlok oziroma dokument v svojem maternem jeziku, mu je bilo rečeno, če se bo zadovoljil s slovenskim jezikom, bo dobil dokument v 24 do 48 urah, če ne, bo postopek trajal dolgo. Seveda je rabil prevajalca in postopek je trajal dva meseca. Še en primer. Pred kratkim je prišel k meni gospod in mi je povedal za podoben primer, ponovno upravna enota in ponovno čakajo prevajalca že cel mesec. Tako je uresničevanje posebnih pravic avtohtonih skupnosti tukaj zelo vprašljivo, ampak nekaj korakov naprej je bilo strojenih. \nVlasti Nussdorfer bi se zahvalil. In tukaj bomo zelo aktivno z naslednjim varuhom človekovih pravic glede sistemske katalogacije kulturne dediščine obeh narodnih skupnosti. Sedanji varuh je prepoznal tradicionalno pridelavo morske soli …",
+        "person_id": 105,
+        "speech_id": 30206,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "4. redna seja",
+          "date_ts": "2019-01-28T01:00:00",
+          "updated_at": "8. 4. 2019",
+          "orgs": [
+            {
+              "acronym": "DZ",
+              "id": 1,
+              "name": "Državni zbor",
+              "classification": "dz",
+              "is_coalition": false
+            }
+          ],
+          "date": "28. 1. 2019",
+          "org": {
+            "acronym": "DZ",
+            "id": 1,
+            "name": "Državni zbor",
+            "classification": "dz",
+            "is_coalition": false
+          },
+          "id": 272,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2019-01-29T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_30208",
+        "term": "VIII",
+        "the_order": 1550,
+        "org_id": 1,
+        "session_id": 272,
+        "content": "… in tukaj bomo tudi nadaljevali. \nJaz bi še dokončal in bom rekel, da poslanska skupina obeh narodnih skupnosti, torej jaz in poslanec Ferenc Horvath bova podprla predlog imenovanja in bova glasovala za izvolitev Petra Svetine za novega varuha človekovih pravic. Hvala.",
+        "person_id": 105,
+        "speech_id": 30208,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "4. redna seja",
+          "date_ts": "2019-01-28T01:00:00",
+          "updated_at": "8. 4. 2019",
+          "orgs": [
+            {
+              "acronym": "DZ",
+              "id": 1,
+              "name": "Državni zbor",
+              "classification": "dz",
+              "is_coalition": false
+            }
+          ],
+          "date": "28. 1. 2019",
+          "org": {
+            "acronym": "DZ",
+            "id": 1,
+            "name": "Državni zbor",
+            "classification": "dz",
+            "is_coalition": false
+          },
+          "id": 272,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2019-01-22T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_24439",
+        "term": "VIII",
+        "the_order": 110,
+        "org_id": 18,
+        "session_id": 407,
+        "content": "Hvala za besedo, gospod predsednik. \nDober dan vsem prisotnim! Boun giorno, un cordiale saluto a tutti i presenti! \nKot smo danes slišali, je seveda stanje predvsem kadrov na italijanski RTV Koper zelo problematično. V določenih razmerah, ko pogledamo to, kar je predstavljalo za nas in danes predstavlja, kar imamo tudi v strateškem razvoju samega RTV v italijanskem jeziku, predstavlja res velik problem. Torej, kadri so vezani na finančna sredstva. In kar smo pogledali z našimi predstavniki, z našim direktorjem, gospodom Roccom, gospod Runko, ki je tudi naš predstavnik v komisiji za RTV, in predsednikom Scherianijem, se zavedamo, da je v zadnjih treh letih ta upad števila kadra na Radiu Koper v italijanskem jeziku 26 zaposlenih manj, na TV Koper v italijanskem jeziku 10 zaposlenih manj. In seveda ta upad je tudi v poročilu, ki ga je napisal generalni direktor, gospod Kadunc, je zabeležen upad 4,5 %. To pomeni, da 4,5 % je za regijski center Koper. Tako smo v bistvu mi pristali tudi na zmanjšanje kadra do določene mere, ker mogoče zaradi zgodovinskih zadev, kot pravi generalni direktor, je zadeva tudi lahko sprejemljiva, ampak smo prišli do neke točke danes, ko ni več rezerve in ni več možnosti za obdržati program, tako kot je bilo tudi rečeno, ki ga imamo danes, toliko in toliko ur programa ter toliko in toliko dela za sam razvoj. Seveda, napisali smo strateški razvoj in tudi pišemo vizijo, ampak s tem kadrom danes ne moremo omogočiti niti osnovnega delovanja naših programov. Zato smo danes tudi tukaj in smo sklicali to sejo Komisije za narodnosti, da se odločimo, ali je zdaj prišel moment, da rečemo, da smo se dotaknili dna in se tu ustavi zadeva in se pogovarjamo na drugačen način naprej, ali bo to dno izpodbito in preluknjano in bomo še padali dol. Evo, to se moramo danes mi tukaj odločiti, kako bomo postopali naprej in kako v okviru finančnih sredstev, ki jih omogoča RTV Slovenija, in o tem, kar tudi sodeluje in nam financira Urad za narodnosti, torej državni proračun. Mi smo mnenja, da smo prišli v bistvu do neke točke, ko je treba nekaj narediti, da rešimo zadevo, ker nimamo kadrov, da lahko zadeve peljemo naprej. \n \n (nadaljevanje) Ne vem, ali lahko še kaj več povem, zato bi raje poslušal ostale poslance in potem na osnovi tega vidimo, ali bomo še kaj komentirali. Hvala.\nPREDSEDNIK FERENC HORVÁTH: Hvala lepa, gospod podpredsednik. \nZa besedo je prosil gospod Pavšič.",
+        "person_id": 105,
+        "speech_id": 24439,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "2. redna seja",
+          "date_ts": "2019-01-22T01:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Komisija za narodni skupnosti",
+              "id": 18,
+              "name": "Komisija za narodni skupnosti",
+              "classification": "comission",
+              "is_coalition": false
+            }
+          ],
+          "date": "22. 1. 2019",
+          "org": {
+            "acronym": "Komisija za narodni skupnosti",
+            "id": 18,
+            "name": "Komisija za narodni skupnosti",
+            "classification": "comission",
+            "is_coalition": false
+          },
+          "id": 407,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-11-22T01:00:00Z",
+        "party_id": 10,
+        "id": "speech_36060",
+        "term": "VIII",
+        "the_order": 120,
+        "org_id": 1,
+        "session_id": 274,
+        "content": "Spoštovani predsednik Državnega zbora, spoštovani poslanke in poslanci, spoštovana varuhinja človekovih pravic gospa Vlasta Nussdorfer. Egregio presidente della Camera di Stato, egregi deputati, egregio tutore civico Signora Vlasta Nussdorfer! Tisztet Hölgyeim és Uraim!\nPoslanska skupina italijanske in madžarske narodne skupnosti se želi iskreno zahvaliti ob izteku mandata varuhinji človekovih pravic gospe Vlasti Nussdorfer in njeni ekipi za izredno dobro opravljeno delo na področju, kjer živita italijanska in madžarska narodna skupnost. Spodbujala je ter proaktivno in sistemsko delovala na tem področju, ker žal pritožb, ki bi morale biti zaradi neusklajevanja pri realizacij ustavnopravnih določb, praktično ni. Gospa Vlasta Nussdorfer z ekipo je res aktivno sodelovala in nadzorovala uresničevanje položaja in posebne pravice avtohtonih narodnih skupnosti. Pri tem je tudi gledala v relaciji dela z državnimi organi, z organi lokalne samouprave in z nosilci javnih pooblastil. Želimo se ji tudi zahvaliti za zelo aktivno delo na področju javne rabe italijanskega in madžarskega jezika. Tudi tukaj je bil nadzor kar učinkovit. Moramo reči, da smo nekaj korakov naprej naredili tudi v delni rešitvi razkoraka med ustavnopravnimi določbami in realizaciji rabe italijanskega in madžarskega jezika na območjih občih, kjer živita italijanska in madžarska narodna skupnost. Se ji tudi zahvaljujemo, ker je naredila in prepoznala v okviru kulturne dediščine, registracije in popisa kulturnih dediščin italijanske in madžarske narodne skupnosti to, kar smo poskušali že nekaj let pričeti z Ministrstvom za kulturo. Prepoznala je tradicionalno prireditev morske soli kot res realno kulturno dediščino okolja, ki je multijezikovno in multikulturno. Za to se ji iskreno zahvaljujemo in želimo, da se bo Ministrstvo za kulturo v tem delu tudi držalo tega dogovora, ki smo ga podpisali k sodelovanju s koalicijsko pogodbo, glede same registracije in katalogizacije kulturne dediščine obeh narodnih skupnosti. Prihajajočemu varuhu človekovih pravic želimo, da bo nadaljeval na našem področju, kot je bilo začrtano v zadnjih letih glede proaktivnega in sistemskega delovanja. In tudi v prihodnje mu želimo dobro delo! Hvala.",
+        "person_id": 105,
+        "speech_id": 36060,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "2. redna seja",
+          "date_ts": "2018-11-19T01:00:00",
+          "updated_at": "8. 4. 2019",
+          "orgs": [
+            {
+              "acronym": "DZ",
+              "id": 1,
+              "name": "Državni zbor",
+              "classification": "dz",
+              "is_coalition": false
+            }
+          ],
+          "date": "19. 11. 2018",
+          "org": {
+            "acronym": "DZ",
+            "id": 1,
+            "name": "Državni zbor",
+            "classification": "dz",
+            "is_coalition": false
+          },
+          "id": 274,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-10-18T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_24450",
+        "term": "VIII",
+        "the_order": 50,
+        "org_id": 18,
+        "session_id": 408,
+        "content": "Hvala za besedo gospod predsednik. \nTudi jaz bi se želel zahvaliti gospe Vlasti Nussdorfer za vse delo in njeni ekipi, ker brez ekipe vemo, da je težko delati in predvsem se težko dosežejo določeni rezultati, tako da najlepša hvala za vse kar ste naredili v teh letih. Videli smo v poročilu in tudi v praksi, da res nekaj korakov naprej je bilo narejenih. Seveda ne bom ponavljal vse kar je rekel predsednik Horváth Ferenc, se absolutno strinjam z njim. Seveda delamo vsakodnevno skupaj, tako da dobro poznamo problematike, predvsem pa smo na tem področju že ogromno ogromno let. Je seveda še dosti za narediti. Mi to, ki se srečujemo v vsakodnevni praksi, delujemo na našem področju, imamo kontakt z našimi ljudmi z našimi ustanovami in z ustanovami, javnimi ustanovami, ki poslujejo v slovenskem jeziku in bi morali seveda enakopravno tudi delovati v jeziku narodni skupnosti, italijanske in madžarske in vemo, da tukaj so velike težave, seveda v sklopu naših pisarn, ki jih imamo na terenu, tudi svetujemo našim pripadnikom, ne samo našim ustanovam, predsednikom in ljudem, ki vodijo našo ustanovo, samim pripadnikom kako tudi delovati in kako sodelovati s temi našimi ustanovami. Ker težava je v tem, da škodo sogovornika, ki spodbuja pri uporabi predvsem jezika, italijanskega in madžarskega jezika in že tam  najdejo ljudje, ki živijo oziroma najbolj starejši ljudje, ki so doživeli tudi ta period oziroma ta zgodovinski del zadnjih 70 let in določene zadeve so se dogajale in imajo tudi danes določene stiske in probleme, da bi sami se izražali avtomatično v italijanskem jeziku in pravim, da na drugi strani dostikrat ni sogovornika in še danes kljub temu, da je stimulacija dodatek za dvojezičnost predvsem v javnem sektorju seveda to tudi v privatnem, tako kot ste rekla, tržni inšpektorat je res dal dobro poročilo, poročilo glede zapisov v italijanskem in madžarskem jeziku, problem pa je sama poraba jezika narodne skupnosti. In pravim, da tukaj so velike težave, delajo se majhni koraki naprej zelo počasi, tukaj se pogovarjamo in se bomo mogli pogovarjati tudi z ministrom in za kulturo in za javno upravo, nekaj bo tudi tukaj treba spremeniti v zakonskih aktih, kjer daje možnosti tudi na teh področjih, narodno mešanih področjih, da tisti ljudje, ki bodo sprejeti na določena mesta bi bilo potrebno, da javna uprava oziroma komisije lahko ocenjujejo njihovo kakovost in njihove kompetence v znanju teh jezikov in ne avtomatizem, da se kar dodaja dodatek za dvojezičnost kljub temu, da v bistvu v praksi zelo slabo govorijo ta jezik in dostikrat ga ne želijo govoriti, s tem, kar sem rekel že prej, ne spodbujajo tega. In to je treba malo spremeniti družbeno iniciativo same večine tako v sodelovanju z narodnimi skupnostmi. In to je velik izziv za naprej. Jaz mislim, da se da dosti narediti, ker tudi mislim, da večina ljudi, ki živi, seveda večine oziroma ne pripadnikov manjšin imajo veliko empatijo do narodnih skupnosti in želijo tudi oni sami izboljšavo na tem področju. O sami porabi jezika in o drugih listinah in dokumentih, so pa še dodatne težave, ker eno je govoriti in se sporazumevati v samem jeziku, drugo je pa dopolniti določene dokumente, tekste, tam je pa treba še večje kompetence v samem jeziku imeti, ampak to sem se vam hotel iskreno zahvaliti, ker vaše sodelovanje in vaše delo in vaša prisotnost spodbuja pozitivno ta način razmišljanja in ta način delovanja. Tako, da res upam, da bomo nadaljevali in z vami in z načrtom glede ukrepov Vlade Republike Slovenije, ki je potem na 2. točki. Hvala lepa.\nPREDSEDIK FERENC HOVÁTH: Hvala lepa. Predajam besedo gospe Mojci Žnidarič.",
+        "person_id": 105,
+        "speech_id": 24450,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja",
+          "date_ts": "2018-10-18T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Komisija za narodni skupnosti",
+              "id": 18,
+              "name": "Komisija za narodni skupnosti",
+              "classification": "comission",
+              "is_coalition": false
+            }
+          ],
+          "date": "18. 10. 2018",
+          "org": {
+            "acronym": "Komisija za narodni skupnosti",
+            "id": 18,
+            "name": "Komisija za narodni skupnosti",
+            "classification": "comission",
+            "is_coalition": false
+          },
+          "id": 408,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-10-18T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_24462",
+        "term": "VIII",
+        "the_order": 170,
+        "org_id": 18,
+        "session_id": 408,
+        "person_id": 105,
+        "speech_id": 24462,
+        "type": "speech",
+        "content": "Hvala za besedo, gospod predsednik. \nPonovno vse lepo pozdravljam! Cordiale saluto tutti! \nRad bi se zahvalil seveda vsem državnim sekretarjem, ki so danes prisotni, in vsem ostalim predstavnikom pristojnih ministrstev. Zahvalil bi se za delo, kar je bilo narejeno, seveda v upanju, da bomo po tej poti nadaljevali, kot so že moji predhodniki povedali. Jaz ne bi ponavljal tega, kar so že lepo povedali predstavniki italijanske in madžarske narodne skupnosti, pa tudi predsednik. Zagotovo smo na dobri poti, imamo pa še ogromno stvari za narediti, ampak v življenju je vedno tako, vsak dan, ko se začne, je treba znova početi in vedno pazljivo naprej, ker se sicer zadeve lahko zrušijo na vsakem koraku in vsakem ovinku. Jaz si predstavljam, da je življenje tako, da si vedno na kolesu in nikoli ne smeš izgubiti koncentriranosti in ravnotežja, ker lahko padeš v vsakem trenutku. To je pač življenje in s tem se bomo ukvarjali. Seveda je prav, da je dobra volja, da imamo vsi interes, da izboljšamo stanje pripadnikov na narodnostno mešanih območjih. Poznamo probleme, ampak, evo, skupaj smo, delamo in bomo nadaljevali po tej poti. \n (nadaljevanje) Jaz bi še enkrat izpostavil to, kar je uporaba jezika. Vidim, da madžarska skupnost mogoče ima še večje težave kot mi, mislim, tako razumem. Pa mogoče lahko še predstavnica in tudi naš predsednik - sicer se dostikrat pogovarjamo -, mislim, da imajo oni morda še več korakov kot mi za narediti, ampak to, kar je že predstavnica predlagala o znanju in kompetenci jezika, jaz bi celo bil še malo bolj zahteven. Tu smo nekako s predsednikom že dogovorjeni, da bomo preko Ministrstva za šolstvo - jaz sem tudi z ministrom Pikalom že govoril še v predvolilni kampanji, in z ministrom za javno upravo, seveda tudi minister za kulturo in za pravosodje prideta tu v igro. Pogovarjali smo se, kako izboljšati kakovost in kompetence znanja italijanskega jezika, torej večine slovenskih državljanov, ki hodijo na slovenske šole. Tam je bilo kar precej predlogov, kaj bi se lahko naredilo, od povečanja števila ur do povečanja zahtev učiteljev do učencev, do uvrstitve italijanskega jezika tudi v nacionalne preizkuse znanja v šestem in devetem razredu, vse to so bili predlogi. In tudi o maturi smo se pogovarjali in tako naprej, to so bili samo pogovori in bo treba še videti, ali se lahko na tem področju kaj naredi ali ne. Najbolj pomembna zadeva pa je v zakonu za javno upravo, za sprejem v službo, torej kandidatov. V členu - zdaj se na pamet ne spomnim, v katerem členu piše, katere listine oziroma katere šole, katera spričevala je treba imeti, katere dokaze in katere tečaje slovenskega jezika, da dokažeš svojo kompetenco znanja slovenskega jezika. Jaz sem celo bil enkrat s predsednikom Scherianijem, nekaj let nazaj smo bili na Ministrstvu za javno upravo. Takrat so nam povedali, da celo občine, torej občinske uprave, imajo celo pravico na terenu preverjati, koliko kandidat, ki bo sprejet v službo, pozna realno jezikovno in pisno obliko italijanskega oziroma madžarskega jezika. Seveda sem bil ves zadovoljen in vesel, potem, ko sem se pa vrnil v domači kraj, na naših občinah mi je bilo to razloženo, da ta zakon ravno o tem ne govori in da ni ravno tako, kot smo si zamislili, ampak je dovolj samo dokumentacijo priložiti, brez da bi preverjali. In tu je, jaz mislim, nekaj treba narediti. Zakaj? Ker s tem ne samo povečamo kompetence znanja italijanskega jezika večine, ampak jim dajemo še večjo priložnost, da se jutri lažje umestijo v teh delih javne uprave na naših območjih in dajo še dodatno vrednost tem našim jezikom. In s tem bi se mogoče res rešilo, zdaj ne vem, kako bo to možno, z zakonom se bo lahko to sprejelo, da ali ne, pa mislim, da v tej smeri se bomo pogovarjali naprej in videli, kaj se lahko res realizira. \nO drugem ne bi kaj dosti povedal, samo kratko bi odgovoril predsedniku italijanske unije Mauriciu Tremolu, in to zaradi tega, ker sem bil strokovni direktor bolnišnice Izola do junija meseca. Menim, da se odpustnice in izvidi pišejo v slovenskem jeziku, res je, ampak ogromno zdravnikov pozna italijanski jezik in če se lepo prosi in vpraša, je to tudi možno dobiti v italijanskem jeziku. Tako kot smo rekli, tudi v javni upravi, vemo, da so težave. Torej, da ne zdravniki ne sestre ne spodbujajo uporabe italijanskega jezika, to je absolutno res, to je jasno. Samo če pacient želi in ima potrebo do tega, zaprosi in dobi. Če ne dobi takoj, ker, žal, vsak zdravnik ni na nivoju, da bi vedel \n22. TRAK (VI) 10.45 dobro govoriti italijanski jezik, se to naredi kasneje, en dan, dva, tri dni kasneje in se to lahko uredi. Problemi torej so, tako kot v javnih upravah tudi v bolnišnicah, v zdravstvenih domovih, so tudi problemi vizualne dvojezičnosti. Dobil sem kar nekaj pritožb s strani naših pripadnikov in tukaj tudi delamo z občinskim inšpektoratom, predvsem s pogovori, z direktorji zdravstvenih domov, ker mislim, da je bolj vreden en pogovor ali pa tudi deset pogovorov, kolikor je možno to opraviti, seveda, odvisno je tudi od časa samega direktorja in od časa vodij naših inštitucij, ampak mislim, da s pogovori se kar daleč pride, tako kot se danes tudi tukaj dokazuje, da z veliko dobre volje se ogromno naredi. Če pa ni dobre volje lahko napišemo vse zakone in še boljšo ustavo in ne bomo nikoli dosegli cilja. In seveda zaradi tega je inšpektorat občinski tudi pomemben. Moramo delati z njimi, ampak seveda najprej na konstruktiven način, potem pa z kaznim in tako dalje. \nŠe bi mogoče dal informacijo predsedniku italijanske unije, glede same uporabe italijanskega jezika tujih državljanov, kot so Italijani ali pa Švicarji, Francozi, ki prihajajo na naše mešano področje, to smo imeli sedaj pred kratkim celo eno debato z našimi pripadniki. Jaz sem pridobil določene dokumente iz Ministrstva za pravosodje, za kulturo, za javno upravo. Mislim, da je bilo to v letu 2010. Pobudnik je seveda bil gospod Battelli in takrat smo dobili odgovore, da vsi, ki želijo, tudi tujci, ki niso pripadniki italijanske narodne skupnosti imajo pravice uporabe italijanskega jezika na našem področju kot vsi ostali, imamo te dokumente, jaz sem jih posredoval predsedniku italijanske samoupravne skupnosti Scerianiu, predsedniku italijanske skupnosti v Kopru, ker debata je tam potekala in potem še ostalim predsednikom v Piranu in v Izoli, tako da dokument obstaja in je tukaj bil narejen korak. Žal mogoče ni bilo to, nismo sami med seboj se dovolj osveščali o teh rešenih problemih. Tukaj je nekaj pozitivnega kar je bilo storjeno, ampak očitno sami se nismo zavedali tega in to je pomembno, da vsi moramo naprej sodelovati v prid dobrih praks in boljše bodočnosti za vse nas, predvsem pa, o tem kar govorimo danes, za pripadnike narodne skupnosti na mešanih območjih. Hvala. \nPREDSEDNIK FERENC HORVÁTH: Hvala lepa. Ker moramo do 12. zaključiti komisijo, zato prosim vse, ki se prijavljajo k besedi, da bomo kratki, konstruktivni. Izmed članov odbora sta se do sedaj prijavila gospa Ljudmila Novak in gospod Boris Doblekar. Izvolite.",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja",
+          "date_ts": "2018-10-18T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Komisija za narodni skupnosti",
+              "id": 18,
+              "name": "Komisija za narodni skupnosti",
+              "classification": "comission",
+              "is_coalition": false
+            }
+          ],
+          "date": "18. 10. 2018",
+          "org": {
+            "acronym": "Komisija za narodni skupnosti",
+            "id": 18,
+            "name": "Komisija za narodni skupnosti",
+            "classification": "comission",
+            "is_coalition": false
+          },
+          "id": 408,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-09-13T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_37169",
+        "term": "VIII",
+        "the_order": 320,
+        "org_id": 1,
+        "session_id": 286,
+        "content": "Spoštovani predsednik Državnega zbora, spoštovani predsednik Vlade, kolegice, kolegi, kandidatke in kandidati! Egregio Presidente della Camera di Stato, egregio Presidente del Governo, un cordiale saluto a tutti! Tisztelt Hölgyeim és Uraim!\nV Poslanski skupini italijanske in madžarske narodne skupnosti menimo, da morajo biti prednostne naloge nove vlade: nadaljevanje z ukrepi gospodarske rasti, transparentno in učinkovito upravljanje z državnim premoženjem, vzdržnost javnih financ, učinkovito delovanje pravne države ter zagotavljanje socialne in pravične države še posebej do najbolj ogroženih družbenih skupin. \nV naši poslanski skupini si želimo, da nova vlada takoj začne z delom. Napovedujemo, da smo pripravljeni sodelovati pri vsakem dobrem projektu ter sprejemanju dobrih odločitev in zakonov. V nasprotnem primeru bova poslanca italijanske in madžarske narodne skupnosti konkretno in objektivno opozarjala na napake in težave. Velika pričakovanja imava, da bo nova vlada celovito in učinkovito uresničevala varstvo avtohtonih narodnih skupnosti. Prejšnja vlada je na tem področju postavila temelje gospodarski osnovi omenjenih narodnih skupnosti z zagotovitvijo sredstev iz zakona o spodbujanju skladnega in regionalnega razvoja. Zmanjšala je razkorak med normativno ureditvijo in uresničevanjem določb o javni rabi italijanskega in madžarskega jezika na narodno mešanih območjih občin z načrtom ukrepov Vlade za izvajanje predpisov na področju dvojezičnosti 2015–2018, nadgradila je določbe zakona o osebnih pravicah italijanske in madžarske narodne skupnosti na področju vzgoje in izobraževanja ter nadaljevala z naložbami na področju vzgoje in izobraževanja. Zato je pomembno, da nova vlada nadaljuje z aktivnostmi na teh in vseh ostalih področjih varstva avtohtonih narodnih skupnosti. Prizadevati si mora za odpravo žal še prisotnega razkoraka med normativno ureditvijo in uresničevanjem določb o varstvu avtohtonih narodnih skupnosti, v praksi nadgradnja zakonskih aktov, s pripravo področnih in sistemskih politik, ustreznim proračunskim financiranjem, s skrbjo za kadrovske potrebe, promocijo jezikovne in kulturne identitete, kulturne dediščine, zgodovine in navad avtohtonih narodnih skupnosti. S celovitim in učinkovitim sistemom nadzora nad izvajanjem zakonskih aktov, sistemskih politik in financiranja s tega področja, s koordiniranim delovanjem Vlade pri uresničevanju varstva avtohtonih narodnih skupnosti. Zelo pomembna in zahtevna naloga bo priprava seznama celovite kulturne dediščine obeh avtohtonih narodnih skupnosti, kar je že podprl kandidat za ministra za kulturo. \nV poslanski skupini menimo, da je treba optimizirati delovanje Urada Vlade za narodnosti. Ta mora poleg usklajevanja dela pristojnih ministrstev na posameznih področjih varstva avtohtonih narodnih skupnosti izpolnjevati tudi pomembno nalogo na strokovnem, izvršilnem in povezovalnem področju. Od uspešnosti njegovega delovanja bo v veli meri odvisna tudi učinkovitost vlade na tem področju. \nNa podlagi povedanega bova z gospodom Ferencem Horvathom podprla novo vlado. Čaka nas pomembno in odgovorno delo ter konstruktivno sodelovanje. Avtohtona italijanska in madžarska narodna skupnost bosta znali dati svoj prispevek k boljši skupni bodočnosti Slovenije. Novi vladi želimo veliko sreče in uspešnega dela. Hvala.",
+        "person_id": 105,
+        "speech_id": 37169,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "8. izredna seja",
+          "date_ts": "2018-09-13T02:00:00",
+          "updated_at": "8. 4. 2019",
+          "orgs": [
+            {
+              "acronym": "DZ",
+              "id": 1,
+              "name": "Državni zbor",
+              "classification": "dz",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 9. 2018",
+          "org": {
+            "acronym": "DZ",
+            "id": 1,
+            "name": "Državni zbor",
+            "classification": "dz",
+            "is_coalition": false
+          },
+          "id": 286,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-09-05T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_24423",
+        "term": "VIII",
+        "the_order": 420,
+        "org_id": 29,
+        "session_id": 406,
+        "content": "Hvala. Bom tudi jaz zelo kratek. Havla gospa predsednica. Spoštovane kolegice in kolegi, spoštovani kandidat za ministra. …/govori v italijanščini./..\nJaz bi samo izpostavil eno kratko razmišljanje in kratko vprašanje, ker že v prejšnjih koalicijskih pogodbah in to jih je najmanj tri ali štiri, so vsebovale takoj pristop do katalogacije in registracije kulturne dediščine avtohtonih narodnih skupnosti, seveda, ki predstavljajo tudi kulturno dediščino našega okolja in tako smo slišali je tudi povezano z gospodarstvom in s turizmom zadeva zelo pomembna. Želel bi vedeti vaše mnenje glede tega pristopa o katalogaciji in registraciji te dediščine in če bomo prišli do tega kako boste to izvedli. Hvala.",
+        "person_id": 105,
+        "speech_id": 24423,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. nujna seja",
+          "date_ts": "2018-09-05T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za kulturo",
+              "id": 29,
+              "name": "Odbor za kulturo",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "5. 9. 2018",
+          "org": {
+            "acronym": "Odbor za kulturo",
+            "id": 29,
+            "name": "Odbor za kulturo",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 406,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-09-05T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_28547",
+        "term": "VIII",
+        "the_order": 720,
+        "org_id": 34,
+        "session_id": 482,
+        "content": "Spoštovani predsedujoči, hvala za besedo. Spoštovani kandidat za ministra, kolegice in kolegi! / govori v italijanščini/\nJaz bom tudi kratek. Bi poudaril še enkrat na številke, ki sem jih pogledal na OECD za leto 2017 glede števila zdravnikov v Sloveniji in smo nekje v spodnji tretjini lestvice, smo se popravili na primerjavo za leto 2014. Takrat smo imeli 2,8 zdravnikov na tisoč prebivalcev, zdaj imamo 3 zdravnike na tisoč prebivalcev, torej smo kar konkretno šli gor. Povprečje v Evropi je 3,6. Najslabšo številko imajo na Poljskem 2,4, Anglija 2,8. So pa drugi, recimo Avstrija ima 5, najvišjo številko pa ima Grčija 5,3, Nemčija, Italija 4, tako da se popravljamo. Pomeni, da stvari v nekaj letih, popravlja zelo počasi stvari, ker vemo, da to ne gre tako hitro. Verjetno v naslednjih petih do desetih letih bomo v evropskem povprečju. Moje vprašanje pa je bilo za urgentne centre v Sloveniji. Pridobili smo v letih 2013, 2014, deset čudovitih urgentnih centrov, ki po moji razlagi na mnenju, kar dobro delujejo. Problemi so in sem jih že izpostavljal pred leti. To kar smo združili, seveda primarni nivo, skupaj s prehospitalno enoto in z bolnišnično dejavnostjo, vse pod eno streho. Imamo seveda enega, ki vodi urgentne centre, imamo pa tri družine, ki lahko vse razumejo ali pa se ne razumejo med seboj. Urgentnih zdravnikov še ni, že mislim, da osem ali deset let jih specializiramo. Ponavadi začnejo prvi, drugi letnik specializacije, potem se preusmerijo v kakšno drugo specializacijo, toliko da se zaposlijo in potem že najdejo kakšno boljšo rešitev, tako da verjetno teh urgentnih zdravnikov ne bo še leta in leta. To kar pa je največja težava, ki jo jaz vidim v zdravstvenem sistemu in tukaj so pomembni tudi stroški, to kar druge države imajo, primarni nivo ne združujejo v urgentne centre. Zadržujejo primarni novi na terenu, ker vsak pacient je na poten oziroma sam gre v urgentni center ali pa je napoten v urgentnem centru, se stroški takoj povečujejo, ker težko pacient, ko pride v samem centru, gre domov, brez da bi mu vzeli vsaj kri za laboratorijske preiskave ali pa marsikaj še drugega. Tako, da sem mnenja, da verjetno primarni nivo nekako na celi slovenski mreži je treba obdržati, da urgentni centri morajo delovati seveda v skladu s smernicami za vse urgentne paciente, ki res potrebujemo nujno zdravstveno oskrbo. Recimo za primer, vam povem, na Nizozemskem, ker smo bili tam tudi v nekih bolnicah in bolnišnica, ki pokriva - seveda jaz sem delal v izolski bolnišnici - tam pokrivamo nekje do 140 tisoč prebivalcev, pogledamo pa 60 tisoč pacientov v urgentnem centru na letni ravni. Ista bolnišnica ima približno isto število prebivalcev, pogleda 17 tisoč pacientov v urgentnem centru. To je 3-krat in še 3,4-krat manj kot pri nas. Hotel bi vedeti kakšno je vaše mnenje in kako se boste opredelil v razvoju kadra in organizacije dela, \n\n (nadaljevanje) torej v urgentnih centrih in primarnem nivoju.\nHvala.",
+        "person_id": 105,
+        "speech_id": 28547,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. nujna seja",
+          "date_ts": "2018-09-05T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zdravstvo",
+              "id": 34,
+              "name": "Odbor za zdravstvo",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "5. 9. 2018",
+          "org": {
+            "acronym": "Odbor za zdravstvo",
+            "id": 34,
+            "name": "Odbor za zdravstvo",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 482,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-08-17T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_37510",
+        "term": "VIII",
+        "the_order": 220,
+        "org_id": 1,
+        "session_id": 289,
+        "person_id": 105,
+        "speech_id": 37510,
+        "type": "speech",
+        "content": "Spoštovani predsednik Državnega zbora, hvala za besedo. Spoštovani kolegice, kolegi, spoštovani kandidat za predsednika Vlade gospod Marjan Šarec! Egregio presidente della Camera di Stato, grazie per la parola, egregi deputati, egregio candidato alla presidenza del Governo Sig. Marjan Šarec! \nUvodoma želim poudariti, da Poslanska skupina italijanske in madžarske narodne skupnosti zaradi svojega poslanstva ne more biti sestavni del koalicije, kar je tudi korektno. Sodelovanje z vlado je seveda zaželeno in nujno za zagotovitev ter uresničevanje varstva avtohtone italijanske in madžarske narodne skupnosti in njunih pripadnikov v Republiki Sloveniji. Pri imenovanju mandatarja je pomembno, ali kandidatu nedvomno zaupajo volivke in volivci; ali je njegov pristop k reševanju perečih sistemskih in vsebinskih vprašanj države ter družbe pravilno naravnan, predvsem z vidika pravne države, demokratičnosti, socialne občutljivosti, gospodarske učinkovitosti ter spoštovanja človekovih pravic in temeljnih svoboščin. Za Poslansko skupino italijanske in madžarske narodne skupnosti je posebej pomemben njegov pristop do ohranjanja in razvoja varstva avtohtonih skupnosti ter njegova pripravljenost reševanja aktualnih vprašanj na tem področju. \nS poslancem madžarske narodne skupnosti kolegom Ferencem Horvathom ocenjujeva, da so v primeru predloga gospoda Marjana Šarca za mandatarja omenjeni pogoji v pretežni meri izpolnjeni. To pomeni, da bo kandidat za predlaganega predsednika Vlade danes deležen najine podpore. Od mandatarja zato pričakujeva smernice morebitne nove vladne koalicije o uresničevanju varstva pravic avtohtone italijanske in madžarske narodne skupnosti. Omenjena vsebinska vprašanja naj bi zato bila ustrezno oblikovana in vključena v sporazum o partnerstvu. Najin najpomembnejši pogoj za podporo slehernemu mandatarju in kasneje vladi je, da mandatar in kasneje vlada upošteva pomembne zahteve avtohtonih narodnih skupnosti, ki temeljijo na določbah Ustave, osamosvojitvenih aktih, odločbah Ustavnega sodišča, splošno veljavnih načel mednarodnega prava, uradno ratificiranih mednarodnih pogodb o varstvu avtohtonih narodnih manjšin in manjšinskih jezikov ter zakonskih aktov o varstvu avtohtonih narodnih skupnosti. Med pričakovanji poudarjamo pomen ohranjanja narodne in kulturne identitete avtohtone italijanske in madžarske narodne skupnosti ter specifičnosti narodnostno mešanega območja. Zato je temeljno, da do sedaj zagotovljena raven položaja in posebnih pravic avtohtonih skupnosti predstavlja izhodišče za njihov nadaljnji razvoj. Ustvarjanje sistema gospodarske osnove avtohtonih narodnih skupnosti je zato pomembno za obstoj in razvoj teh skupnosti ter tudi za razvoj občin in regij, v katerih živita naši skupnosti; in tudi za čezmejne sodelovanje. Za avtohtoni narodni skupnosti je zelo pomembna tudi nadgradnja dvojezičnega poslovanja državne in občinskih uprav, pravosodja in ostalega javnega sektorja, nosilcev javnih pooblastil in drugih oseb javnega prava na območjih občin, v katerih živita omenjeni narodni skupnosti. \nTemeljno je zagotavljanje ustreznih pogojev za stabilno in razvojno usmerjeno delovanje in avtonomnost ustanov avtohtonih narodnih skupnosti, ki izvajajo tudi narodnostne programe na področju vzgoje in izobraževanja, kulture, informiranja, znanosti, gospodarstva in drugih za avtohtoni narodni skupnosti pomembnih področij. S tem se v državi ustvarjajo ustrezni pogoji za uveljavitev politik v zvezi z italijansko in madžarsko narodno skupnostjo z namenom zagotovitve ustreznega družbenopolitičnega in gospodarskega položaja avtohtone italijanske in madžarske narodne skupnosti v Sloveniji. V Poslanski skupini italijanske in madžarske narodne skupnosti pričakujemo, da bo prihodnja vlada za razvoj dosedanjega varstva avtohtonih narodnih skupnosti in njunih pripadnikov pripravila nadgradnjo zakonodaje o varstvu avtohtonih skupnosti, področne sistemske politike, ustrezno financiranje in nadzor nad izvajanjem omenjenih zakonskih aktov in politik. Na vseh področjih uresničevanja ustavnih in zakonskih določb o varstvu avtohtonih skupnosti namreč ugotavljamo velik razkorak med normativno ureditvijo in izvajanjem določb v praksi. O tem pričajo tudi nadzorni mehanizmi Okvirne konvencije za varstvo narodnih manjšin in Evropske listine o regionalnih ali manjšinskih jezikih, kar so zaznale tudi pretekle vlade. Zato je treba še bolj intenzivno nadaljevati z ukrepi za odpravo omenjenega razkoraka. Zelo pomembno je, da se bo bodoča koalicija zavezala za dejansko uresničitev varstva avtohtonih narodnih skupnosti in njunih pripadnikov. Še enkrat poudarjamo pričakovanje po nadgradnji vseh potrebnih zakonskih aktov o varstvu avtohtonih narodnih skupnosti ter dosledno uveljavljanje dvojezičnosti v javni upravi, pravosodju, pri izvajalcih javnih služb in nosilcih javnih pooblastil, ki uresničujejo pravice in obveznosti ali pravne koristi avtohtonih narodnih skupnosti; pripravo celovitega seznama ter registracij kulturne in naravne dediščine avtohtonih narodnih skupnosti; vzpostavitev učinkovitega sistema gospodarske osnove narodnih skupnosti in tudi primerno sistemsko proračunsko financiranje obeh avtohtonih narodnih skupnosti s posebno skrbjo za vzgojo in izobraževanje, medije, kulturne, gospodarske ter druge sisteme narodnih skupnosti, vključno s kadrovskimi potrebami. \nNa podlagi povedanega bova z gospodom Ferencem Horvathom podprla kandidata za mandatarja gospoda Marjana Šarca. Od tu dalje nas čaka trdo in odgovorno delo ter konstruktivno sodelovanje. Avtohtona italijanska in madžarska narodna skupnost bosta znali dati svoj prispevek k boljši skupni prihodnosti Slovenije. Hvala lepa.",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "5. izredna seja",
+          "date_ts": "2018-08-17T02:00:00",
+          "updated_at": "8. 4. 2019",
+          "orgs": [
+            {
+              "acronym": "DZ",
+              "id": 1,
+              "name": "Državni zbor",
+              "classification": "dz",
+              "is_coalition": false
+            }
+          ],
+          "date": "17. 8. 2018",
+          "org": {
+            "acronym": "DZ",
+            "id": 1,
+            "name": "Državni zbor",
+            "classification": "dz",
+            "is_coalition": false
+          },
+          "id": 289,
+          "in_review": false
+        }
+      },
+      {
+        "start_time": "2018-07-13T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_28196",
+        "term": "VIII",
+        "the_order": 40,
+        "org_id": 33,
+        "session_id": 477,
+        "content": "gospod predsednik, hvala za besedo. Dober dan in lep pozdrav vsem prisotnim! / govori v italijanskem jeziku/\nSkupni odbor je na prvi nujni seji, 5. 7. 2018 kot matično delovno telo obravnaval predlagan predlog. Državna sekretarka na Ministrstvu za finance, mag. Miranda Groff Ferjančič, je v uvodni dopolnitvi obrazložitve predstavila predlog stališča in v razpravi je bila izražena podpora predlogu stališča, hkrati pa so bili izraženi tudi nekateri pomisleki glede učinkovitosti ukrepov, ki jih omogoča direktiva. Odbor je sprejel mnenje, da podpira predlog stališča in predložila Vlada in predlaga odboru za zasedbe Evropske unije, da predlog stališča sprejme. \nHvala.",
+        "person_id": 105,
+        "speech_id": 28196,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja (skupna seja)",
+          "date_ts": "2018-07-13T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zadeve Evropske unije",
+              "id": 33,
+              "name": "Odbor za zadeve Evropske unije",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 7. 2018",
+          "org": {
+            "acronym": "Odbor za zadeve Evropske unije",
+            "id": 33,
+            "name": "Odbor za zadeve Evropske unije",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 477,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2018-07-13T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_28251",
+        "term": "VIII",
+        "the_order": 590,
+        "org_id": 33,
+        "session_id": 477,
+        "content": "Hvala za besedo. \nSkupni odbor je na 1. nujni seji dne 5. 7. 2018 kot matično delovno telo obravnaval predlog stališč Republike Slovenije do predloga uredbe Evropskega parlamenta in Sveta o evropskem nalogu za predložitev in evropskem nalogu za zavarovanje elektronskih dokazov v kazenskih zadevah. Skupni odbor je sprejel mnenje, da omenjen predlog stališča podpira in predlaga Odboru za zadeve Evropske unije, da ga sprejme. \nHvala.",
+        "person_id": 105,
+        "speech_id": 28251,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja (skupna seja)",
+          "date_ts": "2018-07-13T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zadeve Evropske unije",
+              "id": 33,
+              "name": "Odbor za zadeve Evropske unije",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 7. 2018",
+          "org": {
+            "acronym": "Odbor za zadeve Evropske unije",
+            "id": 33,
+            "name": "Odbor za zadeve Evropske unije",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 477,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2018-07-13T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_28273",
+        "term": "VIII",
+        "the_order": 810,
+        "org_id": 33,
+        "session_id": 477,
+        "content": "Hvala za besedo. \nSkupni odbor je na prvi nujni seji dne 5. 7. 2018 kot matično delovno telo obravnaval predlog stališča Republike Slovenije do predloga Direktive Evropskega parlamenta in Sveta o določitvi harmoniziranih pravil o imenovanju pravnih zastopnikov za namene zbiranja dokazov v kazenskih postopkih. Skupni odbor je sprejel mnenje, da zadevni predlog stališča podpira in predlaga Odboru za zadeve EU, da ga sprejme. \nHvala.",
+        "person_id": 105,
+        "speech_id": 28273,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja (skupna seja)",
+          "date_ts": "2018-07-13T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zadeve Evropske unije",
+              "id": 33,
+              "name": "Odbor za zadeve Evropske unije",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 7. 2018",
+          "org": {
+            "acronym": "Odbor za zadeve Evropske unije",
+            "id": 33,
+            "name": "Odbor za zadeve Evropske unije",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 477,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2018-07-13T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_28277",
+        "term": "VIII",
+        "the_order": 850,
+        "org_id": 33,
+        "session_id": 477,
+        "content": "Hvala za besedo. \nSlušni odbor je na 1. nujni seji dne 5. 7. 2018 kot matično delovno telo obravnaval predloga stališča Republike Slovenije do predloga direktive Evropskega parlamenta in sveta o zaščiti oseb, ki prijavljajo kršitev uprava unije. Skupni odbor je sprejel mnenje, da predlog stališča podpira in predlaga Odboru za zadeve Evropske unije, da ga sprejme. Hvala.",
+        "person_id": 105,
+        "speech_id": 28277,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja (skupna seja)",
+          "date_ts": "2018-07-13T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zadeve Evropske unije",
+              "id": 33,
+              "name": "Odbor za zadeve Evropske unije",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 7. 2018",
+          "org": {
+            "acronym": "Odbor za zadeve Evropske unije",
+            "id": 33,
+            "name": "Odbor za zadeve Evropske unije",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 477,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2018-07-13T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_28308",
+        "term": "VIII",
+        "the_order": 1160,
+        "org_id": 33,
+        "session_id": 477,
+        "content": "Hvala za besedo. \nSkupni odbor je na 1. nujni seji, 5. 7. 2018, kot matično delovno telo obravnaval predlog stališča Republike Slovenije do predloga direktive Evropskega parlamenta in sveta o spremembah direktive o izboljševanju varnosti cestne infrastrukture. Odbor je brez razprave sprejel mnenje, da podpira predlog stališča, ki ga je predložila Vlada in predlaga Odboru za zadeve Evropske unije, da predlo stališča sprejme. \nHvala.",
+        "person_id": 105,
+        "speech_id": 28308,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja (skupna seja)",
+          "date_ts": "2018-07-13T02:00:00",
+          "updated_at": "4. 2. 2019",
+          "orgs": [
+            {
+              "acronym": "Odbor za zadeve Evropske unije",
+              "id": 33,
+              "name": "Odbor za zadeve Evropske unije",
+              "classification": "committee",
+              "is_coalition": false
+            }
+          ],
+          "date": "13. 7. 2018",
+          "org": {
+            "acronym": "Odbor za zadeve Evropske unije",
+            "id": 33,
+            "name": "Odbor za zadeve Evropske unije",
+            "classification": "committee",
+            "is_coalition": false
+          },
+          "id": 477,
+          "in_review": true
+        }
+      },
+      {
+        "start_time": "2018-06-29T02:00:00Z",
+        "party_id": 10,
+        "id": "speech_34003",
+        "term": "VIII",
+        "the_order": 100,
+        "org_id": 15,
+        "session_id": 387,
+        "content": "Gospod predsednik, hvala lepa za besedo. \nLep pozdrav vsem prisotnim. \nJaz bi samo najprej tako poudaril in povedal, da sem zelo zadovoljen in vesel, da bo ta zakon sprejet, ker so velike težave predvsem na nivoju srčne kirurgije tako kot vemo. Jaz sem prebral gradivo, kar ste poslali glede predloga in sem videl, da v glavnem je omenjeno vedno terciarni nivo torej oba klinična centra. Jaz se pa zavedam in verjetno tudi Ministrstvo za zdravje, da težave so tudi v regionalnih bolnišnicah torej na sekundarnem nivoju. Jaz sem delal v bolnišnici Izola seveda poznam dobro situacijo v naši bolnici. Vem, da tudi po drugih regionalnih bolnišnicah po Sloveniji so velike težave. Mi imamo v izolski bolnici samo tri radiologe, se pa nam ponujajo iz tretjih držav radiologi, ki seveda nimajo urejeno dokumentacijo. S tremi radiologi pokrivati pripravljenost cel mesec celo leto je praktično nemogoče, ker sistem se ruši tudi tam. Vem, da tudi bolnica Jesenice ima enega ali dva radiologa in je tudi to ključnega pomena, ker bolnišnice danes v celem razvitem svetu brez diagnostike torej vsak pacient, ko pride na nujno obravnavo ali na splošne obravnave kot so CT, magneti ali pa drugi diagnostični postopki potrebujejo za nujno reševanje teh situacij radiologa ali pa za klasične situacije in reševanje teh težav. \nJaz mislim, da bi mogoče v zakonu, če ni bilo predvideno gre za samo za terciarni nivo, da se mogoče vključi tudi regionalne bolnišnice na sekundarnem nivoju seveda je pa cel kup zadev, ki nekako filtrira, ker mora predvsem izvajalec torej bolnišnica, direktor, strokovnjaki dajati svoje mnenje, da res potrebuješ določene strokovnjake. \nJaz bi, če bi se lahko razširil predlog spremembe zakona tudi na sekundarni nivo.",
+        "person_id": 105,
+        "speech_id": 34003,
+        "type": "speech",
+        "person": {
+          "name": "Felice Žiža",
+          "district": [7],
+          "gender": "m",
+          "is_active": true,
+          "party": {
+            "acronym": "IMNS",
+            "id": 10,
+            "name": "Italijanska in madžarska narodna skupnost",
+            "classification": "pg",
+            "is_coalition": false
+          },
+          "type": "mp",
+          "id": 105,
+          "gov_id": "P352",
+          "has_function": false
+        },
+        "session": {
+          "name": "1. redna seja",
+          "date_ts": "2018-06-29T02:00:00",
+          "updated_at": "8. 3. 2019",
+          "orgs": [
+            {
+              "acronym": "Kolegij predsednika Državnega zbora",
+              "id": 15,
+              "name": "Kolegij predsednika Državnega zbora",
+              "classification": "council",
+              "is_coalition": false
+            }
+          ],
+          "date": "29. 6. 2018",
+          "org": {
+            "acronym": "Kolegij predsednika Državnega zbora",
+            "id": 15,
+            "name": "Kolegij predsednika Državnega zbora",
+            "classification": "council",
+            "is_coalition": false
+          },
+          "id": 387,
           "in_review": true
         }
       }
@@ -566,138 +1106,73 @@
   },
   "facet_counts": {
     "facet_queries": {},
-    "facet_fields": { "speaker_i": [], "party_i": [] },
+    "facet_fields": {
+      "person_id": ["105", 20],
+      "party_id": ["10", 20],
+      "person": [
+        {
+          "person": {
+            "name": "Felice Žiža",
+            "gov_id": "P352",
+            "gender": "m",
+            "is_active": true,
+            "district": [7],
+            "party": {
+              "acronym": "IMNS",
+              "name": "Italijanska in madžarska narodna skupnost",
+              "is_coalition": false,
+              "classification": "pg",
+              "id": 10
+            },
+            "type": "mp",
+            "id": 105,
+            "has_function": false
+          },
+          "score": 20
+        }
+      ],
+      "party": [
+        {
+          "party": {
+            "acronym": "IMNS",
+            "name": "Italijanska in madžarska narodna skupnost",
+            "is_coalition": false,
+            "classification": "pg",
+            "id": 10
+          },
+          "score": 20
+        }
+      ]
+    },
     "facet_ranges": {
       "start_time": {
         "counts": [
-          "2014-01-01T00:00:00Z",
-          0,
-          "2014-02-01T00:00:00Z",
-          0,
-          "2014-03-01T00:00:00Z",
-          0,
-          "2014-04-01T00:00:00Z",
-          0,
-          "2014-05-01T00:00:00Z",
-          0,
-          "2014-06-01T00:00:00Z",
-          0,
-          "2014-07-01T00:00:00Z",
-          0,
-          "2014-08-01T00:00:00Z",
-          0,
-          "2014-09-01T00:00:00Z",
-          0,
-          "2014-10-01T00:00:00Z",
-          0,
-          "2014-11-01T00:00:00Z",
-          0,
-          "2014-12-01T00:00:00Z",
-          0,
-          "2015-01-01T00:00:00Z",
-          0,
-          "2015-02-01T00:00:00Z",
-          0,
-          "2015-03-01T00:00:00Z",
-          0,
-          "2015-04-01T00:00:00Z",
-          0,
-          "2015-05-01T00:00:00Z",
-          0,
-          "2015-06-01T00:00:00Z",
-          0,
-          "2015-07-01T00:00:00Z",
-          0,
-          "2015-08-01T00:00:00Z",
-          0,
-          "2015-09-01T00:00:00Z",
-          0,
-          "2015-10-01T00:00:00Z",
-          0,
-          "2015-11-01T00:00:00Z",
-          0,
-          "2015-12-01T00:00:00Z",
-          0,
-          "2016-01-01T00:00:00Z",
-          0,
-          "2016-02-01T00:00:00Z",
-          0,
-          "2016-03-01T00:00:00Z",
-          0,
-          "2016-04-01T00:00:00Z",
-          0,
-          "2016-05-01T00:00:00Z",
-          0,
-          "2016-06-01T00:00:00Z",
-          0,
-          "2016-07-01T00:00:00Z",
-          0,
-          "2016-08-01T00:00:00Z",
-          0,
-          "2016-09-01T00:00:00Z",
-          0,
-          "2016-10-01T00:00:00Z",
-          0,
-          "2016-11-01T00:00:00Z",
-          0,
-          "2016-12-01T00:00:00Z",
-          0,
-          "2017-01-01T00:00:00Z",
-          0,
-          "2017-02-01T00:00:00Z",
-          0,
-          "2017-03-01T00:00:00Z",
-          0,
-          "2017-04-01T00:00:00Z",
-          0,
-          "2017-05-01T00:00:00Z",
-          0,
-          "2017-06-01T00:00:00Z",
-          0,
-          "2017-07-01T00:00:00Z",
-          0,
-          "2017-08-01T00:00:00Z",
-          0,
-          "2017-09-01T00:00:00Z",
-          0,
-          "2017-10-01T00:00:00Z",
-          0,
-          "2017-11-01T00:00:00Z",
-          0,
-          "2017-12-01T00:00:00Z",
-          0,
-          "2018-01-01T00:00:00Z",
-          0,
-          "2018-02-01T00:00:00Z",
-          0,
-          "2018-03-01T00:00:00Z",
-          0,
-          "2018-04-01T00:00:00Z",
-          0,
-          "2018-05-01T00:00:00Z",
-          0,
-          "2018-06-01T00:00:00Z",
-          0,
-          "2018-07-01T00:00:00Z",
-          0,
-          "2018-08-01T00:00:00Z",
-          0,
-          "2018-09-01T00:00:00Z",
-          12,
-          "2018-10-01T00:00:00Z",
+          "2018-06-22T00:00:00Z",
           6,
-          "2018-11-01T00:00:00Z",
-          5,
-          "2018-12-01T00:00:00Z",
+          "2018-07-22T00:00:00Z",
+          1,
+          "2018-08-22T00:00:00Z",
+          3,
+          "2018-09-22T00:00:00Z",
           2,
-          "2019-01-01T00:00:00Z",
-          10,
-          "2019-02-01T00:00:00Z",
+          "2018-10-22T00:00:00Z",
+          0,
+          "2018-11-22T00:00:00Z",
+          1,
+          "2018-12-22T00:00:00Z",
+          0,
+          "2019-01-22T00:00:00Z",
+          6,
+          "2019-02-22T00:00:00Z",
+          1,
+          "2019-03-22T00:00:00Z",
+          0,
+          "2019-04-22T00:00:00Z",
           0
         ],
         "gap": "+1MONTHS",
-        "start": "2014-01-01T00:00:00Z",
-        "end": "2019-03-01T00:00:00Z"
+        "start": "2018-06-22T00:00:00Z",
+        "end": "2019-05-22T00:00:00Z"
       }
     },
     "facet_intervals": {},
