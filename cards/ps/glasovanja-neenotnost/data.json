@@ -1,119 +1,152 @@
 {
   "1": {
-    "name": "Dr\u017eavni zbor",
-    "acronym": "DZ",
-    "is_coalition": true,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": null,
+    "name": "Predstavnički dom",
+    "acronym": "PDPSBIH",
+    "disbanded": null,
     "type": "parliament",
-    "id": 1
+    "id": 1,
+    "is_coalition": false
   },
-  "2": {
-    "name": "Slovenska demokratska stranka",
-    "acronym": "SDS",
-    "is_coalition": false,
-    "disbanded": null,
+  "19": {
     "founded": null,
-    "type": "party",
-    "id": 2
-  },
-  "3": {
-    "name": "Lista Marjana \u0160arca",
-    "acronym": "LM\u0160",
-    "is_coalition": true,
+    "parent_org_id": 1,
+    "name": "Klub poslanika SDA",
+    "acronym": "SDA",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 3
+    "id": 19,
+    "is_coalition": true
   },
-  "4": {
-    "name": "Socialni demokrati",
-    "acronym": "SD",
-    "is_coalition": true,
+  "20": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+    "acronym": "HNS",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 4
+    "id": 20,
+    "is_coalition": false
   },
-  "5": {
-    "name": "Stranka modernega centra",
-    "acronym": "SMC",
-    "is_coalition": true,
+  "21": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Klub poslanika SDP BiH",
+    "acronym": "SDP BiH",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 5
+    "id": 21,
+    "is_coalition": false
   },
-  "6": {
-    "name": "Levica",
-    "acronym": "Levica",
-    "is_coalition": false,
+  "22": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Klub poslanika DF-a",
+    "acronym": "DF",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 6
+    "id": 22,
+    "is_coalition": false
   },
-  "7": {
-    "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-    "acronym": "NSi",
-    "is_coalition": false,
+  "23": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Mješoviti klub poslanika SBB – PDA",
+    "acronym": "SBB i PDA",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 7
+    "id": 23,
+    "is_coalition": false
   },
-  "8": {
-    "name": "Stranka Alenke Bratu\u0161ek",
-    "acronym": "SAB",
-    "is_coalition": true,
+  "24": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+    "acronym": "SNSD",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 8
+    "id": 24,
+    "is_coalition": false
   },
-  "9": {
-    "name": "Demokrati\u010dna stranka upokojencev Slovenije",
-    "acronym": "DESUS",
-    "is_coalition": true,
+  "25": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+    "acronym": "SDS i PDP",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 9
+    "id": 25,
+    "is_coalition": false
   },
-  "10": {
-    "name": "Italijanska in Mad\u017earska narodna skupnost",
-    "acronym": "IMNS",
-    "is_coalition": false,
+  "26": {
+    "founded": null,
+    "parent_org_id": 1,
+    "name": "Klub poslanika Srpski klub",
+    "acronym": "SK",
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 10
+    "id": 26,
+    "is_coalition": false
   },
-  "11": {
-    "name": "Slovenska nacionalna stranka",
-    "acronym": "SNS",
-    "is_coalition": false,
-    "disbanded": null,
+  "27": {
     "founded": null,
-    "type": "party",
-    "id": 11
-  },
-  "12": {
+    "parent_org_id": 1,
     "name": "Koalicija",
-    "acronym": "koal",
-    "is_coalition": true,
+    "acronym": "Koalicija",
     "disbanded": null,
-    "founded": null,
     "type": "coalition",
-    "id": 12
+    "id": 27,
+    "is_coalition": true
   },
-  "13": {
-    "name": "Opozicija",
-    "acronym": "oppo",
-    "is_coalition": false,
-    "disbanded": null,
+  "28": {
     "founded": null,
+    "parent_org_id": 1,
+    "name": "Opozicija",
+    "acronym": "Opozicija",
+    "disbanded": null,
     "type": "opposition",
-    "id": 13
+    "id": 28,
+    "is_coalition": false
+  },
+  "51": {
+    "founded": null,
+    "parent_org_id": null,
+    "name": "Dom naroda",
+    "acronym": "DNPSBiH",
+    "disbanded": null,
+    "type": "parliament",
+    "id": 51,
+    "is_coalition": false
+  },
+  "60": {
+    "founded": null,
+    "parent_org_id": 51,
+    "name": "Klub hrvatskog naroda",
+    "acronym": "FBiH-HR",
+    "disbanded": null,
+    "type": "party",
+    "id": 60,
+    "is_coalition": false
+  },
+  "61": {
+    "founded": null,
+    "parent_org_id": 51,
+    "name": "Klub srpskog naroda",
+    "acronym": "RS",
+    "disbanded": null,
+    "type": "party",
+    "id": 61,
+    "is_coalition": false
+  },
+  "62": {
+    "founded": null,
+    "parent_org_id": 51,
+    "name": "Klub bošnjačkog naroda",
+    "acronym": "FBiH",
+    "disbanded": null,
+    "type": "party",
+    "id": 62,
+    "is_coalition": false
   }
 }

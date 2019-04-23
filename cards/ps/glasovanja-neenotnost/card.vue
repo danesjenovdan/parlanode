@@ -55,7 +55,8 @@
             <div v-t="'parties'" class="filter-label"></div>
             <p-search-dropdown
               :value="allItems"
-              :single="true"
+              :groups="groupLabels"
+              single
               hide-clear
               @select="selectCallback"
             />
@@ -80,7 +81,10 @@
               <a
                 v-for="ballot in day.ballots"
                 :key="ballot.id_parladata"
-                :href="getSessionVoteLink({ session_id: ballot.session_id, vote_id: ballot.id_parladata })"
+                :href="getSessionVoteLink({
+                  session_id: ballot.session_id,
+                  vote_id: ballot.id_parladata,
+                })"
                 :target="voteLinkTarget"
                 class="ballot"
               >
@@ -187,37 +191,64 @@ export default {
       };
     });
 
-    const all = data.find(o => o.type === 'parliament');
-    const coalition = data.find(o => o.type === 'coalition');
-
-    let groups = [];
-    groups.push({
-      id: all.id,
-      color: 'dz',
-      acronym: this.$t('everybody'),
-      name: this.$t('everybody'),
-    });
-    groups.push({
-      id: coalition.id,
-      color: 'koal',
-      acronym: this.$t('coalition'),
-      name: this.$t('coalition'),
-    });
-
-    let namedGroups = [];
-    data.forEach((group) => {
-      if (!group.disbanded && group.type === 'party') {
-        namedGroups.push({
-          id: group.id,
-          acronym: group.acronym,
-          color: group.acronym.toLowerCase().replace(/[ +,]/g, '_'),
-          name: group.acronym,
-        });
+    const getLabelForItem = (item) => {
+      if (item.type === 'parliament') {
+        return this.$t('everybody');
       }
-    });
+      if (item.type === 'coalition') {
+        return this.$t('coalition');
+      }
+      return item.acronym;
+    };
 
-    namedGroups = sortBy(namedGroups, ['name']);
-    groups = groups.concat(namedGroups);
+    const groupedByParent = groupBy(data, 'parent_org_id');
+
+    const allItems = data
+      .filter(o => !o.disbanded && ['party', 'parliament', 'coalition'].indexOf(o.type) !== -1)
+      .map(o => ({
+        id: o.id,
+        color: o.acronym.toLowerCase().replace(/[ +,]/g, '_'),
+        acronym: getLabelForItem(o),
+        name: getLabelForItem(o),
+        type: o.type,
+      }));
+
+    const groupLabels = Object.keys(groupedByParent)
+      .filter(k => k !== 'null')
+      .map((k) => {
+        const parentOrg = groupedByParent.null.find(o => String(o.id) === k);
+        return {
+          label: parentOrg.name,
+          items: data
+            .filter(o => !o.disbanded && String(o.parent_org_id) === k)
+            .filter(o => ['party', 'parliament', 'coalition'].indexOf(o.type) !== -1)
+            .map(o => o.id)
+            .concat(parentOrg.id),
+        };
+      });
+
+    const groups = allItems.sort((a, b) => {
+      const aIsParty = a.type === 'party';
+      const bIsParty = b.type === 'party';
+      if (!aIsParty && bIsParty) {
+        return -1;
+      }
+      if (aIsParty && !bIsParty) {
+        return 1;
+      }
+      if (aIsParty && bIsParty) {
+        return a.acronym.localeCompare(b.acronym, 'sl');
+      }
+      const aIsCoalition = a.type === 'coalition';
+      const bIsCoalition = b.type === 'coalition';
+      if (!aIsCoalition && bIsCoalition) {
+        return -1;
+      }
+      if (aIsCoalition && !bIsCoalition) {
+        return 1;
+      }
+      return a.acronym.localeCompare(b.acronym, 'sl');
+    });
 
     return {
       voteData: [],
@@ -226,8 +257,9 @@ export default {
       sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
       textFilter: '',
       allTags: [],
-      selectedGroup: groups[0].acronym,
+      selectedGroup: groups[0].id,
       groups,
+      groupLabels,
       allClassifications: [],
       cardData: this.$options.cardData,
       visibleTooltip: null,
@@ -237,9 +269,9 @@ export default {
   computed: {
     allItems() {
       return this.groups.map(group => ({
-        id: group.acronym,
+        id: group.id,
         label: group.acronym,
-        selected: group.acronym === this.selectedGroup,
+        selected: group.id === this.selectedGroup,
         colorClass: `${group.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
       }));
     },
@@ -311,7 +343,7 @@ export default {
     },
   },
   beforeMount() {
-    this.fetchVotesForGroup(this.groups[0].acronym);
+    this.fetchVotesForGroup(this.groups[0].id);
   },
   created() {
     const { template, siteMap: sm } = this.$options.cardData;
@@ -389,9 +421,10 @@ export default {
       this.cardData.parlaState.selectedGroup = acronym;
       this.selectedGroup = this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
-    fetchVotesForGroup(acronym) {
+    fetchVotesForGroup(id) {
       this.loading = true;
-      const groupId = find(this.groups, { acronym }).id;
+      const groupId = id;
+      const acronym = find(this.groups, { id }).acronym;
       $.getJSON(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`, (response) => {
         if (this.allTags.length === 0) {
           this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
