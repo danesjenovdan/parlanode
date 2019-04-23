@@ -130,10 +130,6 @@ async function shouldBuildCard(cacheData, cardJson) {
   if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
     return true;
   }
-  // THIS WAS ADDED TO ALLOW MULTIPLE DATA SOURCES
-  if (cardBuild.dataUrls !== cardJson.dataUrls) {
-    return true;
-  }
   return false;
 }
 
@@ -189,7 +185,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     console.log(fetchUrl);
   } else if (cacheData.dataUrls) {
     // generate all fetch URLs by iterating over dataUrls
-    fetchUrls = Object.keys(cacheData.dataUrls).reduce((acc, cur) => { 
+    fetchUrls = Object.keys(cacheData.dataUrls).reduce((acc, cur) => {
       acc[cur] = `${cacheData.dataUrls[cur]}${cacheData.dateRequested ? `/${cacheData.dateRequested}` : ''}`;
       return acc;
     }, {});
