@@ -166,6 +166,14 @@ export default {
       explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
     }));
 
+    const selectedPartiesState = loadFromState('parties') || [];
+    const parties = this.generateParties(this.$options.cardData.data)
+      .map(party => ({
+        ...party,
+        id: party.properId,
+        selected: selectedPartiesState.indexOf(party.acronym) !== -1,
+      }));
+
     return {
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
@@ -173,8 +181,7 @@ export default {
       currentSortOrder: loadFromState('sortOrder') || 'asc',
       currentPage: loadFromState('page') || 1,
       analyses,
-      parties: this.generateParties(this.$options.cardData.data),
-      selectedPartiesState: loadFromState('parties') || [],
+      parties,
       textFilter: loadFromState('textFilter') || '',
       districts,
       genders,

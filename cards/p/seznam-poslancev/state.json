@@ -1,5 +1,6 @@
 {
   "generator": true,
-  "analysis":"presence_votes",
-  "sort":"analysis"
+  "analysis": "presence_votes",
+  "sort": "analysis",
+  "parties": ["SK"]
 }
