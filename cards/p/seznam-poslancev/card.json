@@ -1,7 +1,7 @@
 {
   "_id": "p_seznam-poslancev",
   "dataUrl": "{analizeV2}/p/getListOfMembers",
-  "lastUpdate": "2019-04-23T14:26:52.324Z",
+  "lastUpdate": "2019-04-24T14:40:55.184Z",
   "big": true,
   "high": false
 }

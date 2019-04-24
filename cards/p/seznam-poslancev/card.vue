@@ -82,9 +82,9 @@
 import stableSort from 'stable';
 import { find } from 'lodash';
 import { parse, differenceInCalendarYears } from 'date-fns';
-import axios from 'axios';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
+import generators from 'mixins/generatePeopleAndParties';
 import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
@@ -138,6 +138,7 @@ export default {
   },
   mixins: [
     common,
+    generators,
   ],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
@@ -172,7 +173,7 @@ export default {
       currentSortOrder: loadFromState('sortOrder') || 'asc',
       currentPage: loadFromState('page') || 1,
       analyses,
-      parties: [],
+      parties: this.generateParties(this.$options.cardData.data),
       selectedPartiesState: loadFromState('parties') || [],
       textFilter: loadFromState('textFilter') || '',
       districts,
@@ -376,18 +377,6 @@ export default {
         this.currentSortOrder = 'desc';
       }
     },
-  },
-  created() {
-    axios.get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
-      .then((response) => {
-        this.parties = response.data.data.map(party => ({
-          id: party.party.id,
-          label: party.party.name,
-          acronym: party.party.acronym,
-          selected: this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
-          colorClass: `${party.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
-        }));
-      });
   },
   methods: {
     selectGender(id) {

@@ -31,15 +31,15 @@
       "10": "FBiH"
     }
   ],
-  "created_at": "2019-04-03T16:43:44.778",
-  "created_for": "2019-04-03",
+  "created_at": "2019-04-17T12:23:55.467",
+  "created_for": "2019-04-17",
   "data": [
     {
       "person": {
         "name": "Adil Osmanović",
         "gov_id": "502",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           5
         ],
@@ -110,7 +110,7 @@
         "name": "Aida Baručija",
         "gov_id": "542",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
@@ -181,7 +181,7 @@
         "name": "Alma Čolo",
         "gov_id": "503",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -252,7 +252,7 @@
         "name": "Borjana Krišto",
         "gov_id": "518",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           3
         ],
@@ -323,7 +323,7 @@
         "name": "Branislav Borenović",
         "gov_id": "536",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           6
         ],
@@ -394,7 +394,7 @@
         "name": "Damir Arnaut",
         "gov_id": "538",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -465,7 +465,7 @@
         "name": "Darijana Katić",
         "gov_id": "517",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           7
         ],
@@ -536,7 +536,7 @@
         "name": "Denis Zvizdić",
         "gov_id": "504",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -607,7 +607,7 @@
         "name": "Dragan Bogdanić",
         "gov_id": "511",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           5
         ],
@@ -678,7 +678,7 @@
         "name": "Dragan Mektić",
         "gov_id": "531",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           6
         ],
@@ -749,7 +749,7 @@
         "name": "Dženan Đonlagić",
         "gov_id": "529",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -820,7 +820,7 @@
         "name": "Edin Mušić",
         "gov_id": "505",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           7
         ],
@@ -891,7 +891,7 @@
         "name": "Edita Đapo",
         "gov_id": "539",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -962,7 +962,7 @@
         "name": "Enver Bijedić",
         "gov_id": "522",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -1033,7 +1033,7 @@
         "name": "Halid Genjac",
         "gov_id": "506",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
@@ -1104,7 +1104,7 @@
         "name": "Jakov Galić",
         "gov_id": "544",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           8
         ],
@@ -1175,7 +1175,7 @@
         "name": "Jasmin Emrić",
         "gov_id": "540",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           3
         ],
@@ -1246,7 +1246,7 @@
         "name": "Mijo Matanović",
         "gov_id": "519",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -1317,7 +1317,7 @@
         "name": "Mira Pekić",
         "gov_id": "537",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           6
         ],
@@ -1388,7 +1388,7 @@
         "name": "Mirjana Marinković – Lepić",
         "gov_id": "534",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -1459,7 +1459,7 @@
         "name": "Mirko Šarović",
         "gov_id": "532",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           8
         ],
@@ -1530,7 +1530,7 @@
         "name": "Mirsad Kukić",
         "gov_id": "543",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -1601,7 +1601,7 @@
         "name": "Nada Mladina",
         "gov_id": "523",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -1672,7 +1672,7 @@
         "name": "Nebojša Radmanović",
         "gov_id": "512",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           6
         ],
@@ -1743,7 +1743,7 @@
         "name": "Nenad Nešić",
         "gov_id": "541",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           8
         ],
@@ -1814,7 +1814,7 @@
         "name": "Nenad Stevandić",
         "gov_id": "513",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           6
         ],
@@ -1885,7 +1885,7 @@
         "name": "Nermin Mandra",
         "gov_id": "507",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
@@ -1956,7 +1956,7 @@
         "name": "Nermin Nikšić",
         "gov_id": "524",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           7
         ],
@@ -2027,7 +2027,7 @@
         "name": "Nikola Lovrinović",
         "gov_id": "520",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
@@ -2098,7 +2098,7 @@
         "name": "Obren Petrović",
         "gov_id": "533",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           5
         ],
@@ -2169,7 +2169,7 @@
         "name": "Predrag Kojović",
         "gov_id": "535",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -2240,7 +2240,7 @@
         "name": "Predrag Kožul",
         "gov_id": "521",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           7
         ],
@@ -2311,7 +2311,7 @@
         "name": "Safet Softić",
         "gov_id": "508",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -2382,7 +2382,7 @@
         "name": "Saša Magazinović",
         "gov_id": "525",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           1
         ],
@@ -2453,7 +2453,7 @@
         "name": "Snježana Novaković – Bursać",
         "gov_id": "514",
         "gender": "f",
-        "is_active": false,
+        "is_active": true,
         "district": [
           6
         ],
@@ -2524,7 +2524,7 @@
         "name": "Staša Košarac",
         "gov_id": "515",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           8
         ],
@@ -2595,7 +2595,7 @@
         "name": "Vlatko Glavaš",
         "gov_id": "528",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
@@ -2666,7 +2666,7 @@
         "name": "Vojin Mitrović",
         "gov_id": "516",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           5
         ],
@@ -2737,7 +2737,7 @@
         "name": "Zlatan Begić",
         "gov_id": "530",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           2
         ],
@@ -2808,7 +2808,7 @@
         "name": "Zukan Helez",
         "gov_id": "526",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
@@ -2879,7 +2879,7 @@
         "name": "Šemsudin Dedić",
         "gov_id": "509",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           3
         ],
@@ -2950,7 +2950,7 @@
         "name": "Šemsudin Mehmedović",
         "gov_id": "510",
         "gender": "m",
-        "is_active": false,
+        "is_active": true,
         "district": [
           4
         ],
