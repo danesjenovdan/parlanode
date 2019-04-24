@@ -1,176 +1,62 @@
 {
   "person": {
-    "1": {
-      "slug": "damir-arnaut"
-    },
-    "2": {
-      "slug": "alma-colo"
-    },
-    "3": {
-      "slug": "dzenan-donlagic"
-    },
-    "4": {
-      "slug": "edita-dapo"
-    },
-    "5": {
-      "slug": "enver-bijedic"
-    },
-    "6": {
-      "slug": "semsudin-dedic"
-    },
-    "7": {
-      "slug": "zlatan-begic"
-    },
-    "8": {
-      "slug": "aida-barucija"
-    },
-    "9": {
-      "slug": "dragan-bogdanic"
-    },
-    "10": {
-      "slug": "branislav-borenovic"
-    },
-    "11": {
-      "slug": "vlatko-glavas"
-    },
-    "12": {
-      "slug": "predrag-kozul"
-    },
-    "13": {
-      "slug": "jasmin-emric"
-    },
-    "14": {
-      "slug": "predrag-kojovic"
-    },
-    "15": {
-      "slug": "stasa-kosarac"
-    },
-    "16": {
-      "slug": "borjana-kristo"
-    },
-    "17": {
-      "slug": "zukan-helez"
-    },
-    "18": {
-      "slug": "jakov-galic"
-    },
-    "19": {
-      "slug": "darijana-katic"
-    },
-    "20": {
-      "slug": "halid-genjac"
-    },
-    "21": {
-      "slug": "mirsad-kukic"
-    },
-    "22": {
-      "slug": "mirjana-marinkovic-lepic"
-    },
-    "23": {
-      "slug": "nermin-mandra"
-    },
-    "24": {
-      "slug": "nikola-lovrinovic"
-    },
-    "25": {
-      "slug": "dragan-mektic"
-    },
-    "26": {
-      "slug": "semsudin-mehmedovic"
-    },
-    "27": {
-      "slug": "mijo-matanovic"
-    },
-    "28": {
-      "slug": "vojin-mitrovic"
-    },
-    "29": {
-      "slug": "nada-mladina"
-    },
-    "30": {
-      "slug": "sasa-magazinovic"
-    },
-    "31": {
-      "slug": "edin-music"
-    },
-    "32": {
-      "slug": "snjezana-novakovic-bursac"
-    },
-    "33": {
-      "slug": "mira-pekic"
-    },
-    "34": {
-      "slug": "obren-petrovic"
-    },
-    "35": {
-      "slug": "nebojsa-radmanovic"
-    },
-    "36": {
-      "slug": "nenad-stevandic"
-    },
-    "37": {
-      "slug": "safet-softic"
-    },
-    "38": {
-      "slug": "denis-zvizdic"
-    },
-    "39": {
-      "slug": "mirko-sarovic"
-    },
-    "40": {
-      "slug": "nenad-nesic"
-    },
-    "41": {
-      "slug": "nermin-niksic"
-    },
-    "42": {
-      "slug": "adil-osmanovic"
-    },
-    "94": {
-      "slug": "barisa-colak"
-    },
-    "95": {
-      "slug": "dragan-covic"
-    },
-    "96": {
-      "slug": "sredoje-novic"
-    },
-    "97": {
-      "slug": "denis-becirovic"
-    },
-    "98": {
-      "slug": "amir-fazlic"
-    },
-    "99": {
-      "slug": "zlatko-miletic"
-    },
-    "100": {
-      "slug": "dusanka-majkic"
-    },
-    "101": {
-      "slug": "mladen-bosic"
-    },
-    "102": {
-      "slug": "lidija-bradara"
-    },
-    "103": {
-      "slug": "bakir-izetbegovic"
-    },
-    "104": {
-      "slug": "nikola-spiric"
-    },
-    "105": {
-      "slug": "asim-sarajlic"
-    },
-    "106": {
-      "slug": "lazar-prodanovic"
-    },
-    "107": {
-      "slug": "marina-pendes"
-    },
-    "108": {
-      "slug": "fahrudin-radoncic"
-    }
+    "1": { "slug": "damir-arnaut" },
+    "2": { "slug": "alma-colo" },
+    "3": { "slug": "dzenan-donlagic" },
+    "4": { "slug": "edita-dapo" },
+    "5": { "slug": "enver-bijedic" },
+    "6": { "slug": "semsudin-dedic" },
+    "7": { "slug": "zlatan-begic" },
+    "8": { "slug": "aida-barucija" },
+    "9": { "slug": "dragan-bogdanic" },
+    "10": { "slug": "branislav-borenovic" },
+    "11": { "slug": "vlatko-glavas" },
+    "12": { "slug": "predrag-kozul" },
+    "13": { "slug": "jasmin-emric" },
+    "14": { "slug": "predrag-kojovic" },
+    "15": { "slug": "stasa-kosarac" },
+    "16": { "slug": "borjana-kristo" },
+    "17": { "slug": "zukan-helez" },
+    "18": { "slug": "jakov-galic" },
+    "19": { "slug": "darijana-katic" },
+    "20": { "slug": "halid-genjac" },
+    "21": { "slug": "mirsad-kukic" },
+    "22": { "slug": "mirjana-marinkovic-lepic" },
+    "23": { "slug": "nermin-mandra" },
+    "24": { "slug": "nikola-lovrinovic" },
+    "25": { "slug": "dragan-mektic" },
+    "26": { "slug": "semsudin-mehmedovic" },
+    "27": { "slug": "mijo-matanovic" },
+    "28": { "slug": "vojin-mitrovic" },
+    "29": { "slug": "nada-mladina" },
+    "30": { "slug": "sasa-magazinovic" },
+    "31": { "slug": "edin-music" },
+    "32": { "slug": "snjezana-novakovic-bursac" },
+    "33": { "slug": "mira-pekic" },
+    "34": { "slug": "obren-petrovic" },
+    "35": { "slug": "nebojsa-radmanovic" },
+    "36": { "slug": "nenad-stevandic" },
+    "37": { "slug": "safet-softic" },
+    "38": { "slug": "denis-zvizdic" },
+    "39": { "slug": "mirko-sarovic" },
+    "40": { "slug": "nenad-nesic" },
+    "41": { "slug": "nermin-niksic" },
+    "42": { "slug": "adil-osmanovic" },
+    "94": { "slug": "barisa-colak" },
+    "95": { "slug": "dragan-covic" },
+    "96": { "slug": "sredoje-novic" },
+    "97": { "slug": "denis-becirovic" },
+    "98": { "slug": "amir-fazlic" },
+    "99": { "slug": "zlatko-miletic" },
+    "100": { "slug": "dusanka-majkic" },
+    "101": { "slug": "mladen-bosic" },
+    "102": { "slug": "lidija-bradara" },
+    "103": { "slug": "bakir-izetbegovic" },
+    "104": { "slug": "nikola-spiric" },
+    "105": { "slug": "asim-sarajlic" },
+    "106": { "slug": "lazar-prodanovic" },
+    "107": { "slug": "marina-pendes" },
+    "108": { "slug": "fahrudin-radoncic" }
   },
   "base": "http://ba.parlameter.si",
   "partyLink": {
@@ -195,49 +81,33 @@
       "realAcronym": "PDPSBIH",
       "slug": "predstavnicki-dom"
     },
-    "2": {
-      "acronym": "ostali",
-      "realAcronym": "Ostali",
-      "slug": "ostali"
-    },
+    "2": { "acronym": "ostali", "realAcronym": "Ostali", "slug": "ostali" },
     "3": {
       "acronym": "sbb-fahrudin-radoncic",
-      "realAcronym": "SBB - Fahrudin Radončić",
+      "realAcronym": "SBB - Fahrudin Radon\u010di\u0107",
       "slug": "sbb-fahrudin-radoncic"
     },
-    "4": {
-      "acronym": "sda",
-      "realAcronym": "SDA",
-      "slug": "sda"
-    },
+    "4": { "acronym": "sda", "realAcronym": "SDA", "slug": "sda" },
     "5": {
       "acronym": "df-gs-zeljko-komsic-bih-pobjeduje",
-      "realAcronym": "DF – GS, Željko Komšić: BiH pobjeđuje!",
+      "realAcronym": "DF \u2013 GS, \u017deljko Kom\u0161i\u0107: BiH pobje\u0111uje!",
       "slug": "df-gs-zeljko-komsic-bih-pobjeduje"
     },
     "6": {
       "acronym": "komisija-za-pripremu-izbora-vijeca-ministara-bih",
-      "realAcronym": "Komisija za pripremu izbora Vijeća ministara BiH",
+      "realAcronym": "Komisija za pripremu izbora Vije\u0107a ministara BiH",
       "slug": "komisija-za-pripremu-izbora-vijeca-ministara-bih"
     },
-    "7": {
-      "acronym": "sdp-bih",
-      "realAcronym": "SDP BiH",
-      "slug": "sdp-bih"
-    },
+    "7": { "acronym": "sdp-bih", "realAcronym": "SDP BiH", "slug": "sdp-bih" },
     "8": {
       "acronym": "nezavisni-blok",
       "realAcronym": "Nezavisni blok",
       "slug": "nezavisni-blok"
     },
-    "9": {
-      "acronym": "snsd",
-      "realAcronym": "SNSD",
-      "slug": "snsd"
-    },
+    "9": { "acronym": "snsd", "realAcronym": "SNSD", "slug": "snsd" },
     "10": {
       "acronym": "pdp-mladen-ivanic",
-      "realAcronym": "PDP – Mladen Ivanić",
+      "realAcronym": "PDP \u2013 Mladen Ivani\u0107",
       "slug": "pdp-mladen-ivanic"
     },
     "11": {
@@ -247,32 +117,32 @@
     },
     "12": {
       "acronym": "a-sda-za-evropsku-bosnu-i-hercegovinu-zajedno",
-      "realAcronym": "A – SDA – Za evropsku Bosnu i Hercegovinu – Zajedno",
+      "realAcronym": "A \u2013 SDA \u2013 Za evropsku Bosnu i Hercegovinu \u2013 Zajedno",
       "slug": "a-sda-za-evropsku-bosnu-i-hercegovinu-zajedno"
     },
     "13": {
       "acronym": "nasa-stranka",
-      "realAcronym": "Naša stranka",
+      "realAcronym": "Na\u0161a stranka",
       "slug": "nasa-stranka"
     },
     "14": {
       "acronym": "socijalisticka-partija",
-      "realAcronym": "Socijalistička partija",
+      "realAcronym": "Socijalisti\u010dka partija",
       "slug": "socijalisticka-partija"
     },
     "15": {
       "acronym": "pda-pokret-demokratske-akcije",
-      "realAcronym": "PDA – Pokret demokratske akcije",
+      "realAcronym": "PDA \u2013 Pokret demokratske akcije",
       "slug": "pda-pokret-demokratske-akcije"
     },
     "16": {
       "acronym": "sds-lista-sds-ndp-ns-srs",
-      "realAcronym": "SDS – LISTA (SDS-NDP-NS-SRS)",
+      "realAcronym": "SDS \u2013 LISTA (SDS-NDP-NS-SRS)",
       "slug": "sds-lista-sds-ndp-ns-srs"
     },
     "17": {
       "acronym": "pdp-mladen-ivanic",
-      "realAcronym": "PDP – Mladen Ivanić",
+      "realAcronym": "PDP \u2013 Mladen Ivani\u0107",
       "slug": "pdp-mladen-ivanic"
     },
     "18": {
@@ -342,27 +212,27 @@
     },
     "31": {
       "acronym": "komisija-za-finansije-i-budzet",
-      "realAcronym": "Komisija za finansije i budžet",
+      "realAcronym": "Komisija za finansije i bud\u017eet",
       "slug": "komisija-za-finansije-i-budzet"
     },
     "32": {
       "acronym": "zajednicka-komisija-za-odbranu-i-sigurnost-bih",
-      "realAcronym": "Zajednička komisija za odbranu i sigurnost BiH",
+      "realAcronym": "Zajedni\u010dka komisija za odbranu i sigurnost BiH",
       "slug": "zajednicka-komisija-za-odbranu-i-sigurnost-bih"
     },
     "33": {
       "acronym": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih",
-      "realAcronym": "Zajednička komisija za nadzor nad radom Obavještajno-sigurnosne agencije BiH",
+      "realAcronym": "Zajedni\u010dka komisija za nadzor nad radom Obavje\u0161tajno-sigurnosne agencije BiH",
       "slug": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih"
     },
     "34": {
       "acronym": "zajednicka-komisija-za-ljudska-prava",
-      "realAcronym": "Zajednička komisija za ljudska prava",
+      "realAcronym": "Zajedni\u010dka komisija za ljudska prava",
       "slug": "zajednicka-komisija-za-ljudska-prava"
     },
     "35": {
       "acronym": "komisija-za-finansije-i-budzet",
-      "realAcronym": "Komisija za finansije i budžet",
+      "realAcronym": "Komisija za finansije i bud\u017eet",
       "slug": "komisija-za-finansije-i-budzet"
     },
     "36": {
@@ -372,22 +242,22 @@
     },
     "37": {
       "acronym": "zajednicka-komisija-za-ljudska-prava",
-      "realAcronym": "Zajednička komisija za ljudska prava",
+      "realAcronym": "Zajedni\u010dka komisija za ljudska prava",
       "slug": "zajednicka-komisija-za-ljudska-prava"
     },
     "38": {
       "acronym": "zajednicka-komisija-za-odbranu-i-sigurnost-bih",
-      "realAcronym": "Zajednička komisija za odbranu i sigurnost BiH",
+      "realAcronym": "Zajedni\u010dka komisija za odbranu i sigurnost BiH",
       "slug": "zajednicka-komisija-za-odbranu-i-sigurnost-bih"
     },
     "39": {
       "acronym": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih",
-      "realAcronym": "Zajednička komisija za nadzor nad radom Obavještajno-sigurnosne agencije BiH",
+      "realAcronym": "Zajedni\u010dka komisija za nadzor nad radom Obavje\u0161tajno-sigurnosne agencije BiH",
       "slug": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih"
     },
     "40": {
       "acronym": "komisija-za-finansije-i-budzet",
-      "realAcronym": "Komisija za finansije i budžet",
+      "realAcronym": "Komisija za finansije i bud\u017eet",
       "slug": "komisija-za-finansije-i-budzet"
     },
     "41": {
@@ -397,17 +267,17 @@
     },
     "42": {
       "acronym": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih",
-      "realAcronym": "Zajednička komisija za nadzor nad radom Obavještajno-sigurnosne agencije BiH",
+      "realAcronym": "Zajedni\u010dka komisija za nadzor nad radom Obavje\u0161tajno-sigurnosne agencije BiH",
       "slug": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih"
     },
     "43": {
       "acronym": "zajednicka-komisija-za-ljudska-prava",
-      "realAcronym": "Zajednička komisija za ljudska prava",
+      "realAcronym": "Zajedni\u010dka komisija za ljudska prava",
       "slug": "zajednicka-komisija-za-ljudska-prava"
     },
     "44": {
       "acronym": "zajednicka-komisija-za-odbranu-i-sigurnost-bih",
-      "realAcronym": "Zajednička komisija za odbranu i sigurnost BiH",
+      "realAcronym": "Zajedni\u010dka komisija za odbranu i sigurnost BiH",
       "slug": "zajednicka-komisija-za-odbranu-i-sigurnost-bih"
     },
     "45": {
@@ -422,22 +292,22 @@
     },
     "47": {
       "acronym": "komisija-za-finansije-i-budzet",
-      "realAcronym": "Komisija za finansije i budžet",
+      "realAcronym": "Komisija za finansije i bud\u017eet",
       "slug": "komisija-za-finansije-i-budzet"
     },
     "48": {
       "acronym": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih",
-      "realAcronym": "Zajednička komisija za nadzor nad radom Obavještajno-sigurnosne agencije BiH",
+      "realAcronym": "Zajedni\u010dka komisija za nadzor nad radom Obavje\u0161tajno-sigurnosne agencije BiH",
       "slug": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih"
     },
     "49": {
       "acronym": "zajednicka-komisija-za-odbranu-i-sigurnost-bih",
-      "realAcronym": "Zajednička komisija za odbranu i sigurnost BiH",
+      "realAcronym": "Zajedni\u010dka komisija za odbranu i sigurnost BiH",
       "slug": "zajednicka-komisija-za-odbranu-i-sigurnost-bih"
     },
     "50": {
       "acronym": "zajednicka-komisija-za-ljudska-prava",
-      "realAcronym": "Zajednička komisija za ljudska prava",
+      "realAcronym": "Zajedni\u010dka komisija za ljudska prava",
       "slug": "zajednicka-komisija-za-ljudska-prava"
     },
     "51": {
@@ -452,27 +322,27 @@
     },
     "56": {
       "acronym": "komisija-za-finansije-i-budzet",
-      "realAcronym": "Komisija za finansije i budžet",
+      "realAcronym": "Komisija za finansije i bud\u017eet",
       "slug": "komisija-za-finansije-i-budzet"
     },
     "57": {
       "acronym": "zajednicka-komisija-za-ljudska-prava",
-      "realAcronym": "Zajednička komisija za ljudska prava",
+      "realAcronym": "Zajedni\u010dka komisija za ljudska prava",
       "slug": "zajednicka-komisija-za-ljudska-prava"
     },
     "58": {
       "acronym": "zajednicka-komisija-za-odbranu-i-sigurnost-bih",
-      "realAcronym": "Zajednička komisija za odbranu i sigurnost BiH",
+      "realAcronym": "Zajedni\u010dka komisija za odbranu i sigurnost BiH",
       "slug": "zajednicka-komisija-za-odbranu-i-sigurnost-bih"
     },
     "59": {
       "acronym": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih",
-      "realAcronym": "Zajednička komisija za nadzor nad radom Obavještajno-sigurnosne agencije BiH",
+      "realAcronym": "Zajedni\u010dka komisija za nadzor nad radom Obavje\u0161tajno-sigurnosne agencije BiH",
       "slug": "zajednicka-komisija-za-nadzor-nad-radom-obavjestajno-sigurnosne-agencije-bih"
     },
     "60": {
-      "acronym": "fbih",
-      "realAcronym": "FBiH",
+      "acronym": "fbih-hr",
+      "realAcronym": "FBiH-HR",
       "slug": "klub-hrvatskog-naroda"
     },
     "61": {

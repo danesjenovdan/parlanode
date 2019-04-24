@@ -1,4 +1,4 @@
-import { SPEECHES_PER_PAGE } from 'components/constants';
+import { SPEECHES_PER_PAGE, PG_CLASSIFICATIONS } from 'components/constants';
 
 export default {
   methods: {
@@ -17,7 +17,7 @@ export default {
       if (!party.acronym) {
         return null;
       }
-      if ('classification' in party && party.classification !== 'pg') {
+      if ('classification' in party && PG_CLASSIFICATIONS.indexOf(party.classification) === -1) {
         return null;
       }
       const { urls: slugs, siteMap: sm } = this.$root.$options.cardData;

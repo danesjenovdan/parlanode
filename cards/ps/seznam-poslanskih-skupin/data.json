@@ -1,143 +1,70 @@
 {
-  "data": [{
-    "party": {
-      "acronym": "SMC",
-      "name": "PS Stranka modernega centra",
-      "is_coalition": true,
-      "classification": "pg",
-      "id": 1
+  "data": [
+    {
+      "party": {
+        "name": "Klub hrvatskog naroda",
+        "classification": "club",
+        "acronym": "FBiH-HR",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 60
+      },
+      "results": {
+        "intra_disunion": 20,
+        "number_of_amendments": null,
+        "privzdignjeno": null,
+        "vocabulary_size": 53,
+        "number_of_questions": 0,
+        "seat_count": 5,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": null,
+        "preprosto": null
+      }
     },
-    "results": {
-      "intra_disunion": 0.9503409211186842,
-      "number_of_amendments": 215,
-      "privzdignjeno": 0.031196328264556095,
-      "vocabulary_size": 124.0,
-      "number_of_questions": 67,
-      "seat_count": 34,
-      "presence_votes": 91.1514914973769,
-      "presence_sessions": 91.9650418432908,
-      "problematicno": 0.005710882218965907,
-      "preprosto": 0.031095449167479982
-    }
-  }, {
-    "party": {
-      "acronym": "SDS",
-      "name": "PS Slovenska Demokratska Stranka",
-      "is_coalition": false,
-      "classification": "pg",
-      "id": 5
+    {
+      "party": {
+        "name": "Klub srpskog naroda",
+        "classification": "club",
+        "acronym": "RS",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 61
+      },
+      "results": {
+        "intra_disunion": 11.428571428571429,
+        "number_of_amendments": null,
+        "privzdignjeno": null,
+        "vocabulary_size": 84,
+        "number_of_questions": 0,
+        "seat_count": 5,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": null,
+        "preprosto": null
+      }
     },
-    "results": {
-      "intra_disunion": 2.184860432166405,
-      "number_of_amendments": 373,
-      "privzdignjeno": 0.02340072090385643,
-      "vocabulary_size": 102.0,
-      "number_of_questions": 797,
-      "seat_count": 19,
-      "presence_votes": 65.4548593643288,
-      "presence_sessions": 83.6329115192321,
-      "problematicno": 0.007224617345959592,
-      "preprosto": 0.030235192828482166
+    {
+      "party": {
+        "name": "Klub bošnjačkog naroda",
+        "classification": "club",
+        "acronym": "FBiH",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 62
+      },
+      "results": {
+        "intra_disunion": 17.142857142857142,
+        "number_of_amendments": null,
+        "privzdignjeno": null,
+        "vocabulary_size": 87,
+        "number_of_questions": 0,
+        "seat_count": 5,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": null,
+        "preprosto": null
+      }
     }
-  }, {
-    "party": {
-      "acronym": "DeSUS",
-      "name": "PS Demokratska Stranka Upokojencev Slovenije",
-      "is_coalition": true,
-      "classification": "pg",
-      "id": 3
-    },
-    "results": {
-      "intra_disunion": 3.296169919545489,
-      "number_of_amendments": 20,
-      "privzdignjeno": 0.06513578403296222,
-      "vocabulary_size": 126.0,
-      "number_of_questions": 24,
-      "seat_count": 11,
-      "presence_votes": 87.267765909907,
-      "presence_sessions": 92.8600298262166,
-      "problematicno": 0.012876107014651365,
-      "preprosto": 0.06854531845845419
-    }
-  }, {
-    "party": {
-      "acronym": "SD",
-      "name": "PS Socialni Demokrati",
-      "is_coalition": true,
-      "classification": "pg",
-      "id": 7
-    },
-    "results": {
-      "intra_disunion": 4.111444111445426,
-      "number_of_amendments": 25,
-      "privzdignjeno": 0.06306904703883592,
-      "vocabulary_size": 125.0,
-      "number_of_questions": 38,
-      "seat_count": 5,
-      "presence_votes": 84.3352145072361,
-      "presence_sessions": 87.5953767914933,
-      "problematicno": 0.013496286674359169,
-      "preprosto": 0.06543108785834288
-    }
-  }, {
-    "party": {
-      "acronym": "NSI",
-      "name": "PS Nova Slovenija",
-      "is_coalition": false,
-      "classification": "pg",
-      "id": 6
-    },
-    "results": {
-      "intra_disunion": 0.7398157398156179,
-      "number_of_amendments": 119,
-      "privzdignjeno": 0.05141849611510983,
-      "vocabulary_size": 122.0,
-      "number_of_questions": 45,
-      "seat_count": 5,
-      "presence_votes": 64.3956043956044,
-      "presence_sessions": 81.3592233009709,
-      "problematicno": 0.01180498939865333,
-      "preprosto": 0.06044419228392574
-    }
-  }, {
-    "party": {
-      "acronym": "Levica",
-      "name": "PS Levica",
-      "is_coalition": false,
-      "classification": "pg",
-      "id": 8
-    },
-    "results": {
-      "intra_disunion": 4.1480741480737935,
-      "number_of_amendments": 270,
-      "privzdignjeno": 0.059476234006235446,
-      "vocabulary_size": 117.0,
-      "number_of_questions": 112,
-      "seat_count": 5,
-      "presence_votes": 71.5484515484516,
-      "presence_sessions": 79.0291262135922,
-      "problematicno": 0.017586079551315234,
-      "preprosto": 0.0748764976348227
-    }
-  }, {
-    "party": {
-      "acronym": "IMNS",
-      "name": "PS italijanske in mad\u017earske narodne skupnosti",
-      "is_coalition": false,
-      "classification": "pg",
-      "id": 2
-    },
-    "results": {
-      "intra_disunion": 8.158508158508159,
-      "number_of_amendments": 6,
-      "privzdignjeno": 0.3059412160639906,
-      "vocabulary_size": 102.0,
-      "number_of_questions": 9,
-      "seat_count": 2,
-      "presence_votes": 80.5028305028305,
-      "presence_sessions": 73.7864077669903,
-      "problematicno": 0.05211147681332441,
-      "preprosto": 0.2989061170567294
-    }
-  }]
+  ]
 }
