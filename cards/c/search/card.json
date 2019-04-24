@@ -1,7 +1,7 @@
 {
-  "_id": "c-search",
+  "_id": "c_search",
   "dataUrl": "{analize}/p/getListOfMembersTickers/",
-  "lastUpdate": "2019-04-09T15:15:43.795Z",
+  "lastUpdate": "2019-04-24T15:13:22.117Z",
   "big": true,
   "high": true
 }
