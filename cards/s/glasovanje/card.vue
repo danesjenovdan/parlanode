@@ -4,9 +4,9 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    @selectedparty="(newParty) => { this.state.selectedParty = newParty; }"
-    @selectedoption="(newOption) => { this.state.selectedOption = newOption; }"
-    @namefilter="(newNameFilter) => { this.state.nameFilter = newNameFilter; }"
+    @selectedparty="(newParty) => { state.selectedParty = newParty; }"
+    @selectedoption="(newOption) => { state.selectedOption = newOption; }"
+    @namefilter="(newNameFilter) => { state.nameFilter = newNameFilter; }"
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>
@@ -25,8 +25,8 @@
 
     <div class="date-and-stuff">
       <a
-        class="funblue-light-hover"
         :href="getSessionVotesLink(data.session)"
+        class="funblue-light-hover"
       >
         {{ data.session.name }}
       </a><span class="date">, {{ data.session.date }}</span>
@@ -149,7 +149,7 @@
           :selected-option="state.selectedOption || null"
         />
       </p-tab>
-      <p-tab :label="$t('gov-side')">
+      <p-tab v-if="coalitionOpositionParties.length" :label="$t('gov-side')">
         <poslanske-skupine
           ref="sides"
           :members="data.members"
@@ -196,6 +196,26 @@ export default {
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(data.name);
 
+    const coalitionOpositionParties = ['coalition', 'opposition']
+      .map((side) => {
+        if (!data.gov_side[side]) {
+          return null;
+        }
+        return {
+          party: {
+            id: side,
+            name: this.$t(side),
+          },
+          votes: pick(data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
+          max: {
+            maxOptPerc: data.gov_side[side].max.maxOptPerc,
+            max_opt: data.gov_side[side].max.max_opt,
+          },
+          outliers: data.gov_side[side].outliers,
+        };
+      })
+      .filter(Boolean);
+
     return {
       showMobileExcerpt: false,
       data,
@@ -205,18 +225,7 @@ export default {
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
-        party: {
-          id: side,
-          name: this.$t(side),
-        },
-        votes: pick(data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
-        max: {
-          maxOptPerc: data.gov_side[side].max.maxOptPerc,
-          max_opt: data.gov_side[side].max.max_opt,
-        },
-        outliers: data.gov_side[side].outliers,
-      })),
+      coalitionOpositionParties,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
     };
