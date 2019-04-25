@@ -27,7 +27,7 @@
   height: 56px;
   background-color: $first;
 
-  &:hover { background-color: $second; }
+  &:hover { background-color: $tab-hover; }
 
   &::after {
     content: '';
