@@ -270,7 +270,7 @@ export default {
   }
 }
 
-#s_seznam-sej /deep/ .session-list .headers {
+/deep/ .session-list .headers {
   margin-left: 0;
 }
 </style>
