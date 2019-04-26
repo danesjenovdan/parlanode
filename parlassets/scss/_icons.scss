@@ -111,3 +111,12 @@ $vote-results: (
     background-repeat: no-repeat;
     background-position: center left;
 }
+
+.donation-icon {
+    background-image: url(encode-svg(str-replace(fs-readFile('img/icons/donacija.svg'), '#000', '#{$link}')));
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+}
