@@ -16,7 +16,7 @@ async function isMotionValid(sessionId, motionId) {
 
 function getData(idParam) {
   const id = Number(idParam);
-  const session = id && data.sessions.find(s => s.id_parladata === id);
+  const session = id && data.sessions.find(s => s.id === id);
   return (id && session) ? { session } : null;
 }
 
@@ -67,7 +67,7 @@ router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar((render, req, res
   const sesData = getData(req.params.id);
   if (sesData) {
     const motionId = Number(req.params.motionId);
-    isMotionValid(sesData.session.id_parladata, motionId)
+    isMotionValid(sesData.session.id, motionId)
       .then((isValid) => {
         if (isValid) {
           render('seja/glasovanje', {

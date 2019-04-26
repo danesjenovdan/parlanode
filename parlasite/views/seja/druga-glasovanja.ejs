@@ -3,14 +3,14 @@
 <%- await include('./_header.ejs') %>
 
 <%# TODO: type is hardcoded %>
-<% if (session.organization.classification !== 'kolegij') { %>
+<% if (session.type != 'kolegij') { %>
   <% if (session.votes) { %>
     <div class="row">
       <div class="col-md-12">
-        <%- await fetchCard('/s/seznam-glasovanj/', session.id_parladata, { state: { onlyOther: true } }) %>
+        <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: true } }) %>
       </div>
     </div>
-  <% } else if (session.organization.name === 'Državni zbor') { %>
+  <% } else if (session.org.name === 'Državni zbor') { %>
     <%- await include('../empty-state/state1dz.ejs') %>
   <% } else { %>
     <%- await include('../empty-state/state1.ejs') %>

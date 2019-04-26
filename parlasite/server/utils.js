@@ -2,7 +2,6 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
 const fetch = require('node-fetch');
-const { format } = require('date-fns');
 const data = require('./data');
 
 function stringifyParams(params) {
@@ -124,14 +123,9 @@ function i18n(lang) {
   return get;
 }
 
-function formatDate(date) {
-  return format(new Date(date), 'D. M. YYYY');
-}
-
 module.exports = {
   fetchCard,
   asyncRoute,
   asyncRender,
   i18n,
-  formatDate,
 };

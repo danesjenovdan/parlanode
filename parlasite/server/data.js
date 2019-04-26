@@ -11,7 +11,7 @@ const dataFiles = {
   urls: `${config.urls.analize}/p/getSlugs/`,
   mps: `${config.urls.data}/getAllTimeMemberships/`,
   pgs: `${config.urls.data}/getAllPGsExt/`,
-  sessions: `${config.urls.analize}/s/sessions/?limit=10000`,
+  sessions: `${config.urls.analize}/s/getSessionsByClassification/`,
   laws: `${config.urls.analize}/s/getAllLegislation/`,
 };
 
@@ -25,7 +25,20 @@ const dataTransforms = {
     return Object.keys(data).map(key => data[key]);
   },
   sessions(data) {
-    return data.results;
+    return Object.keys(data).reduce((acc, key) => {
+      data[key].forEach((s) => {
+        if (s.sessions) {
+          s.sessions.forEach((s2) => {
+            s2.type = key;
+            acc.push(s2);
+          });
+        } else {
+          s.type = key;
+          acc.push(s);
+        }
+      });
+      return acc;
+    }, []);
   },
   laws(data) {
     return data.results;
