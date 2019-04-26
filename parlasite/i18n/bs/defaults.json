@@ -25,7 +25,7 @@
         "paragraph": "Svi podaci su besplatno dostupni kroz dva API sučelja, i sav kôd objavljen je na Githubu. Sve potrebno možete pronaći na <a href=\"https://dev.parlameter.javnarasprava.ba\">stranici za developere/ke</a>. Za sve informacije možete nam se obratiti putem emaila!"
       }
     },
-    "thanks": "Parlameter je aplikacija koju <a href=\"http://www.zastone.ba\" class=\"funblue-light-hover\">UG Zašto ne</a> i institut <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, razvijaju kao bosanskohercegovačku verziju parlameter.si, uz integraciju sa već postojećom platformom javnarasprava.ba, budući da se obje platforme bave digitalnom političkom participacijom, transparentnosti i praćenjem rada parlamenata. Hvala NED-u, Google DNI-u i svim pojedincima koji su pomogli projekat svojim nesebičnim zalaganjem."
+    "thanks": "Parlameter nastaja v okviru inštituta <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, Ameriški ambasadi, NED in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju."
   },
   "legal": {
     "title": "Pravne napomene",
@@ -48,8 +48,8 @@
   "menu": {
     "legislation": "Legislativa",
     "sessions": "Sjednice",
-    "mps": "Zastupnici",
-    "pgs": "Poslanički klubovi",
+    "mps": "Poslanici",
+    "pgs": "Klubovi",
     "tools": "Alati"
   },
   "footer": {
