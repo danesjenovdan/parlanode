@@ -6,7 +6,7 @@
     "lead": "Broj riječi koje je zastupnik izgovorio u svim svojim govorima u Parlamentu u odnosu na prosječnu i maksimalnu vrijednost.",
     "text": "Sabiru se riječi u govorima zastupnika preuzetim iz stenograma objavljenih na {link}.",
     "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje",
+      "link": "http://parlament.ba/session/Read?ConvernerId=1",
       "text": "Parlament BiH"
     }
   }
