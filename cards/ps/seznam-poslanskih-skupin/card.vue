@@ -29,6 +29,7 @@ import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
+import { PG_CLASSIFICATIONS } from 'components/constants';
 import InnerCard from './InnerCard.vue';
 
 const analysesIDs = [
@@ -93,8 +94,11 @@ export default {
       explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
     }));
 
+    const data = this.$options.cardData.data.data
+      .filter(pg => PG_CLASSIFICATIONS.indexOf(pg.party.classification) !== -1);
+
     return {
-      data: this.$options.cardData.data.data,
+      data,
       currentAnalysis: this.$options.cardData.parlaState.analysis || 'seat_count',
       analyses,
     };

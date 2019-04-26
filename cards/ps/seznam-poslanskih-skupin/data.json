@@ -2,68 +2,200 @@
   "data": [
     {
       "party": {
-        "name": "Klub hrvatskog naroda",
-        "classification": "club",
-        "acronym": "FBiH-HR",
+        "name": "Klub poslanika SDA",
+        "classification": "pg",
+        "acronym": "SDA",
         "has_voters": false,
-        "is_coalition": false,
-        "id": 60
+        "is_coalition": true,
+        "id": 19
       },
       "results": {
-        "intra_disunion": 20,
-        "number_of_amendments": null,
-        "privzdignjeno": null,
-        "vocabulary_size": 53,
+        "intra_disunion": 1.85185185185,
+        "number_of_amendments": 0,
+        "privzdignjeno": 1.2080264956208375,
+        "vocabulary_size": 104,
         "number_of_questions": 0,
-        "seat_count": 5,
+        "seat_count": 9,
         "presence_votes": 100,
         "presence_sessions": 100,
-        "problematicno": null,
-        "preprosto": null
+        "problematicno": 0,
+        "preprosto": 0.7137295552220588
       }
     },
     {
       "party": {
-        "name": "Klub srpskog naroda",
-        "classification": "club",
-        "acronym": "RS",
+        "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+        "classification": "pg",
+        "acronym": "SNSD",
         "has_voters": false,
         "is_coalition": false,
-        "id": 61
+        "id": 24
       },
       "results": {
-        "intra_disunion": 11.428571428571429,
-        "number_of_amendments": null,
-        "privzdignjeno": null,
-        "vocabulary_size": 84,
+        "intra_disunion": 2.7777777777833332,
+        "number_of_amendments": 0,
+        "privzdignjeno": 4.678141821276769,
+        "vocabulary_size": 59,
         "number_of_questions": 0,
-        "seat_count": 5,
+        "seat_count": 6,
         "presence_votes": 100,
         "presence_sessions": 100,
-        "problematicno": null,
-        "preprosto": null
+        "problematicno": 0,
+        "preprosto": 1.8426351262268839
       }
     },
     {
       "party": {
-        "name": "Klub bošnjačkog naroda",
-        "classification": "club",
-        "acronym": "FBiH",
+        "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+        "classification": "pg",
+        "acronym": "HNS",
         "has_voters": false,
         "is_coalition": false,
-        "id": 62
+        "id": 20
       },
       "results": {
-        "intra_disunion": 17.142857142857142,
-        "number_of_amendments": null,
-        "privzdignjeno": null,
-        "vocabulary_size": 87,
+        "intra_disunion": 6.666666666666667,
+        "number_of_amendments": 0,
+        "privzdignjeno": 1.9717787841745051,
+        "vocabulary_size": 110,
         "number_of_questions": 0,
         "seat_count": 5,
         "presence_votes": 100,
         "presence_sessions": 100,
-        "problematicno": null,
-        "preprosto": null
+        "problematicno": 0,
+        "preprosto": 0.3883239315602113
+      }
+    },
+    {
+      "party": {
+        "name": "Klub poslanika SDP BiH",
+        "classification": "pg",
+        "acronym": "SDP BiH",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 21
+      },
+      "results": {
+        "intra_disunion": 6.666666666666667,
+        "number_of_amendments": 0,
+        "privzdignjeno": 1.1420528989278789,
+        "vocabulary_size": 135,
+        "number_of_questions": 0,
+        "seat_count": 5,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": 8.999999999999993,
+        "preprosto": 0.20446995526016326
+      }
+    },
+    {
+      "party": {
+        "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+        "classification": "pg",
+        "acronym": "SDS i PDP",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 25
+      },
+      "results": {
+        "intra_disunion": 22.22222222221667,
+        "number_of_amendments": 0,
+        "privzdignjeno": 0,
+        "vocabulary_size": 91,
+        "number_of_questions": 0,
+        "seat_count": 4,
+        "presence_votes": 87.5,
+        "presence_sessions": 100,
+        "problematicno": 0,
+        "preprosto": 0
+      }
+    },
+    {
+      "party": {
+        "name": "Poslanici bez kluba",
+        "classification": "unaligned MP",
+        "acronym": "Poslanici bez kluba",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 29
+      },
+      "results": {
+        "intra_disunion": 16.666666666666668,
+        "number_of_amendments": null,
+        "privzdignjeno": 0,
+        "vocabulary_size": 144,
+        "number_of_questions": 0,
+        "seat_count": 4,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": 0,
+        "preprosto": 5.527905378680652
+      }
+    },
+    {
+      "party": {
+        "name": "Klub poslanika DF-a",
+        "classification": "pg",
+        "acronym": "DF",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 22
+      },
+      "results": {
+        "intra_disunion": 0,
+        "number_of_amendments": 0,
+        "privzdignjeno": 0,
+        "vocabulary_size": 0,
+        "number_of_questions": 0,
+        "seat_count": 3,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": 0,
+        "preprosto": 0
+      }
+    },
+    {
+      "party": {
+        "name": "Mješoviti klub poslanika SBB – PDA",
+        "classification": "pg",
+        "acronym": "SBB i PDA",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 23
+      },
+      "results": {
+        "intra_disunion": 8.333333333333334,
+        "number_of_amendments": 0,
+        "privzdignjeno": 0,
+        "vocabulary_size": 95,
+        "number_of_questions": 0,
+        "seat_count": 3,
+        "presence_votes": 83.3333333333333,
+        "presence_sessions": 100,
+        "problematicno": 0,
+        "preprosto": 0.32293605305007267
+      }
+    },
+    {
+      "party": {
+        "name": "Klub poslanika Srpski klub",
+        "classification": "pg",
+        "acronym": "SK",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 26
+      },
+      "results": {
+        "intra_disunion": 11.1111111111,
+        "number_of_amendments": 0,
+        "privzdignjeno": 0,
+        "vocabulary_size": 0,
+        "number_of_questions": 0,
+        "seat_count": 3,
+        "presence_votes": 100,
+        "presence_sessions": 100,
+        "problematicno": 0,
+        "preprosto": 0
       }
     }
   ]
