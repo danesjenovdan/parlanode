@@ -358,7 +358,7 @@ export default {
           isSame: sameParties.indexOf(party.properId) > -1,
           isDifferent: differentParties.indexOf(party.properId) > -1,
         })));
-    
+
     // used to be peoplePromise
     const samePeople = this.$options.cardData.parlaState.samePeople || [];
     const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
@@ -379,7 +379,7 @@ export default {
         id: person.id,
         image: person.image,
       }));
-    
+
     this.loadResults();
     // const PGPromise = $.ajax({
     //   url: `${this.slugs.urls.data}/getAllPGs/`,
@@ -525,6 +525,12 @@ export default {
   .glasovanja {
     /deep/ #votingCard {
       height: 420px;
+    }
+  }
+
+  .mdt-wrapper {
+    /deep/ .progress-bar {
+      background-color: $third;
     }
   }
 

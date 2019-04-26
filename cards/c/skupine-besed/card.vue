@@ -346,6 +346,10 @@ export default {
     }
   }
 
+  /deep/ .progress-bar {
+    background-color: $third;
+  }
+
   .skupine-besed.text-frame {
     display: flex;
     padding: 10px;
