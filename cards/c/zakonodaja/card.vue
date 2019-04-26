@@ -153,11 +153,11 @@ export default {
           label: this.$t('data'),
           additionalClass: 'narrow no-sort',
         },
-        {
-          id: 'epa',
-          label: this.$t('epa'),
-          additionalClass: 'narrow',
-        },
+        // {
+        //   id: 'epa',
+        //   label: this.$t('epa'),
+        //   additionalClass: 'narrow',
+        // },
         {
           id: 'updated',
           label: this.$t('change'),

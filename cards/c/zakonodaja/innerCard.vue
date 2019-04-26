@@ -127,7 +127,7 @@ export default {
         return [
           { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text}</a>` },
           { html: dataIconsHtml },
-          { text: legislation.epa },
+          // { text: legislation.epa },
           { text: legislation.date },
           { html: outcomeHtml },
         ];
