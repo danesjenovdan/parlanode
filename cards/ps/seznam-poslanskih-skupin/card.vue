@@ -98,6 +98,7 @@ export default {
       .filter(pg => PG_CLASSIFICATIONS.indexOf(pg.party.classification) !== -1);
 
     return {
+      parentOrgId: this.$options.cardData.data.parent_org_id,
       data,
       currentAnalysis: this.$options.cardData.parlaState.analysis || 'seat_count',
       analyses,
@@ -139,7 +140,7 @@ export default {
     },
     generatedCardUrl() {
       const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
-      return `${this.url}?altHeader=true${state}`;
+      return `${this.url}${this.parentOrgId || ''}?altHeader=true${state}`;
     },
   },
   methods: {

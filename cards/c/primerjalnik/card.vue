@@ -216,6 +216,7 @@ export default {
   ],
   data() {
     return {
+      parentOrgId: this.$options.cardData.data.parent_org_id,
       loading: true,
       parties: [],
       samePeople: [],
@@ -311,7 +312,7 @@ export default {
       if (this.selectedTab > 0) {
         state.selectedTab = this.selectedTab;
       }
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this.parentOrgId || ''}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   watch: {

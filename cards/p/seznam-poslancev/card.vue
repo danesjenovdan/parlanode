@@ -175,6 +175,7 @@ export default {
       }));
 
     return {
+      parentOrgId: this.$options.cardData.data.parent_org_id,
       memberData: this.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
       currentSort: loadFromState('sort') || 'name',
@@ -259,7 +260,7 @@ export default {
     },
     generatedCardUrl() {
       const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
-      return `${this.url}?altHeader=true${state}`;
+      return `${this.url}${this.parentOrgId || ''}?altHeader=true${state}`;
     },
     processedMembers() {
       let analysisMax = 0;
