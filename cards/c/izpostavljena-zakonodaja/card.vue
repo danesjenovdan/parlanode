@@ -16,6 +16,11 @@
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">
           <div class="row">
+            <empty-circle
+              v-if="data.under_consideration.length === 0"
+              :text="$t('no-results')"
+              :icon="'icons/izpostavljena-zakonodaja.svg'"
+            />
             <div
               v-for="legislation in data.under_consideration"
               :key="legislation.epa"
@@ -39,6 +44,11 @@
         </p-tab>
         <p-tab :label="$t('recently-passed')">
           <div class="legislation row">
+            <empty-circle
+              v-if="data.accepted.length === 0"
+              :text="$t('no-results')"
+              :icon="'icons/izpostavljena-zakonodaja.svg'"
+            />
             <div
               v-for="legislation in data.accepted"
               :key="legislation.epa"
@@ -71,9 +81,10 @@
               </center>
             </template>
             <template v-else-if="mostDiscussed && mostDiscussed.length < 1">
-              <center>
-                EMPTY!
-              </center>
+              <empty-circle
+                :text="$t('no-results')"
+                :icon="'icons/izpostavljena-zakonodaja.svg'"
+              />
             </template>
             <template v-else>
               <div
@@ -120,10 +131,15 @@ import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
+import EmptyCircle from 'components/EmptyCircle.vue';
 
 export default {
   name: 'IzpostavljenaZakonodaja',
-  components: { PTab, PTabs },
+  components: {
+    PTab,
+    PTabs,
+    EmptyCircle,
+  },
   mixins: [
     common,
     links,

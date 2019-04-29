@@ -1,6 +1,10 @@
 <template>
   <div class="empty">
-    <div class="circle">{{ text }}</div>
+    <div
+      :style="{ backgroundImage: `url('${slugs.urls.cdn}/${icon}')` }"
+      class="circle"
+      v-text="text"
+    />
   </div>
 </template>
 
@@ -12,6 +16,15 @@ export default {
       type: String,
       required: true,
     },
+    icon: {
+      type: String,
+      default: 'img/orodja/primerjalnik.svg',
+    },
+  },
+  data() {
+    return {
+      slugs: this.$root.$options.cardData.urls,
+    };
   },
 };
 </script>
@@ -29,7 +42,6 @@ export default {
   .circle {
     $size: 220px;
     border-radius: 50%;
-    background-image: url("#{getConfig('urls.cdn')}/img/orodja/primerjalnik.svg");
     background-color: $light-background;
     background-size: $size / 2.5;
     background-position: center 40px;
