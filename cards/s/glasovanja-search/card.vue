@@ -60,6 +60,7 @@ export default {
           votes: this.data.map(motion => ({
             ...motion.results,
             session_id: motion.session.id,
+            session: motion.session,
           })),
           session: {},
           tags: [],

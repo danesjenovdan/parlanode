@@ -105,6 +105,12 @@
                         <p>
                           {{ vote.shortened_title }}
                         </p>
+                        <p
+                          v-if="vote.session && vote.session.org && vote.session.org.name"
+                          class="vote-org"
+                        >
+                          {{ vote.session.org.name }}
+                        </p>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -478,6 +484,14 @@ export default {
   font-size: 14px;
   line-height: 1.4;
   margin: 6px 0;
+
+  &.vote-org {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    font-style: italic;
+    margin: 0;
+  }
 
   &.projects {
     font-family: Roboto, sans-serif;
