@@ -12,7 +12,16 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <person-list :people="people" :show-party-link="true" />
+    <div
+      v-t="'no-results'"
+      v-if="!loading && people && people.length === 0"
+      class="no-results"
+    />
+    <person-list
+      v-else
+      :people="people"
+      :show-party-link="true"
+    />
   </card-wrapper>
 </template>
 
