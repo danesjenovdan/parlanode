@@ -88,3 +88,15 @@ export const defaultHeaderConfig = (comp, overrides = {}) => {
 
   return assign({}, headerConfig, overrides);
 };
+
+export const defaultDynamicHeaderConfig = (comp, overrides = {}) => {
+  const headerConfig = {
+    circleIcon: 'og-list',
+    heading: '&nbsp;',
+    subheading: '',
+    alternative: comp.$options.cardData.cardData.altHeader === 'true',
+    title: comp.$options.cardData.parlaState.cardTitle ? comp.$options.cardData.parlaState.cardTitle : comp.$t('card.title'),
+  };
+
+  return assign({}, headerConfig, overrides);
+};
