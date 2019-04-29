@@ -1,52 +1,58 @@
 {
   "person": {
-    "is_active": false,
+    "is_active": true,
     "district": [
-      3
+      2
     ],
-    "name": "Marta Luc-Polanc",
-    "gov_id": "1336",
+    "name": "Nada Mladina",
+    "gov_id": "523",
     "gender": "f",
     "party": {
-      "acronym": "SDP",
+      "name": "Klub poslanika SDP BiH",
+      "classification": "pg",
+      "acronym": "SDP BiH",
+      "has_voters": false,
       "is_coalition": false,
-      "id": 339,
-      "name": "Klub zastupnika Socijaldemokratske partije Hrvatske"
+      "id": 21
     },
     "type": "mp",
-    "id": 1336,
+    "id": 29,
     "has_function": false
   },
-  "created_at": "20.08.2018",
-  "created_for": "11.04.2018",
+  "created_at": "03.04.2019",
+  "created_for": "06.12.2018",
   "results": {
-    "content": "Zahvaljujem predsjedni\u010de Sabora, po\u0161tovani predsjedni\u010de Vlade, moje pitanje se odnosi na problem zaga\u0111enja vode u Slavonskom Brodu.\nNaime u ponedjeljak, dakle prije 2 dana gra\u0111ani Slavonskog Broda su donijeli obavijest da imaju sada ispravnu i pitku vodu. Me\u0111utim, gra\u0111ani su vrlo uznemireni, nisu tu vijest prihvatili sa povjerenjem i ve\u0107ina gra\u0111ana i dan danas vam jo\u0161 ne konzumira vodu u Slavonskom Brodu.\nA za\u0161to je to tako, naime cijela ta krizna situacija koja je trajala jedno tjedno i pol dana je obilje\u017eena brojnim sukobima i politi\u010dkim prepucavanjima izme\u0111u ministara va\u0161e Vlade i gradona\u010delnika Duspare.\nPri tome je va\u0161 ministar \u0106ori\u0107 optu\u017eio da na\u0161 vodovodni sustav, odnosno cijeli sustav pro\u010di\u0161\u0107avanja vode nije adekvatan, da je zapu\u0161ten i da pro\u010dista\u010dima je iza\u0161ao rok trajanja. Naime, tu su vrlo ozbiljne optu\u017ebe i vjerujte gra\u0111ani su zbog njih vrlo uznemireni jer sada nisu sigurni za svoje, nisu sigurni u konzumiranje vode za svoje zdravlje.\nPa vam ja imam konkretno, s druge strane je gradona\u010delnik Duspara optu\u017eio Vladu da ne\u0161to prikriva. Pa ja imam konkretno dva pitanja koja bih vam postavila. Prvo pitanje, ukoliko Vlada ni\u0161ta ne prikriva i ukoliko je sve bilo transparentno zbog \u010dega mi u gradu Brodu do danas nismo dobili izvje\u0161\u0107e nadle\u017enih inspekcija koje su bile na terenu a to je sanitarna inspekcija, vodopravna inspekcija, inspekcija za\u0161tite okoli\u0161a, zna\u010di na stranu organi istrage, nas zanima \u0161ta je nadle\u017ena inspekcija utvrdila na terenu.\nA broj 2, obzirom da ste objavili da je voda ispravna i zdrava za konzumiranje ja vas pitam kako to mo\u017eete garantirati i biti u to sigurni obzirom da mi do danas ne znamo \u0161ta je uzrok zaga\u0111enja? Kako nam mo\u017eete garantirati da ve\u0107 ve\u010deras voda ne\u0107e biti zaga\u0111ena ugljikovodicima?\nZahvaljujem.",
+    "content": "Poštovani zastupnici, ja vas molim da sjednete na svoja mjesta i da se registrirate, nadam se da ste me svi čuli. Hvala vam. Dame i gospodo, poštovani zastupnici, cijenjeni gosti otvaram konstituirajuću sjednicu Zastupničkog doma Parlamentarne skupštine BiH. Kolegij Zastupničkog doma iz dosadašnjeg saziva sazvao je ovu sjednicu u skladu sa člankom 2. stavak (2) Poslovnika Zastupničkog doma Parlamentarne skupštine BiH. Stavkom (3) istoga članka utvrđeno je da sjednicom predsjeda najstariji zastupnik iz novog saziva kao privremeni predsjedatelj dok se ne izabere predsjedatelj Doma. Sa zadovoljstvom sam prihvatila dužnost privremene predsjedateljice, za vas koji me ne poznajete moje ime je Nada Mladina i iz Kluba sam Socijaldemokratske partije. Dopustite mi da kao privremena predsjedateljica pozdravim sve novoizabrane zastupnike, da vam srdačno čestitam na izboru za ovu odgovornu dužnost i zaželim svima nama uspješan rad u idućem četverogodišnjem mandatu. Pozdravljam sve nazočne zastupnike i goste i ovdje posebno prisutnog člana Predsjedništva BiH, zahvaljujem se svim gostima na odzivu na konstituirajuću sjednicu, kao i sve predstavnike medija. Poštovane dame i gospodo prije prelaska na dnevni red sjednice dozvolite da pročitam listu zastupnika koji su izabrani u ovaj visoki dom na Općim izborima održanim 07. listopada 2018. godine, kao i da vas upoznam s nekim općim činjenicama koje su korisne za naš današnji rad. Podsjetiću vas da se u skladu s Ustavom BiH i Izbornim zakonom BiH u ovaj Dom biraju 42 zastupnika i to s teritorija entiteta Federacije BiH 28 i s teritorije entiteta Republika Srpska 14 zastupnika. Dakle, u Zastupnički dom Parlamentarne skupštine BiH izabrani su: Iz entiteta Federacije Bosne i Hercegovine SDA - Stranka demokratske akcije: Denis Zvizdić, Šemsudin Mehmedović, Nermin Mandra, Safet Softić, Šemsudin Dedić, Edin Mušić, Halid Genjac i Alma Čolo. HDZ BiH – Hrvatska demokratska zajednica BiH, HSS – Hrvatska seljačka stranka, HKDU BiH – Hrvatska kršćanska demokratska unija BiH, HSP-HNS – Hrvatska stranka prava – Hrvatski narodni sabor, HSP DR AS BiH – Hrvatska stranka prava dr. Ante Starčević BiH, HDU BiH – Hrvatska demokratska unija BiH: Borjana Krišto, Predrag Kožul, Darijana Katić, Nikola Lovrinović i Mijo Matanović. SDP – Socijaldemokratska partija BiH: Enver Bijedić, Zukan Helez, Saša Magazinović, Nada Mladina i Nermin Nikšić. DF–GS – Demokratska fronta – Građanski savez Željko Komšić: BiH POBJEĐUJE: Zlatan Begić, Dženan Đonlagić i Vlatko Glavaš. SBB – Savez za bolju budućnost Fahrudin Radončić: Damir Arnaut i Edita Đapo. Naša stranka: Predrag Kojović, Mirjana Marinković-Lepić. Nezavisni blok: Aida Baručija. Pokret demokratske akcije – PDA: Mirsad Kukić. A-SDA – A - Stranka demokratske akcije za evropsku BiH – ZAJEDNO: Jasmin Emrić. Iz entiteta Republike Srpske Savez nezavisnih socijaldemokrata – SNSD: Nebojša Radmanović, Staša Košarac, Vojin Mitrović, Nenad Stevandić, Dragan Bogdanić, Snježana Novaković-Bursać. SDS – Srpska demokratska stranka – Lista (SDS-NDP-NS-SRS) – (Srpska demokratska stranka, Narodni demokratski pokret, Napredna stranka, Srpska radikalna stranka): Obren Petrović, Dragan Mektić, Mirko Šarović. PDP – Partija demokratskog progresa Mladen Ivanić: Branislav Borenović i Mira Pekić. DNS – Demokratski narodni savez: Nenad Nešić. Socijalistička partija: Jakov Galić. SDA – Stranka demokratske akcije: Adil Osmanović. Uvažene dame i gospodo zastupnici sada prelazimo na utvrđivanje dnevnog reda konstituirajuće sjednice ovog visokog doma. Vi ste u pozivu za sjednicu dobili predlog dnevnog reda, a to je: Dnevni red 1. Davanje svečane izjave zastupnika; 2. Izbor predsjedatelja, prvog zamjenika predsjedatelja i drugog zamjenika predsjedatelja Zastupničkog doma; 3. Izbor članova Povjerenstva za pripremu izbora Vijeća ministara Bosne i Hercegovine. Ovo su obavezne točke dnevnog reda u skladu sa Poslovnikom. Predlažem, dakle, da odmah pređemo na prvu tačku, točku dnevnog reda, Ad. 1. Davanje svečane izjave izabranih zastupnika",
     "session": {
-      "name": "8. sjednica",
+      "name": "Konstituirajuća sjednica Predstavničkog doma Parlamentarne skupštine BiH",
       "orgs": [
         {
-          "acronym": "sabor",
+          "name": "Predstavnički dom",
+          "classification": "dom",
+          "acronym": "PDPSBIH",
+          "has_voters": true,
           "is_coalition": false,
-          "id": 199,
-          "name": "Hrvatski sabor"
+          "id": 1
         }
       ],
-      "date": "10. 5. 2018",
+      "date": "6. 12. 2018",
       "org": {
-        "acronym": "sabor",
+        "name": "Predstavnički dom",
+        "classification": "dom",
+        "acronym": "PDPSBIH",
+        "has_voters": true,
         "is_coalition": false,
-        "id": 199,
-        "name": "Hrvatski sabor"
+        "id": 1
       },
-      "date_ts": "2018-05-10T10:47:00",
-      "updated_at": "27. 8. 2018",
+      "date_ts": "2018-12-06T12:00:00",
+      "updated_at": "3. 4. 2019",
       "in_review": false,
-      "id": 141
+      "id": 11
     },
     "quote_id": null,
-    "the_order": 151,
+    "the_order": 0,
     "quoted_text": null,
-    "speech_id": 122543,
+    "speech_id": 1483,
     "end_idx": null,
     "start_idx": null
   }

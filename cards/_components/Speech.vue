@@ -141,7 +141,7 @@ export default {
   $portrait-size: 34px;
   $portrait-margin: 14px;
   display: flex;
-  height: 86px;
+  min-height: 86px;
   justify-content: space-between;
 
   @include respond-to(desktop) {
