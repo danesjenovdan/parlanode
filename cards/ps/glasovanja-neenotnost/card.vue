@@ -76,6 +76,10 @@
             :class="['results', {'is-loading': loading }]"
             @scroll="$refs.shadow.check($event.currentTarget)"
           >
+            <empty-circle
+              v-if="filteredVotingDays.length === 0"
+              :text="$t('no-results')"
+            />
             <template v-for="day in filteredVotingDays">
               <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
               <a
@@ -166,6 +170,7 @@ import { defaultHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import ScrollShadow from 'components/ScrollShadow.vue';
 import { parseVoteTitle, shortenVoteTitle } from 'helpers/voteTitle';
+import EmptyCircle from 'components/EmptyCircle.vue';
 
 export default {
   name: 'GlasovanjaNeenotnost',
@@ -177,6 +182,7 @@ export default {
     StripedButton,
     Toggle,
     ScrollShadow,
+    EmptyCircle,
   },
   mixins: [
     common,
@@ -322,7 +328,7 @@ export default {
       if (this.selectedSort.length > 0) {
         state.sort = this.selectedSort;
       }
-      if (this.selectedGroup.length > 0) {
+      if (this.selectedGroup) {
         state.selectedGroup = this.selectedGroup;
       }
 
@@ -364,7 +370,7 @@ export default {
       this.selectGroup(acronym);
     },
     clearCallback() {
-      this.selectGroup(this.groups[0].acronym);
+      this.selectGroup(this.groups[0].id);
     },
     getFilteredVotingDays(onlyFilterByText = false) {
       if (!this.voteData || this.voteData.length === 0) {
@@ -417,9 +423,9 @@ export default {
       return mappedVotingDays
         .filter(votingDay => (votingDay.ballots.length > 0));
     },
-    selectGroup(acronym) {
-      this.cardData.parlaState.selectedGroup = acronym;
-      this.selectedGroup = this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
+    selectGroup(id) {
+      this.cardData.parlaState.selectedGroup = id;
+      this.selectedGroup = this.selectedGroup !== id ? id : this.groups[0].id;
     },
     fetchVotesForGroup(id) {
       this.loading = true;
