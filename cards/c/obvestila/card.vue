@@ -356,7 +356,7 @@
                   <div style="text-align: center">
                     <div
                       v-t="'add_new_trigger'"
-                      class="action btn btn-default naprej top50 w50"
+                      class="action btn btn-default naprej top50"
                       @click="currentStep = 1; keyword = '';"
                     ></div>
                   </div>
