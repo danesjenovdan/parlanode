@@ -313,7 +313,7 @@ export default {
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results[this.currentAnalysis].score || 0;
             newMember.analysisValue = Math.round(score * 10) / 10;
-            newMember.analysisPercentage = (score / analysisMax) * 100;
+            newMember.analysisPercentage = analysisMax > 0 ? (score / analysisMax) * 100 : 0;
             const diff = Math.round(newMember.results[this.currentAnalysis].diff * 10) / 10;
             newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
