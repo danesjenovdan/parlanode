@@ -129,7 +129,7 @@ export default {
         { id: 'image', label: '', additionalClass: 'portrait' },
         { id: 'name', label: this.$t('name'), additionalClass: 'name' },
         { id: 'analysis', label: this.$t('analysis'), additionalClass: 'wider barchartcontainer' },
-        { id: 'change', label: this.$t('change') },
+        { id: 'change', label: this.$t('change'), additionalClass: 'optional' },
       ];
     },
   },
@@ -167,10 +167,22 @@ export default {
   color: $font-default;
 }
 
-.person-list .headers .barchartcontainer,
-.person-list .item .barchartcontainer {
+.person-list .headers .column.wider.barchartcontainer,
+.person-list .item .column.wider.barchartcontainer {
   @include respond-to(mobile) {
-    display: none;
+    flex: 0.5;
+  }
+
+  .barcontainer {
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
+
+  .value {
+    @include respond-to(mobile) {
+      justify-content: center;
+    }
   }
 }
 </style>
