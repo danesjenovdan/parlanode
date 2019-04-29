@@ -335,6 +335,10 @@ export default {
     &:last-child {
       margin-right: 0;
     }
+    .filter-label {
+      height: 20px;
+      margin-top: 6px;
+    }
   }
 
   padding-bottom: 12px;
