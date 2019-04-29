@@ -186,7 +186,8 @@ export default {
   .tab-content {
     margin-top: 15px;
     overflow-y: auto;
-    height: 420px;
+    height: 444px;
+    margin-bottom: 24px;
   }
 
   &__single {
