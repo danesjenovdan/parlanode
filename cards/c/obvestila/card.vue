@@ -28,7 +28,7 @@
                         ]"
                       >
                         <div class="">
-                          <div class="search padding15">
+                          <div class="search">
                             <div
                               v-if="keyword.id === updatedId"
                               class="updatedText"
@@ -115,11 +115,11 @@
                       </div>
                       <!--Nastavitve so spremenjene.-->
                     </div>
-                    <div class="padding15">
+                    <div class="padding15 new-trigger-container">
                       <br>
                       <br>
                       <br>
-                      <a v-t="'add_new_trigger'" href="./" class="btn btn-default naprej"></a>
+                      <a v-t="'add_new_trigger'" @click.prevent="state.settings = false" href="#" class="btn btn-default naprej"></a>
                     </div>
                   </div>
                 </div>
@@ -1066,30 +1066,18 @@ h2.left {
   top: 11px;
 }
 
-.parta1 {
-  /*width: 175px;*/
-  width: 160px;
-  margin-right: 10px;
-  display: inline-block;
-  // float: left;
-}
-
-.parta1 .search-dropdown-input {
-  /*width: 172px;*/
-  width: 157px;
-}
-
+.parta1,
 .parta2 {
-  /*width: 231px;*/
-  width: 160px;
-  // margin-right: 15px;
+  /*width: 175px;*/
+  width: 49.5%;
+  // margin-right: 10px;
   display: inline-block;
   // float: left;
-}
 
-.parta2 .search-dropdown-input {
-  /*width: 228px;*/
-  width: 157px;
+  @include respond-to(mobile) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .parta3 {
@@ -1138,9 +1126,10 @@ h2.left {
   display: inline-block;
   width: 100%;
   border-top: 2px solid $font-placeholder;
-  padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  // padding-top: 10px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  padding: 0;
   position: relative;
 }
 
@@ -1293,5 +1282,9 @@ h2.left {
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+.new-trigger-container {
+  text-align: center;
 }
 </style>

@@ -41,7 +41,7 @@
     "week": "najviše jednom sedmično"
   },
   "modes": {
-    "precise": "tačno podudaranje:",
-    "broad": "široko podudaranje:"
+    "precise": "tačno podudaranje",
+    "broad": "široko podudaranje"
   }
 }

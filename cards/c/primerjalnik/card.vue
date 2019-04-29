@@ -173,7 +173,7 @@
 <script>
 import common from 'mixins/common';
 import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultDynamicHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
 import ToolsTabs from 'components/ToolsTabs.vue';
@@ -226,7 +226,7 @@ export default {
       sameModalVisible: false,
       differentModalVisible: false,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: defaultHeaderConfig(this, { circleIcon: 'primerjalnik' }),
+      headerConfig: defaultDynamicHeaderConfig(this, { circleIcon: 'primerjalnik' }),
       ogConfig: defaultOgImage(this, { icon: 'primerjalnik' }),
     };
   },
@@ -340,7 +340,7 @@ export default {
     const sameParties = this.$options.cardData.parlaState.sameParties || [];
     const differentParties = this.$options.cardData.parlaState.differentParties || [];
 
-    this.parties = this.generateParties(this.$options.cardData.data.predstavnicki)
+    this.parties = this.generateParties(this.$options.cardData.data)
       .map(party => ({
         id: party.properId,
         acronym: party.acronym,
@@ -348,31 +348,20 @@ export default {
         name: party.name,
         isSame: sameParties.indexOf(party.properId) > -1,
         isDifferent: differentParties.indexOf(party.properId) > -1,
-      }))
-      .concat(this.generateParties(this.$options.cardData.data.naroda)
-        .map(party => ({
-          id: party.properId,
-          acronym: party.acronym,
-          isCoalition: party.isCoalition,
-          name: party.name,
-          isSame: sameParties.indexOf(party.properId) > -1,
-          isDifferent: differentParties.indexOf(party.properId) > -1,
-        })));
+      }));
 
     // used to be peoplePromise
     const samePeople = this.$options.cardData.parlaState.samePeople || [];
     const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
 
-    this.samePeople = this.generatePeople(this.$options.cardData.data.predstavnicki)
-      .concat(this.generatePeople(this.$options.cardData.data.naroda))
+    this.samePeople = this.generatePeople(this.$options.cardData.data)
       .map(person => ({
         selected: samePeople.indexOf(person.id) > -1,
         label: person.label,
         id: person.id,
         image: person.image,
       }));
-    self.differentPeople = this.generatePeople(this.$options.cardData.data.predstavnicki)
-      .concat(this.generatePeople(this.$options.cardData.data.naroda))
+    self.differentPeople = this.generatePeople(this.$options.cardData.data)
       .map(person => ({
         selected: differentPeople.indexOf(person.id) > -1,
         label: person.label,
