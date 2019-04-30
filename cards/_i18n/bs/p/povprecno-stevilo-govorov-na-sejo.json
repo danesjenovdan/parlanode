@@ -7,7 +7,7 @@
     "text": "Prebroje se govori zastupnika, preuzeti iz stenograma {link}, i broj se podijeli s brojem sjednica na kojima je zastupnik bio prisutan. Broj svih govora najprije se dijeli s brojem zastupnika, a zatim s brojem svih sjednica (na kojima se raspravljalo). Individualni rezultat uspoređujemo s prosječnim i maksimalnim vrijednostima.",
     "link": {
       "text": "Parlament BiH",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje"
+      "link": "http://parlament.ba/session/Read?ConvernerId=1"
     }
   }
 }
