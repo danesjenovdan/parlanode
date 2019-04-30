@@ -33,7 +33,7 @@
       />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab v-if="data.abstract /* SL override */ || true" label="Povzetek" variant="dark">
+      <p-tab v-if="data.abstract /* SL override */ || true" :label="$t('abstract')" variant="dark">
         <excerpt
           :content="content"
           :main-law="excerptData"
@@ -42,12 +42,12 @@
           :icon="data.abstract ? data.icon : ''"
         />
       </p-tab>
-      <p-tab label="Glasovanja">
+      <p-tab :label="$t('votings')">
         <seznam-glasovanj
           :data="data"
         />
       </p-tab>
-      <p-tab v-if="data.extra_abstract" label="Drugi postopki" variant="dark">
+      <p-tab v-if="data.extra_abstract" :label="$('other-procedures')" variant="dark">
         <excerpt
           :content="contentExtra"
           :main-law="{}"
