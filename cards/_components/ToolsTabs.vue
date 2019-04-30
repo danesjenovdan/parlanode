@@ -39,10 +39,10 @@ export default {
           id: 'discord',
           label: this.$t('tools.discord'),
         },
-        {
-          id: 'compass',
-          label: this.$t('tools.compass'),
-        },
+        // {
+        //   id: 'compass',
+        //   label: this.$t('tools.compass'),
+        // },
         {
           id: 'wordGroups',
           label: this.$t('tools.word-groups'),

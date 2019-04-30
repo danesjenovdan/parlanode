@@ -1,7 +1,6 @@
 {
   "_id": "c-obvestila",
-  "dataUrl": "https://analize.parlameter.si/v1/p/getListOfMembersTickers",
-  "lastUpdate": "2018-12-12T15:53:39.974Z",
+  "lastUpdate": "2019-04-30T13:29:20.040Z",
   "big": true,
   "high": true
 }
