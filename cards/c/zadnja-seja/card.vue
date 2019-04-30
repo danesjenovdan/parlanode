@@ -80,6 +80,7 @@ export default {
   ],
   data() {
     return {
+      parentOrgId: this.$options.cardData.data.parent_org_id,
       data: this.$options.cardData.data,
     };
   },
@@ -124,7 +125,7 @@ export default {
       };
     },
     generatedCardUrl() {
-      return `${this.url}?altHeader=true`;
+      return `${this.url}${this.parentOrgId || ''}?altHeader=true`;
     },
   },
   methods: {

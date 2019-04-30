@@ -1,7 +1,7 @@
 {
   "_id": "c_zadnja-seja",
-  "dataUrl": "{analize}/s/getLastSessionLanding",
-  "lastUpdate": "2019-04-07T11:36:29.311Z",
+  "dataUrl": "{analizeV2}/s/getLastSessionLanding",
+  "lastUpdate": "2019-04-30T13:30:53.877Z",
   "big": true,
   "high": true
 }
