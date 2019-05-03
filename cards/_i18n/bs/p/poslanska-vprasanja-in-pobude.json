@@ -7,7 +7,7 @@
     "text": "Podaci se preuzimaju s web stranice {link}.",
     "link": {
       "text": "Parlament BiH",
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/"
+      "link": "http://parlament.ba/oQuestion/GetORQuestions"
     }
   }
 }
