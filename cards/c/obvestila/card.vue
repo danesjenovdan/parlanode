@@ -808,6 +808,8 @@ label {
 
   background-color: $tab-active;
 
+  line-height: 25px;
+
   &:hover {
       color: $white;
       background-color: $tab-hover;
@@ -837,6 +839,8 @@ label {
   height: 50px;
   -webkit-transition: border-color 0.15s;
   transition: border-color 0.15s;
+
+  line-height: 25px;
 }
 
 .btn.w50 {
