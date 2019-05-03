@@ -47,7 +47,7 @@
   "opposition": "opozicija",
   "vote-for": "Za",
   "vote-against": "Protiv",
-  "vote-abstain": "Suzdržana",
+  "vote-abstain": "Suzdržan",
   "vote-abstain--m": "Suzdržan",
   "vote-abstain--f": "Suzdržana",
   "vote-abstain-plural": "Suzdržani",
@@ -101,6 +101,7 @@
   "saved": "Spremljeno",
   "generate": "Kreiraj",
   "edit-abstract": "Uredi skraćenu verziju",
+  "abstract": "Povzetek",
   "acronym": "Prečica",
   "classification": "Klasifikacija",
   "info": {
