@@ -18,7 +18,7 @@ router.get(`/${sm.tools.notifications}`, ar((render, req) => {
     pageTitle: i18n('tools.notifications.title'),
     currentTool: 'obvestila',
     uid: req.query.uid || false,
-    uid: req.query.kid || false,
+    kid: req.query.kid || false,
     settings: req.query.settings || false,
   });
 }));
