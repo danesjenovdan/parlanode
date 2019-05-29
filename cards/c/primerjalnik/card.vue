@@ -189,6 +189,7 @@ import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
 import TimeChart from 'components/TimeChart.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import generators from 'mixins/generatePeopleAndParties';
 
 export default {
   name: 'PrimerjalnikGlasovanj',
@@ -211,9 +212,11 @@ export default {
   mixins: [
     common,
     links,
+    generators,
   ],
   data() {
     return {
+      parentOrgId: this.$options.cardData.data.parent_org_id,
       loading: true,
       parties: [],
       samePeople: [],
@@ -309,7 +312,7 @@ export default {
       if (this.selectedTab > 0) {
         state.selectedTab = this.selectedTab;
       }
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this.parentOrgId || ''}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   watch: {
@@ -334,39 +337,9 @@ export default {
   },
   mounted() {
     const self = this;
-    const PGPromise = $.ajax({
-      url: `${this.slugs.urls.data}/getAllPGs/`,
-      method: 'GET',
-      success: (data) => {
-        const sameParties = this.$options.cardData.parlaState.sameParties || [];
-        const differentParties = this.$options.cardData.parlaState.differentParties || [];
-        self.parties = Object.keys(data).map(partyId => ({
-          id: data[partyId].id,
-          acronym: data[partyId].acronym,
-          is_coalition: data[partyId].is_coalition,
-          name: data[partyId].name,
-          isSame: sameParties.indexOf(data[partyId].id) > -1,
-          isDifferent: differentParties.indexOf(data[partyId].id) > -1,
-        }));
-      },
-      error(error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      },
-    });
-    const peoplePromise = $.ajax({
-      url: `${this.slugs.urls.data}/getMPs/`,
-      method: 'GET',
-      success: (data) => {
-        const samePeople = this.$options.cardData.parlaState.samePeople || [];
-        const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
-        const sameData = JSON.parse(JSON.stringify(data));
-        self.samePeople = sameData.map(person => ({
-          selected: samePeople.indexOf(person.id) > -1,
-          label: person.name,
-          id: person.id,
-          image: self.getPersonPortrait(person),
-        }));
+    // used to be PGPromise
+    const sameParties = this.$options.cardData.parlaState.sameParties || [];
+    const differentParties = this.$options.cardData.parlaState.differentParties || [];
 
     this.parties = this.generateParties(this.$options.cardData.data)
       .map(party => ({
@@ -378,13 +351,9 @@ export default {
         isDifferent: differentParties.indexOf(party.properId) > -1,
       }));
 
-        this.loadResults();
-      },
-      error(error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      },
-    });
+    // used to be peoplePromise
+    const samePeople = this.$options.cardData.parlaState.samePeople || [];
+    const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
 
     this.samePeople = this.generatePeople(this.$options.cardData.data)
       .map(person => ({
@@ -546,6 +515,12 @@ export default {
   .glasovanja {
     /deep/ #votingCard {
       height: 420px;
+    }
+  }
+
+  .mdt-wrapper {
+    /deep/ .progress-bar {
+      background-color: $third;
     }
   }
 
