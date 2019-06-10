@@ -112,7 +112,7 @@ async function getOgImage(cacheData, forceRender) {
   if (!forceRender) {
     // eslint-disable-next-line no-console
     console.log(`OgImage: ${cacheData.name} - TRYING CACHE`);
-    ogRender = await OgRender.findOne(cacheData).sort({ dateTime: -1 });
+    ogRender = await OgRender.findOne(cacheData).sort({ rendered: -1 });
     if (ogRender) {
       ogRender.accessed = new Date();
       ogRender.save();

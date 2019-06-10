@@ -280,8 +280,8 @@ function getOgRenders(req, res) {
   const OgRender = mongoose.model('OgRender');
   Promise.all([
     OgRender.countDocuments(),
-    OgRender.findOne().sort('dateTime'),
-    OgRender.findOne().sort('lastAccessed'),
+    OgRender.findOne().sort('rendered'),
+    OgRender.findOne().sort('accessed'),
   ])
     .then(([count, oldest, stalest]) => {
       res.send({
