@@ -33,6 +33,7 @@ function connect() {
 
     const { url: host, name: db, user, password } = config.db;
     const reconnectTimeout = 5000; // ms.
+    mongoose.set('bufferCommands', false);
 
     function tryConnect() {
       mongoose
