@@ -274,11 +274,11 @@ async function findRenderedCardForDate(cacheData) {
       ...cacheData,
       dateRendered: formattedDate(),
     };
-    renderedCard = await CardRender.findOne(cacheDataToday).sort({ dateTime: -1 });
+    renderedCard = await CardRender.findOne(cacheDataToday).maxTime(5000).sort({ dateTime: -1 });
   }
   // if dateRequested is specified try to find that days render, or null if no dateRequested
   if (!renderedCard) {
-    renderedCard = await CardRender.findOne(cacheData).sort({ dateTime: -1 });
+    renderedCard = await CardRender.findOne(cacheData).maxTime(5000).sort({ dateTime: -1 });
   }
   return renderedCard;
 }
