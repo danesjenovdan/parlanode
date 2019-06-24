@@ -41,9 +41,10 @@ function connect() {
           reconnectTries: 5,
           reconnectInterval: 200,
           useNewUrlParser: true,
+          useFindAndModify: false,
           useCreateIndex: true,
         })
-        .catch(() => {}); // ignore, handeled by events
+        .catch(() => {}); // ignore, handled by events
     }
 
     mongoose.connection.on('connecting', () => {
