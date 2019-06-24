@@ -182,7 +182,6 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     fetchUrl = cacheData.customUrl;
   } else if (cacheData.dataUrl) {
     fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.dateRequested ? `/${cacheData.dateRequested}` : ''}`;
-    console.log(fetchUrl);
   } else if (cacheData.dataUrls) {
     // generate all fetch URLs by iterating over dataUrls
     fetchUrls = Object.keys(cacheData.dataUrls).reduce((acc, cur) => {
@@ -193,18 +192,15 @@ async function renderCard(cacheData, cardJson, originalUrl) {
 
   let fetchedData = {};
   if (fetchUrl) {
-    console.log('fetching single');
     fetchedData = await fetchData(fetchUrl, cacheData);
   } else if (fetchUrls) {
-    console.log('fetching multiple');
     // generate data object from different URL sources below
     const allFetches = Object.values(fetchUrls).map(url => fetchData(url, cacheData));
     const allResponses = await Promise.all(allFetches);
-    console.log('resps', allResponses);
-    fetchedData.data = Object.keys(fetchUrls).forEach((key, index) => fetchedData[key] = allResponses[index]);
-    console.log(fetchedData);
+    fetchedData.data = Object.keys(fetchUrls).forEach((key, index) => {
+      fetchedData[key] = allResponses[index];
+    });
   } else {
-    console.log('fetching nothing');
     fetchedData = null;
   }
 
@@ -248,7 +244,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.dateRendered = cacheData.dateRequested || formattedDate();
 
   // remove all that match
-  await CardRender.remove({
+  await CardRender.deleteMany({
     group: cacheData.group,
     method: cacheData.method,
     id: cacheData.id,
