@@ -1,7 +1,7 @@
 {
-  "_id": "c-menu-search",
+  "_id": "c_menu-search",
   "dataUrl": "{analize}/p/getListOfMembersTickers/",
-  "lastUpdate": "2018-09-11T16:22:31.553Z",
+  "lastUpdate": "2019-04-24T15:13:35.396Z",
   "big": true,
   "high": true
 }

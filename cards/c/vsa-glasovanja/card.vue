@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -139,7 +139,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#c_vsa-glasovanja /deep/ #votingCard {
+/deep/ #votingCard {
   height: auto;
   min-height: 500px;
 }

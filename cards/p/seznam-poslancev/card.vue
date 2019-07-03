@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator" class="party-list-generator">
         <div class="row">
@@ -300,12 +300,12 @@ export default {
           newMember.partylink = newMember.person.party.classification === 'pg';
           newMember.age = getAge(newMember.results.birth_date && newMember.results.birth_date.score) || '';
           const education = newMember.results.education && newMember.results.education.score;
-          newMember.education = parseInt(education || 0, 10);
+          newMember.education = String(education || 0);
           newMember.terms = newMember.results.mandates.score || 1;
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results[this.currentAnalysis].score || 0;
             newMember.analysisValue = Math.round(score * 10) / 10;
-            newMember.analysisPercentage = (score / analysisMax) * 100;
+            newMember.analysisPercentage = analysisMax > 0 ? (score / analysisMax) * 100 : 0;
             const diff = Math.round(newMember.results[this.currentAnalysis].diff * 10) / 10;
             newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
@@ -336,6 +336,10 @@ export default {
             a = memberA.person.party.acronym;
             b = memberB.person.party.acronym;
             return a.localeCompare(b, 'sl');
+          case 'education':
+            a = parseFloat(String(memberA.results.education.score).replace('/', '.'), 10);
+            b = parseFloat(String(memberB.results.education.score).replace('/', '.'), 10);
+            return a - b;
           default:
             a = memberA[this.currentSort];
             b = memberB[this.currentSort];

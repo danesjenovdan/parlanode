@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$root.$options.cardData.cardData._id"
+    :id="$root.$options.cardData.mountId"
     :card-url="cardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -335,22 +335,19 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
-#p_glasovanja,
-#ps_glasovanja {
-  /deep/ .card-content,
-  /deep/ .card-content-front {
-    @include respond-to(mobile) {
-      max-height: none;
-    }
+/deep/ .card-content,
+/deep/ .card-content-front {
+  @include respond-to(mobile) {
+    max-height: none;
   }
+}
 
-  #card-votes {
-    height: $full-card-height - 89px;
-    overflow-y: auto;
+#card-votes {
+  height: $full-card-height - 89px;
+  overflow-y: auto;
 
-    @include respond-to(mobile) {
-      height: 352px;
-    }
+  @include respond-to(mobile) {
+    height: 352px;
   }
 }
 
@@ -452,7 +449,8 @@ export default {
 
   .filter-label {
     overflow: hidden;
-    height: 26px;
+    height: 20px;
+    margin-top: 6px;
   }
 }
 </style>

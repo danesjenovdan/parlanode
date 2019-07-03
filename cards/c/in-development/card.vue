@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
     content-class="full"

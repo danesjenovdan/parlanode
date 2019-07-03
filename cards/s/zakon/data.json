@@ -1,753 +1,96 @@
 {
-  "status": "konec obravnave",
-  "created_for": "12.12.2016",
+  "status": "submitted",
+  "created_for": "29.11.2018",
   "classification": "zakon",
   "tags": [
-    "Komisija za nadzor javnih financ",
-    "Kolegij predsednika Dr\u017eavnega zbora",
-    "Komisija za narodni skupnosti",
-    "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-    "Komisija za poslovnik",
-    "Mandatno-volilna komisija",
-    "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
-    "Odbor za finance in monetarno politiko",
-    "Odbor za gospodarstvo",
+    "Odbor za finance",
     "Odbor za infrastrukturo, okolje in prostor",
-    "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino",
-    "Odbor za kmetijstvo, gozdarstvo in prehrano",
-    "Odbor za kulturo",
     "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
-    "Odbor za obrambo",
-    "Odbor za pravosodje",
-    "Odbor za zadeve Evropske unije",
-    "Odbor za zdravstvo",
-    "Odbor za zunanjo politiko",
-    "Preiskovalna komisija o ugotavljanju zlorab v slovenskem ban\u010dnem sistemu ter ugotavljanju vzrokov in",
-    "Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investiciji",
-    "Ustavna komisija",
-    "Proceduralna glasovanja",
-    "Zunanja imenovanja",
-    "Poslanska vpra\u0161anja",
+    "Komisija za peticije, \u010dlovekove pravice in enake mo\u017enosti",
+    "Mandatno-volilna komisija",
+    "Kolegij predsednika Dr\u017eavnega zbora",
     "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb",
-    "Preiskovalne komisije",
+    "Odbor za zadeve Evropske unije",
+    "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino",
+    "Komisija za poslovnik",
+    "Skupni odbor",
+    "Kvorum",
+    "Eviden\u010dni sklep",
+    "Vsi odbori",
+    "Odbor za zunanjo politiko",
+    "Odbor za pravosodje",
+    "Odbor za gospodarstvo",
     "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti",
-    "Interpelacija",
-    " Preiskovalna komisija za ugotavljanje politi\u010dne odgovornosti nosilcev javnih funkcij pri investicij",
-    "Ustavna obto\u017eba",
-    "Preisk. kom. o ugotavljanju zlorab v slovenskem zdrav. sist. na podr. prodaje in nakupa \u017eil. opornic"
+    "Odbor za finance in monetarno politiko",
+    "Odbor za obrambo",
+    "Odbor za kmetijstvo, gozdarstvo in prehrano",
+    "Odbor za zdravstvo"
   ],
-  "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi",
-  "abstract": "\r\n<p >S spremembami in dopolnitvami zakona se uvaja mo\u017enost odpoklica \u017eupana in sicer se dolo\u010da:</p>\r\n<ul>\r\n<li>\r\n<div >da se glasovanje o odpoklicu lahko izvede enkrat v redni mandatni dobi \u017eupana,</div>\r\n</li>\r\n<li>\r\n<div >da lahko pobudo vlo\u017ei vsak volivec v ob\u010dini, mora pa biti podprta s podpisi 3 % volivcev v ob\u010dini, ki so glasovali na zadnjih volitvah (ne manj kot 15 in ne ve\u010d kot 2.500),</div>\r\n</li>\r\n<li>\r\n<div >da morajo biti zahtevi prilo\u017eeni podpisi, dolo\u010deni v odstotkih glede na velikost ob\u010dine (od 20 % do 10 % volivcev),</div>\r\n</li>\r\n<li>\r\n<div >da je odlo\u010ditev volivcev o odpoklicu sprejeta, \u010de zanjo glasuje ve\u010dina volivcev, ki so veljavno glasovali, pod pogojem, da se glasovanja udele\u017ei ve\u010d kot 90 % &scaron;tevila volivcev, ki so na zadnjih volitvah glasovali za \u017eupana.</div>\r\n</li>\r\n</ul>",
+  "text": "Zakon o spremembah Zakona o minimalni pla\u010di",
+  "abstract": "<span style=\"margin: 0px; color: black;\"><font face=\"Arial\"><p style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">S spremembami zakona se dolo\u010da:</p><ul><li><div style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da zna\u0161a minimalna pla\u010da v letu 2019 886,63 evrov,</div></li><li><div style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da zna\u0161a minimalna pla\u010da v letu 2020 940,58 evrov,</div></li><li><p style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da se od leta 2021 dalje minimalna pla\u010da dolo\u010da tako, da je\nvsaj 20 % vi\u0161ja od zneska minimalnih \u017eivljenjskih stro\u0161kov,</p></li><li><div style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">da se od 1. januarja 2020 v minimalno pla\u010do ne v\u0161tevajo\ndodatki, del pla\u010de za delovno uspe\u0161nost in pla\u010dilo za poslovno uspe\u0161nost.</div></li></ul><p style=\"margin: 0px 0px 0px 48px; line-height: 12pt; text-indent: -35.45pt;\">\n\n<br></p></font></span>",
   "session": {
-    "name": "25. redna seja",
+    "name": "15. izredna seja",
     "orgs": [
       {
         "acronym": "DZ",
         "is_coalition": false,
-        "id": 95,
-        "classification": "",
+        "id": 1,
+        "classification": "dz",
         "name": "Dr\u017eavni zbor"
       }
     ],
-    "date": "12. 12. 2016",
+    "date": "29. 11. 2018",
     "org": {
       "acronym": "DZ",
       "is_coalition": false,
-      "id": 95,
-      "classification": "",
+      "id": 1,
+      "classification": "dz",
       "name": "Dr\u017eavni zbor"
     },
-    "date_ts": "2016-12-12T01:00:00",
-    "updated_at": "25. 9. 2018",
+    "date_ts": "2018-11-29T01:00:00",
+    "updated_at": "8. 4. 2019",
     "in_review": true,
-    "id": 7654
+    "id": 280
   },
-  "result": "rejected",
-  "icon": "",
+  "result": "enacted",
+  "icon": "worker.svg",
   "votes": [
     {
-      "abstain": 2,
-      "tags": [
-        "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
-      ],
-      "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Amandma: K 2. \u010dlenu 6.12.2016 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-      "start_time": "2016-12-15T20:06:10",
+      "abstain": 15,
+      "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+      "text": "Zakon o spremembah Zakona o minimalni pla\u010di - Eviden\u010dni sklep o primernosti predloga zakona 29.11.2018",
+      "start_time": "2018-11-29T20:53:15",
       "is_outlier": false,
-      "session_id": 7654,
+      "agenda_items": [],
+      "session_id": 280,
       "absent": 24,
-      "documents": [
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a7384334cd989bbc3c92fde2d7fc2dddaeee99e3c5c5a19568c786e5",
-          "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a5fdf5a41ee3ec5e29d73a7d749f670f96a4932c2000452d8cd3c059",
-          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ab48194cf4a1b3ba31cbd31773c90d17226c8b02f8979a16e481aa66",
-          "name": "Dopis Vladi o vlo\u017eitvi predloga zakona v zakonodajni postopek"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005aaa00ffe215f841996b75d4324cf3d8f6e0862b3e10fcd2bc695813a",
-          "name": "Dopis Ob\u010dinskim svetom in \u017eupanom ob\u010din in mestnih ob\u010din"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a469e4940621c334057d8fc7d35c9ac128a0878bc3f5e209d6fb332b",
-          "name": "Obvestilo o dodelitvi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00580ea03fc8b8e25f3f80eaad5816acf7d4eb6dbf4c34b8d06f071f790",
-          "name": "Sklep Ob\u010dine Trebnje v zvezi s Predlogom zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00584dc15710cfc85af60d2e50360e6d7d9388d97cc697aeff391a044f8",
-          "name": "Odgovor na pobudo za podalj\u0161anje roka za posredovanje mnenja"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e2e3b17df2d44570511209795887c45c433f78bfda9ce8235df8ed2f",
-          "name": "Stali\u0161\u010de Zdru\u017eenja ob\u010din Slovenije glede Predloga novele zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590ccc7094e3ea3c05baa9f0118dbf8fd5d4bf75ef687dcdac4d96119",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b66a55ba6b1d99507a212798a0d40d58b923bb0d88e9993de4b7c2e6",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00585de7df7ddce02c1a8de514fdec6663ef8e944d14a3999ba6ad5606b",
-          "name": "Stali\u0161\u010de Skupnosti ob\u010din Slovenije do Predloga zakona o spremembi in dopolnitvi Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f8787ea8df69b53615d1e4788ae838967e24c91f771c262dfda81235",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057dfc5f39285c9f50100789a2c03f1dfe97d5522c2229b48831e0e7d4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00503ce96f2830b4c187f69366f4430d47afb42621c33d4f5cd4c088f7a",
-          "name": "Stali\u0161\u010de k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi in k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalnih volitvah"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f0d3aee8b1f930fddecd5091814d10b68bf2ad2af6d8c9ae08e6e3f",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00547d9d8417d8c427b82ec6b344141163bfe2d60dbf8794cf29aa3811c",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005048ffc863ca696fdea8242113cf03c563395882567b20d4b678ba4f3",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ef506e691be518f35913f60f48a26053dc75b44f9cf7f000b0bc2514",
-          "name": "Amandmaji poslanskih skupin SMC, DeSUS, SD k Pedlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051173f759703526825d13dfcd9ed1372b23236f713ce6680d0d1d9a55",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005208c7c4a8ee511df4cdda75184c98fbd7b663051a33d02460fe9151e",
-          "name": "Mnenje Vlade k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058d0341c3920adf00d2acd8f2647906edc823cbcdb3f0ae0fedc5ef28",
-          "name": "Mnenje Dr\u017eavnega sveta k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cd5822310f6772c069ce7a807905d3c8788997a2aeb0e94b49f31582",
-          "name": "Dopis Vladi in MDT - 217. \u010dlen Poslovnika DZ "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cf737ddcf02cf0b02b515dad65e99868af839386c522421b7beca152",
-          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00597735542ac80090e3f6ef649d92f137769e4dd25cbe265c2a5d7167a",
-          "name": "Mnenje Komisije Dr\u017eavnega sveta za lokalno samoupravo in regionalni razvoj in Interesne skupine lokalnih ineteresov k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0052ee8b7283dc7a74e0eb62da0428d854bc518ba7cf34de65e6fb996e4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bb99e5ee95a8026363ca00b819c3c1cd2fd617f1f922f6c4e825aaa",
-          "name": "Predlog amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi (ZLS-S)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057e42377275119702fc38a4fbd3273b368bb9db82f4ae5992a30a7cba",
-          "name": "Popravek ozitoma Sprememba predloga amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bd137c13eac6dedae97cd644ba9cb00d0c11dfe9368ce5a991f1de9",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a44f3db136b4895f768080954f2386779c08039559494b6f29da5a8a",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005bdd68ce72e025890cdd9f9e38f4fb0a477f6f09b3a3df3f4800c0a6e",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00550cc7a4f5f7f133dde56bc0a1f0af6996ba6705ed76c49f7d039a4cf",
-          "name": "Poziv k zavrnitvi Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00588d7788786ecb705ae7b179f94dd1a01976709bb9c61078473d6b155",
-          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058e10ec41a8c53b795d772332063443e72b0a9052a60a57febe78a8b6",
-          "name": "Dopis Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056e6ca386f7bb516fb5e50b8b08e6442044a3bba899f12fa9eec9191b",
-          "name": "Zahteva Dr\u017eavnega sveta, da Dr\u017eavni zbor ponovno odlo\u010da o Zakonu o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005fc113ca8c5f41fe024beb753ada186aed34365e6a09bcea5fb1ab090",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005db50c2d1370fb166459e3bd9785876c10d56e707e7dc5b357f4471bd",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b5d1a8b6e3e954889ab17f94ef1a522f2c7b92785bd0efda5032c55b",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ba983c8d7d5c544ec7cb69ccabcce3f0caedd8e7471a7cac18ddd7fe",
-          "name": "Poro\u010dilo"
-        }
-      ],
-      "for": 15,
-      "against": 49,
-      "motion_id": 6718,
-      "has_outliers": false,
-      "result": false
-    },
-    {
-      "abstain": 2,
-      "tags": [
-        "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
-      ],
-      "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Glasovanje o zakonu v celoti",
-      "start_time": "2016-12-15T20:09:38",
-      "is_outlier": false,
-      "session_id": 7654,
-      "absent": 24,
-      "documents": [
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a7384334cd989bbc3c92fde2d7fc2dddaeee99e3c5c5a19568c786e5",
-          "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a5fdf5a41ee3ec5e29d73a7d749f670f96a4932c2000452d8cd3c059",
-          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ab48194cf4a1b3ba31cbd31773c90d17226c8b02f8979a16e481aa66",
-          "name": "Dopis Vladi o vlo\u017eitvi predloga zakona v zakonodajni postopek"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005aaa00ffe215f841996b75d4324cf3d8f6e0862b3e10fcd2bc695813a",
-          "name": "Dopis Ob\u010dinskim svetom in \u017eupanom ob\u010din in mestnih ob\u010din"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a469e4940621c334057d8fc7d35c9ac128a0878bc3f5e209d6fb332b",
-          "name": "Obvestilo o dodelitvi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00580ea03fc8b8e25f3f80eaad5816acf7d4eb6dbf4c34b8d06f071f790",
-          "name": "Sklep Ob\u010dine Trebnje v zvezi s Predlogom zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00584dc15710cfc85af60d2e50360e6d7d9388d97cc697aeff391a044f8",
-          "name": "Odgovor na pobudo za podalj\u0161anje roka za posredovanje mnenja"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e2e3b17df2d44570511209795887c45c433f78bfda9ce8235df8ed2f",
-          "name": "Stali\u0161\u010de Zdru\u017eenja ob\u010din Slovenije glede Predloga novele zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590ccc7094e3ea3c05baa9f0118dbf8fd5d4bf75ef687dcdac4d96119",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b66a55ba6b1d99507a212798a0d40d58b923bb0d88e9993de4b7c2e6",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00585de7df7ddce02c1a8de514fdec6663ef8e944d14a3999ba6ad5606b",
-          "name": "Stali\u0161\u010de Skupnosti ob\u010din Slovenije do Predloga zakona o spremembi in dopolnitvi Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f8787ea8df69b53615d1e4788ae838967e24c91f771c262dfda81235",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057dfc5f39285c9f50100789a2c03f1dfe97d5522c2229b48831e0e7d4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00503ce96f2830b4c187f69366f4430d47afb42621c33d4f5cd4c088f7a",
-          "name": "Stali\u0161\u010de k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi in k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalnih volitvah"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f0d3aee8b1f930fddecd5091814d10b68bf2ad2af6d8c9ae08e6e3f",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00547d9d8417d8c427b82ec6b344141163bfe2d60dbf8794cf29aa3811c",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005048ffc863ca696fdea8242113cf03c563395882567b20d4b678ba4f3",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ef506e691be518f35913f60f48a26053dc75b44f9cf7f000b0bc2514",
-          "name": "Amandmaji poslanskih skupin SMC, DeSUS, SD k Pedlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051173f759703526825d13dfcd9ed1372b23236f713ce6680d0d1d9a55",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005208c7c4a8ee511df4cdda75184c98fbd7b663051a33d02460fe9151e",
-          "name": "Mnenje Vlade k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058d0341c3920adf00d2acd8f2647906edc823cbcdb3f0ae0fedc5ef28",
-          "name": "Mnenje Dr\u017eavnega sveta k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cd5822310f6772c069ce7a807905d3c8788997a2aeb0e94b49f31582",
-          "name": "Dopis Vladi in MDT - 217. \u010dlen Poslovnika DZ "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cf737ddcf02cf0b02b515dad65e99868af839386c522421b7beca152",
-          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00597735542ac80090e3f6ef649d92f137769e4dd25cbe265c2a5d7167a",
-          "name": "Mnenje Komisije Dr\u017eavnega sveta za lokalno samoupravo in regionalni razvoj in Interesne skupine lokalnih ineteresov k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0052ee8b7283dc7a74e0eb62da0428d854bc518ba7cf34de65e6fb996e4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bb99e5ee95a8026363ca00b819c3c1cd2fd617f1f922f6c4e825aaa",
-          "name": "Predlog amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi (ZLS-S)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057e42377275119702fc38a4fbd3273b368bb9db82f4ae5992a30a7cba",
-          "name": "Popravek ozitoma Sprememba predloga amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bd137c13eac6dedae97cd644ba9cb00d0c11dfe9368ce5a991f1de9",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a44f3db136b4895f768080954f2386779c08039559494b6f29da5a8a",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005bdd68ce72e025890cdd9f9e38f4fb0a477f6f09b3a3df3f4800c0a6e",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00550cc7a4f5f7f133dde56bc0a1f0af6996ba6705ed76c49f7d039a4cf",
-          "name": "Poziv k zavrnitvi Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00588d7788786ecb705ae7b179f94dd1a01976709bb9c61078473d6b155",
-          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058e10ec41a8c53b795d772332063443e72b0a9052a60a57febe78a8b6",
-          "name": "Dopis Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056e6ca386f7bb516fb5e50b8b08e6442044a3bba899f12fa9eec9191b",
-          "name": "Zahteva Dr\u017eavnega sveta, da Dr\u017eavni zbor ponovno odlo\u010da o Zakonu o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005fc113ca8c5f41fe024beb753ada186aed34365e6a09bcea5fb1ab090",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005db50c2d1370fb166459e3bd9785876c10d56e707e7dc5b357f4471bd",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b5d1a8b6e3e954889ab17f94ef1a522f2c7b92785bd0efda5032c55b",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ba983c8d7d5c544ec7cb69ccabcce3f0caedd8e7471a7cac18ddd7fe",
-          "name": "Poro\u010dilo"
-        }
-      ],
-      "for": 45,
-      "against": 19,
-      "motion_id": 6717,
+      "documents": [],
+      "for": 51,
+      "against": 0,
+      "motion_id": 833,
       "has_outliers": true,
       "result": true
     },
     {
-      "abstain": 1,
-      "tags": [
-        "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
-      ],
-      "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
-      "start_time": "2017-01-25T20:54:41",
+      "abstain": 18,
+      "tags": ["Odbor za delo, dru\u017eino, socialne zadeve in invalide"],
+      "text": "Zakon o spremembah Zakona o minimalni pla\u010di - Glasovanje o zakonu v celoti",
+      "start_time": "2018-12-13T17:26:12",
       "is_outlier": false,
-      "session_id": 8940,
-      "absent": 14,
-      "documents": [
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a7384334cd989bbc3c92fde2d7fc2dddaeee99e3c5c5a19568c786e5",
-          "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a5fdf5a41ee3ec5e29d73a7d749f670f96a4932c2000452d8cd3c059",
-          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ab48194cf4a1b3ba31cbd31773c90d17226c8b02f8979a16e481aa66",
-          "name": "Dopis Vladi o vlo\u017eitvi predloga zakona v zakonodajni postopek"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005aaa00ffe215f841996b75d4324cf3d8f6e0862b3e10fcd2bc695813a",
-          "name": "Dopis Ob\u010dinskim svetom in \u017eupanom ob\u010din in mestnih ob\u010din"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a469e4940621c334057d8fc7d35c9ac128a0878bc3f5e209d6fb332b",
-          "name": "Obvestilo o dodelitvi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00580ea03fc8b8e25f3f80eaad5816acf7d4eb6dbf4c34b8d06f071f790",
-          "name": "Sklep Ob\u010dine Trebnje v zvezi s Predlogom zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00584dc15710cfc85af60d2e50360e6d7d9388d97cc697aeff391a044f8",
-          "name": "Odgovor na pobudo za podalj\u0161anje roka za posredovanje mnenja"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e2e3b17df2d44570511209795887c45c433f78bfda9ce8235df8ed2f",
-          "name": "Stali\u0161\u010de Zdru\u017eenja ob\u010din Slovenije glede Predloga novele zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590ccc7094e3ea3c05baa9f0118dbf8fd5d4bf75ef687dcdac4d96119",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b66a55ba6b1d99507a212798a0d40d58b923bb0d88e9993de4b7c2e6",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00585de7df7ddce02c1a8de514fdec6663ef8e944d14a3999ba6ad5606b",
-          "name": "Stali\u0161\u010de Skupnosti ob\u010din Slovenije do Predloga zakona o spremembi in dopolnitvi Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f8787ea8df69b53615d1e4788ae838967e24c91f771c262dfda81235",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057dfc5f39285c9f50100789a2c03f1dfe97d5522c2229b48831e0e7d4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00503ce96f2830b4c187f69366f4430d47afb42621c33d4f5cd4c088f7a",
-          "name": "Stali\u0161\u010de k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi in k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalnih volitvah"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f0d3aee8b1f930fddecd5091814d10b68bf2ad2af6d8c9ae08e6e3f",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00547d9d8417d8c427b82ec6b344141163bfe2d60dbf8794cf29aa3811c",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005048ffc863ca696fdea8242113cf03c563395882567b20d4b678ba4f3",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ef506e691be518f35913f60f48a26053dc75b44f9cf7f000b0bc2514",
-          "name": "Amandmaji poslanskih skupin SMC, DeSUS, SD k Pedlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051173f759703526825d13dfcd9ed1372b23236f713ce6680d0d1d9a55",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005208c7c4a8ee511df4cdda75184c98fbd7b663051a33d02460fe9151e",
-          "name": "Mnenje Vlade k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058d0341c3920adf00d2acd8f2647906edc823cbcdb3f0ae0fedc5ef28",
-          "name": "Mnenje Dr\u017eavnega sveta k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cd5822310f6772c069ce7a807905d3c8788997a2aeb0e94b49f31582",
-          "name": "Dopis Vladi in MDT - 217. \u010dlen Poslovnika DZ "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cf737ddcf02cf0b02b515dad65e99868af839386c522421b7beca152",
-          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00597735542ac80090e3f6ef649d92f137769e4dd25cbe265c2a5d7167a",
-          "name": "Mnenje Komisije Dr\u017eavnega sveta za lokalno samoupravo in regionalni razvoj in Interesne skupine lokalnih ineteresov k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0052ee8b7283dc7a74e0eb62da0428d854bc518ba7cf34de65e6fb996e4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bb99e5ee95a8026363ca00b819c3c1cd2fd617f1f922f6c4e825aaa",
-          "name": "Predlog amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi (ZLS-S)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057e42377275119702fc38a4fbd3273b368bb9db82f4ae5992a30a7cba",
-          "name": "Popravek ozitoma Sprememba predloga amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bd137c13eac6dedae97cd644ba9cb00d0c11dfe9368ce5a991f1de9",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a44f3db136b4895f768080954f2386779c08039559494b6f29da5a8a",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005bdd68ce72e025890cdd9f9e38f4fb0a477f6f09b3a3df3f4800c0a6e",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00550cc7a4f5f7f133dde56bc0a1f0af6996ba6705ed76c49f7d039a4cf",
-          "name": "Poziv k zavrnitvi Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00588d7788786ecb705ae7b179f94dd1a01976709bb9c61078473d6b155",
-          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058e10ec41a8c53b795d772332063443e72b0a9052a60a57febe78a8b6",
-          "name": "Dopis Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056e6ca386f7bb516fb5e50b8b08e6442044a3bba899f12fa9eec9191b",
-          "name": "Zahteva Dr\u017eavnega sveta, da Dr\u017eavni zbor ponovno odlo\u010da o Zakonu o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005fc113ca8c5f41fe024beb753ada186aed34365e6a09bcea5fb1ab090",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005db50c2d1370fb166459e3bd9785876c10d56e707e7dc5b357f4471bd",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b5d1a8b6e3e954889ab17f94ef1a522f2c7b92785bd0efda5032c55b",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ba983c8d7d5c544ec7cb69ccabcce3f0caedd8e7471a7cac18ddd7fe",
-          "name": "Poro\u010dilo"
-        }
-      ],
-      "for": 37,
-      "against": 38,
-      "motion_id": 6775,
+      "agenda_items": [],
+      "session_id": 277,
+      "absent": 16,
+      "documents": [],
+      "for": 56,
+      "against": 0,
+      "motion_id": 826,
       "has_outliers": false,
-      "result": false
-    },
-    {
-      "abstain": 1,
-      "tags": [
-        "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
-      ],
-      "text": "Zakon o spremembah in dopolnitvah Zakona o lokalni samoupravi - Ponovno odlo\u010danje",
-      "start_time": "2017-01-25T20:54:41",
-      "is_outlier": false,
-      "session_id": 8940,
-      "absent": 14,
-      "documents": [
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a7384334cd989bbc3c92fde2d7fc2dddaeee99e3c5c5a19568c786e5",
-          "name": "Besedilo Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a5fdf5a41ee3ec5e29d73a7d749f670f96a4932c2000452d8cd3c059",
-          "name": "Dopis poslancem o objavi predloga zakona v omre\u017eju DZ"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ab48194cf4a1b3ba31cbd31773c90d17226c8b02f8979a16e481aa66",
-          "name": "Dopis Vladi o vlo\u017eitvi predloga zakona v zakonodajni postopek"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005aaa00ffe215f841996b75d4324cf3d8f6e0862b3e10fcd2bc695813a",
-          "name": "Dopis Ob\u010dinskim svetom in \u017eupanom ob\u010din in mestnih ob\u010din"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a469e4940621c334057d8fc7d35c9ac128a0878bc3f5e209d6fb332b",
-          "name": "Obvestilo o dodelitvi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00580ea03fc8b8e25f3f80eaad5816acf7d4eb6dbf4c34b8d06f071f790",
-          "name": "Sklep Ob\u010dine Trebnje v zvezi s Predlogom zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00584dc15710cfc85af60d2e50360e6d7d9388d97cc697aeff391a044f8",
-          "name": "Odgovor na pobudo za podalj\u0161anje roka za posredovanje mnenja"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005e2e3b17df2d44570511209795887c45c433f78bfda9ce8235df8ed2f",
-          "name": "Stali\u0161\u010de Zdru\u017eenja ob\u010din Slovenije glede Predloga novele zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00590ccc7094e3ea3c05baa9f0118dbf8fd5d4bf75ef687dcdac4d96119",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b66a55ba6b1d99507a212798a0d40d58b923bb0d88e9993de4b7c2e6",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00585de7df7ddce02c1a8de514fdec6663ef8e944d14a3999ba6ad5606b",
-          "name": "Stali\u0161\u010de Skupnosti ob\u010din Slovenije do Predloga zakona o spremembi in dopolnitvi Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005f8787ea8df69b53615d1e4788ae838967e24c91f771c262dfda81235",
-          "name": "Mnenje k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057dfc5f39285c9f50100789a2c03f1dfe97d5522c2229b48831e0e7d4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00503ce96f2830b4c187f69366f4430d47afb42621c33d4f5cd4c088f7a",
-          "name": "Stali\u0161\u010de k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi in k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalnih volitvah"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057f0d3aee8b1f930fddecd5091814d10b68bf2ad2af6d8c9ae08e6e3f",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00547d9d8417d8c427b82ec6b344141163bfe2d60dbf8794cf29aa3811c",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005048ffc863ca696fdea8242113cf03c563395882567b20d4b678ba4f3",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ef506e691be518f35913f60f48a26053dc75b44f9cf7f000b0bc2514",
-          "name": "Amandmaji poslanskih skupin SMC, DeSUS, SD k Pedlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0051173f759703526825d13dfcd9ed1372b23236f713ce6680d0d1d9a55",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005208c7c4a8ee511df4cdda75184c98fbd7b663051a33d02460fe9151e",
-          "name": "Mnenje Vlade k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058d0341c3920adf00d2acd8f2647906edc823cbcdb3f0ae0fedc5ef28",
-          "name": "Mnenje Dr\u017eavnega sveta k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cd5822310f6772c069ce7a807905d3c8788997a2aeb0e94b49f31582",
-          "name": "Dopis Vladi in MDT - 217. \u010dlen Poslovnika DZ "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005cf737ddcf02cf0b02b515dad65e99868af839386c522421b7beca152",
-          "name": "Poro\u010dilo - Dopolnjen predlog zakona"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00597735542ac80090e3f6ef649d92f137769e4dd25cbe265c2a5d7167a",
-          "name": "Mnenje Komisije Dr\u017eavnega sveta za lokalno samoupravo in regionalni razvoj in Interesne skupine lokalnih ineteresov k Predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0052ee8b7283dc7a74e0eb62da0428d854bc518ba7cf34de65e6fb996e4",
-          "name": "Pripombe k Predlogu zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bb99e5ee95a8026363ca00b819c3c1cd2fd617f1f922f6c4e825aaa",
-          "name": "Predlog amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi (ZLS-S)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0057e42377275119702fc38a4fbd3273b368bb9db82f4ae5992a30a7cba",
-          "name": "Popravek ozitoma Sprememba predloga amandmajev za amandmaje odbora k predlogu zakona o spremembah in dopolnitvah zakona o lokalni samoupravi "
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0054bd137c13eac6dedae97cd644ba9cb00d0c11dfe9368ce5a991f1de9",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005a44f3db136b4895f768080954f2386779c08039559494b6f29da5a8a",
-          "name": "Pregled amandmajev"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005bdd68ce72e025890cdd9f9e38f4fb0a477f6f09b3a3df3f4800c0a6e",
-          "name": "Vlo\u017eitveni dokument"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00550cc7a4f5f7f133dde56bc0a1f0af6996ba6705ed76c49f7d039a4cf",
-          "name": "Poziv k zavrnitvi Predloga zakona o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e00588d7788786ecb705ae7b179f94dd1a01976709bb9c61078473d6b155",
-          "name": "Besedilo zakona poslano Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0058e10ec41a8c53b795d772332063443e72b0a9052a60a57febe78a8b6",
-          "name": "Dopis Dr\u017eavnemu svetu"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e0056e6ca386f7bb516fb5e50b8b08e6442044a3bba899f12fa9eec9191b",
-          "name": "Zahteva Dr\u017eavnega sveta, da Dr\u017eavni zbor ponovno odlo\u010da o Zakonu o spremembah in dopolnitvah Zakona o lokalni samoupravi"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005fc113ca8c5f41fe024beb753ada186aed34365e6a09bcea5fb1ab090",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005db50c2d1370fb166459e3bd9785876c10d56e707e7dc5b357f4471bd",
-          "name": "Obvestilo o dodelitvi (147. \u010dlen)"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005b5d1a8b6e3e954889ab17f94ef1a522f2c7b92785bd0efda5032c55b",
-          "name": "Mnenje"
-        },
-        {
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ca20e005ba983c8d7d5c544ec7cb69ccabcce3f0caedd8e7471a7cac18ddd7fe",
-          "name": "Poro\u010dilo"
-        }
-      ],
-      "for": 37,
-      "against": 38,
-      "motion_id": 67750,
-      "has_outliers": false,
-      "result": false
+      "result": true
     }
   ],
-  "extra_abstract": "",
-  "created_at": "26.01.2017",
+  "extra_abstract": null,
+  "has_discussion": true,
+  "created_at": "08.04.2019",
   "abstractVisible": true,
-  "epa": "482-VII"
+  "epa": "228-VIII"
 }

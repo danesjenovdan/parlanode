@@ -49,6 +49,10 @@
             </div>
           </div>
         </li>
+        <empty-circle
+          v-if="filteredMembers.length === 0"
+          :text="$t('filtered-to-none')"
+        />
       </ul>
     </scroll-shadow>
   </div>
@@ -61,6 +65,7 @@ import links from 'mixins/links';
 import SearchField from 'components/SearchField.vue';
 import Result from 'components/Result.vue';
 import ScrollShadow from 'components/ScrollShadow.vue';
+import EmptyCircle from 'components/EmptyCircle.vue';
 import mapVotes from 'helpers/mapVotes';
 
 export default {
@@ -70,6 +75,7 @@ export default {
     SearchField,
     Result,
     ScrollShadow,
+    EmptyCircle,
   },
   mixins: [
     links,
@@ -137,6 +143,11 @@ export default {
         return nameMatch && optionMatch;
       });
     },
+  },
+  watch: {
+    nameFilter(newNameFilter) {
+      this.$parent.$parent.$parent.$emit('namefilter', newNameFilter);
+    }
   },
   mounted() {
     if (this.state.nameFilter) {

@@ -1,23 +1,24 @@
 const mongoose = require('mongoose');
 
 const CardRender = mongoose.Schema({
-  dateTime: { type: Date, default: Date.now },
+  dateTime: { type: Date, index: true, default: Date.now },
   dataUrl: String,
+  dataUrls: Array, // THIS WAS ADDED TO ALLOW MULTIPLE URLS
   html: String,
   card: String,
   cardUrl: String,
   group: { type: String, index: true, required: true },
   method: { type: String, index: true, required: true },
-  embed: Boolean,
-  frame: Boolean,
-  altHeader: Boolean,
-  customUrl: String,
-  id: String,
-  dateRequested: String,
-  dateRendered: String,
+  embed: { type: Boolean, index: true },
+  frame: { type: Boolean, index: true },
+  altHeader: { type: Boolean, index: true },
+  customUrl: { type: String, index: true },
+  id: { type: String, index: true },
+  dateRequested: { type: String, index: true },
+  dateRendered: { type: String, index: true },
   cardLastUpdate: Date,
-  state: String,
-  lastAccessed: Date,
+  state: { type: String, index: true },
+  lastAccessed: { type: Date, index: true, default: Date.now },
 });
 
 mongoose.model('CardRender', CardRender);
@@ -28,6 +29,7 @@ const CardBuild = mongoose.Schema({
   lastBuilt: { type: Date, required: true },
   language: { type: String, required: true },
   dataUrl: String,
+  dataUrls: Array, // THIS WAS ADDED TO ALLOW MULTIPLE URLS
 });
 
 mongoose.model('CardBuild', CardBuild);

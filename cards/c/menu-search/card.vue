@@ -1,6 +1,6 @@
 <template>
   <transparent-wrapper
-    :id="`${$options.cardData.cardData._id}`"
+    :id="`${$options.cardData.mountId}`"
     :card-url="url"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -46,6 +46,7 @@ export default {
         .map(group => group[0].person.party.acronym),
     }].concat(grouped.map(group => ({
       label: group[0].person.party.name,
+      acronym: group[0].person.party.acronym,
       items: group.map(p => p.person.id),
       id: group[0].person.party.id,
     })));
@@ -95,7 +96,7 @@ export default {
         document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.member.base}/${this.slugs.person[id].slug}`;
       } else {
         // it's a party
-        const partyId = this.groups.filter(group => group.label === id)[0].id;
+        const partyId = this.groups.filter(group => group.acronym === id)[0].id;
         document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.party.base}/${this.slugs.party[partyId].acronym}`;
       }
     },

@@ -117,9 +117,16 @@ export default {
         }
 
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+        const dataIconsHtml = `
+          <div class="data-icons">
+            <i class="parlaicon icon-abstract ${legislation.abstractVisible ? 'icon-show' : 'icon-hide'}"></i>
+            <i class="parlaicon icon-votes ${legislation.hasVotes ? 'icon-show' : 'icon-hide'}"></i>
+          </div>
+        `;
 
         return [
           { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text}</a>` },
+          { html: dataIconsHtml },
           { text: legislation.epa },
           { text: legislation.date },
           { html: outcomeHtml },
@@ -147,6 +154,47 @@ export default {
 
   .narrow {
     flex: 0.5 !important;
+  }
+
+  .data-icons {
+    i.parlaicon {
+      position: relative;
+
+      &.icon-hide {
+        display: none;
+      }
+
+      &.icon-show + .icon-show {
+        margin-left: 10px;
+
+        &::before {
+          content: '';
+          border-left: 1px solid $font-placeholder;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -5px;
+        }
+      }
+
+      &.icon-abstract {
+        width: 20px !important;
+        height: 25px;
+        background: url("#{getConfig('urls.cdn')}/icons/abstract.svg");
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &.icon-votes {
+        width: 27px !important;
+        height: 25px;
+        background: url("#{getConfig('urls.cdn')}/icons/votes.svg");
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
   }
 
   .outcome {

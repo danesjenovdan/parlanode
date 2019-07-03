@@ -31,18 +31,6 @@ import Pagination from 'components/Pagination.vue';
 import links from 'mixins/links';
 import { memberList } from 'mixins/contextUrls';
 
-const arabicToRoman = arabic => ({
-  0: '',
-  1: 'I',
-  2: 'II',
-  3: 'III',
-  4: 'IV',
-  5: 'V',
-  6: 'VI',
-  7: 'VII',
-  8: 'VIII',
-}[arabic]);
-
 export default {
   name: 'SeznamPoslancevInnerCard',
   components: {
@@ -112,7 +100,7 @@ export default {
           { link: this.getMemberLink(member), image: this.getMemberPortrait(member) },
           { link: this.getMemberLink(member), text: member.person.name },
           member.age,
-          arabicToRoman(member.education),
+          member.education,
           member.terms,
           { link: member.partylink ? this.getMemberPartyLink(member) : '', text: member.person.party.acronym },
           member.formattedDistrict,
@@ -159,7 +147,7 @@ export default {
       this.$emit('page-change', newPage);
     },
     scrollToTop() {
-      const { _id: id } = this.$root.$options.cardData.cardData;
+      const id = this.$root.$options.cardData.mountId;
       const el = document.getElementById(id);
       // only scroll up if top is not visible
       if (el && el.getBoundingClientRect().top < 0) {

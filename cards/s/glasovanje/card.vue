@@ -1,9 +1,12 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    @selectedparty="(newParty) => { this.state.selectedParty = newParty; }"
+    @selectedoption="(newOption) => { this.state.selectedOption = newOption; }"
+    @namefilter="(newNameFilter) => { this.state.nameFilter = newNameFilter; }"
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>
@@ -18,6 +21,15 @@
       </div>
       <p v-t="'info.text[5]'" class="info-text heading"></p>
       <p v-t="'info.text[6]'" class="info-text"></p>
+    </div>
+
+    <div class="date-and-stuff">
+      <a
+        class="funblue-light-hover"
+        :href="getSessionVotesLink(data.session)"
+      >
+        {{ data.session.name }}
+      </a><span class="date">, {{ data.session.date }}</span>
     </div>
 
     <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
@@ -68,13 +80,13 @@
     </div>
     <div
       v-t="'summary'"
-      v-if="data.abstract"
+      v-if="content"
       class="izvlecek-switch visible-xs"
       @click="showMobileExcerpt = !showMobileExcerpt"
     />
     <excerpt
-      v-if="showMobileExcerpt && data.abstract"
-      :content="data.abstract || ''"
+      v-if="showMobileExcerpt && content"
+      :content="content"
       :main-law="excerptData"
       :documents="data.documents"
       :show-parent="true"
@@ -111,9 +123,9 @@
       </p-tab>
     </p-tabs>
     <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
-      <p-tab v-if="data.abstract" :label="$t('summary')">
+      <p-tab v-if="content" :label="$t('summary')">
         <excerpt
-          :content="data.abstract || ''"
+          :content="content"
           :main-law="excerptData"
           :documents="data.documents"
           :show-parent="true"
@@ -161,6 +173,7 @@ import { parseVoteTitle } from 'helpers/voteTitle';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
+import fixAbstractHtml from 'helpers/fixAbstractHtml';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
@@ -219,6 +232,12 @@ export default {
         link: this.getLegislationLink(this.data.legislation),
       };
     },
+    content() {
+      return fixAbstractHtml(this.data.abstract);
+    },
+    contentExtra() {
+      return fixAbstractHtml(this.data.extra_abstract);
+    },
   },
   // glasovanje-update je bilo prazno, created() je iz developa
   created() {
@@ -271,17 +290,25 @@ export default {
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/breakpoints';
 
-#s_glasovanje {
-  /deep/ .p-tabs .p-tabs-content,
-  /deep/ .p-tabs .p-tabs-content .tab-content {
-    overflow-y: visible;
-    overflow-x: visible;
+/deep/ .p-tabs .p-tabs-content,
+/deep/ .p-tabs .p-tabs-content .tab-content {
+  overflow-y: visible;
+  overflow-x: visible;
 
-    .scroll-shadow-top::after {
-      left: -20px;
-      right: -20px;
-      width: auto;
-    }
+  .scroll-shadow-top::after {
+    left: -20px;
+    right: -20px;
+    width: auto;
+  }
+}
+
+.date-and-stuff {
+  margin-bottom: 20px;
+
+  .date {
+    font-family: Roboto Slab;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 

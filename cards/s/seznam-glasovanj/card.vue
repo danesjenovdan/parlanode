@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -140,8 +140,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#s_seznam-glasovanj /deep/ #votingCard {
+/deep/ #votingCard {
   height: auto;
   min-height: 500px;
+}
+
+/deep/ .filter.tag-dropdown {
+  display: none;
 }
 </style>

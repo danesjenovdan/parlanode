@@ -1,6 +1,6 @@
 /* global Vue, VueI18n */
 import { merge, assign } from 'lodash';
-/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-unresolved, no-underscore-dangle */
 import Card from 'cardPath/card.vue';
 import cardJson from 'cardPath/card.json';
 import data from 'cardPath/data.json';
@@ -23,6 +23,7 @@ const i18n = new VueI18n({
 });
 
 const cardData = {
+  mountId: `${cardJson._id}__${Date.now().toString(36)}`,
   data,
   cardData: {
     altHeader: window.location.href.indexOf('altHeader=true') !== -1 ? 'true' : false,

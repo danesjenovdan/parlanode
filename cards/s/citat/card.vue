@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -119,7 +119,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
+      return `${this.url}${this.$options.cardData.data.results.quote_id}?altHeader=true`;
     },
   },
   created() {

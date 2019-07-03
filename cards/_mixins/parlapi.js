@@ -107,6 +107,9 @@ function parlapi() {
     getVotings(sessionId) {
       return data.get(`/votes/?session=${sessionId}&limit=10000&ordering=-start_time`);
     },
+    getUntaggedVotings() {
+      return data.get(`/untagged_votes/?limit=10000&ordering=-start_time`);
+    },
     patchVoting(id, voting) {
       return data.patch(`/votes/${id}/`, voting);
     },
@@ -134,6 +137,9 @@ function parlapi() {
     },
     getPeopleMpsOnly() {
       return data.get('/persons/?limit=10000&mps=true');
+    },
+    getPeopleVotersOf(orgId) {
+      return data.get(`/persons/?limit=10000&voters_of=${orgId}`);
     },
     patchPerson(id, person) {
       return data.patch(`/persons/${id}/`, person);

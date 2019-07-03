@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$root.$options.cardData.cardData._id"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -127,7 +127,7 @@ export default {
 
       const svg = d3.select('.prisotnost-chart').append('svg')
         .attr('class', 'prisotnostchart')
-        .attr('viewBox', '0 0 940 460')
+        .attr('viewBox', '0 0 940 470')
         .attr('preserveAspectRatio', 'xMidYMid meet')
         .append('g')
         .attr('transform', `translate(${prisotnostMargin.left},${prisotnostMargin.top})`);
@@ -316,7 +316,7 @@ export default {
 .prisotnostchart {
     min-width: 870px;
     min-height: 435px;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
 }
 .prisotnost-chart .domain {
     display: none;

@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="cardData.cardData._id"
+    :id="cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
     :card-url="generatedCardUrl"
@@ -54,7 +54,7 @@
           infinite-scroll-distance="10"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.date">
+          <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.id">
             <div class="date">
               {{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }},
               {{ ' ' + speakingDay[0].session.orgs.map(org => org.name).join(', ') }}
@@ -193,11 +193,7 @@ export default {
       }
 
       if (this.selectedMonths.length > 0) {
-        // since dates in month dropdown are generated as m-y we need to prepare them as 1.m.y
-        state.time_filter = this.selectedMonths.map((m) => {
-          const [year, month] = m.id.split('-');
-          return [1, month, year].join('.');
-        });
+        state.months = this.selectedMonths.map(m => m.id).join(',');
       }
 
       if (this.selectedWorkingBodies.length > 0) {
@@ -235,8 +231,9 @@ export default {
     groupSpeakingDays() {
       return this.speakingDays
         .reduce((r, a) => {
-          r[a.session_id] = r[a.session_id] || [];
-          r[a.session_id].push(a);
+          const key = `${a.start_time}__${a.session_id}`;
+          r[key] = r[key] || [];
+          r[key].push(a);
           return r;
         }, Object.create(null));
     },
@@ -337,6 +334,10 @@ export default {
     }
     &:last-child {
       margin-right: 0;
+    }
+    .filter-label {
+      height: 20px;
+      margin-top: 6px;
     }
   }
 

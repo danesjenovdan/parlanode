@@ -13,8 +13,12 @@
       "link": "http://www.dz-rs.si/wps/portal/Home/"
     }
   },
-  "elected-to-district--m": "Elected with {numVotes} votes in {district}",
-  "elected-to-district--f": "Elected with {numVotes} votes in {district}",
+  "elected-to-district": "Št. glasov: {numVotes}, {district}",
+  "elected-to-district--m": "Prejel {numVotes} glasov v okraju {district}",
+  "elected-to-district--f": "Prejela {numVotes} glasov v okraju {district}",
+  "elected-to-district-with-points": "Št. točk: {numVotes}, {district}",
+  "elected-to-district-with-points--m": "Prejel {numVotes} točk v okraju {district}",
+  "elected-to-district-with-points--f": "Prejela {numVotes} točk v okraju {district}",
   "age": "Age: {age} years",
   "no-social-media": "no social media."
 }

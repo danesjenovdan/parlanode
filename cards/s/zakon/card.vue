@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -21,8 +21,8 @@
 
     <div class="result-container">
       <div class="result">
-        <i :class="`parlaicon vote-result--${data.result}`"></i>
-        <div v-t="`vote-result--${data.result}`" class="text"></div>
+        <i :class="`parlaicon vote-result--${result}`"></i>
+        <div v-t="`vote-result--${result}`" class="text"></div>
       </div>
       <div class="law-title">{{ $options.cardData.data.text }}</div>
       <result
@@ -33,7 +33,7 @@
       />
     </div>
     <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab v-if="data.abstract" label="Povzetek" variant="dark">
+      <p-tab v-if="data.abstract" :label="$t('abstract')" variant="dark">
         <excerpt
           :content="content"
           :main-law="excerptData"
@@ -42,14 +42,14 @@
           :icon="data.abstract ? data.icon : ''"
         />
       </p-tab>
-      <p-tab label="Glasovanja">
+      <p-tab :label="$t('votings')">
         <seznam-glasovanj
           :data="data"
         />
       </p-tab>
-      <p-tab v-if="data.extra_abstract" label="Drugi postopki" variant="dark">
+      <p-tab v-if="data.extra_abstract" :label="$('other-procedures')" variant="dark">
         <excerpt
-          :content="data.extra_abstract || ''"
+          :content="contentExtra"
           :main-law="{}"
           :documents="[]"
           :show-parent="false"
@@ -71,6 +71,7 @@ import Excerpt from 'components/Excerpt.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
 import Result from 'components/Result.vue';
 import mapVotes from 'helpers/mapVotes';
+import fixAbstractHtml from 'helpers/fixAbstractHtml';
 
 export default {
   name: 'Zakon',
@@ -148,14 +149,17 @@ export default {
     };
   },
   computed: {
+    result() {
+      return this.data.result || 'in_procedure';
+    },
     content() {
-      if (this.data.abstract) {
-        return this.data.abstract.replace(/style=.*?>/g, '>').replace(/<p>&nbsp;<\/p>/g, '');
-      }
-      return '';
+      return fixAbstractHtml(this.data.abstract);
+    },
+    contentExtra() {
+      return fixAbstractHtml(this.data.extra_abstract);
     },
     generatedCardUrl() {
-      return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ startTab: this.startTab }))}`;
+      return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ selectedTab: this.startTab }))}`;
     },
     excerptData() {
       return {
@@ -171,109 +175,112 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/breakpoints';
 
 #seznam-glasovanj {
-  .filters {
+  /deep/ .filters {
     margin-left: -10px;
     margin-right: -10px;
   }
 }
 
-#s_zakon {
-  .card-content {
-    // height: $full-card-height;
+/deep/ .card-content {
+  // height: $full-card-height;
+  @include respond-to(desktop) {
     height: 637px;
   }
-  .filters {
-    margin-top: 10px;
-  }
-  #votingCard {
-    max-height: 372px;
-  }
-  .p-tabs .p-tabs-content,
-  .p-tabs .p-tabs-content .tab-content {
-    overflow-y: visible;
-    overflow-x: visible;
+}
 
-    .scroll-shadow-top::after {
-      left: -20px;
-      right: -20px;
-      width: auto;
-    }
+/deep/ .filters {
+  margin-top: 10px;
+}
+
+/deep/ #votingCard {
+  max-height: 372px;
+}
+
+/deep/ .p-tabs .p-tabs-content,
+/deep/ .p-tabs .p-tabs-content .tab-content {
+  overflow-y: visible;
+  overflow-x: visible;
+
+  .scroll-shadow-top::after {
+    left: -20px;
+    right: -20px;
+    width: auto;
+  }
+}
+
+.result-container {
+  $section-border: 1px solid $font-placeholder;
+  background: $background;
+  margin: 7px 0 8px 0;
+  min-height: 90px;
+  padding: 10px 14px;
+  position: relative;
+
+  justify-content: space-between;
+
+  @include respond-to(desktop) {
+    display: flex;
+    margin-bottom: 24px;
   }
 
-  .result-container {
-    $section-border: 1px solid $font-placeholder;
-    background: $background;
-    margin: 7px 0 8px 0;
-    min-height: 90px;
-    padding: 10px 14px;
-    position: relative;
-
-    justify-content: space-between;
+  .result {
+    align-items: center;
+    // border-bottom: $section-border;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 10px 0;
 
     @include respond-to(desktop) {
-      display: flex;
-      margin-bottom: 24px;
+      border-bottom: none;
+      border-right: $section-border;
+      padding: 0 22px 0 0;
     }
 
-    .result {
-      align-items: center;
+    .text {
+      color: $font-default;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 12px;
+    }
+  }
+
+  .law-title {
+    padding-left: 14px;
+    padding-right: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-family: 'Roboto Slab';
+
+    width: 100%;
+
+    @include respond-to(mobile) {
+      padding: 14px 0px 9px 0px;
+      border-top: $section-border;
       // border-bottom: $section-border;
-      display: flex;
+      width: auto;
+      text-align: center;
       justify-content: center;
-      padding: 0 0 10px 0;
-
-      @include respond-to(desktop) {
-        border-bottom: none;
-        border-right: $section-border;
-        padding: 0 22px 0 0;
-      }
-
-      .text {
-        color: $font-default;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-left: 12px;
-      }
     }
+  }
 
-    .law-title {
-      padding-left: 14px;
-      padding-right: 14px;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-
-      font-family: 'Roboto Slab';
-
-      width: 100%;
-
-      @include respond-to(mobile) {
-        padding: 14px 0px 14px 0px;
-        border-top: $section-border;
-        border-bottom: $section-border;
-        width: auto;
-        text-align: center;
-        justify-content: center;
-      }
+  /deep/ .result-chart {
+    margin-top: 10px;
+    justify-content: center;
+    @include respond-to(desktop) {
+      margin-top: 0;
+      border-left: $section-border;
     }
-
-    .result-chart {
-      margin-top: 10px;
-      justify-content: center;
-      @include respond-to(desktop) {
-        margin-top: 0;
-        border-left: $section-border;
-      }
-      svg {
-        margin-left: 14px;
-      }
+    svg {
+      margin-left: 14px;
     }
   }
 }

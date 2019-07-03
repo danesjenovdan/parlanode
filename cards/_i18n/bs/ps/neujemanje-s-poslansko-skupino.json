@@ -1,6 +1,7 @@
 {
   "card": {
-    "title": "Neslaganje s klubom"
+    "title": "Neslaganje s klubom",
+    "empty-state-text": "Ova analiza nije dostupna."
   },
   "info": {
     "lead": "Popis svih zastupnika iz kluba koji su svrstani prema vrijednosti slaganja s većinskim glasom kluba. Što je veća vrijednost, manje je slaganje.",

@@ -1,7 +1,7 @@
 {
   "_id": "c_kompas",
-  "dataUrl": "{analize}/p/getCompass/",
-  "lastUpdate": "2018-11-20T13:02:53.600Z",
+  "dataUrl": "{analize}/p/getCompass",
+  "lastUpdate": "2019-04-18T13:02:53.600Z",
   "big": true,
   "high": false
 }

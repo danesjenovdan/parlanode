@@ -23,6 +23,16 @@
       "titleSuffix": " prema rezultatima analize o br. zastupničkih pitanja i inicijativa",
       "explanation": "Prebroje se sva pitanja i inicijative zastupnika odabranog kluba u jednom sazivu Parlamenta. Podaci se preuzimaju s web stranice parlament. ba."
     },
+    "number_of_amendments": {
+      "label": "Br. podnesenih amandmana",
+      "titleSuffix": " obzirom na rezultate analize po br. uloženih amandmana",
+      "explanation": ""
+    },
+    "intra_disunion": {
+      "label": "Razjedinjenost glasanja",
+      "titleSuffix": " obzirom na razjedinjenost glasanja",
+      "explanation": ""
+    },
     "vocabulary_size": {
       "label": "Raznolikost vokabulara",
       "titleSuffix": " prema rezultatima analize raznolikosti vokabulara",

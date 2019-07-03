@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator" class="party-list-generator">
         <div class="row">
@@ -49,6 +49,16 @@ const analysesIDs = [
     roundingPrecision: 0,
   },
   {
+    id: 'number_of_amendments',
+    round: true,
+    roundingPrecision: 0,
+  },
+  {
+    id: 'intra_disunion',
+    round: true,
+    roundingPrecision: 2,
+  },
+  {
     id: 'vocabulary_size',
   },
   // {
@@ -77,7 +87,7 @@ export default {
   ],
   data() {
     const analyses = analysesIDs.map(a => ({
-      id: a.id,
+      ...a,
       label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
       titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
       explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',

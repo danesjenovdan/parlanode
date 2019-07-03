@@ -1,3154 +1,3019 @@
 {
-  "districts": [],
-  "created_at": "2018-12-13T16:08:23.509",
-  "created_for": "2018-12-12",
+  "districts": [
+    {
+      "1": "FBiH / Izborna jedinica 3"
+    },
+    {
+      "2": "FBiH / Izborna jedinica 5"
+    },
+    {
+      "3": "FBiH / Izborna jedinica 1"
+    },
+    {
+      "4": "FBiH / Izborna jedinica 4"
+    },
+    {
+      "5": "RS / Izborna jedinica 2"
+    },
+    {
+      "6": "RS / Izborna jedinica 1"
+    },
+    {
+      "7": "FBiH / Izborna jedinica 2"
+    },
+    {
+      "8": "RS / Izborna jedinica 3"
+    },
+    {
+      "9": "RS"
+    },
+    {
+      "10": "FBiH"
+    }
+  ],
+  "created_at": "2019-04-03T16:43:44.778",
+  "created_for": "2019-04-03",
   "data": [
     {
       "person": {
-        "name": "Aleksander Reber\u0161ek",
-        "gov_id": "P338",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 85,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 137.0, "rank": 8 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 72.1739130434783, "rank": 45 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 6110, "rank": 34 }
-      }
-    },
-    {
-      "person": {
-        "name": "Alenka Jeraj",
-        "gov_id": "P029",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 48,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 72.0, "rank": 87 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 1 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 72.2222222222222,
-          "rank": 81
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 56.5217391304348, "rank": 69 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 5602, "rank": 35 }
-      }
-    },
-    {
-      "person": {
-        "name": "Alja\u017e Kova\u010di\u010d",
-        "gov_id": "P333",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 57,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 131.0, "rank": 16 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 98.2608695652174, "rank": 1 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 3160, "rank": 61 }
-      }
-    },
-    {
-      "person": {
-        "name": "Andrej Rajh",
-        "gov_id": "P344",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 83,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 119.0, "rank": 33 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 89.5652173913044, "rank": 28 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 3783, "rank": 52 }
-      }
-    },
-    {
-      "person": {
-        "name": "Andrej \u0160ircelj",
-        "gov_id": "P201",
+        "name": "Adil Osmanović",
+        "gov_id": "502",
         "gender": "m",
         "is_active": false,
-        "district": null,
+        "district": [
+          5
+        ],
         "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
+          "name": "Klub poslanika SDA",
           "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 93,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 86.0, "rank": 80 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 5.0, "rank": 8 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 68.695652173913, "rank": 51 },
-        "birth_date": { "score": "1959-02-28" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 10805, "rank": 9 }
-      }
-    },
-    {
-      "person": {
-        "name": "Andrej \u0160u\u0161melj",
-        "gov_id": "P354",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
+          "acronym": "SDA",
+          "has_voters": false,
           "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 130,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 110.0, "rank": 46 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 94.9367088607595, "rank": 13 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2831, "rank": 63 }
-      }
-    },
-    {
-      "person": {
-        "name": "Andreja Zabret",
-        "gov_id": "P327",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 102,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 109.0, "rank": 49 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 74.7826086956522, "rank": 40 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 824, "rank": 84 }
-      }
-    },
-    {
-      "person": {
-        "name": "Anja Bah \u017dibert",
-        "gov_id": "P239",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 18,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 106.0, "rank": 52 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 66.9565217391304, "rank": 54 },
-        "birth_date": { "score": "1973-06-27" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 7315, "rank": 24 }
-      }
-    },
-    {
-      "person": {
-        "name": "An\u017ee Logar",
-        "gov_id": "P238",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 65,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 94.0, "rank": 74 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 6.0, "rank": 7 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 40.0, "rank": 84 },
-        "birth_date": { "score": "1976-05-15" },
-        "education": { "score": "8/2" },
-        "spoken_words": { "diff": 0, "score": 5494, "rank": 36 }
-      }
-    },
-    {
-      "person": {
-        "name": "Bla\u017e Pavlin",
-        "gov_id": "P339",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 73,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 137.0, "rank": 8 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 71.304347826087, "rank": 47 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2911, "rank": 62 }
-      }
-    },
-    {
-      "person": {
-        "name": "Bojan Podkraj\u0161ek",
-        "gov_id": "P277",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 78,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 97.0, "rank": 64 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 5.0, "rank": 8 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 53.9130434782609, "rank": 74 },
-        "birth_date": { "score": "1968-01-08" },
-        "education": { "score": "5" },
-        "spoken_words": { "diff": 0, "score": 2714, "rank": 64 }
-      }
-    },
-    {
-      "person": {
-        "name": "Bojana Mur\u0161i\u010d",
-        "gov_id": "P275",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 69,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 128.0, "rank": 19 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 92.1739130434783, "rank": 19 },
-        "birth_date": { "score": "1971-09-20" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 6316, "rank": 33 }
-      }
-    },
-    {
-      "person": {
-        "name": "Boris Doblekar",
-        "gov_id": "P306",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 31,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 105.0, "rank": 54 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 72.1739130434783, "rank": 45 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4856, "rank": 40 }
-      }
-    },
-    {
-      "person": {
-        "name": "Bo\u0161tjan Kora\u017eija",
-        "gov_id": "P337",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 54,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 144.0, "rank": 5 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 63.4782608695652, "rank": 57 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 1655, "rank": 75 }
-      }
-    },
-    {
-      "person": {
-        "name": "Brane Golubovi\u0107",
-        "gov_id": "P229",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 34,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 85.0, "rank": 82 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 1 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.952380952380949, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 91.304347826087, "rank": 21 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 529, "rank": 85 }
-      }
-    },
-    {
-      "person": {
-        "name": "Branislav Raji\u0107",
-        "gov_id": "P281",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 84,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 121.0, "rank": 29 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 74.7826086956522, "rank": 40 },
-        "birth_date": { "score": "1962-05-09" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 2450, "rank": 68 }
-      }
-    },
-    {
-      "person": {
-        "name": "Branko Grims",
-        "gov_id": "P016",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 36,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 96.0, "rank": 67 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 5 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 49.5652173913044, "rank": 79 },
-        "birth_date": { "score": "1962-08-26" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 8746, "rank": 14 }
-      }
-    },
-    {
-      "person": {
-        "name": "Branko Simonovi\u010d",
-        "gov_id": "P345",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 87,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 79.0, "rank": 86 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 39.0, "rank": 1 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 93.0434782608696, "rank": 17 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4056, "rank": 51 }
-      }
-    },
-    {
-      "person": {
-        "name": "Danijel Krivec",
-        "gov_id": "P040",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 60,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 85.0, "rank": 82 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 5 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 73.9130434782609, "rank": 43 },
-        "birth_date": { "score": "1965-05-16" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 4891, "rank": 39 }
-      }
-    },
-    {
-      "person": {
-        "name": "Darij Kraj\u010di\u010d",
-        "gov_id": "P329",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 58,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 101.0, "rank": 59 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 1 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 1.13636363636364, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 76.5217391304348, "rank": 38 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4814, "rank": 42 }
-      }
-    },
-    {
-      "person": {
-        "name": "Dejan Kaloh",
-        "gov_id": "P310",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 50,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 144.0, "rank": 5 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 60.8695652173913, "rank": 61 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2214, "rank": 70 }
-      }
-    },
-    {
-      "person": {
-        "name": "Dejan \u017didan",
-        "gov_id": "P211",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 104,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 124.0, "rank": 27 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 38.0, "rank": 2 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 90.4347826086957, "rank": 27 },
-        "birth_date": { "score": "1967-10-16" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 16542, "rank": 2 }
-      }
-    },
-    {
-      "person": {
-        "name": "Du\u0161an \u0160i\u0161ko",
-        "gov_id": "P349",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SNS",
-          "name": "Slovenska nacionalna stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 11
-        },
-        "type": "mp",
-        "id": 94,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 132.0, "rank": 14 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 1.25, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 69.5652173913043, "rank": 49 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4851, "rank": 41 }
-      }
-    },
-    {
-      "person": {
-        "name": "Edvard Pauli\u010d",
-        "gov_id": "P323",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 72,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 127.0, "rank": 22 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.892857142857139, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 97.3913043478261, "rank": 5 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2604, "rank": 66 }
-      }
-    },
-    {
-      "person": {
-        "name": "Eva Irgl",
-        "gov_id": "P023",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 43,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 115.0, "rank": 41 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 5 },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 59.1304347826087, "rank": 65 },
-        "birth_date": { "score": "1976-12-09" },
-        "education": { "score": "5" },
-        "spoken_words": { "diff": 0, "score": 7679, "rank": 21 }
-      }
-    },
-    {
-      "person": {
-        "name": "Ferenc Horv\u00e1th",
-        "gov_id": "P351",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "IMNS",
-          "name": "Italijanska in Mad\u017earska narodna skupnost",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 10
-        },
-        "type": "mp",
-        "id": 39,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 0.0, "rank": 89 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 0.0, "rank": 89 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 61.1111111111111,
-          "rank": 87
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 59.1304347826087, "rank": 65 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 0, "rank": 89 }
-      }
-    },
-    {
-      "person": {
-        "name": "Franc Breznik",
-        "gov_id": "P167",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 22,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 120.0, "rank": 31 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 45.2173913043478, "rank": 83 },
-        "birth_date": { "score": "1970-07-23" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 12171, "rank": 5 }
-      }
-    },
-    {
-      "person": {
-        "name": "Franc Jur\u0161a",
-        "gov_id": "P122",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 9,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 96.0, "rank": 67 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 4 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 92.1739130434783, "rank": 19 },
-        "birth_date": { "score": "1953-09-21" },
-        "education": { "score": "6/1" },
-        "spoken_words": { "diff": 0, "score": 3531, "rank": 55 }
-      }
-    },
-    {
-      "person": {
-        "name": "Franc Kramar",
-        "gov_id": "P340",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 59,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 96.0, "rank": 67 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 1 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 2.85714285714286, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 91.304347826087, "rank": 21 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 3410, "rank": 58 }
-      }
-    },
-    {
-      "person": {
-        "name": "Franc Rosec",
-        "gov_id": "P307",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 86,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 85.0, "rank": 82 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 60.8695652173913, "rank": 61 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 147, "rank": 88 }
-      }
-    },
-    {
-      "person": {
-        "name": "Franc Tr\u010dek",
-        "gov_id": "P290",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 99,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 100.0, "rank": 60 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 50.0, "rank": 90 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 23.4782608695652, "rank": 90 },
-        "birth_date": { "score": "1969-01-03" },
-        "education": { "score": "8/2" },
-        "spoken_words": { "diff": 0, "score": 3193, "rank": 60 }
-      }
-    },
-    {
-      "person": {
-        "name": "Franci Kepa",
-        "gov_id": "P308",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 51,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 102.0, "rank": 57 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 55.6521739130435, "rank": 70 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 461, "rank": 86 }
-      }
-    },
-    {
-      "person": {
-        "name": "Gregor Peri\u010d",
-        "gov_id": "P313",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 76,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 135.0, "rank": 13 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 91.304347826087, "rank": 21 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 8654, "rank": 16 }
-      }
-    },
-    {
-      "person": {
-        "name": "Gregor \u017didan",
-        "gov_id": "P356",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 133,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 99.0, "rank": 61 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 91.1392405063291, "rank": 26 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 1286, "rank": 81 }
-      }
-    },
-    {
-      "person": {
-        "name": "Igor Pe\u010dek",
-        "gov_id": "P322",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 75,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 129.0, "rank": 18 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 96.5217391304348, "rank": 9 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 3313, "rank": 59 }
-      }
-    },
-    {
-      "person": {
-        "name": "Igor Zor\u010di\u010d",
-        "gov_id": "P294",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 12,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 103.0, "rank": 55 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 85.2173913043478, "rank": 34 },
-        "birth_date": { "score": "1978-01-09" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 1046, "rank": 82 }
-      }
-    },
-    {
-      "person": {
-        "name": "Iva Dimic",
-        "gov_id": "P169",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 15,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 120.0, "rank": 31 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 66.6666666666667,
-          "rank": 85
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 24.3478260869565, "rank": 88 },
-        "birth_date": { "score": "1972-10-28" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 1840, "rank": 73 }
-      }
-    },
-    {
-      "person": {
-        "name": "Ivan Hr\u0161ak",
-        "gov_id": "P176",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
+          "id": 19
         },
         "type": "mp",
         "id": 42,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 151.0, "rank": 2 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 56,
+          "rank": 12
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": 0
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 3,
+          "rank": 3
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 89.5652173913044, "rank": 28 },
-        "birth_date": { "score": "1957-12-25" },
-        "education": { "score": "6/1" },
-        "spoken_words": { "diff": 0, "score": 4149, "rank": 49 }
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1963-07-24"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 100,
+          "rank": 5
+        }
       }
     },
     {
       "person": {
-        "name": "Janez Jan\u0161a",
-        "gov_id": "P025",
-        "gender": "m",
+        "name": "Aida Baručija",
+        "gov_id": "542",
+        "gender": "f",
         "is_active": false,
-        "district": null,
+        "district": [
+          4
+        ],
         "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
+          "name": "Poslanici bez kluba",
+          "classification": "unaligned MP",
+          "acronym": "Poslanici bez kluba",
+          "has_voters": false,
           "is_coalition": false,
-          "classification": "pg",
-          "id": 2
+          "id": 29
         },
         "type": "mp",
-        "id": 46,
+        "id": 8,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 87.0, "rank": 79 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 8 },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 66.6666666666667,
-          "rank": 85
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 24.3478260869565, "rank": 88 },
-        "birth_date": { "score": "1958-09-17" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 8159, "rank": 17 }
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1976-01-01"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
       }
     },
     {
       "person": {
-        "name": "Jani (Janko) M\u00f6derndorfer",
-        "gov_id": "P191",
+        "name": "Alma Čolo",
+        "gov_id": "503",
         "gender": "f",
         "is_active": false,
-        "district": null,
+        "district": [
+          1
+        ],
         "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
           "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 129,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 88.0, "rank": 77 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 7.0, "rank": 5 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 1.42857142857142, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 88.6075949367089, "rank": 31 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 13247, "rank": 3 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jani Ivanu\u0161a",
-        "gov_id": "P350",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SNS",
-          "name": "Slovenska nacionalna stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 11
-        },
-        "type": "mp",
-        "id": 44,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 112.0, "rank": 43 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 2.53164556962025, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 68.695652173913, "rank": 51 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 7763, "rank": 20 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jani Prednik",
-        "gov_id": "P320",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 82,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 137.0, "rank": 8 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.917431192660544, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 94.7826086956522, "rank": 14 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4474, "rank": 44 }
-      }
-    },
-    {
-      "person": {
-        "name": "Janja Sluga",
-        "gov_id": "P284",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 89,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 94.0, "rank": 74 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 78.2608695652174, "rank": 37 },
-        "birth_date": { "score": "1974-05-15" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 8749, "rank": 13 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jelka Godec",
-        "gov_id": "P252",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 33,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 70.0, "rank": 88 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 72.2222222222222,
-          "rank": 81
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 50.4347826086956, "rank": 77 },
-        "birth_date": { "score": "1969-11-21" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 1770, "rank": 74 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jerca Kor\u010de",
-        "gov_id": "P326",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 55,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 106.0, "rank": 52 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 88.695652173913, "rank": 30 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4168, "rank": 48 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jernej Vrtovec",
-        "gov_id": "P292",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 14,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 112.0, "rank": 43 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 61.1111111111111,
-          "rank": 87
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 50.4347826086956, "rank": 77 },
-        "birth_date": { "score": "1985-05-24" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 9025, "rank": 12 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jo\u017ee Lenart",
-        "gov_id": "P330",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 61,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 125.0, "rank": 26 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 94.7826086956522, "rank": 14 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4262, "rank": 47 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jo\u017ee Tanko",
-        "gov_id": "P077",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 96,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 118.0, "rank": 34 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 6 },
-        "speeches_per_session": { "diff": 0, "score": 38.0, "rank": 2 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 73.9130434782609, "rank": 43 },
-        "birth_date": { "score": "1956-04-16" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 8681, "rank": 15 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jo\u017eef Horvat",
-        "gov_id": "P020",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 7,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 121.0, "rank": 29 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 4 },
-        "speeches_per_session": { "diff": 0, "score": 7.0, "rank": 5 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 70.4347826086956, "rank": 48 },
-        "birth_date": { "score": "1955-07-08" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 28545, "rank": 1 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jo\u017eef Lenart",
-        "gov_id": "P311",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 107,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 118.0, "rank": 34 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 74.7826086956522, "rank": 40 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 1337, "rank": 80 }
-      }
-    },
-    {
-      "person": {
-        "name": "Jurij Lep",
-        "gov_id": "P347",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 62,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 96.0, "rank": 67 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 95.6521739130435, "rank": 10 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 12056, "rank": 6 }
-      }
-    },
-    {
-      "person": {
-        "name": "Karla Urh",
-        "gov_id": "P353",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 132,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 108.0, "rank": 51 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 1.14942528735632, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 96.6666666666667, "rank": 8 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 931, "rank": 83 }
-      }
-    },
-    {
-      "person": {
-        "name": "Karmen Furman",
-        "gov_id": "P309",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 32,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 124.0, "rank": 27 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 2.77777777777779, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 62.6086956521739, "rank": 60 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 6437, "rank": 31 }
-      }
-    },
-    {
-      "person": {
-        "name": "Lidija Divjak Mirnik",
-        "gov_id": "P332",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 30,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 109.0, "rank": 49 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 97.3913043478261, "rank": 5 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2288, "rank": 69 }
-      }
-    },
-    {
-      "person": {
-        "name": "Lidija Ivanu\u0161a",
-        "gov_id": "P348",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SNS",
-          "name": "Slovenska nacionalna stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 11
-        },
-        "type": "mp",
-        "id": 45,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 136.0, "rank": 11 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 1.25, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 69.5652173913043, "rank": 49 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2577, "rank": 67 }
-      }
-    },
-    {
-      "person": {
-        "name": "Ljudmila Novak",
-        "gov_id": "P193",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 13,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 98.0, "rank": 62 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 63.4782608695652, "rank": 57 },
-        "birth_date": { "score": "1959-08-01" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 6960, "rank": 27 }
-      }
-    },
-    {
-      "person": {
-        "name": "Luka Mesec",
-        "gov_id": "P273",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 6,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 117.0, "rank": 37 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 46.0869565217391, "rank": 82 },
-        "birth_date": { "score": "1987-07-01" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 11789, "rank": 7 }
-      }
-    },
-    {
-      "person": {
-        "name": "Marijan Pojbi\u010d",
-        "gov_id": "P098",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 80,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 88.0, "rank": 77 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 5 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 72.2222222222222,
-          "rank": 81
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 39.1304347826087, "rank": 85 },
-        "birth_date": { "score": "1961-02-06" },
-        "education": { "score": "5" },
-        "spoken_words": { "diff": 0, "score": 9842, "rank": 10 }
-      }
-    },
-    {
-      "person": {
-        "name": "Marko Koprivc",
-        "gov_id": "P318",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 53,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 131.0, "rank": 16 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 86.0869565217391, "rank": 32 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 2696, "rank": 65 }
-      }
-    },
-    {
-      "person": {
-        "name": "Marko Poga\u010dnik",
-        "gov_id": "P196",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 79,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 96.0, "rank": 67 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 54.7826086956522, "rank": 72 },
-        "birth_date": { "score": "1972-01-30" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 6335, "rank": 32 }
-      }
-    },
-    {
-      "person": {
-        "name": "Matej Ta\u0161ner Vatovec",
-        "gov_id": "P288",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 16,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 126.0, "rank": 24 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 58.2608695652174, "rank": 67 },
-        "birth_date": { "score": "1983-02-06" },
-        "education": { "score": "8/2" },
-        "spoken_words": { "diff": 0, "score": 4062, "rank": 50 }
-      }
-    },
-    {
-      "person": {
-        "name": "Matej Tonin",
-        "gov_id": "P204",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "NSi",
-          "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 7
-        },
-        "type": "mp",
-        "id": 17,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 97.0, "rank": 64 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 60.8695652173913, "rank": 61 },
-        "birth_date": { "score": "1983-07-30" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 13200, "rank": 4 }
-      }
-    },
-    {
-      "person": {
-        "name": "Mateja Udov\u010d",
-        "gov_id": "P312",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 100,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 147.0, "rank": 4 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 91.304347826087, "rank": 21 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 7145, "rank": 25 }
-      }
-    },
-    {
-      "person": {
-        "name": "Matja\u017e Han",
-        "gov_id": "P018",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 11,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 98.0, "rank": 62 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 5 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 79.1304347826087, "rank": 36 },
-        "birth_date": { "score": "1971-01-17" },
-        "education": { "score": "4" },
-        "spoken_words": { "diff": 0, "score": 3457, "rank": 56 }
-      }
-    },
-    {
-      "person": {
-        "name": "Matja\u017e Nemec",
-        "gov_id": "P276",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 70,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 110.0, "rank": 46 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 64.3478260869565, "rank": 56 },
-        "birth_date": { "score": "1980-04-10" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 1379, "rank": 77 }
-      }
-    },
-    {
-      "person": {
-        "name": "Ma\u0161a Kociper",
-        "gov_id": "P182",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 127,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 96.0, "rank": 67 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 86.0759493670886, "rank": 33 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 5023, "rank": 38 }
-      }
-    },
-    {
-      "person": {
-        "name": "Meira Hot",
-        "gov_id": "P317",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 41,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 136.0, "rank": 11 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 95.6521739130435, "rank": 10 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 1583, "rank": 76 }
-      }
-    },
-    {
-      "person": {
-        "name": "Miha Kordi\u0161",
-        "gov_id": "P262",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 56,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 128.0, "rank": 19 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 61.1111111111111,
-          "rank": 87
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 29.5652173913043, "rank": 87 },
-        "birth_date": { "score": "1989-03-06" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 4510, "rank": 43 }
-      }
-    },
-    {
-      "person": {
-        "name": "Milan Brglez",
-        "gov_id": "P243",
-        "gender": "m",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
+          "id": 19
         },
         "type": "mp",
         "id": 2,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 117.0, "rank": 37 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 96,
+          "rank": 9
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 3,
+          "rank": 3
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 57.3913043478261, "rank": 68 },
-        "birth_date": { "score": "1967-09-01" },
-        "education": { "score": "8/2" },
-        "spoken_words": { "diff": 0, "score": 4295, "rank": 45 }
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1961-01-15"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 251,
+          "rank": 4
+        }
       }
     },
     {
       "person": {
-        "name": "Monika Gregor\u010di\u010d",
-        "gov_id": "P314",
+        "name": "Borjana Krišto",
+        "gov_id": "518",
         "gender": "f",
         "is_active": false,
-        "district": null,
+        "district": [
+          3
+        ],
         "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
+          "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
           "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 35,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 0.0, "rank": 89 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 0.0, "rank": 89 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 54.7826086956522, "rank": 72 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 0, "rank": 89 }
-      }
-    },
-    {
-      "person": {
-        "name": "Nada Brinov\u0161ek",
-        "gov_id": "P244",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
+          "acronym": "HNS",
+          "has_voters": false,
           "is_coalition": false,
-          "classification": "pg",
-          "id": 2
+          "id": 20
         },
         "type": "mp",
-        "id": 24,
+        "id": 16,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 92.0, "rank": 76 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 124,
+          "rank": 8
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 11,
+          "rank": 2
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 68.695652173913, "rank": 51 },
-        "birth_date": { "score": "1961-04-24" },
-        "education": { "score": "8/1" },
-        "spoken_words": { "diff": 0, "score": 1367, "rank": 78 }
-      }
-    },
-    {
-      "person": {
-        "name": "Nata\u0161a Suki\u010d",
-        "gov_id": "P334",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 91,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 126.0, "rank": 24 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 1 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
+        "mismatch_of_pg": {
           "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
+          "score": 0,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 53.0434782608696, "rank": 76 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 3740, "rank": 53 }
-      }
-    },
-    {
-      "person": {
-        "name": "Nina Maurovi\u010d",
-        "gov_id": "P355",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 128,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 127.0, "rank": 22 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 97.4683544303797, "rank": 4 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 1367, "rank": 78 }
-      }
-    },
-    {
-      "person": {
-        "name": "Predrag Bakovi\u0107",
-        "gov_id": "P319",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 19,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 128.0, "rank": 19 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 80.8695652173913, "rank": 35 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 7084, "rank": 26 }
-      }
-    },
-    {
-      "person": {
-        "name": "Primo\u017e Siter",
-        "gov_id": "P336",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 88,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 138.0, "rank": 7 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
+        "presence_votes": {
           "diff": 0,
-          "score": 88.8888888888889,
-          "rank": 37
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 63.4782608695652, "rank": 57 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 4277, "rank": 46 }
-      }
-    },
-    {
-      "person": {
-        "name": "Robert Pav\u0161i\u010d",
-        "gov_id": "P325",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
+        "birth_date": {
+          "score": "1961-08-13"
         },
-        "type": "mp",
-        "id": 74,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 116.0, "rank": 40 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 98.2608695652174, "rank": 1 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 7817, "rank": 19 }
-      }
-    },
-    {
-      "person": {
-        "name": "Robert Polnar",
-        "gov_id": "P346",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
+        "education": {
+          "score": "7"
         },
-        "type": "mp",
-        "id": 81,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 149.0, "rank": 3 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 4.0, "rank": 11 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 97.3913043478261, "rank": 5 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 9766, "rank": 11 }
-      }
-    },
-    {
-      "person": {
-        "name": "Samo Bevk",
-        "gov_id": "P006",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 21,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 164.0, "rank": 1 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
+        "spoken_words": {
           "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 93.9130434782609, "rank": 16 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 1964, "rank": 72 }
+          "score": 667,
+          "rank": 2
+        }
       }
     },
     {
       "person": {
-        "name": "Soniboj Kne\u017eak",
-        "gov_id": "P321",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SD",
-          "name": "Socialni demokrati",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 4
-        },
-        "type": "mp",
-        "id": 52,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 113.0, "rank": 42 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 95.6521739130435, "rank": 10 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 7932, "rank": 18 }
-      }
-    },
-    {
-      "person": {
-        "name": "Suzana Lep \u0160imenko",
-        "gov_id": "P268",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 63,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 102.0, "rank": 57 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 49.5652173913044, "rank": 79 },
-        "birth_date": { "score": "1979-10-30" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 7618, "rank": 22 }
-      }
-    },
-    {
-      "person": {
-        "name": "Tina Heferle",
-        "gov_id": "P328",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "LM\u0160",
-          "name": "Lista Marjana \u0160arca",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 3
-        },
-        "type": "mp",
-        "id": 38,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 132.0, "rank": 14 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 31.0, "rank": 4 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 98.2608695652174, "rank": 1 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 6780, "rank": 28 }
-      }
-    },
-    {
-      "person": {
-        "name": "Toma\u017e Lisec",
-        "gov_id": "P187",
+        "name": "Branislav Borenović",
+        "gov_id": "536",
         "gender": "m",
         "is_active": false,
-        "district": null,
+        "district": [
+          6
+        ],
         "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
+          "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+          "classification": "pg",
+          "acronym": "SDS i PDP",
+          "has_voters": false,
           "is_coalition": false,
-          "classification": "pg",
-          "id": 2
-        },
-        "type": "mp",
-        "id": 64,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 110.0, "rank": 46 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 3 },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 1.31578947368422, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 66.0869565217391, "rank": 55 },
-        "birth_date": { "score": "1978-02-19" },
-        "education": { "score": "7" },
-        "spoken_words": { "diff": 0, "score": 10878, "rank": 8 }
-      }
-    },
-    {
-      "person": {
-        "name": "Violeta Tomi\u0107",
-        "gov_id": "P289",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "Levica",
-          "name": "Levica",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 6
-        },
-        "type": "mp",
-        "id": 97,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 117.0, "rank": 37 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 5.0, "rank": 8 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
-          "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
-        },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 46.9565217391304, "rank": 81 },
-        "birth_date": { "score": "1963-01-21" },
-        "education": { "score": "6/2" },
-        "spoken_words": { "diff": 0, "score": 2117, "rank": 71 }
-      }
-    },
-    {
-      "person": {
-        "name": "Vojko Starovi\u0107",
-        "gov_id": "P343",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SAB",
-          "name": "Stranka Alenke Bratu\u0161ek",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 8
-        },
-        "type": "mp",
-        "id": 90,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 95.0, "rank": 73 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": { "diff": 0, "score": 100.0, "rank": 1 },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 93.0434782608696, "rank": 17 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 7605, "rank": 23 }
-      }
-    },
-    {
-      "person": {
-        "name": "Zmago Jelin\u010di\u010d Plemeniti",
-        "gov_id": "P028",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SNS",
-          "name": "Slovenska nacionalna stranka",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 11
+          "id": 25
         },
         "type": "mp",
         "id": 10,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 81.0, "rank": 85 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 72.2222222222222,
-          "rank": 81
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 34.7826086956522, "rank": 86 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 3455, "rank": 57 }
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 33.3333333333333,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 66.6666666666667,
+          "rank": 41
+        },
+        "birth_date": {
+          "score": "1973-03-04"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
       }
     },
     {
       "person": {
-        "name": "Zvonko \u010cerna\u010d",
-        "gov_id": "P092",
+        "name": "Damir Arnaut",
+        "gov_id": "538",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "party": {
+          "name": "Mješoviti klub poslanika SBB – PDA",
+          "classification": "pg",
+          "acronym": "SBB i PDA",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 23
+        },
+        "type": "mp",
+        "id": 1,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 89,
+          "rank": 10
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 3,
+          "rank": 3
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 83.3333333333333,
+          "rank": 39
+        },
+        "birth_date": {
+          "score": "1975-01-01"
+        },
+        "education": {
+          "score": "8"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 265,
+          "rank": 3
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Darijana Katić",
+        "gov_id": "517",
         "gender": "f",
         "is_active": false,
-        "district": null,
+        "district": [
+          7
+        ],
         "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
+          "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
           "classification": "pg",
-          "id": 2
+          "acronym": "HNS",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 20
+        },
+        "type": "mp",
+        "id": 19,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1981-01-26"
+        },
+        "education": {
+          "score": ""
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Denis Zvizdić",
+        "gov_id": "504",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
+        },
+        "type": "mp",
+        "id": 38,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1964-06-09"
+        },
+        "education": {
+          "score": "8"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Dragan Bogdanić",
+        "gov_id": "511",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "party": {
+          "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+          "classification": "pg",
+          "acronym": "SNSD",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 24
+        },
+        "type": "mp",
+        "id": 9,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1965-07-05"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Dragan Mektić",
+        "gov_id": "531",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "party": {
+          "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
+          "classification": "pg",
+          "acronym": "SDS i PDP",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 25
+        },
+        "type": "mp",
+        "id": 25,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1956-12-24"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Dženan Đonlagić",
+        "gov_id": "529",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "party": {
+          "name": "Klub poslanika DF-a",
+          "classification": "pg",
+          "acronym": "DF",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 22
+        },
+        "type": "mp",
+        "id": 3,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1974-05-31"
+        },
+        "education": {
+          "score": "8"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Edin Mušić",
+        "gov_id": "505",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
+        },
+        "type": "mp",
+        "id": 31,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1962-07-16"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Edita Đapo",
+        "gov_id": "539",
+        "gender": "f",
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "party": {
+          "name": "Mješoviti klub poslanika SBB – PDA",
+          "classification": "pg",
+          "acronym": "SBB i PDA",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 23
+        },
+        "type": "mp",
+        "id": 4,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1973-10-24"
+        },
+        "education": {
+          "score": "8"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 17,
+          "rank": 14
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Enver Bijedić",
+        "gov_id": "522",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "party": {
+          "name": "Klub poslanika SDP BiH",
+          "classification": "pg",
+          "acronym": "SDP BiH",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 21
+        },
+        "type": "mp",
+        "id": 5,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 200,
+          "rank": 1
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1961-11-02"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 20,
+          "rank": 11
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Halid Genjac",
+        "gov_id": "506",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
+        },
+        "type": "mp",
+        "id": 20,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 196,
+          "rank": 3
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1958-03-08"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 28,
+          "rank": 9
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Jakov Galić",
+        "gov_id": "544",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "party": {
+          "name": "Klub poslanika Srpski klub",
+          "classification": "pg",
+          "acronym": "SK",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 26
+        },
+        "type": "mp",
+        "id": 18,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": null
+        },
+        "education": {
+          "score": null
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Jasmin Emrić",
+        "gov_id": "540",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "party": {
+          "name": "Poslanici bez kluba",
+          "classification": "unaligned MP",
+          "acronym": "Poslanici bez kluba",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 29
+        },
+        "type": "mp",
+        "id": 13,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1969-11-29"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Mijo Matanović",
+        "gov_id": "519",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "party": {
+          "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+          "classification": "pg",
+          "acronym": "HNS",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 20
         },
         "type": "mp",
         "id": 27,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 86.0, "rank": 80 },
-        "gender": { "score": "f" },
-        "mandates": { "score": 1 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 53.9130434782609, "rank": 74 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 6475, "rank": 30 }
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1965-02-14"
+        },
+        "education": {
+          "score": null
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
       }
     },
     {
       "person": {
-        "name": "\u017dan Mahni\u010d",
-        "gov_id": "P270",
-        "gender": "m",
+        "name": "Mira Pekić",
+        "gov_id": "537",
+        "gender": "f",
         "is_active": false,
-        "district": null,
+        "district": [
+          6
+        ],
         "party": {
-          "acronym": "SDS",
-          "name": "Slovenska demokratska stranka",
-          "is_coalition": false,
+          "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
           "classification": "pg",
-          "id": 2
+          "acronym": "SDS i PDP",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 25
         },
         "type": "mp",
-        "id": 66,
+        "id": 33,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 103.0, "rank": 55 },
-        "gender": { "score": "m" },
-        "mandates": { "score": 2 },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 162,
+          "rank": 4
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 77.7777777777778,
-          "rank": 72
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 1.42857142857142, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 60.8695652173913, "rank": 61 },
-        "birth_date": { "score": "1990-01-12" },
-        "education": { "score": "5" },
-        "spoken_words": { "diff": 0, "score": 3719, "rank": 54 }
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1966-08-26"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 18,
+          "rank": 13
+        }
       }
     },
     {
       "person": {
-        "name": "\u017deljko Cigler",
-        "gov_id": "P335",
+        "name": "Mirjana Marinković – Lepić",
+        "gov_id": "534",
         "gender": "f",
         "is_active": false,
-        "district": null,
+        "district": [
+          2
+        ],
         "party": {
-          "acronym": "Levica",
-          "name": "Levica",
+          "name": "Poslanici bez kluba",
+          "classification": "unaligned MP",
+          "acronym": "Poslanici bez kluba",
+          "has_voters": false,
           "is_coalition": false,
+          "id": 29
+        },
+        "type": "mp",
+        "id": 22,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 144,
+          "rank": 6
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1961-03-03"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 17,
+          "rank": 14
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Mirko Šarović",
+        "gov_id": "532",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "party": {
+          "name": "Klub poslanika Srpske demokratske stranke i Partije demokratskog progresa",
           "classification": "pg",
-          "id": 6
+          "acronym": "SDS i PDP",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 25
+        },
+        "type": "mp",
+        "id": 39,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 83.3333333333333,
+          "rank": 39
+        },
+        "birth_date": {
+          "score": "1956-09-16"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 9,
+          "rank": 16
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Mirsad Kukić",
+        "gov_id": "543",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "party": {
+          "name": "Mješoviti klub poslanika SBB – PDA",
+          "classification": "pg",
+          "acronym": "SBB i PDA",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 23
+        },
+        "type": "mp",
+        "id": 21,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 66.6666666666667,
+          "rank": 41
+        },
+        "birth_date": {
+          "score": "1958-04-27"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nada Mladina",
+        "gov_id": "523",
+        "gender": "f",
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "party": {
+          "name": "Klub poslanika SDP BiH",
+          "classification": "pg",
+          "acronym": "SDP BiH",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 21
+        },
+        "type": "mp",
+        "id": 29,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 135,
+          "rank": 7
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 45,
+          "rank": 1
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 33.3333333333333,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1947-01-01"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 2281,
+          "rank": 1
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nebojša Radmanović",
+        "gov_id": "512",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "party": {
+          "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+          "classification": "pg",
+          "acronym": "SNSD",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 24
+        },
+        "type": "mp",
+        "id": 35,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1949-10-01"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nenad Nešić",
+        "gov_id": "541",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "party": {
+          "name": "Klub poslanika Srpski klub",
+          "classification": "pg",
+          "acronym": "SK",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 26
+        },
+        "type": "mp",
+        "id": 40,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": null
+        },
+        "education": {
+          "score": null
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nenad Stevandić",
+        "gov_id": "513",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "party": {
+          "name": "Klub poslanika Srpski klub",
+          "classification": "pg",
+          "acronym": "SK",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 26
+        },
+        "type": "mp",
+        "id": 36,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 33.3333333333333,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1966-10-12"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nermin Mandra",
+        "gov_id": "507",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
+        },
+        "type": "mp",
+        "id": 23,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1969-12-17"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nermin Nikšić",
+        "gov_id": "524",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "party": {
+          "name": "Klub poslanika SDP BiH",
+          "classification": "pg",
+          "acronym": "SDP BiH",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 21
+        },
+        "type": "mp",
+        "id": 41,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1960-12-27"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Nikola Lovrinović",
+        "gov_id": "520",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "party": {
+          "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+          "classification": "pg",
+          "acronym": "HNS",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 20
+        },
+        "type": "mp",
+        "id": 24,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 41,
+          "rank": 13
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 2,
+          "rank": 6
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1960-09-19"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 96,
+          "rank": 6
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Obren Petrović",
+        "gov_id": "533",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "party": {
+          "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+          "classification": "pg",
+          "acronym": "SNSD",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 24
+        },
+        "type": "mp",
+        "id": 34,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 16.6666666666667,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1957-05-11"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Predrag Kojović",
+        "gov_id": "535",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "party": {
+          "name": "Poslanici bez kluba",
+          "classification": "unaligned MP",
+          "acronym": "Poslanici bez kluba",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 29
+        },
+        "type": "mp",
+        "id": 14,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1965-07-02"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Predrag Kožul",
+        "gov_id": "521",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          7
+        ],
+        "party": {
+          "name": "Klub poslanika HDZ BiH, HSS, HKDU BiH, HSP-HNS, HSP DR AS BiH, HDU BiH",
+          "classification": "pg",
+          "acronym": "HNS",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 20
+        },
+        "type": "mp",
+        "id": 12,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": null
+        },
+        "education": {
+          "score": null
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Safet Softić",
+        "gov_id": "508",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
+        },
+        "type": "mp",
+        "id": 37,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1965-11-01"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Saša Magazinović",
+        "gov_id": "525",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          1
+        ],
+        "party": {
+          "name": "Klub poslanika SDP BiH",
+          "classification": "pg",
+          "acronym": "SDP BiH",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 21
+        },
+        "type": "mp",
+        "id": 30,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 152,
+          "rank": 5
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1978-11-01"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 72,
+          "rank": 8
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Snježana Novaković – Bursać",
+        "gov_id": "514",
+        "gender": "f",
+        "is_active": false,
+        "district": [
+          6
+        ],
+        "party": {
+          "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+          "classification": "pg",
+          "acronym": "SNSD",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 24
+        },
+        "type": "mp",
+        "id": 32,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 59,
+          "rank": 11
+        },
+        "gender": {
+          "score": "f"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 2,
+          "rank": 6
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1976-11-20"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 84,
+          "rank": 7
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Staša Košarac",
+        "gov_id": "515",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          8
+        ],
+        "party": {
+          "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+          "classification": "pg",
+          "acronym": "SNSD",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 24
+        },
+        "type": "mp",
+        "id": 15,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 200,
+          "rank": 1
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1975-03-19"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 20,
+          "rank": 11
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Vlatko Glavaš",
+        "gov_id": "528",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "party": {
+          "name": "Klub poslanika DF-a",
+          "classification": "pg",
+          "acronym": "DF",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 22
+        },
+        "type": "mp",
+        "id": 11,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1962-09-02"
+        },
+        "education": {
+          "score": "4"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Vojin Mitrović",
+        "gov_id": "516",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          5
+        ],
+        "party": {
+          "name": "Klub poslanika Saveza nezavisnih socijaldemokrata – SNSD",
+          "classification": "pg",
+          "acronym": "SNSD",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 24
+        },
+        "type": "mp",
+        "id": 28,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1961-04-27"
+        },
+        "education": {
+          "score": "8"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Zlatan Begić",
+        "gov_id": "530",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          2
+        ],
+        "party": {
+          "name": "Klub poslanika DF-a",
+          "classification": "pg",
+          "acronym": "DF",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 22
+        },
+        "type": "mp",
+        "id": 7,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 1,
+          "rank": 8
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1975-08-30"
+        },
+        "education": {
+          "score": "8"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 21,
+          "rank": 10
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Zukan Helez",
+        "gov_id": "526",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "party": {
+          "name": "Klub poslanika SDP BiH",
+          "classification": "pg",
+          "acronym": "SDP BiH",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 21
+        },
+        "type": "mp",
+        "id": 17,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1964-01-01"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Šemsudin Dedić",
+        "gov_id": "509",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          3
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
+        },
+        "type": "mp",
+        "id": 6,
+        "has_function": false
+      },
+      "results": {
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_sessions": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "mismatch_of_pg": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
+        "presence_votes": {
+          "diff": 0,
+          "score": 100,
+          "rank": 1
+        },
+        "birth_date": {
+          "score": "1973-10-05"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
+      }
+    },
+    {
+      "person": {
+        "name": "Šemsudin Mehmedović",
+        "gov_id": "510",
+        "gender": "m",
+        "is_active": false,
+        "district": [
+          4
+        ],
+        "party": {
+          "name": "Klub poslanika SDA",
+          "classification": "pg",
+          "acronym": "SDA",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 19
         },
         "type": "mp",
         "id": 26,
         "has_function": false
       },
       "results": {
-        "vocabulary_size": { "diff": 0, "score": 118.0, "rank": 34 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 2.0, "rank": 32 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
+        "vocabulary_size": {
+          "diff": 0,
+          "score": 0,
+          "rank": 14
+        },
+        "gender": {
+          "score": "m"
+        },
+        "mandates": {
+          "score": null
+        },
+        "speeches_per_session": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        },
+        "number_of_questions": {
+          "diff": 0,
+          "score": 0,
+          "rank": 1
+        },
         "presence_sessions": {
           "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 55.6521739130435, "rank": 70 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 6780, "rank": 28 }
-      }
-    },
-    {
-      "person": {
-        "name": "\u017di\u017ea Felice",
-        "gov_id": "P352",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "IMNS",
-          "name": "Italijanska in Mad\u017earska narodna skupnost",
-          "is_coalition": false,
-          "classification": "pg",
-          "id": 10
-        },
-        "type": "mp",
-        "id": 105,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 97.0, "rank": 64 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 1.0, "rank": 61 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
+        "mismatch_of_pg": {
           "diff": 0,
-          "score": 83.3333333333333,
-          "rank": 58
+          "score": 0,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 75.6521739130435, "rank": 39 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 315, "rank": 87 }
-      }
-    },
-    {
-      "person": {
-        "name": "\u017dnidari\u010d Mojca",
-        "gov_id": "P316",
-        "gender": "f",
-        "is_active": false,
-        "district": null,
-        "party": {
-          "acronym": "SMC",
-          "name": "Stranka modernega centra",
-          "is_coalition": true,
-          "classification": "pg",
-          "id": 5
-        },
-        "type": "mp",
-        "id": 106,
-        "has_function": false
-      },
-      "results": {
-        "vocabulary_size": { "diff": 0, "score": 112.0, "rank": 43 },
-        "gender": { "score": "f" },
-        "mandates": { "score": null },
-        "speeches_per_session": { "diff": 0, "score": 3.0, "rank": 18 },
-        "number_of_questions": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_sessions": {
+        "presence_votes": {
           "diff": 0,
-          "score": 94.4444444444444,
-          "rank": 23
+          "score": 100,
+          "rank": 1
         },
-        "mismatch_of_pg": { "diff": 0, "score": 0.0, "rank": 1 },
-        "presence_votes": { "diff": 0, "score": 91.304347826087, "rank": 21 },
-        "birth_date": { "score": null },
-        "education": { "score": "" },
-        "spoken_words": { "diff": 0, "score": 5043, "rank": 37 }
+        "birth_date": {
+          "score": "1961-01-20"
+        },
+        "education": {
+          "score": "7"
+        },
+        "spoken_words": {
+          "diff": 0,
+          "score": 0,
+          "rank": 17
+        }
       }
     }
   ]

@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="cardData.cardData._id"
+    :id="cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -39,7 +39,7 @@
               >
                 <span class="sr-only">{{ getScore }}%</span>
                 <div class="progress_number">
-                  {{ Math.round(getScore) }}
+                  {{ getScore.toFixed(precision) }}
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
               >
                 <span class="sr-only">{{ results.average }}%</span>
                 <div class="progress_number">
-                  {{ Math.round(results.average) }}
+                  {{ results.average.toFixed(precision) }}
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@
           </div>
           <div class="other_poslanec">
             <div class="progress_number">
-              {{ Math.round(getMaxValue) }}
+              {{ getMaxValue.toFixed(precision) }}
             </div>
           </div>
         </div>
@@ -151,6 +151,10 @@ export default {
       type: String,
       default: 'overview',
       validator: value => ['overview', 'votings', 'speeches'].indexOf(value) > -1,
+    },
+    precision: {
+      type: Number,
+      default: 0,
     },
   },
   computed: {

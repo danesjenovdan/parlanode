@@ -4,15 +4,21 @@
     :class="['search-dropdown', { small: small }]"
   >
     <div
-      v-if="!hideClear && selectedIds.length > 0"
+      v-if="!hideClear && (selectedIds.length > 0 || (allowManualValue && manualValue))"
       class="search-dropdown-clear"
       @click="clearSelection"
     >×</div>
+    <!--
+      Don't use v-model="localFilter" because it doesn't work on mobile
+      because of text composition (autocomplete/autocorrect)
+      See: https://github.com/vuejs/vue/issues/8231
+    -->
     <input
-      v-model="localFilter"
+      :value="localFilter"
       :placeholder="adjustedPlaceholder"
       class="search-dropdown-input"
       type="text"
+      @input="localFilter = $event.target.value"
       @focus="toggleDropdown(true)"
       @keydown.enter.prevent="pressEnter"
       @keydown.up.prevent="focus(focused - 1, true)"
@@ -124,6 +130,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    allowManualValue: {
+      type: Boolean,
+      default: false,
+    },
+    manualValue: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
@@ -131,6 +145,7 @@ export default {
       focused: -1,
       upMargin: 0,
       localFilter: this.filter,
+      currentSingleSelection: null,
     };
   },
   computed: {
@@ -200,13 +215,22 @@ export default {
         .map(item => item.id);
     },
     adjustedPlaceholder() {
+      const selectedItem = this.filteredItems.filter(item => item.selected)[0];
+
+      if (this.allowManualValue && !selectedItem && this.manualValue) {
+        return this.manualValue;
+      }
+
+      if (!selectedItem && this.placeholder) {
+        return this.placeholder;
+      }
+
       if (this.single) {
-        const selectedItem = this.filteredItems.filter(item => item.selected)[0];
         return selectedItem ? selectedItem.label : this.$t('select-placeholder');
       }
 
       if (this.placeholder) {
-        return (this.placeholder);
+        return this.placeholder;
       }
 
       return this.selectedIds.length > 0
@@ -232,15 +256,20 @@ export default {
   methods: {
     pressEnter() {
       if (this.focused === -1) {
-        this.$emit('search', this.localFilter);
+        if (this.allowManualValue) {
+          this.$emit('select', this.selectItem(this.localFilter));
+        } else {
+          this.$emit('search', this.localFilter);
+        }
       } else {
         this.selectItem(this.filteredItems[this.focused].id);
       }
     },
     selectItem(selectedItemId) {
       if (this.single) {
-        this.clearSelection();
+        // this.clearSelection();
         this.toggleDropdown(false);
+        this.localFilter = '';
       }
       // make sure clearSelection propagates
       this.$nextTick(() => {
@@ -249,14 +278,21 @@ export default {
     },
     toggleItem(itemId) {
       this.$emit('select', itemId);
-      this.$emit(
-        'input',
-        JSON.parse(JSON.stringify(this.value))
+      let newItems = JSON.parse(JSON.stringify(this.value));
+      if (this.single) {
+        newItems = newItems
+          .map(item => ({
+            ...item,
+            selected: item.id === itemId,
+          }));
+      } else {
+        newItems = newItems
           .map(item => ({
             ...item,
             selected: item.id === itemId ? !item.selected : item.selected,
-          })),
-      );
+          }));
+      }
+      this.$emit('input', newItems);
     },
     toggleDropdown(state) {
       // if (state === false) {

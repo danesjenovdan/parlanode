@@ -15,6 +15,7 @@ const defaultConfig = {
   urls: {
     cdn: 'https://cdn.parlameter.si/v1/parlassets',
     analize: 'https://analize.parlameter.si/v1',
+    analizeV2: 'http://analize.ba.parlameter.si/v2',
     // data: 'https://data.parlameter.si/v1',
     // isci: 'https://isci.parlameter.si',
     // glej: 'https://glej.parlameter.si',
@@ -23,6 +24,7 @@ const defaultConfig = {
   cardLang: 'sl',
   ogCapturePath: './og',
   cardGlobals: {
+    timeRangeStart: '2014-01-01',
     parliament_id: 95,
     session_list_tabs: [],
     legislation_tabs: [],

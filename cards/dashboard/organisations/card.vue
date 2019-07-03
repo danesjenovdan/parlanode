@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.cardData._id">
+    <dash-wrapper :id="$options.cardData.mountId">
       <div id="dash-organisations-list">
         <div v-if="orgs != null">
           <input
@@ -247,6 +247,7 @@ export default {
             .filter(Boolean)
             .map(value => ({
               contact_type: 'EMAIL',
+              label: 'Mail',
               value,
               organization: org.id,
             }));

@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="wordGroups" />
@@ -17,37 +17,38 @@
         </div>
 
         <div id="skupine-besed">
-          <text-frame>
-            <i18n path="wordgroups-text" tag="p">
-              <span place="words">
-                <tag
-                  v-for="(word, index) in words"
-                  :key="index + word"
-                  :text="word"
-                  @click="removeWord(word)"
-                />
-                <plus @click="toggleModal(true)" />
-              </span>
-              <span place="load">
-                <load-link
-                  :text="$t('load')"
-                  @click="loadResults(true)"
-                />
-              </span>
-            </i18n>
-            <div class="row extras">
-              <div class="col-xs-12">
+          <text-frame class="skupine-besed">
+            <div class="skupine-besed-text">
+              <i18n path="wordgroups-text" tag="p">
+                <span place="words">
+                  <tag
+                    v-for="(word, index) in words"
+                    :key="index + word"
+                    :text="word"
+                    @click="removeWord(word)"
+                  />
+                  <plus @click="toggleModal(true)" />
+                </span>
+              </i18n>
+              <div class="searchfilter-checkboxes">
                 <div class="searchfilter-checkbox">
                   <input
-                    id="rev"
+                    id="show-relative"
                     :checked="showRelative"
                     type="checkbox"
                     class="checkbox"
                     @click="changeShowRelative"
                   >
-                  <label v-t="'show-relative'" for="rev"></label>
+                  <label v-t="'show-relative'" for="show-relative"></label>
                 </div>
               </div>
+            </div>
+            <div class="skupine-besed-button">
+              <div class="spacer"></div>
+              <span place="load" class="load-button">
+                <load-link :text="$t('load')" @click="loadResults(true)" />
+              </span>
+              <div class="spacer"></div>
             </div>
           </text-frame>
 
@@ -323,41 +324,8 @@ export default {
 @import '~parlassets/scss/breakpoints';
 @import '~parlassets/scss/colors';
 
-.results {
-  height: 400px;
-  padding-top: 12px;
-  overflow-y: auto;
-}
-
-.extras {
-  margin: 40px 0 -20px;
-}
-
-.searchfilter-checkbox {
-  height: 40px;
-  text-align: center;
-
-  @include respond-to(mobile) {
-    height: auto;
-    margin-left: -70px;
-    margin-right: -70px;
-  }
-
-  label {
-    text-align: left;
-    margin-bottom: 0;
-    width: auto;
-  }
-
-  .checkbox + label:before {
-    background-color: transparent;
-  }
-
-  .checkbox + label {
-    font-size: 11px;
-    color: $font-default;
-    white-space: nowrap;
-  }
+/deep/ .card-content {
+  min-height: 660px;
 }
 
 #skupine-besed {
@@ -368,16 +336,97 @@ export default {
   }
 
   .results {
+    height: 400px;
+    padding-top: 12px;
+    overflow-y: auto;
     margin-top: 6px;
 
     /deep/ .word-list {
       max-height: none;
     }
   }
-}
-#c_skupine-besed {
-  /deep/ .card-content {
-    min-height: 660px;
+
+  .skupine-besed.text-frame {
+    display: flex;
+    padding: 10px;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
+
+    .skupine-besed-text,
+    .skupine-besed-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .skupine-besed-text {
+      flex: 1 0 66%;
+      padding: 5px 10px 5px 0;
+
+      @include respond-to(mobile) {
+        padding-right: 0;
+      }
+
+      p {
+        margin: 15px 0 20px;
+
+        @include respond-to(mobile) {
+          border-bottom: 1px solid $tools-border;
+          padding-bottom: 25px;
+        }
+      }
+
+      .searchfilter-checkboxes {
+        display: flex;
+        justify-content: center;
+
+        @include respond-to(mobile) {
+          margin-bottom: 20px;
+        }
+
+        .searchfilter-checkbox {
+          height: 30px;
+
+          .checkbox + label {
+            text-align: left;
+            margin-bottom: 0;
+            font-size: 11px;
+            line-height: 30px;
+            color: $font-default;
+
+            &::before {
+              margin-top: 0;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .skupine-besed-button {
+      flex: 1 0 33%;
+      padding: 5px 0 5px 10px;
+      border-left: 1px solid $tools-border;
+
+      @include respond-to(mobile) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .summary {
+        margin: 0;
+        line-height: 20px;
+        text-align: center;
+        font-size: 11px;
+        color: $font-default;
+
+        @include respond-to(mobile) {
+          margin-top: 15px;
+        }
+      }
+    }
   }
 }
 </style>

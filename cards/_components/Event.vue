@@ -7,12 +7,13 @@
         tag="div"
         class="motion"
       >
-        <a
+        <component
+          :is="event.content_url ? 'a' : 'strong'"
           :href="event.content_url"
+          :class="{ 'funblue-light-hover': event.content_url }"
           target="_blank"
-          class="funblue-light-hover"
           place="title"
-        >{{ event.title }}</a>
+        >{{ event.title }}</component>
         <span place="recipient">{{ event.recipient_text }}</span>
       </i18n>
     </template>
@@ -127,7 +128,8 @@ export default {
     padding: 15px 0;
     margin-right: 10px;
 
-    a {
+    a,
+    strong {
       font-weight: normal;
     }
   }

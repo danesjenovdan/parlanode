@@ -8,7 +8,7 @@
   },
   "speakers": "Govornici",
   "input-words": "Unesi jednu ili više riječi odvojenih zarezom.",
-  "empty-text": "Za prikaz rezultata dodajte najmanje dvije riječi.",
+  "empty-text": "Bez rezultata.",
   "wordgroups-text": "Prikaži ko najviše spominje sljedeću grupu riječi: {words} {load}",
   "show-relative": "Prikaži relativni mjerni podatak"
 }

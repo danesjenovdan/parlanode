@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.cardData._id"
+    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -75,7 +75,7 @@ export default {
   font-style: italic;
 }
 
-#p_tfidf /deep/ .card-content-front {
+/deep/ .card-content-front {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.cardData._id">
+    <dash-wrapper :id="$options.cardData.mountId">
       <div id="dash-legislation-list">
         <div v-if="legislation != null" class="filters">
           <input
@@ -60,6 +60,8 @@
               <label>{{ $t('icon') }}</label>
               <p-search-dropdown
                 v-model="column.icons"
+                :manual-value="column.legislation.icon"
+                allow-manual-value
                 single
                 small
                 @select="column.legislation.icon = $event"
@@ -69,6 +71,11 @@
             <template v-if="index === 6">
               <dash-loading-button :load="saveData(column.legislation)">
                 {{ $t('save') }}
+              </dash-loading-button>
+            </template>
+            <template v-if="index === 7 && !column.legislation.has_discussion">
+              <dash-loading-button :load="createCommentality(column.legislation)">
+                {{ $t('create-commentality') }}
               </dash-loading-button>
             </template>
           </template>
@@ -100,6 +107,7 @@ import DashFancyModal from 'components/Dashboard/FancyModal.vue';
 import ModalContentAbstract from 'components/Dashboard/ModalContentAbstract.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import parlapi from 'mixins/parlapi';
+import commentapi from 'mixins/commentapi';
 
 export default {
   name: 'DashboardLegislation',
@@ -115,6 +123,7 @@ export default {
   mixins: [
     common,
     parlapi,
+    commentapi,
   ],
   data() {
     return {
@@ -178,6 +187,7 @@ export default {
                 image: `${this.slugs.urls.cdn}/icons/legislation/${icon}`,
               })),
             },
+            { legislation },
             { legislation },
           ]);
       }
@@ -247,11 +257,35 @@ export default {
           this.error = error;
         });
     },
+    createCommentality(legislation) {
+      return () => this.$commentapi.createArticle(legislation.epa)
+        .then((response) => {
+          console.log(response.data);
+          legislation.has_discussion = true;
+          return this.$parlapi.patchLegislation(legislation.id, {
+            has_discussion: true,
+          });
+        })
+        .then((response) => {
+          console.log(response.data);
+          window.open('https://frontmentality.djnd.si/admin.html', '_blank');
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.error = error;
+        });
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.card-container,
+/deep/ .card-content {
+  overflow: visible;
+}
+
 #dash-legislation-list /deep/ {
   .table-contents,
   .table-headers {
@@ -267,6 +301,18 @@ export default {
         flex-grow: 0;
         flex-basis: auto;
         justify-content: flex-end;
+      }
+
+      .table-col:nth-child(8) {
+        flex: 0;
+        flex-basis: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: flex-start;
+
+        /deep/ .dash-button {
+          padding: 4px 11px 3px;
+        }
       }
     }
   }

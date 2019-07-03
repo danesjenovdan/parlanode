@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="voteComparator" />
@@ -25,59 +25,62 @@
 
         <div id="primerjalnik">
           <text-frame class="primerjalnik">
-            <i18n path="comparator-text" tag="p">
-              <span place="same" class="primerjalnik-for">
-                <tag
-                  v-for="party in sameParties"
-                  :key="party.id"
-                  :text="party.acronym"
-                  class="tag"
-                  @click="togglePartySame(party)"
-                />
-                <tag
-                  v-for="person in selectedSamePeople"
-                  :key="person.id"
-                  :text="person.name"
-                  class="tag"
-                  @click="removePerson(person)"
-                />
-                <plus @click="toggleModal('same', true)" />
-              </span>
-              <span place="different" class="primerjalnik-against">
-                <tag
-                  v-for="party in differentParties"
-                  :key="party.id"
-                  :text="party.acronym"
-                  class="tag"
-                  @click="togglePartyDifferent(party)"
-                />
-                <tag
-                  v-for="person in selectedDifferentPeople"
-                  :key="person.id"
-                  :text="person.name"
-                  class="tag"
-                  @click="removePerson(person)"
-                />
-                <plus @click="toggleModal('different', true)" />
-              </span>
-              <span place="load">
-                <load-link :text="$t('load')" @click="loadResults" />
-              </span>
-            </i18n>
-            <div class="row primerjalnik-extras">
-              <div class="col-xs-7 nopadding">
+            <div class="primerjalnik-text">
+              <i18n path="comparator-text" tag="p">
+                <span place="same" class="primerjalnik-for">
+                  <tag
+                    v-for="party in sameParties"
+                    :key="party.id"
+                    :text="party.acronym"
+                    class="tag"
+                    @click="togglePartySame(party)"
+                  />
+                  <tag
+                    v-for="person in selectedSamePeople"
+                    :key="person.id"
+                    :text="person.label"
+                    class="tag"
+                    @click="removePerson(person)"
+                  />
+                  <plus @click="toggleModal('same', true)" />
+                </span>
+                <span place="different" class="primerjalnik-against">
+                  <tag
+                    v-for="party in differentParties"
+                    :key="party.id"
+                    :text="party.acronym"
+                    class="tag"
+                    @click="togglePartyDifferent(party)"
+                  />
+                  <tag
+                    v-for="person in selectedDifferentPeople"
+                    :key="person.id"
+                    :text="person.name"
+                    class="tag"
+                    @click="removePerson(person)"
+                  />
+                  <plus @click="toggleModal('different', true)" />
+                </span>
+              </i18n>
+              <div class="searchfilter-checkboxes">
                 <div class="searchfilter-checkbox">
                   <input
-                    id="rev"
+                    id="ignore-absent"
                     :checked="special"
                     type="checkbox"
                     class="checkbox"
                     @click="toggleSpecial"
                   >
-                  <label v-t="'ignore-absent'" for="rev"></label>
+                  <label v-t="'ignore-absent'" for="ignore-absent"></label>
                 </div>
               </div>
-              <div class="col-xs-5 nopadding">
+            </div>
+            <div class="primerjalnik-button">
+              <div class="spacer"></div>
+              <span place="load" class="load-button">
+                <load-link :text="$t('load')" @click="loadResults" />
+              </span>
+              <div>
                 <i18n path="comparator-vote-percent" tag="p" class="summary">
                   <strong place="num">{{ votes.length }}</strong>
                   <strong place="percent">
@@ -170,7 +173,7 @@
 <script>
 import common from 'mixins/common';
 import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultDynamicHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
 import ToolsTabs from 'components/ToolsTabs.vue';
@@ -186,6 +189,7 @@ import Tag from 'components/Tag.vue';
 import TextFrame from 'components/TextFrame.vue';
 import TimeChart from 'components/TimeChart.vue';
 import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import generators from 'mixins/generatePeopleAndParties';
 
 export default {
   name: 'PrimerjalnikGlasovanj',
@@ -208,9 +212,11 @@ export default {
   mixins: [
     common,
     links,
+    generators,
   ],
   data() {
     return {
+      parentOrgId: this.$options.cardData.data.parent_org_id,
       loading: true,
       parties: [],
       samePeople: [],
@@ -221,7 +227,7 @@ export default {
       sameModalVisible: false,
       differentModalVisible: false,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: defaultHeaderConfig(this, { circleIcon: 'primerjalnik' }),
+      headerConfig: defaultDynamicHeaderConfig(this, { circleIcon: 'primerjalnik' }),
       ogConfig: defaultOgImage(this, { icon: 'primerjalnik' }),
     };
   },
@@ -282,7 +288,7 @@ export default {
       }, []);
 
       return tags.map(tag => ({
-        label: tag,
+        label: tag || 'Brez MDT', // TODO i18n
         value: this.data.filter(d => d.results.tags[0] === tag).length,
       }));
     },
@@ -306,7 +312,7 @@ export default {
       if (this.selectedTab > 0) {
         state.selectedTab = this.selectedTab;
       }
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this.parentOrgId || ''}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
   },
   watch: {
@@ -331,59 +337,93 @@ export default {
   },
   mounted() {
     const self = this;
-    const PGPromise = $.ajax({
-      url: `${this.slugs.urls.data}/getAllPGs/`,
-      method: 'GET',
-      success: (data) => {
-        const sameParties = this.$options.cardData.parlaState.sameParties || [];
-        const differentParties = this.$options.cardData.parlaState.differentParties || [];
-        self.parties = Object.keys(data).map(partyId => ({
-          id: data[partyId].id,
-          acronym: data[partyId].acronym,
-          is_coalition: data[partyId].is_coalition,
-          name: data[partyId].name,
-          isSame: sameParties.indexOf(data[partyId].id) > -1,
-          isDifferent: differentParties.indexOf(data[partyId].id) > -1,
-        }));
-      },
-      error(error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      },
-    });
-    const peoplePromise = $.ajax({
-      url: `${this.slugs.urls.data}/getMPs/`,
-      method: 'GET',
-      success: (data) => {
-        const samePeople = this.$options.cardData.parlaState.samePeople || [];
-        const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
-        const sameData = JSON.parse(JSON.stringify(data));
-        self.samePeople = sameData.map(person => ({
-          selected: samePeople.indexOf(person.id) > -1,
-          label: person.name,
-          id: person.id,
-          image: self.getPersonPortrait(person),
-        }));
+    // used to be PGPromise
+    const sameParties = this.$options.cardData.parlaState.sameParties || [];
+    const differentParties = this.$options.cardData.parlaState.differentParties || [];
 
-        const differentData = JSON.parse(JSON.stringify(data));
-        self.differentPeople = differentData.map(person => ({
-          selected: differentPeople.indexOf(person.id) > -1,
-          label: person.name,
-          id: person.id,
-          image: self.getPersonPortrait(person),
-        }));
+    this.parties = this.generateParties(this.$options.cardData.data)
+      .map(party => ({
+        id: party.properId,
+        acronym: party.acronym,
+        isCoalition: party.isCoalition,
+        name: party.name,
+        isSame: sameParties.indexOf(party.properId) > -1,
+        isDifferent: differentParties.indexOf(party.properId) > -1,
+      }));
 
-        this.loadResults();
-      },
-      error(error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      },
-    });
+    // used to be peoplePromise
+    const samePeople = this.$options.cardData.parlaState.samePeople || [];
+    const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
 
-    Promise.all([PGPromise, peoplePromise]).then(() => {
-      this.loadResults();
-    });
+    this.samePeople = this.generatePeople(this.$options.cardData.data)
+      .map(person => ({
+        selected: samePeople.indexOf(person.id) > -1,
+        label: person.label,
+        id: person.id,
+        image: person.image,
+      }));
+    self.differentPeople = this.generatePeople(this.$options.cardData.data)
+      .map(person => ({
+        selected: differentPeople.indexOf(person.id) > -1,
+        label: person.label,
+        id: person.id,
+        image: person.image,
+      }));
+
+    this.loadResults();
+    // const PGPromise = $.ajax({
+    //   url: `${this.slugs.urls.data}/getAllPGs/`,
+    //   method: 'GET',
+    //   success: (data) => {
+    //     const sameParties = this.$options.cardData.parlaState.sameParties || [];
+    //     const differentParties = this.$options.cardData.parlaState.differentParties || [];
+    //     self.parties = Object.keys(data).map(partyId => ({
+    //       id: data[partyId].id,
+    //       acronym: data[partyId].acronym,
+    //       isCoalition: data[partyId].isCoalition,
+    //       name: data[partyId].name,
+    //       isSame: sameParties.indexOf(data[partyId].id) > -1,
+    //       isDifferent: differentParties.indexOf(data[partyId].id) > -1,
+    //     }));
+    //   },
+    //   error(error) {
+    //     // eslint-disable-next-line no-console
+    //     console.log(error);
+    //   },
+    // });
+    // const peoplePromise = $.ajax({
+    //   url: `${this.slugs.urls.data}/getMPs/`,
+    //   method: 'GET',
+    //   success: (data) => {
+    //     const samePeople = this.$options.cardData.parlaState.samePeople || [];
+    //     const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
+    //     const sameData = JSON.parse(JSON.stringify(data));
+    //     self.samePeople = sameData.map(person => ({
+    //       selected: samePeople.indexOf(person.id) > -1,
+    //       label: person.name,
+    //       id: person.id,
+    //       image: self.getPersonPortrait(person),
+    //     }));
+
+    //     const differentData = JSON.parse(JSON.stringify(data));
+    //     self.differentPeople = differentData.map(person => ({
+    //       selected: differentPeople.indexOf(person.id) > -1,
+    //       label: person.name,
+    //       id: person.id,
+    //       image: self.getPersonPortrait(person),
+    //     }));
+
+    //     this.loadResults();
+    //   },
+    //   error(error) {
+    //     // eslint-disable-next-line no-console
+    //     console.log(error);
+    //   },
+    // });
+
+    // Promise.all([peoplePromise]).then(() => {
+    //   this.loadResults();
+    // });
   },
   created() {
     const { template, siteMap: sm } = this.$options.cardData;
@@ -439,113 +479,8 @@ export default {
 @import '~parlassets/scss/colors';
 @import '~parlassets/scss/helper';
 
-#c_primerjalnik /deep/ .card-content {
+/deep/ .card-content {
   min-height: 660px;
-}
-
-.primerjalnik {
-  .primerjalnik-extras {
-    margin: 40px 0 -20px;
-  }
-
-  .searchfilter-checkbox {
-    height: 40px;
-
-    @include respond-to(mobile) {
-      height: auto;
-    }
-
-    label {
-      text-align: left;
-      margin-bottom: 0;
-
-      @include respond-to(small-mobile) {
-        line-height: 1.4em;
-        padding-top: 5px;
-      }
-    }
-  }
-
-  .summary {
-    margin-bottom: 0;
-    line-height: 40px;
-    text-align: right;
-
-    font-size: 11px;
-    color: $font-default;
-
-    @include respond-to(mobile) {
-      text-align: left;
-      margin-top: 0;
-      line-height: 1.4em;
-      padding-left: 10px;
-    }
-  }
-}
-
-.primerjalnik-ps-switch {
-  background: $white;
-  cursor: pointer;
-  padding: 5px;
-  display: inline-block;
-  margin: 5px;
-  color: $font-default;
-
-  &::after {
-    content: '×';
-    margin-left: 8px;
-    font-size: 20px;
-    line-height: 20px;
-    position: relative;
-    top: 2px;
-    transform: rotate(45deg);
-    display: inline-block;
-    transition: transform 0.2s ease-out;
-    color: $first;
-  }
-
-  &.on {
-    background: $first;
-    color: $white;
-
-    &::after {
-      transform: rotate(0deg);
-      color: $white;
-    }
-  }
-}
-
-.loadme {
-  background: $second;
-  width: 200px;
-  height: 50px;
-  margin: auto;
-  display: block;
-  position: relative;
-}
-
-.searchfilter-checkbox .checkbox + label:before {
-  background-color: transparent;
-}
-
-.searchfilter-checkbox .checkbox + label {
-  font-size: 11px;
-  color: $font-default;
-}
-
-.tab-content {
-  height: 420px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.mdt-wrapper {
-  height: 420px;
-}
-
-.nopadding {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 #primerjalnik {
@@ -569,6 +504,10 @@ export default {
 
       .chart-label .label-container {
         line-height: 1;
+
+        @include respond-to(mobile) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -576,6 +515,132 @@ export default {
   .glasovanja {
     /deep/ #votingCard {
       height: 420px;
+    }
+  }
+
+  .mdt-wrapper {
+    /deep/ .progress-bar {
+      background-color: $third;
+    }
+  }
+
+  .tab-content,
+  .mdt-wrapper {
+    height: 420px;
+  }
+
+  .primerjalnik-ps-switch {
+    background: $white;
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px;
+    color: $font-default;
+
+    &::after {
+      content: '×';
+      margin-left: 8px;
+      font-size: 20px;
+      line-height: 20px;
+      position: relative;
+      top: 2px;
+      transform: rotate(45deg);
+      display: inline-block;
+      transition: transform 0.2s ease-out;
+      color: $first;
+    }
+
+    &.on {
+      background: $first;
+      color: $white;
+
+      &::after {
+        transform: rotate(0deg);
+        color: $white;
+      }
+    }
+  }
+
+  .primerjalnik.text-frame {
+    display: flex;
+    padding: 10px;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
+
+    .primerjalnik-text,
+    .primerjalnik-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .primerjalnik-text {
+      flex: 1 0 66%;
+      padding: 5px 10px 5px 0;
+
+      @include respond-to(mobile) {
+        padding-right: 0;
+      }
+
+      p {
+        margin: 15px 0 20px;
+
+        @include respond-to(mobile) {
+          border-bottom: 1px solid $tools-border;
+          padding-bottom: 25px;
+        }
+      }
+
+      .searchfilter-checkboxes {
+        display: flex;
+        justify-content: center;
+
+        @include respond-to(mobile) {
+          margin-bottom: 20px;
+        }
+
+        .searchfilter-checkbox {
+          height: 30px;
+
+          .checkbox + label {
+            text-align: left;
+            margin-bottom: 0;
+            font-size: 11px;
+            line-height: 30px;
+            color: $font-default;
+
+            &::before {
+              margin-top: 0;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .primerjalnik-button {
+      flex: 1 0 33%;
+      padding: 5px 0 5px 10px;
+      border-left: 1px solid $tools-border;
+
+      @include respond-to(mobile) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .summary {
+        margin: 0;
+        line-height: 20px;
+        text-align: center;
+        font-size: 11px;
+        color: $font-default;
+
+        @include respond-to(mobile) {
+          margin-top: 15px;
+        }
+      }
     }
   }
 }

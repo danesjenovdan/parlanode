@@ -1,3 +1,7 @@
 {
-  "generator": true
+  "generator": true,
+  "text": "ble",
+  "onlyAbstracts": true,
+  "onlyWithVotes": true,
+  "type": "Akti"
 }

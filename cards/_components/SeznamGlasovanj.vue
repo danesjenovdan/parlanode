@@ -375,7 +375,7 @@ export default {
           return 219 + 15;
         }
       }
-      return 310 + 15;
+      return 240 + 15;
     },
     checkScrollShadow(event) {
       this.$refs.shadow.check(event.currentTarget);
@@ -562,12 +562,17 @@ export default {
 
 @media (max-width: 767px) {
   .session_voting .session_title {
-    height: 175px;
+    height: 105px;
     margin-left: 54px;
 
     p {
       max-height: 80px;
       overflow: hidden;
+    }
+  }
+  .single_voting {
+    .icon-col {
+      margin-top: 32px;
     }
   }
 

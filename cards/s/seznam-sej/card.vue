@@ -1,16 +1,26 @@
 <template>
-  <div :id="$options.cardData.cardData._id">
+  <div :id="$options.cardData.mountId">
     <generator>
       <div slot="generator" class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <blue-button-list
               :items="filters"
               v-model="currentFilter"
             />
           </div>
+          <div
+            v-if="currentFilter == tabs.find(t => !t.org_ids || !t.org_ids.length).title"
+            class="col-md-6 filters"
+          >
+            <p-search-dropdown
+              v-model="workingBodies"
+              :placeholder="inputPlaceholder"
+              class="dropdown-filter"
+            />
+          </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12 filters">
             <p-search-dropdown
               v-model="workingBodies"
@@ -27,7 +37,7 @@
               <label v-t="'just-last-five'" for="justFive"></label>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <inner-card
         :header-config="headerConfig"
@@ -79,8 +89,8 @@ export default {
       filters: tabs.map(e => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData, 'state.filter') || tabs[0].title,
-      justFive: get(this.$options.cardData, 'state.justFive') || false,
+      currentFilter: get(this.$options.cardData.parlaState, 'filters') || tabs[0].title,
+      justFive: get(this.$options.cardData.parlaState, 'justFive') || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -220,7 +230,7 @@ export default {
   created() {
     axios.get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
       .then((response) => {
-        const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
+        const existingWorkingBodies = get(this.$options.cardData.parlaState, 'workingBodies') || [];
         this.workingBodies = response.data.map(workingBody => ({
           id: workingBody.id,
           label: workingBody.name,
