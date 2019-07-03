@@ -285,6 +285,19 @@
         background-color: $first;
     }
 
+    &.backgroundwhite {
+        background-color: $white;
+
+        // icon styles
+        background-size: 65%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.law-logo {
+        background-color: $icon-transcript;
+    }
+
     b {
         display: inline-block;
         line-height: $size - ($padding * 2);
