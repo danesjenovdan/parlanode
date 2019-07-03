@@ -19,7 +19,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z0-9-]+
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
     render('poslanec/pregled', {
-      activeMenu: 'mps',
+      activeMenu: 'mp',
       pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
       activeTab: 'pregled',
       ...mpData,
@@ -33,7 +33,7 @@ router.get([`/:id(\\d+)/${sm.member.votings}`, `/:slug([a-z0-9-]+)/${sm.member.v
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
     render('poslanec/glasovanja', {
-      activeMenu: 'mps',
+      activeMenu: 'mp',
       pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
       activeTab: 'glasovanja',
       ...mpData,
@@ -47,7 +47,7 @@ router.get([`/:id(\\d+)/${sm.member.speeches}`, `/:slug([a-z0-9-]+)/${sm.member.
   const mpData = getData(req.params.id, req.params.slug);
   if (mpData) {
     render('poslanec/govori', {
-      activeMenu: 'mps',
+      activeMenu: 'mp',
       pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
       activeTab: 'govori',
       ...mpData,

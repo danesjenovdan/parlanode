@@ -13,7 +13,7 @@
           </div>
           <style>
           /* TODO this is a dirty hack */
-          #c-search {
+          [id^="c_search"] {
             height: 0;
             z-index: 3;
           }
@@ -33,6 +33,12 @@
   .searchinfo {
     top: auto;
     bottom: -55px;
+    right: -20px;
+  }
+  @media (max-width: 767px) {
+    .searchinfo {
+      right: -8px;
+    }
   }
 </style>
 

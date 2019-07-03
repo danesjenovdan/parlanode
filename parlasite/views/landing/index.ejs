@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1" id="about">
     <div class="lead-text-container">
-      <a href="/<%- sm.landing.about %>">
-        <span href="/<%- sm.landing.about %>" class="lead-text">
+      <a href="<%- sm.landing.about %>" target="_blank">
+        <span class="lead-text">
         <%- i18n('landing.lead') %>
         </span>
       </a>
@@ -25,7 +25,7 @@
           </div>
           <style>
           /* TODO this is a dirty hack */
-          #c-search {
+          [id^="c_search"] {
             height: 0;
             z-index: 3;
           }
@@ -45,6 +45,12 @@
   .searchinfo {
     top: auto;
     bottom: -55px;
+    right: -20px;
+  }
+  @media (max-width: 767px) {
+    .searchinfo {
+      right: -8px;
+    }
   }
 </style>
 
