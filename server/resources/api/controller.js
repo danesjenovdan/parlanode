@@ -48,14 +48,31 @@ function getCardRenders(req, res) {
   const CardRender = mongoose.model('CardRender');
   Promise.all([
     CardRender.countDocuments(),
-    CardRender.findOne().sort('dateTime').select('-html'),
-    CardRender.findOne().sort('lastAccessed').select('-html'),
+    CardRender.aggregate([
+      {
+        $group: {
+          _id: { $concat: ['$group', '/', '$method'] },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { count: -1 } },
+      {
+        $group: {
+          _id: null,
+          counts: { $push: { k: '$_id', v: '$count' } },
+        },
+      },
+      {
+        $replaceRoot: {
+          newRoot: { $arrayToObject: '$counts' },
+        },
+      },
+    ]),
   ])
-    .then(([count, oldest, stalest]) => {
+    .then(([count, counts]) => {
       res.send({
         count,
-        oldest,
-        stalest,
+        counts: counts[0],
       });
     })
     .catch((error) => {
