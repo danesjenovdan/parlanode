@@ -30,7 +30,7 @@
     },
     "intra_disunion": {
       "label": "Razjedinjenost glasanja",
-      "titleSuffix": " glede na neenotnost glasovanj",
+      "titleSuffix": " prema razjedinjenosti glasanja",
       "explanation": ""
     },
     "vocabulary_size": {
