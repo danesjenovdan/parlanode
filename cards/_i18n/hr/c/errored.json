@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "Napaka"
+    "title": "Pogreška"
   },
-  "card-errored": "Pri nalaganju kartice je prišlo do napake."
+  "card-errored": "Došlo je do greške kod učitavanja kartice."
 }
