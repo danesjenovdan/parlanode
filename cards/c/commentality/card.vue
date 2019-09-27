@@ -7,8 +7,9 @@
       v-if="articleId !== ''"
       :src="`https://frontmentality.djnd.si/parlaembed.html#id=${articleId}`"
       width="100%"
-      height="800px"
       style="border: none;"
+      id="parlameter-commentality-embed"
+      @load="iframeLoaded"
     ></iframe>
   </transparent-wrapper>
 </template>
@@ -18,6 +19,7 @@ import axios from 'axios';
 import common from 'mixins/common';
 import TransparentWrapper from 'components/TransparentWrapper.vue';
 import links from 'mixins/links';
+import iFrameResize from 'iframe-resizer/js/iframeResizer';
 
 export default {
   name: 'Search',
@@ -49,6 +51,12 @@ export default {
     allItems() {
       return this.people.concat(this.parties);
     },
+  },
+  methods: {
+    iframeLoaded () {
+      iFrameResize({log: false}, '#parlameter-commentality-embed');
+      console.log('ping');
+    }
   },
 };
 </script>
