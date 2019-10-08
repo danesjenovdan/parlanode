@@ -190,12 +190,16 @@ export default {
           const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
           const emails = contacts.data.results || [];
 
+          const dissolution = org.dissolution_date ? org.dissolution_date.split('T') : ['', ''];
+
           return {
             org: {
               _name: org._name,
               _acronym: org._acronym,
               classification: org.classification,
               voters: org.voters,
+              dissolution_date: dissolution[0],
+              dissolution_time: dissolution[1],
             },
             socials: {
               facebook: facebook.map(e => e.url).join('\n'),
@@ -271,8 +275,18 @@ export default {
 
           await Promise.all(zip(emails, newEmails).map(updateContact));
 
-          assign(org, orgInfo.org);
-          return this.$parlapi.patchOrganisation(org.id, org);
+          const dissolution = (orgInfo.org.dissolution_date && orgInfo.org.dissolution_time)
+            ? `${orgInfo.org.dissolution_date}T${orgInfo.org.dissolution_time}` : null;
+
+          const o = {
+            _name: orgInfo.org._name,
+            _acronym: orgInfo.org._acronym,
+            classification: orgInfo.org.classification,
+            voters: orgInfo.org.voters,
+            dissolution_date: dissolution,
+          };
+          assign(org, o);
+          return this.$parlapi.patchOrganisation(org.id, o);
         },
       };
       this.infoModalOpen = true;

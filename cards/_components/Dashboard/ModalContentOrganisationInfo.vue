@@ -42,6 +42,22 @@
         </div>
       </div>
       <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <label>Dissolution date</label>
+          </div>
+          <div class="col-md-6">
+            <label>Dissolution time</label>
+          </div>
+          <div class="col-md-6">
+            <input v-model="loadedData.org.dissolution_date" class="form-control" type="date">
+          </div>
+          <div class="col-md-6">
+            <input v-model="loadedData.org.dissolution_time" class="form-control" type="time">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
         <hr>
       </div>
       <div class="col-md-6">
