@@ -37,6 +37,11 @@
             </template>
           </template>
         </dash-table>
+        <div v-if="orgs != null">
+          <dash-button @click="addOrganisation">
+            {{ $t('add-organization') }}
+          </dash-button>
+        </div>
         <div v-if="error">Error: {{ error.message }}</div>
         <div v-else-if="orgs == null" class="nalagalnik"></div>
       </div>
@@ -183,6 +188,8 @@ export default {
       this.infoModalData = {
         title: `INFO - ${org._name}`,
         loadData: async () => {
+          const orgs = await this.$parlapi.getAllOrganisations();
+
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
           const facebook = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
           const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
@@ -190,13 +197,25 @@ export default {
           const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
           const emails = contacts.data.results || [];
 
+          const dissolution = org.dissolution_date ? org.dissolution_date.split('T') : ['', ''];
+
           return {
             org: {
               _name: org._name,
               _acronym: org._acronym,
               classification: org.classification,
               voters: org.voters,
+              gov_id: org.gov_id,
+              parent: org.parent,
+              name_parser: org.name_parser,
+              dissolution_date: dissolution[0],
+              dissolution_time: dissolution[1],
             },
+            orgs: orgs.data.results,
+            org_groups: map(groupBy(orgs.data.results, 'classification'), (val, key) => ({
+              label: key,
+              items: val.map(o => o.id),
+            })),
             socials: {
               facebook: facebook.map(e => e.url).join('\n'),
               twitter: twitter.map(e => e.url).join('\n'),
@@ -271,8 +290,27 @@ export default {
 
           await Promise.all(zip(emails, newEmails).map(updateContact));
 
-          assign(org, orgInfo.org);
-          return this.$parlapi.patchOrganisation(org.id, org);
+          const dissolution = (orgInfo.org.dissolution_date && orgInfo.org.dissolution_time)
+            ? `${orgInfo.org.dissolution_date}T${orgInfo.org.dissolution_time}` : null;
+
+          const o = {
+            _name: orgInfo.org._name,
+            _acronym: orgInfo.org._acronym,
+            classification: orgInfo.org.classification,
+            voters: orgInfo.org.voters,
+            gov_id: orgInfo.org.gov_id,
+            parent: orgInfo.org.parent,
+            name_parser: orgInfo.org.name_parser,
+            dissolution_date: dissolution,
+          };
+          assign(org, o);
+          if (org.id > 0) {
+            return this.$parlapi.patchOrganisation(org.id, o);
+          }
+          const orgRes = await this.$parlapi.postOrganisation(org);
+          org.id = orgRes.data.id;
+          this.orgs.push(org);
+          return Promise.resolve();
         },
       };
       this.infoModalOpen = true;
@@ -343,6 +381,9 @@ export default {
     closeMembershipsModal() {
       this.membershipsModalData = null;
       this.membershipsModalOpen = false;
+    },
+    addOrganisation() {
+      this.openInfoModal({});
     },
   },
 };

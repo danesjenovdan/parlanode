@@ -183,6 +183,9 @@ function parlapi() {
     patchOrganisation(id, org) {
       return data.patch(`/organizations/${id}/`, org);
     },
+    postOrganisation(org) {
+      return data.post('/organizations/', org);
+    },
     getOrganisationTFIDF(orgId) {
       return analize.get(`/pg/tfidfs/?organization__id_parladata=${orgId}`);
     },
