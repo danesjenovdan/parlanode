@@ -181,13 +181,13 @@
   },
   "urls": {
     "glej": "http://localhost:3000",
-    "notifications_api": "http://obvestila.ba.parlameter.si",
-    "isci": "http://isci.ba.parlameter.si",
-    "analize": "http://analize.ba.parlameter.si/v1",
+    "notifications_api": "https://obvestila.hr.parlameter.si",
+    "isci": "https://isci.hr.parlameter.si",
+    "analize": "https://analize.hr.parlameter.si/v1",
     "base": "http://localhost:3066",
-    "data": "http://data.ba.parlameter.si/v1",
+    "data": "https://data.hr.parlameter.si/v1",
     "cdn": "http://localhost:8080",
-    "analizeV2": "http://analize.ba.parlameter.si/v2"
+    "analizeV2": "https://analize.hr.parlameter.si/v2"
   },
   "party": {
     "1": {

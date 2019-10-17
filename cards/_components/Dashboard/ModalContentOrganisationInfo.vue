@@ -11,6 +11,16 @@
           </div>
         </div>
       </div>
+      <div class="col-md-12 smaller-field">
+        <div class="row">
+          <div class="col-md-12">
+            <label>name_parser</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="loadedData.org.name_parser" class="form-control">
+          </div>
+        </div>
+      </div>
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12">
@@ -41,13 +51,50 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>GOV ID</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model="loadedData.org.gov_id" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>{{ $t('coalition') }}</label>
+          </div>
+          <div class="col-md-12">
+            <input v-model.number="loadedData.org.is_coalition" class="form-control" type="number">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <label>PARENT</label>
+          </div>
+          <div class="col-md-12">
+            <p-search-dropdown
+              v-model="possibleParents"
+              :groups="loadedData.org_groups"
+              single
+              small
+              @select="loadedData.org.parent = $event"
+              @clear="loadedData.org.parent = null"
+            />
+          </div>
+        </div>
+      </div>
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-6">
-            <label>Dissolution date</label>
+            <label>{{ $t('dissolution-date') }}</label>
           </div>
           <div class="col-md-6">
-            <label>Dissolution time</label>
+            <label>{{ $t('dissolution-time') }}</label>
           </div>
           <div class="col-md-6">
             <input v-model="loadedData.org.dissolution_date" class="form-control" type="date">
@@ -95,12 +142,27 @@
 </template>
 
 <script>
+/* eslint-disable no-underscore-dangle */
+import PSearchDropdown from 'components/SearchDropdown.vue';
+
 export default {
   name: 'DashboardModalContentOrganisationInfo',
+  components: {
+    PSearchDropdown,
+  },
   props: {
     loadedData: {
       type: Object,
       default: null,
+    },
+  },
+  computed: {
+    possibleParents() {
+      return this.loadedData.orgs.map(org => ({
+        id: org.id,
+        label: `${org._acronym} - ${org._name}`,
+        selected: org.id === this.loadedData.org.parent,
+      }));
     },
   },
 };
@@ -126,5 +188,20 @@ label {
 textarea {
   resize: vertical;
   min-height: 60px;
+}
+
+.smaller-field {
+  font-size: 10px;
+
+  .form-control {
+    font-size: 12px;
+    line-height: 1;
+    padding: 0 7px;
+    height: 25px;
+  }
+
+  label {
+    margin: 4px 0 2px 0;
+  }
 }
 </style>
