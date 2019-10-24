@@ -27,7 +27,12 @@ module.exports = {
     ],
     legislation_tabs: [
       {
-        title: 'Zakonodaja',
+        title: 'Zakonodavstvo',
+        classifications: ['zakon'],
+      },
+      {
+        title: 'Akti',
+        card_title: 'Popis akata',
       },
     ],
   },
