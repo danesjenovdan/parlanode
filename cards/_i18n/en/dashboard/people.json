@@ -1,7 +1,7 @@
 {
-  "edit-info": "Edit information ",
+  "edit-info": "Edit information",
   "only-mps": "MPs only",
-  "display-name": "Ime za prikaz",
-  "edit-memberships": "Uredi članstva",
-  "add-membership": "Dodaj članstvo"
+  "display-name": "Name to display",
+  "edit-memberships": "Edit memberships",
+  "add-membership": "Add membership"
 }
