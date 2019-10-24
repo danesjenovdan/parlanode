@@ -17,3 +17,10 @@
     }
   }
 }
+
+[id^="s_zakonodaja-iskanje"],
+[id^="c_zakonodaja"] {
+  .legislation-list a {
+    color: $third;
+  }
+}
