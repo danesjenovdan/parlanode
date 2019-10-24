@@ -12,7 +12,7 @@ module.exports = {
   siteLang: 'hr',
   siteMap: {
     landing: {
-      legislation: 'glasanja',
+      legislation: 'zakonodavstvo',
       sessions: 'sjednice',
       members: 'zastupnice',
       parties: 'klubovi',

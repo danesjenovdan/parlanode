@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/c/vsa-glasovanja/') %>
+<%- await fetchCard('/c/zakonodaja/', { state: { generator: true } }) %>
 
 <%- await include('../_partials/footer.ejs') %>
