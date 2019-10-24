@@ -88,9 +88,11 @@ export default {
   ],
   data() {
     const documents = this.$options.cardData.data.votes.reduce((prev, cur) => {
-      cur.documents.forEach((document) => { // TODO fix after data is fixed
-        prev.push(document);
-      });
+      if (cur.documents) {
+        cur.documents.forEach((document) => { // TODO fix after data is fixed
+          prev.push(document);
+        });
+      }
       return prev;
     }, []);
     const title = this.$options.cardData.parlaState.fullName
