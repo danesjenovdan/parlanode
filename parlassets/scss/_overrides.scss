@@ -7,7 +7,7 @@
   }
 }
 
-#s_seznam-sej .session-list {
+[id^="s_seznam-sej"] .session-list {
   .item .column,
   .headers .column {
     flex: 1 !important;
