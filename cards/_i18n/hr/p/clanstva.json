@@ -1,12 +1,12 @@
 {
   "card": {
     "title": "Članstva",
-    "committees": "Delovna telesa",
-    "councils": "Delovna telesa",
-    "commissions": "Delovna telesa",
+    "committees": "Radna tijela",
+    "councils": "Radna tijela",
+    "commissions": "Radna tijela",
     "delegations": "Druga članstva",
-    "friendship_groups": "Druga članstva",
-    "investigative_comissions": "Preiskovalne komisije"
+    "friendship_groups": "Druga radna tijela",
+    "investigative_comissions": "Ostala tijela"
   },
   "info": {
     "lead": "Ispis svih članstava u radnim tijelima, stalnim izaslanstvima i skupinama prijateljstva.",
