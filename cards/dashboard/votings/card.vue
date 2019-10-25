@@ -29,7 +29,14 @@
             <template v-if="index === 0">
               <label>
                 {{ $t('name') }}
-                <small>{{ column.voting.start_time }}</small>
+                <span>
+                  <small>{{ column.voting.start_time }}</small>
+                  <small>
+                    <dash-loading-button :load="() => deleteVoting(column.voting, column.motion)">
+                      &times;
+                    </dash-loading-button>
+                  </small>
+                </span>
               </label>
               <input v-model="column.voting.name" class="form-control">
             </template>
@@ -188,7 +195,7 @@ export default {
           .map((voting) => {
             const motion = this.motions.find(m => m.id === voting.motion);
             return [
-              { voting },
+              { voting, motion },
               { tags: voting.tags },
               {
                 id: motion.id,
@@ -315,6 +322,22 @@ export default {
         // eslint-disable-next-line no-await-in-loop
         await this.saveData(voting)();
       }
+    },
+    async deleteVoting(voting, motion) {
+      // eslint-disable-next-line no-alert, no-restricted-globals
+      if (!confirm(`Warning! This will *DELETE* "${voting.name}"!`)) {
+        return;
+      }
+      // eslint-disable-next-line no-alert, no-restricted-globals
+      if (!confirm('Are you sure?')) {
+        return;
+      }
+      await this.$parlapi.deleteVoting(voting.id);
+      await this.$parlapi.deleteMotion(motion.id);
+      const vIndex = this.votings.findIndex(v => v === voting);
+      const mIndex = this.motions.findIndex(m => m === motion);
+      this.votings.splice(vIndex, 1);
+      this.motions.splice(mIndex, 1);
     },
   },
 };
