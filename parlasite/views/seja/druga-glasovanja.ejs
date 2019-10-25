@@ -7,8 +7,7 @@
   <% if (session.votes) { %>
     <div class="row">
       <div class="col-md-12">
-        <%# [HR] show all votes here "onlyOther: false" %>
-        <%- await fetchCard('/s/seznam-glasovanj/', session.id_parladata, { state: { onlyOther: false } }) %>
+        <%- await fetchCard('/s/seznam-glasovanj/', session.id_parladata, { state: { onlyOther: true } }) %>
       </div>
     </div>
   <% } else if (session.organization.name === 'Državni zbor') { %>

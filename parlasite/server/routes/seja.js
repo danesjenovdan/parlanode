@@ -21,19 +21,17 @@ function getData(idParam) {
 }
 
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar((render, req, res, next) => {
-  // [HR] redirect to votings page
-  res.redirect(`/${sm.session.base}/${req.params.id}/${sm.session.otherVotings}`);
-  // const sesData = getData(req.params.id);
-  // if (sesData) {
-  //   render('seja/zakonodaja', {
-  //     activeMenu: 'session',
-  //     pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
-  //     activeTab: 'zakonodaja',
-  //     ...sesData,
-  //   });
-  // } else {
-  //   next();
-  // }
+  const sesData = getData(req.params.id);
+  if (sesData) {
+    render('seja/zakonodaja', {
+      activeMenu: 'session',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+      activeTab: 'zakonodaja',
+      ...sesData,
+    });
+  } else {
+    next();
+  }
 }));
 
 router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) => {
