@@ -161,7 +161,7 @@ async function buildCard(cacheData, cardJson) {
 }
 
 function formattedDate(days = 0) {
-  return dateFns.format(dateFns.addDays(new Date(), days), 'D.M.YYYY');
+  return dateFns.format(dateFns.addDays(new Date(), days), 'd.M.y');
 }
 
 async function renderCard(cacheData, cardJson, originalUrl) {
