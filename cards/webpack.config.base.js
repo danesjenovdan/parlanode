@@ -67,14 +67,15 @@ module.exports = (cardPath) => {
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: true,
-                  functions: {
-                    'getConfig($key)': (key) => {
-                      const value = _.get(config, key.getValue().split('.'));
-                      if (typeof value === 'string') {
-                        return sass.types.String(value);
-                      }
-                      return sass.types.String(key.getValue());
+                  sassOptions: {
+                    functions: {
+                      'getConfig($key)': (key) => {
+                        const value = _.get(config, key.getValue().split('.'));
+                        if (typeof value === 'string') {
+                          return sass.types.String(value);
+                        }
+                        return sass.types.String(key.getValue());
+                      },
                     },
                   },
                 },
