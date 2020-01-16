@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const sass = require('node-sass');
 const _ = require('lodash');
@@ -53,35 +53,28 @@ module.exports = (cardPath) => {
         },
         {
           test: /\.s?css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  url: false,
-                  minimize: true,
-                  sourceMap: true,
-                },
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sassOptions: {
-                    functions: {
-                      'getConfig($key)': (key) => {
-                        const value = _.get(config, key.getValue().split('.'));
-                        if (typeof value === 'string') {
-                          return sass.types.String(value);
-                        }
-                        return sass.types.String(key.getValue());
-                      },
+          use: [
+            process.env.NODE_ENV === 'production'
+              ? MiniCssExtractPlugin.loader
+              : 'vue-style-loader',
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sassOptions: {
+                  functions: {
+                    'getConfig($key)': (key) => {
+                      const value = _.get(config, key.getValue().split('.'));
+                      if (typeof value === 'string') {
+                        return sass.types.String(value);
+                      }
+                      return sass.types.String(key.getValue());
                     },
                   },
                 },
               },
-            ],
-          }),
+            },
+          ],
         },
       ],
     },
@@ -105,7 +98,7 @@ module.exports = (cardPath) => {
         shorthands: true,
         collections: true,
       }),
-      new ExtractTextPlugin({
+      new MiniCssExtractPlugin({
         filename: 'style.css',
       }),
       new webpack.DefinePlugin({

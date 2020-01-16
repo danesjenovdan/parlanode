@@ -3,7 +3,6 @@ const fs = require('fs-extra');
 const path = require('path');
 const merge = require('webpack-merge');
 const axios = require('axios');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = merge.smart(baseConfig(process.env.CARD_NAME), {
@@ -55,9 +54,6 @@ module.exports = merge.smart(baseConfig(process.env.CARD_NAME), {
     },
   },
   plugins: [
-    new ExtractTextPlugin({
-      disable: true,
-    }),
     new webpack.NormalModuleReplacementPlugin(
       /data\/urls\.json$/,
       require.resolve('../data/urls.dev.json'),
