@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = merge.smart(baseConfig(process.env.CURRENT_PATH), {
@@ -33,9 +32,6 @@ module.exports = merge.smart(baseConfig(process.env.CURRENT_PATH), {
     stats: 'minimal',
   },
   plugins: [
-    new ExtractTextPlugin({
-      disable: true,
-    }),
     new webpack.NormalModuleReplacementPlugin(
       /data\/urls\.json$/,
       require.resolve('../data/urls.dev.json'),

@@ -211,7 +211,7 @@
 </template>
 
 <script>
-import { parse, differenceInCalendarYears } from 'date-fns';
+import { parseISO, differenceInCalendarYears } from 'date-fns';
 import common from 'mixins/common';
 import { memberOverview } from 'mixins/contextUrls';
 import { memberTitle } from 'mixins/titles';
@@ -240,7 +240,7 @@ export default {
       return `${this.url}${this.data.person.id}?altHeader=true`;
     },
     age() {
-      return differenceInCalendarYears(new Date(), parse(this.data.results.birth_date));
+      return differenceInCalendarYears(new Date(), parseISO(this.data.results.birth_date));
     },
   },
 };

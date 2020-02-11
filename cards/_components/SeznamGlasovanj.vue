@@ -50,9 +50,8 @@
                   style="position: absolute; left: -37px;"
                 ></div>
                 <div v-if="!vote.has_votes" class="hand-badge"></div>
-                <component
-                  :is="vote.has_votes ? 'a' : 'div'"
-                  :href="vote.has_votes && vote.url"
+                <a
+                  :href="vote.url"
                   class="show clearfix"
                 >
                   <div class="col-md-1 icon-col">
@@ -160,7 +159,7 @@
                       </div>
                     </div>
                   </div>
-                </component>
+                </a>
               </div>
             </component>
           </div>
@@ -312,7 +311,7 @@ export default {
 
         // if legislation name is defined trim the legislation name from the start of vote name
         if (this.data.text && e.title.indexOf(this.data.text) === 0) {
-          e.shortened_title = e.title.slice(this.data.text.length).replace(/^[\s-]*/, '');
+          e.shortened_title = e.title.slice(this.data.text.length).replace(/^[\s-,]*/, '');
         }
 
         // shorten the title for display

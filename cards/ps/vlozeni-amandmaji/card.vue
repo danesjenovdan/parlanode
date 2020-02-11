@@ -190,7 +190,7 @@ import StripedButton from 'components/StripedButton.vue';
 
 const formattedDateToMonthId = (date) => {
   const [day, month, year] = date.split('. ');
-  return formatDate(new Date(year, month - 1, day), 'YYYY-M');
+  return formatDate(new Date(year, month - 1, day), 'y-M');
 };
 
 export default {

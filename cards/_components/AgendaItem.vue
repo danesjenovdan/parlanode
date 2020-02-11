@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return format(new Date(date), 'D. M. YYYY');
+      return format(new Date(date), 'd. M. y');
     },
   },
 };

@@ -4,9 +4,9 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    @selectedparty="(newParty) => { this.state.selectedParty = newParty; }"
-    @selectedoption="(newOption) => { this.state.selectedOption = newOption; }"
-    @namefilter="(newNameFilter) => { this.state.nameFilter = newNameFilter; }"
+    @selectedparty="(newParty) => { state.selectedParty = newParty; }"
+    @selectedoption="(newOption) => { state.selectedOption = newOption; }"
+    @namefilter="(newNameFilter) => { state.nameFilter = newNameFilter; }"
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>
@@ -25,8 +25,8 @@
 
     <div class="date-and-stuff">
       <a
-        class="funblue-light-hover"
         :href="getSessionVotesLink(data.session)"
+        class="funblue-light-hover"
       >
         {{ data.session.name }}
       </a><span class="date">, {{ data.session.date }}</span>
@@ -78,88 +78,94 @@
         <p>{{ title }}</p>
       </div>
     </div>
-    <div
-      v-t="'summary'"
-      v-if="content"
-      class="izvlecek-switch visible-xs"
-      @click="showMobileExcerpt = !showMobileExcerpt"
-    />
-    <excerpt
-      v-if="showMobileExcerpt && content"
-      :content="content"
-      :main-law="excerptData"
-      :documents="data.documents"
-      :show-parent="true"
-      class="visible-xs"
-    />
-    <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
-      <p-tab :label="$t('mps')">
-        <poslanci
-          :members="data.members"
-          :member-votes="data.all"
-          :result="data.result"
-          :state="state"
-        />
-      </p-tab>
-      <p-tab :label="$t('parties')">
-        <poslanske-skupine
-          ref="parties"
-          :members="data.members"
-          :parties="data.parties"
-          :state="state"
-          :selected-party="state.selectedParty || null"
-          :selected-option="state.selectedOption || null"
-        />
-      </p-tab>
-      <p-tab :label="$t('gov-side')">
-        <poslanske-skupine
-          ref="sides"
-          :members="data.members"
-          :parties="coalitionOpositionParties"
-          :state="state"
-          :selected-party="state.selectedParty || null"
-          :selected-option="state.selectedOption || null"
-        />
-      </p-tab>
-    </p-tabs>
-    <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
-      <p-tab v-if="content" :label="$t('summary')">
-        <excerpt
-          :content="content"
-          :main-law="excerptData"
-          :documents="data.documents"
-          :show-parent="true"
-        />
-      </p-tab>
-      <p-tab :label="$t('mps')">
-        <poslanci
-          :members="data.members"
-          :member-votes="data.all"
-          :result="data.result"
-          :state="state"
-        />
-      </p-tab>
-      <p-tab :label="$t('parties')">
-        <poslanske-skupine
-          ref="parties"
-          :members="data.members"
-          :parties="data.parties"
-          :state="state"
-          :selected-party="state.selectedParty || null"
-          :selected-option="state.selectedOption || null"
-        />
-      </p-tab>
-      <p-tab :label="$t('gov-side')">
-        <poslanske-skupine
-          ref="sides"
-          :members="data.members"
-          :parties="coalitionOpositionParties"
-          :state="state"
-          :selected-party="state.selectedParty || null"
-          :selected-option="state.selectedOption || null"
-        />
-      </p-tab>
-    </p-tabs>
+
+    <template v-if="data.members && data.members.length">
+      <div
+        v-t="'summary'"
+        v-if="content"
+        class="izvlecek-switch visible-xs"
+        @click="showMobileExcerpt = !showMobileExcerpt"
+      />
+      <excerpt
+        v-if="showMobileExcerpt && content"
+        :content="content"
+        :main-law="excerptData"
+        :documents="data.documents"
+        :show-parent="true"
+        class="visible-xs"
+      />
+      <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
+        <p-tab :label="$t('mps')">
+          <poslanci
+            :members="data.members"
+            :member-votes="data.all"
+            :result="data.result"
+            :state="state"
+          />
+        </p-tab>
+        <p-tab :label="$t('parties')">
+          <poslanske-skupine
+            ref="parties"
+            :members="data.members"
+            :parties="data.parties"
+            :state="state"
+            :selected-party="state.selectedParty || null"
+            :selected-option="state.selectedOption || null"
+          />
+        </p-tab>
+        <p-tab :label="$t('gov-side')">
+          <poslanske-skupine
+            ref="sides"
+            :members="data.members"
+            :parties="coalitionOpositionParties"
+            :state="state"
+            :selected-party="state.selectedParty || null"
+            :selected-option="state.selectedOption || null"
+          />
+        </p-tab>
+      </p-tabs>
+      <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
+        <p-tab v-if="content" :label="$t('summary')">
+          <excerpt
+            :content="content"
+            :main-law="excerptData"
+            :documents="data.documents"
+            :show-parent="true"
+          />
+        </p-tab>
+        <p-tab :label="$t('mps')">
+          <poslanci
+            :members="data.members"
+            :member-votes="data.all"
+            :result="data.result"
+            :state="state"
+          />
+        </p-tab>
+        <p-tab :label="$t('parties')">
+          <poslanske-skupine
+            ref="parties"
+            :members="data.members"
+            :parties="data.parties"
+            :state="state"
+            :selected-party="state.selectedParty || null"
+            :selected-option="state.selectedOption || null"
+          />
+        </p-tab>
+        <p-tab :label="$t('gov-side')">
+          <poslanske-skupine
+            ref="sides"
+            :members="data.members"
+            :parties="coalitionOpositionParties"
+            :state="state"
+            :selected-party="state.selectedParty || null"
+            :selected-option="state.selectedOption || null"
+          />
+        </p-tab>
+      </p-tabs>
+    </template>
+    <template v-else>
+      <data-not-published :text="$t('data-not-published.show-of-hands')" />
+    </template>
   </card-wrapper>
 </template>
 
@@ -173,6 +179,7 @@ import { parseVoteTitle } from 'helpers/voteTitle';
 import PTab from 'components/Tab.vue';
 import PTabs from 'components/Tabs.vue';
 import Excerpt from 'components/Excerpt.vue';
+import DataNotPublished from 'components/DataNotPublished.vue';
 import fixAbstractHtml from 'helpers/fixAbstractHtml';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
@@ -185,6 +192,7 @@ export default {
     PTab,
     PTabs,
     Excerpt,
+    DataNotPublished,
   },
   mixins: [
     common,
