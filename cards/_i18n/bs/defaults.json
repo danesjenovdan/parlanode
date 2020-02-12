@@ -39,6 +39,7 @@
   "vote-passed": "Prihvaćen",
   "vote-not-passed": "Odbijen",
   "vote-under-consideration": "U proceduri",
+  "vote-unknown": "Neznano",
   "vote-result--enacted": "Donesen",
   "vote-result--submitted": "Dostavljeno radi informisanja",
   "vote-result--rejected": "Odbijen",
