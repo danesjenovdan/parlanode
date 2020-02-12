@@ -9,7 +9,8 @@
   "data-not-published": {
     "link-text": "Opozori jih tukaj!",
     "link-url": "http://example.com/",
-    "show-of-hands": "Parlament ne objavlja rezultatov glasovanja z dvigom rok."
+    "show-of-hands": "Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.",
+    "parlamentary-questions": "Parlament ne objavlja poslanskih vprašanj in pobud."
   },
   "search": "Traži",
   "title-search": "Pretraži prema naslovu",
