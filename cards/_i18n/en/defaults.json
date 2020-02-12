@@ -39,6 +39,7 @@
   "vote-passed": "Passed",
   "vote-not-passed": "Rejected",
   "vote-under-consideration": "Under procedure",
+  "vote-unknown": "Neznano",
   "vote-result--enacted": "Passed",
   "vote-result--submitted": "Submitted",
   "vote-result--rejected": "Rejected",
