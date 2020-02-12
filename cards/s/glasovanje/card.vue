@@ -32,15 +32,19 @@
       </a><span class="date">, {{ data.session.date }}</span>
     </div>
 
-    <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
+    <div :class="['summary', { 'fire-badge': data.result && data.result.is_outlier }]">
       <div class="result">
-        <template v-if="data.result.accepted">
+        <template v-if="data.result && data.result.accepted === true">
           <i class="accepted glyphicon glyphicon-ok"></i>
           <div v-t="'vote-passed'" class="text"></div>
         </template>
-        <template v-else>
+        <template v-else-if="data.result && data.result.accepted === false">
           <i class="not-accepted glyphicon glyphicon-remove"></i>
           <div v-t="'vote-not-passed'" class="text"></div>
+        </template>
+        <template v-else>
+          <i class="not-accepted parlaicon-unknown"></i>
+          <div v-t="'vote-unknown'" class="text"></div>
         </template>
       </div>
       <div class="name">
@@ -204,16 +208,9 @@ export default {
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(data.name);
 
-    return {
-      showMobileExcerpt: false,
-      data,
-      title,
-      projects: (data.agenda_items || []).concat(projects),
-      state: this.$options.cardData.parlaState,
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
-      coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
+    let coalitionOpositionParties = null;
+    if (data.gov_side) {
+      coalitionOpositionParties = ['coalition', 'opposition'].map(side => ({
         party: {
           id: side,
           name: this.$t(side),
@@ -224,7 +221,19 @@ export default {
           max_opt: data.gov_side[side].max.max_opt,
         },
         outliers: data.gov_side[side].outliers,
-      })),
+      }));
+    }
+
+    return {
+      showMobileExcerpt: false,
+      data,
+      title,
+      projects: (data.agenda_items || []).concat(projects),
+      state: this.$options.cardData.parlaState,
+      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
+      coalitionOpositionParties,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
     };
@@ -360,6 +369,19 @@ export default {
 
       @include respond-to(desktop) {
         font-size: 29px;
+      }
+    }
+
+    .parlaicon-unknown {
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include respond-to(desktop) {
+        width: 29px;
+        height: 29px;
       }
     }
 
