@@ -43,7 +43,6 @@ export default {
   }
 
   p {
-    margin: 0;
     text-align: center;
     font-size: 18px;
     font-style: italic;
