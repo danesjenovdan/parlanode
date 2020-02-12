@@ -21,37 +21,43 @@
       </i18n>
     </div>
 
-    <div class="filters">
-      <div class="filter tag-dropdown">
-        <div v-t="'mp'" class="filter-label"></div>
-        <p-search-dropdown
-          :value="dropdownItems.MPs"
-          @input="updateDropdownOptions('allMPs', $event)"
-        />
+    <data-not-published
+      v-if="showEmptyState"
+      :text="$t('data-not-published.parlamentary-questions')"
+    />
+    <template v-else>
+      <div class="filters">
+        <div class="filter tag-dropdown">
+          <div v-t="'mp'" class="filter-label"></div>
+          <p-search-dropdown
+            :value="dropdownItems.MPs"
+            @input="updateDropdownOptions('allMPs', $event)"
+          />
+        </div>
+        <div class="filter tag-dropdown naslovljenec">
+          <div v-t="'addressee'" class="filter-label"></div>
+          <p-search-dropdown
+            :value="dropdownItems.recipients"
+            @input="updateDropdownOptions('allRecipients', $event)"
+          />
+        </div>
+        <div class="filter month-dropdown">
+          <div v-t="'time-period'" class="filter-label"></div>
+          <p-search-dropdown
+            :value="dropdownItems.months"
+            :alphabetise="false"
+            @input="updateDropdownOptions('allMonths', $event)"
+          />
+        </div>
+        <div class="filter text-filter">
+          <div v-t="'title-search'" class="filter-label"></div>
+          <input v-model="textFilter" class="text-filter-input" type="text">
+        </div>
       </div>
-      <div class="filter tag-dropdown naslovljenec">
-        <div v-t="'addressee'" class="filter-label"></div>
-        <p-search-dropdown
-          :value="dropdownItems.recipients"
-          @input="updateDropdownOptions('allRecipients', $event)"
-        />
+      <div id="vprasanja">
+        <question-list :question-days="filteredQuestionDays" show-author />
       </div>
-      <div class="filter month-dropdown">
-        <div v-t="'time-period'" class="filter-label"></div>
-        <p-search-dropdown
-          :value="dropdownItems.months"
-          :alphabetise="false"
-          @input="updateDropdownOptions('allMonths', $event)"
-        />
-      </div>
-      <div class="filter text-filter">
-        <div v-t="'title-search'" class="filter-label"></div>
-        <input v-model="textFilter" class="text-filter-input" type="text">
-      </div>
-    </div>
-    <div id="vprasanja">
-      <question-list :question-days="filteredQuestionDays" show-author />
-    </div>
+    </template>
   </card-wrapper>
 </template>
 
@@ -66,9 +72,15 @@ import { partyOgImage, memberOgImage } from 'mixins/ogImages';
 import CardWrapper from 'components/Card/Wrapper.vue';
 import PSearchDropdown from 'components/SearchDropdown.vue';
 import QuestionList from 'components/QuestionList.vue';
+import DataNotPublished from 'components/DataNotPublished.vue';
 
 export default {
-  components: { CardWrapper, PSearchDropdown, QuestionList },
+  components: {
+    CardWrapper,
+    PSearchDropdown,
+    QuestionList,
+    DataNotPublished,
+  },
   mixins: [common, partyOverview, partyTitle, generateMonths],
   props: {
     cardData: {
@@ -403,5 +415,9 @@ export default {
 #vprasanja /deep/ .questions {
   // height: 435px;
   height: $full-card-height - 83px;
+}
+
+.data-not-published {
+  height: 100%;
 }
 </style>

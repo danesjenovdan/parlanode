@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     showEmptyState() {
-      const { showEmptyState } = this.$options.cardData.cardGlobals;
+      const { showEmptyState } = this.$root.$options.cardData.cardGlobals;
       return showEmptyState.indexOf(process.env.CARD_NAME) !== -1;
     },
   },
