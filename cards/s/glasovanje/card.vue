@@ -255,11 +255,30 @@ export default {
 
     const vote = data.all;
     if (vote) {
-      const allInVotes = vote.for + vote.against + vote.abstain + vote.absent;
-      vote.percent_for = Math.floor((vote.for / allInVotes) * 100);
-      vote.percent_against = Math.floor((vote.against / allInVotes) * 100);
-      vote.percent_abstain = Math.floor((vote.abstain / allInVotes) * 100);
-      vote.percent_absent = Math.floor((vote.absent / allInVotes) * 100);
+      const e = vote;
+      if (typeof e.for === 'number'
+        && typeof e.against === 'number'
+        && typeof e.abstain === 'number'
+        && typeof e.absent === 'number') {
+        const allInVotes = e.for + e.against + e.abstain + e.absent;
+        e.percent_for = Math.floor((e.for / allInVotes) * 100);
+        e.percent_against = Math.floor((e.against / allInVotes) * 100);
+        e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
+        e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
+      } else {
+        if (typeof e.for !== 'number') {
+          e.for = '?';
+        }
+        if (typeof e.against !== 'number') {
+          e.against = '?';
+        }
+        if (typeof e.abstain !== 'number') {
+          e.abstain = '?';
+        }
+        if (typeof e.absent !== 'number') {
+          e.absent = '?';
+        }
+      }
     }
 
     return {
