@@ -306,10 +306,18 @@ export default {
           e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
           e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
         } else {
-          e.for = '?';
-          e.against = '?';
-          e.abstain = '?';
-          e.absent = '?';
+          if (typeof e.for !== 'number') {
+            e.for = '?';
+          }
+          if (typeof e.against !== 'number') {
+            e.against = '?';
+          }
+          if (typeof e.abstain !== 'number') {
+            e.abstain = '?';
+          }
+          if (typeof e.absent !== 'number') {
+            e.absent = '?';
+          }
         }
 
         e.url = this.getSessionVoteLink({
