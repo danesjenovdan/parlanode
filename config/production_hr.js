@@ -17,11 +17,11 @@ module.exports = {
     parliament_id: 199,
     session_list_tabs: [
       {
-        title: 'Seje sabora',
+        title: 'Sjednice sabora',
         org_ids: [199],
       },
       {
-        title: 'Ostale seje',
+        title: 'Sjednice odbora',
       },
     ],
     legislation_tabs: [
