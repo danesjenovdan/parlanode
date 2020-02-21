@@ -30,4 +30,10 @@ export default {
       };
     }
   },
+  computed: {
+    showEmptyState() {
+      const { showEmptyState } = this.$root.$options.cardData.cardGlobals;
+      return showEmptyState.indexOf(process.env.CARD_NAME) !== -1;
+    },
+  },
 };

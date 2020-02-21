@@ -19,7 +19,11 @@
         />
       </i18n>
     </div>
-    <question-list :question-days="data.results" />
+    <data-not-published
+      v-if="showEmptyState"
+      :text="$t('data-not-published.parlamentary-questions')"
+    />
+    <question-list v-else :question-days="data.results" />
   </card-wrapper>
 </template>
 
@@ -30,11 +34,13 @@ import { memberTitle } from 'mixins/titles';
 import { memberHeader } from 'mixins/altHeaders';
 import { memberOgImage } from 'mixins/ogImages';
 import QuestionList from 'components/QuestionList.vue';
+import DataNotPublished from 'components/DataNotPublished.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanca',
   components: {
     QuestionList,
+    DataNotPublished,
   },
   mixins: [
     common,
@@ -55,3 +61,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.data-not-published {
+  height: 100%;
+}
+</style>
