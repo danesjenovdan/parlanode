@@ -20,7 +20,7 @@
     </div>
 
     <div class="memberships">
-      <p-tabs>
+      <p-tabs v-if="tabNames.length > 1">
         <p-tab
           v-for="(tabContents, tabName) in tabs"
           :key="tabName"
@@ -30,6 +30,16 @@
           <membership-list :name="tabName" :contents="tabContents" />
         </p-tab>
       </p-tabs>
+      <membership-list
+        v-else-if="tabNames.length === 1"
+        :name="tabNames[0]"
+        :contents="tabs[tabNames[0]]"
+      />
+      <membership-list
+        v-else
+        :name="''"
+        :contents="[]"
+      />
     </div>
   </card-wrapper>
 </template>
@@ -77,18 +87,15 @@ export default {
       };
 
       return reduce(this.data.memberships, (tabs, membership, membershipName) => {
-        const newTabs = JSON.parse(JSON.stringify(tabs));
-        console.log(membershipName);
         if (membershipName in membershipTabMap) {
           const tabId = membershipTabMap[membershipName];
-          newTabs[tabId] = newTabs[tabId].concat(membership);
+          tabs[tabId] = (tabs[tabId] || []).concat(membership);
         }
-        return newTabs;
-      }, {
-        'Delovna telesa': [],
-        'Preiskovalne komisije': [],
-        'Druga članstva': [],
-      });
+        return tabs;
+      }, {});
+    },
+    tabNames() {
+      return Object.keys(this.tabs);
     },
     generatedCardUrl() {
       return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;

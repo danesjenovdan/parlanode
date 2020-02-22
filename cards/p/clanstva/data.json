@@ -1,89 +1,48 @@
 {
   "memberships": {
-    "comission": [{
-      "url": null,
-      "org_type": "comission",
-      "org_id": 36,
-      "name": "Mandatno-volilna komisija"
-    }],
-    "council": [{
-      "url": null,
-      "org_type": "council",
-      "org_id": 15,
-      "name": "Kolegij predsednika Dr\u017eavnega zbora"
-    }],
-    "friendship_group": [{
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 63,
-      "name": "Skupina prijateljstva z Zvezno republiko Nem\u010dijo"
-    }, {
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 91,
-      "name": "Skupina prijateljstva s Slova\u0161ko republiko"
-    }, {
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 65,
-      "name": "Skupina prijateljstva z Argentinsko republiko"
-    }, {
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 97,
-      "name": "Skupina prijateljstva s Kraljevino Belgijo"
-    }, {
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 71,
-      "name": "Skupina prijateljstva z Velikim vojvodstvom Luksemburg"
-    }, {
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 102,
-      "name": "Skupina prijateljstva s Kraljevino Nizozemsko"
-    }, {
-      "url": null,
-      "org_type": "friendship_group",
-      "org_id": 77,
-      "name": "Skupina prijateljstva z Zdru\u017eenim kraljestvom Velike Britanije in Severne Irske"
-    }],
-    "dz": [{
-      "url": null,
-      "org_type": "dz",
-      "org_id": 1,
-      "name": "Dr\u017eavni zbor"
-    }],
-    "pg": [{
-      "url": null,
-      "org_type": "pg",
-      "org_id": 5,
-      "name": "Stranka modernega centra"
-    }],
-    "committee": [{
-      "url": null,
-      "org_type": "committee",
-      "org_id": 26,
-      "name": "Odbor za infrastrukturo, okolje in prostor"
-    }]
+    "pg": [
+      {
+        "url": "https://www.facebook.com/sdphrvatske",
+        "org_type": "pg",
+        "org_id": 339,
+        "name": "Klub Socijaldemokratske partije Hrvatske"
+      }
+    ],
+    "committee": [
+      {
+        "url": null,
+        "org_type": "committee",
+        "org_id": 272,
+        "name": "Odbor za pomorstvo, promet i infrastrukturu"
+      },
+      {
+        "url": null,
+        "org_type": "committee",
+        "org_id": 301,
+        "name": "Odbor za poljoprivredu"
+      }
+    ]
   },
   "person": {
     "is_active": true,
-    "district": [22],
-    "name": "Igor Zor\u010di\u010d",
-    "gov_id": "P294",
-    "gender": "f",
+    "district": [
+      2
+    ],
+    "name": "Alen Prelec",
+    "gov_id": "1300",
+    "gender": "m",
     "party": {
-      "acronym": "SMC",
-      "is_coalition": true,
-      "id": 5,
+      "name": "Klub Socijaldemokratske partije Hrvatske",
       "classification": "pg",
-      "name": "Stranka modernega centra"
+      "acronym": "SDP",
+      "has_voters": false,
+      "is_coalition": false,
+      "id": 339
     },
     "type": "mp",
-    "id": 12,
+    "id": 1300,
     "has_function": false
   },
-  "created_at": "31.01.2019",
-  "created_for": "31.01.2019"
+  "created_at": "17.02.2020",
+  "created_for": "17.02.2020"
 }
