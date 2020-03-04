@@ -2,14 +2,14 @@
   <div :id="agenda.id" class="agenda-item">
     <div class="agenda-item__header">
       <div class="agenda-item__title" v-text="agenda.text"></div>
-      <div class="links">
+      <!-- <div class="links">
         <a :href="getSessionAgendaLink(agenda, session.id)" class="link"></a>
         <a
           v-if="!hideShareIcon"
           :href="getAgendaCardLink(agenda)"
           class="share"
         ></a>
-      </div>
+      </div> -->
     </div>
     <div class="agenda-item__debates">
       <a
