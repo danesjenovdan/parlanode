@@ -116,6 +116,10 @@
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/legislation.svg");
             }
 
+            .nav-icon-agenda {
+                background-image: url("#{getConfig('urls.cdn')}/icons/navigation/agenda.svg");
+            }
+
             .nav-icon-transcripts {
                 background-image: url("#{getConfig('urls.cdn')}/icons/navigation/transcripts.svg");
                 background-size: 29px 100%;
