@@ -13,7 +13,7 @@
       "kao histogram s ukupnim brojem glasova u odnosu na matično radno tijelo."
     ]
   },
-  "comparator-text": "Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili različito od njih. {load}",
+  "comparator-text": "Zanima me, na kojim glasanjima su {same} glasali jednako, a {different} različito od njih. {load}",
   "ignore-absent": "Zanemari \"odsutne\" glasove",
   "comparator-vote-percent": "{num} filtriranih glasanja predstavlja {percent} svih glasanja.",
   "tabs": {
