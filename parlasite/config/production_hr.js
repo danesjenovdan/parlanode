@@ -52,6 +52,7 @@ module.exports = {
       legislation: 'pregled', // doesn't exist
       otherVotings: 'glasanja',
       transcript: 'transkript',
+      agenda: 'dnevni-red',
       vote: 'glasanje',
     },
   },
