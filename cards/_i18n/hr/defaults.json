@@ -6,6 +6,12 @@
   "load": "Učitaj",
   "confirm": "Potvrdi",
   "data-currently-unavailable": "Podaci trenutno nisu dostupni.",
+  "data-not-published": {
+    "link-text": "Kliknite za otvaranje Sabora.",
+    "link-url": "https://parlametar.hr/otvaranje-sabora/",
+    "show-of-hands": "Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke koje tražite. Želite to promijeniti?",
+    "parlamentary-questions": "Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke koje tražite. Želite to promijeniti?"
+  },
   "search": "Traži",
   "title-search": "Pretraži prema naslovu",
   "contents-search": "Pretraži prema sadržaju govora",
@@ -34,6 +40,7 @@
   "vote-passed": "Prihvaćen",
   "vote-not-passed": "Odbijen",
   "vote-under-consideration": "U proceduri",
+  "vote-unknown": "Nepoznat",
   "vote-result--enacted": "Donesen",
   "vote-result--submitted": "Dostavljeno radi informiranja",
   "vote-result--rejected": "Odbijen",

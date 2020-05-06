@@ -1,45 +1,15 @@
 {
-  "gov_side": {
-    "coalition": {
-      "max": {
-        "max_opt": "for",
-        "maxOptPerc": 92.64705882352942
-      },
-      "votes": {
-        "absent": 4,
-        "abstain": 0,
-        "for": 63,
-        "against": 1
-      },
-      "outliers": [
-        "against"
-      ]
-    },
-    "opposition": {
-      "max": {
-        "max_opt": "absent",
-        "maxOptPerc": 68.67469879518072
-      },
-      "votes": {
-        "absent": 57,
-        "abstain": 0,
-        "for": 15,
-        "against": 11
-      },
-      "outliers": []
-    }
-  },
-  "created_for": "09.05.2019",
-  "abstractVisible": true,
-  "abstract": "yoyo",
   "all": {
-    "absent": 61,
+    "absent": 29,
     "abstain": 0,
-    "against": 12,
-    "for": 78
+    "against": 0,
+    "for": 122
   },
+  "created_for": "23.03.2018",
+  "name": "izvješće mandatno-imunitetnog povjerenstva o zahtjevu za davanje odobrenja za pokretanje kaznenog postupka protiv dr. sc. branimira bunjca, zastupnika u hrvatskom saboru",
+  "created_at": "11.06.2019",
   "session": {
-    "name": "12. sjednica",
+    "name": "7. sjednica",
     "orgs": [
       {
         "name": "Hrvatski sabor",
@@ -50,7 +20,7 @@
         "id": 199
       }
     ],
-    "date": "9. 5. 2019",
+    "date": "23. 3. 2018",
     "org": {
       "name": "Hrvatski sabor",
       "classification": "sabor",
@@ -59,26 +29,16 @@
       "is_coalition": false,
       "id": 199
     },
-    "date_ts": "2019-05-09T18:31:00",
-    "updated_at": "6. 11. 2019",
+    "date_ts": "2018-03-23T11:19:00",
+    "updated_at": "27. 1. 2020",
     "in_review": false,
-    "id": 153
+    "id": 139
   },
   "result": {
     "is_outlier": false,
     "accepted": true,
-    "value": 51.65562913907284,
-    "max_opt": "for"
+    "value": null,
+    "max_opt": null
   },
-  "members": [],
-  "parties": [],
-  "id": "5830",
-  "agenda_items": [],
-  "documents": [],
-  "name": "Mišljenje Odbora za Ustav, Poslovnik i politički sustav Hrvatskoga sabora na temelju zahtjeva za mišljenje o povredi Poslovnika Hrvatskoga sabora koji su podnijeli zastupnici Gordan Maras i Ranko Ostojić",
-  "created_at": "13.05.2019",
-  "legislation": {
-    "text": "",
-    "epa": null
-  }
+  "id": "6589"
 }

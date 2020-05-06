@@ -32,15 +32,19 @@
       </a><span class="date">, {{ data.session.date }}</span>
     </div>
 
-    <div :class="['summary', { 'fire-badge': data.result.is_outlier }]">
+    <div :class="['summary', { 'fire-badge': data.result && data.result.is_outlier }]">
       <div class="result">
-        <template v-if="data.result.accepted">
+        <template v-if="data.result && data.result.accepted === true">
           <i class="accepted glyphicon glyphicon-ok"></i>
           <div v-t="'vote-passed'" class="text"></div>
         </template>
-        <template v-else>
+        <template v-else-if="data.result && data.result.accepted === false">
           <i class="not-accepted glyphicon glyphicon-remove"></i>
           <div v-t="'vote-not-passed'" class="text"></div>
+        </template>
+        <template v-else>
+          <i class="not-accepted parlaicon-unknown"></i>
+          <div v-t="'vote-unknown'" class="text"></div>
         </template>
       </div>
       <div class="name">
@@ -164,6 +168,35 @@
       </p-tabs>
     </template>
     <template v-else>
+      <div v-if="vote" class="session_voting row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="session_votes">
+            <div class="row">
+              <div class="col-xs-3">
+                {{ vote.for }}
+                <div v-t="'vote-for'" class="type"></div>
+                <div class="indicator aye">&nbsp;</div>
+              </div>
+              <div class="col-xs-3">
+                {{ vote.against }}
+                <div v-t="'vote-against'" class="type"></div>
+                <div class="indicator ney">&nbsp;</div>
+              </div>
+              <div class="col-xs-3">
+                {{ vote.abstain }}
+                <div v-t="'vote-abstain'" class="type"></div>
+                <div class="indicator abstention">&nbsp;</div>
+              </div>
+              <div class="col-xs-3">
+                {{ vote.absent }}
+                <div v-t="'vote-absent'" class="type"></div>
+                <div class="indicator not">&nbsp;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <data-not-published :text="$t('data-not-published.show-of-hands')" />
     </template>
   </card-wrapper>
@@ -204,16 +237,9 @@ export default {
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(data.name);
 
-    return {
-      showMobileExcerpt: false,
-      data,
-      title,
-      projects: (data.agenda_items || []).concat(projects),
-      state: this.$options.cardData.parlaState,
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
-      coalitionOpositionParties: ['coalition', 'opposition'].map(side => ({
+    let coalitionOpositionParties = null;
+    if (data.gov_side) {
+      coalitionOpositionParties = ['coalition', 'opposition'].map(side => ({
         party: {
           id: side,
           name: this.$t(side),
@@ -224,9 +250,50 @@ export default {
           max_opt: data.gov_side[side].max.max_opt,
         },
         outliers: data.gov_side[side].outliers,
-      })),
+      }));
+    }
+
+    const vote = data.all;
+    if (vote) {
+      const e = vote;
+      if (typeof e.for === 'number'
+        && typeof e.against === 'number'
+        && typeof e.abstain === 'number'
+        && typeof e.absent === 'number') {
+        const allInVotes = e.for + e.against + e.abstain + e.absent;
+        e.percent_for = Math.floor((e.for / allInVotes) * 100);
+        e.percent_against = Math.floor((e.against / allInVotes) * 100);
+        e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
+        e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
+      } else {
+        if (typeof e.for !== 'number') {
+          e.for = '?';
+        }
+        if (typeof e.against !== 'number') {
+          e.against = '?';
+        }
+        if (typeof e.abstain !== 'number') {
+          e.abstain = '?';
+        }
+        if (typeof e.absent !== 'number') {
+          e.absent = '?';
+        }
+      }
+    }
+
+    return {
+      showMobileExcerpt: false,
+      data,
+      title,
+      projects: (data.agenda_items || []).concat(projects),
+      state: this.$options.cardData.parlaState,
+      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      headerConfig: defaultHeaderConfig(this),
+      ogConfig: defaultOgImage(this),
+      coalitionOpositionParties,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
+      vote,
     };
   },
   computed: {
@@ -363,6 +430,19 @@ export default {
       }
     }
 
+    .parlaicon-unknown {
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include respond-to(desktop) {
+        width: 29px;
+        height: 29px;
+      }
+    }
+
     .text {
       color: $font-default;
       font-size: 14px;
@@ -493,6 +573,26 @@ export default {
   .tooltip {
     max-width: 100%;
     width: 90%;
+  }
+}
+
+.session_voting {
+  padding: 0;
+
+  .session_votes {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+
+    .type {
+      font-size: 12px;
+      line-height: 20px;
+      text-transform: uppercase;
+
+      @include respond-to(mobile) {
+        font-size: 10px;
+      }
+    }
   }
 }
 </style>

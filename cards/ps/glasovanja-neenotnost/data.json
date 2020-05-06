@@ -1,119 +1,152 @@
 {
   "1": {
-    "name": "Dr\u017eavni zbor",
-    "acronym": "DZ",
-    "is_coalition": true,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": null,
+    "name": "Državni zbor",
+    "acronym": "DZ",
+    "disbanded": null,
     "type": "parliament",
-    "id": 1
+    "id": 1,
+    "is_coalition": false
   },
   "2": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Slovenska demokratska stranka",
     "acronym": "SDS",
-    "is_coalition": false,
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 2
+    "id": 2,
+    "is_coalition": true
   },
   "3": {
-    "name": "Lista Marjana \u0160arca",
-    "acronym": "LM\u0160",
-    "is_coalition": true,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": 1,
+    "name": "Lista Marjana Šarca",
+    "acronym": "LMŠ",
+    "disbanded": null,
     "type": "party",
-    "id": 3
+    "id": 3,
+    "is_coalition": false
   },
   "4": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Socialni demokrati",
     "acronym": "SD",
-    "is_coalition": true,
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 4
+    "id": 4,
+    "is_coalition": false
   },
   "5": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Stranka modernega centra",
     "acronym": "SMC",
-    "is_coalition": true,
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 5
+    "id": 5,
+    "is_coalition": true
   },
   "6": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Levica",
     "acronym": "Levica",
-    "is_coalition": false,
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 6
+    "id": 6,
+    "is_coalition": false
   },
   "7": {
-    "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
-    "acronym": "NSi",
-    "is_coalition": false,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": 1,
+    "name": "Nova Slovenija - Krščanski demokrati",
+    "acronym": "NSi",
+    "disbanded": null,
     "type": "party",
-    "id": 7
+    "id": 7,
+    "is_coalition": true
   },
   "8": {
-    "name": "Stranka Alenke Bratu\u0161ek",
-    "acronym": "SAB",
-    "is_coalition": true,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": 1,
+    "name": "Stranka Alenke Bratušek",
+    "acronym": "SAB",
+    "disbanded": null,
     "type": "party",
-    "id": 8
+    "id": 8,
+    "is_coalition": false
   },
   "9": {
-    "name": "Demokrati\u010dna stranka upokojencev Slovenije",
-    "acronym": "DESUS",
-    "is_coalition": true,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": 1,
+    "name": "Demokratična stranka upokojencev Slovenije",
+    "acronym": "DeSUS",
+    "disbanded": null,
     "type": "party",
-    "id": 9
+    "id": 9,
+    "is_coalition": true
   },
   "10": {
-    "name": "Italijanska in Mad\u017earska narodna skupnost",
-    "acronym": "IMNS",
-    "is_coalition": false,
-    "disbanded": null,
     "founded": null,
+    "parent_org_id": 1,
+    "name": "Italijanska in madžarska narodna skupnost",
+    "acronym": "IMNS",
+    "disbanded": null,
     "type": "party",
-    "id": 10
+    "id": 10,
+    "is_coalition": false
   },
   "11": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Slovenska nacionalna stranka",
     "acronym": "SNS",
-    "is_coalition": false,
     "disbanded": null,
-    "founded": null,
     "type": "party",
-    "id": 11
+    "id": 11,
+    "is_coalition": false
   },
   "12": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Koalicija",
     "acronym": "koal",
-    "is_coalition": true,
     "disbanded": null,
-    "founded": null,
     "type": "coalition",
-    "id": 12
+    "id": 12,
+    "is_coalition": true
   },
   "13": {
+    "founded": null,
+    "parent_org_id": 1,
     "name": "Opozicija",
     "acronym": "oppo",
-    "is_coalition": false,
     "disbanded": null,
-    "founded": null,
     "type": "opposition",
-    "id": 13
+    "id": 13,
+    "is_coalition": false
+  },
+  "114": {
+    "founded": "2020-03-13T00:00:00",
+    "parent_org_id": 1,
+    "name": "Koalicija 2",
+    "acronym": "coalition",
+    "disbanded": null,
+    "type": "coalition",
+    "id": 114,
+    "is_coalition": true
+  },
+  "115": {
+    "founded": "2018-06-22T00:00:00",
+    "parent_org_id": 1,
+    "name": "Opozicija 2",
+    "acronym": "opposition",
+    "disbanded": "2020-03-13T00:00:00",
+    "type": "opposition",
+    "id": 115,
+    "is_coalition": false
   }
 }

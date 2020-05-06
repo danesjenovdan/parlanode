@@ -6,6 +6,12 @@
   "load": "Naloži",
   "confirm": "Potrdi",
   "data-currently-unavailable": "Podatki trenutno niso na voljo.",
+  "data-not-published": {
+    "link-text": "Opozori jih tukaj!",
+    "link-url": "http://example.com/",
+    "show-of-hands": "Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.",
+    "parlamentary-questions": "Parlament ne objavlja poslanskih vprašanj in pobud."
+  },
   "search": "Išči",
   "title-search": "Išči po naslovu",
   "contents-search": "Išči po vsebini govorov",
@@ -34,6 +40,7 @@
   "vote-passed": "Sprejet",
   "vote-not-passed": "Zavrnjen",
   "vote-under-consideration": "V obravnavi",
+  "vote-unknown": "Neznano",
   "vote-result--enacted": "Sprejet",
   "vote-result--submitted": "Oddan",
   "vote-result--rejected": "Zavrnjen",

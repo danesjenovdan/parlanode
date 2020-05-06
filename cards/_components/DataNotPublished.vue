@@ -1,8 +1,8 @@
 <template>
   <div class="data-not-published">
     <div class="icon-empty-state"></div>
-    <p>{{ text }}</p>
     <p>
+      {{ text }}
       <a
         v-t="'data-not-published.link-text'"
         :href="$t('data-not-published.link-url')"
@@ -43,7 +43,6 @@ export default {
   }
 
   p {
-    margin: 0;
     text-align: center;
     font-size: 18px;
     font-style: italic;
