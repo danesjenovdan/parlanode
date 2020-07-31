@@ -25,7 +25,7 @@
 <script>
 import { find } from 'lodash';
 import common from 'mixins/common';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
+import { defaultDynamicHeaderConfig } from 'mixins/altHeaders';
 import { defaultOgImage } from 'mixins/ogImages';
 import Generator from 'components/Generator.vue';
 import BlueButtonList from 'components/BlueButtonList.vue';
@@ -106,13 +106,15 @@ export default {
   },
   computed: {
     headerConfig() {
-      return defaultHeaderConfig(this, {
-        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+      const title = this.$options.cardData.parlaState.cardTitle ? this.$options.cardData.parlaState.cardTitle : this.$t('card.title');
+      return defaultDynamicHeaderConfig(this, {
+        title: `${title} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
     ogConfig() {
+      const title = this.$options.cardData.parlaState.cardTitle ? this.$options.cardData.parlaState.cardTitle : this.$t('card.title');
       return defaultOgImage(this, {
-        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+        title: `${title} ${this.currentAnalysisData.titleSuffix}`,
       });
     },
     currentAnalysisData() {
