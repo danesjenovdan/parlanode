@@ -151,7 +151,7 @@ export default {
 
     return {
       data: this.$options.cardData.data,
-      emptyText: this.$t('empty-text'),
+      emptyText: this.$t('no-results'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
       showRelative: loadFromState('showRelative') || false,
