@@ -15,7 +15,7 @@
         <div v-t="'title-search'" class="filter-label"></div>
         <input v-model="textFilter" class="text-filter-input" type="text">
       </div>
-      <div class="filter tag-dropdown">
+      <div v-if="allTags.length > 1" class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="allTags" />
       </div>
