@@ -58,6 +58,7 @@ export const sessionHeader = {
       const cardData = this.cardData || this.$options.cardData;
       const session = cardData.data.session || cardData.data.results.session;
       const sessionName = session.name;
+      const title = this.$options.cardData.parlaState.cardTitle ? this.$options.cardData.parlaState.cardTitle : this.$t('card.title');
 
       let imageName = 'seja-redna';
       if (sessionName.indexOf('izredna') !== -1) {
@@ -71,7 +72,7 @@ export const sessionHeader = {
         heading: sessionName,
         subheading: session.date,
         alternative: cardData.cardData.altHeader === 'true',
-        title: this.$t('card.title'),
+        title,
       };
     },
   },

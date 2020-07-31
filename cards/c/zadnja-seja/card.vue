@@ -23,6 +23,7 @@
       <p v-t="'info.votes-text'" class="info-text"></p>
     </div>
 
+    <div style="font-weight:500;font-size:16px;">{{ data.session.name }}</div>
     <div class="smalldate">{{ data.session.date }}</div>
     <hr>
     <div class="link">
