@@ -24,9 +24,9 @@ async function loadCardJson(cacheData) {
 }
 
 async function fetchData(dataUrl, cacheData) {
-  let dataRes;
+  let response;
   try {
-    dataRes = await axios.get(dataUrl, {
+    response = await axios.get(dataUrl, {
       headers: {
         'X-Parlameter-Card-Path': `${cacheData.group}/${cacheData.method}`,
         'X-Parlameter-Card-ID': cacheData.id != null ? cacheData.id : '',
@@ -36,10 +36,8 @@ async function fetchData(dataUrl, cacheData) {
   } catch (err) {
     throw new Error(`${err.message} (${dataUrl})`);
   }
-  if (typeof dataRes.data !== 'object') {
-    throw new Error(`Request did not return JSON (${dataUrl})`);
-  }
-  return dataRes.data;
+  let data = typeof response.data !== 'object' ? { __raw_data: String(response.data) } : response.data;
+  return { __status: response.status, ...data };
 }
 
 async function loadBundles(cacheData) {
