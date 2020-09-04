@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
     :content-class="contentClass"
@@ -24,7 +24,7 @@ export default {
     common,
   ],
   data() {
-    const state = this.$options.cardData.parlaState;
+    const state = this.$root.$options.cardData.parlaState;
     const title = state.title || this.$t('card.title');
     const message = state.message || '';
     const height = state.height || 1;
@@ -41,7 +41,7 @@ export default {
     };
   },
   beforeCreate() {
-    const state = this.$options.cardData.parlaState;
+    const state = this.$root.$options.cardData.parlaState;
     const width = state.width || 1;
     this.$root.$options.cardData.cardData.big = width === 2;
   },

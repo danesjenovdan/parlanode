@@ -1,6 +1,6 @@
 <template>
   <govori
-    :card-data="$options.cardData"
+    :card-data="$root.$options.cardData"
     :party="party"
     type="party"
   />
@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     party() {
-      const { data } = this.$options.cardData;
+      const { data } = this.$root.$options.cardData;
       if (data.party) {
         return data.party;
       }

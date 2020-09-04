@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -114,16 +114,16 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
     };
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.results.speech_id}?altHeader=true`;
+      return `${this.url}${this.$root.$options.cardData.data.results.speech_id}?altHeader=true`;
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(this.data.results);
+    this.$root.$options.cardData.template.contextUrl = this.getSessionSpeechLink(this.data.results);
   },
 };
 </script>

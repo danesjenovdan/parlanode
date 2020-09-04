@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator" class="session-list-generator legislation-list">
         <div v-if="filters.length > 1" class="row">
@@ -84,7 +84,7 @@ export default {
   mixins: [common],
   data() {
     // get all working bodies from result data
-    let allWorkingBodies = this.$options.cardData.data.results
+    let allWorkingBodies = this.$root.$options.cardData.data.results
       .map(x => x.mdt)
       .filter(x => x.id > 0);
     // prepare for dropdown ui component
@@ -98,12 +98,12 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const state = this.$options.cardData.parlaState || {};
+    const state = this.$root.$options.cardData.parlaState || {};
 
-    const tabs = this.$options.cardData.cardGlobals.legislation_tabs;
+    const tabs = this.$root.$options.cardData.cardGlobals.legislation_tabs;
     return {
       tabs,
-      data: this.$options.cardData.data.results,
+      data: this.$root.$options.cardData.data.results,
       filters: tabs.map(e => ({ id: e.title, label: e.title })),
       currentFilter: state.type || (state.generator ? tabs[0].title : null),
       currentSort: 'updated',

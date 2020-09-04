@@ -1,8 +1,8 @@
 <template>
   <style-scores
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.party"
-    :results="$options.cardData.data.results"
+    :card-data="$root.$options.cardData"
+    :party="$root.$options.cardData.data.party"
+    :results="$root.$options.cardData.data.results"
     type="party"
   >
     <div slot="info">
@@ -70,7 +70,7 @@ export default {
     links,
   ],
   created() {
-    const { template, data } = this.$options.cardData;
+    const { template, data } = this.$root.$options.cardData;
     template.contextUrl = this.getPartyLink(data.party);
   },
 };

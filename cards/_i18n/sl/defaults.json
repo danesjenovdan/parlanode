@@ -9,6 +9,7 @@
   "data-not-published": {
     "link-text": "Opozori jih tukaj!",
     "link-url": "http://example.com/",
+    "data-not-available": "Parlament teh podatkov ne objavlja.",
     "show-of-hands": "Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.",
     "parlamentary-questions": "Parlament ne objavlja poslanskih vprašanj in pobud."
   },
@@ -196,4 +197,3 @@
   },
   "ogText": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru."
 }
-

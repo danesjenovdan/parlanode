@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator" class="party-list-generator">
         <div class="row">
@@ -94,8 +94,8 @@ export default {
     }));
 
     return {
-      data: this.$options.cardData.data.data,
-      currentAnalysis: this.$options.cardData.parlaState.analysis || 'seat_count',
+      data: this.$root.$options.cardData.data.data,
+      currentAnalysis: this.$root.$options.cardData.parlaState.analysis || 'seat_count',
       analyses,
     };
   },

@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="discord" />
@@ -179,8 +179,8 @@ export default {
     links,
   ],
   data() {
-    const data = Object.keys(this.$options.cardData.data).map((key) => {
-      const obj = this.$options.cardData.data[key];
+    const data = Object.keys(this.$root.$options.cardData.data).map((key) => {
+      const obj = this.$root.$options.cardData.data[key];
       return {
         id: Number(key),
         ...obj,
@@ -229,7 +229,7 @@ export default {
       selectedGroup: groups[0].acronym,
       groups,
       allClassifications: [],
-      cardData: this.$options.cardData,
+      cardData: this.$root.$options.cardData,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
     };
@@ -314,7 +314,7 @@ export default {
     this.fetchVotesForGroup(this.groups[0].acronym);
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
+    const { template, siteMap: sm } = this.$root.$options.cardData;
     template.pageTitle = this.dynamicTitle;
     template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
   },

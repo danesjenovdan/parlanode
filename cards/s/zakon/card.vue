@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -24,7 +24,7 @@
         <i :class="`parlaicon vote-result--${result}`"></i>
         <div v-t="`vote-result--${result}`" class="text"></div>
       </div>
-      <div class="law-title">{{ $options.cardData.data.text }}</div>
+      <div class="law-title">{{ $root.$options.cardData.data.text }}</div>
       <result
         v-if="finalVoteExists"
         :score="finalVoteResult.value / numberOfVotes * 100"
@@ -87,7 +87,7 @@ export default {
     links,
   ],
   data() {
-    const documents = this.$options.cardData.data.votes.reduce((prev, cur) => {
+    const documents = this.$root.$options.cardData.data.votes.reduce((prev, cur) => {
       if (cur.documents) {
         cur.documents.forEach((document) => { // TODO fix after data is fixed
           prev.push(document);
@@ -95,20 +95,20 @@ export default {
       }
       return prev;
     }, []);
-    const title = this.$options.cardData.parlaState.fullName
-      ? `${this.$options.cardData.data.text.slice(0, 100)}...`
+    const title = this.$root.$options.cardData.parlaState.fullName
+      ? `${this.$root.$options.cardData.data.text.slice(0, 100)}...`
       : 'Zakon';
 
     // TODO: i18n
     // did we have "glasovanje o zakonu v celoti"
-    const finalVoteExists = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1).length > 0;
+    const finalVoteExists = this.$root.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1).length > 0;
 
     let finalVoteData;
     let finalVoteResult;
     let numberOfVotes;
     if (finalVoteExists) {
       // TODO: i18n
-      const filteredVote = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1)[0];
+      const filteredVote = this.$root.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1)[0];
       const vote = {
         for: filteredVote.for,
         against: filteredVote.against,
@@ -134,12 +134,12 @@ export default {
     }
 
     let startTab = 0;
-    if (this.$options.cardData.parlaState.selectedTab) {
-      startTab = this.$options.cardData.parlaState.selectedTab;
+    if (this.$root.$options.cardData.parlaState.selectedTab) {
+      startTab = this.$root.$options.cardData.parlaState.selectedTab;
     }
 
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       documents,
       headerConfig: defaultHeaderConfig(this, { title }),
       ogConfig: defaultOgImage(this, { title }),
@@ -172,7 +172,7 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getLegislationLink(this.data);
+    this.$root.$options.cardData.template.contextUrl = this.getLegislationLink(this.data);
   },
 };
 </script>

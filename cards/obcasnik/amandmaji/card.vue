@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -56,7 +56,7 @@ export default {
   mixins: [common],
   data() {
     return {
-      data: this.$options.cardData.data.data,
+      data: this.$root.$options.cardData.data.data,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
       generatedCardUrl: `${this.url}?customUrl=https%3A%2F%2Fcdn.parlameter.si%2Fv1%2Fdata%2Famandmaji.json`,

@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="compass" />
@@ -54,7 +54,7 @@ export default {
   mixins: [common, links],
 
   data() {
-    const kompasData = this.$options.cardData.data.data;
+    const kompasData = this.$root.$options.cardData.data.data;
     const margin = {
       top: 50,
       right: 300,
@@ -123,13 +123,13 @@ export default {
       items: group.map(p => p.person.id),
     })));
 
-    const parlaState = this.$options.cardData.parlaState;
+    const parlaState = this.$root.$options.cardData.parlaState;
     const state = parlaState.people && parlaState.parties
       ? parlaState
       : { people: [], parties: [] };
 
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       headerConfig: defaultHeaderConfig(this, { circleIcon: 'og-kompas' }),
       ogConfig: defaultOgImage(this, { icon: 'og-kompas' }),
       margin,
@@ -169,7 +169,7 @@ export default {
   },
 
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
+    const { template, siteMap: sm } = this.$root.$options.cardData;
     template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.compass}`;
   },
 

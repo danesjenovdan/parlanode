@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -48,7 +48,7 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data
+      data: this.$root.$options.cardData.data
         .filter(person => person.mandates > 3)
         .sort((a, b) => b.mandates - a.mandates),
       headerConfig: defaultHeaderConfig(this),

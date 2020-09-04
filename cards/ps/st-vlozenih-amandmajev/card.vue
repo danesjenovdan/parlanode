@@ -1,8 +1,8 @@
 <template>
   <score-avg-max
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.organization"
-    :results="$options.cardData.data.result"
+    :card-data="$root.$options.cardData"
+    :party="$root.$options.cardData.data.organization"
+    :results="$root.$options.cardData.data.result"
     type="party"
   >
     <div slot="info">

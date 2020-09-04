@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
     content-class="full"
@@ -22,7 +22,7 @@ export default {
     common,
   ],
   data() {
-    const state = this.$options.cardData.parlaState;
+    const state = this.$root.$options.cardData.parlaState;
     const title = state.title || this.$t('card.title');
 
     return {

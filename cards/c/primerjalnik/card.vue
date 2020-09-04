@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="voteComparator" />
@@ -216,17 +216,17 @@ export default {
   ],
   data() {
     return {
-      parentOrgId: this.$options.cardData.data.parent_org_id,
+      parentOrgId: this.$root.$options.cardData.data.parent_org_id,
       loading: true,
       parties: [],
       samePeople: [],
       differentPeople: [],
-      special: !!this.$options.cardData.parlaState.special,
+      special: !!this.$root.$options.cardData.parlaState.special,
       data: [],
       total: 0,
       sameModalVisible: false,
       differentModalVisible: false,
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      selectedTab: this.$root.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultDynamicHeaderConfig(this, { circleIcon: 'primerjalnik' }),
       ogConfig: defaultOgImage(this, { icon: 'primerjalnik' }),
     };
@@ -338,10 +338,10 @@ export default {
   mounted() {
     const self = this;
     // used to be PGPromise
-    const sameParties = this.$options.cardData.parlaState.sameParties || [];
-    const differentParties = this.$options.cardData.parlaState.differentParties || [];
+    const sameParties = this.$root.$options.cardData.parlaState.sameParties || [];
+    const differentParties = this.$root.$options.cardData.parlaState.differentParties || [];
 
-    this.parties = this.generateParties(this.$options.cardData.data)
+    this.parties = this.generateParties(this.$root.$options.cardData.data)
       .map(party => ({
         id: party.properId,
         acronym: party.acronym,
@@ -352,17 +352,17 @@ export default {
       }));
 
     // used to be peoplePromise
-    const samePeople = this.$options.cardData.parlaState.samePeople || [];
-    const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
+    const samePeople = this.$root.$options.cardData.parlaState.samePeople || [];
+    const differentPeople = this.$root.$options.cardData.parlaState.differentPeople || [];
 
-    this.samePeople = this.generatePeople(this.$options.cardData.data)
+    this.samePeople = this.generatePeople(this.$root.$options.cardData.data)
       .map(person => ({
         selected: samePeople.indexOf(person.id) > -1,
         label: person.label,
         id: person.id,
         image: person.image,
       }));
-    self.differentPeople = this.generatePeople(this.$options.cardData.data)
+    self.differentPeople = this.generatePeople(this.$root.$options.cardData.data)
       .map(person => ({
         selected: differentPeople.indexOf(person.id) > -1,
         label: person.label,
@@ -375,8 +375,8 @@ export default {
     //   url: `${this.slugs.urls.data}/getAllPGs/`,
     //   method: 'GET',
     //   success: (data) => {
-    //     const sameParties = this.$options.cardData.parlaState.sameParties || [];
-    //     const differentParties = this.$options.cardData.parlaState.differentParties || [];
+    //     const sameParties = this.$root.$options.cardData.parlaState.sameParties || [];
+    //     const differentParties = this.$root.$options.cardData.parlaState.differentParties || [];
     //     self.parties = Object.keys(data).map(partyId => ({
     //       id: data[partyId].id,
     //       acronym: data[partyId].acronym,
@@ -395,8 +395,8 @@ export default {
     //   url: `${this.slugs.urls.data}/getMPs/`,
     //   method: 'GET',
     //   success: (data) => {
-    //     const samePeople = this.$options.cardData.parlaState.samePeople || [];
-    //     const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
+    //     const samePeople = this.$root.$options.cardData.parlaState.samePeople || [];
+    //     const differentPeople = this.$root.$options.cardData.parlaState.differentPeople || [];
     //     const sameData = JSON.parse(JSON.stringify(data));
     //     self.samePeople = sameData.map(person => ({
     //       selected: samePeople.indexOf(person.id) > -1,
@@ -426,7 +426,7 @@ export default {
     // });
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
+    const { template, siteMap: sm } = this.$root.$options.cardData;
     template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.voteComparator}`;
   },
   methods: {

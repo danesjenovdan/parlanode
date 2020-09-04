@@ -22,7 +22,7 @@
     </div>
 
     <data-not-published
-      v-if="showEmptyState"
+      v-if="false"
       :text="$t('data-not-published.parlamentary-questions')"
     />
     <template v-else>

@@ -3,7 +3,7 @@ import { assign } from 'lodash';
 export const memberHeader = {
   computed: {
     headerConfig() {
-      const cardData = this.cardData || this.$options.cardData;
+      const cardData = this.cardData || this.$root.$options.cardData;
       const person = this.person || this.data.person;
       const coalitionText = person.party.is_coalition ? this.$t('coalition') : this.$t('opposition');
 
@@ -21,7 +21,7 @@ export const memberHeader = {
 export const partyHeader = {
   computed: {
     headerConfig() {
-      const cardData = this.cardData || this.$options.cardData;
+      const cardData = this.cardData || this.$root.$options.cardData;
       const party = this.party || this.data.party;
       const coalitionText = party.is_coalition ? this.$t('coalition') : this.$t('opposition');
 
@@ -45,7 +45,7 @@ export const searchHeader = {
         circleIcon: 'og-search',
         heading: this.keywords,
         subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        alternative: this.$root.$options.cardData.cardData.altHeader === 'true',
         title: this.$t('card.title'),
       };
     },
@@ -55,7 +55,7 @@ export const searchHeader = {
 export const sessionHeader = {
   computed: {
     headerConfig() {
-      const cardData = this.cardData || this.$options.cardData;
+      const cardData = this.cardData || this.$root.$options.cardData;
       const session = cardData.data.session || cardData.data.results.session;
       const sessionName = session.name;
 
@@ -82,7 +82,7 @@ export const defaultHeaderConfig = (comp, overrides = {}) => {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
-    alternative: comp.$options.cardData.cardData.altHeader === 'true',
+    alternative: comp.$root.$options.cardData.cardData.altHeader === 'true',
     title: comp.$t('card.title'),
   };
 
@@ -94,8 +94,8 @@ export const defaultDynamicHeaderConfig = (comp, overrides = {}) => {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
-    alternative: comp.$options.cardData.cardData.altHeader === 'true',
-    title: comp.$options.cardData.parlaState.cardTitle ? comp.$options.cardData.parlaState.cardTitle : comp.$t('card.title'),
+    alternative: comp.$root.$options.cardData.cardData.altHeader === 'true',
+    title: comp.$root.$options.cardData.parlaState.cardTitle ? comp.$root.$options.cardData.parlaState.cardTitle : comp.$t('card.title'),
   };
 
   return assign({}, headerConfig, overrides);

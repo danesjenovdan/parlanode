@@ -92,13 +92,13 @@ export default {
     },
     translationKey() {
       if (this.event.type === 'question') {
-        return `question.asked--${this.$root.data.person.gender}`;
+        return `question.asked--${this.$root.$options.cardData.data.person.gender}`;
       }
       if (this.event.type === 'ballot') {
-        return `event.ballot--${this.event.option}--${this.$root.data.person.gender}`;
+        return `event.ballot--${this.event.option}--${this.$root.$options.cardData.data.person.gender}`;
       }
       if (this.event.type === 'speech') {
-        return `event.speech--${this.$root.data.person.gender}`;
+        return `event.speech--${this.$root.$options.cardData.data.person.gender}`;
       }
       return '';
     },

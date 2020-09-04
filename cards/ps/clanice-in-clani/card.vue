@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -45,7 +45,7 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
     };
   },
   computed: {

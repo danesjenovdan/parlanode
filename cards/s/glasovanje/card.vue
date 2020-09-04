@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -232,7 +232,7 @@ export default {
     links,
   ],
   data() {
-    const data = this.$options.cardData.data;
+    const data = this.$root.$options.cardData.data;
 
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(data.name);
@@ -286,8 +286,8 @@ export default {
       data,
       title,
       projects: (data.agenda_items || []).concat(projects),
-      state: this.$options.cardData.parlaState,
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      state: this.$root.$options.cardData.parlaState,
+      selectedTab: this.$root.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
       coalitionOpositionParties,
@@ -316,7 +316,7 @@ export default {
   },
   // glasovanje-update je bilo prazno, created() je iz developa
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionVoteLink({
+    this.$root.$options.cardData.template.contextUrl = this.getSessionVoteLink({
       session_id: this.data.session.id,
       vote_id: this.data.id,
     });

@@ -1,8 +1,8 @@
 <template>
   <style-scores
-    :card-data="$options.cardData"
-    :person="$options.cardData.data.person"
-    :results="$options.cardData.data.results"
+    :card-data="$root.$options.cardData"
+    :person="$root.$options.cardData.data.person"
+    :results="$root.$options.cardData.data.results"
     type="person"
   >
     <div slot="info">
@@ -70,7 +70,7 @@ export default {
     links,
   ],
   created() {
-    const { template, data } = this.$options.cardData;
+    const { template, data } = this.$root.$options.cardData;
     template.contextUrl = this.getPersonLink(data.person);
   },
 };

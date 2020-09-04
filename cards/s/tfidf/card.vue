@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -48,7 +48,7 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
     };
   },
   computed: {
@@ -80,11 +80,11 @@ export default {
       return this.chartRows.slice(5, 10);
     },
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.session.id}?altHeader=true`;
+      return `${this.url}${this.$root.$options.cardData.data.session.id}?altHeader=true`;
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
+    this.$root.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
   },
   methods: {
     decodeHTML(html) {

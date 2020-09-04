@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="wordGroups" />
@@ -147,10 +147,10 @@ export default {
     links,
   ],
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+    const loadFromState = stateLoader(this.$root.$options.cardData.parlaState);
 
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
@@ -189,7 +189,7 @@ export default {
     },
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
+    const { template, siteMap: sm } = this.$root.$options.cardData;
     template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.wordGroups}`;
   },
   mounted() {

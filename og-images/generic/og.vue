@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      params: this.$options.context.params,
+      params: this.$root.$options.context.params,
     };
   },
 };

@@ -51,7 +51,7 @@ export const searchOgImage = {
 export const sessionOgImage = {
   computed: {
     ogConfig() {
-      const cardData = this.cardData || this.$options.cardData;
+      const cardData = this.cardData || this.$root.$options.cardData;
       const session = cardData.data.session || cardData.data.results.session;
       const sessionName = session.name;
 

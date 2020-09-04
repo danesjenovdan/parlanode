@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.mountId">
+    <dash-wrapper :id="$root.$options.cardData.mountId">
       <div id="dash-votings-list">
         <h4 v-if="session">{{ session.name }}</h4>
         <div v-if="votings != null" class="filters">
@@ -156,7 +156,7 @@ export default {
   ],
   data() {
     return {
-      sessionId: this.$options.cardData.parlaState && this.$options.cardData.parlaState.session,
+      sessionId: this.$root.$options.cardData.parlaState && this.$root.$options.cardData.parlaState.session,
       votings: null,
       motions: null,
       tags: null,

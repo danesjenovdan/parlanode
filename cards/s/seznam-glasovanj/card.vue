@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -77,14 +77,14 @@ export default {
     links,
   ],
   data() {
-    const state = this.$options.cardData.parlaState;
+    const state = this.$root.$options.cardData.parlaState;
     const text = state && state.text ? state.text : '';
     const tags = state && state.tags ? state.tags : [];
     const classifications = state && state.classifications ? state.classifications : [];
     const results = state && state.results ? state.results : [];
 
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       filters: {
         text,
         tags,
@@ -109,7 +109,7 @@ export default {
       if (this.filters.results.length) {
         state.results = this.filters.results;
       }
-      if (this.$options.cardData.parlaState && this.$options.cardData.parlaState.onlyOther) {
+      if (this.$root.$options.cardData.parlaState && this.$root.$options.cardData.parlaState.onlyOther) {
         state.onlyOther = true;
       }
 
@@ -117,7 +117,7 @@ export default {
     },
     votes() {
       let votes = this.data.results.map(v => v.results);
-      if (this.$options.cardData.parlaState && this.$options.cardData.parlaState.onlyOther) {
+      if (this.$root.$options.cardData.parlaState && this.$root.$options.cardData.parlaState.onlyOther) {
         votes = votes.filter(vote => !vote.epa);
       }
       return {
@@ -129,7 +129,7 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionVotesLink(this.data.session);
+    this.$root.$options.cardData.template.contextUrl = this.getSessionVotesLink(this.data.session);
   },
   methods: {
     onFiltersChanged(newFilters) {

@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -205,25 +205,25 @@ export default {
     generateMonths,
   ],
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+    const loadFromState = stateLoader(this.$root.$options.cardData.parlaState);
 
     const voteTypes = [
       { id: true, color: 'binary-for', label: this.$t('accepted'), selected: false },
       { id: false, color: 'binary-against', label: this.$t('rejected'), selected: false },
     ];
 
-    const votingDays = this.$options.cardData.data.results.map(votingDay => ({
+    const votingDays = this.$root.$options.cardData.data.results.map(votingDay => ({
       date: votingDay.date,
       results: votingDay.votes.map(vote => voteMapper(vote, this.getSessionVoteLink)),
     }));
 
-    const allTags = this.$options.cardData.data.all_tags
+    const allTags = this.$root.$options.cardData.data.all_tags
       .map(tag => ({ id: tag, label: tag, selected: false }));
 
     const allMonths = this.generateMonths(this.$t('months'));
 
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       textFilter: loadFromState('text') || '',
       votingDays,
       allTags: loadFromState('tags', allTags) || allTags,

@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator" class="party-list-generator">
         <div class="row">
@@ -140,10 +140,10 @@ export default {
     common,
   ],
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+    const loadFromState = stateLoader(this.$root.$options.cardData.parlaState);
 
     const selectedDistrictIds = loadFromState('districts') || [];
-    const districts = this.$options.cardData.data.districts
+    const districts = this.$root.$options.cardData.data.districts
       .map((district) => {
         const id = Object.keys(district)[0];
         return {
@@ -166,7 +166,7 @@ export default {
     }));
 
     return {
-      memberData: this.$options.cardData.data.data,
+      memberData: this.$root.$options.cardData.data.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
       currentSort: loadFromState('sort') || 'name',
       currentSortOrder: loadFromState('sortOrder') || 'asc',

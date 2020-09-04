@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import _ from 'lodash';
 /* eslint-disable import/no-unresolved */
+import OuterCardWrapper from 'components/Card/OuterWrapper.vue';
 import Card from 'cardPath/card.vue';
 import i18nDefault from 'i18n/defaults.json';
 import i18nCard from 'i18n/card.json';
@@ -46,6 +47,13 @@ export default (context) => {
   // context.state is passed to the client
   context.state = clientContext;
 
-  const app = new Vue(_.assign({}, Card, serverContext));
+  const app = new Vue({
+    render(h) {
+      return h(OuterCardWrapper, [
+        h(Card),
+      ]);
+    },
+    ...serverContext,
+  });
   return new Promise(resolve => resolve(app));
 };

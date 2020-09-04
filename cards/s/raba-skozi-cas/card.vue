@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :content-class="['full', {'is-loading': loading}]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
@@ -52,7 +52,7 @@ export default {
     searchContext,
   ],
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+    const loadFromState = stateLoader(this.$root.$options.cardData.parlaState);
     return {
       data: null,
       keywords: loadFromState('query'),

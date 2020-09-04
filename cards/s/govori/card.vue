@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -140,9 +140,9 @@ export default {
     sessionOgImage,
   ],
   data() {
-    const data = this.$options.cardData.data;
+    const data = this.$root.$options.cardData.data;
 
-    const state = this.$options.cardData.parlaState;
+    const state = this.$root.$options.cardData.parlaState;
     let page = (state && state.page) || Number(data.page);
     page = Math.min(Math.max(page, 0), data.pages);
 
@@ -174,7 +174,7 @@ export default {
     }
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
+    this.$root.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
   },
   methods: {
     onPageChange(newPage) {

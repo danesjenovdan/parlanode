@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="fullUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -38,14 +38,14 @@ export default {
   mixins: [common],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       headerConfig: {
         // TODO: fix this when developing card
         // best if you include a mixin from 'mixins/altHeaders'
         circleIcon: 'og-list',
         heading: '&nbsp;',
         subheading: '',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        alternative: this.$root.$options.cardData.cardData.altHeader === 'true',
         title: this.$t('card.title'),
       },
       ogConfig: {

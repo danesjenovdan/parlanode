@@ -1,8 +1,8 @@
 <template>
   <score-avg-max
-    :card-data="$options.cardData"
-    :person="$options.cardData.data.person"
-    :results="$options.cardData.data.results"
+    :card-data="$root.$options.cardData"
+    :person="$root.$options.cardData.data.person"
+    :results="$root.$options.cardData.data.results"
     type="person"
     context="speeches"
   >

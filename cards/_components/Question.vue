@@ -54,8 +54,9 @@ export default {
       if (this.authors.length > 1) {
         return `question.asked${this.showAuthor ? '--with-name' : ''}--plural`;
       }
+      const data = this.$root.$options.cardData.data;
       const gender = (this.authors[0] && this.authors[0].gender)
-        || (this.$root.data && this.$root.data.person && this.$root.data.person.gender);
+        || (data && data.person && data.person.gender);
       return `question.asked${this.showAuthor ? '--with-name' : ''}--${gender}`;
     },
   },

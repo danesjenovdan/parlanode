@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -131,11 +131,11 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       mostDiscussedLoading: true,
       mostDiscussed: [],
-      state: this.$options.cardData.parlaState || {},
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      state: this.$root.$options.cardData.parlaState || {},
+      selectedTab: this.$root.$options.cardData.parlaState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };

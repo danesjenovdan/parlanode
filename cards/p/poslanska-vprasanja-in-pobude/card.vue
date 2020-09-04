@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -20,7 +20,7 @@
       </i18n>
     </div>
     <data-not-published
-      v-if="showEmptyState"
+      v-if="false"
       :text="$t('data-not-published.parlamentary-questions')"
     />
     <question-list v-else :question-days="data.results" />
@@ -51,7 +51,7 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
     };
   },
   computed: {

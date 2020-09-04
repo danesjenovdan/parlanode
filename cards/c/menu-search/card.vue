@@ -1,6 +1,6 @@
 <template>
   <transparent-wrapper
-    :id="`${$options.cardData.mountId}`"
+    :id="`${$root.$options.cardData.mountId}`"
     :card-url="url"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -35,7 +35,7 @@ export default {
   ],
   data() {
     const grouped = this.groupBy(
-      this.$options.cardData.data.data,
+      this.$root.$options.cardData.data.data,
       item => [item.person.party.acronym],
     );
 
@@ -58,7 +58,7 @@ export default {
       colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
     }));
 
-    const people = this.$options.cardData.data.data.map(p => ({
+    const people = this.$root.$options.cardData.data.data.map(p => ({
       id: p.person.id,
       label: p.person.name,
       selected: false,
@@ -71,8 +71,8 @@ export default {
       groups,
       people,
       parties,
-      data: this.$options.cardData.data,
-      filter: this.$options.cardData.parlaState ? (this.$options.cardData.parlaState.query || '') : '',
+      data: this.$root.$options.cardData.data,
+      filter: this.$root.$options.cardData.parlaState ? (this.$root.$options.cardData.parlaState.query || '') : '',
     };
   },
   computed: {
@@ -93,11 +93,11 @@ export default {
     selectCallback(id) {
       if (parseInt(id, 10)) {
         // it's a person
-        document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.member.base}/${this.slugs.person[id].slug}`;
+        document.location.href = `${this.slugs.urls.base}/${this.$root.$options.cardData.siteMap.member.base}/${this.slugs.person[id].slug}`;
       } else {
         // it's a party
         const partyId = this.groups.filter(group => group.acronym === id)[0].id;
-        document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.party.base}/${this.slugs.party[partyId].acronym}`;
+        document.location.href = `${this.slugs.urls.base}/${this.$root.$options.cardData.siteMap.party.base}/${this.slugs.party[partyId].acronym}`;
       }
     },
     searchCallback(term) {

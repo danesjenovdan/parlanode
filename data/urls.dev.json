@@ -1,202 +1,472 @@
 {
   "person": {
-    "1544": { "slug": "ivan-klarin" },
-    "1557": { "slug": "mira-pekec-knezevic" },
-    "1570": { "slug": "emil-daus" },
-    "1576": { "slug": "ante-plazonic" },
-    "1587": { "slug": "vladimira-palfi-sincic" },
-    "1588": { "slug": "damjan-vucelic" },
-    "1589": { "slug": "snjezana-sabolek" },
-    "1590": { "slug": "vinko-grgic" },
-    "1595": { "slug": "marija-mackovic" },
-    "1605": { "slug": "drazen-srpak" },
-    "1243": { "slug": "goran-aleksic" },
-    "1244": { "slug": "tulio-demetlika" },
-    "1245": { "slug": "slaven-dobrovic" },
-    "1246": { "slug": "darinko-dumbovic" },
-    "1247": { "slug": "sasa-dujic" },
-    "1248": { "slug": "pero-cosic" },
-    "1249": { "slug": "bruna-esih" },
-    "1250": { "slug": "stevo-culej" },
-    "1251": { "slug": "sonja-cikotic" },
-    "1252": { "slug": "josip-dakic" },
-    "1253": { "slug": "igor-dragovan" },
-    "1254": { "slug": "goran-dodig" },
-    "1255": { "slug": "mato-cicak" },
-    "1256": { "slug": "stjepan-curaj" },
-    "1257": { "slug": "branimir-bunjac" },
-    "1258": { "slug": "ivan-celic" },
-    "1259": { "slug": "marko-vucetic" },
-    "1260": { "slug": "hrvoje-zekanovic" },
-    "1261": { "slug": "tomislav-zagar" },
-    "1262": { "slug": "mihael-zmajlovic" },
-    "1263": { "slug": "sinisa-varga" },
-    "1264": { "slug": "davor-vlaovic" },
-    "1265": { "slug": "franko-vidovic" },
-    "1266": { "slug": "kazimir-varda" },
-    "1267": { "slug": "miroslav-tudman" },
-    "1268": { "slug": "marko-vesligaj" },
-    "1269": { "slug": "ivan-suker" },
-    "1270": { "slug": "damir-tomic" },
-    "1271": { "slug": "bernarda-topolko" },
-    "1272": { "slug": "miro-totgergeli" },
-    "1273": { "slug": "zarko-tusek" },
-    "1274": { "slug": "nada-turina-duric" },
-    "1275": { "slug": "marin-skibola" },
-    "1276": { "slug": "petar-skoric" },
-    "1277": { "slug": "giovanni-sponza" },
-    "1278": { "slug": "marko-simic" },
-    "1279": { "slug": "ivan-sipic" },
-    "1280": { "slug": "andelko-stricak" },
-    "1281": { "slug": "stipo-sapina" },
-    "1282": { "slug": "davor-ivo-stier" },
-    "1283": { "slug": "nenad-stazic" },
-    "1284": { "slug": "hrvoje-runtic" },
-    "1285": { "slug": "ines-strenja-linic" },
-    "1286": { "slug": "ante-sanader" },
-    "1287": { "slug": "tomislav-saucha" },
-    "1288": { "slug": "ivan-vilibor-sincic" },
-    "1289": { "slug": "marko-sladoljev" },
-    "1290": { "slug": "tomislav-sokol" },
-    "1291": { "slug": "zeljko-reiner" },
-    "1292": { "slug": "milorad-pupovac" },
-    "1293": { "slug": "zdravko-ronko" },
-    "1294": { "slug": "ante-pranic" },
-    "1295": { "slug": "dragica-vranjes" },
-    "1296": { "slug": "marija-puh" },
-    "1297": { "slug": "zeljko-raguz" },
-    "1298": { "slug": "furio-radin" },
-    "1299": { "slug": "ana-marija-petin" },
-    "1300": { "slug": "alen-prelec" },
-    "1301": { "slug": "vesna-pusic" },
-    "1302": { "slug": "ivan-pernar" },
-    "1303": { "slug": "bozo-petrov" },
-    "1304": { "slug": "robert-podolnjak" },
-    "1305": { "slug": "sanja-putica" },
-    "1306": { "slug": "irena-petrijevcanin-vuksanovic" },
-    "1307": { "slug": "grozdana-peric" },
-    "1308": { "slug": "milanka-opacic" },
-    "1309": { "slug": "boris-milosevic" },
-    "1310": { "slug": "vlaho-orepic" },
-    "1311": { "slug": "domagoj-ivan-milosevic" },
-    "1312": { "slug": "ranko-ostojic" },
-    "1313": { "slug": "tomislav-panenic" },
-    "1314": { "slug": "darko-paric" },
-    "1315": { "slug": "davor-milicevic" },
-    "1316": { "slug": "orsat-miljenic" },
-    "1317": { "slug": "ivica-misic" },
-    "1318": { "slug": "ivana-nincevic-lesandric" },
-    "1319": { "slug": "mirando-mrsic" },
-    "1320": { "slug": "boris-miletic" },
-    "1321": { "slug": "domagoj-mikulic" },
-    "1322": { "slug": "anka-mrak-taritas" },
-    "1323": { "slug": "andrija-mikulic" },
-    "1324": { "slug": "ljubica-maksimcuk" },
-    "1325": { "slug": "gordan-maras" },
-    "1326": { "slug": "damir-mateljan" },
-    "1327": { "slug": "predrag-matic" },
-    "1328": { "slug": "ivan-lovrinovic" },
-    "1329": { "slug": "franjo-lucic" },
-    "1330": { "slug": "ljubica-lukacic" },
-    "1331": { "slug": "bozica-makar" },
-    "1332": { "slug": "ermina-lekaj-prljaskaj" },
-    "1333": { "slug": "zeljko-lenart" },
-    "1334": { "slug": "tomislav-liposcak" },
-    "1335": { "slug": "davor-loncar" },
-    "1336": { "slug": "marta-luc-polanc" },
-    "1337": { "slug": "bozo-ljubic" },
-    "1338": { "slug": "mladen-madjer" },
-    "1339": { "slug": "boris-lalovac" },
-    "1340": { "slug": "vlatko-kopic" },
-    "1341": { "slug": "josip-krizanic" },
-    "1342": { "slug": "marijan-kustic" },
-    "1343": { "slug": "zeljko-lackovic" },
-    "1344": { "slug": "ivan-kirin" },
-    "1345": { "slug": "mladen-karlic" },
-    "1346": { "slug": "branka-juricev-martincev" },
-    "1347": { "slug": "veljko-kajtazi" },
-    "1348": { "slug": "ana-komparic-devcic" },
-    "1349": { "slug": "stjepan-kovac" },
-    "1350": { "slug": "darinko-kosor" },
-    "1351": { "slug": "miro-kovac" },
-    "1352": { "slug": "tomislav-klaric" },
-    "1353": { "slug": "anton-kliman" },
-    "1354": { "slug": "josko-klisovic" },
-    "1355": { "slug": "zeljko-jovanovic" },
-    "1356": { "slug": "dragana-jeckov" },
-    "1357": { "slug": "marija-jelkovac" },
-    "1358": { "slug": "sinisa-hajdas-doncic" },
-    "1359": { "slug": "zeljka-josic" },
-    "1360": { "slug": "silvano-hrelja" },
-    "1361": { "slug": "romana-jerkovic" },
-    "1362": { "slug": "mario-habek" },
-    "1363": { "slug": "zlatko-hasanbegovic" },
-    "1364": { "slug": "gordan-jandrokovic" },
-    "1365": { "slug": "branko-hrg" },
-    "1366": { "slug": "robert-jankovics" },
-    "1367": { "slug": "darko-horvat" },
-    "1368": { "slug": "domagoj-hajdukovic" },
-    "1369": { "slug": "peda-grbin" },
-    "1370": { "slug": "nikola-grmoja" },
-    "1371": { "slug": "branko-grcic" },
-    "1372": { "slug": "damir-felak" },
-    "1373": { "slug": "miro-bulj" },
-    "1374": { "slug": "goran-beus-richembergh" },
-    "1375": { "slug": "vladimir-bilek" },
-    "1376": { "slug": "kreso-beljak" },
-    "1377": { "slug": "davor-bernardic" },
-    "1378": { "slug": "milijan-brkic" },
-    "1379": { "slug": "arsen-bauk" },
-    "1380": { "slug": "vesna-bedekovic" },
-    "1381": { "slug": "josip-boric" },
-    "1382": { "slug": "milorad-batinic" },
-    "1383": { "slug": "drazen-barisic" },
-    "1384": { "slug": "branimir-glavas" },
-    "1385": { "slug": "bojan-glavasevic" },
-    "1386": { "slug": "zeljko-glasnovic" },
-    "1387": { "slug": "sabina-glasovac" },
-    "1388": { "slug": "marija-alfirev" },
-    "1389": { "slug": "ante-babic" },
-    "1390": { "slug": "vedran-babic" },
-    "1391": { "slug": "ante-bacic" },
-    "1392": { "slug": "marijana-balic" },
-    "1393": { "slug": "branko-bacic" },
-    "1394": { "slug": "ljubica-ambrusec" },
-    "1395": { "slug": "ivan-anusic" },
-    "1396": { "slug": "blazenko-boban" },
-    "1397": { "slug": "drazen-bosnjakovic" },
-    "1398": { "slug": "majda-buric" },
-    "1399": { "slug": "mato-frankovic" },
-    "1400": { "slug": "mile-horvat" },
-    "1401": { "slug": "damir-jelic" },
-    "1402": { "slug": "maro-kristic" },
-    "1403": { "slug": "andro-krstulovic-opara" },
-    "1404": { "slug": "jasen-mesic" },
-    "1405": { "slug": "darko-milinovic" },
-    "1406": { "slug": "drago-prgomet" },
-    "1407": { "slug": "davor-romic" },
-    "1409": { "slug": "miroslav-simic" },
-    "1412": { "slug": "josip-salapic" },
-    "1413": { "slug": "ivan-vrdoljak" },
-    "1414": { "slug": "nikolina-babic" },
-    "1415": { "slug": "tomislav-coric" },
-    "1416": { "slug": "natko-felbar" },
-    "1417": { "slug": "josip-katalinic" },
-    "1418": { "slug": "ivan-kovacic" },
-    "1419": { "slug": "damir-krsticevic" },
-    "1420": { "slug": "milan-kujundzic" },
-    "1421": { "slug": "sanda-kulic-makar" },
-    "1422": { "slug": "goran-maric" },
-    "1423": { "slug": "drazen-milinkovic" },
-    "1424": { "slug": "ivan-penava" },
-    "1425": { "slug": "andrej-plenkovic" },
-    "1427": { "slug": "monika-udovicic" },
-    "1428": { "slug": "martin-baricevic" },
-    "1448": { "slug": "zarko-katic" },
-    "1497": { "slug": "lovro-kuscevic" },
-    "1533": { "slug": "suncana-glavak" }
+    "1": {
+      "slug": "ante-kujundzic"
+    },
+    "2": {
+      "slug": "nikola-grmoja"
+    },
+    "3": {
+      "slug": "marija-selak-raspudic"
+    },
+    "4": {
+      "slug": "bozo-petrov"
+    },
+    "5": {
+      "slug": "nino-raspudic"
+    },
+    "6": {
+      "slug": "daniel-spajic"
+    },
+    "7": {
+      "slug": "marin-miletic"
+    },
+    "8": {
+      "slug": "zvonimir-troskot"
+    },
+    "9": {
+      "slug": "miro-bulj"
+    },
+    "10": {
+      "slug": "dragana-jeckov"
+    },
+    "11": {
+      "slug": "katarina-peovic"
+    },
+    "12": {
+      "slug": "anja-simpraga"
+    },
+    "13": {
+      "slug": "milorad-pupovac"
+    },
+    "14": {
+      "slug": "bojan-glavasevic"
+    },
+    "15": {
+      "slug": "vilim-matula"
+    },
+    "16": {
+      "slug": "nikolina-baradic"
+    },
+    "17": {
+      "slug": "vesna-bedekovic"
+    },
+    "18": {
+      "slug": "ante-bacic"
+    },
+    "19": {
+      "slug": "danica-baricevic"
+    },
+    "20": {
+      "slug": "miro-totgergeli"
+    },
+    "21": {
+      "slug": "zeljko-lenart"
+    },
+    "22": {
+      "slug": "drazen-barisic"
+    },
+    "23": {
+      "slug": "marijana-balic"
+    },
+    "24": {
+      "slug": "josip-boric"
+    },
+    "25": {
+      "slug": "kresimir-ackar"
+    },
+    "26": {
+      "slug": "nevenko-barbaric"
+    },
+    "27": {
+      "slug": "branko-bacic"
+    },
+    "28": {
+      "slug": "silvano-hrelja"
+    },
+    "29": {
+      "slug": "branka-juricev-martincev"
+    },
+    "30": {
+      "slug": "marijan-pavlicek"
+    },
+    "31": {
+      "slug": "jure-brkan"
+    },
+    "32": {
+      "slug": "gari-cappelli"
+    },
+    "33": {
+      "slug": "ivan-celjak"
+    },
+    "34": {
+      "slug": "zdravka-busic"
+    },
+    "35": {
+      "slug": "kreso-beljak"
+    },
+    "36": {
+      "slug": "ivan-budalic"
+    },
+    "37": {
+      "slug": "drazen-bosnjakovic"
+    },
+    "38": {
+      "slug": "zeljko-sacic"
+    },
+    "39": {
+      "slug": "josip-begonja"
+    },
+    "40": {
+      "slug": "anamarija-blazevic"
+    },
+    "41": {
+      "slug": "hrvoje-zekanovic"
+    },
+    "42": {
+      "slug": "marko-milanovic-litre"
+    },
+    "43": {
+      "slug": "katarina-nemet"
+    },
+    "44": {
+      "slug": "marin-lerotic"
+    },
+    "45": {
+      "slug": "predrag-stromar"
+    },
+    "46": {
+      "slug": "damir-habijan"
+    },
+    "47": {
+      "slug": "maja-grba-bujevic"
+    },
+    "48": {
+      "slug": "mato-frankovic"
+    },
+    "49": {
+      "slug": "tulio-demetlika"
+    },
+    "50": {
+      "slug": "josip-dakic"
+    },
+    "51": {
+      "slug": "goran-dodig"
+    },
+    "52": {
+      "slug": "pero-cosic"
+    },
+    "53": {
+      "slug": "ante-deur"
+    },
+    "54": {
+      "slug": "furio-radin"
+    },
+    "55": {
+      "slug": "ermina-lekaj-prljaskaj"
+    },
+    "56": {
+      "slug": "ivan-celic"
+    },
+    "57": {
+      "slug": "veljko-kajtazi"
+    },
+    "58": {
+      "slug": "vladimir-bilek"
+    },
+    "59": {
+      "slug": "robert-jankovics"
+    },
+    "60": {
+      "slug": "ivan-kirin"
+    },
+    "61": {
+      "slug": "mladen-karlic"
+    },
+    "62": {
+      "slug": "krunoslav-katicic"
+    },
+    "63": {
+      "slug": "sinisa-jenkac"
+    },
+    "64": {
+      "slug": "gordan-jandrokovic"
+    },
+    "65": {
+      "slug": "marija-jelkovac"
+    },
+    "66": {
+      "slug": "mario-kapulica"
+    },
+    "67": {
+      "slug": "nada-murganic"
+    },
+    "68": {
+      "slug": "marin-mandaric"
+    },
+    "69": {
+      "slug": "ljubica-maksimcuk"
+    },
+    "70": {
+      "slug": "ljubica-lukacic"
+    },
+    "71": {
+      "slug": "ljubomir-kolarek"
+    },
+    "72": {
+      "slug": "anton-kliman"
+    },
+    "73": {
+      "slug": "tomislav-klaric"
+    },
+    "74": {
+      "slug": "domagoj-ivan-milosevic"
+    },
+    "75": {
+      "slug": "goran-ivanovic"
+    },
+    "76": {
+      "slug": "ante-sanader"
+    },
+    "77": {
+      "slug": "zeljko-reiner"
+    },
+    "78": {
+      "slug": "anita-pocrnic-radosevic"
+    },
+    "79": {
+      "slug": "darko-puljasic"
+    },
+    "80": {
+      "slug": "ivan-radic"
+    },
+    "81": {
+      "slug": "marijana-petir"
+    },
+    "82": {
+      "slug": "grozdana-peric"
+    },
+    "83": {
+      "slug": "miroslav-tudman"
+    },
+    "84": {
+      "slug": "josip-saric"
+    },
+    "85": {
+      "slug": "stipan-saslin"
+    },
+    "86": {
+      "slug": "hrvoje-simic"
+    },
+    "87": {
+      "slug": "marko-pavic"
+    },
+    "88": {
+      "slug": "darko-sobota"
+    },
+    "89": {
+      "slug": "andelko-stricak"
+    },
+    "90": {
+      "slug": "davor-ivo-stier"
+    },
+    "91": {
+      "slug": "rade-simicevic"
+    },
+    "92": {
+      "slug": "vinko-zulim"
+    },
+    "93": {
+      "slug": "ankica-zmaic"
+    },
+    "94": {
+      "slug": "radoje-vidovic"
+    },
+    "95": {
+      "slug": "zarko-tusek"
+    },
+    "96": {
+      "slug": "natalija-martincevic"
+    },
+    "97": {
+      "slug": "darko-klasic"
+    },
+    "98": {
+      "slug": "dario-hrebak"
+    },
+    "99": {
+      "slug": "rada-boric"
+    },
+    "100": {
+      "slug": "damir-bakic"
+    },
+    "101": {
+      "slug": "sandra-bencic"
+    },
+    "102": {
+      "slug": "tomislav-tomasevic"
+    },
+    "103": {
+      "slug": "katica-glamuzina"
+    },
+    "104": {
+      "slug": "peda-grbin"
+    },
+    "105": {
+      "slug": "erik-fabijanic"
+    },
+    "106": {
+      "slug": "branko-grcic"
+    },
+    "107": {
+      "slug": "davor-bernardic"
+    },
+    "108": {
+      "slug": "zvane-brumnic"
+    },
+    "109": {
+      "slug": "boska-ban-vlahek"
+    },
+    "110": {
+      "slug": "barbara-antolic-vupora"
+    },
+    "111": {
+      "slug": "boris-lalovac"
+    },
+    "112": {
+      "slug": "domagoj-hajdukovic"
+    },
+    "113": {
+      "slug": "martina-grman-kizivat"
+    },
+    "114": {
+      "slug": "matko-kuzmanic"
+    },
+    "115": {
+      "slug": "andreja-maric"
+    },
+    "116": {
+      "slug": "sinisa-hajdas-doncic"
+    },
+    "117": {
+      "slug": "stjepan-kovac"
+    },
+    "118": {
+      "slug": "vinko-grgic"
+    },
+    "119": {
+      "slug": "renata-sabljar-dracevac"
+    },
+    "120": {
+      "slug": "sanja-radolovic"
+    },
+    "121": {
+      "slug": "rajko-ostojic"
+    },
+    "122": {
+      "slug": "ivana-posavec-krivec"
+    },
+    "123": {
+      "slug": "marina-opacak-bilic"
+    },
+    "124": {
+      "slug": "zeljko-pavic"
+    },
+    "125": {
+      "slug": "romana-nikolic"
+    },
+    "126": {
+      "slug": "martina-vlasic-iljkic"
+    },
+    "127": {
+      "slug": "irena-simunic"
+    },
+    "128": {
+      "slug": "niksa-vukas"
+    },
+    "129": {
+      "slug": "davorko-vidovic"
+    },
+    "130": {
+      "slug": "sanja-udovic"
+    },
+    "131": {
+      "slug": "franko-vidovic"
+    },
+    "132": {
+      "slug": "vesna-nad"
+    },
+    "133": {
+      "slug": "mirela-ahmetovic"
+    },
+    "134": {
+      "slug": "marijana-puljak"
+    },
+    "135": {
+      "slug": "dalija-oreskovic"
+    },
+    "136": {
+      "slug": "sabina-glasovac"
+    },
+    "137": {
+      "slug": "arsen-bauk"
+    },
+    "138": {
+      "slug": "misel-jaksic"
+    },
+    "139": {
+      "slug": "anka-mrak-taritas"
+    },
+    "140": {
+      "slug": "karolina-vidovic-kristo"
+    },
+    "141": {
+      "slug": "davor-dretar"
+    },
+    "142": {
+      "slug": "vesna-vucemilovic"
+    },
+    "143": {
+      "slug": "ante-prkacin"
+    },
+    "144": {
+      "slug": "stipo-mlinaric"
+    },
+    "145": {
+      "slug": "ivan-penava"
+    },
+    "146": {
+      "slug": "miroslav-skoro"
+    },
+    "147": {
+      "slug": "zlatko-hasanbegovic"
+    },
+    "148": {
+      "slug": "ruzica-vukovac"
+    },
+    "149": {
+      "slug": "stephen-nikola-bartulica"
+    },
+    "150": {
+      "slug": "milan-vrkljan"
+    },
+    "152": {
+      "slug": "dario-zurovec"
+    },
+    "153": {
+      "slug": "josip-salapic"
+    },
+    "154": {
+      "slug": "branka-juricev-martincev"
+    },
+    "155": {
+      "slug": "boris-milosevic"
+    },
+    "158": {
+      "slug": "natasa-tramisak"
+    }
   },
-  "base": "https://parlametar.hr",
+  "base": "https://10.parlametar.hr",
   "partyLink": {
     "govori": "/govori/",
     "base": "/poslanska-skupina/",
@@ -204,597 +474,490 @@
     "glasovanja": "/glasovanja/"
   },
   "urls": {
-    "glej": "https://glej.parlametar.hr",
-    "notifications_api": "https://obavijesti.parlametar.hr",
-    "isci": "https://isci.parlametar.hr",
-    "analize": "https://analize.parlametar.hr/v1",
-    "base": "https://parlametar.hr",
-    "data": "https://data.parlametar.hr/v1"
+    "glej": "http://localhost:7004",
+    "notifications_api": "https://notifications.10.parlametar.hr",
+    "isci": "https://trazi.10.parlametar.hr",
+    "analize": "https://analize.10.parlametar.hr/v1",
+    "base": "http://localhost:7005",
+    "data": "https://data.10.parlametar.hr/v1",
+    "cdn": "http://localhost:8080",
+    "analizeV2": "https://analize.10.parlametar.hr/v2"
   },
   "party": {
-    "199": {
+    "1": {
       "acronym": "sabor",
-      "realAcronym": "sabor",
-      "slug": "hrvatski-sabor"
+      "realAcronym": "Sabor",
+      "slug": "sabor"
     },
-    "258": {
-      "acronym": "snaga",
-      "realAcronym": "SNAGA",
-      "slug": "snaga-stranka-narodnog-i-gradanskog-aktivizma"
+    "2": {
+      "acronym": "oppo",
+      "realAcronym": "oppo",
+      "slug": "opozicija"
     },
-    "259": {
-      "acronym": "odbor-za-zakonodavstvo",
-      "realAcronym": "Odbor za zakonodavstvo",
-      "slug": "odbor-za-zakonodavstvo"
+    "3": {
+      "acronym": "coal",
+      "realAcronym": "coal",
+      "slug": "koalicija"
     },
-    "260": {
-      "acronym": "odbor-za-pravosude",
-      "realAcronym": "Odbor za pravosu\u0111e",
-      "slug": "odbor-za-pravosude"
-    },
-    "261": {
-      "acronym": "ids",
-      "realAcronym": "IDS",
-      "slug": "istarski-demokratski-sabor"
-    },
-    "262": {
-      "acronym": "odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu",
-      "realAcronym": "Odbor za lokalnu i podru\u010dnu (regionalnu) samoupravu",
-      "slug": "odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu"
-    },
-    "263": {
-      "acronym": "most",
-      "realAcronym": "Most",
+    "4": {
+      "acronym": "most-nezavisnih-lista",
+      "realAcronym": "Most nezavisnih lista",
       "slug": "most-nezavisnih-lista"
     },
-    "264": {
-      "acronym": "odbor-za-prostorno-uredenje-i-graditeljstvo",
-      "realAcronym": "Odbor za prostorno ure\u0111enje i graditeljstvo",
-      "slug": "odbor-za-prostorno-uredenje-i-graditeljstvo"
+    "5": {
+      "acronym": "most",
+      "realAcronym": "Most",
+      "slug": "klub-zastupnika-mosta-nezavisnih-lista"
     },
-    "265": {
-      "acronym": "odbor-za-zastitu-okolisa-i-prirode",
-      "realAcronym": "Odbor za za\u0161titu okoli\u0161a i prirode",
-      "slug": "odbor-za-zastitu-okolisa-i-prirode"
+    "6": {
+      "acronym": "odbora-za-izbor-imenovanja-i-upravne-poslove",
+      "realAcronym": "Odbora za izbor, imenovanja i upravne poslove",
+      "slug": "odbora-za-izbor-imenovanja-i-upravne-poslove"
     },
-    "266": {
-      "acronym": "reformisti",
-      "realAcronym": "Reformisti",
-      "slug": "narodna-stranka-reformisti"
+    "7": {
+      "acronym": "odbora-za-regionalni-razvoj-i-fondove-europske-unije",
+      "realAcronym": "Odbora za regionalni razvoj i fondove Europske unije",
+      "slug": "odbora-za-regionalni-razvoj-i-fondove-europske-unije"
     },
-    "267": {
-      "acronym": "odbor-za-regionalni-razvoj-i-fondove-europske-unije",
-      "realAcronym": "Odbor za regionalni razvoj i fondove Europske unije",
-      "slug": "odbor-za-regionalni-razvoj-i-fondove-europske-unije"
+    "8": {
+      "acronym": "odbora-za-lokalnu-i-podrucnu-regionalnu-samoupravu",
+      "realAcronym": "Odbora za lokalnu i područnu (regionalnu) samoupravu",
+      "slug": "odbora-za-lokalnu-i-podrucnu-regionalnu-samoupravu"
     },
-    "268": {
-      "acronym": "sdp",
-      "realAcronym": "SDP",
-      "slug": "socijaldemokratska-partija-hrvatske"
+    "9": {
+      "acronym": "odbora-za-zakonodavstvo",
+      "realAcronym": "Odbora za zakonodavstvo",
+      "slug": "odbora-za-zakonodavstvo"
     },
-    "269": {
-      "acronym": "izvrsni-odbor-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji",
-      "realAcronym": "Izvr\u0161ni odbor Nacionalne grupe Hrvatskoga sabora pri Interparlamentarnoj uniji",
-      "slug": "izvrsni-odbor-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji"
+    "10": {
+      "acronym": "odbora-za-pravosude",
+      "realAcronym": "Odbora za pravosuđe",
+      "slug": "odbora-za-pravosude"
     },
-    "270": {
-      "acronym": "odbor-za-gospodarstvo",
-      "realAcronym": "Odbor za gospodarstvo",
-      "slug": "odbor-za-gospodarstvo"
+    "11": {
+      "acronym": "nacionalnog-vijeca-za-pracenje-provedbe-strategije-suzbijanja-korupcije",
+      "realAcronym": "Nacionalnog vijeća za praćenje provedbe Strategije suzbijanja korupcije",
+      "slug": "nacionalnog-vijeca-za-pracenje-provedbe-strategije-suzbijanja-korupcije"
     },
-    "271": {
-      "acronym": "odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo",
-      "realAcronym": "Odbor za rad, mirovinski sustav i socijalno partnerstvo",
-      "slug": "odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo"
+    "12": {
+      "acronym": "nezavisni",
+      "realAcronym": "Nezavisni",
+      "slug": "nezavisni"
     },
-    "272": {
-      "acronym": "odbor-za-pomorstvo-promet-i-infrastrukturu",
-      "realAcronym": "Odbor za pomorstvo, promet i infrastrukturu",
-      "slug": "odbor-za-pomorstvo-promet-i-infrastrukturu"
+    "13": {
+      "acronym": "odbora-za-ravnopravnost-spolova",
+      "realAcronym": "Odbora za ravnopravnost spolova",
+      "slug": "odbora-za-ravnopravnost-spolova"
     },
-    "273": {
-      "acronym": "odbor-za-meduparlamentarnu-suradnju",
-      "realAcronym": "Odbor za me\u0111uparlamentarnu suradnju",
-      "slug": "odbor-za-meduparlamentarnu-suradnju"
+    "14": {
+      "acronym": "odbora-za-prostorno-uredenje-i-graditeljstvo",
+      "realAcronym": "Odbora za prostorno uređenje i graditeljstvo",
+      "slug": "odbora-za-prostorno-uredenje-i-graditeljstvo"
     },
-    "274": {
-      "acronym": "hdz",
-      "realAcronym": "HDZ",
+    "15": {
+      "acronym": "odbora-za-meduparlamentarnu-suradnju",
+      "realAcronym": "Odbora za međuparlamentarnu suradnju",
+      "slug": "odbora-za-meduparlamentarnu-suradnju"
+    },
+    "16": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj skupštini Vijeća Europe",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe"
+    },
+    "17": {
+      "acronym": "odbora-za-ustav-poslovnik-i-politicki-sustav",
+      "realAcronym": "Odbora za Ustav, Poslovnik i politički sustav",
+      "slug": "odbora-za-ustav-poslovnik-i-politicki-sustav"
+    },
+    "18": {
+      "acronym": "odbora-za-hrvate-izvan-republike-hrvatske",
+      "realAcronym": "Odbora za Hrvate izvan Republike Hrvatske",
+      "slug": "odbora-za-hrvate-izvan-republike-hrvatske"
+    },
+    "19": {
+      "acronym": "odbora-za-informiranje-informatizaciju-i-medije",
+      "realAcronym": "Odbora za informiranje, informatizaciju i medije",
+      "slug": "odbora-za-informiranje-informatizaciju-i-medije"
+    },
+    "20": {
+      "acronym": "domovinski-pokret-miroslava-skore",
+      "realAcronym": "Domovinski pokret Miroslava Škore",
+      "slug": "domovinski-pokret-miroslava-skore"
+    },
+    "21": {
+      "acronym": "domovinski-pokret",
+      "realAcronym": "Domovinski pokret",
+      "slug": "klub-zastupnika-domovinskog-pokreta"
+    },
+    "22": {
+      "acronym": "mandatno-imunitetnog-povjerenstva",
+      "realAcronym": "Mandatno-imunitetnog povjerenstva",
+      "slug": "mandatno-imunitetnog-povjerenstva"
+    },
+    "23": {
+      "acronym": "odbora-za-ljudska-prava-i-prava-nacionalnih-manjina",
+      "realAcronym": "Odbora za ljudska prava i prava nacionalnih manjina",
+      "slug": "odbora-za-ljudska-prava-i-prava-nacionalnih-manjina"
+    },
+    "24": {
+      "acronym": "odbora-za-zastitu-okolisa-i-prirode",
+      "realAcronym": "Odbora za zaštitu okoliša i prirode",
+      "slug": "odbora-za-zastitu-okolisa-i-prirode"
+    },
+    "25": {
+      "acronym": "odbora-za-europske-poslove",
+      "realAcronym": "Odbora za europske poslove",
+      "slug": "odbora-za-europske-poslove"
+    },
+    "26": {
+      "acronym": "odbora-za-gospodarstvo",
+      "realAcronym": "Odbora za gospodarstvo",
+      "slug": "odbora-za-gospodarstvo"
+    },
+    "27": {
+      "acronym": "odbora-za-financije-i-drzavni-proracun",
+      "realAcronym": "Odbora za financije i državni proračun",
+      "slug": "odbora-za-financije-i-drzavni-proracun"
+    },
+    "28": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradn",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj skupštini Organizacije za europsku sigurnost i suradn",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradnju-oess"
+    },
+    "29": {
+      "acronym": "odbora-za-ratne-veterane",
+      "realAcronym": "Odbora za ratne veterane",
+      "slug": "odbora-za-ratne-veterane"
+    },
+    "30": {
+      "acronym": "odbora-za-unutarnju-politiku-i-nacionalnu-sigurnost",
+      "realAcronym": "Odbora za unutarnju politiku i nacionalnu sigurnost",
+      "slug": "odbora-za-unutarnju-politiku-i-nacionalnu-sigurnost"
+    },
+    "31": {
+      "acronym": "odbora-za-predstavke-i-prituzbe",
+      "realAcronym": "Odbora za predstavke i pritužbe",
+      "slug": "odbora-za-predstavke-i-prituzbe"
+    },
+    "32": {
+      "acronym": "samostalna-demokratska-srpska-stranka",
+      "realAcronym": "Samostalna demokratska srpska stranka",
+      "slug": "samostalna-demokratska-srpska-stranka"
+    },
+    "33": {
+      "acronym": "sdss",
+      "realAcronym": "SDSS",
+      "slug": "klub-zastupnika-samostalne-demokratske-srpske-stranke"
+    },
+    "34": {
+      "acronym": "odbora-za-obitelj-mlade-i-sport",
+      "realAcronym": "Odbora za obitelj, mlade i sport",
+      "slug": "odbora-za-obitelj-mlade-i-sport"
+    },
+    "35": {
+      "acronym": "radnicka-fronta",
+      "realAcronym": "Radnička fronta",
+      "slug": "radnicka-fronta"
+    },
+    "36": {
+      "acronym": "zeleno-lijevi-blok",
+      "realAcronym": "Zeleno-lijevi blok",
+      "slug": "klub-zastupnika-zeleno-lijevog-bloka"
+    },
+    "37": {
+      "acronym": "odbora-za-rad-mirovinski-sustav-i-socijalno-partnerstvo",
+      "realAcronym": "Odbora za rad, mirovinski sustav i socijalno partnerstvo",
+      "slug": "odbora-za-rad-mirovinski-sustav-i-socijalno-partnerstvo"
+    },
+    "38": {
+      "acronym": "odbora-za-poljoprivredu",
+      "realAcronym": "Odbora za poljoprivredu",
+      "slug": "odbora-za-poljoprivredu"
+    },
+    "39": {
+      "acronym": "odbora-za-obrazovanje-znanost-i-kulturu",
+      "realAcronym": "Odbora za obrazovanje, znanost i kulturu",
+      "slug": "odbora-za-obrazovanje-znanost-i-kulturu"
+    },
+    "40": {
+      "acronym": "odbora-za-vanjsku-politiku",
+      "realAcronym": "Odbora za vanjsku politiku",
+      "slug": "odbora-za-vanjsku-politiku"
+    },
+    "41": {
+      "acronym": "mozemo-politicka-platforma",
+      "realAcronym": "Možemo! – Politička platforma",
+      "slug": "mozemo-politicka-platforma"
+    },
+    "42": {
+      "acronym": "hrvatska-demokratska-zajednica",
+      "realAcronym": "Hrvatska demokratska zajednica",
       "slug": "hrvatska-demokratska-zajednica"
     },
-    "275": {
-      "acronym": "nhr",
-      "realAcronym": "NHR",
-      "slug": "bruna-esih-zlatko-hasanbegovic-neovisni-za-hrvatsku"
+    "43": {
+      "acronym": "hdz",
+      "realAcronym": "HDZ",
+      "slug": "klub-zastupnika-hrvatske-demokratske-zajednice"
     },
-    "276": {
+    "44": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj skupštini SEECP-a",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a"
+    },
+    "45": {
+      "acronym": "odbora-za-obranu",
+      "realAcronym": "Odbora za obranu",
+      "slug": "odbora-za-obranu"
+    },
+    "46": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj skupštini NATO-a",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a"
+    },
+    "47": {
+      "acronym": "odbora-za-turizam",
+      "realAcronym": "Odbora za turizam",
+      "slug": "odbora-za-turizam"
+    },
+    "48": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj skupštini Mediterana",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana"
+    },
+    "49": {
+      "acronym": "hrvatska-seljacka-stranka",
+      "realAcronym": "Hrvatska seljačka stranka",
+      "slug": "hrvatska-seljacka-stranka"
+    },
+    "50": {
+      "acronym": "hss-i-hsu",
+      "realAcronym": "HSS i HSU",
+      "slug": "klub-zastupnika-hrvatske-seljacke-stranke-i-hrvatske-stranke-umirovljenika"
+    },
+    "51": {
+      "acronym": "odbora-za-pomorstvo-promet-i-infrastrukturu",
+      "realAcronym": "Odbora za pomorstvo, promet i infrastrukturu",
+      "slug": "odbora-za-pomorstvo-promet-i-infrastrukturu"
+    },
+    "52": {
+      "acronym": "hrvatska-stranka-umirovljenika",
+      "realAcronym": "Hrvatska stranka umirovljenika",
+      "slug": "hrvatska-stranka-umirovljenika"
+    },
+    "53": {
+      "acronym": "odbora-za-zdravstvo-i-socijalnu-politiku",
+      "realAcronym": "Odbora za zdravstvo i socijalnu politiku",
+      "slug": "odbora-za-zdravstvo-i-socijalnu-politiku"
+    },
+    "54": {
+      "acronym": "hrvatska-konzervativna-stranka",
+      "realAcronym": "Hrvatska konzervativna stranka",
+      "slug": "hrvatska-konzervativna-stranka"
+    },
+    "55": {
+      "acronym": "hrvatski-suverenisti",
+      "realAcronym": "Hrvatski suverenisti",
+      "slug": "klub-zastupnika-hrvatskih-suverenista"
+    },
+    "56": {
+      "acronym": "hrvatski-suverenisti",
+      "realAcronym": "Hrvatski suverenisti",
+      "slug": "hrvatski-suverenisti"
+    },
+    "57": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-dimenziji-srednjoeuropske-inicijative",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj dimenziji Srednjoeuropske inicijative",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-dimenziji-srednjoeuropske-inicijative"
+    },
+    "58": {
+      "acronym": "hrast-pokret-za-uspjesnu-hrvatsku",
+      "realAcronym": "Hrast – Pokret za uspješnu Hrvatsku",
+      "slug": "hrast-pokret-za-uspjesnu-hrvatsku"
+    },
+    "59": {
+      "acronym": "istarski-demokratski-sabor",
+      "realAcronym": "Istarski demokratski sabor",
+      "slug": "istarski-demokratski-sabor"
+    },
+    "60": {
+      "acronym": "ids",
+      "realAcronym": "IDS",
+      "slug": "klub-zastupnika-istarskog-demokratskog-sabora"
+    },
+    "61": {
+      "acronym": "hrvatska-narodna-stranka-liberalni-demokrati",
+      "realAcronym": "Hrvatska narodna stranka – liberalni demokrati",
+      "slug": "hrvatska-narodna-stranka-liberalni-demokrati"
+    },
+    "62": {
+      "acronym": "hns-i-nz",
+      "realAcronym": "HNS i NZ",
+      "slug": "klub-zastupnika-hrvatske-narodne-stranke-liberalnih-demokrata-i-nezavisnih-zastupnika"
+    },
+    "63": {
+      "acronym": "hrvatska-demokrscanska-stranka",
+      "realAcronym": "Hrvatska demokršćanska stranka",
+      "slug": "hrvatska-demokrscanska-stranka"
+    },
+    "64": {
+      "acronym": "nacionalne-manjine",
+      "realAcronym": "Nacionalne manjine",
+      "slug": "klub-zastupnika-nacionalnih-manjina"
+    },
+    "66": {
+      "acronym": "izvrsnog-odbora-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji",
+      "realAcronym": "Izvršnog odbora Nacionalne grupe Hrvatskoga sabora pri Interparlamentarnoj uniji",
+      "slug": "izvrsnog-odbora-nacionalne-grupe-hrvatskoga-sabora-pri-interparlamentarnoj-uniji"
+    },
+    "67": {
+      "acronym": "povjerenstva-za-fiskalnu-politiku",
+      "realAcronym": "Povjerenstva za fiskalnu politiku",
+      "slug": "povjerenstva-za-fiskalnu-politiku"
+    },
+    "68": {
+      "acronym": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran",
+      "realAcronym": "Izaslanstva Hrvatskoga sabora u Parlamentarnoj skupštini Unije za Mediteran",
+      "slug": "izaslanstva-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran"
+    },
+    "69": {
+      "acronym": "narodna-stranka-reformisti",
+      "realAcronym": "Narodna stranka – Reformisti",
+      "slug": "narodna-stranka-reformisti"
+    },
+    "70": {
+      "acronym": "hsls-i-reformisti",
+      "realAcronym": "HSLS i Reformisti",
+      "slug": "klub-zastupnika-hrvatske-socijalno-liberalne-stranke-i-narodne-stranke-reformista"
+    },
+    "71": {
+      "acronym": "hrvatska-socijalno-liberalna-stranka",
+      "realAcronym": "Hrvatska socijalno-liberalna stranka",
+      "slug": "hrvatska-socijalno-liberalna-stranka"
+    },
+    "72": {
+      "acronym": "nova-ljevica",
+      "realAcronym": "Nova ljevica",
+      "slug": "nova-ljevica"
+    },
+    "73": {
+      "acronym": "socijaldemokratska-partija-hrvatske",
+      "realAcronym": "Socijaldemokratska partija Hrvatske",
+      "slug": "socijaldemokratska-partija-hrvatske"
+    },
+    "74": {
+      "acronym": "sdp",
+      "realAcronym": "SDP",
+      "slug": "klub-zastupnika-socijaldemokratske-partije-hrvatske"
+    },
+    "75": {
+      "acronym": "pametno",
+      "realAcronym": "Pametno",
+      "slug": "pametno"
+    },
+    "76": {
+      "acronym": "sip-pametno-i-glas",
+      "realAcronym": "SIP, Pametno i GLAS",
+      "slug": "klub-zastupnika-stranke-s-imenom-i-prezimenom-pametnog-i-gradansko-liberalnog-saveza"
+    },
+    "77": {
+      "acronym": "stranka-s-imenom-i-prezimenom",
+      "realAcronym": "Stranka s Imenom i Prezimenom",
+      "slug": "stranka-s-imenom-i-prezimenom"
+    },
+    "78": {
+      "acronym": "gradansko-liberalni-savez",
+      "realAcronym": "Građansko-liberalni savez",
+      "slug": "gradansko-liberalni-savez"
+    },
+    "79": {
+      "acronym": "blok-za-hrvatsku",
+      "realAcronym": "Blok za Hrvatsku",
+      "slug": "blok-za-hrvatsku"
+    },
+    "80": {
+      "acronym": "ostali",
+      "realAcronym": "Ostali",
+      "slug": "ostali"
+    },
+    "81": {
+      "acronym": "vlada",
+      "realAcronym": "Vlada",
+      "slug": "vlada"
+    },
+    "114": {
+      "acronym": "fokus",
+      "realAcronym": "Fokus",
+      "slug": "fokus"
+    },
+    "115": {
+      "acronym": "fokus",
+      "realAcronym": "Fokus",
+      "slug": "fokus"
+    },
+    "116": {
       "acronym": "odbor-za-obranu",
       "realAcronym": "Odbor za obranu",
       "slug": "odbor-za-obranu"
     },
-    "277": {
-      "acronym": "odbor-za-ratne-veterane",
-      "realAcronym": "Odbor za ratne veterane",
-      "slug": "odbor-za-ratne-veterane"
+    "117": {
+      "acronym": "odbor-za-zakonodavstvo",
+      "realAcronym": "Odbor za zakonodavstvo",
+      "slug": "odbor-za-zakonodavstvo"
     },
-    "278": {
-      "acronym": "nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije",
-      "realAcronym": "Nacionalno vije\u0107e za pra\u0107enje provedbe Strategije suzbijanja korupcije",
-      "slug": "nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije"
+    "118": {
+      "acronym": "odbor-za-ustav-poslovnik-i-politicki-sustav",
+      "realAcronym": "Odbor za Ustav, Poslovnik i politički sustav",
+      "slug": "odbor-za-ustav-poslovnik-i-politicki-sustav"
     },
-    "279": { "acronym": "nz", "realAcronym": "NZ", "slug": "nezavisni" },
-    "280": {
-      "acronym": "drzavno-povjerenstvo-za-procjenu-stete-od-elementarnih-nepogoda",
-      "realAcronym": "Dr\u017eavno povjerenstvo za procjenu \u0161tete od elementarnih nepogoda",
-      "slug": "drzavno-povjerenstvo-za-procjenu-stete-od-elementarnih-nepogoda"
-    },
-    "281": {
-      "acronym": "odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
-      "realAcronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-      "slug": "odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost"
-    },
-    "282": {
-      "acronym": "hds",
-      "realAcronym": "HDS",
-      "slug": "hrvatska-demokrscanska-stranka"
-    },
-    "283": {
-      "acronym": "odbor-za-zdravstvo-i-socijalnu-politiku",
-      "realAcronym": "Odbor za zdravstvo i socijalnu politiku",
-      "slug": "odbor-za-zdravstvo-i-socijalnu-politiku"
-    },
-    "284": {
-      "acronym": "odbor-za-obrazovanje-znanost-i-kulturu",
-      "realAcronym": "Odbor za obrazovanje, znanost i kulturu",
-      "slug": "odbor-za-obrazovanje-znanost-i-kulturu"
-    },
-    "285": {
-      "acronym": "istrazno-povjerenstvo-za-utvrdivanje-odgovornosti-za-rezultate-upravljanja-i-raspolaganja-financijs",
-      "realAcronym": "Istra\u017eno povjerenstvo za utvr\u0111ivanje odgovornosti za rezultate upravljanja i raspolaganja financijs",
-      "slug": "istrazno-povjerenstvo-za-utvrdivanje-odgovornosti-za-rezultate-upravljanja-i-raspolaganja-financijskim-i-drugim-resursima-imunoloskog-zavoda"
-    },
-    "286": {
-      "acronym": "odbor-za-obitelj-mlade-i-sport",
-      "realAcronym": "Odbor za obitelj, mlade i sport",
-      "slug": "odbor-za-obitelj-mlade-i-sport"
-    },
-    "287": {
-      "acronym": "odbor-za-hrvate-izvan-republike-hrvatske",
-      "realAcronym": "Odbor za Hrvate izvan Republike Hrvatske",
-      "slug": "odbor-za-hrvate-izvan-republike-hrvatske"
-    },
-    "288": {
-      "acronym": "odbor-za-predstavke-i-prituzbe",
-      "realAcronym": "Odbor za predstavke i pritu\u017ebe",
-      "slug": "odbor-za-predstavke-i-prituzbe"
-    },
-    "289": {
-      "acronym": "hns",
-      "realAcronym": "HNS",
-      "slug": "hrvatska-narodna-stranka-liberalni-demokrati"
-    },
-    "290": {
-      "acronym": "istrazno-povjerenstvo-za-utvrdivanje-cinjenica-u-vezi-okolnosti-nastanka-poslovnog-koncerna-agrokor",
-      "realAcronym": "Istra\u017eno povjerenstvo za utvr\u0111ivanje \u010dinjenica u vezi okolnosti nastanka poslovnog koncerna Agrokor",
-      "slug": "istrazno-povjerenstvo-za-utvrdivanje-cinjenica-u-vezi-okolnosti-nastanka-poslovnog-koncerna-agrokor-njegove-danasnje-pozicije-na-trzistu-nastanka-njegovih-poslovnih-problema-a-posebno-dugovanja-prema-dobavljacima-te-ostalim-vjerovnicima-uloge-regulatora-na-trzistima-vezano-za-agrokorove-poslovne-aktivnosti-i-okolnosti-koje-su-dovele-do-aktivnosti-vlade-republike-hrvatske-prema-agrokoru-odnosno-prijedloga-mogucih-rjesenja-za-situaciju-u-kojoj-se-agrokor-nasao"
-    },
-    "291": {
-      "acronym": "zivi-zid",
-      "realAcronym": "\u017divi zid",
-      "slug": "zivi-zid"
-    },
-    "292": {
-      "acronym": "odbor-za-vanjsku-politiku",
-      "realAcronym": "Odbor za vanjsku politiku",
-      "slug": "odbor-za-vanjsku-politiku"
-    },
-    "293": {
-      "acronym": "odbor-za-europske-poslove",
-      "realAcronym": "Odbor za europske poslove",
-      "slug": "odbor-za-europske-poslove"
-    },
-    "294": {
-      "acronym": "odbor-za-izbor-imenovanja-i-upravne-poslove",
-      "realAcronym": "Odbor za izbor, imenovanja i upravne poslove",
-      "slug": "odbor-za-izbor-imenovanja-i-upravne-poslove"
-    },
-    "295": {
-      "acronym": "hrast",
-      "realAcronym": "HRAST",
-      "slug": "hrast-pokret-za-uspjesnu-hrvatsku"
-    },
-    "296": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradn",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Organizacije za europsku sigurnost i suradn",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-organizacije-za-europsku-sigurnost-i-suradnju"
-    },
-    "297": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Vije\u0107a Europe",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-vijeca-europe"
-    },
-    "298": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-dimenziji-srednjoeuropske-inicijative",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj dimenziji Srednjoeuropske inicijative",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-dimenziji-srednjoeuropske-inicijative"
-    },
-    "299": {
-      "acronym": "odbor-za-ravnopravnost-spolova",
-      "realAcronym": "Odbor za ravnopravnost spolova",
-      "slug": "odbor-za-ravnopravnost-spolova"
-    },
-    "300": {
-      "acronym": "hss",
-      "realAcronym": "HSS",
-      "slug": "hrvatska-seljacka-stranka"
-    },
-    "301": {
-      "acronym": "odbor-za-poljoprivredu",
-      "realAcronym": "Odbor za poljoprivredu",
-      "slug": "odbor-za-poljoprivredu"
-    },
-    "302": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini NATO-a",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-nato-a"
-    },
-    "303": {
-      "acronym": "bm-365",
-      "realAcronym": "BM 365",
-      "slug": "bandic-milan-365-stranka-rada-i-solidarnosti"
-    },
-    "304": {
-      "acronym": "odbor-za-informiranje-informatizaciju-i-medije",
-      "realAcronym": "Odbor za informiranje, informatizaciju i medije",
-      "slug": "odbor-za-informiranje-informatizaciju-i-medije"
-    },
-    "305": {
-      "acronym": "savjet-za-robne-zalihe-iz-reda-zastupnika",
-      "realAcronym": "Savjet za robne zalihe iz reda zastupnika",
-      "slug": "savjet-za-robne-zalihe-iz-reda-zastupnika"
-    },
-    "306": {
-      "acronym": "odbor-za-financije-i-drzavni-proracun",
-      "realAcronym": "Odbor za financije i dr\u017eavni prora\u010dun",
-      "slug": "odbor-za-financije-i-drzavni-proracun"
-    },
-    "307": {
+    "119": {
       "acronym": "mandatno-imunitetno-povjerenstvo",
       "realAcronym": "Mandatno-imunitetno povjerenstvo",
       "slug": "mandatno-imunitetno-povjerenstvo"
     },
-    "308": {
-      "acronym": "glas",
-      "realAcronym": "GLAS",
-      "slug": "gradansko-liberalni-savez"
-    },
-    "309": {
-      "acronym": "odbor-za-turizam",
-      "realAcronym": "Odbor za turizam",
-      "slug": "odbor-za-turizam"
-    },
-    "310": {
-      "acronym": "ids-pgs-ri",
-      "realAcronym": "IDS, PGS, RI",
-      "slug": "klub-istarskog-demokratskog-sabora-primorsko-goranskog-saveza-liste-za-rijeku"
-    },
-    "311": {
-      "acronym": "odbor-za-ustav-poslovnik-i-politicki-sustav",
-      "realAcronym": "Odbor za Ustav, Poslovnik i politi\u010dki sustav",
-      "slug": "odbor-za-ustav-poslovnik-i-politicki-sustav"
-    },
-    "312": {
-      "acronym": "odbor-za-ljudska-prava-i-prava-nacionalnih-manjina",
-      "realAcronym": "Odbor za ljudska prava i prava nacionalnih manjina",
-      "slug": "odbor-za-ljudska-prava-i-prava-nacionalnih-manjina"
-    },
-    "313": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Mediterana",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-mediterana"
-    },
-    "314": {
-      "acronym": "hrvatski-sabor",
-      "realAcronym": "Hrvatski sabor",
-      "slug": "hrvatski-sabor"
-    },
-    "315": {
-      "acronym": "sdss",
-      "realAcronym": "SDSS",
-      "slug": "samostalna-demokratska-srpska-stranka"
-    },
-    "316": {
-      "acronym": "nlm",
-      "realAcronym": "NLM",
-      "slug": "nezavisna-lista-mladih"
-    },
-    "317": {
-      "acronym": "nadzorni-odbor-financijske-agencije-iz-reda-zastupnika",
-      "realAcronym": "Nadzorni odbor Financijske agencije iz reda zastupnika",
-      "slug": "nadzorni-odbor-financijske-agencije-iz-reda-zastupnika"
-    },
-    "318": {
-      "acronym": "nadzorni-odbor-hrvatske-banke-za-obnovu-i-razvitak-iz-reda-zastupnika",
-      "realAcronym": "Nadzorni odbor Hrvatske banke za obnovu i razvitak iz reda zastupnika",
-      "slug": "nadzorni-odbor-hrvatske-banke-za-obnovu-i-razvitak-iz-reda-zastupnika"
-    },
-    "319": {
-      "acronym": "zivi-zid-snaga",
-      "realAcronym": "\u017divi zid, SNAGA",
-      "slug": "klub-zivog-zida-i-snaga-e"
-    },
-    "320": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini SEECP-a",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-seecp-a"
-    },
-    "321": {
-      "acronym": "povjerenstvo-za-fiskalnu-politiku",
-      "realAcronym": "Povjerenstvo za fiskalnu politiku",
-      "slug": "povjerenstvo-za-fiskalnu-politiku"
-    },
-    "322": {
-      "acronym": "sdss",
-      "realAcronym": "SDSS",
-      "slug": "klub-samostalne-demokratske-srpske-stranke"
-    },
-    "323": {
-      "acronym": "drzavno-sudbeno-vijece-iz-reda-zastupnika",
-      "realAcronym": "Dr\u017eavno sudbeno vije\u0107e iz reda zastupnika",
-      "slug": "drzavno-sudbeno-vijece-iz-reda-zastupnika"
-    },
-    "324": {
-      "acronym": "glas-hsu",
-      "realAcronym": "GLAS, HSU",
-      "slug": "klub-gradansko-liberalnog-saveza-i-hrvatske-stranke-umirovljenika"
-    },
-    "325": {
-      "acronym": "ph",
-      "realAcronym": "PH",
-      "slug": "promijenimo-hrvatsku"
-    },
-    "326": {
-      "acronym": "hsls",
-      "realAcronym": "HSLS",
-      "slug": "hrvatska-socijalno-liberalna-stranka"
-    },
-    "327": {
-      "acronym": "drzavnoodvjetnicko-vijece-iz-reda-zastupnika",
-      "realAcronym": "Dr\u017eavnoodvjetni\u010dko vije\u0107e iz reda zastupnika",
-      "slug": "drzavnoodvjetnicko-vijece-iz-reda-zastupnika"
-    },
-    "328": {
-      "acronym": "savjet-javne-ustanove-spomen-podrucja-jasenovac-iz-reda-zastupnika",
-      "realAcronym": "Savjet Javne ustanove Spomen-podru\u010dja Jasenovac iz reda zastupnika",
-      "slug": "savjet-javne-ustanove-spomen-podrucja-jasenovac-iz-reda-zastupnika"
-    },
-    "329": {
-      "acronym": "hsu",
-      "realAcronym": "HSU",
-      "slug": "hrvatska-stranka-umirovljenika"
-    },
-    "330": {
-      "acronym": "nhr",
-      "realAcronym": "NHR",
-      "slug": "klub-neovisni-za-hrvatsku"
-    },
-    "331": {
-      "acronym": "hrvatski-sabor",
-      "realAcronym": "Hrvatski sabor",
-      "slug": "hrvatski-sabor"
-    },
-    "332": {
-      "acronym": "ured-predsjednika",
-      "realAcronym": "Ured predsjednika",
-      "slug": "ured-predsjednika"
-    },
-    "333": {
-      "acronym": "hds-hsls-hdssb",
-      "realAcronym": "HDS, HSLS, HDSSB",
-      "slug": "klub-hrvatske-demokrscanske-stranke-hrvatske-socijalno-liberalne-stranke-i-hrvatskog-demokratskog-saveza-slavonije-i-baranje"
-    },
-    "334": {
-      "acronym": "bm-365-reformisti-nezavisni",
-      "realAcronym": "BM 365, Reformisti, Nezavisni",
-      "slug": "klub-stranke-rada-i-solidarnosti-reformista-i-nezavisnih-zastupnika"
-    },
-    "335": {
-      "acronym": "most",
-      "realAcronym": "Most",
-      "slug": "klub-mosta-nezavisnih-lista"
-    },
-    "336": {
-      "acronym": "manjina",
-      "realAcronym": "Manjina",
-      "slug": "klub-zastupnika-nacionalnih-manjina"
-    },
-    "337": {
-      "acronym": "hss",
-      "realAcronym": "HSS",
-      "slug": "klub-hrvatske-seljacke-stranke"
-    },
-    "338": {
-      "acronym": "otocno-vijece-iz-reda-zastupnika",
-      "realAcronym": "Oto\u010dno vije\u0107e iz reda zastupnika",
-      "slug": "otocno-vijece-iz-reda-zastupnika"
-    },
-    "339": {
-      "acronym": "sdp",
-      "realAcronym": "SDP",
-      "slug": "klub-socijaldemokratske-partije-hrvatske"
-    },
-    "340": {
-      "acronym": "hns",
-      "realAcronym": "HNS",
-      "slug": "klub-hrvatske-narodne-stranke-liberalnih-demokrata"
-    },
-    "341": {
-      "acronym": "hdssb",
-      "realAcronym": "HDSSB",
-      "slug": "hrvatski-demokratski-savez-slavonije-i-baranje"
-    },
-    "342": {
-      "acronym": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran",
-      "realAcronym": "Izaslanstvo Hrvatskoga sabora u Parlamentarnoj skup\u0161tini Unije za Mediteran",
-      "slug": "izaslanstvo-hrvatskoga-sabora-u-parlamentarnoj-skupstini-unije-za-mediteran"
-    },
-    "343": {
-      "acronym": "hdz",
-      "realAcronym": "HDZ",
-      "slug": "klub-hrvatske-demokratske-zajednice"
-    },
-    "344": { "acronym": "ostali", "realAcronym": "ostali", "slug": "ostali" },
-    "345": {
-      "acronym": "opozicija",
-      "realAcronym": "opozicija",
-      "slug": "opozicija"
-    },
-    "346": {
-      "acronym": "koalicija",
-      "realAcronym": "koalicija",
-      "slug": "koalicija"
-    },
-    "347": { "acronym": "vlada", "realAcronym": "Vlada", "slug": "vlada" },
-    "385": {
-      "acronym": "ministarstvo-mora-prometa-i-infrastrukture",
-      "realAcronym": "Ministarstvo mora, prometa i infrastrukture",
-      "slug": "ministarstvo-mora-prometa-i-infrastrukture"
-    },
-    "387": {
-      "acronym": "ministarstvo-drzavne-imovine",
-      "realAcronym": "Ministarstvo dr\u017eavne imovine",
-      "slug": "ministarstvo-drzavne-imovine"
-    },
-    "388": {
-      "acronym": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku",
-      "realAcronym": "Ministarstvo za demografiju, obitelj, mlade i socijalnu politiku",
-      "slug": "ministarstvo-za-demografiju-obitelj-mlade-i-socijalnu-politiku"
-    },
-    "389": {
-      "acronym": "ministarstvo-kulture",
-      "realAcronym": "Ministarstvo kulture",
-      "slug": "ministarstvo-kulture"
-    },
-    "390": {
-      "acronym": "ministarstvo-unutarnjih-poslova",
-      "realAcronym": "Ministarstvo unutarnjih poslova",
-      "slug": "ministarstvo-unutarnjih-poslova"
-    },
-    "391": {
-      "acronym": "ministarstvo-poljoprivrede",
-      "realAcronym": "Ministarstvo poljoprivrede",
-      "slug": "ministarstvo-poljoprivrede"
-    },
-    "392": {
-      "acronym": "ministarstvo-zdravstva",
-      "realAcronym": "Ministarstvo zdravstva",
-      "slug": "ministarstvo-zdravstva"
-    },
-    "394": {
-      "acronym": "ministarstvo-pravosuda",
-      "realAcronym": "Ministarstvo pravosu\u0111a",
-      "slug": "ministarstvo-pravosuda"
-    },
-    "395": {
-      "acronym": "ministarstvo-zastite-okolisa-i-energetike",
-      "realAcronym": "Ministarstvo za\u0161tite okoli\u0161a i energetike",
-      "slug": "ministarstvo-zastite-okolisa-i-energetike"
-    },
-    "396": {
-      "acronym": "ministarstvo-graditeljstva-i-prostornoga-uredenja",
-      "realAcronym": "Ministarstvo graditeljstva i prostornoga ure\u0111enja",
-      "slug": "ministarstvo-graditeljstva-i-prostornoga-uredenja"
-    },
-    "397": {
-      "acronym": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije",
-      "realAcronym": "Ministarstvo regionalnoga razvoja i fondova Europske unije",
-      "slug": "ministarstvo-regionalnoga-razvoja-i-fondova-europske-unije"
-    },
-    "398": {
-      "acronym": "ministarstvo-financija",
-      "realAcronym": "Ministarstvo financija",
-      "slug": "ministarstvo-financija"
-    },
-    "401": {
-      "acronym": "ministarstvo-znanosti-i-obrazovanja",
-      "realAcronym": "Ministarstvo znanosti i obrazovanja",
-      "slug": "ministarstvo-znanosti-i-obrazovanja"
-    },
-    "402": {
-      "acronym": "ministarstvo-turizma",
-      "realAcronym": "Ministarstvo turizma",
-      "slug": "ministarstvo-turizma"
-    },
-    "405": {
-      "acronym": "ministarstvo-uprave",
-      "realAcronym": "Ministarstvo uprave",
-      "slug": "ministarstvo-uprave"
-    },
-    "406": {
-      "acronym": "ministarstvo-obrane",
-      "realAcronym": "Ministarstvo obrane",
-      "slug": "ministarstvo-obrane"
-    },
-    "407": {
-      "acronym": "ministarstvo-gospodarstva-poduzetnistva-i-obrta",
-      "realAcronym": "Ministarstvo gospodarstva, poduzetni\u0161tva i obrta",
-      "slug": "ministarstvo-gospodarstva-poduzetnistva-i-obrta"
-    },
-    "408": {
-      "acronym": "ministarstvo-rada-i-mirovinskog-sustava",
-      "realAcronym": "Ministarstvo rada i mirovinskog sustava",
-      "slug": "ministarstvo-rada-i-mirovinskog-sustava"
-    },
-    "409": {
-      "acronym": "ministarstvo-hrvatskih-branitelja",
-      "realAcronym": "Ministarstvo hrvatskih branitelja",
-      "slug": "ministarstvo-hrvatskih-branitelja"
-    },
-    "410": {
-      "acronym": "ministarstvo-branitelja",
-      "realAcronym": "Ministarstvo branitelja",
-      "slug": "ministarstvo-branitelja"
-    },
-    "411": {
-      "acronym": "ministarstvo-znanosti-obrazovanja-i-sporta",
-      "realAcronym": "Ministarstvo znanosti, obrazovanja i \u0161porta",
-      "slug": "ministarstvo-znanosti-obrazovanja-i-sporta"
-    },
-    "412": {
-      "acronym": "ministarstvo-gospodarstva-rada-i-poduzetnistva",
-      "realAcronym": "Ministarstvo gospodarstva, rada i poduzetni\u0161tva",
-      "slug": "ministarstvo-gospodarstva-rada-i-poduzetnistva"
-    },
-    "413": {
-      "acronym": "nezavisni",
-      "realAcronym": "Nezavisni",
-      "slug": "klub-nezavisnih"
-    },
-    "437": { "acronym": "gov", "realAcronym": "gov", "slug": "gov" },
-    "438": {
-      "acronym": "ministarstvo-regionalnog-razvoja-i-fondova-europske-unije",
-      "realAcronym": "Ministarstvo regionalnog razvoja i fondova Europske unije",
-      "slug": "ministarstvo-regionalnog-razvoja-i-fondova-europske-unije"
-    },
-    "439": {
-      "acronym": "ministarstvo-vanjskih-i-europskih-poslova",
-      "realAcronym": "Ministarstvo vanjskih i europskih poslova",
-      "slug": "ministarstvo-vanjskih-i-europskih-poslova"
-    },
-    "440": {
-      "acronym": "nz",
-      "realAcronym": "NZ",
-      "slug": "klub-nezavisnih-zastupnika"
-    },
-    "441": {
-      "acronym": "nlm",
-      "realAcronym": "NLM",
-      "slug": "klub-zastupnika-nezavisne-liste-mladih"
-    },
-    "442": {
-      "acronym": "hs",
-      "realAcronym": "HS",
-      "slug": "klub-hrvatski-suverenisti"
+    "120": {
+      "acronym": "odbor-za-izbor-imenovanja-i-upravne-poslove",
+      "realAcronym": "Odbor za izbor, imenovanja i upravne poslove",
+      "slug": "odbor-za-izbor-imenovanja-i-upravne-poslove"
+    },
+    "121": {
+      "acronym": "odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
+      "realAcronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
+      "slug": "odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost"
+    },
+    "122": {
+      "acronym": "odbor-za-zastitu-okolisa-i-prirode",
+      "realAcronym": "Odbor za zaštitu okoliša i prirode",
+      "slug": "odbor-za-zastitu-okolisa-i-prirode"
+    },
+    "123": {
+      "acronym": "odbor-za-prostorno-uredenje-i-graditeljstvo",
+      "realAcronym": "Odbor za prostorno uređenje i graditeljstvo",
+      "slug": "odbor-za-prostorno-uredenje-i-graditeljstvo"
+    },
+    "124": {
+      "acronym": "odbor-za-europske-poslove",
+      "realAcronym": "Odbor za europske poslove",
+      "slug": "odbor-za-europske-poslove"
+    },
+    "125": {
+      "acronym": "odbor-za-pravosude",
+      "realAcronym": "Odbor za pravosuđe",
+      "slug": "odbor-za-pravosude"
+    },
+    "126": {
+      "acronym": "odbor-za-zdravstvo-i-socijalnu-politiku",
+      "realAcronym": "Odbor za zdravstvo i socijalnu politiku",
+      "slug": "odbor-za-zdravstvo-i-socijalnu-politiku"
+    },
+    "127": {
+      "acronym": "odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo",
+      "realAcronym": "Odbor za rad, mirovinski sustav i socijalno partnerstvo",
+      "slug": "odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo"
+    },
+    "128": {
+      "acronym": "odbor-za-financije-i-drzavni-proracun",
+      "realAcronym": "Odbor za financije i državni proračun",
+      "slug": "odbor-za-financije-i-drzavni-proracun"
     }
   },
   "personLink": {

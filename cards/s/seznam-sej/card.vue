@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator" class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
@@ -81,16 +81,16 @@ export default {
     common,
   ],
   data() {
-    const tabs = this.$options.cardData.cardGlobals.session_list_tabs;
+    const tabs = this.$root.$options.cardData.cardGlobals.session_list_tabs;
     return {
       tabs,
-      sessions: this.$options.cardData.data.sessions,
+      sessions: this.$root.$options.cardData.data.sessions,
       workingBodies: [],
       filters: tabs.map(e => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData.parlaState, 'filters') || tabs[0].title,
-      justFive: get(this.$options.cardData.parlaState, 'justFive') || false,
+      currentFilter: get(this.$root.$options.cardData.parlaState, 'filters') || tabs[0].title,
+      justFive: get(this.$root.$options.cardData.parlaState, 'justFive') || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -230,7 +230,7 @@ export default {
   created() {
     axios.get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
       .then((response) => {
-        const existingWorkingBodies = get(this.$options.cardData.parlaState, 'workingBodies') || [];
+        const existingWorkingBodies = get(this.$root.$options.cardData.parlaState, 'workingBodies') || [];
         this.workingBodies = response.data.map(workingBody => ({
           id: workingBody.id,
           label: workingBody.name,

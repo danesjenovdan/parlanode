@@ -1,8 +1,8 @@
 <template>
   <score-avg-max
-    :card-data="$options.cardData"
-    :person="$options.cardData.data.person"
-    :results="this.$options.cardData.data.result"
+    :card-data="$root.$options.cardData"
+    :person="$root.$options.cardData.data.person"
+    :results="this.$root.$options.cardData.data.result"
     type="person"
     context="votings"
   >

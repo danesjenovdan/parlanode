@@ -1,8 +1,8 @@
 <template>
   <prisotnost-chart
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.party"
-    :results="$options.cardData.data.results"
+    :card-data="$root.$options.cardData"
+    :party="$root.$options.cardData.data.party"
+    :results="$root.$options.cardData.data.results"
     :generated-card-url="generatedCardUrl"
     type="party"
   >
@@ -32,7 +32,7 @@ export default {
   ],
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.party.id}?altHeader=true`;
+      return `${this.url}${this.$root.$options.cardData.data.party.id}?altHeader=true`;
     },
   },
 };

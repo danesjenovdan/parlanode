@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div :id="$root.$options.cardData.mountId">
     <generator>
       <div slot="generator">
         <tools-tabs current-tool="notifications" />
@@ -394,21 +394,21 @@ export default {
       matchType: 'siroko',
       frequency: 'event',
       email: '',
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       headerConfig: {
         // TODO: fix this when developing card
         // best if you include a mixin from 'mixins/altHeaders'
         circleIcon: 'og-list',
         heading: '&nbsp;',
         subheading: '',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        alternative: this.$root.$options.cardData.cardData.altHeader === 'true',
         title: this.$t('card.title'),
       },
       ogConfig: {
         // TODO: fix this when developing card
         // best if you include a mixin from 'mixins/ogImages'
       },
-      state: this.$options.cardData.parlaState,
+      state: this.$root.$options.cardData.parlaState,
       keywords: [],
       updatedId: '',
       errored: false,

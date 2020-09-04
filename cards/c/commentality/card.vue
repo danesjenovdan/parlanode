@@ -1,6 +1,6 @@
 <template>
   <transparent-wrapper
-    :id="`${$options.cardData.mountId}`"
+    :id="`${$root.$options.cardData.mountId}`"
     :card-url="url"
   >
     <iframe
@@ -34,7 +34,7 @@ export default {
     };
   },
   created() {
-    // this.articleId = this.$options.cardData.parlaState.articleId;
+    // this.articleId = this.$root.$options.cardData.parlaState.articleId;
     console.log('created');
     const { cardGlobals } = this.$root.$options.cardData;
     const { EPA } = this.$root.$options.cardData.parlaState

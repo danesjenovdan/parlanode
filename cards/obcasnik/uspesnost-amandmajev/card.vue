@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -29,7 +29,7 @@ export default {
   },
   mixins: [common],
   data() {
-    const data = this.$options.cardData.data;
+    const data = this.$root.$options.cardData.data;
     const parties = ['SDS', 'SMC', 'Levica', 'DeSUS', 'NP', 'SD', 'NSi', 'IMNS']; // PAZI NA PS NP vs. NP
 
     const rows = parties.map((acronym) => {

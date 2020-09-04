@@ -1,6 +1,6 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
+    :id="$root.$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -46,14 +46,14 @@ export default {
     partyOgImage,
   ],
   data() {
-    const people = this.$options.cardData.data.results.map((o) => {
+    const people = this.$root.$options.cardData.data.results.map((o) => {
       const { person } = o;
       person.score = `${(o.ratio || 0).toFixed(2).replace('.', ',')} %`;
       return person;
     });
-    const party = this.$options.cardData.data.organization;
+    const party = this.$root.$options.cardData.data.organization;
     return {
-      data: this.$options.cardData.data,
+      data: this.$root.$options.cardData.data,
       party,
       people,
     };
