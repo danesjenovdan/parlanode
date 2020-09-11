@@ -188,7 +188,6 @@ export default {
     });
 
     const all = data.find(o => o.type === 'parliament');
-    const coalition = data.find(o => o.type === 'coalition');
 
     let groups = [];
     groups.push({
@@ -197,11 +196,17 @@ export default {
       acronym: this.$t('everybody'),
       name: this.$t('everybody'),
     });
-    groups.push({
-      id: coalition.id,
-      color: 'koal',
-      acronym: this.$t('coalition'),
-      name: this.$t('coalition'),
+
+    let coalitions = data.filter(o => o.type === 'coalition');
+    coalitions = sortBy(coalitions, ['name']);
+
+    coalitions.forEach((coalition) => {
+      groups.push({
+        id: coalition.id,
+        color: 'koal',
+        acronym: coalition.name,
+        name: coalition.name,
+      });
     });
 
     let namedGroups = [];
