@@ -5,6 +5,7 @@
       {{ text }}
       <a
         v-t="'data-not-published.link-text'"
+        v-if="showLink"
         :href="$t('data-not-published.link-url')"
         target="_blank"
       ></a>
@@ -19,6 +20,10 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    showLink: {
+      type: Boolean,
+      default: true,
     },
   },
 };

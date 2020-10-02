@@ -9,7 +9,7 @@
       :og-config="ogConfig"
       :content-class="contentClass"
     >
-      <data-not-published :text="emptyStateText" />
+      <data-not-published :text="emptyStateText" :show-link="showEmptyLink" />
     </card-wrapper>
   </div>
   <div v-else>
@@ -36,14 +36,14 @@ export default {
 
     const height = state.height || 1;
     const title = state.title || this.$t('card.title');
-    const emptyStateText = (() => {
+    const [showEmptyLink, emptyStateText] = (() => {
       if (state.emptyStateText) {
-        return state.emptyStateText;
+        return [false, state.emptyStateText];
       }
       if (this.$te('card.data-not-published')) {
-        return this.$t('card.data-not-published');
+        return [false, this.$t('card.data-not-published')];
       }
-      return this.$t('data-not-published.data-not-available');
+      return [false, this.$t('data-not-published.data-not-available')];
     })();
 
     const showErrorState = false;
@@ -53,6 +53,7 @@ export default {
     return {
       showErrorState,
       showEmptyState,
+      showEmptyLink,
       emptyStateText,
       contentClass: height === 2 ? 'full' : 'half',
       headerConfig: defaultHeaderConfig(this, {
