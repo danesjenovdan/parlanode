@@ -427,7 +427,7 @@ export default {
   created() {
     console.log(this.slugs.urls.notifications_api);
     this.$notifApi = axios.create({
-      baseURL: 'https://obvestila.nov.parlameter.si',
+      baseURL: this.slugs.urls.notifications_api,
       // baseURL: this.slugs.urls.notifications_api,
     });
 
