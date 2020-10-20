@@ -64,7 +64,7 @@ if (!process.env.CARD_NAME) {
     }
 
     const allCards = files
-      .filter(f => !f.includes('_empty'))
+      .filter(f => !f.includes('_empty') && !f.includes('experimental'))
       .map(f => (
         path.resolve(f)
           .replace(/\\/g, '/')
