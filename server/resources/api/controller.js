@@ -16,7 +16,7 @@ function getAllCardPaths() {
         return;
       }
       const allCards = files
-        .filter(f => !f.includes('_empty'))
+        .filter(f => !f.includes('_empty') && !f.includes('experimental'))
         .map(f => (
           path.resolve(f)
             .replace(/\\/g, '/')
