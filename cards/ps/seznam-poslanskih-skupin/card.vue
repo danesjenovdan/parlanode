@@ -48,11 +48,11 @@ const analysesIDs = [
     round: true,
     roundingPrecision: 0,
   },
-  {
-    id: 'number_of_amendments',
-    round: true,
-    roundingPrecision: 0,
-  },
+  // {
+  //   id: 'number_of_amendments',
+  //   round: true,
+  //   roundingPrecision: 0,
+  // },
   {
     id: 'intra_disunion',
     round: true,
