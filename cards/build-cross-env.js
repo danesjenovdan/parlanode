@@ -54,6 +54,12 @@ const isFalse = arg => [false, 0, 'false', '0', 'no', 'off'].includes(arg);
 
 if (cmd === 'build') {
   const cpEnv = Object.create(process.env);
+  // NOTE TO FUTURE GENERATIONS
+  // NODE_ENV needs to be set to production in order
+  // for webpack to load the appropriate config.
+  // However if you're trying to build cards without
+  // a production.js config file things are going to break.
+  // We might want to refactor this.
   cpEnv.NODE_ENV = 'production';
   cpEnv.CARD_NAME = cardPath;
   cpEnv.CARD_LANG = lang;
