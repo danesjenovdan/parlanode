@@ -9,16 +9,6 @@
               v-model="currentFilter"
             />
           </div>
-          <div
-            v-if="currentFilter == tabs.find(t => !t.org_ids || !t.org_ids.length).title"
-            class="col-md-6 filters"
-          >
-            <p-search-dropdown
-              v-model="workingBodies"
-              :placeholder="inputPlaceholder"
-              class="dropdown-filter"
-            />
-          </div>
         </div>
         <!-- <div class="row">
           <div class="col-md-12 filters">
