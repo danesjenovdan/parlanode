@@ -23,6 +23,7 @@ function setupExpress() {
     app.set('view options', {
       async: true,
     });
+    app.locals.lang = config.siteLang;
     app.locals.i18n = i18n;
     app.locals.config = config;
     app.locals.sm = config.siteMap;
@@ -37,6 +38,9 @@ function setupExpress() {
     app.use('*', function(req, res, next) {
       if (req.query.lang) {
         app.locals.i18n = _i18n(req.query.lang);
+        app.locals.lang = req.query.lang;
+      } else {
+        req.query.lang = app.locals.lang;
       }
       next();
     });
