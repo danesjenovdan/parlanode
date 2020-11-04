@@ -125,7 +125,7 @@ export default {
       if (!this.slugs || session.link_to === 'nothing') {
         return '';
       }
-      return this.getSessionLegislationLink(session);
+      return this.getSessionTranscriptLink(session);
     },
   },
 };
