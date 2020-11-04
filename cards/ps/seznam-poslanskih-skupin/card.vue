@@ -118,7 +118,9 @@ export default {
         Math.max(oldValue, nextParty.results[this.currentAnalysis])
       ), 0);
 
-      return this.data.map((party) => {
+      return this.data.filter((party) => {
+        return !party.party.name.includes('guest');
+      }).map((party) => {
         const rawValue = party.results[this.currentAnalysis];
         const newParty = JSON.parse(JSON.stringify(party));
         newParty.displayValue = (this.round(rawValue, this.currentAnalysisData.roundingPrecision || 1) + (this.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',');
