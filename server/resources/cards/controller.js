@@ -304,7 +304,7 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   return renderedCard;
 }
 
-const IS_VALID_CUSTOM_URL = /^https?:\/\/[^/]*\.parlamet[ea]?r\.(?:si|hr|pl)\//;
+const IS_VALID_CUSTOM_URL = /^https?:\/\/[^/]*\.parlamet[ea]?r\.(?:si|hr|pl|org)\//;
 
 function render(req, res) {
   const { group, method } = req.params;
