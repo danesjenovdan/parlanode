@@ -4,7 +4,6 @@ const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
 const config = require('../config');
 const { i18n: _i18n, asyncRender: ar, formatDate } = require('./utils');
-const { request } = require('express');
 
 const i18n = _i18n(config.siteLang);
 
@@ -35,12 +34,10 @@ function setupExpress() {
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // i18n middleware
-    app.use('*', function(req, res, next) {
+    app.use('*', (req, res, next) => {
       if (req.query.lang) {
-        app.locals.i18n = _i18n(req.query.lang);
-        app.locals.lang = req.query.lang;
-      } else {
-        req.query.lang = app.locals.lang;
+        res.locals.i18n = _i18n(req.query.lang);
+        res.locals.lang = req.query.lang;
       }
       next();
     });
