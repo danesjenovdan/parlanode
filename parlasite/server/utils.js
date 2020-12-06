@@ -27,6 +27,10 @@ async function fetchCard(cardPath, id, params = {}) {
     id = undefined;
   }
 
+  if (this.req.query.lang) {
+    params.lang = this.req.query.lang;
+  }
+
   if (this.req.query.forceRender) {
     params.forceRender = true;
   }
