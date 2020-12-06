@@ -22,6 +22,7 @@ function setupExpress() {
     app.set('view options', {
       async: true,
     });
+    app.locals.lang = config.siteLang;
     app.locals.i18n = i18n;
     app.locals.config = config;
     app.locals.sm = config.siteMap;
@@ -30,6 +31,15 @@ function setupExpress() {
     app.use(serveStatic('public'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
+
+    // i18n middleware
+    app.use('*', (req, res, next) => {
+      if (req.query.lang) {
+        res.locals.i18n = _i18n(req.query.lang);
+        res.locals.lang = req.query.lang;
+      }
+      next();
+    });
 
     // eslint-disable-next-line global-require
     require('./routes')(app);

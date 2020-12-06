@@ -48,6 +48,20 @@ router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar((render, req, res, next) 
   }
 }));
 
+router.get(`/:id(\\d+)/${sm.session.agenda}`, ar((render, req, res, next) => {
+  const sesData = getData(req.params.id);
+  if (sesData) {
+    render('seja/dnevni-red', {
+      activeMenu: 'session',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+      activeTab: 'dnevni-red',
+      ...sesData,
+    });
+  } else {
+    next();
+  }
+}));
+
 router.get([`/:id(\\d+)/${sm.session.transcript}`, `/:id(\\d+)/${sm.session.transcript}/:transcriptPage(\\d+)`], ar((render, req, res, next) => {
   const sesData = getData(req.params.id);
   if (sesData) {
