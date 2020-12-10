@@ -6,7 +6,7 @@ async function takeScreenshot(imagePath, { selector = 'body', url = 'about:blank
     browser = await puppeteer.launch({
       headless: true,
       ignoreHTTPSErrors: true,
-      timeout: 2000,
+      timeout: 10000,
     });
 
     const page = await browser.newPage();

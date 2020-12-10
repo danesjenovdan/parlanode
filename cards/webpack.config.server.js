@@ -26,7 +26,7 @@ module.exports = (cardPath) => {
   return merge.smart(baseConfigObject, {
     entry: path.resolve(__dirname, 'bundle-server.js'),
     output: {
-      path: path.resolve(__dirname, cardPath, 'bundles'),
+      path: path.resolve(__dirname, cardPath, 'bundles', cardLang),
       filename: 'server.js',
       libraryTarget: 'commonjs2',
     },

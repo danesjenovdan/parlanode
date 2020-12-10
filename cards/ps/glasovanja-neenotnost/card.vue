@@ -156,7 +156,7 @@
 </template>
 
 <script>
-import { parse as parseDate, format } from 'date-fns';
+import { parseISO, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find, assign } from 'lodash';
 import Generator from 'components/Generator.vue';
 import ToolsTabs from 'components/ToolsTabs.vue';
@@ -402,7 +402,7 @@ export default {
             shortened_projects: agendas.map(p => shortenVoteTitle(p, 80)),
           };
         });
-      const getDateFromVote = vote => (vote.date ? format(parseDate(vote.date), 'D. M. YYYY') : null);
+      const getDateFromVote = vote => (vote.date ? format(parseISO(vote.date), 'd. M. y') : null);
 
       let currentVotingDays;
 

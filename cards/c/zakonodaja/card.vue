@@ -105,7 +105,7 @@ export default {
       tabs,
       data: this.$options.cardData.data.results,
       filters: tabs.map(e => ({ id: e.title, label: e.title })),
-      currentFilter: state.type || tabs[0].title,
+      currentFilter: state.type || (state.generator ? tabs[0].title : null),
       currentSort: 'updated',
       currentSortOrder: 'desc',
       textFilter: state.text || '',
@@ -170,7 +170,10 @@ export default {
     },
     generatedCardUrl() {
       const state = {};
-      state.type = this.currentFilter;
+
+      if (this.currentFilter != null) {
+        state.type = this.currentFilter;
+      }
 
       if (this.textFilter.length > 0) {
         state.text = this.textFilter;
@@ -200,7 +203,7 @@ export default {
         const onlyAbstractsMatch = !this.onlyAbstracts || legislation.abstractVisible;
         const onlyWithVotesMatch = !this.onlyWithVotes || legislation.hasVotes;
 
-        let typeMatch = this.currentFilter === '';
+        let typeMatch = this.currentFilter == null || this.currentFilter === '';
         if (!typeMatch) {
           const currentTab = this.tabs.find(e => e.title === this.currentFilter);
           if (currentTab) {

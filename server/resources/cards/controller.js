@@ -43,7 +43,7 @@ async function fetchData(dataUrl, cacheData) {
 }
 
 async function loadBundles(cacheData) {
-  const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
+  const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles/${cacheData.language}`;
   return Promise.all([
     fs.readFile(`${bundlesPath}/server.js`, 'utf-8'),
     fs.readFile(`${bundlesPath}/client.js`, 'utf-8'),
@@ -52,8 +52,8 @@ async function loadBundles(cacheData) {
 }
 
 async function loadI18n(cacheData) {
-  const i18nDefaultsPath = `cards/_i18n/${config.cardLang}/defaults.json`;
-  const i18nCardPath = `cards/_i18n/${config.cardLang}/${cacheData.group}/${cacheData.method}.json`;
+  const i18nDefaultsPath = `cards/_i18n/${cacheData.language}/defaults.json`;
+  const i18nCardPath = `cards/_i18n/${cacheData.language}/${cacheData.group}/${cacheData.method}.json`;
   const [i18nDefault, i18nCard] = await Promise.all([
     fs.readJson(i18nDefaultsPath),
     fs.readJson(i18nCardPath),
@@ -63,10 +63,10 @@ async function loadI18n(cacheData) {
 
 async function saveBuildEntry(cacheData, cardJson) {
   await CardBuild.findOneAndUpdate(
-    { group: cacheData.group, method: cacheData.method },
+    { group: cacheData.group, method: cacheData.method, language: cacheData.language },
     {
       lastBuilt: cardJson.lastUpdate,
-      language: config.cardLang,
+      language: cacheData.language,
       dataUrl: cardJson.dataUrl,
       dataUrls: cardJson.dataUrls, // THIS WAS ADDED TO ALLOW MULTIPLE DATA SOURCES
     },
@@ -102,7 +102,7 @@ function expandUrl(dataUrl) {
 }
 
 async function shouldBuildCard(cacheData, cardJson) {
-  const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method });
+  const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method, language: cacheData.language });
   if (!cardBuild) {
     if (await getBundlesModifiedTime(cacheData) > 0) {
       // if there is no build entry in db but files exist just add the entry
@@ -124,7 +124,7 @@ async function shouldBuildCard(cacheData, cardJson) {
     }
     return true;
   }
-  if (cardBuild.language !== config.cardLang) {
+  if (cardBuild.language !== cacheData.language) {
     return true;
   }
   if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
@@ -138,7 +138,7 @@ async function shouldBuildCard(cacheData, cardJson) {
 const ongoingCardBuilds = new Map();
 
 async function buildCard(cacheData, cardJson) {
-  const buildCommand = `node cards/build-cross-env.js ${cacheData.group}/${cacheData.method} build ${config.cardLang} --update-timestamp=false`;
+  const buildCommand = `node cards/build-cross-env.js ${cacheData.group}/${cacheData.method} build ${cacheData.language} --update-timestamp=false --env=${process.env.NODE_ENV}`;
   try {
     let promise;
     if (ongoingCardBuilds.has(buildCommand)) {
@@ -161,7 +161,7 @@ async function buildCard(cacheData, cardJson) {
 }
 
 function formattedDate(days = 0) {
-  return dateFns.format(dateFns.addDays(new Date(), days), 'D.M.YYYY');
+  return dateFns.format(dateFns.addDays(new Date(), days), 'd.M.y');
 }
 
 async function renderCard(cacheData, cardJson, originalUrl) {
@@ -182,7 +182,6 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     fetchUrl = cacheData.customUrl;
   } else if (cacheData.dataUrl) {
     fetchUrl = `${cacheData.dataUrl}${cacheData.id ? `/${cacheData.id}` : ''}${cacheData.dateRequested ? `/${cacheData.dateRequested}` : ''}`;
-    console.log(fetchUrl);
   } else if (cacheData.dataUrls) {
     // generate all fetch URLs by iterating over dataUrls
     fetchUrls = Object.keys(cacheData.dataUrls).reduce((acc, cur) => {
@@ -193,18 +192,15 @@ async function renderCard(cacheData, cardJson, originalUrl) {
 
   let fetchedData = {};
   if (fetchUrl) {
-    console.log('fetching single');
     fetchedData = await fetchData(fetchUrl, cacheData);
   } else if (fetchUrls) {
-    console.log('fetching multiple');
     // generate data object from different URL sources below
     const allFetches = Object.values(fetchUrls).map(url => fetchData(url, cacheData));
     const allResponses = await Promise.all(allFetches);
-    console.log('resps', allResponses);
-    fetchedData.data = Object.keys(fetchUrls).forEach((key, index) => fetchedData[key] = allResponses[index]);
-    console.log(fetchedData);
+    fetchedData.data = Object.keys(fetchUrls).forEach((key, index) => {
+      fetchedData[key] = allResponses[index];
+    });
   } else {
-    console.log('fetching nothing');
     fetchedData = null;
   }
 
@@ -248,7 +244,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.dateRendered = cacheData.dateRequested || formattedDate();
 
   // remove all that match
-  await CardRender.remove({
+  await CardRender.deleteMany({
     group: cacheData.group,
     method: cacheData.method,
     id: cacheData.id,
@@ -274,11 +270,11 @@ async function findRenderedCardForDate(cacheData) {
       ...cacheData,
       dateRendered: formattedDate(),
     };
-    renderedCard = await CardRender.findOne(cacheDataToday).sort({ dateTime: -1 });
+    renderedCard = await CardRender.findOne(cacheDataToday).maxTime(5000).sort({ dateTime: -1 });
   }
   // if dateRequested is specified try to find that days render, or null if no dateRequested
   if (!renderedCard) {
-    renderedCard = await CardRender.findOne(cacheData).sort({ dateTime: -1 });
+    renderedCard = await CardRender.findOne(cacheData).maxTime(5000).sort({ dateTime: -1 });
   }
   return renderedCard;
 }
@@ -319,6 +315,7 @@ function render(req, res) {
   const altHeader = !!req.query.altHeader;
   const customUrl = req.query.customUrl ? expandUrl(decodeURI(req.query.customUrl)) : null;
   const state = req.query.state || '{}';
+  const language = req.query.lang || config.cardLang;
 
   const forceRender = !!req.query.forceRender;
 
@@ -337,6 +334,7 @@ function render(req, res) {
     altHeader,
     customUrl,
     state,
+    language,
   };
 
   const startTime = performance.now();

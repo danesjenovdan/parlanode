@@ -98,12 +98,12 @@
                                   class="search-dropdown-input match_mode"
                                 >
                                   <option
-                                    :selected="keyword.match_mode === 'natancno'"
+                                    :selected="keyword.mode === 'natancno'"
                                     value="natancno"
                                     @click="modeCallback(keyword, 'natancno')"
                                   >{{ $t('modes.precise') }}</option>
                                   <option
-                                    :selected="keyword.match_mode === 'siroko'"
+                                    :selected="keyword.mode === 'siroko'"
                                     value="obe"
                                     @click="modeCallback(keyword, 'siroko')"
                                   >{{ $t('modes.broad') }}</option>
@@ -425,9 +425,15 @@ export default {
     });
   },
   created() {
+    console.log(this.slugs.urls.notifications_api);
     this.$notifApi = axios.create({
-      baseURL: this.slugs.urls.notifications_api,
+      baseURL: 'https://obvestila.nov.parlameter.si',
+      // baseURL: this.slugs.urls.notifications_api,
     });
+
+    if (this.state.kid) {
+      this.confirmCallback(this.state.kid);
+    }
   },
   methods: {
     validateEmail(email) {
@@ -470,7 +476,7 @@ export default {
         id: keyword.id,
         keyword: keyword.keyword,
         reminder: keyword.reminder,
-        mode: keyword.match_mode,
+        mode: keyword.mode,
         delete: true,
         active: true,
         uid: this.state.uid,
@@ -488,7 +494,7 @@ export default {
         id: keyword.id,
         keyword: keyword.keyword,
         reminder,
-        mode: keyword.match_mode,
+        mode: keyword.mode,
         delete: false,
         active: true,
         uid: this.state.uid,
@@ -508,6 +514,13 @@ export default {
       };
 
       this.$notifApi.post('/updateSettings/', data);
+    },
+    confirmCallback(kid) {
+      const data = {
+        id: kid,
+      };
+
+      this.$notifApi.post('/confirmSettings/', data);
     },
   },
 };

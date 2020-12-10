@@ -121,9 +121,15 @@ export default {
           font-weight: 700;
           text-transform: uppercase;
 
-          small {
+          > small {
             font-weight: 400;
             float: right;
+          }
+
+          > span {
+            font-weight: 400;
+            float: right;
+            display: block;
           }
         }
       }

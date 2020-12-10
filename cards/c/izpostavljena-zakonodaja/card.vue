@@ -70,7 +70,7 @@
             </div>
           </div>
         </p-tab>
-        <p-tab :label="$t('most-discussed')">
+        <p-tab v-if="false" :label="$t('most-discussed')">
           <div class="legislation row">
             <template v-if="mostDiscussedLoading">
               <div class="nalagalnik" />

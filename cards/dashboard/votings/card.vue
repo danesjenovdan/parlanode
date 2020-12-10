@@ -4,11 +4,22 @@
       <div id="dash-votings-list">
         <h4 v-if="session">{{ session.name }}</h4>
         <div v-if="votings != null" class="filters">
-          <input
-            v-model="filterQuery"
-            :placeholder="$t('search')"
-            class="form-control"
-          >
+          <div class="filter-input">
+            <input
+              v-model="filterQuery"
+              :placeholder="$t('search')"
+              class="form-control"
+            >
+          </div>
+          <div class="filter-sort">
+            <p-search-dropdown
+              v-model="sortOptions"
+              single
+              small
+              hide-clear
+              @select="sortBy = $event"
+            />
+          </div>
         </div>
         <dash-table
           :items="mappedItems"
@@ -18,7 +29,14 @@
             <template v-if="index === 0">
               <label>
                 {{ $t('name') }}
-                <small>{{ column.voting.start_time }}</small>
+                <span>
+                  <small>{{ column.voting.start_time }}</small>
+                  <small>
+                    <dash-loading-button :load="() => deleteVoting(column.voting, column.motion)">
+                      &times;
+                    </dash-loading-button>
+                  </small>
+                </span>
               </label>
               <input v-model="column.voting.name" class="form-control">
             </template>
@@ -149,18 +167,35 @@ export default {
       tagModalData: null,
       error: null,
       filterQuery: '',
+      sortBy: 'start_time',
+      sortOptions: [
+        {
+          id: 'start_time',
+          label: 'start_time',
+          selected: true,
+        },
+        {
+          id: 'name',
+          label: this.$t('name'),
+          selected: false,
+        },
+      ],
     };
   },
   computed: {
     mappedItems() {
       if (this.votings) {
         const q = this.filterQuery.toLowerCase();
-        return this.votings
+        const sortedVotings = orderBy(this.votings, (o) => {
+          const value = o[this.sortBy];
+          return value.toLowerCase ? value.toLowerCase() : value;
+        }, ['desc']);
+        return sortedVotings
           .filter(v => v.name.toLowerCase().indexOf(q) !== -1)
           .map((voting) => {
             const motion = this.motions.find(m => m.id === voting.motion);
             return [
-              { voting },
+              { voting, motion },
               { tags: voting.tags },
               {
                 id: motion.id,
@@ -194,7 +229,7 @@ export default {
       this.$parlapi.getSession(this.sessionId),
     ])
       .then(([votings, motions, tags, sessions]) => {
-        this.votings = orderBy(votings.data.results, ['start_time'], ['desc']);
+        this.votings = votings.data.results;
         this.motions = motions.data.results;
         this.tags = tags.data.results;
         this.session = sessions.data.results.length ? sessions.data.results[0] : {};
@@ -206,6 +241,9 @@ export default {
       });
   },
   methods: {
+    changeSort(value) {
+      this.sortBy = value;
+    },
     changeResult(motionId, value) {
       const motion = this.motions.find(m => m.id === motionId);
       if (motion) {
@@ -285,6 +323,22 @@ export default {
         await this.saveData(voting)();
       }
     },
+    async deleteVoting(voting, motion) {
+      // eslint-disable-next-line no-alert, no-restricted-globals
+      if (!confirm(`Warning! This will *DELETE* "${voting.name}"!`)) {
+        return;
+      }
+      // eslint-disable-next-line no-alert, no-restricted-globals
+      if (!confirm('Are you sure?')) {
+        return;
+      }
+      await this.$parlapi.deleteVoting(voting.id);
+      await this.$parlapi.deleteMotion(motion.id);
+      const vIndex = this.votings.findIndex(v => v === voting);
+      const mIndex = this.motions.findIndex(m => m === motion);
+      this.votings.splice(vIndex, 1);
+      this.motions.splice(mIndex, 1);
+    },
   },
 };
 </script>
@@ -293,6 +347,24 @@ export default {
 .card-container,
 /deep/ .card-content {
   overflow: visible;
+}
+
+.filters {
+  display: flex;
+
+  .filter-input {
+    flex: 3;
+    margin-right: 10px;
+  }
+
+  .filter-sort {
+    flex: 1;
+
+    /deep/ .search-dropdown-input {
+      line-height: 22px;
+      font-size: 14px;
+    }
+  }
 }
 
 #dash-votings-list /deep/ {

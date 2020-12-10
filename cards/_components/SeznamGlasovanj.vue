@@ -50,9 +50,8 @@
                   style="position: absolute; left: -37px;"
                 ></div>
                 <div v-if="!vote.has_votes" class="hand-badge"></div>
-                <component
-                  :is="vote.has_votes ? 'a' : 'div'"
-                  :href="vote.has_votes && vote.url"
+                <a
+                  :href="vote.url"
                   class="show clearfix"
                 >
                   <div class="col-md-1 icon-col">
@@ -115,7 +114,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="session_votes">
-                        <div class="progress smallbar">
+                        <div v-if="vote.percent_for != null" class="progress smallbar">
                           <div
                             :style="{ width: vote.percent_for + '%' }"
                             class="progress-bar aye"
@@ -166,7 +165,7 @@
                       </div>
                     </div>
                   </div>
-                </component>
+                </a>
               </div>
             </component>
           </div>
@@ -299,17 +298,54 @@ export default {
   methods: {
     processVotes() {
       const votes = this.data.votes.map((e) => {
-        const allInVotes = e.for + e.against + e.abstain + e.absent;
+        if (!e) {
+          e = {};
+        }
+
+        if (typeof e.for === 'number'
+          && typeof e.against === 'number'
+          && typeof e.abstain === 'number'
+          && typeof e.absent === 'number') {
+          const allInVotes = e.for + e.against + e.abstain + e.absent;
+          e.percent_for = Math.floor((e.for / allInVotes) * 100);
+          e.percent_against = Math.floor((e.against / allInVotes) * 100);
+          e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
+          e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
+        } else {
+          if (typeof e.for !== 'number') {
+            e.for = '?';
+          }
+          if (typeof e.against !== 'number') {
+            e.against = '?';
+          }
+          if (typeof e.abstain !== 'number') {
+            e.abstain = '?';
+          }
+          if (typeof e.absent !== 'number') {
+            e.absent = '?';
+          }
+        }
+
         e.url = this.getSessionVoteLink({
           session_id: (e.session_id || (e.session && e.session.id) || this.data.session.id),
           vote_id: e.motion_id,
         });
-        e.accepted = `accepted ${(e.result === true) ? 'aye' : 'nay'}`;
-        e.accepted_glyph = `glyphicon ${(e.result === true) ? 'glyphicon-ok' : 'glyphicon-remove'}`;
-        e.percent_for = Math.floor((e.for / allInVotes) * 100);
-        e.percent_against = Math.floor((e.against / allInVotes) * 100);
-        e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
-        e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
+        e.accepted = 'accepted ';
+        if (e.result === true) {
+          e.accepted += 'aye';
+        } else if (e.result === false) {
+          e.accepted += 'nay';
+        } else {
+          e.accepted += 'unknown';
+        }
+        e.accepted_glyph = 'glyphicon ';
+        if (e.result === true) {
+          e.accepted_glyph += 'glyphicon-ok';
+        } else if (e.result === false) {
+          e.accepted_glyph += 'glyphicon-remove';
+        } else {
+          e.accepted_glyph += 'parlaicon-unknown';
+        }
 
         // parse vote title and any associated projects from text
         const { title, projects } = parseVoteTitle(e.text);
@@ -318,12 +354,12 @@ export default {
 
         // if legislation name is defined trim the legislation name from the start of vote name
         if (this.data.text && e.title.indexOf(this.data.text) === 0) {
-          e.shortened_title = e.title.slice(this.data.text.length).replace(/^[\s-]*/, '');
+          e.shortened_title = e.title.slice(this.data.text.length).replace(/^[\s-,]*/, '');
         }
 
         // shorten the title for display
         e.shortened_projects = e.projects.map(p => shortenVoteTitle(p, 85));
-        e.shortened_title = shortenVoteTitle(e.shortened_title || e.title);
+        e.shortened_title = shortenVoteTitle(e.shortened_title || e.title || '');
 
         // if has_votes is undefined assume we always have votes
         e.has_votes = typeof e.has_votes === 'boolean' ? e.has_votes : true;
@@ -463,6 +499,14 @@ export default {
   margin: 0;
   line-height: 30px;
   margin-top: 6px;
+
+  .parlaicon-unknown {
+    width: 24px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
 }
 
 .session_voting .session_title {

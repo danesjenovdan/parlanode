@@ -81,7 +81,7 @@
 <script>
 import stableSort from 'stable';
 import { find } from 'lodash';
-import { parse, differenceInCalendarYears } from 'date-fns';
+import { parseISO, differenceInCalendarYears } from 'date-fns';
 import stateLoader from 'helpers/stateLoader';
 import common from 'mixins/common';
 import generators from 'mixins/generatePeopleAndParties';
@@ -98,7 +98,7 @@ function getAge(date) {
   if (!date) {
     return 0;
   }
-  return differenceInCalendarYears(new Date(), parse(date));
+  return differenceInCalendarYears(new Date(), parseISO(date));
 }
 
 const analysesIDs = [

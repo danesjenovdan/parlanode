@@ -108,16 +108,27 @@ function parlapi() {
       return data.get(`/votes/?session=${sessionId}&limit=10000&ordering=-start_time`);
     },
     getUntaggedVotings() {
-      return data.get(`/untagged_votes/?limit=10000&ordering=-start_time`);
+      return data.get('/untagged_votes/?limit=10000&ordering=-start_time');
     },
     patchVoting(id, voting) {
       return data.patch(`/votes/${id}/`, voting);
+    },
+    async deleteVoting(id) {
+      try {
+        await analize.delete(`https://analize.parlametar.hr/v1/s/votes/${id}/`);
+      } catch (e) {
+        // ignore, maybe doesnt exist or whatever
+      }
+      return data.delete(`/votes/${id}/`);
     },
     getMotions(sessionId) {
       return data.get(`/motions/?session=${sessionId}&limit=10000&ordering=-start_time`);
     },
     patchMotion(id, motion) {
       return data.patch(`/motions/${id}/`, motion);
+    },
+    deleteMotion(id) {
+      return data.delete(`/motions/${id}/`);
     },
     getTags() {
       return data.get('/tags/?limit=10000');
@@ -182,6 +193,9 @@ function parlapi() {
     },
     patchOrganisation(id, org) {
       return data.patch(`/organizations/${id}/`, org);
+    },
+    postOrganisation(org) {
+      return data.post('/organizations/', org);
     },
     getOrganisationTFIDF(orgId) {
       return analize.get(`/pg/tfidfs/?organization__id_parladata=${orgId}`);
