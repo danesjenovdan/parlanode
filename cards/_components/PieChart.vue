@@ -200,6 +200,10 @@ export default {
 </script>
 
 <style lang="scss">
+path {
+  stroke: #000000;
+  fill: #22a2e0;
+}
 .partychart2 {
   height: 100%;
 
