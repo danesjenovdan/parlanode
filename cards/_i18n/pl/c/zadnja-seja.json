@@ -9,7 +9,11 @@
       "text": "Sejm Rzeczypospolitej Polskiej"
     },
     "words-heading": "Słowa, którymi charakteryzowało się posiedzenie",
-    "words-text": "Analiza jest przeprowadzana zgodnie ze statystykami tf-idf. Korpus prezentuje wszystkie przemówienia, a dokument wszystkie przemówienia w trakcie danej sesji.",
+    "words-text": "Analiza jest przeprowadzana zgodnie ze statystykami {words-link}. Korpus prezentuje wszystkie przemówienia, a dokument wszystkie przemówienia w trakcie danej sesji.",
+    "words-link": {
+      "link": "https://en.wikipedia.org/wiki/Tf-idf",
+      "text": "tf-idf"
+    },
     "presence-heading": "Obecność klubu parlamentarnego na głosowaniach",
     "presence-text": "Kluby parlamentarne są uszeregowane wedle odsetka głosowań w których uczestniczyli ich członkowie.",
     "votes-heading": "Głosowania",
