@@ -9,7 +9,11 @@
       "text": "National Assembly of the Republic of Slovenia"
     },
     "words-heading": "Words that marked the session",
-    "words-text": "We perform the analysis according to the tf-idf statistic. The corpus are all speeches while the document are all speeches at this particular session.",
+    "words-text": "Analizo izvajamo po statistiki {words-link}. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
+    "words-link": {
+      "link": "https://en.wikipedia.org/wiki/Tf-idf",
+      "text": "tf-idf"
+    },
     "presence-heading": "Attendance at voting events by parliamentary group",
     "presence-text": "Parliamentary groups are sorted based on the percentage of votes their members attended.",
     "votes-heading": "Voting events",
