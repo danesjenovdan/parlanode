@@ -16,7 +16,15 @@
         />
       </i18n>
       <div v-t="'info.words-heading'" class="info-text heading"></div>
-      <p v-t="'info.words-text'" class="info-text"></p>
+      <i18n path="info.words-text" tag="p" class="info-text">
+        <a
+          v-t="'info.words-link.text'"
+          :href="$t('info.words-link.link')"
+          place="words-link"
+          class="funblue-light-hover"
+          target="_blank"
+        />
+      </i18n>
       <p v-t="'info.presence-heading'" class="info-text heading"></p>
       <p v-t="'info.presence-text'" class="info-text"></p>
       <p v-t="'info.votes-heading'" class="info-text heading"></p>
