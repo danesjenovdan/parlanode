@@ -9,7 +9,7 @@
       "text": "HS"
     },
     "words-heading": "Riječi koje označavaju sjednicu",
-    "words-text": "Analizo izvajamo po statistiki {words-link}. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
+    "words-text": "Statistike se izračunavaju pomoću modela {words-link}. Korpus čine svi govori, a dokument svi govori na sjednici.",
     "words-link": {
       "link": "https://en.wikipedia.org/wiki/Tf-idf",
       "text": "tf-idf"
