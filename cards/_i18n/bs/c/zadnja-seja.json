@@ -9,7 +9,11 @@
       "text": "Parlament BiH"
     },
     "words-heading": "Riječi koje označavaju sjednicu",
-    "words-text": "Statistike se izračunavaju pomoću modela tf-idf. Korpus čine svi govori, a dokument svi govori na sjednici.",
+    "words-text": "Analizo izvajamo po statistiki {words-link}. Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.",
+    "words-link": {
+      "link": "https://en.wikipedia.org/wiki/Tf-idf",
+      "text": "tf-idf"
+    },
     "presence-heading": "Prisutnost klubova na sjednici na glasanju",
     "presence-text": "Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane sjednice bili njihovi zastupnici.",
     "votes-heading": "Glasanja",
