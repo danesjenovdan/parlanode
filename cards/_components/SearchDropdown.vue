@@ -19,7 +19,7 @@
       class="search-dropdown-input"
       type="text"
       @input="localFilter = $event.target.value"
-      @focus="toggleDropdown(true)"
+      @focus="toggleDropdown(ON)"
       @keydown.enter.prevent="pressEnter"
       @keydown.up.prevent="focus(focused - 1, true)"
       @keydown.down.prevent="focus(focused + 1, true)"
@@ -94,6 +94,10 @@ export default {
     },
   },
   props: {
+    ON: {
+      type: Boolean,
+      default: true,
+    },
     alphabetise: {
       type: Boolean,
       default: true,

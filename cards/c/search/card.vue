@@ -9,6 +9,7 @@
       :single="false"
       :groups="groups"
       :filter="filter"
+      :ON="false"
       @select="selectCallback"
       @search="searchCallback"
     />
