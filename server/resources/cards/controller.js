@@ -101,7 +101,7 @@ function expandUrl(dataUrl) {
 }
 
 function expandUrls(dataUrls) {
-  if (typeof dataUrls === 'object') {
+  if (dataUrls && typeof dataUrls === 'object') {
     return Object.keys(dataUrls).reduce((acc, cur) => {
       acc[cur] = expandUrl(dataUrls[cur]);
       return acc;
@@ -379,6 +379,7 @@ function render(req, res) {
         altHeader,
         customUrl: null,
         state: JSON.stringify({ message: `Failed to render card: /${group}/${method} (${language}) ${message}` }),
+        language,
       };
       return getRenderedCard(cacheDataErrored, false, '/c/errored')
         .then(sendRenderedCard);

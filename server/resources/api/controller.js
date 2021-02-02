@@ -112,10 +112,28 @@ function deleteOldCardRendersFromDB(days = 28) {
   return CardRender.deleteMany({
     lastAccessed: { $lte: Date.now() - time },
   })
-    .then((obj) => {
+    .then(async (obj) => {
       // eslint-disable-next-line no-console
       console.log('Finished deleting old renders');
-      return [null, obj];
+      const res = { old: obj };
+
+      const LIMIT = 1000;
+      // eslint-disable-next-line no-console
+      console.log('Deleting renders over limit of 1000 ...');
+      const count = await CardRender.countDocuments();
+      if (count > LIMIT) {
+        const objs = await CardRender.find().select('_id')
+          .sort({ dateTime: 1 })
+          .limit(Math.max(count - Math.floor(LIMIT / 2), 0));
+        // eslint-disable-next-line no-underscore-dangle
+        const ids = objs.map(o => o._id);
+        const obj2 = await CardRender.deleteMany({ _id: { $in: ids } });
+        res.overLimit = obj2;
+        // eslint-disable-next-line no-console
+        console.log('Finished deleting renders over limit');
+      }
+
+      return [null, res];
     })
     .catch((err) => {
       // eslint-disable-next-line no-console
