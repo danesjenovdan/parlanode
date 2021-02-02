@@ -102,7 +102,11 @@ function expandUrl(dataUrl) {
 }
 
 async function shouldBuildCard(cacheData, cardJson) {
-  const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method, language: cacheData.language });
+  const cardBuild = await CardBuild.findOne({
+    group: cacheData.group,
+    method: cacheData.method,
+    language: cacheData.language,
+  });
   if (!cardBuild) {
     if (await getBundlesModifiedTime(cacheData) > 0) {
       // if there is no build entry in db but files exist just add the entry
@@ -254,6 +258,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     altHeader: cacheData.altHeader,
     customUrl: cacheData.customUrl,
     state: cacheData.state,
+    language: cacheData.language,
   });
 
   const cardRender = new CardRender(cacheData);
