@@ -100,6 +100,16 @@ function expandUrl(dataUrl) {
   return null;
 }
 
+function expandUrls(dataUrls) {
+  if (typeof dataUrls === 'object') {
+    return Object.keys(dataUrls).reduce((acc, cur) => {
+      acc[cur] = expandUrl(dataUrls[cur]);
+      return acc;
+    }, {});
+  }
+  return null;
+}
+
 async function shouldBuildCard(cacheData, cardJson) {
   const cardBuild = await CardBuild.findOne({
     group: cacheData.group,
@@ -130,7 +140,9 @@ async function shouldBuildCard(cacheData, cardJson) {
   if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
     return true;
   }
-  // TODO: compare dataUrls
+  if (!_.isEqual(expandUrls(cardBuild.dataUrls), expandUrls(cardJson.dataUrls))) {
+    return true;
+  }
   return false;
 }
 
@@ -168,14 +180,10 @@ function formattedDate(days = 0) {
 async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.card = cardJson._id;
   cacheData.dataUrl = cardJson.dataUrl ? expandUrl(cardJson.dataUrl) : null;
-  cacheData.customUrl = cardJson.dataUrl ? expandUrl(cacheData.customUrl) : null;
+  cacheData.dataUrls = cardJson.dataUrls ? expandUrls(cardJson.dataUrls) : null;
+  cacheData.customUrl = cacheData.customUrl ? expandUrl(cacheData.customUrl) : null;
   cacheData.cardUrl = `${data.urls.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJson.lastUpdate;
-  // iterate over dataUrls to expand all urls
-  cacheData.dataUrls = cardJson.dataUrls ? Object.keys(cardJson.dataUrls).reduce((acc, cur) => {
-    acc[cur] = expandUrl(cardJson.dataUrls[cur]);
-    return acc;
-  }, {}) : null;
 
   let fetchUrl = null;
   let fetchUrls = null;
