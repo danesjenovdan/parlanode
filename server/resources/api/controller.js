@@ -23,7 +23,7 @@ function getAllCardPaths() {
             .split('/')
             .slice(-3, -1)
         ))
-        .map(([group, method]) => ({ group, method }));
+        .map(([group, method]) => ({ group, method, language: config.cardLang }));
 
       resolve(allCards);
     });
