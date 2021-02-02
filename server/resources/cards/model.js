@@ -20,8 +20,6 @@ const CardRender = mongoose.Schema({
   state: { type: String, index: true },
   language: { type: String, index: true },
   lastAccessed: { type: Date, index: true, default: Date.now },
-}, {
-  capped: 200000 * 500, // average size of render times 500 items
 });
 
 mongoose.model('CardRender', CardRender);
