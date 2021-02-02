@@ -18,6 +18,7 @@ const CardRender = mongoose.Schema({
   dateRendered: { type: String, index: true },
   cardLastUpdate: Date,
   state: { type: String, index: true },
+  language: { type: String, index: true },
   lastAccessed: { type: Date, index: true, default: Date.now },
 });
 

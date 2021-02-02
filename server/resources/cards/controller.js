@@ -64,7 +64,6 @@ async function saveBuildEntry(cacheData, cardJson) {
     { group: cacheData.group, method: cacheData.method, language: cacheData.language },
     {
       lastBuilt: cardJson.lastUpdate,
-      language: cacheData.language,
       dataUrl: cardJson.dataUrl,
       dataUrls: cardJson.dataUrls, // THIS WAS ADDED TO ALLOW MULTIPLE DATA SOURCES
     },
@@ -74,7 +73,7 @@ async function saveBuildEntry(cacheData, cardJson) {
 
 async function getBundlesModifiedTime(cacheData) {
   try {
-    const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles`;
+    const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles/${cacheData.language}`;
     const stats = await Promise.all([
       fs.stat(`${bundlesPath}/server.js`),
       fs.stat(`${bundlesPath}/client.js`),
@@ -99,8 +98,22 @@ function expandUrl(dataUrl) {
   return null;
 }
 
+function expandUrls(dataUrls) {
+  if (dataUrls && typeof dataUrls === 'object') {
+    return Object.keys(dataUrls).reduce((acc, cur) => {
+      acc[cur] = expandUrl(dataUrls[cur]);
+      return acc;
+    }, {});
+  }
+  return null;
+}
+
 async function shouldBuildCard(cacheData, cardJson) {
-  const cardBuild = await CardBuild.findOne({ group: cacheData.group, method: cacheData.method, language: cacheData.language });
+  const cardBuild = await CardBuild.findOne({
+    group: cacheData.group,
+    method: cacheData.method,
+    language: cacheData.language,
+  });
   if (!cardBuild) {
     if (await getBundlesModifiedTime(cacheData) > 0) {
       // if there is no build entry in db but files exist just add the entry
@@ -122,10 +135,10 @@ async function shouldBuildCard(cacheData, cardJson) {
     }
     return true;
   }
-  if (cardBuild.language !== cacheData.language) {
+  if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
     return true;
   }
-  if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
+  if (!_.isEqual(expandUrls(cardBuild.dataUrls), expandUrls(cardJson.dataUrls))) {
     return true;
   }
   return false;
@@ -165,14 +178,10 @@ function formattedDate(days = 0) {
 async function renderCard(cacheData, cardJson, originalUrl) {
   cacheData.card = cardJson._id;
   cacheData.dataUrl = cardJson.dataUrl ? expandUrl(cardJson.dataUrl) : null;
-  cacheData.customUrl = cardJson.dataUrl ? expandUrl(cacheData.customUrl) : null;
+  cacheData.dataUrls = cardJson.dataUrls ? expandUrls(cardJson.dataUrls) : null;
+  cacheData.customUrl = cacheData.customUrl ? expandUrl(cacheData.customUrl) : null;
   cacheData.cardUrl = `${data.urls.urls.glej}${originalUrl}`;
   cacheData.cardLastUpdate = cardJson.lastUpdate;
-  // iterate over dataUrls to expand all urls
-  cacheData.dataUrls = cardJson.dataUrls ? Object.keys(cardJson.dataUrls).reduce((acc, cur) => {
-    acc[cur] = expandUrl(cardJson.dataUrls[cur]);
-    return acc;
-  }, {}) : null;
 
   let fetchUrl = null;
   let fetchUrls = null;
@@ -252,6 +261,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
     altHeader: cacheData.altHeader,
     customUrl: cacheData.customUrl,
     state: cacheData.state,
+    language: cacheData.language,
   });
 
   const cardRender = new CardRender(cacheData);
@@ -282,15 +292,15 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   let renderedCard = null;
   if (!forceRender) {
     // eslint-disable-next-line no-console
-    console.log(`Card: ${cacheData.group}/${cacheData.method} - TRYING CACHE`);
+    console.log(`Card: ${cacheData.group}/${cacheData.method} (${cacheData.language}) - TRYING CACHE`);
     renderedCard = await findRenderedCardForDate(cacheData);
   }
   if (!renderedCard || Number(cardJson.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
     // eslint-disable-next-line no-console
-    console.log(`Card: ${cacheData.group}/${cacheData.method} - NOT CACHED (forceRender=${forceRender})`);
+    console.log(`Card: ${cacheData.group}/${cacheData.method} (${cacheData.language}) - NOT CACHED (forceRender=${forceRender})`);
     if (await shouldBuildCard(cacheData, cardJson)) {
       // eslint-disable-next-line no-console
-      console.log(`Card: ${cacheData.group}/${cacheData.method} - BUILDING`);
+      console.log(`Card: ${cacheData.group}/${cacheData.method} (${cacheData.language}) - BUILDING`);
       await buildCard(cacheData, cardJson);
     }
     renderedCard = await renderCard(cacheData, cardJson, originalUrl);
@@ -337,11 +347,11 @@ function render(req, res) {
 
   const startTime = performance.now();
   // eslint-disable-next-line no-console
-  console.log(`Card: ${group}/${method} - START`);
+  console.log(`Card: ${group}/${method} (${language}) - START`);
 
   const sendRenderedCard = (renderedCard) => {
     // eslint-disable-next-line no-console
-    console.log(`Card: ${renderedCard.group}/${renderedCard.method} - END after ${Math.round(performance.now() - startTime)} ms`);
+    console.log(`Card: ${renderedCard.group}/${renderedCard.method} (${renderedCard.language}) - END after ${Math.round(performance.now() - startTime)} ms`);
     if (renderedCard && renderedCard.html) {
       res.send(renderedCard.html);
     } else {
@@ -366,7 +376,8 @@ function render(req, res) {
         frame,
         altHeader,
         customUrl: null,
-        state: JSON.stringify({ message: `Failed to render card: /${group}/${method} ${message}` }),
+        state: JSON.stringify({ message: `Failed to render card: /${group}/${method} (${language}) ${message}` }),
+        language,
       };
       return getRenderedCard(cacheDataErrored, false, '/c/errored')
         .then(sendRenderedCard);
