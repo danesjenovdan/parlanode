@@ -54,9 +54,9 @@
           infinite-scroll-distance="10"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <div v-for="speakingDay in groupSpeakingDays" :key="speakingDay[0].session.id">
+          <div v-for="(speakingDay, key) in groupSpeakingDays" :key="key">
             <div class="date">
-              {{ speakingDay[0].session.date }}, {{ speakingDay[0].session.name }},
+              {{ speakingDay[0].formattedDate }}, {{ speakingDay[0].session.name }},
               {{ ' ' + speakingDay[0].session.orgs.map(org => org.name).join(', ') }}
             </div>
             <ul class="speaks__list">
@@ -91,6 +91,7 @@ import { memberHeader, partyHeader } from 'mixins/altHeaders';
 import { memberOgImage, partyOgImage } from 'mixins/ogImages';
 import { memberSpeeches, partySpeeches } from 'mixins/contextUrls';
 import infiniteScroll from 'directives/infiniteScroll';
+import dateFormatter from 'helpers/dateFormatter';
 
 export default {
   directives: {
@@ -233,7 +234,7 @@ export default {
         .reduce((r, a) => {
           const key = `${a.start_time}__${a.session_id}`;
           r[key] = r[key] || [];
-          r[key].push(a);
+          r[key].push({ ...a, formattedDate: dateFormatter(a.start_time) });
           return r;
         }, Object.create(null));
     },
