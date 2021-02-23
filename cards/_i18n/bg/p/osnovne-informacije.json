@@ -1,0 +1,24 @@
+{
+  "card": {
+    "title": "Osnovne informacije"
+  },
+  "info": {
+    "lead": "Pregled osnovnih informacij poslanca/-ke.",
+    "text": [
+      "Vsebine za to kartico smo pridobili s spletnega mesta {link} (poslanska skupina, starost, članstva v delovnih telesih) in s spletnega mesta DVK (število prejetih glasov). Za ostale vsebine smo se obrnili na PR službe poslanskih skupin.",
+      "Podatke so nam posredovali iz NSi, SD, (takrat še) ZaAB in ZL. SMC so nas usmerili na svoje spletno mesto, SDS pa na spletno mesto Državnega zbora. Manjkajoče podatke smo pridobili s pomočjo iskalnika Google in jih za morebitne popravke pred objavo ponudili vsem poslanskim skupinam."
+    ],
+    "link": {
+      "text": "DZ RS",
+      "link": "http://www.dz-rs.si/wps/portal/Home/"
+    }
+  },
+  "elected-to-district": "Št. glasov: {numVotes}, {district}",
+  "elected-to-district--m": "Prejel {numVotes} glasov v okraju {district}",
+  "elected-to-district--f": "Prejela {numVotes} glasov v okraju {district}",
+  "elected-to-district-with-points": "Št. točk: {numVotes}, {district}",
+  "elected-to-district-with-points--m": "Prejel {numVotes} točk v okraju {district}",
+  "elected-to-district-with-points--f": "Prejela {numVotes} točk v okraju {district}",
+  "age": "Starost: {age} let",
+  "no-social-media": "ni družbenih omrežij."
+}
