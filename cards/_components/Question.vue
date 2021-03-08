@@ -27,23 +27,33 @@
         <span place="recipient">{{ question.recipient_text }}</span>
       </i18n>
     </div>
-    <div class="question-row progress-row">
+    <div v-if="isAnswered" class="question-row progress-row">
       <div class="parlaicon"></div> <!-- just a spacer -->
       <div class="progress-text">
         <div class="progress-text-left">
-          Broj dana čekanja na odgovor
-        </div>
-        <div class="progress-text-right">
-          {{ daysSinceAsked }}
+          Na pitanje odgovoreno u roku od {{ daysSinceAsked }} dana.
         </div>
       </div>
     </div>
-    <div class="question-row progress-row">
-      <div class="parlaicon"></div> <!-- just a spacer -->
-      <div class="progress-container">
-        <div class="progress-bar" :class="{red: isLate}" :style="{width: progressWidth}"></div>
+    <template v-else>
+      <div class="question-row progress-row">
+        <div class="parlaicon"></div> <!-- just a spacer -->
+        <div class="progress-text">
+          <div class="progress-text-left">
+            Broj dana čekanja na odgovor
+          </div>
+          <div class="progress-text-right">
+            {{ daysSinceAsked }}
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="question-row progress-row">
+        <div class="parlaicon"></div> <!-- just a spacer -->
+        <div class="progress-container">
+          <div class="progress-bar" :class="{red: isLate}" :style="{width: progressWidth}"></div>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
