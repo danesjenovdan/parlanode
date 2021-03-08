@@ -1,282 +1,158 @@
 {
   "person": {
     "is_active": true,
-    "district": [
-      2
-    ],
-    "name": "Alen Prelec",
-    "gov_id": "1300",
+    "district": [6],
+    "name": "Pe\u0111a Grbin",
+    "gov_id": "104",
     "gender": "m",
     "party": {
-      "name": "Klub Socijaldemokratske partije Hrvatske",
+      "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
       "classification": "pg",
       "acronym": "SDP",
       "has_voters": false,
       "is_coalition": false,
-      "id": 339
+      "id": 74
     },
     "type": "mp",
-    "id": 1300,
+    "id": 104,
     "has_function": false
   },
-  "created_at": "13. 12. 2019",
-  "created_for": "13. 12. 2019",
-  "results": [],
-  "resultsx": [
-    {
-      "date": "13. 12. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo poljoprivrede",
-              "classification": "gov",
-              "acronym": "Ministarstvo poljoprivrede",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 391
-            }
-          ],
-          "recipient_text": "Vučković, Marija / Ministarstvo poljoprivrede;",
-          "session_id": null,
-          "title": "Financiranje namjena od javnog interesa uz državnu potporu;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10839,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "27. 11. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "gov",
-              "classification": "gov",
-              "acronym": "gov",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 437
-            }
-          ],
-          "recipient_text": "Plenković, Andrej / Predsjednik Vlade RH;",
-          "session_id": null,
-          "title": "Financiranje namjena od javnog interesa uz državnu potporu;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10807,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "25. 9. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo poljoprivrede",
-              "classification": "gov",
-              "acronym": "Ministarstvo poljoprivrede",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 391
-            }
-          ],
-          "recipient_text": "Vučković, Marija / Ministarstvo poljoprivrede;",
-          "session_id": null,
-          "title": "Poljoprivreda;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10618,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "5. 4. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo zaštite okoliša i energetike",
-              "classification": "gov",
-              "acronym": "Ministarstvo zaštite okoliša i energetike",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 395
-            }
-          ],
-          "recipient_text": "Ćorić, Tomislav / Ministarstvo zaštite okoliša i energetike;",
-          "session_id": null,
-          "title": "Vodno i komunalno gospodarstvo;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10322,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "21. 3. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo državne imovine",
-              "classification": "gov",
-              "acronym": "Ministarstvo državne imovine",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 387
-            }
-          ],
-          "recipient_text": "Marić, Goran / Ministarstvo državne imovine;",
-          "session_id": null,
-          "title": "Državna imovina;  | Zastupničko pitanje vezano uz rješavanje zahtjeva za povrat nekretnina Općini Brdovec iz državnog vlasništva",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10223,
-          "content_url": null
-        },
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo poljoprivrede",
-              "classification": "gov",
-              "acronym": "Ministarstvo poljoprivrede",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 391
-            }
-          ],
-          "recipient_text": "Tolušić, Tomislav / Ministarstvo poljoprivrede;",
-          "session_id": null,
-          "title": "Financiranje namjena od javnog interesa uz državnu potporu;  | Zastupničko pitanje vezano uz iznos sredstava za izravne potpore iz fondova EU",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10225,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "19. 9. 2018",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo zdravstva",
-              "classification": "gov",
-              "acronym": "Ministarstvo zdravstva",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 392
-            }
-          ],
-          "recipient_text": "Kujundžić, Milan / Ministarstvo zdravstva;",
-          "session_id": null,
-          "title": "Sustav zdravstvene zaštite;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 9394,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "15. 6. 2018",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo financija",
-              "classification": "gov",
-              "acronym": "Ministarstvo financija",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 398
-            }
-          ],
-          "recipient_text": "Marić, Zdravko / Ministarstvo financija;",
-          "session_id": null,
-          "title": "Porezni sustav;  | Zastupničko pitanje vezano uz financiranje jedinica lokalne i područne (regionalne) samouprave",
-          "url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009586",
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 8326,
-          "content_url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009586"
-        }
-      ]
-    },
-    {
-      "date": "21. 5. 2018",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo rada i mirovinskog sustava",
-              "classification": "gov",
-              "acronym": "Ministarstvo rada i mirovinskog sustava",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 408
-            }
-          ],
-          "recipient_text": "Pavić, Marko / Ministarstvo rada i mirovinskog sustava;",
-          "session_id": null,
-          "title": "Statusna prava građana;  | Zastupničko pitanje vezano uz uvoz radne snage iz trećih zemalja",
-          "url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009067",
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 9310,
-          "content_url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009067"
-        }
-      ]
-    },
-    {
-      "date": "20. 3. 2018",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo državne imovine",
-              "classification": "gov",
-              "acronym": "Ministarstvo državne imovine",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 387
-            }
-          ],
-          "recipient_text": "Marić, Goran / Ministarstvo državne imovine;",
-          "session_id": null,
-          "title": "Državna imovina;  | Zastupničko pitanje vezano uz ustupanje dvoraca lokalnoj samoupravi na korištenje",
-          "url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2007871",
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 9124,
-          "content_url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2007871"
-        }
-      ]
-    }
-  ]
+  "created_at": "19. 1. 2021",
+  "created_for": "19. 1. 2021",
+  "results": [{
+    "date": "19. 1. 2021",
+    "questions": [{
+      "question_date": "2021-01-19T00:00:00",
+      "content_url": null,
+      "recipient_orgs": [{
+        "name": "gov",
+        "classification": "gov",
+        "acronym": "gov",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 136
+      }],
+      "id": 321,
+      "recipient_text": "Plenkovi\u0107, Andrej / Predsjednik Vlade RH;",
+      "title": "Financiranje namjena od javnog interesa uz dr\u017eavnu potporu;  | Zastupni\u010dko pitanje",
+      "url": null,
+      "recipient_persons": [],
+      "session_id": null,
+      "answer_date": null,
+      "type_of_question": null,
+      "session_name": null
+    }]
+  }, {
+    "date": "3. 11. 2020",
+    "questions": [{
+      "question_date": "2020-11-03T00:00:00",
+      "content_url": null,
+      "recipient_orgs": [{
+        "name": "gov",
+        "classification": "gov",
+        "acronym": "gov",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 136
+      }],
+      "id": 164,
+      "recipient_text": "Plenkovi\u0107, Andrej / Predsjednik Vlade RH;",
+      "title": "Sustav zdravstvene za\u0161tite;  | Zastupni\u010dko pitanje",
+      "url": null,
+      "recipient_persons": [],
+      "session_id": null,
+      "answer_date": null,
+      "type_of_question": null,
+      "session_name": null
+    }]
+  }, {
+    "date": "16. 9. 2020",
+    "questions": [{
+      "question_date": "2020-09-16T00:00:00",
+      "content_url": null,
+      "recipient_orgs": [{
+        "name": "gov",
+        "classification": "gov",
+        "acronym": "gov",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 136
+      }],
+      "id": 48,
+      "recipient_text": "Plenkovi\u0107, Andrej / Predsjednik Vlade RH;",
+      "title": "Gospodarstvo;  | Zastupni\u010dko pitanje vezano uz prijedlog za dono\u0161enje zakona o moratoriju na otplatu kredite u trajanju od godinu dana",
+      "url": null,
+      "recipient_persons": [],
+      "session_id": null,
+      "answer_date": null,
+      "type_of_question": null,
+      "session_name": null
+    }]
+  }, {
+    "date": "1. 9. 2020",
+    "questions": [{
+      "question_date": "2020-09-01T00:00:00",
+      "content_url": null,
+      "recipient_orgs": [{
+        "name": "Ministarstvo regionalnoga razvoja i fondova Europske unije",
+        "classification": "gov",
+        "acronym": "Ministarstvo regionalnoga razvoja i fondova Europske unije",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 130
+      }],
+      "id": 2,
+      "recipient_text": "Trami\u0161ak, Nata\u0161a / Ministarstvo regionalnoga razvoja i fondova Europske unije;",
+      "title": "Financiranje namjena od javnog interesa uz dr\u017eavnu potporu;  | Zastupni\u010dko pitanje vezano uz na\u010din vrednovanja projekata prijavljenih za sudjelovanje u Programu ulaganja u zajednicu",
+      "url": null,
+      "recipient_persons": [],
+      "session_id": null,
+      "answer_date": "2020-12-08T00:00:00",
+      "type_of_question": null,
+      "session_name": null
+    }]
+  }, {
+    "date": "29. 7. 2020",
+    "questions": [{
+      "question_date": "2020-07-29T00:00:00",
+      "content_url": null,
+      "recipient_orgs": [{
+        "name": "Ministarstvo prostornoga ure\u0111enja, graditeljstva i dr\u017eavne imovine",
+        "classification": "gov",
+        "acronym": "Ministarstvo prostornoga ure\u0111enja, graditeljstva i dr\u017eavne imovine",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 135
+      }],
+      "id": 15,
+      "recipient_text": "Horvat, Darko / Ministarstvo prostornoga ure\u0111enja, graditeljstva i dr\u017eavne imovine;",
+      "title": "Sport i rekreacija;  | Zastupni\u010dko pitanje vezano uz snimanje iz zraka za osobne potrebe",
+      "url": null,
+      "recipient_persons": [],
+      "session_id": null,
+      "answer_date": "2020-09-25T00:00:00",
+      "type_of_question": null,
+      "session_name": null
+    }, {
+      "question_date": "2020-07-29T00:00:00",
+      "content_url": null,
+      "recipient_orgs": [{
+        "name": "gov",
+        "classification": "gov",
+        "acronym": "gov",
+        "has_voters": false,
+        "is_coalition": false,
+        "id": 136
+      }],
+      "id": 14,
+      "recipient_text": "Plenkovi\u0107, Andrej / Predsjednik Vlade RH;",
+      "title": "Unutarnji poslovi i nacionalna sigurnost;  | Zastupni\u010dko pitanje vezano uz kori\u0161tenje prisile u policijskom postupanju*",
+      "url": null,
+      "recipient_persons": [],
+      "session_id": null,
+      "answer_date": "2020-09-10T00:00:00",
+      "type_of_question": null,
+      "session_name": null
+    }]
+  }]
 }
