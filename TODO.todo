@@ -1,4 +1,7 @@
 TODO:
+    - modern server
+    - update eslint rules
+    - render cards in dev mode by default
     - es modules node
     - build with rollup
     - fix all readmes for new build system
