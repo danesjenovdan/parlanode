@@ -1,8 +1,0 @@
-{
-  "_id": "random_id",
-  "name": "Amandmaji poslanskih skupin",
-  "dataUrl": "{data}/getAmendments",
-  "lastUpdate": "2018-07-27T14:57:52.433Z",
-  "method": "amandmaji",
-  "group": "obcasnik"
-}
