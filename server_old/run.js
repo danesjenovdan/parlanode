@@ -1,6 +1,6 @@
 const chalk = require('chalk');
-const data = require('./server/data');
-const server = require('./server/server');
+const data = require('./data');
+const server = require('./server');
 
 /**
  * Init app

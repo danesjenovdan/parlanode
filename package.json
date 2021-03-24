@@ -2,10 +2,10 @@
   "name": "parlanode",
   "version": "1.0.0",
   "description": "Parlameter frontend server for serving embeds",
-  "main": "run.js",
+  "main": "server_old/run.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
-    "dev": "cross-env NODE_ENV=development NODE_ICU_DATA=node_modules/full-icu nodemon run.js",
+    "start": "cross-env NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start server_old/run.js --name=parlanode",
+    "dev": "cross-env NODE_ENV=development NODE_ICU_DATA=node_modules/full-icu nodemon server_old/run.js",
     "cards": "cross-env NODE_ENV=development node cards/build-cross-env.js",
     "og-images": "cross-env NODE_ENV=development node og-images/build.js",
     "lint": "eslint . --ext js,vue"
