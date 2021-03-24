@@ -1,7 +1,0 @@
-{
-  "_id": "{{ _id }}",
-  "dataUrl": "{{ dataUrl }}",
-  "lastUpdate": "{{ lastUpdate }}",
-  "big": {{ big }},
-  "high": {{ high }}
-}

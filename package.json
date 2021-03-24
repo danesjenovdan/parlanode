@@ -6,7 +6,6 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production NODE_ICU_DATA=node_modules/full-icu pm2 start run.js --name=parlanode",
     "dev": "cross-env NODE_ENV=development NODE_ICU_DATA=node_modules/full-icu nodemon run.js",
-    "cards-generate": "node cards/generate.js",
     "cards": "cross-env NODE_ENV=development node cards/build-cross-env.js",
     "og-images": "cross-env NODE_ENV=development node og-images/build.js",
     "lint": "eslint . --ext js,vue"
