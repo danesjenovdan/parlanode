@@ -1,0 +1,7 @@
+TODO:
+    - remove old cards
+    - remove mongo dep
+    - node 14
+    - es modules node
+    - build with rollup
+    - fix all readmes for new build system

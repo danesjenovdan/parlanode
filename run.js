@@ -1,15 +1,9 @@
 const chalk = require('chalk');
-const mongoose = require('mongoose');
-const database = require('./server/database');
 const data = require('./server/data');
 const server = require('./server/server');
 
-// Set Mongoose Promise to native Promise
-mongoose.Promise = global.Promise;
-
 /**
  * Init app
- * @returns {Promise.<T>|Promise|*}
  */
 function init() {
   const hasFullICU = (() => {
@@ -28,7 +22,6 @@ function init() {
   }
 
   return Promise.resolve()
-    .then(database.connect)
     .then(data.preload)
     .then(server.init)
     .then(() => {

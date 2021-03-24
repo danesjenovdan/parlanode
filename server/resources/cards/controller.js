@@ -1,11 +1,7 @@
-/* eslint-disable no-underscore-dangle */
-const mongoose = require('mongoose');
 const axios = require('axios');
 const fs = require('fs-extra');
-const util = require('util');
 const renderer = require('vue-server-renderer');
 const { directive: t } = require('vue-i18n-extensions');
-const exec = util.promisify(require('child_process').exec);
 // TODO: remove this comment when vscode is fixed
 // eslint-disable-next-line import/no-unresolved
 const { performance } = require('perf_hooks');
@@ -13,9 +9,6 @@ const dateFns = require('date-fns');
 const _ = require('lodash');
 const config = require('../../../config');
 const data = require('../../data');
-
-const CardBuild = mongoose.model('CardBuild');
-const CardRender = mongoose.model('CardRender');
 
 async function loadCardJson(cacheData) {
   const cardJson = await fs.readJson(`cards/${cacheData.group}/${cacheData.method}/card.json`);
@@ -61,35 +54,6 @@ async function loadI18n(cacheData) {
   return _.merge({}, i18nDefault, i18nCard);
 }
 
-async function saveBuildEntry(cacheData, cardJson) {
-  await CardBuild.findOneAndUpdate(
-    { group: cacheData.group, method: cacheData.method, language: cacheData.language },
-    {
-      lastBuilt: cardJson.lastUpdate,
-      dataUrl: cardJson.dataUrl,
-      dataUrls: cardJson.dataUrls, // THIS WAS ADDED TO ALLOW MULTIPLE DATA SOURCES
-    },
-    { upsert: true, new: true, setDefaultsOnInsert: true },
-  );
-}
-
-async function getBundlesModifiedTime(cacheData) {
-  try {
-    const bundlesPath = `cards/${cacheData.group}/${cacheData.method}/bundles/${cacheData.language}`;
-    const stats = await Promise.all([
-      fs.stat(`${bundlesPath}/server.js`),
-      fs.stat(`${bundlesPath}/client.js`),
-      fs.stat(`${bundlesPath}/style.css`),
-    ]);
-    return Math.min(...stats.map(s => s.mtimeMs));
-  } catch (error) {
-    if (error.code !== 'ENOENT') {
-      throw error;
-    }
-    return 0;
-  }
-}
-
 function expandUrl(dataUrl) {
   if (typeof dataUrl === 'string') {
     Object.keys(data.urls.urls).forEach((key) => {
@@ -110,74 +74,12 @@ function expandUrls(dataUrls) {
   return null;
 }
 
-async function shouldBuildCard(cacheData, cardJson) {
-  const cardBuild = await CardBuild.findOne({
-    group: cacheData.group,
-    method: cacheData.method,
-    language: cacheData.language,
-  });
-  if (!cardBuild) {
-    if (await getBundlesModifiedTime(cacheData) > 0) {
-      // if there is no build entry in db but files exist just add the entry
-      await saveBuildEntry(cacheData, cardJson);
-      return false;
-    }
-    return true;
-  }
-  if (Number(cardBuild.lastBuilt) !== Number(cardJson.lastUpdate)) {
-    if (process.env.NODE_ENV !== 'production') {
-      // in development environments, if there is a newer card json update
-      // time and files were modified around that time just update the entry
-      const filesModifiedTime = await getBundlesModifiedTime(cacheData);
-      const areTimesClose = Math.abs(Number(cardJson.lastUpdate) - filesModifiedTime) < 5000;
-      if (areTimesClose) {
-        await saveBuildEntry(cacheData, cardJson);
-        return false;
-      }
-    }
-    return true;
-  }
-  if (expandUrl(cardBuild.dataUrl) !== expandUrl(cardJson.dataUrl)) {
-    return true;
-  }
-  if (!_.isEqual(expandUrls(cardBuild.dataUrls), expandUrls(cardJson.dataUrls))) {
-    return true;
-  }
-  return false;
-}
-
-// Store build commands cards that are currently building so we don't build
-// the same card twice at the same time
-const ongoingCardBuilds = new Map();
-
-async function buildCard(cacheData, cardJson) {
-  const buildCommand = `node cards/build-cross-env.js ${cacheData.group}/${cacheData.method} build ${cacheData.language} --update-timestamp=false --env=${process.env.NODE_ENV}`;
-  try {
-    let promise;
-    if (ongoingCardBuilds.has(buildCommand)) {
-      promise = ongoingCardBuilds.get(buildCommand);
-    } else {
-      promise = exec(buildCommand, { timeout: 1000 * 60 * 2 })
-        .then(() => saveBuildEntry(cacheData, cardJson));
-      ongoingCardBuilds.set(buildCommand, promise);
-    }
-    await promise;
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(error.stdout);
-    // eslint-disable-next-line no-console
-    console.error(error.stderr);
-    throw error;
-  } finally {
-    ongoingCardBuilds.delete(buildCommand);
-  }
-}
-
 function formattedDate(days = 0) {
   return dateFns.format(dateFns.addDays(new Date(), days), 'd.M.y');
 }
 
 async function renderCard(cacheData, cardJson, originalUrl) {
+  // eslint-disable-next-line no-underscore-dangle
   cacheData.card = cardJson._id;
   cacheData.dataUrl = cardJson.dataUrl ? expandUrl(cardJson.dataUrl) : null;
   cacheData.dataUrls = cardJson.dataUrls ? expandUrls(cardJson.dataUrls) : null;
@@ -232,6 +134,7 @@ async function renderCard(cacheData, cardJson, originalUrl) {
 
   const parsedState = JSON.parse(cacheData.state);
   const context = {
+    // eslint-disable-next-line no-underscore-dangle
     mountId: `${cardJson._id}__${Date.now().toString(36)}`,
     data: fetchedData, // THIS IS ALREADY READY FOR MULTIPLE DATA SOURCES
     cardData: cardJson,
@@ -252,41 +155,24 @@ async function renderCard(cacheData, cardJson, originalUrl) {
   // if no dateRequested, it was rendered with todays data
   cacheData.dateRendered = cacheData.dateRequested || formattedDate();
 
-  // remove all that match
-  await CardRender.deleteMany({
-    group: cacheData.group,
-    method: cacheData.method,
-    id: cacheData.id,
-    dateRendered: cacheData.dateRendered,
-    embed: cacheData.embed,
-    frame: cacheData.frame,
-    altHeader: cacheData.altHeader,
-    customUrl: cacheData.customUrl,
-    state: cacheData.state,
-    language: cacheData.language,
-  });
-
-  const cardRender = new CardRender(cacheData);
-
-  cardRender.lastAccessed = new Date();
-  return cardRender.save();
+  return cacheData;
 }
 
-async function findRenderedCardForDate(cacheData) {
-  let renderedCard = null;
-  // if no dateRequested, check if todays render exists
-  if (cacheData.dateRequested == null) {
-    const { dateRequested, ...cacheDataToday } = {
-      ...cacheData,
-      dateRendered: formattedDate(),
-    };
-    renderedCard = await CardRender.findOne(cacheDataToday).maxTime(5000).sort({ dateTime: -1 });
-  }
+async function findRenderedCardForDate(/* cacheData */) {
+  // const renderedCard = null;
+  // // if no dateRequested, check if todays render exists
+  // if (cacheData.dateRequested == null) {
+  //   const { dateRequested, ...cacheDataToday } = {
+  //     ...cacheData,
+  //     dateRendered: formattedDate(),
+  //   };
+  //   renderedCard = await CardRender.findOne(cacheDataToday).maxTime(5000).sort({ dateTime: -1 });
+  // }
   // if dateRequested is specified try to find that days render, or null if no dateRequested
-  if (!renderedCard) {
-    renderedCard = await CardRender.findOne(cacheData).maxTime(5000).sort({ dateTime: -1 });
-  }
-  return renderedCard;
+  // if (!renderedCard) {
+  //   renderedCard = await CardRender.findOne(cacheData).maxTime(5000).sort({ dateTime: -1 });
+  // }
+  // return renderedCard;
 }
 
 async function getRenderedCard(cacheData, forceRender, originalUrl) {
@@ -300,16 +186,11 @@ async function getRenderedCard(cacheData, forceRender, originalUrl) {
   if (!renderedCard || Number(cardJson.lastUpdate) !== Number(renderedCard.cardLastUpdate)) {
     // eslint-disable-next-line no-console
     console.log(`Card: ${cacheData.group}/${cacheData.method} (${cacheData.language}) - NOT CACHED (forceRender=${forceRender})`);
-    if (await shouldBuildCard(cacheData, cardJson)) {
-      // eslint-disable-next-line no-console
-      console.log(`Card: ${cacheData.group}/${cacheData.method} (${cacheData.language}) - BUILDING`);
-      await buildCard(cacheData, cardJson);
-    }
     renderedCard = await renderCard(cacheData, cardJson, originalUrl);
   }
   if (renderedCard) {
     renderedCard.lastAccessed = new Date();
-    renderedCard.save();
+    // renderedCard.save();
   }
   return renderedCard;
 }
@@ -393,7 +274,5 @@ function render(req, res) {
 
 module.exports = {
   loadCardJson,
-  shouldBuildCard,
-  buildCard,
   render,
 };
