@@ -38,3 +38,5 @@ const cardData = {
 window.card = createApp(assign({}, Card, { cardData }));
 window.card.use(i18n);
 window.card.mount("#card");
+
+window.card._container.parentElement.className = window.card._component.cardData.template.frameContainerClass
