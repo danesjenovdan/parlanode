@@ -41,9 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/helper';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/helper';
 
 .card-modal {
   position: absolute;

@@ -72,8 +72,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .agenda-item {
   padding: 20px;
@@ -118,7 +118,7 @@ export default {
     }
   }
 
-  /deep/ #seznam-glasovanj {
+  ::v-deep #seznam-glasovanj {
     margin-left: -12px;
 
     #votingCard {

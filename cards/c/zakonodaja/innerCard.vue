@@ -10,9 +10,9 @@
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p class="info-text">
         <span v-t="'info.text'"></span>
-        <template v-for="infoLink in $t('info.links')">
+        <template v-for="infoLink in $t('info.links')" :key="infoLink.text">
           {{ ' ' }}
-          <a v-t="infoLink.text" :key="infoLink.text" :href="infoLink.link"></a>
+          <a v-t="infoLink.text" :href="infoLink.link"></a>
           {{ ' ' }}
         </template>
       </p>
@@ -138,8 +138,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .empty-dataset {
   color: $font-placeholder;

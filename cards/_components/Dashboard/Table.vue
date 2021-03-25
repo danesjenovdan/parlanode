@@ -147,7 +147,7 @@ export default {
     text-align: center;
     user-select: none;
 
-    /deep/ .dash-button {
+    ::v-deep .dash-button {
       padding: 4px 11px 3px;
       margin: 0 10px;
     }

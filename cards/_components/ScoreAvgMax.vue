@@ -219,7 +219,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .progress {
   overflow: visible; /* this overrides bootstrap which we should get rid of anyway */

@@ -190,7 +190,7 @@ export default {
   min-height: 400px;
 }
 
-#dash-sessions-list /deep/ {
+#dash-sessions-list ::v-deep {
   .table-contents,
   .table-headers {
     .table-row {

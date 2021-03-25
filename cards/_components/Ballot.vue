@@ -46,8 +46,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~parlassets/scss/breakpoints";
-@import "~parlassets/scss/colors";
+@import "parlassets/scss/breakpoints";
+@import "parlassets/scss/colors";
 
 .ballot {
   @include respond-to(desktop) {

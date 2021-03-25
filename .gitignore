@@ -15,8 +15,7 @@ config/development.js
 config/production.js
 
 # compiled bundles
-/cards/**/bundles
-/og-images/**/bundles
+dist/
 
 # auto-downloaded assets
 /data/*

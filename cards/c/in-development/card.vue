@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .empty {
   bottom: 0;
@@ -71,7 +71,7 @@ export default {
   }
 }
 
-.card-container /deep/ .card-footer > *,
+.card-container ::v-deep .card-footer > *,
 .card-container::before {
   visibility: hidden;
   display: none;

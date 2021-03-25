@@ -348,7 +348,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#dash-people-list /deep/ {
+#dash-people-list ::v-deep {
   .table-contents,
   .table-headers {
     .table-row {

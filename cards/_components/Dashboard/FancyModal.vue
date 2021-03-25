@@ -146,7 +146,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.modal-container /deep/ .card-modal {
+.modal-container ::v-deep .card-modal {
   width: 600px;
   max-width: 600px;
   z-index: 1050;

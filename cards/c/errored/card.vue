@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .errored {
   display: flex;
@@ -88,7 +88,7 @@ export default {
   }
 }
 
-.card-container /deep/ .card-footer > *,
+.card-container ::v-deep .card-footer > *,
 .card-container::before {
   visibility: hidden;
   display: none;

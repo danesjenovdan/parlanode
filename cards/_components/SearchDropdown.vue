@@ -29,16 +29,14 @@
       :style="{'margin-top': upMargin}"
       @mouseleave="focus(-1)"
     >
-      <template v-for="(item, index) in filteredItems">
+      <template v-for="(item, index) in filteredItems" :key="`${item.id}`">
         <li
           v-if="item.groupLabel"
-          :key="`${item.id}1`"
           class="search-dropdown-group-label"
         >
           {{ item.groupLabel }}
         </li>
         <li
-          :key="`${item.id}2`"
           :class="generateItemClass(item, index)"
           @click="selectItem(item.id)"
           @mouseenter="focus(index)"
@@ -347,9 +345,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/helper';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/helper';
 
 .search-dropdown {
   text-align: left;

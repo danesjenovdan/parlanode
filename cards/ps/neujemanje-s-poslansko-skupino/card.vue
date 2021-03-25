@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ .circle {
+::v-deep .circle {
   padding-top: 130px !important;
 }
 </style>

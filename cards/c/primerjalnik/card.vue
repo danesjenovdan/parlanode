@@ -475,26 +475,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/helper';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/helper';
 
-/deep/ .card-content {
+::v-deep .card-content {
   min-height: 660px;
 }
 
 #primerjalnik {
-  /deep/ .p-tabs .p-tabs-content,
-  /deep/ .p-tabs .p-tabs-content .tab-content {
+  ::v-deep .p-tabs .p-tabs-content,
+  ::v-deep .p-tabs .p-tabs-content .tab-content {
     overflow-y: visible;
     overflow-x: visible;
   }
 
-  /deep/ .p-tabs .p-tabs-content {
+  ::v-deep .p-tabs .p-tabs-content {
     margin-top: 6px;
   }
 
-  /deep/ .word-list {
+  ::v-deep .word-list {
     max-height: none;
     height: 420px;
     overflow-y: auto;
@@ -513,13 +513,13 @@ export default {
   }
 
   .glasovanja {
-    /deep/ #votingCard {
+    ::v-deep #votingCard {
       height: 420px;
     }
   }
 
   .mdt-wrapper {
-    /deep/ .progress-bar {
+    ::v-deep .progress-bar {
       background-color: $third;
     }
   }

@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/breakpoints';
 
 .question {
   display: flex;

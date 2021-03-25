@@ -164,7 +164,7 @@ export default {
     },
 
     url() {
-      return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/?state=${JSON.stringify(this.state)}`;
+      return `${this.slugs.urls.glej}/${import.meta.env.CARD_NAME}/?state=${JSON.stringify(this.state)}`;
     },
   },
 

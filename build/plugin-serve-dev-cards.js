@@ -1,0 +1,75 @@
+import { existsSync, readFileSync } from "fs";
+import { resolve, dirname, join } from "path";
+import { fileURLToPath } from "url";
+import glob from "glob";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const cardsPath = resolve(__dirname, "..", "cards");
+
+export default function serveDevCards() {
+  return {
+    name: "serve-dev-cards",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url === "/") {
+          const cardLinks = glob
+            .sync(join(cardsPath, "**/card.json"))
+            .map((file) => file.split("/").slice(-3, -1))
+            .map(
+              ([group, method]) =>
+                `<tr>
+                  <td style="border: 1px solid black;">${group}</td>
+                  <td style="border: 1px solid black;"><a href="/${group}/${method}">${method}</a></td>
+                </tr>`
+            );
+          res.end(`
+            <table style="margin: 0 auto; border-collapse: collapse;">
+              ${cardLinks.join("\n")}
+            </table>
+          `);
+        } else {
+          if (req.url.slice(1).split("/").length === 2) {
+            const [group, method] = req.url.slice(1).split("/");
+            const cardName = `${group}/${method}`;
+            if (existsSync(join(cardsPath, cardName, "card.json"))) {
+              const html = readFileSync(
+                resolve(__dirname, "card-entry-dev.html"),
+                "utf-8"
+              )
+                .replace(/{cardName}/g, cardName)
+                .replace(/{cardEntry}/g, `/${cardName}/card-entry-dev.js`);
+              server
+                .transformIndexHtml(`${cardsPath}/${cardName}/index.html`, html)
+                .then((html) => {
+                  res.end(html);
+                })
+                .catch((error) => res.status(500).send(error));
+            } else {
+              next();
+            }
+          } else {
+            next();
+          }
+        }
+      });
+    },
+    resolveId(id) {
+      if (id.endsWith("/card-entry-dev.js")) {
+        return join(cardsPath, id.slice(1));
+      }
+    },
+    load(id) {
+      if (id.endsWith("/card-entry-dev.js")) {
+        const [group, method] = id.split("/").slice(-3, -1);
+        const cardName = `${group}/${method}`;
+        if (existsSync(join(cardsPath, cardName, "card.json"))) {
+          const entryTemplate = readFileSync(
+            resolve(__dirname, "card-entry-dev.js"),
+            "utf-8"
+          );
+          return entryTemplate.replace(/{cardName}/g, cardName);
+        }
+      }
+    },
+  };
+}

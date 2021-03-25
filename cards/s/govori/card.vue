@@ -213,9 +213,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/color_classes';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/color_classes';
 
 .empty-dataset {
   font-size: 16px;
@@ -225,7 +225,7 @@ export default {
   color: $font-placeholder;
 }
 
-.multiple-speeches /deep/ .speech-holder {
+.multiple-speeches ::v-deep .speech-holder {
   border-top: 1px solid $background;
 
   @include respond-to(desktop) {

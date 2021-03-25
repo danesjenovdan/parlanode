@@ -390,7 +390,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#dash-organisations-list /deep/ {
+#dash-organisations-list ::v-deep {
   .table-contents,
   .table-headers {
     .table-row {

@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
 let config;
-const env = process.env.NODE_ENV;
+const env = import.meta.env.NODE_ENV;
 
 const defaultConfig = {
   port: 3000,
@@ -9,8 +9,8 @@ const defaultConfig = {
   db: {
     name: 'parla-db',
     url: 'localhost:27017',
-    user: `${process.env.MONGO_USERNAME}`,
-    password: `${process.env.MONGO_PASSWORD}`,
+    user: `${import.meta.env.MONGO_USERNAME}`,
+    password: `${import.meta.env.MONGO_PASSWORD}`,
   },
   urls: {
     cdn: 'https://cdn.parlameter.si/v1/parlassets',

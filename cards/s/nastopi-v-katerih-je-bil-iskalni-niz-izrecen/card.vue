@@ -174,8 +174,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .infinite-scroll-loader {
   background: $white-hover;
@@ -215,7 +215,7 @@ export default {
       .funblue-light-hover {
         color: $font-default;
 
-        /deep/ em {
+        ::v-deep em {
           font-style: normal;
           font-weight: bold;
         }

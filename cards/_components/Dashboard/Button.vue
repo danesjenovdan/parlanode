@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .dash-button {
   display: inline-block;

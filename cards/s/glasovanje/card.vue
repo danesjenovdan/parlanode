@@ -362,11 +362,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
-/deep/ .p-tabs .p-tabs-content,
-/deep/ .p-tabs .p-tabs-content .tab-content {
+::v-deep .p-tabs .p-tabs-content,
+::v-deep .p-tabs .p-tabs-content .tab-content {
   overflow-y: visible;
   overflow-x: visible;
 
@@ -598,7 +598,7 @@ export default {
 </style>
 
 <style lang="scss">
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .lightning-badge::before {
   background: $font-placeholder;

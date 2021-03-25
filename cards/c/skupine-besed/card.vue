@@ -321,16 +321,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
-/deep/ .card-content {
+::v-deep .card-content {
   min-height: 660px;
 }
 
 #skupine-besed {
-  /deep/ .p-tabs .p-tabs-content,
-  /deep/ .p-tabs .p-tabs-content .tab-content {
+  ::v-deep .p-tabs .p-tabs-content,
+  ::v-deep .p-tabs .p-tabs-content .tab-content {
     overflow-y: visible;
     overflow-x: visible;
   }
@@ -341,7 +341,7 @@ export default {
     overflow-y: auto;
     margin-top: 6px;
 
-    /deep/ .word-list {
+    ::v-deep .word-list {
       max-height: none;
     }
   }

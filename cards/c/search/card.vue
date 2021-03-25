@@ -106,13 +106,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~parlassets/scss/colors";
+@import "parlassets/scss/colors";
 
-.search-dropdown /deep/ .search-dropdown-input {
+.search-dropdown ::v-deep .search-dropdown-input {
   background-color: $white;
 }
 
-.search-dropdown /deep/ .search-dropdown-options.empty {
+.search-dropdown ::v-deep .search-dropdown-options.empty {
   border-bottom: none;
 }
 

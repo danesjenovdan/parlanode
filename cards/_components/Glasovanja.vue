@@ -67,15 +67,14 @@
       >
         <div v-t="'no-results'" v-if="filteredVotingDays.length === 0" class="no-results" />
         <div v-else>
-          <template v-for="votingDay in filteredVotingDays">
+          <template v-for="votingDay in filteredVotingDays" :key="`${votingDay.date}`">
             <div
               v-if="type === 'person' || selectedSort === 'date'"
-              :key="`${votingDay.date}-1`"
               class="date"
             >
               {{ votingDay.date }}
             </div>
-            <div :key="`${votingDay.date}-2`">
+            <div>
               <div v-for="ballot in votingDay.ballots" :key="ballot.vote_id">
                 <ballot :ballot="ballot" type="person" />
               </div>
@@ -332,11 +331,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
-/deep/ .card-content,
-/deep/ .card-content-front {
+::v-deep .card-content,
+::v-deep .card-content-front {
   @include respond-to(mobile) {
     max-height: none;
   }

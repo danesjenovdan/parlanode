@@ -178,33 +178,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 #seznam-glasovanj {
-  /deep/ .filters {
+  ::v-deep .filters {
     margin-left: -10px;
     margin-right: -10px;
   }
 }
 
-/deep/ .card-content {
+::v-deep .card-content {
   // height: $full-card-height;
   @include respond-to(desktop) {
     height: 637px;
   }
 }
 
-/deep/ .filters {
+::v-deep .filters {
   margin-top: 10px;
 }
 
-/deep/ #votingCard {
+::v-deep #votingCard {
   max-height: 372px;
 }
 
-/deep/ .p-tabs .p-tabs-content,
-/deep/ .p-tabs .p-tabs-content .tab-content {
+::v-deep .p-tabs .p-tabs-content,
+::v-deep .p-tabs .p-tabs-content .tab-content {
   overflow-y: visible;
   overflow-x: visible;
 
@@ -274,7 +274,7 @@ export default {
     }
   }
 
-  /deep/ .result-chart {
+  ::v-deep .result-chart {
     margin-top: 10px;
     justify-content: center;
     @include respond-to(desktop) {

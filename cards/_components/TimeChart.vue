@@ -36,7 +36,7 @@ export default {
       const width = 960 - margin.left - margin.right;
       const height = 400 - margin.top - margin.bottom;
 
-      const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
+      const locale = d3.locale(getD3Locale(import.meta.env.CARD_LANG));
 
       const bisectDate = d3.bisector(d => d.date).left;
       const parseDate = d3.time.format('%d.%m.%Y').parse;
@@ -174,7 +174,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .axis path,
 .axis line {

@@ -108,13 +108,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~parlassets/scss/colors";
+@import "parlassets/scss/colors";
 
-.card-container /deep/ .card-content {
+.card-container ::v-deep .card-content {
   min-height: auto;
 }
 
-.search-dropdown /deep/ .search-dropdown-input {
+.search-dropdown ::v-deep .search-dropdown-input {
   background-color: transparent;
 }
 
@@ -123,7 +123,7 @@ export default {
   padding-left: 20px;
 }
 
-.search-dropdown /deep/ .search-dropdown-options.empty {
+.search-dropdown ::v-deep .search-dropdown-options.empty {
   border-bottom: none;
 }
 

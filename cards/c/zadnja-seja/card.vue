@@ -144,8 +144,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 hr,
 .link {
@@ -172,7 +172,7 @@ hr,
       margin-bottom: 0;
       margin-right: 0 !important;
 
-      /deep/ .column-label {
+      ::v-deep .column-label {
         flex: 0 0 33%;
 
         .chart-label {
@@ -180,7 +180,7 @@ hr,
         }
       }
 
-      /deep/ .column-bar {
+      ::v-deep .column-bar {
         flex: 0 0 66%;
       }
     }
@@ -194,7 +194,7 @@ hr,
 .votes {
   min-height: 40px;
 
-  /deep/ #votingCard {
+  ::v-deep #votingCard {
     height: auto !important;
     max-height: 500px;
   }

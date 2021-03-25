@@ -129,10 +129,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* /deep/ .card-header {
+* ::v-deep .card-header {
   display: none;
 }
-* /deep/ .card-back-content {
+* ::v-deep .card-back-content {
   margin-top: 20px;
 }
 </style>

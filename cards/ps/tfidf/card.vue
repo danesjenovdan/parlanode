@@ -78,7 +78,7 @@ export default {
   font-style: italic;
 }
 
-/deep/ .card-content-front {
+::v-deep .card-content-front {
   display: flex;
   align-items: center;
   justify-content: center;

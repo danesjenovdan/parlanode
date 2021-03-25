@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .partypin-container {
   float: right;

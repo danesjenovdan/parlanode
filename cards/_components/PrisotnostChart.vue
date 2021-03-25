@@ -90,7 +90,7 @@ export default {
       const width = 940 - prisotnostMargin.left - prisotnostMargin.right;
       const height = 460 - prisotnostMargin.top - prisotnostMargin.bottom;
 
-      const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
+      const locale = d3.locale(getD3Locale(import.meta.env.CARD_LANG));
 
       const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%S').parse;
 
@@ -287,8 +287,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .axis path,
 .axis line {

@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~parlassets/scss/colors";
+@import "parlassets/scss/colors";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=latin,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,700&subset=latin,latin-ext');

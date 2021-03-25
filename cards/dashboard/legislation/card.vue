@@ -282,11 +282,11 @@ export default {
 
 <style lang="scss" scoped>
 .card-container,
-/deep/ .card-content {
+::v-deep .card-content {
   overflow: visible;
 }
 
-#dash-legislation-list /deep/ {
+#dash-legislation-list ::v-deep {
   .table-contents,
   .table-headers {
     .table-row {
@@ -310,7 +310,7 @@ export default {
         padding-bottom: 10px;
         align-items: flex-start;
 
-        /deep/ .dash-button {
+        ::v-deep .dash-button {
           padding: 4px 11px 3px;
         }
       }

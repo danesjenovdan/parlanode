@@ -1,7 +1,7 @@
 export default {
   computed: {
     url() {
-      return `${this.slugs.urls.glej}/${process.env.CARD_NAME}/`;
+      return `${this.slugs.urls.glej}/${import.meta.env.CARD_NAME}/`;
     },
   },
   methods: {

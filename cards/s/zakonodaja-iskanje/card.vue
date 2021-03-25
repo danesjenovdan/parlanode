@@ -188,8 +188,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 #card-search {
   overflow-y: auto;
@@ -201,7 +201,7 @@ export default {
   padding: 0;
 }
 
-.legislation-list /deep/ {
+.legislation-list ::v-deep {
   ul {
     padding: 0;
   }

@@ -95,8 +95,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .columns {
   display: flex;
@@ -116,7 +116,7 @@ export default {
       margin-bottom: 0;
       margin-right: 0 !important;
 
-      /deep/ .column-label {
+      ::v-deep .column-label {
         flex: 0 0 33%;
 
         .chart-label {
@@ -124,7 +124,7 @@ export default {
         }
       }
 
-      /deep/ .column-bar {
+      ::v-deep .column-bar {
         flex: 0 0 66%;
       }
     }

@@ -53,8 +53,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .questions {
   min-height: 100px;

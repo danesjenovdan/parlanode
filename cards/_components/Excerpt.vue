@@ -104,8 +104,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import "~parlassets/scss/colors";
+@import 'parlassets/scss/breakpoints';
+@import "parlassets/scss/colors";
 
 .excerpt {
   font-size: 13px;
@@ -164,8 +164,8 @@ hr {
 </style>
 
 <style lang="scss">
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .excerpt {
   display: flex;

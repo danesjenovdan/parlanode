@@ -34,7 +34,7 @@ export default {
     showEmptyState() {
       const { showEmptyState } = this.$root.$options.cardData.cardGlobals;
       if (showEmptyState && showEmptyState.length) {
-        return showEmptyState.indexOf(process.env.CARD_NAME) !== -1;
+        return showEmptyState.indexOf(import.meta.env.CARD_NAME) !== -1;
       }
       return false;
     },

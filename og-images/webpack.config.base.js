@@ -31,7 +31,7 @@ module.exports = currentPath => ({
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV === 'production'
+          import.meta.env.NODE_ENV === 'production'
             ? MiniCssExtractPlugin.loader
             : 'vue-style-loader',
           'css-loader',
@@ -69,7 +69,7 @@ module.exports = currentPath => ({
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+        NODE_ENV: JSON.stringify(import.meta.env.NODE_ENV || 'development'),
       },
     }),
   ],

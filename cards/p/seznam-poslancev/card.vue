@@ -414,7 +414,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/breakpoints';
 
 .blue-button-list-item {
   font-size: 12px;

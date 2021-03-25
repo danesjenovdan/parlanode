@@ -105,13 +105,13 @@ export default {
   height: 100%;
   display: flex;
 
-  /deep/ svg {
+  ::v-deep svg {
     width: 100%;
     height: 100%;
   }
 }
 
-/deep/ .p-tabs {
+::v-deep .p-tabs {
   height: 100%;
 
   .p-tabs-content {

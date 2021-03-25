@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
 
 .empty-dataset {
   font-size: 16px;

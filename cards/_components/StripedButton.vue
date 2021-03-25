@@ -78,9 +78,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/functions';
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/functions';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .striped-button {
   align-items: center;

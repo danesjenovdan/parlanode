@@ -107,7 +107,7 @@ function chart(rawData, component) {
   const width = 940 - margin.left - margin.right;
   const height = 460 - margin.top - margin.bottom;
 
-  const locale = d3.locale(getD3Locale(process.env.CARD_LANG));
+  const locale = d3.locale(getD3Locale(import.meta.env.CARD_LANG));
 
   const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%SZ').parse;
   const bisectDate = d3.bisector(d => d.date).left;
@@ -283,7 +283,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~parlassets/scss/colors";
+@import "parlassets/scss/colors";
 
 .axis path,
 .axis line {

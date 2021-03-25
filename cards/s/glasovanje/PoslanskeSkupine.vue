@@ -157,8 +157,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .parties {
   height: 453px;
@@ -227,11 +227,11 @@ export default {
           display: flex;
           flex: 0;
 
-          /deep/ .donut-chart {
+          ::v-deep .donut-chart {
             display: none;
           }
 
-          /deep/ .text-container {
+          ::v-deep .text-container {
             display: flex;
             margin-right: 0;
             width: auto;

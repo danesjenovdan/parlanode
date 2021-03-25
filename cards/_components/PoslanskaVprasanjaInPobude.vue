@@ -260,8 +260,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .card-content-front {
   display: flex;
@@ -412,7 +412,7 @@ export default {
   }
 }
 
-#vprasanja /deep/ .questions {
+#vprasanja ::v-deep .questions {
   // height: 435px;
   height: $full-card-height - 83px;
 }

@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/breakpoints';
 
 #person-list {
   overflow-y: auto;

@@ -80,8 +80,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~parlassets/scss/colors';
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .legenda {
   font-size: 14px;

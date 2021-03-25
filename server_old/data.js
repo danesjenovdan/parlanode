@@ -94,7 +94,7 @@ async function preload() {
   return Promise.all(Object.keys(dataFiles).map(name => loadData(name)))
     .then(() => {
       // async fetch new data since everything could have been loaded from old files
-      if (process.env.NODE_ENV === 'production') {
+      if (import.meta.env.NODE_ENV === 'production') {
         refetch();
       }
     });

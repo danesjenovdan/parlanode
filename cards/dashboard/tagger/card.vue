@@ -195,11 +195,11 @@ export default {
 
 <style lang="scss" scoped>
 .card-container,
-/deep/ .card-content {
+::v-deep .card-content {
   overflow: visible;
 }
 
-#dash-votings-list /deep/ {
+#dash-votings-list ::v-deep {
   .table-contents,
   .table-headers {
     .table-row {

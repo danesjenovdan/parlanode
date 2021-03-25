@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/breakpoints';
 
 #pie-chart {
   height: $full-card-height;

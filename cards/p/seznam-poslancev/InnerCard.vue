@@ -159,8 +159,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~parlassets/scss/breakpoints';
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .person-list .headers .column {
   white-space: normal;

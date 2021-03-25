@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~parlassets/scss/breakpoints';
+@import 'parlassets/scss/breakpoints';
 
 .word-list {
   max-height: 480px;

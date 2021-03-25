@@ -344,8 +344,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '~parlassets/scss/breakpoints';
-  @import '~parlassets/scss/colors';
+  @import 'parlassets/scss/breakpoints';
+  @import 'parlassets/scss/colors';
 
   .card-header h1,
   .card-footer h1 {
@@ -550,7 +550,7 @@ export default {
   }
 </style>
 <style lang="scss">
-@import '~parlassets/scss/colors';
+@import 'parlassets/scss/colors';
   .card-glasovanja-seja {
     .search-dropdown-input {
       padding-top: 11px;
