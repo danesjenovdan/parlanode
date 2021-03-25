@@ -4,13 +4,13 @@
       <div slot="generator" class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
           <div class="col-md-6">
-            <blue-button-list
-              :items="filters"
-              v-model="currentFilter"
-            />
+            <blue-button-list v-model="currentFilter" :items="filters" />
           </div>
           <div
-            v-if="currentFilter == tabs.find(t => !t.org_ids || !t.org_ids.length).title"
+            v-if="
+              currentFilter ==
+              tabs.find((t) => !t.org_ids || !t.org_ids.length).title
+            "
             class="col-md-6 filters"
           >
             <p-search-dropdown
@@ -77,19 +77,18 @@ export default {
     StripedButton,
     BlueButtonList,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
     const tabs = this.$options.cardData.cardGlobals.session_list_tabs;
     return {
       tabs,
       sessions: this.$options.cardData.data.sessions,
       workingBodies: [],
-      filters: tabs.map(e => ({ label: e.title, id: e.title })),
+      filters: tabs.map((e) => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.$options.cardData.parlaState, 'filters') || tabs[0].title,
+      currentFilter:
+        get(this.$options.cardData.parlaState, 'filters') || tabs[0].title,
       justFive: get(this.$options.cardData.parlaState, 'justFive') || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
@@ -101,8 +100,16 @@ export default {
         { id: 'image', label: '', additionalClass: 'image' },
         { id: 'name', label: this.$t('title'), additionalClass: 'wider name' },
         { id: 'date', label: this.$t('start') },
-        { id: 'updated', label: this.$t('change'), additionalClass: 'optional' },
-        { id: 'workingBody', label: this.$t('organization'), additionalClass: 'wider optional' },
+        {
+          id: 'updated',
+          label: this.$t('change'),
+          additionalClass: 'optional',
+        },
+        {
+          id: 'workingBody',
+          label: this.$t('organization'),
+          additionalClass: 'wider optional',
+        },
       ];
     },
     currentAnalysisData() {
@@ -110,26 +117,32 @@ export default {
     },
     currentWorkingBodies() {
       return this.workingBodies
-        .filter(workingBody => workingBody.selected)
-        .map(workingBody => workingBody.id);
+        .filter((workingBody) => workingBody.selected)
+        .map((workingBody) => workingBody.id);
     },
     currentWorkingBodyNames() {
       return this.workingBodies
-        .filter(workingBody => workingBody.selected)
-        .map(workingBody => workingBody.label);
+        .filter((workingBody) => workingBody.selected)
+        .map((workingBody) => workingBody.label);
     },
     inputPlaceholder() {
       return this.currentWorkingBodies.length > 0
-        ? this.$t('selected-placeholder', { num: this.currentWorkingBodies.length })
+        ? this.$t('selected-placeholder', {
+            num: this.currentWorkingBodies.length,
+          })
         : this.$t('select-working-body-placeholder');
     },
     processedSessions() {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
-          const selectedTab = this.tabs.find(t => t.title === this.currentFilter);
+          const selectedTab = this.tabs.find(
+            (t) => t.title === this.currentFilter
+          );
           if (selectedTab) {
             if (selectedTab.org_ids && selectedTab.org_ids.length) {
-              return session.orgs.filter(org => selectedTab.org_ids.indexOf(org.id) !== -1).length;
+              return session.orgs.filter(
+                (org) => selectedTab.org_ids.indexOf(org.id) !== -1
+              ).length;
             }
             // if no selectedTab.org_ids
             let match = false;
@@ -208,12 +221,16 @@ export default {
         params.justFive = true;
       }
 
-      return `${this.url}${Object.keys(params).length > 0 ? `?state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
+      return `${this.url}${
+        Object.keys(params).length > 0
+          ? `?state=${encodeURIComponent(JSON.stringify(params))}`
+          : ''
+      }`;
     },
   },
   watch: {
     currentFilter(newValue) {
-      const otherTab = this.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      const otherTab = this.tabs.find((t) => !t.org_ids || !t.org_ids.length);
       if (newValue !== otherTab.title) {
         this.workingBodies.forEach((workingBody) => {
           workingBody.selected = false;
@@ -221,17 +238,19 @@ export default {
       }
     },
     currentWorkingBodies(newValue) {
-      const otherTab = this.tabs.find(t => !t.org_ids || !t.org_ids.length);
+      const otherTab = this.tabs.find((t) => !t.org_ids || !t.org_ids.length);
       if (newValue.length !== 0 && this.currentFilter !== otherTab.title) {
         this.currentFilter = otherTab.title;
       }
     },
   },
   created() {
-    axios.get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
+    axios
+      .get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
       .then((response) => {
-        const existingWorkingBodies = get(this.$options.cardData.parlaState, 'workingBodies') || [];
-        this.workingBodies = response.data.map(workingBody => ({
+        const existingWorkingBodies =
+          get(this.$options.cardData.parlaState, 'workingBodies') || [];
+        this.workingBodies = response.data.map((workingBody) => ({
           id: workingBody.id,
           label: workingBody.name,
           selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
@@ -250,7 +269,8 @@ export default {
     },
     selectSort(sortId) {
       if (this.currentSort === sortId) {
-        this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc';
+        this.currentSortOrder =
+          this.currentSortOrder === 'asc' ? 'desc' : 'asc';
       } else {
         this.currentSort = sortId;
         this.currentSortOrder = 'asc';

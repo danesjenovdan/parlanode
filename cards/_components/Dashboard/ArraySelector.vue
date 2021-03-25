@@ -1,9 +1,5 @@
 <template>
-  <p-search-dropdown
-    v-model="mappedOptions"
-    :single="single"
-    :small="small"
-  />
+  <p-search-dropdown v-model="mappedOptions" :single="single" :small="small" />
 </template>
 
 <script>
@@ -35,14 +31,16 @@ export default {
   computed: {
     mappedOptions: {
       get() {
-        return this.options.map(opt => ({
+        return this.options.map((opt) => ({
           id: opt.id,
           label: opt.name,
           selected: this.value.indexOf(opt.name) !== -1,
         }));
       },
       set(newOptions) {
-        const newValues = newOptions.filter(opt => opt.selected).map(opt => opt.label);
+        const newValues = newOptions
+          .filter((opt) => opt.selected)
+          .map((opt) => opt.label);
         if (this.single) {
           // delete all
           this.value.splice(0, this.value.length);

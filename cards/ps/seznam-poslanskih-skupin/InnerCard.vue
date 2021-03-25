@@ -15,7 +15,11 @@
       <li v-if="processedPartyData.length === 0" class="loader">
         <div class="nalagalnik"></div>
       </li>
-      <li v-for="(party, index) in processedPartyData" :key="index" class="labeled-chart">
+      <li
+        v-for="(party, index) in processedPartyData"
+        :key="index"
+        class="labeled-chart"
+      >
         <div class="column chart-label">
           <a :href="getPartyLink(party.party)" class="funblue-light-hover">
             {{ party.party.acronym }}
@@ -43,11 +47,7 @@ import { partyList } from '@/_mixins/contextUrls';
 
 export default {
   name: 'SeznamPoslanskihSkupinInnerCard',
-  mixins: [
-    common,
-    links,
-    partyList,
-  ],
+  mixins: [common, links, partyList],
   props: {
     processedPartyData: {
       type: Array,

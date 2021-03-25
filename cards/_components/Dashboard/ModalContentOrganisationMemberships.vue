@@ -7,11 +7,13 @@
             <img
               :src="getPersonPortrait(getPersonObject(m.person))"
               class="img-circle person-portrait"
-            >
+            />
           </div>
           <div class="col-md-10">
             <label>{{ $t('member') }}</label>
-            <dash-button class="delete-button" @click="deleteMembership(m)">&times;</dash-button>
+            <dash-button class="delete-button" @click="deleteMembership(m)"
+              >&times;</dash-button
+            >
           </div>
           <div class="col-md-10">
             <p-search-dropdown
@@ -49,7 +51,7 @@
               @clear="m.role = null"
             />
           </div>
-          <br>
+          <br />
           <div class="col-md-6">
             <label>Start date</label>
           </div>
@@ -57,12 +59,12 @@
             <label>Start time</label>
           </div>
           <div class="col-md-6">
-            <input v-model="m.start_date" class="form-control" type="date">
+            <input v-model="m.start_date" class="form-control" type="date" />
           </div>
           <div class="col-md-6">
-            <input v-model="m.start_time" class="form-control" type="time">
+            <input v-model="m.start_time" class="form-control" type="time" />
           </div>
-          <br>
+          <br />
           <div class="col-md-6">
             <label>End date</label>
           </div>
@@ -70,15 +72,15 @@
             <label>End time</label>
           </div>
           <div class="col-md-6">
-            <input v-model="m.end_date" class="form-control" type="date">
+            <input v-model="m.end_date" class="form-control" type="date" />
           </div>
           <div class="col-md-6">
-            <input v-model="m.end_time" class="form-control" type="time">
+            <input v-model="m.end_time" class="form-control" type="time" />
           </div>
         </div>
       </div>
       <div class="col-md-12">
-        <hr>
+        <hr />
       </div>
     </div>
     <div class="row">
@@ -104,10 +106,7 @@ export default {
     DashButton,
     PSearchDropdown,
   },
-  mixins: [
-    parlapi,
-    links,
-  ],
+  mixins: [parlapi, links],
   props: {
     loadedData: {
       type: Object,
@@ -147,21 +146,33 @@ export default {
     enrichMemberships() {
       const { people, orgs, memberships } = this.loadedData;
       memberships.forEach((m) => {
-        this.$set(m, 'roles', this.roles.map(role => ({
-          id: role.id,
-          label: role.label,
-          selected: role.id === m.role,
-        })));
-        this.$set(m, 'people', people.map(p => ({
-          id: p.id,
-          label: p.name,
-          selected: p.id === m.person,
-        })));
-        this.$set(m, 'on_behalf_ofs', orgs.map(org => ({
-          id: org.id,
-          label: `${org._acronym} - ${org._name}`,
-          selected: org.id === m.on_behalf_of,
-        })));
+        this.$set(
+          m,
+          'roles',
+          this.roles.map((role) => ({
+            id: role.id,
+            label: role.label,
+            selected: role.id === m.role,
+          }))
+        );
+        this.$set(
+          m,
+          'people',
+          people.map((p) => ({
+            id: p.id,
+            label: p.name,
+            selected: p.id === m.person,
+          }))
+        );
+        this.$set(
+          m,
+          'on_behalf_ofs',
+          orgs.map((org) => ({
+            id: org.id,
+            label: `${org._acronym} - ${org._name}`,
+            selected: org.id === m.on_behalf_of,
+          }))
+        );
       });
     },
     addMembership() {
@@ -173,19 +184,19 @@ export default {
         end_date: null,
         end_time: null,
         role: null,
-        roles: this.roles.map(role => ({
+        roles: this.roles.map((role) => ({
           id: role.id,
           label: role.label,
           selected: false,
         })),
         person: null,
-        people: people.map(p => ({
+        people: people.map((p) => ({
           id: p.id,
           label: p.name,
           selected: false,
         })),
         on_behalf_of: null,
-        on_behalf_ofs: orgs.map(org => ({
+        on_behalf_ofs: orgs.map((org) => ({
           id: org.id,
           label: `${org._acronym} - ${org._name}`,
           selected: false,
@@ -196,19 +207,25 @@ export default {
       // if it was saved it has an ID
       if (m.id) {
         // eslint-disable-next-line no-alert
-        const sure = window.confirm('Are you sure you want to DELETE? This is final!');
+        const sure = window.confirm(
+          'Are you sure you want to DELETE? This is final!'
+        );
         if (sure) {
           await this.$parlapi.deleteMembership(m.id);
-          this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
+          this.loadedData.memberships = this.loadedData.memberships.filter(
+            (ms) => ms.id !== m.id
+          );
         }
       } else {
         // it's not saved just remove it
-        this.loadedData.memberships = this.loadedData.memberships.filter(ms => ms.id !== m.id);
+        this.loadedData.memberships = this.loadedData.memberships.filter(
+          (ms) => ms.id !== m.id
+        );
       }
     },
     getPersonObject(personId) {
       if (personId) {
-        const person = this.loadedData.people.find(p => p.id === personId);
+        const person = this.loadedData.people.find((p) => p.id === personId);
         if (person && person.gov_id) {
           return person;
         }
@@ -224,7 +241,7 @@ export default {
   margin-left: -5px;
   margin-right: -5px;
 
-  > [class*="col-"] {
+  > [class*='col-'] {
     padding-left: 5px;
     padding-right: 5px;
   }

@@ -36,13 +36,7 @@ export default {
   components: {
     PersonList,
   },
-  mixins: [
-    common,
-    partyOverview,
-    partyTitle,
-    partyHeader,
-    partyOgImage,
-  ],
+  mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage],
   data() {
     return {
       data: this.$options.cardData.data,

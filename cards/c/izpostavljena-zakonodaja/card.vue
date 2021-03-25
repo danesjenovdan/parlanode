@@ -21,13 +21,16 @@
               :key="legislation.epa"
               class="col-xs-12 col-sm-6 legislation__wrapper"
             >
-              <a :href="getLegislationLink(legislation)" class="legislation__single">
+              <a
+                :href="getLegislationLink(legislation)"
+                class="legislation__single"
+              >
                 <div class="icon">
                   <div class="img-circle circle">
                     <img
                       v-if="legislation.icon"
                       :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`"
-                    >
+                    />
                   </div>
                 </div>
                 <div class="text">
@@ -44,13 +47,16 @@
               :key="legislation.epa"
               class="col-sm-6 legislation__wrapper"
             >
-              <a :href="getLegislationLink(legislation)" class="legislation__single">
+              <a
+                :href="getLegislationLink(legislation)"
+                class="legislation__single"
+              >
                 <div class="icon">
                   <div class="img-circle circle">
                     <img
                       v-if="legislation.icon"
                       :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`"
-                    >
+                    />
                   </div>
                 </div>
                 <div class="text">
@@ -66,14 +72,10 @@
               <div class="nalagalnik" />
             </template>
             <template v-else-if="mostDiscussed === false">
-              <center>
-                ERROR!
-              </center>
+              <center>ERROR!</center>
             </template>
             <template v-else-if="mostDiscussed && mostDiscussed.length < 1">
-              <center>
-                EMPTY!
-              </center>
+              <center>EMPTY!</center>
             </template>
             <template v-else>
               <div
@@ -81,13 +83,16 @@
                 :key="legislation.epa"
                 class="col-sm-6 legislation__wrapper"
               >
-                <a :href="getLegislationLink(legislation)" class="legislation__single">
+                <a
+                  :href="getLegislationLink(legislation)"
+                  class="legislation__single"
+                >
                   <div class="icon">
                     <div class="img-circle circle">
                       <img
                         v-if="legislation.icon"
                         :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`"
-                      >
+                      />
                     </div>
                   </div>
                   <div class="text">
@@ -124,11 +129,7 @@ import PTabs from '@/_components/Tabs.vue';
 export default {
   name: 'IzpostavljenaZakonodaja',
   components: { PTab, PTabs },
-  mixins: [
-    common,
-    links,
-    commentapi,
-  ],
+  mixins: [common, links, commentapi],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -142,8 +143,12 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      const customUrl = encodeURIComponent(`${this.slugs.urls.analize}/s/getExposedLegislation/`);
-      const state = encodeURIComponent(JSON.stringify({ selectedTab: this.selectedTab }));
+      const customUrl = encodeURIComponent(
+        `${this.slugs.urls.analize}/s/getExposedLegislation/`
+      );
+      const state = encodeURIComponent(
+        JSON.stringify({ selectedTab: this.selectedTab })
+      );
       return `${this.url}?customUrl=${customUrl}&state=${state}`;
     },
   },
@@ -158,10 +163,12 @@ export default {
       this.$commentapi.getMostDiscussed(),
     ])
       .then(([resAll, resMost]) => {
-        const sortedArticles = sortBy(resMost.data.articles || [], ['voter_count']).reverse();
-        const epas = sortedArticles.map(a => a.title);
+        const sortedArticles = sortBy(resMost.data.articles || [], [
+          'voter_count',
+        ]).reverse();
+        const epas = sortedArticles.map((a) => a.title);
         this.mostDiscussed = epas
-          .map(epa => resAll.data.results.find(e => e.epa === epa))
+          .map((epa) => resAll.data.results.find((e) => e.epa === epa))
           .filter(Boolean)
           .slice(0, 6);
         this.mostDiscussedLoading = false;
@@ -177,8 +184,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "parlassets/scss/breakpoints";
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .legislation {
   overflow: hidden;

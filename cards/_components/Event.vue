@@ -2,45 +2,36 @@
   <div class="event">
     <div :class="['parlaicon', eventIcon]"></div>
     <template v-if="event.type === 'question'">
-      <i18n
-        :path="translationKey"
-        tag="div"
-        class="motion"
-      >
+      <i18n :path="translationKey" tag="div" class="motion">
         <component
           :is="event.content_url ? 'a' : 'strong'"
           :href="event.content_url"
           :class="{ 'funblue-light-hover': event.content_url }"
           target="_blank"
           place="title"
-        >{{ event.title }}</component>
+          >{{ event.title }}</component
+        >
         <span place="recipient">{{ event.recipient_text }}</span>
       </i18n>
     </template>
     <template v-else-if="event.type === 'ballot'">
-      <i18n
-        :path="translationKey"
-        tag="div"
-        class="motion"
-      >
+      <i18n :path="translationKey" tag="div" class="motion">
         <a
           :href="getSessionVoteLink(event)"
           class="funblue-light-hover"
           place="title"
-        >{{ event.vote_name }}</a>
+          >{{ event.vote_name }}</a
+        >
       </i18n>
     </template>
     <template v-else-if="event.type === 'speech'">
-      <i18n
-        :path="translationKey"
-        tag="div"
-        class="motion"
-      >
+      <i18n :path="translationKey" tag="div" class="motion">
         <a
           :href="getSessionSpeechLink(event)"
           class="funblue-light-hover"
           place="session"
-        >{{ event.session.name }}</a>
+          >{{ event.session.name }}</a
+        >
         <span place="org">{{ event.session.org.name }}</span>
       </i18n>
     </template>
@@ -57,9 +48,7 @@ import links from '@/_mixins/links';
 
 export default {
   name: 'Event',
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     event: {
       type: Object,

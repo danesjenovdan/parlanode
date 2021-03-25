@@ -1,8 +1,5 @@
 <template functional>
-  <span
-    class="tag"
-    v-on="listeners"
-  >{{ data.attrs.text }}</span>
+  <span class="tag" v-on="listeners">{{ data.attrs.text }}</span>
 </template>
 
 <style lang="scss">

@@ -35,11 +35,7 @@
         :name="tabNames[0]"
         :contents="tabs[tabNames[0]]"
       />
-      <membership-list
-        v-else
-        :name="''"
-        :contents="[]"
-      />
+      <membership-list v-else :name="''" :contents="[]" />
     </div>
   </card-wrapper>
 </template>
@@ -62,13 +58,7 @@ export default {
     PTabs,
     MembershipList,
   },
-  mixins: [
-    common,
-    memberHeader,
-    memberOgImage,
-    memberOverview,
-    memberTitle,
-  ],
+  mixins: [common, memberHeader, memberOgImage, memberOverview, memberTitle],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -86,13 +76,17 @@ export default {
         investigative_comission: this.$t('card.investigative_comissions'),
       };
 
-      return reduce(this.data.memberships, (tabs, membership, membershipName) => {
-        if (membershipName in membershipTabMap) {
-          const tabId = membershipTabMap[membershipName];
-          tabs[tabId] = (tabs[tabId] || []).concat(membership);
-        }
-        return tabs;
-      }, {});
+      return reduce(
+        this.data.memberships,
+        (tabs, membership, membershipName) => {
+          if (membershipName in membershipTabMap) {
+            const tabId = membershipTabMap[membershipName];
+            tabs[tabId] = (tabs[tabId] || []).concat(membership);
+          }
+          return tabs;
+        },
+        {}
+      );
     },
     tabNames() {
       return Object.keys(this.tabs);

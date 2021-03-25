@@ -4,9 +4,21 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    @selectedparty="(newParty) => { state.selectedParty = newParty; }"
-    @selectedoption="(newOption) => { state.selectedOption = newOption; }"
-    @namefilter="(newNameFilter) => { state.nameFilter = newNameFilter; }"
+    @selectedparty="
+      (newParty) => {
+        state.selectedParty = newParty;
+      }
+    "
+    @selectedoption="
+      (newOption) => {
+        state.selectedOption = newOption;
+      }
+    "
+    @namefilter="
+      (newNameFilter) => {
+        state.nameFilter = newNameFilter;
+      }
+    "
   >
     <div slot="info">
       <p v-t="'info.methodology'" class="info-text heading"></p>
@@ -24,15 +36,17 @@
     </div>
 
     <div class="date-and-stuff">
-      <a
-        :href="getSessionVotesLink(data.session)"
-        class="funblue-light-hover"
-      >
-        {{ data.session.name }}
-      </a><span class="date">, {{ data.session.date }}</span>
+      <a :href="getSessionVotesLink(data.session)" class="funblue-light-hover">
+        {{ data.session.name }} </a
+      ><span class="date">, {{ data.session.date }}</span>
     </div>
 
-    <div :class="['summary', { 'fire-badge': data.result && data.result.is_outlier }]">
+    <div
+      :class="[
+        'summary',
+        { 'fire-badge': data.result && data.result.is_outlier },
+      ]"
+    >
       <div class="result">
         <template v-if="data.result && data.result.accepted === true">
           <i class="accepted glyphicon glyphicon-ok"></i>
@@ -57,17 +71,17 @@
             :class="[
               'tooltip',
               `tooltip-${data.id}-${i}`,
-              {'tooltip--show': visibleTooltip === `${data.id}-${i}`}
+              { 'tooltip--show': visibleTooltip === `${data.id}-${i}` },
             ]"
           >
             {{ project }}
           </div>
           <p class="projects">
             <component
-              v-for="(project, i) in projects"
               :is="i > 0 ? 'a' : 'span'"
+              v-for="(project, i) in projects"
               :key="project"
-              :class="['project', {'project--tooltip': i > 0}]"
+              :class="['project', { 'project--tooltip': i > 0 }]"
               :data-target="`${data.id}-${i}`"
               href="#"
               @click.prevent="() => {}"
@@ -85,8 +99,8 @@
 
     <template v-if="data.members && data.members.length">
       <div
-        v-t="'summary'"
         v-if="content"
+        v-t="'summary'"
         class="izvlecek-switch visible-xs"
         @click="showMobileExcerpt = !showMobileExcerpt"
       />
@@ -227,24 +241,26 @@ export default {
     Excerpt,
     DataNotPublished,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   data() {
-    const data = this.$options.cardData.data;
+    const { data } = this.$options.cardData;
 
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(data.name);
 
     let coalitionOpositionParties = null;
     if (data.gov_side) {
-      coalitionOpositionParties = ['coalition', 'opposition'].map(side => ({
+      coalitionOpositionParties = ['coalition', 'opposition'].map((side) => ({
         party: {
           id: side,
           name: this.$t(side),
         },
-        votes: pick(data.gov_side[side].votes, ['abstain', 'for', 'against', 'absent']),
+        votes: pick(data.gov_side[side].votes, [
+          'abstain',
+          'for',
+          'against',
+          'absent',
+        ]),
         max: {
           maxOptPerc: data.gov_side[side].max.maxOptPerc,
           max_opt: data.gov_side[side].max.max_opt,
@@ -256,10 +272,12 @@ export default {
     const vote = data.all;
     if (vote) {
       const e = vote;
-      if (typeof e.for === 'number'
-        && typeof e.against === 'number'
-        && typeof e.abstain === 'number'
-        && typeof e.absent === 'number') {
+      if (
+        typeof e.for === 'number' &&
+        typeof e.against === 'number' &&
+        typeof e.abstain === 'number' &&
+        typeof e.absent === 'number'
+      ) {
         const allInVotes = e.for + e.against + e.abstain + e.absent;
         e.percent_for = Math.floor((e.for / allInVotes) * 100);
         e.percent_against = Math.floor((e.against / allInVotes) * 100);
@@ -298,7 +316,9 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
+      return `${this.url}${this.data.id}?state=${encodeURIComponent(
+        JSON.stringify(this.state)
+      )}`;
     },
     excerptData() {
       return {
@@ -453,7 +473,7 @@ export default {
   }
 
   .name {
-    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;
@@ -489,7 +509,7 @@ export default {
 
           &:first-of-type::before {
             content: '(';
-            margin-left: .25em;
+            margin-left: 0.25em;
           }
 
           &:last-of-type::after {

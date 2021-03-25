@@ -1,7 +1,14 @@
 <template>
   <scroll-shadow ref="shadow">
-    <div class="questions date-list" @scroll="$refs.shadow.check($event.currentTarget)">
-      <div v-t="'no-results'" v-if="questionDays.length === 0" class="no-results" />
+    <div
+      class="questions date-list"
+      @scroll="$refs.shadow.check($event.currentTarget)"
+    >
+      <div
+        v-if="questionDays.length === 0"
+        v-t="'no-results'"
+        class="no-results"
+      />
       <div v-else>
         <div v-for="day in questionDays" :key="day.date">
           <div class="date">{{ day.date }}</div>

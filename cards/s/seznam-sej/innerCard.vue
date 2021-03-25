@@ -9,7 +9,7 @@
       <i18n path="info.lead" tag="p" class="info-text lead">
         <span place="filter">{{ currentFilter }}</span>
         <span place="just-last-five">
-          <span v-t="'limited-to-last-five'" v-if="justFive"></span>
+          <span v-if="justFive" v-t="'limited-to-last-five'"></span>
         </span>
         <span place="sort-by">{{ $t(`sort-by--${currentSort}`) }}</span>
       </i18n>
@@ -62,11 +62,7 @@ export default {
   components: {
     SortableTable,
   },
-  mixins: [
-    common,
-    links,
-    sessionsContextUrl,
-  ],
+  mixins: [common, links, sessionsContextUrl],
   props: {
     headerConfig: {
       type: Object,
@@ -111,12 +107,19 @@ export default {
   },
   computed: {
     mappedSessions() {
-      return this.processedSessions.map(session => [
-        { link: this.getSessionUrl(session), image: `${this.slugs.urls.cdn}/icons/seja-${session.name.split(' ')[1]}.svg` },
+      return this.processedSessions.map((session) => [
+        {
+          link: this.getSessionUrl(session),
+          image: `${this.slugs.urls.cdn}/icons/seja-${
+            session.name.split(' ')[1]
+          }.svg`,
+        },
         { link: this.getSessionUrl(session), text: session.name },
         formatDate(session.date_ts),
         formatDate(session.updated_at_ts),
-        { contents: session.orgs.map(org => ({ text: org.name, link: null })) },
+        {
+          contents: session.orgs.map((org) => ({ text: org.name, link: null })),
+        },
       ]);
     },
   },

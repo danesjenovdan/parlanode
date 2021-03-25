@@ -5,7 +5,10 @@
     @mouseleave="onMouseLeave"
     @click="onClick"
   >
-    <div v-if="smallText" :class="['small-text', {'is-uppercase': isUppercase}]">
+    <div
+      v-if="smallText"
+      :class="['small-text', { 'is-uppercase': isUppercase }]"
+    >
       {{ smallText }}
     </div>
     <div v-if="text" class="text">{{ text }}</div>
@@ -43,7 +46,7 @@ export default {
     stripePosition: {
       type: String,
       default: 'top',
-      validator: value => ['top', 'bottom'].indexOf(value) > -1,
+      validator: (value) => ['top', 'bottom'].indexOf(value) > -1,
     },
   },
   data() {
@@ -159,7 +162,7 @@ export default {
   $special-groups: (
     dz: $third,
     koal: $link,
-    opoz: $font-placeholder
+    opoz: $font-placeholder,
   );
 
   $allmaps: map-merge(

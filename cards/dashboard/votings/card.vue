@@ -9,7 +9,7 @@
               v-model="filterQuery"
               :placeholder="$t('search')"
               class="form-control"
-            >
+            />
           </div>
           <div class="filter-sort">
             <p-search-dropdown
@@ -21,29 +21,30 @@
             />
           </div>
         </div>
-        <dash-table
-          :items="mappedItems"
-          :paginate="10"
-        >
-          <template slot="item-col" slot-scope="{ column, index }">
+        <dash-table :items="mappedItems" :paginate="10">
+          <template #item-col="{ column, index }">
             <template v-if="index === 0">
               <label>
                 {{ $t('name') }}
                 <span>
                   <small>{{ column.voting.start_time }}</small>
                   <small>
-                    <dash-loading-button :load="() => deleteVoting(column.voting, column.motion)">
+                    <dash-loading-button
+                      :load="() => deleteVoting(column.voting, column.motion)"
+                    >
                       &times;
                     </dash-loading-button>
                   </small>
                 </span>
               </label>
-              <input v-model="column.voting.name" class="form-control">
+              <input v-model="column.voting.name" class="form-control" />
             </template>
             <template v-if="index === 1">
               <label>
                 {{ $t('tags') }}
-                <small><dash-button @click="openTagModal">+</dash-button></small>
+                <small
+                  ><dash-button @click="openTagModal">+</dash-button></small
+                >
               </label>
               <dash-array-selector
                 v-model="column.tags"
@@ -103,7 +104,7 @@
       :data="abstractModalData"
       @closed="closeAbstractModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
+      <template #modal-data="{ loadedData }">
         <modal-content-abstract :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
@@ -112,11 +113,8 @@
       :data="tagModalData"
       @closed="closeTagModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
-        <input
-          v-model.trim="loadedData.newTagName"
-          class="form-control"
-        >
+      <template #modal-data="{ loadedData }">
+        <input v-model.trim="loadedData.newTagName" class="form-control" />
         <div v-for="tag in loadedData.tags" :key="tag.slug">
           {{ tag.name }}
         </div>
@@ -150,13 +148,12 @@ export default {
     PSearchDropdown,
     ModalContentAbstract,
   },
-  mixins: [
-    common,
-    parlapi,
-  ],
+  mixins: [common, parlapi],
   data() {
     return {
-      sessionId: this.$options.cardData.parlaState && this.$options.cardData.parlaState.session,
+      sessionId:
+        this.$options.cardData.parlaState &&
+        this.$options.cardData.parlaState.session,
       votings: null,
       motions: null,
       tags: null,
@@ -186,14 +183,18 @@ export default {
     mappedItems() {
       if (this.votings) {
         const q = this.filterQuery.toLowerCase();
-        const sortedVotings = orderBy(this.votings, (o) => {
-          const value = o[this.sortBy];
-          return value.toLowerCase ? value.toLowerCase() : value;
-        }, ['desc']);
+        const sortedVotings = orderBy(
+          this.votings,
+          (o) => {
+            const value = o[this.sortBy];
+            return value.toLowerCase ? value.toLowerCase() : value;
+          },
+          ['desc']
+        );
         return sortedVotings
-          .filter(v => v.name.toLowerCase().indexOf(q) !== -1)
+          .filter((v) => v.name.toLowerCase().indexOf(q) !== -1)
           .map((voting) => {
-            const motion = this.motions.find(m => m.id === voting.motion);
+            const motion = this.motions.find((m) => m.id === voting.motion);
             return [
               { voting, motion },
               { tags: voting.tags },
@@ -232,7 +233,9 @@ export default {
         this.votings = votings.data.results;
         this.motions = motions.data.results;
         this.tags = tags.data.results;
-        this.session = sessions.data.results.length ? sessions.data.results[0] : {};
+        this.session = sessions.data.results.length
+          ? sessions.data.results[0]
+          : {};
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -245,7 +248,7 @@ export default {
       this.sortBy = value;
     },
     changeResult(motionId, value) {
-      const motion = this.motions.find(m => m.id === motionId);
+      const motion = this.motions.find((m) => m.id === motionId);
       if (motion) {
         motion.result = value;
       }
@@ -262,7 +265,8 @@ export default {
             abstractVisible: abstract.abstractVisible,
           };
         },
-        saveData: abstract => this.$parlapi.patchVotingAbstract(abstract.id, abstract),
+        saveData: (abstract) =>
+          this.$parlapi.patchVotingAbstract(abstract.id, abstract),
       };
       this.abstractModalOpen = true;
     },
@@ -279,7 +283,8 @@ export default {
         saveData: async (tagData) => {
           await this.$parlapi.postTag({
             name: tagData.newTagName,
-            slug: tagData.newTagName.toLowerCase()
+            slug: tagData.newTagName
+              .toLowerCase()
               .replace(/[^a-z0-9]/g, '-')
               .replace(/--+/g, '-')
               .replace(/^-|-$/g, ''),
@@ -297,17 +302,16 @@ export default {
     },
     saveData(voting) {
       return () => {
-        const motion = this.motions.find(m => m.id === voting.motion);
+        const motion = this.motions.find((m) => m.id === voting.motion);
         motion.text = voting.name;
         return Promise.all([
           this.$parlapi.patchVoting(voting.id, voting),
           this.$parlapi.patchMotion(motion.id, motion),
-        ])
-          .catch((error) => {
-            // eslint-disable-next-line no-console
-            console.error(error);
-            this.error = error;
-          });
+        ]).catch((error) => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+          this.error = error;
+        });
       };
     },
     async saveAllData() {
@@ -334,8 +338,8 @@ export default {
       }
       await this.$parlapi.deleteVoting(voting.id);
       await this.$parlapi.deleteMotion(motion.id);
-      const vIndex = this.votings.findIndex(v => v === voting);
-      const mIndex = this.motions.findIndex(m => m === motion);
+      const vIndex = this.votings.findIndex((v) => v === voting);
+      const mIndex = this.motions.findIndex((m) => m === motion);
       this.votings.splice(vIndex, 1);
       this.motions.splice(mIndex, 1);
     },

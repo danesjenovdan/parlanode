@@ -12,13 +12,22 @@
       <div class="progress_flex">
         <div class="column-title progress_title">
           <div class="me_poslanec">
-            <div v-t="'style-scores.elevated-vocabulary'" class="poslanec_title"></div>
+            <div
+              v-t="'style-scores.elevated-vocabulary'"
+              class="poslanec_title"
+            ></div>
           </div>
           <div class="me_poslanec">
-            <div v-t="'style-scores.simple-vocabulary'" class="poslanec_title"></div>
+            <div
+              v-t="'style-scores.simple-vocabulary'"
+              class="poslanec_title"
+            ></div>
           </div>
           <div class="me_poslanec">
-            <div v-t="'style-scores.excessive-vocabulary'" class="poslanec_title"></div>
+            <div
+              v-t="'style-scores.excessive-vocabulary'"
+              class="poslanec_title"
+            ></div>
           </div>
         </div>
         <div class="column-bar progress_bar">
@@ -32,7 +41,9 @@
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <span class="sr-only">{{ results.privzdignjeno.toFixed(2) }}%</span>
+                <span class="sr-only"
+                  >{{ results.privzdignjeno.toFixed(2) }}%</span
+                >
                 <div class="progress_number">
                   {{ results.privzdignjeno.toFixed(2).replace('.', ',') }}
                 </div>
@@ -66,7 +77,9 @@
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <span class="sr-only">{{ results.problematicno.toFixed(2) }}%</span>
+                <span class="sr-only"
+                  >{{ results.problematicno.toFixed(2) }}%</span
+                >
                 <div class="progress_number">
                   {{ results.problematicno.toFixed(2).replace('.', ',') }}
                 </div>
@@ -101,7 +114,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
+      validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
     results: {
       type: Object,
@@ -139,7 +152,7 @@ export default {
       return Math.max(
         this.results.privzdignjeno,
         this.results.preprosto,
-        this.results.problematicno,
+        this.results.problematicno
       );
     },
   },

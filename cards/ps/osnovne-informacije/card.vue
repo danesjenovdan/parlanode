@@ -16,7 +16,10 @@
       <div v-for="(person, index) in people" :key="person.gov_id" class="row">
         <div class="parlaicon-container parlaicon-containermp">
           <span
-            :class="['parlaicon', `parlaicon-${index === 0 ? 'vodja' : 'namestnik'}`]"
+            :class="[
+              'parlaicon',
+              `parlaicon-${index === 0 ? 'vodja' : 'namestnik'}`,
+            ]"
             aria-hidden="true"
           ></span>
         </div>
@@ -24,16 +27,30 @@
           <div class="verticalmember">
             <div class="row">
               <a :href="getPersonLink(person)" :title="person.name">
-                <img :src="getPersonPortrait(person)" class="img-circle img-responsive" alt="">
+                <img
+                  :src="getPersonPortrait(person)"
+                  class="img-circle img-responsive"
+                  alt=""
+                />
               </a>
               <div class="member_data">
                 <h3>
-                  <a :href="getPersonLink(person)" class="funblue-light-hover">{{ person.name }}</a>
+                  <a
+                    :href="getPersonLink(person)"
+                    class="funblue-light-hover"
+                    >{{ person.name }}</a
+                  >
                 </h3>
-                <h4 v-t="'party-leader-f'" v-if="index === 0 && person.gender === 'f'"></h4>
-                <h4 v-t="'party-leader-m'" v-else-if="index === 0"></h4>
-                <h4 v-t="'deputy-leader-f'" v-else-if="person.gender === 'f'"></h4>
-                <h4 v-t="'deputy-leader-m'" v-else></h4>
+                <h4
+                  v-if="index === 0 && person.gender === 'f'"
+                  v-t="'party-leader-f'"
+                ></h4>
+                <h4 v-else-if="index === 0" v-t="'party-leader-m'"></h4>
+                <h4
+                  v-else-if="person.gender === 'f'"
+                  v-t="'deputy-leader-f'"
+                ></h4>
+                <h4 v-else v-t="'deputy-leader-m'"></h4>
               </div>
             </div>
           </div>
@@ -46,7 +63,8 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            <span v-t="'number-of-seats'"></span> <strong>{{ data.numberOfSeats }}</strong>
+            <span v-t="'number-of-seats'"></span>
+            <strong>{{ data.numberOfSeats }}</strong>
           </span>
         </div>
       </div>
@@ -59,7 +77,12 @@
           <span class="key">
             <span v-t="'contact'"></span>
             {{ ' ' }}
-            <a :href="`mailto:${data.social.email}`" target="_blank" class="funblue-light-hover">{{ email }}</a>
+            <a
+              :href="`mailto:${data.social.email}`"
+              target="_blank"
+              class="funblue-light-hover"
+              >{{ email }}</a
+            >
           </span>
         </div>
       </div>
@@ -117,15 +140,8 @@ import links from '@/_mixins/links';
 
 export default {
   name: 'OsnovneInformacijePS',
-  components: { },
-  mixins: [
-    common,
-    partyOverview,
-    partyTitle,
-    partyHeader,
-    partyOgImage,
-    links,
-  ],
+  components: {},
+  mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -133,18 +149,21 @@ export default {
   },
   computed: {
     people() {
-      return [
-        this.data.headOfPG,
-        ...this.data.viceOfPG,
-      ];
+      return [this.data.headOfPG, ...this.data.viceOfPG];
     },
     generatedCardUrl() {
       return `${this.url}${this.data.party.id}?altHeader=true`;
     },
     socials() {
       return [
-        ...(this.data.social.facebook || []).map(fb => ({ type: 'fb', url: fb })),
-        ...(this.data.social.twitter || []).map(tw => ({ type: 'tw', url: tw })),
+        ...(this.data.social.facebook || []).map((fb) => ({
+          type: 'fb',
+          url: fb,
+        })),
+        ...(this.data.social.twitter || []).map((tw) => ({
+          type: 'tw',
+          url: tw,
+        })),
       ];
     },
     email() {
@@ -165,8 +184,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "parlassets/scss/breakpoints";
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .parlaicon-vodja {
   background-image: url("#{getConfig('urls.cdn')}/icons/vodja.svg");
@@ -180,7 +199,7 @@ export default {
 .parlaicon-kontakt {
   background-image: url("#{getConfig('urls.cdn')}/icons/kontakt.svg");
 }
-.parlaicon-omrezja{
+.parlaicon-omrezja {
   width: 30px;
   height: 30px;
   line-height: normal;
@@ -188,7 +207,9 @@ export default {
 
 .parlaicon-container {
   padding: 10px 16px;
-  @include respond-to(desktop) { min-width: 70px; }
+  @include respond-to(desktop) {
+    min-width: 70px;
+  }
 }
 
 .bordertop {
@@ -203,9 +224,14 @@ export default {
   margin: 0;
 }
 
-.bordertop, .bordertop0 { flex: 1; }
+.bordertop,
+.bordertop0 {
+  flex: 1;
+}
 
-.poslanec h3 { font-weight: 400; }
+.poslanec h3 {
+  font-weight: 400;
+}
 
 .verticalmember {
   width: 100%;
@@ -220,10 +246,12 @@ export default {
     }
   }
 
-  .img-responsive{
+  .img-responsive {
     width: 40px;
     margin: 10px 15px 10px 0;
-    @include respond-to(desktop) { margin-right: 25px; }
+    @include respond-to(desktop) {
+      margin-right: 25px;
+    }
   }
 }
 

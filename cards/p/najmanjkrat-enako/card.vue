@@ -46,12 +46,7 @@ export default {
     PersonList,
     memberTitle,
   },
-  mixins: [
-    common,
-    memberVotes,
-    memberHeader,
-    memberOgImage,
-  ],
+  mixins: [common, memberVotes, memberHeader, memberOgImage],
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;

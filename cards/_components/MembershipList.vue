@@ -1,6 +1,9 @@
 <template>
   <scroll-shadow ref="shadow">
-    <div id="membership-list" @scroll="$refs.shadow.check($event.currentTarget)">
+    <div
+      id="membership-list"
+      @scroll="$refs.shadow.check($event.currentTarget)"
+    >
       <ul class="membership-list">
         <template v-if="contents.length">
           <li
@@ -16,11 +19,14 @@
               :href="membershipItem.url"
               class="funblue-light-hover"
               target="_blank"
-            >{{ membershipItem.name }}</a>
+              >{{ membershipItem.name }}</a
+            >
             <template v-else>{{ membershipItem.name }}</template>
           </li>
         </template>
-        <div v-else class="no-results"><i v-t="'membership-list.no-memberships'"></i></div>
+        <div v-else class="no-results">
+          <i v-t="'membership-list.no-memberships'"></i>
+        </div>
       </ul>
     </div>
   </scroll-shadow>

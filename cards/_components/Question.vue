@@ -1,17 +1,13 @@
 <template>
   <div class="question">
     <div class="parlaicon parlaicon-vprasanje"></div>
-    <i18n
-      :path="translationKey"
-      tag="div"
-      class="motion"
-    >
+    <i18n :path="translationKey" tag="div" class="motion">
       <span v-if="showAuthor" place="name">
         <span v-for="(author, index) in authors" :key="author.id">
-          <a
-            :href="getPersonLink(author)"
-            class="funblue-light-hover"
-          >{{ author.name }}</a><span v-if="(index + 1) < authors.length">, </span>
+          <a :href="getPersonLink(author)" class="funblue-light-hover">{{
+            author.name
+          }}</a
+          ><span v-if="index + 1 < authors.length">, </span>
         </span>
       </span>
       <span place="title">
@@ -20,7 +16,8 @@
           :href="question.url"
           target="_blank"
           class="funblue-light-hover"
-        >{{ question.title }}</a>
+          >{{ question.title }}</a
+        >
         <strong v-else>{{ question.title }}</strong>
       </span>
       <span place="recipient">{{ question.recipient_text }}</span>
@@ -33,9 +30,7 @@ import links from '@/_mixins/links';
 
 export default {
   name: 'Question',
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     question: {
       type: Object,
@@ -54,8 +49,11 @@ export default {
       if (this.authors.length > 1) {
         return `question.asked${this.showAuthor ? '--with-name' : ''}--plural`;
       }
-      const gender = (this.authors[0] && this.authors[0].gender)
-        || (this.$root.data && this.$root.data.person && this.$root.data.person.gender);
+      const gender =
+        (this.authors[0] && this.authors[0].gender) ||
+        (this.$root.data &&
+          this.$root.data.person &&
+          this.$root.data.person.gender);
       return `question.asked${this.showAuthor ? '--with-name' : ''}--${gender}`;
     },
   },

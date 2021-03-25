@@ -5,7 +5,7 @@
         <tools-tabs current-tool="wordGroups" />
       </div>
       <card-wrapper
-        :content-class="{'is-loading': loading}"
+        :content-class="{ 'is-loading': loading }"
         :card-url="generatedCardUrl"
         :header-config="headerConfig"
         :og-config="ogConfig"
@@ -38,7 +38,7 @@
                     type="checkbox"
                     class="checkbox"
                     @click="changeShowRelative"
-                  >
+                  />
                   <label v-t="'show-relative'" for="show-relative"></label>
                 </div>
               </div>
@@ -55,35 +55,39 @@
           <p-tabs :start-tab="selectedTab" @switch="focusTab">
             <p-tab :label="$t('speakers')">
               <scroll-shadow ref="shadow">
-                <div class="results" @scroll="$refs.shadow.check($event.currentTarget)">
+                <div
+                  class="results"
+                  @scroll="$refs.shadow.check($event.currentTarget)"
+                >
                   <bar-chart
                     v-if="results.people.length"
-                    :data="showRelative ? resultsRelative.people : results.people"
+                    :data="
+                      showRelative ? resultsRelative.people : results.people
+                    "
                     :show-percentage="!showRelative"
                     show-numbers
                     flexible-labels
                   />
-                  <empty-circle
-                    v-else
-                    :text="emptyText"
-                  />
+                  <empty-circle v-else :text="emptyText" />
                 </div>
               </scroll-shadow>
             </p-tab>
             <p-tab :label="$t('parties')">
               <scroll-shadow ref="shadowPS">
-                <div class="results" @scroll="$refs.shadowPS.check($event.currentTarget)">
+                <div
+                  class="results"
+                  @scroll="$refs.shadowPS.check($event.currentTarget)"
+                >
                   <bar-chart
                     v-if="results.parties.length"
-                    :data="showRelative ? resultsRelative.parties: results.parties"
+                    :data="
+                      showRelative ? resultsRelative.parties : results.parties
+                    "
                     :show-percentage="!showRelative"
                     show-numbers
                     flexible-labels
                   />
-                  <empty-circle
-                    v-else
-                    :text="emptyText"
-                  />
+                  <empty-circle v-else :text="emptyText" />
                 </div>
               </scroll-shadow>
             </p-tab>
@@ -96,7 +100,10 @@
             @close="toggleModal(false)"
             @ok="toggleModal(false, true)"
           >
-            <search-field v-model="modalInputText" @enter="toggleModal(false, true)" />
+            <search-field
+              v-model="modalInputText"
+              @enter="toggleModal(false, true)"
+            />
           </modal>
         </div>
       </card-wrapper>
@@ -142,10 +149,7 @@ export default {
     TextFrame,
     ScrollShadow,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
@@ -185,7 +189,11 @@ export default {
       return state;
     },
     generatedCardUrl() {
-      return `${this.url}?${Object.keys(this.urlParameters).length > 0 ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
+      return `${this.url}?${
+        Object.keys(this.urlParameters).length > 0
+          ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}`
+          : ''
+      }`;
     },
   },
   created() {
@@ -208,7 +216,7 @@ export default {
       if (addWords) {
         this.modalInputText
           .split(',')
-          .map(word => word.trim())
+          .map((word) => word.trim())
           .forEach(this.addWord);
       }
       this.modalInputText = '';
@@ -238,22 +246,32 @@ export default {
       this.loading = true;
 
       const query = this.words
-        .map(word => (word.indexOf(' ') > -1 ? `"${word}"` : word))
+        .map((word) => (word.indexOf(' ') > -1 ? `"${word}"` : word))
         .join(' ');
 
-      axios.get(`${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(query)}`)
+      axios
+        .get(
+          `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(
+            query
+          )}`
+        )
         .then((response) => {
-          const scoreHigherThanZero = i => i.score > 0;
+          const scoreHigherThanZero = (i) => i.score > 0;
 
           const parties = response.data.facet_counts.facet_fields.party
-            .filter(party => party.party)
-            .filter(party => party.party.classification === 'pg')
+            .filter((party) => party.party)
+            .filter((party) => party.party.classification === 'pg')
             .filter(scoreHigherThanZero)
-            .filter(party => party.party.acronym !== 'unknown')
-            .map(party => ({
+            .filter((party) => party.party.acronym !== 'unknown')
+            .map((party) => ({
               label: party.party.acronym,
               // eslint-disable-next-line max-len
-              value: Number((party.score / (this.data.orgs[party.party.id] / this.data.all_speeches)).toFixed(4) || 0),
+              value: Number(
+                (
+                  party.score /
+                  (this.data.orgs[party.party.id] / this.data.all_speeches)
+                ).toFixed(4) || 0
+              ),
               link: this.getPartyLinkSafe(party.party),
             }))
             .reduce((prev, cur) => {
@@ -273,12 +291,17 @@ export default {
             }, []);
 
           const people = response.data.facet_counts.facet_fields.person
-            .filter(person => person.person)
+            .filter((person) => person.person)
             .filter(scoreHigherThanZero)
-            .map(person => ({
+            .map((person) => ({
               label: person.person.name,
               // eslint-disable-next-line max-len
-              value: Number((person.score / (this.data.people[person.person.id] / this.data.all_speeches)).toFixed(4)),
+              value: Number(
+                (
+                  person.score /
+                  (this.data.people[person.person.id] / this.data.all_speeches)
+                ).toFixed(4)
+              ),
               link: this.getPersonLink(person.person),
               portrait: this.getPersonPortrait(person.person),
             }));
@@ -286,11 +309,11 @@ export default {
           this.resultsRelative = { parties, people };
 
           const parties2 = response.data.facet_counts.facet_fields.party
-            .filter(party => party.party)
-            .filter(party => party.party.classification === 'pg')
+            .filter((party) => party.party)
+            .filter((party) => party.party.classification === 'pg')
             .filter(scoreHigherThanZero)
-            .filter(party => party.party.acronym !== 'unknown')
-            .map(party => ({
+            .filter((party) => party.party.acronym !== 'unknown')
+            .map((party) => ({
               label: party.party.acronym,
               // eslint-disable-next-line max-len
               value: party.score,
@@ -298,9 +321,9 @@ export default {
             }));
 
           const people2 = response.data.facet_counts.facet_fields.person
-            .filter(person => person.person)
+            .filter((person) => person.person)
             .filter(scoreHigherThanZero)
-            .map(person => ({
+            .map((person) => ({
               label: person.person.name,
               // eslint-disable-next-line max-len
               value: person.score,

@@ -32,9 +32,12 @@
     </div>
 
     <div class="smalldate">{{ data.session.date }}</div>
-    <hr>
+    <hr />
     <div class="link">
-      <a :href="getSessionTranscriptLink(data.session)" class="funblue-light-hover">
+      <a
+        :href="getSessionTranscriptLink(data.session)"
+        class="funblue-light-hover"
+      >
         <span class="glyphicon glyphicon-comment"></span>
         <span v-t="'info.words-heading'"></span>
       </a>
@@ -43,7 +46,7 @@
       <bar-chart :data="chartRows1" :already-calculated="true" />
       <bar-chart :data="chartRows2" :already-calculated="true" />
     </div>
-    <hr>
+    <hr />
     <div class="link">
       <span class="link-color">
         <span class="glyphicon glyphicon-comment"></span>
@@ -51,7 +54,7 @@
       </span>
     </div>
     <prisotnost-po-poslanskih-skupinah :data="data.presence" />
-    <hr>
+    <hr />
     <div class="link">
       <a :href="getSessionVotesLink(data.session)" class="funblue-light-hover">
         <span class="glyphicon glyphicon-comment"></span>
@@ -80,12 +83,7 @@ export default {
     SeznamGlasovanj,
     PrisotnostPoPoslanskihSkupinah,
   },
-  mixins: [
-    common,
-    sessionHeader,
-    sessionOgImage,
-    links,
-  ],
+  mixins: [common, sessionHeader, sessionOgImage, links],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -94,17 +92,22 @@ export default {
   computed: {
     chartRows() {
       // JSON.parse(JSON.stringify(this.data.results));
-      const rows = this.data.tfidf.results
-        .map((row) => {
-          row.value = Math.round(row.scores['tf-idf'] * 5000);
-          return row;
-        });
+      const rows = this.data.tfidf.results.map((row) => {
+        row.value = Math.round(row.scores['tf-idf'] * 5000);
+        return row;
+      });
 
-      const mymax = this.data.tfidf.results.reduce((acc, row) => Math.max(acc, row.value), 0);
-      const mytotal = this.data.tfidf.results.reduce((acc, row) => acc + row.value, 0);
+      const mymax = this.data.tfidf.results.reduce(
+        (acc, row) => Math.max(acc, row.value),
+        0
+      );
+      const mytotal = this.data.tfidf.results.reduce(
+        (acc, row) => acc + row.value,
+        0
+      );
 
       return rows
-        .map(row => ({
+        .map((row) => ({
           name: this.decodeHTML(row.term),
           value: row.value,
           link: this.getSearchTermLink(row.term),
@@ -121,10 +124,10 @@ export default {
     },
     votes() {
       return {
-        votes: this.data.motions.map(motion => motion.results),
+        votes: this.data.motions.map((motion) => motion.results),
         session: this.data.session,
         tags: this.data.motions
-          .map(motion => motion.results.tags)
+          .map((motion) => motion.results.tags)
           .reduce((acc, cur) => {
             acc.push(...cur);
             return acc;

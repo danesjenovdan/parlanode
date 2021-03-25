@@ -9,7 +9,6 @@
         :header-config="headerConfig"
         :og-config="ogConfig"
       >
-
         <div v-if="state.settings && state.uid">
           <form id="obvestilaData">
             <div class="content">
@@ -17,14 +16,14 @@
                 <div class="narrow-inner-container">
                   <div class="ainnersmall">
                     <div class="replaceme padding15">
-                      <hr>
+                      <hr />
                       <div
                         v-for="keyword in keywords"
                         :key="keyword.id"
                         :class="[
                           'obvestiladatatpl',
                           'clearfix',
-                          {'updatedid': (keyword.id === updatedId)}
+                          { updatedid: keyword.id === updatedId },
                         ]"
                       >
                         <div class="">
@@ -40,19 +39,24 @@
                             </div>
 
                             <div class="parta3">
-                              <div :id="`obvestilaKeyword_${keyword.id}`" class="obvestilaKeyword">
+                              <div
+                                :id="`obvestilaKeyword_${keyword.id}`"
+                                class="obvestilaKeyword"
+                              >
                                 {{ keyword.keyword }}
                               </div>
                               <input
                                 :id="`keyword${keyword.id}`"
                                 :value="keyword.keyword"
                                 type="hidden"
-                              >
+                              />
                             </div>
 
                             <div class="parta4" @click="deleteKeyword(keyword)">
                               <div class="obvestiladelete">
-                                <div class="exclude-presiding checkbox-twolines">
+                                <div
+                                  class="exclude-presiding checkbox-twolines"
+                                >
                                   <!-- <span
                                     :id="`delete${keyword.id}`"
                                     data-deleted="false"
@@ -67,25 +71,31 @@
                             <div class="parta1">
                               <div class="search-dropdown">
                                 <select
-                                  :name="`reminder${keyword.id}`"
                                   :id="`reminder${keyword.id}`"
+                                  :name="`reminder${keyword.id}`"
                                   class="search-dropdown-input reminder"
                                 >
                                   <option
                                     :selected="keyword.reminder === 'event'"
                                     value="event"
                                     @click="reminderCallback(keyword, 'event')"
-                                  >{{ $t('events.event') }}</option>
+                                  >
+                                    {{ $t('events.event') }}
+                                  </option>
                                   <option
                                     :selected="keyword.reminder === 'day'"
                                     value="day"
                                     @click="reminderCallback(keyword, 'day')"
-                                  >{{ $t('events.day') }}</option>
+                                  >
+                                    {{ $t('events.day') }}
+                                  </option>
                                   <option
                                     :selected="keyword.reminder === 'week'"
                                     value="week"
                                     @click="reminderCallback(keyword, 'week')"
-                                  >{{ $t('events.week') }}</option>
+                                  >
+                                    {{ $t('events.week') }}
+                                  </option>
                                 </select>
                               </div>
                             </div>
@@ -93,20 +103,24 @@
                             <div class="parta2">
                               <div class="search-dropdown">
                                 <select
-                                  :name="`match_mode${keyword.keyword}`"
                                   :id="`match_mode${keyword.keyword}`"
+                                  :name="`match_mode${keyword.keyword}`"
                                   class="search-dropdown-input match_mode"
                                 >
                                   <option
                                     :selected="keyword.mode === 'natancno'"
                                     value="natancno"
                                     @click="modeCallback(keyword, 'natancno')"
-                                  >{{ $t('modes.precise') }}</option>
+                                  >
+                                    {{ $t('modes.precise') }}
+                                  </option>
                                   <option
                                     :selected="keyword.mode === 'siroko'"
                                     value="obe"
                                     @click="modeCallback(keyword, 'siroko')"
-                                  >{{ $t('modes.broad') }}</option>
+                                  >
+                                    {{ $t('modes.broad') }}
+                                  </option>
                                 </select>
                               </div>
                             </div>
@@ -116,10 +130,15 @@
                       <!--Nastavitve so spremenjene.-->
                     </div>
                     <div class="padding15 new-trigger-container">
-                      <br>
-                      <br>
-                      <br>
-                      <a v-t="'add_new_trigger'" @click.prevent="state.settings = false" href="#" class="btn btn-default naprej"></a>
+                      <br />
+                      <br />
+                      <br />
+                      <a
+                        v-t="'add_new_trigger'"
+                        href="#"
+                        class="btn btn-default naprej"
+                        @click.prevent="state.settings = false"
+                      ></a>
                     </div>
                   </div>
                 </div>
@@ -131,24 +150,24 @@
           <div class="headernew">
             <div class="line"></div>
 
-            <div :class="['hstepboxnew', 'hstep1', {'act': currentStep === 1}]">
+            <div :class="['hstepboxnew', 'hstep1', { act: currentStep === 1 }]">
               <div class="fakeleft"></div>
-              <div class="circlebg"> 1</div>
+              <div class="circlebg">1</div>
               <div class="glyphicon glyphicon-ok"></div>
               <div v-t="'trigger'" class="circlebgtext"></div>
             </div>
-            <div :class="['hstepboxnew', 'hstep2', {'act': currentStep === 2}]">
-              <div class="circlebg"> 2</div>
+            <div :class="['hstepboxnew', 'hstep2', { act: currentStep === 2 }]">
+              <div class="circlebg">2</div>
               <div class="glyphicon glyphicon-ok"></div>
               <div v-t="'match'" class="circlebgtext"></div>
             </div>
-            <div :class="['hstepboxnew', 'hstep3', {'act': currentStep === 3}]">
-              <div class="circlebg"> 3</div>
+            <div :class="['hstepboxnew', 'hstep3', { act: currentStep === 3 }]">
+              <div class="circlebg">3</div>
               <div class="glyphicon glyphicon-ok"></div>
               <div v-t="'interval'" class="circlebgtext"></div>
             </div>
-            <div :class="['hstepboxnew', 'hstep4', {'act': currentStep === 4}]">
-              <div class="circlebg"> 4</div>
+            <div :class="['hstepboxnew', 'hstep4', { act: currentStep === 4 }]">
+              <div class="circlebg">4</div>
               <div class="glyphicon glyphicon-ok"></div>
               <div class="fakeright"></div>
               <div v-t="'email'" class="circlebgtext"></div>
@@ -167,8 +186,8 @@
                       name="keyword"
                       class="form-control simplebox keyword"
                       @keyup.enter="firstAction"
-                    >
-                    <div class="input-group-btn" style="padding-left: 10px;">
+                    />
+                    <div class="input-group-btn" style="padding-left: 10px">
                       <button
                         v-t="'add'"
                         class="action btn btn-default naprej"
@@ -179,18 +198,22 @@
 
                   <div class="row">
                     <div class="col-md-12">
-                      <br>
-                      <br>
-                      <span><img :src="`${slugs.urls.cdn}/img/obvestila/ena.png`"> </span>
-                      <p v-t="'steps[0].textfirst'">
-                      </p>
+                      <br />
+                      <br />
+                      <span
+                        ><img
+                          :src="`${slugs.urls.cdn}/img/obvestila/ena.png`"
+                        />
+                      </span>
+                      <p v-t="'steps[0].textfirst'"></p>
                     </div>
                     <div class="col-md-12">
-                      <br>
-                      <br>
-                      <span><img :src="`${slugs.urls.cdn}/img/obvestila/dva.png`"></span>
-                      <p v-t="'steps[0].textsecond'">
-                      </p>
+                      <br />
+                      <br />
+                      <span
+                        ><img :src="`${slugs.urls.cdn}/img/obvestila/dva.png`"
+                      /></span>
+                      <p v-t="'steps[0].textsecond'"></p>
                     </div>
                   </div>
                 </div>
@@ -200,10 +223,7 @@
             <div v-if="currentStep === 2" class="step step2">
               <div class="narrow-inner-container">
                 <div class="ainnersmall">
-                  <h2
-                    v-t="'steps[1].textfirst'"
-                    class="left"
-                  ></h2>
+                  <h2 v-t="'steps[1].textfirst'" class="left"></h2>
                   <ul>
                     <li>
                       <div class="exclude-presiding checkbox-twolines">
@@ -215,7 +235,7 @@
                           value="natancno"
                           checked="checked"
                           class="radio"
-                        >
+                        />
                         <label for="modenatancno">
                           {{ $t('steps[1].firstbullet') }}
                           <span class="fillkeyword">"{{ keyword }}"</span>
@@ -231,7 +251,7 @@
                           name="match_mode[]"
                           value="siroko"
                           class="radio"
-                        >
+                        />
                         <label for="modesiroko">
                           {{ $t('steps[1].secondbullet') }}
                           <span class="fillkeyword">{{ keyword }}</span>
@@ -240,11 +260,17 @@
                     </li>
                   </ul>
 
-                  <button class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                  <button
+                    class="action btn btn-default nazaj top50 w50"
+                    @click="currentStep -= 1"
+                  >
                     <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                     {{ $t('back') }}
                   </button>
-                  <button class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+                  <button
+                    class="action btn btn-default naprej top50 w50"
+                    @click="currentStep += 1"
+                  >
                     {{ $t('continue') }}
                   </button>
                 </div>
@@ -254,10 +280,7 @@
             <div v-if="currentStep === 3" class="step step3">
               <div class="narrow-inner-container">
                 <div class="ainnersmall">
-                  <h2
-                    v-t="'steps[2].textfirst'"
-                    class="left"
-                  ></h2>
+                  <h2 v-t="'steps[2].textfirst'" class="left"></h2>
                   <ul>
                     <li>
                       <div class="exclude-presiding checkbox-twolines">
@@ -269,8 +292,11 @@
                           value="event"
                           class="radio"
                           checked="checked"
-                        >
-                        <label v-t="'steps[2].textsecond'" for="reminderevent"></label>
+                        />
+                        <label
+                          v-t="'steps[2].textsecond'"
+                          for="reminderevent"
+                        ></label>
                       </div>
                     </li>
                     <li>
@@ -282,8 +308,11 @@
                           name="reminder[]"
                           value="day"
                           class="radio"
-                        >
-                        <label v-t="'steps[2].textthird'" for="reminderday"></label>
+                        />
+                        <label
+                          v-t="'steps[2].textthird'"
+                          for="reminderday"
+                        ></label>
                       </div>
                     </li>
                     <li>
@@ -295,17 +324,26 @@
                           name="reminder[]"
                           value="week"
                           class="radio"
-                        >
-                        <label v-t="'steps[2].textfourth'" for="reminderweek"></label>
+                        />
+                        <label
+                          v-t="'steps[2].textfourth'"
+                          for="reminderweek"
+                        ></label>
                       </div>
                     </li>
                   </ul>
 
-                  <button class="action btn btn-default nazaj top50 w50" @click="currentStep -= 1">
+                  <button
+                    class="action btn btn-default nazaj top50 w50"
+                    @click="currentStep -= 1"
+                  >
                     <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                     {{ $t('back') }}
                   </button>
-                  <button class="action btn btn-default naprej top50 w50" @click="currentStep += 1">
+                  <button
+                    class="action btn btn-default naprej top50 w50"
+                    @click="currentStep += 1"
+                  >
                     {{ $t('continue') }}
                   </button>
                 </div>
@@ -319,11 +357,15 @@
                   <div>
                     <input
                       v-model="email"
-                      :class="['form-control', 'simplebox email', {errored: errored}]"
+                      :class="[
+                        'form-control',
+                        'simplebox email',
+                        { errored: errored },
+                      ]"
                       type="text"
                       name="email"
                       required
-                    >
+                    />
                     <button
                       class="action btn btn-default nazaj top50 w50"
                       @click="currentStep -= 1"
@@ -331,7 +373,10 @@
                       <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
                       {{ $t('back') }}
                     </button>
-                    <button class="action btn btn-default naprej top50 w50" @click="submitTrigger">
+                    <button
+                      class="action btn btn-default naprej top50 w50"
+                      @click="submitTrigger"
+                    >
                       {{ $t('confirm_trigger') }}
                     </button>
                   </div>
@@ -343,21 +388,25 @@
               <div class="narrow-inner-container">
                 <div class="ainnersmall">
                   <h2>
-                    <img :src="`${slugs.urls.cdn}/img/obvestila/yij.png`">
+                    <img :src="`${slugs.urls.cdn}/img/obvestila/yij.png`" />
                     {{ $t('steps[4].textfirst') }}
                   </h2>
 
                   <p class="replaceme centermytext">
                     {{ $t('steps[4].textsecond') }}
                     <b>{{ email }}</b>
-                    {{ $t('steps[4].textthird') }} {{ keyword }}. {{ $t('steps[4].textfourth') }}
+                    {{ $t('steps[4].textthird') }} {{ keyword }}.
+                    {{ $t('steps[4].textfourth') }}
                   </p>
 
                   <div style="text-align: center">
                     <div
                       v-t="'add_new_trigger'"
                       class="action btn btn-default naprej top50"
-                      @click="currentStep = 1; keyword = '';"
+                      @click="
+                        currentStep = 1;
+                        keyword = '';
+                      "
                     ></div>
                   </div>
                 </div>
@@ -384,9 +433,7 @@ export default {
     Generator,
     ToolsTabs,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
     return {
       currentStep: 1,
@@ -466,10 +513,9 @@ export default {
         uid: this.state.uid,
       };
 
-      this.$notifApi.post('/getSettings/', data)
-        .then((r) => {
-          this.keywords = r.data.keywords;
-        });
+      this.$notifApi.post('/getSettings/', data).then((r) => {
+        this.keywords = r.data.keywords;
+      });
     },
     deleteKeyword(keyword) {
       const data = {
@@ -482,12 +528,11 @@ export default {
         uid: this.state.uid,
       };
 
-      this.$notifApi.post('/updateSettings/', data)
-        .then((r) => {
-          if (r.data.result) {
-            this.keywords.splice(this.keywords.indexOf(keyword), 1);
-          }
-        });
+      this.$notifApi.post('/updateSettings/', data).then((r) => {
+        if (r.data.result) {
+          this.keywords.splice(this.keywords.indexOf(keyword), 1);
+        }
+      });
     },
     reminderCallback(keyword, reminder) {
       const data = {
@@ -576,7 +621,7 @@ export default {
     padding-top: 2px;
     text-align: center;
 
-    @include  respond-to(mobile) {
+    @include respond-to(mobile) {
       width: 24%;
     }
   }
@@ -584,7 +629,7 @@ export default {
   .circlebgtext {
     color: $font-placeholder;
 
-    @include respond-to (mobile) {
+    @include respond-to(mobile) {
       font-size: 12px;
     }
   }
@@ -704,7 +749,7 @@ export default {
 .radio {
   display: none;
 
-  &+label {
+  & + label {
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -730,7 +775,7 @@ export default {
     }
   }
 
-  &:checked+label:before {
+  &:checked + label:before {
     background-position: 4px 4px;
     /*background-image: url('data:image/svg+xml;utf8,<svg version="1.1"      xmlns="http://www.w3.org/2000/svg"      xmlns:xlink="http://www.w3.org/1999/xlink"      x="0px" y="0px"      enable-background="new 0 0 5 2"      xml:space="preserve"      viewBox="0 0 5 2"      preserveAspectRatio="xMinYMid slice">   <circle cx="1" cy="1" r="1" fill="$first"/> </svg>');*/
     background-color: $first;
@@ -740,7 +785,7 @@ export default {
   }
 }
 
-.checkbox+label {
+.checkbox + label {
   font-size: 14px;
 }
 
@@ -777,7 +822,7 @@ label {
   float: left;
   width: 85%;
   font-size: 16px;
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .step1 span {
@@ -787,8 +832,7 @@ label {
   line-height: 30px;
   color: #dbdbdb;
   text-align: left;
-  font-family: "Roboto Slab", sans-serif;
-
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .form-control {
@@ -824,15 +868,15 @@ label {
   line-height: 25px;
 
   &:hover {
-      color: $white;
-      background-color: $tab-hover;
-      text-decoration: none;
+    color: $white;
+    background-color: $tab-hover;
+    text-decoration: none;
   }
 
   &.active {
-      color: $white;
-      background-color: $tab-active;
-      text-decoration: none;
+    color: $white;
+    background-color: $tab-active;
+    text-decoration: none;
   }
 }
 
@@ -906,7 +950,8 @@ ul li {
   text-align: center;
 }
 
-.help-info {}
+.help-info {
+}
 
 .help-info .searchinfo {
   display: inline-block;
@@ -938,7 +983,6 @@ ul li {
 }
 
 .header .circlebg {
-
   box-shadow: 0px 0px 2px $first;
   color: $first;
   text-align: center;
@@ -950,7 +994,6 @@ ul li {
   border-radius: 50%;
   float: left;
   margin-bottom: 10px;
-
 }
 
 .header .glyphicon {
@@ -1265,7 +1308,6 @@ h2.left {
   .ainnersmall {
     width: auto;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -1280,23 +1322,28 @@ h2.left {
 
 .errored {
   border: 2px solid $first;
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
 
-  20%, 80% {
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }

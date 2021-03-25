@@ -5,7 +5,7 @@
         <tools-tabs current-tool="voteComparator" />
       </div>
       <card-wrapper
-        :content-class="{'is-loading': loading}"
+        :content-class="{ 'is-loading': loading }"
         :card-url="generatedCardUrl"
         :header-config="headerConfig"
         :og-config="ogConfig"
@@ -70,7 +70,7 @@
                     type="checkbox"
                     class="checkbox"
                     @click="toggleSpecial"
-                  >
+                  />
                   <label v-t="'ignore-absent'" for="ignore-absent"></label>
                 </div>
               </div>
@@ -84,7 +84,9 @@
                 <i18n path="comparator-vote-percent" tag="p" class="summary">
                   <strong place="num">{{ votes.length }}</strong>
                   <strong place="percent">
-                    {{ total === 0 ? 0 : round(votes.length / total * 100, 2) }}%
+                    {{
+                      total === 0 ? 0 : round((votes.length / total) * 100, 2)
+                    }}%
                   </strong>
                 </i18n>
               </div>
@@ -93,7 +95,10 @@
 
           <p-tabs :start-tab="selectedTab" @switch="focusTab">
             <p-tab :label="$t('tabs.vote-list')">
-              <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+              <empty-circle
+                v-if="votes.length === 0"
+                :text="$t('empty-state-text')"
+              />
               <div v-else class="glasovanja">
                 <seznam-glasovanj
                   :data="voteObject"
@@ -104,12 +109,18 @@
               </div>
             </p-tab>
             <p-tab :label="$t('tabs.time-chart')">
-              <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+              <empty-circle
+                v-if="votes.length === 0"
+                :text="$t('empty-state-text')"
+              />
               <time-chart v-else :data="data" />
             </p-tab>
             <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
               <div class="mdt-wrapper">
-                <empty-circle v-if="votes.length === 0" :text="$t('empty-state-text')" />
+                <empty-circle
+                  v-if="votes.length === 0"
+                  :text="$t('empty-state-text')"
+                />
                 <bar-chart v-else :data="barChartData" show-numbers />
               </div>
             </p-tab>
@@ -126,7 +137,7 @@
               <span
                 v-for="party in parties"
                 :key="party.id"
-                :class="['primerjalnik-ps-switch', {'on': party.isSame}]"
+                :class="['primerjalnik-ps-switch', { on: party.isSame }]"
                 :data-id="party.id"
                 :data-acronym="party.acronym"
                 @click="togglePartySame(party)"
@@ -151,7 +162,7 @@
               <span
                 v-for="party in parties"
                 :key="party.id"
-                :class="['primerjalnik-ps-switch', {'on': party.isDifferent}]"
+                :class="['primerjalnik-ps-switch', { on: party.isDifferent }]"
                 :data-id="party.id"
                 :data-acronym="party.acronym"
                 @click="togglePartyDifferent(party)"
@@ -209,11 +220,7 @@ export default {
     TimeChart,
     SeznamGlasovanj,
   },
-  mixins: [
-    common,
-    links,
-    generators,
-  ],
+  mixins: [common, links, generators],
   data() {
     return {
       parentOrgId: this.$options.cardData.data.parent_org_id,
@@ -227,7 +234,9 @@ export default {
       sameModalVisible: false,
       differentModalVisible: false,
       selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
-      headerConfig: defaultDynamicHeaderConfig(this, { circleIcon: 'primerjalnik' }),
+      headerConfig: defaultDynamicHeaderConfig(this, {
+        circleIcon: 'primerjalnik',
+      }),
       ogConfig: defaultOgImage(this, { icon: 'primerjalnik' }),
     };
   },
@@ -244,10 +253,16 @@ export default {
     },
     queryUrl() {
       const base = `${this.slugs.urls.analize}/s/getComparedVotes/`;
-      const samePeopleIds = this.selectedSamePeople.map(person => person.id).toString();
-      const samePartyIds = this.sameParties.map(party => party.id).toString();
-      const diffPeopleIds = this.selectedDifferentPeople.map(person => person.id).toString();
-      const diffPartyIds = this.differentParties.map(party => party.id).toString();
+      const samePeopleIds = this.selectedSamePeople
+        .map((person) => person.id)
+        .toString();
+      const samePartyIds = this.sameParties.map((party) => party.id).toString();
+      const diffPeopleIds = this.selectedDifferentPeople
+        .map((person) => person.id)
+        .toString();
+      const diffPartyIds = this.differentParties
+        .map((party) => party.id)
+        .toString();
       const url = `${base}?people_same=${samePeopleIds}&parties_same=${samePartyIds}&people_different=${diffPeopleIds}&parties_different=${diffPartyIds}`;
       if (this.special) {
         return `${url}&special=true`;
@@ -259,7 +274,7 @@ export default {
     },
     voteObject() {
       return {
-        votes: this.data.map(v => ({
+        votes: this.data.map((v) => ({
           ...v.results,
           session_id: v.session.id,
         })),
@@ -268,16 +283,16 @@ export default {
       };
     },
     sameParties() {
-      return this.parties.filter(party => party.isSame);
+      return this.parties.filter((party) => party.isSame);
     },
     differentParties() {
-      return this.parties.filter(party => party.isDifferent);
+      return this.parties.filter((party) => party.isDifferent);
     },
     selectedSamePeople() {
-      return this.samePeople.filter(person => person.selected);
+      return this.samePeople.filter((person) => person.selected);
     },
     selectedDifferentPeople() {
-      return this.differentPeople.filter(person => person.selected);
+      return this.differentPeople.filter((person) => person.selected);
     },
     barChartData() {
       const tags = this.data.reduce((acc, d) => {
@@ -287,9 +302,9 @@ export default {
         return acc;
       }, []);
 
-      return tags.map(tag => ({
+      return tags.map((tag) => ({
         label: tag || 'Brez MDT', // TODO i18n
-        value: this.data.filter(d => d.results.tags[0] === tag).length,
+        value: this.data.filter((d) => d.results.tags[0] === tag).length,
       }));
     },
     generatedCardUrl() {
@@ -298,28 +313,30 @@ export default {
         state.special = this.special;
       }
       if (this.selectedSamePeople.length > 0) {
-        state.samePeople = this.selectedSamePeople.map(p => p.id);
+        state.samePeople = this.selectedSamePeople.map((p) => p.id);
       }
       if (this.selectedDifferentPeople.length > 0) {
-        state.differentPeople = this.selectedDifferentPeople.map(p => p.id);
+        state.differentPeople = this.selectedDifferentPeople.map((p) => p.id);
       }
       if (this.sameParties.length > 0) {
-        state.sameParties = this.sameParties.map(p => p.id);
+        state.sameParties = this.sameParties.map((p) => p.id);
       }
       if (this.differentParties.length > 0) {
-        state.differentParties = this.differentParties.map(p => p.id);
+        state.differentParties = this.differentParties.map((p) => p.id);
       }
       if (this.selectedTab > 0) {
         state.selectedTab = this.selectedTab;
       }
-      return `${this.url}${this.parentOrgId || ''}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this.parentOrgId || ''}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
   },
   watch: {
     selectedSamePeople(newSelectedSamePeople) {
       newSelectedSamePeople.forEach((person) => {
         this.selectedDifferentPeople
-          .filter(p => p.id === person.id)
+          .filter((p) => p.id === person.id)
           .forEach((p) => {
             p.selected = false;
           });
@@ -328,7 +345,7 @@ export default {
     selectedDifferentPeople(newSelectedDifferentPeople) {
       newSelectedDifferentPeople.forEach((person) => {
         this.selectedSamePeople
-          .filter(p => p.id === person.id)
+          .filter((p) => p.id === person.id)
           .forEach((p) => {
             p.selected = false;
           });
@@ -339,36 +356,41 @@ export default {
     const self = this;
     // used to be PGPromise
     const sameParties = this.$options.cardData.parlaState.sameParties || [];
-    const differentParties = this.$options.cardData.parlaState.differentParties || [];
+    const differentParties =
+      this.$options.cardData.parlaState.differentParties || [];
 
-    this.parties = this.generateParties(this.$options.cardData.data)
-      .map(party => ({
+    this.parties = this.generateParties(this.$options.cardData.data).map(
+      (party) => ({
         id: party.properId,
         acronym: party.acronym,
         isCoalition: party.isCoalition,
         name: party.name,
         isSame: sameParties.indexOf(party.properId) > -1,
         isDifferent: differentParties.indexOf(party.properId) > -1,
-      }));
+      })
+    );
 
     // used to be peoplePromise
     const samePeople = this.$options.cardData.parlaState.samePeople || [];
-    const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
+    const differentPeople =
+      this.$options.cardData.parlaState.differentPeople || [];
 
-    this.samePeople = this.generatePeople(this.$options.cardData.data)
-      .map(person => ({
+    this.samePeople = this.generatePeople(this.$options.cardData.data).map(
+      (person) => ({
         selected: samePeople.indexOf(person.id) > -1,
         label: person.label,
         id: person.id,
         image: person.image,
-      }));
-    self.differentPeople = this.generatePeople(this.$options.cardData.data)
-      .map(person => ({
+      })
+    );
+    self.differentPeople = this.generatePeople(this.$options.cardData.data).map(
+      (person) => ({
         selected: differentPeople.indexOf(person.id) > -1,
         label: person.label,
         id: person.id,
         image: person.image,
-      }));
+      })
+    );
 
     this.loadResults();
     // const PGPromise = $.ajax({

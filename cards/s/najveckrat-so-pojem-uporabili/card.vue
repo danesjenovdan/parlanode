@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :content-class="['full', {'is-loading': loading}]"
+    :content-class="['full', { 'is-loading': loading }]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -13,15 +13,11 @@
     </div>
 
     <div
-      v-t="'no-results'"
       v-if="!loading && people && people.length === 0"
+      v-t="'no-results'"
       class="no-results"
     />
-    <person-list
-      v-else
-      :people="people"
-      :show-party-link="true"
-    />
+    <person-list v-else :people="people" :show-party-link="true" />
   </card-wrapper>
 </template>
 
@@ -40,13 +36,7 @@ export default {
   components: {
     PersonList,
   },
-  mixins: [
-    common,
-    searchTitle,
-    searchHeader,
-    searchOgImage,
-    searchContext,
-  ],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
@@ -63,12 +53,19 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
-    axios.get(searchUrl)
+    const searchUrl = `${
+      this.slugs.urls.isci
+    }/search/speeches?q=${encodeURIComponent(
+      this.keywords
+    )}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    axios
+      .get(searchUrl)
       .then((res) => {
         const people = res.data.facet_counts.facet_fields.person
           .map((o) => {
@@ -76,7 +73,7 @@ export default {
             person.score = `${Math.round(o.score)}`;
             return person;
           })
-          .filter(person => person.score > 0)
+          .filter((person) => person.score > 0)
           .slice(0, 5);
         this.people = people;
         this.loading = false;

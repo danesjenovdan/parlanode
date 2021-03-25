@@ -6,11 +6,20 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li v-for="pageNum in pagesDisplay" :key="pageNum" :class="{ active: pageNum === page }">
+      <li
+        v-for="pageNum in pagesDisplay"
+        :key="pageNum"
+        :class="{ active: pageNum === page }"
+      >
         <span v-if="pageNum < 0" class="separator">...</span>
-        <a v-else href="#" @click="pageChange($event, pageNum)">{{ pageNum }}</a>
+        <a v-else href="#" @click="pageChange($event, pageNum)">{{
+          pageNum
+        }}</a>
       </li>
-      <li :class="['next', { disabled: page >= pages }]" :disabled="page >= pages">
+      <li
+        :class="['next', { disabled: page >= pages }]"
+        :disabled="page >= pages"
+      >
         <a href="#" aria-label="Next" @click="pageChange($event, page + 1)">
           <span aria-hidden="true">&raquo;</span>
         </a>
@@ -50,12 +59,19 @@ export default {
         return this.pagesRange;
       }
       if (this.page <= 4) {
-        return this.pagesRange.slice(0, 5).concat([-1]).concat(this.pagesRange.slice(-1));
+        return this.pagesRange
+          .slice(0, 5)
+          .concat([-1])
+          .concat(this.pagesRange.slice(-1));
       }
-      if ((this.pages - this.page) < 4) {
-        return this.pagesRange.slice(0, 1).concat([-1]).concat(this.pagesRange.slice(-5));
+      if (this.pages - this.page < 4) {
+        return this.pagesRange
+          .slice(0, 1)
+          .concat([-1])
+          .concat(this.pagesRange.slice(-5));
       }
-      return this.pagesRange.slice(0, 1)
+      return this.pagesRange
+        .slice(0, 1)
         .concat([-1])
         .concat(range(this.page - 1, this.page + 2))
         .concat([-2])

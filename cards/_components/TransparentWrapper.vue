@@ -11,11 +11,9 @@
 <script>
 export default {
   name: 'TransparentCardWrapper',
-  props: {
-  },
+  props: {},
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>

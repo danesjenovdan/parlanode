@@ -2,18 +2,11 @@
   <div class="card-modal">
     <div class="card-modal-header">
       {{ header }}
-      <div
-        class="closeme"
-        @click="$emit('close')"
-      />
+      <div class="closeme" @click="$emit('close')" />
     </div>
     <div class="card-modal-content">
       <slot />
-      <div
-        v-if="showButton"
-        class="card-modal-button"
-        @click="$emit('ok')"
-      >
+      <div v-if="showButton" class="card-modal-button" @click="$emit('ok')">
         {{ button }}
       </div>
     </div>
@@ -96,6 +89,8 @@ export default {
     }
   }
 
-  &-content { padding: 10px; }
+  &-content {
+    padding: 10px;
+  }
 }
 </style>

@@ -1,19 +1,22 @@
 <template>
-  <a
-    :href="getSessionVoteLink(ballot)"
-    class="ballot"
-  >
+  <a :href="getSessionVoteLink(ballot)" class="ballot">
     <div class="disunion">
       <div :class="['icon', ballot.option]"></div>
       <div class="text">
-        <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span> {{ ballot.label }}
+        <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span>
+        {{ ballot.label }}
       </div>
     </div>
     <div class="name">
       <p>{{ ballot.motion }}</p>
     </div>
     <div class="outcome">
-      <i :class="['glyphicon', `glyphicon-${ballot.result === true ? 'ok' : 'remove'}`]"></i>
+      <i
+        :class="[
+          'glyphicon',
+          `glyphicon-${ballot.result === true ? 'ok' : 'remove'}`,
+        ]"
+      ></i>
       <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
     </div>
   </a>
@@ -29,9 +32,7 @@ export default {
       return `${parseInt(val, 10)} %`;
     },
   },
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     ballot: {
       type: Object,
@@ -46,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "parlassets/scss/breakpoints";
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .ballot {
   @include respond-to(desktop) {

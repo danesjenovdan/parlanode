@@ -4,10 +4,7 @@
       <div slot="generator" class="party-list-generator">
         <div class="row">
           <div class="col-md-12">
-            <blue-button-list
-              :items="analyses"
-              v-model="currentAnalysis"
-            />
+            <blue-button-list v-model="currentAnalysis" :items="analyses" />
           </div>
         </div>
         <div class="row">
@@ -26,8 +23,8 @@
             <div class="genders filter">
               <striped-icon-button
                 v-for="gender in genders"
-                :color="'funblue'"
                 :key="gender.id"
+                :color="'funblue'"
                 :selected="selectedGenders.indexOf(gender.id) > -1"
                 :icon="gender.id"
                 :stripe-position="'top'"
@@ -55,15 +52,17 @@
           <i18n path="info.lead" tag="p" class="info-text lead">
             <span place="parties">
               <span v-if="selectedParties.length">{{
-                `${$t('party')}: ${selectedParties.map(p => p.acronym).join(', ')}`
+                `${$t('party')}: ${selectedParties
+                  .map((p) => p.acronym)
+                  .join(', ')}`
               }}</span>
-              <span v-t="'all-parties'" v-else></span>
+              <span v-else v-t="'all-parties'"></span>
             </span>
             <span place="districts">
               <span v-if="selectedDistrictNames.length">{{
                 `${$t('voting-district')}: ${selectedDistrictNames.join(', ')}`
               }}</span>
-              <span v-t="'all-voting-districts'" v-else></span>
+              <span v-else v-t="'all-voting-districts'"></span>
             </span>
             <span place="sortBy">{{ sortMap[currentSort] }}</span>
           </i18n>
@@ -136,33 +135,36 @@ export default {
     SearchField,
     StripedIconButton,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
     const selectedDistrictIds = loadFromState('districts') || [];
-    const districts = this.$options.cardData.data.districts
-      .map((district) => {
-        const id = Object.keys(district)[0];
-        return {
-          id,
-          label: district[id],
-          selected: selectedDistrictIds.indexOf(id) !== -1,
-        };
-      });
+    const districts = this.$options.cardData.data.districts.map((district) => {
+      const id = Object.keys(district)[0];
+      return {
+        id,
+        label: district[id],
+        selected: selectedDistrictIds.indexOf(id) !== -1,
+      };
+    });
 
     const genders = [
       { id: 'm', label: 'moški', selected: false },
       { id: 'f', label: 'ženski', selected: false },
     ];
 
-    const analyses = analysesIDs.map(a => ({
+    const analyses = analysesIDs.map((a) => ({
       id: a.id,
-      label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
-      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
-      explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
+      label: this.$te(`analysis-texts.${a.id}.label`)
+        ? this.$t(`analysis-texts.${a.id}.label`)
+        : '',
+      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
+        ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
+        : '',
+      explanation: this.$te(`analysis-texts.${a.id}.explanation`)
+        ? this.$t(`analysis-texts.${a.id}.explanation`)
+        : '',
     }));
 
     return {
@@ -183,8 +185,8 @@ export default {
   computed: {
     selectedDistrictNames() {
       return this.districts
-        .filter(district => district.selected)
-        .map(district => district.label);
+        .filter((district) => district.selected)
+        .map((district) => district.label);
     },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
@@ -196,27 +198,32 @@ export default {
     },
     districtPlaceholder() {
       return this.selectedDistricts.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedDistricts.length })
+        ? this.$t('selected-placeholder', {
+            num: this.selectedDistricts.length,
+          })
         : this.$t('select-district-placeholder');
     },
     headerConfig() {
       return defaultHeaderConfig(this, {
-        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+        title: `${this.$t('card.title')} ${
+          this.currentAnalysisData.titleSuffix
+        }`,
       });
     },
     ogConfig() {
       return defaultOgImage(this, {
-        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+        title: `${this.$t('card.title')} ${
+          this.currentAnalysisData.titleSuffix
+        }`,
       });
     },
     selectedParties() {
-      return this.parties
-        .filter(party => party.selected);
+      return this.parties.filter((party) => party.selected);
     },
     selectedDistricts() {
       return this.districts
-        .filter(district => district.selected)
-        .map(district => district.id);
+        .filter((district) => district.selected)
+        .map((district) => district.id);
     },
     urlParameters() {
       const parameters = {};
@@ -234,8 +241,7 @@ export default {
         parameters.sortOrder = this.currentSortOrder;
       }
       if (this.selectedParties.length > 0) {
-        parameters.parties = this.selectedParties
-          .map(party => party.acronym);
+        parameters.parties = this.selectedParties.map((party) => party.acronym);
       }
       if (this.selectedGenders.length > 0) {
         parameters.genders = this.selectedGenders;
@@ -250,15 +256,21 @@ export default {
       return parameters;
     },
     generatedCardUrl() {
-      const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
+      const state = `${
+        Object.keys(this.urlParameters).length > 0
+          ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}`
+          : ''
+      }`;
       return `${this.url}?altHeader=true${state}`;
     },
     processedMembers() {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
-        analysisMax = this.memberData.reduce((biggest, member) => (
-          Math.max(biggest, (member.results[this.currentAnalysis].score || 0))
-        ), 0);
+        analysisMax = this.memberData.reduce(
+          (biggest, member) =>
+            Math.max(biggest, member.results[this.currentAnalysis].score || 0),
+          0
+        );
       }
 
       const filtered = this.memberData
@@ -269,20 +281,28 @@ export default {
           let textMatch = true;
 
           if (this.textFilter.length > 0) {
-            textMatch = member.person.name.toLowerCase()
-              .indexOf(this.textFilter.toLowerCase()) > -1;
+            textMatch =
+              member.person.name
+                .toLowerCase()
+                .indexOf(this.textFilter.toLowerCase()) > -1;
           }
           if (this.selectedParties.length > 0) {
-            partyMatch = this.selectedParties
-              .find(p => p.id === member.person.party.id) != null;
+            partyMatch =
+              this.selectedParties.find(
+                (p) => p.id === member.person.party.id
+              ) != null;
           }
           if (this.selectedDistricts.length > 0) {
-            districtMatch = member.person.district.reduce((prevMatch, memberDistrict) => (
-              prevMatch || this.selectedDistricts.indexOf(String(memberDistrict)) > -1
-            ), false);
+            districtMatch = member.person.district.reduce(
+              (prevMatch, memberDistrict) =>
+                prevMatch ||
+                this.selectedDistricts.indexOf(String(memberDistrict)) > -1,
+              false
+            );
           }
           if (this.selectedGenders.length > 0) {
-            genderMatch = this.selectedGenders.indexOf(member.person.gender) > -1;
+            genderMatch =
+              this.selectedGenders.indexOf(member.person.gender) > -1;
           }
 
           return textMatch && partyMatch && districtMatch && genderMatch;
@@ -293,20 +313,30 @@ export default {
             newMember.formattedDistrict = this.$t('missing-district');
           } else {
             newMember.formattedDistrict = newMember.person.district
-              .map(memberDistrict => find(this.districts, { id: String(memberDistrict) }).label)
+              .map(
+                (memberDistrict) =>
+                  find(this.districts, { id: String(memberDistrict) }).label
+              )
               .join(', ');
           }
 
           newMember.partylink = newMember.person.party.classification === 'pg';
-          newMember.age = getAge(newMember.results.birth_date && newMember.results.birth_date.score) || '';
-          const education = newMember.results.education && newMember.results.education.score;
+          newMember.age =
+            getAge(
+              newMember.results.birth_date && newMember.results.birth_date.score
+            ) || '';
+          const education =
+            newMember.results.education && newMember.results.education.score;
           newMember.education = String(education || 0);
           newMember.terms = newMember.results.mandates.score || 1;
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results[this.currentAnalysis].score || 0;
             newMember.analysisValue = Math.round(score * 10) / 10;
-            newMember.analysisPercentage = analysisMax > 0 ? (score / analysisMax) * 100 : 0;
-            const diff = Math.round(newMember.results[this.currentAnalysis].diff * 10) / 10;
+            newMember.analysisPercentage =
+              analysisMax > 0 ? (score / analysisMax) * 100 : 0;
+            const diff =
+              Math.round(newMember.results[this.currentAnalysis].diff * 10) /
+              10;
             newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
           return newMember;
@@ -321,8 +351,8 @@ export default {
             b = memberB.results[this.currentAnalysis].diff;
             return a - b;
           case 'analysis':
-            a = (memberA.results[this.currentAnalysis].score || 0);
-            b = (memberB.results[this.currentAnalysis].score || 0);
+            a = memberA.results[this.currentAnalysis].score || 0;
+            b = memberB.results[this.currentAnalysis].score || 0;
             return a - b;
           case 'name':
             a = memberA.person.name;
@@ -337,8 +367,14 @@ export default {
             b = memberB.person.party.acronym;
             return a.localeCompare(b, 'sl');
           case 'education':
-            a = parseFloat(String(memberA.results.education.score).replace('/', '.'), 10);
-            b = parseFloat(String(memberB.results.education.score).replace('/', '.'), 10);
+            a = parseFloat(
+              String(memberA.results.education.score).replace('/', '.'),
+              10
+            );
+            b = parseFloat(
+              String(memberB.results.education.score).replace('/', '.'),
+              10
+            );
             return a - b;
           default:
             a = memberA[this.currentSort];
@@ -358,8 +394,12 @@ export default {
         name: this.$t('sort-by--name'),
         district: this.$t('sort-by--district'),
         party: this.$t('sort-by--party'),
-        analysis: this.$t('sort-by--analysis', { analysis: this.currentAnalysisData.label }),
-        change: this.$t('sort-by--change', { analysis: this.currentAnalysisData.label }),
+        analysis: this.$t('sort-by--analysis', {
+          analysis: this.currentAnalysisData.label,
+        }),
+        change: this.$t('sort-by--change', {
+          analysis: this.currentAnalysisData.label,
+        }),
         age: this.$t('sort-by--age'),
         education: this.$t('sort-by--education'),
         terms: this.$t('sort-by--terms'),
@@ -378,14 +418,18 @@ export default {
     },
   },
   created() {
-    axios.get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
+    axios
+      .get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
       .then((response) => {
-        this.parties = response.data.data.map(party => ({
+        this.parties = response.data.data.map((party) => ({
           id: party.party.id,
           label: party.party.name,
           acronym: party.party.acronym,
-          selected: this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
-          colorClass: `${party.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+          selected:
+            this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
+          colorClass: `${party.party.acronym
+            .toLowerCase()
+            .replace(/[ +,]/g, '_')}-background`,
         }));
       });
   },
@@ -400,7 +444,8 @@ export default {
     },
     sortBy(sort) {
       if (this.currentSort === sort) {
-        this.currentSortOrder = this.currentSortOrder === 'desc' ? 'asc' : 'desc';
+        this.currentSortOrder =
+          this.currentSortOrder === 'desc' ? 'asc' : 'desc';
       } else {
         this.currentSortOrder = 'asc';
         this.currentSort = sort;
@@ -462,7 +507,7 @@ export default {
       margin: 0;
     }
 
-    .filter.district  {
+    .filter.district {
       display: none;
     }
 

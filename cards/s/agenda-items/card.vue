@@ -34,9 +34,7 @@ export default {
   components: {
     AgendaItem,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
     const { session, results } = this.$options.cardData.data;
     return {
@@ -51,18 +49,16 @@ export default {
       return `${this.url}${this.session.id}?altHeader=true`;
     },
     fixedResults() {
-      return this.results
-        .map(a => ({
-          ...a,
-          votings: {
-            votes: a.votings.map(v => v.results),
-            session: this.session,
-          },
-        }));
+      return this.results.map((a) => ({
+        ...a,
+        votings: {
+          votes: a.votings.map((v) => v.results),
+          session: this.session,
+        },
+      }));
     },
   },
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

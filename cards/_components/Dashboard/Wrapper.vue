@@ -11,11 +11,9 @@
 <script>
 export default {
   name: 'DashboardCardWrapper',
-  props: {
-  },
+  props: {},
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>

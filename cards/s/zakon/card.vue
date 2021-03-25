@@ -27,13 +27,24 @@
       <div class="law-title">{{ $options.cardData.data.text }}</div>
       <result
         v-if="finalVoteExists"
-        :score="finalVoteResult.value / numberOfVotes * 100"
+        :score="(finalVoteResult.value / numberOfVotes) * 100"
         :option="finalVoteResult.key"
         :chart-data="finalVoteData"
       />
     </div>
-    <p-tabs :start-tab="startTab" @switch="(tabIndex) => { startTab = tabIndex }">
-      <p-tab v-if="data.abstract /* SL override */ || true" :label="$t('abstract')" variant="dark">
+    <p-tabs
+      :start-tab="startTab"
+      @switch="
+        (tabIndex) => {
+          startTab = tabIndex;
+        }
+      "
+    >
+      <p-tab
+        v-if="data.abstract /* SL override */ || true"
+        :label="$t('abstract')"
+        variant="dark"
+      >
         <excerpt
           :content="content"
           :main-law="excerptData"
@@ -43,11 +54,13 @@
         />
       </p-tab>
       <p-tab :label="$t('votings')">
-        <seznam-glasovanj
-          :data="data"
-        />
+        <seznam-glasovanj :data="data" />
       </p-tab>
-      <p-tab v-if="data.extra_abstract" :label="$('other-procedures')" variant="dark">
+      <p-tab
+        v-if="data.extra_abstract"
+        :label="$('other-procedures')"
+        variant="dark"
+      >
         <excerpt
           :content="contentExtra"
           :main-law="{}"
@@ -82,14 +95,12 @@ export default {
     SeznamGlasovanj,
     Result,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   data() {
     const documents = this.$options.cardData.data.votes.reduce((prev, cur) => {
       if (cur.documents) {
-        cur.documents.forEach((document) => { // TODO fix after data is fixed
+        cur.documents.forEach((document) => {
+          // TODO fix after data is fixed
           prev.push(document);
         });
       }
@@ -101,14 +112,19 @@ export default {
 
     // TODO: i18n
     // did we have "glasovanje o zakonu v celoti"
-    const finalVoteExists = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1).length > 0;
+    const finalVoteExists =
+      this.$options.cardData.data.votes.filter(
+        (vote) => vote.text.indexOf('v celoti') > -1
+      ).length > 0;
 
     let finalVoteData;
     let finalVoteResult;
     let numberOfVotes;
     if (finalVoteExists) {
       // TODO: i18n
-      const filteredVote = this.$options.cardData.data.votes.filter(vote => vote.text.indexOf('v celoti') > -1)[0];
+      const filteredVote = this.$options.cardData.data.votes.filter(
+        (vote) => vote.text.indexOf('v celoti') > -1
+      )[0];
       const vote = {
         for: filteredVote.for,
         against: filteredVote.against,
@@ -117,20 +133,26 @@ export default {
       };
       finalVoteData = mapVotes(vote);
 
-      finalVoteResult = Object.keys(vote).reduce((max, current) => {
-        if (max.value < vote[current]) {
-          return {
-            key: current,
-            value: vote[current],
-          };
+      finalVoteResult = Object.keys(vote).reduce(
+        (max, current) => {
+          if (max.value < vote[current]) {
+            return {
+              key: current,
+              value: vote[current],
+            };
+          }
+          return max;
+        },
+        {
+          key: '',
+          value: 0,
         }
-        return max;
-      }, {
-        key: '',
-        value: 0,
-      });
+      );
 
-      numberOfVotes = Object.keys(vote).reduce((total, current) => total + vote[current], 0);
+      numberOfVotes = Object.keys(vote).reduce(
+        (total, current) => total + vote[current],
+        0
+      );
     }
 
     let startTab = 0;
@@ -161,7 +183,11 @@ export default {
       return fixAbstractHtml(this.data.extra_abstract);
     },
     generatedCardUrl() {
-      return `${this.url}?customUrl=${encodeURIComponent(`${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`)}&state=${encodeURIComponent(JSON.stringify({ selectedTab: this.startTab }))}`;
+      return `${this.url}?customUrl=${encodeURIComponent(
+        `${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`
+      )}&state=${encodeURIComponent(
+        JSON.stringify({ selectedTab: this.startTab })
+      )}`;
     },
     excerptData() {
       return {
@@ -172,7 +198,9 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getLegislationLink(this.data);
+    this.$options.cardData.template.contextUrl = this.getLegislationLink(
+      this.data
+    );
   },
 };
 </script>

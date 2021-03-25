@@ -69,18 +69,13 @@ export default {
   components: {
     SeznamGlasovanj,
   },
-  mixins: [
-    common,
-    sessionHeader,
-    sessionOgImage,
-    otherVotingsTitle,
-    links,
-  ],
+  mixins: [common, sessionHeader, sessionOgImage, otherVotingsTitle, links],
   data() {
     const state = this.$options.cardData.parlaState;
     const text = state && state.text ? state.text : '';
     const tags = state && state.tags ? state.tags : [];
-    const classifications = state && state.classifications ? state.classifications : [];
+    const classifications =
+      state && state.classifications ? state.classifications : [];
     const results = state && state.results ? state.results : [];
 
     return {
@@ -109,16 +104,24 @@ export default {
       if (this.filters.results.length) {
         state.results = this.filters.results;
       }
-      if (this.$options.cardData.parlaState && this.$options.cardData.parlaState.onlyOther) {
+      if (
+        this.$options.cardData.parlaState &&
+        this.$options.cardData.parlaState.onlyOther
+      ) {
         state.onlyOther = true;
       }
 
-      return `${this.url}${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this.data.session.id}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     votes() {
-      let votes = this.data.results.map(v => v.results);
-      if (this.$options.cardData.parlaState && this.$options.cardData.parlaState.onlyOther) {
-        votes = votes.filter(vote => !vote.epa);
+      let votes = this.data.results.map((v) => v.results);
+      if (
+        this.$options.cardData.parlaState &&
+        this.$options.cardData.parlaState.onlyOther
+      ) {
+        votes = votes.filter((vote) => !vote.epa);
       }
       return {
         votes,
@@ -129,7 +132,9 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionVotesLink(this.data.session);
+    this.$options.cardData.template.contextUrl = this.getSessionVotesLink(
+      this.data.session
+    );
   },
   methods: {
     onFiltersChanged(newFilters) {

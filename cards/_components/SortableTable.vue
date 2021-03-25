@@ -12,7 +12,11 @@
         </div>
       </template>
     </li>
-    <div v-t="'no-results'" v-if="items.length === 0" class="empty-dataset"></div>
+    <div
+      v-if="items.length === 0"
+      v-t="'no-results'"
+      class="empty-dataset"
+    ></div>
     <li v-for="(item, k) in items" :key="k" class="item">
       <div
         v-for="(cell, i) in item"
@@ -22,16 +26,16 @@
         <template v-if="typeof cell === 'object' && cell.contents">
           <template v-for="(content, j) in cell.contents">
             <template v-if="content.link">
-              <a :href="content.link" :key="j">{{ content.text }}</a>
+              <a :key="j" :href="content.link">{{ content.text }}</a>
             </template>
             <template v-else>{{ content.text }}</template>
-            {{ (cell.contents.length - j) > 1 ? ', ' : '' }}
+            {{ cell.contents.length - j > 1 ? ', ' : '' }}
           </template>
         </template>
         <template v-else-if="cell && cell.barchart">
           <div class="value">{{ cell.value }}</div>
           <div class="barcontainer">
-            <div :style="{width: cell.width + '%'}" class="bar"></div>
+            <div :style="{ width: cell.width + '%' }" class="bar"></div>
           </div>
         </template>
         <template v-else-if="cell && cell.ticker">
@@ -41,18 +45,20 @@
           <div v-html="cell.html"></div>
         </template>
         <template v-else>
-          <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{ cell }}</template>
+          <template v-if="['string', 'number'].indexOf(typeof cell) > -1">{{
+            cell
+          }}</template>
           <template v-else-if="cell">
             <template v-if="cell.link">
               <a v-if="cell.image" :href="cell.link">
-                <img :src="cell.image">
+                <img :src="cell.image" />
               </a>
               <a v-else :href="cell.link" class="funblue-light-hover">
                 {{ cell.text }}
               </a>
             </template>
             <template v-else>
-              <img v-if="cell.image" :src="cell.image">
+              <img v-if="cell.image" :src="cell.image" />
               <template v-else>{{ cell.text }}</template>
             </template>
           </template>
@@ -89,10 +95,7 @@ export default {
   },
   methods: {
     getColumnClasses(column, cell) {
-      const classes = [
-        'column',
-        column.additionalClass,
-      ];
+      const classes = ['column', column.additionalClass];
       if (!cell) {
         return [
           ...classes,
@@ -100,10 +103,7 @@ export default {
           { reverse: this.sortOrder === 'desc' },
         ];
       }
-      return [
-        ...classes,
-        { red: (cell && cell.value <= 0) },
-      ];
+      return [...classes, { red: cell && cell.value <= 0 }];
     },
   },
 };
@@ -166,7 +166,7 @@ export default {
   }
 }
 
-.barchartcontainer  {
+.barchartcontainer {
   flex-wrap: nowrap;
   flex-direction: row;
   align-content: space-between;
@@ -195,7 +195,7 @@ export default {
   height: 18px;
   display: flex;
   flex-wrap: nowrap;
-  transition: width .6s ease;
+  transition: width 0.6s ease;
 }
 
 .card-seznam-zakonov .session-list {

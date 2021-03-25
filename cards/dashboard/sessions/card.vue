@@ -8,17 +8,15 @@
           single
           @select="onSelectOrg"
         />
-        <dash-table
-          :columns="columns"
-          :items="mappedItems"
-          :paginate="50"
-        >
-          <template slot="item-col" slot-scope="{ column, index }">
+        <dash-table :columns="columns" :items="mappedItems" :paginate="50">
+          <template #item-col="{ column, index }">
             <template v-if="index === 1">
               <small>{{ column.session.start_time }}</small>
             </template>
             <template v-if="index === 2">
-              <dash-button @click="navigate(`?page=votings&session=${column.id}`)">
+              <dash-button
+                @click="navigate(`?page=votings&session=${column.id}`)"
+              >
                 {{ $t('votings') }}
               </dash-button>
             </template>
@@ -44,7 +42,7 @@
       :data="tfidfModalData"
       @closed="closeTfidfModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
+      <template #modal-data="{ loadedData }">
         <modal-content-tfidf :data="loadedData.data" />
       </template>
     </dash-fancy-modal>
@@ -74,10 +72,7 @@ export default {
     ModalContentTfidf,
     PSearchDropdown,
   },
-  mixins: [
-    common,
-    parlapi,
-  ],
+  mixins: [common, parlapi],
   data() {
     return {
       orgs: null,
@@ -101,7 +96,7 @@ export default {
     },
     mappedItems() {
       if (this.sessions) {
-        return this.sessions.map(session => [
+        return this.sessions.map((session) => [
           { text: session.name, id: session.id },
           { session },
           { id: session.id },
@@ -117,10 +112,13 @@ export default {
   },
   methods: {
     loadOrgs() {
-      this.$parlapi.getAllOrganisations()
+      this.$parlapi
+        .getAllOrganisations()
         .then((res) => {
-          const orgId = Number(localStorage.getItem('selected_sessions_organization'));
-          this.orgs = orderBy(res.data.results, ['_name']).map(org => ({
+          const orgId = Number(
+            localStorage.getItem('selected_sessions_organization')
+          );
+          this.orgs = orderBy(res.data.results, ['_name']).map((org) => ({
             id: org.id,
             // eslint-disable-next-line no-underscore-dangle
             label: org._name,
@@ -138,7 +136,8 @@ export default {
     },
     loadSessions() {
       this.loading = true;
-      this.$parlapi.getSessions(this.selectedOrgId)
+      this.$parlapi
+        .getSessions(this.selectedOrgId)
         .then((res) => {
           this.sessions = orderBy(res.data.results, ['start_time'], ['desc']);
           this.loading = false;
@@ -160,7 +159,7 @@ export default {
             data: tfidf.data,
           };
         },
-        saveData: tfidf => this.$parlapi.patchSessionTFIDF(tfidf.id, tfidf),
+        saveData: (tfidf) => this.$parlapi.patchSessionTFIDF(tfidf.id, tfidf),
       };
       this.tfidfModalOpen = true;
     },

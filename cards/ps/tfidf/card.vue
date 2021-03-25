@@ -22,7 +22,7 @@
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <div v-t="'no-speeches'" v-else class="empty-dataset"></div>
+    <div v-else v-t="'no-speeches'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -37,13 +37,7 @@ import BarChart from '@/_components/BarChart.vue';
 export default {
   name: 'PSTFIDF',
   components: { BarChart },
-  mixins: [
-    common,
-    partySpeeches,
-    partyHeader,
-    partyOgImage,
-    links,
-  ],
+  mixins: [common, partySpeeches, partyHeader, partyOgImage, links],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -51,7 +45,7 @@ export default {
   },
   computed: {
     chartRows() {
-      return this.data.results.map(item => ({
+      return this.data.results.map((item) => ({
         label: this.decodeHTML(item.term),
         value: Math.round(item.scores['tf-idf'] * 5000),
         link: this.getSearchTermLink(item.term, { pgs: [this.data.party.id] }),

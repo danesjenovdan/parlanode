@@ -71,9 +71,12 @@ export default {
           const selection = getSelected();
 
           if (selection && selection.toString().length > 0) {
-            const parentOffsetTop = speechTextElement.get(0).getBoundingClientRect().top;
+            const parentOffsetTop = speechTextElement
+              .get(0)
+              .getBoundingClientRect().top;
             const rectangle = selection.getRangeAt(0).getBoundingClientRect();
-            const quoteIconOffset = (rectangle.top - parentOffsetTop) + (rectangle.height / 2);
+            const quoteIconOffset =
+              rectangle.top - parentOffsetTop + rectangle.height / 2;
 
             quoteElement.data({ text: selection.toString() });
             quoteElement.css({
@@ -87,31 +90,26 @@ export default {
 
       // This prevents deselection of text when clicking on quote icon
       quoteElement
-        .on('mousedown', event => event.preventDefault())
+        .on('mousedown', (event) => event.preventDefault())
         .on('click', () => {
           const selectedText = quoteElement.data().text.trim();
           const allText = cardElement.find('.mywords').val();
           const startIndex = allText.indexOf(selectedText);
           const endIndex = startIndex + selectedText.length;
-          const slugs = vnode.componentInstance.$root.slugs;
+          const { slugs } = vnode.componentInstance.$root;
           const url = `${slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
           $.ajax({
             url,
             async: false,
             dataType: 'json',
-            success: result => window.open(`${slugs.urls.glej}/s/citat/${result.id}?frame=true`),
+            success: (result) =>
+              window.open(`${slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
     },
   },
-  mixins: [
-    common,
-    memberTitle,
-    sessionHeader,
-    sessionOgImage,
-    links,
-  ],
+  mixins: [common, memberTitle, sessionHeader, sessionOgImage, links],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -123,7 +121,9 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(this.data.results);
+    this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(
+      this.data.results
+    );
   },
 };
 </script>

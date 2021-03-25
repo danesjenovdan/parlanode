@@ -42,13 +42,7 @@ export default {
     QuestionList,
     DataNotPublished,
   },
-  mixins: [
-    common,
-    memberOverview,
-    memberTitle,
-    memberHeader,
-    memberOgImage,
-  ],
+  mixins: [common, memberOverview, memberTitle, memberHeader, memberOgImage],
   data() {
     return {
       data: this.$options.cardData.data,

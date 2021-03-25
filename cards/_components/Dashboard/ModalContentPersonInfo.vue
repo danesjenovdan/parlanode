@@ -7,7 +7,7 @@
             <label>{{ $t('display-name') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.name" class="form-control">
+            <input v-model.trim="loadedData.person.name" class="form-control" />
           </div>
         </div>
       </div>
@@ -17,7 +17,10 @@
             <label>honorific_prefix</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.honorific_prefix" class="form-control">
+            <input
+              v-model.trim="loadedData.person.honorific_prefix"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -27,7 +30,10 @@
             <label>given_name</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.given_name" class="form-control">
+            <input
+              v-model.trim="loadedData.person.given_name"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -37,7 +43,10 @@
             <label>additional_name</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.additional_name" class="form-control">
+            <input
+              v-model.trim="loadedData.person.additional_name"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -47,7 +56,10 @@
             <label>patronymic_name</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.patronymic_name" class="form-control">
+            <input
+              v-model.trim="loadedData.person.patronymic_name"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -57,7 +69,10 @@
             <label>family_name</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.family_name" class="form-control">
+            <input
+              v-model.trim="loadedData.person.family_name"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -67,7 +82,10 @@
             <label>honorific_suffix</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.person.honorific_suffix" class="form-control">
+            <input
+              v-model="loadedData.person.honorific_suffix"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -77,12 +95,15 @@
             <label>name_parser</label>
           </div>
           <div class="col-md-12">
-            <input v-model.trim="loadedData.person.name_parser" class="form-control">
+            <input
+              v-model.trim="loadedData.person.name_parser"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
       <div class="col-md-12">
-        <hr>
+        <hr />
       </div>
       <div class="col-md-4">
         <div class="row">
@@ -90,7 +111,11 @@
             <label>{{ $t('number-of-votes') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.person.voters" class="form-control" type="number">
+            <input
+              v-model.number="loadedData.person.voters"
+              class="form-control"
+              type="number"
+            />
           </div>
         </div>
       </div>
@@ -100,7 +125,11 @@
             <label>{{ $t('number-of-points') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.person.points" class="form-control" type="number">
+            <input
+              v-model.number="loadedData.person.points"
+              class="form-control"
+              type="number"
+            />
           </div>
         </div>
       </div>
@@ -110,7 +139,11 @@
             <label>{{ $t('number-of-terms') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.person.mandates" class="form-control" type="number">
+            <input
+              v-model.number="loadedData.person.mandates"
+              class="form-control"
+              type="number"
+            />
           </div>
         </div>
       </div>
@@ -120,7 +153,10 @@
             <label>{{ $t('previous-occupation') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.person.previous_occupation" class="form-control">
+            <input
+              v-model="loadedData.person.previous_occupation"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -130,7 +166,7 @@
             <label>{{ $t('birth-date') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="birthDate" class="form-control" type="date">
+            <input v-model="birthDate" class="form-control" type="date" />
           </div>
         </div>
       </div>
@@ -140,7 +176,7 @@
             <label>{{ $t('education') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.person.education" class="form-control">
+            <input v-model="loadedData.person.education" class="form-control" />
           </div>
         </div>
       </div>
@@ -150,7 +186,10 @@
             <label>{{ $t('education-level') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.person.education_level" class="form-control">
+            <input
+              v-model="loadedData.person.education_level"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -160,7 +199,10 @@
             <label>Facebook</label>
           </div>
           <div class="col-md-12 small">
-            <textarea v-model.trim="loadedData.socials.facebook" class="form-control" />
+            <textarea
+              v-model.trim="loadedData.socials.facebook"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -170,7 +212,10 @@
             <label>Twitter</label>
           </div>
           <div class="col-md-12 small">
-            <textarea v-model.trim="loadedData.socials.twitter" class="form-control" />
+            <textarea
+              v-model.trim="loadedData.socials.twitter"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -180,7 +225,10 @@
             <label>GOV ID</label>
           </div>
           <div class="col-md-12 small">
-            <input v-model.trim="loadedData.person.gov_id" class="form-control">
+            <input
+              v-model.trim="loadedData.person.gov_id"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -190,7 +238,10 @@
             <label>{{ $t('gender') }}</label>
           </div>
           <div class="col-md-12 small">
-            <input v-model.trim="loadedData.person.gender" class="form-control">
+            <input
+              v-model.trim="loadedData.person.gender"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -226,7 +277,7 @@ export default {
   margin-left: -5px;
   margin-right: -5px;
 
-  > [class*="col-"] {
+  > [class*='col-'] {
     padding-left: 5px;
     padding-right: 5px;
   }

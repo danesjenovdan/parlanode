@@ -1,25 +1,33 @@
 <template>
   <div class="session_voting">
-    <div v-t="'no-results'" v-if="rows.length === 0" class="no-results" />
+    <div v-if="rows.length === 0" v-t="'no-results'" class="no-results" />
     <div v-else>
       <div v-for="row in rows" :key="row.name" class="row">
-        <div class="col-xs-12" style="background-color:#f0f0f0;margin-bottom:10px;padding:10px;">
+        <div
+          class="col-xs-12"
+          style="background-color: #f0f0f0; margin-bottom: 10px; padding: 10px"
+        >
           {{ row.name }}
           <span
             v-for="(chunk, k) in row.reverseStack"
-            :class="['pull-right', 'legenda', getReverseColor(row, k)]"
             :key="chunk.label"
+            :class="['pull-right', 'legenda', getReverseColor(row, k)]"
           >
-            <span style="text-transform: capitalize; margin-left: 5px;">{{ chunk.label }}: </span>
+            <span style="text-transform: capitalize; margin-left: 5px"
+              >{{ chunk.label }}:
+            </span>
             {{ chunk.value }}
           </span>
           <div class="session_votes">
-            <div :style="{width: String(row.percentage) + '%'}" class="progress smallbar">
+            <div
+              :style="{ width: String(row.percentage) + '%' }"
+              class="progress smallbar"
+            >
               <div
                 v-for="(chunk, i) in row.stack"
-                :class="['progress-bar', colorClasses[i]]"
-                :style="{ width: String(chunk.percentage) + '%'}"
                 :key="chunk.label"
+                :class="['progress-bar', colorClasses[i]]"
+                :style="{ width: String(chunk.percentage) + '%' }"
               >
                 <span class="sr-only">{{ chunk.percentage }}%</span>
               </div>
@@ -48,21 +56,31 @@ export default {
   },
   computed: {
     rows() {
-      const values = this.data.map(row => row.stack.reduce((acc, chunk) => acc + chunk.value, 0));
+      const values = this.data.map((row) =>
+        row.stack.reduce((acc, chunk) => acc + chunk.value, 0)
+      );
       const mymax = Math.max(...values);
-      return this.data.map(row => ({
+      return this.data.map((row) => ({
         name: row.name,
-        stack: row.stack.map(chunk => ({
+        stack: row.stack.map((chunk) => ({
           label: chunk.label,
           value: chunk.value,
-          percentage: 100 * chunk.value / row.stack.reduce((acc, chunk1) => acc + chunk1.value, 0),
+          percentage:
+            (100 * chunk.value) /
+            row.stack.reduce((acc, chunk1) => acc + chunk1.value, 0),
         })),
-        reverseStack: row.stack.map(chunk => ({
-          label: chunk.label,
-          value: chunk.value,
-          percentage: 100 * chunk.value / row.stack.reduce((acc, chunk1) => acc + chunk1.value, 0),
-        })).reverse(),
-        percentage: 100 * row.stack.reduce((acc, chunk) => acc + chunk.value, 0) / mymax,
+        reverseStack: row.stack
+          .map((chunk) => ({
+            label: chunk.label,
+            value: chunk.value,
+            percentage:
+              (100 * chunk.value) /
+              row.stack.reduce((acc, chunk1) => acc + chunk1.value, 0),
+          }))
+          .reverse(),
+        percentage:
+          (100 * row.stack.reduce((acc, chunk) => acc + chunk.value, 0)) /
+          mymax,
       }));
     },
   },
@@ -73,7 +91,9 @@ export default {
   },
   methods: {
     getReverseColor(row, k) {
-      return this.reverseColorClasses[k + this.reverseColorClasses.length - row.stack.length];
+      return this.reverseColorClasses[
+        k + this.reverseColorClasses.length - row.stack.length
+      ];
     },
   },
 };
@@ -154,7 +174,6 @@ export default {
       text-transform: uppercase;
     }
   }
-
 }
 
 .accepted.nay {
@@ -197,7 +216,6 @@ export default {
   margin-top: 6px;
 }
 
-
 @media (max-width: 991px) {
   .session_voting .session_title {
     height: 93px;
@@ -228,7 +246,6 @@ export default {
 .session_voting .session_title p {
   font-size: 14px;
 }
-
 
 .session_voting .single_voting {
   margin-bottom: 15px;

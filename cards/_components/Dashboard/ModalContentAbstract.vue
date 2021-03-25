@@ -2,11 +2,11 @@
   <div>
     <div>
       <input
-        v-model="loadedData.abstractVisible"
         :id="`abstractVisible-${loadedData.id}`"
+        v-model="loadedData.abstractVisible"
         type="checkbox"
         class="checkbox"
-      >
+      />
       <label v-t="'show'" :for="`abstractVisible-${loadedData.id}`"></label>
     </div>
     <vue-pell-editor
@@ -43,10 +43,7 @@ export default {
   },
   data() {
     return {
-      editorOptions: [
-        'paragraph',
-        'ulist',
-      ],
+      editorOptions: ['paragraph', 'ulist'],
     };
   },
   methods: {
@@ -59,7 +56,9 @@ export default {
        */
       let nested;
       // eslint-disable-next-line no-cond-assign
-      while ((nested = content.querySelector('p > p, p > ul, ul > p')) != null) {
+      while (
+        (nested = content.querySelector('p > p, p > ul, ul > p')) != null
+      ) {
         content.insertBefore(nested, nested.parentElement);
       }
 

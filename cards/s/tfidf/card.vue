@@ -24,7 +24,7 @@
       <bar-chart :data="chartRows1" :already-calculated="true" />
       <bar-chart :data="chartRows2" :already-calculated="true" />
     </div>
-    <div v-t="'session-processing'" v-else class="empty-dataset"></div>
+    <div v-else v-t="'session-processing'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -40,12 +40,7 @@ export default {
   components: {
     BarChart,
   },
-  mixins: [
-    common,
-    sessionHeader,
-    sessionOgImage,
-    links,
-  ],
+  mixins: [common, sessionHeader, sessionOgImage, links],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -54,17 +49,22 @@ export default {
   computed: {
     chartRows() {
       // JSON.parse(JSON.stringify(this.data.results));
-      const rows = this.data.results
-        .map((row) => {
-          row.value = Math.round(row.scores['tf-idf'] * 5000);
-          return row;
-        });
+      const rows = this.data.results.map((row) => {
+        row.value = Math.round(row.scores['tf-idf'] * 5000);
+        return row;
+      });
 
-      const mymax = this.data.results.reduce((acc, row) => Math.max(acc, row.value), 0);
-      const mytotal = this.data.results.reduce((acc, row) => acc + row.value, 0);
+      const mymax = this.data.results.reduce(
+        (acc, row) => Math.max(acc, row.value),
+        0
+      );
+      const mytotal = this.data.results.reduce(
+        (acc, row) => acc + row.value,
+        0
+      );
 
       return rows
-        .map(row => ({
+        .map((row) => ({
           name: this.decodeHTML(row.term),
           value: row.value,
           link: this.getSearchTermLink(row.term),
@@ -84,7 +84,9 @@ export default {
     },
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
+    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(
+      this.data.session
+    );
   },
   methods: {
     decodeHTML(html) {

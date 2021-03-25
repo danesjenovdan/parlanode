@@ -2,20 +2,16 @@
   <scroll-shadow ref="shadow">
     <div id="person-list" @scroll="$refs.shadow.check($event.currentTarget)">
       <ul class="person-list">
-        <li
-          v-for="person in people"
-          :key="person.gov_id"
-          class="person"
-        >
+        <li v-for="person in people" :key="person.gov_id" class="person">
           <a :href="getPersonLink(person)" class="portrait column">
-            <img :src="getPersonPortrait(person)">
+            <img :src="getPersonPortrait(person)" />
           </a>
           <div class="column name">
             <a :href="getPersonLink(person)" class="funblue-light-hover">
               {{ person.name }}
             </a>
             <template v-if="showPartyLink">
-              <br>
+              <br />
               <a
                 v-if="getPersonPartyLink(person)"
                 :href="getPersonPartyLink(person)"
@@ -45,9 +41,7 @@ export default {
   components: {
     ScrollShadow,
   },
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     people: {
       type: Array,

@@ -9,10 +9,13 @@
           :value="shortenedUrl"
           type="url"
           class="form-control share-url"
+        />
+        <button
+          class="btn-parlameter btn-full-width btn-blue"
+          @click="copyLink"
         >
-        <button class="btn-parlameter btn-full-width btn-blue" @click="copyLink">
-          <span v-t="'copied'" v-if="copied"></span>
-          <span v-t="'copy'" v-else></span>
+          <span v-if="copied" v-t="'copied'"></span>
+          <span v-else v-t="'copy'"></span>
         </button>
       </div>
     </div>
@@ -50,13 +53,18 @@ export default {
   methods: {
     shortenUrl() {
       return new Promise(() => {
-        $.get(`https://parla.me/shortner/generate?url=${encodeURIComponent(`${this.url}&frame=true`)}`, (response) => {
-          this.shortenedUrl = response;
-          this.copied = false;
-          this.$nextTick(() => {
-            this.$refs.urlInput.select();
-          });
-        });
+        $.get(
+          `https://parla.me/shortner/generate?url=${encodeURIComponent(
+            `${this.url}&frame=true`
+          )}`,
+          (response) => {
+            this.shortenedUrl = response;
+            this.copied = false;
+            this.$nextTick(() => {
+              this.$refs.urlInput.select();
+            });
+          }
+        );
       });
     },
 
@@ -65,7 +73,10 @@ export default {
       this.$refs.urlInput.focus();
 
       // copy the selection
-      this.$refs.urlInput.setSelectionRange(0, this.$refs.urlInput.value.length);
+      this.$refs.urlInput.setSelectionRange(
+        0,
+        this.$refs.urlInput.value.length
+      );
       let succeed = false;
       try {
         succeed = document.execCommand('copy');

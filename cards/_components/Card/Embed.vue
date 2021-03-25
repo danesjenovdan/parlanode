@@ -30,8 +30,8 @@
             class="btn-parlameter btn-full-width btn-blue btn-copy-embed"
             @click="copyEmbedCode"
           >
-            <span v-t="'copied'" v-if="copied"></span>
-            <span v-t="'copy'" v-else></span>
+            <span v-if="copied" v-t="'copied'"></span>
+            <span v-else v-t="'copy'"></span>
           </button>
         </div>
       </div>
@@ -63,7 +63,9 @@ export default {
     embedCode() {
       let newUrl = this.url;
       if (!this.refresh) {
-        newUrl = `${this.url.split('?')[0]}${format(new Date(), 'd.M.y')}?${this.url.split('?')[1]}`;
+        newUrl = `${this.url.split('?')[0]}${format(new Date(), 'd.M.y')}?${
+          this.url.split('?')[1]
+        }`;
       }
 
       const slugs = this.$root.$options.cardData.urls;

@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :content-class="['full', {'is-loading': loading}]"
+    :content-class="['full', { 'is-loading': loading }]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -31,13 +31,7 @@ export default {
   components: {
     SeznamGlasovanj,
   },
-  mixins: [
-    common,
-    searchTitle,
-    searchHeader,
-    searchOgImage,
-    searchContext,
-  ],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
@@ -52,12 +46,14 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     votes() {
       if (this.data) {
         return {
-          votes: this.data.map(motion => ({
+          votes: this.data.map((motion) => ({
             ...motion.results,
             session_id: motion.session.id,
           })),
@@ -73,8 +69,11 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/search/votes?q=${encodeURIComponent(this.keywords)}`;
-    axios.get(searchUrl)
+    const searchUrl = `${
+      this.slugs.urls.isci
+    }/search/votes?q=${encodeURIComponent(this.keywords)}`;
+    axios
+      .get(searchUrl)
       .then((res) => {
         this.data = (res.data.response && res.data.response.docs) || [];
         this.loading = false;

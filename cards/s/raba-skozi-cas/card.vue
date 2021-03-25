@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :content-class="['full', {'is-loading': loading}]"
+    :content-class="['full', { 'is-loading': loading }]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -44,13 +44,7 @@ export default {
     TimeLineChart,
     TimeBarChart,
   },
-  mixins: [
-    common,
-    searchTitle,
-    searchHeader,
-    searchOgImage,
-    searchContext,
-  ],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
@@ -63,7 +57,9 @@ export default {
   },
   computed: {
     timeChartData() {
-      return (this.data && this.data.facet_counts.facet_ranges.start_time) || {};
+      return (
+        (this.data && this.data.facet_counts.facet_ranges.start_time) || {}
+      );
     },
     generatedCardUrl() {
       const state = {};
@@ -78,12 +74,19 @@ export default {
         state.pgs = this.pgs;
       }
 
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
-    axios.get(searchUrl)
+    const searchUrl = `${
+      this.slugs.urls.isci
+    }/search/speeches?q=${encodeURIComponent(
+      this.keywords
+    )}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    axios
+      .get(searchUrl)
       .then((res) => {
         this.data = res.data;
         this.loading = false;

@@ -3,7 +3,7 @@
     <div
       v-for="(optionLabel, optionValue) in options"
       :key="optionValue"
-      :class="['option', { 'is-selected' : optionValue === value }]"
+      :class="['option', { 'is-selected': optionValue === value }]"
       @click="handleClick(optionValue)"
     >
       {{ optionLabel }}

@@ -31,9 +31,7 @@ export default {
   components: {
     AgendaItem,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
     const { session, result } = this.$options.cardData.data;
     return {
@@ -51,7 +49,7 @@ export default {
       return {
         ...this.result,
         votings: {
-          votes: this.result.votings.map(v => v.results),
+          votes: this.result.votings.map((v) => v.results),
           session: this.session,
         },
       };
@@ -60,5 +58,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

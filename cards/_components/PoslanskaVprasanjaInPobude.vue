@@ -51,7 +51,7 @@
         </div>
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <input v-model="textFilter" class="text-filter-input" type="text">
+          <input v-model="textFilter" class="text-filter-input" type="text" />
         </div>
       </div>
       <div id="vprasanja">
@@ -90,7 +90,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
+      validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
     person: {
       type: Object,
@@ -102,15 +102,22 @@ export default {
     },
   },
   data() {
-    const selectFromState = (items, stateItemIds) => (
-      items.map(item => assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
-    );
+    const selectFromState = (items, stateItemIds) =>
+      items.map((item) =>
+        assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+      );
 
     let allMonths = this.generateMonths(this.$t('months'));
-    let allMPs = this.cardData.data.all_authors
-      .map(author => ({ id: author.id, label: author.name, selected: false }));
-    let allRecipients = this.cardData.data.all_recipients
-      .map(recipient => ({ id: recipient, label: recipient, selected: false }));
+    let allMPs = this.cardData.data.all_authors.map((author) => ({
+      id: author.id,
+      label: author.name,
+      selected: false,
+    }));
+    let allRecipients = this.cardData.data.all_recipients.map((recipient) => ({
+      id: recipient,
+      label: recipient,
+      selected: false,
+    }));
     let textFilter = '';
 
     if (this.cardData.parlaState) {
@@ -121,7 +128,10 @@ export default {
         allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
       }
       if (this.cardData.parlaState.recipients) {
-        allRecipients = selectFromState(allRecipients, this.cardData.parlaState.recipients);
+        allRecipients = selectFromState(
+          allRecipients,
+          this.cardData.parlaState.recipients
+        );
       }
       if (this.cardData.parlaState.mps) {
         allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
@@ -143,45 +153,47 @@ export default {
       const validMonths = [];
 
       this.getFilteredQuestionDays(true).forEach((questionDay) => {
-        const [, month, year] = questionDay.date.split(' ').map(string => parseInt(string, 10));
+        const [, month, year] = questionDay.date
+          .split(' ')
+          .map((string) => parseInt(string, 10));
         const monthId = `${year}-${month}`;
         if (validMonths.indexOf(monthId) === -1) {
           validMonths.push(monthId);
         }
 
-        questionDay.questions
-          .forEach((question) => {
-            const authors = question.authors || [question.person];
-            authors.forEach((author) => {
-              if (validMPs.indexOf(author.id) === -1) {
-                validMPs.push(author.id);
-              }
-            });
-            if (validRecipients.indexOf(question.recipient_text) === -1) {
-              validRecipients.push(question.recipient_text);
+        questionDay.questions.forEach((question) => {
+          const authors = question.authors || [question.person];
+          authors.forEach((author) => {
+            if (validMPs.indexOf(author.id) === -1) {
+              validMPs.push(author.id);
             }
           });
+          if (validRecipients.indexOf(question.recipient_text) === -1) {
+            validRecipients.push(question.recipient_text);
+          }
+        });
       });
 
       return {
-        MPs: this.allMPs.filter(mp => validMPs.indexOf(mp.id) > -1),
-        recipients: this.allRecipients
-          .filter(recipient => validRecipients.indexOf(recipient.id) > -1),
-        months: this.allMonths.filter(month => validMonths.indexOf(month.id) > -1),
+        MPs: this.allMPs.filter((mp) => validMPs.indexOf(mp.id) > -1),
+        recipients: this.allRecipients.filter(
+          (recipient) => validRecipients.indexOf(recipient.id) > -1
+        ),
+        months: this.allMonths.filter(
+          (month) => validMonths.indexOf(month.id) > -1
+        ),
       };
     },
     selectedMPs() {
-      return this.allMPs
-        .filter(tag => tag.selected)
-        .map(tag => tag.id);
+      return this.allMPs.filter((tag) => tag.selected).map((tag) => tag.id);
     },
     selectedRecipients() {
       return this.allRecipients
-        .filter(tag => tag.selected)
-        .map(tag => tag.id);
+        .filter((tag) => tag.selected)
+        .map((tag) => tag.id);
     },
     selectedMonths() {
-      return this.allMonths.filter(month => month.selected);
+      return this.allMonths.filter((month) => month.selected);
     },
     filteredQuestionDays() {
       return this.getFilteredQuestionDays();
@@ -193,7 +205,7 @@ export default {
         state.recipients = this.selectedRecipients;
       }
       if (this.selectedMonths.length > 0) {
-        state.months = this.selectedMonths.map(month => month.id);
+        state.months = this.selectedMonths.map((month) => month.id);
       }
       if (this.textFilter.length > 0) {
         state.text = this.textFilter;
@@ -202,7 +214,9 @@ export default {
         state.mps = this.selectedMPs;
       }
 
-      return `${this.url}${this[this.type].id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this[this.type].id}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -220,14 +234,21 @@ export default {
   methods: {
     getFilteredQuestionDays(onlyFilterByText = false) {
       const filterQuestions = (question) => {
-        const authorIds = (question.authors || [question.person]).map(a => a.id);
-        const MPMatch = onlyFilterByText
-          || this.selectedMPs.length === 0
-          || intersection(this.selectedMPs, authorIds).length > 0;
-        const recipientMatch = onlyFilterByText || this.selectedRecipients.length === 0
-          || this.selectedRecipients.indexOf(question.recipient_text) !== -1;
-        const textMatch = this.textFilter === ''
-          || question.title.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const authorIds = (question.authors || [question.person]).map(
+          (a) => a.id
+        );
+        const MPMatch =
+          onlyFilterByText ||
+          this.selectedMPs.length === 0 ||
+          intersection(this.selectedMPs, authorIds).length > 0;
+        const recipientMatch =
+          onlyFilterByText ||
+          this.selectedRecipients.length === 0 ||
+          this.selectedRecipients.indexOf(question.recipient_text) !== -1;
+        const textMatch =
+          this.textFilter === '' ||
+          question.title.toLowerCase().indexOf(this.textFilter.toLowerCase()) >
+            -1;
         return MPMatch && recipientMatch && textMatch;
       };
 
@@ -236,17 +257,23 @@ export default {
           return true;
         }
 
-        const [, month, year] = questionDay.date.split(' ').map(string => parseInt(string, 10));
+        const [, month, year] = questionDay.date
+          .split(' ')
+          .map((string) => parseInt(string, 10));
 
-        return this.selectedMonths.filter(m => m.month === month && m.year === year).length > 0;
+        return (
+          this.selectedMonths.filter(
+            (m) => m.month === month && m.year === year
+          ).length > 0
+        );
       };
 
       return this.questionDays
-        .map(questionDay => ({
+        .map((questionDay) => ({
           date: questionDay.date,
           questions: questionDay.questions.filter(filterQuestions),
         }))
-        .filter(questionDay => questionDay.questions.length > 0)
+        .filter((questionDay) => questionDay.questions.length > 0)
         .filter(filterDates);
     },
     updateDropdownOptions(itemType, newOptions) {
@@ -381,10 +408,18 @@ export default {
       height: 48px;
       width: 52px;
 
-      &.za { background-image: url("#{getConfig('urls.cdn')}/icons/za.svg"); }
-      &.proti { background-image: url("#{getConfig('urls.cdn')}/icons/proti.svg"); }
-      &.ni { background-image: url("#{getConfig('urls.cdn')}/icons/ni.svg"); }
-      &.kvorum { background-image: url("#{getConfig('urls.cdn')}/icons/vzdrzan.svg"); }
+      &.za {
+        background-image: url("#{getConfig('urls.cdn')}/icons/za.svg");
+      }
+      &.proti {
+        background-image: url("#{getConfig('urls.cdn')}/icons/proti.svg");
+      }
+      &.ni {
+        background-image: url("#{getConfig('urls.cdn')}/icons/ni.svg");
+      }
+      &.kvorum {
+        background-image: url("#{getConfig('urls.cdn')}/icons/vzdrzan.svg");
+      }
     }
 
     .parlaicon {
@@ -397,7 +432,9 @@ export default {
       font-weight: 300;
       line-height: 20px;
       padding: 15px 0;
-      a { font-weight: normal; }
+      a {
+        font-weight: normal;
+      }
     }
 
     .outcome {

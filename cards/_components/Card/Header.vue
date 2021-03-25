@@ -9,15 +9,18 @@
             class="media-object img-circle session-logo"
           >
             <b v-if="config.circleText">{{ config.circleText }}</b>
-            <img v-else :src="`${slugs.urls.cdn}/icons/${config.mediaImage}.svg`">
+            <img
+              v-else
+              :src="`${slugs.urls.cdn}/icons/${config.mediaImage}.svg`"
+            />
           </div>
           <img
             v-else-if="config.circleImage"
             :src="`${slugs.urls.cdn}/img/people/square/${config.circleImage}.png`"
             class="portrait column"
-          >
+          />
           <div v-else-if="config.circleIcon" class="icon-circle">
-            <img :src="`${slugs.urls.cdn}/icons/${config.circleIcon}.svg`">
+            <img :src="`${slugs.urls.cdn}/icons/${config.circleIcon}.svg`" />
           </div>
           <div class="header-info-container">
             <h1 v-html="config.heading"></h1>
@@ -30,10 +33,10 @@
     </template>
     <template v-else>
       <div class="card-header-border"></div>
-      <h1 v-t="'info.title'" v-if="currentBack === 'info'"></h1>
-      <h1 v-t="'embed.title'" v-else-if="currentBack === 'embed'"></h1>
-      <h1 v-t="'share.title'" v-else-if="currentBack === 'share'"></h1>
-      <h1 v-t="'previous.title'" v-else-if="currentBack === 'previous'"></h1>
+      <h1 v-if="currentBack === 'info'" v-t="'info.title'"></h1>
+      <h1 v-else-if="currentBack === 'embed'" v-t="'embed.title'"></h1>
+      <h1 v-else-if="currentBack === 'share'" v-t="'share.title'"></h1>
+      <h1 v-else-if="currentBack === 'previous'" v-t="'previous.title'"></h1>
       <h1 v-else>{{ config.title }}</h1>
     </template>
   </div>

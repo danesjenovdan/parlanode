@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :content-class="{'is-loading': loading}"
+    :content-class="{ 'is-loading': loading }"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -14,7 +14,10 @@
 
     <div class="legislation-list">
       <scroll-shadow ref="shadow">
-        <div id="card-search" @scroll="$refs.shadow.check($event.currentTarget)">
+        <div
+          id="card-search"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
           <sortable-table
             v-if="!loading"
             :columns="columns"
@@ -46,13 +49,7 @@ export default {
     SortableTable,
     ScrollShadow,
   },
-  mixins: [
-    common,
-    searchTitle,
-    searchHeader,
-    searchOgImage,
-    links,
-  ],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, links],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
@@ -70,12 +67,18 @@ export default {
       return [
         { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
         { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
-        { id: 'result', label: this.$t('status'), additionalClass: 'small-text' },
+        {
+          id: 'result',
+          label: this.$t('status'),
+          additionalClass: 'small-text',
+        },
       ];
     },
     generatedCardUrl() {
       const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     mappedItems() {
       const mapResultIcon = {
@@ -114,7 +117,11 @@ export default {
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
 
         return [
-          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.title}</a>` },
+          {
+            html: `<a href="${this.getLegislationLink(
+              legislation
+            )}" class="funblue-light-hover">${legislation.title}</a>`,
+          },
           { text: legislation.act_id != null ? legislation.act_id : '' },
           { html: outcomeHtml },
         ];
@@ -158,8 +165,11 @@ export default {
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/search/legislation?q=${encodeURIComponent(this.keywords)}`;
-    axios.get(searchUrl)
+    const searchUrl = `${
+      this.slugs.urls.isci
+    }/search/legislation?q=${encodeURIComponent(this.keywords)}`;
+    axios
+      .get(searchUrl)
       .then((res) => {
         this.data = (res.data.response && res.data.response.docs) || [];
         this.loading = false;
@@ -174,7 +184,8 @@ export default {
   methods: {
     selectSort(sortId) {
       if (this.currentSort === sortId) {
-        this.currentSortOrder = this.currentSortOrder === 'asc' ? 'desc' : 'asc';
+        this.currentSortOrder =
+          this.currentSortOrder === 'asc' ? 'desc' : 'asc';
       } else {
         this.currentSort = sortId;
         this.currentSortOrder = 'asc';
@@ -218,7 +229,7 @@ export default {
 
   .item .column {
     &:first-child {
-      font-family: "Roboto Slab", sans-serif;
+      font-family: 'Roboto Slab', sans-serif;
     }
   }
 

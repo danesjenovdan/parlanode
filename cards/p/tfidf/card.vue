@@ -22,7 +22,7 @@
     </div>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <div v-t="'no-speeches'" v-else class="empty-dataset"></div>
+    <div v-else v-t="'no-speeches'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -39,13 +39,7 @@ export default {
   components: {
     BarChart,
   },
-  mixins: [
-    common,
-    memberSpeeches,
-    memberHeader,
-    memberOgImage,
-    links,
-  ],
+  mixins: [common, memberSpeeches, memberHeader, memberOgImage, links],
   data() {
     return {
       data: this.$options.cardData.data,
@@ -53,7 +47,7 @@ export default {
   },
   computed: {
     chartRows() {
-      return this.data.results.map(item => ({
+      return this.data.results.map((item) => ({
         label: item.term,
         value: Math.round(item.scores['tf-idf'] * 5000),
         link: this.getSearchTermLink(item.term, { mps: [this.data.person.id] }),

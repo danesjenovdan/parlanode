@@ -13,13 +13,17 @@
           <i18n path="info.lead" tag="p" class="info-text lead">
             <span place="text">
               <span v-if="textFilter">"{{ textFilter }}"</span>
-              <span v-t="'all-votes'" v-else></span>
+              <span v-else v-t="'all-votes'"></span>
             </span>
             <span place="wbs">
-              <span v-if="selectedTags.length">{{ selectedTags.join(', ') }}</span>
-              <span v-t="'all-working-bodies'" v-else></span>
+              <span v-if="selectedTags.length">{{
+                selectedTags.join(', ')
+              }}</span>
+              <span v-else v-t="'all-working-bodies'"></span>
             </span>
-            <span place="sortBy">{{ sortOptions[selectedSort].toLowerCase() }}</span>
+            <span place="sortBy">{{
+              sortOptions[selectedSort].toLowerCase()
+            }}</span>
           </i18n>
           <p v-t="'info.methodology'" class="info-text heading"></p>
           <i18n path="info.text[0]" tag="p" class="info-text">
@@ -49,7 +53,7 @@
         <div class="filters">
           <div class="filter text-filter">
             <div v-t="'title-search'" class="filter-label"></div>
-            <input v-model="textFilter" class="text-filter-input" type="text">
+            <input v-model="textFilter" class="text-filter-input" type="text" />
           </div>
           <div class="filter type-dropdown">
             <div v-t="'parties'" class="filter-label"></div>
@@ -72,24 +76,40 @@
 
         <scroll-shadow ref="shadow">
           <div
-            :class="['results', {'is-loading': loading }]"
+            :class="['results', { 'is-loading': loading }]"
             @scroll="$refs.shadow.check($event.currentTarget)"
           >
             <template v-for="day in filteredVotingDays">
-              <date-row v-if="selectedSort === 'date'" :date="day.date" :key="day.date" />
+              <date-row
+                v-if="selectedSort === 'date'"
+                :key="day.date"
+                :date="day.date"
+              />
               <a
                 v-for="ballot in day.ballots"
                 :key="ballot.id_parladata"
-                :href="getSessionVoteLink({ session_id: ballot.session_id, vote_id: ballot.id_parladata })"
+                :href="
+                  getSessionVoteLink({
+                    session_id: ballot.session_id,
+                    vote_id: ballot.id_parladata,
+                  })
+                "
                 :target="voteLinkTarget"
                 class="ballot"
               >
                 <div class="disunion">
-                  <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
+                  <div class="percentage">
+                    {{ Math.round(ballot.maximum) }} %
+                  </div>
                   <div v-t="'inequality'" class="text"></div>
                 </div>
                 <div class="name">
-                  <template v-if="ballot.shortened_projects && ballot.shortened_projects.length">
+                  <template
+                    v-if="
+                      ballot.shortened_projects &&
+                      ballot.shortened_projects.length
+                    "
+                  >
                     <div
                       v-for="(project, i) in ballot.projects"
                       v-if="i !== 0 || project !== ballot.shortened_projects[0]"
@@ -98,27 +118,33 @@
                       :class="[
                         'tooltip',
                         `tooltip-${ballot.id_parladata}-${i}`,
-                        {'tooltip--show': visibleTooltip === `${ballot.id_parladata}-${i}`}
+                        {
+                          'tooltip--show':
+                            visibleTooltip === `${ballot.id_parladata}-${i}`,
+                        },
                       ]"
                     >
                       {{ project }}
                     </div>
                     <p class="projects">
                       <component
-                        v-for="(project, i) in ballot.shortened_projects"
                         :is="i > 0 ? 'a' : 'span'"
+                        v-for="(project, i) in ballot.shortened_projects"
                         :key="`${ballot.id_parladata}-${project}-${i}`"
                         :class="[
                           'project',
                           {
                             'project--tooltip': i !== 0,
-                            'project--has-tooltip': i !== 0 || project !== ballot.projects[0]
-                          }
+                            'project--has-tooltip':
+                              i !== 0 || project !== ballot.projects[0],
+                          },
                         ]"
                         :data-target="`${ballot.id_parladata}-${i}`"
                         href="#"
                         @click.prevent="() => {}"
-                        @mouseover="setVisibleTooltip(`${ballot.id_parladata}-${i}`)"
+                        @mouseover="
+                          setVisibleTooltip(`${ballot.id_parladata}-${i}`)
+                        "
                         @mouseout="visibleTooltip = null"
                       >
                         <template v-if="i === 0">{{ project }}</template>
@@ -174,10 +200,7 @@ export default {
     Toggle,
     ScrollShadow,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   data() {
     const data = Object.keys(this.$options.cardData.data).map((key) => {
       const obj = this.$options.cardData.data[key];
@@ -187,7 +210,7 @@ export default {
       };
     });
 
-    const all = data.find(o => o.type === 'parliament');
+    const all = data.find((o) => o.type === 'parliament');
 
     let groups = [];
     groups.push({
@@ -197,7 +220,7 @@ export default {
       name: this.$t('everybody'),
     });
 
-    let coalitions = data.filter(o => o.type === 'coalition');
+    let coalitions = data.filter((o) => o.type === 'coalition');
     coalitions = sortBy(coalitions, ['name']);
 
     coalitions.forEach((coalition) => {
@@ -228,7 +251,10 @@ export default {
       voteData: [],
       loading: true,
       selectedSort: 'maximum',
-      sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
+      sortOptions: {
+        maximum: this.$t('sort-by--inequality'),
+        date: this.$t('sort-by--date'),
+      },
       textFilter: '',
       allTags: [],
       selectedGroup: groups[0].acronym,
@@ -241,22 +267,22 @@ export default {
   },
   computed: {
     allItems() {
-      return this.groups.map(group => ({
+      return this.groups.map((group) => ({
         id: group.acronym,
         label: group.acronym,
         selected: group.acronym === this.selectedGroup,
-        colorClass: `${group.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+        colorClass: `${group.acronym
+          .toLowerCase()
+          .replace(/[ +,]/g, '_')}-background`,
       }));
     },
     selectedTags() {
-      return this.allTags
-        .filter(tag => tag.selected)
-        .map(tag => tag.id);
+      return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
     },
     selectedClassifications() {
       return this.allClassifications
-        .filter(classification => classification.selected)
-        .map(classification => classification.id);
+        .filter((classification) => classification.selected)
+        .map((classification) => classification.id);
     },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
@@ -274,10 +300,11 @@ export default {
       });
     },
     dynamicTitle() {
-      return this.$t('card.title') + (
-        this.selectedSort === 'date'
+      return (
+        this.$t('card.title') +
+        (this.selectedSort === 'date'
           ? this.$t('sort-by--date').toLowerCase()
-          : this.$t('sort-by--inequality').toLowerCase()
+          : this.$t('sort-by--inequality').toLowerCase())
       );
     },
     generatedCardUrl() {
@@ -299,7 +326,9 @@ export default {
         state.selectedGroup = this.selectedGroup;
       }
 
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     voteLinkTarget() {
       if (typeof window !== 'undefined') {
@@ -331,7 +360,7 @@ export default {
         groups[group] = groups[group] || [];
         groups[group].push(o);
       });
-      return Object.keys(groups).map(group => groups[group]);
+      return Object.keys(groups).map((group) => groups[group]);
     },
     selectCallback(acronym) {
       this.selectGroup(acronym);
@@ -345,14 +374,18 @@ export default {
       }
 
       const filterBallots = (ballot) => {
-        const tagMatch = onlyFilterByText
-          || this.selectedTags.length === 0
-          || ballot.tag.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const textMatch = this.textFilter === ''
-          || ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const classificationMatch = onlyFilterByText
-          || this.selectedClassifications.length === 0
-          || this.selectedClassifications.indexOf(ballot.classification) > -1;
+        const tagMatch =
+          onlyFilterByText ||
+          this.selectedTags.length === 0 ||
+          ballot.tag.filter((tag) => this.selectedTags.indexOf(tag) > -1)
+            .length > 0;
+        const textMatch =
+          this.textFilter === '' ||
+          ballot.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const classificationMatch =
+          onlyFilterByText ||
+          this.selectedClassifications.length === 0 ||
+          this.selectedClassifications.indexOf(ballot.classification) > -1;
         return tagMatch && textMatch && classificationMatch;
       };
 
@@ -366,17 +399,21 @@ export default {
             title,
             projects: agendas,
             shortened_title: shortenVoteTitle(title),
-            shortened_projects: agendas.map(p => shortenVoteTitle(p, 80)),
+            shortened_projects: agendas.map((p) => shortenVoteTitle(p, 80)),
           };
         });
-      const getDateFromVote = vote => (vote.date ? format(parseISO(vote.date), 'd. M. y') : null);
+      const getDateFromVote = (vote) =>
+        vote.date ? format(parseISO(vote.date), 'd. M. y') : null;
 
       let currentVotingDays;
 
       if (this.selectedSort === 'date') {
         currentVotingDays = groupBy(votes, getDateFromVote);
       } else {
-        currentVotingDays = zipObject(votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`), votes.map(vote => [vote]));
+        currentVotingDays = zipObject(
+          votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`),
+          votes.map((vote) => [vote])
+        );
       }
 
       const mappedVotingDays = [];
@@ -387,61 +424,74 @@ export default {
         });
       });
 
-      return mappedVotingDays
-        .filter(votingDay => (votingDay.ballots.length > 0));
+      return mappedVotingDays.filter(
+        (votingDay) => votingDay.ballots.length > 0
+      );
     },
     selectGroup(acronym) {
       this.cardData.parlaState.selectedGroup = acronym;
-      this.selectedGroup = this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
+      this.selectedGroup =
+        this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
     fetchVotesForGroup(acronym) {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
-      $.getJSON(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`, (response) => {
-        if (this.allTags.length === 0) {
-          this.allTags = response.all_tags.map(tag => ({ id: tag, label: tag, selected: false }));
-        }
-
-        // TODO: this.voteData = response.results;
-        this.voteData = response.results || response[acronym];
-
-        this.allClassifications = [];
-        // eslint-disable-next-line no-restricted-syntax, guard-for-in
-        for (const classificationKey in response.classifications) {
-          this.allClassifications.push({
-            id: classificationKey,
-            label: this.$t(`vote_types.${response.classifications[classificationKey]}`),
-            selected: false,
-          });
-        }
-
-        const selectFromState = (items, stateItemIds) => items
-          .map(item => assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }));
-
-        if (this.cardData.parlaState) {
-          const state = this.cardData.parlaState;
-          if (state.text) {
-            this.textFilter = state.text;
+      $.getJSON(
+        `${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`,
+        (response) => {
+          if (this.allTags.length === 0) {
+            this.allTags = response.all_tags.map((tag) => ({
+              id: tag,
+              label: tag,
+              selected: false,
+            }));
           }
-          if (state.classifications) {
-            this.allClassifications = selectFromState(
-              this.allClassifications,
-              state.classifications,
+
+          // TODO: this.voteData = response.results;
+          this.voteData = response.results || response[acronym];
+
+          this.allClassifications = [];
+          // eslint-disable-next-line no-restricted-syntax, guard-for-in
+          for (const classificationKey in response.classifications) {
+            this.allClassifications.push({
+              id: classificationKey,
+              label: this.$t(
+                `vote_types.${response.classifications[classificationKey]}`
+              ),
+              selected: false,
+            });
+          }
+
+          const selectFromState = (items, stateItemIds) =>
+            items.map((item) =>
+              assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
             );
-          }
-          if (state.sort) {
-            this.selectedSort = state.sort;
-          }
-          if (state.tags) {
-            this.allTags = selectFromState(this.allTags, state.tags);
-          }
-          if (state.selectedGroup) {
-            this.selectedGroup = state.selectedGroup;
-          }
-        }
 
-        this.loading = false;
-      });
+          if (this.cardData.parlaState) {
+            const state = this.cardData.parlaState;
+            if (state.text) {
+              this.textFilter = state.text;
+            }
+            if (state.classifications) {
+              this.allClassifications = selectFromState(
+                this.allClassifications,
+                state.classifications
+              );
+            }
+            if (state.sort) {
+              this.selectedSort = state.sort;
+            }
+            if (state.tags) {
+              this.allTags = selectFromState(this.allTags, state.tags);
+            }
+            if (state.selectedGroup) {
+              this.selectedGroup = state.selectedGroup;
+            }
+          }
+
+          this.loading = false;
+        }
+      );
     },
     setVisibleTooltip(target) {
       const elem = document.querySelector(`[data-target="${target}"]`);
@@ -471,7 +521,9 @@ export default {
     @include respond-to(desktop) {
       flex: 1;
       margin-bottom: 0;
-      &:not(:first-child) { margin-left: 5px; }
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
     }
   }
 }
@@ -551,7 +603,8 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url("#{getConfig('urls.cdn')}/img/loader.gif") no-repeat center center;
+      background: $white url("#{getConfig('urls.cdn')}/img/loader.gif")
+        no-repeat center center;
       content: '';
       height: 100%;
       position: absolute;
@@ -562,7 +615,9 @@ export default {
 }
 
 .date-row {
-  &:not(:first-child) { margin-top: 20px; }
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
 }
 
 .ballot {
@@ -575,7 +630,9 @@ export default {
   padding: 10px 14px;
   position: relative;
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     text-decoration: none;
     background: $link-hover-background;
     color: $link;
@@ -661,7 +718,7 @@ export default {
 
         &:first-of-type::before {
           content: '(';
-          margin-left: .25em;
+          margin-left: 0.25em;
         }
 
         &:last-of-type::after {

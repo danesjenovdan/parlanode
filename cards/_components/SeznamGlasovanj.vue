@@ -4,8 +4,8 @@
       <div class="filter option-party-buttons">
         <striped-button
           v-for="result in allResults"
-          :color="result.color"
           :key="result.id"
+          :color="result.color"
           :selected="selectedResults.indexOf(result.id) > -1"
           :small-text="result.label"
           @click.native="toggleResult(result.id)"
@@ -13,7 +13,7 @@
       </div>
       <div class="filter text-filter">
         <div v-t="'title-search'" class="filter-label"></div>
-        <input v-model="textFilter" class="text-filter-input" type="text">
+        <input v-model="textFilter" class="text-filter-input" type="text" />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
@@ -25,9 +25,17 @@
       </div>
     </div>
     <scroll-shadow ref="shadow">
-      <div id="votingCard" class="date-list" @scroll="$refs.shadow.check($event.currentTarget)">
+      <div
+        id="votingCard"
+        class="date-list"
+        @scroll="$refs.shadow.check($event.currentTarget)"
+      >
         <div class="session_voting">
-          <div v-t="'no-results'" v-if="filteredVotes.length === 0" class="no-results" />
+          <div
+            v-if="filteredVotes.length === 0"
+            v-t="'no-results'"
+            class="no-results"
+          />
           <div v-else>
             <component
               :is="virtualize ? 'virtual-list' : 'div'"
@@ -43,17 +51,17 @@
                 class="clearfix single_voting"
               >
                 <div v-if="vote.is_outlier" class="fire-badge"></div>
-                <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+                <div
+                  v-if="vote.has_outliers && vote.is_outlier"
+                  class="lightning-badge"
+                ></div>
                 <div
                   v-if="vote.has_outliers && !vote.is_outlier"
                   class="lightning-badge"
-                  style="position: absolute; left: -37px;"
+                  style="position: absolute; left: -37px"
                 ></div>
                 <div v-if="!vote.has_votes" class="hand-badge"></div>
-                <a
-                  :href="vote.url"
-                  class="show clearfix"
-                >
+                <a :href="vote.url" class="show clearfix">
                   <div class="col-md-1 icon-col">
                     <div :class="vote.accepted">
                       <p>
@@ -64,36 +72,49 @@
                   <div class="col-md-11 border-left">
                     <div class="col-md-6">
                       <div class="session_title">
-                        <template v-if="vote.shortened_projects && vote.shortened_projects.length">
+                        <template
+                          v-if="
+                            vote.shortened_projects &&
+                            vote.shortened_projects.length
+                          "
+                        >
                           <div
                             v-for="(project, i) in vote.projects"
-                            v-if="i !== 0 || project !== vote.shortened_projects[0]"
+                            v-if="
+                              i !== 0 || project !== vote.shortened_projects[0]
+                            "
                             :key="project"
                             :style="{ top: visibleTooltipTopPos }"
                             :class="[
                               'tooltip',
                               `tooltip-${vote.motion_id}-${i}`,
-                              {'tooltip--show': visibleTooltip === `${vote.motion_id}-${i}`}
+                              {
+                                'tooltip--show':
+                                  visibleTooltip === `${vote.motion_id}-${i}`,
+                              },
                             ]"
                           >
                             {{ project }}
                           </div>
                           <p class="projects">
                             <component
-                              v-for="(project, i) in vote.shortened_projects"
                               :is="i > 0 ? 'a' : 'span'"
+                              v-for="(project, i) in vote.shortened_projects"
                               :key="project"
                               :class="[
                                 'project',
                                 {
                                   'project--tooltip': i !== 0,
-                                  'project--has-tooltip': i !== 0 || project !== vote.projects[0]
-                                }
+                                  'project--has-tooltip':
+                                    i !== 0 || project !== vote.projects[0],
+                                },
                               ]"
                               :data-target="`${vote.motion_id}-${i}`"
                               href="#"
                               @click.prevent="() => {}"
-                              @mouseover="setVisibleTooltip(`${vote.motion_id}-${i}`)"
+                              @mouseover="
+                                setVisibleTooltip(`${vote.motion_id}-${i}`)
+                              "
                               @mouseout="visibleTooltip = null"
                             >
                               <template v-if="i === 0">{{ project }}</template>
@@ -108,30 +129,41 @@
                     </div>
                     <div class="col-md-6">
                       <div class="session_votes">
-                        <div v-if="vote.percent_for != null" class="progress smallbar">
+                        <div
+                          v-if="vote.percent_for != null"
+                          class="progress smallbar"
+                        >
                           <div
                             :style="{ width: vote.percent_for + '%' }"
                             class="progress-bar aye"
                           >
-                            <span class="sr-only">{{ vote.percent_for }}% votes for</span>
+                            <span class="sr-only"
+                              >{{ vote.percent_for }}% votes for</span
+                            >
                           </div>
                           <div
                             :style="{ width: vote.percent_against + '%' }"
                             class="progress-bar ney"
                           >
-                            <span class="sr-only">{{ vote.percent_against }}% votes against</span>
+                            <span class="sr-only"
+                              >{{ vote.percent_against }}% votes against</span
+                            >
                           </div>
                           <div
                             :style="{ width: vote.percent_abstain + '%' }"
                             class="progress-bar abstention"
                           >
-                            <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
+                            <span class="sr-only"
+                              >{{ vote.percent_abstain }}% votes abstained</span
+                            >
                           </div>
                           <div
                             :style="{ width: vote.percent_absent + '%' }"
                             class="progress-bar not"
                           >
-                            <span class="sr-only">{{ vote.percent_absent }}% not present</span>
+                            <span class="sr-only"
+                              >{{ vote.percent_absent }}% not present</span
+                            >
                           </div>
                         </div>
                         <div class="row">
@@ -186,9 +218,7 @@ export default {
     PSearchDropdown,
     ScrollShadow,
   },
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     data: {
       required: true,
@@ -215,8 +245,18 @@ export default {
     const votes = this.processVotes();
 
     const allResults = [
-      { id: true, color: 'binary-for', label: this.$t('vote-passed'), selected: false },
-      { id: false, color: 'binary-against', label: this.$t('vote-not-passed'), selected: false },
+      {
+        id: true,
+        color: 'binary-for',
+        label: this.$t('vote-passed'),
+        selected: false,
+      },
+      {
+        id: false,
+        color: 'binary-against',
+        label: this.$t('vote-not-passed'),
+        selected: false,
+      },
     ];
     if (this.filters.results) {
       allResults.forEach((r) => {
@@ -227,7 +267,8 @@ export default {
     const allTags = this.processTags();
     const allClassifications = this.processClassifications();
 
-    const textFilter = this.filters && this.filters.text ? this.filters.text : '';
+    const textFilter =
+      this.filters && this.filters.text ? this.filters.text : '';
 
     return {
       textFilter,
@@ -242,32 +283,34 @@ export default {
   computed: {
     filteredVotes() {
       const filterVotes = (vote) => {
-        const textMatch = this.textFilter === ''
-          || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const tagMatch = this.selectedTags.length === 0
-          || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const classificationMatch = this.selectedClassifications.length === 0
+        const textMatch =
+          this.textFilter === '' ||
+          vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch =
+          this.selectedTags.length === 0 ||
+          vote.tags.filter((tag) => this.selectedTags.indexOf(tag) > -1)
+            .length > 0;
+        const classificationMatch =
+          this.selectedClassifications.length === 0 ||
           // eslint-disable-next-line eqeqeq
-          || this.selectedClassifications.find(c => c == vote.classification);
-        const resultMatch = this.selectedResults.length === 0
-          || this.selectedResults.indexOf(vote.result) > -1;
+          this.selectedClassifications.find((c) => c == vote.classification);
+        const resultMatch =
+          this.selectedResults.length === 0 ||
+          this.selectedResults.indexOf(vote.result) > -1;
         return textMatch && tagMatch && classificationMatch && resultMatch;
       };
       return this.votes.filter(filterVotes);
     },
     selectedTags() {
-      return this.allTags
-        .filter(tag => tag.selected)
-        .map(tag => tag.id);
+      return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
     },
     selectedClassifications() {
-      return this.allClassifications
-        .filter(c => c.selected)
-        .map(c => c.id);
+      return this.allClassifications.filter((c) => c.selected).map((c) => c.id);
     },
     selectedResults() {
-      return this.allResults.filter(result => result.selected)
-        .map(result => result.id);
+      return this.allResults
+        .filter((result) => result.selected)
+        .map((result) => result.id);
     },
   },
   watch: {
@@ -296,10 +339,12 @@ export default {
           e = {};
         }
 
-        if (typeof e.for === 'number'
-          && typeof e.against === 'number'
-          && typeof e.abstain === 'number'
-          && typeof e.absent === 'number') {
+        if (
+          typeof e.for === 'number' &&
+          typeof e.against === 'number' &&
+          typeof e.abstain === 'number' &&
+          typeof e.absent === 'number'
+        ) {
           const allInVotes = e.for + e.against + e.abstain + e.absent;
           e.percent_for = Math.floor((e.for / allInVotes) * 100);
           e.percent_against = Math.floor((e.against / allInVotes) * 100);
@@ -321,7 +366,8 @@ export default {
         }
 
         e.url = this.getSessionVoteLink({
-          session_id: (e.session_id || (e.session && e.session.id) || this.data.session.id),
+          session_id:
+            e.session_id || (e.session && e.session.id) || this.data.session.id,
           vote_id: e.motion_id,
         });
         e.accepted = 'accepted ';
@@ -348,12 +394,16 @@ export default {
 
         // if legislation name is defined trim the legislation name from the start of vote name
         if (this.data.text && e.title.indexOf(this.data.text) === 0) {
-          e.shortened_title = e.title.slice(this.data.text.length).replace(/^[\s-,]*/, '');
+          e.shortened_title = e.title
+            .slice(this.data.text.length)
+            .replace(/^[\s-,]*/, '');
         }
 
         // shorten the title for display
-        e.shortened_projects = e.projects.map(p => shortenVoteTitle(p, 85));
-        e.shortened_title = shortenVoteTitle(e.shortened_title || e.title || '');
+        e.shortened_projects = e.projects.map((p) => shortenVoteTitle(p, 85));
+        e.shortened_title = shortenVoteTitle(
+          e.shortened_title || e.title || ''
+        );
 
         // if has_votes is undefined assume we always have votes
         e.has_votes = typeof e.has_votes === 'boolean' ? e.has_votes : true;
@@ -363,7 +413,11 @@ export default {
       return sortBy(votes, 'start_time');
     },
     processTags() {
-      const allTags = (this.data.tags || []).map(tag => ({ id: tag, label: tag, selected: false }));
+      const allTags = (this.data.tags || []).map((tag) => ({
+        id: tag,
+        label: tag,
+        selected: false,
+      }));
       if (this.filters.tags) {
         allTags.forEach((t) => {
           t.selected = this.filters.tags.indexOf(t.id) !== -1;
@@ -372,11 +426,14 @@ export default {
       return allTags;
     },
     processClassifications() {
-      const allClassifications = map(this.data.classifications || {}, (val, key) => ({
-        id: key,
-        label: this.$t(`vote_types.${val}`),
-        selected: false,
-      }));
+      const allClassifications = map(
+        this.data.classifications || {},
+        (val, key) => ({
+          id: key,
+          label: this.$t(`vote_types.${val}`),
+          selected: false,
+        })
+      );
       if (this.filters.classifications) {
         allClassifications.forEach((c) => {
           c.selected = this.filters.classifications.indexOf(c.id) !== -1;
@@ -385,7 +442,9 @@ export default {
       return allClassifications;
     },
     toggleResult(resultId) {
-      const clickedResult = this.allResults.find(result => result.id === resultId);
+      const clickedResult = this.allResults.find(
+        (result) => result.id === resultId
+      );
       if (clickedResult && clickedResult.selected) {
         clickedResult.selected = false;
       } else {
@@ -475,7 +534,6 @@ export default {
       }
     }
   }
-
 }
 
 .session_voting .accepted {
@@ -541,7 +599,7 @@ export default {
 
       &:first-of-type::before {
         content: '(';
-        margin-left: .25em;
+        margin-left: 0.25em;
       }
 
       &:last-of-type::after {
@@ -675,7 +733,10 @@ export default {
   .option-party-buttons {
     @include show-for(desktop, flex);
     @include show-for(mobile, flex);
-    @include respond-to(mobile) { width: 100%; padding-top: 0; }
+    @include respond-to(mobile) {
+      width: 100%;
+      padding-top: 0;
+    }
 
     width: 27.5%;
     padding-top: $label-height;
@@ -683,13 +744,19 @@ export default {
     .striped-button {
       flex: 1;
       height: 51px;
-      &:not(:last-child) { margin-right: 3px; }
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
     }
   }
 
   .text-filter {
-    @include respond-to(desktop) { width: 26%; }
-    @include respond-to(mobile) { width: 100%; }
+    @include respond-to(desktop) {
+      width: 26%;
+    }
+    @include respond-to(mobile) {
+      width: 100%;
+    }
 
     width: 26%; // 100%
 
@@ -709,7 +776,9 @@ export default {
   }
 
   .tag-dropdown {
-    @include respond-to(desktop) { width: 26%; }
+    @include respond-to(desktop) {
+      width: 26%;
+    }
 
     width: 100%;
   }

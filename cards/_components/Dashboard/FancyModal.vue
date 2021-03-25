@@ -1,7 +1,7 @@
 <template>
   <div class="modal-container">
     <div class="modal-backdrop fade in"></div>
-    <div class="modal" style="display:block">
+    <div class="modal" style="display: block">
       <modal
         v-if="modalOpen"
         :header="data.title"
@@ -101,7 +101,8 @@ export default {
     loadData() {
       if (this.data.loadData) {
         this.loading = true;
-        this.data.loadData()
+        this.data
+          .loadData()
           .then((data) => {
             this.loadedData = data;
             this.loading = false;
@@ -115,7 +116,8 @@ export default {
     saveData(loadedData) {
       if (this.data.saveData) {
         this.saving = true;
-        this.data.saveData(loadedData)
+        this.data
+          .saveData(loadedData)
           .then(() => {
             this.saving = false;
             this.saved = setTimeout(() => {
@@ -131,7 +133,8 @@ export default {
     generateData() {
       if (this.data.generateData) {
         this.generating = true;
-        this.data.generateData()
+        this.data
+          .generateData()
           .then(() => {
             this.generating = false;
           })

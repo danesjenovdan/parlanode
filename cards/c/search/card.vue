@@ -1,8 +1,5 @@
 <template>
-  <transparent-wrapper
-    :id="`${$options.cardData.mountId}`"
-    :card-url="url"
-  >
+  <transparent-wrapper :id="`${$options.cardData.mountId}`" :card-url="url">
     <p-search-dropdown
       :value="allItems"
       :placeholder="$t('search_placeholder')"
@@ -27,36 +24,38 @@ export default {
     TransparentWrapper,
     PSearchDropdown,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   data() {
-    const grouped = this.groupBy(
-      this.$options.cardData.data.data,
-      item => [item.person.party.acronym],
+    const grouped = this.groupBy(this.$options.cardData.data.data, (item) => [
+      item.person.party.acronym,
+    ]);
+
+    const groups = [
+      {
+        label: this.$t('parties'),
+        items: grouped
+          .filter((group) => group[0].person.party.classification === 'pg')
+          .map((group) => group[0].person.party.acronym),
+      },
+    ].concat(
+      grouped.map((group) => ({
+        label: group[0].person.party.name,
+        acronym: group[0].person.party.acronym,
+        items: group.map((p) => p.person.id),
+        id: group[0].person.party.id,
+      }))
     );
 
-    const groups = [{
-      label: this.$t('parties'),
-      items: grouped
-        .filter(group => group[0].person.party.classification === 'pg')
-        .map(group => group[0].person.party.acronym),
-    }].concat(grouped.map(group => ({
-      label: group[0].person.party.name,
-      acronym: group[0].person.party.acronym,
-      items: group.map(p => p.person.id),
-      id: group[0].person.party.id,
-    })));
-
-    const parties = grouped.map(group => ({
+    const parties = grouped.map((group) => ({
       id: group[0].person.party.acronym,
       label: group[0].person.party.acronym,
       selected: false,
-      colorClass: `${group[0].person.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`,
+      colorClass: `${group[0].person.party.acronym
+        .toLowerCase()
+        .replace(/[ +,]/g, '_')}-background`,
     }));
 
-    const people = this.$options.cardData.data.data.map(p => ({
+    const people = this.$options.cardData.data.data.map((p) => ({
       id: p.person.id,
       label: p.person.name,
       selected: false,
@@ -70,7 +69,9 @@ export default {
       people,
       parties,
       data: this.$options.cardData.data,
-      filter: this.$options.cardData.parlaState ? (this.$options.cardData.parlaState.query || '') : '',
+      filter: this.$options.cardData.parlaState
+        ? this.$options.cardData.parlaState.query || ''
+        : '',
     };
   },
   computed: {
@@ -86,7 +87,7 @@ export default {
         groups[group] = groups[group] || [];
         groups[group].push(o);
       });
-      return Object.keys(groups).map(group => groups[group]);
+      return Object.keys(groups).map((group) => groups[group]);
     },
     selectCallback(id) {
       if (parseInt(id, 10)) {
@@ -94,7 +95,8 @@ export default {
         document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.member.base}/${this.slugs.person[id].slug}`;
       } else {
         // it's a party
-        const partyId = this.groups.filter(group => group.acronym === id)[0].id;
+        const partyId = this.groups.filter((group) => group.acronym === id)[0]
+          .id;
         document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.party.base}/${this.slugs.party[partyId].acronym}`;
       }
     },
@@ -106,7 +108,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/colors';
 
 .search-dropdown ::v-deep .search-dropdown-input {
   background-color: $white;
@@ -117,7 +119,7 @@ export default {
 }
 
 .search-dropdown::after {
-  content: "\e003";
+  content: '\e003';
   font-family: 'Glyphicons Halflings';
   border: none;
   font-size: 22px;

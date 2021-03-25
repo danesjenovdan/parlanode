@@ -3,7 +3,6 @@
     <card-header :config="headerConfig" :current-back="currentBack" />
 
     <div :class="['card-content', contentClass]">
-
       <card-info v-if="currentBack === 'info'">
         <slot name="info" />
       </card-info>
@@ -14,16 +13,11 @@
 
       <card-previous v-else-if="currentBack === 'previous'" />
 
-      <div
-        v-else
-        v-cloak
-        :class="contentFrontClass"
-        class="card-content-front"
-      >
+      <div v-else v-cloak :class="contentFrontClass" class="card-content-front">
         <!-- this needs fixing, it's currently hardcoded -->
         <div v-if="false" class="card-content__empty">
           <div class="card-content__empty-inner">
-            <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`">
+            <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`" />
             <p v-t="'data-currently-unavailable'"></p>
           </div>
         </div>
@@ -90,12 +84,14 @@ export default {
     },
   },
   created() {
-    const ogConfig = this.ogConfig;
+    const { ogConfig } = this;
     if (ogConfig) {
       const { name, ...params } = ogConfig;
       const slugs = this.$root.$options.cardData.urls;
       const ogImagePath = `${slugs.urls.glej}/og-image/${name}/`;
-      const ogImageParams = `?${Object.keys(params).map(k => `${k}=${encodeURIComponent(params[k])}`).join('&')}`;
+      const ogImageParams = `?${Object.keys(params)
+        .map((k) => `${k}=${encodeURIComponent(params[k])}`)
+        .join('&')}`;
       this.$root.$options.cardData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
     } else {
       // eslint-disable-next-line no-console
@@ -137,7 +133,7 @@ export default {
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/breakpoints';
 
-.card-content{
+.card-content {
   &__empty {
     height: 40vh;
   }

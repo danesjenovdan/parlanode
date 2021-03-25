@@ -1,16 +1,16 @@
 <template>
   <div class="word-list">
-    <div :class="['column-label', { 'flexible': flexibleLabels }]">
+    <div :class="['column-label', { flexible: flexibleLabels }]">
       <div v-for="(row, index) in rows" :key="index" class="column chart-label">
         <div class="label-container">
           <template v-if="row.link">
-            <img v-if="row.portrait" :src="row.portrait" class="portrait">
+            <img v-if="row.portrait" :src="row.portrait" class="portrait" />
             <a :href="row.link" class="funblue-light-hover">
               {{ row.name }}
             </a>
           </template>
           <template v-else>
-            <img v-if="row.portrait" :src="row.portrait" class="portrait">
+            <img v-if="row.portrait" :src="row.portrait" class="portrait" />
             {{ row.name }}
           </template>
         </div>
@@ -20,12 +20,14 @@
       <div v-for="(row, index) in rows" :key="index" class="column chart">
         <div class="progress hugebar">
           <div
-            :style="{ width: row.widthPercentage + '%'}"
+            :style="{ width: row.widthPercentage + '%' }"
             class="progress-bar funblue"
-          >
-          </div>
+          ></div>
           <div v-if="showNumbers && showPercentage" class="progress_number">
-            {{ row.value.toString().replace('.', ',') + ' | ' + row.percentage }} %
+            {{
+              row.value.toString().replace('.', ',') + ' | ' + row.percentage
+            }}
+            %
           </div>
           <div v-else-if="showNumbers" class="progress_number">
             {{ row.value.toString().replace('.', ',') }}
@@ -68,17 +70,24 @@ export default {
       }
 
       const rows = JSON.parse(JSON.stringify(this.data));
-      const mymax = this.data.reduce((acc, row) => Math.max(acc, row.value || 0), 0);
+      const mymax = this.data.reduce(
+        (acc, row) => Math.max(acc, row.value || 0),
+        0
+      );
       const mytotal = this.data.reduce((acc, row) => acc + row.value, 0);
 
-      return rows.map(row => ({
-        link: row.link,
-        name: row.label,
-        value: row.value || 0,
-        portrait: row.portrait,
-        widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
-        percentage: ((row.value / mytotal) * 100).toFixed(2).replace('.', ','),
-      })).sort((a, b) => b.value - a.value);
+      return rows
+        .map((row) => ({
+          link: row.link,
+          name: row.label,
+          value: row.value || 0,
+          portrait: row.portrait,
+          widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
+          percentage: ((row.value / mytotal) * 100)
+            .toFixed(2)
+            .replace('.', ','),
+        }))
+        .sort((a, b) => b.value - a.value);
     },
   },
 };
@@ -94,7 +103,9 @@ export default {
 
   .column-label {
     margin-right: 15px;
-    &:not(.flexible) { flex: 1; }
+    &:not(.flexible) {
+      flex: 1;
+    }
   }
 
   .column-bar {
@@ -132,7 +143,9 @@ export default {
 }
 
 .progress_number {
-  @include respond-to(mobile) { display: none; }
+  @include respond-to(mobile) {
+    display: none;
+  }
   line-height: 27px;
 }
 .progress.hugebar {

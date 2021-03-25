@@ -7,13 +7,10 @@
             v-model="filterQuery"
             :placeholder="$t('search')"
             class="form-control"
-          >
+          />
         </div>
-        <dash-table
-          :items="mappedItems"
-          :paginate="50"
-        >
-          <template slot="item-col" slot-scope="{ column, index }">
+        <dash-table :items="mappedItems" :paginate="50">
+          <template #item-col="{ column, index }">
             <template v-if="index === 0">
               <label>
                 {{ $t('name') }}
@@ -23,15 +20,17 @@
                     v-model="column.legislation.is_exposed"
                     type="checkbox"
                     class="checkbox"
-                  >
-                  <label :for="`is-exposed_${column.legislation.id}`">{{ $t('exposed') }}</label>
+                  />
+                  <label :for="`is-exposed_${column.legislation.id}`">{{
+                    $t('exposed')
+                  }}</label>
                 </div>
               </label>
-              <input v-model="column.legislation.text" class="form-control">
+              <input v-model="column.legislation.text" class="form-control" />
             </template>
             <template v-if="index === 1">
               <label>{{ $t('epa') }}</label>
-              <input v-model="column.legislation.epa" class="form-control">
+              <input v-model="column.legislation.epa" class="form-control" />
             </template>
             <template v-if="index === 2">
               <label>{{ $t('status') }}</label>
@@ -74,7 +73,9 @@
               </dash-loading-button>
             </template>
             <template v-if="index === 7 && !column.legislation.has_discussion">
-              <dash-loading-button :load="createCommentality(column.legislation)">
+              <dash-loading-button
+                :load="createCommentality(column.legislation)"
+              >
                 {{ $t('create-commentality') }}
               </dash-loading-button>
             </template>
@@ -89,7 +90,7 @@
       :data="abstractModalData"
       @closed="closeAbstractModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
+      <template #modal-data="{ loadedData }">
         <modal-content-abstract :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
@@ -120,11 +121,7 @@ export default {
     PSearchDropdown,
     ModalContentAbstract,
   },
-  mixins: [
-    common,
-    parlapi,
-    commentapi,
-  ],
+  mixins: [common, parlapi, commentapi],
   data() {
     return {
       legislation: null,
@@ -156,9 +153,12 @@ export default {
       if (this.legislation && this.icons.length) {
         const q = this.filterQuery.toLowerCase();
         return this.legislation
-          .filter(l => l.text.toLowerCase().indexOf(q) !== -1
-            || l.epa.toLowerCase().indexOf(q) !== -1)
-          .map(legislation => [
+          .filter(
+            (l) =>
+              l.text.toLowerCase().indexOf(q) !== -1 ||
+              l.epa.toLowerCase().indexOf(q) !== -1
+          )
+          .map((legislation) => [
             { legislation },
             { legislation },
             {
@@ -180,7 +180,7 @@ export default {
             { legislation },
             {
               legislation,
-              icons: this.icons.map(icon => ({
+              icons: this.icons.map((icon) => ({
                 id: icon,
                 label: icon,
                 selected: legislation.icon === icon,
@@ -195,7 +195,8 @@ export default {
     },
   },
   mounted() {
-    this.$parlapi.getLegislation()
+    this.$parlapi
+      .getLegislation()
       .then((res) => {
         this.legislation = orderBy(res.data.results, ['date'], ['desc']);
         this.statusOptions = res.data.status_options;
@@ -207,7 +208,8 @@ export default {
         this.error = error;
       });
 
-    this.$parlapi.getLegislationIcons()
+    this.$parlapi
+      .getLegislationIcons()
       .then((res) => {
         this.icons = res.data.icons;
       })
@@ -219,13 +221,13 @@ export default {
   },
   methods: {
     changeStatus(legislationId, value) {
-      const legislation = this.legislation.find(l => l.id === legislationId);
+      const legislation = this.legislation.find((l) => l.id === legislationId);
       if (legislation) {
         legislation.status = value;
       }
     },
     changeResult(legislationId, value) {
-      const legislation = this.legislation.find(l => l.id === legislationId);
+      const legislation = this.legislation.find((l) => l.id === legislationId);
       if (legislation) {
         legislation.result = value;
       }
@@ -250,31 +252,35 @@ export default {
       this.abstractModalOpen = false;
     },
     saveData(legislation) {
-      return () => this.$parlapi.patchLegislation(legislation.id, legislation)
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.error(error);
-          this.error = error;
-        });
+      return () =>
+        this.$parlapi
+          .patchLegislation(legislation.id, legislation)
+          .catch((error) => {
+            // eslint-disable-next-line no-console
+            console.error(error);
+            this.error = error;
+          });
     },
     createCommentality(legislation) {
-      return () => this.$commentapi.createArticle(legislation.epa)
-        .then((response) => {
-          console.log(response.data);
-          legislation.has_discussion = true;
-          return this.$parlapi.patchLegislation(legislation.id, {
-            has_discussion: true,
+      return () =>
+        this.$commentapi
+          .createArticle(legislation.epa)
+          .then((response) => {
+            console.log(response.data);
+            legislation.has_discussion = true;
+            return this.$parlapi.patchLegislation(legislation.id, {
+              has_discussion: true,
+            });
+          })
+          .then((response) => {
+            console.log(response.data);
+            window.open('https://frontmentality.djnd.si/admin.html', '_blank');
+          })
+          .catch((error) => {
+            // eslint-disable-next-line no-console
+            console.error(error);
+            this.error = error;
           });
-        })
-        .then((response) => {
-          console.log(response.data);
-          window.open('https://frontmentality.djnd.si/admin.html', '_blank');
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.error(error);
-          this.error = error;
-        });
     },
   },
 };

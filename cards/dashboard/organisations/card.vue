@@ -8,15 +8,11 @@
             v-model="partiesOnly"
             type="checkbox"
             class="checkbox"
-          >
+          />
           <label for="partiesOnly">{{ $t('only-parties') }}</label>
         </div>
-        <dash-table
-          :items="mappedItems"
-          :columns="columns"
-          :paginate="50"
-        >
-          <template slot="item-col" slot-scope="{ column, index }">
+        <dash-table :items="mappedItems" :columns="columns" :paginate="50">
+          <template #item-col="{ column, index }">
             <template v-if="index === 0">
               {{ column.org._name }} ({{ column.org._acronym }})
             </template>
@@ -25,12 +21,12 @@
                 {{ $t('edit-info') }}
               </dash-button>
             </template>
-            <template v-if="(index === 2) && (column.org.classification === 'pg')">
+            <template v-if="index === 2 && column.org.classification === 'pg'">
               <dash-button @click="openTfidfModal(column.org)">
                 TFIDF
               </dash-button>
             </template>
-            <template v-if="(index === 3)">
+            <template v-if="index === 3">
               <dash-button @click="openMembershipsModal(column.org)">
                 {{ $t('edit-memberships') }}
               </dash-button>
@@ -51,7 +47,7 @@
       :data="tfidfModalData"
       @closed="closeTfidfModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
+      <template #modal-data="{ loadedData }">
         <modal-content-tfidf :data="loadedData.data" />
       </template>
     </dash-fancy-modal>
@@ -60,7 +56,7 @@
       :data="infoModalData"
       @closed="closeInfoModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
+      <template #modal-data="{ loadedData }">
         <modal-content-organisation-info :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
@@ -69,7 +65,7 @@
       :data="membershipsModalData"
       @closed="closeMembershipsModal"
     >
-      <template slot="modal-data" slot-scope="{ loadedData }">
+      <template #modal-data="{ loadedData }">
         <modal-content-organisation-memberships :loaded-data="loadedData" />
       </template>
     </dash-fancy-modal>
@@ -100,10 +96,7 @@ export default {
     ModalContentOrganisationInfo,
     ModalContentOrganisationMemberships,
   },
-  mixins: [
-    common,
-    parlapi,
-  ],
+  mixins: [common, parlapi],
   data() {
     return {
       partiesOnly: true,
@@ -128,12 +121,7 @@ export default {
     },
     mappedItems() {
       if (this.orgs) {
-        return this.orgs.map(org => [
-          { org },
-          { org },
-          { org },
-          { org },
-        ]);
+        return this.orgs.map((org) => [{ org }, { org }, { org }, { org }]);
       }
       return [];
     },
@@ -151,10 +139,9 @@ export default {
       this.orgs = null;
       this.error = null;
 
-      (
-        this.partiesOnly
-          ? this.$parlapi.getParties()
-          : this.$parlapi.getAllOrganisations()
+      (this.partiesOnly
+        ? this.$parlapi.getParties()
+        : this.$parlapi.getAllOrganisations()
       )
         .then((orgs) => {
           this.orgs = sortBy(orgs.data.results, ['_name']);
@@ -176,7 +163,8 @@ export default {
             data: tfidf.data,
           };
         },
-        saveData: tfidf => this.$parlapi.patchOrganisationTFIDF(tfidf.id, tfidf),
+        saveData: (tfidf) =>
+          this.$parlapi.patchOrganisationTFIDF(tfidf.id, tfidf),
       };
       this.tfidfModalOpen = true;
     },
@@ -191,13 +179,21 @@ export default {
           const orgs = await this.$parlapi.getAllOrganisations();
 
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
-          const facebook = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
-          const twitter = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+          const facebook = links.data.results.filter(
+            (link) => link.tags.indexOf('fb') !== -1
+          );
+          const twitter = links.data.results.filter(
+            (link) => link.tags.indexOf('tw') !== -1
+          );
 
-          const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
+          const contacts = await this.$parlapi.getOrganisationContactEmails(
+            org.id
+          );
           const emails = contacts.data.results || [];
 
-          const dissolution = org.dissolution_date ? org.dissolution_date.split('T') : ['', ''];
+          const dissolution = org.dissolution_date
+            ? org.dissolution_date.split('T')
+            : ['', ''];
 
           return {
             org: {
@@ -212,35 +208,43 @@ export default {
               dissolution_time: dissolution[1],
             },
             orgs: orgs.data.results,
-            org_groups: map(groupBy(orgs.data.results, 'classification'), (val, key) => ({
-              label: key,
-              items: val.map(o => o.id),
-            })),
+            org_groups: map(
+              groupBy(orgs.data.results, 'classification'),
+              (val, key) => ({
+                label: key,
+                items: val.map((o) => o.id),
+              })
+            ),
             socials: {
-              facebook: facebook.map(e => e.url).join('\n'),
-              twitter: twitter.map(e => e.url).join('\n'),
+              facebook: facebook.map((e) => e.url).join('\n'),
+              twitter: twitter.map((e) => e.url).join('\n'),
             },
             contacts: {
-              emails: emails.map(e => e.value).join('\n'),
+              emails: emails.map((e) => e.value).join('\n'),
             },
           };
         },
         saveData: async (orgInfo) => {
-          const mapSocialUrls = (urls, tag, note) => urls
-            .split('\n')
-            .map(url => url.trim())
-            .filter(Boolean)
-            .map(url => ({
-              tags: ['social', tag],
-              url,
-              note,
-              name: '',
-              organization: org.id,
-            }));
+          const mapSocialUrls = (urls, tag, note) =>
+            urls
+              .split('\n')
+              .map((url) => url.trim())
+              .filter(Boolean)
+              .map((url) => ({
+                tags: ['social', tag],
+                url,
+                note,
+                name: '',
+                organization: org.id,
+              }));
 
           const links = await this.$parlapi.getOrganisationSocialLinks(org.id);
-          const fbs = links.data.results.filter(link => link.tags.indexOf('fb') !== -1);
-          const tws = links.data.results.filter(link => link.tags.indexOf('tw') !== -1);
+          const fbs = links.data.results.filter(
+            (link) => link.tags.indexOf('fb') !== -1
+          );
+          const tws = links.data.results.filter(
+            (link) => link.tags.indexOf('tw') !== -1
+          );
 
           const newFbs = mapSocialUrls(orgInfo.socials.facebook, 'fb', 'FB');
           const newTws = mapSocialUrls(orgInfo.socials.twitter, 'tw', 'TW');
@@ -260,18 +264,21 @@ export default {
           await Promise.all(zip(fbs, newFbs).map(updateLink));
           await Promise.all(zip(tws, newTws).map(updateLink));
 
-          const mapContactEmails = values => values
-            .split('\n')
-            .map(value => value.trim())
-            .filter(Boolean)
-            .map(value => ({
-              contact_type: 'EMAIL',
-              label: 'Mail',
-              value,
-              organization: org.id,
-            }));
+          const mapContactEmails = (values) =>
+            values
+              .split('\n')
+              .map((value) => value.trim())
+              .filter(Boolean)
+              .map((value) => ({
+                contact_type: 'EMAIL',
+                label: 'Mail',
+                value,
+                organization: org.id,
+              }));
 
-          const contacts = await this.$parlapi.getOrganisationContactEmails(org.id);
+          const contacts = await this.$parlapi.getOrganisationContactEmails(
+            org.id
+          );
           const emails = contacts.data.results;
 
           const newEmails = mapContactEmails(orgInfo.contacts.emails);
@@ -290,8 +297,10 @@ export default {
 
           await Promise.all(zip(emails, newEmails).map(updateContact));
 
-          const dissolution = (orgInfo.org.dissolution_date && orgInfo.org.dissolution_time)
-            ? `${orgInfo.org.dissolution_date}T${orgInfo.org.dissolution_time}` : null;
+          const dissolution =
+            orgInfo.org.dissolution_date && orgInfo.org.dissolution_time
+              ? `${orgInfo.org.dissolution_date}T${orgInfo.org.dissolution_time}`
+              : null;
 
           const o = {
             _name: orgInfo.org._name,
@@ -325,18 +334,29 @@ export default {
         loadData: async () => {
           const people = await this.$parlapi.getPeople();
           const orgs = await this.$parlapi.getAllOrganisations();
-          const membershipsData = await this.$parlapi.getOrganisationMemberships(org.id);
-          const memberships = sortBy(membershipsData.data.results, ['start_time']);
+          const membershipsData = await this.$parlapi.getOrganisationMemberships(
+            org.id
+          );
+          const memberships = sortBy(membershipsData.data.results, [
+            'start_time',
+          ]);
           return {
             people: sortBy(people.data.results, ['name']),
             orgs: sortBy(orgs.data.results, ['_name']),
-            org_groups: map(groupBy(orgs.data.results, 'classification'), (val, key) => ({
-              label: key,
-              items: val.map(o => o.id),
-            })),
+            org_groups: map(
+              groupBy(orgs.data.results, 'classification'),
+              (val, key) => ({
+                label: key,
+                items: val.map((o) => o.id),
+              })
+            ),
             memberships: memberships.map((membership) => {
-              const start = membership.start_time ? membership.start_time.split('T') : ['', ''];
-              const end = membership.end_time ? membership.end_time.split('T') : ['', ''];
+              const start = membership.start_time
+                ? membership.start_time.split('T')
+                : ['', ''];
+              const end = membership.end_time
+                ? membership.end_time.split('T')
+                : ['', ''];
               return {
                 id: membership.id,
                 start_date: start[0],
@@ -354,8 +374,12 @@ export default {
         saveData: async (loadedData) => {
           // eslint-disable-next-line no-restricted-syntax
           for (const m of loadedData.memberships) {
-            const startTime = (m.start_date && m.start_time) ? `${m.start_date}T${m.start_time}` : null;
-            const endTime = (m.end_date && m.end_time) ? `${m.end_date}T${m.end_time}` : null;
+            const startTime =
+              m.start_date && m.start_time
+                ? `${m.start_date}T${m.start_time}`
+                : null;
+            const endTime =
+              m.end_date && m.end_time ? `${m.end_date}T${m.end_time}` : null;
             const membership = {
               start_time: startTime,
               end_time: endTime,

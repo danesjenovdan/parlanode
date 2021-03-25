@@ -1,5 +1,7 @@
 <template>
-  <div :class="['scroll-shadow-top', {'scroll-shadow-top--enabled': showShadow}]">
+  <div
+    :class="['scroll-shadow-top', { 'scroll-shadow-top--enabled': showShadow }]"
+  >
     <slot />
   </div>
 </template>
@@ -18,13 +20,16 @@ export default {
     check(el) {
       this.update(el);
     },
-    update: debounce(function update(el) {
-      this.showShadow = el.scrollTop > 0;
-    }, 50, { leading: true }),
+    update: debounce(
+      function update(el) {
+        this.showShadow = el.scrollTop > 0;
+      },
+      50,
+      { leading: true }
+    ),
   },
 };
 </script>
-
 
 <style lang="scss" scoped>
 .scroll-shadow-top {
@@ -42,7 +47,7 @@ export default {
     width: 100%;
     height: 6px;
     box-shadow: inset 0px 11.5px 4px -10px rgba(0, 0, 0, 0.24),
-                inset 0px 11.5px 6px -10px rgba(0, 0, 0, 0.24);
+      inset 0px 11.5px 6px -10px rgba(0, 0, 0, 0.24);
     pointer-events: none;
     opacity: 0;
     z-index: 3;

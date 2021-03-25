@@ -53,8 +53,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "parlassets/scss/colors";
-@import "parlassets/scss/breakpoints";
+@import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
 
 .p-tabs {
   display: flex;
@@ -80,17 +80,25 @@ export default {
       text-align: center;
       text-transform: uppercase;
       user-select: none;
-      &:last-child { margin-right: 0; }
+      &:last-child {
+        margin-right: 0;
+      }
       &.active {
         cursor: default;
         pointer-events: none;
       }
-      @include respond-to(desktop) { font-size: 16px; }
+      @include respond-to(desktop) {
+        font-size: 16px;
+      }
       &.dark {
         background: $tab-passive;
         color: $white;
-        &.active { background: $tab-active; }
-        &:hover { background: $tab-hover; }
+        &.active {
+          background: $tab-active;
+        }
+        &:hover {
+          background: $tab-hover;
+        }
       }
       &.light {
         background: $background;
@@ -125,7 +133,6 @@ export default {
       &:last-child {
         margin-left: 15px;
       }
-
     }
   }
 }

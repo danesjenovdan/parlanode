@@ -21,9 +21,10 @@
       </i18n>
     </div>
 
-    <div v-show="false" class="card-content__empty"> <!-- TODO this is hardcoded -->
+    <div v-show="false" class="card-content__empty">
+      <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
-        <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`">
+        <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`" />
         <p v-t="'data-currently-unavailable'"></p>
       </div>
     </div>
@@ -34,10 +35,7 @@
       </div>
       <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
-        <p-search-dropdown
-          v-model="allClassifications"
-          :alphabetise="false"
-        />
+        <p-search-dropdown v-model="allClassifications" :alphabetise="false" />
       </div>
       <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
@@ -47,7 +45,11 @@
         <div
           v-for="opt in allOptions"
           :key="opt.id"
-          :class="['party-button', opt.class, { selected: selectedOptions.indexOf(opt.id) > -1 }]"
+          :class="[
+            'party-button',
+            opt.class,
+            { selected: selectedOptions.indexOf(opt.id) > -1 },
+          ]"
           @click="toggleOption(opt.id)"
         >
           {{ opt.label }}
@@ -65,9 +67,16 @@
         class="votes stickinme date-list"
         @scroll="$refs.shadow.check($event.currentTarget)"
       >
-        <div v-t="'no-results'" v-if="filteredVotingDays.length === 0" class="no-results" />
+        <div
+          v-if="filteredVotingDays.length === 0"
+          v-t="'no-results'"
+          class="no-results"
+        />
         <div v-else>
-          <template v-for="votingDay in filteredVotingDays" :key="`${votingDay.date}`">
+          <template
+            v-for="votingDay in filteredVotingDays"
+            :key="`${votingDay.date}`"
+          >
             <div
               v-if="type === 'person' || selectedSort === 'date'"
               class="date"
@@ -121,7 +130,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
+      validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
     person: {
       type: Object,
@@ -133,43 +142,62 @@ export default {
     },
   },
   data() {
-    const selectFromState = (items, stateItemIds) => (
-      items.map(item => assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 }))
-    );
+    const selectFromState = (items, stateItemIds) =>
+      items.map((item) =>
+        assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+      );
 
-    let allOptions = [{
-      id: 'for',
-      class: 'for',
-      label: this.$t('vote-for'),
-      selected: false,
-    }, {
-      id: 'against',
-      class: 'against',
-      label: this.$t('vote-against'),
-      selected: false,
-    }, {
-      id: 'abstain',
-      class: 'abstain',
-      label: (this.type === 'person' ? this.$t('vote-abstain') : this.$t('vote-abstain-plural')),
-      selected: false,
-    }, {
-      id: 'absent',
-      class: 'absent',
-      label: (this.type === 'person' ? this.$t('vote-absent') : this.$t('vote-absent-plural')),
-      selected: false,
-    }];
+    let allOptions = [
+      {
+        id: 'for',
+        class: 'for',
+        label: this.$t('vote-for'),
+        selected: false,
+      },
+      {
+        id: 'against',
+        class: 'against',
+        label: this.$t('vote-against'),
+        selected: false,
+      },
+      {
+        id: 'abstain',
+        class: 'abstain',
+        label:
+          this.type === 'person'
+            ? this.$t('vote-abstain')
+            : this.$t('vote-abstain-plural'),
+        selected: false,
+      },
+      {
+        id: 'absent',
+        class: 'absent',
+        label:
+          this.type === 'person'
+            ? this.$t('vote-absent')
+            : this.$t('vote-absent-plural'),
+        selected: false,
+      },
+    ];
 
-    let allTags = this.cardData.data.all_tags
-      .map(tag => ({ id: tag, label: tag, selected: false }));
+    let allTags = this.cardData.data.all_tags.map((tag) => ({
+      id: tag,
+      label: tag,
+      selected: false,
+    }));
 
     let allClassifications = [];
-    Object.keys(this.cardData.data.classifications).forEach((classificationKey) => {
-      allClassifications.push({
-        id: classificationKey,
-        label: this.$t(`vote_types.${this.cardData.data.classifications[classificationKey]}`),
-        selected: false,
-      });
-    });
+    Object.keys(this.cardData.data.classifications).forEach(
+      (classificationKey) => {
+        allClassifications.push({
+          id: classificationKey,
+          label: this.$t(
+            `vote_types.${this.cardData.data.classifications[classificationKey]}`
+          ),
+          selected: false,
+        });
+      }
+    );
 
     let textFilter = '';
 
@@ -180,7 +208,10 @@ export default {
       }
 
       if (state.classifications) {
-        allClassifications = selectFromState(allClassifications, state.classifications);
+        allClassifications = selectFromState(
+          allClassifications,
+          state.classifications
+        );
       }
       if (state.options) {
         allOptions = selectFromState(allOptions, state.options);
@@ -193,7 +224,10 @@ export default {
     return {
       votingDays: this.cardData.data.results,
       selectedSort: 'date',
-      sortOptions: { maximum: this.$t('sort-by--inequality'), date: this.$t('sort-by--date') },
+      sortOptions: {
+        maximum: this.$t('sort-by--inequality'),
+        date: this.$t('sort-by--date'),
+      },
       allClassifications,
       allOptions,
       allTags,
@@ -206,33 +240,36 @@ export default {
         const validTags = [];
 
         this.getFilteredVotingDays(true).forEach((votingDay) => {
-          votingDay.ballots
-            .forEach((ballot) => {
-              ballot.tags.forEach((tag) => {
-                if (validTags.indexOf(tag) === -1) {
-                  validTags.push(tag);
-                }
-              });
+          votingDay.ballots.forEach((ballot) => {
+            ballot.tags.forEach((tag) => {
+              if (validTags.indexOf(tag) === -1) {
+                validTags.push(tag);
+              }
             });
+          });
         });
 
-        return filter(this.allTags, tag => validTags.indexOf(tag.id) > -1);
+        return filter(this.allTags, (tag) => validTags.indexOf(tag.id) > -1);
       },
       set(newTags) {
-        this.allTags = this.allTags
-          .map(tag => find(newTags, { id: tag.id }) || tag);
+        this.allTags = this.allTags.map(
+          (tag) => find(newTags, { id: tag.id }) || tag
+        );
       },
     },
     selectedTags() {
-      return filter(this.allTags, tag => tag.selected)
-        .map(tag => tag.id);
+      return filter(this.allTags, (tag) => tag.selected).map((tag) => tag.id);
     },
     selectedClassifications() {
-      return filter(this.allClassifications, classification => classification.selected)
-        .map(classification => classification.id);
+      return filter(
+        this.allClassifications,
+        (classification) => classification.selected
+      ).map((classification) => classification.id);
     },
     selectedOptions() {
-      return filter(this.allOptions, option => option.selected).map(option => option.id);
+      return filter(this.allOptions, (option) => option.selected).map(
+        (option) => option.id
+      );
     },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
@@ -253,7 +290,9 @@ export default {
         state.options = this.selectedOptions;
       }
 
-      return `${this.url}${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this[this.type].id}/?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -274,39 +313,54 @@ export default {
   },
   methods: {
     toggleOption(optionId) {
-      const clickedOption = filter(this.allOptions, option => option.id === optionId)[0];
+      const clickedOption = filter(
+        this.allOptions,
+        (option) => option.id === optionId
+      )[0];
       clickedOption.selected = !clickedOption.selected;
     },
     getFilteredVotingDays(onlyFilterByText = false) {
       const filterBallots = (ballot) => {
-        const tagMatch = onlyFilterByText
-          || this.selectedTags.length === 0
-          || filter(ballot.tags, tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const textMatch = this.textFilter === ''
-          || ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const optionMatch = onlyFilterByText || this.selectedOptions.length === 0
-          || this.selectedOptions.indexOf(ballot.option) > -1;
-        const classificationMatch = onlyFilterByText || this.selectedClassifications.length === 0
-          || this.selectedClassifications.indexOf(ballot.classification) > -1;
+        const tagMatch =
+          onlyFilterByText ||
+          this.selectedTags.length === 0 ||
+          filter(ballot.tags, (tag) => this.selectedTags.indexOf(tag) > -1)
+            .length > 0;
+        const textMatch =
+          this.textFilter === '' ||
+          ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) >
+            -1;
+        const optionMatch =
+          onlyFilterByText ||
+          this.selectedOptions.length === 0 ||
+          this.selectedOptions.indexOf(ballot.option) > -1;
+        const classificationMatch =
+          onlyFilterByText ||
+          this.selectedClassifications.length === 0 ||
+          this.selectedClassifications.indexOf(ballot.classification) > -1;
         return tagMatch && textMatch && optionMatch && classificationMatch;
       };
 
-      const votingDays = filter(this.votingDays
-        .map(votingDay => ({
+      const votingDays = filter(
+        this.votingDays.map((votingDay) => ({
           date: votingDay.date,
-          ballots: filter(votingDay.ballots, filterBallots)
-            .map((ballot) => {
-              const ballotClone = JSON.parse(JSON.stringify(ballot));
-              const form = this.type === 'person' ? this.person.gender : 'plural';
-              ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
+          ballots: filter(votingDay.ballots, filterBallots).map((ballot) => {
+            const ballotClone = JSON.parse(JSON.stringify(ballot));
+            const form = this.type === 'person' ? this.person.gender : 'plural';
+            ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
 
-              if (ballot.result !== 'none' && ballot.result != null) {
-                ballotClone.outcome = ballot.result === true ? this.$t('vote-passed') : this.$t('vote-not-passed');
-              }
+            if (ballot.result !== 'none' && ballot.result != null) {
+              ballotClone.outcome =
+                ballot.result === true
+                  ? this.$t('vote-passed')
+                  : this.$t('vote-not-passed');
+            }
 
-              return ballotClone;
-            }),
-        })), votingDay => votingDay.ballots.length > 0);
+            return ballotClone;
+          }),
+        })),
+        (votingDay) => votingDay.ballots.length > 0
+      );
 
       if (this.type === 'party' && this.selectedSort === 'maximum') {
         const sortyByDisunion = (arr) => {
@@ -316,12 +370,16 @@ export default {
             bag = bag.concat(arr[i].ballots);
             i += 1;
           }
-          return bag.sort((a, b) => parseInt(b.disunion, 10) - parseInt(a.disunion, 10));
+          return bag.sort(
+            (a, b) => parseInt(b.disunion, 10) - parseInt(a.disunion, 10)
+          );
         };
 
-        return [{
-          ballots: sortyByDisunion(votingDays),
-        }];
+        return [
+          {
+            ballots: sortyByDisunion(votingDays),
+          },
+        ];
       }
 
       return votingDays;
@@ -372,7 +430,9 @@ export default {
   }
 
   .text-filter {
-    @include respond-to(desktop) { width: 26%; }
+    @include respond-to(desktop) {
+      width: 26%;
+    }
 
     width: 100%;
 
@@ -392,7 +452,9 @@ export default {
   }
 
   .tag-dropdown {
-    @include respond-to(desktop) { width: 26%; }
+    @include respond-to(desktop) {
+      width: 26%;
+    }
 
     width: 100%;
   }

@@ -27,9 +27,9 @@
       />
       <div v-if="fetching" class="nalagalnik"></div>
       <speech
-        v-quotable
         v-for="speech in speeches"
         :key="speech.results.speech_id"
+        v-quotable
         :speech="speech"
         :per-page="perPage"
       />
@@ -41,7 +41,7 @@
         @change="onPageChange"
       />
     </div>
-    <div v-t="'session-processing'" v-else class="empty-dataset"></div>
+    <div v-else v-t="'session-processing'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -99,9 +99,12 @@ export default {
           const selection = getSelected();
 
           if (selection && selection.toString().length > 0) {
-            const parentOffsetTop = speechTextElement.get(0).getBoundingClientRect().top;
+            const parentOffsetTop = speechTextElement
+              .get(0)
+              .getBoundingClientRect().top;
             const rectangle = selection.getRangeAt(0).getBoundingClientRect();
-            const quoteIconOffset = (rectangle.top - parentOffsetTop) + (rectangle.height / 2);
+            const quoteIconOffset =
+              rectangle.top - parentOffsetTop + rectangle.height / 2;
 
             quoteElement.data({ text: selection.toString() });
             quoteElement.css({
@@ -115,32 +118,28 @@ export default {
 
       // This prevents deselection of text when clicking on quote icon
       quoteElement
-        .on('mousedown', event => event.preventDefault())
+        .on('mousedown', (event) => event.preventDefault())
         .on('click', () => {
           const selectedText = quoteElement.data().text.trim();
           const allText = cardElement.find('.mywords').val();
           const startIndex = allText.indexOf(selectedText);
           const endIndex = startIndex + selectedText.length;
-          const slugs = vnode.componentInstance.$root.slugs;
+          const { slugs } = vnode.componentInstance.$root;
           const url = `${slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
           $.ajax({
             url,
             async: false,
             dataType: 'json',
-            success: result => window.open(`${slugs.urls.glej}/s/citat/${result.id}?frame=true`),
+            success: (result) =>
+              window.open(`${slugs.urls.glej}/s/citat/${result.id}?frame=true`),
           });
         });
     },
   },
-  mixins: [
-    links,
-    common,
-    sessionHeader,
-    sessionOgImage,
-  ],
+  mixins: [links, common, sessionHeader, sessionOgImage],
   data() {
-    const data = this.$options.cardData.data;
+    const { data } = this.$options.cardData;
 
     const state = this.$options.cardData.parlaState;
     let page = (state && state.page) || Number(data.page);
@@ -174,7 +173,9 @@ export default {
     }
   },
   created() {
-    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(this.data.session);
+    this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(
+      this.data.session
+    );
   },
   methods: {
     onPageChange(newPage) {
@@ -185,20 +186,25 @@ export default {
       this.scrollToTop();
       if (!this.speechesPerPage[newPage - 1]) {
         this.fetching = true;
-        $.get(`${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`, (response) => {
-          this.$set(this.speechesPerPage, newPage - 1, response.results);
-          this.fetching = false;
+        $.get(
+          `${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`,
+          (response) => {
+            this.$set(this.speechesPerPage, newPage - 1, response.results);
+            this.fetching = false;
 
-          // needed if dynamically loaded to reset the css :target and scroll to selected element
-          this.$nextTick(() => {
-            const target = document.getElementById(window.location.hash.slice(1));
-            if (target) {
-              const tmp = window.location.hash;
-              window.location.hash = '';
-              window.location.hash = tmp;
-            }
-          });
-        });
+            // needed if dynamically loaded to reset the css :target and scroll to selected element
+            this.$nextTick(() => {
+              const target = document.getElementById(
+                window.location.hash.slice(1)
+              );
+              if (target) {
+                const tmp = window.location.hash;
+                window.location.hash = '';
+                window.location.hash = tmp;
+              }
+            });
+          }
+        );
       }
     },
     scrollToTop() {

@@ -73,10 +73,14 @@
               >
                 <span class="sr-only">{{ getMaxValue }}%</span>
                 <template v-if="type === 'person'">
-                  <person-pin v-for="mp in results.max.mps" :person="mp" :key="mp.gov_id" />
+                  <person-pin
+                    v-for="mp in results.max.mps"
+                    :key="mp.gov_id"
+                    :person="mp"
+                  />
                 </template>
                 <template v-else>
-                  <party-pin v-for="pg in getMaxPGs" :party="pg" :key="pg.id" />
+                  <party-pin v-for="pg in getMaxPGs" :key="pg.id" :party="pg" />
                 </template>
               </div>
             </div>
@@ -122,9 +126,7 @@ export default {
     PersonPin,
     PartyPin,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   props: {
     cardData: {
       type: Object,
@@ -133,7 +135,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
+      validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
     results: {
       type: Object,
@@ -150,7 +152,8 @@ export default {
     context: {
       type: String,
       default: 'overview',
-      validator: value => ['overview', 'votings', 'speeches'].indexOf(value) > -1,
+      validator: (value) =>
+        ['overview', 'votings', 'speeches'].indexOf(value) > -1,
     },
     precision: {
       type: Number,
@@ -159,9 +162,7 @@ export default {
   },
   computed: {
     getName() {
-      return this.type === 'person'
-        ? this.person.name
-        : this.party.acronym;
+      return this.type === 'person' ? this.person.name : this.party.acronym;
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -182,14 +183,18 @@ export default {
       return `${this.url}${this.party.id}?altHeader=true`;
     },
     getScore() {
-      return this.results.score != null ? this.results.score : this.results.organization_value;
+      return this.results.score != null
+        ? this.results.score
+        : this.results.organization_value;
     },
     getMaxValue() {
       return this.results.max ? this.results.max.score : this.results.maximum;
     },
     getMaxPGs() {
       if (this.results.max) {
-        return this.results.max.pgs ? this.results.max.pgs : this.results.max.parties;
+        return this.results.max.pgs
+          ? this.results.max.pgs
+          : this.results.max.parties;
       }
       return this.results.maxPG;
     },
@@ -197,11 +202,15 @@ export default {
   created() {
     (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
     if (this.context === 'overview') {
-      (this.type === 'person' ? memberOverview : partyOverview).created.call(this);
+      (this.type === 'person' ? memberOverview : partyOverview).created.call(
+        this
+      );
     } else if (this.context === 'votings') {
       (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
     } else if (this.context === 'speeches') {
-      (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(this);
+      (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(
+        this
+      );
     }
   },
   methods: {

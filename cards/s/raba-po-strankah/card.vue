@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :content-class="['full', {'is-loading': loading}]"
+    :content-class="['full', { 'is-loading': loading }]"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
@@ -13,8 +13,8 @@
     </div>
 
     <div
-      v-t="'no-results'"
       v-if="!loading && data && data.response.numFound === 0"
+      v-t="'no-results'"
       class="no-results"
     />
     <div v-else id="pie-chart">
@@ -38,13 +38,7 @@ export default {
   components: {
     PieChart,
   },
-  mixins: [
-    common,
-    searchTitle,
-    searchHeader,
-    searchOgImage,
-    searchContext,
-  ],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
@@ -58,15 +52,22 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     pieData() {
       return (this.data && this.data.facet_counts.facet_fields.party_id) || [];
     },
   },
   mounted() {
-    const searchUrl = `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
-    axios.get(searchUrl)
+    const searchUrl = `${
+      this.slugs.urls.isci
+    }/search/speeches?q=${encodeURIComponent(
+      this.keywords
+    )}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+    axios
+      .get(searchUrl)
       .then((res) => {
         this.data = res.data;
         this.loading = false;

@@ -5,7 +5,9 @@
       :section-data="chartData"
     />
     <div class="text-container">
-      <div v-if="option !== 'cant_compute'" class="percentage">{{ Math.round(score) }} %</div>
+      <div v-if="option !== 'cant_compute'" class="percentage">
+        {{ Math.round(score) }} %
+      </div>
       <div class="text">{{ translatedOption }}</div>
     </div>
   </div>

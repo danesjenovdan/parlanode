@@ -1,6 +1,10 @@
 <template>
   <div class="dashboard-table">
-    <slot v-if="pages > 1" v-bind="{ page, pages, per: paginate }" name="top-pager">
+    <slot
+      v-if="pages > 1"
+      v-bind="{ page, pages, per: paginate }"
+      name="top-pager"
+    >
       <div class="table-pager">
         <dash-button @click="prevPage">&lt;</dash-button>
         {{ page + 1 }} / {{ pages }}
@@ -9,7 +13,11 @@
     </slot>
     <div v-if="columns && columns.length" class="table-headers">
       <div class="table-row">
-        <div v-for="column in columns" :key="column.id" class="table-col header">
+        <div
+          v-for="column in columns"
+          :key="column.id"
+          class="table-col header"
+        >
           <slot :column="column" name="header-col">
             {{ column.label }}
           </slot>
@@ -27,7 +35,11 @@
         </slot>
       </div>
     </div>
-    <slot v-if="pages > 1" v-bind="{ page, pages, per: paginate }" name="bottom-pager">
+    <slot
+      v-if="pages > 1"
+      v-bind="{ page, pages, per: paginate }"
+      name="bottom-pager"
+    >
       <div class="table-pager">
         <dash-button @click="prevPage">&lt;</dash-button>
         {{ page + 1 }} / {{ pages }}
@@ -66,7 +78,9 @@ export default {
   },
   computed: {
     pages() {
-      return this.paginate <= 0 ? 1 : Math.ceil(this.items.length / this.paginate);
+      return this.paginate <= 0
+        ? 1
+        : Math.ceil(this.items.length / this.paginate);
     },
     activeItems() {
       if (this.pages <= 1) {

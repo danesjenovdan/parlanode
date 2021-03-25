@@ -1,8 +1,8 @@
 <template>
   <div class="personpin-container">
     <div
-      :class="['personpin-tooltip', { visible: tooltipVisible}]"
       :ref="person.gov_id"
+      :class="['personpin-tooltip', { visible: tooltipVisible }]"
     >
       {{ person.name }}
     </div>
@@ -21,14 +21,12 @@ import links from '@/_mixins/links';
 
 export default {
   name: 'PersonPin',
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     person: {
       type: Object,
       required: true,
-      validator: value => value.type === 'mp',
+      validator: (value) => value.type === 'mp',
     },
   },
   data() {

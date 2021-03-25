@@ -39,10 +39,7 @@ export default {
   components: {
     SortableTable,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   props: {
     headerConfig: {
       type: Object,
@@ -119,13 +116,21 @@ export default {
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
         const dataIconsHtml = `
           <div class="data-icons">
-            <i class="parlaicon icon-abstract ${legislation.abstractVisible ? 'icon-show' : 'icon-hide'}"></i>
-            <i class="parlaicon icon-votes ${legislation.hasVotes ? 'icon-show' : 'icon-hide'}"></i>
+            <i class="parlaicon icon-abstract ${
+              legislation.abstractVisible ? 'icon-show' : 'icon-hide'
+            }"></i>
+            <i class="parlaicon icon-votes ${
+              legislation.hasVotes ? 'icon-show' : 'icon-hide'
+            }"></i>
           </div>
         `;
 
         return [
-          { html: `<a href="${this.getLegislationLink(legislation)}" class="funblue-light-hover">${legislation.text}</a>` },
+          {
+            html: `<a href="${this.getLegislationLink(
+              legislation
+            )}" class="funblue-light-hover">${legislation.text}</a>`,
+          },
           { html: dataIconsHtml },
           { text: legislation.epa },
           { text: legislation.date },
@@ -147,7 +152,6 @@ export default {
 }
 
 .legislation-list {
-
   .column:last-child {
     margin-left: 8px;
   }
@@ -202,7 +206,7 @@ export default {
 
     .text {
       @include respond-to(mobile) {
-        font-size:14px !important;
+        font-size: 14px !important;
       }
     }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="card-content__empty">
     <div class="card-content__empty-inner">
-      <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`">
+      <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`" />
       <p>{{ text }}</p>
     </div>
   </div>

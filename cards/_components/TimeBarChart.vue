@@ -8,11 +8,16 @@ function chart(rawData) {
   $('.timebarchart svg').remove();
 
   function getQueryParams(str) {
-    return (str || document.location.search).replace(/(^\?)/, '').split('&').map(function m(n) {
-      n = n.split('=');
-      this[n[0]] = n[1];
-      return this;
-    }.bind({}))[0];
+    return (str || document.location.search)
+      .replace(/(^\?)/, '')
+      .split('&')
+      .map(
+        function m(n) {
+          n = n.split('=');
+          this[n[0]] = n[1];
+          return this;
+        }.bind({})
+      )[0];
   }
 
   let timeQuery;
@@ -41,7 +46,9 @@ function chart(rawData) {
     }
   }
 
-  smalldata.sort((x, y) => dateFormatter.parse(x.date) - dateFormatter.parse(y.date));
+  smalldata.sort(
+    (x, y) => dateFormatter.parse(x.date) - dateFormatter.parse(y.date)
+  );
 
   // global stuff for the chart
   const margin = {
@@ -62,10 +69,44 @@ function chart(rawData) {
     date: '%d. %m. %Y',
     time: '%H:%M:%S',
     periods: ['AM', 'PM'],
-    days: ['nedelja', 'ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota'],
+    days: [
+      'nedelja',
+      'ponedeljek',
+      'torek',
+      'sreda',
+      'četrtek',
+      'petek',
+      'sobota',
+    ],
     shortDays: ['ned', 'pon', 'tor', 'sre', 'čet', 'pet', 'sob'],
-    months: ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'],
-    shortMonths: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'avg', 'sep', 'okt', 'nov', 'dec'],
+    months: [
+      'januar',
+      'februar',
+      'marec',
+      'april',
+      'maj',
+      'junij',
+      'julij',
+      'avgust',
+      'september',
+      'oktober',
+      'november',
+      'december',
+    ],
+    shortMonths: [
+      'jan',
+      'feb',
+      'mar',
+      'apr',
+      'maj',
+      'jun',
+      'jul',
+      'avg',
+      'sep',
+      'okt',
+      'nov',
+      'dec',
+    ],
   });
 
   const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%SZ').parse;
@@ -74,7 +115,9 @@ function chart(rawData) {
     d.occurences = +d.occurences;
   });
 
-  const svg = d3.select('.timebarchart').append('svg')
+  const svg = d3
+    .select('.timebarchart')
+    .append('svg')
     .attr('class', 'smalldata')
     .attr('viewBox', '0 0 940 460')
     .attr('preserveAspectRatio', 'xMidYMid meet')
@@ -89,42 +132,46 @@ function chart(rawData) {
 
     const x = d3.scale.ordinal().rangeRoundBands([0, width], 0.05);
 
-    const y = d3.scale.linear()
-      .range([height, 0]);
+    const y = d3.scale.linear().range([height, 0]);
 
-    x.domain(data.map(d => d.date));
-    y.domain([0, d3.max(data, d => d.occurences)]);
+    x.domain(data.map((d) => d.date));
+    y.domain([0, d3.max(data, (d) => d.occurences)]);
 
-    const xAxis = d3.svg.axis()
+    const xAxis = d3.svg
+      .axis()
       .scale(x)
       .orient('bottom')
       .tickFormat(SI.timeFormat('%b %y'));
 
-    svg.append('g')
+    svg
+      .append('g')
       .attr('class', 'x axis smalldata')
       .attr('transform', `translate(0,${height})`)
       .call(xAxis);
 
-    const barcontainers = svg.selectAll('.smallbarcontainer')
+    const barcontainers = svg
+      .selectAll('.smallbarcontainer')
       .data(data)
       .enter()
       .append('g')
       .attr('class', 'smallbarcontainer');
 
-    barcontainers.append('text')
-      .text(d => d.occurences)
-      .attr('x', d => x(d.date))
-      .attr('y', d => y(d.occurences))
+    barcontainers
+      .append('text')
+      .text((d) => d.occurences)
+      .attr('x', (d) => x(d.date))
+      .attr('y', (d) => y(d.occurences))
       .attr('width', x.rangeBand)
       .attr('text-anchor', 'middle')
       .attr('transform', `translate(${x.rangeBand() / 2}, -4)`);
 
-    barcontainers.append('rect')
+    barcontainers
+      .append('rect')
       .attr('class', 'bar')
-      .attr('x', d => x(d.date))
+      .attr('x', (d) => x(d.date))
       .attr('width', x.rangeBand())
-      .attr('y', d => y(d.occurences))
-      .attr('height', d => height - y(d.occurences));
+      .attr('y', (d) => y(d.occurences))
+      .attr('height', (d) => height - y(d.occurences));
   }
 
   createSmallChart(smalldata);
@@ -155,7 +202,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/colors';
 
 .axis path,
 .axis line {

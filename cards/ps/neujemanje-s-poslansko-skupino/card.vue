@@ -12,14 +12,8 @@
       <p v-t="'info.text[0]'" class="info-text"></p>
       <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
-    <person-list
-      v-if="people.length > 2"
-      :people="people"
-    />
-    <empty-circle
-      v-else
-      :text="$t('card.empty-state-text')"
-    />
+    <person-list v-if="people.length > 2" :people="people" />
+    <empty-circle v-else :text="$t('card.empty-state-text')" />
   </card-wrapper>
 </template>
 
@@ -39,12 +33,7 @@ export default {
     partyTitle,
     EmptyCircle,
   },
-  mixins: [
-    common,
-    partyVotes,
-    partyHeader,
-    partyOgImage,
-  ],
+  mixins: [common, partyVotes, partyHeader, partyOgImage],
   data() {
     const people = this.$options.cardData.data.results.map((o) => {
       const { person } = o;

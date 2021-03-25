@@ -25,8 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "parlassets/scss/breakpoints";
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .data-not-published {
   min-height: 320px;
@@ -47,7 +47,7 @@ export default {
     font-size: 18px;
     font-style: italic;
     font-weight: 300;
-    font-family: Roboto Slab, "Times New Roman", serif;
+    font-family: Roboto Slab, 'Times New Roman', serif;
     line-height: 1.5;
   }
 }

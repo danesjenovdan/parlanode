@@ -93,7 +93,8 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            <span v-t="'number-of-terms'"></span>: <b>{{ data.results.mandates }}</b>
+            <span v-t="'number-of-terms'"></span>:
+            <b>{{ data.results.mandates }}</b>
           </span>
         </div>
       </div>
@@ -104,7 +105,8 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            <span v-t="'previous-occupation'"></span>: <b>{{ data.results.previous_occupation }}</b>
+            <span v-t="'previous-occupation'"></span>:
+            <b>{{ data.results.previous_occupation }}</b>
           </span>
         </div>
       </div>
@@ -163,7 +165,9 @@
                   </g>
                   <g>
                     <!-- eslint-disable-next-line max-len -->
-                    <path d="m53.515999,0.67l0,14.732l-8.761002,0q-4.799,0 -6.473,2.008999t-1.674,6.027l0,10.547001l16.350002,0l-2.176003,16.517998l-14.173996,0l0,42.355003l-17.076002,0l0,-42.355003l-14.23,0l0,-16.517998l14.23,0l0,-12.165001q0,-10.378999 5.803999,-16.099001t15.458,-5.719999q8.203003,0 12.723,0.67l-0.000999,-0.001z" />
+                    <path
+                      d="m53.515999,0.67l0,14.732l-8.761002,0q-4.799,0 -6.473,2.008999t-1.674,6.027l0,10.547001l16.350002,0l-2.176003,16.517998l-14.173996,0l0,42.355003l-17.076002,0l0,-42.355003l-14.23,0l0,-16.517998l14.23,0l0,-12.165001q0,-10.378999 5.803999,-16.099001t15.458,-5.719999q8.203003,0 12.723,0.67l-0.000999,-0.001z"
+                    />
                   </g>
                 </svg>
               </div>
@@ -194,13 +198,21 @@
                   </g>
                   <g>
                     <!-- eslint-disable-next-line max-len -->
-                    <path id="svg_1" d="m90.402,22.768q-3.738998,5.469 -9.040001,9.319002q0.056,0.780998 0.056,2.343998q0,7.254002 -2.121002,14.480999t-6.445,13.867001t-10.295998,11.747002t-14.396999,8.146996t-18.025,3.041q-15.123001,0 -27.679002,-8.091995q1.953,0.223 4.353,0.223q12.555999,0 22.377,-7.701004q-5.858999,-0.112 -10.490999,-3.598999t-6.362,-8.901001q1.842,0.279003 3.404,0.279003q2.4,0 4.743,-0.614002q-6.25,-1.283001 -10.352,-6.222t-4.102001,-11.467999l0,-0.223q3.795,2.120998 8.147001,2.287998q-3.683,-2.454998 -5.859001,-6.417t-2.176,-8.594q0,-4.910999 2.455,-9.095999q6.752,8.314999 16.434,13.309t20.731001,5.552q-0.445999,-2.121002 -0.445999,-4.129002q0,-7.477999 5.272999,-12.750999t12.750999,-5.273q7.812004,0 13.169998,5.692q6.083,-1.172001 11.440002,-4.353001q-2.065002,6.417 -7.923996,9.933001q5.189995,-0.558001 10.378998,-2.789999l0.001999,0.000999z" />
+                    <path
+                      id="svg_1"
+                      d="m90.402,22.768q-3.738998,5.469 -9.040001,9.319002q0.056,0.780998 0.056,2.343998q0,7.254002 -2.121002,14.480999t-6.445,13.867001t-10.295998,11.747002t-14.396999,8.146996t-18.025,3.041q-15.123001,0 -27.679002,-8.091995q1.953,0.223 4.353,0.223q12.555999,0 22.377,-7.701004q-5.858999,-0.112 -10.490999,-3.598999t-6.362,-8.901001q1.842,0.279003 3.404,0.279003q2.4,0 4.743,-0.614002q-6.25,-1.283001 -10.352,-6.222t-4.102001,-11.467999l0,-0.223q3.795,2.120998 8.147001,2.287998q-3.683,-2.454998 -5.859001,-6.417t-2.176,-8.594q0,-4.910999 2.455,-9.095999q6.752,8.314999 16.434,13.309t20.731001,5.552q-0.445999,-2.121002 -0.445999,-4.129002q0,-7.477999 5.272999,-12.750999t12.750999,-5.273q7.812004,0 13.169998,5.692q6.083,-1.172001 11.440002,-4.353001q-2.065002,6.417 -7.923996,9.933001q5.189995,-0.558001 10.378998,-2.789999l0.001999,0.000999z"
+                    />
                   </g>
                 </svg>
               </div>
             </a>
 
-            <i v-if="!data.results.social[0].facebook && !data.results.social[0].twitter">
+            <i
+              v-if="
+                !data.results.social[0].facebook &&
+                !data.results.social[0].twitter
+              "
+            >
               <b v-t="'no-social-media'"></b>
             </i>
           </span>
@@ -221,7 +233,7 @@ import links from '@/_mixins/links';
 
 export default {
   name: 'OsnovneInformacijePS',
-  components: { },
+  components: {},
   mixins: [
     common,
     memberOverview,
@@ -240,15 +252,18 @@ export default {
       return `${this.url}${this.data.person.id}?altHeader=true`;
     },
     age() {
-      return differenceInCalendarYears(new Date(), parseISO(this.data.results.birth_date));
+      return differenceInCalendarYears(
+        new Date(),
+        parseISO(this.data.results.birth_date)
+      );
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "parlassets/scss/breakpoints";
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .parlaicon-vodja {
   background-image: url("#{getConfig('urls.cdn')}/icons/vodja.svg");
@@ -262,7 +277,7 @@ export default {
 .parlaicon-kontakt {
   background-image: url("#{getConfig('urls.cdn')}/icons/kontakt.svg");
 }
-.parlaicon-omrezja{
+.parlaicon-omrezja {
   width: 30px;
   height: 30px;
   line-height: normal;
@@ -270,7 +285,9 @@ export default {
 
 .parlaicon-container {
   padding: 10px 16px;
-  @include respond-to(desktop) { min-width: 70px; }
+  @include respond-to(desktop) {
+    min-width: 70px;
+  }
 }
 
 .bordertop {
@@ -285,23 +302,34 @@ export default {
   margin: 0;
 }
 
-.bordertop, .bordertop0 { flex: 1; }
+.bordertop,
+.bordertop0 {
+  flex: 1;
+}
 
-.poslanec h3 { font-weight: 400; }
+.poslanec h3 {
+  font-weight: 400;
+}
 
 .verticalmember {
   width: 100%;
 
   .member_data {
     text-align: left;
-    h4 { margin: 5px 0; }
-    a { color: $font-placeholder; }
+    h4 {
+      margin: 5px 0;
+    }
+    a {
+      color: $font-placeholder;
+    }
   }
 
-  .img-responsive{
+  .img-responsive {
     width: 40px;
     margin: 10px 15px 10px 0;
-    @include respond-to(desktop) { margin-right: 25px; }
+    @include respond-to(desktop) {
+      margin-right: 25px;
+    }
   }
 }
 

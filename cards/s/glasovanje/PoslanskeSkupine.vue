@@ -5,10 +5,7 @@
         <div class="description">
           <div class="name">
             <template v-if="party.party.acronym">
-              <a
-                :href="getPartyLink(party.party)"
-                class="funblue-light-hover"
-              >
+              <a :href="getPartyLink(party.party)" class="funblue-light-hover">
                 {{ party.party.acronym }}
               </a>
             </template>
@@ -24,10 +21,15 @@
           <div class="votes">
             <striped-button
               v-for="vote in votes"
-              :class="{ 'lightning-badge': party.outliers && party.outliers.indexOf(vote.id) > -1 }"
-              :color="vote.id"
               :key="vote.id"
-              :selected="party.party.id === expandedParty && vote.id === expandedOption"
+              :class="{
+                'lightning-badge':
+                  party.outliers && party.outliers.indexOf(vote.id) > -1,
+              }"
+              :color="vote.id"
+              :selected="
+                party.party.id === expandedParty && vote.id === expandedOption
+              "
               :small-text="vote.label"
               :text="String(party.votes[vote.id])"
               :disabled="party.votes[vote.id] === 0"
@@ -35,21 +37,27 @@
             />
           </div>
         </div>
-        <div
-          v-if="party.party.id === expandedParty"
-          class="members"
-        >
+        <div v-if="party.party.id === expandedParty" class="members">
           <ul class="person-list">
-            <li v-for="member in expandedMembers" :key="member.person.id" class="item">
+            <li
+              v-for="member in expandedMembers"
+              :key="member.person.id"
+              class="item"
+            >
               <div class="column portrait">
-                <a :href="getMemberLink(member)"><img :src="getMemberPortrait(member)"></a>
+                <a :href="getMemberLink(member)"
+                  ><img :src="getMemberPortrait(member)"
+                /></a>
               </div>
               <div class="column name">
                 <a :href="getMemberLink(member)" class="funblue-light-hover">
                   {{ member.person.name }}
                 </a>
-                <br>
-                <a :href="getMemberPartyLink(member)" class="funblue-light-hover">
+                <br />
+                <a
+                  :href="getMemberPartyLink(member)"
+                  class="funblue-light-hover"
+                >
                   {{ member.person.party.acronym }}
                 </a>
               </div>
@@ -76,9 +84,7 @@ export default {
     Result,
     ScrollShadow,
   },
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     members: {
       type: Array,
@@ -117,16 +123,20 @@ export default {
     expandedMembers() {
       return this.members.filter((member) => {
         if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
-          return member.person.party.is_coalition === (this.expandedParty === 'coalition')
-            && member.option === this.expandedOption;
+          return (
+            member.person.party.is_coalition ===
+              (this.expandedParty === 'coalition') &&
+            member.option === this.expandedOption
+          );
         }
-        return member.person.party.id === this.expandedParty
-          && member.option === this.expandedOption;
+        return (
+          member.person.party.id === this.expandedParty &&
+          member.option === this.expandedOption
+        );
       });
     },
   },
-  watch: {
-  },
+  watch: {},
 
   mounted() {
     this.expandedParty = this.selectedParty;
@@ -146,7 +156,14 @@ export default {
         this.expandedParty = party;
         this.expandedOption = option;
         const thing = event.currentTarget;
-        $(thing).parents('.parties').scrollTop($(thing).parents('.parties').scrollTop() + $(thing).offset().top - $(thing).parents('.parties').offset().top - 10);
+        $(thing)
+          .parents('.parties')
+          .scrollTop(
+            $(thing).parents('.parties').scrollTop() +
+              $(thing).offset().top -
+              $(thing).parents('.parties').offset().top -
+              10
+          );
       }
 
       this.$parent.$parent.$parent.$emit('selectedparty', this.expandedParty);
@@ -166,87 +183,93 @@ export default {
   overflow-y: auto;
 }
 
-  .party {
-    background: $background;
-    margin-bottom: 12px;
-    padding: 10px 18px 14px;
-    @include respond-to(desktop) {
-      padding-bottom: 0;
-      padding-top: 0;
-    }
+.party {
+  background: $background;
+  margin-bottom: 12px;
+  padding: 10px 18px 14px;
+  @include respond-to(desktop) {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.description {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include respond-to(desktop) {
+    flex-wrap: nowrap;
+    height: 79px;
+  }
+}
+
+.name {
+  font-size: 14px;
+  min-width: 94px;
+
+  @include respond-to(desktop) {
+    font-size: 18px;
+    order: 1;
+    font-weight: 300;
+    flex: 0.8;
+  }
+}
+
+.votes {
+  display: flex;
+  width: 100%;
+
+  @include respond-to(desktop) {
+    order: 2;
+    width: 400px;
   }
 
-    .description {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      @include respond-to(desktop) {
-        flex-wrap: nowrap;
-        height: 79px;
-      }
+  .striped-button {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+}
+
+.result-chart {
+  flex: 1.2;
+
+  @include respond-to(desktop) {
+    max-width: 300px;
+    order: 3;
+    justify-content: center;
+  }
+
+  @include respond-to(mobile) {
+    display: flex;
+    flex: 0;
+
+    ::v-deep .donut-chart {
+      display: none;
     }
 
-      .name {
-        font-size: 14px;
-        min-width: 94px;
+    ::v-deep .text-container {
+      display: flex;
+      margin-right: 0;
+      width: auto;
+      white-space: nowrap;
 
-        @include respond-to(desktop) {
-          font-size: 18px;
-          order: 1;
-          font-weight: 300;
-          flex: 0.8;
-        }
+      .text {
+        margin-left: 15px;
       }
+    }
+  }
+}
 
-      .votes {
-        display: flex;
-        width: 100%;
-
-        @include respond-to(desktop) {
-          order: 2;
-          width: 400px;
-        }
-
-        .striped-button {
-          flex: 1;
-          &:not(:last-child) { margin-right: 6px; }
-        }
-      }
-
-      .result-chart {
-        flex: 1.2;
-
-        @include respond-to(desktop) {
-          max-width: 300px;
-          order: 3;
-          justify-content: center;
-        }
-
-        @include respond-to(mobile) {
-          display: flex;
-          flex: 0;
-
-          ::v-deep .donut-chart {
-            display: none;
-          }
-
-          ::v-deep .text-container {
-            display: flex;
-            margin-right: 0;
-            width: auto;
-            white-space: nowrap;
-
-            .text {
-              margin-left: 15px;
-            }
-          }
-        }
-      }
-
-      .members {
-        padding-top: 14px;
-        @include respond-to(desktop) { padding-top: 0; }
-        .person-list .item { border-color: $font-placeholder; }
-      }
+.members {
+  padding-top: 14px;
+  @include respond-to(desktop) {
+    padding-top: 0;
+  }
+  .person-list .item {
+    border-color: $font-placeholder;
+  }
+}
 </style>

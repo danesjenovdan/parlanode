@@ -12,7 +12,11 @@
       <p v-t="'info.text'" class="info-text"></p>
     </div>
 
-    <div v-t="'no-results'" v-if="rawSpeeches.length === 0 && !fetching" class="no-results"></div>
+    <div
+      v-if="rawSpeeches.length === 0 && !fetching"
+      v-t="'no-results'"
+      class="no-results"
+    ></div>
     <scroll-shadow v-else ref="shadow">
       <ul
         ref="scrollElement"
@@ -22,13 +26,13 @@
         <li v-for="speech in speeches" :key="speech.speech_id" class="person">
           <template v-if="speech.person.type === 'mp'">
             <a :href="speech.memberUrl" class="column portrait">
-              <img :src="speech.memberImageUrl">
+              <img :src="speech.memberImageUrl" />
             </a>
             <div class="column name">
               <a :href="speech.memberUrl" class="funblue-light-hover">
                 {{ speech.person.name }}
               </a>
-              <br>
+              <br />
               <template v-if="speech.partyUrl">
                 <a :href="speech.partyUrl" class="funblue-light-hover">
                   {{ speech.person.party.acronym }}
@@ -39,11 +43,9 @@
           </template>
           <template v-else>
             <div class="column portrait">
-              <img :src="speech.memberImageUrl">
+              <img :src="speech.memberImageUrl" />
             </div>
-            <div class="column name">
-              {{ speech.person.name }}<br>
-            </div>
+            <div class="column name">{{ speech.person.name }}<br /></div>
           </template>
 
           <div class="column date">{{ speech.formattedDate }}</div>
@@ -105,7 +107,9 @@ export default {
   computed: {
     generatedCardUrl() {
       const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     speeches() {
       return this.rawSpeeches.map((speech) => {
@@ -120,17 +124,25 @@ export default {
       });
     },
     searchUrl() {
-      return `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(this.keywords)}&page=${this.page}&people=${this.mps.join(',')}&parties=${this.pgs.join(',')}`;
+      return `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(
+        this.keywords
+      )}&page=${this.page}&people=${this.mps.join(',')}&parties=${this.pgs.join(
+        ','
+      )}`;
     },
   },
   mounted() {
-    axios.get(this.searchUrl)
+    axios
+      .get(this.searchUrl)
       .then((res) => {
         this.rawSpeeches = (res.data.response && res.data.response.docs) || [];
         this.allResults = res.data.response.numFound;
         this.fetching = false;
         if (this.allResults > PAGE_SIZE) {
-          this.$refs.scrollElement.addEventListener('scroll', this.checkIfBottom);
+          this.$refs.scrollElement.addEventListener(
+            'scroll',
+            this.checkIfBottom
+          );
         }
       })
       .catch((error) => {
@@ -153,12 +165,17 @@ export default {
       }
       this.fetching = true;
       this.page += 1;
-      axios.get(this.searchUrl)
+      axios
+        .get(this.searchUrl)
         .then((res) => {
-          const newSpeeches = (res.data.response && res.data.response.docs) || [];
+          const newSpeeches =
+            (res.data.response && res.data.response.docs) || [];
           this.rawSpeeches = this.rawSpeeches.concat(newSpeeches);
           if (this.allResults <= (this.page + 1) * PAGE_SIZE) {
-            this.$refs.scrollElement.removeEventListener('scroll', this.checkIfBottom);
+            this.$refs.scrollElement.removeEventListener(
+              'scroll',
+              this.checkIfBottom
+            );
           }
           this.fetching = false;
         })
@@ -227,9 +244,13 @@ export default {
     .person {
       flex-wrap: wrap;
 
-      .name { flex: 2; }
+      .name {
+        flex: 2;
+      }
 
-      .date { padding-right: 0; }
+      .date {
+        padding-right: 0;
+      }
 
       .quote {
         flex: none;

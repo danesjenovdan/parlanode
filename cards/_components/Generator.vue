@@ -13,13 +13,12 @@ export default {
   name: 'Generator',
   data() {
     return {
-      generator: this.$root.$options.cardData.parlaState
-        && this.$root.$options.cardData.parlaState.generator,
+      generator:
+        this.$root.$options.cardData.parlaState &&
+        this.$root.$options.cardData.parlaState.generator,
     };
   },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

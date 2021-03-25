@@ -18,9 +18,7 @@ import { defaultOgImage } from '@/_mixins/ogImages';
 
 export default {
   name: 'InDevelopment',
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
     const state = this.$options.cardData.parlaState;
     const title = state.title || this.$t('card.title');

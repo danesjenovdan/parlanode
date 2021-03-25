@@ -1,13 +1,22 @@
 <template>
   <div
-    v-click-outside="function() { toggleDropdown(false) }"
+    v-click-outside="
+      function () {
+        toggleDropdown(false);
+      }
+    "
     :class="['search-dropdown', { small: small }]"
   >
     <div
-      v-if="!hideClear && (selectedIds.length > 0 || (allowManualValue && manualValue))"
+      v-if="
+        !hideClear &&
+        (selectedIds.length > 0 || (allowManualValue && manualValue))
+      "
       class="search-dropdown-clear"
       @click="clearSelection"
-    >×</div>
+    >
+      ×
+    </div>
     <!--
       Don't use v-model="localFilter" because it doesn't work on mobile
       because of text composition (autocomplete/autocorrect)
@@ -23,17 +32,17 @@
       @keydown.enter.prevent="pressEnter"
       @keydown.up.prevent="focus(focused - 1, true)"
       @keydown.down.prevent="focus(focused + 1, true)"
-    >
+    />
     <ul
-      :class="['search-dropdown-options', { visible: active, up: up, empty: empty }]"
-      :style="{'margin-top': upMargin}"
+      :class="[
+        'search-dropdown-options',
+        { visible: active, up: up, empty: empty },
+      ]"
+      :style="{ 'margin-top': upMargin }"
       @mouseleave="focus(-1)"
     >
       <template v-for="(item, index) in filteredItems" :key="`${item.id}`">
-        <li
-          v-if="item.groupLabel"
-          class="search-dropdown-group-label"
-        >
+        <li v-if="item.groupLabel" class="search-dropdown-group-label">
           {{ item.groupLabel }}
         </li>
         <li
@@ -42,14 +51,10 @@
           @mouseenter="focus(index)"
         >
           <div class="search-dropdown-label">
-            <img
-              v-if="item.image"
-              :src="item.image"
-              class="image"
-            >
+            <img v-if="item.image" :src="item.image" class="image" />
             <span
               v-else-if="item.color"
-              :style="{background: item.color}"
+              :style="{ background: item.color }"
               class="color"
             />
             <span
@@ -151,50 +156,57 @@ export default {
       return this.filteredItems.length === 0;
     },
     filteredItems() {
-      const filterAndSort = items => items
-        .filter(item => (
-          item.selected || item.label.toLowerCase().indexOf(this.localFilter.toLowerCase()) > -1
-        ))
-        .map((item, index) => {
-          // eslint-disable-next-line no-param-reassign
-          item.sortIndex = index;
-          return item;
-        })
-        .sort((a, b) => {
-          if (!this.single) {
-            if (this.alphabetise && (Boolean(a.selected) === Boolean(b.selected))) {
-              return a.label.localeCompare(b.label, 'sl');
+      const filterAndSort = (items) =>
+        items
+          .filter(
+            (item) =>
+              item.selected ||
+              item.label.toLowerCase().indexOf(this.localFilter.toLowerCase()) >
+                -1
+          )
+          .map((item, index) => {
+            // eslint-disable-next-line no-param-reassign
+            item.sortIndex = index;
+            return item;
+          })
+          .sort((a, b) => {
+            if (!this.single) {
+              if (
+                this.alphabetise &&
+                Boolean(a.selected) === Boolean(b.selected)
+              ) {
+                return a.label.localeCompare(b.label, 'sl');
+              }
+
+              if (a.selected && !b.selected) {
+                return -1;
+              }
+              if (!a.selected && b.selected) {
+                return 1;
+              }
             }
 
-            if (a.selected && !b.selected) {
+            if (a.sortIndex < b.sortIndex) {
               return -1;
             }
-            if (!a.selected && b.selected) {
+            if (a.sortIndex > b.sortIndex) {
               return 1;
             }
-          }
 
-          if (a.sortIndex < b.sortIndex) {
-            return -1;
-          }
-          if (a.sortIndex > b.sortIndex) {
-            return 1;
-          }
-
-          return 0;
-        })
-        .map((item) => {
-          // eslint-disable-next-line no-param-reassign
-          delete item.sortIndex;
-          return item;
-        });
+            return 0;
+          })
+          .map((item) => {
+            // eslint-disable-next-line no-param-reassign
+            delete item.sortIndex;
+            return item;
+          });
 
       if (this.groups) {
         return this.groups
           .map((group) => {
-            const itemsFromGroup = filterAndSort(this.value.filter(item => (
-              group.items.indexOf(item.id) > -1
-            )));
+            const itemsFromGroup = filterAndSort(
+              this.value.filter((item) => group.items.indexOf(item.id) > -1)
+            );
 
             itemsFromGroup.forEach((item, index) => {
               // eslint-disable-next-line no-param-reassign
@@ -209,11 +221,13 @@ export default {
     },
     selectedIds() {
       return this.filteredItems
-        .filter(item => item.selected)
-        .map(item => item.id);
+        .filter((item) => item.selected)
+        .map((item) => item.id);
     },
     adjustedPlaceholder() {
-      const selectedItem = this.filteredItems.filter(item => item.selected)[0];
+      const selectedItem = this.filteredItems.filter(
+        (item) => item.selected
+      )[0];
 
       if (this.allowManualValue && !selectedItem && this.manualValue) {
         return this.manualValue;
@@ -224,7 +238,9 @@ export default {
       }
 
       if (this.single) {
-        return selectedItem ? selectedItem.label : this.$t('select-placeholder');
+        return selectedItem
+          ? selectedItem.label
+          : this.$t('select-placeholder');
       }
 
       if (this.placeholder) {
@@ -236,7 +252,10 @@ export default {
         : this.$t('select-placeholder');
     },
     largeItems() {
-      return this.value && (this.value[0].image || this.value[0].color || this.value[0].colorClass);
+      return (
+        this.value &&
+        (this.value[0].image || this.value[0].color || this.value[0].colorClass)
+      );
     },
   },
   watch: {
@@ -246,7 +265,11 @@ export default {
     active() {
       this.$nextTick(() => {
         if (this.up) {
-          this.upMargin = `-${this.$el.querySelector('.search-dropdown-options').getBoundingClientRect().height + 39}px`;
+          this.upMargin = `-${
+            this.$el
+              .querySelector('.search-dropdown-options')
+              .getBoundingClientRect().height + 39
+          }px`;
         }
       });
     },
@@ -278,17 +301,15 @@ export default {
       this.$emit('select', itemId);
       let newItems = JSON.parse(JSON.stringify(this.value));
       if (this.single) {
-        newItems = newItems
-          .map(item => ({
-            ...item,
-            selected: item.id === itemId,
-          }));
+        newItems = newItems.map((item) => ({
+          ...item,
+          selected: item.id === itemId,
+        }));
       } else {
-        newItems = newItems
-          .map(item => ({
-            ...item,
-            selected: item.id === itemId ? !item.selected : item.selected,
-          }));
+        newItems = newItems.map((item) => ({
+          ...item,
+          selected: item.id === itemId ? !item.selected : item.selected,
+        }));
       }
       this.$emit('input', newItems);
     },
@@ -300,29 +321,37 @@ export default {
     },
     clearSelection() {
       let newItems = JSON.parse(JSON.stringify(this.value));
-      newItems = newItems.map(item => ({ ...item, selected: false }));
+      newItems = newItems.map((item) => ({ ...item, selected: false }));
       this.$emit('clear');
       this.$emit('input', newItems);
     },
     focus(index, withKeyboard) {
       const multiplier = this.largeItems ? 2 : 1;
-      this.focused = Math.max(Math.min(this.filteredItems.length - 1, index), -1);
+      this.focused = Math.max(
+        Math.min(this.filteredItems.length - 1, index),
+        -1
+      );
 
       if (!withKeyboard) {
         return;
       }
 
-      const additionalOffset = this.filteredItems.slice(0, this.focused + 1)
-        .map(item => (item.groupLabel ? 1 : 0))
+      const additionalOffset = this.filteredItems
+        .slice(0, this.focused + 1)
+        .map((item) => (item.groupLabel ? 1 : 0))
         .reduce((a, b) => a + b, 0);
       const optionListEl = this.$el.lastChild;
-      const focusedPosition = (this.focused * multiplier + additionalOffset) * ITEM_HEIGHT;
+      const focusedPosition =
+        (this.focused * multiplier + additionalOffset) * ITEM_HEIGHT;
 
       if (focusedPosition < optionListEl.scrollTop) {
         optionListEl.scrollTop = focusedPosition;
-      } else if (focusedPosition > optionListEl.scrollTop
-        + ((ITEM_COUNT - multiplier) * ITEM_HEIGHT)) {
-        optionListEl.scrollTop = focusedPosition - ((ITEM_COUNT - multiplier) * ITEM_HEIGHT);
+      } else if (
+        focusedPosition >
+        optionListEl.scrollTop + (ITEM_COUNT - multiplier) * ITEM_HEIGHT
+      ) {
+        optionListEl.scrollTop =
+          focusedPosition - (ITEM_COUNT - multiplier) * ITEM_HEIGHT;
       }
     },
     generateItemClass(item, index) {
@@ -366,7 +395,9 @@ export default {
     line-height: 46px;
     padding: 0 5px;
 
-    &::after { content: none; }
+    &::after {
+      content: none;
+    }
 
     .image {
       border-radius: 50%;
@@ -388,7 +419,9 @@ export default {
     @include gradient('horizontal');
     // background: linear-gradient(to left, $first, $third);
     color: $white;
-    &::after { content: none; }
+    &::after {
+      content: none;
+    }
   }
 }
 </style>

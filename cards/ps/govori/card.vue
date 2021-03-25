@@ -1,9 +1,5 @@
 <template>
-  <govori
-    :card-data="$options.cardData"
-    :party="party"
-    type="party"
-  />
+  <govori :card-data="$options.cardData" :party="party" type="party" />
 </template>
 
 <script>
@@ -21,7 +17,8 @@ export default {
         return data.party;
       }
 
-      const partyId = data && data.filters && data.filters.parties && data.filters.parties[0];
+      const partyId =
+        data && data.filters && data.filters.parties && data.filters.parties[0];
       return {
         acronym: '???',
         is_coalition: true,

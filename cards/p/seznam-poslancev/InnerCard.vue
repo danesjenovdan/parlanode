@@ -37,11 +37,7 @@ export default {
     SortableTable,
     Pagination,
   },
-  mixins: [
-    common,
-    links,
-    memberList,
-  ],
+  mixins: [common, links, memberList],
   props: {
     demographics: {
       type: Boolean,
@@ -96,20 +92,33 @@ export default {
     },
     mappedMembers() {
       if (this.demographics) {
-        return this.processedMembers.map(member => [
-          { link: this.getMemberLink(member), image: this.getMemberPortrait(member) },
+        return this.processedMembers.map((member) => [
+          {
+            link: this.getMemberLink(member),
+            image: this.getMemberPortrait(member),
+          },
           { link: this.getMemberLink(member), text: member.person.name },
           member.age,
           member.education,
           member.terms,
-          { link: member.partylink ? this.getMemberPartyLink(member) : '', text: member.person.party.acronym },
+          {
+            link: member.partylink ? this.getMemberPartyLink(member) : '',
+            text: member.person.party.acronym,
+          },
           member.formattedDistrict,
         ]);
       }
-      return this.processedMembers.map(member => [
-        { link: this.getMemberLink(member), image: this.getMemberPortrait(member) },
+      return this.processedMembers.map((member) => [
+        {
+          link: this.getMemberLink(member),
+          image: this.getMemberPortrait(member),
+        },
         { link: this.getMemberLink(member), text: member.person.name },
-        { barchart: true, value: member.analysisValue, width: member.analysisPercentage },
+        {
+          barchart: true,
+          value: member.analysisValue,
+          width: member.analysisPercentage,
+        },
         member.analysisDiff,
       ]);
     },
@@ -119,16 +128,32 @@ export default {
           { id: 'image', label: '', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
           { id: 'age', label: this.$t('age') },
-          { id: 'education', label: this.$t('education'), additionalClass: 'optional' },
-          { id: 'terms', label: this.$t('number-of-terms'), additionalClass: 'optional' },
+          {
+            id: 'education',
+            label: this.$t('education'),
+            additionalClass: 'optional',
+          },
+          {
+            id: 'terms',
+            label: this.$t('number-of-terms'),
+            additionalClass: 'optional',
+          },
           { id: 'party', label: this.$t('party'), additionalClass: 'optional' },
-          { id: 'district', label: this.$t('district'), additionalClass: 'optional' },
+          {
+            id: 'district',
+            label: this.$t('district'),
+            additionalClass: 'optional',
+          },
         ];
       }
       return [
         { id: 'image', label: '', additionalClass: 'portrait' },
         { id: 'name', label: this.$t('name'), additionalClass: 'name' },
-        { id: 'analysis', label: this.$t('analysis'), additionalClass: 'wider barchartcontainer' },
+        {
+          id: 'analysis',
+          label: this.$t('analysis'),
+          additionalClass: 'wider barchartcontainer',
+        },
         { id: 'change', label: this.$t('change') },
       ];
     },

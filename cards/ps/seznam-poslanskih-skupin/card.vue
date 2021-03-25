@@ -4,10 +4,7 @@
       <div slot="generator" class="party-list-generator">
         <div class="row">
           <div class="col-md-12">
-            <blue-button-list
-              :items="analyses"
-              v-model="currentAnalysis"
-            />
+            <blue-button-list v-model="currentAnalysis" :items="analyses" />
           </div>
         </div>
       </div>
@@ -82,47 +79,65 @@ export default {
     BlueButtonList,
     InnerCard,
   },
-  mixins: [
-    common,
-  ],
+  mixins: [common],
   data() {
-    const analyses = analysesIDs.map(a => ({
+    const analyses = analysesIDs.map((a) => ({
       ...a,
-      label: this.$te(`analysis-texts.${a.id}.label`) ? this.$t(`analysis-texts.${a.id}.label`) : '',
-      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`) ? this.$t(`analysis-texts.${a.id}.titleSuffix`) : '',
-      explanation: this.$te(`analysis-texts.${a.id}.explanation`) ? this.$t(`analysis-texts.${a.id}.explanation`) : '',
+      label: this.$te(`analysis-texts.${a.id}.label`)
+        ? this.$t(`analysis-texts.${a.id}.label`)
+        : '',
+      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
+        ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
+        : '',
+      explanation: this.$te(`analysis-texts.${a.id}.explanation`)
+        ? this.$t(`analysis-texts.${a.id}.explanation`)
+        : '',
     }));
 
     return {
       data: this.$options.cardData.data.data,
-      currentAnalysis: this.$options.cardData.parlaState.analysis || 'seat_count',
+      currentAnalysis:
+        this.$options.cardData.parlaState.analysis || 'seat_count',
       analyses,
     };
   },
   computed: {
     headerConfig() {
       return defaultHeaderConfig(this, {
-        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+        title: `${this.$t('card.title')} ${
+          this.currentAnalysisData.titleSuffix
+        }`,
       });
     },
     ogConfig() {
       return defaultOgImage(this, {
-        title: `${this.$t('card.title')} ${this.currentAnalysisData.titleSuffix}`,
+        title: `${this.$t('card.title')} ${
+          this.currentAnalysisData.titleSuffix
+        }`,
       });
     },
     currentAnalysisData() {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     processedPartyData() {
-      const maxValue = this.data.reduce((oldValue, nextParty) => (
-        Math.max(oldValue, nextParty.results[this.currentAnalysis])
-      ), 0);
+      const maxValue = this.data.reduce(
+        (oldValue, nextParty) =>
+          Math.max(oldValue, nextParty.results[this.currentAnalysis]),
+        0
+      );
 
       return this.data.map((party) => {
         const rawValue = party.results[this.currentAnalysis];
         const newParty = JSON.parse(JSON.stringify(party));
-        newParty.displayValue = (this.round(rawValue, this.currentAnalysisData.roundingPrecision || 1) + (this.currentAnalysisData.unit === 'percent' ? '%' : '')).replace('.', ',');
-        newParty.chartWidth = rawValue ? `${(rawValue / maxValue) * 80}%` : '1px';
+        newParty.displayValue = (
+          this.round(
+            rawValue,
+            this.currentAnalysisData.roundingPrecision || 1
+          ) + (this.currentAnalysisData.unit === 'percent' ? '%' : '')
+        ).replace('.', ',');
+        newParty.chartWidth = rawValue
+          ? `${(rawValue / maxValue) * 80}%`
+          : '1px';
         return newParty;
       });
     },
@@ -134,7 +149,11 @@ export default {
       return params;
     },
     generatedCardUrl() {
-      const state = `${Object.keys(this.urlParameters).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}` : ''}`;
+      const state = `${
+        Object.keys(this.urlParameters).length > 0
+          ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}`
+          : ''
+      }`;
       return `${this.url}?altHeader=true${state}`;
     },
   },

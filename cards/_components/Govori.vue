@@ -20,10 +20,7 @@
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div v-if="type === 'party'" class="filter month-dropdown">
         <div v-t="'mps'" class="filter-label"></div>
-        <p-search-dropdown
-          v-model="allPeople"
-          @input="searchSpeakings"
-        />
+        <p-search-dropdown v-model="allPeople" @input="searchSpeakings" />
       </div>
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div class="filter month-dropdown">
@@ -48,16 +45,20 @@
     <div class="speaks">
       <scroll-shadow ref="shadow">
         <div
-          v-infinite-scroll="loadMore"
           id="speaks"
+          v-infinite-scroll="loadMore"
           infinite-scroll-disabled="busy"
           infinite-scroll-distance="10"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
           <div v-for="(speakingDay, key) in groupSpeakingDays" :key="key">
             <div class="date">
-              {{ speakingDay[0].formattedDate }}, {{ speakingDay[0].session.name }},
-              {{ ' ' + speakingDay[0].session.orgs.map(org => org.name).join(', ') }}
+              {{ speakingDay[0].formattedDate }},
+              {{ speakingDay[0].session.name }},
+              {{
+                ' ' +
+                speakingDay[0].session.orgs.map((org) => org.name).join(', ')
+              }}
             </div>
             <ul class="speaks__list">
               <govor
@@ -68,7 +69,11 @@
               />
             </ul>
           </div>
-          <div v-t="'no-results'" v-if="speakingDays.length===0" class="empty-dataset"></div>
+          <div
+            v-if="speakingDays.length === 0"
+            v-t="'no-results'"
+            class="empty-dataset"
+          ></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -103,10 +108,7 @@ export default {
     Govor,
     ScrollShadow,
   },
-  mixins: [
-    common,
-    generateMonths,
-  ],
+  mixins: [common, generateMonths],
   props: {
     cardData: {
       type: Object,
@@ -115,7 +117,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['person', 'party'].indexOf(value) > -1,
+      validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
     person: {
       type: Object,
@@ -136,15 +138,18 @@ export default {
       month.selected = (state.months || []).indexOf(month.id) !== -1;
     });
 
-    const allWorkingBodies = (this.cardData.data.organizations || []).map(org => ({
-      label: org.name,
-      id: org.id,
-      selected: (state.wb || []).indexOf(org.id) !== -1,
-    }));
+    const allWorkingBodies = (this.cardData.data.organizations || []).map(
+      (org) => ({
+        label: org.name,
+        id: org.id,
+        selected: (state.wb || []).indexOf(org.id) !== -1,
+      })
+    );
 
-    const textFilter = (state.textFilter && state.textFilter.length && state.textFilter !== '*')
-      ? state.textFilter
-      : '';
+    const textFilter =
+      state.textFilter && state.textFilter.length && state.textFilter !== '*'
+        ? state.textFilter
+        : '';
 
     return {
       card: {
@@ -153,7 +158,8 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      speakingDays: (this.cardData.data.response && this.cardData.data.response.docs) || [],
+      speakingDays:
+        (this.cardData.data.response && this.cardData.data.response.docs) || [],
       textFilter,
       allMonths,
       allWorkingBodies,
@@ -168,20 +174,24 @@ export default {
         state.people = this.person.id;
       } else if (this.type === 'party') {
         state.parties = this.party.id;
-        state.people = this.selectedPeople.map(p => p.id);
+        state.people = this.selectedPeople.map((p) => p.id);
       }
 
       if (this.selectedMonths.length > 0) {
-        state.months = this.selectedMonths.map(m => m.id);
+        state.months = this.selectedMonths.map((m) => m.id);
       }
 
       if (this.selectedWorkingBodies.length > 0) {
-        state.wb = this.selectedWorkingBodies.map(org => org.id);
+        state.wb = this.selectedWorkingBodies.map((org) => org.id);
       }
 
       state.textFilter = this.textFilter || '*';
 
-      return `${this.url}${this.type === 'person' ? this.person.id : this.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&customUrl=${encodeURIComponent(this.searchUrl)}`;
+      return `${this.url}${
+        this.type === 'person' ? this.person.id : this.party.id
+      }?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&customUrl=${encodeURIComponent(this.searchUrl)}`;
     },
     searchUrl() {
       const state = {};
@@ -190,19 +200,19 @@ export default {
         state.people = this.person.id;
       } else if (this.type === 'party') {
         state.parties = this.party.id;
-        state.people = this.selectedPeople.map(p => p.id).join(',');
+        state.people = this.selectedPeople.map((p) => p.id).join(',');
       }
 
       if (this.selectedMonths.length > 0) {
-        state.months = this.selectedMonths.map(m => m.id).join(',');
+        state.months = this.selectedMonths.map((m) => m.id).join(',');
       }
 
       if (this.selectedWorkingBodies.length > 0) {
-        state.wb = this.selectedWorkingBodies.map(s => s.id);
+        state.wb = this.selectedWorkingBodies.map((s) => s.id);
       }
 
       if (this.selectedPeople.length > 0) {
-        state.people = this.selectedPeople.map(person => person.id);
+        state.people = this.selectedPeople.map((person) => person.id);
       }
 
       if (this.textFilter.length && this.textFIlter !== '*') {
@@ -221,22 +231,21 @@ export default {
       return `${this.slugs.urls.isci}/search/speeches${encodedQueryData}`;
     },
     selectedWorkingBodies() {
-      return this.allWorkingBodies.filter(session => session.selected);
+      return this.allWorkingBodies.filter((session) => session.selected);
     },
     selectedMonths() {
-      return this.allMonths.filter(month => month.selected);
+      return this.allMonths.filter((month) => month.selected);
     },
     selectedPeople() {
-      return this.allPeople.filter(person => person.selected);
+      return this.allPeople.filter((person) => person.selected);
     },
     groupSpeakingDays() {
-      return this.speakingDays
-        .reduce((r, a) => {
-          const key = `${a.start_time}__${a.session_id}`;
-          r[key] = r[key] || [];
-          r[key].push({ ...a, formattedDate: dateFormatter(a.start_time) });
-          return r;
-        }, Object.create(null));
+      return this.speakingDays.reduce((r, a) => {
+        const key = `${a.start_time}__${a.session_id}`;
+        r[key] = r[key] || [];
+        r[key].push({ ...a, formattedDate: dateFormatter(a.start_time) });
+        return r;
+      }, Object.create(null));
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -252,18 +261,23 @@ export default {
     },
   },
   created() {
-    (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(this);
+    (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(
+      this
+    );
     (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
 
     if (this.type === 'party') {
-      axios.get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.party.id}`).then((response) => {
-        this.allPeople = response.data.results.map(person => ({
-          id: person.id,
-          name: person.name,
-          label: person.name,
-          selected: (this.cardData.parlaState.people || []).indexOf(person.id) !== -1,
-        }));
-      });
+      axios
+        .get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.party.id}`)
+        .then((response) => {
+          this.allPeople = response.data.results.map((person) => ({
+            id: person.id,
+            name: person.name,
+            label: person.name,
+            selected:
+              (this.cardData.parlaState.people || []).indexOf(person.id) !== -1,
+          }));
+        });
     }
   },
   mounted() {
@@ -294,7 +308,9 @@ export default {
       this.card.currentPage += 1;
 
       axios.get(this.searchUrl).then((response) => {
-        this.speakingDays = this.speakingDays.concat(response.data.response.docs);
+        this.speakingDays = this.speakingDays.concat(
+          response.data.response.docs
+        );
 
         this.card.isLoading = false;
 
@@ -310,7 +326,8 @@ export default {
         this.card.lockLoading = true;
         setTimeout(() => {
           if (document) {
-            this.card.shouldShadow = document.getElementById('speaks').scrollTop > 0;
+            this.card.shouldShadow =
+              document.getElementById('speaks').scrollTop > 0;
           }
           this.card.lockLoading = false;
         }, 200);
@@ -351,8 +368,7 @@ export default {
   display: flex;
 
   .option-party-buttons {
-    @include show-for(desktop,
-    flex);
+    @include show-for(desktop, flex);
     width: 27.5%;
     padding-top: 26px;
     .party-button:not(:last-child) {

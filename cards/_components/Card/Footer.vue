@@ -2,7 +2,10 @@
   <div class="card-footer">
     <div class="card-logo hidden">
       <a :href="slugs.urls.base">
-        <img :src="`${slugs.urls.cdn}/img/logo-parlameter.svg`" alt="parlameter logo">
+        <img
+          :src="`${slugs.urls.cdn}/img/logo-parlameter.svg`"
+          alt="parlameter logo"
+        />
       </a>
     </div>
 
@@ -12,11 +15,10 @@
       :class="[
         'card-circle-button-vue',
         `card-${button}`,
-        { 'card-exit': currentBack === button }
+        { 'card-exit': currentBack === button },
       ]"
       @click="toggleBack(button)"
-    >
-    </div>
+    ></div>
   </div>
 </template>
 
@@ -35,7 +37,10 @@ export default {
   },
   computed: {
     buttons() {
-      const previous = get(this.$root.$options.cardData.data, 'previous_versions');
+      const previous = get(
+        this.$root.$options.cardData.data,
+        'previous_versions'
+      );
       if (previous && previous.length) {
         return ['share', 'embed', 'info', 'previous'];
       }

@@ -25,11 +25,7 @@ export default {
   components: {
     PrisotnostChart,
   },
-  mixins: [
-    common,
-    memberOverview,
-    memberTitle,
-  ],
+  mixins: [common, memberOverview, memberTitle],
   computed: {
     generatedCardUrl() {
       return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;

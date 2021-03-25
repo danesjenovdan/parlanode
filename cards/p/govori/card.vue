@@ -1,9 +1,5 @@
 <template>
-  <govori
-    :card-data="$options.cardData"
-    :person="person"
-    type="person"
-  />
+  <govori :card-data="$options.cardData" :person="person" type="person" />
 </template>
 
 <script>
@@ -21,7 +17,8 @@ export default {
         return data.person;
       }
 
-      const personId = data && data.filters && data.filters.people && data.filters.people[0];
+      const personId =
+        data && data.filters && data.filters.people && data.filters.people[0];
       return {
         name: '???',
         district: null,

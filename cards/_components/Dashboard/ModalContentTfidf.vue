@@ -12,7 +12,7 @@
         <button class="btn btn-danger" @click="removeWord(i)">×</button>
       </div>
       <div class="col-md-5">
-        <input v-model="e.term" class="form-control">
+        <input v-model="e.term" class="form-control" />
       </div>
       <div class="col-md-1">
         <label>{{ e.scores.tf }}</label>
@@ -49,7 +49,7 @@ export default {
   margin-left: -5px;
   margin-right: -5px;
 
-  > [class*="col-"] {
+  > [class*='col-'] {
     padding-left: 5px;
     padding-right: 5px;
   }

@@ -1,37 +1,43 @@
 <template>
-  <div :class="{'show-documents': documents.length > 0}" class="excerpt">
+  <div :class="{ 'show-documents': documents.length > 0 }" class="excerpt">
     <div
       v-if="icon"
-      :class="{'show-parent': showParent}"
+      :class="{ 'show-parent': showParent }"
       class="icon-container"
     >
       <div
-        :style="{'background-image': `url('${slugs.urls.cdn}/icons/legislation/${icon}')`}"
+        :style="{
+          'background-image': `url('${slugs.urls.cdn}/icons/legislation/${icon}')`,
+        }"
         class="icon"
       />
     </div>
     <div
-      v-if="content || (content.length !== 0)"
-      :class="{'show-parent': showParent, 'show-documents': documents.length > 0}"
+      v-if="content || content.length !== 0"
+      :class="{
+        'show-parent': showParent,
+        'show-documents': documents.length > 0,
+      }"
       class="rich-text"
     >
-      <div class="text-container" v-html="content">
-      </div>
+      <div class="text-container" v-html="content"></div>
     </div>
     <div v-else class="no-abstract">
       <p v-t="'no-abstract'"></p>
     </div>
     <div
-      v-if="((mainLaw.epa !== '') && showParent) || (documents.length !== 0)"
+      v-if="(mainLaw.epa !== '' && showParent) || documents.length !== 0"
       class="metacontainer"
     >
-      <hr>
+      <hr />
       <div class="metadata">
-        <div v-if="(mainLaw.epa !== '') && showParent" class="main-law-label">
+        <div v-if="mainLaw.epa !== '' && showParent" class="main-law-label">
           Matični zakon:
         </div>
         <div class="main-law-name">
-          <a v-if="(mainLaw.epa !== '') && showParent" :href="mainLaw.link">{{ mainLaw.name }}</a>
+          <a v-if="mainLaw.epa !== '' && showParent" :href="mainLaw.link">{{
+            mainLaw.name
+          }}</a>
         </div>
         <div v-if="documents.length > 0" class="documents">
           <p-search-dropdown
@@ -88,7 +94,10 @@ export default {
     mappedDocuments() {
       return this.documents.map((document, index) => ({
         id: document.name + index,
-        label: document.name.substring(0, 3) === ' | ' ? `Dokument brez imena${document.name}` : document.name,
+        label:
+          document.name.substring(0, 3) === ' | '
+            ? `Dokument brez imena${document.name}`
+            : document.name,
         selected: false,
         url: document.url,
       }));
@@ -105,11 +114,11 @@ export default {
 
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
-@import "parlassets/scss/colors";
+@import 'parlassets/scss/colors';
 
 .excerpt {
   font-size: 13px;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 300;
   line-height: 1.5em;
   margin: 12px 0;
@@ -135,7 +144,9 @@ hr {
 
 .metadata {
   font-size: 14px;
-  @include respond-to(desktop) { display: flex; }
+  @include respond-to(desktop) {
+    display: flex;
+  }
 
   .main-law-label {
     background-image: url("#{getConfig('urls.cdn')}/icons/zakon.svg");
@@ -191,7 +202,6 @@ hr {
       background-color: $white;
       border-radius: 50%;
       align-self: center;
-
     }
     // padding-left: 20px;
     // padding-right: 20px;
@@ -212,7 +222,7 @@ hr {
     }
 
     .text-container {
-      width:100%;
+      width: 100%;
     }
 
     &.show-parent,
@@ -319,5 +329,4 @@ hr {
 .search-dropdown-label {
   font-family: 'Roboto', sans-serif;
 }
-
 </style>

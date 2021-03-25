@@ -7,7 +7,7 @@
             <label>{{ $t('name') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org._name" class="form-control">
+            <input v-model="loadedData.org._name" class="form-control" />
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
             <label>name_parser</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org.name_parser" class="form-control">
+            <input v-model="loadedData.org.name_parser" class="form-control" />
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
             <label>{{ $t('acronym') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org._acronym" class="form-control">
+            <input v-model="loadedData.org._acronym" class="form-control" />
           </div>
         </div>
       </div>
@@ -37,7 +37,10 @@
             <label>{{ $t('classification') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org.classification" class="form-control">
+            <input
+              v-model="loadedData.org.classification"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -47,7 +50,11 @@
             <label>{{ $t('number-of-votes') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.org.voters" class="form-control" type="number">
+            <input
+              v-model.number="loadedData.org.voters"
+              class="form-control"
+              type="number"
+            />
           </div>
         </div>
       </div>
@@ -57,7 +64,7 @@
             <label>GOV ID</label>
           </div>
           <div class="col-md-12">
-            <input v-model="loadedData.org.gov_id" class="form-control">
+            <input v-model="loadedData.org.gov_id" class="form-control" />
           </div>
         </div>
       </div>
@@ -67,7 +74,11 @@
             <label>{{ $t('coalition') }}</label>
           </div>
           <div class="col-md-12">
-            <input v-model.number="loadedData.org.is_coalition" class="form-control" type="number">
+            <input
+              v-model.number="loadedData.org.is_coalition"
+              class="form-control"
+              type="number"
+            />
           </div>
         </div>
       </div>
@@ -97,15 +108,23 @@
             <label>{{ $t('dissolution-time') }}</label>
           </div>
           <div class="col-md-6">
-            <input v-model="loadedData.org.dissolution_date" class="form-control" type="date">
+            <input
+              v-model="loadedData.org.dissolution_date"
+              class="form-control"
+              type="date"
+            />
           </div>
           <div class="col-md-6">
-            <input v-model="loadedData.org.dissolution_time" class="form-control" type="time">
+            <input
+              v-model="loadedData.org.dissolution_time"
+              class="form-control"
+              type="time"
+            />
           </div>
         </div>
       </div>
       <div class="col-md-12">
-        <hr>
+        <hr />
       </div>
       <div class="col-md-6">
         <div class="row">
@@ -113,7 +132,10 @@
             <label>Facebook</label>
           </div>
           <div class="col-md-12 small">
-            <textarea v-model.trim="loadedData.socials.facebook" class="form-control" />
+            <textarea
+              v-model.trim="loadedData.socials.facebook"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -123,7 +145,10 @@
             <label>Twitter</label>
           </div>
           <div class="col-md-12 small">
-            <textarea v-model.trim="loadedData.socials.twitter" class="form-control" />
+            <textarea
+              v-model.trim="loadedData.socials.twitter"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -133,7 +158,10 @@
             <label>Contact Emails</label>
           </div>
           <div class="col-md-12 small">
-            <textarea v-model.trim="loadedData.contacts.emails" class="form-control" />
+            <textarea
+              v-model.trim="loadedData.contacts.emails"
+              class="form-control"
+            />
           </div>
         </div>
       </div>
@@ -158,7 +186,7 @@ export default {
   },
   computed: {
     possibleParents() {
-      return this.loadedData.orgs.map(org => ({
+      return this.loadedData.orgs.map((org) => ({
         id: org.id,
         label: `${org._acronym} - ${org._name}`,
         selected: org.id === this.loadedData.org.parent,
@@ -173,7 +201,7 @@ export default {
   margin-left: -5px;
   margin-right: -5px;
 
-  > [class*="col-"] {
+  > [class*='col-'] {
     padding-left: 5px;
     padding-right: 5px;
   }

@@ -70,8 +70,8 @@
         <div class="filter-content">
           <striped-button
             v-for="voteType in voteTypes"
-            :color="voteType.color"
             :key="voteType.id"
+            :color="voteType.color"
             :selected="selectedVoteTypes.indexOf(voteType.id) > -1"
             :small-text="voteType.label"
             @click.native="toggleVoteType(voteType.id)"
@@ -93,11 +93,14 @@
         >
           <a :href="vote.url">
             <div v-if="vote.is_outlier" class="fire-badge"></div>
-            <div v-if="vote.has_outliers && vote.is_outlier" class="lightning-badge"></div>
+            <div
+              v-if="vote.has_outliers && vote.is_outlier"
+              class="lightning-badge"
+            ></div>
             <div
               v-if="vote.has_outliers && !vote.is_outlier"
               class="lightning-badge"
-              style="left: -37px; position: absolute;"
+              style="left: -37px; position: absolute"
             ></div>
             <div class="col-md-1">
               <div :class="vote.accepted">
@@ -119,25 +122,33 @@
                       :style="{ width: `${vote.percent_for}%` }"
                       class="progress-bar fontblue"
                     >
-                      <span class="sr-only">{{ vote.percent_for }}% votes for</span>
+                      <span class="sr-only"
+                        >{{ vote.percent_for }}% votes for</span
+                      >
                     </div>
                     <div
                       :style="{ width: `${vote.percent_against}%` }"
                       class="progress-bar funblue"
                     >
-                      <span class="sr-only">{{ vote.percent_against }}% votes against</span>
+                      <span class="sr-only"
+                        >{{ vote.percent_against }}% votes against</span
+                      >
                     </div>
                     <div
                       :style="{ width: `${vote.percent_abstain}%` }"
                       class="progress-bar ignoreblue"
                     >
-                      <span class="sr-only">{{ vote.percent_abstain }}% votes abstained</span>
+                      <span class="sr-only"
+                        >{{ vote.percent_abstain }}% votes abstained</span
+                      >
                     </div>
                     <div
                       :style="{ width: `${vote.percent_absent}%` }"
                       class="progress-bar noblue"
                     >
-                      <span class="sr-only">{{ vote.percent_absent }}% not present</span>
+                      <span class="sr-only"
+                        >{{ vote.percent_absent }}% not present</span
+                      >
                     </div>
                   </div>
                   <div class="row">
@@ -208,17 +219,32 @@ export default {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
 
     const voteTypes = [
-      { id: true, color: 'binary-for', label: this.$t('accepted'), selected: false },
-      { id: false, color: 'binary-against', label: this.$t('rejected'), selected: false },
+      {
+        id: true,
+        color: 'binary-for',
+        label: this.$t('accepted'),
+        selected: false,
+      },
+      {
+        id: false,
+        color: 'binary-against',
+        label: this.$t('rejected'),
+        selected: false,
+      },
     ];
 
-    const votingDays = this.$options.cardData.data.results.map(votingDay => ({
+    const votingDays = this.$options.cardData.data.results.map((votingDay) => ({
       date: votingDay.date,
-      results: votingDay.votes.map(vote => voteMapper(vote, this.getSessionVoteLink)),
+      results: votingDay.votes.map((vote) =>
+        voteMapper(vote, this.getSessionVoteLink)
+      ),
     }));
 
-    const allTags = this.$options.cardData.data.all_tags
-      .map(tag => ({ id: tag, label: tag, selected: false }));
+    const allTags = this.$options.cardData.data.all_tags.map((tag) => ({
+      id: tag,
+      label: tag,
+      selected: false,
+    }));
 
     const allMonths = this.generateMonths(this.$t('months'));
 
@@ -248,7 +274,9 @@ export default {
         state.text = this.textFilter;
       }
 
-      return `${this.url}${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `${this.url}${this.data.party.id}?state=${encodeURIComponent(
+        JSON.stringify(state)
+      )}&altHeader=true`;
     },
     filteredVotingDays() {
       return this.getFilteredVotingDays();
@@ -272,43 +300,48 @@ export default {
       });
 
       return {
-        tags: this.allTags
-          .filter(tag => validTags.indexOf(tag.id) > -1 || tag.selected),
-        months: this.allMonths
-          .filter(month => validMonths.indexOf(month.id) > -1 || month.selected),
+        tags: this.allTags.filter(
+          (tag) => validTags.indexOf(tag.id) > -1 || tag.selected
+        ),
+        months: this.allMonths.filter(
+          (month) => validMonths.indexOf(month.id) > -1 || month.selected
+        ),
       };
     },
     selectedTags() {
-      return this.allTags
-        .filter(tag => tag.selected)
-        .map(tag => tag.id);
+      return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
     },
     selectedMonths() {
       return this.allMonths
-        .filter(month => month.selected)
-        .map(month => month.id);
+        .filter((month) => month.selected)
+        .map((month) => month.id);
     },
     selectedVoteTypes() {
       return this.voteTypes
-        .filter(voteType => voteType.selected)
-        .map(voteType => voteType.id);
+        .filter((voteType) => voteType.selected)
+        .map((voteType) => voteType.id);
     },
   },
   methods: {
     getFilteredVotingDays(onlyFilterByText = false) {
       const filterVotes = (vote) => {
-        const textMatch = this.textFilter === '' || vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
-        const tagMatch = onlyFilterByText
-            || this.selectedTags.length === 0
-            || vote.tags.filter(tag => this.selectedTags.indexOf(tag) > -1).length > 0;
-        const voteTypeMatch = onlyFilterByText
-            || this.selectedVoteTypes.length === 0
-            || this.selectedVoteTypes.indexOf(vote.result) > -1;
+        const textMatch =
+          this.textFilter === '' ||
+          vote.text.toLowerCase().indexOf(this.textFilter.toLowerCase()) > -1;
+        const tagMatch =
+          onlyFilterByText ||
+          this.selectedTags.length === 0 ||
+          vote.tags.filter((tag) => this.selectedTags.indexOf(tag) > -1)
+            .length > 0;
+        const voteTypeMatch =
+          onlyFilterByText ||
+          this.selectedVoteTypes.length === 0 ||
+          this.selectedVoteTypes.indexOf(vote.result) > -1;
         return textMatch && tagMatch && voteTypeMatch;
       };
 
       return this.votingDays
-        .map(votingDay => ({
+        .map((votingDay) => ({
           date: votingDay.date,
           results: votingDay.results.filter(filterVotes),
         }))
@@ -317,9 +350,11 @@ export default {
             return false;
           }
           const monthId = formattedDateToMonthId(votingDay.date);
-          return onlyFilterByText
-              || this.selectedMonths.length === 0
-              || this.selectedMonths.indexOf(monthId) > -1;
+          return (
+            onlyFilterByText ||
+            this.selectedMonths.length === 0 ||
+            this.selectedMonths.indexOf(monthId) > -1
+          );
         });
     },
     toggleVoteType(voteTypeId) {
@@ -344,220 +379,233 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import 'parlassets/scss/breakpoints';
-  @import 'parlassets/scss/colors';
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
-  .card-header h1,
-  .card-footer h1 {
-    color: $font-placeholder;
+.card-header h1,
+.card-footer h1 {
+  color: $font-placeholder;
+}
+
+#votingCard {
+  height: 500px;
+  overflow-y: auto;
+}
+
+#votingCard div.member span {
+  color: $font-placeholder;
+  font-weight: 500;
+}
+
+#votingCard .member:last-child {
+  border: none;
+}
+
+#votingCard .member.lastel {
+  border: none;
+  padding-bottom: 10px;
+}
+
+.session_voting {
+  font-weight: 400;
+  padding: 0;
+
+  .session_votes .progress.smallbar {
+    height: 15px;
   }
 
-  #votingCard {
-    height: 500px;
-    overflow-y: auto;
-  }
+  .session_votes {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 15px 0 10px 0;
 
-  #votingCard div.member span {
-    color: $font-placeholder;
-    font-weight: 500;
-  }
-
-  #votingCard .member:last-child {
-    border: none;
-  }
-
-  #votingCard .member.lastel {
-    border: none;
-    padding-bottom: 10px;
-  }
-
-  .session_voting {
-    font-weight: 400;
-    padding: 0;
-
-    .session_votes .progress.smallbar {
-      height: 15px;
+    .type {
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
     }
-
-    .session_votes {
-      font-size: 30px;
-      line-height: 40px;
-      margin: 15px 0 10px 0;
-
-      .type {
-        font-size: 14px;
-        line-height: 20px;
-        text-transform: uppercase;
-      }
-    }
-
   }
+}
 
-  .session_voting {
-    padding-left: 10px;
-    .accepted {
-      line-height: normal;
-      height: 95px;
-      p {
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+.session_voting {
+  padding-left: 10px;
+  .accepted {
+    line-height: normal;
+    height: 95px;
+    p {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
 
-        margin: 0;
-        line-height: 30px;
-        margin-top: 6px;
-      }
-    }
-    .session_title {
-      height: 95px;
       margin: 0;
-      @include respond-to(mobile) {
-        margin-top: 15px;
-        margin-bottom: 10px;
-      }
-      p {
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        font-family: Roboto Slab;
-        margin-top: 6px;
-      }
+      line-height: 30px;
+      margin-top: 6px;
     }
   }
-
-
-  @media (max-width: 991px) {
-    .session_voting .session_title {
-      height: 93px;
+  .session_title {
+    height: 95px;
+    margin: 0;
+    @include respond-to(mobile) {
+      margin-top: 15px;
+      margin-bottom: 10px;
     }
-    .session_voting .accepted {
-      height: 60px;
+    p {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-family: Roboto Slab;
+      margin-top: 6px;
     }
+  }
+}
 
-    .border-left {
-      border-left: none;
-      border-top: 2px solid $font-placeholder;
-    }
+@media (max-width: 991px) {
+  .session_voting .session_title {
+    height: 93px;
+  }
+  .session_voting .accepted {
+    height: 60px;
+  }
 
-    .single_voting {
-      padding-bottom: 15px;
-      &:hover {
-        .border-left {
-          border-top-color: $link-hover-background;
-        }
-      }
-    }
+  .border-left {
+    border-left: none;
+    border-top: 2px solid $font-placeholder;
   }
 
   .single_voting {
-    position: relative;
+    padding-bottom: 15px;
     &:hover {
-      background-color: $link-hover-background-hover;
-      .border-left { border-left-color: $link-hover-background; }
+      .border-left {
+        border-top-color: $link-hover-background;
+      }
     }
   }
+}
 
-  .session_voting .session_title p {
+.single_voting {
+  position: relative;
+  &:hover {
+    background-color: $link-hover-background-hover;
+    .border-left {
+      border-left-color: $link-hover-background;
+    }
+  }
+}
+
+.session_voting .session_title p {
+  font-size: 14px;
+}
+
+.session_voting .single_voting {
+  margin-top: 15px;
+}
+
+.seja_anchor:hover {
+  color: $font-placeholder;
+}
+
+.card-content-front {
+  overflow-y: auto;
+}
+
+// filters
+.filters {
+  padding-bottom: 12px;
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+    min-height: 154px;
+  }
+  $label-height: 26px;
+
+  display: flex;
+
+  .filter {
+    @include respond-to(desktop) {
+      flex: 1;
+      &:not(:last-child) {
+        padding-right: 10px;
+      }
+    }
+    width: 100%;
+  }
+
+  .filter-label {
     font-size: 14px;
-  }
-
-  .session_voting .single_voting {
-    margin-top: 15px;
-  }
-
-  .seja_anchor:hover {
-    color: $font-placeholder;
-  }
-
-  .card-content-front {
-    overflow-y: auto;
-  }
-
-  // filters
-  .filters {
-    padding-bottom: 12px;
-    @include respond-to(mobile) {
-      flex-wrap: wrap;
-      min-height: 154px;
-    }
-    $label-height: 26px;
-
-    display: flex;
-
-    .filter {
-      @include respond-to(desktop) {
-        flex: 1;
-        &:not(:last-child) { padding-right: 10px; }
-      }
-      width: 100%;
-    }
-
-    .filter-label {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: $label-height;
-    }
-
-    .option-party-buttons {
-      @include show-for(desktop, flex);
-      @include show-for(mobile, flex);
-      @include respond-to(mobile) { width: 100%; padding-top: 0; }
-
-      width: 27.5%;
-      padding-top: $label-height;
-
-      .party-button:not(:last-child) {
-        margin-right: 3px;
-      }
-    }
-
-    .button-filter {
-      @include show-for(desktop);
-
-      .filter-content {
-        display: flex;
-        .striped-button {
-          flex: 1;
-          height: 51px;
-          &:not(:last-child) { margin-right: 5px; }
-        }
-      }
-    }
-
-    .search-dropdown-options { top: 50px; }
+    font-weight: 300;
+    line-height: $label-height;
   }
 
   .option-party-buttons {
-    .sprejet {
-      border-bottom-color: $second;
-
-      &.selected, &:hover {
-        background-color: $second;
-      }
+    @include show-for(desktop, flex);
+    @include show-for(mobile, flex);
+    @include respond-to(mobile) {
+      width: 100%;
+      padding-top: 0;
     }
 
-    .zavrnjen {
-      border-bottom-color: $third;
+    width: 27.5%;
+    padding-top: $label-height;
 
-      &.selected, &:hover {
-        background-color: $third;
+    .party-button:not(:last-child) {
+      margin-right: 3px;
+    }
+  }
+
+  .button-filter {
+    @include show-for(desktop);
+
+    .filter-content {
+      display: flex;
+      .striped-button {
+        flex: 1;
+        height: 51px;
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
       }
     }
   }
+
+  .search-dropdown-options {
+    top: 50px;
+  }
+}
+
+.option-party-buttons {
+  .sprejet {
+    border-bottom-color: $second;
+
+    &.selected,
+    &:hover {
+      background-color: $second;
+    }
+  }
+
+  .zavrnjen {
+    border-bottom-color: $third;
+
+    &.selected,
+    &:hover {
+      background-color: $third;
+    }
+  }
+}
 </style>
 <style lang="scss">
 @import 'parlassets/scss/colors';
-  .card-glasovanja-seja {
-    .search-dropdown-input {
-      padding-top: 11px;
-      padding-bottom: 11px;
-      background-color: $white;
-    }
-
-    .search-dropdown-options { top: 50px; }
+.card-glasovanja-seja {
+  .search-dropdown-input {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: $white;
   }
+
+  .search-dropdown-options {
+    top: 50px;
+  }
+}
 </style>

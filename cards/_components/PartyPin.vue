@@ -1,8 +1,8 @@
 <template>
   <div class="partypin-container">
     <div
-      :class="['partypin-tooltip', { visible: tooltipVisible}]"
       :ref="party.id"
+      :class="['partypin-tooltip', { visible: tooltipVisible }]"
     >
       {{ party.name }}
     </div>
@@ -23,9 +23,7 @@ import links from '@/_mixins/links';
 
 export default {
   name: 'PartyPin',
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     party: {
       type: Object,
@@ -42,7 +40,9 @@ export default {
       return this.getPartyLink(this.party);
     },
     partyCssClass() {
-      return `${this.party.acronym.toLowerCase().replace(/[ +,]/g, '_')}-background`;
+      return `${this.party.acronym
+        .toLowerCase()
+        .replace(/[ +,]/g, '_')}-background`;
     },
   },
 };

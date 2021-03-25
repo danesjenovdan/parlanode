@@ -38,22 +38,25 @@ export default {
 
       const locale = d3.locale(getD3Locale(import.meta.env.CARD_LANG));
 
-      const bisectDate = d3.bisector(d => d.date).left;
+      const bisectDate = d3.bisector((d) => d.date).left;
       const parseDate = d3.time.format('%d.%m.%Y').parse;
 
-      const data = this.data.reduce((acc, d) => {
-        if (acc.indexOf(d.results.date) === -1) {
-          acc.push(d.results.date);
-        }
-        return acc;
-      }, [])
-        .map(date => ({
+      const data = this.data
+        .reduce((acc, d) => {
+          if (acc.indexOf(d.results.date) === -1) {
+            acc.push(d.results.date);
+          }
+          return acc;
+        }, [])
+        .map((date) => ({
           date: parseDate(date),
-          occurences: this.data.filter(d => d.results.date === date).length,
+          occurences: this.data.filter((d) => d.results.date === date).length,
         }))
         .sort((a, b) => a.date - b.date);
 
-      const svg = d3.select('.timechart').append('svg')
+      const svg = d3
+        .select('.timechart')
+        .append('svg')
         .attr('class', 'smalldata')
         .attr('viewBox', '0 0 960 400')
         .attr('preserveAspectRatio', 'xMidYMid meet')
@@ -62,14 +65,12 @@ export default {
 
       let focus;
 
-      const x = d3.time.scale()
-        .range([0, width]);
+      const x = d3.time.scale().range([0, width]);
 
-      const y = d3.scale.linear()
-        .range([height, 0]);
+      const y = d3.scale.linear().range([height, 0]);
 
-      x.domain(d3.extent(data, d => d.date));
-      y.domain([0, d3.max(data, d => d.occurences)]);
+      x.domain(d3.extent(data, (d) => d.date));
+      y.domain([0, d3.max(data, (d) => d.occurences)]);
 
       function mousemove() {
         const x0 = x.invert(d3.mouse(this)[0] - margin.left);
@@ -79,7 +80,10 @@ export default {
         if (i < data.length) {
           const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
-          const circle = x0 - d0.date > d1.date - x0 ? d3.selectAll('.dot circle')[0][i] : d3.selectAll('.dot circle')[0][i - 1];
+          const circle =
+            x0 - d0.date > d1.date - x0
+              ? d3.selectAll('.dot circle')[0][i]
+              : d3.selectAll('.dot circle')[0][i - 1];
 
           if (d3.select(circle).classed('hovered')) {
             //
@@ -99,18 +103,30 @@ export default {
           }
 
           if (i > 2 && i < data.length - 3.5) {
-            focus.attr('transform', `translate(${x(d.date)},${y(d.occurences)})`);
+            focus.attr(
+              'transform',
+              `translate(${x(d.date)},${y(d.occurences)})`
+            );
           } else if (i < 3) {
-            focus.attr('transform', `translate(${x(data[2].date)},${y(d.occurences)})`);
+            focus.attr(
+              'transform',
+              `translate(${x(data[2].date)},${y(d.occurences)})`
+            );
           } else {
-            focus.attr('transform', `translate(${x(data[data.length - 4].date)},${y(d.occurences)})`);
+            focus.attr(
+              'transform',
+              `translate(${x(data[data.length - 4].date)},${y(d.occurences)})`
+            );
           }
 
-          focus.select('text').text(`${locale.timeFormat('%x')(d.date)} | ${d.occurences}`);
+          focus
+            .select('text')
+            .text(`${locale.timeFormat('%x')(d.date)} | ${d.occurences}`);
         }
       }
 
-      d3.select(svg.node().parentNode).append('rect')
+      d3.select(svg.node().parentNode)
+        .append('rect')
         .attr('class', 'overlay')
         .attr('width', '100%')
         .attr('height', '100%')
@@ -123,40 +139,40 @@ export default {
         })
         .on('mousemove', mousemove);
 
-      const xAxis = d3.svg.axis()
+      const xAxis = d3.svg
+        .axis()
         .scale(x)
         .orient('bottom')
         .tickFormat(locale.timeFormat('%b %y'));
 
-      svg.append('g')
+      svg
+        .append('g')
         .attr('class', 'x axis bigdata')
         .attr('transform', `translate(0,${height})`)
         .call(xAxis);
 
-      const line = d3.svg.line()
-        .x(d => x(d.date))
-        .y(d => y(d.occurences));
+      const line = d3.svg
+        .line()
+        .x((d) => x(d.date))
+        .y((d) => y(d.occurences));
 
-      svg.append('path')
-        .datum(data)
-        .attr('class', 'line')
-        .attr('d', line);
+      svg.append('path').datum(data).attr('class', 'line').attr('d', line);
 
-      svg.selectAll('g.dot')
+      svg
+        .selectAll('g.dot')
         .data(data)
         .enter()
         .append('g')
         .attr('class', 'dot')
         .append('circle')
         .attr('r', 4)
-        .attr('cx', d => x(d.date))
-        .attr('cy', d => y(d.occurences));
+        .attr('cx', (d) => x(d.date))
+        .attr('cy', (d) => y(d.occurences));
 
-      focus = svg.append('g')
-        .attr('class', 'focus')
-        .style('display', 'none');
+      focus = svg.append('g').attr('class', 'focus').style('display', 'none');
 
-      focus.append('rect')
+      focus
+        .append('rect')
         .attr('width', 150)
         .attr('height', 25)
         .attr('y', -35)
@@ -164,7 +180,8 @@ export default {
         .style('rx', 3)
         .style('yx', 3);
 
-      focus.append('text')
+      focus
+        .append('text')
         .style('fill', '#fff')
         .attr('text-anchor', 'middle')
         .attr('y', -18);

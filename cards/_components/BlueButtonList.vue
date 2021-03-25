@@ -4,10 +4,7 @@
       <li
         v-for="item in items"
         :key="item.id"
-        :class="[
-          'blue-button-list-item',
-          { 'is-selected': item.id === value },
-        ]"
+        :class="['blue-button-list-item', { 'is-selected': item.id === value }]"
         @click="$emit('input', item.id)"
       >
         {{ item.label }}
@@ -15,9 +12,7 @@
     </ul>
     <div class="blue-button-list-mobile">
       <div class="select">
-        <select
-          @change="changeSelection"
-        >
+        <select @change="changeSelection">
           <option
             v-for="item in items"
             :key="item.id"

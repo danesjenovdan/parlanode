@@ -11,11 +11,16 @@ function chart(rawData, component) {
   console.log('doing the chart');
 
   function getQueryParams(str) {
-    return (str || document.location.search).replace(/(^\?)/, '').split('&').map(function m(n) {
-      n = n.split('=');
-      this[n[0]] = n[1];
-      return this;
-    }.bind({}))[0];
+    return (str || document.location.search)
+      .replace(/(^\?)/, '')
+      .split('&')
+      .map(
+        function m(n) {
+          n = n.split('=');
+          this[n[0]] = n[1];
+          return this;
+        }.bind({})
+      )[0];
   }
 
   let pgQuery;
@@ -52,7 +57,9 @@ function chart(rawData, component) {
         data.push({
           party: firstpiece,
           occurences: secondpiece,
-          percentage: !isFinite(secondpiece / sum) ? 0 : Math.round((secondpiece / sum) * 100),
+          percentage: !isFinite(secondpiece / sum)
+            ? 0
+            : Math.round((secondpiece / sum) * 100),
         });
       }
     });
@@ -67,23 +74,31 @@ function chart(rawData, component) {
     const height = 500 - margin.top - margin.bottom;
     const radius = Math.min(width, height) / 2;
 
-    const arc = d3.svg.arc()
+    const arc = d3.svg
+      .arc()
       .outerRadius(radius - 30)
       .innerRadius(0);
 
-    const pie = d3.layout.pie()
+    const pie = d3.layout
+      .pie()
       .sort(null)
-      .value(d => d.occurences);
+      .value((d) => d.occurences);
 
-    const svg = d3.select('.partychart2').append('svg')
+    const svg = d3
+      .select('.partychart2')
+      .append('svg')
       .attr('viewBox', '0 0 400 450')
       .attr('preserveAspectRatio', 'xMidYMid meet')
       .append('g')
-      .attr('transform', `translate(${(width / 2) + margin.left},${(height / 2) + margin.top})`);
+      .attr(
+        'transform',
+        `translate(${width / 2 + margin.left},${height / 2 + margin.top})`
+      );
 
-    const piedata = pie(data.filter(d => parties[d.party]));
+    const piedata = pie(data.filter((d) => parties[d.party]));
 
-    const g = svg.selectAll('.arc')
+    const g = svg
+      .selectAll('.arc')
       .data(piedata)
       .enter()
       .append('g')
@@ -91,25 +106,38 @@ function chart(rawData, component) {
 
     g.append('path')
       .attr('d', arc)
-      .attr('class', d => `${parties[d.data.party].acronym.replace(/[ +,]/g, '_').toLowerCase()}-fill`);
+      .attr(
+        'class',
+        (d) =>
+          `${parties[d.data.party].acronym
+            .replace(/[ +,]/g, '_')
+            .toLowerCase()}-fill`
+      );
 
-    const labels = svg.selectAll('text').data(piedata)
+    const labels = svg
+      .selectAll('text')
+      .data(piedata)
       .enter()
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('x', (d) => {
-        const a = (d.startAngle + ((d.endAngle - d.startAngle) / 2)) - (Math.PI / 2);
+        const a = d.startAngle + (d.endAngle - d.startAngle) / 2 - Math.PI / 2;
         d.cx = Math.cos(a) * (radius - 75);
         d.x = Math.cos(a) * (radius + 20);
         return d.x;
       })
       .attr('y', (d) => {
-        const a = (d.startAngle + ((d.endAngle - d.startAngle) / 2)) - (Math.PI / 2);
+        const a = d.startAngle + (d.endAngle - d.startAngle) / 2 - Math.PI / 2;
         d.cy = Math.sin(a) * (radius - 75);
         d.y = Math.sin(a) * (radius + 20);
         return d.y;
       })
-      .text(d => `${parties[d.data.party].acronym.substring(0, 9)}${parties[d.data.party].acronym.length > 9 ? '...' : ''}`) // TODO this needs a better fix
+      .text(
+        (d) =>
+          `${parties[d.data.party].acronym.substring(0, 9)}${
+            parties[d.data.party].acronym.length > 9 ? '...' : ''
+          }`
+      ) // TODO this needs a better fix
       .style('display', (d) => {
         if (+d.data.percentage === 0) {
           return 'none';
@@ -191,7 +219,11 @@ export default {
   methods: {
     renderChart() {
       if (this.$el.querySelector('.partychart2 svg')) {
-        this.$el.querySelector('.partychart2 svg').parentElement.removeChild(this.$el.querySelector('.partychart2 svg')); // TODO this is salad
+        this.$el
+          .querySelector('.partychart2 svg')
+          .parentElement.removeChild(
+            this.$el.querySelector('.partychart2 svg')
+          ); // TODO this is salad
       }
       chart(this.data, this);
     },

@@ -2,14 +2,14 @@
   <li :class="cssClass">
     <div class="person-container">
       <a :href="getPersonLink(speech.person)" class="portrait">
-        <img :src="getPersonPortrait(speech.person)">
+        <img :src="getPersonPortrait(speech.person)" />
       </a>
 
       <div class="name">
-        <a
-          :href="getPersonLink(speech.person)"
-          class="funblue-light-hover"
-        >{{ speech.person.name }}</a><br>
+        <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{
+          speech.person.name
+        }}</a
+        ><br />
       </div>
     </div>
 
@@ -27,9 +27,7 @@
 import links from '@/_mixins/links';
 
 export default {
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   props: {
     speech: {
       type: Object,
@@ -66,9 +64,9 @@ export default {
     flex: 2;
     display: flex;
     @include respond-to(mobile) {
-        flex-grow: 1;
-        flex-shrink: 0;
-        flex-basis: 100%;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 100%;
     }
 
     .portrait {
@@ -77,7 +75,7 @@ export default {
       flex: none;
 
       @include respond-to(mobile) {
-          margin-left: 0;
+        margin-left: 0;
       }
       img {
         height: 40px;
@@ -102,7 +100,7 @@ export default {
     flex: 4;
 
     @include respond-to(mobile) {
-        padding-top: 10px;
+      padding-top: 10px;
     }
 
     a {

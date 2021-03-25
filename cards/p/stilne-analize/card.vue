@@ -65,10 +65,7 @@ export default {
   components: {
     StyleScores,
   },
-  mixins: [
-    common,
-    links,
-  ],
+  mixins: [common, links],
   created() {
     const { template, data } = this.$options.cardData;
     template.contextUrl = this.getPersonLink(data.person);
