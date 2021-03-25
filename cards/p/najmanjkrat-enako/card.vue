@@ -33,12 +33,12 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { memberVotes } from 'mixins/contextUrls';
-import { memberTitle } from 'mixins/titles';
-import { memberHeader } from 'mixins/altHeaders';
-import { memberOgImage } from 'mixins/ogImages';
-import PersonList from 'components/PersonList.vue';
+import common from '@/_mixins/common';
+import { memberVotes } from '@/_mixins/contextUrls';
+import { memberTitle } from '@/_mixins/titles';
+import { memberHeader } from '@/_mixins/altHeaders';
+import { memberOgImage } from '@/_mixins/ogImages';
+import PersonList from '@/_components/PersonList.vue';
 
 export default {
   name: 'NajmanjkratGlasujejoEnako',

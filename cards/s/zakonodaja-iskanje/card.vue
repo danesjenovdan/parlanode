@@ -31,14 +31,14 @@
 
 <script>
 import axios from 'axios';
-import SortableTable from 'components/SortableTable.vue';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import common from 'mixins/common';
-import { searchTitle } from 'mixins/titles';
-import { searchHeader } from 'mixins/altHeaders';
-import { searchOgImage } from 'mixins/ogImages';
-import links from 'mixins/links';
-import stateLoader from 'helpers/stateLoader';
+import SortableTable from '@/_components/SortableTable.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import common from '@/_mixins/common';
+import { searchTitle } from '@/_mixins/titles';
+import { searchHeader } from '@/_mixins/altHeaders';
+import { searchOgImage } from '@/_mixins/ogImages';
+import links from '@/_mixins/links';
+import stateLoader from '@/_helpers/stateLoader';
 
 export default {
   name: 'ZakonodajaIskanje',

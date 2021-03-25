@@ -63,16 +63,16 @@
 
 <script>
 import { find, intersection, assign } from 'lodash';
-import generateMonths from 'mixins/generateMonths';
-import common from 'mixins/common';
-import { partyOverview } from 'mixins/contextUrls';
-import { partyTitle } from 'mixins/titles';
-import { partyHeader, memberHeader } from 'mixins/altHeaders';
-import { partyOgImage, memberOgImage } from 'mixins/ogImages';
-import CardWrapper from 'components/Card/Wrapper.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import QuestionList from 'components/QuestionList.vue';
-import DataNotPublished from 'components/DataNotPublished.vue';
+import generateMonths from '@/_mixins/generateMonths';
+import common from '@/_mixins/common';
+import { partyOverview } from '@/_mixins/contextUrls';
+import { partyTitle } from '@/_mixins/titles';
+import { partyHeader, memberHeader } from '@/_mixins/altHeaders';
+import { partyOgImage, memberOgImage } from '@/_mixins/ogImages';
+import CardWrapper from '@/_components/Card/Wrapper.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import QuestionList from '@/_components/QuestionList.vue';
+import DataNotPublished from '@/_components/DataNotPublished.vue';
 
 export default {
   components: {

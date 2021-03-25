@@ -150,18 +150,18 @@
 <script>
 import { parseISO, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find, assign } from 'lodash';
-import Generator from 'components/Generator.vue';
-import ToolsTabs from 'components/ToolsTabs.vue';
-import DateRow from 'components/DateRow.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import StripedButton from 'components/StripedButton.vue';
-import Toggle from 'components/Toggle.vue';
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import { parseVoteTitle, shortenVoteTitle } from 'helpers/voteTitle';
+import Generator from '@/_components/Generator.vue';
+import ToolsTabs from '@/_components/ToolsTabs.vue';
+import DateRow from '@/_components/DateRow.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import StripedButton from '@/_components/StripedButton.vue';
+import Toggle from '@/_components/Toggle.vue';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle';
 
 export default {
   name: 'GlasovanjaNeenotnost',

@@ -372,10 +372,10 @@
 
 <script>
 import axios from 'axios';
-import common from 'mixins/common';
-import TransparentWrapper from 'components/TransparentWrapper.vue';
-import Generator from 'components/Generator.vue';
-import ToolsTabs from 'components/ToolsTabs.vue';
+import common from '@/_mixins/common';
+import TransparentWrapper from '@/_components/TransparentWrapper.vue';
+import Generator from '@/_components/Generator.vue';
+import ToolsTabs from '@/_components/ToolsTabs.vue';
 
 export default {
   name: 'Obvestila',
@@ -397,7 +397,7 @@ export default {
       data: this.$options.cardData.data,
       headerConfig: {
         // TODO: fix this when developing card
-        // best if you include a mixin from 'mixins/altHeaders'
+        // best if you include a mixin from '@/_mixins/altHeaders'
         circleIcon: 'og-list',
         heading: '&nbsp;',
         subheading: '',
@@ -406,7 +406,7 @@ export default {
       },
       ogConfig: {
         // TODO: fix this when developing card
-        // best if you include a mixin from 'mixins/ogImages'
+        // best if you include a mixin from '@/_mixins/ogImages'
       },
       state: this.$options.cardData.parlaState,
       keywords: [],

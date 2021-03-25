@@ -46,14 +46,14 @@
 
 <script>
 import { reduce } from 'lodash';
-import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
-import { memberHeader } from 'mixins/altHeaders';
-import { memberOgImage } from 'mixins/ogImages';
-import { memberTitle } from 'mixins/titles';
-import PTab from 'components/Tab.vue';
-import PTabs from 'components/Tabs.vue';
-import MembershipList from 'components/MembershipList.vue';
+import common from '@/_mixins/common';
+import { memberOverview } from '@/_mixins/contextUrls';
+import { memberHeader } from '@/_mixins/altHeaders';
+import { memberOgImage } from '@/_mixins/ogImages';
+import { memberTitle } from '@/_mixins/titles';
+import PTab from '@/_components/Tab.vue';
+import PTabs from '@/_components/Tabs.vue';
+import MembershipList from '@/_components/MembershipList.vue';
 
 export default {
   name: 'Clanstva',

@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import links from 'mixins/links';
-import common from 'mixins/common';
-import { partySpeeches } from 'mixins/contextUrls';
-import { partyHeader } from 'mixins/altHeaders';
-import { partyOgImage } from 'mixins/ogImages';
-import BarChart from 'components/BarChart.vue';
+import links from '@/_mixins/links';
+import common from '@/_mixins/common';
+import { partySpeeches } from '@/_mixins/contextUrls';
+import { partyHeader } from '@/_mixins/altHeaders';
+import { partyOgImage } from '@/_mixins/ogImages';
+import BarChart from '@/_components/BarChart.vue';
 
 export default {
   name: 'PSTFIDF',

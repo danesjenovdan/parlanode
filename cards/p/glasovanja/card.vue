@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Glasovanja from 'components/Glasovanja.vue';
+import Glasovanja from '@/_components/Glasovanja.vue';
 
 export default {
   name: 'GlasovanjaPoslanca',

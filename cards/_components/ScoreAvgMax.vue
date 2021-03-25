@@ -101,7 +101,7 @@
 </template>
 
 <script>
-import common from 'mixins/common';
+import common from '@/_mixins/common';
 import {
   memberOverview,
   partyOverview,
@@ -109,12 +109,12 @@ import {
   partyVotes,
   memberSpeeches,
   partySpeeches,
-} from 'mixins/contextUrls';
-import { memberTitle, partyTitle } from 'mixins/titles';
-import { memberHeader, partyHeader } from 'mixins/altHeaders';
-import { memberOgImage, partyOgImage } from 'mixins/ogImages';
-import PersonPin from 'components/PersonPin.vue';
-import PartyPin from 'components/PartyPin.vue';
+} from '@/_mixins/contextUrls';
+import { memberTitle, partyTitle } from '@/_mixins/titles';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
+import PersonPin from '@/_components/PersonPin.vue';
+import PartyPin from '@/_components/PartyPin.vue';
 
 export default {
   name: 'ScoreAvgMax',

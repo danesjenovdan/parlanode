@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import DashButton from 'components/Dashboard/Button.vue';
+import DashButton from '@/_components/Dashboard/Button.vue';
 
 export default {
   name: 'DashboardTable',

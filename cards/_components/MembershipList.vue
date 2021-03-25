@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import ScrollShadow from 'components/ScrollShadow.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
 
 export default {
   name: 'MembershipList',

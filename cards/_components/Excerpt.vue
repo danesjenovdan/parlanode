@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import PSearchDropdown from 'components/SearchDropdown.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import { find } from 'lodash';
 
 export default {

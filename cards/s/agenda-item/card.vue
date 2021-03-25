@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import AgendaItem from 'components/AgendaItem.vue';
+import common from '@/_mixins/common';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import AgendaItem from '@/_components/AgendaItem.vue';
 
 export default {
   name: 'AgendaItemCard',

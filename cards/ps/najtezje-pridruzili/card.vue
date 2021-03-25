@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { partyVotes } from 'mixins/contextUrls';
-import { partyTitle } from 'mixins/titles';
-import { partyHeader } from 'mixins/altHeaders';
-import { partyOgImage } from 'mixins/ogImages';
-import PersonList from 'components/PersonList.vue';
+import common from '@/_mixins/common';
+import { partyVotes } from '@/_mixins/contextUrls';
+import { partyTitle } from '@/_mixins/titles';
+import { partyHeader } from '@/_mixins/altHeaders';
+import { partyOgImage } from '@/_mixins/ogImages';
+import PersonList from '@/_components/PersonList.vue';
 
 export default {
   name: 'NajmanjkratGlasujejoEnako',

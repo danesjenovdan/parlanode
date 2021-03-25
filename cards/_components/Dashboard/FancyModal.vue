@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import Modal from 'components/Modal.vue';
-import DashButton from 'components/Dashboard/Button.vue';
+import Modal from '@/_components/Modal.vue';
+import DashButton from '@/_components/Dashboard/Button.vue';
 
 export default {
   name: 'DashboardFancyModal',

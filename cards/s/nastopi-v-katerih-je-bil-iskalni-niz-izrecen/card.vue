@@ -65,15 +65,15 @@
 
 <script>
 import axios from 'axios';
-import common from 'mixins/common';
-import { search as searchContext } from 'mixins/contextUrls';
-import { searchTitle } from 'mixins/titles';
-import { searchHeader } from 'mixins/altHeaders';
-import { searchOgImage } from 'mixins/ogImages';
-import links from 'mixins/links';
-import dateFormatter from 'helpers/dateFormatter';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import stateLoader from 'helpers/stateLoader';
+import common from '@/_mixins/common';
+import { search as searchContext } from '@/_mixins/contextUrls';
+import { searchTitle } from '@/_mixins/titles';
+import { searchHeader } from '@/_mixins/altHeaders';
+import { searchOgImage } from '@/_mixins/ogImages';
+import links from '@/_mixins/links';
+import dateFormatter from '@/_helpers/dateFormatter';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import stateLoader from '@/_helpers/stateLoader';
 
 const PAGE_SIZE = 50;
 

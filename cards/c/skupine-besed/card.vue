@@ -106,24 +106,24 @@
 
 <script>
 import axios from 'axios';
-import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import stateLoader from 'helpers/stateLoader';
-import common from 'mixins/common';
-import Generator from 'components/Generator.vue';
-import ToolsTabs from 'components/ToolsTabs.vue';
-import BarChart from 'components/BarChart.vue';
-import EmptyCircle from 'components/EmptyCircle.vue';
-import LoadLink from 'components/LoadLink.vue';
-import Modal from 'components/Modal.vue';
-import Plus from 'components/Plus.vue';
-import PTab from 'components/Tab.vue';
-import PTabs from 'components/Tabs.vue';
-import SearchField from 'components/SearchField.vue';
-import Tag from 'components/Tag.vue';
-import TextFrame from 'components/TextFrame.vue';
-import ScrollShadow from 'components/ScrollShadow.vue';
+import links from '@/_mixins/links';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import stateLoader from '@/_helpers/stateLoader';
+import common from '@/_mixins/common';
+import Generator from '@/_components/Generator.vue';
+import ToolsTabs from '@/_components/ToolsTabs.vue';
+import BarChart from '@/_components/BarChart.vue';
+import EmptyCircle from '@/_components/EmptyCircle.vue';
+import LoadLink from '@/_components/LoadLink.vue';
+import Modal from '@/_components/Modal.vue';
+import Plus from '@/_components/Plus.vue';
+import PTab from '@/_components/Tab.vue';
+import PTabs from '@/_components/Tabs.vue';
+import SearchField from '@/_components/SearchField.vue';
+import Tag from '@/_components/Tag.vue';
+import TextFrame from '@/_components/TextFrame.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
 
 export default {
   name: 'SkupineBesed',

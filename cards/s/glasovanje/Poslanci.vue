@@ -60,13 +60,13 @@
 
 <script>
 import { find } from 'lodash';
-import StripedButton from 'components/StripedButton.vue';
-import links from 'mixins/links';
-import SearchField from 'components/SearchField.vue';
-import Result from 'components/Result.vue';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import EmptyCircle from 'components/EmptyCircle.vue';
-import mapVotes from 'helpers/mapVotes';
+import StripedButton from '@/_components/StripedButton.vue';
+import links from '@/_mixins/links';
+import SearchField from '@/_components/SearchField.vue';
+import Result from '@/_components/Result.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import EmptyCircle from '@/_components/EmptyCircle.vue';
+import mapVotes from '@/_helpers/mapVotes';
 
 export default {
   name: 'GlasovanjeSejePoslanci',

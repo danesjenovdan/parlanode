@@ -14,9 +14,9 @@
 
 <script>
 import d3 from 'd3v3';
-import CardWrapper from 'components/Card/Wrapper.vue';
-import { memberHeader, partyHeader } from 'mixins/altHeaders';
-import { memberOgImage, partyOgImage } from 'mixins/ogImages';
+import CardWrapper from '@/_components/Card/Wrapper.vue';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
 import getD3Locale from 'i18n/d3locales';
 
 

@@ -27,13 +27,13 @@
 
 <script>
 import axios from 'axios';
-import common from 'mixins/common';
-import { search as searchContext } from 'mixins/contextUrls';
-import { searchTitle } from 'mixins/titles';
-import { searchHeader } from 'mixins/altHeaders';
-import { searchOgImage } from 'mixins/ogImages';
-import PersonList from 'components/PersonList.vue';
-import stateLoader from 'helpers/stateLoader';
+import common from '@/_mixins/common';
+import { search as searchContext } from '@/_mixins/contextUrls';
+import { searchTitle } from '@/_mixins/titles';
+import { searchHeader } from '@/_mixins/altHeaders';
+import { searchOgImage } from '@/_mixins/ogImages';
+import PersonList from '@/_components/PersonList.vue';
+import stateLoader from '@/_helpers/stateLoader';
 
 export default {
   name: 'NajveckratSoPojemUporabili',

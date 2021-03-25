@@ -127,16 +127,16 @@
 
 <script>
 import { orderBy } from 'lodash';
-import common from 'mixins/common';
-import DashWrapper from 'components/Dashboard/Wrapper.vue';
-import DashTable from 'components/Dashboard/Table.vue';
-import DashButton from 'components/Dashboard/Button.vue';
-import DashLoadingButton from 'components/Dashboard/LoadingButton.vue';
-import DashFancyModal from 'components/Dashboard/FancyModal.vue';
-import DashArraySelector from 'components/Dashboard/ArraySelector.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import ModalContentAbstract from 'components/Dashboard/ModalContentAbstract.vue';
-import parlapi from 'mixins/parlapi';
+import common from '@/_mixins/common';
+import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
+import DashTable from '@/_components/Dashboard/Table.vue';
+import DashButton from '@/_components/Dashboard/Button.vue';
+import DashLoadingButton from '@/_components/Dashboard/LoadingButton.vue';
+import DashFancyModal from '@/_components/Dashboard/FancyModal.vue';
+import DashArraySelector from '@/_components/Dashboard/ArraySelector.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import ModalContentAbstract from '@/_components/Dashboard/ModalContentAbstract.vue';
+import parlapi from '@/_mixins/parlapi';
 
 export default {
   name: 'DashboardVotings',

@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { partyOverview } from 'mixins/contextUrls';
-import { partyTitle } from 'mixins/titles';
-import PrisotnostChart from 'components/PrisotnostChart.vue';
+import common from '@/_mixins/common';
+import { partyOverview } from '@/_mixins/contextUrls';
+import { partyTitle } from '@/_mixins/titles';
+import PrisotnostChart from '@/_components/PrisotnostChart.vue';
 
 export default {
   name: 'PrisotnostSkoziCas',

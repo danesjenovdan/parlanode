@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import BlueButtonList from 'components/BlueButtonList.vue';
+import BlueButtonList from '@/_components/BlueButtonList.vue';
 
 export default {
   name: 'ToolsTabs',

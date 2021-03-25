@@ -1,5 +1,5 @@
-import links from 'mixins/links';
-import { PG_CLASSIFICATIONS } from 'components/constants';
+import links from '@/_mixins/links';
+import { PG_CLASSIFICATIONS } from '@/_components/constants';
 
 export default {
   mixins: [

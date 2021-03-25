@@ -61,17 +61,17 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import PTab from 'components/Tab.vue';
-import PTabs from 'components/Tabs.vue';
-import Excerpt from 'components/Excerpt.vue';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
-import Result from 'components/Result.vue';
-import mapVotes from 'helpers/mapVotes';
-import fixAbstractHtml from 'helpers/fixAbstractHtml';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import PTab from '@/_components/Tab.vue';
+import PTabs from '@/_components/Tabs.vue';
+import Excerpt from '@/_components/Excerpt.vue';
+import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
+import Result from '@/_components/Result.vue';
+import mapVotes from '@/_helpers/mapVotes';
+import fixAbstractHtml from '@/_helpers/fixAbstractHtml';
 
 export default {
   name: 'Zakon',

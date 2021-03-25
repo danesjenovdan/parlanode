@@ -51,11 +51,11 @@
 </template>
 
 <script>
-import SortableTable from 'components/SortableTable.vue';
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { sessions as sessionsContextUrl } from 'mixins/contextUrls';
-import formatDate from 'helpers/dateFormatter';
+import SortableTable from '@/_components/SortableTable.vue';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { sessions as sessionsContextUrl } from '@/_mixins/contextUrls';
+import formatDate from '@/_helpers/dateFormatter';
 
 export default {
   name: 'SeznamSejKartica',

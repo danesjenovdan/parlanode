@@ -74,17 +74,17 @@
 <script>
 /* eslint-disable no-underscore-dangle */
 import { assign, sortBy, zip, groupBy, map } from 'lodash';
-import common from 'mixins/common';
-import links from 'mixins/links';
-import DashWrapper from 'components/Dashboard/Wrapper.vue';
-import DashTable from 'components/Dashboard/Table.vue';
-import DashButton from 'components/Dashboard/Button.vue';
-import DashFancyModal from 'components/Dashboard/FancyModal.vue';
-import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
-import ModalContentPersonInfo from 'components/Dashboard/ModalContentPersonInfo.vue';
-import ModalContentPersonMemberships from 'components/Dashboard/ModalContentPersonMemberships.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import parlapi from 'mixins/parlapi';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
+import DashTable from '@/_components/Dashboard/Table.vue';
+import DashButton from '@/_components/Dashboard/Button.vue';
+import DashFancyModal from '@/_components/Dashboard/FancyModal.vue';
+import ModalContentTfidf from '@/_components/Dashboard/ModalContentTfidf.vue';
+import ModalContentPersonInfo from '@/_components/Dashboard/ModalContentPersonInfo.vue';
+import ModalContentPersonMemberships from '@/_components/Dashboard/ModalContentPersonMemberships.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import parlapi from '@/_mixins/parlapi';
 
 export default {
   name: 'DashboardPeople',

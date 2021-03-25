@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import SortableTable from 'components/SortableTable.vue';
-import common from 'mixins/common';
-import links from 'mixins/links';
+import SortableTable from '@/_components/SortableTable.vue';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
 
 export default {
   name: 'SeznamZakonovKartica',

@@ -93,10 +93,10 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import DashButton from 'components/Dashboard/Button.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import parlapi from 'mixins/parlapi';
-import links from 'mixins/links';
+import DashButton from '@/_components/Dashboard/Button.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import parlapi from '@/_mixins/parlapi';
+import links from '@/_mixins/links';
 
 export default {
   name: 'DashboardModalContentPersonMemberships',

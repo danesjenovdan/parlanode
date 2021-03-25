@@ -83,15 +83,15 @@ import stableSort from 'stable';
 import { find } from 'lodash';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import axios from 'axios';
-import stateLoader from 'helpers/stateLoader';
-import common from 'mixins/common';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import Generator from 'components/Generator.vue';
-import BlueButtonList from 'components/BlueButtonList.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import SearchField from 'components/SearchField.vue';
-import StripedIconButton from 'components/StripedIconButton.vue';
+import stateLoader from '@/_helpers/stateLoader';
+import common from '@/_mixins/common';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import Generator from '@/_components/Generator.vue';
+import BlueButtonList from '@/_components/BlueButtonList.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import SearchField from '@/_components/SearchField.vue';
+import StripedIconButton from '@/_components/StripedIconButton.vue';
 import InnerCard from './InnerCard.vue';
 
 function getAge(date) {

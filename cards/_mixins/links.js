@@ -1,4 +1,4 @@
-import { SPEECHES_PER_PAGE } from 'components/constants';
+import { SPEECHES_PER_PAGE } from '@/_components/constants';
 
 export default {
   methods: {

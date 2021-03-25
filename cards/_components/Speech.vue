@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import links from 'mixins/links';
-import { SPEECHES_PER_PAGE } from 'components/constants';
+import links from '@/_mixins/links';
+import { SPEECHES_PER_PAGE } from '@/_components/constants';
 
 const PADDING_LENGTH = 30;
 

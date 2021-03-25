@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import StyleScores from 'components/StyleScores.vue';
-import links from 'mixins/links';
+import common from '@/_mixins/common';
+import StyleScores from '@/_components/StyleScores.vue';
+import links from '@/_mixins/links';
 
 export default {
   name: 'StilneAnalize',

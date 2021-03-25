@@ -108,12 +108,12 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { partyOverview } from 'mixins/contextUrls';
-import { partyTitle } from 'mixins/titles';
-import { partyHeader } from 'mixins/altHeaders';
-import { partyOgImage } from 'mixins/ogImages';
-import links from 'mixins/links';
+import common from '@/_mixins/common';
+import { partyOverview } from '@/_mixins/contextUrls';
+import { partyTitle } from '@/_mixins/titles';
+import { partyHeader } from '@/_mixins/altHeaders';
+import { partyOgImage } from '@/_mixins/ogImages';
+import links from '@/_mixins/links';
 
 export default {
   name: 'OsnovneInformacijePS',

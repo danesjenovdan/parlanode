@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { partyHeader } from 'mixins/altHeaders';
-import { partyOgImage } from 'mixins/ogImages';
-import { partyOverview } from 'mixins/contextUrls';
-import { partyTitle } from 'mixins/titles';
-import PersonList from 'components/PersonList.vue';
+import common from '@/_mixins/common';
+import { partyHeader } from '@/_mixins/altHeaders';
+import { partyOgImage } from '@/_mixins/ogImages';
+import { partyOverview } from '@/_mixins/contextUrls';
+import { partyTitle } from '@/_mixins/titles';
+import PersonList from '@/_components/PersonList.vue';
 
 export default {
   name: 'ClaniPoslanskeSkupine',

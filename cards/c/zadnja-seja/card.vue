@@ -65,13 +65,13 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { sessionHeader } from 'mixins/altHeaders';
-import { sessionOgImage } from 'mixins/ogImages';
-import BarChart from 'components/BarChart.vue';
-import PrisotnostPoPoslanskihSkupinah from 'components/PrisotnostPoPoslanskihSkupinah.vue';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
-import links from 'mixins/links';
+import common from '@/_mixins/common';
+import { sessionHeader } from '@/_mixins/altHeaders';
+import { sessionOgImage } from '@/_mixins/ogImages';
+import BarChart from '@/_components/BarChart.vue';
+import PrisotnostPoPoslanskihSkupinah from '@/_components/PrisotnostPoPoslanskihSkupinah.vue';
+import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
+import links from '@/_mixins/links';
 
 export default {
   name: 'ZadnjaSeja',

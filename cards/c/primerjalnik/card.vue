@@ -171,25 +171,25 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { defaultDynamicHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import Generator from 'components/Generator.vue';
-import ToolsTabs from 'components/ToolsTabs.vue';
-import BarChart from 'components/BarChart.vue';
-import EmptyCircle from 'components/EmptyCircle.vue';
-import LoadLink from 'components/LoadLink.vue';
-import Modal from 'components/Modal.vue';
-import Plus from 'components/Plus.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import PTab from 'components/Tab.vue';
-import PTabs from 'components/Tabs.vue';
-import Tag from 'components/Tag.vue';
-import TextFrame from 'components/TextFrame.vue';
-import TimeChart from 'components/TimeChart.vue';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
-import generators from 'mixins/generatePeopleAndParties';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import Generator from '@/_components/Generator.vue';
+import ToolsTabs from '@/_components/ToolsTabs.vue';
+import BarChart from '@/_components/BarChart.vue';
+import EmptyCircle from '@/_components/EmptyCircle.vue';
+import LoadLink from '@/_components/LoadLink.vue';
+import Modal from '@/_components/Modal.vue';
+import Plus from '@/_components/Plus.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import PTab from '@/_components/Tab.vue';
+import PTabs from '@/_components/Tabs.vue';
+import Tag from '@/_components/Tag.vue';
+import TextFrame from '@/_components/TextFrame.vue';
+import TimeChart from '@/_components/TimeChart.vue';
+import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
+import generators from '@/_mixins/generatePeopleAndParties';
 
 export default {
   name: 'PrimerjalnikGlasovanj',

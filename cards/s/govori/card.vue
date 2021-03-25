@@ -46,14 +46,14 @@
 </template>
 
 <script>
-import links from 'mixins/links';
-import common from 'mixins/common';
-import { sessionHeader } from 'mixins/altHeaders';
-import { sessionOgImage } from 'mixins/ogImages';
-import { SPEECHES_PER_PAGE } from 'components/constants';
-import Speech from 'components/Speech.vue';
-import LoadLink from 'components/LoadLink.vue';
-import Pagination from 'components/Pagination.vue';
+import links from '@/_mixins/links';
+import common from '@/_mixins/common';
+import { sessionHeader } from '@/_mixins/altHeaders';
+import { sessionOgImage } from '@/_mixins/ogImages';
+import { SPEECHES_PER_PAGE } from '@/_components/constants';
+import Speech from '@/_components/Speech.vue';
+import LoadLink from '@/_components/LoadLink.vue';
+import Pagination from '@/_components/Pagination.vue';
 
 function getSelected() {
   if (window.getSelection) {

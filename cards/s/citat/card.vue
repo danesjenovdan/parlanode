@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import links from 'mixins/links';
-import common from 'mixins/common';
-import { memberTitle } from 'mixins/titles';
-import { sessionHeader } from 'mixins/altHeaders';
-import { sessionOgImage } from 'mixins/ogImages';
-import Speech from 'components/Speech.vue';
+import links from '@/_mixins/links';
+import common from '@/_mixins/common';
+import { memberTitle } from '@/_mixins/titles';
+import { sessionHeader } from '@/_mixins/altHeaders';
+import { sessionOgImage } from '@/_mixins/ogImages';
+import Speech from '@/_components/Speech.vue';
 
 function getSelected() {
   if (window.getSelection) {

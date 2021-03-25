@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Govori from 'components/Govori.vue';
+import Govori from '@/_components/Govori.vue';
 
 export default {
   name: 'GovoriPoslanca',

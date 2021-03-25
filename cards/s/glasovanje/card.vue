@@ -204,16 +204,16 @@
 
 <script>
 import { pick } from 'lodash';
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import { parseVoteTitle } from 'helpers/voteTitle';
-import PTab from 'components/Tab.vue';
-import PTabs from 'components/Tabs.vue';
-import Excerpt from 'components/Excerpt.vue';
-import DataNotPublished from 'components/DataNotPublished.vue';
-import fixAbstractHtml from 'helpers/fixAbstractHtml';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import { parseVoteTitle } from '@/_helpers/voteTitle';
+import PTab from '@/_components/Tab.vue';
+import PTabs from '@/_components/Tabs.vue';
+import Excerpt from '@/_components/Excerpt.vue';
+import DataNotPublished from '@/_components/DataNotPublished.vue';
+import fixAbstractHtml from '@/_helpers/fixAbstractHtml';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 

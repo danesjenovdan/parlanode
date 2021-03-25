@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./cards/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

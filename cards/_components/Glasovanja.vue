@@ -88,16 +88,16 @@
 
 <script>
 import { find, filter, assign } from 'lodash';
-import PSearchField from 'components/SearchField.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import Toggle from 'components/Toggle.vue';
-import Ballot from 'components/Ballot.vue';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import common from 'mixins/common';
-import { memberHeader, partyHeader } from 'mixins/altHeaders';
-import { memberOgImage, partyOgImage } from 'mixins/ogImages';
-import { memberVotes, partyVotes } from 'mixins/contextUrls';
-import { memberTitle, partyTitle } from 'mixins/titles';
+import PSearchField from '@/_components/SearchField.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import Toggle from '@/_components/Toggle.vue';
+import Ballot from '@/_components/Ballot.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import common from '@/_mixins/common';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
+import { memberVotes, partyVotes } from '@/_mixins/contextUrls';
+import { memberTitle, partyTitle } from '@/_mixins/titles';
 
 export default {
   components: {

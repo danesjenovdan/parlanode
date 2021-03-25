@@ -18,13 +18,13 @@
 
 <script>
 import axios from 'axios';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
-import common from 'mixins/common';
-import { search as searchContext } from 'mixins/contextUrls';
-import { searchHeader } from 'mixins/altHeaders';
-import { searchOgImage } from 'mixins/ogImages';
-import { searchTitle } from 'mixins/titles';
-import stateLoader from 'helpers/stateLoader';
+import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
+import common from '@/_mixins/common';
+import { search as searchContext } from '@/_mixins/contextUrls';
+import { searchHeader } from '@/_mixins/altHeaders';
+import { searchOgImage } from '@/_mixins/ogImages';
+import { searchTitle } from '@/_mixins/titles';
+import stateLoader from '@/_helpers/stateLoader';
 
 export default {
   name: 'GlasovanjaIskanje',

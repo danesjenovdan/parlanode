@@ -1,5 +1,5 @@
-import CardWrapper from 'components/Card/Wrapper.vue';
-import url from 'mixins/url';
+import CardWrapper from '@/_components/Card/Wrapper.vue';
+import url from '@/_mixins/url';
 
 export default {
   data() {

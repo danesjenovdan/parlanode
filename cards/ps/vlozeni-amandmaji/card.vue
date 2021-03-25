@@ -176,17 +176,17 @@
 import { format as formatDate } from 'date-fns';
 import { find } from 'lodash';
 
-import voteMapper from 'helpers/voteMapper';
-import stateLoader from 'helpers/stateLoader';
-import generateMonths from 'mixins/generateMonths';
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { partyTitle } from 'mixins/titles';
-import { partyHeader } from 'mixins/altHeaders';
-import { partyOgImage } from 'mixins/ogImages';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import SearchField from 'components/SearchField.vue';
-import StripedButton from 'components/StripedButton.vue';
+import voteMapper from '@/_helpers/voteMapper';
+import stateLoader from '@/_helpers/stateLoader';
+import generateMonths from '@/_mixins/generateMonths';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { partyTitle } from '@/_mixins/titles';
+import { partyHeader } from '@/_mixins/altHeaders';
+import { partyOgImage } from '@/_mixins/ogImages';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import SearchField from '@/_components/SearchField.vue';
+import StripedButton from '@/_components/StripedButton.vue';
 
 const formattedDateToMonthId = (date) => {
   const [day, month, year] = date.split('. ');

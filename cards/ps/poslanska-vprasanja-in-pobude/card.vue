@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import PoslanskaVprasanjaInPobude from 'components/PoslanskaVprasanjaInPobude.vue';
+import PoslanskaVprasanjaInPobude from '@/_components/PoslanskaVprasanjaInPobude.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanskeSkupine',

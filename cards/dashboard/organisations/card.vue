@@ -79,15 +79,15 @@
 <script>
 /* eslint-disable no-underscore-dangle */
 import { assign, sortBy, zip, groupBy, map } from 'lodash';
-import common from 'mixins/common';
-import DashWrapper from 'components/Dashboard/Wrapper.vue';
-import DashTable from 'components/Dashboard/Table.vue';
-import DashButton from 'components/Dashboard/Button.vue';
-import DashFancyModal from 'components/Dashboard/FancyModal.vue';
-import ModalContentTfidf from 'components/Dashboard/ModalContentTfidf.vue';
-import ModalContentOrganisationInfo from 'components/Dashboard/ModalContentOrganisationInfo.vue';
-import ModalContentOrganisationMemberships from 'components/Dashboard/ModalContentOrganisationMemberships.vue';
-import parlapi from 'mixins/parlapi';
+import common from '@/_mixins/common';
+import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
+import DashTable from '@/_components/Dashboard/Table.vue';
+import DashButton from '@/_components/Dashboard/Button.vue';
+import DashFancyModal from '@/_components/Dashboard/FancyModal.vue';
+import ModalContentTfidf from '@/_components/Dashboard/ModalContentTfidf.vue';
+import ModalContentOrganisationInfo from '@/_components/Dashboard/ModalContentOrganisationInfo.vue';
+import ModalContentOrganisationMemberships from '@/_components/Dashboard/ModalContentOrganisationMemberships.vue';
+import parlapi from '@/_mixins/parlapi';
 
 export default {
   name: 'DashboardOrgs',

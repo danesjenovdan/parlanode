@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import { RIPPLE_DURATION } from 'components/constants';
-import CardInfo from 'components/Card/Info.vue';
-import CardEmbed from 'components/Card/Embed.vue';
-import CardShare from 'components/Card/Share.vue';
-import CardPrevious from 'components/Card/Previous.vue';
-import CardHeader from 'components/Card/Header.vue';
-import CardFooter from 'components/Card/Footer.vue';
+import { RIPPLE_DURATION } from '@/_components/constants';
+import CardInfo from '@/_components/Card/Info.vue';
+import CardEmbed from '@/_components/Card/Embed.vue';
+import CardShare from '@/_components/Card/Share.vue';
+import CardPrevious from '@/_components/Card/Previous.vue';
+import CardHeader from '@/_components/Card/Header.vue';
+import CardFooter from '@/_components/Card/Footer.vue';
 
 export default {
   name: 'CardWrapper',

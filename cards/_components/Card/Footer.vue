@@ -22,7 +22,7 @@
 
 <script>
 import { get } from 'lodash';
-import { RIPPLE_DURATION } from 'components/constants';
+import { RIPPLE_DURATION } from '@/_components/constants';
 
 export default {
   name: 'CardFooter',

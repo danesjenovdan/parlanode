@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import DashboardButton from 'components/Dashboard/Button.vue';
+import DashboardButton from '@/_components/Dashboard/Button.vue';
 
 export default {
   name: 'DashboardLoadingButton',

@@ -171,12 +171,12 @@
 
 <script>
 import { map, sortBy } from 'lodash';
-import VirtualList from 'components/vue-virtual-scroll-list/VirtualList.vue';
-import StripedButton from 'components/StripedButton.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import links from 'mixins/links';
-import { parseVoteTitle, shortenVoteTitle } from 'helpers/voteTitle';
+import VirtualList from '@/_components/vue-virtual-scroll-list/VirtualList.vue';
+import StripedButton from '@/_components/StripedButton.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import links from '@/_mixins/links';
+import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle';
 
 export default {
   name: 'SeznamGlasovanj',

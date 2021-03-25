@@ -80,18 +80,18 @@
 
 <script>
 import axios from 'axios';
-import Govor from 'components/Govor.vue';
-import SearchField from 'components/SearchField.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import ScrollShadow from 'components/ScrollShadow.vue';
-import generateMonths from 'mixins/generateMonths';
-import common from 'mixins/common';
-import { memberTitle, partyTitle } from 'mixins/titles';
-import { memberHeader, partyHeader } from 'mixins/altHeaders';
-import { memberOgImage, partyOgImage } from 'mixins/ogImages';
-import { memberSpeeches, partySpeeches } from 'mixins/contextUrls';
-import infiniteScroll from 'directives/infiniteScroll';
-import dateFormatter from 'helpers/dateFormatter';
+import Govor from '@/_components/Govor.vue';
+import SearchField from '@/_components/SearchField.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import generateMonths from '@/_mixins/generateMonths';
+import common from '@/_mixins/common';
+import { memberTitle, partyTitle } from '@/_mixins/titles';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
+import { memberSpeeches, partySpeeches } from '@/_mixins/contextUrls';
+import infiniteScroll from '@/_directives/infiniteScroll';
+import dateFormatter from '@/_helpers/dateFormatter';
 
 export default {
   directives: {

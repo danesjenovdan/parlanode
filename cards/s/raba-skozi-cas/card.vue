@@ -25,16 +25,16 @@
 
 <script>
 import axios from 'axios';
-import common from 'mixins/common';
-import { search as searchContext } from 'mixins/contextUrls';
-import { searchTitle } from 'mixins/titles';
-import { searchHeader } from 'mixins/altHeaders';
-import { searchOgImage } from 'mixins/ogImages';
-import PTabs from 'components/Tabs.vue';
-import PTab from 'components/Tab.vue';
-import TimeLineChart from 'components/TimeLineChart.vue';
-import TimeBarChart from 'components/TimeBarChart.vue';
-import stateLoader from 'helpers/stateLoader';
+import common from '@/_mixins/common';
+import { search as searchContext } from '@/_mixins/contextUrls';
+import { searchTitle } from '@/_mixins/titles';
+import { searchHeader } from '@/_mixins/altHeaders';
+import { searchOgImage } from '@/_mixins/ogImages';
+import PTabs from '@/_components/Tabs.vue';
+import PTab from '@/_components/Tab.vue';
+import TimeLineChart from '@/_components/TimeLineChart.vue';
+import TimeBarChart from '@/_components/TimeBarChart.vue';
+import stateLoader from '@/_helpers/stateLoader';
 
 export default {
   name: 'RabaSkoziCas',

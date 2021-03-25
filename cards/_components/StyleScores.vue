@@ -80,11 +80,11 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { memberHeader, partyHeader } from 'mixins/altHeaders';
-import { memberOgImage, partyOgImage } from 'mixins/ogImages';
-import PersonPin from 'components/PersonPin.vue';
-import PartyPin from 'components/PartyPin.vue';
+import common from '@/_mixins/common';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
+import PersonPin from '@/_components/PersonPin.vue';
+import PartyPin from '@/_components/PartyPin.vue';
 
 export default {
   name: 'ScoreAvgMax',

@@ -59,13 +59,13 @@
 <script>
 import { find, get } from 'lodash';
 import axios from 'axios';
-import common from 'mixins/common';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import Generator from 'components/Generator.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import StripedButton from 'components/StripedButton.vue';
-import BlueButtonList from 'components/BlueButtonList.vue';
+import common from '@/_mixins/common';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import Generator from '@/_components/Generator.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import StripedButton from '@/_components/StripedButton.vue';
+import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './innerCard.vue';
 
 export default {

@@ -57,11 +57,11 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { defaultHeaderConfig } from 'mixins/altHeaders';
-import { defaultOgImage } from 'mixins/ogImages';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders';
+import { defaultOgImage } from '@/_mixins/ogImages';
+import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 
 export default {
   name: 'VsaGlasovanja',

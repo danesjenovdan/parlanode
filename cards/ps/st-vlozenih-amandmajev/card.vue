@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import ScoreAvgMax from 'components/ScoreAvgMax.vue';
+import common from '@/_mixins/common';
+import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
   name: 'StVlozenihAmandmajev',

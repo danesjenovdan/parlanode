@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import links from 'mixins/links';
+import links from '@/_mixins/links';
 
 export default {
   name: 'Ballot',

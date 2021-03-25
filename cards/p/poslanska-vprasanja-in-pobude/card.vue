@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
-import { memberTitle } from 'mixins/titles';
-import { memberHeader } from 'mixins/altHeaders';
-import { memberOgImage } from 'mixins/ogImages';
-import QuestionList from 'components/QuestionList.vue';
-import DataNotPublished from 'components/DataNotPublished.vue';
+import common from '@/_mixins/common';
+import { memberOverview } from '@/_mixins/contextUrls';
+import { memberTitle } from '@/_mixins/titles';
+import { memberHeader } from '@/_mixins/altHeaders';
+import { memberOgImage } from '@/_mixins/ogImages';
+import QuestionList from '@/_components/QuestionList.vue';
+import DataNotPublished from '@/_components/DataNotPublished.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanca',

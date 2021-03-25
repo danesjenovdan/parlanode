@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import DonutChart from 'components/DonutChart.vue';
+import DonutChart from '@/_components/DonutChart.vue';
 
 export default {
   name: 'GlasovanjeSejeResult',

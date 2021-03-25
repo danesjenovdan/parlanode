@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import links from 'mixins/links';
-import common from 'mixins/common';
-import { memberHeader } from 'mixins/altHeaders';
-import { memberOgImage } from 'mixins/ogImages';
-import { memberSpeeches } from 'mixins/contextUrls';
-import BarChart from 'components/BarChart.vue';
+import links from '@/_mixins/links';
+import common from '@/_mixins/common';
+import { memberHeader } from '@/_mixins/altHeaders';
+import { memberOgImage } from '@/_mixins/ogImages';
+import { memberSpeeches } from '@/_mixins/contextUrls';
+import BarChart from '@/_components/BarChart.vue';
 
 export default {
   name: 'PoslanecTFIDF',

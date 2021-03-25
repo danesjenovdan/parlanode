@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import links from 'mixins/links';
-import SeznamGlasovanj from 'components/SeznamGlasovanj.vue';
+import links from '@/_mixins/links';
+import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import { format } from 'date-fns';
 
 export default {

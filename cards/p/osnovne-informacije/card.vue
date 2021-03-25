@@ -212,12 +212,12 @@
 
 <script>
 import { parseISO, differenceInCalendarYears } from 'date-fns';
-import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
-import { memberTitle } from 'mixins/titles';
-import { memberHeader } from 'mixins/altHeaders';
-import { memberOgImage } from 'mixins/ogImages';
-import links from 'mixins/links';
+import common from '@/_mixins/common.js';
+import { memberOverview } from '@/_mixins/contextUrls';
+import { memberTitle } from '@/_mixins/titles';
+import { memberHeader } from '@/_mixins/altHeaders';
+import { memberOgImage } from '@/_mixins/ogImages';
+import links from '@/_mixins/links';
 
 export default {
   name: 'OsnovneInformacijePS',

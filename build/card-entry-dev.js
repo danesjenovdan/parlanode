@@ -35,6 +35,8 @@ const cardData = {
   cardGlobals: /*config.cardGlobals || */ {},
 };
 
+var x;
+
 window.card = createApp(assign({}, Card, { cardData }));
 window.card.use(i18n);
 window.card.mount("#card");

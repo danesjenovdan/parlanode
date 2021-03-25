@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import { memberOverview } from 'mixins/contextUrls';
-import { memberHeader } from 'mixins/altHeaders';
-import { memberOgImage } from 'mixins/ogImages';
-import { memberTitle } from 'mixins/titles';
-import QuestionList from 'components/QuestionList.vue';
+import common from '@/_mixins/common';
+import { memberOverview } from '@/_mixins/contextUrls';
+import { memberHeader } from '@/_mixins/altHeaders';
+import { memberOgImage } from '@/_mixins/ogImages';
+import { memberTitle } from '@/_mixins/titles';
+import QuestionList from '@/_components/QuestionList.vue';
 
 export default {
   name: 'ZadnjeAktivnosti',

@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import links from 'mixins/links';
-import { partyList } from 'mixins/contextUrls';
+import common from '@/_mixins/common';
+import links from '@/_mixins/links';
+import { partyList } from '@/_mixins/contextUrls';
 
 export default {
   name: 'SeznamPoslanskihSkupinInnerCard',

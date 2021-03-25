@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import common from 'mixins/common';
-import TransparentWrapper from 'components/TransparentWrapper.vue';
-import PSearchDropdown from 'components/SearchDropdown.vue';
-import links from 'mixins/links';
+import common from '@/_mixins/common';
+import TransparentWrapper from '@/_components/TransparentWrapper.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
+import links from '@/_mixins/links';
 
 export default {
   name: 'MenuSearch',

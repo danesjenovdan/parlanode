@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ScoreAvgMax from 'components/ScoreAvgMax.vue';
+import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
   name: 'NeujemanjeSPoslanskoSkupino',

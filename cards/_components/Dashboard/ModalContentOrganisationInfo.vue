@@ -143,7 +143,7 @@
 
 <script>
 /* eslint-disable no-underscore-dangle */
-import PSearchDropdown from 'components/SearchDropdown.vue';
+import PSearchDropdown from '@/_components/SearchDropdown.vue';
 
 export default {
   name: 'DashboardModalContentOrganisationInfo',
