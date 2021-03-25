@@ -1,26 +1,47 @@
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 
 export const partyOverview = {
   created() {
-    const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
+    const {
+      template,
+      urls: slugs,
+      data,
+      siteMap: sm,
+    } = this.$root.$options.cardData;
     const party = data.party || data.organization;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${slugs.party[party.id].acronym}`;
+    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${
+      slugs.party[party.id].acronym
+    }`;
   },
 };
 
 export const partyVotes = {
   created() {
-    const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
+    const {
+      template,
+      urls: slugs,
+      data,
+      siteMap: sm,
+    } = this.$root.$options.cardData;
     const party = data.party || data.organization;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${slugs.party[party.id].acronym}/${sm.party.votings}`;
+    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${
+      slugs.party[party.id].acronym
+    }/${sm.party.votings}`;
   },
 };
 
 export const partySpeeches = {
   created() {
-    const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
+    const {
+      template,
+      urls: slugs,
+      data,
+      siteMap: sm,
+    } = this.$root.$options.cardData;
     const party = data.party || data.organization;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${slugs.party[party.id].acronym}/${sm.party.speeches}`;
+    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${
+      slugs.party[party.id].acronym
+    }/${sm.party.speeches}`;
   },
 };
 
@@ -33,22 +54,43 @@ export const partyList = {
 
 export const memberOverview = {
   created() {
-    const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${slugs.person[data.person.id].slug}`;
+    const {
+      template,
+      urls: slugs,
+      data,
+      siteMap: sm,
+    } = this.$root.$options.cardData;
+    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${
+      slugs.person[data.person.id].slug
+    }`;
   },
 };
 
 export const memberVotes = {
   created() {
-    const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${slugs.person[data.person.id].slug}/${sm.member.votings}`;
+    const {
+      template,
+      urls: slugs,
+      data,
+      siteMap: sm,
+    } = this.$root.$options.cardData;
+    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${
+      slugs.person[data.person.id].slug
+    }/${sm.member.votings}`;
   },
 };
 
 export const memberSpeeches = {
   created() {
-    const { template, urls: slugs, data, siteMap: sm } = this.$root.$options.cardData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${slugs.person[data.person.id].slug}/${sm.member.speeches}`;
+    const {
+      template,
+      urls: slugs,
+      data,
+      siteMap: sm,
+    } = this.$root.$options.cardData;
+    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${
+      slugs.person[data.person.id].slug
+    }/${sm.member.speeches}`;
   },
 };
 
@@ -67,9 +109,7 @@ export const sessions = {
 };
 
 export const search = {
-  mixins: [
-    links,
-  ],
+  mixins: [links],
   created() {
     const { template } = this.$root.$options.cardData;
     template.contextUrl = this.getSearchTermLink(this.keywords);

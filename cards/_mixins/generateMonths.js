@@ -16,7 +16,7 @@ export default {
         const startRange = year === startYear ? startMonth : 1;
         const endRange = year === currentYear ? currentMonth : 12;
         const months = range(startRange, endRange + 1);
-        return months.map(month => ({
+        return months.map((month) => ({
           id: `${year}-${month}`,
           label: `${MONTH_NAMES[month - 1]} ${year}`,
           month,

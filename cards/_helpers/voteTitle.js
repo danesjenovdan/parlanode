@@ -3,7 +3,7 @@ function parseVoteTitle(text) {
   if (parts.length > 1) {
     return {
       title: parts[parts.length - 1].trim(),
-      projects: parts[0].split('#+#').map(e => e.trim()),
+      projects: parts[0].split('#+#').map((e) => e.trim()),
     };
   }
   return {
@@ -19,7 +19,4 @@ function shortenVoteTitle(text, max = 130) {
   return text;
 }
 
-export {
-  parseVoteTitle,
-  shortenVoteTitle,
-};
+export { parseVoteTitle, shortenVoteTitle };

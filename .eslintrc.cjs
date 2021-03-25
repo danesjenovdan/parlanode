@@ -1,19 +1,25 @@
-const { resolve } = require("path");
+const { resolve } = require('path');
 
 module.exports = {
   root: true,
   env: {
     node: true,
   },
-  extends: ["airbnb-base", "plugin:vue/vue3-recommended", "prettier"],
+  extends: [
+    'airbnb-base',
+    'plugin:vue/vue3-recommended',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['vue', 'prettier'],
   rules: {
-    "import/extensions": ["error", "always"],
+    'import/extensions': ['error', 'always'],
+    'no-param-reassign': ['off'], // TODO: fix and reenable
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       alias: [
-        ["@", resolve(__dirname, "cards")],
-        ["parlassets", resolve(__dirname, "parlassets")],
+        ['@', resolve(__dirname, 'cards')],
+        ['parlassets', resolve(__dirname, 'parlassets')],
       ],
     },
   },

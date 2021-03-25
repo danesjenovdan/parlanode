@@ -5,7 +5,9 @@ export const memberHeader = {
     headerConfig() {
       const cardData = this.cardData || this.$options.cardData;
       const person = this.person || this.data.person;
-      const coalitionText = person.party.is_coalition ? this.$t('coalition') : this.$t('opposition');
+      const coalitionText = person.party.is_coalition
+        ? this.$t('coalition')
+        : this.$t('opposition');
 
       return {
         circleImage: person.gov_id,
@@ -23,12 +25,16 @@ export const partyHeader = {
     headerConfig() {
       const cardData = this.cardData || this.$options.cardData;
       const party = this.party || this.data.party;
-      const coalitionText = party.is_coalition ? this.$t('coalition') : this.$t('opposition');
+      const coalitionText = party.is_coalition
+        ? this.$t('coalition')
+        : this.$t('opposition');
 
       return {
         // circleText: party.acronym,
         mediaImage: 'party',
-        circleClass: `${party.acronym.replace(/[ +,]/g, '_').toLowerCase()}-background`,
+        circleClass: `${party.acronym
+          .replace(/[ +,]/g, '_')
+          .toLowerCase()}-background`,
         heading: party.name,
         subheading: `${party.acronym} | ${coalitionText}`,
         alternative: cardData.cardData.altHeader === 'true',
@@ -95,7 +101,9 @@ export const defaultDynamicHeaderConfig = (comp, overrides = {}) => {
     heading: '&nbsp;',
     subheading: '',
     alternative: comp.$options.cardData.cardData.altHeader === 'true',
-    title: comp.$options.cardData.parlaState.cardTitle ? comp.$options.cardData.parlaState.cardTitle : comp.$t('card.title'),
+    title: comp.$options.cardData.parlaState.cardTitle
+      ? comp.$options.cardData.parlaState.cardTitle
+      : comp.$t('card.title'),
   };
 
   return assign({}, headerConfig, overrides);

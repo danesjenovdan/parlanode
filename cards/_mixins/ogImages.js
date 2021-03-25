@@ -4,7 +4,9 @@ export const memberOgImage = {
   computed: {
     ogConfig() {
       const person = this.person || this.data.person;
-      const coalitionText = person.party.is_coalition ? this.$t('coalition') : this.$t('opposition');
+      const coalitionText = person.party.is_coalition
+        ? this.$t('coalition')
+        : this.$t('opposition');
 
       return {
         name: 'circle',
@@ -21,7 +23,9 @@ export const partyOgImage = {
   computed: {
     ogConfig() {
       const party = this.party || this.data.party;
-      const coalitionText = party.is_coalition ? this.$t('coalition') : this.$t('opposition');
+      const coalitionText = party.is_coalition
+        ? this.$t('coalition')
+        : this.$t('opposition');
 
       return {
         name: 'circle',

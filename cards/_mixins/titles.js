@@ -1,7 +1,9 @@
 export const memberTitle = {
   created() {
     const context = this.$root.$options.cardData;
-    context.template.pageTitle = `${this.$t('card.title')} - ${context.data.person.name}`;
+    context.template.pageTitle = `${this.$t('card.title')} - ${
+      context.data.person.name
+    }`;
   },
 };
 
@@ -11,7 +13,9 @@ export const partyTitle = {
     const partyObject = context.data.party || context.data.organization;
     const side = partyObject.is_coalition ? 'koalicija' : 'opozicija';
 
-    context.template.pageTitle = `${this.$t('card.title')} - ${partyObject.acronym} | ${side}`;
+    context.template.pageTitle = `${this.$t('card.title')} - ${
+      partyObject.acronym
+    } | ${side}`;
   },
 };
 

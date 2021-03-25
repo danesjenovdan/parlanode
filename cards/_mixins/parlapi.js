@@ -24,22 +24,36 @@ function parlapi() {
   };
 
   function shouldRefreshToken(expiry) {
-    return Date.now() > (expiry - (1000 * 60 * 10)); // 10 min before expiry
+    return Date.now() > expiry - 1000 * 60 * 10; // 10 min before expiry
   }
 
   function refreshToken(obj, key) {
-    return axios.post(obj.url, {
-      grant_type: 'refresh_token',
-      refresh_token: obj.refresh,
-    }, {
-      headers: {
-        Authorization: `Basic ${obj.basic}`,
-      },
-    })
+    return axios
+      .post(
+        obj.url,
+        {
+          grant_type: 'refresh_token',
+          refresh_token: obj.refresh,
+        },
+        {
+          headers: {
+            Authorization: `Basic ${obj.basic}`,
+          },
+        }
+      )
       .then((res) => {
-        localStorage.setItem(`${key}_token`, obj.token = res.data.access_token);
-        localStorage.setItem(`${key}_refresh`, obj.refresh = res.data.refresh_token);
-        localStorage.setItem(`${key}_expires`, obj.expires = Date.now() + (res.data.expires_in * 1000));
+        localStorage.setItem(
+          `${key}_token`,
+          (obj.token = res.data.access_token)
+        );
+        localStorage.setItem(
+          `${key}_refresh`,
+          (obj.refresh = res.data.refresh_token)
+        );
+        localStorage.setItem(
+          `${key}_expires`,
+          (obj.expires = Date.now() + res.data.expires_in * 1000)
+        );
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -56,11 +70,10 @@ function parlapi() {
   data.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${tokens.data.token}`;
     if (shouldRefreshToken(tokens.data.expires)) {
-      return refreshToken(tokens.data, 'data')
-        .then(() => {
-          config.headers.Authorization = `Bearer ${tokens.data.token}`;
-          return config;
-        });
+      return refreshToken(tokens.data, 'data').then(() => {
+        config.headers.Authorization = `Bearer ${tokens.data.token}`;
+        return config;
+      });
     }
     return config;
   });
@@ -72,11 +85,10 @@ function parlapi() {
   analize.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${tokens.analize.token}`;
     if (shouldRefreshToken(tokens.analize.expires)) {
-      return refreshToken(tokens.analize, 'analize')
-        .then(() => {
-          config.headers.Authorization = `Bearer ${tokens.analize.token}`;
-          return config;
-        });
+      return refreshToken(tokens.analize, 'analize').then(() => {
+        config.headers.Authorization = `Bearer ${tokens.analize.token}`;
+        return config;
+      });
     }
     return config;
   });
@@ -88,7 +100,9 @@ function parlapi() {
   return {
     // sessions
     getSessions(orgId = cardGlobals.parliament_id) {
-      return data.get(`/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`);
+      return data.get(
+        `/sessions/?limit=10000&organization=${orgId}&ordering=-start_time`
+      );
     },
     getSession(id) {
       return data.get(`/sessions/?id=${id}`);
@@ -105,7 +119,9 @@ function parlapi() {
     },
     // votings
     getVotings(sessionId) {
-      return data.get(`/votes/?session=${sessionId}&limit=10000&ordering=-start_time`);
+      return data.get(
+        `/votes/?session=${sessionId}&limit=10000&ordering=-start_time`
+      );
     },
     getUntaggedVotings() {
       return data.get('/untagged_votes/?limit=10000&ordering=-start_time');
@@ -122,7 +138,9 @@ function parlapi() {
       return data.delete(`/votes/${id}/`);
     },
     getMotions(sessionId) {
-      return data.get(`/motions/?session=${sessionId}&limit=10000&ordering=-start_time`);
+      return data.get(
+        `/motions/?session=${sessionId}&limit=10000&ordering=-start_time`
+      );
     },
     patchMotion(id, motion) {
       return data.patch(`/motions/${id}/`, motion);
@@ -163,7 +181,9 @@ function parlapi() {
       return analize.patch(`/p/tfidfs/${id}/`, tfidf);
     },
     getPersonSocialLinks(personId) {
-      return data.get(`/links/?tags__name=social&person=${personId}&limit=10000`);
+      return data.get(
+        `/links/?tags__name=social&person=${personId}&limit=10000`
+      );
     },
     patchLink(id, link) {
       return data.patch(`/links/${id}/`, link); // needs trailing slash or it doesnt work ??
@@ -189,7 +209,9 @@ function parlapi() {
       return data.get('/organizations/?limit=10000');
     },
     getOrganisationSocialLinks(orgId) {
-      return data.get(`/links/?tags__name=social&organization=${orgId}&limit=10000`);
+      return data.get(
+        `/links/?tags__name=social&organization=${orgId}&limit=10000`
+      );
     },
     patchOrganisation(id, org) {
       return data.patch(`/organizations/${id}/`, org);
@@ -220,7 +242,9 @@ function parlapi() {
       return data.delete(`/memberships/${id}/`);
     },
     getOrganisationContactEmails(orgId) {
-      return data.get(`/contact_detail/?contact_type=EMAIL&organization=${orgId}&limit=10000`);
+      return data.get(
+        `/contact_detail/?contact_type=EMAIL&organization=${orgId}&limit=10000`
+      );
     },
     patchContact(id, contact) {
       return data.patch(`/contact_detail/${id}/`, contact);

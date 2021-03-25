@@ -1,5 +1,5 @@
 import CardWrapper from '@/_components/Card/Wrapper.vue';
-import url from '@/_mixins/url';
+import url from '@/_mixins/url.js';
 
 export default {
   data() {
@@ -10,9 +10,7 @@ export default {
   components: {
     CardWrapper,
   },
-  mixins: [
-    url,
-  ],
+  mixins: [url],
   created() {
     // only create template object if it does not already exist to prevent
     // nested components overwriting custom data
@@ -23,8 +21,8 @@ export default {
           ? 'col-md-12'
           : 'col-md-6 col-md-offset-3',
         embedContainerClass:
-          (this.$root.$options.cardData.cardData.big ? ' big-card' : '')
-          + (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
+          (this.$root.$options.cardData.cardData.big ? ' big-card' : '') +
+          (this.$root.$options.cardData.cardData.high ? ' high-card' : ''),
         contextUrl: this.slugs.urls.base,
         ogText: this.$t('ogText'),
       };
