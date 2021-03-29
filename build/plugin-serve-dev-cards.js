@@ -1,20 +1,20 @@
-import { existsSync, readFileSync } from "fs";
-import { resolve, dirname, join } from "path";
-import { fileURLToPath } from "url";
-import glob from "glob";
+import { existsSync, readFileSync } from 'fs';
+import { resolve, dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+import glob from 'glob';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const cardsPath = resolve(__dirname, "..", "cards");
+const dir = dirname(fileURLToPath(import.meta.url));
+const cardsPath = resolve(dir, '..', 'cards');
 
 export default function serveDevCards() {
   return {
-    name: "serve-dev-cards",
+    name: 'serve-dev-cards',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url === "/") {
+        if (req.url === '/') {
           const cardLinks = glob
-            .sync(join(cardsPath, "**/card.json"))
-            .map((file) => file.split("/").slice(-3, -1))
+            .sync(join(cardsPath, '**/card.json'))
+            .map((file) => file.split('/').slice(-3, -1))
             .map(
               ([group, method]) =>
                 `<tr>
@@ -24,52 +24,54 @@ export default function serveDevCards() {
             );
           res.end(`
             <table style="margin: 0 auto; border-collapse: collapse;">
-              ${cardLinks.join("\n")}
+              ${cardLinks.join('\n')}
             </table>
           `);
-        } else {
-          if (req.url.slice(1).split("/").length === 2) {
-            const [group, method] = req.url.slice(1).split("/");
-            const cardName = `${group}/${method}`;
-            if (existsSync(join(cardsPath, cardName, "card.json"))) {
-              const html = readFileSync(
-                resolve(__dirname, "card-entry-dev.html"),
-                "utf-8"
-              )
-                .replace(/{cardName}/g, cardName)
-                .replace(/{cardEntry}/g, `/${cardName}/card-entry-dev.js`);
-              server
-                .transformIndexHtml(`${cardsPath}/${cardName}/index.html`, html)
-                .then((html) => {
-                  res.end(html);
-                })
-                .catch((error) => res.status(500).send(error));
-            } else {
-              next();
-            }
+        } else if (req.url.slice(1).split('/').length === 2) {
+          const [group, method] = req.url.slice(1).split('/');
+          const cardName = `${group}/${method}`;
+          if (existsSync(join(cardsPath, cardName, 'card.json'))) {
+            const html = readFileSync(
+              resolve(dir, 'card-entry-dev.html'),
+              'utf-8'
+            )
+              .replace(/{cardName}/g, cardName)
+              .replace(/{cardEntry}/g, `/${cardName}/card-entry-dev.js`);
+            server
+              .transformIndexHtml(`${cardsPath}/${cardName}/index.html`, html)
+              .then((transformedHtml) => {
+                res.end(transformedHtml);
+              })
+              .catch((error) => res.status(500).send(error));
           } else {
             next();
           }
+        } else {
+          next();
         }
       });
     },
     resolveId(id) {
-      if (id.endsWith("/card-entry-dev.js")) {
+      if (id.endsWith('/card-entry-dev.js')) {
         return join(cardsPath, id.slice(1));
       }
+      return undefined;
     },
     load(id) {
-      if (id.endsWith("/card-entry-dev.js")) {
-        const [group, method] = id.split("/").slice(-3, -1);
+      if (id.endsWith('/card-entry-dev.js')) {
+        const [group, method] = id.split('/').slice(-3, -1);
         const cardName = `${group}/${method}`;
-        if (existsSync(join(cardsPath, cardName, "card.json"))) {
+        if (existsSync(join(cardsPath, cardName, 'card.json'))) {
           const entryTemplate = readFileSync(
-            resolve(__dirname, "card-entry-dev.js"),
-            "utf-8"
+            resolve(dir, 'card-entry-dev.js'),
+            'utf-8'
           );
-          return entryTemplate.replace(/{cardName}/g, cardName);
+          return entryTemplate
+            .replace(/{cardName}/g, cardName)
+            .replace(/{cardLang}/g, process.env.VITE_CARD_LANG || 'sl');
         }
       }
+      return undefined;
     },
   };
 }

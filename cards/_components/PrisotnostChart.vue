@@ -92,7 +92,7 @@ export default {
       const width = 940 - prisotnostMargin.left - prisotnostMargin.right;
       const height = 460 - prisotnostMargin.top - prisotnostMargin.bottom;
 
-      const locale = d3.locale(getD3Locale(import.meta.env.CARD_LANG));
+      const locale = d3.locale(getD3Locale(import.meta.env.VITE_CARD_LANG));
 
       const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%S').parse;
 

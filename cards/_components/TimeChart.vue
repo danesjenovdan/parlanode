@@ -36,7 +36,7 @@ export default {
       const width = 960 - margin.left - margin.right;
       const height = 400 - margin.top - margin.bottom;
 
-      const locale = d3.locale(getD3Locale(import.meta.env.CARD_LANG));
+      const locale = d3.locale(getD3Locale(import.meta.env.VITE_CARD_LANG));
 
       const bisectDate = d3.bisector((d) => d.date).left;
       const parseDate = d3.time.format('%d.%m.%Y').parse;

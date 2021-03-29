@@ -22,3 +22,7 @@ dist/
 
 # generated images
 /og
+
+# dotenv
+.env.local
+.env.*.local
