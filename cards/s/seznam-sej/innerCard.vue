@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <i18n-t keypath="info.lead" tag="p" class="info-text lead">
         <span place="filter">{{ currentFilter }}</span>
         <span place="just-last-five">
@@ -37,7 +37,7 @@
           target="_blank"
         />
       </i18n-t>
-    </div>
+    </template>
 
     <sortable-table
       :columns="columns"

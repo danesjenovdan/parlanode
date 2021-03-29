@@ -7,11 +7,11 @@
     type="party"
     context="votings"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text'" class="info-text"></p>
-    </div>
+    </template>
   </score-avg-max>
 </template>
 

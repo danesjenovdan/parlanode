@@ -6,20 +6,22 @@
     :og-config="ogConfig"
     content-class="full"
   >
-    <div slot="info">
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <i18n-t keypath="info.text[1]" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-    </div>
+    <template #info>
+      <div>
+        <p v-t="'info.lead'" class="info-text lead"></p>
+        <p v-t="'info.methodology'" class="info-text heading"></p>
+        <p v-t="'info.text[0]'" class="info-text"></p>
+        <i18n-t keypath="info.text[1]" tag="p" class="info-text">
+          <a
+            v-t="'info.link.text'"
+            :href="$t('info.link.link')"
+            place="link"
+            class="funblue-light-hover"
+            target="_blank"
+          />
+        </i18n-t>
+      </div>
+    </template>
 
     <div v-show="false" class="card-content__empty">
       <!-- TODO this is hardcoded -->

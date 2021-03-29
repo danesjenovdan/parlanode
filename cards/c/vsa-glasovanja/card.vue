@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text[0]'" class="info-text"></p>
@@ -44,7 +44,7 @@
         />
       </i18n-t>
       <p v-t="'info.text[4]'" class="info-text"></p>
-    </div>
+    </template>
 
     <seznam-glasovanj
       :data="votes"

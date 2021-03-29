@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n-t keypath="info.text" tag="p" class="info-text">
@@ -17,7 +17,7 @@
           target="_blank"
         />
       </i18n-t>
-    </div>
+    </template>
 
     <div class="memberships">
       <p-tabs v-if="tabNames.length > 1">

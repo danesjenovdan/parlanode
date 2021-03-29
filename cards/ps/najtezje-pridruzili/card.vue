@@ -6,7 +6,7 @@
     :og-config="ogConfig"
     content-class="full"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text[0]'" class="info-text"></p>
@@ -19,7 +19,7 @@
           <li v-t="'info.list[2]'"></li>
         </ul>
       </div>
-    </div>
+    </template>
     <person-list :people="people" :show-party-link="true" />
   </card-wrapper>
 </template>

@@ -6,12 +6,12 @@
     :og-config="ogConfig"
     content-class="full"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text[0]'" class="info-text"></p>
       <p v-t="'info.text[1]'" class="info-text"></p>
-    </div>
+    </template>
     <person-list v-if="people.length > 2" :people="people" />
     <empty-circle v-else :text="$t('card.empty-state-text')" />
   </card-wrapper>

@@ -1,15 +1,15 @@
 <template>
   <div :id="$options.cardData.mountId">
     <generator>
-      <div slot="generator">
+      <template #generator>
         <tools-tabs current-tool="discord" />
-      </div>
+      </template>
       <card-wrapper
         :card-url="generatedCardUrl"
         :header-config="headerConfig"
         :og-config="ogConfig"
       >
-        <div slot="info">
+        <template #info>
           <i18n-t keypath="info.lead" tag="p" class="info-text lead">
             <span place="text">
               <span v-if="textFilter">"{{ textFilter }}"</span>
@@ -36,7 +36,7 @@
             />
           </i18n-t>
           <p v-t="'info.text[1]'" class="info-text"></p>
-        </div>
+        </template>
 
         <!-- <div class="groups">
           <striped-button

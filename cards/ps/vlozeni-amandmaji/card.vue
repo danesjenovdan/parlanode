@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text[0]'" class="info-text"></p>
@@ -43,7 +43,7 @@
           target="_blank"
         />
       </i18n-t>
-    </div>
+    </template>
 
     <div class="filters">
       <div class="filter text-filter">

@@ -1,20 +1,20 @@
 <template>
   <div :id="$options.cardData.mountId">
     <generator>
-      <div slot="generator">
+      <template #generator>
         <tools-tabs current-tool="wordGroups" />
-      </div>
+      </template>
       <card-wrapper
         :content-class="{ 'is-loading': loading }"
         :card-url="generatedCardUrl"
         :header-config="headerConfig"
         :og-config="ogConfig"
       >
-        <div slot="info">
+        <template #info>
           <p v-t="'info.lead'" class="info-text lead"></p>
           <p v-t="'info.methodology'" class="info-text heading"></p>
           <p v-t="'info.text'" class="info-text"></p>
-        </div>
+        </template>
 
         <div id="skupine-besed">
           <text-frame class="skupine-besed">

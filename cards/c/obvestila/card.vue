@@ -1,9 +1,9 @@
 <template>
   <div :id="$options.cardData.mountId">
     <generator>
-      <div slot="generator">
+      <template #generator>
         <tools-tabs current-tool="notifications" />
-      </div>
+      </template>
       <transparent-wrapper
         :card-url="url"
         :header-config="headerConfig"

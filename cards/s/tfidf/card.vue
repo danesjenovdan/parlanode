@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n-t keypath="info.text[0]" tag="p" class="info-text">
@@ -18,7 +18,7 @@
         />
       </i18n-t>
       <p v-t="'info.text[1]'" class="info-text"></p>
-    </div>
+    </template>
 
     <div v-if="chartRows.length" class="columns">
       <bar-chart :data="chartRows1" :already-calculated="true" />

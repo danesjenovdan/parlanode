@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <i18n-t keypath="info.lead" tag="p" class="info-text lead">
         <a
           v-t="'info.link.text'"
@@ -29,7 +29,7 @@
       <p v-t="'info.presence-text'" class="info-text"></p>
       <p v-t="'info.votes-heading'" class="info-text heading"></p>
       <p v-t="'info.votes-text'" class="info-text"></p>
-    </div>
+    </template>
 
     <div class="smalldate">{{ data.session.date }}</div>
     <hr />

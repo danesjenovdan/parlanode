@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <div slot="info">
+    <template #info>
       <i18n-t keypath="info.text" tag="p" class="info-text">
         <a
           v-t="'info.link.text'"
@@ -15,7 +15,7 @@
           target="_blank"
         />
       </i18n-t>
-    </div>
+    </template>
 
     <speech v-quotable :speech="data" show-session />
   </card-wrapper>

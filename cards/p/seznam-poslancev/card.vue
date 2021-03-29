@@ -48,7 +48,7 @@
         @sort="sortBy"
         @page-change="onPageChange"
       >
-        <div slot="info">
+        <template #info>
           <i18n-t keypath="info.lead" tag="p" class="info-text lead">
             <span place="parties">
               <span v-if="selectedParties.length">{{
@@ -71,7 +71,7 @@
             <p class="info-text">{{ currentAnalysisData.explanation }}</p>
             <p v-t="'info.text'" class="info-text"></p>
           </template>
-        </div>
+        </template>
       </inner-card>
     </generator>
   </div>

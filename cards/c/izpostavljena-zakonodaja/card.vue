@@ -7,11 +7,12 @@
     class="card-halfling card-featured-legislation"
     content-class="full"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text'" class="info-text"></p>
-    </div>
+    </template>
+
     <div class="legislation">
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">

@@ -5,7 +5,7 @@
     :results="$options.cardData.data.results"
     type="party"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n-t keypath="info.text[0]" tag="p" class="info-text">
@@ -51,7 +51,7 @@
         </ul>
       </div>
       <p v-t="'info.text[3]'" class="info-text"></p>
-    </div>
+    </template>
   </style-scores>
 </template>
 

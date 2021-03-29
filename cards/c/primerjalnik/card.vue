@@ -1,16 +1,16 @@
 <template>
   <div :id="$options.cardData.mountId">
     <generator>
-      <div slot="generator">
+      <template #generator>
         <tools-tabs current-tool="voteComparator" />
-      </div>
+      </template>
       <card-wrapper
         :content-class="{ 'is-loading': loading }"
         :card-url="generatedCardUrl"
         :header-config="headerConfig"
         :og-config="ogConfig"
       >
-        <div slot="info">
+        <template #info>
           <p v-t="'info.methodology'" class="info-text heading"></p>
           <p v-t="'info.text[0]'" class="info-text"></p>
           <p v-t="'info.text[1]'" class="info-text"></p>
@@ -21,7 +21,7 @@
               <li v-t="'info.list[2]'"></li>
             </ul>
           </div>
-        </div>
+        </template>
 
         <div id="primerjalnik">
           <text-frame class="primerjalnik">

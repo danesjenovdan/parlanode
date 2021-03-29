@@ -6,7 +6,7 @@
     :og-config="ogConfig"
     content-class="full"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n-t keypath="info.text[0]" tag="p" class="info-text">
@@ -19,7 +19,7 @@
         />
       </i18n-t>
       <p v-t="'info.text[1]'" class="info-text"></p>
-    </div>
+    </template>
 
     <bar-chart v-if="chartRows.length" :data="chartRows" />
     <div v-else v-t="'no-speeches'" class="empty-dataset"></div>

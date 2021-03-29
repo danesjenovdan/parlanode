@@ -6,7 +6,7 @@
     :og-config="ogConfig"
     content-class="full"
   >
-    <div slot="info">
+    <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text[0]'" class="info-text"></p>
@@ -19,7 +19,7 @@
           target="_blank"
         />
       </i18n-t>
-    </div>
+    </template>
 
     <data-not-published
       v-if="showEmptyState"
