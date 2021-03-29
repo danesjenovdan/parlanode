@@ -19,7 +19,7 @@
         <div id="skupine-besed">
           <text-frame class="skupine-besed">
             <div class="skupine-besed-text">
-              <i18n path="wordgroups-text" tag="p">
+              <i18n-t keypath="wordgroups-text" tag="p">
                 <span place="words">
                   <tag
                     v-for="(word, index) in words"
@@ -29,7 +29,7 @@
                   />
                   <plus @click="toggleModal(true)" />
                 </span>
-              </i18n>
+              </i18n-t>
               <div class="searchfilter-checkboxes">
                 <div class="searchfilter-checkbox">
                   <input

@@ -6,7 +6,7 @@
     :og-config="ogConfig"
   >
     <div slot="info">
-      <i18n path="info.lead" tag="p" class="info-text lead">
+      <i18n-t keypath="info.lead" tag="p" class="info-text lead">
         <a
           v-t="'info.link.text'"
           :href="$t('info.link.link')"
@@ -14,9 +14,9 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
       <div v-t="'info.words-heading'" class="info-text heading"></div>
-      <i18n path="info.words-text" tag="p" class="info-text">
+      <i18n-t keypath="info.words-text" tag="p" class="info-text">
         <a
           v-t="'info.words-link.text'"
           :href="$t('info.words-link.link')"
@@ -24,7 +24,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
       <p v-t="'info.presence-heading'" class="info-text heading"></p>
       <p v-t="'info.presence-text'" class="info-text"></p>
       <p v-t="'info.votes-heading'" class="info-text heading"></p>

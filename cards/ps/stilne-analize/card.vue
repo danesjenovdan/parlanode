@@ -8,7 +8,7 @@
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n path="info.text[0]" tag="p" class="info-text">
+      <i18n-t keypath="info.text[0]" tag="p" class="info-text">
         <a
           v-t="'info.links[0].text'"
           :href="$t('info.links[0].link')"
@@ -23,9 +23,9 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
       <p v-t="'info.text[1]'" class="info-text"></p>
-      <i18n path="info.text[2]" tag="p" class="info-text">
+      <i18n-t keypath="info.text[2]" tag="p" class="info-text">
         <a
           v-t="'info.links[2].text'"
           :href="$t('info.links[2].link')"
@@ -33,7 +33,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
       <div class="info-text">
         <span v-t="'style-scores.elevated-vocabulary'"></span>:
         <ul>

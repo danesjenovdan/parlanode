@@ -26,7 +26,7 @@
         <div id="primerjalnik">
           <text-frame class="primerjalnik">
             <div class="primerjalnik-text">
-              <i18n path="comparator-text" tag="p">
+              <i18n-t keypath="comparator-text" tag="p">
                 <span place="same" class="primerjalnik-for">
                   <tag
                     v-for="party in sameParties"
@@ -61,7 +61,7 @@
                   />
                   <plus @click="toggleModal('different', true)" />
                 </span>
-              </i18n>
+              </i18n-t>
               <div class="searchfilter-checkboxes">
                 <div class="searchfilter-checkbox">
                   <input
@@ -81,14 +81,14 @@
                 <load-link :text="$t('load')" @click="loadResults" />
               </span>
               <div>
-                <i18n path="comparator-vote-percent" tag="p" class="summary">
+                <i18n-t keypath="comparator-vote-percent" tag="p" class="summary">
                   <strong place="num">{{ votes.length }}</strong>
                   <strong place="percent">
                     {{
                       total === 0 ? 0 : round((votes.length / total) * 100, 2)
                     }}%
                   </strong>
-                </i18n>
+                </i18n-t>
               </div>
             </div>
           </text-frame>

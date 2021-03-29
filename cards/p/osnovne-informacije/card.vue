@@ -9,7 +9,7 @@
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n path="info.text[0]" tag="p" class="info-text">
+      <i18n-t keypath="info.text[0]" tag="p" class="info-text">
         <a
           v-t="'info.link.text'"
           :href="$t('info.link.link')"
@@ -17,7 +17,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
       <p v-t="'info.text[1]'" class="info-text"></p>
     </div>
 
@@ -48,42 +48,42 @@
           <span class="parlaicon parlaicon-delaza" aria-hidden="true"></span>
         </div>
         <div class="bordertop0">
-          <i18n
+          <i18n-t
             v-if="data.results.voters && data.person.gender === 'f'"
-            path="elected-to-district--f"
+            keypath="elected-to-district--f"
             tag="span"
             class="key"
           >
             <b place="numVotes">{{ data.results.voters }}</b>
             <b place="district">{{ data.results.district.join(', ') }}</b>
-          </i18n>
-          <i18n
+          </i18n-t>
+          <i18n-t
             v-else-if="data.results.voters"
-            path="elected-to-district--m"
+            keypath="elected-to-district--m"
             tag="span"
             class="key"
           >
             <b place="numVotes">{{ data.results.voters }}</b>
             <b place="district">{{ data.results.district.join(', ') }}</b>
-          </i18n>
-          <i18n
+          </i18n-t>
+          <i18n-t
             v-else-if="data.results.points && data.person.gender === 'f'"
-            path="elected-to-district-with-points--f"
+            keypath="elected-to-district-with-points--f"
             tag="span"
             class="key"
           >
             <b place="numVotes">{{ data.results.points }}</b>
             <b place="district">{{ data.results.district.join(', ') }}</b>
-          </i18n>
-          <i18n
+          </i18n-t>
+          <i18n-t
             v-else-if="data.results.points"
-            path="elected-to-district-with-points--m"
+            keypath="elected-to-district-with-points--m"
             tag="span"
             class="key"
           >
             <b place="numVotes">{{ data.results.points }}</b>
             <b place="district">{{ data.results.district.join(', ') }}</b>
-          </i18n>
+          </i18n-t>
         </div>
       </div>
 
@@ -127,9 +127,9 @@
           <span class="parlaicon parlaicon-starost" aria-hidden="true"></span>
         </div>
         <div class="bordertop0">
-          <i18n path="age" tag="span" class="key">
+          <i18n-t keypath="age" tag="span" class="key">
             <b place="age">{{ age }}</b>
-          </i18n>
+          </i18n-t>
         </div>
       </div>
 

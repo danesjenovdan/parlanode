@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <div class="parlaicon parlaicon-vprasanje"></div>
-    <i18n :path="translationKey" tag="div" class="motion">
+    <i18n-t :keypath="translationKey" tag="div" class="motion">
       <span v-if="showAuthor" place="name">
         <span v-for="(author, index) in authors" :key="author.id">
           <a :href="getPersonLink(author)" class="funblue-light-hover">{{
@@ -21,7 +21,7 @@
         <strong v-else>{{ question.title }}</strong>
       </span>
       <span place="recipient">{{ question.recipient_text }}</span>
-    </i18n>
+    </i18n-t>
   </div>
 </template>
 

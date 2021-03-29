@@ -10,7 +10,7 @@
         :og-config="ogConfig"
       >
         <div slot="info">
-          <i18n path="info.lead" tag="p" class="info-text lead">
+          <i18n-t keypath="info.lead" tag="p" class="info-text lead">
             <span place="text">
               <span v-if="textFilter">"{{ textFilter }}"</span>
               <span v-else v-t="'all-votes'"></span>
@@ -24,9 +24,9 @@
             <span place="sortBy">{{
               sortOptions[selectedSort].toLowerCase()
             }}</span>
-          </i18n>
+          </i18n-t>
           <p v-t="'info.methodology'" class="info-text heading"></p>
-          <i18n path="info.text[0]" tag="p" class="info-text">
+          <i18n-t keypath="info.text[0]" tag="p" class="info-text">
             <a
               v-t="'info.links[0].text'"
               :href="$t('info.links[0].link')"
@@ -34,7 +34,7 @@
               class="funblue-light-hover"
               target="_blank"
             />
-          </i18n>
+          </i18n-t>
           <p v-t="'info.text[1]'" class="info-text"></p>
         </div>
 

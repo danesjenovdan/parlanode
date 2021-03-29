@@ -6,15 +6,15 @@
     :og-config="ogConfig"
   >
     <div slot="info">
-      <i18n path="info.lead" tag="p" class="info-text lead">
+      <i18n-t keypath="info.lead" tag="p" class="info-text lead">
         <span place="filter">{{ currentFilter }}</span>
         <span place="just-last-five">
           <span v-if="justFive" v-t="'limited-to-last-five'"></span>
         </span>
         <span place="sort-by">{{ $t(`sort-by--${currentSort}`) }}</span>
-      </i18n>
+      </i18n-t>
       <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n path="info.text" tag="p" class="info-text">
+      <i18n-t keypath="info.text" tag="p" class="info-text">
         <a
           v-t="'info.links[0].text'"
           :href="$t('info.links[0].link')"
@@ -36,7 +36,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
     </div>
 
     <sortable-table

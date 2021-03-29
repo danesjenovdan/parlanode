@@ -6,7 +6,7 @@
     :og-config="ogConfig"
   >
     <div slot="info">
-      <i18n path="info.text" tag="p" class="info-text">
+      <i18n-t keypath="info.text" tag="p" class="info-text">
         <a
           v-t="'info.link.text'"
           :href="$t('info.link.link')"
@@ -14,7 +14,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
     </div>
 
     <div v-if="count > 0" class="multiple-speeches">

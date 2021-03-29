@@ -2,7 +2,7 @@
   <div class="event">
     <div :class="['parlaicon', eventIcon]"></div>
     <template v-if="event.type === 'question'">
-      <i18n :path="translationKey" tag="div" class="motion">
+      <i18n-t :keypath="translationKey" tag="div" class="motion">
         <component
           :is="event.content_url ? 'a' : 'strong'"
           :href="event.content_url"
@@ -12,20 +12,20 @@
           >{{ event.title }}</component
         >
         <span place="recipient">{{ event.recipient_text }}</span>
-      </i18n>
+      </i18n-t>
     </template>
     <template v-else-if="event.type === 'ballot'">
-      <i18n :path="translationKey" tag="div" class="motion">
+      <i18n-t :keypath="translationKey" tag="div" class="motion">
         <a
           :href="getSessionVoteLink(event)"
           class="funblue-light-hover"
           place="title"
           >{{ event.vote_name }}</a
         >
-      </i18n>
+      </i18n-t>
     </template>
     <template v-else-if="event.type === 'speech'">
-      <i18n :path="translationKey" tag="div" class="motion">
+      <i18n-t :keypath="translationKey" tag="div" class="motion">
         <a
           :href="getSessionSpeechLink(event)"
           class="funblue-light-hover"
@@ -33,7 +33,7 @@
           >{{ event.session.name }}</a
         >
         <span place="org">{{ event.session.org.name }}</span>
-      </i18n>
+      </i18n-t>
     </template>
     <template v-else>
       <a :href="event.content_url" class="funblue-light-hover" target="_blank">

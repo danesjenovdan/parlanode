@@ -9,7 +9,7 @@
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <p v-t="'info.text[0]'" class="info-text"></p>
-      <i18n path="info.text[1]" tag="p" class="info-text">
+      <i18n-t keypath="info.text[1]" tag="p" class="info-text">
         <a
           v-t="'info.links[0].text'"
           :href="$t('info.links[0].link')"
@@ -17,9 +17,9 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
-      <i18n path="info.text[2]" tag="p" class="info-text heading" />
-      <i18n path="info.text[3]" tag="p" class="info-text">
+      </i18n-t>
+      <i18n-t keypath="info.text[2]" tag="p" class="info-text heading" />
+      <i18n-t keypath="info.text[3]" tag="p" class="info-text">
         <a
           v-t="'info.links[1].text'"
           :href="$t('info.links[1].link')"
@@ -34,8 +34,8 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
-      <i18n path="info.text[4]" tag="p" class="info-text">
+      </i18n-t>
+      <i18n-t keypath="info.text[4]" tag="p" class="info-text">
         <a
           v-t="'info.links[3].text'"
           :href="$t('info.links[3].link')"
@@ -43,7 +43,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
     </div>
 
     <seznam-glasovanj

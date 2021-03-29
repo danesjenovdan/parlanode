@@ -8,7 +8,7 @@
     <div slot="info">
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n path="info.text" tag="p" class="info-text">
+      <i18n-t keypath="info.text" tag="p" class="info-text">
         <a
           v-t="'info.link.text'"
           :href="$t('info.link.link')"
@@ -16,7 +16,7 @@
           class="funblue-light-hover"
           target="_blank"
         />
-      </i18n>
+      </i18n-t>
     </div>
 
     <div class="result-container">

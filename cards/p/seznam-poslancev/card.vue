@@ -49,7 +49,7 @@
         @page-change="onPageChange"
       >
         <div slot="info">
-          <i18n path="info.lead" tag="p" class="info-text lead">
+          <i18n-t keypath="info.lead" tag="p" class="info-text lead">
             <span place="parties">
               <span v-if="selectedParties.length">{{
                 `${$t('party')}: ${selectedParties
@@ -65,7 +65,7 @@
               <span v-else v-t="'all-voting-districts'"></span>
             </span>
             <span place="sortBy">{{ sortMap[currentSort] }}</span>
-          </i18n>
+          </i18n-t>
           <template v-if="currentAnalysisData.explanation">
             <p v-t="'info.methodology'" class="info-text heading"></p>
             <p class="info-text">{{ currentAnalysisData.explanation }}</p>
