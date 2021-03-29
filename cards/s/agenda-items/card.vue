@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import AgendaItem from '@/_components/AgendaItem.vue';
 
 export default {

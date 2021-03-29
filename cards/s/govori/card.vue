@@ -46,11 +46,11 @@
 </template>
 
 <script>
-import links from '@/_mixins/links';
-import common from '@/_mixins/common';
-import { sessionHeader } from '@/_mixins/altHeaders';
-import { sessionOgImage } from '@/_mixins/ogImages';
-import { SPEECHES_PER_PAGE } from '@/_components/constants';
+import links from '@/_mixins/links.js';
+import common from '@/_mixins/common.js';
+import { sessionHeader } from '@/_mixins/altHeaders.js';
+import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 import Speech from '@/_components/Speech.vue';
 import LoadLink from '@/_components/LoadLink.vue';
 import Pagination from '@/_components/Pagination.vue';

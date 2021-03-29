@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { memberOverview } from '@/_mixins/contextUrls';
-import { memberTitle } from '@/_mixins/titles';
+import common from '@/_mixins/common.js';
+import { memberOverview } from '@/_mixins/contextUrls.js';
+import { memberTitle } from '@/_mixins/titles.js';
 import PrisotnostChart from '@/_components/PrisotnostChart.vue';
 
 export default {

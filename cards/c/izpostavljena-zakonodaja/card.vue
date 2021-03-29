@@ -119,11 +119,11 @@
 <script>
 import axios from 'axios';
 import { sortBy } from 'lodash';
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import commentapi from '@/_mixins/commentapi';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import commentapi from '@/_mixins/commentapi.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 

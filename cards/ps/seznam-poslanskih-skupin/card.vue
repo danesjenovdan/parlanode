@@ -21,9 +21,9 @@
 
 <script>
 import { find } from 'lodash';
-import common from '@/_mixins/common';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import Generator from '@/_components/Generator.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';

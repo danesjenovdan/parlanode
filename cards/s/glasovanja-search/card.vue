@@ -19,12 +19,12 @@
 <script>
 import axios from 'axios';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
-import common from '@/_mixins/common';
-import { search as searchContext } from '@/_mixins/contextUrls';
-import { searchHeader } from '@/_mixins/altHeaders';
-import { searchOgImage } from '@/_mixins/ogImages';
-import { searchTitle } from '@/_mixins/titles';
-import stateLoader from '@/_helpers/stateLoader';
+import common from '@/_mixins/common.js';
+import { search as searchContext } from '@/_mixins/contextUrls.js';
+import { searchHeader } from '@/_mixins/altHeaders.js';
+import { searchOgImage } from '@/_mixins/ogImages.js';
+import { searchTitle } from '@/_mixins/titles.js';
+import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
   name: 'GlasovanjaIskanje',

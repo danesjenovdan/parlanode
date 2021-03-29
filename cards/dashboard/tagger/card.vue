@@ -64,7 +64,7 @@
 
 <script>
 import { orderBy } from 'lodash';
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
 import DashTable from '@/_components/Dashboard/Table.vue';
 import DashButton from '@/_components/Dashboard/Button.vue';
@@ -72,7 +72,7 @@ import DashLoadingButton from '@/_components/Dashboard/LoadingButton.vue';
 import DashFancyModal from '@/_components/Dashboard/FancyModal.vue';
 import DashArraySelector from '@/_components/Dashboard/ArraySelector.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import parlapi from '@/_mixins/parlapi';
+import parlapi from '@/_mixins/parlapi.js';
 
 export default {
   name: 'DashboardVotings',

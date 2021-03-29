@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { memberOverview } from '@/_mixins/contextUrls';
-import { memberTitle } from '@/_mixins/titles';
-import { memberHeader } from '@/_mixins/altHeaders';
-import { memberOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { memberOverview } from '@/_mixins/contextUrls.js';
+import { memberTitle } from '@/_mixins/titles.js';
+import { memberHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage } from '@/_mixins/ogImages.js';
 import QuestionList from '@/_components/QuestionList.vue';
 import DataNotPublished from '@/_components/DataNotPublished.vue';
 

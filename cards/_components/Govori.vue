@@ -89,14 +89,14 @@ import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import generateMonths from '@/_mixins/generateMonths';
-import common from '@/_mixins/common';
-import { memberTitle, partyTitle } from '@/_mixins/titles';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
-import { memberSpeeches, partySpeeches } from '@/_mixins/contextUrls';
+import generateMonths from '@/_mixins/generateMonths.js';
+import common from '@/_mixins/common.js';
+import { memberTitle, partyTitle } from '@/_mixins/titles.js';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
+import { memberSpeeches, partySpeeches } from '@/_mixins/contextUrls.js';
 import infiniteScroll from '@/_directives/infiniteScroll';
-import dateFormatter from '@/_helpers/dateFormatter';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   directives: {

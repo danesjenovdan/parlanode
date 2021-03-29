@@ -76,8 +76,8 @@
 <script>
 /* eslint-disable no-underscore-dangle */
 import { assign, sortBy, zip, groupBy, map } from 'lodash';
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
 import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
 import DashTable from '@/_components/Dashboard/Table.vue';
 import DashButton from '@/_components/Dashboard/Button.vue';
@@ -86,7 +86,7 @@ import ModalContentTfidf from '@/_components/Dashboard/ModalContentTfidf.vue';
 import ModalContentPersonInfo from '@/_components/Dashboard/ModalContentPersonInfo.vue';
 import ModalContentPersonMemberships from '@/_components/Dashboard/ModalContentPersonMemberships.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import parlapi from '@/_mixins/parlapi';
+import parlapi from '@/_mixins/parlapi.js';
 
 export default {
   name: 'DashboardPeople',

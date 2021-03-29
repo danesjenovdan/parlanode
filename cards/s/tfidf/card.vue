@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { sessionHeader } from '@/_mixins/altHeaders';
-import { sessionOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { sessionHeader } from '@/_mixins/altHeaders.js';
+import { sessionOgImage } from '@/_mixins/ogImages.js';
 import BarChart from '@/_components/BarChart.vue';
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 
 export default {
   name: 'BesedeKiSoZaznamovaleSejo',

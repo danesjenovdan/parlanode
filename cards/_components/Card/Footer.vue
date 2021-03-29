@@ -24,7 +24,7 @@
 
 <script>
 import { get } from 'lodash';
-import { RIPPLE_DURATION } from '@/_components/constants';
+import { RIPPLE_DURATION } from '@/_helpers/constants.js';
 
 export default {
   name: 'CardFooter',

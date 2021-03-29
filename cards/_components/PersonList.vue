@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 
 export default {

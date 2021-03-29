@@ -59,9 +59,9 @@
 <script>
 import { find, get } from 'lodash';
 import axios from 'axios';
-import common from '@/_mixins/common';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import Generator from '@/_components/Generator.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import StripedButton from '@/_components/StripedButton.vue';

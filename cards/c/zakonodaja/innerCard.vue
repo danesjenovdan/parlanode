@@ -31,8 +31,8 @@
 
 <script>
 import SortableTable from '@/_components/SortableTable.vue';
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
 
 export default {
   name: 'SeznamZakonovKartica',

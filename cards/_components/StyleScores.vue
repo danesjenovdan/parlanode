@@ -93,9 +93,9 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import PersonPin from '@/_components/PersonPin.vue';
 import PartyPin from '@/_components/PartyPin.vue';
 

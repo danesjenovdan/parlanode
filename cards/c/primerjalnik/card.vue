@@ -81,7 +81,11 @@
                 <load-link :text="$t('load')" @click="loadResults" />
               </span>
               <div>
-                <i18n-t keypath="comparator-vote-percent" tag="p" class="summary">
+                <i18n-t
+                  keypath="comparator-vote-percent"
+                  tag="p"
+                  class="summary"
+                >
                   <strong place="num">{{ votes.length }}</strong>
                   <strong place="percent">
                     {{
@@ -182,10 +186,10 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
@@ -200,7 +204,7 @@ import Tag from '@/_components/Tag.vue';
 import TextFrame from '@/_components/TextFrame.vue';
 import TimeChart from '@/_components/TimeChart.vue';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
-import generators from '@/_mixins/generatePeopleAndParties';
+import generators from '@/_mixins/generatePeopleAndParties.js';
 
 export default {
   name: 'PrimerjalnikGlasovanj',

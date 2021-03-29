@@ -187,14 +187,14 @@
 import { format as formatDate } from 'date-fns';
 import { find } from 'lodash';
 
-import voteMapper from '@/_helpers/voteMapper';
-import stateLoader from '@/_helpers/stateLoader';
-import generateMonths from '@/_mixins/generateMonths';
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import { partyTitle } from '@/_mixins/titles';
-import { partyHeader } from '@/_mixins/altHeaders';
-import { partyOgImage } from '@/_mixins/ogImages';
+import voteMapper from '@/_helpers/voteMapper.js';
+import stateLoader from '@/_helpers/stateLoader.js';
+import generateMonths from '@/_mixins/generateMonths.js';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { partyTitle } from '@/_mixins/titles.js';
+import { partyHeader } from '@/_mixins/altHeaders.js';
+import { partyOgImage } from '@/_mixins/ogImages.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';

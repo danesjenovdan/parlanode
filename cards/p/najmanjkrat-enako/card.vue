@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { memberVotes } from '@/_mixins/contextUrls';
-import { memberTitle } from '@/_mixins/titles';
-import { memberHeader } from '@/_mixins/altHeaders';
-import { memberOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { memberVotes } from '@/_mixins/contextUrls.js';
+import { memberTitle } from '@/_mixins/titles.js';
+import { memberHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage } from '@/_mixins/ogImages.js';
 import PersonList from '@/_components/PersonList.vue';
 
 export default {

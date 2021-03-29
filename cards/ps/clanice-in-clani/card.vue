@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { partyHeader } from '@/_mixins/altHeaders';
-import { partyOgImage } from '@/_mixins/ogImages';
-import { partyOverview } from '@/_mixins/contextUrls';
-import { partyTitle } from '@/_mixins/titles';
+import common from '@/_mixins/common.js';
+import { partyHeader } from '@/_mixins/altHeaders.js';
+import { partyOgImage } from '@/_mixins/ogImages.js';
+import { partyOverview } from '@/_mixins/contextUrls.js';
+import { partyTitle } from '@/_mixins/titles.js';
 import PersonList from '@/_components/PersonList.vue';
 
 export default {

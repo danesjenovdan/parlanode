@@ -36,12 +36,12 @@
 import axios from 'axios';
 import SortableTable from '@/_components/SortableTable.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import common from '@/_mixins/common';
-import { searchTitle } from '@/_mixins/titles';
-import { searchHeader } from '@/_mixins/altHeaders';
-import { searchOgImage } from '@/_mixins/ogImages';
-import links from '@/_mixins/links';
-import stateLoader from '@/_helpers/stateLoader';
+import common from '@/_mixins/common.js';
+import { searchTitle } from '@/_mixins/titles.js';
+import { searchHeader } from '@/_mixins/altHeaders.js';
+import { searchOgImage } from '@/_mixins/ogImages.js';
+import links from '@/_mixins/links.js';
+import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
   name: 'ZakonodajaIskanje',

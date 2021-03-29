@@ -27,11 +27,11 @@
 </template>
 
 <script>
-import links from '@/_mixins/links';
-import common from '@/_mixins/common';
-import { memberHeader } from '@/_mixins/altHeaders';
-import { memberOgImage } from '@/_mixins/ogImages';
-import { memberSpeeches } from '@/_mixins/contextUrls';
+import links from '@/_mixins/links.js';
+import common from '@/_mixins/common.js';
+import { memberHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage } from '@/_mixins/ogImages.js';
+import { memberSpeeches } from '@/_mixins/contextUrls.js';
 import BarChart from '@/_components/BarChart.vue';
 
 export default {

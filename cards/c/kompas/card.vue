@@ -33,13 +33,13 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
 import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import d3 from 'd3v3';
 
 export default {

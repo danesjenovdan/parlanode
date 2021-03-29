@@ -99,7 +99,7 @@
 
 <script>
 import { orderBy, assign } from 'lodash';
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
 import DashTable from '@/_components/Dashboard/Table.vue';
 import DashButton from '@/_components/Dashboard/Button.vue';
@@ -107,8 +107,8 @@ import DashLoadingButton from '@/_components/Dashboard/LoadingButton.vue';
 import DashFancyModal from '@/_components/Dashboard/FancyModal.vue';
 import ModalContentAbstract from '@/_components/Dashboard/ModalContentAbstract.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import parlapi from '@/_mixins/parlapi';
-import commentapi from '@/_mixins/commentapi';
+import parlapi from '@/_mixins/parlapi.js';
+import commentapi from '@/_mixins/commentapi.js';
 
 export default {
   name: 'DashboardLegislation',

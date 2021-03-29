@@ -52,10 +52,10 @@
 
 <script>
 import SortableTable from '@/_components/SortableTable.vue';
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import { sessions as sessionsContextUrl } from '@/_mixins/contextUrls';
-import formatDate from '@/_helpers/dateFormatter';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { sessions as sessionsContextUrl } from '@/_mixins/contextUrls.js';
+import formatDate from '@/_helpers/dateFormatter.js';
 
 export default {
   name: 'SeznamSejKartica',

@@ -91,8 +91,8 @@
 /* eslint-disable no-underscore-dangle */
 import DashButton from '@/_components/Dashboard/Button.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import parlapi from '@/_mixins/parlapi';
-import links from '@/_mixins/links';
+import parlapi from '@/_mixins/parlapi.js';
+import links from '@/_mixins/links.js';
 
 export default {
   name: 'DashboardModalContentPersonMemberships',

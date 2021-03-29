@@ -74,17 +74,17 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import Excerpt from '@/_components/Excerpt.vue';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import Result from '@/_components/Result.vue';
-import mapVotes from '@/_helpers/mapVotes';
-import fixAbstractHtml from '@/_helpers/fixAbstractHtml';
+import mapVotes from '@/_helpers/mapVotes.js';
+import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 
 export default {
   name: 'Zakon',

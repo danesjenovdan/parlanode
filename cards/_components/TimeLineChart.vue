@@ -4,7 +4,7 @@
 
 <script>
 import d3 from 'd3v3';
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 import getD3Locale from 'i18n/d3locales';
 
 function chart(rawData, component) {

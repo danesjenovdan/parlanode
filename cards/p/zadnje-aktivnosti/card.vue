@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { memberOverview } from '@/_mixins/contextUrls';
-import { memberHeader } from '@/_mixins/altHeaders';
-import { memberOgImage } from '@/_mixins/ogImages';
-import { memberTitle } from '@/_mixins/titles';
+import common from '@/_mixins/common.js';
+import { memberOverview } from '@/_mixins/contextUrls.js';
+import { memberHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage } from '@/_mixins/ogImages.js';
+import { memberTitle } from '@/_mixins/titles.js';
 import QuestionList from '@/_components/QuestionList.vue';
 
 export default {

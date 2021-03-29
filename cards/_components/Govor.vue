@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 
 export default {
   mixins: [links],

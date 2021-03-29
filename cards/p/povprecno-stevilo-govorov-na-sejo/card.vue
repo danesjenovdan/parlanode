@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {

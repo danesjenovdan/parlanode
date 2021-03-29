@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { RIPPLE_DURATION } from '@/_components/constants';
+import { RIPPLE_DURATION } from '@/_helpers/constants.js';
 import CardInfo from '@/_components/Card/Info.vue';
 import CardEmbed from '@/_components/Card/Embed.vue';
 import CardShare from '@/_components/Card/Share.vue';

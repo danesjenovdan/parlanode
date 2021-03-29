@@ -71,11 +71,11 @@
 
 <script>
 import { find } from 'lodash';
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 import StripedButton from '@/_components/StripedButton.vue';
 import Result from '@/_components/Result.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import mapVotes from '@/_helpers/mapVotes';
+import mapVotes from '@/_helpers/mapVotes.js';
 
 export default {
   name: 'GlasovanjeSejePoslanskeSkupine',

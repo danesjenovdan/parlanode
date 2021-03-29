@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import links from '@/_mixins/links';
+import links from '@/_mixins/links.js';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import { format } from 'date-fns';
 

@@ -182,12 +182,12 @@ import DateRow from '@/_components/DateRow.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import Toggle from '@/_components/Toggle.vue';
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle';
+import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
 
 export default {
   name: 'GlasovanjaNeenotnost',

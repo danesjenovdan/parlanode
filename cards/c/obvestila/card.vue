@@ -421,7 +421,7 @@
 
 <script>
 import axios from 'axios';
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';

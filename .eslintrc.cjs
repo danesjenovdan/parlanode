@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     'import/extensions': ['error', 'always'],
     'no-param-reassign': ['off'], // TODO: fix and reenable
+    'vue/no-mutating-props': ['off'], // TODO: fix and reenable
   },
   settings: {
     'import/resolver': {

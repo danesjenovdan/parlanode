@@ -75,7 +75,7 @@
 <script>
 /* eslint-disable no-underscore-dangle */
 import { assign, sortBy, zip, groupBy, map } from 'lodash';
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
 import DashTable from '@/_components/Dashboard/Table.vue';
 import DashButton from '@/_components/Dashboard/Button.vue';
@@ -83,7 +83,7 @@ import DashFancyModal from '@/_components/Dashboard/FancyModal.vue';
 import ModalContentTfidf from '@/_components/Dashboard/ModalContentTfidf.vue';
 import ModalContentOrganisationInfo from '@/_components/Dashboard/ModalContentOrganisationInfo.vue';
 import ModalContentOrganisationMemberships from '@/_components/Dashboard/ModalContentOrganisationMemberships.vue';
-import parlapi from '@/_mixins/parlapi';
+import parlapi from '@/_mixins/parlapi.js';
 
 export default {
   name: 'DashboardOrgs',

@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import SortableTable from '@/_components/SortableTable.vue';
 import Pagination from '@/_components/Pagination.vue';
-import links from '@/_mixins/links';
-import { memberList } from '@/_mixins/contextUrls';
+import links from '@/_mixins/links.js';
+import { memberList } from '@/_mixins/contextUrls.js';
 
 export default {
   name: 'SeznamPoslancevInnerCard',

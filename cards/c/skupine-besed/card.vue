@@ -113,11 +113,11 @@
 
 <script>
 import axios from 'axios';
-import links from '@/_mixins/links';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
-import stateLoader from '@/_helpers/stateLoader';
-import common from '@/_mixins/common';
+import links from '@/_mixins/links.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
+import stateLoader from '@/_helpers/stateLoader.js';
+import common from '@/_mixins/common.js';
 import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';

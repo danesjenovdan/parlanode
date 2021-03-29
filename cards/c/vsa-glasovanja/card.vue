@@ -56,10 +56,10 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import links from '@/_mixins/links';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 
 export default {

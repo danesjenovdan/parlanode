@@ -57,15 +57,15 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders';
-import { defaultOgImage } from '@/_mixins/ogImages';
+import common from '@/_mixins/common.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import Generator from '@/_components/Generator.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import PSearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
-import dateParser from '@/_helpers/dateParser';
+import dateParser from '@/_helpers/dateParser.js';
 import InnerCard from './innerCard.vue';
 
 export default {

@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import links from '@/_mixins/links';
-import { SPEECHES_PER_PAGE } from '@/_components/constants';
+import links from '@/_mixins/links.js';
+import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 
 const PADDING_LENGTH = 30;
 

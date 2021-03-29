@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
-import { partyOverview } from '@/_mixins/contextUrls';
-import { partyTitle } from '@/_mixins/titles';
+import common from '@/_mixins/common.js';
+import { partyOverview } from '@/_mixins/contextUrls.js';
+import { partyTitle } from '@/_mixins/titles.js';
 import PrisotnostChart from '@/_components/PrisotnostChart.vue';
 
 export default {

@@ -42,11 +42,11 @@
 
 <script>
 import { reduce } from 'lodash';
-import common from '@/_mixins/common';
-import { memberOverview } from '@/_mixins/contextUrls';
-import { memberHeader } from '@/_mixins/altHeaders';
-import { memberOgImage } from '@/_mixins/ogImages';
-import { memberTitle } from '@/_mixins/titles';
+import common from '@/_mixins/common.js';
+import { memberOverview } from '@/_mixins/contextUrls.js';
+import { memberHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage } from '@/_mixins/ogImages.js';
+import { memberTitle } from '@/_mixins/titles.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import MembershipList from '@/_components/MembershipList.vue';

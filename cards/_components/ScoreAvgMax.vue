@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import common from '@/_mixins/common';
+import common from '@/_mixins/common.js';
 import {
   memberOverview,
   partyOverview,
@@ -113,10 +113,10 @@ import {
   partyVotes,
   memberSpeeches,
   partySpeeches,
-} from '@/_mixins/contextUrls';
-import { memberTitle, partyTitle } from '@/_mixins/titles';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
+} from '@/_mixins/contextUrls.js';
+import { memberTitle, partyTitle } from '@/_mixins/titles.js';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import PersonPin from '@/_components/PersonPin.vue';
 import PartyPin from '@/_components/PartyPin.vue';
 

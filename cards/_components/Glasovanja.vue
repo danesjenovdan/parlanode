@@ -104,11 +104,11 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import Toggle from '@/_components/Toggle.vue';
 import Ballot from '@/_components/Ballot.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import common from '@/_mixins/common';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages';
-import { memberVotes, partyVotes } from '@/_mixins/contextUrls';
-import { memberTitle, partyTitle } from '@/_mixins/titles';
+import common from '@/_mixins/common.js';
+import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
+import { memberVotes, partyVotes } from '@/_mixins/contextUrls.js';
+import { memberTitle, partyTitle } from '@/_mixins/titles.js';
 
 export default {
   components: {
