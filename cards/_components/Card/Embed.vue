@@ -19,6 +19,7 @@
         </div>
         <div class="embed-divider"></div>
         <div class="embed-script">
+          <!-- eslint-disable vue/no-v-html -->
           <textarea
             ref="embedInput"
             :data-url="url"
@@ -26,6 +27,7 @@
             data-id=""
             v-html="embedCode"
           ></textarea>
+          <!-- eslint-enable vue/no-v-html -->
           <button
             class="btn-parlameter btn-full-width btn-blue btn-copy-embed"
             @click="copyEmbedCode"
@@ -44,21 +46,18 @@ import { format } from 'date-fns';
 
 export default {
   name: 'CardEmbed',
-
   props: {
     url: {
       type: String,
       default: '',
     },
   },
-
   data() {
     return {
       refresh: true,
       copied: false,
     };
   },
-
   computed: {
     embedCode() {
       let newUrl = this.url;
@@ -67,17 +66,14 @@ export default {
           this.url.split('?')[1]
         }`;
       }
-
-      const slugs = this.$root.$options.cardData.urls;
+      const { slugs } = this.$root.$options.contextData;
       return `&#x3C;script&#x3E;(function(d,script){script=d.createElement(&#x27;script&#x27;);script.type=&#x27;text/javascript&#x27;;script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src=&#x27;${slugs.urls.cdn}/js/iframeResizer.min.js&#x27;;d.getElementsByTagName(&#x27;head&#x27;)[0].appendChild(script);}(document));&#x3C;/script&#x3E;&#x3C;iframe frameborder=&#x22;0&#x22; width=&#x22;100%&#x22; src=&#x22;${newUrl}&#x26;embed=true&#x22;&#x3E;&#x3C;/iframe&#x3E;`;
     },
   },
-
   methods: {
     toggleEmbedSwitch() {
       this.refresh = !this.refresh;
     },
-
     copyEmbedCode() {
       this.$refs.embedInput.select();
       let succeeded = false;

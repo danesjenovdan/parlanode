@@ -1,5 +1,6 @@
 import { assign } from 'lodash';
 
+// TODO: get from contextData not from this
 export const memberOgImage = {
   computed: {
     ogConfig() {
@@ -19,6 +20,7 @@ export const memberOgImage = {
   },
 };
 
+// TODO: get from contextData not from this
 export const partyOgImage = {
   computed: {
     ogConfig() {
@@ -44,14 +46,15 @@ export const searchOgImage = {
       return {
         name: 'circle',
         icon: 'og-search',
-        h1: this.keywords,
-        h2: 'iskalni niz',
+        h1: this.keywords, // TODO: get from contextData not from this
+        h2: 'iskalni niz', // TODO: translate
         title: this.$t('card.title'),
       };
     },
   },
 };
 
+// TODO: get from contextData not from this
 export const sessionOgImage = {
   computed: {
     ogConfig() {
@@ -59,6 +62,7 @@ export const sessionOgImage = {
       const session = cardData.data.session || cardData.data.results.session;
       const sessionName = session.name;
 
+      // TODO: this needs to be generic and not sl
       let imageName = 'seja-redna';
       if (sessionName.indexOf('izredna') !== -1) {
         imageName = 'seja-izredna';
@@ -84,6 +88,5 @@ export const defaultOgImage = (comp, overrides = {}) => {
     h2: '',
     title: comp.$t('card.title'),
   };
-
   return assign({}, ogConfig, overrides);
 };

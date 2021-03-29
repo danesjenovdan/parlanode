@@ -3,17 +3,15 @@ import { assign } from 'lodash';
 export const memberHeader = {
   computed: {
     headerConfig() {
-      const cardData = this.cardData || this.$options.cardData;
-      const person = this.person || this.data.person;
-      const coalitionText = person.party.is_coalition
+      const { cardData, cardState } = this.$root.$options.contextData;
+      const coalitionText = cardData.person.party.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
-
       return {
-        circleImage: person.gov_id,
-        heading: person.name,
-        subheading: `${person.party.acronym} | ${coalitionText}`,
-        alternative: cardData.cardData.altHeader === 'true',
+        circleImage: cardData.person.gov_id,
+        heading: cardData.person.name,
+        subheading: `${cardData.person.party.acronym} | ${coalitionText}`,
+        alternative: cardState.altHeader,
         title: this.$t('card.title'),
       };
     },
@@ -23,21 +21,18 @@ export const memberHeader = {
 export const partyHeader = {
   computed: {
     headerConfig() {
-      const cardData = this.cardData || this.$options.cardData;
-      const party = this.party || this.data.party;
-      const coalitionText = party.is_coalition
+      const { cardData, cardState } = this.$root.$options.contextData;
+      const coalitionText = cardData.party.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
-
       return {
-        // circleText: party.acronym,
         mediaImage: 'party',
-        circleClass: `${party.acronym
+        circleClass: `${cardData.party.acronym
           .replace(/[ +,]/g, '_')
           .toLowerCase()}-background`,
-        heading: party.name,
-        subheading: `${party.acronym} | ${coalitionText}`,
-        alternative: cardData.cardData.altHeader === 'true',
+        heading: cardData.party.name,
+        subheading: `${cardData.party.acronym} | ${coalitionText}`,
+        alternative: cardState.altHeader,
         title: this.$t('card.title'),
       };
     },
@@ -47,11 +42,12 @@ export const partyHeader = {
 export const searchHeader = {
   computed: {
     headerConfig() {
+      const { cardState } = this.$root.$options.contextData;
       return {
         circleIcon: 'og-search',
-        heading: this.keywords,
-        subheading: 'iskalni niz',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
+        heading: this.keywords, // TODO: get this from contextData not from card
+        subheading: 'iskalni niz', // TODO: translate this
+        alternative: cardState.altHeader,
         title: this.$t('card.title'),
       };
     },
@@ -61,10 +57,11 @@ export const searchHeader = {
 export const sessionHeader = {
   computed: {
     headerConfig() {
-      const cardData = this.cardData || this.$options.cardData;
-      const session = cardData.data.session || cardData.data.results.session;
+      const { cardData, cardState } = this.$root.$options.contextData;
+      const session = cardData.session || cardData.results.session;
       const sessionName = session.name;
 
+      // TODO: this needs to be generic and not sl
       let imageName = 'seja-redna';
       if (sessionName.indexOf('izredna') !== -1) {
         imageName = 'seja-izredna';
@@ -76,7 +73,7 @@ export const sessionHeader = {
         mediaImage: imageName,
         heading: sessionName,
         subheading: session.date,
-        alternative: cardData.cardData.altHeader === 'true',
+        alternative: cardState.altHeader,
         title: this.$t('card.title'),
       };
     },
@@ -88,10 +85,9 @@ export const defaultHeaderConfig = (comp, overrides = {}) => {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
-    alternative: comp.$options.cardData.cardData.altHeader === 'true',
+    alternative: comp.$options.contextData.cardState.altHeader,
     title: comp.$t('card.title'),
   };
-
   return assign({}, headerConfig, overrides);
 };
 
@@ -100,11 +96,10 @@ export const defaultDynamicHeaderConfig = (comp, overrides = {}) => {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
-    alternative: comp.$options.cardData.cardData.altHeader === 'true',
-    title: comp.$options.cardData.parlaState.cardTitle
-      ? comp.$options.cardData.parlaState.cardTitle
+    alternative: comp.$options.contextData.cardState.altHeader,
+    title: comp.$options.contextData.cardState.cardTitle
+      ? comp.$options.contextData.cardState.cardTitle
       : comp.$t('card.title'),
   };
-
   return assign({}, headerConfig, overrides);
 };

@@ -1,14 +1,13 @@
 <template>
   <div class="card-footer">
-    <div class="card-logo hidden">
+    <!-- <div class="card-logo">
       <a :href="slugs.urls.base">
         <img
           :src="`${slugs.urls.cdn}/img/logo-parlameter.svg`"
           alt="parlameter logo"
         />
       </a>
-    </div>
-
+    </div> -->
     <div
       v-for="button in buttons"
       :key="button"
@@ -28,17 +27,18 @@ import { RIPPLE_DURATION } from '@/_helpers/constants.js';
 
 export default {
   name: 'CardFooter',
+  emits: ['toggle-back'],
   data() {
     return {
       clicksDisabled: false,
       currentBack: null,
-      slugs: this.$root.$options.cardData.urls,
+      slugs: this.$root.$options.contextData.slugs,
     };
   },
   computed: {
     buttons() {
       const previous = get(
-        this.$root.$options.cardData.data,
+        this.$root.$options.contextData.cardData,
         'previous_versions'
       );
       if (previous && previous.length) {
@@ -50,7 +50,7 @@ export default {
   methods: {
     toggleBack(name) {
       if (!this.clicksDisabled) {
-        this.$emit('toggleBack', name);
+        this.$emit('toggle-back', name);
         this.currentBack = this.currentBack === name ? null : name;
         this.clicksDisabled = true;
         window.setTimeout(() => {

@@ -1,22 +1,21 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
-    :og-config="ogConfig"
     content-class="full"
   >
     <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>
       <i18n-t keypath="info.text[0]" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
+        <template #link>
+          <a
+            v-t="'info.link.text'"
+            :href="$t('info.link.link')"
+            class="funblue-light-hover"
+            target="_blank"
+          />
+        </template>
       </i18n-t>
       <p v-t="'info.text[1]'" class="info-text"></p>
     </template>
@@ -49,40 +48,34 @@
         </div>
         <div class="bordertop0">
           <i18n-t
-            v-if="data.results.voters && data.person.gender === 'f'"
-            keypath="elected-to-district--f"
+            v-if="data.results.voters"
+            :keypath="`elected-to-district--${
+              data.person.gender === 'f' ? 'f' : 'm'
+            }`"
             tag="span"
             class="key"
           >
-            <b place="numVotes">{{ data.results.voters }}</b>
-            <b place="district">{{ data.results.district.join(', ') }}</b>
-          </i18n-t>
-          <i18n-t
-            v-else-if="data.results.voters"
-            keypath="elected-to-district--m"
-            tag="span"
-            class="key"
-          >
-            <b place="numVotes">{{ data.results.voters }}</b>
-            <b place="district">{{ data.results.district.join(', ') }}</b>
-          </i18n-t>
-          <i18n-t
-            v-else-if="data.results.points && data.person.gender === 'f'"
-            keypath="elected-to-district-with-points--f"
-            tag="span"
-            class="key"
-          >
-            <b place="numVotes">{{ data.results.points }}</b>
-            <b place="district">{{ data.results.district.join(', ') }}</b>
+            <template #numVotes>
+              <b>{{ data.results.voters }}</b>
+            </template>
+            <template #district>
+              <b>{{ data.results.district.join(', ') }}</b>
+            </template>
           </i18n-t>
           <i18n-t
             v-else-if="data.results.points"
-            keypath="elected-to-district-with-points--m"
+            :keypath="`elected-to-district-with-points--${
+              data.person.gender === 'f' ? 'f' : 'm'
+            }`"
             tag="span"
             class="key"
           >
-            <b place="numVotes">{{ data.results.points }}</b>
-            <b place="district">{{ data.results.district.join(', ') }}</b>
+            <template #numVotes>
+              <b>{{ data.results.points }}</b>
+            </template>
+            <template #district>
+              <b>{{ data.results.district.join(', ') }}</b>
+            </template>
           </i18n-t>
         </div>
       </div>
@@ -128,7 +121,9 @@
         </div>
         <div class="bordertop0">
           <i18n-t keypath="age" tag="span" class="key">
-            <b place="age">{{ age }}</b>
+            <template #age>
+              <b>{{ age }}</b>
+            </template>
           </i18n-t>
         </div>
       </div>
@@ -232,7 +227,7 @@ import { memberOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'OsnovneInformacijePS',
+  name: 'OsnovneInformacijePoslanca',
   components: {},
   mixins: [
     common,
@@ -244,7 +239,7 @@ export default {
   ],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.contextData.cardData,
     };
   },
   computed: {
@@ -265,18 +260,6 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-.parlaicon-vodja {
-  background-image: url("#{getConfig('urls.cdn')}/icons/vodja.svg");
-}
-.parlaicon-namestnik {
-  background-image: url("#{getConfig('urls.cdn')}/icons/namestnik.svg");
-}
-.parlaicon-sedezi {
-  background-image: url("#{getConfig('urls.cdn')}/icons/sedezi.svg");
-}
-.parlaicon-kontakt {
-  background-image: url("#{getConfig('urls.cdn')}/icons/kontakt.svg");
-}
 .parlaicon-omrezja {
   width: 30px;
   height: 30px;

@@ -1,7 +1,4 @@
 {
-  "_id": "p_osnovne-informacije",
   "dataUrl": "{analize}/p/getMPStatic",
-  "lastUpdate": "2019-03-12T10:41:09.054Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2019-03-12T10:41:09.054Z"
 }

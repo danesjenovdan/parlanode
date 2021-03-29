@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
     content-class="full"
-    @backChange="handleBackChange"
+    @back-change="handleBackChange"
   >
     <slot slot="info" name="info"></slot>
     <div class="prisotnost-chart"></div>

@@ -57,7 +57,7 @@ export default {
   },
   data() {
     return {
-      slugs: this.$root.$options.cardData.urls,
+      slugs: this.$root.$options.contextData.slugs,
     };
   },
 };

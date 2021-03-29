@@ -1,35 +1,34 @@
 export const memberTitle = {
   created() {
-    const context = this.$root.$options.cardData;
-    context.template.pageTitle = `${this.$t('card.title')} - ${
-      context.data.person.name
-    }`;
+    const { template, cardData } = this.$root.$options.contextData;
+    template.pageTitle = `${this.$t('card.title')} - ${cardData.person.name}`;
   },
 };
 
 export const partyTitle = {
   created() {
-    const context = this.$root.$options.cardData;
-    const partyObject = context.data.party || context.data.organization;
-    const side = partyObject.is_coalition ? 'koalicija' : 'opozicija';
-
-    context.template.pageTitle = `${this.$t('card.title')} - ${
+    const { template, cardData } = this.$root.$options.contextData;
+    const partyObject = cardData.party || cardData.organization;
+    const coalitionText = partyObject.is_coalition
+      ? this.$t('coalition')
+      : this.$t('opposition');
+    template.pageTitle = `${this.$t('card.title')} - ${
       partyObject.acronym
-    } | ${side}`;
+    } | ${coalitionText}`;
   },
 };
 
 export const searchTitle = {
   created() {
-    const context = this.$root.$options.cardData;
-    const keywords = this.keywords || '';
-    context.template.pageTitle = `Iskalni niz: ${keywords}`;
+    const { template } = this.$root.$options.contextData;
+    const keywords = this.keywords || ''; // TODO: get this from contextData not from card
+    template.pageTitle = `Iskalni niz - ${keywords}`; // TODO: translate
   },
 };
 
 export const otherVotingsTitle = {
   created() {
-    const context = this.$root.$options.cardData;
-    context.template.pageTitle = `Druga glasovanja - ${context.data.session.name}`;
+    const { template, cardData } = this.$root.$options.contextData;
+    template.pageTitle = `Druga glasovanja - ${cardData.session.name}`; // TODO: translate
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['card-container', transitionClass]">
+  <div :id="mountId" :class="['card-container', transitionClass]">
     <card-header :config="headerConfig" :current-back="currentBack" />
 
     <div :class="['card-content', contentClass]">
@@ -14,18 +14,17 @@
       <card-previous v-else-if="currentBack === 'previous'" />
 
       <div v-else v-cloak :class="contentFrontClass" class="card-content-front">
-        <!-- this needs fixing, it's currently hardcoded -->
-        <div v-if="false" class="card-content__empty">
+        <!-- TODO: this needs fixing, it's currently hardcoded -->
+        <!-- <div v-if="false" class="card-content__empty">
           <div class="card-content__empty-inner">
             <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`" />
             <p v-t="'data-currently-unavailable'"></p>
           </div>
-        </div>
-
-        <slot v-else />
+        </div> -->
+        <slot />
       </div>
     </div>
-    <card-footer @toggleBack="toggleBack" />
+    <card-footer @toggle-back="toggleBack" />
   </div>
 </template>
 
@@ -65,38 +64,21 @@ export default {
       type: Object,
       default: () => ({}),
     },
-    ogConfig: {
-      type: Object,
-      default: null,
-    },
   },
+  emits: ['back-change'],
   data() {
     return {
       currentBack: null,
       transitionClass: null,
       previousHeight: null,
-      slugs: this.$root.$options.cardData.urls,
+      slugs: this.$root.$options.contextData.slugs,
+      mountId: this.$root.$options.contextData.mountId,
     };
   },
   watch: {
     currentBack(newBack) {
-      this.$emit('backChange', newBack);
+      this.$emit('back-change', newBack);
     },
-  },
-  created() {
-    const { ogConfig } = this;
-    if (ogConfig) {
-      const { name, ...params } = ogConfig;
-      const slugs = this.$root.$options.cardData.urls;
-      const ogImagePath = `${slugs.urls.glej}/og-image/${name}/`;
-      const ogImageParams = `?${Object.keys(params)
-        .map((k) => `${k}=${encodeURIComponent(params[k])}`)
-        .join('&')}`;
-      this.$root.$options.cardData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
-    } else {
-      // eslint-disable-next-line no-console
-      console.warn('Missing ogConfig!');
-    }
   },
   methods: {
     toggleBack(newBack) {
@@ -141,6 +123,7 @@ export default {
   &.is-loading {
     overflow-y: hidden;
     position: relative;
+
     &::before {
       background-color: $white-hover;
       background-image: url("#{getConfig('urls.cdn')}/img/loader.gif");

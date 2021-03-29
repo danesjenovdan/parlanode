@@ -7,7 +7,7 @@
       <card-wrapper
         :card-url="url"
         :header-config="headerConfig"
-        @backChange="backChangeCallback"
+        @back-change="backChangeCallback"
       >
         <template #info>
           <p v-t="'info.lead'" class="info-text lead"></p>

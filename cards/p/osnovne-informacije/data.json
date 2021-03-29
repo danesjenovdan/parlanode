@@ -1,67 +1,44 @@
 {
   "person": {
     "is_active": false,
-    "district": [89],
-    "name": "Eva Irgl",
-    "gov_id": "P023",
+    "district": [25],
+    "name": "Peter Jo\u017eef \u010cesnik",
+    "gov_id": "G003",
     "gender": "f",
     "party": {
-      "acronym": "SDS",
+      "name": "Stranka Alenke Bratu\u0161ek",
+      "classification": "pg",
+      "acronym": "SAB",
+      "has_voters": false,
       "is_coalition": false,
-      "id": 5,
-      "name": "PS Slovenska Demokratska Stranka"
+      "id": 8
     },
     "type": "mp",
-    "id": 35,
+    "id": 1,
     "has_function": false
   },
-  "created_at": "02.08.2018",
-  "created_for": "02.08.2018",
+  "created_at": "05.02.2021",
+  "created_for": "22.06.2018",
   "results": {
-    "voters": 3379,
-    "points": 1234,
-    "acronym": "SDS",
-    "mandates": 4,
-    "party_id": 5,
-    "groups": [
-      {
-        "group_id": 13,
-        "group_name":
-          "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti"
-      },
-      { "group_id": 15, "group_name": "Mandatno-volilna komisija" },
-      {
-        "group_id": 23,
-        "group_name":
-          "Odbor za notranje zadeve, javno upravo in lokalno samoupravo"
-      },
-      { "group_id": 25, "group_name": "Odbor za pravosodje" }
-    ],
-    "education": "gimnazijska maturantka\r\n",
-    "working_bodies_functions": [
-      {
-        "role": "president",
-        "wb": {
-          "acronym": "",
-          "is_coalition": false,
-          "id": 13,
-          "name":
-            "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti"
-        }
-      }
-    ],
-    "previous_occupation": "poslanka ",
-    "name": "Eva Irgl",
-    "district": ["Ajdov\u0161\u010dina"],
-    "age": 41,
+    "voters": 744,
+    "acronym": "SAB",
+    "mandates": 1,
+    "party_id": 8,
+    "groups": [],
+    "education": "kontrolor letenja",
+    "working_bodies_functions": [],
+    "previous_occupation": "upokojenec",
+    "name": "Peter Jo\u017eef \u010cesnik",
+    "district": ["Ljubljana Vi\u010d - Rudnik III"],
+    "points": null,
     "social": [
       {
-        "twitter": "https://twitter.com/evairgll",
-        "facebook": "https://www.facebook.com/eva.irgl.3",
+        "twitter": null,
+        "facebook": "https://www.facebook.com/peter.cesnik",
         "linkedin": null
       }
     ],
-    "birth_date": "1976-12-09",
-    "party": "PS Slovenska Demokratska Stranka"
+    "birth_date": "1945-01-11",
+    "party": "Stranka Alenke Bratu\u0161ek"
   }
 }

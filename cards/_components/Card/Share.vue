@@ -23,51 +23,46 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'CardShare',
-
   props: {
     url: {
       type: String,
       default: '',
     },
   },
-
   data() {
     return {
       shortenedUrl: `${this.url}&frame=true`,
       copied: false,
     };
   },
-
   watch: {
     url() {
       this.shortenUrl();
     },
   },
-
   mounted() {
     this.shortenUrl();
   },
-
   methods: {
     shortenUrl() {
-      return new Promise(() => {
-        $.get(
+      axios
+        .get(
           `https://parla.me/shortner/generate?url=${encodeURIComponent(
             `${this.url}&frame=true`
-          )}`,
-          (response) => {
-            this.shortenedUrl = response;
-            this.copied = false;
-            this.$nextTick(() => {
-              this.$refs.urlInput.select();
-            });
-          }
-        );
-      });
+          )}`
+        )
+        .then((response) => {
+          this.shortenedUrl = response.data;
+          this.copied = false;
+          this.$nextTick(() => {
+            this.$refs.urlInput.select();
+          });
+        });
     },
-
     copyLink() {
       // set focus
       this.$refs.urlInput.focus();
