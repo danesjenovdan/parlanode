@@ -3,9 +3,7 @@
     <card-header :config="headerConfig" :current-back="currentBack" />
 
     <div :class="['card-content', contentClass]">
-      <card-info v-if="currentBack === 'info'">
-        <slot name="info" />
-      </card-info>
+      <card-info v-if="currentBack === 'info'" :info="info" />
 
       <card-embed v-else-if="currentBack === 'embed'" :url="cardUrl" />
 
@@ -63,6 +61,10 @@ export default {
     headerConfig: {
       type: Object,
       default: () => ({}),
+    },
+    info: {
+      type: String,
+      default: '',
     },
   },
   emits: ['back-change'],

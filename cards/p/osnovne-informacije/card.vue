@@ -3,23 +3,8 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     content-class="full"
+    :info="$t('card.info')"
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n-t keypath="info.text[0]" tag="p" class="info-text">
-        <template #link>
-          <a
-            v-t="'info.link.text'"
-            :href="$t('info.link.link')"
-            class="funblue-light-hover"
-            target="_blank"
-          />
-        </template>
-      </i18n-t>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-    </template>
-
     <div class="poslanec osnovne-informacije-poslanca">
       <div class="row">
         <div class="parlaicon-container">
