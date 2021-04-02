@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find } from 'lodash-es';
 import StripedButton from '@/_components/StripedButton.vue';
 import links from '@/_mixins/links.js';
 import SearchField from '@/_components/SearchField.vue';

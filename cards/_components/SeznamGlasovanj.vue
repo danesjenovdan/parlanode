@@ -202,7 +202,7 @@
 </template>
 
 <script>
-import { map, sortBy } from 'lodash';
+import { map, sortBy } from 'lodash-es';
 import VirtualList from '@/_components/vue-virtual-scroll-list/VirtualList.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';

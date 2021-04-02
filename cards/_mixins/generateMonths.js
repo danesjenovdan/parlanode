@@ -1,4 +1,4 @@
-import { range, flatten } from 'lodash';
+import { range, flatten } from 'lodash-es';
 
 export default {
   methods: {

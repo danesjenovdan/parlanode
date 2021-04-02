@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { range } from 'lodash';
+import { range } from 'lodash-es';
 
 export default {
   name: 'Pagination',

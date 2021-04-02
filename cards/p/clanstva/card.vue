@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { reduce } from 'lodash';
+import { reduce } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { memberOverview } from '@/_mixins/contextUrls.js';
 import { memberHeader } from '@/_mixins/altHeaders.js';

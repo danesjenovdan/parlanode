@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { find, get } from 'lodash';
+import { find, get } from 'lodash-es';
 import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';

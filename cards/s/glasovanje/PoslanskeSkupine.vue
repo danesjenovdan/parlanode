@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find } from 'lodash-es';
 import links from '@/_mixins/links.js';
 import StripedButton from '@/_components/StripedButton.vue';
 import Result from '@/_components/Result.vue';

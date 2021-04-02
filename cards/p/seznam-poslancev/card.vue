@@ -55,7 +55,7 @@
 
 <script>
 import stableSort from 'stable';
-import { find } from 'lodash';
+import { find } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import axios from 'axios';
 import stateLoader from '@/_helpers/stateLoader.js';

@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { find, intersection, assign } from 'lodash';
+import { find, intersection, assign } from 'lodash-es';
 import generateMonths from '@/_mixins/generateMonths.js';
 import common from '@/_mixins/common.js';
 import { partyOverview } from '@/_mixins/contextUrls.js';

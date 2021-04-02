@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { orderBy } from 'lodash';
+import { orderBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import DashWrapper from '@/_components/Dashboard/Wrapper.vue';
 import DashTable from '@/_components/Dashboard/Table.vue';

@@ -175,7 +175,7 @@
 
 <script>
 import { parseISO, format } from 'date-fns';
-import { groupBy, sortBy, zipObject, find, assign } from 'lodash';
+import { groupBy, sortBy, zipObject, find, assign } from 'lodash-es';
 import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import DateRow from '@/_components/DateRow.vue';

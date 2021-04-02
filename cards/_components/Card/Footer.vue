@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { get } from 'lodash';
+import { get } from 'lodash-es';
 import { RIPPLE_DURATION } from '@/_helpers/constants.js';
 
 export default {

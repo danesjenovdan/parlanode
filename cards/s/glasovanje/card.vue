@@ -217,7 +217,7 @@
 </template>
 
 <script>
-import { pick } from 'lodash';
+import { pick } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';

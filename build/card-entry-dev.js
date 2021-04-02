@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n';
-import { merge } from 'lodash';
+import { merge } from 'lodash-es';
 import slugs from '@/../data/slugs.dev.json';
 import siteMap from '@/../data/siteMap.json';
 /* eslint-disable import/no-unresolved */

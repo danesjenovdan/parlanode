@@ -56,7 +56,7 @@
 
 <script>
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import { find } from 'lodash';
+import { find } from 'lodash-es';
 
 export default {
   name: 'Excerpt',

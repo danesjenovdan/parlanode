@@ -185,7 +185,7 @@
 
 <script>
 import { format as formatDate } from 'date-fns';
-import { find } from 'lodash';
+import { find } from 'lodash-es';
 
 import voteMapper from '@/_helpers/voteMapper.js';
 import stateLoader from '@/_helpers/stateLoader.js';

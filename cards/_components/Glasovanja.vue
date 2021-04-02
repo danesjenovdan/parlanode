@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { find, filter, assign } from 'lodash';
+import { find, filter, assign } from 'lodash-es';
 import PSearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import Toggle from '@/_components/Toggle.vue';

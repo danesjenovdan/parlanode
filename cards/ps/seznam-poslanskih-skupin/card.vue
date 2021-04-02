@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { find } from 'lodash';
+import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';

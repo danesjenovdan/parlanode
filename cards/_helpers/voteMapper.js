@@ -1,4 +1,4 @@
-import { pick } from 'lodash';
+import { pick } from 'lodash-es';
 
 export default (vote, linkGenerator) => {
   const newVote = pick(vote.results, [

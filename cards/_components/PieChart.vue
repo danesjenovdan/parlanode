@@ -4,7 +4,7 @@
 
 <script>
 /* global query, customUrl */
-import { isFinite } from 'lodash';
+import { isFinite } from 'lodash-es';
 import d3 from 'd3v3';
 
 function chart(rawData, component) {

@@ -118,7 +118,7 @@
 
 <script>
 import axios from 'axios';
-import { sortBy } from 'lodash';
+import { sortBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import commentapi from '@/_mixins/commentapi.js';
