@@ -32,7 +32,6 @@
     "fastify-cors": "^5.2.0",
     "fastify-static": "^4.0.1",
     "glob": "^7.1.6",
-    "lodash": "^4.17.15",
     "lodash-es": "^4.17.21",
     "rollup": "^2.42.4",
     "sass": "^1.32.8",

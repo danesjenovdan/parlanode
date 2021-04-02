@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'fs';
 import { resolve, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import glob from 'glob';
+import { groupBy, mapValues } from 'lodash-es';
 
 const dir = dirname(fileURLToPath(import.meta.url));
 const cardsPath = resolve(dir, '..', 'cards');
@@ -12,21 +13,30 @@ export default function serveDevCards() {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         if (req.url === '/') {
-          const cardLinks = glob
+          const cards = glob
             .sync(join(cardsPath, '**/card.json'))
-            .map((file) => file.split('/').slice(-3, -1))
+            .map((file) => file.split('/').slice(-3, -1));
+          const cardsByGroup = mapValues(
+            groupBy(cards, ([g]) => g),
+            (v) => v.map(([, m]) => m)
+          );
+          const cardRows = Object.entries(cardsByGroup)
             .map(
-              ([group, method]) =>
-                `<tr>
-                  <td style="border: 1px solid black;">${group}</td>
-                  <td style="border: 1px solid black;"><a href="/${group}/${method}">${method}</a></td>
-                </tr>`
-            );
-          res.end(`
-            <table style="margin: 0 auto; border-collapse: collapse;">
-              ${cardLinks.join('\n')}
-            </table>
-          `);
+              ([group, methods]) => `
+              <table style="margin: 0 auto; border-collapse: collapse; display: inline-block;">
+                ${methods
+                  .map(
+                    (method) => `
+                    <tr>
+                      <td style="border: 1px solid black;">${group}</td>
+                      <td style="border: 1px solid black;"><a href="/${group}/${method}">${method}</a></td>
+                    </tr>`
+                  )
+                  .join('\n')}
+              </table>`
+            )
+            .join('\n');
+          res.end(cardRows);
         } else if (req.url.slice(1).split('/').length === 2) {
           const [group, method] = req.url.slice(1).split('/');
           const cardName = `${group}/${method}`;
