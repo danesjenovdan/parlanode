@@ -1,17 +1,9 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </template>
-
     <div class="poslanec osnovne-informacije-poslanca">
       <div v-for="(person, index) in people" :key="person.gov_id" class="row">
         <div class="parlaicon-container parlaicon-containermp">
@@ -64,6 +56,7 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'number-of-seats'"></span>
+            {{ ' ' }}
             <strong>{{ data.numberOfSeats }}</strong>
           </span>
         </div>
@@ -144,7 +137,7 @@ export default {
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.contextData.cardData,
     };
   },
   computed: {
@@ -188,16 +181,16 @@ export default {
 @import 'parlassets/scss/colors';
 
 .parlaicon-vodja {
-  background-image: url("#{getConfig('urls.cdn')}/icons/vodja.svg");
+  background-image: url("#{get-config-value('urls.cdn')}/icons/vodja.svg");
 }
 .parlaicon-namestnik {
-  background-image: url("#{getConfig('urls.cdn')}/icons/namestnik.svg");
+  background-image: url("#{get-config-value('urls.cdn')}/icons/namestnik.svg");
 }
 .parlaicon-sedezi {
-  background-image: url("#{getConfig('urls.cdn')}/icons/sedezi.svg");
+  background-image: url("#{get-config-value('urls.cdn')}/icons/sedezi.svg");
 }
 .parlaicon-kontakt {
-  background-image: url("#{getConfig('urls.cdn')}/icons/kontakt.svg");
+  background-image: url("#{get-config-value('urls.cdn')}/icons/kontakt.svg");
 }
 .parlaicon-omrezja {
   width: 30px;
@@ -240,9 +233,6 @@ export default {
     text-align: left;
     h4 {
       margin: 5px 0;
-    }
-    a {
-      color: $font-default;
     }
   }
 

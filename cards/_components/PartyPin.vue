@@ -1,9 +1,6 @@
 <template>
   <div class="partypin-container">
-    <div
-      :ref="party.id"
-      :class="['partypin-tooltip', { visible: tooltipVisible }]"
-    >
+    <div :class="['partypin-tooltip', { visible: tooltipVisible }]">
       {{ party.name }}
     </div>
     <a

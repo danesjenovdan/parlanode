@@ -1,7 +1,4 @@
 {
-  "_id": "ps_prisotnost-skozi-cas",
   "dataUrl": "{analize}/pg/getPresenceThroughTime",
-  "lastUpdate": "2018-07-27T15:00:25.205Z",
-  "big": true,
-  "high": false
+  "lastUpdate": "2018-07-27T15:00:25.205Z"
 }

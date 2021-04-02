@@ -107,8 +107,8 @@ export default {
         .slice()
         .sort((a, b) => a.date_ts.localeCompare(b.date_ts))
         .map((obj) => {
-          const present = Math.max(0, Math.round(obj.presence));
-          const noTerm = Math.max(0, Math.round(obj.not_member));
+          const present = Math.max(0, Math.round(obj.presence)) || 0;
+          const noTerm = Math.max(0, Math.round(obj.not_member)) || 0;
           return {
             date: obj.date_ts,
             present,

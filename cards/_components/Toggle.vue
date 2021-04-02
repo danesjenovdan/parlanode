@@ -3,7 +3,7 @@
     <div
       v-for="(optionLabel, optionValue) in options"
       :key="optionValue"
-      :class="['option', { 'is-selected': optionValue === value }]"
+      :class="['option', { 'is-selected': optionValue === modelValue }]"
       @click="handleClick(optionValue)"
     >
       {{ optionLabel }}
@@ -19,14 +19,15 @@ export default {
       type: Object,
       default: () => ({}),
     },
-    value: {
+    modelValue: {
       type: [String, Number, Boolean],
       default: '',
     },
   },
+  emits: ['update:modelValue'],
   methods: {
     handleClick(newValue) {
-      this.$emit('input', newValue);
+      this.$emit('update:modelValue', newValue);
     },
   },
 };

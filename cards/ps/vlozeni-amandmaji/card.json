@@ -1,7 +1,0 @@
-{
-  "_id": "ps_vlozeni-amandmaji",
-  "dataUrl": "{analize}/pg/getAmendmentsOfPG",
-  "lastUpdate": "2018-07-27T15:00:50.235Z",
-  "big": true,
-  "high": true
-}

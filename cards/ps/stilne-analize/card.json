@@ -1,7 +1,4 @@
 {
-  "_id": "ps_stilne-analize",
   "dataUrl": "{analize}/pg/getStyleScores",
-  "lastUpdate": "2018-07-27T15:00:41.117Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T15:00:41.117Z"
 }

@@ -1,23 +1,12 @@
 <template>
   <prisotnost-chart
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.party"
-    :results="$options.cardData.data.results"
-    :generated-card-url="generatedCardUrl"
+    :party="$options.contextData.cardData.party"
+    :results="$options.contextData.cardData.results"
     type="party"
-  >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </template>
-  </prisotnost-chart>
+  />
 </template>
 
 <script>
-import common from '@/_mixins/common.js';
-import { partyOverview } from '@/_mixins/contextUrls.js';
-import { partyTitle } from '@/_mixins/titles.js';
 import PrisotnostChart from '@/_components/PrisotnostChart.vue';
 
 export default {
@@ -25,11 +14,8 @@ export default {
   components: {
     PrisotnostChart,
   },
-  mixins: [common, partyOverview, partyTitle],
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.party.id}?altHeader=true`;
-    },
+  cardInfo: {
+    doubleWidth: true,
   },
 };
 </script>

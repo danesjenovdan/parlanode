@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options.cardData.mountId">
+  <div >
     <generator>
       <template #generator>
         <tools-tabs current-tool="discord" />
@@ -58,7 +58,7 @@
           <div class="filter type-dropdown">
             <div v-t="'parties'" class="filter-label"></div>
             <p-search-dropdown
-              :value="allItems"
+              :model-value="allItems"
               :single="true"
               hide-clear
               @select="selectCallback"
@@ -176,7 +176,6 @@
 <script>
 import { parseISO, format } from 'date-fns';
 import { groupBy, sortBy, zipObject, find, assign } from 'lodash-es';
-import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import DateRow from '@/_components/DateRow.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -188,11 +187,11 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
+import axios from 'axios';
 
 export default {
   name: 'GlasovanjaNeenotnost',
   components: {
-    Generator,
     ToolsTabs,
     DateRow,
     PSearchDropdown,
@@ -201,9 +200,12 @@ export default {
     ScrollShadow,
   },
   mixins: [common, links],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
-    const data = Object.keys(this.$options.cardData.data).map((key) => {
-      const obj = this.$options.cardData.data[key];
+    const data = Object.keys(this.$options.contextData.cardData).map((key) => {
+      const obj = this.$options.contextData.cardData[key];
       return {
         id: Number(key),
         ...obj,
@@ -348,7 +350,7 @@ export default {
     this.fetchVotesForGroup(this.groups[0].acronym);
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
+    const { template, siteMap: sm } = this.$options.contextData;
     template.pageTitle = this.dynamicTitle;
     template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
   },
@@ -429,69 +431,68 @@ export default {
       );
     },
     selectGroup(acronym) {
-      this.cardData.parlaState.selectedGroup = acronym;
+      this.contextData.cardState.selectedGroup = acronym;
       this.selectedGroup =
         this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
     fetchVotesForGroup(acronym) {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
-      $.getJSON(
-        `${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`,
-        (response) => {
-          if (this.allTags.length === 0) {
-            this.allTags = response.all_tags.map((tag) => ({
-              id: tag,
-              label: tag,
-              selected: false,
-            }));
-          }
+      // axios
+      //   .get(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`)
+      //   .then((response) => {
+      //     if (this.allTags.length === 0) {
+      //       this.allTags = response.data.all_tags.map((tag) => ({
+      //         id: tag,
+      //         label: tag,
+      //         selected: false,
+      //       }));
+      //     }
 
-          // TODO: this.voteData = response.results;
-          this.voteData = response.results || response[acronym];
+      //     // TODO: this.voteData = response.data.results;
+      //     this.voteData = response.data.results || response.data[acronym];
 
-          this.allClassifications = [];
-          // eslint-disable-next-line no-restricted-syntax, guard-for-in
-          for (const classificationKey in response.classifications) {
-            this.allClassifications.push({
-              id: classificationKey,
-              label: this.$t(
-                `vote_types.${response.classifications[classificationKey]}`
-              ),
-              selected: false,
-            });
-          }
+      //     this.allClassifications = [];
+      //     // eslint-disable-next-line no-restricted-syntax, guard-for-in
+      //     for (const classificationKey in response.data.classifications) {
+      //       this.allClassifications.push({
+      //         id: classificationKey,
+      //         label: this.$t(
+      //           `vote_types.${response.data.classifications[classificationKey]}`
+      //         ),
+      //         selected: false,
+      //       });
+      //     }
 
-          const selectFromState = (items, stateItemIds) =>
-            items.map((item) =>
-              assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-            );
+      //     const selectFromState = (items, stateItemIds) =>
+      //       items.map((item) =>
+      //         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+      //       );
 
-          if (this.cardData.parlaState) {
-            const state = this.cardData.parlaState;
-            if (state.text) {
-              this.textFilter = state.text;
-            }
-            if (state.classifications) {
-              this.allClassifications = selectFromState(
-                this.allClassifications,
-                state.classifications
-              );
-            }
-            if (state.sort) {
-              this.selectedSort = state.sort;
-            }
-            if (state.tags) {
-              this.allTags = selectFromState(this.allTags, state.tags);
-            }
-            if (state.selectedGroup) {
-              this.selectedGroup = state.selectedGroup;
-            }
-          }
+      //     if (this.contextData.cardState) {
+      //       const state = this.contextData.cardState;
+      //       if (state.text) {
+      //         this.textFilter = state.text;
+      //       }
+      //       if (state.classifications) {
+      //         this.allClassifications = selectFromState(
+      //           this.allClassifications,
+      //           state.classifications
+      //         );
+      //       }
+      //       if (state.sort) {
+      //         this.selectedSort = state.sort;
+      //       }
+      //       if (state.tags) {
+      //         this.allTags = selectFromState(this.allTags, state.tags);
+      //       }
+      //       if (state.selectedGroup) {
+      //         this.selectedGroup = state.selectedGroup;
+      //       }
+      //     }
 
-          this.loading = false;
-        }
-      );
+      //     this.loading = false;
+      //   });
     },
     setVisibleTooltip(target) {
       const elem = document.querySelector(`[data-target="${target}"]`);
@@ -564,7 +565,7 @@ export default {
     }
 
     .text-filter-input {
-      background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
+      background-image: url("#{get-config-value('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
@@ -603,7 +604,7 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url("#{getConfig('urls.cdn')}/img/loader.gif")
+      background: $white url("#{get-config-value('urls.cdn')}/img/loader.gif")
         no-repeat center center;
       content: '';
       height: 100%;

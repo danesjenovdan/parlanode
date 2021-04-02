@@ -1,6 +1,7 @@
 {
   "card": {
-    "title": "Seznam poslanskih skupin"
+    "title": "Seznam poslanskih skupin",
+    "info": "TODO: this was dynamic, what to do?"
   },
   "analysis-texts": {
     "seat_count": {

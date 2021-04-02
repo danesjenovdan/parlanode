@@ -263,7 +263,9 @@ export default {
 
     if (this.type === 'party') {
       axios
-        .get(`${this.slugs.urls.analize}/pg/getMPsOfPG/${this.party.id}`)
+        .get(
+          `${this.slugs.urls.analize}/pg/getMPsOfPG/${this.contextData.cardData.party.id}`
+        )
         .then((response) => {
           this.allPeople = response.data.results.map((person) => ({
             id: person.id,

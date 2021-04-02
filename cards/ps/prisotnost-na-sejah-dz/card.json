@@ -1,7 +1,4 @@
 {
-  "_id": "ps_prisotnost-na-sejah-dz",
   "dataUrl": "{analize}/pg/getPercentOFAttendedSessionPG",
-  "lastUpdate": "2018-07-27T15:00:21.493Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T15:00:21.493Z"
 }

@@ -1,102 +1,164 @@
 {
   "party": {
-    "acronym": "SMC",
+    "name": "Slovenska demokratska stranka",
+    "classification": "pg",
+    "acronym": "SDS",
+    "has_voters": false,
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 2
   },
-  "created_at": "17.12.2017",
-  "created_for": "17.12.2017",
-  "results": [{
-    "term": "ZDoh",
-    "scores": {
-      "tf": 21,
-      "df": 7,
-      "tf-idf": 3.0
+  "created_at": "06.01.2021",
+  "created_for": "06.01.2021",
+  "results": [
+    {
+      "term": "EKRIS",
+      "scores": { "tf": 13, "df": 3, "tf-idf": 4.333333333333333 }
+    },
+    {
+      "term": "variabila",
+      "scores": { "tf": 22, "df": 6, "tf-idf": 3.6666666666666665 }
+    },
+    {
+      "term": "listninjenje",
+      "scores": { "tf": 24, "df": 7, "tf-idf": 3.4285714285714284 }
+    },
+    {
+      "term": "recenzent",
+      "scores": { "tf": 86, "df": 27, "tf-idf": 3.185185185185185 }
+    },
+    { "term": "ARRS", "scores": { "tf": 80, "df": 32, "tf-idf": 2.5 } },
+    {
+      "term": "predjamski",
+      "scores": { "tf": 19, "df": 9, "tf-idf": 2.111111111111111 }
+    },
+    { "term": "KB1909", "scores": { "tf": 18, "df": 9, "tf-idf": 2 } },
+    {
+      "term": "du\u0161ilec",
+      "scores": { "tf": 43, "df": 25, "tf-idf": 1.72 }
+    },
+    {
+      "term": "ilegalen",
+      "scores": { "tf": 835, "df": 611, "tf-idf": 1.3666121112929623 }
+    },
+    {
+      "term": "egoist",
+      "scores": { "tf": 8, "df": 6, "tf-idf": 1.3333333333333333 }
+    },
+    {
+      "term": "cepljenje",
+      "scores": { "tf": 270, "df": 203, "tf-idf": 1.3300492610837438 }
+    },
+    {
+      "term": "btc",
+      "scores": { "tf": 66, "df": 53, "tf-idf": 1.2452830188679245 }
+    },
+    {
+      "term": "pirotehni\u010den",
+      "scores": { "tf": 122, "df": 103, "tf-idf": 1.1844660194174756 }
+    },
+    {
+      "term": "geotermalen",
+      "scores": { "tf": 183, "df": 156, "tf-idf": 1.1730769230769231 }
+    },
+    {
+      "term": "cec",
+      "scores": { "tf": 14, "df": 12, "tf-idf": 1.1666666666666667 }
+    },
+    {
+      "term": "hiv",
+      "scores": { "tf": 22, "df": 19, "tf-idf": 1.1578947368421053 }
+    },
+    {
+      "term": "hauer",
+      "scores": { "tf": 8, "df": 7, "tf-idf": 1.1428571428571428 }
+    },
+    {
+      "term": "migrant",
+      "scores": { "tf": 1217, "df": 1078, "tf-idf": 1.1289424860853432 }
+    },
+    {
+      "term": "perspektivnost",
+      "scores": { "tf": 9, "df": 8, "tf-idf": 1.125 }
+    },
+    { "term": "bi\u010dati", "scores": { "tf": 9, "df": 8, "tf-idf": 1.125 } },
+    {
+      "term": "cnc",
+      "scores": { "tf": 10, "df": 9, "tf-idf": 1.1111111111111112 }
+    },
+    {
+      "term": "romski",
+      "scores": { "tf": 322, "df": 292, "tf-idf": 1.1027397260273972 }
+    },
+    {
+      "term": "frekvenca",
+      "scores": { "tf": 188, "df": 174, "tf-idf": 1.0804597701149425 }
+    },
+    {
+      "term": "vojska",
+      "scores": { "tf": 1879, "df": 1837, "tf-idf": 1.0228633641807294 }
+    },
+    {
+      "term": "kmetija",
+      "scores": { "tf": 663, "df": 659, "tf-idf": 1.0060698027314112 }
+    },
+    { "term": "sandrel", "scores": { "tf": 8, "df": 8, "tf-idf": 1 } },
+    {
+      "term": "o\u0161kodovanka",
+      "scores": { "tf": 10, "df": 10, "tf-idf": 1 }
+    },
+    { "term": "kodelje", "scores": { "tf": 29, "df": 29, "tf-idf": 1 } },
+    { "term": "j\u00f3zsef", "scores": { "tf": 10, "df": 10, "tf-idf": 1 } },
+    { "term": "isla", "scores": { "tf": 100, "df": 100, "tf-idf": 1 } },
+    { "term": "etias", "scores": { "tf": 14, "df": 14, "tf-idf": 1 } },
+    { "term": "bren", "scores": { "tf": 8, "df": 8, "tf-idf": 1 } },
+    {
+      "term": "relokacija",
+      "scores": { "tf": 23, "df": 24, "tf-idf": 0.9583333333333334 }
+    },
+    {
+      "term": "d1e",
+      "scores": { "tf": 12, "df": 13, "tf-idf": 0.9230769230769231 }
+    },
+    {
+      "term": "testen",
+      "scores": { "tf": 64, "df": 70, "tf-idf": 0.9142857142857143 }
+    },
+    {
+      "term": "ceca",
+      "scores": { "tf": 10, "df": 11, "tf-idf": 0.9090909090909091 }
+    },
+    {
+      "term": "c1",
+      "scores": { "tf": 66, "df": 74, "tf-idf": 0.8918918918918919 }
+    },
+    {
+      "term": "u\u0161pi\u010diti",
+      "scores": { "tf": 8, "df": 9, "tf-idf": 0.8888888888888888 }
+    },
+    {
+      "term": "erdo\u011fan",
+      "scores": { "tf": 8, "df": 9, "tf-idf": 0.8888888888888888 }
+    },
+    { "term": "c1e", "scores": { "tf": 14, "df": 16, "tf-idf": 0.875 } },
+    {
+      "term": "migracija",
+      "scores": { "tf": 887, "df": 1015, "tf-idf": 0.8738916256157635 }
+    },
+    {
+      "term": "5g",
+      "scores": { "tf": 124, "df": 143, "tf-idf": 0.8671328671328671 }
+    },
+    {
+      "term": "imeti",
+      "scores": { "tf": 20031, "df": 23166, "tf-idf": 0.8646723646723646 }
+    },
+    {
+      "term": "mikroprocesorjev",
+      "scores": { "tf": 11, "df": 13, "tf-idf": 0.8461538461538461 }
+    },
+    {
+      "term": "reinjekcija",
+      "scores": { "tf": 16, "df": 19, "tf-idf": 0.8421052631578947 }
     }
-  }, {
-    "term": "porotnica",
-    "scores": {
-      "tf": 29,
-      "df": 22,
-      "tf-idf": 1.3181818181818181
-    }
-  }, {
-    "term": "podprogram",
-    "scores": {
-      "tf": 603,
-      "df": 496,
-      "tf-idf": 1.215725806451613
-    }
-  }, {
-    "term": "glasovati",
-    "scores": {
-      "tf": 14634,
-      "df": 12350,
-      "tf-idf": 1.1849392712550608
-    }
-  }, {
-    "term": "navzo\u010d",
-    "scores": {
-      "tf": 2584,
-      "df": 2312,
-      "tf-idf": 1.1176470588235294
-    }
-  }, {
-    "term": "HE",
-    "scores": {
-      "tf": 55,
-      "df": 50,
-      "tf-idf": 1.1
-    }
-  }, {
-    "term": "KSEVT",
-    "scores": {
-      "tf": 48,
-      "df": 44,
-      "tf-idf": 1.0909090909090908
-    }
-  }, {
-    "term": "ustavno&shy;revizijski",
-    "scores": {
-      "tf": 29,
-      "df": 29,
-      "tf-idf": 1.0
-    }
-  }, {
-    "term": "glasovnica",
-    "scores": {
-      "tf": 151,
-      "df": 171,
-      "tf-idf": 0.8830409356725146
-    }
-  }, {
-    "term": "amandma",
-    "scores": {
-      "tf": 7083,
-      "df": 8050,
-      "tf-idf": 0.8798757763975156
-    }
-  }, {
-    "term": "zakon",
-    "scores": {
-      "tf": 34542,
-      "df": 42151,
-      "tf-idf": 0.8194823373110959
-    }
-  }, {
-    "term": "predlog",
-    "scores": {
-      "tf": 29800,
-      "df": 36630,
-      "tf-idf": 0.8135408135408135
-    }
-  }, {
-    "term": "Kum",
-    "scores": {
-      "tf": 13,
-      "df": 16,
-      "tf-idf": 0.8125
-    }
-  }]
+  ]
 }

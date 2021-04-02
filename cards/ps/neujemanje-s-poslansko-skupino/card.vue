@@ -1,18 +1,11 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-    </template>
     <person-list v-if="people.length > 2" :people="people" />
+    <!-- TODO: empty state should take care of this -->
     <empty-circle v-else :text="$t('card.empty-state-text')" />
   </card-wrapper>
 </template>
@@ -30,20 +23,17 @@ export default {
   name: 'NeujemanjeSPoslanskoSkupino',
   components: {
     PersonList,
-    partyTitle,
     EmptyCircle,
   },
-  mixins: [common, partyVotes, partyHeader, partyOgImage],
+  mixins: [common, partyVotes, partyHeader, partyOgImage, partyTitle],
   data() {
-    const people = this.$options.cardData.data.results.map((o) => {
+    const people = this.$options.contextData.cardData.results.map((o) => {
       const { person } = o;
       person.score = `${(o.ratio || 0).toFixed(2).replace('.', ',')} %`;
       return person;
     });
-    const party = this.$options.cardData.data.organization;
     return {
-      data: this.$options.cardData.data,
-      party,
+      data: this.$options.contextData.cardData,
       people,
     };
   },
@@ -56,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep .circle {
+:deep(.circle) {
   padding-top: 130px !important;
 }
 </style>

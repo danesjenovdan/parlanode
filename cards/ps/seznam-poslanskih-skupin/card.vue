@@ -1,22 +1,27 @@
 <template>
-  <div :id="$options.cardData.mountId">
-    <generator>
-      <div slot="generator" class="party-list-generator">
+  <card-wrapper
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+    max-height
+  >
+    <template #generator>
+      <div class="party-list-generator">
         <div class="row">
           <div class="col-md-12">
             <blue-button-list v-model="currentAnalysis" :items="analyses" />
           </div>
         </div>
       </div>
-      <inner-card
-        :processed-party-data="processedPartyData"
-        :header-config="headerConfig"
-        :og-config="ogConfig"
-        :generated-card-url="generatedCardUrl"
-        :current-analysis-data="currentAnalysisData"
-      />
-    </generator>
-  </div>
+    </template>
+    <inner-card
+      :processed-party-data="processedPartyData"
+      :header-config="headerConfig"
+      :og-config="ogConfig"
+      :generated-card-url="generatedCardUrl"
+      :current-analysis-data="currentAnalysisData"
+    />
+  </card-wrapper>
 </template>
 
 <script>
@@ -24,7 +29,6 @@ import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
-import Generator from '@/_components/Generator.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
@@ -75,11 +79,13 @@ const analysesIDs = [
 export default {
   name: 'SeznamPoslanskihSkupin',
   components: {
-    Generator,
     BlueButtonList,
     InnerCard,
   },
   mixins: [common],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
     const analyses = analysesIDs.map((a) => ({
       ...a,
@@ -95,9 +101,9 @@ export default {
     }));
 
     return {
-      data: this.$options.cardData.data.data,
+      data: this.$options.contextData.cardData.data,
       currentAnalysis:
-        this.$options.cardData.parlaState.analysis || 'seat_count',
+        this.$options.contextData.cardState.analysis || 'seat_count',
       analyses,
     };
   },

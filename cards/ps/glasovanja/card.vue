@@ -1,9 +1,5 @@
 <template>
-  <glasovanja
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.party"
-    type="party"
-  />
+  <glasovanja :context-data="$options.contextData" type="party" />
 </template>
 
 <script>
@@ -13,6 +9,9 @@ export default {
   name: 'GlasovanjaPoslanskeSkupine',
   components: {
     Glasovanja,
+  },
+  cardInfo: {
+    doubleWidth: true,
   },
 };
 </script>

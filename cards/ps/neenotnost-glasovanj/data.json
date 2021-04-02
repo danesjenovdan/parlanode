@@ -1,25 +1,27 @@
 {
   "organization": {
-    "acronym": "HDZ",
-    "is_coalition": true,
-    "id": 343,
+    "name": "Slovenska demokratska stranka",
     "classification": "pg",
-    "name": "Klub Hrvatske demokratske zajednice"
+    "acronym": "SDS",
+    "has_voters": false,
+    "is_coalition": true,
+    "id": 2
   },
   "result": {
     "max": {
-      "score": 12.48180494904889,
+      "score": 11.97887715397443,
       "pgs": [
         {
-          "acronym": "\u017divi zid, SNAGA",
-          "is_coalition": false,
-          "id": 319,
+          "name": "Italijanska in mad\u017earska narodna skupnost",
           "classification": "pg",
-          "name": "Klub \u017divog zida i SNAGA-e"
+          "acronym": "IMNS",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 10
         }
       ]
     },
-    "average": 3.178741486482967,
-    "score": 0.22201440001449776
+    "average": 2.835198656170175,
+    "score": 1.0709948327451073
   }
 }

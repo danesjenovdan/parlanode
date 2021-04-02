@@ -1,113 +1,119 @@
 {
   "organization": {
-    "acronym": "HDZ",
-    "is_coalition": true,
-    "id": 343,
+    "name": "Slovenska demokratska stranka",
     "classification": "pg",
-    "name": "Klub Hrvatske demokratske zajednice"
+    "acronym": "SDS",
+    "has_voters": false,
+    "is_coalition": true,
+    "id": 2
   },
-  "created_at": "06.09.2018",
-  "created_for": "05.09.2018",
+  "created_at": "03.03.2021",
+  "created_for": "03.03.2021",
   "results": [
     {
       "person": {
         "is_active": true,
-        "district": [7],
-        "name": "Ivan Vilibor Sin\u010di\u0107",
-        "gov_id": "1288",
-        "gender": "m",
+        "district": [41],
+        "name": "Robert Pav\u0161i\u010d",
+        "gov_id": "P325",
+        "gender": "f",
         "party": {
-          "acronym": "\u017divi zid, SNAGA",
-          "is_coalition": false,
-          "id": 319,
+          "name": "Lista Marjana \u0160arca",
           "classification": "pg",
-          "name": "Klub \u017divog zida i SNAGA-e"
+          "acronym": "LM\u0160",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 3
         },
         "type": "mp",
-        "id": 1288,
+        "id": 74,
         "has_function": false
       },
-      "ratio": 38.1620949065924
+      "ratio": 65.8236255081942
     },
     {
       "person": {
         "is_active": true,
-        "district": [6],
-        "name": "Branimir Bunjac",
-        "gov_id": "1257",
-        "gender": "m",
+        "district": [1],
+        "name": "Alja\u017e Kova\u010di\u010d",
+        "gov_id": "P333",
+        "gender": "f",
         "party": {
-          "acronym": "\u017divi zid, SNAGA",
-          "is_coalition": false,
-          "id": 319,
+          "name": "Lista Marjana \u0160arca",
           "classification": "pg",
-          "name": "Klub \u017divog zida i SNAGA-e"
+          "acronym": "LM\u0160",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 3
         },
         "type": "mp",
-        "id": 1257,
+        "id": 57,
         "has_function": false
       },
-      "ratio": 37.7801638195686
+      "ratio": 65.640834842745
     },
     {
       "person": {
         "is_active": true,
-        "district": [5],
-        "name": "Ivan Pernar",
-        "gov_id": "1302",
-        "gender": "m",
+        "district": [44, 45],
+        "name": "Jerca Kor\u010de",
+        "gov_id": "P326",
+        "gender": "f",
         "party": {
-          "acronym": "\u017divi zid, SNAGA",
-          "is_coalition": false,
-          "id": 319,
+          "name": "Lista Marjana \u0160arca",
           "classification": "pg",
-          "name": "Klub \u017divog zida i SNAGA-e"
+          "acronym": "LM\u0160",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 3
         },
         "type": "mp",
-        "id": 1302,
+        "id": 55,
         "has_function": false
       },
-      "ratio": 34.9258451985513
+      "ratio": 65.6158473132272
     },
     {
       "person": {
         "is_active": true,
-        "district": [8],
-        "name": "Miro Bulj",
-        "gov_id": "1373",
-        "gender": "m",
+        "district": [50],
+        "name": "Edvard Pauli\u010d",
+        "gov_id": "P323",
+        "gender": "f",
         "party": {
-          "acronym": "Most",
-          "is_coalition": false,
-          "id": 335,
+          "name": "Lista Marjana \u0160arca",
           "classification": "pg",
-          "name": "Klub Mosta nezavisnih lista"
+          "acronym": "LM\u0160",
+          "has_voters": false,
+          "is_coalition": false,
+          "id": 3
         },
         "type": "mp",
-        "id": 1373,
+        "id": 72,
         "has_function": false
       },
-      "ratio": 32.5369939129175
+      "ratio": 65.595573012609
     },
     {
       "person": {
         "is_active": true,
-        "district": [9],
-        "name": "Marin \u0160kibola",
-        "gov_id": "1275",
-        "gender": "m",
+        "district": [43],
+        "name": "Jo\u017ee Lenart",
+        "gov_id": "P330",
+        "gender": "f",
         "party": {
-          "acronym": "Nezavisni",
+          "name": "Lista Marjana \u0160arca",
+          "classification": "pg",
+          "acronym": "LM\u0160",
+          "has_voters": false,
           "is_coalition": false,
-          "id": 413,
-          "classification": "unaligned MP",
-          "name": "Klub nezavisnih"
+          "id": 3
         },
         "type": "mp",
-        "id": 1275,
+        "id": 61,
         "has_function": false
       },
-      "ratio": 31.6802536308645
+      "ratio": 65.5896308500284
     }
   ]
 }

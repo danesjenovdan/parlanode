@@ -1,28 +1,12 @@
 <template>
   <score-avg-max
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.party"
-    :results="$options.cardData.data.results"
+    :party="$options.contextData.cardData.party"
+    :results="$options.contextData.cardData.results"
     type="party"
-  >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n-t keypath="info.text" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-    </template>
-  </score-avg-max>
+  />
 </template>
 
 <script>
-import common from '@/_mixins/common.js';
 import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
@@ -30,6 +14,5 @@ export default {
   components: {
     ScoreAvgMax,
   },
-  mixins: [common],
 };
 </script>

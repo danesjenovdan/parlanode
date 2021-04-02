@@ -1,15 +1,17 @@
 {
   "party": {
-    "acronym": "SMC",
+    "name": "Slovenska demokratska stranka",
+    "classification": "pg",
+    "acronym": "SDS",
+    "has_voters": false,
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 2
   },
-  "created_at": "07.11.2017",
-  "created_for": "07.11.2017",
+  "created_at": "13.12.2018",
+  "created_for": "13.12.2018",
   "results": {
-    "problematicno": 0.005710882218965907,
-    "preprosto": 0.031095449167479982,
-    "privzdignjeno": 0.031196328264556095
+    "problematicno": 0.6724487237623208,
+    "preprosto": 0.24237226749428414,
+    "privzdignjeno": 0.3815078834204986
   }
 }

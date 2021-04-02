@@ -1,211 +1,222 @@
 {
+  "parent_org_id": 1,
   "data": [
     {
       "party": {
-        "acronym": "SDS",
         "name": "Slovenska demokratska stranka",
-        "is_coalition": false,
         "classification": "pg",
+        "acronym": "SDS",
+        "has_voters": false,
+        "is_coalition": true,
         "id": 2
       },
       "results": {
-        "intra_disunion": 0.40921836663145106,
-        "number_of_amendments": 23,
+        "intra_disunion": 1.0709948327451073,
+        "number_of_amendments": 207,
         "privzdignjeno": 0.3815078834204986,
-        "vocabulary_size": 107,
-        "number_of_questions": 373,
-        "seat_count": 25,
-        "presence_votes": 66.6372239747634,
-        "presence_sessions": 81.44,
+        "vocabulary_size": 112.0,
+        "number_of_questions": 1187.0,
+        "seat_count": 26,
+        "presence_votes": 93.3453111531028,
+        "presence_sessions": 93.4506137322593,
         "problematicno": 0.6724487237623208,
         "preprosto": 0.24237226749428414
       }
     },
     {
       "party": {
-        "acronym": "LMŠ",
-        "name": "Lista Marjana Šarca",
-        "is_coalition": true,
+        "name": "Lista Marjana \u0160arca",
         "classification": "pg",
+        "acronym": "LM\u0160",
+        "has_voters": false,
+        "is_coalition": false,
         "id": 3
       },
       "results": {
-        "intra_disunion": 0.21868772657403787,
+        "intra_disunion": 0.9770044358704556,
         "number_of_amendments": 0,
         "privzdignjeno": 0.9850673930971419,
-        "vocabulary_size": 126,
-        "number_of_questions": 28,
-        "seat_count": 13,
-        "presence_votes": 96.9238217706605,
-        "presence_sessions": 98.7692307692308,
+        "vocabulary_size": 121.0,
+        "number_of_questions": 412.0,
+        "seat_count": 14,
+        "presence_votes": 93.3938491706895,
+        "presence_sessions": 94.6750456469296,
         "problematicno": 1.185085015592812,
         "preprosto": 0.5891627118307506
       }
     },
     {
       "party": {
-        "acronym": "SD",
         "name": "Socialni demokrati",
-        "is_coalition": true,
         "classification": "pg",
+        "acronym": "SD",
+        "has_voters": false,
+        "is_coalition": false,
         "id": 4
       },
       "results": {
-        "intra_disunion": 1.2087526914022082,
-        "number_of_amendments": 0,
+        "intra_disunion": 2.454907207546886,
+        "number_of_amendments": 123,
         "privzdignjeno": 0.5933077978568028,
-        "vocabulary_size": 134,
-        "number_of_questions": 39,
-        "seat_count": 11,
-        "presence_votes": 90.5936334958417,
-        "presence_sessions": 95.2727272727273,
+        "vocabulary_size": 127.0,
+        "number_of_questions": 1135.0,
+        "seat_count": 12,
+        "presence_votes": 87.1644809026046,
+        "presence_sessions": 89.2180164319249,
         "problematicno": 0.8484539959416741,
         "preprosto": 0.4428976175229998
       }
     },
     {
       "party": {
-        "acronym": "SMC",
         "name": "Stranka modernega centra",
-        "is_coalition": true,
         "classification": "pg",
+        "acronym": "SMC",
+        "has_voters": false,
+        "is_coalition": true,
         "id": 5
       },
       "results": {
-        "intra_disunion": 0.1151669921384858,
-        "number_of_amendments": 2,
+        "intra_disunion": 0.7738867271939409,
+        "number_of_amendments": 56,
         "privzdignjeno": 0.9059146487651697,
-        "vocabulary_size": 112,
-        "number_of_questions": 37,
-        "seat_count": 9,
-        "presence_votes": 90.8141894715309,
-        "presence_sessions": 92.8333333333333,
+        "vocabulary_size": 121.0,
+        "number_of_questions": 151.0,
+        "seat_count": 8,
+        "presence_votes": 96.6679696518144,
+        "presence_sessions": 96.71875,
         "problematicno": 1.2540858609823005,
         "preprosto": 0.49097974903920827
       }
     },
     {
       "party": {
-        "acronym": "Levica",
         "name": "Levica",
-        "is_coalition": false,
         "classification": "pg",
+        "acronym": "Levica",
+        "has_voters": false,
+        "is_coalition": false,
         "id": 6
       },
       "results": {
-        "intra_disunion": 0.08762705923596213,
-        "number_of_amendments": 6,
+        "intra_disunion": 2.3641661593289593,
+        "number_of_amendments": 138,
         "privzdignjeno": 0.8967476125608497,
-        "vocabulary_size": 122,
-        "number_of_questions": 221,
-        "seat_count": 9,
-        "presence_votes": 56.7472835611637,
-        "presence_sessions": 82.6666666666667,
+        "vocabulary_size": 120.0,
+        "number_of_questions": 546.0,
+        "seat_count": 8,
+        "presence_votes": 87.9936040044494,
+        "presence_sessions": 87.03125,
         "problematicno": 1.4856046270700438,
         "preprosto": 0.6093164983129324
       }
     },
     {
       "party": {
-        "acronym": "NSi",
-        "name": "Nova Slovenija - Krščanski demokrati",
-        "is_coalition": false,
+        "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
         "classification": "pg",
+        "acronym": "NSi",
+        "has_voters": false,
+        "is_coalition": true,
         "id": 7
       },
       "results": {
-        "intra_disunion": 0.15772870662460567,
-        "number_of_amendments": 20,
+        "intra_disunion": 0.4818846337198,
+        "number_of_amendments": 94,
         "privzdignjeno": 0.6048118300638788,
-        "vocabulary_size": 119,
-        "number_of_questions": 71,
+        "vocabulary_size": 126.0,
+        "number_of_questions": 231.0,
         "seat_count": 7,
-        "presence_votes": 66.2911221270843,
-        "presence_sessions": 82.2857142857143,
+        "presence_votes": 93.341302512568,
+        "presence_sessions": 94.1603343465046,
         "problematicno": 1.455237361594985,
         "preprosto": 0.5064278978500902
       }
     },
     {
       "party": {
-        "acronym": "DeSUS",
-        "name": "Demokratična stranka upokojencev Slovenije",
-        "is_coalition": true,
+        "name": "Stranka Alenke Bratu\u0161ek",
         "classification": "pg",
-        "id": 9
-      },
-      "results": {
-        "intra_disunion": 0.25236593059936907,
-        "number_of_amendments": 0,
-        "privzdignjeno": 0.8417279158285782,
-        "vocabulary_size": 141,
-        "number_of_questions": 4,
-        "seat_count": 5,
-        "presence_votes": 95.4574132492113,
-        "presence_sessions": 96.8,
-        "problematicno": 0,
-        "preprosto": 0.6894833092079664
-      }
-    },
-    {
-      "party": {
         "acronym": "SAB",
-        "name": "Stranka Alenke Bratušek",
-        "is_coalition": true,
-        "classification": "pg",
+        "has_voters": false,
+        "is_coalition": false,
         "id": 8
       },
       "results": {
-        "intra_disunion": 0.42586750788643535,
-        "number_of_amendments": 0,
+        "intra_disunion": 2.761719473781154,
+        "number_of_amendments": 39,
         "privzdignjeno": 1.2742204041677647,
-        "vocabulary_size": 113,
-        "number_of_questions": 22,
+        "vocabulary_size": 111.0,
+        "number_of_questions": 207.0,
         "seat_count": 5,
-        "presence_votes": 87.0201468058115,
-        "presence_sessions": 91.6333333333333,
+        "presence_votes": 81.6830451434086,
+        "presence_sessions": 84.6393360160966,
         "problematicno": 2.2459506652713275,
         "preprosto": 0.9490845062607607
       }
     },
     {
       "party": {
-        "acronym": "SNS",
-        "name": "Slovenska nacionalna stranka",
-        "is_coalition": false,
+        "name": "Demokrati\u010dna stranka upokojencev Slovenije",
         "classification": "pg",
+        "acronym": "DeSUS",
+        "has_voters": false,
+        "is_coalition": true,
+        "id": 9
+      },
+      "results": {
+        "intra_disunion": 2.227474972191268,
+        "number_of_amendments": 40,
+        "privzdignjeno": 0.8417279158285782,
+        "vocabulary_size": 138.0,
+        "number_of_questions": 34.0,
+        "seat_count": 5,
+        "presence_votes": 97.2080088987764,
+        "presence_sessions": 96.5,
+        "problematicno": 0,
+        "preprosto": 0.6894833092079664
+      }
+    },
+    {
+      "party": {
+        "name": "Slovenska nacionalna stranka",
+        "classification": "pg",
+        "acronym": "SNS",
+        "has_voters": false,
+        "is_coalition": false,
         "id": 11
       },
       "results": {
-        "intra_disunion": 1.0252365930596214,
-        "number_of_amendments": 2,
+        "intra_disunion": 3.261070965349753,
+        "number_of_amendments": 9,
         "privzdignjeno": 1.5195912308988988,
-        "vocabulary_size": 107,
-        "number_of_questions": 160,
-        "seat_count": 4,
-        "presence_votes": 71.2145110410095,
-        "presence_sessions": 88,
+        "vocabulary_size": 117.0,
+        "number_of_questions": 890.0,
+        "seat_count": 3,
+        "presence_votes": 79.0507971820541,
+        "presence_sessions": 90.8333333333333,
         "problematicno": 0.8531337497845363,
         "preprosto": 1.7177418305050016
       }
     },
     {
       "party": {
-        "acronym": "IMNS",
-        "name": "Italijanska in madžarska narodna skupnost",
-        "is_coalition": false,
+        "name": "Italijanska in mad\u017earska narodna skupnost",
         "classification": "pg",
+        "acronym": "IMNS",
+        "has_voters": false,
+        "is_coalition": false,
         "id": 10
       },
       "results": {
-        "intra_disunion": 2.2082018927444795,
+        "intra_disunion": 11.97887715397443,
         "number_of_amendments": 0,
         "privzdignjeno": 1.9971032833403906,
-        "vocabulary_size": 108,
-        "number_of_questions": 0,
+        "vocabulary_size": 116.0,
+        "number_of_questions": 1.0,
         "seat_count": 2,
-        "presence_votes": 76.3406940063091,
-        "presence_sessions": 76,
+        "presence_votes": 86.7908787541713,
+        "presence_sessions": 81.875,
         "problematicno": 0,
         "preprosto": 3.7625336119760133
       }

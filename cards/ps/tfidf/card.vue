@@ -1,27 +1,11 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n-t keypath="info.text[0]" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-    </template>
-
     <bar-chart v-if="chartRows.length" :data="chartRows" />
+    <!-- TODO: empty state should handle this -->
     <div v-else v-t="'no-speeches'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
@@ -36,11 +20,13 @@ import BarChart from '@/_components/BarChart.vue';
 
 export default {
   name: 'PSTFIDF',
-  components: { BarChart },
+  components: {
+    BarChart,
+  },
   mixins: [common, partySpeeches, partyHeader, partyOgImage, links],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.contextData.cardData,
     };
   },
   computed: {
@@ -72,7 +58,7 @@ export default {
   font-style: italic;
 }
 
-::v-deep .card-content-front {
+:deep(.card-content-front) {
   display: flex;
   align-items: center;
   justify-content: center;

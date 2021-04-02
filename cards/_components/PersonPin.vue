@@ -1,9 +1,6 @@
 <template>
   <div class="personpin-container">
-    <div
-      :ref="person.gov_id"
-      :class="['personpin-tooltip', { visible: tooltipVisible }]"
-    >
+    <div :class="['personpin-tooltip', { visible: tooltipVisible }]">
       {{ person.name }}
     </div>
     <a

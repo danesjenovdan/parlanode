@@ -1,60 +1,74 @@
 {
-  "allVoters": 0,
-  "created_for": "11.09.2018",
+  "allVoters": 222042,
+  "created_for": "15.05.2020",
   "headOfPG": {
     "is_active": true,
-    "district": [
-      11
-    ],
-    "name": "Robert Jankovics",
-    "gov_id": "1366",
-    "gender": "m",
+    "district": [64],
+    "name": "Danijel Krivec",
+    "gov_id": "P040",
+    "gender": "f",
     "party": {
-      "acronym": "BM 365, Reformisti, Nezavisni",
-      "is_coalition": false,
-      "id": 334,
+      "name": "Slovenska demokratska stranka",
       "classification": "pg",
-      "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+      "acronym": "SDS",
+      "has_voters": false,
+      "is_coalition": true,
+      "id": 2
     },
     "type": "mp",
-    "id": 1366,
+    "id": 60,
     "has_function": false
   },
   "social": {
-    "twitter": null,
-    "facebook": [
-      "https://www.facebook.com/narodna.stranka.reformisti/",
-      "https://www.facebook.com/strankaradaisolidarnosti/"
-    ],
-    "email": "strankaradaisolidarnosti.reformisti.nz@sabor.hr"
+    "twitter": ["https://twitter.com/strankaSDS"],
+    "facebook": ["https://www.facebook.com/slovenska.demokratska.stranka/"],
+    "email": "bozo.predalic@dz-rs.si"
   },
-  "numberOfSeats": 7,
+  "numberOfSeats": 26,
   "party": {
-    "acronym": "BM 365, Reformisti, Nezavisni",
-    "is_coalition": false,
-    "id": 334,
+    "name": "Slovenska demokratska stranka",
     "classification": "pg",
-    "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+    "acronym": "SDS",
+    "has_voters": false,
+    "is_coalition": true,
+    "id": 2
   },
-  "created_at": "11.09.2018",
+  "created_at": "15.05.2020",
   "viceOfPG": [
     {
       "is_active": true,
-      "district": [
-        5
-      ],
-      "name": "Darinko Dumbovi\u0107",
-      "gov_id": "1246",
-      "gender": "m",
+      "district": [42],
+      "name": "Nada Brinov\u0161ek",
+      "gov_id": "P244",
+      "gender": "f",
       "party": {
-        "acronym": "BM 365, Reformisti, Nezavisni",
-        "is_coalition": false,
-        "id": 334,
+        "name": "Slovenska demokratska stranka",
         "classification": "pg",
-        "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+        "acronym": "SDS",
+        "has_voters": false,
+        "is_coalition": true,
+        "id": 2
       },
       "type": "mp",
-      "id": 1246,
+      "id": 24,
+      "has_function": false
+    },
+    {
+      "is_active": true,
+      "district": [71],
+      "name": "Franc Rosec",
+      "gov_id": "P307",
+      "gender": "f",
+      "party": {
+        "name": "Slovenska demokratska stranka",
+        "classification": "pg",
+        "acronym": "SDS",
+        "has_voters": false,
+        "is_coalition": true,
+        "id": 2
+      },
+      "type": "mp",
+      "id": 86,
       "has_function": false
     }
   ]

@@ -1,25 +1,29 @@
 {
   "organization": {
-    "acronym": "SMC",
+    "name": "Slovenska demokratska stranka",
+    "classification": "pg",
+    "acronym": "SDS",
+    "has_voters": false,
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 2
   },
-  "created_at": "13.12.2017",
-  "created_for": "16.10.2017",
+  "created_at": "02.04.2021",
+  "created_for": "29.12.2020",
   "result": {
     "max": {
-      "score": 290,
+      "score": 207,
       "pgs": [
         {
+          "name": "Slovenska demokratska stranka",
+          "classification": "pg",
           "acronym": "SDS",
-          "is_coalition": false,
-          "id": 5,
-          "name": "PS Slovenska Demokratska Stranka"
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 2
         }
       ]
     },
-    "average": 100.625,
-    "score": 182
+    "average": 88.25,
+    "score": 207
   }
 }

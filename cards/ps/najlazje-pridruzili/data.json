@@ -1,113 +1,119 @@
 {
   "organization": {
-    "acronym": "HDZ",
-    "is_coalition": true,
-    "id": 343,
+    "name": "Slovenska demokratska stranka",
     "classification": "pg",
-    "name": "Klub Hrvatske demokratske zajednice"
+    "acronym": "SDS",
+    "has_voters": false,
+    "is_coalition": true,
+    "id": 2
   },
-  "created_at": "06.09.2018",
-  "created_for": "05.09.2018",
+  "created_at": "03.03.2021",
+  "created_for": "03.03.2021",
   "results": [
     {
       "person": {
         "is_active": true,
-        "district": [11],
-        "name": "Ermina Lekaj-Prljaskaj",
-        "gov_id": "1332",
+        "district": [56],
+        "name": "Boris Doblekar",
+        "gov_id": "P306",
         "gender": "f",
         "party": {
-          "acronym": "BM 365, Reformisti, Nezavisni",
-          "is_coalition": false,
-          "id": 334,
+          "name": "Slovenska demokratska stranka",
           "classification": "pg",
-          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+          "acronym": "SDS",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 2
         },
         "type": "mp",
-        "id": 1332,
+        "id": 31,
         "has_function": false
       },
-      "ratio": 5.46786767389759
+      "ratio": 8.03258275187443
     },
     {
       "person": {
         "is_active": true,
-        "district": [11],
-        "name": "Vladimir Bilek",
-        "gov_id": "1375",
-        "gender": "m",
+        "district": [71],
+        "name": "Franc Rosec",
+        "gov_id": "P307",
+        "gender": "f",
         "party": {
-          "acronym": "BM 365, Reformisti, Nezavisni",
-          "is_coalition": false,
-          "id": 334,
+          "name": "Slovenska demokratska stranka",
           "classification": "pg",
-          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+          "acronym": "SDS",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 2
         },
         "type": "mp",
-        "id": 1375,
+        "id": 86,
         "has_function": false
       },
-      "ratio": 5.65508912746785
+      "ratio": 8.33820838064413
     },
     {
       "person": {
         "is_active": true,
-        "district": [11],
-        "name": "Veljko Kajtazi",
-        "gov_id": "1347",
-        "gender": "m",
+        "district": [64],
+        "name": "Danijel Krivec",
+        "gov_id": "P040",
+        "gender": "f",
         "party": {
-          "acronym": "BM 365, Reformisti, Nezavisni",
-          "is_coalition": false,
-          "id": 334,
+          "name": "Slovenska demokratska stranka",
           "classification": "pg",
-          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+          "acronym": "SDS",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 2
         },
         "type": "mp",
-        "id": 1347,
+        "id": 60,
         "has_function": false
       },
-      "ratio": 6.15642554833567
+      "ratio": 8.35857158843806
     },
     {
       "person": {
         "is_active": true,
-        "district": [10],
-        "name": "Branko Hrg",
-        "gov_id": "1365",
-        "gender": "m",
+        "district": [8],
+        "name": "Marko Poga\u010dnik",
+        "gov_id": "P196",
+        "gender": "f",
         "party": {
-          "acronym": "HDS, HSLS, HDSSB",
-          "is_coalition": false,
-          "id": 333,
+          "name": "Slovenska demokratska stranka",
           "classification": "pg",
-          "name": "Klub Hrvatske demokr\u0161\u0107anske stranke, Hrvatske socijalno-liberalne stranke i Hrvatskog demokratskog saveza Slavonije i Baranje"
+          "acronym": "SDS",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 2
         },
         "type": "mp",
-        "id": 1365,
+        "id": 79,
         "has_function": false
       },
-      "ratio": 6.90623436757367
+      "ratio": 8.47654840399073
     },
     {
       "person": {
         "is_active": true,
-        "district": [10],
-        "name": "Ka\u017eimir Varda",
-        "gov_id": "1266",
-        "gender": "m",
+        "district": [70],
+        "name": "Franci Kepa",
+        "gov_id": "P308",
+        "gender": "f",
         "party": {
-          "acronym": "BM 365, Reformisti, Nezavisni",
-          "is_coalition": false,
-          "id": 334,
+          "name": "Slovenska demokratska stranka",
           "classification": "pg",
-          "name": "Klub Stranke rada i solidarnosti, Reformista i nezavisnih zastupnika"
+          "acronym": "SDS",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 2
         },
         "type": "mp",
-        "id": 1266,
+        "id": 51,
         "has_function": false
       },
-      "ratio": 7.70200526940425
+      "ratio": 8.63705000286311
     }
   ]
 }

@@ -1,7 +1,6 @@
 <template>
   <poslanska-vprasanja-in-pobude
-    :card-data="$options.cardData"
-    :party="$options.cardData.data.party"
+    :context-data="$options.contextData"
     type="party"
   />
 </template>
@@ -11,6 +10,11 @@ import PoslanskaVprasanjaInPobude from '@/_components/PoslanskaVprasanjaInPobude
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanskeSkupine',
-  components: { PoslanskaVprasanjaInPobude },
+  components: {
+    PoslanskaVprasanjaInPobude,
+  },
+  cardInfo: {
+    doubleWidth: true,
+  },
 };
 </script>

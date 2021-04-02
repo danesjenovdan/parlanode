@@ -1,7 +1,4 @@
 {
-  "_id": "ps_osnovne-informacije",
   "dataUrl": "{analize}/pg/getBasicInfOfPG",
-  "lastUpdate": "2018-09-13T18:38:18.555Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-09-13T18:38:18.555Z"
 }

@@ -1,25 +1,9 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <p v-t="'info.text[1]'" class="info-text"></p>
-      <div class="info-text">
-        <span v-t="'info.text[2]'"></span>
-        <ul>
-          <li v-t="'info.list[0]'"></li>
-          <li v-t="'info.list[1]'"></li>
-          <li v-t="'info.list[2]'"></li>
-        </ul>
-      </div>
-    </template>
     <person-list :people="people" :show-party-link="true" />
   </card-wrapper>
 </template>
@@ -39,15 +23,13 @@ export default {
   },
   mixins: [common, partyVotes, partyTitle, partyHeader, partyOgImage],
   data() {
-    const people = this.$options.cardData.data.results.map((o) => {
+    const people = this.$options.contextData.cardData.results.map((o) => {
       const { person } = o;
       person.score = `${(o.ratio || 0).toFixed(2).replace('.', ',')}`;
       return person;
     });
-    const party = this.$options.cardData.data.organization;
     return {
-      data: this.$options.cardData.data,
-      party,
+      data: this.$options.contextData.cardData,
       people,
     };
   },

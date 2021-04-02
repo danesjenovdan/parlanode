@@ -1,36 +1,42 @@
 {
   "organization": {
-    "acronym": "SMC",
+    "name": "Slovenska demokratska stranka",
+    "classification": "pg",
+    "acronym": "SDS",
+    "has_voters": false,
     "is_coalition": true,
-    "id": 1,
-    "name": "PS Stranka modernega centra"
+    "id": 2
   },
-  "created_at": "07.05.2018",
-  "created_for": "07.05.2018",
+  "created_at": "04.03.2021",
+  "created_for": "04.03.2021",
   "votes": {
     "maxPG": [
       {
-        "acronym": "NeP - BK",
-        "is_coalition": false,
-        "id": 149,
-        "name": "Nepovezani poslanec Bojan Krajnc"
+        "name": "Demokrati\u010dna stranka upokojencev Slovenije",
+        "classification": "pg",
+        "acronym": "DeSUS",
+        "has_voters": false,
+        "is_coalition": true,
+        "id": 9
       }
     ],
-    "organization_value": 91.5079427504062,
-    "average": 73.2501176435038,
-    "maximum": 94.6651949963208
+    "organization_value": 93.3453111531028,
+    "average": 89.6639247373639,
+    "maximum": 97.2080088987764
   },
   "sessions": {
     "maxPG": [
       {
-        "acronym": "NeP - BK",
-        "is_coalition": false,
-        "id": 149,
-        "name": "Nepovezani poslanec Bojan Krajnc"
+        "name": "Stranka modernega centra",
+        "classification": "pg",
+        "acronym": "SMC",
+        "has_voters": false,
+        "is_coalition": true,
+        "id": 5
       }
     ],
-    "organization_value": 93.3380342604375,
-    "average": 84.8983055890671,
-    "maximum": 97.7272727272727
+    "organization_value": 93.4506137322593,
+    "average": 90.9101679507048,
+    "maximum": 96.71875
   }
 }

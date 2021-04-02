@@ -18,15 +18,14 @@ export const memberOgImage = {
   },
 };
 
-// TODO: get from contextData not from this
 export const partyOgImage = {
   computed: {
     ogConfig() {
-      const party = this.party || this.data.party;
+      const { cardData } = this.$root.$options.contextData;
+      const party = cardData.party ?? cardData.organization;
       const coalitionText = party.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
-
       return {
         name: 'circle',
         acronym: party.acronym,

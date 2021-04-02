@@ -22,16 +22,17 @@ export const partyHeader = {
   computed: {
     headerConfig() {
       const { cardData, cardState } = this.$root.$options.contextData;
-      const coalitionText = cardData.party.is_coalition
+      const party = cardData.party ?? cardData.organization;
+      const coalitionText = party.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
       return {
         mediaImage: 'party',
-        circleClass: `${cardData.party.acronym
+        circleClass: `${party.acronym
           .replace(/[ +,]/g, '_')
           .toLowerCase()}-background`,
-        heading: cardData.party.name,
-        subheading: `${cardData.party.acronym} | ${coalitionText}`,
+        heading: party.name,
+        subheading: `${party.acronym} | ${coalitionText}`,
         alternative: cardState.altHeader,
         title: this.$t('card.title'),
       };

@@ -1,62 +1,45 @@
 <template>
   <card-wrapper
-    :id="$root.$options.cardData.mountId"
     :card-url="cardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <i18n-t keypath="info.text[1]" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-    </template>
-
-    <data-not-published
+    <!-- TODO: empty state should take care of this -->
+    <!-- <data-not-published
       v-if="showEmptyState"
       :text="$t('data-not-published.parlamentary-questions')"
-    />
-    <template v-else>
-      <div class="filters">
-        <div class="filter tag-dropdown">
-          <div v-t="'mp'" class="filter-label"></div>
-          <p-search-dropdown
-            :value="dropdownItems.MPs"
-            @input="updateDropdownOptions('allMPs', $event)"
-          />
-        </div>
-        <div class="filter tag-dropdown naslovljenec">
-          <div v-t="'addressee'" class="filter-label"></div>
-          <p-search-dropdown
-            :value="dropdownItems.recipients"
-            @input="updateDropdownOptions('allRecipients', $event)"
-          />
-        </div>
-        <div class="filter month-dropdown">
-          <div v-t="'time-period'" class="filter-label"></div>
-          <p-search-dropdown
-            :value="dropdownItems.months"
-            :alphabetise="false"
-            @input="updateDropdownOptions('allMonths', $event)"
-          />
-        </div>
-        <div class="filter text-filter">
-          <div v-t="'title-search'" class="filter-label"></div>
-          <input v-model="textFilter" class="text-filter-input" type="text" />
-        </div>
+    /> -->
+    <div class="filters">
+      <div class="filter tag-dropdown">
+        <div v-t="'mp'" class="filter-label"></div>
+        <p-search-dropdown
+          :model-value="dropdownItems.MPs"
+          @update:modelValue="updateDropdownOptions('allMPs', $event)"
+        />
       </div>
-      <div id="vprasanja">
-        <question-list :question-days="filteredQuestionDays" show-author />
+      <div class="filter tag-dropdown naslovljenec">
+        <div v-t="'addressee'" class="filter-label"></div>
+        <p-search-dropdown
+          :model-value="dropdownItems.recipients"
+          @update:modelValue="updateDropdownOptions('allRecipients', $event)"
+        />
       </div>
-    </template>
+      <div class="filter month-dropdown">
+        <div v-t="'time-period'" class="filter-label"></div>
+        <p-search-dropdown
+          :model-value="dropdownItems.months"
+          :alphabetise="false"
+          @update:modelValue="updateDropdownOptions('allMonths', $event)"
+        />
+      </div>
+      <div class="filter text-filter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text" />
+      </div>
+    </div>
+    <div id="vprasanja">
+      <question-list :question-days="filteredQuestionDays" show-author />
+    </div>
   </card-wrapper>
 </template>
 
@@ -71,18 +54,17 @@ import { partyOgImage, memberOgImage } from '@/_mixins/ogImages.js';
 import CardWrapper from '@/_components/Card/Wrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import QuestionList from '@/_components/QuestionList.vue';
-import DataNotPublished from '@/_components/DataNotPublished.vue';
+import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
   components: {
     CardWrapper,
     PSearchDropdown,
     QuestionList,
-    DataNotPublished,
   },
   mixins: [common, partyOverview, partyTitle, generateMonths],
   props: {
-    cardData: {
+    contextData: {
       type: Object,
       required: true,
     },
@@ -91,14 +73,6 @@ export default {
       required: true,
       validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
-    person: {
-      type: Object,
-      default: () => ({}),
-    },
-    party: {
-      type: Object,
-      default: () => ({}),
-    },
   },
   data() {
     const selectFromState = (items, stateItemIds) =>
@@ -106,17 +80,20 @@ export default {
         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
       );
 
-    let allMonths = this.generateMonths(this.$t('months'));
-    let allMPs = this.cardData.data.all_authors.map((author) => ({
+    const { months } = getD3Locale(import.meta.env.VITE_CARD_LANG);
+    let allMonths = this.generateMonths(months);
+    let allMPs = this.contextData.cardData.all_authors.map((author) => ({
       id: author.id,
       label: author.name,
       selected: false,
     }));
-    let allRecipients = this.cardData.data.all_recipients.map((recipient) => ({
-      id: recipient,
-      label: recipient,
-      selected: false,
-    }));
+    let allRecipients = this.contextData.cardData.all_recipients.map(
+      (recipient) => ({
+        id: recipient,
+        label: recipient,
+        selected: false,
+      })
+    );
     let textFilter = '';
 
     if (this.cardData.parlaState) {
@@ -138,7 +115,7 @@ export default {
     }
 
     return {
-      questionDays: this.cardData.data.results,
+      questionDays: this.contextData.cardData.results,
       allMonths,
       allMPs,
       allRecipients,
@@ -213,9 +190,11 @@ export default {
         state.mps = this.selectedMPs;
       }
 
-      return `${this.url}${this[this.type].id}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
+      return `${this.url}${
+        this.type === 'person'
+          ? this.contextData.cardData.person.id
+          : this.contextData.cardData.party.id
+      }?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -448,7 +427,7 @@ export default {
   }
 }
 
-#vprasanja ::v-deep .questions {
+#vprasanja :deep(.questions) {
   // height: 435px;
   height: $full-card-height - 83px;
 }
