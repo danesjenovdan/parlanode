@@ -1,30 +1,10 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="full"
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n-t keypath="info.text" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-    </template>
-
-    <data-not-published
-      v-if="showEmptyState"
-      :text="$t('data-not-published.parlamentary-questions')"
-    />
-    <question-list v-else :question-days="data.results" />
+    <question-list :question-days="$options.contextData.cardData.results" />
   </card-wrapper>
 </template>
 
@@ -35,30 +15,17 @@ import { memberTitle } from '@/_mixins/titles.js';
 import { memberHeader } from '@/_mixins/altHeaders.js';
 import { memberOgImage } from '@/_mixins/ogImages.js';
 import QuestionList from '@/_components/QuestionList.vue';
-import DataNotPublished from '@/_components/DataNotPublished.vue';
 
 export default {
   name: 'PoslanskaVprasanjaInPobudePoslanca',
   components: {
     QuestionList,
-    DataNotPublished,
   },
   mixins: [common, memberOverview, memberTitle, memberHeader, memberOgImage],
-  data() {
-    return {
-      data: this.$options.cardData.data,
-    };
-  },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.data.person.id}?altHeader=true`;
+      return `${this.url}${this.$options.contextData.cardData.person.id}?altHeader=true`;
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.data-not-published {
-  height: 100%;
-}
-</style>

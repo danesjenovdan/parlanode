@@ -1,7 +1,4 @@
 {
-  "_id": "p_glasovanja",
   "dataUrl": "{analize}/p/getTaggedBallots",
-  "lastUpdate": "2019-04-29T13:18:34.685Z",
-  "big": true,
-  "high": false
+  "lastUpdate": "2019-04-29T13:18:34.685Z"
 }

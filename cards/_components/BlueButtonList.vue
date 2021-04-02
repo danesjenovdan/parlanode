@@ -4,8 +4,11 @@
       <li
         v-for="item in items"
         :key="item.id"
-        :class="['blue-button-list-item', { 'is-selected': item.id === value }]"
-        @click="$emit('input', item.id)"
+        :class="[
+          'blue-button-list-item',
+          { 'is-selected': item.id === modelValue },
+        ]"
+        @click="$emit('update:modelValue', item.id)"
       >
         {{ item.label }}
       </li>
@@ -17,7 +20,7 @@
             v-for="item in items"
             :key="item.id"
             :value="item.id"
-            :selected="item.id === value"
+            :selected="item.id === modelValue"
           >
             {{ item.label }}
           </option>
@@ -34,14 +37,15 @@ export default {
       type: Array,
       required: true,
     },
-    value: {
+    modelValue: {
       type: String,
       default: '',
     },
   },
+  emits: ['update:modelValue'],
   methods: {
     changeSelection(event) {
-      this.$emit('input', event.target.value);
+      this.$emit('update:modelValue', event.target.value);
     },
   },
 };

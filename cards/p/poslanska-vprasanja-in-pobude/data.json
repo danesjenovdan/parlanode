@@ -1,280 +1,119 @@
 {
   "person": {
     "is_active": true,
-    "district": [
-      2
-    ],
-    "name": "Alen Prelec",
-    "gov_id": "1300",
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
     "gender": "m",
     "party": {
-      "name": "Klub Socijaldemokratske partije Hrvatske",
+      "name": "Stranka modernega centra",
       "classification": "pg",
-      "acronym": "SDP",
+      "acronym": "SMC",
       "has_voters": false,
-      "is_coalition": false,
-      "id": 339
+      "is_coalition": true,
+      "id": 5
     },
     "type": "mp",
-    "id": 1300,
+    "id": 12,
     "has_function": false
   },
-  "created_at": "13. 12. 2019",
-  "created_for": "13. 12. 2019",
-  "results": [],
-  "resultsx": [
+  "created_at": "24. 1. 2020",
+  "created_for": "24. 1. 2020",
+  "results": [
     {
-      "date": "13. 12. 2019",
+      "date": "24. 1. 2020",
       "questions": [
         {
           "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo poljoprivrede",
-              "classification": "gov",
-              "acronym": "Ministarstvo poljoprivrede",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 391
-            }
-          ],
-          "recipient_text": "Vučković, Marija / Ministarstvo poljoprivrede;",
+          "recipient_orgs": [],
+          "recipient_text": "minister za zdravje, minister za finance",
           "session_id": null,
-          "title": "Financiranje namjena od javnog interesa uz državnu potporu;  | Zastupničko pitanje",
-          "url": null,
+          "title": "v zvezi z dopolnilnim zdravstvenim zavarovanjem",
+          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9f2673094edf26a7bc2544f82e5f13aee3c0cb502fa20e6f7cdcdde85c47ac81",
           "session_name": null,
           "recipient_persons": [],
-          "id": 10839,
-          "content_url": null
+          "id": 7061,
+          "content_url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9f2673094edf26a7bc2544f82e5f13aee3c0cb502fa20e6f7cdcdde85c47ac81"
         }
       ]
     },
     {
-      "date": "27. 11. 2019",
+      "date": "14. 11. 2019",
       "questions": [
         {
           "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "gov",
-              "classification": "gov",
-              "acronym": "gov",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 437
-            }
-          ],
-          "recipient_text": "Plenković, Andrej / Predsjednik Vlade RH;",
+          "recipient_orgs": [],
+          "recipient_text": "ministrica za delo dru\u017eino socialne zadeve in enake mo\u017enosti",
           "session_id": null,
-          "title": "Financiranje namjena od javnog interesa uz državnu potporu;  | Zastupničko pitanje",
-          "url": null,
+          "title": "v zvezi z odnosom dr\u017eave do vojnih veteranov",
+          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/c3b6eef15389a47a1ca052eaf12f395432e035c8683f8c3e3e5e146d9e530ebb",
           "session_name": null,
           "recipient_persons": [],
-          "id": 10807,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "25. 9. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo poljoprivrede",
-              "classification": "gov",
-              "acronym": "Ministarstvo poljoprivrede",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 391
-            }
-          ],
-          "recipient_text": "Vučković, Marija / Ministarstvo poljoprivrede;",
-          "session_id": null,
-          "title": "Poljoprivreda;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10618,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "5. 4. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo zaštite okoliša i energetike",
-              "classification": "gov",
-              "acronym": "Ministarstvo zaštite okoliša i energetike",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 395
-            }
-          ],
-          "recipient_text": "Ćorić, Tomislav / Ministarstvo zaštite okoliša i energetike;",
-          "session_id": null,
-          "title": "Vodno i komunalno gospodarstvo;  | Zastupničko pitanje",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10322,
-          "content_url": null
-        }
-      ]
-    },
-    {
-      "date": "21. 3. 2019",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo državne imovine",
-              "classification": "gov",
-              "acronym": "Ministarstvo državne imovine",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 387
-            }
-          ],
-          "recipient_text": "Marić, Goran / Ministarstvo državne imovine;",
-          "session_id": null,
-          "title": "Državna imovina;  | Zastupničko pitanje vezano uz rješavanje zahtjeva za povrat nekretnina Općini Brdovec iz državnog vlasništva",
-          "url": null,
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 10223,
-          "content_url": null
+          "id": 6525,
+          "content_url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/c3b6eef15389a47a1ca052eaf12f395432e035c8683f8c3e3e5e146d9e530ebb"
         },
         {
           "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo poljoprivrede",
-              "classification": "gov",
-              "acronym": "Ministarstvo poljoprivrede",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 391
-            }
-          ],
-          "recipient_text": "Tolušić, Tomislav / Ministarstvo poljoprivrede;",
+          "recipient_orgs": [],
+          "recipient_text": "Vlada",
           "session_id": null,
-          "title": "Financiranje namjena od javnog interesa uz državnu potporu;  | Zastupničko pitanje vezano uz iznos sredstava za izravne potpore iz fondova EU",
+          "title": "v zvezi z letali\u0161\u010dem Cerklje ob Krki",
           "url": null,
           "session_name": null,
           "recipient_persons": [],
-          "id": 10225,
+          "id": 6574,
           "content_url": null
         }
       ]
     },
     {
-      "date": "19. 9. 2018",
+      "date": "5. 7. 2019",
       "questions": [
         {
           "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo zdravstva",
-              "classification": "gov",
-              "acronym": "Ministarstvo zdravstva",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 392
-            }
-          ],
-          "recipient_text": "Kujundžić, Milan / Ministarstvo zdravstva;",
+          "recipient_orgs": [],
+          "recipient_text": "minister za zdravje",
           "session_id": null,
-          "title": "Sustav zdravstvene zaštite;  | Zastupničko pitanje",
-          "url": null,
+          "title": "v zvezi z investicijami v SB Bre\u017eice",
+          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/81e51f21683020fde50b242350e445e5c1fbae6f3190f83cd631be408b9b27ac",
           "session_name": null,
           "recipient_persons": [],
-          "id": 9394,
-          "content_url": null
+          "id": 5791,
+          "content_url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/81e51f21683020fde50b242350e445e5c1fbae6f3190f83cd631be408b9b27ac"
         }
       ]
     },
     {
-      "date": "15. 6. 2018",
+      "date": "14. 6. 2019",
       "questions": [
         {
           "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo financija",
-              "classification": "gov",
-              "acronym": "Ministarstvo financija",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 398
-            }
-          ],
-          "recipient_text": "Marić, Zdravko / Ministarstvo financija;",
+          "recipient_orgs": [],
+          "recipient_text": "predsednik Vlade",
           "session_id": null,
-          "title": "Porezni sustav;  | Zastupničko pitanje vezano uz financiranje jedinica lokalne i područne (regionalne) samouprave",
-          "url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009586",
+          "title": "v zvezi s financiranjem izgradnje drugega tira Diva\u010da \u2013 Koper",
+          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/73b7ceac004c140f340c43e0dfcd32207f984d15e87103e7c2b64da7dcc5136d",
           "session_name": null,
           "recipient_persons": [],
-          "id": 8326,
-          "content_url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009586"
+          "id": 5649,
+          "content_url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/73b7ceac004c140f340c43e0dfcd32207f984d15e87103e7c2b64da7dcc5136d"
         }
       ]
     },
     {
-      "date": "21. 5. 2018",
+      "date": "25. 1. 2019",
       "questions": [
         {
           "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo rada i mirovinskog sustava",
-              "classification": "gov",
-              "acronym": "Ministarstvo rada i mirovinskog sustava",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 408
-            }
-          ],
-          "recipient_text": "Pavić, Marko / Ministarstvo rada i mirovinskog sustava;",
+          "recipient_orgs": [],
+          "recipient_text": "predsednik Vlade",
           "session_id": null,
-          "title": "Statusna prava građana;  | Zastupničko pitanje vezano uz uvoz radne snage iz trećih zemalja",
-          "url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009067",
+          "title": "v zvezi z javnofinan\u010dno politiko dr\u017eave",
+          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/fb3783a9f7a7a1fc4ef5303d161f7a62c91fcf82c84679a32291c98424b675af",
           "session_name": null,
           "recipient_persons": [],
-          "id": 9310,
-          "content_url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2009067"
-        }
-      ]
-    },
-    {
-      "date": "20. 3. 2018",
-      "questions": [
-        {
-          "type_of_question": null,
-          "recipient_orgs": [
-            {
-              "name": "Ministarstvo državne imovine",
-              "classification": "gov",
-              "acronym": "Ministarstvo državne imovine",
-              "has_voters": false,
-              "is_coalition": false,
-              "id": 387
-            }
-          ],
-          "recipient_text": "Marić, Goran / Ministarstvo državne imovine;",
-          "session_id": null,
-          "title": "Državna imovina;  | Zastupničko pitanje vezano uz ustupanje dvoraca lokalnoj samoupravi na korištenje",
-          "url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2007871",
-          "session_name": null,
-          "recipient_persons": [],
-          "id": 9124,
-          "content_url": "http://edoc.sabor.hr/Views/../DocumentView.aspx?entid=2007871"
+          "id": 4832,
+          "content_url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/fb3783a9f7a7a1fc4ef5303d161f7a62c91fcf82c84679a32291c98424b675af"
         }
       ]
     }

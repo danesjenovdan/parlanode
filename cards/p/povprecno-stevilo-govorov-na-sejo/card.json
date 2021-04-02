@@ -1,7 +1,4 @@
 {
-  "_id": "p_povprecno-stevilo-govorov-na-sejo",
   "dataUrl": "{analize}/p/getAverageNumberOfSpeechesPerSession",
-  "lastUpdate": "2018-07-27T14:58:45.512Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T14:58:45.512Z"
 }

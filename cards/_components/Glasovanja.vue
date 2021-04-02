@@ -1,28 +1,10 @@
 <template>
   <card-wrapper
-    :id="$root.$options.cardData.mountId"
+    :id="$root.$options.contextData.mountId"
     :card-url="cardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="full"
   >
-    <template #info>
-      <div>
-        <p v-t="'info.lead'" class="info-text lead"></p>
-        <p v-t="'info.methodology'" class="info-text heading"></p>
-        <p v-t="'info.text[0]'" class="info-text"></p>
-        <i18n-t keypath="info.text[1]" tag="p" class="info-text">
-          <a
-            v-t="'info.link.text'"
-            :href="$t('info.link.link')"
-            place="link"
-            class="funblue-light-hover"
-            target="_blank"
-          />
-        </i18n-t>
-      </div>
-    </template>
-
     <div v-show="false" class="card-content__empty">
       <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
@@ -118,14 +100,9 @@ export default {
     Ballot,
     ScrollShadow,
   },
-  filters: {
-    toPercent(val) {
-      return `${parseInt(val, 10)} %`;
-    },
-  },
   mixins: [common],
   props: {
-    cardData: {
+    contextData: {
       type: Object,
       required: true,
     },
@@ -133,14 +110,6 @@ export default {
       type: String,
       required: true,
       validator: (value) => ['person', 'party'].indexOf(value) > -1,
-    },
-    person: {
-      type: Object,
-      default: () => ({}),
-    },
-    party: {
-      type: Object,
-      default: () => ({}),
     },
   },
   data() {
@@ -182,19 +151,19 @@ export default {
       },
     ];
 
-    let allTags = this.cardData.data.all_tags.map((tag) => ({
+    let allTags = this.contextData.cardData.all_tags.map((tag) => ({
       id: tag,
       label: tag,
       selected: false,
     }));
 
     let allClassifications = [];
-    Object.keys(this.cardData.data.classifications).forEach(
+    Object.keys(this.contextData.cardData.classifications).forEach(
       (classificationKey) => {
         allClassifications.push({
           id: classificationKey,
           label: this.$t(
-            `vote_types.${this.cardData.data.classifications[classificationKey]}`
+            `vote_types.${this.contextData.cardData.classifications[classificationKey]}`
           ),
           selected: false,
         });
@@ -203,8 +172,8 @@ export default {
 
     let textFilter = '';
 
-    if (this.cardData.parlaState) {
-      const state = this.cardData.parlaState;
+    if (this.contextData.cardState) {
+      const state = this.contextData.cardState;
       if (state.text) {
         textFilter = state.text;
       }
@@ -224,7 +193,7 @@ export default {
     }
 
     return {
-      votingDays: this.cardData.data.results,
+      votingDays: this.contextData.cardData.results,
       selectedSort: 'date',
       sortOptions: {
         maximum: this.$t('sort-by--inequality'),
@@ -292,7 +261,11 @@ export default {
         state.options = this.selectedOptions;
       }
 
-      return `${this.url}${this[this.type].id}/?state=${encodeURIComponent(
+      const personOrParty =
+        this.type === 'person'
+          ? this.contextData.cardData.person
+          : this.contextData.cardData.party;
+      return `${this.url}${personOrParty.id}/?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&altHeader=true`;
     },
@@ -348,7 +321,10 @@ export default {
           date: votingDay.date,
           ballots: filter(votingDay.ballots, filterBallots).map((ballot) => {
             const ballotClone = JSON.parse(JSON.stringify(ballot));
-            const form = this.type === 'person' ? this.person.gender : 'plural';
+            const form =
+              this.type === 'person'
+                ? this.contextData.cardData.person.gender
+                : 'plural';
             ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
 
             if (ballot.result !== 'none' && ballot.result != null) {
@@ -394,8 +370,8 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-::v-deep .card-content,
-::v-deep .card-content-front {
+:deep(.card-content),
+:deep(.card-content-front) {
   @include respond-to(mobile) {
     max-height: none;
   }
@@ -439,7 +415,7 @@ export default {
     width: 100%;
 
     .text-filter-input {
-      background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
+      background-image: url("#{get-config-value('urls.cdn')}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;

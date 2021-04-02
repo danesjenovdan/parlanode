@@ -1,24 +1,10 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
+    half-height
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <i18n-t keypath="info.text" tag="p" class="info-text">
-        <a
-          v-t="'info.link.text'"
-          :href="$t('info.link.link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-    </template>
-
     <div class="memberships">
       <p-tabs v-if="tabNames.length > 1">
         <p-tab
@@ -35,6 +21,7 @@
         :name="tabNames[0]"
         :contents="tabs[tabNames[0]]"
       />
+      <!-- TODO: let empty state handle this -->
       <membership-list v-else :name="''" :contents="[]" />
     </div>
   </card-wrapper>
@@ -61,7 +48,7 @@ export default {
   mixins: [common, memberHeader, memberOgImage, memberOverview, memberTitle],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.contextData.cardData,
     };
   },
   computed: {
@@ -92,7 +79,7 @@ export default {
       return Object.keys(this.tabs);
     },
     generatedCardUrl() {
-      return `${this.url}${this.$options.cardData.data.person.id}?altHeader=true`;
+      return `${this.url}${this.data.person.id}?altHeader=true`;
     },
   },
 };

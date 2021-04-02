@@ -1,123 +1,129 @@
 {
   "person": {
     "is_active": true,
-    "district": [2],
-    "name": "Alen Prelec",
-    "gov_id": "1300",
-    "gender": "m",
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
+    "gender": "f",
     "party": {
-      "acronym": "SDP",
-      "is_coalition": false,
-      "id": 339,
+      "name": "Stranka modernega centra",
       "classification": "pg",
-      "name": "Klub Socijaldemokratske partije Hrvatske"
+      "acronym": "SMC",
+      "has_voters": false,
+      "is_coalition": true,
+      "id": 5
     },
     "type": "mp",
-    "id": 1300,
+    "id": 12,
     "has_function": false
   },
-  "created_at": "06.09.2018",
-  "created_for": "05.09.2018",
+  "created_at": "03.03.2021",
+  "created_for": "03.03.2021",
   "results": [
     {
       "person": {
         "is_active": true,
-        "district": [9],
-        "name": "\u017deljko Jovanovi\u0107",
-        "gov_id": "1355",
-        "gender": "m",
+        "district": [20],
+        "name": "Gregor Peri\u010d",
+        "gov_id": "P313",
+        "gender": "f",
         "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
+          "name": "Stranka modernega centra",
           "classification": "pg",
-          "name": "Klub Socijaldemokratske partije Hrvatske"
+          "acronym": "SMC",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 5
         },
         "type": "mp",
-        "id": 1355,
+        "id": 76,
         "has_function": false
       },
-      "ratio": 15.3297097167559
+      "ratio": 10.816653826392
     },
     {
       "person": {
         "is_active": true,
-        "district": [10],
-        "name": "Vedran Babi\u0107",
-        "gov_id": "1390",
-        "gender": "m",
+        "district": [23],
+        "name": "Mateja Udov\u010d",
+        "gov_id": "P312",
+        "gender": "f",
         "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
+          "name": "Stranka modernega centra",
           "classification": "pg",
-          "name": "Klub Socijaldemokratske partije Hrvatske"
+          "acronym": "SMC",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 5
         },
         "type": "mp",
-        "id": 1390,
+        "id": 100,
         "has_function": false
       },
-      "ratio": 15.6524758424985
+      "ratio": 11.0905365064094
     },
     {
       "person": {
         "is_active": true,
-        "district": [3],
-        "name": "Predrag Mati\u0107",
-        "gov_id": "1327",
-        "gender": "m",
+        "district": [1],
+        "name": "Mojca \u017dnidari\u010d",
+        "gov_id": "P316",
+        "gender": "f",
         "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
+          "name": "Stranka modernega centra",
           "classification": "pg",
-          "name": "Klub Socijaldemokratske partije Hrvatske"
+          "acronym": "SMC",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 5
         },
         "type": "mp",
-        "id": 1327,
+        "id": 106,
         "has_function": false
       },
-      "ratio": 16.4012194668567
+      "ratio": 11.1803398874989
     },
     {
       "person": {
         "is_active": true,
-        "district": [7],
-        "name": "Damir Mateljan",
-        "gov_id": "1326",
-        "gender": "m",
+        "district": [24],
+        "name": "Monika Gregor\u010di\u010d",
+        "gov_id": "P314",
+        "gender": "f",
         "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
+          "name": "Stranka modernega centra",
           "classification": "pg",
-          "name": "Klub Socijaldemokratske partije Hrvatske"
+          "acronym": "SMC",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 5
         },
         "type": "mp",
-        "id": 1326,
+        "id": 35,
         "has_function": false
       },
-      "ratio": 17.0
+      "ratio": 12.328828005938
     },
     {
       "person": {
         "is_active": true,
-        "district": [4],
-        "name": "Boris Lalovac",
-        "gov_id": "1339",
-        "gender": "m",
+        "district": [14],
+        "name": "Janja Sluga",
+        "gov_id": "P284",
+        "gender": "f",
         "party": {
-          "acronym": "SDP",
-          "is_coalition": false,
-          "id": 339,
+          "name": "Stranka modernega centra",
           "classification": "pg",
-          "name": "Klub Socijaldemokratske partije Hrvatske"
+          "acronym": "SMC",
+          "has_voters": false,
+          "is_coalition": true,
+          "id": 5
         },
         "type": "mp",
-        "id": 1339,
+        "id": 89,
         "has_function": false
       },
-      "ratio": 17.0880074906351
+      "ratio": 13.076696830622
     }
   ]
 }

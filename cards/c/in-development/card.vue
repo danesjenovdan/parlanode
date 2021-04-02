@@ -3,7 +3,7 @@
     :id="$options.cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="full"
+
   >
     <div class="empty">
       <div v-t="'card-in-development'" class="circle"></div>

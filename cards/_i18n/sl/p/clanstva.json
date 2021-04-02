@@ -6,14 +6,7 @@
     "commissions": "Delovna telesa",
     "delegations": "Druga članstva",
     "friendship_groups": "Druga članstva",
-    "investigative_comissions": "Preiskovalne komisije"
-  },
-  "info": {
-    "lead": "Izpis vseh članstev poslanca/-ke v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.",
-    "text": "Podatki o članstvih pridobljeni s spletnega mesta {link}.",
-    "link": {
-      "text": "DZ RS",
-      "link": "https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi"
-    }
+    "investigative_comissions": "Preiskovalne komisije",
+    "info": "# Izpis vseh članstev poslanca/-ke v delovnih telesih, stalnih delegacijah in skupinah prijateljstva.\n\nPodatki o članstvih pridobljeni s spletnega mesta [DZ RS](https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi).\n\n"
   }
 }

@@ -1,16 +1,9 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="full"
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </template>
     <question-list :question-days="data.results" />
   </card-wrapper>
 </template>
@@ -31,7 +24,7 @@ export default {
   mixins: [common, memberOverview, memberTitle, memberHeader, memberOgImage],
   data() {
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.contextData.cardData,
     };
   },
   computed: {

@@ -2,9 +2,8 @@ import { range, flatten } from 'lodash';
 
 export default {
   methods: {
-    generateMonths(MONTH_NAMES) {
-      const { cardGlobals } = this.$root.$options.cardData;
-      const startDate = new Date(cardGlobals.timeRangeStart);
+    generateMonths(MONTH_NAMES, start = '2010-01-01T00:00:00Z') {
+      const startDate = new Date(start);
       const startYear = startDate.getFullYear();
       const startMonth = startDate.getMonth() + 1;
 

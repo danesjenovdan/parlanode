@@ -5,7 +5,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
     class="card-halfling card-featured-legislation"
-    content-class="full"
+
   >
     <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>

@@ -1,28 +1,39 @@
 <template>
-  <div :id="mountId" :class="['card-container', transitionClass]">
-    <card-header :config="headerConfig" :current-back="currentBack" />
+  <div :id="mountId">
+    <template v-if="hasGenerator && showGenerator">
+      <slot name="generator" />
+    </template>
+    <div :class="['card-container', transitionClass]">
+      <card-header :config="headerConfig" :current-back="currentBack" />
 
-    <div :class="['card-content', contentClass]">
-      <card-info v-if="currentBack === 'info'" :info="info" />
+      <div
+        :class="[
+          'card-content',
+          { full: !halfHeight && !maxHeight, half: halfHeight },
+        ]"
+      >
+        <card-info
+          v-if="currentBack === 'info'"
+          :info="$te('card.info') ? $t('card.info') : ''"
+        />
 
-      <card-embed v-else-if="currentBack === 'embed'" :url="cardUrl" />
+        <card-embed v-else-if="currentBack === 'embed'" :url="cardUrl" />
 
-      <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
+        <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
 
-      <card-previous v-else-if="currentBack === 'previous'" />
+        <card-previous v-else-if="currentBack === 'previous'" />
 
-      <div v-else v-cloak :class="contentFrontClass" class="card-content-front">
-        <!-- TODO: this needs fixing, it's currently hardcoded -->
-        <!-- <div v-if="false" class="card-content__empty">
-          <div class="card-content__empty-inner">
-            <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`" />
-            <p v-t="'data-currently-unavailable'"></p>
-          </div>
-        </div> -->
-        <slot />
+        <div
+          v-else
+          v-cloak
+          :class="contentFrontClass"
+          class="card-content-front"
+        >
+          <slot />
+        </div>
       </div>
+      <card-footer @toggle-back="toggleBack" />
     </div>
-    <card-footer @toggle-back="toggleBack" />
   </div>
 </template>
 
@@ -46,10 +57,6 @@ export default {
     CardFooter,
   },
   props: {
-    contentClass: {
-      type: [String, Object, Array],
-      default: '',
-    },
     contentFrontClass: {
       type: [String, Object, Array],
       default: '',
@@ -60,11 +67,23 @@ export default {
     },
     headerConfig: {
       type: Object,
-      default: () => ({}),
+      required: true,
+    },
+    ogConfig: {
+      type: Object,
+      required: true,
     },
     info: {
       type: String,
       default: '',
+    },
+    halfHeight: {
+      type: Boolean,
+      default: false,
+    },
+    maxHeight: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ['back-change'],
@@ -75,6 +94,8 @@ export default {
       previousHeight: null,
       slugs: this.$root.$options.contextData.slugs,
       mountId: this.$root.$options.contextData.mountId,
+      hasGenerator: this.$slots.generator?.()?.length,
+      showGenerator: this.$root.$options.contextData.cardState?.generator,
     };
   },
   watch: {

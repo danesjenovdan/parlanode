@@ -1,13 +1,6 @@
 {
   "card": {
-    "title": "Št. poslanskih vprašanj in pobud"
-  },
-  "info": {
-    "lead": "Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka postavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.",
-    "text": "Podatke pridobivamo s spletnega mesta {link}.",
-    "link": {
-      "link": "https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/",
-      "text": "DZ RS"
-    }
+    "title": "Št. poslanskih vprašanj in pobud",
+    "info": "# Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka postavil/-a v tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.\n\nPodatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/)."
   }
 }

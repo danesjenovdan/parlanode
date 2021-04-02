@@ -1,7 +1,4 @@
 {
-  "_id": "p_zadnje-aktivnosti",
   "dataUrl": "{analize}/p/getLastActivity",
-  "lastUpdate": "2019-04-07T19:32:45.399Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2019-04-07T19:32:45.399Z"
 }

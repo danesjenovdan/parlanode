@@ -61,6 +61,7 @@
               v-else-if="item.colorClass"
               :class="['color', item.colorClass]"
             />
+            <!-- eslint-disable-next-line vue/no-v-html -->
             <span v-html="highlightLabel(item.label)" />
           </div>
           <div v-if="item.count">{{ item.count }}</div>
@@ -71,7 +72,6 @@
 </template>
 
 <script>
-/* globals document */
 const ITEM_HEIGHT = 23;
 const ITEM_COUNT = 10;
 
@@ -79,7 +79,7 @@ export default {
   name: 'SearchDropdown',
   directives: {
     clickOutside: {
-      bind(el, binding) {
+      beforeMount(el, binding) {
         const handler = (e) => {
           if (!el.contains(e.target) && el !== e.target) {
             binding.value(e);
@@ -89,7 +89,7 @@ export default {
         el.vueClickOutside = handler;
         document.addEventListener('click', handler);
       },
-      unbind(el) {
+      unmounted(el) {
         document.removeEventListener('click', el.vueClickOutside);
         // eslint-disable-next-line no-param-reassign
         el.vueClickOutside = null;
@@ -105,7 +105,7 @@ export default {
       type: Array,
       default: null,
     },
-    value: {
+    modelValue: {
       type: Array,
       required: true,
     },
@@ -142,6 +142,7 @@ export default {
       default: null,
     },
   },
+  emits: ['update:modelValue', 'search', 'select', 'clear'],
   data() {
     return {
       active: false,
@@ -205,7 +206,9 @@ export default {
         return this.groups
           .map((group) => {
             const itemsFromGroup = filterAndSort(
-              this.value.filter((item) => group.items.indexOf(item.id) > -1)
+              this.modelValue.filter(
+                (item) => group.items.indexOf(item.id) > -1
+              )
             );
 
             itemsFromGroup.forEach((item, index) => {
@@ -217,7 +220,7 @@ export default {
           })
           .reduce((a, b) => a.concat(b), []);
       }
-      return filterAndSort(this.value);
+      return filterAndSort(this.modelValue);
     },
     selectedIds() {
       return this.filteredItems
@@ -253,8 +256,10 @@ export default {
     },
     largeItems() {
       return (
-        this.value &&
-        (this.value[0].image || this.value[0].color || this.value[0].colorClass)
+        this.modelValue &&
+        (this.modelValue[0].image ||
+          this.modelValue[0].color ||
+          this.modelValue[0].colorClass)
       );
     },
   },
@@ -299,7 +304,7 @@ export default {
     },
     toggleItem(itemId) {
       this.$emit('select', itemId);
-      let newItems = JSON.parse(JSON.stringify(this.value));
+      let newItems = JSON.parse(JSON.stringify(this.modelValue));
       if (this.single) {
         newItems = newItems.map((item) => ({
           ...item,
@@ -311,7 +316,7 @@ export default {
           selected: item.id === itemId ? !item.selected : item.selected,
         }));
       }
-      this.$emit('input', newItems);
+      this.$emit('update:modelValue', newItems);
     },
     toggleDropdown(state) {
       // if (state === false) {
@@ -320,10 +325,10 @@ export default {
       this.active = state;
     },
     clearSelection() {
-      let newItems = JSON.parse(JSON.stringify(this.value));
+      let newItems = JSON.parse(JSON.stringify(this.modelValue));
       newItems = newItems.map((item) => ({ ...item, selected: false }));
       this.$emit('clear');
-      this.$emit('input', newItems);
+      this.$emit('update:modelValue', newItems);
     },
     focus(index, withKeyboard) {
       const multiplier = this.largeItems ? 2 : 1;

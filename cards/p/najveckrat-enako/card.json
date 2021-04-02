@@ -1,7 +1,4 @@
 {
-  "_id": "p_najveckrat-enako",
   "dataUrl": "{analize}/p/getMostEqualVoters",
-  "lastUpdate": "2018-07-27T14:58:29.376Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T14:58:29.376Z"
 }

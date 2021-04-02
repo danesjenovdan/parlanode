@@ -17,13 +17,12 @@ export default {
     if (this.$root.$options.contextData.template == null) {
       this.$root.$options.contextData.template = {
         pageTitle: this.$te('card.title') ? this.$t('card.title') : '',
-        // TODO: change how big/high are set
-        frameContainerClass: this.$root.$options.contextData.cardData.big
+        frameContainerClass: this.$root.$options.cardInfo?.doubleWidth
           ? 'col-md-12'
           : 'col-md-6 col-md-offset-3',
         embedContainerClass:
-          (this.$root.$options.contextData.cardData.big ? ' big-card' : '') +
-          (this.$root.$options.contextData.cardData.high ? ' high-card' : ''),
+          (this.$root.$options.cardInfo?.doubleWidth ? ' big-card' : '') +
+          (this.$root.$options.cardInfo?.fullHeight ? ' high-card' : ''),
         contextUrl: this.slugs.urls.base,
         ogText: this.$t('ogText'),
       };

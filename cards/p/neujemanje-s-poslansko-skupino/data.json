@@ -1,49 +1,49 @@
 {
   "person": {
-    "is_active": false,
-    "district": [
-      76
-    ],
-    "name": "Milan Brglez",
-    "gov_id": "P243",
-    "gender": "m",
+    "is_active": true,
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
+    "gender": "f",
     "party": {
+      "name": "Stranka modernega centra",
+      "classification": "pg",
       "acronym": "SMC",
+      "has_voters": false,
       "is_coalition": true,
-      "id": 1,
-      "name": "PS Stranka modernega centra"
+      "id": 5
     },
     "type": "mp",
-    "id": 11,
-    "has_function": true
+    "id": 12,
+    "has_function": false
   },
-  "created_at": "09.12.2017",
-  "created_for": "09.12.2017",
+  "created_at": "12.03.2021",
+  "created_for": "12.03.2021",
   "result": {
     "max": {
-      "score": 11.662817551963,
+      "score": 35.817575083426,
       "mps": [
         {
-          "is_active": false,
-          "district": [
-            77
-          ],
-          "name": "Bojan Dobovšek",
-          "gov_id": "P248",
-          "gender": "m",
+          "is_active": true,
+          "district": [4, 5],
+          "name": "Zmago Jelin\u010di\u010d Plemeniti",
+          "gov_id": "P028",
+          "gender": "f",
           "party": {
-            "acronym": "PS NP",
+            "name": "Slovenska nacionalna stranka",
+            "classification": "pg",
+            "acronym": "SNS",
+            "has_voters": false,
             "is_coalition": false,
-            "id": 109,
-            "name": "PS nepovezanih poslancev "
+            "id": 11
           },
           "type": "mp",
-          "id": 18,
+          "id": 10,
           "has_function": false
         }
       ]
     },
-    "average": 1.76031041822366,
-    "score": 0.863842040312619
+    "average": 8.44925395211011,
+    "score": 3.83759733036707
   }
 }

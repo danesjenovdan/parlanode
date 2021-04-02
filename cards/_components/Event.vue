@@ -3,36 +3,39 @@
     <div :class="['parlaicon', eventIcon]"></div>
     <template v-if="event.type === 'question'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
-        <component
-          :is="event.content_url ? 'a' : 'strong'"
-          :href="event.content_url"
-          :class="{ 'funblue-light-hover': event.content_url }"
-          target="_blank"
-          place="title"
-          >{{ event.title }}</component
-        >
-        <span place="recipient">{{ event.recipient_text }}</span>
+        <template #title>
+          <component
+            :is="event.content_url ? 'a' : 'strong'"
+            :href="event.content_url"
+            :class="{ 'funblue-light-hover': event.content_url }"
+            target="_blank"
+            >{{ event.title }}</component
+          >
+        </template>
+        <template #recipient>
+          <span>{{ event.recipient_text }}</span>
+        </template>
       </i18n-t>
     </template>
     <template v-else-if="event.type === 'ballot'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
-        <a
-          :href="getSessionVoteLink(event)"
-          class="funblue-light-hover"
-          place="title"
-          >{{ event.vote_name }}</a
-        >
+        <template #title>
+          <a :href="getSessionVoteLink(event)" class="funblue-light-hover">{{
+            event.vote_name
+          }}</a>
+        </template>
       </i18n-t>
     </template>
     <template v-else-if="event.type === 'speech'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
-        <a
-          :href="getSessionSpeechLink(event)"
-          class="funblue-light-hover"
-          place="session"
-          >{{ event.session.name }}</a
-        >
-        <span place="org">{{ event.session.org.name }}</span>
+        <template #session>
+          <a :href="getSessionSpeechLink(event)" class="funblue-light-hover">{{
+            event.session.name
+          }}</a>
+        </template>
+        <template #org>
+          <span>{{ event.session.org.name }}</span>
+        </template>
       </i18n-t>
     </template>
     <template v-else>

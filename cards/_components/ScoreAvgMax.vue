@@ -1,14 +1,12 @@
 <template>
   <card-wrapper
-    :id="cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="half"
+    half-height
   >
-    <slot slot="info" name="info"></slot>
-
     <div v-if="getMaxValue <= 0">
+      <!-- TODO: let empty state take care of this -->
       <div v-t="'no-results'" class="no-results" />
     </div>
     <div v-else v-cloak class="card-content-front">
@@ -128,10 +126,6 @@ export default {
   },
   mixins: [common],
   props: {
-    cardData: {
-      type: Object,
-      required: true,
-    },
     type: {
       type: String,
       required: true,

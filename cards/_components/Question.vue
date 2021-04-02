@@ -2,25 +2,31 @@
   <div class="question">
     <div class="parlaicon parlaicon-vprasanje"></div>
     <i18n-t :keypath="translationKey" tag="div" class="motion">
-      <span v-if="showAuthor" place="name">
-        <span v-for="(author, index) in authors" :key="author.id">
-          <a :href="getPersonLink(author)" class="funblue-light-hover">{{
-            author.name
-          }}</a
-          ><span v-if="index + 1 < authors.length">, </span>
+      <template #name>
+        <span v-if="showAuthor">
+          <span v-for="(author, index) in authors" :key="author.id">
+            <a :href="getPersonLink(author)" class="funblue-light-hover">{{
+              author.name
+            }}</a
+            ><span v-if="index + 1 < authors.length">, </span>
+          </span>
         </span>
-      </span>
-      <span place="title">
-        <a
-          v-if="question.url"
-          :href="question.url"
-          target="_blank"
-          class="funblue-light-hover"
-          >{{ question.title }}</a
-        >
-        <strong v-else>{{ question.title }}</strong>
-      </span>
-      <span place="recipient">{{ question.recipient_text }}</span>
+      </template>
+      <template #title>
+        <span>
+          <a
+            v-if="question.url"
+            :href="question.url"
+            target="_blank"
+            class="funblue-light-hover"
+            >{{ question.title }}</a
+          >
+          <strong v-else>{{ question.title }}</strong>
+        </span>
+      </template>
+      <template #recipient>
+        <span>{{ question.recipient_text }}</span>
+      </template>
     </i18n-t>
   </div>
 </template>
@@ -50,10 +56,8 @@ export default {
         return `question.asked${this.showAuthor ? '--with-name' : ''}--plural`;
       }
       const gender =
-        (this.authors[0] && this.authors[0].gender) ||
-        (this.$root.data &&
-          this.$root.data.person &&
-          this.$root.data.person.gender);
+        this.authors?.[0]?.gender ||
+        this.$root.$options.contextData?.cardData?.person?.gender;
       return `question.asked${this.showAuthor ? '--with-name' : ''}--${gender}`;
     },
   },

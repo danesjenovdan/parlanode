@@ -1,16 +1,6 @@
 {
   "card": {
-    "title": "Besede, ki jo/ga zaznamujejo"
-  },
-  "info": {
-    "lead": "Izpis 10 besed in besednih zvez, ki jih poslanec/-ka uporablja pogosteje kot ostali poslanci v DZ.",
-    "text": [
-      "Analizo izvajamo po statistiki {link}.",
-      "Korpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori."
-    ],
-    "link": {
-      "link": "https://en.wikipedia.org/wiki/Tf-idf",
-      "text": "tf-idf"
-    }
+    "title": "Besede, ki jo/ga zaznamujejo",
+    "info": "# Izpis 10 besed in besednih zvez, ki jih poslanec/-ka uporablja pogosteje kot ostali poslanci v DZ.\n\nAnalizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).\n\nKorpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori."
   }
 }

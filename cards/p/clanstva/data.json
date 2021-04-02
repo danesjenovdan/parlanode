@@ -1,48 +1,116 @@
 {
   "memberships": {
+    "comission": [
+      {
+        "url": null,
+        "org_type": "comission",
+        "org_id": 116,
+        "name": "Ustavna komisija"
+      }
+    ],
+    "friendship_group": [
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 63,
+        "name": "Skupina prijateljstva z Zvezno republiko Nem\u010dijo"
+      },
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 91,
+        "name": "Skupina prijateljstva s Slova\u0161ko republiko"
+      },
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 65,
+        "name": "Skupina prijateljstva z Argentinsko republiko"
+      },
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 97,
+        "name": "Skupina prijateljstva s Kraljevino Belgijo"
+      },
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 71,
+        "name": "Skupina prijateljstva z Velikim vojvodstvom Luksemburg"
+      },
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 102,
+        "name": "Skupina prijateljstva s Kraljevino Nizozemsko"
+      },
+      {
+        "url": null,
+        "org_type": "friendship_group",
+        "org_id": 77,
+        "name": "Skupina prijateljstva z Zdru\u017eenim kraljestvom Velike Britanije in Severne Irske"
+      }
+    ],
+    "commission": [
+      {
+        "url": null,
+        "org_type": "commission",
+        "org_id": 36,
+        "name": "Mandatno-volilna komisija"
+      }
+    ],
+    "dz": [
+      {
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9fb2188410f96bf141c391330a03b5cbe87dfc2da6203668502a6a06f92f5d4c",
+        "org_type": "dz",
+        "org_id": 1,
+        "name": "Dr\u017eavni zbor"
+      }
+    ],
     "pg": [
       {
-        "url": "https://www.facebook.com/sdphrvatske",
+        "url": "https://twitter.com/StrankaSMC",
         "org_type": "pg",
-        "org_id": 339,
-        "name": "Klub Socijaldemokratske partije Hrvatske"
+        "org_id": 5,
+        "name": "Stranka modernega centra"
+      }
+    ],
+    "council": [
+      {
+        "url": null,
+        "org_type": "council",
+        "org_id": 15,
+        "name": "Kolegij predsednika Dr\u017eavnega zbora"
       }
     ],
     "committee": [
       {
         "url": null,
         "org_type": "committee",
-        "org_id": 272,
-        "name": "Odbor za pomorstvo, promet i infrastrukturu"
-      },
-      {
-        "url": null,
-        "org_type": "committee",
-        "org_id": 301,
-        "name": "Odbor za poljoprivredu"
+        "org_id": 26,
+        "name": "Odbor za infrastrukturo, okolje in prostor"
       }
     ]
   },
   "person": {
     "is_active": true,
-    "district": [
-      2
-    ],
-    "name": "Alen Prelec",
-    "gov_id": "1300",
-    "gender": "m",
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
+    "gender": "f",
     "party": {
-      "name": "Klub Socijaldemokratske partije Hrvatske",
+      "name": "Stranka modernega centra",
       "classification": "pg",
-      "acronym": "SDP",
+      "acronym": "SMC",
       "has_voters": false,
-      "is_coalition": false,
-      "id": 339
+      "is_coalition": true,
+      "id": 5
     },
     "type": "mp",
-    "id": 1300,
+    "id": 12,
     "has_function": false
   },
-  "created_at": "17.02.2020",
-  "created_for": "17.02.2020"
+  "created_at": "04.03.2021",
+  "created_for": "04.03.2021"
 }

@@ -42,6 +42,7 @@
           {{ cell.value > 0 ? '+' + cell.value : cell.value }}
         </template>
         <template v-else-if="cell && cell.html">
+          <!-- eslint-disable-next-line vue/no-v-html -->
           <div v-html="cell.html"></div>
         </template>
         <template v-else>

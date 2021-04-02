@@ -1,25 +1,27 @@
 {
   "person": {
-    "is_active": false,
-    "district": [14],
-    "name": "Ivan Hr\u0161ak",
-    "gov_id": "P176",
-    "gender": "m",
+    "is_active": true,
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
+    "gender": "f",
     "party": {
-      "acronym": "DeSUS",
+      "name": "Stranka modernega centra",
+      "classification": "pg",
+      "acronym": "SMC",
+      "has_voters": false,
       "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      "id": 5
     },
     "type": "mp",
-    "id": 34,
+    "id": 12,
     "has_function": false
   },
-  "created_at": "03.05.2018",
-  "created_for": "03.05.2018",
+  "created_at": "12.03.2021",
+  "created_for": "12.03.2021",
   "results": {
-    "problematicno": 0.8704829682133608,
-    "preprosto": 1.7779267915476635,
-    "privzdignjeno": 1.4541586004253366
+    "problematicno": 0.5020699913059599,
+    "preprosto": 0.6620996232149723,
+    "privzdignjeno": 0.38144746780107697
   }
 }

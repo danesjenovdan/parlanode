@@ -1,19 +1,17 @@
 import { assign } from 'lodash';
 
-// TODO: get from contextData not from this
 export const memberOgImage = {
   computed: {
     ogConfig() {
-      const person = this.person || this.data.person;
-      const coalitionText = person.party.is_coalition
+      const { cardData } = this.$root.$options.contextData;
+      const coalitionText = cardData.person.party.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
-
       return {
         name: 'circle',
-        image: person.gov_id,
-        h1: person.name,
-        h2: `${person.party.acronym} | ${coalitionText}`,
+        image: cardData.person.gov_id,
+        h1: cardData.person.name,
+        h2: `${cardData.person.party.acronym} | ${coalitionText}`,
         title: this.$t('card.title'),
       };
     },

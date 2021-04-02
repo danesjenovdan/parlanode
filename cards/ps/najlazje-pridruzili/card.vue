@@ -4,7 +4,7 @@
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    content-class="full"
+
   >
     <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>

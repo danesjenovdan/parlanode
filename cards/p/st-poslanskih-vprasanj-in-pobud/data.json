@@ -1,45 +1,49 @@
 {
   "person": {
-    "is_active": false,
-    "district": [14],
-    "name": "Ivan Hr\u0161ak",
-    "gov_id": "P176",
-    "gender": "m",
+    "is_active": true,
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
+    "gender": "f",
     "party": {
-      "acronym": "DeSUS",
+      "name": "Stranka modernega centra",
+      "classification": "pg",
+      "acronym": "SMC",
+      "has_voters": false,
       "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      "id": 5
     },
     "type": "mp",
-    "id": 34,
+    "id": 12,
     "has_function": false
   },
-  "created_at": "03.05.2018",
-  "created_for": "03.05.2018",
+  "created_at": "04.03.2021",
+  "created_for": "04.03.2021",
   "results": {
     "max": {
-      "score": 427.0,
+      "score": 681.0,
       "mps": [
         {
-          "is_active": false,
-          "district": [42],
-          "name": "Vinko Gorenak",
-          "gov_id": "P116",
-          "gender": "m",
+          "is_active": true,
+          "district": [12],
+          "name": "Franc Tr\u010dek",
+          "gov_id": "P290",
+          "gender": "f",
           "party": {
-            "acronym": "SDS",
+            "name": "Socialni demokrati",
+            "classification": "pg",
+            "acronym": "SD",
+            "has_voters": false,
             "is_coalition": false,
-            "id": 5,
-            "name": "PS Slovenska Demokratska Stranka"
+            "id": 4
           },
           "type": "mp",
-          "id": 25,
+          "id": 99,
           "has_function": false
         }
       ]
     },
-    "average": 61.9111111111111,
-    "score": 7.0
+    "average": 49.7111111111111,
+    "score": 6.0
   }
 }

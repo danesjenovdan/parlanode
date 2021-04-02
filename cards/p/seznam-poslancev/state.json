@@ -1,5 +1,1 @@
-{
-  "generator": true,
-  "analysis":"presence_votes",
-  "sort":"analysis"
-}
+{ "generator": true }

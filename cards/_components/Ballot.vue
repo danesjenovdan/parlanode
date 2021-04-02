@@ -188,16 +188,16 @@ export default {
     height: 42px;
 
     &.for {
-      background-image: url("#{getConfig('urls.cdn')}/icons/g_za_v2.svg");
+      background-image: url("#{get-config-value('urls.cdn')}/icons/g_za_v2.svg");
     }
     &.against {
-      background-image: url("#{getConfig('urls.cdn')}/icons/g_proti_v2.svg");
+      background-image: url("#{get-config-value('urls.cdn')}/icons/g_proti_v2.svg");
     }
     &.absent {
-      background-image: url("#{getConfig('urls.cdn')}/icons/ni_v2.svg");
+      background-image: url("#{get-config-value('urls.cdn')}/icons/ni_v2.svg");
     }
     &.abstain {
-      background-image: url("#{getConfig('urls.cdn')}/icons/g_vzdrzan_v2.svg");
+      background-image: url("#{get-config-value('urls.cdn')}/icons/g_vzdrzan_v2.svg");
     }
   }
 

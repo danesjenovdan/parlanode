@@ -1,7 +1,4 @@
 {
-  "_id": "p_clanstva",
   "dataUrl": "{analize}/p/getMembershipsOfMember",
-  "lastUpdate": "2020-02-22T00:08:08.866Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2020-02-22T00:08:08.866Z"
 }

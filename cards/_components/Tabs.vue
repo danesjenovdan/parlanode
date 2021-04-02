@@ -25,6 +25,7 @@ export default {
       default: 0,
     },
   },
+  emits: ['switch'],
   data() {
     return {
       tabs: [],
@@ -38,7 +39,7 @@ export default {
       this.show = this.tabs[value];
     },
   },
-  created() {
+  mounted() {
     this.active = this.startTab || 0;
   },
   methods: {

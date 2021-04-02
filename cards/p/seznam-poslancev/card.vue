@@ -1,7 +1,12 @@
 <template>
-  <div :id="$options.cardData.mountId">
-    <generator>
-      <div slot="generator" class="party-list-generator">
+  <card-wrapper
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+    max-height
+  >
+    <template #generator>
+      <div class="party-list-generator">
         <div class="row">
           <div class="col-md-12">
             <blue-button-list v-model="currentAnalysis" :items="analyses" />
@@ -29,52 +34,23 @@
                 :icon="gender.id"
                 :stripe-position="'top'"
                 class="gender"
-                @click.native="selectGender(gender.id)"
+                @click="selectGender(gender.id)"
               />
             </div>
           </div>
         </div>
       </div>
-      <inner-card
-        :header-config="headerConfig"
-        :og-config="ogConfig"
-        :generated-card-url="generatedCardUrl"
-        :current-analysis-data="currentAnalysisData"
-        :processed-members="processedMembers"
-        :current-sort="currentSort"
-        :current-sort-order="currentSortOrder"
-        :current-page="currentPage"
-        :demographics="currentAnalysis === 'demographics'"
-        @sort="sortBy"
-        @page-change="onPageChange"
-      >
-        <template #info>
-          <i18n-t keypath="info.lead" tag="p" class="info-text lead">
-            <span place="parties">
-              <span v-if="selectedParties.length">{{
-                `${$t('party')}: ${selectedParties
-                  .map((p) => p.acronym)
-                  .join(', ')}`
-              }}</span>
-              <span v-else v-t="'all-parties'"></span>
-            </span>
-            <span place="districts">
-              <span v-if="selectedDistrictNames.length">{{
-                `${$t('voting-district')}: ${selectedDistrictNames.join(', ')}`
-              }}</span>
-              <span v-else v-t="'all-voting-districts'"></span>
-            </span>
-            <span place="sortBy">{{ sortMap[currentSort] }}</span>
-          </i18n-t>
-          <template v-if="currentAnalysisData.explanation">
-            <p v-t="'info.methodology'" class="info-text heading"></p>
-            <p class="info-text">{{ currentAnalysisData.explanation }}</p>
-            <p v-t="'info.text'" class="info-text"></p>
-          </template>
-        </template>
-      </inner-card>
-    </generator>
-  </div>
+    </template>
+    <inner-card
+      :processed-members="processedMembers"
+      :current-sort="currentSort"
+      :current-sort-order="currentSortOrder"
+      :current-page="currentPage"
+      :demographics="currentAnalysis === 'demographics'"
+      @sort="sortBy"
+      @page-change="onPageChange"
+    />
+  </card-wrapper>
 </template>
 
 <script>
@@ -86,7 +62,6 @@ import stateLoader from '@/_helpers/stateLoader.js';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
-import Generator from '@/_components/Generator.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import SearchField from '@/_components/SearchField.vue';
@@ -128,7 +103,6 @@ const analysesIDs = [
 export default {
   name: 'SeznamPoslancev',
   components: {
-    Generator,
     BlueButtonList,
     InnerCard,
     PSearchDropdown,
@@ -136,18 +110,23 @@ export default {
     StripedIconButton,
   },
   mixins: [common],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+    const loadFromState = stateLoader(this.$options.contextData.cardState);
 
     const selectedDistrictIds = loadFromState('districts') || [];
-    const districts = this.$options.cardData.data.districts.map((district) => {
-      const id = Object.keys(district)[0];
-      return {
-        id,
-        label: district[id],
-        selected: selectedDistrictIds.indexOf(id) !== -1,
-      };
-    });
+    const districts = this.$options.contextData.cardData.districts.map(
+      (district) => {
+        const id = Object.keys(district)[0];
+        return {
+          id,
+          label: district[id],
+          selected: selectedDistrictIds.indexOf(id) !== -1,
+        };
+      }
+    );
 
     const genders = [
       { id: 'm', label: 'moški', selected: false },
@@ -168,7 +147,7 @@ export default {
     }));
 
     return {
-      memberData: this.$options.cardData.data.data,
+      memberData: this.$options.contextData.cardData.data,
       currentAnalysis: loadFromState('analysis') || 'demographics',
       currentSort: loadFromState('sort') || 'name',
       currentSortOrder: loadFromState('sortOrder') || 'asc',

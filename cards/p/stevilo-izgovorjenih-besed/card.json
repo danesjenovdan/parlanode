@@ -1,7 +1,4 @@
 {
-  "_id": "p_stevilo-izgovorjenih-besed",
   "dataUrl": "{analize}/p/getNumberOfSpokenWords",
-  "lastUpdate": "2018-07-27T14:59:13.218Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T14:59:13.218Z"
 }

@@ -1,51 +1,49 @@
 {
   "person": {
     "is_active": true,
-    "district": [
-      2
-    ],
-    "name": "Alen Prelec",
-    "gov_id": "1300",
-    "gender": "m",
+    "district": [22],
+    "name": "Igor Zor\u010di\u010d",
+    "gov_id": "P294",
+    "gender": "f",
     "party": {
-      "acronym": "SDP",
-      "is_coalition": false,
-      "id": 339,
+      "name": "Stranka modernega centra",
       "classification": "pg",
-      "name": "Klub Socijaldemokratske partije Hrvatske"
+      "acronym": "SMC",
+      "has_voters": false,
+      "is_coalition": true,
+      "id": 5
     },
     "type": "mp",
-    "id": 1300,
+    "id": 12,
     "has_function": false
   },
-  "created_at": "13.09.2018",
-  "created_for": "01.09.2018",
+  "created_at": "03.03.2021",
+  "created_for": "03.03.2021",
   "results": {
     "max": {
-      "score": 1696.0,
+      "score": 39.0,
       "mps": [
         {
           "is_active": true,
-          "district": [
-            2
-          ],
-          "name": "\u017deljko Reiner",
-          "gov_id": "1291",
-          "gender": "m",
+          "district": [20],
+          "name": "Branko Simonovi\u010d",
+          "gov_id": "P345",
+          "gender": "f",
           "party": {
-            "acronym": "HDZ",
-            "is_coalition": true,
-            "id": 343,
+            "name": "Demokrati\u010dna stranka upokojencev Slovenije",
             "classification": "pg",
-            "name": "Klub Hrvatske demokratske zajednice"
+            "acronym": "DeSUS",
+            "has_voters": false,
+            "is_coalition": true,
+            "id": 9
           },
           "type": "mp",
-          "id": 1291,
+          "id": 87,
           "has_function": false
         }
       ]
     },
-    "average": 71.0,
-    "score": 27.0
+    "average": 4.0,
+    "score": 22.0
   }
 }

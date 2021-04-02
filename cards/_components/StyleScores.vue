@@ -1,13 +1,10 @@
 <template>
   <card-wrapper
-    :id="cardData.mountId"
     :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
-    class="card-halfling"
+    half-height
   >
-    <slot slot="info" name="info"></slot>
-
     <div v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
@@ -94,23 +91,15 @@
 
 <script>
 import common from '@/_mixins/common.js';
+import { memberSpeeches, partySpeeches } from '@/_mixins/contextUrls.js';
+import { memberTitle, partyTitle } from '@/_mixins/titles.js';
 import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import PersonPin from '@/_components/PersonPin.vue';
-import PartyPin from '@/_components/PartyPin.vue';
 
 export default {
-  name: 'ScoreAvgMax',
-  components: {
-    PersonPin,
-    PartyPin,
-  },
+  name: 'StyleScores',
   mixins: [common],
   props: {
-    cardData: {
-      type: Object,
-      required: true,
-    },
     type: {
       type: String,
       required: true,
@@ -155,6 +144,12 @@ export default {
         this.results.problematicno
       );
     },
+  },
+  created() {
+    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(
+      this
+    );
   },
   methods: {
     getBarStyle(key) {

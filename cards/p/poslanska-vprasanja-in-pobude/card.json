@@ -1,7 +1,4 @@
 {
-  "_id": "p_poslanska-vprasanja-in-pobude",
   "dataUrl": "{analize}/p/getQuestions",
-  "lastUpdate": "2020-03-17T20:03:29.019Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2020-03-17T20:03:29.019Z"
 }

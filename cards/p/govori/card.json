@@ -1,7 +1,4 @@
 {
-  "_id": "p_govori",
   "dataUrl": "{analize}/p/getMPStatic",
-  "lastUpdate": "2021-02-05T16:28:43.872Z",
-  "big": true,
-  "high": false
+  "lastUpdate": "2021-02-05T16:28:43.872Z"
 }

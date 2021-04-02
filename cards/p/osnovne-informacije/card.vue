@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    content-class="full"
-    :info="$t('card.info')"
-  >
+  <card-wrapper :card-url="generatedCardUrl" :header-config="headerConfig">
     <div class="poslanec osnovne-informacije-poslanca">
       <div class="row">
         <div class="parlaicon-container">

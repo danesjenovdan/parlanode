@@ -47,6 +47,7 @@ export default {
       default: 150,
     },
   },
+  emits: ['change'],
   computed: {
     pages() {
       return Math.ceil(this.count / this.perPage);

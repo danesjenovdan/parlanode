@@ -38,7 +38,6 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Question from '@/_components/Question.vue';
 import Event from '@/_components/Event.vue';
 
-// TODO: i18n
 export default {
   name: 'QuestionList',
   components: {

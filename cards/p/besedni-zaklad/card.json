@@ -1,7 +1,4 @@
 {
-  "_id": "p_besedni-zaklad",
   "dataUrl": "{analize}/p/getVocabularySize",
-  "lastUpdate": "2018-07-27T14:58:07.154Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T14:58:07.154Z"
 }

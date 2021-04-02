@@ -1,45 +1,49 @@
 {
   "person": {
     "is_active": false,
-    "district": [14],
-    "name": "Ivan Hr\u0161ak",
-    "gov_id": "P176",
-    "gender": "m",
+    "district": [25],
+    "name": "Peter Jo\u017eef \u010cesnik",
+    "gov_id": "G003",
+    "gender": "f",
     "party": {
-      "acronym": "DeSUS",
-      "is_coalition": true,
-      "id": 3,
-      "name": "PS Demokratska Stranka Upokojencev Slovenije"
+      "name": "Stranka Alenke Bratu\u0161ek",
+      "classification": "pg",
+      "acronym": "SAB",
+      "has_voters": false,
+      "is_coalition": false,
+      "id": 8
     },
     "type": "mp",
-    "id": 34,
+    "id": 1,
     "has_function": false
   },
-  "created_at": "03.05.2018",
-  "created_for": "03.05.2018",
+  "created_at": "10.12.2018",
+  "created_for": "10.12.2018",
   "results": {
     "max": {
-      "score": 158.381308811577,
+      "score": 164.364070223283,
       "mps": [
         {
-          "is_active": false,
-          "district": [20],
-          "name": "Du\u0161an Radi\u010d",
-          "gov_id": "P300",
-          "gender": "m",
+          "is_active": true,
+          "district": [34],
+          "name": "Samo Bevk",
+          "gov_id": "P006",
+          "gender": "f",
           "party": {
-            "acronym": "SMC",
-            "is_coalition": true,
-            "id": 1,
-            "name": "PS Stranka modernega centra"
+            "name": "Socialni demokrati",
+            "classification": "pg",
+            "acronym": "SD",
+            "has_voters": false,
+            "is_coalition": false,
+            "id": 4
           },
           "type": "mp",
-          "id": 1357,
+          "id": 21,
           "has_function": false
         }
       ]
     },
-    "average": 113.654485192647,
-    "score": 133.0
+    "average": 108.960231363982,
+    "score": 0.0
   }
 }

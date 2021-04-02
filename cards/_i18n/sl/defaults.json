@@ -155,20 +155,6 @@
     "speech--m": "Govoril na {session} {org}",
     "speech--f": "Govorila na {session} {org}"
   },
-  "months": [
-    "januar",
-    "februar",
-    "marec",
-    "april",
-    "maj",
-    "junij",
-    "julij",
-    "avgust",
-    "september",
-    "oktober",
-    "november",
-    "december"
-  ],
   "vote_types": {
     "agenda": "dnevni red",
     "whole_law": "glasovanje o zakonu v celoti",

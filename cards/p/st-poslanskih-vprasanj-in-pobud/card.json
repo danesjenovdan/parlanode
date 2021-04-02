@@ -1,7 +1,4 @@
 {
-  "_id": "p_st-poslanskih-vprasanj-in-pobud",
   "dataUrl": "{analize}/p/getNumberOfQuestions",
-  "lastUpdate": "2018-07-27T14:59:08.749Z",
-  "big": false,
-  "high": false
+  "lastUpdate": "2018-07-27T14:59:08.749Z"
 }

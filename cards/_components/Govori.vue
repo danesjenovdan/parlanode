@@ -1,26 +1,24 @@
 <template>
   <card-wrapper
-    :id="cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
     :card-url="generatedCardUrl"
-    content-class="full"
   >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </template>
-
     <div class="filters">
       <div class="filter text-filter">
         <div v-t="'contents-search'" class="filter-label"></div>
-        <search-field v-model="textFilter" @input="searchSpeakings(true)" />
+        <search-field
+          v-model="textFilter"
+          @update:modelValue="searchSpeakings(true)"
+        />
       </div>
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div v-if="type === 'party'" class="filter month-dropdown">
         <div v-t="'mps'" class="filter-label"></div>
-        <p-search-dropdown v-model="allPeople" @input="searchSpeakings" />
+        <p-search-dropdown
+          v-model="allPeople"
+          @update:modelValue="searchSpeakings"
+        />
       </div>
       <!-- ONLY FOR PARTIES, DISPLAY MPs -->
       <div class="filter month-dropdown">
@@ -28,7 +26,7 @@
         <p-search-dropdown
           v-model="allMonths"
           :alphabetise="false"
-          @input="searchSpeakings"
+          @update:modelValue="searchSpeakings"
           @clear="searchSpeakings"
         />
       </div>
@@ -36,7 +34,7 @@
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allWorkingBodies"
-          @input="searchSpeakings"
+          @update:modelValue="searchSpeakings"
           @clear="searchSpeakings"
         />
       </div>
@@ -95,8 +93,9 @@ import { memberTitle, partyTitle } from '@/_mixins/titles.js';
 import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import { memberSpeeches, partySpeeches } from '@/_mixins/contextUrls.js';
-import infiniteScroll from '@/_directives/infiniteScroll';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
   directives: {
@@ -110,7 +109,7 @@ export default {
   },
   mixins: [common, generateMonths],
   props: {
-    cardData: {
+    contextData: {
       type: Object,
       required: true,
     },
@@ -119,32 +118,27 @@ export default {
       required: true,
       validator: (value) => ['person', 'party'].indexOf(value) > -1,
     },
-    person: {
-      type: Object,
-      default: () => ({}),
-    },
-    party: {
-      type: Object,
-      default: () => ({}),
-    },
   },
   data() {
-    const state = this.cardData.parlaState;
+    const state = this.contextData.cardState;
 
     const allPeople = [];
 
-    const allMonths = this.generateMonths(this.$t('months'));
+    const { months } = getD3Locale(import.meta.env.VITE_CARD_LANG);
+    const start = this.contextData?.cardData?.facet_counts?.facet_ranges
+      ?.start_time?.start;
+    const allMonths = this.generateMonths(months, start);
     allMonths.forEach((month) => {
       month.selected = (state.months || []).indexOf(month.id) !== -1;
     });
 
-    const allWorkingBodies = (this.cardData.data.organizations || []).map(
-      (org) => ({
-        label: org.name,
-        id: org.id,
-        selected: (state.wb || []).indexOf(org.id) !== -1,
-      })
-    );
+    const allWorkingBodies = (
+      this.contextData?.cardData?.organizations || []
+    ).map((org) => ({
+      label: org.name,
+      id: org.id,
+      selected: (state.wb || []).indexOf(org.id) !== -1,
+    }));
 
     const textFilter =
       state.textFilter && state.textFilter.length && state.textFilter !== '*'
@@ -158,8 +152,7 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      speakingDays:
-        (this.cardData.data.response && this.cardData.data.response.docs) || [],
+      speakingDays: this.contextData?.cardData?.response?.docs || [],
       textFilter,
       allMonths,
       allWorkingBodies,
@@ -171,9 +164,9 @@ export default {
       const state = {};
 
       if (this.type === 'person') {
-        state.people = this.person.id;
+        state.people = this.contextData.cardData.person.id;
       } else if (this.type === 'party') {
-        state.parties = this.party.id;
+        state.parties = this.contextData.cardData.party.id;
         state.people = this.selectedPeople.map((p) => p.id);
       }
 
@@ -188,7 +181,9 @@ export default {
       state.textFilter = this.textFilter || '*';
 
       return `${this.url}${
-        this.type === 'person' ? this.person.id : this.party.id
+        this.type === 'person'
+          ? this.contextData.cardData.person.id
+          : this.contextData.cardData.party.id
       }?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&customUrl=${encodeURIComponent(this.searchUrl)}`;
@@ -197,9 +192,9 @@ export default {
       const state = {};
 
       if (this.type === 'person') {
-        state.people = this.person.id;
+        state.people = this.contextData.cardData.person.id;
       } else if (this.type === 'party') {
-        state.parties = this.party.id;
+        state.parties = this.contextData.cardData.party.id;
         state.people = this.selectedPeople.map((p) => p.id).join(',');
       }
 
@@ -215,7 +210,7 @@ export default {
         state.people = this.selectedPeople.map((person) => person.id);
       }
 
-      if (this.textFilter.length && this.textFIlter !== '*') {
+      if (this.textFilter.length && this.textFilter !== '*') {
         state.q = this.textFilter;
       }
 
@@ -275,7 +270,8 @@ export default {
             name: person.name,
             label: person.name,
             selected:
-              (this.cardData.parlaState.people || []).indexOf(person.id) !== -1,
+              (this.contextData?.cardState?.people || []).indexOf(person.id) !==
+              -1,
           }));
         });
     }

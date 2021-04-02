@@ -1,10 +1,10 @@
 <template>
   <input
     :placeholder="placeholder"
-    :value="value"
+    :value="modelValue"
     class="search-field"
     type="text"
-    @input="$emit('input', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
     @keyup.enter="$emit('enter', $event.target.value)"
   />
 </template>
@@ -13,7 +13,7 @@
 export default {
   name: 'SearchField',
   props: {
-    value: {
+    modelValue: {
       type: String,
       default: '',
     },
@@ -22,6 +22,7 @@ export default {
       default: '',
     },
   },
+  emits: ['update:modelValue', 'enter'],
 };
 </script>
 
@@ -29,7 +30,7 @@ export default {
 @import 'parlassets/scss/colors';
 
 .search-field {
-  background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
+  background-image: url("#{get-config-value('urls.cdn')}/icons/search.svg");
   background-size: 24px 24px;
   background-repeat: no-repeat;
   background-position: right 9px center;

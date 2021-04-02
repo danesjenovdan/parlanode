@@ -1,27 +1,19 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
-    <slot slot="info" name="info"></slot>
-
-    <sortable-table
-      :columns="columns"
-      :items="currentPageMembers"
-      :sort="currentSort"
-      :sort-order="currentSortOrder"
-      :sort-callback="selectSort"
-      class="person-list"
-    />
-    <pagination
-      v-if="count > perPage"
-      :page="currentPage"
-      :count="count"
-      :per-page="perPage"
-      @change="onPageChange"
-    />
-  </card-wrapper>
+  <sortable-table
+    :columns="columns"
+    :items="currentPageMembers"
+    :sort="currentSort"
+    :sort-order="currentSortOrder"
+    :sort-callback="selectSort"
+    class="person-list"
+  />
+  <pagination
+    v-if="count > perPage"
+    :page="currentPage"
+    :count="count"
+    :per-page="perPage"
+    @change="onPageChange"
+  />
 </template>
 
 <script>
@@ -43,18 +35,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    headerConfig: {
-      type: Object,
-      default: () => ({}),
-    },
-    ogConfig: {
-      type: Object,
-      default: null,
-    },
-    generatedCardUrl: {
-      type: String,
-      default: '',
-    },
     currentSort: {
       type: String,
       default: '',
@@ -67,15 +47,12 @@ export default {
       type: Array,
       default: () => [],
     },
-    currentAnalysisData: {
-      type: Object,
-      default: () => ({}),
-    },
     currentPage: {
       type: Number,
       default: 1,
     },
   },
+  emits: ['sort', 'page-change'],
   data() {
     return {
       perPage: 50,
@@ -172,7 +149,7 @@ export default {
       this.$emit('page-change', newPage);
     },
     scrollToTop() {
-      const id = this.$root.$options.cardData.mountId;
+      const id = this.$root.$options.contextData.mountId;
       const el = document.getElementById(id);
       // only scroll up if top is not visible
       if (el && el.getBoundingClientRect().top < 0) {
