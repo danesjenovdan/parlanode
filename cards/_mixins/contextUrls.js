@@ -115,3 +115,10 @@ export const search = {
     template.contextUrl = this.getSearchTermLink(this.keywords);
   },
 };
+
+export const compass = {
+  created() {
+    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${slugs.urls.base}/${sm.landing.tools}/${sm.tools.compass}`;
+  },
+};

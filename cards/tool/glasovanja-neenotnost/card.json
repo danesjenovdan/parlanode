@@ -1,7 +1,4 @@
 {
-  "_id": "ps_glasovanja-neenotnost",
   "dataUrl": "{data}/getAllORGsExt/",
-  "lastUpdate": "2020-05-06T15:41:09.185Z",
-  "big": true,
-  "high": false
+  "lastUpdate": "2020-05-06T15:41:09.185Z"
 }

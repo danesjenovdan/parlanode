@@ -2,7 +2,7 @@
   "1": {
     "founded": null,
     "parent_org_id": null,
-    "name": "Državni zbor",
+    "name": "Dr\u017eavni zbor",
     "acronym": "DZ",
     "disbanded": null,
     "type": "parliament",
@@ -22,8 +22,8 @@
   "3": {
     "founded": null,
     "parent_org_id": 1,
-    "name": "Lista Marjana Šarca",
-    "acronym": "LMŠ",
+    "name": "Lista Marjana \u0160arca",
+    "acronym": "LM\u0160",
     "disbanded": null,
     "type": "party",
     "id": 3,
@@ -62,7 +62,7 @@
   "7": {
     "founded": null,
     "parent_org_id": 1,
-    "name": "Nova Slovenija - Krščanski demokrati",
+    "name": "Nova Slovenija - Kr\u0161\u010danski demokrati",
     "acronym": "NSi",
     "disbanded": null,
     "type": "party",
@@ -72,7 +72,7 @@
   "8": {
     "founded": null,
     "parent_org_id": 1,
-    "name": "Stranka Alenke Bratušek",
+    "name": "Stranka Alenke Bratu\u0161ek",
     "acronym": "SAB",
     "disbanded": null,
     "type": "party",
@@ -82,7 +82,7 @@
   "9": {
     "founded": null,
     "parent_org_id": 1,
-    "name": "Demokratična stranka upokojencev Slovenije",
+    "name": "Demokrati\u010dna stranka upokojencev Slovenije",
     "acronym": "DeSUS",
     "disbanded": null,
     "type": "party",
@@ -92,7 +92,7 @@
   "10": {
     "founded": null,
     "parent_org_id": 1,
-    "name": "Italijanska in madžarska narodna skupnost",
+    "name": "Italijanska in mad\u017earska narodna skupnost",
     "acronym": "IMNS",
     "disbanded": null,
     "type": "party",

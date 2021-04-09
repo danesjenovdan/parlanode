@@ -1,176 +1,130 @@
 <template>
-  <div >
-    <generator>
-      <template #generator>
-        <tools-tabs current-tool="discord" />
-      </template>
-      <card-wrapper
-        :card-url="generatedCardUrl"
-        :header-config="headerConfig"
-        :og-config="ogConfig"
+  <card-wrapper
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
+    <template #generator>
+      <tools-tabs current-tool="discord" />
+    </template>
+
+    <div class="filters">
+      <div class="filter text-filter">
+        <div v-t="'title-search'" class="filter-label"></div>
+        <input v-model="textFilter" class="text-filter-input" type="text" />
+      </div>
+      <div class="filter type-dropdown">
+        <div v-t="'parties'" class="filter-label"></div>
+        <p-search-dropdown
+          :model-value="allItems"
+          :single="true"
+          hide-clear
+          @select="selectCallback"
+        />
+      </div>
+      <div class="filter tag-dropdown">
+        <div v-t="'working-body'" class="filter-label"></div>
+        <p-search-dropdown v-model="allTags" />
+      </div>
+      <div class="filter text-filter">
+        <div v-t="'sort-by'" class="filter-label"></div>
+        <toggle v-model="selectedSort" :options="sortOptions" />
+      </div>
+    </div>
+
+    <scroll-shadow ref="shadow">
+      <div
+        :class="['results', { 'is-loading': loading }]"
+        @scroll="$refs.shadow.check($event.currentTarget)"
       >
-        <template #info>
-          <i18n-t keypath="info.lead" tag="p" class="info-text lead">
-            <span place="text">
-              <span v-if="textFilter">"{{ textFilter }}"</span>
-              <span v-else v-t="'all-votes'"></span>
-            </span>
-            <span place="wbs">
-              <span v-if="selectedTags.length">{{
-                selectedTags.join(', ')
-              }}</span>
-              <span v-else v-t="'all-working-bodies'"></span>
-            </span>
-            <span place="sortBy">{{
-              sortOptions[selectedSort].toLowerCase()
-            }}</span>
-          </i18n-t>
-          <p v-t="'info.methodology'" class="info-text heading"></p>
-          <i18n-t keypath="info.text[0]" tag="p" class="info-text">
-            <a
-              v-t="'info.links[0].text'"
-              :href="$t('info.links[0].link')"
-              place="link1"
-              class="funblue-light-hover"
-              target="_blank"
-            />
-          </i18n-t>
-          <p v-t="'info.text[1]'" class="info-text"></p>
-        </template>
-
-        <!-- <div class="groups">
-          <striped-button
-            v-for="group in groups"
-            :color="group.color.toLowerCase()"
-            :key="group.acronym"
-            :selected="group.acronym === selectedGroup"
-            :small-text="group.name"
-            :is-uppercase="false"
-            @click.native="selectGroup(group.acronym)"
+        <template v-for="day in filteredVotingDays">
+          <date-row
+            v-if="selectedSort === 'date'"
+            :key="day.date"
+            :date="day.date"
           />
-        </div> -->
-
-        <div class="filters">
-          <div class="filter text-filter">
-            <div v-t="'title-search'" class="filter-label"></div>
-            <input v-model="textFilter" class="text-filter-input" type="text" />
-          </div>
-          <div class="filter type-dropdown">
-            <div v-t="'parties'" class="filter-label"></div>
-            <p-search-dropdown
-              :model-value="allItems"
-              :single="true"
-              hide-clear
-              @select="selectCallback"
-            />
-          </div>
-          <div class="filter tag-dropdown">
-            <div v-t="'working-body'" class="filter-label"></div>
-            <p-search-dropdown v-model="allTags" />
-          </div>
-          <div class="filter text-filter">
-            <div v-t="'sort-by'" class="filter-label"></div>
-            <toggle v-model="selectedSort" :options="sortOptions" />
-          </div>
-        </div>
-
-        <scroll-shadow ref="shadow">
-          <div
-            :class="['results', { 'is-loading': loading }]"
-            @scroll="$refs.shadow.check($event.currentTarget)"
+          <a
+            v-for="ballot in day.ballots"
+            :key="ballot.id_parladata"
+            :href="
+              getSessionVoteLink({
+                session_id: ballot.session_id,
+                vote_id: ballot.id_parladata,
+              })
+            "
+            :target="voteLinkTarget"
+            class="ballot"
           >
-            <template v-for="day in filteredVotingDays">
-              <date-row
-                v-if="selectedSort === 'date'"
-                :key="day.date"
-                :date="day.date"
-              />
-              <a
-                v-for="ballot in day.ballots"
-                :key="ballot.id_parladata"
-                :href="
-                  getSessionVoteLink({
-                    session_id: ballot.session_id,
-                    vote_id: ballot.id_parladata,
-                  })
+            <div class="disunion">
+              <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
+              <div v-t="'inequality'" class="text"></div>
+            </div>
+            <div class="name">
+              <template
+                v-if="
+                  ballot.shortened_projects && ballot.shortened_projects.length
                 "
-                :target="voteLinkTarget"
-                class="ballot"
               >
-                <div class="disunion">
-                  <div class="percentage">
-                    {{ Math.round(ballot.maximum) }} %
-                  </div>
-                  <div v-t="'inequality'" class="text"></div>
-                </div>
-                <div class="name">
-                  <template
-                    v-if="
-                      ballot.shortened_projects &&
-                      ballot.shortened_projects.length
-                    "
+                <template v-for="(project, i) in ballot.projects">
+                  <div
+                    v-if="i !== 0 || project !== ballot.shortened_projects[0]"
+                    :key="`${ballot.id_parladata}-${project}-${i}`"
+                    :style="{ top: visibleTooltipTopPos }"
+                    :class="[
+                      'tooltip',
+                      `tooltip-${ballot.id_parladata}-${i}`,
+                      {
+                        'tooltip--show':
+                          visibleTooltip === `${ballot.id_parladata}-${i}`,
+                      },
+                    ]"
                   >
-                    <div
-                      v-for="(project, i) in ballot.projects"
-                      v-if="i !== 0 || project !== ballot.shortened_projects[0]"
-                      :key="`${ballot.id_parladata}-${project}-${i}`"
-                      :style="{ top: visibleTooltipTopPos }"
-                      :class="[
-                        'tooltip',
-                        `tooltip-${ballot.id_parladata}-${i}`,
-                        {
-                          'tooltip--show':
-                            visibleTooltip === `${ballot.id_parladata}-${i}`,
-                        },
-                      ]"
-                    >
-                      {{ project }}
-                    </div>
-                    <p class="projects">
-                      <component
-                        :is="i > 0 ? 'a' : 'span'"
-                        v-for="(project, i) in ballot.shortened_projects"
-                        :key="`${ballot.id_parladata}-${project}-${i}`"
-                        :class="[
-                          'project',
-                          {
-                            'project--tooltip': i !== 0,
-                            'project--has-tooltip':
-                              i !== 0 || project !== ballot.projects[0],
-                          },
-                        ]"
-                        :data-target="`${ballot.id_parladata}-${i}`"
-                        href="#"
-                        @click.prevent="() => {}"
-                        @mouseover="
-                          setVisibleTooltip(`${ballot.id_parladata}-${i}`)
-                        "
-                        @mouseout="visibleTooltip = null"
-                      >
-                        <template v-if="i === 0">{{ project }}</template>
-                        <span v-else>{{ i + 1 }}</span>
-                      </component>
-                    </p>
-                  </template>
-                  {{ ballot.shortened_title }}
-                </div>
-                <div class="result">
-                  <template v-if="ballot.result">
-                    <i class="accepted glyphicon glyphicon-ok"></i>
-                    <div v-t="'vote-passed'" class="text"></div>
-                  </template>
-                  <template v-else>
-                    <i class="not-accepted glyphicon glyphicon-remove"></i>
-                    <div v-t="'vote-not-passed'" class="text"></div>
-                  </template>
-                </div>
-              </a>
-            </template>
-          </div>
-        </scroll-shadow>
-      </card-wrapper>
-    </generator>
-  </div>
+                    {{ project }}
+                  </div>
+                </template>
+                <p class="projects">
+                  <component
+                    :is="i > 0 ? 'a' : 'span'"
+                    v-for="(project, i) in ballot.shortened_projects"
+                    :key="`${ballot.id_parladata}-${project}-${i}`"
+                    :class="[
+                      'project',
+                      {
+                        'project--tooltip': i !== 0,
+                        'project--has-tooltip':
+                          i !== 0 || project !== ballot.projects[0],
+                      },
+                    ]"
+                    :data-target="`${ballot.id_parladata}-${i}`"
+                    href="#"
+                    @click.prevent="() => {}"
+                    @mouseover="
+                      setVisibleTooltip(`${ballot.id_parladata}-${i}`)
+                    "
+                    @mouseout="visibleTooltip = null"
+                  >
+                    <template v-if="i === 0">{{ project }}</template>
+                    <span v-else>{{ i + 1 }}</span>
+                  </component>
+                </p>
+              </template>
+              {{ ballot.shortened_title }}
+            </div>
+            <div class="result">
+              <template v-if="ballot.result">
+                <i class="accepted glyphicon glyphicon-ok"></i>
+                <div v-t="'vote-passed'" class="text"></div>
+              </template>
+              <template v-else>
+                <i class="not-accepted glyphicon glyphicon-remove"></i>
+                <div v-t="'vote-not-passed'" class="text"></div>
+              </template>
+            </div>
+          </a>
+        </template>
+      </div>
+    </scroll-shadow>
+  </card-wrapper>
 </template>
 
 <script>
@@ -262,7 +216,7 @@ export default {
       selectedGroup: groups[0].acronym,
       groups,
       allClassifications: [],
-      cardData: this.$options.cardData,
+      contextData: this.$options.contextData,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
     };
@@ -438,61 +392,61 @@ export default {
     fetchVotesForGroup(acronym) {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
-      // axios
-      //   .get(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`)
-      //   .then((response) => {
-      //     if (this.allTags.length === 0) {
-      //       this.allTags = response.data.all_tags.map((tag) => ({
-      //         id: tag,
-      //         label: tag,
-      //         selected: false,
-      //       }));
-      //     }
+      axios
+        .get(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`)
+        .then((response) => {
+          if (this.allTags.length === 0) {
+            this.allTags = response.data.all_tags.map((tag) => ({
+              id: tag,
+              label: tag,
+              selected: false,
+            }));
+          }
 
-      //     // TODO: this.voteData = response.data.results;
-      //     this.voteData = response.data.results || response.data[acronym];
+          // TODO: this.voteData = response.data.results;
+          this.voteData = response.data.results || response.data[acronym];
 
-      //     this.allClassifications = [];
-      //     // eslint-disable-next-line no-restricted-syntax, guard-for-in
-      //     for (const classificationKey in response.data.classifications) {
-      //       this.allClassifications.push({
-      //         id: classificationKey,
-      //         label: this.$t(
-      //           `vote_types.${response.data.classifications[classificationKey]}`
-      //         ),
-      //         selected: false,
-      //       });
-      //     }
+          this.allClassifications = [];
+          // eslint-disable-next-line no-restricted-syntax, guard-for-in
+          for (const classificationKey in response.data.classifications) {
+            this.allClassifications.push({
+              id: classificationKey,
+              label: this.$t(
+                `vote_types.${response.data.classifications[classificationKey]}`
+              ),
+              selected: false,
+            });
+          }
 
-      //     const selectFromState = (items, stateItemIds) =>
-      //       items.map((item) =>
-      //         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-      //       );
+          const selectFromState = (items, stateItemIds) =>
+            items.map((item) =>
+              assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+            );
 
-      //     if (this.contextData.cardState) {
-      //       const state = this.contextData.cardState;
-      //       if (state.text) {
-      //         this.textFilter = state.text;
-      //       }
-      //       if (state.classifications) {
-      //         this.allClassifications = selectFromState(
-      //           this.allClassifications,
-      //           state.classifications
-      //         );
-      //       }
-      //       if (state.sort) {
-      //         this.selectedSort = state.sort;
-      //       }
-      //       if (state.tags) {
-      //         this.allTags = selectFromState(this.allTags, state.tags);
-      //       }
-      //       if (state.selectedGroup) {
-      //         this.selectedGroup = state.selectedGroup;
-      //       }
-      //     }
+          if (this.contextData.cardState) {
+            const state = this.contextData.cardState;
+            if (state.text) {
+              this.textFilter = state.text;
+            }
+            if (state.classifications) {
+              this.allClassifications = selectFromState(
+                this.allClassifications,
+                state.classifications
+              );
+            }
+            if (state.sort) {
+              this.selectedSort = state.sort;
+            }
+            if (state.tags) {
+              this.allTags = selectFromState(this.allTags, state.tags);
+            }
+            if (state.selectedGroup) {
+              this.selectedGroup = state.selectedGroup;
+            }
+          }
 
-      //     this.loading = false;
-      //   });
+          this.loading = false;
+        });
     },
     setVisibleTooltip(target) {
       const elem = document.querySelector(`[data-target="${target}"]`);
@@ -597,7 +551,7 @@ export default {
 }
 
 .results {
-  height: 350px;
+  height: 447px;
   overflow-y: auto;
 
   &.is-loading {
